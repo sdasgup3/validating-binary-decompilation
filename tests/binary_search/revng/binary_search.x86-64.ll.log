@@ -1,0 +1,8 @@
+[jtcount  ] JumpTargets found in global data: 20
+[jtcount  ] Harvesting: SROA, ConstProp, EarlyCSE and SET
+[jtcount  ] 3 new jump targets and 0 new branches were found
+[jtcount  ] Harvesting: SROA, ConstProp, EarlyCSE and SET
+[jtcount  ] 0 new jump targets and 0 new branches were found
+[jtcount  ] Harvesting: reset Visited, SET + OSRA
+[jtcount  ] 0 new jump targets and 0 new branches were found
+[jtcount  ] We're done looking for jump targets
