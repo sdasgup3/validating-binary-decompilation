@@ -29,7 +29,7 @@ import sys
 import traceback
 
 
-def execute(cmds):
+def execute(cmd):
     env = {}
 
     print ("Executing command ", cmd)
