@@ -5,7 +5,7 @@ bin=$1
 entry=$2
 IDA=/home/sdasgup3/ida-6.95/idal64
 mcsema-disass --disassembler $IDA --os linux --arch amd64 --output $bin.cfg --binary $bin --entrypoint $entry
-mcsema-lift-4.0 --os linux --arch amd64 --cfg $bin.cfg --output $bin.bc
+mcsema-lift-4.0 --os linux --arch amd64 --cfg $bin.cfg --output $bin.bc -disable_dead_store_elimination -disable_register_forwarding -disable_optimizer -keep_memops
 llvm-dis $bin.bc -o $bin.ll
 
 

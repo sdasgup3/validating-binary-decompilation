@@ -45,6 +45,22 @@ bool variable_correspondence::runOnFunction(Function &F) {
   * Function :  print use def chains
   * Purpose  :
 ********************************************************************/
+void def_use(Instruction *I, int tabcount) {
+  for (User *U : I->users()) {
+    if (Instruction *Inst = dyn_cast<Instruction>(U)) {
+      for (int i = 0; i < tabcount; i++) {
+        errs() << "\t";
+      }
+      errs() << *Inst << "\n";
+      def_use(Inst, tabcount + 1);
+    }
+  }
+}
+
+/*******************************************************************
+  * Function :  print use def chains
+  * Purpose  :
+********************************************************************/
 void use_defs(Instruction *Inst, int tabcount) {
   for (Use &U : Inst->operands()) {
     Value *v = U.get();
@@ -88,7 +104,10 @@ void variable_correspondence::dfa() {
       errs() << "Instruction: ";
       I.dump();
       Instruction *Inst = dyn_cast<Instruction>(&I);
+      errs() << "Use Def\n";
       use_defs(Inst, 1);
+      errs() << "Def Use\n";
+      def_use(Inst, 1);
       errs() << "\n\n";
     }
   }
