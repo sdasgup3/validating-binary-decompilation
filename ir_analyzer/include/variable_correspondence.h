@@ -18,20 +18,31 @@
 #include "llvm/IR/InstVisitor.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/Pass.h"
+#include <map>
+#include <string>
+using namespace std;
 
 namespace llvm {
 
-class variable_correspondence : public FunctionPass {
+// class variable_correspondence : public FunctionPass {
+class variable_correspondence : public ModulePass {
 private:
-  Function *Func;
+  // Function *Func;
+  Module *Mod;
+  map<string, Value *> DUMMY_INIT_VAR_CORR, INIT_VAR_CORR;
 
 public:
   static char ID;
 
-  variable_correspondence() : FunctionPass(ID) {}
+  // variable_correspondence() : FunctionPass(ID) {}
+  variable_correspondence() : ModulePass(ID) {}
 
-  virtual bool runOnFunction(Function &F);
+  // virtual bool runOnFunction(Function &F);
+  virtual bool runOnModule(Module &F);
   void dfa();
+
+  void find_dummy_init_corr(Function &F);
+  void find_init_corr(Function &F);
 
   virtual void getAnalysisUsage(AnalysisUsage &AU) const {
     AU.setPreservesAll();
