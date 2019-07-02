@@ -14,5 +14,6 @@ make update-format
 
 ## Runnning the var\_correspondence pass
 ```
-~/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/build/lib/LLVMvariable_correspondence.so  < mcsema/get_sign.ll   --var_corr -debug  -disable-output -target_function sub_660_get_sign
+cd /home/sdasgup3/Github/validating-binary-decompilation/tests/get_sign
+~/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < mcsema/get_sign.ll   --var_corr -debug  -disable-output -target_function sub_660_get_sign -init_state_function sub_67b_init_var_correspondence
 ```
