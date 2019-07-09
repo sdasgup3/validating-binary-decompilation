@@ -9,6 +9,7 @@
 
 #define DEBUG_TYPE "variable_correspondence"
 #include "variable_correspondence.h"
+#include "signature.h"
 #include "llvm/ADT/PostOrderIterator.h"
 #include "llvm/IR/CFG.h"
 #include "llvm/IR/Constants.h"
@@ -37,31 +38,20 @@ cl::opt<std::string> FunctionToFindInitState(
 
 /*******************************************************************
   * Function :   runOnModule
-  * Purpose  :
+  * Purpose  :   Entry of the module pass
 ********************************************************************/
 bool variable_correspondence::runOnModule(Module &M) {
   // Func = &F;
   Mod = &M;
 
   // Find the initial variable correspondence w.r.t a dummy function
-  for (auto &Func : M) {
-    if (string::npos == Func.getName().str().find(FunctionToFindInitState) ||
-        Func.isIntrinsic() || Func.isDeclaration()) {
-      continue;
-    }
-    find_dummy_init_corr(Func);
-  }
+  auto signatureInfo = extractSignaturesFromModule(M, FunctionToFindInitState);
+  // Find the initial variable correspondence w.r.t the function under analysis
+  map<Value *, string> initVariableCorrespondence =
+      applySignaturesToModule(M, FunctionToAnalyze, signatureInfo);
 
-  // Find the initial variable correspondence w.r.t the function under snalysis
-  for (auto &Func : M) {
-    if (string::npos == Func.getName().str().find(FunctionToAnalyze) ||
-        Func.isIntrinsic() || Func.isDeclaration()) {
-      continue;
-    }
-    find_init_corr(Func);
-  }
-
-  // dfa();
+  // Extracting data-flow facts
+  // dfa(M);
 
   return false; // Analysis pass
 }
@@ -86,222 +76,71 @@ void def_use(Instruction *I, int tabcount) {
   * Function :  print use def chains
   * Purpose  :
 ********************************************************************/
-void use_defs(Instruction *Inst, int tabcount) {
-  //  for (Use &U : Inst->operands()) {
-  //    Value *v = U.get();
-  //    Instruction *I = dyn_cast<Instruction>(v);
-  //    if (!I) {
-  //      // errs() << "Skipped Instr: " << *v << " Type: " << *(v->getType())
-  //      <<
-  //      // "\n";
-  //      if (Argument *arg = dyn_cast<Argument>(v)) {
-  //        for (int i = 0; i < tabcount; i++) {
-  //          errs() << "\t";
-  //        }
-  //        errs() << *arg << "\n";
-  //      }
-  //      continue;
-  //    }
-  //
-  //    for (int i = 0; i < tabcount; i++) {
-  //      errs() << "\t";
-  //    }
-  //    errs() << *I << "\n";
-  //    use_defs(I, tabcount + 1);
-  //  }
-}
+// void use_defs(Instruction *Inst, int tabcount,
+//              const map<string, Value *> &INIT_VAR_CORR) {
+//  for (Use &U : Inst->operands()) {
+//    Value *v = U.get();
+//    Instruction *I = dyn_cast<Instruction>(v);
+//    if (!I) {
+//      errs() << "Skipped Instr: " << *v << " Type: " << *(v->getType()) <<
+//      "\n";
+//      if (Argument *arg = dyn_cast<Argument>(v)) {
+//        for (int i = 0; i < tabcount; i++) {
+//          errs() << "\t";
+//        }
+//        errs() << "Arg: " << *arg << "\n";
+//      }
+//      continue;
+//    }
+//
+//    for (int i = 0; i < tabcount; i++) {
+//      errs() << "\t";
+//    }
+//
+//    bool found_hd_reg = false;
+//    for (auto p : INIT_VAR_CORR) {
+//      if (p.second == I) {
+//        found_hd_reg = true;
+//        errs() << p.first << "\n";
+//      }
+//    }
+//
+//    if (!found_hd_reg) {
+//      errs() << *I << "\n";
+//      use_defs(I, tabcount + 1, INIT_VAR_CORR);
+//    }
+//  }
+//}
 
 /*******************************************************************
   * Function :  dfa
   * Purpose  :
 ********************************************************************/
-void variable_correspondence::dfa() {
-  //  if (Func->getName() != FunctionToAnalyze || Func->isIntrinsic() ||
-  //      Func->isDeclaration()) {
-  //    return;
-  //  }
-  //
-  //  errs() << "==========================================\n";
-  //  errs() << "Function : " << Func->getName() << "\n";
-  //  errs() << "==========================================\n";
-  //
-  //  for (auto &B : *Func) {
-  //    for (auto &I : B) {
-  //      errs() << "Instruction: ";
-  //      I.dump();
-  //      Instruction *Inst = dyn_cast<Instruction>(&I);
-  //      errs() << "Use Def\n";
-  //      use_defs(Inst, 1);
-  //      errs() << "Def Use\n";
-  //      def_use(Inst, 1);
-  //      errs() << "\n\n";
-  //    }
-  //  }
-}
-
-/*******************************************************************
-  * Function :
-  * Purpose  :
-********************************************************************/
-static string regname_hints(int64_t val) {
-  switch (val) {
-  case 10:
-    return "rax";
-  case 20:
-    return "rbx";
-  case 30:
-    return "rcx";
-  case 40:
-    return "rdx";
-  case 50:
-    return "rsi";
-  case 60:
-    return "rdi";
-  case 70:
-    return "rsp";
-  case 80:
-    return "rbp";
-  };
-  assert(0 && "Unknown hint value!!");
-  return "";
-}
-
-void variable_correspondence::find_dummy_init_corr(Function &f) {
-  errs() << "\nFinding initial variable correspondence in dummy " << f.getName()
-         << "\n";
-  for (auto &b : f) {
-    for (auto &i : b) {
-      // errs() << "Instruction: ";
-      // i.dump();
-      StoreInst *store = dyn_cast<StoreInst>(&i);
-      if (!store)
-        continue;
-
-      Value *val = store->getValueOperand();
-      Value *ptr = store->getPointerOperand();
-      ConstantInt *cint = dyn_cast<ConstantInt>(val);
-      if (cint) {
-        string regname = regname_hints(cint->getZExtValue());
-        errs() << regname << " " << *store << "\n";
-
-        if (DUMMY_INIT_VAR_CORR.count(regname)) {
-          if (DUMMY_INIT_VAR_CORR.at(regname) != ptr) {
-            errs() << "Conflict in initial variable correspondence of " +
-                          regname
-                   << "\n";
-            assert(0);
-          }
-        } else {
-          DUMMY_INIT_VAR_CORR[regname] = ptr;
-          // errs() << "Inserting " << regname << " with: " << *ptr << "\n";
-        }
-      }
+void variable_correspondence::dfa(Module &M) {
+  Function *f;
+  for (auto &Func : M) {
+    if (string::npos == Func.getName().str().find(FunctionToAnalyze) ||
+        Func.isIntrinsic() || Func.isDeclaration()) {
+      continue;
     }
-  }
-  for (auto varr_corr : DUMMY_INIT_VAR_CORR) {
-    errs() << varr_corr.first << " : " << *(varr_corr.second) << "\n";
-  }
-}
-
-static bool isSameGptr(GetElementPtrInst *gptr1, GetElementPtrInst *gptr2) {
-
-  if (!gptr1 && !gptr2) {
-    return true;
-  }
-  if ((!gptr1 && gptr2) || (gptr1 && !gptr2)) {
-    return false;
+    f = &Func;
+    break;
   }
 
-  if (gptr1->getSourceElementType() != gptr2->getSourceElementType())
-    return false;
-  // errs() << "\n\n";
-  if (gptr1->getResultElementType() != gptr2->getResultElementType())
-    return false;
-  if (gptr1->getNumIndices() != gptr2->getNumIndices())
-    return false;
+  errs() << "\n==========================================\n";
+  errs() << "Analysing Function : " << f->getName() << "\n";
+  errs() << "==========================================\n";
 
-  // int count = 0;
-  for (auto Index1 = gptr1->idx_begin(), Index2 = gptr2->idx_begin();
-       Index1 != gptr1->idx_end() && Index2 != gptr2->idx_end();
-       ++Index1, ++Index2) {
-    ConstantInt *cint1 = dyn_cast<ConstantInt>(Index1);
-    ConstantInt *cint2 = dyn_cast<ConstantInt>(Index2);
-    if (!cint1 || !cint2)
-      return false;
-
-    // errs() << cint1->getZExtValue() << " " << cint2->getZExtValue() << "\n";
-    if (cint1->getZExtValue() != cint2->getZExtValue())
-      return false;
-    // count++;
-    // if (3 == count)
-    //  break;
-  }
-  Value *ptr1 = gptr1->getPointerOperand();
-  Value *ptr2 = gptr2->getPointerOperand();
-  // errs() << *gptr1 << "\n";
-  // errs() << *gptr2 << "\n";
-
-  return isSameGptr(dyn_cast<GetElementPtrInst>(ptr1),
-                    dyn_cast<GetElementPtrInst>(ptr2));
-}
-
-static bool isSameBC(BitCastInst *bc1, BitCastInst *bc2) {
-  Type *t1 = bc1->getType();
-  Type *t2 = bc2->getType();
-
-  // if (t1 != t2)
-  //  return false;
-
-  Value *op1 = bc1->getOperand(0);
-  Value *op2 = bc2->getOperand(0);
-
-  GetElementPtrInst *gptr1 = dyn_cast<GetElementPtrInst>(op1);
-  GetElementPtrInst *gptr2 = dyn_cast<GetElementPtrInst>(op2);
-
-  if (gptr1 && gptr2 && isSameGptr(gptr1, gptr2)) {
-    // errs() << "REF: " << *bc1 << "\n";
-    // errs() << "CAND: " << *bc2 << "\n";
-    return true;
-  }
-  return false;
-}
-
-static bool isRelatable(Value *ref, Value *cand) {
-
-  BitCastInst *bc_ref = dyn_cast<BitCastInst>(ref);
-  BitCastInst *bc_cand = dyn_cast<BitCastInst>(cand);
-
-  if (bc_ref && bc_cand) {
-    return isSameBC(bc_ref, bc_cand);
-  }
-
-  return false;
-}
-
-void variable_correspondence::find_init_corr(Function &f) {
-  errs() << "\nFinding initial variable correspondence in " << f.getName()
-         << "\n";
-  for (auto &b : f) {
-    for (auto &i : b) {
-      // errs() << "Instruction: ";
-      // i.dump();
-      // GetElementPtrInst *gptr = dyn_cast<GetElementPtrInst>(&i);
-      // if (!gptr)
-      //  continue;
-
-      for (auto var_corr : DUMMY_INIT_VAR_CORR) {
-        // GetElementPtrInst *mapped_val =
-        //    dyn_cast<GetElementPtrInst>(var_corr.second);
-        if (isRelatable(var_corr.second, &i)) {
-          INIT_VAR_CORR[var_corr.first] = &i;
-        }
-        // if (mapped_val && sameGptr(mapped_val, gptr)) {
-        //  INIT_VAR_CORR[var_corr.first] = gptr;
-        //}
-      }
+  for (auto &B : *f) {
+    for (auto &I : B) {
+      errs() << "Instruction: ";
+      I.dump();
+      Instruction *Inst = dyn_cast<Instruction>(&I);
+      errs() << "Use Def\n";
+      // use_defs(Inst, 1, INIT_VAR_CORR);
+      // errs() << "Def Use\n";
+      // def_use(Inst, 1);
+      errs() << "\n\n";
     }
-  }
-  for (auto varr_corr : INIT_VAR_CORR) {
-    errs() << varr_corr.first << " : " << *(varr_corr.second) << "\n";
   }
 }

@@ -27,9 +27,7 @@ namespace llvm {
 // class variable_correspondence : public FunctionPass {
 class variable_correspondence : public ModulePass {
 private:
-  // Function *Func;
   Module *Mod;
-  map<string, Value *> DUMMY_INIT_VAR_CORR, INIT_VAR_CORR;
 
 public:
   static char ID;
@@ -39,10 +37,10 @@ public:
 
   // virtual bool runOnFunction(Function &F);
   virtual bool runOnModule(Module &F);
-  void dfa();
+  void dfa(Module &M);
 
-  void find_dummy_init_corr(Function &F);
-  void find_init_corr(Function &F);
+  void find_dummy_init_corr(Module &M);
+  void find_init_corr(Module &M);
 
   virtual void getAnalysisUsage(AnalysisUsage &AU) const {
     AU.setPreservesAll();

@@ -40,6 +40,7 @@ void init_var_correspondence() {
       "movq $50, %rsi\n\t"
       "popq %rsi\n\t"
       "pushq %rdi\n\t"
+      "movl $90, %edi\n\t"
       "movq $60, %rdi\n\t"
       "popq %rdi\n\t"
       "pushq %rsp\n\t"
