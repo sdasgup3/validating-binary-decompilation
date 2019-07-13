@@ -7,20 +7,14 @@
 //
 //===----------------------------------------------------------------------===//
 
-#define DEBUG_TYPE "variable_correspondence"
 #include "variable_correspondence.h"
+#include "llvm-dfg.h"
 #include "signature.h"
-#include "llvm/ADT/PostOrderIterator.h"
-#include "llvm/IR/CFG.h"
-#include "llvm/IR/Constants.h"
-#include "llvm/IR/Function.h"
-#include "llvm/IR/InstIterator.h"
-#include "llvm/IR/IntrinsicInst.h"
-#include "llvm/IR/Module.h"
+#include "llvm/Support/CommandLine.h"
 #include "llvm/Support/Debug.h"
-#include "llvm/Support/FileSystem.h"
-#include "llvm/Support/GraphWriter.h"
 #include "llvm/Support/raw_ostream.h"
+#undef DEBUG_TYPE
+#define DEBUG_TYPE "variable_correspondence"
 
 using namespace llvm;
 
@@ -113,22 +107,6 @@ void def_use(Instruction *I, int tabcount) {
 //  }
 //}
 
-static void writeCFGToDotFile(Function &F) {
-  std::string Filename = ("cfg." + F.getName() + ".dot").str();
-  errs() << "WritingME '" << Filename << "'...";
-
-  std::error_code EC;
-  raw_fd_ostream File(Filename, EC, sys::fs::F_Text);
-
-  if (!EC) {
-    WriteGraph(File, (const Function *)&F, true, "DSAND");
-    errs() << "test\n";
-  } else {
-    errs() << "  error opening file for writing!";
-  }
-  errs() << "\n";
-}
-
 /*******************************************************************
   * Function :  dfa
   * Purpose  :
@@ -144,7 +122,7 @@ void variable_correspondence::dfa(Module &M) {
     break;
   }
 
-  writeCFGToDotFile(*f);
+  writeDFGToDotFile(f);
   // errs() << "\n==========================================\n";
   // errs() << "Analysing Function : " << f->getName() << "\n";
   // errs() << "==========================================\n";
@@ -162,48 +140,3 @@ void variable_correspondence::dfa(Module &M) {
   //  }
   //}
 }
-
-//===--------------------------------------------------------------------===//
-// GraphTraits specializations for instructions graphs (data flow graphs)
-//===--------------------------------------------------------------------===//
-
-// Provide specializations of GraphTraits to be able to treat a instruction as a
-// graph of basic blocks...
-
-// template <> struct GraphTraits<Instruction*> {
-//  typedef Instruction *NodeRef;
-//  typedef succ_iterator ChildIteratorType;
-//
-//  static NodeRef getEntryNode(Instruction *I) { return I; }
-//  static ChildIteratorType child_begin(NodeRef N) {
-//
-//    return succ_begin(N->getParent()); }
-//  static ChildIteratorType child_end(NodeRef N) { return succ_end(N); }
-//};
-
-// template <> struct GraphTraits<BasicBlock*> {
-//  typedef BasicBlock *NodeRef;
-//  typedef succ_iterator ChildIteratorType;
-//
-//  static NodeRef getEntryNode(BasicBlock *BB) { return BB; }
-//  static ChildIteratorType child_begin(NodeRef N) { return succ_begin(N); }
-//  static ChildIteratorType child_end(NodeRef N) { return succ_end(N); }
-//};
-//
-//
-// template <> struct GraphTraits<Function*> : public GraphTraits<BasicBlock*> {
-//  static NodeRef getEntryNode(Function *F) { return &F->getEntryBlock(); }
-//
-//  // nodes_iterator/begin/end - Allow iteration over all nodes in the graph
-//  typedef pointer_iterator<Function::iterator> nodes_iterator;
-//
-//  static nodes_iterator nodes_begin(Function *F) {
-//    return nodes_iterator(F->begin());
-//  }
-//
-//  static nodes_iterator nodes_end(Function *F) {
-//    return nodes_iterator(F->end());
-//  }
-//
-//  static size_t size(Function *F) { return F->size(); }
-//};

@@ -15,16 +15,17 @@
 #ifndef __VARIABLE_CORRESPONDENCE_H__
 #define __VARIABLE_CORRESPONDENCE_H__
 
+#include "llvm/IR/InstIterator.h"
 #include "llvm/IR/InstVisitor.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/Pass.h"
 #include <map>
 #include <string>
 using namespace std;
+using namespace llvm;
 
 namespace llvm {
 
-// class variable_correspondence : public FunctionPass {
 class variable_correspondence : public ModulePass {
 private:
   Module *Mod;
@@ -32,10 +33,8 @@ private:
 public:
   static char ID;
 
-  // variable_correspondence() : FunctionPass(ID) {}
   variable_correspondence() : ModulePass(ID) {}
 
-  // virtual bool runOnFunction(Function &F);
   virtual bool runOnModule(Module &F);
   void dfa(Module &M);
 
@@ -46,6 +45,7 @@ public:
     AU.setPreservesAll();
   };
 };
-}
+
+} // end llvm namespace
 
 #endif

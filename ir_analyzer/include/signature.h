@@ -15,20 +15,25 @@
 #ifndef __SIGNATURE_H__
 #define __SIGNATURE_H__
 
-#define DEBUG_TYPE "signature"
 #include "llvm/IR/InstVisitor.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/raw_ostream.h"
 #include <map>
 #include <string>
+
+#undef DEBUG_TYPE
+#define DEBUG_TYPE "signature"
+
 using namespace std;
 using namespace llvm;
+
+namespace llvm {
 
 class Signature {
 private:
   vector<Type *> sigTypes;
-  vector<int64_t> gptrIndices;
+  vector<size_t> gptrIndices;
   void createSignature(Value *V);
 
 public:
@@ -37,8 +42,9 @@ public:
   void createBCSignature(BitCastInst *bc);
   void createGPTRSignature(GetElementPtrInst *gptr);
   bool matchSignature(Value *V);
-  bool matchBCSignature(BitCastInst *bc, int typeIdx);
-  bool matchGPTRSignature(GetElementPtrInst *gptr, int typeIdx, int gptrIdx);
+  bool matchBCSignature(BitCastInst *bc, size_t typeIdx);
+  bool matchGPTRSignature(GetElementPtrInst *gptr, size_t typeIdx,
+                          size_t gptrIdx);
   void dumpSignature();
 };
 
@@ -47,4 +53,6 @@ extractSignaturesFromModule(Module &M, const string &functionToFindInitState);
 map<Value *, string>
 applySignaturesToModule(Module &M, const string &FunctionToAnalyze,
                         const map<string, vector<Signature *>> &signatureInfo);
+
+} // end llvm namespace
 #endif

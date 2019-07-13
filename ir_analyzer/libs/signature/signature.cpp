@@ -13,6 +13,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "signature.h"
+using namespace llvm;
 
 /*******************************************************************
   * Function :
@@ -69,7 +70,7 @@ void Signature::dumpSignature() {
 /*
 ** Match Signature routines
 */
-bool Signature::matchBCSignature(BitCastInst *bc, int typeIdx) {
+bool Signature::matchBCSignature(BitCastInst *bc, size_t typeIdx) {
   // if ((typeIdx >= sigTypes.size()) || (sigTypes[typeIdx] != bc->getType())) {
   //  return false;
   //}
@@ -82,8 +83,8 @@ bool Signature::matchBCSignature(BitCastInst *bc, int typeIdx) {
   return false;
 }
 
-bool Signature::matchGPTRSignature(GetElementPtrInst *gptr, int typeIdx,
-                                   int gptrIdx) {
+bool Signature::matchGPTRSignature(GetElementPtrInst *gptr, size_t typeIdx,
+                                   size_t gptrIdx) {
   for (auto index = gptr->idx_begin(); index != gptr->idx_end(); ++index) {
     ConstantInt *cint = dyn_cast<ConstantInt>(index);
     if (!cint)
@@ -171,7 +172,8 @@ void Signature::createSignature(Value *V) {
 */
 
 map<string, vector<Signature *>>
-extractSignaturesFromModule(Module &M, const string &functionToFindInitState) {
+llvm::extractSignaturesFromModule(Module &M,
+                                  const string &functionToFindInitState) {
   Function *f;
   map<string, vector<Signature *>> signatureInfo;
 
@@ -242,9 +244,9 @@ static pair<bool, string> applySignaturesToInstruction(
   return pair<bool, string>(false, "");
 }
 
-map<Value *, string>
-applySignaturesToModule(Module &M, const string &FunctionToAnalyze,
-                        const map<string, vector<Signature *>> &signatureInfo) {
+map<Value *, string> llvm::applySignaturesToModule(
+    Module &M, const string &FunctionToAnalyze,
+    const map<string, vector<Signature *>> &signatureInfo) {
   Function *f;
   map<Value *, string> initVariableCorrespondence;
 
