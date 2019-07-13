@@ -15,10 +15,11 @@
 #ifndef __SIGNATURE_H__
 #define __SIGNATURE_H__
 
+#define DEBUG_TYPE "signature"
 #include "llvm/IR/InstVisitor.h"
 #include "llvm/IR/Instructions.h"
-#include "llvm/Support/raw_ostream.h"
 #include "llvm/Support/Debug.h"
+#include "llvm/Support/raw_ostream.h"
 #include <map>
 #include <string>
 using namespace std;
@@ -47,4 +48,3 @@ map<Value *, string>
 applySignaturesToModule(Module &M, const string &FunctionToAnalyze,
                         const map<string, vector<Signature *>> &signatureInfo);
 #endif
-

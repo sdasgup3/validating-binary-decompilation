@@ -4,7 +4,8 @@
 ```
 cd source
 mkdir build; cd build;
-cmake .. -DLLVM_ROOT=/home/sdasgup3/Install/llvm/llvm-4.0.0.obj/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ABI_BREAKING_CHECKS=ON
+// cmake .. -DLLVM_ROOT=/home/sdasgup3/Install/llvm/llvm-4.0.0.obj/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ABI_BREAKING_CHECKS=ON
+cmake .. -DLLVM_ROOT=/home/sdasgup3/Install/llvm/llvm-4.0.0.obj/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ABI_BREAKING_CHECKS=OFF
 cmake --build .
 make -j8
 

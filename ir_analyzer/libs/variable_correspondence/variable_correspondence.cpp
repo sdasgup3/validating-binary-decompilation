@@ -19,6 +19,7 @@
 #include "llvm/IR/Module.h"
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/FileSystem.h"
+#include "llvm/Support/GraphWriter.h"
 #include "llvm/Support/raw_ostream.h"
 
 using namespace llvm;
@@ -27,11 +28,11 @@ char variable_correspondence::ID = 0;
 static RegisterPass<variable_correspondence> X("var_corr", "To Do");
 
 cl::opt<std::string>
-    FunctionToAnalyze("target_function",
+    FunctionToAnalyze("target-function",
                       cl::desc("Specify the llvm function name to analyze"),
                       cl::value_desc("Function Name"), cl::Required);
 cl::opt<std::string> FunctionToFindInitState(
-    "init_state_function",
+    "init-state-function",
     cl::desc("Specify the llvm function name to determine the initial variable "
              "correspondence"),
     cl::value_desc("Function Name"), cl::Required);
@@ -51,7 +52,7 @@ bool variable_correspondence::runOnModule(Module &M) {
       applySignaturesToModule(M, FunctionToAnalyze, signatureInfo);
 
   // Extracting data-flow facts
-  // dfa(M);
+  dfa(M);
 
   return false; // Analysis pass
 }
@@ -112,6 +113,22 @@ void def_use(Instruction *I, int tabcount) {
 //  }
 //}
 
+static void writeCFGToDotFile(Function &F) {
+  std::string Filename = ("cfg." + F.getName() + ".dot").str();
+  errs() << "WritingME '" << Filename << "'...";
+
+  std::error_code EC;
+  raw_fd_ostream File(Filename, EC, sys::fs::F_Text);
+
+  if (!EC) {
+    WriteGraph(File, (const Function *)&F, true, "DSAND");
+    errs() << "test\n";
+  } else {
+    errs() << "  error opening file for writing!";
+  }
+  errs() << "\n";
+}
+
 /*******************************************************************
   * Function :  dfa
   * Purpose  :
@@ -127,20 +144,66 @@ void variable_correspondence::dfa(Module &M) {
     break;
   }
 
-  errs() << "\n==========================================\n";
-  errs() << "Analysing Function : " << f->getName() << "\n";
-  errs() << "==========================================\n";
+  writeCFGToDotFile(*f);
+  // errs() << "\n==========================================\n";
+  // errs() << "Analysing Function : " << f->getName() << "\n";
+  // errs() << "==========================================\n";
 
-  for (auto &B : *f) {
-    for (auto &I : B) {
-      errs() << "Instruction: ";
-      I.dump();
-      Instruction *Inst = dyn_cast<Instruction>(&I);
-      errs() << "Use Def\n";
-      // use_defs(Inst, 1, INIT_VAR_CORR);
-      // errs() << "Def Use\n";
-      // def_use(Inst, 1);
-      errs() << "\n\n";
-    }
-  }
+  // for (auto &B : *f) {
+  //  for (auto &I : B) {
+  //    errs() << "Instruction: ";
+  //    I.dump();
+  //    Instruction *Inst = dyn_cast<Instruction>(&I);
+  //    //errs() << "Use Def\n";
+  //    // use_defs(Inst, 1, INIT_VAR_CORR);
+  //    // errs() << "Def Use\n";
+  //    // def_use(Inst, 1);
+  //    errs() << "\n\n";
+  //  }
+  //}
 }
+
+//===--------------------------------------------------------------------===//
+// GraphTraits specializations for instructions graphs (data flow graphs)
+//===--------------------------------------------------------------------===//
+
+// Provide specializations of GraphTraits to be able to treat a instruction as a
+// graph of basic blocks...
+
+// template <> struct GraphTraits<Instruction*> {
+//  typedef Instruction *NodeRef;
+//  typedef succ_iterator ChildIteratorType;
+//
+//  static NodeRef getEntryNode(Instruction *I) { return I; }
+//  static ChildIteratorType child_begin(NodeRef N) {
+//
+//    return succ_begin(N->getParent()); }
+//  static ChildIteratorType child_end(NodeRef N) { return succ_end(N); }
+//};
+
+// template <> struct GraphTraits<BasicBlock*> {
+//  typedef BasicBlock *NodeRef;
+//  typedef succ_iterator ChildIteratorType;
+//
+//  static NodeRef getEntryNode(BasicBlock *BB) { return BB; }
+//  static ChildIteratorType child_begin(NodeRef N) { return succ_begin(N); }
+//  static ChildIteratorType child_end(NodeRef N) { return succ_end(N); }
+//};
+//
+//
+// template <> struct GraphTraits<Function*> : public GraphTraits<BasicBlock*> {
+//  static NodeRef getEntryNode(Function *F) { return &F->getEntryBlock(); }
+//
+//  // nodes_iterator/begin/end - Allow iteration over all nodes in the graph
+//  typedef pointer_iterator<Function::iterator> nodes_iterator;
+//
+//  static nodes_iterator nodes_begin(Function *F) {
+//    return nodes_iterator(F->begin());
+//  }
+//
+//  static nodes_iterator nodes_end(Function *F) {
+//    return nodes_iterator(F->end());
+//  }
+//
+//  static size_t size(Function *F) { return F->size(); }
+//};
