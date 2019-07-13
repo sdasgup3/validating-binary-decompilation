@@ -72,7 +72,6 @@ set spelllang=en_us
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
 set termencoding=utf-8
-set window=66
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -81,6 +80,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +16 ~/Install/llvm/llvm-4.0.0.src/include/llvm/ADT/GraphTraits.h
+badd +120 ~/Install/llvm/llvm-4.0.0.src/include/llvm/Support/DOTGraphTraits.h
+badd +62 ~/Install/llvm/llvm-4.0.0.src/include/llvm/Analysis/CFGPrinter.h
+badd +149 ~/Install/llvm/llvm-4.0.0.src/lib/Analysis/CFGPrinter.cpp
+badd +101 ~/Install/llvm/llvm-4.0.0.src/include/llvm/Analysis/DOTGraphTraitsPass.h
+badd +1 ~/Install/llvm/llvm-4.0.0.src/lib/Support/GraphWriter.cpp
+badd +316 ~/Install/llvm/llvm-4.0.0.src/include/llvm/Support/GraphWriter.h
 badd +1 get_sign_instrumented.c
 badd +1 mcsema/get_sign_instrumented.ll
 badd +1 ../../../scripts/mcsema_out.sh
@@ -89,14 +95,18 @@ badd +20 log
 badd +1 mcsema/log
 badd +253 ../../ir_analyzer/libs/variable_correspondence/variable_correspondence.cpp
 badd +1 libs/variable_correspondence/variable_correspondence.cpp
-badd +1 ../../ir_analyzer/include/variable_correspondence.h
+badd +34 ../../ir_analyzer/include/variable_correspondence.h
 badd +243 ../../ir_analyzer/libs/signature.cpp
-badd +0 ~/Install/llvm/llvm-4.0.0.src/./include/llvm/ADT/GraphTraits.h
-badd +0 ~/Install/llvm/llvm-4.0.0.src/./include/llvm/IR/CFG.h
+badd +21 ~/Install/llvm/llvm-4.0.0.src/./include/llvm/IR/CFG.h
+badd +1 ../../ir_analyzer/libs/signature/signature.cpp
+badd +1 ../../ir_analyzer/include/sample.h
+badd +1 ../../ir_analyzer/include/signature.h
+badd +0 ../../ir_analyzer/libs/utils/dump-cfg.cpp
+badd +0 ../../ir_analyzer/include/llvm-dfg.h
 argglobal
 silent! argdel *
 argadd get_sign_instrumented.c
-edit ~/Install/llvm/llvm-4.0.0.src/./include/llvm/IR/CFG.h
+edit ../../ir_analyzer/include/signature.h
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -110,7 +120,10 @@ wincmd _ | wincmd |
 vsplit
 wincmd _ | wincmd |
 vsplit
-6wincmd h
+wincmd _ | wincmd |
+vsplit
+7wincmd h
+wincmd w
 wincmd w
 wincmd w
 wincmd w
@@ -121,13 +134,14 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 61 + 114) / 229)
-exe 'vert 2resize ' . ((&columns * 61 + 114) / 229)
-exe 'vert 3resize ' . ((&columns * 1 + 114) / 229)
-exe 'vert 4resize ' . ((&columns * 1 + 114) / 229)
-exe 'vert 5resize ' . ((&columns * 24 + 114) / 229)
-exe 'vert 6resize ' . ((&columns * 38 + 114) / 229)
-exe 'vert 7resize ' . ((&columns * 37 + 114) / 229)
+exe 'vert 1resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 2resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 3resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 4resize ' . ((&columns * 174 + 94) / 188)
+exe 'vert 5resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 6resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 7resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 8resize ' . ((&columns * 1 + 94) / 188)
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -240,15 +254,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 32) / 65)
+let s:l = 31 - ((30 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 02|
+31
+normal! 014|
 wincmd w
 argglobal
-edit ~/Install/llvm/llvm-4.0.0.src/./include/llvm/ADT/GraphTraits.h
+edit ../../ir_analyzer/libs/signature/signature.cpp
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -360,15 +374,15 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 24 - ((23 * winheight(0) + 32) / 65)
+let s:l = 253 - ((15 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
-normal! 042|
+253
+normal! 06|
 wincmd w
 argglobal
-edit ../../ir_analyzer/include/variable_correspondence.h
+edit ../../ir_analyzer/libs/utils/dump-cfg.cpp
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -480,12 +494,132 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 40 - ((18 * winheight(0) + 32) / 65)
+let s:l = 31 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
-normal! 022|
+31
+normal! 028|
+wincmd w
+argglobal
+edit ../../ir_analyzer/include/llvm-dfg.h
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+set colorcolumn=80
+setlocal colorcolumn=80
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i,kspell
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'cpp'
+setlocal filetype=cpp
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal signcolumn=auto
+setlocal smartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en_us
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'cpp'
+setlocal syntax=cpp
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 202 - ((25 * winheight(0) + 29) / 58)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+202
+normal! 05|
 wincmd w
 argglobal
 edit ../../ir_analyzer/libs/variable_correspondence/variable_correspondence.cpp
@@ -600,12 +734,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 139 - ((57 * winheight(0) + 32) / 65)
+let s:l = 27 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-139
-normal! 08|
+27
+normal! 02|
 wincmd w
 argglobal
 edit mcsema/log
@@ -720,7 +854,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 135 - ((0 * winheight(0) + 32) / 65)
+let s:l = 135 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -840,7 +974,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1315 - ((33 * winheight(0) + 32) / 65)
+let s:l = 1315 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -960,20 +1094,22 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 50 - ((0 * winheight(0) + 32) / 65)
+let s:l = 62 - ((0 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-50
-normal! 016|
+62
+normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 61 + 114) / 229)
-exe 'vert 2resize ' . ((&columns * 61 + 114) / 229)
-exe 'vert 3resize ' . ((&columns * 1 + 114) / 229)
-exe 'vert 4resize ' . ((&columns * 1 + 114) / 229)
-exe 'vert 5resize ' . ((&columns * 24 + 114) / 229)
-exe 'vert 6resize ' . ((&columns * 38 + 114) / 229)
-exe 'vert 7resize ' . ((&columns * 37 + 114) / 229)
+4wincmd w
+exe 'vert 1resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 2resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 3resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 4resize ' . ((&columns * 174 + 94) / 188)
+exe 'vert 5resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 6resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 7resize ' . ((&columns * 1 + 94) / 188)
+exe 'vert 8resize ' . ((&columns * 1 + 94) / 188)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
