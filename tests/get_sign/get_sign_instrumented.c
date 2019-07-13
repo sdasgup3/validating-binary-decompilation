@@ -27,9 +27,11 @@ void init_var_correspondence() {
       "pushq %rax\n\t"
       "movq $10, %rax\n\t"
       "popq %rax\n\t"
+
       "pushq %rbx\n\t"
       "movq $20, %rbx\n\t"
       "popq %rbx\n\t"
+
       "pushq %rcx\n\t"
       "movq $30, %rcx\n\t"
       "popq %rcx\n\t"

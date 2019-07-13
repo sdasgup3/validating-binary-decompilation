@@ -21,7 +21,7 @@ list(APPEND CMAKE_PREFIX_PATH
      "${LLVM_ROOT}/share/llvm/cmake")
 find_package(LLVM REQUIRED CONFIG)
 
-#SET(CMAKE_CXX_FLAGS "-Wall -fno-rtti")
+# SET(CMAKE_CXX_FLAGS "-Wall -fno-rtti")
 set(LLVM_BUILD_TOOLS ON)
 
 
@@ -36,12 +36,13 @@ include(AddLLVM) # used to add our own modules
 # propagate LLVM-specific variables to this project
 add_definitions(${LLVM_DEFINITIONS})
 include_directories(${LLVM_INCLUDE_DIRS})
-
+message(INFO ${LLVM_INCLUDE_DIRS})
 # Following commands are specific to this tutorial
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
+
 add_subdirectory(libs)
-add_subdirectory(tools)
+#add_subdirectory(tools)
 #add_subdirectory(tests)
 
 # testing part relies on lit, dependency is required to avoid cmake bloat
