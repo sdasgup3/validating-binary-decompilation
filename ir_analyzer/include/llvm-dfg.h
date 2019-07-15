@@ -21,6 +21,7 @@
 #include "llvm/Support/GraphWriter.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Support/Debug.h"
+#include "llvm/IR/Value.h"
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-dfg"
 using namespace std;
@@ -47,6 +48,7 @@ public:
   explicit inline InstSuccIterator(Instruction *i) : I(i), idx(0) {}
   // end iterator
   inline InstSuccIterator(Instruction *i, bool) : I(i) {
+    // Finding instruction successor as per the CFG
     if (!i)
       idx = 0;
 
@@ -66,15 +68,19 @@ public:
     idx++;
     return *this;
   }
+
   InstSuccIterator operator++(int) {
     InstSuccIterator tmp(*this);
     operator++();
     return tmp;
   }
+
   bool operator!=(const InstSuccIterator &rhs) const {
     return !operator==(rhs);
   }
+
   bool operator==(const InstSuccIterator &rhs) const { return idx == rhs.idx; }
+
   reference operator*() {
     BasicBlock *BB = I->getParent();
     BasicBlock::iterator it(I);
@@ -93,6 +99,64 @@ public:
   pointer operator->() { return operator*(); }
 };
 
+class InstdfSuccIterator
+    : public std::iterator<std::input_iterator_tag, Instruction, int,
+                           Instruction *, Instruction *> {
+  typedef std::iterator<std::random_access_iterator_tag, Instruction, int,
+                        Instruction *, Instruction *>
+      super;
+
+private:
+  Instruction *I;
+  unsigned idx;
+
+public:
+  typedef typename super::pointer pointer;
+  typedef typename super::reference reference;
+
+  // begin iterator
+  explicit inline InstdfSuccIterator(Instruction *i) : I(i), idx(0) {}
+  // end iterator
+  inline InstdfSuccIterator(Instruction *i, bool) : I(i) {
+    // Finding instruction successor as per the data flow
+    if (!i || i->user_empty())
+      idx = 0;
+    idx = I->getNumUses();
+  }
+
+  InstdfSuccIterator &operator++() {
+    idx++;
+    return *this;
+  }
+
+  InstdfSuccIterator operator++(int) {
+    InstdfSuccIterator tmp(*this);
+    operator++();
+    return tmp;
+  }
+
+  bool operator!=(const InstdfSuccIterator &rhs) const {
+    return !operator==(rhs);
+  }
+
+  bool operator==(const InstdfSuccIterator &rhs) const { 
+    return idx == rhs.idx; }
+
+  reference operator*() {
+    Value::user_iterator it = 	I->user_begin();
+    for(unsigned i = 0 ; i < idx; i++)
+      it++;
+    Instruction *Inst =  dyn_cast<Instruction>(*it);
+    if(!Inst) {
+      errs() << *I << "\n";
+      assert(0 && "User of above instruction is not an Instruction\n");
+    }
+    return Inst;
+  }
+
+  pointer operator->() { return operator*(); }
+};
+
 /*
 **  Provide specializations of GraphTraits to be able to treat a function as
 **  a graph of instructions... 
@@ -101,14 +165,14 @@ template <> struct GraphTraits<Instruction *> {
   typedef Instruction *NodeRef;
   // typedef succ_iterator ChildIteratorType;
   // typedef BasicBlock::iterator ChildIteratorType;
-  typedef InstSuccIterator ChildIteratorType;
+  typedef InstdfSuccIterator ChildIteratorType;
 
   static NodeRef getEntryNode(Instruction *I) { return I; }
   static ChildIteratorType child_begin(NodeRef N) {
-    return InstSuccIterator(N);
+    return InstdfSuccIterator(N);
   }
   static ChildIteratorType child_end(NodeRef N) {
-    return InstSuccIterator(N, true);
+    return InstdfSuccIterator(N, true);
   }
 };
 
@@ -209,7 +273,6 @@ struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
   std::string getNodeLabel(const Instruction *Node,
                            const Function *Graph) {
     DEBUG(dbgs() << "In getNodeLabel\n");
-    // errs() << "At DOTGraphTraits::getNodeLabel\n";
     if (isSimple())
       return getSimpleNodeLabel(Node, Graph);
     else
