@@ -56,15 +56,26 @@ bool variable_correspondence::runOnModule(Module &M) {
   * Purpose  :
 ********************************************************************/
 void def_use(Instruction *I, int tabcount) {
-  //  for (User *U : I->users()) {
-  //    if (Instruction *Inst = dyn_cast<Instruction>(U)) {
-  //      for (int i = 0; i < tabcount; i++) {
-  //        errs() << "\t";
-  //      }
-  //      errs() << *Inst << "\n";
-  //      def_use(Inst, tabcount + 1);
-  //    }
-  //  }
+  // for (User *U : I->users()) {
+  Value::user_iterator S = I->user_begin();
+  Value::user_iterator E = I->user_end();
+  unsigned count = 0;
+  for (; S != E; S++) {
+    // errs() << "HERE: " << **S << "\n";
+    Instruction *Inst = dyn_cast<Instruction>(*S);
+    if (Inst) {
+      for (int i = 0; i < tabcount; i++) {
+        errs() << "\t";
+      }
+      // errs() << *Inst << "\n";
+      // def_use(Inst, tabcount + 1);
+    } else {
+      errs() << "User Not Inst: " << *I << "\n";
+    }
+    count++;
+  }
+
+  assert(count == I->getNumUses() && "CHECK2");
 }
 
 /*******************************************************************
@@ -121,7 +132,6 @@ void variable_correspondence::dfa(Module &M) {
     f = &Func;
     break;
   }
-
   writeDFGToDotFile(f);
   // errs() << "\n==========================================\n";
   // errs() << "Analysing Function : " << f->getName() << "\n";
@@ -132,10 +142,10 @@ void variable_correspondence::dfa(Module &M) {
   //    errs() << "Instruction: ";
   //    I.dump();
   //    Instruction *Inst = dyn_cast<Instruction>(&I);
-  //    //errs() << "Use Def\n";
-  //    // use_defs(Inst, 1, INIT_VAR_CORR);
-  //    // errs() << "Def Use\n";
-  //    // def_use(Inst, 1);
+  //    // errs() << "Use Def\n";
+  //    // use_defs(Inst, 1);
+  //    errs() << "Def Use\n";
+  //    def_use(Inst, 1);
   //    errs() << "\n\n";
   //  }
   //}
