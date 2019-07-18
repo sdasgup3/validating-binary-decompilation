@@ -1,0 +1,4 @@
+add %rax, %rax
+xor %rax, %rax
+vaddpd %ymm0, %ymm1, %ymm2
+
