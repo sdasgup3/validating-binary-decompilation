@@ -39,6 +39,7 @@ from segment import *
 from collect_variable import *
 from exception import *
 
+
 #hack for IDAPython to see google protobuf lib
 if os.path.isdir('/usr/lib/python2.7/dist-packages'):
   sys.path.append('/usr/lib/python2.7/dist-packages')
@@ -50,6 +51,7 @@ tools_disass_ida_dir = os.path.dirname(__file__)
 tools_disass_dir = os.path.dirname(tools_disass_ida_dir)
 
 # Note: The bootstrap file will copy binary_analysis_data_pb2.py into this dir!!
+from google.protobuf import text_format
 import binary_analysis_data_pb2
 
 EXTERNAL_FUNCS_TO_RECOVER = {}
@@ -1519,6 +1521,12 @@ if __name__ == "__main__":
       help="Log to a specific file. Default is stderr.")
 
   parser.add_argument(
+      "--text_output",
+      type=argparse.FileType('w'),
+      default=None,
+      help="Pretty print Output.")
+
+  parser.add_argument(
       '--arch',
       help='Name of the architecture. Valid names are x86, amd64.',
       required=True)
@@ -1644,6 +1652,11 @@ if __name__ == "__main__":
     DEBUG("Saving to: {0}".format(args.output.name))
     args.output.write(M.SerializeToString())
     args.output.close()
+
+    if args.text_output.name != "":
+      DEBUG("Saving Textual Dump to: {0}".format(args.text_output.name))
+      args.text_output.write(text_format.MessageToString(M))
+      args.text_format.close()
 
   except:
     DEBUG(traceback.format_exc())

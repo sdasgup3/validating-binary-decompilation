@@ -7,21 +7,20 @@
 //
 //===----------------------------------------------------------------------===//
 //
-// This file provide GraphTraits specializations for instructions graphs 
+// This file provide GraphTraits specializations for instructions graphs
 // (data flow graphs)
 //
 //===----------------------------------------------------------------------===//
-
 
 #ifndef __LLVM_DFG_H__
 #define __LLVM_DFG_H__
 
 #include "llvm/IR/InstIterator.h"
-#include "llvm/Pass.h"
-#include "llvm/Support/GraphWriter.h"
-#include "llvm/Support/FileSystem.h"
-#include "llvm/Support/Debug.h"
 #include "llvm/IR/Value.h"
+#include "llvm/Pass.h"
+#include "llvm/Support/Debug.h"
+#include "llvm/Support/FileSystem.h"
+#include "llvm/Support/GraphWriter.h"
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-dfg"
 using namespace std;
@@ -139,15 +138,16 @@ public:
     return !operator==(rhs);
   }
 
-  bool operator==(const InstdfSuccIterator &rhs) const { 
-    return idx == rhs.idx; }
+  bool operator==(const InstdfSuccIterator &rhs) const {
+    return idx == rhs.idx;
+  }
 
   reference operator*() {
-    Value::user_iterator it = 	I->user_begin();
-    for(unsigned i = 0 ; i < idx; i++)
+    Value::user_iterator it = I->user_begin();
+    for (unsigned i = 0; i < idx; i++)
       it++;
-    Instruction *Inst =  dyn_cast<Instruction>(*it);
-    if(!Inst) {
+    Instruction *Inst = dyn_cast<Instruction>(*it);
+    if (!Inst) {
       errs() << *I << "\n";
       assert(0 && "User of above instruction is not an Instruction\n");
     }
@@ -159,7 +159,7 @@ public:
 
 /*
 **  Provide specializations of GraphTraits to be able to treat a function as
-**  a graph of instructions... 
+**  a graph of instructions...
 */
 template <> struct GraphTraits<Instruction *> {
   typedef Instruction *NodeRef;
@@ -199,15 +199,13 @@ template <> struct GraphTraits<Function *> : public GraphTraits<Instruction *> {
   // static size_t size(Function *F) { return F->size(); }
 };
 
-
 /*
 **  Provide specializations of DOTGraphTraits to be able to print instructions
 *   as dot plot nodes.
 */
-template<>
-struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
+template <> struct DOTGraphTraits<Function *> : public DefaultDOTGraphTraits {
 
-  DOTGraphTraits (bool isSimple=false) : DefaultDOTGraphTraits(isSimple) {}
+  DOTGraphTraits(bool isSimple = false) : DefaultDOTGraphTraits(isSimple) {}
 
   static std::string getGraphName(const Function *F) {
     return "CFG for '" + F->getName().str() + "' function";
@@ -238,22 +236,23 @@ struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
 
     OS << *Node;
     std::string OutStr = OS.str();
-    if (OutStr[0] == '\n') OutStr.erase(OutStr.begin());
+    if (OutStr[0] == '\n')
+      OutStr.erase(OutStr.begin());
 
     // Process string output to make it nicer...
     unsigned ColNum = 0;
     unsigned LastSpace = 0;
     for (unsigned i = 0; i != OutStr.length(); ++i) {
-      if (OutStr[i] == '\n') {                            // Left justify
+      if (OutStr[i] == '\n') { // Left justify
         OutStr[i] = '\\';
-        OutStr.insert(OutStr.begin()+i+1, 'l');
+        OutStr.insert(OutStr.begin() + i + 1, 'l');
         ColNum = 0;
         LastSpace = 0;
-      } else if (OutStr[i] == ';') {                      // Delete comments!
-        unsigned Idx = OutStr.find('\n', i+1);            // Find end of line
-        OutStr.erase(OutStr.begin()+i, OutStr.begin()+Idx);
+      } else if (OutStr[i] == ';') {             // Delete comments!
+        unsigned Idx = OutStr.find('\n', i + 1); // Find end of line
+        OutStr.erase(OutStr.begin() + i, OutStr.begin() + Idx);
         --i;
-      } else if (ColNum == MaxColumns) {                  // Wrap lines.
+      } else if (ColNum == MaxColumns) { // Wrap lines.
         // Wrap very long names even though we can't find a space.
         if (!LastSpace)
           LastSpace = i;
@@ -261,8 +260,7 @@ struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
         ColNum = i - LastSpace;
         LastSpace = 0;
         i += 3; // The loop will advance 'i' again.
-      }
-      else
+      } else
         ++ColNum;
       if (OutStr[i] == ' ')
         LastSpace = i;
@@ -270,8 +268,7 @@ struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
     return OutStr;
   }
 
-  std::string getNodeLabel(const Instruction *Node,
-                           const Function *Graph) {
+  std::string getNodeLabel(const Instruction *Node, const Function *Graph) {
     DEBUG(dbgs() << "In getNodeLabel\n");
     if (isSimple())
       return getSimpleNodeLabel(Node, Graph);
@@ -280,8 +277,9 @@ struct DOTGraphTraits<Function*> : public DefaultDOTGraphTraits {
   }
 };
 
-void writeDFGToDotFile(Function *F) {
-  std::string Filename = ("cfg." + F->getName() + ".dot").str();
+void writeDFGToDotFile(Function *F, string OutputDFG) {
+  std::string Filename =
+      OutputDFG == "" ? ("cfg." + F->getName() + ".dot").str() : OutputDFG;
   errs() << "Writing '" << Filename << "'...";
 
   std::error_code EC;
@@ -293,7 +291,6 @@ void writeDFGToDotFile(Function *F) {
     errs() << "  error opening file for writing!";
   }
 }
-
 
 } // end llvm namespace
 
