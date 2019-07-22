@@ -67,5 +67,9 @@ kompile:
 kprove:
 	@echo "KProve instruction semantics"
 	@kprove test-spec.k  --directory ${HOME}/Github/X86-64-semantics/semantics --smt_prelude ${HOME}/Github/k/k-distribution/include/z3/basic.smt2
+
+kast:
+	@echo "KAst instruction semantics"
+	@kast test.s  --directory ${HOME}/Github/X86-64-semantics/semantics
 test:
 	@echo "T Cleaning"

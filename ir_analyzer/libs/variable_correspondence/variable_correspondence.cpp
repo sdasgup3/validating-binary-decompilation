@@ -31,6 +31,12 @@ cl::opt<std::string> FunctionToFindInitState(
              "correspondence"),
     cl::value_desc("Function Name"), cl::Required);
 
+cl::opt<std::string> OutputDFG(
+    "output-dfg-file",
+    cl::desc(
+        "Specify the filename used to dump the llvm DFG for FunctionToAnalyze"),
+    cl::value_desc("File Name"));
+
 /*******************************************************************
   * Function :   runOnModule
   * Purpose  :   Entry of the module pass
@@ -132,7 +138,7 @@ void variable_correspondence::dfa(Module &M) {
     f = &Func;
     break;
   }
-  writeDFGToDotFile(f);
+  writeDFGToDotFile(f, OutputDFG);
   // errs() << "\n==========================================\n";
   // errs() << "Analysing Function : " << f->getName() << "\n";
   // errs() << "==========================================\n";

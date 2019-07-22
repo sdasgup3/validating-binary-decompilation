@@ -45,7 +45,7 @@ public:
   bool matchBCSignature(BitCastInst *bc, size_t typeIdx);
   bool matchGPTRSignature(GetElementPtrInst *gptr, size_t typeIdx,
                           size_t gptrIdx);
-  void dumpSignature();
+  void dumpSignature(int tabcount = 0);
 };
 
 map<string, vector<Signature *>>
