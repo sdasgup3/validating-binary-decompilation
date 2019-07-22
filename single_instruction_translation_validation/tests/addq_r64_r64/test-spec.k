@@ -19,6 +19,7 @@ module TEST-SPEC
         "RSP" |-> ( ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1016) ) =>
                       ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1024) )) //@ensure
         "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1016) ) // @ensure
+
         "RAX" |-> (mi(64, V_RAX:Int):MInt => mi(64, _:Int))
         "RBX" |-> (mi(64, V_RBX:Int):MInt => mi(64, _:Int))
         "AF" |-> (_:MInt => _:MInt)
