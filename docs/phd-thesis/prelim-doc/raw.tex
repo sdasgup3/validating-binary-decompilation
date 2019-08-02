@@ -1,0 +1,15 @@
+\cmt{
+Chen \etal~\cite{CLSS2015}
+The second approach performs validation based on the basic blocks of the programs. This approach is widely applied in
+the validation of optimizing compilers [8,9]. However, the basic-block validation is not suitable for validating static binary translators because the target addresses of indirect branches may not be resolved completely at static time, which implies that it may not be possible to build an accurate control flow graph from binary code. In contrast, we choose to perform validation based on individual instructions since per-instruction validation can help to detect the mistranslated instructions more accurately.
+
+
+The notion of a certifying
+compiler~\cite{Necula:2000,Pnueli:1998,Stepp:2011,Tristan:2011} is
+significantly easier to employ than a formal compiler
+verification~\cite{Leroy:2009}, in part because it is generally easier to
+verify the correctness of the result of a computation than to prove the
+correctness of the computation itself. 
+
+}
+
