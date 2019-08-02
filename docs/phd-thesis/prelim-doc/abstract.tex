@@ -1,0 +1,61 @@
+%\section{Abstract}
+
+The ability to directly reason about the binary code is desirable, not only
+because, in many circumstances, it is the only way to prove (or disprove)
+  properties of the code that is actually executed (for example, when the
+      source code is not available in case of legacy code or malware), but also
+  because it avoids the need to trust the correctness of
+  compilers~\cite{Thompson,WYSINWYE}.
+
+Binary analysis is generally performed by existing decompiler projects
+%~\cite{McSema:Recon14,Remill,Angr1,BAP:CAV11,Radare2},
+~\cite{McSema:Recon14,Remill,Angr1,BAP:CAV11,Radare2}, by (1) translating
+machine code to an intermediate representation (IR), and thereby exposing many
+high-level properties (like control flow, function boundary and prototype,
+    variable and their type etc.) of the binary, which are otherwise lost
+during the compilation pipeline, and (2) performing the analysis at the IR
+level.  Analyzing the binary using the abstractions lifted to such high-level
+IR assist further analysis and/or optimization. Even though such analyzes are
+agnostic to any specific high-level IR, but many
+projects~\cite{McSema:Recon14,Remill,FCD,reopt,llvm-mctoll} prefer to employ
+LLVM IR. LLVM IR, being an industry standard compiler IR, enables many analyses
+and optimizations out-of-the-box which allows building a static binary analyzer
+with minimal effort.
+
+Formally establishing faithfulness of the decompilation (i.e. translation from
+    machine code to high level IR) is pivotal to gain trust in any binary
+analysis and, to the best of our knowledge, there is no exiting work which
+proves equivalence of a translation from binary to high-level IR.  
+We believe an effort in the
+direction would enable both the developers of binary translators, to validate their implementation, and the clients of those translators, to gain trust in their analysis results.
+
+The goal of our work is to formally validate such translation by leveraging the
+semantics of the languages involved (e.g. the Intel's X86-64 and LLVM IR). Some
+high level steps towards that goal involves defining the semantics of X86-64
+and LLVM IR using K framework, a framework to define language semantics, and
+using the formal analysis tools which K provides ``out-of-the-box'' to develop
+an equivalence checker in order to prove equivalence between programs written in
+those languages.  We have already taken the first big step towards the goal by
+formally defining the most complete X86-64 user-level
+ISA~\cite{DasguptaAdve:PLDI19}. Moreover, the semantics of a subset of LLVM IR
+is already available~\cite{LLVMSEMA} for us to leverage and build on.
+
+Given the recent advances in translation validation in validating compilation,
+      employing \tv to validate binary translators seems a promising direction to explore, however,
+      there are additional challenges to deal with when it comes to validating
+      the decompilation pipeline, like finding function, basic block and
+      variable correspondence for checking equivalence, identifying and pruning
+      glue code added during decompilation, to make the equivalence checker
+      aware of the optimizations performed by the decompiler (e.g.  recovering
+          prototype and variables). Moreover, we would like validation approach to be
+      general enough and hence applicable to any state-of-the-art binary to
+      LLVM IR translators~\cite{McSema:Recon14,Remill,FCD,reopt,llvm-mctoll},
+      thereby avoiding any translator specific customization during validation.
+      However, having this goal makes the problem even more challenging.
+      
+      
+%Moreover, the fact that we would like to have
+%      our approach to be general enough to be applicable to any
+%      state-of-the-art binary to LLVM IR
+%      translators~\cite{McSema:Recon14,Remill,FCD,reopt,llvm-mctoll} makes the
+%      problem even more challenging.
