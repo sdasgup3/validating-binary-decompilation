@@ -1,0 +1,72 @@
+\section{Related Work}\label{sec:RW}
+
+Iman \etal~\cite{Iman2005} proposed an algorithm for solving the problem of
+finding basic block and variable correspondence between two GCC RTL programs
+compiled from the same source, but using different optimizations.  The essence
+of their technique is interpretation of the two programs on random inputs and
+comparing the histories of value changes for variables.  If the sequences of
+value changes of two variables are the same, then the variables probably
+correspond to each other, and the block in which the changes occur might also
+correspond to each other. Using random values may be inappropriate when one of
+the branches is “hard” to reach.
+
+Translation validation  has been employed heavily in the field of compiler
+correctness~\cite{VOC2002,TVOC:CAV2005,Necula:2000}.  Necula~\cite{Necula:2000}
+proposed a technique where each of the original and the optimized programs is
+firstly evaluated symbolically into a series of mutually recursive function
+definitions. A basic block and variable correspondence is inferred by a
+scanning algorithm that traverses the function definitions. The algorithm
+generates both a relation between program points and the accompanying
+constraints between program variables and memory at the program point.  
+
+For example, when the scanning algorithm visits a branch condition \m{e} in the
+original program, it determines whether \m{e} is eliminated due to the
+optimizations. If it is eliminated, then the information collected is either
+\m{e = 0} or \m{$\sim$e = 0}, depending on which branch of \m{e} is preserved
+in the optimized program. 
+%
+If \m{e} is not eliminated, then it corresponds to another branch condition
+\m{e'} in the optimized program. The information collected is either \m{e = e'}
+or \m{e = $\sim$e'}, depending on the correspondence of \m{e}’s and \m{e'}’s
+branches. One of the limitations of the algorithm is that all branches in the
+target program must correspond to branches in the source program.  Moreover, to
+find a basic block correspondence Necula’s technique uses some heuristics which
+are specific to the GNU C compiler. 
+
+
+Another translation-validation technique is ~\cite{VOC2002}. We overview VOC
+for struc- ture preserving transformations only. Such transformations admit a
+mapping between some program points in P and P'. In VOC a basic block and
+variable correspondence is represented by a mapping from some blocks in P' to
+some blocks in P, and also by a data abstraction. The domain and range of the
+block mapping form sets of control blocks. VOC chooses the first block of each
+loop body as a control block. The data abstraction is constructed as follows.
+For each block Bi in P', and for every path from block Bj leading to Bi, a set
+of equalities v = V is computed, where v and V are vari- ables in P and P'
+respectively. The equalities are implied by invariants reaching Bj, transition
+system representing the path fromBj to Bi and its counterpart in P,and the
+current constructed data abstraction. This requires the implementation of VOC
+to use a prover to generate a data abstraction. Moreover, an implementation of
+VOC for Intel’s ORC compiler, VOC-64, tries the variable equalities for every
+pair of variables except for the temporaries introduced by the compiler. This
+trial is performed by scanning the symbol table produced by the compiler.
+However, not every compiler provides the symbol table as a result of
+compilation, thus this limits the applicability of VOC-64.
+
+
+The translation validation technique by Rival~\cite{Rival:2004} provides a unifying framework for
+the certification of compilation and of compiled programs. Similarly to
+Necula’s technique, the framework is based on a symbolic representation of the
+semantics of the programs. Rival’s technique extracts basic block and variable
+correspondence from the standard debugging information if no optimizations are
+applied. However, when some optimizations are involved in the compilation, the
+optimizing phase has to be instrumented further to debug the optimized code and
+generate the correspondence between the original and the optimized programs.
+One technique to automatically generate such a correspondence is due to
+Jaramillo et. al~\cite{Jaramillo98}.  In this technique, the optimized programs initially
+starts as an identical copy of the original one, so that the mapping starts as
+an identity. As each transformation is applied, the mapping is changed to
+reflect the effects of the transformation. Thus, in this technique, one needs
+to know what and in which order the transformations are applied by the
+optimizing phase.  
+
