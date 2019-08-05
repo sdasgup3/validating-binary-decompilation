@@ -33,7 +33,7 @@ ldfg:
         for llfile in `ls *.ll`; \
 		do \
                 ${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ; \
-                dot -Tps $${llfile}.dot -o $${llfile}.ps; \
+                dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
         done; \
         cd ..
 
