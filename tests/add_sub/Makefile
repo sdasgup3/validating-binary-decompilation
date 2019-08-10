@@ -39,11 +39,11 @@ ldfg:
         cd ..
 
 xdfg:
-	${STOKE}/stoke_debug_cfg --target binary/${ASM} --dfg -o mcsema/${PROG}.pdf
+	${STOKE}/stoke_debug_dfg --target binary/${ASM} --dfg -o mcsema/${PROG}.pdf
 
 binary:
 	gcc -O0 binary/${C} -o binary/${BIN}
 
 
 clean:
-	rm mcsema/*.bc mcsema/*.ll mcsema/*.cfg
+	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg
