@@ -1,0 +1,15 @@
+digraph g {
+colorscheme = blues6
+I37jNCc [shape=record  label="{MEM\{-0x4(%rbp)\}\n#1::movl $0x0, -0x4(%rbp)}"];
+IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IhRYdSB->I37jNCc [style=bold color=black];
+IZAYY4C [shape=record  label="{MEM\{-0x4(%rbp)\}\n#2::movl $0x1, -0x4(%rbp)}"];
+IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IhRYdSB->IZAYY4C [style=bold color=black];
+IbwdXs2 [shape=record  label="{MEM\{-0x8(%rbp)\}\n#3::movl $0x2, -0x8(%rbp)}"];
+IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IhRYdSB->IbwdXs2 [style=bold color=black];
+I2jJZHm [shape=record  label="{MEM\{-0x4(%rbp)\}\n#4::movl $0x3, -0x4(%rbp)}"];
+IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IhRYdSB->I2jJZHm [style=bold color=black];
+}
