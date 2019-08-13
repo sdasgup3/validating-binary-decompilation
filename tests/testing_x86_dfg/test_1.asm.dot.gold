@@ -12,4 +12,7 @@ IhRYdSB->IbwdXs2 [style=bold color=black];
 I2jJZHm [shape=record  label="{MEM\{-0x4(%rbp)\}\n#4::movl $0x3, -0x4(%rbp)}"];
 IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
 IhRYdSB->I2jJZHm [style=bold color=black];
+IAIrRv4 [shape=record  label="{MEM\{(%rax)\}\n#5::movq $0x4, (%rax)}"];
+I1MTZXL [shape=record  label="{\{ %rax \}\n#-1::E0}"];
+I1MTZXL->IAIrRv4 [style=bold color=black];
 }
