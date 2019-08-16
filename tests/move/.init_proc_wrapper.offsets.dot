@@ -1,0 +1,26 @@
+digraph {
+node [shape=none margin=0 nojustify=false labeljust=l]
+b54718528 [label=<<table cellspacing="0">
+<tr><td>offset</td><td>slot</td><td>inst</td></tr>
+<tr><td> </td><td> </td><td align="left">  %r1929 = load volatile i1, i1* @0</td></tr>
+<tr><td>----</td><td> </td><td align="left">  br i1 %r1929, label %4, label %5</td></tr>
+</table>>];
+b54718528 -> b42722768
+b54718528 -> b51700624
+b42722768 [label=<<table cellspacing="0">
+<tr><td>offset</td><td>slot</td><td>inst</td></tr>
+<tr><td>----</td><td> </td><td align="left">  br label %__mcsema_early_init.exit</td></tr>
+</table>>];
+b42722768 -> b43131120
+b51700624 [label=<<table cellspacing="0">
+<tr><td>offset</td><td>slot</td><td>inst</td></tr>
+<tr><td> </td><td> </td><td align="left">  store volatile i1 true, i1* @0</td></tr>
+<tr><td>----</td><td> </td><td align="left">  br label %__mcsema_early_init.exit</td></tr>
+</table>>];
+b51700624 -> b43131120
+b43131120 [label=<<table cellspacing="0">
+<tr><td>offset</td><td>slot</td><td>inst</td></tr>
+<tr><td>----</td><td> </td><td align="left">  %r1930 = call sub_400390__init_proc</td></tr>
+<tr><td>----</td><td> </td><td align="left">  ret %struct.Memory* %r1930</td></tr>
+</table>>];
+}
