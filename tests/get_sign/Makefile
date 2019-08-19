@@ -1,14 +1,17 @@
-# OPT solution is deprecated
-#OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
-#OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
-# Stoke libs can be accessed using the tool variable_bb_correspondence
-#STOKE=${HOME}/Github/paa-stoke/bin/
-#${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ;
-
+#./bin/variable_bb_correspondence --decompiled-output ~/Github/validating-binary-decompilation/tests/get_sign/mcsema/get_sign.bin.unoptimized.ll  --target-function _get_sign --init-state-function _init_var_correspondence --llvm-dfg-dot-out x.dot --target ~/Github/validating-binary-decompilation/tests/get_sign/binary/get_sign.asm -v
 BINDIR=binary
 PROG=get_sign
-TOOL=${HOME}/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
+OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
+TOOL=${HOME}/Github/validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
 
+
+STOKE=${HOME}/Github/paa-stoke/bin/
+OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
+
+#C=$(shell find ${BINDIR} -maxdepth 1   -name "*.c" | sort -V)
+#BIN=$(patsubst %.c,%.bin, $(C))
+#ASM=$(patsubst %.c,%.asm, $(C))
+#LABEL=$(patsubst %.c,%, $(C))
 C=${PROG}.c
 BIN=${PROG}.bin
 ASM=${PROG}.asm
@@ -30,18 +33,19 @@ mcsema:
 	../../../scripts/mcsema_out.sh ../binary/${BIN} main ; \
         cd ..
 
+#${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ;
 ldfg:
 	cd mcsema; \
         for llfile in `ls *.ll`; \
 		do \
-                ${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ; \
+                ${TOOL} --decompiled-output $${llfile} --target-function _${PROG} --init-state-function _init_var_correspondence --llvm-dfg-dot-out $${llfile}.dot ; \
                 dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
                 rm -rf $${llfile}.dot; \
         done; \
         cd ..
 
 xdfg:
-	${STOKE}/stoke_debug_dfg --target binary/${ASM} --dfg -o mcsema/${PROG}.pdf
+	${TOOL} --target binary/${ASM} --no-fresh-mem --x86-dfg-pdf-out mcsema/${PROG}.pdf
 
 binary:
 	gcc -O0 binary/${C} -o binary/${BIN}

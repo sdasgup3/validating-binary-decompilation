@@ -1,5 +1,5 @@
 #STOKE_DEBUG_DFG=/home/sdasgup3/Github/stoke-develop/./bin/stoke_debug_dfg
-STOKE_DEBUG_DFG=/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
+STOKE_DEBUG_DFG=/home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
 ls *.asm | parallel  $STOKE_DEBUG_DFG --target {} --no-fresh-mem --x86-dfg-dot-out {}.dot
 
 for file in $(ls *.asm); do

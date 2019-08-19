@@ -1,8 +1,18 @@
 cmake_minimum_required(VERSION 3.4)
-project(Allin)
+project(Variable-BB-Correspondence)
 
 # LLVM detection part
 set(LLVM_ROOT "" CACHE PATH "Root of LLVM install.")
+
+# STOKE detection part
+set(STOKE_ROOT "$ENV{HOME}/Github/stoke-develop")
+set(STOKE_INCLUDE_DIRECTORIES
+  ${STOKE_ROOT}
+  ${STOKE_ROOT}/src/ext/cpputil
+  ${STOKE_ROOT}/src/ext/x64asm
+  ${STOKE_ROOT}/src/ext/gtest-1.7.0/include
+  ${STOKE_ROOT}/src/ext/z3/src/api
+)
 
 # A bit of a sanity check:
 if(NOT EXISTS ${LLVM_ROOT}/include/llvm )
@@ -37,9 +47,9 @@ include(AddLLVM) # used to add our own modules
 # propagate LLVM-specific variables to this project
 add_definitions(${LLVM_DEFINITIONS})
 #include_directories(${LLVM_INCLUDE_DIRS})
-include_directories(${LLVM_ROOT}/include)
+#include_directories(${LLVM_ROOT}/include)
 # Following commands are specific to this tutorial
-include_directories(${CMAKE_SOURCE_DIR}/include)
+#include_directories(${CMAKE_SOURCE_DIR}/include)
 
 
 add_subdirectory(libs)
