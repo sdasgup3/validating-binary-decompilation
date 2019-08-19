@@ -117,26 +117,38 @@ block_660:
   %10 = load i64, i64* %7, align 8, !tbaa !1257
   %11 = add i64 %10, -8
   %12 = inttoptr i64 %11 to i64*
+  ; rbp -> *(rsp-8)
   store i64 %9, i64* %12
   %13 = add i64 %10, -28
   %14 = load i32, i32* %5, align 4
   %15 = inttoptr i64 %13 to i32*
+  ; mov edi --> *(rsp - 28)
   store i32 %14, i32* %15
+
   %16 = inttoptr i64 %13 to i32*
   %17 = load i32, i32* %16
   %18 = add i64 %10, -12
   %19 = inttoptr i64 %18 to i32*
+  ; *(rsp - 28) --> *(rsp - 12)
   store i32 %17, i32* %19
+
   %20 = inttoptr i64 %18 to i32*
   %21 = load i32, i32* %20
   %22 = zext i32 %21 to i64
+  ; *(rsp - 12) --> rax
   store i64 %22, i64* %6, align 8, !tbaa !1257
+
   %23 = inttoptr i64 %11 to i64*
   %24 = load i64, i64* %23
+  ; *(rsp-8)-->rbp
   store i64 %24, i64* %8, align 8, !tbaa !1257
+
+  ; PC = *(rsp)
   %25 = inttoptr i64 %10 to i64*
   %26 = load i64, i64* %25
   store i64 %26, i64* %3, align 8, !tbaa !1257
+
+  ; rsp = rsp+8
   %27 = add i64 %10, 8
   store i64 %27, i64* %7, align 8, !tbaa !1257
   ret %struct.Memory* %2

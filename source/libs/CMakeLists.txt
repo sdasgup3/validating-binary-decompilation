@@ -1,5 +1,4 @@
 add_subdirectory(max_stack_height)
 add_subdirectory(stack_deconstructor)
 add_subdirectory(variable_correspondence)
-add_subdirectory(utils)
 add_subdirectory(signature)

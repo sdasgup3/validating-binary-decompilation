@@ -399,63 +399,74 @@ block_660:
   %19 = getelementptr inbounds %struct.GPR, %struct.GPR* %18, i32 0, i32 15
   %20 = getelementptr inbounds %struct.Reg, %struct.Reg* %19, i32 0, i32 0
   %RBP = bitcast %union.anon* %20 to i64*
+
   %21 = load i64, i64* %RBP
   %22 = load i64, i64* %PC
-  %23 = add i64 %22, 1
-  store i64 %23, i64* %PC
+  ;%23 = add i64 %22, 1
+  ;store i64 %23, i64* %PC
   %24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %25 = load i64, i64* %24, align 8, !tbaa !1257
   %26 = add i64 %25, -8
   %27 = inttoptr i64 %26 to i64*
+  ; rbp --> *(rsp-8)
   store i64 %21, i64* %27
+  ; rsp-8 -> rsp
   store i64 %26, i64* %24, align 8, !tbaa !1257
   %28 = load i64, i64* %RSP
-  %29 = load i64, i64* %PC
-  %30 = add i64 %29, 3
-  store i64 %30, i64* %PC
+  ;%29 = load i64, i64* %PC
+  ;%30 = add i64 %29, 3
+  ;store i64 %30, i64* %PC
 
   ; movq    %rsp,%rbp
   store i64 %28, i64* %RBP, align 8, !tbaa !1257
+
   %31 = load i64, i64* %RBP
   %32 = sub i64 %31, 20
   %33 = load i32, i32* %EDI
   %34 = zext i32 %33 to i64
-  %35 = load i64, i64* %PC
-  %36 = add i64 %35, 3
-  store i64 %36, i64* %PC
+  ;%35 = load i64, i64* %PC
+  ;%36 = add i64 %35, 3
+  ;store i64 %36, i64* %PC
   %37 = inttoptr i64 %32 to i32*
+  ; movl    %edi,-0x14(%rbp)
   store i32 %33, i32* %37
+
   %38 = load i64, i64* %RBP
   %39 = sub i64 %38, 20
-  %40 = load i64, i64* %PC
-  %41 = add i64 %40, 3
-  store i64 %41, i64* %PC
+  ;%40 = load i64, i64* %PC
+  ;%41 = add i64 %40, 3
+  ;store i64 %41, i64* %PC
   %42 = inttoptr i64 %39 to i32*
   %43 = load i32, i32* %42
   %44 = zext i32 %43 to i64
+  ; movl    -0x14(%rbp),%eax
   store i64 %44, i64* %RAX, align 8, !tbaa !1257
+  
   %45 = load i64, i64* %RBP
   %46 = sub i64 %45, 4
   %47 = load i32, i32* %EAX
   %48 = zext i32 %47 to i64
-  %49 = load i64, i64* %PC
-  %50 = add i64 %49, 3
-  store i64 %50, i64* %PC
+  ;%49 = load i64, i64* %PC
+  ;%50 = add i64 %49, 3
+  ;store i64 %50, i64* %PC
   %51 = inttoptr i64 %46 to i32*
+  ; movl    %eax,-0x4(%rbp)
   store i32 %47, i32* %51
+
   %52 = load i64, i64* %RBP
   %53 = sub i64 %52, 4
-  %54 = load i64, i64* %PC
-  %55 = add i64 %54, 3
-  store i64 %55, i64* %PC
+  ;%54 = load i64, i64* %PC
+  ;%55 = add i64 %54, 3
+  ;store i64 %55, i64* %PC
   %56 = inttoptr i64 %53 to i32*
   %57 = load i32, i32* %56
   %58 = zext i32 %57 to i64
+  ; movl    -0x4(%rbp),%eax
   store i64 %58, i64* %RAX, align 8, !tbaa !1257
 
-  %59 = load i64, i64* %PC
-  %60 = add i64 %59, 1
-  store i64 %60, i64* %PC
+  ;%59 = load i64, i64* %PC
+  ;%60 = add i64 %59, 1
+  ;store i64 %60, i64* %PC
 
   %61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %62 = load i64, i64* %61, align 8, !tbaa !1257

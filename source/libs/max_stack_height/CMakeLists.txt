@@ -1,6 +1,5 @@
-# LLVM provide a CMake function to build a LLVM Module from sources, use it!
 add_llvm_loadable_module(LLVMmax_stack_height max_stack_height.cpp)
-add_library(max_stack_height STATIC max_stack_height.cpp)
+target_include_directories(LLVMmax_stack_height PUBLIC ${CMAKE_SOURCE_DIR}/include ${LLVM_ROOT}/include)
 
-# And it's still possible to use regular CMake linking stuff
-target_link_libraries(LLVMmax_stack_height utils)
+add_library(max_stack_height STATIC max_stack_height.cpp)
+target_include_directories(max_stack_height PUBLIC ${CMAKE_SOURCE_DIR}/include ${LLVM_ROOT}/include)
