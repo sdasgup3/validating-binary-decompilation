@@ -1,18 +1,18 @@
 digraph g {
 colorscheme = blues6
-I37jNCc [shape=record  label="{MEM\{-0x4(%rbp)\}\n#1::movl $0x0, -0x4(%rbp)}"];
-IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
-IhRYdSB->I37jNCc [style=bold color=black];
-IZAYY4C [shape=record  label="{MEM\{-0x4(%rbp)\}\n#2::movl $0x1, -0x4(%rbp)}"];
-IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
-IhRYdSB->IZAYY4C [style=bold color=black];
-IbwdXs2 [shape=record  label="{MEM\{-0x8(%rbp)\}\n#3::movl $0x2, -0x8(%rbp)}"];
-IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
-IhRYdSB->IbwdXs2 [style=bold color=black];
-I2jJZHm [shape=record  label="{MEM\{-0x4(%rbp)\}\n#4::movl $0x3, -0x4(%rbp)}"];
-IhRYdSB [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
-IhRYdSB->I2jJZHm [style=bold color=black];
-IAIrRv4 [shape=record  label="{MEM\{(%rax)\}\n#5::movq $0x4, (%rax)}"];
-I1MTZXL [shape=record  label="{\{ %rax \}\n#-1::E0}"];
-I1MTZXL->IAIrRv4 [style=bold color=black];
+IldWace [shape=record  label="{MEM\{-0x4(%rbp)\}\n#1::movl $0x0, -0x4(%rbp)}"];
+IcZZfMG [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IcZZfMG->IldWace [style=bold color=black];
+IIa8wS0 [shape=record  label="{MEM\{-0x4(%rbp)\}\n#2::movl $0x1, -0x4(%rbp)}"];
+IcZZfMG [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IcZZfMG->IIa8wS0 [style=bold color=black];
+IqkSrPh [shape=record  label="{MEM\{-0x8(%rbp)\}\n#3::movl $0x2, -0x8(%rbp)}"];
+IcZZfMG [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IcZZfMG->IqkSrPh [style=bold color=black];
+InyDvCz [shape=record  label="{MEM\{-0x4(%rbp)\}\n#4::movl $0x3, -0x4(%rbp)}"];
+IcZZfMG [shape=record  label="{\{ %rbp \}\n#-1::E0}"];
+IcZZfMG->InyDvCz [style=bold color=black];
+IQXKK7X [shape=record  label="{MEM\{(%rax)\}\n#5::movq $0x4, (%rax)}"];
+IYhWVxJ [shape=record  label="{\{ %rax \}\n#-1::E0}"];
+IYhWVxJ->IQXKK7X [style=bold color=black];
 }
