@@ -1,0 +1,9 @@
+people {
+  name: "s"
+  id: 2
+  email: "sa"
+  phones {
+    number: "sa"
+    type: MOBILE
+  }
+}
