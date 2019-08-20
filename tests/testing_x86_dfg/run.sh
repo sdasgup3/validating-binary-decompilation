@@ -1,5 +1,6 @@
-STOKE_DEBUG_DFG=/home/sdasgup3/Github/paa-stoke/./bin/stoke_debug_dfg
-ls *.asm | parallel  $STOKE_DEBUG_DFG --dfg --target {} --no-fixed-mem --dot-out {}.dot
+#STOKE_DEBUG_DFG=/home/sdasgup3/Github/stoke-develop/./bin/stoke_debug_dfg
+STOKE_DEBUG_DFG=/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
+ls *.asm | parallel  $STOKE_DEBUG_DFG --target {} --no-fresh-mem --x86-dfg-dot-out {}.dot
 
 for file in $(ls *.asm); do
   diff $file.dot $file.dot.gold;
