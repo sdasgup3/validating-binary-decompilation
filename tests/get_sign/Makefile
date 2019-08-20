@@ -3,6 +3,7 @@
 #OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
 # Stoke libs can be accessed using the tool variable_bb_correspondence
 #STOKE=${HOME}/Github/paa-stoke/bin/
+#${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ;
 
 BINDIR=binary
 PROG=get_sign
@@ -21,9 +22,10 @@ all: binary mcsema ldfg xdfg
 .PHONY: clean binary mcsema
 
 objdump: binary/${BIN}
-	objdump -d $< > ${LABEL}.objdump
+	objdump -d $< > binary/${PROG}.objdump
 
 mcsema:
+	mkdir -p mcsema; \
 	cd mcsema; \
 	../../../scripts/mcsema_out.sh ../binary/${BIN} main ; \
         cd ..
@@ -34,6 +36,7 @@ ldfg:
 		do \
                 ${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ; \
                 dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
+                rm -rf $${llfile}.dot; \
         done; \
         cd ..
 
@@ -41,7 +44,7 @@ xdfg:
 	${STOKE}/stoke_debug_dfg --target binary/${ASM} --dfg -o mcsema/${PROG}.pdf
 
 binary:
-	gcc -O0 ${C} -o binary/${BIN}
+	gcc -O0 binary/${C} -o binary/${BIN}
 
 
 clean:
