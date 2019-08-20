@@ -1,13 +1,14 @@
+# OPT solution is deprecated
+#OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
+#OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
+# Stoke libs can be accessed using the tool variable_bb_correspondence
+#STOKE=${HOME}/Github/paa-stoke/bin/
+#${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ;
+
 BINDIR=binary
 PROG=mov
-OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
-STOKE=${HOME}/Github/paa-stoke/bin/
-OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
+TOOL=${HOME}/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
 
-#C=$(shell find ${BINDIR} -maxdepth 1   -name "*.c" | sort -V)
-#BIN=$(patsubst %.c,%.bin, $(C))
-#ASM=$(patsubst %.c,%.asm, $(C))
-#LABEL=$(patsubst %.c,%, $(C))
 C=${PROG}.c
 BIN=${PROG}.bin
 ASM=${PROG}.asm
@@ -33,17 +34,18 @@ ldfg:
 	cd mcsema; \
         for llfile in `ls *.ll`; \
 		do \
-                ${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ; \
+                ${TOOL} --decompiled-output $${llfile} --target-function _${PROG} --init-state-function _init_var_correspondence --llvm-dfg-dot-out $${llfile}.dot ; \
                 dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
+                rm -rf $${llfile}.dot; \
         done; \
         cd ..
 
 xdfg:
-	${STOKE}/stoke_debug_dfg --target binary/${ASM} --dfg -o mcsema/${PROG}.pdf
+	${TOOL} --target binary/${ASM} --no-fresh-mem --x86-dfg-pdf-out mcsema/${PROG}.pdf
 
 binary:
 	gcc -O0 binary/${C} -o binary/${BIN}
 
 
 clean:
-	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg
+	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg 
