@@ -1,3 +1,6 @@
+## Note (Deprecated)
+Currently, for binary analysis,  we are using stoke framework with its rich api's to parse the binary and extract relevant information from it. The protobuff solution below is cumbersome as it needs parsing the proto-buff and create dfg out of it. Weheras, with stoke  parsing, analysing, and creating dfgs comes naturally.
+
 ## Compiling the proto definition of binary analysis file
 ```
 cd /home/sdasgup3/Github/validating-binary-decompilation/binary_analyzer
