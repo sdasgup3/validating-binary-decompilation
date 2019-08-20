@@ -413,6 +413,8 @@ block_660:
   %29 = load i64, i64* %PC
   %30 = add i64 %29, 3
   store i64 %30, i64* %PC
+
+  ; movq    %rsp,%rbp
   store i64 %28, i64* %RBP, align 8, !tbaa !1257
   %31 = load i64, i64* %RBP
   %32 = sub i64 %31, 20
@@ -450,9 +452,11 @@ block_660:
   %57 = load i32, i32* %56
   %58 = zext i32 %57 to i64
   store i64 %58, i64* %RAX, align 8, !tbaa !1257
+
   %59 = load i64, i64* %PC
   %60 = add i64 %59, 1
   store i64 %60, i64* %PC
+
   %61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %62 = load i64, i64* %61, align 8, !tbaa !1257
   %63 = add i64 %62, 8
