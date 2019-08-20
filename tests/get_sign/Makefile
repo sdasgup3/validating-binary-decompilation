@@ -1,13 +1,13 @@
+# OPT solution is deprecated
+#OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
+#OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
+# Stoke libs can be accessed using the tool variable_bb_correspondence
+#STOKE=${HOME}/Github/paa-stoke/bin/
+
 BINDIR=binary
 PROG=get_sign
-OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
-STOKE=${HOME}/Github/paa-stoke/bin/
-OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
+TOOL=${HOME}/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
 
-#C=$(shell find ${BINDIR} -maxdepth 1   -name "*.c" | sort -V)
-#BIN=$(patsubst %.c,%.bin, $(C))
-#ASM=$(patsubst %.c,%.asm, $(C))
-#LABEL=$(patsubst %.c,%, $(C))
 C=${PROG}.c
 BIN=${PROG}.bin
 ASM=${PROG}.asm

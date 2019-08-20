@@ -148,10 +148,10 @@ bool view_pdf(const string &pdf_file) {
 }
 
 int main(int argc, char **argv) {
+  target_arg.required(false);
   CommandLineConfig::strict_with_convenience(argc, argv);
   DebugHandler::install_sigsegv();
   DebugHandler::install_sigill();
-  target_arg.required(false);
 
   if (!DecompiledFile.value().empty()) {
     // Parse the input LLVM IR file into a module.
