@@ -16,11 +16,15 @@
 #define __LLVM_DFG_H__
 
 #include "llvm/IR/InstIterator.h"
+#include "llvm/IR/InstrTypes.h"
 #include "llvm/IR/Value.h"
 #include "llvm/Pass.h"
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Support/GraphWriter.h"
+#include <iostream>
+#include <set>
+#include <vector>
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-dfg"
 using namespace std;
@@ -289,6 +293,56 @@ void writeDFGToDotFile(Function *F, string OutputDFG) {
     WriteGraph(File, F, false, "");
   } else {
     errs() << "  error opening file for writing!";
+  }
+  errs() << "\nWriting '" << Filename << "':Done\n\n";
+}
+
+typedef DOTGraphTraits<Function *> DOTTraits;
+typedef GraphTraits<Function *> GTraits;
+typedef typename GTraits::NodeRef NodeRef;
+typedef typename GTraits::nodes_iterator node_iterator;
+typedef typename GTraits::ChildIteratorType child_iterator;
+
+/*
+** For each data flow graph, extract the data-fl0w-path strands
+** eq.  A --> B, A --> C, B-->D, C-->D, D-->A
+** Strands: A-->B-->D-->A and A-->C-->D-->A
+*/
+void extractDFSegmentsHelper(NodeRef Node, set<Instruction *> &visited,
+                             Function *F, vector<NodeRef> path) {
+  if (visited.count(Node))
+    return;
+
+  // Output all of the edges now
+  child_iterator EI = GTraits::child_begin(Node);
+  child_iterator EE = GTraits::child_end(Node);
+
+  if (EI == EE) {
+    path.push_back(Node);
+    for (auto p : path) {
+      llvm::errs() << DOTTraits::getCompleteNodeLabel(p, F) << "\n\t*-->* ";
+    }
+    llvm::errs() << "\n\n";
+    return;
+  }
+
+  visited.insert(Node);
+  path.push_back(Node);
+
+  for (; EI != EE; ++EI)
+    extractDFSegmentsHelper(*EI, visited, F, path);
+
+  visited.erase(Node);
+}
+
+void extractDFSegments(Function *G) {
+
+  set<NodeRef> visited;
+  vector<NodeRef> path;
+  for (node_iterator I = GTraits::nodes_begin(G), E = GTraits::nodes_end(G);
+       I != E; ++I) {
+    llvm::errs() << "data-flow-path-strand for" << **I << "\n";
+    extractDFSegmentsHelper(*I, visited, G, path);
   }
 }
 
