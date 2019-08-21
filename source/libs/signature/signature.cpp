@@ -224,6 +224,8 @@ llvm::extractSignaturesFromModule(Module &M,
     }
   });
 
+  errs() << "\nExtracting variable correspondence signatures: Done"
+         << "\n\n";
   return signatureInfo;
 }
 
@@ -279,5 +281,7 @@ map<Value *, string> llvm::applySignaturesToModule(
     errs() << *(varr_corr.first) << " : " << (varr_corr.second) << "\n";
   }
 
+  errs() << "\nFinding initial variable correspondence: Done"
+         << "\n\n";
   return initVariableCorrespondence;
 }

@@ -93,6 +93,11 @@ void CreateLLVMDFG(Module &Mod) {
   if (FunctionToFindInitState.value() == "" || FunctionToAnalyze.value() == "")
     return;
 
+  Console::msg() << "LLVM init-state-function: "
+                 << FunctionToFindInitState.value() << "\n";
+  Console::msg() << "LLVM function-to-analyze: " << FunctionToAnalyze.value()
+                 << "\n";
+
   // Find the initial variable correspondence w.r.t a dummy function
   auto signatureInfo =
       extractSignaturesFromModule(Mod, FunctionToFindInitState);
@@ -109,7 +114,13 @@ void CreateLLVMDFG(Module &Mod) {
     f = &Func;
     break;
   }
+
+  Console::msg() << "Writing LLVM-dfg...\n";
   writeDFGToDotFile(f, LLVMDfgDotOut);
+
+  Console::msg() << "Writing LLVM-dfg-segments..."
+                 << "\n";
+  extractDFSegments(f);
 }
 
 string tempfile(const string &temp) {
@@ -154,7 +165,8 @@ int main(int argc, char **argv) {
   DebugHandler::install_sigill();
 
   if (!DecompiledFile.value().empty()) {
-    // Parse the input LLVM IR file into a module.
+    Console::msg() << "Analyzing LLVM file: " << DecompiledFile.value() << "\n";
+
     SMDiagnostic Err;
     LLVMContext Context;
     std::unique_ptr<Module> Mod(
@@ -168,10 +180,13 @@ int main(int argc, char **argv) {
   }
 
   if (target_arg.has_been_provided()) {
+    Console::msg() << "Analyzing x86 file...\n";
+
     auto dot_file = X86DfgDotOut.value();
     if (dot_file == "")
       dot_file = tempfile("/tmp/stoke_debug_cfg.dot.XXXXXX");
 
+    Console::msg() << "Wrting x86 dfg: " << X86DfgDotOut.value() << endl;
     to_dot(dot_file);
 
     if ((X86DfgPdfOut.value() != "") &&
