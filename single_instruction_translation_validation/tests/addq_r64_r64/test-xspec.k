@@ -1,4 +1,4 @@
-module TEST-SPEC
+module TEST-XSPEC
   imports X86-SEMANTICS
 
   // Main Configuration

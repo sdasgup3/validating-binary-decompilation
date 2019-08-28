@@ -1,5 +1,5 @@
 void leaf() {
-	__asm__("xor %rax, %rax");
+	__asm__("xorq %rbx, %rax");
 }
 void main() {
 	leaf();
