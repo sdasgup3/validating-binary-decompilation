@@ -1,60 +1,43 @@
-TESTS=$(shell find . -maxdepth 1   -name "*.s" | sort -V)
-
-OUTDIR=Output
-KSTATES=$(patsubst %.s, ${OUTDIR}/%.kstate, $(TESTS))
-XSTATES=$(patsubst %.s, ${OUTDIR}/%.xstate, $(TESTS))
-CSTATES=$(patsubst %.s, ${OUTDIR}/%.cstate, $(TESTS))
-
+.PHONY: clean
+#KPROVE_OPTS="--log-basic --log-cells \"(#initTerm),(#target),(#result),(registers),(memory)\" --log  --state-log --log-success"
+KPROVE_OPTS=--log-cells "(\#initTerm),(\#target),(\#result),(registers),(memory)" --log-basic  --state-log --log-success
+CLEAN_ASM=${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
 Mkdir=@mkdir -p $(@D)
 SCRIPT_DIR=${HOME}/Github/X86-64-semantics/scripts
 RUN_SH=${SCRIPT_DIR}/run.pl
+OUTDIR=Output
 
+objdump: test
+	objdump -d $< > test.objdump
 
+mcsema: test
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary $< --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer_O3
+#mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc
+	llvm-dis test.bc -o test.ll
 
-all:	collect kompile cleankstate kstate kprove
+assemble: test.c
+	gcc -Os $< -S -o test.s
+	${CLEAN_ASM} -i --file test.s
 
-collect: ${TESTS}
-kstate: ${KSTATES}
-xstate: ${XSTATES}
-compare:${CSTATES}
+binary: test.c
+	gcc -Os $< -o test
 
-${OUTDIR}/%.kstate: %.s
+lprove: test-lspec.k
+	kprove $< --directory ${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude /home/sdasgup3/Github/llvm-verified-backend/scripts/prelude.smt2 ${KPROVE_OPTS} 1>Output/test-lspec.out 2>&1
+
+xprove: test-xspec.k
+	@echo "KProve instruction semantics"
+	@kprove $< --directory ${HOME}/Github/X86-64-semantics/semantics --smt_prelude ${HOME}/Github/k/k-distribution/include/z3/basic.smt2 ${KPROVE_OPTS} 1>Output/test-xspec.out 2>&1
+
+kli: test.mod.ll
+	${HOME}/Github/llvm-verified-backend/scripts/kli $< 1> Output/test.lstate 2>&1
+
+xstate: test.s
 	@echo ""
-	@echo  "Generate: $@ "
+	@echo  "Generate: kstate file "
 	@mkdir -p ${OUTDIR}
-	${RUN_SH} --file $< --krun --output $@
-
-${OUTDIR}/%.xstate: %.s
-	@echo ""
-	@echo  "Generate: $@ "
-	@mkdir -p ${OUTDIR}
-	${RUN_SH} --file $< --xrun --output $@
-
-${OUTDIR}/%.cstate: ${OUTDIR}/%.kstate ${OUTDIR}/%.xstate
-	@echo ""
-	@echo  "Compare: ${OUTDIR}/$@ "
-	${RUN_SH} --file $< --compare 1>$@ 2>&1
-
-allclean:
-	@echo "All Cleaning"
-	rm -rf ${OUTDIR}
-
-clean:
-	@echo "Cleaning .exe & .o"
-	rm -rf ${OUTDIR}/*.exec
-	rm -rf ${OUTDIR}/*.o
-
-cleankstate:
-	@echo "K Cleaning"
-	rm -rf ${OUTDIR}/*.kstate
-
-cleanxstate:
-	@echo "X Cleaning"
-	rm -rf ${OUTDIR}/*.xstate
-
-cleancstate:
-	@echo "X Cleaning"
-	rm -rf ${OUTDIR}/*.cstate
+	${RUN_SH} --file $< --krun --output Output/test-xstate.out
 
 collect:
 	@echo "Collect instruction semantics"
@@ -64,12 +47,5 @@ kompile:
 	@echo "Kompile instruction semantics"
 	@${SCRIPT_DIR}/kompile.pl --backend java
 
-kprove:
-	@echo "KProve instruction semantics"
-	@kprove test-spec.k  --directory ${HOME}/Github/X86-64-semantics/semantics --smt_prelude ${HOME}/Github/k/k-distribution/include/z3/basic.smt2
-
-kast:
-	@echo "KAst instruction semantics"
-	@kast test.s  --directory ${HOME}/Github/X86-64-semantics/semantics
-test:
-	@echo "T Cleaning"
+clean:
+	rm *.bc *.ll test *.cfg  *.objdump

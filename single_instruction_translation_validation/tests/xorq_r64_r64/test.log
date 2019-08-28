@@ -1,0 +1,366 @@
+<generatedTop>
+  <k>
+    exitCode ( 0 )
+  </k>
+  <callStack>
+    .List
+  </callStack>
+  <control>
+    <currentBlock>
+      .
+    </currentBlock>
+    <previousBlock>
+      .
+    </previousBlock>
+    <currentFunction>
+      .
+    </currentFunction>
+    <registers>
+      .Map
+    </registers>
+    <valist>
+      .ArgumentVals
+    </valist>
+    <localMemory>
+      ListItem ( symloc ( 3 , 8 , 8 , 8 , 0 ) )
+      ListItem ( symloc ( 2 , 64 , 8 , 8 , 0 ) )
+      ListItem ( symloc ( 1 , 32 , 4 , 8 , 0 ) )
+    </localMemory>
+    <formatting>
+      <format>
+        .List
+      </format>
+      <format-arg>
+        .
+      </format-arg>
+      <format-result>
+        .List
+      </format-result>
+      <format-state>
+        "normal"
+      </format-state>
+      <format-pad-zero>
+        false
+      </format-pad-zero>
+      <format-alt-form>
+        false
+      </format-alt-form>
+      <format-field-width>
+        ""
+      </format-field-width>
+      <format-length>
+        ""
+      </format-length>
+      <format-precision>
+        ""
+      </format-precision>
+      <format-matched>
+        0
+      </format-matched>
+      <format-nread>
+        0
+      </format-nread>
+      <format-item>
+        ""
+      </format-item>
+    </formatting>
+  </control>
+  <globals>
+    builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
+    globalID ( @func ) |-> typedVal ( tPtr ( tFunc ( tVoid , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @func ) , 0 ) )
+    globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
+  </globals>
+  <memory>
+    <nextLoc>
+      6
+    </nextLoc>
+    <objects>
+      mem ( symloc ( 1 , 32 , 4 , 8 , 0 ) |-> byte ( 0 , 4 , 0 )
+      symloc ( 1 , 32 , 4 , 8 , 1 ) |-> byte ( 1 , 4 , 0 )
+      symloc ( 1 , 32 , 4 , 8 , 2 ) |-> byte ( 2 , 4 , 0 )
+      symloc ( 1 , 32 , 4 , 8 , 3 ) |-> byte ( 3 , 4 , 0 )
+      symloc ( 2 , 64 , 8 , 8 , 0 ) |-> byte ( 0 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 1 ) |-> byte ( 1 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 2 ) |-> byte ( 2 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 3 ) |-> byte ( 3 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 4 ) |-> byte ( 4 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 5 ) |-> byte ( 5 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 6 ) |-> byte ( 6 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 2 , 64 , 8 , 8 , 7 ) |-> byte ( 7 , 8 , ptr ( symloc ( 3 , 8 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 3 , 8 , 8 , 8 , 0 ) |-> byte ( 0 , 1 , 116 )
+      symloc ( 3 , 8 , 8 , 8 , 1 ) |-> byte ( 0 , 1 , 101 )
+      symloc ( 3 , 8 , 8 , 8 , 2 ) |-> byte ( 0 , 1 , 115 )
+      symloc ( 3 , 8 , 8 , 8 , 3 ) |-> byte ( 0 , 1 , 116 )
+      symloc ( 3 , 8 , 8 , 8 , 4 ) |-> byte ( 0 , 1 , 46 )
+      symloc ( 3 , 8 , 8 , 8 , 5 ) |-> byte ( 0 , 1 , 108 )
+      symloc ( 3 , 8 , 8 , 8 , 6 ) |-> byte ( 0 , 1 , 108 )
+      symloc ( 3 , 8 , 8 , 8 , 7 ) |-> byte ( 0 , 1 , 0 )
+      symloc ( 4 , 32 , 8 , 8 , 0 ) |-> byte ( 0 , 4 , 30 )
+      symloc ( 4 , 32 , 8 , 8 , 1 ) |-> byte ( 1 , 4 , 30 )
+      symloc ( 4 , 32 , 8 , 8 , 2 ) |-> byte ( 2 , 4 , 30 )
+      symloc ( 4 , 32 , 8 , 8 , 3 ) |-> byte ( 3 , 4 , 30 )
+      symloc ( 4 , 32 , 8 , 8 , 4 ) |-> byte ( 0 , 4 , 20 )
+      symloc ( 4 , 32 , 8 , 8 , 5 ) |-> byte ( 1 , 4 , 20 )
+      symloc ( 4 , 32 , 8 , 8 , 6 ) |-> byte ( 2 , 4 , 20 )
+      symloc ( 4 , 32 , 8 , 8 , 7 ) |-> byte ( 3 , 4 , 20 )
+      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> byte ( 0 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> byte ( 1 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> byte ( 2 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> byte ( 3 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 4 ) |-> byte ( 4 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 5 ) |-> byte ( 5 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 6 ) |-> byte ( 6 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) )
+      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> byte ( 7 , 8 , ptr ( symloc ( 4 , 32 , 8 , 8 , 0 ) , 0 ) ) )
+    </objects>
+    <freed>
+      SetItem ( symloc ( 4 , 32 , 8 , 8 , 0 ) )
+      SetItem ( symloc ( 5 , 64 , 8 , 8 , 0 ) )
+    </freed>
+  </memory>
+  <environment>
+    <argc>
+      typedVal ( tInt ( 32 ) , 1 )
+    </argc>
+    <argv>
+      typedVal ( tPtr ( tPtr ( tInt ( 8 ) ) ) , ptr ( symloc ( 2 , 64 , 8 , 8 , 0 ) , 0 ) )
+    </argv>
+  </environment>
+  <status>
+    exited
+  </status>
+  <functions>
+    <function>
+      <functionName>
+        globalID ( @func )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %s.addr )  localID ( %0 )  localID ( %sx )  localID ( %1 )  localID ( %2 )  localID ( %t )  localID ( %tx )  localID ( %3 )  localID ( %add )  localID ( %4 )  localID ( %sx1 )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %s.addr ) , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , tInt ( 32 ) , 1 , align ( 8 ) )  store ( tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s ) , localID ( %s.addr ) , align ( 8 ) )  load ( localID ( %0 ) , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s.addr ) , align ( 8 ) )  getelementptr ( localID ( %sx ) , inbounds , tIdentifiedStruct ( localID ( %struct.S ) ) , localID ( %0 ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  load ( localID ( %1 ) , tInt ( 32 ) , localID ( %sx ) , align ( 4 ) )  load ( localID ( %2 ) , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s.addr ) , align ( 8 ) )  getelementptr ( localID ( %t ) , inbounds , tIdentifiedStruct ( localID ( %struct.S ) ) , localID ( %2 ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %tx ) , inbounds , tIdentifiedStruct ( localID ( %struct.T ) ) , localID ( %t ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  load ( localID ( %3 ) , tInt ( 32 ) , localID ( %tx ) , align ( 4 ) )  add ( localID ( %add ) , nsw , tInt ( 32 ) , localID ( %1 ) , localID ( %3 ) )  load ( localID ( %4 ) , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s.addr ) , align ( 8 ) )  getelementptr ( localID ( %sx1 ) , inbounds , tIdentifiedStruct ( localID ( %struct.S ) ) , localID ( %4 ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 32 ) , localID ( %add ) , localID ( %sx1 ) , align ( 4 ) )  .Instructions , retvoid )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @main )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %s )  localID ( %sx )  localID ( %t )  localID ( %tx )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %s ) , tIdentifiedStruct ( localID ( %struct.S ) ) , tInt ( 32 ) , 1 , align ( 4 ) )  getelementptr ( localID ( %sx ) , inbounds , tIdentifiedStruct ( localID ( %struct.S ) ) , localID ( %s ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 32 ) , 10 , localID ( %sx ) , align ( 4 ) )  getelementptr ( localID ( %t ) , inbounds , tIdentifiedStruct ( localID ( %struct.S ) ) , localID ( %s ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %tx ) , inbounds , tIdentifiedStruct ( localID ( %struct.T ) ) , localID ( %t ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 32 ) , 20 , localID ( %tx ) , align ( 4 ) )  callProc ( ccc , tFunc ( tVoid , tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) )  .FirstClassTypes , false ) , globalID ( @func ) , argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.S ) ) ) , localID ( %s ) )  .Arguments )  .Instructions , ret ( tInt ( 32 ) , 0 ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function>
+  </functions>
+  <structures>
+    <types>
+      localID ( %struct.S ) |-> tStruct ( tInt ( 32 )  tIdentifiedStruct ( localID ( %struct.T ) )  .ComposableTypes )
+      localID ( %struct.T ) |-> tStruct ( tInt ( 32 )  .ComposableTypes )
+      localID ( %struct._kllvm_fpos_t ) |-> tStruct ( tInt ( 64 )  tPtr ( tInt ( 8 ) )  .ComposableTypes )
+    </types>
+    <layoutInfo>
+      tIdentifiedStruct ( localID ( %struct.S ) ) |-> structLayout ( 2 , 64 , 32 , false , 0 |-> ( tInt ( 32 ) , 32 , 0 )
+      1 |-> ( tIdentifiedStruct ( localID ( %struct.T ) ) , 32 , 32 ) )
+      tIdentifiedStruct ( localID ( %struct.T ) ) |-> structLayout ( 1 , 32 , 32 , false , 0 |-> ( tInt ( 32 ) , 32 , 0 ) )
+      tIdentifiedStruct ( localID ( %struct._kllvm_fpos_t ) ) |-> structLayout ( 2 , 128 , 64 , false , 0 |-> ( tInt ( 64 ) , 64 , 0 )
+      1 |-> ( tPtr ( tInt ( 8 ) ) , 64 , 64 ) )
+      tStruct ( tInt ( 32 )  .ComposableTypes ) |-> structLayout ( 1 , 32 , 32 , false , 0 |-> ( tInt ( 32 ) , 32 , 0 ) )
+      tStruct ( tInt ( 32 )  tIdentifiedStruct ( localID ( %struct.T ) )  .ComposableTypes ) |-> structLayout ( 2 , 64 , 32 , false , 0 |-> ( tInt ( 32 ) , 32 , 0 )
+      1 |-> ( tIdentifiedStruct ( localID ( %struct.T ) ) , 32 , 32 ) )
+      tStruct ( tInt ( 64 )  tPtr ( tInt ( 8 ) )  .ComposableTypes ) |-> structLayout ( 2 , 128 , 64 , false , 0 |-> ( tInt ( 64 ) , 64 , 0 )
+      1 |-> ( tPtr ( tInt ( 8 ) ) , 64 , 64 ) )
+    </layoutInfo>
+  </structures>
+  <c-library>
+    <malloced>
+      .Map
+    </malloced>
+    <atexit>
+      .
+    </atexit>
+    <at-quick-exit>
+      .
+    </at-quick-exit>
+    <va-lists>
+      .Map
+    </va-lists>
+    <jmp-bufs>
+      .Map
+    </jmp-bufs>
+    <open-files>
+      SetItem ( 0 )
+      SetItem ( 1 )
+      SetItem ( 2 )
+    </open-files>
+    <files>
+      <file>
+        <fid>
+          0
+        </fid>
+        <uri>
+          "stdin:///"
+        </uri>
+        <pos>
+          0
+        </pos>
+        <mode>
+          "r"
+        </mode>
+        <next-byte>
+          .
+        </next-byte>
+        <read-buffer>
+          ""
+        </read-buffer>
+        <write-buffer>
+          ""
+        </write-buffer>
+        <buffer-mode>
+          lineBuf
+        </buffer-mode>
+        <buffer-size>
+          8192
+        </buffer-size>
+        <sending>
+          .List
+        </sending>
+        <done>
+          ""
+        </done>
+        <feof>
+          false
+        </feof>
+        <ferror>
+          0
+        </ferror>
+        <last-op>
+          noLastOp
+        </last-op>
+      </file> <file>
+        <fid>
+          1
+        </fid>
+        <uri>
+          "stdout:///"
+        </uri>
+        <pos>
+          0
+        </pos>
+        <mode>
+          "w"
+        </mode>
+        <next-byte>
+          .
+        </next-byte>
+        <read-buffer>
+          ""
+        </read-buffer>
+        <write-buffer>
+          ""
+        </write-buffer>
+        <buffer-mode>
+          lineBuf
+        </buffer-mode>
+        <buffer-size>
+          8192
+        </buffer-size>
+        <sending>
+          .List
+        </sending>
+        <done>
+          ""
+        </done>
+        <feof>
+          false
+        </feof>
+        <ferror>
+          0
+        </ferror>
+        <last-op>
+          noLastOp
+        </last-op>
+      </file> <file>
+        <fid>
+          2
+        </fid>
+        <uri>
+          "stdout:///"
+        </uri>
+        <pos>
+          0
+        </pos>
+        <mode>
+          "w"
+        </mode>
+        <next-byte>
+          .
+        </next-byte>
+        <read-buffer>
+          ""
+        </read-buffer>
+        <write-buffer>
+          ""
+        </write-buffer>
+        <buffer-mode>
+          noBuf
+        </buffer-mode>
+        <buffer-size>
+          8192
+        </buffer-size>
+        <sending>
+          .List
+        </sending>
+        <done>
+          ""
+        </done>
+        <feof>
+          false
+        </feof>
+        <ferror>
+          0
+        </ferror>
+        <last-op>
+          noLastOp
+        </last-op>
+      </file>
+    </files>
+    <input>
+      .List
+    </input>
+    <output>
+      .List
+    </output>
+    <strerror-cache>
+      .Map
+    </strerror-cache>
+    <sig-handling-state>
+      .
+    </sig-handling-state>
+    <setlocale>
+      .
+    </setlocale>
+    <localeconv>
+      .
+    </localeconv>
+    <getenv>
+      .
+    </getenv>
+  </c-library>
+</generatedTop>

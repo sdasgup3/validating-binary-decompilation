@@ -3,7 +3,12 @@
     exit_0
   </k>
   <functargets>
-    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    LFB0 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    LFB3 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    LFE0 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    LFE3 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'4 )
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    leaf |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
     stdout |-> ptr ( symloc ( 5 , 0 , 5 , 8 , 0 ) , 64'1 )
   </functargets>
   <rotargets>
@@ -16,21 +21,23 @@
     .Map
   </bsstargets>
   <entrypoint>
-    ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
   </entrypoint>
   <nextLocPc>
-    64'2
+    64'4
   </nextLocPc>
   <lastseenlabel>
-    _start
+    LFE3
   </lastseenlabel>
   <currentsection>
     "text"
   </currentsection>
   <memstate>
     <text>
-      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( addq %rax , %rbx , .Operands )
-      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( retq .Operands ) )
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( addq %rbx , %rax , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 ) |-> storedInstr ( addq %rbx , %rax , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'3 ) |-> storedInstr ( ret .Operands ) )
     </text>
     <stack>
       <memory>
@@ -140,7 +147,7 @@
     "RCX" |-> 64'0
     "RDI" |-> 64'0
     "RDX" |-> 64'0
-    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
     "RSI" |-> 64'0
     "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
     "SF" |-> 1'0
@@ -181,7 +188,7 @@
     "RCX" |-> 64'0
     "RDI" |-> 64'0
     "RDX" |-> 64'0
-    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 )
+    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'3 )
     "RSI" |-> 64'0
     "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
     "SF" |-> 1'0
@@ -243,7 +250,12 @@
     "YMM14" |-> 256'0
     "YMM15" |-> 256'0
     "ZF" |-> 1'1 )
-    ListItem ( _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    ListItem ( LFB0 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    LFB3 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    LFE0 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    LFE3 |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'4 )
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'2 )
+    leaf |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
     stdout |-> ptr ( symloc ( 5 , 0 , 5 , 8 , 0 ) , 64'1 ) )
   </regstatequeue>
   <formatcountint>

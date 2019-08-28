@@ -1,0 +1,7 @@
+The idea of translation validation is as follows: instead of proving the correctness of the optimizing phase for every possible program, prove for a single program that the program and its optimized version are semantically equivalent.
+From Iman \etal~\cite{Iman2005} 
+
+In this paper we take the following view of translation validation. We have two
+programsP and P?, and each of them is a result of compiling the same source program, but unlike P, the compilation of P? involves the optimizing phase. Both programs are written in the same intermediate language.We call the programP the original program, and the program P? the optimized program.
+Knowing that a variable in P corresponds to a variable in P? gives us a valuable
+information that can be used to prove the equivalence of P and P? automatically. In- tuitively, a variable x1 in the original programs corresponds to a variable x2 in the optimized program if they have the same values at some control blocks for all possible runs of the two programs on the same input values
