@@ -1,5 +1,22 @@
     .text
-.globl _start
+    .globl	leaf
+leaf:
+LFB0:
+    
+    
+    addq %rbx, %rax
+    
+    
+    ret
+LFE0:
+    .globl	main
+    .globl _start
 _start:
-    addq	%rax, %rbx
-    retq
+LFB3:
+    
+    
+    addq %rbx, %rax
+    
+    
+    ret
+LFE3:

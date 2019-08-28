@@ -10,7 +10,7 @@ binary=$1
 binlabel=$(basename $binary)
 entry=$2
 IDA=/home/sdasgup3/ida-6.95/idal64
-mcsema-disass --disassembler /home/sdasgup3/ida-6.95/idal64 --os linux --arch amd64 --output $binlabel.cfg --binary $binary --entrypoint $entry
+mcsema-disass --disassembler $HOME/ida-6.95/idal64 --os linux --arch amd64 --output $binlabel.cfg --binary $binary --entrypoint $entry
 #mcsema-lift-4.0 --os linux --arch amd64 --cfg $binlabel.cfg --output $binlabel.bc -disable_dead_store_elimination -disable_register_forwarding -disable_optimizer -keep_memops
 #mcsema-lift-4.0 --os linux --arch amd64 --cfg $binlabel.cfg --output $binlabel.bc -disable_register_forwarding -disable_dead_store_elimination # now mcsema have -enable_register_forwarding
 
