@@ -1,0 +1,3 @@
+.target:
+  imulb %al
+  retq

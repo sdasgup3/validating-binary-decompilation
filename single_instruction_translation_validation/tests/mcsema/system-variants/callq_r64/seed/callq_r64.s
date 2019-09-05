@@ -1,0 +1,3 @@
+.target:
+  callq %rbx
+  retq

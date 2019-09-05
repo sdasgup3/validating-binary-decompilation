@@ -1,0 +1,3 @@
+.target:
+  setne %bl
+  retq

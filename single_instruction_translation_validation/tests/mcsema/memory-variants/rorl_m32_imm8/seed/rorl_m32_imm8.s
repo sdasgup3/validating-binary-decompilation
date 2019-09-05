@@ -1,0 +1,3 @@
+.target:
+  rorl $0x0, -4(%rbp)
+  retq

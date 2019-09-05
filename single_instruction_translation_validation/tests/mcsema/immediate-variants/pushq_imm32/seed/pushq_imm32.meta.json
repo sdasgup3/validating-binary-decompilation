@@ -1,0 +1,9 @@
+{
+  "def_in": "{ %rsp }",
+  "live_out": "{ %rsp }",
+  "maybe_undef_out": "{ }",
+  "def_in_formal": "{ %rsp }",
+  "live_out_formal": "{ %rsp }",
+  "search_without_uif": false,
+  "delim": 0
+}

@@ -1,0 +1,3 @@
+.target:
+  stc 
+  retq

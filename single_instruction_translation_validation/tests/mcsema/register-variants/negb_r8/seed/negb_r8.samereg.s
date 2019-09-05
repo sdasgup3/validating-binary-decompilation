@@ -1,0 +1,3 @@
+.target:
+  negb %al
+  retq

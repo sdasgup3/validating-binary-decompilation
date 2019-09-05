@@ -1,0 +1,3 @@
+.target:
+  nopw %ax
+  retq

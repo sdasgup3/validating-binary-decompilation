@@ -1,0 +1,3 @@
+.target:
+  clc 
+  retq

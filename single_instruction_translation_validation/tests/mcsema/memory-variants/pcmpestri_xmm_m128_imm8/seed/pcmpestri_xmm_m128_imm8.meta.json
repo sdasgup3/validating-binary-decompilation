@@ -1,0 +1,9 @@
+{
+  "def_in": "{ %eax %edx %rbx %xmm1 }",
+  "live_out": "{ %rcx %cf %pf %af %zf %sf %of }",
+  "maybe_undef_out": "{ }",
+  "def_in_formal": "{ %eax %edx %rbx %xmm1 }",
+  "live_out_formal": "{ %rcx %cf %pf %af %zf %sf %of }",
+  "search_without_uif": false,
+  "delim": 0
+}

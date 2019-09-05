@@ -1,0 +1,3 @@
+.target:
+  idivq %rbx
+  retq

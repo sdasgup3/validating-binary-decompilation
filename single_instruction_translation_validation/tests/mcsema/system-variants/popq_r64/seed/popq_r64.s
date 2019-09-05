@@ -1,0 +1,3 @@
+.target:
+  popq %rbx
+  retq

@@ -1,0 +1,3 @@
+.target:
+  divw %ax
+  retq
