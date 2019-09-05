@@ -1,0 +1,8 @@
+vcvtdq2pd_ymm_ymm
+gcc -Os test.c -o test
+Makefile:24: recipe for target 'binary' failed
+/home/sdasgup3/Github/validating-binary-decompilation/single_instruction_translation_validation/tests/mcsema
+test.c: Assembler messages:
+test.c:2: Error: operand type mismatch for `vcvtdq2pd'
+test.c:2: Error: operand type mismatch for `vcvtdq2pd'
+make: *** [binary] Error 1

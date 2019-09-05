@@ -1,0 +1,3 @@
+.target:
+  setnae %ah
+  retq

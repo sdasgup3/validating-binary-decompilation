@@ -1,0 +1,3 @@
+.target:
+  cmc 
+  retq

@@ -1,0 +1,3 @@
+.target:
+  idivb %bl
+  retq

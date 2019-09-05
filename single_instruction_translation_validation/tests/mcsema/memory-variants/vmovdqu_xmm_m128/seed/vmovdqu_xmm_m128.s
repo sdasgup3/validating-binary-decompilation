@@ -1,0 +1,3 @@
+.target:
+  vmovdqu -4(%rbp), %xmm1
+  retq

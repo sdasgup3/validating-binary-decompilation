@@ -1,0 +1,3 @@
+.target:
+  imulq %rax
+  retq

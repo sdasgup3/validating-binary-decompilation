@@ -1,0 +1,8 @@
+callq_m64
+callq_r64
+leaveq
+popq_r64
+popw_r16
+pushq_r64
+pushw_r16
+retq
