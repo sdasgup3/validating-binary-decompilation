@@ -1,0 +1,3 @@
+.target:
+  bswap %rbx
+  retq

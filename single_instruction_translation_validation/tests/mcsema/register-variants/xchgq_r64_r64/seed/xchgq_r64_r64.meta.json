@@ -1,0 +1,9 @@
+{
+  "def_in": "{ %rcx %rbx }",
+  "live_out": "{ %rcx %rbx }",
+  "maybe_undef_out": "{ }",
+  "def_in_formal": "{ %rcx %rbx }",
+  "live_out_formal": "{ %rcx %rbx }",
+  "search_without_uif": false,
+  "delim": 0
+}

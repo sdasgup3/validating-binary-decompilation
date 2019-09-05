@@ -1,0 +1,3 @@
+.target:
+  setnp %bl
+  retq

@@ -1,0 +1,3 @@
+.target:
+  incb %ah
+  retq

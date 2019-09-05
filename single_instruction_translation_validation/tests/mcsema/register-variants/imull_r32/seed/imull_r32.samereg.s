@@ -1,0 +1,3 @@
+.target:
+  imull %eax
+  retq

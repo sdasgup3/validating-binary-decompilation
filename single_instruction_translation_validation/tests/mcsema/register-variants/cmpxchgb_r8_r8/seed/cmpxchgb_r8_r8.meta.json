@@ -1,0 +1,9 @@
+{
+  "def_in": "{ %al %cl %bl %cf %pf %af %zf %sf %of }",
+  "live_out": "{ %al %bl %cf %pf %af %zf %sf %of }",
+  "maybe_undef_out": "{ }",
+  "def_in_formal": "{ %al %cl %bl %cf %pf %af %zf %sf %of }",
+  "live_out_formal": "{ %al %bl %cf %pf %af %zf %sf %of }",
+  "search_without_uif": false,
+  "delim": 0
+}

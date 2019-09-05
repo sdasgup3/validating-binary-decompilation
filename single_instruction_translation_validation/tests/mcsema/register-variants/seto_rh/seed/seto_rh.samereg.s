@@ -1,0 +1,3 @@
+.target:
+  seto %ah
+  retq
