@@ -5,6 +5,7 @@ set(LLVM_LINK_COMPONENTS
   BitWriter
   Core
   Support
+  ipo
 )
 
 add_llvm_tool(variable_bb_correspondence

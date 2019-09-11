@@ -21,6 +21,9 @@
 #include "llvm/Support/SystemUtils.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Transforms/Scalar.h"
+#include <llvm/Transforms/IPO.h>
+#include <llvm/Transforms/IPO/PassManagerBuilder.h>
+#include "remill/BC/Compat/TargetLibraryInfo.h"
 // Standard C++ imports
 #include <cstdlib>
 #include <fstream>
@@ -44,8 +47,8 @@ using namespace llvm;
 using namespace cpputil;
 using namespace stoke;
 
-auto &DecompiledFile = ValueArg<string>::create("decompiled-output")
-                           .alternate("dout")
+auto &DecompiledFile = ValueArg<string>::create("llvm-in")
+                           .alternate("li")
                            .usage("<path/to/file.(ll/bc)>")
                            .description("Path to decmpiled ll/bc file");
 
@@ -78,6 +81,13 @@ auto &X86DfgDotOut =
         .description("Specify the filename used to dump the x86 DFG")
         .default_val("");
 
+auto &LLVMOptOut =
+    ValueArg<string>::create("llvm-opt-out")
+        .alternate("loo")
+        .usage("File Name")
+        .description("Specify the filename used to dump the optimized llvm")
+        .default_val("");
+
 auto &X86DfgPdfOut = ValueArg<string>::create("x86-dfg-pdf-out")
                          .alternate("out")
                          .usage("<path/to/file.pdf>")
@@ -90,20 +100,22 @@ auto &no_fresh_memory =
     FlagArg::create("no-fresh-memory").alternate("no-fresh-mem");
 
 void CreateLLVMDFG(Module &Mod) {
-  if (FunctionToFindInitState.value() == "" || FunctionToAnalyze.value() == "")
-    return;
+  if (FunctionToFindInitState.value() != "" &&
+      FunctionToAnalyze.value() != "") {
 
-  Console::msg() << "LLVM init-state-function: "
-                 << FunctionToFindInitState.value() << "\n";
-  Console::msg() << "LLVM function-to-analyze: " << FunctionToAnalyze.value()
-                 << "\n";
+    Console::msg() << "LLVM init-state-function: "
+                   << FunctionToFindInitState.value() << "\n";
+    Console::msg() << "LLVM function-to-analyze: " << FunctionToAnalyze.value()
+                   << "\n";
 
-  // Find the initial variable correspondence w.r.t a dummy function
-  auto signatureInfo =
-      extractSignaturesFromModule(Mod, FunctionToFindInitState);
-  // Find the initial variable correspondence w.r.t the function under analysis
-  map<Value *, string> initVariableCorrespondence =
-      applySignaturesToModule(Mod, FunctionToAnalyze, signatureInfo);
+    // Find the initial variable correspondence w.r.t a dummy function
+    auto signatureInfo =
+        extractSignaturesFromModule(Mod, FunctionToFindInitState);
+    // Find the initial variable correspondence w.r.t the function under
+    // analysis
+    map<Value *, string> initVariableCorrespondence =
+        applySignaturesToModule(Mod, FunctionToAnalyze, signatureInfo);
+  }
 
   llvm::Function *f;
   for (auto &Func : Mod) {
@@ -158,6 +170,53 @@ bool view_pdf(const string &pdf_file) {
   return term.result() == 0;
 }
 
+static void RunO3(Module *gModule) {
+  llvm::legacy::FunctionPassManager func_manager(gModule);
+  llvm::legacy::PassManager module_manager;
+
+  //auto TLI = new llvm::TargetLibraryInfoImpl(
+  //    llvm::Triple(gModule->getTargetTriple()));
+
+  //TLI->disableAllFunctions();  // `-fno-builtin`.
+
+  llvm::PassManagerBuilder builder;
+  builder.OptLevel = 3;
+  //builder.SizeLevel = 2;
+  builder.Inliner = llvm::createFunctionInliningPass(
+      std::numeric_limits<int>::max());
+  //builder.LibraryInfo = TLI;  // Deleted by `llvm::~PassManagerBuilder`.
+  //builder.DisableUnrollLoops = false;  // Unroll loops!
+  //builder.DisableUnitAtATime = false;
+  //builder.SLPVectorize = false;
+  //builder.LoopVectorize = false;
+
+  // TODO(pag): Not sure when these became available.
+  // builder.MergeFunctions = false;  // Try to deduplicate functions.
+  // builder.VerifyInput = false;
+  // builder.VerifyOutput = false;
+
+  builder.populateFunctionPassManager(func_manager);
+  builder.populateModulePassManager(module_manager);
+  func_manager.doInitialization();
+  for (auto &func : *gModule) {
+    func_manager.run(func);
+  }
+  func_manager.doFinalization();
+  module_manager.run(*gModule);
+
+  // Verify the transformation
+  verifyModule(*gModule, &errs());
+
+  // Output the Module content
+  std::error_code EC;
+  raw_fd_ostream fd(LLVMOptOut.value(), EC, sys::fs::F_RW);
+  if (EC) {
+    llvm::errs() << "Could not open output file " << EC.message();
+    assert(0);
+  }
+  WriteBitcodeToFile(gModule, fd, true);
+}
+
 int main(int argc, char **argv) {
   target_arg.required(false);
   CommandLineConfig::strict_with_convenience(argc, argv);
@@ -175,8 +234,9 @@ int main(int argc, char **argv) {
       Err.print(argv[0], errs(), /*showColors=*/true);
       return 1;
     }
-
-    CreateLLVMDFG(*Mod);
+    
+    RunO3(Mod.get());
+    //CreateLLVMDFG(*Mod);
   }
 
   if (target_arg.has_been_provided()) {
