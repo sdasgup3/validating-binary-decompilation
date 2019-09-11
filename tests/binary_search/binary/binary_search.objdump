@@ -1,0 +1,54 @@
+00000000000006c0 <binary_search>:
+ 6c0:	55                   	push   %rbp
+ 6c1:	48 89 e5             	mov    %rsp,%rbp
+ 6c4:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+ 6c8:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+ 6cb:	89 55 e0             	mov    %edx,-0x20(%rbp)
+ 6ce:	c7 45 f4 00 00 00 00 	movl   $0x0,-0xc(%rbp)
+ 6d5:	8b 45 e4             	mov    -0x1c(%rbp),%eax
+ 6d8:	83 e8 01             	sub    $0x1,%eax
+ 6db:	89 45 f8             	mov    %eax,-0x8(%rbp)
+ 6de:	eb 68                	jmp    748 <binary_search+0x88>
+ 6e0:	8b 45 f8             	mov    -0x8(%rbp),%eax
+ 6e3:	2b 45 f4             	sub    -0xc(%rbp),%eax
+ 6e6:	89 c2                	mov    %eax,%edx
+ 6e8:	c1 ea 1f             	shr    $0x1f,%edx
+ 6eb:	01 d0                	add    %edx,%eax
+ 6ed:	d1 f8                	sar    %eax
+ 6ef:	89 c2                	mov    %eax,%edx
+ 6f1:	8b 45 f4             	mov    -0xc(%rbp),%eax
+ 6f4:	01 d0                	add    %edx,%eax
+ 6f6:	89 45 fc             	mov    %eax,-0x4(%rbp)
+ 6f9:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 6fc:	48 98                	cltq   
+ 6fe:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+ 705:	00 
+ 706:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 70a:	48 01 d0             	add    %rdx,%rax
+ 70d:	8b 00                	mov    (%rax),%eax
+ 70f:	3b 45 e0             	cmp    -0x20(%rbp),%eax
+ 712:	75 05                	jne    719 <binary_search+0x59>
+ 714:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 717:	eb 3c                	jmp    755 <binary_search+0x95>
+ 719:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 71c:	48 98                	cltq   
+ 71e:	48 8d 14 85 00 00 00 	lea    0x0(,%rax,4),%rdx
+ 725:	00 
+ 726:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+ 72a:	48 01 d0             	add    %rdx,%rax
+ 72d:	8b 00                	mov    (%rax),%eax
+ 72f:	3b 45 e0             	cmp    -0x20(%rbp),%eax
+ 732:	7d 0b                	jge    73f <binary_search+0x7f>
+ 734:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 737:	83 c0 01             	add    $0x1,%eax
+ 73a:	89 45 f4             	mov    %eax,-0xc(%rbp)
+ 73d:	eb 09                	jmp    748 <binary_search+0x88>
+ 73f:	8b 45 fc             	mov    -0x4(%rbp),%eax
+ 742:	83 e8 01             	sub    $0x1,%eax
+ 745:	89 45 f8             	mov    %eax,-0x8(%rbp)
+ 748:	8b 45 f4             	mov    -0xc(%rbp),%eax
+ 74b:	3b 45 f8             	cmp    -0x8(%rbp),%eax
+ 74e:	7c 90                	jl     6e0 <binary_search+0x20>
+ 750:	b8 ff ff ff ff       	mov    $0xffffffff,%eax
+ 755:	5d                   	pop    %rbp
+ 756:	c3                   	retq   
