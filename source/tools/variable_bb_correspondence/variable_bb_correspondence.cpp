@@ -1,5 +1,5 @@
 // Custom imports for LLVM dfg
-#include "llvm-dfg.h"
+//#include "llvm-dfg.h"
 #include "signature.h"
 // LLVM imports
 #include "llvm/AsmParser/Parser.h"
@@ -128,11 +128,11 @@ void CreateLLVMDFG(Module &Mod) {
   }
 
   Console::msg() << "Writing LLVM-dfg...\n";
-  writeDFGToDotFile(f, LLVMDfgDotOut);
+  //writeDFGToDotFile(f, LLVMDfgDotOut);
 
   Console::msg() << "Writing LLVM-dfg-segments..."
                  << "\n";
-  extractDFSegments(f);
+  //extractDFSegments(f);
 }
 
 string tempfile(const string &temp) {
