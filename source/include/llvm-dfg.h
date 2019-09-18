@@ -26,7 +26,7 @@
 #include <set>
 #include <vector>
 
-#include<set>
+#include <set>
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-dfg"
 using namespace std;

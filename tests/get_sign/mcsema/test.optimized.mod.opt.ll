@@ -15,10 +15,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %9 = type opaque
 
 ; Function Attrs: nounwind readnone speculatable
-declare i32 @llvm.ctpop.i32(i32) #0
+declare i32 @llvm.ctpop.i32(i32) 
 
 ; Function Attrs: nounwind
-define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64, %9* noalias readnone returned) local_unnamed_addr #1 {
+define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64, %9* noalias readnone returned) local_unnamed_addr  {
   %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 11, i32 0
   %6 = bitcast %2* %5 to i32*
@@ -39,7 +39,7 @@ define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64
   %17 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 1
   store i8 0, i8* %17, align 1
   %18 = and i32 %15, 255
-  %19 = tail call i32 @llvm.ctpop.i32(i32 %18), !range !0
+  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
   %20 = trunc i32 %19 to i8
   %21 = and i8 %20, 1
   %22 = xor i8 %21, 1
@@ -86,8 +86,3 @@ define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64
   store i64 0, i64* %7, align 8
   br label %40
 }
-
-attributes #0 = { nounwind readnone speculatable }
-attributes #1 = { nounwind }
-
-!0 = !{i32 0, i32 9}
