@@ -2,6 +2,7 @@
 //#include "llvm-dfg.h"
 #include "signature.h"
 // LLVM imports
+#include "remill/BC/Compat/TargetLibraryInfo.h"
 #include "llvm/AsmParser/Parser.h"
 #include "llvm/Bitcode/BitcodeReader.h"
 #include "llvm/Bitcode/BitcodeWriter.h"
@@ -23,7 +24,6 @@
 #include "llvm/Transforms/Scalar.h"
 #include <llvm/Transforms/IPO.h>
 #include <llvm/Transforms/IPO/PassManagerBuilder.h>
-#include "remill/BC/Compat/TargetLibraryInfo.h"
 // Standard C++ imports
 #include <cstdlib>
 #include <fstream>
@@ -128,11 +128,11 @@ void CreateLLVMDFG(Module &Mod) {
   }
 
   Console::msg() << "Writing LLVM-dfg...\n";
-  //writeDFGToDotFile(f, LLVMDfgDotOut);
+  // writeDFGToDotFile(f, LLVMDfgDotOut);
 
   Console::msg() << "Writing LLVM-dfg-segments..."
                  << "\n";
-  //extractDFSegments(f);
+  // extractDFSegments(f);
 }
 
 string tempfile(const string &temp) {
@@ -174,21 +174,21 @@ static void RunO3(Module *gModule) {
   llvm::legacy::FunctionPassManager func_manager(gModule);
   llvm::legacy::PassManager module_manager;
 
-  //auto TLI = new llvm::TargetLibraryInfoImpl(
-  //    llvm::Triple(gModule->getTargetTriple()));
+  auto TLI = new llvm::TargetLibraryInfoImpl(
+     llvm::Triple(gModule->getTargetTriple()));
 
-  //TLI->disableAllFunctions();  // `-fno-builtin`.
+  TLI->disableAllFunctions();  // `-fno-builtin`.
 
   llvm::PassManagerBuilder builder;
   builder.OptLevel = 3;
-  //builder.SizeLevel = 2;
-  builder.Inliner = llvm::createFunctionInliningPass(
-      std::numeric_limits<int>::max());
-  //builder.LibraryInfo = TLI;  // Deleted by `llvm::~PassManagerBuilder`.
-  //builder.DisableUnrollLoops = false;  // Unroll loops!
-  //builder.DisableUnitAtATime = false;
-  //builder.SLPVectorize = false;
-  //builder.LoopVectorize = false;
+  builder.SizeLevel = 2;
+  builder.Inliner =
+      llvm::createFunctionInliningPass(std::numeric_limits<int>::max());
+  builder.LibraryInfo = TLI;  // Deleted by `llvm::~PassManagerBuilder`.
+  builder.DisableUnrollLoops = false;  // Unroll loops!
+  builder.DisableUnitAtATime = false;
+  builder.SLPVectorize = false;
+  builder.LoopVectorize = false;
 
   // TODO(pag): Not sure when these became available.
   // builder.MergeFunctions = false;  // Try to deduplicate functions.
@@ -234,9 +234,9 @@ int main(int argc, char **argv) {
       Err.print(argv[0], errs(), /*showColors=*/true);
       return 1;
     }
-    
+
     RunO3(Mod.get());
-    //CreateLLVMDFG(*Mod);
+    // CreateLLVMDFG(*Mod);
   }
 
   if (target_arg.has_been_provided()) {

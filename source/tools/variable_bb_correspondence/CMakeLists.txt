@@ -11,5 +11,6 @@ set(LLVM_LINK_COMPONENTS
 add_llvm_tool(variable_bb_correspondence
   variable_bb_correspondence.cpp
 )
+
 target_link_libraries(variable_bb_correspondence signature ${STOKE_ROOT}/lib/libstoke.a ${STOKE_ROOT}/src/ext/x64asm/lib/libx64asm.a)
 target_include_directories(variable_bb_correspondence PRIVATE ${STOKE_INCLUDE_DIRECTORIES})
