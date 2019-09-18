@@ -174,18 +174,18 @@ static void RunO3(Module *gModule) {
   llvm::legacy::FunctionPassManager func_manager(gModule);
   llvm::legacy::PassManager module_manager;
 
-  auto TLI = new llvm::TargetLibraryInfoImpl(
-     llvm::Triple(gModule->getTargetTriple()));
+  auto TLI =
+      new llvm::TargetLibraryInfoImpl(llvm::Triple(gModule->getTargetTriple()));
 
-  TLI->disableAllFunctions();  // `-fno-builtin`.
+  TLI->disableAllFunctions(); // `-fno-builtin`.
 
   llvm::PassManagerBuilder builder;
   builder.OptLevel = 3;
   builder.SizeLevel = 2;
   builder.Inliner =
       llvm::createFunctionInliningPass(std::numeric_limits<int>::max());
-  builder.LibraryInfo = TLI;  // Deleted by `llvm::~PassManagerBuilder`.
-  builder.DisableUnrollLoops = false;  // Unroll loops!
+  builder.LibraryInfo = TLI;          // Deleted by `llvm::~PassManagerBuilder`.
+  builder.DisableUnrollLoops = false; // Unroll loops!
   builder.DisableUnitAtATime = false;
   builder.SLPVectorize = false;
   builder.LoopVectorize = false;

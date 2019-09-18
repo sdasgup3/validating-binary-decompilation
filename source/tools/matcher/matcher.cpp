@@ -46,19 +46,12 @@ using namespace cpputil;
 using namespace stoke;
 
 auto &Target = ValueArg<string>::create("file1")
-                   .usage("<path/to/file.(ll/bc)>")
+                   .usage("<path/to/file.(ll/bc)>:function to analyze in file1")
                    .description("Path to decompiled ll/bc file");
 
 auto &Source = ValueArg<string>::create("file2")
-                   .usage("<path/to/file.(ll/bc)>")
+                   .usage("<path/to/file.(ll/bc)>:function to analyze in file2")
                    .description("Path to proposed ll/bc file");
-
-auto &FunctionToAnalyze =
-    ValueArg<string>::create("target-function")
-        .alternate("tf")
-        .usage("Function Name")
-        .description("Specify the llvm function name to analyze")
-        .default_val("");
 
 int main(int argc, char **argv) {
   target_arg.required(false);
@@ -67,67 +60,94 @@ int main(int argc, char **argv) {
   DebugHandler::install_sigill();
 
   if (Target.value().empty() || Source.value().empty()) {
-    Console::msg() << "Provide --file1 <ll/bc file> --file2 <ll/bc file>\n";
+    Console::msg()
+        << "Provide --file1 <ll/bc file>:func1 --file2 <ll/bc file>:func2\n";
     return 1;
+  }
+
+  // Parsing file and function names from input arguments
+  std::string TargetFunc("");
+  std::string TargetFile("");
+  size_t it;
+  if ((it = Target.value().find(':')) != string::npos) {
+    TargetFunc = Target.value().substr(it + 1);
+    TargetFile = Target.value().substr(0, it);
+  } else {
+    TargetFile = Target.value();
+  }
+
+  std::string SourceFunc("");
+  std::string SourceFile("");
+  if ((it = Source.value().find(':')) != string::npos) {
+    SourceFunc = Source.value().substr(it + 1);
+    SourceFile = Source.value().substr(0, it);
+  } else {
+    SourceFile = Source.value();
   }
 
   SMDiagnostic Err;
   LLVMContext Context;
 
-  Console::msg() << "Reading LLVM: " << Target.value() << "\n";
-  std::unique_ptr<Module> TMod(parseIRFile(Target.value(), Err, Context));
+  // Reading llvm files and extracting functions to match
+  Console::msg() << "Reading LLVM: " << TargetFile << "\n";
+  std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
-  Console::msg() << "Reading LLVM: " << Source.value() << "\n";
-  std::unique_ptr<Module> SMod(parseIRFile(Source.value(), Err, Context));
+  Console::msg() << "Reading LLVM: " << SourceFile << "\n";
+  std::unique_ptr<Module> SMod(parseIRFile(SourceFile, Err, Context));
   if (!SMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
-
-  Console::msg() << "Extracting a function from each module to compare \n";
   llvm::Function *F1 = nullptr, *F2 = nullptr;
 
+  Console::msg() << "Extracting function [" << TargetFunc << "] from "
+                 << TargetFile << "\n";
   for (auto &Func : *TMod) {
-    if(Func.isIntrinsic() || Func.isDeclaration()) continue;
+    if (Func.isIntrinsic() || Func.isDeclaration())
+      continue;
 
-    if(FunctionToAnalyze.value() == "") {
+    if (TargetFunc == "") {
       F1 = &Func;
       break;
-    } 
+    }
 
-    if (string::npos == Func.getName().str().find(FunctionToAnalyze))
+    if (string::npos == Func.getName().str().find(TargetFunc))
       continue;
 
     F1 = &Func;
     break;
   }
 
+  Console::msg() << "Extracting function [" << SourceFunc << "] from "
+                 << SourceFile << "\n";
   for (auto &Func : *SMod) {
-    if(Func.isIntrinsic() || Func.isDeclaration()) continue;
+    if (Func.isIntrinsic() || Func.isDeclaration())
+      continue;
 
-    if(FunctionToAnalyze.value() == "") {
+    if (SourceFunc == "") {
       F2 = &Func;
       break;
-    } 
+    }
 
-    if (string::npos == Func.getName().str().find(FunctionToAnalyze))
+    if (string::npos == Func.getName().str().find(SourceFunc))
       continue;
 
     F2 = &Func;
     break;
   }
 
-  if(!F1 || !F2) {
-    Console::msg() << "Missing function name: " << FunctionToAnalyze.value() << "\n";
+  if (!F1 || !F2) {
+    Console::msg() << "Missing function name: " << TargetFunc << " or "
+                   << SourceFunc << "\n";
   }
 
   // Matching the extracted functions
-  Matcher M(*F1, *F2);
+  Matcher M(F1, F2);
 
   Console::msg() << "Exiting Simple Matcher ...\n";
   return 0;
