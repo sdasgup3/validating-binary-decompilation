@@ -22,7 +22,11 @@
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Support/GraphWriter.h"
-#include "llvm/IR/InstrTypes.h"
+#include <iostream>
+#include <set>
+#include <vector>
+
+#include<set>
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-dfg"
 using namespace std;
