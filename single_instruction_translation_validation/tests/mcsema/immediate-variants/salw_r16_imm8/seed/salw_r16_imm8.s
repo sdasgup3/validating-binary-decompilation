@@ -1,3 +1,3 @@
 .target:
-  salw $0x77, %bx
+  salw $0xa, %bx
   retq

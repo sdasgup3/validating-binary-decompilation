@@ -144,10 +144,10 @@ block_4003e0:
   store i64 %16, i64* %PC
   %17 = inttoptr i64 %13 to i64*
   store i64 %14, i64* %17
-  %18 = load i64, i64* %PC
-  %19 = add i64 %18, 1
-  store i64 %19, i64* %PC
-  %20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  ;%18 = load i64, i64* %PC
+  ;%19 = add i64 %18, 1
+  ;store i64 %19, i64* %PC
+  ;%20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   ret i32 0
 }
 

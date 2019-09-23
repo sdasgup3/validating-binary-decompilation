@@ -1,3 +1,3 @@
 .target:
-  pushq $0x77
+  pushq $0xa
   retq

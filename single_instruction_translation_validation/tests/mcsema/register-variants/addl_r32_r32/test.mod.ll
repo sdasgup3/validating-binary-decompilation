@@ -184,10 +184,10 @@ block_530:
   %50 = zext i1 %49 to i8
   %51 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 %50, i8* %51, align 1
-  %52 = load i64, i64* %PC
-  %53 = add i64 %52, 1
-  store i64 %53, i64* %PC
-  %54 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  ;%52 = load i64, i64* %PC
+  ;%53 = add i64 %52, 1
+  ;store i64 %53, i64* %PC
+  ;%54 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   ret i32 0
 }
 

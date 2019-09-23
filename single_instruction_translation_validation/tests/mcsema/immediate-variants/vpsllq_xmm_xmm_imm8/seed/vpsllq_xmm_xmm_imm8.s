@@ -1,3 +1,3 @@
 .target:
-  vpsllq $0x77, %xmm2, %xmm1
+  vpsllq $0xa, %xmm2, %xmm1
   retq

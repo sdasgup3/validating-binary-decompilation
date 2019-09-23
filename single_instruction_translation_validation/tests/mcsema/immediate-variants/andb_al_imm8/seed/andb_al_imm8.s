@@ -1,3 +1,3 @@
 .target:
-  andb $0x77, %al
+  andb $0xa, %al
   retq

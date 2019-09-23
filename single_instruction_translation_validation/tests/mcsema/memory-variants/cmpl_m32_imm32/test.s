@@ -4,7 +4,7 @@ leaf:
 LFB0:
     
     
-    cmpl $0x0, -4(%rbp)
+    cmpl $0x77, -4(%rbp)
     
     
     ret
@@ -15,7 +15,7 @@ _start:
 LFB3:
     
     
-    cmpl $0x0, -4(%rbp)
+    cmpl $0x77, -4(%rbp)
     
     
     ret

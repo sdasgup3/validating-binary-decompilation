@@ -1,3 +1,3 @@
 .target:
-  shufps $0x77, %xmm2, %xmm1
+  shufps $0xa, %xmm2, %xmm1
   retq

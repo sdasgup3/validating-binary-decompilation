@@ -1,3 +1,3 @@
 .target:
-  sarw $0x77, %bx
+  sarw $0xa, %bx
   retq

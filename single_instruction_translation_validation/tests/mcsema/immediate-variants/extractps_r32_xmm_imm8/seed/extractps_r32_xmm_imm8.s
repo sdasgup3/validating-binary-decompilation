@@ -1,3 +1,3 @@
 .target:
-  extractps $0x77, %xmm1, %ebx
+  extractps $0xa, %xmm1, %ebx
   retq

@@ -1,3 +1,3 @@
 .target:
-  psllw $0x77, %xmm1
+  psllw $0xa, %xmm1
   retq

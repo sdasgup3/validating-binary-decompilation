@@ -13,7 +13,7 @@ parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Registers/register
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Registers/register_instructions.txt  "rm -rf register-variants/{}/instructions/{}"
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Registers/register_instructions.txt  "rm -rf register-variants/{}/instructions/{}.samereg"
 find . -name check_stoke.txt | xargs rm -rf
-parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt  "mv immediate-variants/{}/instructions immediate-variants/{}/seed"
+parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/register_instructions.txt  "mv register-variants/{}/instructions register-variants/{}/seed"
 
 // Immediate instructions
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt "/home/sdasgup3/Github/X86-64-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir immediate-variants/{}"

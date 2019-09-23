@@ -1,3 +1,3 @@
 .target:
-  vcvtps2ph $0x77, %xmm2, %xmm1
+  vcvtps2ph $0xa, %xmm2, %xmm1
   retq

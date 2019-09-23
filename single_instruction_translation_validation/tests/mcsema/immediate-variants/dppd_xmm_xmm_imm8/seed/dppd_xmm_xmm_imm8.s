@@ -1,3 +1,3 @@
 .target:
-  dppd $0x77, %xmm2, %xmm1
+  dppd $0xa, %xmm2, %xmm1
   retq

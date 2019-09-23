@@ -1,3 +1,3 @@
 .target:
-  cmpb $0x77, %bl
+  cmpb $0xa, %bl
   retq

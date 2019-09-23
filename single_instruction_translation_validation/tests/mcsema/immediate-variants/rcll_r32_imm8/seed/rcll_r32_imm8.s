@@ -1,3 +1,3 @@
 .target:
-  rcll $0x77, %ebx
+  rcll $0xa, %ebx
   retq

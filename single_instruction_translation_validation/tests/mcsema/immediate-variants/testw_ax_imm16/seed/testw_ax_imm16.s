@@ -1,3 +1,3 @@
 .target:
-  testw $0x77, %ax
+  testw $0xa, %ax
   retq
