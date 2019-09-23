@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,21 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_xchgb_m8_rh(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XCHGI3MnWIhE2MnIhE3RnWIhE2RnIhEEEP6MemorySA_R5StateT_T0_T1_T2_(%struct.Memory*, %struct.State* nocapture readnone dereferenceable(3376), i64, i64, i8* nocapture, i64) #0 {
+  %7 = inttoptr i64 %3 to i8*
+  %8 = load i8, i8* %7
+  %9 = trunc i64 %5 to i8
+  %10 = inttoptr i64 %2 to i8*
+  store i8 %9, i8* %10
+  store i8 %8, i8* %4, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_xchgb_m8_rh(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -147,22 +160,18 @@ block_4003e0:
   %20 = load i64, i64* %PC
   %21 = add i64 %20, 3
   store i64 %21, i64* %PC
-  %22 = inttoptr i64 %17 to i8*
-  %23 = load i8, i8* %22
-  %24 = inttoptr i64 %15 to i8*
-  store i8 %18, i8* %24
-  store i8 %23, i8* %AH, align 1
-  %25 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %13)
-  %26 = load i64, i64* %PC
-  %27 = add i64 %26, 1
-  store i64 %27, i64* %PC
-  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %22 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4XCHGI3MnWIhE2MnIhE3RnWIhE2RnIhEEEP6MemorySA_R5StateT_T0_T1_T2_(%struct.Memory* %13, %struct.State* %0, i64 %15, i64 %17, i8* %AH, i64 %19)
+  %23 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %22)
+  %24 = load i64, i64* %PC
+  %25 = add i64 %24, 1
+  store i64 %25, i64* %PC
+  ret %struct.Memory* %22
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -181,6 +190,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_xchgb_m8_rh(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_xchgb_m8_rh(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

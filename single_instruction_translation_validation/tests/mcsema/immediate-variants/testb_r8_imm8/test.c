@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("testb $0x77, %bl");
-  }
-
 void main() {
-  leaf();
+  __asm__("testb $0xa, %bl");
 }

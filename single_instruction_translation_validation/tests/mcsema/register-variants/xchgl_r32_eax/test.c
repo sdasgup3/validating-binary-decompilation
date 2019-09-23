@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("xchgl %eax, %ebx");
-  }
-
 void main() {
-  leaf();
+  __asm__("xchgl %eax, %ebx");
 }

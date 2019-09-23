@@ -31,7 +31,6 @@ my $opcode = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
-my $mainFuncSignaure    = qr/define.*@(sub_.*_main).*/;
 my $terminatingInstr =
 qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
@@ -72,50 +71,55 @@ for ( my $i = 0 ; $i < $maxTargetInfoLength ; $i = $i + 1 ) {
 ## Get Stucture Layout
 my $structLayout = getStructureLayout();
 
-## Find main function body
-my @mainBody  = ();
-my $foundMain = 0;
-for my $line (@lines) {
-    if ( $foundMain == 0 and ( $line !~ m/$mainFuncSignaure/g ) ) {
-        next;
-    }
+# Hold the code for all the relevant functions
+my @funcs = ();
 
-    $foundMain = 1;
-    push @mainBody, $line;
+# The new name of the main function
+my $modMainName = "routine_" . $opcode;
 
-    if ( $line =~ m/}/g ) {
-        last;
-    }
+# Collect all the defined functions
+my %definedFuncs = ();
+collectDefinedFunctions();
+
+# Find the body of the main function
+my $mainFuncSignaure    = qr/define.*@(sub_.*_main).*/;
+my $mainFuncName        = qr/sub_.*_main/;
+my @foundMain = @{ getMainBody($mainFuncName) };
+
+# Ieratively determine the body of the callee from main
+expandMain( \@foundMain );
+
+## Open file to write
+my ( $dirname, $basename, $ext ) = utils::split_filename($file);
+my $outFileName = $basename . ".mod.ll";
+if ( $dirname ne "" ) {
+    $outFileName = $dirname . "/" . $outFileName;
 }
+open( my $ofp, ">", $outFileName ) or die "cannot open: $!";
+print("Generatin $outFileName for opcode $opcode ...\n");
 
-#utils::printArray(\@mainBody);
+print $ofp $targetInfo;
+print $ofp "\n";
+print $ofp $structLayout;
+print $ofp "\n";
+print $ofp getInstrinticsDefinitions();
+print $ofp "\n";
+for my $itr (@funcs) {
+    print $ofp $itr;
+}
+print $ofp "\n";
+print $ofp getMainDefintion();
+close $ofp;
 
-# Derive mainfunction name
-my $mainName = "sub_" . $opcode;
-my @modMain  = fixMain( \@mainBody );
-
-#utils::printArray(\@modMain);
-
+##############################################
 ## Utils
-sub fixMain {
+sub fixFunc {
     my $mainBodyRef = shift @_;
     my @mainBody    = @{$mainBodyRef};
 
     my @modMain = ();
 
     for my $line (@mainBody) {
-
-        # fix function declaration
-        if ( $line =~ m/$mainFuncSignaure/ ) {
-            push @modMain,
-              "define i32 @" . $mainName . "(%struct.State*, i64, i64) {\n";
-            next;
-        }
-
-        ## terminating instruction
-        if ( $line =~ m/$terminatingInstr/g ) {
-            last;
-        }
 
         ## Remove metadata info
         if ( $line =~ m/(.*), !tbaa.*/g ) {
@@ -132,34 +136,137 @@ sub fixMain {
         push @modMain, $line;
     }
 
-    push @modMain, "  ret i32 0\n";
-    push @modMain, "}\n";
     return @modMain;
 }
 
-## Open file to write
-my ( $dirname, $basename, $ext ) = utils::split_filename($file);
-my $outFileName = $basename . ".mod.ll";
-if ( $dirname ne "" ) {
-    $outFileName = $dirname . "/" . $outFileName;
-}
-open( my $ofp, ">", $outFileName ) or die "cannot open: $!";
-print ("Generatin $outFileName for opcode $opcode ...\n");
+sub getMainBody {
+    my $funcName = shift @_;
 
-print $ofp $targetInfo;
-print $ofp "\n";
-print $ofp $structLayout;
-print $ofp "\n";
-print $ofp getInstrinticsDefinitions();
-print $ofp "\n";
-for my $itr (@modMain) {
-    print $ofp $itr;
-}
-print $ofp "\n";
-print $ofp getMainDefintion();
-close $ofp;
+    my @mainBody   = ();
+    my $foundMain  = 0;
+    my $countCalls = 0;
+    my $mainRetval = "";
 
-##############################################
+    for my $line (@lines) {
+        my $tline = utils::trim($line);
+
+        if ( $foundMain == 0 and ( $tline !~ m/define.*\@sub_.*_main.*/ ) ) {
+            next;
+        }
+
+        if ( $foundMain == 0 ) {
+#print "!!".$tline. "!!";
+
+            if ( $tline =~ m/(define.*)\@(sub_.*_main)(.*)/ ) {
+#print "#".$tline. "#\n";
+                push @mainBody, "$1\@$modMainName$3\n";
+                $foundMain = 1;
+                next;
+            }
+        }
+
+        if ( $tline =~ m/\s*(\S*) = call.*@(.*)\(.*\).*/ ) {
+            my $calledFunc = $2;
+#print $calledFunc." ... \n";
+            if ( isDefined($calledFunc) == 1 ) {
+#print " define... \n";
+                $countCalls = $countCalls + 1;
+                if ( $countCalls == 2 ) {
+                  last;
+                }
+                $mainRetval = $1;
+            }
+        }
+
+
+        push @mainBody, $line;
+
+    }
+
+    push @mainBody, "  ret %struct.Memory* $mainRetval\n";
+    push @mainBody, "}\n";
+
+#utils::printArray(\@mainBody);
+    return \@mainBody;
+}
+
+sub expandMain {
+    my $progBodyRef = shift @_;
+    my @progBody    = @{$progBodyRef};
+
+    my @calledFuncs = ();
+    my $foundMain   = 0;
+
+    for my $line (@progBody) {
+        my $tline = utils::trim($line);
+
+        #print $tline."\n";
+        if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
+            my $calledFunc = $1;
+
+            #print $calledFunc."\n";
+            if ( isDefined($calledFunc) == 1 ) {
+                push @calledFuncs, $calledFunc;
+            }
+        }
+    }
+
+    for my $calledFunc (@calledFuncs) {
+        print "Expanding $calledFunc...\n";
+        my @funcBody = @{ getFuncBody($calledFunc) };
+        expandMain( \@funcBody );
+    }
+
+    push @funcs, fixFunc( \@progBody );
+}
+
+sub getFuncBody {
+    my $funcName = shift @_;
+
+    my @mainBody  = ();
+    my $foundMain = 0;
+
+    for my $line (@lines) {
+        my $tline = utils::trim($line);
+        if ( $foundMain == 0 and ( $tline !~ m/define.*@($funcName).*/g ) ) {
+            next;
+        }
+
+        $foundMain = 1;
+        push @mainBody, "$line";
+
+        if ( $line =~ m/}/g ) {
+            push @mainBody, "\n";
+            last;
+        }
+    }
+
+    #utils::printArray(\@mainBody);
+    return \@mainBody;
+}
+
+sub collectDefinedFunctions {
+    for my $line (@lines) {
+        my $tline = utils::trim($line);
+        if ( $tline =~ m/define.*\@(.*?)\(.*\).*/g ) {
+          $definedFuncs{$1} = 1; 
+        }
+    }
+#printMap(\%definedFuncs);
+}
+
+sub isDefined {
+    my $funcName = shift @_;
+
+    if(exists $definedFuncs{$funcName}) {
+#print $funcName . "defined ...\n";
+      return 1;
+    }
+
+#print $funcName . "not defined ...\n";
+    return 0;
+}
+
 sub getInstrinticsDefinitions {
 
     my $intrinsicDefintions = qq(define i32 \@my.ctpop.i32(i32 %x) {
@@ -259,6 +366,8 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* \@__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* \@__remill_atomic_end(%struct.Memory*);
 );
     return $intrinsicDefintions;
 }
@@ -267,6 +376,7 @@ sub getMainDefintion {
     my $mainDefn = qq(define i32 \@main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -285,7 +395,7 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 \@$mainName(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* \@$modMainName(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 });
 
@@ -293,7 +403,7 @@ entry:
 }
 
 sub getStructureLayout {
-  my $structLayout = qq(%union.anon = type { i64 }
+    my $structLayout = qq(%union.anon = type { i64 }
 %struct.State = type {%struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, i64, i64, i64, %struct.GPR}
 
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -312,6 +422,8 @@ sub getStructureLayout {
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 );
-  return $structLayout;
+    return $structLayout;
 }
+

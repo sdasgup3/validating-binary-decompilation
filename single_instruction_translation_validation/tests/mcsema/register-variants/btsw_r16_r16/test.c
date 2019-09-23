@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("btsw %cx, %bx");
-  }
-
 void main() {
-  leaf();
+  __asm__("btsw %cx, %bx");
 }

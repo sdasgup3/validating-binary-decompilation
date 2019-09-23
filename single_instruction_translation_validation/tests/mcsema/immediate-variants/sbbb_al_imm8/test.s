@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    sbbb $0x77, %al
+    sbbb $0xa, %al
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    sbbb $0x77, %al
-    
-    
-    ret
-LFE3:

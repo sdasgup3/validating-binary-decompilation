@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,8 +121,39 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vmovss_xmm_xmm_xmm(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L6VMOVSSEP6MemoryR5State3VnWI8vec256_tE2VnI8vec128_tES9_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
+  %6 = bitcast i8* %3 to <2 x i32>*
+  %7 = load <2 x i32>, <2 x i32>* %6, align 1
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
+  %9 = bitcast i8* %8 to <2 x i32>*
+  %10 = load <2 x i32>, <2 x i32>* %9, align 1
+  %11 = bitcast i8* %4 to <2 x i32>*
+  %12 = load <2 x i32>, <2 x i32>* %11, align 1
+  %13 = extractelement <2 x i32> %12, i32 0
+  %14 = bitcast i8* %2 to i32*
+  store i32 %13, i32* %14, align 1
+  %15 = extractelement <2 x i32> %7, i32 1
+  %16 = getelementptr inbounds i8, i8* %2, i64 4
+  %17 = bitcast i8* %16 to i32*
+  store i32 %15, i32* %17, align 1
+  %18 = extractelement <2 x i32> %10, i32 0
+  %19 = getelementptr inbounds i8, i8* %2, i64 8
+  %20 = bitcast i8* %19 to i32*
+  store i32 %18, i32* %20, align 1
+  %21 = extractelement <2 x i32> %10, i32 1
+  %22 = getelementptr inbounds i8, i8* %2, i64 12
+  %23 = bitcast i8* %22 to i32*
+  store i32 %21, i32* %23, align 1
+  %24 = getelementptr inbounds i8, i8* %2, i64 16
+  %25 = bitcast i8* %24 to <4 x float>*
+  store <4 x float> zeroinitializer, <4 x float>* %25, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vmovss_xmm_xmm_xmm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -143,41 +175,17 @@ block_530:
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 4
   store i64 %16, i64* %PC
-  %17 = bitcast i8* %13 to <2 x i32>*
-  %18 = load <2 x i32>, <2 x i32>* %17, align 1
-  %19 = getelementptr inbounds i8, i8* %13, i64 8
-  %20 = bitcast i8* %19 to <2 x i32>*
-  %21 = load <2 x i32>, <2 x i32>* %20, align 1
-  %22 = bitcast i8* %14 to <2 x i32>*
-  %23 = load <2 x i32>, <2 x i32>* %22, align 1
-  %24 = extractelement <2 x i32> %23, i32 0
-  %25 = bitcast i8* %12 to i32*
-  store i32 %24, i32* %25, align 1
-  %26 = extractelement <2 x i32> %18, i32 1
-  %27 = getelementptr inbounds i8, i8* %12, i64 4
-  %28 = bitcast i8* %27 to i32*
-  store i32 %26, i32* %28, align 1
-  %29 = extractelement <2 x i32> %21, i32 0
-  %30 = getelementptr inbounds i8, i8* %12, i64 8
-  %31 = bitcast i8* %30 to i32*
-  store i32 %29, i32* %31, align 1
-  %32 = extractelement <2 x i32> %21, i32 1
-  %33 = getelementptr inbounds i8, i8* %12, i64 12
-  %34 = bitcast i8* %33 to i32*
-  store i32 %32, i32* %34, align 1
-  %35 = getelementptr inbounds i8, i8* %12, i64 16
-  %36 = bitcast i8* %35 to <4 x float>*
-  store <4 x float> zeroinitializer, <4 x float>* %36, align 1
-  %37 = load i64, i64* %PC
-  %38 = add i64 %37, 1
-  store i64 %38, i64* %PC
-  %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L6VMOVSSEP6MemoryR5State3VnWI8vec256_tE2VnI8vec128_tES9_(%struct.Memory* %2, %struct.State* %0, i8* %12, i8* %13, i8* %14)
+  %18 = load i64, i64* %PC
+  %19 = add i64 %18, 1
+  store i64 %19, i64* %PC
+  ret %struct.Memory* %17
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -196,6 +204,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vmovss_xmm_xmm_xmm(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vmovss_xmm_xmm_xmm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

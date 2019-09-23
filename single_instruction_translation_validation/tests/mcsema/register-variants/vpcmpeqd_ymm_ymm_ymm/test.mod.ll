@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,68 +121,75 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vpcmpeqd_ymm_ymm_ymm(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7PCMPEQDI3VnWI8vec256_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
+  %6 = alloca %struct.int32v8_t, align 16
+  %7 = alloca %struct.int32v8_t, align 16
+  %8 = bitcast %struct.int32v8_t* %6 to i8*
+  call void @my.lifetime.start(i64 32, i8* nonnull %8) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %8, i8* %3, i64 32, i32 1, i1 false) #22
+  %9 = bitcast %struct.int32v8_t* %7 to i8*
+  call void @my.lifetime.start(i64 32, i8* nonnull %9) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %9, i8* %4, i64 32, i32 1, i1 false) #22
+  %10 = bitcast %struct.int32v8_t* %6 to <4 x i32>*
+  %11 = load <4 x i32>, <4 x i32>* %10, align 16
+  %12 = bitcast %struct.int32v8_t* %7 to <4 x i32>*
+  %13 = load <4 x i32>, <4 x i32>* %12, align 16
+  %14 = icmp eq <4 x i32> %11, %13
+  %15 = sext <4 x i1> %14 to <4 x i32>
+  %16 = getelementptr inbounds %struct.int32v8_t, %struct.int32v8_t* %6, i64 0, i32 0, i64 4
+  %17 = getelementptr inbounds %struct.int32v8_t, %struct.int32v8_t* %7, i64 0, i32 0, i64 4
+  %18 = bitcast i32* %16 to <4 x i32>*
+  %19 = load <4 x i32>, <4 x i32>* %18, align 16
+  %20 = bitcast i32* %17 to <4 x i32>*
+  %21 = load <4 x i32>, <4 x i32>* %20, align 16
+  %22 = icmp eq <4 x i32> %19, %21
+  %23 = sext <4 x i1> %22 to <4 x i32>
+  %24 = bitcast i8* %2 to <4 x i32>*
+  store <4 x i32> %15, <4 x i32>* %24, align 1
+  %25 = getelementptr inbounds i8, i8* %2, i64 16
+  %26 = bitcast i8* %25 to <4 x i32>*
+  store <4 x i32> %23, <4 x i32>* %26, align 1
+  call void @my.lifetime.end(i64 32, i8* nonnull %9) #22
+  call void @my.lifetime.end(i64 32, i8* nonnull %8) #22
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vpcmpeqd_ymm_ymm_ymm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
-  %3 = alloca %struct.int32v8_t, align 16
-  %4 = alloca %struct.int32v8_t, align 16
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %6 = getelementptr inbounds %struct.GPR, %struct.GPR* %5, i32 0, i32 33
-  %7 = getelementptr inbounds %struct.Reg, %struct.Reg* %6, i32 0, i32 0
-  %PC = bitcast %union.anon* %7 to i64*
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
   store i64 %1, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %9 to %"class.std::bitset"*
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %9 to %"class.std::bitset"*
   %10 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %11 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %10, i64 0, i64 2
-  %YMM2 = bitcast %union.VectorReg* %11 to %"class.std::bitset"*
-  %12 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %13 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %12, i64 0, i64 3
-  %YMM3 = bitcast %union.VectorReg* %13 to %"class.std::bitset"*
-  %14 = bitcast %"class.std::bitset"* %YMM1 to i8*
-  %15 = bitcast %"class.std::bitset"* %YMM2 to i8*
-  %16 = bitcast %"class.std::bitset"* %YMM3 to i8*
-  %17 = load i64, i64* %PC
-  %18 = add i64 %17, 4
-  store i64 %18, i64* %PC
-  %19 = bitcast %struct.int32v8_t* %3 to i8*
-  call void @my.lifetime.start(i64 32, i8* nonnull %19) #14
-  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %19, i8* %15, i64 32, i32 1, i1 false) #14
-  %20 = bitcast %struct.int32v8_t* %4 to i8*
-  call void @my.lifetime.start(i64 32, i8* nonnull %20) #14
-  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %20, i8* %16, i64 32, i32 1, i1 false) #14
-  %21 = bitcast %struct.int32v8_t* %3 to <4 x i32>*
-  %22 = load <4 x i32>, <4 x i32>* %21, align 16
-  %23 = bitcast %struct.int32v8_t* %4 to <4 x i32>*
-  %24 = load <4 x i32>, <4 x i32>* %23, align 16
-  %25 = icmp eq <4 x i32> %22, %24
-  %26 = sext <4 x i1> %25 to <4 x i32>
-  %27 = getelementptr inbounds %struct.int32v8_t, %struct.int32v8_t* %3, i64 0, i32 0, i64 4
-  %28 = getelementptr inbounds %struct.int32v8_t, %struct.int32v8_t* %4, i64 0, i32 0, i64 4
-  %29 = bitcast i32* %27 to <4 x i32>*
-  %30 = load <4 x i32>, <4 x i32>* %29, align 16
-  %31 = bitcast i32* %28 to <4 x i32>*
-  %32 = load <4 x i32>, <4 x i32>* %31, align 16
-  %33 = icmp eq <4 x i32> %30, %32
-  %34 = sext <4 x i1> %33 to <4 x i32>
-  %35 = bitcast i8* %14 to <4 x i32>*
-  store <4 x i32> %26, <4 x i32>* %35, align 1
-  %36 = getelementptr inbounds i8, i8* %14, i64 16
-  %37 = bitcast i8* %36 to <4 x i32>*
-  store <4 x i32> %34, <4 x i32>* %37, align 1
-  call void @my.lifetime.end(i64 32, i8* nonnull %20) #14
-  call void @my.lifetime.end(i64 32, i8* nonnull %19) #14
-  %38 = load i64, i64* %PC
-  %39 = add i64 %38, 1
-  store i64 %39, i64* %PC
-  %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %11 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %10, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %11 to %"class.std::bitset"*
+  %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %13 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %14 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 4
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L7PCMPEQDI3VnWI8vec256_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %12, i8* %13, i8* %14)
+  %18 = load i64, i64* %PC
+  %19 = add i64 %18, 1
+  store i64 %19, i64* %PC
+  ret %struct.Memory* %17
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -200,6 +208,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vpcmpeqd_ymm_ymm_ymm(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vpcmpeqd_ymm_ymm_ymm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

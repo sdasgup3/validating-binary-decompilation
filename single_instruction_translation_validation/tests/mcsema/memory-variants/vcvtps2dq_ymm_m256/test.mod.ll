@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,104 +121,112 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vcvtps2dq_ymm_m256(%struct.State*, i64, i64) {
-block_4003e0:
-  %3 = alloca %struct.float32v8_t, align 4
-  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %5 = getelementptr inbounds %struct.GPR, %struct.GPR* %4, i32 0, i32 33
-  %6 = getelementptr inbounds %struct.Reg, %struct.Reg* %5, i32 0, i32 0
-  %PC = bitcast %union.anon* %6 to i64*
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPS2DQI3VnWI8vec256_tE3MVnIS2_ELm8EXadL_ZNS_L17FRoundUsingMode32EfEEEEP6MemoryS7_R5StateT_T0_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i64) #0 {
+  %5 = alloca %struct.float32v8_t, align 4
+  %6 = bitcast %struct.float32v8_t* %5 to i8*
+  call void @my.lifetime.start(i64 32, i8* nonnull %6) #22
+  %7 = inttoptr i64 %3 to float*
+  %8 = load float, float* %7
+  %9 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 0
+  store float %8, float* %9, align 4
+  %10 = add i64 %3, 4
+  %11 = inttoptr i64 %10 to float*
+  %12 = load float, float* %11
+  %13 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 1
+  store float %12, float* %13, align 4
+  %14 = add i64 %3, 8
+  %15 = inttoptr i64 %14 to float*
+  %16 = load float, float* %15
+  %17 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 2
+  store float %16, float* %17, align 4
+  %18 = add i64 %3, 12
+  %19 = inttoptr i64 %18 to float*
+  %20 = load float, float* %19
+  %21 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 3
+  store float %20, float* %21, align 4
+  %22 = add i64 %3, 16
+  %23 = inttoptr i64 %22 to float*
+  %24 = load float, float* %23
+  %25 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 4
+  store float %24, float* %25, align 4
+  %26 = add i64 %3, 20
+  %27 = inttoptr i64 %26 to float*
+  %28 = load float, float* %27
+  %29 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 5
+  store float %28, float* %29, align 4
+  %30 = add i64 %3, 24
+  %31 = inttoptr i64 %30 to float*
+  %32 = load float, float* %31
+  %33 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 6
+  store float %32, float* %33, align 4
+  %34 = add i64 %3, 28
+  %35 = inttoptr i64 %34 to float*
+  %36 = load float, float* %35
+  %37 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %5, i64 0, i32 0, i64 7
+  store float %36, float* %37, align 4
+  %38 = insertelement <4 x float> undef, float %8, i32 0
+  %39 = insertelement <4 x float> %38, float %12, i32 1
+  %40 = insertelement <4 x float> %39, float %16, i32 2
+  %41 = insertelement <4 x float> %40, float %20, i32 3
+  %42 = call <4 x float> @my.nearbyint.v4f32(<4 x float> %41)
+  %43 = call <4 x float> @my.fabs.v4f32(<4 x float> %42)
+  %44 = fcmp ogt <4 x float> %43, <float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000>
+  %45 = fptosi <4 x float> %42 to <4 x i32>
+  %46 = select <4 x i1> %44, <4 x i32> <i32 -2147483648, i32 -2147483648, i32 -2147483648, i32 -2147483648>, <4 x i32> %45
+  %47 = load float, float* %33, align 4
+  %48 = load float, float* %37, align 4
+  %49 = insertelement <4 x float> undef, float %24, i32 0
+  %50 = insertelement <4 x float> %49, float %28, i32 1
+  %51 = insertelement <4 x float> %50, float %47, i32 2
+  %52 = insertelement <4 x float> %51, float %48, i32 3
+  %53 = call <4 x float> @my.nearbyint.v4f32(<4 x float> %52)
+  %54 = call <4 x float> @my.fabs.v4f32(<4 x float> %53)
+  %55 = fcmp ogt <4 x float> %54, <float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000>
+  %56 = fptosi <4 x float> %53 to <4 x i32>
+  %57 = select <4 x i1> %55, <4 x i32> <i32 -2147483648, i32 -2147483648, i32 -2147483648, i32 -2147483648>, <4 x i32> %56
+  %58 = bitcast i8* %2 to <4 x i32>*
+  store <4 x i32> %46, <4 x i32>* %58, align 1
+  %59 = getelementptr inbounds i8, i8* %2, i64 16
+  %60 = bitcast i8* %59 to <4 x i32>*
+  store <4 x i32> %57, <4 x i32>* %60, align 1
+  call void @my.lifetime.end(i64 32, i8* nonnull %6) #22
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vcvtps2dq_ymm_m256(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
   store i64 %1, i64* %PC, align 8
-  %7 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %8 = getelementptr inbounds %struct.GPR, %struct.GPR* %7, i32 0, i32 15
-  %9 = getelementptr inbounds %struct.Reg, %struct.Reg* %8, i32 0, i32 0
-  %RBP = bitcast %union.anon* %9 to i64*
-  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %11 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %10, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %11 to %"class.std::bitset"*
-  %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
-  %13 = load i64, i64* %RBP
-  %14 = sub i64 %13, 4
-  %15 = load i64, i64* %PC
-  %16 = add i64 %15, 5
-  store i64 %16, i64* %PC
-  %17 = bitcast %struct.float32v8_t* %3 to i8*
-  call void @my.lifetime.start(i64 32, i8* nonnull %17) #14
-  %18 = inttoptr i64 %14 to float*
-  %19 = load float, float* %18
-  %20 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 0
-  store float %19, float* %20, align 4
-  %21 = inttoptr i64 %13 to float*
-  %22 = load float, float* %21
-  %23 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 1
-  store float %22, float* %23, align 4
-  %24 = add i64 %14, 8
-  %25 = inttoptr i64 %24 to float*
-  %26 = load float, float* %25
-  %27 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 2
-  store float %26, float* %27, align 4
-  %28 = add i64 %14, 12
-  %29 = inttoptr i64 %28 to float*
-  %30 = load float, float* %29
-  %31 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 3
-  store float %30, float* %31, align 4
-  %32 = add i64 %14, 16
-  %33 = inttoptr i64 %32 to float*
-  %34 = load float, float* %33
-  %35 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 4
-  store float %34, float* %35, align 4
-  %36 = add i64 %14, 20
-  %37 = inttoptr i64 %36 to float*
-  %38 = load float, float* %37
-  %39 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 5
-  store float %38, float* %39, align 4
-  %40 = add i64 %14, 24
-  %41 = inttoptr i64 %40 to float*
-  %42 = load float, float* %41
-  %43 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 6
-  store float %42, float* %43, align 4
-  %44 = add i64 %14, 28
-  %45 = inttoptr i64 %44 to float*
-  %46 = load float, float* %45
-  %47 = getelementptr inbounds %struct.float32v8_t, %struct.float32v8_t* %3, i64 0, i32 0, i64 7
-  store float %46, float* %47, align 4
-  %48 = insertelement <4 x float> undef, float %19, i32 0
-  %49 = insertelement <4 x float> %48, float %22, i32 1
-  %50 = insertelement <4 x float> %49, float %26, i32 2
-  %51 = insertelement <4 x float> %50, float %30, i32 3
-  %52 = call <4 x float> @my.nearbyint.v4f32(<4 x float> %51) #14
-  %53 = call <4 x float> @my.fabs.v4f32(<4 x float> %52) #14
-  %54 = fcmp ogt <4 x float> %53, <float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000>
-  %55 = fptosi <4 x float> %52 to <4 x i32>
-  %56 = select <4 x i1> %54, <4 x i32> <i32 -2147483648, i32 -2147483648, i32 -2147483648, i32 -2147483648>, <4 x i32> %55
-  %57 = load float, float* %43, align 4
-  %58 = load float, float* %47, align 4
-  %59 = insertelement <4 x float> undef, float %34, i32 0
-  %60 = insertelement <4 x float> %59, float %38, i32 1
-  %61 = insertelement <4 x float> %60, float %57, i32 2
-  %62 = insertelement <4 x float> %61, float %58, i32 3
-  %63 = call <4 x float> @my.nearbyint.v4f32(<4 x float> %62) #14
-  %64 = call <4 x float> @my.fabs.v4f32(<4 x float> %63) #14
-  %65 = fcmp ogt <4 x float> %64, <float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000, float 0x41E0000000000000>
-  %66 = fptosi <4 x float> %63 to <4 x i32>
-  %67 = select <4 x i1> %65, <4 x i32> <i32 -2147483648, i32 -2147483648, i32 -2147483648, i32 -2147483648>, <4 x i32> %66
-  %68 = bitcast i8* %12 to <4 x i32>*
-  store <4 x i32> %56, <4 x i32>* %68, align 1
-  %69 = getelementptr inbounds i8, i8* %12, i64 16
-  %70 = bitcast i8* %69 to <4 x i32>*
-  store <4 x i32> %67, <4 x i32>* %70, align 1
-  call void @my.lifetime.end(i64 32, i8* nonnull %17) #14
-  %71 = load i64, i64* %PC
-  %72 = add i64 %71, 1
-  store i64 %72, i64* %PC
-  %73 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 4
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPS2DQI3VnWI8vec256_tE3MVnIS2_ELm8EXadL_ZNS_L17FRoundUsingMode32EfEEEEP6MemoryS7_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 1
+  store i64 %18, i64* %PC
+  ret %struct.Memory* %16
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -236,6 +245,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vcvtps2dq_ymm_m256(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vcvtps2dq_ymm_m256(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

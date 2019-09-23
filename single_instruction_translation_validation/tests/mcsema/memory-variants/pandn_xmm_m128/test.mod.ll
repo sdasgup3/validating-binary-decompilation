@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,56 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_pandn_xmm_m128(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5PANDNI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i64) #0 {
+  %6 = bitcast i8* %3 to i64*
+  %7 = load i64, i64* %6, align 1
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
+  %9 = bitcast i8* %8 to i64*
+  %10 = load i64, i64* %9, align 1
+  %11 = trunc i64 %7 to i32
+  %12 = lshr i64 %7, 32
+  %13 = trunc i64 %12 to i32
+  %14 = inttoptr i64 %4 to i32*
+  %15 = load i32, i32* %14
+  %16 = add i64 %4, 4
+  %17 = inttoptr i64 %16 to i32*
+  %18 = load i32, i32* %17
+  %19 = add i64 %4, 8
+  %20 = inttoptr i64 %19 to i32*
+  %21 = load i32, i32* %20
+  %22 = add i64 %4, 12
+  %23 = inttoptr i64 %22 to i32*
+  %24 = load i32, i32* %23
+  %25 = xor i32 %15, -1
+  %26 = and i32 %11, %25
+  %27 = xor i32 %18, -1
+  %28 = and i32 %13, %27
+  %29 = trunc i64 %10 to i32
+  %30 = xor i32 %21, -1
+  %31 = and i32 %29, %30
+  %32 = lshr i64 %10, 32
+  %33 = trunc i64 %32 to i32
+  %34 = xor i32 %24, -1
+  %35 = and i32 %33, %34
+  %36 = bitcast i8* %2 to i32*
+  store i32 %26, i32* %36, align 1
+  %37 = getelementptr inbounds i8, i8* %2, i64 4
+  %38 = bitcast i8* %37 to i32*
+  store i32 %28, i32* %38, align 1
+  %39 = getelementptr inbounds i8, i8* %2, i64 8
+  %40 = bitcast i8* %39 to i32*
+  store i32 %31, i32* %40, align 1
+  %41 = getelementptr inbounds i8, i8* %2, i64 12
+  %42 = bitcast i8* %41 to i32*
+  store i32 %35, i32* %42, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_pandn_xmm_m128(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -142,56 +190,17 @@ block_4003e0:
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 5
   store i64 %16, i64* %PC
-  %17 = bitcast i8* %12 to i64*
-  %18 = load i64, i64* %17, align 1
-  %19 = getelementptr inbounds i8, i8* %12, i64 8
-  %20 = bitcast i8* %19 to i64*
-  %21 = load i64, i64* %20, align 1
-  %22 = trunc i64 %18 to i32
-  %23 = lshr i64 %18, 32
-  %24 = trunc i64 %23 to i32
-  %25 = inttoptr i64 %14 to i32*
-  %26 = load i32, i32* %25
-  %27 = inttoptr i64 %13 to i32*
-  %28 = load i32, i32* %27
-  %29 = add i64 %14, 8
-  %30 = inttoptr i64 %29 to i32*
-  %31 = load i32, i32* %30
-  %32 = add i64 %14, 12
-  %33 = inttoptr i64 %32 to i32*
-  %34 = load i32, i32* %33
-  %35 = xor i32 %26, -1
-  %36 = and i32 %22, %35
-  %37 = xor i32 %28, -1
-  %38 = and i32 %24, %37
-  %39 = trunc i64 %21 to i32
-  %40 = xor i32 %31, -1
-  %41 = and i32 %39, %40
-  %42 = lshr i64 %21, 32
-  %43 = trunc i64 %42 to i32
-  %44 = xor i32 %34, -1
-  %45 = and i32 %43, %44
-  %46 = bitcast i8* %11 to i32*
-  store i32 %36, i32* %46, align 1
-  %47 = getelementptr inbounds i8, i8* %11, i64 4
-  %48 = bitcast i8* %47 to i32*
-  store i32 %38, i32* %48, align 1
-  %49 = getelementptr inbounds i8, i8* %11, i64 8
-  %50 = bitcast i8* %49 to i32*
-  store i32 %41, i32* %50, align 1
-  %51 = getelementptr inbounds i8, i8* %11, i64 12
-  %52 = bitcast i8* %51 to i32*
-  store i32 %45, i32* %52, align 1
-  %53 = load i64, i64* %PC
-  %54 = add i64 %53, 1
-  store i64 %54, i64* %PC
-  %55 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5PANDNI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  %18 = load i64, i64* %PC
+  %19 = add i64 %18, 1
+  store i64 %19, i64* %PC
+  ret %struct.Memory* %17
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -210,6 +219,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_pandn_xmm_m128(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_pandn_xmm_m128(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

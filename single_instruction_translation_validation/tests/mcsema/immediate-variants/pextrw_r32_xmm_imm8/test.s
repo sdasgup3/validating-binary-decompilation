@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    pextrw $0x77, %xmm1, %ebx
+    pextrw $0xa, %xmm1, %ebx
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    pextrw $0x77, %xmm1, %ebx
-    
-    
-    ret
-LFE3:

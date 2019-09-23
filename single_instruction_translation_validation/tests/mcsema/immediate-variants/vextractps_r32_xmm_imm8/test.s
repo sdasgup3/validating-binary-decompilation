@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    vextractps $0x77, %xmm1, %ebx
+    vextractps $0xa, %xmm1, %ebx
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    vextractps $0x77, %xmm1, %ebx
-    
-    
-    ret
-LFE3:

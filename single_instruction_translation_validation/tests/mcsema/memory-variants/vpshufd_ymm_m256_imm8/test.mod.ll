@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,87 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vpshufd_ymm_m256_imm8(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L6PSHUFDI3VnWI8vec256_tE3MVnIS2_EEEP6MemoryS7_R5StateT_T0_2InIhE(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i64, i64) #0 {
+  %6 = inttoptr i64 %3 to i64*
+  %7 = load i64, i64* %6
+  %8 = add i64 %3, 8
+  %9 = inttoptr i64 %8 to i64*
+  %10 = load i64, i64* %9
+  %11 = zext i64 %10 to i128
+  %12 = shl  i128 %11, 64
+  %13 = zext i64 %7 to i128
+  %14 = or i128 %12, %13
+  %15 = add i64 %3, 16
+  %16 = inttoptr i64 %15 to i64*
+  %17 = load i64, i64* %16
+  %18 = add i64 %3, 24
+  %19 = inttoptr i64 %18 to i64*
+  %20 = load i64, i64* %19
+  %21 = zext i64 %20 to i128
+  %22 = shl  i128 %21, 64
+  %23 = zext i64 %17 to i128
+  %24 = or i128 %22, %23
+  %25 = shl i64 %4, 5
+  %26 = and i64 %25, 96
+  %27 = lshr i64 %4, 2
+  %28 = and i64 %27, 63
+  %29 = zext i64 %26 to i128
+  %30 = lshr i128 %14, %29
+  %31 = trunc i128 %30 to i32
+  %32 = shl   i64 %28, 5
+  %33 = and i64 %32, 96
+  %34 = zext i64 %33 to i128
+  %35 = lshr i128 %14, %34
+  %36 = trunc i128 %35 to i32
+  %37 = shl   i64 %28, 3
+  %38 = and i64 %37, 96
+  %39 = zext i64 %38 to i128
+  %40 = lshr i128 %14, %39
+  %41 = trunc i128 %40 to i32
+  %42 = shl   i64 %27, 1
+  %43 = and i64 %42, 96
+  %44 = zext i64 %43 to i128
+  %45 = lshr i128 %14, %44
+  %46 = trunc i128 %45 to i32
+  %47 = lshr i128 %24, %29
+  %48 = trunc i128 %47 to i32
+  %49 = lshr i128 %24, %34
+  %50 = trunc i128 %49 to i32
+  %51 = lshr i128 %24, %39
+  %52 = trunc i128 %51 to i32
+  %53 = lshr i128 %24, %44
+  %54 = trunc i128 %53 to i32
+  %55 = bitcast i8* %2 to i32*
+  store i32 %31, i32* %55, align 1
+  %56 = getelementptr inbounds i8, i8* %2, i64 4
+  %57 = bitcast i8* %56 to i32*
+  store i32 %36, i32* %57, align 1
+  %58 = getelementptr inbounds i8, i8* %2, i64 8
+  %59 = bitcast i8* %58 to i32*
+  store i32 %41, i32* %59, align 1
+  %60 = getelementptr inbounds i8, i8* %2, i64 12
+  %61 = bitcast i8* %60 to i32*
+  store i32 %46, i32* %61, align 1
+  %62 = getelementptr inbounds i8, i8* %2, i64 16
+  %63 = bitcast i8* %62 to i32*
+  store i32 %48, i32* %63, align 1
+  %64 = getelementptr inbounds i8, i8* %2, i64 20
+  %65 = bitcast i8* %64 to i32*
+  store i32 %50, i32* %65, align 1
+  %66 = getelementptr inbounds i8, i8* %2, i64 24
+  %67 = bitcast i8* %66 to i32*
+  store i32 %52, i32* %67, align 1
+  %68 = getelementptr inbounds i8, i8* %2, i64 28
+  %69 = bitcast i8* %68 to i32*
+  store i32 %54, i32* %69, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vpshufd_ymm_m256_imm8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -141,66 +220,17 @@ block_4003e0:
   %14 = load i64, i64* %PC
   %15 = add i64 %14, 6
   store i64 %15, i64* %PC
-  %16 = inttoptr i64 %13 to i64*
-  %17 = load i64, i64* %16
-  %18 = add i64 %13, 8
-  %19 = inttoptr i64 %18 to i64*
-  %20 = load i64, i64* %19
-  %21 = zext i64 %20 to i128
-  %22 = shl  i128 %21, 64
-  %23 = zext i64 %17 to i128
-  %24 = or i128 %22, %23
-  %25 = add i64 %13, 16
-  %26 = inttoptr i64 %25 to i64*
-  %27 = load i64, i64* %26
-  %28 = add i64 %13, 24
-  %29 = inttoptr i64 %28 to i64*
-  %30 = load i64, i64* %29
-  %31 = zext i64 %30 to i128
-  %32 = shl  i128 %31, 64
-  %33 = zext i64 %27 to i128
-  %34 = or i128 %32, %33
-  %35 = trunc i128 %24 to i32
-  %36 = trunc i128 %24 to i32
-  %37 = trunc i128 %24 to i32
-  %38 = trunc i128 %24 to i32
-  %39 = trunc i128 %34 to i32
-  %40 = trunc i128 %34 to i32
-  %41 = trunc i128 %34 to i32
-  %42 = trunc i128 %34 to i32
-  %43 = bitcast i8* %11 to i32*
-  store i32 %35, i32* %43, align 1
-  %44 = getelementptr inbounds i8, i8* %11, i64 4
-  %45 = bitcast i8* %44 to i32*
-  store i32 %36, i32* %45, align 1
-  %46 = getelementptr inbounds i8, i8* %11, i64 8
-  %47 = bitcast i8* %46 to i32*
-  store i32 %37, i32* %47, align 1
-  %48 = getelementptr inbounds i8, i8* %11, i64 12
-  %49 = bitcast i8* %48 to i32*
-  store i32 %38, i32* %49, align 1
-  %50 = getelementptr inbounds i8, i8* %11, i64 16
-  %51 = bitcast i8* %50 to i32*
-  store i32 %39, i32* %51, align 1
-  %52 = getelementptr inbounds i8, i8* %11, i64 20
-  %53 = bitcast i8* %52 to i32*
-  store i32 %40, i32* %53, align 1
-  %54 = getelementptr inbounds i8, i8* %11, i64 24
-  %55 = bitcast i8* %54 to i32*
-  store i32 %41, i32* %55, align 1
-  %56 = getelementptr inbounds i8, i8* %11, i64 28
-  %57 = bitcast i8* %56 to i32*
-  store i32 %42, i32* %57, align 1
-  %58 = load i64, i64* %PC
-  %59 = add i64 %58, 1
-  store i64 %59, i64* %PC
-  %60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L6PSHUFDI3VnWI8vec256_tE3MVnIS2_EEEP6MemoryS7_R5StateT_T0_2InIhE(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13, i64 0)
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 1
+  store i64 %18, i64* %PC
+  ret %struct.Memory* %16
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -219,6 +249,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vpshufd_ymm_m256_imm8(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vpshufd_ymm_m256_imm8(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

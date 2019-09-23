@@ -103,7 +103,7 @@ objdump: test
 
 mcsema: test
 	mcsema-disass --disassembler \${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary \$< --entrypoint main
-	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer_O3
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
 #mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc
 	llvm-dis test.bc -o test.ll
 

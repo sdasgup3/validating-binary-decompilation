@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("xorb %ah, %bl");
-  }
-
 void main() {
-  leaf();
+  __asm__("xorb %ah, %bl");
 }
