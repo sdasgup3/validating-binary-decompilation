@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,8 +121,54 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_rolb_r8_one(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3ROLI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* readnone, %struct.State* nocapture dereferenceable(3376), i8* nocapture, i64, i64) #2 {
+  %6 = trunc i64 %4 to i8
+  %7 = and i8 %6, 7
+  %8 = icmp eq i8 %7, 0
+  br i1 %8, label %29, label %9
+
+; <label>:9:                                      ; preds = %5
+  %10 = and i64 %3, 255
+  %11 = zext i8 %7 to i64
+  %12 = shl i64 %10, %11
+  %13 = sub  i8 8, %7
+  %14 = zext i8 %13 to i64
+  %15 = lshr i64 %10, %14
+  %16 = or i64 %15, %12
+  %17 = trunc i64 %16 to i8
+  store i8 %17, i8* %2, align 1
+  %18 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 1
+  %19 = and i8 %17, 1
+  store i8 %19, i8* %18, align 1
+  %20 = icmp eq i8 %7, 1
+  %21 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
+  br i1 %20, label %22, label %27
+
+; <label>:22:                                     ; preds = %9
+  %23 = icmp ne i8 %19, 0
+  %24 = icmp slt i8 %17, 0
+  %25 = xor i1 %24, %23
+  %26 = zext i1 %25 to i8
+  br label %27
+
+; <label>:27:                                     ; preds = %22, %9
+  %28 = phi i8 [ %26, %22 ], [ 0, %9 ]
+  store i8 %28, i8* %21, align 1
+  br label %31
+
+; <label>:29:                                     ; preds = %5
+  %30 = trunc i64 %3 to i8
+  store i8 %30, i8* %2, align 1
+  br label %31
+
+; <label>:31:                                     ; preds = %29, %27
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_rolb_r8_one(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -138,31 +185,17 @@ block_530:
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 2
   store i64 %13, i64* %PC
-  %14 = and i64 %11, 255
-  %15 = shl i64 %14, 1
-  %16 = lshr i64 %14, 7
-  %17 = or i64 %16, %15
-  %18 = trunc i64 %17 to i8
-  store i8 %18, i8* %BL, align 1
-  %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  %20 = and i8 %18, 1
-  store i8 %20, i8* %19, align 1
-  %21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  %22 = icmp ne i8 %20, 0
-  %23 = icmp slt i8 %18, 0
-  %24 = xor i1 %23, %22
-  %25 = zext i1 %24 to i8
-  store i8 %25, i8* %21, align 1
-  %26 = load i64, i64* %PC
-  %27 = add i64 %26, 1
-  store i64 %27, i64* %PC
-  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %14 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3ROLI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %BL, i64 %11, i64 1)
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 1
+  store i64 %16, i64* %PC
+  ret %struct.Memory* %14
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -181,6 +214,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_rolb_r8_one(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_rolb_r8_one(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

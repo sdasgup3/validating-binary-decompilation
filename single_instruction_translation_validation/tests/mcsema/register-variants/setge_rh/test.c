@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("setge %ah");
-  }
-
 void main() {
-  leaf();
+  __asm__("setge %ah");
 }

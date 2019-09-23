@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    pslldq $0x77, %xmm1
+    pslldq $0xa, %xmm1
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    pslldq $0x77, %xmm1
-    
-    
-    ret
-LFE3:

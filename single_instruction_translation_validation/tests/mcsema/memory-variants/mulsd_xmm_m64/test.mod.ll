@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,28 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_mulsd_xmm_m64(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i64) #0 {
+  %6 = bitcast i8* %3 to double*
+  %7 = load double, double* %6, align 1
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
+  %9 = bitcast i8* %8 to i64*
+  %10 = load i64, i64* %9, align 1
+  %11 = inttoptr i64 %4 to double*
+  %12 = load double, double* %11
+  %13 = fmul double %7, %12
+  %14 = bitcast i8* %2 to double*
+  store double %13, double* %14, align 1
+  %15 = getelementptr inbounds i8, i8* %2, i64 8
+  %16 = bitcast i8* %15 to i64*
+  store i64 %10, i64* %16, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_mulsd_xmm_m64(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -142,29 +162,17 @@ block_4003e0:
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 5
   store i64 %16, i64* %PC
-  %17 = bitcast i8* %12 to double*
-  %18 = load double, double* %17, align 1
-  %19 = getelementptr inbounds i8, i8* %12, i64 8
-  %20 = bitcast i8* %19 to i64*
-  %21 = load i64, i64* %20, align 1
-  %22 = inttoptr i64 %14 to double*
-  %23 = load double, double* %22
-  %24 = fmul double %18, %23
-  %25 = bitcast i8* %11 to double*
-  store double %24, double* %25, align 1
-  %26 = getelementptr inbounds i8, i8* %11, i64 8
-  %27 = bitcast i8* %26 to i64*
-  store i64 %21, i64* %27, align 1
-  %28 = load i64, i64* %PC
-  %29 = add i64 %28, 1
-  store i64 %29, i64* %PC
-  %30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  %18 = load i64, i64* %PC
+  %19 = add i64 %18, 1
+  store i64 %19, i64* %PC
+  ret %struct.Memory* %17
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -183,6 +191,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_mulsd_xmm_m64(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_mulsd_xmm_m64(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

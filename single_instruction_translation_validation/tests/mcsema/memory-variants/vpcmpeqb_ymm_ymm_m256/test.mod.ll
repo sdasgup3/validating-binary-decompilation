@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,226 +121,234 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vpcmpeqb_ymm_ymm_m256(%struct.State*, i64, i64) {
-block_4003e0:
-  %3 = alloca %struct.uint8v32_t, align 16
-  %4 = alloca %struct.uint8v32_t, align 16
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %6 = getelementptr inbounds %struct.GPR, %struct.GPR* %5, i32 0, i32 33
-  %7 = getelementptr inbounds %struct.Reg, %struct.Reg* %6, i32 0, i32 0
-  %PC = bitcast %union.anon* %7 to i64*
-  store i64 %1, i64* %PC, align 8
-  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %9 = getelementptr inbounds %struct.GPR, %struct.GPR* %8, i32 0, i32 15
-  %10 = getelementptr inbounds %struct.Reg, %struct.Reg* %9, i32 0, i32 0
-  %RBP = bitcast %union.anon* %10 to i64*
-  %11 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %12 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %11, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %12 to %"class.std::bitset"*
-  %13 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %14 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %13, i64 0, i64 2
-  %YMM2 = bitcast %union.VectorReg* %14 to %"class.std::bitset"*
-  %15 = bitcast %"class.std::bitset"* %YMM1 to i8*
-  %16 = bitcast %"class.std::bitset"* %YMM2 to i8*
-  %17 = load i64, i64* %RBP
-  %18 = sub i64 %17, 4
-  %19 = load i64, i64* %PC
-  %20 = add i64 %19, 5
-  store i64 %20, i64* %PC
-  %21 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %3, i64 0, i32 0, i64 0
-  call void @my.lifetime.start(i64 32, i8* nonnull %21) #14
-  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %21, i8* %16, i64 32, i32 1, i1 false) #14
-  %22 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 0
-  call void @my.lifetime.start(i64 32, i8* nonnull %22) #14
-  %23 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 25
-  call void @my.memset.p0i8.i64(i8* %23, i8 0, i64 7, i32 1, i1 false) #14, !alias.scope !1281
-  %24 = inttoptr i64 %18 to i8*
-  %25 = load i8, i8* %24
-  store i8 %25, i8* %22, align 16
-  %26 = add i64 %18, 1
-  %27 = inttoptr i64 %26 to i8*
-  %28 = load i8, i8* %27
-  %29 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 1
-  store i8 %28, i8* %29, align 1
-  %30 = add i64 %18, 2
-  %31 = inttoptr i64 %30 to i8*
-  %32 = load i8, i8* %31
-  %33 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 2
-  store i8 %32, i8* %33, align 2
-  %34 = add i64 %18, 3
-  %35 = inttoptr i64 %34 to i8*
-  %36 = load i8, i8* %35
-  %37 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 3
-  store i8 %36, i8* %37, align 1
-  %38 = inttoptr i64 %17 to i8*
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7PCMPEQBI3VnWI8vec256_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8*, i8* nocapture readonly, i64) #0 {
+  %6 = alloca %struct.uint8v32_t, align 16
+  %7 = alloca %struct.uint8v32_t, align 16
+  %8 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 0
+  call void @my.lifetime.start(i64 32, i8* nonnull %8) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %8, i8* %3, i64 32, i32 1, i1 false) #22
+  %9 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 0
+  call void @my.lifetime.start(i64 32, i8* nonnull %9) #22
+  %10 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 25
+  call void @my.memset.p0i8.i64(i8* %10, i8 0, i64 7, i32 1, i1 false) #22, !alias.scope !1341
+  %11 = inttoptr i64 %4 to i8*
+  %12 = load i8, i8* %11
+  store i8 %12, i8* %9, align 16
+  %13 = add i64 %4, 1
+  %14 = inttoptr i64 %13 to i8*
+  %15 = load i8, i8* %14
+  %16 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 1
+  store i8 %15, i8* %16, align 1
+  %17 = add i64 %4, 2
+  %18 = inttoptr i64 %17 to i8*
+  %19 = load i8, i8* %18
+  %20 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 2
+  store i8 %19, i8* %20, align 2
+  %21 = add i64 %4, 3
+  %22 = inttoptr i64 %21 to i8*
+  %23 = load i8, i8* %22
+  %24 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 3
+  store i8 %23, i8* %24, align 1
+  %25 = add i64 %4, 4
+  %26 = inttoptr i64 %25 to i8*
+  %27 = load i8, i8* %26
+  %28 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 4
+  store i8 %27, i8* %28, align 4
+  %29 = add i64 %4, 5
+  %30 = inttoptr i64 %29 to i8*
+  %31 = load i8, i8* %30
+  %32 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 5
+  store i8 %31, i8* %32, align 1
+  %33 = add i64 %4, 6
+  %34 = inttoptr i64 %33 to i8*
+  %35 = load i8, i8* %34
+  %36 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 6
+  store i8 %35, i8* %36, align 2
+  %37 = add i64 %4, 7
+  %38 = inttoptr i64 %37 to i8*
   %39 = load i8, i8* %38
-  %40 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 4
-  store i8 %39, i8* %40, align 4
-  %41 = add i64 %18, 5
+  %40 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 7
+  store i8 %39, i8* %40, align 1
+  %41 = add i64 %4, 8
   %42 = inttoptr i64 %41 to i8*
   %43 = load i8, i8* %42
-  %44 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 5
-  store i8 %43, i8* %44, align 1
-  %45 = add i64 %18, 6
+  %44 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 8
+  store i8 %43, i8* %44, align 8
+  %45 = add i64 %4, 9
   %46 = inttoptr i64 %45 to i8*
   %47 = load i8, i8* %46
-  %48 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 6
-  store i8 %47, i8* %48, align 2
-  %49 = add i64 %18, 7
+  %48 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 9
+  store i8 %47, i8* %48, align 1
+  %49 = add i64 %4, 10
   %50 = inttoptr i64 %49 to i8*
   %51 = load i8, i8* %50
-  %52 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 7
-  store i8 %51, i8* %52, align 1
-  %53 = add i64 %18, 8
+  %52 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 10
+  store i8 %51, i8* %52, align 2
+  %53 = add i64 %4, 11
   %54 = inttoptr i64 %53 to i8*
   %55 = load i8, i8* %54
-  %56 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 8
-  store i8 %55, i8* %56, align 8
-  %57 = add i64 %18, 9
+  %56 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 11
+  store i8 %55, i8* %56, align 1
+  %57 = add i64 %4, 12
   %58 = inttoptr i64 %57 to i8*
   %59 = load i8, i8* %58
-  %60 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 9
-  store i8 %59, i8* %60, align 1
-  %61 = add i64 %18, 10
+  %60 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 12
+  store i8 %59, i8* %60, align 4
+  %61 = add i64 %4, 13
   %62 = inttoptr i64 %61 to i8*
   %63 = load i8, i8* %62
-  %64 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 10
-  store i8 %63, i8* %64, align 2
-  %65 = add i64 %18, 11
+  %64 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 13
+  store i8 %63, i8* %64, align 1
+  %65 = add i64 %4, 14
   %66 = inttoptr i64 %65 to i8*
   %67 = load i8, i8* %66
-  %68 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 11
-  store i8 %67, i8* %68, align 1
-  %69 = add i64 %18, 12
+  %68 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 14
+  store i8 %67, i8* %68, align 2
+  %69 = add i64 %4, 15
   %70 = inttoptr i64 %69 to i8*
   %71 = load i8, i8* %70
-  %72 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 12
-  store i8 %71, i8* %72, align 4
-  %73 = add i64 %18, 13
+  %72 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 15
+  store i8 %71, i8* %72, align 1
+  %73 = add i64 %4, 16
   %74 = inttoptr i64 %73 to i8*
   %75 = load i8, i8* %74
-  %76 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 13
-  store i8 %75, i8* %76, align 1
-  %77 = add i64 %18, 14
+  %76 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 16
+  store i8 %75, i8* %76, align 16
+  %77 = add i64 %4, 17
   %78 = inttoptr i64 %77 to i8*
   %79 = load i8, i8* %78
-  %80 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 14
-  store i8 %79, i8* %80, align 2
-  %81 = add i64 %18, 15
+  %80 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 17
+  store i8 %79, i8* %80, align 1
+  %81 = add i64 %4, 18
   %82 = inttoptr i64 %81 to i8*
   %83 = load i8, i8* %82
-  %84 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 15
-  store i8 %83, i8* %84, align 1
-  %85 = add i64 %18, 16
+  %84 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 18
+  store i8 %83, i8* %84, align 2
+  %85 = add i64 %4, 19
   %86 = inttoptr i64 %85 to i8*
   %87 = load i8, i8* %86
-  %88 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 16
-  store i8 %87, i8* %88, align 16
-  %89 = add i64 %18, 17
+  %88 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 19
+  store i8 %87, i8* %88, align 1
+  %89 = add i64 %4, 20
   %90 = inttoptr i64 %89 to i8*
   %91 = load i8, i8* %90
-  %92 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 17
-  store i8 %91, i8* %92, align 1
-  %93 = add i64 %18, 18
+  %92 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 20
+  store i8 %91, i8* %92, align 4
+  %93 = add i64 %4, 21
   %94 = inttoptr i64 %93 to i8*
   %95 = load i8, i8* %94
-  %96 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 18
-  store i8 %95, i8* %96, align 2
-  %97 = add i64 %18, 19
+  %96 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 21
+  store i8 %95, i8* %96, align 1
+  %97 = add i64 %4, 22
   %98 = inttoptr i64 %97 to i8*
   %99 = load i8, i8* %98
-  %100 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 19
-  store i8 %99, i8* %100, align 1
-  %101 = add i64 %18, 20
+  %100 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 22
+  store i8 %99, i8* %100, align 2
+  %101 = add i64 %4, 23
   %102 = inttoptr i64 %101 to i8*
   %103 = load i8, i8* %102
-  %104 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 20
-  store i8 %103, i8* %104, align 4
-  %105 = add i64 %18, 21
+  %104 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 23
+  store i8 %103, i8* %104, align 1
+  %105 = add i64 %4, 24
   %106 = inttoptr i64 %105 to i8*
   %107 = load i8, i8* %106
-  %108 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 21
-  store i8 %107, i8* %108, align 1
-  %109 = add i64 %18, 22
+  %108 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 24
+  store i8 %107, i8* %108, align 8
+  %109 = add i64 %4, 25
   %110 = inttoptr i64 %109 to i8*
   %111 = load i8, i8* %110
-  %112 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 22
-  store i8 %111, i8* %112, align 2
-  %113 = add i64 %18, 23
-  %114 = inttoptr i64 %113 to i8*
-  %115 = load i8, i8* %114
-  %116 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 23
-  store i8 %115, i8* %116, align 1
-  %117 = add i64 %18, 24
-  %118 = inttoptr i64 %117 to i8*
-  %119 = load i8, i8* %118
-  %120 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 24
-  store i8 %119, i8* %120, align 8
-  %121 = add i64 %18, 25
-  %122 = inttoptr i64 %121 to i8*
-  %123 = load i8, i8* %122
-  store i8 %123, i8* %23, align 1
-  %124 = add i64 %18, 26
+  store i8 %111, i8* %10, align 1
+  %112 = add i64 %4, 26
+  %113 = inttoptr i64 %112 to i8*
+  %114 = load i8, i8* %113
+  %115 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 26
+  store i8 %114, i8* %115, align 2
+  %116 = add i64 %4, 27
+  %117 = inttoptr i64 %116 to i8*
+  %118 = load i8, i8* %117
+  %119 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 27
+  store i8 %118, i8* %119, align 1
+  %120 = add i64 %4, 28
+  %121 = inttoptr i64 %120 to i8*
+  %122 = load i8, i8* %121
+  %123 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 28
+  store i8 %122, i8* %123, align 4
+  %124 = add i64 %4, 29
   %125 = inttoptr i64 %124 to i8*
   %126 = load i8, i8* %125
-  %127 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 26
-  store i8 %126, i8* %127, align 2
-  %128 = add i64 %18, 27
+  %127 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 29
+  store i8 %126, i8* %127, align 1
+  %128 = add i64 %4, 30
   %129 = inttoptr i64 %128 to i8*
   %130 = load i8, i8* %129
-  %131 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 27
-  store i8 %130, i8* %131, align 1
-  %132 = add i64 %18, 28
+  %131 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 30
+  store i8 %130, i8* %131, align 2
+  %132 = add i64 %4, 31
   %133 = inttoptr i64 %132 to i8*
   %134 = load i8, i8* %133
-  %135 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 28
-  store i8 %134, i8* %135, align 4
-  %136 = add i64 %18, 29
-  %137 = inttoptr i64 %136 to i8*
-  %138 = load i8, i8* %137
-  %139 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 29
-  store i8 %138, i8* %139, align 1
-  %140 = add i64 %18, 30
-  %141 = inttoptr i64 %140 to i8*
-  %142 = load i8, i8* %141
-  %143 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 30
-  store i8 %142, i8* %143, align 2
-  %144 = add i64 %18, 31
-  %145 = inttoptr i64 %144 to i8*
-  %146 = load i8, i8* %145
-  %147 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %4, i64 0, i32 0, i64 31
-  store i8 %146, i8* %147, align 1
-  %148 = bitcast %struct.uint8v32_t* %3 to <16 x i8>*
-  %149 = load <16 x i8>, <16 x i8>* %148, align 16
-  %150 = bitcast %struct.uint8v32_t* %4 to <16 x i8>*
-  %151 = load <16 x i8>, <16 x i8>* %150, align 16
-  %152 = icmp eq <16 x i8> %149, %151
-  %153 = sext <16 x i1> %152 to <16 x i8>
-  %154 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %3, i64 0, i32 0, i64 16
-  %155 = bitcast i8* %154 to <16 x i8>*
-  %156 = load <16 x i8>, <16 x i8>* %155, align 16
-  %157 = bitcast i8* %88 to <16 x i8>*
-  %158 = load <16 x i8>, <16 x i8>* %157, align 16
-  %159 = icmp eq <16 x i8> %156, %158
-  %160 = sext <16 x i1> %159 to <16 x i8>
-  %161 = bitcast i8* %15 to <16 x i8>*
-  store <16 x i8> %153, <16 x i8>* %161, align 1
-  %162 = getelementptr inbounds i8, i8* %15, i64 16
-  %163 = bitcast i8* %162 to <16 x i8>*
-  store <16 x i8> %160, <16 x i8>* %163, align 1
-  call void @my.lifetime.end(i64 32, i8* nonnull %22) #14
-  call void @my.lifetime.end(i64 32, i8* nonnull %21) #14
-  %164 = load i64, i64* %PC
-  %165 = add i64 %164, 1
-  store i64 %165, i64* %PC
-  %166 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %135 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 31
+  store i8 %134, i8* %135, align 1
+  %136 = bitcast %struct.uint8v32_t* %6 to <16 x i8>*
+  %137 = load <16 x i8>, <16 x i8>* %136, align 16
+  %138 = bitcast %struct.uint8v32_t* %7 to <16 x i8>*
+  %139 = load <16 x i8>, <16 x i8>* %138, align 16
+  %140 = icmp eq <16 x i8> %137, %139
+  %141 = sext <16 x i1> %140 to <16 x i8>
+  %142 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 16
+  %143 = bitcast i8* %142 to <16 x i8>*
+  %144 = load <16 x i8>, <16 x i8>* %143, align 16
+  %145 = bitcast i8* %76 to <16 x i8>*
+  %146 = load <16 x i8>, <16 x i8>* %145, align 16
+  %147 = icmp eq <16 x i8> %144, %146
+  %148 = sext <16 x i1> %147 to <16 x i8>
+  %149 = bitcast i8* %2 to <16 x i8>*
+  store <16 x i8> %141, <16 x i8>* %149, align 1
+  %150 = getelementptr inbounds i8, i8* %2, i64 16
+  %151 = bitcast i8* %150 to <16 x i8>*
+  store <16 x i8> %148, <16 x i8>* %151, align 1
+  call void @my.lifetime.end(i64 32, i8* nonnull %9) #22
+  call void @my.lifetime.end(i64 32, i8* nonnull %8) #22
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vpcmpeqb_ymm_ymm_m256(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  store i64 %1, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %12 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %11, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %12 to %"class.std::bitset"*
+  %13 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %14 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %15 = load i64, i64* %RBP
+  %16 = sub i64 %15, 4
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 5
+  store i64 %18, i64* %PC
+  %19 = call %struct.Memory* @_ZN12_GLOBAL__N_1L7PCMPEQBI3VnWI8vec256_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %13, i8* %14, i64 %16)
+  %20 = load i64, i64* %PC
+  %21 = add i64 %20, 1
+  store i64 %21, i64* %PC
+  ret %struct.Memory* %19
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -358,6 +367,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vpcmpeqb_ymm_ymm_m256(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vpcmpeqb_ymm_ymm_m256(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

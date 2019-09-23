@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,44 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vcvtpd2dqx_xmm_m128(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPD2DQI3VnWI8vec256_tE3MVnI8vec128_tELm2EXadL_ZNS_L17FRoundUsingMode64EdEEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i64) #0 {
+  %5 = inttoptr i64 %3 to double*
+  %6 = load double, double* %5
+  %7 = add i64 %3, 8
+  %8 = inttoptr i64 %7 to double*
+  %9 = load double, double* %8
+  %10 = tail call double @my.nearbyint.f64(double %6) #22
+  %11 = tail call double @my.fabs.f64(double %10) #22
+  %12 = fcmp ogt double %11, 0x41DFFFFFFFC00000
+  %13 = fptosi double %10 to i32
+  %14 = select i1 %12, i32 -2147483648, i32 %13
+  %15 = tail call double @my.nearbyint.f64(double %9) #22
+  %16 = tail call double @my.fabs.f64(double %15) #22
+  %17 = fcmp ogt double %16, 0x41DFFFFFFFC00000
+  %18 = fptosi double %15 to i32
+  %19 = select i1 %17, i32 -2147483648, i32 %18
+  %20 = bitcast i8* %2 to i32*
+  store i32 %14, i32* %20, align 1
+  %21 = getelementptr inbounds i8, i8* %2, i64 4
+  %22 = bitcast i8* %21 to i32*
+  store i32 %19, i32* %22, align 1
+  %23 = getelementptr inbounds i8, i8* %2, i64 8
+  %24 = bitcast i8* %23 to <4 x i32>*
+  store <4 x i32> zeroinitializer, <4 x i32>* %24, align 1
+  %25 = getelementptr inbounds i8, i8* %2, i64 24
+  %26 = bitcast i8* %25 to i32*
+  store i32 0, i32* %26, align 1
+  %27 = getelementptr inbounds i8, i8* %2, i64 28
+  %28 = bitcast i8* %27 to i32*
+  store i32 0, i32* %28, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vcvtpd2dqx_xmm_m128(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -141,45 +177,17 @@ block_4003e0:
   %14 = load i64, i64* %PC
   %15 = add i64 %14, 5
   store i64 %15, i64* %PC
-  %16 = inttoptr i64 %13 to double*
-  %17 = load double, double* %16
-  %18 = add i64 %13, 8
-  %19 = inttoptr i64 %18 to double*
-  %20 = load double, double* %19
-  %21 = call double @my.nearbyint.f64(double %17) #14
-  %22 = call double @my.fabs.f64(double %21) #14
-  %23 = fcmp ogt double %22, 0x41DFFFFFFFC00000
-  %24 = fptosi double %21 to i32
-  %25 = select i1 %23, i32 -2147483648, i32 %24
-  %26 = call double @my.nearbyint.f64(double %20) #14
-  %27 = call double @my.fabs.f64(double %26) #14
-  %28 = fcmp ogt double %27, 0x41DFFFFFFFC00000
-  %29 = fptosi double %26 to i32
-  %30 = select i1 %28, i32 -2147483648, i32 %29
-  %31 = bitcast i8* %11 to i32*
-  store i32 %25, i32* %31, align 1
-  %32 = getelementptr inbounds i8, i8* %11, i64 4
-  %33 = bitcast i8* %32 to i32*
-  store i32 %30, i32* %33, align 1
-  %34 = getelementptr inbounds i8, i8* %11, i64 8
-  %35 = bitcast i8* %34 to <4 x i32>*
-  store <4 x i32> zeroinitializer, <4 x i32>* %35, align 1
-  %36 = getelementptr inbounds i8, i8* %11, i64 24
-  %37 = bitcast i8* %36 to i32*
-  store i32 0, i32* %37, align 1
-  %38 = getelementptr inbounds i8, i8* %11, i64 28
-  %39 = bitcast i8* %38 to i32*
-  store i32 0, i32* %39, align 1
-  %40 = load i64, i64* %PC
-  %41 = add i64 %40, 1
-  store i64 %41, i64* %PC
-  %42 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPD2DQI3VnWI8vec256_tE3MVnI8vec128_tELm2EXadL_ZNS_L17FRoundUsingMode64EdEEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 1
+  store i64 %18, i64* %PC
+  ret %struct.Memory* %16
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -198,6 +206,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vcvtpd2dqx_xmm_m128(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vcvtpd2dqx_xmm_m128(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

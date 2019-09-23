@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,37 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_cvtpi2ps_xmm_m64(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPI2PSI3MVnI7vec64_tEEEP6MemoryS5_R5State3VnWI8vec128_tET_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i64) #0 {
+  %5 = inttoptr i64 %3 to i32*
+  %6 = load i32, i32* %5
+  %7 = add i64 %3, 4
+  %8 = inttoptr i64 %7 to i32*
+  %9 = load i32, i32* %8
+  %10 = sitofp i32 %6 to float
+  %11 = sitofp i32 %9 to float
+  %12 = getelementptr inbounds i8, i8* %2, i64 8
+  %13 = bitcast i8* %12 to <2 x i32>*
+  %14 = load <2 x i32>, <2 x i32>* %13, align 1
+  %15 = bitcast i8* %2 to float*
+  store float %10, float* %15, align 1
+  %16 = getelementptr inbounds i8, i8* %2, i64 4
+  %17 = bitcast i8* %16 to float*
+  store float %11, float* %17, align 1
+  %18 = extractelement <2 x i32> %14, i32 0
+  %19 = bitcast i8* %12 to i32*
+  store i32 %18, i32* %19, align 1
+  %20 = extractelement <2 x i32> %14, i32 1
+  %21 = getelementptr inbounds i8, i8* %2, i64 12
+  %22 = bitcast i8* %21 to i32*
+  store i32 %20, i32* %22, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_cvtpi2ps_xmm_m64(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -141,37 +170,17 @@ block_4003e0:
   %14 = load i64, i64* %PC
   %15 = add i64 %14, 4
   store i64 %15, i64* %PC
-  %16 = inttoptr i64 %13 to i32*
-  %17 = load i32, i32* %16
-  %18 = inttoptr i64 %12 to i32*
-  %19 = load i32, i32* %18
-  %20 = sitofp i32 %17 to float
-  %21 = sitofp i32 %19 to float
-  %22 = getelementptr inbounds i8, i8* %11, i64 8
-  %23 = bitcast i8* %22 to <2 x i32>*
-  %24 = load <2 x i32>, <2 x i32>* %23, align 1
-  %25 = bitcast i8* %11 to float*
-  store float %20, float* %25, align 1
-  %26 = getelementptr inbounds i8, i8* %11, i64 4
-  %27 = bitcast i8* %26 to float*
-  store float %21, float* %27, align 1
-  %28 = extractelement <2 x i32> %24, i32 0
-  %29 = bitcast i8* %22 to i32*
-  store i32 %28, i32* %29, align 1
-  %30 = extractelement <2 x i32> %24, i32 1
-  %31 = getelementptr inbounds i8, i8* %11, i64 12
-  %32 = bitcast i8* %31 to i32*
-  store i32 %30, i32* %32, align 1
-  %33 = load i64, i64* %PC
-  %34 = add i64 %33, 1
-  store i64 %34, i64* %PC
-  %35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTPI2PSI3MVnI7vec64_tEEEP6MemoryS5_R5State3VnWI8vec128_tET_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 1
+  store i64 %18, i64* %PC
+  ret %struct.Memory* %16
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -190,6 +199,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_cvtpi2ps_xmm_m64(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_cvtpi2ps_xmm_m64(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

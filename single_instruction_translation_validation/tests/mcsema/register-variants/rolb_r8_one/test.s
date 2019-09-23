@@ -1,6 +1,6 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
@@ -9,14 +9,3 @@ LFB0:
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    rolb $0x1, %bl
-    
-    
-    ret
-LFE3:

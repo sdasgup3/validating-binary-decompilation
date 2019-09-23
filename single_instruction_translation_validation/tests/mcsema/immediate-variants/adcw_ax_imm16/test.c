@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("adcw $0x77, %ax");
-  }
-
 void main() {
-  leaf();
+  __asm__("adcw $0xa, %ax");
 }

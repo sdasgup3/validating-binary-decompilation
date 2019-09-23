@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    vpblendw $0x77, %xmm3, %xmm2, %xmm1
+    vpblendw $0xa, %xmm3, %xmm2, %xmm1
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    vpblendw $0x77, %xmm3, %xmm2, %xmm1
-    
-    
-    ret
-LFE3:

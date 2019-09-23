@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    cmpq $0x77, %rax
+    cmpq $0xa, %rax
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    cmpq $0x77, %rax
-    
-    
-    ret
-LFE3:
