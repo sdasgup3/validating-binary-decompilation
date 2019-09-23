@@ -1,3 +1,3 @@
 .target:
-  andl $0x77, %eax
+  andl $0xa, %eax
   retq

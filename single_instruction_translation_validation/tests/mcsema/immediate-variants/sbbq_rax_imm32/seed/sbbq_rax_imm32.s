@@ -1,3 +1,3 @@
 .target:
-  sbbq $0x77, %rax
+  sbbq $0xa, %rax
   retq

@@ -1,3 +1,3 @@
 .target:
-  sbbb $0x77, %ah
+  sbbb $0xa, %ah
   retq

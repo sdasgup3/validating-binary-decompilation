@@ -1,3 +1,3 @@
 .target:
-  sbbl $0x77, %eax
+  sbbl $0xa, %eax
   retq

@@ -1,3 +1,3 @@
 .target:
-  vpsrad $0x77, %ymm2, %ymm1
+  vpsrad $0xa, %ymm2, %ymm1
   retq

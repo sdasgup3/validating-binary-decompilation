@@ -1,3 +1,3 @@
 .target:
-  cmpl $0x77, %eax
+  cmpl $0xa, %eax
   retq

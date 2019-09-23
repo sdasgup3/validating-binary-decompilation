@@ -1,3 +1,3 @@
 .target:
-  movl $0x77, %ebx
+  movl $0xa, %ebx
   retq

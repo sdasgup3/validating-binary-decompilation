@@ -144,9 +144,9 @@ block_530:
   %16 = and i64 %13, 4294967295
   store i64 %16, i64* %RBX, align 8
   %17 = load i64, i64* %PC
-  %18 = add i64 %17, 1
-  store i64 %18, i64* %PC
-  %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  ;%18 = add i64 %17, 1
+  ;store i64 %18, i64* %PC
+  ;%19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   ret i32 0
 }
 

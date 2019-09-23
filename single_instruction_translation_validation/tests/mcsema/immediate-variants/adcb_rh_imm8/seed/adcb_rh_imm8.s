@@ -1,3 +1,3 @@
 .target:
-  adcb $0x77, %ah
+  adcb $0xa, %ah
   retq

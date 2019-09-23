@@ -1,3 +1,3 @@
 .target:
-  adcl $0x77, %eax
+  adcl $0xa, %eax
   retq

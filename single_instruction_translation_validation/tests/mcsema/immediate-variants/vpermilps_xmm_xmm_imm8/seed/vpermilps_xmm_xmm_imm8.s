@@ -1,3 +1,3 @@
 .target:
-  vpermilps $0x77, %xmm2, %xmm1
+  vpermilps $0xa, %xmm2, %xmm1
   retq

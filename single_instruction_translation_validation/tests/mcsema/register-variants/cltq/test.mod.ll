@@ -137,10 +137,10 @@ block_530:
   %11 = load i32, i32* %10, align 8
   %12 = sext i32 %11 to i64
   store i64 %12, i64* %9, align 8
-  %13 = load i64, i64* %PC
-  %14 = add i64 %13, 1
-  store i64 %14, i64* %PC
-  %15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  ;%13 = load i64, i64* %PC
+  ;%14 = add i64 %13, 1
+  ;store i64 %14, i64* %PC
+  ;%15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   ret i32 0
 }
 

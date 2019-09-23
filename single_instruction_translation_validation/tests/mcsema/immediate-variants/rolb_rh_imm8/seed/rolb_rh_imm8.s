@@ -1,3 +1,3 @@
 .target:
-  rolb $0x77, %ah
+  rolb $0xa, %ah
   retq

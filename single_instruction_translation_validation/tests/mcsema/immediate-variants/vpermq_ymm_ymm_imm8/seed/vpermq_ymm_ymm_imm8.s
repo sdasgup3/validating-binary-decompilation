@@ -1,3 +1,3 @@
 .target:
-  vpermq $0x77, %ymm2, %ymm1
+  vpermq $0xa, %ymm2, %ymm1
   retq

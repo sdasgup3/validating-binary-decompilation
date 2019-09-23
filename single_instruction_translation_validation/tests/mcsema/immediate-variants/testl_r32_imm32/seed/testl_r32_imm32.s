@@ -1,3 +1,3 @@
 .target:
-  testl $0x77, %ebx
+  testl $0xa, %ebx
   retq

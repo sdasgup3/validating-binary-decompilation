@@ -1,3 +1,3 @@
 .target:
-  rcrb $0x77, %bl
+  rcrb $0xa, %bl
   retq

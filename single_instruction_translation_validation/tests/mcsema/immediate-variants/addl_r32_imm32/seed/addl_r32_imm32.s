@@ -1,3 +1,3 @@
 .target:
-  addl $0x77, %ebx
+  addl $0xa, %ebx
   retq

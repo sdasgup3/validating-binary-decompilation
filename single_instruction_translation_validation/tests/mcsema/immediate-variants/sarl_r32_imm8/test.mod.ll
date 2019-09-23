@@ -168,10 +168,10 @@ block_4003e0:
   store i8 %35, i8* %33, align 1
   %36 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 %16, i8* %36, align 1
-  %37 = load i64, i64* %PC
-  %38 = add i64 %37, 1
-  store i64 %38, i64* %PC
-  %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  ;%37 = load i64, i64* %PC
+  ;%38 = add i64 %37, 1
+  ;store i64 %38, i64* %PC
+  ;%39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   ret i32 0
 }
 

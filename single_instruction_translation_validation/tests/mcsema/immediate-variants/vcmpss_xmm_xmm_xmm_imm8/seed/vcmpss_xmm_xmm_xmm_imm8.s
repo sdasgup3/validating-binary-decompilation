@@ -1,3 +1,3 @@
 .target:
-  vcmpss $0x77, %xmm3, %xmm2, %xmm1
+  vcmpss $0xa, %xmm3, %xmm2, %xmm1
   retq
