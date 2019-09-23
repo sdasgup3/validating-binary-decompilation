@@ -1,3 +1,3 @@
 .target:
-  vpextrb $0x77, %xmm1, %ebx
+  vpextrb $0xa, %xmm1, %ebx
   retq

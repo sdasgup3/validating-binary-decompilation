@@ -1,3 +1,3 @@
 .target:
-  subq $0x77, %rbx
+  subq $0xa, %rbx
   retq

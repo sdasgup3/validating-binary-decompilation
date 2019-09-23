@@ -1,3 +1,3 @@
 .target:
-  xorb $0x77, %bl
+  xorb $0xa, %bl
   retq

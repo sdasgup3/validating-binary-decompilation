@@ -1,3 +1,3 @@
 .target:
-  sbbw $0x77, %ax
+  sbbw $0xa, %ax
   retq

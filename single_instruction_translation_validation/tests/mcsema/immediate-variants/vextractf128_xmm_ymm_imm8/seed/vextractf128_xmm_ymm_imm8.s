@@ -1,3 +1,3 @@
 .target:
-  vextractf128 $0x77, %ymm1, %xmm1
+  vextractf128 $0xa, %ymm1, %xmm1
   retq

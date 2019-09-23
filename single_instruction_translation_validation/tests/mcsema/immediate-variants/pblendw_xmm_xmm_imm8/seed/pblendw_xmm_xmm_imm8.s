@@ -1,3 +1,3 @@
 .target:
-  pblendw $0x77, %xmm2, %xmm1
+  pblendw $0xa, %xmm2, %xmm1
   retq

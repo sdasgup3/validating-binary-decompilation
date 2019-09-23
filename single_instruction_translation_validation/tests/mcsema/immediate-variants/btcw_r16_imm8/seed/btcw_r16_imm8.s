@@ -1,3 +1,3 @@
 .target:
-  btcw $0x77, %bx
+  btcw $0xa, %bx
   retq

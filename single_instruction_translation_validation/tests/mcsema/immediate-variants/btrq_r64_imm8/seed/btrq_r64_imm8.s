@@ -1,3 +1,3 @@
 .target:
-  btrq $0x77, %rbx
+  btrq $0xa, %rbx
   retq

@@ -1,3 +1,3 @@
 .target:
-  vpcmpestrm $0x77, %xmm2, %xmm1
+  vpcmpestrm $0xa, %xmm2, %xmm1
   retq

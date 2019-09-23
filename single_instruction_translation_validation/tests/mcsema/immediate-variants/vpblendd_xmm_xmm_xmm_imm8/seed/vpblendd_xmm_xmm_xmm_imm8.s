@@ -1,3 +1,3 @@
 .target:
-  vpblendd $0x77, %xmm3, %xmm2, %xmm1
+  vpblendd $0xa, %xmm3, %xmm2, %xmm1
   retq

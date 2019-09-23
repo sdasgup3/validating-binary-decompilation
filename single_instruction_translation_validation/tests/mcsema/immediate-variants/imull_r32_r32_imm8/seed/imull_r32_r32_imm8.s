@@ -1,3 +1,3 @@
 .target:
-  imull $0x77, %ecx, %ebx
+  imull $0xa, %ecx, %ebx
   retq

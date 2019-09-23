@@ -1,3 +1,3 @@
 .target:
-  orb $0x77, %bl
+  orb $0xa, %bl
   retq

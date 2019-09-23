@@ -1,3 +1,3 @@
 .target:
-  xorl $0x77, %eax
+  xorl $0xa, %eax
   retq

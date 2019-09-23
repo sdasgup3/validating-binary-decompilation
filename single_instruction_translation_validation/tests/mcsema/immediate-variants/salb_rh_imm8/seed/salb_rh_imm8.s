@@ -1,3 +1,3 @@
 .target:
-  salb $0x77, %ah
+  salb $0xa, %ah
   retq

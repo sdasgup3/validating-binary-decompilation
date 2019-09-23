@@ -1,3 +1,3 @@
 .target:
-  movw $0x77, %bx
+  movw $0xa, %bx
   retq

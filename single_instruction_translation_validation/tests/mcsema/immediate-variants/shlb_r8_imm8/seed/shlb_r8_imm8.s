@@ -1,3 +1,3 @@
 .target:
-  shlb $0x77, %bl
+  shlb $0xa, %bl
   retq

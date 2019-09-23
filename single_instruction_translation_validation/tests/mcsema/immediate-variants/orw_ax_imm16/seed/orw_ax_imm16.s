@@ -1,3 +1,3 @@
 .target:
-  orw $0x77, %ax
+  orw $0xa, %ax
   retq

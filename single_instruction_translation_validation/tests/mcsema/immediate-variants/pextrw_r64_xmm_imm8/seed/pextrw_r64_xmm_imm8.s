@@ -1,3 +1,3 @@
 .target:
-  pextrw $0x77, %xmm1, %rbx
+  pextrw $0xa, %xmm1, %rbx
   retq

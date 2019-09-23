@@ -1,3 +1,3 @@
 .target:
-  vroundps $0x77, %xmm2, %xmm1
+  vroundps $0xa, %xmm2, %xmm1
   retq

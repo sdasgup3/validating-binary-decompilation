@@ -1,3 +1,3 @@
 .target:
-  movb $0x77, %ah
+  movb $0xa, %ah
   retq

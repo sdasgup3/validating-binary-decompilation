@@ -1,3 +1,3 @@
 .target:
-  shrl $0x77, %ebx
+  shrl $0xa, %ebx
   retq
