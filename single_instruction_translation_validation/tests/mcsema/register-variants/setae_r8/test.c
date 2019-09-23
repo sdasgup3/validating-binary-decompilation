@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("setae %bl");
-  }
-
 void main() {
-  leaf();
+  __asm__("setae %bl");
 }

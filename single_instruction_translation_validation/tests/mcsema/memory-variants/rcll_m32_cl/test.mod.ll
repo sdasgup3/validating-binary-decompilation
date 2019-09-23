@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,64 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_rcll_m32_cl(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3RCLI3MnWIjE2MnIjE2RnIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64, i64, i64) #0 {
+  %6 = inttoptr i64 %3 to i32*
+  %7 = load i32, i32* %6
+  %8 = trunc i64 %4 to i32
+  %9 = and i32 %8, 31
+  %10 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 1
+  %11 = icmp eq i32 %9, 0
+  br i1 %11, label %41, label %12
+
+; <label>:12:                                     ; preds = %5
+  %13 = load i8, i8* %10, align 1
+  %14 = icmp ne i8 %13, 0
+  %15 = sub  i32 32, %9
+  %16 = zext i32 %7 to i64
+  %17 = zext i32 %15 to i64
+  %18 = lshr i64 %16, %17
+  %19 = zext i32 %9 to i64
+  %20 = shl i64 %16, %19
+  %21 = add  i32 %9, -1
+  %22 = zext i1 %14 to i64
+  %23 = zext i32 %21 to i64
+  %24 = shl i64 %22, %23
+  %25 = or i64 %24, %20
+  %26 = trunc i64 %25 to i32
+  %27 = lshr i64 %18, 1
+  %28 = trunc i64 %27 to i32
+  %29 = and i32 %28, 2147483647
+  %30 = or i32 %26, %29
+  %31 = inttoptr i64 %2 to i32*
+  store i32 %30, i32* %31
+  %32 = shl i64 %16, %23
+  %33 = trunc i64 %32 to i32
+  %34 = icmp slt i32 %33, 0
+  %35 = lshr i32 %33, 31
+  %36 = trunc i32 %35 to i8
+  store i8 %36, i8* %10, align 1
+  %37 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
+  %38 = icmp slt i32 %30, 0
+  %39 = xor i1 %34, %38
+  %40 = zext i1 %39 to i8
+  store i8 %40, i8* %37, align 1
+  br label %43
+
+; <label>:41:                                     ; preds = %5
+  %42 = inttoptr i64 %2 to i32*
+  store i32 %7, i32* %42
+  br label %43
+
+; <label>:43:                                     ; preds = %41, %12
+  %44 = phi %struct.Memory* [ %0, %41 ], [ %0, %12 ]
+  ret %struct.Memory* %44
+}
+
+define %struct.Memory* @routine_rcll_m32_cl(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -146,65 +202,17 @@ block_4003e0:
   %19 = load i64, i64* %PC
   %20 = add i64 %19, 3
   store i64 %20, i64* %PC
-  %21 = inttoptr i64 %16 to i32*
-  %22 = load i32, i32* %21
-  %23 = trunc i64 %18 to i32
-  %24 = and i32 %23, 31
-  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  %26 = icmp eq i32 %24, 0
-  br i1 %26, label %56, label %27
-
-; <label>:27:                                     ; preds = %block_4003e0
-  %28 = load i8, i8* %25, align 1
-  %29 = icmp ne i8 %28, 0
-  %30 = sub  i32 32, %24
-  %31 = zext i32 %22 to i64
-  %32 = zext i32 %30 to i64
-  %33 = lshr i64 %31, %32
-  %34 = zext i32 %24 to i64
-  %35 = shl i64 %31, %34
-  %36 = add  i32 %24, -1
-  %37 = zext i1 %29 to i64
-  %38 = zext i32 %36 to i64
-  %39 = shl i64 %37, %38
-  %40 = or i64 %39, %35
-  %41 = trunc i64 %40 to i32
-  %42 = lshr i64 %33, 1
-  %43 = trunc i64 %42 to i32
-  %44 = and i32 %43, 2147483647
-  %45 = or i32 %41, %44
-  %46 = inttoptr i64 %14 to i32*
-  store i32 %45, i32* %46
-  %47 = shl i64 %31, %38
-  %48 = trunc i64 %47 to i32
-  %49 = icmp slt i32 %48, 0
-  %50 = lshr i32 %48, 31
-  %51 = trunc i32 %50 to i8
-  store i8 %51, i8* %25, align 1
-  %52 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  %53 = icmp slt i32 %45, 0
-  %54 = xor i1 %49, %53
-  %55 = zext i1 %54 to i8
-  store i8 %55, i8* %52, align 1
-  br label %_ZN12_GLOBAL__N_1L3RCLI3MnWIjE2MnIjE2RnIjEEEP6MemoryS8_R5StateT_T0_T1_.exit
-
-; <label>:56:                                     ; preds = %block_4003e0
-  %57 = inttoptr i64 %14 to i32*
-  store i32 %22, i32* %57
-  br label %_ZN12_GLOBAL__N_1L3RCLI3MnWIjE2MnIjE2RnIjEEEP6MemoryS8_R5StateT_T0_T1_.exit
-
-_ZN12_GLOBAL__N_1L3RCLI3MnWIjE2MnIjE2RnIjEEEP6MemoryS8_R5StateT_T0_T1_.exit: ; preds = %56, %27
-  %58 = phi %struct.Memory* [ %2, %56 ], [ %2, %27 ]
-  %59 = load i64, i64* %PC
-  %60 = add i64 %59, 1
-  store i64 %60, i64* %PC
-  %61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %21 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3RCLI3MnWIjE2MnIjE2RnIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64 %14, i64 %16, i64 %18)
+  %22 = load i64, i64* %PC
+  %23 = add i64 %22, 1
+  store i64 %23, i64* %PC
+  ret %struct.Memory* %21
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -223,6 +231,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_rcll_m32_cl(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_rcll_m32_cl(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

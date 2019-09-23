@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,83 +121,104 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vpshufd_ymm_ymm_imm8(%struct.State*, i64, i64) {
-block_4003e0:
-  %3 = alloca %struct.uint128v2_t, align 8
-  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %5 = getelementptr inbounds %struct.GPR, %struct.GPR* %4, i32 0, i32 33
-  %6 = getelementptr inbounds %struct.Reg, %struct.Reg* %5, i32 0, i32 0
-  %PC = bitcast %union.anon* %6 to i64*
-  store i64 %1, i64* %PC, align 8
-  %7 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %8 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %7, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %8 to %"class.std::bitset"*
-  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
-  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
-  %YMM2 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
-  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
-  %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
-  %13 = load i64, i64* %PC
-  %14 = add i64 %13, 5
-  store i64 %14, i64* %PC
-  %15 = bitcast %struct.uint128v2_t* %3 to i8*
-  call void @my.lifetime.start(i64 32, i8* nonnull %15) #14
-  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %15, i8* %12, i64 32, i32 1, i1 false) #14
-  %16 = getelementptr inbounds %struct.uint128v2_t, %struct.uint128v2_t* %3, i64 0, i32 0, i64 0
-  %17 = load i128, i128* %16, align 8
-  %18 = lshr i128 %17, 96
-  %19 = trunc i128 %18 to i32
-  %20 = lshr i128 %17, 32
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L6PSHUFDI3VnWI8vec256_tE2VnIS2_EEEP6MemoryS7_R5StateT_T0_2InIhE(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i64) #0 {
+  %6 = alloca %struct.uint128v2_t, align 8
+  %7 = bitcast %struct.uint128v2_t* %6 to i8*
+  call void @my.lifetime.start(i64 32, i8* nonnull %7) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %7, i8* %3, i64 32, i32 1, i1 false) #22
+  %8 = shl i64 %4, 5
+  %9 = and i64 %8, 96
+  %10 = lshr i64 %4, 2
+  %11 = and i64 %10, 63
+  %12 = zext i64 %9 to i128
+  %13 = getelementptr inbounds %struct.uint128v2_t, %struct.uint128v2_t* %6, i64 0, i32 0, i64 0
+  %14 = load i128, i128* %13, align 8
+  %15 = lshr i128 %14, %12
+  %16 = trunc i128 %15 to i32
+  %17 = shl   i64 %11, 5
+  %18 = and i64 %17, 96
+  %19 = zext i64 %18 to i128
+  %20 = lshr i128 %14, %19
   %21 = trunc i128 %20 to i32
-  %22 = lshr i128 %17, 96
-  %23 = trunc i128 %22 to i32
-  %24 = lshr i128 %17, 32
-  %25 = trunc i128 %24 to i32
-  %26 = getelementptr inbounds %struct.uint128v2_t, %struct.uint128v2_t* %3, i64 0, i32 0, i64 1
-  %27 = load i128, i128* %26, align 8
-  %28 = lshr i128 %27, 96
-  %29 = trunc i128 %28 to i32
-  %30 = lshr i128 %27, 32
+  %22 = shl   i64 %11, 3
+  %23 = and i64 %22, 96
+  %24 = zext i64 %23 to i128
+  %25 = lshr i128 %14, %24
+  %26 = trunc i128 %25 to i32
+  %27 = shl   i64 %10, 1
+  %28 = and i64 %27, 96
+  %29 = zext i64 %28 to i128
+  %30 = lshr i128 %14, %29
   %31 = trunc i128 %30 to i32
-  %32 = lshr i128 %27, 96
-  %33 = trunc i128 %32 to i32
-  %34 = lshr i128 %27, 32
+  %32 = getelementptr inbounds %struct.uint128v2_t, %struct.uint128v2_t* %6, i64 0, i32 0, i64 1
+  %33 = load i128, i128* %32, align 8
+  %34 = lshr i128 %33, %12
   %35 = trunc i128 %34 to i32
-  %36 = bitcast i8* %11 to i32*
-  store i32 %19, i32* %36, align 1
-  %37 = getelementptr inbounds i8, i8* %11, i64 4
-  %38 = bitcast i8* %37 to i32*
-  store i32 %21, i32* %38, align 1
-  %39 = getelementptr inbounds i8, i8* %11, i64 8
-  %40 = bitcast i8* %39 to i32*
-  store i32 %23, i32* %40, align 1
-  %41 = getelementptr inbounds i8, i8* %11, i64 12
-  %42 = bitcast i8* %41 to i32*
-  store i32 %25, i32* %42, align 1
-  %43 = getelementptr inbounds i8, i8* %11, i64 16
+  %36 = lshr i128 %33, %19
+  %37 = trunc i128 %36 to i32
+  %38 = lshr i128 %33, %24
+  %39 = trunc i128 %38 to i32
+  %40 = lshr i128 %33, %29
+  %41 = trunc i128 %40 to i32
+  %42 = bitcast i8* %2 to i32*
+  store i32 %16, i32* %42, align 1
+  %43 = getelementptr inbounds i8, i8* %2, i64 4
   %44 = bitcast i8* %43 to i32*
-  store i32 %29, i32* %44, align 1
-  %45 = getelementptr inbounds i8, i8* %11, i64 20
+  store i32 %21, i32* %44, align 1
+  %45 = getelementptr inbounds i8, i8* %2, i64 8
   %46 = bitcast i8* %45 to i32*
-  store i32 %31, i32* %46, align 1
-  %47 = getelementptr inbounds i8, i8* %11, i64 24
+  store i32 %26, i32* %46, align 1
+  %47 = getelementptr inbounds i8, i8* %2, i64 12
   %48 = bitcast i8* %47 to i32*
-  store i32 %33, i32* %48, align 1
-  %49 = getelementptr inbounds i8, i8* %11, i64 28
+  store i32 %31, i32* %48, align 1
+  %49 = getelementptr inbounds i8, i8* %2, i64 16
   %50 = bitcast i8* %49 to i32*
   store i32 %35, i32* %50, align 1
-  call void @my.lifetime.end(i64 32, i8* nonnull %15) #14
-  %51 = load i64, i64* %PC
-  %52 = add i64 %51, 1
-  store i64 %52, i64* %PC
-  %53 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %51 = getelementptr inbounds i8, i8* %2, i64 20
+  %52 = bitcast i8* %51 to i32*
+  store i32 %37, i32* %52, align 1
+  %53 = getelementptr inbounds i8, i8* %2, i64 24
+  %54 = bitcast i8* %53 to i32*
+  store i32 %39, i32* %54, align 1
+  %55 = getelementptr inbounds i8, i8* %2, i64 28
+  %56 = bitcast i8* %55 to i32*
+  store i32 %41, i32* %56, align 1
+  call void @my.lifetime.end(i64 32, i8* nonnull %7) #22
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vpshufd_ymm_ymm_imm8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  store i64 %1, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %9 to %"class.std::bitset"*
+  %10 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %12 = load i64, i64* %PC
+  %13 = add i64 %12, 5
+  store i64 %13, i64* %PC
+  %14 = call %struct.Memory* @_ZN12_GLOBAL__N_1L6PSHUFDI3VnWI8vec256_tE2VnIS2_EEEP6MemoryS7_R5StateT_T0_2InIhE(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i64 10)
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 1
+  store i64 %16, i64* %PC
+  ret %struct.Memory* %14
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -215,6 +237,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vpshufd_ymm_ymm_imm8(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vpshufd_ymm_ymm_imm8(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

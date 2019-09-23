@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("divw %bx");
-  }
-
 void main() {
-  leaf();
+  __asm__("divw %bx");
 }

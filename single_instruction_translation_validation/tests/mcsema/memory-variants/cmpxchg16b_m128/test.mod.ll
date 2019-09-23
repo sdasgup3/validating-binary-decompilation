@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,74 +121,81 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_cmpxchg16b_m128(%struct.State*, i64, i64) {
-block_4003e0:
-  %3 = alloca i128, align 16
-  %4 = alloca i128, align 16
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %6 = getelementptr inbounds %struct.GPR, %struct.GPR* %5, i32 0, i32 33
-  %7 = getelementptr inbounds %struct.Reg, %struct.Reg* %6, i32 0, i32 0
-  %PC = bitcast %union.anon* %7 to i64*
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L18DoCMPXCHG16B_MEMdqEP6MemoryR5State3MnWIoE2MnIoE(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64, i64) #0 {
+  %5 = alloca i128, align 16
+  %6 = alloca i128, align 16
+  %7 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 7, i32 0, i32 0
+  %8 = load i64, i64* %7, align 8
+  %9 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 1, i32 0, i32 0
+  %10 = load i64, i64* %9, align 8
+  %11 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 5, i32 0, i32 0
+  %12 = load i64, i64* %11, align 8
+  %13 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 3, i32 0, i32 0
+  %14 = load i64, i64* %13, align 8
+  %15 = bitcast i128* %6 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %15) #22
+  %16 = zext i64 %8 to i128
+  %17 = shl  i128 %16, 64
+  %18 = zext i64 %10 to i128
+  %19 = or i128 %17, %18
+  store i128 %19, i128* %6, align 16
+  %20 = bitcast i128* %5 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  %21 = zext i64 %12 to i128
+  %22 = shl  i128 %21, 64
+  %23 = zext i64 %14 to i128
+  %24 = or i128 %22, %23
+  store i128 %24, i128* %5, align 16
+  %25 = call %struct.Memory* @__remill_compare_exchange_memory_128(%struct.Memory* %0, i64 %2, i128* nonnull dereferenceable(16) %6, i128* nonnull dereferenceable(16) %5) #24
+  %26 = load i128, i128* %6, align 16
+  %27 = icmp eq i128 %19, %26
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %28 = zext i1 %27 to i8
+  %29 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 7
+  store i8 %28, i8* %29, align 1
+  %30 = lshr i128 %26, 64
+  %31 = trunc i128 %30 to i64
+  store i64 %31, i64* %7, align 8
+  %32 = trunc i128 %26 to i64
+  store i64 %32, i64* %9, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %15) #22
+  ret %struct.Memory* %25
+}
+
+define %struct.Memory* @routine_cmpxchg16b_m128(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
   store i64 %1, i64* %PC, align 8
-  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %9 = getelementptr inbounds %struct.GPR, %struct.GPR* %8, i32 0, i32 15
-  %10 = getelementptr inbounds %struct.Reg, %struct.Reg* %9, i32 0, i32 0
-  %RBP = bitcast %union.anon* %10 to i64*
-  %11 = call %struct.Memory* @__remill_atomic_begin(%struct.Memory* %2)
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = call %struct.Memory* @__remill_atomic_begin(%struct.Memory* %2)
+  %10 = load i64, i64* %RBP
+  %11 = sub i64 %10, 4
   %12 = load i64, i64* %RBP
   %13 = sub i64 %12, 4
-  %14 = load i64, i64* %RBP
-  %15 = sub i64 %14, 4
-  %16 = load i64, i64* %PC
-  %17 = add i64 %16, 5
-  store i64 %17, i64* %PC
-  %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %19 = load i64, i64* %18, align 8
-  %20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %21 = load i64, i64* %20, align 8
-  %22 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
-  %23 = load i64, i64* %22, align 8
-  %24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 3, i32 0, i32 0
-  %25 = load i64, i64* %24, align 8
-  %26 = bitcast i128* %4 to i8*
-  call void @my.lifetime.start(i64 16, i8* nonnull %26) #14
-  %27 = zext i64 %19 to i128
-  %28 = shl  i128 %27, 64
-  %29 = zext i64 %21 to i128
-  %30 = or i128 %28, %29
-  store i128 %30, i128* %4, align 16
-  %31 = bitcast i128* %3 to i8*
-  call void @my.lifetime.start(i64 16, i8* nonnull %31) #14
-  %32 = zext i64 %23 to i128
-  %33 = shl  i128 %32, 64
-  %34 = zext i64 %25 to i128
-  %35 = or i128 %33, %34
-  store i128 %35, i128* %3, align 16
-  %36 = call %struct.Memory* @__remill_compare_exchange_memory_128(%struct.Memory* %11, i64 %13, i128* nonnull dereferenceable(16) %4, i128* nonnull dereferenceable(16) %3) #15
-  %37 = load i128, i128* %4, align 16
-  %38 = icmp eq i128 %30, %37
-  call void @my.lifetime.end(i64 16, i8* nonnull %31) #14
-  %39 = zext i1 %38 to i8
-  %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %39, i8* %40, align 1
-  %41 = lshr i128 %37, 64
-  %42 = trunc i128 %41 to i64
-  store i64 %42, i64* %18, align 8
-  %43 = trunc i128 %37 to i64
-  store i64 %43, i64* %20, align 8
-  call void @my.lifetime.end(i64 16, i8* nonnull %26) #14
-  %44 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %36)
-  %45 = load i64, i64* %PC
-  %46 = add i64 %45, 1
-  store i64 %46, i64* %PC
-  %47 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L18DoCMPXCHG16B_MEMdqEP6MemoryR5State3MnWIoE2MnIoE(%struct.Memory* %9, %struct.State* %0, i64 %11, i64 %13)
+  %17 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %16)
+  %18 = load i64, i64* %PC
+  %19 = add i64 %18, 1
+  store i64 %19, i64* %PC
+  ret %struct.Memory* %16
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -206,6 +214,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_cmpxchg16b_m128(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_cmpxchg16b_m128(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

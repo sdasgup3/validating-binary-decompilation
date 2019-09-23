@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,8 +121,115 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_paddb_xmm_xmm(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5PADDBI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
+  %6 = bitcast i8* %3 to i64*
+  %7 = load i64, i64* %6, align 1
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
+  %9 = bitcast i8* %8 to i64*
+  %10 = load i64, i64* %9, align 1
+  %11 = lshr i64 %7, 56
+  %12 = bitcast i8* %4 to i64*
+  %13 = load i64, i64* %12, align 1
+  %14 = getelementptr inbounds i8, i8* %4, i64 8
+  %15 = bitcast i8* %14 to i64*
+  %16 = load i64, i64* %15, align 1
+  %17 = and i64 %13, 65280
+  %18 = and i64 %13, 16711680
+  %19 = and i64 %13, 4278190080
+  %20 = and i64 %13, 1095216660480
+  %21 = and i64 %13, 280375465082880
+  %22 = and i64 %13, 71776119061217280
+  %23 = lshr i64 %13, 56
+  %24 = add i64 %13, %7
+  %25 = add   i64 %23, %11
+  %26 = add i64 %16, %10
+  %27 = and i64 %16, 65280
+  %28 = add i64 %27, %10
+  %29 = and i64 %16, 16711680
+  %30 = add i64 %29, %10
+  %31 = and i64 %16, 4278190080
+  %32 = add i64 %31, %10
+  %33 = and i64 %16, 1095216660480
+  %34 = add i64 %33, %10
+  %35 = and i64 %16, 280375465082880
+  %36 = add i64 %35, %10
+  %37 = and i64 %16, 71776119061217280
+  %38 = add i64 %37, %10
+  %39 = lshr i64 %10, 56
+  %40 = lshr i64 %16, 56
+  %41 = add   i64 %40, %39
+  %42 = add i64 %22, %7
+  %43 = add i64 %21, %7
+  %44 = add i64 %20, %7
+  %45 = add i64 %19, %7
+  %46 = add i64 %18, %7
+  %47 = add i64 %17, %7
+  %48 = trunc i64 %24 to i8
+  %49 = lshr i64 %47, 8
+  %50 = trunc i64 %49 to i8
+  %51 = lshr i64 %46, 16
+  %52 = trunc i64 %51 to i8
+  %53 = lshr i64 %45, 24
+  %54 = trunc i64 %53 to i8
+  %55 = lshr i64 %44, 32
+  %56 = trunc i64 %55 to i8
+  %57 = lshr i64 %43, 40
+  %58 = trunc i64 %57 to i8
+  %59 = lshr i64 %42, 48
+  %60 = trunc i64 %59 to i8
+  %61 = trunc i64 %25 to i8
+  store i8 %48, i8* %2, align 1
+  %62 = getelementptr inbounds i8, i8* %2, i64 1
+  store i8 %50, i8* %62, align 1
+  %63 = getelementptr inbounds i8, i8* %2, i64 2
+  store i8 %52, i8* %63, align 1
+  %64 = getelementptr inbounds i8, i8* %2, i64 3
+  store i8 %54, i8* %64, align 1
+  %65 = getelementptr inbounds i8, i8* %2, i64 4
+  store i8 %56, i8* %65, align 1
+  %66 = getelementptr inbounds i8, i8* %2, i64 5
+  store i8 %58, i8* %66, align 1
+  %67 = getelementptr inbounds i8, i8* %2, i64 6
+  store i8 %60, i8* %67, align 1
+  %68 = getelementptr inbounds i8, i8* %2, i64 7
+  store i8 %61, i8* %68, align 1
+  %69 = trunc i64 %26 to i8
+  %70 = getelementptr inbounds i8, i8* %2, i64 8
+  store i8 %69, i8* %70, align 1
+  %71 = lshr i64 %28, 8
+  %72 = trunc i64 %71 to i8
+  %73 = getelementptr inbounds i8, i8* %2, i64 9
+  store i8 %72, i8* %73, align 1
+  %74 = lshr i64 %30, 16
+  %75 = trunc i64 %74 to i8
+  %76 = getelementptr inbounds i8, i8* %2, i64 10
+  store i8 %75, i8* %76, align 1
+  %77 = lshr i64 %32, 24
+  %78 = trunc i64 %77 to i8
+  %79 = getelementptr inbounds i8, i8* %2, i64 11
+  store i8 %78, i8* %79, align 1
+  %80 = lshr i64 %34, 32
+  %81 = trunc i64 %80 to i8
+  %82 = getelementptr inbounds i8, i8* %2, i64 12
+  store i8 %81, i8* %82, align 1
+  %83 = lshr i64 %36, 40
+  %84 = trunc i64 %83 to i8
+  %85 = getelementptr inbounds i8, i8* %2, i64 13
+  store i8 %84, i8* %85, align 1
+  %86 = lshr i64 %38, 48
+  %87 = trunc i64 %86 to i8
+  %88 = getelementptr inbounds i8, i8* %2, i64 14
+  store i8 %87, i8* %88, align 1
+  %89 = trunc i64 %41 to i8
+  %90 = getelementptr inbounds i8, i8* %2, i64 15
+  store i8 %89, i8* %90, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_paddb_xmm_xmm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -140,117 +248,17 @@ block_530:
   %13 = load i64, i64* %PC
   %14 = add i64 %13, 4
   store i64 %14, i64* %PC
-  %15 = bitcast i8* %11 to i64*
-  %16 = load i64, i64* %15, align 1
-  %17 = getelementptr inbounds i8, i8* %11, i64 8
-  %18 = bitcast i8* %17 to i64*
-  %19 = load i64, i64* %18, align 1
-  %20 = lshr i64 %16, 56
-  %21 = bitcast i8* %12 to i64*
-  %22 = load i64, i64* %21, align 1
-  %23 = getelementptr inbounds i8, i8* %12, i64 8
-  %24 = bitcast i8* %23 to i64*
-  %25 = load i64, i64* %24, align 1
-  %26 = and i64 %22, 65280
-  %27 = and i64 %22, 16711680
-  %28 = and i64 %22, 4278190080
-  %29 = and i64 %22, 1095216660480
-  %30 = and i64 %22, 280375465082880
-  %31 = and i64 %22, 71776119061217280
-  %32 = lshr i64 %22, 56
-  %33 = add i64 %22, %16
-  %34 = add   i64 %32, %20
-  %35 = add i64 %25, %19
-  %36 = and i64 %25, 65280
-  %37 = add i64 %36, %19
-  %38 = and i64 %25, 16711680
-  %39 = add i64 %38, %19
-  %40 = and i64 %25, 4278190080
-  %41 = add i64 %40, %19
-  %42 = and i64 %25, 1095216660480
-  %43 = add i64 %42, %19
-  %44 = and i64 %25, 280375465082880
-  %45 = add i64 %44, %19
-  %46 = and i64 %25, 71776119061217280
-  %47 = add i64 %46, %19
-  %48 = lshr i64 %19, 56
-  %49 = lshr i64 %25, 56
-  %50 = add   i64 %49, %48
-  %51 = add i64 %31, %16
-  %52 = add i64 %30, %16
-  %53 = add i64 %29, %16
-  %54 = add i64 %28, %16
-  %55 = add i64 %27, %16
-  %56 = add i64 %26, %16
-  %57 = trunc i64 %33 to i8
-  %58 = lshr i64 %56, 8
-  %59 = trunc i64 %58 to i8
-  %60 = lshr i64 %55, 16
-  %61 = trunc i64 %60 to i8
-  %62 = lshr i64 %54, 24
-  %63 = trunc i64 %62 to i8
-  %64 = lshr i64 %53, 32
-  %65 = trunc i64 %64 to i8
-  %66 = lshr i64 %52, 40
-  %67 = trunc i64 %66 to i8
-  %68 = lshr i64 %51, 48
-  %69 = trunc i64 %68 to i8
-  %70 = trunc i64 %34 to i8
-  store i8 %57, i8* %10, align 1
-  %71 = getelementptr inbounds i8, i8* %10, i64 1
-  store i8 %59, i8* %71, align 1
-  %72 = getelementptr inbounds i8, i8* %10, i64 2
-  store i8 %61, i8* %72, align 1
-  %73 = getelementptr inbounds i8, i8* %10, i64 3
-  store i8 %63, i8* %73, align 1
-  %74 = getelementptr inbounds i8, i8* %10, i64 4
-  store i8 %65, i8* %74, align 1
-  %75 = getelementptr inbounds i8, i8* %10, i64 5
-  store i8 %67, i8* %75, align 1
-  %76 = getelementptr inbounds i8, i8* %10, i64 6
-  store i8 %69, i8* %76, align 1
-  %77 = getelementptr inbounds i8, i8* %10, i64 7
-  store i8 %70, i8* %77, align 1
-  %78 = trunc i64 %35 to i8
-  %79 = getelementptr inbounds i8, i8* %10, i64 8
-  store i8 %78, i8* %79, align 1
-  %80 = lshr i64 %37, 8
-  %81 = trunc i64 %80 to i8
-  %82 = getelementptr inbounds i8, i8* %10, i64 9
-  store i8 %81, i8* %82, align 1
-  %83 = lshr i64 %39, 16
-  %84 = trunc i64 %83 to i8
-  %85 = getelementptr inbounds i8, i8* %10, i64 10
-  store i8 %84, i8* %85, align 1
-  %86 = lshr i64 %41, 24
-  %87 = trunc i64 %86 to i8
-  %88 = getelementptr inbounds i8, i8* %10, i64 11
-  store i8 %87, i8* %88, align 1
-  %89 = lshr i64 %43, 32
-  %90 = trunc i64 %89 to i8
-  %91 = getelementptr inbounds i8, i8* %10, i64 12
-  store i8 %90, i8* %91, align 1
-  %92 = lshr i64 %45, 40
-  %93 = trunc i64 %92 to i8
-  %94 = getelementptr inbounds i8, i8* %10, i64 13
-  store i8 %93, i8* %94, align 1
-  %95 = lshr i64 %47, 48
-  %96 = trunc i64 %95 to i8
-  %97 = getelementptr inbounds i8, i8* %10, i64 14
-  store i8 %96, i8* %97, align 1
-  %98 = trunc i64 %50 to i8
-  %99 = getelementptr inbounds i8, i8* %10, i64 15
-  store i8 %98, i8* %99, align 1
-  %100 = load i64, i64* %PC
-  %101 = add i64 %100, 1
-  store i64 %101, i64* %PC
-  %102 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5PADDBI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 1
+  store i64 %17, i64* %PC
+  ret %struct.Memory* %15
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -269,6 +277,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_paddb_xmm_xmm(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_paddb_xmm_xmm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

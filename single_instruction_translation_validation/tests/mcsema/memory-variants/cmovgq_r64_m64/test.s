@@ -1,6 +1,6 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
@@ -9,14 +9,3 @@ LFB0:
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    cmovgq -4(%rbp), %rbx
-    
-    
-    ret
-LFE3:

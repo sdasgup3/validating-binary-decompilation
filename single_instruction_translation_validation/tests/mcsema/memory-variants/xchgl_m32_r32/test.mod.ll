@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,22 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_xchgl_m32_r32(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XCHGI3MnWIjE2MnIjE3RnWImE2RnIjEEEP6MemorySA_R5StateT_T0_T1_T2_(%struct.Memory*, %struct.State* nocapture readnone dereferenceable(3376), i64, i64, i64* nocapture, i64) #0 {
+  %7 = inttoptr i64 %3 to i32*
+  %8 = load i32, i32* %7
+  %9 = trunc i64 %5 to i32
+  %10 = inttoptr i64 %2 to i32*
+  store i32 %9, i32* %10
+  %11 = zext i32 %8 to i64
+  store i64 %11, i64* %4, align 8
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_xchgl_m32_r32(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -145,24 +159,18 @@ block_4003e0:
   %18 = load i64, i64* %PC
   %19 = add i64 %18, 3
   store i64 %19, i64* %PC
-  %20 = inttoptr i64 %16 to i32*
-  %21 = load i32, i32* %20
-  %22 = trunc i64 %17 to i32
-  %23 = inttoptr i64 %14 to i32*
-  store i32 %22, i32* %23
-  %24 = zext i32 %21 to i64
-  store i64 %24, i64* %RCX, align 8
-  %25 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %12)
-  %26 = load i64, i64* %PC
-  %27 = add i64 %26, 1
-  store i64 %27, i64* %PC
-  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %20 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4XCHGI3MnWIjE2MnIjE3RnWImE2RnIjEEEP6MemorySA_R5StateT_T0_T1_T2_(%struct.Memory* %12, %struct.State* %0, i64 %14, i64 %16, i64* %RCX, i64 %17)
+  %21 = call %struct.Memory* @__remill_atomic_end(%struct.Memory* %20)
+  %22 = load i64, i64* %PC
+  %23 = add i64 %22, 1
+  store i64 %23, i64* %PC
+  ret %struct.Memory* %20
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -181,6 +189,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_xchgl_m32_r32(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_xchgl_m32_r32(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

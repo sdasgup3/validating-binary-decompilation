@@ -1,6 +1,6 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
@@ -9,14 +9,3 @@ LFB0:
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    vpmulld -4(%rbp), %ymm2, %ymm1
-    
-    
-    ret
-LFE3:

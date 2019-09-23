@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    vmpsadbw $0x77, %ymm3, %ymm2, %ymm1
+    vmpsadbw $0xa, %ymm3, %ymm2, %ymm1
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    vmpsadbw $0x77, %ymm3, %ymm2, %ymm1
-    
-    
-    ret
-LFE3:

@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,9 +121,206 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_vcmpss_xmm_xmm_m32_imm8(%struct.State*, i64, i64) {
-block_4003e0:
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5CMPSSI3VnWI8vec256_tE2VnI8vec128_tE3MVnI7vec32_tEEEP6MemorySB_R5StateT_T0_T1_2InIhE(%struct.Memory*, %struct.State* dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i64, i64) #0 {
+  %7 = inttoptr i64 %4 to float*
+  %8 = load float, float* %7
+  %9 = trunc i64 %5 to i8
+  %10 = icmp ugt i8 %9, 31
+  br i1 %10, label %11, label %15
+
+; <label>:11:                                     ; preds = %6
+  %12 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 33, i32 0, i32 0
+  %13 = load i64, i64* %12, align 8
+  %14 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %1, i64 %13, %struct.Memory* %0) #21
+  br label %92
+
+; <label>:15:                                     ; preds = %6
+  %16 = bitcast i8* %3 to <2 x float>*
+  %17 = load <2 x float>, <2 x float>* %16, align 1
+  %18 = extractelement <2 x float> %17, i32 0
+  %19 = fcmp uno float %18, %8
+  %20 = xor i1 %19, true
+  switch i8 %9, label %78 [
+    i8 0, label %21
+    i8 1, label %24
+    i8 2, label %27
+    i8 3, label %79
+    i8 4, label %30
+    i8 5, label %32
+    i8 6, label %34
+    i8 7, label %36
+    i8 8, label %37
+    i8 9, label %39
+    i8 10, label %41
+    i8 11, label %81
+    i8 12, label %43
+    i8 13, label %45
+    i8 14, label %48
+    i8 15, label %80
+    i8 16, label %51
+    i8 17, label %54
+    i8 18, label %56
+    i8 19, label %79
+    i8 20, label %58
+    i8 21, label %60
+    i8 22, label %62
+    i8 23, label %64
+    i8 24, label %65
+    i8 25, label %67
+    i8 26, label %69
+    i8 27, label %81
+    i8 28, label %71
+    i8 29, label %74
+    i8 30, label %76
+    i8 31, label %80
+  ]
+
+; <label>:21:                                     ; preds = %15
+  %22 = fcmp ueq float %18, %8
+  %23 = and i1 %22, %20
+  br i1 %23, label %80, label %81
+
+; <label>:24:                                     ; preds = %15
+  %25 = fcmp olt float %18, %8
+  %26 = and i1 %25, %20
+  br i1 %26, label %80, label %81
+
+; <label>:27:                                     ; preds = %15
+  %28 = fcmp ole float %18, %8
+  %29 = and i1 %28, %20
+  br i1 %29, label %80, label %81
+
+; <label>:30:                                     ; preds = %15
+  %31 = fcmp une float %18, %8
+  br i1 %31, label %80, label %81
+
+; <label>:32:                                     ; preds = %15
+  %33 = fcmp uge float %18, %8
+  br i1 %33, label %80, label %81
+
+; <label>:34:                                     ; preds = %15
+  %35 = fcmp ugt float %18, %8
+  br i1 %35, label %80, label %81
+
+; <label>:36:                                     ; preds = %15
+  br i1 %19, label %81, label %80
+
+; <label>:37:                                     ; preds = %15
+  %38 = fcmp ueq float %18, %8
+  br i1 %38, label %80, label %81
+
+; <label>:39:                                     ; preds = %15
+  %40 = fcmp ult float %18, %8
+  br i1 %40, label %80, label %81
+
+; <label>:41:                                     ; preds = %15
+  %42 = fcmp ule float %18, %8
+  br i1 %42, label %80, label %81
+
+; <label>:43:                                     ; preds = %15
+  %44 = fcmp ueq float %18, %8
+  br i1 %44, label %81, label %80
+
+; <label>:45:                                     ; preds = %15
+  %46 = fcmp oge float %18, %8
+  %47 = and i1 %46, %20
+  br i1 %47, label %80, label %81
+
+; <label>:48:                                     ; preds = %15
+  %49 = fcmp ogt float %18, %8
+  %50 = and i1 %49, %20
+  br i1 %50, label %80, label %81
+
+; <label>:51:                                     ; preds = %15
+  %52 = fcmp oeq float %18, %8
+  %53 = and i1 %52, %20
+  br i1 %53, label %80, label %81
+
+; <label>:54:                                     ; preds = %15
+  %55 = fcmp olt float %18, %8
+  br i1 %55, label %80, label %81
+
+; <label>:56:                                     ; preds = %15
+  %57 = fcmp ugt float %18, %8
+  br i1 %57, label %81, label %80
+
+; <label>:58:                                     ; preds = %15
+  %59 = fcmp une float %18, %8
+  br i1 %59, label %80, label %81
+
+; <label>:60:                                     ; preds = %15
+  %61 = fcmp uge float %18, %8
+  br i1 %61, label %80, label %81
+
+; <label>:62:                                     ; preds = %15
+  %63 = fcmp ugt float %18, %8
+  br i1 %63, label %80, label %81
+
+; <label>:64:                                     ; preds = %15
+  br i1 %19, label %81, label %80
+
+; <label>:65:                                     ; preds = %15
+  %66 = fcmp ueq float %18, %8
+  br i1 %66, label %80, label %81
+
+; <label>:67:                                     ; preds = %15
+  %68 = fcmp ult float %18, %8
+  br i1 %68, label %80, label %81
+
+; <label>:69:                                     ; preds = %15
+  %70 = fcmp ule float %18, %8
+  br i1 %70, label %80, label %81
+
+; <label>:71:                                     ; preds = %15
+  %72 = fcmp une float %18, %8
+  %73 = and i1 %72, %20
+  br i1 %73, label %80, label %81
+
+; <label>:74:                                     ; preds = %15
+  %75 = fcmp ult float %18, %8
+  br i1 %75, label %81, label %80
+
+; <label>:76:                                     ; preds = %15
+  %77 = fcmp ogt float %18, %8
+  br i1 %77, label %80, label %81
+
+; <label>:78:                                     ; preds = %15
+  unreachable
+
+; <label>:79:                                     ; preds = %15, %15
+  br i1 %19, label %80, label %81
+
+; <label>:80:                                     ; preds = %79, %76, %74, %71, %69, %67, %65, %64, %62, %60, %58, %56, %54, %51, %48, %45, %43, %41, %39, %37, %36, %34, %32, %30, %27, %24, %21, %15, %15
+  br label %81
+
+; <label>:81:                                     ; preds = %80, %79, %76, %74, %71, %69, %67, %65, %64, %62, %60, %58, %56, %54, %51, %48, %45, %43, %41, %39, %37, %36, %34, %32, %30, %27, %24, %21, %15, %15
+  %82 = phi i32 [ -1, %80 ], [ 0, %79 ], [ 0, %76 ], [ 0, %74 ], [ 0, %71 ], [ 0, %69 ], [ 0, %67 ], [ 0, %65 ], [ 0, %64 ], [ 0, %62 ], [ 0, %60 ], [ 0, %58 ], [ 0, %56 ], [ 0, %54 ], [ 0, %51 ], [ 0, %48 ], [ 0, %45 ], [ 0, %43 ], [ 0, %41 ], [ 0, %39 ], [ 0, %37 ], [ 0, %36 ], [ 0, %34 ], [ 0, %32 ], [ 0, %30 ], [ 0, %27 ], [ 0, %24 ], [ 0, %21 ], [ 0, %15 ], [ 0, %15 ]
+  %83 = bitcast i8* %2 to i32*
+  store i32 %82, i32* %83, align 1
+  %84 = getelementptr inbounds i8, i8* %2, i64 4
+  %85 = bitcast i8* %84 to <4 x i32>*
+  store <4 x i32> zeroinitializer, <4 x i32>* %85, align 1
+  %86 = getelementptr inbounds i8, i8* %2, i64 20
+  %87 = bitcast i8* %86 to i32*
+  store i32 0, i32* %87, align 1
+  %88 = getelementptr inbounds i8, i8* %2, i64 24
+  %89 = bitcast i8* %88 to i32*
+  store i32 0, i32* %89, align 1
+  %90 = getelementptr inbounds i8, i8* %2, i64 28
+  %91 = bitcast i8* %90 to i32*
+  store i32 0, i32* %91, align 1
+  br label %92
+
+; <label>:92:                                     ; preds = %81, %11
+  %93 = phi %struct.Memory* [ %14, %11 ], [ %0, %81 ]
+  ret %struct.Memory* %93
+}
+
+define %struct.Memory* @routine_vcmpss_xmm_xmm_m32_imm8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -145,46 +343,17 @@ block_4003e0:
   %17 = load i64, i64* %PC
   %18 = add i64 %17, 6
   store i64 %18, i64* %PC
-  %19 = inttoptr i64 %16 to float*
-  %20 = load float, float* %19
-  %21 = bitcast i8* %14 to <2 x float>*
-  %22 = load <2 x float>, <2 x float>* %21, align 1
-  %23 = extractelement <2 x float> %22, i32 0
-  %24 = fcmp uno float %23, %20
-  %25 = xor i1 %24, true
-  %26 = fcmp ueq float %23, %20
-  %27 = and i1 %26, %25
-  br i1 %27, label %28, label %_ZN12_GLOBAL__N_1L5CMPSSI3VnWI8vec256_tE2VnI8vec128_tE3MVnI7vec32_tEEEP6MemorySB_R5StateT_T0_T1_2InIhE.exit
-
-; <label>:28:                                     ; preds = %block_4003e0
-  br label %_ZN12_GLOBAL__N_1L5CMPSSI3VnWI8vec256_tE2VnI8vec128_tE3MVnI7vec32_tEEEP6MemorySB_R5StateT_T0_T1_2InIhE.exit
-
-_ZN12_GLOBAL__N_1L5CMPSSI3VnWI8vec256_tE2VnI8vec128_tE3MVnI7vec32_tEEEP6MemorySB_R5StateT_T0_T1_2InIhE.exit: ; preds = %28, %block_4003e0
-  %29 = phi i32 [ -1, %28 ], [ 0, %block_4003e0 ]
-  %30 = bitcast i8* %13 to i32*
-  store i32 %29, i32* %30, align 1
-  %31 = getelementptr inbounds i8, i8* %13, i64 4
-  %32 = bitcast i8* %31 to <4 x i32>*
-  store <4 x i32> zeroinitializer, <4 x i32>* %32, align 1
-  %33 = getelementptr inbounds i8, i8* %13, i64 20
-  %34 = bitcast i8* %33 to i32*
-  store i32 0, i32* %34, align 1
-  %35 = getelementptr inbounds i8, i8* %13, i64 24
-  %36 = bitcast i8* %35 to i32*
-  store i32 0, i32* %36, align 1
-  %37 = getelementptr inbounds i8, i8* %13, i64 28
-  %38 = bitcast i8* %37 to i32*
-  store i32 0, i32* %38, align 1
-  %39 = load i64, i64* %PC
-  %40 = add i64 %39, 1
-  store i64 %40, i64* %PC
-  %41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %19 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5CMPSSI3VnWI8vec256_tE2VnI8vec128_tE3MVnI7vec32_tEEEP6MemorySB_R5StateT_T0_T1_2InIhE(%struct.Memory* %2, %struct.State* %0, i8* %13, i8* %14, i64 %16, i64 0)
+  %20 = load i64, i64* %PC
+  %21 = add i64 %20, 1
+  store i64 %21, i64* %PC
+  ret %struct.Memory* %19
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -203,6 +372,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_vcmpss_xmm_xmm_m32_imm8(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_vcmpss_xmm_xmm_m32_imm8(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

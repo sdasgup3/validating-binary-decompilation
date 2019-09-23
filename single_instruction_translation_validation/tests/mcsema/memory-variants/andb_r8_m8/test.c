@@ -1,7 +1,3 @@
-void leaf() {
-  __asm__("andb -4(%rbp), %bl");
-  }
-
 void main() {
-  leaf();
+  __asm__("andb -4(%rbp), %bl");
 }

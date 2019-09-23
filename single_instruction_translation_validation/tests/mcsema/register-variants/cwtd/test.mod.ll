@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,8 +121,23 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_cwtd(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L6CWD_AXEP6MemoryR5State(%struct.Memory* readnone returned, %struct.State* nocapture dereferenceable(3376)) #2 {
+  %3 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 7, i32 0
+  %4 = bitcast %union.anon* %3 to i16*
+  %5 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 1, i32 0
+  %6 = bitcast %union.anon* %5 to i16*
+  %7 = load i16, i16* %6, align 8
+  %8 = sext i16 %7 to i64
+  %9 = lshr i64 %8, 16
+  %10 = trunc i64 %9 to i16
+  store i16 %10, i16* %4, align 2
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_cwtd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -131,25 +147,17 @@ block_530:
   %6 = load i64, i64* %PC
   %7 = add i64 %6, 2
   store i64 %7, i64* %PC
-  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
-  %9 = bitcast %union.anon* %8 to i16*
-  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
-  %11 = bitcast %union.anon* %10 to i16*
-  %12 = load i16, i16* %11, align 8
-  %13 = sext i16 %12 to i64
-  %14 = lshr i64 %13, 16
-  %15 = trunc i64 %14 to i16
-  store i16 %15, i16* %9, align 2
-  %16 = load i64, i64* %PC
-  %17 = add i64 %16, 1
-  store i64 %17, i64* %PC
-  %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  ret i32 0
+  %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L6CWD_AXEP6MemoryR5State(%struct.Memory* %2, %struct.State* %0)
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 1
+  store i64 %10, i64* %PC
+  ret %struct.Memory* %8
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -168,6 +176,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_cwtd(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_cwtd(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

@@ -1,22 +1,11 @@
-    .text
-    .globl	leaf
-leaf:
+    .globl	main
+.globl _start
+_start:
 LFB0:
     
     
-    pinsrb $0x77, %ebx, %xmm1
+    pinsrb $0xa, %ebx, %xmm1
     
     
     ret
 LFE0:
-    .globl	main
-.globl _start
-_start:
-LFB3:
-    
-    
-    pinsrb $0x77, %ebx, %xmm1
-    
-    
-    ret
-LFE3:

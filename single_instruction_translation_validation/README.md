@@ -21,7 +21,7 @@ parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immedia
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt  "rm -rf immediate-variants/{}/instructions/{}"
 find . -name check_stoke.txt | xargs rm -rf
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt  "mv immediate-variants/{}/instructions immediate-variants/{}/seed"
-parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt  "sed -i 's/0x0/0x77/g'  immediate-variants/{}/seed/{}.s"
+parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Immediates/immediate_instructions.txt  "sed -i 's/0x0/0xa/g'  immediate-variants/{}/seed/{}.s"
 
 //Memory instructions
 parallel -a ~/Github/X86-64-semantics/docs/relatedwork/strata/Memories/memory_instructions.txt "/home/sdasgup3/Github/X86-64-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir memory-variants/{}"
@@ -70,13 +70,13 @@ grep -lr  "cal.*__remill_sync_hyper_call" system-variants/* |& tee logs/unsuppor
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file ~/Github/X86-64-semantics/docs/relatedwork/strata/Memories/memory_instructions.txt --file logs/unsupported_decompilation_memory.txt --show 0 > logs/supported_decompilation_memory.txt
 ```
 
-### Populate the modifiled llvm file
+## Populate the modifiled llvm file
 ```
 cd  tests/mcsema
-cat logs/supported_decompilation_register.txt  | parallel "../../scripts/declutter.pl --file register-variants/{}/test.ll --opc {}"
-cat logs/supported_decompilation_immediate.txt | parallel "../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
-cat logs/supported_decompilation_memory.txt   | parallel "../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
-cat logs/supported_decompilation_system.txt   | parallel "../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
+cat logs/supported_decompilation_register.txt  | parallel  "echo; ../../scripts/declutter.pl --file register-variants/{}/test.ll --opc {}"
+cat logs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
+cat logs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
+cat logs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
 ```
 
 ## Generate spec output file for x86
