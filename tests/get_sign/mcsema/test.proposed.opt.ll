@@ -14,11 +14,11 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %8 = type { %2 }
 %9 = type opaque
 
-; Function Attrs: nounwind readnone speculatable
-declare i32 @llvm.ctpop.i32(i32) 
+; Function Attrs: nounwind readnone
+declare i32 @llvm.ctpop.i32(i32) #0
 
 ; Function Attrs: alwaysinline nounwind
-define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64, %9* noalias readnone returned) local_unnamed_addr  {
+define %9* @sub_4004a6_get_sign(%0* noalias nocapture, i64, %9* noalias readnone returned) local_unnamed_addr #1 {
   %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %6 = load i64, i64* %5, align 8
@@ -72,7 +72,7 @@ define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64
   %41 = icmp eq i8 %37, 0
   %42 = and i1 %41, %40
   %43 = select i1 %42, i64 13, i64 6
-  %44 = add i64 %43, %19
+  %44 = add i64 %19, %43
   %45 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %46 = add i64 %44, 5
   store i64 %46, i64* %4, align 8
@@ -107,3 +107,173 @@ define %9* @sub_4004a6_get_sign(%0* noalias nocapture dereferenceable(3376), i64
   store i64 %60, i64* %8, align 8
   ret %9* %2
 }
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_pushq_RBP(%0* nocapture, i64, %9* readnone returned) local_unnamed_addr #2 {
+  %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %6 = load i64, i64* %5, align 8
+  %7 = add i64 %1, 1
+  store i64 %7, i64* %4, align 8
+  %8 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %9 = load i64, i64* %8, align 8
+  %10 = add i64 %9, -8
+  %11 = inttoptr i64 %10 to i64*
+  store i64 %6, i64* %11, align 8
+  store i64 %10, i64* %8, align 8
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_movq_RBP_RSP(%0* nocapture, i64, %9* readnone returned) local_unnamed_addr #2 {
+  %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %7 = load i64, i64* %6, align 8
+  %8 = add i64 %1, 3
+  store i64 %8, i64* %4, align 8
+  store i64 %7, i64* %5, align 8
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_movl_m32_EDI(%0* nocapture, i64, %9* readnone returned, i64) local_unnamed_addr #2 {
+  %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 11, i32 0
+  %7 = bitcast %2* %6 to i32*
+  %8 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %9 = load i64, i64* %8, align 8
+  %10 = sub i64 %9, %3
+  %11 = load i32, i32* %7, align 4
+  %12 = add i64 %1, 3
+  store i64 %12, i64* %5, align 8
+  %13 = inttoptr i64 %10 to i32*
+  store i32 %11, i32* %13, align 4
+  ret %9* %2
+}
+
+; Function Attrs: nounwind
+define %9* @routine_cmpl_m32_imm32(%0* nocapture, i64, %9* readnone returned, i64, i64) local_unnamed_addr #3 {
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %7 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %8 = load i64, i64* %7, align 8
+  %9 = sub i64 %8, %4
+  %10 = add i64 %1, 4
+  store i64 %10, i64* %6, align 8
+  %11 = inttoptr i64 %9 to i32*
+  %12 = load i32, i32* %11, align 4
+  %13 = trunc i64 %3 to i32
+  %14 = sub i32 %12, %13
+  %15 = icmp ult i32 %12, %13
+  %16 = zext i1 %15 to i8
+  %17 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 1
+  store i8 %16, i8* %17, align 1
+  %18 = and i32 %14, 255
+  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  %20 = trunc i32 %19 to i8
+  %21 = and i8 %20, 1
+  %22 = xor i8 %21, 1
+  %23 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 3
+  store i8 %22, i8* %23, align 1
+  %24 = xor i32 %12, %13
+  %25 = xor i32 %24, %14
+  %26 = lshr i32 %25, 4
+  %27 = trunc i32 %26 to i8
+  %28 = and i8 %27, 1
+  %29 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 5
+  store i8 %28, i8* %29, align 1
+  %30 = icmp eq i32 %14, 0
+  %31 = zext i1 %30 to i8
+  %32 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 7
+  store i8 %31, i8* %32, align 1
+  %33 = lshr i32 %14, 31
+  %34 = trunc i32 %33 to i8
+  %35 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 9
+  store i8 %34, i8* %35, align 1
+  %36 = lshr i32 %12, 31
+  %37 = lshr i32 %13, 31
+  %38 = xor i32 %36, %37
+  %39 = xor i32 %33, %36
+  %40 = add nuw nsw i32 %39, %38
+  %41 = icmp eq i32 %40, 2
+  %42 = zext i1 %41 to i8
+  %43 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 13
+  store i8 %42, i8* %43, align 1
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_movl_EAX_imm32(%0* nocapture, i64, %9* readnone returned, i64) local_unnamed_addr #2 {
+  %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  %7 = add i64 %1, 5
+  store i64 %7, i64* %5, align 8
+  %8 = and i64 %3, 4294967295
+  store i64 %8, i64* %6, align 8
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_popq_r64(%0* nocapture, i64, %9* readnone returned) local_unnamed_addr #2 {
+  %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %6 = add i64 %1, 1
+  store i64 %6, i64* %4, align 8
+  %7 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %8 = load i64, i64* %7, align 8
+  %9 = add i64 %8, 8
+  %10 = inttoptr i64 %8 to i64*
+  %11 = load i64, i64* %10, align 8
+  store i64 %11, i64* %5, align 8
+  store i64 %9, i64* %7, align 8
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_retq(%0* nocapture, i64, %9* readnone returned) local_unnamed_addr #2 {
+  %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %5 = add i64 %1, 1
+  store i64 %5, i64* %4, align 8
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %7 = load i64, i64* %6, align 8
+  %8 = inttoptr i64 %7 to i64*
+  %9 = load i64, i64* %8, align 8
+  store i64 %9, i64* %4, align 8
+  %10 = add i64 %7, 8
+  store i64 %10, i64* %6, align 8
+  ret %9* %2
+}
+
+; Function Attrs: norecurse nounwind
+define i1 @routine_jg_label(%0* nocapture, i64, %9* nocapture readnone, i64, i64) local_unnamed_addr #2 {
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %7 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 7
+  %8 = load i8, i8* %7, align 1
+  %9 = icmp eq i8 %8, 0
+  %10 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 9
+  %11 = load i8, i8* %10, align 1
+  %12 = icmp ne i8 %11, 0
+  %13 = getelementptr inbounds %0, %0* %0, i64 0, i32 2, i32 13
+  %14 = load i8, i8* %13, align 1
+  %15 = icmp ne i8 %14, 0
+  %16 = xor i1 %12, %15
+  %17 = xor i1 %16, true
+  %18 = and i1 %9, %17
+  %19 = select i1 %18, i64 %3, i64 %4
+  %20 = add i64 %19, %1
+  store i64 %20, i64* %6, align 8
+  ret i1 %18
+}
+
+; Function Attrs: norecurse nounwind
+define %9* @routine_jmp_label(%0* nocapture, i64, %9* readnone returned, i64) local_unnamed_addr #2 {
+  %5 = add i64 %3, %1
+  %6 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %5, i64* %6, align 8
+  ret %9* %2
+}
+
+attributes #0 = { nounwind readnone }
+attributes #1 = { alwaysinline nounwind }
+attributes #2 = { norecurse nounwind }
+attributes #3 = { nounwind }
