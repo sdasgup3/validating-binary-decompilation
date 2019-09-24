@@ -17,7 +17,12 @@ Matcher::Matcher(Function *f1, Function *f2) {
   llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
                << "\n";
   retrievePotIMatches(F1, F2);
-  dualSimulationDriver(F1, F2);
+  auto res = dualSimulationDriver(F1, F2);
+
+  if (res)
+    llvm::errs() << "Iso Match Found\n";
+  else
+    llvm::errs() << "Iso Match NOT Found\n";
 }
 
 /*
@@ -39,6 +44,19 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
 
   if (GEPL && GEPR) {
     return cmpGEPs(GEPL, GEPR) == 0;
+  }
+
+  //llvm::errs() << *I1 << "\n";
+  //llvm::errs() << *I2 << "\n";
+  if(I1->isBinaryOp()) {
+    assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() && "deepMatch Assert!!");
+    for(size_t i = 0; i < I1->getNumOperands(); i++) {
+      Constant *L = dyn_cast<Constant>(I1->getOperand(i));
+      Constant *R = dyn_cast<Constant>(I2->getOperand(i));
+      if(L && R && cmpConstants(L, R) != 0) {
+        return false;
+      }
+    }
   }
 
   return true;
@@ -320,9 +338,9 @@ bool Matcher::handleConflictingStores(const vector<Value *> &V) {
   return changed;
 }
 
-void Matcher::dualSimulationDriver(Function *F1, Function *F2) {
+bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   if (!initialMatch(F1, F2))
-    return;
+    return false;
 
   // Populate the vertices set Vq
   vector<Value *> V;
@@ -348,6 +366,18 @@ void Matcher::dualSimulationDriver(Function *F1, Function *F2) {
     // Handle conflicting stores
     changed |= handleConflictingStores(V);
   }
+
+  // Check final results
+  for (auto U : V) {
+    auto V = PotIMatches.at(&*U);
+    if (V.size() != 1) {
+      if (dyn_cast<BranchInst>(&*U))
+        continue;
+      return false;
+    }
+  }
+
+  return true;
 }
 
 bool Matcher::dualSimulation(Function *F1, Function *F2,
@@ -359,7 +389,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
   // 3:  while changed do
   while (changed) {
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "Round: " << round++ << "\n";
+//    llvm::errs() << "Round: " << round++ << "\n";
 #endif
 
     // 4: changed←false
@@ -381,10 +411,10 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
         // 8: for v ←Φ(u) do
         for (auto V : PotIMatches.at(&*U)) {
 #ifdef MATCHER_DEBUG
-          llvm::errs() << "\nu: ";
-          dumpLLVMNode(U);
-          llvm::errs() << "v: ";
-          dumpLLVMNode(V);
+//          llvm::errs() << "\nu: ";
+//          dumpLLVMNode(U);
+//          llvm::errs() << "v: ";
+//          dumpLLVMNode(V);
 #endif
 
           // 9: Φv(u')←G.adj(v) ∩ Φ(u')
@@ -397,8 +427,8 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
             VAdj.insert(VPrime);
           }
 #ifdef MATCHER_DEBUG
-          llvm::errs() << "\tu': ";
-          dumpLLVMNode(UPrime);
+//          llvm::errs() << "\tu': ";
+//          dumpLLVMNode(UPrime);
 //          for (auto &UPrimeMatch : UPrimeMatches) {
 //            llvm::errs() << "\t\tu' match: ";
 //            dumpLLVMNode(UPrimeMatch);
@@ -442,17 +472,17 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
         // 24: Φ(u') = Φ(u') ∩ Φ'(u')
         UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
 #ifdef MATCHER_DEBUG
-        llvm::errs() << "\tRefined u matches: " << &*U << "\n";
-        for (auto &UMatch : PotIMatches.at(&*U)) {
-          llvm::errs() << "\t\tu match: ";
-          dumpLLVMNode(UMatch);
-        }
-
-        llvm::errs() << "\n\tRefined u' matches': " << UPrime << "\n";
-        for (auto &UPrimeMatch : UPrimeMatches) {
-          llvm::errs() << "\t\tu' match: ";
-          dumpLLVMNode(UPrimeMatch);
-        }
+//        llvm::errs() << "\tRefined u matches: " << &*U << "\n";
+//        for (auto &UMatch : PotIMatches.at(&*U)) {
+//          llvm::errs() << "\t\tu match: ";
+//          dumpLLVMNode(UMatch);
+//        }
+//
+//        llvm::errs() << "\n\tRefined u' matches': " << UPrime << "\n";
+//        for (auto &UPrimeMatch : UPrimeMatches) {
+//          llvm::errs() << "\t\tu' match: ";
+//          dumpLLVMNode(UPrimeMatch);
+//        }
 #endif
       }
     }

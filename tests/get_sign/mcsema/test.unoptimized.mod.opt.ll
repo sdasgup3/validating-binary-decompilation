@@ -17,8 +17,8 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone speculatable
 declare i32 @llvm.ctpop.i32(i32) 
 
-; Function Attrs: nounwind
-define %9* @sub_660_get_sign(%0* noalias nocapture dereferenceable(3376), i64, %9* noalias readnone returned) local_unnamed_addr  {
+; Function Attrs: noinline nounwind
+define %9* @sub_660_get_sign(%0* noalias nocapture, i64, %9* noalias readnone returned) local_unnamed_addr #4 {
   %4 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %5 = getelementptr inbounds %0, %0* %0, i64 0, i32 6, i32 11, i32 0
   %6 = bitcast %2* %5 to i32*
@@ -73,7 +73,7 @@ define %9* @sub_660_get_sign(%0* noalias nocapture dereferenceable(3376), i64, %
   %42 = icmp eq i8 %38, 0
   %43 = and i1 %42, %41
   %44 = select i1 %43, i64 13, i64 6
-  %45 = add i64 %44, %22
+  %45 = add i64 %22, %44
   %46 = add i64 %45, 5
   store i64 %46, i64* %4, align 8
   br i1 %43, label %49, label %47

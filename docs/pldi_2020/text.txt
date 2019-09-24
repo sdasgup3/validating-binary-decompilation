@@ -1,0 +1,35 @@
+Program level validation is divided into validating each function.
+Now as we have already validated single instructions, what remained is the follwoing:
+
+1. Instruction semantics selection of decompilaer
+2. Composition (preserving data flow and control flow). However, data flow may not be a problem
+3. Code patching
+
+In order to test
+(1) we need functions collectively covering many instructions
+(2) Sufficiently complex control flow
+(3) as above
+
+Chooice of Benchmark
+
+we cannot try outentire spec benchmark programs. Too complex for mcsema to lift
+So we isolate interesting function from different benchmarks and test on them.
+
+We do not claim that the solution will work for validating the output of all kinds of x86-llvm decompiler
+
+We cater those decompilers with generate the function IR by composing the IR semantics of individual instructions and apply standard optimizations on the composition.
+And for those decompiler is is much more scalable to adopt our framework
+
+Some of the decompilers create llvm IR close to the what a compiler would generate.
+
+may not be a scalabale approach across depompiler, but it is for a particular decompiler
+
+
+Reason to avoid X86-LLV comparision:
+
+LLVM Vs LLVM coparision:
+1. In case it is possible to disable the optimization on the decompiler externally, we can compare the unoptimized-decompiled LLVM with the unoptimized compositional decompiled LLVM using either 
+KEQ or direct syntactic checking by prior optmization of both the candidates.
+2. In case it is NOT possible to disable the optimization on the decompiler externally, we still have the choices of compare using either way. 
+
+With LLVM Vs X86 comparision, we canot handle case (2). However, we can handle case (1) using the heavy-weight KEQ approach. However, LLVM s LLVM comparision allows us to do some simple and quick comparision beside the heavy weight equivalence checking.

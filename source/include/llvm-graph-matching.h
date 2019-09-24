@@ -122,7 +122,7 @@ public:
   **   30: end procedure
   */
   bool dualSimulation(Function *F1, Function *F2, const vector<Value *> &V);
-  void dualSimulationDriver(Function *F1, Function *F2);
+  bool dualSimulationDriver(Function *F1, Function *F2);
 
   bool initialMatch(Function *F1, Function *F2);
   void dumpPotIMatches();
