@@ -22,6 +22,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.anon.2 = type { i8, i8 }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.Memory = type { i64 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -120,8 +121,22 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
+declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
+declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
-define i32 @sub_callq_r64(%struct.State*, i64, i64) {
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4CALLI2RnImEEEP6MemoryS4_R5StateT_2InImE(%struct.Memory* readnone, %struct.State* nocapture dereferenceable(3376), i64, i64) #0 {
+  %5 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 13, i32 0, i32 0
+  %6 = load i64, i64* %5, align 8
+  %7 = add i64 %6, -8
+  %8 = inttoptr i64 %7 to i64*
+  store i64 %3, i64* %8
+  store i64 %7, i64* %5, align 8
+  %9 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %2, i64* %9, align 8
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_callq_r64(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -138,12 +153,19 @@ block_530:
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 2
   store i64 %13, i64* %PC
-  ret i32 0
+  %14 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4CALLI2RnImEEEP6MemoryS4_R5StateT_2InImE(%struct.Memory* %2, %struct.State* %0, i64 %9, i64 %11)
+  %15 = load i64, i64* %PC
+  %16 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 %15, %struct.Memory* %14)
+  %17 = load i64, i64* %PC
+  %18 = add i64 %17, 1
+  store i64 %18, i64* %PC
+  ret %struct.Memory* %14
 }
 
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+  %mem = alloca %struct.Memory
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -162,6 +184,6 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
-  %call = call i32 @sub_callq_r64(%struct.State* %state, i64 0, i64 0)
+  %call = call %struct.Memory* @routine_callq_r64(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }
