@@ -1,3 +1,34 @@
+@inproceedings{DiFederico:CC2017,
+ author = {Di Federico, Alessandro and Payer, Mathias and Agosta, Giovanni},
+ title = {Rev.Ng: A Unified Binary Analysis Framework to Recover CFGs and Function Boundaries},
+ booktitle = {Proceedings of the 26th International Conference on Compiler Construction},
+ series = {CC 2017},
+ year = {2017},
+ isbn = {978-1-4503-5233-8},
+ location = {Austin, TX, USA},
+ pages = {131--141},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/3033019.3033028},
+ doi = {10.1145/3033019.3033028},
+ acmid = {3033028},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {control-flow graph recovery, function boundary detection, static binary analysis},
+}
+
+@INPROCEEDINGS{revgen,
+author={V. {Chipounov} and G. {Candea}},
+booktitle={2011 IEEE/IFIP 41st International Conference on Dependable Systems and Networks Workshops (DSN-W)},
+title={Enabling sophisticated analyses of x86 binaries with RevGen},
+year={2011},
+volume={},
+number={},
+pages={211-216},
+keywords={device drivers;program compilers;program diagnostics;software maintenance;source coding;×86 binaries;RevGen;static analysis tools;binary software;ad-hoc intermediate representations;machine code;program analysis;source language;compiler framework;LLVM;source code;analysis frameworks;run-time instrumentation tools;legacy software;device drivers;Driver circuits;Registers;Assembly;Libraries;Instruction sets;Transforms},
+doi={10.1109/DSNW.2011.5958815},
+ISSN={2325-6648},
+month={June},}
+
 @article{Chlipala2008,
 abstract = {We report on an experience using the Coq proof assistant to develop a program verification tool with a machine-checked proof of full correctness. The verifier is able to prove memory safety of x86 machine code programs compiled from code that uses algebraic datatypes. The tool's soundness theorem is expressed in terms of the bit-level semantics of x86 programs, so its correctness depends on very few assumptions. We take advantage of Coq's support for programming with dependent types and modules in the structure of the development. The approach is based on developing a library of reusable functors for transforming a verifier at one level of abstraction into a verifier at a lower level. Using this library, it is possible to prototype a verifier based on a new type system with a minimal amount of work, while obtaining a very strong soundness theorem about the final product.},
 author = {Chlipala, Adam},
@@ -49,29 +80,14 @@ url = {http://portal.acm.org/citation.cfm?doid=1168919.1168906},
 volume = {34},
 year = {2006}
 }
-@article{Leroy2009,
-abstract = {Purpose: We examined HIV testing behavior and its predictors among adolescents considered at high risk for HIV. Methods: Self-reports of HIV testing, knowledge, attitudes, and high-risk acts were examined among 272 adolescents aged 13-23 years (M = 18.7; SD = 2.3) attending community-based agencies that serve youth at high risk for HIV in Los Angeles, New York City, and San Francisco. Results: Evidence of adolescents' risk for HIV is reflected in a rate of 4.8{\%} seropositivity, 24{\%} injecting drug use, a mean of 4.3 (SD = 11.6) sexual partners during the previous 3 months, and 71{\%} condom use during vaginal/anal sex. HIV testing was common (63{\%}) and often repeated (M = 3.6, SD = 4.0). Knowledge of the meaning and consequences of testing was high (84{\%} correct). Contrary to service providers' expectations, youth were likely to return for their test results (90{\%} returned). Youth who were older, labeled themselves gay or bisexual, lived in Los Angeles or San Francisco, and those who injected drugs were significantly more likely, compared to peers, to get tested for HIV. Conclusions: These results suggest a need for more detailed observational studies of HIV testing behavior that include evaluation of characteristics of the youth, the testing site, and the attitudes and beliefs of providers offering HIV testing. (C) Society for Adolescent Medicine, 1997.},
-author = {Leroy, Xavier},
-doi = {10.1145/1538788.1538814},
-file = {:home/sdasgup3/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Leroy - 2009 - Formal verification of a realistic compiler.pdf:pdf},
-isbn = {0092070302238},
-issn = {00010782},
-journal = {Acm},
-number = {7},
-pages = {107},
-title = {{Formal verification of a realistic compiler}},
-volume = {52},
-year = {2009}
-}
-@article{EricSchulteJasonRuchtiMattNoonanDavidCiarletta2018,
-abstract = {—In this paper, we propose ABC, a real-time smart-phone Authentication protocol utilizing the photo-response non-uniformity (PRNU) of the Built-in Camera. In contrast to previous works that require tens of images to build reliable PRNU features for conventional cameras, we are the first to observe that one image alone can uniquely identify a smartphone due to the unique PRNU of a smartphone image sensor. This new discovery makes the use of PRNU practical for smartphone authentication. While most existing hardware fingerprints are vulnerable against forgery attacks, ABC defeats forgery attacks by verifying a smartphone's PRNU identity through a challenge response protocol using a visible light communication channel. A user captures two time-variant QR codes and sends the two images to a server, which verifies the identity by fingerprint and image content matching. The time-variant QR codes can also defeat replay attacks. Our experiments with 16,000 images over 40 smartphones show that ABC can efficiently authenticate user devices with an error rate less than 0.5{\%}.},
+
+@inproceedings{eschulte2018bed,
 author = {{Eric Schulte, Jason Ruchti, Matt Noonan, David Ciarletta}, Alexey Loginov},
 doi = {10.14722/ndss.2018.23xxx},
-file = {:home/sdasgup3/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Eric Schulte, Jason Ruchti, Matt Noonan, David Ciarletta - 2018 - Evolving Exact Decompilation.pdf:pdf},
 journal = {Ndss},
+booktitle={Binary Analysis Research (BAR), 2018},
 number = {February},
 title = {{Evolving Exact Decompilation}},
-url = {https://www.cs.unm.edu/{~}eschulte/data/bed.pdf{\%}0Ahttp://www.buffalo.edu/content/dam/www/news/photos/2017/12/ndss18-paper99.pdf},
 year = {2018}
 }
 
@@ -262,11 +278,10 @@ volume = {9780},
 year = {2016}
 }
 @article{Zhang,
-abstract = {Control-Flow Integrity (CFI) has been recognized as an important low-level security property. Its enforcement can defeat most injected and existing code attacks, in-cluding those based on Return-Oriented Programming (ROP). Previous implementations of CFI have required compiler support or the presence of relocation or debug information in the binary. In contrast, we present a tech-nique for applying CFI to stripped binaries on x86/Linux. Ours is the first work to apply CFI to complex shared libraries such as glibc. Through experimental evalu-ation, we demonstrate that our CFI implementation is effective against control-flow hijack attacks, and elimi-nates the vast majority of ROP gadgets. To achieve this result, we have developed robust techniques for disas-sembly, static analysis, and transformation of large bina-ries. Our techniques have been tested on over 300MB of binaries (executables and shared libraries).},
 author = {Zhang, Mingwei and Sekar, R},
 file = {:home/sdasgup3/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Zhang, Sekar - Unknown - Control Flow Integrity for COTS Binaries Control Flow Integrity for COTS Binaries.pdf:pdf},
 isbn = {978-1-931971-03-4},
-title = {{Control Flow Integrity for COTS Binaries Control Flow Integrity for COTS Binaries *}},
+title = {{Control Flow Integrity for COTS Binaries}},
 url = {https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper{\_}zhang.pdf}
 }
 
@@ -349,21 +364,26 @@ title = {Formal specification of the x86 instruction set architecture},
 url = {https://core.ac.uk/download/pdf/10697957.pdf},
 }
 
-@article{article,
-author = {Ray, Sandip},
-year = {2018},
-month = {07},
-pages = {},
-title = {Towards a Formalization of the X86 Instruction Set Architecture},
-url = {http://www.cs.utexas.edu/users/sandip/publications/x86-08/x86-rings.pdf},
-}
-
 @article{McSema:Recon14,
 author = {Ruef, Andrew and Dinaburg, Artem},
 journal = {REcon},
 title = {{Static Translation of X86 Instruction Semantics to LLVM with McSema}},
 url = {https://github.com/trailofbits/mcsema},
 year = {2014}
+}
+
+@article{mctoll,
+    author = {Smith, Aaron and Yadavalli, S. Bharadwaj},
+    title = {{LLVM Based Binary Raiser: llvm-mctoll}},
+    url = {https://github.com/Microsoft/llvm-mctoll},
+    year = {2018}
+}
+
+
+@Misc{hexray,
+    title = {{Hex-Rays Decompiler}},
+    howpublished = {\url{http://www.hex-rays.com/ decompiler.shtml}},
+    note = 	 {Last accessed: \today}
 }
 
 @inproceedings{QEMU:USENIX05,
@@ -417,7 +437,7 @@ author = "Nicholas Nethercote and Julian Seward"
   author = "Alvarez, Sergi",
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{ESIL,
@@ -425,7 +445,7 @@ author = "Nicholas Nethercote and Julian Seward"
   howpublished = {\url{https://radare.gitbooks.io/radare2book/content/disassembling/esil.html}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{Angr,
@@ -433,7 +453,7 @@ author = "Nicholas Nethercote and Julian Seward"
   howpublished = {\url{http://angr.io/}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @article{Angr1,
@@ -462,7 +482,13 @@ author = "Nicholas Nethercote and Julian Seward"
   howpublished = {\url{https://github.com/trailofbits/remill}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
+}
+
+@Misc{GCC,
+  title = 	 {GCC, the GNU Compiler Collection},
+  howpublished = {\url{https://gcc.gnu.org/}},
+  note = {Last accessed: \today}
 }
 
 @Misc{FCD,
@@ -470,9 +496,16 @@ author = "Nicholas Nethercote and Julian Seward"
   howpublished = {\url{https://zneak.github.io/fcd/}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
+@Misc{IDA,
+    title = 	 {Decompilers and Beyond},
+     author = {Ilfak Guilfanov},
+    howpublished = {In Black-Hat USA},
+    month = 	 {July},
+    year = 	 {2008},
+}
 
 @article{TSL:TOPLAS13,
  author = {Lim, Junghee and Reps, Thomas},
@@ -528,7 +561,7 @@ author = "Nicholas Nethercote and Julian Seward"
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {Code generators, Instruction-set semantics extraction, Symbolic execution},
-} 
+}
 
 @inproceedings{CompCert:FM06,
   author = {Sandrine Blazy and Zaynah Dargaye and Xavier Leroy},
@@ -559,7 +592,7 @@ author = "Nicholas Nethercote and Julian Seward"
   howpublished = {\url{http://www.cs.utexas.edu/users/moore/acl2/manuals/current/manual/index-seo.php/X86ISA____IMPLEMENTED-OPCODES}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @InProceedings{LLVM:CGO04,
@@ -596,6 +629,47 @@ author = "Nicholas Nethercote and Julian Seward"
  note = {AAI0807735},
  publisher = {Massachusetts Institute of Technology},
  address = {Cambridge, MA, USA},
+}
+
+@inproceedings{Schwartz:2013,
+    author = {Schwartz, Edward J. and Lee, JongHyup and Woo, Maverick and Brumley, David},
+    title = {Native x86 Decompilation Using Semantics-preserving Structural Analysis and Iterative Control-flow Structuring},
+    booktitle = {Proceedings of the 22Nd USENIX Conference on Security},
+    series = {SEC'13},
+    year = {2013},
+    isbn = {978-1-931971-03-4},
+    location = {Washington, D.C.},
+    pages = {353--368},
+    numpages = {16},
+    url = {http://dl.acm.org/citation.cfm?id=2534766.2534797},
+    acmid = {2534797},
+    publisher = {USENIX Association},
+    address = {Berkeley, CA, USA},
+}
+
+@inproceedings{katz2018rnn,
+    author={Deborah Katz and Jason Ruchti and Eric Schulte},
+    title={Using Recurrent Neural Networks for Decompilation},
+    booktitle={Software Analysis, Evolution and Reengineering (SANER), 2018},
+    year={2018},
+    organization={IEEE}
+}
+
+@inproceedings{Fokin:2011,
+    author = {Fokin, Alexander and Derevenetc, Egor and Chernov, Alexander and Troshina, Katerina},
+    title = {SmartDec: Approaching C++ Decompilation},
+    booktitle = {Proceedings of the 2011 18th Working Conference on Reverse Engineering},
+    series = {WCRE '11},
+    year = {2011},
+    isbn = {978-0-7695-4582-0},
+    pages = {347--356},
+    numpages = {10},
+    url = {https://doi.org/10.1109/WCRE.2011.49},
+    doi = {10.1109/WCRE.2011.49},
+    acmid = {2086269},
+    publisher = {IEEE Computer Society},
+    address = {Washington, DC, USA},
+    keywords = {C++, Decompilation, Reverse Engineering, Class Hierarchy Reconstruction, Exception Reconstruction},
 }
 
 @inproceedings{BitBlaze:2008,
@@ -726,7 +800,7 @@ year = {2015}
  acmid = {2815420},
  publisher = {ACM},
  address = {New York, NY, USA},
-} 
+}
 
 @Misc{IntelManual,
   title = 	 {{Intel 64 and IA-32 Architectures Software Developer Manuals}},
@@ -734,7 +808,7 @@ year = {2015}
   {\url{https://software.intel.com/en-us/articles/intel-sdm}},
   note = 	 {Published on October 12, 2016, updated May 18, 2018.},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{smtlib,
@@ -743,7 +817,7 @@ year = {2015}
   {\url{http://smtlib.cs.uiowa.edu/index.shtml}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{GNUAS,
@@ -752,7 +826,7 @@ year = {2015}
   {\url{https://sourceware.org/binutils/docs/as/}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{GDB,
@@ -761,7 +835,7 @@ year = {2015}
   {\url{https://www.gnu.org/software/gdb/}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @Misc{Objdump,
@@ -770,7 +844,7 @@ year = {2015}
   {\url{https://linux.die.net/man/1/objdump}},
   month = 	 {July},
   year = 	 {2018},
-  note = 	 {Last accessed}
+  note = {Last accessed: \today}
 }
 
 @article{WYSINWYE,
@@ -828,4 +902,56 @@ year = {2015}
  acmid = {1792766},
  publisher = {Springer-Verlag},
  address = {Berlin, Heidelberg},
+}
+
+@inproceedings{Roessle:CPP19,
+ author = {Roessle, Ian and Verbeek, Freek and Ravindran, Binoy},
+ title = {Formally Verified Big Step Semantics out of x86-64 Binaries},
+ booktitle = {Proceedings of the 8th ACM SIGPLAN International Conference on Certified Programs and Proofs},
+ series = {CPP 2019},
+ year = {2019},
+ isbn = {978-1-4503-6222-1},
+ location = {Cascais, Portugal},
+ pages = {181--195},
+ numpages = {15},
+ url = {http://doi.acm.org/10.1145/3293880.3294102},
+ doi = {10.1145/3293880.3294102},
+ acmid = {3294102},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {semantics, theorem proving, x86-64},
+}
+
+@inproceedings{BINSEC2011,
+    author = {Bardin, S{\'e}bastien and Herrmann, Philippe and Leroux, J{\'e}r\^{o}me and Ly, Olivier and Tabary, Renaud and Vincent, Aymeric},
+    title = {The BINCOA Framework for Binary Code Analysis},
+    booktitle = {Proceedings of the 23rd International Conference on Computer Aided Verification},
+    series = {CAV'11},
+    year = {2011},
+    isbn = {978-3-642-22109-5},
+    location = {Snowbird, UT},
+    pages = {165--170},
+    numpages = {6},
+    url = {http://dl.acm.org/citation.cfm?id=2032305.2032318},
+    acmid = {2032318},
+    publisher = {Springer-Verlag},
+    address = {Berlin, Heidelberg},
+}
+
+@misc{PYVEX,
+    title = {Python bindings for Valgrind's VEX IR.},
+    howpublished = {\url{https://github.com/angr/pyvex}},
+    note = {Last accessed: \today}
+}
+
+@Misc{llvm-mctoll,
+    title = 	 {llvm-mctoll},
+    howpublished = {\url{https://github.com/Microsoft/llvm-mctoll}},
+    note = 	 {Last accessed: \today}
+}
+
+@Misc{reopt,
+    title = 	 {reopt: A tool for analyzing x86-64 binaries},
+    howpublished = {\url{https://github.com/GaloisInc/reopt}},
+    note = 	 {Last accessed: \today}
 }
