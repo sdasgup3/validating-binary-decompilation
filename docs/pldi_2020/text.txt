@@ -25,7 +25,7 @@ Some of the decompilers create llvm IR close to the what a compiler would genera
 may not be a scalabale approach across depompiler, but it is for a particular decompiler
 
 
-Reason to avoid X86-LLV comparision:
+Reason to avoid X86-LLLV comparision:
 
 LLVM Vs LLVM coparision:
 1. In case it is possible to disable the optimization on the decompiler externally, we can compare the unoptimized-decompiled LLVM with the unoptimized compositional decompiled LLVM using either 
