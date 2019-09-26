@@ -1,0 +1,115 @@
+\section{Introduction}
+\label{sec:Intro}
+
+% Why bnary analysis is important
+The ability to directly reason about the binary code is desirable, not only because it allows to analyze the binary even when the source code is not available (e.g., legacy code or malware), but also because it avoids the need to trust the correctness of compilers~\cite{Thompson,WYSINWYE}.
+Analyzing binary code is crucial in software engineering and security research.
+Some of the notable applications of binary analysis can be found in binary
+instrumentation
+(\cite{Bruening:CGO2003,PEBIL10,Pin:2005,Valgrind:ENTCS03,DynamoRIO:2004}),
+binary translation~\cite{UQBT:2000}, software hardening
+(\cite{Cha:2015,Ford:2008,Zhang,Zhang:2013}), software testing
+(\cite{Chipounov:2011,Avgerinos:2014,godefroid_automated_2008}), CPU
+emulation (\cite{QEMU:USENIX05,Magnusson:2002}), malware detection
+(\cite{Christodorescu:2005,Kruegel:2004,BitBlaze:2008,BAP:CAV11,Egele:USENIX07,Yin:CCS07}),
+automated reverse engineering
+(\cite{Cui:2008,Lin:2008,Schwartz:2013,Yakdan2015NDSS,McSema:Recon14,Angr,Radare2}),
+sand-boxing~\cite{Kiriansky:2002:SEV,Erlingsson:2006,Yee:2009},
+profiling~\cite{Harris:2005,Srivastava:1994}, and automatic exploit
+generation~\cite{Cha:2012}.
+
+% Introduce Binary translators. What they do?
+Binary analysis is generally performed by existing decompiler projects
+%~\cite{McSema:Recon14,Remill,Angr1,BAP:CAV11,Radare2},
+~\cite{McSema:Recon14,Remill,Angr1,BAP:CAV11,Radare2}, by (1) translating
+machine code to an intermediate representation (IR), and thereby exposing many
+high-level properties (like control flow, function boundary and prototype,
+variable and their type etc.) of the binary, which are otherwise lost
+during the compilation pipeline, and (2) performing the analysis at the IR
+level.  Analyzing the binary using the abstractions lifted to such high-level
+IR assist further analysis and/or optimization. Even though such analyzes are
+agnostic to any specific high-level IR, but many
+projects~\cite{McSema:Recon14,Remill,FCD,reopt,llvm-mctoll} prefer to employ
+LLVM IR. LLVM IR, being an industry standard compiler IR, enables many analyses
+and optimizations out-of-the-box which allows building a static binary analyzer
+with minimal effort.
+
+
+% Why vaidating binary translators is important
+Formally establishing faithfulness of the
+decompilation (i.e. translation from machine code to high level IR) is pivotal to gain trust
+in any binary analysis. Any bug in the translation would invalidate the binary analysis
+results. For example, a malware analysis system might miss vulnerabilities or a binary
+instrumentation system, instrumenting a buggy IR, might lead to failure or even crash in
+interpreting the instrumented program. Therefore, automatic validation tools are needed
+urgently to uncover hidden problems in a binary translator.
+
+\paragraph{Problem Scope}
+
+\paragraph{Our Approach}
+
+% What is McSema
+McSema~\cite{McSema:Recon14} performs decompilation of the binary code by representing the machine state using variables, and translating the machine instructions to operations on these variables, according to the machine specification. This lifting process works by translating each assembly instruction in the procedure into the IR, which explicitly specifies how it affects the machine's memory and registers, including the flags.
+
+We present a scalable approach for establishing semantic equivalence between the source binary and the target decompiled \LLVM.
+One way to prove semantic equivalence of two programs in different languages while avoiding performance-heavy solvers is to move to a canonical form. This transformation should funnel all semantically- equivalent programs to the same syntactic representation. Fortunately, the problem of canonicalizing expressions is well researched and implemented in modern compilers to allow common-subexpression elimination and other optimizations at different levels (procedure-wide or at the basic block level) as part of compilation-time optimizations.   
+Furthermore, the fact that we are targeting the code to the same 'virtual' machine (the LLVM abstraction) helps close the gap between the source (\ISA) and target (\LLVM)
+
+In this final form the two LLVM programs are syntactically equivalent. Transforming programs to a representation where semantic equivalence is captured by syntactic equality instead of using heavyweight theorem provers or dynamic analysis is crucial to allowing our approach to scale.
+
+
+
+
+
+%During the canonicalization step performed by the compiler, the strand (in our case a procedure with a single basic block) is repre- sented by a directed acyclic graph (DAG) which stores the expression. Even though comparing DAGs is possible, we wanted to simplify our representation to some kind of tex- tual form, allowing for fast and simple comparison. This is accomplished by using opt to output a linearized version of the computation’s DAG. To finalize the transformation which eliminates the origin and compilation choices made in the creation of the binary code, the final refinement to our representation is normalizing the strands. This is done by re- naming all symbols in the strand, i.e., its registers and tem- porary values, into sequentially named symbols. This step is crucial for cross-architecture comparison, as the names of the specific registers used in a given computation have nothing to do with its actual semantics, and are completely different between architectures.
+
+\paragraph{Contributions}
+
+
+
+
+
+\subsection{Challenges in Formalizing \ISA}
+\label{sec:challenges-in-formalizing-x86}
+
+%%
+%For example, when the source code is not available binary analysis is the only
+%viable option.
+%%
+%There are other scenarios when it is not desirable to trust the compiler. For
+%example, either due to compiler bugs or due to aggressive optimization that
+%compiler does in the presence of unspecified behavior, there can be a mismatch
+%between what a programmer intends and what is actually generated by the
+%compiler and hence executed on processor.  Consequently, analyses that are
+%performed on source code can fail to detect certain bugs and vulnerabilities
+%and this phenomenon is well known as ''What You See Is Not What You eXecute''.
+%This is mainly because an executable reveals more accurate information about
+%the behaviors that might occur during execution; including the actual memory
+%layout, register usage, execution order, optimizations, and artifacts of
+%compiler bugs. A source-level analysis on the other hand, must either make a
+%cruder over-approximation or an unsound under-approximation.
+%%
+%To add, for many programming languages, certain behaviors are left unspecified
+%by the semantics. In such cases, a source-level analysis must account for all
+%possible behaviors, whereas an analysis of an executable generally only has to
+%deal with one possible behavior -- namely, the one for the code sequence chosen by
+%the compiler.
+%%%
+%Moreover, programs typically make extensive use of libraries, including
+%dynamically linked libraries (DLLs), which may not be available in source-code
+%form.  Typically, analyses are performed using code stubs that model the
+%effects of library calls. Such model abstraction, mostly manually created, are
+%likely to contain errors, which may cause an analysis to return incorrect
+%results.  Operating on the binary avoids these issues altogether, since all
+%source languages are translated into a hardware specific, but single target
+%language with no distinction between the source code or library code.
+
+%Any bug in the translation would invalidate the binary analysis results. For
+%example, a malware analysis system might miss vulnerabilities or a binary
+%instrumentation system, instrumenting a buggy IR, might lead to failure or even
+%crash in interpreting the instrumented program. If a performance analysis tool
+%is provided an inaccurate correspondence between the binary and source code,
+%profiling data may be attributed to wrong locations in source code, causing
+%users to miss-identify performance bottleneck.  Therefore, automatic
+%validation tools are needed urgently to uncover hidden problems in a binary
+%translator.
