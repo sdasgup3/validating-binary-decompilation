@@ -43,17 +43,22 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
   if (GEPL && GEPR) {
+    llvm::errs() << *GEPL << "\n";
+    llvm::errs() << *GEPR << "\n";
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
-  //llvm::errs() << *I1 << "\n";
-  //llvm::errs() << *I2 << "\n";
-  if(I1->isBinaryOp()) {
-    assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() && "deepMatch Assert!!");
-    for(size_t i = 0; i < I1->getNumOperands(); i++) {
+  // llvm::errs() << *I1 << "\n";
+  // llvm::errs() << *I2 << "\n";
+  if (I1->isBinaryOp()) {
+    assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
+           "deepMatch Assert!!");
+    for (size_t i = 0; i < I1->getNumOperands(); i++) {
       Constant *L = dyn_cast<Constant>(I1->getOperand(i));
       Constant *R = dyn_cast<Constant>(I2->getOperand(i));
-      if(L && R && cmpConstants(L, R) != 0) {
+      
+      if( (L && !R ) || (!L && R)) return false;
+      if (L && R && cmpConstants(L, R) != 0) {
         return false;
       }
     }
@@ -91,6 +96,11 @@ void Matcher::dumpPotBBMatches() {
 }
 
 void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
+  if (!initialMatch(F1, F2)) {
+    assert(0 && "Problem with Initial Match");
+    return;
+  }
+
   for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
       // if (shallowMatch(&*I1, &*I2)) {
@@ -339,9 +349,6 @@ bool Matcher::handleConflictingStores(const vector<Value *> &V) {
 }
 
 bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
-  if (!initialMatch(F1, F2))
-    return false;
-
   // Populate the vertices set Vq
   vector<Value *> V;
   auto argI1 = F1->arg_begin();
@@ -389,7 +396,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
   // 3:  while changed do
   while (changed) {
 #ifdef MATCHER_DEBUG
-//    llvm::errs() << "Round: " << round++ << "\n";
+    llvm::errs() << "Round: " << round++ << "\n";
 #endif
 
     // 4: changed←false
@@ -418,6 +425,13 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
 #endif
 
           // 9: Φv(u')←G.adj(v) ∩ Φ(u')
+          if(!PotIMatches.count(UPrime)) {
+            llvm::errs() << "No potential matches for UPrime: ";
+            dumpLLVMNode(UPrime);
+            llvm::errs() << "Corresponding U: ";
+            dumpLLVMNode(U);
+            assert(0 && "No potential matches for UPrime");
+          }
           set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
           set<Value *> VAdj;
           for (Value::user_iterator VPrimeI = V->user_begin();
@@ -448,6 +462,33 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
 
             // 11:           remove v from Φ(u)
             deleteList.push_back(V);
+#ifdef MATCHER_DEBUG
+            llvm::errs() << "\nRemoving: ";
+            dumpLLVMNode(V);
+            llvm::errs() << "From the pot matches of: ";
+            dumpLLVMNode(&*U);
+
+            llvm::errs() << "\n\nUprime : ";
+            dumpLLVMNode(UPrime);
+            llvm::errs() << "\n\nUprime Matches: ";
+            for (auto &UPrimeMatch : UPrimeMatches) {
+              dumpLLVMNode(UPrimeMatch);
+            }
+
+            llvm::errs() << "\n\nAdj: ";
+            for (auto &adj : VAdj) {
+              dumpLLVMNode(adj);
+            }
+            llvm::errs() << "\n";
+#endif
+
+            // 12:           if Φ(u) = ∅ then
+            // 13:           return empty Φ
+            if (PotIMatches.at(&*U).size() == deleteList.size()) {
+              llvm::errs() << "\n\nNo potential match for: ";
+              dumpLLVMNode(&*U);
+              assert(0 && "Zero Match found: I");
+            }
 
             // 15: changed←true
             changed = true;
@@ -462,6 +503,14 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
           PotIMatches.at(&*U).erase(deleteNode);
         }
 
+        // 19: if Φ'(u') = ∅ then
+        // 20:         return empty Φ
+        if (refinedUPrimeMatches.size() == 0) {
+          llvm::errs() << "\n\nNo potential match for: ";
+          dumpLLVMNode(UPrime);
+          assert(0 && "Zero Match found: II");
+        }
+
         // 22: if Φ'(u') is smaller than Φ(u') then
         // 23: changed←true
         set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
@@ -472,13 +521,15 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
         // 24: Φ(u') = Φ(u') ∩ Φ'(u')
         UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
 #ifdef MATCHER_DEBUG
-//        llvm::errs() << "\tRefined u matches: " << &*U << "\n";
+//        llvm::errs() << "\n\tRefined u matches: ";
+//        dumpLLVMNode(&*U);
 //        for (auto &UMatch : PotIMatches.at(&*U)) {
 //          llvm::errs() << "\t\tu match: ";
 //          dumpLLVMNode(UMatch);
 //        }
 //
-//        llvm::errs() << "\n\tRefined u' matches': " << UPrime << "\n";
+//        llvm::errs() << "\n\tRefined u' matches: ";
+//        dumpLLVMNode(UPrime);
 //        for (auto &UPrimeMatch : UPrimeMatches) {
 //          llvm::errs() << "\t\tu' match: ";
 //          dumpLLVMNode(UPrimeMatch);

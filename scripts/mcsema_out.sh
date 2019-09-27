@@ -29,6 +29,9 @@ llvm-dis $binlabel.bc -o $binlabel.unoptimized.ll
 mcsema-lift-4.0 --os linux --arch amd64 --cfg $binlabel.cfg --output $binlabel.bc
 llvm-dis $binlabel.bc -o $binlabel.optimized.ll
 
+#mcsema-lift-4.0 --os linux --arch amd64 --cfg $binlabel.cfg --output $binlabel.bc -disable_optimizer
+#llvm-dis $binlabel.bc -o $binlabel.legacy.ll
+
 #/home/sdasgup3/ida-6.95/idal64 -Lidal64.log -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output x.cfg --log_file x.log --arch amd64 --os linux --entrypoint main" get_sign
 
 

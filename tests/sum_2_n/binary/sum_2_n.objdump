@@ -128,12 +128,15 @@ Disassembly of section .text:
  667:	c7 45 f8 00 00 00 00 	movl   $0x0,-0x8(%rbp)
  66e:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
  675:	eb 0a                	jmp    681 <sum_2_n+0x21>
+
  677:	8b 45 fc             	mov    -0x4(%rbp),%eax
  67a:	01 45 f8             	add    %eax,-0x8(%rbp)
  67d:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+
  681:	8b 45 fc             	mov    -0x4(%rbp),%eax
  684:	3b 45 ec             	cmp    -0x14(%rbp),%eax
  687:	7c ee                	jl     677 <sum_2_n+0x17>
+
  689:	8b 45 f8             	mov    -0x8(%rbp),%eax
  68c:	5d                   	pop    %rbp
  68d:	c3                   	retq   

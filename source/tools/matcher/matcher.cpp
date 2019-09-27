@@ -144,6 +144,7 @@ int main(int argc, char **argv) {
   if (!F1 || !F2) {
     Console::msg() << "Missing function name: " << TargetFunc << " or "
                    << SourceFunc << "\n";
+    return 1;
   }
 
   // Matching the extracted functions

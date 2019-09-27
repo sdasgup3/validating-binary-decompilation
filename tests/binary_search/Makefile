@@ -52,13 +52,13 @@ binary:
 
 opt:
 	cd mcsema; \
-	opt -S  -inline   test.proposed.ll -o test.proposed.inline.ll ; opt -S  -O3 -strip   test.proposed.inline.ll -o test.proposed.opt.ll; \
-	opt -S  -inline   ${PROG}.bin.unoptimized.ll -o ${PROG}.bin.unoptimized.inline.ll ; opt -S  -O3 -strip   ${PROG}.bin.unoptimized.inline.ll -o ${PROG}.bin.unoptimized.opt.ll; \
+	opt -S  -inline   test.proposed.ll -o test.proposed.inline.ll ; opt -S  -O3    test.proposed.inline.ll -o test.proposed.opt.ll; \
+	opt -S  -inline   ${PROG}.bin.unoptimized.ll -o ${PROG}.bin.unoptimized.inline.ll ; opt -S  -O3    ${PROG}.bin.unoptimized.inline.ll -o ${PROG}.bin.unoptimized.opt.ll; \
         cd ..
 
 match:
 	cd mcsema; \
-	~/Github/validating-binary-decompilation/source/build/bin/matcher --file1 test.unoptimized.mod.opt.ll:sub_6c0_binary_search --file2 test.proposed.opt.ll:bnary_search ; \
+	~/Github/validating-binary-decompilation/source/build/bin/matcher --file1 binary_search.bin.unoptimized.opt.ll:sub_6c0_binary_search --file2 test.proposed.opt.ll:binary_search ; \
         cd ..
 
 clean:
