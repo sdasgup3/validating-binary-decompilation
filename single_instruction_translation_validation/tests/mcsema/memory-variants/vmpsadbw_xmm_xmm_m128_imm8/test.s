@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vmpsadbw $0x0, -4(%rbp), %xmm2, %xmm1
+    vmpsadbw $0xa, -4(%rbp), %xmm2, %xmm1
     
     
     ret

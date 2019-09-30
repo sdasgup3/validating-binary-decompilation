@@ -1,3 +1,3 @@
 void main() {
-  __asm__("rclq $0x0, -4(%rbp)");
+  __asm__("rclq $0xa, -4(%rbp)");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpblendd $0x0, -4(%rbp), %xmm2, %xmm1
+  vpblendd $0xa, -4(%rbp), %xmm2, %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  sbbb $0x0, -4(%rbp)
+  sbbb $0xa, -4(%rbp)
   retq

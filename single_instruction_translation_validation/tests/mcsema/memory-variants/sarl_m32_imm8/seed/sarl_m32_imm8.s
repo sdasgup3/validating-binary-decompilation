@@ -1,3 +1,3 @@
 .target:
-  sarl $0x0, -4(%rbp)
+  sarl $0xa, -4(%rbp)
   retq

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpermilpd $0x0, -4(%rbp), %ymm1
+    vpermilpd $0xa, -4(%rbp), %ymm1
     
     
     ret

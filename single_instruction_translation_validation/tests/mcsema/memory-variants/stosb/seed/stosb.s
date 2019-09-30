@@ -1,0 +1,3 @@
+.target:
+  stosb
+  retq

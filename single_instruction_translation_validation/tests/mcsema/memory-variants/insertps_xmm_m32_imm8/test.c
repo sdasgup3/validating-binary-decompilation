@@ -1,3 +1,3 @@
 void main() {
-  __asm__("insertps $0x0, -4(%rbp), %xmm1");
+  __asm__("insertps $0xa, -4(%rbp), %xmm1");
 }

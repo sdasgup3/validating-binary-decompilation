@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vcmpsd $0x0, -4(%rbp), %xmm2, %xmm1");
+  __asm__("vcmpsd $0xa, -4(%rbp), %xmm2, %xmm1");
 }

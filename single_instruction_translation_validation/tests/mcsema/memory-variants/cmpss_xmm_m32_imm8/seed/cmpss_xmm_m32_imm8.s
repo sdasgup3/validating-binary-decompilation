@@ -1,3 +1,3 @@
 .target:
-  cmpss $0x0, -4(%rbp), %xmm1
+  cmpss $0xa, -4(%rbp), %xmm1
   retq

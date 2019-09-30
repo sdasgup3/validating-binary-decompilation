@@ -1,3 +1,3 @@
 .target:
-  vinserti128 $0x0, -4(%rbp), %ymm2, %ymm1
+  vinserti128 $0xa, -4(%rbp), %ymm2, %ymm1
   retq

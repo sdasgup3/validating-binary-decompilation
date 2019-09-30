@@ -1,3 +1,3 @@
 .target:
-  vmpsadbw $0x0, -4(%rbp), %ymm2, %ymm1
+  vmpsadbw $0xa, -4(%rbp), %ymm2, %ymm1
   retq

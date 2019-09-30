@@ -1,3 +1,3 @@
 .target:
-  blendps $0x0, -4(%rbp), %xmm1
+  blendps $0xa, -4(%rbp), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  testb $0x0, -4(%rbp)
+  testb $0xa, -4(%rbp)
   retq

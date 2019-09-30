@@ -115,6 +115,7 @@ vblendvpd_ymm_ymm_m256_ymm
 vblendvps_xmm_xmm_m128_xmm
 vblendvps_ymm_ymm_m256_ymm
 vbroadcastf128_ymm_m128
+vbroadcasti128_ymm_m128
 vbroadcastsd_ymm_m64
 vbroadcastss_xmm_m32
 vbroadcastss_ymm_m32

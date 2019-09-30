@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pextrd $0x0, %xmm1, -4(%rbp)");
+  __asm__("pextrd $0xa, %xmm1, -4(%rbp)");
 }

@@ -1,3 +1,3 @@
 .target:
-  shlq $0x0, -4(%rbp)
+  shlq $0xa, -4(%rbp)
   retq

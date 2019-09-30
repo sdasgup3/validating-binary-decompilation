@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vcmpsd $0x0, -4(%rbp), %xmm2, %xmm1
+    vcmpsd $0xa, -4(%rbp), %xmm2, %xmm1
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vcmpps $0x0, -4(%rbp), %ymm2, %ymm1
+    vcmpps $0xa, -4(%rbp), %ymm2, %ymm1
     
     
     ret

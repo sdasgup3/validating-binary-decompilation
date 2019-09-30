@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpextrw $0x0, %xmm1, -4(%rbp)
+    vpextrw $0xa, %xmm1, -4(%rbp)
     
     
     ret

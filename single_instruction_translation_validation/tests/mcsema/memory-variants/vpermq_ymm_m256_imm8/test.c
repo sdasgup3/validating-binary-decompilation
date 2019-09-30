@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpermq $0x0, -4(%rbp), %ymm1");
+  __asm__("vpermq $0xa, -4(%rbp), %ymm1");
 }
