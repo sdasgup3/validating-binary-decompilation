@@ -1,0 +1,3 @@
+.target:
+  cmpsl
+  retq

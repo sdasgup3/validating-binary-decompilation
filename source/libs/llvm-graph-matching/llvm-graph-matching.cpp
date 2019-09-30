@@ -56,8 +56,9 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
     for (size_t i = 0; i < I1->getNumOperands(); i++) {
       Constant *L = dyn_cast<Constant>(I1->getOperand(i));
       Constant *R = dyn_cast<Constant>(I2->getOperand(i));
-      
-      if( (L && !R ) || (!L && R)) return false;
+
+      if ((L && !R) || (!L && R))
+        return false;
       if (L && R && cmpConstants(L, R) != 0) {
         return false;
       }
@@ -425,7 +426,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
 #endif
 
           // 9: Φv(u')←G.adj(v) ∩ Φ(u')
-          if(!PotIMatches.count(UPrime)) {
+          if (!PotIMatches.count(UPrime)) {
             llvm::errs() << "No potential matches for UPrime: ";
             dumpLLVMNode(UPrime);
             llvm::errs() << "Corresponding U: ";

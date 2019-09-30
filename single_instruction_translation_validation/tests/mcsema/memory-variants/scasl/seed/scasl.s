@@ -1,0 +1,3 @@
+.target:
+  scasl
+  retq

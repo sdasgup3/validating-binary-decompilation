@@ -157,11 +157,17 @@ sbbw_r16_imm16
 sbbw_r16_imm8
 shlb_r8_imm8
 shlb_rh_imm8
+shldl_r32_r32_imm8
+shldq_r64_r64_imm8
+shldw_r16_r16_imm8
 shll_r32_imm8
 shlq_r64_imm8
 shlw_r16_imm8
 shrb_r8_imm8
 shrb_rh_imm8
+shrdl_r32_r32_imm8
+shrdq_r64_r64_imm8
+shrdw_r16_r16_imm8
 shrl_r32_imm8
 shrq_r64_imm8
 shrw_r16_imm8

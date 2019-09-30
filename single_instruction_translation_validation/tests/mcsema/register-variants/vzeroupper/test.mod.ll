@@ -182,14 +182,10 @@ block_530:
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
   %PC = bitcast %union.anon* %5 to i64*
-  store i64 %1, i64* %PC, align 8
   %6 = load i64, i64* %PC
   %7 = add i64 %6, 3
   store i64 %7, i64* %PC
   %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L12DoVZEROUPPEREP6MemoryR5State(%struct.Memory* %2, %struct.State* %0)
-  %9 = load i64, i64* %PC
-  %10 = add i64 %9, 1
-  store i64 %10, i64* %PC
   ret %struct.Memory* %8
 }
 

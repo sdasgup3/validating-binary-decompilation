@@ -1,3 +1,3 @@
 .target:
-  vcmpps $0x0, -4(%rbp), %xmm2, %xmm1
+  vcmpps $0xa, -4(%rbp), %xmm2, %xmm1
   retq

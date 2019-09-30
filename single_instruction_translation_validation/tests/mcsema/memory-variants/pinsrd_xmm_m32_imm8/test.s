@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pinsrd $0x0, -4(%rbp), %xmm1
+    pinsrd $0xa, -4(%rbp), %xmm1
     
     
     ret

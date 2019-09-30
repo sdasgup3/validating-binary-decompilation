@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pinsrw $0x0, -4(%rbp), %xmm1");
+  __asm__("pinsrw $0xa, -4(%rbp), %xmm1");
 }

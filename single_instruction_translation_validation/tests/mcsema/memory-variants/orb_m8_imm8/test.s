@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    orb $0x0, -4(%rbp)
+    orb $0xa, -4(%rbp)
     
     
     ret

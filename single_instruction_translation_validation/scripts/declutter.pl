@@ -77,14 +77,14 @@ my @funcs = ();
 # The new name of the main function
 my $modMainName = "routine_" . $opcode;
 
-# Collect all the defined functions
+# Collect all the defined functions' names
 my %definedFuncs = ();
 collectDefinedFunctions();
 
 # Find the body of the main function
-my $mainFuncSignaure    = qr/define.*@(sub_.*_main).*/;
-my $mainFuncName        = qr/sub_.*_main/;
-my @foundMain = @{ getMainBody($mainFuncName) };
+my $mainFuncSignaure = qr/define.*@(sub_.*_main).*/;
+my $mainFuncName     = qr/sub_.*_main/;
+my @foundMain        = @{ getMainBody($mainFuncName) };
 
 # Ieratively determine the body of the callee from main
 expandMain( \@foundMain );
@@ -155,10 +155,12 @@ sub getMainBody {
         }
 
         if ( $foundMain == 0 ) {
-#print "!!".$tline. "!!";
+
+            #print "!!".$tline. "!!";
 
             if ( $tline =~ m/(define.*)\@(sub_.*_main)(.*)/ ) {
-#print "#".$tline. "#\n";
+
+                #print "#".$tline. "#\n";
                 push @mainBody, "$1\@$modMainName$3\n";
                 $foundMain = 1;
                 next;
@@ -167,17 +169,26 @@ sub getMainBody {
 
         if ( $tline =~ m/\s*(\S*) = call.*@(.*)\(.*\).*/ ) {
             my $calledFunc = $2;
-#print $calledFunc." ... \n";
+
+            #print $calledFunc." ... \n";
             if ( isDefined($calledFunc) == 1 ) {
-#print " define... \n";
-                $countCalls = $countCalls + 1;
-                if ( $countCalls == 2 ) {
-                  last;
-                }
+
+                #print " define... \n";
+                #$countCalls = $countCalls + 1;
+                #if ( $countCalls == 2 ) {
+                #              if ($calledFunc =~ m/RET/) {
+                #                  last;
+                #              }
+                #}
+                push @mainBody, $line;
                 $mainRetval = $1;
+                last;
             }
         }
 
+        if ( $tline =~ m/store i64 \%1, i64\* \%PC, align 8/ ) {
+            next;
+        }
 
         push @mainBody, $line;
 
@@ -186,7 +197,7 @@ sub getMainBody {
     push @mainBody, "  ret %struct.Memory* $mainRetval\n";
     push @mainBody, "}\n";
 
-#utils::printArray(\@mainBody);
+    #utils::printArray(\@mainBody);
     return \@mainBody;
 }
 
@@ -249,21 +260,23 @@ sub collectDefinedFunctions {
     for my $line (@lines) {
         my $tline = utils::trim($line);
         if ( $tline =~ m/define.*\@(.*?)\(.*\).*/g ) {
-          $definedFuncs{$1} = 1; 
+            $definedFuncs{$1} = 1;
         }
     }
-#printMap(\%definedFuncs);
+
+    #printMap(\%definedFuncs);
 }
 
 sub isDefined {
     my $funcName = shift @_;
 
-    if(exists $definedFuncs{$funcName}) {
-#print $funcName . "defined ...\n";
-      return 1;
+    if ( exists $definedFuncs{$funcName} ) {
+
+        #print $funcName . "defined ...\n";
+        return 1;
     }
 
-#print $funcName . "not defined ...\n";
+    #print $funcName . "not defined ...\n";
     return 0;
 }
 

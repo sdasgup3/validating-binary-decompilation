@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pblendw $0x0, -4(%rbp), %xmm1
+    pblendw $0xa, -4(%rbp), %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pshufhw $0x0, -4(%rbp), %xmm1");
+  __asm__("pshufhw $0xa, -4(%rbp), %xmm1");
 }

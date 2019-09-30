@@ -1,3 +1,3 @@
 .target:
-  vpcmpestri $0x0, -4(%rbp), %xmm1
+  vpcmpestri $0xa, -4(%rbp), %xmm1
   retq

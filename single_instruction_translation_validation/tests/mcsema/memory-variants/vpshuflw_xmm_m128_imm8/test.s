@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpshuflw $0x0, -4(%rbp), %xmm1
+    vpshuflw $0xa, -4(%rbp), %xmm1
     
     
     ret

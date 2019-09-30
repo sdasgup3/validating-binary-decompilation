@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pcmpistri $0x0, -4(%rbp), %xmm1");
+  __asm__("pcmpistri $0xa, -4(%rbp), %xmm1");
 }

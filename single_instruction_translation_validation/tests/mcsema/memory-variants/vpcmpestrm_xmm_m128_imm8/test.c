@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpcmpestrm $0x0, -4(%rbp), %xmm1");
+  __asm__("vpcmpestrm $0xa, -4(%rbp), %xmm1");
 }
