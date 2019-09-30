@@ -159,7 +159,6 @@ block_530:
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
   %PC = bitcast %union.anon* %5 to i64*
-  store i64 %1, i64* %PC, align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
   %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
@@ -173,9 +172,6 @@ block_530:
   %14 = add i64 %13, 4
   store i64 %14, i64* %PC
   %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5SUBSSI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
-  %16 = load i64, i64* %PC
-  %17 = add i64 %16, 1
-  store i64 %17, i64* %PC
   ret %struct.Memory* %15
 }
 

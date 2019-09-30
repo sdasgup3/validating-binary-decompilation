@@ -1,3 +1,3 @@
 void main() {
-  __asm__("rolb $0x0, -4(%rbp)");
+  __asm__("rolb $0xa, -4(%rbp)");
 }

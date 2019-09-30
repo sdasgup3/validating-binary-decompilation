@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pextq (%rdx), %rcx, %rbx");
+  __asm__("pextq -4(%rbp), %rcx, %rbx");
 }

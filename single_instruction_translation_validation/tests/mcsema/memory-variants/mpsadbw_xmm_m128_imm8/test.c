@@ -1,3 +1,3 @@
 void main() {
-  __asm__("mpsadbw $0x0, -4(%rbp), %xmm1");
+  __asm__("mpsadbw $0xa, -4(%rbp), %xmm1");
 }

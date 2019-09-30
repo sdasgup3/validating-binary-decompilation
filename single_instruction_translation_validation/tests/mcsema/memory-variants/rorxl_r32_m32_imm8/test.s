@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    rorxl $0x0, -4(%rbp), %ebx
+    rorxl $0xa, -4(%rbp), %ebx
     
     
     ret

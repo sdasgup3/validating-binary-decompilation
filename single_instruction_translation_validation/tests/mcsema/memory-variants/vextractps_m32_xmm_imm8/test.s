@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vextractps $0x0, %xmm1, -4(%rbp)
+    vextractps $0xa, %xmm1, -4(%rbp)
     
     
     ret

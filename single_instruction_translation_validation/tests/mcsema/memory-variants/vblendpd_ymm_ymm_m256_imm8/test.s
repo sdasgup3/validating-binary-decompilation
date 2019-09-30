@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vblendpd $0x0, -4(%rbp), %ymm2, %ymm1
+    vblendpd $0xa, -4(%rbp), %ymm2, %ymm1
     
     
     ret

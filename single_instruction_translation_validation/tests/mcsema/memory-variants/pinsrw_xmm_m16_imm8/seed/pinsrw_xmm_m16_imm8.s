@@ -1,3 +1,3 @@
 .target:
-  pinsrw $0x0, -4(%rbp), %xmm1
+  pinsrw $0xa, -4(%rbp), %xmm1
   retq

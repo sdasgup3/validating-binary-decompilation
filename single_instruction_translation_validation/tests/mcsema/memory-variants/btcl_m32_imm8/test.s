@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    btcl $0x0, -4(%rbp)
+    btcl $0xa, -4(%rbp)
     
     
     ret

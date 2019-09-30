@@ -1,3 +1,3 @@
 void main() {
-  __asm__("imull $0x0, -4(%rbp), %ebx");
+  __asm__("imull $0xa, -4(%rbp), %ebx");
 }

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmpps $0x0, -4(%rbp), %xmm1
+    cmpps $0xa, -4(%rbp), %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  roundss $0x0, -4(%rbp), %xmm1
+  roundss $0xa, -4(%rbp), %xmm1
   retq

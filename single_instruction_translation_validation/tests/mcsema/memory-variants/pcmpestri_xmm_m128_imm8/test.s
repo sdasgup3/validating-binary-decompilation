@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pcmpestri $0x0, -4(%rbp), %xmm1
+    pcmpestri $0xa, -4(%rbp), %xmm1
     
     
     ret

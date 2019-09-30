@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    palignr $0x0, -4(%rbp), %xmm1
+    palignr $0xa, -4(%rbp), %xmm1
     
     
     ret

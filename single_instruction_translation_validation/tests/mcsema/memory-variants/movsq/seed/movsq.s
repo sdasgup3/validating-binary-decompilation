@@ -1,0 +1,3 @@
+.target:
+  movsq
+  retq

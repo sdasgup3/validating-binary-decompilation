@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    andnq (%rdx), %rcx, %rbx
+    andnq -4(%rbp), %rcx, %rbx
     
     
     ret

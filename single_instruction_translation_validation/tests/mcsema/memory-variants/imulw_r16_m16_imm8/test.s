@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    imulw $0x0, -4(%rbp), %bx
+    imulw $0xa, -4(%rbp), %bx
     
     
     ret

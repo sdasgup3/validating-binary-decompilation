@@ -1,3 +1,3 @@
 .target:
-  vinsertps $0x0, -4(%rbp), %xmm2, %xmm1
+  vinsertps $0xa, -4(%rbp), %xmm2, %xmm1
   retq

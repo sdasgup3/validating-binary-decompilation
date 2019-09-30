@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vshufps $0x0, -4(%rbp), %ymm2, %ymm1
+    vshufps $0xa, -4(%rbp), %ymm2, %ymm1
     
     
     ret

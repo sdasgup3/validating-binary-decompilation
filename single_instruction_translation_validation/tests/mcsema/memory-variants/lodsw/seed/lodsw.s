@@ -1,0 +1,3 @@
+.target:
+  lodsw
+  retq

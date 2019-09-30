@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vroundps $0x0, -4(%rbp), %xmm1
+    vroundps $0xa, -4(%rbp), %xmm1
     
     
     ret

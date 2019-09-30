@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pdepl (%rdx), %ecx, %ebx");
+  __asm__("pdepl -4(%rbp), %ecx, %ebx");
 }
