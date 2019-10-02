@@ -1144,3 +1144,13 @@ xorpd_xmm_xmm
 xorps_xmm_xmm
 xorq_r64_r64
 xorw_r16_r16
+callq_r64
+popq_r64
+pushq_r64
+pushq_r64_1
+jmp_r64
+popw_r16
+pushw_r16
+
+
+

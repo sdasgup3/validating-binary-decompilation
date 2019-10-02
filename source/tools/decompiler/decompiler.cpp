@@ -67,7 +67,8 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  CompositionalDecompiler CompD(BinaryIn, LLVMOut, Fxn);
+  CompositionalDecompiler CompD(BinaryIn, LLVMOut, Fxn,
+                                SingleInstructionDecompilationPath);
 
   return 0;
 }
