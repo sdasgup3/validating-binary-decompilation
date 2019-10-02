@@ -36,12 +36,14 @@ parallel -a logs/all_memories.txt  "sed -i 's/(%rbx)\|(%rcx)\|(%rdx)/-4(%rbp)/g'
 parallel -a logs/all_memories.txt  "sed -i 's/0x0/0xa/g'  memory-variants/{}/seed/{}.s"
 
 // System Instructions
-parallel -a logs/all_system_instructions.txt  "/home/sdasgup3/Github/X86-64-semantics/scripts/process_spec.pl --prepare_concrete --opcode {} --workdir system-variants/{}"
+parallel -a logs/all_system_instructions.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --prepare_concrete --opcode {} --workdir system-variants/{}"
 parallel -a logs/create_separate_seed_files.txt ../../scripts/create_jmp_seed.pl --opc {} --workdir system-variants/{}
 parallel -a logs/selective_jmp.txt mv system-variants/{}/instructions/{}/{}.* system-variants/{}/instructions/
-parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions/{}
+parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions/{}"
 find . -name check_stoke.txt | xargs rm -rf
-parallel -a logs/selective_jmp.txt  "mv system-variants/{}/instructions system-variants/{}/seed"
+parallel -a logs/selective_jmp.txt  "mkdir -p system-variants/{}/seed"
+parallel -a logs/selective_jmp.txt  "mv system-variants/{}/instructions/* system-variants/{}/seed"
+parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 ```
 ### Populate C and Makefiles
 ```

@@ -1407,3 +1407,6 @@ xorw_m16_imm16
 xorw_m16_imm8
 xorw_m16_r16
 xorw_r16_m16
+callq_m64
+jmp_m64
+

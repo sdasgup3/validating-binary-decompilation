@@ -1,11 +1,5 @@
 callq_label
-callq_m64
-callq_r64
 callq_rel32
-popq_r64
-popw_r16
-pushq_r64
-pushw_r16
 retq
 jae_label
 jae_rel32
@@ -41,8 +35,6 @@ jl_label
 jl_rel32
 jl_rel8
 jmp_label
-jmp_m64
-jmp_r64
 jmp_rel32
 jmp_rel8
 jnae_label
