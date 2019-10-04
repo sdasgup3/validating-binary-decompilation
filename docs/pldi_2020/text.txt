@@ -33,3 +33,6 @@ KEQ or direct syntactic checking by prior optmization of both the candidates.
 2. In case it is NOT possible to disable the optimization on the decompiler externally, we still have the choices of compare using either way. 
 
 With LLVM Vs X86 comparision, we canot handle case (2). However, we can handle case (1) using the heavy-weight KEQ approach. However, LLVM s LLVM comparision allows us to do some simple and quick comparision beside the heavy weight equivalence checking.
+
+
+Only 33% of instr are unique, hence we can afford to decompile all the instructions during compositional decompilation, most of them would be cached and reused

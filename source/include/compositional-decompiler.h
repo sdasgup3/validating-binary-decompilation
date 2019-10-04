@@ -33,21 +33,27 @@ private:
   bool flat_binary;
   string extractedFunction;
   string singleInstrDecompPath;
-  const string scriptsPath;
+  string scriptsPath;
+  string workdir;
+
+  // Cache for instruction defn which are already decompiled
+  set<string> ICache;
+
   Cfg *cfg;
   bool disassemble(string inPath);
   void decompile(string outLLVMPath);
   void displayCFG(bool view);
   // redi::ipstream *run_command(const string &cmd);
-  bool run_command(const string &cmd, bool ret_stream = false,
-                   redi::ipstream **retval = NULL);
+  //  bool run_command(const string &cmd, bool ret_stream = false,
+  //                   redi::ipstream **retval = NULL);
 
   /** Tracks if an error occurred. */
   bool error_;
   /* Tracks the last error message. */
   std::string error_message_;
-  /* Tracks the RIP of label defintions */
-  unordered_map<string, uint64_t> labelDefnRIP;
+  /* Tracks the RIP of label defintions and the reverse map*/
+  unordered_map<string, uint64_t> labelDefn2RIP;
+  unordered_map<uint64_t, string> rip2LabelDefn;
   void computePCUpdates();
 
   // Body of the decompiled function
@@ -57,23 +63,22 @@ private:
   stringstream Defns;
 
   void decompileFunction(const string &extractedFunction);
-  bool sanity_check_template_instruction(x64asm::Instruction i1,
-                                         x64asm::Instruction i2);
-  void decompileInstruction(x64asm::Instruction instr,
-                            x64asm::Instruction template_instr);
-  void modifyTemplateDefinition(vector<string> &local_defn, int fromIdx,
-                                int toIdx);
+  // bool sanity_check_template_instruction(x64asm::Instruction i1,
+  //                                       x64asm::Instruction i2);
+  // void decompileInstruction(x64asm::Instruction instr,
+  //                          x64asm::Instruction template_instr);
+  void decompileInstruction(x64asm::Instruction instr, uint64_t, uint64_t);
 
-  int getMcSemaIndices(const x64asm::R &reg);
-  int getMcSemaIndices(const x64asm::Sse &reg);
-  string findFileForOpcode(x64asm::Instruction instr,
-                           const string &singleInstrDecompPath);
+  // int getMcSemaIndices(const x64asm::R &reg);
+  // int getMcSemaIndices(const x64asm::Sse &reg);
+  // string findFileForOpcode(x64asm::Instruction instr,
+  //                         const string &singleInstrDecompPath);
 
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
                           const string &extractedFunction,
                           const string &singleInstrDecompPath,
-                          bool flat_binary = false);
+                          const string &workdir, bool flat_binary = false);
 
   /** Clears error state */
   void clear_error() {
