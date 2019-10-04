@@ -46,6 +46,14 @@ auto &SingleInstructionDecompilationPath =
         .description("Path to single instrucion decompilation llvm sequences")
         .default_val("");
 
+auto &workdir_arg =
+    ValueArg<string>::create("workdir")
+        .usage("<path/to/dir>")
+        .description("The working directory")
+        .default_val("/home/sdasgup3/Github/validating-binary-decompilation/"
+                     "single_instruction_translation_validation/tests/mcsema/"
+                     "compositional_artifacts/");
+
 auto &view =
     FlagArg::create("view").alternate("v").description("View cfg immediately");
 
@@ -68,7 +76,8 @@ int main(int argc, char **argv) {
   }
 
   CompositionalDecompiler CompD(BinaryIn, LLVMOut, Fxn,
-                                SingleInstructionDecompilationPath);
+                                SingleInstructionDecompilationPath,
+                                workdir_arg.value());
 
   return 0;
 }
