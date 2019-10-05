@@ -1,0 +1,44 @@
+{
+  "createRandomArray": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "createRandomArray"
+  }, 
+  "shuffle": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "shuffle"
+  }, 
+  "rand": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rand"
+  }, 
+  "srand": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "srand"
+  }, 
+  "findDuplicate": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "findDuplicate"
+  }, 
+  "main": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "randInt": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "randInt"
+  }
+}
