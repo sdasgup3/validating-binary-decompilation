@@ -1,0 +1,242 @@
+{
+  "FFT_transform_internal": {
+    "num_inst": 297, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FFT_transform_internal"
+  }, 
+  "RandomMatrix": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RandomMatrix"
+  }, 
+  "Stopwatch_delete": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Stopwatch_delete"
+  }, 
+  "kernel_measureFFT": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_measureFFT"
+  }, 
+  "new_Array2D_double": {
+    "num_inst": 83, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "new_Array2D_double"
+  }, 
+  "new_Stopwatch": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "new_Stopwatch"
+  }, 
+  "SparseCompRow_num_flops": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SparseCompRow_num_flops"
+  }, 
+  "SOR_execute": {
+    "num_inst": 126, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SOR_execute"
+  }, 
+  "LU_factor": {
+    "num_inst": 247, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "LU_factor"
+  }, 
+  "int_log2": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "int_log2"
+  }, 
+  "Array2D_double_copy": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Array2D_double_copy"
+  }, 
+  "MonteCarlo_integrate": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MonteCarlo_integrate"
+  }, 
+  "FFT_inverse": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FFT_inverse"
+  }, 
+  "print_banner": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "print_banner"
+  }, 
+  "kernel_measureLU": {
+    "num_inst": 107, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_measureLU"
+  }, 
+  "new_Random": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "new_Random"
+  }, 
+  "LU_num_flops": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "LU_num_flops"
+  }, 
+  "Random_nextDouble": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Random_nextDouble"
+  }, 
+  "SOR_num_flops": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SOR_num_flops"
+  }, 
+  "RandomVector": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RandomVector"
+  }, 
+  "kernel_measureSOR": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_measureSOR"
+  }, 
+  "seconds": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "seconds"
+  }, 
+  "MonteCarlo_num_flops": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MonteCarlo_num_flops"
+  }, 
+  "initialize": {
+    "num_inst": 92, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "initialize"
+  }, 
+  "kernel_measureMonteCarlo": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_measureMonteCarlo"
+  }, 
+  "Stopwtach_reset": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Stopwtach_reset"
+  }, 
+  "Stopwatch_resume": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Stopwatch_resume"
+  }, 
+  "new_Random_seed": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "new_Random_seed"
+  }, 
+  "main": {
+    "num_inst": 172, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "FFT_transform": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FFT_transform"
+  }, 
+  "kernel_measureSparseMatMult": {
+    "num_inst": 172, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_measureSparseMatMult"
+  }, 
+  "FFT_num_flops": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FFT_num_flops"
+  }, 
+  "Stopwatch_stop": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Stopwatch_stop"
+  }, 
+  "Random_delete": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Random_delete"
+  }, 
+  "Array2D_double_delete": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Array2D_double_delete"
+  }, 
+  "SparseCompRow_matmult": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SparseCompRow_matmult"
+  }, 
+  "Stopwatch_read": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Stopwatch_read"
+  }, 
+  "Stopwatch_start": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Stopwatch_start"
+  }, 
+  "LU_copy_matrix": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "LU_copy_matrix"
+  }, 
+  "FFT_bitreverse": {
+    "num_inst": 111, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FFT_bitreverse"
+  }
+}

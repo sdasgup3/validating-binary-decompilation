@@ -1,0 +1,152 @@
+{
+  "_ZN9benchmark9quicksortISt16reverse_iteratorIS1_IN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEEdEEvT_SB_": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortISt16reverse_iteratorIS1_IN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEEdEEvT_SB_"
+  }, 
+  "_ZN9benchmark8heapsortIPddEEvT_S2_": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortIPddEEvT_S2_"
+  }, 
+  "_ZN9benchmark8heapsortISt16reverse_iteratorIS1_IN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEEdEEvT_SB_": {
+    "num_inst": 140, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortISt16reverse_iteratorIS1_IN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEEdEEvT_SB_"
+  }, 
+  "_ZN9benchmark8heapsortISt16reverse_iteratorIS1_IPdEEdEEvT_S5_": {
+    "num_inst": 140, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortISt16reverse_iteratorIS1_IPdEEdEEvT_S5_"
+  }, 
+  "_Z11start_timerv": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "_Z11start_timerv"
+  }, 
+  "_Z14test_quicksortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc": {
+    "num_inst": 257, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z14test_quicksortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc"
+  }, 
+  "_Z13record_resultdPKc": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_Z13record_resultdPKc"
+  }, 
+  "_ZN9benchmark8heapsortISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEdEEvT_SA_": {
+    "num_inst": 177, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEdEEvT_SA_"
+  }, 
+  "_ZN9benchmark9quicksortIPddEEvT_S2_": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortIPddEEvT_S2_"
+  }, 
+  "_Z14test_heap_sortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc": {
+    "num_inst": 257, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z14test_heap_sortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc"
+  }, 
+  "_Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc": {
+    "num_inst": 367, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc"
+  }, 
+  "_ZN9benchmark9quicksortISt16reverse_iteratorIS1_IPdEEdEEvT_S5_": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortISt16reverse_iteratorIS1_IPdEEdEEvT_S5_"
+  }, 
+  "_Z17summarize_simplefP8_IO_FILEPKc": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_Z17summarize_simplefP8_IO_FILEPKc"
+  }, 
+  "_ZN9benchmark9quicksortISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEdEEvT_SA_": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortISt16reverse_iteratorIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEEdEEvT_SA_"
+  }, 
+  "_Z9summarizePKciiii": {
+    "num_inst": 128, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_Z9summarizePKciiii"
+  }, 
+  "main": {
+    "num_inst": 5715, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "_ZNSt6vectorIdSaIdEE17_M_default_appendEm": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZNSt6vectorIdSaIdEE17_M_default_appendEm"
+  }, 
+  "_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc": {
+    "num_inst": 257, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc"
+  }, 
+  "_ZN9benchmark8heapsortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEEvT_S8_": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEEvT_S8_"
+  }, 
+  "_Z19test_insertion_sortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc": {
+    "num_inst": 367, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z19test_insertion_sortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEvT_S7_S7_S7_T0_PKc"
+  }, 
+  "_ZN9benchmark8heapsortISt16reverse_iteratorIPdEdEEvT_S4_": {
+    "num_inst": 177, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark8heapsortISt16reverse_iteratorIPdEdEEvT_S4_"
+  }, 
+  "_Z5timerv": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_Z5timerv"
+  }, 
+  "_ZN9benchmark9quicksortISt16reverse_iteratorIPdEdEEvT_S4_": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortISt16reverse_iteratorIPdEdEEvT_S4_"
+  }, 
+  "_Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc": {
+    "num_inst": 257, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc"
+  }, 
+  "_ZN9benchmark9quicksortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEEvT_S8_": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "_ZN9benchmark9quicksortIN9__gnu_cxx17__normal_iteratorIPdSt6vectorIdSaIdEEEEdEEvT_S8_"
+  }
+}
