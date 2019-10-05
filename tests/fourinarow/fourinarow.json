@@ -1,0 +1,104 @@
+{
+  "minimax_player": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_player"
+  }, 
+  "minimax_player_ab": {
+    "num_inst": 79, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_player_ab"
+  }, 
+  "init_patterns": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_patterns"
+  }, 
+  "find_winner_c": {
+    "num_inst": 209, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "find_winner_c"
+  }, 
+  "init_board": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_board"
+  }, 
+  "value": {
+    "num_inst": 567, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "value"
+  }, 
+  "minimax_comp_ab2": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_comp_ab2"
+  }, 
+  "print_board": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "print_board"
+  }, 
+  "minimax_player_ab2": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_player_ab2"
+  }, 
+  "board_full": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "board_full"
+  }, 
+  "place_piece": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "place_piece"
+  }, 
+  "minimax_comp": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_comp"
+  }, 
+  "find_winner_p": {
+    "num_inst": 209, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "find_winner_p"
+  }, 
+  "bit_place_piece": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bit_place_piece"
+  }, 
+  "main": {
+    "num_inst": 134, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "think": {
+    "num_inst": 162, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "think"
+  }, 
+  "minimax_comp_ab": {
+    "num_inst": 79, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "minimax_comp_ab"
+  }
+}

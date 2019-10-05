@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 284, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "_Z8radianceRK3RayiPt": {
+    "num_inst": 575, 
+    "has_vector": true, 
+    "has_float": true, 
+    "function_name": "_Z8radianceRK3RayiPt"
+  }
+}
