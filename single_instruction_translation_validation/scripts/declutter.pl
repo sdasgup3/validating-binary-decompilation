@@ -28,6 +28,7 @@ my $help   = "";
 my $file   = "";
 my $outdir = "";
 my $opcode = "";
+my $norenameintrinsics = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -36,6 +37,7 @@ qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
 GetOptions(
     "help"   => \$help,
+    "norenameintrinsics" => \$norenameintrinsics,
     "file:s" => \$file,
     "opc:s"  => \$opcode,
 ) or die("Error in command line arguments\n");
@@ -127,7 +129,9 @@ sub fixFunc {
         }
 
         # Rename instrinsics
-        $line =~ s/\@llvm\.(.*)/\@my\.$1/;
+        if($norenameintrinsics eq "") {
+          $line =~ s/\@llvm\.(.*)/\@my\.$1/;
+        }
 
         # Remove nsw nuw
         $line =~ s/nsw//g;
@@ -157,11 +161,15 @@ sub getMainBody {
         if ( $foundMain == 0 ) {
 
             #print "!!".$tline. "!!";
+            # Remove noalias
 
             if ( $tline =~ m/(define.*)\@(sub_.*_main)(.*)/ ) {
 
                 #print "#".$tline. "#\n";
-                push @mainBody, "$1\@$modMainName$3\n";
+                my $mainproto = "$1\@$modMainName$3";
+                $mainproto =~ s/noalias//g;
+#push @mainBody, "$1\@$modMainName$3\n";
+                push @mainBody, $mainproto . "\n";
                 $foundMain = 1;
                 next;
             }
@@ -241,6 +249,10 @@ sub getFuncBody {
         my $tline = utils::trim($line);
         if ( $foundMain == 0 and ( $tline !~ m/define.*@($funcName).*/g ) ) {
             next;
+        }
+
+        if ( $tline =~ m/define/ ) {
+            $line =~ s/noalias//g;
         }
 
         $foundMain = 1;

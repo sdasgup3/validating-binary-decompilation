@@ -1,5 +1,5 @@
 BINDIR=binary
-PROG=binary_search
+PROG=get_sign
 TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
 ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/single_instruction_translation_validation/tests/mcsema/compositional_artifacts/
 
@@ -24,6 +24,19 @@ mcsema:
 	../../../scripts/mcsema_out.sh ../binary/${BIN} main ; \
         cd ..
 
+ldfg:
+	cd mcsema; \
+        for llfile in `ls *.ll`; \
+		do \
+                ${TOOL} --decompiled-output $${llfile} --target-function _${PROG} --init-state-function _init_var_correspondence --llvm-dfg-dot-out $${llfile}.dot ; \
+                dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
+                rm -rf $${llfile}.dot; \
+        done; \
+        cd ..
+
+xdfg:
+	${TOOL} --target binary/${ASM} --no-fresh-mem --x86-dfg-pdf-out mcsema/${PROG}.pdf
+
 binary:
 	gcc -O0 binary/${C} -o binary/${BIN}
 
@@ -34,10 +47,14 @@ opt:
         cd ..
 
 match:
-	${TOOLDIR}/matcher --file1 mcsema/binary_search.bin.unoptimized.opt.ll:sub_6c0_binary_search --file2 mcsema/test.proposed.opt.ll:${PROG}
+	cd mcsema; \
+	~/Github/validating-binary-decompilation/source/build/bin/matcher --file1 get_sign.bin.unoptimized.opt.ll:sub_660_get_sign --file2 test.proposed.opt.ll:get_sign ; \
+        cd ..
 
 compd:
-	${TOOLDIR}/decompiler  --output mcsema/test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input binary/${BIN}
+	cd mcsema; \
+	~/Github/validating-binary-decompilation/source/build/bin/decompiler  --output test.proposed.ll --path ~/Github/validating-binary-decompilation/single_instruction_translation_validation/tests/mcsema/compositional_artifacts/ --function ${PROG} --input ../binary/${BIN}; \
+        cd ..
 
 clean:
 	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg

@@ -40,6 +40,7 @@ static string tempfile(const string &temp);
 static void to_dot(Cfg *cfg, const string &dot_file);
 static bool to_pdf(const string &dot_file, const string &pdf_file);
 static bool view_pdf(const string &pdf_file);
+static string extractFuncName(const string &);
 
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
@@ -75,16 +76,17 @@ void CompositionalDecompiler::computePCUpdates() {
     assert(code_it < code_ite && "CompositionalDecompiler::computePCUpdates: "
                                  "Problem with code iterators");
     if (code_[code_it].is_label_defn()) {
-      stringstream ss;
-      ss << code_[code_it];
-      assert(!labelDefn2RIP.count(ss.str()) && "Duplicate label found");
-      labelDefn2RIP[ss.str()] = rip_offset_ + *i;
-      rip2LabelDefn[rip_offset_ + *i] = ss.str();
+      x64asm::Label lbl = code_[code_it].get_operand<Label>(0);
+
+      assert(!labelDefn2RIP.count(lbl.get_text()) && "Duplicate label found");
+
+      labelDefn2RIP[lbl.get_text()] = rip_offset_ + *i;
+      rip2LabelDefn[rip_offset_ + *i] = lbl.get_text();
     }
   }
 #ifdef CDDEBUG
   for (auto p : labelDefn2RIP) {
-    Console::msg() << p.first << "::" << p.second << "\n";
+    Console::msg() << p.first << "->" << p.second << "\n";
   }
   Console::msg() << "\n";
 #endif
@@ -137,12 +139,143 @@ bool CompositionalDecompiler::disassemble(string inPath) {
   return true;
 }
 
-void CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
-                                                   uint64_t currRIP,
-                                                   uint64_t currSize) {
+vector<string>
+CompositionalDecompiler::uniquifyFuncDefns(const vector<string> &local_defn) {
+  bool skipFunction = false;
+  vector<string> retval;
+
+  for (auto &line : local_defn) {
+    if (string::npos != line.find("define")) {
+      auto funcName = extractFuncName(line);
+      if (FuncCache.count(funcName)) {
+        Console::msg() << "FuncCache skipped: " << funcName << endl;
+        skipFunction = true;
+      } else {
+        Console::msg() << "FuncCache inserted: " << funcName << endl;
+        FuncCache.insert(funcName);
+      }
+    }
+
+    if (skipFunction && string::npos != line.find("}")) {
+      skipFunction = false;
+      continue;
+    }
+
+    if (skipFunction)
+      continue;
+
+    retval.push_back(line);
+  }
+
+  return retval;
+}
+
+vector<string>
+CompositionalDecompiler::handleJMPDefns(const vector<string> &local_defn) {
+  vector<string> retval;
+  bool funcSignature = true;
+  int count = 0;
+
+  std::smatch m;
+  for (auto &line : local_defn) {
+
+    if (funcSignature && string::npos == line.find("routine_")) {
+      retval.push_back(line);
+      continue;
+    }
+
+    if (funcSignature) {
+      auto repl_line =
+          std::regex_replace(line, std::regex("(define.*)struct.Memory.*"),
+                             "$1struct.Memory*, i64 %rel_off1) {");
+      retval.push_back(repl_line);
+      funcSignature = false;
+      continue;
+    }
+
+    if (std::regex_search(line, m, std::regex(".* = add.*, 2$"))) {
+      if (count == 0) {
+        retval.push_back(
+            std::regex_replace(line, std::regex(", 2$"), ", %rel_off1"));
+      } else {
+        retval.push_back(line);
+      }
+
+      count++;
+      continue;
+    }
+
+    retval.push_back(line);
+  }
+
+  return retval;
+}
+
+vector<string>
+CompositionalDecompiler::handleJCCDefns(const vector<string> &local_defn) {
+  vector<string> retval;
+  bool funcSignature = true;
+  int count = 0;
+
+  std::smatch m;
+  for (auto &line : local_defn) {
+
+    if (funcSignature && string::npos == line.find("routine_")) {
+      retval.push_back(line);
+      continue;
+    }
+
+    if (funcSignature) {
+      // retval.push_back("define i1 @routine_jg_label(%struct.State*  ,
+      // "
+      //                      "i64, %struct.Memory* , i64 %rel_off1, i64 "
+      //                      "%rel_off2) {");
+      auto repl_line = std::regex_replace(
+          line, std::regex("(define.*)struct.Memory.*"),
+          "$1struct.Memory*, i64 %rel_off1, i64 %rel_off2) {");
+      repl_line = std::regex_replace(
+          repl_line, std::regex("define %struct.Memory\\*"), "define i1");
+      retval.push_back(repl_line);
+      funcSignature = false;
+      continue;
+    }
+
+    if (std::regex_search(line, m, std::regex(".* = add.*, 2$"))) {
+      if (count == 0) {
+        retval.push_back(
+            std::regex_replace(line, std::regex(", 2$"), ", %rel_off1"));
+      } else if (count == 1) {
+        retval.push_back(
+            std::regex_replace(line, std::regex(", 2$"), ", %rel_off2"));
+      } else {
+        retval.push_back(line);
+      }
+
+      count++;
+      continue;
+    }
+
+    if (string::npos != line.find("ret")) {
+      retval.push_back("  %LD = load i8, i8* %BRANCH_TAKEN");
+      retval.push_back("  %CMP = icmp eq i8 %LD, 1");
+      retval.push_back("  ret i1 %CMP");
+      retval.push_back("}\n");
+      break;
+    }
+
+    retval.push_back(line);
+  }
+
+  return retval;
+}
+
+string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
+                                                     uint64_t currRIP,
+                                                     uint64_t currSize) {
 
   stringstream ss_instr;
   ss_instr << instr;
+  stringstream retval;
 
   /*
   ** Generate the function body with calls to specialized instr defns.
@@ -151,15 +284,26 @@ void CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
 
   if (instr.is_jmp()) {
     // Generate branching code for uncond jmp instructions
-    Body << "%call" << currRIP << "= call %struct.Memory* @routine_"
-         << normalizedInstructionName
-         << "(%struct.State* %0, i64  0, %struct.Memory* %2)" << endl
-         << endl;
-
     auto lbl = instr.get_operand<Label>(0);
     stringstream ss_label;
     ss_label << lbl;
-    Body << "\tbr label %block" << ss_label.str() << "\n\n";
+
+    if (!labelDefn2RIP.count(ss_label.str())) {
+      Console::error(1) << "Label: " << ss_label.str() << endl;
+      assert(false && "Missing address for jmp label defn\n");
+    }
+
+    uint64_t targetAddress = labelDefn2RIP.at(ss_label.str());
+    int32_t targetOffset = targetAddress - currRIP;
+
+    Body << "  %call_" << hex << currRIP << " = call %struct.Memory* @routine_"
+         << normalizedInstructionName
+         << "(%struct.State* %0, i64  0, %struct.Memory* %2, i64 " << dec
+         << targetOffset << ")" << endl
+         << endl;
+
+    Body << "  br label %block_" << ss_label.str() << "\n\n";
+    retval << "%call_" << hex << currRIP;
 
   } else if (instr.is_jcc()) {
     // Generate branching code for cond jmp instructions
@@ -169,118 +313,89 @@ void CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
 
     if (!labelDefn2RIP.count(ss_label.str())) {
       Console::error(1) << "Label: " << ss_label.str() << endl;
-      assert(false && "Missing address for label defn\n");
+      assert(false && "Missing address for jcc label defn\n");
     }
 
     uint64_t falThrouAddress = currRIP + currSize;
-    uint64_t falThrouOffset = currSize;
+    int32_t falThrouOffset = currSize;
     uint64_t targetAddress = labelDefn2RIP.at(ss_label.str());
-    uint64_t targetOffset = targetAddress - currRIP;
+    int32_t targetOffset = targetAddress - currRIP;
 
-    Body << "%call" << currRIP << "= call i1 @routine_"
+    Body << "  %call_" << hex << currRIP << " = call i1 @routine_"
          << normalizedInstructionName
-         << "(%struct.State* %0, i64  0, %struct.Memory* %2, i64 "
-         << targetOffset << ", i64 " << falThrouOffset << ")" << endl
+         << "(%struct.State* %0, i64  0, %struct.Memory* %2, i64 " << dec
+         << targetOffset << ", i64 " << dec << falThrouOffset << ")" << endl
          << endl;
 
     // Generate branching code for any jmp instructions
+    // If the `falThrouAddress` is the target of any x86 jmp, then we already
+    // have a label associated with it; Else create new one.
+    stringstream falThrouAddressLabel;
     if (!rip2LabelDefn.count(falThrouAddress)) {
-      Console::error(1) << "Address: " << falThrouAddress << endl;
-      assert(false && "Missing label defintion for address\n");
+      // Console::error(1) << "Address: " << falThrouAddress << endl;
+      // assert(false && "Missing label defintion for address\n");
+      falThrouAddressLabel << hex << falThrouAddress;
+      Body << "  br i1 "
+           << "%call_" << hex << currRIP << ", label %block_" << ss_label.str()
+           << ", label %block_" << falThrouAddressLabel.str() << "\n\n";
+      Body << "block_" << falThrouAddressLabel.str() << ":\n";
+    } else {
+      falThrouAddressLabel << hex << rip2LabelDefn.at(falThrouAddress);
+      Body << "  br i1 "
+           << "%call_" << hex << currRIP << ", label %block_" << ss_label.str()
+           << ", label %block_" << falThrouAddressLabel.str() << "\n\n";
     }
+    retval << "";
 
-    Body << "\tbr i1 "
-         << "%call" << currRIP << ", label %block" << ss_label.str()
-         << ", label %block" << rip2LabelDefn.at(falThrouAddress) << "\n\n";
   } else {
     // Other instructions
-    Body << "%call" << currRIP << "= call %struct.Memory* @routine_"
+    Body << "  %call_" << hex << currRIP << " = call %struct.Memory* @routine_"
          << normalizedInstructionName
          << "(%struct.State* %0, i64  0, %struct.Memory* %2)" << endl
          << endl;
+    retval << "%call_" << hex << currRIP;
   }
 
   /*
   ** Generate the defns.
   */
-  if (ICache.count(normalizedInstructionName))
-    return;
-
   if (!createSetup(instr, workdir, scriptsPath)) {
     exit(1);
   }
   auto local_defn = runSetup(instr, workdir, scriptsPath);
 
-  // Special handling for conditional jumps
-  vector<string> mod_def_jcc;
-  bool funcSignature = true;
-  regex r(".* = add.*, 2$");
-  int count = 0;
+  // Uniquify function definitions
+  auto uniq_local_defn = uniquifyFuncDefns(local_defn);
 
+  vector<string> mod_def_jcc = uniq_local_defn;
+  // Special handling for (un)conditional jumps
   if (instr.is_jcc()) {
-    for (auto &line : local_defn) {
-
-      if (funcSignature && string::npos == line.find("routine_")) {
-        mod_def_jcc.push_back(line);
-        continue;
-      }
-
-      if (funcSignature) {
-        mod_def_jcc.push_back("define i1 @routine_jg_label(%struct.State*  , "
-                              "i64, %struct.Memory* , i64 %rel_off1, i64 "
-                              "%rel_off2) {");
-        funcSignature = false;
-      }
-
-      std::smatch m;
-      if (std::regex_search(line, m, r)) {
-        if (count == 0) {
-          mod_def_jcc.push_back(
-              std::regex_replace(line, std::regex(", 2$"), ", %rel_off1"));
-        }
-
-        if (count == 1) {
-          mod_def_jcc.push_back(
-              std::regex_replace(line, std::regex(", 2$"), ", %rel_off2"));
-        }
-
-        count++;
-        continue;
-      }
-
-      if (string::npos != line.find("ret")) {
-        mod_def_jcc.push_back("%13 = load i8, i8* %BRANCH_TAKEN");
-        mod_def_jcc.push_back("%14 = icmp eq i8 %13, 1");
-        mod_def_jcc.push_back("ret i1 %14");
-        mod_def_jcc.push_back("}");
-        break;
-      }
-
-      mod_def_jcc.push_back(line);
-    }
-
-    for (auto line : mod_def_jcc) {
-      Defns << line << "\n";
-    }
-
-  } else {
-
-    for (auto line : local_defn) {
-      Defns << line << "\n";
-    }
+    mod_def_jcc = handleJCCDefns(uniq_local_defn);
+  }
+  if (instr.is_jmp()) {
+    mod_def_jcc = handleJMPDefns(uniq_local_defn);
   }
 
-  ICache.insert(normalizedInstructionName);
+  for (auto line : mod_def_jcc) {
+    Defns << line << "\n";
+  }
+
+  return retval.str();
 }
 
-void CompositionalDecompiler::decompileFunction(
-    const string &extractedFunction) {
+string
+CompositionalDecompiler::decompileFunction(const string &extractedFunction) {
 
   Console::msg() << "Decompiling Function: " + extractedFunction + "...\n";
 
   Body << "define %struct.Memory* @" + extractedFunction +
               "(%struct.State* noalias , i64, "
               "%struct.Memory* noalias) alwaysinline  {\n";
+  Body << "entry:" << endl;
+  Body << "  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 "
+          "0, i32 6, i32 33, i32 0, i32 0"
+       << endl;
+  Body << "  store i64 %1, i64* %3, align 8" << endl << endl;
 
   // Iterate over instructions to
   // 1. generate calls to specialized instruction semantics.
@@ -288,6 +403,7 @@ void CompositionalDecompiler::decompileFunction(
   x64asm::Code code_ = cfg->get_code();
   auto fxn = cfg->get_function();
   uint64_t rip_offset_ = fxn.get_rip_offset();
+  string retval("");
 
   size_t code_it = 0;
   size_t code_ite = code_.size();
@@ -313,31 +429,31 @@ void CompositionalDecompiler::decompileFunction(
     Console::msg() << "\n\nDecompiling instr:" << instr << "...\n";
 
     // Generate comment
-    stringstream ss_code, ss_rip, ss_size, ss_opcode;
-
-    ss_code << instr;
-    ss_rip << currRIP;
-    ss_size << currSize;
-    ss_opcode << opcode;
-
-    Body << "\t; Code: " << ss_code.str();
-    Body << "\t RIP: " << hex << showbase << ss_rip.str();
-    Body << "\t Bytes: " << dec << ss_size.str();
+    Body << "  ; Code: " << instr;
+    Body << "\t RIP: " << hex << currRIP;
+    Body << "\t Bytes: " << dec << currSize;
     Body << "\n";
 
     // For label defntion (except the function name) generate LLVM branch
     // instruction
     if (opcode == LABEL_DEFN) {
-      if (code_it != 0)
-        Body << "block_L" << hex << ss_rip.str() << ":\n";
+      if (code_it != 0) {
+
+        Label lbl = instr.get_operand<Label>(0);
+        if (code_[code_it - 1].is_any_jump() == false) {
+          Body << "  br label %block_" << lbl.get_text() << "\n";
+        }
+        Body << "block_" << lbl.get_text() << ":\n\n";
+      }
       continue;
     }
 
     // Generate call to specialized semantics defintion
-    decompileInstruction(instr, currRIP, currSize);
+    retval = decompileInstruction(instr, currRIP, currSize);
   }
 
   Console::msg() << "Decompiling Function: " + extractedFunction + " Done.\n\n";
+  return retval;
 }
 
 void CompositionalDecompiler::decompile(string outLLVMPath) {
@@ -357,17 +473,24 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
     return;
   }
 
-  decompileFunction(extractedFunction);
+  auto retval = decompileFunction(extractedFunction);
   if (has_error()) {
     Console::error(1) << error_message_;
     return;
   }
 
+  if (retval == "") {
+    Console::error(1) << error_message_;
+    assert(false && "Problem with return value\n");
+  }
+
   // Generatng decompilation io text
+  Console::msg() << "\n\nWriting to " << outLLVMPath << " ...\n";
   std::ofstream fd;
   fd.open(outLLVMPath.c_str(), ios::out | ios::app);
   fd << Body.str();
-  fd << "}\n";
+  fd << "  ret %struct.Memory* " << retval << "\n";
+  fd << "}\n\n";
   fd << Defns.str();
   fd.close();
 
@@ -420,6 +543,17 @@ bool view_pdf(const string &pdf_file) {
   Terminal term;
   term << "evince " << pdf_file << endl;
   return term.result() == 0;
+}
+
+string extractFuncName(const string &name) {
+  auto it1 = name.find("@");
+  auto it2 = name.find("(");
+  if (it1 == string::npos or it2 == string::npos) {
+    Console::error(1) << "Function name not expected\n";
+    return "";
+  }
+
+  return name.substr(it1 + 1, it2 - it1 - 1);
 }
 
 // string extractNummbersFromLabel(const string &str) {

@@ -37,7 +37,8 @@ private:
   string workdir;
 
   // Cache for instruction defn which are already decompiled
-  set<string> ICache;
+  // set<string> ICache;
+  set<string> FuncCache;
 
   Cfg *cfg;
   bool disassemble(string inPath);
@@ -62,17 +63,20 @@ private:
   // Specialized instruction definitions
   stringstream Defns;
 
-  void decompileFunction(const string &extractedFunction);
+  string decompileFunction(const string &extractedFunction);
   // bool sanity_check_template_instruction(x64asm::Instruction i1,
   //                                       x64asm::Instruction i2);
   // void decompileInstruction(x64asm::Instruction instr,
   //                          x64asm::Instruction template_instr);
-  void decompileInstruction(x64asm::Instruction instr, uint64_t, uint64_t);
+  string decompileInstruction(x64asm::Instruction instr, uint64_t, uint64_t);
 
   // int getMcSemaIndices(const x64asm::R &reg);
   // int getMcSemaIndices(const x64asm::Sse &reg);
   // string findFileForOpcode(x64asm::Instruction instr,
   //                         const string &singleInstrDecompPath);
+  vector<string> uniquifyFuncDefns(const vector<string> &local_defn);
+  vector<string> handleJMPDefns(const vector<string> &local_defn);
+  vector<string> handleJCCDefns(const vector<string> &local_defn);
 
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,

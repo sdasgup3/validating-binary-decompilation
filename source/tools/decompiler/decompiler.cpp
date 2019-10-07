@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
       BinaryIn.value() == "" || LLVMOut.value() == "") {
     Console::msg() << "Usage: compositional-decompiler "
                       "--input <binary file>\n"
-                      "--output <some file>.bc\n"
+                      "--output <some file>.ll\n"
                       "--path <path>\n"
                       "--function <function name>\n"
                    << "Exiting...\n";
