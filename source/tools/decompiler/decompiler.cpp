@@ -50,9 +50,9 @@ auto &workdir_arg =
     ValueArg<string>::create("workdir")
         .usage("<path/to/dir>")
         .description("The working directory")
-        .default_val("/home/sdasgup3/Github/validating-binary-decompilation/"
-                     "single_instruction_translation_validation/tests/mcsema/"
-                     "compositional_artifacts/");
+        .default_val(
+            "/home/sdasgup3/Github/validating-binary-decompilation/tests/"
+            "compositional_artifacts_single_instruction_decompilation/");
 
 auto &view =
     FlagArg::create("view").alternate("v").description("View cfg immediately");
