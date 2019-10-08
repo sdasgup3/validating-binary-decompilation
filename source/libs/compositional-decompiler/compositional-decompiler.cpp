@@ -49,8 +49,8 @@ CompositionalDecompiler::CompositionalDecompiler(
   this->flat_binary = flat_binary;
   this->extractedFunction = extractedFunction;
   this->singleInstrDecompPath = singleInstrDecompPath;
-  this->scriptsPath = "/home/sdasgup3/Github/validating-binary-decompilation/"
-                      "single_instruction_translation_validation/scripts/";
+  this->scriptsPath =
+      "/home/sdasgup3/Github/validating-binary-decompilation/tests/scripts/";
   this->workdir = workdir;
 
   cfg = NULL;
