@@ -1,43 +1,31 @@
-BINDIR=binary
 PROG=sum_2_n
 TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
-ARTIFACTDIR=${HOME}//Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+INDIR=binary/
+OURDIR=mcsema/
 
-C=${PROG}.c
-BIN=${PROG}.bin
-ASM=${PROG}.asm
+.PHONY: binary mcsema objdump match opt clean compd
 
-$(info $$C is [${C}])
-$(info $$BIN is [${BIN}])
-$(info $$LABEL is [${LABEL}])
-$(info  ) 
+objdump: ${INDIR}test
+	objdump -d $< > ${INDIR}/test.objdump
 
-all: binary mcsema ldfg xdfg
-.PHONY: clean binary mcsema
+mcsema: ${INDIR}test
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OURDIR}test.cfg --binary $< --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OURDIR}test.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${OURDIR}test.bc -o ${OURDIR}test.ll
 
-objdump: binary/${BIN}
-	objdump -d $< > binary/${PROG}.objdump
+binary: ${INDIR}test.c
+	gcc -O0 ${INDIR}test.c -o ${INDIR}test
 
-mcsema:
-	mkdir -p mcsema; \
-	cd mcsema; \
-	../../../../scripts/mcsema_out.sh ../binary/${BIN} main ; \
-        cd ..
-
-binary:
-	gcc -O0 binary/${C} -o binary/${BIN}
-
-opt:
-	cd mcsema; \
-	opt -S  -inline   test.proposed.ll -o test.proposed.inline.ll ; opt -S  -O3    test.proposed.inline.ll -o test.proposed.opt.ll; \
-	opt -S  -inline   ${PROG}.bin.unoptimized.ll -o ${PROG}.bin.unoptimized.inline.ll ; opt -S  -O3    ${PROG}.bin.unoptimized.inline.ll -o ${PROG}.bin.unoptimized.opt.ll; \
-        cd ..
+opt: ${OURDIR}test.ll ${OURDIR}test.proposed.ll
+	opt -S  -inline   ${OURDIR}test.proposed.ll -o ${OURDIR}test.proposed.inline.ll ; opt -S  -O3    ${OURDIR}test.proposed.inline.ll -o ${OURDIR}test.proposed.opt.ll
+	opt -S  -inline   ${OURDIR}test.ll -o ${OURDIR}test.inline.ll ; opt -S  -O3    ${OURDIR}test.inline.ll -o ${OURDIR}test.opt.ll
 
 match:
-	${TOOLDIR}/matcher --file1 mcsema/sum_2_n.bin.unoptimized.opt.ll:sub_660_sum_2_n --file2 mcsema/test.proposed.opt.ll:${PROG}
+	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:sub_660_sum_2_n --file2 ${OURDIR}test.proposed.opt.ll:${PROG}
 
 compd:
-	${TOOLDIR}/decompiler  --output mcsema/test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input binary/${BIN}
+	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test
 
 clean:
-	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg
+	rm mcsema/*.bc mcsema/*.ll
