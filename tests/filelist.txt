@@ -1,4 +1,0 @@
-array_reverse
-binary_search
-get_sign
-sum_2_n
