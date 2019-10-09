@@ -1,51 +1,31 @@
-# OPT solution is deprecated
-#OPT=${HOME}/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so
-#OPT_ARG=--var_corr -debug-only=variable_correspondence  -disable-output
-# Stoke libs can be accessed using the tool variable_bb_correspondence
-#STOKE=${HOME}/Github/paa-stoke/bin/
-#${OPT} < $${llfile}  ${OPT_ARG} -target-function _${PROG} -init-state-function _init_var_correspondence --output-dfg-file $${llfile}.dot ;
-
-BINDIR=binary
 PROG=add_sub
-TOOL=${HOME}/Github/validating-binary-decompilation/source/build/bin/variable_bb_correspondence
+TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
+ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+INDIR=binary/
+OURDIR=mcsema/
 
-C=${PROG}.c
-BIN=${PROG}.bin
-ASM=${PROG}.asm
+.PHONY: binary mcsema objdump match opt clean compd
 
-$(info $$C is [${C}])
-$(info $$BIN is [${BIN}])
-$(info $$LABEL is [${LABEL}])
-$(info  ) 
+objdump: ${INDIR}test
+	objdump -d $< > ${INDIR}/test.objdump
 
-all: binary mcsema ldfg xdfg
-.PHONY: clean binary mcsema
+mcsema: ${INDIR}test
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OURDIR}test.cfg --binary $< --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OURDIR}test.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${OURDIR}test.bc -o ${OURDIR}test.ll
 
-objdump: binary/${BIN}
-	objdump -d $< > binary/${PROG}.objdump
+binary: ${INDIR}test.c
+	gcc -O0 ${INDIR}test.c -o ${INDIR}test
 
-mcsema:
-	mkdir -p mcsema; \
-	cd mcsema; \
-	../../../scripts/mcsema_out.sh ../binary/${BIN} main ; \
-        cd ..
+opt: ${OURDIR}test.ll ${OURDIR}test.proposed.ll
+	opt -S  -inline   ${OURDIR}test.proposed.ll -o ${OURDIR}test.proposed.inline.ll ; opt -S  -O3    ${OURDIR}test.proposed.inline.ll -o ${OURDIR}test.proposed.opt.ll
+	opt -S  -inline   ${OURDIR}test.ll -o ${OURDIR}test.inline.ll ; opt -S  -O3    ${OURDIR}test.inline.ll -o ${OURDIR}test.opt.ll
 
-ldfg:
-	cd mcsema; \
-        for llfile in `ls *.ll`; \
-		do \
-                ${TOOL} --decompiled-output $${llfile} --target-function _${PROG} --init-state-function _init_var_correspondence --llvm-dfg-dot-out $${llfile}.dot ; \
-                dot -Tpdf $${llfile}.dot -o $${llfile}.pdf; \
-                rm -rf $${llfile}.dot; \
-        done; \
-        cd ..
+match:
+	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:sub_660_add_sub --file2 ${OURDIR}test.proposed.opt.ll:${PROG}
 
-xdfg:
-	${TOOL} --target binary/${ASM} --no-fresh-mem --x86-dfg-pdf-out mcsema/${PROG}.pdf
-
-binary:
-	gcc -O0 binary/${C} -o binary/${BIN}
-
+compd:
+	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test
 
 clean:
-	rm mcsema/*.bc mcsema/*.ll mcsema/*.dfg 
+	rm mcsema/*.bc mcsema/*.ll
