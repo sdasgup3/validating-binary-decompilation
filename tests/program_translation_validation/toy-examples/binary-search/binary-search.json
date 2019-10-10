@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "binary_search": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "binary_search"
+  }
+}

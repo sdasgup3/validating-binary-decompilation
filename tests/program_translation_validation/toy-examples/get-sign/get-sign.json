@@ -1,0 +1,14 @@
+{
+  "get_sign": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_sign"
+  }, 
+  "main": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

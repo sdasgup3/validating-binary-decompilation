@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "add_sub": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "add_sub"
+  }
+}
