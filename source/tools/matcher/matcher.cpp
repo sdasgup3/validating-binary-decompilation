@@ -28,6 +28,7 @@
 #include <fstream>
 #include <iostream>
 #include <memory>
+#include <regex>
 #include <string>
 #include <vector>
 // Stoke imports
@@ -115,7 +116,12 @@ int main(int argc, char **argv) {
       break;
     }
 
-    if (string::npos == Func.getName().str().find(TargetFunc))
+    // if (string::npos == Func.getName().str().find(TargetFunc))
+    // if (std::regex_search(Func.getName().str(), m, std::regex("sub.*_")) ==
+    //    false)
+    smatch m;
+    string funcName(Func.getName().str());
+    if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc)) == false)
       continue;
 
     F1 = &Func;

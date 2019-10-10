@@ -43,13 +43,9 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
   if (GEPL && GEPR) {
-    llvm::errs() << *GEPL << "\n";
-    llvm::errs() << *GEPR << "\n";
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
-  // llvm::errs() << *I1 << "\n";
-  // llvm::errs() << *I2 << "\n";
   if (I1->isBinaryOp()) {
     assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
            "deepMatch Assert!!");
@@ -68,34 +64,6 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
-  if (!I1 || !I2)
-    return false;
-  return (I1->getOpcode() == I2->getOpcode());
-}
-
-void Matcher::dumpPotIMatches() {
-  for (auto PotMatch : PotIMatches) {
-    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
-    for (auto match : PotMatch.second) {
-      llvm::errs() << "\t"
-                   << "[" << match << "]:" << *match << "\n";
-    }
-    llvm::errs() << "\t}\n\n";
-  }
-}
-
-void Matcher::dumpPotBBMatches() {
-  for (auto PotMatch : PotBBMatches) {
-    llvm::errs() << "[" << PotMatch.first << "]: " << PotMatch.first->getName()
-                 << " {\n";
-    llvm::errs() << "\t"
-                 << "[" << PotMatch.second << "]:" << PotMatch.second->getName()
-                 << "\n";
-    llvm::errs() << "\t}\n\n";
-  }
-}
-
 void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
   if (!initialMatch(F1, F2)) {
     assert(0 && "Problem with Initial Match");
@@ -103,8 +71,13 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
   }
 
   for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+    // if ((I1->getType() != IgnoreType) ||
+    //    (nullptr != dyn_cast<CallInst>(&*I1))) {
+    //  VertexSet.push_back(&*I1);
+    //}
+    VertexSet.push_back(&*I1);
+
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
-      // if (shallowMatch(&*I1, &*I2)) {
       if (deepMatch(&*I1, &*I2)) {
         PotIMatches[&*I1].insert(&*I2);
       }
@@ -112,21 +85,24 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
   }
 
 #ifdef MATCHER_DEBUG
-  llvm::errs() << "Retrieve Potential Matches...\n";
+  llvm::errs() << "\n\n[Info] Retrieve Potential Matches...\n";
   dumpPotIMatches();
 #endif
 }
 
 // Retrieve BB correspondence based on exact matches
-bool Matcher::retrievePotBBMatches(const vector<Value *> &V) {
+bool Matcher::retrievePotBBMatches() {
   bool changed = false;
 
-  for (auto U : V) {
+  for (auto U : VertexSet) {
     auto &pMatches = PotIMatches.at(U);
     if (pMatches.size() != 1)
       continue;
 
     if (!dyn_cast<Instruction>(U))
+      continue;
+
+    if (dyn_cast<GetElementPtrInst>(U))
       continue;
 
     auto LBB = (dyn_cast<Instruction>(U))->getParent();
@@ -155,36 +131,6 @@ bool Matcher::retrievePotBBMatches(const vector<Value *> &V) {
 }
 
 /*
-** Intersection of S1 and S2
-*/
-static set<Value *> Intersection(const set<Value *> &S1,
-                                 const set<Value *> &S2) {
-  set<Value *> retval;
-  if ((!S1.size() && S2.size()) || (!S2.size() && S1.size()))
-    return retval;
-
-  // llvm::errs() << "S1:\n";
-  // for (auto s1 : S1) {
-  //  llvm::errs() << "[" << s1 << "]:" << *s1 << "\n";
-  //}
-  // llvm::errs() << "S2:\n";
-  // for (auto s2 : S2) {
-  //  llvm::errs() << "[" << s2 << "]:" << *s2 << "\n";
-  //}
-
-  for (auto s1 : S1) {
-    if (S2.count(s1))
-      retval.insert(s1);
-  }
-
-  return retval;
-}
-
-static void dumpLLVMNode(const Value *V) {
-  llvm::errs() << "[" << V << "]: " << *V << "\n";
-}
-
-/*
 ** Assume that the arguments of the two functions are potential matches
 */
 bool Matcher::initialMatch(Function *F1, Function *F2) {
@@ -195,6 +141,7 @@ bool Matcher::initialMatch(Function *F1, Function *F2) {
   auto argI1 = F1->arg_begin();
   auto argI2 = F2->arg_begin();
 
+  int count = 0;
   while (argI1 != F1->arg_end() && argI2 != F2->arg_end()) {
     // if (argI1->getType() != argI2->getType()) {
     //  llvm::errs() << "Argument type mismatch\n";
@@ -202,30 +149,20 @@ bool Matcher::initialMatch(Function *F1, Function *F2) {
     //  llvm::errs() << *argI2 << " [" << *(argI2->getType()) << "]\n";
     //  return false;
     //}
+    if (count == 2) {
+      IgnoreType = argI1->getType();
+      // break;
+    }
+
+    VertexSet.push_back(&*argI1);
     PotIMatches[&*argI1].insert(&*argI2);
+
     argI1++;
     argI2++;
+    count++;
   }
 
   return true;
-}
-
-// Check if all the instructions belong to same BB
-std::pair<bool, BasicBlock *> static sameBB(std::set<Value *> S) {
-  BasicBlock *candBB = NULL;
-  for (auto candInstr : S) {
-    Instruction *I = dyn_cast<Instruction>(candInstr);
-    assert(I && "sameBB: not an instruction\n");
-
-    if (!candBB) {
-      candBB = I->getParent();
-    }
-    if (candBB != I->getParent()) {
-      return std::pair<bool, BasicBlock *>(false, nullptr);
-    }
-  }
-
-  return std::pair<bool, BasicBlock *>(true, candBB);
 }
 
 static std::map<Value *, int> getStoreInstOrder(BasicBlock *BB) {
@@ -243,153 +180,73 @@ static std::map<Value *, int> getStoreInstOrder(BasicBlock *BB) {
   return retval;
 }
 
-bool Matcher::handleConflictingStores(const vector<Value *> &V) {
-  bool changed = false;
-  for (auto U : V) {
-    auto &pMatches = PotIMatches.at(U);
-
-    // Hadling multiple (>1) potential matches.
-    if (pMatches.size() == 1) {
-      exactIMatches.insert(*pMatches.begin());
-      continue;
-    }
-
-    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
-    if (!LStoreInstr)
-      continue;
-
-    auto LBB = LStoreInstr->getParent();
-    if (!PotBBMatches.count(LBB)) {
-      // llvm::errs()
-      //    << "dualSimulationDriver::Unable to find BB correspondence\n";
-      continue;
-    }
-
-    // Remove candidate stores belonging to different basic blocks than
-    // the matching LBB
-    vector<Value *> deleNode;
-    for (auto pMatch : pMatches) {
-      if (PotBBMatches.at(LBB) !=
-          (dyn_cast<Instruction>(pMatch))->getParent()) {
-        deleNode.push_back(pMatch);
-      }
-    }
-
-    for (auto node : deleNode) {
-      changed = true;
-      pMatches.erase(node);
-    }
-
-    if (pMatches.size() == 1) {
-      exactIMatches.insert(*pMatches.begin());
-      continue;
-    }
-
-    // If still we have multiple store candidates within the same BB,
-    // use the syntactic store order to disambiguate
-    auto res = sameBB(pMatches);
-    if (!res.first)
-      continue;
-
-    auto RBB = res.second;
-
-    std::map<Value *, int> LStoreInstrOrderMap = getStoreInstOrder(LBB);
-    std::map<Value *, int> RStoreInstrOrderMap = getStoreInstOrder(RBB);
-
-    int LOrder = LStoreInstrOrderMap.at(LStoreInstr);
-    deleNode.clear();
-    for (auto pMatch : pMatches) {
-      if (LOrder != RStoreInstrOrderMap.at(pMatch))
-        deleNode.push_back(pMatch);
-    }
-
-    for (auto node : deleNode) {
-      changed |= true;
-      pMatches.erase(node);
-    }
-
-    if (pMatches.size() == 1) {
-      exactIMatches.insert(*pMatches.begin());
-    }
-  }
-
-  for (auto U : V) {
-    auto &pMatches = PotIMatches.at(U);
-
-    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
-    if (!LStoreInstr)
-      continue;
-
-    // Hadling multiple (>1) potential matches.
-    if (pMatches.size() == 1)
-      continue;
-
-    auto LBB = LStoreInstr->getParent();
-    if (PotBBMatches.count(LBB)) {
-      continue;
-    }
-
-    // Remove candidate stores which are already matched uniquely
-    vector<Value *> deleNode;
-    for (auto pMatch : pMatches) {
-      if (exactIMatches.count(pMatch)) {
-        deleNode.push_back(pMatch);
-      }
-    }
-
-    for (auto node : deleNode) {
-      changed |= true;
-      pMatches.erase(node);
-    }
-
-    if (pMatches.size() == 1) {
-      exactIMatches.insert(*pMatches.begin());
-    }
-  }
-  return changed;
-}
-
 bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   // Populate the vertices set Vq
-  vector<Value *> V;
-  auto argI1 = F1->arg_begin();
-  while (argI1 != F1->arg_end()) {
-    V.push_back(&*argI1);
-    argI1++;
-  }
+  // vector<Value *> V;
+  // auto argI1 = F1->arg_begin();
+  // while (argI1 != F1->arg_end()) {
+  //  V.push_back(&*argI1);
+  //  argI1++;
+  //}
 
-  for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
-    V.push_back(&*U);
-  }
+  // for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
+  //  V.push_back(&*U);
+  //}
 
   bool changed = true;
-
+  size_t round = 0;
   while (changed) {
     // Run dual simulation
-    changed = dualSimulation(F1, F2, V);
+    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
+                 << ": Round: " << round << "\n";
+    // changed = dualSimulation(F1, F2, V);
+    changed = dualSimulation(F1, F2);
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n\n[Info] After Dual Simulation"
+                 << ": Round: " << round << "\n";
+    dumpPotIMatches();
+#endif
 
     // Find BasicBlock correspondence
-    changed |= retrievePotBBMatches(V);
+    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
+                 << ": Round: " << round << "\n";
+    // changed |= retrievePotBBMatches(V);
+    changed |= retrievePotBBMatches();
 
     // Handle conflicting stores
-    changed |= handleConflictingStores(V);
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
+                 << ": Round: " << round << "\n";
+    changed |= handleConflictingStores();
+
+    round++;
   }
 
   // Check final results
-  for (auto U : V) {
+  llvm::errs() << "\n[Info]: Check for multiple matches\n";
+  bool result = true;
+  for (auto U : VertexSet) {
     auto V = PotIMatches.at(&*U);
     if (V.size() != 1) {
       if (dyn_cast<BranchInst>(&*U))
         continue;
-      return false;
+
+      result = false;
+      // Multiple matches
+      llvm::errs() << "Multiple matches exist for ";
+      dumpLLVMNode(U);
+      for (auto p : V) {
+        dumpLLVMNode(p);
+      }
     }
   }
 
-  return true;
+  return result;
 }
 
-bool Matcher::dualSimulation(Function *F1, Function *F2,
-                             const vector<Value *> &V) {
+// bool Matcher::dualSimulation(Function *F1, Function *F2,
+//                             const vector<Value *> &V) {
+bool Matcher::dualSimulation(Function *F1, Function *F2) {
 
   // 2:  changed←true
   bool changed = true;
@@ -404,7 +261,10 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
     changed = false;
 
     // 5: for u←Vq do
-    for (auto U : V) {
+    for (auto U : VertexSet) {
+
+      if (dyn_cast<CallInst>(U))
+        continue;
 
       // 6: for u' ←Q.adj(u) do
       for (Value::user_iterator UPrimeI = U->user_begin();
@@ -433,6 +293,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
             dumpLLVMNode(U);
             assert(0 && "No potential matches for UPrime");
           }
+
           set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
           set<Value *> VAdj;
           for (Value::user_iterator VPrimeI = V->user_begin();
@@ -540,65 +401,161 @@ bool Matcher::dualSimulation(Function *F1, Function *F2,
     }
   }
 
-#ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\nAfter Simple Simulation...\n";
-  dumpPotIMatches();
-#endif
-
   return changed;
 }
 
-void Matcher::simpleSimulation(Function *F1, Function *F2) {
+// Check if all the instructions belong to same BB
+std::pair<bool, BasicBlock *> static sameBB(std::set<Value *> S) {
+  BasicBlock *candBB = NULL;
+  for (auto candInstr : S) {
+    Instruction *I = dyn_cast<Instruction>(candInstr);
+    assert(I && "sameBB: not an instruction\n");
 
-  if (!initialMatch(F1, F2))
-    return;
-
-  // 2: changed←true
-  bool changed = true;
-  // 3: while changed do
-  while (changed) {
-    // 4: changed←false
-    changed = false;
-    // 5: for u←Vq do
-    for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
-      // 6: for u' ←Q.adj(u) do
-      for (Value::user_iterator UPrimeI = U->user_begin();
-           UPrimeI != U->user_end(); UPrimeI++) {
-        // Instruction *UPrime = dyn_cast<Instruction>(*UPrimeI);
-        Value *UPrime = dyn_cast<Value>(*UPrimeI);
-        assert(UPrime && "User not value");
-
-        vector<Value *> deleteList;
-        // 7: for v ←Φ(u) do
-        for (auto V : PotIMatches.at(&*U)) {
-          // 8: if G.adj(v) ∩ Φ(u') = ∅ then
-          set<Value *> UPrimeMatches = PotIMatches.at(UPrime);
-          set<Value *> VAdj;
-          for (Value::user_iterator VPrimeI = V->user_begin();
-               VPrimeI != V->user_end(); VPrimeI++) {
-            Value *VPrime = dyn_cast<Value>(*VPrimeI);
-            assert(VPrime && "User not value");
-            VAdj.insert(VPrime);
-          }
-
-          if (!Intersection(UPrimeMatches, VAdj).size()) {
-            deleteList.push_back(V);
-            // 13: changed←true
-            changed = true;
-          }
-        }
-
-        // 9: remove v from Φ(u)
-        for (auto deleteNode : deleteList) {
-          PotIMatches.at(&*U).erase(deleteNode);
-        }
-      }
+    if (!candBB) {
+      candBB = I->getParent();
+    }
+    if (candBB != I->getParent()) {
+      return std::pair<bool, BasicBlock *>(false, nullptr);
     }
   }
-#ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\nAfter Simple Simulation...\n";
-  dumpPotIMatches();
-#endif
+
+  return std::pair<bool, BasicBlock *>(true, candBB);
+}
+
+bool Matcher::handleConflictingStores() {
+  bool changed = false;
+  for (auto U : VertexSet) {
+    auto &pMatches = PotIMatches.at(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
+    if (!LStoreInstr)
+      continue;
+
+    auto LBB = LStoreInstr->getParent();
+    if (!PotBBMatches.count(LBB)) {
+      // llvm::errs()
+      //    << "dualSimulationDriver::Unable to find BB correspondence\n";
+      continue;
+    }
+
+    // Remove candidate stores belonging to different basic blocks than
+    // the matching LBB
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      if (PotBBMatches.at(LBB) !=
+          (dyn_cast<Instruction>(pMatch))->getParent()) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    for (auto node : deleNode) {
+      changed = true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    // If still we have multiple store candidates within the same BB,
+    // use the syntactic store order to disambiguate
+    auto res = sameBB(pMatches);
+    if (!res.first)
+      continue;
+
+    auto RBB = res.second;
+
+    std::map<Value *, int> LStoreInstrOrderMap = getStoreInstOrder(LBB);
+    std::map<Value *, int> RStoreInstrOrderMap = getStoreInstOrder(RBB);
+
+    int LOrder = LStoreInstrOrderMap.at(LStoreInstr);
+    deleNode.clear();
+    for (auto pMatch : pMatches) {
+      if (LOrder != RStoreInstrOrderMap.at(pMatch))
+        deleNode.push_back(pMatch);
+    }
+
+    for (auto node : deleNode) {
+      changed |= true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+    }
+  }
+
+  for (auto U : VertexSet) {
+    auto &pMatches = PotIMatches.at(U);
+
+    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
+    if (!LStoreInstr)
+      continue;
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1)
+      continue;
+
+    auto LBB = LStoreInstr->getParent();
+    if (PotBBMatches.count(LBB)) {
+      continue;
+    }
+
+    // Remove candidate stores which are already matched uniquely
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      if (exactIMatches.count(pMatch)) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    for (auto node : deleNode) {
+      changed |= true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+    }
+  }
+  return changed;
+}
+
+/*
+** Intersection of S1 and S2
+*/
+set<Value *> Matcher::Intersection(const set<Value *> &S1,
+                                   const set<Value *> &S2) {
+  set<Value *> retval;
+  if ((!S1.size() && S2.size()) || (!S2.size() && S1.size()))
+    return retval;
+
+  // llvm::errs() << "S1:\n";
+  // for (auto s1 : S1) {
+  //  llvm::errs() << "[" << s1 << "]:" << *s1 << "\n";
+  //}
+  // llvm::errs() << "S2:\n";
+  // for (auto s2 : S2) {
+  //  llvm::errs() << "[" << s2 << "]:" << *s2 << "\n";
+  //}
+
+  for (auto s1 : S1) {
+    if (S2.count(s1))
+      retval.insert(s1);
+  }
+
+  return retval;
+}
+
+void Matcher::dumpLLVMNode(const Value *V) {
+  llvm::errs() << "[" << V << "]: " << *V << "\n";
 }
 
 int Matcher::cmpNumbers(uint64_t L, uint64_t R) const {
@@ -1029,4 +986,85 @@ int Matcher::cmpValues(const Value *L, const Value *R) const {
   //     RightSN = sn_mapR.insert(std::make_pair(R, sn_mapR.size()));
 
   // return cmpNumbers(LeftSN.first->second, RightSN.first->second);
+}
+
+void Matcher::simpleSimulation(Function *F1, Function *F2) {
+
+  if (!initialMatch(F1, F2))
+    return;
+
+  // 2: changed←true
+  bool changed = true;
+  // 3: while changed do
+  while (changed) {
+    // 4: changed←false
+    changed = false;
+    // 5: for u←Vq do
+    for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
+      // 6: for u' ←Q.adj(u) do
+      for (Value::user_iterator UPrimeI = U->user_begin();
+           UPrimeI != U->user_end(); UPrimeI++) {
+        // Instruction *UPrime = dyn_cast<Instruction>(*UPrimeI);
+        Value *UPrime = dyn_cast<Value>(*UPrimeI);
+        assert(UPrime && "User not value");
+
+        vector<Value *> deleteList;
+        // 7: for v ←Φ(u) do
+        for (auto V : PotIMatches.at(&*U)) {
+          // 8: if G.adj(v) ∩ Φ(u') = ∅ then
+          set<Value *> UPrimeMatches = PotIMatches.at(UPrime);
+          set<Value *> VAdj;
+          for (Value::user_iterator VPrimeI = V->user_begin();
+               VPrimeI != V->user_end(); VPrimeI++) {
+            Value *VPrime = dyn_cast<Value>(*VPrimeI);
+            assert(VPrime && "User not value");
+            VAdj.insert(VPrime);
+          }
+
+          if (!Intersection(UPrimeMatches, VAdj).size()) {
+            deleteList.push_back(V);
+            // 13: changed←true
+            changed = true;
+          }
+        }
+
+        // 9: remove v from Φ(u)
+        for (auto deleteNode : deleteList) {
+          PotIMatches.at(&*U).erase(deleteNode);
+        }
+      }
+    }
+  }
+#ifdef MATCHER_DEBUG
+  llvm::errs() << "\n\nAfter Simple Simulation...\n";
+  dumpPotIMatches();
+#endif
+}
+
+bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
+  if (!I1 || !I2)
+    return false;
+  return (I1->getOpcode() == I2->getOpcode());
+}
+
+void Matcher::dumpPotIMatches() {
+  for (auto PotMatch : PotIMatches) {
+    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+    for (auto match : PotMatch.second) {
+      llvm::errs() << "\t"
+                   << "[" << match << "]:" << *match << "\n";
+    }
+    llvm::errs() << "\t}\n\n";
+  }
+}
+
+void Matcher::dumpPotBBMatches() {
+  for (auto PotMatch : PotBBMatches) {
+    llvm::errs() << "[" << PotMatch.first << "]: " << PotMatch.first->getName()
+                 << " {\n";
+    llvm::errs() << "\t"
+                 << "[" << PotMatch.second << "]:" << PotMatch.second->getName()
+                 << "\n";
+    llvm::errs() << "\t}\n\n";
+  }
 }
