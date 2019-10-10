@@ -42,6 +42,8 @@ private:
   std::map<BasicBlock *, BasicBlock *> PotBBMatches;
   Function *F1, *F2;
   GlobalNumberState *GlobalNumbers;
+  Type *IgnoreType;
+  vector<Value *> VertexSet;
 
   int cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const;
   int cmpGEPs(const GetElementPtrInst *GEPL,
@@ -62,7 +64,7 @@ public:
   Matcher(Function *F1, Function *F2);
   // For each instruction in F1, retrieve feasible matches in F2.
   void retrievePotIMatches(Function *F1, Function *F2);
-  bool retrievePotBBMatches(const vector<Value *> &V);
+  bool retrievePotBBMatches();
   bool shallowMatch(Instruction *I1, Instruction *I2);
   bool deepMatch(Instruction *I1, Instruction *I2);
   /*
@@ -121,14 +123,18 @@ public:
   **   29: return Φ
   **   30: end procedure
   */
-  bool dualSimulation(Function *F1, Function *F2, const vector<Value *> &V);
+  // bool dualSimulation(Function *F1, Function *F2, const vector<Value *> &V);
+  bool dualSimulation(Function *F1, Function *F2);
   bool dualSimulationDriver(Function *F1, Function *F2);
 
   bool initialMatch(Function *F1, Function *F2);
   void dumpPotIMatches();
   void dumpPotBBMatches();
+  void dumpLLVMNode(const Value *);
+  set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);
+
   void findBBCorrespondence();
-  bool handleConflictingStores(const vector<Value *> &V);
+  bool handleConflictingStores();
 };
 
 } // end llvm namespace

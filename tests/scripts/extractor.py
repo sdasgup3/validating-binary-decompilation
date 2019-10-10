@@ -2,28 +2,49 @@
 # A tool that uses the provided LLVM Pass (libfuncPass.so) to pick out functions from binaries
 # and extract specific functions from them for testing
 
-import os, sys
+import os
+import sys
 import argparse
 import subprocess
 import pprint
 import json
+import shutil
 
 help_str = """
 This programs uses the libfuncPass to extract individual functions from LLVM IR files.
-Please have llvm-extract-6.0, llvm-dis-6.0, and opt-6.0 installed and in your PATH.
+Please have llvm-extract, llvm-dis, and opt installed and in your PATH.
 """
 
 parser = argparse.ArgumentParser(help_str)
-parser.add_argument("inputFile", type=str, help="Path to input LLVM Bitcode or IR file")
-parser.add_argument("-P", "--passLocation", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "func", "build", "func", "libfuncPass.so"), 
+parser.add_argument(
+    "inputFile",
+    type=str,
+    help="Path to input LLVM Bitcode or IR file")
+parser.add_argument("-P", "--passLocation", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "func", "build", "func", "libfuncPass.so"),
                     type=str, help="Path to input libFuncPass.so LLVM pass")
-parser.add_argument("-O", "--outputDirectory", default=os.path.join(os.getcwd(), "..", "..", "tests"), type=str, help="Path to output directory for extracted LLVM function")
+parser.add_argument(
+    "-O",
+    "--outputDirectory",
+    default=os.path.join(
+        os.getcwd(),
+        "..",
+        "..",
+        "tests"),
+    type=str,
+    help="Path to output directory for extracted LLVM function")
 
 
 # Runs the pass on the input file, outputs a 2D array with each element being the
-# function name, number of instructions, and whether the function is valid or not
+# function name, number of instructions, and whether the function is valid
+# or not
 def runPass(inputFile, passLocation):
-    command = ["opt-6.0", "-load", passLocation, "-disable-output", "-func", inputFile]
+    command = [
+        "opt",
+        "-load",
+        passLocation,
+        "-disable-output",
+        "-func-analyze",
+        inputFile]
     output_str = subprocess.check_output(command).decode("utf-8")[0:-1]
     formatting = output_str.split("\n")
     output_split = []
@@ -35,35 +56,111 @@ def runPass(inputFile, passLocation):
         output_split[i][3] = True if output_split[i][3] == "True" else False
     return output_split, output_str
 
+
 def writeJSON(functions, file_basename):
-    toWrite = dict(zip([func[0] for func in functions], [dict(zip(["function_name", "num_inst", "has_float", "has_vector"], func)) for func in functions])) 
+    toWrite = dict(zip([func[0] for func in functions], [dict(zip(
+        ["function_name", "num_inst", "has_float", "has_vector"], func)) for func in functions]))
     with open('{}.json'.format(file_basename), 'w') as js:
         json.dump(toWrite, js, indent=2)
+
 
 def writeTXT(output_str, file_basename):
     with open('{}.txt'.format(file_basename), 'w') as txt:
         txt.write(output_str)
 
-def runLLVMExtract(inputFile, func_name, num_inst):
-    command1 = ['llvm-extract-6.0', '-func={}'.format(func_name), "-rglob=.*", inputFile, "-o", "{}.bc".format(func_name, num_inst)]
-    command2 = ['llvm-dis-6.0', '{}.bc'.format(func_name, num_inst), '-o', '{}.ll'.format(func_name, num_inst)]
+def runLLVMDis(inputFile, func_name, num_inst):
+    command1 = [
+        'llvm-dis',
+        inputFile,
+        '-o',
+        'test.ll']
     ret = True
     if subprocess.check_output(command1) != b'':
         ret = False
-    if subprocess.check_output(command2) != b'':
-        ret = False
     return ret
+
+def runLLVMExtract(inputFile, func_name, num_inst):
+    #command1 = ['llvm-extract', '-func={}'.format(func_name), "-rglob=.*", inputFile, "-o", "{}.bc".format(func_name, num_inst)]
+    command1 = [
+        'llvm-extract',
+        '-S',
+        '-func={}'.format(func_name),
+        inputFile,
+        "-o",
+        "test.bc"]
+#    command2 = [
+#        'llvm-dis',
+#        'test.bc',
+#        '-o',
+#        'test.ll']
+    ret = True
+    if subprocess.check_output(command1) != b'':
+        ret = False
+#    if subprocess.check_output(command2) != b'':
+#        ret = False
+    return ret
+
+
+def createMakefile(funcName):
+
+    makeFile = open("Makefile", 'w')
+    makeFile.write("PROG=" + funcName + "\n")
+    makeFile.write(
+        "TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/" + "\n")
+    makeFile.write(
+        "ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n")
+    makeFile.write("INDIR=binary/" + "\n")
+    makeFile.write("OURDIR=mcsema/" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write(
+        ".PHONY: binary mcsema objdump match opt clean compd" +
+        "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("objdump: ${INDIR}test" + "\n")
+    makeFile.write("	objdump -d $< > ${INDIR}/test.objdump" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("mcsema: ${INDIR}test" + "\n")
+    makeFile.write(
+        "	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OURDIR}test.cfg --binary $< --entrypoint main" +  "\n")
+    makeFile.write(
+        "	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OURDIR}test.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
+    makeFile.write("	llvm-dis ${OURDIR}test.bc -o ${OURDIR}test.ll" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("binary: ${INDIR}test.ll" + "\n")
+    makeFile.write("	clang -O0 ${INDIR}test.ll -o ${INDIR}test" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("opt: ${OURDIR}test.ll ${OURDIR}test.proposed.ll" + "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OURDIR}test.proposed.ll -o ${OURDIR}test.proposed.inline.ll;  opt -S  -O3    ${OURDIR}test.proposed.inline.ll -o ${OURDIR}test.proposed.opt.ll" + "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OURDIR}test.ll -o ${OURDIR}test.inline.ll;  opt -S  -O3    ${OURDIR}test.inline.ll -o ${OURDIR}test.opt.ll" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("match:" + "\n")
+    makeFile.write(
+        "	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:${PROG} --file2 ${OURDIR}test.proposed.opt.ll:${PROG}" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("compd:" + "\n")
+    makeFile.write(
+        "	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test" + "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("clean:" + "\n")
+    makeFile.write("	rm mcsema/*.bc mcsema/*.ll" + "\n")
+    makeFile.write("" + "\n")
+
+    makeFile.close()
 
 
 def main():
     args = parser.parse_args()
     inputFile = os.path.abspath(args.inputFile)
     passLocation = os.path.abspath(args.passLocation)
-    outputDirectory = os.path.join(os.path.abspath(args.outputDirectory), os.path.basename(args.inputFile[0:-3]))
+    outputDirectory = os.path.join(os.path.abspath(
+        args.outputDirectory), os.path.basename(args.inputFile[0:-3]))
 
     # check if pass file and input file exists and are of right type
     if not os.path.isfile(os.path.abspath(inputFile)):
-        sys.exit("inputFile: {} does not exist or cannot be accessed.".format(inputFile))
+        sys.exit(
+            "inputFile: {} does not exist or cannot be accessed.".format(inputFile))
     if(inputFile[-3:] != ".ll" and inputFile[-3:] != ".bc"):
         sys.exit("LLVM Bitcode file not passed as input file.")
     if not os.path.isfile(os.path.abspath(passLocation)):
@@ -81,7 +178,8 @@ def main():
     writeJSON(functions, os.path.basename(args.inputFile[0:-3]))
     writeTXT(summary_str, os.path.basename(args.inputFile[0:-3]))
 
-    # run llvm-extract for only those functions that do not have floating point types/vector operations
+    # run llvm-extract for only those functions that do not have floating
+    # point types/vector operations
     for func in functions:
         if not os.path.isdir(func[0]):
             os.mkdir(func[0])
@@ -91,11 +189,21 @@ def main():
             os.mkdir("binary")
         if not os.path.isdir("mcsema"):
             os.mkdir("mcsema")
+
+        # Create Makefile
+        createMakefile(func[0])
+
         os.chdir("binary")
 
-        if not runLLVMExtract(inputFile, func[0], func[1]):
-            print("llvm-extract failed to run for function {}".format(func[0]))
+        # shutil.copyfile(inputFile, "./binary/" + os.path.basename(args.inputFile))
+
+        # if not runLLVMExtract(inputFile, func[0], func[1]):
+          # print("llvm-extract failed to run for function {}".format(func[0]))
+        if not runLLVMDis(inputFile, func[0], func[1]):
+          print("llvm-extract failed to run for function {}".format(func[0]))
+
         os.chdir(os.path.join(os.getcwd(), "..", ".."))
+
 
 if __name__ == '__main__':
     main()

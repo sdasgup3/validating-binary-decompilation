@@ -63,6 +63,9 @@ private:
   // Specialized instruction definitions
   stringstream Defns;
 
+  // Declarations of called functions
+  stringstream Decls;
+
   string decompileFunction(const string &extractedFunction);
   // bool sanity_check_template_instruction(x64asm::Instruction i1,
   //                                       x64asm::Instruction i2);
@@ -77,6 +80,15 @@ private:
   vector<string> uniquifyFuncDefns(const vector<string> &local_defn);
   vector<string> handleJMPDefns(const vector<string> &local_defn);
   vector<string> handleJCCDefns(const vector<string> &local_defn);
+  vector<string> handleCALLDefns(const vector<string> &local_defn);
+  string handleJMPBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
+                            uint64_t currSize);
+  string handleJCCBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
+                            uint64_t currSize);
+  string handleCALLBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
+                             uint64_t currSize);
+  string handleBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
+                         uint64_t currSize);
 
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
