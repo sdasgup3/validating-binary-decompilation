@@ -2,7 +2,6 @@
 #include "llvm-graph-matching.h"
 
 // LLVM imports
-#include "remill/BC/Compat/TargetLibraryInfo.h"
 #include "llvm/AsmParser/Parser.h"
 #include "llvm/Bitcode/BitcodeReader.h"
 #include "llvm/Bitcode/BitcodeWriter.h"
