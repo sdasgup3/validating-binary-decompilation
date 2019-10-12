@@ -1,0 +1,3112 @@
+Matching sub_4004a0_main Vs main
+
+
+[Info] Retrieve Potential Matches...
+[0x56156c66c4d0]:   %47 = tail call %struct.Memory* @sub_400470_add_sub(%struct.State* nonnull %0, i64 %42, %struct.Memory* %2) {
+	[0x56156c69ca40]:  %56 = tail call i32 @llvm.ctpop.i32(i32 %55)
+	[0x56156c6a6960]:  %call2_4004b9 = tail call %struct.Memory.31* @sub_400470.add_sub(%struct.State.0* %0, i64 %44, %struct.Memory.31* %2)
+	[0x56156c6bd260]:  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+	}
+
+[0x56156c66c598]:   %48 = load i64, i64* %RSP, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c66c5f8]:   %49 = load i64, i64* %PC, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c66c670]:   %50 = add i64 %48, 16 {
+	[0x56156c7602b0]:  %51 = add i64 %49, 16
+	}
+
+[0x56156c66c6f0]:   store i64 %50, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c66c7b0]:   %51 = icmp ugt i64 %48, -17 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c676840]: %struct.State* %0 {
+	[0x56156c6c3530]:%struct.State.0* %0
+	}
+
+[0x56156c676880]: i64 %1 {
+	[0x56156c6c4ac0]:i64 %1
+	}
+
+[0x56156c6768c0]: %struct.Memory* %2 {
+	[0x56156c6be050]:%struct.Memory.31* %2
+	}
+
+[0x56156c676a48]:   %3 = load i64, i64* %RBP, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c676b20]:   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0 {
+	[0x56156c61dd90]:  %3 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+	}
+
+[0x56156c676c10]:   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0 {
+	[0x56156c6426b0]:  %RSI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+	}
+
+[0x56156c676d00]:   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0 {
+	[0x56156c6422b0]:  %RDI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+	}
+
+[0x56156c676e10]:   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0 {
+	[0x56156c641b90]:  %6 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+	}
+
+[0x56156c676f20]:   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0 {
+	[0x56156c640e60]:  %RBP.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+	}
+
+[0x56156c676fd0]:   %4 = add i64 %1, 1 {
+	[0x56156c69b3c0]:  %5 = add i64 %1, 1
+	}
+
+[0x56156c6770a0]:   store i64 %4, i64* %PC, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c677108]:   %5 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c677180]:   %6 = add i64 %5, -8 {
+	[0x56156c69c490]:  %8 = add i64 %7, -8
+	[0x56156c7558d0]:  %47 = add i64 %46, -8
+	}
+
+[0x56156c6771e8]:   %7 = inttoptr i64 %6 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c677260]:   store i64 %3, i64* %7, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c6772c8]:   %8 = load i64, i64* %PC, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c677340]:   %17 = and i8 %16, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c6773d0]:   store i64 %6, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c677490]:   %9 = add i64 %5, -24 {
+	[0x56156c69d650]:  %11 = add i64 %7, -24
+	}
+
+[0x56156c677510]:   store i64 %9, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c677590]:   %10 = icmp ult i64 %6, 16 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c6775f8]:   %11 = zext i1 %10 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c6776a0]:   %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1 {
+	[0x56156c69b020]:  %14 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 1
+	}
+
+[0x56156c677730]:   store i8 %11, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c677798]:   %13 = trunc i64 %9 to i32 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c677810]:   %14 = and i32 %13, 255 {
+	[0x56156c6bcbf0]:  %16 = and i32 %15, 255
+	[0x56156c6d6ad0]:  %55 = and i32 %54, 255
+	}
+
+[0x56156c6778d0]:   %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #9 {
+	[0x56156c69ca40]:  %56 = tail call i32 @llvm.ctpop.i32(i32 %55)
+	[0x56156c6a6960]:  %call2_4004b9 = tail call %struct.Memory.31* @sub_400470.add_sub(%struct.State.0* %0, i64 %44, %struct.Memory.31* %2)
+	[0x56156c6bd260]:  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+	}
+
+[0x56156c677948]:   %16 = trunc i32 %15 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c6779c0]:   %33 = xor i64 %29, %32 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c677a40]:   %34 = add nuw nsw i64 %33, %32 {
+	[0x56156c6be190]:  %36 = add nuw nsw i64 %35, %34
+	[0x56156c6bfee0]:  %71 = add nuw nsw i64 %70, %67
+	}
+
+[0x56156c677ad0]:   %18 = xor i8 %17, 1 {
+	[0x56156c65a360]:  %59 = xor i8 %58, 1
+	[0x56156c69ddc0]:  %20 = xor i8 %19, 1
+	}
+
+[0x56156c677b80]:   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3 {
+	[0x56156c69dce0]:  %21 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 3
+	}
+
+[0x56156c677c10]:   store i8 %18, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c677c90]:   %20 = xor i64 %6, 16 {
+	[0x56156c602020]:  %60 = xor i64 %49, 16
+	[0x56156c69e240]:  %22 = xor i64 %8, 16
+	}
+
+[0x56156c677d10]:   %21 = xor i64 %20, %9 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c677d90]:   %22 = lshr i64 %21, 4 {
+	[0x56156c60a740]:  %62 = lshr i64 %61, 4
+	[0x56156c69e460]:  %24 = lshr i64 %23, 4
+	}
+
+[0x56156c677df8]:   %23 = trunc i64 %22 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c677e70]:   %24 = and i8 %23, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c677f20]:   %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5 {
+	[0x56156c6a2480]:  %27 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 5
+	}
+
+[0x56156c677fb0]:   store i8 %24, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678030]:   %26 = icmp eq i64 %9, 0 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c678098]:   %27 = zext i1 %26 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c678140]:   %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7 {
+	[0x56156c6a6370]:  %30 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 7
+	}
+
+[0x56156c6781d0]:   store i8 %27, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678250]:   %29 = lshr i64 %9, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c6782b8]:   %30 = trunc i64 %29 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c678360]:   %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9 {
+	[0x56156c6a65d0]:  %33 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 9
+	}
+
+[0x56156c6783f0]:   store i8 %30, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678470]:   %32 = lshr i64 %6, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c6784d8]:   %65 = zext i1 %64 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c678550]:   store i8 %65, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c6785d0]:   %66 = lshr i64 %50, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c678638]:   %67 = trunc i64 %66 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c678700]:   %35 = icmp eq i64 %34, 2 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c678768]:   %36 = zext i1 %35 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c678810]:   %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13 {
+	[0x56156c6a6700]:  %39 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 13
+	}
+
+[0x56156c6788a0]:   store i8 %36, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678920]:   store i64 10, i64* %RDI, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c6789e0]:   store i64 20, i64* %RSI, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678a60]:   %38 = add i64 %5, -12 {
+	[0x56156c6a8b70]:  %40 = add i64 %7, -12
+	}
+
+[0x56156c678b20]:   %39 = add i64 %8, 24 {
+	[0x56156c6c1fd0]:  %75 = add i64 %49, 24
+	[0x56156c6dcad0]:  %41 = add i64 %10, 24
+	}
+
+[0x56156c678ba0]:   store i64 %39, i64* %PC, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678c08]:   %40 = inttoptr i64 %38 to i32* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c678c80]:   store i32 0, i32* %40, align 4 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c678ce8]:   %41 = load i64, i64* %PC, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c678da0]:   %42 = add i64 %41, -73 {
+	[0x56156c754860]:  %44 = add i64 %43, -73
+	}
+
+[0x56156c678e20]:   %43 = add i64 %41, 5 {
+	[0x56156c6c26b0]:  %74 = add i64 %50, 5
+	[0x56156c756de0]:  %45 = add i64 %43, 5
+	}
+
+[0x56156c678e88]:   %44 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c678f00]:   %45 = add i64 %44, -8 {
+	[0x56156c69c490]:  %8 = add i64 %7, -8
+	[0x56156c7558d0]:  %47 = add i64 %46, -8
+	}
+
+[0x56156c678f68]:   %46 = inttoptr i64 %45 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c678fe0]:   store i64 %43, i64* %46, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679060]:   store i64 %45, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c6790e0]:   store i64 %42, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679968]:   %52 = zext i1 %51 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c6799e0]:   store i8 %52, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679a48]:   %53 = trunc i64 %50 to i32 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c679ac0]:   %54 = and i32 %53, 255 {
+	[0x56156c6bcbf0]:  %16 = and i32 %15, 255
+	[0x56156c6d6ad0]:  %55 = and i32 %54, 255
+	}
+
+[0x56156c679b40]:   %55 = tail call i32 @llvm.ctpop.i32(i32 %54) #9 {
+	[0x56156c69ca40]:  %56 = tail call i32 @llvm.ctpop.i32(i32 %55)
+	[0x56156c6a6960]:  %call2_4004b9 = tail call %struct.Memory.31* @sub_400470.add_sub(%struct.State.0* %0, i64 %44, %struct.Memory.31* %2)
+	[0x56156c6bd260]:  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+	}
+
+[0x56156c679c08]:   %56 = trunc i32 %55 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c679c80]:   %57 = and i8 %56, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c679d00]:   %58 = xor i8 %57, 1 {
+	[0x56156c65a360]:  %59 = xor i8 %58, 1
+	[0x56156c69ddc0]:  %20 = xor i8 %19, 1
+	}
+
+[0x56156c679d80]:   store i8 %58, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679e00]:   %59 = xor i64 %48, 16 {
+	[0x56156c602020]:  %60 = xor i64 %49, 16
+	[0x56156c69e240]:  %22 = xor i64 %8, 16
+	}
+
+[0x56156c679e80]:   %60 = xor i64 %59, %50 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c679f00]:   %61 = lshr i64 %60, 4 {
+	[0x56156c60a740]:  %62 = lshr i64 %61, 4
+	[0x56156c69e460]:  %24 = lshr i64 %23, 4
+	}
+
+[0x56156c679f68]:   %62 = trunc i64 %61 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c679fe0]:   %63 = and i8 %62, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c67a060]:   store i8 %63, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67a0e0]:   %64 = icmp eq i64 %50, 0 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c67a570]:   store i8 %67, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67a5f0]:   %68 = lshr i64 %48, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c67a670]:   %69 = xor i64 %66, %68 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c67a6f0]:   %70 = add nuw nsw i64 %69, %66 {
+	[0x56156c6be190]:  %36 = add nuw nsw i64 %35, %34
+	[0x56156c6bfee0]:  %71 = add nuw nsw i64 %70, %67
+	}
+
+[0x56156c67a770]:   %71 = icmp eq i64 %70, 2 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c67a7d8]:   %72 = zext i1 %71 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c67a850]:   store i8 %72, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67a8d0]:   %73 = add i64 %49, 5 {
+	[0x56156c6c26b0]:  %74 = add i64 %50, 5
+	[0x56156c756de0]:  %45 = add i64 %43, 5
+	}
+
+[0x56156c67a950]:   store i64 %73, i64* %PC, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67a9d0]:   %74 = add i64 %48, 24 {
+	[0x56156c6c1fd0]:  %75 = add i64 %49, 24
+	[0x56156c6dcad0]:  %41 = add i64 %10, 24
+	}
+
+[0x56156c67aa38]:   %75 = inttoptr i64 %50 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c67aa98]:   %76 = load i64, i64* %75, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c67ab10]:   store i64 %76, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67ab90]:   store i64 %74, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67ac10]:   %77 = add i64 %49, 6 {
+	[0x56156c6c60b0]:  %78 = add i64 %50, 6
+	}
+
+[0x56156c67ac90]:   store i64 %77, i64* %PC, align 8 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67acf8]:   %78 = inttoptr i64 %74 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c67ad58]:   %79 = load i64, i64* %78, align 8 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c67add0]:   store i64 %79, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67ae50]:   %80 = add i64 %48, 32 {
+	[0x56156c6c7120]:  %81 = add i64 %49, 32
+	}
+
+[0x56156c67aed0]:   store i64 %80, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c67af38]:   ret %struct.Memory* %47 {
+	[0x56156c6a5ff8]:  ret %struct.Memory.31* %call2_4004b9
+	}
+
+
+[Info]: Phase I: Dual Simulation: Round: 0
+Round: 0
+
+Removing: [0x56156c6a0938]:   %46 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c677108]:   %5 = load i64, i64* %RSP, align 8, !tbaa !1257
+
+
+Uprime : [0x56156c678a60]:   %38 = add i64 %5, -12
+
+
+Uprime Matches: [0x56156c6a8b70]:   %40 = add i64 %7, -12
+
+
+Adj: [0x56156c7558d0]:   %47 = add i64 %46, -8
+
+
+Removing: [0x56156c6a1518]:   %49 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c677108]:   %5 = load i64, i64* %RSP, align 8, !tbaa !1257
+
+
+Uprime : [0x56156c678a60]:   %38 = add i64 %5, -12
+
+
+Uprime Matches: [0x56156c6a8b70]:   %40 = add i64 %7, -12
+
+
+Adj: [0x56156c602020]:   %60 = xor i64 %49, 16
+[0x56156c6c03f0]:   %69 = lshr i64 %49, 63
+[0x56156c6c1fd0]:   %75 = add i64 %49, 24
+[0x56156c6c7120]:   %81 = add i64 %49, 32
+[0x56156c7602b0]:   %51 = add i64 %49, 16
+[0x56156c761de0]:   %52 = icmp ugt i64 %49, -17
+
+
+Removing: [0x56156c6a0348]:   %43 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c6772c8]:   %8 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c678b20]:   %39 = add i64 %8, 24
+
+
+Uprime Matches: [0x56156c6c1fd0]:   %75 = add i64 %49, 24
+[0x56156c6dcad0]:   %41 = add i64 %10, 24
+
+
+Adj: [0x56156c754860]:   %44 = add i64 %43, -73
+[0x56156c756de0]:   %45 = add i64 %43, 5
+
+
+Removing: [0x56156c6a1648]:   %50 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c6772c8]:   %8 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c678b20]:   %39 = add i64 %8, 24
+
+
+Uprime Matches: [0x56156c6c1fd0]:   %75 = add i64 %49, 24
+[0x56156c6dcad0]:   %41 = add i64 %10, 24
+
+
+Adj: [0x56156c6c26b0]:   %74 = add i64 %50, 5
+[0x56156c6c60b0]:   %78 = add i64 %50, 6
+
+
+Removing: [0x56156c69f328]:   %15 = trunc i64 %11 to i32
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6bcbf0]:   %16 = and i32 %15, 255
+
+
+Removing: [0x56156c69ffb8]:   %32 = trunc i64 %31 to i8
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6c15a0]:   store i8 %32, i8* %33, align 1
+
+
+Removing: [0x56156c6a39f8]:   %54 = trunc i64 %51 to i32
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6d6ad0]:   %55 = and i32 %54, 255
+
+
+Removing: [0x56156c6a4bc8]:   %68 = trunc i64 %67 to i8
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6bf7b0]:   store i8 %68, i8* %33, align 1
+
+
+Removing: [0x56156c699c30]:   %64 = and i8 %63, 1
+From the pot matches of: [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime : [0x56156c677ad0]:   %18 = xor i8 %17, 1
+
+
+Uprime Matches: [0x56156c65a360]:   %59 = xor i8 %58, 1
+[0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+
+Adj: [0x56156c6be480]:   store i8 %64, i8* %27, align 1
+
+
+Removing: [0x56156c69efd0]:   %26 = and i8 %25, 1
+From the pot matches of: [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime : [0x56156c677ad0]:   %18 = xor i8 %17, 1
+
+
+Uprime Matches: [0x56156c65a360]:   %59 = xor i8 %58, 1
+[0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+
+Adj: [0x56156c69c860]:   store i8 %26, i8* %27, align 1
+
+
+Removing: [0x56156c69a968]:   %10 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c678ce8]:   %41 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c678e20]:   %43 = add i64 %41, 5
+
+
+Uprime Matches: [0x56156c6c26b0]:   %74 = add i64 %50, 5
+[0x56156c756de0]:   %45 = add i64 %43, 5
+
+
+Adj: [0x56156c6dcad0]:   %41 = add i64 %10, 24
+
+
+Removing: [0x56156c6a1648]:   %50 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c678ce8]:   %41 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c678da0]:   %42 = add i64 %41, -73
+
+
+Uprime Matches: [0x56156c754860]:   %44 = add i64 %43, -73
+
+
+Adj: [0x56156c6c26b0]:   %74 = add i64 %50, 5
+[0x56156c6c60b0]:   %78 = add i64 %50, 6
+
+
+Removing: [0x56156c6a1518]:   %49 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c678e88]:   %44 = load i64, i64* %RSP, align 8, !tbaa !1257
+
+
+Uprime : [0x56156c678f00]:   %45 = add i64 %44, -8
+
+
+Uprime Matches: [0x56156c69c490]:   %8 = add i64 %7, -8
+[0x56156c7558d0]:   %47 = add i64 %46, -8
+
+
+Adj: [0x56156c602020]:   %60 = xor i64 %49, 16
+[0x56156c6c03f0]:   %69 = lshr i64 %49, 63
+[0x56156c6c1fd0]:   %75 = add i64 %49, 24
+[0x56156c6c7120]:   %81 = add i64 %49, 32
+[0x56156c7602b0]:   %51 = add i64 %49, 16
+[0x56156c761de0]:   %52 = icmp ugt i64 %49, -17
+
+
+Removing: [0x56156c69c490]:   %8 = add i64 %7, -8
+From the pot matches of: [0x56156c678f00]:   %45 = add i64 %44, -8
+
+
+Uprime : [0x56156c679060]:   store i64 %45, i64* %RSP, align 8, !tbaa !1257
+
+
+Uprime Matches: [0x56156c69d760]:   store i64 %11, i64* %6, align 8
+[0x56156c6bd6e0]:   store i64 %81, i64* %6, align 8
+[0x56156c6c3710]:   store i64 %75, i64* %6, align 8
+[0x56156c75b550]:   store i64 %47, i64* %6, align 8
+[0x56156c75ee10]:   store i64 %51, i64* %6, align 8
+
+
+Adj: [0x56156c698728]:   %9 = inttoptr i64 %8 to i64*
+[0x56156c69d250]:   store i64 %8, i64* %RBP.i, align 8
+[0x56156c69d870]:   %12 = icmp ult i64 %8, 16
+[0x56156c69e240]:   %22 = xor i64 %8, 16
+[0x56156c6c1490]:   %34 = lshr i64 %8, 63
+
+
+Removing: [0x56156c698698]:   %7 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c66c598]:   %48 = load i64, i64* %RSP, align 8
+
+
+Uprime : [0x56156c67ae50]:   %80 = add i64 %48, 32
+
+
+Uprime Matches: [0x56156c6c7120]:   %81 = add i64 %49, 32
+
+
+Adj: [0x56156c69c490]:   %8 = add i64 %7, -8
+[0x56156c69d650]:   %11 = add i64 %7, -24
+[0x56156c6a8b70]:   %40 = add i64 %7, -12
+
+
+Removing: [0x56156c6a0938]:   %46 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c66c598]:   %48 = load i64, i64* %RSP, align 8
+
+
+Uprime : [0x56156c67ae50]:   %80 = add i64 %48, 32
+
+
+Uprime Matches: [0x56156c6c7120]:   %81 = add i64 %49, 32
+
+
+Adj: [0x56156c7558d0]:   %47 = add i64 %46, -8
+
+
+Removing: [0x56156c69a968]:   %10 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c66c5f8]:   %49 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c67ac10]:   %77 = add i64 %49, 6
+
+
+Uprime Matches: [0x56156c6c60b0]:   %78 = add i64 %50, 6
+
+
+Adj: [0x56156c6dcad0]:   %41 = add i64 %10, 24
+
+
+Removing: [0x56156c6a0348]:   %43 = load i64, i64* %3, align 8
+From the pot matches of: [0x56156c66c5f8]:   %49 = load i64, i64* %PC, align 8
+
+
+Uprime : [0x56156c67ac10]:   %77 = add i64 %49, 6
+
+
+Uprime Matches: [0x56156c6c60b0]:   %78 = add i64 %50, 6
+
+
+Adj: [0x56156c754860]:   %44 = add i64 %43, -73
+[0x56156c756de0]:   %45 = add i64 %43, 5
+
+
+Removing: [0x56156c69f328]:   %15 = trunc i64 %11 to i32
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6bcbf0]:   %16 = and i32 %15, 255
+
+
+Removing: [0x56156c69ffb8]:   %32 = trunc i64 %31 to i8
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6c15a0]:   store i8 %32, i8* %33, align 1
+
+
+Removing: [0x56156c6a39f8]:   %54 = trunc i64 %51 to i32
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6d6ad0]:   %55 = and i32 %54, 255
+
+
+Removing: [0x56156c6a4bc8]:   %68 = trunc i64 %67 to i8
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c699c30]:   %64 = and i8 %63, 1
+[0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c69efd0]:   %26 = and i8 %25, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c6bf7b0]:   store i8 %68, i8* %33, align 1
+
+
+Removing: [0x56156c699c30]:   %64 = and i8 %63, 1
+From the pot matches of: [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime : [0x56156c679d00]:   %58 = xor i8 %57, 1
+
+
+Uprime Matches: [0x56156c65a360]:   %59 = xor i8 %58, 1
+[0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+
+Adj: [0x56156c6be480]:   store i8 %64, i8* %27, align 1
+
+
+Removing: [0x56156c69efd0]:   %26 = and i8 %25, 1
+From the pot matches of: [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime : [0x56156c679d00]:   %58 = xor i8 %57, 1
+
+
+Uprime Matches: [0x56156c65a360]:   %59 = xor i8 %58, 1
+[0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+
+Adj: [0x56156c69c860]:   store i8 %26, i8* %27, align 1
+
+Round: 1
+
+Removing: [0x56156c69f9c8]:   %25 = trunc i64 %24 to i8
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c69efd0]:   %26 = and i8 %25, 1
+
+
+Removing: [0x56156c6a3fe8]:   %63 = trunc i64 %62 to i8
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c699c30]:   %64 = and i8 %63, 1
+
+
+Removing: [0x56156c698698]:   %7 = load i64, i64* %6, align 8
+From the pot matches of: [0x56156c678e88]:   %44 = load i64, i64* %RSP, align 8, !tbaa !1257
+
+
+Uprime : [0x56156c678f00]:   %45 = add i64 %44, -8
+
+
+Uprime Matches: [0x56156c7558d0]:   %47 = add i64 %46, -8
+
+
+Adj: [0x56156c69c490]:   %8 = add i64 %7, -8
+[0x56156c69d650]:   %11 = add i64 %7, -24
+[0x56156c6a8b70]:   %40 = add i64 %7, -12
+
+
+Removing: [0x56156c69f9c8]:   %25 = trunc i64 %24 to i8
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c69efd0]:   %26 = and i8 %25, 1
+
+
+Removing: [0x56156c6a3fe8]:   %63 = trunc i64 %62 to i8
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+[0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c699c30]:   %64 = and i8 %63, 1
+
+Round: 2
+
+
+[Info] After Dual Simulation: Round: 0
+[0x56156c66c4d0]:   %47 = tail call %struct.Memory* @sub_400470_add_sub(%struct.State* nonnull %0, i64 %42, %struct.Memory* %2) {
+	[0x56156c6a6960]:  %call2_4004b9 = tail call %struct.Memory.31* @sub_400470.add_sub(%struct.State.0* %0, i64 %44, %struct.Memory.31* %2)
+	}
+
+[0x56156c66c598]:   %48 = load i64, i64* %RSP, align 8 {
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	}
+
+[0x56156c66c5f8]:   %49 = load i64, i64* %PC, align 8 {
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	}
+
+[0x56156c66c670]:   %50 = add i64 %48, 16 {
+	[0x56156c7602b0]:  %51 = add i64 %49, 16
+	}
+
+[0x56156c66c6f0]:   store i64 %50, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	}
+
+[0x56156c66c7b0]:   %51 = icmp ugt i64 %48, -17 {
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c676840]: %struct.State* %0 {
+	[0x56156c6c3530]:%struct.State.0* %0
+	}
+
+[0x56156c676880]: i64 %1 {
+	[0x56156c6c4ac0]:i64 %1
+	}
+
+[0x56156c6768c0]: %struct.Memory* %2 {
+	[0x56156c6be050]:%struct.Memory.31* %2
+	}
+
+[0x56156c676a48]:   %3 = load i64, i64* %RBP, align 8 {
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c676b20]:   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0 {
+	[0x56156c61dd90]:  %3 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+	}
+
+[0x56156c676c10]:   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0 {
+	[0x56156c6426b0]:  %RSI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+	}
+
+[0x56156c676d00]:   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0 {
+	[0x56156c6422b0]:  %RDI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+	}
+
+[0x56156c676e10]:   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0 {
+	[0x56156c641b90]:  %6 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+	}
+
+[0x56156c676f20]:   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0 {
+	[0x56156c640e60]:  %RBP.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+	}
+
+[0x56156c676fd0]:   %4 = add i64 %1, 1 {
+	[0x56156c69b3c0]:  %5 = add i64 %1, 1
+	}
+
+[0x56156c6770a0]:   store i64 %4, i64* %PC, align 8 {
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	}
+
+[0x56156c677108]:   %5 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	}
+
+[0x56156c677180]:   %6 = add i64 %5, -8 {
+	[0x56156c69c490]:  %8 = add i64 %7, -8
+	}
+
+[0x56156c6771e8]:   %7 = inttoptr i64 %6 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	}
+
+[0x56156c677260]:   store i64 %3, i64* %7, align 8 {
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	}
+
+[0x56156c6772c8]:   %8 = load i64, i64* %PC, align 8 {
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	}
+
+[0x56156c677340]:   %17 = and i8 %16, 1 {
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c6773d0]:   store i64 %6, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	}
+
+[0x56156c677490]:   %9 = add i64 %5, -24 {
+	[0x56156c69d650]:  %11 = add i64 %7, -24
+	}
+
+[0x56156c677510]:   store i64 %9, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	}
+
+[0x56156c677590]:   %10 = icmp ult i64 %6, 16 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	}
+
+[0x56156c6775f8]:   %11 = zext i1 %10 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	}
+
+[0x56156c6776a0]:   %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1 {
+	[0x56156c69b020]:  %14 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 1
+	}
+
+[0x56156c677730]:   store i8 %11, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	}
+
+[0x56156c677798]:   %13 = trunc i64 %9 to i32 {
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	}
+
+[0x56156c677810]:   %14 = and i32 %13, 255 {
+	[0x56156c6bcbf0]:  %16 = and i32 %15, 255
+	}
+
+[0x56156c6778d0]:   %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #9 {
+	[0x56156c6bd260]:  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+	}
+
+[0x56156c677948]:   %16 = trunc i32 %15 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	}
+
+[0x56156c6779c0]:   %33 = xor i64 %29, %32 {
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	}
+
+[0x56156c677a40]:   %34 = add nuw nsw i64 %33, %32 {
+	[0x56156c6be190]:  %36 = add nuw nsw i64 %35, %34
+	}
+
+[0x56156c677ad0]:   %18 = xor i8 %17, 1 {
+	[0x56156c65a360]:  %59 = xor i8 %58, 1
+	[0x56156c69ddc0]:  %20 = xor i8 %19, 1
+	}
+
+[0x56156c677b80]:   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3 {
+	[0x56156c69dce0]:  %21 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 3
+	}
+
+[0x56156c677c10]:   store i8 %18, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	}
+
+[0x56156c677c90]:   %20 = xor i64 %6, 16 {
+	[0x56156c69e240]:  %22 = xor i64 %8, 16
+	}
+
+[0x56156c677d10]:   %21 = xor i64 %20, %9 {
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	}
+
+[0x56156c677d90]:   %22 = lshr i64 %21, 4 {
+	[0x56156c69e460]:  %24 = lshr i64 %23, 4
+	}
+
+[0x56156c677df8]:   %23 = trunc i64 %22 to i8 {
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	}
+
+[0x56156c677e70]:   %24 = and i8 %23, 1 {
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	}
+
+[0x56156c677f20]:   %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5 {
+	[0x56156c6a2480]:  %27 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 5
+	}
+
+[0x56156c677fb0]:   store i8 %24, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	}
+
+[0x56156c678030]:   %26 = icmp eq i64 %9, 0 {
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	}
+
+[0x56156c678098]:   %27 = zext i1 %26 to i8 {
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	}
+
+[0x56156c678140]:   %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7 {
+	[0x56156c6a6370]:  %30 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 7
+	}
+
+[0x56156c6781d0]:   store i8 %27, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	}
+
+[0x56156c678250]:   %29 = lshr i64 %9, 63 {
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	}
+
+[0x56156c6782b8]:   %30 = trunc i64 %29 to i8 {
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	}
+
+[0x56156c678360]:   %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9 {
+	[0x56156c6a65d0]:  %33 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 9
+	}
+
+[0x56156c6783f0]:   store i8 %30, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	}
+
+[0x56156c678470]:   %32 = lshr i64 %6, 63 {
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c6784d8]:   %65 = zext i1 %64 to i8 {
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	}
+
+[0x56156c678550]:   store i8 %65, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	}
+
+[0x56156c6785d0]:   %66 = lshr i64 %50, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	}
+
+[0x56156c678638]:   %67 = trunc i64 %66 to i8 {
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c678700]:   %35 = icmp eq i64 %34, 2 {
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	}
+
+[0x56156c678768]:   %36 = zext i1 %35 to i8 {
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	}
+
+[0x56156c678810]:   %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13 {
+	[0x56156c6a6700]:  %39 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 13
+	}
+
+[0x56156c6788a0]:   store i8 %36, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	}
+
+[0x56156c678920]:   store i64 10, i64* %RDI, align 8, !tbaa !1257 {
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	}
+
+[0x56156c6789e0]:   store i64 20, i64* %RSI, align 8, !tbaa !1257 {
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	}
+
+[0x56156c678a60]:   %38 = add i64 %5, -12 {
+	[0x56156c6a8b70]:  %40 = add i64 %7, -12
+	}
+
+[0x56156c678b20]:   %39 = add i64 %8, 24 {
+	[0x56156c6dcad0]:  %41 = add i64 %10, 24
+	}
+
+[0x56156c678ba0]:   store i64 %39, i64* %PC, align 8 {
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	}
+
+[0x56156c678c08]:   %40 = inttoptr i64 %38 to i32* {
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	}
+
+[0x56156c678c80]:   store i32 0, i32* %40, align 4 {
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	}
+
+[0x56156c678ce8]:   %41 = load i64, i64* %PC, align 8 {
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	}
+
+[0x56156c678da0]:   %42 = add i64 %41, -73 {
+	[0x56156c754860]:  %44 = add i64 %43, -73
+	}
+
+[0x56156c678e20]:   %43 = add i64 %41, 5 {
+	[0x56156c756de0]:  %45 = add i64 %43, 5
+	}
+
+[0x56156c678e88]:   %44 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	}
+
+[0x56156c678f00]:   %45 = add i64 %44, -8 {
+	[0x56156c7558d0]:  %47 = add i64 %46, -8
+	}
+
+[0x56156c678f68]:   %46 = inttoptr i64 %45 to i64* {
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c678fe0]:   store i64 %43, i64* %46, align 8 {
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	}
+
+[0x56156c679060]:   store i64 %45, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	}
+
+[0x56156c6790e0]:   store i64 %42, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	}
+
+[0x56156c679968]:   %52 = zext i1 %51 to i8 {
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	}
+
+[0x56156c6799e0]:   store i8 %52, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679a48]:   %53 = trunc i64 %50 to i32 {
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	}
+
+[0x56156c679ac0]:   %54 = and i32 %53, 255 {
+	[0x56156c6d6ad0]:  %55 = and i32 %54, 255
+	}
+
+[0x56156c679b40]:   %55 = tail call i32 @llvm.ctpop.i32(i32 %54) #9 {
+	[0x56156c69ca40]:  %56 = tail call i32 @llvm.ctpop.i32(i32 %55)
+	}
+
+[0x56156c679c08]:   %56 = trunc i32 %55 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	}
+
+[0x56156c679c80]:   %57 = and i8 %56, 1 {
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c679d00]:   %58 = xor i8 %57, 1 {
+	[0x56156c65a360]:  %59 = xor i8 %58, 1
+	[0x56156c69ddc0]:  %20 = xor i8 %19, 1
+	}
+
+[0x56156c679d80]:   store i8 %58, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	}
+
+[0x56156c679e00]:   %59 = xor i64 %48, 16 {
+	[0x56156c602020]:  %60 = xor i64 %49, 16
+	}
+
+[0x56156c679e80]:   %60 = xor i64 %59, %50 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	}
+
+[0x56156c679f00]:   %61 = lshr i64 %60, 4 {
+	[0x56156c60a740]:  %62 = lshr i64 %61, 4
+	}
+
+[0x56156c679f68]:   %62 = trunc i64 %61 to i8 {
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	}
+
+[0x56156c679fe0]:   %63 = and i8 %62, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	}
+
+[0x56156c67a060]:   store i8 %63, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	}
+
+[0x56156c67a0e0]:   %64 = icmp eq i64 %50, 0 {
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	}
+
+[0x56156c67a570]:   store i8 %67, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	}
+
+[0x56156c67a5f0]:   %68 = lshr i64 %48, 63 {
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	}
+
+[0x56156c67a670]:   %69 = xor i64 %66, %68 {
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c67a6f0]:   %70 = add nuw nsw i64 %69, %66 {
+	[0x56156c6bfee0]:  %71 = add nuw nsw i64 %70, %67
+	}
+
+[0x56156c67a770]:   %71 = icmp eq i64 %70, 2 {
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	}
+
+[0x56156c67a7d8]:   %72 = zext i1 %71 to i8 {
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c67a850]:   store i8 %72, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	}
+
+[0x56156c67a8d0]:   %73 = add i64 %49, 5 {
+	[0x56156c6c26b0]:  %74 = add i64 %50, 5
+	}
+
+[0x56156c67a950]:   store i64 %73, i64* %PC, align 8 {
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	}
+
+[0x56156c67a9d0]:   %74 = add i64 %48, 24 {
+	[0x56156c6c1fd0]:  %75 = add i64 %49, 24
+	}
+
+[0x56156c67aa38]:   %75 = inttoptr i64 %50 to i64* {
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	}
+
+[0x56156c67aa98]:   %76 = load i64, i64* %75, align 8 {
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	}
+
+[0x56156c67ab10]:   store i64 %76, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	}
+
+[0x56156c67ab90]:   store i64 %74, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	}
+
+[0x56156c67ac10]:   %77 = add i64 %49, 6 {
+	[0x56156c6c60b0]:  %78 = add i64 %50, 6
+	}
+
+[0x56156c67ac90]:   store i64 %77, i64* %PC, align 8 {
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	}
+
+[0x56156c67acf8]:   %78 = inttoptr i64 %74 to i64* {
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	}
+
+[0x56156c67ad58]:   %79 = load i64, i64* %78, align 8 {
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	}
+
+[0x56156c67add0]:   store i64 %79, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	}
+
+[0x56156c67ae50]:   %80 = add i64 %48, 32 {
+	[0x56156c6c7120]:  %81 = add i64 %49, 32
+	}
+
+[0x56156c67aed0]:   store i64 %80, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	}
+
+[0x56156c67af38]:   ret %struct.Memory* %47 {
+	[0x56156c6a5ff8]:  ret %struct.Memory.31* %call2_4004b9
+	}
+
+
+[Info]: Phase II: Retrieve potential BB matches: Round: 0
+Retrieved BB Matches...
+[0x56156c676900]: block_4004a0 {
+	[0x56156c6bb720]:entry
+	}
+
+
+[Info]: Phase II: Handle Conflicting Stores: Round: 0
+
+[Info]: Phase I: Dual Simulation: Round: 1
+Round: 0
+
+Removing: [0x56156c65a360]:   %59 = xor i8 %58, 1
+From the pot matches of: [0x56156c677ad0]:   %18 = xor i8 %17, 1
+
+
+Uprime : [0x56156c677c10]:   store i8 %18, i8* %19, align 1, !tbaa !1275
+
+
+Uprime Matches: [0x56156c6bd470]:   store i8 %20, i8* %21, align 1
+
+
+Adj: [0x56156c659f00]:   store i8 %59, i8* %21, align 1
+
+
+Removing: [0x56156c69ddc0]:   %20 = xor i8 %19, 1
+From the pot matches of: [0x56156c679d00]:   %58 = xor i8 %57, 1
+
+
+Uprime : [0x56156c679d80]:   store i8 %58, i8* %19, align 1, !tbaa !1275
+
+
+Uprime Matches: [0x56156c659f00]:   store i8 %59, i8* %21, align 1
+
+
+Adj: [0x56156c6bd470]:   store i8 %20, i8* %21, align 1
+
+Round: 1
+
+Removing: [0x56156c7708f0]:   %58 = and i8 %57, 1
+From the pot matches of: [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime : [0x56156c677ad0]:   %18 = xor i8 %17, 1
+
+
+Uprime Matches: [0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+
+Adj: [0x56156c65a360]:   %59 = xor i8 %58, 1
+
+
+Removing: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+From the pot matches of: [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime : [0x56156c679d00]:   %58 = xor i8 %57, 1
+
+
+Uprime Matches: [0x56156c65a360]:   %59 = xor i8 %58, 1
+
+
+Adj: [0x56156c69ddc0]:   %20 = xor i8 %19, 1
+
+Round: 2
+
+Removing: [0x56156c6a3eb8]:   %57 = trunc i32 %56 to i8
+From the pot matches of: [0x56156c677948]:   %16 = trunc i32 %15 to i8
+
+
+Uprime : [0x56156c677340]:   %17 = and i8 %16, 1
+
+
+Uprime Matches: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+
+
+Adj: [0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Removing: [0x56156c69e188]:   %18 = trunc i32 %17 to i8
+From the pot matches of: [0x56156c679c08]:   %56 = trunc i32 %55 to i8
+
+
+Uprime : [0x56156c679c80]:   %57 = and i8 %56, 1
+
+
+Uprime Matches: [0x56156c7708f0]:   %58 = and i8 %57, 1
+
+
+Adj: [0x56156c69dbe0]:   %19 = and i8 %18, 1
+
+Round: 3
+
+
+[Info] After Dual Simulation: Round: 1
+[0x56156c66c4d0]:   %47 = tail call %struct.Memory* @sub_400470_add_sub(%struct.State* nonnull %0, i64 %42, %struct.Memory* %2) {
+	[0x56156c6a6960]:  %call2_4004b9 = tail call %struct.Memory.31* @sub_400470.add_sub(%struct.State.0* %0, i64 %44, %struct.Memory.31* %2)
+	}
+
+[0x56156c66c598]:   %48 = load i64, i64* %RSP, align 8 {
+	[0x56156c6a1518]:  %49 = load i64, i64* %6, align 8
+	}
+
+[0x56156c66c5f8]:   %49 = load i64, i64* %PC, align 8 {
+	[0x56156c6a1648]:  %50 = load i64, i64* %3, align 8
+	}
+
+[0x56156c66c670]:   %50 = add i64 %48, 16 {
+	[0x56156c7602b0]:  %51 = add i64 %49, 16
+	}
+
+[0x56156c66c6f0]:   store i64 %50, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c75ee10]:  store i64 %51, i64* %6, align 8
+	}
+
+[0x56156c66c7b0]:   %51 = icmp ugt i64 %48, -17 {
+	[0x56156c761de0]:  %52 = icmp ugt i64 %49, -17
+	}
+
+[0x56156c676840]: %struct.State* %0 {
+	[0x56156c6c3530]:%struct.State.0* %0
+	}
+
+[0x56156c676880]: i64 %1 {
+	[0x56156c6c4ac0]:i64 %1
+	}
+
+[0x56156c6768c0]: %struct.Memory* %2 {
+	[0x56156c6be050]:%struct.Memory.31* %2
+	}
+
+[0x56156c676a48]:   %3 = load i64, i64* %RBP, align 8 {
+	[0x56156c6db6e8]:  %4 = load i64, i64* %RBP.i, align 8
+	}
+
+[0x56156c676b20]:   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0 {
+	[0x56156c61dd90]:  %3 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+	}
+
+[0x56156c676c10]:   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0 {
+	[0x56156c6426b0]:  %RSI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+	}
+
+[0x56156c676d00]:   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0 {
+	[0x56156c6422b0]:  %RDI.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+	}
+
+[0x56156c676e10]:   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0 {
+	[0x56156c641b90]:  %6 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+	}
+
+[0x56156c676f20]:   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0 {
+	[0x56156c640e60]:  %RBP.i = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+	}
+
+[0x56156c676fd0]:   %4 = add i64 %1, 1 {
+	[0x56156c69b3c0]:  %5 = add i64 %1, 1
+	}
+
+[0x56156c6770a0]:   store i64 %4, i64* %PC, align 8 {
+	[0x56156c69b4d0]:  store i64 %5, i64* %3, align 8
+	}
+
+[0x56156c677108]:   %5 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c698698]:  %7 = load i64, i64* %6, align 8
+	}
+
+[0x56156c677180]:   %6 = add i64 %5, -8 {
+	[0x56156c69c490]:  %8 = add i64 %7, -8
+	}
+
+[0x56156c6771e8]:   %7 = inttoptr i64 %6 to i64* {
+	[0x56156c698728]:  %9 = inttoptr i64 %8 to i64*
+	}
+
+[0x56156c677260]:   store i64 %3, i64* %7, align 8 {
+	[0x56156c69aa20]:  store i64 %4, i64* %9, align 8
+	}
+
+[0x56156c6772c8]:   %8 = load i64, i64* %PC, align 8 {
+	[0x56156c69a968]:  %10 = load i64, i64* %3, align 8
+	}
+
+[0x56156c677340]:   %17 = and i8 %16, 1 {
+	[0x56156c69dbe0]:  %19 = and i8 %18, 1
+	}
+
+[0x56156c6773d0]:   store i64 %6, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c69d250]:  store i64 %8, i64* %RBP.i, align 8
+	}
+
+[0x56156c677490]:   %9 = add i64 %5, -24 {
+	[0x56156c69d650]:  %11 = add i64 %7, -24
+	}
+
+[0x56156c677510]:   store i64 %9, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c69d760]:  store i64 %11, i64* %6, align 8
+	}
+
+[0x56156c677590]:   %10 = icmp ult i64 %6, 16 {
+	[0x56156c69d870]:  %12 = icmp ult i64 %8, 16
+	}
+
+[0x56156c6775f8]:   %11 = zext i1 %10 to i8 {
+	[0x56156c69a0c8]:  %13 = zext i1 %12 to i8
+	}
+
+[0x56156c6776a0]:   %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1 {
+	[0x56156c69b020]:  %14 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 1
+	}
+
+[0x56156c677730]:   store i8 %11, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c69d980]:  store i8 %13, i8* %14, align 1
+	}
+
+[0x56156c677798]:   %13 = trunc i64 %9 to i32 {
+	[0x56156c69f328]:  %15 = trunc i64 %11 to i32
+	}
+
+[0x56156c677810]:   %14 = and i32 %13, 255 {
+	[0x56156c6bcbf0]:  %16 = and i32 %15, 255
+	}
+
+[0x56156c6778d0]:   %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #9 {
+	[0x56156c6bd260]:  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+	}
+
+[0x56156c677948]:   %16 = trunc i32 %15 to i8 {
+	[0x56156c69e188]:  %18 = trunc i32 %17 to i8
+	}
+
+[0x56156c6779c0]:   %33 = xor i64 %29, %32 {
+	[0x56156c69f450]:  %35 = xor i64 %31, %34
+	}
+
+[0x56156c677a40]:   %34 = add nuw nsw i64 %33, %32 {
+	[0x56156c6be190]:  %36 = add nuw nsw i64 %35, %34
+	}
+
+[0x56156c677ad0]:   %18 = xor i8 %17, 1 {
+	[0x56156c69ddc0]:  %20 = xor i8 %19, 1
+	}
+
+[0x56156c677b80]:   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3 {
+	[0x56156c69dce0]:  %21 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 3
+	}
+
+[0x56156c677c10]:   store i8 %18, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c6bd470]:  store i8 %20, i8* %21, align 1
+	}
+
+[0x56156c677c90]:   %20 = xor i64 %6, 16 {
+	[0x56156c69e240]:  %22 = xor i64 %8, 16
+	}
+
+[0x56156c677d10]:   %21 = xor i64 %20, %9 {
+	[0x56156c69e310]:  %23 = xor i64 %22, %11
+	}
+
+[0x56156c677d90]:   %22 = lshr i64 %21, 4 {
+	[0x56156c69e460]:  %24 = lshr i64 %23, 4
+	}
+
+[0x56156c677df8]:   %23 = trunc i64 %22 to i8 {
+	[0x56156c69f9c8]:  %25 = trunc i64 %24 to i8
+	}
+
+[0x56156c677e70]:   %24 = and i8 %23, 1 {
+	[0x56156c69efd0]:  %26 = and i8 %25, 1
+	}
+
+[0x56156c677f20]:   %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5 {
+	[0x56156c6a2480]:  %27 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 5
+	}
+
+[0x56156c677fb0]:   store i8 %24, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c69c860]:  store i8 %26, i8* %27, align 1
+	}
+
+[0x56156c678030]:   %26 = icmp eq i64 %9, 0 {
+	[0x56156c6bfc80]:  %28 = icmp eq i64 %11, 0
+	}
+
+[0x56156c678098]:   %27 = zext i1 %26 to i8 {
+	[0x56156c69fd58]:  %29 = zext i1 %28 to i8
+	}
+
+[0x56156c678140]:   %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7 {
+	[0x56156c6a6370]:  %30 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 7
+	}
+
+[0x56156c6781d0]:   store i8 %27, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c6b19c0]:  store i8 %29, i8* %30, align 1
+	}
+
+[0x56156c678250]:   %29 = lshr i64 %9, 63 {
+	[0x56156c6c0890]:  %31 = lshr i64 %11, 63
+	}
+
+[0x56156c6782b8]:   %30 = trunc i64 %29 to i8 {
+	[0x56156c69ffb8]:  %32 = trunc i64 %31 to i8
+	}
+
+[0x56156c678360]:   %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9 {
+	[0x56156c6a65d0]:  %33 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 9
+	}
+
+[0x56156c6783f0]:   store i8 %30, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c6c15a0]:  store i8 %32, i8* %33, align 1
+	}
+
+[0x56156c678470]:   %32 = lshr i64 %6, 63 {
+	[0x56156c6c1490]:  %34 = lshr i64 %8, 63
+	}
+
+[0x56156c6784d8]:   %65 = zext i1 %64 to i8 {
+	[0x56156c6a4a98]:  %66 = zext i1 %65 to i8
+	}
+
+[0x56156c678550]:   store i8 %65, i8* %28, align 1, !tbaa !1277 {
+	[0x56156c6bf2c0]:  store i8 %66, i8* %30, align 1
+	}
+
+[0x56156c6785d0]:   %66 = lshr i64 %50, 63 {
+	[0x56156c6bf3c0]:  %67 = lshr i64 %51, 63
+	}
+
+[0x56156c678638]:   %67 = trunc i64 %66 to i8 {
+	[0x56156c6a4bc8]:  %68 = trunc i64 %67 to i8
+	}
+
+[0x56156c678700]:   %35 = icmp eq i64 %34, 2 {
+	[0x56156c6a1fc0]:  %37 = icmp eq i64 %36, 2
+	}
+
+[0x56156c678768]:   %36 = zext i1 %35 to i8 {
+	[0x56156c6a00e8]:  %38 = zext i1 %37 to i8
+	}
+
+[0x56156c678810]:   %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13 {
+	[0x56156c6a6700]:  %39 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 13
+	}
+
+[0x56156c6788a0]:   store i8 %36, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c6a87e0]:  store i8 %38, i8* %39, align 1
+	}
+
+[0x56156c678920]:   store i64 10, i64* %RDI, align 8, !tbaa !1257 {
+	[0x56156c6a8910]:  store i64 10, i64* %RDI.i, align 8
+	}
+
+[0x56156c6789e0]:   store i64 20, i64* %RSI, align 8, !tbaa !1257 {
+	[0x56156c6a8a40]:  store i64 20, i64* %RSI.i, align 8
+	}
+
+[0x56156c678a60]:   %38 = add i64 %5, -12 {
+	[0x56156c6a8b70]:  %40 = add i64 %7, -12
+	}
+
+[0x56156c678b20]:   %39 = add i64 %8, 24 {
+	[0x56156c6dcad0]:  %41 = add i64 %10, 24
+	}
+
+[0x56156c678ba0]:   store i64 %39, i64* %PC, align 8 {
+	[0x56156c6de8c0]:  store i64 %41, i64* %3, align 8
+	}
+
+[0x56156c678c08]:   %40 = inttoptr i64 %38 to i32* {
+	[0x56156c6a0218]:  %42 = inttoptr i64 %40 to i32*
+	}
+
+[0x56156c678c80]:   store i32 0, i32* %40, align 4 {
+	[0x56156c7540e0]:  store i32 0, i32* %42, align 4
+	}
+
+[0x56156c678ce8]:   %41 = load i64, i64* %PC, align 8 {
+	[0x56156c6a0348]:  %43 = load i64, i64* %3, align 8
+	}
+
+[0x56156c678da0]:   %42 = add i64 %41, -73 {
+	[0x56156c754860]:  %44 = add i64 %43, -73
+	}
+
+[0x56156c678e20]:   %43 = add i64 %41, 5 {
+	[0x56156c756de0]:  %45 = add i64 %43, 5
+	}
+
+[0x56156c678e88]:   %44 = load i64, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6a0938]:  %46 = load i64, i64* %6, align 8
+	}
+
+[0x56156c678f00]:   %45 = add i64 %44, -8 {
+	[0x56156c7558d0]:  %47 = add i64 %46, -8
+	}
+
+[0x56156c678f68]:   %46 = inttoptr i64 %45 to i64* {
+	[0x56156c6c0d68]:  %48 = inttoptr i64 %47 to i64*
+	}
+
+[0x56156c678fe0]:   store i64 %43, i64* %46, align 8 {
+	[0x56156c75c320]:  store i64 %45, i64* %48, align 8
+	}
+
+[0x56156c679060]:   store i64 %45, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c75b550]:  store i64 %47, i64* %6, align 8
+	}
+
+[0x56156c6790e0]:   store i64 %42, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c75dac0]:  store i64 %44, i64* %3, align 8
+	}
+
+[0x56156c679968]:   %52 = zext i1 %51 to i8 {
+	[0x56156c6a38c8]:  %53 = zext i1 %52 to i8
+	}
+
+[0x56156c6799e0]:   store i8 %52, i8* %12, align 1, !tbaa !1261 {
+	[0x56156c7661b0]:  store i8 %53, i8* %14, align 1
+	}
+
+[0x56156c679a48]:   %53 = trunc i64 %50 to i32 {
+	[0x56156c6a39f8]:  %54 = trunc i64 %51 to i32
+	}
+
+[0x56156c679ac0]:   %54 = and i32 %53, 255 {
+	[0x56156c6d6ad0]:  %55 = and i32 %54, 255
+	}
+
+[0x56156c679b40]:   %55 = tail call i32 @llvm.ctpop.i32(i32 %54) #9 {
+	[0x56156c69ca40]:  %56 = tail call i32 @llvm.ctpop.i32(i32 %55)
+	}
+
+[0x56156c679c08]:   %56 = trunc i32 %55 to i8 {
+	[0x56156c6a3eb8]:  %57 = trunc i32 %56 to i8
+	}
+
+[0x56156c679c80]:   %57 = and i8 %56, 1 {
+	[0x56156c7708f0]:  %58 = and i8 %57, 1
+	}
+
+[0x56156c679d00]:   %58 = xor i8 %57, 1 {
+	[0x56156c65a360]:  %59 = xor i8 %58, 1
+	}
+
+[0x56156c679d80]:   store i8 %58, i8* %19, align 1, !tbaa !1275 {
+	[0x56156c659f00]:  store i8 %59, i8* %21, align 1
+	}
+
+[0x56156c679e00]:   %59 = xor i64 %48, 16 {
+	[0x56156c602020]:  %60 = xor i64 %49, 16
+	}
+
+[0x56156c679e80]:   %60 = xor i64 %59, %50 {
+	[0x56156c6060e0]:  %61 = xor i64 %60, %51
+	}
+
+[0x56156c679f00]:   %61 = lshr i64 %60, 4 {
+	[0x56156c60a740]:  %62 = lshr i64 %61, 4
+	}
+
+[0x56156c679f68]:   %62 = trunc i64 %61 to i8 {
+	[0x56156c6a3fe8]:  %63 = trunc i64 %62 to i8
+	}
+
+[0x56156c679fe0]:   %63 = and i8 %62, 1 {
+	[0x56156c699c30]:  %64 = and i8 %63, 1
+	}
+
+[0x56156c67a060]:   store i8 %63, i8* %25, align 1, !tbaa !1276 {
+	[0x56156c6be480]:  store i8 %64, i8* %27, align 1
+	}
+
+[0x56156c67a0e0]:   %64 = icmp eq i64 %50, 0 {
+	[0x56156c6beef0]:  %65 = icmp eq i64 %51, 0
+	}
+
+[0x56156c67a570]:   store i8 %67, i8* %31, align 1, !tbaa !1278 {
+	[0x56156c6bf7b0]:  store i8 %68, i8* %33, align 1
+	}
+
+[0x56156c67a5f0]:   %68 = lshr i64 %48, 63 {
+	[0x56156c6c03f0]:  %69 = lshr i64 %49, 63
+	}
+
+[0x56156c67a670]:   %69 = xor i64 %66, %68 {
+	[0x56156c6c0010]:  %70 = xor i64 %67, %69
+	}
+
+[0x56156c67a6f0]:   %70 = add nuw nsw i64 %69, %66 {
+	[0x56156c6bfee0]:  %71 = add nuw nsw i64 %70, %67
+	}
+
+[0x56156c67a770]:   %71 = icmp eq i64 %70, 2 {
+	[0x56156c6c2180]:  %72 = icmp eq i64 %71, 2
+	}
+
+[0x56156c67a7d8]:   %72 = zext i1 %71 to i8 {
+	[0x56156c6a57a8]:  %73 = zext i1 %72 to i8
+	}
+
+[0x56156c67a850]:   store i8 %72, i8* %37, align 1, !tbaa !1279 {
+	[0x56156c6c25c0]:  store i8 %73, i8* %39, align 1
+	}
+
+[0x56156c67a8d0]:   %73 = add i64 %49, 5 {
+	[0x56156c6c26b0]:  %74 = add i64 %50, 5
+	}
+
+[0x56156c67a950]:   store i64 %73, i64* %PC, align 8 {
+	[0x56156c6c2780]:  store i64 %74, i64* %3, align 8
+	}
+
+[0x56156c67a9d0]:   %74 = add i64 %48, 24 {
+	[0x56156c6c1fd0]:  %75 = add i64 %49, 24
+	}
+
+[0x56156c67aa38]:   %75 = inttoptr i64 %50 to i64* {
+	[0x56156c6a5a08]:  %76 = inttoptr i64 %51 to i64*
+	}
+
+[0x56156c67aa98]:   %76 = load i64, i64* %75, align 8 {
+	[0x56156c6a5b38]:  %77 = load i64, i64* %76, align 8
+	}
+
+[0x56156c67ab10]:   store i64 %76, i64* %RBP, align 8, !tbaa !1257 {
+	[0x56156c6c3400]:  store i64 %77, i64* %RBP.i, align 8
+	}
+
+[0x56156c67ab90]:   store i64 %74, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6c3710]:  store i64 %75, i64* %6, align 8
+	}
+
+[0x56156c67ac10]:   %77 = add i64 %49, 6 {
+	[0x56156c6c60b0]:  %78 = add i64 %50, 6
+	}
+
+[0x56156c67ac90]:   store i64 %77, i64* %PC, align 8 {
+	[0x56156c6c65c0]:  store i64 %78, i64* %3, align 8
+	}
+
+[0x56156c67acf8]:   %78 = inttoptr i64 %74 to i64* {
+	[0x56156c6a5c68]:  %79 = inttoptr i64 %75 to i64*
+	}
+
+[0x56156c67ad58]:   %79 = load i64, i64* %78, align 8 {
+	[0x56156c6a5d98]:  %80 = load i64, i64* %79, align 8
+	}
+
+[0x56156c67add0]:   store i64 %79, i64* %PC, align 8, !tbaa !1257 {
+	[0x56156c6c6a90]:  store i64 %80, i64* %3, align 8
+	}
+
+[0x56156c67ae50]:   %80 = add i64 %48, 32 {
+	[0x56156c6c7120]:  %81 = add i64 %49, 32
+	}
+
+[0x56156c67aed0]:   store i64 %80, i64* %RSP, align 8, !tbaa !1257 {
+	[0x56156c6bd6e0]:  store i64 %81, i64* %6, align 8
+	}
+
+[0x56156c67af38]:   ret %struct.Memory* %47 {
+	[0x56156c6a5ff8]:  ret %struct.Memory.31* %call2_4004b9
+	}
+
+
+[Info]: Phase II: Retrieve potential BB matches: Round: 1
+Retrieved BB Matches...
+[0x56156c676900]: block_4004a0 {
+	[0x56156c6bb720]:entry
+	}
+
+
+[Info]: Phase II: Handle Conflicting Stores: Round: 1
+
+[Info]: Check for multiple matches
+Iso Match Found
+Reading LLVM: mcsema/test.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from mcsema/test.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Exiting Simple Matcher ...

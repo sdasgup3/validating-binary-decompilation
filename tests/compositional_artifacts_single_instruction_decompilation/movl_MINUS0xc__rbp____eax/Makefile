@@ -11,11 +11,11 @@ mcsema: test
 	llvm-dis test.bc -o test.ll
 
 assemble: test.c
-	gcc -Os $< -S -o test.s
+	clang -Os $< -S -o test.s
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
 	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc movl_MINUS0xc__rbp____eax
 
 binary: test.c
-	gcc -Os $< -o test
+	clang -Os $< -o test
