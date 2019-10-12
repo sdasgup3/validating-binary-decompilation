@@ -155,6 +155,6 @@ int main(int argc, char **argv) {
   // Matching the extracted functions
   Matcher M(F1, F2);
 
-  Console::msg() << "Exiting Simple Matcher ...\n";
+  Console::msg() << "Matcher Done...\n";
   return 0;
 }

@@ -86,6 +86,7 @@ collectDefinedFunctions();
 # Find the body of the main function
 my $mainFuncSignaure = qr/define.*@(sub_.*_main).*/;
 my $mainFuncName     = qr/sub_.*_main/;
+my $callSignature    = qr/\s*(\S*) = call.*?@(.*?)\(.*\).*/;
 my @foundMain        = @{ getMainBody($mainFuncName) };
 
 # Ieratively determine the body of the callee from main
@@ -175,10 +176,11 @@ sub getMainBody {
             }
         }
 
-        if ( $tline =~ m/\s*(\S*) = call.*@(.*)\(.*\).*/ ) {
+        # if ( $tline =~ m/\s*(\S*) = call.*@(.*?)\(.*\).*/ ) {
+        if ( $tline =~ m/$callSignature/ ) {
             my $calledFunc = $2;
 
-            #print $calledFunc." ... \n";
+            # print $calledFunc."\n";
             if ( isDefined($calledFunc) == 1 ) {
 
                 #print " define... \n";
@@ -219,11 +221,12 @@ sub expandMain {
     for my $line (@progBody) {
         my $tline = utils::trim($line);
 
-        #print $tline."\n";
-        if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
-            my $calledFunc = $1;
+        # print $tline."\n";
+        if ( $tline =~ m/$callSignature/ ) {
+        # if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
+            my $calledFunc = $2;
 
-            #print $calledFunc."\n";
+            # print "expandMain: " . $calledFunc ."\n";
             if ( isDefined($calledFunc) == 1 ) {
                 push @calledFuncs, $calledFunc;
             }
