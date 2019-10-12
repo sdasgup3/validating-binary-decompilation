@@ -129,7 +129,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L8NOP_IMPLIJEEEP6MemoryS2_R5St
 }
 
 define %struct.Memory* @routine_nop(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
-block_530:
+block_400468:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0

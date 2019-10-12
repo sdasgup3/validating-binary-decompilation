@@ -50,7 +50,7 @@ CompositionalDecompiler::CompositionalDecompiler(
   this->extractedFunction = extractedFunction;
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
-      "/home/sdasgup3/Github/validating-binary-decompilation/tests/scripts/";
+      "${HOME}/Github/validating-binary-decompilation/tests/scripts/";
   this->workdir = workdir;
 
   cfg = NULL;

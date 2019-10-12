@@ -68,14 +68,20 @@ def writeTXT(output_str, file_basename):
     with open('{}.txt'.format(file_basename), 'w') as txt:
         txt.write(output_str)
 
-def runLLVMDis(inputFile, func_name, num_inst):
+def runLLVMDis(inputFile):
     command1 = [
         'llvm-dis',
         inputFile,
         '-o',
         'test.ll']
+    command2 = [
+        'cp',
+        inputFile,
+        'test.bc']
     ret = True
     if subprocess.check_output(command1) != b'':
+        ret = False
+    if subprocess.check_output(command2) != b'':
         ret = False
     return ret
 
@@ -101,6 +107,29 @@ def runLLVMExtract(inputFile, func_name, num_inst):
     return ret
 
 
+def createParentMakefile(functions):
+
+    allFuncNames = ""
+    for func in functions:
+      allFuncNames = allFuncNames + func[0] + " "
+
+    makeFile = open("Makefile", 'w')
+    makeFile.write(".PHONY:" + allFuncNames)
+    makeFile.write("\n\n")
+    makeFile.write("all:" + allFuncNames + "\n")
+    makeFile.write("binary:" + allFuncNames + "\n")
+    makeFile.write("mcsema:" + allFuncNames + "\n")
+    makeFile.write("opt:" + allFuncNames + "\n")
+    makeFile.write("compd:" + allFuncNames + "\n\n")
+
+    for func in functions:
+      makeFile.write(func[0] + ":" + "\n")
+      makeFile.write("	@echo" + "\n")
+      makeFile.write("	${MAKE} -C " + func[0] + " $(MAKECMDGOALS)")
+      makeFile.write("" + "\n")
+
+    makeFile.close()
+
 def createMakefile(funcName):
 
     makeFile = open("Makefile", 'w')
@@ -108,13 +137,17 @@ def createMakefile(funcName):
     makeFile.write(
         "TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/" + "\n")
     makeFile.write(
+        "SCRIPTDIR=${TOOLDIR}/../../../tests/scripts/" + "\n")
+    makeFile.write(
         "ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n")
-    makeFile.write("INDIR=binary/" + "\n")
+    makeFile.write("INDIR=../binary/" + "\n")
     makeFile.write("OURDIR=mcsema/" + "\n")
     makeFile.write("" + "\n")
     makeFile.write(
         ".PHONY: binary mcsema objdump match opt clean compd" +
         "\n")
+    makeFile.write("" + "\n")
+    makeFile.write("all: binary mcsema compd opt match" + "\n")
     makeFile.write("" + "\n")
     makeFile.write("objdump: ${INDIR}test" + "\n")
     makeFile.write("	objdump -d $< > ${INDIR}/test.objdump" + "\n")
@@ -137,11 +170,16 @@ def createMakefile(funcName):
     makeFile.write("" + "\n")
     makeFile.write("match:" + "\n")
     makeFile.write(
-        "	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:${PROG} --file2 ${OURDIR}test.proposed.opt.ll:${PROG}" + "\n")
+        "	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:${PROG} --file2 ${OURDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
     makeFile.write("" + "\n")
     makeFile.write("compd:" + "\n")
     makeFile.write(
-        "	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test" + "\n")
+        "	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
+    makeFile.write("" + "\n")
     makeFile.write("" + "\n")
     makeFile.write("clean:" + "\n")
     makeFile.write("	rm mcsema/*.bc mcsema/*.ll" + "\n")
@@ -178,6 +216,17 @@ def main():
     writeJSON(functions, os.path.basename(args.inputFile[0:-3]))
     writeTXT(summary_str, os.path.basename(args.inputFile[0:-3]))
 
+    # Generate the binary artifacts
+    if not os.path.isdir("binary"):
+        os.mkdir("binary")
+    os.chdir("binary")
+    if not runLLVMDis(inputFile):
+      print("llvm-extract failed to run for function {}".format(func[0]))
+    os.chdir(os.path.join(os.getcwd(), ".."))
+
+    # Generate programName/Makefile
+    createParentMakefile(functions)
+
     # run llvm-extract for only those functions that do not have floating
     # point types/vector operations
     for func in functions:
@@ -185,25 +234,13 @@ def main():
             os.mkdir(func[0])
         os.chdir(func[0])
 
-        if not os.path.isdir("binary"):
-            os.mkdir("binary")
         if not os.path.isdir("mcsema"):
             os.mkdir("mcsema")
 
         # Create Makefile
         createMakefile(func[0])
 
-        os.chdir("binary")
-
-        # shutil.copyfile(inputFile, "./binary/" + os.path.basename(args.inputFile))
-
-        # if not runLLVMExtract(inputFile, func[0], func[1]):
-          # print("llvm-extract failed to run for function {}".format(func[0]))
-        if not runLLVMDis(inputFile, func[0], func[1]):
-          print("llvm-extract failed to run for function {}".format(func[0]))
-
-        os.chdir(os.path.join(os.getcwd(), "..", ".."))
-
+        os.chdir(os.path.join(os.getcwd(), ".."))
 
 if __name__ == '__main__':
     main()

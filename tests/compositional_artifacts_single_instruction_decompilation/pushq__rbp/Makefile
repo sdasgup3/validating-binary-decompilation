@@ -1,6 +1,6 @@
 .PHONY: clean
 CLEAN_ASM=${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
-DVAL_SCRIPT_DIR=/home/sdasgup3/Github/validating-binary-decompilation/tests/scripts/
+DVAL_SCRIPT_DIR=${HOME}/Github/validating-binary-decompilation/tests/scripts/
 
 objdump: test
 	objdump -d $< > test.objdump
@@ -11,11 +11,11 @@ mcsema: test
 	llvm-dis test.bc -o test.ll
 
 assemble: test.c
-	gcc -Os $< -S -o test.s
+	clang -Os $< -S -o test.s
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
 	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc pushq__rbp
 
 binary: test.c
-	gcc -Os $< -o test
+	clang -Os $< -o test
