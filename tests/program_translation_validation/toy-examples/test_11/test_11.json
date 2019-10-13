@@ -1,0 +1,14 @@
+{
+  "doTrans": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "doTrans"
+  }, 
+  "main": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

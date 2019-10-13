@@ -24,10 +24,13 @@ BEGIN {
 use kutils;
 use utils;
 
-my $help   = "";
-my $file   = "";
-my $outdir = "";
-my $opcode = "";
+my $help               = "";
+my $file               = "";
+my $outdir             = "";
+my $opcode             = "";
+my $norenameintrinsics = "";
+my $defineintrinsics   = "";
+my $definemain   = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -35,9 +38,12 @@ my $terminatingInstr =
 qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
 GetOptions(
-    "help"   => \$help,
-    "file:s" => \$file,
-    "opc:s"  => \$opcode,
+    "help"               => \$help,
+    "norenameintrinsics" => \$norenameintrinsics,
+    "defineintrinsics"   => \$defineintrinsics,
+    "definemain"         => \$definemain,
+    "file:s"             => \$file,
+    "opc:s"              => \$opcode,
 ) or die("Error in command line arguments\n");
 
 sub usage {
@@ -59,17 +65,19 @@ my @lines = <$fp>;
 close $fp;
 
 ## Get Target Info
-my $targetInfo = "";
+#my $targetInfo = "";
+#
+#for ( my $i = 0 ; $i < $maxTargetInfoLength ; $i = $i + 1 ) {
+#    my $line = $lines[$i];
+#    $targetInfo = $targetInfo . $line;
+#}
+#
+##print($targetInfo);
+#
+### Get Stucture Layout
+#my $structLayout = getStructureLayout();
 
-for ( my $i = 0 ; $i < $maxTargetInfoLength ; $i = $i + 1 ) {
-    my $line = $lines[$i];
-    $targetInfo = $targetInfo . $line;
-}
-
-#print($targetInfo);
-
-## Get Stucture Layout
-my $structLayout = getStructureLayout();
+my $decls = getDeclarations();
 
 # Hold the code for all the relevant functions
 my @funcs = ();
@@ -82,9 +90,10 @@ my %definedFuncs = ();
 collectDefinedFunctions();
 
 # Find the body of the main function
-my $mainFuncSignaure    = qr/define.*@(sub_.*_main).*/;
-my $mainFuncName        = qr/sub_.*_main/;
-my @foundMain = @{ getMainBody($mainFuncName) };
+my $mainFuncSignaure = qr/define.*@(sub_.*_main).*/;
+my $mainFuncName     = qr/sub_.*_main/;
+my $callSignature    = qr/\s*(\S*) = call.*?@(.*?)\(.*\).*/;
+my @foundMain        = @{ getMainBody($mainFuncName) };
 
 # Ieratively determine the body of the callee from main
 expandMain( \@foundMain );
@@ -98,17 +107,27 @@ if ( $dirname ne "" ) {
 open( my $ofp, ">", $outFileName ) or die "cannot open: $!";
 print("Generatin $outFileName for opcode $opcode ...\n");
 
-print $ofp $targetInfo;
-print $ofp "\n";
-print $ofp $structLayout;
-print $ofp "\n";
-print $ofp getInstrinticsDefinitions();
+#print $ofp $targetInfo;
+#print $ofp "\n";
+#print $ofp $structLayout;
+#print $ofp "\n";
+
+print $ofp $decls."\n";
+
+if ( $defineintrinsics ne "" ) {
+    print $ofp getInstrinticsDefinitions();
+}
+
 print $ofp "\n";
 for my $itr (@funcs) {
     print $ofp $itr;
 }
 print $ofp "\n";
-print $ofp getMainDefintion();
+
+if( $definemain ne "") {
+  print $ofp getMainDefintion();
+}
+
 close $ofp;
 
 ##############################################
@@ -127,7 +146,9 @@ sub fixFunc {
         }
 
         # Rename instrinsics
-        $line =~ s/\@llvm\.(.*)/\@my\.$1/;
+        if ( $norenameintrinsics eq "" ) {
+            $line =~ s/\@llvm\.(.*)/\@my\.$1/;
+        }
 
         # Remove nsw nuw
         $line =~ s/nsw//g;
@@ -155,37 +176,46 @@ sub getMainBody {
         }
 
         if ( $foundMain == 0 ) {
-#print "!!".$tline. "!!";
+
+            #print "!!".$tline. "!!";
+            # Remove noalias
 
             if ( $tline =~ m/(define.*)\@(sub_.*_main)(.*)/ ) {
-#print "#".$tline. "#\n";
-                push @mainBody, "$1\@$modMainName$3\n";
+
+                #print "#".$tline. "#\n";
+                my $mainproto = "$1\@$modMainName$3";
+                $mainproto =~ s/noalias//g;
+
+                #push @mainBody, "$1\@$modMainName$3\n";
+                push @mainBody, $mainproto . "\n";
                 $foundMain = 1;
                 next;
             }
         }
 
-        if ( $tline =~ m/\s*(\S*) = call.*@(.*)\(.*\).*/ ) {
+        # if ( $tline =~ m/\s*(\S*) = call.*@(.*?)\(.*\).*/ ) {
+        if ( $tline =~ m/$callSignature/ ) {
             my $calledFunc = $2;
-#print $calledFunc." ... \n";
+
+            # print $calledFunc."\n";
             if ( isDefined($calledFunc) == 1 ) {
-#print " define... \n";
-#$countCalls = $countCalls + 1;
-#if ( $countCalls == 2 ) {
-#              if ($calledFunc =~ m/RET/) {
-#                  last;
-#              }
-#}
-               push @mainBody, $line;
-               $mainRetval = $1;
-               last;
+
+                #print " define... \n";
+                #$countCalls = $countCalls + 1;
+                #if ( $countCalls == 2 ) {
+                #              if ($calledFunc =~ m/RET/) {
+                #                  last;
+                #              }
+                #}
+                push @mainBody, $line;
+                $mainRetval = $1;
+                last;
             }
         }
 
-        if($tline =~ m/store i64 \%1, i64\* \%PC, align 8/) {
-          next;
+        if ( $tline =~ m/store i64 \%1, i64\* \%PC, align 8/ ) {
+            next;
         }
-
 
         push @mainBody, $line;
 
@@ -194,7 +224,7 @@ sub getMainBody {
     push @mainBody, "  ret %struct.Memory* $mainRetval\n";
     push @mainBody, "}\n";
 
-#utils::printArray(\@mainBody);
+    #utils::printArray(\@mainBody);
     return \@mainBody;
 }
 
@@ -208,11 +238,13 @@ sub expandMain {
     for my $line (@progBody) {
         my $tline = utils::trim($line);
 
-        #print $tline."\n";
-        if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
-            my $calledFunc = $1;
+        # print $tline."\n";
+        if ( $tline =~ m/$callSignature/ ) {
 
-            #print $calledFunc."\n";
+            # if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
+            my $calledFunc = $2;
+
+            # print "expandMain: " . $calledFunc ."\n";
             if ( isDefined($calledFunc) == 1 ) {
                 push @calledFuncs, $calledFunc;
             }
@@ -240,6 +272,10 @@ sub getFuncBody {
             next;
         }
 
+        if ( $tline =~ m/define/ ) {
+            $line =~ s/noalias//g;
+        }
+
         $foundMain = 1;
         push @mainBody, "$line";
 
@@ -257,22 +293,43 @@ sub collectDefinedFunctions {
     for my $line (@lines) {
         my $tline = utils::trim($line);
         if ( $tline =~ m/define.*\@(.*?)\(.*\).*/g ) {
-          $definedFuncs{$1} = 1; 
+            $definedFuncs{$1} = 1;
         }
     }
-#printMap(\%definedFuncs);
+
+    #printMap(\%definedFuncs);
 }
 
 sub isDefined {
     my $funcName = shift @_;
 
-    if(exists $definedFuncs{$funcName}) {
-#print $funcName . "defined ...\n";
-      return 1;
+    if ( exists $definedFuncs{$funcName} ) {
+
+        #print $funcName . "defined ...\n";
+        return 1;
     }
 
-#print $funcName . "not defined ...\n";
+    #print $funcName . "not defined ...\n";
     return 0;
+}
+
+sub getDeclarations {
+    my $decls = "";
+
+    for my $line (@lines) {
+        my $tline = utils::trim($line);
+
+        if ( $tline =~ m/define|declare/ ) {
+            last;
+        }
+
+        if ( $tline =~ m/(.*) = (.*)/g ) {
+#push @decls, $line;
+            $decls = $decls. $line;
+        }
+    }
+
+    return $decls;
 }
 
 sub getInstrinticsDefinitions {

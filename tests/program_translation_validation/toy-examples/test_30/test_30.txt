@@ -1,0 +1,3 @@
+stderr_driver, 5, False, False
+main, 8, False, False
+print_it, 6, False, False

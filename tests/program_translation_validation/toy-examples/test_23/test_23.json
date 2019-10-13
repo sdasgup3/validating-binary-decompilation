@@ -1,0 +1,14 @@
+{
+  "draw": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "draw"
+  }, 
+  "main": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

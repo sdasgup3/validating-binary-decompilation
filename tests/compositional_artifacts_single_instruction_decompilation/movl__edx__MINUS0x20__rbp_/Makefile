@@ -1,6 +1,6 @@
 .PHONY: clean
 CLEAN_ASM=${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
-DVAL_SCRIPT_DIR=/home/sdasgup3/Github/validating-binary-decompilation/tests/scripts/
+DVAL_SCRIPT_DIR=${HOME}/Github/validating-binary-decompilation/tests/scripts/
 
 objdump: test
 	objdump -d $< > test.objdump

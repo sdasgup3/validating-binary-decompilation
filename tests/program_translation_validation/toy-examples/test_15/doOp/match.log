@@ -1,0 +1,10 @@
+Matching sub_400530_doOp Vs doOp
+
+
+[Error] Failed to extract Potential Matches for:[0x557bfe284500]:   %29 = add i32 %28, %27
+matcher: /home/sdasgup3/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:94: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Reading LLVM: mcsema/test.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [doOp] from mcsema/test.opt.ll
+Extracting function [doOp] from mcsema/test.proposed.opt.ll
+Aborted (core dumped)

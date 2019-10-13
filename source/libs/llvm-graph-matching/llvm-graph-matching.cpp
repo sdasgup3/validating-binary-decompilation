@@ -46,6 +46,8 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
+  // dumpLLVMNode(I1);
+  // dumpLLVMNode(I2);
   if (I1->isBinaryOp()) {
     assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
            "deepMatch Assert!!");
@@ -76,11 +78,20 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
     //  VertexSet.push_back(&*I1);
     //}
     VertexSet.push_back(&*I1);
+    // dumpLLVMNode(&*I1);
 
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
       if (deepMatch(&*I1, &*I2)) {
         PotIMatches[&*I1].insert(&*I2);
       }
+    }
+
+    if (PotIMatches[&*I1].size() == 0) {
+      llvm::errs() << "\n\n[Error] Failed to extract Potential Matches for:";
+      dumpLLVMNode(&*I1);
+      assert(
+          0 &&
+          "[Error in retrievePotIMatches] Failed to extract Potential Matches");
     }
   }
 
@@ -854,6 +865,11 @@ int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
   case Value::ConstantExprVal: {
     const ConstantExpr *LE = cast<ConstantExpr>(L);
     const ConstantExpr *RE = cast<ConstantExpr>(R);
+
+    if (LE->getOpcode() == RE->getOpcode() &&
+        LE->getOpcode() == Instruction::PtrToInt)
+      return 0;
+
     unsigned NumOperandsL = LE->getNumOperands();
     unsigned NumOperandsR = RE->getNumOperands();
     if (int Res = cmpNumbers(NumOperandsL, NumOperandsR))
