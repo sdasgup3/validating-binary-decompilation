@@ -4,13 +4,13 @@
 
 ### [Already populated] Create the wllvm binaries & Extract the bc files
 ```bash
-make -C bc-seeds/ clean
-make -C bc-seeds/
+cd bc-seeds
+ls | parallel  "echo; echo {}; cd {}; make clean; make all; cd .." |& tee ~/Junk/log
 ```
 
 ### [Already Populated] Create the directory layout
 ```bash
-find bc-seeds/ -name "*.bc" | parallel  "echo; echo {}; ../../scripts/extractor.py -P ${HOME}/Github/validating-binary-decompilation/source/build/lib/LLVMfunc-analyzer.so -O ./ {}"
+ls bc-seeds | parallel  "echo; echo {}; ../../scripts/extractor.py -P ${HOME}/Github/validating-binary-decompilation/source/build/lib/LLVMfunc-analyzer.so -O ./ bc-seeds/{}/{}.bc"
 ```
 
 ### Test Runs
@@ -38,9 +38,16 @@ make all
 
 ### Batch Run
 ```bash
-find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-| xargs  -I'abc' find 'abc' -name "Makefile" \
-| parallel   "echo; echo {}; make -C \$(dirname {}) all"
+# Fire all the runs from top Makefile
+cat filelist.txt  | parallel -j4 "echo ; echo {}; cd {}; make all ; cd ..;" |& tee ~/Junk/log
+
+# OR Fire all the runs from leaf Makefile
+find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "old-examples\|bc-seeds" | parallel -j1 "echo; echo {}; make -C \$(dirname {}) all"
+
+#find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
+#| xargs  -I'abc' find 'abc' -name "Makefile" \
+#| parallel   "echo; echo {}; make -C \$(dirname {}) all"
+
 # OR
 # find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
 # | xargs  -I'abc' find 'abc' -name "Makefile" \
@@ -57,6 +64,11 @@ find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
 # find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
 # | xargs  -I'abc' find 'abc' -name "Makefile" \
 # | parallel   "echo; echo {}; make -C \$(dirname {}) match"  
+```
+
+### Remove the cache directories for a particular program
+```bash
+grep "Workdir" compd.log | sed -e "s/Workdir:/rm -rf /g" | parallel {}
 ```
 
 

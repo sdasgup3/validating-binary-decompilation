@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "foo": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "foo"
+  }
+}

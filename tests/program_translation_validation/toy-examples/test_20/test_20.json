@@ -1,0 +1,14 @@
+{
+  "switches": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "switches"
+  }, 
+  "main": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

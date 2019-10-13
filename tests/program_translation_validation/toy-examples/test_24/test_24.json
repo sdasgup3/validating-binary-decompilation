@@ -1,0 +1,26 @@
+{
+  "read_bytes": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bytes"
+  }, 
+  "main": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "keycomp": {
+    "num_inst": 307, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "keycomp"
+  }, 
+  "to_byte": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "to_byte"
+  }
+}

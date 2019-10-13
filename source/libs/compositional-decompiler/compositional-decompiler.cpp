@@ -41,6 +41,10 @@ static void to_dot(Cfg *cfg, const string &dot_file);
 static bool to_pdf(const string &dot_file, const string &pdf_file);
 static bool view_pdf(const string &pdf_file);
 static string extractFuncName(const string &);
+/** Is this character sequence a hex string? */
+static bool is_hex_string(const string &s);
+// Convert a hex string to an int */
+static uint64_t hex_to_int(const string &s);
 
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
@@ -168,6 +172,34 @@ CompositionalDecompiler::uniquifyFuncDefns(const vector<string> &local_defn) {
   }
 
   return retval;
+}
+
+vector<string>
+CompositionalDecompiler::collectDeclarations(const vector<string> &local_defn) {
+  bool skipFunction = false;
+
+  std::smatch m;
+  size_t i = 0;
+  for (auto &line : local_defn) {
+    if (string::npos != line.find("define") ||
+        string::npos != line.find("declare")) {
+      break;
+    }
+
+    if (std::regex_search(line, m, std::regex("(.*) = (.*)"))) {
+      if (DeclCache.count(m[1])) {
+        if (m[2] != DeclCache.at(m[1])) {
+          Console::msg() << "Multiple defintions of " << m[1] << "\n";
+        }
+      } else {
+        DeclCache[m[1]] = m[2];
+        Decls << line << endl;
+      }
+    }
+    i++;
+  }
+
+  return vector<string>(local_defn.begin() + i, local_defn.end());
 }
 
 vector<string>
@@ -332,6 +364,55 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
   return retval;
 }
 
+vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
+    x64asm::Instruction instr, const vector<string> &local_defn) {
+  vector<string> retval;
+  stringstream opr;
+  if (is_any_operand_mem_type(instr)) {
+    auto memIndex = instr.mem_index();
+    const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
+    opr << M_OPR;
+  } else if (is_any_operand_imm_type(instr)) {
+    auto immIndex = instr.imm_index();
+    const Imm &IMM_OPR = instr.get_operand<Imm>(immIndex);
+    opr << IMM_OPR;
+  } else {
+    // TO DO
+  }
+
+  // if (!is_hex_string(opr.str()))
+  //   return local_defn;
+
+  std::smatch m;
+  // uint64_t hexInt = hex_to_int(opr.str());
+
+  for (auto &line : local_defn) {
+    // if (regex_search(line, m, regex("i64.?ptrtoint"))) {
+    if (regex_search(line, m, regex("ptrtoint"))) {
+      // auto replace_str = "i64 " + to_string(hexInt) + ")\n";
+      string addrExpr = normalize_spaces(opr.str());
+
+      stringstream tmp;
+      tmp << "@G_" << addrExpr << " = internal constant i8 0" << endl;
+      if (!DeclCache.count(tmp.str())) {
+        Decls << tmp.str();
+        DeclCache.insert(pair<string, string>(tmp.str(), ""));
+      }
+
+      auto replace_str = "ptrtoint( i8* @G_" + addrExpr + " to";
+      auto repl_line =
+          // regex_replace(line, regex("i64.?ptrtoint.*$"), replace_str);
+          regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+      retval.push_back(repl_line);
+      continue;
+    }
+
+    retval.push_back(line);
+  }
+
+  return retval;
+}
+
 string CompositionalDecompiler::handleJMPBodyCalls(x64asm::Instruction instr,
                                                    uint64_t currRIP,
                                                    uint64_t currSize) {
@@ -459,7 +540,7 @@ string CompositionalDecompiler::handleJCCBodyCalls(x64asm::Instruction instr,
          << currRIP << ", 1" << endl;
     // branch
     Body << "  br i1 "
-         << "%call_" << hex << currRIP << ", label %block_" << ss_label.str()
+         << "%cmpBr_" << hex << currRIP << ", label %block_" << ss_label.str()
          << ", label %block_" << falThrouAddressLabel.str() << "\n\n";
   }
   retval << "%call_" << hex << currRIP;
@@ -521,9 +602,13 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
   retval << "%call2_" << hex << currRIP;
 
   // Decls
-  Decls << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
-        << "(%struct.State* dereferenceable(3376), i64, %struct.Memory*)"
-        << endl;
+  stringstream tmp;
+  tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+      << "(%struct.State* dereferenceable(3376), i64, %struct.Memory*)" << endl;
+  if (!DeclCache.count(tmp.str())) {
+    Decls << tmp.str();
+    DeclCache.insert(pair<string, string>(tmp.str(), ""));
+  }
 
   return retval.str();
 }
@@ -588,24 +673,32 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   if (!createSetup(instr, workdir, scriptsPath)) {
     exit(1);
   }
-  auto local_defn = runSetup(instr, workdir, scriptsPath);
+  auto full_defn = runSetup(instr, workdir, scriptsPath);
+
+  // Collect the various declarations and return the definition w/o the
+  // declarations
+  auto local_defn = collectDeclarations(full_defn);
 
   // Uniquify function definitions
   auto uniq_local_defn = uniquifyFuncDefns(local_defn);
 
-  vector<string> mod_def_jcc = uniq_local_defn;
+  vector<string> mod_def = uniq_local_defn;
 
   if (instr.is_jcc()) {
-    mod_def_jcc = handleJCCDefns(uniq_local_defn);
+    mod_def = handleJCCDefns(uniq_local_defn);
   }
   if (instr.is_jmp()) {
-    mod_def_jcc = handleJMPDefns(uniq_local_defn);
+    mod_def = handleJMPDefns(uniq_local_defn);
   }
   if (instr.is_any_call()) {
-    mod_def_jcc = handleCALLDefns(uniq_local_defn);
+    mod_def = handleCALLDefns(uniq_local_defn);
   }
 
-  for (auto line : mod_def_jcc) {
+  if (is_any_operand_mem_type(instr) || is_any_operand_imm_type(instr)) {
+    mod_def = handleDataSectionAccessDefns(instr, uniq_local_defn);
+  }
+
+  for (auto line : mod_def) {
     Defns << line << "\n";
   }
 
@@ -706,16 +799,18 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
 
   // Compute PC updates for each instruction
   computePCUpdates();
-
-  // Generating the global struct definitions and intricsics declarations
-  string cmd = "cp "
+  vector<string> funcDecls;
+  // Generating intricsics declarations
+  redi::ipstream *stream = NULL;
+  string cmd = "cat "
                "${HOME}/Github/validating-binary-decompilation/source/libs/"
                "compositional-decompiler/data/mcsema_template.txt " +
                outLLVMPath;
-  if (!stoke::run_command(cmd)) {
+  if (!stoke::run_command(cmd, true, &stream)) {
     Console::error(1) << "Error: " << get_error() << endl;
     return;
   }
+  extractFromStream(funcDecls, *stream);
 
   auto retval = decompileFunction(extractedFunction);
   if (has_error()) {
@@ -732,7 +827,13 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
   Console::msg() << "\n\nWriting to " << outLLVMPath << " ...\n";
   std::ofstream fd;
   fd.open(outLLVMPath.c_str(), ios::out | ios::app);
+
   fd << Decls.str();
+  fd << "\n; Function Declaraions\n";
+  for (auto funcDecl : funcDecls) {
+    fd << funcDecl << endl;
+  }
+  fd << "\n\n";
   fd << Body.str();
   fd << "  ret %struct.Memory* " << retval << "\n";
   fd << "}\n\n";
@@ -801,6 +902,35 @@ string extractFuncName(const string &name) {
   return name.substr(it1 + 1, it2 - it1 - 1);
 }
 
+/** Is this character sequence a hex string? */
+bool is_hex_string(const string &s) {
+  string str(s);
+  if (s[0] == '$') {
+    str = str.substr(1, str.size() - 1);
+  }
+  for (auto c : str) {
+    if (c == 'x' || c == 'X')
+      continue;
+
+    if (!isxdigit(c)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// Convert a hex string to an int */
+uint64_t hex_to_int(const string &s) {
+  uint64_t val;
+  string str(s);
+  if (s[0] == '$') {
+    str = str.substr(1, str.size() - 1);
+  }
+
+  istringstream iss(str);
+  iss >> hex >> val;
+  return val;
+}
 // string extractNummbersFromLabel(const string &str) {
 //  string retval("");
 //  auto pos = str.find('L');

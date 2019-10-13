@@ -2,127 +2,92 @@
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
-
 %union.anon = type { i64 }
-%struct.State = type {%struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, i64, i64, i64, %struct.GPR}
-
+%seg_400370__init_type = type <{ [23 x i8] }>
+%seg_400390__text_type = type <{ [338 x i8] }>
+%seg_4004e4__fini_type = type <{ [9 x i8] }>
+%seg_4004f0__rodata_type = type <{ [4 x i8] }>
+%seg_4004f4__eh_frame_hdr_type = type <{ [44 x i8] }>
+%seg_400520__eh_frame_type = type <{ [196 x i8] }>
+%seg_600e50__init_array_type = type <{ i64, i64 }>
+%seg_601018__data_type = type <{ [16 x i8] }>
+%__bss_start_type = type <{ [8 x i8] }>
+%struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
 %union.vec512_t = type { %struct.uint64v8_t }
 %struct.uint64v8_t = type { [8 x i64] }
 %struct.ArithFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8 }
+%struct.Segments = type { i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector }
+%union.SegmentSelector = type { i16 }
+%struct.AddressSpace = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
 %struct.Reg = type { %union.anon }
 %struct.GPR = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
-%struct.float32v8_t = type { [8 x float] }
-%struct.int32v8_t = type { [8 x i32] }
-%struct.uint16v16_t = type { [16 x i16] }
-%struct.uint8v32_t = type { [32 x i8] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
-%struct.uint64v4_t = type { [4 x i64] }
-%struct.anon.2 = type { i8, i8 }
+%struct.X87Stack = type { [8 x %struct.anon.3] }
+%struct.anon.3 = type { i64, double }
+%struct.MMX = type { [8 x %struct.anon.4] }
+%struct.anon.4 = type { i64, %union.vec64_t }
+%union.vec64_t = type { %struct.uint64v1_t }
+%struct.uint64v1_t = type { [1 x i64] }
+%struct.FPUStatusFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, [4 x i8] }
+%union.FPU = type { %struct.anon.13 }
+%struct.anon.13 = type { %struct.FpuFXSAVE, [96 x i8] }
+%struct.FpuFXSAVE = type { %union.SegmentSelector, %union.SegmentSelector, %union.FPUAbridgedTagWord, i8, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, %union.FPUControlStatus, %union.FPUControlStatus, [8 x %struct.FPUStackElem], [16 x %union.vec128_t] }
+%union.FPUAbridgedTagWord = type { i8 }
+%union.FPUControlStatus = type { i32 }
+%struct.FPUStackElem = type { %union.anon.11, [6 x i8] }
+%union.anon.11 = type { %struct.float80_t }
+%struct.float80_t = type { [10 x i8] }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
-%struct.Memory = type { i64 }
+%struct.SegmentCaches = type { %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow }
+%struct.SegmentShadow = type { %union.anon, i32, i32 }
+%struct.Memory = type opaque
+%struct.uint8v32_t = type { [32 x i8] }
+%struct.anon.2 = type { i8, i8 }
+%struct.int32v8_t = type { [8 x i32] }
+%struct.float32v8_t = type { [8 x float] }
+%struct.uint8v8_t = type { [8 x i8] }
+%struct.uint8v16_t = type { [16 x i8] }
+%struct.uint16v8_t = type { [8 x i16] }
+%struct.uint8v4_t = type { [4 x i8] }
+%struct.int16v4_t = type { [4 x i16] }
+%struct.int32v4_t = type { [4 x i32] }
+%struct.uint64v2_t = type { [2 x i64] }
+%struct.uint64v4_t = type { [4 x i64] }
+%struct.uint128v2_t = type { [2 x i128] }
+%struct.uint16v16_t = type { [16 x i16] }
+%struct.float64v4_t = type { [4 x double] }
+%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
+%"class.std::bitset" = type { %struct.uint64v4_t }
+%struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
+%struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
+%struct.anon.5 = type { i32, i32 }
+@switch.table = private unnamed_addr constant [4 x i32] [i32 2048, i32 3072, i32 0, i32 1024]
+@DR0 = external global i64, align 8
+@DR1 = external global i64, align 8
+@DR2 = external global i64, align 8
+@DR3 = external global i64, align 8
+@DR4 = external global i64, align 8
+@DR5 = external global i64, align 8
+@DR6 = external global i64, align 8
+@DR7 = external global i64, align 8
+@gCR0 = external global %union.anon, align 1
+@gCR1 = external global %union.anon, align 1
+@gCR2 = external global %union.anon, align 1
+@gCR3 = external global %union.anon, align 1
+@gCR4 = external global %union.anon, align 1
+@gCR8 = external global %union.anon, align 1
+@seg_400370__init = internal constant %seg_400370__init_type <{ [23 x i8] c"H\83\EC\08H\8B\05}\0C \00H\85\C0t\02\FF\D0H\83\C4\08\C3" }>
+@seg_400390__text = internal constant %seg_400390__text_type <{ [338 x i8] c"1\EDI\89\D1^H\89\E2H\83\E4\F0PTI\C7\C0\E0\04@\00H\C7\C1p\04@\00H\C7\C7h\04@\00\FF\156\0C \00\F4\0F\1FD\00\00U\B8(\10`\00H=(\10`\00H\89\E5t\17\B8\00\00\00\00H\85\C0t\0D]\BF(\10`\00\FF\E0\0F\1FD\00\00]\C3f\0F\1FD\00\00\BE(\10`\00UH\81\EE(\10`\00H\89\E5H\C1\FE\03H\89\F0H\C1\E8?H\01\C6H\D1\FEt\15\B8\00\00\00\00H\85\C0t\0B]\BF(\10`\00\FF\E0\0F\1F\00]\C3f\0F\1FD\00\00\80=\F1\0B \00\00u\17UH\89\E5\E8~\FF\FF\FF\C6\05\DF\0B \00\01]\C3\0F\1FD\00\00\F3\C3\0F\1F@\00f.\0F\1F\84\00\00\00\00\00UH\89\E5]\EB\89\90\C3\C3f\0F\1FD\00\00AWAVA\89\FFAUATL\8D%\CE\09 \00UH\8D-\CE\09 \00SI\89\F6I\89\D5L)\E5H\83\EC\08H\C1\FD\03\E8\CF\FE\FF\FFH\85\EDt 1\DB\0F\1F\84\00\00\00\00\00L\89\EAL\89\F6D\89\FFA\FF\14\DCH\83\C3\01H9\DDu\EAH\83\C4\08[]A\5CA]A^A_\C3\90f.\0F\1F\84\00\00\00\00\00\F3\C3" }>
+@seg_4004e4__fini = internal constant %seg_4004e4__fini_type <{ [9 x i8] c"H\83\EC\08H\83\C4\08\C3" }>
+@seg_4004f0__rodata = internal constant %seg_4004f0__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
+@seg_4004f4__eh_frame_hdr = internal constant %seg_4004f4__eh_frame_hdr_type <{ [44 x i8] c"\01\1B\03;(\00\00\00\04\00\00\00\9C\FE\FF\FFD\00\00\00t\FF\FF\FFt\00\00\00|\FF\FF\FF\8C\00\00\00\EC\FF\FF\FF\D4\00\00\00" }>
+@seg_400520__eh_frame = internal constant %seg_400520__eh_frame_type <{ [196 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\14\00\00\00\1C\00\00\00P\FE\FF\FF+\00\00\00\00\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\14\00\00\00\1C\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00D\00\00\004\00\00\00\E8\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\14\00\00\00|\00\00\00\10\FF\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+@seg_601018__data = internal global %seg_601018__data_type zeroinitializer
+@__bss_start = global %__bss_start_type zeroinitializer
+@0 = internal global i1 false
 
-define i32 @my.ctpop.i32(i32 %x) {
-entry:
-  %and = and i32 %x, 1
-  %shr123 = lshr i32 %x, 1
-  %and1 = and i32 %shr123, 1
-  %shr2124 = lshr i32 %x, 2
-  %and3 = and i32 %shr2124, 1
-  %shr5125 = lshr i32 %x, 3
-  %and6 = and i32 %shr5125, 1
-  %shr8126 = lshr i32 %x, 4
-  %and9 = and i32 %shr8126, 1
-  %shr11127 = lshr i32 %x, 5
-  %and12 = and i32 %shr11127, 1
-  %shr14128 = lshr i32 %x, 6
-  %and15 = and i32 %shr14128, 1
-  %shr17129 = lshr i32 %x, 7
-  %and18 = and i32 %shr17129, 1
-  %shr20130 = lshr i32 %x, 8
-  %and21 = and i32 %shr20130, 1
-  %shr23131 = lshr i32 %x, 9
-  %and24 = and i32 %shr23131, 1
-  %shr26132 = lshr i32 %x, 10
-  %and27 = and i32 %shr26132, 1
-  %shr29133 = lshr i32 %x, 11
-  %and30 = and i32 %shr29133, 1
-  %shr32134 = lshr i32 %x, 12
-  %and33 = and i32 %shr32134, 1
-  %shr35135 = lshr i32 %x, 13
-  %and36 = and i32 %shr35135, 1
-  %shr38136 = lshr i32 %x, 14
-  %and39 = and i32 %shr38136, 1
-  %shr41137 = lshr i32 %x, 15
-  %and42 = and i32 %shr41137, 1
-  %shr44138 = lshr i32 %x, 16
-  %and45 = and i32 %shr44138, 1
-  %shr47139 = lshr i32 %x, 17
-  %and48 = and i32 %shr47139, 1
-  %shr50140 = lshr i32 %x, 18
-  %and51 = and i32 %shr50140, 1
-  %shr53141 = lshr i32 %x, 19
-  %and54 = and i32 %shr53141, 1
-  %shr56142 = lshr i32 %x, 20
-  %and57 = and i32 %shr56142, 1
-  %shr59143 = lshr i32 %x, 21
-  %and60 = and i32 %shr59143, 1
-  %shr62144 = lshr i32 %x, 22
-  %and63 = and i32 %shr62144, 1
-  %shr65145 = lshr i32 %x, 23
-  %and66 = and i32 %shr65145, 1
-  %shr68146 = lshr i32 %x, 24
-  %and69 = and i32 %shr68146, 1
-  %shr71147 = lshr i32 %x, 25
-  %and72 = and i32 %shr71147, 1
-  %shr74148 = lshr i32 %x, 26
-  %and75 = and i32 %shr74148, 1
-  %shr77149 = lshr i32 %x, 27
-  %and78 = and i32 %shr77149, 1
-  %shr80150 = lshr i32 %x, 28
-  %and81 = and i32 %shr80150, 1
-  %shr83151 = lshr i32 %x, 29
-  %and84 = and i32 %shr83151, 1
-  %shr86152 = lshr i32 %x, 30
-  %and87 = and i32 %shr86152, 1
-  %shr89153 = lshr i32 %x, 31
-  %add = add i32 %shr89153, %and
-  %add4 = add i32 %add, %and1
-  %add7 = add i32 %add4, %and3
-  %add10 = add i32 %add7, %and6
-  %add13 = add i32 %add10, %and9
-  %add16 = add i32 %add13, %and12
-  %add19 = add i32 %add16, %and15
-  %add22 = add i32 %add19, %and18
-  %add25 = add i32 %add22, %and21
-  %add28 = add i32 %add25, %and24
-  %add31 = add i32 %add28, %and27
-  %add34 = add i32 %add31, %and30
-  %add37 = add i32 %add34, %and33
-  %add40 = add i32 %add37, %and36
-  %add43 = add i32 %add40, %and39
-  %add46 = add i32 %add43, %and42
-  %add49 = add i32 %add46, %and45
-  %add52 = add i32 %add49, %and48
-  %add55 = add i32 %add52, %and51
-  %add58 = add i32 %add55, %and54
-  %add61 = add i32 %add58, %and57
-  %add64 = add i32 %add61, %and60
-  %add67 = add i32 %add64, %and63
-  %add70 = add i32 %add67, %and66
-  %add73 = add i32 %add70, %and69
-  %add76 = add i32 %add73, %and72
-  %add79 = add i32 %add76, %and75
-  %add82 = add i32 %add79, %and78
-  %add85 = add i32 %add82, %and81
-  %add88 = add i32 %add85, %and84
-  %add91 = add i32 %add88, %and87
-  ret i32 %add91
-}
-declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3RETEP6MemoryR5State(%struct.Memory* returned, %struct.State* nocapture dereferenceable(3376)) #0 {
   %3 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 6, i32 33, i32 0, i32 0
@@ -149,28 +114,3 @@ block_400468:
   ret %struct.Memory* %8
 }
 
-define i32 @main() {
-entry:
-  %state = alloca %struct.State
-  %mem = alloca %struct.Memory
-  %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
-  %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
-  %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
-  %addr4 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 7, i32 0, i32 0
-  %addr5 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 9, i32 0, i32 0
-  %addr6 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 11, i32 0, i32 0
-  %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
-  %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
-  %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
-  store i64 100, i64* %addr1, align 8
-  store i64 200, i64* %addr2, align 8
-  store i64 300, i64* %addr3, align 8
-  store i64 400, i64* %addr4, align 8
-  store i64 500, i64* %addr5, align 8
-  store i64 600, i64* %addr6, align 8
-  store i64 700, i64* %addr7, align 8
-  store i64 800, i64* %addr8, align 8
-  store i64 900, i64* %addr9, align 8
-  %call = call %struct.Memory* @routine_retq(%struct.State* %state, i64 0, %struct.Memory* %mem)
-  ret i32 0
-}

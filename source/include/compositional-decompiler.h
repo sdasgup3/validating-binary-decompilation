@@ -39,6 +39,7 @@ private:
   // Cache for instruction defn which are already decompiled
   // set<string> ICache;
   set<string> FuncCache;
+  map<string, string> DeclCache;
 
   Cfg *cfg;
   bool disassemble(string inPath);
@@ -78,9 +79,13 @@ private:
   // string findFileForOpcode(x64asm::Instruction instr,
   //                         const string &singleInstrDecompPath);
   vector<string> uniquifyFuncDefns(const vector<string> &local_defn);
+  vector<string> collectDeclarations(const vector<string> &local_defn);
   vector<string> handleJMPDefns(const vector<string> &local_defn);
   vector<string> handleJCCDefns(const vector<string> &local_defn);
   vector<string> handleCALLDefns(const vector<string> &local_defn);
+  vector<string> handleDataSectionAccessDefns(x64asm::Instruction instr,
+                                              const vector<string> &local_defn);
+
   string handleJMPBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
                             uint64_t currSize);
   string handleJCCBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
