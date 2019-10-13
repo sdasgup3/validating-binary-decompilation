@@ -68,6 +68,7 @@ def writeTXT(output_str, file_basename):
     with open('{}.txt'.format(file_basename), 'w') as txt:
         txt.write(output_str)
 
+
 def runLLVMDis(inputFile):
     command1 = [
         'llvm-dis',
@@ -84,6 +85,7 @@ def runLLVMDis(inputFile):
     if subprocess.check_output(command2) != b'':
         ret = False
     return ret
+
 
 def runLLVMExtract(inputFile, func_name, num_inst):
     #command1 = ['llvm-extract', '-func={}'.format(func_name), "-rglob=.*", inputFile, "-o", "{}.bc".format(func_name, num_inst)]
@@ -111,7 +113,7 @@ def createParentMakefile(functions):
 
     allFuncNames = ""
     for func in functions:
-      allFuncNames = allFuncNames + func[0] + " "
+        allFuncNames = allFuncNames + " " + func[0]
 
     makeFile = open("Makefile", 'w')
     makeFile.write(".PHONY:" + allFuncNames)
@@ -120,15 +122,17 @@ def createParentMakefile(functions):
     makeFile.write("binary:" + allFuncNames + "\n")
     makeFile.write("mcsema:" + allFuncNames + "\n")
     makeFile.write("opt:" + allFuncNames + "\n")
-    makeFile.write("compd:" + allFuncNames + "\n\n")
+    makeFile.write("compd:" + allFuncNames + "\n")
+    makeFile.write("match:" + allFuncNames + "\n\n")
 
     for func in functions:
-      makeFile.write(func[0] + ":" + "\n")
-      makeFile.write("	@echo" + "\n")
-      makeFile.write("	${MAKE} -C " + func[0] + " $(MAKECMDGOALS)")
-      makeFile.write("" + "\n")
+        makeFile.write(func[0] + ":" + "\n")
+        makeFile.write("	@echo" + "\n")
+        makeFile.write("	${MAKE} -C " + func[0] + " $(MAKECMDGOALS)")
+        makeFile.write("" + "\n")
 
     makeFile.close()
+
 
 def createMakefile(funcName):
 
@@ -141,48 +145,67 @@ def createMakefile(funcName):
     makeFile.write(
         "ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n")
     makeFile.write("INDIR=../binary/" + "\n")
-    makeFile.write("OURDIR=mcsema/" + "\n")
+    makeFile.write("OUTDIR=mcsema/" + "\n")
     makeFile.write("" + "\n")
     makeFile.write(
-        ".PHONY: binary mcsema objdump match opt clean compd" +
+        ".PHONY: clean" +
+        "\n\n")
+
+    makeFile.write("all: binary mcsema compd opt match")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write("binary: ${INDIR}test" + "\n")
+    makeFile.write("objdump: ${INDIR}/test.objdump" + "\n")
+    makeFile.write("mcsema: ${OUTDIR}test.ll" + "\n")
+    makeFile.write("compd: ${OUTDIR}test.proposed.ll" + "\n")
+    makeFile.write(
+        "opt: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll" +
         "\n")
     makeFile.write("" + "\n")
-    makeFile.write("all: binary mcsema compd opt match" + "\n")
-    makeFile.write("" + "\n")
-    makeFile.write("objdump: ${INDIR}test" + "\n")
-    makeFile.write("	objdump -d $< > ${INDIR}/test.objdump" + "\n")
-    makeFile.write("" + "\n")
-    makeFile.write("mcsema: ${INDIR}test" + "\n")
+
+    makeFile.write("${INDIR}test: ${INDIR}test.ll" + "\n")
+    makeFile.write("	clang -O0 ${INDIR}test.ll -o ${INDIR}test")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write("${INDIR}/test.objdump: ${INDIR}test" + "\n")
+    makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write("${OUTDIR}test.ll: ${INDIR}test" + "\n")
     makeFile.write(
-        "	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OURDIR}test.cfg --binary $< --entrypoint main" +  "\n")
+        "	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OUTDIR}test.cfg --binary ${INDIR}test --entrypoint main" + "\n")
     makeFile.write(
-        "	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OURDIR}test.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
-    makeFile.write("	llvm-dis ${OURDIR}test.bc -o ${OURDIR}test.ll" + "\n")
-    makeFile.write("" + "\n")
-    makeFile.write("binary: ${INDIR}test.ll" + "\n")
-    makeFile.write("	clang -O0 ${INDIR}test.ll -o ${INDIR}test" + "\n")
-    makeFile.write("" + "\n")
-    makeFile.write("opt: ${OURDIR}test.ll ${OURDIR}test.proposed.ll" + "\n")
+        "	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OUTDIR}test.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
+    makeFile.write("	llvm-dis ${OUTDIR}test.bc -o ${OUTDIR}test.ll")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write("${OUTDIR}test.proposed.ll: ${INDIR}test" + "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OURDIR}test.proposed.ll -o ${OURDIR}test.proposed.inline.ll;  opt -S  -O3    ${OURDIR}test.proposed.inline.ll -o ${OURDIR}test.proposed.opt.ll" + "\n")
-    makeFile.write(
-        "	opt -S  -inline   ${OURDIR}test.ll -o ${OURDIR}test.inline.ll;  opt -S  -O3    ${OURDIR}test.inline.ll -o ${OURDIR}test.opt.ll" + "\n")
-    makeFile.write("" + "\n")
-    makeFile.write("match:" + "\n")
-    makeFile.write(
-        "	${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:${PROG} --file2 ${OURDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
-    makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
-    makeFile.write("" + "\n")
-    makeFile.write("compd:" + "\n")
-    makeFile.write(
-        "	${TOOLDIR}/decompiler  --output ${OURDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
+        "	${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
-    makeFile.write("" + "\n")
-    makeFile.write("" + "\n")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll: ${OUTDIR}test.ll ${OUTDIR}test.proposed.ll" +
+        "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OUTDIR}test.ll -o ${OUTDIR}test.inline.ll;  opt -S  -O3    ${OUTDIR}test.inline.ll -o ${OUTDIR}test.opt.ll")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll" +
+        "\n")
+    makeFile.write(
+        "	${TOOLDIR}/matcher --file1 ${OUTDIR}test.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
+    makeFile.write("" + "\n\n")
+
     makeFile.write("clean:" + "\n")
-    makeFile.write("	rm mcsema/*.bc mcsema/*.ll" + "\n")
+    makeFile.write("	rm mcsema/*.bc mcsema/*.ll mcsema/*.cfg" + "\n")
     makeFile.write("" + "\n")
 
     makeFile.close()
@@ -221,7 +244,7 @@ def main():
         os.mkdir("binary")
     os.chdir("binary")
     if not runLLVMDis(inputFile):
-      print("llvm-extract failed to run for function {}".format(func[0]))
+        print("llvm-extract failed to run for function {}".format(func[0]))
     os.chdir(os.path.join(os.getcwd(), ".."))
 
     # Generate programName/Makefile
@@ -241,6 +264,7 @@ def main():
         createMakefile(func[0])
 
         os.chdir(os.path.join(os.getcwd(), ".."))
+
 
 if __name__ == '__main__':
     main()

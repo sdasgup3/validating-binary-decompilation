@@ -1,0 +1,8 @@
+{
+  "main": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

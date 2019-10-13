@@ -1,0 +1,14 @@
+{
+  "fib": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fib"
+  }, 
+  "main": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

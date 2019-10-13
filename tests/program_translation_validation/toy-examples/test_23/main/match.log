@@ -1,0 +1,5 @@
+Reading LLVM: mcsema/test.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from mcsema/test.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Missing function name: main or main

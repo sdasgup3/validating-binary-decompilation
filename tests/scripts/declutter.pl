@@ -24,11 +24,13 @@ BEGIN {
 use kutils;
 use utils;
 
-my $help   = "";
-my $file   = "";
-my $outdir = "";
-my $opcode = "";
+my $help               = "";
+my $file               = "";
+my $outdir             = "";
+my $opcode             = "";
 my $norenameintrinsics = "";
+my $defineintrinsics   = "";
+my $definemain         = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -36,10 +38,12 @@ my $terminatingInstr =
 qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
 GetOptions(
-    "help"   => \$help,
+    "help"               => \$help,
     "norenameintrinsics" => \$norenameintrinsics,
-    "file:s" => \$file,
-    "opc:s"  => \$opcode,
+    "defineintrinsics"   => \$defineintrinsics,
+    "definemain"         => \$definemain,
+    "file:s"             => \$file,
+    "opc:s"              => \$opcode,
 ) or die("Error in command line arguments\n");
 
 sub usage {
@@ -61,17 +65,19 @@ my @lines = <$fp>;
 close $fp;
 
 ## Get Target Info
-my $targetInfo = "";
+#my $targetInfo = "";
+#
+#for ( my $i = 0 ; $i < $maxTargetInfoLength ; $i = $i + 1 ) {
+#    my $line = $lines[$i];
+#    $targetInfo = $targetInfo . $line;
+#}
+#
+##print($targetInfo);
+#
+### Get Stucture Layout
+#my $structLayout = getStructureLayout();
 
-for ( my $i = 0 ; $i < $maxTargetInfoLength ; $i = $i + 1 ) {
-    my $line = $lines[$i];
-    $targetInfo = $targetInfo . $line;
-}
-
-#print($targetInfo);
-
-## Get Stucture Layout
-my $structLayout = getStructureLayout();
+my $decls = getDeclarations();
 
 # Hold the code for all the relevant functions
 my @funcs = ();
@@ -92,6 +98,12 @@ my @foundMain        = @{ getMainBody($mainFuncName) };
 # Ieratively determine the body of the callee from main
 expandMain( \@foundMain );
 
+# Refine the decls: Keeps the Decls which are used in the bod definitions
+#for my $itr (@funcs) {
+#  my $refinedDecls = refineDecls(\@decls, $itr);
+#  @decls = @{$refinedDecls};
+#}
+
 ## Open file to write
 my ( $dirname, $basename, $ext ) = utils::split_filename($file);
 my $outFileName = $basename . ".mod.ll";
@@ -101,17 +113,27 @@ if ( $dirname ne "" ) {
 open( my $ofp, ">", $outFileName ) or die "cannot open: $!";
 print("Generatin $outFileName for opcode $opcode ...\n");
 
-print $ofp $targetInfo;
-print $ofp "\n";
-print $ofp $structLayout;
-print $ofp "\n";
-print $ofp getInstrinticsDefinitions();
+#print $ofp $targetInfo;
+#print $ofp "\n";
+#print $ofp $structLayout;
+#print $ofp "\n";
+
+print $ofp $decls . "\n";
+
+if ( $defineintrinsics ne "" ) {
+    print $ofp getInstrinticsDefinitions();
+}
+
 print $ofp "\n";
 for my $itr (@funcs) {
-    print $ofp $itr;
+    print $ofp @{$itr};
 }
 print $ofp "\n";
-print $ofp getMainDefintion();
+
+if ( $definemain ne "" ) {
+    print $ofp getMainDefintion();
+}
+
 close $ofp;
 
 ##############################################
@@ -130,8 +152,8 @@ sub fixFunc {
         }
 
         # Rename instrinsics
-        if($norenameintrinsics eq "") {
-          $line =~ s/\@llvm\.(.*)/\@my\.$1/;
+        if ( $norenameintrinsics eq "" ) {
+            $line =~ s/\@llvm\.(.*)/\@my\.$1/;
         }
 
         # Remove nsw nuw
@@ -169,7 +191,8 @@ sub getMainBody {
                 #print "#".$tline. "#\n";
                 my $mainproto = "$1\@$modMainName$3";
                 $mainproto =~ s/noalias//g;
-#push @mainBody, "$1\@$modMainName$3\n";
+
+                #push @mainBody, "$1\@$modMainName$3\n";
                 push @mainBody, $mainproto . "\n";
                 $foundMain = 1;
                 next;
@@ -223,7 +246,8 @@ sub expandMain {
 
         # print $tline."\n";
         if ( $tline =~ m/$callSignature/ ) {
-        # if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
+
+            # if ( $tline =~ m/.*call.*@(.*)\(.*\).*/g ) {
             my $calledFunc = $2;
 
             # print "expandMain: " . $calledFunc ."\n";
@@ -239,7 +263,8 @@ sub expandMain {
         expandMain( \@funcBody );
     }
 
-    push @funcs, fixFunc( \@progBody );
+    my @fixedBody = fixFunc( \@progBody );
+    push @funcs, \@fixedBody;
 }
 
 sub getFuncBody {
@@ -293,6 +318,63 @@ sub isDefined {
 
     #print $funcName . "not defined ...\n";
     return 0;
+}
+
+sub getDeclarations {
+    my $decls = "";
+    # my @decls = ();
+
+    for my $line (@lines) {
+        my $tline = utils::trim($line);
+
+        if ( $tline =~ m/define|declare/ ) {
+            last;
+        }
+
+        if($tline =~ m/__mcsema|wrapper|__got|callback/) {
+          next;
+        }
+
+        if ( $tline =~ m/(.*) = (.*)/g ) {
+
+            # push @decls, $line;
+            $decls = $decls . $line;
+        }
+    }
+
+    return $decls;
+    # return \@decls;
+}
+
+sub refineDecls {
+  my @decls = @{shift @_};
+  my @funcBody = @{shift @_};
+
+  my @refinedDecls = ();
+
+  for my $decl (@decls) {
+    my $tdecl = utils::trim($decl);
+
+    my $defn = "";
+    if ( $tdecl =~ m/(.*) = (.*)/g ) {
+      $defn = $1; 
+    }
+
+    my $used = "false";
+    for my $line (@funcBody) {
+      my $tline = utils::trim($line);
+      if($tline =~ m/$defn/) {
+        $used = "true";
+      }
+    }
+
+    if($used eq "true") {
+      push @refinedDecls, $decl;
+    }
+  }
+
+  print @refinedDecls;
+  return \@refinedDecls;
 }
 
 sub getInstrinticsDefinitions {

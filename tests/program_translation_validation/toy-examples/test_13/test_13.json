@@ -1,0 +1,26 @@
+{
+  "doStuff": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "doStuff"
+  }, 
+  "doWork": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "doWork"
+  }, 
+  "main": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "checkFn": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "checkFn"
+  }
+}

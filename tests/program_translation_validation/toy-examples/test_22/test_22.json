@@ -1,0 +1,20 @@
+{
+  "DoDemoFpu1": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DoDemoFpu1"
+  }, 
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "timespi": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "timespi"
+  }
+}

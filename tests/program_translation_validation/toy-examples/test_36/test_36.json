@@ -1,0 +1,14 @@
+{
+  "fun": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "fun"
+  }, 
+  "main": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }
+}

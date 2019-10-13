@@ -320,10 +320,35 @@ Decompiling instr:callq .add_sub...
 Instr: callq .add_sub
 Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.add_sub
 Generating artifacts...
-Already Exists
+Generating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
+void main() {
+^
+test.c:1:1: note: change return type to 'int'
+void main() {
+^~~~
+int
+1 warning generated.
+
+Executing: make -C /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.add_sub binary
+make[1]: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
+clang -Os test.c -o test
+make[1]: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
+
+Executing: make -C /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.add_sub mcsema
+make[1]: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
+mcsema-disass --disassembler /home/sdasgup3/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis test.bc -o test.ll
+make[1]: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
+
+Executing: make -C /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.add_sub declutter
+make[1]: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
+/home/sdasgup3/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc callq_.add_sub
+Expanding _ZN12_GLOBAL__N_1L4CALLI2InImEEEP6MemoryS4_R5StateT_S2_...
+Generatin test.mod.ll for opcode callq_.add_sub ...
+make[1]: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/callq_.add_sub'
 
 Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//specialize_template.pl   --file /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.add_sub/test.mod.ll
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4CALLI2InImEEEP6MemoryS4_R5StateT_S2_(%struct.Memory* readnone, %struct.State* nocapture dereferenceable(3376), i64, i64) #0 {

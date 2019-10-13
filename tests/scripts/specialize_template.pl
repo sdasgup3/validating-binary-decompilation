@@ -57,20 +57,22 @@ my $relevantCode = 0;
 my @code         = ();
 
 for my $line (@lines) {
-    if ( $relevantCode == 0 and $line !~ m/define/ ) {
-        next;
-    }
+#    if ( $relevantCode == 0 and $line !~ m/define/ ) {
+#        next;
+#    }
+#
+#    if ( $line =~ m/define.*ctpop/ ) {
+#        next;
+#    }
+#    if ( $line =~ m/define.*main/ ) {
+#        last;
+#    }
+#    $relevantCode = 1;
 
-    if ( $line =~ m/define.*ctpop/ ) {
-        next;
-    }
+    push @code, $line;
     if ( $line =~ m/define.*main/ ) {
         last;
     }
-    $relevantCode = 1;
-    $relevantCode = 1;
-
-    push @code, $line;
 }
 
 print @code;
