@@ -51,7 +51,7 @@ auto &workdir_arg =
         .usage("<path/to/dir>")
         .description("The working directory")
         .default_val(
-            "/home/sdasgup3/Github/validating-binary-decompilation/tests/"
+            "~/Github/validating-binary-decompilation/tests/"
             "compositional_artifacts_single_instruction_decompilation/");
 
 auto &view =
