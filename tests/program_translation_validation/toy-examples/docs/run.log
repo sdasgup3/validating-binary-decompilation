@@ -1,0 +1,1243 @@
+
+add-sub
+
+make -C add_sub all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:add_sub --file2 mcsema/test.proposed.opt.ll:add_sub 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub:add_sub
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+
+array-reverse
+
+make -C array_reverse all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function array_reverse --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:array_reverse --file2 mcsema/test.proposed.opt.ll:array_reverse 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+
+binary-search
+
+make -C binary_search all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function binary_search --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:binary_search --file2 mcsema/test.proposed.opt.ll:binary_search 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+
+get-sign
+
+make -C get_sign all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function get_sign --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign:get_sign
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:get_sign --file2 mcsema/test.proposed.opt.ll:get_sign 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign:get_sign
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+
+sum-2-n
+
+make -C sum_2_n all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function sum_2_n --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:sum_2_n --file2 mcsema/test.proposed.opt.ll:sum_2_n 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+
+test_0
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+test_0_1
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+
+test_1
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+
+test_10
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+
+make -C demo3 all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function demo3 --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:demo3 --file2 mcsema/test.proposed.opt.ll:demo3 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+Makefile:14: recipe for target 'demo3' failed
+make[1]: *** [match] Error 134
+make: *** [demo3] Error 2
+
+test_11
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+
+make -C doTrans all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doTrans --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans:doTrans
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:doTrans --file2 mcsema/test.proposed.opt.ll:doTrans 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+Makefile:14: recipe for target 'doTrans' failed
+make[1]: *** [match] Error 134
+make: *** [doTrans] Error 2
+
+test_13
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+
+make -C doWork all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:doWork --file2 mcsema/test.proposed.opt.ll:doWork 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+
+make -C checkFn all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:checkFn --file2 mcsema/test.proposed.opt.ll:checkFn 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+Makefile:17: recipe for target 'checkFn' failed
+make[1]: *** [match] Error 134
+make: *** [checkFn] Error 2
+
+test_13_1
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+make -C checkFn all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn:checkFn
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:checkFn --file2 mcsema/test.proposed.opt.ll:checkFn 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn:checkFn
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+
+make -C doWork all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:doWork --file2 mcsema/test.proposed.opt.ll:doWork 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+
+test_14
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+
+make -C checkFn all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:checkFn --file2 mcsema/test.proposed.opt.ll:checkFn 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+
+test_15
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+make -C doOp all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doOp --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:doOp --file2 mcsema/test.proposed.opt.ll:doOp 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+Makefile:14: recipe for target 'doOp' failed
+make[1]: *** [match] Error 134
+make: *** [doOp] Error 2
+
+test_16
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
+make -C printit all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printit --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit:printit
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:printit --file2 mcsema/test.proposed.opt.ll:printit 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit:printit
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+
+test_17
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+
+make -C printdata all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:printdata --file2 mcsema/test.proposed.opt.ll:printdata 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+
+test_18
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+
+make -C printdata all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:printdata --file2 mcsema/test.proposed.opt.ll:printdata 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+
+test_2
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+
+test_20
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+Makefile:11: recipe for target 'main' failed
+make[1]: *** [match] Error 134
+make: *** [main] Error 2
+
+test_21
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+
+make -C shiftit all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function shiftit --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit:shiftit
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:shiftit --file2 mcsema/test.proposed.opt.ll:shiftit 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit:shiftit
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+
+test_2_1
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+
+test_22
+
+make -C DoDemoFpu1 all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function DoDemoFpu1 --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1:DoDemoFpu1
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+Makefile:34: recipe for target 'mcsema/test.proposed.opt.ll' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+Makefile:11: recipe for target 'DoDemoFpu1' failed
+opt: mcsema/test.proposed.ll:456:1: error: expected instruction opcode
+define %struct.Memory* @routine_fstpt_MINUS0x10__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+^
+opt: mcsema/test.proposed.inline.ll: error: Could not open input file: No such file or directory
+make[1]: *** [mcsema/test.proposed.opt.ll] Error 1
+make: *** [DoDemoFpu1] Error 2
+
+test_23
+
+make -C draw all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function draw --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:draw --file2 mcsema/test.proposed.opt.ll:draw 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+Makefile:30: recipe for target 'mcsema/test.proposed.ll' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/main'
+Makefile:14: recipe for target 'main' failed
+make[1]: *** [mcsema/test.proposed.ll] Error 134
+make: *** [main] Error 2
+
+test_23_1
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23_1/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+Makefile:30: recipe for target 'mcsema/test.proposed.ll' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23_1/main'
+Makefile:11: recipe for target 'main' failed
+make[1]: *** [mcsema/test.proposed.ll] Error 134
+make: *** [main] Error 2
+
+test_24
+
+make -C to_byte all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function to_byte --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte:to_byte
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:to_byte --file2 mcsema/test.proposed.opt.ll:to_byte 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte:to_byte
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+
+make -C read_bytes all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function read_bytes --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes:read_bytes
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:read_bytes --file2 mcsema/test.proposed.opt.ll:read_bytes 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+Makefile:14: recipe for target 'read_bytes' failed
+make[1]: *** [match] Error 134
+make: *** [read_bytes] Error 2
+
+test_25
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+test_26
+
+make -C update all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update:update
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:update --file2 mcsema/test.proposed.opt.ll:update 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update:update
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+
+test_26_1
+
+make -C update all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:update --file2 mcsema/test.proposed.opt.ll:update 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+
+test_27
+
+make -C update all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:update --file2 mcsema/test.proposed.opt.ll:update 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+Makefile:14: recipe for target 'main' failed
+make[1]: *** [match] Error 134
+make: *** [main] Error 2
+
+test_28
+
+make -C func all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:func --file2 mcsema/test.proposed.opt.ll:func 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+
+test_28_1
+
+make -C func all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:func --file2 mcsema/test.proposed.opt.ll:func 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+
+test_29
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+Makefile:11: recipe for target 'foo' failed
+make[1]: *** [match] Error 134
+make: *** [foo] Error 2
+
+test_3
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+
+test_30
+
+make -C stderr_driver all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function stderr_driver --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:stderr_driver --file2 mcsema/test.proposed.opt.ll:stderr_driver 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+make -C print_it all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function print_it --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it:print_it
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:print_it --file2 mcsema/test.proposed.opt.ll:print_it 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+Makefile:17: recipe for target 'print_it' failed
+make[1]: *** [match] Error 134
+make: *** [print_it] Error 2
+
+test_31
+
+make -C fib all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fib --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:fib --file2 mcsema/test.proposed.opt.ll:fib 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+
+test_32
+
+make -C fib all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fib --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:fib --file2 mcsema/test.proposed.opt.ll:fib 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+Makefile:11: recipe for target 'fib' failed
+make[1]: *** [match] Error 134
+make: *** [fib] Error 2
+
+test_33
+
+make -C Ack all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function Ack --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:Ack --file2 mcsema/test.proposed.opt.ll:Ack 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+Makefile:11: recipe for target 'Ack' failed
+make[1]: *** [match] Error 134
+make: *** [Ack] Error 2
+
+test_34
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+
+test_35
+
+make -C f all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+clang -O0 ../binary/test.ll -o ../binary/test
+Makefile:19: recipe for target '../binary/test' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+Makefile:11: recipe for target 'f' failed
+/tmp/test-090161.o: In function `main':
+../binary/test.ll:(.text+0x55): undefined reference to `pthread_create'
+../binary/test.ll:(.text+0x68): undefined reference to `pthread_join'
+clang-4.0: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [../binary/test] Error 1
+make: *** [f] Error 2
+
+test_36
+
+make -C fun all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fun --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun:fun
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:fun --file2 mcsema/test.proposed.opt.ll:fun 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun:fun
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+Makefile:14: recipe for target 'main' failed
+make[1]: *** [match] Error 134
+make: *** [main] Error 2
+
+test_4
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+
+test_5
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+
+test_6
+
+make -C foo all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:foo --file2 mcsema/test.proposed.opt.ll:foo 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+Makefile:14: recipe for target 'main' failed
+make[1]: *** [match] Error 134
+make: *** [main] Error 2
+
+test_7
+
+make -C check all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:check --file2 mcsema/test.proposed.opt.ll:check 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:38: recipe for target 'match' failed
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+Makefile:14: recipe for target 'main' failed
+make[1]: *** [match] Error 134
+make: *** [main] Error 2
+
+test_7_1
+
+make -C check all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+clang -O0 ../binary/test.ll -o ../binary/test
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check:check
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:check --file2 mcsema/test.proposed.opt.ll:check 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check:check
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+
+make -C main all
+make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output mcsema/test.cfg --binary ../binary/test --entrypoint main
+mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output mcsema/test.bc -disable_dead_store_elimination -disable_optimizer
+llvm-dis mcsema/test.bc -o mcsema/test.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main:main
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+opt -S  -inline   mcsema/test.ll -o mcsema/test.inline.ll;  opt -S  -O3    mcsema/test.inline.ll -o mcsema/test.opt.ll
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+[32mMatch Pass:multi-matches[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main:main
+make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'

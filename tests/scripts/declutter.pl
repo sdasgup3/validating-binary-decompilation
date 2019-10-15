@@ -17,9 +17,7 @@ my $home = "";
 
 BEGIN {
     my $script_dir1 = dirname(__FILE__);
-    my $script_dir2 = "/home/sdasgup3/Github/X86-64-semantics/scripts/";
     unshift @INC, $script_dir1;
-    unshift @INC, $script_dir2;
 }
 use kutils;
 use utils;
