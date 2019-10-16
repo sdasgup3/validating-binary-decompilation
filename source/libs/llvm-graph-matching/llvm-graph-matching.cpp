@@ -113,7 +113,7 @@ bool Matcher::retrievePotBBMatches() {
     if (!dyn_cast<Instruction>(U))
       continue;
 
-    if (dyn_cast<GetElementPtrInst>(U))
+    if (dyn_cast<GetElementPtrInst>(U) || dyn_cast<BitCastInst>(U))
       continue;
 
     auto LBB = (dyn_cast<Instruction>(U))->getParent();
@@ -122,17 +122,37 @@ bool Matcher::retrievePotBBMatches() {
     if (!PotBBMatches.count(LBB)) {
       changed |= true;
       PotBBMatches[LBB] = RBB;
-      // llvm::errs() << "BB Matches\n";
-      // llvm::errs() << *LBB;
-      // llvm::errs() << *RBB;
+
+      llvm::errs() << "\nBB match:";
+      LBB->printAsOperand(errs(), false);
+      llvm::errs() << " --> ";
+      RBB->printAsOperand(errs(), false);
+
+      llvm::errs() << "\nCorresponding instructions:";
+      dumpLLVMNode(U);
+      dumpLLVMNode(*pMatches.begin());
+
     } else {
       if (RBB != PotBBMatches.at(LBB)) {
-        llvm::errs() << *U;
-        llvm::errs() << *pMatches.begin();
+        llvm::errs() << "The BB for the instr\n";
+        dumpLLVMNode(U);
+        llvm::errs() << "is\n";
+        LBB->printAsOperand(errs(), false);
+
+        llvm::errs() << "\nPreviously found corresponding BB:";
+        PotBBMatches.at(LBB)->printAsOperand(errs(), false);
+
+        llvm::errs() << "\nCurrently found corresponding BB: ";
+        RBB->printAsOperand(errs(), false);
+
+        llvm::errs() << "\nThe current BB belongs to the instr\n";
+        dumpLLVMNode(*pMatches.begin());
         assert(0 && "BB Mismatch");
       }
     }
   }
+// llvm::errs() << *LBB << "\n";
+// llvm::errs() << *PotBBMatches.at(LBB) << "\n";
 #ifdef MATCHER_DEBUG
   llvm::errs() << "Retrieved BB Matches...\n";
   dumpPotBBMatches();

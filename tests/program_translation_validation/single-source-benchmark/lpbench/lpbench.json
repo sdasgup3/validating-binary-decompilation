@@ -1,0 +1,50 @@
+{
+  "idamax": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "idamax"
+  }, 
+  "main": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "matgen": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "matgen"
+  }, 
+  "random_double": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "random_double"
+  }, 
+  "dgesl": {
+    "num_inst": 116, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dgesl"
+  }, 
+  "dscal": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dscal"
+  }, 
+  "dgefa": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dgefa"
+  }, 
+  "daxpy": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "daxpy"
+  }
+}

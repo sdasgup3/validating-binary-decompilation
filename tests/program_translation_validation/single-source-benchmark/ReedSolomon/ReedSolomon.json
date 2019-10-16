@@ -1,0 +1,44 @@
+{
+  "rsdec_204": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rsdec_204"
+  }, 
+  "rsenc_204": {
+    "num_inst": 90, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rsenc_204"
+  }, 
+  "encode_rs": {
+    "num_inst": 118, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "encode_rs"
+  }, 
+  "decode_rs": {
+    "num_inst": 1185, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "decode_rs"
+  }, 
+  "generate_gf": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "generate_gf"
+  }, 
+  "main": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "gen_poly": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gen_poly"
+  }
+}

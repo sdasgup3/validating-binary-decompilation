@@ -1,0 +1,134 @@
+{
+  "dump_list": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dump_list"
+  }, 
+  "copy_data": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_data"
+  }, 
+  "show_data": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "show_data"
+  }, 
+  "get_real_move": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_real_move"
+  }, 
+  "dump_play": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dump_play"
+  }, 
+  "get_good_move": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_good_move"
+  }, 
+  "show_play": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "show_play"
+  }, 
+  "valid_data": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "valid_data"
+  }, 
+  "get_value": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_value"
+  }, 
+  "equal_data": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "equal_data"
+  }, 
+  "show_list": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "show_list"
+  }, 
+  "make_list": {
+    "num_inst": 140, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_list"
+  }, 
+  "main": {
+    "num_inst": 136, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "make_data": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_data"
+  }, 
+  "next_data": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "next_data"
+  }, 
+  "make_wanted": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_wanted"
+  }, 
+  "make_play": {
+    "num_inst": 92, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_play"
+  }, 
+  "show_move": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "show_move"
+  }, 
+  "get_winning_move": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_winning_move"
+  }, 
+  "melt_data": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "melt_data"
+  }, 
+  "in_wanted": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "in_wanted"
+  }, 
+  "where": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "where"
+  }
+}

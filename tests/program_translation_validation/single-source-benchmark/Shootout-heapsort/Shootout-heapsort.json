@@ -1,0 +1,20 @@
+{
+  "benchmark_heapsort": {
+    "num_inst": 120, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "benchmark_heapsort"
+  }, 
+  "gen_random": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "gen_random"
+  }, 
+  "main": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }
+}

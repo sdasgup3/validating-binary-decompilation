@@ -70,12 +70,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
 
-declare %struct.Memory* @sub_4004f0.switches(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+declare %struct.Memory* @sub_4004f0.switches(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) #1 {

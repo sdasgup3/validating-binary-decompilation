@@ -1,0 +1,6 @@
+main, 48, True, False
+init, 28, False, False
+noise, 197, True, False
+fade, 15, True, False
+grad, 64, True, False
+lerp, 14, True, False

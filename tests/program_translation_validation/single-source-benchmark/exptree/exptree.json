@@ -1,0 +1,80 @@
+{
+  "search": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "search"
+  }, 
+  "calculate": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "calculate"
+  }, 
+  "printList": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "printList"
+  }, 
+  "initCombList": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "initCombList"
+  }, 
+  "newCombList": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "newCombList"
+  }, 
+  "printSolution": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "printSolution"
+  }, 
+  "newWorkList": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "newWorkList"
+  }, 
+  "recSearch": {
+    "num_inst": 218, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "recSearch"
+  }, 
+  "getInput": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getInput"
+  }, 
+  "initWorkList": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "initWorkList"
+  }, 
+  "main": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "saveSolution": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "saveSolution"
+  }, 
+  "doSearch": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "doSearch"
+  }
+}

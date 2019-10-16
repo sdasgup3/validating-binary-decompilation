@@ -1,0 +1,17 @@
+C++
+=====
+fftbench
+functionobjects
+oopack_v1p8
+ray
+smallpt
+sphereflake
+stepanov_vector
+stepanov_container
+
+mcsemamissing semantics
+========================
+almabench
+mandel
+mandel-2
+

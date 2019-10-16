@@ -1,0 +1,26 @@
+{
+  "advance": {
+    "num_inst": 214, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "advance"
+  }, 
+  "energy": {
+    "num_inst": 130, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "energy"
+  }, 
+  "main": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "offset_momentum": {
+    "num_inst": 92, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "offset_momentum"
+  }
+}

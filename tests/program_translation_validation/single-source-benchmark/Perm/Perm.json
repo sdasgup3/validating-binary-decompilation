@@ -1,0 +1,44 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "main": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Perm": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Perm"
+  }, 
+  "Swap": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Swap"
+  }, 
+  "Initialize": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initialize"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }, 
+  "Permute": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Permute"
+  }
+}

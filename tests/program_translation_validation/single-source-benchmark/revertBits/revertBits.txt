@@ -1,0 +1,3 @@
+ReverseBits32, 42, False, False
+ReverseBits64, 58, False, False
+main, 76, False, False

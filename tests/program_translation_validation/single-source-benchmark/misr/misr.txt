@@ -1,0 +1,5 @@
+main, 185, True, False
+create_link_list, 43, False, False
+init, 20, False, False
+simulate, 303, True, False
+kill_list, 18, False, False

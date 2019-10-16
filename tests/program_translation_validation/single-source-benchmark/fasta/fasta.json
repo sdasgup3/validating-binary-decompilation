@@ -1,0 +1,32 @@
+{
+  "accumulate_probabilities": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "accumulate_probabilities"
+  }, 
+  "main": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "repeat_fasta": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "repeat_fasta"
+  }, 
+  "random_fasta": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "random_fasta"
+  }, 
+  "myrandom": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "myrandom"
+  }
+}

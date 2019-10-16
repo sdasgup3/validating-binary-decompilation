@@ -1,0 +1,80 @@
+{
+  "Func3": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Func3"
+  }, 
+  "Func2": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Func2"
+  }, 
+  "Func1": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Func1"
+  }, 
+  "Proc6": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc6"
+  }, 
+  "Proc8": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc8"
+  }, 
+  "Proc5": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc5"
+  }, 
+  "Proc4": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc4"
+  }, 
+  "Proc7": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc7"
+  }, 
+  "main": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Proc1": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc1"
+  }, 
+  "Proc0": {
+    "num_inst": 142, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc0"
+  }, 
+  "Proc3": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc3"
+  }, 
+  "Proc2": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Proc2"
+  }
+}

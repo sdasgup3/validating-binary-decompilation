@@ -1,0 +1,32 @@
+{
+  "POUT": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "POUT"
+  }, 
+  "P3": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P3"
+  }, 
+  "P0": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P0"
+  }, 
+  "main": {
+    "num_inst": 647, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "PA": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PA"
+  }
+}

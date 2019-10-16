@@ -1,0 +1,32 @@
+{
+  "init": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init"
+  }, 
+  "main": {
+    "num_inst": 185, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "simulate": {
+    "num_inst": 303, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "simulate"
+  }, 
+  "create_link_list": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "create_link_list"
+  }, 
+  "kill_list": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "kill_list"
+  }
+}

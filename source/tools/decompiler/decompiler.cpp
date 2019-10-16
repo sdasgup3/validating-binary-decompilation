@@ -46,13 +46,10 @@ auto &SingleInstructionDecompilationPath =
         .description("Path to single instrucion decompilation llvm sequences")
         .default_val("");
 
-auto &workdir_arg =
-    ValueArg<string>::create("workdir")
-        .usage("<path/to/dir>")
-        .description("The working directory")
-        .default_val(
-            "~/Github/validating-binary-decompilation/tests/"
-            "compositional_artifacts_single_instruction_decompilation/");
+auto &workdir_arg = ValueArg<string>::create("workdir")
+                        .usage("<path/to/dir>")
+                        .description("The working directory")
+                        .default_val("");
 
 auto &view =
     FlagArg::create("view").alternate("v").description("View cfg immediately");

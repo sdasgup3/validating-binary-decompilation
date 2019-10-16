@@ -1,0 +1,20 @@
+{
+  "wrap_mul4": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "wrap_mul4"
+  }, 
+  "main": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "mul4": {
+    "num_inst": 684, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "mul4"
+  }
+}

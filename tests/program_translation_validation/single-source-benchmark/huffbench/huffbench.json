@@ -1,0 +1,32 @@
+{
+  "main": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "generate_test_data": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "generate_test_data"
+  }, 
+  "compdecomp": {
+    "num_inst": 609, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compdecomp"
+  }, 
+  "random4": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "random4"
+  }, 
+  "heap_adjust": {
+    "num_inst": 94, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "heap_adjust"
+  }
+}
