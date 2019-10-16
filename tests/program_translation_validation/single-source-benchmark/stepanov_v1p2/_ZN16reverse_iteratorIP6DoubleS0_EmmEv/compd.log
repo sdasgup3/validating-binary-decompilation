@@ -1,0 +1,215 @@
+Disassembling ../binary/test
+Disassembled output
+  .text
+  .globl _ZN16reverse_iteratorIP6DoubleS0_EmmEv
+  .type _ZN16reverse_iteratorIP6DoubleS0_EmmEv, @function
+
+#! file-offset 0x22d0
+#! rip-offset  0x4022d0
+#! capacity    27 bytes
+
+# Text                                    #  Line  RIP       Bytes  Opcode             Target                
+._ZN16reverse_iteratorIP6DoubleS0_EmmEv:  #        0x4022d0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                              #  1     0x4022d0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                         #  2     0x4022d1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                   #  3     0x4022d4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                   #  4     0x4022d8  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rax                       #  5     0x4022dc  3      OPC=movq_r64_m64   18446744073709551615  
+  addq $0x8, %rax                         #  6     0x4022df  4      OPC=addq_r64_imm8  18446744073709551615  
+  movq %rax, (%rdi)                       #  7     0x4022e3  3      OPC=movq_m64_r64   18446744073709551615  
+  movq %rdi, %rax                         #  8     0x4022e6  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                               #  9     0x4022e9  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                    #  10    0x4022ea  1      OPC=retq           18446744073709551615  
+                                                                                                             
+.size _ZN16reverse_iteratorIP6DoubleS0_EmmEv, .-_ZN16reverse_iteratorIP6DoubleS0_EmmEv
+Disassembling Done.
+
+
+Decompiling mcsema/test.proposed.ll
+Computing Label PC values ...
+._ZN16reverse_iteratorIP6DoubleS0_EmmEv->4203216
+
+Computing Label PC values: Done.
+
+
+Executing: cat ${HOME}/Github/validating-binary-decompilation/source/libs/compositional-decompiler/data/mcsema_template.txt
+declare i32 @llvm.ctpop.i32(i32) #2
+declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+Decompiling Function: _ZN16reverse_iteratorIP6DoubleS0_EmmEv...
+
+
+Decompiling instr:._ZN16reverse_iteratorIP6DoubleS0_EmmEv:...
+
+
+Decompiling instr:pushq %rbp...
+Instr: pushq %rbp
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
+Running artifacts...Done.
+FuncCache inserted: _ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_
+FuncCache inserted: routine_pushq__rbp
+
+
+Decompiling instr:movq %rsp, %rbp...
+Instr: movq %rsp, %rbp
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rsp___rbp
+
+
+Decompiling instr:movq %rdi, -0x8(%rbp)...
+Instr: movq %rdi, -0x8(%rbp)
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rdi__MINUS0x8__rbp_
+
+
+Decompiling instr:movq -0x8(%rbp), %rdi...
+Instr: movq -0x8(%rbp), %rdi
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x8__rbp____rdi
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x8__rbp____rdi/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq_MINUS0x8__rbp____rdi
+
+
+Decompiling instr:movq (%rdi), %rax...
+Instr: movq (%rdi), %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq___rdi____rax
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq___rdi____rax/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq___rdi____rax
+
+
+Decompiling instr:addq $0x8, %rax...
+Instr: addq $0x8, %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x8___rax
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x8___rax/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
+FuncCache inserted: routine_addq__0x8___rax
+
+
+Decompiling instr:movq %rax, (%rdi)...
+Instr: movq %rax, (%rdi)
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax____rdi_
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax____rdi_/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rax____rdi_
+
+
+Decompiling instr:movq %rdi, %rax...
+Instr: movq %rdi, %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___rax
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___rax/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rdi___rax
+
+
+Decompiling instr:popq %rbp...
+Instr: popq %rbp
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+FuncCache inserted: _ZN12_GLOBAL__N_1L3POPI3RnWImEEEP6MemoryS4_R5StateT_
+FuncCache inserted: routine_popq__rbp
+
+
+Decompiling instr:retq...
+Instr: retq
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq
+Generating artifacts...
+Already Exists
+Running artifacts...
+Skip McSema run ...
+Skip Declutter ...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq/test.mod.ll
+Running artifacts...Done.
+Multiple defintions of @seg_4003a0__text
+FuncCache inserted: _ZN12_GLOBAL__N_1L3RETEP6MemoryR5State
+FuncCache inserted: routine_retq
+Decompiling Function: _ZN16reverse_iteratorIP6DoubleS0_EmmEv Done.
+
+
+
+Writing to mcsema/test.proposed.ll ...
+Decompiling: Done.
+

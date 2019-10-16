@@ -1,0 +1,3 @@
+FATAL ERROR: CFG not yet created!
+decompiler: /home/ubuntu/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Aborted (core dumped)

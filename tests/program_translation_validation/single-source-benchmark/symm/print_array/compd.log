@@ -1,0 +1,4 @@
+/usr/bin/objdump: section '.text' mentioned in a -j option, but not found in any input file
+FATAL ERROR: CFG not yet created!
+decompiler: /home/ubuntu/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Aborted (core dumped)

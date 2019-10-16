@@ -30,5 +30,19 @@ cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& 
 ### Run McSema
 ```bash
 cat docs/filelist.txt | parallel -j5  " echo; echo {}; cd {}/binary; ../../../../scripts/run_mcsema.sh ; cd ../.." |& tee ~/Junk/log
+```
 
+### Run compd
+```bash
+#cat docs/filelist.txt | parallel -j5  " echo; echo {}; cd {}; make compd ; cd .." |& tee ~/Junk/log
+cat docs/makefilelist.txt | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+grep "Pass" docs/compd.log > docs/compdPass.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
+```
+
+### Run match
+```bash
+cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
+grep "Pass" docs/compd.log > docs/compdPass.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
 ```
