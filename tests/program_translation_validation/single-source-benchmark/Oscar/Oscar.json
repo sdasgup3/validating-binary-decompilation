@@ -1,0 +1,62 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "Cos": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Cos"
+  }, 
+  "Uniform11": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Uniform11"
+  }, 
+  "Exptab": {
+    "num_inst": 170, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Exptab"
+  }, 
+  "Oscar": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Oscar"
+  }, 
+  "Fft": {
+    "num_inst": 273, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Fft"
+  }, 
+  "Printcomplex": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Printcomplex"
+  }, 
+  "main": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Min0": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Min0"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }
+}

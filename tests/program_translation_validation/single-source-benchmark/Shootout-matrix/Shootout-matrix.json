@@ -1,0 +1,32 @@
+{
+  "main": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "freematrix": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "freematrix"
+  }, 
+  "zeromatrix": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "zeromatrix"
+  }, 
+  "mmult": {
+    "num_inst": 82, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mmult"
+  }, 
+  "mkmatrix": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mkmatrix"
+  }
+}

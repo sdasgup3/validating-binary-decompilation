@@ -1,0 +1,20 @@
+{
+  "salsa": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "salsa"
+  }, 
+  "main": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "salsa20": {
+    "num_inst": 605, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "salsa20"
+  }
+}

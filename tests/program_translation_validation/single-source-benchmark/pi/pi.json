@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "myadd": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "myadd"
+  }
+}

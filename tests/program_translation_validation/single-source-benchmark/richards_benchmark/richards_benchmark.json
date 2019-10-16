@@ -1,0 +1,92 @@
+{
+  "createtask": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "createtask"
+  }, 
+  "main": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "idlefn": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "idlefn"
+  }, 
+  "pkt": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "pkt"
+  }, 
+  "trace": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "trace"
+  }, 
+  "schedule": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "schedule"
+  }, 
+  "devfn": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "devfn"
+  }, 
+  "workfn": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "workfn"
+  }, 
+  "holdself": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "holdself"
+  }, 
+  "qpkt": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "qpkt"
+  }, 
+  "handlerfn": {
+    "num_inst": 78, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "handlerfn"
+  }, 
+  "release": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "release"
+  }, 
+  "findtcb": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "findtcb"
+  }, 
+  "append": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "append"
+  }, 
+  "Wait": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Wait"
+  }
+}

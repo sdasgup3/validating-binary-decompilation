@@ -1,0 +1,32 @@
+{
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }, 
+  "Bubble": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Bubble"
+  }, 
+  "bInitarr": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bInitarr"
+  }
+}

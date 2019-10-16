@@ -1,0 +1,50 @@
+{
+  "init_Toggle": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_Toggle"
+  }, 
+  "new_Toggle": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "new_Toggle"
+  }, 
+  "nth_toggle_activate": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "nth_toggle_activate"
+  }, 
+  "init_NthToggle": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_NthToggle"
+  }, 
+  "new_NthToggle": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "new_NthToggle"
+  }, 
+  "toggle_activate": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "toggle_activate"
+  }, 
+  "main": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "toggle_value": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "toggle_value"
+  }
+}

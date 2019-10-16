@@ -1,6 +1,6 @@
 {
   "main": {
-    "num_inst": 176, 
+    "num_inst": 175, 
     "has_vector": false, 
     "has_float": false, 
     "function_name": "main"

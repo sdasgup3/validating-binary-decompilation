@@ -1,0 +1,4 @@
+advance, 214, True, False
+energy, 130, True, False
+offset_momentum, 92, True, False
+main, 27, True, False

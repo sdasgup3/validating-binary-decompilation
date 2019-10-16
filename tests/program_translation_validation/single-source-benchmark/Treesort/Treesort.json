@@ -1,0 +1,50 @@
+{
+  "Insert": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Insert"
+  }, 
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "Checktree": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Checktree"
+  }, 
+  "CreateNode": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CreateNode"
+  }, 
+  "tInitarr": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "tInitarr"
+  }, 
+  "Trees": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Trees"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }
+}

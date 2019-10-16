@@ -1,0 +1,14 @@
+{
+  "Ack": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Ack"
+  }, 
+  "main": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

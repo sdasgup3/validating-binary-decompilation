@@ -1,0 +1,80 @@
+{
+  "idamax": {
+    "num_inst": 123, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "idamax"
+  }, 
+  "epslon": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "epslon"
+  }, 
+  "matgen": {
+    "num_inst": 144, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "matgen"
+  }, 
+  "what_date": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "what_date"
+  }, 
+  "daxpy": {
+    "num_inst": 125, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "daxpy"
+  }, 
+  "print_time": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "print_time"
+  }, 
+  "second": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "second"
+  }, 
+  "dgesl": {
+    "num_inst": 277, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dgesl"
+  }, 
+  "ddot": {
+    "num_inst": 119, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ddot"
+  }, 
+  "dscal": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dscal"
+  }, 
+  "dgefa": {
+    "num_inst": 255, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dgefa"
+  }, 
+  "main": {
+    "num_inst": 694, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "dmxpy": {
+    "num_inst": 726, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dmxpy"
+  }
+}

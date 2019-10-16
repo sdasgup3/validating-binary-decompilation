@@ -1,0 +1,2 @@
+main, 30, True, False
+gen_random, 13, True, False

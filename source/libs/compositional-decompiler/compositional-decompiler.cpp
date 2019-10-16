@@ -55,7 +55,15 @@ CompositionalDecompiler::CompositionalDecompiler(
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
       "${HOME}/Github/validating-binary-decompilation/tests/scripts/";
-  this->workdir = workdir;
+
+  if (workdir == "") {
+    string cacheDir(getenv("HOME"));
+    cacheDir += "/Github/validating-binary-decompilation/tests/"
+                "compositional_artifacts_single_instruction_decompilation/";
+    this->workdir = cacheDir;
+  } else {
+    this->workdir = workdir;
+  }
 
   cfg = NULL;
   clear_error();
@@ -193,7 +201,7 @@ CompositionalDecompiler::collectDeclarations(const vector<string> &local_defn) {
         }
       } else {
         DeclCache[m[1]] = m[2];
-        Decls << line << endl;
+        TypeDecls << line << endl;
       }
     }
     i++;
@@ -368,6 +376,8 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
     x64asm::Instruction instr, const vector<string> &local_defn) {
   vector<string> retval;
   stringstream opr;
+
+  // Extract the data access operand
   if (is_any_operand_mem_type(instr)) {
     auto memIndex = instr.mem_index();
     const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
@@ -379,6 +389,14 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
   } else {
     // TO DO
   }
+
+  // Extract the access size
+  auto accessSize = instr.get_operand<Operand>(instr.arity() - 1).size();
+  // for (size_t i = 0; i < instr.arity(); i++) {
+  //   auto OPR = instr.get_operand<Operand>(i);
+  //   Console::msg() << instr << " Operand Size: " << OPR << ": " << OPR.size()
+  //                  << "\n";
+  // }
 
   // if (!is_hex_string(opr.str()))
   //   return local_defn;
@@ -392,14 +410,19 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
       // auto replace_str = "i64 " + to_string(hexInt) + ")\n";
       string addrExpr = normalize_spaces(opr.str());
 
-      stringstream tmp;
-      tmp << "@G_" << addrExpr << " = internal constant i8 0" << endl;
-      if (!DeclCache.count(tmp.str())) {
-        Decls << tmp.str();
-        DeclCache.insert(pair<string, string>(tmp.str(), ""));
+      if (DataSectioGlobalsCache.count(addrExpr)) {
+        uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+        if (accessSize > pastSize) {
+          DataSectioGlobalsCache[addrExpr] = accessSize;
+        }
+      } else {
+        DataSectioGlobalsCache[addrExpr] = accessSize;
       }
 
-      auto replace_str = "ptrtoint( i8* @G_" + addrExpr + " to";
+      string globalType = "%G_" + addrExpr + "_type";
+      string globalName = "@G_" + addrExpr;
+
+      auto replace_str = "ptrtoint( " + globalType + "* " + globalName + " to";
       auto repl_line =
           // regex_replace(line, regex("i64.?ptrtoint.*$"), replace_str);
           regex_replace(line, regex("ptrtoint.*?to"), replace_str);
@@ -606,7 +629,7 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
   tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
       << "(%struct.State* dereferenceable(3376), i64, %struct.Memory*)" << endl;
   if (!DeclCache.count(tmp.str())) {
-    Decls << tmp.str();
+    FuncDecls << tmp.str();
     DeclCache.insert(pair<string, string>(tmp.str(), ""));
   }
 
@@ -804,13 +827,16 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
   redi::ipstream *stream = NULL;
   string cmd = "cat "
                "${HOME}/Github/validating-binary-decompilation/source/libs/"
-               "compositional-decompiler/data/mcsema_template.txt " +
-               outLLVMPath;
+               "compositional-decompiler/data/mcsema_template.txt";
+  // + outLLVMPath;
   if (!stoke::run_command(cmd, true, &stream)) {
     Console::error(1) << "Error: " << get_error() << endl;
     return;
   }
   extractFromStream(funcDecls, *stream);
+  for (auto funcDecl : funcDecls) {
+    FuncDecls << funcDecl << endl;
+  }
 
   auto retval = decompileFunction(extractedFunction);
   if (has_error()) {
@@ -823,16 +849,20 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
     assert(false && "Problem with return value\n");
   }
 
+  // Generate Data Sections globals
+  generateDataSectionGlobals();
+
   // Generatng decompilation io text
   Console::msg() << "\n\nWriting to " << outLLVMPath << " ...\n";
   std::ofstream fd;
-  fd.open(outLLVMPath.c_str(), ios::out | ios::app);
+  // fd.open(outLLVMPath.c_str(), ios::out | ios::app);
+  fd.open(outLLVMPath.c_str(), ios::out);
 
-  fd << Decls.str();
+  fd << TypeDecls.str();
   fd << "\n; Function Declaraions\n";
-  for (auto funcDecl : funcDecls) {
-    fd << funcDecl << endl;
-  }
+  fd << FuncDecls.str();
+  fd << "\n; Data Access Globals\n";
+  fd << DataSectioGlobals.str();
   fd << "\n\n";
   fd << Body.str();
   fd << "  ret %struct.Memory* " << retval << "\n";
@@ -841,6 +871,29 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
   fd.close();
 
   Console::msg() << "Decompiling: Done.\n\n";
+}
+
+void CompositionalDecompiler::generateDataSectionGlobals() {
+  // Templates:
+  // %g_j_type = type <{ [4 x i8] }>
+  // @g_j = global %g_j_type <{ [4 x i8] c"\01\00\00\00" }>
+
+  for (auto p : DataSectioGlobalsCache) {
+    auto addrExpr = p.first;
+    auto accessSize = p.second;
+    auto byteSize = accessSize / 8;
+
+    string valueStr("");
+    for (int i = 0; i < byteSize; i++) {
+      valueStr += "\\00";
+    }
+
+    DataSectioGlobals << "%G_" << addrExpr << "_type = type <{ [" << byteSize
+                      << " x i8] }>" << endl;
+    DataSectioGlobals << "@G_" << addrExpr << "= global %G_" << addrExpr
+                      << "_type <{ [" << byteSize << " x i8] c\"" << valueStr
+                      << "\" }>" << endl;
+  }
 }
 
 void CompositionalDecompiler::displayCFG(bool view) {

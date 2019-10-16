@@ -1,0 +1,38 @@
+{
+  "noise": {
+    "num_inst": 197, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "noise"
+  }, 
+  "lerp": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "lerp"
+  }, 
+  "init": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init"
+  }, 
+  "fade": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "fade"
+  }, 
+  "main": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "grad": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "grad"
+  }
+}

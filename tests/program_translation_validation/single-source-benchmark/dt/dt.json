@@ -1,0 +1,14 @@
+{
+  "main": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "double_array_divs_variable": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "double_array_divs_variable"
+  }
+}

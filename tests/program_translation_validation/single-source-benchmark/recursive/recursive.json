@@ -1,0 +1,38 @@
+{
+  "takFP": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "takFP"
+  }, 
+  "ack": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ack"
+  }, 
+  "fib": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fib"
+  }, 
+  "fibFP": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "fibFP"
+  }, 
+  "main": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "tak": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "tak"
+  }
+}

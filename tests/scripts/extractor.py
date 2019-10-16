@@ -120,7 +120,6 @@ def createParentMakefile(functions):
     makeFile.write("\n\n")
     makeFile.write("all:" + allFuncNames + "\n")
     makeFile.write("binary:" + allFuncNames + "\n")
-    makeFile.write("mcsema:" + allFuncNames + "\n")
     makeFile.write("opt:" + allFuncNames + "\n")
     makeFile.write("compd:" + allFuncNames + "\n")
     makeFile.write("match:" + allFuncNames + "\n\n")
@@ -151,12 +150,11 @@ def createMakefile(funcName):
         ".PHONY: clean" +
         "\n\n")
 
-    makeFile.write("all: binary mcsema compd opt match")
+    makeFile.write("all: binary compd opt match")
     makeFile.write("" + "\n\n")
 
     makeFile.write("binary: ${INDIR}test" + "\n")
     makeFile.write("objdump: ${INDIR}/test.objdump" + "\n")
-    makeFile.write("mcsema: ${OUTDIR}test.ll" + "\n")
     makeFile.write("compd: ${OUTDIR}test.proposed.ll" + "\n")
     makeFile.write(
         "opt: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll" +
@@ -164,19 +162,11 @@ def createMakefile(funcName):
     makeFile.write("" + "\n")
 
     makeFile.write("${INDIR}test: ${INDIR}test.ll" + "\n")
-    makeFile.write("	clang -O0 ${INDIR}test.ll -o ${INDIR}test")
+    makeFile.write("	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test")
     makeFile.write("" + "\n\n")
 
     makeFile.write("${INDIR}/test.objdump: ${INDIR}test" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump")
-    makeFile.write("" + "\n\n")
-
-    makeFile.write("${OUTDIR}test.ll: ${INDIR}test" + "\n")
-    makeFile.write(
-        "	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${OUTDIR}test.cfg --binary ${INDIR}test --entrypoint main" + "\n")
-    makeFile.write(
-        "	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg mcsema/test.cfg --output ${OUTDIR}test.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
-    makeFile.write("	llvm-dis ${OUTDIR}test.bc -o ${OUTDIR}test.ll")
     makeFile.write("" + "\n\n")
 
     makeFile.write("${OUTDIR}test.proposed.ll: ${INDIR}test" + "\n")
@@ -187,12 +177,12 @@ def createMakefile(funcName):
     makeFile.write("" + "\n\n")
 
     makeFile.write(
-        "${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll: ${OUTDIR}test.ll ${OUTDIR}test.proposed.ll" +
+        "${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll: ${INDIR}test.mcsema.ll ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
         "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.ll -o ${OUTDIR}test.inline.ll;  opt -S  -O3    ${OUTDIR}test.inline.ll -o ${OUTDIR}test.opt.ll")
+        "	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${OUTDIR}test.inline.ll;  opt -S  -O3    ${OUTDIR}test.inline.ll -o ${OUTDIR}test.opt.ll")
     makeFile.write("" + "\n\n")
 
     makeFile.write(

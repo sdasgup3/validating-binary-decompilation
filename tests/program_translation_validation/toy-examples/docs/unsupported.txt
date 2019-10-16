@@ -1,0 +1,12 @@
+compd fail
+==========
+test_35/main
+test_22/timespi
+test_23/main
+test_23_1/main
+
+opt fail
+=========
+test_22/DoDemoFpu1
+test_22/main
+test_32/main *

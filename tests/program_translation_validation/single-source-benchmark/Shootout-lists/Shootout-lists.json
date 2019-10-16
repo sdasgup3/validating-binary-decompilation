@@ -1,0 +1,98 @@
+{
+  "list_first": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_first"
+  }, 
+  "list_print": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_print"
+  }, 
+  "list_new": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_new"
+  }, 
+  "list_pop_tail": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_pop_tail"
+  }, 
+  "list_push_tail": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_push_tail"
+  }, 
+  "list_reverse": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_reverse"
+  }, 
+  "list_push_head": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_push_head"
+  }, 
+  "list_equal": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_equal"
+  }, 
+  "list_empty": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_empty"
+  }, 
+  "list_pop_head": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_pop_head"
+  }, 
+  "list_sequence": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_sequence"
+  }, 
+  "test_lists": {
+    "num_inst": 141, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "test_lists"
+  }, 
+  "list_last": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_last"
+  }, 
+  "main": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "list_length": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_length"
+  }, 
+  "list_copy": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "list_copy"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "lower_StringImpl": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "lower_StringImpl"
+  }, 
+  "main": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "doTest": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "doTest"
+  }, 
+  "toASCIILower": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "toASCIILower"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "main": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Getelement": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Getelement"
+  }, 
+  "Towers": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Towers"
+  }, 
+  "Move": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Move"
+  }, 
+  "Pop": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Pop"
+  }, 
+  "Makenull": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Makenull"
+  }, 
+  "Init": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Init"
+  }, 
+  "Error": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Error"
+  }, 
+  "Push": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Push"
+  }, 
+  "tower": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "tower"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }
+}

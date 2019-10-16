@@ -1,0 +1,6 @@
+Initrand, 2, False, False
+Rand, 8, False, False
+Try, 126, False, False
+Doit, 54, False, False
+Queens, 18, False, False
+main, 16, False, False
