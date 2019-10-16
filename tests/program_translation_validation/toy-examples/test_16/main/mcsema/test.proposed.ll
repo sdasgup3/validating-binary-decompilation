@@ -87,13 +87,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_601018__data = internal global %seg_601018__data_type zeroinitializer
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
-@G_0x400574 = internal constant i8 0
-declare %struct.Memory* @sub_4004d0.printit(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 ; Function Declaraions
 declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
+declare %struct.Memory* @sub_4004d0.printit(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+; Data Access Globals
+%G_0x400574_type = type <{ [4 x i8] }>
+@G_0x400574= global %G_0x400574_type <{ [4 x i8] c"\00\00\00\00" }>
 
 
 define %struct.Memory* @main(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -451,7 +454,7 @@ block_400488:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 7
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RDI, i64 add (i64 ptrtoint( i8* @G_0x400574 to i64), i64 44))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RDI, i64 add (i64 ptrtoint( %G_0x400574_type* @G_0x400574 to i64), i64 44))
   ret %struct.Memory* %11
 }
 

@@ -2,7 +2,6 @@
 
 all: sum_2_n main
 binary: sum_2_n main
-mcsema: sum_2_n main
 opt: sum_2_n main
 compd: sum_2_n main
 match: sum_2_n main

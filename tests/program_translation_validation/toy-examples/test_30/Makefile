@@ -2,7 +2,6 @@
 
 all: stderr_driver main print_it
 binary: stderr_driver main print_it
-mcsema: stderr_driver main print_it
 opt: stderr_driver main print_it
 compd: stderr_driver main print_it
 match: stderr_driver main print_it

@@ -10,8 +10,6 @@ test_29/foo
 test_18/main
 test_18/printdata
 test_0_1/main
-test_35/main
-test_35/f
 test_28_1/main
 test_28_1/func
 binary-search/main

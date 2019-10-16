@@ -2,7 +2,6 @@
 
 all: main printit
 binary: main printit
-mcsema: main printit
 opt: main printit
 compd: main printit
 match: main printit

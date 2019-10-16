@@ -2,7 +2,6 @@
 
 all: main doOp
 binary: main doOp
-mcsema: main doOp
 opt: main doOp
 compd: main doOp
 match: main doOp

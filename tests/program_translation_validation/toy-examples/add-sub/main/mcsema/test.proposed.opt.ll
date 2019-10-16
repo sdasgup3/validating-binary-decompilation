@@ -39,10 +39,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 
-declare %struct.Memory* @sub_400490.add_sub(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
-
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
+
+declare %struct.Memory* @sub_400490.add_sub(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {

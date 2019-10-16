@@ -2,7 +2,6 @@
 
 all: draw main
 binary: draw main
-mcsema: draw main
 opt: draw main
 compd: draw main
 match: draw main

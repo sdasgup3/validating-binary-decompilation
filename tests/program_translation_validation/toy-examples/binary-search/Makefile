@@ -2,7 +2,6 @@
 
 all: binary_search main
 binary: binary_search main
-mcsema: binary_search main
 opt: binary_search main
 compd: binary_search main
 match: binary_search main

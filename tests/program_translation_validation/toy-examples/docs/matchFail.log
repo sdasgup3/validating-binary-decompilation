@@ -2,11 +2,17 @@ test_10/demo3
 test_13/doStuff
 test_20/main
 test_20/switches
+test_22/DoDemoFpu1
+test_22/main
+test_22/timespi
+test_23/main
+test_23_1/main
 test_24/keycomp
 test_24/main
 test_24/read_bytes
 test_27/main
 test_29/foo
 test_32/fib
+test_32/main
 test_33/Ack
 test_33/main

@@ -12,7 +12,7 @@ compdCheck() {
     exit 0
   else
     echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
-    exit 1  
+    exit 1
   fi
 }
 
@@ -20,11 +20,13 @@ matchCheck() {
   msg=$1
   if grep -q "Iso Match Found" match.log; then
     echo -e "\e[32mMatch Pass\e[39m:-" `pwd`:$msg
+    sed -i -n -e '/Check for multiple matches/,$p' match.log
     exit 0
   elif grep -q "Iso Match NOT Found" match.log; then
     echo -e "\e[32mMatch Pass:multi-matches\e[39m:-" `pwd`:$msg
+    sed -i -n -e '/Check for multiple matches/,$p' match.log
     exit 0
-  else 
+  else
     echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
   fi
 }

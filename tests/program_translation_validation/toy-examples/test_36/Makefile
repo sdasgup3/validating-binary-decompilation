@@ -2,7 +2,6 @@
 
 all: fun main
 binary: fun main
-mcsema: fun main
 opt: fun main
 compd: fun main
 match: fun main

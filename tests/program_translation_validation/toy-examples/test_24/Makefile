@@ -2,7 +2,6 @@
 
 all: to_byte read_bytes main keycomp
 binary: to_byte read_bytes main keycomp
-mcsema: to_byte read_bytes main keycomp
 opt: to_byte read_bytes main keycomp
 compd: to_byte read_bytes main keycomp
 match: to_byte read_bytes main keycomp

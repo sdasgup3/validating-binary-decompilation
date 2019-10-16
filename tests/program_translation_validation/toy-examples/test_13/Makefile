@@ -2,7 +2,6 @@
 
 all: main doWork checkFn doStuff
 binary: main doWork checkFn doStuff
-mcsema: main doWork checkFn doStuff
 opt: main doWork checkFn doStuff
 compd: main doWork checkFn doStuff
 match: main doWork checkFn doStuff

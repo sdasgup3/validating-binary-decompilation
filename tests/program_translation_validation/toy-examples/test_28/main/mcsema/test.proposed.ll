@@ -87,12 +87,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_601018__data = internal global %seg_601018__data_type zeroinitializer
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
-declare %struct.Memory* @sub_400500.func(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 ; Function Declaraions
 declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
+declare %struct.Memory* @sub_400500.func(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+; Data Access Globals
 
 
 define %struct.Memory* @main(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
