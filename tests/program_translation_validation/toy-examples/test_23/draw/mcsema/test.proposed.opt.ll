@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G__0x601040_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,12 +39,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G__0x601040 = internal constant i8 0
-
-declare %struct.Memory* @sub_400470.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+@G__0x601040 = global %G__0x601040_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
+
+declare %struct.Memory* @sub_400470.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @draw(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -208,7 +209,7 @@ block_.L_4005b0:                                  ; preds = %block_4005ba, %bloc
 
 block_4005ba:                                     ; preds = %block_.L_4005b0
   store i64 4196848, i64* %RDI.i25, align 8
-  store i64 ptrtoint (i8* @G__0x601040 to i64), i64* %RAX.i55, align 8
+  store i64 ptrtoint (%G__0x601040_type* @G__0x601040 to i64), i64* %RAX.i55, align 8
   %107 = add i64 %77, -4
   %108 = add i64 %105, 24
   store i64 %108, i64* %3, align 8
@@ -218,9 +219,9 @@ block_4005ba:                                     ; preds = %block_.L_4005b0
   %112 = mul nsw i64 %111, 11
   store i64 %112, i64* %RCX.i52, align 8
   %113 = lshr i64 %112, 63
-  %114 = add i64 %112, ptrtoint (i8* @G__0x601040 to i64)
+  %114 = add i64 %112, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
   store i64 %114, i64* %RAX.i55, align 8
-  %115 = icmp ult i64 %114, ptrtoint (i8* @G__0x601040 to i64)
+  %115 = icmp ult i64 %114, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
   %116 = icmp ult i64 %114, %112
   %117 = or i1 %115, %116
   %118 = zext i1 %117 to i8
@@ -232,7 +233,7 @@ block_4005ba:                                     ; preds = %block_.L_4005b0
   %123 = and i8 %122, 1
   %124 = xor i8 %123, 1
   store i8 %124, i8* %21, align 1
-  %125 = xor i64 %112, ptrtoint (i8* @G__0x601040 to i64)
+  %125 = xor i64 %112, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
   %126 = xor i64 %125, %114
   %127 = lshr i64 %126, 4
   %128 = trunc i64 %127 to i8
@@ -244,7 +245,7 @@ block_4005ba:                                     ; preds = %block_.L_4005b0
   %132 = lshr i64 %114, 63
   %133 = trunc i64 %132 to i8
   store i8 %133, i8* %32, align 1
-  %134 = xor i64 %132, lshr (i64 ptrtoint (i8* @G__0x601040 to i64), i64 63)
+  %134 = xor i64 %132, lshr (i64 ptrtoint (%G__0x601040_type* @G__0x601040 to i64), i64 63)
   %135 = xor i64 %132, %113
   %136 = add nuw nsw i64 %134, %135
   %137 = icmp eq i64 %136, 2
@@ -726,7 +727,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 ptrtoint (i8* @G__0x601040 to i64), i64* %RAX, align 8
+  store i64 ptrtoint (%G__0x601040_type* @G__0x601040 to i64), i64* %RAX, align 8
   ret %struct.Memory* %2
 }
 

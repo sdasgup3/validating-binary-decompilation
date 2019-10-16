@@ -2,7 +2,6 @@
 
 all: Ack main
 binary: Ack main
-mcsema: Ack main
 opt: Ack main
 compd: Ack main
 match: Ack main

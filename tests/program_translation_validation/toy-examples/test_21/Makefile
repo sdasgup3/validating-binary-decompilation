@@ -2,7 +2,6 @@
 
 all: main shiftit
 binary: main shiftit
-mcsema: main shiftit
 opt: main shiftit
 compd: main shiftit
 match: main shiftit

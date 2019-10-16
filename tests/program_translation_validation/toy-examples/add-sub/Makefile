@@ -2,7 +2,6 @@
 
 all: add_sub main
 binary: add_sub main
-mcsema: add_sub main
 opt: add_sub main
 compd: add_sub main
 match: add_sub main

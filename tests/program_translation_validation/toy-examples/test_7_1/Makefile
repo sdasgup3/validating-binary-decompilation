@@ -2,7 +2,6 @@
 
 all: check main
 binary: check main
-mcsema: check main
 opt: check main
 compd: check main
 match: check main

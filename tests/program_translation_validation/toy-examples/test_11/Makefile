@@ -2,7 +2,6 @@
 
 all: main doTrans
 binary: main doTrans
-mcsema: main doTrans
 opt: main doTrans
 compd: main doTrans
 match: main doTrans

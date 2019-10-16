@@ -36,34 +36,39 @@ make all
 # make all
 ```
 
+### Batch Run in stages
+```bash
+# Run McSema
+cat docs/filelist.txt | parallel -j5  " echo; echo {}; cd {}/binary; ../../../../scripts/run_mcsema.sh ; cd ../.." |& tee ~/Junk/log
+
+# Run compd
+cat docs/makefilelist.txt | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+grep "Pass" docs/compd.log > docs/compdPass.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
+
+# Run match
+cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
+grep "Pass" docs/compd.log > docs/matchPass.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
+```
+
+### Important files
+  - docs/compdPass.log
+  - docs/compdFail.log
+  - docs/matchPass.log
+  - docs/matchFail.log
+
+
+
+## Other Stuff
 ### Batch Run
 ```bash
 # Fire all the runs from top Makefile
 cat filelist.txt  | parallel -j4 "echo ; echo {}; cd {}; make all ; cd ..;" |& tee ~/Junk/log
 
 # OR Fire all the runs from leaf Makefile
-find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "old-examples\|bc-seeds" | parallel -j1 "echo; echo {}; make -C \$(dirname {}) all"
-
-#find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-#| xargs  -I'abc' find 'abc' -name "Makefile" \
-#| parallel   "echo; echo {}; make -C \$(dirname {}) all"
-
-# OR
-# find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-# | xargs  -I'abc' find 'abc' -name "Makefile" \
-# | parallel   "echo; echo {}; make -C \$(dirname {}) binary"
-# find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-# | xargs  -I'abc' find 'abc' -name "Makefile" \
-# | parallel   "echo; echo {}; make -C \$(dirname {}) mcsema"  
-# find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-# | xargs  -I'abc' find 'abc' -name "Makefile" \
-# | parallel   "echo; echo {}; make -C \$(dirname {}) compd"  
-# find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-# | xargs  -I'abc' find 'abc' -name "Makefile" \
-# | parallel   "echo; echo {}; make -C \$(dirname {}) opt"  
-# find array-reverse get-sign sum-2-n add-sub binary-search -name "Makefile" \
-# | xargs  -I'abc' find 'abc' -name "Makefile" \
-# | parallel   "echo; echo {}; make -C \$(dirname {}) match"  
+# [Already done] find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "old-examples\|bc-seeds" > docs/makefilelist.txt
+cat makefilelist.txt | parallel -j1 "echo; echo {}; make -C {} all"
 ```
 
 ### Remove the cache directories for a particular program
