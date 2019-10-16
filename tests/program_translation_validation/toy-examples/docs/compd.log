@@ -1,0 +1,640 @@
+
+test_30/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+test_14/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+
+test_18/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+
+test_1/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+
+test_30/stderr_driver
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function stderr_driver --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
+test_28_1/func
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+
+test_17/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+
+test_16/printit
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printit --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit:printit
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+
+test_28_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+
+get-sign/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+
+test_0_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+
+test_30/print_it
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function print_it --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it:print_it
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+
+test_13_1/checkFn
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn:checkFn
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+
+test_14/checkFn
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+
+get-sign/get_sign
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function get_sign --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign:get_sign
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+
+test_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+
+test_28/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+
+binary-search/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+
+test_17/printdata
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+
+test_7_1/check
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check:check
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+
+test_2_1/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+
+test_16/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
+test_34/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+
+test_13_1/doWork
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+
+test_36/fun
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fun --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun:fun
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+
+add-sub/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+
+test_29/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+
+array-reverse/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+
+test_2_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+
+test_18/printdata
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+
+test_21/shiftit
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function shiftit --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit:shiftit
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+
+test_36/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+
+test_5/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+
+test_3/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+
+add-sub/add_sub
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function add_sub --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub:add_sub
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+
+test_13_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+test_14/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+
+test_31/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+
+test_3/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+
+test_21/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+
+sum-2-n/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+
+test_28/func
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+
+test_22/timespi
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/timespi'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function timespi --input ../binary/test 1>compd.log 2>&1
+Makefile:24: recipe for target 'mcsema/test.proposed.ll' failed
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/timespi'
+make: *** [mcsema/test.proposed.ll] Error 134
+
+test_29/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+
+test_2/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+
+test_23_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+Makefile:24: recipe for target 'mcsema/test.proposed.ll' failed
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23_1/main'
+make: *** [mcsema/test.proposed.ll] Error 134
+
+test_2/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+
+test_7_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+
+test_31/fib
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fib --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+
+test_15/doOp
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doOp --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+
+sum-2-n/sum_2_n
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function sum_2_n --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+test_5/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+array-reverse/array_reverse
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function array_reverse --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+
+test_33/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+
+test_6/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+
+test_33/Ack
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function Ack --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+
+test_32/fib
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function fib --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+
+test_10/demo3
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function demo3 --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+
+test_0/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+binary-search/binary_search
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function binary_search --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+
+test_10/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+
+test_22/DoDemoFpu1
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function DoDemoFpu1 --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1:DoDemoFpu1
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+
+test_32/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+
+test_23/draw
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function draw --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+
+test_20/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+
+test_23/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+Makefile:24: recipe for target 'mcsema/test.proposed.ll' failed
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/main'
+make: *** [mcsema/test.proposed.ll] Error 134
+
+test_26_1/update
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+
+test_25/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+test_15/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+test_11/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+
+test_22/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+
+test_13/checkFn
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+
+test_13/doWork
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+
+test_26_1/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+
+test_4/foo
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo:foo
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+
+test_13/doStuff
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doStuff --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff:doStuff
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+
+test_24/read_bytes
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function read_bytes --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes:read_bytes
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+
+test_6/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+
+test_24/to_byte
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function to_byte --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte:to_byte
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+
+test_7/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+
+test_26/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+
+test_11/doTrans
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doTrans --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans:doTrans
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+
+test_24/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+
+test_4/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+
+test_26/update
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update:update
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+
+test_27/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+
+test_27/update
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+
+test_7/check
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+
+test_13/main
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main:main
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+
+test_20/switches
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function switches --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches:switches
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+
+test_24/keycomp
+=======
+make: Entering directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'
+/home/sdasgup3/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function keycomp --input ../binary/test 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp:keycomp
+make: Leaving directory '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'

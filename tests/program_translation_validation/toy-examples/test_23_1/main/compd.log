@@ -77,12 +77,12 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_4005d9->4195801
+.L_4005bb->4195771
+.L_4005a1->4195745
 .main->4195584
+.L_4005d9->4195801
 .L_4005ad->4195757
 .L_400533->4195635
-.L_4005a1->4195745
-.L_4005bb->4195771
 
 Computing Label PC values: Done.
 
@@ -99,14 +99,14 @@ Decompiling instr:.main:...
 
 Decompiling instr:pushq %rbp...
 Instr: pushq %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
 Running artifacts...Done.
 FuncCache inserted: _ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_
 FuncCache inserted: routine_pushq__rbp
@@ -114,14 +114,14 @@ FuncCache inserted: routine_pushq__rbp
 
 Decompiling instr:movq %rsp, %rbp...
 Instr: movq %rsp, %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -131,14 +131,14 @@ FuncCache inserted: routine_movq__rsp___rbp
 
 Decompiling instr:subq $0x30, %rsp...
 Instr: subq $0x30, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x30___rsp
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x30___rsp
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x30___rsp/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x30___rsp/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -148,14 +148,14 @@ FuncCache inserted: routine_subq__0x30___rsp
 
 Decompiling instr:movl $0x0, -0x4(%rbp)...
 Instr: movl $0x0, -0x4(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -165,14 +165,14 @@ FuncCache inserted: routine_movl__0x0__MINUS0x4__rbp_
 
 Decompiling instr:movl $0x0, -0x8(%rbp)...
 Instr: movl $0x0, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x8__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x8__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x8__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x8__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -182,14 +182,14 @@ FuncCache inserted: routine_movl__0x0__MINUS0x8__rbp_
 
 Decompiling instr:movl $0x0, -0xc(%rbp)...
 Instr: movl $0x0, -0xc(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0xc__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0xc__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0xc__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0xc__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -199,14 +199,14 @@ FuncCache inserted: routine_movl__0x0__MINUS0xc__rbp_
 
 Decompiling instr:movq 0x400730, %rax...
 Instr: movq 0x400730, %rax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400730___rax
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400730___rax
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400730___rax/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400730___rax/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
@@ -216,14 +216,14 @@ FuncCache inserted: routine_movq_0x400730___rax
 
 Decompiling instr:movq %rax, -0x15(%rbp)...
 Instr: movq %rax, -0x15(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x15__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x15__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x15__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x15__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -233,14 +233,14 @@ FuncCache inserted: routine_movq__rax__MINUS0x15__rbp_
 
 Decompiling instr:movb 0x400738, %cl...
 Instr: movb 0x400738, %cl
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb_0x400738___cl
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb_0x400738___cl
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb_0x400738___cl/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb_0x400738___cl/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -250,14 +250,14 @@ FuncCache inserted: routine_movb_0x400738___cl
 
 Decompiling instr:movb %cl, -0xd(%rbp)...
 Instr: movb %cl, -0xd(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__cl__MINUS0xd__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__cl__MINUS0xd__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__cl__MINUS0xd__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__cl__MINUS0xd__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -270,14 +270,14 @@ Decompiling instr:.L_400533:...
 
 Decompiling instr:cmpl $0x8, -0x8(%rbp)...
 Instr: cmpl $0x8, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x8__MINUS0x8__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x8__MINUS0x8__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x8__MINUS0x8__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x8__MINUS0x8__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -287,14 +287,14 @@ FuncCache inserted: routine_cmpl__0x8__MINUS0x8__rbp_
 
 Decompiling instr:jge .L_4005bb...
 Instr: jge .L_4005bb
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_4005bb
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_4005bb
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_4005bb/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_4005bb/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -304,14 +304,14 @@ FuncCache inserted: routine_jge_.L_4005bb
 
 Decompiling instr:movslq -0x8(%rbp), %rax...
 Instr: movslq -0x8(%rbp), %rax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x8__rbp____rax
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x8__rbp____rax
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x8__rbp____rax/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x8__rbp____rax/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -321,14 +321,14 @@ FuncCache inserted: routine_movslq_MINUS0x8__rbp____rax
 
 Decompiling instr:movsbl -0x15(%rbp,%rax,1), %ecx...
 Instr: movsbl -0x15(%rbp,%rax,1), %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsbl_MINUS0x15__rbp__rax_1____ecx
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsbl_MINUS0x15__rbp__rax_1____ecx
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsbl_MINUS0x15__rbp__rax_1____ecx/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsbl_MINUS0x15__rbp__rax_1____ecx/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -338,14 +338,14 @@ FuncCache inserted: routine_movsbl_MINUS0x15__rbp__rax_1____ecx
 
 Decompiling instr:addl $0xffffff9f, %ecx...
 Instr: addl $0xffffff9f, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xffffff9f___ecx
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xffffff9f___ecx
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xffffff9f___ecx/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xffffff9f___ecx/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -355,14 +355,14 @@ FuncCache inserted: routine_addl__0xffffff9f___ecx
 
 Decompiling instr:movl %ecx, %eax...
 Instr: movl %ecx, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -372,14 +372,14 @@ FuncCache inserted: routine_movl__ecx___eax
 
 Decompiling instr:subl $0x16, %ecx...
 Instr: subl $0x16, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x16___ecx
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x16___ecx
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x16___ecx/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x16___ecx/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -389,14 +389,14 @@ FuncCache inserted: routine_subl__0x16___ecx
 
 Decompiling instr:movq %rax, -0x20(%rbp)...
 Instr: movq %rax, -0x20(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -406,14 +406,14 @@ FuncCache inserted: routine_movq__rax__MINUS0x20__rbp_
 
 Decompiling instr:movl %ecx, -0x24(%rbp)...
 Instr: movl %ecx, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx__MINUS0x24__rbp_
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx__MINUS0x24__rbp_
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -423,14 +423,14 @@ FuncCache inserted: routine_movl__ecx__MINUS0x24__rbp_
 
 Decompiling instr:ja .L_4005a1...
 Instr: ja .L_4005a1
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//ja_.L_4005a1
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//ja_.L_4005a1
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//ja_.L_4005a1/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//ja_.L_4005a1/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -440,14 +440,14 @@ FuncCache inserted: routine_ja_.L_4005a1
 
 Decompiling instr:movq -0x20(%rbp), %rax...
 Instr: movq -0x20(%rbp), %rax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rax
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rax
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rax/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rax/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
@@ -457,19 +457,22 @@ FuncCache inserted: routine_movq_MINUS0x20__rbp____rax
 
 Decompiling instr:movq 0x400678(,%rax,8), %rcx...
 Instr: movq 0x400678(,%rax,8), %rcx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400678___rax_8____rcx
+Workdir: /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400678___rax_8____rcx
 Generating artifacts...
 Already Exists
 Running artifacts...
 Skip McSema run ...
 Skip Declutter ...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400678___rax_8____rcx/test.mod.ll
+Executing: cat /home/sdasgup3/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x400678___rax_8____rcx/test.mod.ll
 Running artifacts...Done.
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x400678___rax_8____rcx
 FATAL ERROR: Missing target address for: jmpq %rcx
-decompiler: /home/ubuntu/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+decompiler: /home/sdasgup3/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+
+
+Decompiling instr:jmpq %rcx...
 Aborted (core dumped)

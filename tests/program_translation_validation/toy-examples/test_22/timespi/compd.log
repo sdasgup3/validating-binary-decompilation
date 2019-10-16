@@ -1,4 +1,5 @@
 WARNING: Cannot parse function 'timespi', skipping.  Error(s): Could not encode 'fmulp  %st,%st(1)' within 2 bytes.
 FATAL ERROR: CFG not yet created!
-decompiler: /home/ubuntu/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+decompiler: /home/sdasgup3/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
+Disassembling ../binary/test
 Aborted (core dumped)

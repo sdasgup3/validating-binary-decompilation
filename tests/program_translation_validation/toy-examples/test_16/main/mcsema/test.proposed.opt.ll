@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x400574_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,12 +39,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G_0x400574 = internal constant i8 0
-
-declare %struct.Memory* @sub_4004d0.printit(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+@G_0x400574 = global %G_0x400574_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
+
+declare %struct.Memory* @sub_4004d0.printit(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -125,7 +126,7 @@ entry:
   store i64 %53, i64* %56, align 8
   %RDI.i16 = getelementptr inbounds %union.anon, %union.anon* %44, i64 0, i32 0
   %57 = load i64, i64* %3, align 8
-  %58 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (i8* @G_0x400574 to i64), i64 44) to i32*), align 4
+  %58 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400574_type* @G_0x400574 to i64), i64 44) to i32*), align 4
   %59 = load i64, i64* %RBP.i, align 8
   %60 = add i64 %59, -20
   %61 = add i64 %57, 10
@@ -360,7 +361,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 7
   store i64 %4, i64* %PC, align 8
-  %5 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (i8* @G_0x400574 to i64), i64 44) to i32*), align 4
+  %5 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400574_type* @G_0x400574 to i64), i64 44) to i32*), align 4
   %6 = zext i32 %5 to i64
   store i64 %6, i64* %RDI, align 8
   ret %struct.Memory* %2

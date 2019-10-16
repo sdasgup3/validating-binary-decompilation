@@ -2,7 +2,6 @@
 
 all: DoDemoFpu1 main timespi
 binary: DoDemoFpu1 main timespi
-mcsema: DoDemoFpu1 main timespi
 opt: DoDemoFpu1 main timespi
 compd: DoDemoFpu1 main timespi
 match: DoDemoFpu1 main timespi

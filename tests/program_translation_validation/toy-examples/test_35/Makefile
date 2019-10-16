@@ -2,7 +2,6 @@
 
 all: f main
 binary: f main
-mcsema: f main
 opt: f main
 compd: f main
 match: f main

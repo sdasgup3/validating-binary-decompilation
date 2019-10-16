@@ -2,7 +2,6 @@
 
 all: main foo
 binary: main foo
-mcsema: main foo
 opt: main foo
 compd: main foo
 match: main foo

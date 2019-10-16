@@ -2,7 +2,6 @@
 
 all: array_reverse main
 binary: array_reverse main
-mcsema: array_reverse main
 opt: array_reverse main
 compd: array_reverse main
 match: array_reverse main

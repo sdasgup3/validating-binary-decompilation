@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G__0x4005e4_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,12 +39,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G__0x4005e4 = internal constant i8 0
-
-declare %struct.Memory* @sub_400400.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+@G__0x4005e4 = global %G__0x4005e4_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
+
+declare %struct.Memory* @sub_400400.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @func(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -98,7 +99,7 @@ entry:
   store i8 %38, i8* %39, align 1
   %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %RAX.i13 = getelementptr inbounds %union.anon, %union.anon* %40, i64 0, i32 0
-  store i64 add (i64 ptrtoint (i8* @G__0x4005e4 to i64), i64 140), i64* %RAX.i13, align 8
+  store i64 add (i64 ptrtoint (%G__0x4005e4_type* @G__0x4005e4 to i64), i64 140), i64* %RAX.i13, align 8
   %41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0
   %EDI.i = bitcast %union.anon* %41 to i32*
   %42 = add i64 %7, -12
@@ -268,7 +269,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 add (i64 ptrtoint (i8* @G__0x4005e4 to i64), i64 140), i64* %RAX, align 8
+  store i64 add (i64 ptrtoint (%G__0x4005e4_type* @G__0x4005e4 to i64), i64 140), i64* %RAX, align 8
   ret %struct.Memory* %2
 }
 

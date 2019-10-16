@@ -2,7 +2,6 @@
 
 all: main foo checkFn
 binary: main foo checkFn
-mcsema: main foo checkFn
 opt: main foo checkFn
 compd: main foo checkFn
 match: main foo checkFn
