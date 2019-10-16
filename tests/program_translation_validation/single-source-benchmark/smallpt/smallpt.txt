@@ -1,2 +1,0 @@
-_Z8radianceRK3RayiPt, 575, True, True
-main, 284, True, True

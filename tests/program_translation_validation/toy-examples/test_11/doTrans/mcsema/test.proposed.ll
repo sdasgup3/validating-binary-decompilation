@@ -87,9 +87,6 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_601018__data = internal global %seg_601018__data_type zeroinitializer
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
-declare %struct.Memory* @sub_400550.strlen_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_400580.malloc_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_400570.memset_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 %seg_400514__fini_type = type <{ [9 x i8] }>
 %seg_400520__rodata_type = type <{ [4 x i8] }>
 %seg_400524__eh_frame_hdr_type = type <{ [52 x i8] }>
@@ -103,6 +100,11 @@ declare %struct.Memory* @sub_400570.memset_plt(%struct.State* dereferenceable(33
 declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
+declare %struct.Memory* @sub_400550.strlen_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_400580.malloc_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_400570.memset_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+; Data Access Globals
 
 
 define %struct.Memory* @doTrans(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

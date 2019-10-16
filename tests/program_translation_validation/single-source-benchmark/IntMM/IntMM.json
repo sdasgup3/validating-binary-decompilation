@@ -1,0 +1,38 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }, 
+  "Intmm": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Intmm"
+  }, 
+  "Innerproduct": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Innerproduct"
+  }, 
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Initmatrix": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initmatrix"
+  }
+}

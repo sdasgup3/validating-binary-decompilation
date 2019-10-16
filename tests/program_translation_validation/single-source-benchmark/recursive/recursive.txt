@@ -1,0 +1,6 @@
+ack, 29, False, False
+fib, 19, False, False
+fibFP, 19, True, False
+tak, 34, False, False
+takFP, 34, True, False
+main, 39, True, False

@@ -1,0 +1,50 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "main": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Fit": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Fit"
+  }, 
+  "Puzzle": {
+    "num_inst": 664, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Puzzle"
+  }, 
+  "Remove": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Remove"
+  }, 
+  "Trial": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Trial"
+  }, 
+  "Place": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Place"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Initarr": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initarr"
+  }, 
+  "Quicksort": {
+    "num_inst": 107, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Quicksort"
+  }, 
+  "Quick": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Quick"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }
+}

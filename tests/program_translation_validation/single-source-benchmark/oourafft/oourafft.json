@@ -1,0 +1,74 @@
+{
+  "cftbsub": {
+    "num_inst": 336, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "cftbsub"
+  }, 
+  "bitrv2": {
+    "num_inst": 565, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "bitrv2"
+  }, 
+  "makewt": {
+    "num_inst": 112, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "makewt"
+  }, 
+  "errorcheck": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "errorcheck"
+  }, 
+  "putdata": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "putdata"
+  }, 
+  "bitrv2conj": {
+    "num_inst": 670, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "bitrv2conj"
+  }, 
+  "cftmdl": {
+    "num_inst": 1045, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "cftmdl"
+  }, 
+  "cdft": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "cdft"
+  }, 
+  "get_time": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "get_time"
+  }, 
+  "main": {
+    "num_inst": 276, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "cftfsub": {
+    "num_inst": 327, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "cftfsub"
+  }, 
+  "cft1st": {
+    "num_inst": 825, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "cft1st"
+  }
+}

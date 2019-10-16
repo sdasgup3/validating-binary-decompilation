@@ -1,0 +1,3 @@
+make_vec, 17, True, True
+sum_vec, 12, True, True
+main, 183, True, True

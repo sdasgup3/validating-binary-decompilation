@@ -1,0 +1,14 @@
+{
+  "gen_random": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "gen_random"
+  }, 
+  "main": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }
+}

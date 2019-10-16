@@ -1,0 +1,62 @@
+{
+  "jacobi": {
+    "num_inst": 1454, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "jacobi"
+  }, 
+  "fflop": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "fflop"
+  }, 
+  "newMat": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "newMat"
+  }, 
+  "set_param": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_param"
+  }, 
+  "mat_set": {
+    "num_inst": 87, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "mat_set"
+  }, 
+  "second": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "second"
+  }, 
+  "mflops": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "mflops"
+  }, 
+  "mat_set_init": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "mat_set_init"
+  }, 
+  "main": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "clearMat": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "clearMat"
+  }
+}

@@ -65,7 +65,12 @@ private:
   stringstream Defns;
 
   // Declarations of called functions
-  stringstream Decls;
+  stringstream TypeDecls;
+  stringstream FuncDecls;
+
+  stringstream DataSectioGlobals;
+  map<string, uint16_t> DataSectioGlobalsCache;
+  void generateDataSectionGlobals();
 
   string decompileFunction(const string &extractedFunction);
   // bool sanity_check_template_instruction(x64asm::Instruction i1,

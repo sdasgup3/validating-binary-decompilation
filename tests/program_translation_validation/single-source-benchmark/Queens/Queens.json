@@ -1,0 +1,38 @@
+{
+  "Rand": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rand"
+  }, 
+  "main": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "Doit": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Doit"
+  }, 
+  "Try": {
+    "num_inst": 126, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Try"
+  }, 
+  "Initrand": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Initrand"
+  }, 
+  "Queens": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Queens"
+  }
+}

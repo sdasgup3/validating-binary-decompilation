@@ -1,0 +1,44 @@
+{
+  "ht_create": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_create"
+  }, 
+  "ht_destroy": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_destroy"
+  }, 
+  "ht_find_new": {
+    "num_inst": 70, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_find_new"
+  }, 
+  "ht_node_create": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_node_create"
+  }, 
+  "ht_hashcode": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_hashcode"
+  }, 
+  "main": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "ht_find": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ht_find"
+  }
+}

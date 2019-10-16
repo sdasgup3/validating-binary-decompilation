@@ -1,0 +1,20 @@
+{
+  "ReverseBits32": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReverseBits32"
+  }, 
+  "ReverseBits64": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReverseBits64"
+  }, 
+  "main": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }
+}

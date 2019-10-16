@@ -1,0 +1,14 @@
+{
+  "dtime": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dtime"
+  }, 
+  "main": {
+    "num_inst": 1438, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }
+}

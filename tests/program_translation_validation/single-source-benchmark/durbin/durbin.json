@@ -1,0 +1,86 @@
+{
+  "main": {
+    "num_inst": 124, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "xmalloc": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "xmalloc"
+  }, 
+  "polybench_timer_stop": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "polybench_timer_stop"
+  }, 
+  "init_array": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "init_array"
+  }, 
+  "kernel_durbin": {
+    "num_inst": 241, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_durbin"
+  }, 
+  "polybench_alloc_data": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "polybench_alloc_data"
+  }, 
+  "kernel_durbin_StrictFP": {
+    "num_inst": 241, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "kernel_durbin_StrictFP"
+  }, 
+  "print_array": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "print_array"
+  }, 
+  "check_FP": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "check_FP"
+  }, 
+  "polybench_timer_start": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "polybench_timer_start"
+  }, 
+  "polybench_timer_print": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "polybench_timer_print"
+  }, 
+  "polybench_flush_cache": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "polybench_flush_cache"
+  }, 
+  "polybench_prepare_instruments": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "polybench_prepare_instruments"
+  }, 
+  "rtclock": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rtclock"
+  }
+}
