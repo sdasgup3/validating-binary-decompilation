@@ -125,7 +125,7 @@ def createParentMakefile(functions):
     makeFile.write("match:" + allFuncNames + "\n\n")
 
     makeFile.write("binary:" + "\n")
-    makeFile.write("	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+    makeFile.write("	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
     makeFile.write("objdump:" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
     makeFile.write("mcsema:" + "\n")

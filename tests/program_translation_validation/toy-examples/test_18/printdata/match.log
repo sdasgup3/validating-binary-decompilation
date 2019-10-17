@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5632961c56b8]:   %.pre5 = load i64, i64* %RBP, align 8
-[0x5632961a7d18]:   %26 = load i64, i64* %RBP.i, align 8
-[0x5632961ad698]:   %.pre5 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x560a411976b8]:   %.pre5 = load i64, i64* %RBP, align 8
+[0x560a41179d18]:   %26 = load i64, i64* %RBP.i, align 8
+[0x560a4117f698]:   %.pre5 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Reading LLVM: mcsema/test.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

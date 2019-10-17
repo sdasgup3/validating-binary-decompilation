@@ -7,7 +7,7 @@ compd_opt: draw main
 match: draw main
 
 binary:
-	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
