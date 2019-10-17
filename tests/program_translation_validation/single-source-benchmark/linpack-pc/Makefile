@@ -1,10 +1,24 @@
-.PHONY: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+.PHONY: binary objdump mcsema mcsema_opt  second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+INDIR=binary/
 
-all: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
-binary: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
-opt: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+all: binary objdump mcsema mcsema_opt  second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
 compd: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+compd_opt: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
 match: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 second:
 	@echo
@@ -45,3 +59,5 @@ idamax:
 dscal:
 	@echo
 	${MAKE} -C dscal $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

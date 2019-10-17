@@ -1,10 +1,24 @@
-.PHONY: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+.PHONY: binary objdump mcsema mcsema_opt  list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+INDIR=binary/
 
-all: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
-binary: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
-opt: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+all: binary objdump mcsema mcsema_opt  list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
 compd: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+compd_opt: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
 match: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 list_push_tail:
 	@echo
@@ -54,3 +68,5 @@ list_first:
 main:
 	@echo
 	${MAKE} -C main $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

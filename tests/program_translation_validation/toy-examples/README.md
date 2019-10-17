@@ -62,7 +62,7 @@ grep "Pass" docs/compd.log > docs/compdPass.log
 cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd_opt" |& tee docs/opt.log
 
 # Run match
-cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
 grep "Pass" docs/compd.log > docs/matchPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
 ```

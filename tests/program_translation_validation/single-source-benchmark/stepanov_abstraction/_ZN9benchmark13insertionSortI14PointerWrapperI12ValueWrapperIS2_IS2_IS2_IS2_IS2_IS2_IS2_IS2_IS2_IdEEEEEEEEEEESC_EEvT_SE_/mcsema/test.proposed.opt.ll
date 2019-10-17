@@ -799,6 +799,21 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
+define %struct.Memory* @routine_leaq_MINUS0x18__rbp____rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
+block_400488:
+  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+  %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+  %3 = load i64, i64* %RBP, align 8
+  %4 = add i64 %3, -24
+  %5 = load i64, i64* %PC, align 8
+  %6 = add i64 %5, 4
+  store i64 %6, i64* %PC, align 8
+  store i64 %4, i64* %RDI, align 8
+  ret %struct.Memory* %2
+}
+
+; Function Attrs: norecurse nounwind
 define %struct.Memory* @routine_leaq_MINUS0x10__rbp____rsi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
@@ -884,21 +899,6 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
   store i64 %4, i64* %PC, align 8
-  ret %struct.Memory* %2
-}
-
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_leaq_MINUS0x18__rbp____rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
-  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
-  %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-  %3 = load i64, i64* %RBP, align 8
-  %4 = add i64 %3, -24
-  %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 4
-  store i64 %6, i64* %PC, align 8
-  store i64 %4, i64* %RDI, align 8
   ret %struct.Memory* %2
 }
 

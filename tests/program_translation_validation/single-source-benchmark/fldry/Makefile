@@ -1,10 +1,24 @@
-.PHONY: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+.PHONY: binary objdump mcsema mcsema_opt  main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+INDIR=binary/
 
-all: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
-binary: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
-opt: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+all: binary objdump mcsema mcsema_opt  main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
 compd: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+compd_opt: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
 match: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 main:
 	@echo
@@ -45,3 +59,5 @@ Func3:
 Proc3:
 	@echo
 	${MAKE} -C Proc3 $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

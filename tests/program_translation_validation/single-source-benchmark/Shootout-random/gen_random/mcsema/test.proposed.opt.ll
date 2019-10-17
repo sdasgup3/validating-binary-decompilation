@@ -43,10 +43,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x601038 = local_unnamed_addr global %G_0x601038_type zeroinitializer
 @G_0xe4__rip_ = global %G_0xe4__rip__type zeroinitializer
 
+declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
-
-declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @gen_random(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {

@@ -1,10 +1,24 @@
-.PHONY: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+.PHONY: binary objdump mcsema mcsema_opt  copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+INDIR=binary/
 
-all: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
-binary: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
-opt: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+all: binary objdump mcsema mcsema_opt  copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
 compd: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+compd_opt: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
 match: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 copy_data:
 	@echo
@@ -72,3 +86,5 @@ get_real_move:
 main:
 	@echo
 	${MAKE} -C main $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump
