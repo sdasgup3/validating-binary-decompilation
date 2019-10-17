@@ -27,12 +27,20 @@ cd program_translation_validation/toy-examples/get-sign
 # To execute all the stages for all the function within get-sign program
 make all
 
-# To execute a particular stage for all the function within get-sign program
-# make binary; make mcsema; make compd; make opt; make match
+# To generate the binary
+make binary
+
+# To generate the mcsema artifacts
+make mcsema
+make mcsema_opt
+
+# To run compositional decompiler and matcher on all the functions
+# make compd; make compd_opt; make match
 
 # To execute a particular stage for a particular function
-# cd get_sign
-# make binary; make mcsema; make compd; make opt; make match
+# cd main
+# make compd; make compd_opt; make match
+# OR
 # make all
 ```
 

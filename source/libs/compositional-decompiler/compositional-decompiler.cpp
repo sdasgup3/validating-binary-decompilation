@@ -131,7 +131,7 @@ bool CompositionalDecompiler::disassemble(string inPath) {
   struct CallbackValue val(&cfg, extractedFunction);
   d.set_function_callback(createCFG, &val);
   d.set_flat_binary(flat_binary);
-  d.disassemble(inPath);
+  d.disassemble(inPath, extractedFunction);
 
   if (!cfg) {
     Console::error(1) << "CFG not yet created!" << endl;

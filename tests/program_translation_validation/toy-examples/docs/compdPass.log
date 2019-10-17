@@ -86,3 +86,5 @@ test_7/check
 test_13/main
 test_20/switches
 test_24/keycomp
+test_35/f
+test_35/main

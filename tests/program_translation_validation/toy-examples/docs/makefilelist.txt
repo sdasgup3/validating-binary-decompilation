@@ -20,7 +20,6 @@ test_7/main
 test_7/check
 test_1/main
 test_1/foo
-test_23/main
 test_23/draw
 test_14/main
 test_14/foo
@@ -58,7 +57,6 @@ add-sub/main
 test_13_1/main
 test_13_1/doWork
 test_13_1/checkFn
-test_23_1/main
 test_24/keycomp
 test_24/main
 test_24/read_bytes
@@ -84,8 +82,9 @@ test_27/main
 test_0/main
 test_15/main
 test_15/doOp
-test_22/timespi
 test_22/main
 test_22/DoDemoFpu1
 test_11/main
 test_11/doTrans
+test_35/f
+test_35/main

@@ -1,0 +1,10 @@
+compd fail
+==========
+test_22/timespi: R1
+test_23/main: R2
+test_23_1/main: R2
+
+R1: 
+Could not encode 'fmulp  %st,%st(1)' within 2 bytes.
+
+R2: Jump table for switch statement

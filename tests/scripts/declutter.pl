@@ -145,7 +145,7 @@ sub fixFunc {
     for my $line (@mainBody) {
 
         ## Remove metadata info
-        if ( $line =~ m/(.*), !tbaa.*/g ) {
+        if ( $line =~ m/(.*), !(tbaa|srcloc).*/g ) {
             $line = $1 . "\n";
         }
 
@@ -284,7 +284,7 @@ sub getFuncBody {
         $foundMain = 1;
         push @mainBody, "$line";
 
-        if ( $line =~ m/}/g ) {
+        if ( $line =~ m/^}$/g ) {
             push @mainBody, "\n";
             last;
         }

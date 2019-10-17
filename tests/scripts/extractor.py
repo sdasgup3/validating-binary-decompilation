@@ -116,19 +116,33 @@ def createParentMakefile(functions):
         allFuncNames = allFuncNames + " " + func[0]
 
     makeFile = open("Makefile", 'w')
-    makeFile.write(".PHONY:" + allFuncNames)
+    makeFile.write(".PHONY: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
+    makeFile.write("INDIR=binary/")
     makeFile.write("\n\n")
-    makeFile.write("all:" + allFuncNames + "\n")
-    makeFile.write("binary:" + allFuncNames + "\n")
-    makeFile.write("opt:" + allFuncNames + "\n")
+    makeFile.write("all: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
     makeFile.write("compd:" + allFuncNames + "\n")
+    makeFile.write("compd_opt:" + allFuncNames + "\n")
     makeFile.write("match:" + allFuncNames + "\n\n")
+
+    makeFile.write("binary:" + "\n")
+    makeFile.write("	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+    makeFile.write("objdump:" + "\n")
+    makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
+    makeFile.write("mcsema:" + "\n")
+    makeFile.write("	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main" + "\n")
+    makeFile.write("	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
+    makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
+    makeFile.write("mcsema_opt:" + "\n")
+    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:
         makeFile.write(func[0] + ":" + "\n")
         makeFile.write("	@echo" + "\n")
         makeFile.write("	${MAKE} -C " + func[0] + " $(MAKECMDGOALS)")
         makeFile.write("" + "\n")
+
+    makeFile.write("clean:" + "\n")
+    makeFile.write("	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump" + "\n")	
 
     makeFile.close()
 
@@ -147,29 +161,13 @@ def createMakefile(funcName):
     makeFile.write("OUTDIR=mcsema/" + "\n")
     makeFile.write("" + "\n")
     makeFile.write(
-        ".PHONY: clean" +
+        ".PHONY: clean compd compd_opt match" +
         "\n\n")
 
-    makeFile.write("all: binary compd opt match")
+    makeFile.write("all: compd compd_opt match")
     makeFile.write("" + "\n\n")
 
-    makeFile.write("binary: ${INDIR}test" + "\n")
-    makeFile.write("objdump: ${INDIR}/test.objdump" + "\n")
-    makeFile.write("compd: ${OUTDIR}test.proposed.ll" + "\n")
-    makeFile.write(
-        "opt: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll" +
-        "\n")
-    makeFile.write("" + "\n")
-
-    makeFile.write("${INDIR}test: ${INDIR}test.ll" + "\n")
-    makeFile.write("	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test")
-    makeFile.write("" + "\n\n")
-
-    makeFile.write("${INDIR}/test.objdump: ${INDIR}test" + "\n")
-    makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump")
-    makeFile.write("" + "\n\n")
-
-    makeFile.write("${OUTDIR}test.proposed.ll: ${INDIR}test" + "\n")
+    makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
         "	${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
     makeFile.write(
@@ -177,12 +175,10 @@ def createMakefile(funcName):
     makeFile.write("" + "\n\n")
 
     makeFile.write(
-        "${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll: ${INDIR}test.mcsema.ll ${OUTDIR}test.proposed.ll" +
+        "compd_opt: ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
         "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
-    makeFile.write(
-        "	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${OUTDIR}test.inline.ll;  opt -S  -O3    ${OUTDIR}test.inline.ll -o ${OUTDIR}test.opt.ll")
     makeFile.write("" + "\n\n")
 
     makeFile.write(
@@ -195,7 +191,7 @@ def createMakefile(funcName):
     makeFile.write("" + "\n\n")
 
     makeFile.write("clean:" + "\n")
-    makeFile.write("	rm mcsema/*.bc mcsema/*.ll mcsema/*.cfg" + "\n")
+    makeFile.write("	rm mcsema/*.bc mcsema/*.ll" + "\n")
     makeFile.write("" + "\n")
 
     makeFile.close()
