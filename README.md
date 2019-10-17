@@ -27,18 +27,22 @@ Validation and the compositional Decompiler.
 - Single instruction validation and Program level V can be implemented
 isolation
 
-|  Task | Timeline  |
-|-------|-----------|
-|  [TBD] Mcsema Single Instruction Validation  | -  |
-|  [TBD] Implementing fallback mechanism for the matcher in case the match fails   | -  |
-|  [TBD] Single Source Benchmark Testing (Triaging and Debugging)   | -  |
-|  [TBD] FInding minimum llvm opt passes required for the normalizaton phase (to reduce trust base on the entire llvm 03 passes)   | -  |
-|  [TBD] Semantics preserving reordering   | -  |
-|  [TBD] Efficient Caching: Right now all the instances of an instruction is cache; leads to large cahce size ~100G; Resuse similar instances    | -  |
-|  [Done] Compositional decompiler to propose a decompilation output | 10  |
-|  [Done] Matching the proposed decompilation Vs Mcsema generated decompilation For Equiv checking ( Syntactic matching / Semantic matching )  | 10 |
-|  [Not Required] FCD Single Instruction Validation  | 10  |
-|  [Not Required] Revng Single Instruction Validation  | 10  |
-|  [Not Required] Same as above for fcd/Revng  | 5 |
-|  Total | 55 |
 
+## TB Done
+  - Mcsema Single Instruction Validation
+  - Implementing fallback mechanism for the matcher in case the match fails
+  - Single Source Benchmark Testing (Triaging and Debugging)
+  - FInding minimum llvm opt passes required for the normalizaton phase (to reduce trust base on the entire llvm 03 passes)
+  - Semantics preserving reordering
+  - Efficient Caching: Right now all the instances of an instruction is cache; leads to large cahce size ~100G; Resuse similar instances
+    - Reusing jmp/jcc/call is prety trivial
+    - mov imm64 to ... or mov mem to ... is non trivial
+
+## Done
+  -   Compositional decompiler to propose a decompilation output | 10  |
+  -   Matching the proposed decompilation Vs Mcsema generated decompilation For Equiv checking ( Syntactic matching / Semantic matching )  | 10 |
+
+## Not Immediate Goal
+  -  FCD Single Instruction Validation  | 10  |
+  -  Revng Single Instruction Validation  | 10  |
+  -  Same as above for fcd/Revng  | 5 |
