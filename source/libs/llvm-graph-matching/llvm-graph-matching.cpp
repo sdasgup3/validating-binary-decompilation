@@ -436,16 +436,22 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
 }
 
 // Check if all the instructions belong to same BB
-std::pair<bool, BasicBlock *> static sameBB(std::set<Value *> S) {
+std::pair<bool, BasicBlock *> Matcher::sameBB(std::set<Value *> S) {
   BasicBlock *candBB = NULL;
   for (auto candInstr : S) {
     Instruction *I = dyn_cast<Instruction>(candInstr);
     assert(I && "sameBB: not an instruction\n");
 
-    if (!candBB) {
-      candBB = I->getParent();
+    auto PBB = I->getParent();
+    if (!PBB) {
+      dumpLLVMNode(I);
+      assert(0 && "Null Parent Block:1 !\n");
     }
-    if (candBB != I->getParent()) {
+
+    if (!candBB) {
+      candBB = PBB;
+    }
+    if (candBB != PBB) {
       return std::pair<bool, BasicBlock *>(false, nullptr);
     }
   }
@@ -468,6 +474,7 @@ bool Matcher::handleConflictingStores() {
     if (!LStoreInstr)
       continue;
 
+    // Skip when we do not know the pot BB match for the store instr
     auto LBB = LStoreInstr->getParent();
     if (!PotBBMatches.count(LBB)) {
       // llvm::errs()
@@ -485,11 +492,24 @@ bool Matcher::handleConflictingStores() {
       }
     }
 
+    // Check if we lost all the macthes
+    if (deleNode.size() == pMatches.size()) {
+      llvm::errs() << "Pruned all potential matches for store: \n";
+      dumpLLVMNode(LStoreInstr);
+      llvm::errs() << "The matches are: \n";
+      for (auto pMatch : pMatches) {
+        dumpLLVMNode(pMatch);
+      }
+
+      exit(1);
+    }
+
     for (auto node : deleNode) {
       changed = true;
       pMatches.erase(node);
     }
 
+    // Return as we get the desired single match
     if (pMatches.size() == 1) {
       exactIMatches.insert(*pMatches.begin());
       continue;
@@ -699,7 +719,8 @@ int Matcher::cmpTypes(Type *TyL, Type *TyR) const {
   }
 }
 
-// Determine whether two GEP operations perform the same underlying arithmetic.
+// Determine whether two GEP operations perform the same underlying
+// arithmetic.
 // Read method declaration comments for more details.
 int Matcher::cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const {
 
@@ -709,7 +730,8 @@ int Matcher::cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const {
   if (int Res = cmpNumbers(ASL, ASR))
     return Res;
 
-  // When we have target data, we can reduce the GEP down to the value in bytes
+  // When we have target data, we can reduce the GEP down to the value in
+  // bytes
   // added to the address.
   const DataLayout &DL1 = F1->getParent()->getDataLayout();
   const DataLayout &DL2 = F2->getParent()->getDataLayout();
@@ -764,7 +786,8 @@ int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
       return TypesRes;
     }
 
-    // Vector -> Vector conversions are always lossless if the two vector types
+    // Vector -> Vector conversions are always lossless if the two vector
+    // types
     // have the same size, otherwise not.
     unsigned TyLWidth = 0;
     unsigned TyRWidth = 0;
@@ -819,8 +842,10 @@ int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
   if (const auto *SeqL = dyn_cast<ConstantDataSequential>(L)) {
     const auto *SeqR = cast<ConstantDataSequential>(R);
     // This handles ConstantDataArray and ConstantDataVector. Note that we
-    // compare the two raw data arrays, which might differ depending on the host
-    // endianness. This isn't a problem though, because the endiness of a module
+    // compare the two raw data arrays, which might differ depending on the
+    // host
+    // endianness. This isn't a problem though, because the endiness of a
+    // module
     // will affect the order of the constants, but this order is the same
     // for a given input module and host platform.
     return cmpMem(SeqL->getRawDataValues(), SeqR->getRawDataValues());
@@ -977,8 +1002,10 @@ int Matcher::cmpMem(StringRef L, StringRef R) const {
   return L.compare(R);
 }
 
-/// Compare two values used by the two functions under pair-wise comparison. If
-/// this is the first time the values are seen, they're added to the mapping so
+/// Compare two values used by the two functions under pair-wise comparison.
+/// If
+/// this is the first time the values are seen, they're added to the mapping
+/// so
 /// that we will detect mismatches on next use.
 /// See comments in declaration for more details.
 int Matcher::cmpValues(const Value *L, const Value *R) const {
@@ -1085,6 +1112,8 @@ bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
 
 void Matcher::dumpPotIMatches() {
   for (auto PotMatch : PotIMatches) {
+    if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
+      continue;
     llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
     for (auto match : PotMatch.second) {
       llvm::errs() << "\t"

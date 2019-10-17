@@ -627,7 +627,9 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
   // Decls
   stringstream tmp;
   tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
-      << "(%struct.State* dereferenceable(3376), i64, %struct.Memory*)" << endl;
+      << "(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* "
+         "noalias readnone returned)"
+      << endl;
   if (!DeclCache.count(tmp.str())) {
     FuncDecls << tmp.str();
     DeclCache.insert(pair<string, string>(tmp.str(), ""));

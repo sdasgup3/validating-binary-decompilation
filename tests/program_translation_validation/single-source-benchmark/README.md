@@ -21,13 +21,13 @@ cat docs/filelist.txt | parallel  "echo; echo {}; ../../scripts/extractor.py -P 
 find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "test-suite" > docs/makefilelist.txt
 ```
 
-### Run Binary
+### Run Binary [Already Done; Needed for one time]
 ```bash
 cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 # C++ binaries are ignored as mentioned in docs/unsupported.txt
 ```
 
-### Run McSema
+### Run McSema [Already Done, Needed one time]
 ```bash
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
