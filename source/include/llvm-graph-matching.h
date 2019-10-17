@@ -135,6 +135,7 @@ public:
 
   void findBBCorrespondence();
   bool handleConflictingStores();
+  std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
 };
 
 } // end llvm namespace
