@@ -75,16 +75,22 @@ https://github.com/llvm-mirror/compiler-rt/commit/8a5e425a68de4d2c80ff00a97bbcb3
 ### Install Stoke
 ```bash
 sudo apt-get install bison ccache cmake doxygen exuberant-ctags flex  g++-multilib  ghc git libantlr3c-dev libboost-dev libboost-filesystem-dev libboost-thread-dev libcln-dev libghc-regex-compat-dev libghc-regex-tdfa-dev libghc-split-dev libjsoncpp-dev python subversion libiml-dev libgmp-dev libboost-regex-dev autoconf libtool antlr pccts pkg-config
-cd ~/github
+cd ~/Github
 git clone --recursive   git@github.com:sdasgup3/stoke.git stoke-develop
+
 cd  stoke-develop/src/ext/z3
 git checkout master
+
 cd /home/ubuntu/Github/stoke-develop/src/ext/x64asm
+git add upstream git@github.com:sdasgup3/x64asm.git
+git fetch upstream
 git checkout working
+
 cd /home/ubuntu/Github/stoke-develop/
 ./configure.sh -d
 cd /home/ubuntu/Github/stoke-develop/src/ext/x64asm
 make -j64 debug
+
 cd /home/ubuntu/Github/stoke-develop
 mkdir lib
 make -j64 debug
