@@ -1,10 +1,24 @@
-.PHONY: main doTest lower_StringImpl toASCIILower
+.PHONY: binary objdump mcsema mcsema_opt  main doTest lower_StringImpl toASCIILower
+INDIR=binary/
 
-all: main doTest lower_StringImpl toASCIILower
-binary: main doTest lower_StringImpl toASCIILower
-opt: main doTest lower_StringImpl toASCIILower
+all: binary objdump mcsema mcsema_opt  main doTest lower_StringImpl toASCIILower
 compd: main doTest lower_StringImpl toASCIILower
+compd_opt: main doTest lower_StringImpl toASCIILower
 match: main doTest lower_StringImpl toASCIILower
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 main:
 	@echo
@@ -18,3 +32,5 @@ lower_StringImpl:
 toASCIILower:
 	@echo
 	${MAKE} -C toASCIILower $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

@@ -1,10 +1,24 @@
-.PHONY: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
+.PHONY: binary objdump mcsema mcsema_opt  toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
+INDIR=binary/
 
-all: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
-binary: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
-opt: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
+all: binary objdump mcsema mcsema_opt  toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
 compd: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
+compd_opt: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
 match: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 toggle_value:
 	@echo
@@ -30,3 +44,5 @@ new_NthToggle:
 main:
 	@echo
 	${MAKE} -C main $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

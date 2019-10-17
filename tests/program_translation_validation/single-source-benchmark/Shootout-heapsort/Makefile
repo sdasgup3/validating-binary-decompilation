@@ -1,10 +1,24 @@
-.PHONY: gen_random benchmark_heapsort main
+.PHONY: binary objdump mcsema mcsema_opt  gen_random benchmark_heapsort main
+INDIR=binary/
 
-all: gen_random benchmark_heapsort main
-binary: gen_random benchmark_heapsort main
-opt: gen_random benchmark_heapsort main
+all: binary objdump mcsema mcsema_opt  gen_random benchmark_heapsort main
 compd: gen_random benchmark_heapsort main
+compd_opt: gen_random benchmark_heapsort main
 match: gen_random benchmark_heapsort main
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 gen_random:
 	@echo
@@ -15,3 +29,5 @@ benchmark_heapsort:
 main:
 	@echo
 	${MAKE} -C main $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

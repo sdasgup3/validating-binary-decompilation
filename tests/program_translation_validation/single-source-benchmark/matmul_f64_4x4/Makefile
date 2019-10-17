@@ -1,10 +1,24 @@
-.PHONY: wrap_mul4 mul4 main
+.PHONY: binary objdump mcsema mcsema_opt  wrap_mul4 mul4 main
+INDIR=binary/
 
-all: wrap_mul4 mul4 main
-binary: wrap_mul4 mul4 main
-opt: wrap_mul4 mul4 main
+all: binary objdump mcsema mcsema_opt  wrap_mul4 mul4 main
 compd: wrap_mul4 mul4 main
+compd_opt: wrap_mul4 mul4 main
 match: wrap_mul4 mul4 main
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 wrap_mul4:
 	@echo
@@ -15,3 +29,5 @@ mul4:
 main:
 	@echo
 	${MAKE} -C main $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

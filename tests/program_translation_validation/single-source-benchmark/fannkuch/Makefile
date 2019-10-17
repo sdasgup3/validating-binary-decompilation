@@ -1,10 +1,24 @@
-.PHONY: main fannkuch
+.PHONY: binary objdump mcsema mcsema_opt  main fannkuch
+INDIR=binary/
 
-all: main fannkuch
-binary: main fannkuch
-opt: main fannkuch
+all: binary objdump mcsema mcsema_opt  main fannkuch
 compd: main fannkuch
+compd_opt: main fannkuch
 match: main fannkuch
+
+binary:
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+objdump:
+	objdump -d ${INDIR}test > ${INDIR}/test.objdump
+
+mcsema:
+	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
+	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
+	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
+
+mcsema_opt:
+	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 main:
 	@echo
@@ -12,3 +26,5 @@ main:
 fannkuch:
 	@echo
 	${MAKE} -C fannkuch $(MAKECMDGOALS)
+clean:
+	rm ${INDIR}test ${INDIR}test.mcsema.* ${INDIR}test.objdump

@@ -17,8 +17,8 @@ compd_opt: ${OUTDIR}test.proposed.ll
 	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
 
 
-match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll
-	${TOOLDIR}/matcher --file1 ${OUTDIR}test.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1
+match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
+	${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match
 
 clean:
