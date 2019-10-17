@@ -35,21 +35,21 @@ make mcsema
 make mcsema_opt
 
 # To run compositional decompiler and matcher on all the functions
-# make compd; make compd_opt; make match
+make compd; make compd_opt; make match
 
 # To execute a particular stage for a particular function
-# cd main
-# make compd; make compd_opt; make match
+cd main
+make compd; make compd_opt; make match
 # OR
-# make all
+make all
 ```
 
 ### Batch Run in stages
 ```bash
-# To generate the binary
+# To generate the binary [Already Done; Needed for one time]
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make binary ; cd .." |& tee ~/Junk/log
 
-# Generate McSema Artifacts
+# Generate McSema Artifacts [Already Done; Needed for one time]
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
 

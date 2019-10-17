@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4004f0.switches(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004f0.switches(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -141,8 +141,7 @@ entry:
   br label %block_.L_4004b4
 
 block_.L_4004b4:                                  ; preds = %block_4004c1, %entry
-  %66 = phi i64 [ %.pre, %entry ], [ %142, %block_4004c1 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_4004c6, %block_4004c1 ]
+  %66 = phi i64 [ %142, %block_4004c1 ], [ %.pre, %entry ]
   %67 = load i64, i64* %RBP.i, align 8
   %68 = add i64 %67, -20
   %69 = add i64 %66, 7
@@ -200,7 +199,7 @@ block_4004c1:                                     ; preds = %block_.L_4004b4
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %6, align 8
   store i64 %100, i64* %3, align 8
-  %call2_4004c6 = tail call %struct.Memory* @sub_4004f0.switches(%struct.State* nonnull %0, i64 %100, %struct.Memory* %MEMORY.0)
+  %call2_4004c6 = tail call %struct.Memory* @sub_4004f0.switches(%struct.State* nonnull %0, i64 %100, %struct.Memory* %2)
   %105 = load i64, i64* %RBP.i, align 8
   %106 = add i64 %105, -24
   %107 = load i32, i32* %EAX.i16, align 4
@@ -300,7 +299,7 @@ block_.L_4004dc:                                  ; preds = %block_.L_4004b4
   store i64 %172, i64* %3, align 8
   %173 = add i64 %143, 48
   store i64 %173, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

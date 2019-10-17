@@ -47,6 +47,7 @@ test_29/main
 test_2_1/foo
 test_14/main
 test_24/to_byte
+test_24/read_bytes
 test_15/main
 test_13/checkFn
 array-reverse/array_reverse
@@ -73,3 +74,4 @@ test_13/main
 test_26/update
 test_27/update
 test_7/check
+test_20/main
