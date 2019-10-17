@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x562c02eae6e0]:   %123 = icmp ult i64 %122, ptrtoint (%maze_type* @maze to i64)
-[0x562c02fcfe90]:   %116 = icmp ult i64 %114, %112
-[0x562c02ff7470]:   %115 = icmp ult i64 %114, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
-Multiple matches exist for [0x562c02e11778]:   %161 = tail call fastcc %struct.Memory* @ext_6010b0_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x562c02fe5650]:   %call2_400605 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %191, %struct.Memory.32* %MEMORY.1)
-[0x562c02fe8820]:   %call2_4005e3 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %148, %struct.Memory.32* %MEMORY.1)
-Multiple matches exist for [0x562c02e13688]:   %205 = tail call fastcc %struct.Memory* @ext_6010b0_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x562c02fe5650]:   %call2_400605 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %191, %struct.Memory.32* %MEMORY.1)
-[0x562c02fe8820]:   %call2_4005e3 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %148, %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x561a4607c6f0]:   %123 = icmp ult i64 %122, ptrtoint (%maze_type* @maze to i64)
+[0x561a461c54d0]:   %116 = icmp ult i64 %114, %112
+[0x561a461c5630]:   %115 = icmp ult i64 %114, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
+Multiple matches exist for [0x561a45fdf718]:   %161 = tail call fastcc %struct.Memory* @ext_6010b0_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x561a461b3680]:   %call2_400605 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %191, %struct.Memory.32* %MEMORY.1)
+[0x561a461b6880]:   %call2_4005e3 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %148, %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x561a45fe1628]:   %205 = tail call fastcc %struct.Memory* @ext_6010b0_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x561a461b3680]:   %call2_400605 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %191, %struct.Memory.32* %MEMORY.1)
+[0x561a461b6880]:   %call2_4005e3 = tail call %struct.Memory.32* @sub_400470.printf_plt(%struct.State.1* nonnull %0, i64 %148, %struct.Memory.32* %MEMORY.1)
 Iso Match NOT Found
 Reading LLVM: mcsema/test.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

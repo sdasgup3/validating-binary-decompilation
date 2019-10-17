@@ -1,0 +1,540 @@
+
+test_14/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+
+test_30/stderr_driver
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
+test_18/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+
+test_17/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+
+test_28_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+
+test_30/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+test_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+
+test_16/printit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+
+test_28_1/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+
+get-sign/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+
+test_0_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+
+test_13_1/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+
+test_30/print_it
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+
+test_14/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+
+binary-search/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+
+get-sign/get_sign
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+
+test_28/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+
+test_13_1/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+
+test_36/fun
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+
+add-sub/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+
+test_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+
+test_7_1/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+
+test_16/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
+add-sub/add_sub
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+
+test_21/shiftit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+
+test_34/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+
+array-reverse/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+
+test_2_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+
+test_31/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+
+sum-2-n/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+
+test_36/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+
+test_29/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+
+test_3/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+
+test_2_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+
+test_13_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+test_17/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+
+test_5/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+
+test_18/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+
+test_28/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+
+test_14/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+
+test_21/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+
+test_3/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+
+test_15/doOp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+
+test_2/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+
+sum-2-n/sum_2_n
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+test_31/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+
+test_32/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+
+test_24/read_bytes
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+
+test_33/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+
+test_0/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+test_2/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+
+test_20/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+
+test_32/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+
+test_10/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+
+test_15/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+array-reverse/array_reverse
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+
+test_26_1/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+
+test_24/to_byte
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+
+test_10/demo3
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+
+test_7_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+
+test_29/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+
+test_13/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+
+test_33/Ack
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+
+test_5/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+test_25/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+test_11/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+
+test_13/doStuff
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+
+test_13/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+
+test_23/draw
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+
+test_35/f
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+
+test_24/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+
+test_35/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+
+test_6/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+
+test_26_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+
+test_22/DoDemoFpu1
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+
+test_11/doTrans
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+
+test_27/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+
+test_26/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+
+test_22/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+
+test_6/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+
+test_4/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+
+binary-search/binary_search
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+
+test_4/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+
+test_13/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+
+test_7/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+
+test_26/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+
+test_27/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+
+test_7/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+
+test_20/switches
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+
+test_24/keycomp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'
