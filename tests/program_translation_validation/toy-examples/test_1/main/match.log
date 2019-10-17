@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55f0b6e0b518]:   %68 = tail call fastcc %struct.Memory* @ext_601038_printf(%struct.State* nonnull %0, %struct.Memory* %49)
-[0x55f0b6dd61b0]:   %call2_400550 = tail call %struct.Memory.32* @sub_400400.printf_plt(%struct.State.1* %0, i64 %64, %struct.Memory.32* %call2_400539)
-[0x55f0b6dd6890]:   %call2_400539 = tail call %struct.Memory.32* @sub_400500.foo(%struct.State.1* %0, i64 %45, %struct.Memory.32* %2)
+Multiple matches exist for [0x55baf8ce4518]:   %68 = tail call fastcc %struct.Memory* @ext_601038_printf(%struct.State* nonnull %0, %struct.Memory* %49)
+[0x55baf8caf1b0]:   %call2_400550 = tail call %struct.Memory.32* @sub_400400.printf_plt(%struct.State.1* %0, i64 %64, %struct.Memory.32* %call2_400539)
+[0x55baf8caf890]:   %call2_400539 = tail call %struct.Memory.32* @sub_400500.foo(%struct.State.1* %0, i64 %45, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: mcsema/test.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

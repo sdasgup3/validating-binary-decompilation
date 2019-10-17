@@ -117,7 +117,92 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6
   %22 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 17
   store i8 %21, i8* %22, align 1
   %23 = tail call i32 @__remill_fpu_exception_test_and_clear(i32 0, i32 61) #25
-  tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #22, !srcloc !1382
+  tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #22
+  tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #22
+  %24 = tail call i32 @__remill_fpu_exception_test_and_clear(i32 61, i32 %23) #25
+  %25 = lshr i32 %24, 5
+  %26 = and i32 %25, 1
+  %27 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 9
+  %28 = load i8, i8* %27, align 1
+  %29 = zext i8 %28 to i32
+  %30 = or i32 %29, %26
+  %31 = trunc i32 %30 to i8
+  store i8 %31, i8* %27, align 1
+  %32 = lshr i32 %24, 3
+  %33 = and i32 %32, 1
+  %34 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 13
+  %35 = load i8, i8* %34, align 1
+  %36 = zext i8 %35 to i32
+  %37 = or i32 %36, %33
+  %38 = trunc i32 %37 to i8
+  store i8 %38, i8* %34, align 1
+  %39 = lshr i32 %24, 4
+  %40 = and i32 %39, 1
+  %41 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 11
+  %42 = load i8, i8* %41, align 1
+  %43 = zext i8 %42 to i32
+  %44 = or i32 %43, %40
+  %45 = trunc i32 %44 to i8
+  store i8 %45, i8* %41, align 1
+  %46 = and i32 %24, 1
+  %47 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 19
+  %48 = load i8, i8* %47, align 1
+  %49 = zext i8 %48 to i32
+  %50 = or i32 %49, %46
+  %51 = trunc i32 %50 to i8
+  store i8 %51, i8* %47, align 1
+  %52 = lshr i32 %24, 2
+  %53 = and i32 %52, 1
+  %54 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 9, i32 15
+  %55 = load i8, i8* %54, align 1
+  %56 = zext i8 %55 to i32
+  %57 = or i32 %56, %53
+  %58 = trunc i32 %57 to i8
+  store i8 %58, i8* %54, align 1
+  %59 = inttoptr i64 %2 to x86_fp80*
+  %60 = fpext double %3 to x86_fp80
+  store x86_fp80 %60, x86_fp80* %59
+  %61 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 0, i32 1
+  %62 = bitcast double* %61 to i64*
+  %63 = load i64, i64* %62, align 8
+  %64 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 1, i32 1
+  %65 = bitcast double* %64 to i64*
+  %66 = load i64, i64* %65, align 8
+  store i64 %66, i64* %62, align 8
+  %67 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 2, i32 1
+  %68 = bitcast double* %67 to i64*
+  %69 = load i64, i64* %68, align 8
+  store i64 %69, i64* %65, align 8
+  %70 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 3, i32 1
+  %71 = bitcast double* %70 to i64*
+  %72 = load i64, i64* %71, align 8
+  store i64 %72, i64* %68, align 8
+  %73 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 4, i32 1
+  %74 = bitcast double* %73 to i64*
+  %75 = load i64, i64* %74, align 8
+  store i64 %75, i64* %71, align 8
+  %76 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 5, i32 1
+  %77 = bitcast double* %76 to i64*
+  %78 = load i64, i64* %77, align 8
+  store i64 %78, i64* %74, align 8
+  %79 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 6, i32 1
+  %80 = bitcast double* %79 to i64*
+  %81 = load i64, i64* %80, align 8
+  store i64 %81, i64* %77, align 8
+  %82 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 7, i32 0, i64 7, i32 1
+  %83 = bitcast double* %82 to i64*
+  %84 = load i64, i64* %83, align 8
+  store i64 %84, i64* %80, align 8
+  store i64 %63, i64* %83, align 8
+  %85 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 11, i32 0, i32 0, i32 1, i32 0
+  %86 = load i16, i16* %85, align 2
+  %87 = add i16 %86, 2048
+  %88 = and i16 %87, 14336
+  %89 = and i16 %86, -14337
+  %90 = or i16 %88, %89
+  store i16 %90, i16* %85, align 2
+  ret %struct.Memory* %0
+}
 
 define %struct.Memory* @routine_fstpt_MINUS0x10__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_400488:

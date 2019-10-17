@@ -7,7 +7,7 @@ compd_opt: main foo checkFn
 match: main foo checkFn
 
 binary:
-	clang -O0 -lm ${INDIR}test.ll -o ${INDIR}test
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

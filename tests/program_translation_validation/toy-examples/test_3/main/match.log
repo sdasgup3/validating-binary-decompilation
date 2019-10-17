@@ -1,8 +1,8 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55aad266d468]:   %100 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %81)
-[0x55aad268abb0]:   %call2_400607 = tail call %struct.Memory.32* @sub_400450.printf_plt(%struct.State.1* %0, i64 %95, %struct.Memory.32* %call2_4005f0)
-[0x55aad268db10]:   %call2_4005f0 = tail call %struct.Memory.32* @sub_400560.foo(%struct.State.1* %0, i64 %77, %struct.Memory.32* %call2_4005e4)
-[0x55aad268f230]:   %call2_4005e4 = tail call %struct.Memory.32* @sub_400460.memcpy_plt(%struct.State.1* %0, i64 %61, %struct.Memory.32* %2)
+Multiple matches exist for [0x55625087d468]:   %100 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %81)
+[0x55625089abb0]:   %call2_400607 = tail call %struct.Memory.32* @sub_400450.printf_plt(%struct.State.1* %0, i64 %95, %struct.Memory.32* %call2_4005f0)
+[0x55625089dd20]:   %call2_4005f0 = tail call %struct.Memory.32* @sub_400560.foo(%struct.State.1* %0, i64 %77, %struct.Memory.32* %call2_4005e4)
+[0x55625089f230]:   %call2_4005e4 = tail call %struct.Memory.32* @sub_400460.memcpy_plt(%struct.State.1* %0, i64 %61, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: mcsema/test.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
