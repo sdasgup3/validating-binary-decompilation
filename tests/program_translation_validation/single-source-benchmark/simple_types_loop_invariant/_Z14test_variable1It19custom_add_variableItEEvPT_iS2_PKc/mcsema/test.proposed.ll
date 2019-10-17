@@ -89,8 +89,31 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @0 = internal global i1 false
 
 ; Function Declaraions
-declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare i32 @__remill_fpu_exception_test_and_clear(i32, i32)
+declare void @llvm.lifetime.start(i64, i8* nocapture)
+declare void @llvm.lifetime.end(i64, i8* nocapture)
+declare i32 @llvm.ctpop.i32(i32)
+declare i32 @llvm.bswap.i32(i32)
+declare i64 @llvm.bswap.i64(i64)
+declare i32 @llvm.cttz.i32(i32, i1)
+declare i64 @llvm.cttz.i64(i64, i1)
+declare i32 @llvm.ctlz.i32(i32, i1)
+declare i64 @llvm.ctlz.i64(i64, i1)
+declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i32, i1)
+declare double @llvm.nearbyint.f64(double)
+declare double @llvm.fabs.f64(double)
+declare <4 x double> @llvm.nearbyint.v4f64(<4 x double>)
+declare <4 x double> @llvm.fabs.v4f64(<4 x double>)
+declare double @llvm.trunc.f64(double)
+declare <4 x double> @llvm.trunc.v4f64(<4 x double>)
+declare float @llvm.nearbyint.f32(float)
+declare float @llvm.fabs.f32(float)
+declare <4 x float> @llvm.nearbyint.v4f32(<4 x float>)
+declare <4 x float> @llvm.fabs.v4f32(<4 x float>)
+declare float @llvm.trunc.f32(float)
+declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
 declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 declare %struct.Memory* @sub_4110f0._ZN19custom_add_variableItE8do_shiftEtt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -1087,6 +1110,37 @@ block_400488:
   ret %struct.Memory* %16
 }
 
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnItEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i64* nocapture, i64) #0 {
+  %5 = inttoptr i64 %3 to i16*
+  %6 = load i16, i16* %5
+  %7 = zext i16 %6 to i64
+  store i64 %7, i64* %2, align 8
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_movzwl_MINUS0xe__rbp____esi(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 9
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RSI = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 14
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 4
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnItEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RSI, i64 %13)
+  ret %struct.Memory* %16
+}
+
 
 define %struct.Memory* @routine_callq_._ZN19custom_add_variableItE8do_shiftEtt(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
 block_400488:
@@ -1129,13 +1183,6 @@ block_400488:
   ret %struct.Memory* %16
 }
 
-define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnItEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* returned, %struct.State* nocapture readnone dereferenceable(3376), i64* nocapture, i64) #0 {
-  %5 = inttoptr i64 %3 to i16*
-  %6 = load i16, i16* %5
-  %7 = zext i16 %6 to i64
-  store i64 %7, i64* %2, align 8
-  ret %struct.Memory* %0
-}
 
 define %struct.Memory* @routine_movzwl_MINUS0x1e__rbp____edi(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_400488:
@@ -1444,28 +1491,6 @@ block_400488:
 }
 
 
-define %struct.Memory* @routine_movzwl_MINUS0xe__rbp____esi(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
-block_400488:
-  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
-  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
-  %PC = bitcast %union.anon* %5 to i64*
-  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 9
-  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
-  %RSI = bitcast %union.anon* %8 to i64*
-  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
-  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
-  %RBP = bitcast %union.anon* %11 to i64*
-  %12 = load i64, i64* %RBP
-  %13 = sub i64 %12, 14
-  %14 = load i64, i64* %PC
-  %15 = add i64 %14, 4
-  store i64 %15, i64* %PC
-  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnItEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RSI, i64 %13)
-  ret %struct.Memory* %16
-}
 
 
 define %struct.Memory* @routine_callq_._Z26check_shifted_variable_sumIt19custom_add_variableItEEvT_S2_(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {

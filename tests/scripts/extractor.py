@@ -182,10 +182,10 @@ def createMakefile(funcName):
     makeFile.write("" + "\n\n")
 
     makeFile.write(
-        "match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.opt.ll" +
+        "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
-        "	${TOOLDIR}/matcher --file1 ${OUTDIR}test.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
+        "	${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
     makeFile.write("" + "\n\n")

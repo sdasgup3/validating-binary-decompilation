@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55ef72000928]:   %47 = tail call fastcc %struct.Memory* @ext_400520_pthread_join(%struct.State* nonnull %0, %struct.Memory* %29)
+[0x55ef72024610]:   %call2_400687 = tail call %struct.Memory.32* @sub_400520.pthread_join_plt(%struct.State.1* %0, i64 %43, %struct.Memory.32* %call2_400674)
+[0x55ef7203a710]:   %call2_400674 = tail call %struct.Memory.32* @sub_400500.pthread_create_plt(%struct.State.1* %0, i64 %26, %struct.Memory.32* %2)
+[0x55ef7206f750]:   %call2_4006a5 = tail call %struct.Memory.32* @sub_400510.printf_plt(%struct.State.1* %0, i64 %61, %struct.Memory.32* %call2_400687)
+Multiple matches exist for [0x55ef71fe74d8]:   %66 = tail call fastcc %struct.Memory* @ext_601070_printf(%struct.State* nonnull %0, %struct.Memory* %47)
+[0x55ef72024610]:   %call2_400687 = tail call %struct.Memory.32* @sub_400520.pthread_join_plt(%struct.State.1* %0, i64 %43, %struct.Memory.32* %call2_400674)
+[0x55ef7203a710]:   %call2_400674 = tail call %struct.Memory.32* @sub_400500.pthread_create_plt(%struct.State.1* %0, i64 %26, %struct.Memory.32* %2)
+[0x55ef7206f750]:   %call2_4006a5 = tail call %struct.Memory.32* @sub_400510.printf_plt(%struct.State.1* %0, i64 %61, %struct.Memory.32* %call2_400687)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

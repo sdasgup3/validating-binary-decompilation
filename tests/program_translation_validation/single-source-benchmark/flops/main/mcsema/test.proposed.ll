@@ -97,8 +97,31 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400558__eh_frame = internal constant %seg_400558__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\0B\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
 
 ; Function Declaraions
-declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare i32 @__remill_fpu_exception_test_and_clear(i32, i32)
+declare void @llvm.lifetime.start(i64, i8* nocapture)
+declare void @llvm.lifetime.end(i64, i8* nocapture)
+declare i32 @llvm.ctpop.i32(i32)
+declare i32 @llvm.bswap.i32(i32)
+declare i64 @llvm.bswap.i64(i64)
+declare i32 @llvm.cttz.i32(i32, i1)
+declare i64 @llvm.cttz.i64(i64, i1)
+declare i32 @llvm.ctlz.i32(i32, i1)
+declare i64 @llvm.ctlz.i64(i64, i1)
+declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i32, i1)
+declare double @llvm.nearbyint.f64(double)
+declare double @llvm.fabs.f64(double)
+declare <4 x double> @llvm.nearbyint.v4f64(<4 x double>)
+declare <4 x double> @llvm.fabs.v4f64(<4 x double>)
+declare double @llvm.trunc.f64(double)
+declare <4 x double> @llvm.trunc.v4f64(<4 x double>)
+declare float @llvm.nearbyint.f32(float)
+declare float @llvm.fabs.f32(float)
+declare <4 x float> @llvm.nearbyint.v4f32(<4 x float>)
+declare <4 x float> @llvm.fabs.v4f32(<4 x float>)
+declare float @llvm.trunc.f32(float)
+declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
 declare %struct.Memory* @sub_400440.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 declare %struct.Memory* @sub_4025d0.dtime(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -14293,6 +14316,24 @@ block_400488:
 
 
 
+define %struct.Memory* @routine_jg_.L_401249(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = load i64, i64* %PC
+  %7 = add i64 %6, %rel_off1
+  %8 = load i64, i64* %PC
+  %9 = add i64 %8, %rel_off2
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, %rel_off3
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_(%struct.Memory* %2, %struct.State* %0, i8* %BRANCH_TAKEN, i64 %7, i64 %9)
+  ret %struct.Memory* %12
+}
+
+
 define %struct.Memory* @routine_cvtsi2sdq_MINUS0x48__rbp____xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
@@ -14315,6 +14356,2442 @@ block_400488:
   %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L8CVTSI2SDI2MnImEEEP6MemoryS4_R5State3VnWI8vec128_tET_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
   ret %struct.Memory* %16
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm5(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 5
+  %YMM5 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movsd_0x6030a0___xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6303904)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x28__rbp____xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 40
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 5
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+define %struct.Memory* @routine_addsd_0x603098___xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303896)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603090___xmm5(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 5
+  %YMM5 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303888)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd__xmm5___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 5
+  %XMM5 = bitcast %union.VectorReg* %9 to %union.vec128_t*
+  %10 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %12 = bitcast %union.vec128_t* %XMM5 to i8*
+  %13 = load i64, i64* %PC
+  %14 = add i64 %13, 4
+  store i64 %14, i64* %PC
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  ret %struct.Memory* %15
+}
+
+
+define %struct.Memory* @routine_addsd_0x603088___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303880)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603080___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303872)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603078___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303864)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_jmpq_.L_401185(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = load i64, i64* %PC
+  %7 = add i64 %6, %rel_off1
+  %8 = load i64, i64* %PC
+  %9 = add i64 %8, %rel_off2
+  store i64 %9, i64* %PC
+  %10 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory* %2, %struct.State* %0, i64 %7)
+  ret %struct.Memory* %10
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movq__0x4028d2___rdi(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 11
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RDI = bitcast %union.anon* %8 to i64*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 10
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RDI, i64 4204754)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_movsd_0x14be__rip____xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 0
+  %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 5318
+  %11 = load i64, i64* %PC
+  %12 = add i64 %11, 8
+  store i64 %12, i64* %PC
+  %13 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 %10)
+  ret %struct.Memory* %13
+}
+
+
+define %struct.Memory* @routine_movsd_0x14ee__rip____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 5366
+  %11 = load i64, i64* %PC
+  %12 = add i64 %11, 8
+  store i64 %12, i64* %PC
+  %13 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 %10)
+  ret %struct.Memory* %13
+}
+
+
+define %struct.Memory* @routine_movsd_0x603148___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6304072)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_0x6032d8___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304472)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_subsd_0x603290___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5SUBSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304400)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm2__0x6031a0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %XMM2 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304160, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_movsd_0x603270___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6304368)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_divsd_0x6032c0___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304448)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm2__MINUS0x18__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
+  %XMM2 = bitcast %union.VectorReg* %10 to %union.vec128_t*
+  %11 = load i64, i64* %RBP
+  %12 = sub i64 %11, 24
+  %13 = bitcast %union.vec128_t* %XMM2 to i8*
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %12, i8* %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x18__rbp____xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 24
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 5
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+define %struct.Memory* @routine_movsd__xmm2__MINUS0x28__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
+  %XMM2 = bitcast %union.VectorReg* %10 to %union.vec128_t*
+  %11 = load i64, i64* %RBP
+  %12 = sub i64 %11, 40
+  %13 = bitcast %union.vec128_t* %XMM2 to i8*
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %12, i8* %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movsd_0x6030a0___xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6303904)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x28__rbp____xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 40
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 5
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+define %struct.Memory* @routine_addsd_0x603098___xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303896)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd__xmm7___xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 7
+  %XMM7 = bitcast %union.VectorReg* %9 to %union.vec128_t*
+  %10 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %12 = bitcast %union.vec128_t* %XMM7 to i8*
+  %13 = load i64, i64* %PC
+  %14 = add i64 %13, 4
+  store i64 %14, i64* %PC
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  ret %struct.Memory* %15
+}
+
+
+define %struct.Memory* @routine_addsd_0x603090___xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303888)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603088___xmm5(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 5
+  %YMM5 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303880)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603080___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303872)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603078___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303864)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_0x6031a0___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6304160)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_divsd__xmm1___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %9 to %union.vec128_t*
+  %10 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %12 = bitcast %union.vec128_t* %XMM1 to i8*
+  %13 = load i64, i64* %PC
+  %14 = add i64 %13, 4
+  store i64 %14, i64* %PC
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  ret %struct.Memory* %15
+}
+
+
+define %struct.Memory* @routine_movsd__xmm2__0x6031a8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %XMM2 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304168, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_movsd_MINUS0x30__rbp____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 48
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_0x603130___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6304048)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x10__rbp____xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 16
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 5
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_divsd_0x603130___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304048)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm1__0x6032b8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304440, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+
+
+define %struct.Memory* @routine_divsd_0x6032c0___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304448)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd__xmm1__MINUS0x28__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %10 to %union.vec128_t*
+  %11 = load i64, i64* %RBP
+  %12 = sub i64 %11, 40
+  %13 = bitcast %union.vec128_t* %XMM1 to i8*
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %12, i8* %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603060___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303840)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603050___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303824)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603038___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303800)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_divsd_0x6031a8___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304168)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm1__0x6031b0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304176, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_mulsd_0x6031a0___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304160)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd_0x6031b0___xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 0
+  %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304176)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm0__MINUS0xd0__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 0
+  %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
+  %11 = load i64, i64* %RBP
+  %12 = sub i64 %11, 208
+  %13 = bitcast %union.vec128_t* %XMM0 to i8*
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 8
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %12, i8* %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0xd0__rbp____xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 208
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 8
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xd4__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 212
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xd8__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 216
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xdc__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 220
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_jg_.L_401627(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = load i64, i64* %PC
+  %7 = add i64 %6, %rel_off1
+  %8 = load i64, i64* %PC
+  %9 = add i64 %8, %rel_off2
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, %rel_off3
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_(%struct.Memory* %2, %struct.State* %0, i8* %BRANCH_TAKEN, i64 %7, i64 %9)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_0x603068___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6303848)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x28__rbp____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 40
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 5
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+define %struct.Memory* @routine_addsd_0x603060___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303840)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603058___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303832)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603050___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303824)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603048___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303816)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603040___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303808)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x6032a8___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304424)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd__xmm1___xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 0
+  %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %9 to %union.vec128_t*
+  %10 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %12 = bitcast %union.vec128_t* %XMM1 to i8*
+  %13 = load i64, i64* %PC
+  %14 = add i64 %13, 4
+  store i64 %14, i64* %PC
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  ret %struct.Memory* %15
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0x20__rbp____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 32
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_jmpq_.L_4014ef(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = load i64, i64* %PC
+  %7 = add i64 %6, %rel_off1
+  %8 = load i64, i64* %PC
+  %9 = add i64 %8, %rel_off2
+  store i64 %9, i64* %PC
+  %10 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory* %2, %struct.State* %0, i64 %7)
+  ret %struct.Memory* %10
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movq__0x4028f6___rdi(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 11
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RDI = bitcast %union.anon* %8 to i64*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 10
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RDI, i64 4204790)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_movsd_0x10e0__rip____xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 0
+  %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 4328
+  %11 = load i64, i64* %PC
+  %12 = add i64 %11, 8
+  store i64 %12, i64* %PC
+  %13 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 %10)
+  ret %struct.Memory* %13
+}
+
+
+define %struct.Memory* @routine_movsd_0x1118__rip____xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 4384
+  %11 = load i64, i64* %PC
+  %12 = add i64 %11, 8
+  store i64 %12, i64* %PC
+  %13 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 %10)
+  ret %struct.Memory* %13
+}
+
+
+define %struct.Memory* @routine_movsd_0x1118__rip____xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 4384
+  %11 = load i64, i64* %PC
+  %12 = add i64 %11, 8
+  store i64 %12, i64* %PC
+  %13 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 %10)
+  ret %struct.Memory* %13
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd__xmm3__0x6031b8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %XMM3 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM3 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304184, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603060___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303840)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603050___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303824)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0x28__rbp____xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 40
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 5
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movsd_0x6030a0___xmm8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 8
+  %YMM8 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM8 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 10
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6303904)
+  ret %struct.Memory* %11
+}
+
+
+define %struct.Memory* @routine_mulsd_MINUS0x28__rbp____xmm8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 8
+  %YMM8 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM8 to i8*
+  %12 = bitcast %"class.std::bitset"* %YMM8 to i8*
+  %13 = load i64, i64* %RBP
+  %14 = sub i64 %13, 40
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 6
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %11, i8* %12, i64 %14)
+  ret %struct.Memory* %17
+}
+
+
+define %struct.Memory* @routine_addsd_0x603098___xmm8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 8
+  %YMM8 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM8 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM8 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 10
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303896)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd__xmm8___xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 8
+  %XMM8 = bitcast %union.VectorReg* %9 to %union.vec128_t*
+  %10 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %11 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %12 = bitcast %union.vec128_t* %XMM8 to i8*
+  %13 = load i64, i64* %PC
+  %14 = add i64 %13, 5
+  store i64 %14, i64* %PC
+  %15 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %10, i8* %11, i8* %12)
+  ret %struct.Memory* %15
+}
+
+
+define %struct.Memory* @routine_addsd_0x603090___xmm7(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 7
+  %YMM7 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM7 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303888)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603088___xmm6(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 6
+  %YMM6 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM6 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303880)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603080___xmm5(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 5
+  %YMM5 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM5 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303872)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x603078___xmm4(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 4
+  %YMM4 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM4 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6303864)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_addsd_0x6032a8___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5ADDSDI3VnWI8vec128_tE2VnIS2_E3MVnI7vec64_tEEEP6MemorySA_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304424)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_divsd_0x603268___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304360)
+  ret %struct.Memory* %12
+}
+
+
+
+
+define %struct.Memory* @routine_movsd_0x6031b8___xmm3(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 6304184)
+  ret %struct.Memory* %11
+}
+
+
+
+
+define %struct.Memory* @routine_movsd__xmm3__0x6031c0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 3
+  %XMM3 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM3 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304192, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_divsd_0x6031c0___xmm1(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304192)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm1__0x6031c8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %XMM1 = bitcast %union.VectorReg* %7 to %union.vec128_t*
+  %8 = bitcast %union.vec128_t* %XMM1 to i8*
+  %9 = load i64, i64* %PC
+  %10 = add i64 %9, 9
+  store i64 %10, i64* %PC
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6304200, i8* %8)
+  ret %struct.Memory* %11
+}
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_mulsd_0x6031b8___xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304184)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_mulsd_0x6031c8___xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 0
+  %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %9 = bitcast %"class.std::bitset"* %YMM0 to i8*
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, 9
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %8, i8* %9, i64 6304200)
+  ret %struct.Memory* %12
+}
+
+
+define %struct.Memory* @routine_movsd__xmm0__MINUS0xe8__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 0
+  %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
+  %11 = load i64, i64* %RBP
+  %12 = sub i64 %11, 232
+  %13 = bitcast %union.vec128_t* %XMM0 to i8*
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 8
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %12, i8* %13)
+  ret %struct.Memory* %16
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movsd_MINUS0xe8__rbp____xmm2(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 15
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RBP = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
+  %11 = bitcast %"class.std::bitset"* %YMM2 to i8*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 232
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 8
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %11, i64 %13)
+  ret %struct.Memory* %16
+}
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xec__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 236
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xf0__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 240
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+define %struct.Memory* @routine_movl__eax__MINUS0xf4__rbp_(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 1
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %EAX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 244
+  %14 = load i32, i32* %EAX
+  %15 = zext i32 %14 to i64
+  %16 = load i64, i64* %PC
+  %17 = add i64 %16, 6
+  store i64 %17, i64* %PC
+  %18 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 %13, i64 %15)
+  ret %struct.Memory* %18
+}
+
+
+
+
+
+
+
+
+
+
+define %struct.Memory* @routine_jg_.L_401a06(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = load i64, i64* %PC
+  %7 = add i64 %6, %rel_off1
+  %8 = load i64, i64* %PC
+  %9 = add i64 %8, %rel_off2
+  %10 = load i64, i64* %PC
+  %11 = add i64 %10, %rel_off3
+  store i64 %11, i64* %PC
+  %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_(%struct.Memory* %2, %struct.State* %0, i8* %BRANCH_TAKEN, i64 %7, i64 %9)
+  ret %struct.Memory* %12
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

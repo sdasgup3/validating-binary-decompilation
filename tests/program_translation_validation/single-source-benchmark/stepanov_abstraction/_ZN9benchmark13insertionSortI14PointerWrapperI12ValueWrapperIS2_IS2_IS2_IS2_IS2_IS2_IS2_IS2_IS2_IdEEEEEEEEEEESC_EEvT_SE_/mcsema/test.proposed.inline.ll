@@ -70,10 +70,78 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
 
-; Function Attrs: nounwind readnone
-declare i32 @llvm.ctpop.i32(i32) #0
-
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+declare i32 @__remill_fpu_exception_test_and_clear(i32, i32)
+
+; Function Attrs: argmemonly nounwind
+declare void @llvm.lifetime.start(i64, i8* nocapture) #0
+
+; Function Attrs: argmemonly nounwind
+declare void @llvm.lifetime.end(i64, i8* nocapture) #0
+
+; Function Attrs: nounwind readnone
+declare i32 @llvm.ctpop.i32(i32) #1
+
+; Function Attrs: nounwind readnone
+declare i32 @llvm.bswap.i32(i32) #1
+
+; Function Attrs: nounwind readnone
+declare i64 @llvm.bswap.i64(i64) #1
+
+; Function Attrs: nounwind readnone
+declare i32 @llvm.cttz.i32(i32, i1) #1
+
+; Function Attrs: nounwind readnone
+declare i64 @llvm.cttz.i64(i64, i1) #1
+
+; Function Attrs: nounwind readnone
+declare i32 @llvm.ctlz.i32(i32, i1) #1
+
+; Function Attrs: nounwind readnone
+declare i64 @llvm.ctlz.i64(i64, i1) #1
+
+; Function Attrs: argmemonly nounwind
+declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i32, i1) #0
+
+; Function Attrs: nounwind readnone
+declare double @llvm.nearbyint.f64(double) #1
+
+; Function Attrs: nounwind readnone
+declare double @llvm.fabs.f64(double) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x double> @llvm.nearbyint.v4f64(<4 x double>) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x double> @llvm.fabs.v4f64(<4 x double>) #1
+
+; Function Attrs: nounwind readnone
+declare double @llvm.trunc.f64(double) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x double> @llvm.trunc.v4f64(<4 x double>) #1
+
+; Function Attrs: nounwind readnone
+declare float @llvm.nearbyint.f32(float) #1
+
+; Function Attrs: nounwind readnone
+declare float @llvm.fabs.f32(float) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x float> @llvm.nearbyint.v4f32(<4 x float>) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x float> @llvm.fabs.v4f32(<4 x float>) #1
+
+; Function Attrs: nounwind readnone
+declare float @llvm.trunc.f32(float) #1
+
+; Function Attrs: nounwind readnone
+declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
+
+; Function Attrs: argmemonly nounwind
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
 declare %struct.Memory* @sub_403010._ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -86,7 +154,7 @@ declare %struct.Memory* @sub_404fc0._ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_I
 declare %struct.Memory* @sub_4030a0._ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE_(%struct.State* noalias, i64, %struct.Memory* noalias) #1 {
+define %struct.Memory* @_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE_(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1, i64* %3, align 8
@@ -2196,6 +2264,29 @@ block_400488:
   ret %struct.Memory* %2
 }
 
+define %struct.Memory* @routine_leaq_MINUS0x18__rbp____rdi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 11
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %RDI = bitcast %union.anon* %8 to i64*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RBP = bitcast %union.anon* %11 to i64*
+  %12 = load i64, i64* %RBP
+  %13 = sub i64 %12, 24
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 4
+  store i64 %15, i64* %PC
+  store i64 %13, i64* %RDI, align 8
+  ret %struct.Memory* %2
+}
+
 define %struct.Memory* @routine_leaq_MINUS0x10__rbp____rsi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) {
 block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
@@ -2321,29 +2412,6 @@ block_400488:
   store i64 %9, i64* %PC
   %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %7, i64* %10, align 8
-  ret %struct.Memory* %2
-}
-
-define %struct.Memory* @routine_leaq_MINUS0x18__rbp____rdi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) {
-block_400488:
-  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
-  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
-  %PC = bitcast %union.anon* %5 to i64*
-  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 11
-  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
-  %RDI = bitcast %union.anon* %8 to i64*
-  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 15
-  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
-  %RBP = bitcast %union.anon* %11 to i64*
-  %12 = load i64, i64* %RBP
-  %13 = sub i64 %12, 24
-  %14 = load i64, i64* %PC
-  %15 = add i64 %14, 4
-  store i64 %15, i64* %PC
-  store i64 %13, i64* %RDI, align 8
   ret %struct.Memory* %2
 }
 
@@ -3214,5 +3282,6 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-attributes #0 = { nounwind readnone }
-attributes #1 = { alwaysinline }
+attributes #0 = { argmemonly nounwind }
+attributes #1 = { nounwind readnone }
+attributes #2 = { alwaysinline }

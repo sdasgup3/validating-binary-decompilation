@@ -39,10 +39,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 
+declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
-
-declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 declare %struct.Memory* @sub_4046c0._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -653,6 +653,23 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
+define %struct.Memory* @routine_callq_._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+block_400488:
+  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %3 = load i64, i64* %PC, align 8
+  %4 = add i64 %3, %rel_off1
+  %5 = add i64 %3, %rel_off2
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %7 = load i64, i64* %6, align 8
+  %8 = add i64 %7, -8
+  %9 = inttoptr i64 %8 to i64*
+  store i64 %5, i64* %9, align 8
+  store i64 %8, i64* %6, align 8
+  store i64 %4, i64* %PC, align 8
+  ret %struct.Memory* %2
+}
+
+; Function Attrs: norecurse nounwind
 define %struct.Memory* @routine_movq__rax__MINUS0x28__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
@@ -794,23 +811,6 @@ block_400488:
   store i8 0, i8* %9, align 1
   %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
   store i8 0, i8* %10, align 1
-  ret %struct.Memory* %2
-}
-
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_callq_._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
-  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, %rel_off1
-  %5 = add i64 %3, %rel_off2
-  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %7 = load i64, i64* %6, align 8
-  %8 = add i64 %7, -8
-  %9 = inttoptr i64 %8 to i64*
-  store i64 %5, i64* %9, align 8
-  store i64 %8, i64* %6, align 8
-  store i64 %4, i64* %PC, align 8
   ret %struct.Memory* %2
 }
 

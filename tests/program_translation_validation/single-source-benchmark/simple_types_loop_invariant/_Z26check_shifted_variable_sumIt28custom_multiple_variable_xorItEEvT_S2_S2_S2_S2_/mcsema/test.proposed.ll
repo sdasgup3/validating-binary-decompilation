@@ -97,8 +97,31 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400558__eh_frame = internal constant %seg_400558__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\09\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
 
 ; Function Declaraions
-declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare i32 @__remill_fpu_exception_test_and_clear(i32, i32)
+declare void @llvm.lifetime.start(i64, i8* nocapture)
+declare void @llvm.lifetime.end(i64, i8* nocapture)
+declare i32 @llvm.ctpop.i32(i32)
+declare i32 @llvm.bswap.i32(i32)
+declare i64 @llvm.bswap.i64(i64)
+declare i32 @llvm.cttz.i32(i32, i1)
+declare i64 @llvm.cttz.i64(i64, i1)
+declare i32 @llvm.ctlz.i32(i32, i1)
+declare i64 @llvm.ctlz.i64(i64, i1)
+declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i32, i1)
+declare double @llvm.nearbyint.f64(double)
+declare double @llvm.fabs.f64(double)
+declare <4 x double> @llvm.nearbyint.v4f64(<4 x double>)
+declare <4 x double> @llvm.fabs.v4f64(<4 x double>)
+declare double @llvm.trunc.f64(double)
+declare <4 x double> @llvm.trunc.v4f64(<4 x double>)
+declare float @llvm.nearbyint.f32(float)
+declare float @llvm.fabs.f32(float)
+declare <4 x float> @llvm.nearbyint.v4f32(<4 x float>)
+declare <4 x float> @llvm.fabs.v4f32(<4 x float>)
+declare float @llvm.trunc.f32(float)
+declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
 declare %struct.Memory* @sub_410150._ZN28custom_multiple_variable_xorItE8do_shiftEttttt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 declare %struct.Memory* @sub_410260._Z15tolerance_equalItEbRT_S1_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -1123,6 +1146,64 @@ block_400488:
   %15 = add i64 %14, 3
   store i64 %15, i64* %PC
   %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2RnItEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64* %RCX, i64 %13)
+  ret %struct.Memory* %16
+}
+
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture dereferenceable(3376), i64* nocapture, i64, i64) #0 {
+  %6 = shl i64 %3, 32
+  %7 = ashr exact i64 %6, 32
+  %8 = shl i64 %4, 32
+  %9 = ashr exact i64 %8, 32
+  %10 = mul  i64 %9, %7
+  %11 = trunc i64 %10 to i32
+  %12 = and i64 %10, 4294967295
+  store i64 %12, i64* %2, align 8
+  %13 = shl i64 %10, 32
+  %14 = ashr exact i64 %13, 32
+  %15 = icmp ne i64 %14, %10
+  %16 = zext i1 %15 to i8
+  %17 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 1
+  store i8 %16, i8* %17, align 1
+  %18 = and i32 %11, 255
+  %19 = tail call i32 @llvm.ctpop.i32(i32 %18) #22
+  %20 = trunc i32 %19 to i8
+  %21 = and i8 %20, 1
+  %22 = xor i8 %21, 1
+  %23 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 3
+  store i8 %22, i8* %23, align 1
+  %24 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 5
+  store i8 0, i8* %24, align 1
+  %25 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 7
+  store i8 0, i8* %25, align 1
+  %26 = lshr i32 %11, 31
+  %27 = trunc i32 %26 to i8
+  %28 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 9
+  store i8 %27, i8* %28, align 1
+  %29 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
+  store i8 %16, i8* %29, align 1
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_imull__0x1f40___ecx___ecx(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_400488:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %7 = getelementptr inbounds %struct.GPR, %struct.GPR* %6, i32 0, i32 5
+  %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
+  %ECX = bitcast %union.anon* %8 to i32*
+  %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %10 = getelementptr inbounds %struct.GPR, %struct.GPR* %9, i32 0, i32 5
+  %11 = getelementptr inbounds %struct.Reg, %struct.Reg* %10, i32 0, i32 0
+  %RCX = bitcast %union.anon* %11 to i64*
+  %12 = load i32, i32* %ECX
+  %13 = zext i32 %12 to i64
+  %14 = load i64, i64* %PC
+  %15 = add i64 %14, 6
+  store i64 %15, i64* %PC
+  %16 = call %struct.Memory* @_ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64* %RCX, i64 %13, i64 8000)
   ret %struct.Memory* %16
 }
 

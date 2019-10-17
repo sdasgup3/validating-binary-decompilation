@@ -95,8 +95,31 @@ Computing Label PC values: Done.
 
 
 Executing: cat ${HOME}/Github/validating-binary-decompilation/source/libs/compositional-decompiler/data/mcsema_template.txt
-declare i32 @llvm.ctpop.i32(i32) #2
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare i32 @__remill_fpu_exception_test_and_clear(i32, i32)
+declare void @llvm.lifetime.start(i64, i8* nocapture)
+declare void @llvm.lifetime.end(i64, i8* nocapture)
+declare i32 @llvm.ctpop.i32(i32)
+declare i32 @llvm.bswap.i32(i32)
+declare i64 @llvm.bswap.i64(i64)
+declare i32 @llvm.cttz.i32(i32, i1)
+declare i64 @llvm.cttz.i64(i64, i1)
+declare i32 @llvm.ctlz.i32(i32, i1)
+declare i64 @llvm.ctlz.i64(i64, i1)
+declare void @llvm.memcpy.p0i8.p0i8.i64(i8* nocapture writeonly, i8* nocapture readonly, i64, i32, i1)
+declare double @llvm.nearbyint.f64(double)
+declare double @llvm.fabs.f64(double)
+declare <4 x double> @llvm.nearbyint.v4f64(<4 x double>)
+declare <4 x double> @llvm.fabs.v4f64(<4 x double>)
+declare double @llvm.trunc.f64(double)
+declare <4 x double> @llvm.trunc.v4f64(<4 x double>)
+declare float @llvm.nearbyint.f32(float)
+declare float @llvm.fabs.f32(float)
+declare <4 x float> @llvm.nearbyint.v4f32(<4 x float>)
+declare <4 x float> @llvm.fabs.v4f32(<4 x float>)
+declare float @llvm.trunc.f32(float)
+declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
 Decompiling Function: _Z26test_do_loop_unroll_factorILi11EiEvPKT0_iPKc...
 
@@ -279,35 +302,10 @@ Decompiling instr:jge .L_411167...
 Instr: jge .L_411167
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411167
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411167 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411167 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411167 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jge_.L_411167
-Expanding _ZN12_GLOBAL__N_1L3JNLEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jge_.L_411167 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411167'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411167/test.mod.ll
 Running artifacts...Done.
@@ -406,35 +404,10 @@ Decompiling instr:jl .L_411110...
 Instr: jl .L_411110
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_411110
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_411110 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_411110 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_411110 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jl_.L_411110
-Expanding _ZN12_GLOBAL__N_1L2JLEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jl_.L_411110 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_411110'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_411110/test.mod.ll
 Running artifacts...Done.
@@ -448,35 +421,10 @@ Decompiling instr:jmpq .L_4110e1...
 Instr: jmpq .L_4110e1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110e1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110e1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110e1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110e1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jmpq_.L_4110e1
-Expanding _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_...
-Generatin test.mod.ll for opcode jmpq_.L_4110e1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110e1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110e1/test.mod.ll
 Running artifacts...Done.
@@ -680,35 +628,10 @@ Decompiling instr:jl .L_4110e1...
 Instr: jl .L_4110e1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_4110e1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_4110e1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_4110e1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_4110e1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jl_.L_4110e1
-Expanding _ZN12_GLOBAL__N_1L2JLEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jl_.L_4110e1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jl_.L_4110e1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jl_.L_4110e1/test.mod.ll
 Running artifacts...Done.
@@ -722,35 +645,10 @@ Decompiling instr:jmpq .L_411110...
 Instr: jmpq .L_411110
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411110
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411110 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411110 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411110 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jmpq_.L_411110
-Expanding _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_...
-Generatin test.mod.ll for opcode jmpq_.L_411110 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411110'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411110/test.mod.ll
 Running artifacts...Done.
@@ -801,35 +699,10 @@ Decompiling instr:jge .L_411151...
 Instr: jge .L_411151
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411151
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411151 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411151 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411151 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jge_.L_411151
-Expanding _ZN12_GLOBAL__N_1L3JNLEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jge_.L_411151 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jge_.L_411151'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_411151/test.mod.ll
 Running artifacts...Done.
@@ -843,35 +716,10 @@ Decompiling instr:jmpq .L_411121...
 Instr: jmpq .L_411121
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411121
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411121 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411121 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411121 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jmpq_.L_411121
-Expanding _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_...
-Generatin test.mod.ll for opcode jmpq_.L_411121 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411121'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411121/test.mod.ll
 Running artifacts...Done.
@@ -1075,35 +923,10 @@ Decompiling instr:jne .L_411121...
 Instr: jne .L_411121
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_411121
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_411121 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_411121 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_411121 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jne_.L_411121
-Expanding _ZN12_GLOBAL__N_1L3JNZEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jne_.L_411121 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jne_.L_411121'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_411121/test.mod.ll
 Running artifacts...Done.
@@ -1117,35 +940,10 @@ Decompiling instr:jmpq .L_411151...
 Instr: jmpq .L_411151
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411151
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411151 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411151 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411151 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jmpq_.L_411151
-Expanding _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_...
-Generatin test.mod.ll for opcode jmpq_.L_411151 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_411151'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_411151/test.mod.ll
 Running artifacts...Done.
@@ -1247,35 +1045,10 @@ Decompiling instr:jmpq .L_4110af...
 Instr: jmpq .L_4110af
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110af
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110af binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110af mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110af declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jmpq_.L_4110af
-Expanding _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_...
-Generatin test.mod.ll for opcode jmpq_.L_4110af ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jmpq_.L_4110af'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4110af/test.mod.ll
 Running artifacts...Done.
