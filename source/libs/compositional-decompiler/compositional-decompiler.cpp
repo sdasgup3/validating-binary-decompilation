@@ -110,13 +110,17 @@ static void createCFG(const FunctionCallbackData &data, void *arg) {
 
   struct CallbackValue *cbv = static_cast<struct CallbackValue *>(arg);
 
-  if (!cbv->extractedFunction.empty() &&
-      data.tunit.get_name() != cbv->extractedFunction) {
-    return;
-  } else if (!data.parse_error) {
-    // ofstream ofs(out.value() + "/" + data.tunit.get_name() + ".s");
-    // ofs << data.tunit << endl;
-    // cfg = new Cfg(data.tunit);
+  // if (!cbv->extractedFunction.empty() &&
+  //    data.tunit.get_name() != cbv->extractedFunction) {
+  //  return;
+  //} else if (!data.parse_error) {
+
+  // DSAND: TODO: The checking for data.tunit.get_name() ==
+  // cbv->extractedFunction
+  // is delegated to the disassembler.
+  // So we do not need this arg anymore.
+
+  if (!data.parse_error) {
     *(cbv->cfg_addr) = new Cfg(data.tunit);
   } else {
     Console::warn() << "Could not disassemble " << data.name
