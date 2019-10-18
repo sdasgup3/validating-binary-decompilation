@@ -1,0 +1,3 @@
+void main() {
+  __asm__("movsd %xmm1, (%rsi,%rdi,8)");
+}
