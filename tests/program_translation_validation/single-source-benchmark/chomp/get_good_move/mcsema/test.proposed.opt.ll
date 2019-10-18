@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400990.get_value(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400990.get_value(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400660.copy_data(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400660.copy_data(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @get_good_move(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @get_good_move(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -156,7 +156,6 @@ block_.L_401174:                                  ; preds = %entry
 block_.L_401179:                                  ; preds = %block_.L_4011b4, %block_.L_401174
   %68 = phi i64 [ %43, %block_.L_401174 ], [ %.pre, %block_.L_4011b4 ]
   %storemerge = phi i64 [ %65, %block_.L_401174 ], [ %165, %block_.L_4011b4 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_.L_401174 ], [ %MEMORY.1, %block_.L_4011b4 ]
   store i64 0, i64* %RAX.i56, align 8
   store i8 0, i8* %14, align 1
   store i8 1, i8* %21, align 1
@@ -227,7 +226,7 @@ block_40118f:                                     ; preds = %block_.L_401179
   store i64 %103, i64* %106, align 8
   store i64 %105, i64* %6, align 8
   store i64 %102, i64* %3, align 8
-  %call2_401196 = tail call %struct.Memory* @sub_400990.get_value(%struct.State* nonnull %0, i64 %102, %struct.Memory* %MEMORY.0)
+  %call2_401196 = tail call %struct.Memory* @sub_400990.get_value(%struct.State* nonnull %0, i64 %102, %struct.Memory* %2)
   %107 = load i32, i32* %EAX.i55, align 4
   %108 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -258,8 +257,7 @@ block_40118f:                                     ; preds = %block_.L_401179
   br label %block_.L_4011a4
 
 block_.L_4011a4:                                  ; preds = %block_40118f, %block_.L_401179
-  %124 = phi i64 [ %93, %block_.L_401179 ], [ %.pre3, %block_40118f ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_.L_401179 ], [ %call2_401196, %block_40118f ]
+  %124 = phi i64 [ %.pre3, %block_40118f ], [ %93, %block_.L_401179 ]
   %125 = load i64, i64* %RBP.i, align 8
   %126 = add i64 %125, -17
   %127 = add i64 %124, 3
@@ -305,7 +303,7 @@ block_4011af:                                     ; preds = %block_.L_4011a4
   store i64 %146, i64* %149, align 8
   store i64 %148, i64* %6, align 8
   store i64 %145, i64* %3, align 8
-  %call2_4011cc = tail call %struct.Memory* @sub_400660.copy_data(%struct.State* nonnull %0, i64 %145, %struct.Memory* %MEMORY.1)
+  %call2_4011cc = tail call %struct.Memory* @sub_400660.copy_data(%struct.State* nonnull %0, i64 %145, %struct.Memory* %2)
   %150 = load i64, i64* %RBP.i, align 8
   %151 = add i64 %150, -8
   %152 = load i64, i64* %RAX.i56, align 8

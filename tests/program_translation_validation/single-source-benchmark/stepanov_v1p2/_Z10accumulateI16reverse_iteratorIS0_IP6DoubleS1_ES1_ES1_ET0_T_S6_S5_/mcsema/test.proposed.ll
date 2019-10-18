@@ -123,10 +123,10 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_402220._ZneI16reverse_iteratorIS0_IP6DoubleS1_ES1_EEiRKT_S7_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_402260._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEi(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_402290._ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_401150._ZN3$_0clERK6DoubleS2_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_402220._ZneI16reverse_iteratorIS0_IP6DoubleS1_ES1_EEiRKT_S7_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_402260._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_402290._ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_401150._ZN3$_0clERK6DoubleS2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 

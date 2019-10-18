@@ -44,21 +44,21 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400620.strcpy_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400620.strcpy_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400680.__isoc99_sscanf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400680.__isoc99_sscanf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400640.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400640.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400630.strlen_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400630.strlen_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400660.seed48_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400660.seed48_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400b40.create_link_list(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400b40.create_link_list(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400be0.init(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400be0.init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400c20.simulate(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400c20.simulate(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -1192,8 +1192,7 @@ block_4009f5:                                     ; preds = %block_.L_4009c8
   br label %block_.L_4009fc
 
 block_.L_4009fc:                                  ; preds = %block_400a08, %block_4009f5
-  %695 = phi i64 [ %.pre28, %block_4009f5 ], [ %824, %block_400a08 ]
-  %MEMORY.6 = phi %struct.Memory* [ %call2_4009df, %block_4009f5 ], [ %call2_400a24, %block_400a08 ]
+  %695 = phi i64 [ %824, %block_400a08 ], [ %.pre28, %block_4009f5 ]
   %696 = load i64, i64* %RBP.i, align 8
   %697 = add i64 %696, -56
   %698 = add i64 %695, 3
@@ -1255,7 +1254,7 @@ block_400a08:                                     ; preds = %block_.L_4009fc
   store i64 %735, i64* %738, align 8
   store i64 %737, i64* %6, align 8
   store i64 %734, i64* %3, align 8
-  %call2_400a0c = tail call %struct.Memory* @sub_400be0.init(%struct.State* nonnull %0, i64 %734, %struct.Memory* %MEMORY.6)
+  %call2_400a0c = tail call %struct.Memory* @sub_400be0.init(%struct.State* nonnull %0, i64 %734, %struct.Memory* %call2_4009df)
   %739 = load i64, i64* %RBP.i, align 8
   %740 = add i64 %739, -40
   %741 = load i64, i64* %3, align 8
@@ -1284,7 +1283,7 @@ block_400a08:                                     ; preds = %block_.L_4009fc
   store i64 %753, i64* %756, align 8
   store i64 %755, i64* %6, align 8
   store i64 %752, i64* %3, align 8
-  %call2_400a24 = tail call %struct.Memory* @sub_400c20.simulate(%struct.State* nonnull %0, i64 %752, %struct.Memory* %call2_400a0c)
+  %call2_400a24 = tail call %struct.Memory* @sub_400c20.simulate(%struct.State* nonnull %0, i64 %752, %struct.Memory* %call2_4009df)
   %757 = load i64, i64* %RAX.i182, align 8
   %758 = load i64, i64* %RBP.i, align 8
   %759 = add i64 %758, -52
@@ -1436,8 +1435,7 @@ block_.L_400a42:                                  ; preds = %block_.L_4009c8
   br label %block_.L_400a72
 
 block_.L_400a72:                                  ; preds = %block_400a7e, %block_.L_400a42
-  %856 = phi i64 [ %.pre29, %block_.L_400a42 ], [ %973, %block_400a7e ]
-  %MEMORY.7 = phi %struct.Memory* [ %call2_400a60, %block_.L_400a42 ], [ %call2_400a93, %block_400a7e ]
+  %856 = phi i64 [ %973, %block_400a7e ], [ %.pre29, %block_.L_400a42 ]
   %857 = load i64, i64* %RBP.i, align 8
   %858 = add i64 %857, -56
   %859 = add i64 %856, 3
@@ -1510,7 +1508,7 @@ block_400a7e:                                     ; preds = %block_.L_400a72
   store i64 %902, i64* %905, align 8
   store i64 %904, i64* %6, align 8
   store i64 %901, i64* %3, align 8
-  %call2_400a93 = tail call %struct.Memory* @sub_400c20.simulate(%struct.State* nonnull %0, i64 %901, %struct.Memory* %MEMORY.7)
+  %call2_400a93 = tail call %struct.Memory* @sub_400c20.simulate(%struct.State* nonnull %0, i64 %901, %struct.Memory* %call2_400a60)
   %906 = load i64, i64* %RAX.i182, align 8
   %907 = load i64, i64* %RBP.i, align 8
   %908 = add i64 %907, -52
@@ -1609,7 +1607,7 @@ block_.L_400ab1:                                  ; preds = %block_.L_400ab1.loo
   %EAX.i15.pre-phi = phi i32* [ %EAX.i146, %block_.L_400a3d ], [ %EAX.i91, %block_.L_400ab1.loopexit ]
   %RDX.i.pre-phi = phi i64* [ %RDX.i135, %block_.L_400a3d ], [ %RDX.i100, %block_.L_400ab1.loopexit ]
   %storemerge = phi i64 [ %825, %block_.L_400a3d ], [ %894, %block_.L_400ab1.loopexit ]
-  %MEMORY.8 = phi %struct.Memory* [ %MEMORY.6, %block_.L_400a3d ], [ %MEMORY.7, %block_.L_400ab1.loopexit ]
+  %MEMORY.8 = phi %struct.Memory* [ %call2_4009df, %block_.L_400a3d ], [ %call2_400a60, %block_.L_400ab1.loopexit ]
   store i64 4198708, i64* %RDI.i188, align 8
   %AL.i52 = bitcast %union.anon* %605 to i8*
   store i8 0, i8* %AL.i52, align 1

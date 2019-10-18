@@ -42,22 +42,22 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400690.getchar_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400690.getchar_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006b0.ungetc_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4006b0.ungetc_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400650.__isoc99_fscanf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400650.__isoc99_fscanf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007c0.newWorkList(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007c0.newWorkList(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400820.newCombList(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400820.newCombList(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400880.initWorkList(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400880.initWorkList(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4008d0.initCombList(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4008d0.initCombList(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @getInput(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @getInput(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -153,8 +153,7 @@ entry:
   br label %block_.L_40117b
 
 block_.L_40117b:                                  ; preds = %block_.L_4011ad, %entry
-  %65 = phi i64 [ %.pre, %entry ], [ %266, %block_.L_4011ad ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_4011e6, %block_.L_4011ad ]
+  %65 = phi i64 [ %266, %block_.L_4011ad ], [ %.pre, %entry ]
   %66 = add i64 %65, -2795
   %67 = add i64 %65, 5
   %68 = load i64, i64* %6, align 8
@@ -163,7 +162,7 @@ block_.L_40117b:                                  ; preds = %block_.L_4011ad, %e
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %6, align 8
   store i64 %66, i64* %3, align 8
-  %call2_40117b = tail call %struct.Memory* @sub_400690.getchar_plt(%struct.State* nonnull %0, i64 %66, %struct.Memory* %MEMORY.0)
+  %call2_40117b = tail call %struct.Memory* @sub_400690.getchar_plt(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
   %71 = load i64, i64* %3, align 8
   store i64 0, i64* %RCX.i124, align 8
   store i8 0, i8* %DL.i122, align 1
@@ -337,7 +336,7 @@ block_.L_4011ad:                                  ; preds = %block_.L_40119d
   store i64 %177, i64* %180, align 8
   store i64 %179, i64* %6, align 8
   store i64 %176, i64* %3, align 8
-  %call2_4011b8 = tail call %struct.Memory* @sub_4006b0.ungetc_plt(%struct.State* nonnull %0, i64 %176, %struct.Memory* %call2_40117b)
+  %call2_4011b8 = tail call %struct.Memory* @sub_4006b0.ungetc_plt(%struct.State* nonnull %0, i64 %176, %struct.Memory* %2)
   %181 = load i64, i64* %3, align 8
   store i64 4199506, i64* %RSI.i95, align 8
   %182 = load i64, i64* %RBP.i, align 8
@@ -404,7 +403,7 @@ block_.L_4011ad:                                  ; preds = %block_.L_40119d
   store i64 %225, i64* %228, align 8
   store i64 %227, i64* %6, align 8
   store i64 %224, i64* %3, align 8
-  %call2_4011e6 = tail call %struct.Memory* @sub_400650.__isoc99_fscanf_plt(%struct.State* nonnull %0, i64 %224, %struct.Memory* %call2_4011b8)
+  %call2_4011e6 = tail call %struct.Memory* @sub_400650.__isoc99_fscanf_plt(%struct.State* nonnull %0, i64 %224, %struct.Memory* %2)
   %229 = load i64, i64* %RBP.i, align 8
   %230 = add i64 %229, -68
   %231 = load i64, i64* %3, align 8
@@ -550,7 +549,7 @@ block_.L_401210:                                  ; preds = %block_4011a8, %bloc
   store i64 %322, i64* %325, align 8
   store i64 %324, i64* %6, align 8
   store i64 %321, i64* %3, align 8
-  %call2_40123c = tail call %struct.Memory* @sub_4007c0.newWorkList(%struct.State* nonnull %0, i64 %321, %struct.Memory* %call2_40117b)
+  %call2_40123c = tail call %struct.Memory* @sub_4007c0.newWorkList(%struct.State* nonnull %0, i64 %321, %struct.Memory* %2)
   %326 = load i64, i64* %RAX.i52, align 8
   %327 = load i64, i64* %3, align 8
   store i64 %326, i64* inttoptr (i64 6299840 to i64*), align 64

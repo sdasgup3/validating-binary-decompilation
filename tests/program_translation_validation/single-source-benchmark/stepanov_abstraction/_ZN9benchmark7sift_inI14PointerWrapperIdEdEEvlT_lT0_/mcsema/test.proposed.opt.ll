@@ -44,9 +44,9 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4047a0._ZplIdE14PointerWrapperIT_ERS2_l(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4047a0._ZplIdE14PointerWrapperIT_ERS2_l(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -311,7 +311,7 @@ block_404812:                                     ; preds = %block_.L_404804
   store i64 %183, i64* %186, align 8
   store i64 %185, i64* %6, align 8
   store i64 %182, i64* %3, align 8
-  %call2_40482e = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %182, %struct.Memory* %call2_404821)
+  %call2_40482e = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %182, %struct.Memory* %MEMORY.0)
   %187 = load i64, i64* %RBP.i, align 8
   %188 = add i64 %187, -8
   %189 = load i64, i64* %3, align 8
@@ -342,7 +342,7 @@ block_404812:                                     ; preds = %block_.L_404804
   store i64 %202, i64* %205, align 8
   store i64 %204, i64* %6, align 8
   store i64 %201, i64* %3, align 8
-  %call2_404847 = tail call %struct.Memory* @sub_4047a0._ZplIdE14PointerWrapperIT_ERS2_l(%struct.State* nonnull %0, i64 %201, %struct.Memory* %call2_40482e)
+  %call2_404847 = tail call %struct.Memory* @sub_4047a0._ZplIdE14PointerWrapperIT_ERS2_l(%struct.State* nonnull %0, i64 %201, %struct.Memory* %MEMORY.0)
   %206 = load i64, i64* %RBP.i, align 8
   %207 = add i64 %206, -64
   %208 = load i64, i64* %3, align 8
@@ -361,7 +361,7 @@ block_404812:                                     ; preds = %block_.L_404804
   store i64 %214, i64* %217, align 8
   store i64 %216, i64* %6, align 8
   store i64 %213, i64* %3, align 8
-  %call2_404854 = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %213, %struct.Memory* %call2_404847)
+  %call2_404854 = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %213, %struct.Memory* %MEMORY.0)
   %218 = load i64*, i64** %101, align 8
   %219 = load i64, i64* %3, align 8
   %220 = add i64 %219, 4
@@ -395,7 +395,7 @@ block_404812:                                     ; preds = %block_.L_404804
   br i1 %237, label %238, label %246
 
 ; <label>:238:                                    ; preds = %230
-  %239 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %227, %struct.Memory* %call2_404854)
+  %239 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %227, %struct.Memory* %MEMORY.0)
   %.pre23 = load i64, i64* %3, align 8
   br label %routine_ucomisd__xmm1___xmm0.exit
 
@@ -428,7 +428,7 @@ block_404812:                                     ; preds = %block_.L_404804
 
 routine_ucomisd__xmm1___xmm0.exit:                ; preds = %250, %238
   %251 = phi i64 [ %.pre23, %238 ], [ %227, %250 ]
-  %252 = phi %struct.Memory* [ %239, %238 ], [ %call2_404854, %250 ]
+  %252 = phi %struct.Memory* [ %239, %238 ], [ %MEMORY.0, %250 ]
   %253 = add i64 %251, 18
   %254 = add i64 %251, 6
   %255 = load i8, i8* %14, align 1
@@ -1129,7 +1129,7 @@ block_40498b:                                     ; preds = %block_.L_404973
   store i64 %709, i64* %712, align 8
   store i64 %711, i64* %6, align 8
   store i64 %708, i64* %3, align 8
-  %call2_4049a0 = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %708, %struct.Memory* %call2_404993)
+  %call2_4049a0 = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %708, %struct.Memory* %MEMORY.3)
   %713 = load i64*, i64** %101, align 8
   %714 = load i64, i64* %3, align 8
   %715 = add i64 %714, 4
@@ -1163,7 +1163,7 @@ block_40498b:                                     ; preds = %block_.L_404973
   br i1 %732, label %733, label %741
 
 ; <label>:733:                                    ; preds = %725
-  %734 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %722, %struct.Memory* %call2_4049a0)
+  %734 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %722, %struct.Memory* %MEMORY.3)
   %.pre17 = load i64, i64* %3, align 8
   %.pre18 = load i64, i64* %RBP.i, align 8
   br label %routine_ucomisd__xmm0___xmm1.exit
@@ -1198,7 +1198,7 @@ block_40498b:                                     ; preds = %block_.L_404973
 routine_ucomisd__xmm0___xmm1.exit:                ; preds = %745, %733
   %746 = phi i64 [ %.pre18, %733 ], [ %717, %745 ]
   %747 = phi i64 [ %.pre17, %733 ], [ %722, %745 ]
-  %748 = phi %struct.Memory* [ %734, %733 ], [ %call2_4049a0, %745 ]
+  %748 = phi %struct.Memory* [ %734, %733 ], [ %MEMORY.3, %745 ]
   %749 = load i8, i8* %14, align 1
   %750 = load i8, i8* %30, align 1
   %751 = or i8 %750, %749

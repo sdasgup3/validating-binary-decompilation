@@ -42,16 +42,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4023b0._Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4023b0._Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z4testI16reverse_iteratorIS0_IPddEdEdEvT_S4_T0_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z4testI16reverse_iteratorIS0_IPddEdEdEvT_S4_T0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -150,8 +150,7 @@ entry:
   br label %block_.L_401961
 
 block_.L_401961:                                  ; preds = %block_401971, %entry
-  %70 = phi i64 [ %.pre, %entry ], [ %177, %block_401971 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_401955, %entry ], [ %call2_401993, %block_401971 ]
+  %70 = phi i64 [ %177, %block_401971 ], [ %.pre, %entry ]
   %71 = load i64, i64* %RBP.i, align 8
   %72 = add i64 %71, -28
   %73 = add i64 %70, 3
@@ -252,7 +251,7 @@ block_401971:                                     ; preds = %block_.L_401961
   store i64 %136, i64* %139, align 8
   store i64 %138, i64* %6, align 8
   store i64 %135, i64* %3, align 8
-  %call2_40198e = tail call %struct.Memory* @sub_4023b0._Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* nonnull %0, i64 %135, %struct.Memory* %MEMORY.0)
+  %call2_40198e = tail call %struct.Memory* @sub_4023b0._Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* nonnull %0, i64 %135, %struct.Memory* %call2_401955)
   %140 = load i64, i64* %3, align 8
   %141 = add i64 %140, -1603
   %142 = add i64 %140, 5
@@ -262,7 +261,7 @@ block_401971:                                     ; preds = %block_.L_401961
   store i64 %142, i64* %145, align 8
   store i64 %144, i64* %6, align 8
   store i64 %141, i64* %3, align 8
-  %call2_401993 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %141, %struct.Memory* %call2_40198e)
+  %call2_401993 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %141, %struct.Memory* %call2_401955)
   %146 = load i64, i64* %RBP.i, align 8
   %147 = add i64 %146, -28
   %148 = load i64, i64* %3, align 8
@@ -317,7 +316,7 @@ block_.L_4019a6:                                  ; preds = %block_.L_401961
   store i64 %179, i64* %182, align 8
   store i64 %181, i64* %6, align 8
   store i64 %178, i64* %3, align 8
-  %call2_4019a6 = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %178, %struct.Memory* %MEMORY.0)
+  %call2_4019a6 = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %178, %struct.Memory* %call2_401955)
   %183 = load i64, i64* %3, align 8
   %184 = load i32, i32* inttoptr (i64 6312080 to i32*), align 16
   %185 = zext i32 %184 to i64

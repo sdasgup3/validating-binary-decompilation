@@ -50,29 +50,29 @@ declare double @llvm.fabs.f64(double) #0
 ; Function Attrs: nounwind readnone
 declare double @llvm.trunc.f64(double) #0
 
-declare %struct.Memory* @sub_400e20.get_time(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400e20.get_time(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400740.sqrt_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400740.sqrt_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400720.memalign_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400720.memalign_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400e60.makewt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400e60.makewt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400fd0.putdata(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400fd0.putdata(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401050.cdft(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401050.cdft(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4010f0.errorcheck(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4010f0.errorcheck(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006d0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4006d0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006b0.abort_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4006b0.abort_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006f0.memset_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4006f0.memset_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400710.memcpy_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400710.memcpy_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006a0.free_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4006a0.free_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -1221,8 +1221,7 @@ block_.L_400acb:                                  ; preds = %block_.L_400a6f
   br label %block_.L_400b16
 
 block_.L_400b16:                                  ; preds = %block_.L_400c54, %block_.L_400acb
-  %709 = phi i64 [ %.pre31, %block_.L_400acb ], [ %1155, %block_.L_400c54 ]
-  %MEMORY.2 = phi %struct.Memory* [ %call2_400b05, %block_.L_400acb ], [ %call2_400c6a, %block_.L_400c54 ]
+  %709 = phi i64 [ %1155, %block_.L_400c54 ], [ %.pre31, %block_.L_400acb ]
   %710 = load i64, i64* %RBP.i, align 8
   %711 = add i64 %710, -8
   %712 = add i64 %709, 7
@@ -1307,7 +1306,7 @@ block_400b23:                                     ; preds = %block_.L_400b16
   store i64 %761, i64* %764, align 8
   store i64 %763, i64* %6, align 8
   store i64 %760, i64* %3, align 8
-  %call2_400b4e = tail call %struct.Memory* @sub_400710.memcpy_plt(%struct.State* nonnull %0, i64 %760, %struct.Memory* %MEMORY.2)
+  %call2_400b4e = tail call %struct.Memory* @sub_400710.memcpy_plt(%struct.State* nonnull %0, i64 %760, %struct.Memory* %call2_400b05)
   %765 = load i64, i64* %RBP.i, align 8
   %766 = add i64 %765, -40
   %767 = load i64, i64* %3, align 8
@@ -1350,7 +1349,7 @@ block_400b23:                                     ; preds = %block_.L_400b16
   store i64 %790, i64* %793, align 8
   store i64 %792, i64* %6, align 8
   store i64 %789, i64* %3, align 8
-  %call2_400b6b = tail call %struct.Memory* @sub_401050.cdft(%struct.State* nonnull %0, i64 %789, %struct.Memory* %call2_400b4e)
+  %call2_400b6b = tail call %struct.Memory* @sub_401050.cdft(%struct.State* nonnull %0, i64 %789, %struct.Memory* %call2_400b05)
   %794 = load i64, i64* %RBP.i, align 8
   %795 = add i64 %794, -100
   %796 = load i64, i64* %3, align 8
@@ -1845,7 +1844,7 @@ block_.L_400c54:                                  ; preds = %block_.L_400b77
   store i64 %1120, i64* %1123, align 8
   store i64 %1122, i64* %6, align 8
   store i64 %1119, i64* %3, align 8
-  %call2_400c6a = tail call %struct.Memory* @sub_401050.cdft(%struct.State* nonnull %0, i64 %1119, %struct.Memory* %call2_400b6b)
+  %call2_400c6a = tail call %struct.Memory* @sub_401050.cdft(%struct.State* nonnull %0, i64 %1119, %struct.Memory* %call2_400b05)
   %1124 = load i64, i64* %RBP.i, align 8
   %1125 = add i64 %1124, -8
   %1126 = load i64, i64* %3, align 8
@@ -1900,7 +1899,7 @@ block_.L_400c7d:                                  ; preds = %block_.L_400b16
   store i64 %1157, i64* %1160, align 8
   store i64 %1159, i64* %6, align 8
   store i64 %1156, i64* %3, align 8
-  %call2_400c7d = tail call %struct.Memory* @sub_400e20.get_time(%struct.State* nonnull %0, i64 %1156, %struct.Memory* %MEMORY.2)
+  %call2_400c7d = tail call %struct.Memory* @sub_400e20.get_time(%struct.State* nonnull %0, i64 %1156, %struct.Memory* %call2_400b05)
   %1161 = load i64, i64* %RBP.i, align 8
   %1162 = add i64 %1161, -72
   %1163 = load i64, i64* %3, align 8

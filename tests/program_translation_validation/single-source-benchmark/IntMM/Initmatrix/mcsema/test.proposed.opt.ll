@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400530.Rand(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400530.Rand(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @Initmatrix(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -279,7 +279,7 @@ block_40059e:                                     ; preds = %block_.L_400594
   br i1 %152, label %155, label %153
 
 ; <label>:153:                                    ; preds = %block_40059e
-  %154 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %145, %struct.Memory* %call2_40059e)
+  %154 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %145, %struct.Memory* %MEMORY.1)
   %.pre5 = load i32, i32* %EAX.i64, align 4
   %.pre6 = load i64, i64* %3, align 8
   br label %routine_idivl__ecx.exit
@@ -302,7 +302,7 @@ block_40059e:                                     ; preds = %block_.L_400594
 routine_idivl__ecx.exit:                          ; preds = %155, %153
   %160 = phi i64 [ %.pre6, %153 ], [ %145, %155 ]
   %161 = phi i32 [ %.pre5, %153 ], [ %159, %155 ]
-  %162 = phi %struct.Memory* [ %154, %153 ], [ %call2_40059e, %155 ]
+  %162 = phi %struct.Memory* [ %154, %153 ], [ %MEMORY.1, %155 ]
   %163 = sext i32 %161 to i64
   %164 = mul nsw i64 %163, 120
   %165 = trunc i64 %164 to i32

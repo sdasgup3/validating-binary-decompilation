@@ -44,11 +44,11 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400410.random_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400410.random_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401870.rsenc_204(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401870.rsenc_204(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400510.rsdec_204(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400510.rsdec_204(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -179,8 +179,7 @@ block_401b5c:                                     ; preds = %block_.L_401b4c
   br label %block_.L_401b66
 
 block_.L_401b66:                                  ; preds = %block_401b76, %block_401b5c
-  %85 = phi i64 [ %.pre7, %block_401b5c ], [ %174, %block_401b76 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_401b5c ], [ %call2_401b76, %block_401b76 ]
+  %85 = phi i64 [ %174, %block_401b76 ], [ %.pre7, %block_401b5c ]
   %86 = load i64, i64* %RBP.i, align 8
   %87 = add i64 %86, -424
   %88 = add i64 %85, 10
@@ -231,7 +230,7 @@ block_401b76:                                     ; preds = %block_.L_401b66
   store i64 %117, i64* %120, align 8
   store i64 %119, i64* %6, align 8
   store i64 %116, i64* %3, align 8
-  %call2_401b76 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %116, %struct.Memory* %MEMORY.1)
+  %call2_401b76 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %116, %struct.Memory* %MEMORY.0)
   %121 = load i64, i64* %RAX.i96, align 8
   %122 = load i64, i64* %3, align 8
   %123 = and i64 %121, 255
@@ -324,7 +323,7 @@ block_.L_401ba5:                                  ; preds = %block_.L_401b66
   store i64 %178, i64* %181, align 8
   store i64 %180, i64* %6, align 8
   store i64 %177, i64* %3, align 8
-  %call2_401bb3 = tail call %struct.Memory* @sub_401870.rsenc_204(%struct.State* nonnull %0, i64 %177, %struct.Memory* %MEMORY.1)
+  %call2_401bb3 = tail call %struct.Memory* @sub_401870.rsenc_204(%struct.State* nonnull %0, i64 %177, %struct.Memory* %MEMORY.0)
   %182 = load i64, i64* %3, align 8
   %183 = add i64 %182, -6056
   %184 = add i64 %182, 5
@@ -334,7 +333,7 @@ block_.L_401ba5:                                  ; preds = %block_.L_401b66
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %6, align 8
   store i64 %183, i64* %3, align 8
-  %call2_401bb8 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %183, %struct.Memory* %call2_401bb3)
+  %call2_401bb8 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %183, %struct.Memory* %MEMORY.0)
   %188 = load i64, i64* %RAX.i96, align 8
   %189 = load i64, i64* %3, align 8
   %190 = and i64 %188, 127
@@ -371,7 +370,7 @@ block_.L_401ba5:                                  ; preds = %block_.L_401b66
 
 block_.L_401bd3:                                  ; preds = %routine_idivq__rsi.exit, %block_.L_401ba5
   %207 = phi i64 [ %.pre8, %block_.L_401ba5 ], [ %335, %routine_idivq__rsi.exit ]
-  %MEMORY.2 = phi %struct.Memory* [ %call2_401bb8, %block_.L_401ba5 ], [ %294, %routine_idivq__rsi.exit ]
+  %MEMORY.2 = phi %struct.Memory* [ %MEMORY.0, %block_.L_401ba5 ], [ %294, %routine_idivq__rsi.exit ]
   %208 = load i64, i64* %RBP.i, align 8
   %209 = add i64 %208, -424
   %210 = add i64 %207, 6
@@ -467,7 +466,7 @@ block_401be5:                                     ; preds = %block_.L_401bd3
   store i64 %268, i64* %271, align 8
   store i64 %270, i64* %6, align 8
   store i64 %267, i64* %3, align 8
-  %call2_401bf8 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %267, %struct.Memory* %call2_401be5)
+  %call2_401bf8 = tail call %struct.Memory* @sub_400410.random_plt(%struct.State* nonnull %0, i64 %267, %struct.Memory* %MEMORY.2)
   %272 = load i64, i64* %3, align 8
   store i64 204, i64* %RSI.i74, align 8
   %273 = load i64, i64* %50, align 8
@@ -489,7 +488,7 @@ block_401be5:                                     ; preds = %block_.L_401bd3
   br i1 %286, label %289, label %287
 
 ; <label>:287:                                    ; preds = %block_401be5
-  %288 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %275, %struct.Memory* %call2_401bf8)
+  %288 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %275, %struct.Memory* %MEMORY.2)
   %.pre9 = load i64, i64* %3, align 8
   %.pre10 = load i64, i64* %RDX.i43, align 8
   br label %routine_idivq__rsi.exit
@@ -510,7 +509,7 @@ block_401be5:                                     ; preds = %block_.L_401bd3
 routine_idivq__rsi.exit:                          ; preds = %289, %287
   %292 = phi i64 [ %.pre10, %287 ], [ %291, %289 ]
   %293 = phi i64 [ %.pre9, %287 ], [ %275, %289 ]
-  %294 = phi %struct.Memory* [ %288, %287 ], [ %call2_401bf8, %289 ]
+  %294 = phi %struct.Memory* [ %288, %287 ], [ %MEMORY.2, %289 ]
   %295 = load i64, i64* %RBP.i, align 8
   %296 = add i64 %295, -429
   %297 = add i64 %293, 6

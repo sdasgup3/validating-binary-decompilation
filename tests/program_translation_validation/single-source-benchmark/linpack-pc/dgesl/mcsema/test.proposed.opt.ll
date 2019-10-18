@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_402870.daxpy(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402870.daxpy(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4029e0.ddot(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4029e0.ddot(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @dgesl(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @dgesl(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -304,8 +304,7 @@ block_401c6b:                                     ; preds = %block_401c61
   br label %block_.L_401c72
 
 block_.L_401c72:                                  ; preds = %block_.L_401cd6, %block_401c6b
-  %166 = phi i64 [ %.pre, %block_401c6b ], [ %520, %block_.L_401cd6 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_401c6b ], [ %call2_401d29, %block_.L_401cd6 ]
+  %166 = phi i64 [ %520, %block_.L_401cd6 ], [ %.pre, %block_401c6b ]
   %167 = load i64, i64* %RBP.i, align 8
   %168 = add i64 %167, -44
   %169 = add i64 %166, 3
@@ -765,7 +764,7 @@ block_.L_401cd6:                                  ; preds = %block_401caa, %bloc
   store i64 %485, i64* %488, align 8
   store i64 %487, i64* %6, align 8
   store i64 %484, i64* %3, align 8
-  %call2_401d29 = tail call %struct.Memory* @sub_402870.daxpy(%struct.State* nonnull %0, i64 %484, %struct.Memory* %MEMORY.0)
+  %call2_401d29 = tail call %struct.Memory* @sub_402870.daxpy(%struct.State* nonnull %0, i64 %484, %struct.Memory* %2)
   %489 = load i64, i64* %RBP.i, align 8
   %490 = add i64 %489, -44
   %491 = load i64, i64* %3, align 8
@@ -832,7 +831,6 @@ block_.L_401d41:                                  ; preds = %block_401c61.block_
   %RAX.i423.pre-phi = phi i64* [ %.pre26, %block_401c61.block_.L_401d41_crit_edge ], [ %RAX.i578, %block_.L_401d3c ]
   %522 = phi i64 [ %151, %block_401c61.block_.L_401d41_crit_edge ], [ %521, %block_.L_401d3c ]
   %523 = phi i64 [ %108, %block_401c61.block_.L_401d41_crit_edge ], [ %167, %block_.L_401d3c ]
-  %MEMORY.2 = phi %struct.Memory* [ %2, %block_401c61.block_.L_401d41_crit_edge ], [ %MEMORY.0, %block_.L_401d3c ]
   %524 = add i64 %523, -48
   %525 = add i64 %522, 7
   store i64 %525, i64* %3, align 8
@@ -850,8 +848,7 @@ block_.L_401d41:                                  ; preds = %block_401c61.block_
   br label %block_.L_401d48
 
 block_.L_401d48:                                  ; preds = %block_401d54, %block_.L_401d41
-  %535 = phi i64 [ %.pre20, %block_.L_401d41 ], [ %845, %block_401d54 ]
-  %MEMORY.3 = phi %struct.Memory* [ %MEMORY.2, %block_.L_401d41 ], [ %call2_401de0, %block_401d54 ]
+  %535 = phi i64 [ %845, %block_401d54 ], [ %.pre20, %block_.L_401d41 ]
   %536 = load i64, i64* %RBP.i, align 8
   %537 = add i64 %536, -48
   %538 = add i64 %535, 3
@@ -1252,7 +1249,7 @@ block_401d54:                                     ; preds = %block_.L_401d48
   store i64 %810, i64* %813, align 8
   store i64 %812, i64* %6, align 8
   store i64 %809, i64* %3, align 8
-  %call2_401de0 = tail call %struct.Memory* @sub_402870.daxpy(%struct.State* nonnull %0, i64 %809, %struct.Memory* %MEMORY.3)
+  %call2_401de0 = tail call %struct.Memory* @sub_402870.daxpy(%struct.State* nonnull %0, i64 %809, %struct.Memory* %2)
   %814 = load i64, i64* %RBP.i, align 8
   %815 = add i64 %814, -48
   %816 = load i64, i64* %3, align 8
@@ -1331,8 +1328,7 @@ block_.L_401df8:                                  ; preds = %entry
   br label %block_.L_401dff
 
 block_.L_401dff:                                  ; preds = %block_401e0b, %block_.L_401df8
-  %866 = phi i64 [ %.pre21, %block_.L_401df8 ], [ %1125, %block_401e0b ]
-  %MEMORY.4 = phi %struct.Memory* [ %2, %block_.L_401df8 ], [ %call2_401e3f, %block_401e0b ]
+  %866 = phi i64 [ %1125, %block_401e0b ], [ %.pre21, %block_.L_401df8 ]
   %867 = load i64, i64* %RBP.i, align 8
   %868 = add i64 %867, -44
   %869 = add i64 %866, 3
@@ -1481,7 +1477,7 @@ block_401e0b:                                     ; preds = %block_.L_401dff
   store i64 %968, i64* %971, align 8
   store i64 %970, i64* %6, align 8
   store i64 %967, i64* %3, align 8
-  %call2_401e3f = tail call %struct.Memory* @sub_4029e0.ddot(%struct.State* nonnull %0, i64 %967, %struct.Memory* %MEMORY.4)
+  %call2_401e3f = tail call %struct.Memory* @sub_4029e0.ddot(%struct.State* nonnull %0, i64 %967, %struct.Memory* %2)
   %972 = load i64, i64* %RBP.i, align 8
   %973 = add i64 %972, -40
   %974 = load i64, i64* %3, align 8
@@ -1771,8 +1767,7 @@ block_401e96:                                     ; preds = %block_.L_401e8c
   br label %block_.L_401e9d
 
 block_.L_401e9d:                                  ; preds = %block_.L_401f8a, %block_401e96
-  %1180 = phi i64 [ %.pre22, %block_401e96 ], [ %1623, %block_.L_401f8a ]
-  %MEMORY.5 = phi %struct.Memory* [ %MEMORY.4, %block_401e96 ], [ %call2_401f17, %block_.L_401f8a ]
+  %1180 = phi i64 [ %1623, %block_.L_401f8a ], [ %.pre22, %block_401e96 ]
   %1181 = load i64, i64* %RBP.i, align 8
   %1182 = add i64 %1181, -48
   %1183 = add i64 %1180, 3
@@ -2122,7 +2117,7 @@ block_401ea9:                                     ; preds = %block_.L_401e9d
   store i64 %1434, i64* %1437, align 8
   store i64 %1436, i64* %6, align 8
   store i64 %1433, i64* %3, align 8
-  %call2_401f17 = tail call %struct.Memory* @sub_4029e0.ddot(%struct.State* nonnull %0, i64 %1433, %struct.Memory* %MEMORY.5)
+  %call2_401f17 = tail call %struct.Memory* @sub_4029e0.ddot(%struct.State* nonnull %0, i64 %1433, %struct.Memory* %2)
   %1438 = load i64, i64* %RBP.i, align 8
   %1439 = add i64 %1438, -84
   %1440 = load i64, i64* %3, align 8
@@ -2406,14 +2401,12 @@ block_.L_401fa2.loopexit:                         ; preds = %block_.L_401e9d
 
 block_.L_401fa2:                                  ; preds = %block_.L_401fa2.loopexit, %block_.L_401e8c
   %1624 = phi i64 [ %1153, %block_.L_401e8c ], [ %1218, %block_.L_401fa2.loopexit ]
-  %MEMORY.7 = phi %struct.Memory* [ %MEMORY.4, %block_.L_401e8c ], [ %MEMORY.5, %block_.L_401fa2.loopexit ]
   %1625 = add i64 %1624, 5
   store i64 %1625, i64* %3, align 8
   br label %block_.L_401fa7
 
 block_.L_401fa7:                                  ; preds = %block_.L_401fa2, %block_.L_401df3
   %storemerge = phi i64 [ %846, %block_.L_401df3 ], [ %1625, %block_.L_401fa2 ]
-  %MEMORY.8 = phi %struct.Memory* [ %MEMORY.3, %block_.L_401df3 ], [ %MEMORY.7, %block_.L_401fa2 ]
   %1626 = load i64, i64* %6, align 8
   %1627 = add i64 %1626, 96
   store i64 %1627, i64* %6, align 8
@@ -2458,7 +2451,7 @@ block_.L_401fa7:                                  ; preds = %block_.L_401fa2, %b
   store i64 %1655, i64* %3, align 8
   %1656 = add i64 %1626, 112
   store i64 %1656, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.8
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

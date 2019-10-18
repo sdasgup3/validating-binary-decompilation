@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_402890.cft1st(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402890.cft1st(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403320.cftmdl(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_403320.cftmdl(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @cftfsub(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @cftfsub(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -218,8 +218,7 @@ block_401884:                                     ; preds = %entry
   br label %block_.L_40189b
 
 block_.L_40189b:                                  ; preds = %block_4018aa, %block_401884
-  %114 = phi i64 [ %.pre, %block_401884 ], [ %209, %block_4018aa ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_40188f, %block_401884 ], [ %call2_4018b8, %block_4018aa ]
+  %114 = phi i64 [ %209, %block_4018aa ], [ %.pre, %block_401884 ]
   %115 = load i64, i64* %RBP.i, align 8
   %116 = add i64 %115, -44
   %117 = add i64 %114, 3
@@ -322,7 +321,7 @@ block_4018aa:                                     ; preds = %block_.L_40189b
   store i64 %182, i64* %185, align 8
   store i64 %184, i64* %6, align 8
   store i64 %181, i64* %3, align 8
-  %call2_4018b8 = tail call %struct.Memory* @sub_403320.cftmdl(%struct.State* nonnull %0, i64 %181, %struct.Memory* %MEMORY.0)
+  %call2_4018b8 = tail call %struct.Memory* @sub_403320.cftmdl(%struct.State* nonnull %0, i64 %181, %struct.Memory* %call2_40188f)
   %186 = load i64, i64* %RBP.i, align 8
   %187 = add i64 %186, -44
   %188 = load i64, i64* %3, align 8
@@ -370,7 +369,7 @@ block_.L_4018d0:                                  ; preds = %entry.block_.L_4018
   %RAX.i597.pre-phi = phi i64* [ %.pre12, %entry.block_.L_4018d0_crit_edge ], [ %RAX.i626, %block_.L_4018cb ]
   %211 = phi i64 [ %92, %entry.block_.L_4018d0_crit_edge ], [ %210, %block_.L_4018cb ]
   %212 = phi i64 [ %62, %entry.block_.L_4018d0_crit_edge ], [ %115, %block_.L_4018cb ]
-  %MEMORY.1 = phi %struct.Memory* [ %2, %entry.block_.L_4018d0_crit_edge ], [ %MEMORY.0, %block_.L_4018cb ]
+  %MEMORY.1 = phi %struct.Memory* [ %2, %entry.block_.L_4018d0_crit_edge ], [ %call2_40188f, %block_.L_4018cb ]
   %213 = add i64 %212, -44
   %214 = add i64 %211, 3
   store i64 %214, i64* %3, align 8

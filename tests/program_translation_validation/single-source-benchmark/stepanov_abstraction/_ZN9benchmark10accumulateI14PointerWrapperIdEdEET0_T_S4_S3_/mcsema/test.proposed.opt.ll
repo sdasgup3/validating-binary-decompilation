@@ -42,14 +42,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_404700._ZneIdEbRK14PointerWrapperIT_ES4_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_404700._ZneIdEbRK14PointerWrapperIT_ES4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4046c0._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4046c0._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -136,8 +136,7 @@ entry:
   br label %block_.L_406495
 
 block_.L_406495:                                  ; preds = %block_.L_4064af, %entry
-  %63 = phi i64 [ %.pre, %entry ], [ %159, %block_.L_4064af ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_4064cc, %block_.L_4064af ]
+  %63 = phi i64 [ %159, %block_.L_4064af ], [ %.pre, %entry ]
   %64 = load i64, i64* %RBP.i, align 8
   %65 = add i64 %64, -8
   store i64 %65, i64* %RDI.i49, align 8
@@ -151,7 +150,7 @@ block_.L_406495:                                  ; preds = %block_.L_4064af, %e
   store i64 %68, i64* %71, align 8
   store i64 %70, i64* %6, align 8
   store i64 %67, i64* %3, align 8
-  %call2_40649d = tail call %struct.Memory* @sub_404700._ZneIdEbRK14PointerWrapperIT_ES4_(%struct.State* nonnull %0, i64 %67, %struct.Memory* %MEMORY.0)
+  %call2_40649d = tail call %struct.Memory* @sub_404700._ZneIdEbRK14PointerWrapperIT_ES4_(%struct.State* nonnull %0, i64 %67, %struct.Memory* %2)
   %72 = load i8, i8* %AL.i, align 1
   %73 = load i64, i64* %3, align 8
   %74 = and i8 %72, 1
@@ -226,7 +225,7 @@ block_4064aa:                                     ; preds = %block_.L_406495
   store i64 %117, i64* %3, align 8
   %118 = add i64 %87, 64
   store i64 %118, i64* %6, align 8
-  ret %struct.Memory* %call2_40649d
+  ret %struct.Memory* %2
 
 block_.L_4064af:                                  ; preds = %block_.L_406495
   %119 = add i64 %82, -8
@@ -259,7 +258,7 @@ block_.L_4064af:                                  ; preds = %block_.L_406495
   store i64 %129, i64* %132, align 8
   store i64 %131, i64* %6, align 8
   store i64 %128, i64* %3, align 8
-  %call2_4064bf = tail call %struct.Memory* @sub_4046c0._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* nonnull %0, i64 %128, %struct.Memory* %call2_40649d)
+  %call2_4064bf = tail call %struct.Memory* @sub_4046c0._ZppIdE14PointerWrapperIT_ERS2_i(%struct.State* nonnull %0, i64 %128, %struct.Memory* %2)
   %133 = load i64, i64* %RBP.i, align 8
   %134 = add i64 %133, -32
   %135 = load i64, i64* %3, align 8
@@ -278,7 +277,7 @@ block_.L_4064af:                                  ; preds = %block_.L_406495
   store i64 %141, i64* %144, align 8
   store i64 %143, i64* %6, align 8
   store i64 %140, i64* %3, align 8
-  %call2_4064cc = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %140, %struct.Memory* %call2_4064bf)
+  %call2_4064cc = tail call %struct.Memory* @sub_404730._ZNK14PointerWrapperIdEdeEv(%struct.State* nonnull %0, i64 %140, %struct.Memory* %2)
   %145 = load i64, i64* %RBP.i, align 8
   %146 = add i64 %145, -40
   %147 = load i64, i64* %3, align 8

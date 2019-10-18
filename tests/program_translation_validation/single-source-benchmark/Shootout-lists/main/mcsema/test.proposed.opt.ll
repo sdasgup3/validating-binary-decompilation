@@ -42,14 +42,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400570.atoi_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400570.atoi_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400d80.test_lists(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400d80.test_lists(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400550.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400550.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -242,8 +242,7 @@ block_.L_4010f2:                                  ; preds = %block_.L_4010e5, %b
   br label %block_.L_4010ff
 
 block_.L_4010ff:                                  ; preds = %block_401113, %block_.L_4010f2
-  %125 = phi i64 [ %.pre, %block_.L_4010f2 ], [ %159, %block_401113 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_.L_4010f2 ], [ %call2_401113, %block_401113 ]
+  %125 = phi i64 [ %159, %block_401113 ], [ %.pre, %block_.L_4010f2 ]
   %126 = load i64, i64* %RBP.i, align 8
   %127 = add i64 %126, -20
   %128 = add i64 %125, 3
@@ -289,7 +288,7 @@ block_401113:                                     ; preds = %block_.L_4010ff
   store i64 %148, i64* %151, align 8
   store i64 %150, i64* %6, align 8
   store i64 %147, i64* %3, align 8
-  %call2_401113 = tail call %struct.Memory* @sub_400d80.test_lists(%struct.State* nonnull %0, i64 %147, %struct.Memory* %MEMORY.1)
+  %call2_401113 = tail call %struct.Memory* @sub_400d80.test_lists(%struct.State* nonnull %0, i64 %147, %struct.Memory* %MEMORY.0)
   %152 = load i64, i64* %RBP.i, align 8
   %153 = add i64 %152, -24
   %154 = load i32, i32* %EAX.i36.pre-phi, align 4
@@ -324,7 +323,7 @@ block_.L_401120:                                  ; preds = %block_.L_4010ff
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %6, align 8
   store i64 %166, i64* %3, align 8
-  %call2_40112f = tail call %struct.Memory* @sub_400550.printf_plt(%struct.State* nonnull %0, i64 %166, %struct.Memory* %MEMORY.1)
+  %call2_40112f = tail call %struct.Memory* @sub_400550.printf_plt(%struct.State* nonnull %0, i64 %166, %struct.Memory* %MEMORY.0)
   %ESI.i9 = bitcast %union.anon* %49 to i32*
   %171 = load i64, i64* %3, align 8
   store i64 0, i64* %RSI.i62, align 8

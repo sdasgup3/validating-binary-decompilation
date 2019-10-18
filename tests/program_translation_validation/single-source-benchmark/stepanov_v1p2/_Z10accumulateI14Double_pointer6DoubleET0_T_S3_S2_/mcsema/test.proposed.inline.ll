@@ -152,13 +152,13 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_402a70._ZneI14Double_pointerEiRKT_S3_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_402a70._ZneI14Double_pointerEiRKT_S3_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_402ab0._ZN14Double_pointerppEi(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_402ab0._ZN14Double_pointerppEi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_401df0._ZNK14Double_pointerdeEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_401df0._ZNK14Double_pointerdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @"sub_401150._ZN3$_0clERK6DoubleS2_"(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @"sub_401150._ZN3$_0clERK6DoubleS2_"(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z10accumulateI14Double_pointer6DoubleET0_T_S3_S2_(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

@@ -42,16 +42,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402c30._Z10accumulateIPddET0_T_S2_S1_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402c30._Z10accumulateIPddET0_T_S2_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z4testIPddEvT_S1_T0_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z4testIPddEvT_S1_T0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -149,8 +149,7 @@ entry:
   br label %block_.L_401481
 
 block_.L_401481:                                  ; preds = %block_401491, %entry
-  %69 = phi i64 [ %.pre, %entry ], [ %158, %block_401491 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_401475, %entry ], [ %call2_4014a3, %block_401491 ]
+  %69 = phi i64 [ %158, %block_401491 ], [ %.pre, %entry ]
   %70 = load i64, i64* %RBP.i, align 8
   %71 = add i64 %70, -28
   %72 = add i64 %69, 3
@@ -225,7 +224,7 @@ block_401491:                                     ; preds = %block_.L_401481
   store i64 %117, i64* %120, align 8
   store i64 %119, i64* %6, align 8
   store i64 %116, i64* %3, align 8
-  %call2_40149e = tail call %struct.Memory* @sub_402c30._Z10accumulateIPddET0_T_S2_S1_(%struct.State* nonnull %0, i64 %116, %struct.Memory* %MEMORY.0)
+  %call2_40149e = tail call %struct.Memory* @sub_402c30._Z10accumulateIPddET0_T_S2_S1_(%struct.State* nonnull %0, i64 %116, %struct.Memory* %call2_401475)
   %121 = load i64, i64* %3, align 8
   %122 = add i64 %121, -339
   %123 = add i64 %121, 5
@@ -235,7 +234,7 @@ block_401491:                                     ; preds = %block_.L_401481
   store i64 %123, i64* %126, align 8
   store i64 %125, i64* %6, align 8
   store i64 %122, i64* %3, align 8
-  %call2_4014a3 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %122, %struct.Memory* %call2_40149e)
+  %call2_4014a3 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %122, %struct.Memory* %call2_401475)
   %127 = load i64, i64* %RBP.i, align 8
   %128 = add i64 %127, -28
   %129 = load i64, i64* %3, align 8
@@ -290,7 +289,7 @@ block_.L_4014b6:                                  ; preds = %block_.L_401481
   store i64 %160, i64* %163, align 8
   store i64 %162, i64* %6, align 8
   store i64 %159, i64* %3, align 8
-  %call2_4014b6 = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %159, %struct.Memory* %MEMORY.0)
+  %call2_4014b6 = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %159, %struct.Memory* %call2_401475)
   %164 = load i64, i64* %3, align 8
   %165 = load i32, i32* inttoptr (i64 6312080 to i32*), align 16
   %166 = zext i32 %165 to i64

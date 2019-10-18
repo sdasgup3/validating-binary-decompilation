@@ -42,18 +42,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_413790._ZN22custom_divide_variableIaE8do_shiftEaa(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_413790._ZN22custom_divide_variableIaE8do_shiftEaa(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4137c0._Z26check_shifted_variable_sumIa22custom_divide_variableIaEEvT_S2_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4137c0._Z26check_shifted_variable_sumIa22custom_divide_variableIaEEvT_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z14test_variable1Ia22custom_divide_variableIaEEvPT_iS2_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z14test_variable1Ia22custom_divide_variableIaEEvPT_iS2_PKc(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -166,8 +166,7 @@ entry:
   br label %block_.L_403734
 
 block_.L_403734:                                  ; preds = %block_.L_40378f, %entry
-  %77 = phi i64 [ %.pre, %entry ], [ %303, %block_.L_40378f ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_403728, %entry ], [ %call2_403799, %block_.L_40378f ]
+  %77 = phi i64 [ %303, %block_.L_40378f ], [ %.pre, %entry ]
   %78 = load i64, i64* %RBP.i, align 8
   %79 = add i64 %78, -28
   %80 = add i64 %77, 3
@@ -231,8 +230,7 @@ block_403744:                                     ; preds = %block_.L_403734
   br label %block_.L_40374f
 
 block_.L_40374f:                                  ; preds = %block_40375b, %block_403744
-  %120 = phi i64 [ %.pre6, %block_403744 ], [ %254, %block_40375b ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_403744 ], [ %call2_40376d, %block_40375b ]
+  %120 = phi i64 [ %254, %block_40375b ], [ %.pre6, %block_403744 ]
   %121 = load i64, i64* %RBP.i, align 8
   %122 = add i64 %121, -36
   %123 = add i64 %120, 3
@@ -320,7 +318,7 @@ block_40375b:                                     ; preds = %block_.L_40374f
   store i64 %178, i64* %181, align 8
   store i64 %180, i64* %6, align 8
   store i64 %177, i64* %3, align 8
-  %call2_40376d = tail call %struct.Memory* @sub_413790._ZN22custom_divide_variableIaE8do_shiftEaa(%struct.State* nonnull %0, i64 %177, %struct.Memory* %MEMORY.1)
+  %call2_40376d = tail call %struct.Memory* @sub_413790._ZN22custom_divide_variableIaE8do_shiftEaa(%struct.State* nonnull %0, i64 %177, %struct.Memory* %call2_403728)
   %182 = load i8, i8* %AL.i94, align 1
   %183 = load i64, i64* %3, align 8
   %184 = sext i8 %182 to i64
@@ -445,7 +443,7 @@ block_.L_40378f:                                  ; preds = %block_.L_40374f
   store i64 %268, i64* %271, align 8
   store i64 %270, i64* %6, align 8
   store i64 %267, i64* %3, align 8
-  %call2_403799 = tail call %struct.Memory* @sub_4137c0._Z26check_shifted_variable_sumIa22custom_divide_variableIaEEvT_S2_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %MEMORY.1)
+  %call2_403799 = tail call %struct.Memory* @sub_4137c0._Z26check_shifted_variable_sumIa22custom_divide_variableIaEEvT_S2_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %call2_403728)
   %272 = load i64, i64* %RBP.i, align 8
   %273 = add i64 %272, -28
   %274 = load i64, i64* %3, align 8
@@ -500,7 +498,7 @@ block_.L_4037ac:                                  ; preds = %block_.L_403734
   store i64 %305, i64* %308, align 8
   store i64 %307, i64* %6, align 8
   store i64 %304, i64* %3, align 8
-  %call2_4037ac = tail call %struct.Memory* @sub_400e70._Z5timerv(%struct.State* nonnull %0, i64 %304, %struct.Memory* %MEMORY.0)
+  %call2_4037ac = tail call %struct.Memory* @sub_400e70._Z5timerv(%struct.State* nonnull %0, i64 %304, %struct.Memory* %call2_403728)
   %309 = load i64, i64* %RBP.i, align 8
   %310 = add i64 %309, -24
   %311 = load i64, i64* %3, align 8

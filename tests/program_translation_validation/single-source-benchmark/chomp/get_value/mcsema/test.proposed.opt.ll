@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4007e0.equal_data(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.equal_data(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @get_value(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @get_value(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -121,8 +121,7 @@ entry:
   br label %block_.L_4009a8
 
 block_.L_4009a8:                                  ; preds = %block_.L_4009d0, %entry
-  %52 = phi i64 [ %.pre, %entry ], [ %134, %block_.L_4009d0 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_4009b4, %block_.L_4009d0 ]
+  %52 = phi i64 [ %134, %block_.L_4009d0 ], [ %.pre, %entry ]
   %53 = load i64, i64* %RBP.i, align 8
   %54 = add i64 %53, -16
   %55 = add i64 %52, 4
@@ -150,7 +149,7 @@ block_.L_4009a8:                                  ; preds = %block_.L_4009d0, %e
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %6, align 8
   store i64 %66, i64* %3, align 8
-  %call2_4009b4 = tail call %struct.Memory* @sub_4007e0.equal_data(%struct.State* nonnull %0, i64 %66, %struct.Memory* %MEMORY.0)
+  %call2_4009b4 = tail call %struct.Memory* @sub_4007e0.equal_data(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
   %71 = load i32, i32* %EAX.i, align 4
   %72 = load i64, i64* %3, align 8
   %73 = icmp ne i32 %71, 0
@@ -234,7 +233,7 @@ block_4009cb:                                     ; preds = %block_.L_4009a8
   store i64 %123, i64* %3, align 8
   %124 = add i64 %93, 32
   store i64 %124, i64* %6, align 8
-  ret %struct.Memory* %call2_4009b4
+  ret %struct.Memory* %2
 
 block_.L_4009d0:                                  ; preds = %block_.L_4009a8
   %125 = add i64 %83, 4

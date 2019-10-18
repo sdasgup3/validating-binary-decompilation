@@ -142,11 +142,11 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_4043e0._ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4043e0._ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_404460._ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_404460._ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_4045a0._Z13verify_sortedI14PointerWrapperIdEEvT_S2_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4045a0._Z13verify_sortedI14PointerWrapperIdEEvT_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z14test_heap_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

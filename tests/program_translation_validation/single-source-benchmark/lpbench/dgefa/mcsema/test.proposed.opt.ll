@@ -44,11 +44,11 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400860.idamax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400860.idamax(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009f0.dscal(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4009f0.dscal(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400ab0.daxpy(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400ab0.daxpy(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @dgefa(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -432,7 +432,7 @@ block_400c34:                                     ; preds = %block_.L_400c27
   br i1 %271, label %272, label %280
 
 ; <label>:272:                                    ; preds = %264
-  %273 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %261, %struct.Memory* %call2_400c63)
+  %273 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %261, %struct.Memory* %MEMORY.0)
   %.pre8 = load i64, i64* %3, align 8
   br label %routine_ucomisd__xmm0___xmm1.exit
 
@@ -465,7 +465,7 @@ block_400c34:                                     ; preds = %block_.L_400c27
 
 routine_ucomisd__xmm0___xmm1.exit:                ; preds = %284, %272
   %285 = phi i64 [ %.pre8, %272 ], [ %261, %284 ]
-  %286 = phi %struct.Memory* [ %273, %272 ], [ %call2_400c63, %284 ]
+  %286 = phi %struct.Memory* [ %273, %272 ], [ %MEMORY.0, %284 ]
   %287 = add i64 %285, 17
   %288 = add i64 %285, 6
   %289 = load i8, i8* %29, align 1
@@ -762,8 +762,7 @@ block_.L_400ced:                                  ; preds = %block_400caf, %bloc
   br label %block_.L_400d2d
 
 block_.L_400d2d:                                  ; preds = %block_.L_400d94, %block_.L_400ced
-  %477 = phi i64 [ %.pre11, %block_.L_400ced ], [ %703, %block_.L_400d94 ]
-  %MEMORY.3 = phi %struct.Memory* [ %call2_400d22, %block_.L_400ced ], [ %call2_400dbe, %block_.L_400d94 ]
+  %477 = phi i64 [ %703, %block_.L_400d94 ], [ %.pre11, %block_.L_400ced ]
   %478 = load i64, i64* %RBP.i, align 8
   %479 = add i64 %478, -32
   %480 = add i64 %477, 7
@@ -1055,7 +1054,7 @@ block_.L_400d94:                                  ; preds = %block_400d68, %bloc
   store i64 %668, i64* %671, align 8
   store i64 %670, i64* %6, align 8
   store i64 %667, i64* %3, align 8
-  %call2_400dbe = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %667, %struct.Memory* %MEMORY.3)
+  %call2_400dbe = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %667, %struct.Memory* %call2_400d22)
   %672 = load i64, i64* %RBP.i, align 8
   %673 = add i64 %672, -32
   %674 = load i64, i64* %3, align 8
@@ -1109,7 +1108,7 @@ block_.L_400dd1:                                  ; preds = %block_.L_400d2d
 block_.L_400dd6:                                  ; preds = %block_.L_400dd1, %block_400c9e
   %705 = phi i64 [ %.pre12, %block_400c9e ], [ %478, %block_.L_400dd1 ]
   %storemerge = phi i64 [ %295, %block_400c9e ], [ %704, %block_.L_400dd1 ]
-  %MEMORY.5 = phi %struct.Memory* [ %286, %block_400c9e ], [ %MEMORY.3, %block_.L_400dd1 ]
+  %MEMORY.5 = phi %struct.Memory* [ %286, %block_400c9e ], [ %call2_400d22, %block_.L_400dd1 ]
   %706 = add i64 %705, -28
   %707 = add i64 %storemerge, 8
   store i64 %707, i64* %3, align 8
