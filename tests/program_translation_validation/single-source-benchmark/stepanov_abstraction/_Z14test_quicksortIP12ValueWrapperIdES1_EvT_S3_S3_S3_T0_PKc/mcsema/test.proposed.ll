@@ -115,9 +115,9 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_404000._ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_405310._ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_404150._Z13verify_sortedIP12ValueWrapperIdEEvT_S3_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_404000._ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_405310._ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_404150._Z13verify_sortedIP12ValueWrapperIdEEvT_S3_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 

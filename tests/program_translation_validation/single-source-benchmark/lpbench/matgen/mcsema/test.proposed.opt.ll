@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4007a0.random_double(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007a0.random_double(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @matgen(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @matgen(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -124,8 +124,7 @@ entry:
   br label %block_.L_400697
 
 block_.L_400697:                                  ; preds = %block_.L_4006e0, %entry
-  %55 = phi i64 [ %.pre, %entry ], [ %212, %block_.L_4006e0 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %MEMORY.1, %block_.L_4006e0 ]
+  %55 = phi i64 [ %212, %block_.L_4006e0 ], [ %.pre, %entry ]
   %56 = load i64, i64* %RBP.i, align 8
   %57 = add i64 %56, -20
   %58 = add i64 %55, 7
@@ -177,8 +176,7 @@ block_4006a4:                                     ; preds = %block_.L_400697
   br label %block_.L_4006ab
 
 block_.L_4006ab:                                  ; preds = %block_4006b8, %block_4006a4
-  %89 = phi i64 [ %.pre18, %block_4006a4 ], [ %182, %block_4006b8 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_4006a4 ], [ %call2_4006b8, %block_4006b8 ]
+  %89 = phi i64 [ %182, %block_4006b8 ], [ %.pre18, %block_4006a4 ]
   %90 = load i64, i64* %RBP.i, align 8
   %91 = add i64 %90, -24
   %92 = add i64 %89, 7
@@ -229,7 +227,7 @@ block_4006b8:                                     ; preds = %block_.L_4006ab
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %6, align 8
   store i64 %120, i64* %3, align 8
-  %call2_4006b8 = tail call %struct.Memory* @sub_4007a0.random_double(%struct.State* nonnull %0, i64 %120, %struct.Memory* %MEMORY.1)
+  %call2_4006b8 = tail call %struct.Memory* @sub_4007a0.random_double(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %125 = load i64, i64* %RBP.i, align 8
   %126 = add i64 %125, -8
   %127 = load i64, i64* %3, align 8
@@ -773,7 +771,7 @@ block_.L_400795:                                  ; preds = %block_.L_40072c
   store i64 %492, i64* %3, align 8
   %493 = add i64 %463, 48
   store i64 %493, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

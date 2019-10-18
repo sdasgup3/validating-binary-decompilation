@@ -42,18 +42,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400640.srand(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400640.srand(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007e0.createRandomArray(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.createRandomArray(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400860.findDuplicate(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400860.findDuplicate(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004d0.free_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004d0.free_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004e0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004e0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -135,8 +135,7 @@ entry:
   br label %block_.L_4008e0
 
 block_.L_4008e0:                                  ; preds = %block_.L_40092b, %entry
-  %54 = phi i64 [ %.pre, %entry ], [ %235, %block_.L_40092b ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_4008d4, %entry ], [ %call2_400946, %block_.L_40092b ]
+  %54 = phi i64 [ %235, %block_.L_40092b ], [ %.pre, %entry ]
   %55 = load i64, i64* %RBP.i, align 8
   %56 = add i64 %55, -8
   %57 = add i64 %54, 4
@@ -187,7 +186,7 @@ block_4008ea:                                     ; preds = %block_.L_4008e0
   store i64 %85, i64* %88, align 8
   store i64 %87, i64* %6, align 8
   store i64 %84, i64* %3, align 8
-  %call2_4008ef = tail call %struct.Memory* @sub_4007e0.createRandomArray(%struct.State* nonnull %0, i64 %84, %struct.Memory* %MEMORY.0)
+  %call2_4008ef = tail call %struct.Memory* @sub_4007e0.createRandomArray(%struct.State* nonnull %0, i64 %84, %struct.Memory* %call2_4008d4)
   %89 = load i64, i64* %RBP.i, align 8
   %90 = add i64 %89, -24
   %91 = load i64, i64* %RAX.i54, align 8
@@ -207,8 +206,7 @@ block_4008ea:                                     ; preds = %block_.L_4008e0
   br label %block_.L_4008ff
 
 block_.L_4008ff:                                  ; preds = %block_40090c, %block_4008ea
-  %100 = phi i64 [ %.pre4, %block_4008ea ], [ %176, %block_40090c ]
-  %MEMORY.1 = phi %struct.Memory* [ %call2_4008ef, %block_4008ea ], [ %call2_400915, %block_40090c ]
+  %100 = phi i64 [ %176, %block_40090c ], [ %.pre4, %block_4008ea ]
   %101 = load i64, i64* %RBP.i, align 8
   %102 = add i64 %101, -12
   %103 = add i64 %100, 7
@@ -265,7 +263,7 @@ block_40090c:                                     ; preds = %block_.L_4008ff
   store i64 %135, i64* %138, align 8
   store i64 %137, i64* %6, align 8
   store i64 %134, i64* %3, align 8
-  %call2_400915 = tail call %struct.Memory* @sub_400860.findDuplicate(%struct.State* nonnull %0, i64 %134, %struct.Memory* %MEMORY.1)
+  %call2_400915 = tail call %struct.Memory* @sub_400860.findDuplicate(%struct.State* nonnull %0, i64 %134, %struct.Memory* %call2_4008d4)
   %139 = load i64, i64* %RBP.i, align 8
   %140 = add i64 %139, -16
   %141 = load i32, i32* %EAX.i40, align 4
@@ -335,7 +333,7 @@ block_.L_40092b:                                  ; preds = %block_.L_4008ff
   store i64 %182, i64* %185, align 8
   store i64 %184, i64* %6, align 8
   store i64 %181, i64* %3, align 8
-  %call2_400932 = tail call %struct.Memory* @sub_4004d0.free_plt(%struct.State* nonnull %0, i64 %181, %struct.Memory* %MEMORY.1)
+  %call2_400932 = tail call %struct.Memory* @sub_4004d0.free_plt(%struct.State* nonnull %0, i64 %181, %struct.Memory* %call2_4008d4)
   %186 = load i64, i64* %3, align 8
   store i64 4196896, i64* %RDI.i68, align 8
   %187 = load i64, i64* %RBP.i, align 8
@@ -355,7 +353,7 @@ block_.L_40092b:                                  ; preds = %block_.L_4008ff
   store i64 %194, i64* %197, align 8
   store i64 %196, i64* %6, align 8
   store i64 %193, i64* %3, align 8
-  %call2_400946 = tail call %struct.Memory* @sub_4004e0.printf_plt(%struct.State* nonnull %0, i64 %193, %struct.Memory* %call2_400932)
+  %call2_400946 = tail call %struct.Memory* @sub_4004e0.printf_plt(%struct.State* nonnull %0, i64 %193, %struct.Memory* %call2_4008d4)
   %198 = load i64, i64* %RBP.i, align 8
   %199 = add i64 %198, -28
   %200 = load i32, i32* %EAX.i40, align 4
@@ -455,7 +453,7 @@ block_.L_40095c:                                  ; preds = %block_.L_4008e0
   store i64 %265, i64* %3, align 8
   %266 = add i64 %236, 48
   store i64 %266, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %call2_4008d4
 }
 
 ; Function Attrs: norecurse nounwind

@@ -42,14 +42,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4005a0.Initialize(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005a0.Initialize(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005e0.Permute(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005e0.Permute(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400410.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400410.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @Perm(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @Perm(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -113,8 +113,7 @@ entry:
   br label %block_.L_4006ca
 
 block_.L_4006ca:                                  ; preds = %block_4006d4, %entry
-  %44 = phi i64 [ %.pre, %entry ], [ %116, %block_4006d4 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_4006de, %block_4006d4 ]
+  %44 = phi i64 [ %116, %block_4006d4 ], [ %.pre, %entry ]
   %45 = load i64, i64* %RBP.i, align 8
   %46 = add i64 %45, -4
   %47 = add i64 %44, 4
@@ -165,7 +164,7 @@ block_4006d4:                                     ; preds = %block_.L_4006ca
   store i64 %75, i64* %78, align 8
   store i64 %77, i64* %6, align 8
   store i64 %74, i64* %3, align 8
-  %call2_4006d4 = tail call %struct.Memory* @sub_4005a0.Initialize(%struct.State* nonnull %0, i64 %74, %struct.Memory* %MEMORY.0)
+  %call2_4006d4 = tail call %struct.Memory* @sub_4005a0.Initialize(%struct.State* nonnull %0, i64 %74, %struct.Memory* %2)
   %79 = load i64, i64* %3, align 8
   store i64 7, i64* %RDI.i31, align 8
   %80 = add i64 %79, -249
@@ -176,7 +175,7 @@ block_4006d4:                                     ; preds = %block_.L_4006ca
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %6, align 8
   store i64 %80, i64* %3, align 8
-  %call2_4006de = tail call %struct.Memory* @sub_4005e0.Permute(%struct.State* nonnull %0, i64 %80, %struct.Memory* %call2_4006d4)
+  %call2_4006de = tail call %struct.Memory* @sub_4005e0.Permute(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
   %85 = load i64, i64* %RBP.i, align 8
   %86 = add i64 %85, -4
   %87 = load i64, i64* %3, align 8
@@ -272,7 +271,7 @@ block_400702:                                     ; preds = %block_.L_4006f1
   store i64 %141, i64* %144, align 8
   store i64 %143, i64* %6, align 8
   store i64 %140, i64* %3, align 8
-  %call2_40070e = tail call %struct.Memory* @sub_400410.printf_plt(%struct.State* nonnull %0, i64 %140, %struct.Memory* %MEMORY.0)
+  %call2_40070e = tail call %struct.Memory* @sub_400410.printf_plt(%struct.State* nonnull %0, i64 %140, %struct.Memory* %2)
   %145 = load i64, i64* %RBP.i, align 8
   %146 = add i64 %145, -8
   %147 = load i32, i32* %EAX.i23, align 4
@@ -290,7 +289,7 @@ block_.L_400716:                                  ; preds = %block_.L_4006f1.blo
   %AL.i.pre-phi = phi i8* [ %.pre4, %block_.L_4006f1.block_.L_400716_crit_edge ], [ %AL.i16, %block_400702 ]
   %151 = phi i64 [ 43300, %block_.L_4006f1.block_.L_400716_crit_edge ], [ %phitmp, %block_400702 ]
   %152 = phi i64 [ %139, %block_.L_4006f1.block_.L_400716_crit_edge ], [ %.pre2, %block_400702 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_.L_4006f1.block_.L_400716_crit_edge ], [ %call2_40070e, %block_400702 ]
+  %MEMORY.1 = phi %struct.Memory* [ %2, %block_.L_4006f1.block_.L_400716_crit_edge ], [ %call2_40070e, %block_400702 ]
   store i64 4196373, i64* %RDI.i31, align 8
   %RSI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   store i64 %151, i64* %RSI.i, align 8

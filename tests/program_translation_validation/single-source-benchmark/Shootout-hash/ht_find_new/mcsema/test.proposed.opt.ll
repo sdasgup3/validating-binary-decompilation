@@ -42,14 +42,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400c60.ht_hashcode(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400c60.ht_hashcode(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400650.strcmp_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400650.strcmp_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @ht_find_new(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @ht_find_new(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -193,8 +193,7 @@ entry:
   br label %block_.L_400b2c
 
 block_.L_400b2c:                                  ; preds = %block_.L_400b5d, %entry
-  %100 = phi i64 [ %.pre, %entry ], [ %168, %block_.L_400b5d ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_400b08, %entry ], [ %call2_400b42, %block_.L_400b5d ]
+  %100 = phi i64 [ %168, %block_.L_400b5d ], [ %.pre, %entry ]
   %101 = load i64, i64* %RBP.i, align 8
   %102 = add i64 %101, -48
   %103 = add i64 %100, 5
@@ -246,7 +245,7 @@ block_400b37:                                     ; preds = %block_.L_400b2c
   store i64 %127, i64* %130, align 8
   store i64 %129, i64* %6, align 8
   store i64 %126, i64* %3, align 8
-  %call2_400b42 = tail call %struct.Memory* @sub_400650.strcmp_plt(%struct.State* nonnull %0, i64 %126, %struct.Memory* %MEMORY.0)
+  %call2_400b42 = tail call %struct.Memory* @sub_400650.strcmp_plt(%struct.State* nonnull %0, i64 %126, %struct.Memory* %call2_400b08)
   %131 = load i32, i32* %EAX.i104, align 4
   %132 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -402,7 +401,7 @@ block_400b8e:                                     ; preds = %block_.L_400b76
   store i64 %223, i64* %226, align 8
   store i64 %225, i64* %6, align 8
   store i64 %222, i64* %3, align 8
-  %call2_400b92 = tail call %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* nonnull %0, i64 %222, %struct.Memory* %MEMORY.0)
+  %call2_400b92 = tail call %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* nonnull %0, i64 %222, %struct.Memory* %call2_400b08)
   %227 = load i64, i64* %RBP.i, align 8
   %228 = add i64 %227, -40
   %229 = load i64, i64* %3, align 8
@@ -439,7 +438,7 @@ block_.L_400ba8:                                  ; preds = %block_.L_400b76
   store i64 %246, i64* %249, align 8
   store i64 %248, i64* %6, align 8
   store i64 %245, i64* %3, align 8
-  %call2_400bac = tail call %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* nonnull %0, i64 %245, %struct.Memory* %MEMORY.0)
+  %call2_400bac = tail call %struct.Memory* @sub_4007b0.ht_node_create(%struct.State* nonnull %0, i64 %245, %struct.Memory* %call2_400b08)
   %250 = load i64, i64* %RBP.i, align 8
   %251 = add i64 %250, -16
   %252 = load i64, i64* %3, align 8
@@ -481,7 +480,7 @@ block_.L_400ba8:                                  ; preds = %block_.L_400b76
 
 block_.L_400bc5:                                  ; preds = %block_.L_400ba8, %block_400b8e, %block_400b50
   %276 = phi i64 [ %.pre11, %block_.L_400ba8 ], [ %244, %block_400b8e ], [ %152, %block_400b50 ]
-  %MEMORY.1 = phi %struct.Memory* [ %call2_400bac, %block_.L_400ba8 ], [ %call2_400b92, %block_400b8e ], [ %call2_400b42, %block_400b50 ]
+  %MEMORY.1 = phi %struct.Memory* [ %call2_400bac, %block_.L_400ba8 ], [ %call2_400b92, %block_400b8e ], [ %call2_400b08, %block_400b50 ]
   %277 = load i64, i64* %RBP.i, align 8
   %278 = add i64 %277, -8
   %279 = add i64 %276, 4

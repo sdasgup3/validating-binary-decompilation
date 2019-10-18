@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400ab0.daxpy(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400ab0.daxpy(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @dgesl(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @dgesl(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -140,8 +140,7 @@ entry:
   br label %block_.L_400e1b
 
 block_.L_400e1b:                                  ; preds = %block_.L_400e80, %entry
-  %66 = phi i64 [ %.pre, %entry ], [ %339, %block_.L_400e80 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_400ebb, %block_.L_400e80 ]
+  %66 = phi i64 [ %339, %block_.L_400e80 ], [ %.pre, %entry ]
   %67 = load i64, i64* %RBP.i, align 8
   %68 = add i64 %67, -36
   %69 = add i64 %66, 7
@@ -494,7 +493,7 @@ block_.L_400e80:                                  ; preds = %block_400e54, %bloc
   store i64 %304, i64* %307, align 8
   store i64 %306, i64* %6, align 8
   store i64 %303, i64* %3, align 8
-  %call2_400ebb = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %303, %struct.Memory* %MEMORY.0)
+  %call2_400ebb = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %303, %struct.Memory* %2)
   %308 = load i64, i64* %RBP.i, align 8
   %309 = add i64 %308, -36
   %310 = load i64, i64* %3, align 8
@@ -554,8 +553,7 @@ block_.L_400ece:                                  ; preds = %block_.L_400e1b
   br label %block_.L_400ed5
 
 block_.L_400ed5:                                  ; preds = %block_400ee2, %block_.L_400ece
-  %347 = phi i64 [ %.pre5, %block_.L_400ece ], [ %547, %block_400ee2 ]
-  %MEMORY.2 = phi %struct.Memory* [ %MEMORY.0, %block_.L_400ece ], [ %call2_400f75, %block_400ee2 ]
+  %347 = phi i64 [ %547, %block_400ee2 ], [ %.pre5, %block_.L_400ece ]
   %348 = load i64, i64* %RBP.i, align 8
   %349 = add i64 %348, -40
   %350 = add i64 %347, 7
@@ -813,7 +811,7 @@ block_400ee2:                                     ; preds = %block_.L_400ed5
   store i64 %512, i64* %515, align 8
   store i64 %514, i64* %6, align 8
   store i64 %511, i64* %3, align 8
-  %call2_400f75 = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %511, %struct.Memory* %MEMORY.2)
+  %call2_400f75 = tail call %struct.Memory* @sub_400ab0.daxpy(%struct.State* nonnull %0, i64 %511, %struct.Memory* %2)
   %516 = load i64, i64* %RBP.i, align 8
   %517 = add i64 %516, -40
   %518 = load i64, i64* %3, align 8
@@ -904,7 +902,7 @@ block_.L_400f88:                                  ; preds = %block_.L_400ed5
   store i64 %577, i64* %3, align 8
   %578 = add i64 %548, 80
   store i64 %578, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.2
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

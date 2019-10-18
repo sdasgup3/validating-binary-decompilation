@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4064f0._ZN9benchmark10accumulateIPddEET0_T_S3_S2_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4064f0._ZN9benchmark10accumulateIPddEET0_T_S3_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z15test_accumulateIPddEvT_S1_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z15test_accumulateIPddEvT_S1_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -145,8 +145,7 @@ entry:
   br label %block_.L_401e90
 
 block_.L_401e90:                                  ; preds = %block_401ea0, %entry
-  %70 = phi i64 [ %.pre, %entry ], [ %159, %block_401ea0 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_401eb2, %block_401ea0 ]
+  %70 = phi i64 [ %159, %block_401ea0 ], [ %.pre, %entry ]
   %71 = load i64, i64* %RBP.i, align 8
   %72 = add i64 %71, -36
   %73 = add i64 %70, 3
@@ -221,7 +220,7 @@ block_401ea0:                                     ; preds = %block_.L_401e90
   store i64 %118, i64* %121, align 8
   store i64 %120, i64* %6, align 8
   store i64 %117, i64* %3, align 8
-  %call2_401ead = tail call %struct.Memory* @sub_4064f0._ZN9benchmark10accumulateIPddEET0_T_S3_S2_(%struct.State* nonnull %0, i64 %117, %struct.Memory* %MEMORY.0)
+  %call2_401ead = tail call %struct.Memory* @sub_4064f0._ZN9benchmark10accumulateIPddEET0_T_S3_S2_(%struct.State* nonnull %0, i64 %117, %struct.Memory* %2)
   %122 = load i64, i64* %3, align 8
   %123 = add i64 %122, 16190
   %124 = add i64 %122, 5
@@ -231,7 +230,7 @@ block_401ea0:                                     ; preds = %block_.L_401e90
   store i64 %124, i64* %127, align 8
   store i64 %126, i64* %6, align 8
   store i64 %123, i64* %3, align 8
-  %call2_401eb2 = tail call %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* nonnull %0, i64 %123, %struct.Memory* %call2_401ead)
+  %call2_401eb2 = tail call %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* nonnull %0, i64 %123, %struct.Memory* %2)
   %128 = load i64, i64* %RBP.i, align 8
   %129 = add i64 %128, -36
   %130 = load i64, i64* %3, align 8
@@ -323,7 +322,7 @@ block_.L_401ec5:                                  ; preds = %block_.L_401e90
   store i64 %190, i64* %3, align 8
   %191 = add i64 %160, 64
   store i64 %191, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

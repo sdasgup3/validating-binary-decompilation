@@ -42,16 +42,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_402420._ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402420._ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402460._ZN16reverse_iteratorIS_IPddEdEppEi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402460._ZN16reverse_iteratorIS_IPddEdEppEi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402490._ZNK16reverse_iteratorIS_IPddEdEdeEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_402490._ZNK16reverse_iteratorIS_IPddEdEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @"sub_401190._ZN3$_0clERKdS1_"(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @"sub_401190._ZN3$_0clERKdS1_"(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -133,8 +133,7 @@ entry:
   br label %block_.L_4023c5
 
 block_.L_4023c5:                                  ; preds = %block_4023db, %entry
-  %57 = phi i64 [ %.pre, %entry ], [ %113, %block_4023db ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_402404, %block_4023db ]
+  %57 = phi i64 [ %113, %block_4023db ], [ %.pre, %entry ]
   %58 = load i64, i64* %RBP.i, align 8
   %59 = add i64 %58, -8
   store i64 %59, i64* %RDI.i44, align 8
@@ -148,7 +147,7 @@ block_.L_4023c5:                                  ; preds = %block_4023db, %entr
   store i64 %62, i64* %65, align 8
   store i64 %64, i64* %6, align 8
   store i64 %61, i64* %3, align 8
-  %call2_4023cd = tail call %struct.Memory* @sub_402420._ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6_(%struct.State* nonnull %0, i64 %61, %struct.Memory* %MEMORY.0)
+  %call2_4023cd = tail call %struct.Memory* @sub_402420._ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6_(%struct.State* nonnull %0, i64 %61, %struct.Memory* %2)
   %66 = load i32, i32* %EAX.i, align 4
   %67 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -190,7 +189,7 @@ block_4023db:                                     ; preds = %block_.L_4023c5
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %6, align 8
   store i64 %80, i64* %3, align 8
-  %call2_4023e1 = tail call %struct.Memory* @sub_402460._ZN16reverse_iteratorIS_IPddEdEppEi(%struct.State* nonnull %0, i64 %80, %struct.Memory* %call2_4023cd)
+  %call2_4023e1 = tail call %struct.Memory* @sub_402460._ZN16reverse_iteratorIS_IPddEdEppEi(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
   %85 = load i64, i64* %RBP.i, align 8
   %86 = add i64 %85, -32
   %87 = load i64, i64* %3, align 8
@@ -209,7 +208,7 @@ block_4023db:                                     ; preds = %block_.L_4023c5
   store i64 %93, i64* %96, align 8
   store i64 %95, i64* %6, align 8
   store i64 %92, i64* %3, align 8
-  %call2_4023ee = tail call %struct.Memory* @sub_402490._ZNK16reverse_iteratorIS_IPddEdEdeEv(%struct.State* nonnull %0, i64 %92, %struct.Memory* %call2_4023e1)
+  %call2_4023ee = tail call %struct.Memory* @sub_402490._ZNK16reverse_iteratorIS_IPddEdEdeEv(%struct.State* nonnull %0, i64 %92, %struct.Memory* %2)
   %97 = load i64, i64* %3, align 8
   store i64 6344448, i64* %RDI.i44, align 8
   %98 = load i64, i64* %RBP.i, align 8
@@ -225,7 +224,7 @@ block_4023db:                                     ; preds = %block_.L_4023c5
   store i64 %102, i64* %105, align 8
   store i64 %104, i64* %6, align 8
   store i64 %101, i64* %3, align 8
-  %call2_402404 = tail call %struct.Memory* @"sub_401190._ZN3$_0clERKdS1_"(%struct.State* nonnull %0, i64 %101, %struct.Memory* %call2_4023ee)
+  %call2_402404 = tail call %struct.Memory* @"sub_401190._ZN3$_0clERKdS1_"(%struct.State* nonnull %0, i64 %101, %struct.Memory* %2)
   %106 = load i64, i64* %RBP.i, align 8
   %107 = add i64 %106, -24
   %108 = load i64, i64* %3, align 8
@@ -293,7 +292,7 @@ block_.L_402413:                                  ; preds = %block_.L_4023c5
   store i64 %149, i64* %3, align 8
   %150 = add i64 %120, 48
   store i64 %150, i64* %6, align 8
-  ret %struct.Memory* %call2_4023cd
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

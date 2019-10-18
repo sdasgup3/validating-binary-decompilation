@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4005c0.eval_A(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005c0.eval_A(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @eval_A_times_u(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @eval_A_times_u(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -138,8 +138,7 @@ entry:
   br label %block_.L_40062a
 
 block_.L_40062a:                                  ; preds = %block_.L_400691, %entry
-  %65 = phi i64 [ %.pre, %entry ], [ %266, %block_.L_400691 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %MEMORY.1, %block_.L_400691 ]
+  %65 = phi i64 [ %266, %block_.L_400691 ], [ %.pre, %entry ]
   %66 = load i64, i64* %RBP.i, align 8
   %67 = add i64 %66, -28
   %68 = add i64 %65, 3
@@ -221,8 +220,7 @@ block_400636:                                     ; preds = %block_.L_40062a
   br label %block_.L_40064d
 
 block_.L_40064d:                                  ; preds = %block_400659, %block_400636
-  %120 = phi i64 [ %.pre4, %block_400636 ], [ %237, %block_400659 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_400636 ], [ %call2_40065f, %block_400659 ]
+  %120 = phi i64 [ %237, %block_400659 ], [ %.pre4, %block_400636 ]
   %121 = load i64, i64* %RBP.i, align 8
   %122 = add i64 %121, -32
   %123 = add i64 %120, 3
@@ -294,7 +292,7 @@ block_400659:                                     ; preds = %block_.L_40064d
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %6, align 8
   store i64 %166, i64* %3, align 8
-  %call2_40065f = tail call %struct.Memory* @sub_4005c0.eval_A(%struct.State* nonnull %0, i64 %166, %struct.Memory* %MEMORY.1)
+  %call2_40065f = tail call %struct.Memory* @sub_4005c0.eval_A(%struct.State* nonnull %0, i64 %166, %struct.Memory* %2)
   %171 = load i64, i64* %RBP.i, align 8
   %172 = add i64 %171, -16
   %173 = load i64, i64* %3, align 8
@@ -477,7 +475,7 @@ block_.L_4006a4:                                  ; preds = %block_.L_40062a
   store i64 %296, i64* %3, align 8
   %297 = add i64 %267, 48
   store i64 %297, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400c60.ht_hashcode(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400c60.ht_hashcode(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400650.strcmp_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400650.strcmp_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @ht_find(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @ht_find(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -184,8 +184,7 @@ entry:
   br label %block_.L_400c04
 
 block_.L_400c04:                                  ; preds = %block_.L_400c35, %entry
-  %95 = phi i64 [ %.pre, %entry ], [ %154, %block_.L_400c35 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_400be8, %entry ], [ %call2_400c1a, %block_.L_400c35 ]
+  %95 = phi i64 [ %154, %block_.L_400c35 ], [ %.pre, %entry ]
   %96 = load i64, i64* %RBP.i, align 8
   %97 = add i64 %96, -40
   %98 = add i64 %95, 5
@@ -237,7 +236,7 @@ block_400c0f:                                     ; preds = %block_.L_400c04
   store i64 %122, i64* %125, align 8
   store i64 %124, i64* %6, align 8
   store i64 %121, i64* %3, align 8
-  %call2_400c1a = tail call %struct.Memory* @sub_400650.strcmp_plt(%struct.State* nonnull %0, i64 %121, %struct.Memory* %MEMORY.0)
+  %call2_400c1a = tail call %struct.Memory* @sub_400650.strcmp_plt(%struct.State* nonnull %0, i64 %121, %struct.Memory* %call2_400be8)
   %126 = load i32, i32* %EAX.i53, align 4
   %127 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -303,7 +302,6 @@ block_.L_400c46:                                  ; preds = %block_.L_400c04
 
 block_.L_400c4e:                                  ; preds = %block_.L_400c46, %block_400c28
   %158 = phi i64 [ %.pre12, %block_.L_400c46 ], [ %147, %block_400c28 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_.L_400c46 ], [ %call2_400c1a, %block_400c28 ]
   %159 = load i64, i64* %RBP.i, align 8
   %160 = add i64 %159, -8
   %161 = add i64 %158, 4
@@ -356,7 +354,7 @@ block_.L_400c4e:                                  ; preds = %block_.L_400c46, %b
   store i64 %194, i64* %3, align 8
   %195 = add i64 %164, 64
   store i64 %195, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.1
+  ret %struct.Memory* %call2_400be8
 }
 
 ; Function Attrs: norecurse nounwind

@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400620.free_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400620.free_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @ht_destroy(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @ht_destroy(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -114,8 +114,7 @@ entry:
   br label %block_.L_400913
 
 block_.L_400913:                                  ; preds = %block_.L_400972, %entry
-  %48 = phi i64 [ %.pre, %entry ], [ %195, %block_.L_400972 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %MEMORY.1, %block_.L_400972 ]
+  %48 = phi i64 [ %195, %block_.L_400972 ], [ %.pre, %entry ]
   %49 = load i64, i64* %RBP.i, align 8
   %50 = add i64 %49, -28
   %51 = add i64 %48, 3
@@ -202,8 +201,7 @@ block_400922:                                     ; preds = %block_.L_400913
   br label %block_.L_400936
 
 block_.L_400936:                                  ; preds = %block_400941, %block_400922
-  %106 = phi i64 [ %.pre4, %block_400922 ], [ %165, %block_400941 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_400922 ], [ %call2_400968, %block_400941 ]
+  %106 = phi i64 [ %165, %block_400941 ], [ %.pre4, %block_400922 ]
   %107 = load i64, i64* %RBP.i, align 8
   %108 = add i64 %107, -24
   %109 = add i64 %106, 5
@@ -279,7 +277,7 @@ block_400941:                                     ; preds = %block_.L_400936
   store i64 %149, i64* %152, align 8
   store i64 %151, i64* %6, align 8
   store i64 %148, i64* %3, align 8
-  %call2_40095c = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %148, %struct.Memory* %MEMORY.1)
+  %call2_40095c = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %148, %struct.Memory* %2)
   %153 = load i64, i64* %RBP.i, align 8
   %154 = add i64 %153, -16
   %155 = load i64, i64* %3, align 8
@@ -297,7 +295,7 @@ block_400941:                                     ; preds = %block_.L_400936
   store i64 %160, i64* %163, align 8
   store i64 %162, i64* %6, align 8
   store i64 %159, i64* %3, align 8
-  %call2_400968 = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %159, %struct.Memory* %call2_40095c)
+  %call2_400968 = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %159, %struct.Memory* %2)
   %164 = load i64, i64* %3, align 8
   %165 = add i64 %164, -55
   store i64 %165, i64* %3, align 8
@@ -357,7 +355,7 @@ block_.L_400985:                                  ; preds = %block_.L_400913
   store i64 %197, i64* %200, align 8
   store i64 %199, i64* %6, align 8
   store i64 %196, i64* %3, align 8
-  %call2_400990 = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %196, %struct.Memory* %MEMORY.0)
+  %call2_400990 = tail call %struct.Memory* @sub_400620.free_plt(%struct.State* nonnull %0, i64 %196, %struct.Memory* %2)
   %201 = load i64, i64* %RBP.i, align 8
   %202 = add i64 %201, -8
   %203 = load i64, i64* %3, align 8

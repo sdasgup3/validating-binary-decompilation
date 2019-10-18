@@ -48,7 +48,7 @@ cat docs/compdPass.log | parallel   "echo; echo {}; echo =======;  make -C {} co
 
 ### Run match
 ```bash
-cat docs/compdPass.log | parallel   "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
 grep "Pass" docs/match.log > docs/matchPass.log
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl -file docs/compdPass.log --file docs/matchPass.log  --show 1 > docs/matchFail.log
 ```

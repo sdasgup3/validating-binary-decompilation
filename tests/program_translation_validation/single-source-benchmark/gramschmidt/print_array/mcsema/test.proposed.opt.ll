@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400600.fprintf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400600.fprintf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @print_array(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -408,7 +408,7 @@ block_4012b0:                                     ; preds = %block_.L_4012a4
   br i1 %248, label %251, label %249
 
 ; <label>:249:                                    ; preds = %block_4012b0
-  %250 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %240, %struct.Memory* %call2_4012dc)
+  %250 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %240, %struct.Memory* %MEMORY.1)
   %.pre33 = load i32, i32* %EDX.i266, align 4
   %.pre34 = load i64, i64* %3, align 8
   br label %routine_idivl__r8d.exit258
@@ -431,7 +431,7 @@ block_4012b0:                                     ; preds = %block_.L_4012a4
 routine_idivl__r8d.exit258:                       ; preds = %251, %249
   %256 = phi i64 [ %.pre34, %249 ], [ %240, %251 ]
   %257 = phi i32 [ %.pre33, %249 ], [ %255, %251 ]
-  %258 = phi %struct.Memory* [ %250, %249 ], [ %call2_4012dc, %251 ]
+  %258 = phi %struct.Memory* [ %250, %249 ], [ %MEMORY.1, %251 ]
   store i8 0, i8* %14, align 1
   %259 = and i32 %257, 255
   %260 = tail call i32 @llvm.ctpop.i32(i32 %259)
@@ -843,7 +843,7 @@ block_401388:                                     ; preds = %block_.L_40137c
   br i1 %527, label %530, label %528
 
 ; <label>:528:                                    ; preds = %block_401388
-  %529 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %519, %struct.Memory* %call2_4013b4)
+  %529 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %519, %struct.Memory* %MEMORY.4)
   %.pre29 = load i32, i32* %EDX.i266, align 4
   %.pre30 = load i64, i64* %3, align 8
   br label %routine_idivl__r8d.exit149
@@ -866,7 +866,7 @@ block_401388:                                     ; preds = %block_.L_40137c
 routine_idivl__r8d.exit149:                       ; preds = %530, %528
   %535 = phi i64 [ %.pre30, %528 ], [ %519, %530 ]
   %536 = phi i32 [ %.pre29, %528 ], [ %534, %530 ]
-  %537 = phi %struct.Memory* [ %529, %528 ], [ %call2_4013b4, %530 ]
+  %537 = phi %struct.Memory* [ %529, %528 ], [ %MEMORY.4, %530 ]
   store i8 0, i8* %14, align 1
   %538 = and i32 %536, 255
   %539 = tail call i32 @llvm.ctpop.i32(i32 %538)
@@ -1278,7 +1278,7 @@ block_401460:                                     ; preds = %block_.L_401454
   br i1 %806, label %809, label %807
 
 ; <label>:807:                                    ; preds = %block_401460
-  %808 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %798, %struct.Memory* %call2_40148c)
+  %808 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %798, %struct.Memory* %MEMORY.7)
   %.pre25 = load i32, i32* %EDX.i266, align 4
   %.pre26 = load i64, i64* %3, align 8
   br label %routine_idivl__r8d.exit
@@ -1301,7 +1301,7 @@ block_401460:                                     ; preds = %block_.L_401454
 routine_idivl__r8d.exit:                          ; preds = %809, %807
   %814 = phi i64 [ %.pre26, %807 ], [ %798, %809 ]
   %815 = phi i32 [ %.pre25, %807 ], [ %813, %809 ]
-  %816 = phi %struct.Memory* [ %808, %807 ], [ %call2_40148c, %809 ]
+  %816 = phi %struct.Memory* [ %808, %807 ], [ %MEMORY.7, %809 ]
   store i8 0, i8* %14, align 1
   %817 = and i32 %815, 255
   %818 = tail call i32 @llvm.ctpop.i32(i32 %817)

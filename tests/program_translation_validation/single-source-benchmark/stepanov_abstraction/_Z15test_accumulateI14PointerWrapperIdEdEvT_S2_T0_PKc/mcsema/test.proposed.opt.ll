@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_406480._ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_406480._ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -144,8 +144,7 @@ entry:
   br label %block_.L_401ef0
 
 block_.L_401ef0:                                  ; preds = %block_401f00, %entry
-  %69 = phi i64 [ %.pre, %entry ], [ %176, %block_401f00 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_401f22, %block_401f00 ]
+  %69 = phi i64 [ %176, %block_401f00 ], [ %.pre, %entry ]
   %70 = load i64, i64* %RBP.i, align 8
   %71 = add i64 %70, -36
   %72 = add i64 %69, 3
@@ -246,7 +245,7 @@ block_401f00:                                     ; preds = %block_.L_401ef0
   store i64 %135, i64* %138, align 8
   store i64 %137, i64* %6, align 8
   store i64 %134, i64* %3, align 8
-  %call2_401f1d = tail call %struct.Memory* @sub_406480._ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* nonnull %0, i64 %134, %struct.Memory* %MEMORY.0)
+  %call2_401f1d = tail call %struct.Memory* @sub_406480._ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_(%struct.State* nonnull %0, i64 %134, %struct.Memory* %2)
   %139 = load i64, i64* %3, align 8
   %140 = add i64 %139, 16078
   %141 = add i64 %139, 5
@@ -256,7 +255,7 @@ block_401f00:                                     ; preds = %block_.L_401ef0
   store i64 %141, i64* %144, align 8
   store i64 %143, i64* %6, align 8
   store i64 %140, i64* %3, align 8
-  %call2_401f22 = tail call %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* nonnull %0, i64 %140, %struct.Memory* %call2_401f1d)
+  %call2_401f22 = tail call %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* nonnull %0, i64 %140, %struct.Memory* %2)
   %145 = load i64, i64* %RBP.i, align 8
   %146 = add i64 %145, -36
   %147 = load i64, i64* %3, align 8
@@ -347,7 +346,7 @@ block_.L_401f35:                                  ; preds = %block_.L_401ef0
   store i64 %206, i64* %3, align 8
   %207 = add i64 %177, 80
   store i64 %207, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

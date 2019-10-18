@@ -150,9 +150,9 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_40bd40._ZN14for_loop_testsILi1EdE7do_testEPKdPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_40bd40._ZN14for_loop_testsILi1EdE7do_testEPKdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_40bd80._Z27test_for_loop_unroll_factorILi2EdEvPKT0_iPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_40bd80._Z27test_for_loop_unroll_factorILi2EdEvPKT0_iPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN14for_loop_testsILi2EdE7do_testEPKdPKc(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {
