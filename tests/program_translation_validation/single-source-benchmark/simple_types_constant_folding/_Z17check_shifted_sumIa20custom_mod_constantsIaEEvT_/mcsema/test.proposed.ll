@@ -123,9 +123,9 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_418630._ZN20custom_mod_constantsIaE8do_shiftEa(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_417760._Z15tolerance_equalIaEbRT_S1_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_4006c0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_418630._ZN20custom_mod_constantsIaE8do_shiftEa(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_417760._Z15tolerance_equalIaEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4006c0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 

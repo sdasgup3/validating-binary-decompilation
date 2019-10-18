@@ -123,8 +123,8 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_412110._ZN16while_loop_testsILi28EiE7do_testEPKiPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_412160._Z29test_while_loop_unroll_factorILi29EiEvPKT0_iPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_412110._ZN16while_loop_testsILi28EiE7do_testEPKiPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_412160._Z29test_while_loop_unroll_factorILi29EiEvPKT0_iPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 

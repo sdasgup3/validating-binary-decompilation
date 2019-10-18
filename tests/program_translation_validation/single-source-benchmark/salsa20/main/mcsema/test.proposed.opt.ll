@@ -44,12 +44,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400900.salsa(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400900.salsa(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400410.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400410.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -302,8 +302,7 @@ block_.L_4009ce:                                  ; preds = %block_.L_400994
   br label %block_.L_4009d5
 
 block_.L_4009d5:                                  ; preds = %block_4009e1, %block_.L_4009ce
-  %172 = phi i64 [ %.pre5, %block_.L_4009ce ], [ %250, %block_4009e1 ]
-  %MEMORY.1 = phi %struct.Memory* [ %2, %block_.L_4009ce ], [ %call2_4009e1, %block_4009e1 ]
+  %172 = phi i64 [ %250, %block_4009e1 ], [ %.pre5, %block_.L_4009ce ]
   %173 = load i64, i64* %RBP.i, align 8
   %174 = add i64 %173, -12
   %175 = add i64 %172, 3
@@ -361,7 +360,7 @@ block_4009e1:                                     ; preds = %block_.L_4009d5
   store i64 %209, i64* %212, align 8
   store i64 %211, i64* %6, align 8
   store i64 %208, i64* %3, align 8
-  %call2_4009e1 = tail call %struct.Memory* @sub_400900.salsa(%struct.State* nonnull %0, i64 %208, %struct.Memory* %MEMORY.1)
+  %call2_4009e1 = tail call %struct.Memory* @sub_400900.salsa(%struct.State* nonnull %0, i64 %208, %struct.Memory* %2)
   %213 = load i64, i64* %RBP.i, align 8
   %214 = add i64 %213, -24
   %215 = load i32, i32* %EAX.i83, align 4
@@ -424,7 +423,7 @@ block_.L_4009f7:                                  ; preds = %block_.L_4009d5
   store i64 %252, i64* %255, align 8
   store i64 %254, i64* %6, align 8
   store i64 %251, i64* %3, align 8
-  %call2_4009f7 = tail call %struct.Memory* @sub_400900.salsa(%struct.State* nonnull %0, i64 %251, %struct.Memory* %MEMORY.1)
+  %call2_4009f7 = tail call %struct.Memory* @sub_400900.salsa(%struct.State* nonnull %0, i64 %251, %struct.Memory* %2)
   %RDI.i42 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %256 = load i64, i64* %3, align 8
   store i64 4197076, i64* %RDI.i42, align 8

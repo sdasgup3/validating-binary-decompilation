@@ -153,13 +153,13 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_4004b0.atoi_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4004b0.atoi_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_400750.eval_AtA_times_u(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_400750.eval_AtA_times_u(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_4004c0.sqrt_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4004c0.sqrt_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_4004a0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4004a0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

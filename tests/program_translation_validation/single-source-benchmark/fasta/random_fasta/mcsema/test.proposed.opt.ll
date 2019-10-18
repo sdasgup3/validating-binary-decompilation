@@ -44,9 +44,9 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400ae0.myrandom(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400ae0.myrandom(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400630.fwrite_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400630.fwrite_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @random_fasta(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -281,7 +281,7 @@ block_.L_400a0c:                                  ; preds = %block_.L_400a52, %b
 
 block_.L_400a26:                                  ; preds = %block_400a41, %block_.L_400a0c
   %147 = phi i64 [ %.pre16, %block_.L_400a0c ], [ %230, %block_400a41 ]
-  %MEMORY.3 = phi %struct.Memory* [ %call2_400a14, %block_.L_400a0c ], [ %195, %block_400a41 ]
+  %MEMORY.3 = phi %struct.Memory* [ %MEMORY.2, %block_.L_400a0c ], [ %195, %block_400a41 ]
   %148 = load i64, i64* %RBP.i, align 8
   %149 = add i64 %148, -8
   %150 = add i64 %147, 4

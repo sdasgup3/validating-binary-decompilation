@@ -557,35 +557,10 @@ Decompiling instr:mulsd (%rdx), %xmm0...
 Instr: mulsd (%rdx), %xmm0
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd___rdx____xmm0
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd___rdx____xmm0 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd___rdx____xmm0 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd___rdx____xmm0 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd___rdx____xmm0
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd___rdx____xmm0 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd___rdx____xmm0'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd___rdx____xmm0/test.mod.ll
 Running artifacts...Done.
@@ -650,35 +625,10 @@ Decompiling instr:mulsd 0x20(%rdx), %xmm1...
 Instr: mulsd 0x20(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x20__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x20__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x20__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x20__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x20__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x20__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x20__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x20__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -726,35 +676,10 @@ Decompiling instr:movsd 0x10(%rdx), %xmm1...
 Instr: movsd 0x10(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x10__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x10__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x10__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x10__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x10__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x10__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x10__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x10__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -785,35 +710,10 @@ Decompiling instr:mulsd 0x40(%rdx), %xmm1...
 Instr: mulsd 0x40(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x40__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x40__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x40__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x40__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x40__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x40__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x40__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x40__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -861,35 +761,10 @@ Decompiling instr:movsd 0x18(%rdx), %xmm1...
 Instr: movsd 0x18(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x18__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x18__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x18__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x18__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x18__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x18__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x18__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x18__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -920,35 +795,10 @@ Decompiling instr:mulsd 0x60(%rdx), %xmm1...
 Instr: mulsd 0x60(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x60__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x60__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x60__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x60__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x60__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x60__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x60__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x60__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1047,35 +897,10 @@ Decompiling instr:mulsd 0x8(%rdx), %xmm0...
 Instr: mulsd 0x8(%rdx), %xmm0
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x8__rdx____xmm0
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x8__rdx____xmm0 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x8__rdx____xmm0 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x8__rdx____xmm0 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x8__rdx____xmm0
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x8__rdx____xmm0 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x8__rdx____xmm0'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x8__rdx____xmm0/test.mod.ll
 Running artifacts...Done.
@@ -1140,35 +965,10 @@ Decompiling instr:mulsd 0x28(%rdx), %xmm1...
 Instr: mulsd 0x28(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x28__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x28__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x28__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x28__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x28__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x28__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x28__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x28__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1250,35 +1050,10 @@ Decompiling instr:mulsd 0x48(%rdx), %xmm1...
 Instr: mulsd 0x48(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x48__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x48__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x48__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x48__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x48__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x48__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x48__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x48__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1360,35 +1135,10 @@ Decompiling instr:mulsd 0x68(%rdx), %xmm1...
 Instr: mulsd 0x68(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x68__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x68__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x68__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x68__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x68__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x68__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x68__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x68__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1487,35 +1237,10 @@ Decompiling instr:mulsd 0x10(%rdx), %xmm0...
 Instr: mulsd 0x10(%rdx), %xmm0
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x10__rdx____xmm0
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x10__rdx____xmm0 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x10__rdx____xmm0 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x10__rdx____xmm0 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x10__rdx____xmm0
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x10__rdx____xmm0 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x10__rdx____xmm0'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x10__rdx____xmm0/test.mod.ll
 Running artifacts...Done.
@@ -1580,35 +1305,10 @@ Decompiling instr:mulsd 0x30(%rdx), %xmm1...
 Instr: mulsd 0x30(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x30__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x30__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x30__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x30__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x30__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x30__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x30__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x30__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1690,35 +1390,10 @@ Decompiling instr:mulsd 0x50(%rdx), %xmm1...
 Instr: mulsd 0x50(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x50__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x50__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x50__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x50__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x50__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x50__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x50__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x50__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1800,35 +1475,10 @@ Decompiling instr:mulsd 0x70(%rdx), %xmm1...
 Instr: mulsd 0x70(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x70__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x70__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x70__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x70__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x70__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x70__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x70__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x70__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -1927,35 +1577,10 @@ Decompiling instr:mulsd 0x18(%rdx), %xmm0...
 Instr: mulsd 0x18(%rdx), %xmm0
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x18__rdx____xmm0
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x18__rdx____xmm0 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x18__rdx____xmm0 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x18__rdx____xmm0 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x18__rdx____xmm0
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x18__rdx____xmm0 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x18__rdx____xmm0'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x18__rdx____xmm0/test.mod.ll
 Running artifacts...Done.
@@ -2020,35 +1645,10 @@ Decompiling instr:mulsd 0x38(%rdx), %xmm1...
 Instr: mulsd 0x38(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x38__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x38__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x38__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x38__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x38__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x38__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x38__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x38__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -2130,35 +1730,10 @@ Decompiling instr:mulsd 0x58(%rdx), %xmm1...
 Instr: mulsd 0x58(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x58__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x58__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x58__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x58__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x58__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x58__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x58__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x58__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -2240,35 +1815,10 @@ Decompiling instr:mulsd 0x78(%rdx), %xmm1...
 Instr: mulsd 0x78(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x78__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x78__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x78__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x78__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc mulsd_0x78__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_...
-Generatin test.mod.ll for opcode mulsd_0x78__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/mulsd_0x78__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_0x78__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -2401,35 +1951,10 @@ Decompiling instr:movsd 0x28(%rdx), %xmm1...
 Instr: movsd 0x28(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x28__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x28__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x28__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x28__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x28__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x28__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x28__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x28__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -2511,35 +2036,10 @@ Decompiling instr:movsd 0x30(%rdx), %xmm1...
 Instr: movsd 0x30(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x30__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x30__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x30__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x30__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x30__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x30__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x30__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x30__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -2621,35 +2121,10 @@ Decompiling instr:movsd 0x38(%rdx), %xmm1...
 Instr: movsd 0x38(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x38__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x38__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x38__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x38__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x38__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x38__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x38__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x38__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -3836,35 +3311,10 @@ Decompiling instr:movsd 0x48(%rdx), %xmm1...
 Instr: movsd 0x48(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x48__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x48__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x48__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x48__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x48__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x48__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x48__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x48__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -3946,35 +3396,10 @@ Decompiling instr:movsd 0x50(%rdx), %xmm1...
 Instr: movsd 0x50(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x50__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x50__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x50__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x50__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x50__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x50__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x50__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x50__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -4056,35 +3481,10 @@ Decompiling instr:movsd 0x58(%rdx), %xmm1...
 Instr: movsd 0x58(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x58__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x58__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x58__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x58__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x58__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x58__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x58__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x58__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -5271,35 +4671,10 @@ Decompiling instr:movsd 0x68(%rdx), %xmm1...
 Instr: movsd 0x68(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x68__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x68__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x68__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x68__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x68__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x68__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x68__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x68__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -5381,35 +4756,10 @@ Decompiling instr:movsd 0x70(%rdx), %xmm1...
 Instr: movsd 0x70(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x70__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x70__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x70__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x70__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x70__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x70__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x70__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x70__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -5491,35 +4841,10 @@ Decompiling instr:movsd 0x78(%rdx), %xmm1...
 Instr: movsd 0x78(%rdx), %xmm1
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x78__rdx____xmm1
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x78__rdx____xmm1 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x78__rdx____xmm1 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x78__rdx____xmm1 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_0x78__rdx____xmm1
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_0x78__rdx____xmm1 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_0x78__rdx____xmm1'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_0x78__rdx____xmm1/test.mod.ll
 Running artifacts...Done.
@@ -6641,35 +5966,10 @@ Decompiling instr:cmpl $0x10, -0x1c(%rbp)...
 Instr: cmpl $0x10, -0x1c(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x10__MINUS0x1c__rbp_
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x10__MINUS0x1c__rbp_ binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x10__MINUS0x1c__rbp_ mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x10__MINUS0x1c__rbp_ declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc cmpl__0x10__MINUS0x1c__rbp_
-Expanding _ZN12_GLOBAL__N_1L3CMPI2MnIjE2InIjEEEP6MemoryS6_R5StateT_T0_...
-Generatin test.mod.ll for opcode cmpl__0x10__MINUS0x1c__rbp_ ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x10__MINUS0x1c__rbp_'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x10__MINUS0x1c__rbp_/test.mod.ll
 Running artifacts...Done.
@@ -6683,35 +5983,10 @@ Decompiling instr:jae .L_400b63...
 Instr: jae .L_400b63
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc jae_.L_400b63
-Expanding _ZN12_GLOBAL__N_1L3JNBEP6MemoryR5State3RnWIhE2InImES7_...
-Generatin test.mod.ll for opcode jae_.L_400b63 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/jae_.L_400b63'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63/test.mod.ll
 Running artifacts...Done.
@@ -6759,35 +6034,10 @@ Decompiling instr:movsd -0xa0(%rbp,%rcx,8), %xmm0...
 Instr: movsd -0xa0(%rbp,%rcx,8), %xmm0
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0xa0__rbp__rcx_8____xmm0
 Generating artifacts...
-Generating artifacts... Done.
+Already Exists
 Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0xa0__rbp__rcx_8____xmm0 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0xa0__rbp__rcx_8____xmm0 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-llvm-dis test.bc -o test.ll
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0xa0__rbp__rcx_8____xmm0 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
-/home/ubuntu/Github/validating-binary-decompilation/tests/scripts//declutter.pl --file test.ll --norenameintrinsics --opc movsd_MINUS0xa0__rbp__rcx_8____xmm0
-Expanding _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_...
-Generatin test.mod.ll for opcode movsd_MINUS0xa0__rbp__rcx_8____xmm0 ...
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movsd_MINUS0xa0__rbp__rcx_8____xmm0'
+Skip McSema run ...
+Skip Declutter ...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0xa0__rbp__rcx_8____xmm0/test.mod.ll
 Running artifacts...Done.

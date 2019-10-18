@@ -115,11 +115,11 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_400e80._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_412ee0._ZN28custom_multiple_constant_xorIiE8do_shiftEi(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_412f00._Z17check_shifted_sumIi28custom_multiple_constant_xorIiEEvT_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_400ea0._Z5timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
-declare %struct.Memory* @sub_400840._Z13record_resultdPKc(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_400e80._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_412ee0._ZN28custom_multiple_constant_xorIiE8do_shiftEi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_412f00._Z17check_shifted_sumIi28custom_multiple_constant_xorIiEEvT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400ea0._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400840._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 

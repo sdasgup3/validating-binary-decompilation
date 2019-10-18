@@ -46,14 +46,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400450.atoi_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400450.atoi_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400600.gen_random(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400600.gen_random(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400440.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400440.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -271,8 +271,7 @@ block_.L_400592:                                  ; preds = %block_.L_400585, %b
   br label %block_.L_40059b
 
 block_.L_40059b:                                  ; preds = %block_4005af, %block_.L_400592
-  %145 = phi i64 [ %.pre, %block_.L_400592 ], [ %181, %block_4005af ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_.L_400592 ], [ %call2_4005b7, %block_4005af ]
+  %145 = phi i64 [ %181, %block_4005af ], [ %.pre, %block_.L_400592 ]
   %146 = load i64, i64* %RBP.i, align 8
   %147 = add i64 %146, -20
   %148 = add i64 %145, 3
@@ -322,7 +321,7 @@ block_4005af:                                     ; preds = %block_.L_40059b
   store i64 %170, i64* %173, align 8
   store i64 %172, i64* %6, align 8
   store i64 %169, i64* %3, align 8
-  %call2_4005b7 = tail call %struct.Memory* @sub_400600.gen_random(%struct.State* nonnull %0, i64 %169, %struct.Memory* %MEMORY.1)
+  %call2_4005b7 = tail call %struct.Memory* @sub_400600.gen_random(%struct.State* nonnull %0, i64 %169, %struct.Memory* %MEMORY.0)
   %174 = load i64, i64* %RBP.i, align 8
   %175 = add i64 %174, -32
   %176 = load i64, i64* %3, align 8
@@ -348,7 +347,7 @@ block_.L_4005c6:                                  ; preds = %block_.L_40059b
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %6, align 8
   store i64 %183, i64* %3, align 8
-  %call2_4005ce = tail call %struct.Memory* @sub_400600.gen_random(%struct.State* nonnull %0, i64 %183, %struct.Memory* %MEMORY.1)
+  %call2_4005ce = tail call %struct.Memory* @sub_400600.gen_random(%struct.State* nonnull %0, i64 %183, %struct.Memory* %MEMORY.0)
   %RDI.i = getelementptr inbounds %union.anon, %union.anon* %43, i64 0, i32 0
   %188 = load i64, i64* %3, align 8
   store i64 4196088, i64* %RDI.i, align 8

@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4005e0.Permute(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005e0.Permute(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400570.Swap(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400570.Swap(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @Permute(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @Permute(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -242,8 +242,7 @@ block_400606:                                     ; preds = %entry
   br label %block_.L_40061c
 
 block_.L_40061c:                                  ; preds = %block_400626, %block_400606
-  %136 = phi i64 [ %.pre, %block_400606 ], [ %361, %block_400626 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_40060e, %block_400606 ], [ %call2_40068d, %block_400626 ]
+  %136 = phi i64 [ %361, %block_400626 ], [ %.pre, %block_400606 ]
   %137 = load i64, i64* %RBP.i, align 8
   %138 = add i64 %137, -8
   %139 = add i64 %136, 4
@@ -372,7 +371,7 @@ block_400626:                                     ; preds = %block_.L_40061c
   store i64 %225, i64* %228, align 8
   store i64 %227, i64* %6, align 8
   store i64 %224, i64* %3, align 8
-  %call2_40064f = tail call %struct.Memory* @sub_400570.Swap(%struct.State* nonnull %0, i64 %224, %struct.Memory* %MEMORY.0)
+  %call2_40064f = tail call %struct.Memory* @sub_400570.Swap(%struct.State* nonnull %0, i64 %224, %struct.Memory* %call2_40060e)
   %229 = load i64, i64* %RBP.i, align 8
   %230 = add i64 %229, -4
   %231 = load i64, i64* %3, align 8
@@ -418,7 +417,7 @@ block_400626:                                     ; preds = %block_.L_40061c
   store i64 %258, i64* %261, align 8
   store i64 %260, i64* %6, align 8
   store i64 %257, i64* %3, align 8
-  %call2_40065f = tail call %struct.Memory* @sub_4005e0.Permute(%struct.State* nonnull %0, i64 %257, %struct.Memory* %call2_40064f)
+  %call2_40065f = tail call %struct.Memory* @sub_4005e0.Permute(%struct.State* nonnull %0, i64 %257, %struct.Memory* %call2_40060e)
   %262 = load i64, i64* %3, align 8
   store i64 6383440, i64* %RAX.i91, align 8
   %263 = load i64, i64* %RBP.i, align 8
@@ -510,7 +509,7 @@ block_400626:                                     ; preds = %block_.L_40061c
   store i64 %325, i64* %328, align 8
   store i64 %327, i64* %6, align 8
   store i64 %324, i64* %3, align 8
-  %call2_40068d = tail call %struct.Memory* @sub_400570.Swap(%struct.State* nonnull %0, i64 %324, %struct.Memory* %call2_40065f)
+  %call2_40068d = tail call %struct.Memory* @sub_400570.Swap(%struct.State* nonnull %0, i64 %324, %struct.Memory* %call2_40060e)
   %329 = load i64, i64* %RBP.i, align 8
   %330 = add i64 %329, -8
   %331 = load i64, i64* %3, align 8
@@ -564,7 +563,7 @@ block_.L_4006a0:                                  ; preds = %block_.L_40061c
 
 block_.L_4006a5:                                  ; preds = %block_.L_4006a0, %entry
   %363 = phi i64 [ %74, %entry ], [ %362, %block_.L_4006a0 ]
-  %MEMORY.1 = phi %struct.Memory* [ %2, %entry ], [ %MEMORY.0, %block_.L_4006a0 ]
+  %MEMORY.1 = phi %struct.Memory* [ %2, %entry ], [ %call2_40060e, %block_.L_4006a0 ]
   %364 = load i64, i64* %6, align 8
   %365 = add i64 %364, 16
   store i64 %365, i64* %6, align 8

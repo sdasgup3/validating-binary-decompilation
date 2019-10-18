@@ -144,9 +144,9 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_406070._ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_406070._ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_4060b0._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+declare %struct.Memory* @sub_4060b0._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEES0_IT_ERKS9_SB_(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

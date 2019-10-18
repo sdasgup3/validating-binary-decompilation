@@ -46,16 +46,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400980.offset_momentum(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400980.offset_momentum(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007f0.energy(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007f0.energy(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400460.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400460.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400570.advance(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400570.advance(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -205,8 +205,7 @@ entry:
   br label %block_.L_400b35
 
 block_.L_400b35:                                  ; preds = %block_400b41, %entry
-  %97 = phi i64 [ %.pre, %entry ], [ %173, %block_400b41 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_400b26, %entry ], [ %call2_400b58, %block_400b41 ]
+  %97 = phi i64 [ %173, %block_400b41 ], [ %.pre, %entry ]
   %98 = load i64, i64* %RBP.i, align 8
   %99 = add i64 %98, -24
   %100 = add i64 %97, 3
@@ -273,7 +272,7 @@ block_400b41:                                     ; preds = %block_.L_400b35
   store i64 %138, i64* %141, align 8
   store i64 %140, i64* %6, align 8
   store i64 %137, i64* %3, align 8
-  %call2_400b58 = tail call %struct.Memory* @sub_400570.advance(%struct.State* nonnull %0, i64 %137, %struct.Memory* %MEMORY.0)
+  %call2_400b58 = tail call %struct.Memory* @sub_400570.advance(%struct.State* nonnull %0, i64 %137, %struct.Memory* %call2_400b26)
   %142 = load i64, i64* %RBP.i, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %3, align 8
@@ -328,7 +327,7 @@ block_.L_400b6b:                                  ; preds = %block_.L_400b35
   store i64 %175, i64* %178, align 8
   store i64 %177, i64* %6, align 8
   store i64 %174, i64* %3, align 8
-  %call2_400b7a = tail call %struct.Memory* @sub_4007f0.energy(%struct.State* nonnull %0, i64 %174, %struct.Memory* %MEMORY.0)
+  %call2_400b7a = tail call %struct.Memory* @sub_4007f0.energy(%struct.State* nonnull %0, i64 %174, %struct.Memory* %call2_400b26)
   %179 = load i64, i64* %3, align 8
   store i64 4197440, i64* %RDI.i60, align 8
   store i8 1, i8* %AL.i46, align 1

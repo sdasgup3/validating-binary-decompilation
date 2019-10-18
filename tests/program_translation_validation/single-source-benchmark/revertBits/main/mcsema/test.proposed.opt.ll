@@ -48,16 +48,16 @@ declare i32 @llvm.bswap.i32(i32) #0
 ; Function Attrs: nounwind readnone
 declare i64 @llvm.bswap.i64(i64) #0
 
-declare %struct.Memory* @sub_400450.strtoll_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400450.strtoll_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400550.ReverseBits32(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400550.ReverseBits32(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005f0.ReverseBits64(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005f0.ReverseBits64(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400440.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400440.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -173,8 +173,7 @@ entry:
   br label %block_.L_40076f
 
 block_.L_40076f:                                  ; preds = %block_40077c, %entry
-  %62 = phi i64 [ %.pre, %entry ], [ %212, %block_40077c ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_40075f, %entry ], [ %call2_400794, %block_40077c ]
+  %62 = phi i64 [ %212, %block_40077c ], [ %.pre, %entry ]
   %63 = load i64, i64* %RBP.i, align 8
   %64 = add i64 %63, -44
   %65 = add i64 %62, 7
@@ -229,7 +228,7 @@ block_40077c:                                     ; preds = %block_.L_40076f
   store i64 %96, i64* %99, align 8
   store i64 %98, i64* %6, align 8
   store i64 %95, i64* %3, align 8
-  %call2_40077f = tail call %struct.Memory* @sub_400550.ReverseBits32(%struct.State* nonnull %0, i64 %95, %struct.Memory* %MEMORY.0)
+  %call2_40077f = tail call %struct.Memory* @sub_400550.ReverseBits32(%struct.State* nonnull %0, i64 %95, %struct.Memory* %call2_40075f)
   %100 = load i32, i32* %EAX.i394, align 4
   %101 = zext i32 %100 to i64
   %102 = load i64, i64* %3, align 8
@@ -293,7 +292,7 @@ block_40077c:                                     ; preds = %block_.L_40076f
   store i64 %142, i64* %145, align 8
   store i64 %144, i64* %6, align 8
   store i64 %141, i64* %3, align 8
-  %call2_400794 = tail call %struct.Memory* @sub_4005f0.ReverseBits64(%struct.State* nonnull %0, i64 %141, %struct.Memory* %call2_40077f)
+  %call2_400794 = tail call %struct.Memory* @sub_4005f0.ReverseBits64(%struct.State* nonnull %0, i64 %141, %struct.Memory* %call2_40075f)
   %146 = load i64, i64* %RAX.i395, align 8
   %147 = load i64, i64* %RBP.i, align 8
   %148 = add i64 %147, -24
@@ -709,7 +708,7 @@ block_.L_4008aa:                                  ; preds = %block_.L_4007b6
   store i64 %439, i64* %442, align 8
   store i64 %441, i64* %6, align 8
   store i64 %438, i64* %3, align 8
-  %call2_400904 = tail call %struct.Memory* @sub_400440.printf_plt(%struct.State* nonnull %0, i64 %438, %struct.Memory* %MEMORY.0)
+  %call2_400904 = tail call %struct.Memory* @sub_400440.printf_plt(%struct.State* nonnull %0, i64 %438, %struct.Memory* %call2_40075f)
   %443 = load i64, i64* %3, align 8
   store i64 4197008, i64* %RDI.i397, align 8
   %444 = load i64, i64* %RBP.i, align 8

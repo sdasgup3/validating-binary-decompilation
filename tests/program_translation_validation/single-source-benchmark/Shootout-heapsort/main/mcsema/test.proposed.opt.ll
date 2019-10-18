@@ -44,20 +44,20 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4004e0.atoi_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004e0.atoi_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004d0.malloc_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004d0.malloc_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005e0.gen_random(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005e0.gen_random(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400630.benchmark_heapsort(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400630.benchmark_heapsort(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004c0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004c0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004b0.free_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004b0.free_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -305,8 +305,7 @@ block_.L_4007d2:                                  ; preds = %block_.L_4007c5, %b
   br label %block_.L_4007f8
 
 block_.L_4007f8:                                  ; preds = %block_400804, %block_.L_4007d2
-  %162 = phi i64 [ %.pre, %block_.L_4007d2 ], [ %253, %block_400804 ]
-  %MEMORY.1 = phi %struct.Memory* [ %call2_4007e8, %block_.L_4007d2 ], [ %call2_40080c, %block_400804 ]
+  %162 = phi i64 [ %253, %block_400804 ], [ %.pre, %block_.L_4007d2 ]
   %163 = load i64, i64* %RBP.i, align 8
   %164 = add i64 %163, -36
   %165 = add i64 %162, 3
@@ -370,7 +369,7 @@ block_400804:                                     ; preds = %block_.L_4007f8
   store i64 %202, i64* %205, align 8
   store i64 %204, i64* %6, align 8
   store i64 %201, i64* %3, align 8
-  %call2_40080c = tail call %struct.Memory* @sub_4005e0.gen_random(%struct.State* nonnull %0, i64 %201, %struct.Memory* %MEMORY.1)
+  %call2_40080c = tail call %struct.Memory* @sub_4005e0.gen_random(%struct.State* nonnull %0, i64 %201, %struct.Memory* %call2_4007e8)
   %206 = load i64, i64* %RBP.i, align 8
   %207 = add i64 %206, -32
   %208 = load i64, i64* %3, align 8
@@ -458,7 +457,7 @@ block_.L_40082c:                                  ; preds = %block_.L_4007f8
   store i64 %262, i64* %265, align 8
   store i64 %264, i64* %6, align 8
   store i64 %261, i64* %3, align 8
-  %call2_400833 = tail call %struct.Memory* @sub_400630.benchmark_heapsort(%struct.State* nonnull %0, i64 %261, %struct.Memory* %MEMORY.1)
+  %call2_400833 = tail call %struct.Memory* @sub_400630.benchmark_heapsort(%struct.State* nonnull %0, i64 %261, %struct.Memory* %call2_4007e8)
   %266 = load i64, i64* %3, align 8
   store i64 4196616, i64* %RDI.i69.pre-phi, align 8
   %267 = load i64, i64* %RBP.i, align 8

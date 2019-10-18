@@ -44,9 +44,9 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400550.Initrand(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400550.Initrand(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400570.Rand(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400570.Rand(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @tInitarr(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -240,7 +240,7 @@ block_4005e7:                                     ; preds = %block_.L_4005da
   br i1 %127, label %130, label %128
 
 ; <label>:128:                                    ; preds = %block_4005e7
-  %129 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %112, %struct.Memory* %call2_4005e7)
+  %129 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %112, %struct.Memory* %MEMORY.0)
   %.pre3 = load i64, i64* %RAX.i72, align 8
   %.pre4 = load i64, i64* %3, align 8
   %.pre5 = load i64, i64* %RBP.i, align 8
@@ -263,7 +263,7 @@ routine_idivq__rdi.exit:                          ; preds = %130, %128
   %133 = phi i64 [ %.pre5, %128 ], [ %107, %130 ]
   %134 = phi i64 [ %.pre4, %128 ], [ %112, %130 ]
   %135 = phi i64 [ %.pre3, %128 ], [ %122, %130 ]
-  %136 = phi %struct.Memory* [ %129, %128 ], [ %call2_4005e7, %130 ]
+  %136 = phi %struct.Memory* [ %129, %128 ], [ %MEMORY.0, %130 ]
   %137 = mul i64 %135, 100000
   store i64 %137, i64* %RAX.i72, align 8
   %138 = load i64, i64* %RSI.i82, align 8

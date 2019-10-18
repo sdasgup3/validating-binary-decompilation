@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401d80._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401d80._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -126,8 +126,7 @@ entry:
   br label %block_.L_402224
 
 block_.L_402224:                                  ; preds = %block_402232, %entry
-  %56 = phi i64 [ %.pre, %entry ], [ %163, %block_402232 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_402248, %block_402232 ]
+  %56 = phi i64 [ %163, %block_402232 ], [ %.pre, %entry ]
   %57 = load i64, i64* %RBP.i, align 8
   %58 = add i64 %57, -8
   %59 = add i64 %56, 4
@@ -226,7 +225,7 @@ block_402232:                                     ; preds = %block_.L_402224
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %6, align 8
   store i64 %120, i64* %3, align 8
-  %call2_402248 = tail call %struct.Memory* @sub_401d80._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %MEMORY.0)
+  %call2_402248 = tail call %struct.Memory* @sub_401d80._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %125 = load i64, i64* %RBP.i, align 8
   %126 = add i64 %125, -24
   %127 = load i64, i64* %3, align 8
@@ -329,7 +328,7 @@ block_.L_402268:                                  ; preds = %block_.L_402224
   store i64 %193, i64* %3, align 8
   %194 = add i64 %164, 48
   store i64 %194, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind

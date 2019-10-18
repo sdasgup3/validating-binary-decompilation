@@ -42,18 +42,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400510.posix_memalign_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400510.posix_memalign_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004f0.printf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004f0.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4004e0.cosf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004e0.cosf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400500.sinf_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400500.sinf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400780.double_array_divs_variable(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400780.double_array_divs_variable(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -275,8 +275,7 @@ entry:
   br label %block_.L_4006a1
 
 block_.L_4006a1:                                  ; preds = %block_4006af, %entry
-  %150 = phi i64 [ %.pre, %entry ], [ %346, %block_4006af ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_400691, %entry ], [ %call2_40070e, %block_4006af ]
+  %150 = phi i64 [ %346, %block_4006af ], [ %.pre, %entry ]
   %151 = load i64, i64* %RBP.i, align 8
   %152 = add i64 %151, -40
   %153 = add i64 %150, 8
@@ -423,7 +422,7 @@ block_4006af:                                     ; preds = %block_.L_4006a1
   store i64 %245, i64* %248, align 8
   store i64 %247, i64* %6, align 8
   store i64 %244, i64* %3, align 8
-  %call2_4006e9 = tail call %struct.Memory* @sub_4004e0.cosf_plt(%struct.State* nonnull %0, i64 %244, %struct.Memory* %MEMORY.0)
+  %call2_4006e9 = tail call %struct.Memory* @sub_4004e0.cosf_plt(%struct.State* nonnull %0, i64 %244, %struct.Memory* %call2_400691)
   %249 = load i64, i64* %3, align 8
   %250 = load <2 x float>, <2 x float>* %146, align 1
   %251 = extractelement <2 x float> %250, i32 0
@@ -481,7 +480,7 @@ block_4006af:                                     ; preds = %block_.L_4006a1
   store i64 %284, i64* %287, align 8
   store i64 %286, i64* %6, align 8
   store i64 %283, i64* %3, align 8
-  %call2_40070e = tail call %struct.Memory* @sub_400500.sinf_plt(%struct.State* nonnull %0, i64 %283, %struct.Memory* %call2_4006e9)
+  %call2_40070e = tail call %struct.Memory* @sub_400500.sinf_plt(%struct.State* nonnull %0, i64 %283, %struct.Memory* %call2_400691)
   %288 = load i64, i64* %3, align 8
   %289 = load <2 x float>, <2 x float>* %146, align 1
   %290 = extractelement <2 x float> %289, i32 0
@@ -588,7 +587,7 @@ block_.L_400747:                                  ; preds = %block_.L_4006a1
   store i64 %356, i64* %359, align 8
   store i64 %358, i64* %6, align 8
   store i64 %355, i64* %3, align 8
-  %call2_40074f = tail call %struct.Memory* @sub_400780.double_array_divs_variable(%struct.State* nonnull %0, i64 %355, %struct.Memory* %MEMORY.0)
+  %call2_40074f = tail call %struct.Memory* @sub_400780.double_array_divs_variable(%struct.State* nonnull %0, i64 %355, %struct.Memory* %call2_400691)
   %360 = load i64, i64* %3, align 8
   store i64 4196588, i64* %RDI.i155, align 8
   %361 = load i64, i64* %RBP.i, align 8

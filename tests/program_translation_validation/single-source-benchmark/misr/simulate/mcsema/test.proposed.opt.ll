@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400690.lrand48_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400690.lrand48_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @simulate(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -482,7 +482,7 @@ block_400cab:                                     ; preds = %block_.L_400c9f
 
 block_.L_400cbb:                                  ; preds = %block_.L_400d5f, %block_400cab
   %288 = phi i64 [ %.pre47, %block_400cab ], [ %724, %block_.L_400d5f ]
-  %MEMORY.2 = phi %struct.Memory* [ %call2_400cab, %block_400cab ], [ %605, %block_.L_400d5f ]
+  %MEMORY.2 = phi %struct.Memory* [ %MEMORY.1, %block_400cab ], [ %605, %block_.L_400d5f ]
   %289 = load i64, i64* %RBP.i, align 8
   %290 = add i64 %289, -72
   %291 = add i64 %288, 4
@@ -862,7 +862,7 @@ block_.L_400cf9:                                  ; preds = %block_400cc5, %bloc
   br i1 %555, label %558, label %556
 
 ; <label>:556:                                    ; preds = %block_.L_400cf9
-  %557 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %540, %struct.Memory* %call2_400d14)
+  %557 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %540, %struct.Memory* %MEMORY.2)
   %.pre49 = load i64, i64* %RDX.i559, align 8
   %.pre50 = load i64, i64* %3, align 8
   %.pre51 = load i64, i64* %RBP.i, align 8
@@ -885,7 +885,7 @@ routine_idivq__rsi.exit434:                       ; preds = %558, %556
   %561 = phi i64 [ %.pre51, %556 ], [ %535, %558 ]
   %562 = phi i64 [ %.pre50, %556 ], [ %540, %558 ]
   %563 = phi i64 [ %.pre49, %556 ], [ %560, %558 ]
-  %564 = phi %struct.Memory* [ %557, %556 ], [ %call2_400d14, %558 ]
+  %564 = phi %struct.Memory* [ %557, %556 ], [ %MEMORY.2, %558 ]
   %565 = sitofp i64 %563 to double
   %566 = load double, double* %35, align 1
   %567 = fdiv double %565, %566
@@ -1606,7 +1606,7 @@ block_.L_400e05:                                  ; preds = %block_400dd1, %bloc
   br i1 %1045, label %1048, label %1046
 
 ; <label>:1046:                                   ; preds = %block_.L_400e05
-  %1047 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %1030, %struct.Memory* %call2_400e20)
+  %1047 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %1030, %struct.Memory* %MEMORY.5)
   %.pre42 = load i64, i64* %RDX.i559, align 8
   %.pre43 = load i64, i64* %3, align 8
   %.pre44 = load i64, i64* %RBP.i, align 8
@@ -1629,7 +1629,7 @@ routine_idivq__rsi.exit253:                       ; preds = %1048, %1046
   %1051 = phi i64 [ %.pre44, %1046 ], [ %1025, %1048 ]
   %1052 = phi i64 [ %.pre43, %1046 ], [ %1030, %1048 ]
   %1053 = phi i64 [ %.pre42, %1046 ], [ %1050, %1048 ]
-  %1054 = phi %struct.Memory* [ %1047, %1046 ], [ %call2_400e20, %1048 ]
+  %1054 = phi %struct.Memory* [ %1047, %1046 ], [ %MEMORY.5, %1048 ]
   %1055 = sitofp i64 %1053 to double
   %1056 = load double, double* %35, align 1
   %1057 = fdiv double %1055, %1056

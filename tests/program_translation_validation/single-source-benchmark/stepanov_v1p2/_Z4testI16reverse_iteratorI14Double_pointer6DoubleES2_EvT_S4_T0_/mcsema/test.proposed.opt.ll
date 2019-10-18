@@ -42,18 +42,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401330._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4025b0._Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4025b0._Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c40._ZN6DoublecvdEv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401c40._ZN6DoublecvdEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_401350._Z5checkd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z4testI16reverse_iteratorI14Double_pointer6DoubleES2_EvT_S4_T0_(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @_Z4testI16reverse_iteratorI14Double_pointer6DoubleES2_EvT_S4_T0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -151,8 +151,7 @@ entry:
   br label %block_.L_4018b1
 
 block_.L_4018b1:                                  ; preds = %block_4018c1, %entry
-  %69 = phi i64 [ %.pre, %entry ], [ %197, %block_4018c1 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_4018a5, %entry ], [ %call2_4018f9, %block_4018c1 ]
+  %69 = phi i64 [ %197, %block_4018c1 ], [ %.pre, %entry ]
   %70 = load i64, i64* %RBP.i, align 8
   %71 = add i64 %70, -28
   %72 = add i64 %69, 3
@@ -266,7 +265,7 @@ block_4018c1:                                     ; preds = %block_.L_4018b1
   store i64 %144, i64* %147, align 8
   store i64 %146, i64* %6, align 8
   store i64 %143, i64* %3, align 8
-  %call2_4018e6 = tail call %struct.Memory* @sub_4025b0._Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_(%struct.State* nonnull %0, i64 %143, %struct.Memory* %MEMORY.0)
+  %call2_4018e6 = tail call %struct.Memory* @sub_4025b0._Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_(%struct.State* nonnull %0, i64 %143, %struct.Memory* %call2_4018a5)
   %148 = load i64, i64* %RBP.i, align 8
   %149 = add i64 %148, -64
   %150 = load i64, i64* %3, align 8
@@ -285,7 +284,7 @@ block_4018c1:                                     ; preds = %block_.L_4018b1
   store i64 %156, i64* %159, align 8
   store i64 %158, i64* %6, align 8
   store i64 %155, i64* %3, align 8
-  %call2_4018f4 = tail call %struct.Memory* @sub_401c40._ZN6DoublecvdEv(%struct.State* nonnull %0, i64 %155, %struct.Memory* %call2_4018e6)
+  %call2_4018f4 = tail call %struct.Memory* @sub_401c40._ZN6DoublecvdEv(%struct.State* nonnull %0, i64 %155, %struct.Memory* %call2_4018a5)
   %160 = load i64, i64* %3, align 8
   %161 = add i64 %160, -1449
   %162 = add i64 %160, 5
@@ -295,7 +294,7 @@ block_4018c1:                                     ; preds = %block_.L_4018b1
   store i64 %162, i64* %165, align 8
   store i64 %164, i64* %6, align 8
   store i64 %161, i64* %3, align 8
-  %call2_4018f9 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %161, %struct.Memory* %call2_4018f4)
+  %call2_4018f9 = tail call %struct.Memory* @sub_401350._Z5checkd(%struct.State* nonnull %0, i64 %161, %struct.Memory* %call2_4018a5)
   %166 = load i64, i64* %RBP.i, align 8
   %167 = add i64 %166, -28
   %168 = load i64, i64* %3, align 8
@@ -350,7 +349,7 @@ block_.L_40190c:                                  ; preds = %block_.L_4018b1
   store i64 %199, i64* %202, align 8
   store i64 %201, i64* %6, align 8
   store i64 %198, i64* %3, align 8
-  %call2_40190c = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %198, %struct.Memory* %MEMORY.0)
+  %call2_40190c = tail call %struct.Memory* @sub_4013a0._Z5timerv(%struct.State* nonnull %0, i64 %198, %struct.Memory* %call2_4018a5)
   %203 = load i64, i64* %3, align 8
   %204 = load i32, i32* inttoptr (i64 6312080 to i32*), align 16
   %205 = zext i32 %204 to i64

@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400650.memset_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400650.memset_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400670.malloc_plt(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400670.malloc_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @create_link_list(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @create_link_list(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -130,8 +130,7 @@ entry:
   br label %block_.L_400b6d
 
 block_.L_400b6d:                                  ; preds = %block_400b82, %entry
-  %47 = phi i64 [ %.pre, %entry ], [ %176, %block_400b82 ]
-  %MEMORY.0 = phi %struct.Memory* [ %call2_400b59, %entry ], [ %call2_400b89, %block_400b82 ]
+  %47 = phi i64 [ %176, %block_400b82 ], [ %.pre, %entry ]
   %48 = load i64, i64* %RBP.i, align 8
   %49 = add i64 %48, -12
   %50 = add i64 %47, 3
@@ -192,7 +191,7 @@ block_400b82:                                     ; preds = %block_.L_400b6d
   store i64 %85, i64* %88, align 8
   store i64 %87, i64* %6, align 8
   store i64 %84, i64* %3, align 8
-  %call2_400b89 = tail call %struct.Memory* @sub_400670.malloc_plt(%struct.State* nonnull %0, i64 %84, %struct.Memory* %MEMORY.0)
+  %call2_400b89 = tail call %struct.Memory* @sub_400670.malloc_plt(%struct.State* nonnull %0, i64 %84, %struct.Memory* %call2_400b59)
   %89 = load i64, i64* %RBP.i, align 8
   %90 = add i64 %89, -24
   %91 = load i64, i64* %RAX.i79, align 8
@@ -365,7 +364,7 @@ block_.L_400bd9:                                  ; preds = %block_.L_400b6d
   store i64 %206, i64* %3, align 8
   %207 = add i64 %177, 48
   store i64 %207, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.0
+  ret %struct.Memory* %call2_400b59
 }
 
 ; Function Attrs: norecurse nounwind

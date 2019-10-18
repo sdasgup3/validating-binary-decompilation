@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4007e0.equal_data(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.equal_data(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @in_wanted(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @in_wanted(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -118,8 +118,7 @@ entry:
   br label %block_.L_400b98
 
 block_.L_400b98:                                  ; preds = %block_.L_400bc1, %entry
-  %50 = phi i64 [ %.pre, %entry ], [ %105, %block_.L_400bc1 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_400bae, %block_.L_400bc1 ]
+  %50 = phi i64 [ %105, %block_.L_400bc1 ], [ %.pre, %entry ]
   %51 = load i64, i64* %RBP.i, align 8
   %52 = add i64 %51, -24
   %53 = add i64 %50, 5
@@ -171,7 +170,7 @@ block_400ba3:                                     ; preds = %block_.L_400b98
   store i64 %77, i64* %80, align 8
   store i64 %79, i64* %6, align 8
   store i64 %76, i64* %3, align 8
-  %call2_400bae = tail call %struct.Memory* @sub_4007e0.equal_data(%struct.State* nonnull %0, i64 %76, %struct.Memory* %MEMORY.0)
+  %call2_400bae = tail call %struct.Memory* @sub_4007e0.equal_data(%struct.State* nonnull %0, i64 %76, %struct.Memory* %2)
   %81 = load i32, i32* %EAX.i, align 4
   %82 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -228,7 +227,6 @@ block_.L_400bd2.loopexit:                         ; preds = %block_.L_400b98
 block_.L_400bd2:                                  ; preds = %block_.L_400bd2.loopexit, %block_400bbc
   %106 = phi i64 [ %93, %block_400bbc ], [ %66, %block_.L_400bd2.loopexit ]
   %107 = phi i64 [ %.pre5, %block_400bbc ], [ %51, %block_.L_400bd2.loopexit ]
-  %MEMORY.1 = phi %struct.Memory* [ %call2_400bae, %block_400bbc ], [ %MEMORY.0, %block_.L_400bd2.loopexit ]
   %108 = add i64 %107, -24
   %109 = add i64 %106, 5
   store i64 %109, i64* %3, align 8
@@ -325,7 +323,7 @@ block_.L_400bf0:                                  ; preds = %block_.L_400be9, %b
   store i64 %164, i64* %3, align 8
   %165 = add i64 %135, 48
   store i64 %165, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.1
+  ret %struct.Memory* %2
 }
 
 ; Function Attrs: norecurse nounwind
