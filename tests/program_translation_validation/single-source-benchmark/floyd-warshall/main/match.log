@@ -1,0 +1,29 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x56292c3e4398]:   %261 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %249)
+[0x56292c599480]:   %call2_4009e8 = tail call %struct.Memory.31* @sub_400e60.print_array(%struct.State.0* nonnull %0, i64 %200, %struct.Memory.31* %call2_4009c7)
+[0x56292c59e000]:   %call2_40099f = tail call %struct.Memory.31* @sub_400ab0.kernel_floyd_warshall(%struct.State.0* %0, i64 %116, %struct.Memory.31* %call2_400993)
+[0x56292c59e4c0]:   %call2_400a00 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %222, %struct.Memory.31* %call2_4009f4)
+[0x56292c59e720]:   %call2_4009f4 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %211, %struct.Memory.31* %call2_4009e8)
+[0x56292c59f3c0]:   %call2_4009c7 = tail call %struct.Memory.31* @sub_400d30.check_FP(%struct.State.0* %0, i64 %168, %struct.Memory.31* %call2_4009b7)
+[0x56292c59f4f0]:   %call2_4009b7 = tail call %struct.Memory.31* @sub_400bf0.kernel_floyd_warshall_StrictFP(%struct.State.0* %0, i64 %148, %struct.Memory.31* %call2_4009ab)
+[0x56292c59f750]:   %call2_4009ab = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %132, %struct.Memory.31* %call2_40099f)
+[0x56292c5b2c30]:   %call2_400993 = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %100, %struct.Memory.31* %call2_400983)
+[0x56292c5b5c20]:   %call2_400983 = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %78, %struct.Memory.31* %call2_40096e)
+[0x56292c5b7300]:   %call2_40096e = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %66, %struct.Memory.31* %2)
+Multiple matches exist for [0x56292c3e7968]:   %273 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %261)
+[0x56292c599480]:   %call2_4009e8 = tail call %struct.Memory.31* @sub_400e60.print_array(%struct.State.0* nonnull %0, i64 %200, %struct.Memory.31* %call2_4009c7)
+[0x56292c59e000]:   %call2_40099f = tail call %struct.Memory.31* @sub_400ab0.kernel_floyd_warshall(%struct.State.0* %0, i64 %116, %struct.Memory.31* %call2_400993)
+[0x56292c59e4c0]:   %call2_400a00 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %222, %struct.Memory.31* %call2_4009f4)
+[0x56292c59e720]:   %call2_4009f4 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %211, %struct.Memory.31* %call2_4009e8)
+[0x56292c59f3c0]:   %call2_4009c7 = tail call %struct.Memory.31* @sub_400d30.check_FP(%struct.State.0* %0, i64 %168, %struct.Memory.31* %call2_4009b7)
+[0x56292c59f4f0]:   %call2_4009b7 = tail call %struct.Memory.31* @sub_400bf0.kernel_floyd_warshall_StrictFP(%struct.State.0* %0, i64 %148, %struct.Memory.31* %call2_4009ab)
+[0x56292c59f750]:   %call2_4009ab = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %132, %struct.Memory.31* %call2_40099f)
+[0x56292c5b2c30]:   %call2_400993 = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %100, %struct.Memory.31* %call2_400983)
+[0x56292c5b5c20]:   %call2_400983 = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %78, %struct.Memory.31* %call2_40096e)
+[0x56292c5b7300]:   %call2_40096e = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %66, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

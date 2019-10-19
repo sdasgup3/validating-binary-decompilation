@@ -1,0 +1,27 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5647822bd690]:   %279 = fcmp uno double %277, %278
+[0x564782445ac0]:   %282 = fcmp uno double %280, %281
+[0x564782447280]:   %294 = fcmp ogt double %280, %281
+[0x5647824474e0]:   %296 = fcmp olt double %280, %281
+[0x564782447e60]:   %298 = fcmp oeq double %280, %281
+Multiple matches exist for [0x5647822be140]:   %291 = fcmp ogt double %277, %278
+[0x564782445ac0]:   %282 = fcmp uno double %280, %281
+[0x564782447280]:   %294 = fcmp ogt double %280, %281
+[0x5647824474e0]:   %296 = fcmp olt double %280, %281
+[0x564782447e60]:   %298 = fcmp oeq double %280, %281
+Multiple matches exist for [0x5647822be2a0]:   %293 = fcmp olt double %277, %278
+[0x564782445ac0]:   %282 = fcmp uno double %280, %281
+[0x564782447280]:   %294 = fcmp ogt double %280, %281
+[0x5647824474e0]:   %296 = fcmp olt double %280, %281
+[0x564782447e60]:   %298 = fcmp oeq double %280, %281
+Multiple matches exist for [0x5647822be400]:   %295 = fcmp oeq double %277, %278
+[0x564782445ac0]:   %282 = fcmp uno double %280, %281
+[0x564782447280]:   %294 = fcmp ogt double %280, %281
+[0x5647824474e0]:   %296 = fcmp olt double %280, %281
+[0x564782447e60]:   %298 = fcmp oeq double %280, %281
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Proc6] from ../binary/test.mcsema.opt.ll
+Extracting function [Proc6] from mcsema/test.proposed.opt.ll
+Matcher Done...

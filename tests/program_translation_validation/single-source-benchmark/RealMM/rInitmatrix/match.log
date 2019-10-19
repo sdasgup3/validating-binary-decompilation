@@ -1,0 +1,10 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55e7dae7a548]:   %106 = phi %struct.Memory* [ %98, %97 ], [ %MEMORY.1, %99 ]
+[0x55e7daf49748]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_4005fd ]
+[0x55e7daf53138]:   %173 = phi %struct.Memory.32* [ %165, %164 ], [ %MEMORY.1, %166 ]
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [rInitmatrix] from ../binary/test.mcsema.opt.ll
+Extracting function [rInitmatrix] from mcsema/test.proposed.opt.ll
+Matcher Done...

@@ -1,0 +1,10 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5635e8bce208]:   %93 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %79)
+[0x5635e8d12530]:   %call2_40058d = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* %0, i64 %89, %struct.Memory.32* %call2_400576)
+[0x5635e8d1b8d0]:   %call2_400576 = tail call %struct.Memory.32* @sub_4005a0.fannkuch(%struct.State.1* %0, i64 %75, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

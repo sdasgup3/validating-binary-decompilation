@@ -1,0 +1,77 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55943bb109c8]:   %111 = load double, double* %110, align 8
+[0x55943bb3e948]:   %112 = load double, double* %111, align 8
+[0x55943bb40e18]:   %131 = load double, double* %111, align 8
+Multiple matches exist for [0x55943bb10a60]:   %112 = tail call double @llvm.trunc.f64(double %111) #9
+[0x55943bb294d0]:   %132 = tail call double @llvm.trunc.f64(double %131)
+[0x55943bb73f60]:   %113 = tail call double @llvm.trunc.f64(double %112)
+Multiple matches exist for [0x55943bb10b60]:   %113 = tail call double @llvm.fabs.f64(double %112) #9
+[0x55943b995110]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55943b9cb6a0]:   %245 = tail call i32 @llvm.ctpop.i32(i32 %244)
+[0x55943bb22540]:   %133 = tail call double @llvm.fabs.f64(double %132)
+[0x55943bb23940]:   %215 = tail call i32 @llvm.ctpop.i32(i32 %214)
+[0x55943bb25740]:   %175 = tail call i32 @llvm.ctpop.i32(i32 %174)
+[0x55943bb26140]:   %144 = tail call i32 @llvm.ctpop.i32(i32 %143)
+[0x55943bb294d0]:   %132 = tail call double @llvm.trunc.f64(double %131)
+[0x55943bb38a90]:   %286 = tail call i32 @llvm.ctpop.i32(i32 %285)
+[0x55943bb3c860]:   %call2_400ae4 = tail call %struct.Memory.31* @sub_400530.strcmp_plt(%struct.State.0* nonnull %0, i64 %318, %struct.Memory.31* %101)
+[0x55943bb3d0a0]:   %374 = tail call i32 @llvm.ctpop.i32(i32 %373)
+[0x55943bb40210]:   %326 = tail call i32 @llvm.ctpop.i32(i32 %325)
+[0x55943bb51100]:   %call2_400a73 = tail call %struct.Memory.31* @sub_400d20.Func1(%struct.State.0* nonnull %0, i64 %167, %struct.Memory.31* %101)
+[0x55943bb54300]:   %87 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %73, %struct.Memory.31* %MEMORY.0)
+[0x55943bb619b0]:   %114 = tail call double @llvm.fabs.f64(double %113)
+[0x55943bb73f60]:   %113 = tail call double @llvm.trunc.f64(double %112)
+Multiple matches exist for [0x55943bb11f68]:   %130 = load double, double* %110, align 8
+[0x55943bb3e948]:   %112 = load double, double* %111, align 8
+[0x55943bb40e18]:   %131 = load double, double* %111, align 8
+Multiple matches exist for [0x55943bb12020]:   %131 = tail call double @llvm.trunc.f64(double %130) #9
+[0x55943bb294d0]:   %132 = tail call double @llvm.trunc.f64(double %131)
+[0x55943bb73f60]:   %113 = tail call double @llvm.trunc.f64(double %112)
+Multiple matches exist for [0x55943bb12120]:   %132 = tail call double @llvm.fabs.f64(double %131) #9
+[0x55943b995110]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55943b9cb6a0]:   %245 = tail call i32 @llvm.ctpop.i32(i32 %244)
+[0x55943bb22540]:   %133 = tail call double @llvm.fabs.f64(double %132)
+[0x55943bb23940]:   %215 = tail call i32 @llvm.ctpop.i32(i32 %214)
+[0x55943bb25740]:   %175 = tail call i32 @llvm.ctpop.i32(i32 %174)
+[0x55943bb26140]:   %144 = tail call i32 @llvm.ctpop.i32(i32 %143)
+[0x55943bb294d0]:   %132 = tail call double @llvm.trunc.f64(double %131)
+[0x55943bb38a90]:   %286 = tail call i32 @llvm.ctpop.i32(i32 %285)
+[0x55943bb3c860]:   %call2_400ae4 = tail call %struct.Memory.31* @sub_400530.strcmp_plt(%struct.State.0* nonnull %0, i64 %318, %struct.Memory.31* %101)
+[0x55943bb3d0a0]:   %374 = tail call i32 @llvm.ctpop.i32(i32 %373)
+[0x55943bb40210]:   %326 = tail call i32 @llvm.ctpop.i32(i32 %325)
+[0x55943bb51100]:   %call2_400a73 = tail call %struct.Memory.31* @sub_400d20.Func1(%struct.State.0* nonnull %0, i64 %167, %struct.Memory.31* %101)
+[0x55943bb54300]:   %87 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %73, %struct.Memory.31* %MEMORY.0)
+[0x55943bb619b0]:   %114 = tail call double @llvm.fabs.f64(double %113)
+[0x55943bb73f60]:   %113 = tail call double @llvm.trunc.f64(double %112)
+Multiple matches exist for [0x55943bb16ca8]:   %222 = tail call fastcc %struct.Memory* @ext_6073d0_strcmp(%struct.State* nonnull %0, %struct.Memory* %362)
+[0x55943bb3c860]:   %call2_400ae4 = tail call %struct.Memory.31* @sub_400530.strcmp_plt(%struct.State.0* nonnull %0, i64 %318, %struct.Memory.31* %101)
+[0x55943bb51100]:   %call2_400a73 = tail call %struct.Memory.31* @sub_400d20.Func1(%struct.State.0* nonnull %0, i64 %167, %struct.Memory.31* %101)
+Multiple matches exist for [0x55943bb1c750]:   %338 = fcmp uno double %.cast, %337
+[0x55943bb53150]:   %89 = fcmp ogt double %74, %76
+[0x55943bb59800]:   %77 = fcmp uno double %74, %76
+[0x55943bb5c180]:   %93 = fcmp oeq double %74, %76
+[0x55943bb5c440]:   %91 = fcmp olt double %74, %76
+Multiple matches exist for [0x55943bb1cf68]:   %.pre12 = load i64, i64* %RBP, align 8
+[0x55943bb36fe8]:   %71 = load i64, i64* %RBP.i, align 8
+[0x55943bb39698]:   %.pre12 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55943bb1d1c0]:   %350 = fcmp ogt double %.cast, %337
+[0x55943bb53150]:   %89 = fcmp ogt double %74, %76
+[0x55943bb59800]:   %77 = fcmp uno double %74, %76
+[0x55943bb5c180]:   %93 = fcmp oeq double %74, %76
+[0x55943bb5c440]:   %91 = fcmp olt double %74, %76
+Multiple matches exist for [0x55943bb1d320]:   %352 = fcmp olt double %.cast, %337
+[0x55943bb53150]:   %89 = fcmp ogt double %74, %76
+[0x55943bb59800]:   %77 = fcmp uno double %74, %76
+[0x55943bb5c180]:   %93 = fcmp oeq double %74, %76
+[0x55943bb5c440]:   %91 = fcmp olt double %74, %76
+Multiple matches exist for [0x55943bb1d480]:   %354 = fcmp oeq double %.cast, %337
+[0x55943bb53150]:   %89 = fcmp ogt double %74, %76
+[0x55943bb59800]:   %77 = fcmp uno double %74, %76
+[0x55943bb5c180]:   %93 = fcmp oeq double %74, %76
+[0x55943bb5c440]:   %91 = fcmp olt double %74, %76
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Func2] from ../binary/test.mcsema.opt.ll
+Extracting function [Func2] from mcsema/test.proposed.opt.ll
+Matcher Done...

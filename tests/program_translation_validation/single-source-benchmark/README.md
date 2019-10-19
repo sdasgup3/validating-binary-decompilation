@@ -52,3 +52,8 @@ cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} matc
 grep "Pass" docs/match.log > docs/matchPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl -file docs/compdPass.log --file docs/matchPass.log  --show 1 > docs/matchFail.log
 ```
+
+## Match Pass line count
+```
+cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/compd.log | wc -l" > docs/matchPassLineCount.log
+```

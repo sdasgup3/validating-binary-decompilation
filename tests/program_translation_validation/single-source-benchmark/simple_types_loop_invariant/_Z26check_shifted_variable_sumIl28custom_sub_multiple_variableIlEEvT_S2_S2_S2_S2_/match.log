@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x562745aa1e50]:   %69 = tail call double @llvm.fabs.f64(double %68) #9
+[0x5627442cd2a0]:   %131 = tail call i32 @llvm.ctpop.i32(i32 %130)
+[0x5627442d2590]:   %70 = tail call double @llvm.fabs.f64(double %69)
+[0x562744432480]:   %69 = tail call double @llvm.trunc.f64(double %68)
+[0x5627444999b0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x5627446defb0]:   %157 = tail call i32 @llvm.ctpop.i32(i32 %156)
+[0x562745eecaa0]:   %call2_40e9ae = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %139, %struct.Memory.32* %call2_40e98e)
+[0x562745eefca0]:   %call2_40e98e = tail call %struct.Memory.32* @sub_40e0c0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e976)
+[0x562745ef1170]:   %call2_40e976 = tail call %struct.Memory.32* @sub_40e900._ZN28custom_sub_multiple_variableIlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
+[0x562745f349f0]:   %113 = tail call i32 @llvm.ctpop.i32(i32 %112)
+Multiple matches exist for [0x562745aa78b8]:   %176 = tail call fastcc %struct.Memory* @ext_66c168_printf(%struct.State* nonnull %0, %struct.Memory* %126)
+[0x562745eecaa0]:   %call2_40e9ae = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %139, %struct.Memory.32* %call2_40e98e)
+[0x562745eefca0]:   %call2_40e98e = tail call %struct.Memory.32* @sub_40e0c0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e976)
+[0x562745ef1170]:   %call2_40e976 = tail call %struct.Memory.32* @sub_40e900._ZN28custom_sub_multiple_variableIlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIl28custom_sub_multiple_variableIlEEvT_S2_S2_S2_S2_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIl28custom_sub_multiple_variableIlEEvT_S2_S2_S2_S2_] from mcsema/test.proposed.opt.ll
+Matcher Done...

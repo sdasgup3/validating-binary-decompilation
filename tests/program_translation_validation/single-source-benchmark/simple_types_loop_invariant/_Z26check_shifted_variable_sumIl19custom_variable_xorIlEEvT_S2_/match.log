@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x555e84630b50]:   %51 = tail call double @llvm.fabs.f64(double %50) #9
+[0x555e840b6240]:   %101 = tail call i32 @llvm.ctpop.i32(i32 %100)
+[0x555e840eb860]:   %83 = tail call i32 @llvm.ctpop.i32(i32 %82)
+[0x555e8421b410]:   %52 = tail call double @llvm.fabs.f64(double %51)
+[0x555e84282950]:   %51 = tail call double @llvm.trunc.f64(double %50)
+[0x555e84523500]:   %127 = tail call i32 @llvm.ctpop.i32(i32 %126)
+[0x555e85caee00]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x555e85cd5a40]:   %call2_40e166 = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %109, %struct.Memory.32* %call2_40e146)
+[0x555e85cd8c40]:   %call2_40e146 = tail call %struct.Memory.32* @sub_40e0c0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %92, %struct.Memory.32* %call2_40e12e)
+[0x555e85cda110]:   %call2_40e12e = tail call %struct.Memory.32* @sub_40e0f0._ZN19custom_variable_xorIlE8do_shiftEll(%struct.State.1* %0, i64 %61, %struct.Memory.32* %2)
+Multiple matches exist for [0x555e84635fb8]:   %146 = tail call fastcc %struct.Memory* @ext_66c168_printf(%struct.State* nonnull %0, %struct.Memory* %96)
+[0x555e85cd5a40]:   %call2_40e166 = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %109, %struct.Memory.32* %call2_40e146)
+[0x555e85cd8c40]:   %call2_40e146 = tail call %struct.Memory.32* @sub_40e0c0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %92, %struct.Memory.32* %call2_40e12e)
+[0x555e85cda110]:   %call2_40e12e = tail call %struct.Memory.32* @sub_40e0f0._ZN19custom_variable_xorIlE8do_shiftEll(%struct.State.1* %0, i64 %61, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIl19custom_variable_xorIlEEvT_S2_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIl19custom_variable_xorIlEEvT_S2_] from mcsema/test.proposed.opt.ll
+Matcher Done...

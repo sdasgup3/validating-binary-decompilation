@@ -7,7 +7,7 @@ usage()
 
 compdCheck() {
   msg=$1
-  if grep -qw "error\|Error" compd.log; then
+  if grep -qw "error" compd.log; then
     echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
     exit 1
   fi

@@ -1,0 +1,17 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x56192ce8b588]:   %204 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %146)
+[0x56192d014be0]:   %call2_400a17 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %309, %struct.Memory.32* %call2_4009f7)
+[0x56192d02ace0]:   %call2_4009f7 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %MEMORY.1)
+[0x56192d034080]:   %call2_4009e1 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %MEMORY.1)
+[0x56192d040f40]:   %call2_400a30 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %321, %struct.Memory.32* %call2_400a17)
+Multiple matches exist for [0x56192cf36e08]:   %217 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %204)
+[0x56192d014be0]:   %call2_400a17 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %309, %struct.Memory.32* %call2_4009f7)
+[0x56192d02ace0]:   %call2_4009f7 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %MEMORY.1)
+[0x56192d034080]:   %call2_4009e1 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %MEMORY.1)
+[0x56192d040f40]:   %call2_400a30 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %321, %struct.Memory.32* %call2_400a17)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

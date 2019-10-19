@@ -816,6 +816,7 @@ CompositionalDecompiler::decompileFunction(const string &extractedFunction) {
 
     // Generate call to specialized semantics defintion
     retval = decompileInstruction(instr, currRIP, currSize);
+    Console::msg() << "Decompiling instr:" << instr << " Done...\n";
   }
 
   Console::msg() << "Decompiling Function: " + extractedFunction + " Done.\n\n";
@@ -840,6 +841,8 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
     return;
   }
   extractFromStream(funcDecls, *stream);
+  delete stream;
+
   for (auto funcDecl : funcDecls) {
     FuncDecls << funcDecl << endl;
   }

@@ -1,0 +1,16 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5623be810368]:   %148 = load i32, i32* bitcast (%IntGlob_type* @IntGlob to i32*), align 8
+[0x5623be936878]:   %118 = load i32, i32* inttoptr (i64 6310380 to i32*), align 4
+[0x5623be9369a8]:   %117 = load i32, i32* %116, align 4
+Multiple matches exist for [0x5623be7f2760]:   %168 = lshr i32 %148, 31
+[0x5623be9652c0]:   %138 = lshr i32 %118, 31
+[0x5623be965490]:   %137 = lshr i32 %117, 31
+Multiple matches exist for [0x5623be7f27e0]:   %169 = xor i32 %168, %167
+[0x5623be965000]:   %140 = xor i32 %135, %137
+[0x5623be965160]:   %139 = xor i32 %138, %137
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Proc2] from ../binary/test.mcsema.opt.ll
+Extracting function [Proc2] from mcsema/test.proposed.opt.ll
+Matcher Done...

@@ -1,0 +1,20 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x562503e374b8]:   %.pre3 = load i64, i64* %RBP, align 8
+[0x562503f83a38]:   %.pre1 = load i64, i64* %RBP.i, align 8
+[0x562503fcd218]:   %262 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x562503e45428]:   %237 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %158)
+[0x562503f86610]:   %call2_400701 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %200, %struct.Memory.32* %call2_4006c9)
+[0x562503f9ad80]:   %call2_4006c9 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %122, %struct.Memory.32* %MEMORY.0)
+[0x562503f9f450]:   %call2_400694 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* %0, i64 %68, %struct.Memory.32* %2)
+[0x562503fafb90]:   %call2_400715 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %212, %struct.Memory.32* %call2_400701)
+Multiple matches exist for [0x562503e45df8]:   %250 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %237)
+[0x562503f86610]:   %call2_400701 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %200, %struct.Memory.32* %call2_4006c9)
+[0x562503f9ad80]:   %call2_4006c9 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %122, %struct.Memory.32* %MEMORY.0)
+[0x562503f9f450]:   %call2_400694 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* %0, i64 %68, %struct.Memory.32* %2)
+[0x562503fafb90]:   %call2_400715 = tail call %struct.Memory.32* @sub_400410.printf_plt(%struct.State.1* nonnull %0, i64 %212, %struct.Memory.32* %call2_400701)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Printcomplex] from ../binary/test.mcsema.opt.ll
+Extracting function [Printcomplex] from mcsema/test.proposed.opt.ll
+Matcher Done...

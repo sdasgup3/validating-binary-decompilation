@@ -79,14 +79,15 @@ Decompiling instr:.salsa:...
 Decompiling instr:pushq %rbp...
 Instr: pushq %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
 Running artifacts...Done.
+
 FuncCache inserted: _ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_
 FuncCache inserted: routine_pushq__rbp
 
@@ -94,14 +95,15 @@ FuncCache inserted: routine_pushq__rbp
 Decompiling instr:movq %rsp, %rbp...
 Instr: movq %rsp, %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
@@ -111,9 +113,12 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:cmpl $0x0, 0x601034...
 Instr: cmpl $0x0, 0x601034
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
+Generating Binary -> McSema -> Declutter -> Cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034/test.mod.ll
+
 test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
 void main() {
 ^
@@ -127,7 +132,7 @@ Traceback (most recent call last):
     cwd=os.path.dirname(__file__))
   File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
     raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpioyyrn/test' returned non-zero exit status 1
+CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpeC3wO8/test' returned non-zero exit status 1
 Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
 make[1]: *** [mcsema] Error 1
 make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
@@ -152,17 +157,19 @@ Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/composi
 Running artifacts...Done.
 
 
+
 Decompiling instr:jne .L_40093c...
 Instr: jne .L_40093c
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_40093c
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_40093c/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNZEP6MemoryR5State3RnWIhE2InImES7_
@@ -172,14 +179,15 @@ FuncCache inserted: routine_jne_.L_40093c
 Decompiling instr:movq $0x601080, %rdi...
 Instr: movq $0x601080, %rdi
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601080___rdi
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601080___rdi/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
@@ -189,14 +197,15 @@ FuncCache inserted: routine_movq__0x601080___rdi
 Decompiling instr:movq $0x601040, %rsi...
 Instr: movq $0x601040, %rsi
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601040___rsi
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601040___rsi/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
@@ -206,14 +215,15 @@ FuncCache inserted: routine_movq__0x601040___rsi
 Decompiling instr:callq .salsa20...
 Instr: callq .salsa20
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.salsa20
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.salsa20/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4CALLI2InImEEEP6MemoryS4_R5StateT_S2_
@@ -223,14 +233,15 @@ FuncCache inserted: routine_callq_.salsa20
 Decompiling instr:movl 0x601040, %eax...
 Instr: movl 0x601040, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601040___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601040___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
@@ -240,14 +251,15 @@ FuncCache inserted: routine_movl_0x601040___eax
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
@@ -257,14 +269,15 @@ FuncCache inserted: routine_addl__0x1___eax
 Decompiling instr:movl %eax, 0x601040...
 Instr: movl %eax, 0x601040
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601040
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601040/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
@@ -277,9 +290,12 @@ Decompiling instr:.L_40093c:...
 Decompiling instr:movl 0x601034, %eax...
 Instr: movl 0x601034, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
+Generating Binary -> McSema -> Declutter -> Cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll
+
 test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
 void main() {
 ^
@@ -293,7 +309,7 @@ Traceback (most recent call last):
     cwd=os.path.dirname(__file__))
   File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
     raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpR0Gd3J/test' returned non-zero exit status 1
+CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpG6911e/test' returned non-zero exit status 1
 Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
 make[1]: *** [mcsema] Error 1
 make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
@@ -318,17 +334,19 @@ Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/composi
 Running artifacts...Done.
 
 
+
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
@@ -338,14 +356,15 @@ FuncCache skipped: routine_addl__0x1___eax
 Decompiling instr:andl $0xf, %eax...
 Instr: andl $0xf, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//andl__0xf___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//andl__0xf___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
@@ -355,9 +374,12 @@ FuncCache inserted: routine_andl__0xf___eax
 Decompiling instr:movl %eax, 0x601034...
 Instr: movl %eax, 0x601034
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
+Generating Binary -> McSema -> Declutter -> Cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034/test.mod.ll
+
 test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
 void main() {
 ^
@@ -371,7 +393,7 @@ Traceback (most recent call last):
     cwd=os.path.dirname(__file__))
   File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
     raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpKYTEW8/test' returned non-zero exit status 1
+CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpSfjPPx/test' returned non-zero exit status 1
 Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
 make[1]: *** [mcsema] Error 1
 make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
@@ -396,12 +418,16 @@ Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/composi
 Running artifacts...Done.
 
 
+
 Decompiling instr:movl 0x601034, %eax...
 Instr: movl 0x601034, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
+Generating Binary -> McSema -> Declutter -> Cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll
+
 test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
 void main() {
 ^
@@ -415,7 +441,7 @@ Traceback (most recent call last):
     cwd=os.path.dirname(__file__))
   File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
     raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpWrS9JG/test' returned non-zero exit status 1
+CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpObejSJ/test' returned non-zero exit status 1
 Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
 make[1]: *** [mcsema] Error 1
 make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
@@ -440,17 +466,19 @@ Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/composi
 Running artifacts...Done.
 
 
+
 Decompiling instr:movl %eax, %ecx...
 Instr: movl %eax, %ecx
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_
@@ -460,14 +488,15 @@ FuncCache inserted: routine_movl__eax___ecx
 Decompiling instr:movl 0x601080(,%rcx,4), %eax...
 Instr: movl 0x601080(,%rcx,4), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601080___rcx_4____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601080___rcx_4____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
@@ -477,14 +506,15 @@ FuncCache inserted: routine_movl_0x601080___rcx_4____eax
 Decompiling instr:popq %rbp...
 Instr: popq %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3POPI3RnWImEEEP6MemoryS4_R5StateT_
 FuncCache inserted: routine_popq__rbp
@@ -493,411 +523,15 @@ FuncCache inserted: routine_popq__rbp
 Decompiling instr:retq...
 Instr: retq
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq/test.mod.ll
 Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-FuncCache inserted: _ZN12_GLOBAL__N_1L3RETEP6MemoryR5State
-FuncCache inserted: routine_retq
-Decompiling Function: salsa Done.
 
-
-
-Writing to mcsema/test.proposed.ll ...
-Decompiling: Done.
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/disass.py", line 77, in execute
-    cwd=os.path.dirname(__file__))
-  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
-    raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpW7cn98/test' returned non-zero exit status 1
-Could not generate a CFG. Try using the --log_file option to see an error log.
-Traceback (most recent call last):
-  File "/usr/local/bin/mcsema-disass", line 11, in <module>
-    load_entry_point('mcsema-disass==2.0', 'console_scripts', 'mcsema-disass')()
-  File "/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/__main__.py", line 162, in main
-    if 0 == os.path.getsize(args.output):
-  File "/usr/lib/python2.7/genericpath.py", line 57, in getsize
-    return os.stat(filename).st_size
-OSError: [Errno 2] No such file or directory: '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034/test.cfg'
-make[1]: *** [mcsema] Error 1
-make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
-cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034/test.mod.ll: No such file or directory
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-Makefile:9: recipe for target 'mcsema' failed
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/cmpl__0x0__0x601034'
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x0__0x601034/test.mod.ll
-Running artifacts...Done.
-
-
-Decompiling instr:jne .L_40093c...
-Instr: jne .L_40093c
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_40093c
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_40093c/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3JNZEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jne_.L_40093c
-
-
-Decompiling instr:movq $0x601080, %rdi...
-Instr: movq $0x601080, %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601080___rdi
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601080___rdi/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x601080___rdi
-
-
-Decompiling instr:movq $0x601040, %rsi...
-Instr: movq $0x601040, %rsi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601040___rsi
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x601040___rsi/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x601040___rsi
-
-
-Decompiling instr:callq .salsa20...
-Instr: callq .salsa20
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.salsa20
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.salsa20/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L4CALLI2InImEEEP6MemoryS4_R5StateT_S2_
-FuncCache inserted: routine_callq_.salsa20
-
-
-Decompiling instr:movl 0x601040, %eax...
-Instr: movl 0x601040, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601040___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601040___eax/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl_0x601040___eax
-
-
-Decompiling instr:addl $0x1, %eax...
-Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_addl__0x1___eax
-
-
-Decompiling instr:movl %eax, 0x601040...
-Instr: movl %eax, 0x601040
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601040
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601040/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl__eax__0x601040
-
-
-Decompiling instr:.L_40093c:...
-
-
-Decompiling instr:movl 0x601034, %eax...
-Instr: movl 0x601034, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/disass.py", line 77, in execute
-    cwd=os.path.dirname(__file__))
-  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
-    raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmp2iDNw0/test' returned non-zero exit status 1
-Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
-make[1]: *** [mcsema] Error 1
-make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
-cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll: No such file or directory
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-Makefile:9: recipe for target 'mcsema' failed
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll
-Running artifacts...Done.
-
-
-Decompiling instr:addl $0x1, %eax...
-Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache skipped: routine_addl__0x1___eax
-
-
-Decompiling instr:andl $0xf, %eax...
-Instr: andl $0xf, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//andl__0xf___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//andl__0xf___eax/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_andl__0xf___eax
-
-
-Decompiling instr:movl %eax, 0x601034...
-Instr: movl %eax, 0x601034
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034
-Generating artifacts...
-Already Exists
-Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/disass.py", line 77, in execute
-    cwd=os.path.dirname(__file__))
-  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
-    raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpLmd17j/test' returned non-zero exit status 1
-Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
-make[1]: *** [mcsema] Error 1
-make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
-cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034/test.mod.ll: No such file or directory
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034 binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034 mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-Makefile:9: recipe for target 'mcsema' failed
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034 declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl__eax__0x601034'
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__0x601034/test.mod.ll
-Running artifacts...Done.
-
-
-Decompiling instr:movl 0x601034, %eax...
-Instr: movl 0x601034, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-test.c:1:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main() {
-^
-test.c:1:1: note: change return type to 'int'
-void main() {
-^~~~
-int
-1 warning generated.
-Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/disass.py", line 77, in execute
-    cwd=os.path.dirname(__file__))
-  File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
-    raise CalledProcessError(retcode, cmd)
-CalledProcessError: Command '/home/ubuntu/ida-6.95/idal64 -B -S"/usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/ida/get_cfg.py --output /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax/test.cfg --log_file /dev/null --arch amd64 --os linux --entrypoint main" /tmp/tmpyWyGNQ/test' returned non-zero exit status 1
-Generated an invalid (zero-sized) CFG. Please use the --log_file option to see an error log.
-make[1]: *** [mcsema] Error 1
-make[1]: *** No rule to make target 'test.ll', needed by 'declutter'.  Stop.
-cat: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll: No such file or directory
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax binary
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-clang -Os test.c -o test
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax mcsema
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-mcsema-disass --disassembler /home/ubuntu/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-Makefile:9: recipe for target 'mcsema' failed
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: make -C /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax declutter
-make[1]: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-make[1]: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/movl_0x601034___eax'
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601034___eax/test.mod.ll
-Running artifacts...Done.
-
-
-Decompiling instr:movl %eax, %ecx...
-Instr: movl %eax, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl__eax___ecx
-
-
-Decompiling instr:movl 0x601080(,%rcx,4), %eax...
-Instr: movl 0x601080(,%rcx,4), %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601080___rcx_4____eax
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_0x601080___rcx_4____eax/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl_0x601080___rcx_4____eax
-
-
-Decompiling instr:popq %rbp...
-Instr: popq %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp/test.mod.ll
-Running artifacts...Done.
-Multiple defintions of @seg_4003a0__text
-FuncCache inserted: _ZN12_GLOBAL__N_1L3POPI3RnWImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_popq__rbp
-
-
-Decompiling instr:retq...
-Instr: retq
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq
-Generating artifacts...
-Already Exists
-Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq/test.mod.ll
-Running artifacts...Done.
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3RETEP6MemoryR5State
 FuncCache inserted: routine_retq
