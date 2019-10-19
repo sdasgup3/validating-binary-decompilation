@@ -1,0 +1,17 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55b5ef9393d8]:   %135 = tail call fastcc %struct.Memory* @ext_6020a0_free(%struct.State* nonnull %0, %struct.Memory* %119)
+[0x55b5ef982a30]:   %call2_400978 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %108, %struct.Memory.32* %call2_40096c)
+[0x55b5ef992e40]:   %call2_40096c = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %97, %struct.Memory.32* %call2_40095c)
+[0x55b5ef99c1e0]:   %call2_40095c = tail call %struct.Memory.32* @sub_4008e0.dump_list(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %call2_40094f)
+[0x55b5ef99f3e0]:   %call2_40094f = tail call %struct.Memory.32* @sub_400930.dump_play(%struct.State.1* nonnull %0, i64 %67, %struct.Memory.32* %2)
+Multiple matches exist for [0x55b5ef939c88]:   %147 = tail call fastcc %struct.Memory* @ext_6020a0_free(%struct.State* nonnull %0, %struct.Memory* %135)
+[0x55b5ef982a30]:   %call2_400978 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %108, %struct.Memory.32* %call2_40096c)
+[0x55b5ef992e40]:   %call2_40096c = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %97, %struct.Memory.32* %call2_40095c)
+[0x55b5ef99c1e0]:   %call2_40095c = tail call %struct.Memory.32* @sub_4008e0.dump_list(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %call2_40094f)
+[0x55b5ef99f3e0]:   %call2_40094f = tail call %struct.Memory.32* @sub_400930.dump_play(%struct.State.1* nonnull %0, i64 %67, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [dump_play] from ../binary/test.mcsema.opt.ll
+Extracting function [dump_play] from mcsema/test.proposed.opt.ll
+Matcher Done...

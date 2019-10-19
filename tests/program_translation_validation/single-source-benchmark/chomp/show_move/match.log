@@ -1,0 +1,11 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55e114e1d8f8]:   %75 = tail call fastcc %struct.Memory* @ext_6020b0_printf(%struct.State* nonnull %0, %struct.Memory* %68)
+[0x55e115070e30]:   %call2_400aa0 = tail call %struct.Memory.32* @sub_400540.printf_plt(%struct.State.1* %0, i64 %70, %struct.Memory.32* %call2_400a8f)
+[0x55e11507a1d0]:   %call2_400a8f = tail call %struct.Memory.32* @sub_4009f0.show_data(%struct.State.1* %0, i64 %64, %struct.Memory.32* %call2_400a83)
+[0x55e11507d3c0]:   %call2_400a83 = tail call %struct.Memory.32* @sub_400530.putchar_plt(%struct.State.1* %0, i64 %48, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [show_move] from ../binary/test.mcsema.opt.ll
+Extracting function [show_move] from mcsema/test.proposed.opt.ll
+Matcher Done...

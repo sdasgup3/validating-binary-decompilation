@@ -1,0 +1,25 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x557eb8ea54d8]:   %150 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x557eb8f40998]:   %38 = load i32, i32* %37, align 4
+[0x557eb8f458a8]:   %40 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+Multiple matches exist for [0x557eb8ea60d0]:   %169 = lshr i32 %150, 31
+[0x557eb8f676b0]:   %58 = lshr i32 %38, 31
+[0x557eb8f68150]:   %59 = lshr i32 %40, 31
+Multiple matches exist for [0x557eb8ea6150]:   %170 = xor i32 %169, %168
+[0x557eb8f6ac90]:   %61 = xor i32 %56, %58
+[0x557eb8f6c700]:   %60 = xor i32 %59, %58
+Multiple matches exist for [0x557eb8ea73c8]:   %198 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
+[0x557eb8f4cd78]:   %132 = load i32, i32* inttoptr (i64 6299756 to i32*), align 4
+[0x557eb8f4d238]:   %130 = load i32, i32* %129, align 4
+Multiple matches exist for [0x557eb8ea7fa0]:   %217 = lshr i32 %198, 31
+[0x557eb8f7f520]:   %151 = lshr i32 %132, 31
+[0x557eb8f7f970]:   %150 = lshr i32 %130, 31
+Multiple matches exist for [0x557eb8ea8020]:   %218 = xor i32 %217, %216
+[0x557eb8f7f280]:   %153 = xor i32 %148, %150
+[0x557eb8f7f3d0]:   %152 = xor i32 %151, %150
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [next_data] from ../binary/test.mcsema.opt.ll
+Extracting function [next_data] from mcsema/test.proposed.opt.ll
+Matcher Done...

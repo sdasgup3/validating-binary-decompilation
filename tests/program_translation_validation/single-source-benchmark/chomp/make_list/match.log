@@ -1,0 +1,45 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55f8f84521d8]:   %151 = tail call fastcc %struct.Memory* @ext_602090_malloc(%struct.State* nonnull %0, %struct.Memory* %449)
+[0x55f8f853ca20]:   %call2_400d37 = tail call %struct.Memory.32* @sub_4007e0.equal_data(%struct.State.1* nonnull %0, i64 %213, %struct.Memory.32* %call2_400d2a)
+[0x55f8f8542a90]:   %call2_400e63 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %603, %struct.Memory.32* %MEMORY.0)
+[0x55f8f8542cf0]:   %call2_400e2a = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %520, %struct.Memory.32* %MEMORY.6)
+[0x55f8f8542e20]:   %call2_400ddd = tail call %struct.Memory.32* @sub_400b80.in_wanted(%struct.State.1* nonnull %0, i64 %417, %struct.Memory.32* %MEMORY.2)
+[0x55f8f8543080]:   %call2_400d9a = tail call %struct.Memory.32* @sub_400990.get_value(%struct.State.1* nonnull %0, i64 %328, %struct.Memory.32* %call2_400d5d)
+[0x55f8f85432e0]:   %call2_400d5d = tail call %struct.Memory.32* @sub_400660.copy_data(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %call2_400d4c)
+[0x55f8f8543540]:   %call2_400d4c = tail call %struct.Memory.32* @sub_400550.malloc_plt(%struct.State.1* nonnull %0, i64 %230, %struct.Memory.32* %call2_400d37)
+[0x55f8f854ce30]:   %call2_400d2a = tail call %struct.Memory.32* @sub_400770.melt_data(%struct.State.1* nonnull %0, i64 %198, %struct.Memory.32* %call2_400d19)
+[0x55f8f85561d0]:   %call2_400d19 = tail call %struct.Memory.32* @sub_400c00.make_data(%struct.State.1* nonnull %0, i64 %177, %struct.Memory.32* %MEMORY.1)
+[0x55f8f85593d0]:   %call2_400cc8 = tail call %struct.Memory.32* @sub_400550.malloc_plt(%struct.State.1* %0, i64 %66, %struct.Memory.32* %2)
+Multiple matches exist for [0x55f8f845f598]:   %.pre18 = load i64, i64* %RBP, align 8
+[0x55f8f8553878]:   %445 = load i64, i64* %RBP.i, align 8
+[0x55f8f8581678]:   %.pre18 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55f8f8395f48]:   %.pre14 = load i64, i64* %RBP, align 8
+[0x55f8f85262a8]:   %293 = load i64, i64* %RBP.i, align 8
+[0x55f8f8548118]:   %.pre14 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55f8f846f598]:   %.pre20 = load i64, i64* %RBP, align 8
+[0x55f8f834c028]:   %608 = load i64, i64* %RBP.i, align 8
+[0x55f8f83c1ab8]:   %.pre20 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55f8f8470038]:   %642 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
+[0x55f8f853fb98]:   %107 = load i32, i32* inttoptr (i64 6299756 to i32*), align 4
+[0x55f8f8540058]:   %105 = load i32, i32* %104, align 4
+Multiple matches exist for [0x55f8f8309480]:   %661 = lshr i32 %642, 31
+[0x55f8f856ae30]:   %126 = lshr i32 %107, 31
+[0x55f8f856af90]:   %125 = lshr i32 %105, 31
+Multiple matches exist for [0x55f8f8309500]:   %662 = xor i32 %661, %660
+[0x55f8f856a060]:   %128 = xor i32 %123, %125
+[0x55f8f856aac0]:   %127 = xor i32 %126, %125
+Multiple matches exist for [0x55f8f8309e08]:   %675 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x55f8f8540778]:   %143 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+[0x55f8f8541c78]:   %141 = load i32, i32* %140, align 4
+Multiple matches exist for [0x55f8f830aa00]:   %694 = lshr i32 %675, 31
+[0x55f8f8561340]:   %162 = lshr i32 %143, 31
+[0x55f8f8564a10]:   %161 = lshr i32 %141, 31
+Multiple matches exist for [0x55f8f830aa80]:   %695 = xor i32 %694, %693
+[0x55f8f8566160]:   %164 = xor i32 %159, %161
+[0x55f8f8566280]:   %163 = xor i32 %162, %161
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [make_list] from ../binary/test.mcsema.opt.ll
+Extracting function [make_list] from mcsema/test.proposed.opt.ll
+Matcher Done...

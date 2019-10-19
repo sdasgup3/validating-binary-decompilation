@@ -1,0 +1,29 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x555dd25c2268]:   %261 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %249)
+[0x555dd2603640]:   %call2_4009e8 = tail call %struct.Memory.31* @sub_400d30.print_array(%struct.State.0* nonnull %0, i64 %200, %struct.Memory.31* %call2_4009c7)
+[0x555dd26082f0]:   %call2_40099f = tail call %struct.Memory.31* @sub_400ab0.kernel_lu(%struct.State.0* %0, i64 %116, %struct.Memory.31* %call2_400993)
+[0x555dd2608680]:   %call2_400a00 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %222, %struct.Memory.31* %call2_4009f4)
+[0x555dd26088e0]:   %call2_4009f4 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %211, %struct.Memory.31* %call2_4009e8)
+[0x555dd2609580]:   %call2_4009c7 = tail call %struct.Memory.31* @sub_400c00.check_FP(%struct.State.0* %0, i64 %168, %struct.Memory.31* %call2_4009b7)
+[0x555dd26096b0]:   %call2_4009b7 = tail call %struct.Memory.31* @sub_400ab0.kernel_lu(%struct.State.0* %0, i64 %148, %struct.Memory.31* %call2_4009ab)
+[0x555dd2609910]:   %call2_4009ab = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %132, %struct.Memory.31* %call2_40099f)
+[0x555dd261cdf0]:   %call2_400993 = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %100, %struct.Memory.31* %call2_400983)
+[0x555dd261fde0]:   %call2_400983 = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %78, %struct.Memory.31* %call2_40096e)
+[0x555dd26214c0]:   %call2_40096e = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %66, %struct.Memory.31* %2)
+Multiple matches exist for [0x555dd25cce58]:   %273 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %261)
+[0x555dd2603640]:   %call2_4009e8 = tail call %struct.Memory.31* @sub_400d30.print_array(%struct.State.0* nonnull %0, i64 %200, %struct.Memory.31* %call2_4009c7)
+[0x555dd26082f0]:   %call2_40099f = tail call %struct.Memory.31* @sub_400ab0.kernel_lu(%struct.State.0* %0, i64 %116, %struct.Memory.31* %call2_400993)
+[0x555dd2608680]:   %call2_400a00 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %222, %struct.Memory.31* %call2_4009f4)
+[0x555dd26088e0]:   %call2_4009f4 = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %211, %struct.Memory.31* %call2_4009e8)
+[0x555dd2609580]:   %call2_4009c7 = tail call %struct.Memory.31* @sub_400c00.check_FP(%struct.State.0* %0, i64 %168, %struct.Memory.31* %call2_4009b7)
+[0x555dd26096b0]:   %call2_4009b7 = tail call %struct.Memory.31* @sub_400ab0.kernel_lu(%struct.State.0* %0, i64 %148, %struct.Memory.31* %call2_4009ab)
+[0x555dd2609910]:   %call2_4009ab = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %132, %struct.Memory.31* %call2_40099f)
+[0x555dd261cdf0]:   %call2_400993 = tail call %struct.Memory.31* @sub_400a20.init_array(%struct.State.0* %0, i64 %100, %struct.Memory.31* %call2_400983)
+[0x555dd261fde0]:   %call2_400983 = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %78, %struct.Memory.31* %call2_40096e)
+[0x555dd26214c0]:   %call2_40096e = tail call %struct.Memory.31* @sub_400880.polybench_alloc_data(%struct.State.0* %0, i64 %66, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

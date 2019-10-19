@@ -1,0 +1,36 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x557661713a50]:   %45 = fcmp uno double %43, %44
+[0x557661d5bba0]:   %46 = fcmp uno double %44, %45
+[0x557661d5bd40]:   %58 = fcmp ogt double %44, %45
+[0x557661d5e040]:   %60 = fcmp olt double %44, %45
+[0x557661d5f360]:   %62 = fcmp oeq double %44, %45
+Multiple matches exist for [0x557661714250]:   %.pre1 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+[0x557661d4e810]:   %.pre1 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 9
+[0x557661d57bb0]:   %72 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 9
+Multiple matches exist for [0x557661714310]:   %.pre2 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+[0x557661d42ac0]:   %.pre2 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 13
+[0x557661d5adb0]:   %71 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 13
+Multiple matches exist for [0x5576617143d0]:   %.pre4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+[0x557661d42f80]:   %73 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 5
+[0x557661d64a60]:   %.pre4 = getelementptr inbounds %struct.State.0, %struct.State.0* %0, i64 0, i32 2, i32 5
+Multiple matches exist for [0x5576617145f0]:   %57 = fcmp ogt double %43, %44
+[0x557661d5bba0]:   %46 = fcmp uno double %44, %45
+[0x557661d5bd40]:   %58 = fcmp ogt double %44, %45
+[0x557661d5e040]:   %60 = fcmp olt double %44, %45
+[0x557661d5f360]:   %62 = fcmp oeq double %44, %45
+Multiple matches exist for [0x557661714750]:   %59 = fcmp olt double %43, %44
+[0x557661d5bba0]:   %46 = fcmp uno double %44, %45
+[0x557661d5bd40]:   %58 = fcmp ogt double %44, %45
+[0x557661d5e040]:   %60 = fcmp olt double %44, %45
+[0x557661d5f360]:   %62 = fcmp oeq double %44, %45
+Multiple matches exist for [0x5576617148b0]:   %61 = fcmp oeq double %43, %44
+[0x557661d5bba0]:   %46 = fcmp uno double %44, %45
+[0x557661d5bd40]:   %58 = fcmp ogt double %44, %45
+[0x557661d5e040]:   %60 = fcmp olt double %44, %45
+[0x557661d5f360]:   %62 = fcmp oeq double %44, %45
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZltIdEbRK12ValueWrapperIT_ES4_] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZltIdEbRK12ValueWrapperIT_ES4_] from mcsema/test.proposed.opt.ll
+Matcher Done...

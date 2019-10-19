@@ -1,0 +1,10 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55ca75e33e78]:   %100 = tail call fastcc %struct.Memory* @ext_4006f0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
+[0x55ca7626dc10]:   %call2_4045e8 = tail call %struct.Memory.31* @sub_4006f0.printf_plt(%struct.State.0* nonnull %0, i64 %96, %struct.Memory.31* %call2_4045c8)
+[0x55ca7626f2f0]:   %call2_4045c8 = tail call %struct.Memory.31* @sub_404600._ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z13verify_sortedI14PointerWrapperIdEEvT_S2_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z13verify_sortedI14PointerWrapperIdEEvT_S2_] from mcsema/test.proposed.opt.ll
+Matcher Done...

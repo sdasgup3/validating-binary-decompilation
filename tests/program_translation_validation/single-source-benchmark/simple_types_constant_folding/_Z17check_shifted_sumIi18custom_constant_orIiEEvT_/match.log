@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5652385d3190]:   %47 = tail call double @llvm.fabs.f64(double %46) #9
+[0x565237f91e00]:   %92 = tail call i32 @llvm.ctpop.i32(i32 %91)
+[0x565238083de0]:   %73 = tail call i32 @llvm.ctpop.i32(i32 %72)
+[0x5652380ed600]:   %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+[0x565238239850]:   %48 = tail call double @llvm.fabs.f64(double %47)
+[0x56523a3d2eb0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x56523a3d38a0]:   %47 = tail call double @llvm.trunc.f64(double %46)
+[0x56523a3fa870]:   %call2_4130fa = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %100, %struct.Memory.32* %call2_4130da)
+[0x56523a3fda70]:   %call2_4130da = tail call %struct.Memory.32* @sub_412f60._Z15tolerance_equalIiEbRT_S1_(%struct.State.1* %0, i64 %83, %struct.Memory.32* %call2_4130c4)
+[0x56523a3fef40]:   %call2_4130c4 = tail call %struct.Memory.32* @sub_413090._ZN18custom_constant_orIiE8do_shiftEi(%struct.State.1* %0, i64 %53, %struct.Memory.32* %2)
+Multiple matches exist for [0x5652385d8368]:   %138 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %87)
+[0x56523a3fa870]:   %call2_4130fa = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %100, %struct.Memory.32* %call2_4130da)
+[0x56523a3fda70]:   %call2_4130da = tail call %struct.Memory.32* @sub_412f60._Z15tolerance_equalIiEbRT_S1_(%struct.State.1* %0, i64 %83, %struct.Memory.32* %call2_4130c4)
+[0x56523a3fef40]:   %call2_4130c4 = tail call %struct.Memory.32* @sub_413090._ZN18custom_constant_orIiE8do_shiftEi(%struct.State.1* %0, i64 %53, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z17check_shifted_sumIi18custom_constant_orIiEEvT_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z17check_shifted_sumIi18custom_constant_orIiEEvT_] from mcsema/test.proposed.opt.ll
+Matcher Done...

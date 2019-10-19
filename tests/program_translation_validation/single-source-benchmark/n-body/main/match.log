@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x557561309968]:   %83 = tail call fastcc %struct.Memory* @ext_601178_printf(%struct.State* nonnull %0, %struct.Memory* %76)
+[0x5575613c33a0]:   %call2_400b58 = tail call %struct.Memory.32* @sub_400570.advance(%struct.State.1* nonnull %0, i64 %137, %struct.Memory.32* %call2_400b26)
+[0x5575613c4c20]:   %call2_400b8b = tail call %struct.Memory.32* @sub_400460.printf_plt(%struct.State.1* nonnull %0, i64 %180, %struct.Memory.32* %call2_400b7a)
+[0x5575613c4d50]:   %call2_400b7a = tail call %struct.Memory.32* @sub_4007f0.energy(%struct.State.1* nonnull %0, i64 %174, %struct.Memory.32* %call2_400b26)
+[0x5575613cf0f0]:   %call2_400b26 = tail call %struct.Memory.32* @sub_400460.printf_plt(%struct.State.1* %0, i64 %78, %struct.Memory.32* %call2_400b15)
+[0x5575613d8490]:   %call2_400b15 = tail call %struct.Memory.32* @sub_4007f0.energy(%struct.State.1* %0, i64 %72, %struct.Memory.32* %call2_400b01)
+[0x5575613db680]:   %call2_400b01 = tail call %struct.Memory.32* @sub_400980.offset_momentum(%struct.State.1* %0, i64 %66, %struct.Memory.32* %2)
+Multiple matches exist for [0x5575612d1f68]:   %188 = tail call fastcc %struct.Memory* @ext_601178_printf(%struct.State* nonnull %0, %struct.Memory* %181)
+[0x5575613c33a0]:   %call2_400b58 = tail call %struct.Memory.32* @sub_400570.advance(%struct.State.1* nonnull %0, i64 %137, %struct.Memory.32* %call2_400b26)
+[0x5575613c4c20]:   %call2_400b8b = tail call %struct.Memory.32* @sub_400460.printf_plt(%struct.State.1* nonnull %0, i64 %180, %struct.Memory.32* %call2_400b7a)
+[0x5575613c4d50]:   %call2_400b7a = tail call %struct.Memory.32* @sub_4007f0.energy(%struct.State.1* nonnull %0, i64 %174, %struct.Memory.32* %call2_400b26)
+[0x5575613cf0f0]:   %call2_400b26 = tail call %struct.Memory.32* @sub_400460.printf_plt(%struct.State.1* %0, i64 %78, %struct.Memory.32* %call2_400b15)
+[0x5575613d8490]:   %call2_400b15 = tail call %struct.Memory.32* @sub_4007f0.energy(%struct.State.1* %0, i64 %72, %struct.Memory.32* %call2_400b01)
+[0x5575613db680]:   %call2_400b01 = tail call %struct.Memory.32* @sub_400980.offset_momentum(%struct.State.1* %0, i64 %66, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

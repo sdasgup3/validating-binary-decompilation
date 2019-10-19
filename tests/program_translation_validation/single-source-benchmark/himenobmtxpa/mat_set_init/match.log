@@ -1,0 +1,13 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5646fcce9ec8]:   %55 = load i32, i32* %51, align 4
+[0x5646fcf4a4c8]:   %188 = load i32, i32* %184, align 4
+[0x5646fcf4b0a8]:   %185 = load i32, i32* %184, align 4
+Multiple matches exist for [0x5646fcce9f88]:   %57 = sext i32 %55 to i64
+[0x5646fcf4a268]:   %190 = sext i32 %188 to i64
+[0x5646fcf4a398]:   %189 = sext i32 %185 to i64
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [mat_set_init] from ../binary/test.mcsema.opt.ll
+Extracting function [mat_set_init] from mcsema/test.proposed.opt.ll
+Matcher Done...

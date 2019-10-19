@@ -1,0 +1,23 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55e2c87f7eb0]:   %66 = lshr i32 %55, 27
+[0x55e2c8838f30]:   %64 = lshr i32 %56, 27
+[0x55e2c883c360]:   %67 = lshr i32 %56, 27
+Multiple matches exist for [0x55e2c87f7f30]:   %67 = and i32 %66, 1
+[0x55e2c8838d00]:   %65 = and i32 %64, 1
+[0x55e2c8839f10]:   %68 = and i32 %67, 1
+Multiple matches exist for [0x55e2c87fbbe8]:   %132 = tail call fastcc %struct.Memory* @ext_400610_fputs(%struct.State* nonnull %0, %struct.Memory* %78)
+[0x55e2c8833c60]:   %call2_400d3c = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %252, %struct.Memory.31* %call2_400d30)
+[0x55e2c8836c50]:   %call2_400d30 = tail call %struct.Memory.31* @sub_400610.fputs_plt(%struct.State.0* nonnull %0, i64 %236, %struct.Memory.31* %MEMORY.0)
+[0x55e2c8838330]:   %call2_400d11 = tail call %struct.Memory.31* @sub_400d50.print_element(%struct.State.0* nonnull %0, i64 %194, %struct.Memory.31* %MEMORY.0)
+[0x55e2c88385a0]:   %call2_400ccb = tail call %struct.Memory.31* @sub_400640.malloc_plt(%struct.State.0* %0, i64 %74, %struct.Memory.31* %2)
+Multiple matches exist for [0x55e2c87fc798]:   %149 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %132)
+[0x55e2c8833c60]:   %call2_400d3c = tail call %struct.Memory.31* @sub_4005f0.free_plt(%struct.State.0* nonnull %0, i64 %252, %struct.Memory.31* %call2_400d30)
+[0x55e2c8836c50]:   %call2_400d30 = tail call %struct.Memory.31* @sub_400610.fputs_plt(%struct.State.0* nonnull %0, i64 %236, %struct.Memory.31* %MEMORY.0)
+[0x55e2c8838330]:   %call2_400d11 = tail call %struct.Memory.31* @sub_400d50.print_element(%struct.State.0* nonnull %0, i64 %194, %struct.Memory.31* %MEMORY.0)
+[0x55e2c88385a0]:   %call2_400ccb = tail call %struct.Memory.31* @sub_400640.malloc_plt(%struct.State.0* %0, i64 %74, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [print_array] from ../binary/test.mcsema.opt.ll
+Extracting function [print_array] from mcsema/test.proposed.opt.ll
+Matcher Done...

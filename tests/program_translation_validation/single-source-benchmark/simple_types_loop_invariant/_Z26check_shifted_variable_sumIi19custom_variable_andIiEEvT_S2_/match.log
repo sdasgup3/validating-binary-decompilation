@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55c4f75708d0]:   %54 = tail call double @llvm.fabs.f64(double %53) #9
+[0x55c4f73c6240]:   %105 = tail call i32 @llvm.ctpop.i32(i32 %104)
+[0x55c4f73caf60]:   %86 = tail call i32 @llvm.ctpop.i32(i32 %85)
+[0x55c4f752b410]:   %55 = tail call double @llvm.fabs.f64(double %54)
+[0x55c4f7592950]:   %54 = tail call double @llvm.trunc.f64(double %53)
+[0x55c4f768cfe0]:   %131 = tail call i32 @llvm.ctpop.i32(i32 %130)
+[0x55c4f8fbee50]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55c4f8fe5a90]:   %call2_40fa70 = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %113, %struct.Memory.32* %call2_40fa50)
+[0x55c4f8fe8a80]:   %call2_40fa50 = tail call %struct.Memory.32* @sub_40f770._Z15tolerance_equalIiEbRT_S1_(%struct.State.1* %0, i64 %96, %struct.Memory.32* %call2_40fa3a)
+[0x55c4f8fea160]:   %call2_40fa3a = tail call %struct.Memory.32* @sub_40fa00._ZN19custom_variable_andIiE8do_shiftEii(%struct.State.1* %0, i64 %66, %struct.Memory.32* %2)
+Multiple matches exist for [0x55c4f750f1f8]:   %118 = tail call fastcc %struct.Memory* @ext_66c168_printf(%struct.State* nonnull %0, %struct.Memory* %100)
+[0x55c4f8fe5a90]:   %call2_40fa70 = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %113, %struct.Memory.32* %call2_40fa50)
+[0x55c4f8fe8a80]:   %call2_40fa50 = tail call %struct.Memory.32* @sub_40f770._Z15tolerance_equalIiEbRT_S1_(%struct.State.1* %0, i64 %96, %struct.Memory.32* %call2_40fa3a)
+[0x55c4f8fea160]:   %call2_40fa3a = tail call %struct.Memory.32* @sub_40fa00._ZN19custom_variable_andIiE8do_shiftEii(%struct.State.1* %0, i64 %66, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIi19custom_variable_andIiEEvT_S2_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIi19custom_variable_andIiEEvT_S2_] from mcsema/test.proposed.opt.ll
+Matcher Done...

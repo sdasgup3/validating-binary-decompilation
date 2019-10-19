@@ -1,0 +1,28 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x561346455578]:   %51 = tail call fastcc %struct.Memory* @ext_601068_strtoll(%struct.State* nonnull %0, %struct.Memory* %37)
+[0x56134641eca0]:   %call2_40077f = tail call %struct.Memory.32* @sub_400550.ReverseBits32(%struct.State.1* nonnull %0, i64 %95, %struct.Memory.32* %MEMORY.0)
+[0x56134653e980]:   %call2_400904 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %438, %struct.Memory.32* %MEMORY.0)
+[0x561346543c20]:   %call2_400994 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %484, %struct.Memory.32* %call2_400904)
+[0x56134654ed90]:   %call2_40075f = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %46, %struct.Memory.32* %call2_400742)
+[0x561346558130]:   %call2_400742 = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %33, %struct.Memory.32* %2)
+[0x561346565010]:   %call2_400794 = tail call %struct.Memory.32* @sub_4005f0.ReverseBits64(%struct.State.1* nonnull %0, i64 %141, %struct.Memory.32* %call2_40077f)
+Multiple matches exist for [0x5613464abe08]:   %348 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %51)
+[0x56134641eca0]:   %call2_40077f = tail call %struct.Memory.32* @sub_400550.ReverseBits32(%struct.State.1* nonnull %0, i64 %95, %struct.Memory.32* %MEMORY.0)
+[0x56134653e980]:   %call2_400904 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %438, %struct.Memory.32* %MEMORY.0)
+[0x561346543c20]:   %call2_400994 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %484, %struct.Memory.32* %call2_400904)
+[0x56134654ed90]:   %call2_40075f = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %46, %struct.Memory.32* %call2_400742)
+[0x561346558130]:   %call2_400742 = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %33, %struct.Memory.32* %2)
+[0x561346565010]:   %call2_400794 = tail call %struct.Memory.32* @sub_4005f0.ReverseBits64(%struct.State.1* nonnull %0, i64 %141, %struct.Memory.32* %call2_40077f)
+Multiple matches exist for [0x5613464ae278]:   %395 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %348)
+[0x56134641eca0]:   %call2_40077f = tail call %struct.Memory.32* @sub_400550.ReverseBits32(%struct.State.1* nonnull %0, i64 %95, %struct.Memory.32* %MEMORY.0)
+[0x56134653e980]:   %call2_400904 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %438, %struct.Memory.32* %MEMORY.0)
+[0x561346543c20]:   %call2_400994 = tail call %struct.Memory.32* @sub_400440.printf_plt(%struct.State.1* nonnull %0, i64 %484, %struct.Memory.32* %call2_400904)
+[0x56134654ed90]:   %call2_40075f = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %46, %struct.Memory.32* %call2_400742)
+[0x561346558130]:   %call2_400742 = tail call %struct.Memory.32* @sub_400450.strtoll_plt(%struct.State.1* %0, i64 %33, %struct.Memory.32* %2)
+[0x561346565010]:   %call2_400794 = tail call %struct.Memory.32* @sub_4005f0.ReverseBits64(%struct.State.1* nonnull %0, i64 %141, %struct.Memory.32* %call2_40077f)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...
