@@ -18112,3 +18112,610 @@ linpack-pc/dmxpy
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/linpack-pc/dmxpy'
 opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/linpack-pc/dmxpy'
+
+stepanov_v1p2/__cxx_global_var_init.13
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.13'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.13'
+
+simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp'
+
+stepanov_abstraction/__cxx_global_var_init.15
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.15'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.15'
+
+stepanov_v1p2/__cxx_global_var_init.11
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.11'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.11'
+
+stepanov_v1p2/__cxx_global_var_init.10
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.10'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.10'
+
+stepanov_v1p2/__cxx_global_var_init.12
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.12'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.12'
+
+stepanov_v1p2/__cxx_global_var_init.14
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.14'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.14'
+
+stepanov_v1p2/__cxx_global_var_init.9
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.9'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.9'
+
+stepanov_v1p2/__cxx_global_var_init.7
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.7'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.7'
+
+stepanov_v1p2/__cxx_global_var_init.8
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.8'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.8'
+
+stepanov_abstraction/__cxx_global_var_init.25
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.25'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.25'
+
+stepanov_abstraction/__cxx_global_var_init.22
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.22'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.22'
+
+stepanov_abstraction/__cxx_global_var_init.20
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.20'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.20'
+
+stepanov_abstraction/__cxx_global_var_init.16
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.16'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.16'
+
+stepanov_abstraction/__cxx_global_var_init.19
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.19'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.19'
+
+stepanov_abstraction/__cxx_global_var_init.21
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.21'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.21'
+
+stepanov_abstraction/__cxx_global_var_init.23
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.23'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.23'
+
+stepanov_abstraction/__cxx_global_var_init.14
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.14'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.14'
+
+stepanov_abstraction/__cxx_global_var_init.17
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.17'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.17'
+
+stepanov_abstraction/__cxx_global_var_init.24
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.24'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.24'
+
+stepanov_abstraction/__cxx_global_var_init.18
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.18'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.18'
+
+stepanov_v1p2/__cxx_global_var_init.21
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.21'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.21'
+
+stepanov_v1p2/__cxx_global_var_init.25
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.25'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.25'
+
+stepanov_v1p2/__cxx_global_var_init.26
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.26'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.26'
+
+stepanov_v1p2/__cxx_global_var_init.6
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.6'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.6'
+
+stepanov_v1p2/__cxx_global_var_init.19
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.19'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.19'
+
+stepanov_v1p2/__cxx_global_var_init.22
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.22'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.22'
+
+stepanov_v1p2/__cxx_global_var_init.23
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.23'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.23'
+
+Towers/Error
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Error'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Error'
+
+stepanov_v1p2/__cxx_global_var_init.18
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.18'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.18'
+
+stepanov_v1p2/__cxx_global_var_init.20
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.20'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.20'
+
+stepanov_v1p2/__cxx_global_var_init.24
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.24'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.24'
+
+stepanov_v1p2/__cxx_global_var_init.15
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.15'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.15'
+
+stepanov_v1p2/__cxx_global_var_init.16
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.16'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.16'
+
+stepanov_v1p2/__cxx_global_var_init.17
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.17'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.17'
+
+stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp'
+
+Towers/Getelement
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Getelement'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Getelement'
+
+stepanov_abstraction/__cxx_global_var_init.13
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.13'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.13'
+
+stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp'
+
+stepanov_abstraction/__cxx_global_var_init.11
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.11'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.11'
+
+stepanov_abstraction/__cxx_global_var_init.12
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.12'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.12'
+
+Towers/Pop
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Pop'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Pop'
+
+Towers/Push
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Push'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Push'
+
+ReedSolomon/decode_rs
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/ReedSolomon/decode_rs'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/ReedSolomon/decode_rs'
+
+simple_types_loop_invariant/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'
+
+simple_types_constant_folding/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
+opt -S  -inline   mcsema/test.proposed.ll -o mcsema/test.proposed.inline.ll;  opt -S  -O3    mcsema/test.proposed.inline.ll -o mcsema/test.proposed.opt.ll
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
+
+Towers/Getelement
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Getelement'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:Getelement --file2 mcsema/test.proposed.opt.ll:Getelement 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Getelement'
+make: *** [match] Error 134
+
+Towers/Push
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Push'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:Push --file2 mcsema/test.proposed.opt.ll:Push 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Push'
+make: *** [match] Error 134
+
+Towers/Pop
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Pop'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:Pop --file2 mcsema/test.proposed.opt.ll:Pop 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Pop'
+make: *** [match] Error 134
+
+stepanov_v1p2/__cxx_global_var_init.13
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.13'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.13 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.13 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.13:__cxx_global_var_init.13
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.13'
+
+stepanov_v1p2/__cxx_global_var_init.11
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.11'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.11 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.11 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.11:__cxx_global_var_init.11
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.11'
+
+stepanov_v1p2/__cxx_global_var_init.10
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.10'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.10 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.10 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.10:__cxx_global_var_init.10
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.10'
+
+stepanov_v1p2/__cxx_global_var_init.8
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.8'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.8 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.8 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.8:__cxx_global_var_init.8
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.8'
+
+stepanov_v1p2/__cxx_global_var_init.7
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.7'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.7 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.7 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.7:__cxx_global_var_init.7
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.7'
+
+stepanov_v1p2/__cxx_global_var_init.9
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.9'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.9 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.9 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.9:__cxx_global_var_init.9
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.9'
+
+stepanov_v1p2/__cxx_global_var_init.12
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.12'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.12 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.12 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.12:__cxx_global_var_init.12
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.12'
+
+stepanov_v1p2/__cxx_global_var_init.14
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.14'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.14 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.14 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.14:__cxx_global_var_init.14
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.14'
+
+Towers/Error
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Error'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:Error --file2 mcsema/test.proposed.opt.ll:Error 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Error:Error
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Towers/Error'
+
+stepanov_abstraction/__cxx_global_var_init.13
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.13'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.13 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.13 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.13'
+make: *** [match] Error 134
+
+stepanov_abstraction/__cxx_global_var_init.11
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.11'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.11 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.11 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.11'
+make: *** [match] Error 134
+
+stepanov_abstraction/__cxx_global_var_init.12
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.12'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.12 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.12 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.12'
+make: *** [match] Error 134
+
+stepanov_abstraction/__cxx_global_var_init.19
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.19'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.19 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.19 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.19:__cxx_global_var_init.19
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.19'
+
+stepanov_abstraction/__cxx_global_var_init.14
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.14'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.14 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.14 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.14:__cxx_global_var_init.14
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.14'
+
+stepanov_abstraction/__cxx_global_var_init.20
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.20'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.20 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.20 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.20:__cxx_global_var_init.20
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.20'
+
+stepanov_abstraction/__cxx_global_var_init.15
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.15'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.15 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.15 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.15:__cxx_global_var_init.15
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.15'
+
+stepanov_abstraction/__cxx_global_var_init.25
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.25'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.25 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.25 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.25:__cxx_global_var_init.25
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.25'
+
+stepanov_abstraction/__cxx_global_var_init.17
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.17'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.17 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.17 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.17:__cxx_global_var_init.17
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.17'
+
+stepanov_abstraction/__cxx_global_var_init.16
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.16'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.16 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.16 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.16:__cxx_global_var_init.16
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.16'
+
+stepanov_abstraction/__cxx_global_var_init.21
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.21'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.21 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.21 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.21:__cxx_global_var_init.21
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.21'
+
+stepanov_abstraction/__cxx_global_var_init.22
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.22'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.22 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.22 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.22:__cxx_global_var_init.22
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.22'
+
+stepanov_abstraction/__cxx_global_var_init.18
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.18'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.18 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.18 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.18:__cxx_global_var_init.18
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.18'
+
+stepanov_abstraction/__cxx_global_var_init.23
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.23'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.23 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.23 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.23:__cxx_global_var_init.23
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.23'
+
+stepanov_v1p2/__cxx_global_var_init.20
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.20'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.20 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.20 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.20:__cxx_global_var_init.20
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.20'
+
+stepanov_abstraction/__cxx_global_var_init.24
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.24'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.24 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.24 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.24:__cxx_global_var_init.24
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/__cxx_global_var_init.24'
+
+stepanov_v1p2/__cxx_global_var_init.22
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.22'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.22 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.22 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.22:__cxx_global_var_init.22
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.22'
+
+stepanov_v1p2/__cxx_global_var_init.24
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.24'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.24 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.24 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.24:__cxx_global_var_init.24
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.24'
+
+stepanov_v1p2/__cxx_global_var_init.16
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.16'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.16 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.16 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.16:__cxx_global_var_init.16
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.16'
+
+stepanov_v1p2/__cxx_global_var_init.19
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.19'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.19 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.19 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.19:__cxx_global_var_init.19
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.19'
+
+stepanov_v1p2/__cxx_global_var_init.6
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.6'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.6 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.6 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.6:__cxx_global_var_init.6
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.6'
+
+stepanov_v1p2/__cxx_global_var_init.18
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.18'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.18 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.18 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.18:__cxx_global_var_init.18
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.18'
+
+stepanov_v1p2/__cxx_global_var_init.25
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.25'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.25 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.25 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.25:__cxx_global_var_init.25
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.25'
+
+stepanov_v1p2/__cxx_global_var_init.23
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.23'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.23 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.23 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.23:__cxx_global_var_init.23
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.23'
+
+stepanov_v1p2/__cxx_global_var_init.26
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.26'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.26 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.26 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.26:__cxx_global_var_init.26
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.26'
+
+stepanov_v1p2/__cxx_global_var_init.17
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.17'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.17 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.17 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.17:__cxx_global_var_init.17
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.17'
+
+stepanov_v1p2/__cxx_global_var_init.21
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.21'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.21 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.21 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.21:__cxx_global_var_init.21
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.21'
+
+stepanov_v1p2/__cxx_global_var_init.15
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.15'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:__cxx_global_var_init.15 --file2 mcsema/test.proposed.opt.ll:__cxx_global_var_init.15 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.15:__cxx_global_var_init.15
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/__cxx_global_var_init.15'
+
+ReedSolomon/decode_rs
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/ReedSolomon/decode_rs'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:decode_rs --file2 mcsema/test.proposed.opt.ll:decode_rs 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/ReedSolomon/decode_rs'
+make: *** [match] Error 134
+
+simple_types_constant_folding/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
+make: *** [match] Error 134
+
+simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:_GLOBAL__sub_I_simple_types_constant_folding.cpp --file2 mcsema/test.proposed.opt.ll:_GLOBAL__sub_I_simple_types_constant_folding.cpp 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp:_GLOBAL__sub_I_simple_types_constant_folding.cpp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_GLOBAL__sub_I_simple_types_constant_folding.cpp'
+
+stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:_GLOBAL__sub_I_stepanov_v1p2.cpp --file2 mcsema/test.proposed.opt.ll:_GLOBAL__sub_I_stepanov_v1p2.cpp 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp:_GLOBAL__sub_I_stepanov_v1p2.cpp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_GLOBAL__sub_I_stepanov_v1p2.cpp'
+
+stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:_GLOBAL__sub_I_stepanov_abstraction.cpp --file2 mcsema/test.proposed.opt.ll:_GLOBAL__sub_I_stepanov_abstraction.cpp 1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp:_GLOBAL__sub_I_stepanov_abstraction.cpp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_abstraction/_GLOBAL__sub_I_stepanov_abstraction.cpp'
+
+simple_types_loop_invariant/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll:main --file2 mcsema/test.proposed.opt.ll:main 1>match.log 2>&1
+Makefile:21: recipe for target 'match' failed
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'
+make: *** [match] Error 134

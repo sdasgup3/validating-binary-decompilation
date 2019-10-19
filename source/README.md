@@ -126,7 +126,7 @@ sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:
 ~/ida-6.95/idal64
 ```
 
-# Tools Build Instructions
+### Tools Build Instructions
 ```bash
 mkdir -p ~/Github
 cd !$
@@ -139,6 +139,24 @@ make -j8
 
 make check-format
 make update-format
+```
+
+### Recommended Build Practise once there is any update in any source repo
+```bash
+
+## Update/Build x64asm
+cd ~/Github/stoke-develop/src/ext/x64asm
+git pull upstream working
+make clean; make -j64 debug
+
+## Update/Build stoke
+cd ~/Github/stoke-develop
+git pull origin working
+make -j64 debug
+
+## Update/Build Matcher/compD
+cd ~/Github/validating-binary-decompilation/source/build
+make clean; make -j64
 ```
 
 

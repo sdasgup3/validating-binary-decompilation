@@ -1618,3 +1618,12 @@ trmm/print_array
 trmm/xmalloc
 whetstone/P0
 whetstone/main
+ReedSolomon/decode_rs
+Towers/Getelement
+Towers/Pop
+Towers/Push
+simple_types_constant_folding/main
+simple_types_loop_invariant/main
+stepanov_abstraction/__cxx_global_var_init.11
+stepanov_abstraction/__cxx_global_var_init.12
+stepanov_abstraction/__cxx_global_var_init.13
