@@ -1,24 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55bec598a840]:   %127 = fcmp uno double %126, %123
-[0x55bec76e6bd0]:   %147 = fcmp oeq double %130, %127
-[0x55bec76e6e70]:   %145 = fcmp olt double %130, %127
-[0x55bec76e6fc0]:   %143 = fcmp ogt double %130, %127
-[0x55bec76ec950]:   %131 = fcmp uno double %130, %127
-Multiple matches exist for [0x55bec598bae0]:   %139 = fcmp ogt double %126, %123
-[0x55bec76e6bd0]:   %147 = fcmp oeq double %130, %127
-[0x55bec76e6e70]:   %145 = fcmp olt double %130, %127
-[0x55bec76e6fc0]:   %143 = fcmp ogt double %130, %127
-[0x55bec76ec950]:   %131 = fcmp uno double %130, %127
-Multiple matches exist for [0x55bec598bc40]:   %141 = fcmp olt double %126, %123
-[0x55bec76e6bd0]:   %147 = fcmp oeq double %130, %127
-[0x55bec76e6e70]:   %145 = fcmp olt double %130, %127
-[0x55bec76e6fc0]:   %143 = fcmp ogt double %130, %127
-[0x55bec76ec950]:   %131 = fcmp uno double %130, %127
-Multiple matches exist for [0x55bec598bda0]:   %143 = fcmp oeq double %126, %123
-[0x55bec76e6bd0]:   %147 = fcmp oeq double %130, %127
-[0x55bec76e6e70]:   %145 = fcmp olt double %130, %127
-[0x55bec76e6fc0]:   %143 = fcmp ogt double %130, %127
-[0x55bec76ec950]:   %131 = fcmp uno double %130, %127
+Multiple matches exist for [0x5636a5e4ca90]:   %127 = fcmp uno double %126, %123
+[0x5636a7e5a600]:   %148 = fcmp oeq double %131, %128
+[0x5636a7e5a8c0]:   %146 = fcmp olt double %131, %128
+[0x5636a7e5aa10]:   %144 = fcmp ogt double %131, %128
+[0x5636a7e5fdf0]:   %132 = fcmp uno double %131, %128
+Multiple matches exist for [0x5636a5e4dcc0]:   %139 = fcmp ogt double %126, %123
+[0x5636a7e5a600]:   %148 = fcmp oeq double %131, %128
+[0x5636a7e5a8c0]:   %146 = fcmp olt double %131, %128
+[0x5636a7e5aa10]:   %144 = fcmp ogt double %131, %128
+[0x5636a7e5fdf0]:   %132 = fcmp uno double %131, %128
+Multiple matches exist for [0x5636a5e4de20]:   %141 = fcmp olt double %126, %123
+[0x5636a7e5a600]:   %148 = fcmp oeq double %131, %128
+[0x5636a7e5a8c0]:   %146 = fcmp olt double %131, %128
+[0x5636a7e5aa10]:   %144 = fcmp ogt double %131, %128
+[0x5636a7e5fdf0]:   %132 = fcmp uno double %131, %128
+Multiple matches exist for [0x5636a5e4df80]:   %143 = fcmp oeq double %126, %123
+[0x5636a7e5a600]:   %148 = fcmp oeq double %131, %128
+[0x5636a7e5a8c0]:   %146 = fcmp olt double %131, %128
+[0x5636a7e5aa10]:   %144 = fcmp ogt double %131, %128
+[0x5636a7e5fdf0]:   %132 = fcmp uno double %131, %128
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

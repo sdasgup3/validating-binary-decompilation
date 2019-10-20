@@ -1,0 +1,31 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55fd45013d08]:   %272 = tail call fastcc %struct.Memory* @ext_6020a0_free(%struct.State* nonnull %0, %struct.Memory* %179)
+[0x55fd450dba20]:   %call2_400f37 = tail call %struct.Memory.32* @sub_400660.copy_data(%struct.State.1* nonnull %0, i64 %206, %struct.Memory.32* %167)
+[0x55fd450e00e0]:   %call2_400ef2 = tail call %struct.Memory.32* @sub_400860.valid_data(%struct.State.1* nonnull %0, i64 %145, %struct.Memory.32* %MEMORY.0)
+[0x55fd450e06d0]:   %373 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450e0930]:   %call2_400fb2 = tail call %struct.Memory.32* @sub_400c00.make_data(%struct.State.1* nonnull %0, i64 %336, %struct.Memory.32* %330)
+[0x55fd450e0a60]:   %330 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %call2_400f54)
+[0x55fd450e0cc0]:   %call2_400f54 = tail call %struct.Memory.32* @sub_400ca0.make_list(%struct.State.1* nonnull %0, i64 %233, %struct.Memory.32* %call2_400f37)
+[0x55fd450e1960]:   %167 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450ebe30]:   %call2_400ee0 = tail call %struct.Memory.32* @sub_4006d0.next_data(%struct.State.1* nonnull %0, i64 %123, %struct.Memory.32* %MEMORY.0)
+[0x55fd450f51d0]:   %call2_400ec8 = tail call %struct.Memory.32* @sub_400c00.make_data(%struct.State.1* %0, i64 %72, %struct.Memory.32* %52)
+[0x55fd450f83d0]:   %52 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x55fd45016bf8]:   %334 = tail call fastcc %struct.Memory* @ext_6020a0_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x55fd450e00e0]:   %call2_400ef2 = tail call %struct.Memory.32* @sub_400860.valid_data(%struct.State.1* nonnull %0, i64 %145, %struct.Memory.32* %MEMORY.0)
+[0x55fd450e06d0]:   %373 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450e1960]:   %167 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450ebe30]:   %call2_400ee0 = tail call %struct.Memory.32* @sub_4006d0.next_data(%struct.State.1* nonnull %0, i64 %123, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x55fd45018f58]:   %MEMORY.3 = phi %struct.Memory* [ %179, %block_400f33 ], [ %283, %block_400f98 ]
+[0x55fd450e1838]:   %MEMORY.0 = phi %struct.Memory.32* [ %call2_400ec8, %entry ], [ %MEMORY.3, %block_.L_400fc0 ]
+[0x55fd450e9968]:   %MEMORY.2 = phi %struct.Memory.32* [ %call2_400f54, %block_.L_400f33 ], [ %call2_400fb2, %block_400f98 ]
+Multiple matches exist for [0x55fd450195f8]:   %390 = tail call fastcc %struct.Memory* @ext_602090_malloc(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x55fd450e00e0]:   %call2_400ef2 = tail call %struct.Memory.32* @sub_400860.valid_data(%struct.State.1* nonnull %0, i64 %145, %struct.Memory.32* %MEMORY.0)
+[0x55fd450e06d0]:   %373 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450e1960]:   %167 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %MEMORY.0)
+[0x55fd450ebe30]:   %call2_400ee0 = tail call %struct.Memory.32* @sub_4006d0.next_data(%struct.State.1* nonnull %0, i64 %123, %struct.Memory.32* %MEMORY.0)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [make_play] from ../binary/test.mcsema.opt.ll
+Extracting function [make_play] from mcsema/test.proposed.opt.ll
+Matcher Done...

@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400590.sin_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @fourn(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -2081,7 +2081,7 @@ routine_idivl_MINUS0x30__rbp_.exit:               ; preds = %1353, %1351
   store i64 %1401, i64* %1404, align 8
   store i64 %1403, i64* %6, align 8
   store i64 %1400, i64* %3, align 8
-  %call2_400e11 = tail call %struct.Memory* @sub_400590.sin_plt(%struct.State* nonnull %0, i64 %1400, %struct.Memory* %1363)
+  %call2_400e11 = tail call %struct.Memory* @ext_sin(%struct.State* nonnull %0, i64 %1400, %struct.Memory* %1363)
   %1405 = load i64, i64* %RBP.i, align 8
   %1406 = add i64 %1405, -160
   %1407 = load i64, i64* %3, align 8
@@ -2136,7 +2136,7 @@ routine_idivl_MINUS0x30__rbp_.exit:               ; preds = %1353, %1351
   store i64 %1436, i64* %1439, align 8
   store i64 %1438, i64* %6, align 8
   store i64 %1435, i64* %3, align 8
-  %call2_400e43 = tail call %struct.Memory* @sub_400590.sin_plt(%struct.State* nonnull %0, i64 %1435, %struct.Memory* %call2_400e11)
+  %call2_400e43 = tail call %struct.Memory* @ext_sin(%struct.State* nonnull %0, i64 %1435, %struct.Memory* %call2_400e11)
   %1440 = load i64, i64* %RBP.i, align 8
   %1441 = add i64 %1440, -136
   %1442 = load i64, i64* %3, align 8

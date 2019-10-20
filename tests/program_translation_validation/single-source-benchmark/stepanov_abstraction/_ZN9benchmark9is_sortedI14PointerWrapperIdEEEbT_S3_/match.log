@@ -1,24 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ba6e4ea580]:   %126 = fcmp uno double %125, %.cast
-[0x55ba6e908400]:   %140 = fcmp uno double %139, %.cast
-[0x55ba6e9090a0]:   %156 = fcmp oeq double %139, %.cast
-[0x55ba6e909200]:   %154 = fcmp olt double %139, %.cast
-[0x55ba6e909360]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x55ba6e4eb790]:   %138 = fcmp ogt double %125, %.cast
-[0x55ba6e908400]:   %140 = fcmp uno double %139, %.cast
-[0x55ba6e9090a0]:   %156 = fcmp oeq double %139, %.cast
-[0x55ba6e909200]:   %154 = fcmp olt double %139, %.cast
-[0x55ba6e909360]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x55ba6e4eb8f0]:   %140 = fcmp olt double %125, %.cast
-[0x55ba6e908400]:   %140 = fcmp uno double %139, %.cast
-[0x55ba6e9090a0]:   %156 = fcmp oeq double %139, %.cast
-[0x55ba6e909200]:   %154 = fcmp olt double %139, %.cast
-[0x55ba6e909360]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x55ba6e4eba50]:   %142 = fcmp oeq double %125, %.cast
-[0x55ba6e908400]:   %140 = fcmp uno double %139, %.cast
-[0x55ba6e9090a0]:   %156 = fcmp oeq double %139, %.cast
-[0x55ba6e909200]:   %154 = fcmp olt double %139, %.cast
-[0x55ba6e909360]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x557f48e91df0]:   %126 = fcmp uno double %125, %.cast
+[0x557f492c7f00]:   %140 = fcmp uno double %139, %.cast
+[0x557f492c8db0]:   %156 = fcmp oeq double %139, %.cast
+[0x557f492c8f10]:   %154 = fcmp olt double %139, %.cast
+[0x557f492c9170]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x557f48e92f60]:   %138 = fcmp ogt double %125, %.cast
+[0x557f492c7f00]:   %140 = fcmp uno double %139, %.cast
+[0x557f492c8db0]:   %156 = fcmp oeq double %139, %.cast
+[0x557f492c8f10]:   %154 = fcmp olt double %139, %.cast
+[0x557f492c9170]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x557f48e930c0]:   %140 = fcmp olt double %125, %.cast
+[0x557f492c7f00]:   %140 = fcmp uno double %139, %.cast
+[0x557f492c8db0]:   %156 = fcmp oeq double %139, %.cast
+[0x557f492c8f10]:   %154 = fcmp olt double %139, %.cast
+[0x557f492c9170]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x557f48e93220]:   %142 = fcmp oeq double %125, %.cast
+[0x557f492c7f00]:   %140 = fcmp uno double %139, %.cast
+[0x557f492c8db0]:   %156 = fcmp oeq double %139, %.cast
+[0x557f492c8f10]:   %154 = fcmp olt double %139, %.cast
+[0x557f492c9170]:   %152 = fcmp ogt double %139, %.cast
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4006d0.sqrt_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @kernel_correlation(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -990,7 +990,7 @@ block_.L_400d44:                                  ; preds = %block_.L_400cc4
   store i64 %652, i64* %655, align 8
   store i64 %654, i64* %6, align 8
   store i64 %651, i64* %3, align 8
-  %call2_400d6c = tail call %struct.Memory* @sub_4006d0.sqrt_plt(%struct.State* nonnull %0, i64 %651, %struct.Memory* %MEMORY.2)
+  %call2_400d6c = tail call %struct.Memory* @ext_sqrt(%struct.State* nonnull %0, i64 %651, %struct.Memory* %MEMORY.2)
   %656 = load i64, i64* %RBP.i, align 8
   %657 = add i64 %656, -48
   %658 = load i64, i64* %3, align 8
@@ -1061,7 +1061,7 @@ block_.L_400d44:                                  ; preds = %block_.L_400cc4
   br i1 %702, label %703, label %711
 
 ; <label>:703:                                    ; preds = %695
-  %704 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %692, %struct.Memory* %MEMORY.2)
+  %704 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %692, %struct.Memory* %call2_400d6c)
   %.pre45 = load i64, i64* %3, align 8
   br label %routine_ucomisd__xmm0___xmm1.exit
 
@@ -1094,7 +1094,7 @@ block_.L_400d44:                                  ; preds = %block_.L_400cc4
 
 routine_ucomisd__xmm0___xmm1.exit:                ; preds = %715, %703
   %716 = phi i64 [ %.pre45, %703 ], [ %692, %715 ]
-  %717 = phi %struct.Memory* [ %704, %703 ], [ %MEMORY.2, %715 ]
+  %717 = phi %struct.Memory* [ %704, %703 ], [ %call2_400d6c, %715 ]
   %718 = load i8, i8* %14, align 1
   %719 = icmp ne i8 %718, 0
   %.v74 = select i1 %719, i64 24, i64 6
@@ -1237,7 +1237,8 @@ block_.L_400dde:                                  ; preds = %block_.L_400ca1
   br label %block_.L_400de5
 
 block_.L_400de5:                                  ; preds = %block_.L_400e7e, %block_.L_400dde
-  %803 = phi i64 [ %1082, %block_.L_400e7e ], [ %.pre39, %block_.L_400dde ]
+  %803 = phi i64 [ %.pre39, %block_.L_400dde ], [ %1082, %block_.L_400e7e ]
+  %MEMORY.5 = phi %struct.Memory* [ %MEMORY.2, %block_.L_400dde ], [ %MEMORY.6, %block_.L_400e7e ]
   %804 = load i64, i64* %RBP.i, align 8
   %805 = add i64 %804, -52
   %806 = add i64 %803, 3
@@ -1298,7 +1299,8 @@ block_400df1:                                     ; preds = %block_.L_400de5
   br label %block_.L_400df8
 
 block_.L_400df8:                                  ; preds = %block_400e04, %block_400df1
-  %844 = phi i64 [ %1052, %block_400e04 ], [ %.pre43, %block_400df1 ]
+  %844 = phi i64 [ %.pre43, %block_400df1 ], [ %1052, %block_400e04 ]
+  %MEMORY.6 = phi %struct.Memory* [ %MEMORY.5, %block_400df1 ], [ %call2_400e3a, %block_400e04 ]
   %845 = load i64, i64* %RBP.i, align 8
   %846 = add i64 %845, -56
   %847 = add i64 %844, 3
@@ -1452,7 +1454,7 @@ block_400e04:                                     ; preds = %block_.L_400df8
   store i64 %949, i64* %952, align 8
   store i64 %951, i64* %6, align 8
   store i64 %948, i64* %3, align 8
-  %call2_400e3a = tail call %struct.Memory* @sub_4006d0.sqrt_plt(%struct.State* nonnull %0, i64 %948, %struct.Memory* %MEMORY.2)
+  %call2_400e3a = tail call %struct.Memory* @ext_sqrt(%struct.State* nonnull %0, i64 %948, %struct.Memory* %MEMORY.6)
   %953 = load i64, i64* %RBP.i, align 8
   %954 = add i64 %953, -48
   %955 = load i64, i64* %3, align 8
@@ -2544,7 +2546,7 @@ block_.L_400fcd:                                  ; preds = %block_.L_400e98
   store i64 %1731, i64* %3, align 8
   %1732 = add i64 %1700, 96
   store i64 %1732, i64* %6, align 8
-  ret %struct.Memory* %MEMORY.2
+  ret %struct.Memory* %MEMORY.5
 }
 
 ; Function Attrs: norecurse nounwind

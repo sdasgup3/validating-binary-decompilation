@@ -161,6 +161,20 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_4003e0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400530_Rand_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400460_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400570_Initarr_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400510_Initrand_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400670_Quicksort_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007a0_Quick_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1156,7 +1170,7 @@ block_4004d9:                                     ; preds = %block_4004d0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2451
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -2136,7 +2150,7 @@ block_400870:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2451
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4003e0__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4003e0__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -2790,7 +2804,7 @@ block_400570:
   %88 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %79, i64* %88, align 8, !tbaa !2451
   %89 = load i64, i64* %PC
-  %90 = call %struct.Memory* @sub_400510_Initrand(%struct.State* %0, i64 %89, %struct.Memory* %2)
+  %90 = call %struct.Memory* @sub_400510_Initrand_renamed_(%struct.State* %0, i64 %89, %struct.Memory* %2)
   %91 = load i64, i64* %PC
   %92 = add i64 %91, 11
   store i64 %92, i64* %PC
@@ -3154,7 +3168,7 @@ block_4005a7:                                     ; preds = %block_40059a
   %355 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %346, i64* %355, align 8, !tbaa !2451
   %356 = load i64, i64* %PC
-  %357 = call %struct.Memory* @sub_400530_Rand(%struct.State* %0, i64 %356, %struct.Memory* %MEMORY.0)
+  %357 = call %struct.Memory* @sub_400530_Rand_renamed_(%struct.State* %0, i64 %356, %struct.Memory* %MEMORY.0)
   %358 = load i64, i64* %PC
   %359 = add i64 %358, 5
   store i64 %359, i64* %PC
@@ -3909,7 +3923,7 @@ block_4007a0:
   %99 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %90, i64* %99, align 8, !tbaa !2451
   %100 = load i64, i64* %PC
-  %101 = call %struct.Memory* @sub_400570_Initarr(%struct.State* %0, i64 %100, %struct.Memory* %2)
+  %101 = call %struct.Memory* @sub_400570_Initarr_renamed_(%struct.State* %0, i64 %100, %struct.Memory* %2)
   %102 = load i64, i64* %PC
   %103 = add i64 %102, 10
   store i64 %103, i64* %PC
@@ -3938,7 +3952,7 @@ block_4007a0:
   %118 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %109, i64* %118, align 8, !tbaa !2451
   %119 = load i64, i64* %PC
-  %120 = call %struct.Memory* @sub_400670_Quicksort(%struct.State* %0, i64 %119, %struct.Memory* %101)
+  %120 = call %struct.Memory* @sub_400670_Quicksort_renamed_(%struct.State* %0, i64 %119, %struct.Memory* %101)
   %121 = load i64, i64* %PC
   %122 = add i64 %121, 7
   store i64 %122, i64* %PC
@@ -4842,7 +4856,7 @@ block_40076c:                                     ; preds = %block_400760
   %419 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %410, i64* %419, align 8, !tbaa !2451
   %420 = load i64, i64* %PC
-  %421 = call %struct.Memory* @sub_400670_Quicksort(%struct.State* %0, i64 %420, %struct.Memory* %MEMORY.4)
+  %421 = call %struct.Memory* @sub_400670_Quicksort_renamed_(%struct.State* %0, i64 %420, %struct.Memory* %MEMORY.4)
   br label %block_40077b
 
 block_400796:                                     ; preds = %block_400787, %block_40077b
@@ -5209,7 +5223,7 @@ block_400787:                                     ; preds = %block_40077b
   %703 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %694, i64* %703, align 8, !tbaa !2451
   %704 = load i64, i64* %PC
-  %705 = call %struct.Memory* @sub_400670_Quicksort(%struct.State* %0, i64 %704, %struct.Memory* %MEMORY.0)
+  %705 = call %struct.Memory* @sub_400670_Quicksort_renamed_(%struct.State* %0, i64 %704, %struct.Memory* %MEMORY.0)
   br label %block_400796
 
 block_4006d8:                                     ; preds = %block_4006b6
@@ -6090,7 +6104,7 @@ block_400850:                                     ; preds = %block_400846
   %215 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %206, i64* %215, align 8, !tbaa !2451
   %216 = load i64, i64* %PC
-  %217 = call %struct.Memory* @sub_4007a0_Quick(%struct.State* %0, i64 %216, %struct.Memory* %MEMORY.0)
+  %217 = call %struct.Memory* @sub_4007a0_Quick_renamed_(%struct.State* %0, i64 %216, %struct.Memory* %MEMORY.0)
   %218 = load i64, i64* %RBP
   %219 = sub i64 %218, 8
   %220 = load i64, i64* %PC

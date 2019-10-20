@@ -1,24 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x556272829190]:   %61 = fcmp uno double %58, %60
-[0x556272ac20d0]:   %65 = fcmp uno double %62, %64
-[0x556272ac2440]:   %81 = fcmp oeq double %62, %64
-[0x556272ac4890]:   %79 = fcmp olt double %62, %64
-[0x556272ac5050]:   %77 = fcmp ogt double %62, %64
-Multiple matches exist for [0x556272a2d290]:   %73 = fcmp ogt double %58, %60
-[0x556272ac20d0]:   %65 = fcmp uno double %62, %64
-[0x556272ac2440]:   %81 = fcmp oeq double %62, %64
-[0x556272ac4890]:   %79 = fcmp olt double %62, %64
-[0x556272ac5050]:   %77 = fcmp ogt double %62, %64
-Multiple matches exist for [0x556272a2d3f0]:   %75 = fcmp olt double %58, %60
-[0x556272ac20d0]:   %65 = fcmp uno double %62, %64
-[0x556272ac2440]:   %81 = fcmp oeq double %62, %64
-[0x556272ac4890]:   %79 = fcmp olt double %62, %64
-[0x556272ac5050]:   %77 = fcmp ogt double %62, %64
-Multiple matches exist for [0x556272a2d550]:   %77 = fcmp oeq double %58, %60
-[0x556272ac20d0]:   %65 = fcmp uno double %62, %64
-[0x556272ac2440]:   %81 = fcmp oeq double %62, %64
-[0x556272ac4890]:   %79 = fcmp olt double %62, %64
-[0x556272ac5050]:   %77 = fcmp ogt double %62, %64
+Multiple matches exist for [0x560a8881c6f0]:   %61 = fcmp uno double %58, %60
+[0x560a888b2160]:   %65 = fcmp uno double %62, %64
+[0x560a888b36b0]:   %81 = fcmp oeq double %62, %64
+[0x560a888b5120]:   %79 = fcmp olt double %62, %64
+[0x560a888b5280]:   %77 = fcmp ogt double %62, %64
+Multiple matches exist for [0x560a8881d290]:   %73 = fcmp ogt double %58, %60
+[0x560a888b2160]:   %65 = fcmp uno double %62, %64
+[0x560a888b36b0]:   %81 = fcmp oeq double %62, %64
+[0x560a888b5120]:   %79 = fcmp olt double %62, %64
+[0x560a888b5280]:   %77 = fcmp ogt double %62, %64
+Multiple matches exist for [0x560a8881d3f0]:   %75 = fcmp olt double %58, %60
+[0x560a888b2160]:   %65 = fcmp uno double %62, %64
+[0x560a888b36b0]:   %81 = fcmp oeq double %62, %64
+[0x560a888b5120]:   %79 = fcmp olt double %62, %64
+[0x560a888b5280]:   %77 = fcmp ogt double %62, %64
+Multiple matches exist for [0x560a8881d550]:   %77 = fcmp oeq double %58, %60
+[0x560a888b2160]:   %65 = fcmp uno double %62, %64
+[0x560a888b36b0]:   %81 = fcmp oeq double %62, %64
+[0x560a888b5120]:   %79 = fcmp olt double %62, %64
+[0x560a888b5280]:   %77 = fcmp ogt double %62, %64
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

@@ -162,6 +162,30 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_4005a0_Initialize_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005e0_Permute_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4003e0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006b0_Perm_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400460_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400570_Swap_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006b0_Perm_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400460_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005a0_Initialize_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4003e0__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400570_Swap_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005e0_Permute_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1210,7 +1234,7 @@ block_4004d9:                                     ; preds = %block_4004d0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -1469,7 +1493,7 @@ block_4006d4:                                     ; preds = %block_4006ca
   %163 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %154, i64* %163, align 8, !tbaa !2428
   %164 = load i64, i64* %PC
-  %165 = call %struct.Memory* @sub_4005a0_Initialize(%struct.State* %0, i64 %164, %struct.Memory* %MEMORY.1)
+  %165 = call %struct.Memory* @sub_4005a0_Initialize_renamed__renamed_(%struct.State* %0, i64 %164, %struct.Memory* %MEMORY.1)
   %166 = load i64, i64* %PC
   %167 = add i64 %166, 5
   store i64 %167, i64* %PC
@@ -1490,7 +1514,7 @@ block_4006d4:                                     ; preds = %block_4006ca
   %178 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %169, i64* %178, align 8, !tbaa !2428
   %179 = load i64, i64* %PC
-  %180 = call %struct.Memory* @sub_4005e0_Permute(%struct.State* %0, i64 %179, %struct.Memory* %165)
+  %180 = call %struct.Memory* @sub_4005e0_Permute_renamed__renamed_(%struct.State* %0, i64 %179, %struct.Memory* %165)
   %181 = load i64, i64* %RBP
   %182 = sub i64 %181, 4
   %183 = load i64, i64* %PC
@@ -3478,7 +3502,7 @@ block_400760:                                     ; preds = %block_400756
   %205 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %196, i64* %205, align 8, !tbaa !2428
   %206 = load i64, i64* %PC
-  %207 = call %struct.Memory* @sub_4006b0_Perm(%struct.State* %0, i64 %206, %struct.Memory* %MEMORY.0)
+  %207 = call %struct.Memory* @sub_4006b0_Perm_renamed__renamed_(%struct.State* %0, i64 %206, %struct.Memory* %MEMORY.0)
   %208 = load i64, i64* %RBP
   %209 = sub i64 %208, 8
   %210 = load i64, i64* %PC
@@ -3989,7 +4013,7 @@ block_400780:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4003e0__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4003e0__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -5022,7 +5046,7 @@ block_400606:                                     ; preds = %block_4005e0
   %334 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %325, i64* %334, align 8, !tbaa !2428
   %335 = load i64, i64* %PC
-  %336 = call %struct.Memory* @sub_4005e0_Permute(%struct.State* %0, i64 %335, %struct.Memory* %2)
+  %336 = call %struct.Memory* @sub_4005e0_Permute_renamed__renamed_(%struct.State* %0, i64 %335, %struct.Memory* %2)
   %337 = load i64, i64* %RBP
   %338 = sub i64 %337, 4
   %339 = load i64, i64* %PC
@@ -5299,7 +5323,7 @@ block_400626:                                     ; preds = %block_40061c
   %543 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %534, i64* %543, align 8, !tbaa !2428
   %544 = load i64, i64* %PC
-  %545 = call %struct.Memory* @sub_400570_Swap(%struct.State* %0, i64 %544, %struct.Memory* %MEMORY.1)
+  %545 = call %struct.Memory* @sub_400570_Swap_renamed__renamed_(%struct.State* %0, i64 %544, %struct.Memory* %MEMORY.1)
   %546 = bitcast i32* %R8D to i64*
   %547 = load i64, i64* %RBP
   %548 = sub i64 %547, 4
@@ -5376,7 +5400,7 @@ block_400626:                                     ; preds = %block_40061c
   %604 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %595, i64* %604, align 8, !tbaa !2428
   %605 = load i64, i64* %PC
-  %606 = call %struct.Memory* @sub_4005e0_Permute(%struct.State* %0, i64 %605, %struct.Memory* %545)
+  %606 = call %struct.Memory* @sub_4005e0_Permute_renamed__renamed_(%struct.State* %0, i64 %605, %struct.Memory* %545)
   %607 = load i64, i64* %PC
   %608 = add i64 %607, 10
   store i64 %608, i64* %PC
@@ -5582,7 +5606,7 @@ block_400626:                                     ; preds = %block_40061c
   %762 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %753, i64* %762, align 8, !tbaa !2428
   %763 = load i64, i64* %PC
-  %764 = call %struct.Memory* @sub_400570_Swap(%struct.State* %0, i64 %763, %struct.Memory* %606)
+  %764 = call %struct.Memory* @sub_400570_Swap_renamed__renamed_(%struct.State* %0, i64 %763, %struct.Memory* %606)
   %765 = load i64, i64* %RBP
   %766 = sub i64 %765, 8
   %767 = load i64, i64* %PC

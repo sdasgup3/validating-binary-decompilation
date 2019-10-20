@@ -1,10 +1,10 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558179d2a578]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
-[0x558179d7bfa8]:   %44 = load double, double* inttoptr (i64 6299792 to double*), align 16
-[0x558179d7c468]:   %41 = load double, double* inttoptr (i64 6299784 to double*), align 8
-Multiple matches exist for [0x558179d2a798]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
-[0x558179d7bfa8]:   %44 = load double, double* inttoptr (i64 6299792 to double*), align 16
-[0x558179d7c468]:   %41 = load double, double* inttoptr (i64 6299784 to double*), align 8
+Multiple matches exist for [0x561757089258]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
+[0x5617570d4f48]:   %44 = load double, double* inttoptr (i64 6299792 to double*), align 16
+[0x5617570d6948]:   %41 = load double, double* inttoptr (i64 6299784 to double*), align 8
+Multiple matches exist for [0x561757089478]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
+[0x5617570d4f48]:   %44 = load double, double* inttoptr (i64 6299792 to double*), align 16
+[0x5617570d6948]:   %41 = load double, double* inttoptr (i64 6299784 to double*), align 8
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

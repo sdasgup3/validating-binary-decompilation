@@ -30,6 +30,7 @@ cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& 
 ### Run McSema [Already Done, Needed one time]
 ```bash
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel "echo; echo {}; echo ===== ; ../../scripts/remove_definitions.pl --file {}/binary/test.mcsema.ll"
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
 ```
 
@@ -56,11 +57,32 @@ grep "Pass" docs/match.log > docs/matchPass.log
 ## To find the the binaary size excersized by  a particular set of test-cases
 ```
 # This is useful to pick up a representative which s smallest in binary size
-cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/compd.log | wc -l" > docs/matchPassLineCount.log
+cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/compd.log | wc -l"
 ```
 
 ### Handling: --assume-none-decl-retval
-  -  For some testcase we need to add the above switch in the Makefile's compd target. Refer to `docs/unsupportedReason.md` for the reason
+  -  For some testcase we need to add the above switch in the Makefile's compd target. Refer to `docs/unsupportedReason.md` for the reason S1
   ```
   cat test-cases-list | parallel "sed -i -e 's/1>compd/--assume-none-decl-retval 1>compd/g' {}/Makefile"
   ```
+  - Alternative solution is to modify the mcsema generared llvm files to convert all the called functions's defintion into delaration.
+  ```
+  Extract the top level directory names in ~/Junk/filelist.txt
+  cat ~/Junk/filelist.txt | parallel "echo; echo {}; echo ===== ; ../../scripts/remove_definitions.pl --file {}/binary/test.mcsema.ll"
+  cat ~/Junk/filelist.txt | parallel "cd {} ; make mcsema_opt; cd -"
+
+  ## Remove special makefile switches (If required)
+  cat ~/Junk/job.txt | parallel "sed -i -e 's/--assume-none-decl-retval//g' {}/Makefile"
+
+  
+  ```
+
+### Unsupported reason keywords
+```
+cat docs/matchFail.log | parallel "echo; echo {}; echo =============; tail {}/match.log" |& tee ~/Junk/log
+grep "BB Mismatch" ~/Junk/log  | wc
+grep "MEMORY" ~/Junk/log  | wc
+
+grep "Failed to extract" ~/Junk/log  | wc
+cat docs/matchFail.log | parallel ~/scripts-n-docs/scripts/perl/filegrep.pl --patt "Failed to extract" --file {}/match.log
+```

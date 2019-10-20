@@ -94,6 +94,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_401100_transit_surface_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400590__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400f60_trace_line_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400680_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1812,7 +1820,7 @@ block_40108e:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %488 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %479, i64* %488, align 8, !tbaa !2428
   %489 = load i64, i64* %PC
-  %490 = call %struct.Memory* @sub_401100_transit_surface(%struct.State* %0, i64 %489, %struct.Memory* %MEMORY.0)
+  %490 = call %struct.Memory* @sub_401100_transit_surface_renamed_(%struct.State* %0, i64 %489, %struct.Memory* %MEMORY.0)
   %491 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %492 = load i64, i64* %PC
   %493 = add i64 %492, 9
@@ -11194,7 +11202,7 @@ block_4009ce:                                     ; preds = %block_400937
   %452 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %443, i64* %452, align 8, !tbaa !2428
   %453 = load i64, i64* %PC
-  %454 = call %struct.Memory* @sub_400f60_trace_line(%struct.State* %0, i64 %453, %struct.Memory* %MEMORY.2)
+  %454 = call %struct.Memory* @sub_400f60_trace_line_renamed_(%struct.State* %0, i64 %453, %struct.Memory* %MEMORY.2)
   %455 = load i64, i64* %PC
   %456 = add i64 %455, 5
   store i64 %456, i64* %PC
@@ -11308,7 +11316,7 @@ block_4009ce:                                     ; preds = %block_400937
   %539 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %530, i64* %539, align 8, !tbaa !2428
   %540 = load i64, i64* %PC
-  %541 = call %struct.Memory* @sub_400f60_trace_line(%struct.State* %0, i64 %540, %struct.Memory* %454)
+  %541 = call %struct.Memory* @sub_400f60_trace_line_renamed_(%struct.State* %0, i64 %540, %struct.Memory* %454)
   %542 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %543 = load i64, i64* %PC
   %544 = add i64 %543, 8
@@ -13261,7 +13269,7 @@ block_400948:                                     ; preds = %block_400937
   %1924 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1915, i64* %1924, align 8, !tbaa !2428
   %1925 = load i64, i64* %PC
-  %1926 = call %struct.Memory* @sub_400f60_trace_line(%struct.State* %0, i64 %1925, %struct.Memory* %MEMORY.2)
+  %1926 = call %struct.Memory* @sub_400f60_trace_line_renamed_(%struct.State* %0, i64 %1925, %struct.Memory* %MEMORY.2)
   %1927 = load i64, i64* %PC
   %1928 = add i64 %1927, 10
   store i64 %1928, i64* %PC
@@ -17929,7 +17937,7 @@ block_4006f9:                                     ; preds = %block_4006f0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -18297,7 +18305,7 @@ block_401560:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400590__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400590__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC

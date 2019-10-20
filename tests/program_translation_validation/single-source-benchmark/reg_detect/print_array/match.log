@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5580f2dbba18]:   %MEMORY.0 = phi %struct.Memory* [ %398, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %415, %block_4013a0 ]
-[0x5580f2e64198]:   %MEMORY.0 = phi %struct.Memory.31* [ %2, %entry ], [ %MEMORY.1, %block_.L_4013cf ]
-[0x5580f2e6d148]:   %MEMORY.2 = phi %struct.Memory.31* [ %291, %routine_idivl__r8d.exit ], [ %call2_4013b4, %block_4013a0 ]
-Multiple matches exist for [0x5580f2c6a678]:   %398 = phi %struct.Memory* [ %390, %389 ], [ %298, %391 ]
-[0x5580f2dd0ac8]:   %291 = phi %struct.Memory.31* [ %283, %282 ], [ %call2_40136f, %284 ]
-[0x5580f2e678e8]:   %MEMORY.1 = phi %struct.Memory.31* [ %MEMORY.0, %block_401332 ], [ %MEMORY.2, %block_.L_4013bc ]
-Multiple matches exist for [0x5580f2c59378]:   %415 = tail call fastcc %struct.Memory* @ext_4005b0_fprintf(%struct.State* nonnull %0, %struct.Memory* %398)
-[0x5580f2e7e8b0]:   %call2_4013b4 = tail call %struct.Memory.31* @sub_4005b0.fprintf_plt(%struct.State.0* nonnull %0, i64 %303, %struct.Memory.31* %291)
-[0x5580f2e82f80]:   %call2_40136f = tail call %struct.Memory.31* @sub_4005b0.fprintf_plt(%struct.State.0* nonnull %0, i64 %187, %struct.Memory.31* %MEMORY.1)
+Multiple matches exist for [0x555dadef0078]:   %MEMORY.0 = phi %struct.Memory* [ %398, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %415, %block_4013a0 ]
+[0x555dadf99448]:   %MEMORY.0 = phi %struct.Memory.31* [ %2, %entry ], [ %MEMORY.1, %block_.L_4013cf ]
+[0x555dadfa1e08]:   %MEMORY.2 = phi %struct.Memory.31* [ %292, %routine_idivl__r8d.exit ], [ %309, %block_4013a0 ]
+Multiple matches exist for [0x555dadd8cc08]:   %398 = phi %struct.Memory* [ %390, %389 ], [ %298, %391 ]
+[0x555daddaa948]:   %292 = phi %struct.Memory.31* [ %284, %283 ], [ %192, %285 ]
+[0x555dadf9e228]:   %MEMORY.1 = phi %struct.Memory.31* [ %MEMORY.0, %block_401332 ], [ %MEMORY.2, %block_.L_4013bc ]
+Multiple matches exist for [0x555dadd8dc58]:   %415 = tail call fastcc %struct.Memory* @ext_4005b0_fprintf(%struct.State* nonnull %0, %struct.Memory* %398)
+[0x555dadfb37d0]:   %309 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @fprintf to i64), %struct.Memory.31* %292)
+[0x555dadfb7ea0]:   %192 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @fprintf to i64), %struct.Memory.31* %MEMORY.1)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

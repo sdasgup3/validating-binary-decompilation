@@ -575,6 +575,45 @@ string CompositionalDecompiler::handleJCCBodyCalls(x64asm::Instruction instr,
   return retval.str();
 }
 
+typedef pair<bool, string> isBuiltInFuncCallRetType;
+static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc) {
+  if (calledFunc == ".abort_plt" || calledFunc == ".abs_plt" ||
+      calledFunc == ".asin_plt" || calledFunc == ".atan_plt" ||
+      calledFunc == ".atof_plt" || calledFunc == ".atoi_plt" ||
+      calledFunc == ".atol_plt" || calledFunc == ".calloc_plt" ||
+      calledFunc == ".clock_plt" || calledFunc == ".cosf_plt" ||
+      calledFunc == ".cos_plt" || calledFunc == ".exit_plt" ||
+      calledFunc == ".exp_plt" || calledFunc == ".fflush_plt" ||
+      calledFunc == ".floor_plt" || calledFunc == ".fprintf_plt" ||
+      calledFunc == ".fputs_plt" || calledFunc == ".free_plt" ||
+      calledFunc == ".fwrite_plt" || calledFunc == ".getchar_plt" ||
+      calledFunc == ".gettimeofday_plt" ||
+      calledFunc == ".__isoc99_fscanf_plt" ||
+      calledFunc == ".__isoc99_scanf_plt" ||
+      calledFunc == ".__isoc99_sscanf_plt" || calledFunc == ".log_plt" ||
+      calledFunc == ".lrand48_plt" || calledFunc == ".malloc_plt" ||
+      calledFunc == ".memalign_plt" || calledFunc == ".memcpy_plt" ||
+      calledFunc == ".memset_plt" || calledFunc == ".perror_plt" ||
+      calledFunc == ".posix_memalign_plt" || calledFunc == ".pow_plt" ||
+      calledFunc == ".printf_plt" || calledFunc == ".putchar_plt" ||
+      calledFunc == ".puts_plt" || calledFunc == ".random_plt" ||
+      calledFunc == ".rand_plt" || calledFunc == ".realloc_plt" ||
+      calledFunc == ".seed48_plt" || calledFunc == ".sinf_plt" ||
+      calledFunc == ".sin_plt" || calledFunc == ".sprintf_plt" ||
+      calledFunc == ".sqrt_plt" || calledFunc == ".srand_plt" ||
+      calledFunc == ".strcat_plt" || calledFunc == ".strcmp_plt" ||
+      calledFunc == ".strcpy_plt" || calledFunc == ".strdup_plt" ||
+      calledFunc == ".strlen_plt" || calledFunc == ".strncmp_plt" ||
+      calledFunc == ".strtoll_plt" || calledFunc == ".tan_plt" ||
+      calledFunc == ".time_plt" || calledFunc == ".ungetc_plt") {
+
+    auto posnUC = calledFunc.find("_");
+    return isBuiltInFuncCallRetType(true, calledFunc.substr(1, posnUC - 1));
+  }
+
+  return isBuiltInFuncCallRetType(false, "");
+}
+
 string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
                                                     uint64_t currRIP,
                                                     uint64_t currSize) {
@@ -599,37 +638,54 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
   uint64_t targetAddress = instr.get_target();
   int32_t targetOffset = targetAddress - currRIP;
 
-  // load
+  // Generting load from Mem
   Body << "  %loadMem1_" << hex << currRIP
        << " = load %struct.Memory*, %struct.Memory** %MEMORY" << endl;
-  // call of semantics function
+  // Generating call to semantics function
   Body << "  %call1_" << hex << currRIP << " = call %struct.Memory* @routine_"
        << normalizedInstructionName
        << "(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_" << hex
        << currRIP << ", i64 " << dec << targetOffset << ", i64 " << dec
        << currSize << ", i64 " << dec << currSize << ")" << endl;
-  // store
+  // Generting store to Mem
   Body << "  store %struct.Memory* %call1_" << hex << currRIP
        << ", %struct.Memory** %MEMORY" << endl
        << endl;
 
+  // Generting load from Mem
   Body << "  %loadMem2_" << hex << currRIP
        << " = load %struct.Memory*, %struct.Memory** %MEMORY" << endl;
   Body << "  %loadPC_" << hex << currRIP << " = load i64, i64* %3" << endl;
-  // call of actual function
-  Body << "  %call2_" << hex << currRIP << " = call %struct.Memory* @sub_"
-       << hex << targetAddress << lbl << "(%struct.State* %0, i64  "
-       << "%loadPC_" << hex << currRIP << ", %struct.Memory* %loadMem2_" << hex
-       << currRIP << ")" << endl;
-  // store
+
+  // Generating call to actual function
+  auto isBuiltIn = isBuiltInFuncCall(ss_label.str());
+  if (isBuiltIn.first) {
+    Body << "  %call2_" << hex << currRIP << " = call %struct.Memory* @ext_"
+         << isBuiltIn.second << "(%struct.State* %0, i64  "
+         << "%loadPC_" << hex << currRIP << ", %struct.Memory* %loadMem2_"
+         << hex << currRIP << ")" << endl;
+  } else {
+    Body << "  %call2_" << hex << currRIP << " = call %struct.Memory* @sub_"
+         << hex << targetAddress << lbl << "(%struct.State* %0, i64  "
+         << "%loadPC_" << hex << currRIP << ", %struct.Memory* %loadMem2_"
+         << hex << currRIP << ")" << endl;
+  }
+
+  // Generting store to Mem
   Body << "  store %struct.Memory* %call2_" << hex << currRIP
        << ", %struct.Memory** %MEMORY" << endl
        << endl;
 
   retval << "%call2_" << hex << currRIP;
 
-  // Decls
   stringstream tmp;
+
+  if (isBuiltIn.first) {
+    // For builtin we already provide the definitions using static data file
+    return retval.str();
+  }
+
+  // Decls
   if (assume_none_decl_retval) {
     tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
         << "(%struct.State* noalias dereferenceable(3376), i64, "
@@ -1135,3 +1191,10 @@ uint64_t hex_to_int(const string &s) {
 //
 //  return true;
 //}
+// tmp << "define internal %struct.Memory* @sub_" << hex << targetAddress
+//    << lbl << "(%struct.State*, i64, %struct.Memory*) {" << endl
+//    << "  %4 = call %struct.Memory* @__remill_function_call(%struct.State* "
+//       "%0, i64 ptrtoint (i64 (i64)* @"
+//    << isBuiltIn.second << " to i64), %struct.Memory* %2)" << endl
+//    << "  ret %struct.Memory* %4" << endl
+//    << "}" << endl;
