@@ -1,0 +1,33 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5586fe231ae8]:   %308 = tail call fastcc %struct.Memory* @ext_601088_memset(%struct.State* nonnull %0, %struct.Memory* %MEMORY.4)
+[0x5586fe17d860]:   %call2_400796 = tail call %struct.Memory.32* @sub_4004c0.free_plt(%struct.State.1* nonnull %0, i64 %720, %struct.Memory.32* %MEMORY.0)
+[0x5586fe1b6410]:   %call2_400683 = tail call %struct.Memory.32* @sub_4004e0.memset_plt(%struct.State.1* nonnull %0, i64 %224, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x5586fe230ab8]:   %.pre11 = load i64, i64* %RBP, align 8
+[0x5586fe1c73e8]:   %.pre11 = load i64, i64* %RBP.i, align 8
+[0x5586fe2fbae8]:   %412 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x5586fe1eac18]:   %393 = tail call fastcc %struct.Memory* @ext_601078_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.4)
+[0x5586fe17d860]:   %call2_400796 = tail call %struct.Memory.32* @sub_4004c0.free_plt(%struct.State.1* nonnull %0, i64 %720, %struct.Memory.32* %MEMORY.0)
+[0x5586fe1b6410]:   %call2_400683 = tail call %struct.Memory.32* @sub_4004e0.memset_plt(%struct.State.1* nonnull %0, i64 %224, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x5586fe1f2668]:   %547 = load i32, i32* %543, align 4
+[0x5586fe1b8958]:   %377 = load i32, i32* %376, align 4
+[0x5586fe1b8f48]:   %380 = load i32, i32* %376, align 4
+Multiple matches exist for [0x5586fe1f28c0]:   %551 = icmp ult i32 %548, %547
+[0x5586fe1b9420]:   %383 = icmp ult i32 %381, %377
+[0x5586fe1b9550]:   %384 = icmp ult i32 %381, %380
+Multiple matches exist for [0x5586fe1f3420]:   %569 = lshr i32 %547, 31
+[0x5586fe2d5c50]:   %401 = lshr i32 %377, 31
+[0x5586fe2d5d80]:   %402 = lshr i32 %380, 31
+Multiple matches exist for [0x5586fe1f3520]:   %571 = xor i32 %566, %569
+[0x5586fe2d5eb0]:   %403 = xor i32 %399, %401
+[0x5586fe2d5fe0]:   %404 = xor i32 %399, %402
+Multiple matches exist for [0x5586fe1e5ab8]:   %664 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %308)
+[0x5586fe17d860]:   %call2_400796 = tail call %struct.Memory.32* @sub_4004c0.free_plt(%struct.State.1* nonnull %0, i64 %720, %struct.Memory.32* %MEMORY.0)
+[0x5586fe1b6410]:   %call2_400683 = tail call %struct.Memory.32* @sub_4004e0.memset_plt(%struct.State.1* nonnull %0, i64 %224, %struct.Memory.32* %MEMORY.0)
+[0x5586fe258750]:   %call2_400779 = tail call %struct.Memory.32* @sub_4004d0.printf_plt(%struct.State.1* nonnull %0, i64 %673, %struct.Memory.32* %call2_400683)
+[0x5586fe2d97a0]:   %call2_40061e = tail call %struct.Memory.32* @sub_4004f0.malloc_plt(%struct.State.1* %0, i64 %79, %struct.Memory.32* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...

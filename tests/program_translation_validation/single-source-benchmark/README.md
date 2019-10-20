@@ -53,7 +53,14 @@ grep "Pass" docs/match.log > docs/matchPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl -file docs/compdPass.log --file docs/matchPass.log  --show 1 > docs/matchFail.log
 ```
 
-## Match Pass line count
+## To find the the binaary size excersized by  a particular set of test-cases
 ```
+# This is useful to pick up a representative which s smallest in binary size
 cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/compd.log | wc -l" > docs/matchPassLineCount.log
 ```
+
+### Handling: --assume-none-decl-retval
+  -  For some testcase we need to add the above switch in the Makefile's compd target. Refer to `docs/unsupportedReason.md` for the reason
+  ```
+  cat test-cases-list | parallel "sed -i -e 's/1>compd/--assume-none-decl-retval 1>compd/g' {}/Makefile"
+  ```

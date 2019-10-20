@@ -123,11 +123,11 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_40e4e0._ZN32custom_divide_multiple_variable2IlE8do_shiftElllll(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_40e520._Z26check_shifted_variable_sumIl32custom_divide_multiple_variable2IlEEvT_S2_S2_S2_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_40e4e0._ZN32custom_divide_multiple_variable2IlE8do_shiftElllll(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_40e520._Z26check_shifted_variable_sumIl32custom_divide_multiple_variable2IlEEvT_S2_S2_S2_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Data Access Globals
 

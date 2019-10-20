@@ -1,0 +1,28 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55d0ee8834b8]:   %104 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x55d0ee938948]:   %134 = load i32, i32* %133, align 4
+[0x55d0ee939788]:   %136 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+Multiple matches exist for [0x55d0ee71f640]:   %123 = lshr i32 %104, 31
+[0x55d0ee95b820]:   %155 = lshr i32 %136, 31
+[0x55d0ee95b940]:   %154 = lshr i32 %134, 31
+Multiple matches exist for [0x55d0ee71f6c0]:   %124 = xor i32 %123, %122
+[0x55d0ee95a350]:   %157 = xor i32 %152, %154
+[0x55d0ee95b700]:   %156 = xor i32 %155, %154
+Multiple matches exist for [0x55d0ee720c88]:   %143 = tail call fastcc %struct.Memory* @ext_6020a8_putchar(%struct.State* nonnull %0, %struct.Memory* %96)
+[0x55d0ee94f1e0]:   %call2_400a51 = tail call %struct.Memory.32* @sub_400530.putchar_plt(%struct.State.1* nonnull %0, i64 %169, %struct.Memory.32* %call2_400a34)
+[0x55d0ee9523e0]:   %call2_400a34 = tail call %struct.Memory.32* @sub_400540.printf_plt(%struct.State.1* nonnull %0, i64 %124, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x55d0ee8895b8]:   %188 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x55d0ee932c38]:   %57 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+[0x55d0ee933318]:   %55 = load i32, i32* %54, align 4
+Multiple matches exist for [0x55d0ee88a190]:   %207 = lshr i32 %188, 31
+[0x55d0ee956990]:   %75 = lshr i32 %55, 31
+[0x55d0ee959860]:   %76 = lshr i32 %57, 31
+Multiple matches exist for [0x55d0ee88a210]:   %208 = xor i32 %207, %206
+[0x55d0ee951230]:   %78 = xor i32 %73, %75
+[0x55d0ee9514e0]:   %77 = xor i32 %76, %75
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [show_data] from ../binary/test.mcsema.opt.ll
+Extracting function [show_data] from mcsema/test.proposed.opt.ll
+Matcher Done...

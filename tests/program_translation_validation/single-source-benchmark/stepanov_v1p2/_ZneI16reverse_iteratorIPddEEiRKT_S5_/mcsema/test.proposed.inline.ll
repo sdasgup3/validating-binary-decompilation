@@ -143,7 +143,7 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_402580._ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_402580._ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZneI16reverse_iteratorIPddEEiRKT_S5_(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

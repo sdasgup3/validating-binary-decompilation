@@ -1,0 +1,64 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5639c42f5dd8]:   %116 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_602080__bss_type* @seg_602080__bss to i64), i64 76) to i32*), align 4
+[0x5639c43ac898]:   %88 = load i32, i32* inttoptr (i64 6299852 to i32*), align 4
+[0x5639c43ac9c8]:   %87 = load i32, i32* %86, align 4
+Multiple matches exist for [0x5639c42f72c0]:   %136 = lshr i32 %116, 31
+[0x5639c43d2a90]:   %107 = lshr i32 %87, 31
+[0x5639c43d52e0]:   %108 = lshr i32 %88, 31
+Multiple matches exist for [0x5639c42f7340]:   %137 = xor i32 %136, %135
+[0x5639c43d5be0]:   %110 = xor i32 %105, %107
+[0x5639c43d5d40]:   %109 = xor i32 %108, %107
+Multiple matches exist for [0x5639c42f7ad8]:   %147 = tail call fastcc %struct.Memory* @ext_6020f0_abs(%struct.State* nonnull %0, %struct.Memory* %MEMORY.2)
+[0x5639c41fd750]:   %call2_4010b8 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %263, %struct.Memory.31* %MEMORY.0)
+[0x5639c43c4430]:   %call2_401047 = tail call %struct.Memory.31* @sub_400660.abs_plt(%struct.State.0* nonnull %0, i64 %114, %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x5639c42f7c58]:   %150 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_602080__bss_type* @seg_602080__bss to i64), i64 76) to i32*), align 4
+[0x5639c43ad218]:   %121 = load i32, i32* inttoptr (i64 6299852 to i32*), align 4
+[0x5639c43ad348]:   %120 = load i32, i32* inttoptr (i64 6299856 to i32*), align 16
+Multiple matches exist for [0x5639c42f88f0]:   %170 = lshr i32 %150, 31
+[0x5639c43d3a10]:   %140 = lshr i32 %120, 31
+[0x5639c43da070]:   %141 = lshr i32 %121, 31
+Multiple matches exist for [0x5639c42f8970]:   %171 = xor i32 %170, %169
+[0x5639c43db620]:   %142 = xor i32 %141, %140
+[0x5639c43dc040]:   %143 = xor i32 %138, %140
+Multiple matches exist for [0x5639c42f9488]:   %187 = tail call fastcc %struct.Memory* @ext_6020f0_abs(%struct.State* nonnull %0, %struct.Memory* %147)
+[0x5639c41fd750]:   %call2_4010b8 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %263, %struct.Memory.31* %MEMORY.0)
+[0x5639c43b0bc0]:   %call2_40113a = tail call %struct.Memory.31* @sub_400a80.printSolution(%struct.State.0* nonnull %0, i64 %366, %struct.Memory.31* %MEMORY.3)
+[0x5639c43bb090]:   %call2_40105f = tail call %struct.Memory.31* @sub_400660.abs_plt(%struct.State.0* nonnull %0, i64 %153, %struct.Memory.31* %call2_401047)
+[0x5639c43c4430]:   %call2_401047 = tail call %struct.Memory.31* @sub_400660.abs_plt(%struct.State.0* nonnull %0, i64 %114, %struct.Memory.31* %MEMORY.0)
+[0x5639c43d1300]:   %call2_4010ea = tail call %struct.Memory.31* @sub_400ce0.recSearch(%struct.State.0* nonnull %0, i64 %308, %struct.Memory.31* %MEMORY.2)
+Multiple matches exist for [0x5639c42fad90]:   %.pre14 = add i64 %188, -4
+[0x5639c43e3dc0]:   %.pre13 = add i64 %158, -4
+[0x5639c43ec750]:   %194 = add i64 %158, -4
+Multiple matches exist for [0x5639c42fac58]:   %.pre15 = inttoptr i64 %.pre14 to i32*
+[0x5639c43b71f8]:   %196 = inttoptr i64 %194 to i32*
+[0x5639c43b8038]:   %.pre14 = inttoptr i64 %.pre13 to i32*
+Multiple matches exist for [0x5639c42fb558]:   %228 = tail call fastcc %struct.Memory* @ext_602140_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.2)
+[0x5639c41fd750]:   %call2_4010b8 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %263, %struct.Memory.31* %MEMORY.0)
+[0x5639c43c4430]:   %call2_401047 = tail call %struct.Memory.31* @sub_400660.abs_plt(%struct.State.0* nonnull %0, i64 %114, %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x5639c42fc718]:   %253 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_602080__bss_type* @seg_602080__bss to i64), i64 72) to i32*), align 8
+[0x5639c43a87c8]:   %51 = load i32, i32* inttoptr (i64 6299848 to i32*), align 8
+[0x5639c43a8c88]:   %49 = load i32, i32* %48, align 4
+Multiple matches exist for [0x5639c42fdae0]:   %272 = lshr i32 %253, 31
+[0x5639c43ca900]:   %70 = lshr i32 %51, 31
+[0x5639c43cc370]:   %69 = lshr i32 %49, 31
+Multiple matches exist for [0x5639c42fdb60]:   %273 = xor i32 %272, %271
+[0x5639c43ca7b0]:   %72 = xor i32 %67, %69
+[0x5639c43cbff0]:   %71 = xor i32 %70, %69
+Multiple matches exist for [0x5639c42f5418]:   %.pre12 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_602080__bss_type* @seg_602080__bss to i64), i64 48) to i32*), align 16
+[0x5639c41d8018]:   %314 = load i32, i32* inttoptr (i64 6299824 to i32*), align 16
+[0x5639c43b8718]:   %.pre11 = load i32, i32* inttoptr (i64 6299824 to i32*), align 16
+Multiple matches exist for [0x5639c43004e8]:   %325 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_602080__bss_type* @seg_602080__bss to i64), i64 76) to i32*), align 4
+[0x5639c43a9f88]:   %235 = load i32, i32* inttoptr (i64 6299856 to i32*), align 16
+[0x5639c43c0318]:   %237 = load i32, i32* inttoptr (i64 6299852 to i32*), align 4
+Multiple matches exist for [0x5639c43010e0]:   %344 = lshr i32 %325, 31
+[0x5639c43a1040]:   %256 = lshr i32 %237, 31
+[0x5639c43a2f90]:   %255 = lshr i32 %235, 31
+Multiple matches exist for [0x5639c4301160]:   %345 = xor i32 %344, %343
+[0x5639c43a1170]:   %257 = xor i32 %256, %255
+[0x5639c43a7c00]:   %258 = xor i32 %253, %255
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [doSearch] from ../binary/test.mcsema.opt.ll
+Extracting function [doSearch] from mcsema/test.proposed.opt.ll
+Matcher Done...

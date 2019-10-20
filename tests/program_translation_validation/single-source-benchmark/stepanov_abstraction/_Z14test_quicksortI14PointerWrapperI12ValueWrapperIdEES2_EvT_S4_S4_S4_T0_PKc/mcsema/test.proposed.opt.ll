@@ -42,14 +42,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_403970._ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403970._ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
-declare %struct.Memory* @sub_405130._ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405130._ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
-declare %struct.Memory* @sub_403b40._Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403b40._Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
+define %struct.Memory* @_Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -163,7 +163,8 @@ entry:
   br label %block_.L_4027d8
 
 block_.L_4027d8:                                  ; preds = %block_4027e8, %entry
-  %80 = phi i64 [ %256, %block_4027e8 ], [ %.pre, %entry ]
+  %80 = phi i64 [ %.pre, %entry ], [ %256, %block_4027e8 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_402846, %block_4027e8 ]
   %81 = load i64, i64* %RBP.i, align 8
   %82 = add i64 %81, -52
   %83 = add i64 %80, 3
@@ -276,7 +277,7 @@ block_4027e8:                                     ; preds = %block_.L_4027d8
   store i64 %155, i64* %158, align 8
   store i64 %157, i64* %6, align 8
   store i64 %154, i64* %3, align 8
-  %call2_40280c = tail call %struct.Memory* @sub_403970._ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %2)
+  %call2_40280c = tail call %struct.Memory* @sub_403970._ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %MEMORY.0)
   %159 = load i64, i64* %RBP.i, align 8
   %160 = add i64 %159, -24
   %161 = load i64, i64* %3, align 8
@@ -325,7 +326,7 @@ block_4027e8:                                     ; preds = %block_.L_4027d8
   store i64 %188, i64* %191, align 8
   store i64 %190, i64* %6, align 8
   store i64 %187, i64* %3, align 8
-  %call2_402829 = tail call %struct.Memory* @sub_405130._ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_(%struct.State* nonnull %0, i64 %187, %struct.Memory* %2)
+  %call2_402829 = tail call %struct.Memory* @sub_405130._ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_(%struct.State* nonnull %0, i64 %187, %struct.Memory* %call2_40280c)
   %192 = load i64, i64* %RBP.i, align 8
   %193 = add i64 %192, -24
   %194 = load i64, i64* %3, align 8
@@ -374,7 +375,7 @@ block_4027e8:                                     ; preds = %block_.L_4027d8
   store i64 %221, i64* %224, align 8
   store i64 %223, i64* %6, align 8
   store i64 %220, i64* %3, align 8
-  %call2_402846 = tail call %struct.Memory* @sub_403b40._Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_(%struct.State* nonnull %0, i64 %220, %struct.Memory* %2)
+  %call2_402846 = tail call %struct.Memory* @sub_403b40._Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_(%struct.State* nonnull %0, i64 %220, %struct.Memory* %call2_402829)
   %225 = load i64, i64* %RBP.i, align 8
   %226 = add i64 %225, -52
   %227 = load i64, i64* %3, align 8
@@ -466,7 +467,7 @@ block_.L_402859:                                  ; preds = %block_.L_4027d8
   store i64 %287, i64* %3, align 8
   %288 = add i64 %257, 128
   store i64 %288, i64* %6, align 8
-  ret %struct.Memory* %2
+  ret %struct.Memory* %MEMORY.0
 }
 
 ; Function Attrs: norecurse nounwind
