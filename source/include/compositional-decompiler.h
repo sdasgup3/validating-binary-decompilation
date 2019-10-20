@@ -30,7 +30,7 @@ using namespace stoke;
 
 class CompositionalDecompiler {
 private:
-  bool flat_binary;
+  bool assume_none_decl_retval;
   string extractedFunction;
   string singleInstrDecompPath;
   string scriptsPath;
@@ -104,7 +104,8 @@ public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
                           const string &extractedFunction,
                           const string &singleInstrDecompPath,
-                          const string &workdir, bool flat_binary = false);
+                          const string &workdir,
+                          bool assume_none_decl_retval = false);
 
   /** Clears error state */
   void clear_error() {

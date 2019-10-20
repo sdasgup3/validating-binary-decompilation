@@ -1,0 +1,16 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x564913c090d8]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x564913c93408]:   %85 = load i32, i32* %84, align 4
+[0x564913c94118]:   %87 = load i32, i32* inttoptr (i64 6328456 to i32*), align 8
+Multiple matches exist for [0x564913c103f0]:   %281 = lshr i32 %262, 31
+[0x564913cb9c70]:   %106 = lshr i32 %87, 31
+[0x564913cb9dd0]:   %105 = lshr i32 %85, 31
+Multiple matches exist for [0x564913c10470]:   %282 = xor i32 %281, %280
+[0x564913cb9740]:   %108 = xor i32 %103, %105
+[0x564913cb9820]:   %107 = xor i32 %106, %105
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from mcsema/test.proposed.opt.ll
+Matcher Done...

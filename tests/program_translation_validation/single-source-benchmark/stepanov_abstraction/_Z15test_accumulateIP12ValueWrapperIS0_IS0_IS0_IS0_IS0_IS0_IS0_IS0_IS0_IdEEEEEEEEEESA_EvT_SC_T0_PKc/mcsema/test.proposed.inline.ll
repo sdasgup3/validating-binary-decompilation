@@ -144,11 +144,11 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_406320._ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_406320._ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_405dd0._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_405dd0._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_405df0._Z9check_sumd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z15test_accumulateIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_T0_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

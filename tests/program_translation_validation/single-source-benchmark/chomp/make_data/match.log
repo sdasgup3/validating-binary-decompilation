@@ -1,0 +1,19 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55f77f5c6a58]:   %149 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x55f77f6037e8]:   %148 = load i32, i32* %147, align 4
+[0x55f77f604168]:   %150 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+Multiple matches exist for [0x55f77f5c7650]:   %168 = lshr i32 %149, 31
+[0x55f77f6206e0]:   %169 = lshr i32 %150, 31
+[0x55f77f620800]:   %168 = lshr i32 %148, 31
+Multiple matches exist for [0x55f77f5c76d0]:   %169 = xor i32 %168, %167
+[0x55f77f631ac0]:   %170 = xor i32 %169, %168
+[0x55f77f6327a0]:   %171 = xor i32 %166, %168
+Multiple matches exist for [0x55f77f5c5308]:   %.pre9 = load i64, i64* %RBP, align 8
+[0x55f77f5fa0d8]:   %63 = load i64, i64* %RBP.i, align 8
+[0x55f77f60f4f8]:   %.pre6 = load i64, i64* %RBP.i, align 8
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [make_data] from ../binary/test.mcsema.opt.ll
+Extracting function [make_data] from mcsema/test.proposed.opt.ll
+Matcher Done...

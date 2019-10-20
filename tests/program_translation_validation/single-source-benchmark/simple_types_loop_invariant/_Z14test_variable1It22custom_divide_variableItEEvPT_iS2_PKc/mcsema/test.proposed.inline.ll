@@ -142,15 +142,15 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_410a20._ZN22custom_divide_variableItE8do_shiftEtt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_410a20._ZN22custom_divide_variableItE8do_shiftEtt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_410a50._Z26check_shifted_variable_sumIt22custom_divide_variableItEEvT_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_410a50._Z26check_shifted_variable_sumIt22custom_divide_variableItEEvT_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
-declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {

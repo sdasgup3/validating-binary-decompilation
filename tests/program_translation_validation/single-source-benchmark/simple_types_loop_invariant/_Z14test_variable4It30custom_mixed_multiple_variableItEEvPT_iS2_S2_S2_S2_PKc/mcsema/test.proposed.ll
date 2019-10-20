@@ -115,11 +115,11 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4106f0._ZN30custom_mixed_multiple_variableItE8do_shiftEttttt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_410750._Z26check_shifted_variable_sumIt30custom_mixed_multiple_variableItEEvT_S2_S2_S2_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400e50._Z11start_timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_4106f0._ZN30custom_mixed_multiple_variableItE8do_shiftEttttt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_410750._Z26check_shifted_variable_sumIt30custom_mixed_multiple_variableItEEvT_S2_S2_S2_S2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_400e70._Z5timerv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @sub_400810._Z13record_resultdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Data Access Globals
 

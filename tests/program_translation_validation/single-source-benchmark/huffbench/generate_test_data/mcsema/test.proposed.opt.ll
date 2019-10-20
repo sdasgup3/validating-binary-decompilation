@@ -42,12 +42,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400630.malloc_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400630.malloc_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007e0.random4(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.random4(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @generate_test_data(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
+define %struct.Memory* @generate_test_data(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -166,7 +166,8 @@ entry:
   br label %block_.L_400786
 
 block_.L_400786:                                  ; preds = %block_400794, %entry
-  %82 = phi i64 [ %210, %block_400794 ], [ %.pre, %entry ]
+  %82 = phi i64 [ %.pre, %entry ], [ %210, %block_400794 ]
+  %MEMORY.0 = phi %struct.Memory* [ %call2_40076e, %entry ], [ %call2_40079c, %block_400794 ]
   %83 = load i64, i64* %RBP.i, align 8
   %84 = add i64 %83, -36
   %85 = add i64 %82, 4
@@ -237,7 +238,7 @@ block_400794:                                     ; preds = %block_.L_400786
   store i64 %128, i64* %131, align 8
   store i64 %130, i64* %6, align 8
   store i64 %127, i64* %3, align 8
-  %call2_40079c = tail call %struct.Memory* @sub_4007e0.random4(%struct.State* nonnull %0, i64 %127, %struct.Memory* %call2_40076e)
+  %call2_40079c = tail call %struct.Memory* @sub_4007e0.random4(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
   %132 = load i64, i64* %RBP.i, align 8
   %133 = add i64 %132, -48
   %134 = load i64, i64* %3, align 8
@@ -400,7 +401,7 @@ block_.L_4007c8:                                  ; preds = %block_.L_400786
   store i64 %245, i64* %3, align 8
   %246 = add i64 %215, 64
   store i64 %246, i64* %6, align 8
-  ret %struct.Memory* %call2_40076e
+  ret %struct.Memory* %MEMORY.0
 }
 
 ; Function Attrs: norecurse nounwind

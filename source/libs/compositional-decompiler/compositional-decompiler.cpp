@@ -49,8 +49,8 @@ static uint64_t hex_to_int(const string &s);
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
     const string &extractedFunction, const string &singleInstrDecompPath,
-    const string &workdir, bool flat_binary) {
-  this->flat_binary = flat_binary;
+    const string &workdir, bool assume_none_decl_retval) {
+  this->assume_none_decl_retval = assume_none_decl_retval;
   this->extractedFunction = extractedFunction;
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
@@ -134,7 +134,7 @@ bool CompositionalDecompiler::disassemble(string inPath) {
   Disassembler d;
   struct CallbackValue val(&cfg, extractedFunction);
   d.set_function_callback(createCFG, &val);
-  d.set_flat_binary(flat_binary);
+  d.set_flat_binary(false);
   d.disassemble(inPath, extractedFunction);
 
   if (!cfg) {
@@ -630,10 +630,19 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
 
   // Decls
   stringstream tmp;
-  tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
-      << "(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* "
-         "noalias readnone returned)"
-      << endl;
+  if (assume_none_decl_retval) {
+    tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+        << "(%struct.State* noalias dereferenceable(3376), i64, "
+           "%struct.Memory* "
+           "noalias)"
+        << endl;
+  } else {
+    tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+        << "(%struct.State* noalias dereferenceable(3376), i64, "
+           "%struct.Memory* "
+           "noalias readnone returned)"
+        << endl;
+  }
   if (!DeclCache.count(tmp.str())) {
     FuncDecls << tmp.str();
     DeclCache.insert(pair<string, string>(tmp.str(), ""));

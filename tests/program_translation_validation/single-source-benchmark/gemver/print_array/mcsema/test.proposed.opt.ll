@@ -44,7 +44,7 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4005b0.fprintf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4005b0.fprintf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @print_array(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -278,7 +278,7 @@ block_4013d2:                                     ; preds = %block_.L_4013c6
   br i1 %156, label %159, label %157
 
 ; <label>:157:                                    ; preds = %block_4013d2
-  %158 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %148, %struct.Memory* %MEMORY.0)
+  %158 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %148, %struct.Memory* %call2_4013f3)
   %.pre2 = load i32, i32* %EDX.i31, align 4
   %.pre3 = load i64, i64* %3, align 8
   br label %routine_idivl__r8d.exit
@@ -301,7 +301,7 @@ block_4013d2:                                     ; preds = %block_.L_4013c6
 routine_idivl__r8d.exit:                          ; preds = %159, %157
   %164 = phi i64 [ %.pre3, %157 ], [ %148, %159 ]
   %165 = phi i32 [ %.pre2, %157 ], [ %163, %159 ]
-  %166 = phi %struct.Memory* [ %158, %157 ], [ %MEMORY.0, %159 ]
+  %166 = phi %struct.Memory* [ %158, %157 ], [ %call2_4013f3, %159 ]
   store i8 0, i8* %14, align 1
   %167 = and i32 %165, 255
   %168 = tail call i32 @llvm.ctpop.i32(i32 %167)

@@ -10,7 +10,7 @@ OUTDIR=mcsema/
 all: compd compd_opt match
 
 compd: ${INDIR}test
-	${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1
+	${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test --assume-none-decl-retval 1>compd.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd
 
 compd_opt: ${OUTDIR}test.proposed.ll

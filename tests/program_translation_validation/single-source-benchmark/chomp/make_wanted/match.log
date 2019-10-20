@@ -1,0 +1,45 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x564cbea62348]:   %.pre10 = load i64, i64* %RBP, align 8
+[0x564cbec89d98]:   %.pre10 = load i64, i64* %RBP.i, align 8
+[0x564cbec98db8]:   %276 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x564cbea63538]:   %MEMORY.1 = phi %struct.Memory* [ %248, %block_4010e3 ], [ %409, %block_401083 ]
+[0x564cbec83318]:   %MEMORY.0 = phi %struct.Memory.32* [ %call2_401006, %entry ], [ %MEMORY.1, %block_.L_40110a ]
+[0x564cbec88ce8]:   %MEMORY.1 = phi %struct.Memory.32* [ %MEMORY.0, %block_40103a ], [ %call2_4010f7, %block_.L_4010f0 ]
+[0x564cbec8e5b8]:   %MEMORY.3 = phi %struct.Memory.32* [ %call2_401075, %block_.L_4010e3 ], [ %call2_40109b, %block_401083 ]
+Multiple matches exist for [0x564cbeac4d68]:   %272 = tail call fastcc %struct.Memory* @ext_6020a0_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x564cbec87ea0]:   %call2_401130 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %434, %struct.Memory.32* %MEMORY.0)
+[0x564cbec88100]:   %call2_4010f7 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %351, %struct.Memory.32* %MEMORY.3)
+[0x564cbec91eb0]:   %call2_401057 = tail call %struct.Memory.32* @sub_400c00.make_data(%struct.State.1* nonnull %0, i64 %158, %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x564cbea6ee88]:   %327 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
+[0x564cbec849b8]:   %88 = load i32, i32* inttoptr (i64 6299756 to i32*), align 4
+[0x564cbec84d48]:   %86 = load i32, i32* %85, align 4
+Multiple matches exist for [0x564cbea6fa80]:   %346 = lshr i32 %327, 31
+[0x564cbecaabe0]:   %107 = lshr i32 %88, 31
+[0x564cbecaad40]:   %106 = lshr i32 %86, 31
+Multiple matches exist for [0x564cbea6fb00]:   %347 = xor i32 %346, %345
+[0x564cbecaa110]:   %108 = xor i32 %107, %106
+[0x564cbecabe00]:   %109 = xor i32 %104, %106
+Multiple matches exist for [0x564cbea71878]:   %387 = tail call fastcc %struct.Memory* @ext_602090_malloc(%struct.State* nonnull %0, %struct.Memory* %248)
+[0x564cbec7bdb0]:   %call2_401068 = tail call %struct.Memory.32* @sub_400770.melt_data(%struct.State.1* nonnull %0, i64 %179, %struct.Memory.32* %call2_401057)
+[0x564cbec87ea0]:   %call2_401130 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %434, %struct.Memory.32* %MEMORY.0)
+[0x564cbec88100]:   %call2_4010f7 = tail call %struct.Memory.32* @sub_400520.free_plt(%struct.State.1* nonnull %0, i64 %351, %struct.Memory.32* %MEMORY.3)
+[0x564cbec88360]:   %call2_40109b = tail call %struct.Memory.32* @sub_400660.copy_data(%struct.State.1* nonnull %0, i64 %232, %struct.Memory.32* %call2_40108a)
+[0x564cbec885c0]:   %call2_40108a = tail call %struct.Memory.32* @sub_400550.malloc_plt(%struct.State.1* nonnull %0, i64 %211, %struct.Memory.32* %call2_401075)
+[0x564cbec91eb0]:   %call2_401057 = tail call %struct.Memory.32* @sub_400c00.make_data(%struct.State.1* nonnull %0, i64 %158, %struct.Memory.32* %MEMORY.1)
+[0x564cbec9b250]:   %call2_401006 = tail call %struct.Memory.32* @sub_400550.malloc_plt(%struct.State.1* %0, i64 %47, %struct.Memory.32* %2)
+[0x564cbeca8120]:   %call2_401075 = tail call %struct.Memory.32* @sub_4007e0.equal_data(%struct.State.1* nonnull %0, i64 %194, %struct.Memory.32* %call2_401068)
+Multiple matches exist for [0x564cbea74618]:   %456 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x564cbec86968]:   %124 = load i32, i32* inttoptr (i64 6299752 to i32*), align 8
+[0x564cbec88a98]:   %122 = load i32, i32* %121, align 4
+Multiple matches exist for [0x564cbea751d0]:   %475 = lshr i32 %456, 31
+[0x564cbecb0a20]:   %143 = lshr i32 %124, 31
+[0x564cbecb0b70]:   %142 = lshr i32 %122, 31
+Multiple matches exist for [0x564cbea75250]:   %476 = xor i32 %475, %474
+[0x564cbecb2560]:   %144 = xor i32 %143, %142
+[0x564cbecb3050]:   %145 = xor i32 %140, %142
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [make_wanted] from ../binary/test.mcsema.opt.ll
+Extracting function [make_wanted] from mcsema/test.proposed.opt.ll
+Matcher Done...
