@@ -1,16 +1,14 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x556b931fea78]:   %123 = tail call fastcc %struct.Memory* @ext_601070_free(%struct.State* nonnull %0, %struct.Memory* %180)
-[0x556b932d9840]:   %call2_400932 = tail call %struct.Memory.32* @sub_4004d0.free_plt(%struct.State.1* nonnull %0, i64 %181, %struct.Memory.32* %MEMORY.1)
-[0x556b932db0c0]:   %call2_400946 = tail call %struct.Memory.32* @sub_4004e0.printf_plt(%struct.State.1* nonnull %0, i64 %193, %struct.Memory.32* %call2_400932)
-[0x556b932e5590]:   %call2_400915 = tail call %struct.Memory.32* @sub_400860.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.1)
-[0x556b932ee930]:   %call2_4008ef = tail call %struct.Memory.32* @sub_4007e0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
-[0x556b932f1b30]:   %call2_4008d4 = tail call %struct.Memory.32* @sub_400640.srand(%struct.State.1* %0, i64 %43, %struct.Memory.32* %2)
-Multiple matches exist for [0x556b931ffe78]:   %136 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %123)
-[0x556b932d9840]:   %call2_400932 = tail call %struct.Memory.32* @sub_4004d0.free_plt(%struct.State.1* nonnull %0, i64 %181, %struct.Memory.32* %MEMORY.1)
-[0x556b932db0c0]:   %call2_400946 = tail call %struct.Memory.32* @sub_4004e0.printf_plt(%struct.State.1* nonnull %0, i64 %193, %struct.Memory.32* %call2_400932)
-[0x556b932e5590]:   %call2_400915 = tail call %struct.Memory.32* @sub_400860.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.1)
-[0x556b932ee930]:   %call2_4008ef = tail call %struct.Memory.32* @sub_4007e0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
-[0x556b932f1b30]:   %call2_4008d4 = tail call %struct.Memory.32* @sub_400640.srand(%struct.State.1* %0, i64 %43, %struct.Memory.32* %2)
+Multiple matches exist for [0x562a1170f918]:   %123 = tail call fastcc %struct.Memory* @ext_601070_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x562a117eb820]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x562a117f6d20]:   %call2_400915 = tail call %struct.Memory.32* @sub_400860.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
+[0x562a118000c0]:   %call2_4008ef = tail call %struct.Memory.32* @sub_4007e0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x562a11710d18]:   %136 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %123)
+[0x562a117eb820]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x562a117ecf70]:   %199 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %186)
+[0x562a117f6d20]:   %call2_400915 = tail call %struct.Memory.32* @sub_400860.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
+[0x562a118000c0]:   %call2_4008ef = tail call %struct.Memory.32* @sub_4007e0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
+[0x562a11803290]:   %call2_4008d4 = tail call %struct.Memory.32* @sub_400640.srand(%struct.State.1* %0, i64 %43, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

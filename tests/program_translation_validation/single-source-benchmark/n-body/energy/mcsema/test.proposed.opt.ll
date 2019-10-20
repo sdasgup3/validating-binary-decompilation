@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400470.sqrt_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @energy(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
+define %struct.Memory* @energy(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -151,7 +151,8 @@ entry:
   br label %block_.L_40080e
 
 block_.L_40080e:                                  ; preds = %block_.L_400958, %entry
-  %78 = phi i64 [ %533, %block_.L_400958 ], [ %.pre, %entry ]
+  %78 = phi i64 [ %.pre, %entry ], [ %533, %block_.L_400958 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %MEMORY.1, %block_.L_400958 ]
   %79 = load i64, i64* %RBP.i, align 8
   %80 = add i64 %79, -28
   %81 = add i64 %78, 3
@@ -415,7 +416,8 @@ block_40081a:                                     ; preds = %block_.L_40080e
   br label %block_.L_400893
 
 block_.L_400893:                                  ; preds = %block_40089f, %block_40081a
-  %255 = phi i64 [ %503, %block_40089f ], [ %.pre4, %block_40081a ]
+  %255 = phi i64 [ %.pre4, %block_40081a ], [ %503, %block_40089f ]
+  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_40081a ], [ %call2_40091b, %block_40089f ]
   %256 = load i64, i64* %RBP.i, align 8
   %257 = add i64 %256, -32
   %258 = add i64 %255, 3
@@ -682,7 +684,7 @@ block_40089f:                                     ; preds = %block_.L_400893
   store i64 %430, i64* %433, align 8
   store i64 %432, i64* %6, align 8
   store i64 %429, i64* %3, align 8
-  %call2_40091b = tail call %struct.Memory* @sub_400470.sqrt_plt(%struct.State* nonnull %0, i64 %429, %struct.Memory* %2)
+  %call2_40091b = tail call %struct.Memory* @ext_sqrt(%struct.State* nonnull %0, i64 %429, %struct.Memory* %MEMORY.1)
   %434 = load i64, i64* %RBP.i, align 8
   %435 = add i64 %434, -80
   %436 = load i64, i64* %3, align 8
@@ -883,7 +885,7 @@ block_.L_40096b:                                  ; preds = %block_.L_40080e
   store i64 %568, i64* %3, align 8
   %569 = add i64 %538, 96
   store i64 %569, i64* %6, align 8
-  ret %struct.Memory* %2
+  ret %struct.Memory* %MEMORY.0
 }
 
 ; Function Attrs: norecurse nounwind

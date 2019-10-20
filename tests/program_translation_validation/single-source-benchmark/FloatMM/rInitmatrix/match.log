@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x563eb9edd418]:   %121 = phi %struct.Memory* [ %113, %112 ], [ %MEMORY.1, %114 ]
-[0x563eba037f78]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_4005fd ]
-[0x563eba04e128]:   %188 = phi %struct.Memory.32* [ %180, %179 ], [ %MEMORY.1, %181 ]
+Multiple matches exist for [0x5569c8ad5068]:   %121 = phi %struct.Memory* [ %113, %112 ], [ %MEMORY.1, %114 ]
+[0x5569c8c2fd68]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_4005fd ]
+[0x5569c8c44298]:   %188 = phi %struct.Memory.32* [ %180, %179 ], [ %MEMORY.1, %181 ]
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

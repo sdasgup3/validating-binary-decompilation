@@ -1,0 +1,16 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5594fe4b8e98]:   %113 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5594fe03d448]:   %76 = load i32, i32* inttoptr (i64 6430912 to i32*), align 64
+[0x5594fe3c0ae8]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x5594fe4ba2a0]:   %132 = lshr i32 %113, 31
+[0x5594fecc88d0]:   %95 = lshr i32 %76, 31
+[0x5594fecc89f0]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x5594fe4ba320]:   %133 = xor i32 %132, %131
+[0x5594fecc8780]:   %96 = xor i32 %95, %94
+[0x5594fecd3780]:   %97 = xor i32 %92, %94
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z13test_constantIt10custom_twoItEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z13test_constantIt10custom_twoItEEvPT_iPKc] from mcsema/test.proposed.opt.ll
+Matcher Done...

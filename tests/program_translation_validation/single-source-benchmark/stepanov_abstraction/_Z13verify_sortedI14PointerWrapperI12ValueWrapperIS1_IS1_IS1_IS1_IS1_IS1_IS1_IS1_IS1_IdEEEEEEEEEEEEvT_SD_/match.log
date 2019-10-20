@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5585601b9ee8]:   %100 = tail call fastcc %struct.Memory* @ext_4006f0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
-[0x55856066eda0]:   %call2_402f38 = tail call %struct.Memory.31* @sub_4006f0.printf_plt(%struct.State.0* nonnull %0, i64 %96, %struct.Memory.31* %call2_402f18)
-[0x558560670480]:   %call2_402f18 = tail call %struct.Memory.31* @sub_402f50._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
+Multiple matches exist for [0x55e0ed6b0a38]:   %100 = tail call fastcc %struct.Memory* @ext_4006f0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
+[0x55e0edb6b030]:   %101 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_402f18)
+[0x55e0edb6c500]:   %call2_402f18 = tail call %struct.Memory.31* @sub_402f50._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

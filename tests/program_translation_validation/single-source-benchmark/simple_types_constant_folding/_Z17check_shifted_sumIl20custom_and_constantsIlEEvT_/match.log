@@ -1,18 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55d303bd59a0]:   %45 = tail call double @llvm.fabs.f64(double %44) #9
-[0x55d3031d0e00]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
-[0x55d3032c2db0]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
-[0x55d30332c5b0]:   %116 = tail call i32 @llvm.ctpop.i32(i32 %115)
-[0x55d303478860]:   %46 = tail call double @llvm.fabs.f64(double %45)
-[0x55d305611e80]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x55d305612870]:   %45 = tail call double @llvm.trunc.f64(double %44)
-[0x55d305639840]:   %call2_411a4e = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %98, %struct.Memory.32* %call2_411a2e)
-[0x55d30563ca40]:   %call2_411a2e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411a16)
-[0x55d30563df10]:   %call2_411a16 = tail call %struct.Memory.32* @sub_4119f0._ZN20custom_and_constantsIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
-Multiple matches exist for [0x55d303bdaba8]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
-[0x55d305639840]:   %call2_411a4e = tail call %struct.Memory.32* @sub_4006c0.printf_plt(%struct.State.1* nonnull %0, i64 %98, %struct.Memory.32* %call2_411a2e)
-[0x55d30563ca40]:   %call2_411a2e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411a16)
-[0x55d30563df10]:   %call2_411a16 = tail call %struct.Memory.32* @sub_4119f0._ZN20custom_and_constantsIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x55e1341a0e20]:   %45 = tail call double @llvm.fabs.f64(double %44) #12
+[0x55e1338321f0]:   %117 = tail call i32 @llvm.ctpop.i32(i32 %116)
+[0x55e133862fa0]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
+[0x55e1338cae00]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
+[0x55e133a728b0]:   %46 = tail call double @llvm.fabs.f64(double %45)
+[0x55e135c04120]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55e135c04af0]:   %45 = tail call double @llvm.trunc.f64(double %44)
+[0x55e135c2c1a0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411a2e)
+[0x55e135c2f3a0]:   %call2_411a2e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411a16)
+[0x55e135c30870]:   %call2_411a16 = tail call %struct.Memory.32* @sub_4119f0._ZN20custom_and_constantsIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x55e1341a5e78]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
+[0x55e135c2c1a0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411a2e)
+[0x55e135c2f3a0]:   %call2_411a2e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411a16)
+[0x55e135c30870]:   %call2_411a16 = tail call %struct.Memory.32* @sub_4119f0._ZN20custom_and_constantsIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

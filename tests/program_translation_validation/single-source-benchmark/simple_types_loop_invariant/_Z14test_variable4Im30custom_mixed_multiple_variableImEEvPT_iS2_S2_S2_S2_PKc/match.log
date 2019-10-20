@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56166fc0dc98]:   %320 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x561670c7c758]:   %101 = load i32, i32* %100, align 4
-[0x561670c7e358]:   %103 = load i32, i32* inttoptr (i64 6398080 to i32*), align 128
-Multiple matches exist for [0x56166fc0e870]:   %339 = lshr i32 %320, 31
-[0x561670ca7ae0]:   %122 = lshr i32 %103, 31
-[0x561670ca7cc0]:   %121 = lshr i32 %101, 31
-Multiple matches exist for [0x56166fc0e8f0]:   %340 = xor i32 %339, %338
-[0x561670ca77e0]:   %124 = xor i32 %119, %121
-[0x561670ca7980]:   %123 = xor i32 %122, %121
+Multiple matches exist for [0x55e6a4d84778]:   %320 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55e6a4f26b48]:   %101 = load i32, i32* %100, align 4
+[0x55e6a4f27d18]:   %103 = load i32, i32* inttoptr (i64 6398080 to i32*), align 128
+Multiple matches exist for [0x55e6a4d85350]:   %339 = lshr i32 %320, 31
+[0x55e6a5e61400]:   %122 = lshr i32 %103, 31
+[0x55e6a5e61560]:   %121 = lshr i32 %101, 31
+Multiple matches exist for [0x55e6a4d853d0]:   %340 = xor i32 %339, %338
+[0x55e6a5e610c0]:   %124 = xor i32 %119, %121
+[0x55e6a5e612a0]:   %123 = xor i32 %122, %121
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

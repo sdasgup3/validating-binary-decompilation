@@ -109,6 +109,54 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 
+declare %struct.Memory* @sub_400b00_init_array_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400680_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401140_check_FP_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401270_print_array_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005a8__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400890_xmalloc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400730_polybench_flush_cache_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c60_kernel_gramschmidt_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400850_polybench_alloc_data_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_rtclock_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ed0_kernel_gramschmidt_StrictFP_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007b0_polybench_prepare_instruments_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_rtclock_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400890_xmalloc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401140_check_FP_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400730_polybench_flush_cache_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ed0_kernel_gramschmidt_StrictFP_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400b00_init_array_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007b0_polybench_prepare_instruments_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c60_kernel_gramschmidt_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401270_print_array_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005a8__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1110,7 +1158,7 @@ block_4007f0:
   %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %25, i64* %34, align 8, !tbaa !2428
   %35 = load i64, i64* %PC
-  %36 = call %struct.Memory* @sub_4007e0_rtclock(%struct.State* %0, i64 %35, %struct.Memory* %2)
+  %36 = call %struct.Memory* @sub_4007e0_rtclock_renamed__renamed_(%struct.State* %0, i64 %35, %struct.Memory* %2)
   %37 = bitcast %union.vec128_t* %XMM0 to i8*
   %38 = load i64, i64* %PC
   %39 = add i64 %38, 9
@@ -1300,7 +1348,7 @@ block_4007c0:
   %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %25, i64* %34, align 8, !tbaa !2428
   %35 = load i64, i64* %PC
-  %36 = call %struct.Memory* @sub_4007b0_polybench_prepare_instruments(%struct.State* %0, i64 %35, %struct.Memory* %2)
+  %36 = call %struct.Memory* @sub_4007b0_polybench_prepare_instruments_renamed__renamed_(%struct.State* %0, i64 %35, %struct.Memory* %2)
   %37 = load i64, i64* %PC
   %38 = add i64 %37, 23
   %39 = load i64, i64* %PC
@@ -1317,7 +1365,7 @@ block_4007c0:
   %47 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %38, i64* %47, align 8, !tbaa !2428
   %48 = load i64, i64* %PC
-  %49 = call %struct.Memory* @sub_4007e0_rtclock(%struct.State* %0, i64 %48, %struct.Memory* %36)
+  %49 = call %struct.Memory* @sub_4007e0_rtclock_renamed__renamed_(%struct.State* %0, i64 %48, %struct.Memory* %36)
   %50 = bitcast %union.vec128_t* %XMM0 to i8*
   %51 = load i64, i64* %PC
   %52 = add i64 %51, 9
@@ -3909,7 +3957,7 @@ block_401520:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4005a8__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4005a8__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -8373,7 +8421,7 @@ block_4007b0:
   %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %23, i64* %32, align 8, !tbaa !2428
   %33 = load i64, i64* %PC
-  %34 = call %struct.Memory* @sub_400730_polybench_flush_cache(%struct.State* %0, i64 %33, %struct.Memory* %2)
+  %34 = call %struct.Memory* @sub_400730_polybench_flush_cache_renamed__renamed_(%struct.State* %0, i64 %33, %struct.Memory* %2)
   %35 = load i64, i64* %PC
   %36 = add i64 %35, 1
   store i64 %36, i64* %PC
@@ -9176,7 +9224,7 @@ block_4006f9:                                     ; preds = %block_4006f0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -9395,7 +9443,7 @@ block_400910:
   %136 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %127, i64* %136, align 8, !tbaa !2428
   %137 = load i64, i64* %PC
-  %138 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %137, %struct.Memory* %2)
+  %138 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %137, %struct.Memory* %2)
   %139 = load i64, i64* %PC
   %140 = add i64 %139, 5
   store i64 %140, i64* %PC
@@ -9435,7 +9483,7 @@ block_400910:
   %164 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %155, i64* %164, align 8, !tbaa !2428
   %165 = load i64, i64* %PC
-  %166 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %165, %struct.Memory* %138)
+  %166 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %165, %struct.Memory* %138)
   %167 = load i64, i64* %PC
   %168 = add i64 %167, 5
   store i64 %168, i64* %PC
@@ -9475,7 +9523,7 @@ block_400910:
   %192 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %183, i64* %192, align 8, !tbaa !2428
   %193 = load i64, i64* %PC
-  %194 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %193, %struct.Memory* %166)
+  %194 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %193, %struct.Memory* %166)
   %195 = load i64, i64* %PC
   %196 = add i64 %195, 5
   store i64 %196, i64* %PC
@@ -9515,7 +9563,7 @@ block_400910:
   %220 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %211, i64* %220, align 8, !tbaa !2428
   %221 = load i64, i64* %PC
-  %222 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %221, %struct.Memory* %194)
+  %222 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %221, %struct.Memory* %194)
   %223 = load i64, i64* %PC
   %224 = add i64 %223, 5
   store i64 %224, i64* %PC
@@ -9555,7 +9603,7 @@ block_400910:
   %248 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %239, i64* %248, align 8, !tbaa !2428
   %249 = load i64, i64* %PC
-  %250 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %249, %struct.Memory* %222)
+  %250 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %249, %struct.Memory* %222)
   %251 = load i64, i64* %PC
   %252 = add i64 %251, 5
   store i64 %252, i64* %PC
@@ -9595,7 +9643,7 @@ block_400910:
   %276 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %267, i64* %276, align 8, !tbaa !2428
   %277 = load i64, i64* %PC
-  %278 = call %struct.Memory* @sub_400850_polybench_alloc_data(%struct.State* %0, i64 %277, %struct.Memory* %250)
+  %278 = call %struct.Memory* @sub_400850_polybench_alloc_data_renamed__renamed_(%struct.State* %0, i64 %277, %struct.Memory* %250)
   %279 = load i64, i64* %RBP
   %280 = sub i64 %279, 72
   %281 = load i64, i64* %RAX
@@ -9662,7 +9710,7 @@ block_400910:
   %327 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %318, i64* %327, align 8, !tbaa !2428
   %328 = load i64, i64* %PC
-  %329 = call %struct.Memory* @sub_400b00_init_array(%struct.State* %0, i64 %328, %struct.Memory* %278)
+  %329 = call %struct.Memory* @sub_400b00_init_array_renamed__renamed_(%struct.State* %0, i64 %328, %struct.Memory* %278)
   %330 = load i64, i64* %RBP
   %331 = sub i64 %330, 20
   %332 = load i64, i64* %PC
@@ -9721,7 +9769,7 @@ block_400910:
   %372 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %363, i64* %372, align 8, !tbaa !2428
   %373 = load i64, i64* %PC
-  %374 = call %struct.Memory* @sub_400c60_kernel_gramschmidt(%struct.State* %0, i64 %373, %struct.Memory* %329)
+  %374 = call %struct.Memory* @sub_400c60_kernel_gramschmidt_renamed__renamed_(%struct.State* %0, i64 %373, %struct.Memory* %329)
   %375 = load i64, i64* %RBP
   %376 = sub i64 %375, 20
   %377 = load i64, i64* %PC
@@ -9780,7 +9828,7 @@ block_400910:
   %417 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %408, i64* %417, align 8, !tbaa !2428
   %418 = load i64, i64* %PC
-  %419 = call %struct.Memory* @sub_400b00_init_array(%struct.State* %0, i64 %418, %struct.Memory* %374)
+  %419 = call %struct.Memory* @sub_400b00_init_array_renamed__renamed_(%struct.State* %0, i64 %418, %struct.Memory* %374)
   %420 = load i64, i64* %RBP
   %421 = sub i64 %420, 20
   %422 = load i64, i64* %PC
@@ -9839,7 +9887,7 @@ block_400910:
   %462 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %453, i64* %462, align 8, !tbaa !2428
   %463 = load i64, i64* %PC
-  %464 = call %struct.Memory* @sub_400ed0_kernel_gramschmidt_StrictFP(%struct.State* %0, i64 %463, %struct.Memory* %419)
+  %464 = call %struct.Memory* @sub_400ed0_kernel_gramschmidt_StrictFP_renamed__renamed_(%struct.State* %0, i64 %463, %struct.Memory* %419)
   %465 = load i64, i64* %RBP
   %466 = sub i64 %465, 20
   %467 = load i64, i64* %PC
@@ -9890,7 +9938,7 @@ block_400910:
   %501 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %492, i64* %501, align 8, !tbaa !2428
   %502 = load i64, i64* %PC
-  %503 = call %struct.Memory* @sub_401140_check_FP(%struct.State* %0, i64 %502, %struct.Memory* %464)
+  %503 = call %struct.Memory* @sub_401140_check_FP_renamed__renamed_(%struct.State* %0, i64 %502, %struct.Memory* %464)
   %504 = load i32, i32* %EAX
   %505 = zext i32 %504 to i64
   %506 = load i64, i64* %PC
@@ -10008,7 +10056,7 @@ block_400a3b:                                     ; preds = %block_400910
   %587 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %578, i64* %587, align 8, !tbaa !2428
   %588 = load i64, i64* %PC
-  %589 = call %struct.Memory* @sub_401140_check_FP(%struct.State* %0, i64 %588, %struct.Memory* %503)
+  %589 = call %struct.Memory* @sub_401140_check_FP_renamed__renamed_(%struct.State* %0, i64 %588, %struct.Memory* %503)
   %590 = load i32, i32* %EAX
   %591 = zext i32 %590 to i64
   %592 = load i64, i64* %PC
@@ -10226,7 +10274,7 @@ block_400a8b:                                     ; preds = %block_400a63
   %744 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %735, i64* %744, align 8, !tbaa !2428
   %745 = load i64, i64* %PC
-  %746 = call %struct.Memory* @sub_401270_print_array(%struct.State* %0, i64 %745, %struct.Memory* %921)
+  %746 = call %struct.Memory* @sub_401270_print_array_renamed__renamed_(%struct.State* %0, i64 %745, %struct.Memory* %921)
   %747 = load i64, i64* %RBP
   %748 = sub i64 %747, 32
   %749 = load i64, i64* %PC
@@ -10466,7 +10514,7 @@ block_400a63:                                     ; preds = %block_400a3b
   %919 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %910, i64* %919, align 8, !tbaa !2428
   %920 = load i64, i64* %PC
-  %921 = call %struct.Memory* @sub_401140_check_FP(%struct.State* %0, i64 %920, %struct.Memory* %589)
+  %921 = call %struct.Memory* @sub_401140_check_FP_renamed__renamed_(%struct.State* %0, i64 %920, %struct.Memory* %589)
   %922 = load i32, i32* %EAX
   %923 = zext i32 %922 to i64
   %924 = load i64, i64* %PC
@@ -14498,7 +14546,7 @@ block_400850:
   %151 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %142, i64* %151, align 8, !tbaa !2428
   %152 = load i64, i64* %PC
-  %153 = call %struct.Memory* @sub_400890_xmalloc(%struct.State* %0, i64 %152, %struct.Memory* %2)
+  %153 = call %struct.Memory* @sub_400890_xmalloc_renamed__renamed_(%struct.State* %0, i64 %152, %struct.Memory* %2)
   %154 = load i64, i64* %RBP
   %155 = sub i64 %154, 32
   %156 = load i64, i64* %RAX

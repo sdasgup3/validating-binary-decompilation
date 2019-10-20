@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5582ca08f978]:   %74 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5582cbd670a8]:   %73 = load i32, i32* %72, align 4
-[0x5582cbf9eda8]:   %75 = load i32, i32* inttoptr (i64 6430912 to i32*), align 64
-Multiple matches exist for [0x5582ca0904c0]:   %93 = lshr i32 %74, 31
-[0x5582cbfc42a0]:   %94 = lshr i32 %75, 31
-[0x5582cbfc43c0]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x5582ca090540]:   %94 = xor i32 %93, %92
-[0x5582cbfcf0a0]:   %95 = xor i32 %94, %93
-[0x5582cbfcfd70]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x5654d12427d8]:   %74 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5654d24f74a8]:   %73 = load i32, i32* %72, align 4
+[0x5654d2f1da98]:   %75 = load i32, i32* inttoptr (i64 6430912 to i32*), align 64
+Multiple matches exist for [0x5654d1243320]:   %93 = lshr i32 %74, 31
+[0x5654d3182a60]:   %94 = lshr i32 %75, 31
+[0x5654d3182bc0]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x5654d12433a0]:   %94 = xor i32 %93, %92
+[0x5654d3182940]:   %95 = xor i32 %94, %93
+[0x5654d318d950]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

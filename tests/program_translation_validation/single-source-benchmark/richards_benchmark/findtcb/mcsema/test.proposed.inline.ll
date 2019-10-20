@@ -151,7 +151,127 @@ declare <4 x float> @llvm.trunc.v4f32(<4 x float>) #1
 ; Function Attrs: argmemonly nounwind
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
 
-declare %struct.Memory* @sub_400440.printf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare double @atan(double) local_unnamed_addr
+
+declare double @cos(double) local_unnamed_addr
+
+declare double @sin(double) local_unnamed_addr
+
+declare double @sqrt(double) local_unnamed_addr
+
+declare double @tan(double) local_unnamed_addr
+
+declare extern_weak x86_64_sysvcc i64 @abort()
+
+declare extern_weak x86_64_sysvcc i64 @abs(i64)
+
+declare extern_weak x86_64_sysvcc i64 @asin(i64)
+
+declare extern_weak x86_64_sysvcc i64 @atof(i64)
+
+declare extern_weak x86_64_sysvcc i64 @atoi(i64)
+
+declare extern_weak x86_64_sysvcc i64 @atol(i64)
+
+declare extern_weak x86_64_sysvcc i64 @calloc(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @clock()
+
+declare extern_weak x86_64_sysvcc i64 @cosf(i64)
+
+declare extern_weak x86_64_sysvcc i64 @exit(i64)
+
+declare extern_weak x86_64_sysvcc i64 @exp(i64)
+
+declare extern_weak x86_64_sysvcc i64 @fflush(i64)
+
+declare extern_weak x86_64_sysvcc i64 @floor(i64)
+
+declare extern_weak x86_64_sysvcc i64 @fprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @fputs(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @free(i64)
+
+declare extern_weak x86_64_sysvcc i64 @fwrite(i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @getchar()
+
+declare extern_weak x86_64_sysvcc i64 @gettimeofday(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @__isoc99_fscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @__isoc99_scanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @__isoc99_sscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @log(i64)
+
+declare extern_weak x86_64_sysvcc i64 @lrand48()
+
+declare extern_weak x86_64_sysvcc i64 @malloc(i64)
+
+declare extern_weak x86_64_sysvcc i64 @memalign(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @memcpy(i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @memset(i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @perror(i64)
+
+declare extern_weak x86_64_sysvcc i64 @posix_memalign(i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @pow(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @putchar(i64)
+
+declare extern_weak x86_64_sysvcc i64 @puts(i64)
+
+declare extern_weak x86_64_sysvcc i64 @rand()
+
+declare extern_weak x86_64_sysvcc i64 @random()
+
+declare extern_weak x86_64_sysvcc i64 @realloc(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @seed48(i64)
+
+declare extern_weak x86_64_sysvcc i64 @sinf(i64)
+
+declare extern_weak x86_64_sysvcc i64 @sprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @srand(i64)
+
+declare extern_weak x86_64_sysvcc i64 @strcat(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @strcmp(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @strcpy(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @strdup(i64)
+
+declare extern_weak x86_64_sysvcc i64 @strlen(i64)
+
+declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @time(i64)
+
+declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64)
+
+declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+
+declare %struct.Memory* @ext_atan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+
+declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+
+declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+
+declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @findtcb(%struct.State* noalias, i64, %struct.Memory* noalias) #2 {
@@ -186,36 +306,36 @@ entry:
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %18 = getelementptr inbounds %struct.GPR, %struct.GPR* %17, i32 0, i32 33
   %19 = getelementptr inbounds %struct.Reg, %struct.Reg* %18, i32 0, i32 0
-  %PC.i43 = bitcast %union.anon* %19 to i64*
+  %PC.i9 = bitcast %union.anon* %19 to i64*
   %20 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %21 = getelementptr inbounds %struct.GPR, %struct.GPR* %20, i32 0, i32 13
   %22 = getelementptr inbounds %struct.Reg, %struct.Reg* %21, i32 0, i32 0
-  %RSP.i44 = bitcast %union.anon* %22 to i64*
+  %RSP.i10 = bitcast %union.anon* %22 to i64*
   %23 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %24 = getelementptr inbounds %struct.GPR, %struct.GPR* %23, i32 0, i32 15
   %25 = getelementptr inbounds %struct.Reg, %struct.Reg* %24, i32 0, i32 0
-  %RBP.i45 = bitcast %union.anon* %25 to i64*
-  %26 = load i64, i64* %RSP.i44
-  %27 = load i64, i64* %PC.i43
+  %RBP.i11 = bitcast %union.anon* %25 to i64*
+  %26 = load i64, i64* %RSP.i10
+  %27 = load i64, i64* %PC.i9
   %28 = add i64 %27, 3
-  store i64 %28, i64* %PC.i43
-  store i64 %26, i64* %RBP.i45, align 8
+  store i64 %28, i64* %PC.i9
+  store i64 %26, i64* %RBP.i11, align 8
   store %struct.Memory* %loadMem_400911, %struct.Memory** %MEMORY
   %loadMem_400914 = load %struct.Memory*, %struct.Memory** %MEMORY
   %29 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %30 = getelementptr inbounds %struct.GPR, %struct.GPR* %29, i32 0, i32 33
   %31 = getelementptr inbounds %struct.Reg, %struct.Reg* %30, i32 0, i32 0
-  %PC.i41 = bitcast %union.anon* %31 to i64*
+  %PC.i44 = bitcast %union.anon* %31 to i64*
   %32 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %33 = getelementptr inbounds %struct.GPR, %struct.GPR* %32, i32 0, i32 13
   %34 = getelementptr inbounds %struct.Reg, %struct.Reg* %33, i32 0, i32 0
-  %RSP.i42 = bitcast %union.anon* %34 to i64*
-  %35 = load i64, i64* %RSP.i42
-  %36 = load i64, i64* %PC.i41
+  %RSP.i45 = bitcast %union.anon* %34 to i64*
+  %35 = load i64, i64* %RSP.i45
+  %36 = load i64, i64* %PC.i44
   %37 = add i64 %36, 4
-  store i64 %37, i64* %PC.i41
+  store i64 %37, i64* %PC.i44
   %38 = sub i64 %35, 32
-  store i64 %38, i64* %RSP.i42, align 8
+  store i64 %38, i64* %RSP.i45, align 8
   %39 = icmp ult i64 %35, 32
   %40 = zext i1 %39 to i8
   %41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
@@ -255,21 +375,21 @@ entry:
   %67 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %68 = getelementptr inbounds %struct.GPR, %struct.GPR* %67, i32 0, i32 33
   %69 = getelementptr inbounds %struct.Reg, %struct.Reg* %68, i32 0, i32 0
-  %PC.i39 = bitcast %union.anon* %69 to i64*
+  %PC.i42 = bitcast %union.anon* %69 to i64*
   %70 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %71 = getelementptr inbounds %struct.GPR, %struct.GPR* %70, i32 0, i32 1
   %72 = getelementptr inbounds %struct.Reg, %struct.Reg* %71, i32 0, i32 0
-  %RAX.i40 = bitcast %union.anon* %72 to i64*
-  %73 = load i64, i64* %PC.i39
+  %RAX.i43 = bitcast %union.anon* %72 to i64*
+  %73 = load i64, i64* %PC.i42
   %74 = add i64 %73, 5
-  store i64 %74, i64* %PC.i39
-  store i64 1, i64* %RAX.i40, align 8
+  store i64 %74, i64* %PC.i42
+  store i64 1, i64* %RAX.i43, align 8
   store %struct.Memory* %loadMem_400918, %struct.Memory** %MEMORY
   %loadMem_40091d = load %struct.Memory*, %struct.Memory** %MEMORY
   %75 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %76 = getelementptr inbounds %struct.GPR, %struct.GPR* %75, i32 0, i32 33
   %77 = getelementptr inbounds %struct.Reg, %struct.Reg* %76, i32 0, i32 0
-  %PC.i37 = bitcast %union.anon* %77 to i64*
+  %PC.i40 = bitcast %union.anon* %77 to i64*
   %78 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %79 = getelementptr inbounds %struct.GPR, %struct.GPR* %78, i32 0, i32 11
   %80 = getelementptr inbounds %struct.Reg, %struct.Reg* %79, i32 0, i32 0
@@ -277,14 +397,14 @@ entry:
   %81 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %82 = getelementptr inbounds %struct.GPR, %struct.GPR* %81, i32 0, i32 15
   %83 = getelementptr inbounds %struct.Reg, %struct.Reg* %82, i32 0, i32 0
-  %RBP.i38 = bitcast %union.anon* %83 to i64*
-  %84 = load i64, i64* %RBP.i38
+  %RBP.i41 = bitcast %union.anon* %83 to i64*
+  %84 = load i64, i64* %RBP.i41
   %85 = sub i64 %84, 4
   %86 = load i32, i32* %EDI.i
   %87 = zext i32 %86 to i64
-  %88 = load i64, i64* %PC.i37
+  %88 = load i64, i64* %PC.i40
   %89 = add i64 %88, 3
-  store i64 %89, i64* %PC.i37
+  store i64 %89, i64* %PC.i40
   %90 = inttoptr i64 %85 to i32*
   store i32 %86, i32* %90
   store %struct.Memory* %loadMem_40091d, %struct.Memory** %MEMORY
@@ -292,16 +412,16 @@ entry:
   %91 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %92 = getelementptr inbounds %struct.GPR, %struct.GPR* %91, i32 0, i32 33
   %93 = getelementptr inbounds %struct.Reg, %struct.Reg* %92, i32 0, i32 0
-  %PC.i35 = bitcast %union.anon* %93 to i64*
+  %PC.i38 = bitcast %union.anon* %93 to i64*
   %94 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %95 = getelementptr inbounds %struct.GPR, %struct.GPR* %94, i32 0, i32 15
   %96 = getelementptr inbounds %struct.Reg, %struct.Reg* %95, i32 0, i32 0
-  %RBP.i36 = bitcast %union.anon* %96 to i64*
-  %97 = load i64, i64* %RBP.i36
+  %RBP.i39 = bitcast %union.anon* %96 to i64*
+  %97 = load i64, i64* %RBP.i39
   %98 = sub i64 %97, 16
-  %99 = load i64, i64* %PC.i35
+  %99 = load i64, i64* %PC.i38
   %100 = add i64 %99, 8
-  store i64 %100, i64* %PC.i35
+  store i64 %100, i64* %PC.i38
   %101 = inttoptr i64 %98 to i64*
   store i64 0, i64* %101
   store %struct.Memory* %loadMem_400920, %struct.Memory** %MEMORY
@@ -309,22 +429,22 @@ entry:
   %102 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %103 = getelementptr inbounds %struct.GPR, %struct.GPR* %102, i32 0, i32 33
   %104 = getelementptr inbounds %struct.Reg, %struct.Reg* %103, i32 0, i32 0
-  %PC.i32 = bitcast %union.anon* %104 to i64*
+  %PC.i35 = bitcast %union.anon* %104 to i64*
   %105 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %106 = getelementptr inbounds %struct.GPR, %struct.GPR* %105, i32 0, i32 1
   %107 = getelementptr inbounds %struct.Reg, %struct.Reg* %106, i32 0, i32 0
-  %EAX.i33 = bitcast %union.anon* %107 to i32*
+  %EAX.i36 = bitcast %union.anon* %107 to i32*
   %108 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %109 = getelementptr inbounds %struct.GPR, %struct.GPR* %108, i32 0, i32 15
   %110 = getelementptr inbounds %struct.Reg, %struct.Reg* %109, i32 0, i32 0
-  %RBP.i34 = bitcast %union.anon* %110 to i64*
-  %111 = load i32, i32* %EAX.i33
+  %RBP.i37 = bitcast %union.anon* %110 to i64*
+  %111 = load i32, i32* %EAX.i36
   %112 = zext i32 %111 to i64
-  %113 = load i64, i64* %RBP.i34
+  %113 = load i64, i64* %RBP.i37
   %114 = sub i64 %113, 4
-  %115 = load i64, i64* %PC.i32
+  %115 = load i64, i64* %PC.i35
   %116 = add i64 %115, 3
-  store i64 %116, i64* %PC.i32
+  store i64 %116, i64* %PC.i35
   %117 = inttoptr i64 %114 to i32*
   %118 = load i32, i32* %117
   %119 = sub i32 %111, %118
@@ -368,14 +488,14 @@ entry:
   %149 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %150 = getelementptr inbounds %struct.GPR, %struct.GPR* %149, i32 0, i32 33
   %151 = getelementptr inbounds %struct.Reg, %struct.Reg* %150, i32 0, i32 0
-  %PC.i31 = bitcast %union.anon* %151 to i64*
-  %152 = load i64, i64* %PC.i31
+  %PC.i34 = bitcast %union.anon* %151 to i64*
+  %152 = load i64, i64* %PC.i34
   %153 = add i64 %152, 36
-  %154 = load i64, i64* %PC.i31
+  %154 = load i64, i64* %PC.i34
   %155 = add i64 %154, 6
-  %156 = load i64, i64* %PC.i31
+  %156 = load i64, i64* %PC.i34
   %157 = add i64 %156, 6
-  store i64 %157, i64* %PC.i31
+  store i64 %157, i64* %PC.i34
   %158 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %159 = load i8, i8* %158, align 1
   %160 = icmp eq i8 %159, 0
@@ -403,38 +523,38 @@ block_400931:                                     ; preds = %entry
   %173 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %174 = getelementptr inbounds %struct.GPR, %struct.GPR* %173, i32 0, i32 33
   %175 = getelementptr inbounds %struct.Reg, %struct.Reg* %174, i32 0, i32 0
-  %PC.i28 = bitcast %union.anon* %175 to i64*
+  %PC.i31 = bitcast %union.anon* %175 to i64*
   %176 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %177 = getelementptr inbounds %struct.GPR, %struct.GPR* %176, i32 0, i32 1
   %178 = getelementptr inbounds %struct.Reg, %struct.Reg* %177, i32 0, i32 0
-  %RAX.i29 = bitcast %union.anon* %178 to i64*
+  %RAX.i32 = bitcast %union.anon* %178 to i64*
   %179 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %180 = getelementptr inbounds %struct.GPR, %struct.GPR* %179, i32 0, i32 15
   %181 = getelementptr inbounds %struct.Reg, %struct.Reg* %180, i32 0, i32 0
-  %RBP.i30 = bitcast %union.anon* %181 to i64*
-  %182 = load i64, i64* %RBP.i30
+  %RBP.i33 = bitcast %union.anon* %181 to i64*
+  %182 = load i64, i64* %RBP.i33
   %183 = sub i64 %182, 4
-  %184 = load i64, i64* %PC.i28
+  %184 = load i64, i64* %PC.i31
   %185 = add i64 %184, 4
-  store i64 %185, i64* %PC.i28
+  store i64 %185, i64* %PC.i31
   %186 = inttoptr i64 %183 to i32*
   %187 = load i32, i32* %186
   %188 = sext i32 %187 to i64
-  store i64 %188, i64* %RAX.i29, align 8
+  store i64 %188, i64* %RAX.i32, align 8
   store %struct.Memory* %loadMem_400931, %struct.Memory** %MEMORY
   %loadMem_400935 = load %struct.Memory*, %struct.Memory** %MEMORY
   %189 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %190 = getelementptr inbounds %struct.GPR, %struct.GPR* %189, i32 0, i32 33
   %191 = getelementptr inbounds %struct.Reg, %struct.Reg* %190, i32 0, i32 0
-  %PC.i26 = bitcast %union.anon* %191 to i64*
+  %PC.i29 = bitcast %union.anon* %191 to i64*
   %192 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %193 = getelementptr inbounds %struct.GPR, %struct.GPR* %192, i32 0, i32 1
   %194 = getelementptr inbounds %struct.Reg, %struct.Reg* %193, i32 0, i32 0
-  %RAX.i27 = bitcast %union.anon* %194 to i64*
-  %195 = load i64, i64* %RAX.i27
-  %196 = load i64, i64* %PC.i26
+  %RAX.i30 = bitcast %union.anon* %194 to i64*
+  %195 = load i64, i64* %RAX.i30
+  %196 = load i64, i64* %PC.i29
   %197 = add i64 %196, 4
-  store i64 %197, i64* %PC.i26
+  store i64 %197, i64* %PC.i29
   %198 = sub i64 %195, 10
   %199 = icmp ult i64 %195, 10
   %200 = zext i1 %199 to i8
@@ -475,14 +595,14 @@ block_400931:                                     ; preds = %entry
   %227 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %228 = getelementptr inbounds %struct.GPR, %struct.GPR* %227, i32 0, i32 33
   %229 = getelementptr inbounds %struct.Reg, %struct.Reg* %228, i32 0, i32 0
-  %PC.i25 = bitcast %union.anon* %229 to i64*
-  %230 = load i64, i64* %PC.i25
+  %PC.i28 = bitcast %union.anon* %229 to i64*
+  %230 = load i64, i64* %PC.i28
   %231 = add i64 %230, 22
-  %232 = load i64, i64* %PC.i25
+  %232 = load i64, i64* %PC.i28
   %233 = add i64 %232, 6
-  %234 = load i64, i64* %PC.i25
+  %234 = load i64, i64* %PC.i28
   %235 = add i64 %234, 6
-  store i64 %235, i64* %PC.i25
+  store i64 %235, i64* %PC.i28
   %236 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %237 = load i8, i8* %236, align 1
   %238 = icmp eq i8 %237, 0
@@ -510,63 +630,63 @@ block_40093f:                                     ; preds = %block_400931
   %251 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %252 = getelementptr inbounds %struct.GPR, %struct.GPR* %251, i32 0, i32 33
   %253 = getelementptr inbounds %struct.Reg, %struct.Reg* %252, i32 0, i32 0
-  %PC.i22 = bitcast %union.anon* %253 to i64*
+  %PC.i25 = bitcast %union.anon* %253 to i64*
   %254 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %255 = getelementptr inbounds %struct.GPR, %struct.GPR* %254, i32 0, i32 1
   %256 = getelementptr inbounds %struct.Reg, %struct.Reg* %255, i32 0, i32 0
-  %RAX.i23 = bitcast %union.anon* %256 to i64*
+  %RAX.i26 = bitcast %union.anon* %256 to i64*
   %257 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %258 = getelementptr inbounds %struct.GPR, %struct.GPR* %257, i32 0, i32 15
   %259 = getelementptr inbounds %struct.Reg, %struct.Reg* %258, i32 0, i32 0
-  %RBP.i24 = bitcast %union.anon* %259 to i64*
-  %260 = load i64, i64* %RBP.i24
+  %RBP.i27 = bitcast %union.anon* %259 to i64*
+  %260 = load i64, i64* %RBP.i27
   %261 = sub i64 %260, 4
-  %262 = load i64, i64* %PC.i22
+  %262 = load i64, i64* %PC.i25
   %263 = add i64 %262, 4
-  store i64 %263, i64* %PC.i22
+  store i64 %263, i64* %PC.i25
   %264 = inttoptr i64 %261 to i32*
   %265 = load i32, i32* %264
   %266 = sext i32 %265 to i64
-  store i64 %266, i64* %RAX.i23, align 8
+  store i64 %266, i64* %RAX.i26, align 8
   store %struct.Memory* %loadMem_40093f, %struct.Memory** %MEMORY
   %loadMem_400943 = load %struct.Memory*, %struct.Memory** %MEMORY
   %267 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %268 = getelementptr inbounds %struct.GPR, %struct.GPR* %267, i32 0, i32 33
   %269 = getelementptr inbounds %struct.Reg, %struct.Reg* %268, i32 0, i32 0
-  %PC.i20 = bitcast %union.anon* %269 to i64*
+  %PC.i23 = bitcast %union.anon* %269 to i64*
   %270 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %271 = getelementptr inbounds %struct.GPR, %struct.GPR* %270, i32 0, i32 1
   %272 = getelementptr inbounds %struct.Reg, %struct.Reg* %271, i32 0, i32 0
-  %RAX.i21 = bitcast %union.anon* %272 to i64*
-  %273 = load i64, i64* %RAX.i21
+  %RAX.i24 = bitcast %union.anon* %272 to i64*
+  %273 = load i64, i64* %RAX.i24
   %274 = mul i64 %273, 8
   %275 = add i64 %274, 6299760
-  %276 = load i64, i64* %PC.i20
+  %276 = load i64, i64* %PC.i23
   %277 = add i64 %276, 8
-  store i64 %277, i64* %PC.i20
+  store i64 %277, i64* %PC.i23
   %278 = inttoptr i64 %275 to i64*
   %279 = load i64, i64* %278
-  store i64 %279, i64* %RAX.i21, align 8
+  store i64 %279, i64* %RAX.i24, align 8
   store %struct.Memory* %loadMem_400943, %struct.Memory** %MEMORY
   %loadMem_40094b = load %struct.Memory*, %struct.Memory** %MEMORY
   %280 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %281 = getelementptr inbounds %struct.GPR, %struct.GPR* %280, i32 0, i32 33
   %282 = getelementptr inbounds %struct.Reg, %struct.Reg* %281, i32 0, i32 0
-  %PC.i17 = bitcast %union.anon* %282 to i64*
+  %PC.i20 = bitcast %union.anon* %282 to i64*
   %283 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %284 = getelementptr inbounds %struct.GPR, %struct.GPR* %283, i32 0, i32 1
   %285 = getelementptr inbounds %struct.Reg, %struct.Reg* %284, i32 0, i32 0
-  %RAX.i18 = bitcast %union.anon* %285 to i64*
+  %RAX.i21 = bitcast %union.anon* %285 to i64*
   %286 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %287 = getelementptr inbounds %struct.GPR, %struct.GPR* %286, i32 0, i32 15
   %288 = getelementptr inbounds %struct.Reg, %struct.Reg* %287, i32 0, i32 0
-  %RBP.i19 = bitcast %union.anon* %288 to i64*
-  %289 = load i64, i64* %RBP.i19
+  %RBP.i22 = bitcast %union.anon* %288 to i64*
+  %289 = load i64, i64* %RBP.i22
   %290 = sub i64 %289, 16
-  %291 = load i64, i64* %RAX.i18
-  %292 = load i64, i64* %PC.i17
+  %291 = load i64, i64* %RAX.i21
+  %292 = load i64, i64* %PC.i20
   %293 = add i64 %292, 4
-  store i64 %293, i64* %PC.i17
+  store i64 %293, i64* %PC.i20
   %294 = inttoptr i64 %290 to i64*
   store i64 %291, i64* %294
   store %struct.Memory* %loadMem_40094b, %struct.Memory** %MEMORY
@@ -577,16 +697,16 @@ block_.L_40094f:                                  ; preds = %block_40093f, %bloc
   %295 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %296 = getelementptr inbounds %struct.GPR, %struct.GPR* %295, i32 0, i32 33
   %297 = getelementptr inbounds %struct.Reg, %struct.Reg* %296, i32 0, i32 0
-  %PC.i15 = bitcast %union.anon* %297 to i64*
+  %PC.i18 = bitcast %union.anon* %297 to i64*
   %298 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %299 = getelementptr inbounds %struct.GPR, %struct.GPR* %298, i32 0, i32 15
   %300 = getelementptr inbounds %struct.Reg, %struct.Reg* %299, i32 0, i32 0
-  %RBP.i16 = bitcast %union.anon* %300 to i64*
-  %301 = load i64, i64* %RBP.i16
+  %RBP.i19 = bitcast %union.anon* %300 to i64*
+  %301 = load i64, i64* %RBP.i19
   %302 = sub i64 %301, 16
-  %303 = load i64, i64* %PC.i15
+  %303 = load i64, i64* %PC.i18
   %304 = add i64 %303, 5
-  store i64 %304, i64* %PC.i15
+  store i64 %304, i64* %PC.i18
   %305 = inttoptr i64 %302 to i64*
   %306 = load i64, i64* %305
   %307 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
@@ -621,14 +741,14 @@ block_.L_40094f:                                  ; preds = %block_40093f, %bloc
   %328 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %329 = getelementptr inbounds %struct.GPR, %struct.GPR* %328, i32 0, i32 33
   %330 = getelementptr inbounds %struct.Reg, %struct.Reg* %329, i32 0, i32 0
-  %PC.i14 = bitcast %union.anon* %330 to i64*
-  %331 = load i64, i64* %PC.i14
+  %PC.i17 = bitcast %union.anon* %330 to i64*
+  %331 = load i64, i64* %PC.i17
   %332 = add i64 %331, 29
-  %333 = load i64, i64* %PC.i14
+  %333 = load i64, i64* %PC.i17
   %334 = add i64 %333, 6
-  %335 = load i64, i64* %PC.i14
+  %335 = load i64, i64* %PC.i17
   %336 = add i64 %335, 6
-  store i64 %336, i64* %PC.i14
+  store i64 %336, i64* %PC.i17
   %337 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %338 = load i8, i8* %337, align 1
   %339 = icmp eq i8 %338, 0
@@ -647,21 +767,21 @@ block_40095a:                                     ; preds = %block_.L_40094f
   %343 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %344 = getelementptr inbounds %struct.GPR, %struct.GPR* %343, i32 0, i32 33
   %345 = getelementptr inbounds %struct.Reg, %struct.Reg* %344, i32 0, i32 0
-  %PC.i13 = bitcast %union.anon* %345 to i64*
+  %PC.i16 = bitcast %union.anon* %345 to i64*
   %346 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %347 = getelementptr inbounds %struct.GPR, %struct.GPR* %346, i32 0, i32 11
   %348 = getelementptr inbounds %struct.Reg, %struct.Reg* %347, i32 0, i32 0
   %RDI.i = bitcast %union.anon* %348 to i64*
-  %349 = load i64, i64* %PC.i13
+  %349 = load i64, i64* %PC.i16
   %350 = add i64 %349, 10
-  store i64 %350, i64* %PC.i13
+  store i64 %350, i64* %PC.i16
   store i64 4198983, i64* %RDI.i, align 8
   store %struct.Memory* %loadMem_40095a, %struct.Memory** %MEMORY
   %loadMem_400964 = load %struct.Memory*, %struct.Memory** %MEMORY
   %351 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %352 = getelementptr inbounds %struct.GPR, %struct.GPR* %351, i32 0, i32 33
   %353 = getelementptr inbounds %struct.Reg, %struct.Reg* %352, i32 0, i32 0
-  %PC.i11 = bitcast %union.anon* %353 to i64*
+  %PC.i14 = bitcast %union.anon* %353 to i64*
   %354 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %355 = getelementptr inbounds %struct.GPR, %struct.GPR* %354, i32 0, i32 9
   %356 = getelementptr inbounds %struct.Reg, %struct.Reg* %355, i32 0, i32 0
@@ -669,12 +789,12 @@ block_40095a:                                     ; preds = %block_.L_40094f
   %357 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %358 = getelementptr inbounds %struct.GPR, %struct.GPR* %357, i32 0, i32 15
   %359 = getelementptr inbounds %struct.Reg, %struct.Reg* %358, i32 0, i32 0
-  %RBP.i12 = bitcast %union.anon* %359 to i64*
-  %360 = load i64, i64* %RBP.i12
+  %RBP.i15 = bitcast %union.anon* %359 to i64*
+  %360 = load i64, i64* %RBP.i15
   %361 = sub i64 %360, 4
-  %362 = load i64, i64* %PC.i11
+  %362 = load i64, i64* %PC.i14
   %363 = add i64 %362, 3
-  store i64 %363, i64* %PC.i11
+  store i64 %363, i64* %PC.i14
   %364 = inttoptr i64 %361 to i32*
   %365 = load i32, i32* %364
   %366 = zext i32 %365 to i64
@@ -684,29 +804,29 @@ block_40095a:                                     ; preds = %block_.L_40094f
   %367 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %368 = getelementptr inbounds %struct.GPR, %struct.GPR* %367, i32 0, i32 33
   %369 = getelementptr inbounds %struct.Reg, %struct.Reg* %368, i32 0, i32 0
-  %PC.i10 = bitcast %union.anon* %369 to i64*
+  %PC.i13 = bitcast %union.anon* %369 to i64*
   %370 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %371 = getelementptr inbounds %struct.GPR, %struct.GPR* %370, i32 0, i32 1
   %372 = getelementptr inbounds %struct.Reg, %struct.Reg* %371, i32 0, i32 0
   %373 = bitcast %union.anon* %372 to %struct.anon.2*
   %AL.i = getelementptr inbounds %struct.anon.2, %struct.anon.2* %373, i32 0, i32 0
-  %374 = load i64, i64* %PC.i10
+  %374 = load i64, i64* %PC.i13
   %375 = add i64 %374, 2
-  store i64 %375, i64* %PC.i10
+  store i64 %375, i64* %PC.i13
   store i8 0, i8* %AL.i, align 1
   store %struct.Memory* %loadMem_400967, %struct.Memory** %MEMORY
   %loadMem1_400969 = load %struct.Memory*, %struct.Memory** %MEMORY
   %376 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %377 = getelementptr inbounds %struct.GPR, %struct.GPR* %376, i32 0, i32 33
   %378 = getelementptr inbounds %struct.Reg, %struct.Reg* %377, i32 0, i32 0
-  %PC.i9 = bitcast %union.anon* %378 to i64*
-  %379 = load i64, i64* %PC.i9
+  %PC.i12 = bitcast %union.anon* %378 to i64*
+  %379 = load i64, i64* %PC.i12
   %380 = add i64 %379, -1321
-  %381 = load i64, i64* %PC.i9
+  %381 = load i64, i64* %PC.i12
   %382 = add i64 %381, 5
-  %383 = load i64, i64* %PC.i9
+  %383 = load i64, i64* %PC.i12
   %384 = add i64 %383, 5
-  store i64 %384, i64* %PC.i9
+  store i64 %384, i64* %PC.i12
   %385 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %386 = load i64, i64* %385, align 8
   %387 = add i64 %386, -8
@@ -718,144 +838,144 @@ block_40095a:                                     ; preds = %block_.L_40094f
   store %struct.Memory* %loadMem1_400969, %struct.Memory** %MEMORY
   %loadMem2_400969 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400969 = load i64, i64* %3
-  %call2_400969 = call %struct.Memory* @sub_400440.printf_plt(%struct.State* %0, i64 %loadPC_400969, %struct.Memory* %loadMem2_400969)
-  store %struct.Memory* %call2_400969, %struct.Memory** %MEMORY
+  %390 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %loadMem2_400969)
+  store %struct.Memory* %390, %struct.Memory** %MEMORY
   %loadMem_40096e = load %struct.Memory*, %struct.Memory** %MEMORY
-  %390 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %391 = getelementptr inbounds %struct.GPR, %struct.GPR* %390, i32 0, i32 33
-  %392 = getelementptr inbounds %struct.Reg, %struct.Reg* %391, i32 0, i32 0
-  %PC.i7 = bitcast %union.anon* %392 to i64*
-  %393 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %394 = getelementptr inbounds %struct.GPR, %struct.GPR* %393, i32 0, i32 1
-  %395 = getelementptr inbounds %struct.Reg, %struct.Reg* %394, i32 0, i32 0
-  %EAX.i = bitcast %union.anon* %395 to i32*
-  %396 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %397 = getelementptr inbounds %struct.GPR, %struct.GPR* %396, i32 0, i32 15
-  %398 = getelementptr inbounds %struct.Reg, %struct.Reg* %397, i32 0, i32 0
-  %RBP.i8 = bitcast %union.anon* %398 to i64*
-  %399 = load i64, i64* %RBP.i8
-  %400 = sub i64 %399, 20
-  %401 = load i32, i32* %EAX.i
-  %402 = zext i32 %401 to i64
-  %403 = load i64, i64* %PC.i7
-  %404 = add i64 %403, 3
-  store i64 %404, i64* %PC.i7
-  %405 = inttoptr i64 %400 to i32*
-  store i32 %401, i32* %405
+  %391 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %392 = getelementptr inbounds %struct.GPR, %struct.GPR* %391, i32 0, i32 33
+  %393 = getelementptr inbounds %struct.Reg, %struct.Reg* %392, i32 0, i32 0
+  %PC.i7 = bitcast %union.anon* %393 to i64*
+  %394 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %395 = getelementptr inbounds %struct.GPR, %struct.GPR* %394, i32 0, i32 1
+  %396 = getelementptr inbounds %struct.Reg, %struct.Reg* %395, i32 0, i32 0
+  %EAX.i = bitcast %union.anon* %396 to i32*
+  %397 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %398 = getelementptr inbounds %struct.GPR, %struct.GPR* %397, i32 0, i32 15
+  %399 = getelementptr inbounds %struct.Reg, %struct.Reg* %398, i32 0, i32 0
+  %RBP.i8 = bitcast %union.anon* %399 to i64*
+  %400 = load i64, i64* %RBP.i8
+  %401 = sub i64 %400, 20
+  %402 = load i32, i32* %EAX.i
+  %403 = zext i32 %402 to i64
+  %404 = load i64, i64* %PC.i7
+  %405 = add i64 %404, 3
+  store i64 %405, i64* %PC.i7
+  %406 = inttoptr i64 %401 to i32*
+  store i32 %402, i32* %406
   store %struct.Memory* %loadMem_40096e, %struct.Memory** %MEMORY
   br label %block_.L_400971
 
 block_.L_400971:                                  ; preds = %block_40095a, %block_.L_40094f
   %loadMem_400971 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %406 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %407 = getelementptr inbounds %struct.GPR, %struct.GPR* %406, i32 0, i32 33
-  %408 = getelementptr inbounds %struct.Reg, %struct.Reg* %407, i32 0, i32 0
-  %PC.i5 = bitcast %union.anon* %408 to i64*
-  %409 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %410 = getelementptr inbounds %struct.GPR, %struct.GPR* %409, i32 0, i32 1
-  %411 = getelementptr inbounds %struct.Reg, %struct.Reg* %410, i32 0, i32 0
-  %RAX.i = bitcast %union.anon* %411 to i64*
-  %412 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %413 = getelementptr inbounds %struct.GPR, %struct.GPR* %412, i32 0, i32 15
-  %414 = getelementptr inbounds %struct.Reg, %struct.Reg* %413, i32 0, i32 0
-  %RBP.i6 = bitcast %union.anon* %414 to i64*
-  %415 = load i64, i64* %RBP.i6
-  %416 = sub i64 %415, 16
-  %417 = load i64, i64* %PC.i5
-  %418 = add i64 %417, 4
-  store i64 %418, i64* %PC.i5
-  %419 = inttoptr i64 %416 to i64*
-  %420 = load i64, i64* %419
-  store i64 %420, i64* %RAX.i, align 8
+  %407 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %408 = getelementptr inbounds %struct.GPR, %struct.GPR* %407, i32 0, i32 33
+  %409 = getelementptr inbounds %struct.Reg, %struct.Reg* %408, i32 0, i32 0
+  %PC.i5 = bitcast %union.anon* %409 to i64*
+  %410 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %411 = getelementptr inbounds %struct.GPR, %struct.GPR* %410, i32 0, i32 1
+  %412 = getelementptr inbounds %struct.Reg, %struct.Reg* %411, i32 0, i32 0
+  %RAX.i = bitcast %union.anon* %412 to i64*
+  %413 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %414 = getelementptr inbounds %struct.GPR, %struct.GPR* %413, i32 0, i32 15
+  %415 = getelementptr inbounds %struct.Reg, %struct.Reg* %414, i32 0, i32 0
+  %RBP.i6 = bitcast %union.anon* %415 to i64*
+  %416 = load i64, i64* %RBP.i6
+  %417 = sub i64 %416, 16
+  %418 = load i64, i64* %PC.i5
+  %419 = add i64 %418, 4
+  store i64 %419, i64* %PC.i5
+  %420 = inttoptr i64 %417 to i64*
+  %421 = load i64, i64* %420
+  store i64 %421, i64* %RAX.i, align 8
   store %struct.Memory* %loadMem_400971, %struct.Memory** %MEMORY
   %loadMem_400975 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %421 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %422 = getelementptr inbounds %struct.GPR, %struct.GPR* %421, i32 0, i32 33
-  %423 = getelementptr inbounds %struct.Reg, %struct.Reg* %422, i32 0, i32 0
-  %PC.i4 = bitcast %union.anon* %423 to i64*
-  %424 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %425 = getelementptr inbounds %struct.GPR, %struct.GPR* %424, i32 0, i32 13
-  %426 = getelementptr inbounds %struct.Reg, %struct.Reg* %425, i32 0, i32 0
-  %RSP.i = bitcast %union.anon* %426 to i64*
-  %427 = load i64, i64* %RSP.i
-  %428 = load i64, i64* %PC.i4
-  %429 = add i64 %428, 4
-  store i64 %429, i64* %PC.i4
-  %430 = add i64 32, %427
-  store i64 %430, i64* %RSP.i, align 8
-  %431 = icmp ult i64 %430, %427
-  %432 = icmp ult i64 %430, 32
-  %433 = or i1 %431, %432
-  %434 = zext i1 %433 to i8
-  %435 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 %434, i8* %435, align 1
-  %436 = trunc i64 %430 to i32
-  %437 = and i32 %436, 255
-  %438 = call i32 @llvm.ctpop.i32(i32 %437)
-  %439 = trunc i32 %438 to i8
-  %440 = and i8 %439, 1
-  %441 = xor i8 %440, 1
-  %442 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 %441, i8* %442, align 1
-  %443 = xor i64 32, %427
-  %444 = xor i64 %443, %430
-  %445 = lshr i64 %444, 4
-  %446 = trunc i64 %445 to i8
-  %447 = and i8 %446, 1
-  %448 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %447, i8* %448, align 1
-  %449 = icmp eq i64 %430, 0
-  %450 = zext i1 %449 to i8
-  %451 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %450, i8* %451, align 1
-  %452 = lshr i64 %430, 63
-  %453 = trunc i64 %452 to i8
-  %454 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %453, i8* %454, align 1
-  %455 = lshr i64 %427, 63
-  %456 = xor i64 %452, %455
-  %457 = add i64 %456, %452
-  %458 = icmp eq i64 %457, 2
-  %459 = zext i1 %458 to i8
-  %460 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %459, i8* %460, align 1
+  %422 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %423 = getelementptr inbounds %struct.GPR, %struct.GPR* %422, i32 0, i32 33
+  %424 = getelementptr inbounds %struct.Reg, %struct.Reg* %423, i32 0, i32 0
+  %PC.i4 = bitcast %union.anon* %424 to i64*
+  %425 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %426 = getelementptr inbounds %struct.GPR, %struct.GPR* %425, i32 0, i32 13
+  %427 = getelementptr inbounds %struct.Reg, %struct.Reg* %426, i32 0, i32 0
+  %RSP.i = bitcast %union.anon* %427 to i64*
+  %428 = load i64, i64* %RSP.i
+  %429 = load i64, i64* %PC.i4
+  %430 = add i64 %429, 4
+  store i64 %430, i64* %PC.i4
+  %431 = add i64 32, %428
+  store i64 %431, i64* %RSP.i, align 8
+  %432 = icmp ult i64 %431, %428
+  %433 = icmp ult i64 %431, 32
+  %434 = or i1 %432, %433
+  %435 = zext i1 %434 to i8
+  %436 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 %435, i8* %436, align 1
+  %437 = trunc i64 %431 to i32
+  %438 = and i32 %437, 255
+  %439 = call i32 @llvm.ctpop.i32(i32 %438)
+  %440 = trunc i32 %439 to i8
+  %441 = and i8 %440, 1
+  %442 = xor i8 %441, 1
+  %443 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 %442, i8* %443, align 1
+  %444 = xor i64 32, %428
+  %445 = xor i64 %444, %431
+  %446 = lshr i64 %445, 4
+  %447 = trunc i64 %446 to i8
+  %448 = and i8 %447, 1
+  %449 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %448, i8* %449, align 1
+  %450 = icmp eq i64 %431, 0
+  %451 = zext i1 %450 to i8
+  %452 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %451, i8* %452, align 1
+  %453 = lshr i64 %431, 63
+  %454 = trunc i64 %453 to i8
+  %455 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %454, i8* %455, align 1
+  %456 = lshr i64 %428, 63
+  %457 = xor i64 %453, %456
+  %458 = add i64 %457, %453
+  %459 = icmp eq i64 %458, 2
+  %460 = zext i1 %459 to i8
+  %461 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %460, i8* %461, align 1
   store %struct.Memory* %loadMem_400975, %struct.Memory** %MEMORY
   %loadMem_400979 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %461 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %462 = getelementptr inbounds %struct.GPR, %struct.GPR* %461, i32 0, i32 33
-  %463 = getelementptr inbounds %struct.Reg, %struct.Reg* %462, i32 0, i32 0
-  %PC.i2 = bitcast %union.anon* %463 to i64*
-  %464 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %465 = getelementptr inbounds %struct.GPR, %struct.GPR* %464, i32 0, i32 15
-  %466 = getelementptr inbounds %struct.Reg, %struct.Reg* %465, i32 0, i32 0
-  %RBP.i3 = bitcast %union.anon* %466 to i64*
-  %467 = load i64, i64* %PC.i2
-  %468 = add i64 %467, 1
-  store i64 %468, i64* %PC.i2
-  %469 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %470 = load i64, i64* %469, align 8
-  %471 = add i64 %470, 8
-  %472 = inttoptr i64 %470 to i64*
-  %473 = load i64, i64* %472
-  store i64 %473, i64* %RBP.i3, align 8
-  store i64 %471, i64* %469, align 8
+  %462 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %463 = getelementptr inbounds %struct.GPR, %struct.GPR* %462, i32 0, i32 33
+  %464 = getelementptr inbounds %struct.Reg, %struct.Reg* %463, i32 0, i32 0
+  %PC.i2 = bitcast %union.anon* %464 to i64*
+  %465 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %466 = getelementptr inbounds %struct.GPR, %struct.GPR* %465, i32 0, i32 15
+  %467 = getelementptr inbounds %struct.Reg, %struct.Reg* %466, i32 0, i32 0
+  %RBP.i3 = bitcast %union.anon* %467 to i64*
+  %468 = load i64, i64* %PC.i2
+  %469 = add i64 %468, 1
+  store i64 %469, i64* %PC.i2
+  %470 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %471 = load i64, i64* %470, align 8
+  %472 = add i64 %471, 8
+  %473 = inttoptr i64 %471 to i64*
+  %474 = load i64, i64* %473
+  store i64 %474, i64* %RBP.i3, align 8
+  store i64 %472, i64* %470, align 8
   store %struct.Memory* %loadMem_400979, %struct.Memory** %MEMORY
   %loadMem_40097a = load %struct.Memory*, %struct.Memory** %MEMORY
-  %474 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
-  %475 = getelementptr inbounds %struct.GPR, %struct.GPR* %474, i32 0, i32 33
-  %476 = getelementptr inbounds %struct.Reg, %struct.Reg* %475, i32 0, i32 0
-  %PC.i1 = bitcast %union.anon* %476 to i64*
-  %477 = load i64, i64* %PC.i1
-  %478 = add i64 %477, 1
-  store i64 %478, i64* %PC.i1
-  %479 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %480 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %481 = load i64, i64* %480, align 8
-  %482 = inttoptr i64 %481 to i64*
-  %483 = load i64, i64* %482
-  store i64 %483, i64* %479, align 8
-  %484 = add i64 %481, 8
+  %475 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %476 = getelementptr inbounds %struct.GPR, %struct.GPR* %475, i32 0, i32 33
+  %477 = getelementptr inbounds %struct.Reg, %struct.Reg* %476, i32 0, i32 0
+  %PC.i1 = bitcast %union.anon* %477 to i64*
+  %478 = load i64, i64* %PC.i1
+  %479 = add i64 %478, 1
+  store i64 %479, i64* %PC.i1
+  %480 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %481 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %482 = load i64, i64* %481, align 8
+  %483 = inttoptr i64 %482 to i64*
+  %484 = load i64, i64* %483
   store i64 %484, i64* %480, align 8
+  %485 = add i64 %482, 8
+  store i64 %485, i64* %481, align 8
   store %struct.Memory* %loadMem_40097a, %struct.Memory** %MEMORY
   ret %struct.Memory* %loadMem_40097a
 }

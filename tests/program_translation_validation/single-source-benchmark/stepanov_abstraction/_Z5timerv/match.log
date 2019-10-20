@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5635013a8578]:   %22 = load i64, i64* bitcast (%start_time_type* @start_time to i64*), align 8
-[0x563501997078]:   %23 = load i64, i64* %RAX.i13, align 8
-[0x563501997348]:   %24 = load i64, i64* inttoptr (i64 6328608 to i64*), align 32
-Multiple matches exist for [0x5635013a9540]:   %47 = lshr i64 %22, 63
-[0x5635019bcba0]:   %49 = lshr i64 %24, 63
-[0x5635019bcdd0]:   %48 = lshr i64 %23, 63
-Multiple matches exist for [0x5635013a95c0]:   %48 = xor i64 %47, %46
-[0x5635019bc8f0]:   %51 = xor i64 %45, %48
-[0x5635019bca40]:   %50 = xor i64 %49, %48
+Multiple matches exist for [0x556c59b378b8]:   %22 = load i64, i64* bitcast (%start_time_type* @start_time to i64*), align 8
+[0x556c5a128108]:   %24 = load i64, i64* %RAX.i13, align 8
+[0x556c5a1283d8]:   %25 = load i64, i64* inttoptr (i64 6328608 to i64*), align 32
+Multiple matches exist for [0x556c59b38880]:   %47 = lshr i64 %22, 63
+[0x556c5a14de50]:   %50 = lshr i64 %25, 63
+[0x556c5a14e050]:   %49 = lshr i64 %24, 63
+Multiple matches exist for [0x556c59b38900]:   %48 = xor i64 %47, %46
+[0x556c5a14dac0]:   %52 = xor i64 %46, %49
+[0x556c5a14dc20]:   %51 = xor i64 %50, %49
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

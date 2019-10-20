@@ -46,18 +46,45 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
-  // dumpLLVMNode(I1);
-  // dumpLLVMNode(I2);
   if (I1->isBinaryOp()) {
+
+    // if (I1->getOpcode() == Instruction::Add) {
+    //   dumpLLVMNode(I1);
+    //   dumpLLVMNode(I2);
+    //   llvm::errs() << "END\n";
+    // }
+
     assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
            "deepMatch Assert!!");
     for (size_t i = 0; i < I1->getNumOperands(); i++) {
       Constant *L = dyn_cast<Constant>(I1->getOperand(i));
       Constant *R = dyn_cast<Constant>(I2->getOperand(i));
 
+      if (!L && !R)
+        continue;
+
       if ((L && !R) || (!L && R))
         return false;
-      if (L && R && cmpConstants(L, R) != 0) {
+
+      if (L->getValueID() == Value::ConstantExprVal &&
+          R->getValueID() == Value::ConstantIntVal) {
+        // const ConstantExpr *LE = cast<ConstantExpr>(L);
+        // if (LE->getOpcode() == Instruction::PtrToInt) {
+        //   continue;
+        // }
+        continue;
+      }
+
+      if (R->getValueID() == Value::ConstantExprVal &&
+          L->getValueID() == Value::ConstantIntVal) {
+        // const ConstantExpr *RE = cast<ConstantExpr>(R);
+        // if (RE->getOpcode() == Instruction::PtrToInt) {
+        //   continue;
+        // }
+        continue;
+      }
+
+      if (cmpConstants(L, R) != 0) {
         return false;
       }
     }
@@ -134,6 +161,7 @@ bool Matcher::retrievePotBBMatches() {
 
     } else {
       if (RBB != PotBBMatches.at(LBB)) {
+        llvm::errs() << "BB Mismatch Reason\n\n";
         llvm::errs() << "The BB for the instr\n";
         dumpLLVMNode(U);
         llvm::errs() << "is\n";

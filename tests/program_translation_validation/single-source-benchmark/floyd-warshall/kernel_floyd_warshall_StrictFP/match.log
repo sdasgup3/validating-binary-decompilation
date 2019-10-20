@@ -1,27 +1,27 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5562b615d960]:   %371 = fcmp uno double %368, %370
-[0x5562b61d0e60]:   %301 = fcmp uno double %298, %300
-[0x5562b61d2f30]:   %313 = fcmp ogt double %298, %300
-[0x5562b61d38b0]:   %315 = fcmp olt double %298, %300
-[0x5562b61d3b10]:   %317 = fcmp oeq double %298, %300
-Multiple matches exist for [0x5562b6191dd0]:   %383 = fcmp ogt double %368, %370
-[0x5562b61d0e60]:   %301 = fcmp uno double %298, %300
-[0x5562b61d2f30]:   %313 = fcmp ogt double %298, %300
-[0x5562b61d38b0]:   %315 = fcmp olt double %298, %300
-[0x5562b61d3b10]:   %317 = fcmp oeq double %298, %300
-Multiple matches exist for [0x5562b6191f30]:   %385 = fcmp olt double %368, %370
-[0x5562b61d0e60]:   %301 = fcmp uno double %298, %300
-[0x5562b61d2f30]:   %313 = fcmp ogt double %298, %300
-[0x5562b61d38b0]:   %315 = fcmp olt double %298, %300
-[0x5562b61d3b10]:   %317 = fcmp oeq double %298, %300
-Multiple matches exist for [0x5562b6192090]:   %387 = fcmp oeq double %368, %370
-[0x5562b61d0e60]:   %301 = fcmp uno double %298, %300
-[0x5562b61d2f30]:   %313 = fcmp ogt double %298, %300
-[0x5562b61d38b0]:   %315 = fcmp olt double %298, %300
-[0x5562b61d3b10]:   %317 = fcmp oeq double %298, %300
-Multiple matches exist for [0x5562b6192b68]:   %398 = phi %struct.Memory* [ %381, %380 ], [ %MEMORY.2, %392 ]
-[0x5562b60dc4c8]:   %328 = phi %struct.Memory.31* [ %311, %310 ], [ %MEMORY.2, %322 ]
-[0x5562b61cf1f8]:   %MEMORY.1 = phi %struct.Memory.31* [ %MEMORY.0, %block_400c0e ], [ %MEMORY.2, %block_.L_400d08 ]
+Multiple matches exist for [0x5559d76ed060]:   %371 = fcmp uno double %368, %370
+[0x5559d772b0e0]:   %301 = fcmp uno double %298, %300
+[0x5559d772cd60]:   %313 = fcmp ogt double %298, %300
+[0x5559d772d350]:   %315 = fcmp olt double %298, %300
+[0x5559d772e840]:   %317 = fcmp oeq double %298, %300
+Multiple matches exist for [0x5559d76b4c30]:   %383 = fcmp ogt double %368, %370
+[0x5559d772b0e0]:   %301 = fcmp uno double %298, %300
+[0x5559d772cd60]:   %313 = fcmp ogt double %298, %300
+[0x5559d772d350]:   %315 = fcmp olt double %298, %300
+[0x5559d772e840]:   %317 = fcmp oeq double %298, %300
+Multiple matches exist for [0x5559d76b4d90]:   %385 = fcmp olt double %368, %370
+[0x5559d772b0e0]:   %301 = fcmp uno double %298, %300
+[0x5559d772cd60]:   %313 = fcmp ogt double %298, %300
+[0x5559d772d350]:   %315 = fcmp olt double %298, %300
+[0x5559d772e840]:   %317 = fcmp oeq double %298, %300
+Multiple matches exist for [0x5559d76b4ef0]:   %387 = fcmp oeq double %368, %370
+[0x5559d772b0e0]:   %301 = fcmp uno double %298, %300
+[0x5559d772cd60]:   %313 = fcmp ogt double %298, %300
+[0x5559d772d350]:   %315 = fcmp olt double %298, %300
+[0x5559d772e840]:   %317 = fcmp oeq double %298, %300
+Multiple matches exist for [0x5559d76eeb48]:   %398 = phi %struct.Memory* [ %381, %380 ], [ %MEMORY.2, %392 ]
+[0x5559d77075c8]:   %328 = phi %struct.Memory.31* [ %311, %310 ], [ %MEMORY.2, %322 ]
+[0x5559d772ac38]:   %MEMORY.1 = phi %struct.Memory.31* [ %MEMORY.0, %block_400c0e ], [ %MEMORY.2, %block_.L_400d08 ]
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll

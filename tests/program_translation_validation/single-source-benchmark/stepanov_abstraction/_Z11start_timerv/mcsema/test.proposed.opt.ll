@@ -39,10 +39,12 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 
-declare %struct.Memory* @sub_4006d0.clock_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare extern_weak x86_64_sysvcc i64 @clock()
+
+declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @_Z11start_timerv(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
+define %struct.Memory* @_Z11start_timerv(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #0 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -63,27 +65,27 @@ entry:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %6, align 8
   store i64 %11, i64* %3, align 8
-  %call2_401204 = tail call %struct.Memory* @sub_4006d0.clock_plt(%struct.State* %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @clock to i64), %struct.Memory* %2)
   %RAX.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %15 = load i64, i64* %RAX.i, align 8
-  %16 = load i64, i64* %3, align 8
-  store i64 %15, i64* inttoptr (i64 6328608 to i64*), align 32
-  %17 = add i64 %16, 9
-  store i64 %17, i64* %3, align 8
-  %18 = load i64, i64* %6, align 8
-  %19 = add i64 %18, 8
-  %20 = inttoptr i64 %18 to i64*
-  %21 = load i64, i64* %20, align 8
-  store i64 %21, i64* %RBP.i, align 8
-  store i64 %19, i64* %6, align 8
-  %22 = add i64 %16, 10
-  store i64 %22, i64* %3, align 8
-  %23 = inttoptr i64 %19 to i64*
-  %24 = load i64, i64* %23, align 8
-  store i64 %24, i64* %3, align 8
-  %25 = add i64 %18, 16
-  store i64 %25, i64* %6, align 8
-  ret %struct.Memory* %call2_401204
+  %16 = load i64, i64* %RAX.i, align 8
+  %17 = load i64, i64* %3, align 8
+  store i64 %16, i64* inttoptr (i64 6328608 to i64*), align 32
+  %18 = add i64 %17, 9
+  store i64 %18, i64* %3, align 8
+  %19 = load i64, i64* %6, align 8
+  %20 = add i64 %19, 8
+  %21 = inttoptr i64 %19 to i64*
+  %22 = load i64, i64* %21, align 8
+  store i64 %22, i64* %RBP.i, align 8
+  store i64 %20, i64* %6, align 8
+  %23 = add i64 %17, 10
+  store i64 %23, i64* %3, align 8
+  %24 = inttoptr i64 %20 to i64*
+  %25 = load i64, i64* %24, align 8
+  store i64 %25, i64* %3, align 8
+  %26 = add i64 %19, 16
+  store i64 %26, i64* %6, align 8
+  ret %struct.Memory* %15
 }
 
 ; Function Attrs: norecurse nounwind

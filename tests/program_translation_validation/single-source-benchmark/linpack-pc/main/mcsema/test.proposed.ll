@@ -123,8 +123,324 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
-declare %struct.Memory* @sub_4004d0.memset_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+; Buiitins  
+declare double @atan(double) local_unnamed_addr #9
+declare double @cos(double) local_unnamed_addr #9
+declare double @sin(double) local_unnamed_addr #9
+declare double @sqrt(double) local_unnamed_addr #9
+declare double @tan(double) local_unnamed_addr #9
+declare extern_weak x86_64_sysvcc i64 @abort() #18
+declare extern_weak x86_64_sysvcc i64 @abs(i64) #18
+declare extern_weak x86_64_sysvcc i64 @asin(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atof(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atoi(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atol(i64) #18
+declare extern_weak x86_64_sysvcc i64 @calloc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @clock() #18
+declare extern_weak x86_64_sysvcc i64 @cosf(i64) #18
+declare extern_weak x86_64_sysvcc i64 @exit(i64) #18
+declare extern_weak x86_64_sysvcc i64 @exp(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fflush(i64) #18
+declare extern_weak x86_64_sysvcc i64 @floor(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @fputs(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @free(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fwrite(i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @getchar() #18
+declare extern_weak x86_64_sysvcc i64 @gettimeofday(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_fscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_scanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_sscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @log(i64) #18
+declare extern_weak x86_64_sysvcc i64 @lrand48() #18
+declare extern_weak x86_64_sysvcc i64 @malloc(i64) #18
+declare extern_weak x86_64_sysvcc i64 @memalign(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @memcpy(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @memset(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @perror(i64) #18
+declare extern_weak x86_64_sysvcc i64 @posix_memalign(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pow(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @putchar(i64) #18
+declare extern_weak x86_64_sysvcc i64 @puts(i64) #18
+declare extern_weak x86_64_sysvcc i64 @rand() #18
+declare extern_weak x86_64_sysvcc i64 @random() #18
+declare extern_weak x86_64_sysvcc i64 @realloc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @seed48(i64) #18
+declare extern_weak x86_64_sysvcc i64 @sinf(i64) #18
+declare extern_weak x86_64_sysvcc i64 @sprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @srand(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcat(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcmp(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcpy(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strdup(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strlen(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @time(i64) #18
+declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+
+declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_scanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_scanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_fflush(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @fflush to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_fscanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_fscanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_sscanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_sscanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memcpy(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memcpy to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_posix_memalign(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @posix_memalign to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fprintf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @fprintf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memset(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_perror(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @perror to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_floor(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @floor to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_malloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atoi(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcpy(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcpy to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_ungetc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @ungetc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pow(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pow to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_seed48(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @seed48 to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_asin(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @asin to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strdup(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @strdup to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_cosf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @cosf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_abs(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @abs to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_abort(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @abort to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_exit(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @exit to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_putchar(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @putchar to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strncmp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @strncmp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcmp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_rand(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @rand to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_calloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fwrite(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @fwrite to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_realloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @realloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_log(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @log to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_exp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @exp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_sprintf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @sprintf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcat(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcat to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_puts(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @puts to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atol(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atol to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atof(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atof to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_clock(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @clock to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strlen(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @strlen to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_free(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_srand(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @srand to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fputs(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strtoll(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @strtoll to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_sinf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @sinf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_time(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @time to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_printf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memalign(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @memalign to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_random(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_lrand48(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @lrand48 to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_getchar(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @getchar to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @ext_atan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+
 declare %struct.Memory* @sub_401750.matgen(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 declare %struct.Memory* @sub_4005e0.second(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 declare %struct.Memory* @sub_401920.dgefa(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
@@ -248,7 +564,7 @@ entry:
 
   %loadMem2_40069e = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40069e = load i64, i64* %3
-  %call2_40069e = call %struct.Memory* @sub_4004d0.memset_plt(%struct.State* %0, i64  %loadPC_40069e, %struct.Memory* %loadMem2_40069e)
+  %call2_40069e = call %struct.Memory* @ext_memset(%struct.State* %0, i64  %loadPC_40069e, %struct.Memory* %loadMem2_40069e)
   store %struct.Memory* %call2_40069e, %struct.Memory** %MEMORY
 
   ; Code: movb $0x20, -0x340(%rbp)	 RIP: 4006a3	 Bytes: 7
@@ -323,7 +639,7 @@ entry:
 
   %loadMem2_4006ff = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4006ff = load i64, i64* %3
-  %call2_4006ff = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_4006ff, %struct.Memory* %loadMem2_4006ff)
+  %call2_4006ff = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_4006ff, %struct.Memory* %loadMem2_4006ff)
   store %struct.Memory* %call2_4006ff, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402ee3, %rsi	 RIP: 400704	 Bytes: 10
@@ -353,7 +669,7 @@ entry:
 
   %loadMem2_40071e = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40071e = load i64, i64* %3
-  %call2_40071e = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40071e, %struct.Memory* %loadMem2_40071e)
+  %call2_40071e = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40071e, %struct.Memory* %loadMem2_40071e)
   store %struct.Memory* %call2_40071e, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402eeb, %rsi	 RIP: 400723	 Bytes: 10
@@ -383,7 +699,7 @@ entry:
 
   %loadMem2_40073d = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40073d = load i64, i64* %3
-  %call2_40073d = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40073d, %struct.Memory* %loadMem2_40073d)
+  %call2_40073d = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40073d, %struct.Memory* %loadMem2_40073d)
   store %struct.Memory* %call2_40073d, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402f21, %rsi	 RIP: 400742	 Bytes: 10
@@ -418,7 +734,7 @@ entry:
 
   %loadMem2_400760 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400760 = load i64, i64* %3
-  %call2_400760 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400760, %struct.Memory* %loadMem2_400760)
+  %call2_400760 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400760, %struct.Memory* %loadMem2_400760)
   store %struct.Memory* %call2_400760, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402f32, %rsi	 RIP: 400765	 Bytes: 10
@@ -453,7 +769,7 @@ entry:
 
   %loadMem2_400783 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400783 = load i64, i64* %3
-  %call2_400783 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400783, %struct.Memory* %loadMem2_400783)
+  %call2_400783 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400783, %struct.Memory* %loadMem2_400783)
   store %struct.Memory* %call2_400783, %struct.Memory** %MEMORY
 
   ; Code: movq $0x604060, %rdi	 RIP: 400788	 Bytes: 10
@@ -1388,7 +1704,7 @@ block_.L_400b15:
 
   %loadMem2_400ba4 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400ba4 = load i64, i64* %3
-  %call2_400ba4 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400ba4, %struct.Memory* %loadMem2_400ba4)
+  %call2_400ba4 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400ba4, %struct.Memory* %loadMem2_400ba4)
   store %struct.Memory* %call2_400ba4, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402f6b, %rsi	 RIP: 400ba9	 Bytes: 10
@@ -1418,7 +1734,7 @@ block_.L_400b15:
 
   %loadMem2_400bc3 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400bc3 = load i64, i64* %3
-  %call2_400bc3 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400bc3, %struct.Memory* %loadMem2_400bc3)
+  %call2_400bc3 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400bc3, %struct.Memory* %loadMem2_400bc3)
   store %struct.Memory* %call2_400bc3, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402f8e, %rsi	 RIP: 400bc8	 Bytes: 10
@@ -1473,7 +1789,7 @@ block_.L_400b15:
 
   %loadMem2_400bfb = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400bfb = load i64, i64* %3
-  %call2_400bfb = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400bfb, %struct.Memory* %loadMem2_400bfb)
+  %call2_400bfb = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400bfb, %struct.Memory* %loadMem2_400bfb)
   store %struct.Memory* %call2_400bfb, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402faf, %rsi	 RIP: 400c00	 Bytes: 10
@@ -1508,7 +1824,7 @@ block_.L_400b15:
 
   %loadMem2_400c21 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400c21 = load i64, i64* %3
-  %call2_400c21 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400c21, %struct.Memory* %loadMem2_400c21)
+  %call2_400c21 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400c21, %struct.Memory* %loadMem2_400c21)
   store %struct.Memory* %call2_400c21, %struct.Memory** %MEMORY
 
   ; Code: movq $0x402fe4, %rsi	 RIP: 400c26	 Bytes: 10
@@ -1543,7 +1859,7 @@ block_.L_400b15:
 
   %loadMem2_400c47 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400c47 = load i64, i64* %3
-  %call2_400c47 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400c47, %struct.Memory* %loadMem2_400c47)
+  %call2_400c47 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400c47, %struct.Memory* %loadMem2_400c47)
   store %struct.Memory* %call2_400c47, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40301a, %rsi	 RIP: 400c4c	 Bytes: 10
@@ -1573,7 +1889,7 @@ block_.L_400b15:
 
   %loadMem2_400c66 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400c66 = load i64, i64* %3
-  %call2_400c66 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400c66, %struct.Memory* %loadMem2_400c66)
+  %call2_400c66 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400c66, %struct.Memory* %loadMem2_400c66)
   store %struct.Memory* %call2_400c66, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403052, %rsi	 RIP: 400c6b	 Bytes: 10
@@ -1603,7 +1919,7 @@ block_.L_400b15:
 
   %loadMem2_400c85 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400c85 = load i64, i64* %3
-  %call2_400c85 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400c85, %struct.Memory* %loadMem2_400c85)
+  %call2_400c85 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400c85, %struct.Memory* %loadMem2_400c85)
   store %struct.Memory* %call2_400c85, %struct.Memory** %MEMORY
 
   ; Code: xorps %xmm0, %xmm0	 RIP: 400c8a	 Bytes: 3
@@ -1787,7 +2103,7 @@ block_.L_400d13:
 
   %loadMem2_400d41 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400d41 = load i64, i64* %3
-  %call2_400d41 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400d41, %struct.Memory* %loadMem2_400d41)
+  %call2_400d41 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400d41, %struct.Memory* %loadMem2_400d41)
   store %struct.Memory* %call2_400d41, %struct.Memory** %MEMORY
 
   ; Code: movl $0xfffffffd, -0x40(%rbp)	 RIP: 400d46	 Bytes: 7
@@ -1995,7 +2311,7 @@ block_.L_400dc9:
 
   %loadMem2_400dff = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400dff = load i64, i64* %3
-  %call2_400dff = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400dff, %struct.Memory* %loadMem2_400dff)
+  %call2_400dff = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400dff, %struct.Memory* %loadMem2_400dff)
   store %struct.Memory* %call2_400dff, %struct.Memory** %MEMORY
 
   ; Code: cmpl $0x0, -0x40(%rbp)	 RIP: 400e04	 Bytes: 4
@@ -2114,7 +2430,7 @@ block_400e2c:
 
   %loadMem2_400e5a = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400e5a = load i64, i64* %3
-  %call2_400e5a = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400e5a, %struct.Memory* %loadMem2_400e5a)
+  %call2_400e5a = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400e5a, %struct.Memory* %loadMem2_400e5a)
   store %struct.Memory* %call2_400e5a, %struct.Memory** %MEMORY
 
   ; Code: movq $0x4030be, %rsi	 RIP: 400e5f	 Bytes: 10
@@ -2144,7 +2460,7 @@ block_400e2c:
 
   %loadMem2_400e79 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400e79 = load i64, i64* %3
-  %call2_400e79 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400e79, %struct.Memory* %loadMem2_400e79)
+  %call2_400e79 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400e79, %struct.Memory* %loadMem2_400e79)
   store %struct.Memory* %call2_400e79, %struct.Memory** %MEMORY
 
   ; Code: movl $0xfffffffd, -0x40(%rbp)	 RIP: 400e7e	 Bytes: 7
@@ -2377,7 +2693,7 @@ block_.L_400f3a:
 
   %loadMem2_400f6a = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400f6a = load i64, i64* %3
-  %call2_400f6a = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400f6a, %struct.Memory* %loadMem2_400f6a)
+  %call2_400f6a = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400f6a, %struct.Memory* %loadMem2_400f6a)
   store %struct.Memory* %call2_400f6a, %struct.Memory** %MEMORY
 
   ; Code: cmpl $0x0, -0x40(%rbp)	 RIP: 400f6f	 Bytes: 4
@@ -2500,7 +2816,7 @@ block_.L_400fc3:
 
   %loadMem2_400fd9 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400fd9 = load i64, i64* %3
-  %call2_400fd9 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400fd9, %struct.Memory* %loadMem2_400fd9)
+  %call2_400fd9 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400fd9, %struct.Memory* %loadMem2_400fd9)
   store %struct.Memory* %call2_400fd9, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403101, %rsi	 RIP: 400fde	 Bytes: 10
@@ -2535,7 +2851,7 @@ block_.L_400fc3:
 
   %loadMem2_400fff = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400fff = load i64, i64* %3
-  %call2_400fff = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_400fff, %struct.Memory* %loadMem2_400fff)
+  %call2_400fff = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_400fff, %struct.Memory* %loadMem2_400fff)
   store %struct.Memory* %call2_400fff, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40301a, %rsi	 RIP: 401004	 Bytes: 10
@@ -2565,7 +2881,7 @@ block_.L_400fc3:
 
   %loadMem2_40101e = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40101e = load i64, i64* %3
-  %call2_40101e = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40101e, %struct.Memory* %loadMem2_40101e)
+  %call2_40101e = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40101e, %struct.Memory* %loadMem2_40101e)
   store %struct.Memory* %call2_40101e, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403052, %rsi	 RIP: 401023	 Bytes: 10
@@ -2595,7 +2911,7 @@ block_.L_400fc3:
 
   %loadMem2_40103d = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40103d = load i64, i64* %3
-  %call2_40103d = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40103d, %struct.Memory* %loadMem2_40103d)
+  %call2_40103d = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40103d, %struct.Memory* %loadMem2_40103d)
   store %struct.Memory* %call2_40103d, %struct.Memory** %MEMORY
 
   ; Code: xorps %xmm0, %xmm0	 RIP: 401042	 Bytes: 3
@@ -3222,7 +3538,7 @@ block_.L_4012e1:
 
   %loadMem2_40131a = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40131a = load i64, i64* %3
-  %call2_40131a = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40131a, %struct.Memory* %loadMem2_40131a)
+  %call2_40131a = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40131a, %struct.Memory* %loadMem2_40131a)
   store %struct.Memory* %call2_40131a, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403159, %rsi	 RIP: 40131f	 Bytes: 10
@@ -3252,7 +3568,7 @@ block_.L_4012e1:
 
   %loadMem2_401339 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401339 = load i64, i64* %3
-  %call2_401339 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_401339, %struct.Memory* %loadMem2_401339)
+  %call2_401339 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_401339, %struct.Memory* %loadMem2_401339)
   store %struct.Memory* %call2_401339, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0x3d0(%rbp)	 RIP: 40133e	 Bytes: 6
@@ -3451,7 +3767,7 @@ block_.L_4013aa:
 
   %loadMem2_4013f4 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4013f4 = load i64, i64* %3
-  %call2_4013f4 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_4013f4, %struct.Memory* %loadMem2_4013f4)
+  %call2_4013f4 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_4013f4, %struct.Memory* %loadMem2_4013f4)
   store %struct.Memory* %call2_4013f4, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403101, %rsi	 RIP: 4013f9	 Bytes: 10
@@ -3486,7 +3802,7 @@ block_.L_4013aa:
 
   %loadMem2_40141a = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40141a = load i64, i64* %3
-  %call2_40141a = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_40141a, %struct.Memory* %loadMem2_40141a)
+  %call2_40141a = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_40141a, %struct.Memory* %loadMem2_40141a)
   store %struct.Memory* %call2_40141a, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40301a, %rsi	 RIP: 40141f	 Bytes: 10
@@ -3516,7 +3832,7 @@ block_.L_4013aa:
 
   %loadMem2_401439 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401439 = load i64, i64* %3
-  %call2_401439 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_401439, %struct.Memory* %loadMem2_401439)
+  %call2_401439 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_401439, %struct.Memory* %loadMem2_401439)
   store %struct.Memory* %call2_401439, %struct.Memory** %MEMORY
 
   ; Code: movq $0x403052, %rsi	 RIP: 40143e	 Bytes: 10
@@ -3546,7 +3862,7 @@ block_.L_4013aa:
 
   %loadMem2_401458 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401458 = load i64, i64* %3
-  %call2_401458 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_401458, %struct.Memory* %loadMem2_401458)
+  %call2_401458 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_401458, %struct.Memory* %loadMem2_401458)
   store %struct.Memory* %call2_401458, %struct.Memory** %MEMORY
 
   ; Code: xorps %xmm0, %xmm0	 RIP: 40145d	 Bytes: 3
@@ -4173,7 +4489,7 @@ block_.L_4016fc:
 
   %loadMem2_401735 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401735 = load i64, i64* %3
-  %call2_401735 = call %struct.Memory* @sub_4004e0.fprintf_plt(%struct.State* %0, i64  %loadPC_401735, %struct.Memory* %loadMem2_401735)
+  %call2_401735 = call %struct.Memory* @ext_fprintf(%struct.State* %0, i64  %loadPC_401735, %struct.Memory* %loadMem2_401735)
   store %struct.Memory* %call2_401735, %struct.Memory** %MEMORY
 
   ; Code: xorl %ecx, %ecx	 RIP: 40173a	 Bytes: 2

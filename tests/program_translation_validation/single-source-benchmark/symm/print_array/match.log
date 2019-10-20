@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55935aabadf0]:   %74 = lshr i32 %62, 27
+[0x55935ab24650]:   %72 = lshr i32 %63, 27
+[0x55935ab269d0]:   %75 = lshr i32 %63, 27
+Multiple matches exist for [0x55935aabae70]:   %75 = and i32 %74, 1
+[0x55935ab25c40]:   %73 = and i32 %72, 1
+[0x55935ab29350]:   %76 = and i32 %75, 1
+Multiple matches exist for [0x55935aac03c8]:   %177 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x55935ab097e0]:   %373 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
+[0x55935ab14f40]:   %325 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
+[0x55935ab1e2e0]:   %call2_401122 = tail call %struct.Memory.31* @sub_401170.print_element(%struct.State.0* nonnull %0, i64 %278, %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x55935aac7c48]:   %326 = tail call fastcc %struct.Memory* @ext_400610_fputs(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x55935ab097e0]:   %373 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
+[0x55935ab14f40]:   %325 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
+[0x55935ab1e2e0]:   %call2_401122 = tail call %struct.Memory.31* @sub_401170.print_element(%struct.State.0* nonnull %0, i64 %278, %struct.Memory.31* %MEMORY.0)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [print_array] from ../binary/test.mcsema.opt.ll
+Extracting function [print_array] from mcsema/test.proposed.opt.ll
+Matcher Done...

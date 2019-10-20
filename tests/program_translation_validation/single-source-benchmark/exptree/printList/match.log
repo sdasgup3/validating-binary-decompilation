@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5619769bc948]:   %66 = tail call fastcc %struct.Memory* @ext_602140_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x561976be2020]:   %call2_400cc9 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %203, %struct.Memory.31* %MEMORY.0)
-[0x561976beb3c0]:   %call2_400ca7 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %160, %struct.Memory.31* %MEMORY.0)
-Multiple matches exist for [0x561976ab06b8]:   %123 = tail call fastcc %struct.Memory* @ext_602140_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x561976be2020]:   %call2_400cc9 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %203, %struct.Memory.31* %MEMORY.0)
-[0x561976beb3c0]:   %call2_400ca7 = tail call %struct.Memory.31* @sub_400670.printf_plt(%struct.State.0* nonnull %0, i64 %160, %struct.Memory.31* %MEMORY.0)
-Multiple matches exist for [0x561976ab1308]:   %.pre2 = load i64, i64* %RBP, align 8
-[0x561976bd2fd8]:   %64 = load i64, i64* %RBP.i, align 8
-[0x561976be72a8]:   %.pre3 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x563dbab3c478]:   %66 = tail call fastcc %struct.Memory* @ext_602140_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x563dbad62110]:   %209 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %MEMORY.0)
+[0x563dbad6b4b0]:   %165 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x563dbac30068]:   %123 = tail call fastcc %struct.Memory* @ext_602140_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x563dbad62110]:   %209 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %MEMORY.0)
+[0x563dbad6b4b0]:   %165 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x563dbac30cb8]:   %.pre2 = load i64, i64* %RBP, align 8
+[0x563dbad52c08]:   %64 = load i64, i64* %RBP.i, align 8
+[0x563dbad5d0a8]:   %.pre3 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
