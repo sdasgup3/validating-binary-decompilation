@@ -26,9 +26,11 @@ my $help               = "";
 my $file               = "";
 my $outdir             = "";
 my $opcode             = "";
-my $norenameintrinsics = "";
+my $renameintrinsics = "";
 my $defineintrinsics   = "";
 my $definemain         = "";
+my $singleiv           = "";
+my $programiv          = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -37,7 +39,9 @@ qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
 GetOptions(
     "help"               => \$help,
-    "norenameintrinsics" => \$norenameintrinsics,
+    "renameintrinsics"   => \$renameintrinsics,
+    "singleiv"           => \$singleiv,
+    "programiv"          => \$programiv,
     "defineintrinsics"   => \$defineintrinsics,
     "definemain"         => \$definemain,
     "file:s"             => \$file,
@@ -61,6 +65,18 @@ if ( $help or $file eq "" or $opcode eq "" ) {
 open( my $fp, "<", $file ) or die "cannot open: $!";
 my @lines = <$fp>;
 close $fp;
+
+if($singleiv ne "") {
+  $definemain = 1;
+  $renameintrinsics = 1;
+  $defineintrinsics = 1;
+}
+
+if($programiv ne "") {
+  $definemain = "";
+  $renameintrinsics = "";
+  $defineintrinsics = "";
+}
 
 ## Get Target Info
 #my $targetInfo = "";
@@ -150,7 +166,7 @@ sub fixFunc {
         }
 
         # Rename instrinsics
-        if ( $norenameintrinsics eq "" ) {
+        if ( $renameintrinsics ne "" ) {
             $line =~ s/\@llvm\.(.*)/\@my\.$1/;
         }
 

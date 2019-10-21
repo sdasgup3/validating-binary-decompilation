@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc leaq_MINUS0x2880__rbp____r9
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc leaq_MINUS0x2880__rbp____r9
 
 binary: test.c
 	clang -Os $< -o test

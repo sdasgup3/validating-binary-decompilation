@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv
 
 binary: test.c
 	clang -Os $< -o test

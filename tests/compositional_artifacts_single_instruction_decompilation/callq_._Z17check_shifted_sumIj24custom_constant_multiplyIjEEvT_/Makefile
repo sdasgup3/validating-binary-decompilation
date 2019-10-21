@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._Z17check_shifted_sumIj24custom_constant_multiplyIjEEvT_
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._Z17check_shifted_sumIj24custom_constant_multiplyIjEEvT_
 
 binary: test.c
 	clang -Os $< -o test
