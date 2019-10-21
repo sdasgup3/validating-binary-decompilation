@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc jmpq_.L_4066cf
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc jmpq_.L_4066cf
 
 binary: test.c
 	clang -Os $< -o test

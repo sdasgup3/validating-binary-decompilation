@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._ZN28custom_multiple_constant_xorIlE8do_shiftEl
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._ZN28custom_multiple_constant_xorIlE8do_shiftEl
 
 binary: test.c
 	clang -Os $< -o test

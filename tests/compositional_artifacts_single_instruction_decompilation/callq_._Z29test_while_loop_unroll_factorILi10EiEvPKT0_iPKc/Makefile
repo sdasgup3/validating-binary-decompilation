@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._Z29test_while_loop_unroll_factorILi10EiEvPKT0_iPKc
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._Z29test_while_loop_unroll_factorILi10EiEvPKT0_iPKc
 
 binary: test.c
 	clang -Os $< -o test

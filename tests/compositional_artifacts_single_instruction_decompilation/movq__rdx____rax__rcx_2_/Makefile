@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc movq__rdx____rax__rcx_2_
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc movq__rdx____rax__rcx_2_
 
 binary: test.c
 	clang -Os $< -o test

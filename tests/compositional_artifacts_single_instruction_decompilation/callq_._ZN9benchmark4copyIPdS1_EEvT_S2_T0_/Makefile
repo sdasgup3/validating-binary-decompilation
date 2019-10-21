@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._ZN9benchmark4copyIPdS1_EEvT_S2_T0_
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._ZN9benchmark4copyIPdS1_EEvT_S2_T0_
 
 binary: test.c
 	clang -Os $< -o test

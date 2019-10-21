@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd
 
 binary: test.c
 	clang -Os $< -o test

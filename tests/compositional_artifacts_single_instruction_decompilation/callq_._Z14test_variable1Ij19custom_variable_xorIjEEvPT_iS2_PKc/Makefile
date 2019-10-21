@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._Z14test_variable1Ij19custom_variable_xorIjEEvPT_iS2_PKc
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._Z14test_variable1Ij19custom_variable_xorIjEEvPT_iS2_PKc
 
 binary: test.c
 	clang -Os $< -o test

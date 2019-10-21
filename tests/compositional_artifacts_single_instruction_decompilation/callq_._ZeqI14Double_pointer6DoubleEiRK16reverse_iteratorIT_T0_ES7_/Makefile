@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc callq_._ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc callq_._ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_
 
 binary: test.c
 	clang -Os $< -o test

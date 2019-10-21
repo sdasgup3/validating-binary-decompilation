@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc movsbl_0x6049f4___ecx
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc movsbl_0x6049f4___ecx
 
 binary: test.c
 	clang -Os $< -o test

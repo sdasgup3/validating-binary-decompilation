@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc movsd_0x2116b4__rip____xmm0
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc movsd_0x2116b4__rip____xmm0
 
 binary: test.c
 	clang -Os $< -o test

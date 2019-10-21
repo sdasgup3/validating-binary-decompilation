@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc xorq__0x75bd924___rax
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc xorq__0x75bd924___rax
 
 binary: test.c
 	clang -Os $< -o test

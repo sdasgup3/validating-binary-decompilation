@@ -11,7 +11,7 @@ mcsema:
 	llvm-dis test.bc -o test.ll
 
 declutter:
-	${DVAL_SCRIPT_DIR}/declutter.pl --file test.ll --norenameintrinsics --opc callq_._Z13test_constantIj20custom_xor_constantsIjEEvPT_iPKc
+	${DVAL_SCRIPT_DIR}/declutter.pl --file test.ll --programiv --opc callq_._Z13test_constantIj20custom_xor_constantsIjEEvPT_iPKc
 
 binary:
 	clang -Os test.c -o test

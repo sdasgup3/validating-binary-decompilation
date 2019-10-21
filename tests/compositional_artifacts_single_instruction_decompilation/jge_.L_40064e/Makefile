@@ -15,7 +15,7 @@ assemble: test.c
 	${CLEAN_ASM} -i --file test.s
 
 declutter: test.ll
-	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --norenameintrinsics --opc jge_.L_40064e
+	${DVAL_SCRIPT_DIR}/declutter.pl --file $< --programiv --opc jge_.L_40064e
 
 binary: test.c
 	clang -Os $< -o test
