@@ -126,13 +126,17 @@ def createParentMakefile(functions):
 
     makeFile.write("binary:" + "\n")
     makeFile.write("	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+
     makeFile.write("objdump:" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
+
     makeFile.write("mcsema:" + "\n")
     makeFile.write("	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main" + "\n")
     makeFile.write("	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
     makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
+
     makeFile.write("mcsema_opt:" + "\n")
+    makeFile.write("	../../../scripts/remove_definitions/pl --file binary/test.mcsema.ll" + "\n")
     makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:
@@ -169,7 +173,7 @@ def createMakefile(funcName):
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
-        "	${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
+        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
     makeFile.write("" + "\n\n")
@@ -185,7 +189,7 @@ def createMakefile(funcName):
         "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
-        "	${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
+        "	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
     makeFile.write("" + "\n\n")

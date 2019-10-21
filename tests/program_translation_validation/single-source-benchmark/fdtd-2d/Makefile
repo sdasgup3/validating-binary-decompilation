@@ -18,6 +18,7 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
+	../../../scripts/remove_definitions/pl --file binary/test.mcsema.ll
 	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 polybench_flush_cache:

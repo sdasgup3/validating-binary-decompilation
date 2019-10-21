@@ -30,7 +30,6 @@ cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& 
 ### Run McSema [Already Done, Needed one time]
 ```bash
 cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
-cat docs/filelist.txt | parallel "echo; echo {}; echo ===== ; ../../scripts/remove_definitions.pl --file {}/binary/test.mcsema.ll"
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
 ```
 
