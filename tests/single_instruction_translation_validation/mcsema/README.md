@@ -1,8 +1,8 @@
 ## Prepare the tests directory
-### Populate the seed file
+
+### Populate the seed file [One time]
 ```
-cd tests
-mkdir mcsema
+mkdir -p tests/single_instruction_translation_validation/mcsema
 cd !$
 
 // Register Instructions
@@ -48,10 +48,10 @@ parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 ### Populate C and Makefiles
 ```
 cd tests/mcsema
-ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants/{}/seed/{}.s
-ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s
-ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s
-ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s
+ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants/{}/seed/{}.s --opc {}
+ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s --opc {}
+ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s --opc {}
+ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s --opc {}
 ```
 
 ### Populate Binary

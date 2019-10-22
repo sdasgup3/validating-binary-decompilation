@@ -36,3 +36,14 @@ With LLVM Vs X86 comparision, we canot handle case (2). However, we can handle c
 
 
 Only 33% of instr are unique, hence we can afford to decompile all the instructions during compositional decompilation, most of them would be cached and reused
+
+## Program validation by running KEQ on x86 and lifted LLVM programs is not an option
+
+Because for the instructions like adcq, the lifted LLVM IR has additional basic
+blocks which is not visible in the X86 program; Hence finding syn oints in a
+decompiler agnostic way is not trivial 
+
+
+Formally valiating the composition
+
+In case of matcher failure, use df - strands based optimization to check the equiv
