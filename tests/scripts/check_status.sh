@@ -36,6 +36,15 @@ matchCheck() {
   fi
 }
 
+kproveCheck() {
+  msg=$1
+  if grep -q "Success final states" Output/test-lspec.out; then
+    echo -e "\e[32mKProve Pass\e[39m:-" `pwd`:$msg
+  else
+    echo -e "\e[31mKProve Fail\e[39m:-" `pwd`:$msg
+  fi
+}
+
 while [ "$1" != "" ]; do
     case $1 in
         --compd )        shift
@@ -43,6 +52,9 @@ while [ "$1" != "" ]; do
                          ;;
         --match )        shift
                          matchCheck $msg
+                         ;;
+        --kprove )        shift
+                         kproveCheck $msg
                          ;;
         --msg )          shift
                          msg=$1

@@ -26,8 +26,9 @@ my $help               = "";
 my $file               = "";
 my $outdir             = "";
 my $opcode             = "";
-my $renameintrinsics = "";
+my $renameintrinsics   = "";
 my $defineintrinsics   = "";
+my $definememtype      = "";
 my $definemain         = "";
 my $singleiv           = "";
 my $programiv          = "";
@@ -44,6 +45,7 @@ GetOptions(
     "programiv"          => \$programiv,
     "defineintrinsics"   => \$defineintrinsics,
     "definemain"         => \$definemain,
+    "definememtype"      => \$definememtype,
     "file:s"             => \$file,
     "opc:s"              => \$opcode,
 ) or die("Error in command line arguments\n");
@@ -70,12 +72,14 @@ if($singleiv ne "") {
   $definemain = 1;
   $renameintrinsics = 1;
   $defineintrinsics = 1;
+  $definememtype = 1;
 }
 
 if($programiv ne "") {
   $definemain = "";
   $renameintrinsics = "";
   $defineintrinsics = "";
+  $definememtype = "";
 }
 
 ## Get Target Info
@@ -345,13 +349,18 @@ sub getDeclarations {
             last;
         }
 
-        if($tline =~ m/__mcsema|wrapper|__got|callback/) {
+        if($tline =~ m/__mcsema|wrapper|__got|callback|^@/) {
           next;
         }
 
         if ( $tline =~ m/(.*) = (.*)/g ) {
 
             # push @decls, $line;
+            if($definememtype) {
+              if($tline =~ m/%struct.Memory/ and $tline =~ m/type opaque/) {
+                $line = "%struct.Memory = type { i64 }" . "\n";
+              }
+            }
             $decls = $decls . $line;
         }
     }
@@ -500,7 +509,11 @@ sub getMainDefintion {
     my $mainDefn = qq(define i32 \@main() {
 entry:
   %state = alloca %struct.State
+
   %mem = alloca %struct.Memory
+  %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
+  store i64 51, i64* %memf0, align 8
+  
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -510,6 +523,15 @@ entry:
   %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
   %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
   %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
+
+  %cf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 1
+  %pf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 3
+  %af = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 5
+  %zf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 7
+  %sf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 9
+  %df = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 11
+  %of = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 13
+
   store i64 100, i64* %addr1, align 8
   store i64 200, i64* %addr2, align 8
   store i64 300, i64* %addr3, align 8
@@ -519,6 +541,15 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
+
+  store i8 10, i8* %cf, align 1
+  store i8 20, i8* %pf, align 1
+  store i8 30, i8* %af, align 1
+  store i8 40, i8* %zf, align 1
+  store i8 50, i8* %sf, align 1
+  store i8 60, i8* %df, align 1
+  store i8 70, i8* %of, align 1
+
   %call = call %struct.Memory* \@$modMainName(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 });
