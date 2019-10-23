@@ -1,0 +1,10 @@
+[Error] Critical: Parser returned a non-zero exit code: 113
+Stdout:
+
+Stderr:
+[Error] Inner Parser: Scanner error: unexpected character sequence 'a'.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cqto/./llvm-kast.test.mod.ll.MMquHvj8)
+	Location(1,14042,1,14043)
+Command exited with non-zero status 113
+22.98user 8.14system 0:15.19elapsed 204%CPU (0avgtext+0avgdata 526500maxresident)k
+0inputs+4832outputs (0major+392672minor)pagefaults 0swaps

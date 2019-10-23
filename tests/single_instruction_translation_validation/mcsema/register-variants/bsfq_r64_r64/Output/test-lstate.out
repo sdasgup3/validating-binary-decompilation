@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:176:22: error: use of undefined value '@my.cttz.i64'
+  %9 = tail call i64 @my.cttz.i64(i64 %3, i1 true) #22
+                     ^
+0.02user 0.01system 0:00.03elapsed 105%CPU (0avgtext+0avgdata 27412maxresident)k
+0inputs+16outputs (0major+3263minor)pagefaults 0swaps

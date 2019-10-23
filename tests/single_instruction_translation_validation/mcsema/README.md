@@ -101,24 +101,15 @@ cat logs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/
 
 ## Generate spec output file for x86
 ```
-# prereq: test.s
-# make collect
-# make kompile
-# make xstate
-
-// Generate the test-xspec.k file
 cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
-cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make xprove; cd -"
+cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 ```
 
 ## Generate spec output file for LLVM
 ```
-make mcsema // Generate the decompiled LLVM file test.ll
-// Modify the LLVM file to test.mod.ll
-
-make kli // Generate the krun output (concrete run output) of test.mod.ll
-// Generate the test-lspec.k file
-make lprove
+cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make kli; cd -"
+cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
+cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make lrpove; cd -"
 ```
 
 ## Compare the z3 output
@@ -154,11 +145,15 @@ remove clutter from ~/Junk/out and diff
 - handle PC
 - `./remill/Arch/X86/Runtime/State.h`: Handle all registers and flags
 
+## Deprecated
+### Generate spec output file for x86
+```
+# prereq: test.s
+# make collect
+# make kompile
+# make xstate
 
-- S: provie the seed
-- D: generate the C, Makefile, llmod script
-- S: ..
-- D: lstate -> lspec
-- D: xstate -> xspec
-- S: krpove
-- D: x.lspec --> z3
+// Generate the test-xspec.k file
+cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
+cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
+```

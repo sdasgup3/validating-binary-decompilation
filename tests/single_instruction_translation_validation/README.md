@@ -26,7 +26,7 @@
   ../scripts/run-single-c-file.sh ../tests/program-tests/bubblesort/test.c java |& tee /tmp/run.log
   ```
 
-  - [Build LLVM Semantics](https://github.com/kframework/X86-64-semantics#to-compile-the-x86-64-semantics)
+  - [Build LLVM Semantics](https://github.com/sdasgup3/llvm-verified-backend)
   ```bash
 
   cd Github
