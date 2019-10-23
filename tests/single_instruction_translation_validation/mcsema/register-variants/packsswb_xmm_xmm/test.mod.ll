@@ -2,27 +2,70 @@
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
-
 %union.anon = type { i64 }
-%struct.State = type {%struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, i64, i64, i64, %struct.GPR}
-
+%seg_4f8__init_type = type <{ [23 x i8] }>
+%seg_510__plt_type = type <{ [16 x i8] }>
+%seg_520__plt_got_type = type <{ [8 x i8] }>
+%seg_530__text_type = type <{ [434 x i8] }>
+%seg_6e4__fini_type = type <{ [9 x i8] }>
+%seg_6f0__rodata_type = type <{ [4 x i8] }>
+%seg_6f4__eh_frame_hdr_type = type <{ [60 x i8] }>
+%seg_730__eh_frame_type = type <{ [256 x i8] }>
+%seg_200de0__init_array_type = type <{ i64, i64 }>
+%seg_200df0__jcr_type = type <{ [8 x i8] }>
+%seg_201000__data_type = type <{ [8 x i8], i64 }>
+%__bss_start_type = type <{ [8 x i8] }>
+%struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
 %union.vec512_t = type { %struct.uint64v8_t }
 %struct.uint64v8_t = type { [8 x i64] }
 %struct.ArithFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8 }
+%struct.Segments = type { i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector }
+%union.SegmentSelector = type { i16 }
+%struct.AddressSpace = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
 %struct.Reg = type { %union.anon }
 %struct.GPR = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
-%struct.float32v8_t = type { [8 x float] }
-%struct.int32v8_t = type { [8 x i32] }
-%struct.uint16v16_t = type { [16 x i16] }
-%struct.uint8v32_t = type { [32 x i8] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
-%struct.uint64v4_t = type { [4 x i64] }
-%struct.anon.2 = type { i8, i8 }
+%struct.X87Stack = type { [8 x %struct.anon.3] }
+%struct.anon.3 = type { i64, double }
+%struct.MMX = type { [8 x %struct.anon.4] }
+%struct.anon.4 = type { i64, %union.vec64_t }
+%union.vec64_t = type { %struct.uint64v1_t }
+%struct.uint64v1_t = type { [1 x i64] }
+%struct.FPUStatusFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, [4 x i8] }
+%union.FPU = type { %struct.anon.13 }
+%struct.anon.13 = type { %struct.FpuFXSAVE, [96 x i8] }
+%struct.FpuFXSAVE = type { %union.SegmentSelector, %union.SegmentSelector, %union.FPUAbridgedTagWord, i8, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, %union.FPUControlStatus, %union.FPUControlStatus, [8 x %struct.FPUStackElem], [16 x %union.vec128_t] }
+%union.FPUAbridgedTagWord = type { i8 }
+%union.FPUControlStatus = type { i32 }
+%struct.FPUStackElem = type { %union.anon.11, [6 x i8] }
+%union.anon.11 = type { %struct.float80_t }
+%struct.float80_t = type { [10 x i8] }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.SegmentCaches = type { %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow }
+%struct.SegmentShadow = type { %union.anon, i32, i32 }
 %struct.Memory = type { i64 }
+%struct.uint8v32_t = type { [32 x i8] }
+%struct.anon.2 = type { i8, i8 }
+%struct.int32v8_t = type { [8 x i32] }
+%struct.float32v8_t = type { [8 x float] }
+%struct.uint8v8_t = type { [8 x i8] }
+%struct.uint8v16_t = type { [16 x i8] }
+%struct.uint16v8_t = type { [8 x i16] }
+%struct.uint8v4_t = type { [4 x i8] }
+%struct.int16v4_t = type { [4 x i16] }
+%struct.int32v4_t = type { [4 x i32] }
+%struct.uint64v2_t = type { [2 x i64] }
+%struct.uint64v4_t = type { [4 x i64] }
+%struct.uint128v2_t = type { [2 x i128] }
+%struct.uint16v16_t = type { [16 x i16] }
+%struct.float64v4_t = type { [4 x double] }
+%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
+%"class.std::bitset" = type { %struct.uint64v4_t }
+%struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
+%struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
+%struct.anon.5 = type { i32, i32 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -127,8 +170,324 @@ declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L8PACKSSWBI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
   %6 = alloca <2 x i64>, align 16
   %7 = bitcast <2 x i64>* %6 to { i64, i64 }*
+  %8 = alloca { i64, i64 }, align 8
+  %9 = alloca <2 x i64>, align 16
+  %10 = bitcast <2 x i64>* %9 to { i64, i64 }*
+  %11 = bitcast <2 x i64>* %9 to %struct.uint16v8_t*
+  %12 = alloca <2 x i64>, align 16
+  %13 = bitcast <2 x i64>* %12 to { i64, i64 }*
+  %14 = bitcast <2 x i64>* %9 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %14) #22
+  %15 = bitcast i8* %3 to <2 x i64>*
+  %16 = load <2 x i64>, <2 x i64>* %15, align 1
+  store <2 x i64> %16, <2 x i64>* %9, align 16
+  %17 = bitcast <2 x i64>* %12 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %17) #22
+  %18 = bitcast i8* %4 to <2 x i64>*
+  %19 = load <2 x i64>, <2 x i64>* %18, align 1
+  store <2 x i64> %19, <2 x i64>* %12, align 16
+  %20 = bitcast <2 x i64>* %6 to i8*
+  %21 = getelementptr inbounds <2 x i64>, <2 x i64>* %6, i64 0, i64 0
+  %22 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %7, i64 0, i32 1
+  %23 = bitcast <2 x i64>* %6 to [16 x i8]*
+  %24 = extractelement <2 x i64> %16, i32 0
+  %25 = trunc i64 %24 to i16
+  %26 = icmp slt i16 %25, 127
+  %27 = select i1 %26, i16 %25, i16 127
+  %28 = trunc i16 %27 to i8
+  %29 = icmp slt i16 %25, -128
+  %30 = select i1 %29, i8 -128, i8 %28
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store <2 x i64> zeroinitializer, <2 x i64>* %6, align 16
+  %31 = bitcast <2 x i64>* %6 to i8*
+  store i8 %30, i8* %31, align 16
+  %32 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %33 = lshr i64 %24, 16
+  %34 = trunc i64 %33 to i16
+  %35 = icmp slt i16 %34, 127
+  %36 = select i1 %35, i16 %34, i16 127
+  %37 = trunc i16 %36 to i8
+  %38 = icmp slt i16 %34, -128
+  %39 = select i1 %38, i8 -128, i8 %37
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %32, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %40 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 1
+  store i8 %39, i8* %40, align 1
+  %41 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %42 = lshr i64 %24, 32
+  %43 = trunc i64 %42 to i16
+  %44 = icmp slt i16 %43, 127
+  %45 = select i1 %44, i16 %43, i16 127
+  %46 = trunc i16 %45 to i8
+  %47 = icmp slt i16 %43, -128
+  %48 = select i1 %47, i8 -128, i8 %46
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %41, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %49 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 2
+  store i8 %48, i8* %49, align 2
+  %50 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %51 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 3
+  %52 = load i16, i16* %51, align 2
+  %53 = icmp slt i16 %52, 127
+  %54 = select i1 %53, i16 %52, i16 127
+  %55 = trunc i16 %54 to i8
+  %56 = icmp slt i16 %52, -128
+  %57 = select i1 %56, i8 -128, i8 %55
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %50, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %58 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 3
+  store i8 %57, i8* %58, align 1
+  %59 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %60 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %10, i64 0, i32 1
+  %61 = bitcast i64* %60 to i16*
+  %62 = load i16, i16* %61, align 8
+  %63 = icmp slt i16 %62, 127
+  %64 = select i1 %63, i16 %62, i16 127
+  %65 = trunc i16 %64 to i8
+  %66 = icmp slt i16 %62, -128
+  %67 = select i1 %66, i8 -128, i8 %65
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %59, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %68 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 4
+  store i8 %67, i8* %68, align 4
+  %69 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %70 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 5
+  %71 = load i16, i16* %70, align 2
+  %72 = icmp slt i16 %71, 127
+  %73 = select i1 %72, i16 %71, i16 127
+  %74 = trunc i16 %73 to i8
+  %75 = icmp slt i16 %71, -128
+  %76 = select i1 %75, i8 -128, i8 %74
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %69, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %77 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 5
+  store i8 %76, i8* %77, align 1
+  %78 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %79 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 6
+  %80 = load i16, i16* %79, align 4
+  %81 = icmp slt i16 %80, 127
+  %82 = select i1 %81, i16 %80, i16 127
+  %83 = trunc i16 %82 to i8
+  %84 = icmp slt i16 %80, -128
+  %85 = select i1 %84, i8 -128, i8 %83
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %78, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %86 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 6
+  store i8 %85, i8* %86, align 2
+  %87 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %88 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 7
+  %89 = load i16, i16* %88, align 2
+  %90 = icmp slt i16 %89, 127
+  %91 = select i1 %90, i16 %89, i16 127
+  %92 = trunc i16 %91 to i8
+  %93 = icmp slt i16 %89, -128
+  %94 = select i1 %93, i8 -128, i8 %92
+  call void @my.lifetime.start(i64 16, i8* nonnull %20)
+  store i64 %87, i64* %21, align 16
+  store i64 0, i64* %22, align 8
+  %95 = getelementptr inbounds [16 x i8], [16 x i8]* %23, i64 0, i64 7
+  store i8 %94, i8* %95, align 1
+  %96 = load i64, i64* %21, align 16
+  call void @my.lifetime.end(i64 16, i8* nonnull %20)
+  %97 = bitcast <2 x i64>* %12 to %struct.uint16v8_t*
+  %98 = bitcast { i64, i64 }* %8 to i8*
+  %99 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %8, i64 0, i32 0
+  %100 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %8, i64 0, i32 1
+  %101 = bitcast { i64, i64 }* %8 to [16 x i8]*
+  %102 = bitcast <2 x i64>* %12 to i16*
+  %103 = load i16, i16* %102, align 16
+  %104 = icmp slt i16 %103, 127
+  %105 = select i1 %104, i16 %103, i16 127
+  %106 = trunc i16 %105 to i8
+  %107 = icmp slt i16 %103, -128
+  %108 = select i1 %107, i8 -128, i8 %106
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 0, i64* %100, align 8
+  %109 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %8, i64 0, i32 1
+  %110 = bitcast i64* %109 to i8*
+  store i8 %108, i8* %110, align 8
+  %111 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %112 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 1
+  %113 = load i16, i16* %112, align 2
+  %114 = icmp slt i16 %113, 127
+  %115 = select i1 %114, i16 %113, i16 127
+  %116 = trunc i16 %115 to i8
+  %117 = icmp slt i16 %113, -128
+  %118 = select i1 %117, i8 -128, i8 %116
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %111, i64* %100, align 8
+  %119 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 9
+  store i8 %118, i8* %119, align 1
+  %120 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %121 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 2
+  %122 = load i16, i16* %121, align 4
+  %123 = icmp slt i16 %122, 127
+  %124 = select i1 %123, i16 %122, i16 127
+  %125 = trunc i16 %124 to i8
+  %126 = icmp slt i16 %122, -128
+  %127 = select i1 %126, i8 -128, i8 %125
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %120, i64* %100, align 8
+  %128 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 10
+  store i8 %127, i8* %128, align 2
+  %129 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %130 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 3
+  %131 = load i16, i16* %130, align 2
+  %132 = icmp slt i16 %131, 127
+  %133 = select i1 %132, i16 %131, i16 127
+  %134 = trunc i16 %133 to i8
+  %135 = icmp slt i16 %131, -128
+  %136 = select i1 %135, i8 -128, i8 %134
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %129, i64* %100, align 8
+  %137 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 11
+  store i8 %136, i8* %137, align 1
+  %138 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %139 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %13, i64 0, i32 1
+  %140 = bitcast i64* %139 to i16*
+  %141 = load i16, i16* %140, align 8
+  %142 = icmp slt i16 %141, 127
+  %143 = select i1 %142, i16 %141, i16 127
+  %144 = trunc i16 %143 to i8
+  %145 = icmp slt i16 %141, -128
+  %146 = select i1 %145, i8 -128, i8 %144
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %138, i64* %100, align 8
+  %147 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 12
+  store i8 %146, i8* %147, align 4
+  %148 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %149 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 5
+  %150 = load i16, i16* %149, align 2
+  %151 = icmp slt i16 %150, 127
+  %152 = select i1 %151, i16 %150, i16 127
+  %153 = trunc i16 %152 to i8
+  %154 = icmp slt i16 %150, -128
+  %155 = select i1 %154, i8 -128, i8 %153
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %148, i64* %100, align 8
+  %156 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 13
+  store i8 %155, i8* %156, align 1
+  %157 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %158 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 6
+  %159 = load i16, i16* %158, align 4
+  %160 = icmp slt i16 %159, 127
+  %161 = select i1 %160, i16 %159, i16 127
+  %162 = trunc i16 %161 to i8
+  %163 = icmp slt i16 %159, -128
+  %164 = select i1 %163, i8 -128, i8 %162
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %157, i64* %100, align 8
+  %165 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 14
+  store i8 %164, i8* %165, align 2
+  %166 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %167 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %97, i64 0, i32 0, i64 7
+  %168 = load i16, i16* %167, align 2
+  %169 = icmp slt i16 %168, 127
+  %170 = select i1 %169, i16 %168, i16 127
+  %171 = trunc i16 %170 to i8
+  %172 = icmp slt i16 %168, -128
+  %173 = select i1 %172, i8 -128, i8 %171
+  call void @my.lifetime.start(i64 16, i8* nonnull %98)
+  store i64 %96, i64* %99, align 8
+  store i64 %166, i64* %100, align 8
+  %174 = getelementptr inbounds [16 x i8], [16 x i8]* %101, i64 0, i64 15
+  store i8 %173, i8* %174, align 1
+  %175 = load i64, i64* %100, align 8
+  call void @my.lifetime.end(i64 16, i8* nonnull %98)
+  %176 = lshr i64 %96, 8
+  %177 = lshr i64 %96, 16
+  %178 = lshr i64 %96, 24
+  %179 = lshr i64 %96, 32
+  %180 = lshr i64 %96, 40
+  %181 = lshr i64 %96, 48
+  %182 = lshr i64 %96, 56
+  %183 = trunc i64 %96 to i8
+  %184 = trunc i64 %176 to i8
+  %185 = trunc i64 %177 to i8
+  %186 = trunc i64 %178 to i8
+  %187 = trunc i64 %179 to i8
+  %188 = trunc i64 %180 to i8
+  %189 = trunc i64 %181 to i8
+  %190 = trunc i64 %182 to i8
+  store i8 %183, i8* %2, align 1
+  %191 = getelementptr inbounds i8, i8* %2, i64 1
+  store i8 %184, i8* %191, align 1
+  %192 = getelementptr inbounds i8, i8* %2, i64 2
+  store i8 %185, i8* %192, align 1
+  %193 = getelementptr inbounds i8, i8* %2, i64 3
+  store i8 %186, i8* %193, align 1
+  %194 = getelementptr inbounds i8, i8* %2, i64 4
+  store i8 %187, i8* %194, align 1
+  %195 = getelementptr inbounds i8, i8* %2, i64 5
+  store i8 %188, i8* %195, align 1
+  %196 = getelementptr inbounds i8, i8* %2, i64 6
+  store i8 %189, i8* %196, align 1
+  %197 = getelementptr inbounds i8, i8* %2, i64 7
+  store i8 %190, i8* %197, align 1
+  %198 = trunc i64 %175 to i8
+  %199 = getelementptr inbounds i8, i8* %2, i64 8
+  store i8 %198, i8* %199, align 1
+  %200 = lshr i64 %175, 8
+  %201 = trunc i64 %200 to i8
+  %202 = getelementptr inbounds i8, i8* %2, i64 9
+  store i8 %201, i8* %202, align 1
+  %203 = lshr i64 %175, 16
+  %204 = trunc i64 %203 to i8
+  %205 = getelementptr inbounds i8, i8* %2, i64 10
+  store i8 %204, i8* %205, align 1
+  %206 = lshr i64 %175, 24
+  %207 = trunc i64 %206 to i8
+  %208 = getelementptr inbounds i8, i8* %2, i64 11
+  store i8 %207, i8* %208, align 1
+  %209 = lshr i64 %175, 32
+  %210 = trunc i64 %209 to i8
+  %211 = getelementptr inbounds i8, i8* %2, i64 12
+  store i8 %210, i8* %211, align 1
+  %212 = lshr i64 %175, 40
+  %213 = trunc i64 %212 to i8
+  %214 = getelementptr inbounds i8, i8* %2, i64 13
+  store i8 %213, i8* %214, align 1
+  %215 = lshr i64 %175, 48
+  %216 = trunc i64 %215 to i8
+  %217 = getelementptr inbounds i8, i8* %2, i64 14
+  store i8 %216, i8* %217, align 1
+  %218 = lshr i64 %175, 56
+  %219 = trunc i64 %218 to i8
+  %220 = getelementptr inbounds i8, i8* %2, i64 15
+  store i8 %219, i8* %220, align 1
+  call void @my.lifetime.end(i64 16, i8* nonnull %17) #22
+  call void @my.lifetime.end(i64 16, i8* nonnull %14) #22
+  ret %struct.Memory* %0
+}
 
-define %struct.Memory* @routine_packsswb_xmm_xmm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+define %struct.Memory* @routine_packsswb_xmm_xmm(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -153,7 +512,11 @@ block_530:
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+
   %mem = alloca %struct.Memory
+  %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
+  store i64 51, i64* %memf0, align 8
+  
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -163,6 +526,15 @@ entry:
   %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
   %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
   %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
+
+  %cf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 1
+  %pf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 3
+  %af = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 5
+  %zf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 7
+  %sf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 9
+  %df = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 11
+  %of = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 13
+
   store i64 100, i64* %addr1, align 8
   store i64 200, i64* %addr2, align 8
   store i64 300, i64* %addr3, align 8
@@ -172,6 +544,15 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
+
+  store i8 10, i8* %cf, align 1
+  store i8 20, i8* %pf, align 1
+  store i8 30, i8* %af, align 1
+  store i8 40, i8* %zf, align 1
+  store i8 50, i8* %sf, align 1
+  store i8 60, i8* %df, align 1
+  store i8 70, i8* %of, align 1
+
   %call = call %struct.Memory* @routine_packsswb_xmm_xmm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

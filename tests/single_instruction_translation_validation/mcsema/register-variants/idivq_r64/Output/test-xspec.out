@@ -1,0 +1,531 @@
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/idivq_r64/././test-xspec.k)
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/idivq_r64/test-xspec.k)
+Parse spec modules [1/9 rules]                               =  0.023s
+StateLog: /home/ubuntu/Github/X86-64-semantics/semantics/x86-semantics-kompiled/stateLog/prove-2044796696.log
+
+Parsing finished:  189.556 s
+Pre-processing rule:
+rule too long...
+	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/idivq_r64/test-xspec.k Location(6,5,101,61)
+==================================
+
+Initialization finished
+==================================
+Stats for each phase, time, used memory, implicit main GC time percentage:
+Total                 :  190.122 s,	 2720 MB, gc:  2.644 %
+  Parsing             :  189.556 s,	 2589 MB, gc:  2.652 %
+  Init                :    0.566 s,	 2720 MB, gc:  0.000 %
+
+Init+Execution time:       0.566 s
+
+  Time and top-level event counts:
+  resolveFunctionAndAnywhere time  :    0.053 s,      #        443
+    evaluateFunction time            :    0.035 s,      #        192
+      builtin evaluation               :           ,      #        156
+      no function rules                :           ,      #         36
+    applyAnywhereRules time          :    0.001 s,      #         89
+      no anywhere rules                :           ,      #         89
+    remaining time & # cached        :    0.017 s,      #        162
+
+  Recursive event counts:
+  resolveFunctionAndAnywhere time  :           ,      #        126
+    evaluateFunction time            :           ,      #          0
+      builtin evaluation               :           ,      #          0
+      no function rules                :           ,      #          0
+    applyAnywhereRules time          :           ,      #          0
+      no anywhere rules                :           ,      #          0
+    # cached                         :           ,      #        126
+==================================
+
+
+Initial term
+=====================
+
+<generatedTop>
+  <k>
+    fetchNoDBG
+  </k>
+  <functargets>
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+  </functargets>
+  <rotargets>
+    .Map
+  </rotargets>
+  <datatargets>
+    .Map
+  </datatargets>
+  <bsstargets>
+    .Map
+  </bsstargets>
+  <entrypoint>
+    .
+  </entrypoint>
+  <nextLocPc>
+    _0
+  </nextLocPc>
+  <lastseenlabel>
+    .
+  </lastseenlabel>
+  <currentsection>
+    "text"
+  </currentsection>
+  <memstate>
+    <text>
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( idivq %rbx , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands ) )
+    </text>
+    <stack>
+      <memory>
+        <nextLoc>
+          1
+        </nextLoc>
+        <objects>
+          mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+        </objects>
+        <freed>
+          .Set
+        </freed>
+      </memory>
+      <stackbase>
+        stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+      </stackbase>
+      <robase>
+        roBaseInfo ( . , . , . )
+      </robase>
+      <database>
+        dataBaseInfo ( . , . , . )
+      </database>
+      <bssbase>
+        bssBaseInfo ( . , . , . )
+      </bssbase>
+    </stack>
+  </memstate>
+  <environment>
+    <argc>
+      .
+    </argc>
+    <argv>
+      .
+    </argv>
+  </environment>
+  <regstate>
+    "AF" |-> _7
+    "CF" |-> _9
+    "OF" |-> _11
+    "PF" |-> _13
+    "RAX" |-> mi ( 64 , V_RAX )
+    "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "RBX" |-> mi ( 64 , V_RBX )
+    "RCX" |-> mi ( 64 , V_RCX )
+    "RDI" |-> mi ( 64 , V_RDI )
+    "RDX" |-> mi ( 64 , V_RDX )
+    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    "RSI" |-> mi ( 64 , V_RSI )
+    "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "SF" |-> _15
+    "ZF" |-> _17
+  </regstate>
+  _35
+  _36
+  _37
+  _38
+  _39
+</generatedTop>
+/\
+  V_RAX <Int 18446744073709551616 ==K true
+#And
+  V_RAX >=Int 0 ==K true
+#And
+  V_RBX <Int 18446744073709551616 ==K true
+#And
+  V_RBX >=Int 0 ==K true
+#And
+  V_RCX <Int 18446744073709551616 ==K true
+#And
+  V_RCX >=Int 0 ==K true
+#And
+  V_RDI <Int 18446744073709551616 ==K true
+#And
+  V_RDI >=Int 0 ==K true
+#And
+  V_RDX <Int 18446744073709551616 ==K true
+#And
+  V_RDX >=Int 0 ==K true
+#And
+  V_RSI <Int 18446744073709551616 ==K true
+#And
+  V_RSI >=Int 0 ==K true
+
+
+Target term
+=====================
+
+<generatedTop>
+  <k>
+    exit_0
+  </k>
+  <functargets>
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+  </functargets>
+  <rotargets>
+    .Map
+  </rotargets>
+  <datatargets>
+    .Map
+  </datatargets>
+  <bsstargets>
+    .Map
+  </bsstargets>
+  <entrypoint>
+    .
+  </entrypoint>
+  <nextLocPc>
+    _0
+  </nextLocPc>
+  <lastseenlabel>
+    .
+  </lastseenlabel>
+  <currentsection>
+    "text"
+  </currentsection>
+  <memstate>
+    <text>
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( idivq %rbx , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands ) )
+    </text>
+    <stack>
+      <memory>
+        <nextLoc>
+          1
+        </nextLoc>
+        <objects>
+          mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> _19
+          symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> _20
+          symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> _21
+          symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> _22
+          symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> _23
+          symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> _24
+          symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> _25
+          symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> _26
+          symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> _27
+          symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> _28
+          symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> _29
+          symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> _30
+          symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> _31
+          symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> _32
+          symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> _33
+          symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> _34
+          symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+        </objects>
+        <freed>
+          .Set
+        </freed>
+      </memory>
+      <stackbase>
+        stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+      </stackbase>
+      <robase>
+        roBaseInfo ( . , . , . )
+      </robase>
+      <database>
+        dataBaseInfo ( . , . , . )
+      </database>
+      <bssbase>
+        bssBaseInfo ( . , . , . )
+      </bssbase>
+    </stack>
+  </memstate>
+  <environment>
+    <argc>
+      .
+    </argc>
+    <argv>
+      .
+    </argv>
+  </environment>
+  <regstate>
+    "AF" |-> _8
+    "CF" |-> _10
+    "OF" |-> _12
+    "PF" |-> _14
+    "RAX" |-> mi ( 64 , _1 )
+    "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "RBX" |-> mi ( 64 , _2 )
+    "RCX" |-> mi ( 64 , _3 )
+    "RDI" |-> mi ( 64 , _6 )
+    "RDX" |-> mi ( 64 , _4 )
+    "RIP" |-> 64'18446744073709551615
+    "RSI" |-> mi ( 64 , _5 )
+    "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1024 )
+    "SF" |-> _16
+    "ZF" |-> _18
+  </regstate>
+  _35
+  _36
+  _37
+  _38
+  _39
+</generatedTop>
+/\
+#True
+
+
+STEP 1 v1 :    4.078 s, 		 2833 MB, gc:  0.000 %
+===================
+<memory>
+  <nextLoc>
+    1
+  </nextLoc>
+  <objects>
+    mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+  </objects>
+  <freed>
+    .Set
+  </freed>
+</memory>
+
+STEP 2 v1 :    5.670 s, 		 3536 MB, gc:  0.000 %
+===================
+<memory>
+  <nextLoc>
+    1
+  </nextLoc>
+  <objects>
+    mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+  </objects>
+  <freed>
+    .Set
+  </freed>
+</memory>
+
+Step above: 2, evaluation ended with no successors.
+
+SPEC FAILED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/idivq_r64/test-xspec.k Location(6,5,101,61)
+==================================
+Success execution paths: 0
+Failed execution paths: 1
+Longest path: 2 steps
+Stats for each phase, time, used memory, implicit main GC time percentage:
+Total                 :  197.160 s,	 4225 MB, gc:  2.591 %
+  Parsing             :  189.556 s,	 2589 MB, gc:  2.652 %
+  Init                :    0.566 s,	 2720 MB, gc:  0.000 %
+  Execution           :    7.038 s,	 4225 MB, gc:  1.151 %
+
+Init+Execution time:       7.604 s
+
+  Time and top-level event counts:
+  resolveFunctionAndAnywhere time  :    0.109 s,      #        530
+    evaluateFunction time            :    0.085 s,      #        250
+      builtin evaluation               :           ,      #        163
+      function rule                    :           ,      #          3
+      no function rules                :           ,      #         84
+    applyAnywhereRules time          :    0.001 s,      #        108
+      no anywhere rules                :           ,      #        108
+    remaining time & # cached        :    0.023 s,      #        172
+  log time                         :    2.831 s,      #          3
+
+  Recursive event counts:
+  resolveFunctionAndAnywhere time  :           ,      #        145
+    evaluateFunction time            :           ,      #          5
+      builtin evaluation               :           ,      #          1
+      function rule                    :           ,      #          4
+      no function rules                :           ,      #          0
+    applyAnywhereRules time          :           ,      #          0
+      no anywhere rules                :           ,      #          0
+    # cached                         :           ,      #        140
+
+Max memory : 262144 MB
+==================================
+
+<generatedTop>
+  <k>
+    execinstr ( idivq %rbx , .Operands ) ~> fetchNoDBG
+  </k>
+  <functargets>
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+  </functargets>
+  <rotargets>
+    .Map
+  </rotargets>
+  <datatargets>
+    .Map
+  </datatargets>
+  <bsstargets>
+    .Map
+  </bsstargets>
+  <entrypoint>
+    .
+  </entrypoint>
+  <nextLocPc>
+    _0
+  </nextLocPc>
+  <lastseenlabel>
+    .
+  </lastseenlabel>
+  <currentsection>
+    "text"
+  </currentsection>
+  <memstate>
+    <text>
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( idivq %rbx , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands ) )
+    </text>
+    <stack>
+      <memory>
+        <nextLoc>
+          1
+        </nextLoc>
+        <objects>
+          mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+        </objects>
+        <freed>
+          .Set
+        </freed>
+      </memory>
+      <stackbase>
+        stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+      </stackbase>
+      <robase>
+        roBaseInfo ( . , . , . )
+      </robase>
+      <database>
+        dataBaseInfo ( . , . , . )
+      </database>
+      <bssbase>
+        bssBaseInfo ( . , . , . )
+      </bssbase>
+    </stack>
+  </memstate>
+  <environment>
+    <argc>
+      .
+    </argc>
+    <argv>
+      .
+    </argv>
+  </environment>
+  <regstate>
+    "AF" |-> _7
+    "CF" |-> _9
+    "OF" |-> _11
+    "PF" |-> _13
+    "RAX" |-> mi ( 64 , V_RAX )
+    "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "RBX" |-> mi ( 64 , V_RBX )
+    "RCX" |-> mi ( 64 , V_RCX )
+    "RDI" |-> mi ( 64 , V_RDI )
+    "RDX" |-> mi ( 64 , V_RDX )
+    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 )
+    "RSI" |-> mi ( 64 , V_RSI )
+    "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "SF" |-> _15
+    "ZF" |-> _17
+  </regstate>
+  _35
+  _36
+  _37
+  _38
+  _39
+</generatedTop>
+Command exited with non-zero status 1
+298.55user 120.55system 3:21.01elapsed 208%CPU (0avgtext+0avgdata 19581040maxresident)k
+0inputs+178968outputs (0major+8379264minor)pagefaults 0swaps
