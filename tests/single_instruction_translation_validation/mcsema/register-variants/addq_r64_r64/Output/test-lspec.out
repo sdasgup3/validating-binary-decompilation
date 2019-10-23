@@ -1,32 +1,32 @@
-Importing: Source(/home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/././test-lspec.k)
-Importing: Source(/home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k)
-Parse spec modules [0/9 rules]                               =  0.010s
-StateLog: /home/sdasgup3/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/././test-lspec.k)
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k)
+Parse spec modules [5/9 rules]                               =  0.015s
+StateLog: /home/ubuntu/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
 
-Parsing finished:   55.738 s
+Parsing finished:  117.146 s
 Pre-processing rule:
 rule too long...
-	Source: /home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k Location(5,1,631,58)
+	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k Location(5,1,631,58)
 ==================================
 
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :   58.194 s,	  489 MB, gc:  2.296 %
-  Parsing             :   55.738 s,	  879 MB, gc:  2.397 %
-  Init                :    2.456 s,	  489 MB, gc:  0.000 %
+Total                 :  121.440 s,	 4277 MB, gc:  5.457 %
+  Parsing             :  117.146 s,	 3292 MB, gc:  5.657 %
+  Init                :    4.294 s,	 4277 MB, gc:  0.000 %
 
-Init+Execution time:       2.456 s
+Init+Execution time:       4.294 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.065 s,      #      10445
-    evaluateFunction time            :    0.040 s,      #        807
+  resolveFunctionAndAnywhere time  :    0.098 s,      #      10445
+    evaluateFunction time            :    0.058 s,      #        807
       builtin evaluation               :           ,      #        754
       function rule                    :           ,      #          1
       no function rules                :           ,      #         52
-    applyAnywhereRules time          :    0.001 s,      #       1514
+    applyAnywhereRules time          :    0.003 s,      #       1514
       no anywhere rules                :           ,      #       1514
-    remaining time & # cached        :    0.023 s,      #       8124
+    remaining time & # cached        :    0.037 s,      #       8124
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #       3195
@@ -637,14 +637,6 @@ Initial term
 #And
   V_PF >=Int 0 ==K true
 #And
-  V_SF <=Int 1 ==K true
-#And
-  V_SF >=Int 0 ==K true
-#And
-  V_ZF <=Int 1 ==K true
-#And
-  V_ZF >=Int 0 ==K true
-#And
   V_RAX <=Int 9223372036854775807 ==K true
 #And
   V_RAX >=Int -9223372036854775808 ==K true
@@ -668,6 +660,14 @@ Initial term
   V_RSI <=Int 9223372036854775807 ==K true
 #And
   V_RSI >=Int -9223372036854775808 ==K true
+#And
+  V_SF <=Int 1 ==K true
+#And
+  V_SF >=Int 0 ==K true
+#And
+  V_ZF <=Int 1 ==K true
+#And
+  V_ZF >=Int 0 ==K true
 
 
 Target term
@@ -1250,7 +1250,7 @@ Target term
 #True
 
 
-STEP 1 v1 :    5.328 s, 		  607 MB, gc:  0.000 %
+STEP 1 v1 :    8.168 s, 		 4698 MB, gc:  0.000 %
 ===================
 <memory>
   <nextLoc>
@@ -1342,7 +1342,7 @@ STEP 1 v1 :    5.328 s, 		  607 MB, gc:  0.000 %
   </freed>
 </memory>
 
-STEP 1950 v1 :    9.743 s, 		  570 MB, gc:  5.096 %
+STEP 1950 v1 :   17.002 s, 		 4848 MB, gc:  3.645 %
 ===================
 <memory>
   <nextLoc>
@@ -2027,20 +2027,6 @@ Success final states:
   _83
 </generatedTop>
 /\
-  _79 ==K <callStack>
-    R_DotVar1
-  </callStack>
-#And
-  _80 ==K <control>
-    R__1
-    R__2
-    R__3
-    R__4
-    R__5
-    R__6
-    R__7
-  </control>
-#And
   V_AF <=Int 1 ==K true
 #And
   V_AF >=Int 0 ==K true
@@ -2060,14 +2046,6 @@ Success final states:
   V_PF <=Int 1 ==K true
 #And
   V_PF >=Int 0 ==K true
-#And
-  V_SF <=Int 1 ==K true
-#And
-  V_SF >=Int 0 ==K true
-#And
-  V_ZF <=Int 1 ==K true
-#And
-  V_ZF >=Int 0 ==K true
 #And
   V_RAX <=Int 9223372036854775807 ==K true
 #And
@@ -2092,68 +2070,78 @@ Success final states:
   V_RSI <=Int 9223372036854775807 ==K true
 #And
   V_RSI >=Int -9223372036854775808 ==K true
+#And
+  V_SF <=Int 1 ==K true
+#And
+  V_SF >=Int 0 ==K true
+#And
+  V_ZF <=Int 1 ==K true
+#And
+  V_ZF >=Int 0 ==K true
+#And
+  _79 ==K <callStack>
+    R_DotVar1
+  </callStack>
+#And
+  _80 ==K <control>
+    R__1
+    R__2
+    R__3
+    R__4
+    R__5
+    R__6
+    R__7
+  </control>
 
 
-SPEC PROVED: /home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k Location(5,1,631,58)
+SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k Location(5,1,631,58)
 ==================================
 Execution paths: 1
 Longest path: 1950 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :   70.684 s,	  568 MB, gc:  2.208 %
-  Parsing             :   55.738 s,	  879 MB, gc:  2.397 %
-  Init                :    2.456 s,	  489 MB, gc:  0.000 %
-  Execution           :   12.490 s,	  568 MB, gc:  1.801 %
+Total                 :  146.898 s,	 3380 MB, gc:  7.065 %
+  Parsing             :  117.146 s,	 3292 MB, gc:  5.657 %
+  Init                :    4.294 s,	 4277 MB, gc:  0.000 %
+  Execution           :   25.458 s,	 3380 MB, gc: 14.734 %
 
-Init+Execution time:      14.946 s
-  query build time                 :    0.020 s,      #         43
-  Z3 Function rule implication time:    0.079 s,      #          6
-      sat           :       6
+Init+Execution time:      29.752 s
+  query build time                 :    0.120 s,      #         47
+  Z3 Function rule implication time:    0.505 s,      #         45
+      sat           :       43
+      unsat (proved):       2
     cached queries:       34
-    query build failures: 35
-  Z3 Regular rule constraint time  :    0.022 s,      #          2
+  Z3 Regular rule constraint time  :    0.025 s,      #          2
       sat           :       2
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.665 s,      #      20816
-    evaluateFunction time            :    0.596 s,      #       2798
+  resolveFunctionAndAnywhere time  :    1.811 s,      #      20816
+    evaluateFunction time            :    1.711 s,      #       2798
       builtin evaluation               :           ,      #       2090
       function rule                    :           ,      #        260
       sort predicate                   :           ,      #        198
       no rule applicable               :           ,      #        106
       no function rules                :           ,      #        144
-    applyAnywhereRules time          :    0.004 s,      #       7823
+    applyAnywhereRules time          :    0.006 s,      #       7823
       no anywhere rules                :           ,      #       7823
-    remaining time & # cached        :    0.065 s,      #      10195
-  log time                         :    1.797 s,      #       1951
-  impliesSMT time                  :    0.095 s,      #         75
+    remaining time & # cached        :    0.094 s,      #      10195
+  log time                         :    6.072 s,      #       1951
+  impliesSMT time                  :    0.625 s,      #         79
 
   Recursive event counts:
-  resolveFunctionAndAnywhere time  :           ,      #     294800
-    evaluateFunction time            :           ,      #       1123
+  resolveFunctionAndAnywhere time  :           ,      #     294812
+    evaluateFunction time            :           ,      #       1133
       builtin evaluation               :           ,      #        413
-      function rule                    :           ,      #        516
+      function rule                    :           ,      #        520
       sort predicate                   :           ,      #          0
       no rule applicable               :           ,      #        114
-      no function rules                :           ,      #         80
+      no function rules                :           ,      #         86
     applyAnywhereRules time          :           ,      #        239
       no anywhere rules                :           ,      #        239
-    # cached                         :           ,      #     293438
+    # cached                         :           ,      #     293440
 
-Max memory : 7282 MB
+Max memory : 8192 MB
 ==================================
 
 #True
-[Warning] Internal: execution phase: missing SMTLib translation for _&Int_ .
-Please re-run with the --debug-z3 flag. Search the logs starting with 'Z3
-warning' to see the Z3 implication that generated the warning. (missing SMTLib
-translation for _&Int_)
-[Warning] Internal: execution phase: missing SMTLib translation for _>>Int_ .
-Please re-run with the --debug-z3 flag. Search the logs starting with 'Z3
-warning' to see the Z3 implication that generated the warning. (missing SMTLib
-translation for _>>Int_)
-[Warning] Internal: execution phase: missing SMTLib translation for _xorInt_ .
-Please re-run with the --debug-z3 flag. Search the logs starting with 'Z3
-warning' to see the Z3 implication that generated the warning. (missing SMTLib
-translation for _xorInt_)
-122.51user 16.14system 1:11.51elapsed 193%CPU (0avgtext+0avgdata 1802536maxresident)k
-0inputs+226312outputs (0major+540909minor)pagefaults 0swaps
+365.01user 407.91system 2:28.58elapsed 520%CPU (0avgtext+0avgdata 6728840maxresident)k
+80inputs+173896outputs (1major+4607181minor)pagefaults 0swaps

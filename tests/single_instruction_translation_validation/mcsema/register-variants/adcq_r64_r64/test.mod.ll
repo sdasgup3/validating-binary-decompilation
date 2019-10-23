@@ -10,7 +10,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_6e4__fini_type = type <{ [9 x i8] }>
 %seg_6f0__rodata_type = type <{ [4 x i8] }>
 %seg_6f4__eh_frame_hdr_type = type <{ [60 x i8] }>
-%seg_730__eh_frame_type = type <{ [260 x i8] }>
+%seg_730__eh_frame_type = type <{ [256 x i8] }>
 %seg_200de0__init_array_type = type <{ i64, i64 }>
 %seg_200df0__jcr_type = type <{ [8 x i8] }>
 %seg_201000__data_type = type <{ [8 x i8], i64 }>
@@ -224,7 +224,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6Memo
   ret %struct.Memory* %0
 }
 
-define %struct.Memory* @routine_addq__rax___rbx(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+define %struct.Memory* @routine_adcq_r64_r64(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -291,6 +291,6 @@ entry:
   store i8 60, i8* %df, align 1
   store i8 70, i8* %of, align 1
 
-  %call = call %struct.Memory* @routine_addq__rax___rbx(%struct.State* %state, i64 0, %struct.Memory* %mem)
+  %call = call %struct.Memory* @routine_adcq_r64_r64(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

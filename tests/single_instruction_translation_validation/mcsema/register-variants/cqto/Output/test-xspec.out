@@ -1,0 +1,9 @@
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cqto/././test-xspec.k)
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cqto/test-xspec.k)
+[Error] Compiler: Had 1 parsing errors.
+[Error] Inner Parser: Parse error: unexpected token ','.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cqto/test-xspec.k)
+	Location(41,77,41,78)
+Command exited with non-zero status 113
+96.72user 35.73system 0:53.12elapsed 249%CPU (0avgtext+0avgdata 4985308maxresident)k
+0inputs+174056outputs (0major+2415738minor)pagefaults 0swaps

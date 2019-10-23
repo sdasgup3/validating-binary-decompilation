@@ -2,27 +2,70 @@
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
-
 %union.anon = type { i64 }
-%struct.State = type {%struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, i64, i64, i64, %struct.GPR}
-
+%seg_4f8__init_type = type <{ [23 x i8] }>
+%seg_510__plt_type = type <{ [16 x i8] }>
+%seg_520__plt_got_type = type <{ [8 x i8] }>
+%seg_530__text_type = type <{ [434 x i8] }>
+%seg_6e4__fini_type = type <{ [9 x i8] }>
+%seg_6f0__rodata_type = type <{ [4 x i8] }>
+%seg_6f4__eh_frame_hdr_type = type <{ [60 x i8] }>
+%seg_730__eh_frame_type = type <{ [256 x i8] }>
+%seg_200de0__init_array_type = type <{ i64, i64 }>
+%seg_200df0__jcr_type = type <{ [8 x i8] }>
+%seg_201000__data_type = type <{ [8 x i8], i64 }>
+%__bss_start_type = type <{ [8 x i8] }>
+%struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
 %union.vec512_t = type { %struct.uint64v8_t }
 %struct.uint64v8_t = type { [8 x i64] }
 %struct.ArithFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8 }
+%struct.Segments = type { i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector }
+%union.SegmentSelector = type { i16 }
+%struct.AddressSpace = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
 %struct.Reg = type { %union.anon }
 %struct.GPR = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
-%struct.float32v8_t = type { [8 x float] }
-%struct.int32v8_t = type { [8 x i32] }
-%struct.uint16v16_t = type { [16 x i16] }
-%struct.uint8v32_t = type { [32 x i8] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
-%struct.uint64v4_t = type { [4 x i64] }
-%struct.anon.2 = type { i8, i8 }
+%struct.X87Stack = type { [8 x %struct.anon.3] }
+%struct.anon.3 = type { i64, double }
+%struct.MMX = type { [8 x %struct.anon.4] }
+%struct.anon.4 = type { i64, %union.vec64_t }
+%union.vec64_t = type { %struct.uint64v1_t }
+%struct.uint64v1_t = type { [1 x i64] }
+%struct.FPUStatusFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, [4 x i8] }
+%union.FPU = type { %struct.anon.13 }
+%struct.anon.13 = type { %struct.FpuFXSAVE, [96 x i8] }
+%struct.FpuFXSAVE = type { %union.SegmentSelector, %union.SegmentSelector, %union.FPUAbridgedTagWord, i8, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, %union.FPUControlStatus, %union.FPUControlStatus, [8 x %struct.FPUStackElem], [16 x %union.vec128_t] }
+%union.FPUAbridgedTagWord = type { i8 }
+%union.FPUControlStatus = type { i32 }
+%struct.FPUStackElem = type { %union.anon.11, [6 x i8] }
+%union.anon.11 = type { %struct.float80_t }
+%struct.float80_t = type { [10 x i8] }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.SegmentCaches = type { %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow }
+%struct.SegmentShadow = type { %union.anon, i32, i32 }
 %struct.Memory = type { i64 }
+%struct.uint8v32_t = type { [32 x i8] }
+%struct.anon.2 = type { i8, i8 }
+%struct.int32v8_t = type { [8 x i32] }
+%struct.float32v8_t = type { [8 x float] }
+%struct.uint8v8_t = type { [8 x i8] }
+%struct.uint8v16_t = type { [16 x i8] }
+%struct.uint16v8_t = type { [8 x i16] }
+%struct.uint8v4_t = type { [4 x i8] }
+%struct.int16v4_t = type { [4 x i16] }
+%struct.int32v4_t = type { [4 x i32] }
+%struct.uint64v2_t = type { [2 x i64] }
+%struct.uint64v4_t = type { [4 x i64] }
+%struct.uint128v2_t = type { [2 x i128] }
+%struct.uint16v16_t = type { [16 x i16] }
+%struct.float64v4_t = type { [4 x double] }
+%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
+%"class.std::bitset" = type { %struct.uint64v4_t }
+%struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
+%struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
+%struct.anon.5 = type { i32, i32 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -127,8 +170,83 @@ declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7PCMPGTWI3VnWI8vec256_tE2VnI8vec128_tES6_EEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
   %6 = alloca <2 x i64>, align 16
   %7 = bitcast <2 x i64>* %6 to { i64, i64 }*
+  %8 = bitcast <2 x i64>* %6 to %struct.uint16v8_t*
+  %9 = alloca <2 x i64>, align 16
+  %10 = bitcast <2 x i64>* %9 to { i64, i64 }*
+  %11 = bitcast <2 x i64>* %9 to %struct.uint16v8_t*
+  %12 = bitcast <2 x i64>* %6 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %12) #22
+  %13 = bitcast i8* %3 to <2 x i64>*
+  %14 = load <2 x i64>, <2 x i64>* %13, align 1
+  store <2 x i64> %14, <2 x i64>* %6, align 16
+  %15 = bitcast <2 x i64>* %9 to i8*
+  call void @my.lifetime.start(i64 16, i8* nonnull %15) #22
+  %16 = bitcast i8* %4 to <2 x i64>*
+  %17 = load <2 x i64>, <2 x i64>* %16, align 1
+  store <2 x i64> %17, <2 x i64>* %9, align 16
+  %18 = extractelement <2 x i64> %14, i32 0
+  %19 = trunc i64 %18 to i16
+  %20 = extractelement <2 x i64> %17, i32 0
+  %21 = trunc i64 %20 to i16
+  %22 = lshr i64 %18, 16
+  %23 = trunc i64 %22 to i16
+  %24 = lshr i64 %20, 16
+  %25 = trunc i64 %24 to i16
+  %26 = lshr i64 %18, 32
+  %27 = trunc i64 %26 to i16
+  %28 = lshr i64 %20, 32
+  %29 = trunc i64 %28 to i16
+  %30 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %8, i64 0, i32 0, i64 3
+  %31 = load i16, i16* %30, align 2
+  %32 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 3
+  %33 = load i16, i16* %32, align 2
+  %34 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %7, i64 0, i32 1
+  %35 = bitcast i64* %34 to i16*
+  %36 = load i16, i16* %35, align 8
+  %37 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %10, i64 0, i32 1
+  %38 = bitcast i64* %37 to i16*
+  %39 = load i16, i16* %38, align 8
+  %40 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %8, i64 0, i32 0, i64 5
+  %41 = load i16, i16* %40, align 2
+  %42 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 5
+  %43 = load i16, i16* %42, align 2
+  %44 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %8, i64 0, i32 0, i64 6
+  %45 = load i16, i16* %44, align 4
+  %46 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 6
+  %47 = load i16, i16* %46, align 4
+  %48 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %8, i64 0, i32 0, i64 7
+  %49 = load i16, i16* %48, align 2
+  %50 = getelementptr inbounds %struct.uint16v8_t, %struct.uint16v8_t* %11, i64 0, i32 0, i64 7
+  %51 = load i16, i16* %50, align 2
+  %52 = insertelement <8 x i16> undef, i16 %19, i32 0
+  %53 = insertelement <8 x i16> %52, i16 %23, i32 1
+  %54 = insertelement <8 x i16> %53, i16 %27, i32 2
+  %55 = insertelement <8 x i16> %54, i16 %31, i32 3
+  %56 = insertelement <8 x i16> %55, i16 %36, i32 4
+  %57 = insertelement <8 x i16> %56, i16 %41, i32 5
+  %58 = insertelement <8 x i16> %57, i16 %45, i32 6
+  %59 = insertelement <8 x i16> %58, i16 %49, i32 7
+  %60 = insertelement <8 x i16> undef, i16 %21, i32 0
+  %61 = insertelement <8 x i16> %60, i16 %25, i32 1
+  %62 = insertelement <8 x i16> %61, i16 %29, i32 2
+  %63 = insertelement <8 x i16> %62, i16 %33, i32 3
+  %64 = insertelement <8 x i16> %63, i16 %39, i32 4
+  %65 = insertelement <8 x i16> %64, i16 %43, i32 5
+  %66 = insertelement <8 x i16> %65, i16 %47, i32 6
+  %67 = insertelement <8 x i16> %66, i16 %51, i32 7
+  %68 = icmp sgt <8 x i16> %59, %67
+  %69 = sext <8 x i1> %68 to <8 x i16>
+  %70 = bitcast i8* %2 to <8 x i16>*
+  store <8 x i16> %69, <8 x i16>* %70, align 1
+  %71 = getelementptr inbounds i8, i8* %2, i64 16
+  %72 = bitcast i8* %71 to <8 x i16>*
+  store <8 x i16> zeroinitializer, <8 x i16>* %72, align 1
+  call void @my.lifetime.end(i64 16, i8* nonnull %15) #22
+  call void @my.lifetime.end(i64 16, i8* nonnull %12) #22
+  ret %struct.Memory* %0
+}
 
-define %struct.Memory* @routine_vpcmpgtw_xmm_xmm_xmm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+define %struct.Memory* @routine_vpcmpgtw_xmm_xmm_xmm(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -156,7 +274,11 @@ block_530:
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+
   %mem = alloca %struct.Memory
+  %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
+  store i64 51, i64* %memf0, align 8
+  
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -166,6 +288,15 @@ entry:
   %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
   %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
   %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
+
+  %cf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 1
+  %pf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 3
+  %af = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 5
+  %zf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 7
+  %sf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 9
+  %df = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 11
+  %of = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 13
+
   store i64 100, i64* %addr1, align 8
   store i64 200, i64* %addr2, align 8
   store i64 300, i64* %addr3, align 8
@@ -175,6 +306,15 @@ entry:
   store i64 700, i64* %addr7, align 8
   store i64 800, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
+
+  store i8 10, i8* %cf, align 1
+  store i8 20, i8* %pf, align 1
+  store i8 30, i8* %af, align 1
+  store i8 40, i8* %zf, align 1
+  store i8 50, i8* %sf, align 1
+  store i8 60, i8* %df, align 1
+  store i8 70, i8* %of, align 1
+
   %call = call %struct.Memory* @routine_vpcmpgtw_xmm_xmm_xmm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

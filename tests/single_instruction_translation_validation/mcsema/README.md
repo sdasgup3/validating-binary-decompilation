@@ -87,7 +87,7 @@ grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee logs/unsupported_dec
 cd  tests/mcsema
 
 cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
-cat logs/supported_decompilation_register.txt  | parallel  "echo; ../../scripts/declutter.pl --file register-variants/{}/test.ll --opc {}"
+cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
 
 cat logs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
 cat logs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
@@ -97,6 +97,34 @@ cat logs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/
 
 cat logs/supported_decompilation_system.txt | parallel "cd system-variants/{}; make mcsema; cd -"
 cat logs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
+```
+
+## Generate spec output file for x86
+```
+# prereq: test.s
+# make collect
+# make kompile
+# make xstate
+
+// Generate the test-xspec.k file
+cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
+cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make xprove; cd -"
+```
+
+## Generate spec output file for LLVM
+```
+make mcsema // Generate the decompiled LLVM file test.ll
+// Modify the LLVM file to test.mod.ll
+
+make kli // Generate the krun output (concrete run output) of test.mod.ll
+// Generate the test-lspec.k file
+make lprove
+```
+
+## Compare the z3 output
+```
+// Generate the z3 query file test-z3.py
+python test-z3.py
 ```
 
 ## Check if the  opcode2instruction tool is equiv to specgen output
@@ -115,32 +143,6 @@ ls memory-variants/ | parallel -j 1 cat memory-variants/{}/seed/{}.s |& tee ~/Ju
 remove clutter from ~/Junk/out and diff
 
 
-```
-
-## Generate spec output file for x86
-```
-prereq: test.s
-make collect
-make kompile
-make xstate
-// Generate the test-xspec.k file
-make xprove
-```
-
-## Generate spec output file for LLVM
-```
-make mcsema // Generate the decompiled LLVM file test.ll
-// Modify the LLVM file to test.mod.ll
-
-make kli // Generate the krun output (concrete run output) of test.mod.ll
-// Generate the test-lspec.k file
-make lprove
-```
-
-## Compare the z3 output
-```
-// Generate the z3 query file test-z3.py
-python test-z3.py
 ```
 
 ## To do

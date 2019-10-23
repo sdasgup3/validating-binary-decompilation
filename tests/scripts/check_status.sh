@@ -45,6 +45,15 @@ kproveCheck() {
   fi
 }
 
+kliCheck() {
+  msg=$1
+  if grep -q "exitCode ( 0 )" Output/test-lstate.out; then
+    echo -e "\e[32mKli Pass\e[39m:-" `pwd`:$msg
+  else
+    echo -e "\e[31mKli Fail\e[39m:-" `pwd`:$msg
+  fi
+}
+
 while [ "$1" != "" ]; do
     case $1 in
         --compd )        shift
@@ -53,8 +62,11 @@ while [ "$1" != "" ]; do
         --match )        shift
                          matchCheck $msg
                          ;;
-        --kprove )        shift
+        --kprove )       shift
                          kproveCheck $msg
+                         ;;
+        --kli )          shift
+                         kliCheck $msg
                          ;;
         --msg )          shift
                          msg=$1
