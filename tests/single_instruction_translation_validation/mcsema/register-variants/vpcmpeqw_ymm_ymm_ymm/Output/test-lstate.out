@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:198:13: error: use of undefined value '@my.lifetime.end'
+  call void @my.lifetime.end(i64 32, i8* nonnull %9) #22
+            ^
+0.01user 0.02system 0:00.03elapsed 109%CPU (0avgtext+0avgdata 26988maxresident)k
+0inputs+16outputs (0major+3275minor)pagefaults 0swaps

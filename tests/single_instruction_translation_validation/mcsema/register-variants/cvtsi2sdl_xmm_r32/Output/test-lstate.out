@@ -1,0 +1,10 @@
+[Error] Critical: Parser returned a non-zero exit code: 113
+Stdout:
+
+Stderr:
+[Error] Inner Parser: Scanner error: unexpected character sequence ':'.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cvtsi2sdl_xmm_r32/./llvm-kast.test.mod.ll.mXmZlVB2)
+	Location(1,5949,1,5950)
+Command exited with non-zero status 113
+26.26user 8.77system 0:15.83elapsed 221%CPU (0avgtext+0avgdata 556336maxresident)k
+0inputs+4832outputs (0major+386991minor)pagefaults 0swaps

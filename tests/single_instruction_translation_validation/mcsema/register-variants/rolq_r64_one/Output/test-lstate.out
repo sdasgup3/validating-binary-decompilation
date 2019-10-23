@@ -1,0 +1,10 @@
+[Error] Critical: Parser returned a non-zero exit code: 113
+Stdout:
+
+Stderr:
+[Error] Inner Parser: Scanner error: unexpected character sequence 's'.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/rolq_r64_one/./llvm-kast.test.mod.ll.sCOvHnw5)
+	Location(1,14036,1,14037)
+Command exited with non-zero status 113
+22.77user 6.81system 0:15.06elapsed 196%CPU (0avgtext+0avgdata 533512maxresident)k
+0inputs+4800outputs (0major+395474minor)pagefaults 0swaps

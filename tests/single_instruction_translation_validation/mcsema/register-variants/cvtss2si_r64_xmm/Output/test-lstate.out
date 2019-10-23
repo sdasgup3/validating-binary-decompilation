@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:174:24: error: use of undefined value '@my.nearbyint.f32'
+  %8 = tail call float @my.nearbyint.f32(float %7) #22
+                       ^
+0.02user 0.01system 0:00.03elapsed 108%CPU (0avgtext+0avgdata 27968maxresident)k
+0inputs+16outputs (0major+3262minor)pagefaults 0swaps
