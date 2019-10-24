@@ -2,9 +2,9 @@
 Stdout:
 
 Stderr:
-[Error] Inner Parser: Scanner error: unexpected character sequence 's'.
-	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movswq_r64_r16/./llvm-kast.test.mod.ll.Plep2fgO)
-	Location(1,13670,1,13671)
+[Error] Inner Parser: Scanner error: unexpected character sequence 'a'.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movswq_r64_r16/./llvm-kast.test.mod.ll.2HTYEAVW)
+	Location(1,13714,1,13715)
 Command exited with non-zero status 113
-22.80user 7.10system 0:14.94elapsed 200%CPU (0avgtext+0avgdata 518596maxresident)k
-0inputs+4832outputs (0major+347673minor)pagefaults 0swaps
+31.97user 9.72system 0:24.00elapsed 173%CPU (0avgtext+0avgdata 517236maxresident)k
+0inputs+4888outputs (0major+436647minor)pagefaults 0swaps

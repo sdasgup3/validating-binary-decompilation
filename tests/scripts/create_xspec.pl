@@ -23,12 +23,10 @@ use utils;
 
 my $help     = "";
 my $seedfile = "";
-#my $opc = "";
 
 GetOptions(
     "help"   => \$help,
     "seed:s" => \$seedfile,
-#    "opc:s" => \$opc,
 ) or die("Error in command line arguments\n");
 
 sub usage {

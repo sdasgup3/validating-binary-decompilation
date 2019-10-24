@@ -66,10 +66,10 @@
     </formatting>
   </control>
   <globals>
-    builtinID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_begin ) , 0 ) )
-    builtinID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_end ) , 0 ) )
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L6CMOVNLI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 64 ) )  tInt ( 64 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L6CMOVNLI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_ ) , 0 ) )
+    globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
+    globalID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_end ) , 0 ) )
     globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
     globalID ( @my.ctpop.i32 ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , tInt ( 32 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @my.ctpop.i32 ) , 0 ) )
     globalID ( @routine_cmovnll_r32_r32 ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_cmovnll_r32_r32 ) , 0 ) )
@@ -210,28 +210,6 @@
   <functions>
     <function>
       <functionName>
-        builtinID ( @__remill_atomic_begin )
-      </functionName>
-      <callingConvention>
-        ccc
-      </callingConvention>
-      .FormalParametersCell
-      .LocalRegistersCell
-      .BasicBlocksCell
-      .EntryBlockCell
-    </function> <function>
-      <functionName>
-        builtinID ( @__remill_atomic_end )
-      </functionName>
-      <callingConvention>
-        ccc
-      </callingConvention>
-      .FormalParametersCell
-      .LocalRegistersCell
-      .BasicBlocksCell
-      .EntryBlockCell
-    </function> <function>
-      <functionName>
         globalID ( @_ZN12_GLOBAL__N_1L6CMOVNLI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_ )
       </functionName>
       <callingConvention>
@@ -248,6 +226,44 @@
       </basicBlocks>
       <entryBlock>
         localID ( %4 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_begin )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_end )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
       </entryBlock>
     </function> <function>
       <functionName>
@@ -848,5 +864,5 @@
     </getenv>
   </c-library>
 </generatedTop>
-204.78user 22.49system 2:15.90elapsed 167%CPU (0avgtext+0avgdata 1559616maxresident)k
-0inputs+5600outputs (0major+2063595minor)pagefaults 0swaps
+122.68user 18.91system 1:02.55elapsed 226%CPU (0avgtext+0avgdata 2017240maxresident)k
+0inputs+5368outputs (0major+1431511minor)pagefaults 0swaps
