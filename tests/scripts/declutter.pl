@@ -30,6 +30,7 @@ my $renameintrinsics   = "";
 my $defineintrinsics   = "";
 my $definememtype      = "";
 my $definemain         = "";
+my $removedoublecolon  = "";
 my $singleiv           = "";
 my $programiv          = "";
 
@@ -73,6 +74,7 @@ if($singleiv ne "") {
   $renameintrinsics = 1;
   $defineintrinsics = 1;
   $definememtype = 1;
+  $removedoublecolon = 1;
 }
 
 if($programiv ne "") {
@@ -80,7 +82,18 @@ if($programiv ne "") {
   $renameintrinsics = "";
   $defineintrinsics = "";
   $definememtype = "";
+  $removedoublecolon = "";
 }
+
+
+## Remove ::bitset
+if($removedoublecolon) {
+  for (my $i = 0 ; $i < scalar(@lines); $i = $i +1) {
+    $lines[$i] =~ s/::BitMatrix/__BitMatrix/g;
+    $lines[$i] =~ s/::bitset/__bitset/g;
+  }
+}
+
 
 ## Get Target Info
 #my $targetInfo = "";
@@ -217,24 +230,33 @@ sub getMainBody {
             }
         }
 
-        # if ( $tline =~ m/\s*(\S*) = call.*@(.*?)\(.*\).*/ ) {
+        ## The main body can have 2 calls only when the second call is
+        ## to __remill_atomic_end. Otherwise, the main body will have just 1
+        ## call
         if ( $tline =~ m/$callSignature/ ) {
+            my $calledRetVal = $1;
             my $calledFunc = $2;
 
-            # print $calledFunc."\n";
-            if ( isDefined($calledFunc) == 1 ) {
-
-                #print " define... \n";
-                #$countCalls = $countCalls + 1;
-                #if ( $countCalls == 2 ) {
-                #              if ($calledFunc =~ m/RET/) {
-                #                  last;
-                #              }
-                #}
+            if($countCalls == 1) {
+              if($calledFunc eq "__remill_atomic_end") {
                 push @mainBody, $line;
-                $mainRetval = $1;
-                last;
+                $mainRetval = $calledRetVal;
+              } else {
+                exit(1);
+              }
+              last;
             }
+
+            if ( isDefined($calledFunc) == 1 ) {
+                push @mainBody, $line;
+                $mainRetval = $calledRetVal;
+                $countCalls = 1;
+                next;
+            }
+        }
+
+        if($countCalls == 1) {
+          last;
         }
 
         if ( $tline =~ m/store i64 \%1, i64\* \%PC, align 8/ ) {
@@ -349,8 +371,14 @@ sub getDeclarations {
             last;
         }
 
-        if($tline =~ m/__mcsema|wrapper|__got|callback|^@/) {
+        if($tline =~ m/__mcsema|wrapper|__got|callback/) {
           next;
+        }
+
+        if($singleiv) {
+          if($tline =~ m/^@/) {
+            next;
+          }
         }
 
         if ( $tline =~ m/(.*) = (.*)/g ) {
@@ -499,8 +527,15 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
-declare %struct.Memory* \@__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* \@__remill_atomic_end(%struct.Memory*);
+
+define %struct.Memory* \@__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* \@__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
 );
     return $intrinsicDefintions;
 }

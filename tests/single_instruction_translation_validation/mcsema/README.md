@@ -6,44 +6,44 @@ mkdir -p tests/single_instruction_translation_validation/mcsema
 cd !$
 
 // Register Instructions
-parallel -a  logs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{}"
-parallel -a  logs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{} --samereg"
-parallel -a  logs/all_registers.txt  "mv register-variants/{}/instructions/{}/{}.*  register-variants/{}/instructions/"
-parallel -a  logs/all_registers.txt  "mv register-variants/{}/instructions/{}.samereg/{}.samereg.* register-variants/{}/instructions/"
-parallel -a  logs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}"
-parallel -a  logs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}.samereg"
-parallel -a  logs/all_registers.txt  "mkdir -p register-variants/{}/seed"
-parallel -a  logs/all_registers.txt  "mv register-variants/{}/instructions/* register-variants/{}/seed/"
-parallel -a  logs/all_registers.txt  "rm -rf register-variants/{}/instructions"
+parallel -a  docs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{}"
+parallel -a  docs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{} --samereg"
+parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/{}/{}.*  register-variants/{}/instructions/"
+parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/{}.samereg/{}.samereg.* register-variants/{}/instructions/"
+parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}"
+parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}.samereg"
+parallel -a  docs/all_registers.txt  "mkdir -p register-variants/{}/seed"
+parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/* register-variants/{}/seed/"
+parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions"
 
 // Immediate instructions
-parallel -a logs/all_immediates.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --opc {} --workdir immediate-variants/{}"
-parallel -a logs/all_immediates.txt  "mv immediate-variants/{}/instructions/{}/{}.*  immediate-variants/{}/instructions/"
-parallel -a logs/all_immediates.txt  "rm -rf immediate-variants/{}/instructions/{}"
-parallel -a logs/all_immediates.txt  "mkdir -p immediate-variants/{}/seed"
-parallel -a logs/all_immediates.txt  "mv immediate-variants/{}/instructions/* immediate-variants/{}/seed/"
-parallel -a logs/all_immediates.txt  "rm -rf immediate-variants/{}/instructions"
-parallel -a logs/all_immediates.txt  "sed -i 's/0x0/0xa/g'  immediate-variants/{}/seed/{}.s"
+parallel -a docs/all_immediates.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --opc {} --workdir immediate-variants/{}"
+parallel -a docs/all_immediates.txt  "mv immediate-variants/{}/instructions/{}/{}.*  immediate-variants/{}/instructions/"
+parallel -a docs/all_immediates.txt  "rm -rf immediate-variants/{}/instructions/{}"
+parallel -a docs/all_immediates.txt  "mkdir -p immediate-variants/{}/seed"
+parallel -a docs/all_immediates.txt  "mv immediate-variants/{}/instructions/* immediate-variants/{}/seed/"
+parallel -a docs/all_immediates.txt  "rm -rf immediate-variants/{}/instructions"
+parallel -a docs/all_immediates.txt  "sed -i 's/0x0/0xa/g'  immediate-variants/{}/seed/{}.s"
 
 //Memory instructions
-parallel -a logs/all_memories.txt "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --opc {} --workdir memory-variants/{}"
-parallel -a logs/all_memories.txt  "mv memory-variants/{}/instructions/{}/{}.*  memory-variants/{}/instructions/"
-parallel -a logs/all_memories.txt  "rm -rf memory-variants/{}/instructions/{}"
-parallel -a logs/all_memories.txt  "mkdir -p memory-variants/{}/seed"
-parallel -a logs/all_memories.txt  "mv memory-variants/{}/instructions/* memory-variants/{}/seed/"
-parallel -a logs/all_memories.txt  "rm -rf memory-variants/{}/instructions"
-parallel -a logs/all_memories.txt  "sed -i 's/(%rbx)\|(%rcx)\|(%rdx)/-4(%rbp)/g'  memory-variants/{}/seed/{}.s"
-parallel -a logs/all_memories.txt  "sed -i 's/0x0/0xa/g'  memory-variants/{}/seed/{}.s"
+parallel -a docs/all_memories.txt "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --opc {} --workdir memory-variants/{}"
+parallel -a docs/all_memories.txt  "mv memory-variants/{}/instructions/{}/{}.*  memory-variants/{}/instructions/"
+parallel -a docs/all_memories.txt  "rm -rf memory-variants/{}/instructions/{}"
+parallel -a docs/all_memories.txt  "mkdir -p memory-variants/{}/seed"
+parallel -a docs/all_memories.txt  "mv memory-variants/{}/instructions/* memory-variants/{}/seed/"
+parallel -a docs/all_memories.txt  "rm -rf memory-variants/{}/instructions"
+parallel -a docs/all_memories.txt  "sed -i 's/(%rbx)\|(%rcx)\|(%rdx)/-4(%rbp)/g'  memory-variants/{}/seed/{}.s"
+parallel -a docs/all_memories.txt  "sed -i 's/0x0/0xa/g'  memory-variants/{}/seed/{}.s"
 
 // System Instructions
-parallel -a logs/all_system_instructions.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --prepare_concrete --opcode {} --workdir system-variants/{}"
-parallel -a logs/create_separate_seed_files.txt ../../scripts/create_jmp_seed.pl --opc {} --workdir system-variants/{}
-parallel -a logs/selective_jmp.txt mv system-variants/{}/instructions/{}/{}.* system-variants/{}/instructions/
-parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions/{}"
+parallel -a docs/all_system_instructions.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --prepare_concrete --opcode {} --workdir system-variants/{}"
+parallel -a docs/create_separate_seed_files.txt ../../scripts/create_jmp_seed.pl --opc {} --workdir system-variants/{}
+parallel -a docs/selective_jmp.txt mv system-variants/{}/instructions/{}/{}.* system-variants/{}/instructions/
+parallel -a docs/selective_jmp.txt  "rm -rf system-variants/{}/instructions/{}"
 find . -name check_stoke.txt | xargs rm -rf
-parallel -a logs/selective_jmp.txt  "mkdir -p system-variants/{}/seed"
-parallel -a logs/selective_jmp.txt  "mv system-variants/{}/instructions/* system-variants/{}/seed"
-parallel -a logs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
+parallel -a docs/selective_jmp.txt  "mkdir -p system-variants/{}/seed"
+parallel -a docs/selective_jmp.txt  "mv system-variants/{}/instructions/* system-variants/{}/seed"
+parallel -a docs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 ```
 ### Populate C and Makefiles
 ```
@@ -66,56 +66,85 @@ ls system-variants/    | parallel "cd system-variants/{}; make binary; make asse
 ## Finding the (un)supported lists
 ```
 cd test/mcsema
-#grep -lr  "cal.*__remill_sync_hyper_call" register-variants/* |& tee logs/unsupported_decompilation_register.txt
-#grep -lr  "cal.*__remill_sync_hyper_call" immediate-variants/* |& tee logs/unsupported_decompilation_immediate.txt
-#grep -lr  "cal.*__remill_sync_hyper_call" memory-variants/* |& tee logs/unsupported_decompilation_memory.txt
-#grep -lr  "cal.*__remill_sync_hyper_call" system-variants/* |& tee logs/unsupported_decompilation_system.txt
+#grep -lr  "cal.*__remill_sync_hyper_call" register-variants/* |& tee docs/unsupported_decompilation_register.txt
+#grep -lr  "cal.*__remill_sync_hyper_call" immediate-variants/* |& tee docs/unsupported_decompilation_immediate.txt
+#grep -lr  "cal.*__remill_sync_hyper_call" memory-variants/* |& tee docs/unsupported_decompilation_memory.txt
+#grep -lr  "cal.*__remill_sync_hyper_call" system-variants/* |& tee docs/unsupported_decompilation_system.txt
 
-grep -lr  "cal.*HandleUnsupported" register-variants/* |& tee logs/unsupported_decompilation_register.txt
-grep -lr  "cal.*HandleUnsupported" immediate-variants/* |& tee logs/unsupported_decompilation_immediate.txt
-grep -lr  "cal.*HandleUnsupported" memory-variants/* |& tee logs/unsupported_decompilation_memory.txt
-grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee logs/unsupported_decompilation_system.txt
+grep -lr  "cal.*HandleUnsupported" register-variants/* |& tee docs/unsupported_decompilation_register.txt
+grep -lr  "cal.*HandleUnsupported" immediate-variants/* |& tee docs/unsupported_decompilation_immediate.txt
+grep -lr  "cal.*HandleUnsupported" memory-variants/* |& tee docs/unsupported_decompilation_memory.txt
+grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee docs/unsupported_decompilation_system.txt
 
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file logs/all_registers.txt --file logs/unsupported_decompilation_register.txt --show 0 > logs/supported_decompilation_register.txt
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_registers.txt --file docs/unsupported_decompilation_register.txt --show 0 > docs/supported_decompilation_register.txt
 
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file logs/all_immediates.txt --file logs/unsupported_decompilation_immediate.txt --show 0 > logs/supported_decompilation_immediate.txt
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file logs/all_memories.txt --file logs/unsupported_decompilation_memory.txt --show 0 > logs/supported_decompilation_memory.txt
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_immediates.txt --file docs/unsupported_decompilation_immediate.txt --show 0 > docs/supported_decompilation_immediate.txt
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_memories.txt --file docs/unsupported_decompilation_memory.txt --show 0 > docs/supported_decompilation_memory.txt
 ```
 
 ## Populate the decompiled output and modifiled llvm file
 ```
 cd  tests/mcsema
 
-cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
-cat logs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
+cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
 
-cat logs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
-cat logs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
+cat docs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
 
-cat logs/supported_decompilation_memory.txt | parallel "cd memory-variants/{}; make mcsema; cd -"
-cat logs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
+cat docs/supported_decompilation_memory.txt | parallel "cd memory-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
 
-cat logs/supported_decompilation_system.txt | parallel "cd system-variants/{}; make mcsema; cd -"
-cat logs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
+cat docs/supported_decompilation_system.txt | parallel "cd system-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
 ```
 
 ## Generate spec output file for x86
 ```
-cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
-cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
+cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make genxspec; cd -"
+cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 ```
 
 ## Generate spec output file for LLVM
 ```
-cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make kli; cd -"
-cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
-cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make lrpove; cd -"
+cat docs/supported_decompilation_register.txt | parallel -j15 "echo; echo  {}; echo ====;  cd register-variants/{}; make kli; cd -"
+
+cat docs/kliFailR.log | parallel "echo; echo {}; echo === ; head register-variants/{}/Output/test-lstate.out" |& tee ~/Junk/log
+
+cat docs/kliPassR.txt | parallel -j15 "cd register-variants/{}; make genlspec; cd -"
+cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make lrpove; cd -"
 ```
 
 ## Compare the z3 output
 ```
 // Generate the z3 query file test-z3.py
 python test-z3.py
+```
+
+
+
+## Deprecated
+
+## To do
+## test.ll --> test.mod.ll
+- The filename should be test.mod.ll
+- convert i32 to i64  in the structure
+- whenever there is a `add uw/sw/.. operands` --> `add operands`
+- include llvm.ctpop defn
+- handle PC
+- `./remill/Arch/X86/Runtime/State.h`: Handle all registers and flags
+
+
+### Generate spec output file for x86
+```
+# prereq: test.s
+# make collect
+# make kompile
+# make xstate
+
+// Generate the test-xspec.k file
+cat docs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
+cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 ```
 
 ## Check if the  opcode2instruction tool is equiv to specgen output
@@ -134,26 +163,4 @@ ls memory-variants/ | parallel -j 1 cat memory-variants/{}/seed/{}.s |& tee ~/Ju
 remove clutter from ~/Junk/out and diff
 
 
-```
-
-## To do
-## test.ll --> test.mod.ll
-- The filename should be test.mod.ll
-- convert i32 to i64  in the structure
-- whenever there is a `add uw/sw/.. operands` --> `add operands`
-- include llvm.ctpop defn
-- handle PC
-- `./remill/Arch/X86/Runtime/State.h`: Handle all registers and flags
-
-## Deprecated
-### Generate spec output file for x86
-```
-# prereq: test.s
-# make collect
-# make kompile
-# make xstate
-
-// Generate the test-xspec.k file
-cat logs/supported_decompilation_register.txt | parallel ../../scripts/create_xspec.pl --seed register-variants/{}/seed/{}.s
-cat logs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 ```

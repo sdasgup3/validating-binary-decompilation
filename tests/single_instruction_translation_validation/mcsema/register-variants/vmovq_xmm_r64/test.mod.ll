@@ -61,8 +61,8 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.uint128v2_t = type { [2 x i128] }
 %struct.uint16v16_t = type { [16 x i16] }
 %struct.float64v4_t = type { [4 x double] }
-%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
+%"class.(anonymous namespace)__BitMatrix" = type { %"class.std__bitset", [16 x [16 x i8]] }
+%"class.std__bitset" = type { %struct.uint64v4_t }
 %struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
 %struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
 %struct.anon.5 = type { i32, i32 }
@@ -164,8 +164,15 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
-declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
+
+define %struct.Memory* @__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4MOVQI3VnWI8vec256_tE3RVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i64) #0 {
   %5 = bitcast i8* %2 to i64*
@@ -191,8 +198,8 @@ block_530:
   %RBX = bitcast %union.anon* %8 to i64*
   %9 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
   %10 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %9, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std::bitset"*
-  %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
+  %YMM1 = bitcast %union.VectorReg* %10 to %"class.std__bitset"*
+  %11 = bitcast %"class.std__bitset"* %YMM1 to i8*
   %12 = load i64, i64* %RBX
   %13 = load i64, i64* %PC
   %14 = add i64 %13, 5

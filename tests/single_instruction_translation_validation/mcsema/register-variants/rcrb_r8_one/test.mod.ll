@@ -61,8 +61,8 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.uint128v2_t = type { [2 x i128] }
 %struct.uint16v16_t = type { [16 x i16] }
 %struct.float64v4_t = type { [4 x double] }
-%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
+%"class.(anonymous namespace)__BitMatrix" = type { %"class.std__bitset", [16 x [16 x i8]] }
+%"class.std__bitset" = type { %struct.uint64v4_t }
 %struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
 %struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
 %struct.anon.5 = type { i32, i32 }
@@ -164,8 +164,15 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
-declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
+
+define %struct.Memory* @__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3RCRI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* readnone, %struct.State* nocapture dereferenceable(3376), i8* nocapture, i64, i64) #2 {
   %6 = trunc i64 %4 to i8

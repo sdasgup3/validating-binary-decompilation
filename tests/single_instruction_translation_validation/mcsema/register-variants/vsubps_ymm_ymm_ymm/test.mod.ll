@@ -61,8 +61,8 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.uint128v2_t = type { [2 x i128] }
 %struct.uint16v16_t = type { [16 x i16] }
 %struct.float64v4_t = type { [4 x double] }
-%"class.(anonymous namespace)::BitMatrix" = type { %"class.std::bitset", [16 x [16 x i8]] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
+%"class.(anonymous namespace)__BitMatrix" = type { %"class.std__bitset", [16 x [16 x i8]] }
+%"class.std__bitset" = type { %struct.uint64v4_t }
 %struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
 %struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
 %struct.anon.5 = type { i32, i32 }
@@ -164,8 +164,15 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
-declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
+
+define %struct.Memory* @__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5SUBPSI3VnWI8vec256_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
   %6 = bitcast i8* %3 to <4 x float>*
@@ -196,16 +203,16 @@ block_530:
   %PC = bitcast %union.anon* %5 to i64*
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
   %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
-  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std__bitset"*
   %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
   %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 2
-  %YMM2 = bitcast %union.VectorReg* %9 to %"class.std::bitset"*
+  %YMM2 = bitcast %union.VectorReg* %9 to %"class.std__bitset"*
   %10 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
   %11 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %10, i64 0, i64 3
-  %YMM3 = bitcast %union.VectorReg* %11 to %"class.std::bitset"*
-  %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
-  %13 = bitcast %"class.std::bitset"* %YMM2 to i8*
-  %14 = bitcast %"class.std::bitset"* %YMM3 to i8*
+  %YMM3 = bitcast %union.VectorReg* %11 to %"class.std__bitset"*
+  %12 = bitcast %"class.std__bitset"* %YMM1 to i8*
+  %13 = bitcast %"class.std__bitset"* %YMM2 to i8*
+  %14 = bitcast %"class.std__bitset"* %YMM3 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 4
   store i64 %16, i64* %PC

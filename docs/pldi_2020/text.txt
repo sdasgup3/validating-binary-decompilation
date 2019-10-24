@@ -47,3 +47,25 @@ decompiler agnostic way is not trivial
 Formally valiating the composition
 
 In case of matcher failure, use df - strands based optimization to check the equiv
+
+### Why we need to prune stores using BB matches
+
+Lets 
+I1(BB1)                    I2(BB2)  I3(BB3)
+ |                             |        |
+ |                             |        |
+ V                             V        V
+ Store1                       S2        S3
+
+ Lets I1 pas pot candidates as {I2, I3}
+ Lets S1 pas pot candidates as {S2, S3}
+
+ Ideally BB1 <--> BB2 and hence I1 <--> I2 and S1 <--> S2
+ But as we are not differentiating S2 and S3,hence I1 and I2 will not be differentiated as well.
+
+
+ Lets after a dual-sim round the BBMatcher infers BB1 <--> BB2 => S1 <--> S2 => I1 <--> I2
+ We cannot aford to be mistake in infering BB matches; hence in the occosion of mismatch we exit
+
+
+
