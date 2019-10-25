@@ -111,8 +111,8 @@ cat docs/supported_decompilation_register.txt | parallel -j15 "echo; echo  {}; e
 
 cat docs/kliFailR.log | parallel "echo; echo {}; echo === ; head register-variants/{}/Output/test-lstate.out" |& tee ~/Junk/log
 
-cat docs/kliPassR.txt | parallel -j15 "cd register-variants/{}; make genlspec; cd -"
-cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make lrpove; cd -"
+cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make genlspec; cd -"
+cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make lprove; cd -"
 ```
 
 ## Compare the z3 output

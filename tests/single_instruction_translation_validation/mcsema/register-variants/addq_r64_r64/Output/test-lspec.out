@@ -1,9 +1,9 @@
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/././test-lspec.k)
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k)
-Parse spec modules [5/9 rules]                               =  0.016s
+Parse spec modules [0/9 rules]                               =  0.023s
 StateLog: /home/ubuntu/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
 
-Parsing finished:  123.273 s
+Parsing finished:  109.978 s
 Pre-processing rule:
 rule too long...
 	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/addq_r64_r64/test-lspec.k Location(5,1,648,58)
@@ -12,21 +12,21 @@ rule too long...
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  128.393 s,	20860 MB, gc:  3.294 %
-  Parsing             :  123.273 s,	19356 MB, gc:  3.431 %
-  Init                :    5.120 s,	20860 MB, gc:  0.000 %
+Total                 :  116.007 s,	 2423 MB, gc:  2.077 %
+  Parsing             :  109.978 s,	 1015 MB, gc:  2.191 %
+  Init                :    6.029 s,	 2423 MB, gc:  0.000 %
 
-Init+Execution time:       5.120 s
+Init+Execution time:       6.029 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.102 s,      #      10521
-    evaluateFunction time            :    0.060 s,      #        808
+  resolveFunctionAndAnywhere time  :    0.223 s,      #      10521
+    evaluateFunction time            :    0.163 s,      #        808
       builtin evaluation               :           ,      #        755
       function rule                    :           ,      #          1
       no function rules                :           ,      #         52
-    applyAnywhereRules time          :    0.003 s,      #       1516
+    applyAnywhereRules time          :    0.004 s,      #       1516
       no anywhere rules                :           ,      #       1516
-    remaining time & # cached        :    0.039 s,      #       8197
+    remaining time & # cached        :    0.056 s,      #       8197
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #       3195
@@ -1282,7 +1282,7 @@ Target term
 #True
 
 
-STEP 1 v1 :   11.124 s, 		29212 MB, gc:  0.000 %
+STEP 1 v1 :   15.366 s, 		  970 MB, gc:  0.000 %
 ===================
 <memory>
   <nextLoc>
@@ -1374,7 +1374,7 @@ STEP 1 v1 :   11.124 s, 		29212 MB, gc:  0.000 %
   </freed>
 </memory>
 
-STEP 1950 v1 :   21.897 s, 		35468 MB, gc:  0.000 %
+STEP 1950 v1 :   28.078 s, 		  808 MB, gc:  3.147 %
 ===================
 <memory>
   <nextLoc>
@@ -2147,33 +2147,33 @@ SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_in
 Execution paths: 1
 Longest path: 1950 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  157.997 s,	40700 MB, gc:  2.677 %
-  Parsing             :  123.273 s,	19356 MB, gc:  3.431 %
-  Init                :    5.120 s,	20860 MB, gc:  0.000 %
-  Execution           :   29.604 s,	40700 MB, gc:  0.000 %
+Total                 :  150.750 s,	 1413 MB, gc:  3.424 %
+  Parsing             :  109.978 s,	 1015 MB, gc:  2.191 %
+  Init                :    6.029 s,	 2423 MB, gc:  0.000 %
+  Execution           :   34.743 s,	 1413 MB, gc:  7.918 %
 
-Init+Execution time:      34.724 s
-  query build time                 :    0.177 s,      #         47
-  Z3 Function rule implication time:    0.511 s,      #         45
+Init+Execution time:      40.772 s
+  query build time                 :    0.179 s,      #         47
+  Z3 Function rule implication time:    0.847 s,      #         45
       unknown       :       43
       unsat (proved):       2
     cached queries:       34
-  Z3 Regular rule constraint time  :    0.023 s,      #          2
+  Z3 Regular rule constraint time  :    0.068 s,      #          2
       unknown       :       2
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    2.092 s,      #      20892
-    evaluateFunction time            :    1.980 s,      #       2799
+  resolveFunctionAndAnywhere time  :    2.691 s,      #      20892
+    evaluateFunction time            :    2.428 s,      #       2799
       builtin evaluation               :           ,      #       2091
       function rule                    :           ,      #        260
       sort predicate                   :           ,      #        198
       no rule applicable               :           ,      #        106
       no function rules                :           ,      #        144
-    applyAnywhereRules time          :    0.006 s,      #       7825
+    applyAnywhereRules time          :    0.009 s,      #       7825
       no anywhere rules                :           ,      #       7825
-    remaining time & # cached        :    0.106 s,      #      10268
-  log time                         :    4.130 s,      #       1951
-  impliesSMT time                  :    0.683 s,      #         79
+    remaining time & # cached        :    0.255 s,      #      10268
+  log time                         :    4.359 s,      #       1951
+  impliesSMT time                  :    1.009 s,      #         79
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #     294812
@@ -2191,5 +2191,5 @@ Max memory : 262144 MB
 ==================================
 
 #True
-345.06user 156.84system 2:41.18elapsed 311%CPU (0avgtext+0avgdata 47687292maxresident)k
-0inputs+172480outputs (0major+14906904minor)pagefaults 0swaps
+287.17user 137.99system 2:33.45elapsed 277%CPU (0avgtext+0avgdata 11396176maxresident)k
+152inputs+198072outputs (0major+4835008minor)pagefaults 0swaps

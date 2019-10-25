@@ -1,32 +1,32 @@
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/././test-lspec.k)
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/test-lspec.k)
-Parse spec modules [1/9 rules]                               =  0.016s
+Parse spec modules [1/9 rules]                               =  0.021s
 StateLog: /home/ubuntu/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
 
-Parsing finished:  279.740 s
+Parsing finished:  360.786 s
 Pre-processing rule:
 rule too long...
-	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/test-lspec.k Location(5,1,739,58)
+	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/test-lspec.k Location(5,1,810,58)
 ==================================
 
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  285.717 s,	30368 MB, gc:  5.085 %
-  Parsing             :  279.740 s,	28496 MB, gc:  5.194 %
-  Init                :    5.976 s,	30368 MB, gc:  0.000 %
+Total                 :  367.927 s,	31411 MB, gc:  3.980 %
+  Parsing             :  360.786 s,	29571 MB, gc:  4.059 %
+  Init                :    7.141 s,	31411 MB, gc:  0.000 %
 
-Init+Execution time:       5.976 s
+Init+Execution time:       7.141 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.122 s,      #      13681
-    evaluateFunction time            :    0.070 s,      #       1110
+  resolveFunctionAndAnywhere time  :    0.160 s,      #      13681
+    evaluateFunction time            :    0.095 s,      #       1110
       builtin evaluation               :           ,      #       1025
       function rule                    :           ,      #          1
       no function rules                :           ,      #         84
     applyAnywhereRules time          :    0.002 s,      #       1966
       no anywhere rules                :           ,      #       1966
-    remaining time & # cached        :    0.050 s,      #      10605
+    remaining time & # cached        :    0.062 s,      #      10605
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #      10395
@@ -1454,7 +1454,7 @@ Target term
 #True
 
 
-STEP 1 v1 :    8.665 s, 		33555 MB, gc:  0.000 %
+STEP 1 v1 :   13.624 s, 		34051 MB, gc:  0.000 %
 ===================
 <memory>
   <nextLoc>
@@ -1610,7 +1610,7 @@ STEP 1 v1 :    8.665 s, 		33555 MB, gc:  0.000 %
   </freed>
 </memory>
 
-STEP 442 v1 :   12.376 s, 		30648 MB, gc:  0.755 %
+STEP 442 v1 :   18.009 s, 		30570 MB, gc:  1.209 %
 ===================
 <memory>
   <nextLoc>
@@ -2544,32 +2544,32 @@ Success final states:
   </control>
 
 
-SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/test-lspec.k Location(5,1,739,58)
+SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_xmm/test-lspec.k Location(5,1,810,58)
 ==================================
 Execution paths: 1
 Longest path: 442 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  302.961 s,	29482 MB, gc:  4.836 %
-  Parsing             :  279.740 s,	28496 MB, gc:  5.194 %
-  Init                :    5.976 s,	30368 MB, gc:  0.000 %
-  Execution           :   17.244 s,	29482 MB, gc:  0.713 %
+Total                 :  391.661 s,	28854 MB, gc:  3.857 %
+  Parsing             :  360.786 s,	29571 MB, gc:  4.059 %
+  Init                :    7.141 s,	31411 MB, gc:  0.000 %
+  Execution           :   23.733 s,	28854 MB, gc:  1.947 %
 
-Init+Execution time:      23.220 s
+Init+Execution time:      30.875 s
   query build time                 :    0.013 s,      #          2
-  Z3 Regular rule constraint time  :    0.023 s,      #          2
+  Z3 Regular rule constraint time  :    0.034 s,      #          2
       unknown       :       2
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.235 s,      #      16659
-    evaluateFunction time            :    0.167 s,      #       1588
+  resolveFunctionAndAnywhere time  :    0.296 s,      #      16659
+    evaluateFunction time            :    0.211 s,      #       1588
       builtin evaluation               :           ,      #       1257
       function rule                    :           ,      #         64
       sort predicate                   :           ,      #         57
       no function rules                :           ,      #        210
-    applyAnywhereRules time          :    0.003 s,      #       3885
+    applyAnywhereRules time          :    0.004 s,      #       3885
       no anywhere rules                :           ,      #       3885
-    remaining time & # cached        :    0.065 s,      #      11186
-  log time                         :    2.737 s,      #        443
+    remaining time & # cached        :    0.081 s,      #      11186
+  log time                         :    3.200 s,      #        443
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #      17110
@@ -2586,5 +2586,5 @@ Max memory : 262144 MB
 ==================================
 
 #True
-651.60user 588.57system 5:06.09elapsed 405%CPU (0avgtext+0avgdata 41323216maxresident)k
-8inputs+181504outputs (0major+19074829minor)pagefaults 0swaps
+768.87user 246.83system 6:35.28elapsed 256%CPU (0avgtext+0avgdata 38082500maxresident)k
+5392inputs+162232outputs (43major+25684994minor)pagefaults 0swaps

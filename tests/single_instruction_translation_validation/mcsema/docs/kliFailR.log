@@ -124,12 +124,10 @@ psignb_xmm_xmm
 psignd_xmm_xmm
 psignw_xmm_xmm
 pslld_xmm_xmm
-psllq_xmm_xmm
 psllw_xmm_xmm
 psrad_xmm_xmm
 psraw_xmm_xmm
 psrld_xmm_xmm
-psrlq_xmm_xmm
 psrlw_xmm_xmm
 psubq_xmm_xmm
 psubusb_xmm_xmm

@@ -127,7 +127,7 @@ kli: test.mod.ll
 	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --kli
 
 genlspec: Output/test-lstate.out
-	\${DVAL_SCRIPT_DIR}/create_lspec.pl --file \$<
+	\${DVAL_SCRIPT_DIR}/create_lspec.pl --file \$< --opc \${PROG}
 
 lprove: test-lspec.k
 	mkdir -p \${OUTDIR}
