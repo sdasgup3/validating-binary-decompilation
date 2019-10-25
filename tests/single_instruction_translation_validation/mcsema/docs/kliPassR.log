@@ -419,3 +419,5 @@ shrq_r64_cl
 shrq_r64_one
 shrw_r16_cl
 shrw_r16_one
+psllq_xmm_xmm
+psrlq_xmm_xmm

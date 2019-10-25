@@ -1,32 +1,32 @@
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/././test-lspec.k)
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/test-lspec.k)
-Parse spec modules [5/9 rules]                               =  0.015s
+Parse spec modules [1/9 rules]                               =  0.020s
 StateLog: /home/ubuntu/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
 
-Parsing finished:  123.370 s
+Parsing finished:  164.601 s
 Pre-processing rule:
 rule too long...
-	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/test-lspec.k Location(5,1,593,58)
+	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/test-lspec.k Location(5,1,650,58)
 ==================================
 
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  127.365 s,	 9948 MB, gc:  4.903 %
-  Parsing             :  123.370 s,	 8620 MB, gc:  5.062 %
-  Init                :    3.995 s,	 9948 MB, gc:  0.000 %
+Total                 :  169.816 s,	13002 MB, gc:  5.335 %
+  Parsing             :  164.601 s,	11578 MB, gc:  5.504 %
+  Init                :    5.215 s,	13002 MB, gc:  0.000 %
 
-Init+Execution time:       3.995 s
+Init+Execution time:       5.215 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.109 s,      #       9507
-    evaluateFunction time            :    0.066 s,      #        810
-      builtin evaluation               :           ,      #        757
+  resolveFunctionAndAnywhere time  :    0.130 s,      #      10687
+    evaluateFunction time            :    0.081 s,      #        812
+      builtin evaluation               :           ,      #        759
       function rule                    :           ,      #          1
       no function rules                :           ,      #         52
-    applyAnywhereRules time          :    0.003 s,      #       1386
-      no anywhere rules                :           ,      #       1386
-    remaining time & # cached        :    0.040 s,      #       7311
+    applyAnywhereRules time          :    0.003 s,      #       1555
+      no anywhere rules                :           ,      #       1555
+    remaining time & # cached        :    0.046 s,      #       8320
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #       3195
@@ -45,18 +45,18 @@ Initial term
 
 <generatedTop>
   <k>
-    callProc ( ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_addq__rax___rbx ) , 0 ) ) , argumentVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , ptr ( symloc ( 4 , 64 , 6144 , 8 , 0 ) , 0 ) ) )  argumentVal ( tInt ( 64 ) , typedVal ( tInt ( 64 ) , 0 ) )  argumentVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 0 ) ) )  .ArgumentVals )
+    callProc ( ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_adcq_r64_r64 ) , 0 ) ) , argumentVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , ptr ( symloc ( 4 , 64 , 6144 , 8 , 0 ) , 0 ) ) )  argumentVal ( tInt ( 64 ) , typedVal ( tInt ( 64 ) , 0 ) )  argumentVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 0 ) ) )  .ArgumentVals )
   </k>
   _79
   _80
   <globals>
-    builtinID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_begin ) , 0 ) )
-    builtinID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_end ) , 0 ) )
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 64 ) )  tInt ( 64 )  tInt ( 64 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) , 0 ) )
+    globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
+    globalID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_end ) , 0 ) )
     globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
     globalID ( @my.ctpop.i32 ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , tInt ( 32 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @my.ctpop.i32 ) , 0 ) )
-    globalID ( @routine_addq__rax___rbx ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_addq__rax___rbx ) , 0 ) )
+    globalID ( @routine_adcq_r64_r64 ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_adcq_r64_r64 ) , 0 ) )
   </globals>
   <memory>
     <nextLoc>
@@ -173,6 +173,63 @@ Initial term
       </entryBlock>
     </function> <function>
       <functionName>
+        globalID ( @__remill_atomic_begin )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_end )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @main )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %state )  localID ( %mem )  localID ( %memf0 )  localID ( %addr1 )  localID ( %addr2 )  localID ( %addr3 )  localID ( %addr4 )  localID ( %addr5 )  localID ( %addr6 )  localID ( %addr7 )  localID ( %addr8 )  localID ( %addr9 )  localID ( %cf )  localID ( %pf )  localID ( %af )  localID ( %zf )  localID ( %sf )  localID ( %df )  localID ( %of )  localID ( %call )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %state ) , tIdentifiedStruct ( localID ( %struct.State ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  alloca ( localID ( %mem ) , tIdentifiedStruct ( localID ( %struct.Memory ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  getelementptr ( localID ( %memf0 ) , inbounds , tIdentifiedStruct ( localID ( %struct.Memory ) ) , localID ( %mem ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 64 ) , 51 , localID ( %memf0 ) , align ( 8 ) )  getelementptr ( localID ( %addr1 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 1 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr2 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 3 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr3 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 5 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr4 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 7 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr5 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 9 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr6 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 11 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr7 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 13 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr8 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 15 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr9 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 33 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %cf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %pf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 3 )  .GEPIndices )  getelementptr ( localID ( %af ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 5 )  .GEPIndices )  getelementptr ( localID ( %zf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 7 )  .GEPIndices )  getelementptr ( localID ( %sf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 9 )  .GEPIndices )  getelementptr ( localID ( %df ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 11 )  .GEPIndices )  getelementptr ( localID ( %of ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 13 )  .GEPIndices )  store ( tInt ( 64 ) , 100 , localID ( %addr1 ) , align ( 8 ) )  store ( tInt ( 64 ) , 200 , localID ( %addr2 ) , align ( 8 ) )  store ( tInt ( 64 ) , 300 , localID ( %addr3 ) , align ( 8 ) )  store ( tInt ( 64 ) , 400 , localID ( %addr4 ) , align ( 8 ) )  store ( tInt ( 64 ) , 500 , localID ( %addr5 ) , align ( 8 ) )  store ( tInt ( 64 ) , 600 , localID ( %addr6 ) , align ( 8 ) )  store ( tInt ( 64 ) , 700 , localID ( %addr7 ) , align ( 8 ) )  store ( tInt ( 64 ) , 800 , localID ( %addr8 ) , align ( 8 ) )  store ( tInt ( 64 ) , 900 , localID ( %addr9 ) , align ( 8 ) )  store ( tInt ( 8 ) , 10 , localID ( %cf ) , align ( 1 ) )  store ( tInt ( 8 ) , 20 , localID ( %pf ) , align ( 1 ) )  store ( tInt ( 8 ) , 30 , localID ( %af ) , align ( 1 ) )  store ( tInt ( 8 ) , 40 , localID ( %zf ) , align ( 1 ) )  store ( tInt ( 8 ) , 50 , localID ( %sf ) , align ( 1 ) )  store ( tInt ( 8 ) , 60 , localID ( %df ) , align ( 1 ) )  store ( tInt ( 8 ) , 70 , localID ( %of ) , align ( 1 ) )  callFunc ( localID ( %call ) , ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , globalID ( @routine_adcq_r64_r64 ) , argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , localID ( %state ) )  argument ( tInt ( 64 ) , 0 )  argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %mem ) )  .Arguments )  .Instructions , ret ( tInt ( 32 ) , 0 ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function> <function>
+      <functionName>
         globalID ( @my.ctpop.i32 )
       </functionName>
       <callingConvention>
@@ -192,7 +249,7 @@ Initial term
       </entryBlock>
     </function> <function>
       <functionName>
-        globalID ( @routine_addq__rax___rbx )
+        globalID ( @routine_adcq_r64_r64 )
       </functionName>
       <callingConvention>
         ccc
@@ -641,13 +698,13 @@ Target term
   _79
   _80
   <globals>
-    builtinID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_begin ) , 0 ) )
-    builtinID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_end ) , 0 ) )
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 64 ) )  tInt ( 64 )  tInt ( 64 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) , 0 ) )
+    globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
+    globalID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_end ) , 0 ) )
     globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
     globalID ( @my.ctpop.i32 ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , tInt ( 32 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @my.ctpop.i32 ) , 0 ) )
-    globalID ( @routine_addq__rax___rbx ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_addq__rax___rbx ) , 0 ) )
+    globalID ( @routine_adcq_r64_r64 ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_adcq_r64_r64 ) , 0 ) )
   </globals>
   <memory>
     <nextLoc>
@@ -764,6 +821,63 @@ Target term
       </entryBlock>
     </function> <function>
       <functionName>
+        globalID ( @__remill_atomic_begin )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_end )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @main )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %state )  localID ( %mem )  localID ( %memf0 )  localID ( %addr1 )  localID ( %addr2 )  localID ( %addr3 )  localID ( %addr4 )  localID ( %addr5 )  localID ( %addr6 )  localID ( %addr7 )  localID ( %addr8 )  localID ( %addr9 )  localID ( %cf )  localID ( %pf )  localID ( %af )  localID ( %zf )  localID ( %sf )  localID ( %df )  localID ( %of )  localID ( %call )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %state ) , tIdentifiedStruct ( localID ( %struct.State ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  alloca ( localID ( %mem ) , tIdentifiedStruct ( localID ( %struct.Memory ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  getelementptr ( localID ( %memf0 ) , inbounds , tIdentifiedStruct ( localID ( %struct.Memory ) ) , localID ( %mem ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 64 ) , 51 , localID ( %memf0 ) , align ( 8 ) )  getelementptr ( localID ( %addr1 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 1 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr2 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 3 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr3 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 5 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr4 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 7 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr5 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 9 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr6 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 11 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr7 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 13 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr8 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 15 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr9 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 33 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %cf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %pf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 3 )  .GEPIndices )  getelementptr ( localID ( %af ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 5 )  .GEPIndices )  getelementptr ( localID ( %zf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 7 )  .GEPIndices )  getelementptr ( localID ( %sf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 9 )  .GEPIndices )  getelementptr ( localID ( %df ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 11 )  .GEPIndices )  getelementptr ( localID ( %of ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 13 )  .GEPIndices )  store ( tInt ( 64 ) , 100 , localID ( %addr1 ) , align ( 8 ) )  store ( tInt ( 64 ) , 200 , localID ( %addr2 ) , align ( 8 ) )  store ( tInt ( 64 ) , 300 , localID ( %addr3 ) , align ( 8 ) )  store ( tInt ( 64 ) , 400 , localID ( %addr4 ) , align ( 8 ) )  store ( tInt ( 64 ) , 500 , localID ( %addr5 ) , align ( 8 ) )  store ( tInt ( 64 ) , 600 , localID ( %addr6 ) , align ( 8 ) )  store ( tInt ( 64 ) , 700 , localID ( %addr7 ) , align ( 8 ) )  store ( tInt ( 64 ) , 800 , localID ( %addr8 ) , align ( 8 ) )  store ( tInt ( 64 ) , 900 , localID ( %addr9 ) , align ( 8 ) )  store ( tInt ( 8 ) , 10 , localID ( %cf ) , align ( 1 ) )  store ( tInt ( 8 ) , 20 , localID ( %pf ) , align ( 1 ) )  store ( tInt ( 8 ) , 30 , localID ( %af ) , align ( 1 ) )  store ( tInt ( 8 ) , 40 , localID ( %zf ) , align ( 1 ) )  store ( tInt ( 8 ) , 50 , localID ( %sf ) , align ( 1 ) )  store ( tInt ( 8 ) , 60 , localID ( %df ) , align ( 1 ) )  store ( tInt ( 8 ) , 70 , localID ( %of ) , align ( 1 ) )  callFunc ( localID ( %call ) , ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , globalID ( @routine_adcq_r64_r64 ) , argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , localID ( %state ) )  argument ( tInt ( 64 ) , 0 )  argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %mem ) )  .Arguments )  .Instructions , ret ( tInt ( 32 ) , 0 ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function> <function>
+      <functionName>
         globalID ( @my.ctpop.i32 )
       </functionName>
       <callingConvention>
@@ -783,7 +897,7 @@ Target term
       </entryBlock>
     </function> <function>
       <functionName>
-        globalID ( @routine_addq__rax___rbx )
+        globalID ( @routine_adcq_r64_r64 )
       </functionName>
       <callingConvention>
         ccc
@@ -1172,7 +1286,7 @@ Target term
 #True
 
 
-STEP 1 v1 :    8.231 s, 		 8892 MB, gc:  0.000 %
+STEP 1 v1 :    9.859 s, 		10150 MB, gc:  0.000 %
 ===================
 <memory>
   <nextLoc>
@@ -1264,7 +1378,7 @@ STEP 1 v1 :    8.231 s, 		 8892 MB, gc:  0.000 %
   </freed>
 </memory>
 
-STEP 590 v1 :   12.548 s, 		 7335 MB, gc:  4.934 %
+STEP 590 v1 :   13.736 s, 		13062 MB, gc:  0.000 %
 ===================
 <registers>
   localID ( %0 ) |-> typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 0 ) )
@@ -1407,7 +1521,7 @@ Branching!
 =====================
 
 
-STEP 591 v1 :   16.149 s, 		10279 MB, gc:  0.000 %
+STEP 591 v1 :   16.841 s, 		10500 MB, gc:  9.724 %
 ===================
 <registers>
   localID ( %0 ) |-> typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 0 ) )
@@ -1546,7 +1660,7 @@ STEP 591 v1 :   16.149 s, 		10279 MB, gc:  0.000 %
   </freed>
 </memory>
 
-STEP 591 v2 :   20.378 s, 		 8649 MB, gc:  8.062 %
+STEP 591 v2 :   19.648 s, 		13360 MB, gc:  0.000 %
 ===================
 <registers>
   localID ( %0 ) |-> typedVal ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 0 ) )
@@ -1685,7 +1799,7 @@ STEP 591 v2 :   20.378 s, 		 8649 MB, gc:  8.062 %
   </freed>
 </memory>
 
-STEP 1997 v1 :   34.499 s, 		 9343 MB, gc:  4.469 %
+STEP 1997 v1 :   35.559 s, 		11255 MB, gc:  0.515 %
 ===================
 <memory>
   <nextLoc>
@@ -1782,7 +1896,7 @@ Step 1997: eliminated!
 ============
 
 
-STEP 2027 v1 :   36.222 s, 		 6452 MB, gc:  2.902 %
+STEP 2027 v1 :   37.397 s, 		12807 MB, gc:  0.000 %
 ===================
 <memory>
   <nextLoc>
@@ -1900,13 +2014,13 @@ Success final states:
     R__7
   </control>
   <globals>
-    builtinID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_begin ) , 0 ) )
-    builtinID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_end ) , 0 ) )
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 64 ) )  tInt ( 64 )  tInt ( 64 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) , 0 ) )
+    globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
+    globalID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_end ) , 0 ) )
     globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
     globalID ( @my.ctpop.i32 ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , tInt ( 32 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @my.ctpop.i32 ) , 0 ) )
-    globalID ( @routine_addq__rax___rbx ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_addq__rax___rbx ) , 0 ) )
+    globalID ( @routine_adcq_r64_r64 ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_adcq_r64_r64 ) , 0 ) )
   </globals>
   <memory>
     <nextLoc>
@@ -2023,6 +2137,63 @@ Success final states:
       </entryBlock>
     </function> <function>
       <functionName>
+        globalID ( @__remill_atomic_begin )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_end )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @main )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %state )  localID ( %mem )  localID ( %memf0 )  localID ( %addr1 )  localID ( %addr2 )  localID ( %addr3 )  localID ( %addr4 )  localID ( %addr5 )  localID ( %addr6 )  localID ( %addr7 )  localID ( %addr8 )  localID ( %addr9 )  localID ( %cf )  localID ( %pf )  localID ( %af )  localID ( %zf )  localID ( %sf )  localID ( %df )  localID ( %of )  localID ( %call )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %state ) , tIdentifiedStruct ( localID ( %struct.State ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  alloca ( localID ( %mem ) , tIdentifiedStruct ( localID ( %struct.Memory ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  getelementptr ( localID ( %memf0 ) , inbounds , tIdentifiedStruct ( localID ( %struct.Memory ) ) , localID ( %mem ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 64 ) , 51 , localID ( %memf0 ) , align ( 8 ) )  getelementptr ( localID ( %addr1 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 1 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr2 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 3 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr3 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 5 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr4 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 7 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr5 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 9 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr6 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 11 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr7 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 13 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr8 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 15 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr9 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 33 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %cf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %pf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 3 )  .GEPIndices )  getelementptr ( localID ( %af ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 5 )  .GEPIndices )  getelementptr ( localID ( %zf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 7 )  .GEPIndices )  getelementptr ( localID ( %sf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 9 )  .GEPIndices )  getelementptr ( localID ( %df ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 11 )  .GEPIndices )  getelementptr ( localID ( %of ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 13 )  .GEPIndices )  store ( tInt ( 64 ) , 100 , localID ( %addr1 ) , align ( 8 ) )  store ( tInt ( 64 ) , 200 , localID ( %addr2 ) , align ( 8 ) )  store ( tInt ( 64 ) , 300 , localID ( %addr3 ) , align ( 8 ) )  store ( tInt ( 64 ) , 400 , localID ( %addr4 ) , align ( 8 ) )  store ( tInt ( 64 ) , 500 , localID ( %addr5 ) , align ( 8 ) )  store ( tInt ( 64 ) , 600 , localID ( %addr6 ) , align ( 8 ) )  store ( tInt ( 64 ) , 700 , localID ( %addr7 ) , align ( 8 ) )  store ( tInt ( 64 ) , 800 , localID ( %addr8 ) , align ( 8 ) )  store ( tInt ( 64 ) , 900 , localID ( %addr9 ) , align ( 8 ) )  store ( tInt ( 8 ) , 10 , localID ( %cf ) , align ( 1 ) )  store ( tInt ( 8 ) , 20 , localID ( %pf ) , align ( 1 ) )  store ( tInt ( 8 ) , 30 , localID ( %af ) , align ( 1 ) )  store ( tInt ( 8 ) , 40 , localID ( %zf ) , align ( 1 ) )  store ( tInt ( 8 ) , 50 , localID ( %sf ) , align ( 1 ) )  store ( tInt ( 8 ) , 60 , localID ( %df ) , align ( 1 ) )  store ( tInt ( 8 ) , 70 , localID ( %of ) , align ( 1 ) )  callFunc ( localID ( %call ) , ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , globalID ( @routine_adcq_r64_r64 ) , argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , localID ( %state ) )  argument ( tInt ( 64 ) , 0 )  argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %mem ) )  .Arguments )  .Instructions , ret ( tInt ( 32 ) , 0 ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function> <function>
+      <functionName>
         globalID ( @my.ctpop.i32 )
       </functionName>
       <callingConvention>
@@ -2042,7 +2213,7 @@ Success final states:
       </entryBlock>
     </function> <function>
       <functionName>
-        globalID ( @routine_addq__rax___rbx )
+        globalID ( @routine_adcq_r64_r64 )
       </functionName>
       <callingConvention>
         ccc
@@ -2513,13 +2684,13 @@ Success final states:
     R__7
   </control>
   <globals>
-    builtinID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_begin ) , 0 ) )
-    builtinID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( builtinID ( @__remill_atomic_end ) , 0 ) )
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 64 ) )  tInt ( 64 )  tInt ( 64 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L3ADCI3RnWImE2RnImES4_EEP6MemoryS6_R5StateT_T0_T1_ ) , 0 ) )
+    globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
+    globalID ( @__remill_atomic_end ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_end ) , 0 ) )
     globalID ( @main ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , .FirstClassTypes , false ) ) , fptr ( globalID ( @main ) , 0 ) )
     globalID ( @my.ctpop.i32 ) |-> typedVal ( tPtr ( tFunc ( tInt ( 32 ) , tInt ( 32 )  .FirstClassTypes , false ) ) , fptr ( globalID ( @my.ctpop.i32 ) , 0 ) )
-    globalID ( @routine_addq__rax___rbx ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_addq__rax___rbx ) , 0 ) )
+    globalID ( @routine_adcq_r64_r64 ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @routine_adcq_r64_r64 ) , 0 ) )
   </globals>
   <memory>
     <nextLoc>
@@ -2636,6 +2807,63 @@ Success final states:
       </entryBlock>
     </function> <function>
       <functionName>
+        globalID ( @__remill_atomic_begin )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @__remill_atomic_end )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        parameter ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) )  .Parameters
+      </formalParameters>
+      <localRegisters>
+        .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %1 ) |-> bb ( localID ( %1 ) , .Instructions , ret ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %0 ) ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %1 )
+      </entryBlock>
+    </function> <function>
+      <functionName>
+        globalID ( @main )
+      </functionName>
+      <callingConvention>
+        ccc
+      </callingConvention>
+      <formalParameters>
+        .Parameters
+      </formalParameters>
+      <localRegisters>
+        localID ( %state )  localID ( %mem )  localID ( %memf0 )  localID ( %addr1 )  localID ( %addr2 )  localID ( %addr3 )  localID ( %addr4 )  localID ( %addr5 )  localID ( %addr6 )  localID ( %addr7 )  localID ( %addr8 )  localID ( %addr9 )  localID ( %cf )  localID ( %pf )  localID ( %af )  localID ( %zf )  localID ( %sf )  localID ( %df )  localID ( %of )  localID ( %call )  .LocalIDs
+      </localRegisters>
+      <basicBlocks>
+        localID ( %entry ) |-> bb ( localID ( %entry ) , alloca ( localID ( %state ) , tIdentifiedStruct ( localID ( %struct.State ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  alloca ( localID ( %mem ) , tIdentifiedStruct ( localID ( %struct.Memory ) ) , tInt ( 32 ) , 1 , align ( 0 ) )  getelementptr ( localID ( %memf0 ) , inbounds , tIdentifiedStruct ( localID ( %struct.Memory ) ) , localID ( %mem ) , gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  store ( tInt ( 64 ) , 51 , localID ( %memf0 ) , align ( 8 ) )  getelementptr ( localID ( %addr1 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 1 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr2 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 3 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr3 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 5 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr4 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 7 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr5 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 9 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr6 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 11 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr7 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 13 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr8 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 15 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %addr9 ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 6 )  gepIndex ( tInt ( 32 ) , 33 )  gepIndex ( tInt ( 32 ) , 0 )  gepIndex ( tInt ( 32 ) , 0 )  .GEPIndices )  getelementptr ( localID ( %cf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 1 )  .GEPIndices )  getelementptr ( localID ( %pf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 3 )  .GEPIndices )  getelementptr ( localID ( %af ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 5 )  .GEPIndices )  getelementptr ( localID ( %zf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 7 )  .GEPIndices )  getelementptr ( localID ( %sf ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 9 )  .GEPIndices )  getelementptr ( localID ( %df ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 11 )  .GEPIndices )  getelementptr ( localID ( %of ) , inbounds , tIdentifiedStruct ( localID ( %struct.State ) ) , localID ( %state ) , gepIndex ( tInt ( 64 ) , 0 )  gepIndex ( tInt ( 32 ) , 2 )  gepIndex ( tInt ( 32 ) , 13 )  .GEPIndices )  store ( tInt ( 64 ) , 100 , localID ( %addr1 ) , align ( 8 ) )  store ( tInt ( 64 ) , 200 , localID ( %addr2 ) , align ( 8 ) )  store ( tInt ( 64 ) , 300 , localID ( %addr3 ) , align ( 8 ) )  store ( tInt ( 64 ) , 400 , localID ( %addr4 ) , align ( 8 ) )  store ( tInt ( 64 ) , 500 , localID ( %addr5 ) , align ( 8 ) )  store ( tInt ( 64 ) , 600 , localID ( %addr6 ) , align ( 8 ) )  store ( tInt ( 64 ) , 700 , localID ( %addr7 ) , align ( 8 ) )  store ( tInt ( 64 ) , 800 , localID ( %addr8 ) , align ( 8 ) )  store ( tInt ( 64 ) , 900 , localID ( %addr9 ) , align ( 8 ) )  store ( tInt ( 8 ) , 10 , localID ( %cf ) , align ( 1 ) )  store ( tInt ( 8 ) , 20 , localID ( %pf ) , align ( 1 ) )  store ( tInt ( 8 ) , 30 , localID ( %af ) , align ( 1 ) )  store ( tInt ( 8 ) , 40 , localID ( %zf ) , align ( 1 ) )  store ( tInt ( 8 ) , 50 , localID ( %sf ) , align ( 1 ) )  store ( tInt ( 8 ) , 60 , localID ( %df ) , align ( 1 ) )  store ( tInt ( 8 ) , 70 , localID ( %of ) , align ( 1 ) )  callFunc ( localID ( %call ) , ccc , tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) , globalID ( @routine_adcq_r64_r64 ) , argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) ) , localID ( %state ) )  argument ( tInt ( 64 ) , 0 )  argument ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , localID ( %mem ) )  .Arguments )  .Instructions , ret ( tInt ( 32 ) , 0 ) )
+      </basicBlocks>
+      <entryBlock>
+        localID ( %entry )
+      </entryBlock>
+    </function> <function>
+      <functionName>
         globalID ( @my.ctpop.i32 )
       </functionName>
       <callingConvention>
@@ -2655,7 +2883,7 @@ Success final states:
       </entryBlock>
     </function> <function>
       <functionName>
-        globalID ( @routine_addq__rax___rbx )
+        globalID ( @routine_adcq_r64_r64 )
       </functionName>
       <callingConvention>
         ccc
@@ -3110,40 +3338,40 @@ Success final states:
   </control>
 
 
-SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/test-lspec.k Location(5,1,593,58)
+SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/adcq_r64_r64/test-lspec.k Location(5,1,650,58)
 ==================================
 Execution paths: 2
 Longest path: 2027 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  172.832 s,	10647 MB, gc:  4.474 %
-  Parsing             :  123.370 s,	 8620 MB, gc:  5.062 %
-  Init                :    3.995 s,	 9948 MB, gc:  0.000 %
-  Execution           :   45.467 s,	10647 MB, gc:  3.270 %
+Total                 :  216.974 s,	15813 MB, gc:  4.707 %
+  Parsing             :  164.601 s,	11578 MB, gc:  5.504 %
+  Init                :    5.215 s,	13002 MB, gc:  0.000 %
+  Execution           :   47.159 s,	15813 MB, gc:  2.449 %
 
-Init+Execution time:      49.463 s
-  query build time                 :    0.290 s,      #        106
-  Z3 Regular rule implication time :    0.027 s,      #          2
-      sat           :       2
-  Z3 Function rule implication time:    1.254 s,      #         98
-      sat           :       93
+Init+Execution time:      52.374 s
+  query build time                 :    0.287 s,      #        106
+  Z3 Regular rule implication time :    0.030 s,      #          2
+      unknown       :       2
+  Z3 Function rule implication time:    1.494 s,      #         98
+      unknown       :       93
       unsat (proved):       5
     cached queries:       68
-  Z3 Regular rule constraint time  :    0.080 s,      #          6
-      sat           :       6
+  Z3 Regular rule constraint time  :    0.090 s,      #          6
+      unknown       :       6
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    3.954 s,      #      27711
-    evaluateFunction time            :    3.742 s,      #       4153
-      builtin evaluation               :           ,      #       3104
+  resolveFunctionAndAnywhere time  :    4.897 s,      #      28909
+    evaluateFunction time            :    4.653 s,      #       4159
+      builtin evaluation               :           ,      #       3110
       function rule                    :           ,      #        403
       sort predicate                   :           ,      #        326
       no rule applicable               :           ,      #        116
       no function rules                :           ,      #        204
-    applyAnywhereRules time          :    0.008 s,      #      11302
-      no anywhere rules                :           ,      #      11302
-    remaining time & # cached        :    0.204 s,      #      12256
-  log time                         :   16.253 s,      #       3437
-  impliesSMT time                  :    1.583 s,      #        168
+    applyAnywhereRules time          :    0.008 s,      #      11471
+      no anywhere rules                :           ,      #      11471
+    remaining time & # cached        :    0.237 s,      #      13279
+  log time                         :   13.677 s,      #       3437
+  impliesSMT time                  :    1.814 s,      #        168
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #     681740
@@ -3161,5 +3389,5 @@ Max memory : 262144 MB
 ==================================
 
 #True
-449.29user 215.31system 2:54.99elapsed 379%CPU (0avgtext+0avgdata 17965020maxresident)k
-0inputs+174008outputs (0major+10055954minor)pagefaults 0swaps
+497.62user 192.18system 3:40.02elapsed 313%CPU (0avgtext+0avgdata 23493560maxresident)k
+72inputs+199088outputs (0major+9498759minor)pagefaults 0swaps

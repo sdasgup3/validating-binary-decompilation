@@ -3,20 +3,18 @@ imports LLVM-SEMANTICS
 
 rule
 <k>
-  //callMain => exitCode(0)
-
   callProc(
       ccc,
       tFunc(
-        tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ), 
+        tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ),
         tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ),
 
       typedVal(
         tPtr(
           tFunc(
-            tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ), 
-            tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) .FirstClassTypes , false ) ) , 
-        fptr ( globalID ( @routine_movq_xmm_xmm ) , 0 ) 
+            tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ),
+            tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tInt ( 64 )  tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) .FirstClassTypes , false ) ) ,
+        fptr ( globalID ( @routine_movq_xmm_xmm ) , 0 )
         ),
 
       (
@@ -46,7 +44,7 @@ rule
 <nextLoc> 5 </nextLoc>
 <objects>
 mem (
-
+      
       // YMM1
       symloc ( 4 , 64 , 6144 , 8 , 2112 ) |->  ( byte ( 0 , 8 , YMM1_0:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2113 ) |->  ( byte ( 1 , 8 , YMM1_0:Int ) => _)
@@ -84,7 +82,43 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 2142 ) |->  ( byte ( 6 , 8 , YMM1_3:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2143 ) |->  ( byte ( 7 , 8 , YMM1_3:Int ) => _)
 
-      // YMM2
+      // symloc ( 4 , 64 , 6144 , 8 , 2144 ) |->  ( byte ( 0 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2145 ) |->  ( byte ( 1 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2146 ) |->  ( byte ( 2 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2147 ) |->  ( byte ( 3 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2148 ) |->  ( byte ( 4 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2149 ) |->  ( byte ( 5 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2150 ) |->  ( byte ( 6 , 8 , YMM1_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2151 ) |->  ( byte ( 7 , 8 , YMM1_4:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2152 ) |->  ( byte ( 0 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2153 ) |->  ( byte ( 1 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2154 ) |->  ( byte ( 2 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2155 ) |->  ( byte ( 3 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2156 ) |->  ( byte ( 4 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2157 ) |->  ( byte ( 5 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2158 ) |->  ( byte ( 6 , 8 , YMM1_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2159 ) |->  ( byte ( 7 , 8 , YMM1_5:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2160 ) |->  ( byte ( 0 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2161 ) |->  ( byte ( 1 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2162 ) |->  ( byte ( 2 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2163 ) |->  ( byte ( 3 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2164 ) |->  ( byte ( 4 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2165 ) |->  ( byte ( 5 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2166 ) |->  ( byte ( 6 , 8 , YMM1_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2167 ) |->  ( byte ( 7 , 8 , YMM1_6:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2168 ) |->  ( byte ( 0 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2169 ) |->  ( byte ( 1 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2170 ) |->  ( byte ( 2 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2171 ) |->  ( byte ( 3 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2172 ) |->  ( byte ( 4 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2173 ) |->  ( byte ( 5 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2174 ) |->  ( byte ( 6 , 8 , YMM1_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2175 ) |->  ( byte ( 7 , 8 , YMM1_7:Int ) => _)
+
+      // // YMM2
       symloc ( 4 , 64 , 6144 , 8 , 2176 ) |->  ( byte ( 0 , 8 , YMM2_0:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2177 ) |->  ( byte ( 1 , 8 , YMM2_0:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2178 ) |->  ( byte ( 2 , 8 , YMM2_0:Int ) => _)
@@ -121,6 +155,42 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 2206 ) |->  ( byte ( 6 , 8 , YMM2_3:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2207 ) |->  ( byte ( 7 , 8 , YMM2_3:Int ) => _)
 
+      // symloc ( 4 , 64 , 6144 , 8 , 2208 ) |->  ( byte ( 0 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2209 ) |->  ( byte ( 1 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2210 ) |->  ( byte ( 2 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2211 ) |->  ( byte ( 3 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2212 ) |->  ( byte ( 4 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2213 ) |->  ( byte ( 5 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2214 ) |->  ( byte ( 6 , 8 , YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2215 ) |->  ( byte ( 7 , 8 , YMM2_4:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2216 ) |->  ( byte ( 0 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2217 ) |->  ( byte ( 1 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2218 ) |->  ( byte ( 2 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2219 ) |->  ( byte ( 3 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2220 ) |->  ( byte ( 4 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2221 ) |->  ( byte ( 5 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2222 ) |->  ( byte ( 6 , 8 , YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2223 ) |->  ( byte ( 7 , 8 , YMM2_5:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2224 ) |->  ( byte ( 0 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2225 ) |->  ( byte ( 1 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2226 ) |->  ( byte ( 2 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2227 ) |->  ( byte ( 3 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2228 ) |->  ( byte ( 4 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2229 ) |->  ( byte ( 5 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2230 ) |->  ( byte ( 6 , 8 , YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2231 ) |->  ( byte ( 7 , 8 , YMM2_6:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2232 ) |->  ( byte ( 0 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2233 ) |->  ( byte ( 1 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2234 ) |->  ( byte ( 2 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2235 ) |->  ( byte ( 3 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2236 ) |->  ( byte ( 4 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2237 ) |->  ( byte ( 5 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2238 ) |->  ( byte ( 6 , 8 , YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2239 ) |->  ( byte ( 7 , 8 , YMM2_7:Int ) => _)
+
       // Flags
       symloc ( 4 , 64 , 6144 , 8 , 4097 ) |->  ( byte ( 0 , 1 , V_CF:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4099 ) |->  ( byte ( 0 , 1 , V_PF:Int ) => _)
@@ -128,7 +198,7 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4103 ) |->  ( byte ( 0 , 1 , V_ZF:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4105 ) |->  ( byte ( 0 , 1 , V_SF:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4107 ) |->  ( byte ( 0 , 1 , V_DF:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 4109 ) |->  ( byte ( 0 , 1 , V_OF:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 4109 ) |-> ( byte ( 0 , 1 , V_OF:Int ) => _)
       // GPRs
       symloc ( 4 , 64 , 6144 , 8 , 4360 ) |-> ( byte ( 0 , 8 , V_RAX:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4361 ) |-> ( byte ( 1 , 8 , V_RAX:Int ) => _)
@@ -146,8 +216,8 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4380 ) |-> ( byte ( 4 , 8 , V_RBX:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4381 ) |-> ( byte ( 5 , 8 , V_RBX:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4382 ) |-> ( byte ( 6 , 8 , V_RBX:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 4383 ) |-> ( byte ( 7 , 8 , V_RBX:Int ) => _) 
-      
+      symloc ( 4 , 64 , 6144 , 8 , 4383 ) |-> ( byte ( 7 , 8 , V_RBX:Int ) => _)
+
       symloc ( 4 , 64 , 6144 , 8 , 4392 ) |-> ( byte ( 0 , 8 , V_RCX:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4393 ) |-> ( byte ( 1 , 8 , V_RCX:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4394 ) |-> ( byte ( 2 , 8 , V_RCX:Int ) => _)
@@ -173,8 +243,8 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4428 ) |-> ( byte ( 4 , 8 , V_RSI:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4429 ) |-> ( byte ( 5 , 8 , V_RSI:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4430 ) |-> ( byte ( 6 , 8 , V_RSI:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 4431 ) |-> ( byte ( 7 , 8 , V_RSI:Int ) => _) 
-      
+      symloc ( 4 , 64 , 6144 , 8 , 4431 ) |-> ( byte ( 7 , 8 , V_RSI:Int ) => _)
+
       symloc ( 4 , 64 , 6144 , 8 , 4440 ) |-> ( byte ( 0 , 8 , V_RDI:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4441 ) |-> ( byte ( 1 , 8 , V_RDI:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4442 ) |-> ( byte ( 2 , 8 , V_RDI:Int ) => _)
@@ -214,8 +284,7 @@ mem (
 </objects>
 <freed> .MemorySet </freed>
 </memory>
-
- <globals>
+  <globals>
     builtinID ( @errno ) |-> typedVal ( tPtr ( tInt ( 32 ) ) , ptr ( symloc ( 1 , 32 , 4 , 8 , 0 ) , 0 ) )
     globalID ( @_ZN12_GLOBAL__N_1L4MOVQI3VnWI8vec128_tE2VnIS2_EEEP6MemoryS7_R5StateT_T0_ ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  tPtr ( tIdentifiedStruct ( localID ( %struct.State ) ) )  tPtr ( tInt ( 8 ) )  tPtr ( tInt ( 8 ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @_ZN12_GLOBAL__N_1L4MOVQI3VnWI8vec128_tE2VnIS2_EEEP6MemoryS7_R5StateT_T0_ ) , 0 ) )
     globalID ( @__remill_atomic_begin ) |-> typedVal ( tPtr ( tFunc ( tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) ) , tPtr ( tIdentifiedStruct ( localID ( %struct.Memory ) ) )  .FirstClassTypes , false ) ) , fptr ( globalID ( @__remill_atomic_begin ) , 0 ) )
@@ -342,6 +411,7 @@ mem (
       </entryBlock>
     </function>
   </functions>
+
   <structures>
     <types>
       localID ( %class.std__bitset ) |-> tStruct ( tIdentifiedStruct ( localID ( %struct.uint64v4_t ) )  .ComposableTypes )
@@ -712,7 +782,7 @@ mem (
       1 |-> ( tPtr ( tInt ( 8 ) ) , 64 , 64 ) )
     </layoutInfo>
   </structures>
-  
+
 
 requires          (V_RAX >=Int -9223372036854775808) andBool (V_RAX <=Int 9223372036854775807)
         andBool   (V_RBX >=Int -9223372036854775808) andBool (V_RBX <=Int 9223372036854775807)
@@ -720,7 +790,7 @@ requires          (V_RAX >=Int -9223372036854775808) andBool (V_RAX <=Int 922337
         andBool   (V_RDX >=Int -9223372036854775808) andBool (V_RDX <=Int 9223372036854775807)
         andBool   (V_RSI >=Int -9223372036854775808) andBool (V_RSI <=Int 9223372036854775807)
         andBool   (V_RDI >=Int -9223372036854775808) andBool (V_RDI <=Int 9223372036854775807)
-
+        
         andBool   (YMM1_0 >=Int -9223372036854775808) andBool (YMM1_0 <=Int 9223372036854775807)
         andBool   (YMM1_1 >=Int -9223372036854775808) andBool (YMM1_1 <=Int 9223372036854775807)
         andBool   (YMM1_2 >=Int -9223372036854775808) andBool (YMM1_2 <=Int 9223372036854775807)
@@ -729,6 +799,7 @@ requires          (V_RAX >=Int -9223372036854775808) andBool (V_RAX <=Int 922337
         andBool   (YMM2_1 >=Int -9223372036854775808) andBool (YMM2_1 <=Int 9223372036854775807)
         andBool   (YMM2_2 >=Int -9223372036854775808) andBool (YMM2_2 <=Int 9223372036854775807)
         andBool   (YMM2_3 >=Int -9223372036854775808) andBool (YMM2_3 <=Int 9223372036854775807)
+
 
         andBool   (V_CF  >=Int 0) andBool (V_CF  <=Int 1)
         andBool   (V_PF  >=Int 0) andBool (V_PF  <=Int 1)

@@ -1,18 +1,39 @@
+# LProve Failures
+  - Total kli passes: 41 (xmm) + 382 (non xmm) =  
+  - Pass: 41 (xmm) +  382 (non xmm)
+
+Exluded | Count |
+--------|-------|
+  R1 |      2 |
+  **Total Fail** |  2 |
+
+
+### Reasons/Explanations
+  - E1 (Xmms): [Warning] Internal: execution phase: missing SMTLib translation 
+                for  writeMemValueAux. Fixed the implementation of [isext](https://github.com/sdasgup3/llvm-verified-backend/commit/b576375f6c53923cdbaa8d65c14533e2c1609a49) 
+  ```
+  pcmpeqq_xmm_xmm
+  pcmpgtq_xmm_xmm
+  ```
+
+  - E2: vzeroupper requierd providing all the YMM mem specification; which makes the krpove run deadly slow.
+  But its trvial to verify that mcsema is correct.
+
+
+
 # KLI Failures
-
-
 ### Register Instructions
-Total supported_decompilation_register.txt: 730
-Pass:                                       421
+  - Total supported_decompilation_register.txt: 730
+  - Pass:                                       423
 
-Exluded:
-  R1:                                       111
-  R2:                                        14
-  R3/R4/R5/R6/R7:                            3/25/2/2/18
-  R8:                                        129 
-  R10                                         5
-  =================================================
-                                            309
+Exluded | Count |
+--------|-------|
+  R1 |                111 |
+  R2 |                             14 |
+  R3/R4/R5/R6/R7|          3/25/2/18 |
+  R8 |                             129 |
+  R10 |                             5 |
+  **Total Fail** |         307 |
 
 
 ### Reasons/Explanations
@@ -30,7 +51,12 @@ Exluded:
   cat docs/kliFailR.log | parallel grep -l \"Scanner error: unexpected character sequence \'a\'\" register-variants/{}/Output/test-lstate.out
 state.out
   ```
-  - R5: (declare-fun byte (Int Int Int) AbstractValue) supplied sort is UndefVal") unknown
+  - ~~R5: (declare-fun byte (Int Int Int) AbstractValue) supplied sort is UndefVal") unknown~~
+  ```
+    psllq_xmm_xmm
+    psrlq_xmm_xmm
+  ```
+
   - R6 : fp missing
   ```
   cat docs/kliFailR.log | parallel grep -l \"Scanner error: unexpected character sequence \'f\'\" register-variants/{}/Output/test-lstate.out
@@ -86,12 +112,6 @@ vucomiss_xmm_xmm
 cvtps2pd_xmm_xmm
 vcvtps2pd_ymm_xmm
 
-```
-
-### R5
-```
-psllq_xmm_xmm
-psrlq_xmm_xmm
 ```
 
 ### R3
