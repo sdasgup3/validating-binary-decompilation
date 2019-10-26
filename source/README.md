@@ -67,7 +67,11 @@ make -j64
 sudo make install
 # Keep the llvm-config path set to the version of llvm we want to use using $PATH
 
-signal stack problems (If needed to resolve)
+For `signal stack problems`, apply the [patch](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/docs/patches) using
+cd ${HOME}/Install/llvm/llvm-4.0.0.src
+patch -p6 < <patch file>
+
+Note: the patch is borrowed from
 https://github.com/google/sanitizers/issues/822
 https://github.com/llvm-mirror/compiler-rt/commit/8a5e425a68de4d2c80ff00a97bbcb3722a4716da
 ```
@@ -124,6 +128,8 @@ Install Ida_software/*.run
 echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
 sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
 ~/ida-6.95/idal64
+
+## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
 ```
 
 ### Tools Build Instructions

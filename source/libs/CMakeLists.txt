@@ -5,3 +5,5 @@
 add_subdirectory(llvm-graph-matching)
 add_subdirectory(compositional-decompiler)
 add_subdirectory(func-analyzer)
+add_subdirectory(smt-generator)
+add_subdirectory(exprs)

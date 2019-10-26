@@ -1,0 +1,487 @@
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_r64/././test-xspec.k)
+Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_r64/test-xspec.k)
+Parse spec modules [1/9 rules]                               =  0.019s
+StateLog: /home/ubuntu/Github/X86-64-semantics/semantics/x86-semantics-kompiled/stateLog/prove-2044796696.log
+
+Parsing finished:  192.740 s
+Pre-processing rule:
+rule too long...
+	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_r64/test-xspec.k Location(6,5,101,61)
+==================================
+
+Initialization finished
+==================================
+Stats for each phase, time, used memory, implicit main GC time percentage:
+Total                 :  193.323 s,	 2809 MB, gc:  6.997 %
+  Parsing             :  192.740 s,	 2665 MB, gc:  7.018 %
+  Init                :    0.582 s,	 2809 MB, gc:  0.000 %
+
+Init+Execution time:       0.582 s
+
+  Time and top-level event counts:
+  resolveFunctionAndAnywhere time  :    0.063 s,      #        447
+    evaluateFunction time            :    0.044 s,      #        192
+      builtin evaluation               :           ,      #        156
+      no function rules                :           ,      #         36
+    applyAnywhereRules time          :    0.001 s,      #         91
+      no anywhere rules                :           ,      #         91
+    remaining time & # cached        :    0.018 s,      #        164
+
+  Recursive event counts:
+  resolveFunctionAndAnywhere time  :           ,      #        126
+    evaluateFunction time            :           ,      #          0
+      builtin evaluation               :           ,      #          0
+      no function rules                :           ,      #          0
+    applyAnywhereRules time          :           ,      #          0
+      no anywhere rules                :           ,      #          0
+    # cached                         :           ,      #        126
+==================================
+
+
+Initial term
+=====================
+
+<generatedTop>
+  <k>
+    fetchNoDBG
+  </k>
+  <functargets>
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+  </functargets>
+  <rotargets>
+    .Map
+  </rotargets>
+  <datatargets>
+    .Map
+  </datatargets>
+  <bsstargets>
+    .Map
+  </bsstargets>
+  <entrypoint>
+    .
+  </entrypoint>
+  <nextLocPc>
+    _0
+  </nextLocPc>
+  <lastseenlabel>
+    .
+  </lastseenlabel>
+  <currentsection>
+    "text"
+  </currentsection>
+  <memstate>
+    <text>
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( movq %rbx , %xmm1 , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands ) )
+    </text>
+    <stack>
+      <memory>
+        <nextLoc>
+          1
+        </nextLoc>
+        <objects>
+          mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+          symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+        </objects>
+        <freed>
+          .Set
+        </freed>
+      </memory>
+      <stackbase>
+        stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+      </stackbase>
+      <robase>
+        roBaseInfo ( . , . , . )
+      </robase>
+      <database>
+        dataBaseInfo ( . , . , . )
+      </database>
+      <bssbase>
+        bssBaseInfo ( . , . , . )
+      </bssbase>
+    </stack>
+  </memstate>
+  <environment>
+    <argc>
+      .
+    </argc>
+    <argv>
+      .
+    </argv>
+  </environment>
+  <regstate>
+    "AF" |-> _7
+    "CF" |-> _9
+    "OF" |-> _11
+    "PF" |-> _13
+    "RAX" |-> mi ( 64 , V_RAX )
+    "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "RBX" |-> mi ( 64 , V_RBX )
+    "RCX" |-> mi ( 64 , V_RCX )
+    "RDI" |-> mi ( 64 , V_RDI )
+    "RDX" |-> mi ( 64 , V_RDX )
+    "RIP" |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+    "RSI" |-> mi ( 64 , V_RSI )
+    "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "SF" |-> _15
+    "ZF" |-> _17
+  </regstate>
+  _35
+  _36
+  _37
+  _38
+  _39
+</generatedTop>
+/\
+  V_RAX <Int 18446744073709551616 ==K true
+#And
+  V_RAX >=Int 0 ==K true
+#And
+  V_RBX <Int 18446744073709551616 ==K true
+#And
+  V_RBX >=Int 0 ==K true
+#And
+  V_RCX <Int 18446744073709551616 ==K true
+#And
+  V_RCX >=Int 0 ==K true
+#And
+  V_RDI <Int 18446744073709551616 ==K true
+#And
+  V_RDI >=Int 0 ==K true
+#And
+  V_RDX <Int 18446744073709551616 ==K true
+#And
+  V_RDX >=Int 0 ==K true
+#And
+  V_RSI <Int 18446744073709551616 ==K true
+#And
+  V_RSI >=Int 0 ==K true
+
+
+Target term
+=====================
+
+<generatedTop>
+  <k>
+    exit_0
+  </k>
+  <functargets>
+    _start |-> ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 )
+  </functargets>
+  <rotargets>
+    .Map
+  </rotargets>
+  <datatargets>
+    .Map
+  </datatargets>
+  <bsstargets>
+    .Map
+  </bsstargets>
+  <entrypoint>
+    .
+  </entrypoint>
+  <nextLocPc>
+    _0
+  </nextLocPc>
+  <lastseenlabel>
+    .
+  </lastseenlabel>
+  <currentsection>
+    "text"
+  </currentsection>
+  <memstate>
+    <text>
+      code ( ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'0 ) |-> storedInstr ( movq %rbx , %xmm1 , .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0 ) , 64'1 ) |-> storedInstr ( ret .Operands ) )
+    </text>
+    <stack>
+      <memory>
+        <nextLoc>
+          1
+        </nextLoc>
+        <objects>
+          mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> _19
+          symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> _20
+          symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> _21
+          symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> _22
+          symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> _23
+          symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> _24
+          symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> _25
+          symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> _26
+          symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> _27
+          symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> _28
+          symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> _29
+          symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> _30
+          symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> _31
+          symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> _32
+          symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> _33
+          symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> _34
+          symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+          symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+        </objects>
+        <freed>
+          .Set
+        </freed>
+      </memory>
+      <stackbase>
+        stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+      </stackbase>
+      <robase>
+        roBaseInfo ( . , . , . )
+      </robase>
+      <database>
+        dataBaseInfo ( . , . , . )
+      </database>
+      <bssbase>
+        bssBaseInfo ( . , . , . )
+      </bssbase>
+    </stack>
+  </memstate>
+  <environment>
+    <argc>
+      .
+    </argc>
+    <argv>
+      .
+    </argv>
+  </environment>
+  <regstate>
+    "AF" |-> _8
+    "CF" |-> _10
+    "OF" |-> _12
+    "PF" |-> _14
+    "RAX" |-> mi ( 64 , _1 )
+    "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1016 )
+    "RBX" |-> mi ( 64 , _2 )
+    "RCX" |-> mi ( 64 , _3 )
+    "RDI" |-> mi ( 64 , _6 )
+    "RDX" |-> mi ( 64 , _4 )
+    "RIP" |-> 64'18446744073709551615
+    "RSI" |-> mi ( 64 , _5 )
+    "RSP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , 64'1024 )
+    "SF" |-> _16
+    "ZF" |-> _18
+  </regstate>
+  _35
+  _36
+  _37
+  _38
+  _39
+</generatedTop>
+/\
+#True
+
+
+STEP 1 v1 :    4.330 s, 		 1975 MB, gc:  0.000 %
+===================
+<memory>
+  <nextLoc>
+    1
+  </nextLoc>
+  <objects>
+    mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+  </objects>
+  <freed>
+    .Set
+  </freed>
+</memory>
+
+STEP 2 v1 :    5.409 s, 		 2718 MB, gc:  0.000 %
+===================
+<memory>
+  <nextLoc>
+    1
+  </nextLoc>
+  <objects>
+    mem ( symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1008 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1009 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1010 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1011 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1012 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1013 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1014 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1015 ) |-> byte ( 0 , undefMInt )
+    symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , 64'-1 )
+    symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , 64'-1 ) )
+  </objects>
+  <freed>
+    .Set
+  </freed>
+</memory>
+
+==========================================
+Top term when exception was thrown:
+==========================================
+
+<generatedTop>(<k>(#KSequence(execinstr(___X86-SYNTAX(movq_X86-SYNTAX(.KList),, operandlist(%rbx_X86-SYNTAX(.KList),, operandlist(%xmm1_X86-SYNTAX(.KList),, .List{"operandlist"}(.KList))))), KItem(#"fetchNoDBG"))),, <functargets>(X86Id(#"_start") |-> ptr(symloc(Int(#"-1"),, Int(#"0"),, Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'0"))   ),, <rotargets>(.Map),, <datatargets>(.Map),, <bsstargets>(.Map),, <entrypoint>(#EmptyK()),, <nextLocPc>(_0_2128:MInt),, <lastseenlabel>(#EmptyK()),, <currentsection>(String(#""text"")),, <memstate>(<text>(code(ptr(symloc(Int(#"-1"),, Int(#"0"),, Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'0")) |-> storedInstr(___X86-SYNTAX(movq_X86-SYNTAX(.KList),, operandlist(%rbx_X86-SYNTAX(.KList),, operandlist(%xmm1_X86-SYNTAX(.KList),, .List{"operandlist"}(.KList))))) ptr(symloc(Int(#"-1"),, Int(#"0"),, Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'1")) |-> storedInstr(___X86-SYNTAX(ret_X86-SYNTAX(.KList),, .List{"operandlist"}(.KList)))   )),, <stack>(<memory>(<nextLoc>(Int(#"1")),, <objects>(mem(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1006")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1005")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1004")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1003")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1002")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1001")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1000")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1023")) |-> byte(Int(#"7"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1022")) |-> byte(Int(#"6"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1021")) |-> byte(Int(#"5"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1020")) |-> byte(Int(#"4"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1019")) |-> byte(Int(#"3"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1018")) |-> byte(Int(#"2"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1017")) |-> byte(Int(#"1"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1016")) |-> byte(Int(#"0"),, MInt(#"64'-1")) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1015")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1014")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1013")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1012")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1011")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1010")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1009")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1008")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList)) symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"1007")) |-> byte(Int(#"0"),, undefMInt_MINT-WRAPPER-SYNTAX(.KList))   )),, <freed>(.Set)),, <stackbase>(stackBaseInfo(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),, MInt(#"64'1016"))),, <robase>(roBaseInfo(#EmptyK(),, #EmptyK(),, #EmptyK())),, <database>(dataBaseInfo(#EmptyK(),, #EmptyK(),, #EmptyK())),, <bssbase>(bssBaseInfo(#EmptyK(),, #EmptyK(),, #EmptyK())))),, <environment>(<argc>(#EmptyK()),, <argv>(#EmptyK())),, <regstate>(String(#""RBP"") |-> ptr(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),, MInt(#"64'1016")) String(#""CF"") |-> _9_2131:MInt String(#""AF"") |-> _7_2129:MInt String(#""RCX"") |-> mi(Int(#"64"),, V_RCX_2113:Int) String(#""RDX"") |-> mi(Int(#"64"),, V_RDX_2115:Int) String(#""RAX"") |-> mi(Int(#"64"),, V_RAX_2111:Int) String(#""RBX"") |-> mi(Int(#"64"),, V_RBX_2112:Int) String(#""RSI"") |-> mi(Int(#"64"),, V_RSI_2116:Int) String(#""ZF"") |-> _17_2139:MInt String(#""RSP"") |-> ptr(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),, MInt(#"64'1016")) String(#""SF"") |-> _15_2137:MInt String(#""RDI"") |-> mi(Int(#"64"),, V_RDI_2114:Int) String(#""PF"") |-> _13_2135:MInt String(#""OF"") |-> _11_2133:MInt String(#""RIP"") |-> ptr(symloc(Int(#"-1"),, Int(#"0"),, Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'1"))   ),, _35_2117:K,, _36_2118:K,, _37_2119:K,, _38_2120:K,, _39_2121:K)
+/\
+ConjunctiveFormula(
+  init equalities:
+    _==K_(_<Int_(V_RAX_2111:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_<Int_(V_RBX_2112:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_<Int_(V_RCX_2113:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_<Int_(V_RDI_2114:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_<Int_(V_RDX_2115:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_<Int_(V_RSI_2116:Int,, Int(#"18446744073709551616")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RAX_2111:Int,, Int(#"0")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RBX_2112:Int,, Int(#"0")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RCX_2113:Int,, Int(#"0")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RDI_2114:Int,, Int(#"0")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RDX_2115:Int,, Int(#"0")),, Bool(#"true"))
+    _==K_(_>=Int_(V_RSI_2116:Int,, Int(#"0")),, Bool(#"true"))
+)
+
+
+SPEC ERROR: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/movq_xmm_r64/test-xspec.k Location(6,5,101,61)
+==================================
+Success execution paths: 0
+Failed execution paths: 0
+Paths in progress: 1
+Longest path: 2 steps
+Stats for each phase, time, used memory, implicit main GC time percentage:
+Total                 :  199.684 s,	 3399 MB, gc:  6.817 %
+  Parsing             :  192.740 s,	 2665 MB, gc:  7.018 %
+  Init                :    0.582 s,	 2809 MB, gc:  0.000 %
+  Execution           :    6.362 s,	 3399 MB, gc:  1.352 %
+
+Init+Execution time:       6.944 s
+
+  Time and top-level event counts:
+  resolveFunctionAndAnywhere time  :    0.103 s,      #        537
+    evaluateFunction time            :    0.080 s,      #        252
+      builtin evaluation               :           ,      #        163
+      function rule                    :           ,      #          4
+      no function rules                :           ,      #         84
+      other                            :           ,      #          1
+    applyAnywhereRules time          :    0.001 s,      #        110
+      no anywhere rules                :           ,      #        110
+    remaining time & # cached        :    0.023 s,      #        175
+  log time                         :    1.934 s,      #          3
+
+  Recursive event counts:
+  resolveFunctionAndAnywhere time  :           ,      #        153
+    evaluateFunction time            :           ,      #         11
+      builtin evaluation               :           ,      #          2
+      function rule                    :           ,      #          8
+      no function rules                :           ,      #          0
+      other                            :           ,      #          1
+    applyAnywhereRules time          :           ,      #          0
+      no anywhere rules                :           ,      #          0
+    # cached                         :           ,      #        142
+
+Max memory : 262144 MB
+==================================
+
+[Error] Critical:  (Bad term not a k:
+org.kframework.backend.java.kil.Bottom@357f01a1)
+  while evaluating functional term:
+	getRegisterValue(%ymm1_X86-SYNTAX(.KList),, String(#""RBP"") |->
+ptr(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),,
+MInt(#"64'1016")) String(#""CF"") |-> _9_2131:MInt String(#""AF"") |->
+_7_2129:MInt String(#""RCX"") |-> mi(Int(#"64"),, V_RCX_2113:Int)
+String(#""RDX"") |-> mi(Int(#"64"),, V_RDX_2115:Int) String(#""RAX"") |->
+mi(Int(#"64"),, V_RAX_2111:Int) String(#""RBX"") |-> mi(Int(#"64"),,
+V_RBX_2112:Int) String(#""RSI"") |-> mi(Int(#"64"),, V_RSI_2116:Int)
+String(#""ZF"") |-> _17_2139:MInt String(#""RSP"") |-> ptr(symloc(Int(#"1"),,
+Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),, MInt(#"64'1016"))
+String(#""SF"") |-> _15_2137:MInt String(#""RDI"") |-> mi(Int(#"64"),,
+V_RDI_2114:Int) String(#""PF"") |-> _13_2135:MInt String(#""OF"") |->
+_11_2133:MInt String(#""RIP"") |-> ptr(symloc(Int(#"-1"),, Int(#"0"),,
+Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'1"))   )
+  and applying the rule
+  rule getRegisterValue(Y:Ymm, RSMap)  =>  {RSMap[convToRegKeys(Y)]}:>MInt
+	Source:
+/home/ubuntu/Github/X86-64-semantics/semantics/x86-abstract-semantics.k
+Location(423,8,423,75)
+
+  while evaluating function getRegisterValue
+  while evaluating functional term:
+	getParentValue(%xmm1_X86-SYNTAX(.KList),, String(#""RBP"") |->
+ptr(symloc(Int(#"1"),, Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),,
+MInt(#"64'1016")) String(#""CF"") |-> _9_2131:MInt String(#""AF"") |->
+_7_2129:MInt String(#""RCX"") |-> mi(Int(#"64"),, V_RCX_2113:Int)
+String(#""RDX"") |-> mi(Int(#"64"),, V_RDX_2115:Int) String(#""RAX"") |->
+mi(Int(#"64"),, V_RAX_2111:Int) String(#""RBX"") |-> mi(Int(#"64"),,
+V_RBX_2112:Int) String(#""RSI"") |-> mi(Int(#"64"),, V_RSI_2116:Int)
+String(#""ZF"") |-> _17_2139:MInt String(#""RSP"") |-> ptr(symloc(Int(#"1"),,
+Int(#"128"),, Int(#"1024"),, Int(#"8"),, Int(#"0")),, MInt(#"64'1016"))
+String(#""SF"") |-> _15_2137:MInt String(#""RDI"") |-> mi(Int(#"64"),,
+V_RDI_2114:Int) String(#""PF"") |-> _13_2135:MInt String(#""OF"") |->
+_11_2133:MInt String(#""RIP"") |-> ptr(symloc(Int(#"-1"),, Int(#"0"),,
+Int(#"0"),, Int(#"0"),, Int(#"0")),, MInt(#"64'1"))   )
+  and applying the rule
+  rule getParentValue(R:Register, RSMap) =>
+getRegisterValue(convSubRegsToRegs(R), RSMap)
+	Source:
+/home/ubuntu/Github/X86-64-semantics/semantics/x86-abstract-semantics.k
+Location(427,8,427,90)
+
+  while evaluating function getParentValue
+Command exited with non-zero status 113
+303.81user 655.70system 3:21.38elapsed 476%CPU (0avgtext+0avgdata 9549260maxresident)k
+0inputs+178504outputs (0major+8450010minor)pagefaults 0swaps

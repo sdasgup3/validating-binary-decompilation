@@ -1,0 +1,14 @@
+diff --git a/tools/mcsema_disass/ida/get_cfg.py b/tools/mcsema_disass/ida/get_cfg.py
+index e12cbc7..37e0f4e 100755
+--- a/tools/mcsema_disass/ida/get_cfg.py
++++ b/tools/mcsema_disass/ida/get_cfg.py
+@@ -42,6 +42,9 @@ if os.path.isdir('/usr/lib/python2.7/dist-packages'):
+ if os.path.isdir('/usr/local/lib/python2.7/dist-packages'):
+   sys.path.append('/usr/local/lib/python2.7/dist-packages')
+ 
++if os.path.isdir('/home/ubuntu/.local/lib/python2.7/site-packages'):
++  sys.path.append('/home/ubuntu/.local/lib/python2.7/site-packages')
++
+ tools_disass_ida_dir = os.path.dirname(__file__)
+ tools_disass_dir = os.path.dirname(tools_disass_ida_dir)
+ 
