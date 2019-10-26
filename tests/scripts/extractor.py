@@ -136,7 +136,7 @@ def createParentMakefile(functions):
     makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
 
     makeFile.write("mcsema_opt:" + "\n")
-    makeFile.write("	../../../scripts/remove_definitions/pl --file binary/test.mcsema.ll" + "\n")
+    makeFile.write("	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll" + "\n")
     makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:

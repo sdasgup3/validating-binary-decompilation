@@ -17,10 +17,23 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 $VERSION = 1.00;
 @ISA     = qw(Exporter);
 @EXPORT =
-  qw(createDir execute info passInfo failInfo warnInfo display toHex toDec twosComplement printwithspaces dec2bin signExtend zeroExtend float2binary bin2hex split_filename trim debugInfo removequotes joinarray printMap printArray myGrep max min scalarToArray arrayToMap printMapArray belongsTo belongsTo3 compareMaps initThreads numlines arrayAllSame diffStrings compareMaps compareMapArray);
+  qw(createDir execute info passInfo failInfo warnInfo display toHex toDec twosComplement printwithspaces dec2bin signExtend zeroExtend float2binary bin2hex split_filename trim debugInfo removequotes joinarray printMap printArray myGrep max min scalarToArray arrayToMap printMapArray belongsTo belongsTo3 compareMaps initThreads numlines arrayAllSame diffStrings compareMaps compareMapArray getrelpath);
 @EXPORT_OK = qw();
 
 our $home = $ENV{'HOME'};
+
+##
+## Usage: 
+## Input: path: a/b/c.txt filename = x.md
+## Output: a/b/x.md
+##
+sub getrelpath {
+  my $path = shift @_;
+  my $filename = shift @_;
+
+  my ( $dirname, $basename, $ext ) = utils::split_filename($path);
+  return $dirname . $filename;
+}
 
 sub printStringDiff {
     my ( $s1, $s2, $message ) = @_;

@@ -1,6 +1,6 @@
 PROG=tzcntw_r16_r16
 .PHONY: objdump mcsema assemble binary lprove xprove declutter kli xstate collect kompile genxspec genlspec clean
-KPROVE_OPTS=--log-cells "(\#initTerm),(\#target),(\#result),(registers),(memory)" --log-basic  --state-log --log-success --no-alpha-renaming --restore-original-names
+KPROVE_OPTS=--log-cells "(\#initTerm),(\#target),(\#result),(registers),(memory)" --log-basic  --state-log --log-success --no-alpha-renaming --restore-original-names --output kast
 CLEAN_ASM=${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
 Mkdir=@mkdir -p $(@D)
 SCRIPT_DIR=${HOME}/Github/X86-64-semantics/scripts
