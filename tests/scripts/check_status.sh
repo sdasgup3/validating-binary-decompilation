@@ -36,12 +36,21 @@ matchCheck() {
   fi
 }
 
-kproveCheck() {
+lproveCheck() {
   msg=$1
   if grep -q "Success final states" Output/test-lspec.out; then
-    echo -e "\e[32mKProve Pass\e[39m:-" `pwd`:$msg
+    echo -e "\e[32mLProve Pass\e[39m:-" `pwd`:$msg
   else
-    echo -e "\e[31mKProve Fail\e[39m:-" `pwd`:$msg
+    echo -e "\e[31mLProve Fail\e[39m:-" `pwd`:$msg
+  fi
+}
+
+xproveCheck() {
+  msg=$1
+  if sed -ne '/SPEC FAILED/,$ p' Output/test-xspec.out | grep -q exit_0 ; then
+    echo -e "\e[32mXProve Pass\e[39m:-" `pwd`:$msg
+  else
+    echo -e "\e[31mXProve Fail\e[39m:-" `pwd`:$msg
   fi
 }
 
@@ -62,8 +71,11 @@ while [ "$1" != "" ]; do
         --match )        shift
                          matchCheck $msg
                          ;;
-        --kprove )       shift
-                         kproveCheck $msg
+        --lprove )       shift
+                         lproveCheck $msg
+                         ;;
+        --xprove )       shift
+                         xproveCheck $msg
                          ;;
         --kli )          shift
                          kliCheck $msg
