@@ -45,7 +45,7 @@ private:
   const string lspecfile;
   const string xspecfile;
   const string z3pyfile;
-  stringstream prrofScript;
+  stringstream proofScript;
 
   vector<summaryAndSideConds> processLSpec();
   unordered_map<string, string>

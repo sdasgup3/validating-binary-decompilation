@@ -91,6 +91,8 @@ sub getMakeFileTemplate {
     my $MakeFileTemplate = qq(PROG=$opc
 .PHONY: objdump mcsema assemble binary lprove xprove declutter kli xstate collect kompile genxspec genlspec clean
 KPROVE_OPTS=--log-cells "(\\#initTerm),(\\#target),(\\#result),(registers),(memory)" --log-basic  --state-log --log-success --no-alpha-renaming --restore-original-names --output kast
+XPROVE_OPTS= --output-flatten "_Map_"
+LPROVE_OPTS= --output-flatten "_Map_"
 CLEAN_ASM=\${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
 Mkdir=\@mkdir -p \$(\@D)
 SCRIPT_DIR=\${HOME}/Github/X86-64-semantics/scripts
@@ -132,8 +134,8 @@ genlspec: Output/test-lstate.out
 lprove: test-lspec.k
 	mkdir -p \${OUTDIR}
 	\@echo "KProve LLVM program"
-	time kprove \$< --directory \${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude \${HOME}/Github/llvm-verified-backend/scripts/prelude.smt2 \${KPROVE_OPTS} 1>Output/test-lspec.out 2>&1
-	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --kprove
+	time kprove \$< --directory \${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude \${HOME}/Github/llvm-verified-backend/scripts/prelude.smt2 \${KPROVE_OPTS}  \${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --lprove
 
 ##
 ## X86 Targets
@@ -160,7 +162,8 @@ genxspec: seed/\${PROG}.s
 xprove: test-xspec.k
 	mkdir -p \${OUTDIR}
 	\@echo "KProve X86 program"
-	time kprove \$< --directory \${HOME}/Github/X86-64-semantics/semantics --smt_prelude \${HOME}/Github/k/k-distribution/include/z3/basic.smt2 \${KPROVE_OPTS} 1>Output/test-xspec.out 2>&1
+	-time kprove \$< --directory \${HOME}/Github/X86-64-semantics/semantics --smt_prelude \${HOME}/Github/k/k-distribution/include/z3/basic.smt2 \${KPROVE_OPTS} \${XPROVE_OPTS} 1>Output/test-xspec.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --xprove
 
 ##
 ##

@@ -5,5 +5,5 @@ Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/sing
 	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/cbtw/test-xspec.k)
 	Location(41,77,41,78)
 Command exited with non-zero status 113
-72.82user 68.45system 0:55.58elapsed 254%CPU (0avgtext+0avgdata 1723288maxresident)k
-24inputs+147944outputs (0major+1661792minor)pagefaults 0swaps
+72.51user 21.41system 0:51.26elapsed 183%CPU (0avgtext+0avgdata 1217012maxresident)k
+8inputs+175328outputs (0major+1517399minor)pagefaults 0swaps

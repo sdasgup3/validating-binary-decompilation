@@ -20,18 +20,19 @@ module TEST-XSPEC
                       ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1024) )) //@ensure
         "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1016) ) // @ensure
 
-        "RAX" |-> (mi(64, V_RAX:Int):MInt => mi(64, _:Int))
-        "RBX" |-> (mi(64, V_RBX:Int):MInt => mi(64, _:Int))
-        "RCX" |-> (mi(64, V_RCX:Int):MInt => mi(64, _:Int))
-        "RDX" |-> (mi(64, V_RDX:Int):MInt => mi(64, _:Int))
-        "RSI" |-> (mi(64, V_RSI:Int):MInt => mi(64, _:Int))
-        "RDI" |-> (mi(64, V_RDI:Int):MInt => mi(64, _:Int))
-        "AF" |-> (_:MInt => _:MInt)
-        "CF" |-> (_:MInt => _:MInt)
-        "OF" |-> (_:MInt => _:MInt)
-        "PF" |-> (_:MInt => _:MInt)
-        "SF" |-> (_:MInt => _:MInt)
-        "ZF" |-> (_:MInt => _:MInt)
+        "RAX" |-> (mi(64, VX_RAX:Int):MInt => mi(64, _:Int))
+        "RBX" |-> (mi(64, VX_RBX:Int):MInt => mi(64, _:Int))
+        "RCX" |-> (mi(64, VX_RCX:Int):MInt => mi(64, _:Int))
+        "RDX" |-> (mi(64, VX_RDX:Int):MInt => mi(64, _:Int))
+        "RSI" |-> (mi(64, VX_RSI:Int):MInt => mi(64, _:Int))
+        "RDI" |-> (mi(64, VX_RDI:Int):MInt => mi(64, _:Int))
+        // W/o the folowing the prover fails on solving query                              
+        "AF" |->  (mi(1,  VX_AF:Int):MInt  => mi(1,  _:Int))
+        "CF" |->  (mi(1,  VX_CF:Int):MInt  => mi(1,  _:Int))
+        "OF" |->  (mi(1,  VX_OF:Int):MInt  => mi(1,  _:Int))
+        "PF" |->  (mi(1,  VX_PF:Int):MInt  => mi(1,  _:Int))
+        "SF" |->  (mi(1,  VX_SF:Int):MInt  => mi(1,  _:Int))
+        "ZF" |->  (mi(1,  VX_ZF:Int):MInt  => mi(1,  _:Int))
          // Main Claim
       </regstate>
 
@@ -93,10 +94,16 @@ module TEST-XSPEC
         <argc> .K  </argc>
         <argv> .K  </argv>
       </environment>
-        requires  V_RAX >=Int 0 andBool V_RAX <Int 2 ^Int 64 
-        andBool   V_RBX >=Int 0 andBool V_RBX <Int 2 ^Int 64 
-        andBool   V_RCX >=Int 0 andBool V_RCX <Int 2 ^Int 64 
-        andBool   V_RDX >=Int 0 andBool V_RDX <Int 2 ^Int 64 
-        andBool   V_RSI >=Int 0 andBool V_RSI <Int 2 ^Int 64 
-        andBool   V_RDI >=Int 0 andBool V_RDI <Int 2 ^Int 64 
+        requires  VX_RAX >=Int 0 andBool VX_RAX <Int 2 ^Int 64 
+        andBool   VX_RBX >=Int 0 andBool VX_RBX <Int 2 ^Int 64 
+        andBool   VX_RCX >=Int 0 andBool VX_RCX <Int 2 ^Int 64 
+        andBool   VX_RDX >=Int 0 andBool VX_RDX <Int 2 ^Int 64 
+        andBool   VX_RSI >=Int 0 andBool VX_RSI <Int 2 ^Int 64 
+        andBool   VX_RDI >=Int 0 andBool VX_RDI <Int 2 ^Int 64 
+        andBool   (VX_CF ==Int 0 orBool VX_CF ==Int 1)
+        andBool   (VX_SF ==Int 0 orBool VX_SF ==Int 1)
+        andBool   (VX_PF ==Int 0 orBool VX_PF ==Int 1)
+        andBool   (VX_ZF ==Int 0 orBool VX_ZF ==Int 1)
+        andBool   (VX_AF ==Int 0 orBool VX_AF ==Int 1)
+        andBool   (VX_OF ==Int 0 orBool VX_OF ==Int 1)
 endmodule

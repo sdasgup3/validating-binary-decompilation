@@ -5,69 +5,6 @@
 
 using namespace cpputil;
 
-/************** SymLocValue ******************/
-string SymLocValue::read_spec(string &str) {
-
-  SummaryExprToken tk1;
-  SummaryExprToken tk2;
-
-  str = tk1.read_spec(str);
-  byteIndex = stoi(tk1.value_);
-
-  // Ignoring ','
-  str = str.substr(1);
-
-  str = tk2.read_spec(str);
-  numBytes = stoi(tk2.value_);
-
-  // Ignoring ','
-  str = str.substr(1);
-
-  str = expr.read_spec(str);
-
-  return str;
-}
-
-ostream &SymLocValue::write_spec(ostream &os) const {
-  if (numBytes == 1) {
-    os << "z3.Extract(" << 0 << ", " << 0 << ", " << expr << ")";
-  } else {
-    os << "z3.Extract(" << byteIndex * 8 + 7 << ", " << byteIndex * 8 << ", "
-       << expr << ")";
-  }
-  return os;
-}
-
-/************** SymLoc ******************/
-string SymLoc::read_spec(string &str) {
-
-  for (int i = 0; i < 5; i++) {
-
-    SummaryExprToken tk;
-    str = tk.read_spec(str);
-
-    if (i == 0) {
-      locId = stoi(tk.value_);
-    }
-
-    if (i == 4) {
-      offset = stoi(tk.value_);
-      break;
-    }
-
-    // Ignoring ','
-    str = str.substr(1);
-  }
-  return str;
-}
-
-ostream &SymLoc::write_spec(ostream &os) const {
-  os << "<SymLoc>" << endl;
-  os << "\tlocId: " << locId << endl;
-  os << "\tOffset: " << offset << endl;
-  return os;
-}
-
 /************** Utils ******************/
 stringLocPair extractNearestBracedExp(size_t pos, const string &str) {
 
@@ -138,6 +75,7 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
   assert(ptr != NULL && "null pointer in dispatchSummaryExpr!");
 
   smatch m;
+  // Arithmetic Operators
   if (regex_search(str, m, regex("^`_&Int_`"))) {
     *ptr = new SummaryExprAnd();
     return (*ptr)->read_spec(str);
@@ -162,14 +100,24 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprOr();
     return (*ptr)->read_spec(str);
 
-  } else if (regex_search(str, m, regex("^#token"))) {
-    *ptr = new SummaryExprToken();
-    return (*ptr)->read_spec(str);
-
   } else if (regex_search(str, m, regex("^`#if_#then_#else_#fi_K-EQUAL`"))) {
     *ptr = new SummaryExprIfThenElse();
     return (*ptr)->read_spec(str);
 
+    // Leafs
+  } else if (regex_search(str, m, regex("^VL_|^VX"))) {
+    *ptr = new SummaryExprVar();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^#token"))) {
+    *ptr = new SummaryExprToken();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^symloc"))) {
+    *ptr = new SymLoc();
+    return (*ptr)->read_spec(str);
+
+    // Int Bool Operators
   } else if (regex_search(str, m, regex("^`_<Int_`"))) {
     *ptr = new SummaryExprLT();
     return (*ptr)->read_spec(str);
@@ -184,10 +132,6 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
 
   } else if (regex_search(str, m, regex("^`_>=Int_`"))) {
     *ptr = new SummaryExprGTE();
-    return (*ptr)->read_spec(str);
-
-  } else if (regex_search(str, m, regex("^V_"))) {
-    *ptr = new SummaryExprVar();
     return (*ptr)->read_spec(str);
 
   } else if (regex_search(str, m, regex("^`_==K_`"))) {
@@ -206,6 +150,58 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprNotBool();
     return (*ptr)->read_spec(str);
 
+    // MInt Operators
+  } else if (regex_search(str, m, regex("^xorMInt"))) {
+    *ptr = new SummaryExprXorMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^extractMInt"))) {
+    *ptr = new SummaryExprExtractMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^mi"))) {
+    *ptr = new SummaryExprMiMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^concatenateMInt"))) {
+    *ptr = new SummaryExprConcatMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^addMInt"))) {
+    *ptr = new SummaryExprAddMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(
+                 str, m,
+                 regex("^`#ifMInt_#then_#else_#fi_MINT-WRAPPER-SYNTAX`"))) {
+    *ptr = new SummaryExprIfThenElseMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^eqMInt"))) {
+    *ptr = new SummaryExprEqMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`_andBool_`"))) {
+    *ptr = new SummaryExprAndBool();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`_orBool_`"))) {
+    *ptr = new SummaryExprOrBool();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`_xorBool_`"))) {
+    *ptr = new SummaryExprXorBool();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`notBool_`"))) {
+    *ptr = new SummaryExprNotBool();
+    return (*ptr)->read_spec(str);
+
+    // Misc Operators
+  } else if (regex_search(str, m, regex("^ptr"))) {
+    *ptr = new SummaryExprPtr();
+    return (*ptr)->read_spec(str);
+
   } else {
     Console::error(1) << "Unsupported Operator: " << str << endl;
     exit(1);
@@ -220,16 +216,17 @@ SummaryExprBinop::SummaryExprBinop() {
   b_ = NULL;
 }
 
-void SummaryExprBinop::type_check() {
+bool SummaryExprBinop::checkComponentWidths() {
+  return (a_->width_ == b_->width_) ? true : false;
+}
+
+void SummaryExprBinop::deriveComponentWidths() {
   if (a_->width_ != 0 && b_->width_ != 0) {
-    if (a_->width_ != b_->width_) {
-      Console::error(1) << "Width mismatch: " << type_ << "\n";
-      exit(1);
-    }
+    return;
   } else if (a_->width_ != 0) {
     b_->width_ = a_->width_;
   } else if (b_->width_ != 0) {
-    a_->width_ = a_->width_;
+    a_->width_ = b_->width_;
   } else {
     Console::error(1) << "Zero Width Binop: " << type_ << "\n";
     exit(1);
@@ -244,7 +241,7 @@ string SummaryExprBinop::read_spec(string &str) {
 
   str = dispatchSummaryExpr(str, &b_);
 
-  type_check();
+  deriveComponentWidths();
 
   return str;
 }
@@ -259,7 +256,9 @@ ostream &SummaryExprBinop::write_spec(ostream &os) const {
 /************** SummaryExprUnop ******************/
 SummaryExprUnop::SummaryExprUnop() { a_ = NULL; }
 
-void SummaryExprUnop::type_check() {
+bool SummaryExprUnop::checkComponentWidths() { return true; }
+
+void SummaryExprUnop::deriveComponentWidths() {
   if (a_->width_ == 0) {
     Console::error(1) << "Zero Width Binop: " << type_ << "\n";
     exit(1);
@@ -269,7 +268,7 @@ void SummaryExprUnop::type_check() {
 string SummaryExprUnop::read_spec(string &str) {
   str = dispatchSummaryExpr(str, &a_);
 
-  type_check();
+  deriveComponentWidths();
   return str;
 }
 
@@ -285,18 +284,19 @@ SummaryExprTernop::SummaryExprTernop() {
   c_ = NULL;
 }
 
-void SummaryExprTernop::type_check() {
+bool SummaryExprTernop::checkComponentWidths() {
+  return (b_->width_ == c_->width_) ? true : false;
+}
+
+void SummaryExprTernop::deriveComponentWidths() {
   if (b_->width_ != 0 && c_->width_ != 0) {
-    if (b_->width_ != c_->width_) {
-      Console::error(1) << "Width mismatch: " << type_ << "\n";
-      exit(1);
-    }
+    return;
   } else if (b_->width_ != 0) {
     c_->width_ = b_->width_;
   } else if (c_->width_ != 0) {
     b_->width_ = c_->width_;
   } else {
-    // b_ == nullptr and c_ == nullptr
+    // b_ c_ both have zero widths
     if (a_->width_ == 0) {
       Console::error(1) << "Zero Width Ternop: " << type_ << "\n";
       exit(1);
@@ -318,7 +318,7 @@ string SummaryExprTernop::read_spec(string &str) {
 
   str = dispatchSummaryExpr(str, &c_);
 
-  type_check();
+  deriveComponentWidths();
 
   return str;
 }
@@ -332,29 +332,18 @@ ostream &SummaryExprTernop::write_spec(ostream &os) const {
   return os;
 }
 
-/************** SummaryExprEq ******************/
-string SummaryExprEq::read_spec(string &str) {
-  auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
-  type_ = type();
-  width_ = a_->width_;
-  return str.substr(result.second + 1);
-}
-
-ostream &SummaryExprEq::write_spec(ostream &os) const {
-  os << "(";
-  a_->write_spec(os);
-  os << " == ";
-  b_->write_spec(os);
-  os << ")";
-  return os;
-}
-
 /************** SummaryExprAnd ******************/
 string SummaryExprAnd::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprAnd::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -373,6 +362,13 @@ string SummaryExprOr::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprOr::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -391,6 +387,13 @@ string SummaryExprXor::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprXor::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -410,6 +413,13 @@ string SummaryExprMod::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprMod::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -443,6 +453,13 @@ string SummaryExprPlus::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprPlus::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -461,6 +478,13 @@ string SummaryExprSignDiv::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprSignDiv::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -477,6 +501,13 @@ string SummaryExprLeftShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprLeftShift::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -493,6 +524,13 @@ string SummaryExprRightShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprRightShift::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -511,6 +549,13 @@ string SummaryExprSignRightShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprSignRightShift::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
@@ -522,10 +567,69 @@ ostream &SummaryExprSignRightShift::write_spec(ostream &os) const {
   return os;
 }
 
+/************** SummaryExprIfThenElse ******************/
+string SummaryExprIfThenElse::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprTernop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprIfThenElse::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = b_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
+  os << "z3.If(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ", ";
+  c_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprEq ******************/
+string SummaryExprEq::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprEq::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  type_ = type();
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprEq::write_spec(ostream &os) const {
+  os << "(";
+  a_->write_spec(os);
+  os << " == ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
 /************** SummaryExprLT ******************/
 string SummaryExprLT::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprLT::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
@@ -544,6 +648,13 @@ ostream &SummaryExprLT::write_spec(ostream &os) const {
 string SummaryExprLTE::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprLTE::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
@@ -562,6 +673,13 @@ ostream &SummaryExprLTE::write_spec(ostream &os) const {
 string SummaryExprGT::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprGT::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
@@ -580,6 +698,13 @@ ostream &SummaryExprGT::write_spec(ostream &os) const {
 string SummaryExprGTE::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprGTE::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
@@ -594,16 +719,243 @@ ostream &SummaryExprGTE::write_spec(ostream &os) const {
   return os;
 }
 
-/************** SummaryExprIfThenElse ******************/
-string SummaryExprIfThenElse::read_spec(string &str) {
+/************** SummaryExprAndBool ******************/
+string SummaryExprAndBool::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprAndBool::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  type_ = type();
+  width_ = 1;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprAndBool::write_spec(ostream &os) const {
+  os << "z3.And(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprOrBool ******************/
+string SummaryExprOrBool::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprOrBool::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  type_ = type();
+  width_ = 1;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprOrBool::write_spec(ostream &os) const {
+  os << "z3.Or(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprNotBool ******************/
+string SummaryExprNotBool::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprUnop::read_spec(result.first);
+  type_ = type();
+  width_ = 1;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprNotBool::write_spec(ostream &os) const {
+  os << "z3.Not(";
+  a_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprXorBool ******************/
+string SummaryExprXorBool::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprXorBool::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = 1;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprXorBool::write_spec(ostream &os) const {
+  os << "z3.Xor(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprXorMInt ******************/
+string SummaryExprXorMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprXorMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprXorMInt::write_spec(ostream &os) const {
+  os << "(";
+  a_->write_spec(os);
+  os << " ^ ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprExtractMInt ******************/
+string SummaryExprExtractMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprTernop::read_spec(result.first);
   type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprExtractMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = stoi(((SummaryExprToken *)c_)->value_) -
+           stoi(((SummaryExprToken *)b_)->value_);
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprExtractMInt::write_spec(ostream &os) const {
+
+  auto bw = a_->width_ - 1;
+
+  os << "z3.Extract(";
+  os << bw - stoi(((SummaryExprToken *)b_)->value_);
+  os << ", ";
+  os << bw - (stoi(((SummaryExprToken *)c_)->value_) - 1);
+  os << ", ";
+  a_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprMiMInt ******************/
+string SummaryExprMiMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprMiMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = stoi(((SummaryExprToken *)a_)->value_);
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprMiMInt::write_spec(ostream &os) const {
+
+  if (b_->type_ == SummaryExpr::Type::VAR) {
+    b_->write_spec(os);
+    return os;
+  }
+
+  Console::error(1) << "Unknow mi operand: Type: " << b_->type_ << endl;
+  b_->write_spec(os);
+  return os;
+}
+
+/************** SummaryExprConcatMInt ******************/
+string SummaryExprConcatMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+  width_ = a_->width_ + b_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprConcatMInt::write_spec(ostream &os) const {
+
+  os << "z3.Concat(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprAddMInt ******************/
+string SummaryExprAddMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprAddMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprAddMInt::write_spec(ostream &os) const {
+
+  os << "(";
+  a_->write_spec(os);
+  os << " + ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprIfThenElseMInt ******************/
+string SummaryExprIfThenElseMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprTernop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprIfThenElseMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
   width_ = b_->width_;
   return str.substr(result.second + 1);
 }
 
-ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
+ostream &SummaryExprIfThenElseMInt::write_spec(ostream &os) const {
   os << "z3.If(";
   a_->write_spec(os);
   os << ", ";
@@ -614,23 +966,76 @@ ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
   return os;
 }
 
+/************** SummaryExprEqMInt ******************/
+string SummaryExprEqMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprEqMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprEqMInt::write_spec(ostream &os) const {
+  os << "(";
+  a_->write_spec(os);
+  os << " == ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprPtr ******************/
+string SummaryExprPtr::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  SummaryExprBinop::read_spec(result.first);
+  type_ = type();
+  width_ = -1;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprPtr::write_spec(ostream &os) const {
+  os << "Ptr(";
+  a_->write_spec(os);
+  os << ", ";
+  b_->write_spec(os);
+  os << ")";
+  return os;
+}
+
 /************** SummaryExprVar ******************/
 void SummaryExprVar::deriveWidth() {
   assert(varName != "" && "VarName empty!!");
 
-  if (varName == "V_RAX" || varName == "V_RBX" || varName == "V_RCX" ||
-      varName == "V_RDX" || varName == "V_RSI" || varName == "V_RDI" ||
-      varName == "V_RSP" || varName == "V_RBP") {
+  if ((varName.find("VL_R") != string::npos) ||
+      (varName.find("VX_R") != string::npos)) {
     width_ = 64;
-  } else if (varName == "V_CF" || varName == "V_PF" || varName == "V_ZF" ||
-             varName == "V_SF" || varName == "V_OF" || varName == "V_AF" ||
-             varName == "V_DF") {
-    width_ = 8;
-  } else if (varName.find("YMM") != string::npos) {
-    width_ = 256;
-  } else {
-    Console::error(1) << "Unknown var: " << varName;
+    return;
   }
+
+  if (varName.find("VL_") != string::npos) {
+    width_ = 8;
+    return;
+  }
+
+  if (varName.find("VX_") != string::npos) {
+    width_ = 1;
+    return;
+  }
+
+  if (varName.find("YMM") != string::npos) {
+    width_ = 256;
+    return;
+  }
+
+  Console::error(1) << "Unknown var: " << varName;
+  exit(1);
 }
 
 string SummaryExprVar::read_spec(string &str) {
@@ -639,6 +1044,7 @@ string SummaryExprVar::read_spec(string &str) {
   if (pos == string::npos) {
     varName = str;
     deriveWidth();
+    type_ = type();
     return "";
   }
 
@@ -664,16 +1070,27 @@ string SummaryExprToken::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
 
   auto tokens = split(result.first, ',');
-  value_ = trim(trim(tokens[0], '"'), ' ');
+  value_ = trim(trim(trim(tokens[0], '"'), ' '), '\\');
   type_to_ignore = trim(trim(tokens[1], '"'), ' ');
 
   if (type_to_ignore == "Bool") {
     width_ = 1;
+
   } else if (type_to_ignore == "Int") {
     // to be inferred
     width_ = 0;
+
+  } else if (type_to_ignore == "MInt") {
+    auto mint_tokens = split(value_, '\'');
+    value_ = trim(trim(mint_tokens[1], '"'), ' ');
+    width_ = stoi(trim(trim(mint_tokens[0], '"'), ' '));
+
+  } else if (type_to_ignore == "String") {
+    // to be ignored
+    width_ = -1;
+
   } else {
-    Console::error(1) << "Unknown Type of Token!";
+    Console::error(1) << "Unknown Type of Token!:" << type_to_ignore << endl;
     exit(1);
   }
 
@@ -692,56 +1109,68 @@ ostream &SummaryExprToken::write_spec(ostream &os) const {
   return os;
 }
 
-/************** SummaryExprAndBool ******************/
-string SummaryExprAndBool::read_spec(string &str) {
-  auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
-  type_ = type();
-  width_ = 1;
-  return str.substr(result.second + 1);
+/************** ByteExpr ******************/
+string ByteExpr::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  SummaryExprToken tk1;
+  SummaryExprToken tk2;
+
+  str = tk1.read_spec(str);
+  byteIndex = stoi(tk1.value_);
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  str = tk2.read_spec(str);
+  numBytes = stoi(tk2.value_);
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  str = expr.read_spec(str);
+
+  return ss.substr(result.second + 1);
 }
 
-ostream &SummaryExprAndBool::write_spec(ostream &os) const {
-  os << "z3.And(";
-  a_->write_spec(os);
-  os << ", ";
-  b_->write_spec(os);
-  os << ")";
+ostream &ByteExpr::write_spec(ostream &os) const {
+  if (numBytes == 1) {
+    os << "z3.Extract(" << 0 << ", " << 0 << ", " << expr << ")";
+  } else {
+    os << "z3.Extract(" << byteIndex * 8 + 7 << ", " << byteIndex * 8 << ", "
+       << expr << ")";
+  }
   return os;
 }
 
-/************** SummaryExprOrBool ******************/
-string SummaryExprOrBool::read_spec(string &str) {
-  auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
-  type_ = type();
-  width_ = 1;
-  return str.substr(result.second + 1);
+/************** SymLoc ******************/
+string SymLoc::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  for (int i = 0; i < 5; i++) {
+
+    SummaryExprToken tk;
+    str = tk.read_spec(str);
+
+    if (i == 0) {
+      locId = stoi(tk.value_);
+    }
+
+    if (i == 4) {
+      offset = stoi(tk.value_);
+      break;
+    }
+
+    // Ignoring ','
+    str = str.substr(1);
+  }
+
+  return ss.substr(result.second + 1);
 }
 
-ostream &SummaryExprOrBool::write_spec(ostream &os) const {
-  os << "z3.Or(";
-  a_->write_spec(os);
-  os << ", ";
-  b_->write_spec(os);
-  os << ")";
-  return os;
-}
-
-/************** SummaryExprNotBool ******************/
-string SummaryExprNotBool::read_spec(string &str) {
-  auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
-  type_ = type();
-  width_ = 1;
-  return str.substr(result.second + 1);
-}
-
-ostream &SummaryExprNotBool::write_spec(ostream &os) const {
-  os << "z3.Not(";
-  a_->write_spec(os);
-  os << ", ";
-  b_->write_spec(os);
-  os << ")";
+ostream &SymLoc::write_spec(ostream &os) const {
+  os << "SymLoc(" << locId << ", " << offset << ")";
   return os;
 }

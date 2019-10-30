@@ -1,56 +1,68 @@
 import z3
 
-def Int2BV(a, num_bits):
-    """Return the z3 expression Int2BV(a, num_bits).
-    It is a bit-vector of width num_bits and represents the
-    modulo of a by 2^num_bits
-    """
-    ctx = a.ctx
-    return z3.BitVecRef(z3.Z3_mk_int2bv(ctx.ref(), num_bits, a.as_ast()), ctx)
-
-def BV2Int(a, is_signed=False):
-    """Return the Z3 expression BV2Int(a).
-    >>> b = BitVec('b', 3)
-    >>> BV2Int(b).sort()
-    Int
-    >>> x = Int('x')
-    >>> x > BV2Int(b)
-    x > BV2Int(b)
-    >>> x > BV2Int(b, is_signed=False)
-    x > BV2Int(b)
-    >>> x > BV2Int(b, is_signed=True)
-    x > If(b < 0, BV2Int(b) - 8, BV2Int(b))
-    >>> solve(x > BV2Int(b), b == 1, x < 3)
-    [x = 2, b = 1]
-    """
-    if z3_debug():
-        _z3_assert(is_bv(a), "Z3 bit-vector expression expected")
-    ctx = a.ctx
-    ## investigate problem with bv2int
-    return ArithRef(Z3_mk_bv2int(ctx.ref(), a.as_ast(), is_signed), ctx)
-
 def solve(s):
-  print(s)
+  #print(s)
   res = s.check()
   print(res)
   if(z3.sat == res):
     print(s.model())
 
-REG_WIDTH=64
-REG_WIDTH_MIN=-pow(2,(REG_WIDTH-1))
-REG_WIDTH_MAX=pow(2,(REG_WIDTH-1))-1
+## X86 specific variables
+VX_RAX = z3.BitVec('VX_RAX',64)
+VX_RBX = z3.BitVec('VX_RBX',64)
+VX_RCX = z3.BitVec('VX_RCX',64)
+VX_RDX = z3.BitVec('VX_RDX',64)
+VX_RSI = z3.BitVec('VX_RSI',64)
+VX_RDI = z3.BitVec('VX_RDI',64)
 
-RAX,RBX = z3.Ints('RAX RBX')
-rax = z3.BitVec('rax',REG_WIDTH)
-rbx = z3.BitVec('rbx',REG_WIDTH)
-ZERO = z3.BitVecVal(0, REG_WIDTH)
-BIT_ZERO =z3.BitVecVal(0, 1)
-BIT_ONE = z3.BitVecVal(1, 1)
+VX_CF = z3.BitVec('VX_CF',1)
+VX_PF = z3.BitVec('VX_PF',1)
+VX_ZF = z3.BitVec('VX_ZF',1)
+VX_SF = z3.BitVec('VX_SF',1)
+VX_AF = z3.BitVec('VX_AF',1)
+VX_OF = z3.BitVec('VX_OF',1)
 
+## LLVM specific variables
+VL_RAX = z3.BitVec('VL_RAX',64)
+VL_RBX = z3.BitVec('VL_RBX',64)
+VL_RCX = z3.BitVec('VL_RCX',64)
+VL_RDX = z3.BitVec('VL_RDX',64)
+VL_RSI = z3.BitVec('VL_RSI',64)
+VL_RDI = z3.BitVec('VL_RDI',64)
+
+VL_CF = z3.BitVec('VL_CF',8)
+VL_PF = z3.BitVec('VL_PF',8)
+VL_ZF = z3.BitVec('VL_ZF',8)
+VL_SF = z3.BitVec('VL_SF',8)
+VL_AF = z3.BitVec('VL_AF',8)
+VL_OF = z3.BitVec('VL_OF',8)
+
+## Some generic variables
+V_R = z3.BitVec('VL_RAX',64)
+V_F = z3.BitVec('VL_OF',1)
+
+## Solver instance
 s = z3.Solver()
-s.add(Int2BV(RAX, REG_WIDTH) == rax)
-s.add(Int2BV(RBX, REG_WIDTH) == rbx)
-s.add(RAX >= REG_WIDTH_MIN)
-s.add(RBX >= REG_WIDTH_MIN)
-s.add(RAX <= REG_WIDTH_MAX)
-s.add(RBX <= REG_WIDTH_MAX)
+
+## Default constraints
+s.add(VX_RAX == VL_RAX)
+s.add(VX_RBX == VL_RBX)
+s.add(VX_RCX == VL_RCX)
+s.add(VX_RDX == VL_RDX)
+s.add(VX_RDI == VL_RDI)
+s.add(VX_RSI == VL_RSI)
+
+s.add(z3.Or(VL_CF == 0, VL_CF == 1))
+s.add(z3.Or(VL_ZF == 0, VL_ZF == 1))
+s.add(z3.Or(VL_PF == 0, VL_PF == 1))
+s.add(z3.Or(VL_SF == 0, VL_SF == 1))
+s.add(z3.Or(VL_AF == 0, VL_AF == 1))
+s.add(z3.Or(VL_OF == 0, VL_OF == 1))
+
+
+s.add(z3.Extract(0,0, VL_CF) == VX_CF)
+s.add(z3.Extract(0,0, VL_SF) == VX_SF)
+s.add(z3.Extract(0,0, VL_ZF) == VX_ZF)
+s.add(z3.Extract(0,0, VL_PF) == VX_PF)
+s.add(z3.Extract(0,0, VL_AF) == VX_AF)
+s.add(z3.Extract(0,0, VL_OF) == VX_OF)
