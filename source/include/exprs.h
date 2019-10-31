@@ -21,9 +21,11 @@ class SummaryExprNotBool;
 class SummaryExprEq;
 class SummaryExprOr;
 class SummaryExprPlus;
+class SummaryExprMinus;
 class SummaryExprShiftRight;
 class SummaryExprShiftLeft;
-class SummaryExprSignDiv;
+class SummaryExprSignedDiv;
+class SummaryExprUnSignedDiv;
 class SummaryExprSignExtend;
 class SummaryExprSignMod;
 class SummaryExprSignShiftRight;
@@ -42,9 +44,15 @@ class SummaryExprExtractMInt;
 class SummaryExprMiMInt;
 class SummaryExprConcatMInt;
 class SummaryExprAddMInt;
+class SummaryExprAndMInt;
 class SummaryExprIfThenElseMInt;
 class SummaryExprEqMInt;
 class SummaryExprPtr;
+class SummaryExprIntFromBytesAux;
+class SummaryExprIntFromBytes;
+class SummaryExprCommonMemSyntax;
+class SummaryExprUndefMInt;
+class SummaryExprBitwidthMInt;
 
 // Utility function declarations
 typedef pair<string, size_t> stringLocPair;
@@ -66,9 +74,11 @@ public:
     EQ,
     OR,
     PLUS,
+    MINUS,
     SHIFT_RIGHT,
     SHIFT_LEFT,
     SIGN_DIV,
+    UNSIGN_DIV,
     SIGN_MOD,
     SIGN_SHIFT_RIGHT,
     U_MINUS,
@@ -89,12 +99,18 @@ public:
     MI_MINT,
     CONCAT_MINT,
     ADD_MINT,
+    AND_MINT,
     IF_THEN_ELSE_MINT,
     EQ_MINT,
     PTR,
     SYMLOC,
     BYTE,
-    TOKEN
+    TOKEN,
+    INT_FROM_BYTES_AUX,
+    INT_FROM_BYTES,
+    COMMON_MEM_SYNTAX,
+    UNDEF_MINT,
+    BITWIDTH_MINT
   };
 
   /** Get the type of this summary expression */
@@ -124,15 +140,20 @@ class SummaryExprAbstract {
   friend class SummaryExpr;
 
 public:
-  // virtual SummaryExpr::Type type() const = 0;
+  // uint16_t width_ = 0;
+  // uint16_t promoted_from_width_ = uint16_t(-1);
+  // bool is_promoted = false;
+  // SummaryExpr::Type type_ = SummaryExpr::NONE;
+  SummaryExprAbstract();
+  uint16_t width_;
+  uint16_t promoted_from_width_;
+  bool is_promoted;
+  SummaryExpr::Type type_;
 
-  // virtual ~SummaryExprAbstract() = 0;
+  ostream &write_promoted_value_spec(ostream &os) const;
 
-  uint16_t width_ = 0;
-  SummaryExpr::Type type_ = SummaryExpr::NONE;
-
-  virtual string read_spec(string &is) = 0;
-  virtual ostream &write_spec(ostream &os) const = 0;
+  virtual string read_spec(string &is);
+  virtual ostream &write_spec(ostream &os) const;
 };
 
 string dispatchSummaryExpr(string &is, SummaryExprAbstract **ptr);
@@ -300,8 +321,26 @@ inline string operator>>(string &os, SummaryExprPlus &op) {
   return op.read_spec(os);
 }
 
-/************** SummaryExprSignDiv ******************/
-class SummaryExprSignDiv : public SummaryExprBinop {
+/************** SummaryExprMinus ******************/
+class SummaryExprMinus : public SummaryExprBinop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::MINUS; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprMinus &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprMinus &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprSignedDiv ******************/
+class SummaryExprSignedDiv : public SummaryExprBinop {
   friend class SummaryExpr;
 
 public:
@@ -310,11 +349,29 @@ public:
   ostream &write_spec(ostream &os) const;
 };
 
-inline ostream &operator<<(ostream &os, const SummaryExprSignDiv &op) {
+inline ostream &operator<<(ostream &os, const SummaryExprSignedDiv &op) {
   return op.write_spec(os);
 }
 
-inline string operator>>(string &os, SummaryExprSignDiv &op) {
+inline string operator>>(string &os, SummaryExprSignedDiv &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprUnSignedDiv ******************/
+class SummaryExprUnSignedDiv : public SummaryExprBinop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::UNSIGN_DIV; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprUnSignedDiv &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprUnSignedDiv &op) {
   return op.read_spec(os);
 }
 
@@ -484,6 +541,24 @@ inline string operator>>(string &os, SummaryExprAddMInt &op) {
   return op.read_spec(os);
 }
 
+/************** SummaryExprAndMInt ******************/
+class SummaryExprAndMInt : public SummaryExprBinop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::AND_MINT; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprAndMInt &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprAndMInt &op) {
+  return op.read_spec(os);
+}
+
 /************** SummaryExprIfThenElseMInt ******************/
 class SummaryExprIfThenElseMInt : public SummaryExprTernop {
   friend class SummaryExpr;
@@ -519,6 +594,24 @@ inline ostream &operator<<(ostream &os, const SummaryExprEqMInt &op) {
 }
 
 inline string operator>>(string &os, SummaryExprEqMInt &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprBitwidthMInt ******************/
+class SummaryExprBitwidthMInt : public SummaryExprUnop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::BITWIDTH_MINT; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprBitwidthMInt &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprBitwidthMInt &op) {
   return op.read_spec(os);
 }
 
@@ -792,5 +885,85 @@ inline ostream &operator<<(ostream &os, const ByteExpr &op) {
 }
 
 inline string operator>>(string &os, ByteExpr &op) { return op.read_spec(os); }
+
+/************** SummaryExprCommonMemSyntax ******************/
+class SummaryExprCommonMemSyntax : public SummaryExprAbstract {
+public:
+  ByteExpr byteExpr;
+
+  SummaryExprCommonMemSyntax() {}
+  SummaryExpr::Type type() const {
+    return SummaryExpr::Type::COMMON_MEM_SYNTAX;
+  }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprCommonMemSyntax &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprCommonMemSyntax &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprIntFromBytesAux ******************/
+class SummaryExprIntFromBytesAux : public SummaryExprAbstract {
+public:
+  int byteCount;
+  SummaryExprCommonMemSyntax memExpr;
+
+  SummaryExprIntFromBytesAux() {}
+  SummaryExpr::Type type() const {
+    return SummaryExpr::Type::INT_FROM_BYTES_AUX;
+  }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprIntFromBytesAux &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprIntFromBytesAux &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprIntFromBytes ******************/
+class SummaryExprIntFromBytes : public SummaryExprAbstract {
+public:
+  int byteCount;
+  SummaryExprCommonMemSyntax memExpr;
+
+  SummaryExprIntFromBytes() {}
+  SummaryExpr::Type type() const { return SummaryExpr::Type::INT_FROM_BYTES; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprIntFromBytes &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprIntFromBytes &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprUndefMInt ******************/
+class SummaryExprUndefMInt : public SummaryExprAbstract {
+public:
+  SummaryExprUndefMInt() {}
+  SummaryExpr::Type type() const { return SummaryExpr::Type::UNDEF_MINT; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprUndefMInt &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprUndefMInt &op) {
+  return op.read_spec(os);
+}
 
 #endif

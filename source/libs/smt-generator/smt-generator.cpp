@@ -13,17 +13,20 @@ SMTGenerator::SMTGenerator(const string &lspec, const string &xspec,
     : lspecfile(lspec), xspecfile(xspec), z3pyfile(z3out) {
 
   auto lSpecSummaryAndSideConds = processLSpec();
-  auto lSpecRegMap = uniquifyRegMapsLSpec(lSpecSummaryAndSideConds);
+  auto lSpecRegMap = uniquifyLSpec(lSpecSummaryAndSideConds);
 
-  auto xSpecRegMap = processXSpec();
+  auto xSpecSummary = processXSpec();
+  auto xSpecRegMap = uniquifyXSpec(xSpecSummary);
+
   dumpZ3(lSpecRegMap, xSpecRegMap);
 }
 
 static vector<LSpecStateInfoType> info = {
-    {4097, 1, "CF"},  {4099, 1, "PF"},  {4101, 1, "AF"},  {4103, 1, "ZF"},
-    {4105, 1, "SF"},  {4107, 1, "DF"},  {4109, 1, "OF"},  {4360, 8, "RAX"},
-    {4376, 8, "RBX"}, {4392, 8, "RCX"}, {4408, 8, "RDX"}, {4424, 8, "RSI"},
-    {4440, 8, "RDI"}, {4456, 8, "RSP"}, {4472, 8, "RBP"},
+    {4097, 1, "CF"},    {4099, 1, "PF"},    {4101, 1, "AF"},  {4103, 1, "ZF"},
+    {4105, 1, "SF"},    {4107, 1, "DF"},    {4109, 1, "OF"},  {4360, 8, "RAX"},
+    {4376, 8, "RBX"},   {4392, 8, "RCX"},   {4408, 8, "RDX"}, {4424, 8, "RSI"},
+    {4440, 8, "RDI"},   {4456, 8, "RSP"},   {4472, 8, "RBP"}, {4616, 8, "RIP"},
+    {2112, 32, "YMM1"}, {2176, 32, "YMM2"},
 };
 
 static LSpecStateInfoType getLSpecStateInfo(size_t offset) {
@@ -99,6 +102,7 @@ static unordered_map<string, string> processLSummary(const string &summary) {
 
     SymLoc L;
     auto str = L.read_spec(retvalPrunedSummary.first);
+    Console::msg() << "Reading the byte value at: " << L.offset << endl;
 
     // ignore ','
     str = str.substr(1);
@@ -116,9 +120,10 @@ static unordered_map<string, string> processLSummary(const string &summary) {
 
         if (stateComposer.count(base_offset) == 0) {
           stateComposer[base_offset].resize(32, "");
-          stateComposer[base_offset][byte.byteIndex] = ss.str();
+          // stateComposer[base_offset][byte.byteIndex] = ss.str();
+          stateComposer[base_offset][L.offset - base_offset] = ss.str();
         } else {
-          stateComposer[base_offset][byte.byteIndex] = ss.str();
+          stateComposer[base_offset][L.offset - base_offset] = ss.str();
         }
       }
     }
@@ -258,16 +263,37 @@ vector<summaryAndSideConds> SMTGenerator::processLSpec() {
       ...
   }
 */
-unordered_map<string, string> SMTGenerator::uniquifyRegMapsLSpec(
+unordered_map<string, string> SMTGenerator::uniquifyLSpec(
     vector<summaryAndSideConds> &lSpecSummaryAndSideConds) {
 
-  Console::msg() << "\t\tStarting uniquifyRegMapsLSpec..." << endl;
+  Console::msg() << "\t\tStarting uniquifyLSpec..." << endl;
+  unordered_map<string, string> retval;
+
   // Only one side condition
   if (lSpecSummaryAndSideConds.size() == 1) {
-    return lSpecSummaryAndSideConds[0].summary;
+    auto summaries = lSpecSummaryAndSideConds[0].summary;
+    for (auto summary : summaries) {
+      auto regName = summary.first;
+      auto regSummary = summary.second;
+      auto width = getRegBitWidthByName(regName);
+      if (width == 8) {
+        // In LLVM semantics, the flags are represented as 8 bits, whereas in
+        // X86 semantics it is a bit. Hence we will do the conversion here.
+        regSummary = "z3.Extract(0, 0, " + regSummary + ")";
+
+        retval[regName] = "(V_F == " + regSummary + ")";
+      } else if (width == 64) {
+        retval[regName] = "(V_R == " + regSummary + ")";
+      } else {
+        Console::error(1)
+            << "SMTGenerator::uniquifyLSpec: Unsupported bitwidth " << width
+            << endl;
+      }
+    }
+    return retval;
   }
 
-  unordered_map<string, string> retval;
+  // More than one side condition
   for (auto summaryAndSideCond : lSpecSummaryAndSideConds) {
     auto summaries = summaryAndSideCond.summary;
     auto sc = summaryAndSideCond.sideConds;
@@ -277,18 +303,41 @@ unordered_map<string, string> SMTGenerator::uniquifyRegMapsLSpec(
       exit(1);
     }
 
+    Console::msg() << "SC: " << sc << endl;
+
     for (auto summary : summaries) {
       auto regName = summary.first;
       auto regSummary = summary.second;
-      retval[regName] = "z3.Implies(" + sc + ", lvar == " + regSummary + "), ";
+      auto width = getRegBitWidthByName(regName);
+
+      if (!retval.count(regName)) {
+        retval[regName] = "";
+      }
+
+      if (width == 8) {
+        // In LLVM semantics, the flags are represented as 8 bits, whereas in
+        // X86 semantics it is a bit. Hence we will do the conversion here.
+        regSummary = "z3.Extract(0, 0, " + regSummary + ")";
+
+        retval[regName] += "\n\tz3.Implies(\n\t\t" + sc +
+                           ",\n\t\tV_F == " + regSummary + "\n\t), ";
+      } else if (width == 64) {
+        retval[regName] += "\n\tz3.Implies(\n\t\t" + sc +
+                           ", \n\t\tV_R == " + regSummary + "\n\t), ";
+      } else {
+        Console::error(1)
+            << "SMTGenerator::uniquifyLSpec: Unsupported bitwidth " << width
+            << endl;
+      }
     }
   }
 
+  // z3.And(z3.Implies(...), ...)
   for (auto &p : retval) {
-    p.second = "z3.And(" + p.second + ")";
+    p.second = "z3.And(\n" + p.second + "\n)";
   }
 
-  Console::msg() << "\t\tDone uniquifyRegMapsLSpec." << endl;
+  Console::msg() << "\t\tDone uniquifyLSpec." << endl;
   return retval;
 }
 
@@ -330,6 +379,7 @@ static unordered_map<string, string> processXSummary(const string &summary) {
 
     SummaryExprToken sumT;
     auto str = sumT.read_spec(retvalPrunedSummary.first);
+    Console::msg() << "Reading the value for: " << sumT.value_ << endl;
 
     // ignore ','
     str = str.substr(1);
@@ -346,6 +396,56 @@ static unordered_map<string, string> processXSummary(const string &summary) {
   }
 
   Console::msg() << "\tDone processXSummary." << endl;
+  return retval;
+}
+
+/*
+          convert
+
+  lSpecSummary = {
+            RAX -> summary_rax
+            CF -> summary_cf
+
+
+          to
+      RAX -> (V_R == summary_rax)
+      CF ->  (V_F == summary_cf)
+      ...
+  }
+*/
+
+unordered_map<string, string>
+SMTGenerator::uniquifyXSpec(unordered_map<string, string> &xSpecSummary) {
+
+  Console::msg() << "\t\tStarting uniquifyXSpec..." << endl;
+
+  unordered_map<string, string> retval;
+  for (auto summary : xSpecSummary) {
+    auto regName = summary.first;
+    auto regSummary = summary.second;
+
+    auto width = getRegBitWidthByName(regName);
+
+    // // In case regSummary is "UnDef", generate appropriate BitvecVal
+    // if(regSummary == "UnDef") {
+    //   regSummary =
+    // }
+
+    if (width == 8) {
+      // wisth 8 bits corresponds to flags which are 1 bit on x86 semantics
+      retval[regName] = "(V_F == " + regSummary + ")";
+    } else if (width == 64) {
+      retval[regName] = "(V_R == " + regSummary + ")";
+    } else if (width == 32 * 8) {
+      retval[regName] = "(V_Y == " + regSummary + ")";
+    } else {
+      Console::error(1) << "SMTGenerator::uniquifyXSpec: Unsupported bitwidth "
+                        << width << endl;
+      exit(1);
+    }
+  }
+
+  Console::msg() << "\t\tDone uniquifyXSpec." << endl;
   return retval;
 }
 
@@ -396,6 +496,9 @@ void SMTGenerator::dumpZ3(unordered_map<string, string> &lSpecRegMap,
   istemplate.close();
 
   for (auto p : lSpecRegMap) {
+    if (p.first == "RIP")
+      continue;
+
     if (xSpecRegMap.count(p.first)) {
       proofScript << "print(\"=**= " << p.first << " =**=\")" << endl;
       proofScript << "s.push()" << endl << endl;
@@ -410,6 +513,13 @@ void SMTGenerator::dumpZ3(unordered_map<string, string> &lSpecRegMap,
       Console::msg() << "Cannot find lvar" << p.first << "in xMap!" << endl;
     }
   }
+
+  proofScript << "if(status == True):" << endl;
+  proofScript << "  print('\x1b[6;30;42m' + 'Pass: ' + '\x1b[0m' + test_name)"
+              << endl;
+  proofScript << "else:" << endl;
+  proofScript << "  print('\x1b[0;30;41m' + 'Fail: '  + '\x1b[0m' + test_name)"
+              << endl;
 
   std::ofstream ofs(z3pyfile, std::ofstream::out);
   ofs << proofScript.str();

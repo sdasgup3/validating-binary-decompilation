@@ -5,6 +5,17 @@ usage()
     echo "Usage: check_status.sh [--compd|--match]"
 }
 
+genZ3Check() {
+  msg=$1
+  if grep -q "status == True" Output/test-z3.py; then
+    echo -e "\e[32mGenZ3 Pass\e[39m:-" `pwd`:$msg
+    exit 0
+  else
+    echo -e "\e[31mGenZ3 Fail\e[39m:-" `pwd`:$msg
+    exit 1
+  fi
+}
+
 compdCheck() {
   msg=$1
   if grep -qw "error" compd.log; then
@@ -76,6 +87,9 @@ while [ "$1" != "" ]; do
                          ;;
         --xprove )       shift
                          xproveCheck $msg
+                         ;;
+        --genz3 )        shift
+                         genZ3Check $msg
                          ;;
         --kli )          shift
                          kliCheck $msg

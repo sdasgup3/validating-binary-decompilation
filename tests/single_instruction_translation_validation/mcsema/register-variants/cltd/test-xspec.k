@@ -33,13 +33,16 @@ module TEST-XSPEC
         "PF" |->  (mi(1,  VX_PF:Int):MInt  => mi(1,  _:Int))
         "SF" |->  (mi(1,  VX_SF:Int):MInt  => mi(1,  _:Int))
         "ZF" |->  (mi(1,  VX_ZF:Int):MInt  => mi(1,  _:Int))
+        // Ymms
+        "YMM1" |->  (mi(256,  VX_YMM1:Int):MInt  => mi(256,  _:Int))
+        "YMM2" |->  (mi(256,  VX_YMM2:Int):MInt  => mi(256,  _:Int))
          // Main Claim
       </regstate>
 
       <memstate>
         <text> 
           code ( 
-      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( cltd, .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( cltd .Operands )
       ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,1) ) |-> storedInstr ( ret .Operands )
              )
         </text>

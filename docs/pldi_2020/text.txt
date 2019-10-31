@@ -69,3 +69,8 @@ I1(BB1)                    I2(BB2)  I3(BB3)
 
 
 
+smt converter
+===========
+1. Fixed int2BytesAux
+llvm semantics currently do not handing reading a porting of a typed val. Eg a 64 value laid in memory as 8 bytes, but we int2BytesAux cannot handle reading say 1 byte out of a particular index
+
