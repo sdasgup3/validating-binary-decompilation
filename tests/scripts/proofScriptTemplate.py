@@ -1,11 +1,19 @@
 import z3
+import sys
+
+status=True
+test_name="UnK"
+if(len(sys.argv) > 1):
+  test_name = sys.argv[1]
 
 def solve(s):
+  global status
   #print(s)
   res = s.check()
   print(res)
   if(z3.sat == res):
     print(s.model())
+    status = False
 
 ## X86 specific variables
 VX_RAX = z3.BitVec('VX_RAX',64)
@@ -22,6 +30,11 @@ VX_SF = z3.BitVec('VX_SF',1)
 VX_AF = z3.BitVec('VX_AF',1)
 VX_OF = z3.BitVec('VX_OF',1)
 
+VX_YMM1 = z3.BitVec('VX_YMM1', 256)
+VX_YMM2 = z3.BitVec('VX_YMM2', 256)
+
+VX_UNDEF_1 = z3.BitVec('VX_UNDEF_1', 1)
+
 ## LLVM specific variables
 VL_RAX = z3.BitVec('VL_RAX',64)
 VL_RBX = z3.BitVec('VL_RBX',64)
@@ -37,9 +50,13 @@ VL_SF = z3.BitVec('VL_SF',8)
 VL_AF = z3.BitVec('VL_AF',8)
 VL_OF = z3.BitVec('VL_OF',8)
 
+VL_YMM1 = z3.BitVec('VX_YMM1', 256)
+VL_YMM2 = z3.BitVec('VX_YMM2', 256)
+
 ## Some generic variables
-V_R = z3.BitVec('VL_RAX',64)
-V_F = z3.BitVec('VL_OF',1)
+V_R = z3.BitVec('V_R',64)
+V_F = z3.BitVec('V_F',1)
+V_Y = z3.BitVec('V_Y',256)
 
 ## Solver instance
 s = z3.Solver()

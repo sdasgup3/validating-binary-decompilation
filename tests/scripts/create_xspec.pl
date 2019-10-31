@@ -56,6 +56,12 @@ for my $line (@lines) {
     }
 }
 
+my @operands = kutils::instrGetOperands($instr);
+my $instrCell = $instr . ", .Operands";
+if(scalar(@operands) == 0) {
+  $instrCell = $instr . " .Operands";
+}
+
 my $XSpecFile = "$seeddir/../test-xspec.k";
 open( my $xfp, ">", $XSpecFile ) or die "cannot open: $!";
 print("XSpec FIle:$XSpecFile\n");
@@ -100,13 +106,16 @@ sub getXSpecTemplate {
         "PF" |->  (mi(1,  VX_PF:Int):MInt  => mi(1,  _:Int))
         "SF" |->  (mi(1,  VX_SF:Int):MInt  => mi(1,  _:Int))
         "ZF" |->  (mi(1,  VX_ZF:Int):MInt  => mi(1,  _:Int))
+        // Ymms
+        "YMM1" |->  (mi(256,  VX_YMM1:Int):MInt  => mi(256,  _:Int))
+        "YMM2" |->  (mi(256,  VX_YMM2:Int):MInt  => mi(256,  _:Int))
          // Main Claim
       </regstate>
 
       <memstate>
         <text> 
           code ( 
-      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( $instr, .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( $instrCell )
       ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,1) ) |-> storedInstr ( ret .Operands )
              )
         </text>

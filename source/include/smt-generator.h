@@ -48,9 +48,14 @@ private:
   stringstream proofScript;
 
   vector<summaryAndSideConds> processLSpec();
+
+  unordered_map<string, string> uniquifyXSpec(unordered_map<string, string> &);
+
   unordered_map<string, string>
-  uniquifyRegMapsLSpec(vector<summaryAndSideConds> &lSpecSummaryAndSideConds);
+  uniquifyLSpec(vector<summaryAndSideConds> &lSpecSummaryAndSideConds);
+
   unordered_map<string, string> processXSpec();
+
   void dumpZ3(unordered_map<string, string> &lSpecRegMap,
               unordered_map<string, string> &xSpecRegMap);
 

@@ -88,6 +88,14 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprPlus();
     return (*ptr)->read_spec(str);
 
+  } else if (regex_search(str, m, regex("^`_\\-Int_`"))) {
+    *ptr = new SummaryExprMinus();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`_/Int_`"))) {
+    *ptr = new SummaryExprUnSignedDiv();
+    return (*ptr)->read_spec(str);
+
   } else if (regex_search(str, m, regex("^`_>>Int_`"))) {
     *ptr = new SummaryExprRightShift();
     return (*ptr)->read_spec(str);
@@ -115,6 +123,18 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
 
   } else if (regex_search(str, m, regex("^symloc"))) {
     *ptr = new SymLoc();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^intFromBytesAux"))) {
+    *ptr = new SummaryExprIntFromBytesAux();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^intFromBytes"))) {
+    *ptr = new SummaryExprIntFromBytes();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`___COMMON-MEMORY-SYNTAX`"))) {
+    *ptr = new SummaryExprCommonMemSyntax();
     return (*ptr)->read_spec(str);
 
     // Int Bool Operators
@@ -171,6 +191,10 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprAddMInt();
     return (*ptr)->read_spec(str);
 
+  } else if (regex_search(str, m, regex("^andMInt"))) {
+    *ptr = new SummaryExprAndMInt();
+    return (*ptr)->read_spec(str);
+
   } else if (regex_search(
                  str, m,
                  regex("^`#ifMInt_#then_#else_#fi_MINT-WRAPPER-SYNTAX`"))) {
@@ -197,6 +221,14 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprNotBool();
     return (*ptr)->read_spec(str);
 
+  } else if (regex_search(str, m, regex("^bitwidthMInt"))) {
+    *ptr = new SummaryExprBitwidthMInt();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^`undefMInt_MINT-WRAPPER-SYNTAX`"))) {
+    *ptr = new SummaryExprUndefMInt();
+    return (*ptr)->read_spec(str);
+
     // Misc Operators
   } else if (regex_search(str, m, regex("^ptr"))) {
     *ptr = new SummaryExprPtr();
@@ -210,22 +242,115 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
   return str;
 }
 
+/************** SummaryExprAbstract ******************/
+ostream &SummaryExprAbstract::write_promoted_value_spec(ostream &os) const {
+  if (is_promoted) {
+    assert(promoted_from_width_ != uint16_t(-1) &&
+           "SummaryExprAbstract::write_promoted_value_spec::Poromoted Expr do "
+           "not have the promoted_from_width_!");
+
+    os << "z3.Concat(";
+    os << "z3.BitVecVal( 0, " << width_ - promoted_from_width_ << "), ";
+    write_spec(os);
+    os << ")";
+
+  } else {
+
+    write_spec(os);
+  }
+
+  return os;
+}
+
+SummaryExprAbstract::SummaryExprAbstract() {
+  width_ = 0;
+  is_promoted = false;
+  type_ = SummaryExpr::NONE;
+  promoted_from_width_ = uint16_t(-1);
+}
+
+string SummaryExprAbstract::read_spec(string &str) {
+  Console::error(1) << "SummaryExprAbstract::read_spec should not be called";
+  return str;
+}
+
+ostream &SummaryExprAbstract::write_spec(ostream &os) const {
+  Console::error(1) << "SummaryExprAbstract::read_spec should not be called";
+  return os;
+}
+
 /************** SummaryExprBinop ******************/
 SummaryExprBinop::SummaryExprBinop() {
   a_ = NULL;
   b_ = NULL;
 }
 
+// Not all binary operator should have the same width for its operands (e.g.
+// Concat)
+// Hence checkComponentWidths need to be called from the Parent operator (like
+// And, Add),
+// not from the SummaryExprBinop.
+
+// Similarly width promotion is operator specific. E.g. the concatenate operands
+// should
+// never be width promoted
 bool SummaryExprBinop::checkComponentWidths() {
-  return (a_->width_ == b_->width_) ? true : false;
+  if (a_->width_ == 0 || b_->width_ == 0) {
+    Console::error(1)
+        << "SummaryExprBinop::checkComponentWidths: Zero Width found" << endl;
+    exit(1);
+  }
+
+  if (a_->width_ != b_->width_) {
+    if (a_->width_ > b_->width_) {
+      Console::msg()
+          << "SummaryExprBinop::checkComponentWidths::Promoting type: "
+          << b_->type_ << " from : " << b_->width_ << " to " << a_->width_
+          << " of " << a_->type_ << endl;
+
+      b_->is_promoted = true;
+      b_->promoted_from_width_ = b_->width_; // saving the old width
+      b_->width_ = a_->width_;
+    } else {
+      Console::msg()
+          << "SummaryExprBinop::checkComponentWidths::Promoting type: "
+          << a_->type_ << " from : " << a_->width_ << " to " << b_->width_
+          << " of " << b_->type_ << endl;
+
+      a_->is_promoted = true;
+      a_->promoted_from_width_ = a_->width_; // saving the old width
+      a_->width_ = b_->width_;
+    }
+  }
+
+  // return (a_->width_ == b_->width_) ? true : false;
+  return true;
 }
 
 void SummaryExprBinop::deriveComponentWidths() {
+  if (type_ == SummaryExpr::Type::PTR)
+    return;
+
   if (a_->width_ != 0 && b_->width_ != 0) {
     return;
   } else if (a_->width_ != 0) {
+
+    if (b_->type_ != SummaryExpr::Type::TOKEN) {
+      Console::error(1) << "SummaryExprBinop::deriveComponentWidths::Promoting "
+                           "non-token type: "
+                        << b_->type_ << " from 0 to the type of " << a_->type_;
+      exit(1);
+    }
     b_->width_ = a_->width_;
+
   } else if (b_->width_ != 0) {
+
+    if (a_->type_ != SummaryExpr::Type::TOKEN) {
+      Console::error(1) << "SummaryExprBinop::deriveComponentWidths::Promoting "
+                           "non-token type: "
+                        << a_->type_ << " from 0 to the type of " << b_->type_;
+      exit(1);
+    }
     a_->width_ = b_->width_;
   } else {
     Console::error(1) << "Zero Width Binop: " << type_ << "\n";
@@ -297,13 +422,17 @@ void SummaryExprTernop::deriveComponentWidths() {
     b_->width_ = c_->width_;
   } else {
     // b_ c_ both have zero widths
-    if (a_->width_ == 0) {
-      Console::error(1) << "Zero Width Ternop: " << type_ << "\n";
-      exit(1);
-    } else {
-      b_->width_ = a_->width_;
-      c_->width_ = a_->width_;
-    }
+    // Let them get promoted to 8 bits at the write spec routine.
+    b_->width_ = 8;
+    c_->width_ = 8;
+
+    // if (a_->width_ == 0) {
+    //   Console::error(1) << "Zero Width Ternop: " << type_ << "\n";
+    //   exit(1);
+    // } else {
+    //   b_->width_ = a_->width_;
+    //   c_->width_ = a_->width_;
+    // }
   }
 }
 
@@ -335,8 +464,8 @@ ostream &SummaryExprTernop::write_spec(ostream &os) const {
 /************** SummaryExprAnd ******************/
 string SummaryExprAnd::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprAnd::Component Width Mismatch: "
@@ -350,9 +479,9 @@ string SummaryExprAnd::read_spec(string &str) {
 
 ostream &SummaryExprAnd::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " & ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -360,8 +489,8 @@ ostream &SummaryExprAnd::write_spec(ostream &os) const {
 /************** SummaryExprOr ******************/
 string SummaryExprOr::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprOr::Component Width Mismatch: "
@@ -375,9 +504,9 @@ string SummaryExprOr::read_spec(string &str) {
 
 ostream &SummaryExprOr::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " | ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -385,8 +514,8 @@ ostream &SummaryExprOr::write_spec(ostream &os) const {
 /************** SummaryExprXor ******************/
 string SummaryExprXor::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprXor::Component Width Mismatch: "
@@ -400,9 +529,9 @@ string SummaryExprXor::read_spec(string &str) {
 
 ostream &SummaryExprXor::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " ^ ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -411,8 +540,8 @@ ostream &SummaryExprXor::write_spec(ostream &os) const {
 
 string SummaryExprMod::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprMod::Component Width Mismatch: "
@@ -426,7 +555,7 @@ string SummaryExprMod::read_spec(string &str) {
 
 ostream &SummaryExprMod::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " & ";
 
   if (b_->type_ == SummaryExpr::Type::TOKEN) {
@@ -442,7 +571,7 @@ ostream &SummaryExprMod::write_spec(ostream &os) const {
 
     os << "z3.BitVecVal(" << tokenValue << " - 1, " << tokenWidth << ")";
   } else {
-    b_->write_spec(os);
+    b_->write_promoted_value_spec(os);
   }
   os << ")";
   return os;
@@ -451,8 +580,8 @@ ostream &SummaryExprMod::write_spec(ostream &os) const {
 /************** SummaryExprPlus ******************/
 string SummaryExprPlus::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprPlus::Component Width Mismatch: "
@@ -466,21 +595,21 @@ string SummaryExprPlus::read_spec(string &str) {
 
 ostream &SummaryExprPlus::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " + ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
 
-/************** SummaryExprSignDiv ******************/
-string SummaryExprSignDiv::read_spec(string &str) {
+/************** SummaryExprMinus ******************/
+string SummaryExprMinus::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
-    Console::error(1) << "SummaryExprSignDiv::Component Width Mismatch: "
+    Console::error(1) << "SummaryExprMinus::Component Width Mismatch: "
                       << a_->width_ << " Vs " << b_->width_ << endl;
     exit(1);
   }
@@ -489,9 +618,61 @@ string SummaryExprSignDiv::read_spec(string &str) {
   return str.substr(result.second + 1);
 }
 
-ostream &SummaryExprSignDiv::write_spec(ostream &os) const {
-  os << "Div(";
-  SummaryExprBinop::write_spec(os);
+ostream &SummaryExprMinus::write_spec(ostream &os) const {
+  os << "(";
+  a_->write_promoted_value_spec(os);
+  os << " - ";
+  b_->write_promoted_value_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprSignedDiv ******************/
+string SummaryExprSignedDiv::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprSignedDiv::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprSignedDiv::write_spec(ostream &os) const {
+  os << "SIGN_DIV(";
+  a_->write_promoted_value_spec(os);
+  os << ", ";
+  b_->write_promoted_value_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprUnSignedDiv ******************/
+string SummaryExprUnSignedDiv::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprUnSignedDiv::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprUnSignedDiv::write_spec(ostream &os) const {
+  os << "z3.UDiv(";
+  a_->write_promoted_value_spec(os);
+  os << ", ";
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -499,8 +680,8 @@ ostream &SummaryExprSignDiv::write_spec(ostream &os) const {
 /************** SummaryExprLeftShift ******************/
 string SummaryExprLeftShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprLeftShift::Component Width Mismatch: "
@@ -514,7 +695,9 @@ string SummaryExprLeftShift::read_spec(string &str) {
 
 ostream &SummaryExprLeftShift::write_spec(ostream &os) const {
   os << "LeftShift(";
-  SummaryExprBinop::write_spec(os);
+  a_->write_promoted_value_spec(os);
+  os << ", ";
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -522,8 +705,8 @@ ostream &SummaryExprLeftShift::write_spec(ostream &os) const {
 /************** SummaryExprRightShift ******************/
 string SummaryExprRightShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprRightShift::Component Width Mismatch: "
@@ -537,9 +720,9 @@ string SummaryExprRightShift::read_spec(string &str) {
 
 ostream &SummaryExprRightShift::write_spec(ostream &os) const {
   os << "z3.LShR(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -547,8 +730,8 @@ ostream &SummaryExprRightShift::write_spec(ostream &os) const {
 /************** SummaryExprSignRightShift ******************/
 string SummaryExprSignRightShift::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprSignRightShift::Component Width Mismatch: "
@@ -561,8 +744,10 @@ string SummaryExprSignRightShift::read_spec(string &str) {
 }
 
 ostream &SummaryExprSignRightShift::write_spec(ostream &os) const {
-  os << "SignRightShift(";
-  SummaryExprBinop::write_spec(os);
+  os << "SignLShR(";
+  a_->write_promoted_value_spec(os);
+  os << ", ";
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -570,8 +755,8 @@ ostream &SummaryExprSignRightShift::write_spec(ostream &os) const {
 /************** SummaryExprIfThenElse ******************/
 string SummaryExprIfThenElse::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprTernop::read_spec(result.first);
   type_ = type();
+  SummaryExprTernop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprIfThenElse::Component Width Mismatch: "
@@ -585,11 +770,11 @@ string SummaryExprIfThenElse::read_spec(string &str) {
 
 ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
   os << "z3.If(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ", ";
-  c_->write_spec(os);
+  c_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -597,6 +782,7 @@ ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
 /************** SummaryExprEq ******************/
 string SummaryExprEq::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -605,16 +791,15 @@ string SummaryExprEq::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = a_->width_;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprEq::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " == ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -623,6 +808,7 @@ ostream &SummaryExprEq::write_spec(ostream &os) const {
 string SummaryExprLT::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
   SummaryExprBinop::read_spec(result.first);
+  type_ = type();
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprLT::Component Width Mismatch: "
@@ -630,16 +816,15 @@ string SummaryExprLT::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprLT::write_spec(ostream &os) const {
   os << "z3.ULT(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -647,6 +832,7 @@ ostream &SummaryExprLT::write_spec(ostream &os) const {
 /************** SummaryExprLTE ******************/
 string SummaryExprLTE::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -655,16 +841,15 @@ string SummaryExprLTE::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprLTE::write_spec(ostream &os) const {
   os << "z3.ULE(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -672,6 +857,7 @@ ostream &SummaryExprLTE::write_spec(ostream &os) const {
 /************** SummaryExprGT ******************/
 string SummaryExprGT::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -680,16 +866,15 @@ string SummaryExprGT::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprGT::write_spec(ostream &os) const {
   os << "z3.UGT(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -697,6 +882,7 @@ ostream &SummaryExprGT::write_spec(ostream &os) const {
 /************** SummaryExprGTE ******************/
 string SummaryExprGTE::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -705,16 +891,15 @@ string SummaryExprGTE::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprGTE::write_spec(ostream &os) const {
   os << "z3.UGE(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -722,6 +907,7 @@ ostream &SummaryExprGTE::write_spec(ostream &os) const {
 /************** SummaryExprAndBool ******************/
 string SummaryExprAndBool::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -730,16 +916,15 @@ string SummaryExprAndBool::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprAndBool::write_spec(ostream &os) const {
   os << "z3.And(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -747,6 +932,7 @@ ostream &SummaryExprAndBool::write_spec(ostream &os) const {
 /************** SummaryExprOrBool ******************/
 string SummaryExprOrBool::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
+  type_ = type();
   SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
@@ -755,16 +941,15 @@ string SummaryExprOrBool::read_spec(string &str) {
     exit(1);
   }
 
-  type_ = type();
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprOrBool::write_spec(ostream &os) const {
   os << "z3.Or(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -772,24 +957,44 @@ ostream &SummaryExprOrBool::write_spec(ostream &os) const {
 /************** SummaryExprNotBool ******************/
 string SummaryExprNotBool::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprUnop::read_spec(result.first);
   type_ = type();
+  SummaryExprUnop::read_spec(result.first);
   width_ = 1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprNotBool::write_spec(ostream &os) const {
   os << "z3.Not(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ")";
+  return os;
+}
+
+/************** SummaryExprBitwidthMInt ******************/
+string SummaryExprBitwidthMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprUnop::read_spec(result.first);
+
+  if (a_->width_ == 0) {
+    Console::error(1) << "SummaryExprBitwidthMInt::read_spec: Zero width found!"
+                      << endl;
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprBitwidthMInt::write_spec(ostream &os) const {
+  assert(0 && "Should have been printed as part of SummaryExprMiMInt");
   return os;
 }
 
 /************** SummaryExprXorBool ******************/
 string SummaryExprXorBool::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprXorBool::Component Width Mismatch: "
@@ -803,9 +1008,9 @@ string SummaryExprXorBool::read_spec(string &str) {
 
 ostream &SummaryExprXorBool::write_spec(ostream &os) const {
   os << "z3.Xor(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -813,8 +1018,8 @@ ostream &SummaryExprXorBool::write_spec(ostream &os) const {
 /************** SummaryExprXorMInt ******************/
 string SummaryExprXorMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprXorMInt::Component Width Mismatch: "
@@ -828,9 +1033,9 @@ string SummaryExprXorMInt::read_spec(string &str) {
 
 ostream &SummaryExprXorMInt::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " ^ ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -838,14 +1043,14 @@ ostream &SummaryExprXorMInt::write_spec(ostream &os) const {
 /************** SummaryExprExtractMInt ******************/
 string SummaryExprExtractMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprTernop::read_spec(result.first);
   type_ = type();
+  SummaryExprTernop::read_spec(result.first);
 
-  if (!checkComponentWidths()) {
-    Console::error(1) << "SummaryExprExtractMInt::Component Width Mismatch: "
-                      << a_->width_ << " Vs " << b_->width_ << endl;
-    exit(1);
-  }
+  // if (!checkComponentWidths()) {
+  //   Console::error(1) << "SummaryExprExtractMInt::Component Width Mismatch: "
+  //                     << b_->width_ << " Vs " << c_->width_ << endl;
+  //   exit(1);
+  // }
 
   width_ = stoi(((SummaryExprToken *)c_)->value_) -
            stoi(((SummaryExprToken *)b_)->value_);
@@ -861,7 +1066,7 @@ ostream &SummaryExprExtractMInt::write_spec(ostream &os) const {
   os << ", ";
   os << bw - (stoi(((SummaryExprToken *)c_)->value_) - 1);
   os << ", ";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -869,8 +1074,8 @@ ostream &SummaryExprExtractMInt::write_spec(ostream &os) const {
 /************** SummaryExprMiMInt ******************/
 string SummaryExprMiMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprMiMInt::Component Width Mismatch: "
@@ -878,27 +1083,64 @@ string SummaryExprMiMInt::read_spec(string &str) {
     exit(1);
   }
 
-  width_ = stoi(((SummaryExprToken *)a_)->value_);
+  // width_ = stoi(((SummaryExprToken *)a_)->value_);
+
+  // Following versions of mi(..) can occur
+  // 1. mi(#token(...), "V")
+  // 2. mi(#token(...), #token(...))
+  // 3. mi(bitwidthMInt(...), "V")
+  // 4. mi(bitwidthMInt(...), #token(...))
+  if (a_->type_ == SummaryExpr::Type::TOKEN) {
+    width_ = stoi(((SummaryExprToken *)a_)->value_);
+  } else {
+    if (a_->width_ == 0) {
+      Console::msg() << "SummaryExprMiMInt::read_spec:: Zero arg found as the "
+                        "width of an mi!"
+                     << endl;
+    }
+    width_ = a_->width_;
+  }
+
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprMiMInt::write_spec(ostream &os) const {
 
-  if (b_->type_ == SummaryExpr::Type::VAR) {
-    b_->write_spec(os);
+  if (b_->type_ == SummaryExpr::Type::TOKEN) {
+    os << "z3.BitVecVal(" << ((SummaryExprToken *)b_)->value_ << ", " << width_
+       << ")";
     return os;
   }
 
-  Console::error(1) << "Unknow mi operand: Type: " << b_->type_ << endl;
-  b_->write_spec(os);
+  if (b_->type_ == SummaryExpr::Type::VAR) {
+
+    if (width_ == b_->width_) {
+      b_->write_promoted_value_spec(os);
+    } else if (width_ > b_->width_) {
+      os << "z3.Concat(";
+      os << "z3.BitVecVal(0, " << (width_ - b_->width_) << "), ";
+      b_->write_promoted_value_spec(os);
+      os << ")";
+    } else {
+      Console::error(1)
+          << "SummaryExprMiMInt::write_spec:: Found an  mi(W,V) s.t W ("
+          << width_ << " < V.width (" << b_->width_ << ")" << endl;
+    }
+
+    return os;
+  }
+
+  Console::error(1) << "Unknow V for an mi(W, V): where V: " << b_->type_
+                    << endl;
+  b_->write_promoted_value_spec(os);
   return os;
 }
 
 /************** SummaryExprConcatMInt ******************/
 string SummaryExprConcatMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
   width_ = a_->width_ + b_->width_;
   return str.substr(result.second + 1);
 }
@@ -906,9 +1148,9 @@ string SummaryExprConcatMInt::read_spec(string &str) {
 ostream &SummaryExprConcatMInt::write_spec(ostream &os) const {
 
   os << "z3.Concat(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -916,8 +1158,8 @@ ostream &SummaryExprConcatMInt::write_spec(ostream &os) const {
 /************** SummaryExprAddMInt ******************/
 string SummaryExprAddMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprAddMInt::Component Width Mismatch: "
@@ -932,9 +1174,35 @@ string SummaryExprAddMInt::read_spec(string &str) {
 ostream &SummaryExprAddMInt::write_spec(ostream &os) const {
 
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " + ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
+  os << ")";
+  return os;
+}
+
+/************** SummaryExprAndMInt ******************/
+string SummaryExprAndMInt::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprBinop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprAndMInt::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  width_ = a_->width_;
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprAndMInt::write_spec(ostream &os) const {
+
+  os << "(";
+  a_->write_promoted_value_spec(os);
+  os << " & ";
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -942,8 +1210,8 @@ ostream &SummaryExprAddMInt::write_spec(ostream &os) const {
 /************** SummaryExprIfThenElseMInt ******************/
 string SummaryExprIfThenElseMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprTernop::read_spec(result.first);
   type_ = type();
+  SummaryExprTernop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprIfThenElseMInt::Component Width Mismatch: "
@@ -957,11 +1225,11 @@ string SummaryExprIfThenElseMInt::read_spec(string &str) {
 
 ostream &SummaryExprIfThenElseMInt::write_spec(ostream &os) const {
   os << "z3.If(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << ", ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ", ";
-  c_->write_spec(os);
+  c_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -969,8 +1237,8 @@ ostream &SummaryExprIfThenElseMInt::write_spec(ostream &os) const {
 /************** SummaryExprEqMInt ******************/
 string SummaryExprEqMInt::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
 
   if (!checkComponentWidths()) {
     Console::error(1) << "SummaryExprEqMInt::Component Width Mismatch: "
@@ -984,9 +1252,9 @@ string SummaryExprEqMInt::read_spec(string &str) {
 
 ostream &SummaryExprEqMInt::write_spec(ostream &os) const {
   os << "(";
-  a_->write_spec(os);
+  a_->write_promoted_value_spec(os);
   os << " == ";
-  b_->write_spec(os);
+  b_->write_promoted_value_spec(os);
   os << ")";
   return os;
 }
@@ -994,18 +1262,14 @@ ostream &SummaryExprEqMInt::write_spec(ostream &os) const {
 /************** SummaryExprPtr ******************/
 string SummaryExprPtr::read_spec(string &str) {
   auto result = extractNearestBracedExp(0, str);
-  SummaryExprBinop::read_spec(result.first);
   type_ = type();
+  SummaryExprBinop::read_spec(result.first);
   width_ = -1;
   return str.substr(result.second + 1);
 }
 
 ostream &SummaryExprPtr::write_spec(ostream &os) const {
-  os << "Ptr(";
-  a_->write_spec(os);
-  os << ", ";
-  b_->write_spec(os);
-  os << ")";
+  os << "PtrVal";
   return os;
 }
 
@@ -1099,12 +1363,19 @@ string SummaryExprToken::read_spec(string &str) {
 }
 
 ostream &SummaryExprToken::write_spec(ostream &os) const {
-  assert(width_ != 0 && "Zero width in SummaryExprToken::write_spec");
+  auto w = width_;
+  if (w == 0) {
+    assert(type_to_ignore == "Int" && "Zero width for a non int value");
+    Console::msg()
+        << "SummaryExprToken::write_spec:Zero width found for value: " << value_
+        << ": Promoting to 8 bits" << endl;
+    w = 8;
+  }
 
   if (type_to_ignore == "Bool") {
     os << "z3.True";
   } else {
-    os << "z3.BitVecVal(" << value_ << ", " << width_ << ")";
+    os << "z3.BitVecVal(" << value_ << ", " << w << ")";
   }
   return os;
 }
@@ -1135,12 +1406,121 @@ string ByteExpr::read_spec(string &ss) {
 }
 
 ostream &ByteExpr::write_spec(ostream &os) const {
-  if (numBytes == 1) {
-    os << "z3.Extract(" << 0 << ", " << 0 << ", " << expr << ")";
-  } else {
-    os << "z3.Extract(" << byteIndex * 8 + 7 << ", " << byteIndex * 8 << ", "
-       << expr << ")";
+  // if (numBytes == 1) {
+  //  os << "z3.Extract(" << 0 << ", " << 0 << ", " << expr << ")";
+  //} else {
+  os << "z3.Extract(" << byteIndex * 8 + 7 << ", " << byteIndex * 8 << ", "
+     << expr << ")";
+  //}
+  return os;
+}
+
+/************** SummaryExprIntFromBytesAux ******************/
+string SummaryExprIntFromBytesAux::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  SummaryExprToken tk1;
+  str = tk1.read_spec(str);
+  byteCount = stoi(tk1.value_);
+
+  assert(byteCount > 0 &&
+         "SummaryExprIntFromBytesAux::read_spec:: Zero ByteCount");
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  SummaryExprVar var1;
+  str = var1.read_spec(str);
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  SummaryExprToken tk2;
+  str = tk2.read_spec(str);
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  str = memExpr.read_spec(str);
+
+  width_ = byteCount * 8;
+
+  return ss.substr(result.second + 1);
+}
+
+ostream &SummaryExprIntFromBytesAux::write_spec(ostream &os) const {
+  auto startIndex = memExpr.byteExpr.byteIndex;
+
+  if (byteCount == 1) {
+    os << "z3.Extract(" << startIndex * 8 + 7 << ", " << startIndex * 8 << ", "
+       << memExpr.byteExpr.expr << ")";
+    return os;
   }
+
+  os << "z3.Concat(";
+  for (int i = 0; i < byteCount; i++, startIndex++) {
+    os << "z3.Extract(" << startIndex * 8 + 7 << ", " << startIndex * 8 << ", "
+       << memExpr.byteExpr.expr << "),";
+  }
+  os << ")";
+
+  return os;
+}
+
+/************** SummaryExprIntFromBytes ******************/
+string SummaryExprIntFromBytes::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  SummaryExprToken tk1;
+  str = tk1.read_spec(str);
+  byteCount = stoi(tk1.value_);
+
+  assert(byteCount > 0 &&
+         "SummaryExprIntFromBytes::read_spec:: Zero ByteCount");
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  str = memExpr.read_spec(str);
+
+  width_ = byteCount * 8;
+
+  return ss.substr(result.second + 1);
+}
+
+ostream &SummaryExprIntFromBytes::write_spec(ostream &os) const {
+  auto startIndex = memExpr.byteExpr.byteIndex;
+
+  if (byteCount == 1) {
+    os << "z3.Extract(" << startIndex * 8 + 7 << ", " << startIndex * 8 << ", "
+       << memExpr.byteExpr.expr << ")";
+    return os;
+  }
+
+  os << "z3.Concat(";
+  for (int i = 0; i < byteCount; i++, startIndex++) {
+    os << "z3.Extract(" << startIndex * 8 + 7 << ", " << startIndex * 8 << ", "
+       << memExpr.byteExpr.expr << "),";
+  }
+  os << ")";
+
+  return os;
+}
+
+/************** SummaryExprCommonMemSyntax ******************/
+string SummaryExprCommonMemSyntax::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  str = byteExpr.read_spec(str);
+
+  return ss.substr(result.second + 1);
+}
+
+ostream &SummaryExprCommonMemSyntax::write_spec(ostream &os) const {
+  assert(0 && "Should have been printed as part of SummaryExprIntFromBytesAux");
   return os;
 }
 
@@ -1172,5 +1552,17 @@ string SymLoc::read_spec(string &ss) {
 
 ostream &SymLoc::write_spec(ostream &os) const {
   os << "SymLoc(" << locId << ", " << offset << ")";
+  return os;
+}
+
+/************** SummaryExprUndefMInt ******************/
+string SummaryExprUndefMInt::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  width_ = 1;
+  return ss.substr(result.second + 1);
+}
+
+ostream &SummaryExprUndefMInt::write_spec(ostream &os) const {
+  os << "VX_UNDEF_1";
   return os;
 }

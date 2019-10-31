@@ -1,5 +1,5 @@
 PROG=roll_r32_one
-.PHONY: objdump mcsema assemble binary lprove xprove declutter kli xstate collect kompile genxspec genlspec clean
+.PHONY: objdump mcsema assemble binary lprove xprove declutter kli xstate collect kompile genxspec genlspec genz3 provez3 clean
 KPROVE_OPTS=--log-cells "(\#initTerm),(\#target),(\#result),(registers),(memory)" --log-basic  --state-log --log-success --no-alpha-renaming --restore-original-names --output kast
 XPROVE_OPTS= --output-flatten "_Map_"
 LPROVE_OPTS= --output-flatten "_Map_"
@@ -8,6 +8,7 @@ Mkdir=@mkdir -p $(@D)
 SCRIPT_DIR=${HOME}/Github/X86-64-semantics/scripts
 RUN_SH=${SCRIPT_DIR}/run.pl
 DVAL_SCRIPT_DIR=${HOME}/Github/validating-binary-decompilation/tests/scripts/
+TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
 OUTDIR=Output
 
 binary: test.c
@@ -76,7 +77,19 @@ xprove: test-xspec.k
 	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --xprove
 
 ##
+## Generate and run proof scripts
 ##
+
+genz3:
+	${TOOLDIR}/spec-to-smt --lspec Output/test-lspec.out --xspec Output/test-xspec.out --z3out Output/test-z3.py
+	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --genz3
+
+provez3:
+	python Output/test-z3.py ${PROG}
+
+
+##
+## Generate and run proof scripts
 ##
 
 clean:

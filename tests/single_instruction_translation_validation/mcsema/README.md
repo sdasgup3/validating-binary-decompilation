@@ -102,6 +102,7 @@ cat docs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/
 ## Generate spec output file for x86
 ```
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make genxspec; cd -"
+cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make collect; cd -"
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 ```
 
@@ -115,10 +116,10 @@ cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make genlspec; c
 cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make lprove; cd -"
 ```
 
-## Compare the z3 output
+## Generate and Compare the z3 output
 ```
-// Generate the z3 query file test-z3.py
-python test-z3.py
+cat docs/xprovePass.log | parallel  "cd register-variants/{}; make genz3; cd -"
+cat docs/xprovePass.log | parallel  "cd register-variants/{}; make provez3; cd -"
 ```
 
 
