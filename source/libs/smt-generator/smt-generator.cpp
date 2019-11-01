@@ -4,6 +4,7 @@
 #include "src/ext/cpputil/include/io/console.h"
 #include "src/ext/cpputil/include/system/terminal.h"
 //#include "src/ext/pstreams-0.8.1/pstream.h"
+#include <stdlib.h>
 
 using namespace cpputil;
 // using namespace stoke;
@@ -57,7 +58,7 @@ static int getRegBitWidthByName(string regName) {
 /*
 ** Process LSpec
 */
-static unordered_map<string, string> processLSummary(const string &summary) {
+static map<string, string> processLSummary(const string &summary) {
 
   Console::msg() << "\tStarting processLSummary..." << endl;
   string prunedSummary = summary;
@@ -92,7 +93,7 @@ static unordered_map<string, string> processLSummary(const string &summary) {
   retvalPrunedSummary = extractNearestBracedExp(pos, prunedSummary);
   prunedSummary = retvalPrunedSummary.first;
 
-  unordered_map<size_t, vector<string>> stateComposer;
+  map<size_t, vector<string>> stateComposer;
 
   // Extract  E from the mapping "_|->(symloc(...), byte(E))"
   pos = prunedSummary.find("_|->_", 0);
@@ -132,7 +133,7 @@ static unordered_map<string, string> processLSummary(const string &summary) {
   }
 
   // Composing the states
-  unordered_map<string, string> retval;
+  map<string, string> retval;
   for (auto p : stateComposer) {
 
     auto stateInfo = getLSpecStateInfo(p.first);
@@ -263,11 +264,11 @@ vector<summaryAndSideConds> SMTGenerator::processLSpec() {
       ...
   }
 */
-unordered_map<string, string> SMTGenerator::uniquifyLSpec(
+map<string, string> SMTGenerator::uniquifyLSpec(
     vector<summaryAndSideConds> &lSpecSummaryAndSideConds) {
 
   Console::msg() << "\t\tStarting uniquifyLSpec..." << endl;
-  unordered_map<string, string> retval;
+  map<string, string> retval;
 
   // Only one side condition
   if (lSpecSummaryAndSideConds.size() == 1) {
@@ -284,6 +285,8 @@ unordered_map<string, string> SMTGenerator::uniquifyLSpec(
         retval[regName] = "(V_F == " + regSummary + ")";
       } else if (width == 64) {
         retval[regName] = "(V_R == " + regSummary + ")";
+      } else if (width == 256) {
+        retval[regName] = "(V_Y == " + regSummary + ")";
       } else {
         Console::error(1)
             << "SMTGenerator::uniquifyLSpec: Unsupported bitwidth " << width
@@ -344,10 +347,10 @@ unordered_map<string, string> SMTGenerator::uniquifyLSpec(
 /*
 ** Process XSpec
 */
-static unordered_map<string, string> processXSummary(const string &summary) {
+static map<string, string> processXSummary(const string &summary) {
 
   Console::msg() << "\tStarting processXSummary..." << endl;
-  unordered_map<string, string> retval;
+  map<string, string> retval;
   string prunedSummary = summary;
 
   // Extract the regstate cell
@@ -414,12 +417,12 @@ static unordered_map<string, string> processXSummary(const string &summary) {
   }
 */
 
-unordered_map<string, string>
-SMTGenerator::uniquifyXSpec(unordered_map<string, string> &xSpecSummary) {
+map<string, string>
+SMTGenerator::uniquifyXSpec(map<string, string> &xSpecSummary) {
 
   Console::msg() << "\t\tStarting uniquifyXSpec..." << endl;
 
-  unordered_map<string, string> retval;
+  map<string, string> retval;
   for (auto summary : xSpecSummary) {
     auto regName = summary.first;
     auto regSummary = summary.second;
@@ -449,7 +452,7 @@ SMTGenerator::uniquifyXSpec(unordered_map<string, string> &xSpecSummary) {
   return retval;
 }
 
-unordered_map<string, string> SMTGenerator::processXSpec() {
+map<string, string> SMTGenerator::processXSpec() {
 
   Console::msg() << "Starting processXSpec..." << endl;
   ifstream is(xspecfile);
@@ -483,12 +486,14 @@ unordered_map<string, string> SMTGenerator::processXSpec() {
 /*
 ** Generting z3 proof script
 */
-void SMTGenerator::dumpZ3(unordered_map<string, string> &lSpecRegMap,
-                          unordered_map<string, string> &xSpecRegMap) {
+void SMTGenerator::dumpZ3(map<string, string> &lSpecRegMap,
+                          map<string, string> &xSpecRegMap) {
   Console::msg() << "Starting dumpZ3..." << endl;
 
-  ifstream istemplate("/home/sdasgup3/Github/validating-binary-decompilation/"
-                      "tests/scripts/proofScriptTemplate.py");
+  string homeDir(getenv("HOME"));
+  assert(homeDir != "" && "Home dir not found");
+  ifstream istemplate(homeDir + "/Github/validating-binary-decompilation/"
+                                "tests/scripts/proofScriptTemplate.py");
   string fixedDecl;
   while (getline(istemplate, fixedDecl)) {
     proofScript << fixedDecl << endl;
@@ -500,7 +505,8 @@ void SMTGenerator::dumpZ3(unordered_map<string, string> &lSpecRegMap,
       continue;
 
     if (xSpecRegMap.count(p.first)) {
-      proofScript << "print(\"=**= " << p.first << " =**=\")" << endl;
+      proofScript << "print(\"\\n\")" << endl;
+      proofScript << "print(\"=******= " << p.first << " =******=\")" << endl;
       proofScript << "s.push()" << endl << endl;
 
       proofScript << "lvar = " << p.second << endl << endl;
@@ -518,7 +524,12 @@ void SMTGenerator::dumpZ3(unordered_map<string, string> &lSpecRegMap,
   proofScript << "  print('\x1b[6;30;42m' + 'Pass: ' + '\x1b[0m' + test_name)"
               << endl;
   proofScript << "else:" << endl;
-  proofScript << "  print('\x1b[0;30;41m' + 'Fail: '  + '\x1b[0m' + test_name)"
+  proofScript << "  if(status == False):" << endl;
+  proofScript
+      << "    print('\x1b[0;30;41m' + 'Fail: '  + '\x1b[0m' + test_name)"
+      << endl;
+  proofScript << "  else:" << endl;
+  proofScript << "    print('\x1b[6;30;47m' + 'Unk: '  + '\x1b[0m' + test_name)"
               << endl;
 
   std::ofstream ofs(z3pyfile, std::ofstream::out);
