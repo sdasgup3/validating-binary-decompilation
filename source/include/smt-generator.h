@@ -21,7 +21,6 @@
 #include <regex>
 #include <set>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 #undef DEBUG_TYPE
@@ -36,7 +35,7 @@ typedef struct {
 } LSpecStateInfoType;
 
 typedef struct {
-  unordered_map<string, string> summary;
+  map<string, string> summary;
   string sideConds;
 } summaryAndSideConds;
 
@@ -49,15 +48,15 @@ private:
 
   vector<summaryAndSideConds> processLSpec();
 
-  unordered_map<string, string> uniquifyXSpec(unordered_map<string, string> &);
+  map<string, string> uniquifyXSpec(map<string, string> &);
 
-  unordered_map<string, string>
+  map<string, string>
   uniquifyLSpec(vector<summaryAndSideConds> &lSpecSummaryAndSideConds);
 
-  unordered_map<string, string> processXSpec();
+  map<string, string> processXSpec();
 
-  void dumpZ3(unordered_map<string, string> &lSpecRegMap,
-              unordered_map<string, string> &xSpecRegMap);
+  void dumpZ3(map<string, string> &lSpecRegMap,
+              map<string, string> &xSpecRegMap);
 
 public:
   SMTGenerator(const string &lspec, const string &xspec, const string &z3out);
