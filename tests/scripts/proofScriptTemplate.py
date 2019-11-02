@@ -10,18 +10,23 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(s):
+def solve(msg, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
-  print(res)
 
   if(z3.unknown == res):
+    print(msg, "unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(s.model())
+    print(msg, "sat")
+    print("\n")
+    print("query", s)
+    print("\n")
+    print("model", s.model())
+    print("\n")
     status = False
 
 ##############################

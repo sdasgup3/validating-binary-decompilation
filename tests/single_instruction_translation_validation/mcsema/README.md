@@ -119,7 +119,9 @@ cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make lprove; cd 
 ## Generate and Compare the z3 output
 ```
 cat docs/xprovePass.log | parallel  "cd register-variants/{}; make genz3; cd -"
-cat docs/xprovePass.log | parallel  "cd register-variants/{}; make provez3; cd -"
+// genz3 pass/fails are stored at genz3(Pass/Fail).log 
+cat docs/genPassz3.log | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -"
+//provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk).log
 ```
 
 

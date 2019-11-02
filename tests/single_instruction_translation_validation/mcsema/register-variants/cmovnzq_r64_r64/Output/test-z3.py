@@ -10,18 +10,23 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(s):
+def solve(msg, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
-  print(res)
 
   if(z3.unknown == res):
+    print(msg, "unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(s.model())
+    print(msg, "sat")
+    print("\n")
+    print("query", s)
+    print("\n")
+    print("model", s.model())
+    print("\n")
     status = False
 
 ##############################
@@ -124,8 +129,7 @@ s.add(z3.Concat(VL_YMM1_3, VL_YMM1_2, VL_YMM1_1, VL_YMM1_0) == VX_YMM1)
 s.add(z3.Concat(VL_YMM2_3, VL_YMM2_2, VL_YMM2_1, VL_YMM2_0) == VX_YMM2)
 
 
-print("\n")
-print("=******= AF =******=")
+## =******= AF =******=
 s.push()
 
 lvar = z3.And(
@@ -144,12 +148,11 @@ xvar = (V_F == VX_AF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("AF", s)
 
 s.pop()
 
-print("\n")
-print("=******= CF =******=")
+## =******= CF =******=
 s.push()
 
 lvar = z3.And(
@@ -168,12 +171,11 @@ xvar = (V_F == VX_CF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("CF", s)
 
 s.pop()
 
-print("\n")
-print("=******= OF =******=")
+## =******= OF =******=
 s.push()
 
 lvar = z3.And(
@@ -192,12 +194,11 @@ xvar = (V_F == VX_OF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("OF", s)
 
 s.pop()
 
-print("\n")
-print("=******= PF =******=")
+## =******= PF =******=
 s.push()
 
 lvar = z3.And(
@@ -216,12 +217,11 @@ xvar = (V_F == VX_PF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("PF", s)
 
 s.pop()
 
-print("\n")
-print("=******= RAX =******=")
+## =******= RAX =******=
 s.push()
 
 lvar = z3.And(
@@ -240,12 +240,11 @@ xvar = (V_R == VX_RAX)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("RAX", s)
 
 s.pop()
 
-print("\n")
-print("=******= RBX =******=")
+## =******= RBX =******=
 s.push()
 
 lvar = z3.And(
@@ -264,12 +263,11 @@ xvar = (V_R == z3.If(z3.Not((VX_ZF == z3.BitVecVal(1, 1))), VX_RCX, VX_RBX))
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("RBX", s)
 
 s.pop()
 
-print("\n")
-print("=******= RCX =******=")
+## =******= RCX =******=
 s.push()
 
 lvar = z3.And(
@@ -288,12 +286,11 @@ xvar = (V_R == VX_RCX)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("RCX", s)
 
 s.pop()
 
-print("\n")
-print("=******= RDX =******=")
+## =******= RDX =******=
 s.push()
 
 lvar = z3.And(
@@ -312,12 +309,11 @@ xvar = (V_R == VX_RDX)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("RDX", s)
 
 s.pop()
 
-print("\n")
-print("=******= SF =******=")
+## =******= SF =******=
 s.push()
 
 lvar = z3.And(
@@ -336,12 +332,11 @@ xvar = (V_F == VX_SF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("SF", s)
 
 s.pop()
 
-print("\n")
-print("=******= ZF =******=")
+## =******= ZF =******=
 s.push()
 
 lvar = z3.And(
@@ -360,7 +355,7 @@ xvar = (V_F == VX_ZF)
 
 s.add(lvar != xvar)
 
-solve(s)
+solve("ZF", s)
 
 s.pop()
 

@@ -223,6 +223,11 @@ vector<summaryAndSideConds> SMTGenerator::processLSpec() {
     }
   }
 
+  if (worklist_summary.size() == 0) {
+    Console::error(1) << "No final summary detected!" << endl;
+    exit(1);
+  }
+
   if (worklist_summary.size() != worklist_sideconds.size()) {
     Console::error(1) << "Summary / Side condition count mismatch!";
     exit(1);
@@ -505,15 +510,17 @@ void SMTGenerator::dumpZ3(map<string, string> &lSpecRegMap,
       continue;
 
     if (xSpecRegMap.count(p.first)) {
-      proofScript << "print(\"\\n\")" << endl;
-      proofScript << "print(\"=******= " << p.first << " =******=\")" << endl;
+      // proofScript << "print(\"\\n\")" << endl;
+      // proofScript << "print(\"=******= " << p.first << " =******=\")" <<
+      // endl;
+      proofScript << "## =******= " << p.first << " =******=" << endl;
       proofScript << "s.push()" << endl << endl;
 
       proofScript << "lvar = " << p.second << endl << endl;
       proofScript << "xvar = " << xSpecRegMap[p.first] << endl;
 
       proofScript << endl << "s.add(lvar != xvar)" << endl;
-      proofScript << endl << "solve(s)" << endl << endl;
+      proofScript << endl << "solve(\"" << p.first << "\", s)" << endl << endl;
       proofScript << "s.pop()" << endl << endl;
     } else {
       Console::msg() << "Cannot find lvar" << p.first << "in xMap!" << endl;
