@@ -1,9 +1,9 @@
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/xchgl_r32_eax/././test-lspec.k)
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/xchgl_r32_eax/test-lspec.k)
-Parse spec modules [1/9 rules]                               =  0.020s
+Parse spec modules [1/9 rules]                               =  0.023s
 StateLog: /home/ubuntu/Github/llvm-verified-backend/kompiled-defs/llvm/llvm-semantics-kompiled/stateLog/prove-2033714444.log
 
-Parsing finished:  120.369 s
+Parsing finished:  153.201 s
 Pre-processing rule:
 rule too long...
 	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/xchgl_r32_eax/test-lspec.k Location(5,1,632,16)
@@ -12,20 +12,20 @@ rule too long...
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  125.053 s,	 9213 MB, gc:  3.976 %
-  Parsing             :  120.369 s,	 7965 MB, gc:  4.131 %
-  Init                :    4.684 s,	 9213 MB, gc:  0.000 %
+Total                 :  159.944 s,	 7908 MB, gc:  4.630 %
+  Parsing             :  153.201 s,	 6660 MB, gc:  4.834 %
+  Init                :    6.743 s,	 7908 MB, gc:  0.000 %
 
-Init+Execution time:       4.684 s
+Init+Execution time:       6.743 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.098 s,      #       9567
-    evaluateFunction time            :    0.059 s,      #        628
+  resolveFunctionAndAnywhere time  :    0.114 s,      #       9567
+    evaluateFunction time            :    0.069 s,      #        628
       builtin evaluation               :           ,      #        627
       function rule                    :           ,      #          1
-    applyAnywhereRules time          :    0.002 s,      #       1327
+    applyAnywhereRules time          :    0.003 s,      #       1327
       no anywhere rules                :           ,      #       1327
-    remaining time & # cached        :    0.037 s,      #       7612
+    remaining time & # cached        :    0.041 s,      #       7612
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #       1131
@@ -54,11 +54,11 @@ Target term
 #True(.KList)
 
 
-STEP 1 v1 :    4.430 s, 		 7687 MB, gc:  0.000 %
+STEP 1 v1 :    5.354 s, 		 7152 MB, gc:  0.000 %
 ===================
 `<memory>`(`<nextLoc>`(#token("5","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4097","Int")),byte(#token("0","Int"),#token("1","Int"),VL_CF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4099","Int")),byte(#token("0","Int"),#token("1","Int"),VL_PF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4101","Int")),byte(#token("0","Int"),#token("1","Int"),VL_AF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4103","Int")),byte(#token("0","Int"),#token("1","Int"),VL_ZF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4105","Int")),byte(#token("0","Int"),#token("1","Int"),VL_SF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4107","Int")),byte(#token("0","Int"),#token("1","Int"),VL_DF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4109","Int")),byte(#token("0","Int"),#token("1","Int"),VL_OF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4360","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4361","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4362","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4363","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4364","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4365","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4366","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4367","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RAX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4376","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4377","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4378","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4379","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4380","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4381","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4382","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4383","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RBX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4392","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4393","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4394","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4395","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4396","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4397","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4398","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4399","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4408","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4409","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4410","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4411","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4412","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4413","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4414","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4415","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4616","Int")),byte(#token("0","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4617","Int")),byte(#token("1","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4618","Int")),byte(#token("2","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4619","Int")),byte(#token("3","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4620","Int")),byte(#token("4","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4621","Int")),byte(#token("5","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4622","Int")),byte(#token("6","Int"),#token("8","Int"),#token("0","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4623","Int")),byte(#token("7","Int"),#token("8","Int"),#token("0","Int")))))),`<freed>`(`.Set`(.KList)))
 
-STEP 496 v1 :    7.230 s, 		 9047 MB, gc:  0.000 %
+STEP 496 v1 :    7.603 s, 		 8512 MB, gc:  0.000 %
 ===================
 `<memory>`(`<nextLoc>`(#token("5","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4097","Int")),byte(#token("0","Int"),#token("1","Int"),VL_CF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4099","Int")),byte(#token("0","Int"),#token("1","Int"),VL_PF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4101","Int")),byte(#token("0","Int"),#token("1","Int"),VL_AF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4103","Int")),byte(#token("0","Int"),#token("1","Int"),VL_ZF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4105","Int")),byte(#token("0","Int"),#token("1","Int"),VL_SF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4107","Int")),byte(#token("0","Int"),#token("1","Int"),VL_DF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4109","Int")),byte(#token("0","Int"),#token("1","Int"),VL_OF)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4360","Int")),byte(#token("0","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4361","Int")),byte(#token("1","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4362","Int")),byte(#token("2","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4363","Int")),byte(#token("3","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4364","Int")),byte(#token("4","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4365","Int")),byte(#token("5","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4366","Int")),byte(#token("6","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4367","Int")),byte(#token("7","Int"),#token("8","Int"),`_&Int_`(VL_RBX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4376","Int")),byte(#token("0","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4377","Int")),byte(#token("1","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4378","Int")),byte(#token("2","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4379","Int")),byte(#token("3","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4380","Int")),byte(#token("4","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4381","Int")),byte(#token("5","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4382","Int")),byte(#token("6","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4383","Int")),byte(#token("7","Int"),#token("8","Int"),`_&Int_`(VL_RAX,#token("4294967295","Int")))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4392","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4393","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4394","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4395","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4396","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4397","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4398","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4399","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RCX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4408","Int")),byte(#token("0","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4409","Int")),byte(#token("1","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4410","Int")),byte(#token("2","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4411","Int")),byte(#token("3","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4412","Int")),byte(#token("4","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4413","Int")),byte(#token("5","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4414","Int")),byte(#token("6","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4415","Int")),byte(#token("7","Int"),#token("8","Int"),VL_RDX)),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4616","Int")),byte(#token("0","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4617","Int")),byte(#token("1","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4618","Int")),byte(#token("2","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4619","Int")),byte(#token("3","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4620","Int")),byte(#token("4","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4621","Int")),byte(#token("5","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4622","Int")),byte(#token("6","Int"),#token("8","Int"),#token("1","Int"))),`_|->_`(symloc(#token("4","Int"),#token("64","Int"),#token("6144","Int"),#token("8","Int"),#token("4623","Int")),byte(#token("7","Int"),#token("8","Int"),#token("1","Int")))))),`<freed>`(`.Set`(.KList)))
 
@@ -81,39 +81,39 @@ SPEC PROVED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_in
 Execution paths: 1
 Longest path: 496 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  136.264 s,	 7028 MB, gc:  3.895 %
-  Parsing             :  120.369 s,	 7965 MB, gc:  4.131 %
-  Init                :    4.684 s,	 9213 MB, gc:  0.000 %
-  Execution           :   11.211 s,	 7028 MB, gc:  2.997 %
+Total                 :  171.450 s,	 7279 MB, gc:  4.401 %
+  Parsing             :  153.201 s,	 6660 MB, gc:  4.834 %
+  Init                :    6.743 s,	 7908 MB, gc:  0.000 %
+  Execution           :   11.506 s,	 7279 MB, gc:  1.217 %
 
-Init+Execution time:      15.895 s
+Init+Execution time:      18.249 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.282 s,      #      12276
-    evaluateFunction time            :    0.204 s,      #        987
+  resolveFunctionAndAnywhere time  :    0.281 s,      #      12276
+    evaluateFunction time            :    0.215 s,      #        987
       builtin evaluation               :           ,      #        869
       function rule                    :           ,      #         62
       sort predicate                   :           ,      #         54
       no rule applicable               :           ,      #          2
-    applyAnywhereRules time          :    0.006 s,      #       3039
+    applyAnywhereRules time          :    0.005 s,      #       3039
       no anywhere rules                :           ,      #       3039
-    remaining time & # cached        :    0.073 s,      #       8250
-  log time                         :    2.484 s,      #        497
+    remaining time & # cached        :    0.061 s,      #       8250
+  log time                         :    2.013 s,      #        497
 
   Recursive event counts:
-  resolveFunctionAndAnywhere time  :           ,      #       4434
-    evaluateFunction time            :           ,      #        653
-      builtin evaluation               :           ,      #        304
-      function rule                    :           ,      #        347
+  resolveFunctionAndAnywhere time  :           ,      #       4459
+    evaluateFunction time            :           ,      #        668
+      builtin evaluation               :           ,      #        317
+      function rule                    :           ,      #        349
       sort predicate                   :           ,      #          0
       no rule applicable               :           ,      #          2
     applyAnywhereRules time          :           ,      #        116
       no anywhere rules                :           ,      #        116
-    # cached                         :           ,      #       3665
+    # cached                         :           ,      #       3675
 
 Max memory : 262144 MB
 ==================================
 
 #True(.KList)
-342.12user 136.90system 2:17.89elapsed 347%CPU (0avgtext+0avgdata 15226032maxresident)k
-0inputs+166312outputs (0major+7561954minor)pagefaults 0swaps
+367.81user 130.88system 2:53.32elapsed 287%CPU (0avgtext+0avgdata 13346036maxresident)k
+0inputs+161040outputs (0major+7554632minor)pagefaults 0swaps

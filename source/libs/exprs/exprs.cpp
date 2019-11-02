@@ -80,7 +80,8 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprAnd();
     return (*ptr)->read_spec(str);
 
-  } else if (regex_search(str, m, regex("^`_%Int_`"))) {
+  } else if ((regex_search(str, m, regex("^`_%Int_`"))) ||
+             (regex_search(str, m, regex("^`_modInt_`")))) {
     *ptr = new SummaryExprMod();
     return (*ptr)->read_spec(str);
 
