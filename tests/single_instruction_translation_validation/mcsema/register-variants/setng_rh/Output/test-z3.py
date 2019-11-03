@@ -13,7 +13,7 @@ if(len(sys.argv) > 1):
 def solve(msg, lvar, xvar, s):
   global status
 
-  s.set("timeout", 6000)
+  s.set("timeout", 60000)
   res = s.check()
 
   if(z3.unknown == res):
@@ -191,7 +191,7 @@ s.pop()
 ## =******= RAX =******=
 s.push()
 
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, (z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))))))), z3.Extract(7, 0, VL_RAX)))
+lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, ((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8))))), z3.Extract(7, 0, VL_RAX)))
 
 xvar = (V_R == z3.Concat(z3.Concat(z3.Extract(63, 16, VX_RAX), z3.If(z3.Or((VX_ZF == z3.BitVecVal(1, 1)), z3.Not(((VX_SF == z3.BitVecVal(1, 1)) == (VX_OF == z3.BitVecVal(1, 1))))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))), z3.Extract(7, 0, VX_RAX)))
 

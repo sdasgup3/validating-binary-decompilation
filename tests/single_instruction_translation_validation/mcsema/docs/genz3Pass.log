@@ -366,3 +366,5 @@ xorps_xmm_xmm
 vmovdqu_ymm_ymm
 vmovdqa_ymm_ymm
 vptest_ymm_ymm
+psllq_xmm_xmm
+psrlq_xmm_xmm

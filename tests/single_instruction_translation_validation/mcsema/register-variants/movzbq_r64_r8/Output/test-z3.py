@@ -13,7 +13,7 @@ if(len(sys.argv) > 1):
 def solve(msg, lvar, xvar, s):
   global status
 
-  s.set("timeout", 6000)
+  s.set("timeout", 60000)
   res = s.check()
 
   if(z3.unknown == res):
@@ -204,7 +204,7 @@ s.pop()
 ## =******= RBX =******=
 s.push()
 
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(55, 48, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(47, 40, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(39, 32, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(31, 24, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(23, 16, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(15, 8, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64))), z3.Extract(7, 0, (z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)))))
+lvar = (V_R == z3.Concat(z3.Extract(63, 56, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(55, 48, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(47, 40, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(39, 32, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(31, 24, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(23, 16, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(15, 8, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(7, 0, ((z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VL_RCX)) & z3.BitVecVal(255, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)))))
 
 xvar = (V_R == z3.Concat(z3.BitVecVal(0, 56), z3.Extract(7, 0, VX_RCX)))
 
