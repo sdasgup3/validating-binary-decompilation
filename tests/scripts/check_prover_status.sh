@@ -25,11 +25,22 @@ echo Prove-Z3 Pass: $pass
 echo Prove-Z3 Fail: $fail
 echo Prove-Z3 Unkown: $unknown
 echo Prove-Z3 Error: $error
+echo -n "Total: "
 echo $pass + $fail + $unknown + $error | bc
 
 echo
 
 echo Undef-instance count: $undef
+
+echo
+
+echo "Unk List"
+grep "Test-Unk" run.log
+
+echo
+
 echo "Fail List"
 grep "Test-Fail" run.log
+
+echo "Log File: run.log"
 

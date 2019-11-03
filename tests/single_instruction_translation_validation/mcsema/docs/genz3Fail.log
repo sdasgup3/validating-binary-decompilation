@@ -1,6 +1,4 @@
 pcmpgtq_xmm_xmm
-psllq_xmm_xmm
-psrlq_xmm_xmm
 rclb_r8_cl
 rclb_rh_cl
 rcll_r32_cl

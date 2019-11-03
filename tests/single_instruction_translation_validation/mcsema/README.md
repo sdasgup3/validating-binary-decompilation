@@ -1,3 +1,29 @@
+# Current Status
+```
+Expected Gen-Z3 Passes: 370
+Current Gen-Z3 Passes: 370
+Prove-Z3 Pass: 361
+Prove-Z3 Fail: 4
+Prove-Z3 Unkown: 3
+Prove-Z3 Error: 2
+Total: 370
+
+Undef-instance count: 119
+
+Unk List
+Test-Unk: psubb_xmm_xmm
+Test-Unk: paddb_xmm_xmm
+Test-Unk: mulq_r64
+
+Fail List
+Test-Fail: cmpxchgl_r32_r32
+Test-Fail: andnps_xmm_xmm
+Test-Fail: pandn_xmm_xmm
+Test-Fail: pmuludq_xmm_xmm
+Log File: run.log
+```
+
+
 ## Prepare the tests directory
 
 ### Populate the seed file [One time]
@@ -118,10 +144,15 @@ cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make lprove; cd 
 
 ## Generate and Compare the z3 output
 ```
-cat docs/xprovePass.log | parallel  "cd register-variants/{}; make genz3; cd -"
+cat docs/genz3Pass.log | parallel  "cd register-variants/{}; make genz3; cd -"
 // genz3 pass/fails are stored at genz3(Pass/Fail).log 
 cat docs/genPassz3.log | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -"
 //provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk).log
+
+or 
+
+../../scripts/check_prover_status.sh
+
 ```
 
 

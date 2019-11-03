@@ -7,15 +7,69 @@
           |                            |
           |                            |
         genZ3Pass                     genZ3Fail
-        (368)                           (49, with rotates, ashr)
+        (370)                           (47, with rotates)
           |
           |
           ----------------------------------------------------
           |                   |              |               |
         Prove Pass          Fail          Unk               z3 run error
-          355                4              8                   2
+          357                4              8                   2
 
 
+## genZ3Fail(47)
+  -  Implment sgtMInt in the converter. Also, decide should llvm semantic's `>Int` operator should be z3.UGT or signed version `>`
+  ```
+  pcmpgtq_xmm_xmm
+  ```
+  - Implement rolHelper
+  ```
+  rclb_r8_cl
+rclb_rh_cl
+rcll_r32_cl
+rclq_r64_cl
+rclw_r16_cl
+rcrb_r8_cl
+rcrb_r8_one
+rcrb_rh_cl
+rcrb_rh_one
+rcrl_r32_cl
+rcrl_r32_one
+rcrq_r64_cl
+rcrq_r64_one
+rcrw_r16_cl
+rcrw_r16_one
+rolb_r8_cl
+rolb_rh_cl
+roll_r32_cl
+rolq_r64_cl
+rolw_r16_cl
+rorb_r8_cl
+rorb_r8_one
+rorb_rh_cl
+rorb_rh_one
+rorl_r32_cl
+rorl_r32_one
+rorq_r64_cl
+rorq_r64_one
+rorw_r16_cl
+rorw_r16_one
+salb_r8_cl
+salb_rh_cl
+sall_r32_cl
+salq_r64_cl
+salw_r16_cl
+shlb_r8_cl
+shlb_rh_cl
+shll_r32_cl
+shlq_r64_cl
+shlw_r16_cl
+shrb_r8_cl
+shrb_rh_cl
+shrl_r32_cl
+shrq_r64_cl
+shrw_r16_cl
+  
+  ```
 
 ## Prove TimeOUT (Unk)
   - Non linear  
@@ -222,6 +276,7 @@ cvtsi2sdq_xmm_r64
 ```
 
 ### R4
+Even though we supported ashr as smt expression, there neds better side condition handling
 ```
 imulb_r8
 imulb_rh

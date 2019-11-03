@@ -155,19 +155,23 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     return (*ptr)->read_spec(str);
 
     // Int Bool Operators
-  } else if (regex_search(str, m, regex("^`_<Int_`"))) {
+  } else if (regex_search(str, m, regex("^`_<Int_`")) ||
+             regex_search(str, m, regex("^ultMInt"))) {
     *ptr = new SummaryExprLT();
     return (*ptr)->read_spec(str);
 
-  } else if (regex_search(str, m, regex("^`_<=Int_`"))) {
+  } else if (regex_search(str, m, regex("^`_<=Int_`")) ||
+             regex_search(str, m, regex("^uleMInt"))) {
     *ptr = new SummaryExprLTE();
     return (*ptr)->read_spec(str);
 
-  } else if (regex_search(str, m, regex("^`_>Int_`"))) {
+  } else if (regex_search(str, m, regex("^`_>Int_`")) ||
+             regex_search(str, m, regex("^ugtMInt"))) {
     *ptr = new SummaryExprGT();
     return (*ptr)->read_spec(str);
 
-  } else if (regex_search(str, m, regex("^`_>=Int_`"))) {
+  } else if (regex_search(str, m, regex("^`_>=Int_`")) ||
+             regex_search(str, m, regex("^ugeMInt"))) {
     *ptr = new SummaryExprGTE();
     return (*ptr)->read_spec(str);
 
@@ -1314,8 +1318,43 @@ string SummaryExprExtractMInt::read_spec(string &str) {
   //   exit(1);
   // }
 
-  width_ = stoi(((SummaryExprToken *)c_)->value_) -
-           stoi(((SummaryExprToken *)b_)->value_);
+  auto arg1Index = 0;
+  if (b_->type_ == SummaryExpr::Type::TOKEN) {
+    arg1Index = stoi(((SummaryExprToken *)b_)->value_);
+  } else if (b_->type_ == SummaryExpr::Type::BITWIDTH_MINT) {
+    if (b_->width_ == 0) {
+      Console::error(1) << "SummaryExprExtractMInt::read_spec: extract(a_, b_, "
+                           "c_): b_ of type bitwidthMInt has 0 value"
+                        << endl;
+      exit(1);
+    }
+    arg1Index = b_->width_;
+  } else {
+    Console::error(1) << "SummaryExprExtractMInt::read_spec: extract(a_, b_, "
+                         "c_): Unexpected b_ of type "
+                      << c_->type_ << endl;
+    exit(1);
+  }
+
+  auto arg2Index = 0;
+  if (c_->type_ == SummaryExpr::Type::TOKEN) {
+    arg2Index = stoi(((SummaryExprToken *)c_)->value_);
+  } else if (c_->type_ == SummaryExpr::Type::BITWIDTH_MINT) {
+    if (c_->width_ == 0) {
+      Console::error(1) << "SummaryExprExtractMInt::read_spec: extract(a_, b_, "
+                           "c_): c_ of type bitwidthMInt has 0 value"
+                        << endl;
+      exit(1);
+    }
+    arg2Index = c_->width_;
+  } else {
+    Console::error(1) << "SummaryExprExtractMInt::read_spec: extract(a_, b_, "
+                         "c_): Unexpected c_ of type "
+                      << c_->type_ << endl;
+    exit(1);
+  }
+
+  width_ = arg2Index - arg1Index;
   return str.substr(result.second + 1);
 }
 
@@ -1323,10 +1362,25 @@ ostream &SummaryExprExtractMInt::write_spec(ostream &os) const {
 
   auto bw = a_->width_ - 1;
 
+  auto arg1Index = 0;
+  auto arg2Index = 0;
+
+  if (b_->type_ == SummaryExpr::Type::TOKEN) {
+    arg1Index = stoi(((SummaryExprToken *)b_)->value_);
+  } else if (b_->type_ == SummaryExpr::Type::BITWIDTH_MINT) {
+    arg1Index = b_->width_;
+  }
+
+  if (c_->type_ == SummaryExpr::Type::TOKEN) {
+    arg2Index = stoi(((SummaryExprToken *)c_)->value_);
+  } else if (c_->type_ == SummaryExpr::Type::BITWIDTH_MINT) {
+    arg2Index = c_->width_;
+  }
+
   os << "z3.Extract(";
-  os << bw - stoi(((SummaryExprToken *)b_)->value_);
+  os << bw - arg1Index;
   os << ", ";
-  os << bw - (stoi(((SummaryExprToken *)c_)->value_) - 1);
+  os << bw - (arg2Index - 1);
   os << ", ";
   a_->write_promoted_value_spec(os);
   os << ")";

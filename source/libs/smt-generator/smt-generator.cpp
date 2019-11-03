@@ -332,6 +332,9 @@ map<string, string> SMTGenerator::uniquifyLSpec(
       } else if (width == 64) {
         retval[regName] += "\n\tz3.Implies(\n\t\t" + sc +
                            ", \n\t\tV_R == " + regSummary + "\n\t), ";
+      } else if (width == 256) {
+        retval[regName] += "\n\tz3.Implies(\n\t\t" + sc +
+                           ", \n\t\tV_Y == " + regSummary + "\n\t), ";
       } else {
         Console::error(1)
             << "SMTGenerator::uniquifyLSpec: Unsupported bitwidth " << width

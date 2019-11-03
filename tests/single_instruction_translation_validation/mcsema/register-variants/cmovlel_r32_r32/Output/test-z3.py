@@ -13,7 +13,7 @@ if(len(sys.argv) > 1):
 def solve(msg, lvar, xvar, s):
   global status
 
-  s.set("timeout", 6000)
+  s.set("timeout", 60000)
   res = s.check()
 
   if(z3.unknown == res):
@@ -142,11 +142,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_AF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_AF))
 	), 
 )
@@ -165,11 +165,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_CF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_CF))
 	), 
 )
@@ -188,11 +188,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_OF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_OF))
 	), 
 )
@@ -211,11 +211,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_PF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_PF))
 	), 
 )
@@ -234,11 +234,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)), 
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(15, 8, VL_RAX), z3.Extract(7, 0, VL_RAX))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False), 
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(15, 8, VL_RAX), z3.Extract(7, 0, VL_RAX))
 	), 
 )
@@ -257,12 +257,12 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)), 
-		V_R == z3.Concat(z3.Extract(63, 56, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(55, 48, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(47, 40, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(39, 32, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(31, 24, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(23, 16, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(15, 8, (VL_RBX & z3.BitVecVal(4294967295, 64))), z3.Extract(7, 0, (VL_RBX & z3.BitVecVal(4294967295, 64))))
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)), 
+		V_R == z3.Concat(z3.Extract(63, 56, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(55, 48, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(47, 40, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(39, 32, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(31, 24, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(23, 16, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(15, 8, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(7, 0, ((VL_RBX & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False), 
-		V_R == z3.Concat(z3.Extract(63, 56, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(55, 48, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(47, 40, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(39, 32, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(31, 24, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(23, 16, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(15, 8, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))), z3.Extract(7, 0, (z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64))))
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False), 
+		V_R == z3.Concat(z3.Extract(63, 56, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(55, 48, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(47, 40, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(39, 32, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(31, 24, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(23, 16, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(15, 8, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(7, 0, ((z3.Concat(z3.BitVecVal(0, 32), z3.Concat(z3.Extract(31, 24, VL_RCX),z3.Extract(23, 16, VL_RCX),z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))))
 	), 
 )
 
@@ -280,11 +280,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)), 
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RCX), z3.Extract(55, 48, VL_RCX), z3.Extract(47, 40, VL_RCX), z3.Extract(39, 32, VL_RCX), z3.Extract(31, 24, VL_RCX), z3.Extract(23, 16, VL_RCX), z3.Extract(15, 8, VL_RCX), z3.Extract(7, 0, VL_RCX))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False), 
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RCX), z3.Extract(55, 48, VL_RCX), z3.Extract(47, 40, VL_RCX), z3.Extract(39, 32, VL_RCX), z3.Extract(31, 24, VL_RCX), z3.Extract(23, 16, VL_RCX), z3.Extract(15, 8, VL_RCX), z3.Extract(7, 0, VL_RCX))
 	), 
 )
@@ -303,11 +303,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)), 
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RDX), z3.Extract(55, 48, VL_RDX), z3.Extract(47, 40, VL_RDX), z3.Extract(39, 32, VL_RDX), z3.Extract(31, 24, VL_RDX), z3.Extract(23, 16, VL_RDX), z3.Extract(15, 8, VL_RDX), z3.Extract(7, 0, VL_RDX))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False), 
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False), 
 		V_R == z3.Concat(z3.Extract(63, 56, VL_RDX), z3.Extract(55, 48, VL_RDX), z3.Extract(47, 40, VL_RDX), z3.Extract(39, 32, VL_RDX), z3.Extract(31, 24, VL_RDX), z3.Extract(23, 16, VL_RDX), z3.Extract(15, 8, VL_RDX), z3.Extract(7, 0, VL_RDX))
 	), 
 )
@@ -326,11 +326,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF))
 	), 
 )
@@ -349,11 +349,11 @@ s.push()
 lvar = z3.And(
 
 	z3.Implies(
-		((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)),
+		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_ZF))
 	), 
 	z3.Implies(
-		(((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | (z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))) == z3.BitVecVal(0, 8)) == False),
+		((((z3.If(z3.Not((VL_ZF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) | ((z3.If(z3.Not((VL_SF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)) ^ z3.If(z3.Not((VL_OF == z3.BitVecVal(0, 8))), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8))) & z3.BitVecVal(2 - 1, 8))) & z3.BitVecVal(2 - 1, 8)) == z3.BitVecVal(0, 8)) == False),
 		V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_ZF))
 	), 
 )

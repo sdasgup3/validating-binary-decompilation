@@ -13,7 +13,7 @@ if(len(sys.argv) > 1):
 def solve(msg, lvar, xvar, s):
   global status
 
-  s.set("timeout", 6000)
+  s.set("timeout", 60000)
   res = s.check()
 
   if(z3.unknown == res):
@@ -152,7 +152,7 @@ s.pop()
 ## =******= CF =******=
 s.push()
 
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64))) | (VL_YMM2_0 & (VL_YMM1_0 ^ z3.BitVecVal(4294967295, 64)))) | (VL_YMM2_1 & (VL_YMM1_1 ^ z3.BitVecVal(4294967295, 64)))) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
+lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If((((((((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & (((z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) ^ z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | ((VL_YMM2_0 & ((VL_YMM1_0 ^ z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | ((VL_YMM2_1 & ((VL_YMM1_1 ^ z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | (((z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & (((z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) ^ z3.BitVecVal(4294967295, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
 
 xvar = (V_F == z3.If((((z3.Extract(127, 0, VX_YMM1) ^ z3.BitVecVal(-1, 128)) & z3.Extract(127, 0, VX_YMM2)) == z3.BitVecVal(0, 128)), z3.BitVecVal(1, 1), z3.BitVecVal(0, 1)))
 
@@ -282,7 +282,7 @@ s.pop()
 ## =******= ZF =******=
 s.push()
 
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64))) | (VL_YMM2_0 & VL_YMM1_0)) | (VL_YMM2_1 & VL_YMM1_1)) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
+lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If((((((((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & (z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | ((VL_YMM2_0 & VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | ((VL_YMM2_1 & VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) | (((z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & (z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
 
 xvar = (V_F == z3.If(((z3.Extract(127, 0, VX_YMM1) & z3.Extract(127, 0, VX_YMM2)) == z3.BitVecVal(0, 128)), z3.BitVecVal(1, 1), z3.BitVecVal(0, 1)))
 
