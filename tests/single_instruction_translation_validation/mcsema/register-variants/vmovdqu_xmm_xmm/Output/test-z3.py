@@ -10,24 +10,31 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(msg, s):
+def solve(msg, lvar, xvar, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
 
   if(z3.unknown == res):
-    print(msg, "Unk")
+    print(test_name + "::" + msg + "::unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(msg, "sat")
-    print("\n")
-    print("query", s)
-    print("\n")
-    print("model", s.model())
-    print("\n")
-    status = False
+    if("UNDEF" in xvar.sexpr()):
+      print(test_name + "::" + msg + "::undef-sat")
+    else:
+      m = s.model()
+      print(test_name + "::" + msg + "::sat")
+      print("\n")
+      print("query", s)
+      print("\n")
+      print("model", m)
+      print("\n")
+      print("xvar =", m.evaluate(xvar))
+      print("lvar =", m.evaluate(lvar))
+      print("\n")
+      status = False
 
 ##############################
 ## X86 specific variables ####
@@ -129,133 +136,16 @@ s.add(z3.Concat(VL_YMM1_3, VL_YMM1_2, VL_YMM1_1, VL_YMM1_0) == VX_YMM1)
 s.add(z3.Concat(VL_YMM2_3, VL_YMM2_2, VL_YMM2_1, VL_YMM2_0) == VX_YMM2)
 
 
-## =******= AF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_AF)))
-
-xvar = (V_F == VX_AF)
-
-s.add(lvar != xvar)
-
-solve("AF", s)
-
-s.pop()
-
-## =******= CF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_CF)))
-
-xvar = (V_F == VX_CF)
-
-s.add(lvar != xvar)
-
-solve("CF", s)
-
-s.pop()
-
-## =******= OF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_OF)))
-
-xvar = (V_F == VX_OF)
-
-s.add(lvar != xvar)
-
-solve("OF", s)
-
-s.pop()
-
-## =******= PF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_PF)))
-
-xvar = (V_F == VX_PF)
-
-s.add(lvar != xvar)
-
-solve("PF", s)
-
-s.pop()
-
-## =******= RAX =******=
-s.push()
-
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(15, 8, VL_RAX), z3.Extract(7, 0, VL_RAX)))
-
-xvar = (V_R == VX_RAX)
-
-s.add(lvar != xvar)
-
-solve("RAX", s)
-
-s.pop()
-
-## =******= RBX =******=
-s.push()
-
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RBX), z3.Extract(55, 48, VL_RBX), z3.Extract(47, 40, VL_RBX), z3.Extract(39, 32, VL_RBX), z3.Extract(31, 24, VL_RBX), z3.Extract(23, 16, VL_RBX), z3.Extract(15, 8, VL_RBX), z3.Extract(7, 0, VL_RBX)))
-
-xvar = (V_R == VX_RBX)
-
-s.add(lvar != xvar)
-
-solve("RBX", s)
-
-s.pop()
-
-## =******= RCX =******=
-s.push()
-
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RCX), z3.Extract(55, 48, VL_RCX), z3.Extract(47, 40, VL_RCX), z3.Extract(39, 32, VL_RCX), z3.Extract(31, 24, VL_RCX), z3.Extract(23, 16, VL_RCX), z3.Extract(15, 8, VL_RCX), z3.Extract(7, 0, VL_RCX)))
-
-xvar = (V_R == VX_RCX)
-
-s.add(lvar != xvar)
-
-solve("RCX", s)
-
-s.pop()
-
-## =******= RDX =******=
-s.push()
-
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RDX), z3.Extract(55, 48, VL_RDX), z3.Extract(47, 40, VL_RDX), z3.Extract(39, 32, VL_RDX), z3.Extract(31, 24, VL_RDX), z3.Extract(23, 16, VL_RDX), z3.Extract(15, 8, VL_RDX), z3.Extract(7, 0, VL_RDX)))
-
-xvar = (V_R == VX_RDX)
-
-s.add(lvar != xvar)
-
-solve("RDX", s)
-
-s.pop()
-
-## =******= SF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF)))
-
-xvar = (V_F == VX_SF)
-
-s.add(lvar != xvar)
-
-solve("SF", s)
-
-s.pop()
-
 ## =******= YMM1 =******=
 s.push()
 
-lvar = (V_Y == z3.Concat(z3.Extract(127, 120, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(119, 112, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(111, 104, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(103, 96, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(95, 88, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(87, 80, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(79, 72, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(71, 64, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(63, 56, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(55, 48, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(47, 40, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(39, 32, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(31, 24, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(23, 16, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(15, 8, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(127, 120, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(119, 112, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(111, 104, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(103, 96, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(95, 88, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(87, 80, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(79, 72, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(71, 64, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(63, 56, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(55, 48, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(47, 40, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(39, 32, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(31, 24, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(23, 16, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(15, 8, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0))), z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 64), ((VL_YMM2_1 << z3.BitVecVal(64, 64)) | VL_YMM2_0)))))
+lvar = (V_Y == z3.Concat(z3.Extract(127, 120, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(119, 112, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(111, 104, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(103, 96, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(95, 88, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(87, 80, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(79, 72, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(71, 64, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(63, 56, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(55, 48, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(47, 40, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(39, 32, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(31, 24, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(23, 16, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(15, 8, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 120), z3.BitVecVal(0, 8))), z3.Extract(127, 120, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(119, 112, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(111, 104, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(103, 96, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(95, 88, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(87, 80, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(79, 72, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(71, 64, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(63, 56, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(55, 48, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(47, 40, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(39, 32, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(31, 24, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(23, 16, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(15, 8, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0))), z3.Extract(7, 0, ((z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_1) << z3.BitVecVal(64, 128)) | z3.Concat(z3.BitVecVal(0, 64), VL_YMM2_0)))))
 
 xvar = (V_Y == z3.Concat(z3.BitVecVal(0, 128), z3.Extract(127, 0, VX_YMM2)))
 
 s.add(lvar != xvar)
 
-solve("YMM1", s)
+solve("YMM1", lvar, xvar, s)
 
 s.pop()
 
@@ -268,27 +158,14 @@ xvar = (V_Y == VX_YMM2)
 
 s.add(lvar != xvar)
 
-solve("YMM2", s)
-
-s.pop()
-
-## =******= ZF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_ZF)))
-
-xvar = (V_F == VX_ZF)
-
-s.add(lvar != xvar)
-
-solve("ZF", s)
+solve("YMM2", lvar, xvar, s)
 
 s.pop()
 
 if(status == True):
-  print('[6;30;42m' + 'Pass: ' + '[0m' + test_name)
+  print('[6;30;42m' + 'Test-Pass: ' + '[0m' + test_name)
 else:
   if(status == False):
-    print('[0;30;41m' + 'Fail: '  + '[0m' + test_name)
+    print('[0;30;41m' + 'Test-Fail: '  + '[0m' + test_name)
   else:
-    print('[6;30;47m' + 'Unk: '  + '[0m' + test_name)
+    print('[6;30;47m' + 'Test-Unk: '  + '[0m' + test_name)

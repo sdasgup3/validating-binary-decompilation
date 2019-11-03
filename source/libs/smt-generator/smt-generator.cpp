@@ -520,7 +520,9 @@ void SMTGenerator::dumpZ3(map<string, string> &lSpecRegMap,
       proofScript << "xvar = " << xSpecRegMap[p.first] << endl;
 
       proofScript << endl << "s.add(lvar != xvar)" << endl;
-      proofScript << endl << "solve(\"" << p.first << "\", s)" << endl << endl;
+      proofScript << endl
+                  << "solve(\"" << p.first << "\", lvar, xvar, s)" << endl
+                  << endl;
       proofScript << "s.pop()" << endl << endl;
     } else {
       Console::msg() << "Cannot find lvar" << p.first << "in xMap!" << endl;
@@ -528,16 +530,18 @@ void SMTGenerator::dumpZ3(map<string, string> &lSpecRegMap,
   }
 
   proofScript << "if(status == True):" << endl;
-  proofScript << "  print('\x1b[6;30;42m' + 'Pass: ' + '\x1b[0m' + test_name)"
-              << endl;
+  proofScript
+      << "  print('\x1b[6;30;42m' + 'Test-Pass: ' + '\x1b[0m' + test_name)"
+      << endl;
   proofScript << "else:" << endl;
   proofScript << "  if(status == False):" << endl;
   proofScript
-      << "    print('\x1b[0;30;41m' + 'Fail: '  + '\x1b[0m' + test_name)"
+      << "    print('\x1b[0;30;41m' + 'Test-Fail: '  + '\x1b[0m' + test_name)"
       << endl;
   proofScript << "  else:" << endl;
-  proofScript << "    print('\x1b[6;30;47m' + 'Unk: '  + '\x1b[0m' + test_name)"
-              << endl;
+  proofScript
+      << "    print('\x1b[6;30;47m' + 'Test-Unk: '  + '\x1b[0m' + test_name)"
+      << endl;
 
   std::ofstream ofs(z3pyfile, std::ofstream::out);
   ofs << proofScript.str();

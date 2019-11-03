@@ -121,6 +121,14 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprIfThenElse();
     return (*ptr)->read_spec(str);
 
+  } else if (regex_search(str, m, regex("^zeroExtend"))) {
+    *ptr = new SummaryExprZeroExtend();
+    return (*ptr)->read_spec(str);
+
+  } else if (regex_search(str, m, regex("^signExtend"))) {
+    *ptr = new SummaryExprSignExtend();
+    return (*ptr)->read_spec(str);
+
     // Leafs
   } else if (regex_search(str, m, regex("^VL_|^VX"))) {
     *ptr = new SummaryExprVar();
@@ -291,10 +299,21 @@ ostream &SummaryExprAbstract::write_promoted_value_spec(ostream &os) const {
     write_spec(os);
     os << ")";
 
-  } else {
-
-    write_spec(os);
+    return os;
   }
+
+  if (is_demoted) {
+    assert(demoted_from_width_ != uint16_t(-1) &&
+           "SummaryExprAbstract::write_promoted_value_spec::Demoted Expr do "
+           "not have the demoted_from_width_!");
+
+    os << "z3.Extract(" << width_ - 1 << ", 0, ";
+    write_spec(os);
+    os << ")";
+
+    return os;
+  }
+  write_spec(os);
 
   return os;
 }
@@ -302,8 +321,10 @@ ostream &SummaryExprAbstract::write_promoted_value_spec(ostream &os) const {
 SummaryExprAbstract::SummaryExprAbstract() {
   width_ = 0;
   is_promoted = false;
+  is_demoted = false;
   type_ = SummaryExpr::NONE;
   promoted_from_width_ = uint16_t(-1);
+  demoted_from_width_ = uint16_t(-1);
 }
 
 string SummaryExprAbstract::read_spec(string &str) {
@@ -463,17 +484,9 @@ void SummaryExprTernop::deriveComponentWidths() {
     b_->width_ = c_->width_;
   } else {
     // b_ c_ both have zero widths
-    // Let them get promoted to 8 bits at the write spec routine.
+    // Let them get promoted to 8 bits.
     b_->width_ = 8;
     c_->width_ = 8;
-
-    // if (a_->width_ == 0) {
-    //   Console::error(1) << "Zero Width Ternop: " << type_ << "\n";
-    //   exit(1);
-    // } else {
-    //   b_->width_ = a_->width_;
-    //   c_->width_ = a_->width_;
-    // }
   }
 }
 
@@ -868,6 +881,115 @@ ostream &SummaryExprIfThenElse::write_spec(ostream &os) const {
   os << ", ";
   c_->write_promoted_value_spec(os);
   os << ")";
+  return os;
+}
+
+/************** SummaryExprZeroExtend ******************/
+// zeroExtend(E, SrcWidth, DestWidth)
+string SummaryExprZeroExtend::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprTernop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprZeroExtend::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  auto srcWidth = stoi(((SummaryExprToken *)b_)->value_);
+  auto destWidth = stoi(((SummaryExprToken *)c_)->value_);
+  width_ = destWidth;
+
+  if (a_->width_ == 0) {
+    a_->width_ = srcWidth;
+  } else if (a_->width_ < srcWidth) {
+    a_->is_promoted = true;
+    a_->promoted_from_width_ = a_->width_;
+    a_->width_ = srcWidth;
+  } else if (a_->width_ > srcWidth) {
+    a_->is_demoted = true;
+    a_->demoted_from_width_ = a_->width_;
+    a_->width_ = srcWidth;
+  }
+
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprZeroExtend::write_spec(ostream &os) const {
+  auto srcWidth = stoi(((SummaryExprToken *)b_)->value_);
+  auto destWidth = stoi(((SummaryExprToken *)c_)->value_);
+
+  if (a_->type_ != SummaryExpr::Type::TOKEN && a_->width_ != srcWidth) {
+    Console::error(1) << "SummaryExprZeroExtend::write_spec: In zeroExtend(E, "
+                         "Nsrc, NDest), width(E) != Nsrc!"
+                      << a_ << endl;
+    exit(1);
+  }
+
+  if (srcWidth == destWidth) {
+    a_->write_promoted_value_spec(os);
+  } else {
+    os << "z3.Concat(";
+    os << "z3.BitVecVal(0, " << (destWidth - srcWidth) << "), ";
+    a_->write_promoted_value_spec(os);
+    os << ")";
+  }
+
+  return os;
+}
+
+/************** SummaryExprSignExtend ******************/
+string SummaryExprSignExtend::read_spec(string &str) {
+  auto result = extractNearestBracedExp(0, str);
+  type_ = type();
+  SummaryExprTernop::read_spec(result.first);
+
+  if (!checkComponentWidths()) {
+    Console::error(1) << "SummaryExprSignExtend::Component Width Mismatch: "
+                      << a_->width_ << " Vs " << b_->width_ << endl;
+    exit(1);
+  }
+
+  auto srcWidth = stoi(((SummaryExprToken *)b_)->value_);
+  auto destWidth = stoi(((SummaryExprToken *)c_)->value_);
+  width_ = destWidth;
+
+  if (a_->width_ == 0) {
+    a_->width_ = srcWidth;
+  } else if (a_->width_ < srcWidth) {
+    a_->is_promoted = true;
+    a_->promoted_from_width_ = a_->width_;
+    a_->width_ = srcWidth;
+  } else if (a_->width_ > srcWidth) {
+    a_->is_demoted = true;
+    a_->demoted_from_width_ = a_->width_;
+    a_->width_ = srcWidth;
+  }
+
+  return str.substr(result.second + 1);
+}
+
+ostream &SummaryExprSignExtend::write_spec(ostream &os) const {
+  auto srcWidth = stoi(((SummaryExprToken *)b_)->value_);
+  auto destWidth = stoi(((SummaryExprToken *)c_)->value_);
+
+  if (a_->type_ != SummaryExpr::Type::TOKEN && a_->width_ != srcWidth) {
+    Console::error(1) << "SummaryExprZeroExtend::write_spec: In signExtend(E, "
+                         "Nsrc, NDest), width(E) != Nsrc!"
+                      << a_ << endl;
+    exit(1);
+  }
+
+  if (srcWidth == destWidth) {
+    a_->write_promoted_value_spec(os);
+  } else {
+    os << "z3.SignExt(";
+    os << (destWidth - srcWidth) << ", ";
+    a_->write_promoted_value_spec(os);
+    os << ")";
+  }
+
   return os;
 }
 

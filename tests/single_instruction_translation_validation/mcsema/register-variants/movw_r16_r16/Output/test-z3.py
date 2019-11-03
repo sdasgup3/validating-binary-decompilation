@@ -10,24 +10,31 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(msg, s):
+def solve(msg, lvar, xvar, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
 
   if(z3.unknown == res):
-    print(msg, "unk")
+    print(test_name + "::" + msg + "::unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(msg, "sat")
-    print("\n")
-    print("query", s)
-    print("\n")
-    print("model", s.model())
-    print("\n")
-    status = False
+    if("UNDEF" in xvar.sexpr()):
+      print(test_name + "::" + msg + "::undef-sat")
+    else:
+      m = s.model()
+      print(test_name + "::" + msg + "::sat")
+      print("\n")
+      print("query", s)
+      print("\n")
+      print("model", m)
+      print("\n")
+      print("xvar =", m.evaluate(xvar))
+      print("lvar =", m.evaluate(lvar))
+      print("\n")
+      status = False
 
 ##############################
 ## X86 specific variables ####
@@ -138,7 +145,7 @@ xvar = (V_F == VX_AF)
 
 s.add(lvar != xvar)
 
-solve("AF", s)
+solve("AF", lvar, xvar, s)
 
 s.pop()
 
@@ -151,7 +158,7 @@ xvar = (V_F == VX_CF)
 
 s.add(lvar != xvar)
 
-solve("CF", s)
+solve("CF", lvar, xvar, s)
 
 s.pop()
 
@@ -164,7 +171,7 @@ xvar = (V_F == VX_OF)
 
 s.add(lvar != xvar)
 
-solve("OF", s)
+solve("OF", lvar, xvar, s)
 
 s.pop()
 
@@ -177,7 +184,7 @@ xvar = (V_F == VX_PF)
 
 s.add(lvar != xvar)
 
-solve("PF", s)
+solve("PF", lvar, xvar, s)
 
 s.pop()
 
@@ -190,20 +197,20 @@ xvar = (V_R == VX_RAX)
 
 s.add(lvar != xvar)
 
-solve("RAX", s)
+solve("RAX", lvar, xvar, s)
 
 s.pop()
 
 ## =******= RBX =******=
 s.push()
 
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RBX), z3.Extract(55, 48, VL_RBX), z3.Extract(47, 40, VL_RBX), z3.Extract(39, 32, VL_RBX), z3.Extract(31, 24, VL_RBX), z3.Extract(23, 16, VL_RBX), z3.Extract(15, 8, (z3.Concat(z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),) & z3.BitVecVal(65536 - 1, 16))), z3.Extract(7, 0, (z3.Concat(z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),) & z3.BitVecVal(65536 - 1, 16)))))
+lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RBX), z3.Extract(55, 48, VL_RBX), z3.Extract(47, 40, VL_RBX), z3.Extract(39, 32, VL_RBX), z3.Extract(31, 24, VL_RBX), z3.Extract(23, 16, VL_RBX), z3.Extract(15, 8, (z3.Concat(z3.BitVecVal(0, 48), z3.Concat(z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(65536 - 1, 64))), z3.Extract(7, 0, (z3.Concat(z3.BitVecVal(0, 48), z3.Concat(z3.Extract(15, 8, VL_RCX),z3.Extract(7, 0, VL_RCX),)) & z3.BitVecVal(65536 - 1, 64)))))
 
 xvar = (V_R == z3.Concat(z3.Extract(63, 16, VX_RBX), z3.Extract(15, 0, VX_RCX)))
 
 s.add(lvar != xvar)
 
-solve("RBX", s)
+solve("RBX", lvar, xvar, s)
 
 s.pop()
 
@@ -216,7 +223,7 @@ xvar = (V_R == VX_RCX)
 
 s.add(lvar != xvar)
 
-solve("RCX", s)
+solve("RCX", lvar, xvar, s)
 
 s.pop()
 
@@ -229,7 +236,7 @@ xvar = (V_R == VX_RDX)
 
 s.add(lvar != xvar)
 
-solve("RDX", s)
+solve("RDX", lvar, xvar, s)
 
 s.pop()
 
@@ -242,7 +249,7 @@ xvar = (V_F == VX_SF)
 
 s.add(lvar != xvar)
 
-solve("SF", s)
+solve("SF", lvar, xvar, s)
 
 s.pop()
 
@@ -255,14 +262,14 @@ xvar = (V_F == VX_ZF)
 
 s.add(lvar != xvar)
 
-solve("ZF", s)
+solve("ZF", lvar, xvar, s)
 
 s.pop()
 
 if(status == True):
-  print('[6;30;42m' + 'Pass: ' + '[0m' + test_name)
+  print('[6;30;42m' + 'Test-Pass: ' + '[0m' + test_name)
 else:
   if(status == False):
-    print('[0;30;41m' + 'Fail: '  + '[0m' + test_name)
+    print('[0;30;41m' + 'Test-Fail: '  + '[0m' + test_name)
   else:
-    print('[6;30;47m' + 'Unk: '  + '[0m' + test_name)
+    print('[6;30;47m' + 'Test-Unk: '  + '[0m' + test_name)

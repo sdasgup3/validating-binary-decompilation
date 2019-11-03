@@ -1,6 +1,8 @@
-adcq_r64_r64
+mulxq_r64_r64_r64
+cmpxchgq_r64_r64
 paddd_xmm_xmm
-psubd_xmm_xmm
 paddb_xmm_xmm
-psubb_xmm_xmm
 xorps_xmm_xmm
+imulq_r64_r64
+adcq_r64_r64
+mulq_r64

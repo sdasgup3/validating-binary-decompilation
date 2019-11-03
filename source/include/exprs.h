@@ -61,6 +61,8 @@ class SummaryExprLogicalRightShiftMInt;
 class SummaryExprLeftShiftMInt;
 class SummaryExprUValueMInt;
 class SummaryExprSValueMInt;
+class SummaryExprZeroExtend;
+class SummaryExprSignExtend;
 
 // Utility function declarations
 typedef pair<string, size_t> stringLocPair;
@@ -126,7 +128,9 @@ public:
     LOGICAL_RIGHT_SHIFT_MINT,
     LEFT_SHIFT_MINT,
     UVALUE_MINT,
-    SVALUE_MINT
+    SVALUE_MINT,
+    SIGN_EXTEND,
+    ZERO_EXTEND
   };
 
   /** Get the type of this summary expression */
@@ -162,8 +166,13 @@ public:
   // SummaryExpr::Type type_ = SummaryExpr::NONE;
   SummaryExprAbstract();
   uint16_t width_;
+
   uint16_t promoted_from_width_;
   bool is_promoted;
+
+  uint16_t demoted_from_width_;
+  bool is_demoted;
+
   SummaryExpr::Type type_;
 
   ostream &write_promoted_value_spec(ostream &os) const;
@@ -496,6 +505,42 @@ inline ostream &operator<<(ostream &os, const SummaryExprIfThenElse &op) {
 }
 
 inline string operator>>(string &os, SummaryExprIfThenElse &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprZeroExtend ******************/
+class SummaryExprZeroExtend : public SummaryExprTernop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::ZERO_EXTEND; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprZeroExtend &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprZeroExtend &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprSignExtend ******************/
+class SummaryExprSignExtend : public SummaryExprTernop {
+  friend class SummaryExpr;
+
+public:
+  SummaryExpr::Type type() const { return SummaryExpr::Type::SIGN_EXTEND; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprSignExtend &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprSignExtend &op) {
   return op.read_spec(os);
 }
 
