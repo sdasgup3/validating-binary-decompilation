@@ -16,6 +16,7 @@ checks.
 ## [Source](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)
 ## Testing
 ### [Program Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)
+### [Single Instruction Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)
 
 
 

@@ -10,24 +10,31 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(msg, s):
+def solve(msg, lvar, xvar, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
 
   if(z3.unknown == res):
-    print(msg, "unk")
+    print(test_name + "::" + msg + "::unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(msg, "sat")
-    print("\n")
-    print("query", s)
-    print("\n")
-    print("model", s.model())
-    print("\n")
-    status = False
+    if("UNDEF" in xvar.sexpr()):
+      print(test_name + "::" + msg + "::undef-sat")
+    else:
+      m = s.model()
+      print(test_name + "::" + msg + "::sat")
+      print("\n")
+      print("query", s)
+      print("\n")
+      print("model", m)
+      print("\n")
+      print("xvar =", m.evaluate(xvar))
+      print("lvar =", m.evaluate(lvar))
+      print("\n")
+      status = False
 
 ##############################
 ## X86 specific variables ####

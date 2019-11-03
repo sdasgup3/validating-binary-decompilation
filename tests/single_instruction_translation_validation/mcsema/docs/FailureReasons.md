@@ -1,3 +1,103 @@
+# Prover script Generation and Prove Errors
+
+              XProvePass(417/ lprovePass=423)
+                        |
+                        |
+          ------------------------------
+          |                            |
+          |                            |
+        genZ3Pass                     genZ3Fail
+        (368)                           (49, with rotates, ashr)
+          |
+          |
+          ----------------------------------------------------
+          |                   |              |               |
+        Prove Pass          Fail          Unk               z3 run error
+          355                4              8                   2
+
+
+
+## Prove TimeOUT (Unk)
+  - Non linear  
+  ```
+  imulq_r64_r64
+  mulq_r64
+  mulxq_r64_r64_r64
+  ```
+
+ - Seems correct
+ ```
+cmpxchgq_r64_r64
+paddd_xmm_xmm
+paddb_xmm_xmm
+xorps_xmm_xmm
+adcq_r64_r64
+ ```
+
+## Prove Error (2)
+ - Need better handlong of commom syntax memory
+```
+vmovdqa_ymm_ymm
+vmovdqu_ymm_ymm
+```
+
+## Prove Fail (4)
+- R1
+```
+andnps_xmm_xmm
+pandn_xmm_xmm
+```
+- R2
+```
+pmuludq_xmm_xmm
+```
+
+- R3
+```
+cmpxchgl_r32_r32
+```
+
+### R1
+  - Manual
+  ```
+  DEST←NOT(DEST) AND SRC
+  ```
+  - McSema
+  ```
+  DEST←NOT(SRC) AND DEST
+  ```
+
+### R2
+  - Manual
+  ```
+  DEST[63:0] ← DEST[31:0] ∗ SRC[31:0];
+  DEST[127:64] ← DEST[95:64] ∗ SRC[95:64];
+  ```
+  - McSema
+  ```
+  DEST[63:0] ← DEST[31:0] ∗ SRC[31:0];
+  ```
+
+### R3
+  - manual 
+```
+TEMP ← DEST
+
+IF accumulator = TEMP
+    THEN
+        ZF ← 1;
+        DEST ← SRC;
+    ELSE
+        ZF ← 0;
+        accumulator ← TEMP;
+        DEST ← TEMP;
+FI;
+```
+  - Mcsema
+  ```
+   entire  64'DEST  is compared against 32'0 o RAX[31:0]
+  ```
+
 # LProve Failures
   - Total kli passes: 41 (xmm) + 382 (non xmm) =  
   - Pass: 41 (xmm) +  382 (non xmm)

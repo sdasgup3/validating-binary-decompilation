@@ -10,24 +10,31 @@ test_name="UnK"
 if(len(sys.argv) > 1):
   test_name = sys.argv[1]
 
-def solve(msg, s):
+def solve(msg, lvar, xvar, s):
   global status
 
   s.set("timeout", 6000)
   res = s.check()
 
   if(z3.unknown == res):
-    print(msg, "unk")
+    print(test_name + "::" + msg + "::unk")
     status = "Unknown"
 
   if(z3.sat == res):
-    print(msg, "sat")
-    print("\n")
-    print("query", s)
-    print("\n")
-    print("model", s.model())
-    print("\n")
-    status = False
+    if("UNDEF" in xvar.sexpr()):
+      print(test_name + "::" + msg + "::undef-sat")
+    else:
+      m = s.model()
+      print(test_name + "::" + msg + "::sat")
+      print("\n")
+      print("query", s)
+      print("\n")
+      print("model", m)
+      print("\n")
+      print("xvar =", m.evaluate(xvar))
+      print("lvar =", m.evaluate(lvar))
+      print("\n")
+      status = False
 
 ##############################
 ## X86 specific variables ####
@@ -138,20 +145,20 @@ xvar = (V_F == z3.BitVecVal(0, 1))
 
 s.add(lvar != xvar)
 
-solve("AF", s)
+solve("AF", lvar, xvar, s)
 
 s.pop()
 
 ## =******= CF =******=
 s.push()
 
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64))) | (VL_YMM2_0 & (VL_YMM1_0 ^ z3.BitVecVal(4294967295, 64)))) | (VL_YMM2_1 & (VL_YMM1_1 ^ z3.BitVecVal(4294967295, 64)))) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))
+lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64))) | (VL_YMM2_0 & (VL_YMM1_0 ^ z3.BitVecVal(4294967295, 64)))) | (VL_YMM2_1 & (VL_YMM1_1 ^ z3.BitVecVal(4294967295, 64)))) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & (z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)) ^ z3.BitVecVal(4294967295, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
 
 xvar = (V_F == z3.If((((z3.Extract(127, 0, VX_YMM1) ^ z3.BitVecVal(-1, 128)) & z3.Extract(127, 0, VX_YMM2)) == z3.BitVecVal(0, 128)), z3.BitVecVal(1, 1), z3.BitVecVal(0, 1)))
 
 s.add(lvar != xvar)
 
-solve("CF", s)
+solve("CF", lvar, xvar, s)
 
 s.pop()
 
@@ -164,7 +171,7 @@ xvar = (V_F == z3.BitVecVal(0, 1))
 
 s.add(lvar != xvar)
 
-solve("OF", s)
+solve("OF", lvar, xvar, s)
 
 s.pop()
 
@@ -177,7 +184,7 @@ xvar = (V_F == z3.BitVecVal(0, 1))
 
 s.add(lvar != xvar)
 
-solve("PF", s)
+solve("PF", lvar, xvar, s)
 
 s.pop()
 
@@ -190,7 +197,7 @@ xvar = (V_R == VX_RAX)
 
 s.add(lvar != xvar)
 
-solve("RAX", s)
+solve("RAX", lvar, xvar, s)
 
 s.pop()
 
@@ -203,7 +210,7 @@ xvar = (V_R == VX_RBX)
 
 s.add(lvar != xvar)
 
-solve("RBX", s)
+solve("RBX", lvar, xvar, s)
 
 s.pop()
 
@@ -216,7 +223,7 @@ xvar = (V_R == VX_RCX)
 
 s.add(lvar != xvar)
 
-solve("RCX", s)
+solve("RCX", lvar, xvar, s)
 
 s.pop()
 
@@ -229,7 +236,7 @@ xvar = (V_R == VX_RDX)
 
 s.add(lvar != xvar)
 
-solve("RDX", s)
+solve("RDX", lvar, xvar, s)
 
 s.pop()
 
@@ -242,7 +249,7 @@ xvar = (V_F == z3.BitVecVal(0, 1))
 
 s.add(lvar != xvar)
 
-solve("SF", s)
+solve("SF", lvar, xvar, s)
 
 s.pop()
 
@@ -255,7 +262,7 @@ xvar = (V_Y == VX_YMM1)
 
 s.add(lvar != xvar)
 
-solve("YMM1", s)
+solve("YMM1", lvar, xvar, s)
 
 s.pop()
 
@@ -268,27 +275,27 @@ xvar = (V_Y == VX_YMM2)
 
 s.add(lvar != xvar)
 
-solve("YMM2", s)
+solve("YMM2", lvar, xvar, s)
 
 s.pop()
 
 ## =******= ZF =******=
 s.push()
 
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64))) | (VL_YMM2_0 & VL_YMM1_0)) | (VL_YMM2_1 & VL_YMM1_1)) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))
+lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, z3.Concat(z3.BitVecVal(0, 7), z3.Extract(0, 0, z3.If(((((((z3.LShR(VL_YMM2_0, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_0, z3.BitVecVal(32, 64))) | (VL_YMM2_0 & VL_YMM1_0)) | (VL_YMM2_1 & VL_YMM1_1)) | (z3.LShR(VL_YMM2_1, z3.BitVecVal(32, 64)) & z3.LShR(VL_YMM1_1, z3.BitVecVal(32, 64)))) & z3.BitVecVal(4294967296 - 1, 64)) == z3.BitVecVal(0, 64)), z3.BitVecVal(1, 8), z3.BitVecVal(0, 8)))))))
 
 xvar = (V_F == z3.If(((z3.Extract(127, 0, VX_YMM1) & z3.Extract(127, 0, VX_YMM2)) == z3.BitVecVal(0, 128)), z3.BitVecVal(1, 1), z3.BitVecVal(0, 1)))
 
 s.add(lvar != xvar)
 
-solve("ZF", s)
+solve("ZF", lvar, xvar, s)
 
 s.pop()
 
 if(status == True):
-  print('[6;30;42m' + 'Pass: ' + '[0m' + test_name)
+  print('[6;30;42m' + 'Test-Pass: ' + '[0m' + test_name)
 else:
   if(status == False):
-    print('[0;30;41m' + 'Fail: '  + '[0m' + test_name)
+    print('[0;30;41m' + 'Test-Fail: '  + '[0m' + test_name)
   else:
-    print('[6;30;47m' + 'Unk: '  + '[0m' + test_name)
+    print('[6;30;47m' + 'Test-Unk: '  + '[0m' + test_name)

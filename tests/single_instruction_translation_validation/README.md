@@ -38,3 +38,10 @@
   ./scripts/kompile-all.sh --llvm
   ./scripts/build-parser.sh
   ```
+
+### Run Instructions
+  - [Register Variants](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation/mcsema/README.md)
+
+
+### Results
+  - [Register Variants](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/tests/single_instruction_translation_validation/mcsema/docs/FailureReasons.md)
