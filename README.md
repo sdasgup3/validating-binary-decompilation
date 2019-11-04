@@ -1,4 +1,5 @@
 # validating-binary-decompilation
+![](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/misc/overview_diag.png)
 
 The project is about validating decompilation of x86-64 program to LLVM IR. Such
 decompilation is currently done by few off-the-shelf decompilers.  The idea is
