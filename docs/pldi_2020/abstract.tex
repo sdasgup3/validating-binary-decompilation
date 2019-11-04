@@ -1,11 +1,7 @@
 \begin{abstract}
-
-Establising the faithfulness of binary decompilers is pivotal in gaining trust
-in the results of analysis they perform on binary programs. We present a novel technique
-and the tooling infrastructure to achieve the faithfulness using a combination of ranalation validation and compositional decompilation.
-
-
-translation validation of thorough formal validatiion of binary decompilers to LLVM
-IR.
+    
+Establishing faithfulness of binary decompilers is pivotal in gaining trust
+in the results of downstream analyses performed on the decompiled programs. Validating the translation of \ISA programs to the lifted IR is often non-scalable because of the heavy weight formal equivalence checker employed for the task.   
+We present a novel, scalable and principled technique and tooling infrastructure to the developers of binary decompilers to find bugs in translating the semantics of \ISA instruction to lifted IR. The technique uses a combination of single \ISA instruction translation-validation and program synthesis  to achieve translation validation of \ISA programs, but without using any heavy-weight equivalence checker in the pipeline.
 
 \end{abstract}
