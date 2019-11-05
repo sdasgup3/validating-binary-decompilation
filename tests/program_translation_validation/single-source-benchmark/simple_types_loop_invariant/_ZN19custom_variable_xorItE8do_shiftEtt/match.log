@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN19custom_variable_xorItE8do_shiftEtt] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN19custom_variable_xorItE8do_shiftEtt] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.42user 0.17system 0:03.66elapsed 98%CPU (0avgtext+0avgdata 54448maxresident)k
+0inputs+136outputs (0major+10467minor)pagefaults 0swaps

@@ -1,11 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x562ad23759c8]:   %313 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %194)
-[0x562ad2446750]:   %call2_40074b = tail call %struct.Memory.32* @sub_400430.printf_plt(%struct.State.1* %0, i64 %308, %struct.Memory.32* %call2_40071c)
-[0x562ad24c5820]:   %call2_40071c = tail call %struct.Memory.32* @sub_400540.update(%struct.State.1* %0, i64 %190, %struct.Memory.32* %call2_40069f)
-[0x562ad24cebc0]:   %call2_40069f = tail call %struct.Memory.32* @sub_400440.malloc_plt(%struct.State.1* %0, i64 %67, %struct.Memory.32* %2)
+Multiple matches exist for [0x5652fd27ff88]:   %313 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %194)
+[0x5652fd350750]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40073c)
+[0x5652fd3d0550]:   %call2_40073c = tail call %struct.Memory.32* @sub_400560.update(%struct.State.1* %0, i64 %191, %struct.Memory.32* %72)
+[0x5652fd3d98f0]:   %72 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
+5.42user 11.36system 0:16.78elapsed 100%CPU (0avgtext+0avgdata 13732maxresident)k
+0inputs+4120outputs (0major+1285minor)pagefaults 0swaps

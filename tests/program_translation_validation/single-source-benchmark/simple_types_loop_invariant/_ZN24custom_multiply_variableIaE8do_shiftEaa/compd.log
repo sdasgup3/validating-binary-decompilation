@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN24custom_multiply_variableIaE8do_shiftEaa
   .type _ZN24custom_multiply_variableIaE8do_shiftEaa, @function
 
-#! file-offset 0x13a10
-#! rip-offset  0x413a10
+#! file-offset 0x13a20
+#! rip-offset  0x413a20
 #! capacity    35 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode             Target                
-._ZN24custom_multiply_variableIaE8do_shiftEaa:  #        0x413a10  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                    #  1     0x413a10  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x413a11  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %sil, %al                                #  3     0x413a14  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dil, %cl                                #  4     0x413a17  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %cl, -0x1(%rbp)                          #  5     0x413a1a  3      OPC=movb_m8_r8     18446744073709551615  
-  movb %al, -0x2(%rbp)                          #  6     0x413a1d  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl -0x1(%rbp), %esi                       #  7     0x413a20  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movsbl -0x2(%rbp), %edi                       #  8     0x413a24  4      OPC=movsbl_r32_m8  18446744073709551615  
-  imull %edi, %esi                              #  9     0x413a28  3      OPC=imull_r32_r32  18446744073709551615  
-  movb %sil, %al                                #  10    0x413a2b  3      OPC=movb_r8_r8     18446744073709551615  
-  movsbl %al, %eax                              #  11    0x413a2e  3      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbp                                     #  12    0x413a31  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                          #  13    0x413a32  1      OPC=retq           18446744073709551615  
+._ZN24custom_multiply_variableIaE8do_shiftEaa:  #        0x413a20  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                    #  1     0x413a20  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x413a21  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %sil, %al                                #  3     0x413a24  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dil, %cl                                #  4     0x413a27  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %cl, -0x1(%rbp)                          #  5     0x413a2a  3      OPC=movb_m8_r8     18446744073709551615  
+  movb %al, -0x2(%rbp)                          #  6     0x413a2d  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl -0x1(%rbp), %esi                       #  7     0x413a30  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movsbl -0x2(%rbp), %edi                       #  8     0x413a34  4      OPC=movsbl_r32_m8  18446744073709551615  
+  imull %edi, %esi                              #  9     0x413a38  3      OPC=imull_r32_r32  18446744073709551615  
+  movb %sil, %al                                #  10    0x413a3b  3      OPC=movb_r8_r8     18446744073709551615  
+  movsbl %al, %eax                              #  11    0x413a3e  3      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbp                                     #  12    0x413a41  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                          #  13    0x413a42  1      OPC=retq           18446744073709551615  
                                                                                                                    
 .size _ZN24custom_multiply_variableIaE8do_shiftEaa, .-_ZN24custom_multiply_variableIaE8do_shiftEaa
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN24custom_multiply_variableIaE8do_shiftEaa->4274704
+._ZN24custom_multiply_variableIaE8do_shiftEaa->4274720
 
 Computing Label PC values: Done.
 
@@ -634,3 +634,5 @@ Decompiling Function: _ZN24custom_multiply_variableIaE8do_shiftEaa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.25user 0.07system 0:00.33elapsed 96%CPU (0avgtext+0avgdata 10320maxresident)k
+0inputs+168outputs (0major+6670minor)pagefaults 0swaps

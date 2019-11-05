@@ -7,7 +7,7 @@ compd_opt: main accumulate_probabilities repeat_fasta random_fasta myrandom
 match: main accumulate_probabilities repeat_fasta random_fasta myrandom
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

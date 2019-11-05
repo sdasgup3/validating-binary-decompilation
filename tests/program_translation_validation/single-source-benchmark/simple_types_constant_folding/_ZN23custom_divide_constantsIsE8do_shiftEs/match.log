@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN23custom_divide_constantsIsE8do_shiftEs] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN23custom_divide_constantsIsE8do_shiftEs] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.56user 0.16system 0:02.76elapsed 98%CPU (0avgtext+0avgdata 65968maxresident)k
+0inputs+48outputs (0major+22957minor)pagefaults 0swaps

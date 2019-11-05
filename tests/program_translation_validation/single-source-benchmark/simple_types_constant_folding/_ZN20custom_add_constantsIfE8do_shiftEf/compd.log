@@ -4,19 +4,19 @@ Disassembled output
   .globl _ZN20custom_add_constantsIfE8do_shiftEf
   .type _ZN20custom_add_constantsIfE8do_shiftEf, @function
 
-#! file-offset 0xf930
-#! rip-offset  0x40f930
+#! file-offset 0xf940
+#! rip-offset  0x40f940
 #! capacity    22 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode              Target                
-._ZN20custom_add_constantsIfE8do_shiftEf:  #        0x40f930  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                               #  1     0x40f930  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x40f931  3      OPC=movq_r64_r64    18446744073709551615  
-  movss 0x9198(%rip), %xmm1                #  3     0x40f934  8      OPC=movss_xmm_m32   18446744073709551615  
-  movss %xmm0, -0x4(%rbp)                  #  4     0x40f93c  5      OPC=movss_m32_xmm   18446744073709551615  
-  movaps %xmm1, %xmm0                      #  5     0x40f941  3      OPC=movaps_xmm_xmm  18446744073709551615  
-  popq %rbp                                #  6     0x40f944  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                     #  7     0x40f945  1      OPC=retq            18446744073709551615  
+._ZN20custom_add_constantsIfE8do_shiftEf:  #        0x40f940  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                               #  1     0x40f940  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x40f941  3      OPC=movq_r64_r64    18446744073709551615  
+  movss 0x9198(%rip), %xmm1                #  3     0x40f944  8      OPC=movss_xmm_m32   18446744073709551615  
+  movss %xmm0, -0x4(%rbp)                  #  4     0x40f94c  5      OPC=movss_m32_xmm   18446744073709551615  
+  movaps %xmm1, %xmm0                      #  5     0x40f951  3      OPC=movaps_xmm_xmm  18446744073709551615  
+  popq %rbp                                #  6     0x40f954  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                     #  7     0x40f955  1      OPC=retq            18446744073709551615  
                                                                                                                
 .size _ZN20custom_add_constantsIfE8do_shiftEf, .-_ZN20custom_add_constantsIfE8do_shiftEf
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN20custom_add_constantsIfE8do_shiftEf->4258096
+._ZN20custom_add_constantsIfE8do_shiftEf->4258112
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: _ZN20custom_add_constantsIfE8do_shiftEf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:00.29elapsed 93%CPU (0avgtext+0avgdata 10152maxresident)k
+0inputs+136outputs (0major+4669minor)pagefaults 0swaps

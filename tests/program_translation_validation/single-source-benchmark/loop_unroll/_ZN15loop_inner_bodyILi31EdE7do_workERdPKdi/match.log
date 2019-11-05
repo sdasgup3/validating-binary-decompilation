@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN15loop_inner_bodyILi31EdE7do_workERdPKdi] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN15loop_inner_bodyILi31EdE7do_workERdPKdi] from mcsema/test.proposed.opt.ll
 Matcher Done...
+23.33user 3.36system 0:26.79elapsed 99%CPU (0avgtext+0avgdata 62544maxresident)k
+0inputs+856outputs (0major+21655minor)pagefaults 0swaps

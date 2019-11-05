@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [create_link_list] from ../binary/test.mcsema.opt.ll
 Extracting function [create_link_list] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.70user 5.57system 0:09.40elapsed 98%CPU (0avgtext+0avgdata 13448maxresident)k
+0inputs+1496outputs (0major+1894minor)pagefaults 0swaps

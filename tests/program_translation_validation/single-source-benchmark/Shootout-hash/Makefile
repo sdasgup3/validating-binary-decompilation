@@ -7,7 +7,7 @@ compd_opt: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashc
 match: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashcode
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

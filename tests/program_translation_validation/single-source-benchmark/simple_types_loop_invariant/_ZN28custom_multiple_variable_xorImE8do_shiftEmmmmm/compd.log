@@ -4,27 +4,27 @@ Disassembled output
   .globl _ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm
   .type _ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm, @function
 
-#! file-offset 0xd070
-#! rip-offset  0x40d070
+#! file-offset 0xd080
+#! rip-offset  0x40d080
 #! capacity    49 bytes
 
 # Text                                                 #  Line  RIP       Bytes  Opcode            Target                
-._ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm:  #        0x40d070  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                           #  1     0x40d070  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                      #  2     0x40d071  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                #  3     0x40d074  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                               #  4     0x40d078  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rdx, -0x18(%rbp)                               #  5     0x40d07c  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rcx, -0x20(%rbp)                               #  6     0x40d080  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %r8, -0x28(%rbp)                                #  7     0x40d084  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rcx                                #  8     0x40d088  4      OPC=movq_r64_m64  18446744073709551615  
-  xorq -0x10(%rbp), %rcx                               #  9     0x40d08c  4      OPC=xorq_r64_m64  18446744073709551615  
-  xorq -0x18(%rbp), %rcx                               #  10    0x40d090  4      OPC=xorq_r64_m64  18446744073709551615  
-  xorq -0x20(%rbp), %rcx                               #  11    0x40d094  4      OPC=xorq_r64_m64  18446744073709551615  
-  xorq -0x28(%rbp), %rcx                               #  12    0x40d098  4      OPC=xorq_r64_m64  18446744073709551615  
-  movq %rcx, %rax                                      #  13    0x40d09c  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp                                            #  14    0x40d09f  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                 #  15    0x40d0a0  1      OPC=retq          18446744073709551615  
+._ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm:  #        0x40d080  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                           #  1     0x40d080  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                      #  2     0x40d081  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                #  3     0x40d084  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                               #  4     0x40d088  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rdx, -0x18(%rbp)                               #  5     0x40d08c  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rcx, -0x20(%rbp)                               #  6     0x40d090  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %r8, -0x28(%rbp)                                #  7     0x40d094  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rcx                                #  8     0x40d098  4      OPC=movq_r64_m64  18446744073709551615  
+  xorq -0x10(%rbp), %rcx                               #  9     0x40d09c  4      OPC=xorq_r64_m64  18446744073709551615  
+  xorq -0x18(%rbp), %rcx                               #  10    0x40d0a0  4      OPC=xorq_r64_m64  18446744073709551615  
+  xorq -0x20(%rbp), %rcx                               #  11    0x40d0a4  4      OPC=xorq_r64_m64  18446744073709551615  
+  xorq -0x28(%rbp), %rcx                               #  12    0x40d0a8  4      OPC=xorq_r64_m64  18446744073709551615  
+  movq %rcx, %rax                                      #  13    0x40d0ac  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp                                            #  14    0x40d0af  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                 #  15    0x40d0b0  1      OPC=retq          18446744073709551615  
                                                                                                                          
 .size _ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm, .-_ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm->4247664
+._ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm->4247680
 
 Computing Label PC values: Done.
 
@@ -674,3 +674,5 @@ Decompiling Function: _ZN28custom_multiple_variable_xorImE8do_shiftEmmmmm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.31user 0.06system 0:00.43elapsed 86%CPU (0avgtext+0avgdata 10324maxresident)k
+0inputs+176outputs (0major+7378minor)pagefaults 0swaps

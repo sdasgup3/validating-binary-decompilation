@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4022d0._ZN16reverse_iteratorIP6DoubleS0_EmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4022e0._ZN16reverse_iteratorIP6DoubleS0_EmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEv(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -123,7 +123,7 @@ entry:
   store i64 %54, i64* %57, align 8
   store i64 %56, i64* %6, align 8
   store i64 %53, i64* %3, align 8
-  %call2_402334 = tail call %struct.Memory* @sub_4022d0._ZN16reverse_iteratorIP6DoubleS0_EmmEv(%struct.State* %0, i64 %53, %struct.Memory* %2)
+  %call2_402344 = tail call %struct.Memory* @sub_4022e0._ZN16reverse_iteratorIP6DoubleS0_EmmEv(%struct.State* %0, i64 %53, %struct.Memory* %2)
   %58 = load i64, i64* %RBP.i, align 8
   %59 = add i64 %58, -16
   %60 = load i64, i64* %3, align 8
@@ -186,7 +186,7 @@ entry:
   store i64 %99, i64* %3, align 8
   %100 = add i64 %70, 48
   store i64 %100, i64* %6, align 8
-  ret %struct.Memory* %call2_402334
+  ret %struct.Memory* %call2_402344
 }
 
 ; Function Attrs: norecurse nounwind

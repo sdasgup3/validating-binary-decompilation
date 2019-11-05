@@ -4,19 +4,19 @@ Disassembled output
   .globl _ZNK14double_pointerdeEv
   .type _ZNK14double_pointerdeEv, @function
 
-#! file-offset 0x20a0
-#! rip-offset  0x4020a0
+#! file-offset 0x20b0
+#! rip-offset  0x4020b0
 #! capacity    17 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode            Target                
-._ZNK14double_pointerdeEv:  #        0x4020a0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                #  1     0x4020a0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp           #  2     0x4020a1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)     #  3     0x4020a4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rdi     #  4     0x4020a8  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rax         #  5     0x4020ac  3      OPC=movq_r64_m64  18446744073709551615  
-  popq %rbp                 #  6     0x4020af  1      OPC=popq_r64_1    18446744073709551615  
-  retq                      #  7     0x4020b0  1      OPC=retq          18446744073709551615  
+._ZNK14double_pointerdeEv:  #        0x4020b0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                #  1     0x4020b0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp           #  2     0x4020b1  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)     #  3     0x4020b4  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rdi     #  4     0x4020b8  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rax         #  5     0x4020bc  3      OPC=movq_r64_m64  18446744073709551615  
+  popq %rbp                 #  6     0x4020bf  1      OPC=popq_r64_1    18446744073709551615  
+  retq                      #  7     0x4020c0  1      OPC=retq          18446744073709551615  
                                                                                               
 .size _ZNK14double_pointerdeEv, .-_ZNK14double_pointerdeEv
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK14double_pointerdeEv->4202656
+._ZNK14double_pointerdeEv->4202672
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: _ZNK14double_pointerdeEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.11user 0.03system 0:00.17elapsed 90%CPU (0avgtext+0avgdata 10088maxresident)k
+0inputs+136outputs (0major+4594minor)pagefaults 0swaps

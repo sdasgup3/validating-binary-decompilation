@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_
   .type _ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_, @function
 
-#! file-offset 0x1bd0
-#! rip-offset  0x401bd0
+#! file-offset 0x1be0
+#! rip-offset  0x401be0
 #! capacity    25 bytes
 
 # Text                                                                                        #  Line  RIP       Bytes  Opcode            Target                
-._ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_:  #        0x401bd0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                                                                  #  1     0x401bd0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                                                             #  2     0x401bd1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                                       #  3     0x401bd4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                                                      #  4     0x401bd8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                                                                       #  5     0x401bdc  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi                                                                      #  6     0x401be0  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                                                                           #  7     0x401be4  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                                                                   #  8     0x401be7  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                                                        #  9     0x401be8  1      OPC=retq          18446744073709551615  
+._ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_:  #        0x401be0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                                                                  #  1     0x401be0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                                                             #  2     0x401be1  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                                       #  3     0x401be4  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                                                      #  4     0x401be8  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                                                                       #  5     0x401bec  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi                                                                      #  6     0x401bf0  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                                                                           #  7     0x401bf4  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                                                                   #  8     0x401bf7  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                                                        #  9     0x401bf8  1      OPC=retq          18446744073709551615  
                                                                                                                                                                 
 .size _ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_, .-_ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_->4201424
+._ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA_->4201440
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.17user 0.02system 0:00.22elapsed 89%CPU (0avgtext+0avgdata 10184maxresident)k
+0inputs+144outputs (0major+5262minor)pagefaults 0swaps

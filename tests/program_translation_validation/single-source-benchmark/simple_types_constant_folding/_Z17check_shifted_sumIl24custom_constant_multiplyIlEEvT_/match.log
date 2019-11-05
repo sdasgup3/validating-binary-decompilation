@@ -1,21 +1,23 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55c19476e1b0]:   %45 = tail call double @llvm.fabs.f64(double %44) #12
-[0x55c192c03bf0]:   %117 = tail call i32 @llvm.ctpop.i32(i32 %116)
-[0x55c192c9be50]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
-[0x55c192cabdd0]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
-[0x55c194fd5120]:   %45 = tail call double @llvm.trunc.f64(double %44)
-[0x55c194fd5af0]:   %46 = tail call double @llvm.fabs.f64(double %45)
-[0x55c194ffd1a0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4116be)
-[0x55c194ffd3e0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x55c195000190]:   %call2_4116be = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_4116a6)
-[0x55c195001870]:   %call2_4116a6 = tail call %struct.Memory.32* @sub_411680._ZN24custom_constant_multiplyIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
-Multiple matches exist for [0x55c194773208]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
-[0x55c194ffd1a0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4116be)
-[0x55c195000190]:   %call2_4116be = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_4116a6)
-[0x55c195001870]:   %call2_4116a6 = tail call %struct.Memory.32* @sub_411680._ZN24custom_constant_multiplyIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x561d292c85c0]:   %45 = tail call double @llvm.fabs.f64(double %44) #12
+[0x561d2775b580]:   %117 = tail call i32 @llvm.ctpop.i32(i32 %116)
+[0x561d277e3a90]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
+[0x561d277f60c0]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
+[0x561d2799dba0]:   %46 = tail call double @llvm.fabs.f64(double %45)
+[0x561d29b2f460]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x561d29b2fe30]:   %45 = tail call double @llvm.trunc.f64(double %44)
+[0x561d29b574e0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4116ce)
+[0x561d29b5a6e0]:   %call2_4116ce = tail call %struct.Memory.32* @sub_411090._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_4116b6)
+[0x561d29b5bbb0]:   %call2_4116b6 = tail call %struct.Memory.32* @sub_411690._ZN24custom_constant_multiplyIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x561d292cd5e8]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
+[0x561d29b574e0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4116ce)
+[0x561d29b5a6e0]:   %call2_4116ce = tail call %struct.Memory.32* @sub_411090._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_4116b6)
+[0x561d29b5bbb0]:   %call2_4116b6 = tail call %struct.Memory.32* @sub_411690._ZN24custom_constant_multiplyIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z17check_shifted_sumIl24custom_constant_multiplyIlEEvT_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z17check_shifted_sumIl24custom_constant_multiplyIlEEvT_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+20.21user 0.71system 0:21.18elapsed 98%CPU (0avgtext+0avgdata 66264maxresident)k
+0inputs+664outputs (0major+22212minor)pagefaults 0swaps

@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZNK12ValueWrapperIS_IdEEcvT_IdEEv
   .type _ZNK12ValueWrapperIS_IdEEcvT_IdEEv, @function
 
-#! file-offset 0x5f30
-#! rip-offset  0x405f30
+#! file-offset 0x5f40
+#! rip-offset  0x405f40
 #! capacity    27 bytes
 
 # Text                                   #  Line  RIP       Bytes  Opcode             Target                
-._ZNK12ValueWrapperIS_IdEEcvT_IdEEv:     #        0x405f30  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                             #  1     0x405f30  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                        #  2     0x405f31  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                       #  3     0x405f34  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                  #  4     0x405f38  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                  #  5     0x405f3c  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZNK12ValueWrapperIdEcvT_IdEEv  #  6     0x405f40  5      OPC=callq_label    4218704               
-  addq $0x10, %rsp                       #  7     0x405f45  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                              #  8     0x405f49  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                   #  9     0x405f4a  1      OPC=retq           18446744073709551615  
+._ZNK12ValueWrapperIS_IdEEcvT_IdEEv:     #        0x405f40  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                             #  1     0x405f40  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                        #  2     0x405f41  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                       #  3     0x405f44  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                  #  4     0x405f48  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                  #  5     0x405f4c  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZNK12ValueWrapperIdEcvT_IdEEv  #  6     0x405f50  5      OPC=callq_label    4218720               
+  addq $0x10, %rsp                       #  7     0x405f55  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                              #  8     0x405f59  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                   #  9     0x405f5a  1      OPC=retq           18446744073709551615  
                                                                                                             
 .size _ZNK12ValueWrapperIS_IdEEcvT_IdEEv, .-_ZNK12ValueWrapperIS_IdEEcvT_IdEEv
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK12ValueWrapperIS_IdEEcvT_IdEEv->4218672
+._ZNK12ValueWrapperIS_IdEEcvT_IdEEv->4218688
 
 Computing Label PC values: Done.
 
@@ -434,6 +434,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 405f44 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -510,6 +512,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 405f55 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -554,3 +558,5 @@ Decompiling Function: _ZNK12ValueWrapperIS_IdEEcvT_IdEEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.15user 0.07system 0:01.22elapsed 18%CPU (0avgtext+0avgdata 10412maxresident)k
+0inputs+144outputs (0major+5439minor)pagefaults 0swaps

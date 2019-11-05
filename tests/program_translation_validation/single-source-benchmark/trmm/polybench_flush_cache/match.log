@@ -1,10 +1,12 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x555d412a6c18]:   %129 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %53)
-[0x555d414166a0]:   %173 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %54)
-[0x555d41422c40]:   %54 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.31* %2)
+Multiple matches exist for [0x55c3354bcc18]:   %129 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %53)
+[0x55c33562c6e0]:   %173 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %54)
+[0x55c335638c80]:   %54 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.31* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_flush_cache] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_flush_cache] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.39user 4.64system 0:06.11elapsed 98%CPU (0avgtext+0avgdata 13276maxresident)k
+0inputs+952outputs (0major+1134minor)pagefaults 0swaps

@@ -4,133 +4,133 @@ Disassembled output
   .globl print_element
   .type print_element, @function
 
-#! file-offset 0x1200
-#! rip-offset  0x401200
+#! file-offset 0x1210
+#! rip-offset  0x401210
 #! capacity    427 bytes
 
 # Text                        #  Line  RIP       Bytes  Opcode              Target                
-.print_element:               #        0x401200  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                  #  1     0x401200  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp             #  2     0x401201  3      OPC=movq_r64_r64    18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)     #  3     0x401204  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movl %edi, -0xc(%rbp)       #  4     0x401209  3      OPC=movl_m32_r32    18446744073709551615  
-  movq %rsi, -0x18(%rbp)      #  5     0x40120c  4      OPC=movq_m64_r64    18446744073709551615  
-  movsd -0x8(%rbp), %xmm0     #  6     0x401210  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)    #  7     0x401215  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movsbl -0x20(%rbp), %edi    #  8     0x40121a  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  9     0x40121e  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  10    0x401221  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  11    0x401224  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rsi      #  12    0x401227  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rcx     #  13    0x40122b  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, (%rsi,%rcx,1)     #  14    0x40122f  3      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x20(%rbp), %edi    #  15    0x401232  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  16    0x401236  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  17    0x401239  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  18    0x40123c  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  19    0x40123f  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  20    0x401243  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x1(%rcx,%rsi,1)  #  21    0x401247  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1f(%rbp), %edi    #  22    0x40124b  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  23    0x40124f  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  24    0x401252  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  25    0x401255  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  26    0x401258  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  27    0x40125c  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x2(%rcx,%rsi,1)  #  28    0x401260  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1f(%rbp), %edi    #  29    0x401264  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  30    0x401268  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  31    0x40126b  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  32    0x40126e  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  33    0x401271  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  34    0x401275  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x3(%rcx,%rsi,1)  #  35    0x401279  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1e(%rbp), %edi    #  36    0x40127d  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  37    0x401281  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  38    0x401284  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  39    0x401287  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  40    0x40128a  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  41    0x40128e  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x4(%rcx,%rsi,1)  #  42    0x401292  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1e(%rbp), %edi    #  43    0x401296  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  44    0x40129a  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  45    0x40129d  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  46    0x4012a0  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  47    0x4012a3  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  48    0x4012a7  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x5(%rcx,%rsi,1)  #  49    0x4012ab  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1d(%rbp), %edi    #  50    0x4012af  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  51    0x4012b3  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  52    0x4012b6  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  53    0x4012b9  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  54    0x4012bc  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  55    0x4012c0  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x6(%rcx,%rsi,1)  #  56    0x4012c4  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1d(%rbp), %edi    #  57    0x4012c8  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  58    0x4012cc  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  59    0x4012cf  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  60    0x4012d2  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  61    0x4012d5  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  62    0x4012d9  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x7(%rcx,%rsi,1)  #  63    0x4012dd  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1c(%rbp), %edi    #  64    0x4012e1  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  65    0x4012e5  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  66    0x4012e8  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  67    0x4012eb  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  68    0x4012ee  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  69    0x4012f2  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x8(%rcx,%rsi,1)  #  70    0x4012f6  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1c(%rbp), %edi    #  71    0x4012fa  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  72    0x4012fe  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  73    0x401301  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  74    0x401304  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  75    0x401307  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  76    0x40130b  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0x9(%rcx,%rsi,1)  #  77    0x40130f  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1b(%rbp), %edi    #  78    0x401313  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  79    0x401317  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  80    0x40131a  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  81    0x40131d  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  82    0x401320  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  83    0x401324  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xa(%rcx,%rsi,1)  #  84    0x401328  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1b(%rbp), %edi    #  85    0x40132c  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  86    0x401330  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  87    0x401333  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  88    0x401336  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  89    0x401339  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  90    0x40133d  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xb(%rcx,%rsi,1)  #  91    0x401341  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1a(%rbp), %edi    #  92    0x401345  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  93    0x401349  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  94    0x40134c  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  95    0x40134f  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  96    0x401352  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  97    0x401356  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xc(%rcx,%rsi,1)  #  98    0x40135a  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x1a(%rbp), %edi    #  99    0x40135e  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  100   0x401362  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  101   0x401365  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  102   0x401368  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  103   0x40136b  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  104   0x40136f  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xd(%rcx,%rsi,1)  #  105   0x401373  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x19(%rbp), %edi    #  106   0x401377  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  107   0x40137b  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  108   0x40137e  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  109   0x401381  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  110   0x401384  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  111   0x401388  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xe(%rcx,%rsi,1)  #  112   0x40138c  4      OPC=movb_m8_r8      18446744073709551615  
-  movsbl -0x19(%rbp), %edi    #  113   0x401390  4      OPC=movsbl_r32_m8   18446744073709551615  
-  andl $0xf, %edi             #  114   0x401394  3      OPC=andl_r32_imm8   18446744073709551615  
-  addl $0x30, %edi            #  115   0x401397  3      OPC=addl_r32_imm8   18446744073709551615  
-  movb %dil, %al              #  116   0x40139a  3      OPC=movb_r8_r8      18446744073709551615  
-  movq -0x18(%rbp), %rcx      #  117   0x40139d  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0xc(%rbp), %rsi     #  118   0x4013a1  4      OPC=movslq_r64_m32  18446744073709551615  
-  movb %al, 0xf(%rcx,%rsi,1)  #  119   0x4013a5  4      OPC=movb_m8_r8      18446744073709551615  
-  popq %rbp                   #  120   0x4013a9  1      OPC=popq_r64_1      18446744073709551615  
-  retq                        #  121   0x4013aa  1      OPC=retq            18446744073709551615  
+.print_element:               #        0x401210  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                  #  1     0x401210  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp             #  2     0x401211  3      OPC=movq_r64_r64    18446744073709551615  
+  movsd %xmm0, -0x8(%rbp)     #  3     0x401214  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movl %edi, -0xc(%rbp)       #  4     0x401219  3      OPC=movl_m32_r32    18446744073709551615  
+  movq %rsi, -0x18(%rbp)      #  5     0x40121c  4      OPC=movq_m64_r64    18446744073709551615  
+  movsd -0x8(%rbp), %xmm0     #  6     0x401220  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)    #  7     0x401225  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movsbl -0x20(%rbp), %edi    #  8     0x40122a  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  9     0x40122e  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  10    0x401231  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  11    0x401234  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rsi      #  12    0x401237  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rcx     #  13    0x40123b  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, (%rsi,%rcx,1)     #  14    0x40123f  3      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x20(%rbp), %edi    #  15    0x401242  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  16    0x401246  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  17    0x401249  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  18    0x40124c  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  19    0x40124f  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  20    0x401253  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x1(%rcx,%rsi,1)  #  21    0x401257  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1f(%rbp), %edi    #  22    0x40125b  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  23    0x40125f  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  24    0x401262  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  25    0x401265  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  26    0x401268  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  27    0x40126c  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x2(%rcx,%rsi,1)  #  28    0x401270  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1f(%rbp), %edi    #  29    0x401274  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  30    0x401278  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  31    0x40127b  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  32    0x40127e  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  33    0x401281  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  34    0x401285  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x3(%rcx,%rsi,1)  #  35    0x401289  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1e(%rbp), %edi    #  36    0x40128d  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  37    0x401291  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  38    0x401294  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  39    0x401297  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  40    0x40129a  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  41    0x40129e  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x4(%rcx,%rsi,1)  #  42    0x4012a2  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1e(%rbp), %edi    #  43    0x4012a6  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  44    0x4012aa  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  45    0x4012ad  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  46    0x4012b0  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  47    0x4012b3  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  48    0x4012b7  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x5(%rcx,%rsi,1)  #  49    0x4012bb  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1d(%rbp), %edi    #  50    0x4012bf  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  51    0x4012c3  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  52    0x4012c6  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  53    0x4012c9  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  54    0x4012cc  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  55    0x4012d0  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x6(%rcx,%rsi,1)  #  56    0x4012d4  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1d(%rbp), %edi    #  57    0x4012d8  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  58    0x4012dc  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  59    0x4012df  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  60    0x4012e2  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  61    0x4012e5  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  62    0x4012e9  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x7(%rcx,%rsi,1)  #  63    0x4012ed  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1c(%rbp), %edi    #  64    0x4012f1  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  65    0x4012f5  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  66    0x4012f8  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  67    0x4012fb  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  68    0x4012fe  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  69    0x401302  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x8(%rcx,%rsi,1)  #  70    0x401306  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1c(%rbp), %edi    #  71    0x40130a  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  72    0x40130e  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  73    0x401311  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  74    0x401314  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  75    0x401317  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  76    0x40131b  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0x9(%rcx,%rsi,1)  #  77    0x40131f  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1b(%rbp), %edi    #  78    0x401323  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  79    0x401327  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  80    0x40132a  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  81    0x40132d  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  82    0x401330  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  83    0x401334  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xa(%rcx,%rsi,1)  #  84    0x401338  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1b(%rbp), %edi    #  85    0x40133c  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  86    0x401340  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  87    0x401343  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  88    0x401346  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  89    0x401349  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  90    0x40134d  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xb(%rcx,%rsi,1)  #  91    0x401351  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1a(%rbp), %edi    #  92    0x401355  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  93    0x401359  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  94    0x40135c  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  95    0x40135f  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  96    0x401362  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  97    0x401366  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xc(%rcx,%rsi,1)  #  98    0x40136a  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x1a(%rbp), %edi    #  99    0x40136e  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  100   0x401372  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  101   0x401375  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  102   0x401378  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  103   0x40137b  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  104   0x40137f  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xd(%rcx,%rsi,1)  #  105   0x401383  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x19(%rbp), %edi    #  106   0x401387  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  107   0x40138b  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  108   0x40138e  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  109   0x401391  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  110   0x401394  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  111   0x401398  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xe(%rcx,%rsi,1)  #  112   0x40139c  4      OPC=movb_m8_r8      18446744073709551615  
+  movsbl -0x19(%rbp), %edi    #  113   0x4013a0  4      OPC=movsbl_r32_m8   18446744073709551615  
+  andl $0xf, %edi             #  114   0x4013a4  3      OPC=andl_r32_imm8   18446744073709551615  
+  addl $0x30, %edi            #  115   0x4013a7  3      OPC=addl_r32_imm8   18446744073709551615  
+  movb %dil, %al              #  116   0x4013aa  3      OPC=movb_r8_r8      18446744073709551615  
+  movq -0x18(%rbp), %rcx      #  117   0x4013ad  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0xc(%rbp), %rsi     #  118   0x4013b1  4      OPC=movslq_r64_m32  18446744073709551615  
+  movb %al, 0xf(%rcx,%rsi,1)  #  119   0x4013b5  4      OPC=movb_m8_r8      18446744073709551615  
+  popq %rbp                   #  120   0x4013b9  1      OPC=popq_r64_1      18446744073709551615  
+  retq                        #  121   0x4013ba  1      OPC=retq            18446744073709551615  
                                                                                                   
 .size print_element, .-print_element
 Disassembling Done.
@@ -138,7 +138,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.print_element->4198912
+.print_element->4198928
 
 Computing Label PC values: Done.
 
@@ -660,6 +660,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40122e --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -679,6 +681,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401231 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -793,6 +797,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401246 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -812,6 +818,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401249 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -926,6 +934,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40125f --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -945,6 +955,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401262 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1059,6 +1071,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401278 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1078,6 +1092,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40127b --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1192,6 +1208,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401291 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1211,6 +1229,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401294 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1325,6 +1345,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012aa --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1344,6 +1366,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012ad --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1458,6 +1482,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012c3 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1477,6 +1503,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012c6 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1591,6 +1619,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012dc --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1610,6 +1640,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012df --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1724,6 +1756,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012f5 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1743,6 +1777,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012f8 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1857,6 +1893,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40130e --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -1876,6 +1914,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401311 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -1990,6 +2030,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401327 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2009,6 +2051,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40132a --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2123,6 +2167,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401340 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2142,6 +2188,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401343 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2256,6 +2304,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401359 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2275,6 +2325,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40135c --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2389,6 +2441,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401372 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2408,6 +2462,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401375 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2522,6 +2578,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40138b --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2541,6 +2599,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40138e --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2655,6 +2715,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_andl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013a4 --size 3
 Decompiling instr:andl $0xf, %edi Done...
 
 
@@ -2674,6 +2736,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x30___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013a7 --size 3
 Decompiling instr:addl $0x30, %edi Done...
 
 
@@ -2794,3 +2858,5 @@ Decompiling Function: print_element Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+1.42user 0.33system 0:09.72elapsed 18%CPU (0avgtext+0avgdata 10336maxresident)k
+0inputs+520outputs (0major+44870minor)pagefaults 0swaps

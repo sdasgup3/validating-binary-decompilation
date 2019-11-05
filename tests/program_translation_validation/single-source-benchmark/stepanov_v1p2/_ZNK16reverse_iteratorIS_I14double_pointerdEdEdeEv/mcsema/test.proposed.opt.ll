@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_402010._ZN16reverse_iteratorI14double_pointerdEmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402020._ZN16reverse_iteratorI14double_pointerdEmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402040._ZNK16reverse_iteratorI14double_pointerdEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402050._ZNK16reverse_iteratorI14double_pointerdEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZNK16reverse_iteratorIS_I14double_pointerdEdEdeEv(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -135,7 +135,7 @@ entry:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %6, align 8
   store i64 %59, i64* %3, align 8
-  %call2_401fee = tail call %struct.Memory* @sub_402010._ZN16reverse_iteratorI14double_pointerdEmmEv(%struct.State* %0, i64 %59, %struct.Memory* %2)
+  %call2_401ffe = tail call %struct.Memory* @sub_402020._ZN16reverse_iteratorI14double_pointerdEmmEv(%struct.State* %0, i64 %59, %struct.Memory* %2)
   %64 = load i64, i64* %RAX.i23, align 8
   %65 = load i64, i64* %3, align 8
   store i64 %64, i64* %RDI.i20, align 8
@@ -147,7 +147,7 @@ entry:
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %6, align 8
   store i64 %66, i64* %3, align 8
-  %call2_401ff6 = tail call %struct.Memory* @sub_402040._ZNK16reverse_iteratorI14double_pointerdEdeEv(%struct.State* %0, i64 %66, %struct.Memory* %call2_401fee)
+  %call2_402006 = tail call %struct.Memory* @sub_402050._ZNK16reverse_iteratorI14double_pointerdEdeEv(%struct.State* %0, i64 %66, %struct.Memory* %call2_401ffe)
   %71 = load i64, i64* %6, align 8
   %72 = load i64, i64* %3, align 8
   %73 = add i64 %71, 16
@@ -194,7 +194,7 @@ entry:
   store i64 %102, i64* %3, align 8
   %103 = add i64 %71, 32
   store i64 %103, i64* %6, align 8
-  ret %struct.Memory* %call2_401ff6
+  ret %struct.Memory* %call2_402006
 }
 
 ; Function Attrs: norecurse nounwind

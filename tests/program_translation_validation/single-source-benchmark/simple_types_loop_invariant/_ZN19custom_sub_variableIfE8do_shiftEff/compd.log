@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZN19custom_sub_variableIfE8do_shiftEff
   .type _ZN19custom_sub_variableIfE8do_shiftEff, @function
 
-#! file-offset 0xce80
-#! rip-offset  0x40ce80
+#! file-offset 0xce90
+#! rip-offset  0x40ce90
 #! capacity    26 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode             Target                
-._ZN19custom_sub_variableIfE8do_shiftEff:  #        0x40ce80  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                               #  1     0x40ce80  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x40ce81  3      OPC=movq_r64_r64   18446744073709551615  
-  movss %xmm0, -0x4(%rbp)                  #  3     0x40ce84  5      OPC=movss_m32_xmm  18446744073709551615  
-  movss %xmm1, -0x8(%rbp)                  #  4     0x40ce89  5      OPC=movss_m32_xmm  18446744073709551615  
-  movss -0x4(%rbp), %xmm0                  #  5     0x40ce8e  5      OPC=movss_xmm_m32  18446744073709551615  
-  subss -0x8(%rbp), %xmm0                  #  6     0x40ce93  5      OPC=subss_xmm_m32  18446744073709551615  
-  popq %rbp                                #  7     0x40ce98  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                     #  8     0x40ce99  1      OPC=retq           18446744073709551615  
+._ZN19custom_sub_variableIfE8do_shiftEff:  #        0x40ce90  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                               #  1     0x40ce90  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x40ce91  3      OPC=movq_r64_r64   18446744073709551615  
+  movss %xmm0, -0x4(%rbp)                  #  3     0x40ce94  5      OPC=movss_m32_xmm  18446744073709551615  
+  movss %xmm1, -0x8(%rbp)                  #  4     0x40ce99  5      OPC=movss_m32_xmm  18446744073709551615  
+  movss -0x4(%rbp), %xmm0                  #  5     0x40ce9e  5      OPC=movss_xmm_m32  18446744073709551615  
+  subss -0x8(%rbp), %xmm0                  #  6     0x40cea3  5      OPC=subss_xmm_m32  18446744073709551615  
+  popq %rbp                                #  7     0x40cea8  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                     #  8     0x40cea9  1      OPC=retq           18446744073709551615  
                                                                                                               
 .size _ZN19custom_sub_variableIfE8do_shiftEff, .-_ZN19custom_sub_variableIfE8do_shiftEff
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN19custom_sub_variableIfE8do_shiftEff->4247168
+._ZN19custom_sub_variableIfE8do_shiftEff->4247184
 
 Computing Label PC values: Done.
 
@@ -534,3 +534,5 @@ Decompiling Function: _ZN19custom_sub_variableIfE8do_shiftEff Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.03system 0:00.30elapsed 87%CPU (0avgtext+0avgdata 10316maxresident)k
+0inputs+144outputs (0major+4976minor)pagefaults 0swaps

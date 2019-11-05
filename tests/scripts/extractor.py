@@ -125,7 +125,7 @@ def createParentMakefile(functions):
     makeFile.write("match:" + allFuncNames + "\n\n")
 
     makeFile.write("binary:" + "\n")
-    makeFile.write("	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+    makeFile.write("	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
 
     makeFile.write("objdump:" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
@@ -173,7 +173,7 @@ def createMakefile(funcName):
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test 1>compd.log 2>&1" + "\n")
+        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test --use-reloc-info 1>compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
     makeFile.write("" + "\n\n")

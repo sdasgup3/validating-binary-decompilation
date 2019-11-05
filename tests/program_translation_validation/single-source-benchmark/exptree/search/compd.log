@@ -4,19 +4,19 @@ Disassembled output
   .globl search
   .type search, @function
 
-#! file-offset 0x12c0
-#! rip-offset  0x4012c0
+#! file-offset 0x12d0
+#! rip-offset  0x4012d0
 #! capacity    33 bytes
 
 # Text                 #  Line  RIP       Bytes  Opcode              Target                
-.search:               #        0x4012c0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp           #  1     0x4012c0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp      #  2     0x4012c1  3      OPC=movq_r64_r64    18446744073709551615  
-  movl $0x0, 0x6020b0  #  3     0x4012c4  11     OPC=movl_m32_imm32  18446744073709551615  
-  movl $0x0, 0x6020b4  #  4     0x4012cf  11     OPC=movl_m32_imm32  18446744073709551615  
-  callq .doSearch      #  5     0x4012da  5      OPC=callq_label     4198416               
-  popq %rbp            #  6     0x4012df  1      OPC=popq_r64_1      18446744073709551615  
-  retq                 #  7     0x4012e0  1      OPC=retq            18446744073709551615  
+.search:               #        0x4012d0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp           #  1     0x4012d0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp      #  2     0x4012d1  3      OPC=movq_r64_r64    18446744073709551615  
+  movl $0x0, 0x6020b0  #  3     0x4012d4  11     OPC=movl_m32_imm32  18446744073709551615  
+  movl $0x0, 0x6020b4  #  4     0x4012df  11     OPC=movl_m32_imm32  18446744073709551615  
+  callq .doSearch      #  5     0x4012ea  5      OPC=callq_label     4198432               
+  popq %rbp            #  6     0x4012ef  1      OPC=popq_r64_1      18446744073709551615  
+  retq                 #  7     0x4012f0  1      OPC=retq            18446744073709551615  
                                                                                            
 .size search, .-search
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.search->4199104
+.search->4199120
 
 Computing Label PC values: Done.
 
@@ -432,6 +432,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__0x6020b0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012d4 --size 11
+Global Access Mismatch: 6299824 Relocation: Address, McSema: Constant
 Decompiling instr:movl $0x0, 0x6020b0 Done...
 
 
@@ -451,6 +454,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__0x6020b4
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012df --size 11
+Global Access Mismatch: 6299828 Relocation: Address, McSema: Constant
 Decompiling instr:movl $0x0, 0x6020b4 Done...
 
 
@@ -514,3 +520,5 @@ Decompiling Function: search Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.12user 0.03system 0:00.68elapsed 22%CPU (0avgtext+0avgdata 10288maxresident)k
+0inputs+136outputs (0major+4688minor)pagefaults 0swaps

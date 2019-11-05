@@ -4,19 +4,19 @@ Disassembled output
   .globl toggle_value
   .type toggle_value, @function
 
-#! file-offset 0x5e0
-#! rip-offset  0x4005e0
+#! file-offset 0x5f0
+#! rip-offset  0x4005f0
 #! capacity    17 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode             Target                
-.toggle_value:           #        0x4005e0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp             #  1     0x4005e0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4005e1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  3     0x4005e4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  4     0x4005e8  4      OPC=movq_r64_m64   18446744073709551615  
-  movsbl (%rdi), %eax    #  5     0x4005ec  3      OPC=movsbl_r32_m8  18446744073709551615  
-  popq %rbp              #  6     0x4005ef  1      OPC=popq_r64_1     18446744073709551615  
-  retq                   #  7     0x4005f0  1      OPC=retq           18446744073709551615  
+.toggle_value:           #        0x4005f0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp             #  1     0x4005f0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp        #  2     0x4005f1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)  #  3     0x4005f4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  4     0x4005f8  4      OPC=movq_r64_m64   18446744073709551615  
+  movsbl (%rdi), %eax    #  5     0x4005fc  3      OPC=movsbl_r32_m8  18446744073709551615  
+  popq %rbp              #  6     0x4005ff  1      OPC=popq_r64_1     18446744073709551615  
+  retq                   #  7     0x400600  1      OPC=retq           18446744073709551615  
                                                                                             
 .size toggle_value, .-toggle_value
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.toggle_value->4195808
+.toggle_value->4195824
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: toggle_value Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.11user 0.03system 0:00.16elapsed 88%CPU (0avgtext+0avgdata 10236maxresident)k
+0inputs+136outputs (0major+4569minor)pagefaults 0swaps

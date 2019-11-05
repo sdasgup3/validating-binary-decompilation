@@ -100,6 +100,16 @@ declare %struct.Memory* @sub_4007d0_toASCIILower_renamed_(%struct.State* noalias
 
 declare %struct.Memory* @sub_400458__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400458__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400720_lower_StringImpl_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004f0_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_doTest_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007d0_toASCIILower_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1443,7 +1453,7 @@ block_400750:                                     ; preds = %block_400742
   %331 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %322, i64* %331, align 8, !tbaa !2428
   %332 = load i64, i64* %PC
-  %333 = call %struct.Memory* @sub_4007d0_toASCIILower_renamed_(%struct.State* %0, i64 %332, %struct.Memory* %MEMORY.1)
+  %333 = call %struct.Memory* @sub_4007d0_toASCIILower_renamed__renamed_(%struct.State* %0, i64 %332, %struct.Memory* %MEMORY.1)
   %334 = load i64, i64* %RBP
   %335 = sub i64 %334, 32
   %336 = load i64, i64* %PC
@@ -1874,7 +1884,7 @@ block_4005c9:                                     ; preds = %block_4005be
   %180 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %171, i64* %180, align 8, !tbaa !2428
   %181 = load i64, i64* %PC
-  %182 = call %struct.Memory* @sub_4005f0_doTest_renamed_(%struct.State* %0, i64 %181, %struct.Memory* %MEMORY.0)
+  %182 = call %struct.Memory* @sub_4005f0_doTest_renamed__renamed_(%struct.State* %0, i64 %181, %struct.Memory* %MEMORY.0)
   %183 = load i64, i64* %RBP
   %184 = sub i64 %183, 24
   %185 = load i64, i64* %PC
@@ -2915,7 +2925,7 @@ block_4006f3:                                     ; preds = %block_4006e5
   %640 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %631, i64* %640, align 8, !tbaa !2428
   %641 = load i64, i64* %PC
-  %642 = call %struct.Memory* @sub_400720_lower_StringImpl_renamed_(%struct.State* %0, i64 %641, %struct.Memory* %MEMORY.1)
+  %642 = call %struct.Memory* @sub_400720_lower_StringImpl_renamed__renamed_(%struct.State* %0, i64 %641, %struct.Memory* %MEMORY.1)
   %643 = load i64, i64* %RBP
   %644 = sub i64 %643, 72
   %645 = load i64, i64* %RAX
@@ -3934,7 +3944,7 @@ block_400569:                                     ; preds = %block_400560
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_4004f0_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_4004f0_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -4357,7 +4367,7 @@ block_400820:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400458__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400458__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC

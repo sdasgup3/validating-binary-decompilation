@@ -51,9 +51,14 @@ auto &workdir_arg = ValueArg<string>::create("workdir")
                         .description("The working directory")
                         .default_val("");
 
-auto &decl_retval_arg = FlagArg::create("assume-none-decl-retval")
-                            .description("Dont assume any assumption about the "
-                                         "called functions return value");
+// auto &decl_retval_arg = FlagArg::create("assume-none-decl-retval")
+//                             .description("Dont assume any assumption about
+//                             the "
+//                                          "called functions return value");
+
+auto &reloc_info = FlagArg::create("use-reloc-info")
+                       .description("Use the binary relocation info "
+                                    "assuming the binary is built that way.");
 
 auto &view =
     FlagArg::create("view").alternate("v").description("View cfg immediately");
@@ -78,7 +83,7 @@ int main(int argc, char **argv) {
 
   CompositionalDecompiler CompD(BinaryIn, LLVMOut, Fxn,
                                 SingleInstructionDecompilationPath,
-                                workdir_arg.value(), decl_retval_arg.value());
+                                workdir_arg.value(), reloc_info.value());
 
   return 0;
 }

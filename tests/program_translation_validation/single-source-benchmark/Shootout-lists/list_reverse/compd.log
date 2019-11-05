@@ -4,35 +4,35 @@ Disassembled output
   .globl list_reverse
   .type list_reverse, @function
 
-#! file-offset 0xd30
-#! rip-offset  0x400d30
+#! file-offset 0xd40
+#! rip-offset  0x400d40
 #! capacity    80 bytes
 
 # Text                    #  Line  RIP       Bytes  Opcode            Target                
-.list_reverse:            #        0x400d30  0      OPC=<label>       18446744073709551615  
-  pushq %rbp              #  1     0x400d30  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp         #  2     0x400d31  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)   #  3     0x400d34  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rdi   #  4     0x400d38  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, -0x18(%rbp)  #  5     0x400d3c  4      OPC=movq_m64_r64  18446744073709551615  
-.L_400d40:                #        0x400d40  0      OPC=<label>       18446744073709551615  
-  movq -0x18(%rbp), %rax  #  6     0x400d40  4      OPC=movq_r64_m64  18446744073709551615  
-  movq 0x8(%rax), %rax    #  7     0x400d44  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rax, -0x10(%rbp)  #  8     0x400d48  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x18(%rbp), %rax  #  9     0x400d4c  4      OPC=movq_r64_m64  18446744073709551615  
-  movq 0x10(%rax), %rax   #  10    0x400d50  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x18(%rbp), %rcx  #  11    0x400d54  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rax, 0x8(%rcx)    #  12    0x400d58  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x10(%rbp), %rax  #  13    0x400d5c  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x18(%rbp), %rcx  #  14    0x400d60  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rax, 0x10(%rcx)   #  15    0x400d64  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x10(%rbp), %rax  #  16    0x400d68  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rax, -0x18(%rbp)  #  17    0x400d6c  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x18(%rbp), %rax  #  18    0x400d70  4      OPC=movq_r64_m64  18446744073709551615  
-  cmpq -0x8(%rbp), %rax   #  19    0x400d74  4      OPC=cmpq_r64_m64  18446744073709551615  
-  jne .L_400d40           #  20    0x400d78  6      OPC=jne_label_1   4197696               
-  popq %rbp               #  21    0x400d7e  1      OPC=popq_r64_1    18446744073709551615  
-  retq                    #  22    0x400d7f  1      OPC=retq          18446744073709551615  
+.list_reverse:            #        0x400d40  0      OPC=<label>       18446744073709551615  
+  pushq %rbp              #  1     0x400d40  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp         #  2     0x400d41  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)   #  3     0x400d44  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rdi   #  4     0x400d48  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, -0x18(%rbp)  #  5     0x400d4c  4      OPC=movq_m64_r64  18446744073709551615  
+.L_400d50:                #        0x400d50  0      OPC=<label>       18446744073709551615  
+  movq -0x18(%rbp), %rax  #  6     0x400d50  4      OPC=movq_r64_m64  18446744073709551615  
+  movq 0x8(%rax), %rax    #  7     0x400d54  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rax, -0x10(%rbp)  #  8     0x400d58  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x18(%rbp), %rax  #  9     0x400d5c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq 0x10(%rax), %rax   #  10    0x400d60  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x18(%rbp), %rcx  #  11    0x400d64  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rax, 0x8(%rcx)    #  12    0x400d68  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x10(%rbp), %rax  #  13    0x400d6c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x18(%rbp), %rcx  #  14    0x400d70  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rax, 0x10(%rcx)   #  15    0x400d74  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x10(%rbp), %rax  #  16    0x400d78  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rax, -0x18(%rbp)  #  17    0x400d7c  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x18(%rbp), %rax  #  18    0x400d80  4      OPC=movq_r64_m64  18446744073709551615  
+  cmpq -0x8(%rbp), %rax   #  19    0x400d84  4      OPC=cmpq_r64_m64  18446744073709551615  
+  jne .L_400d50           #  20    0x400d88  6      OPC=jne_label_1   4197712               
+  popq %rbp               #  21    0x400d8e  1      OPC=popq_r64_1    18446744073709551615  
+  retq                    #  22    0x400d8f  1      OPC=retq          18446744073709551615  
                                                                                             
 .size list_reverse, .-list_reverse
 Disassembling Done.
@@ -40,8 +40,8 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_400d40->4197696
-.list_reverse->4197680
+.L_400d50->4197712
+.list_reverse->4197696
 
 Computing Label PC values: Done.
 
@@ -490,7 +490,7 @@ FuncCache inserted: routine_movq__rdi__MINUS0x18__rbp_
 Decompiling instr:movq %rdi, -0x18(%rbp) Done...
 
 
-Decompiling instr:.L_400d40:...
+Decompiling instr:.L_400d50:...
 
 
 Decompiling instr:movq -0x18(%rbp), %rax...
@@ -759,23 +759,23 @@ FuncCache inserted: routine_cmpq_MINUS0x8__rbp____rax
 Decompiling instr:cmpq -0x8(%rbp), %rax Done...
 
 
-Decompiling instr:jne .L_400d40...
-Instr: jne .L_400d40
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_400d40
+Decompiling instr:jne .L_400d50...
+Instr: jne .L_400d50
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_400d50
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_400d40/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jne_.L_400d50/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNZEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jne_.L_400d40
-Decompiling instr:jne .L_400d40 Done...
+FuncCache inserted: routine_jne_.L_400d50
+Decompiling instr:jne .L_400d50 Done...
 
 
 Decompiling instr:popq %rbp...
@@ -819,3 +819,5 @@ Decompiling Function: list_reverse Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.34user 0.06system 0:00.46elapsed 89%CPU (0avgtext+0avgdata 10236maxresident)k
+0inputs+200outputs (0major+9611minor)pagefaults 0swaps

@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_40c1c0._Z10hash_func2IiET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_40c1d0._Z10hash_func2IiET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z18complete_hash_funcIiET_S0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -121,7 +121,7 @@ entry:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %6, align 8
   store i64 %52, i64* %3, align 8
-  %call2_40c10e = tail call %struct.Memory* @sub_40c1c0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %52, %struct.Memory* %2)
+  %call2_40c11e = tail call %struct.Memory* @sub_40c1d0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %52, %struct.Memory* %2)
   %57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %EAX.i9 = bitcast %union.anon* %57 to i32*
   %58 = load i32, i32* %EAX.i9, align 4
@@ -136,7 +136,7 @@ entry:
   store i64 %62, i64* %65, align 8
   store i64 %64, i64* %6, align 8
   store i64 %61, i64* %3, align 8
-  %call2_40c115 = tail call %struct.Memory* @sub_40c1c0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %61, %struct.Memory* %call2_40c10e)
+  %call2_40c125 = tail call %struct.Memory* @sub_40c1d0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %61, %struct.Memory* %call2_40c11e)
   %66 = load i32, i32* %EAX.i9, align 4
   %67 = zext i32 %66 to i64
   %68 = load i64, i64* %3, align 8
@@ -149,7 +149,7 @@ entry:
   store i64 %70, i64* %73, align 8
   store i64 %72, i64* %6, align 8
   store i64 %69, i64* %3, align 8
-  %call2_40c11c = tail call %struct.Memory* @sub_40c1c0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %69, %struct.Memory* %call2_40c115)
+  %call2_40c12c = tail call %struct.Memory* @sub_40c1d0._Z10hash_func2IiET_S0_(%struct.State* %0, i64 %69, %struct.Memory* %call2_40c125)
   %74 = load i64, i64* %6, align 8
   %75 = load i64, i64* %3, align 8
   %76 = add i64 %74, 16
@@ -196,7 +196,7 @@ entry:
   store i64 %105, i64* %3, align 8
   %106 = add i64 %74, 32
   store i64 %106, i64* %6, align 8
-  ret %struct.Memory* %call2_40c11c
+  ret %struct.Memory* %call2_40c12c
 }
 
 ; Function Attrs: norecurse nounwind

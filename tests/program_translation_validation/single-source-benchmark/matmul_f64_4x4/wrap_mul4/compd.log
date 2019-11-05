@@ -4,25 +4,25 @@ Disassembled output
   .globl wrap_mul4
   .type wrap_mul4, @function
 
-#! file-offset 0x550
-#! rip-offset  0x400550
+#! file-offset 0x560
+#! rip-offset  0x400560
 #! capacity    43 bytes
 
 # Text                    #  Line  RIP       Bytes  Opcode             Target                
-.wrap_mul4:               #        0x400550  0      OPC=<label>        18446744073709551615  
-  pushq %rbp              #  1     0x400550  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp         #  2     0x400551  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x20, %rsp        #  3     0x400554  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)   #  4     0x400558  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)  #  5     0x40055c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rdx, -0x18(%rbp)  #  6     0x400560  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi   #  7     0x400564  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rsi  #  8     0x400568  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx  #  9     0x40056c  4      OPC=movq_r64_m64   18446744073709551615  
-  callq .mul4             #  10    0x400570  5      OPC=callq_label    4195712               
-  addq $0x20, %rsp        #  11    0x400575  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp               #  12    0x400579  1      OPC=popq_r64_1     18446744073709551615  
-  retq                    #  13    0x40057a  1      OPC=retq           18446744073709551615  
+.wrap_mul4:               #        0x400560  0      OPC=<label>        18446744073709551615  
+  pushq %rbp              #  1     0x400560  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp         #  2     0x400561  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x20, %rsp        #  3     0x400564  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)   #  4     0x400568  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)  #  5     0x40056c  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rdx, -0x18(%rbp)  #  6     0x400570  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi   #  7     0x400574  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rsi  #  8     0x400578  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx  #  9     0x40057c  4      OPC=movq_r64_m64   18446744073709551615  
+  callq .mul4             #  10    0x400580  5      OPC=callq_label    4195728               
+  addq $0x20, %rsp        #  11    0x400585  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp               #  12    0x400589  1      OPC=popq_r64_1     18446744073709551615  
+  retq                    #  13    0x40058a  1      OPC=retq           18446744073709551615  
                                                                                              
 .size wrap_mul4, .-wrap_mul4
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.wrap_mul4->4195664
+.wrap_mul4->4195680
 
 Computing Label PC values: Done.
 
@@ -438,6 +438,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400564 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -590,6 +592,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400585 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -634,3 +638,5 @@ Decompiling Function: wrap_mul4 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.04system 0:00.75elapsed 32%CPU (0avgtext+0avgdata 10292maxresident)k
+0inputs+168outputs (0major+6753minor)pagefaults 0swaps

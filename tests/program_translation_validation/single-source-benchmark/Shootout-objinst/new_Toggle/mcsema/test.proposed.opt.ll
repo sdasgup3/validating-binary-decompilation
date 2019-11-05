@@ -46,7 +46,7 @@ declare extern_weak x86_64_sysvcc i64 @malloc(i64)
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
-declare %struct.Memory* @sub_400630.init_Toggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400640.init_Toggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @new_Toggle(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -156,7 +156,7 @@ entry:
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %6, align 8
   store i64 %71, i64* %3, align 8
-  %call2_4006a4 = tail call %struct.Memory* @sub_400630.init_Toggle(%struct.State* %0, i64 %71, %struct.Memory* %52)
+  %call2_4006b4 = tail call %struct.Memory* @sub_400640.init_Toggle(%struct.State* %0, i64 %71, %struct.Memory* %52)
   %76 = load i64, i64* %6, align 8
   %77 = load i64, i64* %3, align 8
   %78 = add i64 %76, 16
@@ -203,7 +203,7 @@ entry:
   store i64 %107, i64* %3, align 8
   %108 = add i64 %76, 32
   store i64 %108, i64* %6, align 8
-  ret %struct.Memory* %call2_4006a4
+  ret %struct.Memory* %call2_4006b4
 }
 
 ; Function Attrs: norecurse nounwind

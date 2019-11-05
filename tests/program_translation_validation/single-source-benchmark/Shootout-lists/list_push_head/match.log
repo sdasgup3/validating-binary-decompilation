@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [list_push_head] from ../binary/test.mcsema.opt.ll
 Extracting function [list_push_head] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.68user 3.10system 0:04.94elapsed 96%CPU (0avgtext+0avgdata 13404maxresident)k
+0inputs+632outputs (0major+1115minor)pagefaults 0swaps

@@ -4,28 +4,28 @@ Disassembled output
   .globl _ZneI16reverse_iteratorIPddEEiRKT_S5_
   .type _ZneI16reverse_iteratorIPddEEiRKT_S5_, @function
 
-#! file-offset 0x2960
-#! rip-offset  0x402960
+#! file-offset 0x2970
+#! rip-offset  0x402970
 #! capacity    50 bytes
 
 # Text                                             #  Line  RIP       Bytes  Opcode             Target                
-._ZneI16reverse_iteratorIPddEEiRKT_S5_:            #        0x402960  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                       #  1     0x402960  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                  #  2     0x402961  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                                 #  3     0x402964  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                            #  4     0x402968  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                           #  5     0x40296c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                            #  6     0x402970  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rsi                           #  7     0x402974  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_  #  8     0x402978  5      OPC=callq_label    4203904               
-  cmpl $0x0, %eax                                  #  9     0x40297d  3      OPC=cmpl_r32_imm8  18446744073709551615  
-  setne %cl                                        #  10    0x402980  3      OPC=setne_r8       18446744073709551615  
-  xorb $0xff, %cl                                  #  11    0x402983  3      OPC=xorb_r8_imm8   18446744073709551615  
-  andb $0x1, %cl                                   #  12    0x402986  3      OPC=andb_r8_imm8   18446744073709551615  
-  movzbl %cl, %eax                                 #  13    0x402989  3      OPC=movzbl_r32_r8  18446744073709551615  
-  addq $0x10, %rsp                                 #  14    0x40298c  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                        #  15    0x402990  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                             #  16    0x402991  1      OPC=retq           18446744073709551615  
+._ZneI16reverse_iteratorIPddEEiRKT_S5_:            #        0x402970  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                       #  1     0x402970  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                  #  2     0x402971  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                                 #  3     0x402974  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                            #  4     0x402978  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                           #  5     0x40297c  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                            #  6     0x402980  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rsi                           #  7     0x402984  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_  #  8     0x402988  5      OPC=callq_label    4203920               
+  cmpl $0x0, %eax                                  #  9     0x40298d  3      OPC=cmpl_r32_imm8  18446744073709551615  
+  setne %cl                                        #  10    0x402990  3      OPC=setne_r8       18446744073709551615  
+  xorb $0xff, %cl                                  #  11    0x402993  3      OPC=xorb_r8_imm8   18446744073709551615  
+  andb $0x1, %cl                                   #  12    0x402996  3      OPC=andb_r8_imm8   18446744073709551615  
+  movzbl %cl, %eax                                 #  13    0x402999  3      OPC=movzbl_r32_r8  18446744073709551615  
+  addq $0x10, %rsp                                 #  14    0x40299c  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                        #  15    0x4029a0  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                             #  16    0x4029a1  1      OPC=retq           18446744073709551615  
                                                                                                                       
 .size _ZneI16reverse_iteratorIPddEEiRKT_S5_, .-_ZneI16reverse_iteratorIPddEEiRKT_S5_
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZneI16reverse_iteratorIPddEEiRKT_S5_->4204896
+._ZneI16reverse_iteratorIPddEEiRKT_S5_->4204912
 
 Computing Label PC values: Done.
 
@@ -441,6 +441,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402974 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -555,6 +557,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x0___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40298d --size 3
 Decompiling instr:cmpl $0x0, %eax Done...
 
 
@@ -593,6 +597,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorb__0xff___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402993 --size 3
 Decompiling instr:xorb $0xff, %cl Done...
 
 
@@ -612,6 +618,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402996 --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -650,6 +658,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40299c --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -694,3 +704,5 @@ Decompiling Function: _ZneI16reverse_iteratorIPddEEiRKT_S5_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.07system 0:02.03elapsed 15%CPU (0avgtext+0avgdata 10428maxresident)k
+0inputs+192outputs (0major+8040minor)pagefaults 0swaps

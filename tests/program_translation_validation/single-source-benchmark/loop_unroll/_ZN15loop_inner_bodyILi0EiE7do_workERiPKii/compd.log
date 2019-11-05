@@ -4,19 +4,19 @@ Disassembled output
   .globl _ZN15loop_inner_bodyILi0EiE7do_workERiPKii
   .type _ZN15loop_inner_bodyILi0EiE7do_workERiPKii, @function
 
-#! file-offset 0xcd80
-#! rip-offset  0x40cd80
+#! file-offset 0xcd90
+#! rip-offset  0x40cd90
 #! capacity    17 bytes
 
 # Text                                        #  Line  RIP       Bytes  Opcode            Target                
-._ZN15loop_inner_bodyILi0EiE7do_workERiPKii:  #        0x40cd80  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                  #  1     0x40cd80  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                             #  2     0x40cd81  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                       #  3     0x40cd84  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                      #  4     0x40cd88  4      OPC=movq_m64_r64  18446744073709551615  
-  movl %edx, -0x14(%rbp)                      #  5     0x40cd8c  3      OPC=movl_m32_r32  18446744073709551615  
-  popq %rbp                                   #  6     0x40cd8f  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                        #  7     0x40cd90  1      OPC=retq          18446744073709551615  
+._ZN15loop_inner_bodyILi0EiE7do_workERiPKii:  #        0x40cd90  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                  #  1     0x40cd90  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                             #  2     0x40cd91  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                       #  3     0x40cd94  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                      #  4     0x40cd98  4      OPC=movq_m64_r64  18446744073709551615  
+  movl %edx, -0x14(%rbp)                      #  5     0x40cd9c  3      OPC=movl_m32_r32  18446744073709551615  
+  popq %rbp                                   #  6     0x40cd9f  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                        #  7     0x40cda0  1      OPC=retq          18446744073709551615  
                                                                                                                 
 .size _ZN15loop_inner_bodyILi0EiE7do_workERiPKii, .-_ZN15loop_inner_bodyILi0EiE7do_workERiPKii
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN15loop_inner_bodyILi0EiE7do_workERiPKii->4246912
+._ZN15loop_inner_bodyILi0EiE7do_workERiPKii->4246928
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: _ZN15loop_inner_bodyILi0EiE7do_workERiPKii Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:00.26elapsed 100%CPU (0avgtext+0avgdata 10104maxresident)k
+0inputs+136outputs (0major+4634minor)pagefaults 0swaps

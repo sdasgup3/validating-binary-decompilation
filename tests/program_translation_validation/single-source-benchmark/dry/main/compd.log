@@ -4,23 +4,23 @@ Disassembled output
   .globl main
   .type main, @function
 
-#! file-offset 0x5f0
-#! rip-offset  0x4005f0
+#! file-offset 0x600
+#! rip-offset  0x400600
 #! capacity    33 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode              Target                
-.main:                   #        0x4005f0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x4005f0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4005f1  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp       #  3     0x4005f4  4      OPC=subq_r64_imm8   18446744073709551615  
-  movl $0x0, -0x4(%rbp)  #  4     0x4005f8  7      OPC=movl_m32_imm32  18446744073709551615  
-  callq .Proc0           #  5     0x4005ff  5      OPC=callq_label     4195872               
-  xorl %ecx, %ecx        #  6     0x400604  2      OPC=xorl_r32_r32    18446744073709551615  
-  movl %eax, -0x8(%rbp)  #  7     0x400606  3      OPC=movl_m32_r32    18446744073709551615  
-  movl %ecx, %eax        #  8     0x400609  2      OPC=movl_r32_r32    18446744073709551615  
-  addq $0x10, %rsp       #  9     0x40060b  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp              #  10    0x40060f  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  11    0x400610  1      OPC=retq            18446744073709551615  
+.main:                   #        0x400600  0      OPC=<label>         18446744073709551615  
+  pushq %rbp             #  1     0x400600  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp        #  2     0x400601  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x10, %rsp       #  3     0x400604  4      OPC=subq_r64_imm8   18446744073709551615  
+  movl $0x0, -0x4(%rbp)  #  4     0x400608  7      OPC=movl_m32_imm32  18446744073709551615  
+  callq .Proc0           #  5     0x40060f  5      OPC=callq_label     4195888               
+  xorl %ecx, %ecx        #  6     0x400614  2      OPC=xorl_r32_r32    18446744073709551615  
+  movl %eax, -0x8(%rbp)  #  7     0x400616  3      OPC=movl_m32_r32    18446744073709551615  
+  movl %ecx, %eax        #  8     0x400619  2      OPC=movl_r32_r32    18446744073709551615  
+  addq $0x10, %rsp       #  9     0x40061b  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp              #  10    0x40061f  1      OPC=popq_r64_1      18446744073709551615  
+  retq                   #  11    0x400620  1      OPC=retq            18446744073709551615  
                                                                                              
 .size main, .-main
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.main->4195824
+.main->4195840
 
 Computing Label PC values: Done.
 
@@ -436,6 +436,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400604 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -550,6 +552,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40061b --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -594,3 +598,5 @@ Decompiling Function: main Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.17user 0.04system 0:00.72elapsed 29%CPU (0avgtext+0avgdata 10484maxresident)k
+0inputs+160outputs (0major+6076minor)pagefaults 0swaps

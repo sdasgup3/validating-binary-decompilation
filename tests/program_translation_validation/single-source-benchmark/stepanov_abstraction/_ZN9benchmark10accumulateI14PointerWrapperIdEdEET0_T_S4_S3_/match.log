@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+5.29user 3.28system 0:08.62elapsed 99%CPU (0avgtext+0avgdata 24072maxresident)k
+0inputs+904outputs (0major+3448minor)pagefaults 0swaps

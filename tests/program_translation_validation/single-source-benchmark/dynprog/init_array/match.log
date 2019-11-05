@@ -1,13 +1,15 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x563e6ce032c8]:   %.pre5 = load i64, i64* %RBP, align 8
-[0x563e6cf2c268]:   %155 = load i64, i64* %RBP.i, align 8
-[0x563e6cf2cab8]:   %.pre5 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x563e6ce08338]:   %.pre8 = load i64, i64* %RBP, align 8
-[0x563e6cdf03a8]:   %.pre8 = load i64, i64* %RBP.i, align 8
-[0x563e6cf38b58]:   %226 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x559dbb61c2f8]:   %.pre5 = load i64, i64* %RBP, align 8
+[0x559dbb743538]:   %155 = load i64, i64* %RBP.i, align 8
+[0x559dbb745b38]:   %.pre5 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x559dbb621368]:   %.pre8 = load i64, i64* %RBP, align 8
+[0x559dbb751bd8]:   %226 = load i64, i64* %RBP.i, align 8
+[0x559dbb7854d8]:   %.pre8 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [init_array] from ../binary/test.mcsema.opt.ll
 Extracting function [init_array] from mcsema/test.proposed.opt.ll
 Matcher Done...
+11.81user 19.25system 0:31.50elapsed 98%CPU (0avgtext+0avgdata 14252maxresident)k
+0inputs+3240outputs (0major+1396minor)pagefaults 0swaps

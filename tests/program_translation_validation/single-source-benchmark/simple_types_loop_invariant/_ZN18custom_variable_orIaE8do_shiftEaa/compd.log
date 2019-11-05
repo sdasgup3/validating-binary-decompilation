@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN18custom_variable_orIaE8do_shiftEaa
   .type _ZN18custom_variable_orIaE8do_shiftEaa, @function
 
-#! file-offset 0x13280
-#! rip-offset  0x413280
+#! file-offset 0x13290
+#! rip-offset  0x413290
 #! capacity    34 bytes
 
 # Text                                    #  Line  RIP       Bytes  Opcode             Target                
-._ZN18custom_variable_orIaE8do_shiftEaa:  #        0x413280  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                              #  1     0x413280  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                         #  2     0x413281  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %sil, %al                          #  3     0x413284  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dil, %cl                          #  4     0x413287  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %cl, -0x1(%rbp)                    #  5     0x41328a  3      OPC=movb_m8_r8     18446744073709551615  
-  movb %al, -0x2(%rbp)                    #  6     0x41328d  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl -0x1(%rbp), %esi                 #  7     0x413290  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movsbl -0x2(%rbp), %edi                 #  8     0x413294  4      OPC=movsbl_r32_m8  18446744073709551615  
-  orl %edi, %esi                          #  9     0x413298  2      OPC=orl_r32_r32    18446744073709551615  
-  movb %sil, %al                          #  10    0x41329a  3      OPC=movb_r8_r8     18446744073709551615  
-  movsbl %al, %eax                        #  11    0x41329d  3      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbp                               #  12    0x4132a0  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                    #  13    0x4132a1  1      OPC=retq           18446744073709551615  
+._ZN18custom_variable_orIaE8do_shiftEaa:  #        0x413290  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                              #  1     0x413290  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                         #  2     0x413291  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %sil, %al                          #  3     0x413294  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dil, %cl                          #  4     0x413297  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %cl, -0x1(%rbp)                    #  5     0x41329a  3      OPC=movb_m8_r8     18446744073709551615  
+  movb %al, -0x2(%rbp)                    #  6     0x41329d  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl -0x1(%rbp), %esi                 #  7     0x4132a0  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movsbl -0x2(%rbp), %edi                 #  8     0x4132a4  4      OPC=movsbl_r32_m8  18446744073709551615  
+  orl %edi, %esi                          #  9     0x4132a8  2      OPC=orl_r32_r32    18446744073709551615  
+  movb %sil, %al                          #  10    0x4132aa  3      OPC=movb_r8_r8     18446744073709551615  
+  movsbl %al, %eax                        #  11    0x4132ad  3      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbp                               #  12    0x4132b0  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                    #  13    0x4132b1  1      OPC=retq           18446744073709551615  
                                                                                                              
 .size _ZN18custom_variable_orIaE8do_shiftEaa, .-_ZN18custom_variable_orIaE8do_shiftEaa
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN18custom_variable_orIaE8do_shiftEaa->4272768
+._ZN18custom_variable_orIaE8do_shiftEaa->4272784
 
 Computing Label PC values: Done.
 
@@ -634,3 +634,5 @@ Decompiling Function: _ZN18custom_variable_orIaE8do_shiftEaa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.08system 0:00.33elapsed 97%CPU (0avgtext+0avgdata 10140maxresident)k
+0inputs+160outputs (0major+6635minor)pagefaults 0swaps

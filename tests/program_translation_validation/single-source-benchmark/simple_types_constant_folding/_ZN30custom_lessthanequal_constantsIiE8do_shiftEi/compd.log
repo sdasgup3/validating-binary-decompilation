@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN30custom_lessthanequal_constantsIiE8do_shiftEi
   .type _ZN30custom_lessthanequal_constantsIiE8do_shiftEi, @function
 
-#! file-offset 0x138f0
-#! rip-offset  0x4138f0
+#! file-offset 0x13900
+#! rip-offset  0x413900
 #! capacity    11 bytes
 
 # Text                                               #  Line  RIP       Bytes  Opcode            Target                
-._ZN30custom_lessthanequal_constantsIiE8do_shiftEi:  #        0x4138f0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                         #  1     0x4138f0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                    #  2     0x4138f1  3      OPC=movq_r64_r64  18446744073709551615  
-  xorl %eax, %eax                                    #  3     0x4138f4  2      OPC=xorl_r32_r32  18446744073709551615  
-  movl %edi, -0x4(%rbp)                              #  4     0x4138f6  3      OPC=movl_m32_r32  18446744073709551615  
-  popq %rbp                                          #  5     0x4138f9  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                               #  6     0x4138fa  1      OPC=retq          18446744073709551615  
+._ZN30custom_lessthanequal_constantsIiE8do_shiftEi:  #        0x413900  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                         #  1     0x413900  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                    #  2     0x413901  3      OPC=movq_r64_r64  18446744073709551615  
+  xorl %eax, %eax                                    #  3     0x413904  2      OPC=xorl_r32_r32  18446744073709551615  
+  movl %edi, -0x4(%rbp)                              #  4     0x413906  3      OPC=movl_m32_r32  18446744073709551615  
+  popq %rbp                                          #  5     0x413909  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                               #  6     0x41390a  1      OPC=retq          18446744073709551615  
                                                                                                                        
 .size _ZN30custom_lessthanequal_constantsIiE8do_shiftEi, .-_ZN30custom_lessthanequal_constantsIiE8do_shiftEi
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_lessthanequal_constantsIiE8do_shiftEi->4274416
+._ZN30custom_lessthanequal_constantsIiE8do_shiftEi->4274432
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN30custom_lessthanequal_constantsIiE8do_shiftEi Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:00.29elapsed 91%CPU (0avgtext+0avgdata 10360maxresident)k
+0inputs+136outputs (0major+4335minor)pagefaults 0swaps

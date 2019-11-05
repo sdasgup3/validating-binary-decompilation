@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4020a0._ZN15loop_inner_bodyILi3EdE7do_workERdPKdi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4020b0._ZN15loop_inner_bodyILi3EdE7do_workERdPKdi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4014b0._Z18complete_hash_funcIdET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4014c0._Z18complete_hash_funcIdET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN15loop_inner_bodyILi4EdE7do_workERdPKdi(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -152,7 +152,7 @@ entry:
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %6, align 8
   store i64 %71, i64* %3, align 8
-  %call2_40205e = tail call %struct.Memory* @sub_4020a0._ZN15loop_inner_bodyILi3EdE7do_workERdPKdi(%struct.State* %0, i64 %71, %struct.Memory* %2)
+  %call2_40206e = tail call %struct.Memory* @sub_4020b0._ZN15loop_inner_bodyILi3EdE7do_workERdPKdi(%struct.State* %0, i64 %71, %struct.Memory* %2)
   %76 = load i64, i64* %RBP.i, align 8
   %77 = add i64 %76, -16
   %78 = load i64, i64* %3, align 8
@@ -232,7 +232,7 @@ entry:
   store i64 %129, i64* %132, align 8
   store i64 %131, i64* %6, align 8
   store i64 %128, i64* %3, align 8
-  %call2_40207f = tail call %struct.Memory* @sub_4014b0._Z18complete_hash_funcIdET_S0_(%struct.State* %0, i64 %128, %struct.Memory* %call2_40205e)
+  %call2_40208f = tail call %struct.Memory* @sub_4014c0._Z18complete_hash_funcIdET_S0_(%struct.State* %0, i64 %128, %struct.Memory* %call2_40206e)
   %133 = load i64, i64* %RBP.i, align 8
   %134 = add i64 %133, -32
   %135 = load i64, i64* %3, align 8
@@ -313,7 +313,7 @@ entry:
   store i64 %186, i64* %3, align 8
   %187 = add i64 %156, 48
   store i64 %187, i64* %6, align 8
-  ret %struct.Memory* %call2_40207f
+  ret %struct.Memory* %call2_40208f
 }
 
 ; Function Attrs: norecurse nounwind

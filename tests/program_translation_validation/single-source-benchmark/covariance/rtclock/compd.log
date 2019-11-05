@@ -4,17 +4,17 @@ Disassembled output
   .globl rtclock
   .type rtclock, @function
 
-#! file-offset 0x810
-#! rip-offset  0x400810
+#! file-offset 0x820
+#! rip-offset  0x400820
 #! capacity    9 bytes
 
 # Text                #  Line  RIP       Bytes  Opcode             Target                
-.rtclock:             #        0x400810  0      OPC=<label>        18446744073709551615  
-  pushq %rbp          #  1     0x400810  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp     #  2     0x400811  3      OPC=movq_r64_r64   18446744073709551615  
-  xorps %xmm0, %xmm0  #  3     0x400814  3      OPC=xorps_xmm_xmm  18446744073709551615  
-  popq %rbp           #  4     0x400817  1      OPC=popq_r64_1     18446744073709551615  
-  retq                #  5     0x400818  1      OPC=retq           18446744073709551615  
+.rtclock:             #        0x400820  0      OPC=<label>        18446744073709551615  
+  pushq %rbp          #  1     0x400820  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp     #  2     0x400821  3      OPC=movq_r64_r64   18446744073709551615  
+  xorps %xmm0, %xmm0  #  3     0x400824  3      OPC=xorps_xmm_xmm  18446744073709551615  
+  popq %rbp           #  4     0x400827  1      OPC=popq_r64_1     18446744073709551615  
+  retq                #  5     0x400828  1      OPC=retq           18446744073709551615  
                                                                                          
 .size rtclock, .-rtclock
 Disassembling Done.
@@ -22,7 +22,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.rtclock->4196368
+.rtclock->4196384
 
 Computing Label PC values: Done.
 
@@ -474,3 +474,5 @@ Decompiling Function: rtclock Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.08user 0.02system 0:00.12elapsed 89%CPU (0avgtext+0avgdata 10272maxresident)k
+0inputs+120outputs (0major+3912minor)pagefaults 0swaps

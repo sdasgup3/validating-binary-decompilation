@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZmiIdElR14PointerWrapperIT_ES3_
   .type _ZmiIdElR14PointerWrapperIT_ES3_, @function
 
-#! file-offset 0x4770
-#! rip-offset  0x404770
+#! file-offset 0x4780
+#! rip-offset  0x404780
 #! capacity    38 bytes
 
 # Text                              #  Line  RIP       Bytes  Opcode             Target                
-._ZmiIdElR14PointerWrapperIT_ES3_:  #        0x404770  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                        #  1     0x404770  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                   #  2     0x404771  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)             #  3     0x404774  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)            #  4     0x404778  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi             #  5     0x40477c  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rsi), %rsi                 #  6     0x404780  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi            #  7     0x404783  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rdi                 #  8     0x404787  3      OPC=movq_r64_m64   18446744073709551615  
-  subq %rdi, %rsi                   #  9     0x40478a  3      OPC=subq_r64_r64   18446744073709551615  
-  sarq $0x3, %rsi                   #  10    0x40478d  4      OPC=sarq_r64_imm8  18446744073709551615  
-  movq %rsi, %rax                   #  11    0x404791  3      OPC=movq_r64_r64   18446744073709551615  
-  popq %rbp                         #  12    0x404794  1      OPC=popq_r64_1     18446744073709551615  
-  retq                              #  13    0x404795  1      OPC=retq           18446744073709551615  
+._ZmiIdElR14PointerWrapperIT_ES3_:  #        0x404780  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                        #  1     0x404780  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                   #  2     0x404781  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)             #  3     0x404784  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)            #  4     0x404788  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi             #  5     0x40478c  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rsi), %rsi                 #  6     0x404790  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi            #  7     0x404793  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rdi                 #  8     0x404797  3      OPC=movq_r64_m64   18446744073709551615  
+  subq %rdi, %rsi                   #  9     0x40479a  3      OPC=subq_r64_r64   18446744073709551615  
+  sarq $0x3, %rsi                   #  10    0x40479d  4      OPC=sarq_r64_imm8  18446744073709551615  
+  movq %rsi, %rax                   #  11    0x4047a1  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                         #  12    0x4047a4  1      OPC=popq_r64_1     18446744073709551615  
+  retq                              #  13    0x4047a5  1      OPC=retq           18446744073709551615  
                                                                                                        
 .size _ZmiIdElR14PointerWrapperIT_ES3_, .-_ZmiIdElR14PointerWrapperIT_ES3_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZmiIdElR14PointerWrapperIT_ES3_->4212592
+._ZmiIdElR14PointerWrapperIT_ES3_->4212608
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SARI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_sarq__0x3___rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40479d --size 4
 Decompiling instr:sarq $0x3, %rsi Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _ZmiIdElR14PointerWrapperIT_ES3_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.22user 0.04system 0:00.77elapsed 33%CPU (0avgtext+0avgdata 10384maxresident)k
+0inputs+168outputs (0major+6696minor)pagefaults 0swaps

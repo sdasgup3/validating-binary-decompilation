@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN14Double_pointerC2EP6Double] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN14Double_pointerC2EP6Double] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.64user 0.30system 0:00.94elapsed 99%CPU (0avgtext+0avgdata 17216maxresident)k
+0inputs+72outputs (0major+2011minor)pagefaults 0swaps

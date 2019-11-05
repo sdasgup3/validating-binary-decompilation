@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN16reverse_iteratorI14double_pointerdEmmEv] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN16reverse_iteratorI14double_pointerdEmmEv] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.53user 1.11system 0:02.68elapsed 98%CPU (0avgtext+0avgdata 17368maxresident)k
+0inputs+224outputs (0major+2013minor)pagefaults 0swaps

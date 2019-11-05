@@ -7,7 +7,7 @@ compd_opt: createtask pkt trace schedule Wait holdself findtcb release qpkt appe
 match: createtask pkt trace schedule Wait holdself findtcb release qpkt append idlefn workfn handlerfn devfn main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

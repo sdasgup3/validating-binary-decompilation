@@ -7,7 +7,7 @@ compd_opt: list_push_tail list_pop_tail list_empty list_length list_push_head li
 match: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

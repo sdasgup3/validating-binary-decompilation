@@ -4,18 +4,18 @@ Disassembled output
   .globl __cxx_global_var_init
   .type __cxx_global_var_init, @function
 
-#! file-offset 0x730
-#! rip-offset  0x400730
+#! file-offset 0x740
+#! rip-offset  0x400740
 #! capacity    20 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode            Target                
-.__cxx_global_var_init:  #        0x400730  0      OPC=<label>       18446744073709551615  
-  pushq %rbp             #  1     0x400730  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400731  3      OPC=movq_r64_r64  18446744073709551615  
-  movl 0x622080, %eax    #  3     0x400734  7      OPC=movl_r32_m32  18446744073709551615  
-  movl %eax, 0x6220c0    #  4     0x40073b  7      OPC=movl_m32_r32  18446744073709551615  
-  popq %rbp              #  5     0x400742  1      OPC=popq_r64_1    18446744073709551615  
-  retq                   #  6     0x400743  1      OPC=retq          18446744073709551615  
+.__cxx_global_var_init:  #        0x400740  0      OPC=<label>       18446744073709551615  
+  pushq %rbp             #  1     0x400740  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp        #  2     0x400741  3      OPC=movq_r64_r64  18446744073709551615  
+  movl 0x622080, %eax    #  3     0x400744  7      OPC=movl_r32_m32  18446744073709551615  
+  movl %eax, 0x6220c0    #  4     0x40074b  7      OPC=movl_m32_r32  18446744073709551615  
+  popq %rbp              #  5     0x400752  1      OPC=popq_r64_1    18446744073709551615  
+  retq                   #  6     0x400753  1      OPC=retq          18446744073709551615  
                                                                                            
 .size __cxx_global_var_init, .-__cxx_global_var_init
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.__cxx_global_var_init->4196144
+.__cxx_global_var_init->4196160
 
 Computing Label PC values: Done.
 
@@ -431,6 +431,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl_0x622080___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400744 --size 7
+Global Access Mismatch: 6430848 Relocation: Address, McSema: Constant
 Decompiling instr:movl 0x622080, %eax Done...
 
 
@@ -450,6 +453,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__eax__0x6220c0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40074b --size 7
+Global Access Mismatch: 6430912 Relocation: Address, McSema: Constant
 Decompiling instr:movl %eax, 0x6220c0 Done...
 
 
@@ -494,3 +500,5 @@ Decompiling Function: __cxx_global_var_init Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.03system 0:00.74elapsed 36%CPU (0avgtext+0avgdata 10172maxresident)k
+0inputs+128outputs (0major+4409minor)pagefaults 0swaps

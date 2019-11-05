@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZN25custom_multiply_constantsIsE8do_shiftEs
   .type _ZN25custom_multiply_constantsIsE8do_shiftEs, @function
 
-#! file-offset 0x161b0
-#! rip-offset  0x4161b0
+#! file-offset 0x161c0
+#! rip-offset  0x4161c0
 #! capacity    20 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode              Target                
-._ZN25custom_multiply_constantsIsE8do_shiftEs:  #        0x4161b0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                    #  1     0x4161b0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x4161b1  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %di, %ax                                 #  3     0x4161b4  3      OPC=movw_r16_r16    18446744073709551615  
-  movw $0x6, %cx                                #  4     0x4161b7  4      OPC=movw_r16_imm16  18446744073709551615  
-  movw %ax, -0x2(%rbp)                          #  5     0x4161bb  4      OPC=movw_m16_r16    18446744073709551615  
-  movswl %cx, %eax                              #  6     0x4161bf  3      OPC=movswl_r32_r16  18446744073709551615  
-  popq %rbp                                     #  7     0x4161c2  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                          #  8     0x4161c3  1      OPC=retq            18446744073709551615  
+._ZN25custom_multiply_constantsIsE8do_shiftEs:  #        0x4161c0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                    #  1     0x4161c0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x4161c1  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %di, %ax                                 #  3     0x4161c4  3      OPC=movw_r16_r16    18446744073709551615  
+  movw $0x6, %cx                                #  4     0x4161c7  4      OPC=movw_r16_imm16  18446744073709551615  
+  movw %ax, -0x2(%rbp)                          #  5     0x4161cb  4      OPC=movw_m16_r16    18446744073709551615  
+  movswl %cx, %eax                              #  6     0x4161cf  3      OPC=movswl_r32_r16  18446744073709551615  
+  popq %rbp                                     #  7     0x4161d2  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                          #  8     0x4161d3  1      OPC=retq            18446744073709551615  
                                                                                                                     
 .size _ZN25custom_multiply_constantsIsE8do_shiftEs, .-_ZN25custom_multiply_constantsIsE8do_shiftEs
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN25custom_multiply_constantsIsE8do_shiftEs->4284848
+._ZN25custom_multiply_constantsIsE8do_shiftEs->4284864
 
 Computing Label PC values: Done.
 
@@ -452,6 +452,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWItE2InItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__0x6___cx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4161c7 --size 4
 Decompiling instr:movw $0x6, %cx Done...
 
 
@@ -534,3 +536,5 @@ Decompiling Function: _ZN25custom_multiply_constantsIsE8do_shiftEs Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.05system 0:01.95elapsed 15%CPU (0avgtext+0avgdata 10236maxresident)k
+0inputs+136outputs (0major+4999minor)pagefaults 0swaps

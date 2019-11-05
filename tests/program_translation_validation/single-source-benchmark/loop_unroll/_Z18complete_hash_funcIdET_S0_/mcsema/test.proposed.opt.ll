@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4015e0._Z10hash_func2IdET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4015f0._Z10hash_func2IdET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_Z18complete_hash_funcIdET_S0_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -121,7 +121,7 @@ entry:
   store i64 %54, i64* %57, align 8
   store i64 %56, i64* %6, align 8
   store i64 %53, i64* %3, align 8
-  %call2_4014c2 = tail call %struct.Memory* @sub_4015e0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %53, %struct.Memory* %2)
+  %call2_4014d2 = tail call %struct.Memory* @sub_4015f0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %53, %struct.Memory* %2)
   %58 = load i64, i64* %3, align 8
   %59 = add i64 %58, 281
   %60 = add i64 %58, 5
@@ -131,7 +131,7 @@ entry:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %6, align 8
   store i64 %59, i64* %3, align 8
-  %call2_4014c7 = tail call %struct.Memory* @sub_4015e0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %59, %struct.Memory* %call2_4014c2)
+  %call2_4014d7 = tail call %struct.Memory* @sub_4015f0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %59, %struct.Memory* %call2_4014d2)
   %64 = load i64, i64* %3, align 8
   %65 = add i64 %64, 276
   %66 = add i64 %64, 5
@@ -141,7 +141,7 @@ entry:
   store i64 %66, i64* %69, align 8
   store i64 %68, i64* %6, align 8
   store i64 %65, i64* %3, align 8
-  %call2_4014cc = tail call %struct.Memory* @sub_4015e0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %65, %struct.Memory* %call2_4014c7)
+  %call2_4014dc = tail call %struct.Memory* @sub_4015f0._Z10hash_func2IdET_S0_(%struct.State* %0, i64 %65, %struct.Memory* %call2_4014d7)
   %70 = load i64, i64* %6, align 8
   %71 = load i64, i64* %3, align 8
   %72 = add i64 %70, 16
@@ -188,7 +188,7 @@ entry:
   store i64 %101, i64* %3, align 8
   %102 = add i64 %70, 32
   store i64 %102, i64* %6, align 8
-  ret %struct.Memory* %call2_4014cc
+  ret %struct.Memory* %call2_4014dc
 }
 
 ; Function Attrs: norecurse nounwind

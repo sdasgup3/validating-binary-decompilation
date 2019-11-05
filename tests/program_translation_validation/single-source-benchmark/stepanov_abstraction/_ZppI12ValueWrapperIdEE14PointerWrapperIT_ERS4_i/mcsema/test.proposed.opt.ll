@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_403cf0._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403d00._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -145,7 +145,7 @@ entry:
   store i64 %69, i64* %72, align 8
   store i64 %71, i64* %6, align 8
   store i64 %68, i64* %3, align 8
-  %call2_403c7e = tail call %struct.Memory* @sub_403cf0._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_(%struct.State* %0, i64 %68, %struct.Memory* %2)
+  %call2_403c8e = tail call %struct.Memory* @sub_403d00._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_(%struct.State* %0, i64 %68, %struct.Memory* %2)
   %73 = load i64, i64* %RBP.i, align 8
   %74 = add i64 %73, -8
   %75 = load i64, i64* %3, align 8
@@ -208,7 +208,7 @@ entry:
   store i64 %114, i64* %3, align 8
   %115 = add i64 %85, 48
   store i64 %115, i64* %6, align 8
-  ret %struct.Memory* %call2_403c7e
+  ret %struct.Memory* %call2_403c8e
 }
 
 ; Function Attrs: norecurse nounwind

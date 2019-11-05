@@ -1,13 +1,15 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x555a8f47bb38]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
-[0x555a8f4ddeb8]:   %41 = load double, double* inttoptr (i64 6299816 to double*), align 8
-[0x555a8f4f2ba8]:   %44 = load double, double* inttoptr (i64 6299824 to double*), align 16
-Multiple matches exist for [0x555a8f47bd58]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
-[0x555a8f4ddeb8]:   %41 = load double, double* inttoptr (i64 6299816 to double*), align 8
-[0x555a8f4f2ba8]:   %44 = load double, double* inttoptr (i64 6299824 to double*), align 16
+Multiple matches exist for [0x55b0302ecbd8]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
+[0x55b03036f6c8]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
+[0x55b0303705a8]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
+Multiple matches exist for [0x55b0302ecdf8]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
+[0x55b03036f6c8]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
+[0x55b0303705a8]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_timer_print] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_timer_print] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.57user 1.20system 0:01.88elapsed 94%CPU (0avgtext+0avgdata 13228maxresident)k
+0inputs+184outputs (0major+1087minor)pagefaults 0swaps

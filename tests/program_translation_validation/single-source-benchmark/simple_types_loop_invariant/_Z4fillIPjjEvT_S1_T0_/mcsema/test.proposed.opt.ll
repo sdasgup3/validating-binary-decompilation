@@ -97,10 +97,10 @@ entry:
   %EAX.i = bitcast %union.anon* %28 to i32*
   %35 = bitcast i64* %RCX.i14 to i32**
   %.pre = load i64, i64* %3, align 8
-  br label %block_.L_40825f
+  br label %block_.L_40826f
 
-block_.L_40825f:                                  ; preds = %block_40826d, %entry
-  %36 = phi i64 [ %107, %block_40826d ], [ %.pre, %entry ]
+block_.L_40826f:                                  ; preds = %block_40827d, %entry
+  %36 = phi i64 [ %107, %block_40827d ], [ %.pre, %entry ]
   %37 = load i64, i64* %RBP.i, align 8
   %38 = add i64 %37, -8
   %39 = add i64 %36, 4
@@ -147,9 +147,9 @@ block_.L_40825f:                                  ; preds = %block_40826d, %entr
   %.v = select i1 %60, i64 39, i64 14
   %71 = add i64 %36, %.v
   store i64 %71, i64* %3, align 8
-  br i1 %60, label %block_.L_408286, label %block_40826d
+  br i1 %60, label %block_.L_408296, label %block_40827d
 
-block_40826d:                                     ; preds = %block_.L_40825f
+block_40827d:                                     ; preds = %block_.L_40826f
   %72 = add i64 %37, -20
   %73 = add i64 %71, 3
   store i64 %73, i64* %3, align 8
@@ -202,9 +202,9 @@ block_40826d:                                     ; preds = %block_.L_40825f
   %106 = load i64, i64* %3, align 8
   %107 = add i64 %106, -34
   store i64 %107, i64* %3, align 8
-  br label %block_.L_40825f
+  br label %block_.L_40826f
 
-block_.L_408286:                                  ; preds = %block_.L_40825f
+block_.L_408296:                                  ; preds = %block_.L_40826f
   %108 = add i64 %71, 1
   store i64 %108, i64* %3, align 8
   %109 = load i64, i64* %6, align 8
@@ -379,7 +379,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_je_.L_408286(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+define %struct.Memory* @routine_je_.L_408296(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -524,7 +524,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_40825f(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jmpq_.L_40826f(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8

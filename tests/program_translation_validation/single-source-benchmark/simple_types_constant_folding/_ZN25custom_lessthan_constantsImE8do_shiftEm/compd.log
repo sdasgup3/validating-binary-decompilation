@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN25custom_lessthan_constantsImE8do_shiftEm
   .type _ZN25custom_lessthan_constantsImE8do_shiftEm, @function
 
-#! file-offset 0x109b0
-#! rip-offset  0x4109b0
+#! file-offset 0x109c0
+#! rip-offset  0x4109c0
 #! capacity    12 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode            Target                
-._ZN25custom_lessthan_constantsImE8do_shiftEm:  #        0x4109b0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                    #  1     0x4109b0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x4109b1  3      OPC=movq_r64_r64  18446744073709551615  
-  xorl %eax, %eax                               #  3     0x4109b4  2      OPC=xorl_r32_r32  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                         #  4     0x4109b6  4      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                     #  5     0x4109ba  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                          #  6     0x4109bb  1      OPC=retq          18446744073709551615  
+._ZN25custom_lessthan_constantsImE8do_shiftEm:  #        0x4109c0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                    #  1     0x4109c0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x4109c1  3      OPC=movq_r64_r64  18446744073709551615  
+  xorl %eax, %eax                               #  3     0x4109c4  2      OPC=xorl_r32_r32  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                         #  4     0x4109c6  4      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                     #  5     0x4109ca  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                          #  6     0x4109cb  1      OPC=retq          18446744073709551615  
                                                                                                                   
 .size _ZN25custom_lessthan_constantsImE8do_shiftEm, .-_ZN25custom_lessthan_constantsImE8do_shiftEm
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN25custom_lessthan_constantsImE8do_shiftEm->4262320
+._ZN25custom_lessthan_constantsImE8do_shiftEm->4262336
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN25custom_lessthan_constantsImE8do_shiftEm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.22user 0.03system 0:00.32elapsed 82%CPU (0avgtext+0avgdata 10236maxresident)k
+0inputs+136outputs (0major+4328minor)pagefaults 0swaps

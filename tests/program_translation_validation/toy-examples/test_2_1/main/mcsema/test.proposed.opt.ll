@@ -42,10 +42,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400500.foo(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_400520.foo(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -210,7 +210,7 @@ entry:
   store i64 %105, i64* %108, align 8
   store i64 %107, i64* %6, align 8
   store i64 %104, i64* %3, align 8
-  %call2_4005c6 = tail call %struct.Memory* @sub_400500.foo(%struct.State* %0, i64 %104, %struct.Memory* %2)
+  %call2_4005e6 = tail call %struct.Memory* @sub_400520.foo(%struct.State* %0, i64 %104, %struct.Memory* %2)
   %109 = load i64, i64* %6, align 8
   %110 = load i64, i64* %3, align 8
   %111 = add i64 %109, 40
@@ -263,7 +263,7 @@ entry:
   store i64 %143, i64* %3, align 8
   %144 = add i64 %109, 64
   store i64 %144, i64* %6, align 8
-  ret %struct.Memory* %call2_4005c6
+  ret %struct.Memory* %call2_4005e6
 }
 
 ; Function Attrs: norecurse nounwind

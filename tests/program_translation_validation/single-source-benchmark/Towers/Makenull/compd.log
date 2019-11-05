@@ -4,19 +4,19 @@ Disassembled output
   .globl Makenull
   .type Makenull, @function
 
-#! file-offset 0x5a0
-#! rip-offset  0x4005a0
+#! file-offset 0x5b0
+#! rip-offset  0x4005b0
 #! capacity    24 bytes
 
 # Text                          #  Line  RIP       Bytes  Opcode              Target                
-.Makenull:                      #        0x4005a0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                    #  1     0x4005a0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp               #  2     0x4005a1  3      OPC=movq_r64_r64    18446744073709551615  
-  movl %edi, -0x4(%rbp)         #  3     0x4005a4  3      OPC=movl_m32_r32    18446744073709551615  
-  movslq -0x4(%rbp), %rax       #  4     0x4005a7  4      OPC=movslq_r64_m32  18446744073709551615  
-  movl $0x0, 0x6181d0(,%rax,4)  #  5     0x4005ab  11     OPC=movl_m32_imm32  18446744073709551615  
-  popq %rbp                     #  6     0x4005b6  1      OPC=popq_r64_1      18446744073709551615  
-  retq                          #  7     0x4005b7  1      OPC=retq            18446744073709551615  
+.Makenull:                      #        0x4005b0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                    #  1     0x4005b0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp               #  2     0x4005b1  3      OPC=movq_r64_r64    18446744073709551615  
+  movl %edi, -0x4(%rbp)         #  3     0x4005b4  3      OPC=movl_m32_r32    18446744073709551615  
+  movslq -0x4(%rbp), %rax       #  4     0x4005b7  4      OPC=movslq_r64_m32  18446744073709551615  
+  movl $0x0, 0x6181d0(,%rax,4)  #  5     0x4005bb  11     OPC=movl_m32_imm32  18446744073709551615  
+  popq %rbp                     #  6     0x4005c6  1      OPC=popq_r64_1      18446744073709551615  
+  retq                          #  7     0x4005c7  1      OPC=retq            18446744073709551615  
                                                                                                     
 .size Makenull, .-Makenull
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Makenull->4195744
+.Makenull->4195760
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: Makenull Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.11user 0.02system 0:00.15elapsed 90%CPU (0avgtext+0avgdata 10092maxresident)k
+0inputs+136outputs (0major+4563minor)pagefaults 0swaps

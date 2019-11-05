@@ -109,6 +109,22 @@ declare %struct.Memory* @sub_400af0_ht_find_new_renamed_(%struct.State* noalias 
 
 declare %struct.Memory* @sub_4005f0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400850_ht_create_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400af0_ht_find_new_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400bd0_ht_find_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400900_ht_destroy_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007b0_ht_node_create_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c60_ht_hashcode_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400700_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -2929,7 +2945,7 @@ block_400779:                                     ; preds = %block_400770
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400700_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400700_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -4029,7 +4045,7 @@ block_400bd0:
   %100 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %91, i64* %100, align 8, !tbaa !2428
   %101 = load i64, i64* %PC
-  %102 = call %struct.Memory* @sub_400c60_ht_hashcode_renamed_(%struct.State* %0, i64 %101, %struct.Memory* %2)
+  %102 = call %struct.Memory* @sub_400c60_ht_hashcode_renamed__renamed_(%struct.State* %0, i64 %101, %struct.Memory* %2)
   %103 = load i64, i64* %RBP
   %104 = sub i64 %103, 28
   %105 = load i32, i32* %EAX
@@ -5146,7 +5162,7 @@ block_400cc0:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4005f0__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4005f0__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -5694,7 +5710,7 @@ block_400af0:
   %106 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %97, i64* %106, align 8, !tbaa !2428
   %107 = load i64, i64* %PC
-  %108 = call %struct.Memory* @sub_400c60_ht_hashcode_renamed_(%struct.State* %0, i64 %107, %struct.Memory* %2)
+  %108 = call %struct.Memory* @sub_400c60_ht_hashcode_renamed__renamed_(%struct.State* %0, i64 %107, %struct.Memory* %2)
   %109 = load i64, i64* %RBP
   %110 = sub i64 %109, 28
   %111 = load i32, i32* %EAX
@@ -6115,7 +6131,7 @@ block_400ba8:                                     ; preds = %block_400b76
   %418 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %409, i64* %418, align 8, !tbaa !2428
   %419 = load i64, i64* %PC
-  %420 = call %struct.Memory* @sub_4007b0_ht_node_create_renamed_(%struct.State* %0, i64 %419, %struct.Memory* %MEMORY.0)
+  %420 = call %struct.Memory* @sub_4007b0_ht_node_create_renamed__renamed_(%struct.State* %0, i64 %419, %struct.Memory* %MEMORY.0)
   %421 = load i64, i64* %RBP
   %422 = sub i64 %421, 16
   %423 = load i64, i64* %PC
@@ -6177,7 +6193,7 @@ block_400b8e:                                     ; preds = %block_400b76
   %463 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %454, i64* %463, align 8, !tbaa !2428
   %464 = load i64, i64* %PC
-  %465 = call %struct.Memory* @sub_4007b0_ht_node_create_renamed_(%struct.State* %0, i64 %464, %struct.Memory* %MEMORY.0)
+  %465 = call %struct.Memory* @sub_4007b0_ht_node_create_renamed__renamed_(%struct.State* %0, i64 %464, %struct.Memory* %MEMORY.0)
   %466 = load i64, i64* %RBP
   %467 = sub i64 %466, 40
   %468 = load i64, i64* %PC
@@ -6513,7 +6529,7 @@ block_400abe:                                     ; preds = %block_400a66
   %169 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %160, i64* %169, align 8, !tbaa !2428
   %170 = load i64, i64* %PC
-  %171 = call %struct.Memory* @sub_400900_ht_destroy_renamed_(%struct.State* %0, i64 %170, %struct.Memory* %MEMORY.3)
+  %171 = call %struct.Memory* @sub_400900_ht_destroy_renamed__renamed_(%struct.State* %0, i64 %170, %struct.Memory* %MEMORY.3)
   %172 = load i64, i64* %PC
   %173 = add i64 %172, 10
   store i64 %173, i64* %PC
@@ -6758,7 +6774,7 @@ block_400a1e:                                     ; preds = %block_400a12
   %349 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %340, i64* %349, align 8, !tbaa !2428
   %350 = load i64, i64* %PC
-  %351 = call %struct.Memory* @sub_400af0_ht_find_new_renamed_(%struct.State* %0, i64 %350, %struct.Memory* %307)
+  %351 = call %struct.Memory* @sub_400af0_ht_find_new_renamed__renamed_(%struct.State* %0, i64 %350, %struct.Memory* %307)
   %352 = load i64, i64* %RBP
   %353 = sub i64 %352, 84
   %354 = load i64, i64* %PC
@@ -6893,7 +6909,7 @@ block_4009f9:                                     ; preds = %block_4009ec, %bloc
   %452 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %443, i64* %452, align 8, !tbaa !2428
   %453 = load i64, i64* %PC
-  %454 = call %struct.Memory* @sub_400850_ht_create_renamed_(%struct.State* %0, i64 %453, %struct.Memory* %MEMORY.0)
+  %454 = call %struct.Memory* @sub_400850_ht_create_renamed__renamed_(%struct.State* %0, i64 %453, %struct.Memory* %MEMORY.0)
   %455 = load i64, i64* %RBP
   %456 = sub i64 %455, 72
   %457 = load i64, i64* %RAX
@@ -7043,7 +7059,7 @@ block_400a70:                                     ; preds = %block_400a66
   %558 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %549, i64* %558, align 8, !tbaa !2428
   %559 = load i64, i64* %PC
-  %560 = call %struct.Memory* @sub_400bd0_ht_find_renamed_(%struct.State* %0, i64 %559, %struct.Memory* %530)
+  %560 = call %struct.Memory* @sub_400bd0_ht_find_renamed__renamed_(%struct.State* %0, i64 %559, %struct.Memory* %530)
   %561 = load i64, i64* %RAX
   %562 = load i64, i64* %PC
   %563 = add i64 %562, 4

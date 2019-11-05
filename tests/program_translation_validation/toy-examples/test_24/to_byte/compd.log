@@ -4,45 +4,45 @@ Disassembled output
   .globl to_byte
   .type to_byte, @function
 
-#! file-offset 0x5d0
-#! rip-offset  0x4005d0
+#! file-offset 0x5f0
+#! rip-offset  0x4005f0
 #! capacity    106 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode              Target                
-.to_byte:                  #        0x4005d0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp               #  1     0x4005d0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp          #  2     0x4005d1  3      OPC=movq_r64_r64    18446744073709551615  
-  movb %dil, %al           #  3     0x4005d4  3      OPC=movb_r8_r8      18446744073709551615  
-  movb %al, -0x5(%rbp)     #  4     0x4005d7  3      OPC=movb_m8_r8      18446744073709551615  
-  movzbl -0x5(%rbp), %edi  #  5     0x4005da  4      OPC=movzbl_r32_m8   18446744073709551615  
-  cmpl $0x39, %edi         #  6     0x4005de  3      OPC=cmpl_r32_imm8   18446744073709551615  
-  jg .L_4005f6             #  7     0x4005e1  6      OPC=jg_label_1      4195830               
-  movzbl -0x5(%rbp), %eax  #  8     0x4005e7  4      OPC=movzbl_r32_m8   18446744073709551615  
-  subl $0x30, %eax         #  9     0x4005eb  3      OPC=subl_r32_imm8   18446744073709551615  
-  movl %eax, -0x4(%rbp)    #  10    0x4005ee  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_400635           #  11    0x4005f1  5      OPC=jmpq_label_1    4195893               
-.L_4005f6:                 #        0x4005f6  0      OPC=<label>         18446744073709551615  
-  movzbl -0x5(%rbp), %eax  #  12    0x4005f6  4      OPC=movzbl_r32_m8   18446744073709551615  
-  cmpl $0x46, %eax         #  13    0x4005fa  3      OPC=cmpl_r32_imm8   18446744073709551615  
-  jg .L_400612             #  14    0x4005fd  6      OPC=jg_label_1      4195858               
-  movzbl -0x5(%rbp), %eax  #  15    0x400603  4      OPC=movzbl_r32_m8   18446744073709551615  
-  subl $0x37, %eax         #  16    0x400607  3      OPC=subl_r32_imm8   18446744073709551615  
-  movl %eax, -0x4(%rbp)    #  17    0x40060a  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_400635           #  18    0x40060d  5      OPC=jmpq_label_1    4195893               
-.L_400612:                 #        0x400612  0      OPC=<label>         18446744073709551615  
-  movzbl -0x5(%rbp), %eax  #  19    0x400612  4      OPC=movzbl_r32_m8   18446744073709551615  
-  cmpl $0x66, %eax         #  20    0x400616  3      OPC=cmpl_r32_imm8   18446744073709551615  
-  jg .L_40062e             #  21    0x400619  6      OPC=jg_label_1      4195886               
-  movzbl -0x5(%rbp), %eax  #  22    0x40061f  4      OPC=movzbl_r32_m8   18446744073709551615  
-  subl $0x57, %eax         #  23    0x400623  3      OPC=subl_r32_imm8   18446744073709551615  
-  movl %eax, -0x4(%rbp)    #  24    0x400626  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_400635           #  25    0x400629  5      OPC=jmpq_label_1    4195893               
-.L_40062e:                 #        0x40062e  0      OPC=<label>         18446744073709551615  
-  movl $0x0, -0x4(%rbp)    #  26    0x40062e  7      OPC=movl_m32_imm32  18446744073709551615  
-.L_400635:                 #        0x400635  0      OPC=<label>         18446744073709551615  
-  movl -0x4(%rbp), %eax    #  27    0x400635  3      OPC=movl_r32_m32    18446744073709551615  
-  popq %rbp                #  28    0x400638  1      OPC=popq_r64_1      18446744073709551615  
-  retq                     #  29    0x400639  1      OPC=retq            18446744073709551615  
+.to_byte:                  #        0x4005f0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp               #  1     0x4005f0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp          #  2     0x4005f1  3      OPC=movq_r64_r64    18446744073709551615  
+  movb %dil, %al           #  3     0x4005f4  3      OPC=movb_r8_r8      18446744073709551615  
+  movb %al, -0x5(%rbp)     #  4     0x4005f7  3      OPC=movb_m8_r8      18446744073709551615  
+  movzbl -0x5(%rbp), %edi  #  5     0x4005fa  4      OPC=movzbl_r32_m8   18446744073709551615  
+  cmpl $0x39, %edi         #  6     0x4005fe  3      OPC=cmpl_r32_imm8   18446744073709551615  
+  jg .L_400616             #  7     0x400601  6      OPC=jg_label_1      4195862               
+  movzbl -0x5(%rbp), %eax  #  8     0x400607  4      OPC=movzbl_r32_m8   18446744073709551615  
+  subl $0x30, %eax         #  9     0x40060b  3      OPC=subl_r32_imm8   18446744073709551615  
+  movl %eax, -0x4(%rbp)    #  10    0x40060e  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_400655           #  11    0x400611  5      OPC=jmpq_label_1    4195925               
+.L_400616:                 #        0x400616  0      OPC=<label>         18446744073709551615  
+  movzbl -0x5(%rbp), %eax  #  12    0x400616  4      OPC=movzbl_r32_m8   18446744073709551615  
+  cmpl $0x46, %eax         #  13    0x40061a  3      OPC=cmpl_r32_imm8   18446744073709551615  
+  jg .L_400632             #  14    0x40061d  6      OPC=jg_label_1      4195890               
+  movzbl -0x5(%rbp), %eax  #  15    0x400623  4      OPC=movzbl_r32_m8   18446744073709551615  
+  subl $0x37, %eax         #  16    0x400627  3      OPC=subl_r32_imm8   18446744073709551615  
+  movl %eax, -0x4(%rbp)    #  17    0x40062a  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_400655           #  18    0x40062d  5      OPC=jmpq_label_1    4195925               
+.L_400632:                 #        0x400632  0      OPC=<label>         18446744073709551615  
+  movzbl -0x5(%rbp), %eax  #  19    0x400632  4      OPC=movzbl_r32_m8   18446744073709551615  
+  cmpl $0x66, %eax         #  20    0x400636  3      OPC=cmpl_r32_imm8   18446744073709551615  
+  jg .L_40064e             #  21    0x400639  6      OPC=jg_label_1      4195918               
+  movzbl -0x5(%rbp), %eax  #  22    0x40063f  4      OPC=movzbl_r32_m8   18446744073709551615  
+  subl $0x57, %eax         #  23    0x400643  3      OPC=subl_r32_imm8   18446744073709551615  
+  movl %eax, -0x4(%rbp)    #  24    0x400646  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_400655           #  25    0x400649  5      OPC=jmpq_label_1    4195925               
+.L_40064e:                 #        0x40064e  0      OPC=<label>         18446744073709551615  
+  movl $0x0, -0x4(%rbp)    #  26    0x40064e  7      OPC=movl_m32_imm32  18446744073709551615  
+.L_400655:                 #        0x400655  0      OPC=<label>         18446744073709551615  
+  movl -0x4(%rbp), %eax    #  27    0x400655  3      OPC=movl_r32_m32    18446744073709551615  
+  popq %rbp                #  28    0x400658  1      OPC=popq_r64_1      18446744073709551615  
+  retq                     #  29    0x400659  1      OPC=retq            18446744073709551615  
                                                                                                
 .size to_byte, .-to_byte
 Disassembling Done.
@@ -50,11 +50,11 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_400635->4195893
-.L_40062e->4195886
-.L_400612->4195858
-.to_byte->4195792
-.L_4005f6->4195830
+.L_400632->4195890
+.L_40064e->4195918
+.to_byte->4195824
+.L_400655->4195925
+.L_400616->4195862
 
 Computing Label PC values: Done.
 
@@ -86,6 +86,324 @@ declare float @llvm.trunc.f32(float)
 declare <4 x float> @llvm.trunc.v4f32(<4 x float>)
 declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1)
 
+; Buiitins  
+declare double @atan(double) local_unnamed_addr #9
+declare double @cos(double) local_unnamed_addr #9
+declare double @sin(double) local_unnamed_addr #9
+declare double @sqrt(double) local_unnamed_addr #9
+declare double @tan(double) local_unnamed_addr #9
+declare extern_weak x86_64_sysvcc i64 @abort() #18
+declare extern_weak x86_64_sysvcc i64 @abs(i64) #18
+declare extern_weak x86_64_sysvcc i64 @asin(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atof(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atoi(i64) #18
+declare extern_weak x86_64_sysvcc i64 @atol(i64) #18
+declare extern_weak x86_64_sysvcc i64 @calloc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @clock() #18
+declare extern_weak x86_64_sysvcc i64 @cosf(i64) #18
+declare extern_weak x86_64_sysvcc i64 @exit(i64) #18
+declare extern_weak x86_64_sysvcc i64 @exp(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fflush(i64) #18
+declare extern_weak x86_64_sysvcc i64 @floor(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @fputs(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @free(i64) #18
+declare extern_weak x86_64_sysvcc i64 @fwrite(i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @getchar() #18
+declare extern_weak x86_64_sysvcc i64 @gettimeofday(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_fscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_scanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @__isoc99_sscanf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @log(i64) #18
+declare extern_weak x86_64_sysvcc i64 @lrand48() #18
+declare extern_weak x86_64_sysvcc i64 @malloc(i64) #18
+declare extern_weak x86_64_sysvcc i64 @memalign(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @memcpy(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @memset(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @perror(i64) #18
+declare extern_weak x86_64_sysvcc i64 @posix_memalign(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pow(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @putchar(i64) #18
+declare extern_weak x86_64_sysvcc i64 @puts(i64) #18
+declare extern_weak x86_64_sysvcc i64 @rand() #18
+declare extern_weak x86_64_sysvcc i64 @random() #18
+declare extern_weak x86_64_sysvcc i64 @realloc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @seed48(i64) #18
+declare extern_weak x86_64_sysvcc i64 @sinf(i64) #18
+declare extern_weak x86_64_sysvcc i64 @sprintf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @srand(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcat(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcmp(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strcpy(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strdup(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strlen(i64) #18
+declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @time(i64) #18
+declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+
+declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_scanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_scanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_fflush(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @fflush to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_fscanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_fscanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext___isoc99_sscanf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @__isoc99_sscanf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memcpy(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memcpy to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_posix_memalign(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @posix_memalign to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fprintf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @fprintf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memset(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_perror(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @perror to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_floor(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @floor to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_malloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atoi(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcpy(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcpy to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_ungetc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @ungetc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pow(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pow to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_seed48(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @seed48 to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_asin(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @asin to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strdup(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @strdup to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_cosf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @cosf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_abs(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @abs to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_abort(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @abort to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_exit(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @exit to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_putchar(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @putchar to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strncmp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @strncmp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcmp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_rand(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @rand to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_calloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fwrite(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @fwrite to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_realloc(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @realloc to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_log(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @log to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+
+define internal %struct.Memory* @ext_exp(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @exp to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_sprintf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @sprintf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strcat(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcat to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_puts(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @puts to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atol(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atol to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_atof(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atof to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_clock(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @clock to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strlen(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @strlen to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_free(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_srand(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @srand to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_fputs(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_strtoll(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @strtoll to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_sinf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @sinf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_time(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @time to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_printf(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_memalign(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @memalign to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_random(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_lrand48(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @lrand48 to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_getchar(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 ()* @getchar to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @ext_atan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
+declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
+
 Decompiling Function: to_byte...
 
 
@@ -95,502 +413,572 @@ Decompiling instr:.to_byte:...
 Decompiling instr:pushq %rbp...
 Instr: pushq %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
 Running artifacts...Done.
+
 FuncCache inserted: _ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_
 FuncCache inserted: routine_pushq__rbp
+Decompiling instr:pushq %rbp Done...
 
 
 Decompiling instr:movq %rsp, %rbp...
 Instr: movq %rsp, %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rsp___rbp
+Decompiling instr:movq %rsp, %rbp Done...
 
 
 Decompiling instr:movb %dil, %al...
 Instr: movb %dil, %al
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__dil___al
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__dil___al/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWIhE2RnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__dil___al
+Decompiling instr:movb %dil, %al Done...
 
 
 Decompiling instr:movb %al, -0x5(%rbp)...
 Instr: movb %al, -0x5(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__al__MINUS0x5__rbp_
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__al__MINUS0x5__rbp_/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIhE2RnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__al__MINUS0x5__rbp_
+Decompiling instr:movb %al, -0x5(%rbp) Done...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %edi...
 Instr: movzbl -0x5(%rbp), %edi
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____edi
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____edi/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movzbl_MINUS0x5__rbp____edi
+Decompiling instr:movzbl -0x5(%rbp), %edi Done...
 
 
 Decompiling instr:cmpl $0x39, %edi...
 Instr: cmpl $0x39, %edi
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x39___edi
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x39___edi/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x39___edi
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4005fe --size 3
+Decompiling instr:cmpl $0x39, %edi Done...
 
-Decompiling instr:jg .L_4005f6...
-Instr: jg .L_4005f6
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_4005f6
-Generating artifacts...
+
+Decompiling instr:jg .L_400616...
+Instr: jg .L_400616
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400616
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_4005f6/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400616/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jg_.L_4005f6
+FuncCache inserted: routine_jg_.L_400616
+Decompiling instr:jg .L_400616 Done...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %eax...
 Instr: movzbl -0x5(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movzbl_MINUS0x5__rbp____eax
+Decompiling instr:movzbl -0x5(%rbp), %eax Done...
 
 
 Decompiling instr:subl $0x30, %eax...
 Instr: subl $0x30, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x30___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x30___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x30___eax
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40060b --size 3
+Decompiling instr:subl $0x30, %eax Done...
+
 
 Decompiling instr:movl %eax, -0x4(%rbp)...
 Instr: movl %eax, -0x4(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__eax__MINUS0x4__rbp_
+Decompiling instr:movl %eax, -0x4(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_400635...
-Instr: jmpq .L_400635
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635
-Generating artifacts...
+Decompiling instr:jmpq .L_400655...
+Instr: jmpq .L_400655
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_400635
+FuncCache inserted: routine_jmpq_.L_400655
+Decompiling instr:jmpq .L_400655 Done...
 
 
-Decompiling instr:.L_4005f6:...
+Decompiling instr:.L_400616:...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %eax...
 Instr: movzbl -0x5(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movzbl_MINUS0x5__rbp____eax
+Decompiling instr:movzbl -0x5(%rbp), %eax Done...
 
 
 Decompiling instr:cmpl $0x46, %eax...
 Instr: cmpl $0x46, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x46___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x46___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x46___eax
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40061a --size 3
+Decompiling instr:cmpl $0x46, %eax Done...
 
-Decompiling instr:jg .L_400612...
-Instr: jg .L_400612
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400612
-Generating artifacts...
+
+Decompiling instr:jg .L_400632...
+Instr: jg .L_400632
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400632
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400612/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_400632/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jg_.L_400612
+FuncCache inserted: routine_jg_.L_400632
+Decompiling instr:jg .L_400632 Done...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %eax...
 Instr: movzbl -0x5(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movzbl_MINUS0x5__rbp____eax
+Decompiling instr:movzbl -0x5(%rbp), %eax Done...
 
 
 Decompiling instr:subl $0x37, %eax...
 Instr: subl $0x37, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x37___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x37___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x37___eax
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400627 --size 3
+Decompiling instr:subl $0x37, %eax Done...
+
 
 Decompiling instr:movl %eax, -0x4(%rbp)...
 Instr: movl %eax, -0x4(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movl__eax__MINUS0x4__rbp_
+Decompiling instr:movl %eax, -0x4(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_400635...
-Instr: jmpq .L_400635
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635
-Generating artifacts...
+Decompiling instr:jmpq .L_400655...
+Instr: jmpq .L_400655
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache skipped: routine_jmpq_.L_400635
+FuncCache skipped: routine_jmpq_.L_400655
+Decompiling instr:jmpq .L_400655 Done...
 
 
-Decompiling instr:.L_400612:...
+Decompiling instr:.L_400632:...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %eax...
 Instr: movzbl -0x5(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movzbl_MINUS0x5__rbp____eax
+Decompiling instr:movzbl -0x5(%rbp), %eax Done...
 
 
 Decompiling instr:cmpl $0x66, %eax...
 Instr: cmpl $0x66, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x66___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0x66___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x66___eax
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400636 --size 3
+Decompiling instr:cmpl $0x66, %eax Done...
 
-Decompiling instr:jg .L_40062e...
-Instr: jg .L_40062e
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_40062e
-Generating artifacts...
+
+Decompiling instr:jg .L_40064e...
+Instr: jg .L_40064e
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_40064e
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_40062e/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jg_.L_40064e/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4JNLEEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jg_.L_40062e
+FuncCache inserted: routine_jg_.L_40064e
+Decompiling instr:jg .L_40064e Done...
 
 
 Decompiling instr:movzbl -0x5(%rbp), %eax...
 Instr: movzbl -0x5(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movzbl_MINUS0x5__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movzbl_MINUS0x5__rbp____eax
+Decompiling instr:movzbl -0x5(%rbp), %eax Done...
 
 
 Decompiling instr:subl $0x57, %eax...
 Instr: subl $0x57, %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x57___eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subl__0x57___eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x57___eax
 
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400643 --size 3
+Decompiling instr:subl $0x57, %eax Done...
+
 
 Decompiling instr:movl %eax, -0x4(%rbp)...
 Instr: movl %eax, -0x4(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movl__eax__MINUS0x4__rbp_
+Decompiling instr:movl %eax, -0x4(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_400635...
-Instr: jmpq .L_400635
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635
-Generating artifacts...
+Decompiling instr:jmpq .L_400655...
+Instr: jmpq .L_400655
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400635/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400655/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache skipped: routine_jmpq_.L_400635
+FuncCache skipped: routine_jmpq_.L_400655
+Decompiling instr:jmpq .L_400655 Done...
 
 
-Decompiling instr:.L_40062e:...
+Decompiling instr:.L_40064e:...
 
 
 Decompiling instr:movl $0x0, -0x4(%rbp)...
 Instr: movl $0x0, -0x4(%rbp)
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__MINUS0x4__rbp_
+Decompiling instr:movl $0x0, -0x4(%rbp) Done...
 
 
-Decompiling instr:.L_400635:...
+Decompiling instr:.L_400655:...
 
 
 Decompiling instr:movl -0x4(%rbp), %eax...
 Instr: movl -0x4(%rbp), %eax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x4__rbp____eax
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x4__rbp____eax/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl_MINUS0x4__rbp____eax
+Decompiling instr:movl -0x4(%rbp), %eax Done...
 
 
 Decompiling instr:popq %rbp...
 Instr: popq %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3POPI3RnWImEEEP6MemoryS4_R5StateT_
 FuncCache inserted: routine_popq__rbp
+Decompiling instr:popq %rbp Done...
 
 
 Decompiling instr:retq...
 Instr: retq
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq
-Generating artifacts...
+Creating artifacts...
 Already Exists
+Creating artifacts... Done.
 Running artifacts...
-Skip McSema run ...
-Skip Declutter ...
+Reusing Declutter Output...
 
 Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq/test.mod.ll
 Running artifacts...Done.
+
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3RETEP6MemoryR5State
 FuncCache inserted: routine_retq
+Decompiling instr:retq Done...
 Decompiling Function: to_byte Done.
 
 
@@ -598,3 +986,5 @@ Decompiling Function: to_byte Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.44user 0.08system 0:01.62elapsed 32%CPU (0avgtext+0avgdata 10448maxresident)k
+0inputs+232outputs (0major+12368minor)pagefaults 0swaps

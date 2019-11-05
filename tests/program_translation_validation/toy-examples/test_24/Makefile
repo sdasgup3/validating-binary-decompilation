@@ -7,7 +7,7 @@ compd_opt: to_byte read_bytes main keycomp
 match: to_byte read_bytes main keycomp
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
@@ -18,6 +18,7 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
+	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll
 	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 to_byte:

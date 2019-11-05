@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZneI14Double_pointerEiRKT_S3_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZneI14Double_pointerEiRKT_S3_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.11user 0.97system 0:02.11elapsed 98%CPU (0avgtext+0avgdata 16988maxresident)k
+0inputs+208outputs (0major+3380minor)pagefaults 0swaps

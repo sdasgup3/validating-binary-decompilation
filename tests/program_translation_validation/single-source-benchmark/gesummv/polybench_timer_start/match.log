@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_timer_start] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_timer_start] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.21user 0.29system 0:00.62elapsed 81%CPU (0avgtext+0avgdata 13328maxresident)k
+0inputs+56outputs (0major+1090minor)pagefaults 0swaps

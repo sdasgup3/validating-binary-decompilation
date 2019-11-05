@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.63user 1.12system 0:03.80elapsed 98%CPU (0avgtext+0avgdata 23944maxresident)k
+0inputs+304outputs (0major+3446minor)pagefaults 0swaps

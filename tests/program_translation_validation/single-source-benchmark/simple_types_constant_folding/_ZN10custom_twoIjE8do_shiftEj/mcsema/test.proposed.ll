@@ -446,38 +446,38 @@ entry:
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
 
-  ; Code: ._ZN10custom_twoIjE8do_shiftEj:	 RIP: 412e70	 Bytes: 0
-  ; Code: pushq %rbp	 RIP: 412e70	 Bytes: 1
-  %loadMem_412e70 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e70 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e70)
-  store %struct.Memory* %call_412e70, %struct.Memory** %MEMORY
+  ; Code: ._ZN10custom_twoIjE8do_shiftEj:	 RIP: 412e80	 Bytes: 0
+  ; Code: pushq %rbp	 RIP: 412e80	 Bytes: 1
+  %loadMem_412e80 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e80 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e80)
+  store %struct.Memory* %call_412e80, %struct.Memory** %MEMORY
 
-  ; Code: movq %rsp, %rbp	 RIP: 412e71	 Bytes: 3
-  %loadMem_412e71 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e71 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e71)
-  store %struct.Memory* %call_412e71, %struct.Memory** %MEMORY
+  ; Code: movq %rsp, %rbp	 RIP: 412e81	 Bytes: 3
+  %loadMem_412e81 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e81 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e81)
+  store %struct.Memory* %call_412e81, %struct.Memory** %MEMORY
 
-  ; Code: movl $0x2, %eax	 RIP: 412e74	 Bytes: 5
-  %loadMem_412e74 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e74 = call %struct.Memory* @routine_movl__0x2___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e74)
-  store %struct.Memory* %call_412e74, %struct.Memory** %MEMORY
+  ; Code: movl $0x2, %eax	 RIP: 412e84	 Bytes: 5
+  %loadMem_412e84 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e84 = call %struct.Memory* @routine_movl__0x2___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e84)
+  store %struct.Memory* %call_412e84, %struct.Memory** %MEMORY
 
-  ; Code: movl %edi, -0x4(%rbp)	 RIP: 412e79	 Bytes: 3
-  %loadMem_412e79 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e79 = call %struct.Memory* @routine_movl__edi__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e79)
-  store %struct.Memory* %call_412e79, %struct.Memory** %MEMORY
+  ; Code: movl %edi, -0x4(%rbp)	 RIP: 412e89	 Bytes: 3
+  %loadMem_412e89 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e89 = call %struct.Memory* @routine_movl__edi__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e89)
+  store %struct.Memory* %call_412e89, %struct.Memory** %MEMORY
 
-  ; Code: popq %rbp	 RIP: 412e7c	 Bytes: 1
-  %loadMem_412e7c = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e7c = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e7c)
-  store %struct.Memory* %call_412e7c, %struct.Memory** %MEMORY
+  ; Code: popq %rbp	 RIP: 412e8c	 Bytes: 1
+  %loadMem_412e8c = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e8c = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e8c)
+  store %struct.Memory* %call_412e8c, %struct.Memory** %MEMORY
 
-  ; Code: retq	 RIP: 412e7d	 Bytes: 1
-  %loadMem_412e7d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_412e7d = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e7d)
-  store %struct.Memory* %call_412e7d, %struct.Memory** %MEMORY
+  ; Code: retq	 RIP: 412e8d	 Bytes: 1
+  %loadMem_412e8d = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_412e8d = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_412e8d)
+  store %struct.Memory* %call_412e8d, %struct.Memory** %MEMORY
 
-  ret %struct.Memory* %call_412e7d
+  ret %struct.Memory* %call_412e8d
 }
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64) #0 {

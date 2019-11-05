@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_40cae0._ZN15loop_inner_bodyILi7EiE7do_workERiPKii(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_40caf0._ZN15loop_inner_bodyILi7EiE7do_workERiPKii(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_40c100._Z18complete_hash_funcIiET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_40c110._Z18complete_hash_funcIiET_S0_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN15loop_inner_bodyILi8EiE7do_workERiPKii(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -152,7 +152,7 @@ entry:
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %6, align 8
   store i64 %71, i64* %3, align 8
-  %call2_40ca9e = tail call %struct.Memory* @sub_40cae0._ZN15loop_inner_bodyILi7EiE7do_workERiPKii(%struct.State* %0, i64 %71, %struct.Memory* %2)
+  %call2_40caae = tail call %struct.Memory* @sub_40caf0._ZN15loop_inner_bodyILi7EiE7do_workERiPKii(%struct.State* %0, i64 %71, %struct.Memory* %2)
   %76 = load i64, i64* %RBP.i, align 8
   %77 = add i64 %76, -16
   %78 = load i64, i64* %3, align 8
@@ -227,7 +227,7 @@ entry:
   store i64 %126, i64* %129, align 8
   store i64 %128, i64* %6, align 8
   store i64 %125, i64* %3, align 8
-  %call2_40cab9 = tail call %struct.Memory* @sub_40c100._Z18complete_hash_funcIiET_S0_(%struct.State* %0, i64 %125, %struct.Memory* %call2_40ca9e)
+  %call2_40cac9 = tail call %struct.Memory* @sub_40c110._Z18complete_hash_funcIiET_S0_(%struct.State* %0, i64 %125, %struct.Memory* %call2_40caae)
   %130 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %EAX.i15 = bitcast %union.anon* %130 to i32*
   %131 = load i64, i64* %RBP.i, align 8
@@ -309,7 +309,7 @@ entry:
   store i64 %184, i64* %3, align 8
   %185 = add i64 %154, 48
   store i64 %185, i64* %6, align 8
-  ret %struct.Memory* %call2_40cab9
+  ret %struct.Memory* %call2_40cac9
 }
 
 ; Function Attrs: norecurse nounwind

@@ -1,15 +1,17 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5619194226c8]:   %95 = tail call fastcc %struct.Memory* @ext_6010c8_malloc(%struct.State* nonnull %0, %struct.Memory* %54)
-[0x5619194389e0]:   %call2_400720 = tail call %struct.Memory.32* @sub_400550.strlen_plt(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
-[0x5619194b4af0]:   %call2_400731 = tail call %struct.Memory.32* @sub_400580.malloc_plt(%struct.State.1* %0, i64 %90, %struct.Memory.32* %call2_400720)
-[0x5619194ed750]:   %call2_40075f = tail call %struct.Memory.32* @sub_400570.memset_plt(%struct.State.1* nonnull %0, i64 %144, %struct.Memory.32* %call2_400731)
-Multiple matches exist for [0x5619194a18a8]:   %322 = tail call fastcc %struct.Memory* @ext_6010b8_memset(%struct.State* nonnull %0, %struct.Memory* %95)
-[0x5619194389e0]:   %call2_400720 = tail call %struct.Memory.32* @sub_400550.strlen_plt(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
-[0x5619194b4af0]:   %call2_400731 = tail call %struct.Memory.32* @sub_400580.malloc_plt(%struct.State.1* %0, i64 %90, %struct.Memory.32* %call2_400720)
-[0x5619194ed750]:   %call2_40075f = tail call %struct.Memory.32* @sub_400570.memset_plt(%struct.State.1* nonnull %0, i64 %144, %struct.Memory.32* %call2_400731)
+Multiple matches exist for [0x55d98ec8d518]:   %95 = tail call fastcc %struct.Memory* @ext_6010c8_malloc(%struct.State* nonnull %0, %struct.Memory* %54)
+[0x55d98eca37e0]:   %55 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @strlen to i64), %struct.Memory.32* %2)
+[0x55d98ed1f920]:   %96 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %55)
+[0x55d98ed57750]:   %151 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %96)
+Multiple matches exist for [0x55d98ed0bf88]:   %322 = tail call fastcc %struct.Memory* @ext_6010b8_memset(%struct.State* nonnull %0, %struct.Memory* %95)
+[0x55d98eca37e0]:   %55 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @strlen to i64), %struct.Memory.32* %2)
+[0x55d98ed1f920]:   %96 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %55)
+[0x55d98ed57750]:   %151 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %96)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [doTrans] from ../binary/test.mcsema.opt.ll
 Extracting function [doTrans] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.08user 12.06system 0:15.15elapsed 99%CPU (0avgtext+0avgdata 13768maxresident)k
+0inputs+3584outputs (0major+2484minor)pagefaults 0swaps

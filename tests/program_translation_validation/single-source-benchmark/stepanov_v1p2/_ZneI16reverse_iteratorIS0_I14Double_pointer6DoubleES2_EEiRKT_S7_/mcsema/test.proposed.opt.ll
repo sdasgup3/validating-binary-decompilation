@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401e60._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401e70._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZneI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_EEiRKT_S7_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -133,7 +133,7 @@ entry:
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %6, align 8
   store i64 %60, i64* %3, align 8
-  %call2_401c78 = tail call %struct.Memory* @sub_401e60._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_(%struct.State* %0, i64 %60, %struct.Memory* %2)
+  %call2_401c88 = tail call %struct.Memory* @sub_401e70._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_(%struct.State* %0, i64 %60, %struct.Memory* %2)
   %65 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %EAX.i = bitcast %union.anon* %65 to i32*
   %66 = load i32, i32* %EAX.i, align 4
@@ -191,7 +191,7 @@ entry:
   store i64 %102, i64* %3, align 8
   %103 = add i64 %72, 32
   store i64 %103, i64* %6, align 8
-  ret %struct.Memory* %call2_401c78
+  ret %struct.Memory* %call2_401c88
 }
 
 ; Function Attrs: norecurse nounwind

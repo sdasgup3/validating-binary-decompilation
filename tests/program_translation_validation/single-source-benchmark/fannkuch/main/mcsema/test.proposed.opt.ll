@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G__0x400954_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G__0x400954 = global %G__0x400954_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -46,7 +48,7 @@ declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64,
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005a0.fannkuch(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4005b0.fannkuch(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -160,9 +162,9 @@ entry:
   store i64 %76, i64* %79, align 8
   store i64 %78, i64* %6, align 8
   store i64 %75, i64* %3, align 8
-  %call2_400576 = tail call %struct.Memory* @sub_4005a0.fannkuch(%struct.State* %0, i64 %75, %struct.Memory* %2)
+  %call2_400586 = tail call %struct.Memory* @sub_4005b0.fannkuch(%struct.State* %0, i64 %75, %struct.Memory* %2)
   %80 = load i64, i64* %3, align 8
-  store i64 4196676, i64* %RDI.i26, align 8
+  store i64 ptrtoint (%G__0x400954_type* @G__0x400954 to i64), i64* %RDI.i26, align 8
   %81 = load i64, i64* %RBP.i, align 8
   %82 = add i64 %81, -24
   %83 = add i64 %80, 13
@@ -186,7 +188,7 @@ entry:
   store i64 %90, i64* %93, align 8
   store i64 %92, i64* %6, align 8
   store i64 %89, i64* %3, align 8
-  %94 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_400576)
+  %94 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_400586)
   %95 = load i64, i64* %3, align 8
   store i64 0, i64* %RSI.i34, align 8
   %EAX.i = bitcast %union.anon* %87 to i32*
@@ -464,14 +466,14 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__0x400944___rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
+define %struct.Memory* @routine_movq__0x400954___rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 4196676, i64* %RDI, align 8
+  store i64 ptrtoint (%G__0x400954_type* @G__0x400954 to i64), i64* %RDI, align 8
   ret %struct.Memory* %2
 }
 

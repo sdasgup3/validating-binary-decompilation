@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZN19custom_constant_andIjE8do_shiftEj
   .type _ZN19custom_constant_andIjE8do_shiftEj, @function
 
-#! file-offset 0x12250
-#! rip-offset  0x412250
+#! file-offset 0x12260
+#! rip-offset  0x412260
 #! capacity    17 bytes
 
 # Text                                    #  Line  RIP       Bytes  Opcode             Target                
-._ZN19custom_constant_andIjE8do_shiftEj:  #        0x412250  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                              #  1     0x412250  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                         #  2     0x412251  3      OPC=movq_r64_r64   18446744073709551615  
-  movl %edi, -0x4(%rbp)                   #  3     0x412254  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %edi                   #  4     0x412257  3      OPC=movl_r32_m32   18446744073709551615  
-  andl $0xa, %edi                         #  5     0x41225a  3      OPC=andl_r32_imm8  18446744073709551615  
-  movl %edi, %eax                         #  6     0x41225d  2      OPC=movl_r32_r32   18446744073709551615  
-  popq %rbp                               #  7     0x41225f  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                    #  8     0x412260  1      OPC=retq           18446744073709551615  
+._ZN19custom_constant_andIjE8do_shiftEj:  #        0x412260  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                              #  1     0x412260  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                         #  2     0x412261  3      OPC=movq_r64_r64   18446744073709551615  
+  movl %edi, -0x4(%rbp)                   #  3     0x412264  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %edi                   #  4     0x412267  3      OPC=movl_r32_m32   18446744073709551615  
+  andl $0xa, %edi                         #  5     0x41226a  3      OPC=andl_r32_imm8  18446744073709551615  
+  movl %edi, %eax                         #  6     0x41226d  2      OPC=movl_r32_r32   18446744073709551615  
+  popq %rbp                               #  7     0x41226f  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                    #  8     0x412270  1      OPC=retq           18446744073709551615  
                                                                                                              
 .size _ZN19custom_constant_andIjE8do_shiftEj, .-_ZN19custom_constant_andIjE8do_shiftEj
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN19custom_constant_andIjE8do_shiftEj->4268624
+._ZN19custom_constant_andIjE8do_shiftEj->4268640
 
 Computing Label PC values: Done.
 
@@ -471,6 +471,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andl__0xa___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41226a --size 3
 Decompiling instr:andl $0xa, %edi Done...
 
 
@@ -534,3 +536,5 @@ Decompiling Function: _ZN19custom_constant_andIjE8do_shiftEj Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.08system 0:02.02elapsed 14%CPU (0avgtext+0avgdata 10316maxresident)k
+0inputs+152outputs (0major+5030minor)pagefaults 0swaps

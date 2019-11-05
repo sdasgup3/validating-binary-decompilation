@@ -4,17 +4,17 @@ Disassembled output
   .globl Initrand
   .type Initrand, @function
 
-#! file-offset 0x510
-#! rip-offset  0x400510
+#! file-offset 0x520
+#! rip-offset  0x400520
 #! capacity    18 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode              Target                
-.Initrand:                 #        0x400510  0      OPC=<label>         18446744073709551615  
-  pushq %rbp               #  1     0x400510  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp          #  2     0x400511  3      OPC=movq_r64_r64    18446744073709551615  
-  movq $0x12403, 0x60f238  #  3     0x400514  12     OPC=movq_m64_imm32  18446744073709551615  
-  popq %rbp                #  4     0x400520  1      OPC=popq_r64_1      18446744073709551615  
-  retq                     #  5     0x400521  1      OPC=retq            18446744073709551615  
+.Initrand:                 #        0x400520  0      OPC=<label>         18446744073709551615  
+  pushq %rbp               #  1     0x400520  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp          #  2     0x400521  3      OPC=movq_r64_r64    18446744073709551615  
+  movq $0x12403, 0x60f238  #  3     0x400524  12     OPC=movq_m64_imm32  18446744073709551615  
+  popq %rbp                #  4     0x400530  1      OPC=popq_r64_1      18446744073709551615  
+  retq                     #  5     0x400531  1      OPC=retq            18446744073709551615  
                                                                                                
 .size Initrand, .-Initrand
 Disassembling Done.
@@ -22,7 +22,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Initrand->4195600
+.Initrand->4195616
 
 Computing Label PC values: Done.
 
@@ -430,6 +430,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x12403__0x60f238
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400524 --size 12
+Global Access Mismatch: 6353464 Relocation: Address, McSema: Constant
 Decompiling instr:movq $0x12403, 0x60f238 Done...
 
 
@@ -474,3 +477,5 @@ Decompiling Function: Initrand Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.09user 0.01system 0:00.37elapsed 30%CPU (0avgtext+0avgdata 10112maxresident)k
+0inputs+120outputs (0major+3959minor)pagefaults 0swaps

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZneI16reverse_iteratorIPddEEiRKT_S5_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZneI16reverse_iteratorIPddEEiRKT_S5_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.22user 0.93system 0:02.20elapsed 98%CPU (0avgtext+0avgdata 17460maxresident)k
+0inputs+208outputs (0major+3395minor)pagefaults 0swaps

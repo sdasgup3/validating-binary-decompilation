@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN32custom_multiple_constant_divide2IlE8do_shiftEl] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN32custom_multiple_constant_divide2IlE8do_shiftEl] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.56user 0.14system 0:03.75elapsed 98%CPU (0avgtext+0avgdata 66216maxresident)k
+0inputs+72outputs (0major+12814minor)pagefaults 0swaps

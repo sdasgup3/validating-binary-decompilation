@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [initWorkList] from ../binary/test.mcsema.opt.ll
 Extracting function [initWorkList] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.92user 2.60system 0:04.54elapsed 99%CPU (0avgtext+0avgdata 14404maxresident)k
+0inputs+496outputs (0major+1369minor)pagefaults 0swaps

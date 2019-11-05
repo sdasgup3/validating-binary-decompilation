@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZltIdEbRK14PointerWrapperIT_ES4_
   .type _ZltIdEbRK14PointerWrapperIT_ES4_, @function
 
-#! file-offset 0x55f0
-#! rip-offset  0x4055f0
+#! file-offset 0x5600
+#! rip-offset  0x405600
 #! capacity    36 bytes
 
 # Text                               #  Line  RIP       Bytes  Opcode             Target                
-._ZltIdEbRK14PointerWrapperIT_ES4_:  #        0x4055f0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                         #  1     0x4055f0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                    #  2     0x4055f1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)              #  3     0x4055f4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)             #  4     0x4055f8  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi              #  5     0x4055fc  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rsi), %rsi                  #  6     0x405600  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi             #  7     0x405603  4      OPC=movq_r64_m64   18446744073709551615  
-  cmpq (%rdi), %rsi                  #  8     0x405607  3      OPC=cmpq_r64_m64   18446744073709551615  
-  setb %al                           #  9     0x40560a  3      OPC=setb_r8        18446744073709551615  
-  andb $0x1, %al                     #  10    0x40560d  2      OPC=andb_al_imm8   18446744073709551615  
-  movzbl %al, %eax                   #  11    0x40560f  3      OPC=movzbl_r32_r8  18446744073709551615  
-  popq %rbp                          #  12    0x405612  1      OPC=popq_r64_1     18446744073709551615  
-  retq                               #  13    0x405613  1      OPC=retq           18446744073709551615  
+._ZltIdEbRK14PointerWrapperIT_ES4_:  #        0x405600  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                         #  1     0x405600  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                    #  2     0x405601  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)              #  3     0x405604  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)             #  4     0x405608  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi              #  5     0x40560c  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rsi), %rsi                  #  6     0x405610  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi             #  7     0x405613  4      OPC=movq_r64_m64   18446744073709551615  
+  cmpq (%rdi), %rsi                  #  8     0x405617  3      OPC=cmpq_r64_m64   18446744073709551615  
+  setb %al                           #  9     0x40561a  3      OPC=setb_r8        18446744073709551615  
+  andb $0x1, %al                     #  10    0x40561d  2      OPC=andb_al_imm8   18446744073709551615  
+  movzbl %al, %eax                   #  11    0x40561f  3      OPC=movzbl_r32_r8  18446744073709551615  
+  popq %rbp                          #  12    0x405622  1      OPC=popq_r64_1     18446744073709551615  
+  retq                               #  13    0x405623  1      OPC=retq           18446744073709551615  
                                                                                                         
 .size _ZltIdEbRK14PointerWrapperIT_ES4_, .-_ZltIdEbRK14PointerWrapperIT_ES4_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZltIdEbRK14PointerWrapperIT_ES4_->4216304
+._ZltIdEbRK14PointerWrapperIT_ES4_->4216320
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40561d --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _ZltIdEbRK14PointerWrapperIT_ES4_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.04system 0:00.82elapsed 34%CPU (0avgtext+0avgdata 10488maxresident)k
+0inputs+168outputs (0major+6725minor)pagefaults 0swaps

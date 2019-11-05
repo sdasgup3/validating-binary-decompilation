@@ -4,33 +4,33 @@ Disassembled output
   .globl _ZN9benchmark11fill_randomIPddEEvT_S2_
   .type _ZN9benchmark11fill_randomIPddEEvT_S2_, @function
 
-#! file-offset 0x2160
-#! rip-offset  0x402160
+#! file-offset 0x2170
+#! rip-offset  0x402170
 #! capacity    69 bytes
 
 # Text                                    #  Line  RIP       Bytes  Opcode                 Target                
-._ZN9benchmark11fill_randomIPddEEvT_S2_:  #        0x402160  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                              #  1     0x402160  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp                         #  2     0x402161  3      OPC=movq_r64_r64       18446744073709551615  
-  subq $0x10, %rsp                        #  3     0x402164  4      OPC=subq_r64_imm8      18446744073709551615  
-  movq %rdi, -0x8(%rbp)                   #  4     0x402168  4      OPC=movq_m64_r64       18446744073709551615  
-  movq %rsi, -0x10(%rbp)                  #  5     0x40216c  4      OPC=movq_m64_r64       18446744073709551615  
-.L_402170:                                #        0x402170  0      OPC=<label>            18446744073709551615  
-  movq -0x8(%rbp), %rax                   #  6     0x402170  4      OPC=movq_r64_m64       18446744073709551615  
-  cmpq -0x10(%rbp), %rax                  #  7     0x402174  4      OPC=cmpq_r64_m64       18446744073709551615  
-  je .L_40219f                            #  8     0x402178  6      OPC=je_label_1         4202911               
-  callq .rand_plt                         #  9     0x40217e  5      OPC=callq_label        4196192               
-  cvtsi2sdl %eax, %xmm0                   #  10    0x402183  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
-  movq -0x8(%rbp), %rcx                   #  11    0x402187  4      OPC=movq_r64_m64       18446744073709551615  
-  movq %rcx, %rdx                         #  12    0x40218b  3      OPC=movq_r64_r64       18446744073709551615  
-  addq $0x8, %rdx                         #  13    0x40218e  4      OPC=addq_r64_imm8      18446744073709551615  
-  movq %rdx, -0x8(%rbp)                   #  14    0x402192  4      OPC=movq_m64_r64       18446744073709551615  
-  movsd %xmm0, (%rcx)                     #  15    0x402196  4      OPC=movsd_m64_xmm      18446744073709551615  
-  jmpq .L_402170                          #  16    0x40219a  5      OPC=jmpq_label_1       4202864               
-.L_40219f:                                #        0x40219f  0      OPC=<label>            18446744073709551615  
-  addq $0x10, %rsp                        #  17    0x40219f  4      OPC=addq_r64_imm8      18446744073709551615  
-  popq %rbp                               #  18    0x4021a3  1      OPC=popq_r64_1         18446744073709551615  
-  retq                                    #  19    0x4021a4  1      OPC=retq               18446744073709551615  
+._ZN9benchmark11fill_randomIPddEEvT_S2_:  #        0x402170  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                              #  1     0x402170  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp                         #  2     0x402171  3      OPC=movq_r64_r64       18446744073709551615  
+  subq $0x10, %rsp                        #  3     0x402174  4      OPC=subq_r64_imm8      18446744073709551615  
+  movq %rdi, -0x8(%rbp)                   #  4     0x402178  4      OPC=movq_m64_r64       18446744073709551615  
+  movq %rsi, -0x10(%rbp)                  #  5     0x40217c  4      OPC=movq_m64_r64       18446744073709551615  
+.L_402180:                                #        0x402180  0      OPC=<label>            18446744073709551615  
+  movq -0x8(%rbp), %rax                   #  6     0x402180  4      OPC=movq_r64_m64       18446744073709551615  
+  cmpq -0x10(%rbp), %rax                  #  7     0x402184  4      OPC=cmpq_r64_m64       18446744073709551615  
+  je .L_4021af                            #  8     0x402188  6      OPC=je_label_1         4202927               
+  callq .rand_plt                         #  9     0x40218e  5      OPC=callq_label        4196208               
+  cvtsi2sdl %eax, %xmm0                   #  10    0x402193  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
+  movq -0x8(%rbp), %rcx                   #  11    0x402197  4      OPC=movq_r64_m64       18446744073709551615  
+  movq %rcx, %rdx                         #  12    0x40219b  3      OPC=movq_r64_r64       18446744073709551615  
+  addq $0x8, %rdx                         #  13    0x40219e  4      OPC=addq_r64_imm8      18446744073709551615  
+  movq %rdx, -0x8(%rbp)                   #  14    0x4021a2  4      OPC=movq_m64_r64       18446744073709551615  
+  movsd %xmm0, (%rcx)                     #  15    0x4021a6  4      OPC=movsd_m64_xmm      18446744073709551615  
+  jmpq .L_402180                          #  16    0x4021aa  5      OPC=jmpq_label_1       4202880               
+.L_4021af:                                #        0x4021af  0      OPC=<label>            18446744073709551615  
+  addq $0x10, %rsp                        #  17    0x4021af  4      OPC=addq_r64_imm8      18446744073709551615  
+  popq %rbp                               #  18    0x4021b3  1      OPC=popq_r64_1         18446744073709551615  
+  retq                                    #  19    0x4021b4  1      OPC=retq               18446744073709551615  
                                                                                                                  
 .size _ZN9benchmark11fill_randomIPddEEvT_S2_, .-_ZN9benchmark11fill_randomIPddEEvT_S2_
 Disassembling Done.
@@ -38,9 +38,9 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_40219f->4202911
-._ZN9benchmark11fill_randomIPddEEvT_S2_->4202848
-.L_402170->4202864
+.L_4021af->4202927
+._ZN9benchmark11fill_randomIPddEEvT_S2_->4202864
+.L_402180->4202880
 
 Computing Label PC values: Done.
 
@@ -448,6 +448,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402174 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -489,7 +491,7 @@ FuncCache inserted: routine_movq__rsi__MINUS0x10__rbp_
 Decompiling instr:movq %rsi, -0x10(%rbp) Done...
 
 
-Decompiling instr:.L_402170:...
+Decompiling instr:.L_402180:...
 
 
 Decompiling instr:movq -0x8(%rbp), %rax...
@@ -530,23 +532,23 @@ FuncCache inserted: routine_cmpq_MINUS0x10__rbp____rax
 Decompiling instr:cmpq -0x10(%rbp), %rax Done...
 
 
-Decompiling instr:je .L_40219f...
-Instr: je .L_40219f
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40219f
+Decompiling instr:je .L_4021af...
+Instr: je .L_4021af
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_4021af
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40219f/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_4021af/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2JZEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_je_.L_40219f
-Decompiling instr:je .L_40219f Done...
+FuncCache inserted: routine_je_.L_4021af
+Decompiling instr:je .L_4021af Done...
 
 
 Decompiling instr:callq .rand_plt...
@@ -641,6 +643,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40219e --size 4
 Decompiling instr:addq $0x8, %rdx Done...
 
 
@@ -682,26 +686,26 @@ FuncCache inserted: routine_movsd__xmm0____rcx_
 Decompiling instr:movsd %xmm0, (%rcx) Done...
 
 
-Decompiling instr:jmpq .L_402170...
-Instr: jmpq .L_402170
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_402170
+Decompiling instr:jmpq .L_402180...
+Instr: jmpq .L_402180
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_402180
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_402170/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_402180/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_402170
-Decompiling instr:jmpq .L_402170 Done...
+FuncCache inserted: routine_jmpq_.L_402180
+Decompiling instr:jmpq .L_402180 Done...
 
 
-Decompiling instr:.L_40219f:...
+Decompiling instr:.L_4021af:...
 
 
 Decompiling instr:addq $0x10, %rsp...
@@ -720,6 +724,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4021af --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -764,3 +770,5 @@ Decompiling Function: _ZN9benchmark11fill_randomIPddEEvT_S2_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.35user 0.06system 0:01.93elapsed 21%CPU (0avgtext+0avgdata 10572maxresident)k
+0inputs+208outputs (0major+8902minor)pagefaults 0swaps

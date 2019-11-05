@@ -1,19 +1,21 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564933860278]:   %28 = load i32, i32* bitcast (%g_j_type* @g_j to i32*), align 8
-[0x564933877c18]:   %29 = load i32, i32* bitcast (%G_0x601030_type* @G_0x601030 to i32*), align 8
-[0x5649338e9708]:   %28 = load i32, i32* %27, align 4
-Multiple matches exist for [0x5649338604d0]:   %32 = icmp ult i32 %29, %28
-[0x5649338e9470]:   %33 = icmp ult i32 %30, %29
-[0x5649338ea9d0]:   %32 = icmp ult i32 %30, %28
-Multiple matches exist for [0x564933861330]:   %55 = lshr i32 %28, 31
-[0x564933879ba0]:   %55 = lshr i32 %28, 31
-[0x56493387ac10]:   %56 = lshr i32 %29, 31
-Multiple matches exist for [0x564933861430]:   %57 = xor i32 %51, %55
-[0x56493387b8c0]:   %57 = xor i32 %52, %55
-[0x56493387c330]:   %58 = xor i32 %52, %56
+Multiple matches exist for [0x55d2bf843d48]:   %28 = load i32, i32* bitcast (%g_j_type* @g_j to i32*), align 8
+[0x55d2bf84fee8]:   %29 = load i32, i32* bitcast (%G_0x601030_type* @G_0x601030 to i32*), align 8
+[0x55d2bf85b968]:   %28 = load i32, i32* %27, align 4
+Multiple matches exist for [0x55d2bf843fa0]:   %32 = icmp ult i32 %29, %28
+[0x55d2bf8cd2f0]:   %32 = icmp ult i32 %30, %28
+[0x55d2bf8ce700]:   %33 = icmp ult i32 %30, %29
+Multiple matches exist for [0x55d2bf844e00]:   %55 = lshr i32 %28, 31
+[0x55d2bf85d8f0]:   %56 = lshr i32 %29, 31
+[0x55d2bf8cf2b0]:   %55 = lshr i32 %28, 31
+Multiple matches exist for [0x55d2bf844f00]:   %57 = xor i32 %51, %55
+[0x55d2bf85e960]:   %57 = xor i32 %52, %55
+[0x55d2bf85f610]:   %58 = xor i32 %52, %56
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [doOp] from ../binary/test.mcsema.opt.ll
 Extracting function [doOp] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.27user 0.92system 0:01.20elapsed 99%CPU (0avgtext+0avgdata 12516maxresident)k
+0inputs+168outputs (0major+895minor)pagefaults 0swaps

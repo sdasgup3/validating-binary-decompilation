@@ -4,54 +4,54 @@ Disassembled output
   .globl _Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc
   .type _Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc, @function
 
-#! file-offset 0xaf60
-#! rip-offset  0x40af60
+#! file-offset 0xaf70
+#! rip-offset  0x40af70
 #! capacity    156 bytes
 
 # Text                                                                      #  Line  RIP       Bytes  Opcode              Target                
-._Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc:        #        0x40af60  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                                                #  1     0x40af60  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                                           #  2     0x40af61  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x30, %rsp                                                          #  3     0x40af64  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                     #  4     0x40af68  4      OPC=movq_m64_r64    18446744073709551615  
-  movl %esi, -0xc(%rbp)                                                     #  5     0x40af6c  3      OPC=movl_m32_r32    18446744073709551615  
-  movq %rdx, -0x18(%rbp)                                                    #  6     0x40af6f  4      OPC=movq_m64_r64    18446744073709551615  
-  callq ._Z11start_timerv                                                   #  7     0x40af73  5      OPC=callq_label     4198016               
-  movl $0x0, -0x1c(%rbp)                                                    #  8     0x40af78  7      OPC=movl_m32_imm32  18446744073709551615  
-.L_40af7f:                                                                  #        0x40af7f  0      OPC=<label>         18446744073709551615  
-  movl -0x1c(%rbp), %eax                                                    #  9     0x40af7f  3      OPC=movl_r32_m32    18446744073709551615  
-  cmpl 0x6220c0, %eax                                                       #  10    0x40af82  7      OPC=cmpl_r32_m32    18446744073709551615  
-  jge .L_40afe8                                                             #  11    0x40af89  6      OPC=jge_label_1     4239336               
-  movq $0x0, -0x28(%rbp)                                                    #  12    0x40af8f  8      OPC=movq_m64_imm32  18446744073709551615  
-  movl $0x0, -0x2c(%rbp)                                                    #  13    0x40af97  7      OPC=movl_m32_imm32  18446744073709551615  
-.L_40af9e:                                                                  #        0x40af9e  0      OPC=<label>         18446744073709551615  
-  movl -0x2c(%rbp), %eax                                                    #  14    0x40af9e  3      OPC=movl_r32_m32    18446744073709551615  
-  cmpl -0xc(%rbp), %eax                                                     #  15    0x40afa1  3      OPC=cmpl_r32_m32    18446744073709551615  
-  jge .L_40afd1                                                             #  16    0x40afa4  6      OPC=jge_label_1     4239313               
-  movq -0x8(%rbp), %rax                                                     #  17    0x40afaa  4      OPC=movq_r64_m64    18446744073709551615  
-  movslq -0x2c(%rbp), %rcx                                                  #  18    0x40afae  4      OPC=movslq_r64_m32  18446744073709551615  
-  movq (%rax,%rcx,8), %rdi                                                  #  19    0x40afb2  4      OPC=movq_r64_m64    18446744073709551615  
-  callq ._ZN33custom_greaterthanequal_constantsIlE8do_shiftEl               #  20    0x40afb6  5      OPC=callq_label     4266704               
-  addq -0x28(%rbp), %rax                                                    #  21    0x40afbb  4      OPC=addq_r64_m64    18446744073709551615  
-  movq %rax, -0x28(%rbp)                                                    #  22    0x40afbf  4      OPC=movq_m64_r64    18446744073709551615  
-  movl -0x2c(%rbp), %eax                                                    #  23    0x40afc3  3      OPC=movl_r32_m32    18446744073709551615  
-  addl $0x1, %eax                                                           #  24    0x40afc6  3      OPC=addl_r32_imm8   18446744073709551615  
-  movl %eax, -0x2c(%rbp)                                                    #  25    0x40afc9  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_40af9e                                                            #  26    0x40afcc  5      OPC=jmpq_label_1    4239262               
-.L_40afd1:                                                                  #        0x40afd1  0      OPC=<label>         18446744073709551615  
-  movq -0x28(%rbp), %rdi                                                    #  27    0x40afd1  4      OPC=movq_r64_m64    18446744073709551615  
-  callq ._Z17check_shifted_sumIl33custom_greaterthanequal_constantsIlEEvT_  #  28    0x40afd5  5      OPC=callq_label     4266720               
-  movl -0x1c(%rbp), %eax                                                    #  29    0x40afda  3      OPC=movl_r32_m32    18446744073709551615  
-  addl $0x1, %eax                                                           #  30    0x40afdd  3      OPC=addl_r32_imm8   18446744073709551615  
-  movl %eax, -0x1c(%rbp)                                                    #  31    0x40afe0  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_40af7f                                                            #  32    0x40afe3  5      OPC=jmpq_label_1    4239231               
-.L_40afe8:                                                                  #        0x40afe8  0      OPC=<label>         18446744073709551615  
-  callq ._Z5timerv                                                          #  33    0x40afe8  5      OPC=callq_label     4198048               
-  movq -0x18(%rbp), %rdi                                                    #  34    0x40afed  4      OPC=movq_r64_m64    18446744073709551615  
-  callq ._Z13record_resultdPKc                                              #  35    0x40aff1  5      OPC=callq_label     4196416               
-  addq $0x30, %rsp                                                          #  36    0x40aff6  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                                                                 #  37    0x40affa  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                                      #  38    0x40affb  1      OPC=retq            18446744073709551615  
+._Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc:        #        0x40af70  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                                                #  1     0x40af70  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                                           #  2     0x40af71  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x30, %rsp                                                          #  3     0x40af74  4      OPC=subq_r64_imm8   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                     #  4     0x40af78  4      OPC=movq_m64_r64    18446744073709551615  
+  movl %esi, -0xc(%rbp)                                                     #  5     0x40af7c  3      OPC=movl_m32_r32    18446744073709551615  
+  movq %rdx, -0x18(%rbp)                                                    #  6     0x40af7f  4      OPC=movq_m64_r64    18446744073709551615  
+  callq ._Z11start_timerv                                                   #  7     0x40af83  5      OPC=callq_label     4198032               
+  movl $0x0, -0x1c(%rbp)                                                    #  8     0x40af88  7      OPC=movl_m32_imm32  18446744073709551615  
+.L_40af8f:                                                                  #        0x40af8f  0      OPC=<label>         18446744073709551615  
+  movl -0x1c(%rbp), %eax                                                    #  9     0x40af8f  3      OPC=movl_r32_m32    18446744073709551615  
+  cmpl 0x6220c0, %eax                                                       #  10    0x40af92  7      OPC=cmpl_r32_m32    18446744073709551615  
+  jge .L_40aff8                                                             #  11    0x40af99  6      OPC=jge_label_1     4239352               
+  movq $0x0, -0x28(%rbp)                                                    #  12    0x40af9f  8      OPC=movq_m64_imm32  18446744073709551615  
+  movl $0x0, -0x2c(%rbp)                                                    #  13    0x40afa7  7      OPC=movl_m32_imm32  18446744073709551615  
+.L_40afae:                                                                  #        0x40afae  0      OPC=<label>         18446744073709551615  
+  movl -0x2c(%rbp), %eax                                                    #  14    0x40afae  3      OPC=movl_r32_m32    18446744073709551615  
+  cmpl -0xc(%rbp), %eax                                                     #  15    0x40afb1  3      OPC=cmpl_r32_m32    18446744073709551615  
+  jge .L_40afe1                                                             #  16    0x40afb4  6      OPC=jge_label_1     4239329               
+  movq -0x8(%rbp), %rax                                                     #  17    0x40afba  4      OPC=movq_r64_m64    18446744073709551615  
+  movslq -0x2c(%rbp), %rcx                                                  #  18    0x40afbe  4      OPC=movslq_r64_m32  18446744073709551615  
+  movq (%rax,%rcx,8), %rdi                                                  #  19    0x40afc2  4      OPC=movq_r64_m64    18446744073709551615  
+  callq ._ZN33custom_greaterthanequal_constantsIlE8do_shiftEl               #  20    0x40afc6  5      OPC=callq_label     4266720               
+  addq -0x28(%rbp), %rax                                                    #  21    0x40afcb  4      OPC=addq_r64_m64    18446744073709551615  
+  movq %rax, -0x28(%rbp)                                                    #  22    0x40afcf  4      OPC=movq_m64_r64    18446744073709551615  
+  movl -0x2c(%rbp), %eax                                                    #  23    0x40afd3  3      OPC=movl_r32_m32    18446744073709551615  
+  addl $0x1, %eax                                                           #  24    0x40afd6  3      OPC=addl_r32_imm8   18446744073709551615  
+  movl %eax, -0x2c(%rbp)                                                    #  25    0x40afd9  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_40afae                                                            #  26    0x40afdc  5      OPC=jmpq_label_1    4239278               
+.L_40afe1:                                                                  #        0x40afe1  0      OPC=<label>         18446744073709551615  
+  movq -0x28(%rbp), %rdi                                                    #  27    0x40afe1  4      OPC=movq_r64_m64    18446744073709551615  
+  callq ._Z17check_shifted_sumIl33custom_greaterthanequal_constantsIlEEvT_  #  28    0x40afe5  5      OPC=callq_label     4266736               
+  movl -0x1c(%rbp), %eax                                                    #  29    0x40afea  3      OPC=movl_r32_m32    18446744073709551615  
+  addl $0x1, %eax                                                           #  30    0x40afed  3      OPC=addl_r32_imm8   18446744073709551615  
+  movl %eax, -0x1c(%rbp)                                                    #  31    0x40aff0  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_40af8f                                                            #  32    0x40aff3  5      OPC=jmpq_label_1    4239247               
+.L_40aff8:                                                                  #        0x40aff8  0      OPC=<label>         18446744073709551615  
+  callq ._Z5timerv                                                          #  33    0x40aff8  5      OPC=callq_label     4198064               
+  movq -0x18(%rbp), %rdi                                                    #  34    0x40affd  4      OPC=movq_r64_m64    18446744073709551615  
+  callq ._Z13record_resultdPKc                                              #  35    0x40b001  5      OPC=callq_label     4196432               
+  addq $0x30, %rsp                                                          #  36    0x40b006  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                                                                 #  37    0x40b00a  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                                      #  38    0x40b00b  1      OPC=retq            18446744073709551615  
                                                                                                                                                 
 .size _Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc, .-_Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc
 Disassembling Done.
@@ -59,11 +59,11 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_40afd1->4239313
-.L_40af9e->4239262
-.L_40afe8->4239336
-._Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc->4239200
-.L_40af7f->4239231
+.L_40afe1->4239329
+.L_40afae->4239278
+._Z13test_constantIl33custom_greaterthanequal_constantsIlEEvPT_iPKc->4239216
+.L_40aff8->4239352
+.L_40af8f->4239247
 
 Computing Label PC values: Done.
 
@@ -471,6 +471,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x30___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40af74 --size 4
 Decompiling instr:subq $0x30, %rsp Done...
 
 
@@ -569,7 +571,7 @@ FuncCache inserted: routine_movl__0x0__MINUS0x1c__rbp_
 Decompiling instr:movl $0x0, -0x1c(%rbp) Done...
 
 
-Decompiling instr:.L_40af7f:...
+Decompiling instr:.L_40af8f:...
 
 
 Decompiling instr:movl -0x1c(%rbp), %eax...
@@ -607,26 +609,29 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl_0x6220c0___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40af92 --size 7
+Global Access Mismatch: 6430912 Relocation: Address, McSema: Constant
 Decompiling instr:cmpl 0x6220c0, %eax Done...
 
 
-Decompiling instr:jge .L_40afe8...
-Instr: jge .L_40afe8
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afe8
+Decompiling instr:jge .L_40aff8...
+Instr: jge .L_40aff8
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40aff8
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afe8/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40aff8/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNLEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jge_.L_40afe8
-Decompiling instr:jge .L_40afe8 Done...
+FuncCache inserted: routine_jge_.L_40aff8
+Decompiling instr:jge .L_40aff8 Done...
 
 
 Decompiling instr:movq $0x0, -0x28(%rbp)...
@@ -667,7 +672,7 @@ FuncCache inserted: routine_movl__0x0__MINUS0x2c__rbp_
 Decompiling instr:movl $0x0, -0x2c(%rbp) Done...
 
 
-Decompiling instr:.L_40af9e:...
+Decompiling instr:.L_40afae:...
 
 
 Decompiling instr:movl -0x2c(%rbp), %eax...
@@ -708,23 +713,23 @@ FuncCache inserted: routine_cmpl_MINUS0xc__rbp____eax
 Decompiling instr:cmpl -0xc(%rbp), %eax Done...
 
 
-Decompiling instr:jge .L_40afd1...
-Instr: jge .L_40afd1
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afd1
+Decompiling instr:jge .L_40afe1...
+Instr: jge .L_40afe1
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afe1
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afd1/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40afe1/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3JNLEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jge_.L_40afd1
-Decompiling instr:jge .L_40afd1 Done...
+FuncCache inserted: routine_jge_.L_40afe1
+Decompiling instr:jge .L_40afe1 Done...
 
 
 Decompiling instr:movq -0x8(%rbp), %rax...
@@ -876,6 +881,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40afd6 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -898,26 +905,26 @@ FuncCache inserted: routine_movl__eax__MINUS0x2c__rbp_
 Decompiling instr:movl %eax, -0x2c(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_40af9e...
-Instr: jmpq .L_40af9e
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af9e
+Decompiling instr:jmpq .L_40afae...
+Instr: jmpq .L_40afae
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40afae
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af9e/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40afae/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_40af9e
-Decompiling instr:jmpq .L_40af9e Done...
+FuncCache inserted: routine_jmpq_.L_40afae
+Decompiling instr:jmpq .L_40afae Done...
 
 
-Decompiling instr:.L_40afd1:...
+Decompiling instr:.L_40afe1:...
 
 
 Decompiling instr:movq -0x28(%rbp), %rdi...
@@ -993,6 +1000,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40afed --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1015,26 +1024,26 @@ FuncCache inserted: routine_movl__eax__MINUS0x1c__rbp_
 Decompiling instr:movl %eax, -0x1c(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_40af7f...
-Instr: jmpq .L_40af7f
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af7f
+Decompiling instr:jmpq .L_40af8f...
+Instr: jmpq .L_40af8f
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af8f
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af7f/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40af8f/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_40af7f
-Decompiling instr:jmpq .L_40af7f Done...
+FuncCache inserted: routine_jmpq_.L_40af8f
+Decompiling instr:jmpq .L_40af8f Done...
 
 
-Decompiling instr:.L_40afe8:...
+Decompiling instr:.L_40aff8:...
 
 
 Decompiling instr:callq ._Z5timerv...
@@ -1110,6 +1119,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x30___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40b006 --size 4
 Decompiling instr:addq $0x30, %rsp Done...
 
 
@@ -1154,3 +1165,5 @@ Decompiling Function: _Z13test_constantIl33custom_greaterthanequal_constantsIlEE
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.73user 0.13system 0:08.45elapsed 10%CPU (0avgtext+0avgdata 10492maxresident)k
+0inputs+320outputs (0major+15604minor)pagefaults 0swaps

@@ -4,39 +4,39 @@ Disassembled output
   .globl _ZN28custom_multiple_variable_xorItE8do_shiftEttttt
   .type _ZN28custom_multiple_variable_xorItE8do_shiftEttttt, @function
 
-#! file-offset 0x10150
-#! rip-offset  0x410150
+#! file-offset 0x10160
+#! rip-offset  0x410160
 #! capacity    84 bytes
 
 # Text                                                 #  Line  RIP       Bytes  Opcode              Target                
-._ZN28custom_multiple_variable_xorItE8do_shiftEttttt:  #        0x410150  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                           #  1     0x410150  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                      #  2     0x410151  3      OPC=movq_r64_r64    18446744073709551615  
-  pushq %rbx                                           #  3     0x410154  1      OPC=pushq_r64_1     18446744073709551615  
-  movw %r8w, %ax                                       #  4     0x410155  4      OPC=movw_r16_r16    18446744073709551615  
-  movw %cx, %r9w                                       #  5     0x410159  4      OPC=movw_r16_r16    18446744073709551615  
-  movw %dx, %r10w                                      #  6     0x41015d  4      OPC=movw_r16_r16    18446744073709551615  
-  movw %si, %r11w                                      #  7     0x410161  4      OPC=movw_r16_r16    18446744073709551615  
-  movw %di, %bx                                        #  8     0x410165  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %bx, -0xa(%rbp)                                 #  9     0x410168  4      OPC=movw_m16_r16    18446744073709551615  
-  movw %r11w, -0xc(%rbp)                               #  10    0x41016c  5      OPC=movw_m16_r16    18446744073709551615  
-  movw %r10w, -0xe(%rbp)                               #  11    0x410171  5      OPC=movw_m16_r16    18446744073709551615  
-  movw %r9w, -0x10(%rbp)                               #  12    0x410176  5      OPC=movw_m16_r16    18446744073709551615  
-  movw %ax, -0x12(%rbp)                                #  13    0x41017b  4      OPC=movw_m16_r16    18446744073709551615  
-  movzwl -0xa(%rbp), %ecx                              #  14    0x41017f  4      OPC=movzwl_r32_m16  18446744073709551615  
-  movzwl -0xc(%rbp), %edx                              #  15    0x410183  4      OPC=movzwl_r32_m16  18446744073709551615  
-  xorl %edx, %ecx                                      #  16    0x410187  2      OPC=xorl_r32_r32    18446744073709551615  
-  movzwl -0xe(%rbp), %edx                              #  17    0x410189  4      OPC=movzwl_r32_m16  18446744073709551615  
-  xorl %edx, %ecx                                      #  18    0x41018d  2      OPC=xorl_r32_r32    18446744073709551615  
-  movzwl -0x10(%rbp), %edx                             #  19    0x41018f  4      OPC=movzwl_r32_m16  18446744073709551615  
-  xorl %edx, %ecx                                      #  20    0x410193  2      OPC=xorl_r32_r32    18446744073709551615  
-  movzwl -0x12(%rbp), %edx                             #  21    0x410195  4      OPC=movzwl_r32_m16  18446744073709551615  
-  xorl %edx, %ecx                                      #  22    0x410199  2      OPC=xorl_r32_r32    18446744073709551615  
-  movw %cx, %ax                                        #  23    0x41019b  3      OPC=movw_r16_r16    18446744073709551615  
-  movzwl %ax, %eax                                     #  24    0x41019e  3      OPC=movzwl_r32_r16  18446744073709551615  
-  popq %rbx                                            #  25    0x4101a1  1      OPC=popq_r64_1      18446744073709551615  
-  popq %rbp                                            #  26    0x4101a2  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                 #  27    0x4101a3  1      OPC=retq            18446744073709551615  
+._ZN28custom_multiple_variable_xorItE8do_shiftEttttt:  #        0x410160  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                           #  1     0x410160  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                      #  2     0x410161  3      OPC=movq_r64_r64    18446744073709551615  
+  pushq %rbx                                           #  3     0x410164  1      OPC=pushq_r64_1     18446744073709551615  
+  movw %r8w, %ax                                       #  4     0x410165  4      OPC=movw_r16_r16    18446744073709551615  
+  movw %cx, %r9w                                       #  5     0x410169  4      OPC=movw_r16_r16    18446744073709551615  
+  movw %dx, %r10w                                      #  6     0x41016d  4      OPC=movw_r16_r16    18446744073709551615  
+  movw %si, %r11w                                      #  7     0x410171  4      OPC=movw_r16_r16    18446744073709551615  
+  movw %di, %bx                                        #  8     0x410175  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %bx, -0xa(%rbp)                                 #  9     0x410178  4      OPC=movw_m16_r16    18446744073709551615  
+  movw %r11w, -0xc(%rbp)                               #  10    0x41017c  5      OPC=movw_m16_r16    18446744073709551615  
+  movw %r10w, -0xe(%rbp)                               #  11    0x410181  5      OPC=movw_m16_r16    18446744073709551615  
+  movw %r9w, -0x10(%rbp)                               #  12    0x410186  5      OPC=movw_m16_r16    18446744073709551615  
+  movw %ax, -0x12(%rbp)                                #  13    0x41018b  4      OPC=movw_m16_r16    18446744073709551615  
+  movzwl -0xa(%rbp), %ecx                              #  14    0x41018f  4      OPC=movzwl_r32_m16  18446744073709551615  
+  movzwl -0xc(%rbp), %edx                              #  15    0x410193  4      OPC=movzwl_r32_m16  18446744073709551615  
+  xorl %edx, %ecx                                      #  16    0x410197  2      OPC=xorl_r32_r32    18446744073709551615  
+  movzwl -0xe(%rbp), %edx                              #  17    0x410199  4      OPC=movzwl_r32_m16  18446744073709551615  
+  xorl %edx, %ecx                                      #  18    0x41019d  2      OPC=xorl_r32_r32    18446744073709551615  
+  movzwl -0x10(%rbp), %edx                             #  19    0x41019f  4      OPC=movzwl_r32_m16  18446744073709551615  
+  xorl %edx, %ecx                                      #  20    0x4101a3  2      OPC=xorl_r32_r32    18446744073709551615  
+  movzwl -0x12(%rbp), %edx                             #  21    0x4101a5  4      OPC=movzwl_r32_m16  18446744073709551615  
+  xorl %edx, %ecx                                      #  22    0x4101a9  2      OPC=xorl_r32_r32    18446744073709551615  
+  movw %cx, %ax                                        #  23    0x4101ab  3      OPC=movw_r16_r16    18446744073709551615  
+  movzwl %ax, %eax                                     #  24    0x4101ae  3      OPC=movzwl_r32_r16  18446744073709551615  
+  popq %rbx                                            #  25    0x4101b1  1      OPC=popq_r64_1      18446744073709551615  
+  popq %rbp                                            #  26    0x4101b2  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                 #  27    0x4101b3  1      OPC=retq            18446744073709551615  
                                                                                                                            
 .size _ZN28custom_multiple_variable_xorItE8do_shiftEttttt, .-_ZN28custom_multiple_variable_xorItE8do_shiftEttttt
 Disassembling Done.
@@ -44,7 +44,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN28custom_multiple_variable_xorItE8do_shiftEttttt->4260176
+._ZN28custom_multiple_variable_xorItE8do_shiftEttttt->4260192
 
 Computing Label PC values: Done.
 
@@ -912,3 +912,5 @@ Decompiling Function: _ZN28custom_multiple_variable_xorItE8do_shiftEttttt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.44user 0.09system 0:00.62elapsed 84%CPU (0avgtext+0avgdata 10228maxresident)k
+0inputs+224outputs (0major+11360minor)pagefaults 0swaps

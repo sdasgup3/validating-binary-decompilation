@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G__0x6337c0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,13 +39,14 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G__0x6337c0 = global %G__0x6337c0_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_404930._ZN15goto_loop_testsILi0EdE7do_testEPKdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404940._ZN15goto_loop_testsILi0EdE7do_testEPKdPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404940._Z28test_goto_loop_unroll_factorILi1EdEvPKT0_iPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404950._Z28test_goto_loop_unroll_factorILi1EdEvPKT0_iPKc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN15goto_loop_testsILi1EdE7do_testEPKdPKc(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -135,11 +137,11 @@ entry:
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %6, align 8
   store i64 %60, i64* %3, align 8
-  %call2_404808 = tail call %struct.Memory* @sub_404930._ZN15goto_loop_testsILi0EdE7do_testEPKdPKc(%struct.State* %0, i64 %60, %struct.Memory* %2)
+  %call2_404818 = tail call %struct.Memory* @sub_404940._ZN15goto_loop_testsILi0EdE7do_testEPKdPKc(%struct.State* %0, i64 %60, %struct.Memory* %2)
   %65 = load i64, i64* %3, align 8
   store i64 8000, i64* %RSI.i18, align 8
   %RDX.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  store i64 6502336, i64* %RDX.i, align 8
+  store i64 ptrtoint (%G__0x6337c0_type* @G__0x6337c0 to i64), i64* %RDX.i, align 8
   %66 = load i64, i64* %RBP.i, align 8
   %67 = add i64 %66, -8
   %68 = add i64 %65, 19
@@ -155,7 +157,7 @@ entry:
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %6, align 8
   store i64 %71, i64* %3, align 8
-  %call2_404820 = tail call %struct.Memory* @sub_404940._Z28test_goto_loop_unroll_factorILi1EdEvPKT0_iPKc(%struct.State* %0, i64 %71, %struct.Memory* %call2_404808)
+  %call2_404830 = tail call %struct.Memory* @sub_404950._Z28test_goto_loop_unroll_factorILi1EdEvPKT0_iPKc(%struct.State* %0, i64 %71, %struct.Memory* %call2_404818)
   %76 = load i64, i64* %6, align 8
   %77 = load i64, i64* %3, align 8
   %78 = add i64 %76, 16
@@ -202,7 +204,7 @@ entry:
   store i64 %107, i64* %3, align 8
   %108 = add i64 %76, 32
   store i64 %108, i64* %6, align 8
-  ret %struct.Memory* %call2_404820
+  ret %struct.Memory* %call2_404830
 }
 
 ; Function Attrs: norecurse nounwind
@@ -390,7 +392,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 6502336, i64* %RDX, align 8
+  store i64 ptrtoint (%G__0x6337c0_type* @G__0x6337c0 to i64), i64* %RDX, align 8
   ret %struct.Memory* %2
 }
 

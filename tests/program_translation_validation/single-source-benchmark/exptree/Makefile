@@ -7,7 +7,7 @@ compd_opt: newWorkList newCombList initWorkList initCombList saveSolution calcul
 match: newWorkList newCombList initWorkList initCombList saveSolution calculate printSolution printList recSearch doSearch getInput search main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

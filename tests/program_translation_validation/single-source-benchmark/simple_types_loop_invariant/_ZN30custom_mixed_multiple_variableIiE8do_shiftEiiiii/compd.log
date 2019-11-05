@@ -4,30 +4,30 @@ Disassembled output
   .globl _ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii
   .type _ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii, @function
 
-#! file-offset 0xfa80
-#! rip-offset  0x40fa80
+#! file-offset 0xfa90
+#! rip-offset  0x40fa90
 #! capacity    45 bytes
 
 # Text                                                   #  Line  RIP       Bytes  Opcode             Target                
-._ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii:  #        0x40fa80  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                             #  1     0x40fa80  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                        #  2     0x40fa81  3      OPC=movq_r64_r64   18446744073709551615  
-  movl %edi, -0x4(%rbp)                                  #  3     0x40fa84  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %esi, -0x8(%rbp)                                  #  4     0x40fa87  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %edx, -0xc(%rbp)                                  #  5     0x40fa8a  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %ecx, -0x10(%rbp)                                 #  6     0x40fa8d  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %r8d, -0x14(%rbp)                                 #  7     0x40fa90  4      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %ecx                                  #  8     0x40fa94  3      OPC=movl_r32_m32   18446744073709551615  
-  addl -0x8(%rbp), %ecx                                  #  9     0x40fa97  3      OPC=addl_r32_m32   18446744073709551615  
-  movl -0xc(%rbp), %edx                                  #  10    0x40fa9a  3      OPC=movl_r32_m32   18446744073709551615  
-  imull -0x10(%rbp), %edx                                #  11    0x40fa9d  4      OPC=imull_r32_m32  18446744073709551615  
-  movl %edx, %eax                                        #  12    0x40faa1  2      OPC=movl_r32_r32   18446744073709551615  
-  cltd                                                   #  13    0x40faa3  1      OPC=cltd           18446744073709551615  
-  idivl -0x14(%rbp)                                      #  14    0x40faa4  3      OPC=idivl_m32      18446744073709551615  
-  subl %eax, %ecx                                        #  15    0x40faa7  2      OPC=subl_r32_r32   18446744073709551615  
-  movl %ecx, %eax                                        #  16    0x40faa9  2      OPC=movl_r32_r32   18446744073709551615  
-  popq %rbp                                              #  17    0x40faab  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                   #  18    0x40faac  1      OPC=retq           18446744073709551615  
+._ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii:  #        0x40fa90  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                             #  1     0x40fa90  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                        #  2     0x40fa91  3      OPC=movq_r64_r64   18446744073709551615  
+  movl %edi, -0x4(%rbp)                                  #  3     0x40fa94  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %esi, -0x8(%rbp)                                  #  4     0x40fa97  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %edx, -0xc(%rbp)                                  #  5     0x40fa9a  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %ecx, -0x10(%rbp)                                 #  6     0x40fa9d  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %r8d, -0x14(%rbp)                                 #  7     0x40faa0  4      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %ecx                                  #  8     0x40faa4  3      OPC=movl_r32_m32   18446744073709551615  
+  addl -0x8(%rbp), %ecx                                  #  9     0x40faa7  3      OPC=addl_r32_m32   18446744073709551615  
+  movl -0xc(%rbp), %edx                                  #  10    0x40faaa  3      OPC=movl_r32_m32   18446744073709551615  
+  imull -0x10(%rbp), %edx                                #  11    0x40faad  4      OPC=imull_r32_m32  18446744073709551615  
+  movl %edx, %eax                                        #  12    0x40fab1  2      OPC=movl_r32_r32   18446744073709551615  
+  cltd                                                   #  13    0x40fab3  1      OPC=cltd           18446744073709551615  
+  idivl -0x14(%rbp)                                      #  14    0x40fab4  3      OPC=idivl_m32      18446744073709551615  
+  subl %eax, %ecx                                        #  15    0x40fab7  2      OPC=subl_r32_r32   18446744073709551615  
+  movl %ecx, %eax                                        #  16    0x40fab9  2      OPC=movl_r32_r32   18446744073709551615  
+  popq %rbp                                              #  17    0x40fabb  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                   #  18    0x40fabc  1      OPC=retq           18446744073709551615  
                                                                                                                             
 .size _ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii, .-_ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii
 Disassembling Done.
@@ -35,7 +35,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii->4258432
+._ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii->4258448
 
 Computing Label PC values: Done.
 
@@ -733,3 +733,5 @@ Decompiling Function: _ZN30custom_mixed_multiple_variableIiE8do_shiftEiiiii Done
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.32user 0.09system 0:00.44elapsed 93%CPU (0avgtext+0avgdata 10280maxresident)k
+0inputs+200outputs (0major+8370minor)pagefaults 0swaps

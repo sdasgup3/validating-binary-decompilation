@@ -1,13 +1,15 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x555f4a85b4f8]:   %.pre9 = load i64, i64* %RBP, align 8
-[0x555f4a9e3dc8]:   %56 = load i64, i64* %RBP.i, align 8
-[0x555f4a9fcfa8]:   %.pre10 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x555f4a908678]:   %307 = tail call fastcc %struct.Memory* @ext_604a18_strcmp(%struct.State* nonnull %0, %struct.Memory* %2)
-[0x555f4a9f5980]:   %300 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory.31* %2)
-[0x555f4a9fed20]:   %call2_40097e = tail call %struct.Memory.31* @sub_400b90.Func1(%struct.State.0* nonnull %0, i64 %134, %struct.Memory.31* %2)
+Multiple matches exist for [0x55824ba2a508]:   %.pre9 = load i64, i64* %RBP, align 8
+[0x55824bbb2648]:   %56 = load i64, i64* %RBP.i, align 8
+[0x55824bbcb958]:   %.pre10 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55824bad7678]:   %307 = tail call fastcc %struct.Memory* @ext_604a18_strcmp(%struct.State* nonnull %0, %struct.Memory* %2)
+[0x55824bbc4920]:   %300 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory.31* %2)
+[0x55824bbcdcc0]:   %call2_40098e = tail call %struct.Memory.31* @sub_400ba0.Func1(%struct.State.0* nonnull %0, i64 %134, %struct.Memory.31* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Func2] from ../binary/test.mcsema.opt.ll
 Extracting function [Func2] from mcsema/test.proposed.opt.ll
 Matcher Done...
+13.51user 21.13system 0:34.72elapsed 99%CPU (0avgtext+0avgdata 14308maxresident)k
+0inputs+3608outputs (0major+2346minor)pagefaults 0swaps

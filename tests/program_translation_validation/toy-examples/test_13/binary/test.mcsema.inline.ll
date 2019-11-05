@@ -91,6 +91,26 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_400880_checkFn_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007f0_doWork_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008f0_doStuff_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400580_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004c8__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_checkFn_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400580_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008f0_doStuff_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007f0_doWork_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004c8__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1862,7 +1882,7 @@ block_400845:                                     ; preds = %block_400823
   %286 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %277, i64* %286, align 8, !tbaa !2428
   %287 = load i64, i64* %PC
-  %288 = call %struct.Memory* @sub_4008f0_doStuff(%struct.State* %0, i64 %287, %struct.Memory* %392)
+  %288 = call %struct.Memory* @sub_4008f0_doStuff_renamed__renamed_(%struct.State* %0, i64 %287, %struct.Memory* %392)
   br label %block_400852
 
 block_400865:                                     ; preds = %block_400817
@@ -2004,7 +2024,7 @@ block_400823:                                     ; preds = %block_400817
   %390 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %381, i64* %390, align 8, !tbaa !2428
   %391 = load i64, i64* %PC
-  %392 = call %struct.Memory* @sub_400880_checkFn(%struct.State* %0, i64 %391, %struct.Memory* %MEMORY.1)
+  %392 = call %struct.Memory* @sub_400880_checkFn_renamed__renamed_(%struct.State* %0, i64 %391, %struct.Memory* %MEMORY.1)
   %393 = load i32, i32* %EAX
   %394 = zext i32 %393 to i64
   %395 = load i64, i64* %PC
@@ -3383,7 +3403,7 @@ block_400630:
   %583 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %574, i64* %583, align 8, !tbaa !2428
   %584 = load i64, i64* %PC
-  %585 = call %struct.Memory* @sub_4007f0_doWork(%struct.State* %0, i64 %584, %struct.Memory* %559)
+  %585 = call %struct.Memory* @sub_4007f0_doWork_renamed__renamed_(%struct.State* %0, i64 %584, %struct.Memory* %559)
   %586 = load i64, i64* %PC
   %587 = add i64 %586, 10
   store i64 %587, i64* %PC
@@ -4528,7 +4548,7 @@ block_4005f9:                                     ; preds = %block_4005f0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400580_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400580_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -4896,7 +4916,7 @@ block_400970:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4004c8__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4004c8__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC

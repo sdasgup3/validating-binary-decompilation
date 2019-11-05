@@ -4,27 +4,27 @@ Disassembled output
   .globl Proc4
   .type Proc4, @function
 
-#! file-offset 0x9e0
-#! rip-offset  0x4009e0
+#! file-offset 0x9f0
+#! rip-offset  0x4009f0
 #! capacity    53 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode             Target                
-.Proc4:                  #        0x4009e0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp             #  1     0x4009e0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4009e1  3      OPC=movq_r64_r64   18446744073709551615  
-  movsbl 0x602070, %eax  #  3     0x4009e4  8      OPC=movsbl_r32_m8  18446744073709551615  
-  cmpl $0x41, %eax       #  4     0x4009ec  3      OPC=cmpl_r32_imm8  18446744073709551615  
-  sete %cl               #  5     0x4009ef  3      OPC=sete_r8        18446744073709551615  
-  andb $0x1, %cl         #  6     0x4009f2  3      OPC=andb_r8_imm8   18446744073709551615  
-  movzbl %cl, %eax       #  7     0x4009f5  3      OPC=movzbl_r32_r8  18446744073709551615  
-  movl %eax, -0x8(%rbp)  #  8     0x4009f8  3      OPC=movl_m32_r32   18446744073709551615  
-  movl 0x607370, %eax    #  9     0x4009fb  7      OPC=movl_r32_m32   18446744073709551615  
-  orl -0x8(%rbp), %eax   #  10    0x400a02  3      OPC=orl_r32_m32    18446744073709551615  
-  movl %eax, -0x8(%rbp)  #  11    0x400a05  3      OPC=movl_m32_r32   18446744073709551615  
-  movb $0x42, 0x607374   #  12    0x400a08  8      OPC=movb_m8_imm8   18446744073709551615  
-  movl -0x4(%rbp), %eax  #  13    0x400a10  3      OPC=movl_r32_m32   18446744073709551615  
-  popq %rbp              #  14    0x400a13  1      OPC=popq_r64_1     18446744073709551615  
-  retq                   #  15    0x400a14  1      OPC=retq           18446744073709551615  
+.Proc4:                  #        0x4009f0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp             #  1     0x4009f0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp        #  2     0x4009f1  3      OPC=movq_r64_r64   18446744073709551615  
+  movsbl 0x602070, %eax  #  3     0x4009f4  8      OPC=movsbl_r32_m8  18446744073709551615  
+  cmpl $0x41, %eax       #  4     0x4009fc  3      OPC=cmpl_r32_imm8  18446744073709551615  
+  sete %cl               #  5     0x4009ff  3      OPC=sete_r8        18446744073709551615  
+  andb $0x1, %cl         #  6     0x400a02  3      OPC=andb_r8_imm8   18446744073709551615  
+  movzbl %cl, %eax       #  7     0x400a05  3      OPC=movzbl_r32_r8  18446744073709551615  
+  movl %eax, -0x8(%rbp)  #  8     0x400a08  3      OPC=movl_m32_r32   18446744073709551615  
+  movl 0x607370, %eax    #  9     0x400a0b  7      OPC=movl_r32_m32   18446744073709551615  
+  orl -0x8(%rbp), %eax   #  10    0x400a12  3      OPC=orl_r32_m32    18446744073709551615  
+  movl %eax, -0x8(%rbp)  #  11    0x400a15  3      OPC=movl_m32_r32   18446744073709551615  
+  movb $0x42, 0x607374   #  12    0x400a18  8      OPC=movb_m8_imm8   18446744073709551615  
+  movl -0x4(%rbp), %eax  #  13    0x400a20  3      OPC=movl_r32_m32   18446744073709551615  
+  popq %rbp              #  14    0x400a23  1      OPC=popq_r64_1     18446744073709551615  
+  retq                   #  15    0x400a24  1      OPC=retq           18446744073709551615  
                                                                                             
 .size Proc4, .-Proc4
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Proc4->4196832
+.Proc4->4196848
 
 Computing Label PC values: Done.
 
@@ -440,6 +440,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIhEiEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movsbl_0x602070___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4009f4 --size 8
+Global Access Mismatch: 6299760 Relocation: Address, McSema: Constant
 Decompiling instr:movsbl 0x602070, %eax Done...
 
 
@@ -459,6 +462,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x41___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4009fc --size 3
 Decompiling instr:cmpl $0x41, %eax Done...
 
 
@@ -497,6 +502,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a02 --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -554,6 +561,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl_0x607370___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a0b --size 7
+Global Access Mismatch: 6321008 Relocation: Address, McSema: Constant
 Decompiling instr:movl 0x607370, %eax Done...
 
 
@@ -611,6 +621,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__0x42__0x607374
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a18 --size 8
+Global Access Mismatch: 6321012 Relocation: Address, McSema: Constant
 Decompiling instr:movb $0x42, 0x607374 Done...
 
 
@@ -674,3 +687,5 @@ Decompiling Function: Proc4 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.04system 0:01.51elapsed 18%CPU (0avgtext+0avgdata 10448maxresident)k
+0inputs+184outputs (0major+7564minor)pagefaults 0swaps

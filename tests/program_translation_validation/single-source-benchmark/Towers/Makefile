@@ -7,7 +7,7 @@ compd_opt: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towe
 match: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towers main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

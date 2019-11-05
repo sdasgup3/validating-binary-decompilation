@@ -4,19 +4,19 @@ Disassembled output
   .globl __cxx_global_var_init_19
   .type __cxx_global_var_init_19, @function
 
-#! file-offset 0x9f0
-#! rip-offset  0x4009f0
+#! file-offset 0xa00
+#! rip-offset  0x400a00
 #! capacity    29 bytes
 
 # Text                                                  #  Line  RIP       Bytes  Opcode              Target                
-.__cxx_global_var_init_19:                              #        0x4009f0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                            #  1     0x4009f0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                       #  2     0x4009f1  3      OPC=movq_r64_r64    18446744073709551615  
-  movq $0x620858, %rdi                                  #  3     0x4009f4  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq 0x6090c0, %rsi                                   #  4     0x4009fe  8      OPC=movq_r64_m64    18446744073709551615  
-  callq ._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_  #  5     0x400a06  5      OPC=callq_label     4201456               
-  popq %rbp                                             #  6     0x400a0b  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                  #  7     0x400a0c  1      OPC=retq            18446744073709551615  
+.__cxx_global_var_init_19:                              #        0x400a00  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                            #  1     0x400a00  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                       #  2     0x400a01  3      OPC=movq_r64_r64    18446744073709551615  
+  movq $0x620858, %rdi                                  #  3     0x400a04  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq 0x6090c0, %rsi                                   #  4     0x400a0e  8      OPC=movq_r64_m64    18446744073709551615  
+  callq ._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_  #  5     0x400a16  5      OPC=callq_label     4201472               
+  popq %rbp                                             #  6     0x400a1b  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                  #  7     0x400a1c  1      OPC=retq            18446744073709551615  
                                                                                                                             
 .size __cxx_global_var_init_19, .-__cxx_global_var_init_19
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.__cxx_global_var_init_19->4196848
+.__cxx_global_var_init_19->4196864
 
 Computing Label PC values: Done.
 
@@ -432,6 +432,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x620858___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a04 --size 10
+Global Access Mismatch: 6424664 Relocation: Address, McSema: Constant
 Decompiling instr:movq $0x620858, %rdi Done...
 
 
@@ -452,6 +455,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x6090c0___rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a0e --size 8
+Global Access Mismatch: 6328512 Relocation: Address, McSema: Constant
 Decompiling instr:movq 0x6090c0, %rsi Done...
 
 
@@ -515,3 +521,5 @@ Decompiling Function: __cxx_global_var_init.19 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.14user 0.04system 0:00.69elapsed 28%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+136outputs (0major+4734minor)pagefaults 0swaps

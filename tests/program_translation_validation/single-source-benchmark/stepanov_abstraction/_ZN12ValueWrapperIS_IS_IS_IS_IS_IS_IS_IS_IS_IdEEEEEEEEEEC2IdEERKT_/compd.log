@@ -4,23 +4,23 @@ Disassembled output
   .globl _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_
   .type _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_, @function
 
-#! file-offset 0x1d80
-#! rip-offset  0x401d80
+#! file-offset 0x1d90
+#! rip-offset  0x401d90
 #! capacity    35 bytes
 
 # Text                                                                   #  Line  RIP       Bytes  Opcode             Target                
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_:     #        0x401d80  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                             #  1     0x401d80  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                                        #  2     0x401d81  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                                                       #  3     0x401d84  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                  #  4     0x401d88  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                                 #  5     0x401d8c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                                                  #  6     0x401d90  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rsi                                                 #  7     0x401d94  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT_  #  8     0x401d98  5      OPC=callq_label    4220224               
-  addq $0x10, %rsp                                                       #  9     0x401d9d  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                                              #  10    0x401da1  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                                   #  11    0x401da2  1      OPC=retq           18446744073709551615  
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_:     #        0x401d90  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                             #  1     0x401d90  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                                        #  2     0x401d91  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                                                       #  3     0x401d94  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                  #  4     0x401d98  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                                 #  5     0x401d9c  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                                                  #  6     0x401da0  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rsi                                                 #  7     0x401da4  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT_  #  8     0x401da8  5      OPC=callq_label    4220240               
+  addq $0x10, %rsp                                                       #  9     0x401dad  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                                              #  10    0x401db1  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                                   #  11    0x401db2  1      OPC=retq           18446744073709551615  
                                                                                                                                             
 .size _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_, .-_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_->4201856
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT_->4201872
 
 Computing Label PC values: Done.
 
@@ -436,6 +436,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401d94 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -550,6 +552,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401dad --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -594,3 +598,5 @@ Decompiling Function: _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.04system 0:01.27elapsed 19%CPU (0avgtext+0avgdata 10408maxresident)k
+0inputs+160outputs (0major+6065minor)pagefaults 0swaps

@@ -4,27 +4,27 @@ Disassembled output
   .globl init_NthToggle
   .type init_NthToggle, @function
 
-#! file-offset 0x700
-#! rip-offset  0x400700
+#! file-offset 0x710
+#! rip-offset  0x400710
 #! capacity    56 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode              Target                
-.init_NthToggle:         #        0x400700  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x400700  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400701  3      OPC=movq_r64_r64    18446744073709551615  
-  movq $0x4006b0, %rax   #  3     0x400704  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  4     0x40070e  4      OPC=movq_m64_r64    18446744073709551615  
-  movl %esi, -0xc(%rbp)  #  5     0x400712  3      OPC=movl_m32_r32    18446744073709551615  
-  movl -0xc(%rbp), %esi  #  6     0x400715  3      OPC=movl_r32_m32    18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  7     0x400718  4      OPC=movq_r64_m64    18446744073709551615  
-  movl %esi, 0x18(%rdi)  #  8     0x40071c  3      OPC=movl_m32_r32    18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  9     0x40071f  4      OPC=movq_r64_m64    18446744073709551615  
-  movl $0x0, 0x1c(%rdi)  #  10    0x400723  7      OPC=movl_m32_imm32  18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  11    0x40072a  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rax, 0x10(%rdi)  #  12    0x40072e  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rax  #  13    0x400732  4      OPC=movq_r64_m64    18446744073709551615  
-  popq %rbp              #  14    0x400736  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  15    0x400737  1      OPC=retq            18446744073709551615  
+.init_NthToggle:         #        0x400710  0      OPC=<label>         18446744073709551615  
+  pushq %rbp             #  1     0x400710  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp        #  2     0x400711  3      OPC=movq_r64_r64    18446744073709551615  
+  movq $0x4006c0, %rax   #  3     0x400714  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)  #  4     0x40071e  4      OPC=movq_m64_r64    18446744073709551615  
+  movl %esi, -0xc(%rbp)  #  5     0x400722  3      OPC=movl_m32_r32    18446744073709551615  
+  movl -0xc(%rbp), %esi  #  6     0x400725  3      OPC=movl_r32_m32    18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  7     0x400728  4      OPC=movq_r64_m64    18446744073709551615  
+  movl %esi, 0x18(%rdi)  #  8     0x40072c  3      OPC=movl_m32_r32    18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  9     0x40072f  4      OPC=movq_r64_m64    18446744073709551615  
+  movl $0x0, 0x1c(%rdi)  #  10    0x400733  7      OPC=movl_m32_imm32  18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  11    0x40073a  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rax, 0x10(%rdi)  #  12    0x40073e  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rax  #  13    0x400742  4      OPC=movq_r64_m64    18446744073709551615  
+  popq %rbp              #  14    0x400746  1      OPC=popq_r64_1      18446744073709551615  
+  retq                   #  15    0x400747  1      OPC=retq            18446744073709551615  
                                                                                              
 .size init_NthToggle, .-init_NthToggle
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.init_NthToggle->4196096
+.init_NthToggle->4196112
 
 Computing Label PC values: Done.
 
@@ -424,23 +424,26 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:movq %rsp, %rbp Done...
 
 
-Decompiling instr:movq $0x4006b0, %rax...
-Instr: movq $0x4006b0, %rax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4006b0___rax
+Decompiling instr:movq $0x4006c0, %rax...
+Instr: movq $0x4006c0, %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4006c0___rax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4006b0___rax/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4006c0___rax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x4006b0___rax
-Decompiling instr:movq $0x4006b0, %rax Done...
+FuncCache inserted: routine_movq__0x4006c0___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400714 --size 10
+Global Access Mismatch: 4196032 Relocation: Address, McSema: Constant
+Decompiling instr:movq $0x4006c0, %rax Done...
 
 
 Decompiling instr:movq %rdi, -0x8(%rbp)...
@@ -674,3 +677,5 @@ Decompiling Function: init_NthToggle Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.05system 0:00.52elapsed 50%CPU (0avgtext+0avgdata 10304maxresident)k
+0inputs+168outputs (0major+7382minor)pagefaults 0swaps

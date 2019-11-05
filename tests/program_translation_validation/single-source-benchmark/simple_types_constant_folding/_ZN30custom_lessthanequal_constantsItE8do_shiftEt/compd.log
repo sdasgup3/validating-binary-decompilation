@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN30custom_lessthanequal_constantsItE8do_shiftEt
   .type _ZN30custom_lessthanequal_constantsItE8do_shiftEt, @function
 
-#! file-offset 0x14a50
-#! rip-offset  0x414a50
+#! file-offset 0x14a60
+#! rip-offset  0x414a60
 #! capacity    21 bytes
 
 # Text                                               #  Line  RIP       Bytes  Opcode              Target                
-._ZN30custom_lessthanequal_constantsItE8do_shiftEt:  #        0x414a50  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                         #  1     0x414a50  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                    #  2     0x414a51  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %di, %ax                                      #  3     0x414a54  3      OPC=movw_r16_r16    18446744073709551615  
-  xorl %edi, %edi                                    #  4     0x414a57  2      OPC=xorl_r32_r32    18446744073709551615  
-  movw %di, %cx                                      #  5     0x414a59  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %ax, -0x2(%rbp)                               #  6     0x414a5c  4      OPC=movw_m16_r16    18446744073709551615  
-  movzwl %cx, %eax                                   #  7     0x414a60  3      OPC=movzwl_r32_r16  18446744073709551615  
-  popq %rbp                                          #  8     0x414a63  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                               #  9     0x414a64  1      OPC=retq            18446744073709551615  
+._ZN30custom_lessthanequal_constantsItE8do_shiftEt:  #        0x414a60  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                         #  1     0x414a60  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                    #  2     0x414a61  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %di, %ax                                      #  3     0x414a64  3      OPC=movw_r16_r16    18446744073709551615  
+  xorl %edi, %edi                                    #  4     0x414a67  2      OPC=xorl_r32_r32    18446744073709551615  
+  movw %di, %cx                                      #  5     0x414a69  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %ax, -0x2(%rbp)                               #  6     0x414a6c  4      OPC=movw_m16_r16    18446744073709551615  
+  movzwl %cx, %eax                                   #  7     0x414a70  3      OPC=movzwl_r32_r16  18446744073709551615  
+  popq %rbp                                          #  8     0x414a73  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                               #  9     0x414a74  1      OPC=retq            18446744073709551615  
                                                                                                                          
 .size _ZN30custom_lessthanequal_constantsItE8do_shiftEt, .-_ZN30custom_lessthanequal_constantsItE8do_shiftEt
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_lessthanequal_constantsItE8do_shiftEt->4278864
+._ZN30custom_lessthanequal_constantsItE8do_shiftEt->4278880
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN30custom_lessthanequal_constantsItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.07system 0:00.40elapsed 77%CPU (0avgtext+0avgdata 10324maxresident)k
+0inputs+144outputs (0major+5337minor)pagefaults 0swaps

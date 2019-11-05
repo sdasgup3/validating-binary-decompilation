@@ -7,7 +7,7 @@ compd_opt: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxp
 match: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

@@ -30,7 +30,9 @@ using namespace stoke;
 
 class CompositionalDecompiler {
 private:
-  bool assume_none_decl_retval;
+  // bool assume_none_decl_retval;
+  bool reloc_info_available;
+  string binaryPath;
   string extractedFunction;
   string singleInstrDecompPath;
   string scriptsPath;
@@ -89,7 +91,9 @@ private:
   vector<string> handleJCCDefns(const vector<string> &local_defn);
   vector<string> handleCALLDefns(const vector<string> &local_defn);
   vector<string> handleDataSectionAccessDefns(x64asm::Instruction instr,
-                                              const vector<string> &local_defn);
+                                              const vector<string> &local_defn,
+                                              uint64_t currRIP,
+                                              uint64_t currSize);
 
   string handleJMPBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
                             uint64_t currSize);
@@ -100,12 +104,15 @@ private:
   string handleBodyCalls(x64asm::Instruction instr, uint64_t currRIP,
                          uint64_t currSize);
 
+  bool checkConstantOrAddress(uint64_t currRIP, uint64_t currSize);
+
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
                           const string &extractedFunction,
                           const string &singleInstrDecompPath,
                           const string &workdir,
-                          bool assume_none_decl_retval = false);
+                          // bool assume_none_decl_retval = false,
+                          bool reloc_info_available);
 
   /** Clears error state */
   void clear_error() {

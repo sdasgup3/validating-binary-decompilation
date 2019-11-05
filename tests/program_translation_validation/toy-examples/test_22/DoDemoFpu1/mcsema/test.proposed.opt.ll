@@ -47,10 +47,10 @@ declare i32 @llvm.ctpop.i32(i32) #0
 ; Function Attrs: nounwind readnone
 declare double @llvm.fabs.f64(double) #0
 
-declare %struct.Memory* @sub_4005a0.timespi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4005c0.timespi(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @DoDemoFpu1(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @DoDemoFpu1(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -281,7 +281,7 @@ routine_fldt_MINUS0x10__rbp_.exit:                ; preds = %126, %123, %routine
   store i64 %154, i64* %157, align 8
   store i64 %156, i64* %6, align 8
   store i64 %153, i64* %3, align 8
-  %call2_40051c = tail call %struct.Memory* @sub_4005a0.timespi(%struct.State* nonnull %0, i64 %153, %struct.Memory* %150)
+  %call2_40053c = tail call %struct.Memory* @sub_4005c0.timespi(%struct.State* nonnull %0, i64 %153, %struct.Memory* %150)
   %EAX.i = bitcast %union.anon* %146 to i32*
   %158 = load i64, i64* %RBP.i, align 8
   %159 = add i64 %158, -20
@@ -368,7 +368,7 @@ routine_fldt_MINUS0x10__rbp_.exit:                ; preds = %126, %123, %routine
   store i64 %213, i64* %3, align 8
   %214 = add i64 %183, 64
   store i64 %214, i64* %6, align 8
-  ret %struct.Memory* %call2_40051c
+  ret %struct.Memory* %call2_40053c
 }
 
 ; Function Attrs: norecurse nounwind

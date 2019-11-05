@@ -4,6 +4,8 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x6020b0_type = type <{ [4 x i8] }>
+%G_0x6020b4_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,8 +40,10 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x6020b0 = local_unnamed_addr global %G_0x6020b0_type zeroinitializer
+@G_0x6020b4 = local_unnamed_addr global %G_0x6020b4_type zeroinitializer
 
-declare %struct.Memory* @sub_401010.doSearch(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401020.doSearch(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @search(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -56,8 +60,8 @@ entry:
   store i64 %4, i64* %9, align 8
   %10 = load i64, i64* %3, align 8
   store i64 %8, i64* %RBP.i, align 8
-  store i32 0, i32* inttoptr (i64 6299824 to i32*), align 16
-  store i32 0, i32* inttoptr (i64 6299828 to i32*), align 4
+  store i32 0, i32* bitcast (%G_0x6020b0_type* @G_0x6020b0 to i32*), align 8
+  store i32 0, i32* bitcast (%G_0x6020b4_type* @G_0x6020b4 to i32*), align 8
   %11 = add i64 %10, -689
   %12 = add i64 %10, 30
   %13 = add i64 %7, -16
@@ -65,7 +69,7 @@ entry:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %6, align 8
   store i64 %11, i64* %3, align 8
-  %call2_4012da = tail call %struct.Memory* @sub_401010.doSearch(%struct.State* %0, i64 %11, %struct.Memory* %2)
+  %call2_4012ea = tail call %struct.Memory* @sub_401020.doSearch(%struct.State* %0, i64 %11, %struct.Memory* %2)
   %15 = load i64, i64* %3, align 8
   %16 = add i64 %15, 1
   store i64 %16, i64* %3, align 8
@@ -82,7 +86,7 @@ entry:
   store i64 %23, i64* %3, align 8
   %24 = add i64 %17, 16
   store i64 %24, i64* %6, align 8
-  ret %struct.Memory* %call2_4012da
+  ret %struct.Memory* %call2_4012ea
 }
 
 ; Function Attrs: norecurse nounwind
@@ -124,7 +128,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 11
   store i64 %4, i64* %PC, align 8
-  store i32 0, i32* inttoptr (i64 6299824 to i32*), align 16
+  store i32 0, i32* bitcast (%G_0x6020b0_type* @G_0x6020b0 to i32*), align 8
   ret %struct.Memory* %2
 }
 
@@ -135,7 +139,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 11
   store i64 %4, i64* %PC, align 8
-  store i32 0, i32* inttoptr (i64 6299828 to i32*), align 4
+  store i32 0, i32* bitcast (%G_0x6020b4_type* @G_0x6020b4 to i32*), align 8
   ret %struct.Memory* %2
 }
 

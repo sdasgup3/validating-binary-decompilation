@@ -4,39 +4,39 @@ Disassembled output
   .globl accumulate_probabilities
   .type accumulate_probabilities, @function
 
-#! file-offset 0x820
-#! rip-offset  0x400820
+#! file-offset 0x830
+#! rip-offset  0x400830
 #! capacity    102 bytes
 
 # Text                        #  Line  RIP       Bytes  Opcode              Target                
-.accumulate_probabilities:    #        0x400820  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                  #  1     0x400820  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp             #  2     0x400821  3      OPC=movq_r64_r64    18446744073709551615  
-  xorps %xmm0, %xmm0          #  3     0x400824  3      OPC=xorps_xmm_xmm   18446744073709551615  
-  movq %rdi, -0x8(%rbp)       #  4     0x400827  4      OPC=movq_m64_r64    18446744073709551615  
-  movq %rsi, -0x10(%rbp)      #  5     0x40082b  4      OPC=movq_m64_r64    18446744073709551615  
-  movss %xmm0, -0x14(%rbp)    #  6     0x40082f  5      OPC=movss_m32_xmm   18446744073709551615  
-  movq $0x0, -0x20(%rbp)      #  7     0x400834  8      OPC=movq_m64_imm32  18446744073709551615  
-.L_40083c:                    #        0x40083c  0      OPC=<label>         18446744073709551615  
-  movq -0x20(%rbp), %rax      #  8     0x40083c  4      OPC=movq_r64_m64    18446744073709551615  
-  cmpq -0x10(%rbp), %rax      #  9     0x400840  4      OPC=cmpq_r64_m64    18446744073709551615  
-  jae .L_400884               #  10    0x400844  6      OPC=jae_label_1     4196484               
-  movq -0x8(%rbp), %rax       #  11    0x40084a  4      OPC=movq_r64_m64    18446744073709551615  
-  movq -0x20(%rbp), %rcx      #  12    0x40084e  4      OPC=movq_r64_m64    18446744073709551615  
-  movss (%rax,%rcx,8), %xmm0  #  13    0x400852  5      OPC=movss_xmm_m32   18446744073709551615  
-  addss -0x14(%rbp), %xmm0    #  14    0x400857  5      OPC=addss_xmm_m32   18446744073709551615  
-  movss %xmm0, -0x14(%rbp)    #  15    0x40085c  5      OPC=movss_m32_xmm   18446744073709551615  
-  movss -0x14(%rbp), %xmm0    #  16    0x400861  5      OPC=movss_xmm_m32   18446744073709551615  
-  movq -0x8(%rbp), %rax       #  17    0x400866  4      OPC=movq_r64_m64    18446744073709551615  
-  movq -0x20(%rbp), %rcx      #  18    0x40086a  4      OPC=movq_r64_m64    18446744073709551615  
-  movss %xmm0, (%rax,%rcx,8)  #  19    0x40086e  5      OPC=movss_m32_xmm   18446744073709551615  
-  movq -0x20(%rbp), %rax      #  20    0x400873  4      OPC=movq_r64_m64    18446744073709551615  
-  addq $0x1, %rax             #  21    0x400877  4      OPC=addq_r64_imm8   18446744073709551615  
-  movq %rax, -0x20(%rbp)      #  22    0x40087b  4      OPC=movq_m64_r64    18446744073709551615  
-  jmpq .L_40083c              #  23    0x40087f  5      OPC=jmpq_label_1    4196412               
-.L_400884:                    #        0x400884  0      OPC=<label>         18446744073709551615  
-  popq %rbp                   #  24    0x400884  1      OPC=popq_r64_1      18446744073709551615  
-  retq                        #  25    0x400885  1      OPC=retq            18446744073709551615  
+.accumulate_probabilities:    #        0x400830  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                  #  1     0x400830  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp             #  2     0x400831  3      OPC=movq_r64_r64    18446744073709551615  
+  xorps %xmm0, %xmm0          #  3     0x400834  3      OPC=xorps_xmm_xmm   18446744073709551615  
+  movq %rdi, -0x8(%rbp)       #  4     0x400837  4      OPC=movq_m64_r64    18446744073709551615  
+  movq %rsi, -0x10(%rbp)      #  5     0x40083b  4      OPC=movq_m64_r64    18446744073709551615  
+  movss %xmm0, -0x14(%rbp)    #  6     0x40083f  5      OPC=movss_m32_xmm   18446744073709551615  
+  movq $0x0, -0x20(%rbp)      #  7     0x400844  8      OPC=movq_m64_imm32  18446744073709551615  
+.L_40084c:                    #        0x40084c  0      OPC=<label>         18446744073709551615  
+  movq -0x20(%rbp), %rax      #  8     0x40084c  4      OPC=movq_r64_m64    18446744073709551615  
+  cmpq -0x10(%rbp), %rax      #  9     0x400850  4      OPC=cmpq_r64_m64    18446744073709551615  
+  jae .L_400894               #  10    0x400854  6      OPC=jae_label_1     4196500               
+  movq -0x8(%rbp), %rax       #  11    0x40085a  4      OPC=movq_r64_m64    18446744073709551615  
+  movq -0x20(%rbp), %rcx      #  12    0x40085e  4      OPC=movq_r64_m64    18446744073709551615  
+  movss (%rax,%rcx,8), %xmm0  #  13    0x400862  5      OPC=movss_xmm_m32   18446744073709551615  
+  addss -0x14(%rbp), %xmm0    #  14    0x400867  5      OPC=addss_xmm_m32   18446744073709551615  
+  movss %xmm0, -0x14(%rbp)    #  15    0x40086c  5      OPC=movss_m32_xmm   18446744073709551615  
+  movss -0x14(%rbp), %xmm0    #  16    0x400871  5      OPC=movss_xmm_m32   18446744073709551615  
+  movq -0x8(%rbp), %rax       #  17    0x400876  4      OPC=movq_r64_m64    18446744073709551615  
+  movq -0x20(%rbp), %rcx      #  18    0x40087a  4      OPC=movq_r64_m64    18446744073709551615  
+  movss %xmm0, (%rax,%rcx,8)  #  19    0x40087e  5      OPC=movss_m32_xmm   18446744073709551615  
+  movq -0x20(%rbp), %rax      #  20    0x400883  4      OPC=movq_r64_m64    18446744073709551615  
+  addq $0x1, %rax             #  21    0x400887  4      OPC=addq_r64_imm8   18446744073709551615  
+  movq %rax, -0x20(%rbp)      #  22    0x40088b  4      OPC=movq_m64_r64    18446744073709551615  
+  jmpq .L_40084c              #  23    0x40088f  5      OPC=jmpq_label_1    4196428               
+.L_400894:                    #        0x400894  0      OPC=<label>         18446744073709551615  
+  popq %rbp                   #  24    0x400894  1      OPC=popq_r64_1      18446744073709551615  
+  retq                        #  25    0x400895  1      OPC=retq            18446744073709551615  
                                                                                                   
 .size accumulate_probabilities, .-accumulate_probabilities
 Disassembling Done.
@@ -44,9 +44,9 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_400884->4196484
-.accumulate_probabilities->4196384
-.L_40083c->4196412
+.L_400894->4196500
+.accumulate_probabilities->4196400
+.L_40084c->4196428
 
 Computing Label PC values: Done.
 
@@ -533,7 +533,7 @@ FuncCache inserted: routine_movq__0x0__MINUS0x20__rbp_
 Decompiling instr:movq $0x0, -0x20(%rbp) Done...
 
 
-Decompiling instr:.L_40083c:...
+Decompiling instr:.L_40084c:...
 
 
 Decompiling instr:movq -0x20(%rbp), %rax...
@@ -574,23 +574,23 @@ FuncCache inserted: routine_cmpq_MINUS0x10__rbp____rax
 Decompiling instr:cmpq -0x10(%rbp), %rax Done...
 
 
-Decompiling instr:jae .L_400884...
-Instr: jae .L_400884
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400884
+Decompiling instr:jae .L_400894...
+Instr: jae .L_400894
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400894
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400884/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400894/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNBEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jae_.L_400884
-Decompiling instr:jae .L_400884 Done...
+FuncCache inserted: routine_jae_.L_400894
+Decompiling instr:jae .L_400894 Done...
 
 
 Decompiling instr:movq -0x8(%rbp), %rax...
@@ -799,6 +799,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x1___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400887 --size 4
 Decompiling instr:addq $0x1, %rax Done...
 
 
@@ -821,26 +823,26 @@ FuncCache inserted: routine_movq__rax__MINUS0x20__rbp_
 Decompiling instr:movq %rax, -0x20(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_40083c...
-Instr: jmpq .L_40083c
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40083c
+Decompiling instr:jmpq .L_40084c...
+Instr: jmpq .L_40084c
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40084c
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40083c/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_40084c/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_40083c
-Decompiling instr:jmpq .L_40083c Done...
+FuncCache inserted: routine_jmpq_.L_40084c
+Decompiling instr:jmpq .L_40084c Done...
 
 
-Decompiling instr:.L_400884:...
+Decompiling instr:.L_400894:...
 
 
 Decompiling instr:popq %rbp...
@@ -884,3 +886,5 @@ Decompiling Function: accumulate_probabilities Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.39user 0.07system 0:00.74elapsed 62%CPU (0avgtext+0avgdata 10644maxresident)k
+0inputs+232outputs (0major+10768minor)pagefaults 0swaps

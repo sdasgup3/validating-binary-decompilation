@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN22custom_equal_constantsIaE8do_shiftEa
   .type _ZN22custom_equal_constantsIaE8do_shiftEa, @function
 
-#! file-offset 0x185a0
-#! rip-offset  0x4185a0
+#! file-offset 0x185b0
+#! rip-offset  0x4185b0
 #! capacity    20 bytes
 
 # Text                                       #  Line  RIP       Bytes  Opcode             Target                
-._ZN22custom_equal_constantsIaE8do_shiftEa:  #        0x4185a0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                 #  1     0x4185a0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                            #  2     0x4185a1  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %dil, %al                             #  3     0x4185a4  3      OPC=movb_r8_r8     18446744073709551615  
-  xorl %edi, %edi                            #  4     0x4185a7  2      OPC=xorl_r32_r32   18446744073709551615  
-  movb %dil, %cl                             #  5     0x4185a9  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %al, -0x1(%rbp)                       #  6     0x4185ac  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl %cl, %eax                           #  7     0x4185af  3      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbp                                  #  8     0x4185b2  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                       #  9     0x4185b3  1      OPC=retq           18446744073709551615  
+._ZN22custom_equal_constantsIaE8do_shiftEa:  #        0x4185b0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                 #  1     0x4185b0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                            #  2     0x4185b1  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %dil, %al                             #  3     0x4185b4  3      OPC=movb_r8_r8     18446744073709551615  
+  xorl %edi, %edi                            #  4     0x4185b7  2      OPC=xorl_r32_r32   18446744073709551615  
+  movb %dil, %cl                             #  5     0x4185b9  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %al, -0x1(%rbp)                       #  6     0x4185bc  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl %cl, %eax                           #  7     0x4185bf  3      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbp                                  #  8     0x4185c2  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                       #  9     0x4185c3  1      OPC=retq           18446744073709551615  
                                                                                                                 
 .size _ZN22custom_equal_constantsIaE8do_shiftEa, .-_ZN22custom_equal_constantsIaE8do_shiftEa
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN22custom_equal_constantsIaE8do_shiftEa->4294048
+._ZN22custom_equal_constantsIaE8do_shiftEa->4294064
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN22custom_equal_constantsIaE8do_shiftEa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.06system 0:00.33elapsed 90%CPU (0avgtext+0avgdata 10096maxresident)k
+0inputs+144outputs (0major+5311minor)pagefaults 0swaps

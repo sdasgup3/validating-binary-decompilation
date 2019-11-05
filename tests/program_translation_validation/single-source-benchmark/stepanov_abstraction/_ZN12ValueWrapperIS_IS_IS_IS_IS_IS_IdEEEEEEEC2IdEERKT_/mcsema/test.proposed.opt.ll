@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4065d0._ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4065e0._ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IdEERKT_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -133,7 +133,7 @@ entry:
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %6, align 8
   store i64 %60, i64* %3, align 8
-  %call2_4065b8 = tail call %struct.Memory* @sub_4065d0._ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT_(%struct.State* %0, i64 %60, %struct.Memory* %2)
+  %call2_4065c8 = tail call %struct.Memory* @sub_4065e0._ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT_(%struct.State* %0, i64 %60, %struct.Memory* %2)
   %65 = load i64, i64* %6, align 8
   %66 = load i64, i64* %3, align 8
   %67 = add i64 %65, 16
@@ -180,7 +180,7 @@ entry:
   store i64 %96, i64* %3, align 8
   %97 = add i64 %65, 32
   store i64 %97, i64* %6, align 8
-  ret %struct.Memory* %call2_4065b8
+  ret %struct.Memory* %call2_4065c8
 }
 
 ; Function Attrs: norecurse nounwind

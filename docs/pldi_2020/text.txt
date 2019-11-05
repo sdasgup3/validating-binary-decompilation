@@ -74,3 +74,24 @@ smt converter
 1. Fixed int2BytesAux
 llvm semantics currently do not handing reading a porting of a typed val. Eg a 64 value laid in memory as 8 bytes, but we int2BytesAux cannot handle reading say 1 byte out of a particular index
 
+
+
+
+### McSema opt
+1. renames calls
+
+define a {}
+...
+call A();
+
+changes to
+
+define A{};
+declare A_renamed();
+...
+call A_renamed();
+
+This is done so that the llvm opt does not does do any IPO
+
+
+2. Does inline _ opt 03

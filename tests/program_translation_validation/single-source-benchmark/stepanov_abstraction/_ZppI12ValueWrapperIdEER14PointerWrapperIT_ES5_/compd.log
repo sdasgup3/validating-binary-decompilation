@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_
   .type _ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_, @function
 
-#! file-offset 0x3cf0
-#! rip-offset  0x403cf0
+#! file-offset 0x3d00
+#! rip-offset  0x403d00
 #! capacity    28 bytes
 
 # Text                                             #  Line  RIP       Bytes  Opcode             Target                
-._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_:  #        0x403cf0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                       #  1     0x403cf0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                  #  2     0x403cf1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                            #  3     0x403cf4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                            #  4     0x403cf8  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rax                                #  5     0x403cfc  3      OPC=movq_r64_m64   18446744073709551615  
-  addq $0x8, %rax                                  #  6     0x403cff  4      OPC=addq_r64_imm8  18446744073709551615  
-  movq %rax, (%rdi)                                #  7     0x403d03  3      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rax                            #  8     0x403d06  4      OPC=movq_r64_m64   18446744073709551615  
-  popq %rbp                                        #  9     0x403d0a  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                             #  10    0x403d0b  1      OPC=retq           18446744073709551615  
+._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_:  #        0x403d00  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                       #  1     0x403d00  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                  #  2     0x403d01  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                            #  3     0x403d04  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                            #  4     0x403d08  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rax                                #  5     0x403d0c  3      OPC=movq_r64_m64   18446744073709551615  
+  addq $0x8, %rax                                  #  6     0x403d0f  4      OPC=addq_r64_imm8  18446744073709551615  
+  movq %rax, (%rdi)                                #  7     0x403d13  3      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rax                            #  8     0x403d16  4      OPC=movq_r64_m64   18446744073709551615  
+  popq %rbp                                        #  9     0x403d1a  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                             #  10    0x403d1b  1      OPC=retq           18446744073709551615  
                                                                                                                       
 .size _ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_, .-_ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_->4209904
+._ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_->4209920
 
 Computing Label PC values: Done.
 
@@ -492,6 +492,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 403d0f --size 4
 Decompiling instr:addq $0x8, %rax Done...
 
 
@@ -574,3 +576,5 @@ Decompiling Function: _ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.19user 0.02system 0:00.74elapsed 29%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+144outputs (0major+5666minor)pagefaults 0swaps

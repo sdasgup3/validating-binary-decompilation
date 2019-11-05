@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4005d0.to_byte(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4005f0.to_byte(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @read_bytes(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
@@ -133,10 +133,10 @@ entry:
   %RDX.i24 = getelementptr inbounds %union.anon, %union.anon* %50, i64 0, i32 0
   %RDI.i = getelementptr inbounds %union.anon, %union.anon* %39, i64 0, i32 0
   %.pre = load i64, i64* %3, align 8
-  br label %block_.L_400659
+  br label %block_.L_400679
 
-block_.L_400659:                                  ; preds = %block_400665, %entry
-  %62 = phi i64 [ %193, %block_400665 ], [ %.pre, %entry ]
+block_.L_400679:                                  ; preds = %block_400685, %entry
+  %62 = phi i64 [ %193, %block_400685 ], [ %.pre, %entry ]
   %63 = load i64, i64* %RBP.i, align 8
   %64 = add i64 %63, -24
   %65 = add i64 %62, 3
@@ -191,9 +191,9 @@ block_.L_400659:                                  ; preds = %block_400665, %entr
   %103 = load i32, i32* %102, align 4
   %104 = zext i32 %103 to i64
   store i64 %104, i64* %RAX.i42, align 8
-  br i1 %98, label %block_400665, label %block_.L_400693
+  br i1 %98, label %block_400685, label %block_.L_4006b3
 
-block_400665:                                     ; preds = %block_.L_400659
+block_400685:                                     ; preds = %block_.L_400679
   %105 = shl i32 %103, 4
   %106 = zext i32 %105 to i64
   store i64 %106, i64* %RAX.i42, align 8
@@ -249,7 +249,7 @@ block_400665:                                     ; preds = %block_.L_400659
   store i64 %138, i64* %141, align 8
   store i64 %140, i64* %6, align 8
   store i64 %137, i64* %3, align 8
-  %call2_40067a = tail call %struct.Memory* @sub_4005d0.to_byte(%struct.State* nonnull %0, i64 %137, %struct.Memory* %2)
+  %call2_40069a = tail call %struct.Memory* @sub_4005f0.to_byte(%struct.State* nonnull %0, i64 %137, %struct.Memory* %2)
   %142 = load i64, i64* %RAX.i42, align 8
   %143 = load i64, i64* %RBP.i, align 8
   %144 = add i64 %143, -4
@@ -323,9 +323,9 @@ block_400665:                                     ; preds = %block_.L_400659
   %192 = load i64, i64* %3, align 8
   %193 = add i64 %192, -53
   store i64 %193, i64* %3, align 8
-  br label %block_.L_400659
+  br label %block_.L_400679
 
-block_.L_400693:                                  ; preds = %block_.L_400659
+block_.L_4006b3:                                  ; preds = %block_.L_400679
   %194 = load i64, i64* %6, align 8
   %195 = add i64 %194, 32
   store i64 %195, i64* %6, align 8
@@ -593,7 +593,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jge_.L_400693(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jge_.L_4006b3(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -872,7 +872,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_400659(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jmpq_.L_400679(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8

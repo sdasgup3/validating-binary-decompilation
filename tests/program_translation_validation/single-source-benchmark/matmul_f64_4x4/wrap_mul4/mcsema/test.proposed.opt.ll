@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400580.mul4(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400590.mul4(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @wrap_mul4(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -147,7 +147,7 @@ entry:
   store i64 %70, i64* %73, align 8
   store i64 %72, i64* %6, align 8
   store i64 %69, i64* %3, align 8
-  %call2_400570 = tail call %struct.Memory* @sub_400580.mul4(%struct.State* %0, i64 %69, %struct.Memory* %2)
+  %call2_400580 = tail call %struct.Memory* @sub_400590.mul4(%struct.State* %0, i64 %69, %struct.Memory* %2)
   %74 = load i64, i64* %6, align 8
   %75 = load i64, i64* %3, align 8
   %76 = add i64 %74, 32
@@ -193,7 +193,7 @@ entry:
   store i64 %104, i64* %3, align 8
   %105 = add i64 %74, 48
   store i64 %105, i64* %6, align 8
-  ret %struct.Memory* %call2_400570
+  ret %struct.Memory* %call2_400580
 }
 
 ; Function Attrs: norecurse nounwind

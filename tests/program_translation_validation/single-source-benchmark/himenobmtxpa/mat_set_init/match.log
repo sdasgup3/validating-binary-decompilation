@@ -1,13 +1,15 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x557fe3447b78]:   %55 = load i32, i32* %51, align 4
-[0x557fe36a89e8]:   %188 = load i32, i32* %184, align 4
-[0x557fe36a95c8]:   %185 = load i32, i32* %184, align 4
-Multiple matches exist for [0x557fe3447c38]:   %57 = sext i32 %55 to i64
-[0x557fe36a8788]:   %190 = sext i32 %188 to i64
-[0x557fe36a88b8]:   %189 = sext i32 %185 to i64
+Multiple matches exist for [0x55c874b80bf8]:   %55 = load i32, i32* %51, align 4
+[0x55c874de2658]:   %188 = load i32, i32* %184, align 4
+[0x55c874de35c8]:   %185 = load i32, i32* %184, align 4
+Multiple matches exist for [0x55c874b80cb8]:   %57 = sext i32 %55 to i64
+[0x55c874de2068]:   %189 = sext i32 %185 to i64
+[0x55c874de7168]:   %190 = sext i32 %188 to i64
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [mat_set_init] from ../binary/test.mcsema.opt.ll
 Extracting function [mat_set_init] from mcsema/test.proposed.opt.ll
 Matcher Done...
+33.23user 35.03system 1:08.90elapsed 99%CPU (0avgtext+0avgdata 17480maxresident)k
+0inputs+7296outputs (0major+4016minor)pagefaults 0swaps

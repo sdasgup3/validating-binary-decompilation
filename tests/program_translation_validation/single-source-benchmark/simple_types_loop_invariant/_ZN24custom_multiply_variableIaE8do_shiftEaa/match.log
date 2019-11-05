@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN24custom_multiply_variableIaE8do_shiftEaa] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN24custom_multiply_variableIaE8do_shiftEaa] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.46user 0.18system 0:03.66elapsed 99%CPU (0avgtext+0avgdata 54528maxresident)k
+0inputs+136outputs (0major+10471minor)pagefaults 0swaps

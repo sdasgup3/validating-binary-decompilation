@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_syr2k_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_syr2k_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
+22.69user 26.46system 0:49.18elapsed 99%CPU (0avgtext+0avgdata 18520maxresident)k
+0inputs+14056outputs (0major+4311minor)pagefaults 0swaps

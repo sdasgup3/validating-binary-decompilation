@@ -4,29 +4,29 @@ Disassembled output
   .globl init_Toggle
   .type init_Toggle, @function
 
-#! file-offset 0x630
-#! rip-offset  0x400630
+#! file-offset 0x640
+#! rip-offset  0x400640
 #! capacity    65 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode              Target                
-.init_Toggle:            #        0x400630  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x400630  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400631  3      OPC=movq_r64_r64    18446744073709551615  
-  movb %sil, %al         #  3     0x400634  3      OPC=movb_r8_r8      18446744073709551615  
-  movq $0x400600, %rcx   #  4     0x400637  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0x4005e0, %rdx   #  5     0x400641  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  6     0x40064b  4      OPC=movq_m64_r64    18446744073709551615  
-  movb %al, -0x9(%rbp)   #  7     0x40064f  3      OPC=movb_m8_r8      18446744073709551615  
-  movb -0x9(%rbp), %al   #  8     0x400652  3      OPC=movb_r8_m8      18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  9     0x400655  4      OPC=movq_r64_m64    18446744073709551615  
-  movb %al, (%rdi)       #  10    0x400659  2      OPC=movb_m8_r8      18446744073709551615  
-  movq -0x8(%rbp), %rdi  #  11    0x40065b  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rdx, 0x8(%rdi)   #  12    0x40065f  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rdx  #  13    0x400663  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rcx, 0x10(%rdx)  #  14    0x400667  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rax  #  15    0x40066b  4      OPC=movq_r64_m64    18446744073709551615  
-  popq %rbp              #  16    0x40066f  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  17    0x400670  1      OPC=retq            18446744073709551615  
+.init_Toggle:            #        0x400640  0      OPC=<label>         18446744073709551615  
+  pushq %rbp             #  1     0x400640  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp        #  2     0x400641  3      OPC=movq_r64_r64    18446744073709551615  
+  movb %sil, %al         #  3     0x400644  3      OPC=movb_r8_r8      18446744073709551615  
+  movq $0x400610, %rcx   #  4     0x400647  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0x4005f0, %rdx   #  5     0x400651  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)  #  6     0x40065b  4      OPC=movq_m64_r64    18446744073709551615  
+  movb %al, -0x9(%rbp)   #  7     0x40065f  3      OPC=movb_m8_r8      18446744073709551615  
+  movb -0x9(%rbp), %al   #  8     0x400662  3      OPC=movb_r8_m8      18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  9     0x400665  4      OPC=movq_r64_m64    18446744073709551615  
+  movb %al, (%rdi)       #  10    0x400669  2      OPC=movb_m8_r8      18446744073709551615  
+  movq -0x8(%rbp), %rdi  #  11    0x40066b  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rdx, 0x8(%rdi)   #  12    0x40066f  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rdx  #  13    0x400673  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rcx, 0x10(%rdx)  #  14    0x400677  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rax  #  15    0x40067b  4      OPC=movq_r64_m64    18446744073709551615  
+  popq %rbp              #  16    0x40067f  1      OPC=popq_r64_1      18446744073709551615  
+  retq                   #  17    0x400680  1      OPC=retq            18446744073709551615  
                                                                                              
 .size init_Toggle, .-init_Toggle
 Disassembling Done.
@@ -34,7 +34,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.init_Toggle->4195888
+.init_Toggle->4195904
 
 Computing Label PC values: Done.
 
@@ -445,42 +445,48 @@ FuncCache inserted: routine_movb__sil___al
 Decompiling instr:movb %sil, %al Done...
 
 
-Decompiling instr:movq $0x400600, %rcx...
-Instr: movq $0x400600, %rcx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400600___rcx
+Decompiling instr:movq $0x400610, %rcx...
+Instr: movq $0x400610, %rcx
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400610___rcx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400600___rcx/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400610___rcx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x400600___rcx
-Decompiling instr:movq $0x400600, %rcx Done...
+FuncCache inserted: routine_movq__0x400610___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400647 --size 10
+Global Access Fix: 4195856 Relocation: Address, McSema: Address
+Decompiling instr:movq $0x400610, %rcx Done...
 
 
-Decompiling instr:movq $0x4005e0, %rdx...
-Instr: movq $0x4005e0, %rdx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4005e0___rdx
+Decompiling instr:movq $0x4005f0, %rdx...
+Instr: movq $0x4005f0, %rdx
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4005f0___rdx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4005e0___rdx/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x4005f0___rdx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x4005e0___rdx
-Decompiling instr:movq $0x4005e0, %rdx Done...
+FuncCache inserted: routine_movq__0x4005f0___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400651 --size 10
+Global Access Fix: 4195824 Relocation: Address, McSema: Address
+Decompiling instr:movq $0x4005f0, %rdx Done...
 
 
 Decompiling instr:movq %rdi, -0x8(%rbp)...
@@ -714,3 +720,5 @@ Decompiling Function: init_Toggle Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.06system 0:00.78elapsed 37%CPU (0avgtext+0avgdata 10336maxresident)k
+0inputs+184outputs (0major+8132minor)pagefaults 0swaps

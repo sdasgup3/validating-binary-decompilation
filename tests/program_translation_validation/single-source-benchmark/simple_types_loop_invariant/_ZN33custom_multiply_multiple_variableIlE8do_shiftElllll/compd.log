@@ -4,27 +4,27 @@ Disassembled output
   .globl _ZN33custom_multiply_multiple_variableIlE8do_shiftElllll
   .type _ZN33custom_multiply_multiple_variableIlE8do_shiftElllll, @function
 
-#! file-offset 0xe7b0
-#! rip-offset  0x40e7b0
+#! file-offset 0xe7c0
+#! rip-offset  0x40e7c0
 #! capacity    53 bytes
 
 # Text                                                      #  Line  RIP       Bytes  Opcode             Target                
-._ZN33custom_multiply_multiple_variableIlE8do_shiftElllll:  #        0x40e7b0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                #  1     0x40e7b0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                           #  2     0x40e7b1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                     #  3     0x40e7b4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                    #  4     0x40e7b8  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rdx, -0x18(%rbp)                                    #  5     0x40e7bc  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rcx, -0x20(%rbp)                                    #  6     0x40e7c0  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %r8, -0x28(%rbp)                                     #  7     0x40e7c4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rcx                                     #  8     0x40e7c8  4      OPC=movq_r64_m64   18446744073709551615  
-  imulq -0x10(%rbp), %rcx                                   #  9     0x40e7cc  5      OPC=imulq_r64_m64  18446744073709551615  
-  imulq -0x18(%rbp), %rcx                                   #  10    0x40e7d1  5      OPC=imulq_r64_m64  18446744073709551615  
-  imulq -0x20(%rbp), %rcx                                   #  11    0x40e7d6  5      OPC=imulq_r64_m64  18446744073709551615  
-  imulq -0x28(%rbp), %rcx                                   #  12    0x40e7db  5      OPC=imulq_r64_m64  18446744073709551615  
-  movq %rcx, %rax                                           #  13    0x40e7e0  3      OPC=movq_r64_r64   18446744073709551615  
-  popq %rbp                                                 #  14    0x40e7e3  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                      #  15    0x40e7e4  1      OPC=retq           18446744073709551615  
+._ZN33custom_multiply_multiple_variableIlE8do_shiftElllll:  #        0x40e7c0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                #  1     0x40e7c0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                           #  2     0x40e7c1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                     #  3     0x40e7c4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                    #  4     0x40e7c8  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rdx, -0x18(%rbp)                                    #  5     0x40e7cc  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rcx, -0x20(%rbp)                                    #  6     0x40e7d0  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %r8, -0x28(%rbp)                                     #  7     0x40e7d4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rcx                                     #  8     0x40e7d8  4      OPC=movq_r64_m64   18446744073709551615  
+  imulq -0x10(%rbp), %rcx                                   #  9     0x40e7dc  5      OPC=imulq_r64_m64  18446744073709551615  
+  imulq -0x18(%rbp), %rcx                                   #  10    0x40e7e1  5      OPC=imulq_r64_m64  18446744073709551615  
+  imulq -0x20(%rbp), %rcx                                   #  11    0x40e7e6  5      OPC=imulq_r64_m64  18446744073709551615  
+  imulq -0x28(%rbp), %rcx                                   #  12    0x40e7eb  5      OPC=imulq_r64_m64  18446744073709551615  
+  movq %rcx, %rax                                           #  13    0x40e7f0  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                                                 #  14    0x40e7f3  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                      #  15    0x40e7f4  1      OPC=retq           18446744073709551615  
                                                                                                                                
 .size _ZN33custom_multiply_multiple_variableIlE8do_shiftElllll, .-_ZN33custom_multiply_multiple_variableIlE8do_shiftElllll
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN33custom_multiply_multiple_variableIlE8do_shiftElllll->4253616
+._ZN33custom_multiply_multiple_variableIlE8do_shiftElllll->4253632
 
 Computing Label PC values: Done.
 
@@ -674,3 +674,5 @@ Decompiling Function: _ZN33custom_multiply_multiple_variableIlE8do_shiftElllll D
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.30user 0.07system 0:00.40elapsed 92%CPU (0avgtext+0avgdata 10272maxresident)k
+0inputs+176outputs (0major+7389minor)pagefaults 0swaps

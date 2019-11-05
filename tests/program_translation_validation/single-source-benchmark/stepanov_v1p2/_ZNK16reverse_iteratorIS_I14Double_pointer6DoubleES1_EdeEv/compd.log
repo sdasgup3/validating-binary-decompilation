@@ -4,27 +4,27 @@ Disassembled output
   .globl _ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv
   .type _ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv, @function
 
-#! file-offset 0x1cd0
-#! rip-offset  0x401cd0
+#! file-offset 0x1ce0
+#! rip-offset  0x401ce0
 #! capacity    49 bytes
 
 # Text                                                        #  Line  RIP       Bytes  Opcode             Target                
-._ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv:  #        0x401cd0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                  #  1     0x401cd0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                             #  2     0x401cd1  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                                            #  3     0x401cd4  4      OPC=subq_r64_imm8  18446744073709551615  
-  leaq -0x10(%rbp), %rax                                      #  4     0x401cd8  4      OPC=leaq_r64_m16   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                       #  5     0x401cdc  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                                       #  6     0x401ce0  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rdi                                           #  7     0x401ce4  3      OPC=movq_r64_m64   18446744073709551615  
-  movq %rdi, -0x10(%rbp)                                      #  8     0x401ce7  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rax, %rdi                                             #  9     0x401ceb  3      OPC=movq_r64_r64   18446744073709551615  
-  callq ._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv   #  10    0x401cee  5      OPC=callq_label    4201824               
-  movq %rax, %rdi                                             #  11    0x401cf3  3      OPC=movq_r64_r64   18446744073709551615  
-  callq ._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv  #  12    0x401cf6  5      OPC=callq_label    4201872               
-  addq $0x10, %rsp                                            #  13    0x401cfb  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                                   #  14    0x401cff  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                        #  15    0x401d00  1      OPC=retq           18446744073709551615  
+._ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv:  #        0x401ce0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                  #  1     0x401ce0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                             #  2     0x401ce1  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                                            #  3     0x401ce4  4      OPC=subq_r64_imm8  18446744073709551615  
+  leaq -0x10(%rbp), %rax                                      #  4     0x401ce8  4      OPC=leaq_r64_m16   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                       #  5     0x401cec  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                                       #  6     0x401cf0  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rdi                                           #  7     0x401cf4  3      OPC=movq_r64_m64   18446744073709551615  
+  movq %rdi, -0x10(%rbp)                                      #  8     0x401cf7  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rax, %rdi                                             #  9     0x401cfb  3      OPC=movq_r64_r64   18446744073709551615  
+  callq ._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv   #  10    0x401cfe  5      OPC=callq_label    4201840               
+  movq %rax, %rdi                                             #  11    0x401d03  3      OPC=movq_r64_r64   18446744073709551615  
+  callq ._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv  #  12    0x401d06  5      OPC=callq_label    4201888               
+  addq $0x10, %rsp                                            #  13    0x401d0b  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                                   #  14    0x401d0f  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                        #  15    0x401d10  1      OPC=retq           18446744073709551615  
                                                                                                                                  
 .size _ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv, .-_ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv->4201680
+._ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv->4201696
 
 Computing Label PC values: Done.
 
@@ -440,6 +440,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401ce4 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -630,6 +632,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401d0b --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -674,3 +678,5 @@ Decompiling Function: _ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.07system 0:01.05elapsed 27%CPU (0avgtext+0avgdata 10264maxresident)k
+0inputs+176outputs (0major+7446minor)pagefaults 0swaps

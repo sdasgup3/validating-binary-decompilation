@@ -4,25 +4,25 @@ Disassembled output
   .globl _Z18complete_hash_funcIiET_S0_
   .type _Z18complete_hash_funcIiET_S0_, @function
 
-#! file-offset 0xc100
-#! rip-offset  0x40c100
+#! file-offset 0xc110
+#! rip-offset  0x40c110
 #! capacity    39 bytes
 
 # Text                            #  Line  RIP       Bytes  Opcode             Target                
-._Z18complete_hash_funcIiET_S0_:  #        0x40c100  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                      #  1     0x40c100  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                 #  2     0x40c101  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                #  3     0x40c104  4      OPC=subq_r64_imm8  18446744073709551615  
-  movl %edi, -0x4(%rbp)           #  4     0x40c108  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %edi           #  5     0x40c10b  3      OPC=movl_r32_m32   18446744073709551615  
-  callq ._Z10hash_func2IiET_S0_   #  6     0x40c10e  5      OPC=callq_label    4243904               
-  movl %eax, %edi                 #  7     0x40c113  2      OPC=movl_r32_r32   18446744073709551615  
-  callq ._Z10hash_func2IiET_S0_   #  8     0x40c115  5      OPC=callq_label    4243904               
-  movl %eax, %edi                 #  9     0x40c11a  2      OPC=movl_r32_r32   18446744073709551615  
-  callq ._Z10hash_func2IiET_S0_   #  10    0x40c11c  5      OPC=callq_label    4243904               
-  addq $0x10, %rsp                #  11    0x40c121  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                       #  12    0x40c125  1      OPC=popq_r64_1     18446744073709551615  
-  retq                            #  13    0x40c126  1      OPC=retq           18446744073709551615  
+._Z18complete_hash_funcIiET_S0_:  #        0x40c110  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                      #  1     0x40c110  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                 #  2     0x40c111  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                #  3     0x40c114  4      OPC=subq_r64_imm8  18446744073709551615  
+  movl %edi, -0x4(%rbp)           #  4     0x40c118  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %edi           #  5     0x40c11b  3      OPC=movl_r32_m32   18446744073709551615  
+  callq ._Z10hash_func2IiET_S0_   #  6     0x40c11e  5      OPC=callq_label    4243920               
+  movl %eax, %edi                 #  7     0x40c123  2      OPC=movl_r32_r32   18446744073709551615  
+  callq ._Z10hash_func2IiET_S0_   #  8     0x40c125  5      OPC=callq_label    4243920               
+  movl %eax, %edi                 #  9     0x40c12a  2      OPC=movl_r32_r32   18446744073709551615  
+  callq ._Z10hash_func2IiET_S0_   #  10    0x40c12c  5      OPC=callq_label    4243920               
+  addq $0x10, %rsp                #  11    0x40c131  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                       #  12    0x40c135  1      OPC=popq_r64_1     18446744073709551615  
+  retq                            #  13    0x40c136  1      OPC=retq           18446744073709551615  
                                                                                                      
 .size _Z18complete_hash_funcIiET_S0_, .-_Z18complete_hash_funcIiET_S0_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z18complete_hash_funcIiET_S0_->4243712
+._Z18complete_hash_funcIiET_S0_->4243728
 
 Computing Label PC values: Done.
 
@@ -438,6 +438,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c114 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -590,6 +592,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c131 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -634,3 +638,5 @@ Decompiling Function: _Z18complete_hash_funcIiET_S0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.29user 0.06system 0:02.66elapsed 13%CPU (0avgtext+0avgdata 10384maxresident)k
+0inputs+160outputs (0major+6764minor)pagefaults 0swaps

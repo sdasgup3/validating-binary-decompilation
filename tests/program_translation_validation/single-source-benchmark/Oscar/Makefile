@@ -7,7 +7,7 @@ compd_opt: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
 match: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

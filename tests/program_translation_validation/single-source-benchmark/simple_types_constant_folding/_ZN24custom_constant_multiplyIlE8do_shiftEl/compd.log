@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN24custom_constant_multiplyIlE8do_shiftEl
   .type _ZN24custom_constant_multiplyIlE8do_shiftEl, @function
 
-#! file-offset 0x11680
-#! rip-offset  0x411680
+#! file-offset 0x11690
+#! rip-offset  0x411690
 #! capacity    15 bytes
 
 # Text                                         #  Line  RIP       Bytes  Opcode                  Target                
-._ZN24custom_constant_multiplyIlE8do_shiftEl:  #        0x411680  0      OPC=<label>             18446744073709551615  
-  pushq %rbp                                   #  1     0x411680  1      OPC=pushq_r64_1         18446744073709551615  
-  movq %rsp, %rbp                              #  2     0x411681  3      OPC=movq_r64_r64        18446744073709551615  
-  movq %rdi, -0x8(%rbp)                        #  3     0x411684  4      OPC=movq_m64_r64        18446744073709551615  
-  imulq $0x78, -0x8(%rbp), %rax                #  4     0x411688  5      OPC=imulq_r64_m64_imm8  18446744073709551615  
-  popq %rbp                                    #  5     0x41168d  1      OPC=popq_r64_1          18446744073709551615  
-  retq                                         #  6     0x41168e  1      OPC=retq                18446744073709551615  
+._ZN24custom_constant_multiplyIlE8do_shiftEl:  #        0x411690  0      OPC=<label>             18446744073709551615  
+  pushq %rbp                                   #  1     0x411690  1      OPC=pushq_r64_1         18446744073709551615  
+  movq %rsp, %rbp                              #  2     0x411691  3      OPC=movq_r64_r64        18446744073709551615  
+  movq %rdi, -0x8(%rbp)                        #  3     0x411694  4      OPC=movq_m64_r64        18446744073709551615  
+  imulq $0x78, -0x8(%rbp), %rax                #  4     0x411698  5      OPC=imulq_r64_m64_imm8  18446744073709551615  
+  popq %rbp                                    #  5     0x41169d  1      OPC=popq_r64_1          18446744073709551615  
+  retq                                         #  6     0x41169e  1      OPC=retq                18446744073709551615  
                                                                                                                        
 .size _ZN24custom_constant_multiplyIlE8do_shiftEl, .-_ZN24custom_constant_multiplyIlE8do_shiftEl
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN24custom_constant_multiplyIlE8do_shiftEl->4265600
+._ZN24custom_constant_multiplyIlE8do_shiftEl->4265616
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN24custom_constant_multiplyIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.04system 0:00.24elapsed 105%CPU (0avgtext+0avgdata 10096maxresident)k
+0inputs+136outputs (0major+4322minor)pagefaults 0swaps

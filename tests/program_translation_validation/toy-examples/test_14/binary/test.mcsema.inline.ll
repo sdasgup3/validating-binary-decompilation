@@ -92,6 +92,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_400408__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_checkFn_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_checkFn_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1475,7 +1487,7 @@ block_400509:                                     ; preds = %block_400500
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -2034,7 +2046,7 @@ block_400600:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400408__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -3374,7 +3386,7 @@ block_400540:
   %115 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %106, i64* %115, align 8, !tbaa !2428
   %116 = load i64, i64* %PC
-  %117 = call %struct.Memory* @sub_4005d0_checkFn(%struct.State* %0, i64 %116, %struct.Memory* %2)
+  %117 = call %struct.Memory* @sub_4005d0_checkFn_renamed__renamed_(%struct.State* %0, i64 %116, %struct.Memory* %2)
   %118 = load i64, i64* %PC
   %119 = add i64 %118, 10
   store i64 %119, i64* %PC
@@ -3404,7 +3416,7 @@ block_400540:
   %137 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %128, i64* %137, align 8, !tbaa !2428
   %138 = load i64, i64* %PC
-  %139 = call %struct.Memory* @sub_4005d0_checkFn(%struct.State* %0, i64 %138, %struct.Memory* %117)
+  %139 = call %struct.Memory* @sub_4005d0_checkFn_renamed__renamed_(%struct.State* %0, i64 %138, %struct.Memory* %117)
   %140 = load i64, i64* %PC
   %141 = add i64 %140, 10
   store i64 %141, i64* %PC
@@ -3434,7 +3446,7 @@ block_400540:
   %159 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %150, i64* %159, align 8, !tbaa !2428
   %160 = load i64, i64* %PC
-  %161 = call %struct.Memory* @sub_4005d0_checkFn(%struct.State* %0, i64 %160, %struct.Memory* %139)
+  %161 = call %struct.Memory* @sub_4005d0_checkFn_renamed__renamed_(%struct.State* %0, i64 %160, %struct.Memory* %139)
   %162 = load i64, i64* %PC
   %163 = add i64 %162, 10
   store i64 %163, i64* %PC

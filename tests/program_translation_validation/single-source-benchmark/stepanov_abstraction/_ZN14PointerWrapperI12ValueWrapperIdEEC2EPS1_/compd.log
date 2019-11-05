@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_
   .type _ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_, @function
 
-#! file-offset 0x1bf0
-#! rip-offset  0x401bf0
+#! file-offset 0x1c00
+#! rip-offset  0x401c00
 #! capacity    25 bytes
 
 # Text                                           #  Line  RIP       Bytes  Opcode            Target                
-._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_:  #        0x401bf0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                     #  1     0x401bf0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                #  2     0x401bf1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                          #  3     0x401bf4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                         #  4     0x401bf8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                          #  5     0x401bfc  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi                         #  6     0x401c00  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                              #  7     0x401c04  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                      #  8     0x401c07  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                           #  9     0x401c08  1      OPC=retq          18446744073709551615  
+._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_:  #        0x401c00  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                     #  1     0x401c00  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                #  2     0x401c01  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                          #  3     0x401c04  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                         #  4     0x401c08  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                          #  5     0x401c0c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi                         #  6     0x401c10  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                              #  7     0x401c14  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                      #  8     0x401c17  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                           #  9     0x401c18  1      OPC=retq          18446744073709551615  
                                                                                                                    
 .size _ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_, .-_ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_->4201456
+._ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_->4201472
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.02system 0:00.24elapsed 85%CPU (0avgtext+0avgdata 10032maxresident)k
+0inputs+144outputs (0major+5282minor)pagefaults 0swaps

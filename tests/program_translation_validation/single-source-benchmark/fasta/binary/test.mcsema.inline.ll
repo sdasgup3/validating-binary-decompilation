@@ -115,6 +115,18 @@ declare %struct.Memory* @sub_4005a8__init_proc_renamed__renamed_(%struct.State* 
 
 declare %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400890_repeat_fasta_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ae0_myrandom_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005a8__init_proc_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009c0_random_fasta_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400820_accumulate_probabilities_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -2463,7 +2475,7 @@ block_4006f9:                                     ; preds = %block_4006f0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400680_deregister_tm_clones_renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -3097,7 +3109,7 @@ block_400730:
   %126 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %117, i64* %126, align 8, !tbaa !2428
   %127 = load i64, i64* %PC
-  %128 = call %struct.Memory* @sub_400820_accumulate_probabilities_renamed__renamed_(%struct.State* %0, i64 %127, %struct.Memory* %2)
+  %128 = call %struct.Memory* @sub_400820_accumulate_probabilities_renamed__renamed__renamed_(%struct.State* %0, i64 %127, %struct.Memory* %2)
   %129 = load i64, i64* %PC
   %130 = add i64 %129, 10
   store i64 %130, i64* %PC
@@ -3129,7 +3141,7 @@ block_400730:
   %148 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %139, i64* %148, align 8, !tbaa !2428
   %149 = load i64, i64* %PC
-  %150 = call %struct.Memory* @sub_400820_accumulate_probabilities_renamed__renamed_(%struct.State* %0, i64 %149, %struct.Memory* %128)
+  %150 = call %struct.Memory* @sub_400820_accumulate_probabilities_renamed__renamed__renamed_(%struct.State* %0, i64 %149, %struct.Memory* %128)
   %151 = load i64, i64* %PC
   %152 = add i64 %151, 10
   store i64 %152, i64* %PC
@@ -3231,7 +3243,7 @@ block_400730:
   %222 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %213, i64* %222, align 8, !tbaa !2428
   %223 = load i64, i64* %PC
-  %224 = call %struct.Memory* @sub_400890_repeat_fasta_renamed__renamed_(%struct.State* %0, i64 %223, %struct.Memory* %168)
+  %224 = call %struct.Memory* @sub_400890_repeat_fasta_renamed__renamed__renamed_(%struct.State* %0, i64 %223, %struct.Memory* %168)
   %225 = load i64, i64* %PC
   %226 = add i64 %225, 10
   store i64 %226, i64* %PC
@@ -3324,7 +3336,7 @@ block_400730:
   %291 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %282, i64* %291, align 8, !tbaa !2428
   %292 = load i64, i64* %PC
-  %293 = call %struct.Memory* @sub_4009c0_random_fasta_renamed__renamed_(%struct.State* %0, i64 %292, %struct.Memory* %242)
+  %293 = call %struct.Memory* @sub_4009c0_random_fasta_renamed__renamed__renamed_(%struct.State* %0, i64 %292, %struct.Memory* %242)
   %294 = load i64, i64* %PC
   %295 = add i64 %294, 10
   store i64 %295, i64* %PC
@@ -3417,7 +3429,7 @@ block_400730:
   %360 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %351, i64* %360, align 8, !tbaa !2428
   %361 = load i64, i64* %PC
-  %362 = call %struct.Memory* @sub_4009c0_random_fasta_renamed__renamed_(%struct.State* %0, i64 %361, %struct.Memory* %311)
+  %362 = call %struct.Memory* @sub_4009c0_random_fasta_renamed__renamed__renamed_(%struct.State* %0, i64 %361, %struct.Memory* %311)
   %363 = load i64, i64* %RAX
   %364 = load i32, i32* %EAX
   %365 = zext i32 %364 to i64
@@ -4282,7 +4294,7 @@ block_400a0c:                                     ; preds = %block_400a52, %bloc
   %575 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %566, i64* %575, align 8, !tbaa !2428
   %576 = load i64, i64* %PC
-  %577 = call %struct.Memory* @sub_400ae0_myrandom_renamed__renamed_(%struct.State* %0, i64 %576, %struct.Memory* %MEMORY.2)
+  %577 = call %struct.Memory* @sub_400ae0_myrandom_renamed__renamed__renamed_(%struct.State* %0, i64 %576, %struct.Memory* %MEMORY.2)
   %578 = load i64, i64* %RBP
   %579 = sub i64 %578, 100
   %580 = bitcast %union.vec128_t* %XMM0 to i8*
@@ -6062,7 +6074,7 @@ block_400b50:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4005a8__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4005a8__init_proc_renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC

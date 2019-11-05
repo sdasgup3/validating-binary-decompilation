@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.74user 1.67system 0:05.44elapsed 99%CPU (0avgtext+0avgdata 24016maxresident)k
+0inputs+456outputs (0major+6010minor)pagefaults 0swaps

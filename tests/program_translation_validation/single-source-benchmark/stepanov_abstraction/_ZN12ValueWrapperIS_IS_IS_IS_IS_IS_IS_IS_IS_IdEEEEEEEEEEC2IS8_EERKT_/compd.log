@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_
   .type _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_, @function
 
-#! file-offset 0x5ff0
-#! rip-offset  0x405ff0
+#! file-offset 0x6000
+#! rip-offset  0x406000
 #! capacity    28 bytes
 
 # Text                                                                  #  Line  RIP       Bytes  Opcode            Target                
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_:  #        0x405ff0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                                            #  1     0x405ff0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                                       #  2     0x405ff1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                 #  3     0x405ff4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                                #  4     0x405ff8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                                                 #  5     0x405ffc  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi                                                #  6     0x406000  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rdi                                                     #  7     0x406004  3      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                                                     #  8     0x406007  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                                             #  9     0x40600a  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                                  #  10    0x40600b  1      OPC=retq          18446744073709551615  
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_:  #        0x406000  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                                            #  1     0x406000  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                                       #  2     0x406001  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                 #  3     0x406004  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                                #  4     0x406008  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                                                 #  5     0x40600c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi                                                #  6     0x406010  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rdi                                                     #  7     0x406014  3      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                                                     #  8     0x406017  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                                             #  9     0x40601a  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                                  #  10    0x40601b  1      OPC=retq          18446744073709551615  
                                                                                                                                           
 .size _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_, .-_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_->4218864
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT_->4218880
 
 Computing Label PC values: Done.
 
@@ -574,3 +574,5 @@ Decompiling Function: _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.17user 0.03system 0:00.24elapsed 89%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+152outputs (0major+5577minor)pagefaults 0swaps

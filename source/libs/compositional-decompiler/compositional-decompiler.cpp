@@ -49,8 +49,10 @@ static uint64_t hex_to_int(const string &s);
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
     const string &extractedFunction, const string &singleInstrDecompPath,
-    const string &workdir, bool assume_none_decl_retval) {
-  this->assume_none_decl_retval = assume_none_decl_retval;
+    const string &workdir, bool reloc_info_available) {
+
+  this->binaryPath = inPath;
+  this->reloc_info_available = reloc_info_available;
   this->extractedFunction = extractedFunction;
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
@@ -376,42 +378,166 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
   return retval;
 }
 
+// Check if the constant is an address using the binary relocation info
+// Check if any of the relocation offset of the binary `binaryPath` falls
+// within the range of [currRIP, currRIP + currSize)
+bool CompositionalDecompiler::checkConstantOrAddress(uint64_t currRIP,
+                                                     uint64_t currSize) {
+
+  if (!reloc_info_available)
+    return false;
+
+  redi::ipstream *stream = NULL;
+  stringstream cmd;
+  cmd << scriptsPath << "/find_pc_in_relocinfo.pl --binary " << binaryPath
+      << " --pc " << hex << currRIP << " --size " << dec << currSize;
+  vector<string> result;
+  if (!stoke::run_command(cmd.str(), true, &stream)) {
+    Console::error(1) << "Error: " << get_error() << endl;
+    return false;
+  }
+
+  extractFromStream(result, *stream, false, true);
+  if (result.size() != 1) {
+    Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+                         "find_pc_in_relocinfo returns multi-line garbase"
+                      << endl;
+    exit(1);
+  }
+
+  if (result[0] == "address") {
+    return true;
+  } else if (result[0] == "constant") {
+    return false;
+  } else {
+    Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+                         "find_pc_in_relocinfo returns single-line garbage"
+                      << endl;
+    exit(1);
+  }
+
+  return false;
+}
+
+/*
+Task I:
+  While compd composes each instruction's LLVM ir, it calls mcsema for
+  decompiling each instruction.  If Mcsema interprets a constant operand of the
+  instruction as an address, then it generates ptrtoint for it. We could have
+  used their generated code for address type and address global. But as those
+  type/names are generated in the context of a single instruction, they might
+  get repeated and we need to disambiguate individual access.  Instead, the
+  following function replaces those types and names to unique types and names.
+
+Task II:
+  As the single instruction decompilation does not have the whole program
+  context, hence it might go wrong in case of globals.  To fix that, we use the
+  binary relocation as the golden truth. With that the following cases might
+  apprer
+
+  For an immediate instruction wih a constant operand I,
+
+   Relocation info inference | McSema's inference | Action
+  --------------------------------------------------------
+case 1:constant              |   constant         | do nothing
+case 2:constant              |   address          | fix it
+case 3:address               |   constant         | fix it
+case 4:address               |   address          | fine
+
+Note: As we are reusing the cache, it might happen that an data address which
+is decompiled by McSema as an address and populated once, is resued later, but
+this time the address could have been inferred differently (as a constant) by
+McSema. But reusing the cahce forces compd to use the old and incorrect
+inference.But that is not a problem as the above Task II course-corrects the
+interpretation of McSema and does the right thing based on relocation
+information.  In effect it does not matter what McSema infers about a single
+insruction decompilation involving data acccess.
+
+*/
 vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
-    x64asm::Instruction instr, const vector<string> &local_defn) {
+    x64asm::Instruction instr, const vector<string> &local_defn,
+    uint64_t currRIP, uint64_t currSize) {
   vector<string> retval;
   stringstream opr;
 
   // Extract the data access operand
   if (is_any_operand_mem_type(instr)) {
+    // For data accesses like movsd 0xc8(%rip), %xmm0
+    // Single instr decompilation will always generate a ptr2int
     auto memIndex = instr.mem_index();
     const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
     opr << M_OPR;
+
   } else if (is_any_operand_imm_type(instr)) {
     auto immIndex = instr.imm_index();
     const Imm &IMM_OPR = instr.get_operand<Imm>(immIndex);
     opr << IMM_OPR;
+
   } else {
     // TO DO
   }
 
   // Extract the access size
   auto accessSize = instr.get_operand<Operand>(instr.arity() - 1).size();
-  // for (size_t i = 0; i < instr.arity(); i++) {
-  //   auto OPR = instr.get_operand<Operand>(i);
-  //   Console::msg() << instr << " Operand Size: " << OPR << ": " << OPR.size()
-  //                  << "\n";
-  // }
 
-  // if (!is_hex_string(opr.str()))
-  //   return local_defn;
+  // If relocation information is NOT available, then be at the mercy of
+  // decompiler
+  // and borrow its inderence on global data access. Note that McSema's single
+  // instruction
+  // decompilation could be incorrect (as it lacks the whole program context)
+  // and
+  // we will be inheriting those wrong decompilations.
 
   std::smatch m;
-  // uint64_t hexInt = hex_to_int(opr.str());
+  if (!reloc_info_available) {
+    for (auto &line : local_defn) {
+
+      if (regex_search(line, m, regex("ptrtoint"))) {
+
+        string addrExpr = normalize_spaces(opr.str());
+
+        if (DataSectioGlobalsCache.count(addrExpr)) {
+          uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+          if (accessSize > pastSize) {
+            DataSectioGlobalsCache[addrExpr] = accessSize;
+          }
+        } else {
+          DataSectioGlobalsCache[addrExpr] = accessSize;
+        }
+
+        string globalType = "%G_" + addrExpr + "_type";
+        string globalName = "@G_" + addrExpr;
+
+        auto replace_str =
+            "ptrtoint( " + globalType + "* " + globalName + " to";
+        auto repl_line =
+            regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+        retval.push_back(repl_line);
+
+        continue;
+      }
+      retval.push_back(line);
+    }
+
+    return retval;
+  }
+
+  // If relocation information is available, then do the right thing!
+  bool immOperand = false;
+  bool isGlobalAccess = false;
+  uint64_t hexInt = 0;
+  string hexIntStr = "";
+
+  if (is_hex_string(opr.str())) {
+    immOperand = true;
+    isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
+    hexInt = hex_to_int(opr.str());
+    hexIntStr = to_string(hexInt);
+  }
 
   for (auto &line : local_defn) {
-    // if (regex_search(line, m, regex("i64.?ptrtoint"))) {
+
     if (regex_search(line, m, regex("ptrtoint"))) {
-      // auto replace_str = "i64 " + to_string(hexInt) + ")\n";
       string addrExpr = normalize_spaces(opr.str());
 
       if (DataSectioGlobalsCache.count(addrExpr)) {
@@ -426,11 +552,67 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
       string globalType = "%G_" + addrExpr + "_type";
       string globalName = "@G_" + addrExpr;
 
-      auto replace_str = "ptrtoint( " + globalType + "* " + globalName + " to";
-      auto repl_line =
-          // regex_replace(line, regex("i64.?ptrtoint.*$"), replace_str);
-          regex_replace(line, regex("ptrtoint.*?to"), replace_str);
-      retval.push_back(repl_line);
+      if (!immOperand) {
+        auto replace_str =
+            "ptrtoint( " + globalType + "* " + globalName + " to";
+        auto repl_line =
+            regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+        retval.push_back(repl_line);
+
+        continue;
+      }
+
+      if (isGlobalAccess) {
+        // CASE 4: golden: address, mcsema: address
+        Console::msg() << "Global Access Fix: " << hexIntStr
+                       << " Relocation: Address, McSema: Address" << endl;
+
+        auto replace_str =
+            "ptrtoint( " + globalType + "* " + globalName + " to";
+        auto repl_line =
+            regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+        retval.push_back(repl_line);
+      } else {
+        // CASE 2: golden: constant, mcsema: address
+        Console::msg() << "Global Access Mismatch: " << hexIntStr
+                       << " Relocation: Constant, McSema: Address" << endl;
+
+        auto replace_str = hexIntStr;
+        auto repl_line =
+            regex_replace(line, regex("ptrtoint.*?to i64\\)"), replace_str);
+        retval.push_back(repl_line);
+      }
+
+      continue;
+
+    } else if (regex_search(line, m, regex(hexIntStr))) {
+      if (isGlobalAccess) {
+        // CASE 3: golden: address, mcsema: constant
+        Console::msg() << "Global Access Mismatch: " << hexIntStr
+                       << " Relocation: Address, McSema: Constant" << endl;
+
+        string addrExpr = normalize_spaces(opr.str());
+
+        if (DataSectioGlobalsCache.count(addrExpr)) {
+          uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+          if (accessSize > pastSize) {
+            DataSectioGlobalsCache[addrExpr] = accessSize;
+          }
+        } else {
+          DataSectioGlobalsCache[addrExpr] = accessSize;
+        }
+
+        string globalType = "%G_" + addrExpr + "_type";
+        string globalName = "@G_" + addrExpr;
+
+        auto replace_str =
+            "ptrtoint( " + globalType + "* " + globalName + " to i64)";
+        auto repl_line = regex_replace(line, regex(hexIntStr), replace_str);
+        retval.push_back(repl_line);
+      } else {
+        // CASE 1: golden: constant, mcsema: constant
+        retval.push_back(line);
+      }
       continue;
     }
 
@@ -686,19 +868,19 @@ string CompositionalDecompiler::handleCALLBodyCalls(x64asm::Instruction instr,
   }
 
   // Decls
-  if (assume_none_decl_retval) {
-    tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
-        << "(%struct.State* noalias dereferenceable(3376), i64, "
-           "%struct.Memory* "
-           "noalias)"
-        << endl;
-  } else {
-    tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
-        << "(%struct.State* noalias dereferenceable(3376), i64, "
-           "%struct.Memory* "
-           "noalias readnone returned)"
-        << endl;
-  }
+  // if (assume_none_decl_retval) {
+  //   tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+  //       << "(%struct.State* noalias dereferenceable(3376), i64, "
+  //          "%struct.Memory* "
+  //          "noalias)"
+  //       << endl;
+  // } else {
+  tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+      << "(%struct.State* noalias dereferenceable(3376), i64, "
+         "%struct.Memory* "
+         "noalias readnone returned)"
+      << endl;
+  // }
   if (!DeclCache.count(tmp.str())) {
     FuncDecls << tmp.str();
     DeclCache.insert(pair<string, string>(tmp.str(), ""));
@@ -789,7 +971,8 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   }
 
   if (is_any_operand_mem_type(instr) || is_any_operand_imm_type(instr)) {
-    mod_def = handleDataSectionAccessDefns(instr, uniq_local_defn);
+    mod_def =
+        handleDataSectionAccessDefns(instr, uniq_local_defn, currRIP, currSize);
   }
 
   for (auto line : mod_def) {
@@ -809,7 +992,8 @@ CompositionalDecompiler::decompileFunction(const string &extractedFunction) {
               "(%struct.State* noalias , i64, "
               "%struct.Memory* noalias) alwaysinline  {\n";
   Body << "entry:" << endl;
-  Body << "  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 "
+  Body << "  %3 = getelementptr inbounds %struct.State, %struct.State* %0, "
+          "i64 "
           "0, i32 6, i32 33, i32 0, i32 0"
        << endl;
   Body << "  store i64 %1, i64* %3, align 8" << endl;
@@ -1174,7 +1358,8 @@ uint64_t hex_to_int(const string &s) {
 //  return -1;
 //}
 //
-// int CompositionalDecompiler::getMcSemaIndices(const Sse &reg) { return -1; }
+// int CompositionalDecompiler::getMcSemaIndices(const Sse &reg) { return -1;
+// }
 // bool CompositionalDecompiler::sanity_check_template_instruction(
 //    x64asm::Instruction i1, x64asm::Instruction i2) {
 //  if ((i1.get_opcode() != i2.get_opcode()) || (i1.arity() != i2.arity()))

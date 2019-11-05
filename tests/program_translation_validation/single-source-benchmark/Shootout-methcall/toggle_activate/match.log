@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [toggle_activate] from ../binary/test.mcsema.opt.ll
 Extracting function [toggle_activate] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.24user 0.75system 0:01.00elapsed 99%CPU (0avgtext+0avgdata 12576maxresident)k
+0inputs+144outputs (0major+952minor)pagefaults 0swaps

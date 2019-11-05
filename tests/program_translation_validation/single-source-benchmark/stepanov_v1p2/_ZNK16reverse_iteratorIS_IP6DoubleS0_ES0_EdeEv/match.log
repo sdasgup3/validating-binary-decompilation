@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.33user 1.06system 0:02.42elapsed 99%CPU (0avgtext+0avgdata 17092maxresident)k
+0inputs+240outputs (0major+2011minor)pagefaults 0swaps

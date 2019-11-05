@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_
   .type _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_, @function
 
-#! file-offset 0x60b0
-#! rip-offset  0x4060b0
+#! file-offset 0x60c0
+#! rip-offset  0x4060c0
 #! capacity    28 bytes
 
 # Text                                                          #  Line  RIP       Bytes  Opcode            Target                
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_:  #        0x4060b0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                                    #  1     0x4060b0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                               #  2     0x4060b1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                         #  3     0x4060b4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                        #  4     0x4060b8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                                         #  5     0x4060bc  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi                                        #  6     0x4060c0  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rdi                                             #  7     0x4060c4  3      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                                             #  8     0x4060c7  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                                     #  9     0x4060ca  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                          #  10    0x4060cb  1      OPC=retq          18446744073709551615  
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_:  #        0x4060c0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                                    #  1     0x4060c0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                               #  2     0x4060c1  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                         #  3     0x4060c4  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                        #  4     0x4060c8  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                                         #  5     0x4060cc  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi                                        #  6     0x4060d0  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rdi                                             #  7     0x4060d4  3      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                                             #  8     0x4060d7  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                                     #  9     0x4060da  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                          #  10    0x4060db  1      OPC=retq          18446744073709551615  
                                                                                                                                   
 .size _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_, .-_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_->4219056
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT_->4219072
 
 Computing Label PC values: Done.
 
@@ -574,3 +574,5 @@ Decompiling Function: _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERK
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.17user 0.04system 0:00.22elapsed 94%CPU (0avgtext+0avgdata 10204maxresident)k
+0inputs+152outputs (0major+5574minor)pagefaults 0swaps

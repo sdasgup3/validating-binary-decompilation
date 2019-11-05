@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN30custom_lessthanequal_constantsIlE8do_shiftEl
   .type _ZN30custom_lessthanequal_constantsIlE8do_shiftEl, @function
 
-#! file-offset 0x11a60
-#! rip-offset  0x411a60
+#! file-offset 0x11a70
+#! rip-offset  0x411a70
 #! capacity    12 bytes
 
 # Text                                               #  Line  RIP       Bytes  Opcode            Target                
-._ZN30custom_lessthanequal_constantsIlE8do_shiftEl:  #        0x411a60  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                         #  1     0x411a60  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                    #  2     0x411a61  3      OPC=movq_r64_r64  18446744073709551615  
-  xorl %eax, %eax                                    #  3     0x411a64  2      OPC=xorl_r32_r32  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                              #  4     0x411a66  4      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                          #  5     0x411a6a  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                               #  6     0x411a6b  1      OPC=retq          18446744073709551615  
+._ZN30custom_lessthanequal_constantsIlE8do_shiftEl:  #        0x411a70  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                         #  1     0x411a70  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                    #  2     0x411a71  3      OPC=movq_r64_r64  18446744073709551615  
+  xorl %eax, %eax                                    #  3     0x411a74  2      OPC=xorl_r32_r32  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                              #  4     0x411a76  4      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                          #  5     0x411a7a  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                               #  6     0x411a7b  1      OPC=retq          18446744073709551615  
                                                                                                                        
 .size _ZN30custom_lessthanequal_constantsIlE8do_shiftEl, .-_ZN30custom_lessthanequal_constantsIlE8do_shiftEl
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_lessthanequal_constantsIlE8do_shiftEl->4266592
+._ZN30custom_lessthanequal_constantsIlE8do_shiftEl->4266608
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN30custom_lessthanequal_constantsIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.22user 0.03system 0:00.31elapsed 82%CPU (0avgtext+0avgdata 10248maxresident)k
+0inputs+136outputs (0major+4323minor)pagefaults 0swaps

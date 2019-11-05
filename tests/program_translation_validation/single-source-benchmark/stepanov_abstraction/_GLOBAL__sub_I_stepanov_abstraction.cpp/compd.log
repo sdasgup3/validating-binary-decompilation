@@ -4,32 +4,32 @@ Disassembled output
   .globl _GLOBAL__sub_I_stepanov_abstraction_cpp
   .type _GLOBAL__sub_I_stepanov_abstraction_cpp, @function
 
-#! file-offset 0x770
-#! rip-offset  0x400770
+#! file-offset 0x780
+#! rip-offset  0x400780
 #! capacity    86 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode            Target                
-._GLOBAL__sub_I_stepanov_abstraction_cpp:  #        0x400770  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                               #  1     0x400770  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x400771  3      OPC=movq_r64_r64  18446744073709551615  
-  callq .__cxx_global_var_init             #  3     0x400774  5      OPC=callq_label   4196304               
-  callq .__cxx_global_var_init_11          #  4     0x400779  5      OPC=callq_label   4196400               
-  callq .__cxx_global_var_init_12          #  5     0x40077e  5      OPC=callq_label   4196496               
-  callq .__cxx_global_var_init_13          #  6     0x400783  5      OPC=callq_label   4196592               
-  callq .__cxx_global_var_init_14          #  7     0x400788  5      OPC=callq_label   4196688               
-  callq .__cxx_global_var_init_15          #  8     0x40078d  5      OPC=callq_label   4196720               
-  callq .__cxx_global_var_init_16          #  9     0x400792  5      OPC=callq_label   4196752               
-  callq .__cxx_global_var_init_17          #  10    0x400797  5      OPC=callq_label   4196784               
-  callq .__cxx_global_var_init_18          #  11    0x40079c  5      OPC=callq_label   4196816               
-  callq .__cxx_global_var_init_19          #  12    0x4007a1  5      OPC=callq_label   4196848               
-  callq .__cxx_global_var_init_20          #  13    0x4007a6  5      OPC=callq_label   4196880               
-  callq .__cxx_global_var_init_21          #  14    0x4007ab  5      OPC=callq_label   4196912               
-  callq .__cxx_global_var_init_22          #  15    0x4007b0  5      OPC=callq_label   4196944               
-  callq .__cxx_global_var_init_23          #  16    0x4007b5  5      OPC=callq_label   4196976               
-  callq .__cxx_global_var_init_24          #  17    0x4007ba  5      OPC=callq_label   4197008               
-  callq .__cxx_global_var_init_25          #  18    0x4007bf  5      OPC=callq_label   4197040               
-  popq %rbp                                #  19    0x4007c4  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                     #  20    0x4007c5  1      OPC=retq          18446744073709551615  
+._GLOBAL__sub_I_stepanov_abstraction_cpp:  #        0x400780  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                               #  1     0x400780  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x400781  3      OPC=movq_r64_r64  18446744073709551615  
+  callq .__cxx_global_var_init             #  3     0x400784  5      OPC=callq_label   4196320               
+  callq .__cxx_global_var_init_11          #  4     0x400789  5      OPC=callq_label   4196416               
+  callq .__cxx_global_var_init_12          #  5     0x40078e  5      OPC=callq_label   4196512               
+  callq .__cxx_global_var_init_13          #  6     0x400793  5      OPC=callq_label   4196608               
+  callq .__cxx_global_var_init_14          #  7     0x400798  5      OPC=callq_label   4196704               
+  callq .__cxx_global_var_init_15          #  8     0x40079d  5      OPC=callq_label   4196736               
+  callq .__cxx_global_var_init_16          #  9     0x4007a2  5      OPC=callq_label   4196768               
+  callq .__cxx_global_var_init_17          #  10    0x4007a7  5      OPC=callq_label   4196800               
+  callq .__cxx_global_var_init_18          #  11    0x4007ac  5      OPC=callq_label   4196832               
+  callq .__cxx_global_var_init_19          #  12    0x4007b1  5      OPC=callq_label   4196864               
+  callq .__cxx_global_var_init_20          #  13    0x4007b6  5      OPC=callq_label   4196896               
+  callq .__cxx_global_var_init_21          #  14    0x4007bb  5      OPC=callq_label   4196928               
+  callq .__cxx_global_var_init_22          #  15    0x4007c0  5      OPC=callq_label   4196960               
+  callq .__cxx_global_var_init_23          #  16    0x4007c5  5      OPC=callq_label   4196992               
+  callq .__cxx_global_var_init_24          #  17    0x4007ca  5      OPC=callq_label   4197024               
+  callq .__cxx_global_var_init_25          #  18    0x4007cf  5      OPC=callq_label   4197056               
+  popq %rbp                                #  19    0x4007d4  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                     #  20    0x4007d5  1      OPC=retq          18446744073709551615  
                                                                                                              
 .size _GLOBAL__sub_I_stepanov_abstraction_cpp, .-_GLOBAL__sub_I_stepanov_abstraction_cpp
 Disassembling Done.
@@ -37,7 +37,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._GLOBAL__sub_I_stepanov_abstraction_cpp->4196208
+._GLOBAL__sub_I_stepanov_abstraction_cpp->4196224
 
 Computing Label PC values: Done.
 
@@ -774,3 +774,5 @@ Decompiling Function: _GLOBAL__sub_I_stepanov_abstraction.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.40user 0.07system 0:00.53elapsed 89%CPU (0avgtext+0avgdata 10220maxresident)k
+0inputs+200outputs (0major+8933minor)pagefaults 0swaps

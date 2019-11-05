@@ -7,7 +7,7 @@ compd_opt: copy_data next_data melt_data equal_data valid_data dump_list dump_pl
 match: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

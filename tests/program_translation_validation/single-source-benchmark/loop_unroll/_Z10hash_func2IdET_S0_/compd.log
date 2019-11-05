@@ -4,24 +4,24 @@ Disassembled output
   .globl _Z10hash_func2IdET_S0_
   .type _Z10hash_func2IdET_S0_, @function
 
-#! file-offset 0x15e0
-#! rip-offset  0x4015e0
+#! file-offset 0x15f0
+#! rip-offset  0x4015f0
 #! capacity    51 bytes
 
 # Text                        #  Line  RIP       Bytes  Opcode              Target                
-._Z10hash_func2IdET_S0_:      #        0x4015e0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                  #  1     0x4015e0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp             #  2     0x4015e1  3      OPC=movq_r64_r64    18446744073709551615  
-  movsd 0x14fcc(%rip), %xmm1  #  3     0x4015e4  8      OPC=movsd_xmm_m64   18446744073709551615  
-  movsd 0x14fcc(%rip), %xmm2  #  4     0x4015ec  8      OPC=movsd_xmm_m64   18446744073709551615  
-  movsd 0x14fcc(%rip), %xmm3  #  5     0x4015f4  8      OPC=movsd_xmm_m64   18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)     #  6     0x4015fc  5      OPC=movsd_m64_xmm   18446744073709551615  
-  addsd -0x8(%rbp), %xmm3     #  7     0x401601  5      OPC=addsd_xmm_m64   18446744073709551615  
-  mulsd %xmm3, %xmm2          #  8     0x401606  4      OPC=mulsd_xmm_xmm   18446744073709551615  
-  subsd %xmm1, %xmm2          #  9     0x40160a  4      OPC=subsd_xmm_xmm   18446744073709551615  
-  movaps %xmm2, %xmm0         #  10    0x40160e  3      OPC=movaps_xmm_xmm  18446744073709551615  
-  popq %rbp                   #  11    0x401611  1      OPC=popq_r64_1      18446744073709551615  
-  retq                        #  12    0x401612  1      OPC=retq            18446744073709551615  
+._Z10hash_func2IdET_S0_:      #        0x4015f0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                  #  1     0x4015f0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp             #  2     0x4015f1  3      OPC=movq_r64_r64    18446744073709551615  
+  movsd 0x14fcc(%rip), %xmm1  #  3     0x4015f4  8      OPC=movsd_xmm_m64   18446744073709551615  
+  movsd 0x14fcc(%rip), %xmm2  #  4     0x4015fc  8      OPC=movsd_xmm_m64   18446744073709551615  
+  movsd 0x14fcc(%rip), %xmm3  #  5     0x401604  8      OPC=movsd_xmm_m64   18446744073709551615  
+  movsd %xmm0, -0x8(%rbp)     #  6     0x40160c  5      OPC=movsd_m64_xmm   18446744073709551615  
+  addsd -0x8(%rbp), %xmm3     #  7     0x401611  5      OPC=addsd_xmm_m64   18446744073709551615  
+  mulsd %xmm3, %xmm2          #  8     0x401616  4      OPC=mulsd_xmm_xmm   18446744073709551615  
+  subsd %xmm1, %xmm2          #  9     0x40161a  4      OPC=subsd_xmm_xmm   18446744073709551615  
+  movaps %xmm2, %xmm0         #  10    0x40161e  3      OPC=movaps_xmm_xmm  18446744073709551615  
+  popq %rbp                   #  11    0x401621  1      OPC=popq_r64_1      18446744073709551615  
+  retq                        #  12    0x401622  1      OPC=retq            18446744073709551615  
                                                                                                   
 .size _Z10hash_func2IdET_S0_, .-_Z10hash_func2IdET_S0_
 Disassembling Done.
@@ -29,7 +29,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z10hash_func2IdET_S0_->4199904
+._Z10hash_func2IdET_S0_->4199920
 
 Computing Label PC values: Done.
 
@@ -614,3 +614,5 @@ Decompiling Function: _Z10hash_func2IdET_S0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.25user 0.08system 0:00.37elapsed 89%CPU (0avgtext+0avgdata 10288maxresident)k
+0inputs+168outputs (0major+6366minor)pagefaults 0swaps

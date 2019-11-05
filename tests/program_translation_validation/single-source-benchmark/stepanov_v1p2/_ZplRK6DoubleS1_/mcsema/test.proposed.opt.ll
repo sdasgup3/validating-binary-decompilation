@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401300._ZN6DoubleC2ERKd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401310._ZN6DoubleC2ERKd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZplRK6DoubleS1_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -167,7 +167,7 @@ entry:
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %6, align 8
   store i64 %80, i64* %3, align 8
-  %call2_401d43 = tail call %struct.Memory* @sub_401300._ZN6DoubleC2ERKd(%struct.State* %0, i64 %80, %struct.Memory* %2)
+  %call2_401d53 = tail call %struct.Memory* @sub_401310._ZN6DoubleC2ERKd(%struct.State* %0, i64 %80, %struct.Memory* %2)
   %85 = load i64, i64* %RBP.i, align 8
   %86 = add i64 %85, -8
   %87 = load i64, i64* %3, align 8
@@ -221,7 +221,7 @@ entry:
   store i64 %120, i64* %3, align 8
   %121 = add i64 %91, 48
   store i64 %121, i64* %6, align 8
-  ret %struct.Memory* %call2_401d43
+  ret %struct.Memory* %call2_401d53
 }
 
 ; Function Attrs: norecurse nounwind

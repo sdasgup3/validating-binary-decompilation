@@ -1,16 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55b4473c0078]:   %192 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55b4470d9808]:   %117 = load i32, i32* inttoptr (i64 6398080 to i32*), align 128
-[0x55b4470d9b98]:   %115 = load i32, i32* %114, align 4
-Multiple matches exist for [0x55b4473c0c30]:   %211 = lshr i32 %192, 31
-[0x55b44800fbd0]:   %135 = lshr i32 %115, 31
-[0x55b448010f90]:   %136 = lshr i32 %117, 31
-Multiple matches exist for [0x55b4473c0cb0]:   %212 = xor i32 %211, %210
-[0x55b447fea410]:   %138 = xor i32 %133, %135
-[0x55b447fea540]:   %137 = xor i32 %136, %135
+Multiple matches exist for [0x55555f076fc8]:   %192 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55555ed8eed8]:   %117 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55555ed90618]:   %115 = load i32, i32* %114, align 4
+Multiple matches exist for [0x55555f077b80]:   %211 = lshr i32 %192, 31
+[0x55555fca1400]:   %136 = lshr i32 %117, 31
+[0x55555fcc7e50]:   %135 = lshr i32 %115, 31
+Multiple matches exist for [0x55555f077c00]:   %212 = xor i32 %211, %210
+[0x55555fca12d0]:   %137 = xor i32 %136, %135
+[0x55555fcc85b0]:   %138 = xor i32 %133, %135
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Id31custom_divide_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Id31custom_divide_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
+71.37user 11.70system 1:23.32elapsed 99%CPU (0avgtext+0avgdata 54360maxresident)k
+0inputs+3672outputs (0major+18708minor)pagefaults 0swaps

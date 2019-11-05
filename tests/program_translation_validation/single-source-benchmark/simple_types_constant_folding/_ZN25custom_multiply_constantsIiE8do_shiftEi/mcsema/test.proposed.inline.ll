@@ -273,7 +273,7 @@ entry:
   store i8 0, i8* %BRANCH_TAKEN, align 1
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
-  %loadMem_413c70 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadMem_413c80 = load %struct.Memory*, %struct.Memory** %MEMORY
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %5 = getelementptr inbounds %struct.GPR, %struct.GPR* %4, i32 0, i32 33
   %6 = getelementptr inbounds %struct.Reg, %struct.Reg* %5, i32 0, i32 0
@@ -292,8 +292,8 @@ entry:
   %16 = inttoptr i64 %15 to i64*
   store i64 %10, i64* %16
   store i64 %15, i64* %13, align 8
-  store %struct.Memory* %loadMem_413c70, %struct.Memory** %MEMORY
-  %loadMem_413c71 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_413c80, %struct.Memory** %MEMORY
+  %loadMem_413c81 = load %struct.Memory*, %struct.Memory** %MEMORY
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %18 = getelementptr inbounds %struct.GPR, %struct.GPR* %17, i32 0, i32 33
   %19 = getelementptr inbounds %struct.Reg, %struct.Reg* %18, i32 0, i32 0
@@ -311,8 +311,8 @@ entry:
   %28 = add i64 %27, 3
   store i64 %28, i64* %PC.i7
   store i64 %26, i64* %RBP.i8, align 8
-  store %struct.Memory* %loadMem_413c71, %struct.Memory** %MEMORY
-  %loadMem_413c74 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_413c81, %struct.Memory** %MEMORY
+  %loadMem_413c84 = load %struct.Memory*, %struct.Memory** %MEMORY
   %29 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %30 = getelementptr inbounds %struct.GPR, %struct.GPR* %29, i32 0, i32 33
   %31 = getelementptr inbounds %struct.Reg, %struct.Reg* %30, i32 0, i32 0
@@ -325,8 +325,8 @@ entry:
   %36 = add i64 %35, 5
   store i64 %36, i64* %PC.i6
   store i64 6, i64* %RAX.i, align 8
-  store %struct.Memory* %loadMem_413c74, %struct.Memory** %MEMORY
-  %loadMem_413c79 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_413c84, %struct.Memory** %MEMORY
+  %loadMem_413c89 = load %struct.Memory*, %struct.Memory** %MEMORY
   %37 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %38 = getelementptr inbounds %struct.GPR, %struct.GPR* %37, i32 0, i32 33
   %39 = getelementptr inbounds %struct.Reg, %struct.Reg* %38, i32 0, i32 0
@@ -348,8 +348,8 @@ entry:
   store i64 %51, i64* %PC.i4
   %52 = inttoptr i64 %47 to i32*
   store i32 %48, i32* %52
-  store %struct.Memory* %loadMem_413c79, %struct.Memory** %MEMORY
-  %loadMem_413c7c = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_413c89, %struct.Memory** %MEMORY
+  %loadMem_413c8c = load %struct.Memory*, %struct.Memory** %MEMORY
   %53 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %54 = getelementptr inbounds %struct.GPR, %struct.GPR* %53, i32 0, i32 33
   %55 = getelementptr inbounds %struct.Reg, %struct.Reg* %54, i32 0, i32 0
@@ -368,8 +368,8 @@ entry:
   %65 = load i64, i64* %64
   store i64 %65, i64* %RBP.i3, align 8
   store i64 %63, i64* %61, align 8
-  store %struct.Memory* %loadMem_413c7c, %struct.Memory** %MEMORY
-  %loadMem_413c7d = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_413c8c, %struct.Memory** %MEMORY
+  %loadMem_413c8d = load %struct.Memory*, %struct.Memory** %MEMORY
   %66 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %67 = getelementptr inbounds %struct.GPR, %struct.GPR* %66, i32 0, i32 33
   %68 = getelementptr inbounds %struct.Reg, %struct.Reg* %67, i32 0, i32 0
@@ -385,8 +385,8 @@ entry:
   store i64 %75, i64* %71, align 8
   %76 = add i64 %73, 8
   store i64 %76, i64* %72, align 8
-  store %struct.Memory* %loadMem_413c7d, %struct.Memory** %MEMORY
-  ret %struct.Memory* %loadMem_413c7d
+  store %struct.Memory* %loadMem_413c8d, %struct.Memory** %MEMORY
+  ret %struct.Memory* %loadMem_413c8d
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) {

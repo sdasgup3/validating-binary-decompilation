@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN15goto_loop_testsILi0EiE7do_testEPKiPKc
   .type _ZN15goto_loop_testsILi0EiE7do_testEPKiPKc, @function
 
-#! file-offset 0xf4f0
-#! rip-offset  0x40f4f0
+#! file-offset 0xf500
+#! rip-offset  0x40f500
 #! capacity    14 bytes
 
 # Text                                        #  Line  RIP       Bytes  Opcode            Target                
-._ZN15goto_loop_testsILi0EiE7do_testEPKiPKc:  #        0x40f4f0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                  #  1     0x40f4f0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                             #  2     0x40f4f1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                       #  3     0x40f4f4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                      #  4     0x40f4f8  4      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                   #  5     0x40f4fc  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                        #  6     0x40f4fd  1      OPC=retq          18446744073709551615  
+._ZN15goto_loop_testsILi0EiE7do_testEPKiPKc:  #        0x40f500  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                  #  1     0x40f500  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                             #  2     0x40f501  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                       #  3     0x40f504  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                      #  4     0x40f508  4      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                   #  5     0x40f50c  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                        #  6     0x40f50d  1      OPC=retq          18446744073709551615  
                                                                                                                 
 .size _ZN15goto_loop_testsILi0EiE7do_testEPKiPKc, .-_ZN15goto_loop_testsILi0EiE7do_testEPKiPKc
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN15goto_loop_testsILi0EiE7do_testEPKiPKc->4257008
+._ZN15goto_loop_testsILi0EiE7do_testEPKiPKc->4257024
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN15goto_loop_testsILi0EiE7do_testEPKiPKc Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.06system 0:00.25elapsed 98%CPU (0avgtext+0avgdata 10240maxresident)k
+0inputs+128outputs (0major+4286minor)pagefaults 0swaps
