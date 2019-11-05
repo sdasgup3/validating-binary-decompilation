@@ -1,0 +1,10 @@
+[Error] Critical: Parser returned a non-zero exit code: 113
+Stdout:
+
+Stderr:
+[Error] Inner Parser: Scanner error: unexpected character sequence 'f'.
+	Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants-samereg/vcvtps2pd_ymm_xmm/./llvm-kast.test.mod.ll.7PmfOvGi)
+	Location(1,14796,1,14797)
+Command exited with non-zero status 113
+34.48user 11.72system 0:30.96elapsed 149%CPU (0avgtext+0avgdata 534208maxresident)k
+0inputs+4920outputs (0major+452207minor)pagefaults 0swaps

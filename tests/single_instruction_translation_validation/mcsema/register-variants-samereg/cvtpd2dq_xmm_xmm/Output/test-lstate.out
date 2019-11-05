@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:190:26: error: use of undefined value '@my.fabs.f64'
+  %17 = tail call double @my.fabs.f64(double %16) #22
+                         ^
+0.02user 0.02system 0:00.11elapsed 48%CPU (0avgtext+0avgdata 27424maxresident)k
+256inputs+16outputs (1major+3268minor)pagefaults 0swaps

@@ -1,0 +1,722 @@
+; ModuleID = 'test.bc'
+source_filename = "llvm-link"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-linux-gnu-elf"
+%union.anon = type { i64 }
+%seg_4f8__init_type = type <{ [23 x i8] }>
+%seg_510__plt_type = type <{ [16 x i8] }>
+%seg_520__plt_got_type = type <{ [8 x i8] }>
+%seg_530__text_type = type <{ [434 x i8] }>
+%seg_6e4__fini_type = type <{ [9 x i8] }>
+%seg_6f0__rodata_type = type <{ [4 x i8] }>
+%seg_6f4__eh_frame_hdr_type = type <{ [60 x i8] }>
+%seg_730__eh_frame_type = type <{ [256 x i8] }>
+%seg_200de0__init_array_type = type <{ i64, i64 }>
+%seg_200df0__jcr_type = type <{ [8 x i8] }>
+%seg_201000__data_type = type <{ [8 x i8], i64 }>
+%__bss_start_type = type <{ [8 x i8] }>
+%struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
+%struct.ArchState = type { i32, i32, %union.anon }
+%union.VectorReg = type { %union.vec512_t }
+%union.vec512_t = type { %struct.uint64v8_t }
+%struct.uint64v8_t = type { [8 x i64] }
+%struct.ArithFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8 }
+%struct.Segments = type { i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector }
+%union.SegmentSelector = type { i16 }
+%struct.AddressSpace = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
+%struct.Reg = type { %union.anon }
+%struct.GPR = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
+%struct.X87Stack = type { [8 x %struct.anon.3] }
+%struct.anon.3 = type { i64, double }
+%struct.MMX = type { [8 x %struct.anon.4] }
+%struct.anon.4 = type { i64, %union.vec64_t }
+%union.vec64_t = type { %struct.uint64v1_t }
+%struct.uint64v1_t = type { [1 x i64] }
+%struct.FPUStatusFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, [4 x i8] }
+%union.FPU = type { %struct.anon.13 }
+%struct.anon.13 = type { %struct.FpuFXSAVE, [96 x i8] }
+%struct.FpuFXSAVE = type { %union.SegmentSelector, %union.SegmentSelector, %union.FPUAbridgedTagWord, i8, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, %union.FPUControlStatus, %union.FPUControlStatus, [8 x %struct.FPUStackElem], [16 x %union.vec128_t] }
+%union.FPUAbridgedTagWord = type { i8 }
+%union.FPUControlStatus = type { i32 }
+%struct.FPUStackElem = type { %union.anon.11, [6 x i8] }
+%union.anon.11 = type { %struct.float80_t }
+%struct.float80_t = type { [10 x i8] }
+%union.vec128_t = type { %struct.uint128v1_t }
+%struct.uint128v1_t = type { [1 x i128] }
+%struct.SegmentCaches = type { %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow }
+%struct.SegmentShadow = type { %union.anon, i32, i32 }
+%struct.Memory = type { i64 }
+%struct.uint8v32_t = type { [32 x i8] }
+%struct.anon.2 = type { i8, i8 }
+%struct.int32v8_t = type { [8 x i32] }
+%struct.float32v8_t = type { [8 x float] }
+%struct.uint8v8_t = type { [8 x i8] }
+%struct.uint8v16_t = type { [16 x i8] }
+%struct.uint16v8_t = type { [8 x i16] }
+%struct.uint8v4_t = type { [4 x i8] }
+%struct.int16v4_t = type { [4 x i16] }
+%struct.int32v4_t = type { [4 x i32] }
+%struct.uint64v2_t = type { [2 x i64] }
+%struct.uint64v4_t = type { [4 x i64] }
+%struct.uint128v2_t = type { [2 x i128] }
+%struct.uint16v16_t = type { [16 x i16] }
+%struct.float64v4_t = type { [4 x double] }
+%"class.(anonymous namespace)__BitMatrix" = type { %"class.std__bitset", [16 x [16 x i8]] }
+%"class.std__bitset" = type { %struct.uint64v4_t }
+%struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
+%struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
+%struct.anon.5 = type { i32, i32 }
+
+define i32 @my.ctpop.i32(i32 %x) {
+entry:
+  %and = and i32 %x, 1
+  %shr123 = lshr i32 %x, 1
+  %and1 = and i32 %shr123, 1
+  %shr2124 = lshr i32 %x, 2
+  %and3 = and i32 %shr2124, 1
+  %shr5125 = lshr i32 %x, 3
+  %and6 = and i32 %shr5125, 1
+  %shr8126 = lshr i32 %x, 4
+  %and9 = and i32 %shr8126, 1
+  %shr11127 = lshr i32 %x, 5
+  %and12 = and i32 %shr11127, 1
+  %shr14128 = lshr i32 %x, 6
+  %and15 = and i32 %shr14128, 1
+  %shr17129 = lshr i32 %x, 7
+  %and18 = and i32 %shr17129, 1
+  %shr20130 = lshr i32 %x, 8
+  %and21 = and i32 %shr20130, 1
+  %shr23131 = lshr i32 %x, 9
+  %and24 = and i32 %shr23131, 1
+  %shr26132 = lshr i32 %x, 10
+  %and27 = and i32 %shr26132, 1
+  %shr29133 = lshr i32 %x, 11
+  %and30 = and i32 %shr29133, 1
+  %shr32134 = lshr i32 %x, 12
+  %and33 = and i32 %shr32134, 1
+  %shr35135 = lshr i32 %x, 13
+  %and36 = and i32 %shr35135, 1
+  %shr38136 = lshr i32 %x, 14
+  %and39 = and i32 %shr38136, 1
+  %shr41137 = lshr i32 %x, 15
+  %and42 = and i32 %shr41137, 1
+  %shr44138 = lshr i32 %x, 16
+  %and45 = and i32 %shr44138, 1
+  %shr47139 = lshr i32 %x, 17
+  %and48 = and i32 %shr47139, 1
+  %shr50140 = lshr i32 %x, 18
+  %and51 = and i32 %shr50140, 1
+  %shr53141 = lshr i32 %x, 19
+  %and54 = and i32 %shr53141, 1
+  %shr56142 = lshr i32 %x, 20
+  %and57 = and i32 %shr56142, 1
+  %shr59143 = lshr i32 %x, 21
+  %and60 = and i32 %shr59143, 1
+  %shr62144 = lshr i32 %x, 22
+  %and63 = and i32 %shr62144, 1
+  %shr65145 = lshr i32 %x, 23
+  %and66 = and i32 %shr65145, 1
+  %shr68146 = lshr i32 %x, 24
+  %and69 = and i32 %shr68146, 1
+  %shr71147 = lshr i32 %x, 25
+  %and72 = and i32 %shr71147, 1
+  %shr74148 = lshr i32 %x, 26
+  %and75 = and i32 %shr74148, 1
+  %shr77149 = lshr i32 %x, 27
+  %and78 = and i32 %shr77149, 1
+  %shr80150 = lshr i32 %x, 28
+  %and81 = and i32 %shr80150, 1
+  %shr83151 = lshr i32 %x, 29
+  %and84 = and i32 %shr83151, 1
+  %shr86152 = lshr i32 %x, 30
+  %and87 = and i32 %shr86152, 1
+  %shr89153 = lshr i32 %x, 31
+  %add = add i32 %shr89153, %and
+  %add4 = add i32 %add, %and1
+  %add7 = add i32 %add4, %and3
+  %add10 = add i32 %add7, %and6
+  %add13 = add i32 %add10, %and9
+  %add16 = add i32 %add13, %and12
+  %add19 = add i32 %add16, %and15
+  %add22 = add i32 %add19, %and18
+  %add25 = add i32 %add22, %and21
+  %add28 = add i32 %add25, %and24
+  %add31 = add i32 %add28, %and27
+  %add34 = add i32 %add31, %and30
+  %add37 = add i32 %add34, %and33
+  %add40 = add i32 %add37, %and36
+  %add43 = add i32 %add40, %and39
+  %add46 = add i32 %add43, %and42
+  %add49 = add i32 %add46, %and45
+  %add52 = add i32 %add49, %and48
+  %add55 = add i32 %add52, %and51
+  %add58 = add i32 %add55, %and54
+  %add61 = add i32 %add58, %and57
+  %add64 = add i32 %add61, %and60
+  %add67 = add i32 %add64, %and63
+  %add70 = add i32 %add67, %and66
+  %add73 = add i32 %add70, %and69
+  %add76 = add i32 %add73, %and72
+  %add79 = add i32 %add76, %and75
+  %add82 = add i32 %add79, %and78
+  %add85 = add i32 %add82, %and81
+  %add88 = add i32 %add85, %and84
+  %add91 = add i32 %add88, %and87
+  ret i32 %add91
+}
+
+define %struct.Memory* @__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+
+define internal %struct.Memory* @_ZN12_GLOBAL__N_1L6PSADBWI3VnWI8vec256_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
+  %6 = alloca %struct.uint8v32_t, align 1
+  %7 = alloca %struct.uint8v32_t, align 1
+  %8 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 0
+  call void @my.lifetime.start(i64 32, i8* nonnull %8) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %8, i8* %3, i64 32, i32 1, i1 false) #22
+  %9 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 0
+  call void @my.lifetime.start(i64 32, i8* nonnull %9) #22
+  call void @my.memcpy.p0i8.p0i8.i64(i8* nonnull %9, i8* %4, i64 32, i32 1, i1 false) #22
+  %10 = load i8, i8* %8, align 1
+  %11 = load i8, i8* %9, align 1
+  %12 = icmp uge i8 %10, %11
+  %13 = sub i8 %10, %11
+  %14 = sub i8 %11, %10
+  %15 = select i1 %12, i8 %13, i8 %14
+  %16 = zext i8 %15 to i64
+  %17 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 1
+  %18 = load i8, i8* %17, align 1
+  %19 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 1
+  %20 = load i8, i8* %19, align 1
+  %21 = icmp uge i8 %18, %20
+  %22 = sub i8 %18, %20
+  %23 = sub i8 %20, %18
+  %24 = select i1 %21, i8 %22, i8 %23
+  %25 = zext i8 %24 to i64
+  %26 = add   i64 %25, %16
+  %27 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 2
+  %28 = load i8, i8* %27, align 1
+  %29 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 2
+  %30 = load i8, i8* %29, align 1
+  %31 = icmp uge i8 %28, %30
+  %32 = sub i8 %28, %30
+  %33 = sub i8 %30, %28
+  %34 = select i1 %31, i8 %32, i8 %33
+  %35 = zext i8 %34 to i64
+  %36 = add   i64 %35, %26
+  %37 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 3
+  %38 = load i8, i8* %37, align 1
+  %39 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 3
+  %40 = load i8, i8* %39, align 1
+  %41 = icmp uge i8 %38, %40
+  %42 = sub i8 %38, %40
+  %43 = sub i8 %40, %38
+  %44 = select i1 %41, i8 %42, i8 %43
+  %45 = zext i8 %44 to i64
+  %46 = add   i64 %45, %36
+  %47 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 4
+  %48 = load i8, i8* %47, align 1
+  %49 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 4
+  %50 = load i8, i8* %49, align 1
+  %51 = icmp uge i8 %48, %50
+  %52 = sub i8 %48, %50
+  %53 = sub i8 %50, %48
+  %54 = select i1 %51, i8 %52, i8 %53
+  %55 = zext i8 %54 to i64
+  %56 = add   i64 %55, %46
+  %57 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 5
+  %58 = load i8, i8* %57, align 1
+  %59 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 5
+  %60 = load i8, i8* %59, align 1
+  %61 = icmp uge i8 %58, %60
+  %62 = sub i8 %58, %60
+  %63 = sub i8 %60, %58
+  %64 = select i1 %61, i8 %62, i8 %63
+  %65 = zext i8 %64 to i64
+  %66 = add   i64 %65, %56
+  %67 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 6
+  %68 = load i8, i8* %67, align 1
+  %69 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 6
+  %70 = load i8, i8* %69, align 1
+  %71 = icmp uge i8 %68, %70
+  %72 = sub i8 %68, %70
+  %73 = sub i8 %70, %68
+  %74 = select i1 %71, i8 %72, i8 %73
+  %75 = zext i8 %74 to i64
+  %76 = add   i64 %75, %66
+  %77 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 7
+  %78 = load i8, i8* %77, align 1
+  %79 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 7
+  %80 = load i8, i8* %79, align 1
+  %81 = icmp uge i8 %78, %80
+  %82 = sub i8 %78, %80
+  %83 = sub i8 %80, %78
+  %84 = select i1 %81, i8 %82, i8 %83
+  %85 = zext i8 %84 to i64
+  %86 = add i64 %85, %76
+  %87 = and i64 %86, 65535
+  %88 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 8
+  %89 = load i8, i8* %88, align 1
+  %90 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 8
+  %91 = load i8, i8* %90, align 1
+  %92 = icmp uge i8 %89, %91
+  %93 = sub i8 %89, %91
+  %94 = sub i8 %91, %89
+  %95 = select i1 %92, i8 %93, i8 %94
+  %96 = zext i8 %95 to i64
+  %97 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 9
+  %98 = load i8, i8* %97, align 1
+  %99 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 9
+  %100 = load i8, i8* %99, align 1
+  %101 = icmp uge i8 %98, %100
+  %102 = sub i8 %98, %100
+  %103 = sub i8 %100, %98
+  %104 = select i1 %101, i8 %102, i8 %103
+  %105 = zext i8 %104 to i64
+  %106 = add   i64 %105, %96
+  %107 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 10
+  %108 = load i8, i8* %107, align 1
+  %109 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 10
+  %110 = load i8, i8* %109, align 1
+  %111 = icmp uge i8 %108, %110
+  %112 = sub i8 %108, %110
+  %113 = sub i8 %110, %108
+  %114 = select i1 %111, i8 %112, i8 %113
+  %115 = zext i8 %114 to i64
+  %116 = add   i64 %115, %106
+  %117 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 11
+  %118 = load i8, i8* %117, align 1
+  %119 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 11
+  %120 = load i8, i8* %119, align 1
+  %121 = icmp uge i8 %118, %120
+  %122 = sub i8 %118, %120
+  %123 = sub i8 %120, %118
+  %124 = select i1 %121, i8 %122, i8 %123
+  %125 = zext i8 %124 to i64
+  %126 = add   i64 %125, %116
+  %127 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 12
+  %128 = load i8, i8* %127, align 1
+  %129 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 12
+  %130 = load i8, i8* %129, align 1
+  %131 = icmp uge i8 %128, %130
+  %132 = sub i8 %128, %130
+  %133 = sub i8 %130, %128
+  %134 = select i1 %131, i8 %132, i8 %133
+  %135 = zext i8 %134 to i64
+  %136 = add   i64 %135, %126
+  %137 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 13
+  %138 = load i8, i8* %137, align 1
+  %139 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 13
+  %140 = load i8, i8* %139, align 1
+  %141 = icmp uge i8 %138, %140
+  %142 = sub i8 %138, %140
+  %143 = sub i8 %140, %138
+  %144 = select i1 %141, i8 %142, i8 %143
+  %145 = zext i8 %144 to i64
+  %146 = add   i64 %145, %136
+  %147 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 14
+  %148 = load i8, i8* %147, align 1
+  %149 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 14
+  %150 = load i8, i8* %149, align 1
+  %151 = icmp uge i8 %148, %150
+  %152 = sub i8 %148, %150
+  %153 = sub i8 %150, %148
+  %154 = select i1 %151, i8 %152, i8 %153
+  %155 = zext i8 %154 to i64
+  %156 = add   i64 %155, %146
+  %157 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 15
+  %158 = load i8, i8* %157, align 1
+  %159 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 15
+  %160 = load i8, i8* %159, align 1
+  %161 = icmp uge i8 %158, %160
+  %162 = sub i8 %158, %160
+  %163 = sub i8 %160, %158
+  %164 = select i1 %161, i8 %162, i8 %163
+  %165 = zext i8 %164 to i64
+  %166 = add i64 %165, %156
+  %167 = and i64 %166, 65535
+  %168 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 16
+  %169 = load i8, i8* %168, align 1
+  %170 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 16
+  %171 = load i8, i8* %170, align 1
+  %172 = icmp uge i8 %169, %171
+  %173 = sub i8 %169, %171
+  %174 = sub i8 %171, %169
+  %175 = select i1 %172, i8 %173, i8 %174
+  %176 = zext i8 %175 to i64
+  %177 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 17
+  %178 = load i8, i8* %177, align 1
+  %179 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 17
+  %180 = load i8, i8* %179, align 1
+  %181 = icmp uge i8 %178, %180
+  %182 = sub i8 %178, %180
+  %183 = sub i8 %180, %178
+  %184 = select i1 %181, i8 %182, i8 %183
+  %185 = zext i8 %184 to i64
+  %186 = add   i64 %185, %176
+  %187 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 18
+  %188 = load i8, i8* %187, align 1
+  %189 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 18
+  %190 = load i8, i8* %189, align 1
+  %191 = icmp uge i8 %188, %190
+  %192 = sub i8 %188, %190
+  %193 = sub i8 %190, %188
+  %194 = select i1 %191, i8 %192, i8 %193
+  %195 = zext i8 %194 to i64
+  %196 = add   i64 %195, %186
+  %197 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 19
+  %198 = load i8, i8* %197, align 1
+  %199 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 19
+  %200 = load i8, i8* %199, align 1
+  %201 = icmp uge i8 %198, %200
+  %202 = sub i8 %198, %200
+  %203 = sub i8 %200, %198
+  %204 = select i1 %201, i8 %202, i8 %203
+  %205 = zext i8 %204 to i64
+  %206 = add   i64 %205, %196
+  %207 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 20
+  %208 = load i8, i8* %207, align 1
+  %209 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 20
+  %210 = load i8, i8* %209, align 1
+  %211 = icmp uge i8 %208, %210
+  %212 = sub i8 %208, %210
+  %213 = sub i8 %210, %208
+  %214 = select i1 %211, i8 %212, i8 %213
+  %215 = zext i8 %214 to i64
+  %216 = add   i64 %215, %206
+  %217 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 21
+  %218 = load i8, i8* %217, align 1
+  %219 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 21
+  %220 = load i8, i8* %219, align 1
+  %221 = icmp uge i8 %218, %220
+  %222 = sub i8 %218, %220
+  %223 = sub i8 %220, %218
+  %224 = select i1 %221, i8 %222, i8 %223
+  %225 = zext i8 %224 to i64
+  %226 = add   i64 %225, %216
+  %227 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 22
+  %228 = load i8, i8* %227, align 1
+  %229 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 22
+  %230 = load i8, i8* %229, align 1
+  %231 = icmp uge i8 %228, %230
+  %232 = sub i8 %228, %230
+  %233 = sub i8 %230, %228
+  %234 = select i1 %231, i8 %232, i8 %233
+  %235 = zext i8 %234 to i64
+  %236 = add   i64 %235, %226
+  %237 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 23
+  %238 = load i8, i8* %237, align 1
+  %239 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 23
+  %240 = load i8, i8* %239, align 1
+  %241 = icmp uge i8 %238, %240
+  %242 = sub i8 %238, %240
+  %243 = sub i8 %240, %238
+  %244 = select i1 %241, i8 %242, i8 %243
+  %245 = zext i8 %244 to i64
+  %246 = add i64 %245, %236
+  %247 = and i64 %246, 65535
+  %248 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 24
+  %249 = load i8, i8* %248, align 1
+  %250 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 24
+  %251 = load i8, i8* %250, align 1
+  %252 = icmp uge i8 %249, %251
+  %253 = sub i8 %249, %251
+  %254 = sub i8 %251, %249
+  %255 = select i1 %252, i8 %253, i8 %254
+  %256 = zext i8 %255 to i64
+  %257 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 25
+  %258 = load i8, i8* %257, align 1
+  %259 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 25
+  %260 = load i8, i8* %259, align 1
+  %261 = icmp uge i8 %258, %260
+  %262 = sub i8 %258, %260
+  %263 = sub i8 %260, %258
+  %264 = select i1 %261, i8 %262, i8 %263
+  %265 = zext i8 %264 to i64
+  %266 = add   i64 %265, %256
+  %267 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 26
+  %268 = load i8, i8* %267, align 1
+  %269 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 26
+  %270 = load i8, i8* %269, align 1
+  %271 = icmp uge i8 %268, %270
+  %272 = sub i8 %268, %270
+  %273 = sub i8 %270, %268
+  %274 = select i1 %271, i8 %272, i8 %273
+  %275 = zext i8 %274 to i64
+  %276 = add   i64 %275, %266
+  %277 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 27
+  %278 = load i8, i8* %277, align 1
+  %279 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 27
+  %280 = load i8, i8* %279, align 1
+  %281 = icmp uge i8 %278, %280
+  %282 = sub i8 %278, %280
+  %283 = sub i8 %280, %278
+  %284 = select i1 %281, i8 %282, i8 %283
+  %285 = zext i8 %284 to i64
+  %286 = add   i64 %285, %276
+  %287 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 28
+  %288 = load i8, i8* %287, align 1
+  %289 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 28
+  %290 = load i8, i8* %289, align 1
+  %291 = icmp uge i8 %288, %290
+  %292 = sub i8 %288, %290
+  %293 = sub i8 %290, %288
+  %294 = select i1 %291, i8 %292, i8 %293
+  %295 = zext i8 %294 to i64
+  %296 = add   i64 %295, %286
+  %297 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 29
+  %298 = load i8, i8* %297, align 1
+  %299 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 29
+  %300 = load i8, i8* %299, align 1
+  %301 = icmp uge i8 %298, %300
+  %302 = sub i8 %298, %300
+  %303 = sub i8 %300, %298
+  %304 = select i1 %301, i8 %302, i8 %303
+  %305 = zext i8 %304 to i64
+  %306 = add   i64 %305, %296
+  %307 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 30
+  %308 = load i8, i8* %307, align 1
+  %309 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 30
+  %310 = load i8, i8* %309, align 1
+  %311 = icmp uge i8 %308, %310
+  %312 = sub i8 %308, %310
+  %313 = sub i8 %310, %308
+  %314 = select i1 %311, i8 %312, i8 %313
+  %315 = zext i8 %314 to i64
+  %316 = add   i64 %315, %306
+  %317 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %6, i64 0, i32 0, i64 31
+  %318 = load i8, i8* %317, align 1
+  %319 = getelementptr inbounds %struct.uint8v32_t, %struct.uint8v32_t* %7, i64 0, i32 0, i64 31
+  %320 = load i8, i8* %319, align 1
+  %321 = icmp uge i8 %318, %320
+  %322 = sub i8 %318, %320
+  %323 = sub i8 %320, %318
+  %324 = select i1 %321, i8 %322, i8 %323
+  %325 = zext i8 %324 to i64
+  %326 = add i64 %325, %316
+  %327 = and i64 %326, 65535
+  %328 = bitcast i8* %2 to i64*
+  store i64 %87, i64* %328, align 1
+  %329 = getelementptr inbounds i8, i8* %2, i64 8
+  %330 = bitcast i8* %329 to i64*
+  store i64 %167, i64* %330, align 1
+  %331 = getelementptr inbounds i8, i8* %2, i64 16
+  %332 = bitcast i8* %331 to i64*
+  store i64 %247, i64* %332, align 1
+  %333 = getelementptr inbounds i8, i8* %2, i64 24
+  %334 = bitcast i8* %333 to i64*
+  store i64 %327, i64* %334, align 1
+  call void @my.lifetime.end(i64 32, i8* nonnull %9) #22
+  call void @my.lifetime.end(i64 32, i8* nonnull %8) #22
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @routine_vpsadbw_ymm_ymm_ymm(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
+block_530:
+  %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
+  %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
+  %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
+  %PC = bitcast %union.anon* %5 to i64*
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %7 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %6, i64 0, i64 1
+  %YMM1 = bitcast %union.VectorReg* %7 to %"class.std__bitset"*
+  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %8, i64 0, i64 2
+  %YMM2 = bitcast %union.VectorReg* %9 to %"class.std__bitset"*
+  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 1
+  %11 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %10, i64 0, i64 3
+  %YMM3 = bitcast %union.VectorReg* %11 to %"class.std__bitset"*
+  %12 = bitcast %"class.std__bitset"* %YMM1 to i8*
+  %13 = bitcast %"class.std__bitset"* %YMM2 to i8*
+  %14 = bitcast %"class.std__bitset"* %YMM3 to i8*
+  %15 = load i64, i64* %PC
+  %16 = add i64 %15, 4
+  store i64 %16, i64* %PC
+  %17 = call %struct.Memory* @_ZN12_GLOBAL__N_1L6PSADBWI3VnWI8vec256_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i8* %12, i8* %13, i8* %14)
+  ret %struct.Memory* %17
+}
+
+define i32 @main() {
+entry:
+  %state = alloca %struct.State
+
+  %mem = alloca %struct.Memory
+  %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
+  store i64 51, i64* %memf0, align 8
+  
+  %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
+  %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
+  %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
+  %addr4 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 7, i32 0, i32 0
+  %addr5 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 9, i32 0, i32 0
+  %addr6 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 11, i32 0, i32 0
+  %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
+  %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
+  %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
+
+  %cf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 1
+  %pf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 3
+  %af = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 5
+  %zf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 7
+  %sf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 9
+  %df = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 11
+  %of = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 13
+
+  store i64 100, i64* %addr1, align 8
+  store i64 200, i64* %addr2, align 8
+  store i64 300, i64* %addr3, align 8
+  store i64 400, i64* %addr4, align 8
+  store i64 500, i64* %addr5, align 8
+  store i64 600, i64* %addr6, align 8
+  store i64 700, i64* %addr7, align 8
+  store i64 800, i64* %addr8, align 8
+  store i64 900, i64* %addr9, align 8
+
+  store i8 10, i8* %cf, align 1
+  store i8 20, i8* %pf, align 1
+  store i8 30, i8* %af, align 1
+  store i8 40, i8* %zf, align 1
+  store i8 50, i8* %sf, align 1
+  store i8 60, i8* %df, align 1
+  store i8 70, i8* %of, align 1
+
+  
+  %vecr = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr, i64 0, i64 1
+  %vec512 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx, i32 0, i32 0
+  %uint64v8 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec512, i32 0, i32 0
+  %int64_arr = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v8, i32 0, i32 0
+  %arrayidx1 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr, i64 0, i64 0
+  store i64 8810, i64* %arrayidx1, align 8
+
+  %vecr2 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx3 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr2, i64 0, i64 1
+  %vec5124 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx3, i32 0, i32 0
+  %uint64v85 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec5124, i32 0, i32 0
+  %int64_arr6 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v85, i32 0, i32 0
+  %arrayidx7 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr6, i64 0, i64 1
+  store i64 8820, i64* %arrayidx7, align 8
+
+  %vecr8 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr8, i64 0, i64 1
+  %vec51210 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx9, i32 0, i32 0
+  %uint64v811 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51210, i32 0, i32 0
+  %int64_arr12 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v811, i32 0, i32 0
+  %arrayidx13 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr12, i64 0, i64 2
+  store i64 8830, i64* %arrayidx13, align 8
+
+  %vecr14 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx15 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr14, i64 0, i64 1
+  %vec51216 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx15, i32 0, i32 0
+  %uint64v817 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51216, i32 0, i32 0
+  %int64_arr18 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v817, i32 0, i32 0
+  %arrayidx19 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr18, i64 0, i64 3
+  store i64 8840, i64* %arrayidx19, align 8
+
+  %vecr20 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx21 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr20, i64 0, i64 1
+  %vec51222 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx21, i32 0, i32 0
+  %uint64v823 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51222, i32 0, i32 0
+  %int64_arr24 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v823, i32 0, i32 0
+  %arrayidx25 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr24, i64 0, i64 4
+  store i64 8850, i64* %arrayidx25, align 8
+
+  %vecr26 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx27 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr26, i64 0, i64 1
+  %vec51228 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx27, i32 0, i32 0
+  %uint64v829 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51228, i32 0, i32 0
+  %int64_arr30 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v829, i32 0, i32 0
+  %arrayidx31 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr30, i64 0, i64 5
+  store i64 8860, i64* %arrayidx31, align 8
+
+  %vecr32 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx33 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr32, i64 0, i64 1
+  %vec51234 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx33, i32 0, i32 0
+  %uint64v835 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51234, i32 0, i32 0
+  %int64_arr36 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v835, i32 0, i32 0
+  %arrayidx37 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr36, i64 0, i64 6
+  store i64 8870, i64* %arrayidx37, align 8
+
+  %vecr38 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx39 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr38, i64 0, i64 1
+  %vec51240 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx39, i32 0, i32 0
+  %uint64v841 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51240, i32 0, i32 0
+  %int64_arr42 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v841, i32 0, i32 0
+  %arrayidx43 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr42, i64 0, i64 7
+  store i64 8880, i64* %arrayidx43, align 8
+
+  %vecr44 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx45 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr44, i64 0, i64 2
+  %vec51246 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx45, i32 0, i32 0
+  %uint64v847 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51246, i32 0, i32 0
+  %int64_arr48 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v847, i32 0, i32 0
+  %arrayidx49 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr48, i64 0, i64 0
+  store i64 9910, i64* %arrayidx49, align 8
+
+  %vecr50 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx51 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr50, i64 0, i64 2
+  %vec51252 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx51, i32 0, i32 0
+  %uint64v853 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51252, i32 0, i32 0
+  %int64_arr54 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v853, i32 0, i32 0
+  %arrayidx55 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr54, i64 0, i64 1
+  store i64 9920, i64* %arrayidx55, align 8
+
+  %vecr56 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx57 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr56, i64 0, i64 2
+  %vec51258 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx57, i32 0, i32 0
+  %uint64v859 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51258, i32 0, i32 0
+  %int64_arr60 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v859, i32 0, i32 0
+  %arrayidx61 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr60, i64 0, i64 2
+  store i64 9930, i64* %arrayidx61, align 8
+
+  %vecr62 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx63 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr62, i64 0, i64 2
+  %vec51264 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx63, i32 0, i32 0
+  %uint64v865 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51264, i32 0, i32 0
+  %int64_arr66 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v865, i32 0, i32 0
+  %arrayidx67 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr66, i64 0, i64 3
+  store i64 9940, i64* %arrayidx67, align 8
+
+  %vecr68 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx69 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr68, i64 0, i64 2
+  %vec51270 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx69, i32 0, i32 0
+  %uint64v871 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51270, i32 0, i32 0
+  %int64_arr72 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v871, i32 0, i32 0
+  %arrayidx73 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr72, i64 0, i64 4
+  store i64 9950, i64* %arrayidx73, align 8
+
+  %vecr74 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx75 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr74, i64 0, i64 2
+  %vec51276 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx75, i32 0, i32 0
+  %uint64v877 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51276, i32 0, i32 0
+  %int64_arr78 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v877, i32 0, i32 0
+  %arrayidx79 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr78, i64 0, i64 5
+  store i64 9960, i64* %arrayidx79, align 8
+
+  %vecr80 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx81 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr80, i64 0, i64 2
+  %vec51282 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx81, i32 0, i32 0
+  %uint64v883 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51282, i32 0, i32 0
+  %int64_arr84 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v883, i32 0, i32 0
+  %arrayidx85 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr84, i64 0, i64 6
+  store i64 9970, i64* %arrayidx85, align 8
+
+  %vecr86 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx87 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr86, i64 0, i64 2
+  %vec51288 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx87, i32 0, i32 0
+  %uint64v889 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51288, i32 0, i32 0
+  %int64_arr90 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v889, i32 0, i32 0
+  %arrayidx91 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr90, i64 0, i64 7
+  store i64 9980, i64* %arrayidx91, align 8
+
+
+
+  %call = call %struct.Memory* @routine_vpsadbw_ymm_ymm_ymm(%struct.State* %state, i64 0, %struct.Memory* %mem)
+  ret i32 0
+}

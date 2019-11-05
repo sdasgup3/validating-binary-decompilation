@@ -1,0 +1,3 @@
+.target:
+  mull %eax
+  retq

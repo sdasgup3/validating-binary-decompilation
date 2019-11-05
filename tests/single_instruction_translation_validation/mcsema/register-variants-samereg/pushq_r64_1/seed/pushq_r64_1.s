@@ -1,0 +1,3 @@
+.target:
+  pushq %rax
+  retq

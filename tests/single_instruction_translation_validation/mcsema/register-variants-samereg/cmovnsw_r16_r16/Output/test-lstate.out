@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:382:32: error: use of undefined value '@routine_cmovnsw_r16_r16'
+  %call = call %struct.Memory* @routine_cmovnsw_r16_r16(%struct.State* %state, i64 0, %struct.Memory* %mem)
+                               ^
+0.02user 0.02system 0:00.13elapsed 35%CPU (0avgtext+0avgdata 27472maxresident)k
+0inputs+16outputs (0major+3252minor)pagefaults 0swaps

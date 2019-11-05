@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:192:25: error: use of undefined value '@my.fabs.f32'
+  %19 = tail call float @my.fabs.f32(float %18) #22
+                        ^
+0.03user 0.02system 0:00.06elapsed 84%CPU (0avgtext+0avgdata 27088maxresident)k
+0inputs+16outputs (0major+3274minor)pagefaults 0swaps

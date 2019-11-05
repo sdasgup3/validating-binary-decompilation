@@ -32,15 +32,20 @@ mkdir -p tests/single_instruction_translation_validation/mcsema
 cd !$
 
 // Register Instructions
-parallel -a  docs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{}"
-parallel -a  docs/all_registers.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{} --samereg"
+parallel -a  docs/all_registers.txt  "~/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants/{}"
 parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/{}/{}.*  register-variants/{}/instructions/"
-parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/{}.samereg/{}.samereg.* register-variants/{}/instructions/"
 parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}"
-parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions/{}.samereg"
 parallel -a  docs/all_registers.txt  "mkdir -p register-variants/{}/seed"
 parallel -a  docs/all_registers.txt  "mv register-variants/{}/instructions/* register-variants/{}/seed/"
 parallel -a  docs/all_registers.txt  "rm -rf register-variants/{}/instructions"
+
+// sameregs
+parallel -a  docs/all_registers.txt  "~/Github/stoke-develop/bin/specgen_setup  --opc {} --workdir register-variants-samereg/{} --samereg"
+parallel -a  docs/all_registers.txt  "mv register-variants-samereg/{}/instructions/{}.samereg/{}.samereg.* register-variants-samereg/{}/instructions/"
+parallel -a  docs/all_registers.txt  "rm -rf register-variants-samereg/{}/instructions/{}.samereg"
+parallel -a  docs/all_registers.txt  "mkdir -p register-variants-samereg/{}/seed"
+parallel -a  docs/all_registers.txt  "mv register-variants-samereg/{}/instructions/* register-variants-samereg/{}/seed/"
+parallel -a  docs/all_registers.txt  "rm -rf register-variants-samereg/{}/instructions"
 
 // Immediate instructions
 parallel -a docs/all_immediates.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --opc {} --workdir immediate-variants/{}"
@@ -74,7 +79,10 @@ parallel -a docs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 ### Populate C and Makefiles
 ```
 cd tests/mcsema
+
 ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants/{}/seed/{}.s --opc {}
+ls register-variants-samereg/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants-samereg/{}/seed/{}.sameregs --opc {}
+
 ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s --opc {}
 ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s --opc {}
 ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s --opc {}
@@ -84,6 +92,8 @@ ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl 
 ```
 cd tests/mcsema
 ls register-variants/  | parallel "cd register-variants/{}; make binary; make assemble;  cd -"
+ls register-variants-samereg/  | parallel "cd register-variants-samereg/{}; make binary; make assemble;  cd -"
+
 ls immediate-variants/ | parallel "cd immediate-variants/{}; make binary; make assemble; cd -"
 ls memory-variants/    | parallel "cd memory-variants/{}; make binary; make assemble; cd -"
 ls system-variants/    | parallel "cd system-variants/{}; make binary; make assemble; cd -"
@@ -98,11 +108,13 @@ cd test/mcsema
 #grep -lr  "cal.*__remill_sync_hyper_call" system-variants/* |& tee docs/unsupported_decompilation_system.txt
 
 grep -lr  "cal.*HandleUnsupported" register-variants/* |& tee docs/unsupported_decompilation_register.txt
+grep -lr  "cal.*HandleUnsupported" register-variants-samereg/* |& tee docs/unsupported_decompilation_register_samereg.txt
 grep -lr  "cal.*HandleUnsupported" immediate-variants/* |& tee docs/unsupported_decompilation_immediate.txt
 grep -lr  "cal.*HandleUnsupported" memory-variants/* |& tee docs/unsupported_decompilation_memory.txt
 grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee docs/unsupported_decompilation_system.txt
 
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_registers.txt --file docs/unsupported_decompilation_register.txt --show 0 > docs/supported_decompilation_register.txt
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_registers.txt --file docs/unsupported_decompilation_register_samereg.txt --show 0 > docs/supported_decompilation_register_samereg.txt
 
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_immediates.txt --file docs/unsupported_decompilation_immediate.txt --show 0 > docs/supported_decompilation_immediate.txt
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_memories.txt --file docs/unsupported_decompilation_memory.txt --show 0 > docs/supported_decompilation_memory.txt
@@ -114,6 +126,9 @@ cd  tests/mcsema
 
 cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
 cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
+
+cat docs/supported_decompilation_register_samereg.txt  | parallel "cd register-variants-samereg/{}; make mcsema; cd -"
+cat docs/supported_decompilation_register_samereg.txt | parallel "cd register-variants-samereg/{}; make declutter; cd -"
 
 cat docs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
 cat docs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
@@ -130,16 +145,29 @@ cat docs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make genxspec; cd -"
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make collect; cd -"
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
+
+cat docs/supported_decompilation_register_samereg.txt | parallel mv register-variants-samereg/{}/seed/{}.samereg.s register-variants-samereg/{}/seed/{}.s
+cat docs/supported_decompilation_register_samereg.txt | parallel  "cd register-variants-samereg/{}; make genxspec; cd -"
+cat docs/supported_decompilation_register_samereg.txt | parallel  "cd register-variants-samereg/{}; make collect; cd -"
+cat docs/supported_decompilation_register_samereg.txt | parallel -j10 "cd register-variants-samereg/{}; make xprove; cd -"
 ```
 
 ## Generate spec output file for LLVM
 ```
 cat docs/supported_decompilation_register.txt | parallel -j15 "echo; echo  {}; echo ====;  cd register-variants/{}; make kli; cd -"
+cat docs/supported_decompilation_register_samereg.txt | parallel -j50 "echo; echo  {}; echo ====;  cd register-variants-samereg/{}; make kli; cd -" |& tee docs/kliRunSamereg.log
 
 cat docs/kliFailR.log | parallel "echo; echo {}; echo === ; head register-variants/{}/Output/test-lstate.out" |& tee ~/Junk/log
 
 cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make genlspec; cd -"
 cat docs/kliPassR.log | parallel -j15 "cd register-variants/{}; make lprove; cd -"
+
+cat docs/kliPassSameR.log | parallel -j15 "cd register-variants-samereg/{}; make genlspec; cd -"
+cat docs/kliPassSameR.log | parallel -j15 "cd register-variants-samereg/{}; make lprove; cd -"
+
+or
+cat docs/kliPassSameR.log | parallel -j10 "cd register-variants-samereg/{}; make xprove; cd -" |& tee docs/xprove.log ; cat docs/kliPassSameR.log | parallel -j15 "cd register-variants-samereg/{}; make lprove; cd -" |& tee docs/lprove.log
+
 ```
 
 ## Generate and Compare the z3 output
@@ -153,6 +181,12 @@ or
 
 ../../scripts/check_prover_status.sh
 
+
+// samereg
+cat docs/lprove_xprovePassSameR.log | parallel  "cd register-variants-samereg/{}; make genz3; cd -" |& tee log
+// genz3 pass/fails are stored at genz3(Pass/Fail)SameR.log 
+cat docs/genz3PassSameR.log | parallel  "echo; echo; cd register-variants-samereg/{}; make provez3; cd -" |& tee run.log
+//provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk)SameR.log
 ```
 
 

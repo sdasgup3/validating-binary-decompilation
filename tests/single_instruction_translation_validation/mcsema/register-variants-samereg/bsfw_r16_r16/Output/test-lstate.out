@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:186:23: error: use of undefined value '@my.cttz.i32'
+  %12 = tail call i32 @my.cttz.i32(i32 %11, i1 true) #22
+                      ^
+0.01user 0.02system 0:00.04elapsed 104%CPU (0avgtext+0avgdata 27380maxresident)k
+0inputs+16outputs (0major+3265minor)pagefaults 0swaps

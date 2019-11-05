@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:198:35: error: use of undefined value '@__remill_error'
+  %21 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %1, i64 %20, %struct.Memory* %0) #21
+                                  ^
+0.04user 0.01system 0:00.07elapsed 73%CPU (0avgtext+0avgdata 27584maxresident)k
+0inputs+16outputs (0major+3268minor)pagefaults 0swaps

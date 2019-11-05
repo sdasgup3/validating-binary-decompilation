@@ -1,0 +1,3 @@
+.target:
+  notb %al
+  retq

@@ -1,0 +1,3 @@
+.target:
+  decl %eax
+  retq

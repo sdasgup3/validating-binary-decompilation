@@ -1,0 +1,7 @@
+shldl_r32_r32_cl
+shldq_r64_r64_cl
+shldw_r16_r16_cl
+shrdl_r32_r32_cl
+shrdq_r64_r64_cl
+shrdw_r16_r16_cl
+vzeroupper
