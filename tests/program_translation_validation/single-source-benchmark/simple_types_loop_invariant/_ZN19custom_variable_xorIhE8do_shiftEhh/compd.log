@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN19custom_variable_xorIhE8do_shiftEhh
   .type _ZN19custom_variable_xorIhE8do_shiftEhh, @function
 
-#! file-offset 0x122d0
-#! rip-offset  0x4122d0
+#! file-offset 0x122e0
+#! rip-offset  0x4122e0
 #! capacity    34 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode             Target                
-._ZN19custom_variable_xorIhE8do_shiftEhh:  #        0x4122d0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                               #  1     0x4122d0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x4122d1  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %sil, %al                           #  3     0x4122d4  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dil, %cl                           #  4     0x4122d7  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %cl, -0x1(%rbp)                     #  5     0x4122da  3      OPC=movb_m8_r8     18446744073709551615  
-  movb %al, -0x2(%rbp)                     #  6     0x4122dd  3      OPC=movb_m8_r8     18446744073709551615  
-  movzbl -0x1(%rbp), %esi                  #  7     0x4122e0  4      OPC=movzbl_r32_m8  18446744073709551615  
-  movzbl -0x2(%rbp), %edi                  #  8     0x4122e4  4      OPC=movzbl_r32_m8  18446744073709551615  
-  xorl %edi, %esi                          #  9     0x4122e8  2      OPC=xorl_r32_r32   18446744073709551615  
-  movb %sil, %al                           #  10    0x4122ea  3      OPC=movb_r8_r8     18446744073709551615  
-  movzbl %al, %eax                         #  11    0x4122ed  3      OPC=movzbl_r32_r8  18446744073709551615  
-  popq %rbp                                #  12    0x4122f0  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                     #  13    0x4122f1  1      OPC=retq           18446744073709551615  
+._ZN19custom_variable_xorIhE8do_shiftEhh:  #        0x4122e0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                               #  1     0x4122e0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x4122e1  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %sil, %al                           #  3     0x4122e4  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dil, %cl                           #  4     0x4122e7  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %cl, -0x1(%rbp)                     #  5     0x4122ea  3      OPC=movb_m8_r8     18446744073709551615  
+  movb %al, -0x2(%rbp)                     #  6     0x4122ed  3      OPC=movb_m8_r8     18446744073709551615  
+  movzbl -0x1(%rbp), %esi                  #  7     0x4122f0  4      OPC=movzbl_r32_m8  18446744073709551615  
+  movzbl -0x2(%rbp), %edi                  #  8     0x4122f4  4      OPC=movzbl_r32_m8  18446744073709551615  
+  xorl %edi, %esi                          #  9     0x4122f8  2      OPC=xorl_r32_r32   18446744073709551615  
+  movb %sil, %al                           #  10    0x4122fa  3      OPC=movb_r8_r8     18446744073709551615  
+  movzbl %al, %eax                         #  11    0x4122fd  3      OPC=movzbl_r32_r8  18446744073709551615  
+  popq %rbp                                #  12    0x412300  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                     #  13    0x412301  1      OPC=retq           18446744073709551615  
                                                                                                               
 .size _ZN19custom_variable_xorIhE8do_shiftEhh, .-_ZN19custom_variable_xorIhE8do_shiftEhh
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN19custom_variable_xorIhE8do_shiftEhh->4268752
+._ZN19custom_variable_xorIhE8do_shiftEhh->4268768
 
 Computing Label PC values: Done.
 
@@ -634,3 +634,5 @@ Decompiling Function: _ZN19custom_variable_xorIhE8do_shiftEhh Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.04system 0:00.33elapsed 97%CPU (0avgtext+0avgdata 10156maxresident)k
+0inputs+160outputs (0major+6640minor)pagefaults 0swaps

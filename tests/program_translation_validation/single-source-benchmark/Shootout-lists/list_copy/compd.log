@@ -4,93 +4,93 @@ Disassembled output
   .globl list_copy
   .type list_copy, @function
 
-#! file-offset 0xbe0
-#! rip-offset  0x400be0
+#! file-offset 0xbf0
+#! rip-offset  0x400bf0
 #! capacity    290 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode                  Target                
-.list_copy:                 #        0x400be0  0      OPC=<label>             18446744073709551615  
-  pushq %rbp                #  1     0x400be0  1      OPC=pushq_r64_1         18446744073709551615  
-  movq %rsp, %rbp           #  2     0x400be1  3      OPC=movq_r64_r64        18446744073709551615  
-  subq $0x30, %rsp          #  3     0x400be4  4      OPC=subq_r64_imm8       18446744073709551615  
-  movq %rdi, -0x8(%rbp)     #  4     0x400be8  4      OPC=movq_m64_r64        18446744073709551615  
-  movq -0x8(%rbp), %rdi     #  5     0x400bec  4      OPC=movq_r64_m64        18446744073709551615  
-  callq .list_length        #  6     0x400bf0  5      OPC=callq_label         4196240               
-  movl %eax, -0x14(%rbp)    #  7     0x400bf5  3      OPC=movl_m32_r32        18446744073709551615  
-  movl -0x14(%rbp), %eax    #  8     0x400bf8  3      OPC=movl_r32_m32        18446744073709551615  
-  addl $0x1, %eax           #  9     0x400bfb  3      OPC=addl_r32_imm8       18446744073709551615  
-  movslq %eax, %rdi         #  10    0x400bfe  3      OPC=movslq_r64_r32      18446744073709551615  
-  imulq $0x18, %rdi, %rdi   #  11    0x400c01  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  callq .malloc_plt         #  12    0x400c05  5      OPC=callq_label         4195680               
-  movq %rax, -0x28(%rbp)    #  13    0x400c0a  4      OPC=movq_m64_r64        18446744073709551615  
-  movl $0x0, -0xc(%rbp)     #  14    0x400c0e  7      OPC=movl_m32_imm32      18446744073709551615  
-  movl $0x1, -0x10(%rbp)    #  15    0x400c15  7      OPC=movl_m32_imm32      18446744073709551615  
-  movq -0x8(%rbp), %rax     #  16    0x400c1c  4      OPC=movq_r64_m64        18446744073709551615  
-  movq %rax, -0x20(%rbp)    #  17    0x400c20  4      OPC=movq_m64_r64        18446744073709551615  
-.L_400c24:                  #        0x400c24  0      OPC=<label>             18446744073709551615  
-  movl -0xc(%rbp), %eax     #  18    0x400c24  3      OPC=movl_r32_m32        18446744073709551615  
-  cmpl -0x14(%rbp), %eax    #  19    0x400c27  3      OPC=cmpl_r32_m32        18446744073709551615  
-  jge .L_400cae             #  20    0x400c2a  6      OPC=jge_label_1         4197550               
-  movq -0x28(%rbp), %rax    #  21    0x400c30  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0x10(%rbp), %rcx  #  22    0x400c34  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rcx, %rcx   #  23    0x400c38  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rcx, %rax           #  24    0x400c3c  3      OPC=addq_r64_r64        18446744073709551615  
-  movq -0x28(%rbp), %rcx    #  25    0x400c3f  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0xc(%rbp), %rdx   #  26    0x400c43  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rdx, %rdx   #  27    0x400c47  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rdx, %rcx           #  28    0x400c4b  3      OPC=addq_r64_r64        18446744073709551615  
-  movq %rax, 0x8(%rcx)      #  29    0x400c4e  4      OPC=movq_m64_r64        18446744073709551615  
-  movq -0x28(%rbp), %rax    #  30    0x400c52  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0xc(%rbp), %rcx   #  31    0x400c56  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rcx, %rcx   #  32    0x400c5a  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rcx, %rax           #  33    0x400c5e  3      OPC=addq_r64_r64        18446744073709551615  
-  movq -0x28(%rbp), %rcx    #  34    0x400c61  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0x10(%rbp), %rdx  #  35    0x400c65  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rdx, %rdx   #  36    0x400c69  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rdx, %rcx           #  37    0x400c6d  3      OPC=addq_r64_r64        18446744073709551615  
-  movq %rax, 0x10(%rcx)     #  38    0x400c70  4      OPC=movq_m64_r64        18446744073709551615  
-  movq -0x20(%rbp), %rax    #  39    0x400c74  4      OPC=movq_r64_m64        18446744073709551615  
-  movl (%rax), %esi         #  40    0x400c78  2      OPC=movl_r32_m32        18446744073709551615  
-  movq -0x28(%rbp), %rax    #  41    0x400c7a  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0xc(%rbp), %rcx   #  42    0x400c7e  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rcx, %rcx   #  43    0x400c82  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rcx, %rax           #  44    0x400c86  3      OPC=addq_r64_r64        18446744073709551615  
-  movl %esi, (%rax)         #  45    0x400c89  2      OPC=movl_m32_r32        18446744073709551615  
-  movl -0xc(%rbp), %eax     #  46    0x400c8b  3      OPC=movl_r32_m32        18446744073709551615  
-  addl $0x1, %eax           #  47    0x400c8e  3      OPC=addl_r32_imm8       18446744073709551615  
-  movl %eax, -0xc(%rbp)     #  48    0x400c91  3      OPC=movl_m32_r32        18446744073709551615  
-  movl -0x10(%rbp), %eax    #  49    0x400c94  3      OPC=movl_r32_m32        18446744073709551615  
-  addl $0x1, %eax           #  50    0x400c97  3      OPC=addl_r32_imm8       18446744073709551615  
-  movl %eax, -0x10(%rbp)    #  51    0x400c9a  3      OPC=movl_m32_r32        18446744073709551615  
-  movq -0x20(%rbp), %rcx    #  52    0x400c9d  4      OPC=movq_r64_m64        18446744073709551615  
-  movq 0x8(%rcx), %rcx      #  53    0x400ca1  4      OPC=movq_r64_m64        18446744073709551615  
-  movq %rcx, -0x20(%rbp)    #  54    0x400ca5  4      OPC=movq_m64_r64        18446744073709551615  
-  jmpq .L_400c24            #  55    0x400ca9  5      OPC=jmpq_label_1        4197412               
-.L_400cae:                  #        0x400cae  0      OPC=<label>             18446744073709551615  
-  movq -0x28(%rbp), %rax    #  56    0x400cae  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0x14(%rbp), %rcx  #  57    0x400cb2  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rcx, %rcx   #  58    0x400cb6  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rcx, %rax           #  59    0x400cba  3      OPC=addq_r64_r64        18446744073709551615  
-  movq -0x28(%rbp), %rcx    #  60    0x400cbd  4      OPC=movq_r64_m64        18446744073709551615  
-  movq %rax, 0x10(%rcx)     #  61    0x400cc1  4      OPC=movq_m64_r64        18446744073709551615  
-  movq -0x28(%rbp), %rax    #  62    0x400cc5  4      OPC=movq_r64_m64        18446744073709551615  
-  movq -0x28(%rbp), %rcx    #  63    0x400cc9  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0x14(%rbp), %rdx  #  64    0x400ccd  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rdx, %rdx   #  65    0x400cd1  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rdx, %rcx           #  66    0x400cd5  3      OPC=addq_r64_r64        18446744073709551615  
-  movq %rax, 0x8(%rcx)      #  67    0x400cd8  4      OPC=movq_m64_r64        18446744073709551615  
-  movq -0x8(%rbp), %rdi     #  68    0x400cdc  4      OPC=movq_r64_m64        18446744073709551615  
-  callq .list_last          #  69    0x400ce0  5      OPC=callq_label         4197648               
-  movl (%rax), %esi         #  70    0x400ce5  2      OPC=movl_r32_m32        18446744073709551615  
-  movq -0x28(%rbp), %rax    #  71    0x400ce7  4      OPC=movq_r64_m64        18446744073709551615  
-  movslq -0x14(%rbp), %rcx  #  72    0x400ceb  4      OPC=movslq_r64_m32      18446744073709551615  
-  imulq $0x18, %rcx, %rcx   #  73    0x400cef  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
-  addq %rcx, %rax           #  74    0x400cf3  3      OPC=addq_r64_r64        18446744073709551615  
-  movl %esi, (%rax)         #  75    0x400cf6  2      OPC=movl_m32_r32        18446744073709551615  
-  movq -0x28(%rbp), %rax    #  76    0x400cf8  4      OPC=movq_r64_m64        18446744073709551615  
-  addq $0x30, %rsp          #  77    0x400cfc  4      OPC=addq_r64_imm8       18446744073709551615  
-  popq %rbp                 #  78    0x400d00  1      OPC=popq_r64_1          18446744073709551615  
-  retq                      #  79    0x400d01  1      OPC=retq                18446744073709551615  
+.list_copy:                 #        0x400bf0  0      OPC=<label>             18446744073709551615  
+  pushq %rbp                #  1     0x400bf0  1      OPC=pushq_r64_1         18446744073709551615  
+  movq %rsp, %rbp           #  2     0x400bf1  3      OPC=movq_r64_r64        18446744073709551615  
+  subq $0x30, %rsp          #  3     0x400bf4  4      OPC=subq_r64_imm8       18446744073709551615  
+  movq %rdi, -0x8(%rbp)     #  4     0x400bf8  4      OPC=movq_m64_r64        18446744073709551615  
+  movq -0x8(%rbp), %rdi     #  5     0x400bfc  4      OPC=movq_r64_m64        18446744073709551615  
+  callq .list_length        #  6     0x400c00  5      OPC=callq_label         4196256               
+  movl %eax, -0x14(%rbp)    #  7     0x400c05  3      OPC=movl_m32_r32        18446744073709551615  
+  movl -0x14(%rbp), %eax    #  8     0x400c08  3      OPC=movl_r32_m32        18446744073709551615  
+  addl $0x1, %eax           #  9     0x400c0b  3      OPC=addl_r32_imm8       18446744073709551615  
+  movslq %eax, %rdi         #  10    0x400c0e  3      OPC=movslq_r64_r32      18446744073709551615  
+  imulq $0x18, %rdi, %rdi   #  11    0x400c11  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  callq .malloc_plt         #  12    0x400c15  5      OPC=callq_label         4195696               
+  movq %rax, -0x28(%rbp)    #  13    0x400c1a  4      OPC=movq_m64_r64        18446744073709551615  
+  movl $0x0, -0xc(%rbp)     #  14    0x400c1e  7      OPC=movl_m32_imm32      18446744073709551615  
+  movl $0x1, -0x10(%rbp)    #  15    0x400c25  7      OPC=movl_m32_imm32      18446744073709551615  
+  movq -0x8(%rbp), %rax     #  16    0x400c2c  4      OPC=movq_r64_m64        18446744073709551615  
+  movq %rax, -0x20(%rbp)    #  17    0x400c30  4      OPC=movq_m64_r64        18446744073709551615  
+.L_400c34:                  #        0x400c34  0      OPC=<label>             18446744073709551615  
+  movl -0xc(%rbp), %eax     #  18    0x400c34  3      OPC=movl_r32_m32        18446744073709551615  
+  cmpl -0x14(%rbp), %eax    #  19    0x400c37  3      OPC=cmpl_r32_m32        18446744073709551615  
+  jge .L_400cbe             #  20    0x400c3a  6      OPC=jge_label_1         4197566               
+  movq -0x28(%rbp), %rax    #  21    0x400c40  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0x10(%rbp), %rcx  #  22    0x400c44  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rcx, %rcx   #  23    0x400c48  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rcx, %rax           #  24    0x400c4c  3      OPC=addq_r64_r64        18446744073709551615  
+  movq -0x28(%rbp), %rcx    #  25    0x400c4f  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0xc(%rbp), %rdx   #  26    0x400c53  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rdx, %rdx   #  27    0x400c57  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rdx, %rcx           #  28    0x400c5b  3      OPC=addq_r64_r64        18446744073709551615  
+  movq %rax, 0x8(%rcx)      #  29    0x400c5e  4      OPC=movq_m64_r64        18446744073709551615  
+  movq -0x28(%rbp), %rax    #  30    0x400c62  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0xc(%rbp), %rcx   #  31    0x400c66  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rcx, %rcx   #  32    0x400c6a  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rcx, %rax           #  33    0x400c6e  3      OPC=addq_r64_r64        18446744073709551615  
+  movq -0x28(%rbp), %rcx    #  34    0x400c71  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0x10(%rbp), %rdx  #  35    0x400c75  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rdx, %rdx   #  36    0x400c79  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rdx, %rcx           #  37    0x400c7d  3      OPC=addq_r64_r64        18446744073709551615  
+  movq %rax, 0x10(%rcx)     #  38    0x400c80  4      OPC=movq_m64_r64        18446744073709551615  
+  movq -0x20(%rbp), %rax    #  39    0x400c84  4      OPC=movq_r64_m64        18446744073709551615  
+  movl (%rax), %esi         #  40    0x400c88  2      OPC=movl_r32_m32        18446744073709551615  
+  movq -0x28(%rbp), %rax    #  41    0x400c8a  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0xc(%rbp), %rcx   #  42    0x400c8e  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rcx, %rcx   #  43    0x400c92  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rcx, %rax           #  44    0x400c96  3      OPC=addq_r64_r64        18446744073709551615  
+  movl %esi, (%rax)         #  45    0x400c99  2      OPC=movl_m32_r32        18446744073709551615  
+  movl -0xc(%rbp), %eax     #  46    0x400c9b  3      OPC=movl_r32_m32        18446744073709551615  
+  addl $0x1, %eax           #  47    0x400c9e  3      OPC=addl_r32_imm8       18446744073709551615  
+  movl %eax, -0xc(%rbp)     #  48    0x400ca1  3      OPC=movl_m32_r32        18446744073709551615  
+  movl -0x10(%rbp), %eax    #  49    0x400ca4  3      OPC=movl_r32_m32        18446744073709551615  
+  addl $0x1, %eax           #  50    0x400ca7  3      OPC=addl_r32_imm8       18446744073709551615  
+  movl %eax, -0x10(%rbp)    #  51    0x400caa  3      OPC=movl_m32_r32        18446744073709551615  
+  movq -0x20(%rbp), %rcx    #  52    0x400cad  4      OPC=movq_r64_m64        18446744073709551615  
+  movq 0x8(%rcx), %rcx      #  53    0x400cb1  4      OPC=movq_r64_m64        18446744073709551615  
+  movq %rcx, -0x20(%rbp)    #  54    0x400cb5  4      OPC=movq_m64_r64        18446744073709551615  
+  jmpq .L_400c34            #  55    0x400cb9  5      OPC=jmpq_label_1        4197428               
+.L_400cbe:                  #        0x400cbe  0      OPC=<label>             18446744073709551615  
+  movq -0x28(%rbp), %rax    #  56    0x400cbe  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0x14(%rbp), %rcx  #  57    0x400cc2  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rcx, %rcx   #  58    0x400cc6  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rcx, %rax           #  59    0x400cca  3      OPC=addq_r64_r64        18446744073709551615  
+  movq -0x28(%rbp), %rcx    #  60    0x400ccd  4      OPC=movq_r64_m64        18446744073709551615  
+  movq %rax, 0x10(%rcx)     #  61    0x400cd1  4      OPC=movq_m64_r64        18446744073709551615  
+  movq -0x28(%rbp), %rax    #  62    0x400cd5  4      OPC=movq_r64_m64        18446744073709551615  
+  movq -0x28(%rbp), %rcx    #  63    0x400cd9  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0x14(%rbp), %rdx  #  64    0x400cdd  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rdx, %rdx   #  65    0x400ce1  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rdx, %rcx           #  66    0x400ce5  3      OPC=addq_r64_r64        18446744073709551615  
+  movq %rax, 0x8(%rcx)      #  67    0x400ce8  4      OPC=movq_m64_r64        18446744073709551615  
+  movq -0x8(%rbp), %rdi     #  68    0x400cec  4      OPC=movq_r64_m64        18446744073709551615  
+  callq .list_last          #  69    0x400cf0  5      OPC=callq_label         4197664               
+  movl (%rax), %esi         #  70    0x400cf5  2      OPC=movl_r32_m32        18446744073709551615  
+  movq -0x28(%rbp), %rax    #  71    0x400cf7  4      OPC=movq_r64_m64        18446744073709551615  
+  movslq -0x14(%rbp), %rcx  #  72    0x400cfb  4      OPC=movslq_r64_m32      18446744073709551615  
+  imulq $0x18, %rcx, %rcx   #  73    0x400cff  4      OPC=imulq_r64_r64_imm8  18446744073709551615  
+  addq %rcx, %rax           #  74    0x400d03  3      OPC=addq_r64_r64        18446744073709551615  
+  movl %esi, (%rax)         #  75    0x400d06  2      OPC=movl_m32_r32        18446744073709551615  
+  movq -0x28(%rbp), %rax    #  76    0x400d08  4      OPC=movq_r64_m64        18446744073709551615  
+  addq $0x30, %rsp          #  77    0x400d0c  4      OPC=addq_r64_imm8       18446744073709551615  
+  popq %rbp                 #  78    0x400d10  1      OPC=popq_r64_1          18446744073709551615  
+  retq                      #  79    0x400d11  1      OPC=retq                18446744073709551615  
                                                                                                     
 .size list_copy, .-list_copy
 Disassembling Done.
@@ -98,9 +98,9 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_400cae->4197550
-.list_copy->4197344
-.L_400c24->4197412
+.list_copy->4197360
+.L_400cbe->4197566
+.L_400c34->4197428
 
 Computing Label PC values: Done.
 
@@ -508,6 +508,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x30___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400bf4 --size 4
 Decompiling instr:subq $0x30, %rsp Done...
 
 
@@ -622,6 +624,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c0b --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -660,6 +664,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imulq__0x18___rdi___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c11 --size 4
 Decompiling instr:imulq $0x18, %rdi, %rdi Done...
 
 
@@ -777,7 +783,7 @@ FuncCache inserted: routine_movq__rax__MINUS0x20__rbp_
 Decompiling instr:movq %rax, -0x20(%rbp) Done...
 
 
-Decompiling instr:.L_400c24:...
+Decompiling instr:.L_400c34:...
 
 
 Decompiling instr:movl -0xc(%rbp), %eax...
@@ -818,23 +824,23 @@ FuncCache inserted: routine_cmpl_MINUS0x14__rbp____eax
 Decompiling instr:cmpl -0x14(%rbp), %eax Done...
 
 
-Decompiling instr:jge .L_400cae...
-Instr: jge .L_400cae
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_400cae
+Decompiling instr:jge .L_400cbe...
+Instr: jge .L_400cbe
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_400cbe
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_400cae/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_400cbe/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNLEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jge_.L_400cae
-Decompiling instr:jge .L_400cae Done...
+FuncCache inserted: routine_jge_.L_400cbe
+Decompiling instr:jge .L_400cbe Done...
 
 
 Decompiling instr:movq -0x28(%rbp), %rax...
@@ -891,6 +897,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imulq__0x18___rcx___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c48 --size 4
 Decompiling instr:imulq $0x18, %rcx, %rcx Done...
 
 
@@ -967,6 +975,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imulq__0x18___rdx___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c57 --size 4
 Decompiling instr:imulq $0x18, %rdx, %rdx Done...
 
 
@@ -1062,6 +1072,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rcx___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c6a --size 4
 Decompiling instr:imulq $0x18, %rcx, %rcx Done...
 
 
@@ -1138,6 +1150,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rdx___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c79 --size 4
 Decompiling instr:imulq $0x18, %rdx, %rdx Done...
 
 
@@ -1271,6 +1285,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rcx___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c92 --size 4
 Decompiling instr:imulq $0x18, %rcx, %rcx Done...
 
 
@@ -1347,6 +1363,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400c9e --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1404,6 +1422,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400ca7 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1483,26 +1503,26 @@ FuncCache inserted: routine_movq__rcx__MINUS0x20__rbp_
 Decompiling instr:movq %rcx, -0x20(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_400c24...
-Instr: jmpq .L_400c24
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400c24
+Decompiling instr:jmpq .L_400c34...
+Instr: jmpq .L_400c34
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400c34
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400c24/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400c34/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_400c24
-Decompiling instr:jmpq .L_400c24 Done...
+FuncCache inserted: routine_jmpq_.L_400c34
+Decompiling instr:jmpq .L_400c34 Done...
 
 
-Decompiling instr:.L_400cae:...
+Decompiling instr:.L_400cbe:...
 
 
 Decompiling instr:movq -0x28(%rbp), %rax...
@@ -1559,6 +1579,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rcx___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400cc6 --size 4
 Decompiling instr:imulq $0x18, %rcx, %rcx Done...
 
 
@@ -1692,6 +1714,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rdx___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400ce1 --size 4
 Decompiling instr:imulq $0x18, %rdx, %rdx Done...
 
 
@@ -1844,6 +1868,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_imulq__0x18___rcx___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400cff --size 4
 Decompiling instr:imulq $0x18, %rcx, %rcx Done...
 
 
@@ -1920,6 +1946,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x30___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400d0c --size 4
 Decompiling instr:addq $0x30, %rsp Done...
 
 
@@ -1964,3 +1992,5 @@ Decompiling Function: list_copy Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+1.01user 0.23system 0:04.91elapsed 25%CPU (0avgtext+0avgdata 10364maxresident)k
+0inputs+424outputs (0major+30133minor)pagefaults 0swaps

@@ -443,6 +443,10 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
+%G_0x602060_type = type <{ [1 x i8] }>
+@G_0x602060= global %G_0x602060_type <{ [1 x i8] c"\00" }>
+%G_0x6049f0_type = type <{ [4 x i8] }>
+@G_0x6049f0= global %G_0x6049f0_type <{ [4 x i8] c"\00\00\00\00" }>
 
 
 define %struct.Memory* @Proc5(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -454,43 +458,43 @@ entry:
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
 
-  ; Code: .Proc5:	 RIP: 4008e0	 Bytes: 0
-  ; Code: pushq %rbp	 RIP: 4008e0	 Bytes: 1
-  %loadMem_4008e0 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008e0 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008e0)
-  store %struct.Memory* %call_4008e0, %struct.Memory** %MEMORY
+  ; Code: .Proc5:	 RIP: 4008f0	 Bytes: 0
+  ; Code: pushq %rbp	 RIP: 4008f0	 Bytes: 1
+  %loadMem_4008f0 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4008f0 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008f0)
+  store %struct.Memory* %call_4008f0, %struct.Memory** %MEMORY
 
-  ; Code: movq %rsp, %rbp	 RIP: 4008e1	 Bytes: 3
-  %loadMem_4008e1 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008e1 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008e1)
-  store %struct.Memory* %call_4008e1, %struct.Memory** %MEMORY
+  ; Code: movq %rsp, %rbp	 RIP: 4008f1	 Bytes: 3
+  %loadMem_4008f1 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4008f1 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008f1)
+  store %struct.Memory* %call_4008f1, %struct.Memory** %MEMORY
 
-  ; Code: movb $0x41, 0x602060	 RIP: 4008e4	 Bytes: 8
-  %loadMem_4008e4 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008e4 = call %struct.Memory* @routine_movb__0x41__0x602060(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008e4)
-  store %struct.Memory* %call_4008e4, %struct.Memory** %MEMORY
+  ; Code: movb $0x41, 0x602060	 RIP: 4008f4	 Bytes: 8
+  %loadMem_4008f4 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4008f4 = call %struct.Memory* @routine_movb__0x41__0x602060(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008f4)
+  store %struct.Memory* %call_4008f4, %struct.Memory** %MEMORY
 
-  ; Code: movl $0x0, 0x6049f0	 RIP: 4008ec	 Bytes: 11
-  %loadMem_4008ec = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008ec = call %struct.Memory* @routine_movl__0x0__0x6049f0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008ec)
-  store %struct.Memory* %call_4008ec, %struct.Memory** %MEMORY
+  ; Code: movl $0x0, 0x6049f0	 RIP: 4008fc	 Bytes: 11
+  %loadMem_4008fc = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4008fc = call %struct.Memory* @routine_movl__0x0__0x6049f0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008fc)
+  store %struct.Memory* %call_4008fc, %struct.Memory** %MEMORY
 
-  ; Code: movl -0x4(%rbp), %eax	 RIP: 4008f7	 Bytes: 3
-  %loadMem_4008f7 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008f7 = call %struct.Memory* @routine_movl_MINUS0x4__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008f7)
-  store %struct.Memory* %call_4008f7, %struct.Memory** %MEMORY
+  ; Code: movl -0x4(%rbp), %eax	 RIP: 400907	 Bytes: 3
+  %loadMem_400907 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400907 = call %struct.Memory* @routine_movl_MINUS0x4__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400907)
+  store %struct.Memory* %call_400907, %struct.Memory** %MEMORY
 
-  ; Code: popq %rbp	 RIP: 4008fa	 Bytes: 1
-  %loadMem_4008fa = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008fa = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008fa)
-  store %struct.Memory* %call_4008fa, %struct.Memory** %MEMORY
+  ; Code: popq %rbp	 RIP: 40090a	 Bytes: 1
+  %loadMem_40090a = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40090a = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40090a)
+  store %struct.Memory* %call_40090a, %struct.Memory** %MEMORY
 
-  ; Code: retq	 RIP: 4008fb	 Bytes: 1
-  %loadMem_4008fb = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4008fb = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4008fb)
-  store %struct.Memory* %call_4008fb, %struct.Memory** %MEMORY
+  ; Code: retq	 RIP: 40090b	 Bytes: 1
+  %loadMem_40090b = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40090b = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40090b)
+  store %struct.Memory* %call_40090b, %struct.Memory** %MEMORY
 
-  ret %struct.Memory* %call_4008fb
+  ret %struct.Memory* %call_40090b
 }
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64) #0 {
@@ -564,7 +568,7 @@ block_400488:
   %6 = load i64, i64* %PC
   %7 = add i64 %6, 8
   store i64 %7, i64* %PC
-  %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6299744, i64 65)
+  %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 ptrtoint( %G_0x602060_type* @G_0x602060 to i64), i64 65)
   ret %struct.Memory* %8
 }
 
@@ -584,7 +588,7 @@ block_400488:
   %6 = load i64, i64* %PC
   %7 = add i64 %6, 11
   store i64 %7, i64* %PC
-  %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 6310384, i64 0)
+  %8 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i64 ptrtoint( %G_0x6049f0_type* @G_0x6049f0 to i64), i64 0)
   ret %struct.Memory* %8
 }
 

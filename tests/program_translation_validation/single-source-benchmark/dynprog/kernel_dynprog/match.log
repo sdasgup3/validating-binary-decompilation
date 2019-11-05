@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_dynprog] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_dynprog] from mcsema/test.proposed.opt.ll
 Matcher Done...
+197.06user 128.79system 5:31.29elapsed 98%CPU (0avgtext+0avgdata 25096maxresident)k
+0inputs+43640outputs (0major+7876minor)pagefaults 0swaps

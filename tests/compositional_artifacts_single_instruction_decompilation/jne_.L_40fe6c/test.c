@@ -1,0 +1,4 @@
+void main() {
+  __asm__("jne .L_40fe6c");
+  __asm__(".L_40fe6c:");
+}

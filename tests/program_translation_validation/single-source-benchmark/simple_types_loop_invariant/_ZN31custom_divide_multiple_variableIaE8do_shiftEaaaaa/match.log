@@ -1,10 +1,12 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55785a3600b8]:   %.pre = load i64, i64* %RBP, align 8
-[0x55785a2ad6c8]:   %59 = load i64, i64* %RBP.i, align 8
-[0x55785a2ae048]:   %.pre = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55e64e092038]:   %.pre = load i64, i64* %RBP, align 8
+[0x55e64dfdf488]:   %59 = load i64, i64* %RBP.i, align 8
+[0x55e64dfdfe08]:   %.pre = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN31custom_divide_multiple_variableIaE8do_shiftEaaaaa] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN31custom_divide_multiple_variableIaE8do_shiftEaaaaa] from mcsema/test.proposed.opt.ll
 Matcher Done...
+22.37user 2.43system 0:25.01elapsed 99%CPU (0avgtext+0avgdata 54540maxresident)k
+0inputs+1216outputs (0major+18504minor)pagefaults 0swaps

@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_
   .type _ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_, @function
 
-#! file-offset 0x2380
-#! rip-offset  0x402380
+#! file-offset 0x2390
+#! rip-offset  0x402390
 #! capacity    36 bytes
 
 # Text                                              #  Line  RIP       Bytes  Opcode             Target                
-._ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_:  #        0x402380  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                        #  1     0x402380  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                   #  2     0x402381  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                             #  3     0x402384  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                            #  4     0x402388  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi                             #  5     0x40238c  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rsi), %rsi                                 #  6     0x402390  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi                            #  7     0x402393  4      OPC=movq_r64_m64   18446744073709551615  
-  cmpq (%rdi), %rsi                                 #  8     0x402397  3      OPC=cmpq_r64_m64   18446744073709551615  
-  sete %al                                          #  9     0x40239a  3      OPC=sete_r8        18446744073709551615  
-  andb $0x1, %al                                    #  10    0x40239d  2      OPC=andb_al_imm8   18446744073709551615  
-  movzbl %al, %eax                                  #  11    0x40239f  3      OPC=movzbl_r32_r8  18446744073709551615  
-  popq %rbp                                         #  12    0x4023a2  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                              #  13    0x4023a3  1      OPC=retq           18446744073709551615  
+._ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_:  #        0x402390  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                        #  1     0x402390  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                   #  2     0x402391  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                             #  3     0x402394  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                            #  4     0x402398  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi                             #  5     0x40239c  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rsi), %rsi                                 #  6     0x4023a0  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi                            #  7     0x4023a3  4      OPC=movq_r64_m64   18446744073709551615  
+  cmpq (%rdi), %rsi                                 #  8     0x4023a7  3      OPC=cmpq_r64_m64   18446744073709551615  
+  sete %al                                          #  9     0x4023aa  3      OPC=sete_r8        18446744073709551615  
+  andb $0x1, %al                                    #  10    0x4023ad  2      OPC=andb_al_imm8   18446744073709551615  
+  movzbl %al, %eax                                  #  11    0x4023af  3      OPC=movzbl_r32_r8  18446744073709551615  
+  popq %rbp                                         #  12    0x4023b2  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                              #  13    0x4023b3  1      OPC=retq           18446744073709551615  
                                                                                                                        
 .size _ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_, .-_ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_->4203392
+._ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_->4203408
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4023ad --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.05system 0:00.66elapsed 40%CPU (0avgtext+0avgdata 10464maxresident)k
+0inputs+168outputs (0major+6697minor)pagefaults 0swaps

@@ -91,6 +91,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 
+declare %struct.Memory* @sub_400408__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_Ack_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_Ack_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1263,7 +1275,7 @@ block_400640:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400408__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -1725,7 +1737,7 @@ block_400509:                                     ; preds = %block_400500
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -2884,7 +2896,7 @@ block_400602:                                     ; preds = %block_4005e0, %bloc
   %214 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %205, i64* %214, align 8, !tbaa !2428
   %215 = load i64, i64* %PC
-  %216 = call %struct.Memory* @sub_400540_Ack(%struct.State* %0, i64 %215, %struct.Memory* %MEMORY.0)
+  %216 = call %struct.Memory* @sub_400540_Ack_renamed__renamed_(%struct.State* %0, i64 %215, %struct.Memory* %MEMORY.0)
   %217 = load i64, i64* %PC
   %218 = add i64 %217, 10
   store i64 %218, i64* %PC
@@ -3714,7 +3726,7 @@ block_400570:                                     ; preds = %block_400566
   %193 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %184, i64* %193, align 8, !tbaa !2428
   %194 = load i64, i64* %PC
-  %195 = call %struct.Memory* @sub_400540_Ack(%struct.State* %0, i64 %194, %struct.Memory* %2)
+  %195 = call %struct.Memory* @sub_400540_Ack_renamed__renamed_(%struct.State* %0, i64 %194, %struct.Memory* %2)
   %196 = load i64, i64* %RBP
   %197 = sub i64 %196, 4
   %198 = load i32, i32* %EAX
@@ -3877,7 +3889,7 @@ block_40058a:                                     ; preds = %block_400566
   %319 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %310, i64* %319, align 8, !tbaa !2428
   %320 = load i64, i64* %PC
-  %321 = call %struct.Memory* @sub_400540_Ack(%struct.State* %0, i64 %320, %struct.Memory* %2)
+  %321 = call %struct.Memory* @sub_400540_Ack_renamed__renamed_(%struct.State* %0, i64 %320, %struct.Memory* %2)
   %322 = load i64, i64* %RBP
   %323 = sub i64 %322, 16
   %324 = load i64, i64* %PC
@@ -3910,7 +3922,7 @@ block_40058a:                                     ; preds = %block_400566
   %344 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %335, i64* %344, align 8, !tbaa !2428
   %345 = load i64, i64* %PC
-  %346 = call %struct.Memory* @sub_400540_Ack(%struct.State* %0, i64 %345, %struct.Memory* %321)
+  %346 = call %struct.Memory* @sub_400540_Ack_renamed__renamed_(%struct.State* %0, i64 %345, %struct.Memory* %321)
   %347 = load i64, i64* %RBP
   %348 = sub i64 %347, 4
   %349 = load i32, i32* %EAX

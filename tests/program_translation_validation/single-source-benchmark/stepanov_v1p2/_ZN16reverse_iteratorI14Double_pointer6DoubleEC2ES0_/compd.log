@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_
   .type _ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_, @function
 
-#! file-offset 0x1240
-#! rip-offset  0x401240
+#! file-offset 0x1250
+#! rip-offset  0x401250
 #! capacity    25 bytes
 
 # Text                                                  #  Line  RIP       Bytes  Opcode            Target                
-._ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_:  #        0x401240  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                            #  1     0x401240  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                       #  2     0x401241  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rsi, -0x8(%rbp)                                 #  3     0x401244  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rdi, -0x10(%rbp)                                #  4     0x401248  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x10(%rbp), %rsi                                #  5     0x40124c  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x8(%rbp), %rdi                                 #  6     0x401250  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                                     #  7     0x401254  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                             #  8     0x401257  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                  #  9     0x401258  1      OPC=retq          18446744073709551615  
+._ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_:  #        0x401250  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                            #  1     0x401250  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                       #  2     0x401251  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rsi, -0x8(%rbp)                                 #  3     0x401254  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rdi, -0x10(%rbp)                                #  4     0x401258  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x10(%rbp), %rsi                                #  5     0x40125c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x8(%rbp), %rdi                                 #  6     0x401260  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                                     #  7     0x401264  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                             #  8     0x401267  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                  #  9     0x401268  1      OPC=retq          18446744073709551615  
                                                                                                                           
 .size _ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_, .-_ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_->4198976
+._ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_->4198992
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.14user 0.03system 0:00.20elapsed 92%CPU (0avgtext+0avgdata 10268maxresident)k
+0inputs+144outputs (0major+5273minor)pagefaults 0swaps

@@ -39,7 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 
-declare %struct.Memory* @sub_4007d0.polybench_flush_cache(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.polybench_flush_cache(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @polybench_prepare_instruments(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -63,7 +63,7 @@ entry:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %6, align 8
   store i64 %11, i64* %3, align 8
-  %call2_400854 = tail call %struct.Memory* @sub_4007d0.polybench_flush_cache(%struct.State* %0, i64 %11, %struct.Memory* %2)
+  %call2_400864 = tail call %struct.Memory* @sub_4007e0.polybench_flush_cache(%struct.State* %0, i64 %11, %struct.Memory* %2)
   %15 = load i64, i64* %3, align 8
   %16 = add i64 %15, 1
   store i64 %16, i64* %3, align 8
@@ -80,7 +80,7 @@ entry:
   store i64 %23, i64* %3, align 8
   %24 = add i64 %17, 16
   store i64 %24, i64* %6, align 8
-  ret %struct.Memory* %call2_400854
+  ret %struct.Memory* %call2_400864
 }
 
 ; Function Attrs: norecurse nounwind

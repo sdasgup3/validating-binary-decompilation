@@ -7,7 +7,7 @@ compd_opt: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activa
 match: toggle_value toggle_activate init_Toggle new_Toggle nth_toggle_activate init_NthToggle new_NthToggle main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+10.17user 6.29system 0:16.52elapsed 99%CPU (0avgtext+0avgdata 23836maxresident)k
+0inputs+1584outputs (0major+10949minor)pagefaults 0swaps

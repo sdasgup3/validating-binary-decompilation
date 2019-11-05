@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_
   .type _ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_, @function
 
-#! file-offset 0x32a0
-#! rip-offset  0x4032a0
+#! file-offset 0x32b0
+#! rip-offset  0x4032b0
 #! capacity    38 bytes
 
 # Text                                                                                           #  Line  RIP       Bytes  Opcode             Target                
-._ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_:  #        0x4032a0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                                                     #  1     0x4032a0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                                                                #  2     0x4032a1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                                          #  3     0x4032a4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                                                         #  4     0x4032a8  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi                                                                          #  5     0x4032ac  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rsi), %rsi                                                                              #  6     0x4032b0  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi                                                                         #  7     0x4032b3  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rdi                                                                              #  8     0x4032b7  3      OPC=movq_r64_m64   18446744073709551615  
-  subq %rdi, %rsi                                                                                #  9     0x4032ba  3      OPC=subq_r64_r64   18446744073709551615  
-  sarq $0x3, %rsi                                                                                #  10    0x4032bd  4      OPC=sarq_r64_imm8  18446744073709551615  
-  movq %rsi, %rax                                                                                #  11    0x4032c1  3      OPC=movq_r64_r64   18446744073709551615  
-  popq %rbp                                                                                      #  12    0x4032c4  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                                                           #  13    0x4032c5  1      OPC=retq           18446744073709551615  
+._ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_:  #        0x4032b0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                                                     #  1     0x4032b0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                                                                #  2     0x4032b1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                                          #  3     0x4032b4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                                                         #  4     0x4032b8  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi                                                                          #  5     0x4032bc  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rsi), %rsi                                                                              #  6     0x4032c0  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi                                                                         #  7     0x4032c3  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rdi                                                                              #  8     0x4032c7  3      OPC=movq_r64_m64   18446744073709551615  
+  subq %rdi, %rsi                                                                                #  9     0x4032ca  3      OPC=subq_r64_r64   18446744073709551615  
+  sarq $0x3, %rsi                                                                                #  10    0x4032cd  4      OPC=sarq_r64_imm8  18446744073709551615  
+  movq %rsi, %rax                                                                                #  11    0x4032d1  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                                                                                      #  12    0x4032d4  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                                                           #  13    0x4032d5  1      OPC=retq           18446744073709551615  
                                                                                                                                                                     
 .size _ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_, .-_ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_->4207264
+._ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_->4207280
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SARI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_sarq__0x3___rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4032cd --size 4
 Decompiling instr:sarq $0x3, %rsi Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdE
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.04system 0:00.81elapsed 32%CPU (0avgtext+0avgdata 10364maxresident)k
+0inputs+168outputs (0major+6677minor)pagefaults 0swaps

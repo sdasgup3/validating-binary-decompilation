@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+19.27user 16.39system 0:35.83elapsed 99%CPU (0avgtext+0avgdata 23768maxresident)k
+0inputs+4712outputs (0major+13836minor)pagefaults 0swaps

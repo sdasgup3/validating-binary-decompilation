@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN19custom_or_constantsIiE8do_shiftEi] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN19custom_or_constantsIiE8do_shiftEi] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.38user 0.06system 0:02.51elapsed 97%CPU (0avgtext+0avgdata 66236maxresident)k
+0inputs+32outputs (0major+12822minor)pagefaults 0swaps

@@ -1,17 +1,19 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558254285a08]:   %204 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %146)
-[0x55825440f9d0]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4009f7)
-[0x558254425ac0]:   %call2_4009f7 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %2)
-[0x55825442ee60]:   %call2_4009e1 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %2)
-[0x55825443c120]:   %327 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %314)
-Multiple matches exist for [0x558254286be8]:   %217 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %204)
-[0x55825440f9d0]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4009f7)
-[0x558254425ac0]:   %call2_4009f7 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %2)
-[0x55825442ee60]:   %call2_4009e1 = tail call %struct.Memory.32* @sub_400900.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %2)
-[0x55825443c120]:   %327 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %314)
+Multiple matches exist for [0x561e395cda08]:   %204 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %146)
+[0x561e397579d0]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400a07)
+[0x561e3976dad0]:   %call2_400a07 = tail call %struct.Memory.32* @sub_400910.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %2)
+[0x561e39776e70]:   %call2_4009f1 = tail call %struct.Memory.32* @sub_400910.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %2)
+[0x561e39783d40]:   %327 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %314)
+Multiple matches exist for [0x561e395cebe8]:   %217 = tail call fastcc %struct.Memory* @ext_400410_printf(%struct.State* nonnull %0, %struct.Memory* %204)
+[0x561e397579d0]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400a07)
+[0x561e3976dad0]:   %call2_400a07 = tail call %struct.Memory.32* @sub_400910.salsa(%struct.State.1* nonnull %0, i64 %251, %struct.Memory.32* %2)
+[0x561e39776e70]:   %call2_4009f1 = tail call %struct.Memory.32* @sub_400910.salsa(%struct.State.1* nonnull %0, i64 %208, %struct.Memory.32* %2)
+[0x561e39783d40]:   %327 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %314)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
+14.99user 19.70system 0:34.74elapsed 99%CPU (0avgtext+0avgdata 14064maxresident)k
+0inputs+4168outputs (0major+2262minor)pagefaults 0swaps

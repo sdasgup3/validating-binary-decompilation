@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4062b0._ZplIdE12ValueWrapperIT_ERKS2_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4062c0._ZplIdE12ValueWrapperIT_ERKS2_S4_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406300._ZN12ValueWrapperIS_IdEEC2IS0_EERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406310._ZN12ValueWrapperIS_IdEEC2IS0_EERKT_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZplI12ValueWrapperIdEES0_IT_ERKS3_S5_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -134,7 +134,7 @@ entry:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %6, align 8
   store i64 %59, i64* %3, align 8
-  %call2_406268 = tail call %struct.Memory* @sub_4062b0._ZplIdE12ValueWrapperIT_ERKS2_S4_(%struct.State* %0, i64 %59, %struct.Memory* %2)
+  %call2_406278 = tail call %struct.Memory* @sub_4062c0._ZplIdE12ValueWrapperIT_ERKS2_S4_(%struct.State* %0, i64 %59, %struct.Memory* %2)
   %64 = load i64, i64* %RBP.i, align 8
   %65 = add i64 %64, -8
   %66 = load i64, i64* %3, align 8
@@ -156,7 +156,7 @@ entry:
   store i64 %74, i64* %77, align 8
   store i64 %76, i64* %6, align 8
   store i64 %73, i64* %3, align 8
-  %call2_40627a = tail call %struct.Memory* @sub_406300._ZN12ValueWrapperIS_IdEEC2IS0_EERKT_(%struct.State* %0, i64 %73, %struct.Memory* %call2_406268)
+  %call2_40628a = tail call %struct.Memory* @sub_406310._ZN12ValueWrapperIS_IdEEC2IS0_EERKT_(%struct.State* %0, i64 %73, %struct.Memory* %call2_406278)
   %78 = load i64, i64* %RBP.i, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %3, align 8
@@ -212,7 +212,7 @@ entry:
   store i64 %115, i64* %3, align 8
   %116 = add i64 %86, 48
   store i64 %116, i64* %6, align 8
-  ret %struct.Memory* %call2_40627a
+  ret %struct.Memory* %call2_40628a
 }
 
 ; Function Attrs: norecurse nounwind

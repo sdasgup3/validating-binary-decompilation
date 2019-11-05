@@ -1,10 +1,12 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ca14d8f3a8]:   %93 = tail call fastcc %struct.Memory* @ext_601038_printf(%struct.State* nonnull %0, %struct.Memory* %74)
-[0x55ca14da4580]:   %call2_4005d7 = tail call %struct.Memory.32* @sub_400400.printf_plt(%struct.State.1* %0, i64 %89, %struct.Memory.32* %call2_4005c0)
-[0x55ca14dad980]:   %call2_4005c0 = tail call %struct.Memory.32* @sub_400500.foo(%struct.State.1* %0, i64 %71, %struct.Memory.32* %2)
+Multiple matches exist for [0x559947fd0638]:   %93 = tail call fastcc %struct.Memory* @ext_601038_printf(%struct.State* nonnull %0, %struct.Memory* %74)
+[0x559947fe6330]:   %94 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_4005e0)
+[0x559947fef730]:   %call2_4005e0 = tail call %struct.Memory.32* @sub_400520.foo(%struct.State.1* %0, i64 %71, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.77user 3.24system 0:04.01elapsed 99%CPU (0avgtext+0avgdata 12384maxresident)k
+0inputs+576outputs (0major+910minor)pagefaults 0swaps

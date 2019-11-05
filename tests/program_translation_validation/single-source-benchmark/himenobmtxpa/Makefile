@@ -7,7 +7,7 @@ compd_opt: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_par
 match: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

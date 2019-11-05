@@ -258,6 +258,7 @@ sub createDir {
 sub execute {
     my $args     = shift @_;
     my $show_cmd = shift @_;
+    my $retval = "";
 
     if ( defined($show_cmd) ) {
         print "$args \n";
@@ -265,8 +266,10 @@ sub execute {
     if ( defined($show_cmd) and $show_cmd == 2 ) {
     }
     else {
-        system("$args");
+        # system("$args");
+        $retval = `$args`;
     }
+    return $retval;
 }
 
 sub info {

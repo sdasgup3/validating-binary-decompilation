@@ -7,7 +7,7 @@ compd_opt: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
 match: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

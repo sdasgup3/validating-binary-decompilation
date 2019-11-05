@@ -4,26 +4,26 @@ Disassembled output
   .globl _ZN22custom_divide_variableIaE8do_shiftEaa
   .type _ZN22custom_divide_variableIaE8do_shiftEaa, @function
 
-#! file-offset 0x13790
-#! rip-offset  0x413790
+#! file-offset 0x137a0
+#! rip-offset  0x4137a0
 #! capacity    34 bytes
 
 # Text                                        #  Line  RIP       Bytes  Opcode             Target                
-._ZN22custom_divide_variableIaE8do_shiftEaa:  #        0x413790  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                  #  1     0x413790  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                             #  2     0x413791  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %sil, %al                              #  3     0x413794  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dil, %cl                              #  4     0x413797  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %cl, -0x1(%rbp)                        #  5     0x41379a  3      OPC=movb_m8_r8     18446744073709551615  
-  movb %al, -0x2(%rbp)                        #  6     0x41379d  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl -0x1(%rbp), %eax                     #  7     0x4137a0  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movsbl -0x2(%rbp), %esi                     #  8     0x4137a4  4      OPC=movsbl_r32_m8  18446744073709551615  
-  cltd                                        #  9     0x4137a8  1      OPC=cltd           18446744073709551615  
-  idivl %esi                                  #  10    0x4137a9  2      OPC=idivl_r32      18446744073709551615  
-  movb %al, %cl                               #  11    0x4137ab  2      OPC=movb_r8_r8     18446744073709551615  
-  movsbl %cl, %eax                            #  12    0x4137ad  3      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbp                                   #  13    0x4137b0  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                        #  14    0x4137b1  1      OPC=retq           18446744073709551615  
+._ZN22custom_divide_variableIaE8do_shiftEaa:  #        0x4137a0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                  #  1     0x4137a0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                             #  2     0x4137a1  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %sil, %al                              #  3     0x4137a4  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dil, %cl                              #  4     0x4137a7  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %cl, -0x1(%rbp)                        #  5     0x4137aa  3      OPC=movb_m8_r8     18446744073709551615  
+  movb %al, -0x2(%rbp)                        #  6     0x4137ad  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl -0x1(%rbp), %eax                     #  7     0x4137b0  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movsbl -0x2(%rbp), %esi                     #  8     0x4137b4  4      OPC=movsbl_r32_m8  18446744073709551615  
+  cltd                                        #  9     0x4137b8  1      OPC=cltd           18446744073709551615  
+  idivl %esi                                  #  10    0x4137b9  2      OPC=idivl_r32      18446744073709551615  
+  movb %al, %cl                               #  11    0x4137bb  2      OPC=movb_r8_r8     18446744073709551615  
+  movsbl %cl, %eax                            #  12    0x4137bd  3      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbp                                   #  13    0x4137c0  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                        #  14    0x4137c1  1      OPC=retq           18446744073709551615  
                                                                                                                  
 .size _ZN22custom_divide_variableIaE8do_shiftEaa, .-_ZN22custom_divide_variableIaE8do_shiftEaa
 Disassembling Done.
@@ -31,7 +31,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN22custom_divide_variableIaE8do_shiftEaa->4274064
+._ZN22custom_divide_variableIaE8do_shiftEaa->4274080
 
 Computing Label PC values: Done.
 
@@ -653,3 +653,5 @@ Decompiling Function: _ZN22custom_divide_variableIaE8do_shiftEaa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.27user 0.07system 0:00.39elapsed 87%CPU (0avgtext+0avgdata 10196maxresident)k
+0inputs+168outputs (0major+6929minor)pagefaults 0swaps

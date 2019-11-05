@@ -91,6 +91,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
+declare %struct.Memory* @sub_400408__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_fib_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_fib_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1111,7 +1123,7 @@ block_400509:                                     ; preds = %block_400500
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400490_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -1778,7 +1790,7 @@ block_400620:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400408__init_proc(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400408__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -3217,7 +3229,7 @@ block_4005e2:                                     ; preds = %block_4005c0, %bloc
   %190 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %181, i64* %190, align 8, !tbaa !2428
   %191 = load i64, i64* %PC
-  %192 = call %struct.Memory* @sub_400540_fib(%struct.State* %0, i64 %191, %struct.Memory* %MEMORY.0)
+  %192 = call %struct.Memory* @sub_400540_fib_renamed__renamed_(%struct.State* %0, i64 %191, %struct.Memory* %MEMORY.0)
   %193 = load i64, i64* %PC
   %194 = add i64 %193, 10
   store i64 %194, i64* %PC
@@ -3649,7 +3661,7 @@ block_400564:                                     ; preds = %block_400540
   %175 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %166, i64* %175, align 8, !tbaa !2428
   %176 = load i64, i64* %PC
-  %177 = call %struct.Memory* @sub_400540_fib(%struct.State* %0, i64 %176, %struct.Memory* %2)
+  %177 = call %struct.Memory* @sub_400540_fib_renamed__renamed_(%struct.State* %0, i64 %176, %struct.Memory* %2)
   %178 = load i64, i64* %RBP
   %179 = sub i64 %178, 16
   %180 = load i64, i64* %PC
@@ -3722,7 +3734,7 @@ block_400564:                                     ; preds = %block_400540
   %232 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %223, i64* %232, align 8, !tbaa !2428
   %233 = load i64, i64* %PC
-  %234 = call %struct.Memory* @sub_400540_fib(%struct.State* %0, i64 %233, %struct.Memory* %177)
+  %234 = call %struct.Memory* @sub_400540_fib_renamed__renamed_(%struct.State* %0, i64 %233, %struct.Memory* %177)
   %235 = load i64, i64* %RBP
   %236 = sub i64 %235, 24
   %237 = load i64, i64* %PC

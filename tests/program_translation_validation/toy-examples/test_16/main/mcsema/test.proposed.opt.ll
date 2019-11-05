@@ -4,7 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
-%G_0x400574_type = type <{ [4 x i8] }>
+%G_0x400594_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -39,15 +39,15 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G_0x400574 = global %G_0x400574_type zeroinitializer
+@G_0x400594 = global %G_0x400594_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4004d0.printit(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
+declare %struct.Memory* @sub_4004f0.printit(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
+define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -126,7 +126,7 @@ entry:
   store i64 %53, i64* %56, align 8
   %RDI.i16 = getelementptr inbounds %union.anon, %union.anon* %44, i64 0, i32 0
   %57 = load i64, i64* %3, align 8
-  %58 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400574_type* @G_0x400574 to i64), i64 44) to i32*), align 4
+  %58 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400594_type* @G_0x400594 to i64), i64 76) to i32*), align 4
   %59 = load i64, i64* %RBP.i, align 8
   %60 = add i64 %59, -20
   %61 = add i64 %57, 10
@@ -144,7 +144,7 @@ entry:
   store i64 %66, i64* %69, align 8
   store i64 %68, i64* %6, align 8
   store i64 %65, i64* %3, align 8
-  %call2_4004b7 = tail call %struct.Memory* @sub_4004d0.printit(%struct.State* %0, i64 %65, %struct.Memory* %2)
+  %call2_4004d7 = tail call %struct.Memory* @sub_4004f0.printit(%struct.State* %0, i64 %65, %struct.Memory* %2)
   %70 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0
   %ECX.i9 = bitcast %union.anon* %70 to i32*
   %RCX.i = getelementptr inbounds %union.anon, %union.anon* %70, i64 0, i32 0
@@ -206,7 +206,7 @@ entry:
   store i64 %109, i64* %3, align 8
   %110 = add i64 %80, 48
   store i64 %110, i64* %6, align 8
-  ret %struct.Memory* %call2_4004b7
+  ret %struct.Memory* %call2_4004d7
 }
 
 ; Function Attrs: norecurse nounwind
@@ -354,14 +354,14 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl_0x400574___edi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
+define %struct.Memory* @routine_movl_0x400594___edi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 7
   store i64 %4, i64* %PC, align 8
-  %5 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400574_type* @G_0x400574 to i64), i64 44) to i32*), align 4
+  %5 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x400594_type* @G_0x400594 to i64), i64 76) to i32*), align 4
   %6 = zext i32 %5 to i64
   store i64 %6, i64* %RDI, align 8
   ret %struct.Memory* %2

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZSt4fabsf] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZSt4fabsf] from mcsema/test.proposed.opt.ll
 Matcher Done...
+6.25user 0.78system 0:07.04elapsed 99%CPU (0avgtext+0avgdata 54516maxresident)k
+0inputs+288outputs (0major+10467minor)pagefaults 0swaps

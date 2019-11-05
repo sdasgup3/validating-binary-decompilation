@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN14double_pointerC2EPd
   .type _ZN14double_pointerC2EPd, @function
 
-#! file-offset 0x12e0
-#! rip-offset  0x4012e0
+#! file-offset 0x12f0
+#! rip-offset  0x4012f0
 #! capacity    25 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode            Target                
-._ZN14double_pointerC2EPd:  #        0x4012e0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                #  1     0x4012e0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp           #  2     0x4012e1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)     #  3     0x4012e4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)    #  4     0x4012e8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi     #  5     0x4012ec  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi    #  6     0x4012f0  4      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)         #  7     0x4012f4  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                 #  8     0x4012f7  1      OPC=popq_r64_1    18446744073709551615  
-  retq                      #  9     0x4012f8  1      OPC=retq          18446744073709551615  
+._ZN14double_pointerC2EPd:  #        0x4012f0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                #  1     0x4012f0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp           #  2     0x4012f1  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)     #  3     0x4012f4  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)    #  4     0x4012f8  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi     #  5     0x4012fc  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi    #  6     0x401300  4      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)         #  7     0x401304  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                 #  8     0x401307  1      OPC=popq_r64_1    18446744073709551615  
+  retq                      #  9     0x401308  1      OPC=retq          18446744073709551615  
                                                                                               
 .size _ZN14double_pointerC2EPd, .-_ZN14double_pointerC2EPd
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN14double_pointerC2EPd->4199136
+._ZN14double_pointerC2EPd->4199152
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN14double_pointerC2EPd Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.16user 0.02system 0:00.20elapsed 92%CPU (0avgtext+0avgdata 10080maxresident)k
+0inputs+144outputs (0major+5257minor)pagefaults 0swaps

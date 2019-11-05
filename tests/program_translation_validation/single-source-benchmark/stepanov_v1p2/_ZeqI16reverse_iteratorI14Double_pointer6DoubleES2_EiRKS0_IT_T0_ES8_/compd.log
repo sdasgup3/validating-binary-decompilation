@@ -4,23 +4,23 @@ Disassembled output
   .globl _ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_
   .type _ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_, @function
 
-#! file-offset 0x1e60
-#! rip-offset  0x401e60
+#! file-offset 0x1e70
+#! rip-offset  0x401e70
 #! capacity    35 bytes
 
 # Text                                                                  #  Line  RIP       Bytes  Opcode             Target                
-._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_:  #        0x401e60  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                            #  1     0x401e60  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                                       #  2     0x401e61  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                                                      #  3     0x401e64  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                 #  4     0x401e68  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                                #  5     0x401e6c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                                                 #  6     0x401e70  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rsi                                                #  7     0x401e74  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_   #  8     0x401e78  5      OPC=callq_label    4202128               
-  addq $0x10, %rsp                                                      #  9     0x401e7d  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                                             #  10    0x401e81  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                                  #  11    0x401e82  1      OPC=retq           18446744073709551615  
+._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_:  #        0x401e70  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                            #  1     0x401e70  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                                       #  2     0x401e71  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                                                      #  3     0x401e74  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                 #  4     0x401e78  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                                #  5     0x401e7c  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                                                 #  6     0x401e80  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rsi                                                #  7     0x401e84  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_   #  8     0x401e88  5      OPC=callq_label    4202144               
+  addq $0x10, %rsp                                                      #  9     0x401e8d  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                                             #  10    0x401e91  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                                  #  11    0x401e92  1      OPC=retq           18446744073709551615  
                                                                                                                                            
 .size _ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_, .-_ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_->4202080
+._ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8_->4202096
 
 Computing Label PC values: Done.
 
@@ -436,6 +436,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401e74 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -550,6 +552,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401e8d --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -594,3 +598,5 @@ Decompiling Function: _ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.05system 0:00.99elapsed 23%CPU (0avgtext+0avgdata 10388maxresident)k
+0inputs+160outputs (0major+6066minor)pagefaults 0swaps

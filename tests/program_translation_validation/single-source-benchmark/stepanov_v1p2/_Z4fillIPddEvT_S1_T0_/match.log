@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z4fillIPddEvT_S1_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z4fillIPddEvT_S1_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.31user 1.20system 0:02.53elapsed 99%CPU (0avgtext+0avgdata 17168maxresident)k
+0inputs+320outputs (0major+2017minor)pagefaults 0swaps

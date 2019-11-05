@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [createtask] from ../binary/test.mcsema.opt.ll
 Extracting function [createtask] from mcsema/test.proposed.opt.ll
 Matcher Done...
+8.17user 14.93system 0:23.34elapsed 98%CPU (0avgtext+0avgdata 13864maxresident)k
+0inputs+2888outputs (0major+2762minor)pagefaults 0swaps

@@ -7,7 +7,7 @@ compd_opt: main doTest lower_StringImpl toASCIILower
 match: main doTest lower_StringImpl toASCIILower
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

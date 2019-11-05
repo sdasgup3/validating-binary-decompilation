@@ -1,21 +1,23 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55899168b760]:   %45 = tail call double @llvm.fabs.f64(double %44) #12
-[0x55898f81bb70]:   %117 = tail call i32 @llvm.ctpop.i32(i32 %116)
-[0x55898f8b3db0]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
-[0x55898f8c3d30]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
-[0x558991bed140]:   %45 = tail call double @llvm.trunc.f64(double %44)
-[0x558991bedb10]:   %46 = tail call double @llvm.fabs.f64(double %45)
-[0x558991c151c0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411f6e)
-[0x558991c15400]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x558991c181b0]:   %call2_411f6e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411f56)
-[0x558991c19890]:   %call2_411f56 = tail call %struct.Memory.32* @sub_411f30._ZN10custom_twoIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
-Multiple matches exist for [0x55899085e7d8]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
-[0x558991c151c0]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411f6e)
-[0x558991c181b0]:   %call2_411f6e = tail call %struct.Memory.32* @sub_411080._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411f56)
-[0x558991c19890]:   %call2_411f56 = tail call %struct.Memory.32* @sub_411f30._ZN10custom_twoIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x55cdc06c5f10]:   %45 = tail call double @llvm.fabs.f64(double %44) #12
+[0x55cdbf6b68d0]:   %117 = tail call i32 @llvm.ctpop.i32(i32 %116)
+[0x55cdbf750040]:   %90 = tail call i32 @llvm.ctpop.i32(i32 %89)
+[0x55cdbf7600c0]:   %72 = tail call i32 @llvm.ctpop.i32(i32 %71)
+[0x55cdc1a89390]:   %45 = tail call double @llvm.trunc.f64(double %44)
+[0x55cdc1a89d60]:   %46 = tail call double @llvm.fabs.f64(double %45)
+[0x55cdc1ab1410]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411f7e)
+[0x55cdc1ab1650]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55cdc1ab4610]:   %call2_411f7e = tail call %struct.Memory.32* @sub_411090._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411f66)
+[0x55cdc1ab5ae0]:   %call2_411f66 = tail call %struct.Memory.32* @sub_411f40._ZN10custom_twoIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
+Multiple matches exist for [0x55cdc06caf08]:   %135 = tail call fastcc %struct.Memory* @ext_674178_printf(%struct.State* nonnull %0, %struct.Memory* %85)
+[0x55cdc1ab1410]:   %103 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_411f7e)
+[0x55cdc1ab4610]:   %call2_411f7e = tail call %struct.Memory.32* @sub_411090._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %81, %struct.Memory.32* %call2_411f66)
+[0x55cdc1ab5ae0]:   %call2_411f66 = tail call %struct.Memory.32* @sub_411f40._ZN10custom_twoIlE8do_shiftEl(%struct.State.1* %0, i64 %50, %struct.Memory.32* %2)
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z17check_shifted_sumIl10custom_twoIlEEvT_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z17check_shifted_sumIl10custom_twoIlEEvT_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+20.42user 0.73system 0:21.36elapsed 99%CPU (0avgtext+0avgdata 66212maxresident)k
+0inputs+664outputs (0major+12819minor)pagefaults 0swaps

@@ -4,28 +4,28 @@ Disassembled output
   .globl _ZneI14double_pointerEiRKT_S3_
   .type _ZneI14double_pointerEiRKT_S3_, @function
 
-#! file-offset 0x2b50
-#! rip-offset  0x402b50
+#! file-offset 0x2b60
+#! rip-offset  0x402b60
 #! capacity    50 bytes
 
 # Text                              #  Line  RIP       Bytes  Opcode             Target                
-._ZneI14double_pointerEiRKT_S3_:    #        0x402b50  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                        #  1     0x402b50  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                   #  2     0x402b51  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                  #  3     0x402b54  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)             #  4     0x402b58  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)            #  5     0x402b5c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi             #  6     0x402b60  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rsi            #  7     0x402b64  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZeqRK14double_pointerS1_  #  8     0x402b68  5      OPC=callq_label    4202864               
-  cmpl $0x0, %eax                   #  9     0x402b6d  3      OPC=cmpl_r32_imm8  18446744073709551615  
-  setne %cl                         #  10    0x402b70  3      OPC=setne_r8       18446744073709551615  
-  xorb $0xff, %cl                   #  11    0x402b73  3      OPC=xorb_r8_imm8   18446744073709551615  
-  andb $0x1, %cl                    #  12    0x402b76  3      OPC=andb_r8_imm8   18446744073709551615  
-  movzbl %cl, %eax                  #  13    0x402b79  3      OPC=movzbl_r32_r8  18446744073709551615  
-  addq $0x10, %rsp                  #  14    0x402b7c  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                         #  15    0x402b80  1      OPC=popq_r64_1     18446744073709551615  
-  retq                              #  16    0x402b81  1      OPC=retq           18446744073709551615  
+._ZneI14double_pointerEiRKT_S3_:    #        0x402b60  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                        #  1     0x402b60  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                   #  2     0x402b61  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                  #  3     0x402b64  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)             #  4     0x402b68  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)            #  5     0x402b6c  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi             #  6     0x402b70  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rsi            #  7     0x402b74  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZeqRK14double_pointerS1_  #  8     0x402b78  5      OPC=callq_label    4202880               
+  cmpl $0x0, %eax                   #  9     0x402b7d  3      OPC=cmpl_r32_imm8  18446744073709551615  
+  setne %cl                         #  10    0x402b80  3      OPC=setne_r8       18446744073709551615  
+  xorb $0xff, %cl                   #  11    0x402b83  3      OPC=xorb_r8_imm8   18446744073709551615  
+  andb $0x1, %cl                    #  12    0x402b86  3      OPC=andb_r8_imm8   18446744073709551615  
+  movzbl %cl, %eax                  #  13    0x402b89  3      OPC=movzbl_r32_r8  18446744073709551615  
+  addq $0x10, %rsp                  #  14    0x402b8c  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                         #  15    0x402b90  1      OPC=popq_r64_1     18446744073709551615  
+  retq                              #  16    0x402b91  1      OPC=retq           18446744073709551615  
                                                                                                        
 .size _ZneI14double_pointerEiRKT_S3_, .-_ZneI14double_pointerEiRKT_S3_
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZneI14double_pointerEiRKT_S3_->4205392
+._ZneI14double_pointerEiRKT_S3_->4205408
 
 Computing Label PC values: Done.
 
@@ -441,6 +441,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402b64 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -555,6 +557,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl__0x0___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402b7d --size 3
 Decompiling instr:cmpl $0x0, %eax Done...
 
 
@@ -593,6 +597,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorb__0xff___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402b83 --size 3
 Decompiling instr:xorb $0xff, %cl Done...
 
 
@@ -612,6 +618,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402b86 --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -650,6 +658,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402b8c --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -694,3 +704,5 @@ Decompiling Function: _ZneI14double_pointerEiRKT_S3_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.26user 0.06system 0:02.05elapsed 15%CPU (0avgtext+0avgdata 10336maxresident)k
+0inputs+192outputs (0major+8037minor)pagefaults 0swaps

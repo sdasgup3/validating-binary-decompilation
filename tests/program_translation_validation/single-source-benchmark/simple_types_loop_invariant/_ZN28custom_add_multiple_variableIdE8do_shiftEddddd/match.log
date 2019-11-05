@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN28custom_add_multiple_variableIdE8do_shiftEddddd] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN28custom_add_multiple_variableIdE8do_shiftEddddd] from mcsema/test.proposed.opt.ll
 Matcher Done...
+7.00user 0.47system 0:07.56elapsed 98%CPU (0avgtext+0avgdata 54276maxresident)k
+0inputs+248outputs (0major+10470minor)pagefaults 0swaps

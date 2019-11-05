@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN14PointerWrapperIdEC2EPd] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN14PointerWrapperIdEC2EPd] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.86user 0.21system 0:01.13elapsed 94%CPU (0avgtext+0avgdata 23664maxresident)k
+0inputs+72outputs (0major+3436minor)pagefaults 0swaps

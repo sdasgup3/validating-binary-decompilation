@@ -80,17 +80,17 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
-declare %struct.Memory* @sub_400630_init_Toggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400680_new_Toggle_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400530_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400488__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400680_new_Toggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400740_new_NthToggle_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400740_new_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400700_init_NthToggle_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400488__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400530_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400700_init_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400630_init_Toggle_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -771,7 +771,7 @@ block_4005a9:                                     ; preds = %block_4005a0
   store i64 %33, i64* %35, align 8
   store i64 %34, i64* %27, align 8, !tbaa !2450
   store i64 %32, i64* %PC, align 8, !tbaa !2450
-  %36 = tail call %struct.Memory* @sub_400530_deregister_tm_clones_renamed_(%struct.State* nonnull %0, i64 %32, %struct.Memory* %2)
+  %36 = tail call %struct.Memory* @sub_400530_deregister_tm_clones_renamed__renamed_(%struct.State* nonnull %0, i64 %32, %struct.Memory* %2)
   %37 = load i64, i64* %PC, align 8
   store i8 1, i8* getelementptr inbounds (%__bss_start_type, %__bss_start_type* @__bss_start, i64 0, i32 0, i64 0), align 8
   %38 = add i64 %37, 8
@@ -1317,7 +1317,7 @@ block_400680:
   store i64 %70, i64* %73, align 8
   store i64 %72, i64* %RSP, align 8, !tbaa !2450
   store i64 %69, i64* %PC, align 8, !tbaa !2450
-  %74 = tail call %struct.Memory* @sub_400630_init_Toggle_renamed_(%struct.State* nonnull %0, i64 %69, %struct.Memory* %50)
+  %74 = tail call %struct.Memory* @sub_400630_init_Toggle_renamed__renamed_(%struct.State* nonnull %0, i64 %69, %struct.Memory* %50)
   %75 = load i64, i64* %RSP, align 8
   %76 = load i64, i64* %PC, align 8
   %77 = add i64 %75, 16
@@ -2069,7 +2069,7 @@ block_4007d2:                                     ; preds = %block_4007c5, %bloc
   store i64 %343, i64* %346, align 8
   store i64 %345, i64* %RSP, align 8, !tbaa !2450
   store i64 %342, i64* %PC, align 8, !tbaa !2450
-  %347 = tail call %struct.Memory* @sub_400680_new_Toggle_renamed_(%struct.State* nonnull %0, i64 %342, %struct.Memory* %MEMORY.3)
+  %347 = tail call %struct.Memory* @sub_400680_new_Toggle_renamed__renamed_(%struct.State* nonnull %0, i64 %342, %struct.Memory* %MEMORY.3)
   %348 = load i64, i64* %RBP, align 8
   %349 = add i64 %348, -32
   %350 = load i64, i64* %RAX, align 8
@@ -2118,7 +2118,7 @@ block_40088a:                                     ; preds = %block_400856
   store i64 %373, i64* %376, align 8
   store i64 %375, i64* %RSP, align 8, !tbaa !2450
   store i64 %372, i64* %PC, align 8, !tbaa !2450
-  %377 = tail call %struct.Memory* @sub_400740_new_NthToggle_renamed_(%struct.State* nonnull %0, i64 %372, %struct.Memory* %364)
+  %377 = tail call %struct.Memory* @sub_400740_new_NthToggle_renamed__renamed_(%struct.State* nonnull %0, i64 %372, %struct.Memory* %364)
   %378 = load i64, i64* %RBP, align 8
   %379 = add i64 %378, -40
   %380 = load i64, i64* %RAX, align 8
@@ -2286,7 +2286,7 @@ block_400940:                                     ; preds = %block_400934
   store i64 %481, i64* %484, align 8
   store i64 %483, i64* %RSP, align 8, !tbaa !2450
   store i64 %480, i64* %PC, align 8, !tbaa !2450
-  %485 = tail call %struct.Memory* @sub_400740_new_NthToggle_renamed_(%struct.State* nonnull %0, i64 %480, %struct.Memory* %MEMORY.1)
+  %485 = tail call %struct.Memory* @sub_400740_new_NthToggle_renamed__renamed_(%struct.State* nonnull %0, i64 %480, %struct.Memory* %MEMORY.1)
   %486 = load i64, i64* %RBP, align 8
   %487 = add i64 %486, -40
   %488 = load i64, i64* %RAX, align 8
@@ -2389,7 +2389,7 @@ block_400862:                                     ; preds = %block_400856
   store i64 %548, i64* %551, align 8
   store i64 %550, i64* %RSP, align 8, !tbaa !2450
   store i64 %547, i64* %PC, align 8, !tbaa !2450
-  %552 = tail call %struct.Memory* @sub_400680_new_Toggle_renamed_(%struct.State* nonnull %0, i64 %547, %struct.Memory* %MEMORY.0)
+  %552 = tail call %struct.Memory* @sub_400680_new_Toggle_renamed__renamed_(%struct.State* nonnull %0, i64 %547, %struct.Memory* %MEMORY.0)
   %553 = load i64, i64* %RBP, align 8
   %554 = add i64 %553, -32
   %555 = load i64, i64* %RAX, align 8
@@ -2877,7 +2877,7 @@ block_400740:
   store i64 %77, i64* %80, align 8
   store i64 %79, i64* %RSP, align 8, !tbaa !2450
   store i64 %76, i64* %PC, align 8, !tbaa !2450
-  %81 = tail call %struct.Memory* @sub_400630_init_Toggle_renamed_(%struct.State* nonnull %0, i64 %76, %struct.Memory* %57)
+  %81 = tail call %struct.Memory* @sub_400630_init_Toggle_renamed__renamed_(%struct.State* nonnull %0, i64 %76, %struct.Memory* %57)
   %82 = load i64, i64* %RBP, align 8
   %83 = add i64 %82, -16
   %84 = load i64, i64* %RAX, align 8
@@ -2909,7 +2909,7 @@ block_400740:
   store i64 %100, i64* %103, align 8
   store i64 %102, i64* %RSP, align 8, !tbaa !2450
   store i64 %99, i64* %PC, align 8, !tbaa !2450
-  %104 = tail call %struct.Memory* @sub_400700_init_NthToggle_renamed_(%struct.State* nonnull %0, i64 %99, %struct.Memory* %81)
+  %104 = tail call %struct.Memory* @sub_400700_init_NthToggle_renamed__renamed_(%struct.State* nonnull %0, i64 %99, %struct.Memory* %81)
   %105 = load i64, i64* %RSP, align 8
   %106 = load i64, i64* %PC, align 8
   %107 = add i64 %105, 16
@@ -3237,7 +3237,7 @@ block_400980:
   store i64 %64, i64* %66, align 8
   store i64 %65, i64* %RSP, align 8, !tbaa !2450
   store i64 %63, i64* %PC, align 8, !tbaa !2450
-  %67 = tail call %struct.Memory* @sub_400488__init_proc_renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
+  %67 = tail call %struct.Memory* @sub_400488__init_proc_renamed__renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
   %68 = load i64, i64* %RBP, align 8
   %69 = load i64, i64* %PC, align 8
   store i8 0, i8* %43, align 1, !tbaa !2428

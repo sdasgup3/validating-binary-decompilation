@@ -4,19 +4,19 @@ Disassembled output
   .globl _ZNK14PointerWrapperIdEdeEv
   .type _ZNK14PointerWrapperIdEdeEv, @function
 
-#! file-offset 0x4730
-#! rip-offset  0x404730
+#! file-offset 0x4740
+#! rip-offset  0x404740
 #! capacity    17 bytes
 
 # Text                         #  Line  RIP       Bytes  Opcode            Target                
-._ZNK14PointerWrapperIdEdeEv:  #        0x404730  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                   #  1     0x404730  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp              #  2     0x404731  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)        #  3     0x404734  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rdi        #  4     0x404738  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rax            #  5     0x40473c  3      OPC=movq_r64_m64  18446744073709551615  
-  popq %rbp                    #  6     0x40473f  1      OPC=popq_r64_1    18446744073709551615  
-  retq                         #  7     0x404740  1      OPC=retq          18446744073709551615  
+._ZNK14PointerWrapperIdEdeEv:  #        0x404740  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                   #  1     0x404740  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp              #  2     0x404741  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)        #  3     0x404744  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rdi        #  4     0x404748  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rax            #  5     0x40474c  3      OPC=movq_r64_m64  18446744073709551615  
+  popq %rbp                    #  6     0x40474f  1      OPC=popq_r64_1    18446744073709551615  
+  retq                         #  7     0x404750  1      OPC=retq          18446744073709551615  
                                                                                                  
 .size _ZNK14PointerWrapperIdEdeEv, .-_ZNK14PointerWrapperIdEdeEv
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK14PointerWrapperIdEdeEv->4212528
+._ZNK14PointerWrapperIdEdeEv->4212544
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: _ZNK14PointerWrapperIdEdeEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.15user 0.02system 0:00.19elapsed 91%CPU (0avgtext+0avgdata 10060maxresident)k
+0inputs+136outputs (0major+4586minor)pagefaults 0swaps

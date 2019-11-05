@@ -433,28 +433,28 @@ declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 
-declare %struct.Memory* @sub_4005e0.__cxx_global_var_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400640.__cxx_global_var_init_6(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400670.__cxx_global_var_init_7(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400690.__cxx_global_var_init_8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4006b0.__cxx_global_var_init_9(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4006d0.__cxx_global_var_init_10(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4006f0.__cxx_global_var_init_11(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400710.__cxx_global_var_init_12(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400730.__cxx_global_var_init_13(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400750.__cxx_global_var_init_14(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400770.__cxx_global_var_init_15(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4007a0.__cxx_global_var_init_16(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4007d0.__cxx_global_var_init_17(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400800.__cxx_global_var_init_18(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400830.__cxx_global_var_init_19(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400860.__cxx_global_var_init_20(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400890.__cxx_global_var_init_21(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4008c0.__cxx_global_var_init_22(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_4008f0.__cxx_global_var_init_23(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400920.__cxx_global_var_init_24(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400950.__cxx_global_var_init_25(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400980.__cxx_global_var_init_26(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4005f0.__cxx_global_var_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400650.__cxx_global_var_init_6(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400680.__cxx_global_var_init_7(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4006a0.__cxx_global_var_init_8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4006c0.__cxx_global_var_init_9(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4006e0.__cxx_global_var_init_10(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400700.__cxx_global_var_init_11(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400720.__cxx_global_var_init_12(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400740.__cxx_global_var_init_13(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400760.__cxx_global_var_init_14(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400780.__cxx_global_var_init_15(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4007b0.__cxx_global_var_init_16(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4007e0.__cxx_global_var_init_17(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400810.__cxx_global_var_init_18(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400840.__cxx_global_var_init_19(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400870.__cxx_global_var_init_20(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4008a0.__cxx_global_var_init_21(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_4008d0.__cxx_global_var_init_22(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400900.__cxx_global_var_init_23(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400930.__cxx_global_var_init_24(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400960.__cxx_global_var_init_25(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400990.__cxx_global_var_init_26(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 
@@ -468,248 +468,248 @@ entry:
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
 
-  ; Code: ._GLOBAL__sub_I_stepanov_v1p2_cpp:	 RIP: 400560	 Bytes: 0
-  ; Code: pushq %rbp	 RIP: 400560	 Bytes: 1
-  %loadMem_400560 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400560 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400560)
-  store %struct.Memory* %call_400560, %struct.Memory** %MEMORY
+  ; Code: ._GLOBAL__sub_I_stepanov_v1p2_cpp:	 RIP: 400570	 Bytes: 0
+  ; Code: pushq %rbp	 RIP: 400570	 Bytes: 1
+  %loadMem_400570 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400570 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400570)
+  store %struct.Memory* %call_400570, %struct.Memory** %MEMORY
 
-  ; Code: movq %rsp, %rbp	 RIP: 400561	 Bytes: 3
-  %loadMem_400561 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400561 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400561)
-  store %struct.Memory* %call_400561, %struct.Memory** %MEMORY
+  ; Code: movq %rsp, %rbp	 RIP: 400571	 Bytes: 3
+  %loadMem_400571 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400571 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400571)
+  store %struct.Memory* %call_400571, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init	 RIP: 400564	 Bytes: 5
-  %loadMem1_400564 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400564 = call %struct.Memory* @routine_callq_.__cxx_global_var_init(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400564, i64 124, i64 5, i64 5)
-  store %struct.Memory* %call1_400564, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init	 RIP: 400574	 Bytes: 5
+  %loadMem1_400574 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400574 = call %struct.Memory* @routine_callq_.__cxx_global_var_init(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400574, i64 124, i64 5, i64 5)
+  store %struct.Memory* %call1_400574, %struct.Memory** %MEMORY
 
-  %loadMem2_400564 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400564 = load i64, i64* %3
-  %call2_400564 = call %struct.Memory* @sub_4005e0.__cxx_global_var_init(%struct.State* %0, i64  %loadPC_400564, %struct.Memory* %loadMem2_400564)
-  store %struct.Memory* %call2_400564, %struct.Memory** %MEMORY
+  %loadMem2_400574 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400574 = load i64, i64* %3
+  %call2_400574 = call %struct.Memory* @sub_4005f0.__cxx_global_var_init(%struct.State* %0, i64  %loadPC_400574, %struct.Memory* %loadMem2_400574)
+  store %struct.Memory* %call2_400574, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_6	 RIP: 400569	 Bytes: 5
-  %loadMem1_400569 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400569 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_6(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400569, i64 215, i64 5, i64 5)
-  store %struct.Memory* %call1_400569, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_6	 RIP: 400579	 Bytes: 5
+  %loadMem1_400579 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400579 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_6(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400579, i64 215, i64 5, i64 5)
+  store %struct.Memory* %call1_400579, %struct.Memory** %MEMORY
 
-  %loadMem2_400569 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400569 = load i64, i64* %3
-  %call2_400569 = call %struct.Memory* @sub_400640.__cxx_global_var_init_6(%struct.State* %0, i64  %loadPC_400569, %struct.Memory* %loadMem2_400569)
-  store %struct.Memory* %call2_400569, %struct.Memory** %MEMORY
+  %loadMem2_400579 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400579 = load i64, i64* %3
+  %call2_400579 = call %struct.Memory* @sub_400650.__cxx_global_var_init_6(%struct.State* %0, i64  %loadPC_400579, %struct.Memory* %loadMem2_400579)
+  store %struct.Memory* %call2_400579, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_7	 RIP: 40056e	 Bytes: 5
-  %loadMem1_40056e = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_40056e = call %struct.Memory* @routine_callq_.__cxx_global_var_init_7(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40056e, i64 258, i64 5, i64 5)
-  store %struct.Memory* %call1_40056e, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_7	 RIP: 40057e	 Bytes: 5
+  %loadMem1_40057e = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_40057e = call %struct.Memory* @routine_callq_.__cxx_global_var_init_7(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40057e, i64 258, i64 5, i64 5)
+  store %struct.Memory* %call1_40057e, %struct.Memory** %MEMORY
 
-  %loadMem2_40056e = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_40056e = load i64, i64* %3
-  %call2_40056e = call %struct.Memory* @sub_400670.__cxx_global_var_init_7(%struct.State* %0, i64  %loadPC_40056e, %struct.Memory* %loadMem2_40056e)
-  store %struct.Memory* %call2_40056e, %struct.Memory** %MEMORY
+  %loadMem2_40057e = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_40057e = load i64, i64* %3
+  %call2_40057e = call %struct.Memory* @sub_400680.__cxx_global_var_init_7(%struct.State* %0, i64  %loadPC_40057e, %struct.Memory* %loadMem2_40057e)
+  store %struct.Memory* %call2_40057e, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_8	 RIP: 400573	 Bytes: 5
-  %loadMem1_400573 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400573 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_8(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400573, i64 285, i64 5, i64 5)
-  store %struct.Memory* %call1_400573, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_8	 RIP: 400583	 Bytes: 5
+  %loadMem1_400583 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400583 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_8(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400583, i64 285, i64 5, i64 5)
+  store %struct.Memory* %call1_400583, %struct.Memory** %MEMORY
 
-  %loadMem2_400573 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400573 = load i64, i64* %3
-  %call2_400573 = call %struct.Memory* @sub_400690.__cxx_global_var_init_8(%struct.State* %0, i64  %loadPC_400573, %struct.Memory* %loadMem2_400573)
-  store %struct.Memory* %call2_400573, %struct.Memory** %MEMORY
+  %loadMem2_400583 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400583 = load i64, i64* %3
+  %call2_400583 = call %struct.Memory* @sub_4006a0.__cxx_global_var_init_8(%struct.State* %0, i64  %loadPC_400583, %struct.Memory* %loadMem2_400583)
+  store %struct.Memory* %call2_400583, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_9	 RIP: 400578	 Bytes: 5
-  %loadMem1_400578 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400578 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_9(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400578, i64 312, i64 5, i64 5)
-  store %struct.Memory* %call1_400578, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_9	 RIP: 400588	 Bytes: 5
+  %loadMem1_400588 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400588 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_9(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400588, i64 312, i64 5, i64 5)
+  store %struct.Memory* %call1_400588, %struct.Memory** %MEMORY
 
-  %loadMem2_400578 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400578 = load i64, i64* %3
-  %call2_400578 = call %struct.Memory* @sub_4006b0.__cxx_global_var_init_9(%struct.State* %0, i64  %loadPC_400578, %struct.Memory* %loadMem2_400578)
-  store %struct.Memory* %call2_400578, %struct.Memory** %MEMORY
+  %loadMem2_400588 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400588 = load i64, i64* %3
+  %call2_400588 = call %struct.Memory* @sub_4006c0.__cxx_global_var_init_9(%struct.State* %0, i64  %loadPC_400588, %struct.Memory* %loadMem2_400588)
+  store %struct.Memory* %call2_400588, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_10	 RIP: 40057d	 Bytes: 5
-  %loadMem1_40057d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_40057d = call %struct.Memory* @routine_callq_.__cxx_global_var_init_10(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40057d, i64 339, i64 5, i64 5)
-  store %struct.Memory* %call1_40057d, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_10	 RIP: 40058d	 Bytes: 5
+  %loadMem1_40058d = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_40058d = call %struct.Memory* @routine_callq_.__cxx_global_var_init_10(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40058d, i64 339, i64 5, i64 5)
+  store %struct.Memory* %call1_40058d, %struct.Memory** %MEMORY
 
-  %loadMem2_40057d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_40057d = load i64, i64* %3
-  %call2_40057d = call %struct.Memory* @sub_4006d0.__cxx_global_var_init_10(%struct.State* %0, i64  %loadPC_40057d, %struct.Memory* %loadMem2_40057d)
-  store %struct.Memory* %call2_40057d, %struct.Memory** %MEMORY
+  %loadMem2_40058d = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_40058d = load i64, i64* %3
+  %call2_40058d = call %struct.Memory* @sub_4006e0.__cxx_global_var_init_10(%struct.State* %0, i64  %loadPC_40058d, %struct.Memory* %loadMem2_40058d)
+  store %struct.Memory* %call2_40058d, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_11	 RIP: 400582	 Bytes: 5
-  %loadMem1_400582 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400582 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_11(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400582, i64 366, i64 5, i64 5)
-  store %struct.Memory* %call1_400582, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_11	 RIP: 400592	 Bytes: 5
+  %loadMem1_400592 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400592 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_11(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400592, i64 366, i64 5, i64 5)
+  store %struct.Memory* %call1_400592, %struct.Memory** %MEMORY
 
-  %loadMem2_400582 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400582 = load i64, i64* %3
-  %call2_400582 = call %struct.Memory* @sub_4006f0.__cxx_global_var_init_11(%struct.State* %0, i64  %loadPC_400582, %struct.Memory* %loadMem2_400582)
-  store %struct.Memory* %call2_400582, %struct.Memory** %MEMORY
+  %loadMem2_400592 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400592 = load i64, i64* %3
+  %call2_400592 = call %struct.Memory* @sub_400700.__cxx_global_var_init_11(%struct.State* %0, i64  %loadPC_400592, %struct.Memory* %loadMem2_400592)
+  store %struct.Memory* %call2_400592, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_12	 RIP: 400587	 Bytes: 5
-  %loadMem1_400587 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400587 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_12(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400587, i64 393, i64 5, i64 5)
-  store %struct.Memory* %call1_400587, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_12	 RIP: 400597	 Bytes: 5
+  %loadMem1_400597 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_400597 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_12(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400597, i64 393, i64 5, i64 5)
+  store %struct.Memory* %call1_400597, %struct.Memory** %MEMORY
 
-  %loadMem2_400587 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400587 = load i64, i64* %3
-  %call2_400587 = call %struct.Memory* @sub_400710.__cxx_global_var_init_12(%struct.State* %0, i64  %loadPC_400587, %struct.Memory* %loadMem2_400587)
-  store %struct.Memory* %call2_400587, %struct.Memory** %MEMORY
+  %loadMem2_400597 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_400597 = load i64, i64* %3
+  %call2_400597 = call %struct.Memory* @sub_400720.__cxx_global_var_init_12(%struct.State* %0, i64  %loadPC_400597, %struct.Memory* %loadMem2_400597)
+  store %struct.Memory* %call2_400597, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_13	 RIP: 40058c	 Bytes: 5
-  %loadMem1_40058c = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_40058c = call %struct.Memory* @routine_callq_.__cxx_global_var_init_13(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40058c, i64 420, i64 5, i64 5)
-  store %struct.Memory* %call1_40058c, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_13	 RIP: 40059c	 Bytes: 5
+  %loadMem1_40059c = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_40059c = call %struct.Memory* @routine_callq_.__cxx_global_var_init_13(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40059c, i64 420, i64 5, i64 5)
+  store %struct.Memory* %call1_40059c, %struct.Memory** %MEMORY
 
-  %loadMem2_40058c = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_40058c = load i64, i64* %3
-  %call2_40058c = call %struct.Memory* @sub_400730.__cxx_global_var_init_13(%struct.State* %0, i64  %loadPC_40058c, %struct.Memory* %loadMem2_40058c)
-  store %struct.Memory* %call2_40058c, %struct.Memory** %MEMORY
+  %loadMem2_40059c = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_40059c = load i64, i64* %3
+  %call2_40059c = call %struct.Memory* @sub_400740.__cxx_global_var_init_13(%struct.State* %0, i64  %loadPC_40059c, %struct.Memory* %loadMem2_40059c)
+  store %struct.Memory* %call2_40059c, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_14	 RIP: 400591	 Bytes: 5
-  %loadMem1_400591 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400591 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_14(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400591, i64 447, i64 5, i64 5)
-  store %struct.Memory* %call1_400591, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_14	 RIP: 4005a1	 Bytes: 5
+  %loadMem1_4005a1 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005a1 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_14(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005a1, i64 447, i64 5, i64 5)
+  store %struct.Memory* %call1_4005a1, %struct.Memory** %MEMORY
 
-  %loadMem2_400591 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400591 = load i64, i64* %3
-  %call2_400591 = call %struct.Memory* @sub_400750.__cxx_global_var_init_14(%struct.State* %0, i64  %loadPC_400591, %struct.Memory* %loadMem2_400591)
-  store %struct.Memory* %call2_400591, %struct.Memory** %MEMORY
+  %loadMem2_4005a1 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005a1 = load i64, i64* %3
+  %call2_4005a1 = call %struct.Memory* @sub_400760.__cxx_global_var_init_14(%struct.State* %0, i64  %loadPC_4005a1, %struct.Memory* %loadMem2_4005a1)
+  store %struct.Memory* %call2_4005a1, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_15	 RIP: 400596	 Bytes: 5
-  %loadMem1_400596 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_400596 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_15(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_400596, i64 474, i64 5, i64 5)
-  store %struct.Memory* %call1_400596, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_15	 RIP: 4005a6	 Bytes: 5
+  %loadMem1_4005a6 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005a6 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_15(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005a6, i64 474, i64 5, i64 5)
+  store %struct.Memory* %call1_4005a6, %struct.Memory** %MEMORY
 
-  %loadMem2_400596 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_400596 = load i64, i64* %3
-  %call2_400596 = call %struct.Memory* @sub_400770.__cxx_global_var_init_15(%struct.State* %0, i64  %loadPC_400596, %struct.Memory* %loadMem2_400596)
-  store %struct.Memory* %call2_400596, %struct.Memory** %MEMORY
+  %loadMem2_4005a6 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005a6 = load i64, i64* %3
+  %call2_4005a6 = call %struct.Memory* @sub_400780.__cxx_global_var_init_15(%struct.State* %0, i64  %loadPC_4005a6, %struct.Memory* %loadMem2_4005a6)
+  store %struct.Memory* %call2_4005a6, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_16	 RIP: 40059b	 Bytes: 5
-  %loadMem1_40059b = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_40059b = call %struct.Memory* @routine_callq_.__cxx_global_var_init_16(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40059b, i64 517, i64 5, i64 5)
-  store %struct.Memory* %call1_40059b, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_16	 RIP: 4005ab	 Bytes: 5
+  %loadMem1_4005ab = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005ab = call %struct.Memory* @routine_callq_.__cxx_global_var_init_16(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005ab, i64 517, i64 5, i64 5)
+  store %struct.Memory* %call1_4005ab, %struct.Memory** %MEMORY
 
-  %loadMem2_40059b = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_40059b = load i64, i64* %3
-  %call2_40059b = call %struct.Memory* @sub_4007a0.__cxx_global_var_init_16(%struct.State* %0, i64  %loadPC_40059b, %struct.Memory* %loadMem2_40059b)
-  store %struct.Memory* %call2_40059b, %struct.Memory** %MEMORY
+  %loadMem2_4005ab = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005ab = load i64, i64* %3
+  %call2_4005ab = call %struct.Memory* @sub_4007b0.__cxx_global_var_init_16(%struct.State* %0, i64  %loadPC_4005ab, %struct.Memory* %loadMem2_4005ab)
+  store %struct.Memory* %call2_4005ab, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_17	 RIP: 4005a0	 Bytes: 5
-  %loadMem1_4005a0 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005a0 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_17(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005a0, i64 560, i64 5, i64 5)
-  store %struct.Memory* %call1_4005a0, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_17	 RIP: 4005b0	 Bytes: 5
+  %loadMem1_4005b0 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005b0 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_17(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005b0, i64 560, i64 5, i64 5)
+  store %struct.Memory* %call1_4005b0, %struct.Memory** %MEMORY
 
-  %loadMem2_4005a0 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005a0 = load i64, i64* %3
-  %call2_4005a0 = call %struct.Memory* @sub_4007d0.__cxx_global_var_init_17(%struct.State* %0, i64  %loadPC_4005a0, %struct.Memory* %loadMem2_4005a0)
-  store %struct.Memory* %call2_4005a0, %struct.Memory** %MEMORY
+  %loadMem2_4005b0 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005b0 = load i64, i64* %3
+  %call2_4005b0 = call %struct.Memory* @sub_4007e0.__cxx_global_var_init_17(%struct.State* %0, i64  %loadPC_4005b0, %struct.Memory* %loadMem2_4005b0)
+  store %struct.Memory* %call2_4005b0, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_18	 RIP: 4005a5	 Bytes: 5
-  %loadMem1_4005a5 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005a5 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_18(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005a5, i64 603, i64 5, i64 5)
-  store %struct.Memory* %call1_4005a5, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_18	 RIP: 4005b5	 Bytes: 5
+  %loadMem1_4005b5 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005b5 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_18(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005b5, i64 603, i64 5, i64 5)
+  store %struct.Memory* %call1_4005b5, %struct.Memory** %MEMORY
 
-  %loadMem2_4005a5 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005a5 = load i64, i64* %3
-  %call2_4005a5 = call %struct.Memory* @sub_400800.__cxx_global_var_init_18(%struct.State* %0, i64  %loadPC_4005a5, %struct.Memory* %loadMem2_4005a5)
-  store %struct.Memory* %call2_4005a5, %struct.Memory** %MEMORY
+  %loadMem2_4005b5 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005b5 = load i64, i64* %3
+  %call2_4005b5 = call %struct.Memory* @sub_400810.__cxx_global_var_init_18(%struct.State* %0, i64  %loadPC_4005b5, %struct.Memory* %loadMem2_4005b5)
+  store %struct.Memory* %call2_4005b5, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_19	 RIP: 4005aa	 Bytes: 5
-  %loadMem1_4005aa = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005aa = call %struct.Memory* @routine_callq_.__cxx_global_var_init_19(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005aa, i64 646, i64 5, i64 5)
-  store %struct.Memory* %call1_4005aa, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_19	 RIP: 4005ba	 Bytes: 5
+  %loadMem1_4005ba = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005ba = call %struct.Memory* @routine_callq_.__cxx_global_var_init_19(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005ba, i64 646, i64 5, i64 5)
+  store %struct.Memory* %call1_4005ba, %struct.Memory** %MEMORY
 
-  %loadMem2_4005aa = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005aa = load i64, i64* %3
-  %call2_4005aa = call %struct.Memory* @sub_400830.__cxx_global_var_init_19(%struct.State* %0, i64  %loadPC_4005aa, %struct.Memory* %loadMem2_4005aa)
-  store %struct.Memory* %call2_4005aa, %struct.Memory** %MEMORY
+  %loadMem2_4005ba = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005ba = load i64, i64* %3
+  %call2_4005ba = call %struct.Memory* @sub_400840.__cxx_global_var_init_19(%struct.State* %0, i64  %loadPC_4005ba, %struct.Memory* %loadMem2_4005ba)
+  store %struct.Memory* %call2_4005ba, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_20	 RIP: 4005af	 Bytes: 5
-  %loadMem1_4005af = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005af = call %struct.Memory* @routine_callq_.__cxx_global_var_init_20(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005af, i64 689, i64 5, i64 5)
-  store %struct.Memory* %call1_4005af, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_20	 RIP: 4005bf	 Bytes: 5
+  %loadMem1_4005bf = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005bf = call %struct.Memory* @routine_callq_.__cxx_global_var_init_20(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005bf, i64 689, i64 5, i64 5)
+  store %struct.Memory* %call1_4005bf, %struct.Memory** %MEMORY
 
-  %loadMem2_4005af = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005af = load i64, i64* %3
-  %call2_4005af = call %struct.Memory* @sub_400860.__cxx_global_var_init_20(%struct.State* %0, i64  %loadPC_4005af, %struct.Memory* %loadMem2_4005af)
-  store %struct.Memory* %call2_4005af, %struct.Memory** %MEMORY
+  %loadMem2_4005bf = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005bf = load i64, i64* %3
+  %call2_4005bf = call %struct.Memory* @sub_400870.__cxx_global_var_init_20(%struct.State* %0, i64  %loadPC_4005bf, %struct.Memory* %loadMem2_4005bf)
+  store %struct.Memory* %call2_4005bf, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_21	 RIP: 4005b4	 Bytes: 5
-  %loadMem1_4005b4 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005b4 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_21(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005b4, i64 732, i64 5, i64 5)
-  store %struct.Memory* %call1_4005b4, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_21	 RIP: 4005c4	 Bytes: 5
+  %loadMem1_4005c4 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005c4 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_21(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005c4, i64 732, i64 5, i64 5)
+  store %struct.Memory* %call1_4005c4, %struct.Memory** %MEMORY
 
-  %loadMem2_4005b4 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005b4 = load i64, i64* %3
-  %call2_4005b4 = call %struct.Memory* @sub_400890.__cxx_global_var_init_21(%struct.State* %0, i64  %loadPC_4005b4, %struct.Memory* %loadMem2_4005b4)
-  store %struct.Memory* %call2_4005b4, %struct.Memory** %MEMORY
+  %loadMem2_4005c4 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005c4 = load i64, i64* %3
+  %call2_4005c4 = call %struct.Memory* @sub_4008a0.__cxx_global_var_init_21(%struct.State* %0, i64  %loadPC_4005c4, %struct.Memory* %loadMem2_4005c4)
+  store %struct.Memory* %call2_4005c4, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_22	 RIP: 4005b9	 Bytes: 5
-  %loadMem1_4005b9 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005b9 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_22(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005b9, i64 775, i64 5, i64 5)
-  store %struct.Memory* %call1_4005b9, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_22	 RIP: 4005c9	 Bytes: 5
+  %loadMem1_4005c9 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005c9 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_22(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005c9, i64 775, i64 5, i64 5)
+  store %struct.Memory* %call1_4005c9, %struct.Memory** %MEMORY
 
-  %loadMem2_4005b9 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005b9 = load i64, i64* %3
-  %call2_4005b9 = call %struct.Memory* @sub_4008c0.__cxx_global_var_init_22(%struct.State* %0, i64  %loadPC_4005b9, %struct.Memory* %loadMem2_4005b9)
-  store %struct.Memory* %call2_4005b9, %struct.Memory** %MEMORY
+  %loadMem2_4005c9 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005c9 = load i64, i64* %3
+  %call2_4005c9 = call %struct.Memory* @sub_4008d0.__cxx_global_var_init_22(%struct.State* %0, i64  %loadPC_4005c9, %struct.Memory* %loadMem2_4005c9)
+  store %struct.Memory* %call2_4005c9, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_23	 RIP: 4005be	 Bytes: 5
-  %loadMem1_4005be = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005be = call %struct.Memory* @routine_callq_.__cxx_global_var_init_23(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005be, i64 818, i64 5, i64 5)
-  store %struct.Memory* %call1_4005be, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_23	 RIP: 4005ce	 Bytes: 5
+  %loadMem1_4005ce = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005ce = call %struct.Memory* @routine_callq_.__cxx_global_var_init_23(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005ce, i64 818, i64 5, i64 5)
+  store %struct.Memory* %call1_4005ce, %struct.Memory** %MEMORY
 
-  %loadMem2_4005be = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005be = load i64, i64* %3
-  %call2_4005be = call %struct.Memory* @sub_4008f0.__cxx_global_var_init_23(%struct.State* %0, i64  %loadPC_4005be, %struct.Memory* %loadMem2_4005be)
-  store %struct.Memory* %call2_4005be, %struct.Memory** %MEMORY
+  %loadMem2_4005ce = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005ce = load i64, i64* %3
+  %call2_4005ce = call %struct.Memory* @sub_400900.__cxx_global_var_init_23(%struct.State* %0, i64  %loadPC_4005ce, %struct.Memory* %loadMem2_4005ce)
+  store %struct.Memory* %call2_4005ce, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_24	 RIP: 4005c3	 Bytes: 5
-  %loadMem1_4005c3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005c3 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_24(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005c3, i64 861, i64 5, i64 5)
-  store %struct.Memory* %call1_4005c3, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_24	 RIP: 4005d3	 Bytes: 5
+  %loadMem1_4005d3 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005d3 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_24(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005d3, i64 861, i64 5, i64 5)
+  store %struct.Memory* %call1_4005d3, %struct.Memory** %MEMORY
 
-  %loadMem2_4005c3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005c3 = load i64, i64* %3
-  %call2_4005c3 = call %struct.Memory* @sub_400920.__cxx_global_var_init_24(%struct.State* %0, i64  %loadPC_4005c3, %struct.Memory* %loadMem2_4005c3)
-  store %struct.Memory* %call2_4005c3, %struct.Memory** %MEMORY
+  %loadMem2_4005d3 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005d3 = load i64, i64* %3
+  %call2_4005d3 = call %struct.Memory* @sub_400930.__cxx_global_var_init_24(%struct.State* %0, i64  %loadPC_4005d3, %struct.Memory* %loadMem2_4005d3)
+  store %struct.Memory* %call2_4005d3, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_25	 RIP: 4005c8	 Bytes: 5
-  %loadMem1_4005c8 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005c8 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_25(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005c8, i64 904, i64 5, i64 5)
-  store %struct.Memory* %call1_4005c8, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_25	 RIP: 4005d8	 Bytes: 5
+  %loadMem1_4005d8 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005d8 = call %struct.Memory* @routine_callq_.__cxx_global_var_init_25(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005d8, i64 904, i64 5, i64 5)
+  store %struct.Memory* %call1_4005d8, %struct.Memory** %MEMORY
 
-  %loadMem2_4005c8 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005c8 = load i64, i64* %3
-  %call2_4005c8 = call %struct.Memory* @sub_400950.__cxx_global_var_init_25(%struct.State* %0, i64  %loadPC_4005c8, %struct.Memory* %loadMem2_4005c8)
-  store %struct.Memory* %call2_4005c8, %struct.Memory** %MEMORY
+  %loadMem2_4005d8 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005d8 = load i64, i64* %3
+  %call2_4005d8 = call %struct.Memory* @sub_400960.__cxx_global_var_init_25(%struct.State* %0, i64  %loadPC_4005d8, %struct.Memory* %loadMem2_4005d8)
+  store %struct.Memory* %call2_4005d8, %struct.Memory** %MEMORY
 
-  ; Code: callq .__cxx_global_var_init_26	 RIP: 4005cd	 Bytes: 5
-  %loadMem1_4005cd = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005cd = call %struct.Memory* @routine_callq_.__cxx_global_var_init_26(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005cd, i64 947, i64 5, i64 5)
-  store %struct.Memory* %call1_4005cd, %struct.Memory** %MEMORY
+  ; Code: callq .__cxx_global_var_init_26	 RIP: 4005dd	 Bytes: 5
+  %loadMem1_4005dd = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005dd = call %struct.Memory* @routine_callq_.__cxx_global_var_init_26(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005dd, i64 947, i64 5, i64 5)
+  store %struct.Memory* %call1_4005dd, %struct.Memory** %MEMORY
 
-  %loadMem2_4005cd = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005cd = load i64, i64* %3
-  %call2_4005cd = call %struct.Memory* @sub_400980.__cxx_global_var_init_26(%struct.State* %0, i64  %loadPC_4005cd, %struct.Memory* %loadMem2_4005cd)
-  store %struct.Memory* %call2_4005cd, %struct.Memory** %MEMORY
+  %loadMem2_4005dd = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005dd = load i64, i64* %3
+  %call2_4005dd = call %struct.Memory* @sub_400990.__cxx_global_var_init_26(%struct.State* %0, i64  %loadPC_4005dd, %struct.Memory* %loadMem2_4005dd)
+  store %struct.Memory* %call2_4005dd, %struct.Memory** %MEMORY
 
-  ; Code: popq %rbp	 RIP: 4005d2	 Bytes: 1
-  %loadMem_4005d2 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005d2 = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d2)
-  store %struct.Memory* %call_4005d2, %struct.Memory** %MEMORY
+  ; Code: popq %rbp	 RIP: 4005e2	 Bytes: 1
+  %loadMem_4005e2 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005e2 = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005e2)
+  store %struct.Memory* %call_4005e2, %struct.Memory** %MEMORY
 
-  ; Code: retq	 RIP: 4005d3	 Bytes: 1
-  %loadMem_4005d3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005d3 = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d3)
-  store %struct.Memory* %call_4005d3, %struct.Memory** %MEMORY
+  ; Code: retq	 RIP: 4005e3	 Bytes: 1
+  %loadMem_4005e3 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005e3 = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005e3)
+  store %struct.Memory* %call_4005e3, %struct.Memory** %MEMORY
 
-  ret %struct.Memory* %call_4005d3
+  ret %struct.Memory* %call_4005e3
 }
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64) #0 {

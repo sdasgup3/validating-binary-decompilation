@@ -4,19 +4,19 @@ Disassembled output
   .globl polybench_timer_start
   .type polybench_timer_start, @function
 
-#! file-offset 0x7f0
-#! rip-offset  0x4007f0
+#! file-offset 0x800
+#! rip-offset  0x400800
 #! capacity    25 bytes
 
 # Text                                  #  Line  RIP       Bytes  Opcode             Target                
-.polybench_timer_start:                 #        0x4007f0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                            #  1     0x4007f0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                       #  2     0x4007f1  3      OPC=movq_r64_r64   18446744073709551615  
-  callq .polybench_prepare_instruments  #  3     0x4007f4  5      OPC=callq_label    4196320               
-  callq .rtclock                        #  4     0x4007f9  5      OPC=callq_label    4196368               
-  movsd %xmm0, 0x6020b0                 #  5     0x4007fe  9      OPC=movsd_m64_xmm  18446744073709551615  
-  popq %rbp                             #  6     0x400807  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                  #  7     0x400808  1      OPC=retq           18446744073709551615  
+.polybench_timer_start:                 #        0x400800  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                            #  1     0x400800  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                       #  2     0x400801  3      OPC=movq_r64_r64   18446744073709551615  
+  callq .polybench_prepare_instruments  #  3     0x400804  5      OPC=callq_label    4196336               
+  callq .rtclock                        #  4     0x400809  5      OPC=callq_label    4196384               
+  movsd %xmm0, 0x6020b0                 #  5     0x40080e  9      OPC=movsd_m64_xmm  18446744073709551615  
+  popq %rbp                             #  6     0x400817  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                  #  7     0x400818  1      OPC=retq           18446744073709551615  
                                                                                                            
 .size polybench_timer_start, .-polybench_timer_start
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.polybench_timer_start->4196336
+.polybench_timer_start->4196352
 
 Computing Label PC values: Done.
 
@@ -470,6 +470,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd__xmm0__0x6020b0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40080e --size 9
+Global Access Mismatch: 6299824 Relocation: Address, McSema: Constant
 Decompiling instr:movsd %xmm0, 0x6020b0 Done...
 
 
@@ -514,3 +517,5 @@ Decompiling Function: polybench_timer_start Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.12user 0.03system 0:00.36elapsed 41%CPU (0avgtext+0avgdata 10152maxresident)k
+0inputs+136outputs (0major+4648minor)pagefaults 0swaps

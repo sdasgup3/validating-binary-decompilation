@@ -4,28 +4,28 @@ Disassembled output
   .globl Move
   .type Move, @function
 
-#! file-offset 0x7d0
-#! rip-offset  0x4007d0
+#! file-offset 0x7e0
+#! rip-offset  0x4007e0
 #! capacity    55 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode             Target                
-.Move:                   #        0x4007d0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp             #  1     0x4007d0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4007d1  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp       #  3     0x4007d4  4      OPC=subq_r64_imm8  18446744073709551615  
-  movl %edi, -0x4(%rbp)  #  4     0x4007d8  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %esi, -0x8(%rbp)  #  5     0x4007db  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %edi  #  6     0x4007de  3      OPC=movl_r32_m32   18446744073709551615  
-  callq .Pop             #  7     0x4007e1  5      OPC=callq_label    4196128               
-  movl -0x8(%rbp), %esi  #  8     0x4007e6  3      OPC=movl_r32_m32   18446744073709551615  
-  movl %eax, %edi        #  9     0x4007e9  2      OPC=movl_r32_r32   18446744073709551615  
-  callq .Push            #  10    0x4007eb  5      OPC=callq_label    4195872               
-  movl 0x60f240, %eax    #  11    0x4007f0  7      OPC=movl_r32_m32   18446744073709551615  
-  addl $0x1, %eax        #  12    0x4007f7  3      OPC=addl_r32_imm8  18446744073709551615  
-  movl %eax, 0x60f240    #  13    0x4007fa  7      OPC=movl_m32_r32   18446744073709551615  
-  addq $0x10, %rsp       #  14    0x400801  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp              #  15    0x400805  1      OPC=popq_r64_1     18446744073709551615  
-  retq                   #  16    0x400806  1      OPC=retq           18446744073709551615  
+.Move:                   #        0x4007e0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp             #  1     0x4007e0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp        #  2     0x4007e1  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp       #  3     0x4007e4  4      OPC=subq_r64_imm8  18446744073709551615  
+  movl %edi, -0x4(%rbp)  #  4     0x4007e8  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %esi, -0x8(%rbp)  #  5     0x4007eb  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %edi  #  6     0x4007ee  3      OPC=movl_r32_m32   18446744073709551615  
+  callq .Pop             #  7     0x4007f1  5      OPC=callq_label    4196144               
+  movl -0x8(%rbp), %esi  #  8     0x4007f6  3      OPC=movl_r32_m32   18446744073709551615  
+  movl %eax, %edi        #  9     0x4007f9  2      OPC=movl_r32_r32   18446744073709551615  
+  callq .Push            #  10    0x4007fb  5      OPC=callq_label    4195888               
+  movl 0x60f240, %eax    #  11    0x400800  7      OPC=movl_r32_m32   18446744073709551615  
+  addl $0x1, %eax        #  12    0x400807  3      OPC=addl_r32_imm8  18446744073709551615  
+  movl %eax, 0x60f240    #  13    0x40080a  7      OPC=movl_m32_r32   18446744073709551615  
+  addq $0x10, %rsp       #  14    0x400811  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp              #  15    0x400815  1      OPC=popq_r64_1     18446744073709551615  
+  retq                   #  16    0x400816  1      OPC=retq           18446744073709551615  
                                                                                             
 .size Move, .-Move
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Move->4196304
+.Move->4196320
 
 Computing Label PC values: Done.
 
@@ -441,6 +441,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4007e4 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -593,6 +595,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl_0x60f240___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400800 --size 7
+Global Access Mismatch: 6353472 Relocation: Address, McSema: Constant
 Decompiling instr:movl 0x60f240, %eax Done...
 
 
@@ -612,6 +617,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400807 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -631,6 +638,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__eax__0x60f240
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40080a --size 7
+Global Access Mismatch: 6353472 Relocation: Address, McSema: Constant
 Decompiling instr:movl %eax, 0x60f240 Done...
 
 
@@ -650,6 +660,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400811 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -694,3 +706,5 @@ Decompiling Function: Move Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.05system 0:01.31elapsed 22%CPU (0avgtext+0avgdata 10440maxresident)k
+0inputs+184outputs (0major+7955minor)pagefaults 0swaps

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_GLOBAL__sub_I_stepanov_abstraction.cpp] from ../binary/test.mcsema.opt.ll
 Extracting function [_GLOBAL__sub_I_stepanov_abstraction.cpp] from mcsema/test.proposed.opt.ll
 Matcher Done...
+16.37user 3.64system 0:20.22elapsed 98%CPU (0avgtext+0avgdata 23744maxresident)k
+0inputs+1144outputs (0major+6008minor)pagefaults 0swaps

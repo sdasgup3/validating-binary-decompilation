@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark4fillIPddEEvT_S2_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark4fillIPddEEvT_S2_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.26user 1.23system 0:04.66elapsed 96%CPU (0avgtext+0avgdata 23936maxresident)k
+0inputs+320outputs (0major+4483minor)pagefaults 0swaps

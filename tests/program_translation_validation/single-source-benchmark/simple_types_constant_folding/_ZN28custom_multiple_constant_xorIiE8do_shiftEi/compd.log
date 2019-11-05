@@ -4,23 +4,23 @@ Disassembled output
   .globl _ZN28custom_multiple_constant_xorIiE8do_shiftEi
   .type _ZN28custom_multiple_constant_xorIiE8do_shiftEi, @function
 
-#! file-offset 0x12ee0
-#! rip-offset  0x412ee0
+#! file-offset 0x12ef0
+#! rip-offset  0x412ef0
 #! capacity    26 bytes
 
 # Text                                             #  Line  RIP       Bytes  Opcode             Target                
-._ZN28custom_multiple_constant_xorIiE8do_shiftEi:  #        0x412ee0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                       #  1     0x412ee0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                  #  2     0x412ee1  3      OPC=movq_r64_r64   18446744073709551615  
-  movl %edi, -0x4(%rbp)                            #  3     0x412ee4  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %edi                            #  4     0x412ee7  3      OPC=movl_r32_m32   18446744073709551615  
-  xorl $0xf, %edi                                  #  5     0x412eea  3      OPC=xorl_r32_imm8  18446744073709551615  
-  xorl $0x1e, %edi                                 #  6     0x412eed  3      OPC=xorl_r32_imm8  18446744073709551615  
-  xorl $0x1f, %edi                                 #  7     0x412ef0  3      OPC=xorl_r32_imm8  18446744073709551615  
-  xorl $0x3f, %edi                                 #  8     0x412ef3  3      OPC=xorl_r32_imm8  18446744073709551615  
-  movl %edi, %eax                                  #  9     0x412ef6  2      OPC=movl_r32_r32   18446744073709551615  
-  popq %rbp                                        #  10    0x412ef8  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                             #  11    0x412ef9  1      OPC=retq           18446744073709551615  
+._ZN28custom_multiple_constant_xorIiE8do_shiftEi:  #        0x412ef0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                       #  1     0x412ef0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                  #  2     0x412ef1  3      OPC=movq_r64_r64   18446744073709551615  
+  movl %edi, -0x4(%rbp)                            #  3     0x412ef4  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %edi                            #  4     0x412ef7  3      OPC=movl_r32_m32   18446744073709551615  
+  xorl $0xf, %edi                                  #  5     0x412efa  3      OPC=xorl_r32_imm8  18446744073709551615  
+  xorl $0x1e, %edi                                 #  6     0x412efd  3      OPC=xorl_r32_imm8  18446744073709551615  
+  xorl $0x1f, %edi                                 #  7     0x412f00  3      OPC=xorl_r32_imm8  18446744073709551615  
+  xorl $0x3f, %edi                                 #  8     0x412f03  3      OPC=xorl_r32_imm8  18446744073709551615  
+  movl %edi, %eax                                  #  9     0x412f06  2      OPC=movl_r32_r32   18446744073709551615  
+  popq %rbp                                        #  10    0x412f08  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                             #  11    0x412f09  1      OPC=retq           18446744073709551615  
                                                                                                                       
 .size _ZN28custom_multiple_constant_xorIiE8do_shiftEi, .-_ZN28custom_multiple_constant_xorIiE8do_shiftEi
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN28custom_multiple_constant_xorIiE8do_shiftEi->4271840
+._ZN28custom_multiple_constant_xorIiE8do_shiftEi->4271856
 
 Computing Label PC values: Done.
 
@@ -474,6 +474,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 412efa --size 3
 Decompiling instr:xorl $0xf, %edi Done...
 
 
@@ -493,6 +495,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x1e___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 412efd --size 3
 Decompiling instr:xorl $0x1e, %edi Done...
 
 
@@ -512,6 +516,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x1f___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 412f00 --size 3
 Decompiling instr:xorl $0x1f, %edi Done...
 
 
@@ -531,6 +537,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x3f___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 412f03 --size 3
 Decompiling instr:xorl $0x3f, %edi Done...
 
 
@@ -594,3 +602,5 @@ Decompiling Function: _ZN28custom_multiple_constant_xorIiE8do_shiftEi Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.05system 0:07.06elapsed 4%CPU (0avgtext+0avgdata 10216maxresident)k
+0inputs+160outputs (0major+6192minor)pagefaults 0swaps

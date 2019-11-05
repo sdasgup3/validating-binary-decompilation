@@ -1,10 +1,12 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55a6fbc6f048]:   %162 = phi %struct.Memory* [ %154, %153 ], [ %MEMORY.0, %155 ]
-[0x55a6fbd5d978]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_4005eb ]
-[0x55a6fbd684b8]:   %162 = phi %struct.Memory.32* [ %154, %153 ], [ %MEMORY.1, %155 ]
+Multiple matches exist for [0x5642e7a8d048]:   %162 = phi %struct.Memory* [ %154, %153 ], [ %MEMORY.0, %155 ]
+[0x5642e7b7b978]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_4005fb ]
+[0x5642e7b86718]:   %162 = phi %struct.Memory.32* [ %154, %153 ], [ %MEMORY.1, %155 ]
 Iso Match NOT Found
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Initmatrix] from ../binary/test.mcsema.opt.ll
 Extracting function [Initmatrix] from mcsema/test.proposed.opt.ll
 Matcher Done...
+8.15user 13.90system 0:22.59elapsed 97%CPU (0avgtext+0avgdata 13604maxresident)k
+0inputs+2664outputs (0major+1921minor)pagefaults 0swaps

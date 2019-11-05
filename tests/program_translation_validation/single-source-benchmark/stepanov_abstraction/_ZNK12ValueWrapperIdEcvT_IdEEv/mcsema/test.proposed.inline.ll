@@ -275,7 +275,7 @@ entry:
   store i8 0, i8* %BRANCH_TAKEN, align 1
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
-  %loadMem_405f50 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadMem_405f60 = load %struct.Memory*, %struct.Memory** %MEMORY
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %5 = getelementptr inbounds %struct.GPR, %struct.GPR* %4, i32 0, i32 33
   %6 = getelementptr inbounds %struct.Reg, %struct.Reg* %5, i32 0, i32 0
@@ -294,8 +294,8 @@ entry:
   %16 = inttoptr i64 %15 to i64*
   store i64 %10, i64* %16
   store i64 %15, i64* %13, align 8
-  store %struct.Memory* %loadMem_405f50, %struct.Memory** %MEMORY
-  %loadMem_405f51 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f60, %struct.Memory** %MEMORY
+  %loadMem_405f61 = load %struct.Memory*, %struct.Memory** %MEMORY
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %18 = getelementptr inbounds %struct.GPR, %struct.GPR* %17, i32 0, i32 33
   %19 = getelementptr inbounds %struct.Reg, %struct.Reg* %18, i32 0, i32 0
@@ -313,8 +313,8 @@ entry:
   %28 = add i64 %27, 3
   store i64 %28, i64* %PC.i11
   store i64 %26, i64* %RBP.i12, align 8
-  store %struct.Memory* %loadMem_405f51, %struct.Memory** %MEMORY
-  %loadMem_405f54 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f61, %struct.Memory** %MEMORY
+  %loadMem_405f64 = load %struct.Memory*, %struct.Memory** %MEMORY
   %29 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %30 = getelementptr inbounds %struct.GPR, %struct.GPR* %29, i32 0, i32 33
   %31 = getelementptr inbounds %struct.Reg, %struct.Reg* %30, i32 0, i32 0
@@ -335,8 +335,8 @@ entry:
   store i64 %42, i64* %PC.i8
   %43 = inttoptr i64 %39 to i64*
   store i64 %40, i64* %43
-  store %struct.Memory* %loadMem_405f54, %struct.Memory** %MEMORY
-  %loadMem_405f58 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f64, %struct.Memory** %MEMORY
+  %loadMem_405f68 = load %struct.Memory*, %struct.Memory** %MEMORY
   %44 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %45 = getelementptr inbounds %struct.GPR, %struct.GPR* %44, i32 0, i32 33
   %46 = getelementptr inbounds %struct.Reg, %struct.Reg* %45, i32 0, i32 0
@@ -357,8 +357,8 @@ entry:
   %57 = inttoptr i64 %54 to i64*
   %58 = load i64, i64* %57
   store i64 %58, i64* %RDI.i6, align 8
-  store %struct.Memory* %loadMem_405f58, %struct.Memory** %MEMORY
-  %loadMem_405f5c = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f68, %struct.Memory** %MEMORY
+  %loadMem_405f6c = load %struct.Memory*, %struct.Memory** %MEMORY
   %59 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %60 = getelementptr inbounds %struct.GPR, %struct.GPR* %59, i32 0, i32 33
   %61 = getelementptr inbounds %struct.Reg, %struct.Reg* %60, i32 0, i32 0
@@ -382,8 +382,8 @@ entry:
   %74 = getelementptr inbounds i8, i8* %67, i64 8
   %75 = bitcast i8* %74 to double*
   store double 0.000000e+00, double* %75, align 1
-  store %struct.Memory* %loadMem_405f5c, %struct.Memory** %MEMORY
-  %loadMem_405f60 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f6c, %struct.Memory** %MEMORY
+  %loadMem_405f70 = load %struct.Memory*, %struct.Memory** %MEMORY
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %77 = getelementptr inbounds %struct.GPR, %struct.GPR* %76, i32 0, i32 33
   %78 = getelementptr inbounds %struct.Reg, %struct.Reg* %77, i32 0, i32 0
@@ -402,8 +402,8 @@ entry:
   %88 = load i64, i64* %87
   store i64 %88, i64* %RBP.i3, align 8
   store i64 %86, i64* %84, align 8
-  store %struct.Memory* %loadMem_405f60, %struct.Memory** %MEMORY
-  %loadMem_405f61 = load %struct.Memory*, %struct.Memory** %MEMORY
+  store %struct.Memory* %loadMem_405f70, %struct.Memory** %MEMORY
+  %loadMem_405f71 = load %struct.Memory*, %struct.Memory** %MEMORY
   %89 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %90 = getelementptr inbounds %struct.GPR, %struct.GPR* %89, i32 0, i32 33
   %91 = getelementptr inbounds %struct.Reg, %struct.Reg* %90, i32 0, i32 0
@@ -419,8 +419,8 @@ entry:
   store i64 %98, i64* %94, align 8
   %99 = add i64 %96, 8
   store i64 %99, i64* %95, align 8
-  store %struct.Memory* %loadMem_405f61, %struct.Memory** %MEMORY
-  ret %struct.Memory* %loadMem_405f61
+  store %struct.Memory* %loadMem_405f71, %struct.Memory** %MEMORY
+  ret %struct.Memory* %loadMem_405f71
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) {

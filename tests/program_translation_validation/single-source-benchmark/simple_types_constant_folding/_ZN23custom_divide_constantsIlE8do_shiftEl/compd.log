@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN23custom_divide_constantsIlE8do_shiftEl
   .type _ZN23custom_divide_constantsIlE8do_shiftEl, @function
 
-#! file-offset 0x11d70
-#! rip-offset  0x411d70
+#! file-offset 0x11d80
+#! rip-offset  0x411d80
 #! capacity    15 bytes
 
 # Text                                        #  Line  RIP       Bytes  Opcode              Target                
-._ZN23custom_divide_constantsIlE8do_shiftEl:  #        0x411d70  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                  #  1     0x411d70  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                             #  2     0x411d71  3      OPC=movq_r64_r64    18446744073709551615  
-  movl $0x2, %eax                             #  3     0x411d74  5      OPC=movl_r32_imm32  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                       #  4     0x411d79  4      OPC=movq_m64_r64    18446744073709551615  
-  popq %rbp                                   #  5     0x411d7d  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                        #  6     0x411d7e  1      OPC=retq            18446744073709551615  
+._ZN23custom_divide_constantsIlE8do_shiftEl:  #        0x411d80  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                  #  1     0x411d80  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                             #  2     0x411d81  3      OPC=movq_r64_r64    18446744073709551615  
+  movl $0x2, %eax                             #  3     0x411d84  5      OPC=movl_r32_imm32  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                       #  4     0x411d89  4      OPC=movq_m64_r64    18446744073709551615  
+  popq %rbp                                   #  5     0x411d8d  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                        #  6     0x411d8e  1      OPC=retq            18446744073709551615  
                                                                                                                   
 .size _ZN23custom_divide_constantsIlE8do_shiftEl, .-_ZN23custom_divide_constantsIlE8do_shiftEl
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN23custom_divide_constantsIlE8do_shiftEl->4267376
+._ZN23custom_divide_constantsIlE8do_shiftEl->4267392
 
 Computing Label PC values: Done.
 
@@ -431,6 +431,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x2___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 411d84 --size 5
 Decompiling instr:movl $0x2, %eax Done...
 
 
@@ -494,3 +496,5 @@ Decompiling Function: _ZN23custom_divide_constantsIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:01.96elapsed 13%CPU (0avgtext+0avgdata 10252maxresident)k
+0inputs+128outputs (0major+4354minor)pagefaults 0swaps

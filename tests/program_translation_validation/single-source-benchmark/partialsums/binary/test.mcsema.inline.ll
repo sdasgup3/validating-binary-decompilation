@@ -100,6 +100,14 @@ declare %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* noalias der
 
 declare %struct.Memory* @sub_4004e8__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004e8__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005a0_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1327,7 +1335,7 @@ block_4006c0:
   %204 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %195, i64* %204, align 8, !tbaa !2428
   %205 = load i64, i64* %PC
-  %206 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %205, %struct.Memory* %2)
+  %206 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %205, %struct.Memory* %2)
   %207 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %208 = load i64, i64* %PC
   %209 = add i64 %208, 8
@@ -1395,7 +1403,7 @@ block_4006c0:
   %257 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %248, i64* %257, align 8, !tbaa !2428
   %258 = load i64, i64* %PC
-  %259 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %258, %struct.Memory* %206)
+  %259 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %258, %struct.Memory* %206)
   %260 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %261 = load i64, i64* %PC
   %262 = add i64 %261, 8
@@ -1463,7 +1471,7 @@ block_4006c0:
   %310 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %301, i64* %310, align 8, !tbaa !2428
   %311 = load i64, i64* %PC
-  %312 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %311, %struct.Memory* %259)
+  %312 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %311, %struct.Memory* %259)
   %313 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %314 = load i64, i64* %PC
   %315 = add i64 %314, 8
@@ -1531,7 +1539,7 @@ block_4006c0:
   %363 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %354, i64* %363, align 8, !tbaa !2428
   %364 = load i64, i64* %PC
-  %365 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %364, %struct.Memory* %312)
+  %365 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %364, %struct.Memory* %312)
   %366 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %367 = load i64, i64* %PC
   %368 = add i64 %367, 8
@@ -1634,7 +1642,7 @@ block_4006c0:
   %443 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %434, i64* %443, align 8, !tbaa !2428
   %444 = load i64, i64* %PC
-  %445 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %444, %struct.Memory* %365)
+  %445 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %444, %struct.Memory* %365)
   %446 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %447 = load i64, i64* %PC
   %448 = add i64 %447, 8
@@ -1737,7 +1745,7 @@ block_4006c0:
   %523 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %514, i64* %523, align 8, !tbaa !2428
   %524 = load i64, i64* %PC
-  %525 = call %struct.Memory* @sub_400650_make_vec_renamed_(%struct.State* %0, i64 %524, %struct.Memory* %445)
+  %525 = call %struct.Memory* @sub_400650_make_vec_renamed__renamed_(%struct.State* %0, i64 %524, %struct.Memory* %445)
   %526 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %527 = load i64, i64* %PC
   %528 = add i64 %527, 8
@@ -2115,7 +2123,7 @@ block_400a15:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %799 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %790, i64* %799, align 8, !tbaa !2428
   %800 = load i64, i64* %PC
-  %801 = call %struct.Memory* @sub_400690_sum_vec_renamed_(%struct.State* %0, i64 %800, %struct.Memory* %768)
+  %801 = call %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* %0, i64 %800, %struct.Memory* %768)
   %802 = load i64, i64* %PC
   %803 = add i64 %802, 10
   store i64 %803, i64* %PC
@@ -2288,7 +2296,7 @@ block_400a15:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %923 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %914, i64* %923, align 8, !tbaa !2428
   %924 = load i64, i64* %PC
-  %925 = call %struct.Memory* @sub_400690_sum_vec_renamed_(%struct.State* %0, i64 %924, %struct.Memory* %892)
+  %925 = call %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* %0, i64 %924, %struct.Memory* %892)
   %926 = load i64, i64* %PC
   %927 = add i64 %926, 10
   store i64 %927, i64* %PC
@@ -2359,7 +2367,7 @@ block_400a15:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %975 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %966, i64* %975, align 8, !tbaa !2428
   %976 = load i64, i64* %PC
-  %977 = call %struct.Memory* @sub_400690_sum_vec_renamed_(%struct.State* %0, i64 %976, %struct.Memory* %944)
+  %977 = call %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* %0, i64 %976, %struct.Memory* %944)
   %978 = load i64, i64* %PC
   %979 = add i64 %978, 10
   store i64 %979, i64* %PC
@@ -2430,7 +2438,7 @@ block_400a15:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %1027 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1018, i64* %1027, align 8, !tbaa !2428
   %1028 = load i64, i64* %PC
-  %1029 = call %struct.Memory* @sub_400690_sum_vec_renamed_(%struct.State* %0, i64 %1028, %struct.Memory* %996)
+  %1029 = call %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* %0, i64 %1028, %struct.Memory* %996)
   %1030 = load i64, i64* %PC
   %1031 = add i64 %1030, 10
   store i64 %1031, i64* %PC
@@ -2501,7 +2509,7 @@ block_400a15:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   %1079 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1070, i64* %1079, align 8, !tbaa !2428
   %1080 = load i64, i64* %PC
-  %1081 = call %struct.Memory* @sub_400690_sum_vec_renamed_(%struct.State* %0, i64 %1080, %struct.Memory* %1048)
+  %1081 = call %struct.Memory* @sub_400690_sum_vec_renamed__renamed_(%struct.State* %0, i64 %1080, %struct.Memory* %1048)
   %1082 = load i64, i64* %PC
   %1083 = add i64 %1082, 10
   store i64 %1083, i64* %PC
@@ -6637,7 +6645,7 @@ block_400ba0:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4004e8__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4004e8__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -8024,7 +8032,7 @@ block_400619:                                     ; preds = %block_400610
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_4005a0_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_4005a0_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC

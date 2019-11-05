@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZSt4fabsf
   .type _ZSt4fabsf, @function
 
-#! file-offset 0xf140
-#! rip-offset  0x40f140
+#! file-offset 0xf150
+#! rip-offset  0x40f150
 #! capacity    27 bytes
 
 # Text                        #  Line  RIP       Bytes  Opcode               Target                
-._ZSt4fabsf:                  #        0x40f140  0      OPC=<label>          18446744073709551615  
-  pushq %rbp                  #  1     0x40f140  1      OPC=pushq_r64_1      18446744073709551615  
-  movq %rsp, %rbp             #  2     0x40f141  3      OPC=movq_r64_r64     18446744073709551615  
-  movss %xmm0, -0x4(%rbp)     #  3     0x40f144  5      OPC=movss_m32_xmm    18446744073709551615  
-  movss -0x4(%rbp), %xmm0     #  4     0x40f149  5      OPC=movss_xmm_m32    18446744073709551615  
-  movaps 0x995b(%rip), %xmm1  #  5     0x40f14e  7      OPC=movaps_xmm_m128  18446744073709551615  
-  pand %xmm1, %xmm0           #  6     0x40f155  4      OPC=pand_xmm_xmm     18446744073709551615  
-  popq %rbp                   #  7     0x40f159  1      OPC=popq_r64_1       18446744073709551615  
-  retq                        #  8     0x40f15a  1      OPC=retq             18446744073709551615  
+._ZSt4fabsf:                  #        0x40f150  0      OPC=<label>          18446744073709551615  
+  pushq %rbp                  #  1     0x40f150  1      OPC=pushq_r64_1      18446744073709551615  
+  movq %rsp, %rbp             #  2     0x40f151  3      OPC=movq_r64_r64     18446744073709551615  
+  movss %xmm0, -0x4(%rbp)     #  3     0x40f154  5      OPC=movss_m32_xmm    18446744073709551615  
+  movss -0x4(%rbp), %xmm0     #  4     0x40f159  5      OPC=movss_xmm_m32    18446744073709551615  
+  movaps 0x995b(%rip), %xmm1  #  5     0x40f15e  7      OPC=movaps_xmm_m128  18446744073709551615  
+  pand %xmm1, %xmm0           #  6     0x40f165  4      OPC=pand_xmm_xmm     18446744073709551615  
+  popq %rbp                   #  7     0x40f169  1      OPC=popq_r64_1       18446744073709551615  
+  retq                        #  8     0x40f16a  1      OPC=retq             18446744073709551615  
                                                                                                    
 .size _ZSt4fabsf, .-_ZSt4fabsf
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZSt4fabsf->4256064
+._ZSt4fabsf->4256080
 
 Computing Label PC values: Done.
 
@@ -534,3 +534,5 @@ Decompiling Function: _ZSt4fabsf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.07system 0:00.28elapsed 100%CPU (0avgtext+0avgdata 10300maxresident)k
+0inputs+144outputs (0major+5018minor)pagefaults 0swaps

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [wrap_mul4] from ../binary/test.mcsema.opt.ll
 Extracting function [wrap_mul4] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.85user 1.07system 0:01.96elapsed 98%CPU (0avgtext+0avgdata 12776maxresident)k
+0inputs+240outputs (0major+1004minor)pagefaults 0swaps

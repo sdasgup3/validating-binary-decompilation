@@ -17,8 +17,8 @@ ls bc-seeds | parallel  "echo; echo {}; ../../scripts/extractor.py -P ${HOME}/Gi
 #### Prereq
   - Make sure the the following paths exists
   ```bash
-  TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
-  ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+  ${HOME}/Github/validating-binary-decompilation/source/build/bin/
+  ${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
   ```
 
 #### Single Run
@@ -44,18 +44,21 @@ make compd; make compd_opt; make match
 make all
 ```
 
-### Batch Run in stages
+### Batch Run in stages (Recommended)
 ```bash
 # To generate the binary [Already Done; Needed for one time]
-cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make binary ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary ; cd .." |& tee ~/Junk/log
 
 # Generate McSema Artifacts [Already Done; Needed for one time]
-cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
-cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
 
 # Run compd
-cat docs/makefilelist.txt | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+cat docs/makefilelist.txt | parallel  "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+
 grep "Pass" docs/compd.log > docs/compdPass.log
+
+## Fails are in  docs/compdFail.log and alrady removed from docs/makefilelist.txt
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
 
 # Run compd opt
@@ -94,3 +97,5 @@ grep "Workdir" compd.log | sed -e "s/Workdir:/rm -rf /g" | parallel {}
 
 ### Note
   -  The compiler used for the generting binary for programs, to be fed to McSema, should be the same as the one used for single insruction decompilation.
+  - Using relocation information for compd, does not neccesarily mean that mcsema needs to decompile the same binary with relocation info, but it is a good practise to enable both compd and mcsema equally.
+  Currently, ida having issues with running on binaries with relocation info.

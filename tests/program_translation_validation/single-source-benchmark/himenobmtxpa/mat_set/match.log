@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [mat_set] from ../binary/test.mcsema.opt.ll
 Extracting function [mat_set] from mcsema/test.proposed.opt.ll
 Matcher Done...
+22.73user 28.71system 0:52.05elapsed 98%CPU (0avgtext+0avgdata 16884maxresident)k
+0inputs+5656outputs (0major+5800minor)pagefaults 0swaps

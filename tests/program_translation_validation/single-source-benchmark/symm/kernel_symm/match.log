@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_symm] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_symm] from mcsema/test.proposed.opt.ll
 Matcher Done...
+19.64user 27.62system 0:47.30elapsed 99%CPU (0avgtext+0avgdata 18048maxresident)k
+0inputs+13120outputs (0major+4208minor)pagefaults 0swaps

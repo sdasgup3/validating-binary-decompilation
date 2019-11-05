@@ -4,19 +4,19 @@ Disassembled output
   .globl Proc5
   .type Proc5, @function
 
-#! file-offset 0x8e0
-#! rip-offset  0x4008e0
+#! file-offset 0x8f0
+#! rip-offset  0x4008f0
 #! capacity    28 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode              Target                
-.Proc5:                  #        0x4008e0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x4008e0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4008e1  3      OPC=movq_r64_r64    18446744073709551615  
-  movb $0x41, 0x602060   #  3     0x4008e4  8      OPC=movb_m8_imm8    18446744073709551615  
-  movl $0x0, 0x6049f0    #  4     0x4008ec  11     OPC=movl_m32_imm32  18446744073709551615  
-  movl -0x4(%rbp), %eax  #  5     0x4008f7  3      OPC=movl_r32_m32    18446744073709551615  
-  popq %rbp              #  6     0x4008fa  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  7     0x4008fb  1      OPC=retq            18446744073709551615  
+.Proc5:                  #        0x4008f0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp             #  1     0x4008f0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp        #  2     0x4008f1  3      OPC=movq_r64_r64    18446744073709551615  
+  movb $0x41, 0x602060   #  3     0x4008f4  8      OPC=movb_m8_imm8    18446744073709551615  
+  movl $0x0, 0x6049f0    #  4     0x4008fc  11     OPC=movl_m32_imm32  18446744073709551615  
+  movl -0x4(%rbp), %eax  #  5     0x400907  3      OPC=movl_r32_m32    18446744073709551615  
+  popq %rbp              #  6     0x40090a  1      OPC=popq_r64_1      18446744073709551615  
+  retq                   #  7     0x40090b  1      OPC=retq            18446744073709551615  
                                                                                              
 .size Proc5, .-Proc5
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Proc5->4196576
+.Proc5->4196592
 
 Computing Label PC values: Done.
 
@@ -432,6 +432,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__0x41__0x602060
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008f4 --size 8
+Global Access Mismatch: 6299744 Relocation: Address, McSema: Constant
 Decompiling instr:movb $0x41, 0x602060 Done...
 
 
@@ -452,6 +455,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__0x6049f0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008fc --size 11
+Global Access Mismatch: 6310384 Relocation: Address, McSema: Constant
 Decompiling instr:movl $0x0, 0x6049f0 Done...
 
 
@@ -515,3 +521,5 @@ Decompiling Function: Proc5 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.12user 0.02system 0:00.60elapsed 24%CPU (0avgtext+0avgdata 10436maxresident)k
+0inputs+136outputs (0major+4698minor)pagefaults 0swaps

@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN30custom_multiple_constant_mixedIiE8do_shiftEi
   .type _ZN30custom_multiple_constant_mixedIiE8do_shiftEi, @function
 
-#! file-offset 0x13210
-#! rip-offset  0x413210
+#! file-offset 0x13220
+#! rip-offset  0x413220
 #! capacity    20 bytes
 
 # Text                                               #  Line  RIP       Bytes  Opcode             Target                
-._ZN30custom_multiple_constant_mixedIiE8do_shiftEi:  #        0x413210  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                         #  1     0x413210  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                    #  2     0x413211  3      OPC=movq_r64_r64   18446744073709551615  
-  movl %edi, -0x4(%rbp)                              #  3     0x413214  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %edi                              #  4     0x413217  3      OPC=movl_r32_m32   18446744073709551615  
-  addl $0x2, %edi                                    #  5     0x41321a  3      OPC=addl_r32_imm8  18446744073709551615  
-  subl $0x2, %edi                                    #  6     0x41321d  3      OPC=subl_r32_imm8  18446744073709551615  
-  movl %edi, %eax                                    #  7     0x413220  2      OPC=movl_r32_r32   18446744073709551615  
-  popq %rbp                                          #  8     0x413222  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                               #  9     0x413223  1      OPC=retq           18446744073709551615  
+._ZN30custom_multiple_constant_mixedIiE8do_shiftEi:  #        0x413220  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                         #  1     0x413220  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                    #  2     0x413221  3      OPC=movq_r64_r64   18446744073709551615  
+  movl %edi, -0x4(%rbp)                              #  3     0x413224  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %edi                              #  4     0x413227  3      OPC=movl_r32_m32   18446744073709551615  
+  addl $0x2, %edi                                    #  5     0x41322a  3      OPC=addl_r32_imm8  18446744073709551615  
+  subl $0x2, %edi                                    #  6     0x41322d  3      OPC=subl_r32_imm8  18446744073709551615  
+  movl %edi, %eax                                    #  7     0x413230  2      OPC=movl_r32_r32   18446744073709551615  
+  popq %rbp                                          #  8     0x413232  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                               #  9     0x413233  1      OPC=retq           18446744073709551615  
                                                                                                                         
 .size _ZN30custom_multiple_constant_mixedIiE8do_shiftEi, .-_ZN30custom_multiple_constant_mixedIiE8do_shiftEi
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_multiple_constant_mixedIiE8do_shiftEi->4272656
+._ZN30custom_multiple_constant_mixedIiE8do_shiftEi->4272672
 
 Computing Label PC values: Done.
 
@@ -472,6 +472,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x2___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41322a --size 3
 Decompiling instr:addl $0x2, %edi Done...
 
 
@@ -491,6 +493,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x2___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41322d --size 3
 Decompiling instr:subl $0x2, %edi Done...
 
 
@@ -554,3 +558,5 @@ Decompiling Function: _ZN30custom_multiple_constant_mixedIiE8do_shiftEi Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.25user 0.05system 0:03.71elapsed 8%CPU (0avgtext+0avgdata 10368maxresident)k
+0inputs+144outputs (0major+5444minor)pagefaults 0swaps

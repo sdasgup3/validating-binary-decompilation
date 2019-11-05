@@ -4,18 +4,18 @@ Disassembled output
   .globl _Z11start_timerv
   .type _Z11start_timerv, @function
 
-#! file-offset 0xe80
-#! rip-offset  0x400e80
+#! file-offset 0xe90
+#! rip-offset  0x400e90
 #! capacity    19 bytes
 
 # Text                 #  Line  RIP       Bytes  Opcode            Target                
-._Z11start_timerv:     #        0x400e80  0      OPC=<label>       18446744073709551615  
-  pushq %rbp           #  1     0x400e80  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp      #  2     0x400e81  3      OPC=movq_r64_r64  18446744073709551615  
-  callq .clock_plt     #  3     0x400e84  5      OPC=callq_label   4196000               
-  movq %rax, 0x6220b0  #  4     0x400e89  8      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp            #  5     0x400e91  1      OPC=popq_r64_1    18446744073709551615  
-  retq                 #  6     0x400e92  1      OPC=retq          18446744073709551615  
+._Z11start_timerv:     #        0x400e90  0      OPC=<label>       18446744073709551615  
+  pushq %rbp           #  1     0x400e90  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp      #  2     0x400e91  3      OPC=movq_r64_r64  18446744073709551615  
+  callq .clock_plt     #  3     0x400e94  5      OPC=callq_label   4196016               
+  movq %rax, 0x6220b0  #  4     0x400e99  8      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp            #  5     0x400ea1  1      OPC=popq_r64_1    18446744073709551615  
+  retq                 #  6     0x400ea2  1      OPC=retq          18446744073709551615  
                                                                                          
 .size _Z11start_timerv, .-_Z11start_timerv
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z11start_timerv->4198016
+._Z11start_timerv->4198032
 
 Computing Label PC values: Done.
 
@@ -450,6 +450,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rax__0x6220b0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400e99 --size 8
+Global Access Mismatch: 6430896 Relocation: Address, McSema: Constant
 Decompiling instr:movq %rax, 0x6220b0 Done...
 
 
@@ -494,3 +497,5 @@ Decompiling Function: _Z11start_timerv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.04system 0:00.52elapsed 53%CPU (0avgtext+0avgdata 10316maxresident)k
+0inputs+128outputs (0major+4397minor)pagefaults 0swaps

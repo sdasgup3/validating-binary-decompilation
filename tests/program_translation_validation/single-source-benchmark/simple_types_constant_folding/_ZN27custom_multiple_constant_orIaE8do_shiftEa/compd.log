@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN27custom_multiple_constant_orIaE8do_shiftEa
   .type _ZN27custom_multiple_constant_orIaE8do_shiftEa, @function
 
-#! file-offset 0x17840
-#! rip-offset  0x417840
+#! file-offset 0x17850
+#! rip-offset  0x417850
 #! capacity    34 bytes
 
 # Text                                            #  Line  RIP       Bytes  Opcode             Target                
-._ZN27custom_multiple_constant_orIaE8do_shiftEa:  #        0x417840  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                      #  1     0x417840  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                 #  2     0x417841  3      OPC=movq_r64_r64   18446744073709551615  
-  movb %dil, %al                                  #  3     0x417844  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %al, -0x1(%rbp)                            #  4     0x417847  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl -0x1(%rbp), %edi                         #  5     0x41784a  4      OPC=movsbl_r32_m8  18446744073709551615  
-  orl $0xf, %edi                                  #  6     0x41784e  3      OPC=orl_r32_imm8   18446744073709551615  
-  orl $0x1e, %edi                                 #  7     0x417851  3      OPC=orl_r32_imm8   18446744073709551615  
-  orl $0x1f, %edi                                 #  8     0x417854  3      OPC=orl_r32_imm8   18446744073709551615  
-  orl $0x3f, %edi                                 #  9     0x417857  3      OPC=orl_r32_imm8   18446744073709551615  
-  movb %dil, %al                                  #  10    0x41785a  3      OPC=movb_r8_r8     18446744073709551615  
-  movsbl %al, %eax                                #  11    0x41785d  3      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbp                                       #  12    0x417860  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                            #  13    0x417861  1      OPC=retq           18446744073709551615  
+._ZN27custom_multiple_constant_orIaE8do_shiftEa:  #        0x417850  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                      #  1     0x417850  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                 #  2     0x417851  3      OPC=movq_r64_r64   18446744073709551615  
+  movb %dil, %al                                  #  3     0x417854  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %al, -0x1(%rbp)                            #  4     0x417857  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl -0x1(%rbp), %edi                         #  5     0x41785a  4      OPC=movsbl_r32_m8  18446744073709551615  
+  orl $0xf, %edi                                  #  6     0x41785e  3      OPC=orl_r32_imm8   18446744073709551615  
+  orl $0x1e, %edi                                 #  7     0x417861  3      OPC=orl_r32_imm8   18446744073709551615  
+  orl $0x1f, %edi                                 #  8     0x417864  3      OPC=orl_r32_imm8   18446744073709551615  
+  orl $0x3f, %edi                                 #  9     0x417867  3      OPC=orl_r32_imm8   18446744073709551615  
+  movb %dil, %al                                  #  10    0x41786a  3      OPC=movb_r8_r8     18446744073709551615  
+  movsbl %al, %eax                                #  11    0x41786d  3      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbp                                       #  12    0x417870  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                            #  13    0x417871  1      OPC=retq           18446744073709551615  
                                                                                                                      
 .size _ZN27custom_multiple_constant_orIaE8do_shiftEa, .-_ZN27custom_multiple_constant_orIaE8do_shiftEa
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN27custom_multiple_constant_orIaE8do_shiftEa->4290624
+._ZN27custom_multiple_constant_orIaE8do_shiftEa->4290640
 
 Computing Label PC values: Done.
 
@@ -495,6 +495,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0xf___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41785e --size 3
 Decompiling instr:orl $0xf, %edi Done...
 
 
@@ -514,6 +516,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x1e___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 417861 --size 3
 Decompiling instr:orl $0x1e, %edi Done...
 
 
@@ -533,6 +537,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x1f___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 417864 --size 3
 Decompiling instr:orl $0x1f, %edi Done...
 
 
@@ -552,6 +558,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x3f___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 417867 --size 3
 Decompiling instr:orl $0x3f, %edi Done...
 
 
@@ -634,3 +642,5 @@ Decompiling Function: _ZN27custom_multiple_constant_orIaE8do_shiftEa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.30user 0.06system 0:07.17elapsed 5%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+168outputs (0major+6958minor)pagefaults 0swaps

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZeqRK14Double_pointerS1_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZeqRK14Double_pointerS1_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.66user 0.51system 0:01.26elapsed 93%CPU (0avgtext+0avgdata 17024maxresident)k
+0inputs+128outputs (0major+2010minor)pagefaults 0swaps

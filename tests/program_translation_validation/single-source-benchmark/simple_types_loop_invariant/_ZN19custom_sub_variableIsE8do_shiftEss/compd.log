@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN19custom_sub_variableIsE8do_shiftEss
   .type _ZN19custom_sub_variableIsE8do_shiftEss, @function
 
-#! file-offset 0x11f10
-#! rip-offset  0x411f10
+#! file-offset 0x11f20
+#! rip-offset  0x411f20
 #! capacity    34 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode              Target                
-._ZN19custom_sub_variableIsE8do_shiftEss:  #        0x411f10  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                               #  1     0x411f10  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x411f11  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %si, %ax                            #  3     0x411f14  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %di, %cx                            #  4     0x411f17  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %cx, -0x2(%rbp)                     #  5     0x411f1a  4      OPC=movw_m16_r16    18446744073709551615  
-  movw %ax, -0x4(%rbp)                     #  6     0x411f1e  4      OPC=movw_m16_r16    18446744073709551615  
-  movswl -0x2(%rbp), %esi                  #  7     0x411f22  4      OPC=movswl_r32_m16  18446744073709551615  
-  movswl -0x4(%rbp), %edi                  #  8     0x411f26  4      OPC=movswl_r32_m16  18446744073709551615  
-  subl %edi, %esi                          #  9     0x411f2a  2      OPC=subl_r32_r32    18446744073709551615  
-  movw %si, %ax                            #  10    0x411f2c  3      OPC=movw_r16_r16    18446744073709551615  
-  cwtl                                     #  11    0x411f2f  1      OPC=cwtl            18446744073709551615  
-  popq %rbp                                #  12    0x411f30  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                     #  13    0x411f31  1      OPC=retq            18446744073709551615  
+._ZN19custom_sub_variableIsE8do_shiftEss:  #        0x411f20  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                               #  1     0x411f20  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x411f21  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %si, %ax                            #  3     0x411f24  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %di, %cx                            #  4     0x411f27  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %cx, -0x2(%rbp)                     #  5     0x411f2a  4      OPC=movw_m16_r16    18446744073709551615  
+  movw %ax, -0x4(%rbp)                     #  6     0x411f2e  4      OPC=movw_m16_r16    18446744073709551615  
+  movswl -0x2(%rbp), %esi                  #  7     0x411f32  4      OPC=movswl_r32_m16  18446744073709551615  
+  movswl -0x4(%rbp), %edi                  #  8     0x411f36  4      OPC=movswl_r32_m16  18446744073709551615  
+  subl %edi, %esi                          #  9     0x411f3a  2      OPC=subl_r32_r32    18446744073709551615  
+  movw %si, %ax                            #  10    0x411f3c  3      OPC=movw_r16_r16    18446744073709551615  
+  cwtl                                     #  11    0x411f3f  1      OPC=cwtl            18446744073709551615  
+  popq %rbp                                #  12    0x411f40  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                     #  13    0x411f41  1      OPC=retq            18446744073709551615  
                                                                                                                
 .size _ZN19custom_sub_variableIsE8do_shiftEss, .-_ZN19custom_sub_variableIsE8do_shiftEss
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN19custom_sub_variableIsE8do_shiftEss->4267792
+._ZN19custom_sub_variableIsE8do_shiftEss->4267808
 
 Computing Label PC values: Done.
 
@@ -633,3 +633,5 @@ Decompiling Function: _ZN19custom_sub_variableIsE8do_shiftEss Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.25user 0.07system 0:00.37elapsed 89%CPU (0avgtext+0avgdata 10228maxresident)k
+0inputs+160outputs (0major+6660minor)pagefaults 0swaps

@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+3.85user 4.76system 0:08.72elapsed 98%CPU (0avgtext+0avgdata 17096maxresident)k
+0inputs+1088outputs (0major+2022minor)pagefaults 0swaps

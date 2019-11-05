@@ -4,19 +4,19 @@ Disassembled output
   .globl _ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv
   .type _ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv, @function
 
-#! file-offset 0x3080
-#! rip-offset  0x403080
+#! file-offset 0x3090
+#! rip-offset  0x403090
 #! capacity    17 bytes
 
 # Text                                                                                      #  Line  RIP       Bytes  Opcode            Target                
-._ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv:  #        0x403080  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                                                                #  1     0x403080  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                                                           #  2     0x403081  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                                                     #  3     0x403084  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rdi                                                                     #  4     0x403088  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rax                                                                         #  5     0x40308c  3      OPC=movq_r64_m64  18446744073709551615  
-  popq %rbp                                                                                 #  6     0x40308f  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                                                      #  7     0x403090  1      OPC=retq          18446744073709551615  
+._ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv:  #        0x403090  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                                                                #  1     0x403090  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                                                           #  2     0x403091  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                                                     #  3     0x403094  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rdi                                                                     #  4     0x403098  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rax                                                                         #  5     0x40309c  3      OPC=movq_r64_m64  18446744073709551615  
+  popq %rbp                                                                                 #  6     0x40309f  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                                                      #  7     0x4030a0  1      OPC=retq          18446744073709551615  
                                                                                                                                                               
 .size _ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv, .-_ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv
 Disassembling Done.
@@ -24,7 +24,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv->4206720
+._ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv->4206736
 
 Computing Label PC values: Done.
 
@@ -514,3 +514,5 @@ Decompiling Function: _ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.14user 0.02system 0:00.18elapsed 95%CPU (0avgtext+0avgdata 10340maxresident)k
+0inputs+136outputs (0major+4601minor)pagefaults 0swaps

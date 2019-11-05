@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_403160._ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403170._ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEEbRKS0_IT_ESA_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -133,7 +133,7 @@ entry:
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %6, align 8
   store i64 %60, i64* %3, align 8
-  %call2_403148 = tail call %struct.Memory* @sub_403160._ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9_(%struct.State* %0, i64 %60, %struct.Memory* %2)
+  %call2_403158 = tail call %struct.Memory* @sub_403170._ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9_(%struct.State* %0, i64 %60, %struct.Memory* %2)
   %65 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %AL.i7 = bitcast %union.anon* %65 to i8*
   %66 = load i8, i8* %AL.i7, align 1
@@ -187,7 +187,7 @@ entry:
   store i64 %100, i64* %3, align 8
   %101 = add i64 %70, 32
   store i64 %101, i64* %6, align 8
-  ret %struct.Memory* %call2_403148
+  ret %struct.Memory* %call2_403158
 }
 
 ; Function Attrs: norecurse nounwind

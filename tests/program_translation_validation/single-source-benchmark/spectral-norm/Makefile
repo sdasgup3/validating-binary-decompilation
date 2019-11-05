@@ -7,7 +7,7 @@ compd_opt: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 match: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

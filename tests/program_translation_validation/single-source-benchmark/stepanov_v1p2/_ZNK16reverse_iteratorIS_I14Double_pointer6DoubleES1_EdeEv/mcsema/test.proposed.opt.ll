@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401d60._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d70._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d90._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401da0._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -135,7 +135,7 @@ entry:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %6, align 8
   store i64 %59, i64* %3, align 8
-  %call2_401cee = tail call %struct.Memory* @sub_401d60._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv(%struct.State* %0, i64 %59, %struct.Memory* %2)
+  %call2_401cfe = tail call %struct.Memory* @sub_401d70._ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv(%struct.State* %0, i64 %59, %struct.Memory* %2)
   %64 = load i64, i64* %RAX.i23, align 8
   %65 = load i64, i64* %3, align 8
   store i64 %64, i64* %RDI.i20, align 8
@@ -147,7 +147,7 @@ entry:
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %6, align 8
   store i64 %66, i64* %3, align 8
-  %call2_401cf6 = tail call %struct.Memory* @sub_401d90._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv(%struct.State* %0, i64 %66, %struct.Memory* %call2_401cee)
+  %call2_401d06 = tail call %struct.Memory* @sub_401da0._ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv(%struct.State* %0, i64 %66, %struct.Memory* %call2_401cfe)
   %71 = load i64, i64* %6, align 8
   %72 = load i64, i64* %3, align 8
   %73 = add i64 %71, 16
@@ -194,7 +194,7 @@ entry:
   store i64 %102, i64* %3, align 8
   %103 = add i64 %71, 32
   store i64 %103, i64* %6, align 8
-  ret %struct.Memory* %call2_401cf6
+  ret %struct.Memory* %call2_401d06
 }
 
 ; Function Attrs: norecurse nounwind

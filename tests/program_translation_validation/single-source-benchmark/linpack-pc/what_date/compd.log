@@ -4,16 +4,16 @@ Disassembled output
   .globl what_date
   .type what_date, @function
 
-#! file-offset 0x620
-#! rip-offset  0x400620
+#! file-offset 0x630
+#! rip-offset  0x400630
 #! capacity    6 bytes
 
 # Text             #  Line  RIP       Bytes  Opcode            Target                
-.what_date:        #        0x400620  0      OPC=<label>       18446744073709551615  
-  pushq %rbp       #  1     0x400620  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp  #  2     0x400621  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp        #  3     0x400624  1      OPC=popq_r64_1    18446744073709551615  
-  retq             #  4     0x400625  1      OPC=retq          18446744073709551615  
+.what_date:        #        0x400630  0      OPC=<label>       18446744073709551615  
+  pushq %rbp       #  1     0x400630  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp  #  2     0x400631  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp        #  3     0x400634  1      OPC=popq_r64_1    18446744073709551615  
+  retq             #  4     0x400635  1      OPC=retq          18446744073709551615  
                                                                                      
 .size what_date, .-what_date
 Disassembling Done.
@@ -21,7 +21,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.what_date->4195872
+.what_date->4195888
 
 Computing Label PC values: Done.
 
@@ -454,3 +454,5 @@ Decompiling Function: what_date Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.08user 0.02system 0:00.11elapsed 94%CPU (0avgtext+0avgdata 10108maxresident)k
+0inputs+120outputs (0major+3568minor)pagefaults 0swaps

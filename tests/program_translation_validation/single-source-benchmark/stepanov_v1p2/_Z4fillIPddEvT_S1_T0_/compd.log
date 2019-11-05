@@ -4,31 +4,31 @@ Disassembled output
   .globl _Z4fillIPddEvT_S1_T0_
   .type _Z4fillIPddEvT_S1_T0_, @function
 
-#! file-offset 0x13e0
-#! rip-offset  0x4013e0
+#! file-offset 0x13f0
+#! rip-offset  0x4013f0
 #! capacity    62 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode             Target                
-._Z4fillIPddEvT_S1_T0_:     #        0x4013e0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                #  1     0x4013e0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp           #  2     0x4013e1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)     #  3     0x4013e4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)    #  4     0x4013e8  4      OPC=movq_m64_r64   18446744073709551615  
-  movsd %xmm0, -0x18(%rbp)  #  5     0x4013ec  5      OPC=movsd_m64_xmm  18446744073709551615  
-.L_4013f1:                  #        0x4013f1  0      OPC=<label>        18446744073709551615  
-  movq -0x8(%rbp), %rax     #  6     0x4013f1  4      OPC=movq_r64_m64   18446744073709551615  
-  cmpq -0x10(%rbp), %rax    #  7     0x4013f5  4      OPC=cmpq_r64_m64   18446744073709551615  
-  je .L_40141c              #  8     0x4013f9  6      OPC=je_label_1     4199452               
-  movsd -0x18(%rbp), %xmm0  #  9     0x4013ff  5      OPC=movsd_xmm_m64  18446744073709551615  
-  movq -0x8(%rbp), %rax     #  10    0x401404  4      OPC=movq_r64_m64   18446744073709551615  
-  movq %rax, %rcx           #  11    0x401408  3      OPC=movq_r64_r64   18446744073709551615  
-  addq $0x8, %rcx           #  12    0x40140b  4      OPC=addq_r64_imm8  18446744073709551615  
-  movq %rcx, -0x8(%rbp)     #  13    0x40140f  4      OPC=movq_m64_r64   18446744073709551615  
-  movsd %xmm0, (%rax)       #  14    0x401413  4      OPC=movsd_m64_xmm  18446744073709551615  
-  jmpq .L_4013f1            #  15    0x401417  5      OPC=jmpq_label_1   4199409               
-.L_40141c:                  #        0x40141c  0      OPC=<label>        18446744073709551615  
-  popq %rbp                 #  16    0x40141c  1      OPC=popq_r64_1     18446744073709551615  
-  retq                      #  17    0x40141d  1      OPC=retq           18446744073709551615  
+._Z4fillIPddEvT_S1_T0_:     #        0x4013f0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                #  1     0x4013f0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp           #  2     0x4013f1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)     #  3     0x4013f4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)    #  4     0x4013f8  4      OPC=movq_m64_r64   18446744073709551615  
+  movsd %xmm0, -0x18(%rbp)  #  5     0x4013fc  5      OPC=movsd_m64_xmm  18446744073709551615  
+.L_401401:                  #        0x401401  0      OPC=<label>        18446744073709551615  
+  movq -0x8(%rbp), %rax     #  6     0x401401  4      OPC=movq_r64_m64   18446744073709551615  
+  cmpq -0x10(%rbp), %rax    #  7     0x401405  4      OPC=cmpq_r64_m64   18446744073709551615  
+  je .L_40142c              #  8     0x401409  6      OPC=je_label_1     4199468               
+  movsd -0x18(%rbp), %xmm0  #  9     0x40140f  5      OPC=movsd_xmm_m64  18446744073709551615  
+  movq -0x8(%rbp), %rax     #  10    0x401414  4      OPC=movq_r64_m64   18446744073709551615  
+  movq %rax, %rcx           #  11    0x401418  3      OPC=movq_r64_r64   18446744073709551615  
+  addq $0x8, %rcx           #  12    0x40141b  4      OPC=addq_r64_imm8  18446744073709551615  
+  movq %rcx, -0x8(%rbp)     #  13    0x40141f  4      OPC=movq_m64_r64   18446744073709551615  
+  movsd %xmm0, (%rax)       #  14    0x401423  4      OPC=movsd_m64_xmm  18446744073709551615  
+  jmpq .L_401401            #  15    0x401427  5      OPC=jmpq_label_1   4199425               
+.L_40142c:                  #        0x40142c  0      OPC=<label>        18446744073709551615  
+  popq %rbp                 #  16    0x40142c  1      OPC=popq_r64_1     18446744073709551615  
+  retq                      #  17    0x40142d  1      OPC=retq           18446744073709551615  
                                                                                                
 .size _Z4fillIPddEvT_S1_T0_, .-_Z4fillIPddEvT_S1_T0_
 Disassembling Done.
@@ -36,9 +36,9 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_40141c->4199452
-._Z4fillIPddEvT_S1_T0_->4199392
-.L_4013f1->4199409
+.L_40142c->4199468
+._Z4fillIPddEvT_S1_T0_->4199408
+.L_401401->4199425
 
 Computing Label PC values: Done.
 
@@ -487,7 +487,7 @@ FuncCache inserted: routine_movsd__xmm0__MINUS0x18__rbp_
 Decompiling instr:movsd %xmm0, -0x18(%rbp) Done...
 
 
-Decompiling instr:.L_4013f1:...
+Decompiling instr:.L_401401:...
 
 
 Decompiling instr:movq -0x8(%rbp), %rax...
@@ -528,23 +528,23 @@ FuncCache inserted: routine_cmpq_MINUS0x10__rbp____rax
 Decompiling instr:cmpq -0x10(%rbp), %rax Done...
 
 
-Decompiling instr:je .L_40141c...
-Instr: je .L_40141c
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40141c
+Decompiling instr:je .L_40142c...
+Instr: je .L_40142c
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40142c
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40141c/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//je_.L_40142c/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2JZEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_je_.L_40141c
-Decompiling instr:je .L_40141c Done...
+FuncCache inserted: routine_je_.L_40142c
+Decompiling instr:je .L_40142c Done...
 
 
 Decompiling instr:movsd -0x18(%rbp), %xmm0...
@@ -620,6 +620,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40141b --size 4
 Decompiling instr:addq $0x8, %rcx Done...
 
 
@@ -661,26 +663,26 @@ FuncCache inserted: routine_movsd__xmm0____rax_
 Decompiling instr:movsd %xmm0, (%rax) Done...
 
 
-Decompiling instr:jmpq .L_4013f1...
-Instr: jmpq .L_4013f1
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4013f1
+Decompiling instr:jmpq .L_401401...
+Instr: jmpq .L_401401
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_401401
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_4013f1/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_401401/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_4013f1
-Decompiling instr:jmpq .L_4013f1 Done...
+FuncCache inserted: routine_jmpq_.L_401401
+Decompiling instr:jmpq .L_401401 Done...
 
 
-Decompiling instr:.L_40141c:...
+Decompiling instr:.L_40142c:...
 
 
 Decompiling instr:popq %rbp...
@@ -724,3 +726,5 @@ Decompiling Function: _Z4fillIPddEvT_S1_T0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.29user 0.06system 0:00.77elapsed 47%CPU (0avgtext+0avgdata 10320maxresident)k
+0inputs+184outputs (0major+8048minor)pagefaults 0swaps

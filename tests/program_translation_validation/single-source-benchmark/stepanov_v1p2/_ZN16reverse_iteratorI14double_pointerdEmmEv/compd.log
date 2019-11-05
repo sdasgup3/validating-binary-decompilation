@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN16reverse_iteratorI14double_pointerdEmmEv
   .type _ZN16reverse_iteratorI14double_pointerdEmmEv, @function
 
-#! file-offset 0x2010
-#! rip-offset  0x402010
+#! file-offset 0x2020
+#! rip-offset  0x402020
 #! capacity    42 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode             Target                
-._ZN16reverse_iteratorI14double_pointerdEmmEv:  #        0x402010  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                    #  1     0x402010  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x402011  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x20, %rsp                              #  3     0x402014  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                         #  4     0x402018  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                         #  5     0x40201c  4      OPC=movq_r64_m64   18446744073709551615  
-  movq %rdi, -0x10(%rbp)                        #  6     0x402020  4      OPC=movq_m64_r64   18446744073709551615  
-  callq ._ZN14double_pointerppEv                #  7     0x402024  5      OPC=callq_label    4202688               
-  movq -0x10(%rbp), %rdi                        #  8     0x402029  4      OPC=movq_r64_m64   18446744073709551615  
-  movq %rax, -0x18(%rbp)                        #  9     0x40202d  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rdi, %rax                               #  10    0x402031  3      OPC=movq_r64_r64   18446744073709551615  
-  addq $0x20, %rsp                              #  11    0x402034  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                     #  12    0x402038  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                          #  13    0x402039  1      OPC=retq           18446744073709551615  
+._ZN16reverse_iteratorI14double_pointerdEmmEv:  #        0x402020  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                    #  1     0x402020  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x402021  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x20, %rsp                              #  3     0x402024  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                         #  4     0x402028  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                         #  5     0x40202c  4      OPC=movq_r64_m64   18446744073709551615  
+  movq %rdi, -0x10(%rbp)                        #  6     0x402030  4      OPC=movq_m64_r64   18446744073709551615  
+  callq ._ZN14double_pointerppEv                #  7     0x402034  5      OPC=callq_label    4202704               
+  movq -0x10(%rbp), %rdi                        #  8     0x402039  4      OPC=movq_r64_m64   18446744073709551615  
+  movq %rax, -0x18(%rbp)                        #  9     0x40203d  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rdi, %rax                               #  10    0x402041  3      OPC=movq_r64_r64   18446744073709551615  
+  addq $0x20, %rsp                              #  11    0x402044  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                     #  12    0x402048  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                          #  13    0x402049  1      OPC=retq           18446744073709551615  
                                                                                                                    
 .size _ZN16reverse_iteratorI14double_pointerdEmmEv, .-_ZN16reverse_iteratorI14double_pointerdEmmEv
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN16reverse_iteratorI14double_pointerdEmmEv->4202512
+._ZN16reverse_iteratorI14double_pointerdEmmEv->4202528
 
 Computing Label PC values: Done.
 
@@ -438,6 +438,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402024 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -590,6 +592,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402044 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -634,3 +638,5 @@ Decompiling Function: _ZN16reverse_iteratorI14double_pointerdEmmEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.05system 0:01.02elapsed 25%CPU (0avgtext+0avgdata 10416maxresident)k
+0inputs+168outputs (0major+6725minor)pagefaults 0swaps

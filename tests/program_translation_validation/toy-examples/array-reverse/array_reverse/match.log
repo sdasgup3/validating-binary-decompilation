@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [array_reverse] from ../binary/test.mcsema.opt.ll
 Extracting function [array_reverse] from mcsema/test.proposed.opt.ll
 Matcher Done...
+1.05user 5.34system 0:06.40elapsed 100%CPU (0avgtext+0avgdata 12732maxresident)k
+0inputs+1304outputs (0major+983minor)pagefaults 0swaps

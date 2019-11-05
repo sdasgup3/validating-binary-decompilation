@@ -4,25 +4,25 @@ Disassembled output
   .globl _Z15tolerance_equalIjEbRT_S1_
   .type _Z15tolerance_equalIjEbRT_S1_, @function
 
-#! file-offset 0xec50
-#! rip-offset  0x40ec50
+#! file-offset 0xec60
+#! rip-offset  0x40ec60
 #! capacity    35 bytes
 
 # Text                           #  Line  RIP       Bytes  Opcode             Target                
-._Z15tolerance_equalIjEbRT_S1_:  #        0x40ec50  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                     #  1     0x40ec50  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                #  2     0x40ec51  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)          #  3     0x40ec54  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)         #  4     0x40ec58  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi          #  5     0x40ec5c  4      OPC=movq_r64_m64   18446744073709551615  
-  movl (%rsi), %eax              #  6     0x40ec60  2      OPC=movl_r32_m32   18446744073709551615  
-  movq -0x10(%rbp), %rsi         #  7     0x40ec62  4      OPC=movq_r64_m64   18446744073709551615  
-  cmpl (%rsi), %eax              #  8     0x40ec66  2      OPC=cmpl_r32_m32   18446744073709551615  
-  sete %cl                       #  9     0x40ec68  3      OPC=sete_r8        18446744073709551615  
-  andb $0x1, %cl                 #  10    0x40ec6b  3      OPC=andb_r8_imm8   18446744073709551615  
-  movzbl %cl, %eax               #  11    0x40ec6e  3      OPC=movzbl_r32_r8  18446744073709551615  
-  popq %rbp                      #  12    0x40ec71  1      OPC=popq_r64_1     18446744073709551615  
-  retq                           #  13    0x40ec72  1      OPC=retq           18446744073709551615  
+._Z15tolerance_equalIjEbRT_S1_:  #        0x40ec60  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                     #  1     0x40ec60  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                #  2     0x40ec61  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)          #  3     0x40ec64  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)         #  4     0x40ec68  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi          #  5     0x40ec6c  4      OPC=movq_r64_m64   18446744073709551615  
+  movl (%rsi), %eax              #  6     0x40ec70  2      OPC=movl_r32_m32   18446744073709551615  
+  movq -0x10(%rbp), %rsi         #  7     0x40ec72  4      OPC=movq_r64_m64   18446744073709551615  
+  cmpl (%rsi), %eax              #  8     0x40ec76  2      OPC=cmpl_r32_m32   18446744073709551615  
+  sete %cl                       #  9     0x40ec78  3      OPC=sete_r8        18446744073709551615  
+  andb $0x1, %cl                 #  10    0x40ec7b  3      OPC=andb_r8_imm8   18446744073709551615  
+  movzbl %cl, %eax               #  11    0x40ec7e  3      OPC=movzbl_r32_r8  18446744073709551615  
+  popq %rbp                      #  12    0x40ec81  1      OPC=popq_r64_1     18446744073709551615  
+  retq                           #  13    0x40ec82  1      OPC=retq           18446744073709551615  
                                                                                                     
 .size _Z15tolerance_equalIjEbRT_S1_, .-_Z15tolerance_equalIjEbRT_S1_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z15tolerance_equalIjEbRT_S1_->4254800
+._Z15tolerance_equalIjEbRT_S1_->4254816
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40ec7b --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _Z15tolerance_equalIjEbRT_S1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.30user 0.05system 0:01.50elapsed 23%CPU (0avgtext+0avgdata 10468maxresident)k
+0inputs+168outputs (0major+6718minor)pagefaults 0swaps

@@ -4,26 +4,26 @@ Disassembled output
   .globl new_Toggle
   .type new_Toggle, @function
 
-#! file-offset 0x680
-#! rip-offset  0x400680
+#! file-offset 0x690
+#! rip-offset  0x400690
 #! capacity    47 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode              Target                
-.new_Toggle:               #        0x400680  0      OPC=<label>         18446744073709551615  
-  pushq %rbp               #  1     0x400680  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp          #  2     0x400681  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp         #  3     0x400684  4      OPC=subq_r64_imm8   18446744073709551615  
-  movb %dil, %al           #  4     0x400688  3      OPC=movb_r8_r8      18446744073709551615  
-  movl $0x18, %edi         #  5     0x40068b  5      OPC=movl_r32_imm32  18446744073709551615  
-  movb %al, -0x1(%rbp)     #  6     0x400690  3      OPC=movb_m8_r8      18446744073709551615  
-  callq .malloc_plt        #  7     0x400693  5      OPC=callq_label     4195536               
-  movq %rax, -0x10(%rbp)   #  8     0x400698  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdi   #  9     0x40069c  4      OPC=movq_r64_m64    18446744073709551615  
-  movsbl -0x1(%rbp), %esi  #  10    0x4006a0  4      OPC=movsbl_r32_m8   18446744073709551615  
-  callq .init_Toggle       #  11    0x4006a4  5      OPC=callq_label     4195888               
-  addq $0x10, %rsp         #  12    0x4006a9  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                #  13    0x4006ad  1      OPC=popq_r64_1      18446744073709551615  
-  retq                     #  14    0x4006ae  1      OPC=retq            18446744073709551615  
+.new_Toggle:               #        0x400690  0      OPC=<label>         18446744073709551615  
+  pushq %rbp               #  1     0x400690  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp          #  2     0x400691  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x10, %rsp         #  3     0x400694  4      OPC=subq_r64_imm8   18446744073709551615  
+  movb %dil, %al           #  4     0x400698  3      OPC=movb_r8_r8      18446744073709551615  
+  movl $0x18, %edi         #  5     0x40069b  5      OPC=movl_r32_imm32  18446744073709551615  
+  movb %al, -0x1(%rbp)     #  6     0x4006a0  3      OPC=movb_m8_r8      18446744073709551615  
+  callq .malloc_plt        #  7     0x4006a3  5      OPC=callq_label     4195552               
+  movq %rax, -0x10(%rbp)   #  8     0x4006a8  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdi   #  9     0x4006ac  4      OPC=movq_r64_m64    18446744073709551615  
+  movsbl -0x1(%rbp), %esi  #  10    0x4006b0  4      OPC=movsbl_r32_m8   18446744073709551615  
+  callq .init_Toggle       #  11    0x4006b4  5      OPC=callq_label     4195904               
+  addq $0x10, %rsp         #  12    0x4006b9  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                #  13    0x4006bd  1      OPC=popq_r64_1      18446744073709551615  
+  retq                     #  14    0x4006be  1      OPC=retq            18446744073709551615  
                                                                                                
 .size new_Toggle, .-new_Toggle
 Disassembling Done.
@@ -31,7 +31,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.new_Toggle->4195968
+.new_Toggle->4195984
 
 Computing Label PC values: Done.
 
@@ -439,6 +439,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400694 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -477,6 +479,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x18___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40069b --size 5
 Decompiling instr:movl $0x18, %edi Done...
 
 
@@ -610,6 +614,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006b9 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -654,3 +660,5 @@ Decompiling Function: new_Toggle Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.05system 0:01.00elapsed 26%CPU (0avgtext+0avgdata 10464maxresident)k
+0inputs+176outputs (0major+7145minor)pagefaults 0swaps

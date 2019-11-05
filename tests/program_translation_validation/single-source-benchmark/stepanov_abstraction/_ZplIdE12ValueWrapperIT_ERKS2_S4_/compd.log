@@ -4,31 +4,31 @@ Disassembled output
   .globl _ZplIdE12ValueWrapperIT_ERKS2_S4_
   .type _ZplIdE12ValueWrapperIT_ERKS2_S4_, @function
 
-#! file-offset 0x62b0
-#! rip-offset  0x4062b0
+#! file-offset 0x62c0
+#! rip-offset  0x4062c0
 #! capacity    67 bytes
 
 # Text                                   #  Line  RIP       Bytes  Opcode             Target                
-._ZplIdE12ValueWrapperIT_ERKS2_S4_:      #        0x4062b0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                             #  1     0x4062b0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                        #  2     0x4062b1  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x20, %rsp                       #  3     0x4062b4  4      OPC=subq_r64_imm8  18446744073709551615  
-  leaq -0x8(%rbp), %rax                  #  4     0x4062b8  4      OPC=leaq_r64_m16   18446744073709551615  
-  leaq -0x20(%rbp), %rcx                 #  5     0x4062bc  4      OPC=leaq_r64_m16   18446744073709551615  
-  movq %rdi, -0x10(%rbp)                 #  6     0x4062c0  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x18(%rbp)                 #  7     0x4062c4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x10(%rbp), %rsi                 #  8     0x4062c8  4      OPC=movq_r64_m64   18446744073709551615  
-  movsd (%rsi), %xmm0                    #  9     0x4062cc  4      OPC=movsd_xmm_m64  18446744073709551615  
-  movq -0x18(%rbp), %rsi                 #  10    0x4062d0  4      OPC=movq_r64_m64   18446744073709551615  
-  addsd (%rsi), %xmm0                    #  11    0x4062d4  4      OPC=addsd_xmm_m64  18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)               #  12    0x4062d8  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movq %rax, %rdi                        #  13    0x4062dd  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rcx, %rsi                        #  14    0x4062e0  3      OPC=movq_r64_r64   18446744073709551615  
-  callq ._ZN12ValueWrapperIdEC2IdEERKT_  #  15    0x4062e3  5      OPC=callq_label    4201824               
-  movsd -0x8(%rbp), %xmm0                #  16    0x4062e8  5      OPC=movsd_xmm_m64  18446744073709551615  
-  addq $0x20, %rsp                       #  17    0x4062ed  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                              #  18    0x4062f1  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                   #  19    0x4062f2  1      OPC=retq           18446744073709551615  
+._ZplIdE12ValueWrapperIT_ERKS2_S4_:      #        0x4062c0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                             #  1     0x4062c0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                        #  2     0x4062c1  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x20, %rsp                       #  3     0x4062c4  4      OPC=subq_r64_imm8  18446744073709551615  
+  leaq -0x8(%rbp), %rax                  #  4     0x4062c8  4      OPC=leaq_r64_m16   18446744073709551615  
+  leaq -0x20(%rbp), %rcx                 #  5     0x4062cc  4      OPC=leaq_r64_m16   18446744073709551615  
+  movq %rdi, -0x10(%rbp)                 #  6     0x4062d0  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x18(%rbp)                 #  7     0x4062d4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x10(%rbp), %rsi                 #  8     0x4062d8  4      OPC=movq_r64_m64   18446744073709551615  
+  movsd (%rsi), %xmm0                    #  9     0x4062dc  4      OPC=movsd_xmm_m64  18446744073709551615  
+  movq -0x18(%rbp), %rsi                 #  10    0x4062e0  4      OPC=movq_r64_m64   18446744073709551615  
+  addsd (%rsi), %xmm0                    #  11    0x4062e4  4      OPC=addsd_xmm_m64  18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)               #  12    0x4062e8  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movq %rax, %rdi                        #  13    0x4062ed  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rcx, %rsi                        #  14    0x4062f0  3      OPC=movq_r64_r64   18446744073709551615  
+  callq ._ZN12ValueWrapperIdEC2IdEERKT_  #  15    0x4062f3  5      OPC=callq_label    4201840               
+  movsd -0x8(%rbp), %xmm0                #  16    0x4062f8  5      OPC=movsd_xmm_m64  18446744073709551615  
+  addq $0x20, %rsp                       #  17    0x4062fd  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                              #  18    0x406301  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                   #  19    0x406302  1      OPC=retq           18446744073709551615  
                                                                                                             
 .size _ZplIdE12ValueWrapperIT_ERKS2_S4_, .-_ZplIdE12ValueWrapperIT_ERKS2_S4_
 Disassembling Done.
@@ -36,7 +36,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZplIdE12ValueWrapperIT_ERKS2_S4_->4219568
+._ZplIdE12ValueWrapperIT_ERKS2_S4_->4219584
 
 Computing Label PC values: Done.
 
@@ -444,6 +444,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4062c4 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -710,6 +712,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4062fd --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -754,3 +758,5 @@ Decompiling Function: _ZplIdE12ValueWrapperIT_ERKS2_S4_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.29user 0.07system 0:01.41elapsed 25%CPU (0avgtext+0avgdata 10484maxresident)k
+0inputs+200outputs (0major+8861minor)pagefaults 0swaps

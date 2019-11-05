@@ -106,6 +106,14 @@ declare %struct.Memory* @sub_400900_salsa_renamed_(%struct.State* noalias derefe
 
 declare %struct.Memory* @sub_4003e0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400460_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400900_salsa_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4003e0__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400510_salsa20_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1209,7 +1217,7 @@ block_4004d9:                                     ; preds = %block_4004d0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400460_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -1677,7 +1685,7 @@ block_4009f7:                                     ; preds = %block_4009d5
   %334 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %325, i64* %334, align 8, !tbaa !2428
   %335 = load i64, i64* %PC
-  %336 = call %struct.Memory* @sub_400900_salsa_renamed_(%struct.State* %0, i64 %335, %struct.Memory* %MEMORY.0)
+  %336 = call %struct.Memory* @sub_400900_salsa_renamed__renamed_(%struct.State* %0, i64 %335, %struct.Memory* %MEMORY.0)
   %337 = load i64, i64* %PC
   %338 = add i64 %337, 10
   store i64 %338, i64* %PC
@@ -2156,7 +2164,7 @@ block_4009e1:                                     ; preds = %block_4009d5
   %698 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %689, i64* %698, align 8, !tbaa !2428
   %699 = load i64, i64* %PC
-  %700 = call %struct.Memory* @sub_400900_salsa_renamed_(%struct.State* %0, i64 %699, %struct.Memory* %MEMORY.0)
+  %700 = call %struct.Memory* @sub_400900_salsa_renamed__renamed_(%struct.State* %0, i64 %699, %struct.Memory* %MEMORY.0)
   %701 = load i64, i64* %RBP
   %702 = sub i64 %701, 24
   %703 = load i32, i32* %EAX
@@ -2524,7 +2532,7 @@ block_400a50:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4003e0__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4003e0__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -3632,7 +3640,7 @@ block_400912:                                     ; preds = %block_400900
   %88 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %79, i64* %88, align 8, !tbaa !2428
   %89 = load i64, i64* %PC
-  %90 = call %struct.Memory* @sub_400510_salsa20_renamed_(%struct.State* %0, i64 %89, %struct.Memory* %2)
+  %90 = call %struct.Memory* @sub_400510_salsa20_renamed__renamed_(%struct.State* %0, i64 %89, %struct.Memory* %2)
   %91 = load i64, i64* %PC
   %92 = add i64 %91, 7
   store i64 %92, i64* %PC

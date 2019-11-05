@@ -4,27 +4,27 @@ Disassembled output
   .globl _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd
   .type _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd, @function
 
-#! file-offset 0xc0a0
-#! rip-offset  0x40c0a0
+#! file-offset 0xc0b0
+#! rip-offset  0x40c0b0
 #! capacity    60 bytes
 
 # Text                                                     #  Line  RIP       Bytes  Opcode             Target                
-._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd:  #        0x40c0a0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                               #  1     0x40c0a0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                          #  2     0x40c0a1  3      OPC=movq_r64_r64   18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)                                  #  3     0x40c0a4  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd %xmm1, -0x10(%rbp)                                 #  4     0x40c0a9  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd %xmm2, -0x18(%rbp)                                 #  5     0x40c0ae  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd %xmm3, -0x20(%rbp)                                 #  6     0x40c0b3  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd %xmm4, -0x28(%rbp)                                 #  7     0x40c0b8  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd -0x8(%rbp), %xmm0                                  #  8     0x40c0bd  5      OPC=movsd_xmm_m64  18446744073709551615  
-  movsd -0x10(%rbp), %xmm1                                 #  9     0x40c0c2  5      OPC=movsd_xmm_m64  18446744073709551615  
-  divsd -0x18(%rbp), %xmm1                                 #  10    0x40c0c7  5      OPC=divsd_xmm_m64  18446744073709551615  
-  divsd -0x20(%rbp), %xmm1                                 #  11    0x40c0cc  5      OPC=divsd_xmm_m64  18446744073709551615  
-  divsd -0x28(%rbp), %xmm1                                 #  12    0x40c0d1  5      OPC=divsd_xmm_m64  18446744073709551615  
-  addsd %xmm1, %xmm0                                       #  13    0x40c0d6  4      OPC=addsd_xmm_xmm  18446744073709551615  
-  popq %rbp                                                #  14    0x40c0da  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                     #  15    0x40c0db  1      OPC=retq           18446744073709551615  
+._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd:  #        0x40c0b0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                               #  1     0x40c0b0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                          #  2     0x40c0b1  3      OPC=movq_r64_r64   18446744073709551615  
+  movsd %xmm0, -0x8(%rbp)                                  #  3     0x40c0b4  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd %xmm1, -0x10(%rbp)                                 #  4     0x40c0b9  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd %xmm2, -0x18(%rbp)                                 #  5     0x40c0be  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd %xmm3, -0x20(%rbp)                                 #  6     0x40c0c3  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd %xmm4, -0x28(%rbp)                                 #  7     0x40c0c8  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd -0x8(%rbp), %xmm0                                  #  8     0x40c0cd  5      OPC=movsd_xmm_m64  18446744073709551615  
+  movsd -0x10(%rbp), %xmm1                                 #  9     0x40c0d2  5      OPC=movsd_xmm_m64  18446744073709551615  
+  divsd -0x18(%rbp), %xmm1                                 #  10    0x40c0d7  5      OPC=divsd_xmm_m64  18446744073709551615  
+  divsd -0x20(%rbp), %xmm1                                 #  11    0x40c0dc  5      OPC=divsd_xmm_m64  18446744073709551615  
+  divsd -0x28(%rbp), %xmm1                                 #  12    0x40c0e1  5      OPC=divsd_xmm_m64  18446744073709551615  
+  addsd %xmm1, %xmm0                                       #  13    0x40c0e6  4      OPC=addsd_xmm_xmm  18446744073709551615  
+  popq %rbp                                                #  14    0x40c0ea  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                     #  15    0x40c0eb  1      OPC=retq           18446744073709551615  
                                                                                                                               
 .size _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd, .-_ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd->4243616
+._ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd->4243632
 
 Computing Label PC values: Done.
 
@@ -674,3 +674,5 @@ Decompiling Function: _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd Do
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.31user 0.05system 0:00.37elapsed 98%CPU (0avgtext+0avgdata 10316maxresident)k
+0inputs+176outputs (0major+7428minor)pagefaults 0swaps

@@ -4,38 +4,38 @@ Disassembled output
   .globl _ZN15loop_inner_bodyILi22EiE7do_workERiPKii
   .type _ZN15loop_inner_bodyILi22EiE7do_workERiPKii, @function
 
-#! file-offset 0xc540
-#! rip-offset  0x40c540
+#! file-offset 0xc550
+#! rip-offset  0x40c550
 #! capacity    82 bytes
 
 # Text                                                #  Line  RIP       Bytes  Opcode              Target                
-._ZN15loop_inner_bodyILi22EiE7do_workERiPKii:         #        0x40c540  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                          #  1     0x40c540  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                     #  2     0x40c541  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x20, %rsp                                    #  3     0x40c544  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                               #  4     0x40c548  4      OPC=movq_m64_r64    18446744073709551615  
-  movq %rsi, -0x10(%rbp)                              #  5     0x40c54c  4      OPC=movq_m64_r64    18446744073709551615  
-  movl %edx, -0x14(%rbp)                              #  6     0x40c550  3      OPC=movl_m32_r32    18446744073709551615  
-  movq -0x8(%rbp), %rdi                               #  7     0x40c553  4      OPC=movq_r64_m64    18446744073709551615  
-  movq -0x10(%rbp), %rsi                              #  8     0x40c557  4      OPC=movq_r64_m64    18446744073709551615  
-  movl -0x14(%rbp), %edx                              #  9     0x40c55b  3      OPC=movl_r32_m32    18446744073709551615  
-  callq ._ZN15loop_inner_bodyILi21EiE7do_workERiPKii  #  10    0x40c55e  5      OPC=callq_label     4244896               
-  movq -0x10(%rbp), %rsi                              #  11    0x40c563  4      OPC=movq_r64_m64    18446744073709551615  
-  movl -0x14(%rbp), %edx                              #  12    0x40c567  3      OPC=movl_r32_m32    18446744073709551615  
-  addl $0x15, %edx                                    #  13    0x40c56a  3      OPC=addl_r32_imm8   18446744073709551615  
-  movslq %edx, %rdi                                   #  14    0x40c56d  3      OPC=movslq_r64_r32  18446744073709551615  
-  movl (%rsi,%rdi,4), %edx                            #  15    0x40c570  3      OPC=movl_r32_m32    18446744073709551615  
-  movl %edx, -0x18(%rbp)                              #  16    0x40c573  3      OPC=movl_m32_r32    18446744073709551615  
-  movl -0x18(%rbp), %edi                              #  17    0x40c576  3      OPC=movl_r32_m32    18446744073709551615  
-  callq ._Z18complete_hash_funcIiET_S0_               #  18    0x40c579  5      OPC=callq_label     4243712               
-  movl %eax, -0x18(%rbp)                              #  19    0x40c57e  3      OPC=movl_m32_r32    18446744073709551615  
-  movl -0x18(%rbp), %eax                              #  20    0x40c581  3      OPC=movl_r32_m32    18446744073709551615  
-  movq -0x8(%rbp), %rsi                               #  21    0x40c584  4      OPC=movq_r64_m64    18446744073709551615  
-  addl (%rsi), %eax                                   #  22    0x40c588  2      OPC=addl_r32_m32    18446744073709551615  
-  movl %eax, (%rsi)                                   #  23    0x40c58a  2      OPC=movl_m32_r32    18446744073709551615  
-  addq $0x20, %rsp                                    #  24    0x40c58c  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                                           #  25    0x40c590  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                #  26    0x40c591  1      OPC=retq            18446744073709551615  
+._ZN15loop_inner_bodyILi22EiE7do_workERiPKii:         #        0x40c550  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                          #  1     0x40c550  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                     #  2     0x40c551  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x20, %rsp                                    #  3     0x40c554  4      OPC=subq_r64_imm8   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                               #  4     0x40c558  4      OPC=movq_m64_r64    18446744073709551615  
+  movq %rsi, -0x10(%rbp)                              #  5     0x40c55c  4      OPC=movq_m64_r64    18446744073709551615  
+  movl %edx, -0x14(%rbp)                              #  6     0x40c560  3      OPC=movl_m32_r32    18446744073709551615  
+  movq -0x8(%rbp), %rdi                               #  7     0x40c563  4      OPC=movq_r64_m64    18446744073709551615  
+  movq -0x10(%rbp), %rsi                              #  8     0x40c567  4      OPC=movq_r64_m64    18446744073709551615  
+  movl -0x14(%rbp), %edx                              #  9     0x40c56b  3      OPC=movl_r32_m32    18446744073709551615  
+  callq ._ZN15loop_inner_bodyILi21EiE7do_workERiPKii  #  10    0x40c56e  5      OPC=callq_label     4244912               
+  movq -0x10(%rbp), %rsi                              #  11    0x40c573  4      OPC=movq_r64_m64    18446744073709551615  
+  movl -0x14(%rbp), %edx                              #  12    0x40c577  3      OPC=movl_r32_m32    18446744073709551615  
+  addl $0x15, %edx                                    #  13    0x40c57a  3      OPC=addl_r32_imm8   18446744073709551615  
+  movslq %edx, %rdi                                   #  14    0x40c57d  3      OPC=movslq_r64_r32  18446744073709551615  
+  movl (%rsi,%rdi,4), %edx                            #  15    0x40c580  3      OPC=movl_r32_m32    18446744073709551615  
+  movl %edx, -0x18(%rbp)                              #  16    0x40c583  3      OPC=movl_m32_r32    18446744073709551615  
+  movl -0x18(%rbp), %edi                              #  17    0x40c586  3      OPC=movl_r32_m32    18446744073709551615  
+  callq ._Z18complete_hash_funcIiET_S0_               #  18    0x40c589  5      OPC=callq_label     4243728               
+  movl %eax, -0x18(%rbp)                              #  19    0x40c58e  3      OPC=movl_m32_r32    18446744073709551615  
+  movl -0x18(%rbp), %eax                              #  20    0x40c591  3      OPC=movl_r32_m32    18446744073709551615  
+  movq -0x8(%rbp), %rsi                               #  21    0x40c594  4      OPC=movq_r64_m64    18446744073709551615  
+  addl (%rsi), %eax                                   #  22    0x40c598  2      OPC=addl_r32_m32    18446744073709551615  
+  movl %eax, (%rsi)                                   #  23    0x40c59a  2      OPC=movl_m32_r32    18446744073709551615  
+  addq $0x20, %rsp                                    #  24    0x40c59c  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                                           #  25    0x40c5a0  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                #  26    0x40c5a1  1      OPC=retq            18446744073709551615  
                                                                                                                           
 .size _ZN15loop_inner_bodyILi22EiE7do_workERiPKii, .-_ZN15loop_inner_bodyILi22EiE7do_workERiPKii
 Disassembling Done.
@@ -43,7 +43,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN15loop_inner_bodyILi22EiE7do_workERiPKii->4244800
+._ZN15loop_inner_bodyILi22EiE7do_workERiPKii->4244816
 
 Computing Label PC values: Done.
 
@@ -451,6 +451,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c554 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -641,6 +643,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x15___edx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c57a --size 3
 Decompiling instr:addl $0x15, %edx Done...
 
 
@@ -850,6 +854,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c59c --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -894,3 +900,5 @@ Decompiling Function: _ZN15loop_inner_bodyILi22EiE7do_workERiPKii Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.46user 0.11system 0:04.07elapsed 14%CPU (0avgtext+0avgdata 10488maxresident)k
+0inputs+240outputs (0major+11300minor)pagefaults 0swaps

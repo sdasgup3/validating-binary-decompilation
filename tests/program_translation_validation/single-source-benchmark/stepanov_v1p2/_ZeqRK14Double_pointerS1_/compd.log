@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZeqRK14Double_pointerS1_
   .type _ZeqRK14Double_pointerS1_, @function
 
-#! file-offset 0x1ec0
-#! rip-offset  0x401ec0
+#! file-offset 0x1ed0
+#! rip-offset  0x401ed0
 #! capacity    36 bytes
 
 # Text                       #  Line  RIP       Bytes  Opcode             Target                
-._ZeqRK14Double_pointerS1_:  #        0x401ec0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                 #  1     0x401ec0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp            #  2     0x401ec1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)      #  3     0x401ec4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)     #  4     0x401ec8  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi      #  5     0x401ecc  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rsi), %rsi          #  6     0x401ed0  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi     #  7     0x401ed3  4      OPC=movq_r64_m64   18446744073709551615  
-  cmpq (%rdi), %rsi          #  8     0x401ed7  3      OPC=cmpq_r64_m64   18446744073709551615  
-  sete %al                   #  9     0x401eda  3      OPC=sete_r8        18446744073709551615  
-  andb $0x1, %al             #  10    0x401edd  2      OPC=andb_al_imm8   18446744073709551615  
-  movzbl %al, %eax           #  11    0x401edf  3      OPC=movzbl_r32_r8  18446744073709551615  
-  popq %rbp                  #  12    0x401ee2  1      OPC=popq_r64_1     18446744073709551615  
-  retq                       #  13    0x401ee3  1      OPC=retq           18446744073709551615  
+._ZeqRK14Double_pointerS1_:  #        0x401ed0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                 #  1     0x401ed0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp            #  2     0x401ed1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)      #  3     0x401ed4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)     #  4     0x401ed8  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi      #  5     0x401edc  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rsi), %rsi          #  6     0x401ee0  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi     #  7     0x401ee3  4      OPC=movq_r64_m64   18446744073709551615  
+  cmpq (%rdi), %rsi          #  8     0x401ee7  3      OPC=cmpq_r64_m64   18446744073709551615  
+  sete %al                   #  9     0x401eea  3      OPC=sete_r8        18446744073709551615  
+  andb $0x1, %al             #  10    0x401eed  2      OPC=andb_al_imm8   18446744073709551615  
+  movzbl %al, %eax           #  11    0x401eef  3      OPC=movzbl_r32_r8  18446744073709551615  
+  popq %rbp                  #  12    0x401ef2  1      OPC=popq_r64_1     18446744073709551615  
+  retq                       #  13    0x401ef3  1      OPC=retq           18446744073709551615  
                                                                                                 
 .size _ZeqRK14Double_pointerS1_, .-_ZeqRK14Double_pointerS1_
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZeqRK14Double_pointerS1_->4202176
+._ZeqRK14Double_pointerS1_->4202192
 
 Computing Label PC values: Done.
 
@@ -571,6 +571,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401eed --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -634,3 +636,5 @@ Decompiling Function: _ZeqRK14Double_pointerS1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.05system 0:00.65elapsed 40%CPU (0avgtext+0avgdata 10340maxresident)k
+0inputs+168outputs (0major+6702minor)pagefaults 0swaps

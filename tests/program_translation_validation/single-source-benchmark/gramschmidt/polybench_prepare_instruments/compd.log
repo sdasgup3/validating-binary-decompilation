@@ -4,17 +4,17 @@ Disassembled output
   .globl polybench_prepare_instruments
   .type polybench_prepare_instruments, @function
 
-#! file-offset 0x7b0
-#! rip-offset  0x4007b0
+#! file-offset 0x7c0
+#! rip-offset  0x4007c0
 #! capacity    11 bytes
 
 # Text                           #  Line  RIP       Bytes  Opcode            Target                
-.polybench_prepare_instruments:  #        0x4007b0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                     #  1     0x4007b0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                #  2     0x4007b1  3      OPC=movq_r64_r64  18446744073709551615  
-  callq .polybench_flush_cache   #  3     0x4007b4  5      OPC=callq_label   4196144               
-  popq %rbp                      #  4     0x4007b9  1      OPC=popq_r64_1    18446744073709551615  
-  retq                           #  5     0x4007ba  1      OPC=retq          18446744073709551615  
+.polybench_prepare_instruments:  #        0x4007c0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                     #  1     0x4007c0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                #  2     0x4007c1  3      OPC=movq_r64_r64  18446744073709551615  
+  callq .polybench_flush_cache   #  3     0x4007c4  5      OPC=callq_label   4196160               
+  popq %rbp                      #  4     0x4007c9  1      OPC=popq_r64_1    18446744073709551615  
+  retq                           #  5     0x4007ca  1      OPC=retq          18446744073709551615  
                                                                                                    
 .size polybench_prepare_instruments, .-polybench_prepare_instruments
 Disassembling Done.
@@ -22,7 +22,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.polybench_prepare_instruments->4196272
+.polybench_prepare_instruments->4196288
 
 Computing Label PC values: Done.
 
@@ -474,3 +474,5 @@ Decompiling Function: polybench_prepare_instruments Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.10user 0.02system 0:00.14elapsed 92%CPU (0avgtext+0avgdata 10308maxresident)k
+0inputs+120outputs (0major+3909minor)pagefaults 0swaps

@@ -46,9 +46,9 @@ declare extern_weak x86_64_sysvcc i64 @malloc(i64)
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
-declare %struct.Memory* @sub_400630.init_Toggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400640.init_Toggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400700.init_NthToggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400710.init_NthToggle(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @new_NthToggle(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -169,7 +169,7 @@ entry:
   store i64 %79, i64* %82, align 8
   store i64 %81, i64* %6, align 8
   store i64 %78, i64* %3, align 8
-  %call2_40076a = tail call %struct.Memory* @sub_400630.init_Toggle(%struct.State* %0, i64 %78, %struct.Memory* %59)
+  %call2_40077a = tail call %struct.Memory* @sub_400640.init_Toggle(%struct.State* %0, i64 %78, %struct.Memory* %59)
   %83 = load i64, i64* %RBP.i, align 8
   %84 = add i64 %83, -16
   %85 = load i64, i64* %RAX.i23, align 8
@@ -201,7 +201,7 @@ entry:
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %6, align 8
   store i64 %100, i64* %3, align 8
-  %call2_40077a = tail call %struct.Memory* @sub_400700.init_NthToggle(%struct.State* %0, i64 %100, %struct.Memory* %call2_40076a)
+  %call2_40078a = tail call %struct.Memory* @sub_400710.init_NthToggle(%struct.State* %0, i64 %100, %struct.Memory* %call2_40077a)
   %105 = load i64, i64* %6, align 8
   %106 = load i64, i64* %3, align 8
   %107 = add i64 %105, 16
@@ -248,7 +248,7 @@ entry:
   store i64 %136, i64* %3, align 8
   %137 = add i64 %105, 32
   store i64 %137, i64* %6, align 8
-  ret %struct.Memory* %call2_40077a
+  ret %struct.Memory* %call2_40078a
 }
 
 ; Function Attrs: norecurse nounwind

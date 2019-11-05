@@ -4,32 +4,32 @@ Disassembled output
   .globl new_NthToggle
   .type new_NthToggle, @function
 
-#! file-offset 0x740
-#! rip-offset  0x400740
+#! file-offset 0x750
+#! rip-offset  0x400750
 #! capacity    69 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode              Target                
-.new_NthToggle:            #        0x400740  0      OPC=<label>         18446744073709551615  
-  pushq %rbp               #  1     0x400740  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp          #  2     0x400741  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp         #  3     0x400744  4      OPC=subq_r64_imm8   18446744073709551615  
-  movb %dil, %al           #  4     0x400748  3      OPC=movb_r8_r8      18446744073709551615  
-  movl $0x20, %edi         #  5     0x40074b  5      OPC=movl_r32_imm32  18446744073709551615  
-  movb %al, -0x1(%rbp)     #  6     0x400750  3      OPC=movb_m8_r8      18446744073709551615  
-  movl %esi, -0x8(%rbp)    #  7     0x400753  3      OPC=movl_m32_r32    18446744073709551615  
-  callq .malloc_plt        #  8     0x400756  5      OPC=callq_label     4195536               
-  movq %rax, -0x10(%rbp)   #  9     0x40075b  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rax   #  10    0x40075f  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rax, %rdi          #  11    0x400763  3      OPC=movq_r64_r64    18446744073709551615  
-  movsbl -0x1(%rbp), %esi  #  12    0x400766  4      OPC=movsbl_r32_m8   18446744073709551615  
-  callq .init_Toggle       #  13    0x40076a  5      OPC=callq_label     4195888               
-  movq %rax, -0x10(%rbp)   #  14    0x40076f  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdi   #  15    0x400773  4      OPC=movq_r64_m64    18446744073709551615  
-  movl -0x8(%rbp), %esi    #  16    0x400777  3      OPC=movl_r32_m32    18446744073709551615  
-  callq .init_NthToggle    #  17    0x40077a  5      OPC=callq_label     4196096               
-  addq $0x10, %rsp         #  18    0x40077f  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                #  19    0x400783  1      OPC=popq_r64_1      18446744073709551615  
-  retq                     #  20    0x400784  1      OPC=retq            18446744073709551615  
+.new_NthToggle:            #        0x400750  0      OPC=<label>         18446744073709551615  
+  pushq %rbp               #  1     0x400750  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp          #  2     0x400751  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x10, %rsp         #  3     0x400754  4      OPC=subq_r64_imm8   18446744073709551615  
+  movb %dil, %al           #  4     0x400758  3      OPC=movb_r8_r8      18446744073709551615  
+  movl $0x20, %edi         #  5     0x40075b  5      OPC=movl_r32_imm32  18446744073709551615  
+  movb %al, -0x1(%rbp)     #  6     0x400760  3      OPC=movb_m8_r8      18446744073709551615  
+  movl %esi, -0x8(%rbp)    #  7     0x400763  3      OPC=movl_m32_r32    18446744073709551615  
+  callq .malloc_plt        #  8     0x400766  5      OPC=callq_label     4195552               
+  movq %rax, -0x10(%rbp)   #  9     0x40076b  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rax   #  10    0x40076f  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rax, %rdi          #  11    0x400773  3      OPC=movq_r64_r64    18446744073709551615  
+  movsbl -0x1(%rbp), %esi  #  12    0x400776  4      OPC=movsbl_r32_m8   18446744073709551615  
+  callq .init_Toggle       #  13    0x40077a  5      OPC=callq_label     4195904               
+  movq %rax, -0x10(%rbp)   #  14    0x40077f  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdi   #  15    0x400783  4      OPC=movq_r64_m64    18446744073709551615  
+  movl -0x8(%rbp), %esi    #  16    0x400787  3      OPC=movl_r32_m32    18446744073709551615  
+  callq .init_NthToggle    #  17    0x40078a  5      OPC=callq_label     4196112               
+  addq $0x10, %rsp         #  18    0x40078f  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                #  19    0x400793  1      OPC=popq_r64_1      18446744073709551615  
+  retq                     #  20    0x400794  1      OPC=retq            18446744073709551615  
                                                                                                
 .size new_NthToggle, .-new_NthToggle
 Disassembling Done.
@@ -37,7 +37,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.new_NthToggle->4196160
+.new_NthToggle->4196176
 
 Computing Label PC values: Done.
 
@@ -445,6 +445,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400754 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -483,6 +485,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x20___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40075b --size 5
 Decompiling instr:movl $0x20, %edi Done...
 
 
@@ -730,6 +734,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40078f --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -774,3 +780,5 @@ Decompiling Function: new_NthToggle Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.30user 0.07system 0:01.13elapsed 32%CPU (0avgtext+0avgdata 10492maxresident)k
+0inputs+208outputs (0major+9180minor)pagefaults 0swaps

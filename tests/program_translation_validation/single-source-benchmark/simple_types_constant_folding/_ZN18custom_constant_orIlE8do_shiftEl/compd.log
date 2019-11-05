@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZN18custom_constant_orIlE8do_shiftEl
   .type _ZN18custom_constant_orIlE8do_shiftEl, @function
 
-#! file-offset 0x111c0
-#! rip-offset  0x4111c0
+#! file-offset 0x111d0
+#! rip-offset  0x4111d0
 #! capacity    21 bytes
 
 # Text                                   #  Line  RIP       Bytes  Opcode            Target                
-._ZN18custom_constant_orIlE8do_shiftEl:  #        0x4111c0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                             #  1     0x4111c0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                        #  2     0x4111c1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                  #  3     0x4111c4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rdi                  #  4     0x4111c8  4      OPC=movq_r64_m64  18446744073709551615  
-  orq $0xa, %rdi                         #  5     0x4111cc  4      OPC=orq_r64_imm8  18446744073709551615  
-  movq %rdi, %rax                        #  6     0x4111d0  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp                              #  7     0x4111d3  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                   #  8     0x4111d4  1      OPC=retq          18446744073709551615  
+._ZN18custom_constant_orIlE8do_shiftEl:  #        0x4111d0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                             #  1     0x4111d0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                        #  2     0x4111d1  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                  #  3     0x4111d4  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rdi                  #  4     0x4111d8  4      OPC=movq_r64_m64  18446744073709551615  
+  orq $0xa, %rdi                         #  5     0x4111dc  4      OPC=orq_r64_imm8  18446744073709551615  
+  movq %rdi, %rax                        #  6     0x4111e0  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp                              #  7     0x4111e3  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                   #  8     0x4111e4  1      OPC=retq          18446744073709551615  
                                                                                                            
 .size _ZN18custom_constant_orIlE8do_shiftEl, .-_ZN18custom_constant_orIlE8do_shiftEl
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN18custom_constant_orIlE8do_shiftEl->4264384
+._ZN18custom_constant_orIlE8do_shiftEl->4264400
 
 Computing Label PC values: Done.
 
@@ -471,6 +471,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orq__0xa___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4111dc --size 4
 Decompiling instr:orq $0xa, %rdi Done...
 
 
@@ -534,3 +536,5 @@ Decompiling Function: _ZN18custom_constant_orIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.22user 0.07system 0:02.03elapsed 14%CPU (0avgtext+0avgdata 10124maxresident)k
+0inputs+144outputs (0major+5015minor)pagefaults 0swaps

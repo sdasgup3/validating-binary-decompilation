@@ -96,6 +96,12 @@ declare %struct.Memory* @sub_4004a0_deregister_tm_clones_renamed_(%struct.State*
 
 declare %struct.Memory* @sub_400600_gen_random_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_4004a0_deregister_tm_clones_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400410__init_proc_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400600_gen_random_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1268,7 +1274,7 @@ block_400660:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400410__init_proc_renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400410__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -1969,7 +1975,7 @@ block_400519:                                     ; preds = %block_400510
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_4004a0_deregister_tm_clones_renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_4004a0_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -3553,7 +3559,7 @@ block_4005af:                                     ; preds = %block_40059b
   %195 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %186, i64* %195, align 8, !tbaa !2428
   %196 = load i64, i64* %PC
-  %197 = call %struct.Memory* @sub_400600_gen_random_renamed_(%struct.State* %0, i64 %196, %struct.Memory* %MEMORY.0)
+  %197 = call %struct.Memory* @sub_400600_gen_random_renamed__renamed_(%struct.State* %0, i64 %196, %struct.Memory* %MEMORY.0)
   %198 = load i64, i64* %RBP
   %199 = sub i64 %198, 32
   %200 = bitcast %union.vec128_t* %XMM0 to i8*
@@ -3589,7 +3595,7 @@ block_4005c6:                                     ; preds = %block_40059b
   %220 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %211, i64* %220, align 8, !tbaa !2428
   %221 = load i64, i64* %PC
-  %222 = call %struct.Memory* @sub_400600_gen_random_renamed_(%struct.State* %0, i64 %221, %struct.Memory* %MEMORY.0)
+  %222 = call %struct.Memory* @sub_400600_gen_random_renamed__renamed_(%struct.State* %0, i64 %221, %struct.Memory* %MEMORY.0)
   %223 = load i64, i64* %PC
   %224 = add i64 %223, 10
   store i64 %224, i64* %PC

@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv
   .type _ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv, @function
 
-#! file-offset 0x5e50
-#! rip-offset  0x405e50
+#! file-offset 0x5e60
+#! rip-offset  0x405e60
 #! capacity    27 bytes
 
 # Text                                                               #  Line  RIP       Bytes  Opcode             Target                
-._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv:     #        0x405e50  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                                         #  1     0x405e50  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                                    #  2     0x405e51  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x10, %rsp                                                   #  3     0x405e54  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                              #  4     0x405e58  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi                                              #  5     0x405e5c  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv  #  6     0x405e60  5      OPC=callq_label    4218480               
-  addq $0x10, %rsp                                                   #  7     0x405e65  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                                          #  8     0x405e69  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                               #  9     0x405e6a  1      OPC=retq           18446744073709551615  
+._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv:     #        0x405e60  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                                         #  1     0x405e60  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                                    #  2     0x405e61  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x10, %rsp                                                   #  3     0x405e64  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                              #  4     0x405e68  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi                                              #  5     0x405e6c  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv  #  6     0x405e70  5      OPC=callq_label    4218496               
+  addq $0x10, %rsp                                                   #  7     0x405e75  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                                          #  8     0x405e79  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                               #  9     0x405e7a  1      OPC=retq           18446744073709551615  
                                                                                                                                         
 .size _ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv, .-_ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv->4218448
+._ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv->4218464
 
 Computing Label PC values: Done.
 
@@ -434,6 +434,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 405e64 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -510,6 +512,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 405e75 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -554,3 +558,5 @@ Decompiling Function: _ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_I
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.03system 0:01.20elapsed 18%CPU (0avgtext+0avgdata 10308maxresident)k
+0inputs+144outputs (0major+5449minor)pagefaults 0swaps

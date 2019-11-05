@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN12ValueWrapperIdEC2IdEERKT_
   .type _ZN12ValueWrapperIdEC2IdEERKT_, @function
 
-#! file-offset 0x1d60
-#! rip-offset  0x401d60
+#! file-offset 0x1d70
+#! rip-offset  0x401d70
 #! capacity    30 bytes
 
 # Text                            #  Line  RIP       Bytes  Opcode             Target                
-._ZN12ValueWrapperIdEC2IdEERKT_:  #        0x401d60  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                      #  1     0x401d60  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                 #  2     0x401d61  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)           #  3     0x401d64  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)          #  4     0x401d68  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi           #  5     0x401d6c  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdi          #  6     0x401d70  4      OPC=movq_r64_m64   18446744073709551615  
-  movsd (%rdi), %xmm0             #  7     0x401d74  4      OPC=movsd_xmm_m64  18446744073709551615  
-  movsd %xmm0, (%rsi)             #  8     0x401d78  4      OPC=movsd_m64_xmm  18446744073709551615  
-  popq %rbp                       #  9     0x401d7c  1      OPC=popq_r64_1     18446744073709551615  
-  retq                            #  10    0x401d7d  1      OPC=retq           18446744073709551615  
+._ZN12ValueWrapperIdEC2IdEERKT_:  #        0x401d70  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                      #  1     0x401d70  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                 #  2     0x401d71  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)           #  3     0x401d74  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)          #  4     0x401d78  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi           #  5     0x401d7c  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdi          #  6     0x401d80  4      OPC=movq_r64_m64   18446744073709551615  
+  movsd (%rdi), %xmm0             #  7     0x401d84  4      OPC=movsd_xmm_m64  18446744073709551615  
+  movsd %xmm0, (%rsi)             #  8     0x401d88  4      OPC=movsd_m64_xmm  18446744073709551615  
+  popq %rbp                       #  9     0x401d8c  1      OPC=popq_r64_1     18446744073709551615  
+  retq                            #  10    0x401d8d  1      OPC=retq           18446744073709551615  
                                                                                                      
 .size _ZN12ValueWrapperIdEC2IdEERKT_, .-_ZN12ValueWrapperIdEC2IdEERKT_
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN12ValueWrapperIdEC2IdEERKT_->4201824
+._ZN12ValueWrapperIdEC2IdEERKT_->4201840
 
 Computing Label PC values: Done.
 
@@ -574,3 +574,5 @@ Decompiling Function: _ZN12ValueWrapperIdEC2IdEERKT_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.16user 0.06system 0:00.23elapsed 94%CPU (0avgtext+0avgdata 10036maxresident)k
+0inputs+144outputs (0major+5556minor)pagefaults 0swaps

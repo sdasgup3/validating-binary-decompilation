@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN22custom_constant_divideImE8do_shiftEm
   .type _ZN22custom_constant_divideImE8do_shiftEm, @function
 
-#! file-offset 0x10100
-#! rip-offset  0x410100
+#! file-offset 0x10110
+#! rip-offset  0x410110
 #! capacity    26 bytes
 
 # Text                                       #  Line  RIP       Bytes  Opcode              Target                
-._ZN22custom_constant_divideImE8do_shiftEm:  #        0x410100  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                 #  1     0x410100  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                            #  2     0x410101  3      OPC=movq_r64_r64    18446744073709551615  
-  movl $0x5, %eax                            #  3     0x410104  5      OPC=movl_r32_imm32  18446744073709551615  
-  movl %eax, %ecx                            #  4     0x410109  2      OPC=movl_r32_r32    18446744073709551615  
-  movq %rdi, -0x8(%rbp)                      #  5     0x41010b  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rax                      #  6     0x41010f  4      OPC=movq_r64_m64    18446744073709551615  
-  xorl %edx, %edx                            #  7     0x410113  2      OPC=xorl_r32_r32    18446744073709551615  
-  divq %rcx                                  #  8     0x410115  3      OPC=divq_r64        18446744073709551615  
-  popq %rbp                                  #  9     0x410118  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                       #  10    0x410119  1      OPC=retq            18446744073709551615  
+._ZN22custom_constant_divideImE8do_shiftEm:  #        0x410110  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                 #  1     0x410110  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                            #  2     0x410111  3      OPC=movq_r64_r64    18446744073709551615  
+  movl $0x5, %eax                            #  3     0x410114  5      OPC=movl_r32_imm32  18446744073709551615  
+  movl %eax, %ecx                            #  4     0x410119  2      OPC=movl_r32_r32    18446744073709551615  
+  movq %rdi, -0x8(%rbp)                      #  5     0x41011b  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rax                      #  6     0x41011f  4      OPC=movq_r64_m64    18446744073709551615  
+  xorl %edx, %edx                            #  7     0x410123  2      OPC=xorl_r32_r32    18446744073709551615  
+  divq %rcx                                  #  8     0x410125  3      OPC=divq_r64        18446744073709551615  
+  popq %rbp                                  #  9     0x410128  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                       #  10    0x410129  1      OPC=retq            18446744073709551615  
                                                                                                                  
 .size _ZN22custom_constant_divideImE8do_shiftEm, .-_ZN22custom_constant_divideImE8do_shiftEm
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN22custom_constant_divideImE8do_shiftEm->4260096
+._ZN22custom_constant_divideImE8do_shiftEm->4260112
 
 Computing Label PC values: Done.
 
@@ -435,6 +435,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x5___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 410114 --size 5
 Decompiling instr:movl $0x5, %eax Done...
 
 
@@ -574,3 +576,5 @@ Decompiling Function: _ZN22custom_constant_divideImE8do_shiftEm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.06system 0:02.02elapsed 15%CPU (0avgtext+0avgdata 10472maxresident)k
+0inputs+152outputs (0major+5715minor)pagefaults 0swaps

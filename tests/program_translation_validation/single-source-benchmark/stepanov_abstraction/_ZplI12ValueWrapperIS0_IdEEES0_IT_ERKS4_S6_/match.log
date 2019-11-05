@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6_] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.82user 1.14system 0:04.04elapsed 98%CPU (0avgtext+0avgdata 23616maxresident)k
+0inputs+328outputs (0major+3443minor)pagefaults 0swaps

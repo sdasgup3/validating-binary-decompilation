@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_gemm_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_gemm_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
+17.70user 27.60system 0:45.66elapsed 99%CPU (0avgtext+0avgdata 15388maxresident)k
+0inputs+5160outputs (0major+2774minor)pagefaults 0swaps

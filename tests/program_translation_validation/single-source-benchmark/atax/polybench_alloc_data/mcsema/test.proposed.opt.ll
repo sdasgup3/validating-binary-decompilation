@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_4008c0.xmalloc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4008d0.xmalloc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @polybench_alloc_data(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -185,7 +185,7 @@ entry:
   store i64 %99, i64* %102, align 8
   store i64 %101, i64* %6, align 8
   store i64 %98, i64* %3, align 8
-  %call2_4008a8 = tail call %struct.Memory* @sub_4008c0.xmalloc(%struct.State* %0, i64 %98, %struct.Memory* %2)
+  %call2_4008b8 = tail call %struct.Memory* @sub_4008d0.xmalloc(%struct.State* %0, i64 %98, %struct.Memory* %2)
   %RAX.i8 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %103 = load i64, i64* %RBP.i, align 8
   %104 = add i64 %103, -32
@@ -247,7 +247,7 @@ entry:
   store i64 %144, i64* %3, align 8
   %145 = add i64 %115, 48
   store i64 %145, i64* %6, align 8
-  ret %struct.Memory* %call2_4008a8
+  ret %struct.Memory* %call2_4008b8
 }
 
 ; Function Attrs: norecurse nounwind

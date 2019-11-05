@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN14double_pointerppEv
   .type _ZN14double_pointerppEv, @function
 
-#! file-offset 0x20c0
-#! rip-offset  0x4020c0
+#! file-offset 0x20d0
+#! rip-offset  0x4020d0
 #! capacity    27 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode             Target                
-._ZN14double_pointerppEv:  #        0x4020c0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp               #  1     0x4020c0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp          #  2     0x4020c1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)    #  3     0x4020c4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rdi    #  4     0x4020c8  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rax        #  5     0x4020cc  3      OPC=movq_r64_m64   18446744073709551615  
-  addq $0x8, %rax          #  6     0x4020cf  4      OPC=addq_r64_imm8  18446744073709551615  
-  movq %rax, (%rdi)        #  7     0x4020d3  3      OPC=movq_m64_r64   18446744073709551615  
-  movq %rdi, %rax          #  8     0x4020d6  3      OPC=movq_r64_r64   18446744073709551615  
-  popq %rbp                #  9     0x4020d9  1      OPC=popq_r64_1     18446744073709551615  
-  retq                     #  10    0x4020da  1      OPC=retq           18446744073709551615  
+._ZN14double_pointerppEv:  #        0x4020d0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp               #  1     0x4020d0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp          #  2     0x4020d1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)    #  3     0x4020d4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rdi    #  4     0x4020d8  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rax        #  5     0x4020dc  3      OPC=movq_r64_m64   18446744073709551615  
+  addq $0x8, %rax          #  6     0x4020df  4      OPC=addq_r64_imm8  18446744073709551615  
+  movq %rax, (%rdi)        #  7     0x4020e3  3      OPC=movq_m64_r64   18446744073709551615  
+  movq %rdi, %rax          #  8     0x4020e6  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                #  9     0x4020e9  1      OPC=popq_r64_1     18446744073709551615  
+  retq                     #  10    0x4020ea  1      OPC=retq           18446744073709551615  
                                                                                               
 .size _ZN14double_pointerppEv, .-_ZN14double_pointerppEv
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN14double_pointerppEv->4202688
+._ZN14double_pointerppEv->4202704
 
 Computing Label PC values: Done.
 
@@ -492,6 +492,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4020df --size 4
 Decompiling instr:addq $0x8, %rax Done...
 
 
@@ -574,3 +576,5 @@ Decompiling Function: _ZN14double_pointerppEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.14user 0.05system 0:00.60elapsed 33%CPU (0avgtext+0avgdata 10192maxresident)k
+0inputs+144outputs (0major+5669minor)pagefaults 0swaps

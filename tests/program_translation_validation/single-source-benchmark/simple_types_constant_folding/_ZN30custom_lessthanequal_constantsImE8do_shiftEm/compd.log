@@ -4,18 +4,18 @@ Disassembled output
   .globl _ZN30custom_lessthanequal_constantsImE8do_shiftEm
   .type _ZN30custom_lessthanequal_constantsImE8do_shiftEm, @function
 
-#! file-offset 0x10870
-#! rip-offset  0x410870
+#! file-offset 0x10880
+#! rip-offset  0x410880
 #! capacity    12 bytes
 
 # Text                                               #  Line  RIP       Bytes  Opcode            Target                
-._ZN30custom_lessthanequal_constantsImE8do_shiftEm:  #        0x410870  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                         #  1     0x410870  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                    #  2     0x410871  3      OPC=movq_r64_r64  18446744073709551615  
-  xorl %eax, %eax                                    #  3     0x410874  2      OPC=xorl_r32_r32  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                              #  4     0x410876  4      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                          #  5     0x41087a  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                               #  6     0x41087b  1      OPC=retq          18446744073709551615  
+._ZN30custom_lessthanequal_constantsImE8do_shiftEm:  #        0x410880  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                         #  1     0x410880  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                    #  2     0x410881  3      OPC=movq_r64_r64  18446744073709551615  
+  xorl %eax, %eax                                    #  3     0x410884  2      OPC=xorl_r32_r32  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                              #  4     0x410886  4      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                          #  5     0x41088a  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                               #  6     0x41088b  1      OPC=retq          18446744073709551615  
                                                                                                                        
 .size _ZN30custom_lessthanequal_constantsImE8do_shiftEm, .-_ZN30custom_lessthanequal_constantsImE8do_shiftEm
 Disassembling Done.
@@ -23,7 +23,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_lessthanequal_constantsImE8do_shiftEm->4262000
+._ZN30custom_lessthanequal_constantsImE8do_shiftEm->4262016
 
 Computing Label PC values: Done.
 
@@ -494,3 +494,5 @@ Decompiling Function: _ZN30custom_lessthanequal_constantsImE8do_shiftEm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.05system 0:00.29elapsed 89%CPU (0avgtext+0avgdata 10380maxresident)k
+0inputs+136outputs (0major+4323minor)pagefaults 0swaps

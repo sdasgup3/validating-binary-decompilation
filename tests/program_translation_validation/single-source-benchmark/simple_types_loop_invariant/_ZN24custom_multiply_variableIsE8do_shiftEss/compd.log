@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN24custom_multiply_variableIsE8do_shiftEss
   .type _ZN24custom_multiply_variableIsE8do_shiftEss, @function
 
-#! file-offset 0x11d40
-#! rip-offset  0x411d40
+#! file-offset 0x11d50
+#! rip-offset  0x411d50
 #! capacity    35 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode              Target                
-._ZN24custom_multiply_variableIsE8do_shiftEss:  #        0x411d40  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                    #  1     0x411d40  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x411d41  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %si, %ax                                 #  3     0x411d44  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %di, %cx                                 #  4     0x411d47  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %cx, -0x2(%rbp)                          #  5     0x411d4a  4      OPC=movw_m16_r16    18446744073709551615  
-  movw %ax, -0x4(%rbp)                          #  6     0x411d4e  4      OPC=movw_m16_r16    18446744073709551615  
-  movswl -0x2(%rbp), %esi                       #  7     0x411d52  4      OPC=movswl_r32_m16  18446744073709551615  
-  movswl -0x4(%rbp), %edi                       #  8     0x411d56  4      OPC=movswl_r32_m16  18446744073709551615  
-  imull %edi, %esi                              #  9     0x411d5a  3      OPC=imull_r32_r32   18446744073709551615  
-  movw %si, %ax                                 #  10    0x411d5d  3      OPC=movw_r16_r16    18446744073709551615  
-  cwtl                                          #  11    0x411d60  1      OPC=cwtl            18446744073709551615  
-  popq %rbp                                     #  12    0x411d61  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                          #  13    0x411d62  1      OPC=retq            18446744073709551615  
+._ZN24custom_multiply_variableIsE8do_shiftEss:  #        0x411d50  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                    #  1     0x411d50  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x411d51  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %si, %ax                                 #  3     0x411d54  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %di, %cx                                 #  4     0x411d57  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %cx, -0x2(%rbp)                          #  5     0x411d5a  4      OPC=movw_m16_r16    18446744073709551615  
+  movw %ax, -0x4(%rbp)                          #  6     0x411d5e  4      OPC=movw_m16_r16    18446744073709551615  
+  movswl -0x2(%rbp), %esi                       #  7     0x411d62  4      OPC=movswl_r32_m16  18446744073709551615  
+  movswl -0x4(%rbp), %edi                       #  8     0x411d66  4      OPC=movswl_r32_m16  18446744073709551615  
+  imull %edi, %esi                              #  9     0x411d6a  3      OPC=imull_r32_r32   18446744073709551615  
+  movw %si, %ax                                 #  10    0x411d6d  3      OPC=movw_r16_r16    18446744073709551615  
+  cwtl                                          #  11    0x411d70  1      OPC=cwtl            18446744073709551615  
+  popq %rbp                                     #  12    0x411d71  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                          #  13    0x411d72  1      OPC=retq            18446744073709551615  
                                                                                                                     
 .size _ZN24custom_multiply_variableIsE8do_shiftEss, .-_ZN24custom_multiply_variableIsE8do_shiftEss
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN24custom_multiply_variableIsE8do_shiftEss->4267328
+._ZN24custom_multiply_variableIsE8do_shiftEss->4267344
 
 Computing Label PC values: Done.
 
@@ -633,3 +633,5 @@ Decompiling Function: _ZN24custom_multiply_variableIsE8do_shiftEss Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.07system 0:00.36elapsed 87%CPU (0avgtext+0avgdata 10272maxresident)k
+0inputs+160outputs (0major+6619minor)pagefaults 0swaps

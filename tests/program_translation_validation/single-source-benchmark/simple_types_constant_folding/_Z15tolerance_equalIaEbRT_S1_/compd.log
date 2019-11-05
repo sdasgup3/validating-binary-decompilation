@@ -4,35 +4,35 @@ Disassembled output
   .globl _Z15tolerance_equalIaEbRT_S1_
   .type _Z15tolerance_equalIaEbRT_S1_, @function
 
-#! file-offset 0x17760
-#! rip-offset  0x417760
+#! file-offset 0x17770
+#! rip-offset  0x417770
 #! capacity    77 bytes
 
 # Text                           #  Line  RIP       Bytes  Opcode                 Target                
-._Z15tolerance_equalIaEbRT_S1_:  #        0x417760  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                     #  1     0x417760  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp                #  2     0x417761  3      OPC=movq_r64_r64       18446744073709551615  
-  subq $0x20, %rsp               #  3     0x417764  4      OPC=subq_r64_imm8      18446744073709551615  
-  movq %rdi, -0x8(%rbp)          #  4     0x417768  4      OPC=movq_m64_r64       18446744073709551615  
-  movq %rsi, -0x10(%rbp)         #  5     0x41776c  4      OPC=movq_m64_r64       18446744073709551615  
-  movq -0x8(%rbp), %rsi          #  6     0x417770  4      OPC=movq_r64_m64       18446744073709551615  
-  movsbl (%rsi), %eax            #  7     0x417774  3      OPC=movsbl_r32_m8      18446744073709551615  
-  movq -0x10(%rbp), %rsi         #  8     0x417777  4      OPC=movq_r64_m64       18446744073709551615  
-  movsbl (%rsi), %ecx            #  9     0x41777b  3      OPC=movsbl_r32_m8      18446744073709551615  
-  subl %ecx, %eax                #  10    0x41777e  2      OPC=subl_r32_r32       18446744073709551615  
-  movb %al, %dl                  #  11    0x417780  2      OPC=movb_r8_r8         18446744073709551615  
-  movb %dl, -0x11(%rbp)          #  12    0x417782  3      OPC=movb_m8_r8         18446744073709551615  
-  movsbl -0x11(%rbp), %edi       #  13    0x417785  4      OPC=movsbl_r32_m8      18446744073709551615  
-  callq .abs_plt                 #  14    0x417789  5      OPC=callq_label        4195952               
-  movsd 0x12b2(%rip), %xmm0      #  15    0x41778e  8      OPC=movsd_xmm_m64      18446744073709551615  
-  cvtsi2sdl %eax, %xmm1          #  16    0x417796  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
-  ucomisd %xmm1, %xmm0           #  17    0x41779a  4      OPC=ucomisd_xmm_xmm    18446744073709551615  
-  seta %dl                       #  18    0x41779e  3      OPC=seta_r8            18446744073709551615  
-  andb $0x1, %dl                 #  19    0x4177a1  3      OPC=andb_r8_imm8       18446744073709551615  
-  movzbl %dl, %eax               #  20    0x4177a4  3      OPC=movzbl_r32_r8      18446744073709551615  
-  addq $0x20, %rsp               #  21    0x4177a7  4      OPC=addq_r64_imm8      18446744073709551615  
-  popq %rbp                      #  22    0x4177ab  1      OPC=popq_r64_1         18446744073709551615  
-  retq                           #  23    0x4177ac  1      OPC=retq               18446744073709551615  
+._Z15tolerance_equalIaEbRT_S1_:  #        0x417770  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                     #  1     0x417770  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp                #  2     0x417771  3      OPC=movq_r64_r64       18446744073709551615  
+  subq $0x20, %rsp               #  3     0x417774  4      OPC=subq_r64_imm8      18446744073709551615  
+  movq %rdi, -0x8(%rbp)          #  4     0x417778  4      OPC=movq_m64_r64       18446744073709551615  
+  movq %rsi, -0x10(%rbp)         #  5     0x41777c  4      OPC=movq_m64_r64       18446744073709551615  
+  movq -0x8(%rbp), %rsi          #  6     0x417780  4      OPC=movq_r64_m64       18446744073709551615  
+  movsbl (%rsi), %eax            #  7     0x417784  3      OPC=movsbl_r32_m8      18446744073709551615  
+  movq -0x10(%rbp), %rsi         #  8     0x417787  4      OPC=movq_r64_m64       18446744073709551615  
+  movsbl (%rsi), %ecx            #  9     0x41778b  3      OPC=movsbl_r32_m8      18446744073709551615  
+  subl %ecx, %eax                #  10    0x41778e  2      OPC=subl_r32_r32       18446744073709551615  
+  movb %al, %dl                  #  11    0x417790  2      OPC=movb_r8_r8         18446744073709551615  
+  movb %dl, -0x11(%rbp)          #  12    0x417792  3      OPC=movb_m8_r8         18446744073709551615  
+  movsbl -0x11(%rbp), %edi       #  13    0x417795  4      OPC=movsbl_r32_m8      18446744073709551615  
+  callq .abs_plt                 #  14    0x417799  5      OPC=callq_label        4195968               
+  movsd 0x12b2(%rip), %xmm0      #  15    0x41779e  8      OPC=movsd_xmm_m64      18446744073709551615  
+  cvtsi2sdl %eax, %xmm1          #  16    0x4177a6  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
+  ucomisd %xmm1, %xmm0           #  17    0x4177aa  4      OPC=ucomisd_xmm_xmm    18446744073709551615  
+  seta %dl                       #  18    0x4177ae  3      OPC=seta_r8            18446744073709551615  
+  andb $0x1, %dl                 #  19    0x4177b1  3      OPC=andb_r8_imm8       18446744073709551615  
+  movzbl %dl, %eax               #  20    0x4177b4  3      OPC=movzbl_r32_r8      18446744073709551615  
+  addq $0x20, %rsp               #  21    0x4177b7  4      OPC=addq_r64_imm8      18446744073709551615  
+  popq %rbp                      #  22    0x4177bb  1      OPC=popq_r64_1         18446744073709551615  
+  retq                           #  23    0x4177bc  1      OPC=retq               18446744073709551615  
                                                                                                         
 .size _Z15tolerance_equalIaEbRT_S1_, .-_Z15tolerance_equalIaEbRT_S1_
 Disassembling Done.
@@ -40,7 +40,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z15tolerance_equalIaEbRT_S1_->4290400
+._Z15tolerance_equalIaEbRT_S1_->4290416
 
 Computing Label PC values: Done.
 
@@ -448,6 +448,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 417774 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -752,6 +754,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___dl
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4177b1 --size 3
 Decompiling instr:andb $0x1, %dl Done...
 
 
@@ -790,6 +794,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4177b7 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -834,3 +840,5 @@ Decompiling Function: _Z15tolerance_equalIaEbRT_S1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.42user 0.07system 0:05.59elapsed 9%CPU (0avgtext+0avgdata 10492maxresident)k
+0inputs+232outputs (0major+10444minor)pagefaults 0swaps

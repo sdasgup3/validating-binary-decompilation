@@ -42,9 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400610.eval_A_times_u(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400620.eval_A_times_u(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006b0.eval_At_times_u(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4006c0.eval_At_times_u(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @eval_AtA_times_u(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -215,7 +215,7 @@ entry:
   store i64 %118, i64* %121, align 8
   store i64 %120, i64* %6, align 8
   store i64 %117, i64* %3, align 8
-  %call2_40079f = tail call %struct.Memory* @sub_400610.eval_A_times_u(%struct.State* %0, i64 %117, %struct.Memory* %2)
+  %call2_4007af = tail call %struct.Memory* @sub_400620.eval_A_times_u(%struct.State* %0, i64 %117, %struct.Memory* %2)
   %122 = load i64, i64* %RBP.i, align 8
   %123 = add i64 %122, -4
   %124 = load i64, i64* %3, align 8
@@ -245,7 +245,7 @@ entry:
   store i64 %138, i64* %141, align 8
   store i64 %140, i64* %6, align 8
   store i64 %137, i64* %3, align 8
-  %call2_4007af = tail call %struct.Memory* @sub_4006b0.eval_At_times_u(%struct.State* %0, i64 %137, %struct.Memory* %call2_40079f)
+  %call2_4007bf = tail call %struct.Memory* @sub_4006c0.eval_At_times_u(%struct.State* %0, i64 %137, %struct.Memory* %call2_4007af)
   %142 = load i64, i64* %RBP.i, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %3, align 8
@@ -269,7 +269,7 @@ entry:
   store i64 %154, i64* %3, align 8
   %155 = add i64 %142, 16
   store i64 %155, i64* %6, align 8
-  ret %struct.Memory* %call2_4007af
+  ret %struct.Memory* %call2_4007bf
 }
 
 ; Function Attrs: norecurse nounwind

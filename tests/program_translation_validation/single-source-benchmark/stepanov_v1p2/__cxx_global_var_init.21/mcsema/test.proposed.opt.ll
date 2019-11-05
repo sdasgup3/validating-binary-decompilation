@@ -4,6 +4,8 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x60ce98_type = type <{ [8 x i8] }>
+%G__0x60ced0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,11 +40,13 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x60ce98 = local_unnamed_addr global %G_0x60ce98_type zeroinitializer
+@G__0x60ced0 = global %G__0x60ced0_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401200._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401210._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @__cxx_global_var_init.21(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -96,9 +100,9 @@ entry:
   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 %38, i8* %39, align 1
   %RDI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
-  store i64 6344400, i64* %RDI.i, align 8
+  store i64 ptrtoint (%G__0x60ced0_type* @G__0x60ced0 to i64), i64* %RDI.i, align 8
   %RAX.i11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %40 = load i64, i64* inttoptr (i64 6344344 to i64*), align 8
+  %40 = load i64, i64* bitcast (%G_0x60ce98_type* @G_0x60ce98 to i64*), align 8
   store i64 %40, i64* %RAX.i11, align 8
   %41 = add i64 %7, -16
   %42 = add i64 %10, 29
@@ -122,7 +126,7 @@ entry:
   store i64 %51, i64* %54, align 8
   store i64 %53, i64* %6, align 8
   store i64 %50, i64* %3, align 8
-  %call2_4008b2 = tail call %struct.Memory* @sub_401200._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2_(%struct.State* %0, i64 %50, %struct.Memory* %2)
+  %call2_4008c2 = tail call %struct.Memory* @sub_401210._ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2_(%struct.State* %0, i64 %50, %struct.Memory* %2)
   %55 = load i64, i64* %6, align 8
   %56 = load i64, i64* %3, align 8
   %57 = add i64 %55, 16
@@ -169,7 +173,7 @@ entry:
   store i64 %86, i64* %3, align 8
   %87 = add i64 %55, 32
   store i64 %87, i64* %6, align 8
-  ret %struct.Memory* %call2_4008b2
+  ret %struct.Memory* %call2_4008c2
 }
 
 ; Function Attrs: norecurse nounwind
@@ -260,7 +264,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 6344400, i64* %RDI, align 8
+  store i64 ptrtoint (%G__0x60ced0_type* @G__0x60ced0 to i64), i64* %RDI, align 8
   ret %struct.Memory* %2
 }
 
@@ -272,7 +276,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 6344344 to i64*), align 8
+  %5 = load i64, i64* bitcast (%G_0x60ce98_type* @G_0x60ce98 to i64*), align 8
   store i64 %5, i64* %RAX, align 8
   ret %struct.Memory* %2
 }

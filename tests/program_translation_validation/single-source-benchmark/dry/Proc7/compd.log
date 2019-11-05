@@ -4,27 +4,27 @@ Disassembled output
   .globl Proc7
   .type Proc7, @function
 
-#! file-offset 0xa20
-#! rip-offset  0x400a20
+#! file-offset 0xa30
+#! rip-offset  0x400a30
 #! capacity    40 bytes
 
 # Text                    #  Line  RIP       Bytes  Opcode             Target                
-.Proc7:                   #        0x400a20  0      OPC=<label>        18446744073709551615  
-  pushq %rbp              #  1     0x400a20  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp         #  2     0x400a21  3      OPC=movq_r64_r64   18446744073709551615  
-  movl %edi, -0x8(%rbp)   #  3     0x400a24  3      OPC=movl_m32_r32   18446744073709551615  
-  movl %esi, -0xc(%rbp)   #  4     0x400a27  3      OPC=movl_m32_r32   18446744073709551615  
-  movq %rdx, -0x18(%rbp)  #  5     0x400a2a  4      OPC=movq_m64_r64   18446744073709551615  
-  movl -0x8(%rbp), %esi   #  6     0x400a2e  3      OPC=movl_r32_m32   18446744073709551615  
-  addl $0x2, %esi         #  7     0x400a31  3      OPC=addl_r32_imm8  18446744073709551615  
-  movl %esi, -0x1c(%rbp)  #  8     0x400a34  3      OPC=movl_m32_r32   18446744073709551615  
-  movl -0xc(%rbp), %esi   #  9     0x400a37  3      OPC=movl_r32_m32   18446744073709551615  
-  addl -0x1c(%rbp), %esi  #  10    0x400a3a  3      OPC=addl_r32_m32   18446744073709551615  
-  movq -0x18(%rbp), %rdx  #  11    0x400a3d  4      OPC=movq_r64_m64   18446744073709551615  
-  movl %esi, (%rdx)       #  12    0x400a41  2      OPC=movl_m32_r32   18446744073709551615  
-  movl -0x4(%rbp), %eax   #  13    0x400a43  3      OPC=movl_r32_m32   18446744073709551615  
-  popq %rbp               #  14    0x400a46  1      OPC=popq_r64_1     18446744073709551615  
-  retq                    #  15    0x400a47  1      OPC=retq           18446744073709551615  
+.Proc7:                   #        0x400a30  0      OPC=<label>        18446744073709551615  
+  pushq %rbp              #  1     0x400a30  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp         #  2     0x400a31  3      OPC=movq_r64_r64   18446744073709551615  
+  movl %edi, -0x8(%rbp)   #  3     0x400a34  3      OPC=movl_m32_r32   18446744073709551615  
+  movl %esi, -0xc(%rbp)   #  4     0x400a37  3      OPC=movl_m32_r32   18446744073709551615  
+  movq %rdx, -0x18(%rbp)  #  5     0x400a3a  4      OPC=movq_m64_r64   18446744073709551615  
+  movl -0x8(%rbp), %esi   #  6     0x400a3e  3      OPC=movl_r32_m32   18446744073709551615  
+  addl $0x2, %esi         #  7     0x400a41  3      OPC=addl_r32_imm8  18446744073709551615  
+  movl %esi, -0x1c(%rbp)  #  8     0x400a44  3      OPC=movl_m32_r32   18446744073709551615  
+  movl -0xc(%rbp), %esi   #  9     0x400a47  3      OPC=movl_r32_m32   18446744073709551615  
+  addl -0x1c(%rbp), %esi  #  10    0x400a4a  3      OPC=addl_r32_m32   18446744073709551615  
+  movq -0x18(%rbp), %rdx  #  11    0x400a4d  4      OPC=movq_r64_m64   18446744073709551615  
+  movl %esi, (%rdx)       #  12    0x400a51  2      OPC=movl_m32_r32   18446744073709551615  
+  movl -0x4(%rbp), %eax   #  13    0x400a53  3      OPC=movl_r32_m32   18446744073709551615  
+  popq %rbp               #  14    0x400a56  1      OPC=popq_r64_1     18446744073709551615  
+  retq                    #  15    0x400a57  1      OPC=retq           18446744073709551615  
                                                                                              
 .size Proc7, .-Proc7
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Proc7->4196896
+.Proc7->4196912
 
 Computing Label PC values: Done.
 
@@ -516,6 +516,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x2___esi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a41 --size 3
 Decompiling instr:addl $0x2, %esi Done...
 
 
@@ -674,3 +676,5 @@ Decompiling Function: Proc7 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.04system 0:00.54elapsed 51%CPU (0avgtext+0avgdata 10352maxresident)k
+0inputs+176outputs (0major+7329minor)pagefaults 0swaps

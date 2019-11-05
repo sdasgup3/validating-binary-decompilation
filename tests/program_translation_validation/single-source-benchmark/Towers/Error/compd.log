@@ -4,25 +4,25 @@ Disassembled output
   .globl Error
   .type Error, @function
 
-#! file-offset 0x570
-#! rip-offset  0x400570
+#! file-offset 0x580
+#! rip-offset  0x400580
 #! capacity    45 bytes
 
 # Text                   #  Line  RIP       Bytes  Opcode              Target                
-.Error:                  #        0x400570  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x400570  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400571  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp       #  3     0x400574  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq $0x400a14, %rax   #  4     0x400578  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  5     0x400582  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rsi  #  6     0x400586  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rax, %rdi        #  7     0x40058a  3      OPC=movq_r64_r64    18446744073709551615  
-  movb $0x0, %al         #  8     0x40058d  2      OPC=movb_r8_imm8    18446744073709551615  
-  callq .printf_plt      #  9     0x40058f  5      OPC=callq_label     4195344               
-  movl %eax, -0xc(%rbp)  #  10    0x400594  3      OPC=movl_m32_r32    18446744073709551615  
-  addq $0x10, %rsp       #  11    0x400597  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp              #  12    0x40059b  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  13    0x40059c  1      OPC=retq            18446744073709551615  
+.Error:                  #        0x400580  0      OPC=<label>         18446744073709551615  
+  pushq %rbp             #  1     0x400580  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp        #  2     0x400581  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x10, %rsp       #  3     0x400584  4      OPC=subq_r64_imm8   18446744073709551615  
+  movq $0x400a24, %rax   #  4     0x400588  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)  #  5     0x400592  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rsi  #  6     0x400596  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rax, %rdi        #  7     0x40059a  3      OPC=movq_r64_r64    18446744073709551615  
+  movb $0x0, %al         #  8     0x40059d  2      OPC=movb_r8_imm8    18446744073709551615  
+  callq .printf_plt      #  9     0x40059f  5      OPC=callq_label     4195360               
+  movl %eax, -0xc(%rbp)  #  10    0x4005a4  3      OPC=movl_m32_r32    18446744073709551615  
+  addq $0x10, %rsp       #  11    0x4005a7  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp              #  12    0x4005ab  1      OPC=popq_r64_1      18446744073709551615  
+  retq                   #  13    0x4005ac  1      OPC=retq            18446744073709551615  
                                                                                              
 .size Error, .-Error
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Error->4195696
+.Error->4195712
 
 Computing Label PC values: Done.
 
@@ -438,26 +438,31 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400584 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
-Decompiling instr:movq $0x400a14, %rax...
-Instr: movq $0x400a14, %rax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400a14___rax
+Decompiling instr:movq $0x400a24, %rax...
+Instr: movq $0x400a24, %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400a24___rax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400a14___rax/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400a24___rax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x400a14___rax
-Decompiling instr:movq $0x400a14, %rax Done...
+FuncCache inserted: routine_movq__0x400a24___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400588 --size 10
+Global Access Mismatch: 4196900 Relocation: Address, McSema: Constant
+Decompiling instr:movq $0x400a24, %rax Done...
 
 
 Decompiling instr:movq %rdi, -0x8(%rbp)...
@@ -533,6 +538,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__0x0___al
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40059d --size 2
 Decompiling instr:movb $0x0, %al Done...
 
 
@@ -590,6 +597,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4005a7 --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -634,3 +643,5 @@ Decompiling Function: Error Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.19user 0.05system 0:01.16elapsed 20%CPU (0avgtext+0avgdata 10452maxresident)k
+0inputs+168outputs (0major+6847minor)pagefaults 0swaps

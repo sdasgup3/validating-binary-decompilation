@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN33custom_greaterthanequal_constantsItE8do_shiftEt] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN33custom_greaterthanequal_constantsItE8do_shiftEt] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.65user 0.08system 0:02.79elapsed 97%CPU (0avgtext+0avgdata 65992maxresident)k
+0inputs+40outputs (0major+12816minor)pagefaults 0swaps

@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN24custom_multiply_variableImE8do_shiftEmm
   .type _ZN24custom_multiply_variableImE8do_shiftEmm, @function
 
-#! file-offset 0xdbc0
-#! rip-offset  0x40dbc0
+#! file-offset 0xdbd0
+#! rip-offset  0x40dbd0
 #! capacity    26 bytes
 
 # Text                                          #  Line  RIP       Bytes  Opcode             Target                
-._ZN24custom_multiply_variableImE8do_shiftEmm:  #        0x40dbc0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                    #  1     0x40dbc0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                               #  2     0x40dbc1  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)                         #  3     0x40dbc4  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)                        #  4     0x40dbc8  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi                         #  5     0x40dbcc  4      OPC=movq_r64_m64   18446744073709551615  
-  imulq -0x10(%rbp), %rsi                       #  6     0x40dbd0  5      OPC=imulq_r64_m64  18446744073709551615  
-  movq %rsi, %rax                               #  7     0x40dbd5  3      OPC=movq_r64_r64   18446744073709551615  
-  popq %rbp                                     #  8     0x40dbd8  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                          #  9     0x40dbd9  1      OPC=retq           18446744073709551615  
+._ZN24custom_multiply_variableImE8do_shiftEmm:  #        0x40dbd0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                    #  1     0x40dbd0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                               #  2     0x40dbd1  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)                         #  3     0x40dbd4  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)                        #  4     0x40dbd8  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi                         #  5     0x40dbdc  4      OPC=movq_r64_m64   18446744073709551615  
+  imulq -0x10(%rbp), %rsi                       #  6     0x40dbe0  5      OPC=imulq_r64_m64  18446744073709551615  
+  movq %rsi, %rax                               #  7     0x40dbe5  3      OPC=movq_r64_r64   18446744073709551615  
+  popq %rbp                                     #  8     0x40dbe8  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                          #  9     0x40dbe9  1      OPC=retq           18446744073709551615  
                                                                                                                    
 .size _ZN24custom_multiply_variableImE8do_shiftEmm, .-_ZN24custom_multiply_variableImE8do_shiftEmm
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN24custom_multiply_variableImE8do_shiftEmm->4250560
+._ZN24custom_multiply_variableImE8do_shiftEmm->4250576
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN24custom_multiply_variableImE8do_shiftEmm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:00.27elapsed 100%CPU (0avgtext+0avgdata 10212maxresident)k
+0inputs+144outputs (0major+5300minor)pagefaults 0swaps

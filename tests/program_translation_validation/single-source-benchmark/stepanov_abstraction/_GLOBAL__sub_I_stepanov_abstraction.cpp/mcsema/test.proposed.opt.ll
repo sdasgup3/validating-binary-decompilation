@@ -39,37 +39,37 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 
-declare %struct.Memory* @sub_4007d0.__cxx_global_var_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0.__cxx_global_var_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400830.__cxx_global_var_init_11(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400840.__cxx_global_var_init_11(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400890.__cxx_global_var_init_12(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4008a0.__cxx_global_var_init_12(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4008f0.__cxx_global_var_init_13(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400900.__cxx_global_var_init_13(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400950.__cxx_global_var_init_14(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400960.__cxx_global_var_init_14(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400970.__cxx_global_var_init_15(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400980.__cxx_global_var_init_15(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400990.__cxx_global_var_init_16(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009a0.__cxx_global_var_init_16(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009b0.__cxx_global_var_init_17(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009c0.__cxx_global_var_init_17(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009d0.__cxx_global_var_init_18(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009e0.__cxx_global_var_init_18(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009f0.__cxx_global_var_init_19(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a00.__cxx_global_var_init_19(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a10.__cxx_global_var_init_20(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a20.__cxx_global_var_init_20(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a30.__cxx_global_var_init_21(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a40.__cxx_global_var_init_21(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a50.__cxx_global_var_init_22(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a60.__cxx_global_var_init_22(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a70.__cxx_global_var_init_23(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a80.__cxx_global_var_init_23(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a90.__cxx_global_var_init_24(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400aa0.__cxx_global_var_init_24(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400ab0.__cxx_global_var_init_25(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ac0.__cxx_global_var_init_25(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_GLOBAL__sub_I_stepanov_abstraction.cpp(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -93,7 +93,7 @@ entry:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %6, align 8
   store i64 %11, i64* %3, align 8
-  %call2_400774 = tail call %struct.Memory* @sub_4007d0.__cxx_global_var_init(%struct.State* %0, i64 %11, %struct.Memory* %2)
+  %call2_400784 = tail call %struct.Memory* @sub_4007e0.__cxx_global_var_init(%struct.State* %0, i64 %11, %struct.Memory* %2)
   %15 = load i64, i64* %3, align 8
   %16 = add i64 %15, 183
   %17 = add i64 %15, 5
@@ -103,7 +103,7 @@ entry:
   store i64 %17, i64* %20, align 8
   store i64 %19, i64* %6, align 8
   store i64 %16, i64* %3, align 8
-  %call2_400779 = tail call %struct.Memory* @sub_400830.__cxx_global_var_init_11(%struct.State* %0, i64 %16, %struct.Memory* %call2_400774)
+  %call2_400789 = tail call %struct.Memory* @sub_400840.__cxx_global_var_init_11(%struct.State* %0, i64 %16, %struct.Memory* %call2_400784)
   %21 = load i64, i64* %3, align 8
   %22 = add i64 %21, 274
   %23 = add i64 %21, 5
@@ -113,7 +113,7 @@ entry:
   store i64 %23, i64* %26, align 8
   store i64 %25, i64* %6, align 8
   store i64 %22, i64* %3, align 8
-  %call2_40077e = tail call %struct.Memory* @sub_400890.__cxx_global_var_init_12(%struct.State* %0, i64 %22, %struct.Memory* %call2_400779)
+  %call2_40078e = tail call %struct.Memory* @sub_4008a0.__cxx_global_var_init_12(%struct.State* %0, i64 %22, %struct.Memory* %call2_400789)
   %27 = load i64, i64* %3, align 8
   %28 = add i64 %27, 365
   %29 = add i64 %27, 5
@@ -123,7 +123,7 @@ entry:
   store i64 %29, i64* %32, align 8
   store i64 %31, i64* %6, align 8
   store i64 %28, i64* %3, align 8
-  %call2_400783 = tail call %struct.Memory* @sub_4008f0.__cxx_global_var_init_13(%struct.State* %0, i64 %28, %struct.Memory* %call2_40077e)
+  %call2_400793 = tail call %struct.Memory* @sub_400900.__cxx_global_var_init_13(%struct.State* %0, i64 %28, %struct.Memory* %call2_40078e)
   %33 = load i64, i64* %3, align 8
   %34 = add i64 %33, 456
   %35 = add i64 %33, 5
@@ -133,7 +133,7 @@ entry:
   store i64 %35, i64* %38, align 8
   store i64 %37, i64* %6, align 8
   store i64 %34, i64* %3, align 8
-  %call2_400788 = tail call %struct.Memory* @sub_400950.__cxx_global_var_init_14(%struct.State* %0, i64 %34, %struct.Memory* %call2_400783)
+  %call2_400798 = tail call %struct.Memory* @sub_400960.__cxx_global_var_init_14(%struct.State* %0, i64 %34, %struct.Memory* %call2_400793)
   %39 = load i64, i64* %3, align 8
   %40 = add i64 %39, 483
   %41 = add i64 %39, 5
@@ -143,7 +143,7 @@ entry:
   store i64 %41, i64* %44, align 8
   store i64 %43, i64* %6, align 8
   store i64 %40, i64* %3, align 8
-  %call2_40078d = tail call %struct.Memory* @sub_400970.__cxx_global_var_init_15(%struct.State* %0, i64 %40, %struct.Memory* %call2_400788)
+  %call2_40079d = tail call %struct.Memory* @sub_400980.__cxx_global_var_init_15(%struct.State* %0, i64 %40, %struct.Memory* %call2_400798)
   %45 = load i64, i64* %3, align 8
   %46 = add i64 %45, 510
   %47 = add i64 %45, 5
@@ -153,7 +153,7 @@ entry:
   store i64 %47, i64* %50, align 8
   store i64 %49, i64* %6, align 8
   store i64 %46, i64* %3, align 8
-  %call2_400792 = tail call %struct.Memory* @sub_400990.__cxx_global_var_init_16(%struct.State* %0, i64 %46, %struct.Memory* %call2_40078d)
+  %call2_4007a2 = tail call %struct.Memory* @sub_4009a0.__cxx_global_var_init_16(%struct.State* %0, i64 %46, %struct.Memory* %call2_40079d)
   %51 = load i64, i64* %3, align 8
   %52 = add i64 %51, 537
   %53 = add i64 %51, 5
@@ -163,7 +163,7 @@ entry:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %6, align 8
   store i64 %52, i64* %3, align 8
-  %call2_400797 = tail call %struct.Memory* @sub_4009b0.__cxx_global_var_init_17(%struct.State* %0, i64 %52, %struct.Memory* %call2_400792)
+  %call2_4007a7 = tail call %struct.Memory* @sub_4009c0.__cxx_global_var_init_17(%struct.State* %0, i64 %52, %struct.Memory* %call2_4007a2)
   %57 = load i64, i64* %3, align 8
   %58 = add i64 %57, 564
   %59 = add i64 %57, 5
@@ -173,7 +173,7 @@ entry:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %6, align 8
   store i64 %58, i64* %3, align 8
-  %call2_40079c = tail call %struct.Memory* @sub_4009d0.__cxx_global_var_init_18(%struct.State* %0, i64 %58, %struct.Memory* %call2_400797)
+  %call2_4007ac = tail call %struct.Memory* @sub_4009e0.__cxx_global_var_init_18(%struct.State* %0, i64 %58, %struct.Memory* %call2_4007a7)
   %63 = load i64, i64* %3, align 8
   %64 = add i64 %63, 591
   %65 = add i64 %63, 5
@@ -183,7 +183,7 @@ entry:
   store i64 %65, i64* %68, align 8
   store i64 %67, i64* %6, align 8
   store i64 %64, i64* %3, align 8
-  %call2_4007a1 = tail call %struct.Memory* @sub_4009f0.__cxx_global_var_init_19(%struct.State* %0, i64 %64, %struct.Memory* %call2_40079c)
+  %call2_4007b1 = tail call %struct.Memory* @sub_400a00.__cxx_global_var_init_19(%struct.State* %0, i64 %64, %struct.Memory* %call2_4007ac)
   %69 = load i64, i64* %3, align 8
   %70 = add i64 %69, 618
   %71 = add i64 %69, 5
@@ -193,7 +193,7 @@ entry:
   store i64 %71, i64* %74, align 8
   store i64 %73, i64* %6, align 8
   store i64 %70, i64* %3, align 8
-  %call2_4007a6 = tail call %struct.Memory* @sub_400a10.__cxx_global_var_init_20(%struct.State* %0, i64 %70, %struct.Memory* %call2_4007a1)
+  %call2_4007b6 = tail call %struct.Memory* @sub_400a20.__cxx_global_var_init_20(%struct.State* %0, i64 %70, %struct.Memory* %call2_4007b1)
   %75 = load i64, i64* %3, align 8
   %76 = add i64 %75, 645
   %77 = add i64 %75, 5
@@ -203,7 +203,7 @@ entry:
   store i64 %77, i64* %80, align 8
   store i64 %79, i64* %6, align 8
   store i64 %76, i64* %3, align 8
-  %call2_4007ab = tail call %struct.Memory* @sub_400a30.__cxx_global_var_init_21(%struct.State* %0, i64 %76, %struct.Memory* %call2_4007a6)
+  %call2_4007bb = tail call %struct.Memory* @sub_400a40.__cxx_global_var_init_21(%struct.State* %0, i64 %76, %struct.Memory* %call2_4007b6)
   %81 = load i64, i64* %3, align 8
   %82 = add i64 %81, 672
   %83 = add i64 %81, 5
@@ -213,7 +213,7 @@ entry:
   store i64 %83, i64* %86, align 8
   store i64 %85, i64* %6, align 8
   store i64 %82, i64* %3, align 8
-  %call2_4007b0 = tail call %struct.Memory* @sub_400a50.__cxx_global_var_init_22(%struct.State* %0, i64 %82, %struct.Memory* %call2_4007ab)
+  %call2_4007c0 = tail call %struct.Memory* @sub_400a60.__cxx_global_var_init_22(%struct.State* %0, i64 %82, %struct.Memory* %call2_4007bb)
   %87 = load i64, i64* %3, align 8
   %88 = add i64 %87, 699
   %89 = add i64 %87, 5
@@ -223,7 +223,7 @@ entry:
   store i64 %89, i64* %92, align 8
   store i64 %91, i64* %6, align 8
   store i64 %88, i64* %3, align 8
-  %call2_4007b5 = tail call %struct.Memory* @sub_400a70.__cxx_global_var_init_23(%struct.State* %0, i64 %88, %struct.Memory* %call2_4007b0)
+  %call2_4007c5 = tail call %struct.Memory* @sub_400a80.__cxx_global_var_init_23(%struct.State* %0, i64 %88, %struct.Memory* %call2_4007c0)
   %93 = load i64, i64* %3, align 8
   %94 = add i64 %93, 726
   %95 = add i64 %93, 5
@@ -233,7 +233,7 @@ entry:
   store i64 %95, i64* %98, align 8
   store i64 %97, i64* %6, align 8
   store i64 %94, i64* %3, align 8
-  %call2_4007ba = tail call %struct.Memory* @sub_400a90.__cxx_global_var_init_24(%struct.State* %0, i64 %94, %struct.Memory* %call2_4007b5)
+  %call2_4007ca = tail call %struct.Memory* @sub_400aa0.__cxx_global_var_init_24(%struct.State* %0, i64 %94, %struct.Memory* %call2_4007c5)
   %99 = load i64, i64* %3, align 8
   %100 = add i64 %99, 753
   %101 = add i64 %99, 5
@@ -243,7 +243,7 @@ entry:
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %6, align 8
   store i64 %100, i64* %3, align 8
-  %call2_4007bf = tail call %struct.Memory* @sub_400ab0.__cxx_global_var_init_25(%struct.State* %0, i64 %100, %struct.Memory* %call2_4007ba)
+  %call2_4007cf = tail call %struct.Memory* @sub_400ac0.__cxx_global_var_init_25(%struct.State* %0, i64 %100, %struct.Memory* %call2_4007ca)
   %105 = load i64, i64* %3, align 8
   %106 = add i64 %105, 1
   store i64 %106, i64* %3, align 8
@@ -260,7 +260,7 @@ entry:
   store i64 %113, i64* %3, align 8
   %114 = add i64 %107, 16
   store i64 %114, i64* %6, align 8
-  ret %struct.Memory* %call2_4007bf
+  ret %struct.Memory* %call2_4007cf
 }
 
 ; Function Attrs: norecurse nounwind

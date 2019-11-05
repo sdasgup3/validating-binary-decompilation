@@ -4,31 +4,31 @@ Disassembled output
   .globl _ZplRK6DoubleS1_
   .type _ZplRK6DoubleS1_, @function
 
-#! file-offset 0x1d10
-#! rip-offset  0x401d10
+#! file-offset 0x1d20
+#! rip-offset  0x401d20
 #! capacity    67 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode             Target                
-._ZplRK6DoubleS1_:          #        0x401d10  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                #  1     0x401d10  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp           #  2     0x401d11  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x20, %rsp          #  3     0x401d14  4      OPC=subq_r64_imm8  18446744073709551615  
-  leaq -0x8(%rbp), %rax     #  4     0x401d18  4      OPC=leaq_r64_m16   18446744073709551615  
-  leaq -0x20(%rbp), %rcx    #  5     0x401d1c  4      OPC=leaq_r64_m16   18446744073709551615  
-  movq %rdi, -0x10(%rbp)    #  6     0x401d20  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x18(%rbp)    #  7     0x401d24  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x10(%rbp), %rsi    #  8     0x401d28  4      OPC=movq_r64_m64   18446744073709551615  
-  movsd (%rsi), %xmm0       #  9     0x401d2c  4      OPC=movsd_xmm_m64  18446744073709551615  
-  movq -0x18(%rbp), %rsi    #  10    0x401d30  4      OPC=movq_r64_m64   18446744073709551615  
-  addsd (%rsi), %xmm0       #  11    0x401d34  4      OPC=addsd_xmm_m64  18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)  #  12    0x401d38  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movq %rax, %rdi           #  13    0x401d3d  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rcx, %rsi           #  14    0x401d40  3      OPC=movq_r64_r64   18446744073709551615  
-  callq ._ZN6DoubleC2ERKd   #  15    0x401d43  5      OPC=callq_label    4199168               
-  movsd -0x8(%rbp), %xmm0   #  16    0x401d48  5      OPC=movsd_xmm_m64  18446744073709551615  
-  addq $0x20, %rsp          #  17    0x401d4d  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                 #  18    0x401d51  1      OPC=popq_r64_1     18446744073709551615  
-  retq                      #  19    0x401d52  1      OPC=retq           18446744073709551615  
+._ZplRK6DoubleS1_:          #        0x401d20  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                #  1     0x401d20  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp           #  2     0x401d21  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x20, %rsp          #  3     0x401d24  4      OPC=subq_r64_imm8  18446744073709551615  
+  leaq -0x8(%rbp), %rax     #  4     0x401d28  4      OPC=leaq_r64_m16   18446744073709551615  
+  leaq -0x20(%rbp), %rcx    #  5     0x401d2c  4      OPC=leaq_r64_m16   18446744073709551615  
+  movq %rdi, -0x10(%rbp)    #  6     0x401d30  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x18(%rbp)    #  7     0x401d34  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x10(%rbp), %rsi    #  8     0x401d38  4      OPC=movq_r64_m64   18446744073709551615  
+  movsd (%rsi), %xmm0       #  9     0x401d3c  4      OPC=movsd_xmm_m64  18446744073709551615  
+  movq -0x18(%rbp), %rsi    #  10    0x401d40  4      OPC=movq_r64_m64   18446744073709551615  
+  addsd (%rsi), %xmm0       #  11    0x401d44  4      OPC=addsd_xmm_m64  18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)  #  12    0x401d48  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movq %rax, %rdi           #  13    0x401d4d  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rcx, %rsi           #  14    0x401d50  3      OPC=movq_r64_r64   18446744073709551615  
+  callq ._ZN6DoubleC2ERKd   #  15    0x401d53  5      OPC=callq_label    4199184               
+  movsd -0x8(%rbp), %xmm0   #  16    0x401d58  5      OPC=movsd_xmm_m64  18446744073709551615  
+  addq $0x20, %rsp          #  17    0x401d5d  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                 #  18    0x401d61  1      OPC=popq_r64_1     18446744073709551615  
+  retq                      #  19    0x401d62  1      OPC=retq           18446744073709551615  
                                                                                                
 .size _ZplRK6DoubleS1_, .-_ZplRK6DoubleS1_
 Disassembling Done.
@@ -36,7 +36,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZplRK6DoubleS1_->4201744
+._ZplRK6DoubleS1_->4201760
 
 Computing Label PC values: Done.
 
@@ -444,6 +444,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401d24 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -710,6 +712,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401d5d --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -754,3 +758,5 @@ Decompiling Function: _ZplRK6DoubleS1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.29user 0.05system 0:01.11elapsed 31%CPU (0avgtext+0avgdata 10464maxresident)k
+0inputs+200outputs (0major+8853minor)pagefaults 0swaps

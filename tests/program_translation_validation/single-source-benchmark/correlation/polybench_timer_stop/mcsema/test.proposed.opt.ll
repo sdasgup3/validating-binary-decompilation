@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x6020a8_type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,8 +39,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x6020a8 = local_unnamed_addr global %G_0x6020a8_type zeroinitializer
 
-declare %struct.Memory* @sub_400880.rtclock(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400890.rtclock(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @polybench_timer_stop(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -63,11 +65,11 @@ entry:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %6, align 8
   store i64 %11, i64* %3, align 8
-  %call2_400894 = tail call %struct.Memory* @sub_400880.rtclock(%struct.State* %0, i64 %11, %struct.Memory* %2)
+  %call2_4008a4 = tail call %struct.Memory* @sub_400890.rtclock(%struct.State* %0, i64 %11, %struct.Memory* %2)
   %15 = load i64, i64* %3, align 8
   %16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   %17 = load i64, i64* %16, align 1
-  store i64 %17, i64* inttoptr (i64 6299816 to i64*), align 8
+  store i64 %17, i64* bitcast (%G_0x6020a8_type* @G_0x6020a8 to i64*), align 8
   %18 = add i64 %15, 10
   store i64 %18, i64* %3, align 8
   %19 = load i64, i64* %6, align 8
@@ -83,7 +85,7 @@ entry:
   store i64 %25, i64* %3, align 8
   %26 = add i64 %19, 16
   store i64 %26, i64* %6, align 8
-  ret %struct.Memory* %call2_400894
+  ret %struct.Memory* %call2_4008a4
 }
 
 ; Function Attrs: norecurse nounwind
@@ -144,7 +146,7 @@ block_400488:
   store i64 %4, i64* %PC, align 8
   %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   %6 = load i64, i64* %5, align 1
-  store i64 %6, i64* inttoptr (i64 6299816 to i64*), align 8
+  store i64 %6, i64* bitcast (%G_0x6020a8_type* @G_0x6020a8 to i64*), align 8
   ret %struct.Memory* %2
 }
 

@@ -4,41 +4,41 @@ Disassembled output
   .globl _ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa
   .type _ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa, @function
 
-#! file-offset 0x134b0
-#! rip-offset  0x4134b0
+#! file-offset 0x134c0
+#! rip-offset  0x4134c0
 #! capacity    80 bytes
 
 # Text                                                   #  Line  RIP       Bytes  Opcode             Target                
-._ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa:  #        0x4134b0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                             #  1     0x4134b0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                        #  2     0x4134b1  3      OPC=movq_r64_r64   18446744073709551615  
-  pushq %rbx                                             #  3     0x4134b4  1      OPC=pushq_r64_1    18446744073709551615  
-  movb %r8b, %al                                         #  4     0x4134b5  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %cl, %r9b                                         #  5     0x4134b8  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dl, %r10b                                        #  6     0x4134bb  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %sil, %r11b                                       #  7     0x4134be  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %dil, %bl                                         #  8     0x4134c1  3      OPC=movb_r8_r8     18446744073709551615  
-  movb %bl, -0x9(%rbp)                                   #  9     0x4134c4  3      OPC=movb_m8_r8     18446744073709551615  
-  movb %r11b, -0xa(%rbp)                                 #  10    0x4134c7  4      OPC=movb_m8_r8     18446744073709551615  
-  movb %r10b, -0xb(%rbp)                                 #  11    0x4134cb  4      OPC=movb_m8_r8     18446744073709551615  
-  movb %r9b, -0xc(%rbp)                                  #  12    0x4134cf  4      OPC=movb_m8_r8     18446744073709551615  
-  movb %al, -0xd(%rbp)                                   #  13    0x4134d3  3      OPC=movb_m8_r8     18446744073709551615  
-  movsbl -0x9(%rbp), %ecx                                #  14    0x4134d6  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movsbl -0xa(%rbp), %edx                                #  15    0x4134da  4      OPC=movsbl_r32_m8  18446744073709551615  
-  addl %edx, %ecx                                        #  16    0x4134de  2      OPC=addl_r32_r32   18446744073709551615  
-  movsbl -0xb(%rbp), %edx                                #  17    0x4134e0  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movsbl -0xc(%rbp), %esi                                #  18    0x4134e4  4      OPC=movsbl_r32_m8  18446744073709551615  
-  imull %esi, %edx                                       #  19    0x4134e8  3      OPC=imull_r32_r32  18446744073709551615  
-  movsbl -0xd(%rbp), %esi                                #  20    0x4134eb  4      OPC=movsbl_r32_m8  18446744073709551615  
-  movl %edx, %eax                                        #  21    0x4134ef  2      OPC=movl_r32_r32   18446744073709551615  
-  cltd                                                   #  22    0x4134f1  1      OPC=cltd           18446744073709551615  
-  idivl %esi                                             #  23    0x4134f2  2      OPC=idivl_r32      18446744073709551615  
-  subl %eax, %ecx                                        #  24    0x4134f4  2      OPC=subl_r32_r32   18446744073709551615  
-  movb %cl, %r9b                                         #  25    0x4134f6  3      OPC=movb_r8_r8     18446744073709551615  
-  movsbl %r9b, %eax                                      #  26    0x4134f9  4      OPC=movsbl_r32_r8  18446744073709551615  
-  popq %rbx                                              #  27    0x4134fd  1      OPC=popq_r64_1     18446744073709551615  
-  popq %rbp                                              #  28    0x4134fe  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                   #  29    0x4134ff  1      OPC=retq           18446744073709551615  
+._ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa:  #        0x4134c0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                             #  1     0x4134c0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                        #  2     0x4134c1  3      OPC=movq_r64_r64   18446744073709551615  
+  pushq %rbx                                             #  3     0x4134c4  1      OPC=pushq_r64_1    18446744073709551615  
+  movb %r8b, %al                                         #  4     0x4134c5  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %cl, %r9b                                         #  5     0x4134c8  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dl, %r10b                                        #  6     0x4134cb  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %sil, %r11b                                       #  7     0x4134ce  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %dil, %bl                                         #  8     0x4134d1  3      OPC=movb_r8_r8     18446744073709551615  
+  movb %bl, -0x9(%rbp)                                   #  9     0x4134d4  3      OPC=movb_m8_r8     18446744073709551615  
+  movb %r11b, -0xa(%rbp)                                 #  10    0x4134d7  4      OPC=movb_m8_r8     18446744073709551615  
+  movb %r10b, -0xb(%rbp)                                 #  11    0x4134db  4      OPC=movb_m8_r8     18446744073709551615  
+  movb %r9b, -0xc(%rbp)                                  #  12    0x4134df  4      OPC=movb_m8_r8     18446744073709551615  
+  movb %al, -0xd(%rbp)                                   #  13    0x4134e3  3      OPC=movb_m8_r8     18446744073709551615  
+  movsbl -0x9(%rbp), %ecx                                #  14    0x4134e6  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movsbl -0xa(%rbp), %edx                                #  15    0x4134ea  4      OPC=movsbl_r32_m8  18446744073709551615  
+  addl %edx, %ecx                                        #  16    0x4134ee  2      OPC=addl_r32_r32   18446744073709551615  
+  movsbl -0xb(%rbp), %edx                                #  17    0x4134f0  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movsbl -0xc(%rbp), %esi                                #  18    0x4134f4  4      OPC=movsbl_r32_m8  18446744073709551615  
+  imull %esi, %edx                                       #  19    0x4134f8  3      OPC=imull_r32_r32  18446744073709551615  
+  movsbl -0xd(%rbp), %esi                                #  20    0x4134fb  4      OPC=movsbl_r32_m8  18446744073709551615  
+  movl %edx, %eax                                        #  21    0x4134ff  2      OPC=movl_r32_r32   18446744073709551615  
+  cltd                                                   #  22    0x413501  1      OPC=cltd           18446744073709551615  
+  idivl %esi                                             #  23    0x413502  2      OPC=idivl_r32      18446744073709551615  
+  subl %eax, %ecx                                        #  24    0x413504  2      OPC=subl_r32_r32   18446744073709551615  
+  movb %cl, %r9b                                         #  25    0x413506  3      OPC=movb_r8_r8     18446744073709551615  
+  movsbl %r9b, %eax                                      #  26    0x413509  4      OPC=movsbl_r32_r8  18446744073709551615  
+  popq %rbx                                              #  27    0x41350d  1      OPC=popq_r64_1     18446744073709551615  
+  popq %rbp                                              #  28    0x41350e  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                   #  29    0x41350f  1      OPC=retq           18446744073709551615  
                                                                                                                             
 .size _ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa, .-_ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa
 Disassembling Done.
@@ -46,7 +46,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa->4273328
+._ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa->4273344
 
 Computing Label PC values: Done.
 
@@ -951,3 +951,5 @@ Decompiling Function: _ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa Done
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.45user 0.08system 0:00.60elapsed 90%CPU (0avgtext+0avgdata 10360maxresident)k
+0inputs+256outputs (0major+12166minor)pagefaults 0swaps

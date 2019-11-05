@@ -7,7 +7,7 @@ compd_opt: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func
 match: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

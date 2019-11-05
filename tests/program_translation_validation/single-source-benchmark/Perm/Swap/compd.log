@@ -4,28 +4,28 @@ Disassembled output
   .globl Swap
   .type Swap, @function
 
-#! file-offset 0x570
-#! rip-offset  0x400570
+#! file-offset 0x580
+#! rip-offset  0x400580
 #! capacity    44 bytes
 
 # Text                    #  Line  RIP       Bytes  Opcode            Target                
-.Swap:                    #        0x400570  0      OPC=<label>       18446744073709551615  
-  pushq %rbp              #  1     0x400570  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp         #  2     0x400571  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)   #  3     0x400574  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)  #  4     0x400578  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi   #  5     0x40057c  4      OPC=movq_r64_m64  18446744073709551615  
-  movl (%rsi), %eax       #  6     0x400580  2      OPC=movl_r32_m32  18446744073709551615  
-  movl %eax, -0x14(%rbp)  #  7     0x400582  3      OPC=movl_m32_r32  18446744073709551615  
-  movq -0x10(%rbp), %rsi  #  8     0x400585  4      OPC=movq_r64_m64  18446744073709551615  
-  movl (%rsi), %eax       #  9     0x400589  2      OPC=movl_r32_m32  18446744073709551615  
-  movq -0x8(%rbp), %rsi   #  10    0x40058b  4      OPC=movq_r64_m64  18446744073709551615  
-  movl %eax, (%rsi)       #  11    0x40058f  2      OPC=movl_m32_r32  18446744073709551615  
-  movl -0x14(%rbp), %eax  #  12    0x400591  3      OPC=movl_r32_m32  18446744073709551615  
-  movq -0x10(%rbp), %rsi  #  13    0x400594  4      OPC=movq_r64_m64  18446744073709551615  
-  movl %eax, (%rsi)       #  14    0x400598  2      OPC=movl_m32_r32  18446744073709551615  
-  popq %rbp               #  15    0x40059a  1      OPC=popq_r64_1    18446744073709551615  
-  retq                    #  16    0x40059b  1      OPC=retq          18446744073709551615  
+.Swap:                    #        0x400580  0      OPC=<label>       18446744073709551615  
+  pushq %rbp              #  1     0x400580  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp         #  2     0x400581  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)   #  3     0x400584  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)  #  4     0x400588  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi   #  5     0x40058c  4      OPC=movq_r64_m64  18446744073709551615  
+  movl (%rsi), %eax       #  6     0x400590  2      OPC=movl_r32_m32  18446744073709551615  
+  movl %eax, -0x14(%rbp)  #  7     0x400592  3      OPC=movl_m32_r32  18446744073709551615  
+  movq -0x10(%rbp), %rsi  #  8     0x400595  4      OPC=movq_r64_m64  18446744073709551615  
+  movl (%rsi), %eax       #  9     0x400599  2      OPC=movl_r32_m32  18446744073709551615  
+  movq -0x8(%rbp), %rsi   #  10    0x40059b  4      OPC=movq_r64_m64  18446744073709551615  
+  movl %eax, (%rsi)       #  11    0x40059f  2      OPC=movl_m32_r32  18446744073709551615  
+  movl -0x14(%rbp), %eax  #  12    0x4005a1  3      OPC=movl_r32_m32  18446744073709551615  
+  movq -0x10(%rbp), %rsi  #  13    0x4005a4  4      OPC=movq_r64_m64  18446744073709551615  
+  movl %eax, (%rsi)       #  14    0x4005a8  2      OPC=movl_m32_r32  18446744073709551615  
+  popq %rbp               #  15    0x4005aa  1      OPC=popq_r64_1    18446744073709551615  
+  retq                    #  16    0x4005ab  1      OPC=retq          18446744073709551615  
                                                                                             
 .size Swap, .-Swap
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Swap->4195696
+.Swap->4195712
 
 Computing Label PC values: Done.
 
@@ -694,3 +694,5 @@ Decompiling Function: Swap Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:00.30elapsed 88%CPU (0avgtext+0avgdata 10120maxresident)k
+0inputs+168outputs (0major+7594minor)pagefaults 0swaps

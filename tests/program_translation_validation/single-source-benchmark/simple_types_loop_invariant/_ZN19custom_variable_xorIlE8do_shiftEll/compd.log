@@ -4,21 +4,21 @@ Disassembled output
   .globl _ZN19custom_variable_xorIlE8do_shiftEll
   .type _ZN19custom_variable_xorIlE8do_shiftEll, @function
 
-#! file-offset 0xe0f0
-#! rip-offset  0x40e0f0
+#! file-offset 0xe100
+#! rip-offset  0x40e100
 #! capacity    25 bytes
 
 # Text                                     #  Line  RIP       Bytes  Opcode            Target                
-._ZN19custom_variable_xorIlE8do_shiftEll:  #        0x40e0f0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                               #  1     0x40e0f0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                          #  2     0x40e0f1  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                    #  3     0x40e0f4  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                   #  4     0x40e0f8  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                    #  5     0x40e0fc  4      OPC=movq_r64_m64  18446744073709551615  
-  xorq -0x10(%rbp), %rsi                   #  6     0x40e100  4      OPC=xorq_r64_m64  18446744073709551615  
-  movq %rsi, %rax                          #  7     0x40e104  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp                                #  8     0x40e107  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                     #  9     0x40e108  1      OPC=retq          18446744073709551615  
+._ZN19custom_variable_xorIlE8do_shiftEll:  #        0x40e100  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                               #  1     0x40e100  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                          #  2     0x40e101  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                    #  3     0x40e104  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                   #  4     0x40e108  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                    #  5     0x40e10c  4      OPC=movq_r64_m64  18446744073709551615  
+  xorq -0x10(%rbp), %rsi                   #  6     0x40e110  4      OPC=xorq_r64_m64  18446744073709551615  
+  movq %rsi, %rax                          #  7     0x40e114  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp                                #  8     0x40e117  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                     #  9     0x40e118  1      OPC=retq          18446744073709551615  
                                                                                                              
 .size _ZN19custom_variable_xorIlE8do_shiftEll, .-_ZN19custom_variable_xorIlE8do_shiftEll
 Disassembling Done.
@@ -26,7 +26,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN19custom_variable_xorIlE8do_shiftEll->4251888
+._ZN19custom_variable_xorIlE8do_shiftEll->4251904
 
 Computing Label PC values: Done.
 
@@ -554,3 +554,5 @@ Decompiling Function: _ZN19custom_variable_xorIlE8do_shiftEll Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.06system 0:00.27elapsed 100%CPU (0avgtext+0avgdata 10176maxresident)k
+0inputs+144outputs (0major+5327minor)pagefaults 0swaps

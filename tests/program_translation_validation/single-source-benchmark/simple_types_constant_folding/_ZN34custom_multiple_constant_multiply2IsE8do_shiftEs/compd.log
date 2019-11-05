@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN34custom_multiple_constant_multiply2IsE8do_shiftEs
   .type _ZN34custom_multiple_constant_multiply2IsE8do_shiftEs, @function
 
-#! file-offset 0x15760
-#! rip-offset  0x415760
+#! file-offset 0x15770
+#! rip-offset  0x415770
 #! capacity    24 bytes
 
 # Text                                                   #  Line  RIP       Bytes  Opcode              Target                
-._ZN34custom_multiple_constant_multiply2IsE8do_shiftEs:  #        0x415760  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                             #  1     0x415760  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                        #  2     0x415761  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %di, %ax                                          #  3     0x415764  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %ax, -0x2(%rbp)                                   #  4     0x415767  4      OPC=movw_m16_r16    18446744073709551615  
-  movswl -0x2(%rbp), %edi                                #  5     0x41576b  4      OPC=movswl_r32_m16  18446744073709551615  
-  addl $0x78, %edi                                       #  6     0x41576f  3      OPC=addl_r32_imm8   18446744073709551615  
-  movw %di, %ax                                          #  7     0x415772  3      OPC=movw_r16_r16    18446744073709551615  
-  cwtl                                                   #  8     0x415775  1      OPC=cwtl            18446744073709551615  
-  popq %rbp                                              #  9     0x415776  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                   #  10    0x415777  1      OPC=retq            18446744073709551615  
+._ZN34custom_multiple_constant_multiply2IsE8do_shiftEs:  #        0x415770  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                             #  1     0x415770  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                        #  2     0x415771  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %di, %ax                                          #  3     0x415774  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %ax, -0x2(%rbp)                                   #  4     0x415777  4      OPC=movw_m16_r16    18446744073709551615  
+  movswl -0x2(%rbp), %edi                                #  5     0x41577b  4      OPC=movswl_r32_m16  18446744073709551615  
+  addl $0x78, %edi                                       #  6     0x41577f  3      OPC=addl_r32_imm8   18446744073709551615  
+  movw %di, %ax                                          #  7     0x415782  3      OPC=movw_r16_r16    18446744073709551615  
+  cwtl                                                   #  8     0x415785  1      OPC=cwtl            18446744073709551615  
+  popq %rbp                                              #  9     0x415786  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                   #  10    0x415787  1      OPC=retq            18446744073709551615  
                                                                                                                              
 .size _ZN34custom_multiple_constant_multiply2IsE8do_shiftEs, .-_ZN34custom_multiple_constant_multiply2IsE8do_shiftEs
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN34custom_multiple_constant_multiply2IsE8do_shiftEs->4282208
+._ZN34custom_multiple_constant_multiply2IsE8do_shiftEs->4282224
 
 Computing Label PC values: Done.
 
@@ -492,6 +492,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x78___edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41577f --size 3
 Decompiling instr:addl $0x78, %edi Done...
 
 
@@ -573,3 +575,5 @@ Decompiling Function: _ZN34custom_multiple_constant_multiply2IsE8do_shiftEs Done
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.04system 0:02.03elapsed 16%CPU (0avgtext+0avgdata 10384maxresident)k
+0inputs+144outputs (0major+5745minor)pagefaults 0swaps

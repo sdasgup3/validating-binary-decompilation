@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [init_NthToggle] from ../binary/test.mcsema.opt.ll
 Extracting function [init_NthToggle] from mcsema/test.proposed.opt.ll
 Matcher Done...
+0.51user 0.97system 0:01.85elapsed 79%CPU (0avgtext+0avgdata 12784maxresident)k
+0inputs+216outputs (0major+956minor)pagefaults 0swaps

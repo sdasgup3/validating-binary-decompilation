@@ -4,28 +4,28 @@ Disassembled output
   .globl _ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_
   .type _ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_, @function
 
-#! file-offset 0x6190
-#! rip-offset  0x406190
+#! file-offset 0x61a0
+#! rip-offset  0x4061a0
 #! capacity    58 bytes
 
 # Text                                                 #  Line  RIP       Bytes  Opcode             Target                
-._ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_:     #        0x406190  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                                           #  1     0x406190  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp                                      #  2     0x406191  3      OPC=movq_r64_r64   18446744073709551615  
-  subq $0x20, %rsp                                     #  3     0x406194  4      OPC=subq_r64_imm8  18446744073709551615  
-  movq %rdi, -0x10(%rbp)                               #  4     0x406198  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x18(%rbp)                               #  5     0x40619c  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x10(%rbp), %rdi                               #  6     0x4061a0  4      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x18(%rbp), %rsi                               #  7     0x4061a4  4      OPC=movq_r64_m64   18446744073709551615  
-  callq ._ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6_   #  8     0x4061a8  5      OPC=callq_label    4219376               
-  leaq -0x8(%rbp), %rdi                                #  9     0x4061ad  4      OPC=leaq_r64_m16   18446744073709551615  
-  leaq -0x20(%rbp), %rsi                               #  10    0x4061b1  4      OPC=leaq_r64_m16   18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)                             #  11    0x4061b5  5      OPC=movsd_m64_xmm  18446744073709551615  
-  callq ._ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT_  #  12    0x4061ba  5      OPC=callq_label    4219440               
-  movsd -0x8(%rbp), %xmm0                              #  13    0x4061bf  5      OPC=movsd_xmm_m64  18446744073709551615  
-  addq $0x20, %rsp                                     #  14    0x4061c4  4      OPC=addq_r64_imm8  18446744073709551615  
-  popq %rbp                                            #  15    0x4061c8  1      OPC=popq_r64_1     18446744073709551615  
-  retq                                                 #  16    0x4061c9  1      OPC=retq           18446744073709551615  
+._ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_:     #        0x4061a0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                                           #  1     0x4061a0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp                                      #  2     0x4061a1  3      OPC=movq_r64_r64   18446744073709551615  
+  subq $0x20, %rsp                                     #  3     0x4061a4  4      OPC=subq_r64_imm8  18446744073709551615  
+  movq %rdi, -0x10(%rbp)                               #  4     0x4061a8  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x18(%rbp)                               #  5     0x4061ac  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x10(%rbp), %rdi                               #  6     0x4061b0  4      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x18(%rbp), %rsi                               #  7     0x4061b4  4      OPC=movq_r64_m64   18446744073709551615  
+  callq ._ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6_   #  8     0x4061b8  5      OPC=callq_label    4219392               
+  leaq -0x8(%rbp), %rdi                                #  9     0x4061bd  4      OPC=leaq_r64_m16   18446744073709551615  
+  leaq -0x20(%rbp), %rsi                               #  10    0x4061c1  4      OPC=leaq_r64_m16   18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)                             #  11    0x4061c5  5      OPC=movsd_m64_xmm  18446744073709551615  
+  callq ._ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT_  #  12    0x4061ca  5      OPC=callq_label    4219456               
+  movsd -0x8(%rbp), %xmm0                              #  13    0x4061cf  5      OPC=movsd_xmm_m64  18446744073709551615  
+  addq $0x20, %rsp                                     #  14    0x4061d4  4      OPC=addq_r64_imm8  18446744073709551615  
+  popq %rbp                                            #  15    0x4061d8  1      OPC=popq_r64_1     18446744073709551615  
+  retq                                                 #  16    0x4061d9  1      OPC=retq           18446744073709551615  
                                                                                                                           
 .size _ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_, .-_ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_->4219280
+._ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_->4219296
 
 Computing Label PC values: Done.
 
@@ -441,6 +441,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4061a4 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -650,6 +652,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4061d4 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -694,3 +698,5 @@ Decompiling Function: _ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.05system 0:01.37elapsed 24%CPU (0avgtext+0avgdata 10388maxresident)k
+0inputs+184outputs (0major+7799minor)pagefaults 0swaps

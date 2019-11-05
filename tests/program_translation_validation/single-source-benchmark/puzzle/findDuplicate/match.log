@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [findDuplicate] from ../binary/test.mcsema.opt.ll
 Extracting function [findDuplicate] from mcsema/test.proposed.opt.ll
 Matcher Done...
+2.82user 5.27system 0:08.42elapsed 96%CPU (0avgtext+0avgdata 12948maxresident)k
+0inputs+1136outputs (0major+2031minor)pagefaults 0swaps

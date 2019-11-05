@@ -4,20 +4,20 @@ Disassembled output
   .globl _ZN10custom_twoItE8do_shiftEt
   .type _ZN10custom_twoItE8do_shiftEt, @function
 
-#! file-offset 0x15080
-#! rip-offset  0x415080
+#! file-offset 0x15090
+#! rip-offset  0x415090
 #! capacity    20 bytes
 
 # Text                           #  Line  RIP       Bytes  Opcode              Target                
-._ZN10custom_twoItE8do_shiftEt:  #        0x415080  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                     #  1     0x415080  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                #  2     0x415081  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %di, %ax                  #  3     0x415084  3      OPC=movw_r16_r16    18446744073709551615  
-  movw $0x2, %cx                 #  4     0x415087  4      OPC=movw_r16_imm16  18446744073709551615  
-  movw %ax, -0x2(%rbp)           #  5     0x41508b  4      OPC=movw_m16_r16    18446744073709551615  
-  movzwl %cx, %eax               #  6     0x41508f  3      OPC=movzwl_r32_r16  18446744073709551615  
-  popq %rbp                      #  7     0x415092  1      OPC=popq_r64_1      18446744073709551615  
-  retq                           #  8     0x415093  1      OPC=retq            18446744073709551615  
+._ZN10custom_twoItE8do_shiftEt:  #        0x415090  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                     #  1     0x415090  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                #  2     0x415091  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %di, %ax                  #  3     0x415094  3      OPC=movw_r16_r16    18446744073709551615  
+  movw $0x2, %cx                 #  4     0x415097  4      OPC=movw_r16_imm16  18446744073709551615  
+  movw %ax, -0x2(%rbp)           #  5     0x41509b  4      OPC=movw_m16_r16    18446744073709551615  
+  movzwl %cx, %eax               #  6     0x41509f  3      OPC=movzwl_r32_r16  18446744073709551615  
+  popq %rbp                      #  7     0x4150a2  1      OPC=popq_r64_1      18446744073709551615  
+  retq                           #  8     0x4150a3  1      OPC=retq            18446744073709551615  
                                                                                                      
 .size _ZN10custom_twoItE8do_shiftEt, .-_ZN10custom_twoItE8do_shiftEt
 Disassembling Done.
@@ -25,7 +25,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN10custom_twoItE8do_shiftEt->4280448
+._ZN10custom_twoItE8do_shiftEt->4280464
 
 Computing Label PC values: Done.
 
@@ -452,6 +452,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWItE2InItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__0x2___cx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 415097 --size 4
 Decompiling instr:movw $0x2, %cx Done...
 
 
@@ -534,3 +536,5 @@ Decompiling Function: _ZN10custom_twoItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.23user 0.05system 0:02.01elapsed 14%CPU (0avgtext+0avgdata 10432maxresident)k
+0inputs+136outputs (0major+5019minor)pagefaults 0swaps

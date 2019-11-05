@@ -4,22 +4,22 @@ Disassembled output
   .globl _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_
   .type _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_, @function
 
-#! file-offset 0x6110
-#! rip-offset  0x406110
+#! file-offset 0x6120
+#! rip-offset  0x406120
 #! capacity    28 bytes
 
 # Text                                                      #  Line  RIP       Bytes  Opcode            Target                
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_:  #        0x406110  0      OPC=<label>       18446744073709551615  
-  pushq %rbp                                                #  1     0x406110  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp                                           #  2     0x406111  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)                                     #  3     0x406114  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %rsi, -0x10(%rbp)                                    #  4     0x406118  4      OPC=movq_m64_r64  18446744073709551615  
-  movq -0x8(%rbp), %rsi                                     #  5     0x40611c  4      OPC=movq_r64_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi                                    #  6     0x406120  4      OPC=movq_r64_m64  18446744073709551615  
-  movq (%rdi), %rdi                                         #  7     0x406124  3      OPC=movq_r64_m64  18446744073709551615  
-  movq %rdi, (%rsi)                                         #  8     0x406127  3      OPC=movq_m64_r64  18446744073709551615  
-  popq %rbp                                                 #  9     0x40612a  1      OPC=popq_r64_1    18446744073709551615  
-  retq                                                      #  10    0x40612b  1      OPC=retq          18446744073709551615  
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_:  #        0x406120  0      OPC=<label>       18446744073709551615  
+  pushq %rbp                                                #  1     0x406120  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp                                           #  2     0x406121  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %rdi, -0x8(%rbp)                                     #  3     0x406124  4      OPC=movq_m64_r64  18446744073709551615  
+  movq %rsi, -0x10(%rbp)                                    #  4     0x406128  4      OPC=movq_m64_r64  18446744073709551615  
+  movq -0x8(%rbp), %rsi                                     #  5     0x40612c  4      OPC=movq_r64_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi                                    #  6     0x406130  4      OPC=movq_r64_m64  18446744073709551615  
+  movq (%rdi), %rdi                                         #  7     0x406134  3      OPC=movq_r64_m64  18446744073709551615  
+  movq %rdi, (%rsi)                                         #  8     0x406137  3      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp                                                 #  9     0x40613a  1      OPC=popq_r64_1    18446744073709551615  
+  retq                                                      #  10    0x40613b  1      OPC=retq          18446744073709551615  
                                                                                                                               
 .size _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_, .-_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_
 Disassembling Done.
@@ -27,7 +27,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_->4219152
+._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_->4219168
 
 Computing Label PC values: Done.
 
@@ -574,3 +574,5 @@ Decompiling Function: _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_ D
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.16user 0.05system 0:00.24elapsed 91%CPU (0avgtext+0avgdata 10260maxresident)k
+0inputs+144outputs (0major+5575minor)pagefaults 0swaps

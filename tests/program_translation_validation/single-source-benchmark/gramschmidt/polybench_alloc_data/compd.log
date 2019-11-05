@@ -4,29 +4,29 @@ Disassembled output
   .globl polybench_alloc_data
   .type polybench_alloc_data, @function
 
-#! file-offset 0x850
-#! rip-offset  0x400850
+#! file-offset 0x860
+#! rip-offset  0x400860
 #! capacity    59 bytes
 
 # Text                     #  Line  RIP       Bytes  Opcode              Target                
-.polybench_alloc_data:     #        0x400850  0      OPC=<label>         18446744073709551615  
-  pushq %rbp               #  1     0x400850  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp          #  2     0x400851  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x20, %rsp         #  3     0x400854  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq %rdi, -0x8(%rbp)    #  4     0x400858  4      OPC=movq_m64_r64    18446744073709551615  
-  movl %esi, -0xc(%rbp)    #  5     0x40085c  3      OPC=movl_m32_r32    18446744073709551615  
-  movq -0x8(%rbp), %rdi    #  6     0x40085f  4      OPC=movq_r64_m64    18446744073709551615  
-  movq %rdi, -0x18(%rbp)   #  7     0x400863  4      OPC=movq_m64_r64    18446744073709551615  
-  movslq -0xc(%rbp), %rdi  #  8     0x400867  4      OPC=movslq_r64_m32  18446744073709551615  
-  imulq -0x18(%rbp), %rdi  #  9     0x40086b  5      OPC=imulq_r64_m64   18446744073709551615  
-  movq %rdi, -0x18(%rbp)   #  10    0x400870  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x18(%rbp), %rdi   #  11    0x400874  4      OPC=movq_r64_m64    18446744073709551615  
-  callq .xmalloc           #  12    0x400878  5      OPC=callq_label     4196496               
-  movq %rax, -0x20(%rbp)   #  13    0x40087d  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x20(%rbp), %rax   #  14    0x400881  4      OPC=movq_r64_m64    18446744073709551615  
-  addq $0x20, %rsp         #  15    0x400885  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                #  16    0x400889  1      OPC=popq_r64_1      18446744073709551615  
-  retq                     #  17    0x40088a  1      OPC=retq            18446744073709551615  
+.polybench_alloc_data:     #        0x400860  0      OPC=<label>         18446744073709551615  
+  pushq %rbp               #  1     0x400860  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp          #  2     0x400861  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x20, %rsp         #  3     0x400864  4      OPC=subq_r64_imm8   18446744073709551615  
+  movq %rdi, -0x8(%rbp)    #  4     0x400868  4      OPC=movq_m64_r64    18446744073709551615  
+  movl %esi, -0xc(%rbp)    #  5     0x40086c  3      OPC=movl_m32_r32    18446744073709551615  
+  movq -0x8(%rbp), %rdi    #  6     0x40086f  4      OPC=movq_r64_m64    18446744073709551615  
+  movq %rdi, -0x18(%rbp)   #  7     0x400873  4      OPC=movq_m64_r64    18446744073709551615  
+  movslq -0xc(%rbp), %rdi  #  8     0x400877  4      OPC=movslq_r64_m32  18446744073709551615  
+  imulq -0x18(%rbp), %rdi  #  9     0x40087b  5      OPC=imulq_r64_m64   18446744073709551615  
+  movq %rdi, -0x18(%rbp)   #  10    0x400880  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x18(%rbp), %rdi   #  11    0x400884  4      OPC=movq_r64_m64    18446744073709551615  
+  callq .xmalloc           #  12    0x400888  5      OPC=callq_label     4196512               
+  movq %rax, -0x20(%rbp)   #  13    0x40088d  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x20(%rbp), %rax   #  14    0x400891  4      OPC=movq_r64_m64    18446744073709551615  
+  addq $0x20, %rsp         #  15    0x400895  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                #  16    0x400899  1      OPC=popq_r64_1      18446744073709551615  
+  retq                     #  17    0x40089a  1      OPC=retq            18446744073709551615  
                                                                                                
 .size polybench_alloc_data, .-polybench_alloc_data
 Disassembling Done.
@@ -34,7 +34,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.polybench_alloc_data->4196432
+.polybench_alloc_data->4196448
 
 Computing Label PC values: Done.
 
@@ -442,6 +442,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400864 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -670,6 +672,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400895 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -714,3 +718,5 @@ Decompiling Function: polybench_alloc_data Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.07system 0:00.83elapsed 37%CPU (0avgtext+0avgdata 10416maxresident)k
+0inputs+192outputs (0major+8115minor)pagefaults 0swaps

@@ -4,27 +4,27 @@ Disassembled output
   .globl make_vec
   .type make_vec, @function
 
-#! file-offset 0x650
-#! rip-offset  0x400650
+#! file-offset 0x660
+#! rip-offset  0x400660
 #! capacity    56 bytes
 
 # Text                       #  Line  RIP       Bytes  Opcode               Target                
-.make_vec:                   #        0x400650  0      OPC=<label>          18446744073709551615  
-  pushq %rbp                 #  1     0x400650  1      OPC=pushq_r64_1      18446744073709551615  
-  movq %rsp, %rbp            #  2     0x400651  3      OPC=movq_r64_r64     18446744073709551615  
-  leaq -0x20(%rbp), %rax     #  3     0x400654  4      OPC=leaq_r64_m16     18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)    #  4     0x400658  5      OPC=movsd_m64_xmm    18446744073709551615  
-  movsd %xmm1, -0x10(%rbp)   #  5     0x40065d  5      OPC=movsd_m64_xmm    18446744073709551615  
-  movq %rax, -0x28(%rbp)     #  6     0x400662  4      OPC=movq_m64_r64     18446744073709551615  
-  movsd -0x8(%rbp), %xmm0    #  7     0x400666  5      OPC=movsd_xmm_m64    18446744073709551615  
-  movq -0x28(%rbp), %rax     #  8     0x40066b  4      OPC=movq_r64_m64     18446744073709551615  
-  movsd %xmm0, (%rax)        #  9     0x40066f  4      OPC=movsd_m64_xmm    18446744073709551615  
-  movsd -0x10(%rbp), %xmm0   #  10    0x400673  5      OPC=movsd_xmm_m64    18446744073709551615  
-  movq -0x28(%rbp), %rax     #  11    0x400678  4      OPC=movq_r64_m64     18446744073709551615  
-  movsd %xmm0, 0x8(%rax)     #  12    0x40067c  5      OPC=movsd_m64_xmm    18446744073709551615  
-  movapd -0x20(%rbp), %xmm0  #  13    0x400681  5      OPC=movapd_xmm_m128  18446744073709551615  
-  popq %rbp                  #  14    0x400686  1      OPC=popq_r64_1       18446744073709551615  
-  retq                       #  15    0x400687  1      OPC=retq             18446744073709551615  
+.make_vec:                   #        0x400660  0      OPC=<label>          18446744073709551615  
+  pushq %rbp                 #  1     0x400660  1      OPC=pushq_r64_1      18446744073709551615  
+  movq %rsp, %rbp            #  2     0x400661  3      OPC=movq_r64_r64     18446744073709551615  
+  leaq -0x20(%rbp), %rax     #  3     0x400664  4      OPC=leaq_r64_m16     18446744073709551615  
+  movsd %xmm0, -0x8(%rbp)    #  4     0x400668  5      OPC=movsd_m64_xmm    18446744073709551615  
+  movsd %xmm1, -0x10(%rbp)   #  5     0x40066d  5      OPC=movsd_m64_xmm    18446744073709551615  
+  movq %rax, -0x28(%rbp)     #  6     0x400672  4      OPC=movq_m64_r64     18446744073709551615  
+  movsd -0x8(%rbp), %xmm0    #  7     0x400676  5      OPC=movsd_xmm_m64    18446744073709551615  
+  movq -0x28(%rbp), %rax     #  8     0x40067b  4      OPC=movq_r64_m64     18446744073709551615  
+  movsd %xmm0, (%rax)        #  9     0x40067f  4      OPC=movsd_m64_xmm    18446744073709551615  
+  movsd -0x10(%rbp), %xmm0   #  10    0x400683  5      OPC=movsd_xmm_m64    18446744073709551615  
+  movq -0x28(%rbp), %rax     #  11    0x400688  4      OPC=movq_r64_m64     18446744073709551615  
+  movsd %xmm0, 0x8(%rax)     #  12    0x40068c  5      OPC=movsd_m64_xmm    18446744073709551615  
+  movapd -0x20(%rbp), %xmm0  #  13    0x400691  5      OPC=movapd_xmm_m128  18446744073709551615  
+  popq %rbp                  #  14    0x400696  1      OPC=popq_r64_1       18446744073709551615  
+  retq                       #  15    0x400697  1      OPC=retq             18446744073709551615  
                                                                                                   
 .size make_vec, .-make_vec
 Disassembling Done.
@@ -32,7 +32,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.make_vec->4195920
+.make_vec->4195936
 
 Computing Label PC values: Done.
 
@@ -674,3 +674,5 @@ Decompiling Function: make_vec Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.05system 0:00.29elapsed 91%CPU (0avgtext+0avgdata 10232maxresident)k
+0inputs+168outputs (0major+7285minor)pagefaults 0swaps

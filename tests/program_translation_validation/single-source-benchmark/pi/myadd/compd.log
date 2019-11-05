@@ -4,24 +4,24 @@ Disassembled output
   .globl myadd
   .type myadd, @function
 
-#! file-offset 0x510
-#! rip-offset  0x400510
+#! file-offset 0x520
+#! rip-offset  0x400520
 #! capacity    38 bytes
 
 # Text                    #  Line  RIP       Bytes  Opcode             Target                
-.myadd:                   #        0x400510  0      OPC=<label>        18446744073709551615  
-  pushq %rbp              #  1     0x400510  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp         #  2     0x400511  3      OPC=movq_r64_r64   18446744073709551615  
-  movq %rdi, -0x8(%rbp)   #  3     0x400514  4      OPC=movq_m64_r64   18446744073709551615  
-  movq %rsi, -0x10(%rbp)  #  4     0x400518  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x8(%rbp), %rsi   #  5     0x40051c  4      OPC=movq_r64_m64   18446744073709551615  
-  movss (%rsi), %xmm0     #  6     0x400520  4      OPC=movss_xmm_m32  18446744073709551615  
-  movq -0x10(%rbp), %rsi  #  7     0x400524  4      OPC=movq_r64_m64   18446744073709551615  
-  addss (%rsi), %xmm0     #  8     0x400528  4      OPC=addss_xmm_m32  18446744073709551615  
-  movq -0x8(%rbp), %rsi   #  9     0x40052c  4      OPC=movq_r64_m64   18446744073709551615  
-  movss %xmm0, (%rsi)     #  10    0x400530  4      OPC=movss_m32_xmm  18446744073709551615  
-  popq %rbp               #  11    0x400534  1      OPC=popq_r64_1     18446744073709551615  
-  retq                    #  12    0x400535  1      OPC=retq           18446744073709551615  
+.myadd:                   #        0x400520  0      OPC=<label>        18446744073709551615  
+  pushq %rbp              #  1     0x400520  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp         #  2     0x400521  3      OPC=movq_r64_r64   18446744073709551615  
+  movq %rdi, -0x8(%rbp)   #  3     0x400524  4      OPC=movq_m64_r64   18446744073709551615  
+  movq %rsi, -0x10(%rbp)  #  4     0x400528  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x8(%rbp), %rsi   #  5     0x40052c  4      OPC=movq_r64_m64   18446744073709551615  
+  movss (%rsi), %xmm0     #  6     0x400530  4      OPC=movss_xmm_m32  18446744073709551615  
+  movq -0x10(%rbp), %rsi  #  7     0x400534  4      OPC=movq_r64_m64   18446744073709551615  
+  addss (%rsi), %xmm0     #  8     0x400538  4      OPC=addss_xmm_m32  18446744073709551615  
+  movq -0x8(%rbp), %rsi   #  9     0x40053c  4      OPC=movq_r64_m64   18446744073709551615  
+  movss %xmm0, (%rsi)     #  10    0x400540  4      OPC=movss_m32_xmm  18446744073709551615  
+  popq %rbp               #  11    0x400544  1      OPC=popq_r64_1     18446744073709551615  
+  retq                    #  12    0x400545  1      OPC=retq           18446744073709551615  
                                                                                              
 .size myadd, .-myadd
 Disassembling Done.
@@ -29,7 +29,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.myadd->4195600
+.myadd->4195616
 
 Computing Label PC values: Done.
 
@@ -614,3 +614,5 @@ Decompiling Function: myadd Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.17user 0.04system 0:00.25elapsed 85%CPU (0avgtext+0avgdata 10232maxresident)k
+0inputs+160outputs (0major+6288minor)pagefaults 0swaps

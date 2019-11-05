@@ -42,7 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_401ec0._ZeqRK14Double_pointerS1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401ed0._ZeqRK14Double_pointerS1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @_ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #1 {
@@ -133,7 +133,7 @@ entry:
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %6, align 8
   store i64 %60, i64* %3, align 8
-  %call2_401ea8 = tail call %struct.Memory* @sub_401ec0._ZeqRK14Double_pointerS1_(%struct.State* %0, i64 %60, %struct.Memory* %2)
+  %call2_401eb8 = tail call %struct.Memory* @sub_401ed0._ZeqRK14Double_pointerS1_(%struct.State* %0, i64 %60, %struct.Memory* %2)
   %65 = load i64, i64* %6, align 8
   %66 = load i64, i64* %3, align 8
   %67 = add i64 %65, 16
@@ -180,7 +180,7 @@ entry:
   store i64 %96, i64* %3, align 8
   %97 = add i64 %65, 32
   store i64 %97, i64* %6, align 8
-  ret %struct.Memory* %call2_401ea8
+  ret %struct.Memory* %call2_401eb8
 }
 
 ; Function Attrs: norecurse nounwind

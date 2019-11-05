@@ -46,17 +46,17 @@ declare extern_weak x86_64_sysvcc i64 @free(i64)
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
-declare %struct.Memory* @sub_400880.polybench_alloc_data(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400890.polybench_alloc_data(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400ac0.init_array(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ad0.init_array(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400c90.kernel_gemm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ca0.kernel_gemm(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400da0.kernel_gemm_StrictFP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400db0.kernel_gemm_StrictFP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400eb0.check_FP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ec0.check_FP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400fe0.print_array(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ff0.print_array(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @main(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -175,7 +175,7 @@ entry:
   store i64 %77, i64* %80, align 8
   store i64 %79, i64* %6, align 8
   store i64 %76, i64* %3, align 8
-  %call2_40097c = tail call %struct.Memory* @sub_400880.polybench_alloc_data(%struct.State* %0, i64 %76, %struct.Memory* %2)
+  %call2_40098c = tail call %struct.Memory* @sub_400890.polybench_alloc_data(%struct.State* %0, i64 %76, %struct.Memory* %2)
   %81 = load i64, i64* %3, align 8
   store i64 1048576, i64* %RDI.i193, align 8
   store i64 8, i64* %RSI.i201, align 8
@@ -195,7 +195,7 @@ entry:
   store i64 %89, i64* %92, align 8
   store i64 %91, i64* %6, align 8
   store i64 %88, i64* %3, align 8
-  %call2_400991 = tail call %struct.Memory* @sub_400880.polybench_alloc_data(%struct.State* %0, i64 %88, %struct.Memory* %call2_40097c)
+  %call2_4009a1 = tail call %struct.Memory* @sub_400890.polybench_alloc_data(%struct.State* %0, i64 %88, %struct.Memory* %call2_40098c)
   %93 = load i64, i64* %3, align 8
   store i64 1048576, i64* %RDI.i193, align 8
   store i64 8, i64* %RSI.i201, align 8
@@ -215,7 +215,7 @@ entry:
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %6, align 8
   store i64 %100, i64* %3, align 8
-  %call2_4009a6 = tail call %struct.Memory* @sub_400880.polybench_alloc_data(%struct.State* %0, i64 %100, %struct.Memory* %call2_400991)
+  %call2_4009b6 = tail call %struct.Memory* @sub_400890.polybench_alloc_data(%struct.State* %0, i64 %100, %struct.Memory* %call2_4009a1)
   %105 = load i64, i64* %3, align 8
   store i64 1048576, i64* %RDI.i193, align 8
   store i64 8, i64* %RSI.i201, align 8
@@ -235,7 +235,7 @@ entry:
   store i64 %113, i64* %116, align 8
   store i64 %115, i64* %6, align 8
   store i64 %112, i64* %3, align 8
-  %call2_4009bb = tail call %struct.Memory* @sub_400880.polybench_alloc_data(%struct.State* %0, i64 %112, %struct.Memory* %call2_4009a6)
+  %call2_4009cb = tail call %struct.Memory* @sub_400890.polybench_alloc_data(%struct.State* %0, i64 %112, %struct.Memory* %call2_4009b6)
   %117 = load i64, i64* %RBP.i, align 8
   %118 = add i64 %117, -40
   %119 = load i64, i64* %3, align 8
@@ -330,7 +330,7 @@ entry:
   store i64 %175, i64* %178, align 8
   store i64 %177, i64* %6, align 8
   store i64 %174, i64* %3, align 8
-  %call2_4009f3 = tail call %struct.Memory* @sub_400ac0.init_array(%struct.State* %0, i64 %174, %struct.Memory* %call2_4009bb)
+  %call2_400a03 = tail call %struct.Memory* @sub_400ad0.init_array(%struct.State* %0, i64 %174, %struct.Memory* %call2_4009cb)
   %179 = load i64, i64* %RBP.i, align 8
   %180 = add i64 %179, -20
   %181 = load i64, i64* %3, align 8
@@ -400,7 +400,7 @@ entry:
   store i64 %223, i64* %226, align 8
   store i64 %225, i64* %6, align 8
   store i64 %222, i64* %3, align 8
-  %call2_400a17 = tail call %struct.Memory* @sub_400c90.kernel_gemm(%struct.State* %0, i64 %222, %struct.Memory* %call2_4009f3)
+  %call2_400a27 = tail call %struct.Memory* @sub_400ca0.kernel_gemm(%struct.State* %0, i64 %222, %struct.Memory* %call2_400a03)
   %227 = load i64, i64* %RBP.i, align 8
   %228 = add i64 %227, -20
   %229 = load i64, i64* %3, align 8
@@ -464,7 +464,7 @@ entry:
   store i64 %265, i64* %268, align 8
   store i64 %267, i64* %6, align 8
   store i64 %264, i64* %3, align 8
-  %call2_400a3b = tail call %struct.Memory* @sub_400da0.kernel_gemm_StrictFP(%struct.State* %0, i64 %264, %struct.Memory* %call2_400a17)
+  %call2_400a4b = tail call %struct.Memory* @sub_400db0.kernel_gemm_StrictFP(%struct.State* %0, i64 %264, %struct.Memory* %call2_400a27)
   %269 = load i64, i64* %RBP.i, align 8
   %270 = add i64 %269, -20
   %271 = load i64, i64* %3, align 8
@@ -501,7 +501,7 @@ entry:
   store i64 %290, i64* %293, align 8
   store i64 %292, i64* %6, align 8
   store i64 %289, i64* %3, align 8
-  %call2_400a4e = tail call %struct.Memory* @sub_400eb0.check_FP(%struct.State* %0, i64 %289, %struct.Memory* %call2_400a3b)
+  %call2_400a5e = tail call %struct.Memory* @sub_400ec0.check_FP(%struct.State* %0, i64 %289, %struct.Memory* %call2_400a4b)
   %294 = load i32, i32* %EAX.i, align 4
   %295 = load i64, i64* %3, align 8
   store i8 0, i8* %14, align 1
@@ -523,9 +523,9 @@ entry:
   %305 = add i64 %295, %.v
   store i64 %305, i64* %3, align 8
   %306 = load i64, i64* %RBP.i, align 8
-  br i1 %301, label %block_400a5c, label %block_.L_400a68
+  br i1 %301, label %block_400a6c, label %block_.L_400a78
 
-block_400a5c:                                     ; preds = %entry
+block_400a6c:                                     ; preds = %entry
   %307 = add i64 %306, -4
   %308 = add i64 %305, 7
   store i64 %308, i64* %3, align 8
@@ -534,9 +534,9 @@ block_400a5c:                                     ; preds = %entry
   %310 = load i64, i64* %3, align 8
   %311 = add i64 %310, 75
   store i64 %311, i64* %3, align 8
-  br label %block_.L_400aae
+  br label %block_.L_400abe
 
-block_.L_400a68:                                  ; preds = %entry
+block_.L_400a78:                                  ; preds = %entry
   %312 = add i64 %306, -20
   %313 = add i64 %305, 3
   store i64 %313, i64* %3, align 8
@@ -565,7 +565,7 @@ block_.L_400a68:                                  ; preds = %entry
   store i64 %327, i64* %330, align 8
   store i64 %329, i64* %6, align 8
   store i64 %326, i64* %3, align 8
-  %call2_400a72 = tail call %struct.Memory* @sub_400fe0.print_array(%struct.State* nonnull %0, i64 %326, %struct.Memory* %call2_400a4e)
+  %call2_400a82 = tail call %struct.Memory* @sub_400ff0.print_array(%struct.State* nonnull %0, i64 %326, %struct.Memory* %call2_400a5e)
   %331 = load i64, i64* %RBP.i, align 8
   %332 = add i64 %331, -56
   %333 = load i64, i64* %3, align 8
@@ -583,7 +583,7 @@ block_.L_400a68:                                  ; preds = %entry
   store i64 %338, i64* %341, align 8
   store i64 %340, i64* %6, align 8
   store i64 %337, i64* %3, align 8
-  %342 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory* %call2_400a72)
+  %342 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory* %call2_400a82)
   %343 = load i64, i64* %RBP.i, align 8
   %344 = add i64 %343, -64
   %345 = load i64, i64* %3, align 8
@@ -646,11 +646,11 @@ block_.L_400a68:                                  ; preds = %entry
   %383 = inttoptr i64 %380 to i32*
   store i32 0, i32* %383, align 4
   %.pre = load i64, i64* %3, align 8
-  br label %block_.L_400aae
+  br label %block_.L_400abe
 
-block_.L_400aae:                                  ; preds = %block_.L_400a68, %block_400a5c
-  %384 = phi i64 [ %.pre, %block_.L_400a68 ], [ %311, %block_400a5c ]
-  %MEMORY.0 = phi %struct.Memory* [ %378, %block_.L_400a68 ], [ %call2_400a4e, %block_400a5c ]
+block_.L_400abe:                                  ; preds = %block_.L_400a78, %block_400a6c
+  %384 = phi i64 [ %.pre, %block_.L_400a78 ], [ %311, %block_400a6c ]
+  %MEMORY.0 = phi %struct.Memory* [ %378, %block_.L_400a78 ], [ %call2_400a5e, %block_400a6c ]
   %385 = load i64, i64* %RBP.i, align 8
   %386 = add i64 %385, -4
   %387 = add i64 %384, 3
@@ -1525,7 +1525,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jne_.L_400a68(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jne_.L_400a78(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -1556,7 +1556,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_400aae(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jmpq_.L_400abe(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8

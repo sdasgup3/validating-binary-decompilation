@@ -4,25 +4,25 @@ Disassembled output
   .globl _ZN18custom_variable_orIsE8do_shiftEss
   .type _ZN18custom_variable_orIsE8do_shiftEss, @function
 
-#! file-offset 0x11470
-#! rip-offset  0x411470
+#! file-offset 0x11480
+#! rip-offset  0x411480
 #! capacity    34 bytes
 
 # Text                                    #  Line  RIP       Bytes  Opcode              Target                
-._ZN18custom_variable_orIsE8do_shiftEss:  #        0x411470  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                              #  1     0x411470  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                         #  2     0x411471  3      OPC=movq_r64_r64    18446744073709551615  
-  movw %si, %ax                           #  3     0x411474  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %di, %cx                           #  4     0x411477  3      OPC=movw_r16_r16    18446744073709551615  
-  movw %cx, -0x2(%rbp)                    #  5     0x41147a  4      OPC=movw_m16_r16    18446744073709551615  
-  movw %ax, -0x4(%rbp)                    #  6     0x41147e  4      OPC=movw_m16_r16    18446744073709551615  
-  movswl -0x2(%rbp), %esi                 #  7     0x411482  4      OPC=movswl_r32_m16  18446744073709551615  
-  movswl -0x4(%rbp), %edi                 #  8     0x411486  4      OPC=movswl_r32_m16  18446744073709551615  
-  orl %edi, %esi                          #  9     0x41148a  2      OPC=orl_r32_r32     18446744073709551615  
-  movw %si, %ax                           #  10    0x41148c  3      OPC=movw_r16_r16    18446744073709551615  
-  cwtl                                    #  11    0x41148f  1      OPC=cwtl            18446744073709551615  
-  popq %rbp                               #  12    0x411490  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                    #  13    0x411491  1      OPC=retq            18446744073709551615  
+._ZN18custom_variable_orIsE8do_shiftEss:  #        0x411480  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                              #  1     0x411480  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                         #  2     0x411481  3      OPC=movq_r64_r64    18446744073709551615  
+  movw %si, %ax                           #  3     0x411484  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %di, %cx                           #  4     0x411487  3      OPC=movw_r16_r16    18446744073709551615  
+  movw %cx, -0x2(%rbp)                    #  5     0x41148a  4      OPC=movw_m16_r16    18446744073709551615  
+  movw %ax, -0x4(%rbp)                    #  6     0x41148e  4      OPC=movw_m16_r16    18446744073709551615  
+  movswl -0x2(%rbp), %esi                 #  7     0x411492  4      OPC=movswl_r32_m16  18446744073709551615  
+  movswl -0x4(%rbp), %edi                 #  8     0x411496  4      OPC=movswl_r32_m16  18446744073709551615  
+  orl %edi, %esi                          #  9     0x41149a  2      OPC=orl_r32_r32     18446744073709551615  
+  movw %si, %ax                           #  10    0x41149c  3      OPC=movw_r16_r16    18446744073709551615  
+  cwtl                                    #  11    0x41149f  1      OPC=cwtl            18446744073709551615  
+  popq %rbp                               #  12    0x4114a0  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                    #  13    0x4114a1  1      OPC=retq            18446744073709551615  
                                                                                                               
 .size _ZN18custom_variable_orIsE8do_shiftEss, .-_ZN18custom_variable_orIsE8do_shiftEss
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN18custom_variable_orIsE8do_shiftEss->4265072
+._ZN18custom_variable_orIsE8do_shiftEss->4265088
 
 Computing Label PC values: Done.
 
@@ -633,3 +633,5 @@ Decompiling Function: _ZN18custom_variable_orIsE8do_shiftEss Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.08system 0:00.40elapsed 82%CPU (0avgtext+0avgdata 10260maxresident)k
+0inputs+160outputs (0major+6644minor)pagefaults 0swaps
