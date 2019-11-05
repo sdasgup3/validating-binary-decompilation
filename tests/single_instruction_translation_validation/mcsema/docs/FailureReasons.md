@@ -1,4 +1,45 @@
-# Prover script Generation and Prove Errors
+# Prover script Generation and Prove Errors for same registers
+
+              XProvePass(441/ lprovePass=447)
+                common (441)
+                        |
+                        |
+          ------------------------------
+          |                            |
+          |                            |
+        genZ3Pass                     genZ3Fail
+        (380)                           (61, with rotates)
+          |
+          |
+          ----------------------------------------------------
+          |                   |              |               |
+        Prove Pass          Fail          Unk               z3 run error
+          366                10              2                   2
+
+
+## Prove Fail (10)
+- R1
+```
+andnps_xmm_xmm
+pandn_xmm_xmm
+```
+- R2
+```
+pmuludq_xmm_xmm
+```
+
+- R3
+```
+cmpxchgl_r32_r32
+cmpxchgb_r8_rh
+```
+
+- R4
+```
+xaddq_r64_r64 xaddb_r8_r8 xaddb_rh_rh xaddl_r32_r32 xaddw_r16_r16
+```
+
+# Prover script Generation and Prove Errors for registers
 
               XProvePass(417/ lprovePass=423)
                         |
@@ -14,86 +55,6 @@
           |                   |              |               |
         Prove Pass          Fail          Unk               z3 run error
           357                4              8                   2
-
-
-## genZ3Fail(47)
-  -  Implment sgtMInt in the converter. Also, decide should llvm semantic's `>Int` operator should be z3.UGT or signed version `>`
-  ```
-  pcmpgtq_xmm_xmm
-  ```
-  - Implement rolHelper
-  ```
-  rclb_r8_cl
-rclb_rh_cl
-rcll_r32_cl
-rclq_r64_cl
-rclw_r16_cl
-rcrb_r8_cl
-rcrb_r8_one
-rcrb_rh_cl
-rcrb_rh_one
-rcrl_r32_cl
-rcrl_r32_one
-rcrq_r64_cl
-rcrq_r64_one
-rcrw_r16_cl
-rcrw_r16_one
-rolb_r8_cl
-rolb_rh_cl
-roll_r32_cl
-rolq_r64_cl
-rolw_r16_cl
-rorb_r8_cl
-rorb_r8_one
-rorb_rh_cl
-rorb_rh_one
-rorl_r32_cl
-rorl_r32_one
-rorq_r64_cl
-rorq_r64_one
-rorw_r16_cl
-rorw_r16_one
-salb_r8_cl
-salb_rh_cl
-sall_r32_cl
-salq_r64_cl
-salw_r16_cl
-shlb_r8_cl
-shlb_rh_cl
-shll_r32_cl
-shlq_r64_cl
-shlw_r16_cl
-shrb_r8_cl
-shrb_rh_cl
-shrl_r32_cl
-shrq_r64_cl
-shrw_r16_cl
-  
-  ```
-
-## Prove TimeOUT (Unk)
-  - Non linear  
-  ```
-  imulq_r64_r64
-  mulq_r64
-  mulxq_r64_r64_r64
-  ```
-
- - Seems correct
- ```
-cmpxchgq_r64_r64
-paddd_xmm_xmm
-paddb_xmm_xmm
-xorps_xmm_xmm
-adcq_r64_r64
- ```
-
-## Prove Error (2)
- - Need better handlong of commom syntax memory
-```
-vmovdqa_ymm_ymm
-vmovdqu_ymm_ymm
-```
 
 ## Prove Fail (4)
 - R1
@@ -150,6 +111,96 @@ FI;
   - Mcsema
   ```
    entire  64'DEST  is compared against 32'0 o RAX[31:0]
+  ```
+
+### R4
+```
+The pseudocode for xaddq %rax, %rbx as per the manual is
+(1) TEMP ← SRC + DEST;
+(2) rax ← DEST;
+(3) rbx ← TEMP;
+
+However Mcsema performs the operation in the order (1), (3) and (2)
+```
+
+## Prove TimeOUT (Unk)
+  - Non linear  
+  ```
+  imulq_r64_r64
+  mulq_r64
+  mulxq_r64_r64_r64
+  ```
+
+ - Seems correct
+ ```
+cmpxchgq_r64_r64
+paddd_xmm_xmm
+paddb_xmm_xmm
+xorps_xmm_xmm
+adcq_r64_r64
+ ```
+
+## Prove Error (2)
+ - Need better handlong of commom syntax memory
+```
+vmovdqa_ymm_ymm
+vmovdqu_ymm_ymm
+```
+
+
+## genZ3Fail(47)
+  -  Implment sgtMInt in the converter. Also, decide should llvm semantic's `>Int` operator should be z3.UGT or signed version `>`
+  ```
+  pcmpgtq_xmm_xmm
+  ```
+  - Implement rolHelper
+  ```
+  rclb_r8_cl
+rclb_rh_cl
+rcll_r32_cl
+rclq_r64_cl
+rclw_r16_cl
+rcrb_r8_cl
+rcrb_r8_one
+rcrb_rh_cl
+rcrb_rh_one
+rcrl_r32_cl
+rcrl_r32_one
+rcrq_r64_cl
+rcrq_r64_one
+rcrw_r16_cl
+rcrw_r16_one
+rolb_r8_cl
+rolb_rh_cl
+roll_r32_cl
+rolq_r64_cl
+rolw_r16_cl
+rorb_r8_cl
+rorb_r8_one
+rorb_rh_cl
+rorb_rh_one
+rorl_r32_cl
+rorl_r32_one
+rorq_r64_cl
+rorq_r64_one
+rorw_r16_cl
+rorw_r16_one
+salb_r8_cl
+salb_rh_cl
+sall_r32_cl
+salq_r64_cl
+salw_r16_cl
+shlb_r8_cl
+shlb_rh_cl
+shll_r32_cl
+shlq_r64_cl
+shlw_r16_cl
+shrb_r8_cl
+shrb_rh_cl
+shrl_r32_cl
+shrq_r64_cl
+shrw_r16_cl
+  
   ```
 
 # LProve Failures
