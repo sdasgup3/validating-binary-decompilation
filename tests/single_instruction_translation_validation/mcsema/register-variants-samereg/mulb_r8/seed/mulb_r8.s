@@ -1,0 +1,3 @@
+.target:
+  mulb %al
+  retq

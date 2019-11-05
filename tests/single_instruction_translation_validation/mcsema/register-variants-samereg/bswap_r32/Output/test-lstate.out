@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:179:22: error: use of undefined value '@my.bswap.i32'
+  %6 = tail call i32 @my.bswap.i32(i32 %5)
+                     ^
+0.02user 0.02system 0:00.04elapsed 104%CPU (0avgtext+0avgdata 27260maxresident)k
+0inputs+16outputs (0major+3266minor)pagefaults 0swaps

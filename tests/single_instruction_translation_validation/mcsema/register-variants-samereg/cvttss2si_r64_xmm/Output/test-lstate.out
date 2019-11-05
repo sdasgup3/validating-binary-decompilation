@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:181:24: error: use of undefined value '@my.trunc.f32'
+  %8 = tail call float @my.trunc.f32(float %7) #22
+                       ^
+0.02user 0.03system 0:00.12elapsed 46%CPU (0avgtext+0avgdata 27384maxresident)k
+0inputs+16outputs (0major+3279minor)pagefaults 0swaps

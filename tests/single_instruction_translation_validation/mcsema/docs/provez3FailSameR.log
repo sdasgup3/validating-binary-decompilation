@@ -1,0 +1,10 @@
+andnps_xmm_xmm
+pandn_xmm_xmm
+cmpxchgb_r8_rh
+xaddq_r64_r64
+xaddb_r8_r8
+xaddb_rh_rh
+xaddl_r32_r32
+pmuludq_xmm_xmm
+cmpxchgl_r32_r32
+xaddw_r16_r16

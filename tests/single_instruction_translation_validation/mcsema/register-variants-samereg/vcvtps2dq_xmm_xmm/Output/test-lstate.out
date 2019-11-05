@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:192:26: error: use of undefined value '@my.fabs.v4f32'
+  %19 = call <4 x float> @my.fabs.v4f32(<4 x float> %18)
+                         ^
+0.02user 0.02system 0:00.05elapsed 91%CPU (0avgtext+0avgdata 27444maxresident)k
+0inputs+16outputs (0major+3283minor)pagefaults 0swaps

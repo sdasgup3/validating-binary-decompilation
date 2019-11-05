@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:212:25: error: use of undefined value '@sqrtf'
+  %32 = tail call float @sqrtf(float %8) #25
+                        ^
+0.02user 0.02system 0:00.17elapsed 29%CPU (0avgtext+0avgdata 27448maxresident)k
+0inputs+16outputs (0major+3248minor)pagefaults 0swaps
