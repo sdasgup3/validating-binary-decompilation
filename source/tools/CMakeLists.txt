@@ -3,3 +3,4 @@
 add_subdirectory(matcher)
 add_subdirectory(decompiler)
 add_subdirectory(spec-to-smt)
+add_subdirectory(lltodot)
