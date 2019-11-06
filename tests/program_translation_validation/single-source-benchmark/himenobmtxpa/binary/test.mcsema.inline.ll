@@ -157,6 +157,76 @@ declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed_(%struct.St
 
 declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -3372,7 +3442,7 @@ block_400649:                                     ; preds = %block_400640
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_4005d0_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -5363,7 +5433,7 @@ block_400680:
   %449 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %440, i64* %449, align 8, !tbaa !2428
   %450 = load i64, i64* %PC
-  %451 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %450, %struct.Memory* %405)
+  %451 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %450, %struct.Memory* %405)
   %452 = load i64, i64* %PC
   %453 = add i64 %452, 10
   store i64 %453, i64* %PC
@@ -5425,7 +5495,7 @@ block_400680:
   %495 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %486, i64* %495, align 8, !tbaa !2428
   %496 = load i64, i64* %PC
-  %497 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %496, %struct.Memory* %451)
+  %497 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %496, %struct.Memory* %451)
   %498 = load i64, i64* %PC
   %499 = add i64 %498, 10
   store i64 %499, i64* %PC
@@ -5487,7 +5557,7 @@ block_400680:
   %541 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %532, i64* %541, align 8, !tbaa !2428
   %542 = load i64, i64* %PC
-  %543 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %542, %struct.Memory* %497)
+  %543 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %542, %struct.Memory* %497)
   %544 = load i64, i64* %PC
   %545 = add i64 %544, 10
   store i64 %545, i64* %PC
@@ -5549,7 +5619,7 @@ block_400680:
   %587 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %578, i64* %587, align 8, !tbaa !2428
   %588 = load i64, i64* %PC
-  %589 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %588, %struct.Memory* %543)
+  %589 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %588, %struct.Memory* %543)
   %590 = load i64, i64* %PC
   %591 = add i64 %590, 10
   store i64 %591, i64* %PC
@@ -5611,7 +5681,7 @@ block_400680:
   %633 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %624, i64* %633, align 8, !tbaa !2428
   %634 = load i64, i64* %PC
-  %635 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %634, %struct.Memory* %589)
+  %635 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %634, %struct.Memory* %589)
   %636 = load i64, i64* %PC
   %637 = add i64 %636, 10
   store i64 %637, i64* %PC
@@ -5673,7 +5743,7 @@ block_400680:
   %679 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %670, i64* %679, align 8, !tbaa !2428
   %680 = load i64, i64* %PC
-  %681 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %680, %struct.Memory* %635)
+  %681 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %680, %struct.Memory* %635)
   %682 = load i64, i64* %PC
   %683 = add i64 %682, 10
   store i64 %683, i64* %PC
@@ -5735,7 +5805,7 @@ block_400680:
   %725 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %716, i64* %725, align 8, !tbaa !2428
   %726 = load i64, i64* %PC
-  %727 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed_(%struct.State* %0, i64 %726, %struct.Memory* %681)
+  %727 = call %struct.Memory* @sub_400a80_newMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %726, %struct.Memory* %681)
   %728 = load i64, i64* %PC
   %729 = add i64 %728, 10
   store i64 %729, i64* %PC
@@ -5765,7 +5835,7 @@ block_400680:
   %747 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %738, i64* %747, align 8, !tbaa !2428
   %748 = load i64, i64* %PC
-  %749 = call %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed_(%struct.State* %0, i64 %748, %struct.Memory* %727)
+  %749 = call %struct.Memory* @sub_400b10_mat_set_init_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %748, %struct.Memory* %727)
   %750 = load i64, i64* %PC
   %751 = add i64 %750, 10
   store i64 %751, i64* %PC
@@ -5833,7 +5903,7 @@ block_400680:
   %796 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %787, i64* %796, align 8, !tbaa !2428
   %797 = load i64, i64* %PC
-  %798 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %797, %struct.Memory* %749)
+  %798 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %797, %struct.Memory* %749)
   %799 = load i64, i64* %PC
   %800 = add i64 %799, 10
   store i64 %800, i64* %PC
@@ -5920,7 +5990,7 @@ block_400680:
   %864 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %855, i64* %864, align 8, !tbaa !2428
   %865 = load i64, i64* %PC
-  %866 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %865, %struct.Memory* %798)
+  %866 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %865, %struct.Memory* %798)
   %867 = load i64, i64* %PC
   %868 = add i64 %867, 10
   store i64 %868, i64* %PC
@@ -6007,7 +6077,7 @@ block_400680:
   %932 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %923, i64* %932, align 8, !tbaa !2428
   %933 = load i64, i64* %PC
-  %934 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %933, %struct.Memory* %866)
+  %934 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %933, %struct.Memory* %866)
   %935 = load i64, i64* %PC
   %936 = add i64 %935, 10
   store i64 %936, i64* %PC
@@ -6075,7 +6145,7 @@ block_400680:
   %981 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %972, i64* %981, align 8, !tbaa !2428
   %982 = load i64, i64* %PC
-  %983 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %982, %struct.Memory* %934)
+  %983 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %982, %struct.Memory* %934)
   %984 = load i64, i64* %PC
   %985 = add i64 %984, 10
   store i64 %985, i64* %PC
@@ -6116,7 +6186,7 @@ block_400680:
   %1009 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1000, i64* %1009, align 8, !tbaa !2428
   %1010 = load i64, i64* %PC
-  %1011 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1010, %struct.Memory* %983)
+  %1011 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1010, %struct.Memory* %983)
   %1012 = load i64, i64* %PC
   %1013 = add i64 %1012, 10
   store i64 %1013, i64* %PC
@@ -6157,7 +6227,7 @@ block_400680:
   %1037 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1028, i64* %1037, align 8, !tbaa !2428
   %1038 = load i64, i64* %PC
-  %1039 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1038, %struct.Memory* %1011)
+  %1039 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1038, %struct.Memory* %1011)
   %1040 = load i64, i64* %PC
   %1041 = add i64 %1040, 10
   store i64 %1041, i64* %PC
@@ -6198,7 +6268,7 @@ block_400680:
   %1065 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1056, i64* %1065, align 8, !tbaa !2428
   %1066 = load i64, i64* %PC
-  %1067 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1066, %struct.Memory* %1039)
+  %1067 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1066, %struct.Memory* %1039)
   %1068 = load i64, i64* %PC
   %1069 = add i64 %1068, 10
   store i64 %1069, i64* %PC
@@ -6285,7 +6355,7 @@ block_400680:
   %1133 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1124, i64* %1133, align 8, !tbaa !2428
   %1134 = load i64, i64* %PC
-  %1135 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1134, %struct.Memory* %1067)
+  %1135 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1134, %struct.Memory* %1067)
   %1136 = load i64, i64* %PC
   %1137 = add i64 %1136, 10
   store i64 %1137, i64* %PC
@@ -6345,7 +6415,7 @@ block_400680:
   %1180 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1171, i64* %1180, align 8, !tbaa !2428
   %1181 = load i64, i64* %PC
-  %1182 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1181, %struct.Memory* %1135)
+  %1182 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1181, %struct.Memory* %1135)
   %1183 = load i64, i64* %PC
   %1184 = add i64 %1183, 10
   store i64 %1184, i64* %PC
@@ -6405,7 +6475,7 @@ block_400680:
   %1227 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1218, i64* %1227, align 8, !tbaa !2428
   %1228 = load i64, i64* %PC
-  %1229 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1228, %struct.Memory* %1182)
+  %1229 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1228, %struct.Memory* %1182)
   %1230 = load i64, i64* %PC
   %1231 = add i64 %1230, 10
   store i64 %1231, i64* %PC
@@ -6473,7 +6543,7 @@ block_400680:
   %1276 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1267, i64* %1276, align 8, !tbaa !2428
   %1277 = load i64, i64* %PC
-  %1278 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1277, %struct.Memory* %1229)
+  %1278 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1277, %struct.Memory* %1229)
   %1279 = load i64, i64* %PC
   %1280 = add i64 %1279, 10
   store i64 %1280, i64* %PC
@@ -6514,7 +6584,7 @@ block_400680:
   %1304 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1295, i64* %1304, align 8, !tbaa !2428
   %1305 = load i64, i64* %PC
-  %1306 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1305, %struct.Memory* %1278)
+  %1306 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1305, %struct.Memory* %1278)
   %1307 = load i64, i64* %PC
   %1308 = add i64 %1307, 10
   store i64 %1308, i64* %PC
@@ -6555,7 +6625,7 @@ block_400680:
   %1332 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1323, i64* %1332, align 8, !tbaa !2428
   %1333 = load i64, i64* %PC
-  %1334 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed_(%struct.State* %0, i64 %1333, %struct.Memory* %1306)
+  %1334 = call %struct.Memory* @sub_400c10_mat_set_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1333, %struct.Memory* %1306)
   %1335 = load i64, i64* %PC
   %1336 = add i64 %1335, 10
   store i64 %1336, i64* %PC
@@ -6654,7 +6724,7 @@ block_400680:
   %1399 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1390, i64* %1399, align 8, !tbaa !2428
   %1400 = load i64, i64* %PC
-  %1401 = call %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed_(%struct.State* %0, i64 %1400, %struct.Memory* %1334)
+  %1401 = call %struct.Memory* @sub_400cf0_jacobi_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1400, %struct.Memory* %1334)
   %1402 = load i64, i64* %PC
   %1403 = add i64 %1402, 10
   store i64 %1403, i64* %PC
@@ -6774,7 +6844,7 @@ block_400680:
   %1487 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1478, i64* %1487, align 8, !tbaa !2428
   %1488 = load i64, i64* %PC
-  %1489 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1488, %struct.Memory* %1467)
+  %1489 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1488, %struct.Memory* %1467)
   %1490 = load i64, i64* %PC
   %1491 = add i64 %1490, 10
   store i64 %1491, i64* %PC
@@ -6795,7 +6865,7 @@ block_400680:
   %1502 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1493, i64* %1502, align 8, !tbaa !2428
   %1503 = load i64, i64* %PC
-  %1504 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1503, %struct.Memory* %1489)
+  %1504 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1503, %struct.Memory* %1489)
   %1505 = load i64, i64* %PC
   %1506 = add i64 %1505, 10
   store i64 %1506, i64* %PC
@@ -6816,7 +6886,7 @@ block_400680:
   %1517 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1508, i64* %1517, align 8, !tbaa !2428
   %1518 = load i64, i64* %PC
-  %1519 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1518, %struct.Memory* %1504)
+  %1519 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1518, %struct.Memory* %1504)
   %1520 = load i64, i64* %PC
   %1521 = add i64 %1520, 10
   store i64 %1521, i64* %PC
@@ -6837,7 +6907,7 @@ block_400680:
   %1532 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1523, i64* %1532, align 8, !tbaa !2428
   %1533 = load i64, i64* %PC
-  %1534 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1533, %struct.Memory* %1519)
+  %1534 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1533, %struct.Memory* %1519)
   %1535 = load i64, i64* %PC
   %1536 = add i64 %1535, 10
   store i64 %1536, i64* %PC
@@ -6858,7 +6928,7 @@ block_400680:
   %1547 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1538, i64* %1547, align 8, !tbaa !2428
   %1548 = load i64, i64* %PC
-  %1549 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1548, %struct.Memory* %1534)
+  %1549 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1548, %struct.Memory* %1534)
   %1550 = load i64, i64* %PC
   %1551 = add i64 %1550, 10
   store i64 %1551, i64* %PC
@@ -6879,7 +6949,7 @@ block_400680:
   %1562 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1553, i64* %1562, align 8, !tbaa !2428
   %1563 = load i64, i64* %PC
-  %1564 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1563, %struct.Memory* %1549)
+  %1564 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1563, %struct.Memory* %1549)
   %1565 = load i64, i64* %PC
   %1566 = add i64 %1565, 10
   store i64 %1566, i64* %PC
@@ -6900,7 +6970,7 @@ block_400680:
   %1577 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1568, i64* %1577, align 8, !tbaa !2428
   %1578 = load i64, i64* %PC
-  %1579 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed_(%struct.State* %0, i64 %1578, %struct.Memory* %1564)
+  %1579 = call %struct.Memory* @sub_401990_clearMat_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1578, %struct.Memory* %1564)
   %1580 = load i64, i64* %RAX
   %1581 = load i32, i32* %EAX
   %1582 = zext i32 %1581 to i64
@@ -28387,7 +28457,7 @@ block_401d30:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400508__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC

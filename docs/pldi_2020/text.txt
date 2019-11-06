@@ -95,3 +95,10 @@ This is done so that the llvm opt does not does do any IPO
 
 
 2. Does inline _ opt 03
+
+
+## mention the sizes of the matched program
+
+## Mention that reloc info is now used only by compd
+but mcsema can also use it, but curently its failing
+on binaries with reloc info.

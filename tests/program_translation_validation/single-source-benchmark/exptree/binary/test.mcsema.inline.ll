@@ -182,6 +182,136 @@ declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed_(%stru
 
 declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -3694,7 +3824,7 @@ block_400ba0:                                     ; preds = %block_400b48, %bloc
   %812 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %803, i64* %812, align 8, !tbaa !2428
   %813 = load i64, i64* %PC
-  %814 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %813, %struct.Memory* %MEMORY.2)
+  %814 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %813, %struct.Memory* %MEMORY.2)
   %815 = load i64, i64* %PC
   %816 = add i64 %815, 10
   store i64 %816, i64* %PC
@@ -5194,7 +5324,7 @@ block_400ba0:                                     ; preds = %block_400b61, %bloc
   %928 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %919, i64* %928, align 8, !tbaa !2428
   %929 = load i64, i64* %PC
-  %930 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %929, %struct.Memory* %MEMORY.2)
+  %930 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %929, %struct.Memory* %MEMORY.2)
   %931 = load i64, i64* %PC
   %932 = add i64 %931, 10
   store i64 %932, i64* %PC
@@ -5901,7 +6031,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %371 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %362, i64* %371, align 8, !tbaa !2428
   %372 = load i64, i64* %PC
-  %373 = call %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed_(%struct.State* %0, i64 %372, %struct.Memory* %MEMORY.1)
+  %373 = call %struct.Memory* @sub_4007c0_newWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %372, %struct.Memory* %MEMORY.1)
   %374 = load i64, i64* %RAX
   %375 = load i64, i64* %PC
   %376 = add i64 %375, 8
@@ -5929,7 +6059,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %391 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %382, i64* %391, align 8, !tbaa !2428
   %392 = load i64, i64* %PC
-  %393 = call %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed_(%struct.State* %0, i64 %392, %struct.Memory* %373)
+  %393 = call %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %392, %struct.Memory* %373)
   %394 = load i64, i64* %RAX
   %395 = load i64, i64* %PC
   %396 = add i64 %395, 8
@@ -5957,7 +6087,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %411 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %402, i64* %411, align 8, !tbaa !2428
   %412 = load i64, i64* %PC
-  %413 = call %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed_(%struct.State* %0, i64 %412, %struct.Memory* %393)
+  %413 = call %struct.Memory* @sub_400820_newCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %412, %struct.Memory* %393)
   %414 = load i64, i64* %RBP
   %415 = sub i64 %414, 64
   %416 = load i64, i64* %PC
@@ -5996,7 +6126,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %438 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %429, i64* %438, align 8, !tbaa !2428
   %439 = load i64, i64* %PC
-  %440 = call %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed_(%struct.State* %0, i64 %439, %struct.Memory* %413)
+  %440 = call %struct.Memory* @sub_400880_initWorkList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %439, %struct.Memory* %413)
   %441 = load i64, i64* %PC
   %442 = add i64 %441, 8
   store i64 %442, i64* %PC
@@ -6024,7 +6154,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %458 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %449, i64* %458, align 8, !tbaa !2428
   %459 = load i64, i64* %PC
-  %460 = call %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed_(%struct.State* %0, i64 %459, %struct.Memory* %440)
+  %460 = call %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %459, %struct.Memory* %440)
   %461 = load i64, i64* %PC
   %462 = add i64 %461, 8
   store i64 %462, i64* %PC
@@ -6052,7 +6182,7 @@ block_401210:                                     ; preds = %block_4011a8, %bloc
   %478 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %469, i64* %478, align 8, !tbaa !2428
   %479 = load i64, i64* %PC
-  %480 = call %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed_(%struct.State* %0, i64 %479, %struct.Memory* %460)
+  %480 = call %struct.Memory* @sub_4008d0_initCombList_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %479, %struct.Memory* %460)
   %481 = load i64, i64* %PC
   %482 = add i64 %481, 7
   store i64 %482, i64* %PC
@@ -8809,7 +8939,7 @@ block_400dc6:                                     ; preds = %block_400d6e
   %965 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %956, i64* %965, align 8, !tbaa !2428
   %966 = load i64, i64* %PC
-  %967 = call %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed_(%struct.State* %0, i64 %966, %struct.Memory* %1547)
+  %967 = call %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %966, %struct.Memory* %1547)
   %968 = load i64, i64* %PC
   %969 = add i64 %968, 11
   store i64 %969, i64* %PC
@@ -9563,7 +9693,7 @@ block_400d6e:                                     ; preds = %block_400d22
   %1545 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %1536, i64* %1545, align 8, !tbaa !2428
   %1546 = load i64, i64* %PC
-  %1547 = call %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed_(%struct.State* %0, i64 %1546, %struct.Memory* %1346)
+  %1547 = call %struct.Memory* @sub_400920_saveSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %1546, %struct.Memory* %1346)
   %1548 = load i64, i64* %PC
   %1549 = add i64 %1548, 7
   store i64 %1549, i64* %PC
@@ -10345,7 +10475,7 @@ _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjES4_EEP6MemoryS6_R5StateT_T0_T1_.exit1: ; pre
   %2135 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %2126, i64* %2135, align 8, !tbaa !2428
   %2136 = load i64, i64* %PC
-  %2137 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %2136, %struct.Memory* %MEMORY.11)
+  %2137 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %2136, %struct.Memory* %MEMORY.11)
   %2138 = load i64, i64* %PC
   %2139 = add i64 %2138, 8
   store i64 %2139, i64* %PC
@@ -10510,7 +10640,7 @@ _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjES4_EEP6MemoryS6_R5StateT_T0_T1_.exit1: ; pre
   %2266 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %2257, i64* %2266, align 8, !tbaa !2428
   %2267 = load i64, i64* %PC
-  %2268 = call %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed_(%struct.State* %0, i64 %2267, %struct.Memory* %2137)
+  %2268 = call %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %2267, %struct.Memory* %2137)
   br label %block_400fca
 
 block_400e99:                                     ; preds = %block_400e8f, %block_400e61
@@ -13028,7 +13158,7 @@ block_400ba0:                                     ; preds = %block_400b61, %bloc
   %870 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %861, i64* %870, align 8, !tbaa !2428
   %871 = load i64, i64* %PC
-  %872 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %871, %struct.Memory* %MEMORY.2)
+  %872 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %871, %struct.Memory* %MEMORY.2)
   %873 = load i64, i64* %PC
   %874 = add i64 %873, 10
   store i64 %874, i64* %PC
@@ -14001,7 +14131,7 @@ block_40112b:                                     ; preds = %block_40111d
   %440 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %431, i64* %440, align 8, !tbaa !2428
   %441 = load i64, i64* %PC
-  %442 = call %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed_(%struct.State* %0, i64 %441, %struct.Memory* %MEMORY.4)
+  %442 = call %struct.Memory* @sub_400a80_printSolution_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %441, %struct.Memory* %MEMORY.4)
   br label %block_40113f
 
 block_40101f:                                     ; preds = %block_401085, %block_401010
@@ -14349,7 +14479,7 @@ block_4010e4:                                     ; preds = %block_4010d0
   %699 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %690, i64* %699, align 8, !tbaa !2428
   %700 = load i64, i64* %PC
-  %701 = call %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed_(%struct.State* %0, i64 %700, %struct.Memory* %MEMORY.1)
+  %701 = call %struct.Memory* @sub_400ce0_recSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %700, %struct.Memory* %MEMORY.1)
   %702 = load i64, i64* %PC
   %703 = add i64 %702, 8
   store i64 %703, i64* %PC
@@ -17222,7 +17352,7 @@ block_400ba0:                                     ; preds = %block_400b61, %bloc
   %899 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %890, i64* %899, align 8, !tbaa !2428
   %900 = load i64, i64* %PC
-  %901 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %900, %struct.Memory* %MEMORY.2)
+  %901 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %900, %struct.Memory* %MEMORY.2)
   %902 = load i64, i64* %PC
   %903 = add i64 %902, 10
   store i64 %903, i64* %PC
@@ -17701,7 +17831,7 @@ block_401330:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_400620__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -19431,7 +19561,7 @@ block_400ba0:                                     ; preds = %block_400b61, %bloc
   %747 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %738, i64* %747, align 8, !tbaa !2428
   %748 = load i64, i64* %PC
-  %749 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %748, %struct.Memory* %MEMORY.2)
+  %749 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %748, %struct.Memory* %MEMORY.2)
   %750 = load i64, i64* %PC
   %751 = add i64 %750, 10
   store i64 %751, i64* %PC
@@ -20003,7 +20133,7 @@ block_4012c0:
   %36 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %27, i64* %36, align 8, !tbaa !2428
   %37 = load i64, i64* %PC
-  %38 = call %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed_(%struct.State* %0, i64 %37, %struct.Memory* %2)
+  %38 = call %struct.Memory* @sub_401010_doSearch_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %37, %struct.Memory* %2)
   %39 = load i64, i64* %PC
   %40 = add i64 %39, 1
   store i64 %40, i64* %PC
@@ -20157,7 +20287,7 @@ block_4012f0:
   %94 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %85, i64* %94, align 8, !tbaa !2428
   %95 = load i64, i64* %PC
-  %96 = call %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed_(%struct.State* %0, i64 %95, %struct.Memory* %2)
+  %96 = call %struct.Memory* @sub_401150_getInput_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %95, %struct.Memory* %2)
   %97 = load i32, i32* %EAX
   %98 = zext i32 %97 to i64
   %99 = load i64, i64* %PC
@@ -20224,7 +20354,7 @@ block_401314:                                     ; preds = %block_4012f0
   %144 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %135, i64* %144, align 8, !tbaa !2428
   %145 = load i64, i64* %PC
-  %146 = call %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed_(%struct.State* %0, i64 %145, %struct.Memory* %96)
+  %146 = call %struct.Memory* @sub_4012c0_search_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %145, %struct.Memory* %96)
   br label %block_401319
 
 block_401319:                                     ; preds = %block_401314, %block_4012f0
@@ -20438,7 +20568,7 @@ block_400789:                                     ; preds = %block_400780
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400710_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -21848,7 +21978,7 @@ block_400ba0:                                     ; preds = %block_400b61, %bloc
   %841 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %832, i64* %841, align 8, !tbaa !2428
   %842 = load i64, i64* %PC
-  %843 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed_(%struct.State* %0, i64 %842, %struct.Memory* %MEMORY.2)
+  %843 = call %struct.Memory* @sub_4009e0_calculate_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %842, %struct.Memory* %MEMORY.2)
   %844 = load i64, i64* %PC
   %845 = add i64 %844, 10
   store i64 %845, i64* %PC

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x562409dcba20]:   %64 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%temp_string_type* @temp_string to i64), i64 1300) to i32), i32 255)) #12
+[0x562409c51c80]:   %96 = tail call i32 @llvm.ctpop.i32(i32 %95)
+[0x562409c51e70]:   %65 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x6337c0_type* @G__0x6337c0 to i64), i64 1300) to i32), i32 255))
+[0x562409c52040]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x56240bf31720]:   %call2_403732 = tail call %struct.Memory.31* @sub_403890._Z28test_goto_loop_unroll_factorILi14EdEvPKT0_iPKc(%struct.State.0* %0, i64 %84, %struct.Memory.31* %call2_403708)
+[0x56240bf32bf0]:   %call2_403708 = tail call %struct.Memory.31* @sub_403840._ZN15goto_loop_testsILi13EdE7do_testEPKdPKc(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN15goto_loop_testsILi14EdE7do_testEPKdPKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN15goto_loop_testsILi14EdE7do_testEPKdPKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+11.50user 1.46system 0:13.62elapsed 95%CPU (0avgtext+0avgdata 62680maxresident)k
+0inputs+584outputs (0major+21660minor)pagefaults 0swaps

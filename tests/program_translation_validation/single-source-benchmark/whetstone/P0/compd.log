@@ -4,28 +4,28 @@ Disassembled output
   .globl P0
   .type P0, @function
 
-#! file-offset 0x1800
-#! rip-offset  0x401800
+#! file-offset 0x1810
+#! rip-offset  0x401810
 #! capacity    108 bytes
 
 # Text                            #  Line  RIP       Bytes  Opcode              Target                
-.P0:                              #        0x401800  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                      #  1     0x401800  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                 #  2     0x401801  3      OPC=movq_r64_r64    18446744073709551615  
-  movslq 0x6020ac, %rax           #  3     0x401804  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd 0x6020c0(,%rax,8), %xmm0  #  4     0x40180c  9      OPC=movsd_xmm_m64   18446744073709551615  
-  movslq 0x602090, %rax           #  5     0x401815  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd %xmm0, 0x6020c0(,%rax,8)  #  6     0x40181d  9      OPC=movsd_m64_xmm   18446744073709551615  
-  movslq 0x6020a8, %rax           #  7     0x401826  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd 0x6020c0(,%rax,8), %xmm0  #  8     0x40182e  9      OPC=movsd_xmm_m64   18446744073709551615  
-  movslq 0x6020ac, %rax           #  9     0x401837  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd %xmm0, 0x6020c0(,%rax,8)  #  10    0x40183f  9      OPC=movsd_m64_xmm   18446744073709551615  
-  movslq 0x602090, %rax           #  11    0x401848  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd 0x6020c0(,%rax,8), %xmm0  #  12    0x401850  9      OPC=movsd_xmm_m64   18446744073709551615  
-  movslq 0x6020a8, %rax           #  13    0x401859  8      OPC=movslq_r64_m32  18446744073709551615  
-  movsd %xmm0, 0x6020c0(,%rax,8)  #  14    0x401861  9      OPC=movsd_m64_xmm   18446744073709551615  
-  popq %rbp                       #  15    0x40186a  1      OPC=popq_r64_1      18446744073709551615  
-  retq                            #  16    0x40186b  1      OPC=retq            18446744073709551615  
+.P0:                              #        0x401810  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                      #  1     0x401810  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                 #  2     0x401811  3      OPC=movq_r64_r64    18446744073709551615  
+  movslq 0x6020ac, %rax           #  3     0x401814  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd 0x6020c0(,%rax,8), %xmm0  #  4     0x40181c  9      OPC=movsd_xmm_m64   18446744073709551615  
+  movslq 0x602090, %rax           #  5     0x401825  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd %xmm0, 0x6020c0(,%rax,8)  #  6     0x40182d  9      OPC=movsd_m64_xmm   18446744073709551615  
+  movslq 0x6020a8, %rax           #  7     0x401836  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd 0x6020c0(,%rax,8), %xmm0  #  8     0x40183e  9      OPC=movsd_xmm_m64   18446744073709551615  
+  movslq 0x6020ac, %rax           #  9     0x401847  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd %xmm0, 0x6020c0(,%rax,8)  #  10    0x40184f  9      OPC=movsd_m64_xmm   18446744073709551615  
+  movslq 0x602090, %rax           #  11    0x401858  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd 0x6020c0(,%rax,8), %xmm0  #  12    0x401860  9      OPC=movsd_xmm_m64   18446744073709551615  
+  movslq 0x6020a8, %rax           #  13    0x401869  8      OPC=movslq_r64_m32  18446744073709551615  
+  movsd %xmm0, 0x6020c0(,%rax,8)  #  14    0x401871  9      OPC=movsd_m64_xmm   18446744073709551615  
+  popq %rbp                       #  15    0x40187a  1      OPC=popq_r64_1      18446744073709551615  
+  retq                            #  16    0x40187b  1      OPC=retq            18446744073709551615  
                                                                                                       
 .size P0, .-P0
 Disassembling Done.
@@ -33,7 +33,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.P0->4200448
+.P0->4200464
 
 Computing Label PC values: Done.
 
@@ -441,6 +441,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movslq_0x6020ac___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401814 --size 8
+Global Access Mismatch: 6299820 Relocation: Address, McSema: Constant
 Decompiling instr:movslq 0x6020ac, %rax Done...
 
 
@@ -480,6 +483,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movslq_0x602090___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401825 --size 8
+Global Access Mismatch: 6299792 Relocation: Address, McSema: Constant
 Decompiling instr:movslq 0x602090, %rax Done...
 
 
@@ -519,6 +525,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movslq_0x6020a8___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401836 --size 8
+Global Access Mismatch: 6299816 Relocation: Address, McSema: Constant
 Decompiling instr:movslq 0x6020a8, %rax Done...
 
 
@@ -558,6 +567,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movslq_0x6020ac___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401847 --size 8
 Decompiling instr:movslq 0x6020ac, %rax Done...
 
 
@@ -597,6 +608,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movslq_0x602090___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401858 --size 8
 Decompiling instr:movslq 0x602090, %rax Done...
 
 
@@ -636,6 +649,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L5MOVSXI3RnWImE2MnIjElEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_movslq_0x6020a8___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401869 --size 8
 Decompiling instr:movslq 0x6020a8, %rax Done...
 
 
@@ -700,3 +715,5 @@ Decompiling Function: P0 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.06system 0:01.83elapsed 14%CPU (0avgtext+0avgdata 10264maxresident)k
+0inputs+160outputs (0major+8049minor)pagefaults 0swaps

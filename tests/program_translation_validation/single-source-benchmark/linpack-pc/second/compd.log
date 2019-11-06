@@ -4,25 +4,25 @@ Disassembled output
   .globl second
   .type second, @function
 
-#! file-offset 0x5e0
-#! rip-offset  0x4005e0
+#! file-offset 0x5f0
+#! rip-offset  0x4005f0
 #! capacity    51 bytes
 
 # Text                          #  Line  RIP       Bytes  Opcode                 Target                
-.second:                        #        0x4005e0  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                    #  1     0x4005e0  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp               #  2     0x4005e1  3      OPC=movq_r64_r64       18446744073709551615  
-  subq $0x10, %rsp              #  3     0x4005e4  4      OPC=subq_r64_imm8      18446744073709551615  
-  callq .clock_plt              #  4     0x4005e8  5      OPC=callq_label        4195520               
-  movss 0x283f(%rip), %xmm0     #  5     0x4005ed  8      OPC=movss_xmm_m32      18446744073709551615  
-  movq %rax, -0x10(%rbp)        #  6     0x4005f5  4      OPC=movq_m64_r64       18446744073709551615  
-  cvtsi2ssq -0x10(%rbp), %xmm1  #  7     0x4005f9  6      OPC=cvtsi2ssq_xmm_m64  18446744073709551615  
-  divss %xmm0, %xmm1            #  8     0x4005ff  4      OPC=divss_xmm_xmm      18446744073709551615  
-  movss %xmm1, -0x4(%rbp)       #  9     0x400603  5      OPC=movss_m32_xmm      18446744073709551615  
-  movss -0x4(%rbp), %xmm0       #  10    0x400608  5      OPC=movss_xmm_m32      18446744073709551615  
-  addq $0x10, %rsp              #  11    0x40060d  4      OPC=addq_r64_imm8      18446744073709551615  
-  popq %rbp                     #  12    0x400611  1      OPC=popq_r64_1         18446744073709551615  
-  retq                          #  13    0x400612  1      OPC=retq               18446744073709551615  
+.second:                        #        0x4005f0  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                    #  1     0x4005f0  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp               #  2     0x4005f1  3      OPC=movq_r64_r64       18446744073709551615  
+  subq $0x10, %rsp              #  3     0x4005f4  4      OPC=subq_r64_imm8      18446744073709551615  
+  callq .clock_plt              #  4     0x4005f8  5      OPC=callq_label        4195536               
+  movss 0x283f(%rip), %xmm0     #  5     0x4005fd  8      OPC=movss_xmm_m32      18446744073709551615  
+  movq %rax, -0x10(%rbp)        #  6     0x400605  4      OPC=movq_m64_r64       18446744073709551615  
+  cvtsi2ssq -0x10(%rbp), %xmm1  #  7     0x400609  6      OPC=cvtsi2ssq_xmm_m64  18446744073709551615  
+  divss %xmm0, %xmm1            #  8     0x40060f  4      OPC=divss_xmm_xmm      18446744073709551615  
+  movss %xmm1, -0x4(%rbp)       #  9     0x400613  5      OPC=movss_m32_xmm      18446744073709551615  
+  movss -0x4(%rbp), %xmm0       #  10    0x400618  5      OPC=movss_xmm_m32      18446744073709551615  
+  addq $0x10, %rsp              #  11    0x40061d  4      OPC=addq_r64_imm8      18446744073709551615  
+  popq %rbp                     #  12    0x400621  1      OPC=popq_r64_1         18446744073709551615  
+  retq                          #  13    0x400622  1      OPC=retq               18446744073709551615  
                                                                                                        
 .size second, .-second
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.second->4195808
+.second->4195824
 
 Computing Label PC values: Done.
 
@@ -438,6 +438,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4005f4 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -590,6 +592,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40061d --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -634,3 +638,5 @@ Decompiling Function: second Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.21user 0.04system 0:00.95elapsed 27%CPU (0avgtext+0avgdata 10504maxresident)k
+0inputs+176outputs (0major+6787minor)pagefaults 0swaps

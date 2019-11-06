@@ -4,76 +4,76 @@ Disassembled output
   .globl ReverseBits64
   .type ReverseBits64, @function
 
-#! file-offset 0x5f0
-#! rip-offset  0x4005f0
+#! file-offset 0x600
+#! rip-offset  0x400600
 #! capacity    276 bytes
 
 # Text                            #  Line  RIP       Bytes  Opcode              Target                
-.ReverseBits64:                   #        0x4005f0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                      #  1     0x4005f0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                 #  2     0x4005f1  3      OPC=movq_r64_r64    18446744073709551615  
-  pushq %rbx                      #  3     0x4005f4  1      OPC=pushq_r64_1     18446744073709551615  
-  movl $0xff000000, %eax          #  4     0x4005f5  5      OPC=movl_r32_imm32  18446744073709551615  
-  movl %eax, %ecx                 #  5     0x4005fa  2      OPC=movl_r32_r32    18446744073709551615  
-  movq $0xff00000000, %rdx        #  6     0x4005fc  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0xff0000000000, %rsi      #  7     0x400606  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0xff000000000000, %r8     #  8     0x400610  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0xff00000000000000, %r9   #  9     0x40061a  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0xf0f0f0f0f0f0f0f, %r10   #  10    0x400624  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0x3333333333333333, %r11  #  11    0x40062e  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq $0x5555555555555555, %rbx  #  12    0x400638  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq %rdi, -0x10(%rbp)          #  13    0x400642  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdi          #  14    0x400646  4      OPC=movq_r64_m64    18446744073709551615  
-  shrq $0x1, %rdi                 #  15    0x40064a  4      OPC=shrq_r64_imm8   18446744073709551615  
-  andq %rbx, %rdi                 #  16    0x40064e  3      OPC=andq_r64_r64    18446744073709551615  
-  andq -0x10(%rbp), %rbx          #  17    0x400651  4      OPC=andq_r64_m64    18446744073709551615  
-  shlq $0x1, %rbx                 #  18    0x400655  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %rbx, %rdi                  #  19    0x400659  3      OPC=orq_r64_r64     18446744073709551615  
-  movq %rdi, -0x10(%rbp)          #  20    0x40065c  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdi          #  21    0x400660  4      OPC=movq_r64_m64    18446744073709551615  
-  shrq $0x2, %rdi                 #  22    0x400664  4      OPC=shrq_r64_imm8   18446744073709551615  
-  andq %r11, %rdi                 #  23    0x400668  3      OPC=andq_r64_r64    18446744073709551615  
-  andq -0x10(%rbp), %r11          #  24    0x40066b  4      OPC=andq_r64_m64    18446744073709551615  
-  shlq $0x2, %r11                 #  25    0x40066f  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %r11, %rdi                  #  26    0x400673  3      OPC=orq_r64_r64     18446744073709551615  
-  movq %rdi, -0x10(%rbp)          #  27    0x400676  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdi          #  28    0x40067a  4      OPC=movq_r64_m64    18446744073709551615  
-  shrq $0x4, %rdi                 #  29    0x40067e  4      OPC=shrq_r64_imm8   18446744073709551615  
-  andq %r10, %rdi                 #  30    0x400682  3      OPC=andq_r64_r64    18446744073709551615  
-  andq -0x10(%rbp), %r10          #  31    0x400685  4      OPC=andq_r64_m64    18446744073709551615  
-  shlq $0x4, %r10                 #  32    0x400689  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %r10, %rdi                  #  33    0x40068d  3      OPC=orq_r64_r64     18446744073709551615  
-  movq %rdi, -0x10(%rbp)          #  34    0x400690  4      OPC=movq_m64_r64    18446744073709551615  
-  andq -0x10(%rbp), %r9           #  35    0x400694  4      OPC=andq_r64_m64    18446744073709551615  
-  shrq $0x38, %r9                 #  36    0x400698  4      OPC=shrq_r64_imm8   18446744073709551615  
-  andq -0x10(%rbp), %r8           #  37    0x40069c  4      OPC=andq_r64_m64    18446744073709551615  
-  shrq $0x28, %r8                 #  38    0x4006a0  4      OPC=shrq_r64_imm8   18446744073709551615  
-  orq %r8, %r9                    #  39    0x4006a4  3      OPC=orq_r64_r64     18446744073709551615  
-  andq -0x10(%rbp), %rsi          #  40    0x4006a7  4      OPC=andq_r64_m64    18446744073709551615  
-  shrq $0x18, %rsi                #  41    0x4006ab  4      OPC=shrq_r64_imm8   18446744073709551615  
-  orq %rsi, %r9                   #  42    0x4006af  3      OPC=orq_r64_r64     18446744073709551615  
-  andq -0x10(%rbp), %rdx          #  43    0x4006b2  4      OPC=andq_r64_m64    18446744073709551615  
-  shrq $0x8, %rdx                 #  44    0x4006b6  4      OPC=shrq_r64_imm8   18446744073709551615  
-  orq %rdx, %r9                   #  45    0x4006ba  3      OPC=orq_r64_r64     18446744073709551615  
-  movq -0x10(%rbp), %rdx          #  46    0x4006bd  4      OPC=movq_r64_m64    18446744073709551615  
-  andq $0xff, %rdx                #  47    0x4006c1  7      OPC=andq_r64_imm32  18446744073709551615  
-  shlq $0x38, %rdx                #  48    0x4006c8  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %rdx, %r9                   #  49    0x4006cc  3      OPC=orq_r64_r64     18446744073709551615  
-  movq -0x10(%rbp), %rdx          #  50    0x4006cf  4      OPC=movq_r64_m64    18446744073709551615  
-  andq $0xff00, %rdx              #  51    0x4006d3  7      OPC=andq_r64_imm32  18446744073709551615  
-  shlq $0x28, %rdx                #  52    0x4006da  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %rdx, %r9                   #  53    0x4006de  3      OPC=orq_r64_r64     18446744073709551615  
-  movq -0x10(%rbp), %rdx          #  54    0x4006e1  4      OPC=movq_r64_m64    18446744073709551615  
-  andq $0xff0000, %rdx            #  55    0x4006e5  7      OPC=andq_r64_imm32  18446744073709551615  
-  shlq $0x18, %rdx                #  56    0x4006ec  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %rdx, %r9                   #  57    0x4006f0  3      OPC=orq_r64_r64     18446744073709551615  
-  andq -0x10(%rbp), %rcx          #  58    0x4006f3  4      OPC=andq_r64_m64    18446744073709551615  
-  shlq $0x8, %rcx                 #  59    0x4006f7  4      OPC=shlq_r64_imm8   18446744073709551615  
-  orq %rcx, %r9                   #  60    0x4006fb  3      OPC=orq_r64_r64     18446744073709551615  
-  movq %r9, %rax                  #  61    0x4006fe  3      OPC=movq_r64_r64    18446744073709551615  
-  popq %rbx                       #  62    0x400701  1      OPC=popq_r64_1      18446744073709551615  
-  popq %rbp                       #  63    0x400702  1      OPC=popq_r64_1      18446744073709551615  
-  retq                            #  64    0x400703  1      OPC=retq            18446744073709551615  
+.ReverseBits64:                   #        0x400600  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                      #  1     0x400600  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                 #  2     0x400601  3      OPC=movq_r64_r64    18446744073709551615  
+  pushq %rbx                      #  3     0x400604  1      OPC=pushq_r64_1     18446744073709551615  
+  movl $0xff000000, %eax          #  4     0x400605  5      OPC=movl_r32_imm32  18446744073709551615  
+  movl %eax, %ecx                 #  5     0x40060a  2      OPC=movl_r32_r32    18446744073709551615  
+  movq $0xff00000000, %rdx        #  6     0x40060c  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0xff0000000000, %rsi      #  7     0x400616  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0xff000000000000, %r8     #  8     0x400620  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0xff00000000000000, %r9   #  9     0x40062a  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0xf0f0f0f0f0f0f0f, %r10   #  10    0x400634  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0x3333333333333333, %r11  #  11    0x40063e  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq $0x5555555555555555, %rbx  #  12    0x400648  10     OPC=movq_r64_imm64  18446744073709551615  
+  movq %rdi, -0x10(%rbp)          #  13    0x400652  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdi          #  14    0x400656  4      OPC=movq_r64_m64    18446744073709551615  
+  shrq $0x1, %rdi                 #  15    0x40065a  4      OPC=shrq_r64_imm8   18446744073709551615  
+  andq %rbx, %rdi                 #  16    0x40065e  3      OPC=andq_r64_r64    18446744073709551615  
+  andq -0x10(%rbp), %rbx          #  17    0x400661  4      OPC=andq_r64_m64    18446744073709551615  
+  shlq $0x1, %rbx                 #  18    0x400665  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %rbx, %rdi                  #  19    0x400669  3      OPC=orq_r64_r64     18446744073709551615  
+  movq %rdi, -0x10(%rbp)          #  20    0x40066c  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdi          #  21    0x400670  4      OPC=movq_r64_m64    18446744073709551615  
+  shrq $0x2, %rdi                 #  22    0x400674  4      OPC=shrq_r64_imm8   18446744073709551615  
+  andq %r11, %rdi                 #  23    0x400678  3      OPC=andq_r64_r64    18446744073709551615  
+  andq -0x10(%rbp), %r11          #  24    0x40067b  4      OPC=andq_r64_m64    18446744073709551615  
+  shlq $0x2, %r11                 #  25    0x40067f  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %r11, %rdi                  #  26    0x400683  3      OPC=orq_r64_r64     18446744073709551615  
+  movq %rdi, -0x10(%rbp)          #  27    0x400686  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdi          #  28    0x40068a  4      OPC=movq_r64_m64    18446744073709551615  
+  shrq $0x4, %rdi                 #  29    0x40068e  4      OPC=shrq_r64_imm8   18446744073709551615  
+  andq %r10, %rdi                 #  30    0x400692  3      OPC=andq_r64_r64    18446744073709551615  
+  andq -0x10(%rbp), %r10          #  31    0x400695  4      OPC=andq_r64_m64    18446744073709551615  
+  shlq $0x4, %r10                 #  32    0x400699  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %r10, %rdi                  #  33    0x40069d  3      OPC=orq_r64_r64     18446744073709551615  
+  movq %rdi, -0x10(%rbp)          #  34    0x4006a0  4      OPC=movq_m64_r64    18446744073709551615  
+  andq -0x10(%rbp), %r9           #  35    0x4006a4  4      OPC=andq_r64_m64    18446744073709551615  
+  shrq $0x38, %r9                 #  36    0x4006a8  4      OPC=shrq_r64_imm8   18446744073709551615  
+  andq -0x10(%rbp), %r8           #  37    0x4006ac  4      OPC=andq_r64_m64    18446744073709551615  
+  shrq $0x28, %r8                 #  38    0x4006b0  4      OPC=shrq_r64_imm8   18446744073709551615  
+  orq %r8, %r9                    #  39    0x4006b4  3      OPC=orq_r64_r64     18446744073709551615  
+  andq -0x10(%rbp), %rsi          #  40    0x4006b7  4      OPC=andq_r64_m64    18446744073709551615  
+  shrq $0x18, %rsi                #  41    0x4006bb  4      OPC=shrq_r64_imm8   18446744073709551615  
+  orq %rsi, %r9                   #  42    0x4006bf  3      OPC=orq_r64_r64     18446744073709551615  
+  andq -0x10(%rbp), %rdx          #  43    0x4006c2  4      OPC=andq_r64_m64    18446744073709551615  
+  shrq $0x8, %rdx                 #  44    0x4006c6  4      OPC=shrq_r64_imm8   18446744073709551615  
+  orq %rdx, %r9                   #  45    0x4006ca  3      OPC=orq_r64_r64     18446744073709551615  
+  movq -0x10(%rbp), %rdx          #  46    0x4006cd  4      OPC=movq_r64_m64    18446744073709551615  
+  andq $0xff, %rdx                #  47    0x4006d1  7      OPC=andq_r64_imm32  18446744073709551615  
+  shlq $0x38, %rdx                #  48    0x4006d8  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %rdx, %r9                   #  49    0x4006dc  3      OPC=orq_r64_r64     18446744073709551615  
+  movq -0x10(%rbp), %rdx          #  50    0x4006df  4      OPC=movq_r64_m64    18446744073709551615  
+  andq $0xff00, %rdx              #  51    0x4006e3  7      OPC=andq_r64_imm32  18446744073709551615  
+  shlq $0x28, %rdx                #  52    0x4006ea  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %rdx, %r9                   #  53    0x4006ee  3      OPC=orq_r64_r64     18446744073709551615  
+  movq -0x10(%rbp), %rdx          #  54    0x4006f1  4      OPC=movq_r64_m64    18446744073709551615  
+  andq $0xff0000, %rdx            #  55    0x4006f5  7      OPC=andq_r64_imm32  18446744073709551615  
+  shlq $0x18, %rdx                #  56    0x4006fc  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %rdx, %r9                   #  57    0x400700  3      OPC=orq_r64_r64     18446744073709551615  
+  andq -0x10(%rbp), %rcx          #  58    0x400703  4      OPC=andq_r64_m64    18446744073709551615  
+  shlq $0x8, %rcx                 #  59    0x400707  4      OPC=shlq_r64_imm8   18446744073709551615  
+  orq %rcx, %r9                   #  60    0x40070b  3      OPC=orq_r64_r64     18446744073709551615  
+  movq %r9, %rax                  #  61    0x40070e  3      OPC=movq_r64_r64    18446744073709551615  
+  popq %rbx                       #  62    0x400711  1      OPC=popq_r64_1      18446744073709551615  
+  popq %rbp                       #  63    0x400712  1      OPC=popq_r64_1      18446744073709551615  
+  retq                            #  64    0x400713  1      OPC=retq            18446744073709551615  
                                                                                                       
 .size ReverseBits64, .-ReverseBits64
 Disassembling Done.
@@ -81,7 +81,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.ReverseBits64->4195824
+.ReverseBits64->4195840
 
 Computing Label PC values: Done.
 
@@ -507,6 +507,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0xff000000___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400605 --size 5
 Decompiling instr:movl $0xff000000, %eax Done...
 
 
@@ -545,6 +547,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0xff00000000___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40060c --size 10
 Decompiling instr:movq $0xff00000000, %rdx Done...
 
 
@@ -564,6 +568,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0xff0000000000___rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400616 --size 10
 Decompiling instr:movq $0xff0000000000, %rsi Done...
 
 
@@ -583,6 +589,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0xff000000000000___r8
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400620 --size 10
 Decompiling instr:movq $0xff000000000000, %r8 Done...
 
 
@@ -602,6 +610,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0xff00000000000000___r9
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40062a --size 10
 Decompiling instr:movq $0xff00000000000000, %r9 Done...
 
 
@@ -621,6 +631,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0xf0f0f0f0f0f0f0f___r10
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400634 --size 10
 Decompiling instr:movq $0xf0f0f0f0f0f0f0f, %r10 Done...
 
 
@@ -640,6 +652,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x3333333333333333___r11
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40063e --size 10
 Decompiling instr:movq $0x3333333333333333, %r11 Done...
 
 
@@ -659,6 +673,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x5555555555555555___rbx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400648 --size 10
 Decompiling instr:movq $0x5555555555555555, %rbx Done...
 
 
@@ -716,6 +732,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x1___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40065a --size 4
 Decompiling instr:shrq $0x1, %rdi Done...
 
 
@@ -773,6 +791,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x1___rbx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400665 --size 4
 Decompiling instr:shlq $0x1, %rbx Done...
 
 
@@ -849,6 +869,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x2___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400674 --size 4
 Decompiling instr:shrq $0x2, %rdi Done...
 
 
@@ -906,6 +928,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x2___r11
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40067f --size 4
 Decompiling instr:shlq $0x2, %r11 Done...
 
 
@@ -982,6 +1006,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x4___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40068e --size 4
 Decompiling instr:shrq $0x4, %rdi Done...
 
 
@@ -1039,6 +1065,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x4___r10
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400699 --size 4
 Decompiling instr:shlq $0x4, %r10 Done...
 
 
@@ -1115,6 +1143,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x38___r9
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006a8 --size 4
 Decompiling instr:shrq $0x38, %r9 Done...
 
 
@@ -1153,6 +1183,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x28___r8
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006b0 --size 4
 Decompiling instr:shrq $0x28, %r8 Done...
 
 
@@ -1210,6 +1242,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x18___rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006bb --size 4
 Decompiling instr:shrq $0x18, %rsi Done...
 
 
@@ -1267,6 +1301,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x8___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006c6 --size 4
 Decompiling instr:shrq $0x8, %rdx Done...
 
 
@@ -1324,6 +1360,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andq__0xff___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006d1 --size 7
 Decompiling instr:andq $0xff, %rdx Done...
 
 
@@ -1343,6 +1381,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x38___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006d8 --size 4
 Decompiling instr:shlq $0x38, %rdx Done...
 
 
@@ -1400,6 +1440,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andq__0xff00___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006e3 --size 7
 Decompiling instr:andq $0xff00, %rdx Done...
 
 
@@ -1419,6 +1461,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x28___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006ea --size 4
 Decompiling instr:shlq $0x28, %rdx Done...
 
 
@@ -1476,6 +1520,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andq__0xff0000___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006f5 --size 7
 Decompiling instr:andq $0xff0000, %rdx Done...
 
 
@@ -1495,6 +1541,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x18___rdx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006fc --size 4
 Decompiling instr:shlq $0x18, %rdx Done...
 
 
@@ -1552,6 +1600,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shlq__0x8___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400707 --size 4
 Decompiling instr:shlq $0x8, %rcx Done...
 
 
@@ -1652,3 +1702,5 @@ Decompiling Function: ReverseBits64 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.78user 0.18system 0:06.85elapsed 14%CPU (0avgtext+0avgdata 10500maxresident)k
+0inputs+392outputs (0major+26273minor)pagefaults 0swaps

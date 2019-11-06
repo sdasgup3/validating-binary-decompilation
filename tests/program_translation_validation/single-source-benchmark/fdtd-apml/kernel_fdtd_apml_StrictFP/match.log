@@ -5,3 +5,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_fdtd_apml_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_fdtd_apml_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
+5035.60user 532.26system 1:33:13elapsed 99%CPU (0avgtext+0avgdata 203552maxresident)k
+0inputs+922232outputs (0major+218308minor)pagefaults 0swaps

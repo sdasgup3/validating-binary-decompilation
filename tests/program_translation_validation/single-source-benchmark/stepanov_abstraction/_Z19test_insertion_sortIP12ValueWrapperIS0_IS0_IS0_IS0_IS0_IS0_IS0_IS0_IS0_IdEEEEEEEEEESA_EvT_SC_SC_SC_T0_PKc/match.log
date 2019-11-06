@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55a0f21b58d8]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55a0f2261b98]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x55a0f22622b8]:   %84 = load i32, i32* %83, align 4
+Multiple matches exist for [0x55a0f21b64b0]:   %216 = lshr i32 %197, 31
+[0x55a0f2287ae0]:   %105 = lshr i32 %86, 31
+[0x55a0f2287f30]:   %104 = lshr i32 %84, 31
+Multiple matches exist for [0x55a0f21b6530]:   %217 = xor i32 %216, %215
+[0x55a0f22878a0]:   %107 = xor i32 %102, %104
+[0x55a0f2287a00]:   %106 = xor i32 %105, %104
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+10.99user 4.47system 0:16.27elapsed 95%CPU (0avgtext+0avgdata 23724maxresident)k
+0inputs+1264outputs (0major+3453minor)pagefaults 0swaps

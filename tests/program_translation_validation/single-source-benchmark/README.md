@@ -1,3 +1,12 @@
+## Current Status
+```
+Total: 3062
+Pass: 2140
+Fail: 922
+```
+
+
+
 ## [Already populated] Create the wllvm binaries & Extract the bc files
 ```bash
 git clone git@github.com:llvm-mirror/test-suite.git
@@ -24,7 +33,7 @@ find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "test-suite" > docs/make
 ### Run Binary [Already Done; Needed for one time]
 ```bash
 cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
-# C++ binaries are ignored as mentioned in docs/unsupported.txt
+# C++ binaries are ignored as mentioned in docs/FailureReasons.md
 ```
 
 ### Run McSema [Already Done, Needed one time]

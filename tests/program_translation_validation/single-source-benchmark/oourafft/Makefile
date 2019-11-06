@@ -7,7 +7,7 @@ compd_opt: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2con
 match: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2conj cftbsub cft1st cftmdl
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

@@ -4,23 +4,23 @@ Disassembled output
   .globl Rand
   .type Rand, @function
 
-#! file-offset 0x530
-#! rip-offset  0x400530
+#! file-offset 0x540
+#! rip-offset  0x400540
 #! capacity    50 bytes
 
 # Text                          #  Line  RIP       Bytes  Opcode                   Target                
-.Rand:                          #        0x400530  0      OPC=<label>              18446744073709551615  
-  pushq %rbp                    #  1     0x400530  1      OPC=pushq_r64_1          18446744073709551615  
-  movq %rsp, %rbp               #  2     0x400531  3      OPC=movq_r64_r64         18446744073709551615  
-  imulq $0x51d, 0x60f238, %rax  #  3     0x400534  12     OPC=imulq_r64_m64_imm32  18446744073709551615  
-  addq $0x3619, %rax            #  4     0x400540  6      OPC=addq_rax_imm32       18446744073709551615  
-  andq $0xffff, %rax            #  5     0x400546  6      OPC=andq_rax_imm32       18446744073709551615  
-  movq %rax, 0x60f238           #  6     0x40054c  8      OPC=movq_m64_r64         18446744073709551615  
-  movq 0x60f238, %rax           #  7     0x400554  8      OPC=movq_r64_m64         18446744073709551615  
-  movl %eax, %ecx               #  8     0x40055c  2      OPC=movl_r32_r32         18446744073709551615  
-  movl %ecx, %eax               #  9     0x40055e  2      OPC=movl_r32_r32         18446744073709551615  
-  popq %rbp                     #  10    0x400560  1      OPC=popq_r64_1           18446744073709551615  
-  retq                          #  11    0x400561  1      OPC=retq                 18446744073709551615  
+.Rand:                          #        0x400540  0      OPC=<label>              18446744073709551615  
+  pushq %rbp                    #  1     0x400540  1      OPC=pushq_r64_1          18446744073709551615  
+  movq %rsp, %rbp               #  2     0x400541  3      OPC=movq_r64_r64         18446744073709551615  
+  imulq $0x51d, 0x60f238, %rax  #  3     0x400544  12     OPC=imulq_r64_m64_imm32  18446744073709551615  
+  addq $0x3619, %rax            #  4     0x400550  6      OPC=addq_rax_imm32       18446744073709551615  
+  andq $0xffff, %rax            #  5     0x400556  6      OPC=andq_rax_imm32       18446744073709551615  
+  movq %rax, 0x60f238           #  6     0x40055c  8      OPC=movq_m64_r64         18446744073709551615  
+  movq 0x60f238, %rax           #  7     0x400564  8      OPC=movq_r64_m64         18446744073709551615  
+  movl %eax, %ecx               #  8     0x40056c  2      OPC=movl_r32_r32         18446744073709551615  
+  movl %ecx, %eax               #  9     0x40056e  2      OPC=movl_r32_r32         18446744073709551615  
+  popq %rbp                     #  10    0x400570  1      OPC=popq_r64_1           18446744073709551615  
+  retq                          #  11    0x400571  1      OPC=retq                 18446744073709551615  
                                                                                                          
 .size Rand, .-Rand
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Rand->4195632
+.Rand->4195648
 
 Computing Label PC values: Done.
 
@@ -436,6 +436,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2MnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imulq__0x51d__0x60f238___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400544 --size 12
+Global Access Mismatch: 6353464 Relocation: Address, McSema: Constant
 Decompiling instr:imulq $0x51d, 0x60f238, %rax Done...
 
 
@@ -455,6 +458,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x3619___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400550 --size 6
 Decompiling instr:addq $0x3619, %rax Done...
 
 
@@ -474,6 +479,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andq__0xffff___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400556 --size 6
 Decompiling instr:andq $0xffff, %rax Done...
 
 
@@ -494,6 +501,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rax__0x60f238
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40055c --size 8
+Global Access Mismatch: 6353464 Relocation: Address, McSema: Constant
 Decompiling instr:movq %rax, 0x60f238 Done...
 
 
@@ -514,6 +524,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x60f238___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400564 --size 8
+Global Access Mismatch: 6353464 Relocation: Address, McSema: Constant
 Decompiling instr:movq 0x60f238, %rax Done...
 
 
@@ -596,3 +609,5 @@ Decompiling Function: Rand Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.16user 0.05system 0:01.36elapsed 15%CPU (0avgtext+0avgdata 10284maxresident)k
+0inputs+168outputs (0major+6216minor)pagefaults 0swaps

@@ -4,33 +4,33 @@ Disassembled output
   .globl fflop
   .type fflop, @function
 
-#! file-offset 0x1a00
-#! rip-offset  0x401a00
+#! file-offset 0x1a10
+#! rip-offset  0x401a10
 #! capacity    68 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode                 Target                
-.fflop:                     #        0x401a00  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                #  1     0x401a00  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp           #  2     0x401a01  3      OPC=movq_r64_r64       18446744073709551615  
-  movsd 0x3b4(%rip), %xmm0  #  3     0x401a04  8      OPC=movsd_xmm_m64      18446744073709551615  
-  movl %edi, -0x4(%rbp)     #  4     0x401a0c  3      OPC=movl_m32_r32       18446744073709551615  
-  movl %esi, -0x8(%rbp)     #  5     0x401a0f  3      OPC=movl_m32_r32       18446744073709551615  
-  movl %edx, -0xc(%rbp)     #  6     0x401a12  3      OPC=movl_m32_r32       18446744073709551615  
-  movl -0xc(%rbp), %edx     #  7     0x401a15  3      OPC=movl_r32_m32       18446744073709551615  
-  subl $0x2, %edx           #  8     0x401a18  3      OPC=subl_r32_imm8      18446744073709551615  
-  cvtsi2sdl %edx, %xmm1     #  9     0x401a1b  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
-  movl -0x8(%rbp), %edx     #  10    0x401a1f  3      OPC=movl_r32_m32       18446744073709551615  
-  subl $0x2, %edx           #  11    0x401a22  3      OPC=subl_r32_imm8      18446744073709551615  
-  cvtsi2sdl %edx, %xmm2     #  12    0x401a25  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
-  mulsd %xmm2, %xmm1        #  13    0x401a29  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  movl -0x4(%rbp), %edx     #  14    0x401a2d  3      OPC=movl_r32_m32       18446744073709551615  
-  subl $0x2, %edx           #  15    0x401a30  3      OPC=subl_r32_imm8      18446744073709551615  
-  cvtsi2sdl %edx, %xmm2     #  16    0x401a33  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
-  mulsd %xmm2, %xmm1        #  17    0x401a37  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  mulsd %xmm0, %xmm1        #  18    0x401a3b  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  movaps %xmm1, %xmm0       #  19    0x401a3f  3      OPC=movaps_xmm_xmm     18446744073709551615  
-  popq %rbp                 #  20    0x401a42  1      OPC=popq_r64_1         18446744073709551615  
-  retq                      #  21    0x401a43  1      OPC=retq               18446744073709551615  
+.fflop:                     #        0x401a10  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                #  1     0x401a10  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp           #  2     0x401a11  3      OPC=movq_r64_r64       18446744073709551615  
+  movsd 0x3b4(%rip), %xmm0  #  3     0x401a14  8      OPC=movsd_xmm_m64      18446744073709551615  
+  movl %edi, -0x4(%rbp)     #  4     0x401a1c  3      OPC=movl_m32_r32       18446744073709551615  
+  movl %esi, -0x8(%rbp)     #  5     0x401a1f  3      OPC=movl_m32_r32       18446744073709551615  
+  movl %edx, -0xc(%rbp)     #  6     0x401a22  3      OPC=movl_m32_r32       18446744073709551615  
+  movl -0xc(%rbp), %edx     #  7     0x401a25  3      OPC=movl_r32_m32       18446744073709551615  
+  subl $0x2, %edx           #  8     0x401a28  3      OPC=subl_r32_imm8      18446744073709551615  
+  cvtsi2sdl %edx, %xmm1     #  9     0x401a2b  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
+  movl -0x8(%rbp), %edx     #  10    0x401a2f  3      OPC=movl_r32_m32       18446744073709551615  
+  subl $0x2, %edx           #  11    0x401a32  3      OPC=subl_r32_imm8      18446744073709551615  
+  cvtsi2sdl %edx, %xmm2     #  12    0x401a35  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
+  mulsd %xmm2, %xmm1        #  13    0x401a39  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  movl -0x4(%rbp), %edx     #  14    0x401a3d  3      OPC=movl_r32_m32       18446744073709551615  
+  subl $0x2, %edx           #  15    0x401a40  3      OPC=subl_r32_imm8      18446744073709551615  
+  cvtsi2sdl %edx, %xmm2     #  16    0x401a43  4      OPC=cvtsi2sdl_xmm_r32  18446744073709551615  
+  mulsd %xmm2, %xmm1        #  17    0x401a47  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  mulsd %xmm0, %xmm1        #  18    0x401a4b  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  movaps %xmm1, %xmm0       #  19    0x401a4f  3      OPC=movaps_xmm_xmm     18446744073709551615  
+  popq %rbp                 #  20    0x401a52  1      OPC=popq_r64_1         18446744073709551615  
+  retq                      #  21    0x401a53  1      OPC=retq               18446744073709551615  
                                                                                                    
 .size fflop, .-fflop
 Disassembling Done.
@@ -38,7 +38,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.fflop->4200960
+.fflop->4200976
 
 Computing Label PC values: Done.
 
@@ -541,6 +541,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x2___edx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401a28 --size 3
 Decompiling instr:subl $0x2, %edx Done...
 
 
@@ -598,6 +600,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_subl__0x2___edx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401a32 --size 3
 Decompiling instr:subl $0x2, %edx Done...
 
 
@@ -674,6 +678,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_subl__0x2___edx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401a40 --size 3
 Decompiling instr:subl $0x2, %edx Done...
 
 
@@ -794,3 +800,5 @@ Decompiling Function: fflop Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.06system 0:01.21elapsed 29%CPU (0avgtext+0avgdata 10464maxresident)k
+0inputs+200outputs (0major+9588minor)pagefaults 0swaps

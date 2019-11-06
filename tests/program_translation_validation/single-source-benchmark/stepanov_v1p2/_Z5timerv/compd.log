@@ -4,25 +4,25 @@ Disassembled output
   .globl _Z5timerv
   .type _Z5timerv, @function
 
-#! file-offset 0x13a0
-#! rip-offset  0x4013a0
+#! file-offset 0x13b0
+#! rip-offset  0x4013b0
 #! capacity    64 bytes
 
 # Text                       #  Line  RIP       Bytes  Opcode                 Target                
-._Z5timerv:                  #        0x4013a0  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                 #  1     0x4013a0  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp            #  2     0x4013a1  3      OPC=movq_r64_r64       18446744073709551615  
-  callq .clock_plt           #  3     0x4013a4  5      OPC=callq_label        4195616               
-  movsd 0x1987(%rip), %xmm0  #  4     0x4013a9  8      OPC=movsd_xmm_m64      18446744073709551615  
-  movsd 0x195f(%rip), %xmm1  #  5     0x4013b1  8      OPC=movsd_xmm_m64      18446744073709551615  
-  movq %rax, 0x605148        #  6     0x4013b9  8      OPC=movq_m64_r64       18446744073709551615  
-  movq 0x605148, %rax        #  7     0x4013c1  8      OPC=movq_r64_m64       18446744073709551615  
-  subq 0x605140, %rax        #  8     0x4013c9  8      OPC=subq_r64_m64       18446744073709551615  
-  cvtsi2sdq %rax, %xmm2      #  9     0x4013d1  5      OPC=cvtsi2sdq_xmm_r64  18446744073709551615  
-  divsd %xmm1, %xmm2         #  10    0x4013d6  4      OPC=divsd_xmm_xmm      18446744073709551615  
-  addsd %xmm2, %xmm0         #  11    0x4013da  4      OPC=addsd_xmm_xmm      18446744073709551615  
-  popq %rbp                  #  12    0x4013de  1      OPC=popq_r64_1         18446744073709551615  
-  retq                       #  13    0x4013df  1      OPC=retq               18446744073709551615  
+._Z5timerv:                  #        0x4013b0  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                 #  1     0x4013b0  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp            #  2     0x4013b1  3      OPC=movq_r64_r64       18446744073709551615  
+  callq .clock_plt           #  3     0x4013b4  5      OPC=callq_label        4195632               
+  movsd 0x1987(%rip), %xmm0  #  4     0x4013b9  8      OPC=movsd_xmm_m64      18446744073709551615  
+  movsd 0x195f(%rip), %xmm1  #  5     0x4013c1  8      OPC=movsd_xmm_m64      18446744073709551615  
+  movq %rax, 0x605148        #  6     0x4013c9  8      OPC=movq_m64_r64       18446744073709551615  
+  movq 0x605148, %rax        #  7     0x4013d1  8      OPC=movq_r64_m64       18446744073709551615  
+  subq 0x605140, %rax        #  8     0x4013d9  8      OPC=subq_r64_m64       18446744073709551615  
+  cvtsi2sdq %rax, %xmm2      #  9     0x4013e1  5      OPC=cvtsi2sdq_xmm_r64  18446744073709551615  
+  divsd %xmm1, %xmm2         #  10    0x4013e6  4      OPC=divsd_xmm_xmm      18446744073709551615  
+  addsd %xmm2, %xmm0         #  11    0x4013ea  4      OPC=addsd_xmm_xmm      18446744073709551615  
+  popq %rbp                  #  12    0x4013ee  1      OPC=popq_r64_1         18446744073709551615  
+  retq                       #  13    0x4013ef  1      OPC=retq               18446744073709551615  
                                                                                                     
 .size _Z5timerv, .-_Z5timerv
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._Z5timerv->4199328
+._Z5timerv->4199344
 
 Computing Label PC values: Done.
 
@@ -495,6 +495,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rax__0x605148
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013c9 --size 8
+Global Access Mismatch: 6312264 Relocation: Address, McSema: Constant
 Decompiling instr:movq %rax, 0x605148 Done...
 
 
@@ -514,6 +517,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x605148___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013d1 --size 8
+Global Access Mismatch: 6312264 Relocation: Address, McSema: Constant
 Decompiling instr:movq 0x605148, %rax Done...
 
 
@@ -533,6 +539,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2MnImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq_0x605140___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013d9 --size 8
+Global Access Mismatch: 6312256 Relocation: Address, McSema: Constant
 Decompiling instr:subq 0x605140, %rax Done...
 
 
@@ -634,3 +643,5 @@ Decompiling Function: _Z5timerv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.07system 0:01.10elapsed 23%CPU (0avgtext+0avgdata 10564maxresident)k
+0inputs+168outputs (0major+6848minor)pagefaults 0swaps

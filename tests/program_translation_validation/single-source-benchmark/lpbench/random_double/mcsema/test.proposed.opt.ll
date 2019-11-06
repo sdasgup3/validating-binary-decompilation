@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x602050_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x602050 = local_unnamed_addr global %G_0x602050_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -64,7 +66,7 @@ entry:
   %RCX.i59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   store i64 127773, i64* %RCX.i59, align 8
   %RDX.i57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %11 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %11 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %12 = xor i64 %11, 123459876
   %13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
   store i8 0, i8* %13, align 1
@@ -88,7 +90,7 @@ entry:
   store i8 0, i8* %27, align 1
   %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
   store i8 0, i8* %28, align 1
-  store i64 %12, i64* inttoptr (i64 6299728 to i64*), align 16
+  store i64 %12, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   store i64 %12, i64* %RAX.i61, align 8
   %29 = ashr i64 %11, 63
   store i64 %29, i64* %RDX.i57, align 8
@@ -139,7 +141,7 @@ routine_idivq__rcx.exit:                          ; preds = %44, %42
   %54 = inttoptr i64 %52 to i64*
   store i64 %49, i64* %54, align 8
   %55 = load i64, i64* %3, align 8
-  %56 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %56 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   store i64 %56, i64* %RAX.i61, align 8
   %57 = load i64, i64* %RBP.i, align 8
   %58 = add i64 %57, -8
@@ -191,7 +193,7 @@ routine_idivq__rcx.exit:                          ; preds = %44, %42
   %92 = zext i1 %91 to i8
   %93 = lshr i64 %84, 63
   %94 = trunc i64 %93 to i8
-  store i64 %84, i64* inttoptr (i64 6299728 to i64*), align 16
+  store i64 %84, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %95 = add i64 %55, 54
   store i8 0, i8* %13, align 1
   store i8 %90, i8* %20, align 1
@@ -203,9 +205,9 @@ routine_idivq__rcx.exit:                          ; preds = %44, %42
   %.v = select i1 %96, i64 6, i64 28
   %97 = add i64 %95, %.v
   store i64 %97, i64* %3, align 8
-  br i1 %96, label %block_40080f, label %block_.L_400825
+  br i1 %96, label %block_40081f, label %block_.L_400835
 
-block_40080f:                                     ; preds = %routine_idivq__rcx.exit
+block_40081f:                                     ; preds = %routine_idivq__rcx.exit
   %98 = add i64 %84, 2147483647
   store i64 %98, i64* %RAX.i61, align 8
   %99 = icmp ugt i64 %84, -2147483648
@@ -237,12 +239,12 @@ block_40080f:                                     ; preds = %routine_idivq__rcx.
   store i8 %119, i8* %27, align 1
   %120 = add i64 %97, 22
   store i64 %120, i64* %3, align 8
-  store i64 %98, i64* inttoptr (i64 6299728 to i64*), align 16
-  br label %block_.L_400825
+  store i64 %98, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
+  br label %block_.L_400835
 
-block_.L_400825:                                  ; preds = %routine_idivq__rcx.exit, %block_40080f
-  %121 = phi i64 [ %84, %routine_idivq__rcx.exit ], [ %98, %block_40080f ]
-  %122 = phi i64 [ %97, %routine_idivq__rcx.exit ], [ %120, %block_40080f ]
+block_.L_400835:                                  ; preds = %routine_idivq__rcx.exit, %block_40081f
+  %121 = phi i64 [ %84, %routine_idivq__rcx.exit ], [ %98, %block_40081f ]
+  %122 = phi i64 [ %97, %routine_idivq__rcx.exit ], [ %120, %block_40081f ]
   %123 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
   %124 = add i64 %122, 2547
   %125 = add i64 %122, 8
@@ -267,7 +269,7 @@ block_.L_400825:                                  ; preds = %routine_idivq__rcx.
   %139 = inttoptr i64 %137 to double*
   store double %135, double* %139, align 8
   %140 = load i64, i64* %3, align 8
-  %141 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %141 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %142 = xor i64 %141, 123459876
   store i64 %142, i64* %RAX.i61, align 8
   store i8 0, i8* %13, align 1
@@ -286,7 +288,7 @@ block_.L_400825:                                  ; preds = %routine_idivq__rcx.
   store i8 %152, i8* %26, align 1
   store i8 0, i8* %27, align 1
   store i8 0, i8* %28, align 1
-  store i64 %142, i64* inttoptr (i64 6299728 to i64*), align 16
+  store i64 %142, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %153 = load i64, i64* %RBP.i, align 8
   %154 = add i64 %153, -16
   %155 = add i64 %140, 27
@@ -381,7 +383,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %5 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   store i64 %5, i64* %RDX, align 8
   ret %struct.Memory* %2
 }
@@ -431,7 +433,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 8
   store i64 %5, i64* %PC, align 8
-  store i64 %3, i64* inttoptr (i64 6299728 to i64*), align 16
+  store i64 %3, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   ret %struct.Memory* %2
 }
 
@@ -443,7 +445,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %5 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   store i64 %5, i64* %RAX, align 8
   ret %struct.Memory* %2
 }
@@ -732,7 +734,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 8
   store i64 %5, i64* %PC, align 8
-  store i64 %3, i64* inttoptr (i64 6299728 to i64*), align 16
+  store i64 %3, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   ret %struct.Memory* %2
 }
 
@@ -743,7 +745,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 9
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %5 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
   store i8 0, i8* %6, align 1
   %7 = trunc i64 %5 to i32
@@ -770,7 +772,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jge_.L_400825(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jge_.L_400835(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -864,7 +866,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 10
   store i64 %5, i64* %PC, align 8
-  %6 = load i64, i64* inttoptr (i64 6299728 to i64*), align 16
+  %6 = load i64, i64* bitcast (%G_0x602050_type* @G_0x602050 to i64*), align 8
   %7 = sitofp i64 %6 to double
   %8 = bitcast %union.VectorReg* %3 to double*
   store double %7, double* %8, align 1

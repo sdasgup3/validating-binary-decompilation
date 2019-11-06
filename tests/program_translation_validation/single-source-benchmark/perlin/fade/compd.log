@@ -4,29 +4,29 @@ Disassembled output
   .globl fade
   .type fade, @function
 
-#! file-offset 0xba0
-#! rip-offset  0x400ba0
+#! file-offset 0xbb0
+#! rip-offset  0x400bb0
 #! capacity    76 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode             Target                
-.fade:                      #        0x400ba0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                #  1     0x400ba0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp           #  2     0x400ba1  3      OPC=movq_r64_r64   18446744073709551615  
-  movsd 0x2ac(%rip), %xmm1  #  3     0x400ba4  8      OPC=movsd_xmm_m64  18446744073709551615  
-  movsd 0x2ac(%rip), %xmm2  #  4     0x400bac  8      OPC=movsd_xmm_m64  18446744073709551615  
-  movsd 0x2ac(%rip), %xmm3  #  5     0x400bb4  8      OPC=movsd_xmm_m64  18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)   #  6     0x400bbc  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd -0x8(%rbp), %xmm0   #  7     0x400bc1  5      OPC=movsd_xmm_m64  18446744073709551615  
-  mulsd -0x8(%rbp), %xmm0   #  8     0x400bc6  5      OPC=mulsd_xmm_m64  18446744073709551615  
-  mulsd -0x8(%rbp), %xmm0   #  9     0x400bcb  5      OPC=mulsd_xmm_m64  18446744073709551615  
-  movsd -0x8(%rbp), %xmm4   #  10    0x400bd0  5      OPC=movsd_xmm_m64  18446744073709551615  
-  mulsd -0x8(%rbp), %xmm3   #  11    0x400bd5  5      OPC=mulsd_xmm_m64  18446744073709551615  
-  subsd %xmm2, %xmm3        #  12    0x400bda  4      OPC=subsd_xmm_xmm  18446744073709551615  
-  mulsd %xmm3, %xmm4        #  13    0x400bde  4      OPC=mulsd_xmm_xmm  18446744073709551615  
-  addsd %xmm1, %xmm4        #  14    0x400be2  4      OPC=addsd_xmm_xmm  18446744073709551615  
-  mulsd %xmm4, %xmm0        #  15    0x400be6  4      OPC=mulsd_xmm_xmm  18446744073709551615  
-  popq %rbp                 #  16    0x400bea  1      OPC=popq_r64_1     18446744073709551615  
-  retq                      #  17    0x400beb  1      OPC=retq           18446744073709551615  
+.fade:                      #        0x400bb0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                #  1     0x400bb0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp           #  2     0x400bb1  3      OPC=movq_r64_r64   18446744073709551615  
+  movsd 0x2ac(%rip), %xmm1  #  3     0x400bb4  8      OPC=movsd_xmm_m64  18446744073709551615  
+  movsd 0x2ac(%rip), %xmm2  #  4     0x400bbc  8      OPC=movsd_xmm_m64  18446744073709551615  
+  movsd 0x2ac(%rip), %xmm3  #  5     0x400bc4  8      OPC=movsd_xmm_m64  18446744073709551615  
+  movsd %xmm0, -0x8(%rbp)   #  6     0x400bcc  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movsd -0x8(%rbp), %xmm0   #  7     0x400bd1  5      OPC=movsd_xmm_m64  18446744073709551615  
+  mulsd -0x8(%rbp), %xmm0   #  8     0x400bd6  5      OPC=mulsd_xmm_m64  18446744073709551615  
+  mulsd -0x8(%rbp), %xmm0   #  9     0x400bdb  5      OPC=mulsd_xmm_m64  18446744073709551615  
+  movsd -0x8(%rbp), %xmm4   #  10    0x400be0  5      OPC=movsd_xmm_m64  18446744073709551615  
+  mulsd -0x8(%rbp), %xmm3   #  11    0x400be5  5      OPC=mulsd_xmm_m64  18446744073709551615  
+  subsd %xmm2, %xmm3        #  12    0x400bea  4      OPC=subsd_xmm_xmm  18446744073709551615  
+  mulsd %xmm3, %xmm4        #  13    0x400bee  4      OPC=mulsd_xmm_xmm  18446744073709551615  
+  addsd %xmm1, %xmm4        #  14    0x400bf2  4      OPC=addsd_xmm_xmm  18446744073709551615  
+  mulsd %xmm4, %xmm0        #  15    0x400bf6  4      OPC=mulsd_xmm_xmm  18446744073709551615  
+  popq %rbp                 #  16    0x400bfa  1      OPC=popq_r64_1     18446744073709551615  
+  retq                      #  17    0x400bfb  1      OPC=retq           18446744073709551615  
                                                                                                
 .size fade, .-fade
 Disassembling Done.
@@ -34,7 +34,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.fade->4197280
+.fade->4197296
 
 Computing Label PC values: Done.
 
@@ -714,3 +714,5 @@ Decompiling Function: fade Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.20user 0.07system 0:00.33elapsed 86%CPU (0avgtext+0avgdata 10112maxresident)k
+0inputs+184outputs (0major+8049minor)pagefaults 0swaps

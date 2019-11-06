@@ -4,23 +4,23 @@ Disassembled output
   .globl sum_vec
   .type sum_vec, @function
 
-#! file-offset 0x690
-#! rip-offset  0x400690
+#! file-offset 0x6a0
+#! rip-offset  0x4006a0
 #! capacity    36 bytes
 
 # Text                       #  Line  RIP       Bytes  Opcode               Target                
-.sum_vec:                    #        0x400690  0      OPC=<label>          18446744073709551615  
-  pushq %rbp                 #  1     0x400690  1      OPC=pushq_r64_1      18446744073709551615  
-  movq %rsp, %rbp            #  2     0x400691  3      OPC=movq_r64_r64     18446744073709551615  
-  leaq -0x10(%rbp), %rax     #  3     0x400694  4      OPC=leaq_r64_m16     18446744073709551615  
-  movapd %xmm0, -0x10(%rbp)  #  4     0x400698  5      OPC=movapd_m128_xmm  18446744073709551615  
-  movq %rax, -0x18(%rbp)     #  5     0x40069d  4      OPC=movq_m64_r64     18446744073709551615  
-  movq -0x18(%rbp), %rax     #  6     0x4006a1  4      OPC=movq_r64_m64     18446744073709551615  
-  movsd (%rax), %xmm0        #  7     0x4006a5  4      OPC=movsd_xmm_m64    18446744073709551615  
-  movq -0x18(%rbp), %rax     #  8     0x4006a9  4      OPC=movq_r64_m64     18446744073709551615  
-  addsd 0x8(%rax), %xmm0     #  9     0x4006ad  5      OPC=addsd_xmm_m64    18446744073709551615  
-  popq %rbp                  #  10    0x4006b2  1      OPC=popq_r64_1       18446744073709551615  
-  retq                       #  11    0x4006b3  1      OPC=retq             18446744073709551615  
+.sum_vec:                    #        0x4006a0  0      OPC=<label>          18446744073709551615  
+  pushq %rbp                 #  1     0x4006a0  1      OPC=pushq_r64_1      18446744073709551615  
+  movq %rsp, %rbp            #  2     0x4006a1  3      OPC=movq_r64_r64     18446744073709551615  
+  leaq -0x10(%rbp), %rax     #  3     0x4006a4  4      OPC=leaq_r64_m16     18446744073709551615  
+  movapd %xmm0, -0x10(%rbp)  #  4     0x4006a8  5      OPC=movapd_m128_xmm  18446744073709551615  
+  movq %rax, -0x18(%rbp)     #  5     0x4006ad  4      OPC=movq_m64_r64     18446744073709551615  
+  movq -0x18(%rbp), %rax     #  6     0x4006b1  4      OPC=movq_r64_m64     18446744073709551615  
+  movsd (%rax), %xmm0        #  7     0x4006b5  4      OPC=movsd_xmm_m64    18446744073709551615  
+  movq -0x18(%rbp), %rax     #  8     0x4006b9  4      OPC=movq_r64_m64     18446744073709551615  
+  addsd 0x8(%rax), %xmm0     #  9     0x4006bd  5      OPC=addsd_xmm_m64    18446744073709551615  
+  popq %rbp                  #  10    0x4006c2  1      OPC=popq_r64_1       18446744073709551615  
+  retq                       #  11    0x4006c3  1      OPC=retq             18446744073709551615  
                                                                                                   
 .size sum_vec, .-sum_vec
 Disassembling Done.
@@ -28,7 +28,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.sum_vec->4195984
+.sum_vec->4196000
 
 Computing Label PC values: Done.
 
@@ -594,3 +594,5 @@ Decompiling Function: sum_vec Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.16user 0.03system 0:00.22elapsed 88%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+160outputs (0major+5945minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5589add82f10]:   %43 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%V10DataMaster_type* @V10DataMaster to i64), i64 16000) to i32), i32 255)) #12
+[0x5589ada9ab70]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x5589adaaac70]:   %77 = tail call i32 @llvm.ctpop.i32(i32 %76)
+[0x5589adaab4b0]:   %45 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x61c9b0_type* @G__0x61c9b0 to i64), i64 16000) to i32), i32 255))
+[0x5589ae2f2bc0]:   %110 = tail call i32 @llvm.ctpop.i32(i32 %109)
+[0x5589ae31e300]:   %call2_400926 = tail call %struct.Memory.31* @sub_401c40._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev(%struct.State.0* nonnull %0, i64 %59, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [__cxx_global_var_init.13] from ../binary/test.mcsema.opt.ll
+Extracting function [__cxx_global_var_init.13] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.10user 1.95system 0:05.39elapsed 93%CPU (0avgtext+0avgdata 23872maxresident)k
+0inputs+584outputs (0major+6053minor)pagefaults 0swaps
