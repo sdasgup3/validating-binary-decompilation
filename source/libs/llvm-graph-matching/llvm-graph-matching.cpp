@@ -7,7 +7,11 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include <unordered_map>
+
+#include "llvm-dfg-matcher.h"
 #include "llvm-graph-matching.h"
+
 using namespace llvm;
 
 Matcher::Matcher(Function *f1, Function *f2) {
@@ -16,6 +20,7 @@ Matcher::Matcher(Function *f1, Function *f2) {
   GlobalNumbers = new GlobalNumberState();
   llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
                << "\n";
+
   retrievePotIMatches(F1, F2);
   auto res = dualSimulationDriver(F1, F2);
 
@@ -23,6 +28,33 @@ Matcher::Matcher(Function *f1, Function *f2) {
     llvm::errs() << "Iso Match Found\n";
   else
     llvm::errs() << "Iso Match NOT Found\n";
+
+  printDOT();
+}
+
+void Matcher::printDOT() {
+  MatchInfo *MI = new MatchInfo;
+  MI->Fn = F1;
+  MI->color = true;
+
+  MatchInfo *MI2 = new MatchInfo;
+  MI2->Fn = F2;
+  MI2->color = true;
+
+  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+    auto PotMatch = PotIMatches.at(&*I1);
+    MI->match[&*I1] = PotMatch.size();
+    for (auto match : PotMatch) {
+        auto I2 = dyn_cast<Instruction>(match);
+        if (MI2->match.find(&*I2) == MI2->match.end()) {
+            MI2->match[&*I2] = 0;
+        }
+        MI2->match[&*I2] += 1;
+    }
+  }
+
+  writeDFGToDotFile(MI, (MI->Fn->getName() + "-mcsema-diff.dot").str());
+  writeDFGToDotFile(MI2, (MI2->Fn->getName() + "-proposed-diff.dot").str());
 }
 
 /*
@@ -68,6 +100,7 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
 
 void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
   if (!initialMatch(F1, F2)) {
+    printDOT();
     assert(0 && "Problem with Initial Match");
     return;
   }
@@ -147,6 +180,8 @@ bool Matcher::retrievePotBBMatches() {
 
         llvm::errs() << "\nThe current BB belongs to the instr\n";
         dumpLLVMNode(*pMatches.begin());
+
+        printDOT();
         assert(0 && "BB Mismatch");
       }
     }
@@ -322,6 +357,8 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
             dumpLLVMNode(UPrime);
             llvm::errs() << "Corresponding U: ";
             dumpLLVMNode(U);
+
+            printDOT();
             assert(0 && "No potential matches for UPrime");
           }
 
@@ -380,6 +417,13 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
             if (PotIMatches.at(&*U).size() == deleteList.size()) {
               llvm::errs() << "\n\nNo potential match for: ";
               dumpLLVMNode(&*U);
+
+              // Update PotIMatches before dumping.
+              for (auto deleteNode : deleteList) {
+                PotIMatches.at(&*U).erase(deleteNode);
+              }
+              llvm::errs() << "\n\nDumping DOT FILE!";
+              printDOT();
               assert(0 && "Zero Match found: I");
             }
 
@@ -401,6 +445,11 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
         if (refinedUPrimeMatches.size() == 0) {
           llvm::errs() << "\n\nNo potential match for: ";
           dumpLLVMNode(UPrime);
+
+          // Update UPrimeMatches before dumping DOT.
+          set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
+          UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
+          printDOT();
           assert(0 && "Zero Match found: II");
         }
 
