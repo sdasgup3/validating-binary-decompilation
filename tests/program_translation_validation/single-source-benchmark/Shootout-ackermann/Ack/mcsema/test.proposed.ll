@@ -433,7 +433,7 @@ declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 
-declare %struct.Memory* @sub_400550.Ack(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+declare %struct.Memory* @sub_400560.Ack(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 
@@ -447,227 +447,227 @@ entry:
   %MEMORY = alloca %struct.Memory*, align 8
   store %struct.Memory* %2, %struct.Memory** %MEMORY, align 8
 
-  ; Code: .Ack:	 RIP: 400550	 Bytes: 0
-  ; Code: pushq %rbp	 RIP: 400550	 Bytes: 1
-  %loadMem_400550 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400550 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400550)
-  store %struct.Memory* %call_400550, %struct.Memory** %MEMORY
+  ; Code: .Ack:	 RIP: 400560	 Bytes: 0
+  ; Code: pushq %rbp	 RIP: 400560	 Bytes: 1
+  %loadMem_400560 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400560 = call %struct.Memory* @routine_pushq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400560)
+  store %struct.Memory* %call_400560, %struct.Memory** %MEMORY
 
-  ; Code: movq %rsp, %rbp	 RIP: 400551	 Bytes: 3
-  %loadMem_400551 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400551 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400551)
-  store %struct.Memory* %call_400551, %struct.Memory** %MEMORY
+  ; Code: movq %rsp, %rbp	 RIP: 400561	 Bytes: 3
+  %loadMem_400561 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400561 = call %struct.Memory* @routine_movq__rsp___rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400561)
+  store %struct.Memory* %call_400561, %struct.Memory** %MEMORY
 
-  ; Code: subq $0x10, %rsp	 RIP: 400554	 Bytes: 4
-  %loadMem_400554 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400554 = call %struct.Memory* @routine_subq__0x10___rsp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400554)
-  store %struct.Memory* %call_400554, %struct.Memory** %MEMORY
+  ; Code: subq $0x10, %rsp	 RIP: 400564	 Bytes: 4
+  %loadMem_400564 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400564 = call %struct.Memory* @routine_subq__0x10___rsp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400564)
+  store %struct.Memory* %call_400564, %struct.Memory** %MEMORY
 
-  ; Code: movl %edi, -0x8(%rbp)	 RIP: 400558	 Bytes: 3
-  %loadMem_400558 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400558 = call %struct.Memory* @routine_movl__edi__MINUS0x8__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400558)
-  store %struct.Memory* %call_400558, %struct.Memory** %MEMORY
-
-  ; Code: movl %esi, -0xc(%rbp)	 RIP: 40055b	 Bytes: 3
-  %loadMem_40055b = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40055b = call %struct.Memory* @routine_movl__esi__MINUS0xc__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40055b)
-  store %struct.Memory* %call_40055b, %struct.Memory** %MEMORY
-
-  ; Code: cmpl $0x0, -0x8(%rbp)	 RIP: 40055e	 Bytes: 4
-  %loadMem_40055e = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40055e = call %struct.Memory* @routine_cmpl__0x0__MINUS0x8__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40055e)
-  store %struct.Memory* %call_40055e, %struct.Memory** %MEMORY
-
-  ; Code: jne .L_400576	 RIP: 400562	 Bytes: 6
-  %loadMem_400562 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400562 = call %struct.Memory* @routine_jne_.L_400576(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400562, i8* %BRANCH_TAKEN, i64 20, i64 6, i64 6)
-  store %struct.Memory* %call_400562, %struct.Memory** %MEMORY
-
-  %loadBr_400562 = load i8, i8* %BRANCH_TAKEN
-  %cmpBr_400562 = icmp eq i8 %loadBr_400562, 1
-  br i1 %cmpBr_400562, label %block_.L_400576, label %block_400568
-
-block_400568:
-  ; Code: movl -0xc(%rbp), %eax	 RIP: 400568	 Bytes: 3
+  ; Code: movl %edi, -0x8(%rbp)	 RIP: 400568	 Bytes: 3
   %loadMem_400568 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400568 = call %struct.Memory* @routine_movl_MINUS0xc__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400568)
+  %call_400568 = call %struct.Memory* @routine_movl__edi__MINUS0x8__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400568)
   store %struct.Memory* %call_400568, %struct.Memory** %MEMORY
 
-  ; Code: addl $0x1, %eax	 RIP: 40056b	 Bytes: 3
+  ; Code: movl %esi, -0xc(%rbp)	 RIP: 40056b	 Bytes: 3
   %loadMem_40056b = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40056b = call %struct.Memory* @routine_addl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40056b)
+  %call_40056b = call %struct.Memory* @routine_movl__esi__MINUS0xc__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40056b)
   store %struct.Memory* %call_40056b, %struct.Memory** %MEMORY
 
-  ; Code: movl %eax, -0x4(%rbp)	 RIP: 40056e	 Bytes: 3
+  ; Code: cmpl $0x0, -0x8(%rbp)	 RIP: 40056e	 Bytes: 4
   %loadMem_40056e = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40056e = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40056e)
+  %call_40056e = call %struct.Memory* @routine_cmpl__0x0__MINUS0x8__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40056e)
   store %struct.Memory* %call_40056e, %struct.Memory** %MEMORY
 
-  ; Code: jmpq .L_4005c0	 RIP: 400571	 Bytes: 5
-  %loadMem_400571 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400571 = call %struct.Memory* @routine_jmpq_.L_4005c0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400571, i64 79, i64 5)
-  store %struct.Memory* %call_400571, %struct.Memory** %MEMORY
+  ; Code: jne .L_400586	 RIP: 400572	 Bytes: 6
+  %loadMem_400572 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400572 = call %struct.Memory* @routine_jne_.L_400586(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400572, i8* %BRANCH_TAKEN, i64 20, i64 6, i64 6)
+  store %struct.Memory* %call_400572, %struct.Memory** %MEMORY
 
-  br label %block_.L_4005c0
+  %loadBr_400572 = load i8, i8* %BRANCH_TAKEN
+  %cmpBr_400572 = icmp eq i8 %loadBr_400572, 1
+  br i1 %cmpBr_400572, label %block_.L_400586, label %block_400578
 
-  ; Code: .L_400576:	 RIP: 400576	 Bytes: 0
-block_.L_400576:
+block_400578:
+  ; Code: movl -0xc(%rbp), %eax	 RIP: 400578	 Bytes: 3
+  %loadMem_400578 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400578 = call %struct.Memory* @routine_movl_MINUS0xc__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400578)
+  store %struct.Memory* %call_400578, %struct.Memory** %MEMORY
 
-  ; Code: cmpl $0x0, -0xc(%rbp)	 RIP: 400576	 Bytes: 4
-  %loadMem_400576 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400576 = call %struct.Memory* @routine_cmpl__0x0__MINUS0xc__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400576)
-  store %struct.Memory* %call_400576, %struct.Memory** %MEMORY
+  ; Code: addl $0x1, %eax	 RIP: 40057b	 Bytes: 3
+  %loadMem_40057b = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40057b = call %struct.Memory* @routine_addl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40057b)
+  store %struct.Memory* %call_40057b, %struct.Memory** %MEMORY
 
-  ; Code: jne .L_40059a	 RIP: 40057a	 Bytes: 6
-  %loadMem_40057a = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40057a = call %struct.Memory* @routine_jne_.L_40059a(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40057a, i8* %BRANCH_TAKEN, i64 32, i64 6, i64 6)
-  store %struct.Memory* %call_40057a, %struct.Memory** %MEMORY
+  ; Code: movl %eax, -0x4(%rbp)	 RIP: 40057e	 Bytes: 3
+  %loadMem_40057e = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40057e = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40057e)
+  store %struct.Memory* %call_40057e, %struct.Memory** %MEMORY
 
-  %loadBr_40057a = load i8, i8* %BRANCH_TAKEN
-  %cmpBr_40057a = icmp eq i8 %loadBr_40057a, 1
-  br i1 %cmpBr_40057a, label %block_.L_40059a, label %block_400580
+  ; Code: jmpq .L_4005d0	 RIP: 400581	 Bytes: 5
+  %loadMem_400581 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400581 = call %struct.Memory* @routine_jmpq_.L_4005d0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400581, i64 79, i64 5)
+  store %struct.Memory* %call_400581, %struct.Memory** %MEMORY
 
-block_400580:
-  ; Code: movl $0x1, %esi	 RIP: 400580	 Bytes: 5
-  %loadMem_400580 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400580 = call %struct.Memory* @routine_movl__0x1___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400580)
-  store %struct.Memory* %call_400580, %struct.Memory** %MEMORY
+  br label %block_.L_4005d0
 
-  ; Code: movl -0x8(%rbp), %eax	 RIP: 400585	 Bytes: 3
-  %loadMem_400585 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400585 = call %struct.Memory* @routine_movl_MINUS0x8__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400585)
-  store %struct.Memory* %call_400585, %struct.Memory** %MEMORY
+  ; Code: .L_400586:	 RIP: 400586	 Bytes: 0
+block_.L_400586:
 
-  ; Code: subl $0x1, %eax	 RIP: 400588	 Bytes: 3
-  %loadMem_400588 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400588 = call %struct.Memory* @routine_subl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400588)
-  store %struct.Memory* %call_400588, %struct.Memory** %MEMORY
+  ; Code: cmpl $0x0, -0xc(%rbp)	 RIP: 400586	 Bytes: 4
+  %loadMem_400586 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400586 = call %struct.Memory* @routine_cmpl__0x0__MINUS0xc__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400586)
+  store %struct.Memory* %call_400586, %struct.Memory** %MEMORY
 
-  ; Code: movl %eax, %edi	 RIP: 40058b	 Bytes: 2
-  %loadMem_40058b = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40058b = call %struct.Memory* @routine_movl__eax___edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40058b)
-  store %struct.Memory* %call_40058b, %struct.Memory** %MEMORY
+  ; Code: jne .L_4005aa	 RIP: 40058a	 Bytes: 6
+  %loadMem_40058a = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40058a = call %struct.Memory* @routine_jne_.L_4005aa(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40058a, i8* %BRANCH_TAKEN, i64 32, i64 6, i64 6)
+  store %struct.Memory* %call_40058a, %struct.Memory** %MEMORY
 
-  ; Code: callq .Ack	 RIP: 40058d	 Bytes: 5
-  %loadMem1_40058d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_40058d = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40058d, i64 -61, i64 5, i64 5)
-  store %struct.Memory* %call1_40058d, %struct.Memory** %MEMORY
+  %loadBr_40058a = load i8, i8* %BRANCH_TAKEN
+  %cmpBr_40058a = icmp eq i8 %loadBr_40058a, 1
+  br i1 %cmpBr_40058a, label %block_.L_4005aa, label %block_400590
 
-  %loadMem2_40058d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_40058d = load i64, i64* %3
-  %call2_40058d = call %struct.Memory* @sub_400550.Ack(%struct.State* %0, i64  %loadPC_40058d, %struct.Memory* %loadMem2_40058d)
-  store %struct.Memory* %call2_40058d, %struct.Memory** %MEMORY
+block_400590:
+  ; Code: movl $0x1, %esi	 RIP: 400590	 Bytes: 5
+  %loadMem_400590 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400590 = call %struct.Memory* @routine_movl__0x1___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400590)
+  store %struct.Memory* %call_400590, %struct.Memory** %MEMORY
 
-  ; Code: movl %eax, -0x4(%rbp)	 RIP: 400592	 Bytes: 3
-  %loadMem_400592 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400592 = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400592)
-  store %struct.Memory* %call_400592, %struct.Memory** %MEMORY
-
-  ; Code: jmpq .L_4005c0	 RIP: 400595	 Bytes: 5
+  ; Code: movl -0x8(%rbp), %eax	 RIP: 400595	 Bytes: 3
   %loadMem_400595 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_400595 = call %struct.Memory* @routine_jmpq_.L_4005c0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400595, i64 43, i64 5)
+  %call_400595 = call %struct.Memory* @routine_movl_MINUS0x8__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400595)
   store %struct.Memory* %call_400595, %struct.Memory** %MEMORY
 
-  br label %block_.L_4005c0
+  ; Code: subl $0x1, %eax	 RIP: 400598	 Bytes: 3
+  %loadMem_400598 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_400598 = call %struct.Memory* @routine_subl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_400598)
+  store %struct.Memory* %call_400598, %struct.Memory** %MEMORY
 
-  ; Code: .L_40059a:	 RIP: 40059a	 Bytes: 0
-block_.L_40059a:
+  ; Code: movl %eax, %edi	 RIP: 40059b	 Bytes: 2
+  %loadMem_40059b = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_40059b = call %struct.Memory* @routine_movl__eax___edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40059b)
+  store %struct.Memory* %call_40059b, %struct.Memory** %MEMORY
 
-  ; Code: movl -0x8(%rbp), %eax	 RIP: 40059a	 Bytes: 3
-  %loadMem_40059a = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40059a = call %struct.Memory* @routine_movl_MINUS0x8__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40059a)
-  store %struct.Memory* %call_40059a, %struct.Memory** %MEMORY
+  ; Code: callq .Ack	 RIP: 40059d	 Bytes: 5
+  %loadMem1_40059d = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_40059d = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_40059d, i64 -61, i64 5, i64 5)
+  store %struct.Memory* %call1_40059d, %struct.Memory** %MEMORY
 
-  ; Code: subl $0x1, %eax	 RIP: 40059d	 Bytes: 3
-  %loadMem_40059d = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_40059d = call %struct.Memory* @routine_subl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_40059d)
-  store %struct.Memory* %call_40059d, %struct.Memory** %MEMORY
+  %loadMem2_40059d = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_40059d = load i64, i64* %3
+  %call2_40059d = call %struct.Memory* @sub_400560.Ack(%struct.State* %0, i64  %loadPC_40059d, %struct.Memory* %loadMem2_40059d)
+  store %struct.Memory* %call2_40059d, %struct.Memory** %MEMORY
 
-  ; Code: movl -0x8(%rbp), %edi	 RIP: 4005a0	 Bytes: 3
-  %loadMem_4005a0 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005a0 = call %struct.Memory* @routine_movl_MINUS0x8__rbp____edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a0)
-  store %struct.Memory* %call_4005a0, %struct.Memory** %MEMORY
+  ; Code: movl %eax, -0x4(%rbp)	 RIP: 4005a2	 Bytes: 3
+  %loadMem_4005a2 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005a2 = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a2)
+  store %struct.Memory* %call_4005a2, %struct.Memory** %MEMORY
 
-  ; Code: movl -0xc(%rbp), %ecx	 RIP: 4005a3	 Bytes: 3
-  %loadMem_4005a3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005a3 = call %struct.Memory* @routine_movl_MINUS0xc__rbp____ecx(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a3)
-  store %struct.Memory* %call_4005a3, %struct.Memory** %MEMORY
+  ; Code: jmpq .L_4005d0	 RIP: 4005a5	 Bytes: 5
+  %loadMem_4005a5 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005a5 = call %struct.Memory* @routine_jmpq_.L_4005d0(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a5, i64 43, i64 5)
+  store %struct.Memory* %call_4005a5, %struct.Memory** %MEMORY
 
-  ; Code: subl $0x1, %ecx	 RIP: 4005a6	 Bytes: 3
-  %loadMem_4005a6 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005a6 = call %struct.Memory* @routine_subl__0x1___ecx(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a6)
-  store %struct.Memory* %call_4005a6, %struct.Memory** %MEMORY
+  br label %block_.L_4005d0
 
-  ; Code: movl %ecx, %esi	 RIP: 4005a9	 Bytes: 2
-  %loadMem_4005a9 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005a9 = call %struct.Memory* @routine_movl__ecx___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005a9)
-  store %struct.Memory* %call_4005a9, %struct.Memory** %MEMORY
+  ; Code: .L_4005aa:	 RIP: 4005aa	 Bytes: 0
+block_.L_4005aa:
 
-  ; Code: movl %eax, -0x10(%rbp)	 RIP: 4005ab	 Bytes: 3
-  %loadMem_4005ab = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005ab = call %struct.Memory* @routine_movl__eax__MINUS0x10__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005ab)
-  store %struct.Memory* %call_4005ab, %struct.Memory** %MEMORY
+  ; Code: movl -0x8(%rbp), %eax	 RIP: 4005aa	 Bytes: 3
+  %loadMem_4005aa = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005aa = call %struct.Memory* @routine_movl_MINUS0x8__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005aa)
+  store %struct.Memory* %call_4005aa, %struct.Memory** %MEMORY
 
-  ; Code: callq .Ack	 RIP: 4005ae	 Bytes: 5
-  %loadMem1_4005ae = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005ae = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005ae, i64 -94, i64 5, i64 5)
-  store %struct.Memory* %call1_4005ae, %struct.Memory** %MEMORY
+  ; Code: subl $0x1, %eax	 RIP: 4005ad	 Bytes: 3
+  %loadMem_4005ad = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005ad = call %struct.Memory* @routine_subl__0x1___eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005ad)
+  store %struct.Memory* %call_4005ad, %struct.Memory** %MEMORY
 
-  %loadMem2_4005ae = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005ae = load i64, i64* %3
-  %call2_4005ae = call %struct.Memory* @sub_400550.Ack(%struct.State* %0, i64  %loadPC_4005ae, %struct.Memory* %loadMem2_4005ae)
-  store %struct.Memory* %call2_4005ae, %struct.Memory** %MEMORY
+  ; Code: movl -0x8(%rbp), %edi	 RIP: 4005b0	 Bytes: 3
+  %loadMem_4005b0 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005b0 = call %struct.Memory* @routine_movl_MINUS0x8__rbp____edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b0)
+  store %struct.Memory* %call_4005b0, %struct.Memory** %MEMORY
 
-  ; Code: movl -0x10(%rbp), %edi	 RIP: 4005b3	 Bytes: 3
+  ; Code: movl -0xc(%rbp), %ecx	 RIP: 4005b3	 Bytes: 3
   %loadMem_4005b3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005b3 = call %struct.Memory* @routine_movl_MINUS0x10__rbp____edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b3)
+  %call_4005b3 = call %struct.Memory* @routine_movl_MINUS0xc__rbp____ecx(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b3)
   store %struct.Memory* %call_4005b3, %struct.Memory** %MEMORY
 
-  ; Code: movl %eax, %esi	 RIP: 4005b6	 Bytes: 2
+  ; Code: subl $0x1, %ecx	 RIP: 4005b6	 Bytes: 3
   %loadMem_4005b6 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005b6 = call %struct.Memory* @routine_movl__eax___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b6)
+  %call_4005b6 = call %struct.Memory* @routine_subl__0x1___ecx(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b6)
   store %struct.Memory* %call_4005b6, %struct.Memory** %MEMORY
 
-  ; Code: callq .Ack	 RIP: 4005b8	 Bytes: 5
-  %loadMem1_4005b8 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call1_4005b8 = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005b8, i64 -104, i64 5, i64 5)
-  store %struct.Memory* %call1_4005b8, %struct.Memory** %MEMORY
+  ; Code: movl %ecx, %esi	 RIP: 4005b9	 Bytes: 2
+  %loadMem_4005b9 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005b9 = call %struct.Memory* @routine_movl__ecx___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005b9)
+  store %struct.Memory* %call_4005b9, %struct.Memory** %MEMORY
 
-  %loadMem2_4005b8 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %loadPC_4005b8 = load i64, i64* %3
-  %call2_4005b8 = call %struct.Memory* @sub_400550.Ack(%struct.State* %0, i64  %loadPC_4005b8, %struct.Memory* %loadMem2_4005b8)
-  store %struct.Memory* %call2_4005b8, %struct.Memory** %MEMORY
+  ; Code: movl %eax, -0x10(%rbp)	 RIP: 4005bb	 Bytes: 3
+  %loadMem_4005bb = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005bb = call %struct.Memory* @routine_movl__eax__MINUS0x10__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005bb)
+  store %struct.Memory* %call_4005bb, %struct.Memory** %MEMORY
 
-  ; Code: movl %eax, -0x4(%rbp)	 RIP: 4005bd	 Bytes: 3
-  %loadMem_4005bd = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005bd = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005bd)
-  store %struct.Memory* %call_4005bd, %struct.Memory** %MEMORY
+  ; Code: callq .Ack	 RIP: 4005be	 Bytes: 5
+  %loadMem1_4005be = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005be = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005be, i64 -94, i64 5, i64 5)
+  store %struct.Memory* %call1_4005be, %struct.Memory** %MEMORY
 
-  ; Code: .L_4005c0:	 RIP: 4005c0	 Bytes: 0
-  br label %block_.L_4005c0
-block_.L_4005c0:
+  %loadMem2_4005be = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005be = load i64, i64* %3
+  %call2_4005be = call %struct.Memory* @sub_400560.Ack(%struct.State* %0, i64  %loadPC_4005be, %struct.Memory* %loadMem2_4005be)
+  store %struct.Memory* %call2_4005be, %struct.Memory** %MEMORY
 
-  ; Code: movl -0x4(%rbp), %eax	 RIP: 4005c0	 Bytes: 3
-  %loadMem_4005c0 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005c0 = call %struct.Memory* @routine_movl_MINUS0x4__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c0)
-  store %struct.Memory* %call_4005c0, %struct.Memory** %MEMORY
-
-  ; Code: addq $0x10, %rsp	 RIP: 4005c3	 Bytes: 4
+  ; Code: movl -0x10(%rbp), %edi	 RIP: 4005c3	 Bytes: 3
   %loadMem_4005c3 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005c3 = call %struct.Memory* @routine_addq__0x10___rsp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c3)
+  %call_4005c3 = call %struct.Memory* @routine_movl_MINUS0x10__rbp____edi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c3)
   store %struct.Memory* %call_4005c3, %struct.Memory** %MEMORY
 
-  ; Code: popq %rbp	 RIP: 4005c7	 Bytes: 1
-  %loadMem_4005c7 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005c7 = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c7)
-  store %struct.Memory* %call_4005c7, %struct.Memory** %MEMORY
+  ; Code: movl %eax, %esi	 RIP: 4005c6	 Bytes: 2
+  %loadMem_4005c6 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005c6 = call %struct.Memory* @routine_movl__eax___esi(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c6)
+  store %struct.Memory* %call_4005c6, %struct.Memory** %MEMORY
 
-  ; Code: retq	 RIP: 4005c8	 Bytes: 1
-  %loadMem_4005c8 = load %struct.Memory*, %struct.Memory** %MEMORY
-  %call_4005c8 = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005c8)
-  store %struct.Memory* %call_4005c8, %struct.Memory** %MEMORY
+  ; Code: callq .Ack	 RIP: 4005c8	 Bytes: 5
+  %loadMem1_4005c8 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call1_4005c8 = call %struct.Memory* @routine_callq_.Ack(%struct.State* %0, i64  0, %struct.Memory* %loadMem1_4005c8, i64 -104, i64 5, i64 5)
+  store %struct.Memory* %call1_4005c8, %struct.Memory** %MEMORY
 
-  ret %struct.Memory* %call_4005c8
+  %loadMem2_4005c8 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %loadPC_4005c8 = load i64, i64* %3
+  %call2_4005c8 = call %struct.Memory* @sub_400560.Ack(%struct.State* %0, i64  %loadPC_4005c8, %struct.Memory* %loadMem2_4005c8)
+  store %struct.Memory* %call2_4005c8, %struct.Memory** %MEMORY
+
+  ; Code: movl %eax, -0x4(%rbp)	 RIP: 4005cd	 Bytes: 3
+  %loadMem_4005cd = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005cd = call %struct.Memory* @routine_movl__eax__MINUS0x4__rbp_(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005cd)
+  store %struct.Memory* %call_4005cd, %struct.Memory** %MEMORY
+
+  ; Code: .L_4005d0:	 RIP: 4005d0	 Bytes: 0
+  br label %block_.L_4005d0
+block_.L_4005d0:
+
+  ; Code: movl -0x4(%rbp), %eax	 RIP: 4005d0	 Bytes: 3
+  %loadMem_4005d0 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005d0 = call %struct.Memory* @routine_movl_MINUS0x4__rbp____eax(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d0)
+  store %struct.Memory* %call_4005d0, %struct.Memory** %MEMORY
+
+  ; Code: addq $0x10, %rsp	 RIP: 4005d3	 Bytes: 4
+  %loadMem_4005d3 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005d3 = call %struct.Memory* @routine_addq__0x10___rsp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d3)
+  store %struct.Memory* %call_4005d3, %struct.Memory** %MEMORY
+
+  ; Code: popq %rbp	 RIP: 4005d7	 Bytes: 1
+  %loadMem_4005d7 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005d7 = call %struct.Memory* @routine_popq__rbp(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d7)
+  store %struct.Memory* %call_4005d7, %struct.Memory** %MEMORY
+
+  ; Code: retq	 RIP: 4005d8	 Bytes: 1
+  %loadMem_4005d8 = load %struct.Memory*, %struct.Memory** %MEMORY
+  %call_4005d8 = call %struct.Memory* @routine_retq(%struct.State* %0, i64  0, %struct.Memory* %loadMem_4005d8)
+  store %struct.Memory* %call_4005d8, %struct.Memory** %MEMORY
+
+  ret %struct.Memory* %call_4005d8
 }
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64) #0 {
@@ -917,7 +917,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3JNZEP6MemoryR5State3RnWIhE2I
   ret %struct.Memory* %0
 }
 
-define %struct.Memory* @routine_jne_.L_400576(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
+define %struct.Memory* @routine_jne_.L_400586(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
 block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -1062,7 +1062,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5Sta
   ret %struct.Memory* %0
 }
 
-define %struct.Memory* @routine_jmpq_.L_4005c0(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) {
+define %struct.Memory* @routine_jmpq_.L_4005d0(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) {
 block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -1098,7 +1098,7 @@ block_400488:
 }
 
 
-define %struct.Memory* @routine_jne_.L_40059a(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
+define %struct.Memory* @routine_jne_.L_4005aa(%struct.State*  dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) {
 block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33

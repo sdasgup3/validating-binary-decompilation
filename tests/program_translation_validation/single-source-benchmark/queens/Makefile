@@ -7,7 +7,7 @@ compd_opt: main find pboard
 match: main find pboard
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump

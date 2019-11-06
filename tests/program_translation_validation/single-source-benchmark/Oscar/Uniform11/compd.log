@@ -4,30 +4,30 @@ Disassembled output
   .globl Uniform11
   .type Uniform11, @function
 
-#! file-offset 0x740
-#! rip-offset  0x400740
+#! file-offset 0x750
+#! rip-offset  0x400750
 #! capacity    68 bytes
 
 # Text                         #  Line  RIP       Bytes  Opcode                   Target                
-.Uniform11:                    #        0x400740  0      OPC=<label>              18446744073709551615  
-  pushq %rbp                   #  1     0x400740  1      OPC=pushq_r64_1          18446744073709551615  
-  movq %rsp, %rbp              #  2     0x400741  3      OPC=movq_r64_r64         18446744073709551615  
-  movss 0x7ac(%rip), %xmm0     #  3     0x400744  8      OPC=movss_xmm_m32        18446744073709551615  
-  movq %rdi, -0x8(%rbp)        #  4     0x40074c  4      OPC=movq_m64_r64         18446744073709551615  
-  movq %rsi, -0x10(%rbp)       #  5     0x400750  4      OPC=movq_m64_r64         18446744073709551615  
-  movq -0x8(%rbp), %rsi        #  6     0x400754  4      OPC=movq_r64_m64         18446744073709551615  
-  imull $0x12f7, (%rsi), %eax  #  7     0x400758  6      OPC=imull_r32_m32_imm32  18446744073709551615  
-  addl $0x6c3, %eax            #  8     0x40075e  5      OPC=addl_eax_imm32       18446744073709551615  
-  andl $0x1fff, %eax           #  9     0x400763  5      OPC=andl_eax_imm32       18446744073709551615  
-  movq -0x8(%rbp), %rsi        #  10    0x400768  4      OPC=movq_r64_m64         18446744073709551615  
-  movl %eax, (%rsi)            #  11    0x40076c  2      OPC=movl_m32_r32         18446744073709551615  
-  movq -0x8(%rbp), %rsi        #  12    0x40076e  4      OPC=movq_r64_m64         18446744073709551615  
-  cvtsi2ssl (%rsi), %xmm1      #  13    0x400772  4      OPC=cvtsi2ssl_xmm_m32    18446744073709551615  
-  divss %xmm0, %xmm1           #  14    0x400776  4      OPC=divss_xmm_xmm        18446744073709551615  
-  movq -0x10(%rbp), %rsi       #  15    0x40077a  4      OPC=movq_r64_m64         18446744073709551615  
-  movss %xmm1, (%rsi)          #  16    0x40077e  4      OPC=movss_m32_xmm        18446744073709551615  
-  popq %rbp                    #  17    0x400782  1      OPC=popq_r64_1           18446744073709551615  
-  retq                         #  18    0x400783  1      OPC=retq                 18446744073709551615  
+.Uniform11:                    #        0x400750  0      OPC=<label>              18446744073709551615  
+  pushq %rbp                   #  1     0x400750  1      OPC=pushq_r64_1          18446744073709551615  
+  movq %rsp, %rbp              #  2     0x400751  3      OPC=movq_r64_r64         18446744073709551615  
+  movss 0x7ac(%rip), %xmm0     #  3     0x400754  8      OPC=movss_xmm_m32        18446744073709551615  
+  movq %rdi, -0x8(%rbp)        #  4     0x40075c  4      OPC=movq_m64_r64         18446744073709551615  
+  movq %rsi, -0x10(%rbp)       #  5     0x400760  4      OPC=movq_m64_r64         18446744073709551615  
+  movq -0x8(%rbp), %rsi        #  6     0x400764  4      OPC=movq_r64_m64         18446744073709551615  
+  imull $0x12f7, (%rsi), %eax  #  7     0x400768  6      OPC=imull_r32_m32_imm32  18446744073709551615  
+  addl $0x6c3, %eax            #  8     0x40076e  5      OPC=addl_eax_imm32       18446744073709551615  
+  andl $0x1fff, %eax           #  9     0x400773  5      OPC=andl_eax_imm32       18446744073709551615  
+  movq -0x8(%rbp), %rsi        #  10    0x400778  4      OPC=movq_r64_m64         18446744073709551615  
+  movl %eax, (%rsi)            #  11    0x40077c  2      OPC=movl_m32_r32         18446744073709551615  
+  movq -0x8(%rbp), %rsi        #  12    0x40077e  4      OPC=movq_r64_m64         18446744073709551615  
+  cvtsi2ssl (%rsi), %xmm1      #  13    0x400782  4      OPC=cvtsi2ssl_xmm_m32    18446744073709551615  
+  divss %xmm0, %xmm1           #  14    0x400786  4      OPC=divss_xmm_xmm        18446744073709551615  
+  movq -0x10(%rbp), %rsi       #  15    0x40078a  4      OPC=movq_r64_m64         18446744073709551615  
+  movss %xmm1, (%rsi)          #  16    0x40078e  4      OPC=movss_m32_xmm        18446744073709551615  
+  popq %rbp                    #  17    0x400792  1      OPC=popq_r64_1           18446744073709551615  
+  retq                         #  18    0x400793  1      OPC=retq                 18446744073709551615  
                                                                                                         
 .size Uniform11, .-Uniform11
 Disassembling Done.
@@ -35,7 +35,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Uniform11->4196160
+.Uniform11->4196176
 
 Computing Label PC values: Done.
 
@@ -538,6 +538,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x6c3___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40076e --size 5
 Decompiling instr:addl $0x6c3, %eax Done...
 
 
@@ -557,6 +559,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andl__0x1fff___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400773 --size 5
 Decompiling instr:andl $0x1fff, %eax Done...
 
 
@@ -734,3 +738,5 @@ Decompiling Function: Uniform11 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.28user 0.03system 0:00.83elapsed 38%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+200outputs (0major+8521minor)pagefaults 0swaps

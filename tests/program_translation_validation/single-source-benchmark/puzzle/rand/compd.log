@@ -4,30 +4,30 @@ Disassembled output
   .globl rand
   .type rand, @function
 
-#! file-offset 0x5f0
-#! rip-offset  0x4005f0
+#! file-offset 0x600
+#! rip-offset  0x400600
 #! capacity    69 bytes
 
 # Text                               #  Line  RIP       Bytes  Opcode                   Target                
-.rand:                               #        0x4005f0  0      OPC=<label>              18446744073709551615  
-  pushq %rbp                         #  1     0x4005f0  1      OPC=pushq_r64_1          18446744073709551615  
-  movq %rsp, %rbp                    #  2     0x4005f1  3      OPC=movq_r64_r64         18446744073709551615  
-  movl $0x7fff, %eax                 #  3     0x4005f4  5      OPC=movl_r32_imm32       18446744073709551615  
-  imulq $0x41c64e6d, 0x601040, %rcx  #  4     0x4005f9  12     OPC=imulq_r64_m64_imm32  18446744073709551615  
-  addq $0x3039, %rcx                 #  5     0x400605  7      OPC=addq_r64_imm32       18446744073709551615  
-  movq %rcx, 0x601040                #  6     0x40060c  8      OPC=movq_m64_r64         18446744073709551615  
-  movq 0x601040, %rcx                #  7     0x400614  8      OPC=movq_r64_m64         18446744073709551615  
-  shrq $0x10, %rcx                   #  8     0x40061c  4      OPC=shrq_r64_imm8        18446744073709551615  
-  movl %ecx, %edx                    #  9     0x400620  2      OPC=movl_r32_r32         18446744073709551615  
-  movl %eax, -0x4(%rbp)              #  10    0x400622  3      OPC=movl_m32_r32         18446744073709551615  
-  movl %edx, %eax                    #  11    0x400625  2      OPC=movl_r32_r32         18446744073709551615  
-  xorl %edx, %edx                    #  12    0x400627  2      OPC=xorl_r32_r32         18446744073709551615  
-  movl -0x4(%rbp), %esi              #  13    0x400629  3      OPC=movl_r32_m32         18446744073709551615  
-  divl %esi                          #  14    0x40062c  2      OPC=divl_r32             18446744073709551615  
-  addl $0x1, %edx                    #  15    0x40062e  3      OPC=addl_r32_imm8        18446744073709551615  
-  movl %edx, %eax                    #  16    0x400631  2      OPC=movl_r32_r32         18446744073709551615  
-  popq %rbp                          #  17    0x400633  1      OPC=popq_r64_1           18446744073709551615  
-  retq                               #  18    0x400634  1      OPC=retq                 18446744073709551615  
+.rand:                               #        0x400600  0      OPC=<label>              18446744073709551615  
+  pushq %rbp                         #  1     0x400600  1      OPC=pushq_r64_1          18446744073709551615  
+  movq %rsp, %rbp                    #  2     0x400601  3      OPC=movq_r64_r64         18446744073709551615  
+  movl $0x7fff, %eax                 #  3     0x400604  5      OPC=movl_r32_imm32       18446744073709551615  
+  imulq $0x41c64e6d, 0x601040, %rcx  #  4     0x400609  12     OPC=imulq_r64_m64_imm32  18446744073709551615  
+  addq $0x3039, %rcx                 #  5     0x400615  7      OPC=addq_r64_imm32       18446744073709551615  
+  movq %rcx, 0x601040                #  6     0x40061c  8      OPC=movq_m64_r64         18446744073709551615  
+  movq 0x601040, %rcx                #  7     0x400624  8      OPC=movq_r64_m64         18446744073709551615  
+  shrq $0x10, %rcx                   #  8     0x40062c  4      OPC=shrq_r64_imm8        18446744073709551615  
+  movl %ecx, %edx                    #  9     0x400630  2      OPC=movl_r32_r32         18446744073709551615  
+  movl %eax, -0x4(%rbp)              #  10    0x400632  3      OPC=movl_m32_r32         18446744073709551615  
+  movl %edx, %eax                    #  11    0x400635  2      OPC=movl_r32_r32         18446744073709551615  
+  xorl %edx, %edx                    #  12    0x400637  2      OPC=xorl_r32_r32         18446744073709551615  
+  movl -0x4(%rbp), %esi              #  13    0x400639  3      OPC=movl_r32_m32         18446744073709551615  
+  divl %esi                          #  14    0x40063c  2      OPC=divl_r32             18446744073709551615  
+  addl $0x1, %edx                    #  15    0x40063e  3      OPC=addl_r32_imm8        18446744073709551615  
+  movl %edx, %eax                    #  16    0x400641  2      OPC=movl_r32_r32         18446744073709551615  
+  popq %rbp                          #  17    0x400643  1      OPC=popq_r64_1           18446744073709551615  
+  retq                               #  18    0x400644  1      OPC=retq                 18446744073709551615  
                                                                                                               
 .size rand, .-rand
 Disassembling Done.
@@ -35,7 +35,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.rand->4195824
+.rand->4195840
 
 Computing Label PC values: Done.
 
@@ -443,6 +443,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x7fff___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400604 --size 5
 Decompiling instr:movl $0x7fff, %eax Done...
 
 
@@ -462,6 +464,9 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2MnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imulq__0x41c64e6d__0x601040___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400609 --size 12
+Global Access Fix: 6295616 Relocation: Address, McSema: Address
 Decompiling instr:imulq $0x41c64e6d, 0x601040, %rcx Done...
 
 
@@ -481,6 +486,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x3039___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400615 --size 7
 Decompiling instr:addq $0x3039, %rcx Done...
 
 
@@ -501,6 +508,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rcx__0x601040
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40061c --size 8
+Global Access Fix: 6295616 Relocation: Address, McSema: Address
 Decompiling instr:movq %rcx, 0x601040 Done...
 
 
@@ -521,6 +531,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x601040___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400624 --size 8
+Global Access Fix: 6295616 Relocation: Address, McSema: Address
 Decompiling instr:movq 0x601040, %rcx Done...
 
 
@@ -540,6 +553,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x10___rcx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40062c --size 4
 Decompiling instr:shrq $0x10, %rcx Done...
 
 
@@ -673,6 +688,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___edx
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40063e --size 3
 Decompiling instr:addl $0x1, %edx Done...
 
 
@@ -736,3 +753,5 @@ Decompiling Function: rand Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.26user 0.05system 0:01.96elapsed 16%CPU (0avgtext+0avgdata 10620maxresident)k
+0inputs+200outputs (0major+8836minor)pagefaults 0swaps

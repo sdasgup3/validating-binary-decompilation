@@ -4,33 +4,33 @@ Disassembled output
   .globl _ZN31custom_multiple_constant_divideImE8do_shiftEm
   .type _ZN31custom_multiple_constant_divideImE8do_shiftEm, @function
 
-#! file-offset 0x10030
-#! rip-offset  0x410030
+#! file-offset 0x10040
+#! rip-offset  0x410040
 #! capacity    61 bytes
 
 # Text                                                #  Line  RIP       Bytes  Opcode              Target                
-._ZN31custom_multiple_constant_divideImE8do_shiftEm:  #        0x410030  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                          #  1     0x410030  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                     #  2     0x410031  3      OPC=movq_r64_r64    18446744073709551615  
-  movl $0x5, %eax                                     #  3     0x410034  5      OPC=movl_r32_imm32  18446744073709551615  
-  movl %eax, %ecx                                     #  4     0x410039  2      OPC=movl_r32_r32    18446744073709551615  
-  movl $0x3, %eax                                     #  5     0x41003b  5      OPC=movl_r32_imm32  18446744073709551615  
-  movl %eax, %edx                                     #  6     0x410040  2      OPC=movl_r32_r32    18446744073709551615  
-  movq %rdi, -0x8(%rbp)                               #  7     0x410042  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x8(%rbp), %rdi                               #  8     0x410046  4      OPC=movq_r64_m64    18446744073709551615  
-  shrq $0x1, %rdi                                     #  9     0x41004a  4      OPC=shrq_r64_imm8   18446744073709551615  
-  movq %rdi, %rax                                     #  10    0x41004e  3      OPC=movq_r64_r64    18446744073709551615  
-  xorl %esi, %esi                                     #  11    0x410051  2      OPC=xorl_r32_r32    18446744073709551615  
-  movq %rdx, -0x10(%rbp)                              #  12    0x410053  4      OPC=movq_m64_r64    18446744073709551615  
-  movl %esi, %edx                                     #  13    0x410057  2      OPC=movl_r32_r32    18446744073709551615  
-  movq -0x10(%rbp), %rdi                              #  14    0x410059  4      OPC=movq_r64_m64    18446744073709551615  
-  divq %rdi                                           #  15    0x41005d  3      OPC=divq_r64        18446744073709551615  
-  shrq $0x2, %rax                                     #  16    0x410060  4      OPC=shrq_r64_imm8   18446744073709551615  
-  xorl %esi, %esi                                     #  17    0x410064  2      OPC=xorl_r32_r32    18446744073709551615  
-  movl %esi, %edx                                     #  18    0x410066  2      OPC=movl_r32_r32    18446744073709551615  
-  divq %rcx                                           #  19    0x410068  3      OPC=divq_r64        18446744073709551615  
-  popq %rbp                                           #  20    0x41006b  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                #  21    0x41006c  1      OPC=retq            18446744073709551615  
+._ZN31custom_multiple_constant_divideImE8do_shiftEm:  #        0x410040  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                          #  1     0x410040  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                     #  2     0x410041  3      OPC=movq_r64_r64    18446744073709551615  
+  movl $0x5, %eax                                     #  3     0x410044  5      OPC=movl_r32_imm32  18446744073709551615  
+  movl %eax, %ecx                                     #  4     0x410049  2      OPC=movl_r32_r32    18446744073709551615  
+  movl $0x3, %eax                                     #  5     0x41004b  5      OPC=movl_r32_imm32  18446744073709551615  
+  movl %eax, %edx                                     #  6     0x410050  2      OPC=movl_r32_r32    18446744073709551615  
+  movq %rdi, -0x8(%rbp)                               #  7     0x410052  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x8(%rbp), %rdi                               #  8     0x410056  4      OPC=movq_r64_m64    18446744073709551615  
+  shrq $0x1, %rdi                                     #  9     0x41005a  4      OPC=shrq_r64_imm8   18446744073709551615  
+  movq %rdi, %rax                                     #  10    0x41005e  3      OPC=movq_r64_r64    18446744073709551615  
+  xorl %esi, %esi                                     #  11    0x410061  2      OPC=xorl_r32_r32    18446744073709551615  
+  movq %rdx, -0x10(%rbp)                              #  12    0x410063  4      OPC=movq_m64_r64    18446744073709551615  
+  movl %esi, %edx                                     #  13    0x410067  2      OPC=movl_r32_r32    18446744073709551615  
+  movq -0x10(%rbp), %rdi                              #  14    0x410069  4      OPC=movq_r64_m64    18446744073709551615  
+  divq %rdi                                           #  15    0x41006d  3      OPC=divq_r64        18446744073709551615  
+  shrq $0x2, %rax                                     #  16    0x410070  4      OPC=shrq_r64_imm8   18446744073709551615  
+  xorl %esi, %esi                                     #  17    0x410074  2      OPC=xorl_r32_r32    18446744073709551615  
+  movl %esi, %edx                                     #  18    0x410076  2      OPC=movl_r32_r32    18446744073709551615  
+  divq %rcx                                           #  19    0x410078  3      OPC=divq_r64        18446744073709551615  
+  popq %rbp                                           #  20    0x41007b  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                #  21    0x41007c  1      OPC=retq            18446744073709551615  
                                                                                                                           
 .size _ZN31custom_multiple_constant_divideImE8do_shiftEm, .-_ZN31custom_multiple_constant_divideImE8do_shiftEm
 Disassembling Done.
@@ -38,7 +38,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN31custom_multiple_constant_divideImE8do_shiftEm->4259888
+._ZN31custom_multiple_constant_divideImE8do_shiftEm->4259904
 
 Computing Label PC values: Done.
 
@@ -446,6 +446,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x5___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 410044 --size 5
 Decompiling instr:movl $0x5, %eax Done...
 
 
@@ -484,6 +486,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x3___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41004b --size 5
 Decompiling instr:movl $0x3, %eax Done...
 
 
@@ -560,6 +564,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x1___rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41005a --size 4
 Decompiling instr:shrq $0x1, %rdi Done...
 
 
@@ -693,6 +699,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHRI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shrq__0x2___rax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 410070 --size 4
 Decompiling instr:shrq $0x2, %rax Done...
 
 
@@ -794,3 +802,5 @@ Decompiling Function: _ZN31custom_multiple_constant_divideImE8do_shiftEm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.38user 0.08system 0:07.25elapsed 6%CPU (0avgtext+0avgdata 10416maxresident)k
+0inputs+216outputs (0major+9640minor)pagefaults 0swaps

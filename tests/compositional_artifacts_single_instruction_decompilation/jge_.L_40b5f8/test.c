@@ -1,0 +1,4 @@
+void main() {
+  __asm__("jge .L_40b5f8");
+  __asm__(".L_40b5f8:");
+}

@@ -4,29 +4,29 @@ Disassembled output
   .globl get_time
   .type get_time, @function
 
-#! file-offset 0xe20
-#! rip-offset  0x400e20
+#! file-offset 0xe30
+#! rip-offset  0x400e30
 #! capacity    61 bytes
 
 # Text                          #  Line  RIP       Bytes  Opcode                 Target                
-.get_time:                      #        0x400e20  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                    #  1     0x400e20  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp               #  2     0x400e21  3      OPC=movq_r64_r64       18446744073709551615  
-  subq $0x20, %rsp              #  3     0x400e24  4      OPC=subq_r64_imm8      18446744073709551615  
-  leaq -0x10(%rbp), %rdi        #  4     0x400e28  4      OPC=leaq_r64_m16       18446744073709551615  
-  xorl %eax, %eax               #  5     0x400e2c  2      OPC=xorl_r32_r32       18446744073709551615  
-  movl %eax, %esi               #  6     0x400e2e  2      OPC=movl_r32_r32       18446744073709551615  
-  callq .gettimeofday_plt       #  7     0x400e30  5      OPC=callq_label        4196064               
-  movsd 0x328b(%rip), %xmm0     #  8     0x400e35  8      OPC=movsd_xmm_m64      18446744073709551615  
-  cvtsi2sdq -0x10(%rbp), %xmm1  #  9     0x400e3d  6      OPC=cvtsi2sdq_xmm_m64  18446744073709551615  
-  cvtsi2sdq -0x8(%rbp), %xmm2   #  10    0x400e43  6      OPC=cvtsi2sdq_xmm_m64  18446744073709551615  
-  mulsd %xmm0, %xmm2            #  11    0x400e49  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  addsd %xmm2, %xmm1            #  12    0x400e4d  4      OPC=addsd_xmm_xmm      18446744073709551615  
-  movaps %xmm1, %xmm0           #  13    0x400e51  3      OPC=movaps_xmm_xmm     18446744073709551615  
-  movl %eax, -0x14(%rbp)        #  14    0x400e54  3      OPC=movl_m32_r32       18446744073709551615  
-  addq $0x20, %rsp              #  15    0x400e57  4      OPC=addq_r64_imm8      18446744073709551615  
-  popq %rbp                     #  16    0x400e5b  1      OPC=popq_r64_1         18446744073709551615  
-  retq                          #  17    0x400e5c  1      OPC=retq               18446744073709551615  
+.get_time:                      #        0x400e30  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                    #  1     0x400e30  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp               #  2     0x400e31  3      OPC=movq_r64_r64       18446744073709551615  
+  subq $0x20, %rsp              #  3     0x400e34  4      OPC=subq_r64_imm8      18446744073709551615  
+  leaq -0x10(%rbp), %rdi        #  4     0x400e38  4      OPC=leaq_r64_m16       18446744073709551615  
+  xorl %eax, %eax               #  5     0x400e3c  2      OPC=xorl_r32_r32       18446744073709551615  
+  movl %eax, %esi               #  6     0x400e3e  2      OPC=movl_r32_r32       18446744073709551615  
+  callq .gettimeofday_plt       #  7     0x400e40  5      OPC=callq_label        4196080               
+  movsd 0x328b(%rip), %xmm0     #  8     0x400e45  8      OPC=movsd_xmm_m64      18446744073709551615  
+  cvtsi2sdq -0x10(%rbp), %xmm1  #  9     0x400e4d  6      OPC=cvtsi2sdq_xmm_m64  18446744073709551615  
+  cvtsi2sdq -0x8(%rbp), %xmm2   #  10    0x400e53  6      OPC=cvtsi2sdq_xmm_m64  18446744073709551615  
+  mulsd %xmm0, %xmm2            #  11    0x400e59  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  addsd %xmm2, %xmm1            #  12    0x400e5d  4      OPC=addsd_xmm_xmm      18446744073709551615  
+  movaps %xmm1, %xmm0           #  13    0x400e61  3      OPC=movaps_xmm_xmm     18446744073709551615  
+  movl %eax, -0x14(%rbp)        #  14    0x400e64  3      OPC=movl_m32_r32       18446744073709551615  
+  addq $0x20, %rsp              #  15    0x400e67  4      OPC=addq_r64_imm8      18446744073709551615  
+  popq %rbp                     #  16    0x400e6b  1      OPC=popq_r64_1         18446744073709551615  
+  retq                          #  17    0x400e6c  1      OPC=retq               18446744073709551615  
                                                                                                        
 .size get_time, .-get_time
 Disassembling Done.
@@ -34,7 +34,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.get_time->4197920
+.get_time->4197936
 
 Computing Label PC values: Done.
 
@@ -442,6 +442,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400e34 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -670,6 +672,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400e67 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -714,3 +718,5 @@ Decompiling Function: get_time Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.26user 0.05system 0:00.83elapsed 38%CPU (0avgtext+0avgdata 10632maxresident)k
+0inputs+200outputs (0major+8206minor)pagefaults 0swaps

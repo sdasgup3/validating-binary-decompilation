@@ -4,6 +4,9 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x602090_type = type <{ [4 x i8] }>
+%G_0x6020a8_type = type <{ [4 x i8] }>
+%G_0x6020ac_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +41,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x602090 = local_unnamed_addr global %G_0x602090_type zeroinitializer
+@G_0x6020a8 = local_unnamed_addr global %G_0x6020a8_type zeroinitializer
+@G_0x6020ac = local_unnamed_addr global %G_0x6020ac_type zeroinitializer
 
 ; Function Attrs: alwaysinline norecurse nounwind
 define %struct.Memory* @P0(%struct.State* noalias, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -56,7 +62,7 @@ entry:
   %10 = load i64, i64* %3, align 8
   store i64 %8, i64* %RBP.i, align 8
   %RAX.i30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %11 = load i32, i32* inttoptr (i64 6299820 to i32*), align 4
+  %11 = load i32, i32* bitcast (%G_0x6020ac_type* @G_0x6020ac to i32*), align 8
   %12 = sext i32 %11 to i64
   store i64 %12, i64* %RAX.i30, align 8
   %13 = shl nsw i64 %12, 3
@@ -70,7 +76,7 @@ entry:
   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
   %20 = bitcast i64* %19 to double*
   store double 0.000000e+00, double* %20, align 1
-  %21 = load i32, i32* inttoptr (i64 6299792 to i32*), align 16
+  %21 = load i32, i32* bitcast (%G_0x602090_type* @G_0x602090 to i32*), align 8
   %22 = sext i32 %21 to i64
   %23 = shl nsw i64 %22, 3
   %24 = add nsw i64 %23, 6299840
@@ -79,7 +85,7 @@ entry:
   %26 = inttoptr i64 %24 to i64*
   store i64 %17, i64* %26, align 8
   %27 = load i64, i64* %3, align 8
-  %28 = load i32, i32* inttoptr (i64 6299816 to i32*), align 8
+  %28 = load i32, i32* bitcast (%G_0x6020a8_type* @G_0x6020a8 to i32*), align 8
   %29 = sext i32 %28 to i64
   store i64 %29, i64* %RAX.i30, align 8
   %30 = shl nsw i64 %29, 3
@@ -90,51 +96,36 @@ entry:
   %34 = load i64, i64* %33, align 8
   store i64 %34, i64* %18, align 1
   store double 0.000000e+00, double* %20, align 1
-  %35 = load i32, i32* inttoptr (i64 6299820 to i32*), align 4
-  %36 = sext i32 %35 to i64
-  %37 = shl nsw i64 %36, 3
-  %38 = add nsw i64 %37, 6299840
-  %39 = add i64 %27, 34
-  store i64 %39, i64* %3, align 8
-  %40 = inttoptr i64 %38 to i64*
-  store i64 %34, i64* %40, align 8
-  %41 = load i64, i64* %3, align 8
-  %42 = load i32, i32* inttoptr (i64 6299792 to i32*), align 16
-  %43 = sext i32 %42 to i64
-  store i64 %43, i64* %RAX.i30, align 8
-  %44 = shl nsw i64 %43, 3
-  %45 = add nsw i64 %44, 6299840
-  %46 = add i64 %41, 17
-  store i64 %46, i64* %3, align 8
-  %47 = inttoptr i64 %45 to i64*
-  %48 = load i64, i64* %47, align 8
-  store i64 %48, i64* %18, align 1
+  %35 = add i64 %27, 34
+  store i64 %35, i64* %3, align 8
+  store i64 %34, i64* %16, align 8
+  %36 = load i64, i64* %3, align 8
+  store i64 %22, i64* %RAX.i30, align 8
+  %37 = add i64 %36, 17
+  store i64 %37, i64* %3, align 8
+  %38 = load i64, i64* %26, align 8
+  store i64 %38, i64* %18, align 1
   store double 0.000000e+00, double* %20, align 1
-  %49 = load i32, i32* inttoptr (i64 6299816 to i32*), align 8
-  %50 = sext i32 %49 to i64
-  store i64 %50, i64* %RAX.i30, align 8
-  %51 = shl nsw i64 %50, 3
-  %52 = add nsw i64 %51, 6299840
-  %53 = add i64 %41, 34
-  store i64 %53, i64* %3, align 8
-  %54 = inttoptr i64 %52 to i64*
-  store i64 %48, i64* %54, align 8
-  %55 = load i64, i64* %3, align 8
-  %56 = add i64 %55, 1
-  store i64 %56, i64* %3, align 8
-  %57 = load i64, i64* %6, align 8
-  %58 = add i64 %57, 8
-  %59 = inttoptr i64 %57 to i64*
-  %60 = load i64, i64* %59, align 8
-  store i64 %60, i64* %RBP.i, align 8
-  store i64 %58, i64* %6, align 8
-  %61 = add i64 %55, 2
-  store i64 %61, i64* %3, align 8
-  %62 = inttoptr i64 %58 to i64*
-  %63 = load i64, i64* %62, align 8
-  store i64 %63, i64* %3, align 8
-  %64 = add i64 %57, 16
-  store i64 %64, i64* %6, align 8
+  store i64 %29, i64* %RAX.i30, align 8
+  %39 = add i64 %36, 34
+  store i64 %39, i64* %3, align 8
+  store i64 %38, i64* %33, align 8
+  %40 = load i64, i64* %3, align 8
+  %41 = add i64 %40, 1
+  store i64 %41, i64* %3, align 8
+  %42 = load i64, i64* %6, align 8
+  %43 = add i64 %42, 8
+  %44 = inttoptr i64 %42 to i64*
+  %45 = load i64, i64* %44, align 8
+  store i64 %45, i64* %RBP.i, align 8
+  store i64 %43, i64* %6, align 8
+  %46 = add i64 %40, 2
+  store i64 %46, i64* %3, align 8
+  %47 = inttoptr i64 %43 to i64*
+  %48 = load i64, i64* %47, align 8
+  store i64 %48, i64* %3, align 8
+  %49 = add i64 %42, 16
+  store i64 %49, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
@@ -178,7 +169,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i32, i32* inttoptr (i64 6299820 to i32*), align 4
+  %5 = load i32, i32* bitcast (%G_0x6020ac_type* @G_0x6020ac to i32*), align 8
   %6 = sext i32 %5 to i64
   store i64 %6, i64* %RAX, align 8
   ret %struct.Memory* %2
@@ -213,7 +204,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i32, i32* inttoptr (i64 6299792 to i32*), align 16
+  %5 = load i32, i32* bitcast (%G_0x602090_type* @G_0x602090 to i32*), align 8
   %6 = sext i32 %5 to i64
   store i64 %6, i64* %RAX, align 8
   ret %struct.Memory* %2
@@ -245,7 +236,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i32, i32* inttoptr (i64 6299816 to i32*), align 8
+  %5 = load i32, i32* bitcast (%G_0x6020a8_type* @G_0x6020a8 to i32*), align 8
   %6 = sext i32 %5 to i64
   store i64 %6, i64* %RAX, align 8
   ret %struct.Memory* %2

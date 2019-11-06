@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x601048_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x601048 = local_unnamed_addr global %G_0x601048_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -96,7 +98,7 @@ entry:
   %33 = bitcast i64* %32 to double*
   store double 0.000000e+00, double* %33, align 1
   %RDX.i19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %34 = load i64, i64* inttoptr (i64 6295624 to i64*), align 8
+  %34 = load i64, i64* bitcast (%G_0x601048_type* @G_0x601048 to i64*), align 8
   %35 = mul i64 %34, 3877
   %36 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
   %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
@@ -184,7 +186,7 @@ routine_idivq__rcx.exit:                          ; preds = %84, %82
   %91 = phi i64 [ %.pre1, %82 ], [ %66, %84 ]
   %92 = phi i64 [ %.pre, %82 ], [ %88, %84 ]
   %93 = phi %struct.Memory* [ %83, %82 ], [ %2, %84 ]
-  store i64 %92, i64* inttoptr (i64 6295624 to i64*), align 8
+  store i64 %92, i64* bitcast (%G_0x601048_type* @G_0x601048 to i64*), align 8
   %94 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
   %95 = sitofp i64 %92 to double
   %96 = bitcast %union.VectorReg* %94 to double*
@@ -336,7 +338,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 12
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 6295624 to i64*), align 8
+  %5 = load i64, i64* bitcast (%G_0x601048_type* @G_0x601048 to i64*), align 8
   %6 = sext i64 %5 to i128
   %7 = and i128 %6, -18446744073709551616
   %8 = zext i64 %5 to i128
@@ -512,7 +514,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 8
   store i64 %5, i64* %PC, align 8
-  store i64 %3, i64* inttoptr (i64 6295624 to i64*), align 8
+  store i64 %3, i64* bitcast (%G_0x601048_type* @G_0x601048 to i64*), align 8
   ret %struct.Memory* %2
 }
 

@@ -1,0 +1,30 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x564b989beef8]:   %57 = tail call fastcc %struct.Memory* @ext_618260_malloc(%struct.State* nonnull %0, %struct.Memory* %50)
+[0x564b98a9d250]:   %195 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %57)
+[0x564b98a9ead0]:   %226 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_400979)
+[0x564b98a9ec00]:   %call2_400979 = tail call %struct.Memory.31* @sub_4007d0.Checktree(%struct.State.0* nonnull %0, i64 %204, %struct.Memory.31* %195)
+[0x564b98aa8fa0]:   %call2_40093a = tail call %struct.Memory.31* @sub_400720.Insert(%struct.State.0* nonnull %0, i64 %120, %struct.Memory.31* %57)
+[0x564b98ab2340]:   %57 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %call2_4008cb)
+[0x564b98ab5540]:   %call2_4008cb = tail call %struct.Memory.31* @sub_4005c0.tInitarr(%struct.State.0* %0, i64 %46, %struct.Memory.31* %2)
+Multiple matches exist for [0x564b989c0a68]:   %84 = tail call fastcc %struct.Memory* @ext_618238_printf(%struct.State* nonnull %0, %struct.Memory* %143)
+[0x564b98a9d250]:   %195 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %57)
+[0x564b98a9ead0]:   %226 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_400979)
+[0x564b98a9ec00]:   %call2_400979 = tail call %struct.Memory.31* @sub_4007d0.Checktree(%struct.State.0* nonnull %0, i64 %204, %struct.Memory.31* %195)
+[0x564b98aa8fa0]:   %call2_40093a = tail call %struct.Memory.31* @sub_400720.Insert(%struct.State.0* nonnull %0, i64 %120, %struct.Memory.31* %57)
+[0x564b98ab2340]:   %57 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %call2_4008cb)
+[0x564b98ab5540]:   %call2_4008cb = tail call %struct.Memory.31* @sub_4005c0.tInitarr(%struct.State.0* %0, i64 %46, %struct.Memory.31* %2)
+Multiple matches exist for [0x564b989c3508]:   %129 = tail call fastcc %struct.Memory* @ext_618238_printf(%struct.State* nonnull %0, %struct.Memory* %57)
+[0x564b98a9d250]:   %195 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %57)
+[0x564b98a9ead0]:   %226 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_400979)
+[0x564b98a9ec00]:   %call2_400979 = tail call %struct.Memory.31* @sub_4007d0.Checktree(%struct.State.0* nonnull %0, i64 %204, %struct.Memory.31* %195)
+[0x564b98aa8fa0]:   %call2_40093a = tail call %struct.Memory.31* @sub_400720.Insert(%struct.State.0* nonnull %0, i64 %120, %struct.Memory.31* %57)
+[0x564b98ab2340]:   %57 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %call2_4008cb)
+[0x564b98ab5540]:   %call2_4008cb = tail call %struct.Memory.31* @sub_4005c0.tInitarr(%struct.State.0* %0, i64 %46, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Trees] from ../binary/test.mcsema.opt.ll
+Extracting function [Trees] from mcsema/test.proposed.opt.ll
+Matcher Done...
+4.22user 9.71system 0:14.06elapsed 99%CPU (0avgtext+0avgdata 13500maxresident)k
+0inputs+2568outputs (0major+1138minor)pagefaults 0swaps

@@ -4,6 +4,9 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x603280_type = type <{ [8 x i8] }>
+%G_0x603288_type = type <{ [8 x i8] }>
+%G__0x603280_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +41,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x603280 = local_unnamed_addr global %G_0x603280_type zeroinitializer
+@G_0x603288 = local_unnamed_addr global %G_0x603288_type zeroinitializer
+@G__0x603280 = global %G__0x603280_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -71,7 +77,7 @@ entry:
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %RAX.i61 = getelementptr inbounds %union.anon, %union.anon* %18, i64 0, i32 0
-  store i64 6304384, i64* %RAX.i61, align 8
+  store i64 ptrtoint (%G__0x603280_type* @G__0x603280 to i64), i64* %RAX.i61, align 8
   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0
   %ECX.i58 = bitcast %union.anon* %19 to i32*
   %RCX.i59 = getelementptr inbounds %union.anon, %union.anon* %19, i64 0, i32 0
@@ -144,11 +150,11 @@ entry:
   store i64 %54, i64* %36, align 1
   store double 0.000000e+00, double* %38, align 1
   %55 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
-  %56 = load i64, i64* inttoptr (i64 6304384 to i64*), align 128
+  %56 = load i64, i64* bitcast (%G_0x603280_type* @G_0x603280 to i64*), align 8
   %57 = sitofp i64 %56 to double
   %58 = bitcast %union.VectorReg* %55 to double*
   %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
-  %60 = load i64, i64* inttoptr (i64 6304392 to i64*), align 8
+  %60 = load i64, i64* bitcast (%G_0x603288_type* @G_0x603288 to i64*), align 8
   %61 = sitofp i64 %60 to double
   %62 = bitcast %union.VectorReg* %59 to double*
   %63 = bitcast i64 %54 to double
@@ -348,7 +354,7 @@ block_400488:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 10
   store i64 %4, i64* %PC, align 8
-  store i64 6304384, i64* %RAX, align 8
+  store i64 ptrtoint (%G__0x603280_type* @G__0x603280 to i64), i64* %RAX, align 8
   ret %struct.Memory* %2
 }
 
@@ -520,7 +526,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 10
   store i64 %5, i64* %PC, align 8
-  %6 = load i64, i64* inttoptr (i64 6304384 to i64*), align 128
+  %6 = load i64, i64* bitcast (%G_0x603280_type* @G_0x603280 to i64*), align 8
   %7 = sitofp i64 %6 to double
   %8 = bitcast %union.VectorReg* %3 to double*
   store double %7, double* %8, align 1
@@ -535,7 +541,7 @@ block_400488:
   %4 = load i64, i64* %PC, align 8
   %5 = add i64 %4, 10
   store i64 %5, i64* %PC, align 8
-  %6 = load i64, i64* inttoptr (i64 6304392 to i64*), align 8
+  %6 = load i64, i64* bitcast (%G_0x603288_type* @G_0x603288 to i64*), align 8
   %7 = sitofp i64 %6 to double
   %8 = bitcast %union.VectorReg* %3 to double*
   store double %7, double* %8, align 1

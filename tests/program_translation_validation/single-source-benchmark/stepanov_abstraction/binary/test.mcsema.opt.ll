@@ -317,371 +317,371 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @seg_609100__bss.0.0 = internal unnamed_addr global i1 false, align 8
 
-declare %struct.Memory* @sub_404460__ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405c70__ZN9benchmark13insertionSortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4024d0__Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406570__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406410__ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401cf0__ZN12ValueWrapperIS_IS_IS_IdEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401cd0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4022f0__Z19test_insertion_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400970___cxx_global_var_init_15_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402c70__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400ab0___cxx_global_var_init_25_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404600__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402860__Z14test_quicksortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401ed0__Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403100__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEbRKS0_IT_ESB__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404050__ZN9benchmark8heapsortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401cf0__ZN12ValueWrapperIS_IS_IS_IdEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4065a0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405eb0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402a10__Z14test_heap_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405f30__ZNK12ValueWrapperIS_IdEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401cb0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4065d0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405e70__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405870__ZN9benchmark13insertionSortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4031f0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4060b0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406010__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEES0_IT_ERKS9_SB__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4061f0__ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405f10__ZNK12ValueWrapperIS_IS_IdEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406190__ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402990__Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401f40__Z15test_accumulateIP12ValueWrapperIdES1_EvT_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401e30__ZN9benchmark4fillIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406300__ZN12ValueWrapperIS_IdEEC2IS0_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405d50__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EET0_T_SF_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406170__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IS4_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402b40__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4023a0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402c70__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402730__Z14test_quicksortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404c10__ZN9benchmark9is_sortedIPdEEbT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400830___cxx_global_var_init_11_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400680__init_proc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405940__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402210__ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4065a0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4027b0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4041a0__ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406050__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400890___cxx_global_var_init_12_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4065d0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4031f0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403130__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEEbRKS0_IT_ESA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4031c0__ZltI12ValueWrapperIS0_IS0_IdEEEEbRKS0_IT_ES7__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404c10__ZN9benchmark9is_sortedIPdEEbT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402050__Z15test_accumulateIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406250__ZplI12ValueWrapperIdEES0_IT_ERKS3_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400b10_deregister_tm_clones_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406480__ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a30___cxx_global_var_init_21_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402bf0__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400970___cxx_global_var_init_15_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405b30__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405b30__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d30__ZN12ValueWrapperIS_IdEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405e50__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405750__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406660__ZN12ValueWrapperIS_IS_IdEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405ef0__ZNK12ValueWrapperIS_IS_IS_IdEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a50___cxx_global_var_init_22_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406570__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405f30__ZNK12ValueWrapperIS_IdEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400990___cxx_global_var_init_16_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a10___cxx_global_var_init_20_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d10__ZN12ValueWrapperIS_IS_IdEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4021b0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4030d0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEbRKS0_IT_ESC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405940__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406230__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401f40__Z15test_accumulateIP12ValueWrapperIdES1_EvT_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406320__ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4060d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEES0_IT_ERKS7_S9__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403190__ZltI12ValueWrapperIS0_IS0_IS0_IdEEEEEbRKS0_IT_ES8__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401db0__ZN9benchmark4fillIPddEEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402160__ZN9benchmark11fill_randomIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a70___cxx_global_var_init_23_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406300__ZN12ValueWrapperIS_IdEEC2IS0_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406110__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406390__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIdEES3_EET0_T_S6_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405ff0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404460__ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403130__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEEbRKS0_IT_ESA__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403100__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEbRKS0_IT_ESB__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401c50__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405e50__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400b10_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406290__ZN12ValueWrapperIS_IS_IdEEEC2IS1_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4027b0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406390__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIdEES3_EET0_T_S6_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009d0___cxx_global_var_init_18_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405a60__ZN9benchmark13insertionSortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402f50__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402270__Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402a10__Z14test_heap_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402680__Z14test_quicksortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404050__ZN9benchmark8heapsortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406070__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009b0___cxx_global_var_init_17_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009b0___cxx_global_var_init_17_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406130__ZplI12ValueWrapperIS0_IS0_IS0_IdEEEEES0_IT_ERKS6_S8__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405750__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406320__ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401db0__ZN9benchmark4fillIPddEEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406690__ZN12ValueWrapperIS_IdEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406250__ZplI12ValueWrapperIdEES0_IT_ERKS3_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402420__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406110__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405d50__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EET0_T_SF_SE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a90___cxx_global_var_init_24_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405fb0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEES0_IT_ERKSA_SC__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4060d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEES0_IT_ERKS7_S9__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4022f0__Z19test_insertion_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402bf0__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401df0__ZN9benchmark4fillIP12ValueWrapperIdES2_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4020d0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4041a0__ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4064f0__ZN9benchmark10accumulateIPddEET0_T_S3_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401ed0__Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401e70__Z15test_accumulateIPddEvT_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405ed0__ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403160__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403ba0__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405c70__ZN9benchmark13insertionSortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4020d0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405ff0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406660__ZN12ValueWrapperIS_IS_IdEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406540__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a90___cxx_global_var_init_24_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400830___cxx_global_var_init_11_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401e70__Z15test_accumulateIPddEvT_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4021b0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402680__Z14test_quicksortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a30___cxx_global_var_init_21_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400890___cxx_global_var_init_12_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4061d0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IS3_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c90__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403220__ZltI12ValueWrapperIdEEbRKS0_IT_ES5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4007d0___cxx_global_var_init_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402860__Z14test_quicksortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406540__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405870__ZN9benchmark13insertionSortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402730__Z14test_quicksortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c70__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401fc0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4008f0___cxx_global_var_init_13_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009f0___cxx_global_var_init_19_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406050__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401e30__ZN9benchmark4fillIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4031c0__ZltI12ValueWrapperIS0_IS0_IdEEEEbRKS0_IT_ES7__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4035e0__ZN9benchmark8heapsortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4008f0___cxx_global_var_init_13_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402160__ZN9benchmark11fill_randomIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403160__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4035e0__ZN9benchmark8heapsortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4060b0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404ad0__ZN9benchmark8heapsortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d10__ZN12ValueWrapperIS_IS_IdEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401cb0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4007d0___cxx_global_var_init_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4061d0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IS3_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4023a0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402da0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405e90__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406410__ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a10___cxx_global_var_init_20_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402990__Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400950___cxx_global_var_init_14_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402ac0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406290__ZN12ValueWrapperIS_IS_IdEEEC2IS1_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406480__ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402550__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403ba0__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405a60__ZN9benchmark13insertionSortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009d0___cxx_global_var_init_18_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406630__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401c50__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400680__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400950___cxx_global_var_init_14_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405f10__ZNK12ValueWrapperIS_IS_IdEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406170__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IS4_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405e90__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4028e0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400990___cxx_global_var_init_16_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402420__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406600__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401c90__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401df0__ZN9benchmark4fillIP12ValueWrapperIdES2_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406690__ZN12ValueWrapperIS_IdEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404ad0__ZN9benchmark8heapsortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403730__ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402da0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405ed0__ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402ac0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406230__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ab0___cxx_global_var_init_25_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a50___cxx_global_var_init_22_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406190__ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009f0___cxx_global_var_init_19_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406600__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403190__ZltI12ValueWrapperIS0_IS0_IS0_IdEEEEEbRKS0_IT_ES8__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405e70__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406070__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402270__Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4028e0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401cd0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_406010__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEES0_IT_ERKS9_SB__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403730__ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4061f0__ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401c70__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402050__Z15test_accumulateIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403220__ZltI12ValueWrapperIdEEbRKS0_IT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4039f0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4030d0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEbRKS0_IT_ESC__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402b40__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402600__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400a70___cxx_global_var_init_23_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402f50__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401fc0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405eb0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402600__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4024d0__Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405fb0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEES0_IT_ERKSA_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401d30__ZN12ValueWrapperIS_IdEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402210__ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_404600__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4039f0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402550__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_405ef0__ZNK12ValueWrapperIS_IS_IS_IdEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4064f0__ZN9benchmark10accumulateIPddEET0_T_S3_S2__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406630__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_406130__ZplI12ValueWrapperIS0_IS0_IS0_IdEEEEES0_IT_ERKS6_S8__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -1578,7 +1578,7 @@ block_403130:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403160__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403160__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEEbRKS0_IT_ES9__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -1659,7 +1659,7 @@ block_400a30:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -2137,7 +2137,7 @@ block_4066c0:
   store i64 %64, i64* %66, align 8
   store i64 %65, i64* %RSP, align 8, !tbaa !2428
   store i64 %63, i64* %PC, align 8, !tbaa !2428
-  %67 = tail call %struct.Memory* @sub_400680__init_proc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
+  %67 = tail call %struct.Memory* @sub_400680__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
   %68 = load i64, i64* %RBP, align 8
   %69 = load i64, i64* %PC, align 8
   store i8 0, i8* %43, align 1, !tbaa !2433
@@ -2450,7 +2450,7 @@ block_4062b0:
   store i64 %79, i64* %82, align 8
   store i64 %81, i64* %RSP, align 8, !tbaa !2428
   store i64 %78, i64* %PC, align 8, !tbaa !2428
-  %83 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %78, %struct.Memory* %2)
+  %83 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %78, %struct.Memory* %2)
   %84 = load i64, i64* %RBP, align 8
   %85 = add i64 %84, -8
   %86 = load i64, i64* %PC, align 8
@@ -2589,7 +2589,7 @@ block_405940:
   store i64 %44, i64* %47, align 8
   store i64 %46, i64* %RSP, align 8, !tbaa !2428
   store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %48 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
+  %48 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
   %49 = load i64, i64* %RBP, align 8
   %50 = add i64 %49, -32
   %51 = load i64, i64* %RAX, align 8
@@ -2613,7 +2613,7 @@ block_4059f7:                                     ; preds = %block_4059e7
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %MEMORY.1)
+  %62 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %MEMORY.1)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -48
   %65 = load i64, i64* %PC, align 8
@@ -2633,7 +2633,7 @@ block_4059f7:                                     ; preds = %block_4059e7
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %RSP, align 8, !tbaa !2428
   store i64 %71, i64* %PC, align 8, !tbaa !2428
-  %76 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %62)
+  %76 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %62)
   %77 = load i64, i64* %RBP, align 8
   %78 = add i64 %77, -80
   %79 = load i64, i64* %PC, align 8
@@ -2663,7 +2663,7 @@ block_4059f7:                                     ; preds = %block_4059e7
   store i64 %92, i64* %95, align 8
   store i64 %94, i64* %RSP, align 8, !tbaa !2428
   store i64 %91, i64* %PC, align 8, !tbaa !2428
-  %96 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %91, %struct.Memory* %76)
+  %96 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %91, %struct.Memory* %76)
   %97 = load i64, i64* %RBP, align 8
   %98 = add i64 %97, -88
   %99 = load i64, i64* %RAX, align 8
@@ -2688,7 +2688,7 @@ block_4059f2:                                     ; preds = %block_4059e7
   store i64 %107, i64* %110, align 8
   store i64 %109, i64* %RSP, align 8, !tbaa !2428
   store i64 %106, i64* %PC, align 8, !tbaa !2428
-  %111 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %106, %struct.Memory* %MEMORY.1)
+  %111 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %106, %struct.Memory* %MEMORY.1)
   %112 = load i64, i64* %RBP, align 8
   %113 = add i64 %112, -24
   %114 = load i64, i64* %PC, align 8
@@ -2719,7 +2719,7 @@ block_4059f2:                                     ; preds = %block_4059e7
   store i64 %123, i64* %126, align 8
   store i64 %125, i64* %RSP, align 8, !tbaa !2428
   store i64 %122, i64* %PC, align 8, !tbaa !2428
-  %127 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %122, %struct.Memory* %111)
+  %127 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %122, %struct.Memory* %111)
   %128 = load i64, i64* %RBP, align 8
   %129 = add i64 %128, -64
   %130 = load i64, i64* %RAX, align 8
@@ -2776,7 +2776,7 @@ block_4059a6:                                     ; preds = %block_405986, %bloc
   store i64 %155, i64* %158, align 8
   store i64 %157, i64* %RSP, align 8, !tbaa !2428
   store i64 %154, i64* %PC, align 8, !tbaa !2428
-  %159 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %MEMORY.1)
+  %159 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %MEMORY.1)
   %160 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %DL, align 1, !tbaa !2432
@@ -2823,7 +2823,7 @@ block_40596c:                                     ; preds = %block_4059f2, %bloc
   store i64 %181, i64* %184, align 8
   store i64 %183, i64* %RSP, align 8, !tbaa !2428
   store i64 %180, i64* %PC, align 8, !tbaa !2428
-  %185 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %180, %struct.Memory* %MEMORY.2)
+  %185 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %180, %struct.Memory* %MEMORY.2)
   %186 = load i8, i8* %AL, align 1
   %187 = load i64, i64* %PC, align 8
   %188 = and i8 %186, 1
@@ -2856,7 +2856,7 @@ block_4059c7:                                     ; preds = %block_4059a6
   store i64 %199, i64* %202, align 8
   store i64 %201, i64* %RSP, align 8, !tbaa !2428
   store i64 %198, i64* %PC, align 8, !tbaa !2428
-  %203 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %198, %struct.Memory* %MEMORY.1)
+  %203 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %198, %struct.Memory* %MEMORY.1)
   %204 = load i64, i64* %RAX, align 8
   %205 = load i64, i64* %PC, align 8
   store i64 %204, i64* %RDI, align 8, !tbaa !2428
@@ -2868,7 +2868,7 @@ block_4059c7:                                     ; preds = %block_4059a6
   store i64 %207, i64* %210, align 8
   store i64 %209, i64* %RSP, align 8, !tbaa !2428
   store i64 %206, i64* %PC, align 8, !tbaa !2428
-  %211 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %206, %struct.Memory* %MEMORY.1)
+  %211 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %206, %struct.Memory* %MEMORY.1)
   %212 = load i64, i64* %RBP, align 8
   %213 = add i64 %212, -40
   %214 = load i64, i64* %PC, align 8
@@ -2883,7 +2883,7 @@ block_4059c7:                                     ; preds = %block_4059a6
   store i64 %217, i64* %220, align 8
   store i64 %219, i64* %RSP, align 8, !tbaa !2428
   store i64 %216, i64* %PC, align 8, !tbaa !2428
-  %221 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %216, %struct.Memory* %MEMORY.1)
+  %221 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %216, %struct.Memory* %MEMORY.1)
   %222 = load i64, i64* %RBP, align 8
   %223 = add i64 %222, -65
   %224 = load i8, i8* %AL, align 1
@@ -2907,7 +2907,7 @@ block_405986:                                     ; preds = %block_40596c
   store i64 %231, i64* %234, align 8
   store i64 %233, i64* %RSP, align 8, !tbaa !2428
   store i64 %230, i64* %PC, align 8, !tbaa !2428
-  %235 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %230, %struct.Memory* %MEMORY.2)
+  %235 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %230, %struct.Memory* %MEMORY.2)
   %236 = load i64*, i64** %55, align 8
   %237 = load i64, i64* %PC, align 8
   %238 = add i64 %237, 3
@@ -3383,7 +3383,7 @@ block_4034f3:                                     ; preds = %block_4034e0
   store i64 %136, i64* %139, align 8
   store i64 %138, i64* %RSP, align 8, !tbaa !2428
   store i64 %135, i64* %PC, align 8, !tbaa !2428
-  %140 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %135, %struct.Memory* %MEMORY.2)
+  %140 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %135, %struct.Memory* %MEMORY.2)
   %141 = load i64, i64* %RBP, align 8
   %142 = add i64 %141, -112
   %143 = load i64, i64* %PC, align 8
@@ -3402,7 +3402,7 @@ block_4034f3:                                     ; preds = %block_4034e0
   store i64 %149, i64* %152, align 8
   store i64 %151, i64* %RSP, align 8, !tbaa !2428
   store i64 %148, i64* %PC, align 8, !tbaa !2428
-  %153 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %148, %struct.Memory* %140)
+  %153 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %148, %struct.Memory* %140)
   %154 = load i64, i64* %RBP, align 8
   %155 = add i64 %154, -8
   %156 = load i64, i64* %PC, align 8
@@ -3428,7 +3428,7 @@ block_4034f3:                                     ; preds = %block_4034e0
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %RSP, align 8, !tbaa !2428
   store i64 %166, i64* %PC, align 8, !tbaa !2428
-  %171 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %153)
+  %171 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %153)
   %172 = load i64, i64* %RBP, align 8
   %173 = add i64 %172, -120
   %174 = load i64, i64* %PC, align 8
@@ -3447,7 +3447,7 @@ block_4034f3:                                     ; preds = %block_4034e0
   store i64 %180, i64* %183, align 8
   store i64 %182, i64* %RSP, align 8, !tbaa !2428
   store i64 %179, i64* %PC, align 8, !tbaa !2428
-  %184 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %179, %struct.Memory* %171)
+  %184 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %179, %struct.Memory* %171)
   %185 = load i64, i64* %PC, align 8
   store i64 2, i64* %RCX, align 8, !tbaa !2428
   store i64 2, i64* %RSI, align 8, !tbaa !2428
@@ -3640,7 +3640,7 @@ block_4034ee:                                     ; preds = %block_4034e0
   store i64 %308, i64* %311, align 8
   store i64 %310, i64* %RSP, align 8, !tbaa !2428
   store i64 %307, i64* %PC, align 8, !tbaa !2428
-  %312 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %307, %struct.Memory* %MEMORY.2)
+  %312 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %307, %struct.Memory* %MEMORY.2)
   %313 = load i64, i64* %RBP, align 8
   %314 = add i64 %313, -128
   %315 = load i64, i64* %PC, align 8
@@ -3659,7 +3659,7 @@ block_4034ee:                                     ; preds = %block_4034e0
   store i64 %321, i64* %324, align 8
   store i64 %323, i64* %RSP, align 8, !tbaa !2428
   store i64 %320, i64* %PC, align 8, !tbaa !2428
-  %325 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %320, %struct.Memory* %312)
+  %325 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %320, %struct.Memory* %312)
   %326 = load i64, i64* %RBP, align 8
   %327 = add i64 %326, -16
   %328 = load i64, i64* %PC, align 8
@@ -3773,7 +3773,7 @@ block_4033ac:                                     ; preds = %block_4033a0, %bloc
   store i64 %398, i64* %401, align 8
   store i64 %400, i64* %RSP, align 8, !tbaa !2428
   store i64 %397, i64* %PC, align 8, !tbaa !2428
-  %402 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %397, %struct.Memory* %2)
+  %402 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %397, %struct.Memory* %2)
   %403 = load i64, i64* %RBP, align 8
   %404 = add i64 %403, -72
   %405 = load i64, i64* %PC, align 8
@@ -3792,7 +3792,7 @@ block_4033ac:                                     ; preds = %block_4033a0, %bloc
   store i64 %411, i64* %414, align 8
   store i64 %413, i64* %RSP, align 8, !tbaa !2428
   store i64 %410, i64* %PC, align 8, !tbaa !2428
-  %415 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %410, %struct.Memory* %2)
+  %415 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %410, %struct.Memory* %2)
   %416 = load i64, i64* %RBP, align 8
   %417 = add i64 %416, -8
   %418 = load i64, i64* %PC, align 8
@@ -3818,7 +3818,7 @@ block_4033ac:                                     ; preds = %block_4033a0, %bloc
   store i64 %429, i64* %432, align 8
   store i64 %431, i64* %RSP, align 8, !tbaa !2428
   store i64 %428, i64* %PC, align 8, !tbaa !2428
-  %433 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %428, %struct.Memory* %2)
+  %433 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %428, %struct.Memory* %2)
   %434 = load i64, i64* %RBP, align 8
   %435 = add i64 %434, -80
   %436 = load i64, i64* %PC, align 8
@@ -3837,7 +3837,7 @@ block_4033ac:                                     ; preds = %block_4033a0, %bloc
   store i64 %442, i64* %445, align 8
   store i64 %444, i64* %RSP, align 8, !tbaa !2428
   store i64 %441, i64* %PC, align 8, !tbaa !2428
-  %446 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %441, %struct.Memory* %2)
+  %446 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %441, %struct.Memory* %2)
   %447 = load i64, i64* %RBP, align 8
   %448 = add i64 %447, -144
   %449 = load i64, i64* %PC, align 8
@@ -4070,7 +4070,7 @@ block_4034b4:                                     ; preds = %block_40349c
   store i64 %599, i64* %602, align 8
   store i64 %601, i64* %RSP, align 8, !tbaa !2428
   store i64 %598, i64* %PC, align 8, !tbaa !2428
-  %603 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %598, %struct.Memory* %MEMORY.2)
+  %603 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %598, %struct.Memory* %MEMORY.2)
   %604 = load i64, i64* %RBP, align 8
   %605 = add i64 %604, -104
   %606 = load i64, i64* %PC, align 8
@@ -4089,7 +4089,7 @@ block_4034b4:                                     ; preds = %block_40349c
   store i64 %612, i64* %615, align 8
   store i64 %614, i64* %RSP, align 8, !tbaa !2428
   store i64 %611, i64* %PC, align 8, !tbaa !2428
-  %616 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %611, %struct.Memory* %MEMORY.2)
+  %616 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %611, %struct.Memory* %MEMORY.2)
   %617 = load i64, i64* %RBP, align 8
   %618 = add i64 %617, -16
   %619 = load i64, i64* %PC, align 8
@@ -4104,7 +4104,7 @@ block_4034b4:                                     ; preds = %block_40349c
   store i64 %622, i64* %625, align 8
   store i64 %624, i64* %RSP, align 8, !tbaa !2428
   store i64 %621, i64* %PC, align 8, !tbaa !2428
-  %626 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %621, %struct.Memory* %MEMORY.2)
+  %626 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %621, %struct.Memory* %MEMORY.2)
   %627 = load i64, i64* %RBP, align 8
   %628 = add i64 %627, -153
   %629 = load i8, i8* %AL, align 1
@@ -4251,7 +4251,7 @@ block_403426:                                     ; preds = %block_403418
   store i64 %713, i64* %716, align 8
   store i64 %715, i64* %RSP, align 8, !tbaa !2428
   store i64 %712, i64* %PC, align 8, !tbaa !2428
-  %717 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %712, %struct.Memory* %2)
+  %717 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %712, %struct.Memory* %2)
   %718 = load i64, i64* %RBP, align 8
   %719 = add i64 %718, -88
   %720 = load i64, i64* %PC, align 8
@@ -4270,7 +4270,7 @@ block_403426:                                     ; preds = %block_403418
   store i64 %726, i64* %729, align 8
   store i64 %728, i64* %RSP, align 8, !tbaa !2428
   store i64 %725, i64* %PC, align 8, !tbaa !2428
-  %730 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %725, %struct.Memory* %717)
+  %730 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %725, %struct.Memory* %717)
   %731 = load i64, i64* %RBP, align 8
   %732 = add i64 %731, -8
   %733 = load i64, i64* %PC, align 8
@@ -4296,7 +4296,7 @@ block_403426:                                     ; preds = %block_403418
   store i64 %744, i64* %747, align 8
   store i64 %746, i64* %RSP, align 8, !tbaa !2428
   store i64 %743, i64* %PC, align 8, !tbaa !2428
-  %748 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %743, %struct.Memory* %730)
+  %748 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %743, %struct.Memory* %730)
   %749 = load i64, i64* %RBP, align 8
   %750 = add i64 %749, -96
   %751 = load i64, i64* %PC, align 8
@@ -4315,7 +4315,7 @@ block_403426:                                     ; preds = %block_403418
   store i64 %757, i64* %760, align 8
   store i64 %759, i64* %RSP, align 8, !tbaa !2428
   store i64 %756, i64* %PC, align 8, !tbaa !2428
-  %761 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %756, %struct.Memory* %748)
+  %761 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %756, %struct.Memory* %748)
   %762 = load i64, i64* %RBP, align 8
   %763 = add i64 %762, -152
   %764 = load i64, i64* %PC, align 8
@@ -4422,7 +4422,7 @@ block_403342:                                     ; preds = %block_403334
   store i64 %830, i64* %833, align 8
   store i64 %832, i64* %RSP, align 8, !tbaa !2428
   store i64 %829, i64* %PC, align 8, !tbaa !2428
-  %834 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %829, %struct.Memory* %2)
+  %834 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %829, %struct.Memory* %2)
   %835 = load i64, i64* %RBP, align 8
   %836 = add i64 %835, -56
   %837 = load i64, i64* %PC, align 8
@@ -4441,7 +4441,7 @@ block_403342:                                     ; preds = %block_403334
   store i64 %843, i64* %846, align 8
   store i64 %845, i64* %RSP, align 8, !tbaa !2428
   store i64 %842, i64* %PC, align 8, !tbaa !2428
-  %847 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %842, %struct.Memory* %2)
+  %847 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %842, %struct.Memory* %2)
   %848 = load i64, i64* %RBP, align 8
   %849 = add i64 %848, -8
   %850 = load i64, i64* %PC, align 8
@@ -4467,7 +4467,7 @@ block_403342:                                     ; preds = %block_403334
   store i64 %861, i64* %864, align 8
   store i64 %863, i64* %RSP, align 8, !tbaa !2428
   store i64 %860, i64* %PC, align 8, !tbaa !2428
-  %865 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %860, %struct.Memory* %2)
+  %865 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %860, %struct.Memory* %2)
   %866 = load i64, i64* %RBP, align 8
   %867 = add i64 %866, -64
   %868 = load i64, i64* %PC, align 8
@@ -4486,7 +4486,7 @@ block_403342:                                     ; preds = %block_403334
   store i64 %874, i64* %877, align 8
   store i64 %876, i64* %RSP, align 8, !tbaa !2428
   store i64 %873, i64* %PC, align 8, !tbaa !2428
-  %878 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %873, %struct.Memory* %2)
+  %878 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %873, %struct.Memory* %2)
   %879 = load i64, i64* %RBP, align 8
   %880 = add i64 %879, -136
   %881 = load i64, i64* %PC, align 8
@@ -4505,7 +4505,7 @@ block_403342:                                     ; preds = %block_403334
   store i64 %887, i64* %890, align 8
   store i64 %889, i64* %RSP, align 8, !tbaa !2428
   store i64 %886, i64* %PC, align 8, !tbaa !2428
-  %891 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %886, %struct.Memory* %2)
+  %891 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %886, %struct.Memory* %2)
   %892 = load i8, i8* %AL, align 1
   %893 = load i64, i64* %PC, align 8
   %894 = and i8 %892, 1
@@ -5812,7 +5812,7 @@ block_405d7f:                                     ; preds = %block_405d65
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -48
   %65 = load i64, i64* %PC, align 8
@@ -5831,7 +5831,7 @@ block_405d7f:                                     ; preds = %block_405d65
   store i64 %71, i64* %74, align 8
   store i64 %73, i64* %RSP, align 8, !tbaa !2428
   store i64 %70, i64* %PC, align 8, !tbaa !2428
-  %75 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
+  %75 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
   %76 = load i64, i64* %RBP, align 8
   %77 = add i64 %76, -32
   %78 = load i64, i64* %PC, align 8
@@ -5846,7 +5846,7 @@ block_405d7f:                                     ; preds = %block_405d65
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %RSP, align 8, !tbaa !2428
   store i64 %80, i64* %PC, align 8, !tbaa !2428
-  %85 = tail call %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
+  %85 = tail call %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
   %86 = load i64, i64* %RBP, align 8
   %87 = add i64 %86, -40
   %88 = load i64, i64* %PC, align 8
@@ -5958,7 +5958,7 @@ block_405d65:                                     ; preds = %block_405d7f, %bloc
   store i64 %155, i64* %158, align 8
   store i64 %157, i64* %RSP, align 8, !tbaa !2428
   store i64 %154, i64* %PC, align 8, !tbaa !2428
-  %159 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %2)
+  %159 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %2)
   %160 = load i8, i8* %AL, align 1
   %161 = load i64, i64* %PC, align 8
   %162 = and i8 %160, 1
@@ -6115,7 +6115,7 @@ block_4065d0:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406600__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406600__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -6352,7 +6352,7 @@ block_4029c8:                                     ; preds = %block_4029b8
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -24
   %128 = load i64, i64* %PC, align 8
@@ -6375,7 +6375,7 @@ block_4029c8:                                     ; preds = %block_4029b8
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_404ad0__ZN9benchmark8heapsortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_404ad0__ZN9benchmark8heapsortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %PC, align 8
@@ -6398,7 +6398,7 @@ block_4029c8:                                     ; preds = %block_4029b8
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -6582,7 +6582,7 @@ block_406540:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406570__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406570__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -6819,7 +6819,7 @@ block_402c28:                                     ; preds = %block_402c18
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -6842,7 +6842,7 @@ block_402c28:                                     ; preds = %block_402c18
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_4035e0__ZN9benchmark8heapsortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_4035e0__ZN9benchmark8heapsortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -6865,7 +6865,7 @@ block_402c28:                                     ; preds = %block_402c18
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -7034,7 +7034,7 @@ block_405f10:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405f30__ZNK12ValueWrapperIS_IdEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405f30__ZNK12ValueWrapperIS_IdEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -7111,7 +7111,7 @@ block_400a70:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -7216,7 +7216,7 @@ block_404460:
   store i64 %52, i64* %55, align 8
   store i64 %54, i64* %RSP, align 8, !tbaa !2428
   store i64 %51, i64* %PC, align 8, !tbaa !2428
-  %56 = tail call %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %51, %struct.Memory* %2)
+  %56 = tail call %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %51, %struct.Memory* %2)
   %57 = load i64, i64* %PC, align 8
   store i64 2, i64* %RDX, align 8, !tbaa !2428
   store i64 2, i64* %RCX, align 8, !tbaa !2428
@@ -7427,7 +7427,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %188, i64* %191, align 8
   store i64 %190, i64* %RSP, align 8, !tbaa !2428
   store i64 %187, i64* %PC, align 8, !tbaa !2428
-  %192 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %187, %struct.Memory* %96)
+  %192 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %187, %struct.Memory* %96)
   %193 = load i64, i64* %RBP, align 8
   %194 = add i64 %193, -72
   %195 = load i64, i64* %PC, align 8
@@ -7446,7 +7446,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %201, i64* %204, align 8
   store i64 %203, i64* %RSP, align 8, !tbaa !2428
   store i64 %200, i64* %PC, align 8, !tbaa !2428
-  %205 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %96)
+  %205 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %96)
   %206 = load i64, i64* %RBP, align 8
   %207 = add i64 %206, -8
   %208 = load i64, i64* %PC, align 8
@@ -7471,7 +7471,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %217, i64* %220, align 8
   store i64 %219, i64* %RSP, align 8, !tbaa !2428
   store i64 %216, i64* %PC, align 8, !tbaa !2428
-  %221 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %216, %struct.Memory* %96)
+  %221 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %216, %struct.Memory* %96)
   %222 = load i64, i64* %RBP, align 8
   %223 = add i64 %222, -8
   %224 = load i64, i64* %PC, align 8
@@ -7502,7 +7502,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %237, i64* %240, align 8
   store i64 %239, i64* %RSP, align 8, !tbaa !2428
   store i64 %236, i64* %PC, align 8, !tbaa !2428
-  %241 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %236, %struct.Memory* %96)
+  %241 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %236, %struct.Memory* %96)
   %242 = load i64, i64* %RBP, align 8
   %243 = add i64 %242, -80
   %244 = load i64, i64* %PC, align 8
@@ -7521,7 +7521,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %250, i64* %253, align 8
   store i64 %252, i64* %RSP, align 8, !tbaa !2428
   store i64 %249, i64* %PC, align 8, !tbaa !2428
-  %254 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %249, %struct.Memory* %96)
+  %254 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %249, %struct.Memory* %96)
   %255 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %12, align 1, !tbaa !2433
@@ -7585,7 +7585,7 @@ block_404513:                                     ; preds = %block_404508
   store i64 %287, i64* %290, align 8
   store i64 %289, i64* %RSP, align 8, !tbaa !2428
   store i64 %286, i64* %PC, align 8, !tbaa !2428
-  %291 = tail call %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %286, %struct.Memory* %96)
+  %291 = tail call %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %286, %struct.Memory* %96)
   %292 = load i64, i64* %RBP, align 8
   %293 = add i64 %292, -24
   %294 = load i64, i64* %PC, align 8
@@ -7647,7 +7647,7 @@ block_4044aa:                                     ; preds = %block_40449f
   store i64 %329, i64* %332, align 8
   store i64 %331, i64* %RSP, align 8, !tbaa !2428
   store i64 %328, i64* %PC, align 8, !tbaa !2428
-  %333 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %328, %struct.Memory* %96)
+  %333 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %328, %struct.Memory* %96)
   %334 = load i64, i64* %RBP, align 8
   %335 = add i64 %334, -48
   %336 = load i64, i64* %PC, align 8
@@ -7666,7 +7666,7 @@ block_4044aa:                                     ; preds = %block_40449f
   store i64 %342, i64* %345, align 8
   store i64 %344, i64* %RSP, align 8, !tbaa !2428
   store i64 %341, i64* %PC, align 8, !tbaa !2428
-  %346 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %341, %struct.Memory* %96)
+  %346 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %341, %struct.Memory* %96)
   %347 = load i64*, i64** %122, align 8
   %348 = load i64, i64* %PC, align 8
   %349 = add i64 %348, 4
@@ -7728,7 +7728,7 @@ block_4044aa:                                     ; preds = %block_40449f
   store i64 %383, i64* %386, align 8
   store i64 %385, i64* %RSP, align 8, !tbaa !2428
   store i64 %382, i64* %PC, align 8, !tbaa !2428
-  %387 = tail call %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %382, %struct.Memory* %96)
+  %387 = tail call %struct.Memory* @sub_4047d0__ZN9benchmark7sift_inI14PointerWrapperIdEdEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %382, %struct.Memory* %96)
   %388 = load i64, i64* %RBP, align 8
   %389 = add i64 %388, -24
   %390 = load i64, i64* %PC, align 8
@@ -7937,7 +7937,7 @@ block_405fb0:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_406010__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEES0_IT_ERKS9_SB__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_406010__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEES0_IT_ERKS9_SB__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -7959,7 +7959,7 @@ block_405fb0:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406050__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406050__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -8676,7 +8676,7 @@ block_4023d8:                                     ; preds = %block_4023c8
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -8699,7 +8699,7 @@ block_4023d8:                                     ; preds = %block_4023c8
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405a60__ZN9benchmark13insertionSortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405a60__ZN9benchmark13insertionSortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -8722,7 +8722,7 @@ block_4023d8:                                     ; preds = %block_4023c8
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -8844,7 +8844,7 @@ block_400a10:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -8938,7 +8938,7 @@ block_401cd0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401cf0__ZN12ValueWrapperIS_IS_IS_IdEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401cf0__ZN12ValueWrapperIS_IS_IS_IdEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -9126,7 +9126,7 @@ block_401f70:                                     ; preds = %block_401f60
   store i64 %89, i64* %92, align 8
   store i64 %91, i64* %RSP, align 8, !tbaa !2428
   store i64 %88, i64* %PC, align 8, !tbaa !2428
-  %93 = tail call %struct.Memory* @sub_406410__ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %88, %struct.Memory* %2)
+  %93 = tail call %struct.Memory* @sub_406410__ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %88, %struct.Memory* %2)
   %94 = load i64, i64* %RBP, align 8
   %95 = add i64 %94, -56
   %96 = load i64, i64* %PC, align 8
@@ -9145,7 +9145,7 @@ block_401f70:                                     ; preds = %block_401f60
   store i64 %102, i64* %105, align 8
   store i64 %104, i64* %RSP, align 8, !tbaa !2428
   store i64 %101, i64* %PC, align 8, !tbaa !2428
-  %106 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %101, %struct.Memory* %2)
+  %106 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %101, %struct.Memory* %2)
   %107 = load i64, i64* %PC, align 8
   %108 = add i64 %107, 15960
   %109 = add i64 %107, 5
@@ -9155,7 +9155,7 @@ block_401f70:                                     ; preds = %block_401f60
   store i64 %109, i64* %112, align 8
   store i64 %111, i64* %RSP, align 8, !tbaa !2428
   store i64 %108, i64* %PC, align 8, !tbaa !2428
-  %113 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
+  %113 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
   %114 = load i64, i64* %RBP, align 8
   %115 = add i64 %114, -36
   %116 = load i64, i64* %PC, align 8
@@ -9525,7 +9525,7 @@ block_402458:                                     ; preds = %block_402448
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -9574,7 +9574,7 @@ block_402458:                                     ; preds = %block_402448
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_405940__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_405940__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -9623,7 +9623,7 @@ block_402458:                                     ; preds = %block_402448
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -9905,7 +9905,7 @@ block_402638:                                     ; preds = %block_402628
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -24
   %128 = load i64, i64* %PC, align 8
@@ -9928,7 +9928,7 @@ block_402638:                                     ; preds = %block_402628
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %PC, align 8
@@ -9951,7 +9951,7 @@ block_402638:                                     ; preds = %block_402628
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -10148,7 +10148,7 @@ block_403c60:
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %RSP, align 8, !tbaa !2428
   store i64 %66, i64* %PC, align 8, !tbaa !2428
-  %71 = tail call %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
+  %71 = tail call %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
   %72 = load i64, i64* %RBP, align 8
   %73 = add i64 %72, -8
   %74 = load i64, i64* %PC, align 8
@@ -10720,7 +10720,7 @@ block_401ff0:                                     ; preds = %block_401fe0
   store i64 %108, i64* %111, align 8
   store i64 %110, i64* %RSP, align 8, !tbaa !2428
   store i64 %107, i64* %PC, align 8, !tbaa !2428
-  %112 = tail call %struct.Memory* @sub_406390__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIdEES3_EET0_T_S6_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %2)
+  %112 = tail call %struct.Memory* @sub_406390__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIdEES3_EET0_T_S6_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %2)
   %113 = load i64, i64* %RBP, align 8
   %114 = add i64 %113, -72
   %115 = load i64, i64* %PC, align 8
@@ -10739,7 +10739,7 @@ block_401ff0:                                     ; preds = %block_401fe0
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %PC, align 8
   %127 = add i64 %126, 15816
   %128 = add i64 %126, 5
@@ -10749,7 +10749,7 @@ block_401ff0:                                     ; preds = %block_401fe0
   store i64 %128, i64* %131, align 8
   store i64 %130, i64* %RSP, align 8, !tbaa !2428
   store i64 %127, i64* %PC, align 8, !tbaa !2428
-  %132 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %127, %struct.Memory* %2)
+  %132 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %127, %struct.Memory* %2)
   %133 = load i64, i64* %RBP, align 8
   %134 = add i64 %133, -36
   %135 = load i64, i64* %PC, align 8
@@ -11011,7 +11011,7 @@ block_403100:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403130__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEEbRKS0_IT_ESA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403130__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEEbRKS0_IT_ESA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -11253,7 +11253,7 @@ block_403e96:                                     ; preds = %block_403e88
   store i64 %127, i64* %130, align 8
   store i64 %129, i64* %RSP, align 8, !tbaa !2428
   store i64 %126, i64* %PC, align 8, !tbaa !2428
-  %131 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %126, %struct.Memory* %2)
+  %131 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %126, %struct.Memory* %2)
   %132 = load i64, i64* %RBP, align 8
   %133 = add i64 %132, -88
   %134 = load i64, i64* %PC, align 8
@@ -11272,7 +11272,7 @@ block_403e96:                                     ; preds = %block_403e88
   store i64 %140, i64* %143, align 8
   store i64 %142, i64* %RSP, align 8, !tbaa !2428
   store i64 %139, i64* %PC, align 8, !tbaa !2428
-  %144 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %139, %struct.Memory* %131)
+  %144 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %139, %struct.Memory* %131)
   %145 = load i64, i64* %RBP, align 8
   %146 = add i64 %145, -8
   %147 = load i64, i64* %PC, align 8
@@ -11298,7 +11298,7 @@ block_403e96:                                     ; preds = %block_403e88
   store i64 %158, i64* %161, align 8
   store i64 %160, i64* %RSP, align 8, !tbaa !2428
   store i64 %157, i64* %PC, align 8, !tbaa !2428
-  %162 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %157, %struct.Memory* %144)
+  %162 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %157, %struct.Memory* %144)
   %163 = load i64, i64* %RBP, align 8
   %164 = add i64 %163, -96
   %165 = load i64, i64* %PC, align 8
@@ -11317,7 +11317,7 @@ block_403e96:                                     ; preds = %block_403e88
   store i64 %171, i64* %174, align 8
   store i64 %173, i64* %RSP, align 8, !tbaa !2428
   store i64 %170, i64* %PC, align 8, !tbaa !2428
-  %175 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %170, %struct.Memory* %162)
+  %175 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %170, %struct.Memory* %162)
   %176 = load i64, i64* %RBP, align 8
   %177 = add i64 %176, -152
   %178 = load i64, i64* %PC, align 8
@@ -11424,7 +11424,7 @@ block_403db2:                                     ; preds = %block_403da4
   store i64 %244, i64* %247, align 8
   store i64 %246, i64* %RSP, align 8, !tbaa !2428
   store i64 %243, i64* %PC, align 8, !tbaa !2428
-  %248 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %243, %struct.Memory* %2)
+  %248 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %243, %struct.Memory* %2)
   %249 = load i64, i64* %RBP, align 8
   %250 = add i64 %249, -56
   %251 = load i64, i64* %PC, align 8
@@ -11443,7 +11443,7 @@ block_403db2:                                     ; preds = %block_403da4
   store i64 %257, i64* %260, align 8
   store i64 %259, i64* %RSP, align 8, !tbaa !2428
   store i64 %256, i64* %PC, align 8, !tbaa !2428
-  %261 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %256, %struct.Memory* %2)
+  %261 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %256, %struct.Memory* %2)
   %262 = load i64, i64* %RBP, align 8
   %263 = add i64 %262, -8
   %264 = load i64, i64* %PC, align 8
@@ -11469,7 +11469,7 @@ block_403db2:                                     ; preds = %block_403da4
   store i64 %275, i64* %278, align 8
   store i64 %277, i64* %RSP, align 8, !tbaa !2428
   store i64 %274, i64* %PC, align 8, !tbaa !2428
-  %279 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %274, %struct.Memory* %2)
+  %279 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %274, %struct.Memory* %2)
   %280 = load i64, i64* %RBP, align 8
   %281 = add i64 %280, -64
   %282 = load i64, i64* %PC, align 8
@@ -11488,7 +11488,7 @@ block_403db2:                                     ; preds = %block_403da4
   store i64 %288, i64* %291, align 8
   store i64 %290, i64* %RSP, align 8, !tbaa !2428
   store i64 %287, i64* %PC, align 8, !tbaa !2428
-  %292 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %2)
+  %292 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %2)
   %293 = load i64, i64* %RBP, align 8
   %294 = add i64 %293, -136
   %295 = load i64, i64* %PC, align 8
@@ -11507,7 +11507,7 @@ block_403db2:                                     ; preds = %block_403da4
   store i64 %301, i64* %304, align 8
   store i64 %303, i64* %RSP, align 8, !tbaa !2428
   store i64 %300, i64* %PC, align 8, !tbaa !2428
-  %305 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %300, %struct.Memory* %2)
+  %305 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %300, %struct.Memory* %2)
   %306 = load i8, i8* %AL, align 1
   %307 = load i64, i64* %PC, align 8
   %308 = and i8 %306, 1
@@ -11679,7 +11679,7 @@ block_403e1c:                                     ; preds = %block_403e10, %bloc
   store i64 %411, i64* %414, align 8
   store i64 %413, i64* %RSP, align 8, !tbaa !2428
   store i64 %410, i64* %PC, align 8, !tbaa !2428
-  %415 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %410, %struct.Memory* %2)
+  %415 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %410, %struct.Memory* %2)
   %416 = load i64, i64* %RBP, align 8
   %417 = add i64 %416, -72
   %418 = load i64, i64* %PC, align 8
@@ -11698,7 +11698,7 @@ block_403e1c:                                     ; preds = %block_403e10, %bloc
   store i64 %424, i64* %427, align 8
   store i64 %426, i64* %RSP, align 8, !tbaa !2428
   store i64 %423, i64* %PC, align 8, !tbaa !2428
-  %428 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %423, %struct.Memory* %2)
+  %428 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %423, %struct.Memory* %2)
   %429 = load i64, i64* %RBP, align 8
   %430 = add i64 %429, -8
   %431 = load i64, i64* %PC, align 8
@@ -11724,7 +11724,7 @@ block_403e1c:                                     ; preds = %block_403e10, %bloc
   store i64 %442, i64* %445, align 8
   store i64 %444, i64* %RSP, align 8, !tbaa !2428
   store i64 %441, i64* %PC, align 8, !tbaa !2428
-  %446 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %441, %struct.Memory* %2)
+  %446 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %441, %struct.Memory* %2)
   %447 = load i64, i64* %RBP, align 8
   %448 = add i64 %447, -80
   %449 = load i64, i64* %PC, align 8
@@ -11743,7 +11743,7 @@ block_403e1c:                                     ; preds = %block_403e10, %bloc
   store i64 %455, i64* %458, align 8
   store i64 %457, i64* %RSP, align 8, !tbaa !2428
   store i64 %454, i64* %PC, align 8, !tbaa !2428
-  %459 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %454, %struct.Memory* %2)
+  %459 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %454, %struct.Memory* %2)
   %460 = load i64, i64* %RBP, align 8
   %461 = add i64 %460, -144
   %462 = load i64, i64* %PC, align 8
@@ -11924,7 +11924,7 @@ block_403f24:                                     ; preds = %block_403f0c
   store i64 %578, i64* %581, align 8
   store i64 %580, i64* %RSP, align 8, !tbaa !2428
   store i64 %577, i64* %PC, align 8, !tbaa !2428
-  %582 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %577, %struct.Memory* %MEMORY.1)
+  %582 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %577, %struct.Memory* %MEMORY.1)
   %583 = load i64, i64* %RBP, align 8
   %584 = add i64 %583, -104
   %585 = load i64, i64* %PC, align 8
@@ -11943,7 +11943,7 @@ block_403f24:                                     ; preds = %block_403f0c
   store i64 %591, i64* %594, align 8
   store i64 %593, i64* %RSP, align 8, !tbaa !2428
   store i64 %590, i64* %PC, align 8, !tbaa !2428
-  %595 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %590, %struct.Memory* %MEMORY.1)
+  %595 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %590, %struct.Memory* %MEMORY.1)
   %596 = load i64, i64* %RBP, align 8
   %597 = add i64 %596, -16
   %598 = load i64, i64* %PC, align 8
@@ -11958,7 +11958,7 @@ block_403f24:                                     ; preds = %block_403f0c
   store i64 %601, i64* %604, align 8
   store i64 %603, i64* %RSP, align 8, !tbaa !2428
   store i64 %600, i64* %PC, align 8, !tbaa !2428
-  %605 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %600, %struct.Memory* %MEMORY.1)
+  %605 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %600, %struct.Memory* %MEMORY.1)
   %606 = load i64, i64* %RBP, align 8
   %607 = add i64 %606, -153
   %608 = load i8, i8* %AL, align 1
@@ -12076,7 +12076,7 @@ block_403f5e:                                     ; preds = %block_403f50
   store i64 %671, i64* %674, align 8
   store i64 %673, i64* %RSP, align 8, !tbaa !2428
   store i64 %670, i64* %PC, align 8, !tbaa !2428
-  %675 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %670, %struct.Memory* %MEMORY.1)
+  %675 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %670, %struct.Memory* %MEMORY.1)
   %676 = load i64, i64* %RBP, align 8
   %677 = add i64 %676, -128
   %678 = load i64, i64* %PC, align 8
@@ -12095,7 +12095,7 @@ block_403f5e:                                     ; preds = %block_403f50
   store i64 %684, i64* %687, align 8
   store i64 %686, i64* %RSP, align 8, !tbaa !2428
   store i64 %683, i64* %PC, align 8, !tbaa !2428
-  %688 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %683, %struct.Memory* %675)
+  %688 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %683, %struct.Memory* %675)
   %689 = load i64, i64* %RBP, align 8
   %690 = add i64 %689, -16
   %691 = load i64, i64* %PC, align 8
@@ -12223,7 +12223,7 @@ block_403f63:                                     ; preds = %block_403f50
   store i64 %773, i64* %776, align 8
   store i64 %775, i64* %RSP, align 8, !tbaa !2428
   store i64 %772, i64* %PC, align 8, !tbaa !2428
-  %777 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %772, %struct.Memory* %MEMORY.1)
+  %777 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %772, %struct.Memory* %MEMORY.1)
   %778 = load i64, i64* %RBP, align 8
   %779 = add i64 %778, -112
   %780 = load i64, i64* %PC, align 8
@@ -12242,7 +12242,7 @@ block_403f63:                                     ; preds = %block_403f50
   store i64 %786, i64* %789, align 8
   store i64 %788, i64* %RSP, align 8, !tbaa !2428
   store i64 %785, i64* %PC, align 8, !tbaa !2428
-  %790 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %785, %struct.Memory* %777)
+  %790 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %785, %struct.Memory* %777)
   %791 = load i64, i64* %RBP, align 8
   %792 = add i64 %791, -8
   %793 = load i64, i64* %PC, align 8
@@ -12268,7 +12268,7 @@ block_403f63:                                     ; preds = %block_403f50
   store i64 %804, i64* %807, align 8
   store i64 %806, i64* %RSP, align 8, !tbaa !2428
   store i64 %803, i64* %PC, align 8, !tbaa !2428
-  %808 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %803, %struct.Memory* %790)
+  %808 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %803, %struct.Memory* %790)
   %809 = load i64, i64* %RBP, align 8
   %810 = add i64 %809, -120
   %811 = load i64, i64* %PC, align 8
@@ -12287,7 +12287,7 @@ block_403f63:                                     ; preds = %block_403f50
   store i64 %817, i64* %820, align 8
   store i64 %819, i64* %RSP, align 8, !tbaa !2428
   store i64 %816, i64* %PC, align 8, !tbaa !2428
-  %821 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %816, %struct.Memory* %808)
+  %821 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %816, %struct.Memory* %808)
   %822 = load i64, i64* %PC, align 8
   store i64 2, i64* %RCX, align 8, !tbaa !2428
   store i64 2, i64* %RSI, align 8, !tbaa !2428
@@ -12484,7 +12484,7 @@ block_400a50:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -12531,7 +12531,7 @@ block_400970:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -12733,7 +12733,7 @@ block_400ab0:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -13543,7 +13543,7 @@ block_40426f:                                     ; preds = %block_404261
   store i64 %415, i64* %418, align 8
   store i64 %417, i64* %RSP, align 8, !tbaa !2428
   store i64 %414, i64* %PC, align 8, !tbaa !2428
-  %419 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %414, %struct.Memory* %2)
+  %419 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %414, %struct.Memory* %2)
   %420 = load i8, i8* %AL, align 1
   %421 = load i64, i64* %PC, align 8
   %422 = and i8 %420, 1
@@ -13625,7 +13625,7 @@ block_404354:                                     ; preds = %block_40433f
   store i64 %470, i64* %473, align 8
   store i64 %472, i64* %RSP, align 8, !tbaa !2428
   store i64 %469, i64* %PC, align 8, !tbaa !2428
-  %474 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %469, %struct.Memory* %MEMORY.1)
+  %474 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %469, %struct.Memory* %MEMORY.1)
   %475 = load i64, i64* %RBP, align 8
   %476 = add i64 %475, -49
   %477 = load i8, i8* %AL, align 1
@@ -14435,7 +14435,7 @@ block_405ed0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405ef0__ZNK12ValueWrapperIS_IS_IS_IdEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405ef0__ZNK12ValueWrapperIS_IS_IS_IdEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -14778,7 +14778,7 @@ block_406433:                                     ; preds = %block_406425
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -40
   %128 = load i64, i64* %PC, align 8
@@ -14963,7 +14963,7 @@ block_4036e0:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_403730__ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_403730__ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i8, i8* %AL, align 1
   %65 = load i64, i64* %PC, align 8
   %66 = and i8 %64, 1
@@ -15088,7 +15088,7 @@ block_4009b0:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -15266,7 +15266,7 @@ block_40399e:                                     ; preds = %block_403984
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RBP, align 8
   %65 = add i64 %64, -32
   %66 = load i64, i64* %PC, align 8
@@ -15285,7 +15285,7 @@ block_40399e:                                     ; preds = %block_403984
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %RSP, align 8, !tbaa !2428
   store i64 %71, i64* %PC, align 8, !tbaa !2428
-  %76 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %2)
+  %76 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %2)
   %77 = load i64, i64* %RBP, align 8
   %78 = add i64 %77, -24
   %79 = load i64, i64* %PC, align 8
@@ -15312,7 +15312,7 @@ block_40399e:                                     ; preds = %block_403984
   store i64 %86, i64* %89, align 8
   store i64 %88, i64* %RSP, align 8, !tbaa !2428
   store i64 %85, i64* %PC, align 8, !tbaa !2428
-  %90 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %85, %struct.Memory* %2)
+  %90 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %85, %struct.Memory* %2)
   %91 = load i64, i64* %RBP, align 8
   %92 = add i64 %91, -40
   %93 = load i64, i64* %PC, align 8
@@ -15331,7 +15331,7 @@ block_40399e:                                     ; preds = %block_403984
   store i64 %99, i64* %102, align 8
   store i64 %101, i64* %RSP, align 8, !tbaa !2428
   store i64 %98, i64* %PC, align 8, !tbaa !2428
-  %103 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %98, %struct.Memory* %2)
+  %103 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %98, %struct.Memory* %2)
   %104 = load i64, i64* %RBP, align 8
   %105 = add i64 %104, -48
   %106 = load i64, i64* %PC, align 8
@@ -15417,7 +15417,7 @@ block_403984:                                     ; preds = %block_40399e, %bloc
   store i64 %154, i64* %157, align 8
   store i64 %156, i64* %RSP, align 8, !tbaa !2428
   store i64 %153, i64* %PC, align 8, !tbaa !2428
-  %158 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %153, %struct.Memory* %2)
+  %158 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %153, %struct.Memory* %2)
   %159 = load i8, i8* %AL, align 1
   %160 = load i64, i64* %PC, align 8
   %161 = and i8 %159, 1
@@ -15513,7 +15513,7 @@ block_401cf0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401d10__ZN12ValueWrapperIS_IS_IdEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401d10__ZN12ValueWrapperIS_IS_IdEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -15655,7 +15655,7 @@ block_4031f0:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403220__ZltI12ValueWrapperIdEEbRKS0_IT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403220__ZltI12ValueWrapperIdEEbRKS0_IT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -15949,7 +15949,7 @@ block_405059:                                     ; preds = %block_405059, %bloc
   store i64 %157, i64* %160, align 8
   store i64 %159, i64* %RSP, align 8, !tbaa !2428
   store i64 %156, i64* %PC, align 8, !tbaa !2428
-  %161 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %156, %struct.Memory* %2)
+  %161 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %156, %struct.Memory* %2)
   %162 = load i8, i8* %AL, align 1
   %163 = load i64, i64* %PC, align 8
   %164 = and i8 %162, 1
@@ -16146,7 +16146,7 @@ block_40509b:                                     ; preds = %block_4050b5, %bloc
   store i64 %278, i64* %281, align 8
   store i64 %280, i64* %RSP, align 8, !tbaa !2428
   store i64 %277, i64* %PC, align 8, !tbaa !2428
-  %282 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %277, %struct.Memory* %2)
+  %282 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %277, %struct.Memory* %2)
   %283 = load i8, i8* %AL, align 1
   %284 = load i64, i64* %PC, align 8
   %285 = and i8 %283, 1
@@ -16312,7 +16312,7 @@ block_405102:                                     ; preds = %block_405091, %bloc
   store i64 %390, i64* %393, align 8
   store i64 %392, i64* %RSP, align 8, !tbaa !2428
   store i64 %389, i64* %PC, align 8, !tbaa !2428
-  %394 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %2)
+  %394 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %2)
   %395 = load i64, i64* %RBP, align 8
   %396 = add i64 %395, -40
   %397 = load i64, i64* %PC, align 8
@@ -16364,7 +16364,7 @@ block_405102:                                     ; preds = %block_405091, %bloc
   store i64 %428, i64* %431, align 8
   store i64 %430, i64* %RSP, align 8, !tbaa !2428
   store i64 %427, i64* %PC, align 8, !tbaa !2428
-  %432 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %394)
+  %432 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %394)
   %.pre31 = load i64, i64* %PC, align 8
   br label %block_40512a
 
@@ -16742,7 +16742,7 @@ block_4021d2:                                     ; preds = %block_4021c4
   store i64 %83, i64* %86, align 8
   store i64 %85, i64* %RSP, align 8, !tbaa !2428
   store i64 %82, i64* %PC, align 8, !tbaa !2428
-  %87 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %82, %struct.Memory* %2)
+  %87 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %82, %struct.Memory* %2)
   %88 = load i64, i64* %RBP, align 8
   %89 = add i64 %88, -24
   %90 = load i64, i64* %PC, align 8
@@ -16984,7 +16984,7 @@ block_4039f0:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %RSP, align 8, !tbaa !2428
   store i64 %52, i64* %PC, align 8, !tbaa !2428
-  %57 = tail call %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
+  %57 = tail call %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
   %58 = load i64, i64* %PC, align 8
   store i64 2, i64* %RDX, align 8, !tbaa !2428
   store i64 2, i64* %RCX, align 8, !tbaa !2428
@@ -17155,7 +17155,7 @@ block_403a3a:                                     ; preds = %block_403a2f
   store i64 %163, i64* %166, align 8
   store i64 %165, i64* %RSP, align 8, !tbaa !2428
   store i64 %162, i64* %PC, align 8, !tbaa !2428
-  %167 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %162, %struct.Memory* %97)
+  %167 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %162, %struct.Memory* %97)
   %168 = load i64, i64* %RBP, align 8
   %169 = add i64 %168, -48
   %170 = load i64, i64* %PC, align 8
@@ -17174,7 +17174,7 @@ block_403a3a:                                     ; preds = %block_403a2f
   store i64 %176, i64* %179, align 8
   store i64 %178, i64* %RSP, align 8, !tbaa !2428
   store i64 %175, i64* %PC, align 8, !tbaa !2428
-  %180 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %97)
+  %180 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %97)
   %181 = load i64*, i64** %123, align 8
   %182 = load i64, i64* %PC, align 8
   %183 = add i64 %182, 3
@@ -17248,7 +17248,7 @@ block_403a3a:                                     ; preds = %block_403a2f
   store i64 %226, i64* %229, align 8
   store i64 %228, i64* %RSP, align 8, !tbaa !2428
   store i64 %225, i64* %PC, align 8, !tbaa !2428
-  %230 = tail call %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %225, %struct.Memory* %97)
+  %230 = tail call %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %225, %struct.Memory* %97)
   %231 = load i64, i64* %RBP, align 8
   %232 = add i64 %231, -24
   %233 = load i64, i64* %PC, align 8
@@ -17424,7 +17424,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %344, i64* %347, align 8
   store i64 %346, i64* %RSP, align 8, !tbaa !2428
   store i64 %343, i64* %PC, align 8, !tbaa !2428
-  %348 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %343, %struct.Memory* %97)
+  %348 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %343, %struct.Memory* %97)
   %349 = load i64, i64* %RBP, align 8
   %350 = add i64 %349, -80
   %351 = load i64, i64* %PC, align 8
@@ -17443,7 +17443,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %357, i64* %360, align 8
   store i64 %359, i64* %RSP, align 8, !tbaa !2428
   store i64 %356, i64* %PC, align 8, !tbaa !2428
-  %361 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %356, %struct.Memory* %97)
+  %361 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %356, %struct.Memory* %97)
   %362 = load i64, i64* %RBP, align 8
   %363 = add i64 %362, -8
   %364 = load i64, i64* %PC, align 8
@@ -17467,7 +17467,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %373, i64* %376, align 8
   store i64 %375, i64* %RSP, align 8, !tbaa !2428
   store i64 %372, i64* %PC, align 8, !tbaa !2428
-  %377 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %372, %struct.Memory* %97)
+  %377 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %372, %struct.Memory* %97)
   %378 = load i64, i64* %RBP, align 8
   %379 = add i64 %378, -8
   %380 = load i64, i64* %PC, align 8
@@ -17493,7 +17493,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %391, i64* %394, align 8
   store i64 %393, i64* %RSP, align 8, !tbaa !2428
   store i64 %390, i64* %PC, align 8, !tbaa !2428
-  %395 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %390, %struct.Memory* %97)
+  %395 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %390, %struct.Memory* %97)
   %396 = load i64, i64* %RBP, align 8
   %397 = add i64 %396, -88
   %398 = load i64, i64* %PC, align 8
@@ -17512,7 +17512,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %404, i64* %407, align 8
   store i64 %406, i64* %RSP, align 8, !tbaa !2428
   store i64 %403, i64* %PC, align 8, !tbaa !2428
-  %408 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %97)
+  %408 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %97)
   %409 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %12, align 1, !tbaa !2433
@@ -17593,7 +17593,7 @@ block_403aa9:                                     ; preds = %block_403a9e
   store i64 %453, i64* %456, align 8
   store i64 %455, i64* %RSP, align 8, !tbaa !2428
   store i64 %452, i64* %PC, align 8, !tbaa !2428
-  %457 = tail call %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %452, %struct.Memory* %97)
+  %457 = tail call %struct.Memory* @sub_403d70__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %452, %struct.Memory* %97)
   %458 = load i64, i64* %RBP, align 8
   %459 = add i64 %458, -24
   %460 = load i64, i64* %PC, align 8
@@ -19468,7 +19468,7 @@ block_406010:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_406070__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_406070__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IdEEEEEEES0_IT_ERKS8_SA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -19490,7 +19490,7 @@ block_406010:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_4060b0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_4060b0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2IS6_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -19714,7 +19714,7 @@ block_402100:                                     ; preds = %block_4020f0
   store i64 %108, i64* %111, align 8
   store i64 %110, i64* %RSP, align 8, !tbaa !2428
   store i64 %107, i64* %PC, align 8, !tbaa !2428
-  %112 = tail call %struct.Memory* @sub_405d50__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EET0_T_SF_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %2)
+  %112 = tail call %struct.Memory* @sub_405d50__ZN9benchmark10accumulateI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EET0_T_SF_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %2)
   %113 = load i64, i64* %RBP, align 8
   %114 = add i64 %113, -72
   %115 = load i64, i64* %PC, align 8
@@ -19733,7 +19733,7 @@ block_402100:                                     ; preds = %block_4020f0
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %PC, align 8
   %127 = add i64 %126, 15544
   %128 = add i64 %126, 5
@@ -19743,7 +19743,7 @@ block_402100:                                     ; preds = %block_4020f0
   store i64 %128, i64* %131, align 8
   store i64 %130, i64* %RSP, align 8, !tbaa !2428
   store i64 %127, i64* %PC, align 8, !tbaa !2428
-  %132 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %127, %struct.Memory* %2)
+  %132 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %127, %struct.Memory* %2)
   %133 = load i64, i64* %RBP, align 8
   %134 = add i64 %133, -36
   %135 = load i64, i64* %PC, align 8
@@ -20124,7 +20124,7 @@ block_402768:                                     ; preds = %block_402758
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -20147,7 +20147,7 @@ block_402768:                                     ; preds = %block_402758
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -20170,7 +20170,7 @@ block_402768:                                     ; preds = %block_402758
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -20354,7 +20354,7 @@ block_406630:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406660__ZN12ValueWrapperIS_IS_IdEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406660__ZN12ValueWrapperIS_IS_IdEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -20478,7 +20478,7 @@ block_401c50:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401c70__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401c70__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -20838,7 +20838,7 @@ block_40367c:                                     ; preds = %block_403671
   store i64 %194, i64* %197, align 8
   store i64 %196, i64* %RSP, align 8, !tbaa !2428
   store i64 %193, i64* %PC, align 8, !tbaa !2428
-  %198 = tail call %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %193, %struct.Memory* %108)
+  %198 = tail call %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %193, %struct.Memory* %108)
   %199 = load i64, i64* %RBP, align 8
   %200 = add i64 %199, -24
   %201 = load i64, i64* %PC, align 8
@@ -21076,7 +21076,7 @@ block_403626:                                     ; preds = %block_40361b
   store i64 %354, i64* %357, align 8
   store i64 %356, i64* %RSP, align 8, !tbaa !2428
   store i64 %353, i64* %PC, align 8, !tbaa !2428
-  %358 = tail call %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %353, %struct.Memory* %108)
+  %358 = tail call %struct.Memory* @sub_4037c0__ZN9benchmark7sift_inIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %353, %struct.Memory* %108)
   %359 = load i64, i64* %RBP, align 8
   %360 = add i64 %359, -24
   %361 = load i64, i64* %PC, align 8
@@ -21447,7 +21447,7 @@ block_4041d2:                                     ; preds = %block_4041c4
   store i64 %186, i64* %189, align 8
   store i64 %188, i64* %RSP, align 8, !tbaa !2428
   store i64 %185, i64* %PC, align 8, !tbaa !2428
-  %190 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %185, %struct.Memory* %2)
+  %190 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %185, %struct.Memory* %2)
   %191 = load i8, i8* %AL, align 1
   %192 = load i64, i64* %PC, align 8
   %193 = and i8 %191, 1
@@ -21696,7 +21696,7 @@ block_4065a0:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_4065d0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_4065d0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -21908,7 +21908,7 @@ block_401c90:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401cb0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401cb0__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -22130,7 +22130,7 @@ block_404150:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_4041a0__ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_4041a0__ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i8, i8* %AL, align 1
   %65 = load i64, i64* %PC, align 8
   %66 = and i8 %64, 1
@@ -22316,7 +22316,7 @@ block_405f70:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_405fb0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEES0_IT_ERKSA_SC__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_405fb0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEES0_IT_ERKSA_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -22338,7 +22338,7 @@ block_405f70:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_405ff0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_405ff0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IS8_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -22840,7 +22840,7 @@ block_405715:                                     ; preds = %block_4056a1, %bloc
   store i64 %274, i64* %277, align 8
   store i64 %276, i64* %RSP, align 8, !tbaa !2428
   store i64 %273, i64* %PC, align 8, !tbaa !2428
-  %278 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %273, %struct.Memory* %MEMORY.3)
+  %278 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %273, %struct.Memory* %MEMORY.3)
   %279 = load i64, i64* %RBP, align 8
   %280 = add i64 %279, -40
   %281 = load i64, i64* %PC, align 8
@@ -22892,7 +22892,7 @@ block_405715:                                     ; preds = %block_4056a1, %bloc
   store i64 %312, i64* %315, align 8
   store i64 %314, i64* %RSP, align 8, !tbaa !2428
   store i64 %311, i64* %PC, align 8, !tbaa !2428
-  %316 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %311, %struct.Memory* %278)
+  %316 = tail call %struct.Memory* @sub_405620__ZN9benchmark9quicksortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %311, %struct.Memory* %278)
   %.pre39 = load i64, i64* %PC, align 8
   br label %block_40573d
 
@@ -23271,7 +23271,7 @@ block_4009d0:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -23442,7 +23442,7 @@ block_401f00:                                     ; preds = %block_401ef0
   store i64 %98, i64* %101, align 8
   store i64 %100, i64* %RSP, align 8, !tbaa !2428
   store i64 %97, i64* %PC, align 8, !tbaa !2428
-  %102 = tail call %struct.Memory* @sub_406480__ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %97, %struct.Memory* %2)
+  %102 = tail call %struct.Memory* @sub_406480__ZN9benchmark10accumulateI14PointerWrapperIdEdEET0_T_S4_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %97, %struct.Memory* %2)
   %103 = load i64, i64* %PC, align 8
   %104 = add i64 %103, 16078
   %105 = add i64 %103, 5
@@ -23452,7 +23452,7 @@ block_401f00:                                     ; preds = %block_401ef0
   store i64 %105, i64* %108, align 8
   store i64 %107, i64* %RSP, align 8, !tbaa !2428
   store i64 %104, i64* %PC, align 8, !tbaa !2428
-  %109 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %104, %struct.Memory* %2)
+  %109 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %104, %struct.Memory* %2)
   %110 = load i64, i64* %RBP, align 8
   %111 = add i64 %110, -36
   %112 = load i64, i64* %PC, align 8
@@ -23874,7 +23874,7 @@ block_4061f0:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_406250__ZplI12ValueWrapperIdEES0_IT_ERKS3_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_406250__ZplI12ValueWrapperIdEES0_IT_ERKS3_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -23896,7 +23896,7 @@ block_4061f0:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406290__ZN12ValueWrapperIS_IS_IdEEEC2IS1_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406290__ZN12ValueWrapperIS_IS_IdEEEC2IS1_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -24238,7 +24238,7 @@ block_402ef0:
   store i64 %78, i64* %81, align 8
   store i64 %80, i64* %RSP, align 8, !tbaa !2428
   store i64 %77, i64* %PC, align 8, !tbaa !2428
-  %82 = tail call %struct.Memory* @sub_402f50__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
+  %82 = tail call %struct.Memory* @sub_402f50__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
   %83 = load i8, i8* %AL, align 1
   %84 = load i64, i64* %PC, align 8
   %85 = and i8 %83, 1
@@ -24529,7 +24529,7 @@ block_4048f9:                                     ; preds = %block_4048eb
   store i64 %132, i64* %135, align 8
   store i64 %134, i64* %RSP, align 8, !tbaa !2428
   store i64 %131, i64* %PC, align 8, !tbaa !2428
-  %136 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.3)
+  %136 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.3)
   %137 = load i64, i64* %RBP, align 8
   %138 = add i64 %137, -88
   %139 = load i64, i64* %PC, align 8
@@ -24548,7 +24548,7 @@ block_4048f9:                                     ; preds = %block_4048eb
   store i64 %145, i64* %148, align 8
   store i64 %147, i64* %RSP, align 8, !tbaa !2428
   store i64 %144, i64* %PC, align 8, !tbaa !2428
-  %149 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %144, %struct.Memory* %136)
+  %149 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %144, %struct.Memory* %136)
   %150 = load i64, i64* %RBP, align 8
   %151 = add i64 %150, -8
   %152 = load i64, i64* %PC, align 8
@@ -24579,7 +24579,7 @@ block_4048f9:                                     ; preds = %block_4048eb
   store i64 %165, i64* %168, align 8
   store i64 %167, i64* %RSP, align 8, !tbaa !2428
   store i64 %164, i64* %PC, align 8, !tbaa !2428
-  %169 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %164, %struct.Memory* %149)
+  %169 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %164, %struct.Memory* %149)
   %170 = load i64, i64* %RBP, align 8
   %171 = add i64 %170, -96
   %172 = load i64, i64* %PC, align 8
@@ -24598,7 +24598,7 @@ block_4048f9:                                     ; preds = %block_4048eb
   store i64 %178, i64* %181, align 8
   store i64 %180, i64* %RSP, align 8, !tbaa !2428
   store i64 %177, i64* %PC, align 8, !tbaa !2428
-  %182 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %177, %struct.Memory* %169)
+  %182 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %177, %struct.Memory* %169)
   %183 = load i64, i64* %RBP, align 8
   %184 = add i64 %183, -152
   %185 = load i64, i64* %PC, align 8
@@ -24731,7 +24731,7 @@ block_404812:                                     ; preds = %block_404804
   store i64 %263, i64* %266, align 8
   store i64 %265, i64* %RSP, align 8, !tbaa !2428
   store i64 %262, i64* %PC, align 8, !tbaa !2428
-  %267 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %262, %struct.Memory* %MEMORY.3)
+  %267 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %262, %struct.Memory* %MEMORY.3)
   %268 = load i64, i64* %RBP, align 8
   %269 = add i64 %268, -56
   %270 = load i64, i64* %PC, align 8
@@ -24750,7 +24750,7 @@ block_404812:                                     ; preds = %block_404804
   store i64 %276, i64* %279, align 8
   store i64 %278, i64* %RSP, align 8, !tbaa !2428
   store i64 %275, i64* %PC, align 8, !tbaa !2428
-  %280 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %275, %struct.Memory* %MEMORY.3)
+  %280 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %275, %struct.Memory* %MEMORY.3)
   %281 = load i64, i64* %RBP, align 8
   %282 = add i64 %281, -8
   %283 = load i64, i64* %PC, align 8
@@ -24781,7 +24781,7 @@ block_404812:                                     ; preds = %block_404804
   store i64 %296, i64* %299, align 8
   store i64 %298, i64* %RSP, align 8, !tbaa !2428
   store i64 %295, i64* %PC, align 8, !tbaa !2428
-  %300 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %295, %struct.Memory* %MEMORY.3)
+  %300 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %295, %struct.Memory* %MEMORY.3)
   %301 = load i64, i64* %RBP, align 8
   %302 = add i64 %301, -64
   %303 = load i64, i64* %PC, align 8
@@ -24800,7 +24800,7 @@ block_404812:                                     ; preds = %block_404804
   store i64 %309, i64* %312, align 8
   store i64 %311, i64* %RSP, align 8, !tbaa !2428
   store i64 %308, i64* %PC, align 8, !tbaa !2428
-  %313 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %308, %struct.Memory* %MEMORY.3)
+  %313 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %308, %struct.Memory* %MEMORY.3)
   %314 = load i64*, i64** %100, align 8
   %315 = load i64, i64* %PC, align 8
   %316 = add i64 %315, 4
@@ -24936,7 +24936,7 @@ block_4049ce:                                     ; preds = %block_4049bb
   store i64 %390, i64* %393, align 8
   store i64 %392, i64* %RSP, align 8, !tbaa !2428
   store i64 %389, i64* %PC, align 8, !tbaa !2428
-  %394 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %MEMORY.0)
+  %394 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %MEMORY.0)
   %395 = load i64, i64* %RBP, align 8
   %396 = add i64 %395, -112
   %397 = load i64, i64* %PC, align 8
@@ -24955,7 +24955,7 @@ block_4049ce:                                     ; preds = %block_4049bb
   store i64 %403, i64* %406, align 8
   store i64 %405, i64* %RSP, align 8, !tbaa !2428
   store i64 %402, i64* %PC, align 8, !tbaa !2428
-  %407 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %402, %struct.Memory* %394)
+  %407 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %402, %struct.Memory* %394)
   %408 = load i64, i64* %RBP, align 8
   %409 = add i64 %408, -8
   %410 = load i64, i64* %PC, align 8
@@ -24986,7 +24986,7 @@ block_4049ce:                                     ; preds = %block_4049bb
   store i64 %423, i64* %426, align 8
   store i64 %425, i64* %RSP, align 8, !tbaa !2428
   store i64 %422, i64* %PC, align 8, !tbaa !2428
-  %427 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %422, %struct.Memory* %407)
+  %427 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %422, %struct.Memory* %407)
   %428 = load i64, i64* %RBP, align 8
   %429 = add i64 %428, -120
   %430 = load i64, i64* %PC, align 8
@@ -25005,7 +25005,7 @@ block_4049ce:                                     ; preds = %block_4049bb
   store i64 %436, i64* %439, align 8
   store i64 %438, i64* %RSP, align 8, !tbaa !2428
   store i64 %435, i64* %PC, align 8, !tbaa !2428
-  %440 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %435, %struct.Memory* %427)
+  %440 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %435, %struct.Memory* %427)
   %441 = load i64, i64* %PC, align 8
   store i64 2, i64* %RCX, align 8, !tbaa !2428
   store i64 2, i64* %RSI, align 8, !tbaa !2428
@@ -25155,7 +25155,7 @@ block_4049c9:                                     ; preds = %block_4049bb
   store i64 %531, i64* %534, align 8
   store i64 %533, i64* %RSP, align 8, !tbaa !2428
   store i64 %530, i64* %PC, align 8, !tbaa !2428
-  %535 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %530, %struct.Memory* %MEMORY.0)
+  %535 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %530, %struct.Memory* %MEMORY.0)
   %536 = load i64, i64* %RBP, align 8
   %537 = add i64 %536, -128
   %538 = load i64, i64* %PC, align 8
@@ -25174,7 +25174,7 @@ block_4049c9:                                     ; preds = %block_4049bb
   store i64 %544, i64* %547, align 8
   store i64 %546, i64* %RSP, align 8, !tbaa !2428
   store i64 %543, i64* %PC, align 8, !tbaa !2428
-  %548 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %543, %struct.Memory* %535)
+  %548 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %543, %struct.Memory* %535)
   %549 = load i64, i64* %RBP, align 8
   %550 = add i64 %549, -176
   %551 = load i64, i64* %PC, align 8
@@ -25284,7 +25284,7 @@ block_40487b:                                     ; preds = %block_40486f, %_ZN1
   store i64 %620, i64* %623, align 8
   store i64 %622, i64* %RSP, align 8, !tbaa !2428
   store i64 %619, i64* %PC, align 8, !tbaa !2428
-  %624 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %619, %struct.Memory* %348)
+  %624 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %619, %struct.Memory* %348)
   %625 = load i64, i64* %RBP, align 8
   %626 = add i64 %625, -72
   %627 = load i64, i64* %PC, align 8
@@ -25303,7 +25303,7 @@ block_40487b:                                     ; preds = %block_40486f, %_ZN1
   store i64 %633, i64* %636, align 8
   store i64 %635, i64* %RSP, align 8, !tbaa !2428
   store i64 %632, i64* %PC, align 8, !tbaa !2428
-  %637 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %632, %struct.Memory* %624)
+  %637 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %632, %struct.Memory* %624)
   %638 = load i64, i64* %RBP, align 8
   %639 = add i64 %638, -8
   %640 = load i64, i64* %PC, align 8
@@ -25334,7 +25334,7 @@ block_40487b:                                     ; preds = %block_40486f, %_ZN1
   store i64 %653, i64* %656, align 8
   store i64 %655, i64* %RSP, align 8, !tbaa !2428
   store i64 %652, i64* %PC, align 8, !tbaa !2428
-  %657 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %652, %struct.Memory* %637)
+  %657 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %652, %struct.Memory* %637)
   %658 = load i64, i64* %RBP, align 8
   %659 = add i64 %658, -80
   %660 = load i64, i64* %PC, align 8
@@ -25353,7 +25353,7 @@ block_40487b:                                     ; preds = %block_40486f, %_ZN1
   store i64 %666, i64* %669, align 8
   store i64 %668, i64* %RSP, align 8, !tbaa !2428
   store i64 %665, i64* %PC, align 8, !tbaa !2428
-  %670 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %665, %struct.Memory* %657)
+  %670 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %665, %struct.Memory* %657)
   %671 = load i64, i64* %RBP, align 8
   %672 = add i64 %671, -144
   %673 = load i64, i64* %PC, align 8
@@ -25570,7 +25570,7 @@ block_40498b:                                     ; preds = %block_404973
   store i64 %809, i64* %812, align 8
   store i64 %811, i64* %RSP, align 8, !tbaa !2428
   store i64 %808, i64* %PC, align 8, !tbaa !2428
-  %813 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %808, %struct.Memory* %MEMORY.4)
+  %813 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %808, %struct.Memory* %MEMORY.4)
   %814 = load i64, i64* %RBP, align 8
   %815 = add i64 %814, -104
   %816 = load i64, i64* %PC, align 8
@@ -25589,7 +25589,7 @@ block_40498b:                                     ; preds = %block_404973
   store i64 %822, i64* %825, align 8
   store i64 %824, i64* %RSP, align 8, !tbaa !2428
   store i64 %821, i64* %PC, align 8, !tbaa !2428
-  %826 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %821, %struct.Memory* %MEMORY.4)
+  %826 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %821, %struct.Memory* %MEMORY.4)
   %827 = load i64*, i64** %100, align 8
   %828 = load i64, i64* %PC, align 8
   %829 = add i64 %828, 4
@@ -27045,7 +27045,7 @@ block_405b30:
   store i64 %44, i64* %47, align 8
   store i64 %46, i64* %RSP, align 8, !tbaa !2428
   store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %48 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
+  %48 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
   %49 = load i64, i64* %RBP, align 8
   %50 = add i64 %49, -32
   %51 = load i64, i64* %RAX, align 8
@@ -27089,7 +27089,7 @@ block_405bb9:                                     ; preds = %block_405b98
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %MEMORY.1)
+  %77 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %MEMORY.1)
   %78 = load i64, i64* %RAX, align 8
   %79 = load i64, i64* %PC, align 8
   store i64 %78, i64* %RDI, align 8, !tbaa !2428
@@ -27101,7 +27101,7 @@ block_405bb9:                                     ; preds = %block_405b98
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %RSP, align 8, !tbaa !2428
   store i64 %80, i64* %PC, align 8, !tbaa !2428
-  %85 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %MEMORY.1)
+  %85 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %MEMORY.1)
   %86 = load i64*, i64** %55, align 8
   %87 = load i64, i64* %PC, align 8
   %88 = add i64 %87, 4
@@ -27196,7 +27196,7 @@ block_405bf7:                                     ; preds = %block_405be7
   store i64 %132, i64* %135, align 8
   store i64 %134, i64* %RSP, align 8, !tbaa !2428
   store i64 %131, i64* %PC, align 8, !tbaa !2428
-  %136 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.2)
+  %136 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.2)
   %137 = load i64, i64* %RBP, align 8
   %138 = add i64 %137, -48
   %139 = load i64, i64* %PC, align 8
@@ -27221,7 +27221,7 @@ block_405bf7:                                     ; preds = %block_405be7
   store i64 %148, i64* %151, align 8
   store i64 %150, i64* %RSP, align 8, !tbaa !2428
   store i64 %147, i64* %PC, align 8, !tbaa !2428
-  %152 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %147, %struct.Memory* %136)
+  %152 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %147, %struct.Memory* %136)
   %153 = load i64, i64* %RBP, align 8
   %154 = add i64 %153, -88
   %155 = load i64, i64* %PC, align 8
@@ -27247,7 +27247,7 @@ block_405bf7:                                     ; preds = %block_405be7
   store i64 %165, i64* %168, align 8
   store i64 %167, i64* %RSP, align 8, !tbaa !2428
   store i64 %164, i64* %PC, align 8, !tbaa !2428
-  %169 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %164, %struct.Memory* %152)
+  %169 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %164, %struct.Memory* %152)
   %170 = load i64, i64* %RBP, align 8
   %171 = add i64 %170, -96
   %172 = load i64, i64* %RAX, align 8
@@ -27277,7 +27277,7 @@ block_405b5c:                                     ; preds = %block_405bf2, %bloc
   store i64 %183, i64* %186, align 8
   store i64 %185, i64* %RSP, align 8, !tbaa !2428
   store i64 %182, i64* %PC, align 8, !tbaa !2428
-  %187 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %182, %struct.Memory* %MEMORY.0)
+  %187 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %182, %struct.Memory* %MEMORY.0)
   %188 = load i8, i8* %AL, align 1
   %189 = load i64, i64* %PC, align 8
   %190 = and i8 %188, 1
@@ -27310,7 +27310,7 @@ block_405b76:                                     ; preds = %block_405b5c
   store i64 %201, i64* %204, align 8
   store i64 %203, i64* %RSP, align 8, !tbaa !2428
   store i64 %200, i64* %PC, align 8, !tbaa !2428
-  %205 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %MEMORY.0)
+  %205 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %MEMORY.0)
   %206 = load i64*, i64** %55, align 8
   %207 = load i64, i64* %PC, align 8
   %208 = add i64 %207, 4
@@ -27382,7 +27382,7 @@ block_405bf2:                                     ; preds = %block_405be7
   store i64 %243, i64* %246, align 8
   store i64 %245, i64* %RSP, align 8, !tbaa !2428
   store i64 %242, i64* %PC, align 8, !tbaa !2428
-  %247 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %242, %struct.Memory* %MEMORY.2)
+  %247 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %242, %struct.Memory* %MEMORY.2)
   %248 = load i64, i64* %RBP, align 8
   %249 = add i64 %248, -24
   %250 = load i64, i64* %PC, align 8
@@ -27414,7 +27414,7 @@ block_405bf2:                                     ; preds = %block_405be7
   store i64 %259, i64* %262, align 8
   store i64 %261, i64* %RSP, align 8, !tbaa !2428
   store i64 %258, i64* %PC, align 8, !tbaa !2428
-  %263 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %258, %struct.Memory* %247)
+  %263 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %258, %struct.Memory* %247)
   %264 = load i64, i64* %RBP, align 8
   %265 = add i64 %264, -64
   %266 = load i64, i64* %RAX, align 8
@@ -27444,7 +27444,7 @@ block_405b98:                                     ; preds = %block_405b76, %bloc
   store i64 %277, i64* %280, align 8
   store i64 %279, i64* %RSP, align 8, !tbaa !2428
   store i64 %276, i64* %PC, align 8, !tbaa !2428
-  %281 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %276, %struct.Memory* %MEMORY.1)
+  %281 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %276, %struct.Memory* %MEMORY.1)
   %282 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %DL, align 1, !tbaa !2432
@@ -27683,7 +27683,7 @@ block_4009f0:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bf0__ZN14PointerWrapperI12ValueWrapperIdEEC2EPS1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -27777,7 +27777,7 @@ block_405dd0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405e50__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405e50__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -27919,7 +27919,7 @@ block_4030a0:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_4030d0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEbRKS0_IT_ESC__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_4030d0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEbRKS0_IT_ESC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -28090,7 +28090,7 @@ block_4045a0:
   store i64 %78, i64* %81, align 8
   store i64 %80, i64* %RSP, align 8, !tbaa !2428
   store i64 %77, i64* %PC, align 8, !tbaa !2428
-  %82 = tail call %struct.Memory* @sub_404600__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
+  %82 = tail call %struct.Memory* @sub_404600__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
   %83 = load i8, i8* %AL, align 1
   %84 = load i64, i64* %PC, align 8
   %85 = and i8 %83, 1
@@ -28556,7 +28556,7 @@ block_404096:                                     ; preds = %block_40408b
   store i64 %237, i64* %240, align 8
   store i64 %239, i64* %RSP, align 8, !tbaa !2428
   store i64 %236, i64* %PC, align 8, !tbaa !2428
-  %241 = tail call %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %236, %struct.Memory* %108)
+  %241 = tail call %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %236, %struct.Memory* %108)
   %242 = load i64, i64* %RBP, align 8
   %243 = add i64 %242, -24
   %244 = load i64, i64* %PC, align 8
@@ -28735,7 +28735,7 @@ block_4040ec:                                     ; preds = %block_4040e1
   store i64 %350, i64* %353, align 8
   store i64 %352, i64* %RSP, align 8, !tbaa !2428
   store i64 %349, i64* %PC, align 8, !tbaa !2428
-  %354 = tail call %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %349, %struct.Memory* %108)
+  %354 = tail call %struct.Memory* @sub_404230__ZN9benchmark7sift_inIP12ValueWrapperIdES2_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %349, %struct.Memory* %108)
   %355 = load i64, i64* %RBP, align 8
   %356 = add i64 %355, -24
   %357 = load i64, i64* %PC, align 8
@@ -28900,7 +28900,7 @@ block_405e70:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405e90__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405e90__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -29024,7 +29024,7 @@ block_401cb0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401cd0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401cd0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -29302,7 +29302,7 @@ block_4026b8:                                     ; preds = %block_4026a8
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -29351,7 +29351,7 @@ block_4026b8:                                     ; preds = %block_4026a8
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -29400,7 +29400,7 @@ block_4026b8:                                     ; preds = %block_4026a8
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -29802,7 +29802,7 @@ block_4008ab:                                     ; preds = %block_4008ab, %bloc
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%VDataMaster_type* @VDataMaster to i64), i64 16000), i64* %RAX, align 8, !tbaa !2428
   store i8 zext (i1 or (i1 icmp ult (i64 add (i64 ptrtoint (%VDataMaster_type* @VDataMaster to i64), i64 16000), i64 ptrtoint (%VDataMaster_type* @VDataMaster to i64)), i1 icmp ult (i64 add (i64 ptrtoint (%VDataMaster_type* @VDataMaster to i64), i64 16000), i64 16000)) to i8), i8* %12, align 1, !tbaa !2433
@@ -29986,7 +29986,7 @@ block_401d10:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401d30__ZN12ValueWrapperIS_IdEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401d30__ZN12ValueWrapperIS_IdEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -30115,7 +30115,7 @@ block_404600:
   store i64 %42, i64* %45, align 8
   store i64 %44, i64* %RSP, align 8, !tbaa !2428
   store i64 %41, i64* %PC, align 8, !tbaa !2428
-  %46 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
+  %46 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
   %47 = load i64, i64* %RBP, align 8
   %48 = add i64 %47, -40
   %49 = load i64, i64* %RAX, align 8
@@ -30164,7 +30164,7 @@ block_404646:                                     ; preds = %block_40462c
   store i64 %68, i64* %71, align 8
   store i64 %70, i64* %RSP, align 8, !tbaa !2428
   store i64 %67, i64* %PC, align 8, !tbaa !2428
-  %72 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %67, %struct.Memory* %MEMORY.1)
+  %72 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %67, %struct.Memory* %MEMORY.1)
   %73 = load i64, i64* %RBP, align 8
   %74 = add i64 %73, -48
   %75 = load i64, i64* %PC, align 8
@@ -30183,7 +30183,7 @@ block_404646:                                     ; preds = %block_40462c
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %RSP, align 8, !tbaa !2428
   store i64 %80, i64* %PC, align 8, !tbaa !2428
-  %85 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %MEMORY.1)
+  %85 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %MEMORY.1)
   %86 = load i64, i64* %RBP, align 8
   %87 = add i64 %86, -32
   %88 = load i64, i64* %PC, align 8
@@ -30215,7 +30215,7 @@ block_404646:                                     ; preds = %block_40462c
   store i64 %97, i64* %100, align 8
   store i64 %99, i64* %RSP, align 8, !tbaa !2428
   store i64 %96, i64* %PC, align 8, !tbaa !2428
-  %101 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %96, %struct.Memory* %MEMORY.1)
+  %101 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %96, %struct.Memory* %MEMORY.1)
   %102 = load i64, i64* %RBP, align 8
   %103 = add i64 %102, -56
   %104 = load i64, i64* %PC, align 8
@@ -30234,7 +30234,7 @@ block_404646:                                     ; preds = %block_40462c
   store i64 %110, i64* %113, align 8
   store i64 %112, i64* %RSP, align 8, !tbaa !2428
   store i64 %109, i64* %PC, align 8, !tbaa !2428
-  %114 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %109, %struct.Memory* %MEMORY.1)
+  %114 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %109, %struct.Memory* %MEMORY.1)
   %115 = load i64*, i64** %53, align 8
   %116 = load i64, i64* %PC, align 8
   %117 = add i64 %116, 4
@@ -30399,7 +30399,7 @@ block_40462c:                                     ; preds = %block_40469b, %bloc
   store i64 %203, i64* %206, align 8
   store i64 %205, i64* %RSP, align 8, !tbaa !2428
   store i64 %202, i64* %PC, align 8, !tbaa !2428
-  %207 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %202, %struct.Memory* %MEMORY.1)
+  %207 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %202, %struct.Memory* %MEMORY.1)
   %208 = load i8, i8* %AL, align 1
   %209 = load i64, i64* %PC, align 8
   %210 = and i8 %208, 1
@@ -30508,7 +30508,7 @@ block_402da0:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %RSP, align 8, !tbaa !2428
   store i64 %52, i64* %PC, align 8, !tbaa !2428
-  %57 = tail call %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
+  %57 = tail call %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
   %58 = load i64, i64* %PC, align 8
   store i64 2, i64* %RDX, align 8, !tbaa !2428
   store i64 2, i64* %RCX, align 8, !tbaa !2428
@@ -30702,7 +30702,7 @@ block_402dea:                                     ; preds = %block_402ddf
   store i64 %176, i64* %179, align 8
   store i64 %178, i64* %RSP, align 8, !tbaa !2428
   store i64 %175, i64* %PC, align 8, !tbaa !2428
-  %180 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %97)
+  %180 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %97)
   %181 = load i64, i64* %RBP, align 8
   %182 = add i64 %181, -48
   %183 = load i64, i64* %PC, align 8
@@ -30721,7 +30721,7 @@ block_402dea:                                     ; preds = %block_402ddf
   store i64 %189, i64* %192, align 8
   store i64 %191, i64* %RSP, align 8, !tbaa !2428
   store i64 %188, i64* %PC, align 8, !tbaa !2428
-  %193 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %188, %struct.Memory* %97)
+  %193 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %188, %struct.Memory* %97)
   %194 = load i64*, i64** %123, align 8
   %195 = load i64, i64* %PC, align 8
   %196 = add i64 %195, 3
@@ -30795,7 +30795,7 @@ block_402dea:                                     ; preds = %block_402ddf
   store i64 %239, i64* %242, align 8
   store i64 %241, i64* %RSP, align 8, !tbaa !2428
   store i64 %238, i64* %PC, align 8, !tbaa !2428
-  %243 = tail call %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %238, %struct.Memory* %97)
+  %243 = tail call %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %238, %struct.Memory* %97)
   %244 = load i64, i64* %RBP, align 8
   %245 = add i64 %244, -24
   %246 = load i64, i64* %PC, align 8
@@ -30857,7 +30857,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %281, i64* %284, align 8
   store i64 %283, i64* %RSP, align 8, !tbaa !2428
   store i64 %280, i64* %PC, align 8, !tbaa !2428
-  %285 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %280, %struct.Memory* %97)
+  %285 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %280, %struct.Memory* %97)
   %286 = load i64, i64* %RBP, align 8
   %287 = add i64 %286, -80
   %288 = load i64, i64* %PC, align 8
@@ -30876,7 +30876,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %294, i64* %297, align 8
   store i64 %296, i64* %RSP, align 8, !tbaa !2428
   store i64 %293, i64* %PC, align 8, !tbaa !2428
-  %298 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %293, %struct.Memory* %97)
+  %298 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %293, %struct.Memory* %97)
   %299 = load i64, i64* %RBP, align 8
   %300 = add i64 %299, -8
   %301 = load i64, i64* %PC, align 8
@@ -30900,7 +30900,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %310, i64* %313, align 8
   store i64 %312, i64* %RSP, align 8, !tbaa !2428
   store i64 %309, i64* %PC, align 8, !tbaa !2428
-  %314 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %309, %struct.Memory* %97)
+  %314 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %309, %struct.Memory* %97)
   %315 = load i64, i64* %RBP, align 8
   %316 = add i64 %315, -8
   %317 = load i64, i64* %PC, align 8
@@ -30926,7 +30926,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %328, i64* %331, align 8
   store i64 %330, i64* %RSP, align 8, !tbaa !2428
   store i64 %327, i64* %PC, align 8, !tbaa !2428
-  %332 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %327, %struct.Memory* %97)
+  %332 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %327, %struct.Memory* %97)
   %333 = load i64, i64* %RBP, align 8
   %334 = add i64 %333, -88
   %335 = load i64, i64* %PC, align 8
@@ -30945,7 +30945,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %341, i64* %344, align 8
   store i64 %343, i64* %RSP, align 8, !tbaa !2428
   store i64 %340, i64* %PC, align 8, !tbaa !2428
-  %345 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %340, %struct.Memory* %97)
+  %345 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %340, %struct.Memory* %97)
   %346 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %12, align 1, !tbaa !2433
@@ -31026,7 +31026,7 @@ block_402e59:                                     ; preds = %block_402e4e
   store i64 %390, i64* %393, align 8
   store i64 %392, i64* %RSP, align 8, !tbaa !2428
   store i64 %389, i64* %PC, align 8, !tbaa !2428
-  %394 = tail call %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %97)
+  %394 = tail call %struct.Memory* @sub_403300__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %97)
   %395 = load i64, i64* %RBP, align 8
   %396 = add i64 %395, -24
   %397 = load i64, i64* %PC, align 8
@@ -31255,7 +31255,7 @@ block_404bc0:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_404c10__ZN9benchmark9is_sortedIPdEEbT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_404c10__ZN9benchmark9is_sortedIPdEEbT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i8, i8* %AL, align 1
   %65 = load i64, i64* %PC, align 8
   %66 = and i8 %64, 1
@@ -31629,7 +31629,7 @@ block_405359:                                     ; preds = %block_405359, %bloc
   store i64 %122, i64* %125, align 8
   store i64 %124, i64* %RSP, align 8, !tbaa !2428
   store i64 %121, i64* %PC, align 8, !tbaa !2428
-  %126 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %121, %struct.Memory* %2)
+  %126 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %121, %struct.Memory* %2)
   %127 = load i8, i8* %AL, align 1
   %128 = load i64, i64* %PC, align 8
   %129 = and i8 %127, 1
@@ -31735,7 +31735,7 @@ block_40539b:                                     ; preds = %block_4053b5, %bloc
   store i64 %182, i64* %185, align 8
   store i64 %184, i64* %RSP, align 8, !tbaa !2428
   store i64 %181, i64* %PC, align 8, !tbaa !2428
-  %186 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %181, %struct.Memory* %2)
+  %186 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %181, %struct.Memory* %2)
   %187 = load i8, i8* %AL, align 1
   %188 = load i64, i64* %PC, align 8
   %189 = and i8 %187, 1
@@ -32049,7 +32049,7 @@ block_405402:                                     ; preds = %block_405391, %bloc
   store i64 %390, i64* %393, align 8
   store i64 %392, i64* %RSP, align 8, !tbaa !2428
   store i64 %389, i64* %PC, align 8, !tbaa !2428
-  %394 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %2)
+  %394 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %389, %struct.Memory* %2)
   %395 = load i64, i64* %RBP, align 8
   %396 = add i64 %395, -40
   %397 = load i64, i64* %PC, align 8
@@ -32101,7 +32101,7 @@ block_405402:                                     ; preds = %block_405391, %bloc
   store i64 %428, i64* %431, align 8
   store i64 %430, i64* %RSP, align 8, !tbaa !2428
   store i64 %427, i64* %PC, align 8, !tbaa !2428
-  %432 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %394)
+  %432 = tail call %struct.Memory* @sub_405310__ZN9benchmark9quicksortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %394)
   %.pre31 = load i64, i64* %PC, align 8
   br label %block_40542a
 
@@ -32193,7 +32193,7 @@ block_405750:
   store i64 %44, i64* %47, align 8
   store i64 %46, i64* %RSP, align 8, !tbaa !2428
   store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %48 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
+  %48 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %43, %struct.Memory* %2)
   %49 = load i64, i64* %RBP, align 8
   %50 = add i64 %49, -32
   %51 = load i64, i64* %RAX, align 8
@@ -32274,7 +32274,7 @@ block_40577c:                                     ; preds = %block_405802, %bloc
   store i64 %93, i64* %96, align 8
   store i64 %95, i64* %RSP, align 8, !tbaa !2428
   store i64 %92, i64* %PC, align 8, !tbaa !2428
-  %97 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %92, %struct.Memory* %MEMORY.0)
+  %97 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %92, %struct.Memory* %MEMORY.0)
   %98 = load i8, i8* %AL, align 1
   %99 = load i64, i64* %PC, align 8
   %100 = and i8 %98, 1
@@ -32307,7 +32307,7 @@ block_405796:                                     ; preds = %block_40577c
   store i64 %111, i64* %114, align 8
   store i64 %113, i64* %RSP, align 8, !tbaa !2428
   store i64 %110, i64* %PC, align 8, !tbaa !2428
-  %115 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %110, %struct.Memory* %MEMORY.0)
+  %115 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %110, %struct.Memory* %MEMORY.0)
   %116 = load i64*, i64** %55, align 8
   %117 = load i64, i64* %PC, align 8
   %118 = add i64 %117, 3
@@ -32361,7 +32361,7 @@ block_4057d7:                                     ; preds = %block_4057b6
   store i64 %145, i64* %148, align 8
   store i64 %147, i64* %RSP, align 8, !tbaa !2428
   store i64 %144, i64* %PC, align 8, !tbaa !2428
-  %149 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %144, %struct.Memory* %MEMORY.2)
+  %149 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %144, %struct.Memory* %MEMORY.2)
   %150 = load i64, i64* %RAX, align 8
   %151 = load i64, i64* %PC, align 8
   store i64 %150, i64* %RDI, align 8, !tbaa !2428
@@ -32373,7 +32373,7 @@ block_4057d7:                                     ; preds = %block_4057b6
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %MEMORY.2)
+  %157 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %MEMORY.2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -40
   %160 = load i64, i64* %PC, align 8
@@ -32388,7 +32388,7 @@ block_4057d7:                                     ; preds = %block_4057b6
   store i64 %163, i64* %166, align 8
   store i64 %165, i64* %RSP, align 8, !tbaa !2428
   store i64 %162, i64* %PC, align 8, !tbaa !2428
-  %167 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %162, %struct.Memory* %MEMORY.2)
+  %167 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %162, %struct.Memory* %MEMORY.2)
   %168 = load i64, i64* %RBP, align 8
   %169 = add i64 %168, -65
   %170 = load i8, i8* %AL, align 1
@@ -32411,7 +32411,7 @@ block_405807:                                     ; preds = %block_4057f7
   store i64 %176, i64* %179, align 8
   store i64 %178, i64* %RSP, align 8, !tbaa !2428
   store i64 %175, i64* %PC, align 8, !tbaa !2428
-  %180 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %MEMORY.2)
+  %180 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %175, %struct.Memory* %MEMORY.2)
   %181 = load i64, i64* %RBP, align 8
   %182 = add i64 %181, -48
   %183 = load i64, i64* %PC, align 8
@@ -32431,7 +32431,7 @@ block_405807:                                     ; preds = %block_4057f7
   store i64 %190, i64* %193, align 8
   store i64 %192, i64* %RSP, align 8, !tbaa !2428
   store i64 %189, i64* %PC, align 8, !tbaa !2428
-  %194 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %189, %struct.Memory* %180)
+  %194 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %189, %struct.Memory* %180)
   %195 = load i64, i64* %RBP, align 8
   %196 = add i64 %195, -80
   %197 = load i64, i64* %PC, align 8
@@ -32461,7 +32461,7 @@ block_405807:                                     ; preds = %block_4057f7
   store i64 %210, i64* %213, align 8
   store i64 %212, i64* %RSP, align 8, !tbaa !2428
   store i64 %209, i64* %PC, align 8, !tbaa !2428
-  %214 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %209, %struct.Memory* %194)
+  %214 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %209, %struct.Memory* %194)
   %215 = load i64, i64* %RBP, align 8
   %216 = add i64 %215, -88
   %217 = load i64, i64* %RAX, align 8
@@ -32518,7 +32518,7 @@ block_4057b6:                                     ; preds = %block_405807, %bloc
   store i64 %242, i64* %245, align 8
   store i64 %244, i64* %RSP, align 8, !tbaa !2428
   store i64 %241, i64* %PC, align 8, !tbaa !2428
-  %246 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %241, %struct.Memory* %MEMORY.2)
+  %246 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %241, %struct.Memory* %MEMORY.2)
   %247 = load i64, i64* %PC, align 8
   store i64 0, i64* %RCX, align 8, !tbaa !2428
   store i8 0, i8* %DL, align 1, !tbaa !2432
@@ -32560,7 +32560,7 @@ block_405802:                                     ; preds = %block_4057f7
   store i64 %265, i64* %268, align 8
   store i64 %267, i64* %RSP, align 8, !tbaa !2428
   store i64 %264, i64* %PC, align 8, !tbaa !2428
-  %269 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %264, %struct.Memory* %MEMORY.2)
+  %269 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %264, %struct.Memory* %MEMORY.2)
   %270 = load i64, i64* %RBP, align 8
   %271 = add i64 %270, -24
   %272 = load i64, i64* %PC, align 8
@@ -32591,7 +32591,7 @@ block_405802:                                     ; preds = %block_4057f7
   store i64 %281, i64* %284, align 8
   store i64 %283, i64* %RSP, align 8, !tbaa !2428
   store i64 %280, i64* %PC, align 8, !tbaa !2428
-  %285 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %280, %struct.Memory* %269)
+  %285 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %280, %struct.Memory* %269)
   %286 = load i64, i64* %RBP, align 8
   %287 = add i64 %286, -64
   %288 = load i64, i64* %RAX, align 8
@@ -32695,7 +32695,7 @@ block_406660:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406690__ZN12ValueWrapperIS_IdEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406690__ZN12ValueWrapperIS_IdEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -32833,7 +32833,7 @@ block_406250:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -32855,7 +32855,7 @@ block_406250:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406300__ZN12ValueWrapperIS_IdEEC2IS0_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406300__ZN12ValueWrapperIS_IdEEC2IS0_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -33006,7 +33006,7 @@ block_40084b:                                     ; preds = %block_40084b, %bloc
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%V10Data_type* @V10Data to i64), i64 16000), i64* %RAX, align 8, !tbaa !2428
   store i8 zext (i1 or (i1 icmp ult (i64 add (i64 ptrtoint (%V10Data_type* @V10Data to i64), i64 16000), i64 ptrtoint (%V10Data_type* @V10Data to i64)), i1 icmp ult (i64 add (i64 ptrtoint (%V10Data_type* @V10Data to i64), i64 16000), i64 16000)) to i8), i8* %12, align 1, !tbaa !2433
@@ -33279,7 +33279,7 @@ block_4030d0:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403100__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEbRKS0_IT_ESB__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403100__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEbRKS0_IT_ESB__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -33392,7 +33392,7 @@ block_400b89:                                     ; preds = %block_400b80
   store i64 %30, i64* %32, align 8
   store i64 %31, i64* %24, align 8, !tbaa !2428
   store i64 %29, i64* %PC, align 8, !tbaa !2428
-  %33 = tail call %struct.Memory* @sub_400b10_deregister_tm_clones_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %29, %struct.Memory* %2)
+  %33 = tail call %struct.Memory* @sub_400b10_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %29, %struct.Memory* %2)
   %34 = load i64, i64* %PC, align 8
   store i1 true, i1* @seg_609100__bss.0.0, align 8
   %35 = add i64 %34, 8
@@ -33642,7 +33642,7 @@ block_405e90:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405eb0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405eb0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -33784,7 +33784,7 @@ block_403160:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403190__ZltI12ValueWrapperIS0_IS0_IS0_IdEEEEEbRKS0_IT_ES8__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403190__ZltI12ValueWrapperIS0_IS0_IS0_IdEEEEEbRKS0_IT_ES8__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -33956,7 +33956,7 @@ block_4064af:                                     ; preds = %block_406495
   store i64 %71, i64* %74, align 8
   store i64 %73, i64* %RSP, align 8, !tbaa !2428
   store i64 %70, i64* %PC, align 8, !tbaa !2428
-  %75 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
+  %75 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
   %76 = load i64, i64* %RBP, align 8
   %77 = add i64 %76, -32
   %78 = load i64, i64* %PC, align 8
@@ -33975,7 +33975,7 @@ block_4064af:                                     ; preds = %block_406495
   store i64 %84, i64* %87, align 8
   store i64 %86, i64* %RSP, align 8, !tbaa !2428
   store i64 %83, i64* %PC, align 8, !tbaa !2428
-  %88 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %83, %struct.Memory* %2)
+  %88 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %83, %struct.Memory* %2)
   %89 = load i64, i64* %RBP, align 8
   %90 = add i64 %89, -40
   %91 = load i64, i64* %PC, align 8
@@ -34018,7 +34018,7 @@ block_406495:                                     ; preds = %block_4064af, %bloc
   store i64 %109, i64* %112, align 8
   store i64 %111, i64* %RSP, align 8, !tbaa !2428
   store i64 %108, i64* %PC, align 8, !tbaa !2428
-  %113 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
+  %113 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
   %114 = load i8, i8* %AL, align 1
   %115 = load i64, i64* %PC, align 8
   %116 = and i8 %114, 1
@@ -34278,7 +34278,7 @@ block_406343:                                     ; preds = %block_406335
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_405f70__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEES0_IT_ERKSB_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -40
   %128 = load i64, i64* %PC, align 8
@@ -34400,7 +34400,7 @@ block_400950:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -34512,7 +34512,7 @@ block_403190:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_4031c0__ZltI12ValueWrapperIS0_IS0_IdEEEEbRKS0_IT_ES7__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_4031c0__ZltI12ValueWrapperIS0_IS0_IdEEEEbRKS0_IT_ES7__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -34658,7 +34658,7 @@ block_40090b:                                     ; preds = %block_40090b, %bloc
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_401c30__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%V10DataMaster_type* @V10DataMaster to i64), i64 16000), i64* %RAX, align 8, !tbaa !2428
   store i8 zext (i1 or (i1 icmp ult (i64 add (i64 ptrtoint (%V10DataMaster_type* @V10DataMaster to i64), i64 16000), i64 ptrtoint (%V10DataMaster_type* @V10DataMaster to i64)), i1 icmp ult (i64 add (i64 ptrtoint (%V10DataMaster_type* @V10DataMaster to i64), i64 16000), i64 16000)) to i8), i8* %12, align 1, !tbaa !2433
@@ -34847,7 +34847,7 @@ block_402f50:
   store i64 %42, i64* %45, align 8
   store i64 %44, i64* %RSP, align 8, !tbaa !2428
   store i64 %41, i64* %PC, align 8, !tbaa !2428
-  %46 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
+  %46 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
   %47 = load i64, i64* %RBP, align 8
   %48 = add i64 %47, -40
   %49 = load i64, i64* %RAX, align 8
@@ -34874,7 +34874,7 @@ block_402f7c:                                     ; preds = %block_402fde, %bloc
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %46)
+  %62 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %46)
   %63 = load i8, i8* %AL, align 1
   %64 = load i64, i64* %PC, align 8
   %65 = and i8 %63, 1
@@ -34985,7 +34985,7 @@ block_402f96:                                     ; preds = %block_402f7c
   store i64 %119, i64* %122, align 8
   store i64 %121, i64* %RSP, align 8, !tbaa !2428
   store i64 %118, i64* %PC, align 8, !tbaa !2428
-  %123 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %118, %struct.Memory* %46)
+  %123 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %118, %struct.Memory* %46)
   %124 = load i64, i64* %RBP, align 8
   %125 = add i64 %124, -48
   %126 = load i64, i64* %PC, align 8
@@ -35004,7 +35004,7 @@ block_402f96:                                     ; preds = %block_402f7c
   store i64 %132, i64* %135, align 8
   store i64 %134, i64* %RSP, align 8, !tbaa !2428
   store i64 %131, i64* %PC, align 8, !tbaa !2428
-  %136 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %46)
+  %136 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %46)
   %137 = load i64, i64* %RBP, align 8
   %138 = add i64 %137, -32
   %139 = load i64, i64* %PC, align 8
@@ -35031,7 +35031,7 @@ block_402f96:                                     ; preds = %block_402f7c
   store i64 %146, i64* %149, align 8
   store i64 %148, i64* %RSP, align 8, !tbaa !2428
   store i64 %145, i64* %PC, align 8, !tbaa !2428
-  %150 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %145, %struct.Memory* %46)
+  %150 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %145, %struct.Memory* %46)
   %151 = load i64, i64* %RBP, align 8
   %152 = add i64 %151, -56
   %153 = load i64, i64* %PC, align 8
@@ -35050,7 +35050,7 @@ block_402f96:                                     ; preds = %block_402f7c
   store i64 %159, i64* %162, align 8
   store i64 %161, i64* %RSP, align 8, !tbaa !2428
   store i64 %158, i64* %PC, align 8, !tbaa !2428
-  %163 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %158, %struct.Memory* %46)
+  %163 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %158, %struct.Memory* %46)
   %164 = load i64, i64* %RBP, align 8
   %165 = add i64 %164, -64
   %166 = load i64, i64* %PC, align 8
@@ -35069,7 +35069,7 @@ block_402f96:                                     ; preds = %block_402f7c
   store i64 %172, i64* %175, align 8
   store i64 %174, i64* %RSP, align 8, !tbaa !2428
   store i64 %171, i64* %PC, align 8, !tbaa !2428
-  %176 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %171, %struct.Memory* %46)
+  %176 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %171, %struct.Memory* %46)
   %177 = load i8, i8* %AL, align 1
   %178 = load i64, i64* %PC, align 8
   %179 = and i8 %177, 1
@@ -35295,7 +35295,7 @@ block_400770:
   store i64 %11, i64* %13, align 8
   store i64 %12, i64* %5, align 8, !tbaa !2428
   store i64 %10, i64* %PC, align 8, !tbaa !2428
-  %14 = tail call %struct.Memory* @sub_4007d0___cxx_global_var_init_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %10, %struct.Memory* %2)
+  %14 = tail call %struct.Memory* @sub_4007d0___cxx_global_var_init_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %10, %struct.Memory* %2)
   %15 = load i64, i64* %PC, align 8
   %16 = add i64 %15, 183
   %17 = add i64 %15, 5
@@ -35305,7 +35305,7 @@ block_400770:
   store i64 %17, i64* %20, align 8
   store i64 %19, i64* %5, align 8, !tbaa !2428
   store i64 %16, i64* %PC, align 8, !tbaa !2428
-  %21 = tail call %struct.Memory* @sub_400830___cxx_global_var_init_11_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %16, %struct.Memory* %14)
+  %21 = tail call %struct.Memory* @sub_400830___cxx_global_var_init_11_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %16, %struct.Memory* %14)
   %22 = load i64, i64* %PC, align 8
   %23 = add i64 %22, 274
   %24 = add i64 %22, 5
@@ -35315,7 +35315,7 @@ block_400770:
   store i64 %24, i64* %27, align 8
   store i64 %26, i64* %5, align 8, !tbaa !2428
   store i64 %23, i64* %PC, align 8, !tbaa !2428
-  %28 = tail call %struct.Memory* @sub_400890___cxx_global_var_init_12_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %23, %struct.Memory* %21)
+  %28 = tail call %struct.Memory* @sub_400890___cxx_global_var_init_12_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %23, %struct.Memory* %21)
   %29 = load i64, i64* %PC, align 8
   %30 = add i64 %29, 365
   %31 = add i64 %29, 5
@@ -35325,7 +35325,7 @@ block_400770:
   store i64 %31, i64* %34, align 8
   store i64 %33, i64* %5, align 8, !tbaa !2428
   store i64 %30, i64* %PC, align 8, !tbaa !2428
-  %35 = tail call %struct.Memory* @sub_4008f0___cxx_global_var_init_13_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %30, %struct.Memory* %28)
+  %35 = tail call %struct.Memory* @sub_4008f0___cxx_global_var_init_13_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %30, %struct.Memory* %28)
   %36 = load i64, i64* %PC, align 8
   %37 = add i64 %36, 456
   %38 = add i64 %36, 5
@@ -35335,7 +35335,7 @@ block_400770:
   store i64 %38, i64* %41, align 8
   store i64 %40, i64* %5, align 8, !tbaa !2428
   store i64 %37, i64* %PC, align 8, !tbaa !2428
-  %42 = tail call %struct.Memory* @sub_400950___cxx_global_var_init_14_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %37, %struct.Memory* %35)
+  %42 = tail call %struct.Memory* @sub_400950___cxx_global_var_init_14_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %37, %struct.Memory* %35)
   %43 = load i64, i64* %PC, align 8
   %44 = add i64 %43, 483
   %45 = add i64 %43, 5
@@ -35345,7 +35345,7 @@ block_400770:
   store i64 %45, i64* %48, align 8
   store i64 %47, i64* %5, align 8, !tbaa !2428
   store i64 %44, i64* %PC, align 8, !tbaa !2428
-  %49 = tail call %struct.Memory* @sub_400970___cxx_global_var_init_15_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %44, %struct.Memory* %42)
+  %49 = tail call %struct.Memory* @sub_400970___cxx_global_var_init_15_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %44, %struct.Memory* %42)
   %50 = load i64, i64* %PC, align 8
   %51 = add i64 %50, 510
   %52 = add i64 %50, 5
@@ -35355,7 +35355,7 @@ block_400770:
   store i64 %52, i64* %55, align 8
   store i64 %54, i64* %5, align 8, !tbaa !2428
   store i64 %51, i64* %PC, align 8, !tbaa !2428
-  %56 = tail call %struct.Memory* @sub_400990___cxx_global_var_init_16_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %51, %struct.Memory* %49)
+  %56 = tail call %struct.Memory* @sub_400990___cxx_global_var_init_16_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %51, %struct.Memory* %49)
   %57 = load i64, i64* %PC, align 8
   %58 = add i64 %57, 537
   %59 = add i64 %57, 5
@@ -35365,7 +35365,7 @@ block_400770:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %5, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_4009b0___cxx_global_var_init_17_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %56)
+  %63 = tail call %struct.Memory* @sub_4009b0___cxx_global_var_init_17_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %56)
   %64 = load i64, i64* %PC, align 8
   %65 = add i64 %64, 564
   %66 = add i64 %64, 5
@@ -35375,7 +35375,7 @@ block_400770:
   store i64 %66, i64* %69, align 8
   store i64 %68, i64* %5, align 8, !tbaa !2428
   store i64 %65, i64* %PC, align 8, !tbaa !2428
-  %70 = tail call %struct.Memory* @sub_4009d0___cxx_global_var_init_18_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %65, %struct.Memory* %63)
+  %70 = tail call %struct.Memory* @sub_4009d0___cxx_global_var_init_18_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %65, %struct.Memory* %63)
   %71 = load i64, i64* %PC, align 8
   %72 = add i64 %71, 591
   %73 = add i64 %71, 5
@@ -35385,7 +35385,7 @@ block_400770:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %5, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_4009f0___cxx_global_var_init_19_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %70)
+  %77 = tail call %struct.Memory* @sub_4009f0___cxx_global_var_init_19_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %70)
   %78 = load i64, i64* %PC, align 8
   %79 = add i64 %78, 618
   %80 = add i64 %78, 5
@@ -35395,7 +35395,7 @@ block_400770:
   store i64 %80, i64* %83, align 8
   store i64 %82, i64* %5, align 8, !tbaa !2428
   store i64 %79, i64* %PC, align 8, !tbaa !2428
-  %84 = tail call %struct.Memory* @sub_400a10___cxx_global_var_init_20_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %79, %struct.Memory* %77)
+  %84 = tail call %struct.Memory* @sub_400a10___cxx_global_var_init_20_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %79, %struct.Memory* %77)
   %85 = load i64, i64* %PC, align 8
   %86 = add i64 %85, 645
   %87 = add i64 %85, 5
@@ -35405,7 +35405,7 @@ block_400770:
   store i64 %87, i64* %90, align 8
   store i64 %89, i64* %5, align 8, !tbaa !2428
   store i64 %86, i64* %PC, align 8, !tbaa !2428
-  %91 = tail call %struct.Memory* @sub_400a30___cxx_global_var_init_21_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %86, %struct.Memory* %84)
+  %91 = tail call %struct.Memory* @sub_400a30___cxx_global_var_init_21_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %86, %struct.Memory* %84)
   %92 = load i64, i64* %PC, align 8
   %93 = add i64 %92, 672
   %94 = add i64 %92, 5
@@ -35415,7 +35415,7 @@ block_400770:
   store i64 %94, i64* %97, align 8
   store i64 %96, i64* %5, align 8, !tbaa !2428
   store i64 %93, i64* %PC, align 8, !tbaa !2428
-  %98 = tail call %struct.Memory* @sub_400a50___cxx_global_var_init_22_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %93, %struct.Memory* %91)
+  %98 = tail call %struct.Memory* @sub_400a50___cxx_global_var_init_22_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %93, %struct.Memory* %91)
   %99 = load i64, i64* %PC, align 8
   %100 = add i64 %99, 699
   %101 = add i64 %99, 5
@@ -35425,7 +35425,7 @@ block_400770:
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %5, align 8, !tbaa !2428
   store i64 %100, i64* %PC, align 8, !tbaa !2428
-  %105 = tail call %struct.Memory* @sub_400a70___cxx_global_var_init_23_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %100, %struct.Memory* %98)
+  %105 = tail call %struct.Memory* @sub_400a70___cxx_global_var_init_23_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %100, %struct.Memory* %98)
   %106 = load i64, i64* %PC, align 8
   %107 = add i64 %106, 726
   %108 = add i64 %106, 5
@@ -35435,7 +35435,7 @@ block_400770:
   store i64 %108, i64* %111, align 8
   store i64 %110, i64* %5, align 8, !tbaa !2428
   store i64 %107, i64* %PC, align 8, !tbaa !2428
-  %112 = tail call %struct.Memory* @sub_400a90___cxx_global_var_init_24_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %105)
+  %112 = tail call %struct.Memory* @sub_400a90___cxx_global_var_init_24_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %107, %struct.Memory* %105)
   %113 = load i64, i64* %PC, align 8
   %114 = add i64 %113, 753
   %115 = add i64 %113, 5
@@ -35445,7 +35445,7 @@ block_400770:
   store i64 %115, i64* %118, align 8
   store i64 %117, i64* %5, align 8, !tbaa !2428
   store i64 %114, i64* %PC, align 8, !tbaa !2428
-  %119 = tail call %struct.Memory* @sub_400ab0___cxx_global_var_init_25_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %114, %struct.Memory* %112)
+  %119 = tail call %struct.Memory* @sub_400ab0___cxx_global_var_init_25_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %114, %struct.Memory* %112)
   %120 = load i64, i64* %PC, align 8
   %121 = add i64 %120, 1
   store i64 %121, i64* %PC, align 8
@@ -35603,7 +35603,7 @@ block_402080:                                     ; preds = %block_402070
   store i64 %89, i64* %92, align 8
   store i64 %91, i64* %RSP, align 8, !tbaa !2428
   store i64 %88, i64* %PC, align 8, !tbaa !2428
-  %93 = tail call %struct.Memory* @sub_406320__ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %88, %struct.Memory* %2)
+  %93 = tail call %struct.Memory* @sub_406320__ZN9benchmark10accumulateIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EET0_T_SE_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %88, %struct.Memory* %2)
   %94 = load i64, i64* %RBP, align 8
   %95 = add i64 %94, -56
   %96 = load i64, i64* %PC, align 8
@@ -35622,7 +35622,7 @@ block_402080:                                     ; preds = %block_402070
   store i64 %102, i64* %105, align 8
   store i64 %104, i64* %RSP, align 8, !tbaa !2428
   store i64 %101, i64* %PC, align 8, !tbaa !2428
-  %106 = tail call %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %101, %struct.Memory* %2)
+  %106 = tail call %struct.Memory* @sub_405dd0__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %101, %struct.Memory* %2)
   %107 = load i64, i64* %PC, align 8
   %108 = add i64 %107, 15688
   %109 = add i64 %107, 5
@@ -35632,7 +35632,7 @@ block_402080:                                     ; preds = %block_402070
   store i64 %109, i64* %112, align 8
   store i64 %111, i64* %RSP, align 8, !tbaa !2428
   store i64 %108, i64* %PC, align 8, !tbaa !2428
-  %113 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
+  %113 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %2)
   %114 = load i64, i64* %RBP, align 8
   %115 = add i64 %114, -36
   %116 = load i64, i64* %PC, align 8
@@ -36073,7 +36073,7 @@ block_403762:                                     ; preds = %block_403754
   store i64 %193, i64* %196, align 8
   store i64 %195, i64* %RSP, align 8, !tbaa !2428
   store i64 %192, i64* %PC, align 8, !tbaa !2428
-  %197 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %192, %struct.Memory* %2)
+  %197 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %192, %struct.Memory* %2)
   %198 = load i8, i8* %AL, align 1
   %199 = load i64, i64* %PC, align 8
   %200 = and i8 %198, 1
@@ -36332,7 +36332,7 @@ block_402af8:                                     ; preds = %block_402ae8
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404000__ZN9benchmark4copyIP12ValueWrapperIdES3_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -36355,7 +36355,7 @@ block_402af8:                                     ; preds = %block_402ae8
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_404050__ZN9benchmark8heapsortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_404050__ZN9benchmark8heapsortIP12ValueWrapperIdES2_EEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -36378,7 +36378,7 @@ block_402af8:                                     ; preds = %block_402ae8
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404150__Z13verify_sortedIP12ValueWrapperIdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -36669,7 +36669,7 @@ block_403220:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -36912,7 +36912,7 @@ block_402232:                                     ; preds = %block_402224
   store i64 %83, i64* %86, align 8
   store i64 %85, i64* %RSP, align 8, !tbaa !2428
   store i64 %82, i64* %PC, align 8, !tbaa !2428
-  %87 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %82, %struct.Memory* %2)
+  %87 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %82, %struct.Memory* %2)
   %88 = load i64, i64* %RBP, align 8
   %89 = add i64 %88, -24
   %90 = load i64, i64* %PC, align 8
@@ -37142,7 +37142,7 @@ block_405e50:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405e70__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405e70__ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -37219,7 +37219,7 @@ block_400a90:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401bd0__ZN14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEC2EPSA__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -37491,7 +37491,7 @@ block_4037ff:                                     ; preds = %block_4037f1
   store i64 %175, i64* %178, align 8
   store i64 %177, i64* %RSP, align 8, !tbaa !2428
   store i64 %174, i64* %PC, align 8, !tbaa !2428
-  %179 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %174, %struct.Memory* %2)
+  %179 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %174, %struct.Memory* %2)
   %180 = load i8, i8* %AL, align 1
   %181 = load i64, i64* %PC, align 8
   %182 = and i8 %180, 1
@@ -38184,7 +38184,7 @@ block_4038e4:                                     ; preds = %block_4038cf
   store i64 %638, i64* %641, align 8
   store i64 %640, i64* %RSP, align 8, !tbaa !2428
   store i64 %637, i64* %PC, align 8, !tbaa !2428
-  %642 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %637, %struct.Memory* %MEMORY.3)
+  %642 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %637, %struct.Memory* %MEMORY.3)
   %643 = load i64, i64* %RBP, align 8
   %644 = add i64 %643, -49
   %645 = load i8, i8* %AL, align 1
@@ -38999,7 +38999,7 @@ block_4007eb:                                     ; preds = %block_4007eb, %bloc
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%VData_type* @VData to i64), i64 16000), i64* %RAX, align 8, !tbaa !2428
   store i8 zext (i1 or (i1 icmp ult (i64 add (i64 ptrtoint (%VData_type* @VData to i64), i64 16000), i64 ptrtoint (%VData_type* @VData to i64)), i1 icmp ult (i64 add (i64 ptrtoint (%VData_type* @VData to i64), i64 16000), i64 16000)) to i8), i8* %12, align 1, !tbaa !2433
@@ -39337,7 +39337,7 @@ block_4027e8:                                     ; preds = %block_4027d8
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -39386,7 +39386,7 @@ block_4027e8:                                     ; preds = %block_4027d8
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -39435,7 +39435,7 @@ block_4027e8:                                     ; preds = %block_4027d8
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -39557,7 +39557,7 @@ block_400990:
   store i64 %12, i64* %14, align 8
   store i64 %13, i64* %5, align 8, !tbaa !2428
   store i64 %11, i64* %PC, align 8, !tbaa !2428
-  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %15 = tail call %struct.Memory* @sub_401c10__ZN14PointerWrapperIdEC2EPd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %16 = load i64, i64* %PC, align 8
   %17 = add i64 %16, 1
   store i64 %17, i64* %PC, align 8
@@ -39665,7 +39665,7 @@ block_405430:
   store i64 %54, i64* %57, align 8
   store i64 %56, i64* %RSP, align 8, !tbaa !2428
   store i64 %53, i64* %PC, align 8, !tbaa !2428
-  %58 = tail call %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %53, %struct.Memory* %2)
+  %58 = tail call %struct.Memory* @sub_404770__ZmiIdElR14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %53, %struct.Memory* %2)
   %59 = load i64, i64* %RAX, align 8
   %60 = load i64, i64* %PC, align 8
   %61 = add i64 %59, -1
@@ -39725,7 +39725,7 @@ block_40545d:                                     ; preds = %block_405430
   store i64 %91, i64* %94, align 8
   store i64 %93, i64* %RSP, align 8, !tbaa !2428
   store i64 %90, i64* %PC, align 8, !tbaa !2428
-  %95 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %90, %struct.Memory* %58)
+  %95 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %90, %struct.Memory* %58)
   %96 = bitcast %union.anon* %3 to i64**
   %97 = load i64*, i64** %96, align 8
   %98 = load i64, i64* %PC, align 8
@@ -39789,7 +39789,7 @@ block_4054d6:                                     ; preds = %block_4054d1, %bloc
   store i64 %132, i64* %135, align 8
   store i64 %134, i64* %RSP, align 8, !tbaa !2428
   store i64 %131, i64* %PC, align 8, !tbaa !2428
-  %136 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.1)
+  %136 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %131, %struct.Memory* %MEMORY.1)
   %137 = load i64*, i64** %96, align 8
   %138 = load i64, i64* %PC, align 8
   %139 = add i64 %138, 4
@@ -39899,7 +39899,7 @@ block_405575:                                     ; preds = %block_4054cc, %bloc
   store i64 %191, i64* %194, align 8
   store i64 %193, i64* %RSP, align 8, !tbaa !2428
   store i64 %190, i64* %PC, align 8, !tbaa !2428
-  %195 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %190, %struct.Memory* %MEMORY.2)
+  %195 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %190, %struct.Memory* %MEMORY.2)
   %196 = load i64, i64* %RBP, align 8
   %197 = add i64 %196, -64
   %198 = load i64, i64* %RAX, align 8
@@ -39930,7 +39930,7 @@ block_405575:                                     ; preds = %block_4054cc, %bloc
   store i64 %213, i64* %216, align 8
   store i64 %215, i64* %RSP, align 8, !tbaa !2428
   store i64 %212, i64* %PC, align 8, !tbaa !2428
-  %217 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %212, %struct.Memory* %195)
+  %217 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %212, %struct.Memory* %195)
   %218 = load i64, i64* %RBP, align 8
   %219 = add i64 %218, -40
   %220 = load i64, i64* %PC, align 8
@@ -39945,7 +39945,7 @@ block_405575:                                     ; preds = %block_4054cc, %bloc
   store i64 %222, i64* %225, align 8
   store i64 %224, i64* %RSP, align 8, !tbaa !2428
   store i64 %221, i64* %PC, align 8, !tbaa !2428
-  %226 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %221, %struct.Memory* %217)
+  %226 = tail call %struct.Memory* @sub_4047a0__ZplIdE14PointerWrapperIT_ERS2_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %221, %struct.Memory* %217)
   %227 = load i64, i64* %RBP, align 8
   %228 = add i64 %227, -72
   %229 = load i64, i64* %RAX, align 8
@@ -39989,7 +39989,7 @@ block_405575:                                     ; preds = %block_4054cc, %bloc
   store i64 %253, i64* %256, align 8
   store i64 %255, i64* %RSP, align 8, !tbaa !2428
   store i64 %252, i64* %PC, align 8, !tbaa !2428
-  %257 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %252, %struct.Memory* %226)
+  %257 = tail call %struct.Memory* @sub_405430__ZN9benchmark9quicksortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %252, %struct.Memory* %226)
   %.pre40 = load i64, i64* %PC, align 8
   br label %block_4055c7
 
@@ -40002,7 +40002,7 @@ block_4054f2:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   store i64 %259, i64* %262, align 8
   store i64 %261, i64* %RSP, align 8, !tbaa !2428
   store i64 %258, i64* %PC, align 8, !tbaa !2428
-  %263 = tail call %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %258, %struct.Memory* %172)
+  %263 = tail call %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %258, %struct.Memory* %172)
   %264 = load i64, i64* %RBP, align 8
   %265 = add i64 %264, -96
   %266 = load i64, i64* %RAX, align 8
@@ -40027,7 +40027,7 @@ block_40551e:                                     ; preds = %block_405504
   store i64 %275, i64* %278, align 8
   store i64 %277, i64* %RSP, align 8, !tbaa !2428
   store i64 %274, i64* %PC, align 8, !tbaa !2428
-  %279 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %274, %struct.Memory* %355)
+  %279 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %274, %struct.Memory* %355)
   %280 = load i64, i64* %RBP, align 8
   %281 = add i64 %280, -32
   %282 = load i64, i64* %PC, align 8
@@ -40052,7 +40052,7 @@ block_40551e:                                     ; preds = %block_405504
   store i64 %291, i64* %294, align 8
   store i64 %293, i64* %RSP, align 8, !tbaa !2428
   store i64 %290, i64* %PC, align 8, !tbaa !2428
-  %295 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %290, %struct.Memory* %279)
+  %295 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %290, %struct.Memory* %279)
   %296 = load i64, i64* %RBP, align 8
   %297 = add i64 %296, -40
   %298 = load i64, i64* %PC, align 8
@@ -40077,7 +40077,7 @@ block_40551e:                                     ; preds = %block_405504
   store i64 %307, i64* %310, align 8
   store i64 %309, i64* %RSP, align 8, !tbaa !2428
   store i64 %306, i64* %PC, align 8, !tbaa !2428
-  %311 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %306, %struct.Memory* %295)
+  %311 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %306, %struct.Memory* %295)
   %312 = load i64, i64* %RBP, align 8
   %313 = add i64 %312, -32
   %314 = load i64, i64* %PC, align 8
@@ -40116,7 +40116,7 @@ block_40551e:                                     ; preds = %block_405504
   store i64 %332, i64* %335, align 8
   store i64 %334, i64* %RSP, align 8, !tbaa !2428
   store i64 %331, i64* %PC, align 8, !tbaa !2428
-  %336 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %331, %struct.Memory* %311)
+  %336 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %331, %struct.Memory* %311)
   %337 = load i64, i64* %RBP, align 8
   %338 = add i64 %337, -112
   %339 = load i64, i64* %PC, align 8
@@ -40154,7 +40154,7 @@ block_405504:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   store i64 %351, i64* %354, align 8
   store i64 %353, i64* %RSP, align 8, !tbaa !2428
   store i64 %350, i64* %PC, align 8, !tbaa !2428
-  %355 = tail call %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %350, %struct.Memory* %172)
+  %355 = tail call %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %350, %struct.Memory* %172)
   %356 = load i8, i8* %AL, align 1
   %357 = load i64, i64* %PC, align 8
   %358 = and i8 %356, 1
@@ -40189,7 +40189,7 @@ block_4054b7:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   store i64 %370, i64* %373, align 8
   store i64 %372, i64* %RSP, align 8, !tbaa !2428
   store i64 %369, i64* %PC, align 8, !tbaa !2428
-  %374 = tail call %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %369, %struct.Memory* %478)
+  %374 = tail call %struct.Memory* @sub_4055f0__ZltIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %369, %struct.Memory* %478)
   %375 = load i8, i8* %AL, align 1
   %376 = load i64, i64* %PC, align 8
   %377 = and i8 %375, 1
@@ -40289,7 +40289,7 @@ block_405484:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   store i64 %431, i64* %434, align 8
   store i64 %433, i64* %RSP, align 8, !tbaa !2428
   store i64 %430, i64* %PC, align 8, !tbaa !2428
-  %435 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %430, %struct.Memory* %MEMORY.4)
+  %435 = tail call %struct.Memory* @sub_4055d0__ZmmIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %430, %struct.Memory* %MEMORY.4)
   %436 = load i64, i64* %RAX, align 8
   %437 = load i64, i64* %PC, align 8
   store i64 %436, i64* %RDI, align 8, !tbaa !2428
@@ -40301,7 +40301,7 @@ block_405484:                                     ; preds = %_ZN12_GLOBAL__N_1L6
   store i64 %439, i64* %442, align 8
   store i64 %441, i64* %RSP, align 8, !tbaa !2428
   store i64 %438, i64* %PC, align 8, !tbaa !2428
-  %443 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %438, %struct.Memory* %MEMORY.4)
+  %443 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %438, %struct.Memory* %MEMORY.4)
   %444 = load i64*, i64** %96, align 8
   %445 = load i64, i64* %PC, align 8
   %446 = add i64 %445, 4
@@ -40454,7 +40454,7 @@ block_405eb0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405ed0__ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405ed0__ZNK12ValueWrapperIS_IS_IS_IS_IdEEEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -40691,7 +40691,7 @@ block_4022a8:                                     ; preds = %block_402298
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_404a80__ZN9benchmark4copyIPdS1_EEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -24
   %128 = load i64, i64* %PC, align 8
@@ -40714,7 +40714,7 @@ block_4022a8:                                     ; preds = %block_402298
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405c70__ZN9benchmark13insertionSortIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405c70__ZN9benchmark13insertionSortIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %PC, align 8
@@ -40737,7 +40737,7 @@ block_4022a8:                                     ; preds = %block_402298
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_404bc0__Z13verify_sortedIPdEvT_S1__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -41135,7 +41135,7 @@ block_402ca8:                                     ; preds = %block_402c98
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -41184,7 +41184,7 @@ block_402ca8:                                     ; preds = %block_402c98
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_402da0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_402da0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -41233,7 +41233,7 @@ block_402ca8:                                     ; preds = %block_402c98
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -41431,7 +41431,7 @@ block_402d4e:                                     ; preds = %block_402d34
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RBP, align 8
   %65 = add i64 %64, -32
   %66 = load i64, i64* %PC, align 8
@@ -41450,7 +41450,7 @@ block_402d4e:                                     ; preds = %block_402d34
   store i64 %72, i64* %75, align 8
   store i64 %74, i64* %RSP, align 8, !tbaa !2428
   store i64 %71, i64* %PC, align 8, !tbaa !2428
-  %76 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %2)
+  %76 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %71, %struct.Memory* %2)
   %77 = load i64, i64* %RBP, align 8
   %78 = add i64 %77, -24
   %79 = load i64, i64* %PC, align 8
@@ -41477,7 +41477,7 @@ block_402d4e:                                     ; preds = %block_402d34
   store i64 %86, i64* %89, align 8
   store i64 %88, i64* %RSP, align 8, !tbaa !2428
   store i64 %85, i64* %PC, align 8, !tbaa !2428
-  %90 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %85, %struct.Memory* %2)
+  %90 = tail call %struct.Memory* @sub_403010__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %85, %struct.Memory* %2)
   %91 = load i64, i64* %RBP, align 8
   %92 = add i64 %91, -40
   %93 = load i64, i64* %PC, align 8
@@ -41496,7 +41496,7 @@ block_402d4e:                                     ; preds = %block_402d34
   store i64 %99, i64* %102, align 8
   store i64 %101, i64* %RSP, align 8, !tbaa !2428
   store i64 %98, i64* %PC, align 8, !tbaa !2428
-  %103 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %98, %struct.Memory* %2)
+  %103 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %98, %struct.Memory* %2)
   %104 = load i64, i64* %RBP, align 8
   %105 = add i64 %104, -48
   %106 = load i64, i64* %PC, align 8
@@ -41534,7 +41534,7 @@ block_402d34:                                     ; preds = %block_402d4e, %bloc
   store i64 %122, i64* %125, align 8
   store i64 %124, i64* %RSP, align 8, !tbaa !2428
   store i64 %121, i64* %PC, align 8, !tbaa !2428
-  %126 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %121, %struct.Memory* %2)
+  %126 = tail call %struct.Memory* @sub_403050__ZneI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %121, %struct.Memory* %2)
   %127 = load i8, i8* %AL, align 1
   %128 = load i64, i64* %PC, align 8
   %129 = and i8 %127, 1
@@ -41693,7 +41693,7 @@ block_406570:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_4065a0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_4065a0__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -42364,7 +42364,7 @@ block_405ac2:                                     ; preds = %block_405aad
   store i64 %314, i64* %317, align 8
   store i64 %316, i64* %RSP, align 8, !tbaa !2428
   store i64 %313, i64* %PC, align 8, !tbaa !2428
-  %318 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %313, %struct.Memory* %2)
+  %318 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %313, %struct.Memory* %2)
   %319 = load i64, i64* %RBP, align 8
   %320 = add i64 %319, -49
   %321 = load i8, i8* %AL, align 1
@@ -42791,7 +42791,7 @@ block_4058d2:                                     ; preds = %block_4058bd
   store i64 %233, i64* %236, align 8
   store i64 %235, i64* %RSP, align 8, !tbaa !2428
   store i64 %232, i64* %PC, align 8, !tbaa !2428
-  %237 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %232, %struct.Memory* %2)
+  %237 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %232, %struct.Memory* %2)
   %238 = load i64, i64* %RBP, align 8
   %239 = add i64 %238, -49
   %240 = load i8, i8* %AL, align 1
@@ -43231,7 +43231,7 @@ block_402b78:                                     ; preds = %block_402b68
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_403970__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIdEES4_EEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -43280,7 +43280,7 @@ block_402b78:                                     ; preds = %block_402b68
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_4039f0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_4039f0__ZN9benchmark8heapsortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -43329,7 +43329,7 @@ block_402b78:                                     ; preds = %block_402b68
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_403b40__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -43498,7 +43498,7 @@ block_401c30:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401c50__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401c50__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -43635,7 +43635,7 @@ block_405130:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %RSP, align 8, !tbaa !2428
   store i64 %52, i64* %PC, align 8, !tbaa !2428
-  %57 = tail call %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
+  %57 = tail call %struct.Memory* @sub_403d10__ZmiI12ValueWrapperIdEElR14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
   %58 = load i64, i64* %RAX, align 8
   %59 = load i64, i64* %PC, align 8
   %60 = add i64 %58, -1
@@ -43737,7 +43737,7 @@ block_4051f2:                                     ; preds = %block_4051d0
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %171)
+  %125 = tail call %struct.Memory* @sub_403cf0__ZppI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %171)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -88
   %128 = load i64, i64* %RAX, align 8
@@ -43763,7 +43763,7 @@ block_4051d0:                                     ; preds = %block_4051cb, %bloc
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %171)
+  %141 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %171)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %PC, align 8
@@ -43778,7 +43778,7 @@ block_4051d0:                                     ; preds = %block_4051cb, %bloc
   store i64 %147, i64* %150, align 8
   store i64 %149, i64* %RSP, align 8, !tbaa !2428
   store i64 %146, i64* %PC, align 8, !tbaa !2428
-  %151 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %146, %struct.Memory* %171)
+  %151 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %146, %struct.Memory* %171)
   %152 = load i8, i8* %AL, align 1
   %153 = load i64, i64* %PC, align 8
   %154 = and i8 %152, 1
@@ -43814,7 +43814,7 @@ block_40515d:                                     ; preds = %block_405130
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %RSP, align 8, !tbaa !2428
   store i64 %166, i64* %PC, align 8, !tbaa !2428
-  %171 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %57)
+  %171 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %57)
   %172 = bitcast %union.anon* %3 to i64**
   %173 = load i64*, i64** %172, align 8
   %174 = load i64, i64* %PC, align 8
@@ -43868,7 +43868,7 @@ block_4051ed:                                     ; preds = %block_4051d0
   store i64 %201, i64* %204, align 8
   store i64 %203, i64* %RSP, align 8, !tbaa !2428
   store i64 %200, i64* %PC, align 8, !tbaa !2428
-  %205 = tail call %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %171)
+  %205 = tail call %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %171)
   %206 = load i8, i8* %AL, align 1
   %207 = load i64, i64* %PC, align 8
   %208 = and i8 %206, 1
@@ -43901,7 +43901,7 @@ block_40521e:                                     ; preds = %block_4051ed
   store i64 %219, i64* %222, align 8
   store i64 %221, i64* %RSP, align 8, !tbaa !2428
   store i64 %218, i64* %PC, align 8, !tbaa !2428
-  %223 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %218, %struct.Memory* %171)
+  %223 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %218, %struct.Memory* %171)
   %224 = load i64, i64* %RBP, align 8
   %225 = add i64 %224, -32
   %226 = load i64, i64* %PC, align 8
@@ -43925,7 +43925,7 @@ block_40521e:                                     ; preds = %block_4051ed
   store i64 %235, i64* %238, align 8
   store i64 %237, i64* %RSP, align 8, !tbaa !2428
   store i64 %234, i64* %PC, align 8, !tbaa !2428
-  %239 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %234, %struct.Memory* %171)
+  %239 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %234, %struct.Memory* %171)
   %240 = load i64, i64* %RBP, align 8
   %241 = add i64 %240, -40
   %242 = load i64, i64* %PC, align 8
@@ -43945,7 +43945,7 @@ block_40521e:                                     ; preds = %block_4051ed
   store i64 %249, i64* %252, align 8
   store i64 %251, i64* %RSP, align 8, !tbaa !2428
   store i64 %248, i64* %PC, align 8, !tbaa !2428
-  %253 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %248, %struct.Memory* %171)
+  %253 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %248, %struct.Memory* %171)
   %254 = load i64, i64* %RBP, align 8
   %255 = add i64 %254, -32
   %256 = load i64, i64* %PC, align 8
@@ -43974,7 +43974,7 @@ block_40521e:                                     ; preds = %block_4051ed
   store i64 %268, i64* %271, align 8
   store i64 %270, i64* %RSP, align 8, !tbaa !2428
   store i64 %267, i64* %PC, align 8, !tbaa !2428
-  %272 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %171)
+  %272 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %171)
   %273 = load i64, i64* %RBP, align 8
   %274 = add i64 %273, -48
   %275 = load i64, i64* %PC, align 8
@@ -44010,7 +44010,7 @@ block_4051a7:                                     ; preds = %block_405182
   store i64 %288, i64* %291, align 8
   store i64 %290, i64* %RSP, align 8, !tbaa !2428
   store i64 %287, i64* %PC, align 8, !tbaa !2428
-  %292 = tail call %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %171)
+  %292 = tail call %struct.Memory* @sub_4052e0__ZltI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %171)
   %293 = load i8, i8* %AL, align 1
   %294 = load i64, i64* %PC, align 8
   %295 = and i8 %293, 1
@@ -44066,7 +44066,7 @@ block_405263:                                     ; preds = %block_4051c6, %bloc
   store i64 %316, i64* %319, align 8
   store i64 %318, i64* %RSP, align 8, !tbaa !2428
   store i64 %315, i64* %PC, align 8, !tbaa !2428
-  %320 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %315, %struct.Memory* %171)
+  %320 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %315, %struct.Memory* %171)
   %321 = load i64, i64* %RBP, align 8
   %322 = add i64 %321, -64
   %323 = load i64, i64* %RAX, align 8
@@ -44097,7 +44097,7 @@ block_405263:                                     ; preds = %block_4051c6, %bloc
   store i64 %338, i64* %341, align 8
   store i64 %340, i64* %RSP, align 8, !tbaa !2428
   store i64 %337, i64* %PC, align 8, !tbaa !2428
-  %342 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %337, %struct.Memory* %320)
+  %342 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %337, %struct.Memory* %320)
   %343 = load i64, i64* %RBP, align 8
   %344 = add i64 %343, -40
   %345 = load i64, i64* %PC, align 8
@@ -44112,7 +44112,7 @@ block_405263:                                     ; preds = %block_4051c6, %bloc
   store i64 %347, i64* %350, align 8
   store i64 %349, i64* %RSP, align 8, !tbaa !2428
   store i64 %346, i64* %PC, align 8, !tbaa !2428
-  %351 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %346, %struct.Memory* %342)
+  %351 = tail call %struct.Memory* @sub_403d40__ZplI12ValueWrapperIdEE14PointerWrapperIT_ERS4_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %346, %struct.Memory* %342)
   %352 = load i64, i64* %RBP, align 8
   %353 = add i64 %352, -72
   %354 = load i64, i64* %RAX, align 8
@@ -44156,7 +44156,7 @@ block_405263:                                     ; preds = %block_4051c6, %bloc
   store i64 %378, i64* %381, align 8
   store i64 %380, i64* %RSP, align 8, !tbaa !2428
   store i64 %377, i64* %PC, align 8, !tbaa !2428
-  %382 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %377, %struct.Memory* %351)
+  %382 = tail call %struct.Memory* @sub_405130__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %377, %struct.Memory* %351)
   %.pre34 = load i64, i64* %PC, align 8
   br label %block_4052b5
 
@@ -44173,7 +44173,7 @@ block_405182:                                     ; preds = %block_405182, %bloc
   store i64 %386, i64* %389, align 8
   store i64 %388, i64* %RSP, align 8, !tbaa !2428
   store i64 %385, i64* %PC, align 8, !tbaa !2428
-  %390 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %385, %struct.Memory* %171)
+  %390 = tail call %struct.Memory* @sub_4052c0__ZmmI12ValueWrapperIdEER14PointerWrapperIT_ES5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %385, %struct.Memory* %171)
   %391 = load i64, i64* %RAX, align 8
   %392 = load i64, i64* %PC, align 8
   store i64 %391, i64* %RDI, align 8, !tbaa !2428
@@ -44185,7 +44185,7 @@ block_405182:                                     ; preds = %block_405182, %bloc
   store i64 %394, i64* %397, align 8
   store i64 %396, i64* %RSP, align 8, !tbaa !2428
   store i64 %393, i64* %PC, align 8, !tbaa !2428
-  %398 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %393, %struct.Memory* %171)
+  %398 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %393, %struct.Memory* %171)
   %399 = load i64, i64* %RBP, align 8
   %400 = add i64 %399, -24
   %401 = load i64, i64* %PC, align 8
@@ -44200,7 +44200,7 @@ block_405182:                                     ; preds = %block_405182, %bloc
   store i64 %404, i64* %407, align 8
   store i64 %406, i64* %RSP, align 8, !tbaa !2428
   store i64 %403, i64* %PC, align 8, !tbaa !2428
-  %408 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %171)
+  %408 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %171)
   %409 = load i8, i8* %AL, align 1
   %410 = load i64, i64* %PC, align 8
   %411 = and i8 %409, 1
@@ -44311,7 +44311,7 @@ block_406070:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_4060d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEES0_IT_ERKS7_S9__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_4060d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IdEEEEEES0_IT_ERKS7_S9__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -44333,7 +44333,7 @@ block_406070:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406110__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406110__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -44481,7 +44481,7 @@ block_406600:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406630__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406630__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -44636,7 +44636,7 @@ block_40440e:                                     ; preds = %block_4043f4
   store i64 %62, i64* %65, align 8
   store i64 %64, i64* %RSP, align 8, !tbaa !2428
   store i64 %61, i64* %PC, align 8, !tbaa !2428
-  %66 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %61, %struct.Memory* %2)
+  %66 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %61, %struct.Memory* %2)
   %67 = load i64, i64* %RBP, align 8
   %68 = add i64 %67, -32
   %69 = load i64, i64* %PC, align 8
@@ -44655,7 +44655,7 @@ block_40440e:                                     ; preds = %block_4043f4
   store i64 %75, i64* %78, align 8
   store i64 %77, i64* %RSP, align 8, !tbaa !2428
   store i64 %74, i64* %PC, align 8, !tbaa !2428
-  %79 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %74, %struct.Memory* %2)
+  %79 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %74, %struct.Memory* %2)
   %80 = load i64, i64* %RBP, align 8
   %81 = add i64 %80, -24
   %82 = load i64, i64* %PC, align 8
@@ -44687,7 +44687,7 @@ block_40440e:                                     ; preds = %block_4043f4
   store i64 %91, i64* %94, align 8
   store i64 %93, i64* %RSP, align 8, !tbaa !2428
   store i64 %90, i64* %PC, align 8, !tbaa !2428
-  %95 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %90, %struct.Memory* %2)
+  %95 = tail call %struct.Memory* @sub_4046c0__ZppIdE14PointerWrapperIT_ERS2_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %90, %struct.Memory* %2)
   %96 = load i64, i64* %RBP, align 8
   %97 = add i64 %96, -40
   %98 = load i64, i64* %PC, align 8
@@ -44706,7 +44706,7 @@ block_40440e:                                     ; preds = %block_4043f4
   store i64 %104, i64* %107, align 8
   store i64 %106, i64* %RSP, align 8, !tbaa !2428
   store i64 %103, i64* %PC, align 8, !tbaa !2428
-  %108 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %103, %struct.Memory* %2)
+  %108 = tail call %struct.Memory* @sub_404730__ZNK14PointerWrapperIdEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %103, %struct.Memory* %2)
   %109 = load i64, i64* %RBP, align 8
   %110 = add i64 %109, -48
   %111 = load i64, i64* %PC, align 8
@@ -44740,7 +44740,7 @@ block_4043f4:                                     ; preds = %block_40440e, %bloc
   store i64 %124, i64* %127, align 8
   store i64 %126, i64* %RSP, align 8, !tbaa !2428
   store i64 %123, i64* %PC, align 8, !tbaa !2428
-  %128 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %123, %struct.Memory* %2)
+  %128 = tail call %struct.Memory* @sub_404700__ZneIdEbRK14PointerWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %123, %struct.Memory* %2)
   %129 = load i8, i8* %AL, align 1
   %130 = load i64, i64* %PC, align 8
   %131 = and i8 %129, 1
@@ -45063,7 +45063,7 @@ block_402898:                                     ; preds = %block_402888
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -45086,7 +45086,7 @@ block_402898:                                     ; preds = %block_402888
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405010__ZN9benchmark9quicksortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -45109,7 +45109,7 @@ block_402898:                                     ; preds = %block_402888
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -45293,7 +45293,7 @@ block_406690:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -45571,7 +45571,7 @@ block_402a48:                                     ; preds = %block_402a38
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -45620,7 +45620,7 @@ block_402a48:                                     ; preds = %block_402a38
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_404460__ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_404460__ZN9benchmark8heapsortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -45669,7 +45669,7 @@ block_402a48:                                     ; preds = %block_402a38
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -46087,7 +46087,7 @@ block_402918:                                     ; preds = %block_402908
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -46136,7 +46136,7 @@ block_402918:                                     ; preds = %block_402908
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -46185,7 +46185,7 @@ block_402918:                                     ; preds = %block_402908
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -46354,7 +46354,7 @@ block_401c70:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401c90__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401c90__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -46506,7 +46506,7 @@ block_403010:
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %RSP, align 8, !tbaa !2428
   store i64 %66, i64* %PC, align 8, !tbaa !2428
-  %71 = tail call %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
+  %71 = tail call %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
   %72 = load i64, i64* %RBP, align 8
   %73 = add i64 %72, -8
   %74 = load i64, i64* %PC, align 8
@@ -46658,7 +46658,7 @@ block_404e30:
   store i64 %53, i64* %56, align 8
   store i64 %55, i64* %RSP, align 8, !tbaa !2428
   store i64 %52, i64* %PC, align 8, !tbaa !2428
-  %57 = tail call %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
+  %57 = tail call %struct.Memory* @sub_4032a0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %52, %struct.Memory* %2)
   %58 = load i64, i64* %RAX, align 8
   %59 = load i64, i64* %PC, align 8
   %60 = add i64 %58, -1
@@ -46760,7 +46760,7 @@ block_404ef2:                                     ; preds = %block_404ed0
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %171)
+  %125 = tail call %struct.Memory* @sub_403280__ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %171)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -88
   %128 = load i64, i64* %RAX, align 8
@@ -46786,7 +46786,7 @@ block_404ed0:                                     ; preds = %block_404ecb, %bloc
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %171)
+  %141 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %171)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -24
   %144 = load i64, i64* %PC, align 8
@@ -46801,7 +46801,7 @@ block_404ed0:                                     ; preds = %block_404ecb, %bloc
   store i64 %147, i64* %150, align 8
   store i64 %149, i64* %RSP, align 8, !tbaa !2428
   store i64 %146, i64* %PC, align 8, !tbaa !2428
-  %151 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %146, %struct.Memory* %171)
+  %151 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %146, %struct.Memory* %171)
   %152 = load i8, i8* %AL, align 1
   %153 = load i64, i64* %PC, align 8
   %154 = and i8 %152, 1
@@ -46837,7 +46837,7 @@ block_404e5d:                                     ; preds = %block_404e30
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %RSP, align 8, !tbaa !2428
   store i64 %166, i64* %PC, align 8, !tbaa !2428
-  %171 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %57)
+  %171 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %57)
   %172 = bitcast %union.anon* %3 to i64**
   %173 = load i64*, i64** %172, align 8
   %174 = load i64, i64* %PC, align 8
@@ -46891,7 +46891,7 @@ block_404eed:                                     ; preds = %block_404ed0
   store i64 %201, i64* %204, align 8
   store i64 %203, i64* %RSP, align 8, !tbaa !2428
   store i64 %200, i64* %PC, align 8, !tbaa !2428
-  %205 = tail call %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %171)
+  %205 = tail call %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %200, %struct.Memory* %171)
   %206 = load i8, i8* %AL, align 1
   %207 = load i64, i64* %PC, align 8
   %208 = and i8 %206, 1
@@ -46924,7 +46924,7 @@ block_404f1e:                                     ; preds = %block_404eed
   store i64 %219, i64* %222, align 8
   store i64 %221, i64* %RSP, align 8, !tbaa !2428
   store i64 %218, i64* %PC, align 8, !tbaa !2428
-  %223 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %218, %struct.Memory* %171)
+  %223 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %218, %struct.Memory* %171)
   %224 = load i64, i64* %RBP, align 8
   %225 = add i64 %224, -32
   %226 = load i64, i64* %PC, align 8
@@ -46948,7 +46948,7 @@ block_404f1e:                                     ; preds = %block_404eed
   store i64 %235, i64* %238, align 8
   store i64 %237, i64* %RSP, align 8, !tbaa !2428
   store i64 %234, i64* %PC, align 8, !tbaa !2428
-  %239 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %234, %struct.Memory* %171)
+  %239 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %234, %struct.Memory* %171)
   %240 = load i64, i64* %RBP, align 8
   %241 = add i64 %240, -40
   %242 = load i64, i64* %PC, align 8
@@ -46968,7 +46968,7 @@ block_404f1e:                                     ; preds = %block_404eed
   store i64 %249, i64* %252, align 8
   store i64 %251, i64* %RSP, align 8, !tbaa !2428
   store i64 %248, i64* %PC, align 8, !tbaa !2428
-  %253 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %248, %struct.Memory* %171)
+  %253 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %248, %struct.Memory* %171)
   %254 = load i64, i64* %RBP, align 8
   %255 = add i64 %254, -32
   %256 = load i64, i64* %PC, align 8
@@ -46997,7 +46997,7 @@ block_404f1e:                                     ; preds = %block_404eed
   store i64 %268, i64* %271, align 8
   store i64 %270, i64* %RSP, align 8, !tbaa !2428
   store i64 %267, i64* %PC, align 8, !tbaa !2428
-  %272 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %171)
+  %272 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %267, %struct.Memory* %171)
   %273 = load i64, i64* %RBP, align 8
   %274 = add i64 %273, -48
   %275 = load i64, i64* %PC, align 8
@@ -47033,7 +47033,7 @@ block_404ea7:                                     ; preds = %block_404e82
   store i64 %288, i64* %291, align 8
   store i64 %290, i64* %RSP, align 8, !tbaa !2428
   store i64 %287, i64* %PC, align 8, !tbaa !2428
-  %292 = tail call %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %171)
+  %292 = tail call %struct.Memory* @sub_404fe0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEbRK14PointerWrapperIT_ESF__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %287, %struct.Memory* %171)
   %293 = load i8, i8* %AL, align 1
   %294 = load i64, i64* %PC, align 8
   %295 = and i8 %293, 1
@@ -47089,7 +47089,7 @@ block_404f63:                                     ; preds = %block_404ec6, %bloc
   store i64 %316, i64* %319, align 8
   store i64 %318, i64* %RSP, align 8, !tbaa !2428
   store i64 %315, i64* %PC, align 8, !tbaa !2428
-  %320 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %315, %struct.Memory* %171)
+  %320 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %315, %struct.Memory* %171)
   %321 = load i64, i64* %RBP, align 8
   %322 = add i64 %321, -64
   %323 = load i64, i64* %RAX, align 8
@@ -47120,7 +47120,7 @@ block_404f63:                                     ; preds = %block_404ec6, %bloc
   store i64 %338, i64* %341, align 8
   store i64 %340, i64* %RSP, align 8, !tbaa !2428
   store i64 %337, i64* %PC, align 8, !tbaa !2428
-  %342 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %337, %struct.Memory* %320)
+  %342 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %337, %struct.Memory* %320)
   %343 = load i64, i64* %RBP, align 8
   %344 = add i64 %343, -40
   %345 = load i64, i64* %PC, align 8
@@ -47135,7 +47135,7 @@ block_404f63:                                     ; preds = %block_404ec6, %bloc
   store i64 %347, i64* %350, align 8
   store i64 %349, i64* %RSP, align 8, !tbaa !2428
   store i64 %346, i64* %PC, align 8, !tbaa !2428
-  %351 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %346, %struct.Memory* %342)
+  %351 = tail call %struct.Memory* @sub_4032d0__ZplI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEE14PointerWrapperIT_ERSD_l_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %346, %struct.Memory* %342)
   %352 = load i64, i64* %RBP, align 8
   %353 = add i64 %352, -72
   %354 = load i64, i64* %RAX, align 8
@@ -47179,7 +47179,7 @@ block_404f63:                                     ; preds = %block_404ec6, %bloc
   store i64 %378, i64* %381, align 8
   store i64 %380, i64* %RSP, align 8, !tbaa !2428
   store i64 %377, i64* %PC, align 8, !tbaa !2428
-  %382 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %377, %struct.Memory* %351)
+  %382 = tail call %struct.Memory* @sub_404e30__ZN9benchmark9quicksortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %377, %struct.Memory* %351)
   %.pre34 = load i64, i64* %PC, align 8
   br label %block_404fb5
 
@@ -47196,7 +47196,7 @@ block_404e82:                                     ; preds = %block_404e82, %bloc
   store i64 %386, i64* %389, align 8
   store i64 %388, i64* %RSP, align 8, !tbaa !2428
   store i64 %385, i64* %PC, align 8, !tbaa !2428
-  %390 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %385, %struct.Memory* %171)
+  %390 = tail call %struct.Memory* @sub_404fc0__ZmmI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %385, %struct.Memory* %171)
   %391 = load i64, i64* %RAX, align 8
   %392 = load i64, i64* %PC, align 8
   store i64 %391, i64* %RDI, align 8, !tbaa !2428
@@ -47208,7 +47208,7 @@ block_404e82:                                     ; preds = %block_404e82, %bloc
   store i64 %394, i64* %397, align 8
   store i64 %396, i64* %RSP, align 8, !tbaa !2428
   store i64 %393, i64* %PC, align 8, !tbaa !2428
-  %398 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %393, %struct.Memory* %171)
+  %398 = tail call %struct.Memory* @sub_403080__ZNK14PointerWrapperI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %393, %struct.Memory* %171)
   %399 = load i64, i64* %RBP, align 8
   %400 = add i64 %399, -24
   %401 = load i64, i64* %PC, align 8
@@ -47223,7 +47223,7 @@ block_404e82:                                     ; preds = %block_404e82, %bloc
   store i64 %404, i64* %407, align 8
   store i64 %406, i64* %RSP, align 8, !tbaa !2428
   store i64 %403, i64* %PC, align 8, !tbaa !2428
-  %408 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %171)
+  %408 = tail call %struct.Memory* @sub_4030a0__ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %403, %struct.Memory* %171)
   %409 = load i8, i8* %AL, align 1
   %410 = load i64, i64* %PC, align 8
   %411 = and i8 %409, 1
@@ -47320,7 +47320,7 @@ block_405ef0:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405f10__ZNK12ValueWrapperIS_IS_IdEEEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405f10__ZNK12ValueWrapperIS_IS_IdEEEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -47557,7 +47557,7 @@ block_4031c0:
   store i64 %60, i64* %63, align 8
   store i64 %62, i64* %RSP, align 8, !tbaa !2428
   store i64 %59, i64* %PC, align 8, !tbaa !2428
-  %64 = tail call %struct.Memory* @sub_4031f0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
+  %64 = tail call %struct.Memory* @sub_4031f0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %59, %struct.Memory* %2)
   %65 = load i8, i8* %AL, align 1
   %66 = load i64, i64* %PC, align 8
   %67 = and i8 %65, 1
@@ -47685,7 +47685,7 @@ block_405f30:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_405f50__ZNK12ValueWrapperIdEcvT_IdEEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -47963,7 +47963,7 @@ block_402328:                                     ; preds = %block_402318
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_4043e0__ZN9benchmark4copyI14PointerWrapperIdES2_EEvT_S3_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -48012,7 +48012,7 @@ block_402328:                                     ; preds = %block_402318
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_405b30__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_405b30__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -48061,7 +48061,7 @@ block_402328:                                     ; preds = %block_402318
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_4045a0__Z13verify_sortedI14PointerWrapperIdEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -48258,7 +48258,7 @@ block_4046c0:
   store i64 %67, i64* %70, align 8
   store i64 %69, i64* %RSP, align 8, !tbaa !2428
   store i64 %66, i64* %PC, align 8, !tbaa !2428
-  %71 = tail call %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
+  %71 = tail call %struct.Memory* @sub_404750__ZppIdER14PointerWrapperIT_ES3__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %66, %struct.Memory* %2)
   %72 = load i64, i64* %RBP, align 8
   %73 = add i64 %72, -8
   %74 = load i64, i64* %PC, align 8
@@ -48779,7 +48779,7 @@ block_404b16:                                     ; preds = %block_404b0b
   store i64 %230, i64* %233, align 8
   store i64 %232, i64* %RSP, align 8, !tbaa !2428
   store i64 %229, i64* %PC, align 8, !tbaa !2428
-  %234 = tail call %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %229, %struct.Memory* %109)
+  %234 = tail call %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %229, %struct.Memory* %109)
   %235 = load i64, i64* %RBP, align 8
   %236 = add i64 %235, -24
   %237 = load i64, i64* %PC, align 8
@@ -48990,7 +48990,7 @@ block_404b66:                                     ; preds = %block_404b5b
   store i64 %365, i64* %368, align 8
   store i64 %367, i64* %RSP, align 8, !tbaa !2428
   store i64 %364, i64* %PC, align 8, !tbaa !2428
-  %369 = tail call %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %364, %struct.Memory* %109)
+  %369 = tail call %struct.Memory* @sub_404c90__ZN9benchmark7sift_inIPddEEvlT_lT0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %364, %struct.Memory* %109)
   %370 = load i64, i64* %RBP, align 8
   %371 = add i64 %370, -24
   %372 = load i64, i64* %PC, align 8
@@ -49160,7 +49160,7 @@ block_401260:
   store i64 %77, i64* %80, align 8
   store i64 %79, i64* %RSP, align 8, !tbaa !2428
   store i64 %76, i64* %PC, align 8, !tbaa !2428
-  %81 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %76, %struct.Memory* %2)
+  %81 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %76, %struct.Memory* %2)
   %82 = load i64, i64* %RBP, align 8
   %83 = add i64 %82, -48
   %84 = load i64, i64* %PC, align 8
@@ -49183,7 +49183,7 @@ block_401260:
   store i64 %92, i64* %95, align 8
   store i64 %94, i64* %RSP, align 8, !tbaa !2428
   store i64 %91, i64* %PC, align 8, !tbaa !2428
-  %96 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %91, %struct.Memory* %81)
+  %96 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %91, %struct.Memory* %81)
   %97 = load i64, i64* %RBP, align 8
   %98 = add i64 %97, -8
   %99 = load i64, i64* %PC, align 8
@@ -49400,7 +49400,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %236, i64* %239, align 8
   store i64 %238, i64* %RSP, align 8, !tbaa !2428
   store i64 %235, i64* %PC, align 8, !tbaa !2428
-  %240 = tail call %struct.Memory* @sub_401db0__ZN9benchmark4fillIPddEEvT_S2_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %235, %struct.Memory* %229)
+  %240 = tail call %struct.Memory* @sub_401db0__ZN9benchmark4fillIPddEEvT_S2_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %235, %struct.Memory* %229)
   %241 = load i64, i64* %RBP, align 8
   %242 = add i64 %241, -64
   %243 = load i64, i64* %PC, align 8
@@ -49432,7 +49432,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %257, i64* %260, align 8
   store i64 %259, i64* %RSP, align 8, !tbaa !2428
   store i64 %256, i64* %PC, align 8, !tbaa !2428
-  %261 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %256, %struct.Memory* %240)
+  %261 = tail call %struct.Memory* @sub_401d60__ZN12ValueWrapperIdEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %256, %struct.Memory* %240)
   %262 = load i64, i64* %RBP, align 8
   %263 = add i64 %262, -64
   %264 = load i64, i64* %PC, align 8
@@ -49462,7 +49462,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %277, i64* %280, align 8
   store i64 %279, i64* %RSP, align 8, !tbaa !2428
   store i64 %276, i64* %PC, align 8, !tbaa !2428
-  %281 = tail call %struct.Memory* @sub_401df0__ZN9benchmark4fillIP12ValueWrapperIdES2_EEvT_S4_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %276, %struct.Memory* %261)
+  %281 = tail call %struct.Memory* @sub_401df0__ZN9benchmark4fillIP12ValueWrapperIdES2_EEvT_S4_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %276, %struct.Memory* %261)
   %282 = load i64, i64* %RBP, align 8
   %283 = add i64 %282, -72
   %284 = load i64, i64* %PC, align 8
@@ -49494,7 +49494,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %298, i64* %301, align 8
   store i64 %300, i64* %RSP, align 8, !tbaa !2428
   store i64 %297, i64* %PC, align 8, !tbaa !2428
-  %302 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %297, %struct.Memory* %281)
+  %302 = tail call %struct.Memory* @sub_401d80__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %297, %struct.Memory* %281)
   %303 = load i64, i64* %RBP, align 8
   %304 = add i64 %303, -72
   %305 = load i64, i64* %PC, align 8
@@ -49524,7 +49524,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %318, i64* %321, align 8
   store i64 %320, i64* %RSP, align 8, !tbaa !2428
   store i64 %317, i64* %PC, align 8, !tbaa !2428
-  %322 = tail call %struct.Memory* @sub_401e30__ZN9benchmark4fillIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %317, %struct.Memory* %302)
+  %322 = tail call %struct.Memory* @sub_401e30__ZN9benchmark4fillIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %317, %struct.Memory* %302)
   %323 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 353), i64* %RDX, align 8, !tbaa !2428
   %324 = load i64, i64* getelementptr inbounds (%dpb_type, %dpb_type* @dpb, i64 0, i32 0), align 8
@@ -49547,7 +49547,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %332, i64* %335, align 8
   store i64 %334, i64* %RSP, align 8, !tbaa !2428
   store i64 %331, i64* %PC, align 8, !tbaa !2428
-  %336 = tail call %struct.Memory* @sub_401e70__Z15test_accumulateIPddEvT_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %331, %struct.Memory* %322)
+  %336 = tail call %struct.Memory* @sub_401e70__Z15test_accumulateIPddEvT_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %331, %struct.Memory* %322)
   %337 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 383), i64* %RDX, align 8, !tbaa !2428
   %338 = load i64, i64* bitcast (%dPb_type* @dPb to i64*), align 8
@@ -49595,7 +49595,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %364, i64* %367, align 8
   store i64 %366, i64* %RSP, align 8, !tbaa !2428
   store i64 %363, i64* %PC, align 8, !tbaa !2428
-  %368 = tail call %struct.Memory* @sub_401ed0__Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %363, %struct.Memory* %336)
+  %368 = tail call %struct.Memory* @sub_401ed0__Z15test_accumulateI14PointerWrapperIdEdEvT_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %363, %struct.Memory* %336)
   %369 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 419), i64* %RDX, align 8, !tbaa !2428
   %370 = load i64, i64* getelementptr inbounds (%DVpb_type, %DVpb_type* @DVpb, i64 0, i32 0), align 8
@@ -49631,7 +49631,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %387, i64* %390, align 8
   store i64 %389, i64* %RSP, align 8, !tbaa !2428
   store i64 %386, i64* %PC, align 8, !tbaa !2428
-  %391 = tail call %struct.Memory* @sub_401f40__Z15test_accumulateIP12ValueWrapperIdES1_EvT_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %386, %struct.Memory* %368)
+  %391 = tail call %struct.Memory* @sub_401f40__Z15test_accumulateIP12ValueWrapperIdES1_EvT_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %386, %struct.Memory* %368)
   %392 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 461), i64* %RDX, align 8, !tbaa !2428
   %393 = load i64, i64* bitcast (%DVPb_type* @DVPb to i64*), align 8
@@ -49692,7 +49692,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %428, i64* %431, align 8
   store i64 %430, i64* %RSP, align 8, !tbaa !2428
   store i64 %427, i64* %PC, align 8, !tbaa !2428
-  %432 = tail call %struct.Memory* @sub_401fc0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %391)
+  %432 = tail call %struct.Memory* @sub_401fc0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %427, %struct.Memory* %391)
   %433 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 509), i64* %RDX, align 8, !tbaa !2428
   %434 = load i64, i64* getelementptr inbounds (%DV10pb_type, %DV10pb_type* @DV10pb, i64 0, i32 0), align 8
@@ -49728,7 +49728,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %451, i64* %454, align 8
   store i64 %453, i64* %RSP, align 8, !tbaa !2428
   store i64 %450, i64* %PC, align 8, !tbaa !2428
-  %455 = tail call %struct.Memory* @sub_402050__Z15test_accumulateIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %450, %struct.Memory* %432)
+  %455 = tail call %struct.Memory* @sub_402050__Z15test_accumulateIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %450, %struct.Memory* %432)
   %456 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 553), i64* %RDX, align 8, !tbaa !2428
   %457 = load i64, i64* bitcast (%DV10Pb_type* @DV10Pb to i64*), align 8
@@ -49789,7 +49789,7 @@ block_4012ec:                                     ; preds = %block_4012cc.block_
   store i64 %492, i64* %495, align 8
   store i64 %494, i64* %RSP, align 8, !tbaa !2428
   store i64 %491, i64* %PC, align 8, !tbaa !2428
-  %496 = tail call %struct.Memory* @sub_4020d0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %491, %struct.Memory* %455)
+  %496 = tail call %struct.Memory* @sub_4020d0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %491, %struct.Memory* %455)
   %497 = load i64, i64* %PC, align 8
   %498 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
   %499 = zext i32 %498 to i64
@@ -49865,7 +49865,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %537, i64* %540, align 8
   store i64 %539, i64* %RSP, align 8, !tbaa !2428
   store i64 %536, i64* %PC, align 8, !tbaa !2428
-  %541 = tail call %struct.Memory* @sub_402160__ZN9benchmark11fill_randomIPddEEvT_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %536, %struct.Memory* %533)
+  %541 = tail call %struct.Memory* @sub_402160__ZN9benchmark11fill_randomIPddEEvT_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %536, %struct.Memory* %533)
   %542 = load i64, i64* %PC, align 8
   %543 = load i64, i64* getelementptr inbounds (%dMpb_type, %dMpb_type* @dMpb, i64 0, i32 0), align 8
   store i64 %543, i64* %RDI, align 8, !tbaa !2428
@@ -49882,7 +49882,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %547, i64* %550, align 8
   store i64 %549, i64* %RSP, align 8, !tbaa !2428
   store i64 %546, i64* %PC, align 8, !tbaa !2428
-  %551 = tail call %struct.Memory* @sub_4021b0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %546, %struct.Memory* %541)
+  %551 = tail call %struct.Memory* @sub_4021b0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %546, %struct.Memory* %541)
   %552 = load i64, i64* %PC, align 8
   %553 = load i64, i64* getelementptr inbounds (%dMpb_type, %dMpb_type* @dMpb, i64 0, i32 0), align 8
   store i64 %553, i64* %RDI, align 8, !tbaa !2428
@@ -49898,7 +49898,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %557, i64* %560, align 8
   store i64 %559, i64* %RSP, align 8, !tbaa !2428
   store i64 %556, i64* %PC, align 8, !tbaa !2428
-  %561 = tail call %struct.Memory* @sub_402210__ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %556, %struct.Memory* %551)
+  %561 = tail call %struct.Memory* @sub_402210__ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %556, %struct.Memory* %551)
   %562 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 338), i64* %R8, align 8, !tbaa !2428
   %563 = load i64, i64* getelementptr inbounds (%dMpb_type, %dMpb_type* @dMpb, i64 0, i32 0), align 8
@@ -49925,7 +49925,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %573, i64* %576, align 8
   store i64 %575, i64* %RSP, align 8, !tbaa !2428
   store i64 %572, i64* %PC, align 8, !tbaa !2428
-  %577 = tail call %struct.Memory* @sub_402270__Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %572, %struct.Memory* %561)
+  %577 = tail call %struct.Memory* @sub_402270__Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %572, %struct.Memory* %561)
   %578 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 368), i64* %R8, align 8, !tbaa !2428
   %579 = load i64, i64* bitcast (%dMPb_type* @dMPb to i64*), align 8
@@ -50001,7 +50001,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %625, i64* %628, align 8
   store i64 %627, i64* %RSP, align 8, !tbaa !2428
   store i64 %624, i64* %PC, align 8, !tbaa !2428
-  %629 = tail call %struct.Memory* @sub_4022f0__Z19test_insertion_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %624, %struct.Memory* %577)
+  %629 = tail call %struct.Memory* @sub_4022f0__Z19test_insertion_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %624, %struct.Memory* %577)
   %630 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 404), i64* %R8, align 8, !tbaa !2428
   %631 = load i64, i64* getelementptr inbounds (%DVMpb_type, %DVMpb_type* @DVMpb, i64 0, i32 0), align 8
@@ -50041,7 +50041,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %650, i64* %653, align 8
   store i64 %652, i64* %RSP, align 8, !tbaa !2428
   store i64 %649, i64* %PC, align 8, !tbaa !2428
-  %654 = tail call %struct.Memory* @sub_4023a0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %649, %struct.Memory* %629)
+  %654 = tail call %struct.Memory* @sub_4023a0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %649, %struct.Memory* %629)
   %655 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 446), i64* %R8, align 8, !tbaa !2428
   %656 = load i64, i64* bitcast (%DVMPb_type* @DVMPb to i64*), align 8
@@ -50130,7 +50130,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %711, i64* %714, align 8
   store i64 %713, i64* %RSP, align 8, !tbaa !2428
   store i64 %710, i64* %PC, align 8, !tbaa !2428
-  %715 = tail call %struct.Memory* @sub_402420__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %710, %struct.Memory* %654)
+  %715 = tail call %struct.Memory* @sub_402420__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %710, %struct.Memory* %654)
   %716 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 494), i64* %R8, align 8, !tbaa !2428
   %717 = load i64, i64* getelementptr inbounds (%DV10Mpb_type, %DV10Mpb_type* @DV10Mpb, i64 0, i32 0), align 8
@@ -50170,7 +50170,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %736, i64* %739, align 8
   store i64 %738, i64* %RSP, align 8, !tbaa !2428
   store i64 %735, i64* %PC, align 8, !tbaa !2428
-  %740 = tail call %struct.Memory* @sub_4024d0__Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %735, %struct.Memory* %715)
+  %740 = tail call %struct.Memory* @sub_4024d0__Z19test_insertion_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %735, %struct.Memory* %715)
   %741 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 538), i64* %R8, align 8, !tbaa !2428
   %742 = load i64, i64* bitcast (%DV10MPb_type* @DV10MPb to i64*), align 8
@@ -50259,7 +50259,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %797, i64* %800, align 8
   store i64 %799, i64* %RSP, align 8, !tbaa !2428
   store i64 %796, i64* %PC, align 8, !tbaa !2428
-  %801 = tail call %struct.Memory* @sub_402550__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %796, %struct.Memory* %740)
+  %801 = tail call %struct.Memory* @sub_402550__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %796, %struct.Memory* %740)
   %802 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 588), i64* %R8, align 8, !tbaa !2428
   %803 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
@@ -50310,7 +50310,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %829, i64* %832, align 8
   store i64 %831, i64* %RSP, align 8, !tbaa !2428
   store i64 %828, i64* %PC, align 8, !tbaa !2428
-  %833 = tail call %struct.Memory* @sub_402600__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %828, %struct.Memory* %801)
+  %833 = tail call %struct.Memory* @sub_402600__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %828, %struct.Memory* %801)
   %834 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 613), i64* %R8, align 8, !tbaa !2428
   %835 = load i64, i64* bitcast (%dMPb_type* @dMPb to i64*), align 8
@@ -50386,7 +50386,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %881, i64* %884, align 8
   store i64 %883, i64* %RSP, align 8, !tbaa !2428
   store i64 %880, i64* %PC, align 8, !tbaa !2428
-  %885 = tail call %struct.Memory* @sub_402680__Z14test_quicksortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %880, %struct.Memory* %833)
+  %885 = tail call %struct.Memory* @sub_402680__Z14test_quicksortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %880, %struct.Memory* %833)
   %886 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 644), i64* %R8, align 8, !tbaa !2428
   %887 = load i64, i64* getelementptr inbounds (%DVMpb_type, %DVMpb_type* @DVMpb, i64 0, i32 0), align 8
@@ -50426,7 +50426,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %906, i64* %909, align 8
   store i64 %908, i64* %RSP, align 8, !tbaa !2428
   store i64 %905, i64* %PC, align 8, !tbaa !2428
-  %910 = tail call %struct.Memory* @sub_402730__Z14test_quicksortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %905, %struct.Memory* %885)
+  %910 = tail call %struct.Memory* @sub_402730__Z14test_quicksortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %905, %struct.Memory* %885)
   %911 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 681), i64* %R8, align 8, !tbaa !2428
   %912 = load i64, i64* bitcast (%DVMPb_type* @DVMPb to i64*), align 8
@@ -50515,7 +50515,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %967, i64* %970, align 8
   store i64 %969, i64* %RSP, align 8, !tbaa !2428
   store i64 %966, i64* %PC, align 8, !tbaa !2428
-  %971 = tail call %struct.Memory* @sub_4027b0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %966, %struct.Memory* %910)
+  %971 = tail call %struct.Memory* @sub_4027b0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %966, %struct.Memory* %910)
   %972 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 724), i64* %R8, align 8, !tbaa !2428
   %973 = load i64, i64* getelementptr inbounds (%DV10Mpb_type, %DV10Mpb_type* @DV10Mpb, i64 0, i32 0), align 8
@@ -50555,7 +50555,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %992, i64* %995, align 8
   store i64 %994, i64* %RSP, align 8, !tbaa !2428
   store i64 %991, i64* %PC, align 8, !tbaa !2428
-  %996 = tail call %struct.Memory* @sub_402860__Z14test_quicksortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %991, %struct.Memory* %971)
+  %996 = tail call %struct.Memory* @sub_402860__Z14test_quicksortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %991, %struct.Memory* %971)
   %997 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 763), i64* %R8, align 8, !tbaa !2428
   %998 = load i64, i64* bitcast (%DV10MPb_type* @DV10MPb to i64*), align 8
@@ -50644,7 +50644,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1053, i64* %1056, align 8
   store i64 %1055, i64* %RSP, align 8, !tbaa !2428
   store i64 %1052, i64* %PC, align 8, !tbaa !2428
-  %1057 = tail call %struct.Memory* @sub_4028e0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1052, %struct.Memory* %996)
+  %1057 = tail call %struct.Memory* @sub_4028e0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1052, %struct.Memory* %996)
   %1058 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 808), i64* %R8, align 8, !tbaa !2428
   %1059 = load i64, i64* getelementptr inbounds (%dMpb_type, %dMpb_type* @dMpb, i64 0, i32 0), align 8
@@ -50671,7 +50671,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1069, i64* %1072, align 8
   store i64 %1071, i64* %RSP, align 8, !tbaa !2428
   store i64 %1068, i64* %PC, align 8, !tbaa !2428
-  %1073 = tail call %struct.Memory* @sub_402990__Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1068, %struct.Memory* %1057)
+  %1073 = tail call %struct.Memory* @sub_402990__Z14test_heap_sortIPddEvT_S1_S1_S1_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1068, %struct.Memory* %1057)
   %1074 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 833), i64* %R8, align 8, !tbaa !2428
   %1075 = load i64, i64* bitcast (%dMPb_type* @dMPb to i64*), align 8
@@ -50747,7 +50747,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1121, i64* %1124, align 8
   store i64 %1123, i64* %RSP, align 8, !tbaa !2428
   store i64 %1120, i64* %PC, align 8, !tbaa !2428
-  %1125 = tail call %struct.Memory* @sub_402a10__Z14test_heap_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1120, %struct.Memory* %1073)
+  %1125 = tail call %struct.Memory* @sub_402a10__Z14test_heap_sortI14PointerWrapperIdEdEvT_S2_S2_S2_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1120, %struct.Memory* %1073)
   %1126 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 864), i64* %R8, align 8, !tbaa !2428
   %1127 = load i64, i64* getelementptr inbounds (%DVMpb_type, %DVMpb_type* @DVMpb, i64 0, i32 0), align 8
@@ -50787,7 +50787,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1146, i64* %1149, align 8
   store i64 %1148, i64* %RSP, align 8, !tbaa !2428
   store i64 %1145, i64* %PC, align 8, !tbaa !2428
-  %1150 = tail call %struct.Memory* @sub_402ac0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1145, %struct.Memory* %1125)
+  %1150 = tail call %struct.Memory* @sub_402ac0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1145, %struct.Memory* %1125)
   %1151 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 901), i64* %R8, align 8, !tbaa !2428
   %1152 = load i64, i64* bitcast (%DVMPb_type* @DVMPb to i64*), align 8
@@ -50876,7 +50876,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1207, i64* %1210, align 8
   store i64 %1209, i64* %RSP, align 8, !tbaa !2428
   store i64 %1206, i64* %PC, align 8, !tbaa !2428
-  %1211 = tail call %struct.Memory* @sub_402b40__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1206, %struct.Memory* %1150)
+  %1211 = tail call %struct.Memory* @sub_402b40__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_S4_S4_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1206, %struct.Memory* %1150)
   %1212 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 944), i64* %R8, align 8, !tbaa !2428
   %1213 = load i64, i64* getelementptr inbounds (%DV10Mpb_type, %DV10Mpb_type* @DV10Mpb, i64 0, i32 0), align 8
@@ -50916,7 +50916,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1232, i64* %1235, align 8
   store i64 %1234, i64* %RSP, align 8, !tbaa !2428
   store i64 %1231, i64* %PC, align 8, !tbaa !2428
-  %1236 = tail call %struct.Memory* @sub_402bf0__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1231, %struct.Memory* %1211)
+  %1236 = tail call %struct.Memory* @sub_402bf0__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1231, %struct.Memory* %1211)
   %1237 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_406740__rodata_type* @seg_406740__rodata to i64), i64 983), i64* %R8, align 8, !tbaa !2428
   %1238 = load i64, i64* bitcast (%DV10MPb_type* @DV10MPb to i64*), align 8
@@ -51005,7 +51005,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %525
   store i64 %1293, i64* %1296, align 8
   store i64 %1295, i64* %RSP, align 8, !tbaa !2428
   store i64 %1292, i64* %PC, align 8, !tbaa !2428
-  %1297 = tail call %struct.Memory* @sub_402c70__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1292, %struct.Memory* %1236)
+  %1297 = tail call %struct.Memory* @sub_402c70__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %1292, %struct.Memory* %1236)
   %1298 = load i64, i64* %PC, align 8
   store i64 0, i64* %RAX, align 8, !tbaa !2428
   %1299 = load i64, i64* %RSP, align 8
@@ -52002,7 +52002,7 @@ block_4063bf:                                     ; preds = %block_4063a5
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -48
   %65 = load i64, i64* %PC, align 8
@@ -52021,7 +52021,7 @@ block_4063bf:                                     ; preds = %block_4063a5
   store i64 %71, i64* %74, align 8
   store i64 %73, i64* %RSP, align 8, !tbaa !2428
   store i64 %70, i64* %PC, align 8, !tbaa !2428
-  %75 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
+  %75 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %70, %struct.Memory* %2)
   %76 = load i64, i64* %RBP, align 8
   %77 = add i64 %76, -32
   %78 = load i64, i64* %PC, align 8
@@ -52036,7 +52036,7 @@ block_4063bf:                                     ; preds = %block_4063a5
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %RSP, align 8, !tbaa !2428
   store i64 %80, i64* %PC, align 8, !tbaa !2428
-  %85 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
+  %85 = tail call %struct.Memory* @sub_4062b0__ZplIdE12ValueWrapperIT_ERKS2_S4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
   %86 = load i64, i64* %RBP, align 8
   %87 = add i64 %86, -40
   %88 = load i64, i64* %PC, align 8
@@ -52148,7 +52148,7 @@ block_4063a5:                                     ; preds = %block_4063bf, %bloc
   store i64 %155, i64* %158, align 8
   store i64 %157, i64* %RSP, align 8, !tbaa !2428
   store i64 %154, i64* %PC, align 8, !tbaa !2428
-  %159 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %2)
+  %159 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %2)
   %160 = load i8, i8* %AL, align 1
   %161 = load i64, i64* %PC, align 8
   %162 = and i8 %160, 1
@@ -52408,7 +52408,7 @@ block_401ea0:                                     ; preds = %block_401e90
   store i64 %81, i64* %84, align 8
   store i64 %83, i64* %RSP, align 8, !tbaa !2428
   store i64 %80, i64* %PC, align 8, !tbaa !2428
-  %85 = tail call %struct.Memory* @sub_4064f0__ZN9benchmark10accumulateIPddEET0_T_S3_S2__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
+  %85 = tail call %struct.Memory* @sub_4064f0__ZN9benchmark10accumulateIPddEET0_T_S3_S2__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %80, %struct.Memory* %2)
   %86 = load i64, i64* %PC, align 8
   %87 = add i64 %86, 16190
   %88 = add i64 %86, 5
@@ -52418,7 +52418,7 @@ block_401ea0:                                     ; preds = %block_401e90
   store i64 %88, i64* %91, align 8
   store i64 %90, i64* %RSP, align 8, !tbaa !2428
   store i64 %87, i64* %PC, align 8, !tbaa !2428
-  %92 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %87, %struct.Memory* %2)
+  %92 = tail call %struct.Memory* @sub_405df0__Z9check_sumd_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %87, %struct.Memory* %2)
   %93 = load i64, i64* %RBP, align 8
   %94 = add i64 %93, -36
   %95 = load i64, i64* %PC, align 8
@@ -52650,7 +52650,7 @@ block_401d80:
   store i64 %59, i64* %62, align 8
   store i64 %61, i64* %RSP, align 8, !tbaa !2428
   store i64 %58, i64* %PC, align 8, !tbaa !2428
-  %63 = tail call %struct.Memory* @sub_406540__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
+  %63 = tail call %struct.Memory* @sub_406540__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IdEERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %58, %struct.Memory* %2)
   %64 = load i64, i64* %RSP, align 8
   %65 = load i64, i64* %PC, align 8
   %66 = add i64 %64, 16
@@ -52779,7 +52779,7 @@ block_403ba0:
   store i64 %42, i64* %45, align 8
   store i64 %44, i64* %RSP, align 8, !tbaa !2428
   store i64 %41, i64* %PC, align 8, !tbaa !2428
-  %46 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
+  %46 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
   %47 = load i64, i64* %RBP, align 8
   %48 = add i64 %47, -40
   %49 = load i64, i64* %RAX, align 8
@@ -52821,7 +52821,7 @@ block_403be6:                                     ; preds = %block_403bcc
   store i64 %61, i64* %64, align 8
   store i64 %63, i64* %RSP, align 8, !tbaa !2428
   store i64 %60, i64* %PC, align 8, !tbaa !2428
-  %65 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %60, %struct.Memory* %46)
+  %65 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %60, %struct.Memory* %46)
   %66 = load i64, i64* %RBP, align 8
   %67 = add i64 %66, -48
   %68 = load i64, i64* %PC, align 8
@@ -52840,7 +52840,7 @@ block_403be6:                                     ; preds = %block_403bcc
   store i64 %74, i64* %77, align 8
   store i64 %76, i64* %RSP, align 8, !tbaa !2428
   store i64 %73, i64* %PC, align 8, !tbaa !2428
-  %78 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %73, %struct.Memory* %46)
+  %78 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %73, %struct.Memory* %46)
   %79 = load i64, i64* %RBP, align 8
   %80 = add i64 %79, -32
   %81 = load i64, i64* %PC, align 8
@@ -52867,7 +52867,7 @@ block_403be6:                                     ; preds = %block_403bcc
   store i64 %88, i64* %91, align 8
   store i64 %90, i64* %RSP, align 8, !tbaa !2428
   store i64 %87, i64* %PC, align 8, !tbaa !2428
-  %92 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %87, %struct.Memory* %46)
+  %92 = tail call %struct.Memory* @sub_403c60__ZppI12ValueWrapperIdEE14PointerWrapperIT_ERS4_i_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %87, %struct.Memory* %46)
   %93 = load i64, i64* %RBP, align 8
   %94 = add i64 %93, -56
   %95 = load i64, i64* %PC, align 8
@@ -52886,7 +52886,7 @@ block_403be6:                                     ; preds = %block_403bcc
   store i64 %101, i64* %104, align 8
   store i64 %103, i64* %RSP, align 8, !tbaa !2428
   store i64 %100, i64* %PC, align 8, !tbaa !2428
-  %105 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %100, %struct.Memory* %46)
+  %105 = tail call %struct.Memory* @sub_403cd0__ZNK14PointerWrapperI12ValueWrapperIdEEdeEv_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %100, %struct.Memory* %46)
   %106 = load i64, i64* %RBP, align 8
   %107 = add i64 %106, -64
   %108 = load i64, i64* %PC, align 8
@@ -52905,7 +52905,7 @@ block_403be6:                                     ; preds = %block_403bcc
   store i64 %114, i64* %117, align 8
   store i64 %116, i64* %RSP, align 8, !tbaa !2428
   store i64 %113, i64* %PC, align 8, !tbaa !2428
-  %118 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %113, %struct.Memory* %46)
+  %118 = tail call %struct.Memory* @sub_403250__ZltIdEbRK12ValueWrapperIT_ES4__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %113, %struct.Memory* %46)
   %119 = load i8, i8* %AL, align 1
   %120 = load i64, i64* %PC, align 8
   %121 = and i8 %119, 1
@@ -52955,7 +52955,7 @@ block_403bcc:                                     ; preds = %block_403c2e, %bloc
   store i64 %138, i64* %141, align 8
   store i64 %140, i64* %RSP, align 8, !tbaa !2428
   store i64 %137, i64* %PC, align 8, !tbaa !2428
-  %142 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %137, %struct.Memory* %46)
+  %142 = tail call %struct.Memory* @sub_403ca0__ZneI12ValueWrapperIdEEbRK14PointerWrapperIT_ES6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %137, %struct.Memory* %46)
   %143 = load i8, i8* %AL, align 1
   %144 = load i64, i64* %PC, align 8
   %145 = and i8 %143, 1
@@ -53123,7 +53123,7 @@ block_4060d0:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_406130__ZplI12ValueWrapperIS0_IS0_IS0_IdEEEEES0_IT_ERKS6_S8__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_406130__ZplI12ValueWrapperIS0_IS0_IS0_IdEEEEES0_IT_ERKS6_S8__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -53145,7 +53145,7 @@ block_4060d0:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406170__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IS4_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406170__ZN12ValueWrapperIS_IS_IS_IS_IS_IdEEEEEEC2IS4_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -53321,7 +53321,7 @@ block_403b40:
   store i64 %78, i64* %81, align 8
   store i64 %80, i64* %RSP, align 8, !tbaa !2428
   store i64 %77, i64* %PC, align 8, !tbaa !2428
-  %82 = tail call %struct.Memory* @sub_403ba0__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
+  %82 = tail call %struct.Memory* @sub_403ba0__ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %77, %struct.Memory* %2)
   %83 = load i8, i8* %AL, align 1
   %84 = load i64, i64* %PC, align 8
   %85 = and i8 %83, 1
@@ -53494,7 +53494,7 @@ block_401d30:
   store i64 %49, i64* %52, align 8
   store i64 %51, i64* %RSP, align 8, !tbaa !2428
   store i64 %48, i64* %PC, align 8, !tbaa !2428
-  %53 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
+  %53 = tail call %struct.Memory* @sub_401d50__ZN12ValueWrapperIdEC2Ev_renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %48, %struct.Memory* %2)
   %54 = load i64, i64* %RSP, align 8
   %55 = load i64, i64* %PC, align 8
   %56 = add i64 %54, 16
@@ -53731,7 +53731,7 @@ block_402508:                                     ; preds = %block_4024f8
   store i64 %121, i64* %124, align 8
   store i64 %123, i64* %RSP, align 8, !tbaa !2428
   store i64 %120, i64* %PC, align 8, !tbaa !2428
-  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
+  %125 = tail call %struct.Memory* @sub_403590__ZN9benchmark4copyIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESC_EEvT_SD_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %120, %struct.Memory* %2)
   %126 = load i64, i64* %RBP, align 8
   %127 = add i64 %126, -32
   %128 = load i64, i64* %PC, align 8
@@ -53754,7 +53754,7 @@ block_402508:                                     ; preds = %block_4024f8
   store i64 %137, i64* %140, align 8
   store i64 %139, i64* %RSP, align 8, !tbaa !2428
   store i64 %136, i64* %PC, align 8, !tbaa !2428
-  %141 = tail call %struct.Memory* @sub_405870__ZN9benchmark13insertionSortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
+  %141 = tail call %struct.Memory* @sub_405870__ZN9benchmark13insertionSortIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEESB_EEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %136, %struct.Memory* %2)
   %142 = load i64, i64* %RBP, align 8
   %143 = add i64 %142, -32
   %144 = load i64, i64* %PC, align 8
@@ -53777,7 +53777,7 @@ block_402508:                                     ; preds = %block_4024f8
   store i64 %153, i64* %156, align 8
   store i64 %155, i64* %RSP, align 8, !tbaa !2428
   store i64 %152, i64* %PC, align 8, !tbaa !2428
-  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
+  %157 = tail call %struct.Memory* @sub_4036e0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %152, %struct.Memory* %2)
   %158 = load i64, i64* %RBP, align 8
   %159 = add i64 %158, -52
   %160 = load i64, i64* %PC, align 8
@@ -54471,7 +54471,7 @@ block_406130:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_406190__ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_406190__ZplI12ValueWrapperIS0_IS0_IdEEEES0_IT_ERKS5_S7__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -54493,7 +54493,7 @@ block_406130:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_4061d0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IS3_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_4061d0__ZN12ValueWrapperIS_IS_IS_IS_IdEEEEEC2IS3_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8
@@ -54851,7 +54851,7 @@ block_402588:                                     ; preds = %block_402578
   store i64 %150, i64* %153, align 8
   store i64 %152, i64* %RSP, align 8, !tbaa !2428
   store i64 %149, i64* %PC, align 8, !tbaa !2428
-  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
+  %154 = tail call %struct.Memory* @sub_402d20__ZN9benchmark4copyI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESD_EEvT_SE_T0__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %149, %struct.Memory* %2)
   %155 = load i64, i64* %RBP, align 8
   %156 = add i64 %155, -24
   %157 = load i64, i64* %PC, align 8
@@ -54900,7 +54900,7 @@ block_402588:                                     ; preds = %block_402578
   store i64 %184, i64* %187, align 8
   store i64 %186, i64* %RSP, align 8, !tbaa !2428
   store i64 %183, i64* %PC, align 8, !tbaa !2428
-  %188 = tail call %struct.Memory* @sub_405750__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
+  %188 = tail call %struct.Memory* @sub_405750__ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEESC_EEvT_SE__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %183, %struct.Memory* %2)
   %189 = load i64, i64* %RBP, align 8
   %190 = add i64 %189, -24
   %191 = load i64, i64* %PC, align 8
@@ -54949,7 +54949,7 @@ block_402588:                                     ; preds = %block_402578
   store i64 %218, i64* %221, align 8
   store i64 %220, i64* %RSP, align 8, !tbaa !2428
   store i64 %217, i64* %PC, align 8, !tbaa !2428
-  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
+  %222 = tail call %struct.Memory* @sub_402ef0__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %217, %struct.Memory* %2)
   %223 = load i64, i64* %RBP, align 8
   %224 = add i64 %223, -52
   %225 = load i64, i64* %PC, align 8
@@ -55132,7 +55132,7 @@ block_406190:
   store i64 %58, i64* %61, align 8
   store i64 %60, i64* %RSP, align 8, !tbaa !2428
   store i64 %57, i64* %PC, align 8, !tbaa !2428
-  %62 = tail call %struct.Memory* @sub_4061f0__ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
+  %62 = tail call %struct.Memory* @sub_4061f0__ZplI12ValueWrapperIS0_IdEEES0_IT_ERKS4_S6__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %57, %struct.Memory* %2)
   %63 = load i64, i64* %RBP, align 8
   %64 = add i64 %63, -8
   %65 = load i64, i64* %PC, align 8
@@ -55154,7 +55154,7 @@ block_406190:
   store i64 %73, i64* %76, align 8
   store i64 %75, i64* %RSP, align 8, !tbaa !2428
   store i64 %72, i64* %PC, align 8, !tbaa !2428
-  %77 = tail call %struct.Memory* @sub_406230__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
+  %77 = tail call %struct.Memory* @sub_406230__ZN12ValueWrapperIS_IS_IS_IdEEEEC2IS2_EERKT__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %72, %struct.Memory* %62)
   %78 = load i64, i64* %RBP, align 8
   %79 = add i64 %78, -8
   %80 = load i64, i64* %PC, align 8

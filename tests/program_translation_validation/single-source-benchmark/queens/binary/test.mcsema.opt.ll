@@ -99,13 +99,13 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 
-declare %struct.Memory* @sub_400670_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400b30_find_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005a8__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400670_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400cb0_pboard_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400cb0_pboard_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400b30_find_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4005a8__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -1144,7 +1144,7 @@ block_400c1c:                                     ; preds = %block_400c0d
   store i64 %221, i64* %224, align 8
   store i64 %223, i64* %RSP, align 8, !tbaa !2428
   store i64 %220, i64* %PC, align 8, !tbaa !2428
-  %225 = tail call %struct.Memory* @sub_400b30_find_renamed_(%struct.State* nonnull %0, i64 %220, %struct.Memory* %2)
+  %225 = tail call %struct.Memory* @sub_400b30_find_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %220, %struct.Memory* %2)
   %226 = load i64, i64* %RBP, align 8
   %227 = add i64 %226, -32
   %228 = load i64, i64* %PC, align 8
@@ -1347,7 +1347,7 @@ block_400b6d:                                     ; preds = %block_400b4b
   store i64 %357, i64* %360, align 8
   store i64 %359, i64* %RSP, align 8, !tbaa !2428
   store i64 %356, i64* %PC, align 8, !tbaa !2428
-  %361 = tail call %struct.Memory* @sub_400cb0_pboard_renamed_(%struct.State* nonnull %0, i64 %356, %struct.Memory* %2)
+  %361 = tail call %struct.Memory* @sub_400cb0_pboard_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %356, %struct.Memory* %2)
   %.pre = load i64, i64* %PC, align 8
   br label %block_400b72
 
@@ -1836,7 +1836,7 @@ block_4006e9:                                     ; preds = %block_4006e0
   store i64 %33, i64* %35, align 8
   store i64 %34, i64* %27, align 8, !tbaa !2428
   store i64 %32, i64* %PC, align 8, !tbaa !2428
-  %36 = tail call %struct.Memory* @sub_400670_deregister_tm_clones_renamed_(%struct.State* nonnull %0, i64 %32, %struct.Memory* %2)
+  %36 = tail call %struct.Memory* @sub_400670_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %32, %struct.Memory* %2)
   %37 = load i64, i64* %PC, align 8
   store i8 1, i8* inttoptr (i64 add (i64 ptrtoint (%seg_602060__bss_type* @seg_602060__bss to i64), i64 40) to i8*), align 8
   %38 = add i64 %37, 8
@@ -3295,7 +3295,7 @@ block_400aa8:                                     ; preds = %block_400a6f
   store i64 %536, i64* %539, align 8
   store i64 %538, i64* %RSP, align 8, !tbaa !2428
   store i64 %535, i64* %PC, align 8, !tbaa !2428
-  %540 = tail call %struct.Memory* @sub_400b30_find_renamed_(%struct.State* nonnull %0, i64 %535, %struct.Memory* %595)
+  %540 = tail call %struct.Memory* @sub_400b30_find_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %535, %struct.Memory* %595)
   %541 = load i64, i64* %PC, align 8
   %542 = load i32, i32* bitcast (%printing_type* @printing to i32*), align 8
   store i8 0, i8* %15, align 1, !tbaa !2432
@@ -3985,7 +3985,7 @@ block_400da0:
   store i64 %64, i64* %66, align 8
   store i64 %65, i64* %RSP, align 8, !tbaa !2428
   store i64 %63, i64* %PC, align 8, !tbaa !2428
-  %67 = tail call %struct.Memory* @sub_4005a8__init_proc_renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
+  %67 = tail call %struct.Memory* @sub_4005a8__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
   %68 = load i64, i64* %RBP, align 8
   %69 = load i64, i64* %PC, align 8
   store i8 0, i8* %43, align 1, !tbaa !2432

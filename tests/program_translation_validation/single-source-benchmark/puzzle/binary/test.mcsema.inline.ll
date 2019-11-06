@@ -128,6 +128,86 @@ declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed_(%struct.Stat
 
 declare %struct.Memory* @sub_4005f0_rand_renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
+declare %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400640_srand_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400640_srand_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400640_srand_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400640_srand_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400640_srand_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 
 ; Function Attrs: argmemonly nounwind
@@ -1286,7 +1366,7 @@ block_400660:
   %207 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %198, i64* %207, align 8, !tbaa !2428
   %208 = load i64, i64* %PC
-  %209 = call %struct.Memory* @sub_4005f0_rand_renamed__renamed_(%struct.State* %0, i64 %208, %struct.Memory* %2)
+  %209 = call %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %208, %struct.Memory* %2)
   %210 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %211 = load i64, i64* %PC
   %212 = add i64 %211, 8
@@ -3506,7 +3586,7 @@ block_400970:
   %209 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %200, i64* %209, align 8, !tbaa !2428
   %210 = load i64, i64* %PC
-  %211 = call %struct.Memory* @sub_4004a0__init_proc_renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
+  %211 = call %struct.Memory* @sub_4004a0__init_proc_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %210, %struct.Memory* %2)
   %212 = load i64, i64* %RBP
   %213 = load i64, i64* %RBP
   %214 = load i64, i64* %PC
@@ -3990,7 +4070,7 @@ block_4005b9:                                     ; preds = %block_4005b0
   %76 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %67, i64* %76, align 8, !tbaa !2428
   %77 = load i64, i64* %PC
-  %78 = call %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
+  %78 = call %struct.Memory* @sub_400540_deregister_tm_clones_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %77, %struct.Memory* %2)
   %79 = load i64, i64* %PC
   %80 = add i64 %79, 7
   store i64 %80, i64* %PC
@@ -4326,7 +4406,7 @@ block_4008c0:
   %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %78, i64* %87, align 8, !tbaa !2428
   %88 = load i64, i64* %PC
-  %89 = call %struct.Memory* @sub_400640_srand_renamed__renamed_(%struct.State* %0, i64 %88, %struct.Memory* %2)
+  %89 = call %struct.Memory* @sub_400640_srand_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %88, %struct.Memory* %2)
   %90 = load i64, i64* %RBP
   %91 = sub i64 %90, 8
   %92 = load i64, i64* %PC
@@ -4666,7 +4746,7 @@ block_4008ea:                                     ; preds = %block_4008e0
   %340 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %331, i64* %340, align 8, !tbaa !2428
   %341 = load i64, i64* %PC
-  %342 = call %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed_(%struct.State* %0, i64 %341, %struct.Memory* %MEMORY.1)
+  %342 = call %struct.Memory* @sub_4007e0_createRandomArray_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %341, %struct.Memory* %MEMORY.1)
   %343 = load i64, i64* %RBP
   %344 = sub i64 %343, 24
   %345 = load i64, i64* %RAX
@@ -4713,7 +4793,7 @@ block_40090c:                                     ; preds = %block_4008ff
   %372 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %363, i64* %372, align 8, !tbaa !2428
   %373 = load i64, i64* %PC
-  %374 = call %struct.Memory* @sub_400860_findDuplicate_renamed__renamed_(%struct.State* %0, i64 %373, %struct.Memory* %MEMORY.0)
+  %374 = call %struct.Memory* @sub_400860_findDuplicate_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %373, %struct.Memory* %MEMORY.0)
   %375 = load i64, i64* %RBP
   %376 = sub i64 %375, 16
   %377 = load i32, i32* %EAX
@@ -5432,7 +5512,7 @@ block_400707:                                     ; preds = %block_4006fc
   %420 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %411, i64* %420, align 8, !tbaa !2428
   %421 = load i64, i64* %PC
-  %422 = call %struct.Memory* @sub_4005f0_rand_renamed__renamed_(%struct.State* %0, i64 %421, %struct.Memory* %MEMORY.0)
+  %422 = call %struct.Memory* @sub_4005f0_rand_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %421, %struct.Memory* %MEMORY.0)
   %423 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %424 = load i64, i64* %PC
   %425 = add i64 %424, 8
@@ -6602,7 +6682,7 @@ block_400837:                                     ; preds = %block_40080f
   %208 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %199, i64* %208, align 8, !tbaa !2428
   %209 = load i64, i64* %PC
-  %210 = call %struct.Memory* @sub_400660_randInt_renamed__renamed_(%struct.State* %0, i64 %209, %struct.Memory* %MEMORY.0)
+  %210 = call %struct.Memory* @sub_400660_randInt_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %209, %struct.Memory* %MEMORY.0)
   %211 = load i64, i64* %RBP
   %212 = sub i64 %211, 24
   %213 = load i64, i64* %PC
@@ -6652,7 +6732,7 @@ block_400837:                                     ; preds = %block_40080f
   %246 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   store i64 %237, i64* %246, align 8, !tbaa !2428
   %247 = load i64, i64* %PC
-  %248 = call %struct.Memory* @sub_4006e0_shuffle_renamed__renamed_(%struct.State* %0, i64 %247, %struct.Memory* %210)
+  %248 = call %struct.Memory* @sub_4006e0_shuffle_renamed__renamed__renamed__renamed__renamed__renamed__renamed_(%struct.State* %0, i64 %247, %struct.Memory* %210)
   %249 = load i64, i64* %RBP
   %250 = sub i64 %249, 24
   %251 = load i64, i64* %PC

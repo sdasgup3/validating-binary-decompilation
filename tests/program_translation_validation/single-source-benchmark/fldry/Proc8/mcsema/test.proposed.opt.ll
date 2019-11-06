@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x607368_type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x607368 = local_unnamed_addr global %G_0x607368_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -338,11 +340,11 @@ entry:
   %RCX.i102 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %RDX.i100 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %.pre = load i64, i64* %3, align 8
-  br label %block_.L_400be6
+  br label %block_.L_400bf6
 
-block_.L_400be6:                                  ; preds = %block_400c02, %entry
-  %208 = phi i64 [ %.pre, %entry ], [ %331, %block_400c02 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %249, %block_400c02 ]
+block_.L_400bf6:                                  ; preds = %block_400c12, %entry
+  %208 = phi i64 [ %.pre, %entry ], [ %331, %block_400c12 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %249, %block_400c12 ]
   %209 = add i64 %208, 1162
   %210 = add i64 %208, 8
   store i64 %210, i64* %3, align 8
@@ -373,7 +375,7 @@ block_.L_400be6:                                  ; preds = %block_400c02, %entr
   %226 = fcmp uno double %223, %225
   br i1 %226, label %227, label %237
 
-; <label>:227:                                    ; preds = %block_.L_400be6
+; <label>:227:                                    ; preds = %block_.L_400bf6
   %228 = fadd double %223, %225
   %229 = bitcast double %228 to i64
   %230 = and i64 %229, 9221120237041090560
@@ -388,7 +390,7 @@ block_.L_400be6:                                  ; preds = %block_400c02, %entr
   %.pre5 = load i64, i64* %3, align 8
   br label %routine_ucomisd__xmm1___xmm0.exit
 
-; <label>:237:                                    ; preds = %block_.L_400be6
+; <label>:237:                                    ; preds = %block_.L_400bf6
   %238 = fcmp ogt double %223, %225
   br i1 %238, label %243, label %239
 
@@ -423,10 +425,10 @@ routine_ucomisd__xmm1___xmm0.exit:                ; preds = %247, %235
   %.v = select i1 %251, i64 69, i64 6
   %252 = add i64 %248, %.v
   store i64 %252, i64* %3, align 8
-  %cmpBr_400bfc = icmp eq i8 %250, 1
-  br i1 %cmpBr_400bfc, label %block_.L_400c41, label %block_400c02
+  %cmpBr_400c0c = icmp eq i8 %250, 1
+  br i1 %cmpBr_400c0c, label %block_.L_400c51, label %block_400c12
 
-block_400c02:                                     ; preds = %routine_ucomisd__xmm1___xmm0.exit
+block_400c12:                                     ; preds = %routine_ucomisd__xmm1___xmm0.exit
   %253 = load i64, i64* %RBP.i, align 8
   %254 = add i64 %253, -48
   %255 = add i64 %252, 5
@@ -537,9 +539,9 @@ block_400c02:                                     ; preds = %routine_ucomisd__xm
   %330 = load i64, i64* %3, align 8
   %331 = add i64 %330, -86
   store i64 %331, i64* %3, align 8
-  br label %block_.L_400be6
+  br label %block_.L_400bf6
 
-block_.L_400c41:                                  ; preds = %routine_ucomisd__xmm1___xmm0.exit
+block_.L_400c51:                                  ; preds = %routine_ucomisd__xmm1___xmm0.exit
   %332 = add i64 %252, 1079
   %333 = add i64 %252, 8
   store i64 %333, i64* %3, align 8
@@ -773,7 +775,7 @@ block_.L_400c41:                                  ; preds = %routine_ucomisd__xm
   store i64 %501, i64* %502, align 8
   %503 = load i64, i64* %3, align 8
   %504 = load i64, i64* %35, align 1
-  store i64 %504, i64* inttoptr (i64 6321000 to i64*), align 8
+  store i64 %504, i64* bitcast (%G_0x607368_type* @G_0x607368 to i64*), align 8
   %505 = load i64, i64* %RBP.i, align 8
   %506 = add i64 %505, -4
   %507 = add i64 %503, 12
@@ -1335,7 +1337,7 @@ _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit: ; pre
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jb_.L_400c41(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jb_.L_400c51(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -1583,7 +1585,7 @@ block_400488:
 }
 
 ; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_400be6(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
+define %struct.Memory* @routine_jmpq_.L_400bf6(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -1817,7 +1819,7 @@ block_400488:
   store i64 %4, i64* %PC, align 8
   %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   %6 = load i64, i64* %5, align 1
-  store i64 %6, i64* inttoptr (i64 6321000 to i64*), align 8
+  store i64 %6, i64* bitcast (%G_0x607368_type* @G_0x607368 to i64*), align 8
   ret %struct.Memory* %2
 }
 

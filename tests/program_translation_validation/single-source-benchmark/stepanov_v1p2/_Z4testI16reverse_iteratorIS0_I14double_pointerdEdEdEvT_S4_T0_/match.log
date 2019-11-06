@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55aa61de6048]:   %201 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55aa620e41f8]:   %77 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
+[0x55aa620e4b78]:   %75 = load i32, i32* %74, align 4
+Multiple matches exist for [0x55aa61de6c20]:   %220 = lshr i32 %201, 31
+[0x55aa6210c5e0]:   %95 = lshr i32 %75, 31
+[0x55aa6210d270]:   %96 = lshr i32 %77, 31
+Multiple matches exist for [0x55aa61de6ca0]:   %221 = xor i32 %220, %219
+[0x55aa6210ccc0]:   %98 = xor i32 %93, %95
+[0x55aa6210d110]:   %97 = xor i32 %96, %95
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z4testI16reverse_iteratorIS0_I14double_pointerdEdEdEvT_S4_T0_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z4testI16reverse_iteratorIS0_I14double_pointerdEdEdEvT_S4_T0_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+6.35user 5.15system 0:12.78elapsed 89%CPU (0avgtext+0avgdata 17336maxresident)k
+0inputs+1320outputs (0major+3468minor)pagefaults 0swaps

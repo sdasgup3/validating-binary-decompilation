@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x5634ed0d7448]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5634ed33ca18]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x5634ed33d138]:   %84 = load i32, i32* %83, align 4
+Multiple matches exist for [0x5634ed0d8020]:   %216 = lshr i32 %197, 31
+[0x5634ed362870]:   %105 = lshr i32 %86, 31
+[0x5634ed362950]:   %104 = lshr i32 %84, 31
+Multiple matches exist for [0x5634ed0d80a0]:   %217 = xor i32 %216, %215
+[0x5634ed362530]:   %107 = xor i32 %102, %104
+[0x5634ed362710]:   %106 = xor i32 %105, %104
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z19test_insertion_sortIPddEvT_S1_S1_S1_T0_PKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+11.10user 4.72system 0:16.47elapsed 96%CPU (0avgtext+0avgdata 23872maxresident)k
+0inputs+1272outputs (0major+3455minor)pagefaults 0swaps

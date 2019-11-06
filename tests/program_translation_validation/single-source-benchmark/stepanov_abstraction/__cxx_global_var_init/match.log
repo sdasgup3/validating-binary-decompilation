@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x561babe13fe0]:   %43 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%VData_type* @VData to i64), i64 16000) to i32), i32 255)) #12
+[0x561bab84db50]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x561bab85d8b0]:   %77 = tail call i32 @llvm.ctpop.i32(i32 %76)
+[0x561bab85da80]:   %45 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x60cfb0_type* @G__0x60cfb0 to i64), i64 16000) to i32), i32 255))
+[0x561babb12f30]:   %110 = tail call i32 @llvm.ctpop.i32(i32 %109)
+[0x561bac0d1320]:   %call2_400806 = tail call %struct.Memory.31* @sub_401d60._ZN12ValueWrapperIdEC2Ev(%struct.State.0* nonnull %0, i64 %59, %struct.Memory.31* %2)
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [__cxx_global_var_init] from ../binary/test.mcsema.opt.ll
+Extracting function [__cxx_global_var_init] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.59user 1.82system 0:05.69elapsed 95%CPU (0avgtext+0avgdata 23840maxresident)k
+0inputs+584outputs (0major+3480minor)pagefaults 0swaps

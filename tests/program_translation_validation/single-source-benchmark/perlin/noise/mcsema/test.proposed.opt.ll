@@ -52,11 +52,11 @@ declare extern_weak x86_64_sysvcc i64 @floor(i64)
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
-declare %struct.Memory* @sub_400ba0.fade(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400bb0.fade(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400bf0.grad(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400c00.grad(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400d40.lerp(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400d50.lerp(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
 define %struct.Memory* @noise(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
@@ -403,7 +403,7 @@ entry:
   store i64 %236, i64* %239, align 8
   store i64 %238, i64* %6, align 8
   store i64 %235, i64* %3, align 8
-  %call2_400789 = tail call %struct.Memory* @sub_400ba0.fade(%struct.State* %0, i64 %235, %struct.Memory* %218)
+  %call2_400799 = tail call %struct.Memory* @sub_400bb0.fade(%struct.State* %0, i64 %235, %struct.Memory* %218)
   %240 = load i64, i64* %RBP.i, align 8
   %241 = add i64 %240, -48
   %242 = load i64, i64* %3, align 8
@@ -429,7 +429,7 @@ entry:
   store i64 %253, i64* %256, align 8
   store i64 %255, i64* %6, align 8
   store i64 %252, i64* %3, align 8
-  %call2_400798 = tail call %struct.Memory* @sub_400ba0.fade(%struct.State* %0, i64 %252, %struct.Memory* %call2_400789)
+  %call2_4007a8 = tail call %struct.Memory* @sub_400bb0.fade(%struct.State* %0, i64 %252, %struct.Memory* %call2_400799)
   %257 = load i64, i64* %RBP.i, align 8
   %258 = add i64 %257, -56
   %259 = load i64, i64* %3, align 8
@@ -455,7 +455,7 @@ entry:
   store i64 %270, i64* %273, align 8
   store i64 %272, i64* %6, align 8
   store i64 %269, i64* %3, align 8
-  %call2_4007a7 = tail call %struct.Memory* @sub_400ba0.fade(%struct.State* %0, i64 %269, %struct.Memory* %call2_400798)
+  %call2_4007b7 = tail call %struct.Memory* @sub_400bb0.fade(%struct.State* %0, i64 %269, %struct.Memory* %call2_4007a8)
   %274 = load i64, i64* %RBP.i, align 8
   %275 = add i64 %274, -64
   %276 = load i64, i64* %3, align 8
@@ -1084,7 +1084,7 @@ entry:
   store i64 %746, i64* %749, align 8
   store i64 %748, i64* %6, align 8
   store i64 %745, i64* %3, align 8
-  %call2_400867 = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %745, %struct.Memory* %call2_4007a7)
+  %call2_400877 = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %745, %struct.Memory* %call2_4007b7)
   %750 = load i64, i64* %3, align 8
   %751 = add i64 %750, 1508
   %752 = add i64 %750, 8
@@ -1169,7 +1169,7 @@ entry:
   store i64 %801, i64* %804, align 8
   store i64 %803, i64* %6, align 8
   store i64 %800, i64* %3, align 8
-  %call2_40089d = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %800, %struct.Memory* %call2_400867)
+  %call2_4008ad = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %800, %struct.Memory* %call2_400877)
   %805 = load i64, i64* %RBP.i, align 8
   %806 = add i64 %805, -112
   %807 = load i64, i64* %3, align 8
@@ -1221,7 +1221,7 @@ entry:
   store i64 %834, i64* %837, align 8
   store i64 %836, i64* %6, align 8
   store i64 %833, i64* %3, align 8
-  %call2_4008b9 = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %833, %struct.Memory* %call2_40089d)
+  %call2_4008c9 = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %833, %struct.Memory* %call2_4008ad)
   %838 = load i64, i64* %3, align 8
   %839 = add i64 %838, 1426
   %840 = add i64 %838, 8
@@ -1343,7 +1343,7 @@ entry:
   store i64 %913, i64* %916, align 8
   store i64 %915, i64* %6, align 8
   store i64 %912, i64* %3, align 8
-  %call2_400912 = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %912, %struct.Memory* %call2_4008b9)
+  %call2_400922 = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %912, %struct.Memory* %call2_4008c9)
   %917 = load i64, i64* %3, align 8
   %918 = add i64 %917, 1337
   %919 = add i64 %917, 8
@@ -1442,7 +1442,7 @@ entry:
   store i64 %978, i64* %981, align 8
   store i64 %980, i64* %6, align 8
   store i64 %977, i64* %3, align 8
-  %call2_40095f = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %977, %struct.Memory* %call2_400912)
+  %call2_40096f = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %977, %struct.Memory* %call2_400922)
   %982 = load i64, i64* %RBP.i, align 8
   %983 = add i64 %982, -152
   %984 = load i64, i64* %3, align 8
@@ -1492,7 +1492,7 @@ entry:
   store i64 %1009, i64* %1012, align 8
   store i64 %1011, i64* %6, align 8
   store i64 %1008, i64* %3, align 8
-  %call2_400987 = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1008, %struct.Memory* %call2_40095f)
+  %call2_400997 = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1008, %struct.Memory* %call2_40096f)
   %1013 = load i64, i64* %RBP.i, align 8
   %1014 = add i64 %1013, -104
   %1015 = load i64, i64* %3, align 8
@@ -1542,7 +1542,7 @@ entry:
   store i64 %1040, i64* %1043, align 8
   store i64 %1042, i64* %6, align 8
   store i64 %1039, i64* %3, align 8
-  %call2_4009ac = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1039, %struct.Memory* %call2_400987)
+  %call2_4009bc = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1039, %struct.Memory* %call2_400997)
   %1044 = load i64, i64* %3, align 8
   %1045 = add i64 %1044, 1183
   %1046 = add i64 %1044, 8
@@ -1701,7 +1701,7 @@ entry:
   store i64 %1148, i64* %1151, align 8
   store i64 %1150, i64* %6, align 8
   store i64 %1147, i64* %3, align 8
-  %call2_400a07 = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %1147, %struct.Memory* %call2_4009ac)
+  %call2_400a17 = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %1147, %struct.Memory* %call2_4009bc)
   %1152 = load i64, i64* %3, align 8
   %1153 = add i64 %1152, 1092
   %1154 = add i64 %1152, 8
@@ -1825,7 +1825,7 @@ entry:
   store i64 %1231, i64* %1234, align 8
   store i64 %1233, i64* %6, align 8
   store i64 %1230, i64* %3, align 8
-  %call2_400a4c = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %1230, %struct.Memory* %call2_400a07)
+  %call2_400a5c = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %1230, %struct.Memory* %call2_400a17)
   %1235 = load i64, i64* %RBP.i, align 8
   %1236 = add i64 %1235, -208
   %1237 = load i64, i64* %3, align 8
@@ -1875,7 +1875,7 @@ entry:
   store i64 %1262, i64* %1265, align 8
   store i64 %1264, i64* %6, align 8
   store i64 %1261, i64* %3, align 8
-  %call2_400a74 = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1261, %struct.Memory* %call2_400a4c)
+  %call2_400a84 = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1261, %struct.Memory* %call2_400a5c)
   %1266 = load i64, i64* %3, align 8
   %1267 = add i64 %1266, 983
   %1268 = add i64 %1266, 8
@@ -2014,7 +2014,7 @@ entry:
   store i64 %1355, i64* %1358, align 8
   store i64 %1357, i64* %6, align 8
   store i64 %1354, i64* %3, align 8
-  %call2_400ac6 = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %1354, %struct.Memory* %call2_400a74)
+  %call2_400ad6 = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %1354, %struct.Memory* %call2_400a84)
   %1359 = load i64, i64* %3, align 8
   %1360 = add i64 %1359, 901
   %1361 = add i64 %1359, 8
@@ -2139,7 +2139,7 @@ entry:
   store i64 %1439, i64* %1442, align 8
   store i64 %1441, i64* %6, align 8
   store i64 %1438, i64* %3, align 8
-  %call2_400b0f = tail call %struct.Memory* @sub_400bf0.grad(%struct.State* %0, i64 %1438, %struct.Memory* %call2_400ac6)
+  %call2_400b1f = tail call %struct.Memory* @sub_400c00.grad(%struct.State* %0, i64 %1438, %struct.Memory* %call2_400ad6)
   %1443 = load i64, i64* %RBP.i, align 8
   %1444 = add i64 %1443, -240
   %1445 = load i64, i64* %3, align 8
@@ -2189,7 +2189,7 @@ entry:
   store i64 %1470, i64* %1473, align 8
   store i64 %1472, i64* %6, align 8
   store i64 %1469, i64* %3, align 8
-  %call2_400b37 = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1469, %struct.Memory* %call2_400b0f)
+  %call2_400b47 = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1469, %struct.Memory* %call2_400b1f)
   %1474 = load i64, i64* %RBP.i, align 8
   %1475 = add i64 %1474, -200
   %1476 = load i64, i64* %3, align 8
@@ -2239,7 +2239,7 @@ entry:
   store i64 %1501, i64* %1504, align 8
   store i64 %1503, i64* %6, align 8
   store i64 %1500, i64* %3, align 8
-  %call2_400b5f = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1500, %struct.Memory* %call2_400b37)
+  %call2_400b6f = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1500, %struct.Memory* %call2_400b47)
   %1505 = load i64, i64* %RBP.i, align 8
   %1506 = add i64 %1505, -96
   %1507 = load i64, i64* %3, align 8
@@ -2289,7 +2289,7 @@ entry:
   store i64 %1532, i64* %1535, align 8
   store i64 %1534, i64* %6, align 8
   store i64 %1531, i64* %3, align 8
-  %call2_400b84 = tail call %struct.Memory* @sub_400d40.lerp(%struct.State* %0, i64 %1531, %struct.Memory* %call2_400b5f)
+  %call2_400b94 = tail call %struct.Memory* @sub_400d50.lerp(%struct.State* %0, i64 %1531, %struct.Memory* %call2_400b6f)
   %1536 = load i64, i64* %6, align 8
   %1537 = load i64, i64* %3, align 8
   %1538 = add i64 %1536, 272
@@ -2336,7 +2336,7 @@ entry:
   store i64 %1567, i64* %3, align 8
   %1568 = add i64 %1536, 288
   store i64 %1568, i64* %6, align 8
-  ret %struct.Memory* %call2_400b84
+  ret %struct.Memory* %call2_400b94
 }
 
 ; Function Attrs: norecurse nounwind

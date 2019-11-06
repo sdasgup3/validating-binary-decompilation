@@ -1,48 +1,7 @@
 
-stepanov_v1p2/_ZN3$_0clERK6DoubleS2_
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_ZN3$_0clERK6DoubleS2_'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function _ZN3/usr/bin/make0clERK6DoubleS2_ --input ../binary/test 1>compd.log 2>&1
-Makefile:13: recipe for target 'compd' failed
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_ZN3$_0clERK6DoubleS2_'
-make: *** [compd] Error 134
-
-stepanov_v1p2/_ZN3$_0clERKdS1_
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_ZN3$_0clERKdS1_'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function _ZN3/usr/bin/make0clERKdS1_ --input ../binary/test 1>compd.log 2>&1
-Makefile:13: recipe for target 'compd' failed
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/stepanov_v1p2/_ZN3$_0clERKdS1_'
-make: *** [compd] Error 134
-
-salsa20/salsa
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/salsa20/salsa'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function salsa --input ../binary/test 1>compd.log 2>&1
-[31mCompd Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/salsa20/salsa:salsa
-Makefile:13: recipe for target 'compd' failed
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/salsa20/salsa'
-make: *** [compd] Error 1
-
 simple_types_constant_folding/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/main'
-
-flops/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/flops/main'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
-[31mCompd Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/flops/main:main
-Makefile:13: recipe for target 'compd' failed
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/flops/main'
-make: *** [compd] Error 1
-
-simple_types_loop_invariant/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'
-/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_loop_invariant/main'

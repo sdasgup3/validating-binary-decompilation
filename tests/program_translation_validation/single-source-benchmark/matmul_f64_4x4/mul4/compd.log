@@ -4,357 +4,357 @@ Disassembled output
   .globl mul4
   .type mul4, @function
 
-#! file-offset 0x580
-#! rip-offset  0x400580
+#! file-offset 0x590
+#! rip-offset  0x400590
 #! capacity    1513 bytes
 
 # Text                             #  Line  RIP       Bytes  Opcode              Target                
-.mul4:                             #        0x400580  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                       #  1     0x400580  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                  #  2     0x400581  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x20, %rsp                 #  3     0x400584  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq %rdi, -0x8(%rbp)            #  4     0x400588  4      OPC=movq_m64_r64    18446744073709551615  
-  movq %rsi, -0x10(%rbp)           #  5     0x40058c  4      OPC=movq_m64_r64    18446744073709551615  
-  movq %rdx, -0x18(%rbp)           #  6     0x400590  4      OPC=movq_m64_r64    18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  7     0x400594  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd (%rdx), %xmm0              #  8     0x400598  4      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  9     0x40059c  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd (%rdx), %xmm0              #  10    0x4005a0  4      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  11    0x4005a4  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x8(%rdx), %xmm1           #  12    0x4005a8  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  13    0x4005ad  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x20(%rdx), %xmm1          #  14    0x4005b1  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  15    0x4005b6  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  16    0x4005ba  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x10(%rdx), %xmm1          #  17    0x4005be  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  18    0x4005c3  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x40(%rdx), %xmm1          #  19    0x4005c7  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  20    0x4005cc  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  21    0x4005d0  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x18(%rdx), %xmm1          #  22    0x4005d4  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  23    0x4005d9  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x60(%rdx), %xmm1          #  24    0x4005dd  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  25    0x4005e2  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0xa0(%rbp)         #  26    0x4005e6  8      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  27    0x4005ee  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd (%rdx), %xmm0              #  28    0x4005f2  4      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  29    0x4005f6  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x8(%rdx), %xmm0           #  30    0x4005fa  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  31    0x4005ff  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x8(%rdx), %xmm1           #  32    0x400603  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  33    0x400608  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x28(%rdx), %xmm1          #  34    0x40060c  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  35    0x400611  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  36    0x400615  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x10(%rdx), %xmm1          #  37    0x400619  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  38    0x40061e  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x48(%rdx), %xmm1          #  39    0x400622  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  40    0x400627  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  41    0x40062b  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x18(%rdx), %xmm1          #  42    0x40062f  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  43    0x400634  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x68(%rdx), %xmm1          #  44    0x400638  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  45    0x40063d  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x98(%rbp)         #  46    0x400641  8      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  47    0x400649  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd (%rdx), %xmm0              #  48    0x40064d  4      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  49    0x400651  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x10(%rdx), %xmm0          #  50    0x400655  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  51    0x40065a  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x8(%rdx), %xmm1           #  52    0x40065e  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  53    0x400663  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x30(%rdx), %xmm1          #  54    0x400667  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  55    0x40066c  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  56    0x400670  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x10(%rdx), %xmm1          #  57    0x400674  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  58    0x400679  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x50(%rdx), %xmm1          #  59    0x40067d  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  60    0x400682  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  61    0x400686  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x18(%rdx), %xmm1          #  62    0x40068a  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  63    0x40068f  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x70(%rdx), %xmm1          #  64    0x400693  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  65    0x400698  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x90(%rbp)         #  66    0x40069c  8      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  67    0x4006a4  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd (%rdx), %xmm0              #  68    0x4006a8  4      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  69    0x4006ac  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x18(%rdx), %xmm0          #  70    0x4006b0  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  71    0x4006b5  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x8(%rdx), %xmm1           #  72    0x4006b9  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  73    0x4006be  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x38(%rdx), %xmm1          #  74    0x4006c2  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  75    0x4006c7  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  76    0x4006cb  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x10(%rdx), %xmm1          #  77    0x4006cf  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  78    0x4006d4  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x58(%rdx), %xmm1          #  79    0x4006d8  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  80    0x4006dd  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  81    0x4006e1  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x18(%rdx), %xmm1          #  82    0x4006e5  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  83    0x4006ea  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x78(%rdx), %xmm1          #  84    0x4006ee  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  85    0x4006f3  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x88(%rbp)         #  86    0x4006f7  8      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  87    0x4006ff  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x20(%rdx), %xmm0          #  88    0x400703  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  89    0x400708  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd (%rdx), %xmm0              #  90    0x40070c  4      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  91    0x400710  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x28(%rdx), %xmm1          #  92    0x400714  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  93    0x400719  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x20(%rdx), %xmm1          #  94    0x40071d  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  95    0x400722  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  96    0x400726  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x30(%rdx), %xmm1          #  97    0x40072a  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  98    0x40072f  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x40(%rdx), %xmm1          #  99    0x400733  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  100   0x400738  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  101   0x40073c  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x38(%rdx), %xmm1          #  102   0x400740  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  103   0x400745  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x60(%rdx), %xmm1          #  104   0x400749  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  105   0x40074e  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x80(%rbp)         #  106   0x400752  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  107   0x400757  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x20(%rdx), %xmm0          #  108   0x40075b  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  109   0x400760  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x8(%rdx), %xmm0           #  110   0x400764  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  111   0x400769  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x28(%rdx), %xmm1          #  112   0x40076d  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  113   0x400772  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x28(%rdx), %xmm1          #  114   0x400776  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  115   0x40077b  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  116   0x40077f  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x30(%rdx), %xmm1          #  117   0x400783  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  118   0x400788  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x48(%rdx), %xmm1          #  119   0x40078c  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  120   0x400791  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  121   0x400795  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x38(%rdx), %xmm1          #  122   0x400799  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  123   0x40079e  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x68(%rdx), %xmm1          #  124   0x4007a2  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  125   0x4007a7  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x78(%rbp)         #  126   0x4007ab  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  127   0x4007b0  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x20(%rdx), %xmm0          #  128   0x4007b4  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  129   0x4007b9  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x10(%rdx), %xmm0          #  130   0x4007bd  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  131   0x4007c2  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x28(%rdx), %xmm1          #  132   0x4007c6  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  133   0x4007cb  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x30(%rdx), %xmm1          #  134   0x4007cf  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  135   0x4007d4  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  136   0x4007d8  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x30(%rdx), %xmm1          #  137   0x4007dc  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  138   0x4007e1  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x50(%rdx), %xmm1          #  139   0x4007e5  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  140   0x4007ea  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  141   0x4007ee  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x38(%rdx), %xmm1          #  142   0x4007f2  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  143   0x4007f7  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x70(%rdx), %xmm1          #  144   0x4007fb  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  145   0x400800  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x70(%rbp)         #  146   0x400804  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  147   0x400809  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x20(%rdx), %xmm0          #  148   0x40080d  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  149   0x400812  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x18(%rdx), %xmm0          #  150   0x400816  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  151   0x40081b  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x28(%rdx), %xmm1          #  152   0x40081f  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  153   0x400824  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x38(%rdx), %xmm1          #  154   0x400828  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  155   0x40082d  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  156   0x400831  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x30(%rdx), %xmm1          #  157   0x400835  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  158   0x40083a  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x58(%rdx), %xmm1          #  159   0x40083e  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  160   0x400843  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  161   0x400847  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x38(%rdx), %xmm1          #  162   0x40084b  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  163   0x400850  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x78(%rdx), %xmm1          #  164   0x400854  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  165   0x400859  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x68(%rbp)         #  166   0x40085d  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  167   0x400862  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x40(%rdx), %xmm0          #  168   0x400866  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  169   0x40086b  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd (%rdx), %xmm0              #  170   0x40086f  4      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  171   0x400873  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x48(%rdx), %xmm1          #  172   0x400877  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  173   0x40087c  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x20(%rdx), %xmm1          #  174   0x400880  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  175   0x400885  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  176   0x400889  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x50(%rdx), %xmm1          #  177   0x40088d  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  178   0x400892  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x40(%rdx), %xmm1          #  179   0x400896  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  180   0x40089b  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  181   0x40089f  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x58(%rdx), %xmm1          #  182   0x4008a3  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  183   0x4008a8  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x60(%rdx), %xmm1          #  184   0x4008ac  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  185   0x4008b1  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x60(%rbp)         #  186   0x4008b5  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  187   0x4008ba  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x40(%rdx), %xmm0          #  188   0x4008be  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  189   0x4008c3  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x8(%rdx), %xmm0           #  190   0x4008c7  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  191   0x4008cc  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x48(%rdx), %xmm1          #  192   0x4008d0  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  193   0x4008d5  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x28(%rdx), %xmm1          #  194   0x4008d9  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  195   0x4008de  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  196   0x4008e2  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x50(%rdx), %xmm1          #  197   0x4008e6  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  198   0x4008eb  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x48(%rdx), %xmm1          #  199   0x4008ef  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  200   0x4008f4  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  201   0x4008f8  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x58(%rdx), %xmm1          #  202   0x4008fc  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  203   0x400901  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x68(%rdx), %xmm1          #  204   0x400905  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  205   0x40090a  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x58(%rbp)         #  206   0x40090e  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  207   0x400913  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x40(%rdx), %xmm0          #  208   0x400917  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  209   0x40091c  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x10(%rdx), %xmm0          #  210   0x400920  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  211   0x400925  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x48(%rdx), %xmm1          #  212   0x400929  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  213   0x40092e  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x30(%rdx), %xmm1          #  214   0x400932  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  215   0x400937  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  216   0x40093b  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x50(%rdx), %xmm1          #  217   0x40093f  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  218   0x400944  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x50(%rdx), %xmm1          #  219   0x400948  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  220   0x40094d  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  221   0x400951  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x58(%rdx), %xmm1          #  222   0x400955  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  223   0x40095a  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x70(%rdx), %xmm1          #  224   0x40095e  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  225   0x400963  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x50(%rbp)         #  226   0x400967  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  227   0x40096c  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x40(%rdx), %xmm0          #  228   0x400970  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  229   0x400975  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x18(%rdx), %xmm0          #  230   0x400979  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  231   0x40097e  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x48(%rdx), %xmm1          #  232   0x400982  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  233   0x400987  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x38(%rdx), %xmm1          #  234   0x40098b  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  235   0x400990  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  236   0x400994  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x50(%rdx), %xmm1          #  237   0x400998  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  238   0x40099d  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x58(%rdx), %xmm1          #  239   0x4009a1  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  240   0x4009a6  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  241   0x4009aa  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x58(%rdx), %xmm1          #  242   0x4009ae  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  243   0x4009b3  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x78(%rdx), %xmm1          #  244   0x4009b7  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  245   0x4009bc  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x48(%rbp)         #  246   0x4009c0  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  247   0x4009c5  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x60(%rdx), %xmm0          #  248   0x4009c9  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  249   0x4009ce  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd (%rdx), %xmm0              #  250   0x4009d2  4      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  251   0x4009d6  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x68(%rdx), %xmm1          #  252   0x4009da  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  253   0x4009df  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x20(%rdx), %xmm1          #  254   0x4009e3  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  255   0x4009e8  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  256   0x4009ec  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x70(%rdx), %xmm1          #  257   0x4009f0  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  258   0x4009f5  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x40(%rdx), %xmm1          #  259   0x4009f9  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  260   0x4009fe  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  261   0x400a02  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x78(%rdx), %xmm1          #  262   0x400a06  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  263   0x400a0b  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x60(%rdx), %xmm1          #  264   0x400a0f  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  265   0x400a14  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x40(%rbp)         #  266   0x400a18  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  267   0x400a1d  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x60(%rdx), %xmm0          #  268   0x400a21  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  269   0x400a26  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x8(%rdx), %xmm0           #  270   0x400a2a  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  271   0x400a2f  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x68(%rdx), %xmm1          #  272   0x400a33  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  273   0x400a38  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x28(%rdx), %xmm1          #  274   0x400a3c  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  275   0x400a41  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  276   0x400a45  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x70(%rdx), %xmm1          #  277   0x400a49  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  278   0x400a4e  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x48(%rdx), %xmm1          #  279   0x400a52  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  280   0x400a57  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  281   0x400a5b  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x78(%rdx), %xmm1          #  282   0x400a5f  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  283   0x400a64  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x68(%rdx), %xmm1          #  284   0x400a68  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  285   0x400a6d  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x38(%rbp)         #  286   0x400a71  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  287   0x400a76  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x60(%rdx), %xmm0          #  288   0x400a7a  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  289   0x400a7f  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x10(%rdx), %xmm0          #  290   0x400a83  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  291   0x400a88  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x68(%rdx), %xmm1          #  292   0x400a8c  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  293   0x400a91  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x30(%rdx), %xmm1          #  294   0x400a95  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  295   0x400a9a  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  296   0x400a9e  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x70(%rdx), %xmm1          #  297   0x400aa2  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  298   0x400aa7  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x50(%rdx), %xmm1          #  299   0x400aab  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  300   0x400ab0  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  301   0x400ab4  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x78(%rdx), %xmm1          #  302   0x400ab8  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  303   0x400abd  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x70(%rdx), %xmm1          #  304   0x400ac1  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  305   0x400ac6  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x30(%rbp)         #  306   0x400aca  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  307   0x400acf  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x60(%rdx), %xmm0          #  308   0x400ad3  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  309   0x400ad8  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x18(%rdx), %xmm0          #  310   0x400adc  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  311   0x400ae1  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x68(%rdx), %xmm1          #  312   0x400ae5  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  313   0x400aea  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x38(%rdx), %xmm1          #  314   0x400aee  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  315   0x400af3  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  316   0x400af7  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x70(%rdx), %xmm1          #  317   0x400afb  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  318   0x400b00  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x58(%rdx), %xmm1          #  319   0x400b04  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  320   0x400b09  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movq -0x10(%rbp), %rdx           #  321   0x400b0d  4      OPC=movq_r64_m64    18446744073709551615  
-  movsd 0x78(%rdx), %xmm1          #  322   0x400b11  5      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x18(%rbp), %rdx           #  323   0x400b16  4      OPC=movq_r64_m64    18446744073709551615  
-  mulsd 0x78(%rdx), %xmm1          #  324   0x400b1a  5      OPC=mulsd_xmm_m64   18446744073709551615  
-  addsd %xmm1, %xmm0               #  325   0x400b1f  4      OPC=addsd_xmm_xmm   18446744073709551615  
-  movsd %xmm0, -0x28(%rbp)         #  326   0x400b23  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movl $0x0, -0x1c(%rbp)           #  327   0x400b28  7      OPC=movl_m32_imm32  18446744073709551615  
-.L_400b2f:                         #        0x400b2f  0      OPC=<label>         18446744073709551615  
-  cmpl $0x10, -0x1c(%rbp)          #  328   0x400b2f  4      OPC=cmpl_m32_imm8   18446744073709551615  
-  jae .L_400b63                    #  329   0x400b33  6      OPC=jae_label_1     4197219               
-  movl -0x1c(%rbp), %eax           #  330   0x400b39  3      OPC=movl_r32_m32    18446744073709551615  
-  movl %eax, %ecx                  #  331   0x400b3c  2      OPC=movl_r32_r32    18446744073709551615  
-  movsd -0xa0(%rbp,%rcx,8), %xmm0  #  332   0x400b3e  9      OPC=movsd_xmm_m64   18446744073709551615  
-  movq -0x8(%rbp), %rcx            #  333   0x400b47  4      OPC=movq_r64_m64    18446744073709551615  
-  movl -0x1c(%rbp), %eax           #  334   0x400b4b  3      OPC=movl_r32_m32    18446744073709551615  
-  movl %eax, %edx                  #  335   0x400b4e  2      OPC=movl_r32_r32    18446744073709551615  
-  movsd %xmm0, (%rcx,%rdx,8)       #  336   0x400b50  5      OPC=movsd_m64_xmm   18446744073709551615  
-  movl -0x1c(%rbp), %eax           #  337   0x400b55  3      OPC=movl_r32_m32    18446744073709551615  
-  addl $0x1, %eax                  #  338   0x400b58  3      OPC=addl_r32_imm8   18446744073709551615  
-  movl %eax, -0x1c(%rbp)           #  339   0x400b5b  3      OPC=movl_m32_r32    18446744073709551615  
-  jmpq .L_400b2f                   #  340   0x400b5e  5      OPC=jmpq_label_1    4197167               
-.L_400b63:                         #        0x400b63  0      OPC=<label>         18446744073709551615  
-  addq $0x20, %rsp                 #  341   0x400b63  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp                        #  342   0x400b67  1      OPC=popq_r64_1      18446744073709551615  
-  retq                             #  343   0x400b68  1      OPC=retq            18446744073709551615  
+.mul4:                             #        0x400590  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                       #  1     0x400590  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                  #  2     0x400591  3      OPC=movq_r64_r64    18446744073709551615  
+  subq $0x20, %rsp                 #  3     0x400594  4      OPC=subq_r64_imm8   18446744073709551615  
+  movq %rdi, -0x8(%rbp)            #  4     0x400598  4      OPC=movq_m64_r64    18446744073709551615  
+  movq %rsi, -0x10(%rbp)           #  5     0x40059c  4      OPC=movq_m64_r64    18446744073709551615  
+  movq %rdx, -0x18(%rbp)           #  6     0x4005a0  4      OPC=movq_m64_r64    18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  7     0x4005a4  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd (%rdx), %xmm0              #  8     0x4005a8  4      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  9     0x4005ac  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd (%rdx), %xmm0              #  10    0x4005b0  4      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  11    0x4005b4  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x8(%rdx), %xmm1           #  12    0x4005b8  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  13    0x4005bd  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x20(%rdx), %xmm1          #  14    0x4005c1  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  15    0x4005c6  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  16    0x4005ca  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x10(%rdx), %xmm1          #  17    0x4005ce  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  18    0x4005d3  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x40(%rdx), %xmm1          #  19    0x4005d7  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  20    0x4005dc  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  21    0x4005e0  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x18(%rdx), %xmm1          #  22    0x4005e4  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  23    0x4005e9  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x60(%rdx), %xmm1          #  24    0x4005ed  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  25    0x4005f2  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0xa0(%rbp)         #  26    0x4005f6  8      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  27    0x4005fe  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd (%rdx), %xmm0              #  28    0x400602  4      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  29    0x400606  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x8(%rdx), %xmm0           #  30    0x40060a  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  31    0x40060f  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x8(%rdx), %xmm1           #  32    0x400613  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  33    0x400618  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x28(%rdx), %xmm1          #  34    0x40061c  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  35    0x400621  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  36    0x400625  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x10(%rdx), %xmm1          #  37    0x400629  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  38    0x40062e  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x48(%rdx), %xmm1          #  39    0x400632  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  40    0x400637  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  41    0x40063b  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x18(%rdx), %xmm1          #  42    0x40063f  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  43    0x400644  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x68(%rdx), %xmm1          #  44    0x400648  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  45    0x40064d  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x98(%rbp)         #  46    0x400651  8      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  47    0x400659  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd (%rdx), %xmm0              #  48    0x40065d  4      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  49    0x400661  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x10(%rdx), %xmm0          #  50    0x400665  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  51    0x40066a  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x8(%rdx), %xmm1           #  52    0x40066e  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  53    0x400673  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x30(%rdx), %xmm1          #  54    0x400677  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  55    0x40067c  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  56    0x400680  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x10(%rdx), %xmm1          #  57    0x400684  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  58    0x400689  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x50(%rdx), %xmm1          #  59    0x40068d  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  60    0x400692  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  61    0x400696  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x18(%rdx), %xmm1          #  62    0x40069a  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  63    0x40069f  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x70(%rdx), %xmm1          #  64    0x4006a3  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  65    0x4006a8  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x90(%rbp)         #  66    0x4006ac  8      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  67    0x4006b4  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd (%rdx), %xmm0              #  68    0x4006b8  4      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  69    0x4006bc  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x18(%rdx), %xmm0          #  70    0x4006c0  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  71    0x4006c5  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x8(%rdx), %xmm1           #  72    0x4006c9  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  73    0x4006ce  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x38(%rdx), %xmm1          #  74    0x4006d2  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  75    0x4006d7  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  76    0x4006db  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x10(%rdx), %xmm1          #  77    0x4006df  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  78    0x4006e4  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x58(%rdx), %xmm1          #  79    0x4006e8  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  80    0x4006ed  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  81    0x4006f1  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x18(%rdx), %xmm1          #  82    0x4006f5  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  83    0x4006fa  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x78(%rdx), %xmm1          #  84    0x4006fe  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  85    0x400703  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x88(%rbp)         #  86    0x400707  8      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  87    0x40070f  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x20(%rdx), %xmm0          #  88    0x400713  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  89    0x400718  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd (%rdx), %xmm0              #  90    0x40071c  4      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  91    0x400720  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x28(%rdx), %xmm1          #  92    0x400724  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  93    0x400729  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x20(%rdx), %xmm1          #  94    0x40072d  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  95    0x400732  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  96    0x400736  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x30(%rdx), %xmm1          #  97    0x40073a  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  98    0x40073f  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x40(%rdx), %xmm1          #  99    0x400743  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  100   0x400748  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  101   0x40074c  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x38(%rdx), %xmm1          #  102   0x400750  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  103   0x400755  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x60(%rdx), %xmm1          #  104   0x400759  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  105   0x40075e  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x80(%rbp)         #  106   0x400762  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  107   0x400767  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x20(%rdx), %xmm0          #  108   0x40076b  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  109   0x400770  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x8(%rdx), %xmm0           #  110   0x400774  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  111   0x400779  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x28(%rdx), %xmm1          #  112   0x40077d  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  113   0x400782  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x28(%rdx), %xmm1          #  114   0x400786  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  115   0x40078b  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  116   0x40078f  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x30(%rdx), %xmm1          #  117   0x400793  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  118   0x400798  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x48(%rdx), %xmm1          #  119   0x40079c  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  120   0x4007a1  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  121   0x4007a5  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x38(%rdx), %xmm1          #  122   0x4007a9  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  123   0x4007ae  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x68(%rdx), %xmm1          #  124   0x4007b2  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  125   0x4007b7  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x78(%rbp)         #  126   0x4007bb  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  127   0x4007c0  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x20(%rdx), %xmm0          #  128   0x4007c4  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  129   0x4007c9  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x10(%rdx), %xmm0          #  130   0x4007cd  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  131   0x4007d2  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x28(%rdx), %xmm1          #  132   0x4007d6  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  133   0x4007db  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x30(%rdx), %xmm1          #  134   0x4007df  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  135   0x4007e4  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  136   0x4007e8  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x30(%rdx), %xmm1          #  137   0x4007ec  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  138   0x4007f1  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x50(%rdx), %xmm1          #  139   0x4007f5  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  140   0x4007fa  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  141   0x4007fe  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x38(%rdx), %xmm1          #  142   0x400802  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  143   0x400807  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x70(%rdx), %xmm1          #  144   0x40080b  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  145   0x400810  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x70(%rbp)         #  146   0x400814  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  147   0x400819  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x20(%rdx), %xmm0          #  148   0x40081d  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  149   0x400822  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x18(%rdx), %xmm0          #  150   0x400826  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  151   0x40082b  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x28(%rdx), %xmm1          #  152   0x40082f  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  153   0x400834  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x38(%rdx), %xmm1          #  154   0x400838  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  155   0x40083d  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  156   0x400841  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x30(%rdx), %xmm1          #  157   0x400845  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  158   0x40084a  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x58(%rdx), %xmm1          #  159   0x40084e  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  160   0x400853  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  161   0x400857  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x38(%rdx), %xmm1          #  162   0x40085b  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  163   0x400860  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x78(%rdx), %xmm1          #  164   0x400864  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  165   0x400869  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x68(%rbp)         #  166   0x40086d  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  167   0x400872  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x40(%rdx), %xmm0          #  168   0x400876  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  169   0x40087b  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd (%rdx), %xmm0              #  170   0x40087f  4      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  171   0x400883  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x48(%rdx), %xmm1          #  172   0x400887  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  173   0x40088c  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x20(%rdx), %xmm1          #  174   0x400890  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  175   0x400895  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  176   0x400899  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x50(%rdx), %xmm1          #  177   0x40089d  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  178   0x4008a2  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x40(%rdx), %xmm1          #  179   0x4008a6  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  180   0x4008ab  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  181   0x4008af  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x58(%rdx), %xmm1          #  182   0x4008b3  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  183   0x4008b8  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x60(%rdx), %xmm1          #  184   0x4008bc  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  185   0x4008c1  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x60(%rbp)         #  186   0x4008c5  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  187   0x4008ca  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x40(%rdx), %xmm0          #  188   0x4008ce  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  189   0x4008d3  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x8(%rdx), %xmm0           #  190   0x4008d7  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  191   0x4008dc  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x48(%rdx), %xmm1          #  192   0x4008e0  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  193   0x4008e5  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x28(%rdx), %xmm1          #  194   0x4008e9  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  195   0x4008ee  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  196   0x4008f2  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x50(%rdx), %xmm1          #  197   0x4008f6  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  198   0x4008fb  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x48(%rdx), %xmm1          #  199   0x4008ff  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  200   0x400904  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  201   0x400908  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x58(%rdx), %xmm1          #  202   0x40090c  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  203   0x400911  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x68(%rdx), %xmm1          #  204   0x400915  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  205   0x40091a  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x58(%rbp)         #  206   0x40091e  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  207   0x400923  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x40(%rdx), %xmm0          #  208   0x400927  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  209   0x40092c  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x10(%rdx), %xmm0          #  210   0x400930  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  211   0x400935  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x48(%rdx), %xmm1          #  212   0x400939  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  213   0x40093e  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x30(%rdx), %xmm1          #  214   0x400942  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  215   0x400947  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  216   0x40094b  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x50(%rdx), %xmm1          #  217   0x40094f  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  218   0x400954  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x50(%rdx), %xmm1          #  219   0x400958  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  220   0x40095d  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  221   0x400961  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x58(%rdx), %xmm1          #  222   0x400965  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  223   0x40096a  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x70(%rdx), %xmm1          #  224   0x40096e  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  225   0x400973  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x50(%rbp)         #  226   0x400977  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  227   0x40097c  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x40(%rdx), %xmm0          #  228   0x400980  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  229   0x400985  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x18(%rdx), %xmm0          #  230   0x400989  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  231   0x40098e  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x48(%rdx), %xmm1          #  232   0x400992  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  233   0x400997  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x38(%rdx), %xmm1          #  234   0x40099b  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  235   0x4009a0  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  236   0x4009a4  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x50(%rdx), %xmm1          #  237   0x4009a8  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  238   0x4009ad  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x58(%rdx), %xmm1          #  239   0x4009b1  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  240   0x4009b6  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  241   0x4009ba  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x58(%rdx), %xmm1          #  242   0x4009be  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  243   0x4009c3  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x78(%rdx), %xmm1          #  244   0x4009c7  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  245   0x4009cc  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x48(%rbp)         #  246   0x4009d0  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  247   0x4009d5  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x60(%rdx), %xmm0          #  248   0x4009d9  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  249   0x4009de  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd (%rdx), %xmm0              #  250   0x4009e2  4      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  251   0x4009e6  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x68(%rdx), %xmm1          #  252   0x4009ea  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  253   0x4009ef  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x20(%rdx), %xmm1          #  254   0x4009f3  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  255   0x4009f8  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  256   0x4009fc  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x70(%rdx), %xmm1          #  257   0x400a00  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  258   0x400a05  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x40(%rdx), %xmm1          #  259   0x400a09  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  260   0x400a0e  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  261   0x400a12  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x78(%rdx), %xmm1          #  262   0x400a16  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  263   0x400a1b  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x60(%rdx), %xmm1          #  264   0x400a1f  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  265   0x400a24  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x40(%rbp)         #  266   0x400a28  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  267   0x400a2d  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x60(%rdx), %xmm0          #  268   0x400a31  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  269   0x400a36  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x8(%rdx), %xmm0           #  270   0x400a3a  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  271   0x400a3f  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x68(%rdx), %xmm1          #  272   0x400a43  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  273   0x400a48  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x28(%rdx), %xmm1          #  274   0x400a4c  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  275   0x400a51  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  276   0x400a55  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x70(%rdx), %xmm1          #  277   0x400a59  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  278   0x400a5e  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x48(%rdx), %xmm1          #  279   0x400a62  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  280   0x400a67  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  281   0x400a6b  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x78(%rdx), %xmm1          #  282   0x400a6f  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  283   0x400a74  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x68(%rdx), %xmm1          #  284   0x400a78  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  285   0x400a7d  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x38(%rbp)         #  286   0x400a81  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  287   0x400a86  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x60(%rdx), %xmm0          #  288   0x400a8a  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  289   0x400a8f  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x10(%rdx), %xmm0          #  290   0x400a93  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  291   0x400a98  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x68(%rdx), %xmm1          #  292   0x400a9c  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  293   0x400aa1  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x30(%rdx), %xmm1          #  294   0x400aa5  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  295   0x400aaa  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  296   0x400aae  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x70(%rdx), %xmm1          #  297   0x400ab2  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  298   0x400ab7  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x50(%rdx), %xmm1          #  299   0x400abb  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  300   0x400ac0  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  301   0x400ac4  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x78(%rdx), %xmm1          #  302   0x400ac8  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  303   0x400acd  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x70(%rdx), %xmm1          #  304   0x400ad1  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  305   0x400ad6  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x30(%rbp)         #  306   0x400ada  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  307   0x400adf  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x60(%rdx), %xmm0          #  308   0x400ae3  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  309   0x400ae8  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x18(%rdx), %xmm0          #  310   0x400aec  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  311   0x400af1  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x68(%rdx), %xmm1          #  312   0x400af5  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  313   0x400afa  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x38(%rdx), %xmm1          #  314   0x400afe  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  315   0x400b03  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  316   0x400b07  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x70(%rdx), %xmm1          #  317   0x400b0b  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  318   0x400b10  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x58(%rdx), %xmm1          #  319   0x400b14  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  320   0x400b19  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movq -0x10(%rbp), %rdx           #  321   0x400b1d  4      OPC=movq_r64_m64    18446744073709551615  
+  movsd 0x78(%rdx), %xmm1          #  322   0x400b21  5      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x18(%rbp), %rdx           #  323   0x400b26  4      OPC=movq_r64_m64    18446744073709551615  
+  mulsd 0x78(%rdx), %xmm1          #  324   0x400b2a  5      OPC=mulsd_xmm_m64   18446744073709551615  
+  addsd %xmm1, %xmm0               #  325   0x400b2f  4      OPC=addsd_xmm_xmm   18446744073709551615  
+  movsd %xmm0, -0x28(%rbp)         #  326   0x400b33  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movl $0x0, -0x1c(%rbp)           #  327   0x400b38  7      OPC=movl_m32_imm32  18446744073709551615  
+.L_400b3f:                         #        0x400b3f  0      OPC=<label>         18446744073709551615  
+  cmpl $0x10, -0x1c(%rbp)          #  328   0x400b3f  4      OPC=cmpl_m32_imm8   18446744073709551615  
+  jae .L_400b73                    #  329   0x400b43  6      OPC=jae_label_1     4197235               
+  movl -0x1c(%rbp), %eax           #  330   0x400b49  3      OPC=movl_r32_m32    18446744073709551615  
+  movl %eax, %ecx                  #  331   0x400b4c  2      OPC=movl_r32_r32    18446744073709551615  
+  movsd -0xa0(%rbp,%rcx,8), %xmm0  #  332   0x400b4e  9      OPC=movsd_xmm_m64   18446744073709551615  
+  movq -0x8(%rbp), %rcx            #  333   0x400b57  4      OPC=movq_r64_m64    18446744073709551615  
+  movl -0x1c(%rbp), %eax           #  334   0x400b5b  3      OPC=movl_r32_m32    18446744073709551615  
+  movl %eax, %edx                  #  335   0x400b5e  2      OPC=movl_r32_r32    18446744073709551615  
+  movsd %xmm0, (%rcx,%rdx,8)       #  336   0x400b60  5      OPC=movsd_m64_xmm   18446744073709551615  
+  movl -0x1c(%rbp), %eax           #  337   0x400b65  3      OPC=movl_r32_m32    18446744073709551615  
+  addl $0x1, %eax                  #  338   0x400b68  3      OPC=addl_r32_imm8   18446744073709551615  
+  movl %eax, -0x1c(%rbp)           #  339   0x400b6b  3      OPC=movl_m32_r32    18446744073709551615  
+  jmpq .L_400b3f                   #  340   0x400b6e  5      OPC=jmpq_label_1    4197183               
+.L_400b73:                         #        0x400b73  0      OPC=<label>         18446744073709551615  
+  addq $0x20, %rsp                 #  341   0x400b73  4      OPC=addq_r64_imm8   18446744073709551615  
+  popq %rbp                        #  342   0x400b77  1      OPC=popq_r64_1      18446744073709551615  
+  retq                             #  343   0x400b78  1      OPC=retq            18446744073709551615  
                                                                                                        
 .size mul4, .-mul4
 Disassembling Done.
@@ -362,9 +362,9 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_400b63->4197219
-.mul4->4195712
-.L_400b2f->4197167
+.L_400b73->4197235
+.mul4->4195728
+.L_400b3f->4197183
 
 Computing Label PC values: Done.
 
@@ -772,6 +772,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400594 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -6931,7 +6933,7 @@ FuncCache inserted: routine_movl__0x0__MINUS0x1c__rbp_
 Decompiling instr:movl $0x0, -0x1c(%rbp) Done...
 
 
-Decompiling instr:.L_400b2f:...
+Decompiling instr:.L_400b3f:...
 
 
 Decompiling instr:cmpl $0x10, -0x1c(%rbp)...
@@ -6953,23 +6955,23 @@ FuncCache inserted: routine_cmpl__0x10__MINUS0x1c__rbp_
 Decompiling instr:cmpl $0x10, -0x1c(%rbp) Done...
 
 
-Decompiling instr:jae .L_400b63...
-Instr: jae .L_400b63
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63
+Decompiling instr:jae .L_400b73...
+Instr: jae .L_400b73
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b73
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b63/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jae_.L_400b73/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JNBEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jae_.L_400b63
-Decompiling instr:jae .L_400b63 Done...
+FuncCache inserted: routine_jae_.L_400b73
+Decompiling instr:jae .L_400b73 Done...
 
 
 Decompiling instr:movl -0x1c(%rbp), %eax...
@@ -7141,6 +7143,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400b68 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -7163,26 +7167,26 @@ FuncCache inserted: routine_movl__eax__MINUS0x1c__rbp_
 Decompiling instr:movl %eax, -0x1c(%rbp) Done...
 
 
-Decompiling instr:jmpq .L_400b2f...
-Instr: jmpq .L_400b2f
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400b2f
+Decompiling instr:jmpq .L_400b3f...
+Instr: jmpq .L_400b3f
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400b3f
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400b2f/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400b3f/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JMPI2InImEEEP6MemoryS4_R5StateT_
-FuncCache inserted: routine_jmpq_.L_400b2f
-Decompiling instr:jmpq .L_400b2f Done...
+FuncCache inserted: routine_jmpq_.L_400b3f
+Decompiling instr:jmpq .L_400b3f Done...
 
 
-Decompiling instr:.L_400b63:...
+Decompiling instr:.L_400b73:...
 
 
 Decompiling instr:addq $0x20, %rsp...
@@ -7201,6 +7205,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400b73 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -7245,3 +7251,5 @@ Decompiling Function: mul4 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+3.98user 0.73system 0:05.98elapsed 78%CPU (0avgtext+0avgdata 11756maxresident)k
+0inputs+1128outputs (0major+118964minor)pagefaults 0swaps

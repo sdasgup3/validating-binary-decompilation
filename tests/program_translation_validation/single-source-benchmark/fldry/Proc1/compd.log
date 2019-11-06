@@ -4,31 +4,31 @@ Disassembled output
   .globl Proc1
   .type Proc1, @function
 
-#! file-offset 0xcd0
-#! rip-offset  0x400cd0
+#! file-offset 0xce0
+#! rip-offset  0x400ce0
 #! capacity    68 bytes
 
 # Text                      #  Line  RIP       Bytes  Opcode             Target                
-.Proc1:                     #        0x400cd0  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                #  1     0x400cd0  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp           #  2     0x400cd1  3      OPC=movq_r64_r64   18446744073709551615  
-  movsd 0x39c(%rip), %xmm0  #  3     0x400cd4  8      OPC=movsd_xmm_m64  18446744073709551615  
-  movq %rdi, -0x10(%rbp)    #  4     0x400cdc  4      OPC=movq_m64_r64   18446744073709551615  
-  movq -0x10(%rbp), %rdi    #  5     0x400ce0  4      OPC=movq_r64_m64   18446744073709551615  
-  movsd %xmm0, 0x10(%rdi)   #  6     0x400ce4  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movq -0x10(%rbp), %rdi    #  7     0x400ce9  4      OPC=movq_r64_m64   18446744073709551615  
-  movsd 0x10(%rdi), %xmm0   #  8     0x400ced  5      OPC=movsd_xmm_m64  18446744073709551615  
-  movq -0x10(%rbp), %rdi    #  9     0x400cf2  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rdi         #  10    0x400cf6  3      OPC=movq_r64_m64   18446744073709551615  
-  movsd %xmm0, 0x10(%rdi)   #  11    0x400cf9  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movq -0x10(%rbp), %rdi    #  12    0x400cfe  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rdi), %rdi         #  13    0x400d02  3      OPC=movq_r64_m64   18446744073709551615  
-  movq -0x10(%rbp), %rax    #  14    0x400d05  4      OPC=movq_r64_m64   18446744073709551615  
-  movq (%rax), %rax         #  15    0x400d09  3      OPC=movq_r64_m64   18446744073709551615  
-  movq %rdi, (%rax)         #  16    0x400d0c  3      OPC=movq_m64_r64   18446744073709551615  
-  movl -0x4(%rbp), %eax     #  17    0x400d0f  3      OPC=movl_r32_m32   18446744073709551615  
-  popq %rbp                 #  18    0x400d12  1      OPC=popq_r64_1     18446744073709551615  
-  retq                      #  19    0x400d13  1      OPC=retq           18446744073709551615  
+.Proc1:                     #        0x400ce0  0      OPC=<label>        18446744073709551615  
+  pushq %rbp                #  1     0x400ce0  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp           #  2     0x400ce1  3      OPC=movq_r64_r64   18446744073709551615  
+  movsd 0x39c(%rip), %xmm0  #  3     0x400ce4  8      OPC=movsd_xmm_m64  18446744073709551615  
+  movq %rdi, -0x10(%rbp)    #  4     0x400cec  4      OPC=movq_m64_r64   18446744073709551615  
+  movq -0x10(%rbp), %rdi    #  5     0x400cf0  4      OPC=movq_r64_m64   18446744073709551615  
+  movsd %xmm0, 0x10(%rdi)   #  6     0x400cf4  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movq -0x10(%rbp), %rdi    #  7     0x400cf9  4      OPC=movq_r64_m64   18446744073709551615  
+  movsd 0x10(%rdi), %xmm0   #  8     0x400cfd  5      OPC=movsd_xmm_m64  18446744073709551615  
+  movq -0x10(%rbp), %rdi    #  9     0x400d02  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rdi         #  10    0x400d06  3      OPC=movq_r64_m64   18446744073709551615  
+  movsd %xmm0, 0x10(%rdi)   #  11    0x400d09  5      OPC=movsd_m64_xmm  18446744073709551615  
+  movq -0x10(%rbp), %rdi    #  12    0x400d0e  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rdi), %rdi         #  13    0x400d12  3      OPC=movq_r64_m64   18446744073709551615  
+  movq -0x10(%rbp), %rax    #  14    0x400d15  4      OPC=movq_r64_m64   18446744073709551615  
+  movq (%rax), %rax         #  15    0x400d19  3      OPC=movq_r64_m64   18446744073709551615  
+  movq %rdi, (%rax)         #  16    0x400d1c  3      OPC=movq_m64_r64   18446744073709551615  
+  movl -0x4(%rbp), %eax     #  17    0x400d1f  3      OPC=movl_r32_m32   18446744073709551615  
+  popq %rbp                 #  18    0x400d22  1      OPC=popq_r64_1     18446744073709551615  
+  retq                      #  19    0x400d23  1      OPC=retq           18446744073709551615  
                                                                                                
 .size Proc1, .-Proc1
 Disassembling Done.
@@ -36,7 +36,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.Proc1->4197584
+.Proc1->4197600
 
 Computing Label PC values: Done.
 
@@ -754,3 +754,5 @@ Decompiling Function: Proc1 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.24user 0.05system 0:00.33elapsed 91%CPU (0avgtext+0avgdata 10316maxresident)k
+0inputs+176outputs (0major+8679minor)pagefaults 0swaps

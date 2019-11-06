@@ -4,25 +4,25 @@ Disassembled output
   .globl mflops
   .type mflops, @function
 
-#! file-offset 0x1a50
-#! rip-offset  0x401a50
+#! file-offset 0x1a60
+#! rip-offset  0x401a60
 #! capacity    50 bytes
 
 # Text                         #  Line  RIP       Bytes  Opcode                 Target                
-.mflops:                       #        0x401a50  0      OPC=<label>            18446744073709551615  
-  pushq %rbp                   #  1     0x401a50  1      OPC=pushq_r64_1        18446744073709551615  
-  movq %rsp, %rbp              #  2     0x401a51  3      OPC=movq_r64_r64       18446744073709551615  
-  movsd 0x36c(%rip), %xmm2     #  3     0x401a54  8      OPC=movsd_xmm_m64      18446744073709551615  
-  movl %edi, -0x4(%rbp)        #  4     0x401a5c  3      OPC=movl_m32_r32       18446744073709551615  
-  movsd %xmm0, -0x10(%rbp)     #  5     0x401a5f  5      OPC=movsd_m64_xmm      18446744073709551615  
-  movsd %xmm1, -0x18(%rbp)     #  6     0x401a64  5      OPC=movsd_m64_xmm      18446744073709551615  
-  movsd -0x18(%rbp), %xmm0     #  7     0x401a69  5      OPC=movsd_xmm_m64      18446744073709551615  
-  divsd -0x10(%rbp), %xmm0     #  8     0x401a6e  5      OPC=divsd_xmm_m64      18446744073709551615  
-  mulsd %xmm2, %xmm0           #  9     0x401a73  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  cvtsi2sdl -0x4(%rbp), %xmm1  #  10    0x401a77  5      OPC=cvtsi2sdl_xmm_m32  18446744073709551615  
-  mulsd %xmm1, %xmm0           #  11    0x401a7c  4      OPC=mulsd_xmm_xmm      18446744073709551615  
-  popq %rbp                    #  12    0x401a80  1      OPC=popq_r64_1         18446744073709551615  
-  retq                         #  13    0x401a81  1      OPC=retq               18446744073709551615  
+.mflops:                       #        0x401a60  0      OPC=<label>            18446744073709551615  
+  pushq %rbp                   #  1     0x401a60  1      OPC=pushq_r64_1        18446744073709551615  
+  movq %rsp, %rbp              #  2     0x401a61  3      OPC=movq_r64_r64       18446744073709551615  
+  movsd 0x36c(%rip), %xmm2     #  3     0x401a64  8      OPC=movsd_xmm_m64      18446744073709551615  
+  movl %edi, -0x4(%rbp)        #  4     0x401a6c  3      OPC=movl_m32_r32       18446744073709551615  
+  movsd %xmm0, -0x10(%rbp)     #  5     0x401a6f  5      OPC=movsd_m64_xmm      18446744073709551615  
+  movsd %xmm1, -0x18(%rbp)     #  6     0x401a74  5      OPC=movsd_m64_xmm      18446744073709551615  
+  movsd -0x18(%rbp), %xmm0     #  7     0x401a79  5      OPC=movsd_xmm_m64      18446744073709551615  
+  divsd -0x10(%rbp), %xmm0     #  8     0x401a7e  5      OPC=divsd_xmm_m64      18446744073709551615  
+  mulsd %xmm2, %xmm0           #  9     0x401a83  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  cvtsi2sdl -0x4(%rbp), %xmm1  #  10    0x401a87  5      OPC=cvtsi2sdl_xmm_m32  18446744073709551615  
+  mulsd %xmm1, %xmm0           #  11    0x401a8c  4      OPC=mulsd_xmm_xmm      18446744073709551615  
+  popq %rbp                    #  12    0x401a90  1      OPC=popq_r64_1         18446744073709551615  
+  retq                         #  13    0x401a91  1      OPC=retq               18446744073709551615  
                                                                                                       
 .size mflops, .-mflops
 Disassembling Done.
@@ -30,7 +30,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.mflops->4201040
+.mflops->4201056
 
 Computing Label PC values: Done.
 
@@ -634,3 +634,5 @@ Decompiling Function: mflops Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.18user 0.05system 0:00.29elapsed 80%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+168outputs (0major+6658minor)pagefaults 0swaps

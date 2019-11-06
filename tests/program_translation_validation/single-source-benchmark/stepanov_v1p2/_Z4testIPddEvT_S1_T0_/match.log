@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55e322259278]:   %181 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55e3223d7f58]:   %76 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
+[0x55e3223d87a8]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x55e322259e50]:   %200 = lshr i32 %181, 31
+[0x55e3223f55c0]:   %95 = lshr i32 %76, 31
+[0x55e3223f56e0]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55e322259ed0]:   %201 = xor i32 %200, %199
+[0x55e3224005d0]:   %96 = xor i32 %95, %94
+[0x55e3224012a0]:   %97 = xor i32 %92, %94
+Iso Match NOT Found
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z4testIPddEvT_S1_T0_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z4testIPddEvT_S1_T0_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+5.53user 4.11system 0:09.91elapsed 97%CPU (0avgtext+0avgdata 17316maxresident)k
+0inputs+1080outputs (0major+2022minor)pagefaults 0swaps

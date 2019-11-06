@@ -4,48 +4,48 @@ Disassembled output
   .globl _Z15tolerance_equalIfEbRT_S1_
   .type _Z15tolerance_equalIfEbRT_S1_, @function
 
-#! file-offset 0xc890
-#! rip-offset  0x40c890
+#! file-offset 0xc8a0
+#! rip-offset  0x40c8a0
 #! capacity    146 bytes
 
 # Text                           #  Line  RIP       Bytes  Opcode                Target                
-._Z15tolerance_equalIfEbRT_S1_:  #        0x40c890  0      OPC=<label>           18446744073709551615  
-  pushq %rbp                     #  1     0x40c890  1      OPC=pushq_r64_1       18446744073709551615  
-  movq %rsp, %rbp                #  2     0x40c891  3      OPC=movq_r64_r64      18446744073709551615  
-  subq $0x20, %rsp               #  3     0x40c894  4      OPC=subq_r64_imm8     18446744073709551615  
-  movq %rdi, -0x8(%rbp)          #  4     0x40c898  4      OPC=movq_m64_r64      18446744073709551615  
-  movq %rsi, -0x10(%rbp)         #  5     0x40c89c  4      OPC=movq_m64_r64      18446744073709551615  
-  movq -0x8(%rbp), %rsi          #  6     0x40c8a0  4      OPC=movq_r64_m64      18446744073709551615  
-  movss (%rsi), %xmm0            #  7     0x40c8a4  4      OPC=movss_xmm_m32     18446744073709551615  
-  movq -0x10(%rbp), %rsi         #  8     0x40c8a8  4      OPC=movq_r64_m64      18446744073709551615  
-  subss (%rsi), %xmm0            #  9     0x40c8ac  4      OPC=subss_xmm_m32     18446744073709551615  
-  movss %xmm0, -0x14(%rbp)       #  10    0x40c8b0  5      OPC=movss_m32_xmm     18446744073709551615  
-  cvtss2sd -0x14(%rbp), %xmm0    #  11    0x40c8b5  5      OPC=cvtss2sd_xmm_m32  18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)       #  12    0x40c8ba  5      OPC=movsd_m64_xmm     18446744073709551615  
-  movq -0x8(%rbp), %rsi          #  13    0x40c8bf  4      OPC=movq_r64_m64      18446744073709551615  
-  movss (%rsi), %xmm0            #  14    0x40c8c3  4      OPC=movss_xmm_m32     18446744073709551615  
-  callq ._ZSt4fabsf              #  15    0x40c8c7  5      OPC=callq_label       4245808               
-  movsd 0x75bc(%rip), %xmm1      #  16    0x40c8cc  8      OPC=movsd_xmm_m64     18446744073709551615  
-  cvtss2sd %xmm0, %xmm0          #  17    0x40c8d4  4      OPC=cvtss2sd_xmm_xmm  18446744073709551615  
-  ucomisd %xmm1, %xmm0           #  18    0x40c8d8  4      OPC=ucomisd_xmm_xmm   18446744073709551615  
-  jbe .L_40c8f8                  #  19    0x40c8dc  6      OPC=jbe_label_1       4245752               
-  movss -0x14(%rbp), %xmm0       #  20    0x40c8e2  5      OPC=movss_xmm_m32     18446744073709551615  
-  movq -0x8(%rbp), %rax          #  21    0x40c8e7  4      OPC=movq_r64_m64      18446744073709551615  
-  divss (%rax), %xmm0            #  22    0x40c8eb  4      OPC=divss_xmm_m32     18446744073709551615  
-  cvtss2sd %xmm0, %xmm0          #  23    0x40c8ef  4      OPC=cvtss2sd_xmm_xmm  18446744073709551615  
-  movsd %xmm0, -0x20(%rbp)       #  24    0x40c8f3  5      OPC=movsd_m64_xmm     18446744073709551615  
-.L_40c8f8:                       #        0x40c8f8  0      OPC=<label>           18446744073709551615  
-  movsd 0x7598(%rip), %xmm0      #  25    0x40c8f8  8      OPC=movsd_xmm_m64     18446744073709551615  
-  movsd -0x20(%rbp), %xmm1       #  26    0x40c900  5      OPC=movsd_xmm_m64     18446744073709551615  
-  movaps 0x75a4(%rip), %xmm2     #  27    0x40c905  7      OPC=movaps_xmm_m128   18446744073709551615  
-  pand %xmm2, %xmm1              #  28    0x40c90c  4      OPC=pand_xmm_xmm      18446744073709551615  
-  ucomisd %xmm1, %xmm0           #  29    0x40c910  4      OPC=ucomisd_xmm_xmm   18446744073709551615  
-  seta %al                       #  30    0x40c914  3      OPC=seta_r8           18446744073709551615  
-  andb $0x1, %al                 #  31    0x40c917  2      OPC=andb_al_imm8      18446744073709551615  
-  movzbl %al, %eax               #  32    0x40c919  3      OPC=movzbl_r32_r8     18446744073709551615  
-  addq $0x20, %rsp               #  33    0x40c91c  4      OPC=addq_r64_imm8     18446744073709551615  
-  popq %rbp                      #  34    0x40c920  1      OPC=popq_r64_1        18446744073709551615  
-  retq                           #  35    0x40c921  1      OPC=retq              18446744073709551615  
+._Z15tolerance_equalIfEbRT_S1_:  #        0x40c8a0  0      OPC=<label>           18446744073709551615  
+  pushq %rbp                     #  1     0x40c8a0  1      OPC=pushq_r64_1       18446744073709551615  
+  movq %rsp, %rbp                #  2     0x40c8a1  3      OPC=movq_r64_r64      18446744073709551615  
+  subq $0x20, %rsp               #  3     0x40c8a4  4      OPC=subq_r64_imm8     18446744073709551615  
+  movq %rdi, -0x8(%rbp)          #  4     0x40c8a8  4      OPC=movq_m64_r64      18446744073709551615  
+  movq %rsi, -0x10(%rbp)         #  5     0x40c8ac  4      OPC=movq_m64_r64      18446744073709551615  
+  movq -0x8(%rbp), %rsi          #  6     0x40c8b0  4      OPC=movq_r64_m64      18446744073709551615  
+  movss (%rsi), %xmm0            #  7     0x40c8b4  4      OPC=movss_xmm_m32     18446744073709551615  
+  movq -0x10(%rbp), %rsi         #  8     0x40c8b8  4      OPC=movq_r64_m64      18446744073709551615  
+  subss (%rsi), %xmm0            #  9     0x40c8bc  4      OPC=subss_xmm_m32     18446744073709551615  
+  movss %xmm0, -0x14(%rbp)       #  10    0x40c8c0  5      OPC=movss_m32_xmm     18446744073709551615  
+  cvtss2sd -0x14(%rbp), %xmm0    #  11    0x40c8c5  5      OPC=cvtss2sd_xmm_m32  18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)       #  12    0x40c8ca  5      OPC=movsd_m64_xmm     18446744073709551615  
+  movq -0x8(%rbp), %rsi          #  13    0x40c8cf  4      OPC=movq_r64_m64      18446744073709551615  
+  movss (%rsi), %xmm0            #  14    0x40c8d3  4      OPC=movss_xmm_m32     18446744073709551615  
+  callq ._ZSt4fabsf              #  15    0x40c8d7  5      OPC=callq_label       4245824               
+  movsd 0x75bc(%rip), %xmm1      #  16    0x40c8dc  8      OPC=movsd_xmm_m64     18446744073709551615  
+  cvtss2sd %xmm0, %xmm0          #  17    0x40c8e4  4      OPC=cvtss2sd_xmm_xmm  18446744073709551615  
+  ucomisd %xmm1, %xmm0           #  18    0x40c8e8  4      OPC=ucomisd_xmm_xmm   18446744073709551615  
+  jbe .L_40c908                  #  19    0x40c8ec  6      OPC=jbe_label_1       4245768               
+  movss -0x14(%rbp), %xmm0       #  20    0x40c8f2  5      OPC=movss_xmm_m32     18446744073709551615  
+  movq -0x8(%rbp), %rax          #  21    0x40c8f7  4      OPC=movq_r64_m64      18446744073709551615  
+  divss (%rax), %xmm0            #  22    0x40c8fb  4      OPC=divss_xmm_m32     18446744073709551615  
+  cvtss2sd %xmm0, %xmm0          #  23    0x40c8ff  4      OPC=cvtss2sd_xmm_xmm  18446744073709551615  
+  movsd %xmm0, -0x20(%rbp)       #  24    0x40c903  5      OPC=movsd_m64_xmm     18446744073709551615  
+.L_40c908:                       #        0x40c908  0      OPC=<label>           18446744073709551615  
+  movsd 0x7598(%rip), %xmm0      #  25    0x40c908  8      OPC=movsd_xmm_m64     18446744073709551615  
+  movsd -0x20(%rbp), %xmm1       #  26    0x40c910  5      OPC=movsd_xmm_m64     18446744073709551615  
+  movaps 0x75a4(%rip), %xmm2     #  27    0x40c915  7      OPC=movaps_xmm_m128   18446744073709551615  
+  pand %xmm2, %xmm1              #  28    0x40c91c  4      OPC=pand_xmm_xmm      18446744073709551615  
+  ucomisd %xmm1, %xmm0           #  29    0x40c920  4      OPC=ucomisd_xmm_xmm   18446744073709551615  
+  seta %al                       #  30    0x40c924  3      OPC=seta_r8           18446744073709551615  
+  andb $0x1, %al                 #  31    0x40c927  2      OPC=andb_al_imm8      18446744073709551615  
+  movzbl %al, %eax               #  32    0x40c929  3      OPC=movzbl_r32_r8     18446744073709551615  
+  addq $0x20, %rsp               #  33    0x40c92c  4      OPC=addq_r64_imm8     18446744073709551615  
+  popq %rbp                      #  34    0x40c930  1      OPC=popq_r64_1        18446744073709551615  
+  retq                           #  35    0x40c931  1      OPC=retq              18446744073709551615  
                                                                                                        
 .size _Z15tolerance_equalIfEbRT_S1_, .-_Z15tolerance_equalIfEbRT_S1_
 Disassembling Done.
@@ -53,8 +53,8 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-.L_40c8f8->4245752
-._Z15tolerance_equalIfEbRT_S1_->4245648
+.L_40c908->4245768
+._Z15tolerance_equalIfEbRT_S1_->4245664
 
 Computing Label PC values: Done.
 
@@ -462,6 +462,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c8a4 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -750,23 +752,23 @@ FuncCache inserted: routine_ucomisd__xmm1___xmm0
 Decompiling instr:ucomisd %xmm1, %xmm0 Done...
 
 
-Decompiling instr:jbe .L_40c8f8...
-Instr: jbe .L_40c8f8
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jbe_.L_40c8f8
+Decompiling instr:jbe .L_40c908...
+Instr: jbe .L_40c908
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jbe_.L_40c908
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jbe_.L_40c8f8/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jbe_.L_40c908/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3JBEEP6MemoryR5State3RnWIhE2InImES7_
-FuncCache inserted: routine_jbe_.L_40c8f8
-Decompiling instr:jbe .L_40c8f8 Done...
+FuncCache inserted: routine_jbe_.L_40c908
+Decompiling instr:jbe .L_40c908 Done...
 
 
 Decompiling instr:movss -0x14(%rbp), %xmm0...
@@ -864,7 +866,7 @@ FuncCache skipped: routine_movsd__xmm0__MINUS0x20__rbp_
 Decompiling instr:movsd %xmm0, -0x20(%rbp) Done...
 
 
-Decompiling instr:.L_40c8f8:...
+Decompiling instr:.L_40c908:...
 
 
 Decompiling instr:movsd 0x7598(%rip), %xmm0...
@@ -997,6 +999,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c927 --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -1035,6 +1039,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40c92c --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -1079,3 +1085,5 @@ Decompiling Function: _Z15tolerance_equalIfEbRT_S1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.62user 0.06system 0:03.96elapsed 17%CPU (0avgtext+0avgdata 10536maxresident)k
+0inputs+296outputs (0major+14573minor)pagefaults 0swaps

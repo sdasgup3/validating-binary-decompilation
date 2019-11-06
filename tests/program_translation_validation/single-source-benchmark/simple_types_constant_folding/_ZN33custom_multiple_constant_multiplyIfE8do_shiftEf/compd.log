@@ -4,26 +4,26 @@ Disassembled output
   .globl _ZN33custom_multiple_constant_multiplyIfE8do_shiftEf
   .type _ZN33custom_multiple_constant_multiplyIfE8do_shiftEf, @function
 
-#! file-offset 0xf3c0
-#! rip-offset  0x40f3c0
+#! file-offset 0xf3d0
+#! rip-offset  0x40f3d0
 #! capacity    63 bytes
 
 # Text                                                  #  Line  RIP       Bytes  Opcode              Target                
-._ZN33custom_multiple_constant_multiplyIfE8do_shiftEf:  #        0x40f3c0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp                                            #  1     0x40f3c0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp                                       #  2     0x40f3c1  3      OPC=movq_r64_r64    18446744073709551615  
-  movss 0x9700(%rip), %xmm1                             #  3     0x40f3c4  8      OPC=movss_xmm_m32   18446744073709551615  
-  movss 0x96fc(%rip), %xmm2                             #  4     0x40f3cc  8      OPC=movss_xmm_m32   18446744073709551615  
-  movss 0x96f8(%rip), %xmm3                             #  5     0x40f3d4  8      OPC=movss_xmm_m32   18446744073709551615  
-  movss 0x96e0(%rip), %xmm4                             #  6     0x40f3dc  8      OPC=movss_xmm_m32   18446744073709551615  
-  movss %xmm0, -0x4(%rbp)                               #  7     0x40f3e4  5      OPC=movss_m32_xmm   18446744073709551615  
-  mulss -0x4(%rbp), %xmm4                               #  8     0x40f3e9  5      OPC=mulss_xmm_m32   18446744073709551615  
-  mulss %xmm3, %xmm4                                    #  9     0x40f3ee  4      OPC=mulss_xmm_xmm   18446744073709551615  
-  mulss %xmm2, %xmm4                                    #  10    0x40f3f2  4      OPC=mulss_xmm_xmm   18446744073709551615  
-  mulss %xmm1, %xmm4                                    #  11    0x40f3f6  4      OPC=mulss_xmm_xmm   18446744073709551615  
-  movaps %xmm4, %xmm0                                   #  12    0x40f3fa  3      OPC=movaps_xmm_xmm  18446744073709551615  
-  popq %rbp                                             #  13    0x40f3fd  1      OPC=popq_r64_1      18446744073709551615  
-  retq                                                  #  14    0x40f3fe  1      OPC=retq            18446744073709551615  
+._ZN33custom_multiple_constant_multiplyIfE8do_shiftEf:  #        0x40f3d0  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                                            #  1     0x40f3d0  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp                                       #  2     0x40f3d1  3      OPC=movq_r64_r64    18446744073709551615  
+  movss 0x9700(%rip), %xmm1                             #  3     0x40f3d4  8      OPC=movss_xmm_m32   18446744073709551615  
+  movss 0x96fc(%rip), %xmm2                             #  4     0x40f3dc  8      OPC=movss_xmm_m32   18446744073709551615  
+  movss 0x96f8(%rip), %xmm3                             #  5     0x40f3e4  8      OPC=movss_xmm_m32   18446744073709551615  
+  movss 0x96e0(%rip), %xmm4                             #  6     0x40f3ec  8      OPC=movss_xmm_m32   18446744073709551615  
+  movss %xmm0, -0x4(%rbp)                               #  7     0x40f3f4  5      OPC=movss_m32_xmm   18446744073709551615  
+  mulss -0x4(%rbp), %xmm4                               #  8     0x40f3f9  5      OPC=mulss_xmm_m32   18446744073709551615  
+  mulss %xmm3, %xmm4                                    #  9     0x40f3fe  4      OPC=mulss_xmm_xmm   18446744073709551615  
+  mulss %xmm2, %xmm4                                    #  10    0x40f402  4      OPC=mulss_xmm_xmm   18446744073709551615  
+  mulss %xmm1, %xmm4                                    #  11    0x40f406  4      OPC=mulss_xmm_xmm   18446744073709551615  
+  movaps %xmm4, %xmm0                                   #  12    0x40f40a  3      OPC=movaps_xmm_xmm  18446744073709551615  
+  popq %rbp                                             #  13    0x40f40d  1      OPC=popq_r64_1      18446744073709551615  
+  retq                                                  #  14    0x40f40e  1      OPC=retq            18446744073709551615  
                                                                                                                             
 .size _ZN33custom_multiple_constant_multiplyIfE8do_shiftEf, .-_ZN33custom_multiple_constant_multiplyIfE8do_shiftEf
 Disassembling Done.
@@ -31,7 +31,7 @@ Disassembling Done.
 
 Decompiling mcsema/test.proposed.ll
 Computing Label PC values ...
-._ZN33custom_multiple_constant_multiplyIfE8do_shiftEf->4256704
+._ZN33custom_multiple_constant_multiplyIfE8do_shiftEf->4256720
 
 Computing Label PC values: Done.
 
@@ -654,3 +654,5 @@ Decompiling Function: _ZN33custom_multiple_constant_multiplyIfE8do_shiftEf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
+0.30user 0.05system 0:00.36elapsed 98%CPU (0avgtext+0avgdata 10156maxresident)k
+0inputs+176outputs (0major+7094minor)pagefaults 0swaps
