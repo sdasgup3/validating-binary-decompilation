@@ -66,6 +66,7 @@ cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${
 make -j64
 sudo make install
 # Keep the llvm-config path set to the version of llvm we want to use using $PATH
+# Make sure to export PATH like: export PATH=<llvm/install/dir/>:$PATH
 
 signal stack problems (If needed to resolve)
 https://github.com/google/sanitizers/issues/822
@@ -82,7 +83,7 @@ cd  stoke-develop/src/ext/z3
 git checkout master
 
 cd /home/ubuntu/Github/stoke-develop/src/ext/x64asm
-git add upstream git@github.com:sdasgup3/x64asm.git
+git remote add upstream git@github.com:sdasgup3/x64asm.git
 git fetch upstream
 git checkout working
 
