@@ -5,6 +5,7 @@ project(Variable-BB-Correspondence)
 set(LLVM_ROOT "" CACHE PATH "Root of LLVM install.")
 
 # STOKE detection part
+#set(STOKE_ROOT "$ENV{HOME}/projects/decompilers/stoke-develop")
 set(STOKE_ROOT "$ENV{HOME}/Github/stoke-develop")
 set(STOKE_INCLUDE_DIRECTORIES
   ${STOKE_ROOT}
