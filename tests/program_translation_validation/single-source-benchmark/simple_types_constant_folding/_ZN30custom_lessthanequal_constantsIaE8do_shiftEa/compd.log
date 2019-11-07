@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN30custom_lessthanequal_constantsIaE8do_shiftEa
@@ -554,5 +554,5 @@ Decompiling Function: _ZN30custom_lessthanequal_constantsIaE8do_shiftEa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.24user 0.04system 0:00.31elapsed 92%CPU (0avgtext+0avgdata 10272maxresident)k
-0inputs+144outputs (0major+5335minor)pagefaults 0swaps
+0.24user 0.05system 0:00.35elapsed 83%CPU (0avgtext+0avgdata 10128maxresident)k
+0inputs+144outputs (0major+5304minor)pagefaults 0swaps

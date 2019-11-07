@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN30custom_mixed_multiple_variableIfE8do_shiftEfffff
@@ -674,5 +674,5 @@ Decompiling Function: _ZN30custom_mixed_multiple_variableIfE8do_shiftEfffff Done
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.29user 0.07system 0:00.41elapsed 90%CPU (0avgtext+0avgdata 10400maxresident)k
-0inputs+184outputs (0major+7445minor)pagefaults 0swaps
+0.27user 0.07system 0:00.38elapsed 89%CPU (0avgtext+0avgdata 10288maxresident)k
+48inputs+184outputs (0major+7398minor)pagefaults 0swaps

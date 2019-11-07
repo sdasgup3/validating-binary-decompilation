@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55c06fcb2418]:   %90 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55c0708eab08]:   %89 = load i32, i32* %88, align 4
-[0x55c07090a078]:   %91 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55c06fcb2ff0]:   %109 = lshr i32 %90, 31
-[0x55c070909b50]:   %110 = lshr i32 %91, 31
-[0x55c070909c70]:   %109 = lshr i32 %89, 31
-Multiple matches exist for [0x55c06fcb3070]:   %110 = xor i32 %109, %108
-[0x55c070914b60]:   %111 = xor i32 %110, %109
-[0x55c070915830]:   %112 = xor i32 %107, %109
+Multiple matches exist for [0x55faf0b81898]:   %151 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55faf1eed558]:   %89 = load i32, i32* %88, align 4
+[0x55faf1f0bd18]:   %91 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x55faf0b82470]:   %170 = lshr i32 %151, 31
+[0x55faf1f0c580]:   %110 = lshr i32 %91, 31
+[0x55faf1f0c6d0]:   %109 = lshr i32 %89, 31
+Multiple matches exist for [0x55faf0b824f0]:   %171 = xor i32 %170, %169
+[0x55faf1f17580]:   %111 = xor i32 %110, %109
+[0x55faf1f18210]:   %112 = xor i32 %107, %109
 Iso Match NOT Found
+Writing 'sub_40d750__Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_40d750__Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIf24custom_constant_multiplyIfEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-69.17user 8.32system 1:17.57elapsed 99%CPU (0avgtext+0avgdata 65804maxresident)k
-0inputs+2568outputs (0major+26373minor)pagefaults 0swaps
+77.91user 6.43system 1:24.94elapsed 99%CPU (0avgtext+0avgdata 65960maxresident)k
+0inputs+2872outputs (0major+22971minor)pagefaults 0swaps

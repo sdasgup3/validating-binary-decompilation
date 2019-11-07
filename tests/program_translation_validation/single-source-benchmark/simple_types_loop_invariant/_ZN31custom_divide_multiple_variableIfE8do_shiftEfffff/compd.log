@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN31custom_divide_multiple_variableIfE8do_shiftEfffff
@@ -654,5 +654,5 @@ Decompiling Function: _ZN31custom_divide_multiple_variableIfE8do_shiftEfffff Don
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.28user 0.07system 0:00.39elapsed 91%CPU (0avgtext+0avgdata 10164maxresident)k
-0inputs+168outputs (0major+7045minor)pagefaults 0swaps
+0.30user 0.03system 0:00.35elapsed 94%CPU (0avgtext+0avgdata 10280maxresident)k
+72inputs+168outputs (0major+7031minor)pagefaults 0swaps

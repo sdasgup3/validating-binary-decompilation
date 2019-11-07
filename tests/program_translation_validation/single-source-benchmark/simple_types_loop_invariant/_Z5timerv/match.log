@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564f02fecf08]:   %22 = load i64, i64* bitcast (%start_time_type* @start_time to i64*), align 8
-[0x564f02a0d958]:   %25 = load i64, i64* bitcast (%G_0x61a0b0_type* @G_0x61a0b0 to i64*), align 8
-[0x564f02b6d488]:   %24 = load i64, i64* %RAX.i13, align 8
-Multiple matches exist for [0x564f02feded0]:   %47 = lshr i64 %22, 63
-[0x564f03bcab20]:   %50 = lshr i64 %25, 63
-[0x564f03bcac70]:   %49 = lshr i64 %24, 63
-Multiple matches exist for [0x564f02fedf50]:   %48 = xor i64 %47, %46
-[0x564f03bc9ec0]:   %52 = xor i64 %46, %49
-[0x564f03bca9c0]:   %51 = xor i64 %50, %49
+Multiple matches exist for [0x557e45121148]:   %22 = load i64, i64* bitcast (%start_time_type* @start_time to i64*), align 8
+[0x557e44ac8488]:   %25 = load i64, i64* bitcast (%G_0x61a0b0_type* @G_0x61a0b0 to i64*), align 8
+[0x557e44c423d8]:   %24 = load i64, i64* %RAX.i13, align 8
+Multiple matches exist for [0x557e45122110]:   %47 = lshr i64 %22, 63
+[0x557e45f217a0]:   %50 = lshr i64 %25, 63
+[0x557e45f218f0]:   %49 = lshr i64 %24, 63
+Multiple matches exist for [0x557e45122190]:   %48 = xor i64 %47, %46
+[0x557e45f20b40]:   %52 = xor i64 %46, %49
+[0x557e45f21640]:   %51 = xor i64 %50, %49
 Iso Match NOT Found
+Writing 'sub_400e80__Z5timerv-mcsema-diff.dot'...
+Writing 'sub_400e80__Z5timerv-mcsema-diff.dot':Done
+
+Writing '_Z5timerv-proposed-diff.dot'...
+Writing '_Z5timerv-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z5timerv] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z5timerv] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.02user 0.13system 0:04.27elapsed 97%CPU (0avgtext+0avgdata 54512maxresident)k
-0inputs+120outputs (0major+10468minor)pagefaults 0swaps
+6.07user 0.18system 0:06.47elapsed 96%CPU (0avgtext+0avgdata 54272maxresident)k
+0inputs+200outputs (0major+10463minor)pagefaults 0swaps

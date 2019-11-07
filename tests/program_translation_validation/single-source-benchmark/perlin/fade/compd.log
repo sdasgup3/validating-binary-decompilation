@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl fade
@@ -714,5 +714,5 @@ Decompiling Function: fade Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.07system 0:00.33elapsed 86%CPU (0avgtext+0avgdata 10112maxresident)k
-0inputs+184outputs (0major+8049minor)pagefaults 0swaps
+0.22user 0.04system 0:00.30elapsed 89%CPU (0avgtext+0avgdata 10260maxresident)k
+192inputs+184outputs (0major+8082minor)pagefaults 0swaps

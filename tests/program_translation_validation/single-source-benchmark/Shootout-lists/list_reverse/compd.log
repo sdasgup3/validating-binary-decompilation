@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl list_reverse
@@ -819,5 +819,5 @@ Decompiling Function: list_reverse Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.34user 0.06system 0:00.46elapsed 89%CPU (0avgtext+0avgdata 10236maxresident)k
-0inputs+200outputs (0major+9611minor)pagefaults 0swaps
+0.33user 0.05system 0:00.44elapsed 88%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+200outputs (0major+9584minor)pagefaults 0swaps

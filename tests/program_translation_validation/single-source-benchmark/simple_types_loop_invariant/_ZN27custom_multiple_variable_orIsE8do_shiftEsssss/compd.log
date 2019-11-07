@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN27custom_multiple_variable_orIsE8do_shiftEsssss
@@ -911,5 +911,5 @@ Decompiling Function: _ZN27custom_multiple_variable_orIsE8do_shiftEsssss Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.40user 0.10system 0:00.57elapsed 89%CPU (0avgtext+0avgdata 10172maxresident)k
-0inputs+224outputs (0major+11364minor)pagefaults 0swaps
+0.41user 0.09system 0:00.59elapsed 85%CPU (0avgtext+0avgdata 10276maxresident)k
+120inputs+224outputs (0major+11379minor)pagefaults 0swaps

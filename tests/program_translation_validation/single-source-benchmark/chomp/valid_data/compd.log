@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl valid_data
@@ -500,7 +500,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl_0x60206c___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40087f --size 7
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40087f --size 7
 Global Access Mismatch: 6299756 Relocation: Address, McSema: Constant
 Decompiling instr:movl 0x60206c, %eax Done...
 
@@ -563,7 +563,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpl_0x602068___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40088c --size 7
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40088c --size 7
 Global Access Mismatch: 6299752 Relocation: Address, McSema: Constant
 Decompiling instr:cmpl 0x602068, %eax Done...
 
@@ -816,7 +816,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___edx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008c3 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4008c3 --size 3
 Decompiling instr:addl $0x1, %edx Done...
 
 
@@ -897,7 +897,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3CMPI2RnIjE2MnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache skipped: routine_cmpl_0x602068___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008d1 --size 7
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4008d1 --size 7
 Decompiling instr:cmpl 0x602068, %eax Done...
 
 
@@ -937,7 +937,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008db --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4008db --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -1001,5 +1001,5 @@ Decompiling Function: valid_data Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.51user 0.08system 0:01.85elapsed 32%CPU (0avgtext+0avgdata 10428maxresident)k
-0inputs+248outputs (0major+12791minor)pagefaults 0swaps
+0.51user 0.07system 0:01.79elapsed 32%CPU (0avgtext+0avgdata 10372maxresident)k
+120inputs+248outputs (0major+12898minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN34custom_multiply_multiple_variable2IfE8do_shiftEfffff
@@ -674,5 +674,5 @@ Decompiling Function: _ZN34custom_multiply_multiple_variable2IfE8do_shiftEfffff 
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.27user 0.10system 0:00.38elapsed 96%CPU (0avgtext+0avgdata 10248maxresident)k
-0inputs+184outputs (0major+7376minor)pagefaults 0swaps
+0.30user 0.05system 0:00.35elapsed 100%CPU (0avgtext+0avgdata 10248maxresident)k
+48inputs+184outputs (0major+7436minor)pagefaults 0swaps

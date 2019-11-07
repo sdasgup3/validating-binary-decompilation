@@ -45,11 +45,11 @@ void Matcher::printDOT() {
     auto PotMatch = PotIMatches.at(&*I1);
     MI->match[&*I1] = PotMatch.size();
     for (auto match : PotMatch) {
-        auto I2 = dyn_cast<Instruction>(match);
-        if (MI2->match.find(&*I2) == MI2->match.end()) {
-            MI2->match[&*I2] = 0;
-        }
-        MI2->match[&*I2] += 1;
+      auto I2 = dyn_cast<Instruction>(match);
+      if (MI2->match.find(&*I2) == MI2->match.end()) {
+        MI2->match[&*I2] = 0;
+      }
+      MI2->match[&*I2] += 1;
     }
   }
 

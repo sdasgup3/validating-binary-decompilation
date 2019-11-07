@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl foo
@@ -1028,7 +1028,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4005f0 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005f0 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1284,5 +1284,5 @@ Decompiling Function: foo Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.59user 0.11system 0:00.91elapsed 77%CPU (0avgtext+0avgdata 10528maxresident)k
-0inputs+328outputs (0major+17699minor)pagefaults 0swaps
+0.56user 0.12system 0:00.87elapsed 78%CPU (0avgtext+0avgdata 10568maxresident)k
+0inputs+328outputs (0major+17614minor)pagefaults 0swaps

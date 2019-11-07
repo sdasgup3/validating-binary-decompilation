@@ -21,6 +21,39 @@ ls bc-seeds | parallel  "echo; echo {}; ../../scripts/extractor.py -P ${HOME}/Gi
   ${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
   ```
 
+### Batch Run in stages (Recommended)
+```bash
+# To generate the binary [Already Done; Do this if required]
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary ; cd .." |& tee ~/Junk/log
+
+# Generate McSema Artifacts [Already Done; Do this if required]
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
+
+# Run compd
+cat docs/makefilelist.txt | parallel  "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+
+grep "Pass" docs/compd.log > docs/compdPass.log
+## Fails are in  docs/compdFail.log and alrady removed from docs/makefilelist.txt
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
+
+# Run compd opt
+cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd_opt" |& tee docs/opt.log
+
+# Run match
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
+grep "Pass" docs/compd.log > docs/matchPass.log
+~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
+```
+### Status files
+  - docs/compdPass.log
+  - docs/compdFail.log
+  - docs/matchPass.log
+  - docs/matchFail.log
+
+
+### Miscellaneous
 #### Single Run
 ```bash
 cd program_translation_validation/toy-examples/get-sign
@@ -44,58 +77,13 @@ make compd; make compd_opt; make match
 make all
 ```
 
-### Batch Run in stages (Recommended)
-```bash
-# To generate the binary [Already Done; Needed for one time]
-cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary ; cd .." |& tee ~/Junk/log
-
-# Generate McSema Artifacts [Already Done; Needed for one time]
-cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
-cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
-
-# Run compd
-cat docs/makefilelist.txt | parallel  "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
-
-grep "Pass" docs/compd.log > docs/compdPass.log
-
-## Fails are in  docs/compdFail.log and alrady removed from docs/makefilelist.txt
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
-
-# Run compd opt
-cat docs/compdPass.log | parallel  -j64 "echo; echo {}; echo =======;  make -C {} compd_opt" |& tee docs/opt.log
-
-# Run match
-cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} match" |& tee docs/match.log
-grep "Pass" docs/compd.log > docs/matchPass.log
-~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
-```
-
-### Important files
-  - docs/compdPass.log
-  - docs/compdFail.log
-  - docs/matchPass.log
-  - docs/matchFail.log
-
-
-
-## Other Stuff
-### Batch Run
-```bash
-# Fire all the runs from top Makefile
-cat filelist.txt  | parallel -j4 "echo ; echo {}; cd {}; make all ; cd ..;" |& tee ~/Junk/log
-
-# OR Fire all the runs from leaf Makefile
-# [Already done] find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "old-examples\|bc-seeds" > docs/makefilelist.txt
-cat makefilelist.txt | parallel -j1 "echo; echo {}; make -C {} all"
-```
-
-### Remove the cache directories for a particular program
+#### Remove the cache directories for a particular program
 ```bash
 grep "Workdir" compd.log | sed -e "s/Workdir:/rm -rf /g" | parallel {}
 ```
 
 
-### Note
+#### Note
   -  The compiler used for the generting binary for programs, to be fed to McSema, should be the same as the one used for single insruction decompilation.
   - Using relocation information for compd, does not neccesarily mean that mcsema needs to decompile the same binary with relocation info, but it is a good practise to enable both compd and mcsema equally.
   Currently, ida having issues with running on binaries with relocation info.

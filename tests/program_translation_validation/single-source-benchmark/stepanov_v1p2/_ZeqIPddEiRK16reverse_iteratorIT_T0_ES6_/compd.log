@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_
@@ -572,7 +572,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4025ad --size 2
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4025ad --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -636,5 +636,5 @@ Decompiling Function: _ZeqIPddEiRK16reverse_iteratorIT_T0_ES6_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.05system 0:00.68elapsed 38%CPU (0avgtext+0avgdata 10396maxresident)k
-0inputs+168outputs (0major+6721minor)pagefaults 0swaps
+0.21user 0.03system 0:00.60elapsed 41%CPU (0avgtext+0avgdata 10400maxresident)k
+0inputs+168outputs (0major+6672minor)pagefaults 0swaps

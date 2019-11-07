@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZSt4fabsf
@@ -534,5 +534,5 @@ Decompiling Function: _ZSt4fabsf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.07system 0:00.28elapsed 100%CPU (0avgtext+0avgdata 10300maxresident)k
-0inputs+144outputs (0major+5018minor)pagefaults 0swaps
+0.22user 0.06system 0:00.32elapsed 86%CPU (0avgtext+0avgdata 10124maxresident)k
+24inputs+144outputs (0major+5001minor)pagefaults 0swaps

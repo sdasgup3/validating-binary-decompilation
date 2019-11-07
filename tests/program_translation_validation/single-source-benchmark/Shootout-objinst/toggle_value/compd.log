@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl toggle_value
@@ -514,5 +514,5 @@ Decompiling Function: toggle_value Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.10user 0.03system 0:00.15elapsed 94%CPU (0avgtext+0avgdata 10172maxresident)k
-0inputs+136outputs (0major+4544minor)pagefaults 0swaps
+0.10user 0.02system 0:00.16elapsed 82%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+136outputs (0major+4548minor)pagefaults 0swaps

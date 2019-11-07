@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_40fa60__ZN28custom_multiple_constant_xorImE8do_shiftEm-mcsema-diff.dot'...
+Writing 'sub_40fa60__ZN28custom_multiple_constant_xorImE8do_shiftEm-mcsema-diff.dot':Done
+
+Writing '_ZN28custom_multiple_constant_xorImE8do_shiftEm-proposed-diff.dot'...
+Writing '_ZN28custom_multiple_constant_xorImE8do_shiftEm-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN28custom_multiple_constant_xorImE8do_shiftEm] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN28custom_multiple_constant_xorImE8do_shiftEm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.49user 0.14system 0:03.63elapsed 99%CPU (0avgtext+0avgdata 66020maxresident)k
-0inputs+72outputs (0major+12817minor)pagefaults 0swaps
+5.30user 0.11system 0:05.42elapsed 99%CPU (0avgtext+0avgdata 66008maxresident)k
+0inputs+128outputs (0major+12811minor)pagefaults 0swaps

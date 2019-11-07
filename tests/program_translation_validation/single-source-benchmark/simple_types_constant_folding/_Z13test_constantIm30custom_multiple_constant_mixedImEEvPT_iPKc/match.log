@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5562e0272558]:   %74 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5562e12e63a8]:   %73 = load i32, i32* %72, align 4
-[0x5562e1995d08]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x5562e02730a0]:   %93 = lshr i32 %74, 31
-[0x5562e1bfabe0]:   %94 = lshr i32 %75, 31
-[0x5562e1bfad00]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x5562e0273120]:   %94 = xor i32 %93, %92
-[0x5562e1c05bf0]:   %95 = xor i32 %94, %93
-[0x5562e1c068c0]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x561bd5817038]:   %210 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x561bd6b09eb8]:   %73 = load i32, i32* %72, align 4
+[0x561bd7505688]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x561bd5817c10]:   %229 = lshr i32 %210, 31
+[0x561bd7806760]:   %94 = lshr i32 %75, 31
+[0x561bd7806880]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x561bd5817c90]:   %230 = xor i32 %229, %228
+[0x561bd78116c0]:   %95 = xor i32 %94, %93
+[0x561bd7812390]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
+Writing 'sub_40cd10__Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_40cd10__Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIm30custom_multiple_constant_mixedImEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-64.32user 3.95system 1:08.46elapsed 99%CPU (0avgtext+0avgdata 66064maxresident)k
-0inputs+2368outputs (0major+22990minor)pagefaults 0swaps
+79.71user 5.67system 1:25.40elapsed 99%CPU (0avgtext+0avgdata 66032maxresident)k
+0inputs+2720outputs (0major+13124minor)pagefaults 0swaps

@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400dd0_kernel_syr2k_StrictFP-mcsema-diff.dot'...
+Writing 'sub_400dd0_kernel_syr2k_StrictFP-mcsema-diff.dot':Done
+
+Writing 'kernel_syr2k_StrictFP-proposed-diff.dot'...
+Writing 'kernel_syr2k_StrictFP-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_syr2k_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_syr2k_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
-22.69user 26.46system 0:49.18elapsed 99%CPU (0avgtext+0avgdata 18520maxresident)k
-0inputs+14056outputs (0major+4311minor)pagefaults 0swaps
+30.04user 41.59system 1:11.67elapsed 99%CPU (0avgtext+0avgdata 18304maxresident)k
+0inputs+15208outputs (0major+4310minor)pagefaults 0swaps

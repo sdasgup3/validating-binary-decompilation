@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4015f0__Z10hash_func2IdET_S0_-mcsema-diff.dot'...
+Writing 'sub_4015f0__Z10hash_func2IdET_S0_-mcsema-diff.dot':Done
+
+Writing '_Z10hash_func2IdET_S0_-proposed-diff.dot'...
+Writing '_Z10hash_func2IdET_S0_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10hash_func2IdET_S0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10hash_func2IdET_S0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-6.84user 1.23system 0:08.16elapsed 99%CPU (0avgtext+0avgdata 62556maxresident)k
-0inputs+248outputs (0major+21652minor)pagefaults 0swaps
+10.51user 1.24system 0:11.76elapsed 99%CPU (0avgtext+0avgdata 62816maxresident)k
+0inputs+320outputs (0major+12140minor)pagefaults 0swaps

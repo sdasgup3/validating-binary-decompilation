@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5573102d2ff8]:   %74 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55730ff9d318]:   %73 = load i32, i32* %72, align 4
-[0x55731064ccd8]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x5573102d3b40]:   %93 = lshr i32 %74, 31
-[0x5573108b1bd0]:   %94 = lshr i32 %75, 31
-[0x5573108b1cf0]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x557310376f60]:   %94 = xor i32 %93, %92
-[0x5573108bcbe0]:   %95 = xor i32 %94, %93
-[0x5573108bd8b0]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x56382e811488]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x56382ebb3fd8]:   %73 = load i32, i32* %72, align 4
+[0x56382f6675a8]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x56382e818a70]:   %282 = lshr i32 %263, 31
+[0x56382f9682a0]:   %94 = lshr i32 %75, 31
+[0x56382f968480]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x56382e818af0]:   %283 = xor i32 %282, %281
+[0x56382f9732e0]:   %95 = xor i32 %94, %93
+[0x56382f973fb0]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
+Writing 'sub_408510__Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_408510__Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIi25custom_notequal_constantsIiEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-67.62user 7.08system 1:14.99elapsed 99%CPU (0avgtext+0avgdata 66128maxresident)k
-0inputs+2400outputs (0major+12815minor)pagefaults 0swaps
+80.41user 4.01system 1:25.06elapsed 99%CPU (0avgtext+0avgdata 66112maxresident)k
+0inputs+2768outputs (0major+15875minor)pagefaults 0swaps

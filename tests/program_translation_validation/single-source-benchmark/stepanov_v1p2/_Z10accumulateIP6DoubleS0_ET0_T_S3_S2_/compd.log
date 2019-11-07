@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z10accumulateIP6DoubleS0_ET0_T_S3_S2_
@@ -457,7 +457,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x30___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402bd4 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402bd4 --size 4
 Decompiling instr:subq $0x30, %rsp Done...
 
 
@@ -595,7 +595,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x60cf00___rdi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402bf3 --size 10
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402bf3 --size 10
 Global Access Mismatch: 6344448 Relocation: Address, McSema: Constant
 Decompiling instr:movq $0x60cf00, %rdi Done...
 
@@ -674,7 +674,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rcx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402c08 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402c08 --size 4
 Decompiling instr:addq $0x8, %rcx Done...
 
 
@@ -888,7 +888,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x30___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402c37 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402c37 --size 4
 Decompiling instr:addq $0x30, %rsp Done...
 
 
@@ -933,5 +933,5 @@ Decompiling Function: _Z10accumulateIP6DoubleS0_ET0_T_S3_S2_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.42user 0.09system 0:01.97elapsed 26%CPU (0avgtext+0avgdata 10488maxresident)k
-0inputs+240outputs (0major+11765minor)pagefaults 0swaps
+0.42user 0.07system 0:01.81elapsed 27%CPU (0avgtext+0avgdata 10464maxresident)k
+24inputs+240outputs (0major+11775minor)pagefaults 0swaps

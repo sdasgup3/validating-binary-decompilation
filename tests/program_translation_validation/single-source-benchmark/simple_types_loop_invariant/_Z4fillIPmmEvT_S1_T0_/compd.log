@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z4fillIPmmEvT_S1_T0_
@@ -621,7 +621,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rdx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 409dd9 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 409dd9 --size 4
 Decompiling instr:addq $0x8, %rdx Done...
 
 
@@ -726,5 +726,5 @@ Decompiling Function: _Z4fillIPmmEvT_S1_T0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.37user 0.07system 0:01.47elapsed 30%CPU (0avgtext+0avgdata 10392maxresident)k
-0inputs+184outputs (0major+8088minor)pagefaults 0swaps
+0.35user 0.07system 0:01.38elapsed 31%CPU (0avgtext+0avgdata 10360maxresident)k
+0inputs+184outputs (0major+8091minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN28custom_add_multiple_variableIjE8do_shiftEjjjjj
@@ -674,5 +674,5 @@ Decompiling Function: _ZN28custom_add_multiple_variableIjE8do_shiftEjjjjj Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.28user 0.08system 0:00.47elapsed 79%CPU (0avgtext+0avgdata 10192maxresident)k
-0inputs+176outputs (0major+7387minor)pagefaults 0swaps
+0.31user 0.05system 0:00.41elapsed 86%CPU (0avgtext+0avgdata 10160maxresident)k
+0inputs+176outputs (0major+7350minor)pagefaults 0swaps

@@ -24,6 +24,7 @@ use utils;
 
 my $help = "";
 my $file = "";
+my $out = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -33,6 +34,7 @@ qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 GetOptions(
     "help"   => \$help,
     "file:s" => \$file,
+    "out:s"  => \$out,
 ) or die("Error in command line arguments\n");
 
 sub usage {
@@ -85,6 +87,7 @@ for ( ; $posn < scalar(@lines) ; $posn = $posn + 1 ) {
         my $calledFunc = $2;
 
         if ( !exists $declFuncNames{$calledFunc} ) {
+
             # print $calledFunc. "\n";
             $declFuncNames{$calledFunc} = 1;
         }
@@ -101,8 +104,8 @@ for ( ; $posn < scalar(@lines) ; $posn = $posn + 1 ) {
 }
 
 ## Open file to write
-open( my $ofp, ">", $file ) or die "cannot open: $!";
-print("Writing to $file ...\n");
+open( my $ofp, ">", $out ) or die "cannot open: $!";
+print("Writing to $out ...\n");
 
 for my $line (@collecDecls) {
     print $ofp $line;

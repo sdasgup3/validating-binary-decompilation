@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN27custom_multiple_constant_orIiE8do_shiftEi
@@ -475,7 +475,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0xf___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41302a --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41302a --size 3
 Decompiling instr:orl $0xf, %edi Done...
 
 
@@ -496,7 +496,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x1e___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41302d --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41302d --size 3
 Decompiling instr:orl $0x1e, %edi Done...
 
 
@@ -517,7 +517,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x1f___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 413030 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 413030 --size 3
 Decompiling instr:orl $0x1f, %edi Done...
 
 
@@ -538,7 +538,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orl__0x3f___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 413033 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 413033 --size 3
 Decompiling instr:orl $0x3f, %edi Done...
 
 
@@ -602,5 +602,5 @@ Decompiling Function: _ZN27custom_multiple_constant_orIiE8do_shiftEi Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.27user 0.07system 0:07.08elapsed 4%CPU (0avgtext+0avgdata 10304maxresident)k
-0inputs+160outputs (0major+6228minor)pagefaults 0swaps
+0.26user 0.06system 0:06.01elapsed 5%CPU (0avgtext+0avgdata 10032maxresident)k
+0inputs+152outputs (0major+6176minor)pagefaults 0swaps

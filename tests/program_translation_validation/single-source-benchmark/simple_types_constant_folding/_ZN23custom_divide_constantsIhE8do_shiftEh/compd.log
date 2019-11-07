@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN23custom_divide_constantsIhE8do_shiftEh
@@ -453,7 +453,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__0x2___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 417407 --size 2
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 417407 --size 2
 Decompiling instr:movb $0x2, %cl Done...
 
 
@@ -536,5 +536,5 @@ Decompiling Function: _ZN23custom_divide_constantsIhE8do_shiftEh Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.08system 0:01.96elapsed 14%CPU (0avgtext+0avgdata 10220maxresident)k
-0inputs+136outputs (0major+5005minor)pagefaults 0swaps
+0.22user 0.06system 0:01.75elapsed 16%CPU (0avgtext+0avgdata 10100maxresident)k
+0inputs+136outputs (0major+5006minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZNK14Double_pointerdeEv
@@ -514,5 +514,5 @@ Decompiling Function: _ZNK14Double_pointerdeEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.02system 0:00.16elapsed 95%CPU (0avgtext+0avgdata 10156maxresident)k
-0inputs+136outputs (0major+4580minor)pagefaults 0swaps
+0.12user 0.02system 0:00.16elapsed 88%CPU (0avgtext+0avgdata 10160maxresident)k
+0inputs+136outputs (0major+4573minor)pagefaults 0swaps

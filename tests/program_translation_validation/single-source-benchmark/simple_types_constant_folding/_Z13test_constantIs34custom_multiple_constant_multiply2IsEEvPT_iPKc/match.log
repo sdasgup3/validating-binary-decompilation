@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ab3298e3f8]:   %265 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55ab33190378]:   %74 = load i32, i32* %73, align 4
-[0x55ab3383fce8]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55ab32995190]:   %284 = lshr i32 %265, 31
-[0x55ab33aa4bd0]:   %95 = lshr i32 %76, 31
-[0x55ab33aa4cf0]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x55ab32995210]:   %285 = xor i32 %284, %283
-[0x55ab33aafbe0]:   %96 = xor i32 %95, %94
-[0x55ab33ab08b0]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x55fb36a1d7a8]:   %113 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55fb36ec8ff8]:   %74 = load i32, i32* %73, align 4
+[0x55fb3797c5e8]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x55fb36a1ebb0]:   %132 = lshr i32 %113, 31
+[0x55fb37c7d610]:   %95 = lshr i32 %76, 31
+[0x55fb37c7d730]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55fb36a1ec30]:   %133 = xor i32 %132, %131
+[0x55fb37c88620]:   %96 = xor i32 %95, %94
+[0x55fb37c892f0]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
+Writing 'sub_4062a0__Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_4062a0__Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIs34custom_multiple_constant_multiply2IsEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-70.30user 5.27system 1:15.76elapsed 99%CPU (0avgtext+0avgdata 65952maxresident)k
-0inputs+2552outputs (0major+22986minor)pagefaults 0swaps
+82.45user 4.59system 1:27.81elapsed 99%CPU (0avgtext+0avgdata 66128maxresident)k
+0inputs+2728outputs (0major+22977minor)pagefaults 0swaps

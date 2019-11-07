@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN9benchmark9is_sortedIPdEEbT_S2_
@@ -562,7 +562,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rsi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 404c38 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 404c38 --size 4
 Decompiling instr:addq $0x8, %rsi Done...
 
 
@@ -700,7 +700,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rcx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 404c55 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 404c55 --size 4
 Decompiling instr:addq $0x8, %rcx Done...
 
 
@@ -797,7 +797,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addq__0x8___rcx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 404c68 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 404c68 --size 4
 Decompiling instr:addq $0x8, %rcx Done...
 
 
@@ -998,7 +998,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 404c93 --size 2
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 404c93 --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -1062,5 +1062,5 @@ Decompiling Function: _ZN9benchmark9is_sortedIPdEEbT_S2_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.53user 0.11system 0:02.62elapsed 24%CPU (0avgtext+0avgdata 10496maxresident)k
-0inputs+272outputs (0major+13799minor)pagefaults 0swaps
+0.53user 0.08system 0:02.41elapsed 25%CPU (0avgtext+0avgdata 10512maxresident)k
+24inputs+272outputs (0major+13647minor)pagefaults 0swaps

@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_401040_kernel_gemver_StrictFP-mcsema-diff.dot'...
+Writing 'sub_401040_kernel_gemver_StrictFP-mcsema-diff.dot':Done
+
+Writing 'kernel_gemver_StrictFP-proposed-diff.dot'...
+Writing 'kernel_gemver_StrictFP-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_gemver_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_gemver_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
-136.47user 100.29system 3:57.57elapsed 99%CPU (0avgtext+0avgdata 23532maxresident)k
-0inputs+30320outputs (0major+6985minor)pagefaults 0swaps
+152.49user 133.42system 4:47.13elapsed 99%CPU (0avgtext+0avgdata 23644maxresident)k
+0inputs+31176outputs (0major+8095minor)pagefaults 0swaps

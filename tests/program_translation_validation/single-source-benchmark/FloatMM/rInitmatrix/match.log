@@ -1,12 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56005bad1098]:   %121 = phi %struct.Memory* [ %113, %112 ], [ %MEMORY.1, %114 ]
-[0x56005bc29b98]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_40060d ]
-[0x56005bc3ed58]:   %188 = phi %struct.Memory.32* [ %180, %179 ], [ %MEMORY.1, %181 ]
+Multiple matches exist for [0x56013f5ac6d8]:   %154 = phi %struct.Memory* [ %146, %145 ], [ %MEMORY.1, %147 ]
+[0x56013f705ce8]:   %MEMORY.0 = phi %struct.Memory.32* [ %2, %entry ], [ %MEMORY.1, %block_.L_40060d ]
+[0x56013f7175a8]:   %188 = phi %struct.Memory.32* [ %180, %179 ], [ %MEMORY.1, %181 ]
 Iso Match NOT Found
+Writing 'sub_400580_rInitmatrix-mcsema-diff.dot'...
+Writing 'sub_400580_rInitmatrix-mcsema-diff.dot':Done
+
+Writing 'rInitmatrix-proposed-diff.dot'...
+Writing 'rInitmatrix-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [rInitmatrix] from ../binary/test.mcsema.opt.ll
 Extracting function [rInitmatrix] from mcsema/test.proposed.opt.ll
 Matcher Done...
-11.24user 17.17system 0:28.41elapsed 99%CPU (0avgtext+0avgdata 14048maxresident)k
-0inputs+3264outputs (0major+1249minor)pagefaults 0swaps
+12.28user 18.54system 0:30.98elapsed 99%CPU (0avgtext+0avgdata 13800maxresident)k
+0inputs+3616outputs (0major+1805minor)pagefaults 0swaps

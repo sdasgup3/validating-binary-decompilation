@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN20custom_add_constantsIfE8do_shiftEf
@@ -514,5 +514,5 @@ Decompiling Function: _ZN20custom_add_constantsIfE8do_shiftEf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.06system 0:00.29elapsed 93%CPU (0avgtext+0avgdata 10152maxresident)k
-0inputs+136outputs (0major+4669minor)pagefaults 0swaps
+0.20user 0.06system 0:00.32elapsed 85%CPU (0avgtext+0avgdata 10196maxresident)k
+24inputs+136outputs (0major+4675minor)pagefaults 0swaps

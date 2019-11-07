@@ -1,30 +1,36 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5602321d6c48]:   %.pre = load i64, i64* %RBP, align 8
-[0x5602321b09f8]:   %85 = load i64, i64* %RBP.i, align 8
-[0x5602321b0eb8]:   %.pre = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x5602321dae40]:   %.pre8 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-[0x5602330c2980]:   %.pre8 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 1
-[0x5602330eb8b0]:   %172 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 1
-Multiple matches exist for [0x5602321daf20]:   %.pre9 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-[0x5602330c2720]:   %.pre9 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 3
-[0x5602330eaa30]:   %173 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 3
-Multiple matches exist for [0x5602321db000]:   %.pre11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-[0x5602330c3d40]:   %.pre11 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 5
-[0x5602330c4200]:   %174 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 5
-Multiple matches exist for [0x5602321db0e0]:   %.pre13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-[0x5602330c3fa0]:   %175 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 7
-[0x5602330d4650]:   %.pre13 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 7
-Multiple matches exist for [0x5602321db1c0]:   %.pre15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-[0x5602330d2fc0]:   %.pre15 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 9
-[0x5602330d48b0]:   %176 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 9
-Multiple matches exist for [0x5602321db2a0]:   %.pre17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-[0x5602330c7050]:   %.pre17 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 13
-[0x560233119ac0]:   %177 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 13
+Multiple matches exist for [0x55a8a32c0a78]:   %.pre = load i64, i64* %RBP, align 8
+[0x55a8a26defa8]:   %85 = load i64, i64* %RBP.i, align 8
+[0x55a8a26df338]:   %.pre = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55a8a32c4c70]:   %.pre8 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+[0x55a8a35e83a0]:   %.pre8 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 1
+[0x55a8a3610680]:   %172 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 1
+Multiple matches exist for [0x55a8a32c4d50]:   %.pre9 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+[0x55a8a35e8270]:   %.pre9 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 3
+[0x55a8a35e9e80]:   %173 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 3
+Multiple matches exist for [0x55a8a32c4e30]:   %.pre11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+[0x55a8a35e9760]:   %.pre11 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 5
+[0x55a8a35e9c20]:   %174 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 5
+Multiple matches exist for [0x55a8a32c4f10]:   %.pre13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+[0x55a8a35e99c0]:   %175 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 7
+[0x55a8a35f8c40]:   %.pre13 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 7
+Multiple matches exist for [0x55a8a32c4ff0]:   %.pre15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+[0x55a8a35eccd0]:   %.pre15 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 9
+[0x55a8a35fa2d0]:   %176 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 9
+Multiple matches exist for [0x55a8a32c50d0]:   %.pre17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+[0x55a8a3611500]:   %.pre17 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 13
+[0x55a8a3636600]:   %177 = getelementptr inbounds %struct.State.1, %struct.State.1* %0, i64 0, i32 2, i32 13
 Iso Match NOT Found
+Writing 'sub_412790__ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh-mcsema-diff.dot'...
+Writing 'sub_412790__ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh-mcsema-diff.dot':Done
+
+Writing '_ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh-proposed-diff.dot'...
+Writing '_ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN32custom_divide_multiple_variable2IhE8do_shiftEhhhhh] from mcsema/test.proposed.opt.ll
 Matcher Done...
-22.71user 3.68system 0:26.67elapsed 98%CPU (0avgtext+0avgdata 54180maxresident)k
-0inputs+1416outputs (0major+18497minor)pagefaults 0swaps
+31.94user 2.44system 0:34.81elapsed 98%CPU (0avgtext+0avgdata 54332maxresident)k
+0inputs+1640outputs (0major+10465minor)pagefaults 0swaps

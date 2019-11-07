@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl rtclock
@@ -474,5 +474,5 @@ Decompiling Function: rtclock Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.08user 0.02system 0:00.12elapsed 89%CPU (0avgtext+0avgdata 10272maxresident)k
-0inputs+120outputs (0major+3912minor)pagefaults 0swaps
+0.07user 0.02system 0:00.13elapsed 80%CPU (0avgtext+0avgdata 10084maxresident)k
+0inputs+120outputs (0major+3904minor)pagefaults 0swaps

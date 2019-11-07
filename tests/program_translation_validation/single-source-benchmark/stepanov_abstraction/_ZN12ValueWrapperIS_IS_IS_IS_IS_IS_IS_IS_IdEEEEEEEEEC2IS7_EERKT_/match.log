@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_406060__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_-mcsema-diff.dot'...
+Writing 'sub_406060__ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_-mcsema-diff.dot':Done
+
+Writing '_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_-proposed-diff.dot'...
+Writing '_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEC2IS7_EERKT_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.04user 0.23system 0:01.28elapsed 99%CPU (0avgtext+0avgdata 23844maxresident)k
-0inputs+80outputs (0major+3444minor)pagefaults 0swaps
+1.38user 0.22system 0:01.68elapsed 95%CPU (0avgtext+0avgdata 23588maxresident)k
+0inputs+136outputs (0major+3473minor)pagefaults 0swaps

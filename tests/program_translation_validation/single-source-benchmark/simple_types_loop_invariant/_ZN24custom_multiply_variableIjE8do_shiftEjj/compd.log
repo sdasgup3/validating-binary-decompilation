@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN24custom_multiply_variableIjE8do_shiftEjj
@@ -554,5 +554,5 @@ Decompiling Function: _ZN24custom_multiply_variableIjE8do_shiftEjj Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.06system 0:00.33elapsed 86%CPU (0avgtext+0avgdata 10272maxresident)k
-0inputs+144outputs (0major+5320minor)pagefaults 0swaps
+0.23user 0.03system 0:00.27elapsed 97%CPU (0avgtext+0avgdata 10312maxresident)k
+0inputs+144outputs (0major+5332minor)pagefaults 0swaps

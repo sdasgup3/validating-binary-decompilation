@@ -1,41 +1,47 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55dd4b9171c8]:   %151 = tail call fastcc %struct.Memory* @ext_602090_malloc(%struct.State* nonnull %0, %struct.Memory* %MEMORY.7)
-[0x55dd4ba067b0]:   %call2_400d47 = tail call %struct.Memory.32* @sub_4007f0.equal_data(%struct.State.1* nonnull %0, i64 %214, %struct.Memory.32* %MEMORY.1)
-[0x55dd4ba08160]:   %236 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %MEMORY.1)
-[0x55dd4ba11f10]:   %call2_400d3a = tail call %struct.Memory.32* @sub_400780.melt_data(%struct.State.1* nonnull %0, i64 %199, %struct.Memory.32* %MEMORY.1)
-[0x55dd4ba1b2b0]:   %call2_400d29 = tail call %struct.Memory.32* @sub_400c10.make_data(%struct.State.1* nonnull %0, i64 %178, %struct.Memory.32* %MEMORY.1)
-Multiple matches exist for [0x55dd4b924528]:   %.pre18 = load i64, i64* %RBP, align 8
-[0x55dd4ba3dc18]:   %447 = load i64, i64* %RBP.i, align 8
-[0x55dd4ba46c88]:   %.pre18 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x55dd4b7cbb28]:   %.pre14 = load i64, i64* %RBP, align 8
-[0x55dd4b9b2ed8]:   %295 = load i64, i64* %RBP.i, align 8
-[0x55dd4ba0d0c8]:   %.pre14 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x55dd4b934348]:   %.pre20 = load i64, i64* %RBP, align 8
-[0x55dd4b811178]:   %612 = load i64, i64* %RBP.i, align 8
-[0x55dd4b886958]:   %.pre20 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x55dd4b934de8]:   %642 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
-[0x55dd4ba05988]:   %108 = load i32, i32* bitcast (%G_0x60206c_type* @G_0x60206c to i32*), align 8
-[0x55dd4ba05e48]:   %106 = load i32, i32* %105, align 4
-Multiple matches exist for [0x55dd4b7ce490]:   %661 = lshr i32 %642, 31
-[0x55dd4ba2ce50]:   %127 = lshr i32 %108, 31
-[0x55dd4ba2d020]:   %126 = lshr i32 %106, 31
-Multiple matches exist for [0x55dd4b7ce510]:   %662 = xor i32 %661, %660
-[0x55dd4ba05af0]:   %129 = xor i32 %124, %126
-[0x55dd4ba2ccf0]:   %128 = xor i32 %127, %126
-Multiple matches exist for [0x55dd4b7cee18]:   %675 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
-[0x55dd4ba0ac38]:   %144 = load i32, i32* bitcast (%G_0x602068_type* @G_0x602068 to i32*), align 8
-[0x55dd4ba0afc8]:   %142 = load i32, i32* %141, align 4
-Multiple matches exist for [0x55dd4b7cf9f0]:   %694 = lshr i32 %675, 31
-[0x55dd4ba33420]:   %163 = lshr i32 %144, 31
-[0x55dd4ba33630]:   %162 = lshr i32 %142, 31
-Multiple matches exist for [0x55dd4b7cfa70]:   %695 = xor i32 %694, %693
-[0x55dd4ba29e50]:   %165 = xor i32 %160, %162
-[0x55dd4ba33100]:   %164 = xor i32 %163, %162
+Multiple matches exist for [0x55d3688a40d8]:   %151 = tail call fastcc %struct.Memory* @ext_602090_malloc(%struct.State* nonnull %0, %struct.Memory* %MEMORY.7)
+[0x55d368962cb0]:   %call2_400d3a = tail call %struct.Memory.32* @sub_400780.melt_data(%struct.State.1* nonnull %0, i64 %199, %struct.Memory.32* %MEMORY.1)
+[0x55d36896e8e0]:   %236 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %MEMORY.1)
+[0x55d368978db0]:   %call2_400d29 = tail call %struct.Memory.32* @sub_400c10.make_data(%struct.State.1* nonnull %0, i64 %178, %struct.Memory.32* %MEMORY.1)
+[0x55d36898f020]:   %call2_400d47 = tail call %struct.Memory.32* @sub_4007f0.equal_data(%struct.State.1* nonnull %0, i64 %214, %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x55d3688af728]:   %.pre14 = load i64, i64* %RBP, align 8
+[0x55d3689525c8]:   %295 = load i64, i64* %RBP.i, align 8
+[0x55d368973f68]:   %.pre14 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55d3688b08f8]:   %.pre18 = load i64, i64* %RBP, align 8
+[0x55d3689abd68]:   %447 = load i64, i64* %RBP.i, align 8
+[0x55d3689ad5f8]:   %.pre18 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55d3688bd828]:   %610 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
+[0x55d36896f998]:   %108 = load i32, i32* bitcast (%G_0x60206c_type* @G_0x60206c to i32*), align 8
+[0x55d36896fbf8]:   %106 = load i32, i32* %105, align 4
+Multiple matches exist for [0x55d368880a70]:   %629 = lshr i32 %610, 31
+[0x55d368993b40]:   %127 = lshr i32 %108, 31
+[0x55d368993ca0]:   %126 = lshr i32 %106, 31
+Multiple matches exist for [0x55d368880af0]:   %630 = xor i32 %629, %628
+[0x55d36896c4d0]:   %129 = xor i32 %124, %126
+[0x55d36896c600]:   %128 = xor i32 %127, %126
+Multiple matches exist for [0x55d3688bed98]:   %643 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x55d368973628]:   %144 = load i32, i32* bitcast (%G_0x602068_type* @G_0x602068 to i32*), align 8
+[0x55d368973c18]:   %142 = load i32, i32* %141, align 4
+Multiple matches exist for [0x55d3688bf970]:   %662 = lshr i32 %643, 31
+[0x55d368999f50]:   %163 = lshr i32 %144, 31
+[0x55d36899a270]:   %162 = lshr i32 %142, 31
+Multiple matches exist for [0x55d3688bf9f0]:   %663 = xor i32 %662, %661
+[0x55d368990620]:   %165 = xor i32 %160, %162
+[0x55d368999db0]:   %164 = xor i32 %163, %162
+Multiple matches exist for [0x55d3688c1598]:   %.pre20 = load i64, i64* %RBP, align 8
+[0x55d368779578]:   %612 = load i64, i64* %RBP.i, align 8
+[0x55d3687eed48]:   %.pre20 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
+Writing 'sub_400cb0_make_list-mcsema-diff.dot'...
+Writing 'sub_400cb0_make_list-mcsema-diff.dot':Done
+
+Writing 'make_list-proposed-diff.dot'...
+Writing 'make_list-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [make_list] from ../binary/test.mcsema.opt.ll
 Extracting function [make_list] from mcsema/test.proposed.opt.ll
 Matcher Done...
-95.00user 86.83system 3:01.86elapsed 99%CPU (0avgtext+0avgdata 19492maxresident)k
-0inputs+22664outputs (0major+5000minor)pagefaults 0swaps
+108.82user 108.93system 3:38.26elapsed 99%CPU (0avgtext+0avgdata 19444maxresident)k
+0inputs+23616outputs (0major+5509minor)pagefaults 0swaps

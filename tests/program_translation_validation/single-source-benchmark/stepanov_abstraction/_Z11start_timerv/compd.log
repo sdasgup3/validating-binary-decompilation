@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z11start_timerv
@@ -451,7 +451,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rax__0x609120
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401219 --size 8
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401219 --size 8
 Global Access Mismatch: 6328608 Relocation: Address, McSema: Constant
 Decompiling instr:movq %rax, 0x609120 Done...
 
@@ -497,5 +497,5 @@ Decompiling Function: _Z11start_timerv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.11user 0.05system 0:00.44elapsed 37%CPU (0avgtext+0avgdata 10272maxresident)k
-0inputs+128outputs (0major+4322minor)pagefaults 0swaps
+0.11user 0.04system 0:00.43elapsed 37%CPU (0avgtext+0avgdata 10236maxresident)k
+24inputs+128outputs (0major+4333minor)pagefaults 0swaps

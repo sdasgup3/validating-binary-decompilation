@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN28custom_multiple_constant_xorIaE8do_shiftEa
@@ -496,7 +496,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0xf___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4176de --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4176de --size 3
 Decompiling instr:xorl $0xf, %edi Done...
 
 
@@ -517,7 +517,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x1e___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4176e1 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4176e1 --size 3
 Decompiling instr:xorl $0x1e, %edi Done...
 
 
@@ -538,7 +538,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x1f___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4176e4 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4176e4 --size 3
 Decompiling instr:xorl $0x1f, %edi Done...
 
 
@@ -559,7 +559,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorl__0x3f___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4176e7 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4176e7 --size 3
 Decompiling instr:xorl $0x3f, %edi Done...
 
 
@@ -642,5 +642,5 @@ Decompiling Function: _ZN28custom_multiple_constant_xorIaE8do_shiftEa Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.29user 0.07system 0:07.08elapsed 5%CPU (0avgtext+0avgdata 10200maxresident)k
-0inputs+168outputs (0major+6941minor)pagefaults 0swaps
+0.28user 0.06system 0:06.03elapsed 5%CPU (0avgtext+0avgdata 10236maxresident)k
+0inputs+160outputs (0major+6911minor)pagefaults 0swaps

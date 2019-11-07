@@ -1,12 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5558f4ae96f8]:   %.pre = load i64, i64* %RBP, align 8
-[0x5558f4b9c868]:   %.pre = load i64, i64* %RBP.i, align 8
-[0x5558f4bb4f88]:   %56 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55cbdbda5308]:   %.pre = load i64, i64* %RBP, align 8
+[0x55cbdbe97828]:   %.pre = load i64, i64* %RBP.i, align 8
+[0x55cbdbeaff48]:   %56 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
+Writing 'sub_4006c0_nth_toggle_activate-mcsema-diff.dot'...
+Writing 'sub_4006c0_nth_toggle_activate-mcsema-diff.dot':Done
+
+Writing 'nth_toggle_activate-proposed-diff.dot'...
+Writing 'nth_toggle_activate-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [nth_toggle_activate] from ../binary/test.mcsema.opt.ll
 Extracting function [nth_toggle_activate] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.96user 2.57system 0:03.62elapsed 97%CPU (0avgtext+0avgdata 12676maxresident)k
-0inputs+464outputs (0major+964minor)pagefaults 0swaps
+1.17user 2.10system 0:03.30elapsed 99%CPU (0avgtext+0avgdata 12748maxresident)k
+0inputs+600outputs (0major+965minor)pagefaults 0swaps

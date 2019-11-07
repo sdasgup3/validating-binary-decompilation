@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400b50_kernel_covariance-mcsema-diff.dot'...
+Writing 'sub_400b50_kernel_covariance-mcsema-diff.dot':Done
+
+Writing 'kernel_covariance-proposed-diff.dot'...
+Writing 'kernel_covariance-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_covariance] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_covariance] from mcsema/test.proposed.opt.ll
 Matcher Done...
-116.80user 99.50system 3:39.20elapsed 98%CPU (0avgtext+0avgdata 21880maxresident)k
-0inputs+27280outputs (0major+6048minor)pagefaults 0swaps
+139.89user 129.35system 4:32.91elapsed 98%CPU (0avgtext+0avgdata 21652maxresident)k
+0inputs+31736outputs (0major+6043minor)pagefaults 0swaps

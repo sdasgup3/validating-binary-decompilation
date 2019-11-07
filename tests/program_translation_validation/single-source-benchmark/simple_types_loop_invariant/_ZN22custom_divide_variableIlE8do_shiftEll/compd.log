@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN22custom_divide_variableIlE8do_shiftEll
@@ -554,5 +554,5 @@ Decompiling Function: _ZN22custom_divide_variableIlE8do_shiftEll Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.05system 0:00.30elapsed 92%CPU (0avgtext+0avgdata 10212maxresident)k
-0inputs+144outputs (0major+5329minor)pagefaults 0swaps
+0.22user 0.04system 0:00.29elapsed 92%CPU (0avgtext+0avgdata 10256maxresident)k
+24inputs+144outputs (0major+5320minor)pagefaults 0swaps

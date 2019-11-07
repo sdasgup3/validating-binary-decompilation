@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl printdata
@@ -517,7 +517,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3CMPI2RnImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_cmpq__0x68___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4004f6 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4004f6 --size 4
 Decompiling instr:cmpq $0x68, %rax Done...
 
 
@@ -754,7 +754,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40052f --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40052f --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -859,5 +859,5 @@ Decompiling Function: printdata Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.37user 0.08system 0:00.87elapsed 52%CPU (0avgtext+0avgdata 10320maxresident)k
-0inputs+216outputs (0major+10280minor)pagefaults 0swaps
+0.37user 0.06system 0:00.84elapsed 51%CPU (0avgtext+0avgdata 10408maxresident)k
+0inputs+216outputs (0major+10178minor)pagefaults 0swaps

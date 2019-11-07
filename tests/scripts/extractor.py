@@ -125,7 +125,10 @@ def createParentMakefile(functions):
     makeFile.write("match:" + allFuncNames + "\n\n")
 
     makeFile.write("binary:" + "\n")
-    makeFile.write("	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+    makeFile.write("	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+
+    makeFile.write("reloc_binary:" + "\n")
+    makeFile.write("	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc" + "\n\n")
 
     makeFile.write("objdump:" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
@@ -136,8 +139,8 @@ def createParentMakefile(functions):
     makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
 
     makeFile.write("mcsema_opt:" + "\n")
-    makeFile.write("	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll" + "\n")
-    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
+    makeFile.write("	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll" + "\n")
+    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:
         makeFile.write(func[0] + ":" + "\n")
@@ -173,7 +176,7 @@ def createMakefile(funcName):
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test --use-reloc-info 1>compd.log 2>&1" + "\n")
+        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
     makeFile.write("" + "\n\n")

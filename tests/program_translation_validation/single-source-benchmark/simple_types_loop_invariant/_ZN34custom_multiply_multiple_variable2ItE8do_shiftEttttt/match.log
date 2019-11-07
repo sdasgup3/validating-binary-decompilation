@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_410ae0__ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt-mcsema-diff.dot'...
+Writing 'sub_410ae0__ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt-mcsema-diff.dot':Done
+
+Writing '_ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt-proposed-diff.dot'...
+Writing '_ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN34custom_multiply_multiple_variable2ItE8do_shiftEttttt] from mcsema/test.proposed.opt.ll
 Matcher Done...
-13.44user 2.10system 0:15.66elapsed 99%CPU (0avgtext+0avgdata 54408maxresident)k
-0inputs+640outputs (0major+18493minor)pagefaults 0swaps
+17.34user 1.46system 0:18.84elapsed 99%CPU (0avgtext+0avgdata 54228maxresident)k
+0inputs+800outputs (0major+10852minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_
@@ -574,5 +574,5 @@ Decompiling Function: _ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IdEEEEEEEC2IS5_EERKT_ D
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.16user 0.05system 0:00.24elapsed 91%CPU (0avgtext+0avgdata 10260maxresident)k
-0inputs+144outputs (0major+5575minor)pagefaults 0swaps
+0.16user 0.04system 0:00.22elapsed 92%CPU (0avgtext+0avgdata 10068maxresident)k
+0inputs+144outputs (0major+5563minor)pagefaults 0swaps

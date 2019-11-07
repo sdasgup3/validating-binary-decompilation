@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl Initrand
@@ -431,7 +431,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2InImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__0x12403__0x60f238
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400524 --size 12
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400524 --size 12
 Global Access Mismatch: 6353464 Relocation: Address, McSema: Constant
 Decompiling instr:movq $0x12403, 0x60f238 Done...
 
@@ -477,5 +477,5 @@ Decompiling Function: Initrand Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.08user 0.02system 0:00.34elapsed 31%CPU (0avgtext+0avgdata 10148maxresident)k
-0inputs+120outputs (0major+3975minor)pagefaults 0swaps
+0.07user 0.02system 0:00.34elapsed 30%CPU (0avgtext+0avgdata 10220maxresident)k
+0inputs+120outputs (0major+3958minor)pagefaults 0swaps

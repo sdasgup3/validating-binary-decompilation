@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _GLOBAL__sub_I_simple_types_constant_folding_cpp
@@ -474,5 +474,5 @@ Decompiling Function: _GLOBAL__sub_I_simple_types_constant_folding.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.06system 0:00.23elapsed 111%CPU (0avgtext+0avgdata 10196maxresident)k
-0inputs+120outputs (0major+3996minor)pagefaults 0swaps
+0.20user 0.05system 0:00.24elapsed 101%CPU (0avgtext+0avgdata 10236maxresident)k
+24inputs+120outputs (0major+3996minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl shiftit
@@ -734,5 +734,5 @@ Decompiling Function: shiftit Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.23user 0.05system 0:00.27elapsed 100%CPU (0avgtext+0avgdata 10280maxresident)k
-0inputs+184outputs (0major+8300minor)pagefaults 0swaps
+0.22user 0.04system 0:00.27elapsed 97%CPU (0avgtext+0avgdata 10244maxresident)k
+0inputs+184outputs (0major+8333minor)pagefaults 0swaps

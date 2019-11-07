@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4014c0_kernel_fdtd_apml-mcsema-diff.dot'...
+Writing 'sub_4014c0_kernel_fdtd_apml-mcsema-diff.dot':Done
+
+Writing 'kernel_fdtd_apml-proposed-diff.dot'...
+Writing 'kernel_fdtd_apml-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_fdtd_apml] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_fdtd_apml] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5031.83user 507.29system 1:32:35elapsed 99%CPU (0avgtext+0avgdata 203324maxresident)k
-0inputs+921088outputs (0major+260714minor)pagefaults 0swaps
+5477.96user 566.79system 1:41:05elapsed 99%CPU (0avgtext+0avgdata 203332maxresident)k
+0inputs+927280outputs (0major+67569minor)pagefaults 0swaps

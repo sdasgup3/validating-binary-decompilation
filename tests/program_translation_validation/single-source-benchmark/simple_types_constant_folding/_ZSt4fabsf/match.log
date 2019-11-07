@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_40f150__ZSt4fabsf-mcsema-diff.dot'...
+Writing 'sub_40f150__ZSt4fabsf-mcsema-diff.dot':Done
+
+Writing '_ZSt4fabsf-proposed-diff.dot'...
+Writing '_ZSt4fabsf-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZSt4fabsf] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZSt4fabsf] from mcsema/test.proposed.opt.ll
 Matcher Done...
-9.87user 1.02system 0:11.07elapsed 98%CPU (0avgtext+0avgdata 65964maxresident)k
-0inputs+304outputs (0major+12817minor)pagefaults 0swaps
+11.25user 0.88system 0:12.13elapsed 99%CPU (0avgtext+0avgdata 65904maxresident)k
+0inputs+360outputs (0major+12814minor)pagefaults 0swaps

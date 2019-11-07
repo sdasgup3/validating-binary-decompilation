@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ca94922db8]:   %204 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55ca94f8fe98]:   %77 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-[0x55ca94f900f8]:   %75 = load i32, i32* %74, align 4
-Multiple matches exist for [0x55ca94923990]:   %223 = lshr i32 %204, 31
-[0x55ca94fb6d10]:   %96 = lshr i32 %77, 31
-[0x55ca94fb6e70]:   %95 = lshr i32 %75, 31
-Multiple matches exist for [0x55ca94923a10]:   %224 = xor i32 %223, %222
-[0x55ca94fb6bb0]:   %97 = xor i32 %96, %95
-[0x55ca94fb7ba0]:   %98 = xor i32 %93, %95
+Multiple matches exist for [0x5640c2152088]:   %204 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5640c27717b8]:   %77 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x5640c2771b48]:   %75 = load i32, i32* %74, align 4
+Multiple matches exist for [0x5640c2152c60]:   %223 = lshr i32 %204, 31
+[0x5640c278e5d0]:   %96 = lshr i32 %77, 31
+[0x5640c278e6f0]:   %95 = lshr i32 %75, 31
+Multiple matches exist for [0x5640c2152ce0]:   %224 = xor i32 %223, %222
+[0x5640c27995e0]:   %97 = xor i32 %96, %95
+[0x5640c279a2b0]:   %98 = xor i32 %93, %95
 Iso Match NOT Found
+Writing 'sub_401fd0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-mcsema-diff.dot'...
+Writing 'sub_401fd0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-mcsema-diff.dot':Done
+
+Writing '_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-proposed-diff.dot'...
+Writing '_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-11.21user 4.73system 0:16.09elapsed 99%CPU (0avgtext+0avgdata 23972maxresident)k
-0inputs+1376outputs (0major+8575minor)pagefaults 0swaps
+14.14user 4.73system 0:18.88elapsed 99%CPU (0avgtext+0avgdata 23716maxresident)k
+0inputs+1592outputs (0major+6108minor)pagefaults 0swaps

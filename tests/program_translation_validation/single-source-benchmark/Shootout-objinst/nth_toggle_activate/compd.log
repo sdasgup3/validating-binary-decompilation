@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl nth_toggle_activate
@@ -509,7 +509,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006cf --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4006cf --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -663,7 +663,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_xorb__0xff___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006ec --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4006ec --size 3
 Decompiling instr:xorb $0xff, %cl Done...
 
 
@@ -684,7 +684,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4006ef --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4006ef --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -865,5 +865,5 @@ Decompiling Function: nth_toggle_activate Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.40user 0.05system 0:01.22elapsed 37%CPU (0avgtext+0avgdata 10588maxresident)k
-0inputs+216outputs (0major+10676minor)pagefaults 0swaps
+0.40user 0.04system 0:01.15elapsed 38%CPU (0avgtext+0avgdata 10612maxresident)k
+0inputs+216outputs (0major+10626minor)pagefaults 0swaps

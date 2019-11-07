@@ -1,23 +1,29 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55853f2f18a0]:   %66 = lshr i32 %55, 27
-[0x55853f49f200]:   %64 = lshr i32 %56, 27
-[0x55853f49f790]:   %67 = lshr i32 %56, 27
-Multiple matches exist for [0x55853f2f1920]:   %67 = and i32 %66, 1
-[0x55853f49f570]:   %65 = and i32 %64, 1
-[0x55853f4a0e80]:   %68 = and i32 %67, 1
-Multiple matches exist for [0x55853f419cb8]:   %311 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x55853f484b50]:   %364 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
-[0x55853f48ff20]:   %316 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
-[0x55853f4992c0]:   %call2_400e82 = tail call %struct.Memory.31* @sub_400ed0.print_element(%struct.State.0* nonnull %0, i64 %269, %struct.Memory.31* %MEMORY.0)
-Multiple matches exist for [0x55853f41be58]:   %358 = tail call fastcc %struct.Memory* @ext_400610_fputs(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x55853f484b50]:   %364 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
-[0x55853f48ff20]:   %316 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
-[0x55853f4992c0]:   %call2_400e82 = tail call %struct.Memory.31* @sub_400ed0.print_element(%struct.State.0* nonnull %0, i64 %269, %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x56404ccdcb10]:   %66 = lshr i32 %55, 27
+[0x56404ce6f730]:   %64 = lshr i32 %56, 27
+[0x56404ce70bd0]:   %67 = lshr i32 %56, 27
+Multiple matches exist for [0x56404ccdcb90]:   %67 = and i32 %66, 1
+[0x56404ce6f2b0]:   %68 = and i32 %67, 1
+[0x56404ce70e20]:   %65 = and i32 %64, 1
+Multiple matches exist for [0x56404cde72a8]:   %273 = tail call fastcc %struct.Memory* @ext_602108_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x56404ce54790]:   %364 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
+[0x56404ce5fef0]:   %316 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
+[0x56404ce69290]:   %call2_400e82 = tail call %struct.Memory.31* @sub_400ed0.print_element(%struct.State.0* nonnull %0, i64 %269, %struct.Memory.31* %MEMORY.0)
+Multiple matches exist for [0x56404cdeaaf8]:   %355 = tail call fastcc %struct.Memory* @ext_6020d0_fputs(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x56404ce54790]:   %364 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %MEMORY.0)
+[0x56404ce5fef0]:   %316 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %MEMORY.0)
+[0x56404ce69290]:   %call2_400e82 = tail call %struct.Memory.31* @sub_400ed0.print_element(%struct.State.0* nonnull %0, i64 %269, %struct.Memory.31* %MEMORY.0)
 Iso Match NOT Found
+Writing 'sub_400e00_print_array-mcsema-diff.dot'...
+Writing 'sub_400e00_print_array-mcsema-diff.dot':Done
+
+Writing 'print_array-proposed-diff.dot'...
+Writing 'print_array-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [print_array] from ../binary/test.mcsema.opt.ll
 Extracting function [print_array] from mcsema/test.proposed.opt.ll
 Matcher Done...
-12.31user 17.13system 0:30.17elapsed 97%CPU (0avgtext+0avgdata 14664maxresident)k
-0inputs+3664outputs (0major+1421minor)pagefaults 0swaps
+14.90user 18.75system 0:33.84elapsed 99%CPU (0avgtext+0avgdata 14328maxresident)k
+0inputs+4152outputs (0major+2435minor)pagefaults 0swaps

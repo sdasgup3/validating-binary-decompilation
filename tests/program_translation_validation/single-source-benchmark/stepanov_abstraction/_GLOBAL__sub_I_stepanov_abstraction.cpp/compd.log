@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _GLOBAL__sub_I_stepanov_abstraction_cpp
@@ -774,5 +774,5 @@ Decompiling Function: _GLOBAL__sub_I_stepanov_abstraction.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.40user 0.07system 0:00.53elapsed 89%CPU (0avgtext+0avgdata 10220maxresident)k
-0inputs+200outputs (0major+8933minor)pagefaults 0swaps
+0.41user 0.06system 0:00.55elapsed 86%CPU (0avgtext+0avgdata 10236maxresident)k
+360inputs+200outputs (0major+8987minor)pagefaults 0swaps

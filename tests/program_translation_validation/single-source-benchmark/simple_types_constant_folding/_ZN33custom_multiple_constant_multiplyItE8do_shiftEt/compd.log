@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN33custom_multiple_constant_multiplyItE8do_shiftEt
@@ -496,7 +496,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shll__0x1___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41452f --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41452f --size 3
 Decompiling instr:shll $0x1, %edi Done...
 
 
@@ -517,7 +517,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imull__0x3___edi___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 414532 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 414532 --size 3
 Decompiling instr:imull $0x3, %edi, %edi Done...
 
 
@@ -538,7 +538,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_shll__0x2___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 414535 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 414535 --size 3
 Decompiling instr:shll $0x2, %edi Done...
 
 
@@ -559,7 +559,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imull__0x5___edi___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 414538 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 414538 --size 3
 Decompiling instr:imull $0x5, %edi, %edi Done...
 
 
@@ -642,5 +642,5 @@ Decompiling Function: _ZN33custom_multiple_constant_multiplyItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.31user 0.06system 0:07.09elapsed 5%CPU (0avgtext+0avgdata 10396maxresident)k
-0inputs+176outputs (0major+6939minor)pagefaults 0swaps
+0.30user 0.05system 0:05.91elapsed 6%CPU (0avgtext+0avgdata 10480maxresident)k
+0inputs+168outputs (0major+6963minor)pagefaults 0swaps

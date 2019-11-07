@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4032b0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_-mcsema-diff.dot'...
+Writing 'sub_4032b0__ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_-mcsema-diff.dot':Done
+
+Writing '_ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_-proposed-diff.dot'...
+Writing '_ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZmiI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEElR14PointerWrapperIT_ESE_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.58user 0.48system 0:02.09elapsed 98%CPU (0avgtext+0avgdata 23920maxresident)k
-0inputs+144outputs (0major+3442minor)pagefaults 0swaps
+2.04user 0.45system 0:02.57elapsed 96%CPU (0avgtext+0avgdata 23672maxresident)k
+0inputs+208outputs (0major+4310minor)pagefaults 0swaps

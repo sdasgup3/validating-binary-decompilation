@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN14Double_pointerppEv
@@ -493,7 +493,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401e2f --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401e2f --size 4
 Decompiling instr:addq $0x8, %rax Done...
 
 
@@ -576,5 +576,5 @@ Decompiling Function: _ZN14Double_pointerppEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.17user 0.02system 0:00.59elapsed 34%CPU (0avgtext+0avgdata 10312maxresident)k
-0inputs+144outputs (0major+5676minor)pagefaults 0swaps
+0.14user 0.04system 0:00.53elapsed 35%CPU (0avgtext+0avgdata 10144maxresident)k
+0inputs+144outputs (0major+5671minor)pagefaults 0swaps

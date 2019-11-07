@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_40e720__ZN32custom_multiple_constant_divide2IdE8do_shiftEd-mcsema-diff.dot'...
+Writing 'sub_40e720__ZN32custom_multiple_constant_divide2IdE8do_shiftEd-mcsema-diff.dot':Done
+
+Writing '_ZN32custom_multiple_constant_divide2IdE8do_shiftEd-proposed-diff.dot'...
+Writing '_ZN32custom_multiple_constant_divide2IdE8do_shiftEd-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN32custom_multiple_constant_divide2IdE8do_shiftEd] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN32custom_multiple_constant_divide2IdE8do_shiftEd] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.83user 0.18system 0:05.02elapsed 99%CPU (0avgtext+0avgdata 65984maxresident)k
-0inputs+104outputs (0major+13200minor)pagefaults 0swaps
+7.01user 0.15system 0:07.17elapsed 99%CPU (0avgtext+0avgdata 66044maxresident)k
+0inputs+160outputs (0major+12808minor)pagefaults 0swaps

@@ -1,25 +1,31 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55b4e1cc2b70]:   %66 = lshr i32 %55, 27
-[0x55b4e1dd5540]:   %67 = lshr i32 %56, 27
-[0x55b4e1dd64c0]:   %64 = lshr i32 %56, 27
-Multiple matches exist for [0x55b4e1cc2bf0]:   %67 = and i32 %66, 1
-[0x55b4e1dd3ad0]:   %68 = and i32 %67, 1
-[0x55b4e1dd5d00]:   %65 = and i32 %64, 1
-Multiple matches exist for [0x55b4e1cc68e8]:   %132 = tail call fastcc %struct.Memory* @ext_400610_fputs(%struct.State* nonnull %0, %struct.Memory* %78)
-[0x55b4e1db9500]:   %259 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %242)
-[0x55b4e1dc4670]:   %242 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %79)
-[0x55b4e1dcda10]:   %call2_400c91 = tail call %struct.Memory.31* @sub_400cd0.print_element(%struct.State.0* nonnull %0, i64 %195, %struct.Memory.31* %79)
-[0x55b4e1dd0c10]:   %79 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %2)
-Multiple matches exist for [0x55b4e1cc74d8]:   %149 = tail call fastcc %struct.Memory* @ext_4005f0_free(%struct.State* nonnull %0, %struct.Memory* %132)
-[0x55b4e1db9500]:   %259 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %242)
-[0x55b4e1dc4670]:   %242 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %79)
-[0x55b4e1dcda10]:   %call2_400c91 = tail call %struct.Memory.31* @sub_400cd0.print_element(%struct.State.0* nonnull %0, i64 %195, %struct.Memory.31* %79)
-[0x55b4e1dd0c10]:   %79 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %2)
+Multiple matches exist for [0x55ddd1ee9040]:   %66 = lshr i32 %55, 27
+[0x55ddd2032c00]:   %67 = lshr i32 %56, 27
+[0x55ddd2034e30]:   %64 = lshr i32 %56, 27
+Multiple matches exist for [0x55ddd1ee90c0]:   %67 = and i32 %66, 1
+[0x55ddd20329e0]:   %65 = and i32 %64, 1
+[0x55ddd20342f0]:   %68 = and i32 %67, 1
+Multiple matches exist for [0x55ddd1eef428]:   %132 = tail call fastcc %struct.Memory* @ext_6020d0_fputs(%struct.State* nonnull %0, %struct.Memory* %78)
+[0x55ddd200df20]:   %79 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %2)
+[0x55ddd20182a0]:   %259 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %242)
+[0x55ddd20237a0]:   %242 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %79)
+[0x55ddd202cb40]:   %call2_400c91 = tail call %struct.Memory.31* @sub_400cd0.print_element(%struct.State.0* nonnull %0, i64 %195, %struct.Memory.31* %79)
+Multiple matches exist for [0x55ddd1ef0018]:   %149 = tail call fastcc %struct.Memory* @ext_602108_free(%struct.State* nonnull %0, %struct.Memory* %132)
+[0x55ddd200df20]:   %79 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.31* %2)
+[0x55ddd20182a0]:   %259 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %242)
+[0x55ddd20237a0]:   %242 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @fputs to i64), %struct.Memory.31* %79)
+[0x55ddd202cb40]:   %call2_400c91 = tail call %struct.Memory.31* @sub_400cd0.print_element(%struct.State.0* nonnull %0, i64 %195, %struct.Memory.31* %79)
 Iso Match NOT Found
+Writing 'sub_400c30_print_array-mcsema-diff.dot'...
+Writing 'sub_400c30_print_array-mcsema-diff.dot':Done
+
+Writing 'print_array-proposed-diff.dot'...
+Writing 'print_array-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [print_array] from ../binary/test.mcsema.opt.ll
 Extracting function [print_array] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.60user 8.46system 0:12.09elapsed 99%CPU (0avgtext+0avgdata 13644maxresident)k
-0inputs+2176outputs (0major+1966minor)pagefaults 0swaps
+7.20user 9.75system 0:16.99elapsed 99%CPU (0avgtext+0avgdata 13480maxresident)k
+0inputs+2440outputs (0major+1204minor)pagefaults 0swaps

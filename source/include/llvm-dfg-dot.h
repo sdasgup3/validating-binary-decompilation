@@ -183,12 +183,13 @@ template <> struct GraphTraits<Instruction *> {
 };
 
 struct MatchInfo {
-    Function *Fn;
-    unordered_map<const Instruction*, int> match;
-    bool color;
+  Function *Fn;
+  unordered_map<const Instruction *, int> match;
+  bool color;
 };
 
-template <> struct GraphTraits<MatchInfo*> : public GraphTraits<Instruction *> {
+template <>
+struct GraphTraits<MatchInfo *> : public GraphTraits<Instruction *> {
   // typedef Instruction *NodeRef;
   static NodeRef getEntryNode(MatchInfo *MI) {
     return &*(MI->Fn->getEntryBlock().begin());
@@ -215,16 +216,16 @@ template <> struct GraphTraits<MatchInfo*> : public GraphTraits<Instruction *> {
 **  Provide specializations of DOTGraphTraits to be able to print instructions
 *   as dot plot nodes.
 */
-template <> struct DOTGraphTraits<MatchInfo*> : public DefaultDOTGraphTraits {
+template <> struct DOTGraphTraits<MatchInfo *> : public DefaultDOTGraphTraits {
 
   DOTGraphTraits(bool isSimple = false) : DefaultDOTGraphTraits(isSimple) {}
 
-  static std::string getGraphName(const MatchInfo* MI) {
+  static std::string getGraphName(const MatchInfo *MI) {
     return "CFG for '" + MI->Fn->getName().str() + "' function";
   }
 
   static std::string getSimpleNodeLabel(const Instruction *Node,
-                                        const MatchInfo*) {
+                                        const MatchInfo *) {
     if (!Node->getName().empty())
       return Node->getName().str();
 
@@ -236,7 +237,7 @@ template <> struct DOTGraphTraits<MatchInfo*> : public DefaultDOTGraphTraits {
   }
 
   static std::string getCompleteNodeLabel(const Instruction *Node,
-                                          const MatchInfo*) {
+                                          const MatchInfo *) {
     enum { MaxColumns = 1024 };
     std::string Str;
     raw_string_ostream OS(Str);
@@ -280,7 +281,7 @@ template <> struct DOTGraphTraits<MatchInfo*> : public DefaultDOTGraphTraits {
     return OutStr;
   }
 
-  std::string getNodeLabel(const Instruction *Node, const MatchInfo* MI) {
+  std::string getNodeLabel(const Instruction *Node, const MatchInfo *MI) {
     DEBUG(dbgs() << "In getNodeLabel\n");
     if (isSimple())
       return getSimpleNodeLabel(Node, MI);
@@ -288,23 +289,22 @@ template <> struct DOTGraphTraits<MatchInfo*> : public DefaultDOTGraphTraits {
       return getCompleteNodeLabel(Node, MI);
   }
 
-  std::string getNodeAttributes(const Instruction* Node, const MatchInfo* MI) {
-      if (!MI->color)
-        return "";
+  std::string getNodeAttributes(const Instruction *Node, const MatchInfo *MI) {
+    if (!MI->color)
+      return "";
 
-      auto isMatched = (MI->match).find(Node);
-      if (isMatched == MI->match.end() || isMatched->second == 0) {
-          return "color=red";
-      } else if (isMatched->second > 1) {
-          return "color=orange";
-      }
+    auto isMatched = (MI->match).find(Node);
+    if (isMatched == MI->match.end() || isMatched->second == 0) {
+      return "color=red";
+    } else if (isMatched->second > 1) {
+      return "color=orange";
+    }
 
-      return "color=green";
+    return "color=green";
   }
-
 };
 
-void writeDFGToDotFile(MatchInfo* MI, string OutputDFG) {
+void writeDFGToDotFile(MatchInfo *MI, string OutputDFG) {
   std::string Filename =
       OutputDFG == "" ? ("cfg." + MI->Fn->getName() + ".dot").str() : OutputDFG;
   errs() << "Writing '" << Filename << "'...";
@@ -320,8 +320,8 @@ void writeDFGToDotFile(MatchInfo* MI, string OutputDFG) {
   errs() << "\nWriting '" << Filename << "':Done\n\n";
 }
 
-typedef DOTGraphTraits<MatchInfo*> DOTTraits;
-typedef GraphTraits<MatchInfo*> GTraits;
+typedef DOTGraphTraits<MatchInfo *> DOTTraits;
+typedef GraphTraits<MatchInfo *> GTraits;
 typedef typename GTraits::NodeRef NodeRef;
 typedef typename GTraits::nodes_iterator node_iterator;
 typedef typename GTraits::ChildIteratorType child_iterator;

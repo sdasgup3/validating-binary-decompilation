@@ -1,29 +1,35 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5601755c8d50]:   %116 = fcmp uno double %115, %112
-[0x560176d517f0]:   %121 = fcmp uno double %120, %117
-[0x560176d78ea0]:   %133 = fcmp ogt double %120, %117
-[0x560176d7c240]:   %137 = fcmp oeq double %120, %117
-[0x560176d7c3a0]:   %135 = fcmp olt double %120, %117
-Multiple matches exist for [0x5601755c9750]:   %128 = fcmp ogt double %115, %112
-[0x560176d517f0]:   %121 = fcmp uno double %120, %117
-[0x560176d78ea0]:   %133 = fcmp ogt double %120, %117
-[0x560176d7c240]:   %137 = fcmp oeq double %120, %117
-[0x560176d7c3a0]:   %135 = fcmp olt double %120, %117
-Multiple matches exist for [0x5601755ca0c0]:   %130 = fcmp olt double %115, %112
-[0x560176d517f0]:   %121 = fcmp uno double %120, %117
-[0x560176d78ea0]:   %133 = fcmp ogt double %120, %117
-[0x560176d7c240]:   %137 = fcmp oeq double %120, %117
-[0x560176d7c3a0]:   %135 = fcmp olt double %120, %117
-Multiple matches exist for [0x5601755ca220]:   %132 = fcmp oeq double %115, %112
-[0x560176d517f0]:   %121 = fcmp uno double %120, %117
-[0x560176d78ea0]:   %133 = fcmp ogt double %120, %117
-[0x560176d7c240]:   %137 = fcmp oeq double %120, %117
-[0x560176d7c3a0]:   %135 = fcmp olt double %120, %117
+Multiple matches exist for [0x559a9e51e3e0]:   %116 = fcmp uno double %115, %112
+[0x559aa03af3b0]:   %121 = fcmp uno double %120, %117
+[0x559aa03d6940]:   %133 = fcmp ogt double %120, %117
+[0x559aa03d9ce0]:   %137 = fcmp oeq double %120, %117
+[0x559aa03d9e40]:   %135 = fcmp olt double %120, %117
+Multiple matches exist for [0x559a9e51edb0]:   %128 = fcmp ogt double %115, %112
+[0x559aa03af3b0]:   %121 = fcmp uno double %120, %117
+[0x559aa03d6940]:   %133 = fcmp ogt double %120, %117
+[0x559aa03d9ce0]:   %137 = fcmp oeq double %120, %117
+[0x559aa03d9e40]:   %135 = fcmp olt double %120, %117
+Multiple matches exist for [0x559a9e51f720]:   %130 = fcmp olt double %115, %112
+[0x559aa03af3b0]:   %121 = fcmp uno double %120, %117
+[0x559aa03d6940]:   %133 = fcmp ogt double %120, %117
+[0x559aa03d9ce0]:   %137 = fcmp oeq double %120, %117
+[0x559aa03d9e40]:   %135 = fcmp olt double %120, %117
+Multiple matches exist for [0x559a9e51f880]:   %132 = fcmp oeq double %115, %112
+[0x559aa03af3b0]:   %121 = fcmp uno double %120, %117
+[0x559aa03d6940]:   %133 = fcmp ogt double %120, %117
+[0x559aa03d9ce0]:   %137 = fcmp oeq double %120, %117
+[0x559aa03d9e40]:   %135 = fcmp olt double %120, %117
 Iso Match NOT Found
+Writing 'sub_4164a0__Z15tolerance_equalIhEbRT_S1_-mcsema-diff.dot'...
+Writing 'sub_4164a0__Z15tolerance_equalIhEbRT_S1_-mcsema-diff.dot':Done
+
+Writing '_Z15tolerance_equalIhEbRT_S1_-proposed-diff.dot'...
+Writing '_Z15tolerance_equalIhEbRT_S1_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z15tolerance_equalIhEbRT_S1_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z15tolerance_equalIhEbRT_S1_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-18.89user 1.67system 0:20.60elapsed 99%CPU (0avgtext+0avgdata 66064maxresident)k
-0inputs+656outputs (0major+22960minor)pagefaults 0swaps
+27.75user 1.03system 0:28.94elapsed 99%CPU (0avgtext+0avgdata 66060maxresident)k
+0inputs+816outputs (0major+22952minor)pagefaults 0swaps

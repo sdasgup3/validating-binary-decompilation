@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN9benchmark10accumulateIPddEET0_T_S3_S2_
@@ -623,7 +623,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rcx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40652b --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40652b --size 4
 Decompiling instr:addq $0x8, %rcx Done...
 
 
@@ -766,5 +766,5 @@ Decompiling Function: _ZN9benchmark10accumulateIPddEET0_T_S3_S2_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.35user 0.05system 0:00.97elapsed 42%CPU (0avgtext+0avgdata 10492maxresident)k
-0inputs+200outputs (0major+8805minor)pagefaults 0swaps
+0.34user 0.03system 0:00.82elapsed 45%CPU (0avgtext+0avgdata 10552maxresident)k
+0inputs+200outputs (0major+8772minor)pagefaults 0swaps

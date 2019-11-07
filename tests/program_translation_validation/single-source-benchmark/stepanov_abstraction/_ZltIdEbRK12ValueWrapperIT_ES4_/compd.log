@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZltIdEbRK12ValueWrapperIT_ES4_
@@ -592,7 +592,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___al
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 403283 --size 2
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 403283 --size 2
 Decompiling instr:andb $0x1, %al Done...
 
 
@@ -656,5 +656,5 @@ Decompiling Function: _ZltIdEbRK12ValueWrapperIT_ES4_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.05system 0:00.83elapsed 33%CPU (0avgtext+0avgdata 10344maxresident)k
-0inputs+176outputs (0major+7067minor)pagefaults 0swaps
+0.19user 0.06system 0:00.72elapsed 36%CPU (0avgtext+0avgdata 10504maxresident)k
+0inputs+176outputs (0major+7050minor)pagefaults 0swaps

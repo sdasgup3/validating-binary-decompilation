@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z15tolerance_equalIjEbRT_S1_
@@ -572,7 +572,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41204b --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41204b --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -636,5 +636,5 @@ Decompiling Function: _Z15tolerance_equalIjEbRT_S1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.28user 0.09system 0:02.06elapsed 18%CPU (0avgtext+0avgdata 10440maxresident)k
-0inputs+168outputs (0major+6772minor)pagefaults 0swaps
+0.30user 0.06system 0:01.80elapsed 20%CPU (0avgtext+0avgdata 10384maxresident)k
+0inputs+168outputs (0major+6758minor)pagefaults 0swaps

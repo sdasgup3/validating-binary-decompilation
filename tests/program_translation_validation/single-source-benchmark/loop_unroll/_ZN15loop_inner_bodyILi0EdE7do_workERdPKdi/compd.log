@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN15loop_inner_bodyILi0EdE7do_workERdPKdi
@@ -514,5 +514,5 @@ Decompiling Function: _ZN15loop_inner_bodyILi0EdE7do_workERdPKdi Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.05system 0:00.29elapsed 90%CPU (0avgtext+0avgdata 10324maxresident)k
-0inputs+136outputs (0major+4631minor)pagefaults 0swaps
+0.20user 0.05system 0:00.26elapsed 95%CPU (0avgtext+0avgdata 10264maxresident)k
+0inputs+136outputs (0major+4616minor)pagefaults 0swaps

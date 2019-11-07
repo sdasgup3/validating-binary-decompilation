@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl myadd
@@ -614,5 +614,5 @@ Decompiling Function: myadd Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.17user 0.04system 0:00.25elapsed 85%CPU (0avgtext+0avgdata 10232maxresident)k
-0inputs+160outputs (0major+6288minor)pagefaults 0swaps
+0.16user 0.04system 0:00.21elapsed 94%CPU (0avgtext+0avgdata 10248maxresident)k
+72inputs+160outputs (0major+6276minor)pagefaults 0swaps

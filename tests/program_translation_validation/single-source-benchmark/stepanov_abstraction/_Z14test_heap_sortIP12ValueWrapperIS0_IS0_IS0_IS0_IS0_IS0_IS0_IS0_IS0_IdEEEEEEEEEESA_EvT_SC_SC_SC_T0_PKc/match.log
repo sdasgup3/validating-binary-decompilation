@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56359baa1e88]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56359c1781e8]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-[0x56359c178908]:   %84 = load i32, i32* %83, align 4
-Multiple matches exist for [0x56359baa2a60]:   %216 = lshr i32 %197, 31
-[0x56359c19d7e0]:   %105 = lshr i32 %86, 31
-[0x56359c19d940]:   %104 = lshr i32 %84, 31
-Multiple matches exist for [0x56359baa2ae0]:   %217 = xor i32 %216, %215
-[0x56359c19d4a0]:   %107 = xor i32 %102, %104
-[0x56359c19d600]:   %106 = xor i32 %105, %104
+Multiple matches exist for [0x55f9383640b8]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55f93887c9f8]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x55f93887cc58]:   %84 = load i32, i32* %83, align 4
+Multiple matches exist for [0x55f938364c90]:   %216 = lshr i32 %197, 31
+[0x55f9388a2bb0]:   %105 = lshr i32 %86, 31
+[0x55f9388a3000]:   %104 = lshr i32 %84, 31
+Multiple matches exist for [0x55f938364d10]:   %217 = xor i32 %216, %215
+[0x55f9388a2970]:   %107 = xor i32 %102, %104
+[0x55f9388a2ad0]:   %106 = xor i32 %105, %104
 Iso Match NOT Found
+Writing 'sub_402c00__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc-mcsema-diff.dot'...
+Writing 'sub_402c00__Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc-proposed-diff.dot'...
+Writing '_Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_heap_sortIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEESA_EvT_SC_SC_SC_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.07user 4.34system 0:15.35elapsed 93%CPU (0avgtext+0avgdata 23836maxresident)k
-0inputs+1272outputs (0major+3459minor)pagefaults 0swaps
+12.01user 4.00system 0:16.23elapsed 98%CPU (0avgtext+0avgdata 23652maxresident)k
+0inputs+1488outputs (0major+6095minor)pagefaults 0swaps

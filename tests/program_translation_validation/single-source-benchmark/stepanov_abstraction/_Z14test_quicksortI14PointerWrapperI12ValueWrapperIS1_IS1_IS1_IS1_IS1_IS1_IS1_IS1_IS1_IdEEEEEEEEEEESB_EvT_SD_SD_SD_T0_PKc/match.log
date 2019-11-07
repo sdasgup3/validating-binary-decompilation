@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56020766d3e8]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56020782e088]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-[0x56020782e548]:   %85 = load i32, i32* %84, align 4
-Multiple matches exist for [0x56020737da10]:   %281 = lshr i32 %262, 31
-[0x560207854030]:   %106 = lshr i32 %87, 31
-[0x560207854110]:   %105 = lshr i32 %85, 31
-Multiple matches exist for [0x56020737da90]:   %282 = xor i32 %281, %280
-[0x560207853ed0]:   %107 = xor i32 %106, %105
-[0x560207855e50]:   %108 = xor i32 %103, %105
+Multiple matches exist for [0x55f9b71db5a8]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55f9b7318588]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x55f9b7318ca8]:   %85 = load i32, i32* %84, align 4
+Multiple matches exist for [0x55f9b71e2870]:   %281 = lshr i32 %262, 31
+[0x55f9b733dbb0]:   %106 = lshr i32 %87, 31
+[0x55f9b733dc90]:   %105 = lshr i32 %85, 31
+Multiple matches exist for [0x55f9b71e28f0]:   %282 = xor i32 %281, %280
+[0x55f9b733d870]:   %108 = xor i32 %103, %105
+[0x55f9b733da50]:   %107 = xor i32 %106, %105
 Iso Match NOT Found
+Writing 'sub_4028f0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot'...
+Writing 'sub_4028f0__Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-proposed-diff.dot'...
+Writing '_Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_quicksortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-16.88user 7.81system 0:24.75elapsed 99%CPU (0avgtext+0avgdata 23896maxresident)k
-0inputs+2456outputs (0major+6174minor)pagefaults 0swaps
+21.61user 8.14system 0:29.77elapsed 99%CPU (0avgtext+0avgdata 23684maxresident)k
+0inputs+2712outputs (0major+6205minor)pagefaults 0swaps

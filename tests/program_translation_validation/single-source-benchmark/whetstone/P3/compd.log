@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl P3
@@ -585,7 +585,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x602098___xmm0
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4017b6 --size 9
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4017b6 --size 9
 Global Access Mismatch: 6299800 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x602098, %xmm0 Done...
 
@@ -683,7 +683,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache skipped: routine_movsd_0x602098___xmm0
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4017d2 --size 9
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4017d2 --size 9
 Decompiling instr:movsd 0x602098, %xmm0 Done...
 
 
@@ -818,7 +818,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L5DIVSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_
 FuncCache inserted: routine_divsd_0x6020b0___xmm0
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4017f8 --size 9
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4017f8 --size 9
 Global Access Mismatch: 6299824 Relocation: Address, McSema: Constant
 Decompiling instr:divsd 0x6020b0, %xmm0 Done...
 
@@ -902,5 +902,5 @@ Decompiling Function: P3 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.32user 0.07system 0:01.06elapsed 37%CPU (0avgtext+0avgdata 10512maxresident)k
-0inputs+216outputs (0major+11349minor)pagefaults 0swaps
+0.32user 0.06system 0:01.12elapsed 34%CPU (0avgtext+0avgdata 10316maxresident)k
+48inputs+216outputs (0major+11354minor)pagefaults 0swaps

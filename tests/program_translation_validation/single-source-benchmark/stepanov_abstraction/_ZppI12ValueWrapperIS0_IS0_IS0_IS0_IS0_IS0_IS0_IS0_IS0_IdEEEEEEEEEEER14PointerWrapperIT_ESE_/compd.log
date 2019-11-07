@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEER14PointerWrapperIT_ESE_
@@ -493,7 +493,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x8___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40329f --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40329f --size 4
 Decompiling instr:addq $0x8, %rax Done...
 
 
@@ -576,5 +576,5 @@ Decompiling Function: _ZppI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdE
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.18user 0.04system 0:00.73elapsed 30%CPU (0avgtext+0avgdata 10236maxresident)k
+0.17user 0.03system 0:00.66elapsed 31%CPU (0avgtext+0avgdata 10296maxresident)k
 0inputs+152outputs (0major+5656minor)pagefaults 0swaps

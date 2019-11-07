@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl get_real_move
@@ -786,7 +786,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___ecx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012e6 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4012e6 --size 3
 Decompiling instr:addl $0x1, %ecx Done...
 
 
@@ -986,5 +986,5 @@ Decompiling Function: get_real_move Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.44user 0.11system 0:00.86elapsed 64%CPU (0avgtext+0avgdata 10516maxresident)k
-0inputs+240outputs (0major+12484minor)pagefaults 0swaps
+0.46user 0.06system 0:00.83elapsed 62%CPU (0avgtext+0avgdata 10524maxresident)k
+168inputs+240outputs (0major+12408minor)pagefaults 0swaps

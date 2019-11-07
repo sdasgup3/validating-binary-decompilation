@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl Proc7
@@ -674,5 +674,5 @@ Decompiling Function: Proc7 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.04system 0:00.30elapsed 89%CPU (0avgtext+0avgdata 10104maxresident)k
-0inputs+176outputs (0major+7355minor)pagefaults 0swaps
+0.21user 0.04system 0:00.29elapsed 87%CPU (0avgtext+0avgdata 10148maxresident)k
+168inputs+176outputs (0major+7335minor)pagefaults 0swaps

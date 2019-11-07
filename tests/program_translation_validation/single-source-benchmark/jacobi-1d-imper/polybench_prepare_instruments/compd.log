@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl polybench_prepare_instruments
@@ -474,5 +474,5 @@ Decompiling Function: polybench_prepare_instruments Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.10user 0.02system 0:00.14elapsed 90%CPU (0avgtext+0avgdata 10132maxresident)k
-0inputs+120outputs (0major+3917minor)pagefaults 0swaps
+0.09user 0.02system 0:00.13elapsed 88%CPU (0avgtext+0avgdata 10240maxresident)k
+0inputs+120outputs (0major+3926minor)pagefaults 0swaps

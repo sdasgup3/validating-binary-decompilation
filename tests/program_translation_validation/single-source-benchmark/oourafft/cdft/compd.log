@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl cdft
@@ -476,7 +476,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x20___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401064 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401064 --size 4
 Decompiling instr:subq $0x20, %rsp Done...
 
 
@@ -1158,7 +1158,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x20___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4010f7 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4010f7 --size 4
 Decompiling instr:addq $0x20, %rsp Done...
 
 
@@ -1203,5 +1203,5 @@ Decompiling Function: cdft Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.70user 0.11system 0:01.44elapsed 56%CPU (0avgtext+0avgdata 10472maxresident)k
-0inputs+272outputs (0major+16061minor)pagefaults 0swaps
+0.69user 0.09system 0:01.31elapsed 59%CPU (0avgtext+0avgdata 10556maxresident)k
+120inputs+272outputs (0major+15837minor)pagefaults 0swaps

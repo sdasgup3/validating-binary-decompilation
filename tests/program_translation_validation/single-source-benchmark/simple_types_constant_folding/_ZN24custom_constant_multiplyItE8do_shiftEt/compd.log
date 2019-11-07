@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN24custom_constant_multiplyItE8do_shiftEt
@@ -493,7 +493,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4IMULI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_imull__0x78___edi___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4145cf --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4145cf --size 3
 Decompiling instr:imull $0x78, %edi, %edi Done...
 
 
@@ -576,5 +576,5 @@ Decompiling Function: _ZN24custom_constant_multiplyItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.26user 0.05system 0:02.01elapsed 15%CPU (0avgtext+0avgdata 10192maxresident)k
-0inputs+144outputs (0major+5732minor)pagefaults 0swaps
+0.23user 0.07system 0:01.69elapsed 17%CPU (0avgtext+0avgdata 10268maxresident)k
+0inputs+144outputs (0major+5735minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl mat_set
@@ -1308,7 +1308,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400ccc --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400ccc --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1411,7 +1411,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400cdf --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400cdf --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1514,7 +1514,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400cf2 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400cf2 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1600,5 +1600,5 @@ Decompiling Function: mat_set Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.89user 0.17system 0:01.93elapsed 55%CPU (0avgtext+0avgdata 10364maxresident)k
-0inputs+368outputs (0major+22679minor)pagefaults 0swaps
+0.89user 0.11system 0:01.84elapsed 55%CPU (0avgtext+0avgdata 10428maxresident)k
+360inputs+368outputs (0major+22637minor)pagefaults 0swaps

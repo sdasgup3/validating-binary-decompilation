@@ -1,29 +1,35 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55d0b13e4d90]:   %279 = fcmp uno double %277, %278
-[0x55d0b156dfe0]:   %282 = fcmp uno double %280, %281
-[0x55d0b156f2e0]:   %294 = fcmp ogt double %280, %281
-[0x55d0b156f540]:   %296 = fcmp olt double %280, %281
-[0x55d0b156fd90]:   %298 = fcmp oeq double %280, %281
-Multiple matches exist for [0x55d0b13e5790]:   %291 = fcmp ogt double %277, %278
-[0x55d0b156dfe0]:   %282 = fcmp uno double %280, %281
-[0x55d0b156f2e0]:   %294 = fcmp ogt double %280, %281
-[0x55d0b156f540]:   %296 = fcmp olt double %280, %281
-[0x55d0b156fd90]:   %298 = fcmp oeq double %280, %281
-Multiple matches exist for [0x55d0b13e58f0]:   %293 = fcmp olt double %277, %278
-[0x55d0b156dfe0]:   %282 = fcmp uno double %280, %281
-[0x55d0b156f2e0]:   %294 = fcmp ogt double %280, %281
-[0x55d0b156f540]:   %296 = fcmp olt double %280, %281
-[0x55d0b156fd90]:   %298 = fcmp oeq double %280, %281
-Multiple matches exist for [0x55d0b13e5a50]:   %295 = fcmp oeq double %277, %278
-[0x55d0b156dfe0]:   %282 = fcmp uno double %280, %281
-[0x55d0b156f2e0]:   %294 = fcmp ogt double %280, %281
-[0x55d0b156f540]:   %296 = fcmp olt double %280, %281
-[0x55d0b156fd90]:   %298 = fcmp oeq double %280, %281
+Multiple matches exist for [0x55dd0225d3c0]:   %194 = fcmp uno double %192, %193
+[0x55dd023e37d0]:   %298 = fcmp oeq double %280, %281
+[0x55dd023e5af0]:   %282 = fcmp uno double %280, %281
+[0x55dd023e7e90]:   %294 = fcmp ogt double %280, %281
+[0x55dd023e8810]:   %296 = fcmp olt double %280, %281
+Multiple matches exist for [0x55dd02257830]:   %206 = fcmp ogt double %192, %193
+[0x55dd023e37d0]:   %298 = fcmp oeq double %280, %281
+[0x55dd023e5af0]:   %282 = fcmp uno double %280, %281
+[0x55dd023e7e90]:   %294 = fcmp ogt double %280, %281
+[0x55dd023e8810]:   %296 = fcmp olt double %280, %281
+Multiple matches exist for [0x55dd0225e160]:   %208 = fcmp olt double %192, %193
+[0x55dd023e37d0]:   %298 = fcmp oeq double %280, %281
+[0x55dd023e5af0]:   %282 = fcmp uno double %280, %281
+[0x55dd023e7e90]:   %294 = fcmp ogt double %280, %281
+[0x55dd023e8810]:   %296 = fcmp olt double %280, %281
+Multiple matches exist for [0x55dd0225e2c0]:   %210 = fcmp oeq double %192, %193
+[0x55dd023e37d0]:   %298 = fcmp oeq double %280, %281
+[0x55dd023e5af0]:   %282 = fcmp uno double %280, %281
+[0x55dd023e7e90]:   %294 = fcmp ogt double %280, %281
+[0x55dd023e8810]:   %296 = fcmp olt double %280, %281
 Iso Match NOT Found
+Writing 'sub_400d80_Proc6-mcsema-diff.dot'...
+Writing 'sub_400d80_Proc6-mcsema-diff.dot':Done
+
+Writing 'Proc6-proposed-diff.dot'...
+Writing 'Proc6-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Proc6] from ../binary/test.mcsema.opt.ll
 Extracting function [Proc6] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.30user 20.80system 0:31.30elapsed 99%CPU (0avgtext+0avgdata 14392maxresident)k
-0inputs+3840outputs (0major+2344minor)pagefaults 0swaps
+16.58user 19.48system 0:36.53elapsed 98%CPU (0avgtext+0avgdata 14312maxresident)k
+0inputs+4192outputs (0major+1394minor)pagefaults 0swaps

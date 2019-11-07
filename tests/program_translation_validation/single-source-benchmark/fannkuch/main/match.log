@@ -1,12 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558d4a1ce8c8]:   %93 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %79)
-[0x558d4a3132f0]:   %94 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400586)
-[0x558d4a31c690]:   %call2_400586 = tail call %struct.Memory.32* @sub_4005b0.fannkuch(%struct.State.1* %0, i64 %75, %struct.Memory.32* %2)
+Multiple matches exist for [0x55d81bf977b8]:   %93 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %79)
+[0x55d81c071670]:   %94 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400586)
+[0x55d81c074860]:   %call2_400586 = tail call %struct.Memory.32* @sub_4005b0.fannkuch(%struct.State.1* %0, i64 %75, %struct.Memory.32* %2)
 Iso Match NOT Found
+Writing 'sub_400560_main-mcsema-diff.dot'...
+Writing 'sub_400560_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.46user 3.22system 0:04.73elapsed 99%CPU (0avgtext+0avgdata 12748maxresident)k
-0inputs+504outputs (0major+959minor)pagefaults 0swaps
+1.49user 2.82system 0:04.48elapsed 96%CPU (0avgtext+0avgdata 12804maxresident)k
+0inputs+624outputs (0major+962minor)pagefaults 0swaps

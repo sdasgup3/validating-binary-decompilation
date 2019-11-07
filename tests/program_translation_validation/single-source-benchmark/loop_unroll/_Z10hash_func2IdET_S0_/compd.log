@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z10hash_func2IdET_S0_
@@ -614,5 +614,5 @@ Decompiling Function: _Z10hash_func2IdET_S0_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.25user 0.08system 0:00.37elapsed 89%CPU (0avgtext+0avgdata 10288maxresident)k
-0inputs+168outputs (0major+6366minor)pagefaults 0swaps
+0.28user 0.04system 0:00.35elapsed 92%CPU (0avgtext+0avgdata 10228maxresident)k
+144inputs+168outputs (0major+6367minor)pagefaults 0swaps

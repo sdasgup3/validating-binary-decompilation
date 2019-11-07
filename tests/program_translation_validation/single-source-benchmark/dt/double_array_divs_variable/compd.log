@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl double_array_divs_variable
@@ -794,7 +794,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x1___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4007ef --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4007ef --size 4
 Decompiling instr:addq $0x1, %rax Done...
 
 
@@ -897,7 +897,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addq__0x1___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400805 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400805 --size 4
 Decompiling instr:addq $0x1, %rax Done...
 
 
@@ -983,5 +983,5 @@ Decompiling Function: double_array_divs_variable Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.50user 0.08system 0:01.12elapsed 52%CPU (0avgtext+0avgdata 10448maxresident)k
-0inputs+248outputs (0major+12346minor)pagefaults 0swaps
+0.46user 0.09system 0:01.05elapsed 52%CPU (0avgtext+0avgdata 10380maxresident)k
+144inputs+248outputs (0major+12417minor)pagefaults 0swaps

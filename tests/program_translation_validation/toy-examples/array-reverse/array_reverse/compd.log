@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl array_reverse
@@ -540,7 +540,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x1___esi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4004c5 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4004c5 --size 3
 Decompiling instr:subl $0x1, %esi Done...
 
 
@@ -925,7 +925,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___edx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40050c --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40050c --size 3
 Decompiling instr:addl $0x1, %edx Done...
 
 
@@ -984,7 +984,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0xffffffff___edx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400515 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400515 --size 3
 Decompiling instr:addl $0xffffffff, %edx Done...
 
 
@@ -1070,5 +1070,5 @@ Decompiling Function: array_reverse Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.45user 0.10system 0:01.18elapsed 47%CPU (0avgtext+0avgdata 10516maxresident)k
-0inputs+264outputs (0major+14019minor)pagefaults 0swaps
+0.45user 0.07system 0:01.10elapsed 48%CPU (0avgtext+0avgdata 10540maxresident)k
+0inputs+264outputs (0major+14040minor)pagefaults 0swaps

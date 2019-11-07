@@ -1,19 +1,25 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564d6507b978]:   %123 = tail call fastcc %struct.Memory* @ext_601070_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
-[0x564d65157990]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x564d65162d60]:   %call2_400925 = tail call %struct.Memory.32* @sub_400870.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
-[0x564d6516c100]:   %call2_4008ff = tail call %struct.Memory.32* @sub_4007f0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
-Multiple matches exist for [0x564d6507cd78]:   %136 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %123)
-[0x564d65157990]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x564d65158fb0]:   %199 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %186)
-[0x564d65162d60]:   %call2_400925 = tail call %struct.Memory.32* @sub_400870.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
-[0x564d6516c100]:   %call2_4008ff = tail call %struct.Memory.32* @sub_4007f0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
-[0x564d6516f300]:   %call2_4008e4 = tail call %struct.Memory.32* @sub_400650.srand(%struct.State.1* %0, i64 %43, %struct.Memory.32* %2)
+Multiple matches exist for [0x55cb0407bf68]:   %157 = tail call fastcc %struct.Memory* @ext_601070_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+[0x55cb041c6860]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x55cb041d1d60]:   %call2_400925 = tail call %struct.Memory.32* @sub_400870.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
+[0x55cb041db100]:   %call2_4008ff = tail call %struct.Memory.32* @sub_4007f0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x55cb0407cad8]:   %170 = tail call fastcc %struct.Memory* @ext_601078_printf(%struct.State* nonnull %0, %struct.Memory* %157)
+[0x55cb041c6860]:   %186 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x55cb041c7fb0]:   %199 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %186)
+[0x55cb041d1d60]:   %call2_400925 = tail call %struct.Memory.32* @sub_400870.findDuplicate(%struct.State.1* nonnull %0, i64 %134, %struct.Memory.32* %MEMORY.0)
+[0x55cb041db100]:   %call2_4008ff = tail call %struct.Memory.32* @sub_4007f0.createRandomArray(%struct.State.1* nonnull %0, i64 %84, %struct.Memory.32* %MEMORY.0)
+[0x55cb041de0f0]:   %call2_4008e4 = tail call %struct.Memory.32* @sub_400650.srand(%struct.State.1* %0, i64 %43, %struct.Memory.32* %2)
 Iso Match NOT Found
+Writing 'sub_4008d0_main-mcsema-diff.dot'...
+Writing 'sub_4008d0_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.15user 9.08system 0:14.42elapsed 98%CPU (0avgtext+0avgdata 13176maxresident)k
-0inputs+1896outputs (0major+1110minor)pagefaults 0swaps
+6.94user 10.03system 0:17.10elapsed 99%CPU (0avgtext+0avgdata 13292maxresident)k
+0inputs+2152outputs (0major+1114minor)pagefaults 0swaps

@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55deada5b5d8]:   %264 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55deade9fa38]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55deadea0248]:   %80 = load i32, i32* %79, align 4
-Multiple matches exist for [0x55deada62890]:   %283 = lshr i32 %264, 31
-[0x55deaedd7ba0]:   %101 = lshr i32 %82, 31
-[0x55deaedd7ff0]:   %100 = lshr i32 %80, 31
-Multiple matches exist for [0x55deada62910]:   %284 = xor i32 %283, %282
-[0x55deaedd7960]:   %103 = xor i32 %98, %100
-[0x55deaedd7ac0]:   %102 = xor i32 %101, %100
+Multiple matches exist for [0x55eafe733d88]:   %323 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55eafee19328]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55eafee19b38]:   %80 = load i32, i32* %79, align 4
+Multiple matches exist for [0x55eafe734960]:   %342 = lshr i32 %323, 31
+[0x55eaffd48ce0]:   %101 = lshr i32 %82, 31
+[0x55eaffd48e40]:   %100 = lshr i32 %80, 31
+Multiple matches exist for [0x55eafe7349e0]:   %343 = xor i32 %342, %341
+[0x55eaffd487b0]:   %103 = xor i32 %98, %100
+[0x55eaffd48890]:   %102 = xor i32 %101, %100
 Iso Match NOT Found
+Writing 'sub_408340__Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc-mcsema-diff.dot'...
+Writing 'sub_408340__Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc-proposed-diff.dot'...
+Writing '_Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z22test_hoisted_variable1Ij19custom_add_variableIjEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-67.02user 5.05system 1:12.26elapsed 99%CPU (0avgtext+0avgdata 54624maxresident)k
-0inputs+3512outputs (0major+18668minor)pagefaults 0swaps
+77.08user 8.60system 1:26.31elapsed 99%CPU (0avgtext+0avgdata 54516maxresident)k
+0inputs+3872outputs (0major+10855minor)pagefaults 0swaps
