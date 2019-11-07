@@ -2,6 +2,12 @@
     
 Establishing faithfulness of binary decompilers is pivotal in gaining trust
 in the results of downstream analyses performed on the decompiled programs. Validating the translation of \ISA programs to the lifted IR is often non-scalable because of the heavy weight formal equivalence checker employed for the task.   
-We present a novel, scalable and principled technique and tooling infrastructure to the developers of binary decompilers to find bugs in translating the semantics of \ISA instruction to lifted IR. The technique uses a combination of single \ISA instruction translation-validation and program synthesis  to achieve translation validation of \ISA programs, but without using any heavy-weight equivalence checker in the pipeline.
+We present a novel, scalable and formal technique and tooling infrastructure to 
+the developers of binary decompilers to find bugs in translating the semantics 
+of \ISA instruction to lifted IR. \todo{This line needs to change as program 
+synthesis dos not wound right}The technique is based on \tv of the lifting of 
+individual \ISA instructions to high-level IR  and uses those validated 
+translations  to assist validation of \ISA programs without capitalizing on a 
+heavy-weight equivalence checker in the pipeline.
 
 \end{abstract}
