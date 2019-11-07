@@ -1,3 +1,25 @@
+## Towards Verified Binary Raising
+Program decompilation, that is analyzing the compiled binary to infer a 
+possible source program that could have generated it, is a widely used 
+technique for reverse engineering. Recently this technique has been used to 
+assist in verifying compiled artifacts and to recompile applications for 
+increased performance or security protections. In these latter applications, 
+one does not need a full decompiler back to program source, and hence binary 
+raising into an intermediate representation such as assembly code or LLVM is 
+sufficient.
+
+When raising a binary for rewriting purposes, it is imperative that the 
+decompilation process does not itself introduce new behaviors in the binary, as 
+the program rewriting will typically be done post-development, and will not 
+have access to the testing and verification suite used to originally develop 
+the applications. In contrast to compiler verification (e.g., [3]), the binary 
+recovery process is not given the program structure but rather must infer it 
+using techniques such as value-set analysis.
+
+Why we do not need to bother about more reacher representation.
+
+
+
 Program level validation is divided into validating each function.
 Now as we have already validated single instructions, what remained is the follwoing:
 
@@ -102,3 +124,10 @@ This is done so that the llvm opt does not does do any IPO
 ## Mention that reloc info is now used only by compd
 but mcsema can also use it, but curently its failing
 on binaries with reloc info.
+
+
+TV on the x86 and llvm programs is not feseable as the they diffrent programs in princible with
+both semantics and syntactic differnet (diff basicblock)
+
+  Moreover, generating an accurate control flow graph from a binary program is challenging. Our basic implementation adopts the per-instruction comparison approach.
+  how do we address that??

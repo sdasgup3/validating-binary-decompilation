@@ -2,7 +2,7 @@
 \label{sec:Intro}
 
 % Why bnary analysis is important
-The ability to directly reason about the binary code is desirable, not only because it allows to analyze the binary even when the source code is not available (e.g., legacy code or malware), but also because it avoids the need to trust the correctness of compilers~\cite{Thompson,WYSINWYE}.
+The ability to directly reason about the binary code is desirable, not only because it allows analyzing binaries even when the source code is not available (e.g., legacy code or malware), but also because it avoids the need to trust the correctness of compilers~\cite{Thompson,WYSINWYE}.
 Analyzing binary code is crucial in software engineering and security research.
 Some of the notable applications of binary analysis can be found in binary
 instrumentation
@@ -45,12 +45,14 @@ interpreting the instrumented program. Therefore, automatic validation tools are
 urgently to uncover hidden problems in a binary translator.
 
 \paragraph{Problem Scope}
+\todo[inline]{We are interested only in the validating the translation of instruction semantics and not in validating other decompilation efforts like variable/type recovery}
 % translaors targetting LLVM IR
 % many this that a decompiler would do
 % but we only target --> TV of the instruction seantics exposed in a program
 
 
 \paragraph{Existing Approaches}
+\todo[inline]{Most of the existing approaches are ether validating single instructions or validating program using a heavy weight equivalence checker. Program-level validating has its own important (give the motivating example)}
 
 \paragraph{Our Approach}
 
@@ -75,7 +77,7 @@ In this final form the two LLVM programs are syntactically equivalent. Transform
 
 
 
-\subsection{Challenges in Formalizing \ISA}
+\subsection{Challenges in Translation validation of Instruction Semantics}
 \label{sec:challenges-in-formalizing-x86}
 
 %%
