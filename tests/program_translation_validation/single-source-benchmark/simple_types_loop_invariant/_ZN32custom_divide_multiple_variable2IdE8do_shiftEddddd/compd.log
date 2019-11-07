@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd
@@ -674,5 +674,5 @@ Decompiling Function: _ZN32custom_divide_multiple_variable2IdE8do_shiftEddddd Do
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.31user 0.05system 0:00.37elapsed 98%CPU (0avgtext+0avgdata 10316maxresident)k
-0inputs+176outputs (0major+7428minor)pagefaults 0swaps
+0.28user 0.07system 0:00.38elapsed 93%CPU (0avgtext+0avgdata 10152maxresident)k
+24inputs+176outputs (0major+7379minor)pagefaults 0swaps

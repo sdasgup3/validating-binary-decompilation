@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN19custom_variable_xorItE8do_shiftEtt
@@ -634,5 +634,5 @@ Decompiling Function: _ZN19custom_variable_xorItE8do_shiftEtt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.28user 0.05system 0:00.37elapsed 88%CPU (0avgtext+0avgdata 10028maxresident)k
-0inputs+160outputs (0major+6669minor)pagefaults 0swaps
+0.26user 0.05system 0:00.34elapsed 94%CPU (0avgtext+0avgdata 10328maxresident)k
+0inputs+160outputs (0major+6638minor)pagefaults 0swaps

@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4009a0___cxx_global_var_init_16-mcsema-diff.dot'...
+Writing 'sub_4009a0___cxx_global_var_init_16-mcsema-diff.dot':Done
+
+Writing '__cxx_global_var_init.16-proposed-diff.dot'...
+Writing '__cxx_global_var_init.16-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [__cxx_global_var_init.16] from ../binary/test.mcsema.opt.ll
 Extracting function [__cxx_global_var_init.16] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.77user 0.11system 0:00.93elapsed 95%CPU (0avgtext+0avgdata 23720maxresident)k
-0inputs+48outputs (0major+3439minor)pagefaults 0swaps
+0.97user 0.07system 0:01.06elapsed 98%CPU (0avgtext+0avgdata 23808maxresident)k
+0inputs+80outputs (0major+3470minor)pagefaults 0swaps

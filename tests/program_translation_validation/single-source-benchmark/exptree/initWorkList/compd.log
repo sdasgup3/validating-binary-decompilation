@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl initWorkList
@@ -720,7 +720,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008cb --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4008cb --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -806,5 +806,5 @@ Decompiling Function: initWorkList Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.34user 0.07system 0:00.71elapsed 58%CPU (0avgtext+0avgdata 10348maxresident)k
-0inputs+208outputs (0major+9509minor)pagefaults 0swaps
+0.35user 0.03system 0:00.66elapsed 57%CPU (0avgtext+0avgdata 10540maxresident)k
+0inputs+208outputs (0major+9536minor)pagefaults 0swaps

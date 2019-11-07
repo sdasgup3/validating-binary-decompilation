@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5588283bb668]:   %225 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x558827ab57d8]:   %85 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x558827ab7928]:   %83 = load i32, i32* %82, align 4
-Multiple matches exist for [0x5588283bc240]:   %244 = lshr i32 %225, 31
-[0x5588289efb50]:   %104 = lshr i32 %85, 31
-[0x5588289efc30]:   %103 = lshr i32 %83, 31
-Multiple matches exist for [0x5588283bc2c0]:   %245 = xor i32 %244, %243
-[0x5588289ef810]:   %106 = xor i32 %101, %103
-[0x5588289ef9f0]:   %105 = xor i32 %104, %103
+Multiple matches exist for [0x56352dce5e88]:   %217 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x56352d8ed188]:   %83 = load i32, i32* %82, align 4
+[0x56352e811728]:   %85 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+Multiple matches exist for [0x56352dd72880]:   %236 = lshr i32 %217, 31
+[0x56352e81c790]:   %104 = lshr i32 %85, 31
+[0x56352e81cbe0]:   %103 = lshr i32 %83, 31
+Multiple matches exist for [0x56352dd72900]:   %237 = xor i32 %236, %235
+[0x56352e81c550]:   %106 = xor i32 %101, %103
+[0x56352e81c6b0]:   %105 = xor i32 %104, %103
 Iso Match NOT Found
+Writing 'sub_4051b0__Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc-mcsema-diff.dot'...
+Writing 'sub_4051b0__Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc-proposed-diff.dot'...
+Writing '_Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z22test_hoisted_variable1Is19custom_add_variableIsEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-70.47user 5.62system 1:16.84elapsed 99%CPU (0avgtext+0avgdata 54556maxresident)k
-0inputs+3816outputs (0major+10473minor)pagefaults 0swaps
+76.58user 8.36system 1:25.37elapsed 99%CPU (0avgtext+0avgdata 54288maxresident)k
+0inputs+4040outputs (0major+18702minor)pagefaults 0swaps

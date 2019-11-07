@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4025c0__Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_-mcsema-diff.dot'...
+Writing 'sub_4025c0__Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_-mcsema-diff.dot':Done
+
+Writing '_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_-proposed-diff.dot'...
+Writing '_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.85user 4.76system 0:08.72elapsed 98%CPU (0avgtext+0avgdata 17096maxresident)k
-0inputs+1088outputs (0major+2022minor)pagefaults 0swaps
+6.44user 4.41system 0:10.89elapsed 99%CPU (0avgtext+0avgdata 17464maxresident)k
+0inputs+1240outputs (0major+3433minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl search
@@ -433,7 +433,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__0x6020b0
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012d4 --size 11
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4012d4 --size 11
 Global Access Mismatch: 6299824 Relocation: Address, McSema: Constant
 Decompiling instr:movl $0x0, 0x6020b0 Done...
 
@@ -455,7 +455,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__0x6020b4
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4012df --size 11
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4012df --size 11
 Global Access Mismatch: 6299828 Relocation: Address, McSema: Constant
 Decompiling instr:movl $0x0, 0x6020b4 Done...
 
@@ -520,5 +520,5 @@ Decompiling Function: search Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.03system 0:00.68elapsed 22%CPU (0avgtext+0avgdata 10288maxresident)k
-0inputs+136outputs (0major+4688minor)pagefaults 0swaps
+0.11user 0.02system 0:00.64elapsed 22%CPU (0avgtext+0avgdata 10148maxresident)k
+72inputs+136outputs (0major+4666minor)pagefaults 0swaps

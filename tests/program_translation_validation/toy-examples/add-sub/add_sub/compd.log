@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl add_sub
@@ -674,5 +674,5 @@ Decompiling Function: add_sub Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.04system 0:00.25elapsed 98%CPU (0avgtext+0avgdata 10380maxresident)k
-0inputs+176outputs (0major+7302minor)pagefaults 0swaps
+0.18user 0.06system 0:00.24elapsed 98%CPU (0avgtext+0avgdata 10296maxresident)k
+0inputs+176outputs (0major+7282minor)pagefaults 0swaps

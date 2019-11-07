@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400910_Proc4-mcsema-diff.dot'...
+Writing 'sub_400910_Proc4-mcsema-diff.dot':Done
+
+Writing 'Proc4-proposed-diff.dot'...
+Writing 'Proc4-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Proc4] from ../binary/test.mcsema.opt.ll
 Extracting function [Proc4] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.31user 1.05system 0:01.38elapsed 99%CPU (0avgtext+0avgdata 13264maxresident)k
-0inputs+192outputs (0major+1073minor)pagefaults 0swaps
+0.73user 0.99system 0:01.77elapsed 97%CPU (0avgtext+0avgdata 13184maxresident)k
+0inputs+272outputs (0major+1074minor)pagefaults 0swaps

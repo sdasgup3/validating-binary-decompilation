@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv
@@ -441,7 +441,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0x10___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401da4 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401da4 --size 4
 Decompiling instr:subq $0x10, %rsp Done...
 
 
@@ -633,7 +633,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x10___rsp
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401dcb --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401dcb --size 4
 Decompiling instr:addq $0x10, %rsp Done...
 
 
@@ -678,5 +678,5 @@ Decompiling Function: _ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.24user 0.05system 0:01.07elapsed 27%CPU (0avgtext+0avgdata 10420maxresident)k
-0inputs+176outputs (0major+7482minor)pagefaults 0swaps
+0.25user 0.03system 0:00.95elapsed 29%CPU (0avgtext+0avgdata 10424maxresident)k
+0inputs+176outputs (0major+7457minor)pagefaults 0swaps

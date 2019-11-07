@@ -1,31 +1,37 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56217b8ccc18]:   %54 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
-[0x56217b8f74d0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
-[0x56217b918000]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
-Multiple matches exist for [0x56217b8cde48]:   %77 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %54)
-[0x56217b6ef750]:   %189 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %call2_401bc3)
-[0x56217b8f74d0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
-[0x56217b8f7600]:   %292 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %279, %struct.Memory.31* %275)
-[0x56217b8f7860]:   %275 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %252)
-[0x56217b9019a0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
-[0x56217b90ad40]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
-[0x56217b918000]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
-Multiple matches exist for [0x56217b8d25d8]:   %147 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %MEMORY.2)
-[0x56217b9019a0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
-[0x56217b90ad40]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
-Multiple matches exist for [0x56217b8dddd8]:   %391 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %384)
-[0x56217b6ef750]:   %189 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %call2_401bc3)
-[0x56217b8f74d0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
-[0x56217b8f7600]:   %292 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %279, %struct.Memory.31* %275)
-[0x56217b8f7860]:   %275 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %252)
-[0x56217b9019a0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
-[0x56217b90ad40]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
-[0x56217b918000]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
+Multiple matches exist for [0x55769b8b93f8]:   %54 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %MEMORY.2)
+[0x55769b8f35c0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
+[0x55769b91a030]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
+Multiple matches exist for [0x55769b8ba628]:   %77 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %54)
+[0x55769b6f1750]:   %189 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %call2_401bc3)
+[0x55769b8f35c0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
+[0x55769b8f9500]:   %292 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %279, %struct.Memory.31* %275)
+[0x55769b8f9630]:   %275 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %252)
+[0x55769b9039d0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
+[0x55769b90cd70]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
+[0x55769b91a030]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
+Multiple matches exist for [0x55769b8bd108]:   %258 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %251)
+[0x55769b6f1750]:   %189 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %call2_401bc3)
+[0x55769b8f35c0]:   %call2_401c48 = tail call %struct.Memory.31* @sub_400520.rsdec_204(%struct.State.0* nonnull %0, i64 %342, %struct.Memory.31* %MEMORY.2)
+[0x55769b8f9500]:   %292 = tail call %struct.Memory.31* @__remill_error(%struct.State.0* nonnull dereferenceable(3376) %0, i64 %279, %struct.Memory.31* %275)
+[0x55769b8f9630]:   %275 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %252)
+[0x55769b9039d0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
+[0x55769b90cd70]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
+[0x55769b91a030]:   %252 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.2)
+Multiple matches exist for [0x55769b8c5948]:   %283 = tail call fastcc %struct.Memory* @ext_6040d8_random(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x55769b9039d0]:   %call2_401bc3 = tail call %struct.Memory.31* @sub_401880.rsenc_204(%struct.State.0* nonnull %0, i64 %178, %struct.Memory.31* %MEMORY.1)
+[0x55769b90cd70]:   %121 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 ()* @random to i64), %struct.Memory.31* %MEMORY.1)
 Iso Match NOT Found
+Writing 'sub_401b40_main-mcsema-diff.dot'...
+Writing 'sub_401b40_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-21.32user 23.87system 0:45.33elapsed 99%CPU (0avgtext+0avgdata 15768maxresident)k
-0inputs+4880outputs (0major+3128minor)pagefaults 0swaps
+22.33user 25.61system 0:48.12elapsed 99%CPU (0avgtext+0avgdata 15804maxresident)k
+0inputs+5264outputs (0major+3130minor)pagefaults 0swaps

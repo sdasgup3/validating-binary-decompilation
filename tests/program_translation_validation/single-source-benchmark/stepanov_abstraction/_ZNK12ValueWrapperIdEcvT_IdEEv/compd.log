@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZNK12ValueWrapperIdEcvT_IdEEv
@@ -514,5 +514,5 @@ Decompiling Function: _ZNK12ValueWrapperIdEcvT_IdEEv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.05system 0:00.21elapsed 83%CPU (0avgtext+0avgdata 10052maxresident)k
-0inputs+136outputs (0major+4590minor)pagefaults 0swaps
+0.14user 0.02system 0:00.18elapsed 93%CPU (0avgtext+0avgdata 10124maxresident)k
+0inputs+136outputs (0major+4603minor)pagefaults 0swaps

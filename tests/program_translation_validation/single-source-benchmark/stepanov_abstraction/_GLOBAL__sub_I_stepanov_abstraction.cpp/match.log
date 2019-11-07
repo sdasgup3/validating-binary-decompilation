@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400780__GLOBAL__sub_I_stepanov_abstraction_cpp-mcsema-diff.dot'...
+Writing 'sub_400780__GLOBAL__sub_I_stepanov_abstraction_cpp-mcsema-diff.dot':Done
+
+Writing '_GLOBAL__sub_I_stepanov_abstraction.cpp-proposed-diff.dot'...
+Writing '_GLOBAL__sub_I_stepanov_abstraction.cpp-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_GLOBAL__sub_I_stepanov_abstraction.cpp] from ../binary/test.mcsema.opt.ll
 Extracting function [_GLOBAL__sub_I_stepanov_abstraction.cpp] from mcsema/test.proposed.opt.ll
 Matcher Done...
-16.37user 3.64system 0:20.22elapsed 98%CPU (0avgtext+0avgdata 23744maxresident)k
-0inputs+1144outputs (0major+6008minor)pagefaults 0swaps
+17.02user 2.76system 0:19.91elapsed 99%CPU (0avgtext+0avgdata 23804maxresident)k
+0inputs+1272outputs (0major+6046minor)pagefaults 0swaps

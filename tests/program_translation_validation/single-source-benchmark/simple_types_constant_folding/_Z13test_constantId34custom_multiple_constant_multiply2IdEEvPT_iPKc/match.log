@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55c55b058ca8]:   %80 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55c55ba90918]:   %79 = load i32, i32* %78, align 4
-[0x55c55bd4d9e8]:   %81 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55c55b059880]:   %99 = lshr i32 %80, 31
-[0x55c55bd70b20]:   %100 = lshr i32 %81, 31
-[0x55c55bd70c70]:   %99 = lshr i32 %79, 31
-Multiple matches exist for [0x55c55b059900]:   %100 = xor i32 %99, %98
-[0x55c55bd7ba70]:   %101 = xor i32 %100, %99
-[0x55c55bd7c700]:   %102 = xor i32 %97, %99
+Multiple matches exist for [0x5561ac579ca8]:   %140 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5561ac5fa638]:   %79 = load i32, i32* %78, align 4
+[0x5561ac8d6368]:   %81 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x5561ac57a880]:   %159 = lshr i32 %140, 31
+[0x5561ac8fb500]:   %100 = lshr i32 %81, 31
+[0x5561ac8fb650]:   %99 = lshr i32 %79, 31
+Multiple matches exist for [0x5561ac57a900]:   %160 = xor i32 %159, %158
+[0x5561ac906500]:   %101 = xor i32 %100, %99
+[0x5561ac907190]:   %102 = xor i32 %97, %99
 Iso Match NOT Found
+Writing 'sub_40e2d0__Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_40e2d0__Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantId34custom_multiple_constant_multiply2IdEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-58.90user 7.43system 1:08.53elapsed 96%CPU (0avgtext+0avgdata 66348maxresident)k
-0inputs+2184outputs (0major+22966minor)pagefaults 0swaps
+76.44user 6.31system 1:23.69elapsed 98%CPU (0avgtext+0avgdata 65808maxresident)k
+0inputs+2488outputs (0major+22953minor)pagefaults 0swaps

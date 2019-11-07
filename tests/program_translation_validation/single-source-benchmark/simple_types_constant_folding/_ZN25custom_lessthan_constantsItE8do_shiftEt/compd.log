@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN25custom_lessthan_constantsItE8do_shiftEt
@@ -554,5 +554,5 @@ Decompiling Function: _ZN25custom_lessthan_constantsItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.23user 0.05system 0:00.32elapsed 90%CPU (0avgtext+0avgdata 10316maxresident)k
-0inputs+144outputs (0major+5331minor)pagefaults 0swaps
+0.24user 0.04system 0:00.32elapsed 88%CPU (0avgtext+0avgdata 10268maxresident)k
+0inputs+144outputs (0major+5307minor)pagefaults 0swaps

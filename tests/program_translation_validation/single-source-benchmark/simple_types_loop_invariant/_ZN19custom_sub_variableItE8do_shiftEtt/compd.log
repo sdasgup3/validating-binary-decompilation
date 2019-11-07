@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN19custom_sub_variableItE8do_shiftEtt
@@ -634,5 +634,5 @@ Decompiling Function: _ZN19custom_sub_variableItE8do_shiftEtt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.26user 0.06system 0:00.33elapsed 95%CPU (0avgtext+0avgdata 10376maxresident)k
-0inputs+160outputs (0major+6657minor)pagefaults 0swaps
+0.26user 0.05system 0:00.34elapsed 91%CPU (0avgtext+0avgdata 10256maxresident)k
+0inputs+160outputs (0major+6649minor)pagefaults 0swaps

@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56300cc82ba8]:   %75 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56300e1daad8]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-[0x56300e6dd2f8]:   %74 = load i32, i32* %73, align 4
-Multiple matches exist for [0x56300cc83780]:   %94 = lshr i32 %75, 31
-[0x56300eff1a50]:   %95 = lshr i32 %76, 31
-[0x56300eff1fb0]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x56300cc83800]:   %95 = xor i32 %94, %93
-[0x56300effcb90]:   %96 = xor i32 %95, %94
-[0x56300effd860]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x56112ba76e98]:   %126 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x56112d03a028]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+[0x56112d11e928]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x56112ba8a0e0]:   %145 = lshr i32 %126, 31
+[0x56112ddee4b0]:   %95 = lshr i32 %76, 31
+[0x56112ddee600]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x56112ba8a160]:   %146 = xor i32 %145, %144
+[0x56112ddf94b0]:   %96 = xor i32 %95, %94
+[0x56112ddfa140]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
+Writing 'sub_403ff0__Z13test_constantIh10custom_twoIhEEvPT_iPKc-mcsema-diff.dot'...
+Writing 'sub_403ff0__Z13test_constantIh10custom_twoIhEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z13test_constantIh10custom_twoIhEEvPT_iPKc-proposed-diff.dot'...
+Writing '_Z13test_constantIh10custom_twoIhEEvPT_iPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIh10custom_twoIhEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIh10custom_twoIhEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-64.60user 6.50system 1:12.62elapsed 97%CPU (0avgtext+0avgdata 66036maxresident)k
-0inputs+2400outputs (0major+22977minor)pagefaults 0swaps
+83.67user 6.12system 1:32.60elapsed 96%CPU (0avgtext+0avgdata 66012maxresident)k
+0inputs+2768outputs (0major+22972minor)pagefaults 0swaps

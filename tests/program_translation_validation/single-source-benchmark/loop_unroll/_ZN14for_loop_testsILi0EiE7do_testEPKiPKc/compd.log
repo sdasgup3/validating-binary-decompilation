@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN14for_loop_testsILi0EiE7do_testEPKiPKc
@@ -494,5 +494,5 @@ Decompiling Function: _ZN14for_loop_testsILi0EiE7do_testEPKiPKc Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.06system 0:00.25elapsed 101%CPU (0avgtext+0avgdata 10092maxresident)k
-0inputs+128outputs (0major+4296minor)pagefaults 0swaps
+0.19user 0.04system 0:00.26elapsed 89%CPU (0avgtext+0avgdata 10124maxresident)k
+0inputs+128outputs (0major+4302minor)pagefaults 0swaps

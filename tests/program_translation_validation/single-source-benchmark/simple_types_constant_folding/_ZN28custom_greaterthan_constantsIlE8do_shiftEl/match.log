@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_411bc0__ZN28custom_greaterthan_constantsIlE8do_shiftEl-mcsema-diff.dot'...
+Writing 'sub_411bc0__ZN28custom_greaterthan_constantsIlE8do_shiftEl-mcsema-diff.dot':Done
+
+Writing '_ZN28custom_greaterthan_constantsIlE8do_shiftEl-proposed-diff.dot'...
+Writing '_ZN28custom_greaterthan_constantsIlE8do_shiftEl-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN28custom_greaterthan_constantsIlE8do_shiftEl] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN28custom_greaterthan_constantsIlE8do_shiftEl] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.37user 0.07system 0:02.45elapsed 99%CPU (0avgtext+0avgdata 66196maxresident)k
-0inputs+32outputs (0major+12817minor)pagefaults 0swaps
+3.76user 0.08system 0:03.95elapsed 97%CPU (0avgtext+0avgdata 66072maxresident)k
+0inputs+64outputs (0major+14039minor)pagefaults 0swaps

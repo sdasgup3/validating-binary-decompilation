@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_413f80__ZN16while_loop_testsILi1EiE7do_testEPKiPKc-mcsema-diff.dot'...
+Writing 'sub_413f80__ZN16while_loop_testsILi1EiE7do_testEPKiPKc-mcsema-diff.dot':Done
+
+Writing '_ZN16while_loop_testsILi1EiE7do_testEPKiPKc-proposed-diff.dot'...
+Writing '_ZN16while_loop_testsILi1EiE7do_testEPKiPKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN16while_loop_testsILi1EiE7do_testEPKiPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN16while_loop_testsILi1EiE7do_testEPKiPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-9.55user 1.35system 0:10.95elapsed 99%CPU (0avgtext+0avgdata 62512maxresident)k
-0inputs+280outputs (0major+21649minor)pagefaults 0swaps
+13.02user 0.36system 0:13.68elapsed 97%CPU (0avgtext+0avgdata 62488maxresident)k
+0inputs+400outputs (0major+12141minor)pagefaults 0swaps

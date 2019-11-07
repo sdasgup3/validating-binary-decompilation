@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN18custom_variable_orIiE8do_shiftEii
@@ -554,5 +554,5 @@ Decompiling Function: _ZN18custom_variable_orIiE8do_shiftEii Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.07system 0:00.28elapsed 100%CPU (0avgtext+0avgdata 10088maxresident)k
-0inputs+144outputs (0major+5329minor)pagefaults 0swaps
+0.21user 0.05system 0:00.31elapsed 85%CPU (0avgtext+0avgdata 10032maxresident)k
+24inputs+144outputs (0major+5301minor)pagefaults 0swaps

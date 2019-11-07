@@ -37,9 +37,9 @@
 #include "src/ext/cpputil/include/signal/debug_handler.h"
 #include "src/ext/cpputil/include/system/terminal.h"
 
+#include "llvm-dfg-dot.h"
 #include "tools/gadgets/functions.h"
 #include "tools/gadgets/target.h"
-#include "llvm-dfg-dot.h"
 
 using namespace std;
 using namespace llvm;
@@ -47,12 +47,12 @@ using namespace cpputil;
 using namespace stoke;
 
 auto &LLIR = ValueArg<string>::create("llir_file")
-                   .usage("<path/to/file.(ll/bc)>:function to convert to dot")
-                   .description("Path to decompiled ll/bc file");
+                 .usage("<path/to/file.(ll/bc)>:function to convert to dot")
+                 .description("Path to decompiled ll/bc file");
 
 auto &Outfile = ValueArg<string>::create("outfile")
-                   .usage("<path/to/file.(dot)>: file to write dot to")
-                   .description("Path to proposed output dot file");
+                    .usage("<path/to/file.(dot)>: file to write dot to")
+                    .description("Path to proposed output dot file");
 
 int main(int argc, char **argv) {
   target_arg.required(false);
@@ -106,7 +106,8 @@ int main(int argc, char **argv) {
 
     smatch m;
     string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$")) == false)
+    if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$")) ==
+        false)
       continue;
 
     F1 = &Func;

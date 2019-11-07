@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl list_equal
@@ -1181,7 +1181,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ANDI3RnWIhE2RnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_andb__0x1___cl
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40092b --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40092b --size 3
 Decompiling instr:andb $0x1, %cl Done...
 
 
@@ -1286,5 +1286,5 @@ Decompiling Function: list_equal Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.70user 0.13system 0:01.17elapsed 71%CPU (0avgtext+0avgdata 10476maxresident)k
-0inputs+288outputs (0major+17584minor)pagefaults 0swaps
+0.70user 0.11system 0:01.12elapsed 72%CPU (0avgtext+0avgdata 10572maxresident)k
+96inputs+288outputs (0major+17650minor)pagefaults 0swaps

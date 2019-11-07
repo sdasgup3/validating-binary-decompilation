@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl list_last
@@ -514,5 +514,5 @@ Decompiling Function: list_last Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.02system 0:00.16elapsed 92%CPU (0avgtext+0avgdata 10308maxresident)k
-0inputs+136outputs (0major+4570minor)pagefaults 0swaps
+0.10user 0.03system 0:00.16elapsed 84%CPU (0avgtext+0avgdata 10052maxresident)k
+24inputs+136outputs (0major+4553minor)pagefaults 0swaps

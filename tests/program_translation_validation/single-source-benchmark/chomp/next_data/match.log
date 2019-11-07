@@ -1,27 +1,33 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5624a12a7ab8]:   %150 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
-[0x5624a1384a48]:   %40 = load i32, i32* bitcast (%G_0x602068_type* @G_0x602068 to i32*), align 8
-[0x5624a13a6028]:   %38 = load i32, i32* %37, align 4
-Multiple matches exist for [0x5624a12a92c0]:   %169 = lshr i32 %150, 31
-[0x5624a13ab830]:   %58 = lshr i32 %38, 31
-[0x5624a13acd80]:   %59 = lshr i32 %40, 31
-Multiple matches exist for [0x5624a12e79f0]:   %170 = xor i32 %169, %168
-[0x5624a13aa170]:   %61 = xor i32 %56, %58
-[0x5624a13ac5c0]:   %60 = xor i32 %59, %58
-Multiple matches exist for [0x5624a12e8c08]:   %198 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
-[0x5624a1390818]:   %130 = load i32, i32* %129, align 4
-[0x5624a13939f8]:   %132 = load i32, i32* bitcast (%G_0x60206c_type* @G_0x60206c to i32*), align 8
-Multiple matches exist for [0x5624a12e97e0]:   %217 = lshr i32 %198, 31
-[0x5624a13b07f0]:   %151 = lshr i32 %132, 31
-[0x5624a13b0910]:   %150 = lshr i32 %130, 31
-Multiple matches exist for [0x5624a12e9860]:   %218 = xor i32 %217, %216
-[0x5624a13af440]:   %152 = xor i32 %151, %150
-[0x5624a13b2e70]:   %153 = xor i32 %148, %150
+Multiple matches exist for [0x561d809b8488]:   %98 = load i32, i32* bitcast (%nrow_type* @nrow to i32*), align 8
+[0x561d80c036a8]:   %130 = load i32, i32* %129, align 4
+[0x561d80c06888]:   %132 = load i32, i32* bitcast (%G_0x60206c_type* @G_0x60206c to i32*), align 8
+Multiple matches exist for [0x561d809b9060]:   %117 = lshr i32 %98, 31
+[0x561d80c33da0]:   %151 = lshr i32 %132, 31
+[0x561d80c33ec0]:   %150 = lshr i32 %130, 31
+Multiple matches exist for [0x561d809b90e0]:   %118 = xor i32 %117, %116
+[0x561d80c226b0]:   %152 = xor i32 %151, %150
+[0x561d80c348b0]:   %153 = xor i32 %148, %150
+Multiple matches exist for [0x561d809ffba8]:   %200 = load i32, i32* bitcast (%ncol_type* @ncol to i32*), align 8
+[0x561d80bf8768]:   %38 = load i32, i32* %37, align 4
+[0x561d80c0d438]:   %40 = load i32, i32* bitcast (%G_0x602068_type* @G_0x602068 to i32*), align 8
+Multiple matches exist for [0x561d809bfa80]:   %219 = lshr i32 %200, 31
+[0x561d80c1fc10]:   %59 = lshr i32 %40, 31
+[0x561d80c21680]:   %58 = lshr i32 %38, 31
+Multiple matches exist for [0x561d809bfb00]:   %220 = xor i32 %219, %218
+[0x561d80c1d000]:   %61 = xor i32 %56, %58
+[0x561d80c1f450]:   %60 = xor i32 %59, %58
 Iso Match NOT Found
+Writing 'sub_4006e0_next_data-mcsema-diff.dot'...
+Writing 'sub_4006e0_next_data-mcsema-diff.dot':Done
+
+Writing 'next_data-proposed-diff.dot'...
+Writing 'next_data-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [next_data] from ../binary/test.mcsema.opt.ll
 Extracting function [next_data] from mcsema/test.proposed.opt.ll
 Matcher Done...
-6.37user 10.31system 0:16.69elapsed 99%CPU (0avgtext+0avgdata 14148maxresident)k
-0inputs+1944outputs (0major+2285minor)pagefaults 0swaps
+8.15user 11.35system 0:19.51elapsed 99%CPU (0avgtext+0avgdata 14232maxresident)k
+0inputs+2088outputs (0major+2293minor)pagefaults 0swaps

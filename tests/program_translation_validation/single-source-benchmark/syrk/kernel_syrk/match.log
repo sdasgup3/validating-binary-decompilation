@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400bd0_kernel_syrk-mcsema-diff.dot'...
+Writing 'sub_400bd0_kernel_syrk-mcsema-diff.dot':Done
+
+Writing 'kernel_syrk-proposed-diff.dot'...
+Writing 'kernel_syrk-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_syrk] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_syrk] from mcsema/test.proposed.opt.ll
 Matcher Done...
-11.01user 24.39system 0:35.42elapsed 99%CPU (0avgtext+0avgdata 16328maxresident)k
-0inputs+8328outputs (0major+1896minor)pagefaults 0swaps
+19.39user 29.82system 0:49.30elapsed 99%CPU (0avgtext+0avgdata 16380maxresident)k
+0inputs+9208outputs (0major+3595minor)pagefaults 0swaps

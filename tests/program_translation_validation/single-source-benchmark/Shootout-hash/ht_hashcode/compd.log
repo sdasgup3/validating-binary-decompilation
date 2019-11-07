@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl ht_hashcode
@@ -687,7 +687,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addq__0x1___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400ca9 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400ca9 --size 4
 Decompiling instr:addq $0x1, %rax Done...
 
 
@@ -906,5 +906,5 @@ Decompiling Function: ht_hashcode Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.39user 0.08system 0:00.76elapsed 62%CPU (0avgtext+0avgdata 10496maxresident)k
-0inputs+240outputs (0major+11189minor)pagefaults 0swaps
+0.40user 0.05system 0:00.72elapsed 62%CPU (0avgtext+0avgdata 10604maxresident)k
+72inputs+240outputs (0major+11200minor)pagefaults 0swaps

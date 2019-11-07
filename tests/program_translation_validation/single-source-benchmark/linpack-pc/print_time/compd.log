@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl print_time
@@ -474,5 +474,5 @@ Decompiling Function: print_time Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.10user 0.01system 0:00.13elapsed 88%CPU (0avgtext+0avgdata 10032maxresident)k
+0.07user 0.04system 0:00.13elapsed 85%CPU (0avgtext+0avgdata 10000maxresident)k
 0inputs+120outputs (0major+3901minor)pagefaults 0swaps

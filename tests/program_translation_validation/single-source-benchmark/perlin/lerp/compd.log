@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl lerp
@@ -634,5 +634,5 @@ Decompiling Function: lerp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.18user 0.04system 0:00.26elapsed 86%CPU (0avgtext+0avgdata 10384maxresident)k
-0inputs+168outputs (0major+6610minor)pagefaults 0swaps
+0.18user 0.03system 0:00.23elapsed 91%CPU (0avgtext+0avgdata 10392maxresident)k
+48inputs+168outputs (0major+6637minor)pagefaults 0swaps

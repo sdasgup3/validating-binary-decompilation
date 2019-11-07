@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN19custom_constant_subIlE8do_shiftEl
@@ -472,7 +472,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq__0xa___rdi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41179c --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41179c --size 4
 Decompiling instr:subq $0xa, %rdi Done...
 
 
@@ -536,5 +536,5 @@ Decompiling Function: _ZN19custom_constant_subIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.07system 0:02.08elapsed 14%CPU (0avgtext+0avgdata 10168maxresident)k
-0inputs+144outputs (0major+5034minor)pagefaults 0swaps
+0.24user 0.04system 0:01.75elapsed 16%CPU (0avgtext+0avgdata 10412maxresident)k
+24inputs+144outputs (0major+5031minor)pagefaults 0swaps

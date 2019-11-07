@@ -33,12 +33,13 @@ find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "test-suite" > docs/make
 ### Run Binary [Already Done; Needed for one time]
 ```bash
 cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make reloc_binary ; cd .." |& tee ~/Junk/log
 # C++ binaries are ignored as mentioned in docs/FailureReasons.md
 ```
 
 ### Run McSema [Already Done, Needed one time]
 ```bash
-cat docs/filelist.txt | parallel -j64  " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
+cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema ; cd .." |& tee ~/Junk/log
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd .." |& tee ~/Junk/log
 ```
 

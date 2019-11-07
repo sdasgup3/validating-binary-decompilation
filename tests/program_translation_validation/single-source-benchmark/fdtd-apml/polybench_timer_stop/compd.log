@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl polybench_timer_stop
@@ -451,7 +451,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd__xmm0__0x604088
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4007a9 --size 9
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4007a9 --size 9
 Global Access Mismatch: 6307976 Relocation: Address, McSema: Constant
 Decompiling instr:movsd %xmm0, 0x604088 Done...
 
@@ -497,5 +497,5 @@ Decompiling Function: polybench_timer_stop Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.11user 0.03system 0:00.38elapsed 39%CPU (0avgtext+0avgdata 10168maxresident)k
-0inputs+128outputs (0major+4327minor)pagefaults 0swaps
+0.10user 0.04system 0:00.36elapsed 39%CPU (0avgtext+0avgdata 10364maxresident)k
+24inputs+128outputs (0major+4322minor)pagefaults 0swaps

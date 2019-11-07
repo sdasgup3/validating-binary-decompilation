@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl what_date
@@ -454,5 +454,5 @@ Decompiling Function: what_date Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.08user 0.02system 0:00.11elapsed 94%CPU (0avgtext+0avgdata 10108maxresident)k
-0inputs+120outputs (0major+3568minor)pagefaults 0swaps
+0.08user 0.02system 0:00.11elapsed 89%CPU (0avgtext+0avgdata 10128maxresident)k
+0inputs+120outputs (0major+3561minor)pagefaults 0swaps

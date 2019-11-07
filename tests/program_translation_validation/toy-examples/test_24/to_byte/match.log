@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4005f0_to_byte-mcsema-diff.dot'...
+Writing 'sub_4005f0_to_byte-mcsema-diff.dot':Done
+
+Writing 'to_byte-proposed-diff.dot'...
+Writing 'to_byte-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [to_byte] from ../binary/test.mcsema.opt.ll
 Extracting function [to_byte] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.65user 4.27system 0:05.93elapsed 99%CPU (0avgtext+0avgdata 13120maxresident)k
-0inputs+944outputs (0major+1691minor)pagefaults 0swaps
+1.52user 4.51system 0:06.04elapsed 100%CPU (0avgtext+0avgdata 13184maxresident)k
+0inputs+1112outputs (0major+1681minor)pagefaults 0swaps

@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5594d74ad9c8]:   %320 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5594d774a838]:   %101 = load i32, i32* %100, align 4
-[0x5594d774bb38]:   %103 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-Multiple matches exist for [0x5594d74ae5a0]:   %339 = lshr i32 %320, 31
-[0x5594d8685160]:   %122 = lshr i32 %103, 31
-[0x5594d86852c0]:   %121 = lshr i32 %101, 31
-Multiple matches exist for [0x5594d74ae620]:   %340 = xor i32 %339, %338
-[0x5594d8684e20]:   %124 = xor i32 %119, %121
-[0x5594d8684f80]:   %123 = xor i32 %122, %121
+Multiple matches exist for [0x55cd894fddb8]:   %312 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55cd89c843d8]:   %101 = load i32, i32* %100, align 4
+[0x55cd89c855a8]:   %103 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+Multiple matches exist for [0x55cd894fe990]:   %331 = lshr i32 %312, 31
+[0x55cd8abb5de0]:   %122 = lshr i32 %103, 31
+[0x55cd8abb5f40]:   %121 = lshr i32 %101, 31
+Multiple matches exist for [0x55cd894fea10]:   %332 = xor i32 %331, %330
+[0x55cd8abb5aa0]:   %124 = xor i32 %119, %121
+[0x55cd8abb5c00]:   %123 = xor i32 %122, %121
 Iso Match NOT Found
+Writing 'sub_4096c0__Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
+Writing 'sub_4096c0__Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot'...
+Writing '_Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Il31custom_divide_multiple_variableIlEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-65.74user 10.73system 1:16.87elapsed 99%CPU (0avgtext+0avgdata 54440maxresident)k
-0inputs+3712outputs (0major+10474minor)pagefaults 0swaps
+83.62user 12.88system 1:36.72elapsed 99%CPU (0avgtext+0avgdata 54288maxresident)k
+0inputs+4048outputs (0major+18707minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN22custom_equal_constantsIhE8do_shiftEh
@@ -554,5 +554,5 @@ Decompiling Function: _ZN22custom_equal_constantsIhE8do_shiftEh Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.26user 0.04system 0:00.33elapsed 89%CPU (0avgtext+0avgdata 10316maxresident)k
-0inputs+144outputs (0major+5308minor)pagefaults 0swaps
+0.23user 0.05system 0:00.28elapsed 100%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+144outputs (0major+5302minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _Z5timerv
@@ -496,7 +496,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rax__0x605148
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013c9 --size 8
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4013c9 --size 8
 Global Access Mismatch: 6312264 Relocation: Address, McSema: Constant
 Decompiling instr:movq %rax, 0x605148 Done...
 
@@ -518,7 +518,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_0x605148___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013d1 --size 8
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4013d1 --size 8
 Global Access Mismatch: 6312264 Relocation: Address, McSema: Constant
 Decompiling instr:movq 0x605148, %rax Done...
 
@@ -540,7 +540,7 @@ Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2MnImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subq_0x605140___rax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4013d9 --size 8
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4013d9 --size 8
 Global Access Mismatch: 6312256 Relocation: Address, McSema: Constant
 Decompiling instr:subq 0x605140, %rax Done...
 
@@ -643,5 +643,5 @@ Decompiling Function: _Z5timerv Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.18user 0.07system 0:01.10elapsed 23%CPU (0avgtext+0avgdata 10564maxresident)k
-0inputs+168outputs (0major+6848minor)pagefaults 0swaps
+0.20user 0.03system 0:01.07elapsed 22%CPU (0avgtext+0avgdata 10448maxresident)k
+144inputs+168outputs (0major+6850minor)pagefaults 0swaps

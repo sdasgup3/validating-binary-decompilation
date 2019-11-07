@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl findDuplicate
@@ -631,7 +631,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___ecx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40089b --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40089b --size 3
 Decompiling instr:addl $0x1, %ecx Done...
 
 
@@ -766,7 +766,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4008b1 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4008b1 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -928,5 +928,5 @@ Decompiling Function: findDuplicate Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.43user 0.05system 0:01.01elapsed 48%CPU (0avgtext+0avgdata 10424maxresident)k
-0inputs+232outputs (0major+11653minor)pagefaults 0swaps
+0.39user 0.08system 0:00.98elapsed 48%CPU (0avgtext+0avgdata 10308maxresident)k
+72inputs+232outputs (0major+11674minor)pagefaults 0swaps

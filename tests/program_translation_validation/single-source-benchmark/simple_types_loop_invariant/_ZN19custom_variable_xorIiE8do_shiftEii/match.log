@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_40f7b0__ZN19custom_variable_xorIiE8do_shiftEii-mcsema-diff.dot'...
+Writing 'sub_40f7b0__ZN19custom_variable_xorIiE8do_shiftEii-mcsema-diff.dot':Done
+
+Writing '_ZN19custom_variable_xorIiE8do_shiftEii-proposed-diff.dot'...
+Writing '_ZN19custom_variable_xorIiE8do_shiftEii-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN19custom_variable_xorIiE8do_shiftEii] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN19custom_variable_xorIiE8do_shiftEii] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.21user 0.15system 0:03.53elapsed 95%CPU (0avgtext+0avgdata 54116maxresident)k
-0inputs+104outputs (0major+10461minor)pagefaults 0swaps
+5.23user 0.17system 0:05.45elapsed 99%CPU (0avgtext+0avgdata 54360maxresident)k
+0inputs+176outputs (0major+18499minor)pagefaults 0swaps

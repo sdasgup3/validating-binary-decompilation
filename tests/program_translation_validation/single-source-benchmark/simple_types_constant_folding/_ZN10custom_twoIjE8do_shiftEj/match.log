@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_412e80__ZN10custom_twoIjE8do_shiftEj-mcsema-diff.dot'...
+Writing 'sub_412e80__ZN10custom_twoIjE8do_shiftEj-mcsema-diff.dot':Done
+
+Writing '_ZN10custom_twoIjE8do_shiftEj-proposed-diff.dot'...
+Writing '_ZN10custom_twoIjE8do_shiftEj-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN10custom_twoIjE8do_shiftEj] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN10custom_twoIjE8do_shiftEj] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.54user 0.07system 0:02.77elapsed 94%CPU (0avgtext+0avgdata 66324maxresident)k
-0inputs+32outputs (0major+12817minor)pagefaults 0swaps
+3.85user 0.06system 0:03.93elapsed 99%CPU (0avgtext+0avgdata 66008maxresident)k
+0inputs+64outputs (0major+12806minor)pagefaults 0swaps

@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400610_gen_random-mcsema-diff.dot'...
+Writing 'sub_400610_gen_random-mcsema-diff.dot':Done
+
+Writing 'gen_random-proposed-diff.dot'...
+Writing 'gen_random-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [gen_random] from ../binary/test.mcsema.opt.ll
 Extracting function [gen_random] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.48user 1.29system 0:01.81elapsed 98%CPU (0avgtext+0avgdata 12824maxresident)k
-0inputs+264outputs (0major+905minor)pagefaults 0swaps
+0.88user 1.19system 0:02.14elapsed 96%CPU (0avgtext+0avgdata 12352maxresident)k
+0inputs+360outputs (0major+1362minor)pagefaults 0swaps

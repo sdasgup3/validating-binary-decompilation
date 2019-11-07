@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl Proc7
@@ -517,7 +517,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x2___esi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 400a41 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400a41 --size 3
 Decompiling instr:addl $0x2, %esi Done...
 
 
@@ -676,5 +676,5 @@ Decompiling Function: Proc7 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.23user 0.04system 0:00.54elapsed 51%CPU (0avgtext+0avgdata 10352maxresident)k
-0inputs+176outputs (0major+7329minor)pagefaults 0swaps
+0.21user 0.04system 0:00.51elapsed 50%CPU (0avgtext+0avgdata 10188maxresident)k
+72inputs+176outputs (0major+7327minor)pagefaults 0swaps

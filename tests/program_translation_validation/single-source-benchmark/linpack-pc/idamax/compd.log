@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl idamax
@@ -1467,7 +1467,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402c2d --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402c2d --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -2130,7 +2130,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache skipped: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 402cc9 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 402cc9 --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -2298,5 +2298,5 @@ Decompiling Function: idamax Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-1.49user 0.19system 0:02.76elapsed 61%CPU (0avgtext+0avgdata 10416maxresident)k
-0inputs+496outputs (0major+34163minor)pagefaults 0swaps
+1.44user 0.18system 0:02.49elapsed 65%CPU (0avgtext+0avgdata 10412maxresident)k
+264inputs+496outputs (0major+34126minor)pagefaults 0swaps

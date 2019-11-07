@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400b40_kernel_trmm-mcsema-diff.dot'...
+Writing 'sub_400b40_kernel_trmm-mcsema-diff.dot':Done
+
+Writing 'kernel_trmm-proposed-diff.dot'...
+Writing 'kernel_trmm-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_trmm] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_trmm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.67user 11.88system 0:17.57elapsed 99%CPU (0avgtext+0avgdata 14256maxresident)k
-0inputs+3528outputs (0major+1411minor)pagefaults 0swaps
+10.29user 16.59system 0:26.96elapsed 99%CPU (0avgtext+0avgdata 14544maxresident)k
+0inputs+3920outputs (0major+3357minor)pagefaults 0swaps

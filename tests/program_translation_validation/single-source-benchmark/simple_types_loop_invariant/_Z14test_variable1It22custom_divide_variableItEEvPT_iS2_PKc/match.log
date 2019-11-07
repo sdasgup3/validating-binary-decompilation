@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55d84dba4928]:   %174 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55d84dc1d4f8]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55d84dc1d9b8]:   %82 = load i32, i32* %81, align 4
-Multiple matches exist for [0x55d84dba5500]:   %193 = lshr i32 %174, 31
-[0x55d84eb55b20]:   %103 = lshr i32 %84, 31
-[0x55d84eb55f70]:   %102 = lshr i32 %82, 31
-Multiple matches exist for [0x55d84dba5580]:   %194 = xor i32 %193, %192
-[0x55d84eb558e0]:   %105 = xor i32 %100, %102
-[0x55d84eb55a40]:   %104 = xor i32 %103, %102
+Multiple matches exist for [0x5622eff70dc8]:   %166 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5622f02f3268]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x5622f02f3a78]:   %82 = load i32, i32* %81, align 4
+Multiple matches exist for [0x5622eff719a0]:   %185 = lshr i32 %166, 31
+[0x5622f1222780]:   %103 = lshr i32 %84, 31
+[0x5622f1222bd0]:   %102 = lshr i32 %82, 31
+Multiple matches exist for [0x5622eff71a20]:   %186 = xor i32 %185, %184
+[0x5622f1222540]:   %105 = xor i32 %100, %102
+[0x5622f12226a0]:   %104 = xor i32 %103, %102
 Iso Match NOT Found
+Writing 'sub_406ad0__Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc-mcsema-diff.dot'...
+Writing 'sub_406ad0__Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc-proposed-diff.dot'...
+Writing '_Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1It22custom_divide_variableItEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-53.30user 10.09system 1:05.22elapsed 97%CPU (0avgtext+0avgdata 54436maxresident)k
-0inputs+2856outputs (0major+11249minor)pagefaults 0swaps
+59.63user 8.04system 1:10.12elapsed 96%CPU (0avgtext+0avgdata 54188maxresident)k
+0inputs+3136outputs (0major+18620minor)pagefaults 0swaps

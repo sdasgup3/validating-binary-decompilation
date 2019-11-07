@@ -1,12 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x557b968f7368]:   %100 = tail call fastcc %struct.Memory* @ext_4006f0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
-[0x557b96db0610]:   %101 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_402f28)
-[0x557b96db1ae0]:   %call2_402f28 = tail call %struct.Memory.31* @sub_402f60._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
+Multiple matches exist for [0x55b48f003008]:   %100 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
+[0x55b48f4ff0c0]:   %101 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_402f28)
+[0x55b48f500590]:   %call2_402f28 = tail call %struct.Memory.31* @sub_402f60._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEEbT_SE_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
 Iso Match NOT Found
+Writing 'sub_402f00__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_-mcsema-diff.dot'...
+Writing 'sub_402f00__Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_-mcsema-diff.dot':Done
+
+Writing '_Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_-proposed-diff.dot'...
+Writing '_Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13verify_sortedI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEvT_SD_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.41user 1.87system 0:06.29elapsed 99%CPU (0avgtext+0avgdata 23832maxresident)k
-0inputs+584outputs (0major+3445minor)pagefaults 0swaps
+5.33user 1.47system 0:06.89elapsed 98%CPU (0avgtext+0avgdata 23888maxresident)k
+0inputs+728outputs (0major+3476minor)pagefaults 0swaps

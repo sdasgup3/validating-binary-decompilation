@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400af0_myrandom-mcsema-diff.dot'...
+Writing 'sub_400af0_myrandom-mcsema-diff.dot':Done
+
+Writing 'myrandom-proposed-diff.dot'...
+Writing 'myrandom-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [myrandom] from ../binary/test.mcsema.opt.ll
 Extracting function [myrandom] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.55user 3.20system 0:04.80elapsed 98%CPU (0avgtext+0avgdata 12596maxresident)k
-0inputs+688outputs (0major+1486minor)pagefaults 0swaps
+1.71user 3.44system 0:05.46elapsed 94%CPU (0avgtext+0avgdata 12716maxresident)k
+0inputs+792outputs (0major+1499minor)pagefaults 0swaps

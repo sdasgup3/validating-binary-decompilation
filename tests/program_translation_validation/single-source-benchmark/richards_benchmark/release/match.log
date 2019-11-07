@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400990_release-mcsema-diff.dot'...
+Writing 'sub_400990_release-mcsema-diff.dot':Done
+
+Writing 'release-proposed-diff.dot'...
+Writing 'release-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [release] from ../binary/test.mcsema.opt.ll
 Extracting function [release] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.35user 7.20system 0:09.60elapsed 99%CPU (0avgtext+0avgdata 13340maxresident)k
-0inputs+1352outputs (0major+1145minor)pagefaults 0swaps
+3.17user 6.31system 0:09.63elapsed 98%CPU (0avgtext+0avgdata 13332maxresident)k
+0inputs+1344outputs (0major+1844minor)pagefaults 0swaps

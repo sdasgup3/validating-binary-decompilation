@@ -1,35 +1,41 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55615e4abf88]:   %308 = tail call fastcc %struct.Memory* @ext_601088_memset(%struct.State* nonnull %0, %struct.Memory* %MEMORY.4)
-[0x55615e49cda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x55615e4d5fd0]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
-Multiple matches exist for [0x55615e5504b8]:   %.pre11 = load i64, i64* %RBP, align 8
-[0x55615e4e52f8]:   %.pre11 = load i64, i64* %RBP.i, align 8
-[0x55615e61b708]:   %414 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x55615e50a7d8]:   %393 = tail call fastcc %struct.Memory* @ext_601078_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.4)
-[0x55615e49cda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x55615e4d5fd0]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
-Multiple matches exist for [0x55615e4ac208]:   %547 = load i32, i32* %543, align 4
-[0x55615e4d83e8]:   %379 = load i32, i32* %378, align 4
-[0x55615e4d89d8]:   %382 = load i32, i32* %378, align 4
-Multiple matches exist for [0x55615e504f10]:   %551 = icmp ult i32 %548, %547
-[0x55615e4d8eb0]:   %385 = icmp ult i32 %383, %379
-[0x55615e4d8fe0]:   %386 = icmp ult i32 %383, %382
-Multiple matches exist for [0x55615e512fb0]:   %569 = lshr i32 %547, 31
-[0x55615e5f5940]:   %403 = lshr i32 %379, 31
-[0x55615e5f5a70]:   %404 = lshr i32 %382, 31
-Multiple matches exist for [0x55615e5130b0]:   %571 = xor i32 %566, %569
-[0x55615e5f5ba0]:   %405 = xor i32 %401, %403
-[0x55615e5f5cd0]:   %406 = xor i32 %401, %404
-Multiple matches exist for [0x55615e4abaf8]:   %664 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %308)
-[0x55615e49cda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x55615e4d5fd0]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
-[0x55615e577750]:   %680 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %230)
-[0x55615e5f9360]:   %84 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x5649103488a8]:   %116 = tail call fastcc %struct.Memory* @ext_601078_free(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x56491033fda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x56491049c360]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x56491034d968]:   %243 = tail call fastcc %struct.Memory* @ext_601088_memset(%struct.State* nonnull %0, %struct.Memory* %MEMORY.1)
+[0x56491033fda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x56491049c360]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
+Multiple matches exist for [0x5649103add98]:   %335 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %243)
+[0x56491033fda0]:   %728 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x564910378fd0]:   %680 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %230)
+[0x56491049c360]:   %230 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory.32* %MEMORY.0)
+[0x56491049f350]:   %84 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x5649103b1068]:   %.pre11 = load i64, i64* %RBP, align 8
+[0x5649103890c8]:   %.pre11 = load i64, i64* %RBP.i, align 8
+[0x5649104bee38]:   %414 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x564910402518]:   %626 = load i32, i32* %622, align 4
+[0x56491037bc38]:   %379 = load i32, i32* %378, align 4
+[0x56491037c228]:   %382 = load i32, i32* %378, align 4
+Multiple matches exist for [0x564910402770]:   %630 = icmp ult i32 %627, %626
+[0x56491037c700]:   %385 = icmp ult i32 %383, %379
+[0x56491037c830]:   %386 = icmp ult i32 %383, %382
+Multiple matches exist for [0x5649104032d0]:   %648 = lshr i32 %626, 31
+[0x564910499190]:   %403 = lshr i32 %379, 31
+[0x564910499520]:   %404 = lshr i32 %382, 31
+Multiple matches exist for [0x5649104033d0]:   %650 = xor i32 %645, %648
+[0x564910499650]:   %405 = xor i32 %401, %403
+[0x564910499780]:   %406 = xor i32 %401, %404
 Iso Match NOT Found
+Writing 'sub_400600_main-mcsema-diff.dot'...
+Writing 'sub_400600_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-102.22user 69.82system 2:52.80elapsed 99%CPU (0avgtext+0avgdata 19156maxresident)k
-0inputs+23832outputs (0major+5573minor)pagefaults 0swaps
+113.62user 70.41system 3:06.38elapsed 98%CPU (0avgtext+0avgdata 19020maxresident)k
+0inputs+23368outputs (0major+4722minor)pagefaults 0swaps

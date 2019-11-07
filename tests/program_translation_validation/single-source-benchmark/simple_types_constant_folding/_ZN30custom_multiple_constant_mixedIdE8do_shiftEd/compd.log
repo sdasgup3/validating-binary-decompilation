@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN30custom_multiple_constant_mixedIdE8do_shiftEd
@@ -574,5 +574,5 @@ Decompiling Function: _ZN30custom_multiple_constant_mixedIdE8do_shiftEd Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.25user 0.06system 0:00.35elapsed 90%CPU (0avgtext+0avgdata 10224maxresident)k
-0inputs+160outputs (0major+5697minor)pagefaults 0swaps
+0.25user 0.04system 0:00.33elapsed 90%CPU (0avgtext+0avgdata 10248maxresident)k
+72inputs+160outputs (0major+5692minor)pagefaults 0swaps

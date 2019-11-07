@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN18custom_constant_orIlE8do_shiftEl
@@ -472,7 +472,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L2ORI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_orq__0xa___rdi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4111dc --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4111dc --size 4
 Decompiling instr:orq $0xa, %rdi Done...
 
 
@@ -536,5 +536,5 @@ Decompiling Function: _ZN18custom_constant_orIlE8do_shiftEl Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.07system 0:02.03elapsed 14%CPU (0avgtext+0avgdata 10124maxresident)k
-0inputs+144outputs (0major+5015minor)pagefaults 0swaps
+0.22user 0.05system 0:01.73elapsed 16%CPU (0avgtext+0avgdata 10156maxresident)k
+48inputs+136outputs (0major+5022minor)pagefaults 0swaps

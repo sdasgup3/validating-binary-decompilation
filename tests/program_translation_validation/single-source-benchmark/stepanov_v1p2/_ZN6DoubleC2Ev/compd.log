@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN6DoubleC2Ev
@@ -474,5 +474,5 @@ Decompiling Function: _ZN6DoubleC2Ev Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.10user 0.02system 0:00.15elapsed 82%CPU (0avgtext+0avgdata 10132maxresident)k
-0inputs+120outputs (0major+3915minor)pagefaults 0swaps
+0.10user 0.01system 0:00.12elapsed 92%CPU (0avgtext+0avgdata 10012maxresident)k
+0inputs+120outputs (0major+3906minor)pagefaults 0swaps

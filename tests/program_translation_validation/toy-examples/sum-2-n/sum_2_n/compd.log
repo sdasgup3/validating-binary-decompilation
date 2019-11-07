@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl sum_2_n
@@ -641,7 +641,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4004dd --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4004dd --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -746,5 +746,5 @@ Decompiling Function: sum_2_n Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.29user 0.05system 0:00.56elapsed 62%CPU (0avgtext+0avgdata 10480maxresident)k
-0inputs+192outputs (0major+8455minor)pagefaults 0swaps
+0.29user 0.03system 0:00.54elapsed 61%CPU (0avgtext+0avgdata 10340maxresident)k
+0inputs+192outputs (0major+8443minor)pagefaults 0swaps

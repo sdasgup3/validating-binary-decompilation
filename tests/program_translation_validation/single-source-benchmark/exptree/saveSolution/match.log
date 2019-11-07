@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400930_saveSolution-mcsema-diff.dot'...
+Writing 'sub_400930_saveSolution-mcsema-diff.dot':Done
+
+Writing 'saveSolution-proposed-diff.dot'...
+Writing 'saveSolution-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [saveSolution] from ../binary/test.mcsema.opt.ll
 Extracting function [saveSolution] from mcsema/test.proposed.opt.ll
 Matcher Done...
-14.47user 16.19system 0:30.88elapsed 99%CPU (0avgtext+0avgdata 14988maxresident)k
-0inputs+3016outputs (0major+2732minor)pagefaults 0swaps
+12.74user 17.14system 0:30.16elapsed 99%CPU (0avgtext+0avgdata 15108maxresident)k
+0inputs+3344outputs (0major+1611minor)pagefaults 0swaps

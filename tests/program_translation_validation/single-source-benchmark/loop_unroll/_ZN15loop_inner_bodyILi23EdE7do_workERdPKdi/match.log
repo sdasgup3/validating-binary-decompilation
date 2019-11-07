@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_401930__ZN15loop_inner_bodyILi23EdE7do_workERdPKdi-mcsema-diff.dot'...
+Writing 'sub_401930__ZN15loop_inner_bodyILi23EdE7do_workERdPKdi-mcsema-diff.dot':Done
+
+Writing '_ZN15loop_inner_bodyILi23EdE7do_workERdPKdi-proposed-diff.dot'...
+Writing '_ZN15loop_inner_bodyILi23EdE7do_workERdPKdi-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN15loop_inner_bodyILi23EdE7do_workERdPKdi] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN15loop_inner_bodyILi23EdE7do_workERdPKdi] from mcsema/test.proposed.opt.ll
 Matcher Done...
-19.64user 3.37system 0:23.10elapsed 99%CPU (0avgtext+0avgdata 62716maxresident)k
-0inputs+856outputs (0major+12736minor)pagefaults 0swaps
+26.77user 1.64system 0:28.42elapsed 99%CPU (0avgtext+0avgdata 62472maxresident)k
+0inputs+1048outputs (0major+12141minor)pagefaults 0swaps

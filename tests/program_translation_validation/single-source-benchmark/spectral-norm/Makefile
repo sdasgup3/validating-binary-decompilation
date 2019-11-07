@@ -7,7 +7,10 @@ compd_opt: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 match: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 
 binary:
-	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+
+reloc_binary:
+	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
@@ -18,8 +21,8 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
-	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll
-	opt -S  -inline   ${INDIR}test.mcsema.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 eval_A:
 	@echo

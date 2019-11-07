@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN10custom_twoIdE8do_shiftEd
@@ -514,5 +514,5 @@ Decompiling Function: _ZN10custom_twoIdE8do_shiftEd Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.07system 0:00.31elapsed 88%CPU (0avgtext+0avgdata 10084maxresident)k
-0inputs+136outputs (0major+4677minor)pagefaults 0swaps
+0.20user 0.05system 0:00.28elapsed 91%CPU (0avgtext+0avgdata 10096maxresident)k
+24inputs+136outputs (0major+4675minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN19custom_or_constantsIsE8do_shiftEs
@@ -453,7 +453,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWItE2InItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__0x1f___cx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 415c27 --size 4
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 415c27 --size 4
 Decompiling instr:movw $0x1f, %cx Done...
 
 
@@ -536,5 +536,5 @@ Decompiling Function: _ZN19custom_or_constantsIsE8do_shiftEs Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.22user 0.07system 0:01.99elapsed 14%CPU (0avgtext+0avgdata 10376maxresident)k
-0inputs+136outputs (0major+5025minor)pagefaults 0swaps
+0.25user 0.02system 0:01.69elapsed 16%CPU (0avgtext+0avgdata 10384maxresident)k
+0inputs+136outputs (0major+5018minor)pagefaults 0swaps

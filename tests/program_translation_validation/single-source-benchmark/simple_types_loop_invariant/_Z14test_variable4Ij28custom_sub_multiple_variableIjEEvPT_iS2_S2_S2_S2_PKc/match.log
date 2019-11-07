@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55765c5664d8]:   %372 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55765cf77738]:   %107 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55765cf77ac8]:   %105 = load i32, i32* %104, align 4
-Multiple matches exist for [0x55765c5670b0]:   %391 = lshr i32 %372, 31
-[0x55765deaf480]:   %126 = lshr i32 %107, 31
-[0x55765deaf5e0]:   %125 = lshr i32 %105, 31
-Multiple matches exist for [0x55765c567130]:   %392 = xor i32 %391, %390
-[0x55765deaf1c0]:   %128 = xor i32 %123, %125
-[0x55765deaf320]:   %127 = xor i32 %126, %125
+Multiple matches exist for [0x558052fcc238]:   %144 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5580537eb2c8]:   %107 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x5580537eb528]:   %105 = load i32, i32* %104, align 4
+Multiple matches exist for [0x558052fcce30]:   %163 = lshr i32 %144, 31
+[0x558054719c00]:   %126 = lshr i32 %107, 31
+[0x558054719de0]:   %125 = lshr i32 %105, 31
+Multiple matches exist for [0x558052fcceb0]:   %164 = xor i32 %163, %162
+[0x558054719900]:   %128 = xor i32 %123, %125
+[0x558054719aa0]:   %127 = xor i32 %126, %125
 Iso Match NOT Found
+Writing 'sub_408560__Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
+Writing 'sub_408560__Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot'...
+Writing '_Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Ij28custom_sub_multiple_variableIjEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-67.29user 10.62system 1:18.25elapsed 99%CPU (0avgtext+0avgdata 54388maxresident)k
-0inputs+3544outputs (0major+18439minor)pagefaults 0swaps
+78.60user 11.59system 1:31.78elapsed 98%CPU (0avgtext+0avgdata 54360maxresident)k
+0inputs+3896outputs (0major+18730minor)pagefaults 0swaps

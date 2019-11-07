@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN16reverse_iteratorIP6DoubleS0_EC2ES1_
@@ -554,5 +554,5 @@ Decompiling Function: _ZN16reverse_iteratorIP6DoubleS0_EC2ES1_ Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.16user 0.03system 0:00.20elapsed 93%CPU (0avgtext+0avgdata 10136maxresident)k
-0inputs+144outputs (0major+5254minor)pagefaults 0swaps
+0.15user 0.02system 0:00.21elapsed 85%CPU (0avgtext+0avgdata 10116maxresident)k
+0inputs+144outputs (0major+5229minor)pagefaults 0swaps

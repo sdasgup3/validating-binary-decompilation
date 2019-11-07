@@ -1,35 +1,41 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5584131335f8]:   %.pre14 = load i64, i64* %RBP, align 8
-[0x558413213048]:   %.pre15 = load i64, i64* %RBP.i, align 8
-[0x55841322a1d8]:   %412 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x5584131436e0]:   %387 = fcmp uno float %384, %386
-[0x558413238a70]:   %171 = fcmp uno float %168, %170
-[0x55841324b0a0]:   %187 = fcmp oeq float %168, %170
-[0x55841324b1f0]:   %185 = fcmp olt float %168, %170
-[0x55841324b340]:   %183 = fcmp ogt float %168, %170
-Multiple matches exist for [0x558413144078]:   %.pre19 = load i64, i64* %RBP, align 8
-[0x558413228208]:   %148 = load i64, i64* %RBP.i, align 8
-[0x558413228a58]:   %.pre20 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x5584131442d0]:   %399 = fcmp ogt float %384, %386
-[0x558413238a70]:   %171 = fcmp uno float %168, %170
-[0x55841324b0a0]:   %187 = fcmp oeq float %168, %170
-[0x55841324b1f0]:   %185 = fcmp olt float %168, %170
-[0x55841324b340]:   %183 = fcmp ogt float %168, %170
-Multiple matches exist for [0x558413144430]:   %401 = fcmp olt float %384, %386
-[0x558413238a70]:   %171 = fcmp uno float %168, %170
-[0x55841324b0a0]:   %187 = fcmp oeq float %168, %170
-[0x55841324b1f0]:   %185 = fcmp olt float %168, %170
-[0x55841324b340]:   %183 = fcmp ogt float %168, %170
-Multiple matches exist for [0x558413144590]:   %403 = fcmp oeq float %384, %386
-[0x558413238a70]:   %171 = fcmp uno float %168, %170
-[0x55841324b0a0]:   %187 = fcmp oeq float %168, %170
-[0x55841324b1f0]:   %185 = fcmp olt float %168, %170
-[0x55841324b340]:   %183 = fcmp ogt float %168, %170
+Multiple matches exist for [0x55c8d3a7e338]:   %.pre14 = load i64, i64* %RBP, align 8
+[0x55c8d3b7e788]:   %.pre15 = load i64, i64* %RBP.i, align 8
+[0x55c8d3b95ca8]:   %412 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55c8d3ad6b00]:   %113 = fcmp uno float %110, %112
+[0x55c8d3ba50e0]:   %171 = fcmp uno float %168, %170
+[0x55c8d3bb6cf0]:   %187 = fcmp oeq float %168, %170
+[0x55c8d3bb6f40]:   %185 = fcmp olt float %168, %170
+[0x55c8d3bb7090]:   %183 = fcmp ogt float %168, %170
+Multiple matches exist for [0x55c8d3ad74b8]:   %.pre19 = load i64, i64* %RBP, align 8
+[0x55c8d3b93ba8]:   %148 = load i64, i64* %RBP.i, align 8
+[0x55c8d3b943f8]:   %.pre20 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55c8d3ad7710]:   %125 = fcmp ogt float %110, %112
+[0x55c8d3ba50e0]:   %171 = fcmp uno float %168, %170
+[0x55c8d3bb6cf0]:   %187 = fcmp oeq float %168, %170
+[0x55c8d3bb6f40]:   %185 = fcmp olt float %168, %170
+[0x55c8d3bb7090]:   %183 = fcmp ogt float %168, %170
+Multiple matches exist for [0x55c8d3ad7870]:   %127 = fcmp olt float %110, %112
+[0x55c8d3ba50e0]:   %171 = fcmp uno float %168, %170
+[0x55c8d3bb6cf0]:   %187 = fcmp oeq float %168, %170
+[0x55c8d3bb6f40]:   %185 = fcmp olt float %168, %170
+[0x55c8d3bb7090]:   %183 = fcmp ogt float %168, %170
+Multiple matches exist for [0x55c8d3ad81e0]:   %129 = fcmp oeq float %110, %112
+[0x55c8d3ba50e0]:   %171 = fcmp uno float %168, %170
+[0x55c8d3bb6cf0]:   %187 = fcmp oeq float %168, %170
+[0x55c8d3bb6f40]:   %185 = fcmp olt float %168, %170
+[0x55c8d3bb7090]:   %183 = fcmp ogt float %168, %170
 Iso Match NOT Found
+Writing 'sub_4009d0_random_fasta-mcsema-diff.dot'...
+Writing 'sub_4009d0_random_fasta-mcsema-diff.dot':Done
+
+Writing 'random_fasta-proposed-diff.dot'...
+Writing 'random_fasta-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [random_fasta] from ../binary/test.mcsema.opt.ll
 Extracting function [random_fasta] from mcsema/test.proposed.opt.ll
 Matcher Done...
-25.79user 30.66system 0:57.02elapsed 99%CPU (0avgtext+0avgdata 14928maxresident)k
-0inputs+6488outputs (0major+2424minor)pagefaults 0swaps
+27.04user 39.26system 1:06.68elapsed 99%CPU (0avgtext+0avgdata 14720maxresident)k
+0inputs+7800outputs (0major+2857minor)pagefaults 0swaps

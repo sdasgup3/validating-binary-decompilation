@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl make_vec
@@ -674,5 +674,5 @@ Decompiling Function: make_vec Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.05system 0:00.29elapsed 91%CPU (0avgtext+0avgdata 10232maxresident)k
-0inputs+168outputs (0major+7285minor)pagefaults 0swaps
+0.21user 0.03system 0:00.26elapsed 92%CPU (0avgtext+0avgdata 10256maxresident)k
+72inputs+168outputs (0major+7322minor)pagefaults 0swaps

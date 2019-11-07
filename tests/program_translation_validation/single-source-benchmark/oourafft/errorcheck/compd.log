@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl errorcheck
@@ -738,7 +738,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x3f480___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 40113c --size 5
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40113c --size 5
 Decompiling instr:movl $0x3f480, %eax Done...
 
 
@@ -778,7 +778,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0xd5f5___ecx
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 401148 --size 6
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401148 --size 6
 Decompiling instr:addl $0xd5f5, %ecx Done...
 
 
@@ -1374,7 +1374,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4011cf --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4011cf --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -1479,5 +1479,5 @@ Decompiling Function: errorcheck Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.80user 0.13system 0:01.78elapsed 52%CPU (0avgtext+0avgdata 10588maxresident)k
-0inputs+392outputs (0major+21025minor)pagefaults 0swaps
+0.80user 0.10system 0:01.69elapsed 53%CPU (0avgtext+0avgdata 10676maxresident)k
+192inputs+392outputs (0major+21082minor)pagefaults 0swaps

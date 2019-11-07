@@ -1,13 +1,19 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5652fd27ff88]:   %313 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %194)
-[0x5652fd350750]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40073c)
-[0x5652fd3d0550]:   %call2_40073c = tail call %struct.Memory.32* @sub_400560.update(%struct.State.1* %0, i64 %191, %struct.Memory.32* %72)
-[0x5652fd3d98f0]:   %72 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x56116a4d8ef8]:   %313 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %194)
+[0x56116a4f9500]:   %314 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40073c)
+[0x56116a6295f0]:   %call2_40073c = tail call %struct.Memory.32* @sub_400560.update(%struct.State.1* %0, i64 %191, %struct.Memory.32* %72)
+[0x56116a632990]:   %72 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
 Iso Match NOT Found
+Writing 'sub_400680_main-mcsema-diff.dot'...
+Writing 'sub_400680_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.42user 11.36system 0:16.78elapsed 100%CPU (0avgtext+0avgdata 13732maxresident)k
-0inputs+4120outputs (0major+1285minor)pagefaults 0swaps
+5.14user 12.25system 0:17.40elapsed 99%CPU (0avgtext+0avgdata 14168maxresident)k
+0inputs+4432outputs (0major+1290minor)pagefaults 0swaps

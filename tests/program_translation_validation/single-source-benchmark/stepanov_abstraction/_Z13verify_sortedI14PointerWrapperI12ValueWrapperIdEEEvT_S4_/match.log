@@ -1,12 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55f788c8c4c8]:   %100 = tail call fastcc %struct.Memory* @ext_4006f0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
-[0x55f788d63510]:   %101 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_403b78)
-[0x55f788d649e0]:   %call2_403b78 = tail call %struct.Memory.31* @sub_403bb0._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
+Multiple matches exist for [0x55823e47fb68]:   %100 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %82)
+[0x55823e550e80]:   %101 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_403b78)
+[0x55823e552560]:   %call2_403b78 = tail call %struct.Memory.31* @sub_403bb0._ZN9benchmark9is_sortedI14PointerWrapperI12ValueWrapperIdEEEEbT_S5_(%struct.State.0* %0, i64 %78, %struct.Memory.31* %2)
 Iso Match NOT Found
+Writing 'sub_403b50__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_-mcsema-diff.dot'...
+Writing 'sub_403b50__Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_-mcsema-diff.dot':Done
+
+Writing '_Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_-proposed-diff.dot'...
+Writing '_Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13verify_sortedI14PointerWrapperI12ValueWrapperIdEEEvT_S4_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.97user 1.72system 0:06.77elapsed 98%CPU (0avgtext+0avgdata 23716maxresident)k
-0inputs+584outputs (0major+6012minor)pagefaults 0swaps
+6.37user 1.72system 0:08.13elapsed 99%CPU (0avgtext+0avgdata 23724maxresident)k
+0inputs+720outputs (0major+6050minor)pagefaults 0swaps

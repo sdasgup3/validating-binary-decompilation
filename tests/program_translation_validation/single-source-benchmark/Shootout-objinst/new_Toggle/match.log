@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400690_new_Toggle-mcsema-diff.dot'...
+Writing 'sub_400690_new_Toggle-mcsema-diff.dot':Done
+
+Writing 'new_Toggle-proposed-diff.dot'...
+Writing 'new_Toggle-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [new_Toggle] from ../binary/test.mcsema.opt.ll
 Extracting function [new_Toggle] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.48user 1.15system 0:01.63elapsed 99%CPU (0avgtext+0avgdata 12752maxresident)k
-0inputs+248outputs (0major+961minor)pagefaults 0swaps
+0.70user 1.16system 0:01.90elapsed 98%CPU (0avgtext+0avgdata 12776maxresident)k
+0inputs+344outputs (0major+968minor)pagefaults 0swaps

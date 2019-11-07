@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl list_push_head
@@ -812,7 +812,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x1___eax
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 4007fe --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4007fe --size 3
 Decompiling instr:addl $0x1, %eax Done...
 
 
@@ -876,5 +876,5 @@ Decompiling Function: list_push_head Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.31user 0.09system 0:00.67elapsed 59%CPU (0avgtext+0avgdata 10228maxresident)k
-0inputs+208outputs (0major+10749minor)pagefaults 0swaps
+0.33user 0.05system 0:00.65elapsed 60%CPU (0avgtext+0avgdata 10292maxresident)k
+48inputs+208outputs (0major+10801minor)pagefaults 0swaps

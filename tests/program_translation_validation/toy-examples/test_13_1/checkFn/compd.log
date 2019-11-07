@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl checkFn
@@ -454,5 +454,5 @@ Decompiling Function: checkFn Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.07user 0.02system 0:00.09elapsed 100%CPU (0avgtext+0avgdata 10068maxresident)k
-0inputs+120outputs (0major+3564minor)pagefaults 0swaps
+0.06user 0.02system 0:00.09elapsed 98%CPU (0avgtext+0avgdata 10212maxresident)k
+0inputs+120outputs (0major+3573minor)pagefaults 0swaps

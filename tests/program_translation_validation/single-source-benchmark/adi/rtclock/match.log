@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_400820_rtclock-mcsema-diff.dot'...
+Writing 'sub_400820_rtclock-mcsema-diff.dot':Done
+
+Writing 'rtclock-proposed-diff.dot'...
+Writing 'rtclock-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [rtclock] from ../binary/test.mcsema.opt.ll
 Extracting function [rtclock] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.07user 0.05system 0:00.13elapsed 98%CPU (0avgtext+0avgdata 14000maxresident)k
-0inputs+24outputs (0major+1261minor)pagefaults 0swaps
+0.13user 0.05system 0:00.19elapsed 99%CPU (0avgtext+0avgdata 13916maxresident)k
+0inputs+56outputs (0major+1258minor)pagefaults 0swaps

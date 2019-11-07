@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4006c0_eval_At_times_u-mcsema-diff.dot'...
+Writing 'sub_4006c0_eval_At_times_u-mcsema-diff.dot':Done
+
+Writing 'eval_At_times_u-proposed-diff.dot'...
+Writing 'eval_At_times_u-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [eval_At_times_u] from ../binary/test.mcsema.opt.ll
 Extracting function [eval_At_times_u] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.21user 5.23system 0:09.52elapsed 99%CPU (0avgtext+0avgdata 13572maxresident)k
-0inputs+1936outputs (0major+1796minor)pagefaults 0swaps
+3.77user 4.22system 0:08.10elapsed 98%CPU (0avgtext+0avgdata 13228maxresident)k
+0inputs+2080outputs (0major+1121minor)pagefaults 0swaps

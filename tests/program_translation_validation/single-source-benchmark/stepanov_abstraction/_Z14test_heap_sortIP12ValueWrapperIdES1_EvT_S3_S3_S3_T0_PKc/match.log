@@ -1,18 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55e897f598f8]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55e898247a88]:   %84 = load i32, i32* %83, align 4
-[0x55e898249e28]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-Multiple matches exist for [0x55e897f5a4d0]:   %216 = lshr i32 %197, 31
-[0x55e89826d9e0]:   %105 = lshr i32 %86, 31
-[0x55e89826de30]:   %104 = lshr i32 %84, 31
-Multiple matches exist for [0x55e897f5a550]:   %217 = xor i32 %216, %215
-[0x55e89826d7a0]:   %107 = xor i32 %102, %104
-[0x55e89826d900]:   %106 = xor i32 %105, %104
+Multiple matches exist for [0x5570ef4d9698]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5570efa16a68]:   %84 = load i32, i32* %83, align 4
+[0x5570efa18e08]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+Multiple matches exist for [0x5570ef4da270]:   %216 = lshr i32 %197, 31
+[0x5570efa3cf40]:   %105 = lshr i32 %86, 31
+[0x5570efa3d0a0]:   %104 = lshr i32 %84, 31
+Multiple matches exist for [0x5570ef4da2f0]:   %217 = xor i32 %216, %215
+[0x5570efa3ca10]:   %107 = xor i32 %102, %104
+[0x5570efa3caf0]:   %106 = xor i32 %105, %104
 Iso Match NOT Found
+Writing 'sub_402ad0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-mcsema-diff.dot'...
+Writing 'sub_402ad0__Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-proposed-diff.dot'...
+Writing '_Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_heap_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.41user 4.36system 0:15.82elapsed 93%CPU (0avgtext+0avgdata 23820maxresident)k
-0inputs+1272outputs (0major+3458minor)pagefaults 0swaps
+11.91user 4.04system 0:16.04elapsed 99%CPU (0avgtext+0avgdata 23736maxresident)k
+0inputs+1480outputs (0major+4739minor)pagefaults 0swaps

@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl mflops
@@ -634,5 +634,5 @@ Decompiling Function: mflops Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.18user 0.05system 0:00.29elapsed 80%CPU (0avgtext+0avgdata 10328maxresident)k
-0inputs+168outputs (0major+6658minor)pagefaults 0swaps
+0.17user 0.04system 0:00.25elapsed 90%CPU (0avgtext+0avgdata 10228maxresident)k
+48inputs+168outputs (0major+6629minor)pagefaults 0swaps

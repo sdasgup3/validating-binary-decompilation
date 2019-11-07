@@ -1,4 +1,7 @@
 #!/usr/bin/perl
+##
+## Checks if a text section reloc information I satisfies PC <= I < PC + size
+##
 use strict;
 use warnings;
 use Getopt::Long;
@@ -41,16 +44,23 @@ my @lines = split( "\n", $readelf_out );
 
 my ( $pc_signed, $pc_unsigned ) = toDec( $pc, 64 );
 
-my $instr_start = $pc_unsigned;
-my $instr_end   = $pc_unsigned + $size;
+my $instr_start  = $pc_unsigned;
+my $instr_end    = $pc_unsigned + $size;
+my $search_begin = 0;
 
 for my $tline (@lines) {
     my $line = trim($tline);
-    if ( ( $line =~ m/Relocation section/ ) or ( $line =~ m/Offset/ ) ) {
+    if ( ( $line =~ m/Relocation section/ ) ) {
+        if ( ( $line =~ m/\.rela\.text/ ) ) {
+            $search_begin = 1;
+        }
+        else {
+            $search_begin = 0;
+        }
         next;
     }
 
-    if ( $line eq "" ) {
+    if ( $line =~ m/Offset/ || $line eq "" || $search_begin == 0 ) {
         next;
     }
 

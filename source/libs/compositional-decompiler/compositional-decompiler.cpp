@@ -383,6 +383,7 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
 // within the range of [currRIP, currRIP + currSize)
 bool CompositionalDecompiler::checkConstantOrAddress(uint64_t currRIP,
                                                      uint64_t currSize) {
+  // TODO: Check if the binary has the relocation information or not.
 
   if (!reloc_info_available)
     return false;

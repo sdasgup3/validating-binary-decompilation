@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl Min0
@@ -684,5 +684,5 @@ Decompiling Function: Min0 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.27user 0.04system 0:00.34elapsed 92%CPU (0avgtext+0avgdata 10376maxresident)k
-0inputs+168outputs (0major+7348minor)pagefaults 0swaps
+0.26user 0.03system 0:00.31elapsed 94%CPU (0avgtext+0avgdata 10200maxresident)k
+24inputs+168outputs (0major+7312minor)pagefaults 0swaps

@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_40b570__Z4fillIPddEvT_S1_T0_-mcsema-diff.dot'...
+Writing 'sub_40b570__Z4fillIPddEvT_S1_T0_-mcsema-diff.dot':Done
+
+Writing '_Z4fillIPddEvT_S1_T0_-proposed-diff.dot'...
+Writing '_Z4fillIPddEvT_S1_T0_-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z4fillIPddEvT_S1_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z4fillIPddEvT_S1_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-8.10user 0.59system 0:08.80elapsed 98%CPU (0avgtext+0avgdata 54240maxresident)k
-0inputs+328outputs (0major+10466minor)pagefaults 0swaps
+12.15user 0.37system 0:12.83elapsed 97%CPU (0avgtext+0avgdata 54160maxresident)k
+0inputs+440outputs (0major+18495minor)pagefaults 0swaps

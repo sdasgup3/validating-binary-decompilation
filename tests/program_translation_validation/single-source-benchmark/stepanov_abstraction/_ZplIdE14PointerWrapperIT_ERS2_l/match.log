@@ -1,9 +1,15 @@
 [Info]: Check for multiple matches
 Iso Match Found
+Writing 'sub_4047b0__ZplIdE14PointerWrapperIT_ERS2_l-mcsema-diff.dot'...
+Writing 'sub_4047b0__ZplIdE14PointerWrapperIT_ERS2_l-mcsema-diff.dot':Done
+
+Writing '_ZplIdE14PointerWrapperIT_ERS2_l-proposed-diff.dot'...
+Writing '_ZplIdE14PointerWrapperIT_ERS2_l-proposed-diff.dot':Done
+
 Reading LLVM: ../binary/test.mcsema.opt.ll
 Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZplIdE14PointerWrapperIT_ERS2_l] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZplIdE14PointerWrapperIT_ERS2_l] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.31user 1.05system 0:03.39elapsed 99%CPU (0avgtext+0avgdata 23620maxresident)k
-0inputs+280outputs (0major+3439minor)pagefaults 0swaps
+4.18user 0.99system 0:05.19elapsed 99%CPU (0avgtext+0avgdata 23664maxresident)k
+0inputs+376outputs (0major+3470minor)pagefaults 0swaps

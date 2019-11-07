@@ -1,4 +1,4 @@
-Disassembling ../binary/test
+Disassembling ../binary/test.reloc
 Disassembled output
   .text
   .globl _ZN30custom_multiple_constant_mixedItE8do_shiftEt
@@ -494,7 +494,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_addl__0x2___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 41423f --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41423f --size 3
 Decompiling instr:addl $0x2, %edi Done...
 
 
@@ -515,7 +515,7 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_
 FuncCache inserted: routine_subl__0x2___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test --pc 414242 --size 3
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 414242 --size 3
 Decompiling instr:subl $0x2, %edi Done...
 
 
@@ -598,5 +598,5 @@ Decompiling Function: _ZN30custom_multiple_constant_mixedItE8do_shiftEt Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.26user 0.07system 0:03.69elapsed 9%CPU (0avgtext+0avgdata 10476maxresident)k
-0inputs+160outputs (0major+6121minor)pagefaults 0swaps
+0.26user 0.07system 0:03.18elapsed 10%CPU (0avgtext+0avgdata 10152maxresident)k
+0inputs+160outputs (0major+6124minor)pagefaults 0swaps
