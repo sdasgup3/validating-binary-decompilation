@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z18complete_hash_funcIiET_S0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z18complete_hash_funcIiET_S0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-14.92user 1.17system 0:16.73elapsed 96%CPU (0avgtext+0avgdata 62260maxresident)k
-0inputs+352outputs (0major+21645minor)pagefaults 0swaps
+15.45user 1.44system 0:17.20elapsed 98%CPU (0avgtext+0avgdata 62400maxresident)k
+0inputs+344outputs (0major+21646minor)pagefaults 0swaps

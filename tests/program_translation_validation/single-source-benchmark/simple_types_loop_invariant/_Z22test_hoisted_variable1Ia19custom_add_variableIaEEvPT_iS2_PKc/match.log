@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55a7245598e8]:   %376 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55a7238a6e08]:   %85 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55a7238a72c8]:   %83 = load i32, i32* %82, align 4
-Multiple matches exist for [0x55a72455a4c0]:   %395 = lshr i32 %376, 31
-[0x55a7247d67a0]:   %104 = lshr i32 %85, 31
-[0x55a7247d6bf0]:   %103 = lshr i32 %83, 31
-Multiple matches exist for [0x55a72455a540]:   %396 = xor i32 %395, %394
-[0x55a7247d6560]:   %106 = xor i32 %101, %103
-[0x55a7247d66c0]:   %105 = xor i32 %104, %103
+Multiple matches exist for [0x559b604ad908]:   %376 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x559b5f7fb1f8]:   %85 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x559b5f7fb8d8]:   %83 = load i32, i32* %82, align 4
+Multiple matches exist for [0x559b604ae4e0]:   %395 = lshr i32 %376, 31
+[0x559b6072a6f0]:   %104 = lshr i32 %85, 31
+[0x559b6072a7d0]:   %103 = lshr i32 %83, 31
+Multiple matches exist for [0x559b604ae560]:   %396 = xor i32 %395, %394
+[0x559b6072a3b0]:   %106 = xor i32 %101, %103
+[0x559b6072a590]:   %105 = xor i32 %104, %103
 Iso Match NOT Found
 Writing 'sub_4030c0__Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_4030c0__Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-78.24user 7.37system 1:25.83elapsed 99%CPU (0avgtext+0avgdata 54384maxresident)k
-0inputs+3904outputs (0major+18767minor)pagefaults 0swaps
+76.18user 6.96system 1:23.19elapsed 99%CPU (0avgtext+0avgdata 54352maxresident)k
+0inputs+3928outputs (0major+10466minor)pagefaults 0swaps

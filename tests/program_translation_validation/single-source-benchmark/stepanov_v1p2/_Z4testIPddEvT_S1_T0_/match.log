@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558d04582938]:   %181 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x558d0474b198]:   %76 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
-[0x558d0474b528]:   %74 = load i32, i32* %73, align 4
-Multiple matches exist for [0x558d04583510]:   %200 = lshr i32 %181, 31
-[0x558d04767fb0]:   %95 = lshr i32 %76, 31
-[0x558d047680d0]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x558d04583590]:   %201 = xor i32 %200, %199
-[0x558d04767e60]:   %96 = xor i32 %95, %94
-[0x558d04772e60]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x5565324b9958]:   %181 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x556532681978]:   %76 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
+[0x5565326821c8]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x5565324ba530]:   %200 = lshr i32 %181, 31
+[0x55653269f100]:   %95 = lshr i32 %76, 31
+[0x55653269f260]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x5565324ba5b0]:   %201 = xor i32 %200, %199
+[0x55653269efe0]:   %96 = xor i32 %95, %94
+[0x5565326a9ff0]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
 Writing 'sub_401470__Z4testIPddEvT_S1_T0_-mcsema-diff.dot'...
 Writing 'sub_401470__Z4testIPddEvT_S1_T0_-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z4testIPddEvT_S1_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z4testIPddEvT_S1_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-7.18user 4.91system 0:12.15elapsed 99%CPU (0avgtext+0avgdata 17488maxresident)k
-0inputs+1272outputs (0major+3439minor)pagefaults 0swaps
+6.92user 4.27system 0:11.24elapsed 99%CPU (0avgtext+0avgdata 17424maxresident)k
+0inputs+1280outputs (0major+2024minor)pagefaults 0swaps

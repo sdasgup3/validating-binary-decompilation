@@ -1,0 +1,24 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x555ea31b5428]:   %81 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x555ea3be91b8]:   %81 = load i32, i32* bitcast (%G_0x61c078_type* @G_0x61c078 to i32*), align 8
+[0x555ea3be9418]:   %79 = load i32, i32* %78, align 4
+Multiple matches exist for [0x555ea31b6000]:   %100 = lshr i32 %81, 31
+[0x555ea3c03000]:   %99 = lshr i32 %79, 31
+[0x555ea3c0d7c0]:   %100 = lshr i32 %81, 31
+Multiple matches exist for [0x555ea31b6080]:   %101 = xor i32 %100, %99
+[0x555ea3c0e2f0]:   %102 = xor i32 %97, %99
+[0x555ea3c0e450]:   %101 = xor i32 %100, %99
+Iso Match NOT Found
+Writing 'sub_404840__Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc-mcsema-diff.dot'...
+Writing 'sub_404840__Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc-proposed-diff.dot'...
+Writing '_Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z28test_goto_loop_unroll_factorILi2EdEvPKT0_iPKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+122.25user 13.44system 2:16.31elapsed 99%CPU (0avgtext+0avgdata 62576maxresident)k
+0inputs+5504outputs (0major+13030minor)pagefaults 0swaps

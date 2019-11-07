@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_covariance] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_covariance] from mcsema/test.proposed.opt.ll
 Matcher Done...
-139.89user 129.35system 4:32.91elapsed 98%CPU (0avgtext+0avgdata 21652maxresident)k
-0inputs+31736outputs (0major+6043minor)pagefaults 0swaps
+144.73user 128.37system 4:37.23elapsed 98%CPU (0avgtext+0avgdata 21624maxresident)k
+0inputs+31736outputs (0major+4516minor)pagefaults 0swaps

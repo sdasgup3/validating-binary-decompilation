@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x562765fa1398]:   %166 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x562765e292a8]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x562765e29ab8]:   %82 = load i32, i32* %81, align 4
-Multiple matches exist for [0x562765fa1f70]:   %185 = lshr i32 %166, 31
-[0x562766d587a0]:   %103 = lshr i32 %84, 31
-[0x562766d58bf0]:   %102 = lshr i32 %82, 31
-Multiple matches exist for [0x562765fa1ff0]:   %186 = xor i32 %185, %184
-[0x562766d58560]:   %105 = xor i32 %100, %102
-[0x562766d586c0]:   %104 = xor i32 %103, %102
+Multiple matches exist for [0x5579f8f44338]:   %166 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5579f8dcc7f8]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x5579f8dccde8]:   %82 = load i32, i32* %81, align 4
+Multiple matches exist for [0x5579f8f44f10]:   %185 = lshr i32 %166, 31
+[0x5579f9cfb700]:   %103 = lshr i32 %84, 31
+[0x5579f9cfbb50]:   %102 = lshr i32 %82, 31
+Multiple matches exist for [0x5579f8f44f90]:   %186 = xor i32 %185, %184
+[0x5579f9cfb4c0]:   %105 = xor i32 %100, %102
+[0x5579f9cfb620]:   %104 = xor i32 %103, %102
 Iso Match NOT Found
 Writing 'sub_407110__Z14test_variable1It18custom_variable_orItEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_407110__Z14test_variable1It18custom_variable_orItEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1It18custom_variable_orItEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1It18custom_variable_orItEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-65.81user 9.22system 1:17.63elapsed 96%CPU (0avgtext+0avgdata 54180maxresident)k
-0inputs+3152outputs (0major+10528minor)pagefaults 0swaps
+67.67user 8.74system 1:20.58elapsed 94%CPU (0avgtext+0avgdata 54316maxresident)k
+0inputs+3160outputs (0major+18628minor)pagefaults 0swaps

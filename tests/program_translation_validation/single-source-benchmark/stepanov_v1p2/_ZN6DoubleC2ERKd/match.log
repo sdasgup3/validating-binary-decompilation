@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN6DoubleC2ERKd] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN6DoubleC2ERKd] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.73user 0.32system 0:01.06elapsed 99%CPU (0avgtext+0avgdata 17664maxresident)k
-0inputs+136outputs (0major+2020minor)pagefaults 0swaps
+0.91user 0.33system 0:01.30elapsed 95%CPU (0avgtext+0avgdata 17620maxresident)k
+0inputs+136outputs (0major+2011minor)pagefaults 0swaps

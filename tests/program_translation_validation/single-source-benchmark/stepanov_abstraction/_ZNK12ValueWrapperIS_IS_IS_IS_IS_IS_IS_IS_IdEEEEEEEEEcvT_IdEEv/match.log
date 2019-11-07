@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZNK12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEcvT_IdEEv] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.52user 0.55system 0:03.19elapsed 96%CPU (0avgtext+0avgdata 23568maxresident)k
-0inputs+224outputs (0major+5900minor)pagefaults 0swaps
+2.76user 0.53system 0:03.41elapsed 96%CPU (0avgtext+0avgdata 23756maxresident)k
+0inputs+232outputs (0major+4407minor)pagefaults 0swaps

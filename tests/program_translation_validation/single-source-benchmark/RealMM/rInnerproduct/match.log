@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [rInnerproduct] from ../binary/test.mcsema.opt.ll
 Extracting function [rInnerproduct] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.15user 6.42system 0:10.63elapsed 99%CPU (0avgtext+0avgdata 13312maxresident)k
-0inputs+1600outputs (0major+1060minor)pagefaults 0swaps
+4.29user 6.75system 0:11.18elapsed 98%CPU (0avgtext+0avgdata 13232maxresident)k
+0inputs+1600outputs (0major+1673minor)pagefaults 0swaps

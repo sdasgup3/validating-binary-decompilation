@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Min0] from ../binary/test.mcsema.opt.ll
 Extracting function [Min0] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.89user 0.68system 0:01.57elapsed 99%CPU (0avgtext+0avgdata 13256maxresident)k
-0inputs+296outputs (0major+1109minor)pagefaults 0swaps
+0.68user 0.74system 0:01.42elapsed 99%CPU (0avgtext+0avgdata 13228maxresident)k
+0inputs+296outputs (0major+1114minor)pagefaults 0swaps

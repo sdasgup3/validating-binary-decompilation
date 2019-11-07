@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark4copyIPdP12ValueWrapperIS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IS2_IdEEEEEEEEEEEEvT_SE_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-9.59user 3.19system 0:13.01elapsed 98%CPU (0avgtext+0avgdata 23592maxresident)k
-0inputs+1080outputs (0major+6051minor)pagefaults 0swaps
+9.65user 2.92system 0:12.59elapsed 99%CPU (0avgtext+0avgdata 23772maxresident)k
+0inputs+1080outputs (0major+5351minor)pagefaults 0swaps

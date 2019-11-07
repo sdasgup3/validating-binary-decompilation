@@ -1,24 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564b376a3750]:   %165 = fcmp uno double %.cast, %164
-[0x564b37d5b170]:   %190 = fcmp oeq double %.cast, %173
-[0x564b37d5b4f0]:   %188 = fcmp olt double %.cast, %173
-[0x564b37d6e530]:   %174 = fcmp uno double %.cast, %173
-[0x564b37d6fb60]:   %186 = fcmp ogt double %.cast, %173
-Multiple matches exist for [0x564b376dba90]:   %177 = fcmp ogt double %.cast, %164
-[0x564b37d5b170]:   %190 = fcmp oeq double %.cast, %173
-[0x564b37d5b4f0]:   %188 = fcmp olt double %.cast, %173
-[0x564b37d6e530]:   %174 = fcmp uno double %.cast, %173
-[0x564b37d6fb60]:   %186 = fcmp ogt double %.cast, %173
-Multiple matches exist for [0x564b376dbbf0]:   %179 = fcmp olt double %.cast, %164
-[0x564b37d5b170]:   %190 = fcmp oeq double %.cast, %173
-[0x564b37d5b4f0]:   %188 = fcmp olt double %.cast, %173
-[0x564b37d6e530]:   %174 = fcmp uno double %.cast, %173
-[0x564b37d6fb60]:   %186 = fcmp ogt double %.cast, %173
-Multiple matches exist for [0x564b376dbd50]:   %181 = fcmp oeq double %.cast, %164
-[0x564b37d5b170]:   %190 = fcmp oeq double %.cast, %173
-[0x564b37d5b4f0]:   %188 = fcmp olt double %.cast, %173
-[0x564b37d6e530]:   %174 = fcmp uno double %.cast, %173
-[0x564b37d6fb60]:   %186 = fcmp ogt double %.cast, %173
+Multiple matches exist for [0x5624c1098770]:   %165 = fcmp uno double %.cast, %164
+[0x5624c1763430]:   %174 = fcmp uno double %.cast, %173
+[0x5624c17643b0]:   %190 = fcmp oeq double %.cast, %173
+[0x5624c1764600]:   %188 = fcmp olt double %.cast, %173
+[0x5624c1764980]:   %186 = fcmp ogt double %.cast, %173
+Multiple matches exist for [0x5624c10d0ab0]:   %177 = fcmp ogt double %.cast, %164
+[0x5624c1763430]:   %174 = fcmp uno double %.cast, %173
+[0x5624c17643b0]:   %190 = fcmp oeq double %.cast, %173
+[0x5624c1764600]:   %188 = fcmp olt double %.cast, %173
+[0x5624c1764980]:   %186 = fcmp ogt double %.cast, %173
+Multiple matches exist for [0x5624c10d0c10]:   %179 = fcmp olt double %.cast, %164
+[0x5624c1763430]:   %174 = fcmp uno double %.cast, %173
+[0x5624c17643b0]:   %190 = fcmp oeq double %.cast, %173
+[0x5624c1764600]:   %188 = fcmp olt double %.cast, %173
+[0x5624c1764980]:   %186 = fcmp ogt double %.cast, %173
+Multiple matches exist for [0x5624c10d0d70]:   %181 = fcmp oeq double %.cast, %164
+[0x5624c1763430]:   %174 = fcmp uno double %.cast, %173
+[0x5624c17643b0]:   %190 = fcmp oeq double %.cast, %173
+[0x5624c1764600]:   %188 = fcmp olt double %.cast, %173
+[0x5624c1764980]:   %186 = fcmp ogt double %.cast, %173
 Iso Match NOT Found
 Writing 'sub_404c20__ZN9benchmark9is_sortedIPdEEbT_S2_-mcsema-diff.dot'...
 Writing 'sub_404c20__ZN9benchmark9is_sortedIPdEEbT_S2_-mcsema-diff.dot':Done
@@ -31,5 +31,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark9is_sortedIPdEEbT_S2_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark9is_sortedIPdEEbT_S2_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-12.75user 4.67system 0:17.69elapsed 98%CPU (0avgtext+0avgdata 23704maxresident)k
-0inputs+1608outputs (0major+6107minor)pagefaults 0swaps
+12.22user 4.70system 0:16.93elapsed 99%CPU (0avgtext+0avgdata 23784maxresident)k
+0inputs+1616outputs (0major+3487minor)pagefaults 0swaps

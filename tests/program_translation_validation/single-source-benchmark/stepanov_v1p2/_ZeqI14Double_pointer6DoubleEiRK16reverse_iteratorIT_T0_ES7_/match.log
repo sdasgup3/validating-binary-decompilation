@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.89user 0.77system 0:02.73elapsed 98%CPU (0avgtext+0avgdata 17444maxresident)k
-0inputs+288outputs (0major+2019minor)pagefaults 0swaps
+2.09user 0.84system 0:02.99elapsed 97%CPU (0avgtext+0avgdata 17412maxresident)k
+0inputs+288outputs (0major+2401minor)pagefaults 0swaps

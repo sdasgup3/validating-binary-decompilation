@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564ee0ef55b8]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x564ee1f4e008]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-[0x564ee2032908]:   %73 = load i32, i32* %72, align 4
-Multiple matches exist for [0x564ee0efcb40]:   %282 = lshr i32 %263, 31
-[0x564ee2d026d0]:   %94 = lshr i32 %75, 31
-[0x564ee2d02820]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x564ee0efcbc0]:   %283 = xor i32 %282, %281
-[0x564ee2d0d4c0]:   %95 = xor i32 %94, %93
-[0x564ee2d0e150]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x560e6f3b2618]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x560e7040b138]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+[0x560e704efa38]:   %73 = load i32, i32* %72, align 4
+Multiple matches exist for [0x560e6f3b9ba0]:   %282 = lshr i32 %263, 31
+[0x560e711bf5e0]:   %94 = lshr i32 %75, 31
+[0x560e711bf730]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x560e6f3b9c20]:   %283 = xor i32 %282, %281
+[0x560e711ca720]:   %95 = xor i32 %94, %93
+[0x560e711cb3f0]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
 Writing 'sub_40a2b0__Z13test_constantIj22custom_constant_divideIjEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_40a2b0__Z13test_constantIj22custom_constant_divideIjEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIj22custom_constant_divideIjEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIj22custom_constant_divideIjEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-82.12user 5.32system 1:28.68elapsed 98%CPU (0avgtext+0avgdata 65968maxresident)k
-0inputs+2776outputs (0major+22967minor)pagefaults 0swaps
+83.55user 4.91system 1:29.65elapsed 98%CPU (0avgtext+0avgdata 65776maxresident)k
+0inputs+2792outputs (0major+42608minor)pagefaults 0swaps

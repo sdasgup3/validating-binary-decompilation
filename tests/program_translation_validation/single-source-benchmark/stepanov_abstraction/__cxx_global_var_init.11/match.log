@@ -1,10 +1,10 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55eca9c7e200]:   %43 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%V10Data_type* @V10Data to i64), i64 16000) to i32), i32 255)) #12
-[0x55eca9666e20]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x55eca9676b90]:   %77 = tail call i32 @llvm.ctpop.i32(i32 %76)
-[0x55eca9676d60]:   %45 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x610e30_type* @G__0x610e30 to i64), i64 16000) to i32), i32 255))
-[0x55eca9ee4fe0]:   %110 = tail call i32 @llvm.ctpop.i32(i32 %109)
-[0x55eca9ee9470]:   %call2_400866 = tail call %struct.Memory.31* @sub_401c40._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev(%struct.State.0* nonnull %0, i64 %59, %struct.Memory.31* %2)
+Multiple matches exist for [0x563c426b11e0]:   %43 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%V10Data_type* @V10Data to i64), i64 16000) to i32), i32 255)) #12
+[0x563c42099e20]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x563c420a9d60]:   %77 = tail call i32 @llvm.ctpop.i32(i32 %76)
+[0x563c420a9f30]:   %45 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x610e30_type* @G__0x610e30 to i64), i64 16000) to i32), i32 255))
+[0x563c428f0ce0]:   %110 = tail call i32 @llvm.ctpop.i32(i32 %109)
+[0x563c4291c430]:   %call2_400866 = tail call %struct.Memory.31* @sub_401c40._ZN12ValueWrapperIS_IS_IS_IS_IS_IS_IS_IS_IS_IdEEEEEEEEEEC2Ev(%struct.State.0* nonnull %0, i64 %59, %struct.Memory.31* %2)
 Iso Match NOT Found
 Writing 'sub_400840___cxx_global_var_init_11-mcsema-diff.dot'...
 Writing 'sub_400840___cxx_global_var_init_11-mcsema-diff.dot':Done
@@ -17,5 +17,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [__cxx_global_var_init.11] from ../binary/test.mcsema.opt.ll
 Extracting function [__cxx_global_var_init.11] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.52user 1.07system 0:05.67elapsed 98%CPU (0avgtext+0avgdata 23632maxresident)k
-0inputs+712outputs (0major+6053minor)pagefaults 0swaps
+4.62user 1.21system 0:05.88elapsed 99%CPU (0avgtext+0avgdata 23764maxresident)k
+0inputs+720outputs (0major+6048minor)pagefaults 0swaps

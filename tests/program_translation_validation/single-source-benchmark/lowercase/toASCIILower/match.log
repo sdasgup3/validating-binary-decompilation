@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [toASCIILower] from ../binary/test.mcsema.opt.ll
 Extracting function [toASCIILower] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.39user 1.74system 0:03.31elapsed 94%CPU (0avgtext+0avgdata 12704maxresident)k
-0inputs+768outputs (0major+1469minor)pagefaults 0swaps
+1.47user 2.04system 0:03.56elapsed 98%CPU (0avgtext+0avgdata 12776maxresident)k
+0inputs+776outputs (0major+965minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN13do_loop_testsILi0EiE7do_testEPKiPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN13do_loop_testsILi0EiE7do_testEPKiPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.25user 0.13system 0:04.56elapsed 96%CPU (0avgtext+0avgdata 62500maxresident)k
-0inputs+72outputs (0major+12137minor)pagefaults 0swaps
+3.91user 0.15system 0:04.35elapsed 93%CPU (0avgtext+0avgdata 62428maxresident)k
+0inputs+72outputs (0major+12384minor)pagefaults 0swaps

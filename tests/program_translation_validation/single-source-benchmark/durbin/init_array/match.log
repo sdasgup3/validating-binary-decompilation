@@ -1,10 +1,10 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x564a027dfee8]:   %.pre6 = load i64, i64* %RBP, align 8
-[0x564a029affd8]:   %131 = load i64, i64* %RBP.i, align 8
-[0x564a029bb368]:   %.pre6 = load i64, i64* %RBP.i, align 8
-Multiple matches exist for [0x564a027dc938]:   %.pre9 = load i64, i64* %RBP, align 8
-[0x564a029e2518]:   %200 = load i64, i64* %RBP.i, align 8
-[0x564a029f5b78]:   %.pre9 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x560c9c613ed8]:   %.pre6 = load i64, i64* %RBP, align 8
+[0x560c9c7e58d8]:   %131 = load i64, i64* %RBP.i, align 8
+[0x560c9c7ef248]:   %.pre6 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x560c9c610938]:   %.pre9 = load i64, i64* %RBP, align 8
+[0x560c9c7f2258]:   %200 = load i64, i64* %RBP.i, align 8
+[0x560c9c829b88]:   %.pre9 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_400a80_init_array-mcsema-diff.dot'...
 Writing 'sub_400a80_init_array-mcsema-diff.dot':Done
@@ -17,5 +17,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [init_array] from ../binary/test.mcsema.opt.ll
 Extracting function [init_array] from mcsema/test.proposed.opt.ll
 Matcher Done...
-21.71user 29.09system 0:50.84elapsed 99%CPU (0avgtext+0avgdata 15568maxresident)k
-0inputs+6032outputs (0major+1665minor)pagefaults 0swaps
+23.36user 27.14system 0:50.70elapsed 99%CPU (0avgtext+0avgdata 15644maxresident)k
+0inputs+6032outputs (0major+2310minor)pagefaults 0swaps

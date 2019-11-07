@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55cb7662bba8]:   %.pre = load i64, i64* %RBP, align 8
-[0x55cb766dc308]:   %44 = load i64, i64* %RBP.i, align 8
-[0x55cb766e7ec8]:   %.pre = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55884f813b38]:   %.pre = load i64, i64* %RBP, align 8
+[0x55884f8c4278]:   %44 = load i64, i64* %RBP.i, align 8
+[0x55884f8cf888]:   %.pre = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_4019a0_clearMat-mcsema-diff.dot'...
 Writing 'sub_4019a0_clearMat-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [clearMat] from ../binary/test.mcsema.opt.ll
 Extracting function [clearMat] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.82user 3.45system 0:07.53elapsed 96%CPU (0avgtext+0avgdata 15448maxresident)k
-0inputs+824outputs (0major+1649minor)pagefaults 0swaps
+3.49user 3.69system 0:07.55elapsed 95%CPU (0avgtext+0avgdata 15588maxresident)k
+0inputs+824outputs (0major+1646minor)pagefaults 0swaps

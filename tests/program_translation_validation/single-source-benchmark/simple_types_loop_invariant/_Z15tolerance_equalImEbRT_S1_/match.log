@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z15tolerance_equalImEbRT_S1_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z15tolerance_equalImEbRT_S1_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.42user 0.19system 0:05.71elapsed 98%CPU (0avgtext+0avgdata 54440maxresident)k
-0inputs+192outputs (0major+10851minor)pagefaults 0swaps
+5.80user 0.19system 0:06.31elapsed 94%CPU (0avgtext+0avgdata 54380maxresident)k
+0inputs+192outputs (0major+10463minor)pagefaults 0swaps

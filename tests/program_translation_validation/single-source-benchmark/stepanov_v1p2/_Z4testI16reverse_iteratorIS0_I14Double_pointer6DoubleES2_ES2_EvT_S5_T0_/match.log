@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55801866dc28]:   %221 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5580187b24b8]:   %76 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
-[0x5580187b2718]:   %74 = load i32, i32* %73, align 4
-Multiple matches exist for [0x55801866e800]:   %240 = lshr i32 %221, 31
-[0x5580187d9f20]:   %94 = lshr i32 %74, 31
-[0x5580187dabb0]:   %95 = lshr i32 %76, 31
-Multiple matches exist for [0x55801866e880]:   %241 = xor i32 %240, %239
-[0x5580187da600]:   %97 = xor i32 %92, %94
-[0x5580187daa50]:   %96 = xor i32 %95, %94
+Multiple matches exist for [0x562631050c38]:   %221 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x562631194b68]:   %76 = load i32, i32* bitcast (%G_0x605050_type* @G_0x605050 to i32*), align 8
+[0x5626311954e8]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x562631051810]:   %240 = lshr i32 %221, 31
+[0x5626311bd0b0]:   %94 = lshr i32 %74, 31
+[0x5626311bdd80]:   %95 = lshr i32 %76, 31
+Multiple matches exist for [0x562631051890]:   %241 = xor i32 %240, %239
+[0x5626311bda80]:   %97 = xor i32 %92, %94
+[0x5626311bdbe0]:   %96 = xor i32 %95, %94
 Iso Match NOT Found
 Writing 'sub_401b20__Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0_-mcsema-diff.dot'...
 Writing 'sub_401b20__Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0_-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.20user 7.22system 0:17.57elapsed 99%CPU (0avgtext+0avgdata 17212maxresident)k
-0inputs+1944outputs (0major+4815minor)pagefaults 0swaps
+9.47user 7.18system 0:16.81elapsed 99%CPU (0avgtext+0avgdata 17488maxresident)k
+0inputs+1944outputs (0major+5995minor)pagefaults 0swaps

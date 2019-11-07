@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x563af23ef5c8]:   %81 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %63)
-[0x563af24e6f90]:   %82 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_404178)
-[0x563af24e8460]:   %call2_404178 = tail call %struct.Memory.31* @sub_4041b0._ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4_(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
+Multiple matches exist for [0x556338e3d638]:   %81 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %63)
+[0x556338f34ff0]:   %82 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_404178)
+[0x556338f364c0]:   %call2_404178 = tail call %struct.Memory.31* @sub_4041b0._ZN9benchmark9is_sortedIP12ValueWrapperIdEEEbT_S4_(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
 Iso Match NOT Found
 Writing 'sub_404160__Z13verify_sortedIP12ValueWrapperIdEEvT_S3_-mcsema-diff.dot'...
 Writing 'sub_404160__Z13verify_sortedIP12ValueWrapperIdEEvT_S3_-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13verify_sortedIP12ValueWrapperIdEEvT_S3_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13verify_sortedIP12ValueWrapperIdEEvT_S3_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.06user 1.36system 0:05.42elapsed 100%CPU (0avgtext+0avgdata 23872maxresident)k
-0inputs+536outputs (0major+3474minor)pagefaults 0swaps
+4.44user 1.24system 0:05.72elapsed 99%CPU (0avgtext+0avgdata 23672maxresident)k
+0inputs+544outputs (0major+6048minor)pagefaults 0swaps

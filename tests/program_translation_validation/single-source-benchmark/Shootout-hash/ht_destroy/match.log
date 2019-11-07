@@ -1,14 +1,14 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560058695398]:   %63 = tail call fastcc %struct.Memory* @ext_602168_free(%struct.State* nonnull %0, %struct.Memory* %51)
-[0x560058756ec0]:   %215 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %203)
-[0x560058762620]:   %203 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x56005876b9c0]:   %165 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %153)
-[0x56005876ebc0]:   %153 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.1)
-Multiple matches exist for [0x5600585e07d8]:   %149 = tail call fastcc %struct.Memory* @ext_602168_free(%struct.State* nonnull %0, %struct.Memory* %137)
-[0x560058756ec0]:   %215 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %203)
-[0x560058762620]:   %203 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
-[0x56005876b9c0]:   %165 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %153)
-[0x56005876ebc0]:   %153 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x5606d04e4398]:   %63 = tail call fastcc %struct.Memory* @ext_602168_free(%struct.State* nonnull %0, %struct.Memory* %51)
+[0x5606d05a5ec0]:   %215 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %203)
+[0x5606d05b1620]:   %203 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x5606d05ba9c0]:   %165 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %153)
+[0x5606d05bd9b0]:   %153 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.1)
+Multiple matches exist for [0x5606d042f7d8]:   %149 = tail call fastcc %struct.Memory* @ext_602168_free(%struct.State* nonnull %0, %struct.Memory* %137)
+[0x5606d05a5ec0]:   %215 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %203)
+[0x5606d05b1620]:   %203 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.0)
+[0x5606d05ba9c0]:   %165 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %153)
+[0x5606d05bd9b0]:   %153 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.32* %MEMORY.1)
 Iso Match NOT Found
 Writing 'sub_400910_ht_destroy-mcsema-diff.dot'...
 Writing 'sub_400910_ht_destroy-mcsema-diff.dot':Done
@@ -21,5 +21,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [ht_destroy] from ../binary/test.mcsema.opt.ll
 Extracting function [ht_destroy] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.93user 10.37system 0:16.52elapsed 98%CPU (0avgtext+0avgdata 13332maxresident)k
-0inputs+2288outputs (0major+2334minor)pagefaults 0swaps
+5.93user 10.87system 0:17.18elapsed 97%CPU (0avgtext+0avgdata 13356maxresident)k
+0inputs+2288outputs (0major+1774minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN22custom_divide_variableIlE8do_shiftEll] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN22custom_divide_variableIlE8do_shiftEll] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.92user 0.11system 0:06.08elapsed 99%CPU (0avgtext+0avgdata 54256maxresident)k
-0inputs+192outputs (0major+10461minor)pagefaults 0swaps
+5.79user 0.21system 0:06.12elapsed 98%CPU (0avgtext+0avgdata 54272maxresident)k
+0inputs+184outputs (0major+18494minor)pagefaults 0swaps

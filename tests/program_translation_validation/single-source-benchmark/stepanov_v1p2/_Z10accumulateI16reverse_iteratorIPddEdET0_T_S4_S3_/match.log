@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorIPddEdET0_T_S4_S3_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10accumulateI16reverse_iteratorIPddEdET0_T_S4_S3_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.35user 3.27system 0:07.69elapsed 99%CPU (0avgtext+0avgdata 17348maxresident)k
-0inputs+992outputs (0major+2019minor)pagefaults 0swaps
+4.28user 3.48system 0:07.83elapsed 99%CPU (0avgtext+0avgdata 17412maxresident)k
+0inputs+1000outputs (0major+3407minor)pagefaults 0swaps

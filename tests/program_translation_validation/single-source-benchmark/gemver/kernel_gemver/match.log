@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_gemver] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_gemver] from mcsema/test.proposed.opt.ll
 Matcher Done...
-138.13user 123.07system 4:24.86elapsed 98%CPU (0avgtext+0avgdata 23656maxresident)k
-0inputs+31192outputs (0major+6982minor)pagefaults 0swaps
+150.72user 120.29system 4:35.35elapsed 98%CPU (0avgtext+0avgdata 23668maxresident)k
+0inputs+31224outputs (0major+6984minor)pagefaults 0swaps

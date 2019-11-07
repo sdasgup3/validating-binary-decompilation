@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55c4d0dd19e8]:   %129 = tail call fastcc %struct.Memory* @ext_602108_free(%struct.State* nonnull %0, %struct.Memory* %53)
-[0x55c4d1001630]:   %173 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %54)
-[0x55c4d100dbd0]:   %54 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.31* %2)
+Multiple matches exist for [0x55963e1439e8]:   %129 = tail call fastcc %struct.Memory* @ext_602108_free(%struct.State* nonnull %0, %struct.Memory* %53)
+[0x55963e373690]:   %173 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory.31* %54)
+[0x55963e37fa20]:   %54 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.31* %2)
 Iso Match NOT Found
 Writing 'sub_400770_polybench_flush_cache-mcsema-diff.dot'...
 Writing 'sub_400770_polybench_flush_cache-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_flush_cache] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_flush_cache] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.23user 4.80system 0:08.24elapsed 97%CPU (0avgtext+0avgdata 13872maxresident)k
-0inputs+1128outputs (0major+1291minor)pagefaults 0swaps
+3.61user 4.90system 0:08.52elapsed 99%CPU (0avgtext+0avgdata 14056maxresident)k
+0inputs+1144outputs (0major+2105minor)pagefaults 0swaps

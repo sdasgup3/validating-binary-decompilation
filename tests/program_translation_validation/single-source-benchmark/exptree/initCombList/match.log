@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [initCombList] from ../binary/test.mcsema.opt.ll
 Extracting function [initCombList] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.27user 2.29system 0:04.62elapsed 98%CPU (0avgtext+0avgdata 14480maxresident)k
-0inputs+544outputs (0major+1364minor)pagefaults 0swaps
+1.76user 2.18system 0:03.97elapsed 99%CPU (0avgtext+0avgdata 14464maxresident)k
+0inputs+544outputs (0major+2223minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [zeromatrix] from ../binary/test.mcsema.opt.ll
 Extracting function [zeromatrix] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.37user 4.30system 0:06.73elapsed 99%CPU (0avgtext+0avgdata 12980maxresident)k
-0inputs+1048outputs (0major+1580minor)pagefaults 0swaps
+2.74user 4.62system 0:07.42elapsed 99%CPU (0avgtext+0avgdata 12824maxresident)k
+0inputs+1048outputs (0major+1015minor)pagefaults 0swaps

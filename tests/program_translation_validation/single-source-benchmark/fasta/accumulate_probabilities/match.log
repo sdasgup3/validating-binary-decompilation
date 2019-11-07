@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [accumulate_probabilities] from ../binary/test.mcsema.opt.ll
 Extracting function [accumulate_probabilities] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.28user 5.18system 0:07.61elapsed 98%CPU (0avgtext+0avgdata 13136maxresident)k
-0inputs+1088outputs (0major+999minor)pagefaults 0swaps
+2.07user 4.56system 0:06.79elapsed 97%CPU (0avgtext+0avgdata 13104maxresident)k
+0inputs+1096outputs (0major+1548minor)pagefaults 0swaps

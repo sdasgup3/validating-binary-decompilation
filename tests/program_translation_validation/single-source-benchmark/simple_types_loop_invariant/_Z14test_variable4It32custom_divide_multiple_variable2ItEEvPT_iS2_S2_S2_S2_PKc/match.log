@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560598628bd8]:   %381 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56059918ab08]:   %129 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x56059918b0f8]:   %127 = load i32, i32* %126, align 4
-Multiple matches exist for [0x5605986297b0]:   %400 = lshr i32 %381, 31
-[0x5605991b6b00]:   %147 = lshr i32 %127, 31
-[0x5605991b6ff0]:   %148 = lshr i32 %129, 31
-Multiple matches exist for [0x560598629830]:   %401 = xor i32 %400, %399
-[0x5605991b1130]:   %150 = xor i32 %145, %147
-[0x5605991b1290]:   %149 = xor i32 %148, %147
+Multiple matches exist for [0x55ae1b6b9b58]:   %381 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55ae1c21bba8]:   %129 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55ae1c21c198]:   %127 = load i32, i32* %126, align 4
+Multiple matches exist for [0x55ae1b6ba730]:   %400 = lshr i32 %381, 31
+[0x55ae1c241e60]:   %148 = lshr i32 %129, 31
+[0x55ae1c247bb0]:   %147 = lshr i32 %127, 31
+Multiple matches exist for [0x55ae1b6ba7b0]:   %401 = xor i32 %400, %399
+[0x55ae1c241d10]:   %149 = xor i32 %148, %147
+[0x55ae1c248340]:   %150 = xor i32 %145, %147
 Iso Match NOT Found
 Writing 'sub_406cc0__Z14test_variable4It32custom_divide_multiple_variable2ItEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
 Writing 'sub_406cc0__Z14test_variable4It32custom_divide_multiple_variable2ItEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4It32custom_divide_multiple_variable2ItEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4It32custom_divide_multiple_variable2ItEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-106.87user 8.27system 1:56.52elapsed 98%CPU (0avgtext+0avgdata 54332maxresident)k
-0inputs+5760outputs (0major+34854minor)pagefaults 0swaps
+104.86user 6.99system 1:53.37elapsed 98%CPU (0avgtext+0avgdata 54332maxresident)k
+0inputs+5792outputs (0major+18943minor)pagefaults 0swaps

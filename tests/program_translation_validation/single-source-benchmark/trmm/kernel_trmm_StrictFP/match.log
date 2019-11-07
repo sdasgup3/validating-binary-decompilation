@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_trmm_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_trmm_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
-9.99user 15.28system 0:25.45elapsed 99%CPU (0avgtext+0avgdata 14580maxresident)k
-0inputs+3920outputs (0major+1416minor)pagefaults 0swaps
+6.22user 15.36system 0:21.62elapsed 99%CPU (0avgtext+0avgdata 14360maxresident)k
+0inputs+3920outputs (0major+1549minor)pagefaults 0swaps

@@ -1,27 +1,27 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5610bef53678]:   %59 = load double, double* bitcast (%init_value_type* @init_value to double*), align 8
-[0x5610bf2720f8]:   %63 = load double, double* bitcast (%G_0x609090_type* @G_0x609090 to double*), align 8
-[0x5610bf28fab8]:   %62 = load double, double* %45, align 1
-Multiple matches exist for [0x5610bef53950]:   %63 = fcmp uno double %62, %60
-[0x5610bf293c00]:   %79 = fcmp ogt double %66, %64
-[0x5610bf2944b0]:   %67 = fcmp uno double %66, %64
-[0x5610bf295890]:   %81 = fcmp olt double %66, %64
-[0x5610bf2986a0]:   %83 = fcmp oeq double %66, %64
-Multiple matches exist for [0x5610bef54390]:   %75 = fcmp ogt double %62, %60
-[0x5610bf293c00]:   %79 = fcmp ogt double %66, %64
-[0x5610bf2944b0]:   %67 = fcmp uno double %66, %64
-[0x5610bf295890]:   %81 = fcmp olt double %66, %64
-[0x5610bf2986a0]:   %83 = fcmp oeq double %66, %64
-Multiple matches exist for [0x5610bef544f0]:   %77 = fcmp olt double %62, %60
-[0x5610bf293c00]:   %79 = fcmp ogt double %66, %64
-[0x5610bf2944b0]:   %67 = fcmp uno double %66, %64
-[0x5610bf295890]:   %81 = fcmp olt double %66, %64
-[0x5610bf2986a0]:   %83 = fcmp oeq double %66, %64
-Multiple matches exist for [0x5610bef54650]:   %79 = fcmp oeq double %62, %60
-[0x5610bf293c00]:   %79 = fcmp ogt double %66, %64
-[0x5610bf2944b0]:   %67 = fcmp uno double %66, %64
-[0x5610bf295890]:   %81 = fcmp olt double %66, %64
-[0x5610bf2986a0]:   %83 = fcmp oeq double %66, %64
+Multiple matches exist for [0x56007b4d86b8]:   %59 = load double, double* bitcast (%init_value_type* @init_value to double*), align 8
+[0x56007b7f7128]:   %63 = load double, double* bitcast (%G_0x609090_type* @G_0x609090 to double*), align 8
+[0x56007b814ae8]:   %62 = load double, double* %45, align 1
+Multiple matches exist for [0x56007b4d8990]:   %63 = fcmp uno double %62, %60
+[0x56007b818c30]:   %79 = fcmp ogt double %66, %64
+[0x56007b8194e0]:   %67 = fcmp uno double %66, %64
+[0x56007b81a8c0]:   %81 = fcmp olt double %66, %64
+[0x56007b81d6d0]:   %83 = fcmp oeq double %66, %64
+Multiple matches exist for [0x56007b4d93d0]:   %75 = fcmp ogt double %62, %60
+[0x56007b818c30]:   %79 = fcmp ogt double %66, %64
+[0x56007b8194e0]:   %67 = fcmp uno double %66, %64
+[0x56007b81a8c0]:   %81 = fcmp olt double %66, %64
+[0x56007b81d6d0]:   %83 = fcmp oeq double %66, %64
+Multiple matches exist for [0x56007b4d9530]:   %77 = fcmp olt double %62, %60
+[0x56007b818c30]:   %79 = fcmp ogt double %66, %64
+[0x56007b8194e0]:   %67 = fcmp uno double %66, %64
+[0x56007b81a8c0]:   %81 = fcmp olt double %66, %64
+[0x56007b81d6d0]:   %83 = fcmp oeq double %66, %64
+Multiple matches exist for [0x56007b4d9690]:   %79 = fcmp oeq double %62, %60
+[0x56007b818c30]:   %79 = fcmp ogt double %66, %64
+[0x56007b8194e0]:   %67 = fcmp uno double %66, %64
+[0x56007b81a8c0]:   %81 = fcmp olt double %66, %64
+[0x56007b81d6d0]:   %83 = fcmp oeq double %66, %64
 Iso Match NOT Found
 Writing 'sub_405e00__Z9check_sumd-mcsema-diff.dot'...
 Writing 'sub_405e00__Z9check_sumd-mcsema-diff.dot':Done
@@ -34,5 +34,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z9check_sumd] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z9check_sumd] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.48user 1.73system 0:07.27elapsed 99%CPU (0avgtext+0avgdata 23596maxresident)k
-0inputs+712outputs (0major+6054minor)pagefaults 0swaps
+5.57user 1.49system 0:07.16elapsed 98%CPU (0avgtext+0avgdata 23752maxresident)k
+0inputs+704outputs (0major+3835minor)pagefaults 0swaps

@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55b6ba453e48]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55b6ba57c0f8]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-[0x55b6ba708e18]:   %73 = load i32, i32* %72, align 4
-Multiple matches exist for [0x55b6ba45b3d0]:   %282 = lshr i32 %263, 31
-[0x55b6bb4053c0]:   %94 = lshr i32 %75, 31
-[0x55b6bb4055a0]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x55b6ba45b450]:   %283 = xor i32 %282, %281
-[0x55b6bb410350]:   %95 = xor i32 %94, %93
-[0x55b6bb411020]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x5642f6d1bea8]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5642f6f19068]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+[0x5642f6ffd968]:   %73 = load i32, i32* %72, align 4
+Multiple matches exist for [0x5642f6d23430]:   %282 = lshr i32 %263, 31
+[0x5642f7ccd340]:   %94 = lshr i32 %75, 31
+[0x5642f7ccd520]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x5642f6d234b0]:   %283 = xor i32 %282, %281
+[0x5642f7cd7f70]:   %95 = xor i32 %94, %93
+[0x5642f7cd9050]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
 Writing 'sub_408a10__Z13test_constantIi19custom_constant_addIiEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_408a10__Z13test_constantIi19custom_constant_addIiEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIi19custom_constant_addIiEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIi19custom_constant_addIiEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-84.36user 6.41system 1:31.66elapsed 99%CPU (0avgtext+0avgdata 66132maxresident)k
-0inputs+2776outputs (0major+22971minor)pagefaults 0swaps
+83.49user 6.52system 1:30.99elapsed 98%CPU (0avgtext+0avgdata 66112maxresident)k
+0inputs+2776outputs (0major+14837minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN30custom_lessthanequal_constantsIlE8do_shiftEl] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN30custom_lessthanequal_constantsIlE8do_shiftEl] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.69user 0.16system 0:04.86elapsed 99%CPU (0avgtext+0avgdata 65888maxresident)k
-0inputs+96outputs (0major+12803minor)pagefaults 0swaps
+4.55user 0.14system 0:04.72elapsed 99%CPU (0avgtext+0avgdata 66076maxresident)k
+0inputs+88outputs (0major+12809minor)pagefaults 0swaps

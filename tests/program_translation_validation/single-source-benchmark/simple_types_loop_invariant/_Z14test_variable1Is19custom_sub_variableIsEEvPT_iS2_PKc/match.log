@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5584a97e4718]:   %190 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5584a922ddd8]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x5584a922e298]:   %82 = load i32, i32* %81, align 4
-Multiple matches exist for [0x5584a97e52f0]:   %209 = lshr i32 %190, 31
-[0x5584aa15d790]:   %103 = lshr i32 %84, 31
-[0x5584aa15dbe0]:   %102 = lshr i32 %82, 31
-Multiple matches exist for [0x5584a97e5370]:   %210 = xor i32 %209, %208
-[0x5584aa15d140]:   %105 = xor i32 %100, %102
-[0x5584aa15d6b0]:   %104 = xor i32 %103, %102
+Multiple matches exist for [0x55c380ccf6d8]:   %190 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55c380719138]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55c380719818]:   %82 = load i32, i32* %81, align 4
+Multiple matches exist for [0x55c380cd02b0]:   %209 = lshr i32 %190, 31
+[0x55c381648680]:   %103 = lshr i32 %84, 31
+[0x55c381648760]:   %102 = lshr i32 %82, 31
+Multiple matches exist for [0x55c380cd0330]:   %210 = xor i32 %209, %208
+[0x55c381648340]:   %105 = xor i32 %100, %102
+[0x55c381648520]:   %104 = xor i32 %103, %102
 Iso Match NOT Found
 Writing 'sub_4053a0__Z14test_variable1Is19custom_sub_variableIsEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_4053a0__Z14test_variable1Is19custom_sub_variableIsEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1Is19custom_sub_variableIsEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1Is19custom_sub_variableIsEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-66.41user 8.73system 1:15.92elapsed 98%CPU (0avgtext+0avgdata 54196maxresident)k
-0inputs+3224outputs (0major+18609minor)pagefaults 0swaps
+62.78user 8.76system 1:13.79elapsed 96%CPU (0avgtext+0avgdata 54344maxresident)k
+0inputs+3224outputs (0major+18630minor)pagefaults 0swaps

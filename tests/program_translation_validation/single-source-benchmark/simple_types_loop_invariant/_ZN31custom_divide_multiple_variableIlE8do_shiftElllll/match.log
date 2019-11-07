@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55867d11c0a8]:   %.pre2 = load i64, i64* %RBP, align 8
-[0x55867ce28c58]:   %.pre2 = load i64, i64* %RBP.i, align 8
-[0x55867d3b5a08]:   %39 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x561e997e9008]:   %.pre2 = load i64, i64* %RBP, align 8
+[0x561e994f5bd8]:   %.pre2 = load i64, i64* %RBP.i, align 8
+[0x561e99a82918]:   %39 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_40e5b0__ZN31custom_divide_multiple_variableIlE8do_shiftElllll-mcsema-diff.dot'...
 Writing 'sub_40e5b0__ZN31custom_divide_multiple_variableIlE8do_shiftElllll-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN31custom_divide_multiple_variableIlE8do_shiftElllll] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN31custom_divide_multiple_variableIlE8do_shiftElllll] from mcsema/test.proposed.opt.ll
 Matcher Done...
-22.32user 1.30system 0:23.83elapsed 99%CPU (0avgtext+0avgdata 54236maxresident)k
-0inputs+920outputs (0major+10460minor)pagefaults 0swaps
+23.72user 1.25system 0:25.21elapsed 99%CPU (0avgtext+0avgdata 54216maxresident)k
+0inputs+936outputs (0major+33933minor)pagefaults 0swaps

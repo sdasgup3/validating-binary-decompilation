@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55c6d8a30a38]:   %257 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55c6da43db78]:   %129 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55c6da43e168]:   %127 = load i32, i32* %126, align 4
-Multiple matches exist for [0x55c6d89b92d0]:   %276 = lshr i32 %257, 31
-[0x55c6da463d00]:   %148 = lshr i32 %129, 31
-[0x55c6da4698e0]:   %147 = lshr i32 %127, 31
-Multiple matches exist for [0x55c6d89b9350]:   %277 = xor i32 %276, %275
-[0x55c6da46a030]:   %150 = xor i32 %145, %147
-[0x55c6da46a1d0]:   %149 = xor i32 %148, %147
+Multiple matches exist for [0x5618e23eb0a8]:   %257 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5618e3df7b48]:   %129 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x5618e3df8138]:   %127 = load i32, i32* %126, align 4
+Multiple matches exist for [0x5618e2371350]:   %276 = lshr i32 %257, 31
+[0x5618e3e1dde0]:   %147 = lshr i32 %127, 31
+[0x5618e3e23f80]:   %148 = lshr i32 %129, 31
+Multiple matches exist for [0x5618e23713d0]:   %277 = xor i32 %276, %275
+[0x5618e3e23b90]:   %150 = xor i32 %145, %147
+[0x5618e3e23e30]:   %149 = xor i32 %148, %147
 Iso Match NOT Found
 Writing 'sub_403f30__Z14test_variable4Ia28custom_multiple_variable_xorIaEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
 Writing 'sub_403f30__Z14test_variable4Ia28custom_multiple_variable_xorIaEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Ia28custom_multiple_variable_xorIaEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Ia28custom_multiple_variable_xorIaEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-104.80user 11.36system 1:57.83elapsed 98%CPU (0avgtext+0avgdata 54272maxresident)k
-0inputs+5832outputs (0major+18966minor)pagefaults 0swaps
+105.91user 11.89system 2:00.30elapsed 97%CPU (0avgtext+0avgdata 54304maxresident)k
+0inputs+5832outputs (0major+10524minor)pagefaults 0swaps

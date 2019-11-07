@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_alloc_data] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_alloc_data] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.02user 2.69system 0:04.90elapsed 96%CPU (0avgtext+0avgdata 14024maxresident)k
-0inputs+616outputs (0major+2038minor)pagefaults 0swaps
+1.89user 2.34system 0:04.37elapsed 96%CPU (0avgtext+0avgdata 13856maxresident)k
+0inputs+616outputs (0major+1258minor)pagefaults 0swaps

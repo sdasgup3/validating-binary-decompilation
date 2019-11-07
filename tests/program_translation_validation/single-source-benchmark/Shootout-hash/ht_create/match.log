@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x562e7674fdf8]:   %164 = tail call fastcc %struct.Memory* @ext_6021d8_calloc(%struct.State* nonnull %0, %struct.Memory* %55)
-[0x562e768319d0]:   %166 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.32* %57)
-[0x562e76834bc0]:   %57 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x561ef0da2e28]:   %164 = tail call fastcc %struct.Memory* @ext_6021d8_calloc(%struct.State* nonnull %0, %struct.Memory* %55)
+[0x561ef0e849d0]:   %166 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory.32* %57)
+[0x561ef0e87bd0]:   %57 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
 Iso Match NOT Found
 Writing 'sub_400860_ht_create-mcsema-diff.dot'...
 Writing 'sub_400860_ht_create-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [ht_create] from ../binary/test.mcsema.opt.ll
 Extracting function [ht_create] from mcsema/test.proposed.opt.ll
 Matcher Done...
-5.44user 8.57system 0:14.31elapsed 97%CPU (0avgtext+0avgdata 13324maxresident)k
-0inputs+1848outputs (0major+1635minor)pagefaults 0swaps
+5.21user 7.99system 0:13.61elapsed 96%CPU (0avgtext+0avgdata 13188maxresident)k
+0inputs+1848outputs (0major+1102minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark10accumulateIP12ValueWrapperIdES2_EET0_T_S5_S4_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-7.95user 2.81system 0:10.83elapsed 99%CPU (0avgtext+0avgdata 23792maxresident)k
-0inputs+960outputs (0major+10853minor)pagefaults 0swaps
+7.68user 2.66system 0:10.40elapsed 99%CPU (0avgtext+0avgdata 23620maxresident)k
+0inputs+960outputs (0major+6053minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [get_winning_move] from ../binary/test.mcsema.opt.ll
 Extracting function [get_winning_move] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.71user 2.34system 0:04.06elapsed 99%CPU (0avgtext+0avgdata 14200maxresident)k
-0inputs+504outputs (0major+1307minor)pagefaults 0swaps
+1.92user 2.34system 0:04.28elapsed 99%CPU (0avgtext+0avgdata 13976maxresident)k
+0inputs+512outputs (0major+1303minor)pagefaults 0swaps

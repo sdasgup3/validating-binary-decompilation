@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ec025faa88]:   %81 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55ec01ce3f78]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55ec01ce4308]:   %80 = load i32, i32* %79, align 4
-Multiple matches exist for [0x55ec025fb660]:   %100 = lshr i32 %81, 31
-[0x55ec02c12bb0]:   %101 = lshr i32 %82, 31
-[0x55ec02c12d10]:   %100 = lshr i32 %80, 31
-Multiple matches exist for [0x55ec025fb6e0]:   %101 = xor i32 %100, %99
-[0x55ec02c12680]:   %103 = xor i32 %98, %100
-[0x55ec02c12760]:   %102 = xor i32 %101, %100
+Multiple matches exist for [0x558462985ab8]:   %81 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55846206e898]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55846206ee88]:   %80 = load i32, i32* %79, align 4
+Multiple matches exist for [0x558462986690]:   %100 = lshr i32 %81, 31
+[0x558462f9d7c0]:   %101 = lshr i32 %82, 31
+[0x558462f9dc10]:   %100 = lshr i32 %80, 31
+Multiple matches exist for [0x558462986710]:   %101 = xor i32 %100, %99
+[0x558462f9d580]:   %103 = xor i32 %98, %100
+[0x558462f9d6e0]:   %102 = xor i32 %101, %100
 Iso Match NOT Found
 Writing 'sub_408630__Z14test_variable1Ij24custom_multiply_variableIjEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_408630__Z14test_variable1Ij24custom_multiply_variableIjEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1Ij24custom_multiply_variableIjEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1Ij24custom_multiply_variableIjEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-66.70user 10.45system 1:17.23elapsed 99%CPU (0avgtext+0avgdata 54068maxresident)k
-0inputs+3056outputs (0major+10513minor)pagefaults 0swaps
+67.19user 9.96system 1:18.06elapsed 98%CPU (0avgtext+0avgdata 54252maxresident)k
+0inputs+3056outputs (0major+18606minor)pagefaults 0swaps

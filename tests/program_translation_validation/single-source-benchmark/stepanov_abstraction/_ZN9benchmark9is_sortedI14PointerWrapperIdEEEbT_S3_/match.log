@@ -1,24 +1,24 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560c77f05a10]:   %120 = fcmp uno double %119, %.cast
-[0x560c78316250]:   %140 = fcmp uno double %139, %.cast
-[0x560c78328060]:   %156 = fcmp oeq double %139, %.cast
-[0x560c783282c0]:   %154 = fcmp olt double %139, %.cast
-[0x560c78328420]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x560c77f06b40]:   %132 = fcmp ogt double %119, %.cast
-[0x560c78316250]:   %140 = fcmp uno double %139, %.cast
-[0x560c78328060]:   %156 = fcmp oeq double %139, %.cast
-[0x560c783282c0]:   %154 = fcmp olt double %139, %.cast
-[0x560c78328420]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x560c77f06ca0]:   %134 = fcmp olt double %119, %.cast
-[0x560c78316250]:   %140 = fcmp uno double %139, %.cast
-[0x560c78328060]:   %156 = fcmp oeq double %139, %.cast
-[0x560c783282c0]:   %154 = fcmp olt double %139, %.cast
-[0x560c78328420]:   %152 = fcmp ogt double %139, %.cast
-Multiple matches exist for [0x560c77f06e00]:   %136 = fcmp oeq double %119, %.cast
-[0x560c78316250]:   %140 = fcmp uno double %139, %.cast
-[0x560c78328060]:   %156 = fcmp oeq double %139, %.cast
-[0x560c783282c0]:   %154 = fcmp olt double %139, %.cast
-[0x560c78328420]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x5576ca264a00]:   %120 = fcmp uno double %119, %.cast
+[0x5576ca6861f0]:   %140 = fcmp uno double %139, %.cast
+[0x5576ca6870b0]:   %156 = fcmp oeq double %139, %.cast
+[0x5576ca687310]:   %154 = fcmp olt double %139, %.cast
+[0x5576ca687470]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x5576ca265b80]:   %132 = fcmp ogt double %119, %.cast
+[0x5576ca6861f0]:   %140 = fcmp uno double %139, %.cast
+[0x5576ca6870b0]:   %156 = fcmp oeq double %139, %.cast
+[0x5576ca687310]:   %154 = fcmp olt double %139, %.cast
+[0x5576ca687470]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x5576ca265ce0]:   %134 = fcmp olt double %119, %.cast
+[0x5576ca6861f0]:   %140 = fcmp uno double %139, %.cast
+[0x5576ca6870b0]:   %156 = fcmp oeq double %139, %.cast
+[0x5576ca687310]:   %154 = fcmp olt double %139, %.cast
+[0x5576ca687470]:   %152 = fcmp ogt double %139, %.cast
+Multiple matches exist for [0x5576ca265e40]:   %136 = fcmp oeq double %119, %.cast
+[0x5576ca6861f0]:   %140 = fcmp uno double %139, %.cast
+[0x5576ca6870b0]:   %156 = fcmp oeq double %139, %.cast
+[0x5576ca687310]:   %154 = fcmp olt double %139, %.cast
+[0x5576ca687470]:   %152 = fcmp ogt double %139, %.cast
 Iso Match NOT Found
 Writing 'sub_404610__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-mcsema-diff.dot'...
 Writing 'sub_404610__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-mcsema-diff.dot':Done
@@ -31,5 +31,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-17.84user 7.91system 0:26.16elapsed 98%CPU (0avgtext+0avgdata 23440maxresident)k
-0inputs+2400outputs (0major+8597minor)pagefaults 0swaps
+21.17user 8.93system 0:30.45elapsed 98%CPU (0avgtext+0avgdata 23952maxresident)k
+0inputs+2408outputs (0major+6188minor)pagefaults 0swaps

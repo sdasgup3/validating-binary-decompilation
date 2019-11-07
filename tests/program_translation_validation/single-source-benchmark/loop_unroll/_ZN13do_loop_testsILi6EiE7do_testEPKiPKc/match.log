@@ -1,10 +1,10 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5614548a4a90]:   %64 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%temp_string_type* @temp_string to i64), i64 500) to i32), i32 255)) #12
-[0x561452bfd1a0]:   %96 = tail call i32 @llvm.ctpop.i32(i32 %95)
-[0x561452bfd370]:   %65 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x6337c0_type* @G__0x6337c0 to i64), i64 500) to i32), i32 255))
-[0x561452bfdbb0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x561454edd7b0]:   %call2_411592 = tail call %struct.Memory.31* @sub_4116e0._Z26test_do_loop_unroll_factorILi6EiEvPKT0_iPKc(%struct.State.0* %0, i64 %84, %struct.Memory.31* %call2_411568)
-[0x561454edec80]:   %call2_411568 = tail call %struct.Memory.31* @sub_411690._ZN13do_loop_testsILi5EiE7do_testEPKiPKc(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
+Multiple matches exist for [0x55d95f219b10]:   %64 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%temp_string_type* @temp_string to i64), i64 500) to i32), i32 255)) #12
+[0x55d95d5721a0]:   %96 = tail call i32 @llvm.ctpop.i32(i32 %95)
+[0x55d95d572370]:   %65 = tail call i32 @llvm.ctpop.i32(i32 and (i32 trunc (i64 add (i64 ptrtoint (%G__0x6337c0_type* @G__0x6337c0 to i64), i64 500) to i32), i32 255))
+[0x55d95d572bb0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x55d95f852800]:   %call2_411592 = tail call %struct.Memory.31* @sub_4116e0._Z26test_do_loop_unroll_factorILi6EiEvPKT0_iPKc(%struct.State.0* %0, i64 %84, %struct.Memory.31* %call2_411568)
+[0x55d95f853cd0]:   %call2_411568 = tail call %struct.Memory.31* @sub_411690._ZN13do_loop_testsILi5EiE7do_testEPKiPKc(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
 Iso Match NOT Found
 Writing 'sub_411550__ZN13do_loop_testsILi6EiE7do_testEPKiPKc-mcsema-diff.dot'...
 Writing 'sub_411550__ZN13do_loop_testsILi6EiE7do_testEPKiPKc-mcsema-diff.dot':Done
@@ -17,5 +17,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN13do_loop_testsILi6EiE7do_testEPKiPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN13do_loop_testsILi6EiE7do_testEPKiPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-15.94user 0.60system 0:16.77elapsed 98%CPU (0avgtext+0avgdata 62660maxresident)k
-0inputs+704outputs (0major+12140minor)pagefaults 0swaps
+16.68user 0.96system 0:17.83elapsed 98%CPU (0avgtext+0avgdata 62344maxresident)k
+0inputs+712outputs (0major+21650minor)pagefaults 0swaps

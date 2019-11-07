@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN20custom_xor_constantsItE8do_shiftEt] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN20custom_xor_constantsItE8do_shiftEt] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.87user 0.05system 0:04.00elapsed 98%CPU (0avgtext+0avgdata 65960maxresident)k
-0inputs+72outputs (0major+12808minor)pagefaults 0swaps
+3.95user 0.06system 0:04.09elapsed 98%CPU (0avgtext+0avgdata 66084maxresident)k
+0inputs+72outputs (0major+13772minor)pagefaults 0swaps

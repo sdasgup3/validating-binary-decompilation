@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560d66139e38]:   %168 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x560d6626e838]:   %80 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x560d6626ee28]:   %78 = load i32, i32* %77, align 4
-Multiple matches exist for [0x560d6613aa10]:   %187 = lshr i32 %168, 31
-[0x560d6719dd60]:   %99 = lshr i32 %80, 31
-[0x560d6719df00]:   %98 = lshr i32 %78, 31
-Multiple matches exist for [0x560d6613aa90]:   %188 = xor i32 %187, %186
-[0x560d6719d7b0]:   %101 = xor i32 %96, %98
-[0x560d6719dc00]:   %100 = xor i32 %99, %98
+Multiple matches exist for [0x5558902a8e48]:   %168 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5558903dd848]:   %80 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x5558903dde38]:   %78 = load i32, i32* %77, align 4
+Multiple matches exist for [0x5558902a9a20]:   %187 = lshr i32 %168, 31
+[0x55589130cd50]:   %99 = lshr i32 %80, 31
+[0x55589130cef0]:   %98 = lshr i32 %78, 31
+Multiple matches exist for [0x5558902a9aa0]:   %188 = xor i32 %187, %186
+[0x55589130c7a0]:   %101 = xor i32 %96, %98
+[0x55589130cbf0]:   %100 = xor i32 %99, %98
 Iso Match NOT Found
 Writing 'sub_409df0__Z14test_variable1Im19custom_add_variableImEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_409df0__Z14test_variable1Im19custom_add_variableImEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1Im19custom_add_variableImEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1Im19custom_add_variableImEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-65.56user 9.88system 1:15.88elapsed 99%CPU (0avgtext+0avgdata 54380maxresident)k
-0inputs+2976outputs (0major+18606minor)pagefaults 0swaps
+62.13user 9.19system 1:12.23elapsed 98%CPU (0avgtext+0avgdata 54220maxresident)k
+0inputs+2984outputs (0major+10466minor)pagefaults 0swaps
