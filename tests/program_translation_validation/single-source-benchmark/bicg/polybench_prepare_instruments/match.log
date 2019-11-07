@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_prepare_instruments] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_prepare_instruments] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.14user 0.10system 0:00.25elapsed 100%CPU (0avgtext+0avgdata 13332maxresident)k
-0inputs+64outputs (0major+1108minor)pagefaults 0swaps
+0.25user 0.12system 0:00.38elapsed 99%CPU (0avgtext+0avgdata 13100maxresident)k
+0inputs+64outputs (0major+1107minor)pagefaults 0swaps

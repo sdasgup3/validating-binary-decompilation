@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN22custom_constant_divideIhE8do_shiftEh] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN22custom_constant_divideIhE8do_shiftEh] from mcsema/test.proposed.opt.ll
 Matcher Done...
-7.70user 0.18system 0:07.92elapsed 99%CPU (0avgtext+0avgdata 65980maxresident)k
-0inputs+200outputs (0major+13160minor)pagefaults 0swaps
+7.90user 0.18system 0:08.22elapsed 98%CPU (0avgtext+0avgdata 65972maxresident)k
+0inputs+200outputs (0major+22946minor)pagefaults 0swaps

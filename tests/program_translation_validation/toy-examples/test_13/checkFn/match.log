@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ed497a5308]:   %.pre2.pre = load i64, i64* %RBP, align 8
-[0x55ed4983d478]:   %150 = load i64, i64* %RBP.i, align 8
-[0x55ed49847178]:   %.pre2.pre = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x55b39d9fb308]:   %.pre2.pre = load i64, i64* %RBP, align 8
+[0x55b39da922a8]:   %150 = load i64, i64* %RBP.i, align 8
+[0x55b39da9d048]:   %.pre2.pre = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_4008a0_checkFn-mcsema-diff.dot'...
 Writing 'sub_4008a0_checkFn-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [checkFn] from ../binary/test.mcsema.opt.ll
 Extracting function [checkFn] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.55user 4.58system 0:06.13elapsed 99%CPU (0avgtext+0avgdata 13056maxresident)k
-0inputs+1256outputs (0major+1026minor)pagefaults 0swaps
+1.84user 4.42system 0:06.26elapsed 100%CPU (0avgtext+0avgdata 13116maxresident)k
+0inputs+1256outputs (0major+1021minor)pagefaults 0swaps

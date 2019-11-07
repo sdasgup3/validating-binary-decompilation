@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark4copyIPdS1_EEvT_S2_T0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark4copyIPdS1_EEvT_S2_T0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.90user 1.68system 0:06.66elapsed 98%CPU (0avgtext+0avgdata 23692maxresident)k
+4.56user 1.75system 0:06.33elapsed 99%CPU (0avgtext+0avgdata 23644maxresident)k
 0inputs+624outputs (0major+3477minor)pagefaults 0swaps

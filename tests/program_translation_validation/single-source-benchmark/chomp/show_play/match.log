@@ -1,16 +1,16 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55b790a031f8]:   %84 = tail call fastcc %struct.Memory* @ext_6020b0_printf(%struct.State* nonnull %0, %struct.Memory* %68)
-[0x55b790b8ece0]:   %102 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400b33)
-[0x55b790b9a910]:   %call2_400b6e = tail call %struct.Memory.32* @sub_400ac0.show_list(%struct.State.1* nonnull %0, i64 %131, %struct.Memory.32* %115)
-[0x55b790ba4de0]:   %call2_400b33 = tail call %struct.Memory.32* @sub_400a00.show_data(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %66)
-[0x55b790bae180]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %MEMORY.0)
-[0x55b790bbac40]:   %115 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %102)
-Multiple matches exist for [0x55b790a03c68]:   %97 = tail call fastcc %struct.Memory* @ext_6020b0_printf(%struct.State* nonnull %0, %struct.Memory* %84)
-[0x55b790b8ece0]:   %102 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400b33)
-[0x55b790b9a910]:   %call2_400b6e = tail call %struct.Memory.32* @sub_400ac0.show_list(%struct.State.1* nonnull %0, i64 %131, %struct.Memory.32* %115)
-[0x55b790ba4de0]:   %call2_400b33 = tail call %struct.Memory.32* @sub_400a00.show_data(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %66)
-[0x55b790bae180]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %MEMORY.0)
-[0x55b790bbac40]:   %115 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %102)
+Multiple matches exist for [0x55a291e601f8]:   %84 = tail call fastcc %struct.Memory* @ext_6020b0_printf(%struct.State* nonnull %0, %struct.Memory* %68)
+[0x55a291febcb0]:   %102 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400b33)
+[0x55a291ff78e0]:   %call2_400b6e = tail call %struct.Memory.32* @sub_400ac0.show_list(%struct.State.1* nonnull %0, i64 %131, %struct.Memory.32* %115)
+[0x55a292001db0]:   %call2_400b33 = tail call %struct.Memory.32* @sub_400a00.show_data(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %66)
+[0x55a29200b150]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %MEMORY.0)
+[0x55a292017c10]:   %115 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %102)
+Multiple matches exist for [0x55a291e60c68]:   %97 = tail call fastcc %struct.Memory* @ext_6020b0_printf(%struct.State* nonnull %0, %struct.Memory* %84)
+[0x55a291febcb0]:   %102 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400b33)
+[0x55a291ff78e0]:   %call2_400b6e = tail call %struct.Memory.32* @sub_400ac0.show_list(%struct.State.1* nonnull %0, i64 %131, %struct.Memory.32* %115)
+[0x55a292001db0]:   %call2_400b33 = tail call %struct.Memory.32* @sub_400a00.show_data(%struct.State.1* nonnull %0, i64 %82, %struct.Memory.32* %66)
+[0x55a29200b150]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %MEMORY.0)
+[0x55a292017c10]:   %115 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %102)
 Iso Match NOT Found
 Writing 'sub_400b00_show_play-mcsema-diff.dot'...
 Writing 'sub_400b00_show_play-mcsema-diff.dot':Done
@@ -23,5 +23,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [show_play] from ../binary/test.mcsema.opt.ll
 Extracting function [show_play] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.73user 6.62system 0:11.55elapsed 98%CPU (0avgtext+0avgdata 13932maxresident)k
-0inputs+1296outputs (0major+2171minor)pagefaults 0swaps
+3.53user 5.85system 0:09.55elapsed 98%CPU (0avgtext+0avgdata 14280maxresident)k
+0inputs+1304outputs (0major+1329minor)pagefaults 0swaps

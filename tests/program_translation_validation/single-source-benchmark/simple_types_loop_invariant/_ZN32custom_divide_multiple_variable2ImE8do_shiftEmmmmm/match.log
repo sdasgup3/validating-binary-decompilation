@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN32custom_divide_multiple_variable2ImE8do_shiftEmmmmm] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN32custom_divide_multiple_variable2ImE8do_shiftEmmmmm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-13.15user 0.83system 0:14.32elapsed 97%CPU (0avgtext+0avgdata 54184maxresident)k
-0inputs+672outputs (0major+10464minor)pagefaults 0swaps
+13.16user 0.74system 0:14.02elapsed 99%CPU (0avgtext+0avgdata 54200maxresident)k
+0inputs+680outputs (0major+18495minor)pagefaults 0swaps

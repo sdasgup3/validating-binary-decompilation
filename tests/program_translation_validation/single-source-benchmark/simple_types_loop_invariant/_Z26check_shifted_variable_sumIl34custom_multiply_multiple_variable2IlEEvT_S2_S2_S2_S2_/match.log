@@ -1,18 +1,18 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55bea71334c0]:   %69 = tail call double @llvm.fabs.f64(double %68) #12
-[0x55bea6ac4dd0]:   %131 = tail call i32 @llvm.ctpop.i32(i32 %130)
-[0x55bea6aeba40]:   %113 = tail call i32 @llvm.ctpop.i32(i32 %112)
-[0x55bea6c2b420]:   %158 = tail call i32 @llvm.ctpop.i32(i32 %157)
-[0x55bea76b7a40]:   %69 = tail call double @llvm.trunc.f64(double %68)
-[0x55bea76b8460]:   %70 = tail call double @llvm.fabs.f64(double %69)
-[0x55bea85e4b60]:   %144 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40e78e)
-[0x55bea85e4da0]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
-[0x55bea85e7d60]:   %call2_40e78e = tail call %struct.Memory.32* @sub_40e0d0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e776)
-[0x55bea85e9230]:   %call2_40e776 = tail call %struct.Memory.32* @sub_40e700._ZN34custom_multiply_multiple_variable2IlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
-Multiple matches exist for [0x55bea7139068]:   %176 = tail call fastcc %struct.Memory* @ext_66c168_printf(%struct.State* nonnull %0, %struct.Memory* %126)
-[0x55bea85e4b60]:   %144 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40e78e)
-[0x55bea85e7d60]:   %call2_40e78e = tail call %struct.Memory.32* @sub_40e0d0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e776)
-[0x55bea85e9230]:   %call2_40e776 = tail call %struct.Memory.32* @sub_40e700._ZN34custom_multiply_multiple_variable2IlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
+Multiple matches exist for [0x555df6e84530]:   %69 = tail call double @llvm.fabs.f64(double %68) #12
+[0x555df680a250]:   %131 = tail call i32 @llvm.ctpop.i32(i32 %130)
+[0x555df6815dd0]:   %113 = tail call i32 @llvm.ctpop.i32(i32 %112)
+[0x555df683e510]:   %70 = tail call double @llvm.fabs.f64(double %69)
+[0x555df692ead0]:   %158 = tail call i32 @llvm.ctpop.i32(i32 %157)
+[0x555df7408a80]:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+[0x555df74094a0]:   %69 = tail call double @llvm.trunc.f64(double %68)
+[0x555df8335be0]:   %144 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40e78e)
+[0x555df8338de0]:   %call2_40e78e = tail call %struct.Memory.32* @sub_40e0d0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e776)
+[0x555df833a2b0]:   %call2_40e776 = tail call %struct.Memory.32* @sub_40e700._ZN34custom_multiply_multiple_variable2IlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
+Multiple matches exist for [0x555df6e8a0d8]:   %176 = tail call fastcc %struct.Memory* @ext_66c168_printf(%struct.State* nonnull %0, %struct.Memory* %126)
+[0x555df8335be0]:   %144 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40e78e)
+[0x555df8338de0]:   %call2_40e78e = tail call %struct.Memory.32* @sub_40e0d0._Z15tolerance_equalIlEbRT_S1_(%struct.State.1* %0, i64 %122, %struct.Memory.32* %call2_40e776)
+[0x555df833a2b0]:   %call2_40e776 = tail call %struct.Memory.32* @sub_40e700._ZN34custom_multiply_multiple_variable2IlE8do_shiftElllll(%struct.State.1* %0, i64 %91, %struct.Memory.32* %2)
 Iso Match NOT Found
 Writing 'sub_40e740__Z26check_shifted_variable_sumIl34custom_multiply_multiple_variable2IlEEvT_S2_S2_S2_S2_-mcsema-diff.dot'...
 Writing 'sub_40e740__Z26check_shifted_variable_sumIl34custom_multiply_multiple_variable2IlEEvT_S2_S2_S2_S2_-mcsema-diff.dot':Done
@@ -25,5 +25,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z26check_shifted_variable_sumIl34custom_multiply_multiple_variable2IlEEvT_S2_S2_S2_S2_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z26check_shifted_variable_sumIl34custom_multiply_multiple_variable2IlEEvT_S2_S2_S2_S2_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-29.96user 2.04system 0:32.34elapsed 98%CPU (0avgtext+0avgdata 54348maxresident)k
-0inputs+1312outputs (0major+18503minor)pagefaults 0swaps
+29.60user 1.72system 0:31.65elapsed 98%CPU (0avgtext+0avgdata 54180maxresident)k
+0inputs+1336outputs (0major+18502minor)pagefaults 0swaps

@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560cbbb5d4f8]:   %320 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x560cbc708998]:   %101 = load i32, i32* %100, align 4
-[0x560cbc7097d8]:   %103 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-Multiple matches exist for [0x560cbbb5e0d0]:   %339 = lshr i32 %320, 31
-[0x560cbd639bc0]:   %122 = lshr i32 %103, 31
-[0x560cbd639da0]:   %121 = lshr i32 %101, 31
-Multiple matches exist for [0x560cbbb5e150]:   %340 = xor i32 %339, %338
-[0x560cbd6398c0]:   %124 = xor i32 %119, %121
-[0x560cbd639a60]:   %123 = xor i32 %122, %121
+Multiple matches exist for [0x5646aa1e75d8]:   %320 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5646aad93028]:   %101 = load i32, i32* %100, align 4
+[0x5646aad94898]:   %103 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+Multiple matches exist for [0x5646aa1e81b0]:   %339 = lshr i32 %320, 31
+[0x5646abcc39b0]:   %122 = lshr i32 %103, 31
+[0x5646abcc3b10]:   %121 = lshr i32 %101, 31
+Multiple matches exist for [0x5646aa1e8230]:   %340 = xor i32 %339, %338
+[0x5646abcc36b0]:   %124 = xor i32 %119, %121
+[0x5646abcc3810]:   %123 = xor i32 %122, %121
 Iso Match NOT Found
 Writing 'sub_409790__Z14test_variable4Il32custom_divide_multiple_variable2IlEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
 Writing 'sub_409790__Z14test_variable4Il32custom_divide_multiple_variable2IlEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Il32custom_divide_multiple_variable2IlEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Il32custom_divide_multiple_variable2IlEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-84.41user 13.16system 1:37.60elapsed 99%CPU (0avgtext+0avgdata 54088maxresident)k
-0inputs+4080outputs (0major+18761minor)pagefaults 0swaps
+76.98user 13.04system 1:30.52elapsed 99%CPU (0avgtext+0avgdata 54228maxresident)k
+0inputs+4064outputs (0major+10468minor)pagefaults 0swaps

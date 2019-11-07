@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55f02a45fdb8]:   %192 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55f02acfc038]:   %117 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x55f02acfc3c8]:   %115 = load i32, i32* %114, align 4
-Multiple matches exist for [0x55f02a460970]:   %211 = lshr i32 %192, 31
-[0x55f02bc043b0]:   %136 = lshr i32 %117, 31
-[0x55f02bc2a8a0]:   %135 = lshr i32 %115, 31
-Multiple matches exist for [0x55f02a4609f0]:   %212 = xor i32 %211, %210
-[0x55f02bc2b040]:   %138 = xor i32 %133, %135
-[0x55f02bc2b1a0]:   %137 = xor i32 %136, %135
+Multiple matches exist for [0x55596a286de8]:   %192 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55596ab22958]:   %117 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55596ab23078]:   %115 = load i32, i32* %114, align 4
+Multiple matches exist for [0x55596a2879a0]:   %211 = lshr i32 %192, 31
+[0x55596ba2b0a0]:   %136 = lshr i32 %117, 31
+[0x55596ba51920]:   %135 = lshr i32 %115, 31
+Multiple matches exist for [0x55596a287a20]:   %212 = xor i32 %211, %210
+[0x55596ba520c0]:   %138 = xor i32 %133, %135
+[0x55596ba52220]:   %137 = xor i32 %136, %135
 Iso Match NOT Found
 Writing 'sub_40ba40__Z14test_variable4Id33custom_multiply_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
 Writing 'sub_40ba40__Z14test_variable4Id33custom_multiply_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable4Id33custom_multiply_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable4Id33custom_multiply_multiple_variableIdEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-77.73user 9.48system 1:27.21elapsed 100%CPU (0avgtext+0avgdata 54316maxresident)k
-0inputs+4008outputs (0major+10528minor)pagefaults 0swaps
+79.98user 7.99system 1:29.01elapsed 98%CPU (0avgtext+0avgdata 54320maxresident)k
+0inputs+4008outputs (0major+18710minor)pagefaults 0swaps

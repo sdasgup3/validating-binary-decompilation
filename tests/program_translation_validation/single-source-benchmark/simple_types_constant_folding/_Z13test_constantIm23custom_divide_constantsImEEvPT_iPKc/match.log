@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5596c1eca328]:   %210 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5596c291a0c8]:   %73 = load i32, i32* %72, align 4
-[0x5596c334f8c8]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x5596c1ecaf00]:   %229 = lshr i32 %210, 31
-[0x5596c37a32e0]:   %94 = lshr i32 %75, 31
-[0x5596c37a34c0]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x5596c1ecaf80]:   %230 = xor i32 %229, %228
-[0x5596c37adf10]:   %95 = xor i32 %94, %93
-[0x5596c37aeff0]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x5650abd60368]:   %210 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5650ac93ce58]:   %73 = load i32, i32* %72, align 4
+[0x5650ad3385e8]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x5650abd60f40]:   %229 = lshr i32 %210, 31
+[0x5650ad6394c0]:   %94 = lshr i32 %75, 31
+[0x5650ad639610]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x5650abd60fc0]:   %230 = xor i32 %229, %228
+[0x5650ad6444a0]:   %95 = xor i32 %94, %93
+[0x5650ad645130]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
 Writing 'sub_40bff0__Z13test_constantIm23custom_divide_constantsImEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_40bff0__Z13test_constantIm23custom_divide_constantsImEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIm23custom_divide_constantsImEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIm23custom_divide_constantsImEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-83.48user 4.12system 1:27.60elapsed 100%CPU (0avgtext+0avgdata 65896maxresident)k
-0inputs+2720outputs (0major+12808minor)pagefaults 0swaps
+80.07user 3.64system 1:24.25elapsed 99%CPU (0avgtext+0avgdata 66076maxresident)k
+0inputs+2752outputs (0major+22968minor)pagefaults 0swaps

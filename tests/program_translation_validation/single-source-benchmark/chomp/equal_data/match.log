@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x557cd382e588]:   %.pre8 = load i64, i64* %RBP, align 8
-[0x557cd38c2948]:   %.pre8 = load i64, i64* %RBP.i, align 8
-[0x557cd38d3c28]:   %123 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x556cbbd50968]:   %.pre8 = load i64, i64* %RBP, align 8
+[0x556cbbe31768]:   %.pre8 = load i64, i64* %RBP.i, align 8
+[0x556cbbe3fc18]:   %123 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_4007f0_equal_data-mcsema-diff.dot'...
 Writing 'sub_4007f0_equal_data-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [equal_data] from ../binary/test.mcsema.opt.ll
 Extracting function [equal_data] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.84user 6.56system 0:10.48elapsed 99%CPU (0avgtext+0avgdata 14116maxresident)k
-0inputs+1232outputs (0major+2160minor)pagefaults 0swaps
+3.28user 6.09system 0:09.44elapsed 99%CPU (0avgtext+0avgdata 14236maxresident)k
+0inputs+1240outputs (0major+2155minor)pagefaults 0swaps

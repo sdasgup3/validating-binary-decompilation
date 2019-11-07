@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN28custom_sub_multiple_variableIsE8do_shiftEsssss] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN28custom_sub_multiple_variableIsE8do_shiftEsssss] from mcsema/test.proposed.opt.ll
 Matcher Done...
-24.86user 1.51system 0:26.90elapsed 98%CPU (0avgtext+0avgdata 54400maxresident)k
-0inputs+1016outputs (0major+26240minor)pagefaults 0swaps
+23.41user 1.69system 0:25.52elapsed 98%CPU (0avgtext+0avgdata 54068maxresident)k
+0inputs+1032outputs (0major+18494minor)pagefaults 0swaps

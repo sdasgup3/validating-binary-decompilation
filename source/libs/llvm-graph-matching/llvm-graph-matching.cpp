@@ -173,7 +173,9 @@ bool Matcher::retrievePotBBMatches() {
     if (!dyn_cast<Instruction>(U))
       continue;
 
-    if (dyn_cast<GetElementPtrInst>(U) || dyn_cast<BitCastInst>(U))
+    // if (dyn_cast<GetElementPtrInst>(U) || dyn_cast<BitCastInst>(U))
+    //   continue;
+    if (!dyn_cast<StoreInst>(U))
       continue;
 
     auto LBB = (dyn_cast<Instruction>(U))->getParent();

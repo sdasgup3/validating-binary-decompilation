@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10hash_func2IdET_S0_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10hash_func2IdET_S0_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.51user 1.24system 0:11.76elapsed 99%CPU (0avgtext+0avgdata 62816maxresident)k
-0inputs+320outputs (0major+12140minor)pagefaults 0swaps
+10.57user 1.21system 0:11.93elapsed 98%CPU (0avgtext+0avgdata 62496maxresident)k
+0inputs+328outputs (0major+21650minor)pagefaults 0swaps

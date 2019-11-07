@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x560b93257258]:   %81 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %63)
-[0x560b936ace90]:   %82 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_403708)
-[0x560b936ae570]:   %call2_403708 = tail call %struct.Memory.31* @sub_403740._ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD_(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
+Multiple matches exist for [0x55a49cbd52b8]:   %81 = tail call fastcc %struct.Memory* @ext_6208b0_printf(%struct.State* nonnull %0, %struct.Memory* %63)
+[0x55a49d02b110]:   %82 = tail call %struct.Memory.31* @__remill_function_call(%struct.State.0* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.31* %call2_403708)
+[0x55a49d02c5e0]:   %call2_403708 = tail call %struct.Memory.31* @sub_403740._ZN9benchmark9is_sortedIP12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEEEbT_SD_(%struct.State.0* %0, i64 %59, %struct.Memory.31* %2)
 Iso Match NOT Found
 Writing 'sub_4036f0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC_-mcsema-diff.dot'...
 Writing 'sub_4036f0__Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC_-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13verify_sortedIP12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEEvT_SC_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.33user 1.39system 0:05.72elapsed 99%CPU (0avgtext+0avgdata 23756maxresident)k
-0inputs+536outputs (0major+3471minor)pagefaults 0swaps
+4.90user 1.27system 0:06.48elapsed 95%CPU (0avgtext+0avgdata 23628maxresident)k
+0inputs+544outputs (0major+6047minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZltI12ValueWrapperIS0_IS0_IS0_IS0_IS0_IS0_IS0_IS0_IdEEEEEEEEEEbRKS0_IT_ESD_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.87user 0.59system 0:03.65elapsed 95%CPU (0avgtext+0avgdata 23756maxresident)k
-0inputs+296outputs (0major+3473minor)pagefaults 0swaps
+2.99user 0.63system 0:03.66elapsed 99%CPU (0avgtext+0avgdata 23820maxresident)k
+0inputs+304outputs (0major+6048minor)pagefaults 0swaps

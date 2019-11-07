@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5645698f8ea8]:   %140 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56456a95e6d8]:   %79 = load i32, i32* %78, align 4
-[0x56456ac3c518]:   %81 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x5645698f9a80]:   %159 = lshr i32 %140, 31
-[0x56456ac5f3d0]:   %100 = lshr i32 %81, 31
-[0x56456ac5f5b0]:   %99 = lshr i32 %79, 31
-Multiple matches exist for [0x5645698f9b00]:   %160 = xor i32 %159, %158
-[0x56456ac6a3f0]:   %101 = xor i32 %100, %99
-[0x56456ac6b0c0]:   %102 = xor i32 %97, %99
+Multiple matches exist for [0x562994364e68]:   %140 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5629953ca628]:   %79 = load i32, i32* %78, align 4
+[0x5629956a8488]:   %81 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x562994365a40]:   %159 = lshr i32 %140, 31
+[0x5629956cb930]:   %100 = lshr i32 %81, 31
+[0x5629956cba80]:   %99 = lshr i32 %79, 31
+Multiple matches exist for [0x562994365ac0]:   %160 = xor i32 %159, %158
+[0x5629956d6500]:   %101 = xor i32 %100, %99
+[0x5629956d7190]:   %102 = xor i32 %97, %99
 Iso Match NOT Found
 Writing 'sub_40df10__Z13test_constantId19custom_constant_addIdEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_40df10__Z13test_constantId19custom_constant_addIdEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantId19custom_constant_addIdEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantId19custom_constant_addIdEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-78.10user 7.37system 1:26.13elapsed 99%CPU (0avgtext+0avgdata 66188maxresident)k
-0inputs+2488outputs (0major+22953minor)pagefaults 0swaps
+75.49user 8.23system 1:26.52elapsed 96%CPU (0avgtext+0avgdata 66068maxresident)k
+0inputs+2480outputs (0major+22955minor)pagefaults 0swaps

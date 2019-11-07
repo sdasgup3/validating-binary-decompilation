@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [__cxx_global_var_init.25] from ../binary/test.mcsema.opt.ll
 Extracting function [__cxx_global_var_init.25] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.95user 0.08system 0:01.06elapsed 98%CPU (0avgtext+0avgdata 23720maxresident)k
-0inputs+80outputs (0major+3472minor)pagefaults 0swaps
+0.96user 0.07system 0:01.04elapsed 99%CPU (0avgtext+0avgdata 24008maxresident)k
+0inputs+80outputs (0major+3473minor)pagefaults 0swaps

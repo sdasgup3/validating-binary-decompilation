@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZSt4fabsf] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZSt4fabsf] from mcsema/test.proposed.opt.ll
 Matcher Done...
-9.58user 0.63system 0:10.27elapsed 99%CPU (0avgtext+0avgdata 54316maxresident)k
-0inputs+360outputs (0major+18501minor)pagefaults 0swaps
+8.49user 0.59system 0:09.25elapsed 98%CPU (0avgtext+0avgdata 54312maxresident)k
+0inputs+368outputs (0major+18494minor)pagefaults 0swaps

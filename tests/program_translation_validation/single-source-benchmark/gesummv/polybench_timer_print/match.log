@@ -1,10 +1,10 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558959560628]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
-[0x5589595b9e48]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
-[0x5589595ceb38]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
-Multiple matches exist for [0x558959560848]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
-[0x5589595b9e48]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
-[0x5589595ceb38]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
+Multiple matches exist for [0x557685fa0628]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
+[0x557685ffbe28]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
+[0x55768600eb68]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
+Multiple matches exist for [0x557685fa0848]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
+[0x557685ffbe28]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
+[0x55768600eb68]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
 Iso Match NOT Found
 Writing 'sub_400850_polybench_timer_print-mcsema-diff.dot'...
 Writing 'sub_400850_polybench_timer_print-mcsema-diff.dot':Done
@@ -17,5 +17,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [polybench_timer_print] from ../binary/test.mcsema.opt.ll
 Extracting function [polybench_timer_print] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.73user 0.90system 0:01.79elapsed 91%CPU (0avgtext+0avgdata 13488maxresident)k
-0inputs+256outputs (0major+1094minor)pagefaults 0swaps
+0.65user 0.93system 0:01.69elapsed 93%CPU (0avgtext+0avgdata 13316maxresident)k
+0inputs+256outputs (0major+1097minor)pagefaults 0swaps

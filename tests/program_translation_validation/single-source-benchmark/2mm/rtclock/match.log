@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [rtclock] from ../binary/test.mcsema.opt.ll
 Extracting function [rtclock] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.14user 0.02system 0:00.16elapsed 99%CPU (0avgtext+0avgdata 14100maxresident)k
-0inputs+56outputs (0major+1250minor)pagefaults 0swaps
+0.10user 0.03system 0:00.14elapsed 99%CPU (0avgtext+0avgdata 13912maxresident)k
+0inputs+56outputs (0major+1247minor)pagefaults 0swaps

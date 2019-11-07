@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN16reverse_iteratorIPddEppEi] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN16reverse_iteratorIPddEppEi] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.69user 1.07system 0:02.78elapsed 99%CPU (0avgtext+0avgdata 17248maxresident)k
-0inputs+368outputs (0major+2014minor)pagefaults 0swaps
+1.77user 1.19system 0:03.11elapsed 95%CPU (0avgtext+0avgdata 17628maxresident)k
+0inputs+368outputs (0major+2018minor)pagefaults 0swaps

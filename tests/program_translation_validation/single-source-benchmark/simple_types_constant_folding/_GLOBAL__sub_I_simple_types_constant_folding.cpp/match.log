@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_GLOBAL__sub_I_simple_types_constant_folding.cpp] from ../binary/test.mcsema.opt.ll
 Extracting function [_GLOBAL__sub_I_simple_types_constant_folding.cpp] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.93user 0.18system 0:04.18elapsed 98%CPU (0avgtext+0avgdata 66012maxresident)k
-0inputs+64outputs (0major+12810minor)pagefaults 0swaps
+3.78user 0.18system 0:04.10elapsed 96%CPU (0avgtext+0avgdata 66096maxresident)k
+0inputs+64outputs (0major+12804minor)pagefaults 0swaps

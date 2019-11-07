@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55e0d6b7b698]:   %265 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55e0d75f6158]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-[0x55e0d7782e78]:   %74 = load i32, i32* %73, align 4
-Multiple matches exist for [0x55e0d6b823d0]:   %284 = lshr i32 %265, 31
-[0x55e0d847f320]:   %95 = lshr i32 %76, 31
-[0x55e0d847f500]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x55e0d6b82450]:   %285 = xor i32 %284, %283
-[0x55e0d848a340]:   %96 = xor i32 %95, %94
-[0x55e0d848b010]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x55a333b62658]:   %265 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55a3346b1fe8]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+[0x55a3347968e8]:   %74 = load i32, i32* %73, align 4
+Multiple matches exist for [0x55a333b69390]:   %284 = lshr i32 %265, 31
+[0x55a3354662c0]:   %95 = lshr i32 %76, 31
+[0x55a3354664a0]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55a333b69410]:   %285 = xor i32 %284, %283
+[0x55a335471300]:   %96 = xor i32 %95, %94
+[0x55a335471fd0]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
 Writing 'sub_405430__Z13test_constantIs10custom_twoIsEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_405430__Z13test_constantIs10custom_twoIsEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIs10custom_twoIsEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIs10custom_twoIsEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-82.55user 6.63system 1:30.79elapsed 98%CPU (0avgtext+0avgdata 66116maxresident)k
-0inputs+2832outputs (0major+22981minor)pagefaults 0swaps
+84.77user 6.00system 1:31.48elapsed 99%CPU (0avgtext+0avgdata 65900maxresident)k
+0inputs+2856outputs (0major+22974minor)pagefaults 0swaps

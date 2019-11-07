@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_reg_detect] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_reg_detect] from mcsema/test.proposed.opt.ll
 Matcher Done...
-647.30user 225.70system 14:36.01elapsed 99%CPU (0avgtext+0avgdata 35516maxresident)k
-0inputs+116144outputs (0major+13330minor)pagefaults 0swaps
+682.19user 214.58system 14:57.96elapsed 99%CPU (0avgtext+0avgdata 35416maxresident)k
+0inputs+116264outputs (0major+13022minor)pagefaults 0swaps

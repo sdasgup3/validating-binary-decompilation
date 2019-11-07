@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_3mm_StrictFP] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_3mm_StrictFP] from mcsema/test.proposed.opt.ll
 Matcher Done...
-273.58user 189.57system 7:45.19elapsed 99%CPU (0avgtext+0avgdata 29388maxresident)k
-0inputs+52264outputs (0major+9769minor)pagefaults 0swaps
+286.49user 185.68system 7:56.55elapsed 99%CPU (0avgtext+0avgdata 29184maxresident)k
+0inputs+52344outputs (0major+16141minor)pagefaults 0swaps

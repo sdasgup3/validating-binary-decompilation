@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [new_Toggle] from ../binary/test.mcsema.opt.ll
 Extracting function [new_Toggle] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.92user 1.35system 0:02.30elapsed 99%CPU (0avgtext+0avgdata 12772maxresident)k
-0inputs+344outputs (0major+957minor)pagefaults 0swaps
+0.84user 1.17system 0:02.16elapsed 93%CPU (0avgtext+0avgdata 12492maxresident)k
+0inputs+344outputs (0major+1445minor)pagefaults 0swaps

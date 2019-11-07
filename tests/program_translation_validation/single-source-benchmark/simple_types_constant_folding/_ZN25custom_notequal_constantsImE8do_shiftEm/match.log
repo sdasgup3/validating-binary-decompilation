@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN25custom_notequal_constantsImE8do_shiftEm] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN25custom_notequal_constantsImE8do_shiftEm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.14user 0.12system 0:04.28elapsed 99%CPU (0avgtext+0avgdata 65904maxresident)k
-0inputs+64outputs (0major+22944minor)pagefaults 0swaps
+3.88user 0.09system 0:04.05elapsed 98%CPU (0avgtext+0avgdata 66156maxresident)k
+0inputs+64outputs (0major+18976minor)pagefaults 0swaps

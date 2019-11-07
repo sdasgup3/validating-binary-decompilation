@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56217cdc5c08]:   %182 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x56217c2ed858]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x56217c2ede48]:   %82 = load i32, i32* %81, align 4
-Multiple matches exist for [0x56217cdc67e0]:   %201 = lshr i32 %182, 31
-[0x56217d21c6b0]:   %103 = lshr i32 %84, 31
-[0x56217d21c790]:   %102 = lshr i32 %82, 31
-Multiple matches exist for [0x56217cdc6860]:   %202 = xor i32 %201, %200
-[0x56217d21c370]:   %105 = xor i32 %100, %102
-[0x56217d21c550]:   %104 = xor i32 %103, %102
+Multiple matches exist for [0x55bfaf93ab98]:   %182 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55bfaee62828]:   %84 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55bfaee62e18]:   %82 = load i32, i32* %81, align 4
+Multiple matches exist for [0x55bfaf93b770]:   %201 = lshr i32 %182, 31
+[0x55bfafd91660]:   %103 = lshr i32 %84, 31
+[0x55bfafd91740]:   %102 = lshr i32 %82, 31
+Multiple matches exist for [0x55bfaf93b7f0]:   %202 = xor i32 %201, %200
+[0x55bfafd91320]:   %105 = xor i32 %100, %102
+[0x55bfafd91500]:   %104 = xor i32 %103, %102
 Iso Match NOT Found
 Writing 'sub_405590__Z14test_variable1Is24custom_multiply_variableIsEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_405590__Z14test_variable1Is24custom_multiply_variableIsEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1Is24custom_multiply_variableIsEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1Is24custom_multiply_variableIsEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-68.13user 8.97system 1:17.20elapsed 99%CPU (0avgtext+0avgdata 54272maxresident)k
-0inputs+3224outputs (0major+10463minor)pagefaults 0swaps
+64.60user 9.13system 1:15.42elapsed 97%CPU (0avgtext+0avgdata 54308maxresident)k
+0inputs+3224outputs (0major+10530minor)pagefaults 0swaps

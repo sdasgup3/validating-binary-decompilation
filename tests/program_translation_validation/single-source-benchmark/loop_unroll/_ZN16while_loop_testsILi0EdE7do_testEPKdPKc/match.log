@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN16while_loop_testsILi0EdE7do_testEPKdPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN16while_loop_testsILi0EdE7do_testEPKdPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.77user 0.12system 0:03.94elapsed 98%CPU (0avgtext+0avgdata 62396maxresident)k
-0inputs+72outputs (0major+12521minor)pagefaults 0swaps
+4.50user 0.14system 0:04.81elapsed 96%CPU (0avgtext+0avgdata 62460maxresident)k
+0inputs+80outputs (0major+21648minor)pagefaults 0swaps

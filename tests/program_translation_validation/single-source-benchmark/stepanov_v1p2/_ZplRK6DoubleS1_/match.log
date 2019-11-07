@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZplRK6DoubleS1_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZplRK6DoubleS1_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-1.72user 1.26system 0:03.02elapsed 99%CPU (0avgtext+0avgdata 17412maxresident)k
-0inputs+472outputs (0major+2017minor)pagefaults 0swaps
+2.05user 1.42system 0:03.48elapsed 99%CPU (0avgtext+0avgdata 17448maxresident)k
+0inputs+472outputs (0major+2011minor)pagefaults 0swaps

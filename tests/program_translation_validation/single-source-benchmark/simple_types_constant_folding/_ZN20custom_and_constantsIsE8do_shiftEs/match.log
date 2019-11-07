@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN20custom_and_constantsIsE8do_shiftEs] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN20custom_and_constantsIsE8do_shiftEs] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.33user 0.10system 0:04.59elapsed 96%CPU (0avgtext+0avgdata 65856maxresident)k
-0inputs+72outputs (0major+22947minor)pagefaults 0swaps
+3.89user 0.06system 0:03.99elapsed 98%CPU (0avgtext+0avgdata 66012maxresident)k
+0inputs+72outputs (0major+12809minor)pagefaults 0swaps

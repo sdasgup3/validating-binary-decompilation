@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x561ddd6fbe00]:   %206 = icmp ult i64 %205, ptrtoint (%permarray_type* @permarray to i64)
-[0x561ddd7ce260]:   %174 = icmp ult i64 %172, %171
-[0x561ddd7ce4b0]:   %173 = icmp ult i64 %172, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
-Multiple matches exist for [0x561ddd6fd230]:   %237 = icmp ult i64 %236, ptrtoint (%permarray_type* @permarray to i64)
-[0x561ddd7c2710]:   %205 = icmp ult i64 %203, %202
-[0x561ddd7d8f00]:   %204 = icmp ult i64 %203, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
-Multiple matches exist for [0x561ddd661410]:   %312 = icmp ult i64 %311, ptrtoint (%permarray_type* @permarray to i64)
-[0x561ddd797120]:   %277 = icmp ult i64 %276, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
-[0x561ddd797250]:   %278 = icmp ult i64 %276, %275
+Multiple matches exist for [0x556374213dc0]:   %206 = icmp ult i64 %205, ptrtoint (%permarray_type* @permarray to i64)
+[0x5563742e64d0]:   %174 = icmp ult i64 %172, %171
+[0x5563742e6850]:   %173 = icmp ult i64 %172, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+Multiple matches exist for [0x556374215180]:   %237 = icmp ult i64 %236, ptrtoint (%permarray_type* @permarray to i64)
+[0x5563742f1450]:   %204 = icmp ult i64 %203, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+[0x5563742f8980]:   %205 = icmp ult i64 %203, %202
+Multiple matches exist for [0x556374218c10]:   %312 = icmp ult i64 %311, ptrtoint (%permarray_type* @permarray to i64)
+[0x5563742af380]:   %277 = icmp ult i64 %276, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+[0x5563742afaa0]:   %278 = icmp ult i64 %276, %275
 Iso Match NOT Found
 Writing 'sub_4005f0_Permute-mcsema-diff.dot'...
 Writing 'sub_4005f0_Permute-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [Permute] from ../binary/test.mcsema.opt.ll
 Extracting function [Permute] from mcsema/test.proposed.opt.ll
 Matcher Done...
-12.84user 20.16system 0:33.14elapsed 99%CPU (0avgtext+0avgdata 13928maxresident)k
-0inputs+4352outputs (0major+2092minor)pagefaults 0swaps
+12.95user 18.49system 0:31.47elapsed 99%CPU (0avgtext+0avgdata 13884maxresident)k
+0inputs+4344outputs (0major+2093minor)pagefaults 0swaps

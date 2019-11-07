@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x555c783d9c38]:   %221 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x555c789942b8]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
-[0x555c78994ac8]:   %80 = load i32, i32* %79, align 4
-Multiple matches exist for [0x555c783da810]:   %240 = lshr i32 %221, 31
-[0x555c798c3c00]:   %101 = lshr i32 %82, 31
-[0x555c798c3d60]:   %100 = lshr i32 %80, 31
-Multiple matches exist for [0x555c783da890]:   %241 = xor i32 %240, %239
-[0x555c798c36d0]:   %103 = xor i32 %98, %100
-[0x555c798c37b0]:   %102 = xor i32 %101, %100
+Multiple matches exist for [0x55e57f8f6c18]:   %221 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55e57feb1a98]:   %82 = load i32, i32* bitcast (%G_0x61a080_type* @G_0x61a080 to i32*), align 8
+[0x55e57feb1f58]:   %80 = load i32, i32* %79, align 4
+Multiple matches exist for [0x55e57f8f77f0]:   %240 = lshr i32 %221, 31
+[0x55e580de0be0]:   %101 = lshr i32 %82, 31
+[0x55e580de0d40]:   %100 = lshr i32 %80, 31
+Multiple matches exist for [0x55e57f8f7870]:   %241 = xor i32 %240, %239
+[0x55e580de06b0]:   %103 = xor i32 %98, %100
+[0x55e580de0790]:   %102 = xor i32 %101, %100
 Iso Match NOT Found
 Writing 'sub_4084c0__Z14test_variable1Ij19custom_sub_variableIjEEvPT_iS2_PKc-mcsema-diff.dot'...
 Writing 'sub_4084c0__Z14test_variable1Ij19custom_sub_variableIjEEvPT_iS2_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_variable1Ij19custom_sub_variableIjEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_variable1Ij19custom_sub_variableIjEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-64.63user 10.33system 1:15.51elapsed 99%CPU (0avgtext+0avgdata 54172maxresident)k
-0inputs+3048outputs (0major+18601minor)pagefaults 0swaps
+65.37user 9.02system 1:15.86elapsed 98%CPU (0avgtext+0avgdata 54256maxresident)k
+0inputs+3056outputs (0major+18607minor)pagefaults 0swaps

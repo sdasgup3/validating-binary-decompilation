@@ -1,8 +1,8 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55e3449b7278]:   %299 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %280)
-[0x55e344946e60]:   %398 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40079b)
-[0x55e344a76f50]:   %call2_40079b = tail call %struct.Memory.32* @sub_400560.check(%struct.State.1* nonnull %0, i64 %375, %struct.Memory.32* %174)
-[0x55e344a802f0]:   %174 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x55ea68dd1278]:   %299 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %280)
+[0x55ea68d60e60]:   %398 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_40079b)
+[0x55ea68e90f50]:   %call2_40079b = tail call %struct.Memory.32* @sub_400560.check(%struct.State.1* nonnull %0, i64 %375, %struct.Memory.32* %174)
+[0x55ea68e9a2f0]:   %174 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* nonnull %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory.32* %2)
 Iso Match NOT Found
 Writing 'sub_4006a0_main-mcsema-diff.dot'...
 Writing 'sub_4006a0_main-mcsema-diff.dot':Done
@@ -15,5 +15,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-8.32user 13.99system 0:22.32elapsed 99%CPU (0avgtext+0avgdata 14696maxresident)k
-0inputs+6544outputs (0major+2528minor)pagefaults 0swaps
+7.38user 13.77system 0:21.16elapsed 99%CPU (0avgtext+0avgdata 14760maxresident)k
+0inputs+6536outputs (0major+3287minor)pagefaults 0swaps

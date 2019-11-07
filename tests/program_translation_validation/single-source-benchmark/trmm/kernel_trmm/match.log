@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_trmm] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_trmm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-10.29user 16.59system 0:26.96elapsed 99%CPU (0avgtext+0avgdata 14544maxresident)k
-0inputs+3920outputs (0major+3357minor)pagefaults 0swaps
+8.22user 15.28system 0:23.54elapsed 99%CPU (0avgtext+0avgdata 14400maxresident)k
+0inputs+3928outputs (0major+2375minor)pagefaults 0swaps

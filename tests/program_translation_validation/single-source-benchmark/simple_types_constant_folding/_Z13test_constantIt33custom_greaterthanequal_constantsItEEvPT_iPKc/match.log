@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55763c016828]:   %250 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55763c627058]:   %74 = load i32, i32* %73, align 4
-[0x55763d0da628]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55763c017c90]:   %269 = lshr i32 %250, 31
-[0x55763d3dba80]:   %95 = lshr i32 %76, 31
-[0x55763d3e57d0]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x55763c017d10]:   %270 = xor i32 %269, %268
-[0x55763d3e6660]:   %96 = xor i32 %95, %94
-[0x55763d3e7330]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x55f5abfdc818]:   %250 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55f5ac5ed028]:   %74 = load i32, i32* %73, align 4
+[0x55f5ad0a05d8]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x55f5abfddc80]:   %269 = lshr i32 %250, 31
+[0x55f5ad3a1600]:   %95 = lshr i32 %76, 31
+[0x55f5ad3a1720]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55f5abfddd00]:   %270 = xor i32 %269, %268
+[0x55f5ad3ac610]:   %96 = xor i32 %95, %94
+[0x55f5ad3ad2e0]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
 Writing 'sub_407150__Z13test_constantIt33custom_greaterthanequal_constantsItEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_407150__Z13test_constantIt33custom_greaterthanequal_constantsItEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIt33custom_greaterthanequal_constantsItEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIt33custom_greaterthanequal_constantsItEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-80.64user 3.26system 1:24.15elapsed 99%CPU (0avgtext+0avgdata 66248maxresident)k
-0inputs+2784outputs (0major+22974minor)pagefaults 0swaps
+84.22user 2.97system 1:28.07elapsed 99%CPU (0avgtext+0avgdata 66172maxresident)k
+0inputs+2816outputs (0major+22977minor)pagefaults 0swaps

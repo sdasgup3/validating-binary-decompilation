@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x557a4af0c468]:   %151 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x557a4ca51518]:   %91 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-[0x557a4ca519d8]:   %89 = load i32, i32* %88, align 4
-Multiple matches exist for [0x557a4af0d040]:   %170 = lshr i32 %151, 31
-[0x557a4ca70540]:   %110 = lshr i32 %91, 31
-[0x557a4ca70690]:   %109 = lshr i32 %89, 31
-Multiple matches exist for [0x557a4af0d0c0]:   %171 = xor i32 %170, %169
-[0x557a4ca7b540]:   %111 = xor i32 %110, %109
-[0x557a4ca7c1d0]:   %112 = xor i32 %107, %109
+Multiple matches exist for [0x55922cc29438]:   %151 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55922e76e4f8]:   %91 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+[0x55922e76e9b8]:   %89 = load i32, i32* %88, align 4
+Multiple matches exist for [0x55922cc2a010]:   %170 = lshr i32 %151, 31
+[0x55922e78d340]:   %110 = lshr i32 %91, 31
+[0x55922e78d520]:   %109 = lshr i32 %89, 31
+Multiple matches exist for [0x55922cc2a090]:   %171 = xor i32 %170, %169
+[0x55922e798360]:   %111 = xor i32 %110, %109
+[0x55922e799030]:   %112 = xor i32 %107, %109
 Iso Match NOT Found
 Writing 'sub_40d4d0__Z13test_constantIf19custom_constant_addIfEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_40d4d0__Z13test_constantIf19custom_constant_addIfEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIf19custom_constant_addIfEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIf19custom_constant_addIfEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-80.34user 7.29system 1:29.02elapsed 98%CPU (0avgtext+0avgdata 65980maxresident)k
-0inputs+2872outputs (0major+22977minor)pagefaults 0swaps
+75.82user 7.13system 1:23.27elapsed 99%CPU (0avgtext+0avgdata 65972maxresident)k
+0inputs+2856outputs (0major+41559minor)pagefaults 0swaps

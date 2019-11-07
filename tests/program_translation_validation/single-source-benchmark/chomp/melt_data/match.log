@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [melt_data] from ../binary/test.mcsema.opt.ll
 Extracting function [melt_data] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.57user 3.94system 0:07.04elapsed 92%CPU (0avgtext+0avgdata 13964maxresident)k
-0inputs+864outputs (0major+2101minor)pagefaults 0swaps
+2.41user 4.64system 0:07.09elapsed 99%CPU (0avgtext+0avgdata 14176maxresident)k
+0inputs+880outputs (0major+2087minor)pagefaults 0swaps

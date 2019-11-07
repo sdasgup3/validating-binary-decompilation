@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z10accumulateIP6DoubleS0_ET0_T_S3_S2_] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z10accumulateIP6DoubleS0_ET0_T_S3_S2_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.38user 3.48system 0:07.87elapsed 99%CPU (0avgtext+0avgdata 17340maxresident)k
-0inputs+1000outputs (0major+2021minor)pagefaults 0swaps
+4.20user 3.40system 0:07.64elapsed 99%CPU (0avgtext+0avgdata 17592maxresident)k
+0inputs+1008outputs (0major+2020minor)pagefaults 0swaps

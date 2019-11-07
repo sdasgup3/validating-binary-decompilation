@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55e2269b2fc8]:   %126 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55e227de9e08]:   %74 = load i32, i32* %73, align 4
-[0x55e2287e5658]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55e2269b43b0]:   %145 = lshr i32 %126, 31
-[0x55e228ae6520]:   %95 = lshr i32 %76, 31
-[0x55e228ae6670]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x55e2269b4430]:   %146 = xor i32 %145, %144
-[0x55e228af1520]:   %96 = xor i32 %95, %94
-[0x55e228af21b0]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x55890e2c6fb8]:   %126 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55890f6e5e48]:   %74 = load i32, i32* %73, align 4
+[0x5589100e1648]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x55890e2c83a0]:   %145 = lshr i32 %126, 31
+[0x5589103e25c0]:   %95 = lshr i32 %76, 31
+[0x5589103e2710]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55890e2c8420]:   %146 = xor i32 %145, %144
+[0x5589103ed510]:   %96 = xor i32 %95, %94
+[0x5589103ee1a0]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
 Writing 'sub_403470__Z13test_constantIa20custom_xor_constantsIaEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_403470__Z13test_constantIa20custom_xor_constantsIaEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIa20custom_xor_constantsIaEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIa20custom_xor_constantsIaEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-89.44user 10.78system 1:40.26elapsed 99%CPU (0avgtext+0avgdata 66004maxresident)k
-0inputs+2824outputs (0major+22984minor)pagefaults 0swaps
+92.40user 9.97system 1:42.50elapsed 99%CPU (0avgtext+0avgdata 65948maxresident)k
+0inputs+2808outputs (0major+22974minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperI12ValueWrapperIdEES3_EEvT_S5_] from mcsema/test.proposed.opt.ll
 Matcher Done...
-35.71user 18.97system 0:54.79elapsed 99%CPU (0avgtext+0avgdata 23960maxresident)k
-0inputs+5032outputs (0major+6515minor)pagefaults 0swaps
+33.67user 19.16system 0:53.43elapsed 98%CPU (0avgtext+0avgdata 23680maxresident)k
+0inputs+5040outputs (0major+11514minor)pagefaults 0swaps

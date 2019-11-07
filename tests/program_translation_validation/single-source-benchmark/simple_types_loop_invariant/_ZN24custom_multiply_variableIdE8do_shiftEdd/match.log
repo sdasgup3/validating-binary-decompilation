@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN24custom_multiply_variableIdE8do_shiftEdd] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN24custom_multiply_variableIdE8do_shiftEdd] from mcsema/test.proposed.opt.ll
 Matcher Done...
-4.48user 0.12system 0:04.68elapsed 98%CPU (0avgtext+0avgdata 54308maxresident)k
-0inputs+136outputs (0major+10462minor)pagefaults 0swaps
+4.30user 0.11system 0:04.43elapsed 99%CPU (0avgtext+0avgdata 54200maxresident)k
+0inputs+136outputs (0major+10461minor)pagefaults 0swaps

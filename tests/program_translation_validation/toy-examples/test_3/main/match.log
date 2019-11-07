@@ -1,8 +1,8 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x5629ce937ff8]:   %100 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %81)
-[0x5629ce8ea920]:   %101 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400610)
-[0x5629ce8eda80]:   %call2_400610 = tail call %struct.Memory.32* @sub_400580.foo(%struct.State.1* %0, i64 %78, %struct.Memory.32* %66)
-[0x5629ce8eef90]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memcpy to i64), %struct.Memory.32* %2)
+Multiple matches exist for [0x557f4ce48ff8]:   %100 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %81)
+[0x557f4cdfb920]:   %101 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory.32* %call2_400610)
+[0x557f4cdfea90]:   %call2_400610 = tail call %struct.Memory.32* @sub_400580.foo(%struct.State.1* %0, i64 %78, %struct.Memory.32* %66)
+[0x557f4cdfffa0]:   %66 = tail call %struct.Memory.32* @__remill_function_call(%struct.State.1* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memcpy to i64), %struct.Memory.32* %2)
 Iso Match NOT Found
 Writing 'sub_4005d0_main-mcsema-diff.dot'...
 Writing 'sub_4005d0_main-mcsema-diff.dot':Done
@@ -15,5 +15,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.66user 3.06system 0:03.72elapsed 100%CPU (0avgtext+0avgdata 12392maxresident)k
-0inputs+768outputs (0major+911minor)pagefaults 0swaps
+0.65user 3.12system 0:03.77elapsed 100%CPU (0avgtext+0avgdata 12676maxresident)k
+0inputs+768outputs (0major+912minor)pagefaults 0swaps

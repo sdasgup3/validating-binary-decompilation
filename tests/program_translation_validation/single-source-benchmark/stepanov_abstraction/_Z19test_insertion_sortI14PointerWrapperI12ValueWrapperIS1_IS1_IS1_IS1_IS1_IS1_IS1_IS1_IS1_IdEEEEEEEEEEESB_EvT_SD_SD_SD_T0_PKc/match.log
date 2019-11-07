@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55614270cd38]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x556142796d68]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-[0x556142797488]:   %85 = load i32, i32* %84, align 4
-Multiple matches exist for [0x556142714000]:   %281 = lshr i32 %262, 31
-[0x5561427bccc0]:   %106 = lshr i32 %87, 31
-[0x5561427bd110]:   %105 = lshr i32 %85, 31
-Multiple matches exist for [0x556142714080]:   %282 = xor i32 %281, %280
-[0x5561427bca80]:   %108 = xor i32 %103, %105
-[0x5561427bcbe0]:   %107 = xor i32 %106, %105
+Multiple matches exist for [0x56238c311cf8]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x56238c39bbe8]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x56238c39c0a8]:   %85 = load i32, i32* %84, align 4
+Multiple matches exist for [0x56238c318fc0]:   %281 = lshr i32 %262, 31
+[0x56238c3c1c70]:   %106 = lshr i32 %87, 31
+[0x56238c3c20c0]:   %105 = lshr i32 %85, 31
+Multiple matches exist for [0x56238c319040]:   %282 = xor i32 %281, %280
+[0x56238c3c1a30]:   %108 = xor i32 %103, %105
+[0x56238c3c1b90]:   %107 = xor i32 %106, %105
 Iso Match NOT Found
 Writing 'sub_402560__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot'...
 Writing 'sub_402560__Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z19test_insertion_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-24.25user 8.10system 0:32.46elapsed 99%CPU (0avgtext+0avgdata 24116maxresident)k
-0inputs+2712outputs (0major+6210minor)pagefaults 0swaps
+22.43user 7.41system 0:29.88elapsed 99%CPU (0avgtext+0avgdata 23724maxresident)k
+0inputs+2720outputs (0major+3484minor)pagefaults 0swaps

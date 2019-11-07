@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56537864e4f8]:   %113 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x5653794efe98]:   %74 = load i32, i32* %73, align 4
-[0x565379eeb698]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x56537864f900]:   %132 = lshr i32 %113, 31
-[0x56537a1ec580]:   %95 = lshr i32 %76, 31
-[0x56537a1ec6d0]:   %94 = lshr i32 %74, 31
-Multiple matches exist for [0x56537864f980]:   %133 = xor i32 %132, %131
-[0x56537a1f7580]:   %96 = xor i32 %95, %94
-[0x56537a1f8210]:   %97 = xor i32 %92, %94
+Multiple matches exist for [0x55deb8231548]:   %113 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x55deb901b098]:   %74 = load i32, i32* %73, align 4
+[0x55deb9ace688]:   %76 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x55deb8232950]:   %132 = lshr i32 %113, 31
+[0x55deb9dcf570]:   %95 = lshr i32 %76, 31
+[0x55deb9dcf6c0]:   %94 = lshr i32 %74, 31
+Multiple matches exist for [0x55deb82329d0]:   %133 = xor i32 %132, %131
+[0x55deb9dda570]:   %96 = xor i32 %95, %94
+[0x55deb9ddb200]:   %97 = xor i32 %92, %94
 Iso Match NOT Found
 Writing 'sub_4054e0__Z13test_constantIs20custom_add_constantsIsEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_4054e0__Z13test_constantIs20custom_add_constantsIsEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIs20custom_add_constantsIsEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIs20custom_add_constantsIsEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-80.33user 5.91system 1:26.67elapsed 99%CPU (0avgtext+0avgdata 65872maxresident)k
-0inputs+2720outputs (0major+22975minor)pagefaults 0swaps
+80.76user 6.08system 1:27.13elapsed 99%CPU (0avgtext+0avgdata 65816maxresident)k
+0inputs+2752outputs (0major+12806minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_ZN10custom_twoImE8do_shiftEm] from ../binary/test.mcsema.opt.ll
 Extracting function [_ZN10custom_twoImE8do_shiftEm] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.64user 0.05system 0:03.70elapsed 99%CPU (0avgtext+0avgdata 65956maxresident)k
-0inputs+64outputs (0major+12807minor)pagefaults 0swaps
+3.57user 0.05system 0:03.93elapsed 92%CPU (0avgtext+0avgdata 65960maxresident)k
+0inputs+64outputs (0major+12809minor)pagefaults 0swaps

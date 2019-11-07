@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [kernel_trisolv] from ../binary/test.mcsema.opt.ll
 Extracting function [kernel_trisolv] from mcsema/test.proposed.opt.ll
 Matcher Done...
-7.41user 12.42system 0:19.93elapsed 99%CPU (0avgtext+0avgdata 14208maxresident)k
-0inputs+3248outputs (0major+2109minor)pagefaults 0swaps
+6.90user 13.34system 0:20.33elapsed 99%CPU (0avgtext+0avgdata 13972maxresident)k
+0inputs+3240outputs (0major+1277minor)pagefaults 0swaps

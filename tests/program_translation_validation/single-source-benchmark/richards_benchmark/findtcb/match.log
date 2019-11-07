@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x56096f165678]:   %.pre = load i64, i64* %RBP, align 8
-[0x56096f1a4c88]:   %.pre = load i64, i64* %RBP.i, align 8
-[0x56096f1bf108]:   %51 = load i64, i64* %RBP.i, align 8
+Multiple matches exist for [0x5619b63f0668]:   %.pre = load i64, i64* %RBP, align 8
+[0x5619b642fc58]:   %.pre = load i64, i64* %RBP.i, align 8
+[0x5619b6449ec8]:   %51 = load i64, i64* %RBP.i, align 8
 Iso Match NOT Found
 Writing 'sub_400920_findtcb-mcsema-diff.dot'...
 Writing 'sub_400920_findtcb-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [findtcb] from ../binary/test.mcsema.opt.ll
 Extracting function [findtcb] from mcsema/test.proposed.opt.ll
 Matcher Done...
-3.21user 4.82system 0:08.07elapsed 99%CPU (0avgtext+0avgdata 13412maxresident)k
-0inputs+1008outputs (0major+1133minor)pagefaults 0swaps
+3.16user 4.98system 0:08.58elapsed 94%CPU (0avgtext+0avgdata 13492maxresident)k
+0inputs+1008outputs (0major+1134minor)pagefaults 0swaps

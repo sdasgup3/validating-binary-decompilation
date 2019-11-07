@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55e8926a4578]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55e892d4b708]:   %84 = load i32, i32* %83, align 4
-[0x55e892d4d5e8]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-Multiple matches exist for [0x55e8926a5150]:   %216 = lshr i32 %197, 31
-[0x55e892d71a40]:   %105 = lshr i32 %86, 31
-[0x55e892d71b20]:   %104 = lshr i32 %84, 31
-Multiple matches exist for [0x55e8926a51d0]:   %217 = xor i32 %216, %215
-[0x55e892d71700]:   %107 = xor i32 %102, %104
-[0x55e892d718e0]:   %106 = xor i32 %105, %104
+Multiple matches exist for [0x564c3d331588]:   %197 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x564c3d9d8718]:   %84 = load i32, i32* %83, align 4
+[0x564c3d9da5f8]:   %86 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+Multiple matches exist for [0x564c3d332160]:   %216 = lshr i32 %197, 31
+[0x564c3d9fea50]:   %105 = lshr i32 %86, 31
+[0x564c3d9feb30]:   %104 = lshr i32 %84, 31
+Multiple matches exist for [0x564c3d3321e0]:   %217 = xor i32 %216, %215
+[0x564c3d9fe710]:   %107 = xor i32 %102, %104
+[0x564c3d9fe8f0]:   %106 = xor i32 %105, %104
 Iso Match NOT Found
 Writing 'sub_4023b0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-mcsema-diff.dot'...
 Writing 'sub_4023b0__Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z19test_insertion_sortIP12ValueWrapperIdES1_EvT_S3_S3_S3_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-13.42user 3.80system 0:17.61elapsed 97%CPU (0avgtext+0avgdata 23716maxresident)k
-0inputs+1480outputs (0major+6099minor)pagefaults 0swaps
+12.66user 3.62system 0:16.42elapsed 99%CPU (0avgtext+0avgdata 23836maxresident)k
+0inputs+1480outputs (0major+3484minor)pagefaults 0swaps

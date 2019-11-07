@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [ht_hashcode] from ../binary/test.mcsema.opt.ll
 Extracting function [ht_hashcode] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.53user 4.68system 0:07.47elapsed 96%CPU (0avgtext+0avgdata 12896maxresident)k
-0inputs+1088outputs (0major+1595minor)pagefaults 0swaps
+1.95user 4.84system 0:06.90elapsed 98%CPU (0avgtext+0avgdata 12820maxresident)k
+0inputs+1088outputs (0major+1023minor)pagefaults 0swaps

@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [double_array_divs_variable] from ../binary/test.mcsema.opt.ll
 Extracting function [double_array_divs_variable] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.67user 4.81system 0:07.54elapsed 99%CPU (0avgtext+0avgdata 13128maxresident)k
-0inputs+1104outputs (0major+965minor)pagefaults 0swaps
+2.85user 4.89system 0:07.74elapsed 99%CPU (0avgtext+0avgdata 12856maxresident)k
+0inputs+1104outputs (0major+962minor)pagefaults 0swaps

@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55cf5c21dc18]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55cf5c4324b8]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
-[0x55cf5c432bd8]:   %85 = load i32, i32* %84, align 4
-Multiple matches exist for [0x55cf5c224ea0]:   %281 = lshr i32 %262, 31
-[0x55cf5c457cd0]:   %106 = lshr i32 %87, 31
-[0x55cf5c458120]:   %105 = lshr i32 %85, 31
-Multiple matches exist for [0x55cf5c224f20]:   %282 = xor i32 %281, %280
-[0x55cf5c457a90]:   %108 = xor i32 %103, %105
-[0x55cf5c457bf0]:   %107 = xor i32 %106, %105
+Multiple matches exist for [0x5593385f1bf8]:   %262 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x5593388065c8]:   %87 = load i32, i32* bitcast (%G_0x609088_type* @G_0x609088 to i32*), align 8
+[0x559338806ce8]:   %85 = load i32, i32* %84, align 4
+Multiple matches exist for [0x5593385f8e80]:   %281 = lshr i32 %262, 31
+[0x55933882bbd0]:   %106 = lshr i32 %87, 31
+[0x55933882bcb0]:   %105 = lshr i32 %85, 31
+Multiple matches exist for [0x5593385f8f00]:   %282 = xor i32 %281, %280
+[0x55933882b890]:   %108 = xor i32 %103, %105
+[0x55933882ba70]:   %107 = xor i32 %106, %105
 Iso Match NOT Found
 Writing 'sub_402c80__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot'...
 Writing 'sub_402c80__Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z14test_heap_sortI14PointerWrapperI12ValueWrapperIS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IS1_IdEEEEEEEEEEESB_EvT_SD_SD_SD_T0_PKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-22.92user 8.24system 0:31.75elapsed 98%CPU (0avgtext+0avgdata 23792maxresident)k
-0inputs+2712outputs (0major+6207minor)pagefaults 0swaps
+21.66user 8.38system 0:30.56elapsed 98%CPU (0avgtext+0avgdata 23852maxresident)k
+0inputs+2728outputs (0major+6208minor)pagefaults 0swaps

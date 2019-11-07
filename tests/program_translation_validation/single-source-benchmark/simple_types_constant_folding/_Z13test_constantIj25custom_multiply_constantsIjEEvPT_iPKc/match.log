@@ -1,13 +1,13 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55ea13752bb8]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
-[0x55ea134c3e38]:   %73 = load i32, i32* %72, align 4
-[0x55ea13ebf638]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
-Multiple matches exist for [0x55ea1375a140]:   %282 = lshr i32 %263, 31
-[0x55ea141c0950]:   %94 = lshr i32 %75, 31
-[0x55ea141c0aa0]:   %93 = lshr i32 %73, 31
-Multiple matches exist for [0x55ea1375a1c0]:   %283 = xor i32 %282, %281
-[0x55ea141cb520]:   %95 = xor i32 %94, %93
-[0x55ea141cc1b0]:   %96 = xor i32 %91, %93
+Multiple matches exist for [0x563ea4c83ba8]:   %263 = load i32, i32* bitcast (%iterations_type* @iterations to i32*), align 8
+[0x563ea49f4e28]:   %73 = load i32, i32* %72, align 4
+[0x563ea53f0628]:   %75 = load i32, i32* bitcast (%G_0x6220c0_type* @G_0x6220c0 to i32*), align 8
+Multiple matches exist for [0x563ea4c8b130]:   %282 = lshr i32 %263, 31
+[0x563ea56f13e0]:   %94 = lshr i32 %75, 31
+[0x563ea56f15c0]:   %93 = lshr i32 %73, 31
+Multiple matches exist for [0x563ea4c8b1b0]:   %283 = xor i32 %282, %281
+[0x563ea56fc370]:   %95 = xor i32 %94, %93
+[0x563ea56fd040]:   %96 = xor i32 %91, %93
 Iso Match NOT Found
 Writing 'sub_4096d0__Z13test_constantIj25custom_multiply_constantsIjEEvPT_iPKc-mcsema-diff.dot'...
 Writing 'sub_4096d0__Z13test_constantIj25custom_multiply_constantsIjEEvPT_iPKc-mcsema-diff.dot':Done
@@ -20,5 +20,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [_Z13test_constantIj25custom_multiply_constantsIjEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
 Extracting function [_Z13test_constantIj25custom_multiply_constantsIjEEvPT_iPKc] from mcsema/test.proposed.opt.ll
 Matcher Done...
-83.63user 6.02system 1:31.31elapsed 98%CPU (0avgtext+0avgdata 65948maxresident)k
-0inputs+2776outputs (0major+12809minor)pagefaults 0swaps
+87.19user 5.83system 1:33.71elapsed 99%CPU (0avgtext+0avgdata 65920maxresident)k
+0inputs+2800outputs (0major+22971minor)pagefaults 0swaps
