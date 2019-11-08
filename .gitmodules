@@ -1,0 +1,3 @@
+[submodule "docs/pldi_2020"]
+	path = docs/pldi_2020
+	url = https://github.com/sdasgup3/PLDI20-Validating-Decompilers
