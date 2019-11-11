@@ -71,6 +71,17 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   if (I1->getOpcode() != I2->getOpcode())
     return false;
 
+  // Arity Match
+  size_t arityCount1, arityCount2;
+  arityCount1 = arityCount2 = 0;
+  for (auto it = I1->user_begin(); it != I1->user_end(); it++, arityCount1++) {
+  }
+  for (auto it = I2->user_begin(); it != I2->user_end(); it++, arityCount2++) {
+  }
+
+  if (arityCount1 != arityCount2)
+    return false;
+
   const GetElementPtrInst *GEPL = dyn_cast<GetElementPtrInst>(I1);
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
@@ -276,6 +287,19 @@ static std::map<Value *, int> getStoreInstOrder(BasicBlock *BB) {
   return retval;
 }
 
+static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
+  std::map<Value *, int> retval;
+  size_t index = 0;
+  for (Instruction &I : *BB) {
+    CallInst *CallInstr = dyn_cast<CallInst>(&I);
+    if (CallInstr) {
+      retval[&I] = index++;
+    }
+  }
+
+  return retval;
+}
+
 bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   // Populate the vertices set Vq
   // vector<Value *> V;
@@ -310,10 +334,14 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
     // changed |= retrievePotBBMatches(V);
     changed |= retrievePotBBMatches();
 
-    // Handle conflicting stores
+    // Handle conflicting stores/calls
     llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
                  << ": Round: " << round << "\n";
     changed |= handleConflictingStores();
+
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
+                 << ": Round: " << round << "\n";
+    changed |= handleConflictingCalls();
 
     round++;
   }
@@ -536,6 +564,124 @@ std::pair<bool, BasicBlock *> Matcher::sameBB(std::set<Value *> S) {
   }
 
   return std::pair<bool, BasicBlock *>(true, candBB);
+}
+
+bool Matcher::handleConflictingCalls() {
+  bool changed = false;
+  for (auto U : VertexSet) {
+    auto &pMatches = PotIMatches.at(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    CallInst *LCallInstr = dyn_cast<CallInst>(U);
+    if (!LCallInstr)
+      continue;
+
+    // Skip when we do not know the pot BB match for the call instr
+    auto LBB = LCallInstr->getParent();
+    if (!PotBBMatches.count(LBB)) {
+      continue;
+    }
+
+    // Remove candidate stores belonging to different basic blocks than
+    // the matching LBB
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      if (PotBBMatches.at(LBB) !=
+          (dyn_cast<Instruction>(pMatch))->getParent()) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    // Check if we lost all the macthes
+    if (deleNode.size() == pMatches.size()) {
+      llvm::errs() << "Pruned all potential matches for call: \n";
+      dumpLLVMNode(LCallInstr);
+      llvm::errs() << "The matches are: \n";
+      for (auto pMatch : pMatches) {
+        dumpLLVMNode(pMatch);
+      }
+
+      exit(1);
+    }
+
+    for (auto node : deleNode) {
+      changed = true;
+      pMatches.erase(node);
+    }
+
+    // Return as we get the desired single match
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    // If still we have multiple store candidates within the same BB,
+    // use the syntactic store order to disambiguate
+    auto res = sameBB(pMatches);
+    if (!res.first)
+      continue;
+
+    auto RBB = res.second;
+
+    std::map<Value *, int> LCallInstrOrderMap = getCallInstOrder(LBB);
+    std::map<Value *, int> RCallInstrOrderMap = getCallInstOrder(RBB);
+
+    int LOrder = LCallInstrOrderMap.at(LCallInstr);
+    deleNode.clear();
+    for (auto pMatch : pMatches) {
+      if (LOrder != RCallInstrOrderMap.at(pMatch))
+        deleNode.push_back(pMatch);
+    }
+
+    for (auto node : deleNode) {
+      changed |= true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+    }
+  }
+
+  for (auto U : VertexSet) {
+    auto &pMatches = PotIMatches.at(U);
+
+    CallInst *LCallInstr = dyn_cast<CallInst>(U);
+    if (!LCallInstr)
+      continue;
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1)
+      continue;
+
+    auto LBB = LCallInstr->getParent();
+    if (PotBBMatches.count(LBB)) {
+      continue;
+    }
+
+    // Remove candidate stores which are already matched uniquely
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      if (exactIMatches.count(pMatch)) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    for (auto node : deleNode) {
+      changed |= true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+    }
+  }
+  return changed;
 }
 
 bool Matcher::handleConflictingStores() {

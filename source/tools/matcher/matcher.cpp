@@ -116,14 +116,20 @@ int main(int argc, char **argv) {
       break;
     }
 
-    // if (string::npos == Func.getName().str().find(TargetFunc))
-    // if (std::regex_search(Func.getName().str(), m, std::regex("sub.*_")) ==
-    //    false)
-    smatch m;
-    string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$")) ==
-        false)
-      continue;
+    if (string::npos != TargetFile.find("proposed")) {
+      if (string::npos == Func.getName().str().find(SourceFunc))
+        continue;
+    } else if (string::npos != TargetFile.find("mcsema")) {
+      smatch m;
+      string funcName(Func.getName().str());
+      if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$")) ==
+          false) {
+        continue;
+      }
+    } else {
+      Console::error(1) << "Missing mcsema/proposed keyword in the file names"
+                        << endl;
+    }
 
     F1 = &Func;
     break;
@@ -140,8 +146,20 @@ int main(int argc, char **argv) {
       break;
     }
 
-    if (string::npos == Func.getName().str().find(SourceFunc))
-      continue;
+    if (string::npos != SourceFile.find("proposed")) {
+      if (string::npos == Func.getName().str().find(SourceFunc))
+        continue;
+    } else if (string::npos != SourceFile.find("mcsema")) {
+      smatch m;
+      string funcName(Func.getName().str());
+      if (regex_search(funcName, m, std::regex("sub.*_" + SourceFunc + "$")) ==
+          false) {
+        continue;
+      }
+    } else {
+      Console::error(1) << "Missing mcsema/proposed keyword in the file names"
+                        << endl;
+    }
 
     F2 = &Func;
     break;

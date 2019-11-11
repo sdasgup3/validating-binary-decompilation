@@ -135,6 +135,7 @@ public:
 
   void findBBCorrespondence();
   bool handleConflictingStores();
+  bool handleConflictingCalls();
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
 
   void printDOT();

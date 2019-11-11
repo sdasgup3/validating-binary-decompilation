@@ -462,11 +462,18 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
   stringstream opr;
 
   // Extract the data access operand
+  bool is_mem_opr_rip_offset = false;
+  int32_t rip_disp = 0;
   if (is_any_operand_mem_type(instr)) {
     // For data accesses like movsd 0xc8(%rip), %xmm0
-    // Single instr decompilation will always generate a ptr2int
+    // Single instr decompilation should always generate a ptr2int
+    // But it does.
     auto memIndex = instr.mem_index();
     const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
+    is_mem_opr_rip_offset = M_OPR.rip_offset();
+    if (is_mem_opr_rip_offset) {
+      rip_disp = M_OPR.get_disp();
+    }
     opr << M_OPR;
 
   } else if (is_any_operand_imm_type(instr)) {
@@ -533,6 +540,12 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
     immOperand = true;
     isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
     hexInt = hex_to_int(opr.str());
+    hexIntStr = to_string(hexInt);
+  }
+
+  if (is_mem_opr_rip_offset) {
+    isGlobalAccess = true;
+    hexInt = currSize + rip_disp;
     hexIntStr = to_string(hexInt);
   }
 
@@ -788,9 +801,11 @@ static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc) {
       calledFunc == ".strcpy_plt" || calledFunc == ".strdup_plt" ||
       calledFunc == ".strlen_plt" || calledFunc == ".strncmp_plt" ||
       calledFunc == ".strtoll_plt" || calledFunc == ".tan_plt" ||
-      calledFunc == ".time_plt" || calledFunc == ".ungetc_plt") {
+      calledFunc == ".time_plt" || calledFunc == ".ungetc_plt" ||
+      calledFunc == ".pthread_join_plt" ||
+      calledFunc == ".pthread_create_plt") {
 
-    auto posnUC = calledFunc.find("_");
+    auto posnUC = calledFunc.find("_plt");
     return isBuiltInFuncCallRetType(true, calledFunc.substr(1, posnUC - 1));
   }
 
