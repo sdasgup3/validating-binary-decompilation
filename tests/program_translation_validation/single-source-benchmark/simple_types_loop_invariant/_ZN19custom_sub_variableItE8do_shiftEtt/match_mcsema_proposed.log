@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_410ec0__ZN19custom_sub_variableItE8do_shiftEtt-mcsema-diff.dot'...
+Writing 'sub_410ec0__ZN19custom_sub_variableItE8do_shiftEtt-mcsema-diff.dot':Done
+
+Writing '_ZN19custom_sub_variableItE8do_shiftEtt-proposed-diff.dot'...
+Writing '_ZN19custom_sub_variableItE8do_shiftEtt-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN19custom_sub_variableItE8do_shiftEtt] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN19custom_sub_variableItE8do_shiftEtt] from mcsema/test.proposed.opt.ll
+Matcher Done...
+5.75user 0.10system 0:06.21elapsed 94%CPU (0avgtext+0avgdata 54320maxresident)k
+0inputs+192outputs (0major+14538minor)pagefaults 0swaps

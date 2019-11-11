@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN15loop_inner_bodyILi27EiE7do_workERiPKii-mcsema-diff.dot'...
+Writing '_ZN15loop_inner_bodyILi27EiE7do_workERiPKii-mcsema-diff.dot':Done
+
+Writing 'sub_40c370__ZN15loop_inner_bodyILi27EiE7do_workERiPKii-proposed-diff.dot'...
+Writing 'sub_40c370__ZN15loop_inner_bodyILi27EiE7do_workERiPKii-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN15loop_inner_bodyILi27EiE7do_workERiPKii] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN15loop_inner_bodyILi27EiE7do_workERiPKii] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+161.36user 1.67system 2:44.56elapsed 99%CPU (0avgtext+0avgdata 62588maxresident)k
+0inputs+1000outputs (0major+21716minor)pagefaults 0swaps

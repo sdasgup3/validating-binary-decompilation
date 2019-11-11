@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'kernel_gemver_StrictFP-mcsema-diff.dot'...
+Writing 'kernel_gemver_StrictFP-mcsema-diff.dot':Done
+
+Writing 'sub_401040_kernel_gemver_StrictFP-proposed-diff.dot'...
+Writing 'sub_401040_kernel_gemver_StrictFP-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [kernel_gemver_StrictFP] from mcsema/test.proposed.opt.ll
+Extracting function [kernel_gemver_StrictFP] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+341.45user 43.00system 6:28.20elapsed 99%CPU (0avgtext+0avgdata 22704maxresident)k
+0inputs+25616outputs (0major+11323minor)pagefaults 0swaps

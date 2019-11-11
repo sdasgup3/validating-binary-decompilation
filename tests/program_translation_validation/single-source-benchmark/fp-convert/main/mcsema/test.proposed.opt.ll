@@ -7,6 +7,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x177__rip__type = type <{ [4 x i8] }>
 %G_0x17b__rip__type = type <{ [4 x i8] }>
 %G_0x197__rip__type = type <{ [4 x i8] }>
+%G_0x201__rip__type = type <{ [4 x i8] }>
 %G__0x4007b0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -45,6 +46,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x177__rip_ = global %G_0x177__rip__type zeroinitializer
 @G_0x17b__rip_ = global %G_0x17b__rip__type zeroinitializer
 @G_0x197__rip_ = global %G_0x197__rip__type zeroinitializer
+@G_0x201__rip_ = global %G_0x201__rip__type zeroinitializer
 @G__0x4007b0 = global %G__0x4007b0_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
@@ -110,7 +112,7 @@ entry:
   store i8 %37, i8* %38, align 1
   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
   %40 = bitcast [32 x %union.VectorReg]* %39 to i8*
-  %41 = add i64 %10, 531
+  %41 = add i64 %10, add (i64 ptrtoint (%G_0x201__rip__type* @G_0x201__rip_ to i64), i64 10)
   %42 = add i64 %10, 18
   store i64 %42, i64* %3, align 8
   %43 = inttoptr i64 %41 to i32*
@@ -892,7 +894,7 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 521
+  %6 = add i64 %5, ptrtoint (%G_0x201__rip__type* @G_0x201__rip_ to i64)
   %7 = add i64 %5, 8
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*

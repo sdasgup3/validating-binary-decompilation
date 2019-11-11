@@ -1,6 +1,22 @@
 # Program level validation
-
 ## Running [ToyExamples](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation/toy-examples)
+
+### Current Status
+#### Status check commands
+  ```
+  cat docs/makefilelist.txt | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "both-exact-match" | wc
+  cat docs/makefilelist.txt | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "m2p-multi-match" | wc
+  cat docs/makefilelist.txt | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "p2m-multi-match" | wc
+  cat docs/makefilelist.txt | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "Fail" | wc
+  ```
+#### Current Status
+```
+  both-exact: 75
+  m2p-multi-match: 2
+  p2m-multi-match: 0
+  Fail:  13
+  Total: 90
+```
 
 ### [Already populated] Create the wllvm binaries & Extract the bc files
 ```bash
@@ -46,12 +62,11 @@ cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} matc
 grep "Pass" docs/compd.log > docs/matchPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
 ```
-### Status files
+### Status files/Commands
   - docs/compdPass.log
   - docs/compdFail.log
   - docs/matchPass.log
   - docs/matchFail.log
-
 
 ### Miscellaneous
 #### Single Run

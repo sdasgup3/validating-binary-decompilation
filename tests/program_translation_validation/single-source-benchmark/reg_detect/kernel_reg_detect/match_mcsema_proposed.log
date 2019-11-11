@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400b50_kernel_reg_detect-mcsema-diff.dot'...
+Writing 'sub_400b50_kernel_reg_detect-mcsema-diff.dot':Done
+
+Writing 'kernel_reg_detect-proposed-diff.dot'...
+Writing 'kernel_reg_detect-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [kernel_reg_detect] from ../binary/test.mcsema.opt.ll
+Extracting function [kernel_reg_detect] from mcsema/test.proposed.opt.ll
+Matcher Done...
+429.84user 81.13system 8:39.40elapsed 98%CPU (0avgtext+0avgdata 33708maxresident)k
+0inputs+74104outputs (0major+12100minor)pagefaults 0swaps

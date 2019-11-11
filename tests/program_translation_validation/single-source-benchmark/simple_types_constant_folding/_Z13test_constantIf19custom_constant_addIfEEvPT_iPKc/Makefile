@@ -18,7 +18,8 @@ compd_opt: ${OUTDIR}test.proposed.ll
 
 
 match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
-	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match.log 2>&1
+	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1
+	time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match
 
 clean:

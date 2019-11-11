@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x1c0__rip__type = type <{ [4 x i8] }>
 %G_0x602108_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -39,6 +40,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x1c0__rip_ = global %G_0x1c0__rip__type zeroinitializer
 @G_0x602108 = local_unnamed_addr global %G_0x602108_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
@@ -246,7 +248,7 @@ block_.L_400a0c:                                  ; preds = %block_.L_400a04, %b
 block_.L_400a1c:                                  ; preds = %block_.L_400a62, %block_.L_400a0c
   %125 = phi i64 [ %.pre17, %block_.L_400a0c ], [ %316, %block_.L_400a62 ]
   %MEMORY.2 = phi %struct.Memory* [ %MEMORY.0, %block_.L_400a0c ], [ %195, %block_.L_400a62 ]
-  %126 = add i64 %125, 456
+  %126 = add i64 %125, ptrtoint (%G_0x1c0__rip__type* @G_0x1c0__rip_ to i64)
   %127 = add i64 %125, 8
   store i64 %127, i64* %3, align 8
   %128 = inttoptr i64 %126 to i32*
@@ -1088,7 +1090,7 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 456
+  %6 = add i64 %5, ptrtoint (%G_0x1c0__rip__type* @G_0x1c0__rip_ to i64)
   %7 = add i64 %5, 8
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*

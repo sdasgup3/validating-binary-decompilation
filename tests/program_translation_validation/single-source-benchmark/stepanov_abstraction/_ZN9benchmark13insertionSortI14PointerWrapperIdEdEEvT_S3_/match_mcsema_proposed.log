@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55f4221c1630]:   %111 = fcmp uno double %110, %.cast
+[0x55f421e05da0]:   %218 = fcmp ogt double %205, %.cast
+[0x55f421e656b0]:   %220 = fcmp olt double %205, %.cast
+[0x55f421f6ff20]:   %222 = fcmp oeq double %205, %.cast
+[0x55f4224e4620]:   %206 = fcmp uno double %205, %.cast
+Multiple matches exist for [0x55f4221be3e0]:   %123 = fcmp ogt double %110, %.cast
+[0x55f421e05da0]:   %218 = fcmp ogt double %205, %.cast
+[0x55f421e656b0]:   %220 = fcmp olt double %205, %.cast
+[0x55f421f6ff20]:   %222 = fcmp oeq double %205, %.cast
+[0x55f4224e4620]:   %206 = fcmp uno double %205, %.cast
+Multiple matches exist for [0x55f4221c22d0]:   %125 = fcmp olt double %110, %.cast
+[0x55f421e05da0]:   %218 = fcmp ogt double %205, %.cast
+[0x55f421e656b0]:   %220 = fcmp olt double %205, %.cast
+[0x55f421f6ff20]:   %222 = fcmp oeq double %205, %.cast
+[0x55f4224e4620]:   %206 = fcmp uno double %205, %.cast
+Multiple matches exist for [0x55f4221c23e0]:   %127 = fcmp oeq double %110, %.cast
+[0x55f421e05da0]:   %218 = fcmp ogt double %205, %.cast
+[0x55f421e656b0]:   %220 = fcmp olt double %205, %.cast
+[0x55f421f6ff20]:   %222 = fcmp oeq double %205, %.cast
+[0x55f4224e4620]:   %206 = fcmp uno double %205, %.cast
+Iso Match NOT Found
+Writing 'sub_405b40__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-mcsema-diff.dot'...
+Writing 'sub_405b40__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-mcsema-diff.dot':Done
+
+Writing '_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-proposed-diff.dot'...
+Writing '_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+30.64user 4.74system 0:35.65elapsed 99%CPU (0avgtext+0avgdata 23504maxresident)k
+0inputs+5000outputs (0major+6632minor)pagefaults 0swaps

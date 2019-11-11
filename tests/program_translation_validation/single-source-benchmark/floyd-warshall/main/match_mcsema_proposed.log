@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400950_main-mcsema-diff.dot'...
+Writing 'sub_400950_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...
+6.20user 9.30system 0:16.00elapsed 96%CPU (0avgtext+0avgdata 13912maxresident)k
+0inputs+2368outputs (0major+3247minor)pagefaults 0swaps

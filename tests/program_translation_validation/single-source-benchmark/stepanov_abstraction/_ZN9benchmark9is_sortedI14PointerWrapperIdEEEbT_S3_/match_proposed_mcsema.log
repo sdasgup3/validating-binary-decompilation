@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55d303540f60]:   %140 = fcmp uno double %139, %.cast
+[0x55d303a15950]:   %120 = fcmp uno double %119, %.cast
+[0x55d303a16ad0]:   %132 = fcmp ogt double %119, %.cast
+[0x55d303a16c30]:   %134 = fcmp olt double %119, %.cast
+[0x55d303a16d90]:   %136 = fcmp oeq double %119, %.cast
+Multiple matches exist for [0x55d3035aac00]:   %152 = fcmp ogt double %139, %.cast
+[0x55d303a15950]:   %120 = fcmp uno double %119, %.cast
+[0x55d303a16ad0]:   %132 = fcmp ogt double %119, %.cast
+[0x55d303a16c30]:   %134 = fcmp olt double %119, %.cast
+[0x55d303a16d90]:   %136 = fcmp oeq double %119, %.cast
+Multiple matches exist for [0x55d3035aad60]:   %154 = fcmp olt double %139, %.cast
+[0x55d303a15950]:   %120 = fcmp uno double %119, %.cast
+[0x55d303a16ad0]:   %132 = fcmp ogt double %119, %.cast
+[0x55d303a16c30]:   %134 = fcmp olt double %119, %.cast
+[0x55d303a16d90]:   %136 = fcmp oeq double %119, %.cast
+Multiple matches exist for [0x55d3035aaec0]:   %156 = fcmp oeq double %139, %.cast
+[0x55d303a15950]:   %120 = fcmp uno double %119, %.cast
+[0x55d303a16ad0]:   %132 = fcmp ogt double %119, %.cast
+[0x55d303a16c30]:   %134 = fcmp olt double %119, %.cast
+[0x55d303a16d90]:   %136 = fcmp oeq double %119, %.cast
+Iso Match NOT Found
+Writing '_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-mcsema-diff.dot'...
+Writing '_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-mcsema-diff.dot':Done
+
+Writing 'sub_404610__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-proposed-diff.dot'...
+Writing 'sub_404610__ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN9benchmark9is_sortedI14PointerWrapperIdEEEbT_S3_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+104.13user 3.58system 1:48.88elapsed 98%CPU (0avgtext+0avgdata 23864maxresident)k
+0inputs+2320outputs (0major+6213minor)pagefaults 0swaps

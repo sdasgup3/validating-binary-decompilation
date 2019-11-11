@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x8d2__rip__type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x8d2__rip_ = global %G_0x8d2__rip__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -199,14 +201,14 @@ block_.L_400aa2:                                  ; preds = %block_.L_400b95, %e
   br i1 %107, label %block_400aae, label %block_.L_400ba8
 
 block_400aae:                                     ; preds = %block_.L_400aa2
-  %109 = add i64 %108, 2266
+  %109 = add i64 %108, ptrtoint (%G_0x8d2__rip__type* @G_0x8d2__rip_ to i64)
   %110 = add i64 %108, 8
   store i64 %110, i64* %3, align 8
   %111 = inttoptr i64 %109 to i64*
   %112 = load i64, i64* %111, align 8
   store i64 %112, i64* %60, align 1
   store double 0.000000e+00, double* %62, align 1
-  %113 = add i64 %108, 2274
+  %113 = add i64 %108, add (i64 ptrtoint (%G_0x8d2__rip__type* @G_0x8d2__rip_ to i64), i64 8)
   %114 = add i64 %108, 16
   store i64 %114, i64* %3, align 8
   %115 = inttoptr i64 %113 to i64*
@@ -1024,7 +1026,7 @@ define %struct.Memory* @routine_movsd_0x8d2__rip____xmm0(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 2266
+  %4 = add i64 %3, ptrtoint (%G_0x8d2__rip__type* @G_0x8d2__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -1042,7 +1044,7 @@ define %struct.Memory* @routine_movsd_0x8d2__rip____xmm1(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 2266
+  %4 = add i64 %3, ptrtoint (%G_0x8d2__rip__type* @G_0x8d2__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

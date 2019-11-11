@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55e059395020]:   %526 = fcmp uno double %523, %525
+[0x55e0594f5820]:   %317 = fcmp oeq double %298, %300
+[0x55e0594f8000]:   %301 = fcmp uno double %298, %300
+[0x55e0594f96d0]:   %313 = fcmp ogt double %298, %300
+[0x55e0594fa140]:   %315 = fcmp olt double %298, %300
+Multiple matches exist for [0x55e059395b90]:   %538 = fcmp ogt double %523, %525
+[0x55e0594f5820]:   %317 = fcmp oeq double %298, %300
+[0x55e0594f8000]:   %301 = fcmp uno double %298, %300
+[0x55e0594f96d0]:   %313 = fcmp ogt double %298, %300
+[0x55e0594fa140]:   %315 = fcmp olt double %298, %300
+Multiple matches exist for [0x55e059395cf0]:   %540 = fcmp olt double %523, %525
+[0x55e0594f5820]:   %317 = fcmp oeq double %298, %300
+[0x55e0594f8000]:   %301 = fcmp uno double %298, %300
+[0x55e0594f96d0]:   %313 = fcmp ogt double %298, %300
+[0x55e0594fa140]:   %315 = fcmp olt double %298, %300
+Multiple matches exist for [0x55e059395e50]:   %542 = fcmp oeq double %523, %525
+[0x55e0594f5820]:   %317 = fcmp oeq double %298, %300
+[0x55e0594f8000]:   %301 = fcmp uno double %298, %300
+[0x55e0594f96d0]:   %313 = fcmp ogt double %298, %300
+[0x55e0594fa140]:   %315 = fcmp olt double %298, %300
+Iso Match NOT Found
+Writing 'sub_400c00_kernel_floyd_warshall_StrictFP-mcsema-diff.dot'...
+Writing 'sub_400c00_kernel_floyd_warshall_StrictFP-mcsema-diff.dot':Done
+
+Writing 'kernel_floyd_warshall_StrictFP-proposed-diff.dot'...
+Writing 'kernel_floyd_warshall_StrictFP-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [kernel_floyd_warshall_StrictFP] from ../binary/test.mcsema.opt.ll
+Extracting function [kernel_floyd_warshall_StrictFP] from mcsema/test.proposed.opt.ll
+Matcher Done...
+19.08user 29.55system 0:48.77elapsed 99%CPU (0avgtext+0avgdata 15572maxresident)k
+0inputs+6664outputs (0major+2962minor)pagefaults 0swaps

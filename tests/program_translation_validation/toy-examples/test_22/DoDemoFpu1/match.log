@@ -1,8 +1,8 @@
 Matching sub_400520_DoDemoFpu1 Vs DoDemoFpu1
 
 
-[Error] Failed to extract Potential Matches for:[0x55de2ba65410]:   %114 = lshr i32 %113, 5
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:154: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+[Error] Failed to extract Potential Matches for:[0x561d783b85c8]:   %44 = bitcast i32* %43 to i64*
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
 Command terminated by signal 6
-0.14user 0.00system 0:00.56elapsed 24%CPU (0avgtext+0avgdata 12724maxresident)k
-0inputs+8outputs (0major+973minor)pagefaults 0swaps
+0.06user 0.00system 0:00.22elapsed 31%CPU (0avgtext+0avgdata 12780maxresident)k
+0inputs+8outputs (0major+975minor)pagefaults 0swaps

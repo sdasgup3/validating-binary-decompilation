@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -516,7 +528,7 @@ entry:
 
   %loadMem2_4008f6 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4008f6 = load i64, i64* %3
-  %call2_4008f6 = call %struct.Memory* @ext_posix(%struct.State* %0, i64  %loadPC_4008f6, %struct.Memory* %loadMem2_4008f6)
+  %call2_4008f6 = call %struct.Memory* @ext_posix_memalign(%struct.State* %0, i64  %loadPC_4008f6, %struct.Memory* %loadMem2_4008f6)
   store %struct.Memory* %call2_4008f6, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0x14(%rbp)	 RIP: 4008fb	 Bytes: 3

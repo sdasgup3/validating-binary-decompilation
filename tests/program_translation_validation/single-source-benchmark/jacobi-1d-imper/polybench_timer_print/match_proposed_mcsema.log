@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55649ea77608]:   %41 = load double, double* bitcast (%G_0x6020a8_type* @G_0x6020a8 to double*), align 8
+[0x55649eb2cd58]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
+[0x55649eb2cf78]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
+Multiple matches exist for [0x55649ea48708]:   %44 = load double, double* bitcast (%G_0x6020b0_type* @G_0x6020b0 to double*), align 8
+[0x55649eb2cd58]:   %40 = load double, double* bitcast (%polybench_t_end_type* @polybench_t_end to double*), align 8
+[0x55649eb2cf78]:   %43 = load double, double* bitcast (%polybench_t_start_type* @polybench_t_start to double*), align 8
+Iso Match NOT Found
+Writing 'polybench_timer_print-mcsema-diff.dot'...
+Writing 'polybench_timer_print-mcsema-diff.dot':Done
+
+Writing 'sub_400850_polybench_timer_print-proposed-diff.dot'...
+Writing 'sub_400850_polybench_timer_print-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [polybench_timer_print] from mcsema/test.proposed.opt.ll
+Extracting function [polybench_timer_print] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+2.08user 0.82system 0:02.91elapsed 99%CPU (0avgtext+0avgdata 12872maxresident)k
+0inputs+264outputs (0major+1070minor)pagefaults 0swaps

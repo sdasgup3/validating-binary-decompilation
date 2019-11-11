@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm-mcsema-diff.dot'...
+Writing '_ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm-mcsema-diff.dot':Done
+
+Writing 'sub_40d800__ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm-proposed-diff.dot'...
+Writing 'sub_40d800__ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN31custom_divide_multiple_variableImE8do_shiftEmmmmm] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+123.32user 0.90system 2:05.88elapsed 98%CPU (0avgtext+0avgdata 54408maxresident)k
+0inputs+856outputs (0major+18534minor)pagefaults 0swaps

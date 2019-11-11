@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_418130__ZN20custom_xor_constantsIaE8do_shiftEa-mcsema-diff.dot'...
+Writing 'sub_418130__ZN20custom_xor_constantsIaE8do_shiftEa-mcsema-diff.dot':Done
+
+Writing '_ZN20custom_xor_constantsIaE8do_shiftEa-proposed-diff.dot'...
+Writing '_ZN20custom_xor_constantsIaE8do_shiftEa-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN20custom_xor_constantsIaE8do_shiftEa] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN20custom_xor_constantsIaE8do_shiftEa] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.84user 0.08system 0:04.10elapsed 95%CPU (0avgtext+0avgdata 66024maxresident)k
+0inputs+64outputs (0major+12804minor)pagefaults 0swaps
