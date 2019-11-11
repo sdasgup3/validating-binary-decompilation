@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -444,6 +456,12 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_40c940._ZSt4fabsf(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x7598__rip__type = type <{ [8 x i8] }>
+@G_0x7598__rip_= global %G_0x7598__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x75a4__rip__type = type <{ [16 x i8] }>
+@G_0x75a4__rip_= global %G_0x75a4__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x75bc__rip__type = type <{ [8 x i8] }>
+@G_0x75bc__rip_= global %G_0x75bc__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_Z15tolerance_equalIfEbRT_S1_(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -1112,7 +1130,7 @@ block_400488:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 30148
+  %10 = add i64 %9, ptrtoint( %G_0x75bc__rip__type* @G_0x75bc__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1381,7 +1399,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 30112
+  %10 = add i64 %9, ptrtoint( %G_0x7598__rip__type* @G_0x7598__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1450,7 +1468,7 @@ block_400488:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 30123
+  %10 = add i64 %9, ptrtoint( %G_0x75a4__rip__type* @G_0x75a4__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC

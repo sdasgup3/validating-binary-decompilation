@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'findtcb-mcsema-diff.dot'...
+Writing 'findtcb-mcsema-diff.dot':Done
+
+Writing 'sub_400920_findtcb-proposed-diff.dot'...
+Writing 'sub_400920_findtcb-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [findtcb] from mcsema/test.proposed.opt.ll
+Extracting function [findtcb] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+10.17user 2.60system 0:13.30elapsed 96%CPU (0avgtext+0avgdata 13408maxresident)k
+0inputs+1016outputs (0major+1133minor)pagefaults 0swaps

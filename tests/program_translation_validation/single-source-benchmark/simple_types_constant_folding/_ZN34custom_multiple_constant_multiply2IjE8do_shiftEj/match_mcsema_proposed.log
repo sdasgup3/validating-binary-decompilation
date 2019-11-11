@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4124f0__ZN34custom_multiple_constant_multiply2IjE8do_shiftEj-mcsema-diff.dot'...
+Writing 'sub_4124f0__ZN34custom_multiple_constant_multiply2IjE8do_shiftEj-mcsema-diff.dot':Done
+
+Writing '_ZN34custom_multiple_constant_multiply2IjE8do_shiftEj-proposed-diff.dot'...
+Writing '_ZN34custom_multiple_constant_multiply2IjE8do_shiftEj-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN34custom_multiple_constant_multiply2IjE8do_shiftEj] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN34custom_multiple_constant_multiply2IjE8do_shiftEj] from mcsema/test.proposed.opt.ll
+Matcher Done...
+5.92user 0.07system 0:06.02elapsed 99%CPU (0avgtext+0avgdata 66148maxresident)k
+0inputs+136outputs (0major+12811minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400680_Printcomplex-mcsema-diff.dot'...
+Writing 'sub_400680_Printcomplex-mcsema-diff.dot':Done
+
+Writing 'Printcomplex-proposed-diff.dot'...
+Writing 'Printcomplex-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Printcomplex] from ../binary/test.mcsema.opt.ll
+Extracting function [Printcomplex] from mcsema/test.proposed.opt.ll
+Matcher Done...
+5.53user 3.61system 0:09.39elapsed 97%CPU (0avgtext+0avgdata 13736maxresident)k
+0inputs+2448outputs (0major+1300minor)pagefaults 0swaps

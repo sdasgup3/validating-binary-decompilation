@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -448,6 +460,10 @@ declare %struct.Memory* @sub_400c30.simulate(%struct.State* noalias dereferencea
 ; Data Access Globals
 %G_0x602074_type = type <{ [4 x i8] }>
 @G_0x602074= global %G_0x602074_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x768__rip__type = type <{ [8 x i8] }>
+@G_0x768__rip_= global %G_0x768__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x904__rip__type = type <{ [8 x i8] }>
+@G_0x904__rip_= global %G_0x904__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4010d8_type = type <{ [8 x i8] }>
 @G__0x4010d8= global %G__0x4010d8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4010dc_type = type <{ [8 x i8] }>
@@ -717,7 +733,7 @@ block_40085c:
 
   %loadMem2_400877 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400877 = load i64, i64* %3
-  %call2_400877 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_400877, %struct.Memory* %loadMem2_400877)
+  %call2_400877 = call %struct.Memory* @ext___isoc99_sscanf(%struct.State* %0, i64  %loadPC_400877, %struct.Memory* %loadMem2_400877)
   store %struct.Memory* %call2_400877, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0xc4(%rbp)	 RIP: 40087c	 Bytes: 6
@@ -801,7 +817,7 @@ block_40089a:
 
   %loadMem2_4008bc = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4008bc = load i64, i64* %3
-  %call2_4008bc = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_4008bc, %struct.Memory* %loadMem2_4008bc)
+  %call2_4008bc = call %struct.Memory* @ext___isoc99_sscanf(%struct.State* %0, i64  %loadPC_4008bc, %struct.Memory* %loadMem2_4008bc)
   store %struct.Memory* %call2_4008bc, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0xc8(%rbp)	 RIP: 4008c1	 Bytes: 6
@@ -885,7 +901,7 @@ block_4008df:
 
   %loadMem2_400901 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400901 = load i64, i64* %3
-  %call2_400901 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_400901, %struct.Memory* %loadMem2_400901)
+  %call2_400901 = call %struct.Memory* @ext___isoc99_sscanf(%struct.State* %0, i64  %loadPC_400901, %struct.Memory* %loadMem2_400901)
   store %struct.Memory* %call2_400901, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0xcc(%rbp)	 RIP: 400906	 Bytes: 6
@@ -1780,7 +1796,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 2316
+  %10 = add i64 %9, ptrtoint( %G_0x904__rip__type* @G_0x904__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -3405,7 +3421,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 1904
+  %10 = add i64 %9, ptrtoint( %G_0x768__rip__type* @G_0x768__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

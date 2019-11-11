@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-mcsema-diff.dot'...
+Writing '_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-mcsema-diff.dot':Done
+
+Writing 'sub_401fd0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-proposed-diff.dot'...
+Writing 'sub_401fd0__Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc] from mcsema/test.proposed.opt.ll
+Extracting function [_Z15test_accumulateI14PointerWrapperI12ValueWrapperIdEES2_EvT_S4_T0_PKc] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+62.04user 1.23system 1:03.51elapsed 99%CPU (0avgtext+0avgdata 23948maxresident)k
+0inputs+1384outputs (0major+6133minor)pagefaults 0swaps

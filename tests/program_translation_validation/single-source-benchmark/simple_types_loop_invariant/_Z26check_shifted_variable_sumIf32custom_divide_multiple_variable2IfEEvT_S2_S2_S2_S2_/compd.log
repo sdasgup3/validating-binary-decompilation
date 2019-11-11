@@ -137,8 +137,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -729,6 +741,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movss_0x74c1__rip____xmm1
+Global Access Mismatch: 29897 Relocation: Address, McSema: Constant
 Decompiling instr:movss 0x74c1(%rip), %xmm1 Done...
 
 
@@ -998,5 +1011,5 @@ Decompiling Function: _Z26check_shifted_variable_sumIf32custom_divide_multiple_v
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.55user 0.07system 0:06.29elapsed 9%CPU (0avgtext+0avgdata 10356maxresident)k
-24inputs+272outputs (0major+13049minor)pagefaults 0swaps
+0.55user 0.07system 0:06.20elapsed 10%CPU (0avgtext+0avgdata 10368maxresident)k
+0inputs+272outputs (0major+12966minor)pagefaults 0swaps

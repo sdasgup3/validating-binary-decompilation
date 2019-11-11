@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_-mcsema-diff.dot'...
+Writing '_ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_-mcsema-diff.dot':Done
+
+Writing 'sub_4021c0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_-proposed-diff.dot'...
+Writing 'sub_4021c0__ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN9benchmark4copyIPdP12ValueWrapperIdEEEvT_S5_T0_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+48.89user 1.00system 0:50.66elapsed 98%CPU (0avgtext+0avgdata 23948maxresident)k
+0inputs+1104outputs (0major+8523minor)pagefaults 0swaps

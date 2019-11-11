@@ -151,8 +151,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -1165,5 +1177,5 @@ Decompiling Function: _Z13test_constantIl20custom_add_constantsIlEEvPT_iPKc Done
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.74user 0.10system 0:07.29elapsed 11%CPU (0avgtext+0avgdata 10552maxresident)k
-48inputs+296outputs (0major+15687minor)pagefaults 0swaps
+0.77user 0.08system 0:07.39elapsed 11%CPU (0avgtext+0avgdata 10588maxresident)k
+0inputs+312outputs (0major+15681minor)pagefaults 0swaps

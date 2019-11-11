@@ -4,6 +4,16 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x339e__rip__type = type <{ [8 x i8] }>
+%G_0x33b2__rip__type = type <{ [16 x i8] }>
+%G_0x3404__rip__type = type <{ [8 x i8] }>
+%G_0x341b__rip__type = type <{ [16 x i8] }>
+%G_0x36c5__rip__type = type <{ [8 x i8] }>
+%G_0x36de__rip__type = type <{ [8 x i8] }>
+%G_0x370c__rip__type = type <{ [16 x i8] }>
+%G_0x3808__rip__type = type <{ [8 x i8] }>
+%G_0x380c__rip__type = type <{ [8 x i8] }>
+%G_0x3811__rip__type = type <{ [8 x i8] }>
 %G__0x404110_type = type <{ [8 x i8] }>
 %G__0x40413d_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -40,6 +50,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x339e__rip_ = global %G_0x339e__rip__type zeroinitializer
+@G_0x33b2__rip_ = global %G_0x33b2__rip__type zeroinitializer
+@G_0x3404__rip_ = global %G_0x3404__rip__type zeroinitializer
+@G_0x341b__rip_ = global %G_0x341b__rip__type zeroinitializer
+@G_0x36c5__rip_ = global %G_0x36c5__rip__type zeroinitializer
+@G_0x36de__rip_ = global %G_0x36de__rip__type zeroinitializer
+@G_0x370c__rip_ = global %G_0x370c__rip__type zeroinitializer
+@G_0x3808__rip_ = global %G_0x3808__rip__type zeroinitializer
+@G_0x380c__rip_ = global %G_0x380c__rip__type zeroinitializer
+@G_0x3811__rip_ = global %G_0x3811__rip__type zeroinitializer
 @G__0x404110 = global %G__0x404110_type zeroinitializer
 @G__0x40413d = global %G__0x40413d_type zeroinitializer
 
@@ -231,7 +251,7 @@ entry:
   %105 = inttoptr i64 %103 to double*
   store double %102, double* %105, align 8
   %106 = load i64, i64* %3, align 8
-  %107 = add i64 %106, 14361
+  %107 = add i64 %106, ptrtoint (%G_0x3811__rip__type* @G_0x3811__rip_ to i64)
   %108 = add i64 %106, 8
   store i64 %108, i64* %3, align 8
   %109 = inttoptr i64 %107 to i64*
@@ -248,7 +268,7 @@ entry:
   store i64 %111, i64* %3, align 8
   %call2_4008a7 = tail call %struct.Memory* @ext_sqrt(%struct.State* %0, i64 %111, %struct.Memory* %call2_400882)
   %116 = load i64, i64* %3, align 8
-  %117 = add i64 %116, 14356
+  %117 = add i64 %116, ptrtoint (%G_0x380c__rip__type* @G_0x380c__rip_ to i64)
   %118 = add i64 %116, 8
   store i64 %118, i64* %3, align 8
   %119 = inttoptr i64 %117 to i64*
@@ -261,7 +281,7 @@ entry:
   %.cast = bitcast i64 %120 to double
   %124 = fmul double %.cast, %121
   store double %124, double* %65, align 1
-  %125 = add i64 %116, 14364
+  %125 = add i64 %116, add (i64 ptrtoint (%G_0x3808__rip__type* @G_0x3808__rip_ to i64), i64 12)
   %126 = add i64 %116, 20
   store i64 %126, i64* %3, align 8
   %127 = inttoptr i64 %125 to i64*
@@ -628,7 +648,7 @@ routine_ucomisd__xmm1___xmm0.exit765:             ; preds = %190, %178
   store i8 0, i8* %38, align 1
   store i8 0, i8* %26, align 1
   store i64 2047, i64* %RSI.i748, align 8
-  %345 = add i64 %344, 14061
+  %345 = add i64 %344, add (i64 ptrtoint (%G_0x36de__rip__type* @G_0x36de__rip_ to i64), i64 7)
   %346 = add i64 %344, 15
   store i64 %346, i64* %3, align 8
   %347 = inttoptr i64 %345 to i64*
@@ -652,7 +672,7 @@ routine_ucomisd__xmm1___xmm0.exit765:             ; preds = %190, %178
   store i64 %354, i64* %3, align 8
   %call2_4009d6 = tail call %struct.Memory* @sub_401100.errorcheck(%struct.State* nonnull %0, i64 %354, %struct.Memory* %call2_4009be)
   %359 = load i64, i64* %3, align 8
-  %360 = add i64 %359, 14029
+  %360 = add i64 %359, ptrtoint (%G_0x36c5__rip__type* @G_0x36c5__rip_ to i64)
   %361 = add i64 %359, 8
   store i64 %361, i64* %3, align 8
   %362 = inttoptr i64 %360 to i64*
@@ -675,18 +695,18 @@ routine_ucomisd__xmm1___xmm0.exit765:             ; preds = %190, %178
   %374 = load i64, i64* %373, align 8
   store i64 %374, i64* %66, align 1
   store double 0.000000e+00, double* %89, align 1
-  %375 = add i64 %371, 14104
+  %375 = add i64 %371, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 5)
   %376 = add i64 %371, 12
   store i64 %376, i64* %3, align 8
   %377 = inttoptr i64 %375 to i32*
   %378 = load i32, i32* %377, align 4
-  %379 = add i64 %371, 14108
+  %379 = add i64 %371, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 9)
   %380 = inttoptr i64 %379 to i32*
   %381 = load i32, i32* %380, align 4
-  %382 = add i64 %371, 14112
+  %382 = add i64 %371, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 13)
   %383 = inttoptr i64 %382 to i32*
   %384 = load i32, i32* %383, align 4
-  %385 = add i64 %371, 14116
+  %385 = add i64 %371, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 17)
   %386 = inttoptr i64 %385 to i32*
   %387 = load i32, i32* %386, align 4
   store i32 %378, i32* %133, align 1
@@ -2029,7 +2049,7 @@ block_.L_400cb7:                                  ; preds = %block_.L_400d96, %b
   br i1 %1255, label %block_400cc4, label %block_.L_400dde
 
 block_400cc4:                                     ; preds = %block_.L_400cb7
-  %1257 = add i64 %1256, 13324
+  %1257 = add i64 %1256, ptrtoint (%G_0x3404__rip__type* @G_0x3404__rip_ to i64)
   %1258 = add i64 %1256, 8
   store i64 %1258, i64* %3, align 8
   %1259 = inttoptr i64 %1257 to i64*
@@ -2080,18 +2100,18 @@ block_400cc4:                                     ; preds = %block_.L_400cb7
   %1289 = load i64, i64* %1288, align 8
   store i64 %1289, i64* %97, align 1
   store double 0.000000e+00, double* %99, align 1
-  %1290 = add i64 %1256, 13371
+  %1290 = add i64 %1256, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 25)
   %1291 = add i64 %1256, 32
   store i64 %1291, i64* %3, align 8
   %1292 = inttoptr i64 %1290 to i32*
   %1293 = load i32, i32* %1292, align 4
-  %1294 = add i64 %1256, 13375
+  %1294 = add i64 %1256, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 29)
   %1295 = inttoptr i64 %1294 to i32*
   %1296 = load i32, i32* %1295, align 4
-  %1297 = add i64 %1256, 13379
+  %1297 = add i64 %1256, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 33)
   %1298 = inttoptr i64 %1297 to i32*
   %1299 = load i32, i32* %1298, align 4
-  %1300 = add i64 %1256, 13383
+  %1300 = add i64 %1256, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 37)
   %1301 = inttoptr i64 %1300 to i32*
   %1302 = load i32, i32* %1301, align 4
   store i32 %1293, i32* %133, align 1
@@ -2253,7 +2273,7 @@ block_.L_400d22:                                  ; preds = %block_.L_400d12, %b
   %1390 = load i64, i64* %1389, align 8
   store i64 %1390, i64* %66, align 1
   store double 0.000000e+00, double* %89, align 1
-  %1391 = add i64 %storemerge, 13230
+  %1391 = add i64 %storemerge, add (i64 ptrtoint (%G_0x339e__rip__type* @G_0x339e__rip_ to i64), i64 8)
   %1392 = add i64 %storemerge, 16
   store i64 %1392, i64* %3, align 8
   %1393 = inttoptr i64 %1391 to i64*
@@ -2305,18 +2325,18 @@ block_.L_400d22:                                  ; preds = %block_.L_400d12, %b
   %1425 = load i64, i64* %1424, align 8
   store i64 %1425, i64* %388, align 1
   store double 0.000000e+00, double* %1212, align 1
-  %1426 = add i64 %storemerge, 13277
+  %1426 = add i64 %storemerge, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 36)
   %1427 = add i64 %storemerge, 43
   store i64 %1427, i64* %3, align 8
   %1428 = inttoptr i64 %1426 to i32*
   %1429 = load i32, i32* %1428, align 4
-  %1430 = add i64 %storemerge, 13281
+  %1430 = add i64 %storemerge, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 40)
   %1431 = inttoptr i64 %1430 to i32*
   %1432 = load i32, i32* %1431, align 4
-  %1433 = add i64 %storemerge, 13285
+  %1433 = add i64 %storemerge, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 44)
   %1434 = inttoptr i64 %1433 to i32*
   %1435 = load i32, i32* %1434, align 4
-  %1436 = add i64 %storemerge, 13289
+  %1436 = add i64 %storemerge, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 48)
   %1437 = inttoptr i64 %1436 to i32*
   %1438 = load i32, i32* %1437, align 4
   store i32 %1429, i32* %1215, align 1
@@ -2999,7 +3019,7 @@ define %struct.Memory* @routine_movsd_0x3811__rip____xmm0(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 14361
+  %4 = add i64 %3, ptrtoint (%G_0x3811__rip__type* @G_0x3811__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -3034,7 +3054,7 @@ define %struct.Memory* @routine_movsd_0x380c__rip____xmm1(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 14356
+  %4 = add i64 %3, ptrtoint (%G_0x380c__rip__type* @G_0x380c__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -3070,7 +3090,7 @@ define %struct.Memory* @routine_movsd_0x3808__rip____xmm1(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 14352
+  %4 = add i64 %3, ptrtoint (%G_0x3808__rip__type* @G_0x3808__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -3826,7 +3846,7 @@ define %struct.Memory* @routine_movsd_0x36de__rip____xmm0(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 14054
+  %4 = add i64 %3, ptrtoint (%G_0x36de__rip__type* @G_0x36de__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -3861,7 +3881,7 @@ define %struct.Memory* @routine_movsd_0x36c5__rip____xmm1(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 14029
+  %4 = add i64 %3, ptrtoint (%G_0x36c5__rip__type* @G_0x36c5__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -3918,18 +3938,18 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 14099
+  %6 = add i64 %5, ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64)
   %7 = add i64 %5, 7
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*
   %9 = load i32, i32* %8, align 4
-  %10 = add i64 %5, 14103
+  %10 = add i64 %5, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 4)
   %11 = inttoptr i64 %10 to i32*
   %12 = load i32, i32* %11, align 4
-  %13 = add i64 %5, 14107
+  %13 = add i64 %5, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 8)
   %14 = inttoptr i64 %13 to i32*
   %15 = load i32, i32* %14, align 4
-  %16 = add i64 %5, 14111
+  %16 = add i64 %5, add (i64 ptrtoint (%G_0x370c__rip__type* @G_0x370c__rip_ to i64), i64 12)
   %17 = inttoptr i64 %16 to i32*
   %18 = load i32, i32* %17, align 4
   %19 = bitcast %union.VectorReg* %3 to i32*
@@ -5790,7 +5810,7 @@ define %struct.Memory* @routine_movsd_0x3404__rip____xmm0(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 13324
+  %4 = add i64 %3, ptrtoint (%G_0x3404__rip__type* @G_0x3404__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -5851,18 +5871,18 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 13346
+  %6 = add i64 %5, ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64)
   %7 = add i64 %5, 7
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*
   %9 = load i32, i32* %8, align 4
-  %10 = add i64 %5, 13350
+  %10 = add i64 %5, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 4)
   %11 = inttoptr i64 %10 to i32*
   %12 = load i32, i32* %11, align 4
-  %13 = add i64 %5, 13354
+  %13 = add i64 %5, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 8)
   %14 = inttoptr i64 %13 to i32*
   %15 = load i32, i32* %14, align 4
-  %16 = add i64 %5, 13358
+  %16 = add i64 %5, add (i64 ptrtoint (%G_0x341b__rip__type* @G_0x341b__rip_ to i64), i64 12)
   %17 = inttoptr i64 %16 to i32*
   %18 = load i32, i32* %17, align 4
   %19 = bitcast %union.VectorReg* %3 to i32*
@@ -6068,7 +6088,7 @@ define %struct.Memory* @routine_movsd_0x339e__rip____xmm1(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 13222
+  %4 = add i64 %3, ptrtoint (%G_0x339e__rip__type* @G_0x339e__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -6111,18 +6131,18 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 3
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 13241
+  %6 = add i64 %5, ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64)
   %7 = add i64 %5, 7
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*
   %9 = load i32, i32* %8, align 4
-  %10 = add i64 %5, 13245
+  %10 = add i64 %5, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 4)
   %11 = inttoptr i64 %10 to i32*
   %12 = load i32, i32* %11, align 4
-  %13 = add i64 %5, 13249
+  %13 = add i64 %5, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 8)
   %14 = inttoptr i64 %13 to i32*
   %15 = load i32, i32* %14, align 4
-  %16 = add i64 %5, 13253
+  %16 = add i64 %5, add (i64 ptrtoint (%G_0x33b2__rip__type* @G_0x33b2__rip_ to i64), i64 12)
   %17 = inttoptr i64 %16 to i32*
   %18 = load i32, i32* %17, align 4
   %19 = bitcast %union.VectorReg* %3 to i32*

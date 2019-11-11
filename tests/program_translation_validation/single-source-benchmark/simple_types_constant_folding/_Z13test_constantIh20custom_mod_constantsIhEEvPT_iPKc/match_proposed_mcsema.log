@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc-mcsema-diff.dot'...
+Writing '_Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc-mcsema-diff.dot':Done
+
+Writing 'sub_404310__Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc-proposed-diff.dot'...
+Writing 'sub_404310__Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc] from mcsema/test.proposed.opt.ll
+Extracting function [_Z13test_constantIh20custom_mod_constantsIhEEvPT_iPKc] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+543.58user 2.19system 9:09.43elapsed 99%CPU (0avgtext+0avgdata 66116maxresident)k
+0inputs+2704outputs (0major+23044minor)pagefaults 0swaps

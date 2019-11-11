@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'kernel_dynprog-mcsema-diff.dot'...
+Writing 'kernel_dynprog-mcsema-diff.dot':Done
+
+Writing 'sub_400a90_kernel_dynprog-proposed-diff.dot'...
+Writing 'sub_400a90_kernel_dynprog-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [kernel_dynprog] from mcsema/test.proposed.opt.ll
+Extracting function [kernel_dynprog] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+457.26user 48.85system 8:36.50elapsed 97%CPU (0avgtext+0avgdata 24020maxresident)k
+0inputs+38192outputs (0major+7165minor)pagefaults 0swaps

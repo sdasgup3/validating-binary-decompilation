@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x355__rip__type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x355__rip_ = global %G_0x355__rip__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -1892,28 +1894,28 @@ block_.L_400dac:                                  ; preds = %block_.L_401043, %b
 
 block_400db8:                                     ; preds = %block_.L_400dac
   store <4 x i32> zeroinitializer, <4 x i32>* %229, align 1
-  %1285 = add i64 %1284, 864
+  %1285 = add i64 %1284, add (i64 ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64), i64 3)
   %1286 = add i64 %1284, 11
   store i64 %1286, i64* %3, align 8
   %1287 = inttoptr i64 %1285 to i64*
   %1288 = load i64, i64* %1287, align 8
   store i64 %1288, i64* %206, align 1
   store double 0.000000e+00, double* %208, align 1
-  %1289 = add i64 %1284, 872
+  %1289 = add i64 %1284, add (i64 ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64), i64 11)
   %1290 = add i64 %1284, 19
   store i64 %1290, i64* %3, align 8
   %1291 = inttoptr i64 %1289 to i64*
   %1292 = load i64, i64* %1291, align 8
   store i64 %1292, i64* %209, align 1
   store double 0.000000e+00, double* %211, align 1
-  %1293 = add i64 %1284, 880
+  %1293 = add i64 %1284, add (i64 ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64), i64 19)
   %1294 = add i64 %1284, 27
   store i64 %1294, i64* %3, align 8
   %1295 = inttoptr i64 %1293 to i64*
   %1296 = load i64, i64* %1295, align 8
   store i64 %1296, i64* %214, align 1
   store double 0.000000e+00, double* %216, align 1
-  %1297 = add i64 %1284, 888
+  %1297 = add i64 %1284, add (i64 ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64), i64 27)
   %1298 = add i64 %1284, 35
   store i64 %1298, i64* %3, align 8
   %1299 = inttoptr i64 %1297 to i64*
@@ -6019,7 +6021,7 @@ define %struct.Memory* @routine_movsd_0x355__rip____xmm1(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 861
+  %4 = add i64 %3, ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -6037,7 +6039,7 @@ define %struct.Memory* @routine_movsd_0x355__rip____xmm2(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 861
+  %4 = add i64 %3, ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -6055,7 +6057,7 @@ define %struct.Memory* @routine_movsd_0x355__rip____xmm3(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 861
+  %4 = add i64 %3, ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -6073,7 +6075,7 @@ define %struct.Memory* @routine_movsd_0x355__rip____xmm4(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 861
+  %4 = add i64 %3, ptrtoint (%G_0x355__rip__type* @G_0x355__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

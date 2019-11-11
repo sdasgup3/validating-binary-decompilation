@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'init_Toggle-mcsema-diff.dot'...
+Writing 'init_Toggle-mcsema-diff.dot':Done
+
+Writing 'sub_400640_init_Toggle-proposed-diff.dot'...
+Writing 'sub_400640_init_Toggle-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [init_Toggle] from mcsema/test.proposed.opt.ll
+Extracting function [init_Toggle] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+2.05user 0.70system 0:02.78elapsed 99%CPU (0avgtext+0avgdata 12640maxresident)k
+0inputs+288outputs (0major+976minor)pagefaults 0swaps

@@ -373,8 +373,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -1036,6 +1048,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2439__rip____xmm0
+Global Access Mismatch: 9281 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2439(%rip), %xmm0 Done...
 
 
@@ -1055,6 +1068,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2439__rip____xmm1
+Global Access Mismatch: 9281 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2439(%rip), %xmm1 Done...
 
 
@@ -1572,6 +1586,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x23cf__rip____xmm0
+Global Access Mismatch: 9175 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x23cf(%rip), %xmm0 Done...
 
 
@@ -1591,6 +1606,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x23cf__rip____xmm1
+Global Access Mismatch: 9175 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x23cf(%rip), %xmm1 Done...
 
 
@@ -2037,6 +2053,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2368__rip____xmm0
+Global Access Mismatch: 9072 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2368(%rip), %xmm0 Done...
 
 
@@ -2056,6 +2073,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2338__rip____xmm1
+Global Access Mismatch: 9024 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2338(%rip), %xmm1 Done...
 
 
@@ -2502,6 +2520,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x22cb__rip____xmm0
+Global Access Mismatch: 8915 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x22cb(%rip), %xmm0 Done...
 
 
@@ -2521,6 +2540,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x22cb__rip____xmm1
+Global Access Mismatch: 8915 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x22cb(%rip), %xmm1 Done...
 
 
@@ -3047,6 +3067,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x21fd__rip____xmm0
+Global Access Mismatch: 8709 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x21fd(%rip), %xmm0 Done...
 
 
@@ -3066,6 +3087,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x21fd__rip____xmm1
+Global Access Mismatch: 8709 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x21fd(%rip), %xmm1 Done...
 
 
@@ -3705,6 +3727,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2156__rip____xmm0
+Global Access Mismatch: 8542 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2156(%rip), %xmm0 Done...
 
 
@@ -3724,6 +3747,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2156__rip____xmm1
+Global Access Mismatch: 8542 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2156(%rip), %xmm1 Done...
 
 
@@ -3743,6 +3767,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x2156__rip____xmm2
+Global Access Mismatch: 8542 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x2156(%rip), %xmm2 Done...
 
 
@@ -5290,5 +5315,5 @@ Decompiling Function: init_array Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-3.10user 0.50system 0:09.02elapsed 40%CPU (0avgtext+0avgdata 11140maxresident)k
-1656inputs+1048outputs (0major+86408minor)pagefaults 0swaps
+3.16user 0.46system 0:08.89elapsed 40%CPU (0avgtext+0avgdata 10984maxresident)k
+0inputs+1056outputs (0major+86056minor)pagefaults 0swaps

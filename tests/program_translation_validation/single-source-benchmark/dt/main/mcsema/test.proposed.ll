@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -444,6 +456,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_400790.double_array_divs_variable(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x1e1__rip__type = type <{ [8 x i8] }>
+@G_0x1e1__rip_= global %G_0x1e1__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4008c0_type = type <{ [8 x i8] }>
 @G__0x4008c0= global %G__0x4008c0_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4008de_type = type <{ [8 x i8] }>
@@ -534,7 +548,7 @@ entry:
 
   %loadMem2_40064e = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40064e = load i64, i64* %3
-  %call2_40064e = call %struct.Memory* @ext_posix(%struct.State* %0, i64  %loadPC_40064e, %struct.Memory* %loadMem2_40064e)
+  %call2_40064e = call %struct.Memory* @ext_posix_memalign(%struct.State* %0, i64  %loadPC_40064e, %struct.Memory* %loadMem2_40064e)
   store %struct.Memory* %call2_40064e, %struct.Memory** %MEMORY
 
   ; Code: movl $0x10, %r9d	 RIP: 400653	 Bytes: 6
@@ -579,7 +593,7 @@ entry:
 
   %loadMem2_40066f = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40066f = load i64, i64* %3
-  %call2_40066f = call %struct.Memory* @ext_posix(%struct.State* %0, i64  %loadPC_40066f, %struct.Memory* %loadMem2_40066f)
+  %call2_40066f = call %struct.Memory* @ext_posix_memalign(%struct.State* %0, i64  %loadPC_40066f, %struct.Memory* %loadMem2_40066f)
   store %struct.Memory* %call2_40066f, %struct.Memory** %MEMORY
 
   ; Code: movq $0x4008c0, %rdi	 RIP: 400674	 Bytes: 10
@@ -1833,7 +1847,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 489
+  %10 = add i64 %9, ptrtoint( %G_0x1e1__rip__type* @G_0x1e1__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1853,7 +1867,7 @@ block_400488:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 489
+  %10 = add i64 %9, ptrtoint( %G_0x1e1__rip__type* @G_0x1e1__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1873,7 +1887,7 @@ block_400488:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 489
+  %10 = add i64 %9, ptrtoint( %G_0x1e1__rip__type* @G_0x1e1__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

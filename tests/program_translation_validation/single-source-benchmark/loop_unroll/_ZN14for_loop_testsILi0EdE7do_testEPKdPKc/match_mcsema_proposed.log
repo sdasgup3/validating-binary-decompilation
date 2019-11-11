@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_40be70__ZN14for_loop_testsILi0EdE7do_testEPKdPKc-mcsema-diff.dot'...
+Writing 'sub_40be70__ZN14for_loop_testsILi0EdE7do_testEPKdPKc-mcsema-diff.dot':Done
+
+Writing '_ZN14for_loop_testsILi0EdE7do_testEPKdPKc-proposed-diff.dot'...
+Writing '_ZN14for_loop_testsILi0EdE7do_testEPKdPKc-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN14for_loop_testsILi0EdE7do_testEPKdPKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN14for_loop_testsILi0EdE7do_testEPKdPKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.72user 0.19system 0:04.19elapsed 93%CPU (0avgtext+0avgdata 62404maxresident)k
+0inputs+72outputs (0major+12133minor)pagefaults 0swaps

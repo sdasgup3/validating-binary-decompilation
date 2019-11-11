@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN16reverse_iteratorIPddEmmEv-mcsema-diff.dot'...
+Writing '_ZN16reverse_iteratorIPddEmmEv-mcsema-diff.dot':Done
+
+Writing 'sub_4024e0__ZN16reverse_iteratorIPddEmmEv-proposed-diff.dot'...
+Writing 'sub_4024e0__ZN16reverse_iteratorIPddEmmEv-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN16reverse_iteratorIPddEmmEv] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN16reverse_iteratorIPddEmmEv] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+2.57user 0.09system 0:02.70elapsed 98%CPU (0avgtext+0avgdata 17456maxresident)k
+0inputs+160outputs (0major+3408minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400940_dump_play-mcsema-diff.dot'...
+Writing 'sub_400940_dump_play-mcsema-diff.dot':Done
+
+Writing 'dump_play-proposed-diff.dot'...
+Writing 'dump_play-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [dump_play] from ../binary/test.mcsema.opt.ll
+Extracting function [dump_play] from mcsema/test.proposed.opt.ll
+Matcher Done...
+2.03user 3.04system 0:05.07elapsed 99%CPU (0avgtext+0avgdata 14152maxresident)k
+0inputs+696outputs (0major+1301minor)pagefaults 0swaps

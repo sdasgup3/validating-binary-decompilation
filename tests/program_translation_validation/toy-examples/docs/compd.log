@@ -90,19 +90,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
 
-test_13_1/doWork
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
-
 sum-2-n/sum_2_n
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function sum_2_n --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+test_13_1/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
 
 test_26_1/update
 =======
@@ -111,19 +111,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
 
-test_30/stderr_driver
+test_17/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function stderr_driver --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
-
-test_18/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
 
 test_28_1/main
 =======
@@ -132,12 +125,26 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
 
+test_30/stderr_driver
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function stderr_driver --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
 test_30/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+test_18/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
 
 get-sign/main
 =======
@@ -146,19 +153,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
 
-test_17/main
+test_17/printdata
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
-
-test_18/printdata
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
 
 test_14/checkFn
 =======
@@ -167,12 +167,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
 
-test_17/printdata
+test_18/printdata
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function printdata --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
 
 test_28/main
 =======
@@ -188,6 +188,13 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
 
+test_16/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
 test_22/DoDemoFpu1
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
@@ -202,13 +209,6 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
 
-test_16/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
-
 test_29/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
@@ -216,12 +216,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
 
-test_28_1/func
+test_15/doOp
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doOp --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
 
 test_0_1/main
 =======
@@ -230,12 +230,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
 
-test_15/doOp
+test_28_1/func
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doOp --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function func --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
 
 test_4/foo
 =======
@@ -286,13 +286,6 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
 
-test_31/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
-
 array-reverse/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
@@ -300,12 +293,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
 
-test_13/checkFn
+test_0/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+test_31/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
 
 test_32/fib
 =======
@@ -314,13 +314,6 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
 
-test_13_1/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
-
 test_20/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
@@ -328,12 +321,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
 
-test_0/main
+test_13_1/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+test_13/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function checkFn --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
 
 binary-search/main
 =======
@@ -356,12 +356,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
 
-test_10/demo3
+test_1/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function demo3 --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
 
 test_22/main
 =======
@@ -370,12 +370,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
 
-test_34/main
+test_10/demo3
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function demo3 --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
 
 test_31/fib
 =======
@@ -384,19 +384,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
 
-test_1/main
+test_34/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
-
-test_10/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
 
 test_13/doStuff
 =======
@@ -404,13 +397,6 @@ make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/te
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doStuff --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff:doStuff
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
-
-test_35/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
 
 test_32/main
 =======
@@ -426,6 +412,20 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
 
+test_10/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+
+test_35/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+
 test_11/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
@@ -433,12 +433,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
 
-test_27/update
+test_29/foo
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
 
 test_33/main
 =======
@@ -446,6 +446,13 @@ make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/te
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+
+test_27/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function update --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
 
 test_21/main
 =======
@@ -461,13 +468,6 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
 
-test_29/foo
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function foo --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
-
 test_3/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
@@ -475,19 +475,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
 
-test_13/doWork
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
-
 test_15/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+test_13/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function doWork --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
 
 test_24/to_byte
 =======
@@ -510,19 +510,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
 
-test_7/check
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
-
 test_25/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+test_7/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function check --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
 
 test_2_1/main
 =======
@@ -531,19 +531,19 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
 
-test_26/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
-
 test_5/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+test_26/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
 
 test_11/doTrans
 =======
@@ -566,13 +566,6 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
 
-test_2/main
-=======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
-time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
-
 test_24/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
@@ -580,12 +573,12 @@ time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decom
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
 
-test_7/main
+test_2/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
-[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
 
 test_23/draw
 =======
@@ -593,6 +586,13 @@ make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/te
 time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function draw --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
 [32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+
+test_7/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+time /home/ubuntu/Github/validating-binary-decompilation/source/build/bin//decompiler  --output mcsema/test.proposed.ll --path /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/ --function main --input ../binary/test.reloc --use-reloc-info 1>compd.log 2>&1
+[32mCompd Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
 
 test_4/main
 =======

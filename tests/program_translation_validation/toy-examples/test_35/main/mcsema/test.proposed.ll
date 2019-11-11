@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -441,8 +453,6 @@ declare %struct.Memory* @ext_cos(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @ext_tan(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) 
 
-declare %struct.Memory* @sub_400500.pthread_create_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-declare %struct.Memory* @sub_400520.pthread_join_plt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
 %G__0x400620_type = type <{ [8 x i8] }>
@@ -513,7 +523,7 @@ entry:
 
   %loadMem2_400674 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400674 = load i64, i64* %3
-  %call2_400674 = call %struct.Memory* @sub_400500.pthread_create_plt(%struct.State* %0, i64  %loadPC_400674, %struct.Memory* %loadMem2_400674)
+  %call2_400674 = call %struct.Memory* @ext_pthread_create(%struct.State* %0, i64  %loadPC_400674, %struct.Memory* %loadMem2_400674)
   store %struct.Memory* %call2_400674, %struct.Memory** %MEMORY
 
   ; Code: leaq -0x18(%rbp), %rcx	 RIP: 400679	 Bytes: 4
@@ -543,7 +553,7 @@ entry:
 
   %loadMem2_400687 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_400687 = load i64, i64* %3
-  %call2_400687 = call %struct.Memory* @sub_400520.pthread_join_plt(%struct.State* %0, i64  %loadPC_400687, %struct.Memory* %loadMem2_400687)
+  %call2_400687 = call %struct.Memory* @ext_pthread_join(%struct.State* %0, i64  %loadPC_400687, %struct.Memory* %loadMem2_400687)
   store %struct.Memory* %call2_400687, %struct.Memory** %MEMORY
 
   ; Code: movq $0x400744, %rdi	 RIP: 40068c	 Bytes: 10

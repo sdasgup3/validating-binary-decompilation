@@ -25,6 +25,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x602638_type = type <{ [16 x i8] }>
 %G_0x602640_type = type <{ [16 x i8] }>
 %G_0x602648_type = type <{ [16 x i8] }>
+%G_0x627__rip__type = type <{ [8 x i8] }>
+%G_0x68b__rip__type = type <{ [8 x i8] }>
+%G_0x6d8__rip__type = type <{ [8 x i8] }>
 %G__0x6021b0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -97,6 +100,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x602638 = global %G_0x602638_type zeroinitializer
 @G_0x602640 = global %G_0x602640_type zeroinitializer
 @G_0x602648 = global %G_0x602648_type zeroinitializer
+@G_0x627__rip_ = global %G_0x627__rip__type zeroinitializer
+@G_0x68b__rip_ = global %G_0x68b__rip__type zeroinitializer
+@G_0x6d8__rip_ = global %G_0x6d8__rip__type zeroinitializer
 @G__0x6021b0 = global %G__0x6021b0_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -282,6 +288,10 @@ declare extern_weak x86_64_sysvcc i64 @time(i64)
 
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64)
 
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64)
+
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
@@ -404,7 +414,7 @@ entry:
   %YMM1.i164 = bitcast %union.VectorReg* %71 to %"class.std::bitset"*
   %72 = bitcast %"class.std::bitset"* %YMM1.i164 to i8*
   %73 = load i64, i64* %PC.i163
-  %74 = add i64 %73, 1760
+  %74 = add i64 %73, ptrtoint (%G_0x6d8__rip__type* @G_0x6d8__rip_ to i64)
   %75 = load i64, i64* %PC.i163
   %76 = add i64 %75, 8
   store i64 %76, i64* %PC.i163
@@ -746,7 +756,7 @@ block_400fc5:                                     ; preds = %block_.L_400fb2
   %YMM0.i134 = bitcast %union.VectorReg* %311 to %"class.std::bitset"*
   %312 = bitcast %"class.std::bitset"* %YMM0.i134 to i8*
   %313 = load i64, i64* %PC.i133
-  %314 = add i64 %313, 1683
+  %314 = add i64 %313, ptrtoint (%G_0x68b__rip__type* @G_0x68b__rip_ to i64)
   %315 = load i64, i64* %PC.i133
   %316 = add i64 %315, 8
   store i64 %316, i64* %PC.i133
@@ -1274,7 +1284,7 @@ block_40101f:                                     ; preds = %routine_ucomisd__xm
   %YMM0.i90 = bitcast %union.VectorReg* %674 to %"class.std::bitset"*
   %675 = bitcast %"class.std::bitset"* %YMM0.i90 to i8*
   %676 = load i64, i64* %PC.i89
-  %677 = add i64 %676, 1583
+  %677 = add i64 %676, ptrtoint (%G_0x627__rip__type* @G_0x627__rip_ to i64)
   %678 = load i64, i64* %PC.i89
   %679 = add i64 %678, 8
   store i64 %679, i64* %PC.i89
@@ -2655,7 +2665,7 @@ block_400488:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 1760
+  %10 = add i64 %9, ptrtoint (%G_0x6d8__rip__type* @G_0x6d8__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -3028,7 +3038,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 1683
+  %10 = add i64 %9, ptrtoint (%G_0x68b__rip__type* @G_0x68b__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -3512,7 +3522,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 1583
+  %10 = add i64 %9, ptrtoint (%G_0x627__rip__type* @G_0x627__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

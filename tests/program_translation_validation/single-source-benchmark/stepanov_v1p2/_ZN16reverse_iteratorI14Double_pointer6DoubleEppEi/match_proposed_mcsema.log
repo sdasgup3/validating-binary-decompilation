@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN16reverse_iteratorI14Double_pointer6DoubleEppEi-mcsema-diff.dot'...
+Writing '_ZN16reverse_iteratorI14Double_pointer6DoubleEppEi-mcsema-diff.dot':Done
+
+Writing 'sub_402680__ZN16reverse_iteratorI14Double_pointer6DoubleEppEi-proposed-diff.dot'...
+Writing 'sub_402680__ZN16reverse_iteratorI14Double_pointer6DoubleEppEi-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN16reverse_iteratorI14Double_pointer6DoubleEppEi] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN16reverse_iteratorI14Double_pointer6DoubleEppEi] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+7.47user 0.32system 0:07.98elapsed 97%CPU (0avgtext+0avgdata 17520maxresident)k
+0inputs+376outputs (0major+3426minor)pagefaults 0swaps

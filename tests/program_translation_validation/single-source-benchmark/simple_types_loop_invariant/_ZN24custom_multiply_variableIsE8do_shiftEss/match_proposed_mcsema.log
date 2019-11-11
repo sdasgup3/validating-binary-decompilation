@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN24custom_multiply_variableIsE8do_shiftEss-mcsema-diff.dot'...
+Writing '_ZN24custom_multiply_variableIsE8do_shiftEss-mcsema-diff.dot':Done
+
+Writing 'sub_411d50__ZN24custom_multiply_variableIsE8do_shiftEss-proposed-diff.dot'...
+Writing 'sub_411d50__ZN24custom_multiply_variableIsE8do_shiftEss-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN24custom_multiply_variableIsE8do_shiftEss] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN24custom_multiply_variableIsE8do_shiftEss] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+22.97user 0.12system 0:23.10elapsed 99%CPU (0avgtext+0avgdata 54372maxresident)k
+0inputs+224outputs (0major+10478minor)pagefaults 0swaps

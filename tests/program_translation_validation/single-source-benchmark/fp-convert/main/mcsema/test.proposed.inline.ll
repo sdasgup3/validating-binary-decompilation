@@ -19,6 +19,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x177__rip__type = type <{ [4 x i8] }>
 %G_0x17b__rip__type = type <{ [4 x i8] }>
 %G_0x197__rip__type = type <{ [4 x i8] }>
+%G_0x201__rip__type = type <{ [4 x i8] }>
 %G__0x4007b0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -86,6 +87,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x177__rip_ = global %G_0x177__rip__type zeroinitializer
 @G_0x17b__rip_ = global %G_0x17b__rip__type zeroinitializer
 @G_0x197__rip_ = global %G_0x197__rip__type zeroinitializer
+@G_0x201__rip_ = global %G_0x201__rip__type zeroinitializer
 @G__0x4007b0 = global %G__0x4007b0_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -271,6 +273,10 @@ declare extern_weak x86_64_sysvcc i64 @time(i64)
 
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64)
 
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64)
+
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
 declare %struct.Memory* @ext_sqrt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias)
@@ -393,7 +399,7 @@ entry:
   %YMM0.i161 = bitcast %union.VectorReg* %71 to %"class.std::bitset"*
   %72 = bitcast %"class.std::bitset"* %YMM0.i161 to i8*
   %73 = load i64, i64* %PC.i160
-  %74 = add i64 %73, 521
+  %74 = add i64 %73, ptrtoint (%G_0x201__rip__type* @G_0x201__rip_ to i64)
   %75 = load i64, i64* %PC.i160
   %76 = add i64 %75, 8
   store i64 %76, i64* %PC.i160
@@ -2512,7 +2518,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 521
+  %10 = add i64 %9, ptrtoint (%G_0x201__rip__type* @G_0x201__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

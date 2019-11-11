@@ -6,6 +6,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %__bss_start_type = type <{ [8 x i8] }>
 %G_0x61a088_type = type <{ [8 x i8] }>
 %G_0x61a0a8_type = type <{ [4 x i8] }>
+%G_0x7291__rip__type = type <{ [4 x i8] }>
 %G__0x414b2e_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -43,6 +44,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 @G_0x61a088 = local_unnamed_addr global %G_0x61a088_type zeroinitializer
 @G_0x61a0a8 = local_unnamed_addr global %G_0x61a0a8_type zeroinitializer
+@G_0x7291__rip_ = global %G_0x7291__rip__type zeroinitializer
 @G__0x414b2e = global %G__0x414b2e_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
@@ -268,7 +270,7 @@ entry:
   %RSI.i24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %158 = add i64 %155, -24
   store i64 %158, i64* %RSI.i24, align 8
-  %159 = add i64 %157, 29345
+  %159 = add i64 %157, add (i64 ptrtoint (%G_0x7291__rip__type* @G_0x7291__rip_ to i64), i64 8)
   %160 = add i64 %157, 16
   store i64 %160, i64* %3, align 8
   %161 = inttoptr i64 %159 to i32*
@@ -782,7 +784,7 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 29337
+  %6 = add i64 %5, ptrtoint (%G_0x7291__rip__type* @G_0x7291__rip_ to i64)
   %7 = add i64 %5, 8
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*

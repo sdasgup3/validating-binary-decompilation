@@ -4,6 +4,9 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x1a9__rip__type = type <{ [8 x i8] }>
+%G_0x293__rip__type = type <{ [8 x i8] }>
+%G_0x39f__rip__type = type <{ [8 x i8] }>
 %G_0x602074_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -39,6 +42,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x1a9__rip_ = global %G_0x1a9__rip__type zeroinitializer
+@G_0x293__rip_ = global %G_0x293__rip__type zeroinitializer
+@G_0x39f__rip_ = global %G_0x39f__rip__type zeroinitializer
 @G_0x602074 = local_unnamed_addr global %G_0x602074_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
@@ -821,7 +827,7 @@ block_.L_400d09:                                  ; preds = %block_400cd5, %bloc
   store i64 %519, i64* %3, align 8
   %524 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 ()* @lrand48 to i64), %struct.Memory* %MEMORY.2)
   %525 = load i64, i64* %3, align 8
-  %526 = add i64 %525, 935
+  %526 = add i64 %525, ptrtoint (%G_0x39f__rip__type* @G_0x39f__rip_ to i64)
   %527 = add i64 %525, 8
   store i64 %527, i64* %3, align 8
   %528 = inttoptr i64 %526 to i64*
@@ -1565,7 +1571,7 @@ block_.L_400e15:                                  ; preds = %block_400de1, %bloc
   store i64 %1011, i64* %3, align 8
   %1016 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 ()* @lrand48 to i64), %struct.Memory* %MEMORY.5)
   %1017 = load i64, i64* %3, align 8
-  %1018 = add i64 %1017, 667
+  %1018 = add i64 %1017, ptrtoint (%G_0x293__rip__type* @G_0x293__rip_ to i64)
   %1019 = add i64 %1017, 8
   store i64 %1019, i64* %3, align 8
   %1020 = inttoptr i64 %1018 to i64*
@@ -2159,7 +2165,7 @@ block_.L_400efe:                                  ; preds = %block_.L_400ebe, %b
   store i64 %1400, i64* %3, align 8
   %1405 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 ()* @lrand48 to i64), %struct.Memory* %1224)
   %1406 = load i64, i64* %3, align 8
-  %1407 = add i64 %1406, 433
+  %1407 = add i64 %1406, ptrtoint (%G_0x1a9__rip__type* @G_0x1a9__rip_ to i64)
   %1408 = add i64 %1406, 8
   store i64 %1408, i64* %3, align 8
   %1409 = inttoptr i64 %1407 to i64*
@@ -4125,7 +4131,7 @@ define %struct.Memory* @routine_movsd_0x39f__rip____xmm0(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 935
+  %4 = add i64 %3, ptrtoint (%G_0x39f__rip__type* @G_0x39f__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -4847,7 +4853,7 @@ define %struct.Memory* @routine_movsd_0x293__rip____xmm0(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 667
+  %4 = add i64 %3, ptrtoint (%G_0x293__rip__type* @G_0x293__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*
@@ -5024,7 +5030,7 @@ define %struct.Memory* @routine_movsd_0x1a9__rip____xmm0(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 433
+  %4 = add i64 %3, ptrtoint (%G_0x1a9__rip__type* @G_0x1a9__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

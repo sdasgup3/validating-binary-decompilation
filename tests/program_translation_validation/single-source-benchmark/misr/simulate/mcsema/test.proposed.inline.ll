@@ -16,6 +16,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400520__rodata_type = type <{ [4 x i8] }>
 %seg_400524__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400558__eh_frame_type = type <{ [208 x i8] }>
+%G_0x1a9__rip__type = type <{ [8 x i8] }>
+%G_0x293__rip__type = type <{ [8 x i8] }>
+%G_0x39f__rip__type = type <{ [8 x i8] }>
 %G_0x602074_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -79,6 +82,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400520__rodata = internal constant %seg_400520__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
 @seg_400524__eh_frame_hdr = internal constant %seg_400524__eh_frame_hdr_type <{ [52 x i8] c"\01\1B\03;0\00\00\00\05\00\00\00|\FE\FF\FFL\00\00\00\AC\FE\FF\FFx\00\00\00d\FF\FF\FF\8C\00\00\00|\FF\FF\FF\A4\00\00\00\EC\FF\FF\FF\EC\00\00\00" }>
 @seg_400558__eh_frame = internal constant %seg_400558__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\09\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
+@G_0x1a9__rip_ = global %G_0x1a9__rip__type zeroinitializer
+@G_0x293__rip_ = global %G_0x293__rip__type zeroinitializer
+@G_0x39f__rip_ = global %G_0x39f__rip__type zeroinitializer
 @G_0x602074 = global %G_0x602074_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -263,6 +269,10 @@ declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64)
 declare extern_weak x86_64_sysvcc i64 @time(i64)
 
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64)
+
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64)
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -2176,7 +2186,7 @@ block_.L_400d09:                                  ; preds = %block_400cf0, %bloc
   %YMM0.i459 = bitcast %union.VectorReg* %1334 to %"class.std::bitset"*
   %1335 = bitcast %"class.std::bitset"* %YMM0.i459 to i8*
   %1336 = load i64, i64* %PC.i458
-  %1337 = add i64 %1336, 935
+  %1337 = add i64 %1336, ptrtoint (%G_0x39f__rip__type* @G_0x39f__rip_ to i64)
   %1338 = load i64, i64* %PC.i458
   %1339 = add i64 %1338, 8
   store i64 %1339, i64* %PC.i458
@@ -4213,7 +4223,7 @@ block_.L_400e15:                                  ; preds = %block_400dfc, %bloc
   %YMM0.i275 = bitcast %union.VectorReg* %2754 to %"class.std::bitset"*
   %2755 = bitcast %"class.std::bitset"* %YMM0.i275 to i8*
   %2756 = load i64, i64* %PC.i274
-  %2757 = add i64 %2756, 667
+  %2757 = add i64 %2756, ptrtoint (%G_0x293__rip__type* @G_0x293__rip_ to i64)
   %2758 = load i64, i64* %PC.i274
   %2759 = add i64 %2758, 8
   store i64 %2759, i64* %PC.i274
@@ -5906,7 +5916,7 @@ block_.L_400efe:                                  ; preds = %block_400ee5, %bloc
   %YMM0.i114 = bitcast %union.VectorReg* %3931 to %"class.std::bitset"*
   %3932 = bitcast %"class.std::bitset"* %YMM0.i114 to i8*
   %3933 = load i64, i64* %PC.i113
-  %3934 = add i64 %3933, 433
+  %3934 = add i64 %3933, ptrtoint (%G_0x1a9__rip__type* @G_0x1a9__rip_ to i64)
   %3935 = load i64, i64* %PC.i113
   %3936 = add i64 %3935, 8
   store i64 %3936, i64* %PC.i113
@@ -9158,7 +9168,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 935
+  %10 = add i64 %9, ptrtoint (%G_0x39f__rip__type* @G_0x39f__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -10108,7 +10118,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 667
+  %10 = add i64 %9, ptrtoint (%G_0x293__rip__type* @G_0x293__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -10350,7 +10360,7 @@ block_400488:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = add i64 %9, 433
+  %10 = add i64 %9, ptrtoint (%G_0x1a9__rip__type* @G_0x1a9__rip_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

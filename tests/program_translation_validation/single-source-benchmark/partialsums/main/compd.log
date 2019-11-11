@@ -312,8 +312,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -884,6 +896,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x511__rip____xmm1
+Global Access Mismatch: 1305 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x511(%rip), %xmm1 Done...
 
 
@@ -962,6 +975,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x509__rip____xmm1
+Global Access Mismatch: 1297 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x509(%rip), %xmm1 Done...
 
 
@@ -1040,6 +1054,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x4e9__rip____xmm1
+Global Access Mismatch: 1265 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x4e9(%rip), %xmm1 Done...
 
 
@@ -1118,6 +1133,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x4c9__rip____xmm1
+Global Access Mismatch: 1233 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x4c9(%rip), %xmm1 Done...
 
 
@@ -1138,6 +1154,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x4d1__rip____xmm2
+Global Access Mismatch: 1241 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x4d1(%rip), %xmm2 Done...
 
 
@@ -1235,6 +1252,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x4a6__rip____xmm1
+Global Access Mismatch: 1198 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x4a6(%rip), %xmm1 Done...
 
 
@@ -1255,6 +1273,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x4a6__rip____xmm2
+Global Access Mismatch: 1198 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x4a6(%rip), %xmm2 Done...
 
 
@@ -1352,6 +1371,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x483__rip____xmm1
+Global Access Mismatch: 1163 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x483(%rip), %xmm1 Done...
 
 
@@ -1608,6 +1628,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x448__rip____xmm0
+Global Access Mismatch: 1104 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x448(%rip), %xmm0 Done...
 
 
@@ -1628,6 +1649,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x428__rip____xmm1
+Global Access Mismatch: 1072 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x428(%rip), %xmm1 Done...
 
 
@@ -1725,6 +1747,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x40c__rip____xmm1
+Global Access Mismatch: 1044 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x40c(%rip), %xmm1 Done...
 
 
@@ -2391,6 +2414,7 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x329__rip____xmm0
+Global Access Mismatch: 817 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x329(%rip), %xmm0 Done...
 
 
@@ -4510,5 +4534,5 @@ Decompiling Function: main Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-2.47user 0.43system 0:09.82elapsed 29%CPU (0avgtext+0avgdata 10980maxresident)k
-2088inputs+968outputs (0major+72953minor)pagefaults 0swaps
+2.55user 0.39system 0:09.80elapsed 30%CPU (0avgtext+0avgdata 11132maxresident)k
+0inputs+976outputs (0major+72269minor)pagefaults 0swaps

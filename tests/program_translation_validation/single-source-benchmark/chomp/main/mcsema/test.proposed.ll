@@ -179,8 +179,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -840,7 +852,7 @@ block_.L_4013be:
 
   %loadMem2_4013e8 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4013e8 = load i64, i64* %3
-  %call2_4013e8 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_4013e8, %struct.Memory* %loadMem2_4013e8)
+  %call2_4013e8 = call %struct.Memory* @ext___isoc99_scanf(%struct.State* %0, i64  %loadPC_4013e8, %struct.Memory* %loadMem2_4013e8)
   store %struct.Memory* %call2_4013e8, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40187c, %rdi	 RIP: 4013ed	 Bytes: 10
@@ -895,7 +907,7 @@ block_.L_4013be:
 
   %loadMem2_40141a = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_40141a = load i64, i64* %3
-  %call2_40141a = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_40141a, %struct.Memory* %loadMem2_40141a)
+  %call2_40141a = call %struct.Memory* @ext___isoc99_scanf(%struct.State* %0, i64  %loadPC_40141a, %struct.Memory* %loadMem2_40141a)
   store %struct.Memory* %call2_40141a, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40189c, %rdi	 RIP: 40141f	 Bytes: 10
@@ -950,7 +962,7 @@ block_.L_4013be:
 
   %loadMem2_401446 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401446 = load i64, i64* %3
-  %call2_401446 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_401446, %struct.Memory* %loadMem2_401446)
+  %call2_401446 = call %struct.Memory* @ext___isoc99_scanf(%struct.State* %0, i64  %loadPC_401446, %struct.Memory* %loadMem2_401446)
   store %struct.Memory* %call2_401446, %struct.Memory** %MEMORY
 
   ; Code: movl %eax, -0x7c(%rbp)	 RIP: 40144b	 Bytes: 3
@@ -1657,7 +1669,7 @@ block_.L_40164b:
 
   %loadMem2_401678 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_401678 = load i64, i64* %3
-  %call2_401678 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_401678, %struct.Memory* %loadMem2_401678)
+  %call2_401678 = call %struct.Memory* @ext___isoc99_scanf(%struct.State* %0, i64  %loadPC_401678, %struct.Memory* %loadMem2_401678)
   store %struct.Memory* %call2_401678, %struct.Memory** %MEMORY
 
   ; Code: movq $0x40190e, %rdi	 RIP: 40167d	 Bytes: 10
@@ -1712,7 +1724,7 @@ block_.L_40164b:
 
   %loadMem2_4016b0 = load %struct.Memory*, %struct.Memory** %MEMORY
   %loadPC_4016b0 = load i64, i64* %3
-  %call2_4016b0 = call %struct.Memory* @ext_(%struct.State* %0, i64  %loadPC_4016b0, %struct.Memory* %loadMem2_4016b0)
+  %call2_4016b0 = call %struct.Memory* @ext___isoc99_scanf(%struct.State* %0, i64  %loadPC_4016b0, %struct.Memory* %loadMem2_4016b0)
   store %struct.Memory* %call2_4016b0, %struct.Memory** %MEMORY
 
   ; Code: movq $0x401956, %rdi	 RIP: 4016b5	 Bytes: 10

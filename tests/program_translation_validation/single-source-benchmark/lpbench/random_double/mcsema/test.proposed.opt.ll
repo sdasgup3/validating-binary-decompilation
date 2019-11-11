@@ -5,6 +5,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
 %G_0x602050_type = type <{ [8 x i8] }>
+%G_0x9eb__rip__type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -40,6 +41,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 @G_0x602050 = local_unnamed_addr global %G_0x602050_type zeroinitializer
+@G_0x9eb__rip_ = global %G_0x9eb__rip__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -246,7 +248,7 @@ block_.L_400835:                                  ; preds = %routine_idivq__rcx.
   %121 = phi i64 [ %84, %routine_idivq__rcx.exit ], [ %98, %block_40081f ]
   %122 = phi i64 [ %97, %routine_idivq__rcx.exit ], [ %120, %block_40081f ]
   %123 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
-  %124 = add i64 %122, 2547
+  %124 = add i64 %122, ptrtoint (%G_0x9eb__rip__type* @G_0x9eb__rip_ to i64)
   %125 = add i64 %122, 8
   store i64 %125, i64* %3, align 8
   %126 = inttoptr i64 %124 to double*
@@ -845,7 +847,7 @@ define %struct.Memory* @routine_movsd_0x9eb__rip____xmm0(%struct.State* nocaptur
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 2547
+  %4 = add i64 %3, ptrtoint (%G_0x9eb__rip__type* @G_0x9eb__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

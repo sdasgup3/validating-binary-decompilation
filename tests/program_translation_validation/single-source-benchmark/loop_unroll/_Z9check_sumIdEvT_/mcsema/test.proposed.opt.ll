@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x15095__rip__type = type <{ [8 x i8] }>
 %G_0x61c080_type = type <{ [8 x i8] }>
 %G_0x61c0a8_type = type <{ [4 x i8] }>
 %G__0x4167ea_type = type <{ [8 x i8] }>
@@ -41,6 +42,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x15095__rip_ = global %G_0x15095__rip__type zeroinitializer
 @G_0x61c080 = local_unnamed_addr global %G_0x61c080_type zeroinitializer
 @G_0x61c0a8 = local_unnamed_addr global %G_0x61c0a8_type zeroinitializer
 @G__0x4167ea = global %G__0x4167ea_type zeroinitializer
@@ -139,7 +141,7 @@ entry:
   %58 = add i64 %55, -16
   store i64 %58, i64* %RSI.i24, align 8
   %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
-  %60 = add i64 %57, 86181
+  %60 = add i64 %57, add (i64 ptrtoint (%G_0x15095__rip__type* @G_0x15095__rip_ to i64), i64 8)
   %61 = add i64 %57, 16
   store i64 %61, i64* %3, align 8
   %62 = inttoptr i64 %60 to double*
@@ -427,7 +429,7 @@ define %struct.Memory* @routine_movsd_0x15095__rip____xmm1(%struct.State* nocapt
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 86173
+  %4 = add i64 %3, ptrtoint (%G_0x15095__rip__type* @G_0x15095__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

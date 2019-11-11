@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_408fd0__Z4fillIPllEvT_S1_T0_-mcsema-diff.dot'...
+Writing 'sub_408fd0__Z4fillIPllEvT_S1_T0_-mcsema-diff.dot':Done
+
+Writing '_Z4fillIPllEvT_S1_T0_-proposed-diff.dot'...
+Writing '_Z4fillIPllEvT_S1_T0_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z4fillIPllEvT_S1_T0_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z4fillIPllEvT_S1_T0_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+9.99user 0.18system 0:10.17elapsed 99%CPU (0avgtext+0avgdata 54324maxresident)k
+0inputs+376outputs (0major+10461minor)pagefaults 0swaps

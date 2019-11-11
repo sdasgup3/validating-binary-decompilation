@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'gen_random-mcsema-diff.dot'...
+Writing 'gen_random-mcsema-diff.dot':Done
+
+Writing 'sub_400610_gen_random-proposed-diff.dot'...
+Writing 'sub_400610_gen_random-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [gen_random] from mcsema/test.proposed.opt.ll
+Extracting function [gen_random] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+2.02user 0.94system 0:03.10elapsed 95%CPU (0avgtext+0avgdata 12772maxresident)k
+0inputs+376outputs (0major+1408minor)pagefaults 0swaps

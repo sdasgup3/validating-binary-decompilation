@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'srand-mcsema-diff.dot'...
+Writing 'srand-mcsema-diff.dot':Done
+
+Writing 'sub_400650_srand-proposed-diff.dot'...
+Writing 'sub_400650_srand-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [srand] from mcsema/test.proposed.opt.ll
+Extracting function [srand] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+0.44user 0.09system 0:00.55elapsed 97%CPU (0avgtext+0avgdata 12804maxresident)k
+0inputs+88outputs (0major+983minor)pagefaults 0swaps

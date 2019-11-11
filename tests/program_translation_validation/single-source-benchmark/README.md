@@ -1,12 +1,23 @@
 ## Current Status
-```
-Total: 3062
-Pass: 2140
-Fail: 922
-```
+### Status check commands
+  ```
+  cat docs/matchPass.log | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "both-exact-match" | wc
+  cat docs/matchPass.log | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "m2p-multi-match" | wc
+  cat docs/matchPass.log | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "p2m-multi-match" | wc
+  cat docs/matchPass.log | parallel "cd {}; ../../../../scripts/check_status.sh --msg {} --match ; cd -" | grep "Fail" | wc
+  ```
+### Current Status
+ - Current status
+  ```
+  Total pass: 2089
+    both-exact: 2052
+    m2p-multi-match: 37
+    p2m-multi-match: 0
 
-
-
+  Total fail: 973
+    Blessed:  117(blessed reason in FailureReason)
+    Real:  117(blessed reason in FailureReason) + 856
+  ```
 ## [Already populated] Create the wllvm binaries & Extract the bc files
 ```bash
 git clone git@github.com:llvm-mirror/test-suite.git
@@ -46,6 +57,7 @@ cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt ; cd 
 ### Run compd
 ```bash
 cat docs/makefilelist.txt | parallel   "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
+# cat docs/compdPass.log | parallel   "echo; echo {}; echo =======;  make -C {} compd" |& tee docs/compd.log
 grep "Pass" docs/compd.log > docs/compdPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/compdPass.log --file docs/makefilelist.txt --show 1 > docs/compdFail.log
 ```

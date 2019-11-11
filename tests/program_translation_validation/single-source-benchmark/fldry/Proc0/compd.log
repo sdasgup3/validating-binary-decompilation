@@ -282,8 +282,20 @@ declare extern_weak x86_64_sysvcc i64 @strncmp(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @strtoll(i64, i64, i64) #18
 declare extern_weak x86_64_sysvcc i64 @time(i64) #18
 declare extern_weak x86_64_sysvcc i64 @ungetc(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_join(i64, i64) #18
+declare extern_weak x86_64_sysvcc i64 @pthread_create(i64, i64, i64, i64) #18
 
 declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
+
+define internal %struct.Memory* @ext_pthread_create(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64)* @pthread_create to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
+
+define internal %struct.Memory* @ext_pthread_join(%struct.State*, i64, %struct.Memory*) #18 {
+  %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @pthread_join to i64), %struct.Memory* %2)
+  ret %struct.Memory* %4
+}
 
 define internal %struct.Memory* @ext_gettimeofday(%struct.State*, i64, %struct.Memory*) #18 {
   %4 = call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @gettimeofday to i64), %struct.Memory* %2)
@@ -1021,6 +1033,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x945__rip____xmm0
+Global Access Mismatch: 2381 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x945(%rip), %xmm0 Done...
 
 
@@ -1059,6 +1072,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x941__rip____xmm1
+Global Access Mismatch: 2377 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x941(%rip), %xmm1 Done...
 
 
@@ -1795,6 +1809,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x86a__rip____xmm0
+Global Access Mismatch: 2162 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x86a(%rip), %xmm0 Done...
 
 
@@ -1814,6 +1829,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x86a__rip____xmm1
+Global Access Mismatch: 2162 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x86a(%rip), %xmm1 Done...
 
 
@@ -2323,6 +2339,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x7fa__rip____xmm0
+Global Access Mismatch: 2050 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x7fa(%rip), %xmm0 Done...
 
 
@@ -2456,6 +2473,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x7cc__rip____xmm0
+Global Access Mismatch: 2004 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x7cc(%rip), %xmm0 Done...
 
 
@@ -3192,6 +3210,7 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x707__rip____xmm0
+Global Access Mismatch: 1807 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x707(%rip), %xmm0 Done...
 
 
@@ -3604,5 +3623,5 @@ Decompiling Function: Proc0 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-2.25user 0.32system 0:09.50elapsed 27%CPU (0avgtext+0avgdata 10612maxresident)k
-1392inputs+848outputs (0major+57862minor)pagefaults 0swaps
+2.27user 0.29system 0:09.32elapsed 27%CPU (0avgtext+0avgdata 10648maxresident)k
+0inputs+848outputs (0major+57656minor)pagefaults 0swaps

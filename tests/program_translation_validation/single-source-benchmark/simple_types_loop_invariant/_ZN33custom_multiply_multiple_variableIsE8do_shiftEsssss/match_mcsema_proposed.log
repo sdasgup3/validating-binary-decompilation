@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_411c30__ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss-mcsema-diff.dot'...
+Writing 'sub_411c30__ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss-mcsema-diff.dot':Done
+
+Writing '_ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss-proposed-diff.dot'...
+Writing '_ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN33custom_multiply_multiple_variableIsE8do_shiftEsssss] from mcsema/test.proposed.opt.ll
+Matcher Done...
+18.96user 0.51system 0:19.82elapsed 98%CPU (0avgtext+0avgdata 54304maxresident)k
+0inputs+880outputs (0major+18499minor)pagefaults 0swaps

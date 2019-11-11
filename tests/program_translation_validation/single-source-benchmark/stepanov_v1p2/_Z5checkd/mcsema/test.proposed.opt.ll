@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x19d0__rip__type = type <{ [8 x i8] }>
 %G_0x605090_type = type <{ [4 x i8] }>
 %G__0x402e47_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -40,6 +41,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x19d0__rip_ = global %G_0x19d0__rip__type zeroinitializer
 @G_0x605090 = local_unnamed_addr global %G_0x605090_type zeroinitializer
 @G__0x402e47 = global %G__0x402e47_type zeroinitializer
 
@@ -104,7 +106,7 @@ entry:
   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 %38, i8* %39, align 1
   %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
-  %41 = add i64 %10, 6623
+  %41 = add i64 %10, add (i64 ptrtoint (%G_0x19d0__rip__type* @G_0x19d0__rip_ to i64), i64 7)
   %42 = add i64 %10, 15
   store i64 %42, i64* %3, align 8
   %43 = inttoptr i64 %41 to i64*
@@ -375,7 +377,7 @@ define %struct.Memory* @routine_movsd_0x19d0__rip____xmm1(%struct.State* nocaptu
 block_400488:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
-  %4 = add i64 %3, 6616
+  %4 = add i64 %3, ptrtoint (%G_0x19d0__rip__type* @G_0x19d0__rip_ to i64)
   %5 = add i64 %3, 8
   store i64 %5, i64* %PC, align 8
   %6 = inttoptr i64 %4 to i64*

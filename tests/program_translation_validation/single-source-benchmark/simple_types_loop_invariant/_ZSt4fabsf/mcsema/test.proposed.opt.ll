@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x757b__rip__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x757b__rip_ = global %G_0x757b__rip__type zeroinitializer
 
 ; Function Attrs: alwaysinline norecurse nounwind
 define %struct.Memory* @_ZSt4fabsf(%struct.State* noalias nocapture, i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #0 {
@@ -85,18 +87,18 @@ entry:
   store float 0.000000e+00, float* %31, align 1
   %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
   %33 = bitcast %union.VectorReg* %32 to i8*
-  %34 = add i64 %21, 30087
+  %34 = add i64 %21, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 5)
   %35 = add i64 %21, 12
   store i64 %35, i64* %3, align 8
   %36 = inttoptr i64 %34 to i32*
   %37 = load i32, i32* %36, align 4
-  %38 = add i64 %21, 30091
+  %38 = add i64 %21, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 9)
   %39 = inttoptr i64 %38 to i32*
   %40 = load i32, i32* %39, align 4
-  %41 = add i64 %21, 30095
+  %41 = add i64 %21, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 13)
   %42 = inttoptr i64 %41 to i32*
   %43 = load i32, i32* %42, align 4
-  %44 = add i64 %21, 30099
+  %44 = add i64 %21, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 17)
   %45 = inttoptr i64 %44 to i32*
   %46 = load i32, i32* %45, align 4
   %47 = bitcast %union.VectorReg* %32 to i32*
@@ -235,18 +237,18 @@ block_400488:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
   %4 = bitcast %union.VectorReg* %3 to i8*
   %5 = load i64, i64* %PC, align 8
-  %6 = add i64 %5, 30082
+  %6 = add i64 %5, ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64)
   %7 = add i64 %5, 7
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %6 to i32*
   %9 = load i32, i32* %8, align 4
-  %10 = add i64 %5, 30086
+  %10 = add i64 %5, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 4)
   %11 = inttoptr i64 %10 to i32*
   %12 = load i32, i32* %11, align 4
-  %13 = add i64 %5, 30090
+  %13 = add i64 %5, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 8)
   %14 = inttoptr i64 %13 to i32*
   %15 = load i32, i32* %14, align 4
-  %16 = add i64 %5, 30094
+  %16 = add i64 %5, add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 12)
   %17 = inttoptr i64 %16 to i32*
   %18 = load i32, i32* %17, align 4
   %19 = bitcast %union.VectorReg* %3 to i32*

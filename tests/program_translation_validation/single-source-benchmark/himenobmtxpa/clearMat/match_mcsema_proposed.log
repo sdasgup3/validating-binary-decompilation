@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4019a0_clearMat-mcsema-diff.dot'...
+Writing 'sub_4019a0_clearMat-mcsema-diff.dot':Done
+
+Writing 'clearMat-proposed-diff.dot'...
+Writing 'clearMat-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [clearMat] from ../binary/test.mcsema.opt.ll
+Extracting function [clearMat] from mcsema/test.proposed.opt.ll
+Matcher Done...
+2.18user 2.86system 0:05.05elapsed 99%CPU (0avgtext+0avgdata 15372maxresident)k
+0inputs+752outputs (0major+1642minor)pagefaults 0swaps

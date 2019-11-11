@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_414af0__ZN33custom_greaterthanequal_constantsItE8do_shiftEt-mcsema-diff.dot'...
+Writing 'sub_414af0__ZN33custom_greaterthanequal_constantsItE8do_shiftEt-mcsema-diff.dot':Done
+
+Writing '_ZN33custom_greaterthanequal_constantsItE8do_shiftEt-proposed-diff.dot'...
+Writing '_ZN33custom_greaterthanequal_constantsItE8do_shiftEt-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN33custom_greaterthanequal_constantsItE8do_shiftEt] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN33custom_greaterthanequal_constantsItE8do_shiftEt] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.69user 0.03system 0:03.76elapsed 99%CPU (0avgtext+0avgdata 66092maxresident)k
+0inputs+64outputs (0major+12810minor)pagefaults 0swaps
