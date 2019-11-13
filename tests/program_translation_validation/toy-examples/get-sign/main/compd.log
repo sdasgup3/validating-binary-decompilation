@@ -572,5 +572,5 @@ Decompiling Function: main Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.14user 0.02system 0:00.79elapsed 22%CPU (0avgtext+0avgdata 10400maxresident)k
-0inputs+144outputs (0major+5414minor)pagefaults 0swaps
+0.08user 0.01system 0:00.45elapsed 21%CPU (0avgtext+0avgdata 10372maxresident)k
+0inputs+144outputs (0major+5382minor)pagefaults 0swaps

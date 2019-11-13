@@ -188,15 +188,20 @@ def createMakefile(funcName):
         "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
     makeFile.write("" + "\n\n")
 
+    # makeFile.write(
+    #     "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
+    #     "\n")
+    # makeFile.write(
+    #     "	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1" + "\n")
+    # makeFile.write(
+    #     "	time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
+    # makeFile.write(
+    #     "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
     makeFile.write(
-        "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
+        "match: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1" + "\n")
-    makeFile.write(
-        "	time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
-    makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
+    	"	PYTHONPATH=/home/ubuntu/Github/llir-matcher:${PYTHONPATH} python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 ${OUTDIR}test.proposed.ll:${PROG} ${INDIR}test.mcsema.calls_renamed.ll:${PROG}" + "\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write("clean:" + "\n")
