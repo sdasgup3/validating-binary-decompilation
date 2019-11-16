@@ -1,0 +1,3542 @@
+{
+  "DecOneForthPix": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DecOneForthPix"
+  }, 
+  "writeMB_skip_flagInfo_CABAC": {
+    "num_inst": 189, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMB_skip_flagInfo_CABAC"
+  }, 
+  "biari_init_context": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "biari_init_context"
+  }, 
+  "testEndian": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "testEndian"
+  }, 
+  "free_colocated": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_colocated"
+  }, 
+  "ue_v": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ue_v"
+  }, 
+  "HaveAggregationSEI": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HaveAggregationSEI"
+  }, 
+  "report_stats_on_error": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "report_stats_on_error"
+  }, 
+  "GetSkipCostMB": {
+    "num_inst": 223, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GetSkipCostMB"
+  }, 
+  "GetStrength": {
+    "num_inst": 1015, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GetStrength"
+  }, 
+  "mm_unmark_short_term_for_reference": {
+    "num_inst": 209, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_unmark_short_term_for_reference"
+  }, 
+  "combine_field": {
+    "num_inst": 181, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "combine_field"
+  }, 
+  "getAffNeighbour": {
+    "num_inst": 825, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getAffNeighbour"
+  }, 
+  "FmoGenerateType6MapUnitMap": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType6MapUnitMap"
+  }, 
+  "se_linfo": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "se_linfo"
+  }, 
+  "copy_motion_vectors_MB": {
+    "num_inst": 798, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_motion_vectors_MB"
+  }, 
+  "ClearSubseqCharPayload": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearSubseqCharPayload"
+  }, 
+  "writeSyntaxElement_UVLC": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_UVLC"
+  }, 
+  "free_mem4Dint": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem4Dint"
+  }, 
+  "rc_init_seq": {
+    "num_inst": 229, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_init_seq"
+  }, 
+  "init_orig_buffers": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_orig_buffers"
+  }, 
+  "is_short_term_reference": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_short_term_reference"
+  }, 
+  "LumaResidualCoding": {
+    "num_inst": 196, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LumaResidualCoding"
+  }, 
+  "get_mem2D": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem2D"
+  }, 
+  "SetModesAndRefframeForBlocks": {
+    "num_inst": 1149, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetModesAndRefframeForBlocks"
+  }, 
+  "RDCost_for_8x8IntraBlocks": {
+    "num_inst": 296, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RDCost_for_8x8IntraBlocks"
+  }, 
+  "unmark_long_term_field_for_reference_by_frame_idx": {
+    "num_inst": 234, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unmark_long_term_field_for_reference_by_frame_idx"
+  }, 
+  "put_buffer_frame": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "put_buffer_frame"
+  }, 
+  "compare_fs_by_lt_pic_idx_asc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_fs_by_lt_pic_idx_asc"
+  }, 
+  "CheckAvailabilityOfNeighbors": {
+    "num_inst": 266, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckAvailabilityOfNeighbors"
+  }, 
+  "copyblock4x4": {
+    "num_inst": 133, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copyblock4x4"
+  }, 
+  "StoreNewMotionVectorsBlock8x8": {
+    "num_inst": 698, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StoreNewMotionVectorsBlock8x8"
+  }, 
+  "FreeNALU": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeNALU"
+  }, 
+  "biari_encode_symbol": {
+    "num_inst": 382, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "biari_encode_symbol"
+  }, 
+  "FreeNalPayloadBuffer": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeNalPayloadBuffer"
+  }, 
+  "gen_pic_list_from_frame_list": {
+    "num_inst": 269, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gen_pic_list_from_frame_list"
+  }, 
+  "FmoGenerateType2MapUnitMap": {
+    "num_inst": 128, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType2MapUnitMap"
+  }, 
+  "is_long_ref": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_long_ref"
+  }, 
+  "terminate_sequence": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "terminate_sequence"
+  }, 
+  "ParseQOffsetMatrix": {
+    "num_inst": 259, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ParseQOffsetMatrix"
+  }, 
+  "CloseAnnexbFile": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseAnnexbFile"
+  }, 
+  "SubPelBlockSearchBiPred": {
+    "num_inst": 7297, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SubPelBlockSearchBiPred"
+  }, 
+  "unary_bin_encode": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unary_bin_encode"
+  }, 
+  "SubPelBlockMotionSearch": {
+    "num_inst": 1573, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SubPelBlockMotionSearch"
+  }, 
+  "UpdateSceneInformation": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateSceneInformation"
+  }, 
+  "writeMBLayer": {
+    "num_inst": 1159, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMBLayer"
+  }, 
+  "start_macroblock": {
+    "num_inst": 1290, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "start_macroblock"
+  }, 
+  "SetImgType": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetImgType"
+  }, 
+  "FmoGetFirstMacroblockInSlice": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGetFirstMacroblockInSlice"
+  }, 
+  "unary_exp_golomb_mv_encode": {
+    "num_inst": 85, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unary_exp_golomb_mv_encode"
+  }, 
+  "ClosePanScanRectInfo": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClosePanScanRectInfo"
+  }, 
+  "estimate_weighting_factor_B_slice": {
+    "num_inst": 1582, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "estimate_weighting_factor_B_slice"
+  }, 
+  "delete_contexts_TextureInfo": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "delete_contexts_TextureInfo"
+  }, 
+  "init_dec_ref_pic_marking_buffer": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_dec_ref_pic_marking_buffer"
+  }, 
+  "writeSyntaxElement_fixed": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_fixed"
+  }, 
+  "get_pic_num_x": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_pic_num_x"
+  }, 
+  "DisplayEncoderParams": {
+    "num_inst": 82, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DisplayEncoderParams"
+  }, 
+  "free_mem_FME": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_FME"
+  }, 
+  "WriteAnnexbNALU": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteAnnexbNALU"
+  }, 
+  "get_mem_bwmincost": {
+    "num_inst": 170, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_bwmincost"
+  }, 
+  "UpdatePixelMap": {
+    "num_inst": 204, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdatePixelMap"
+  }, 
+  "UMVLine16Y_11": {
+    "num_inst": 184, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UMVLine16Y_11"
+  }, 
+  "poc_based_ref_management": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "poc_based_ref_management"
+  }, 
+  "is_used_for_reference": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_used_for_reference"
+  }, 
+  "ComposeRTPPacket": {
+    "num_inst": 97, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ComposeRTPPacket"
+  }, 
+  "compare_fs_by_poc_asc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_fs_by_poc_asc"
+  }, 
+  "FastPelY_14": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FastPelY_14"
+  }, 
+  "gop_pyramid": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gop_pyramid"
+  }, 
+  "SetCtxModelNumber": {
+    "num_inst": 115, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetCtxModelNumber"
+  }, 
+  "QP2Qstep": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "QP2Qstep"
+  }, 
+  "setbitscount": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "setbitscount"
+  }, 
+  "TransformDecision": {
+    "num_inst": 208, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TransformDecision"
+  }, 
+  "idr_memory_management": {
+    "num_inst": 90, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "idr_memory_management"
+  }, 
+  "delete_contexts_MotionInfo": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "delete_contexts_MotionInfo"
+  }, 
+  "BlockMotionSearch": {
+    "num_inst": 3103, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "BlockMotionSearch"
+  }, 
+  "Error_Concealment": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Error_Concealment"
+  }, 
+  "SetupFastFullPelSearch": {
+    "num_inst": 962, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetupFastFullPelSearch"
+  }, 
+  "field_flag_inference": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "field_flag_inference"
+  }, 
+  "updateMADModel": {
+    "num_inst": 290, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "updateMADModel"
+  }, 
+  "clip1a": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clip1a"
+  }, 
+  "Get_Direct_Motion_Vectors": {
+    "num_inst": 2814, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Get_Direct_Motion_Vectors"
+  }, 
+  "free_mem_mincost": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_mincost"
+  }, 
+  "init_top_bot_planes": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_top_bot_planes"
+  }, 
+  "store_coding_state": {
+    "num_inst": 210, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "store_coding_state"
+  }, 
+  "output_one_frame_from_dpb": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "output_one_frame_from_dpb"
+  }, 
+  "write_one_macroblock": {
+    "num_inst": 276, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_one_macroblock"
+  }, 
+  "find_SATD": {
+    "num_inst": 215, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "find_SATD"
+  }, 
+  "put_buffer_top": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "put_buffer_top"
+  }, 
+  "CloseSparePicture": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSparePicture"
+  }, 
+  "Configure": {
+    "num_inst": 274, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Configure"
+  }, 
+  "ResetFastFullIntegerSearch": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ResetFastFullIntegerSearch"
+  }, 
+  "get_long_term_pic": {
+    "num_inst": 154, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_long_term_pic"
+  }, 
+  "alloc_ref_pic_list_reordering_buffer": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_ref_pic_list_reordering_buffer"
+  }, 
+  "StoreMV8x8": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StoreMV8x8"
+  }, 
+  "put_buffer_bot": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "put_buffer_bot"
+  }, 
+  "free_global_buffers": {
+    "num_inst": 303, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_global_buffers"
+  }, 
+  "writeLumaCoeff4x4_CABAC": {
+    "num_inst": 214, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeLumaCoeff4x4_CABAC"
+  }, 
+  "InitializeFastFullIntegerSearch": {
+    "num_inst": 369, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitializeFastFullIntegerSearch"
+  }, 
+  "AddUpSADQuarter": {
+    "num_inst": 523, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AddUpSADQuarter"
+  }, 
+  "CloseSceneInformation": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSceneInformation"
+  }, 
+  "CompressSpareMBMap": {
+    "num_inst": 417, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CompressSpareMBMap"
+  }, 
+  "InitEncoderParams": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "InitEncoderParams"
+  }, 
+  "slice_too_big": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "slice_too_big"
+  }, 
+  "FmoMB2SliceGroup": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoMB2SliceGroup"
+  }, 
+  "CalculateQuant8Param": {
+    "num_inst": 464, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CalculateQuant8Param"
+  }, 
+  "dct_luma": {
+    "num_inst": 1405, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_luma"
+  }, 
+  "getLuma4x4Neighbour": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getLuma4x4Neighbour"
+  }, 
+  "CheckParameterName": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckParameterName"
+  }, 
+  "OpenRTPFile": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "OpenRTPFile"
+  }, 
+  "set_MB_parameters": {
+    "num_inst": 162, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_MB_parameters"
+  }, 
+  "dpb_split_field": {
+    "num_inst": 2832, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dpb_split_field"
+  }, 
+  "Init_Motion_Search_Module": {
+    "num_inst": 404, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Init_Motion_Search_Module"
+  }, 
+  "ProfileCheck": {
+    "num_inst": 153, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ProfileCheck"
+  }, 
+  "ParseMatrix": {
+    "num_inst": 259, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ParseMatrix"
+  }, 
+  "CloseSubseqInfo": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSubseqInfo"
+  }, 
+  "UpdateUser_data_registered_itu_t_t35": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateUser_data_registered_itu_t_t35"
+  }, 
+  "no_mem_exit": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "no_mem_exit"
+  }, 
+  "FinalizeSpareMBMap": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeSpareMBMap"
+  }, 
+  "init_global_buffers": {
+    "num_inst": 316, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_global_buffers"
+  }, 
+  "create_coding_state": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "create_coding_state"
+  }, 
+  "get_mem_mv": {
+    "num_inst": 182, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_mv"
+  }, 
+  "Mode_Decision_for_8x8IntraBlocks": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Mode_Decision_for_8x8IntraBlocks"
+  }, 
+  "init_poc": {
+    "num_inst": 85, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_poc"
+  }, 
+  "arienco_create_encoding_environment": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "arienco_create_encoding_environment"
+  }, 
+  "get_short_term_pic": {
+    "num_inst": 154, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_short_term_pic"
+  }, 
+  "get_mb_pos": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mb_pos"
+  }, 
+  "alloc_colocated": {
+    "num_inst": 132, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_colocated"
+  }, 
+  "start_sequence": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "start_sequence"
+  }, 
+  "InitPanScanRectInfo": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitPanScanRectInfo"
+  }, 
+  "arienco_delete_encoding_environment": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "arienco_delete_encoding_environment"
+  }, 
+  "arienco_start_encoding": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "arienco_start_encoding"
+  }, 
+  "free_mem_bwmincost": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_bwmincost"
+  }, 
+  "GenerateFullPelRepresentation": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateFullPelRepresentation"
+  }, 
+  "decode_one_mb": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "decode_one_mb"
+  }, 
+  "SetModesAndRefframe": {
+    "num_inst": 262, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetModesAndRefframe"
+  }, 
+  "frame_mode_buffer": {
+    "num_inst": 92, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "frame_mode_buffer"
+  }, 
+  "store_contexts": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "store_contexts"
+  }, 
+  "Mode_Decision_for_Intra4x4Macroblock": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Mode_Decision_for_Intra4x4Macroblock"
+  }, 
+  "writeRefFrame_CABAC": {
+    "num_inst": 340, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeRefFrame_CABAC"
+  }, 
+  "UnifiedOneForthPix": {
+    "num_inst": 1711, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UnifiedOneForthPix"
+  }, 
+  "FmoGenerateType3MapUnitMap": {
+    "num_inst": 275, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType3MapUnitMap"
+  }, 
+  "writeCBP_CABAC": {
+    "num_inst": 233, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeCBP_CABAC"
+  }, 
+  "dpb_combine_field": {
+    "num_inst": 1524, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dpb_combine_field"
+  }, 
+  "write_sei_message": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_sei_message"
+  }, 
+  "write_PPS": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_PPS"
+  }, 
+  "FinalizeSubseqLayerInfo": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeSubseqLayerInfo"
+  }, 
+  "is_long_term_reference": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_long_term_reference"
+  }, 
+  "clear_picture": {
+    "num_inst": 101, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_picture"
+  }, 
+  "is_short_ref": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_short_ref"
+  }, 
+  "RCModelEstimator": {
+    "num_inst": 236, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RCModelEstimator"
+  }, 
+  "write_significance_map": {
+    "num_inst": 213, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_significance_map"
+  }, 
+  "rc_init_GOP": {
+    "num_inst": 228, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_init_GOP"
+  }, 
+  "FmoGetPreviousMBNr": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGetPreviousMBNr"
+  }, 
+  "predict_nnz_chroma": {
+    "num_inst": 301, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "predict_nnz_chroma"
+  }, 
+  "fill_frame_num_gap": {
+    "num_inst": 79, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fill_frame_num_gap"
+  }, 
+  "FmoGetFirstMBOfSliceGroup": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGetFirstMBOfSliceGroup"
+  }, 
+  "init_field": {
+    "num_inst": 690, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "init_field"
+  }, 
+  "flush_dpb": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "flush_dpb"
+  }, 
+  "LumaPrediction4x4": {
+    "num_inst": 598, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LumaPrediction4x4"
+  }, 
+  "get_mem3Dint64": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem3Dint64"
+  }, 
+  "CloseSubseqChar": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSubseqChar"
+  }, 
+  "compute_residue_b8block": {
+    "num_inst": 165, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compute_residue_b8block"
+  }, 
+  "FullPelBlockMotionBiPred": {
+    "num_inst": 1228, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FullPelBlockMotionBiPred"
+  }, 
+  "FmoSliceGroupCompletelyCoded": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoSliceGroupCompletelyCoded"
+  }, 
+  "Init_QOffsetMatrix": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Init_QOffsetMatrix"
+  }, 
+  "get_mem3Dshort": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem3Dshort"
+  }, 
+  "compute_residue_mb": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compute_residue_mb"
+  }, 
+  "Get_Direct_CostMB": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Get_Direct_CostMB"
+  }, 
+  "BPredPartitionCost": {
+    "num_inst": 663, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BPredPartitionCost"
+  }, 
+  "init_mbaff_lists": {
+    "num_inst": 173, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_mbaff_lists"
+  }, 
+  "LevelCheck": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LevelCheck"
+  }, 
+  "FinalizeRandomAccess": {
+    "num_inst": 96, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeRandomAccess"
+  }, 
+  "GenerateVUISequenceParameters": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateVUISequenceParameters"
+  }, 
+  "pred_weight_table": {
+    "num_inst": 402, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "pred_weight_table"
+  }, 
+  "free_mem2Dshort": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem2Dshort"
+  }, 
+  "mm_unmark_all_long_term_for_reference": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_unmark_all_long_term_for_reference"
+  }, 
+  "free_slice": {
+    "num_inst": 86, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_slice"
+  }, 
+  "main": {
+    "num_inst": 729, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "getChroma4x4Neighbour": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getChroma4x4Neighbour"
+  }, 
+  "get_mem_mincost": {
+    "num_inst": 170, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_mincost"
+  }, 
+  "MADModelEstimator": {
+    "num_inst": 234, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MADModelEstimator"
+  }, 
+  "writeVlcByteAlign": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeVlcByteAlign"
+  }, 
+  "PartitionMotionSearch": {
+    "num_inst": 432, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PartitionMotionSearch"
+  }, 
+  "FmoGenerateType1MapUnitMap": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType1MapUnitMap"
+  }, 
+  "FreePPS": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreePPS"
+  }, 
+  "test_wp_B_slice": {
+    "num_inst": 1236, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "test_wp_B_slice"
+  }, 
+  "writeMotionVector8x8": {
+    "num_inst": 333, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMotionVector8x8"
+  }, 
+  "ChromaPrediction4x4": {
+    "num_inst": 547, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ChromaPrediction4x4"
+  }, 
+  "GeneratePic_parameter_set_NALU": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GeneratePic_parameter_set_NALU"
+  }, 
+  "ClearUser_data_registered_itu_t_t35": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearUser_data_registered_itu_t_t35"
+  }, 
+  "update_ref_list": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "update_ref_list"
+  }, 
+  "spec_srand": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_srand"
+  }, 
+  "get_mem2Dint64": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem2Dint64"
+  }, 
+  "writeSyntaxElement2Buf_Fixed": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement2Buf_Fixed"
+  }, 
+  "writeDquant_CABAC": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeDquant_CABAC"
+  }, 
+  "RandomIntraUninit": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RandomIntraUninit"
+  }, 
+  "GeneratePic_parameter_set_rbsp": {
+    "num_inst": 512, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GeneratePic_parameter_set_rbsp"
+  }, 
+  "writeSyntaxElement_TotalZerosChromaDC": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_TotalZerosChromaDC"
+  }, 
+  "DefineThreshold": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DefineThreshold"
+  }, 
+  "CalculateOffsetParam": {
+    "num_inst": 411, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CalculateOffsetParam"
+  }, 
+  "direct_output": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "direct_output"
+  }, 
+  "free_storable_picture": {
+    "num_inst": 202, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_storable_picture"
+  }, 
+  "rc_update_pict": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_update_pict"
+  }, 
+  "create_contexts_MotionInfo": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "create_contexts_MotionInfo"
+  }, 
+  "FullPelBlockMotionSearch": {
+    "num_inst": 518, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FullPelBlockMotionSearch"
+  }, 
+  "init_frame": {
+    "num_inst": 590, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "init_frame"
+  }, 
+  "PutBigDoubleWord": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PutBigDoubleWord"
+  }, 
+  "RandomIntra": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RandomIntra"
+  }, 
+  "CalculateQuantParam": {
+    "num_inst": 1136, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CalculateQuantParam"
+  }, 
+  "buf2img": {
+    "num_inst": 242, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "buf2img"
+  }, 
+  "create_contexts_TextureInfo": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "create_contexts_TextureInfo"
+  }, 
+  "UMVLineX": {
+    "num_inst": 191, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UMVLineX"
+  }, 
+  "writeMB_transform_size_CABAC": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMB_transform_size_CABAC"
+  }, 
+  "free_mem3Dpel": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem3Dpel"
+  }, 
+  "Mode_Decision_for_new_8x8IntraBlocks": {
+    "num_inst": 3536, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Mode_Decision_for_new_8x8IntraBlocks"
+  }, 
+  "TestEncoderParams": {
+    "num_inst": 293, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "TestEncoderParams"
+  }, 
+  "I16Offset": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "I16Offset"
+  }, 
+  "free_picture": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_picture"
+  }, 
+  "FmoUninit": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoUninit"
+  }, 
+  "SetupLargerBlocks": {
+    "num_inst": 1247, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetupLargerBlocks"
+  }, 
+  "GenerateParameterSets": {
+    "num_inst": 128, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateParameterSets"
+  }, 
+  "mm_unmark_all_short_term_for_reference": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_unmark_all_short_term_for_reference"
+  }, 
+  "get_mem2Dpel": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem2Dpel"
+  }, 
+  "FmoGenerateType5MapUnitMap": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType5MapUnitMap"
+  }, 
+  "remove_unused_frame_from_dpb": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "remove_unused_frame_from_dpb"
+  }, 
+  "code_a_picture": {
+    "num_inst": 175, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "code_a_picture"
+  }, 
+  "encode_one_slice": {
+    "num_inst": 394, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "encode_one_slice"
+  }, 
+  "OneComponentChromaPrediction4x4": {
+    "num_inst": 477, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "OneComponentChromaPrediction4x4"
+  }, 
+  "FmoEndPicture": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoEndPicture"
+  }, 
+  "mb_is_available": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mb_is_available"
+  }, 
+  "UpdateRandomAccess": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateRandomAccess"
+  }, 
+  "DeblockMb": {
+    "num_inst": 406, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DeblockMb"
+  }, 
+  "reorder_short_term": {
+    "num_inst": 106, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reorder_short_term"
+  }, 
+  "FindSkipModeMotionVector": {
+    "num_inst": 413, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FindSkipModeMotionVector"
+  }, 
+  "get_mem4Dint": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem4Dint"
+  }, 
+  "get_mem2Dint": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem2Dint"
+  }, 
+  "ReportFirstframe": {
+    "num_inst": 83, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportFirstframe"
+  }, 
+  "reorder_ref_pic_list": {
+    "num_inst": 186, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reorder_ref_pic_list"
+  }, 
+  "XRate": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "XRate"
+  }, 
+  "writeReferenceFrame": {
+    "num_inst": 216, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeReferenceFrame"
+  }, 
+  "FreeSPS": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeSPS"
+  }, 
+  "InitSceneInformation": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSceneInformation"
+  }, 
+  "sign": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sign"
+  }, 
+  "picture_coding_decision": {
+    "num_inst": 97, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "picture_coding_decision"
+  }, 
+  "UpdateUser_data_unregistered": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateUser_data_unregistered"
+  }, 
+  "alloc_storable_picture": {
+    "num_inst": 184, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_storable_picture"
+  }, 
+  "FastFullPelBlockMotionSearch": {
+    "num_inst": 276, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FastFullPelBlockMotionSearch"
+  }, 
+  "replace_top_pic_with_frame": {
+    "num_inst": 105, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "replace_top_pic_with_frame"
+  }, 
+  "symbol2vlc": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "symbol2vlc"
+  }, 
+  "free_frame_store": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_frame_store"
+  }, 
+  "writeLumaCoeff8x8_CABAC": {
+    "num_inst": 204, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeLumaCoeff8x8_CABAC"
+  }, 
+  "proceed2nextMacroblock": {
+    "num_inst": 378, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "proceed2nextMacroblock"
+  }, 
+  "write_significant_coefficients": {
+    "num_inst": 152, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_significant_coefficients"
+  }, 
+  "InitUser_data_unregistered": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitUser_data_unregistered"
+  }, 
+  "CeilLog2": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CeilLog2"
+  }, 
+  "get_smallest_poc": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_smallest_poc"
+  }, 
+  "B8Mode2Value": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "B8Mode2Value"
+  }, 
+  "update_field_frame_contexts": {
+    "num_inst": 146, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "update_field_frame_contexts"
+  }, 
+  "write_terminating_bit": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_terminating_bit"
+  }, 
+  "getNeighbour": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getNeighbour"
+  }, 
+  "arienco_done_encoding": {
+    "num_inst": 367, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "arienco_done_encoding"
+  }, 
+  "SATD8X8": {
+    "num_inst": 912, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SATD8X8"
+  }, 
+  "FinalizeSubseqInfo": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeSubseqInfo"
+  }, 
+  "DeblockFrame": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DeblockFrame"
+  }, 
+  "FmoGenerateMapUnitToSliceGroupMap": {
+    "num_inst": 101, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateMapUnitToSliceGroupMap"
+  }, 
+  "unary_exp_golomb_level_encode": {
+    "num_inst": 58, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unary_exp_golomb_level_encode"
+  }, 
+  "mm_mark_current_picture_long_term": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_mark_current_picture_long_term"
+  }, 
+  "init_gop_structure": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_gop_structure"
+  }, 
+  "Intra16x16_Mode_Decision": {
+    "num_inst": 772, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Intra16x16_Mode_Decision"
+  }, 
+  "GeneratePictureParameterSet": {
+    "num_inst": 424, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GeneratePictureParameterSet"
+  }, 
+  "biari_encode_symbol_final": {
+    "num_inst": 308, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "biari_encode_symbol_final"
+  }, 
+  "encode_enhancement_layer": {
+    "num_inst": 570, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "encode_enhancement_layer"
+  }, 
+  "remove_frame_from_dpb": {
+    "num_inst": 109, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "remove_frame_from_dpb"
+  }, 
+  "clear_rdopt": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_rdopt"
+  }, 
+  "process_2nd_IGOP": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "process_2nd_IGOP"
+  }, 
+  "init_slice": {
+    "num_inst": 565, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_slice"
+  }, 
+  "GetCtxModelNumber": {
+    "num_inst": 1149, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GetCtxModelNumber"
+  }, 
+  "cabac_new_slice": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "cabac_new_slice"
+  }, 
+  "write_picture": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_picture"
+  }, 
+  "SetCoeffAndReconstruction8x8": {
+    "num_inst": 1086, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetCoeffAndReconstruction8x8"
+  }, 
+  "RDCost_for_macroblocks": {
+    "num_inst": 929, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RDCost_for_macroblocks"
+  }, 
+  "writeMB_typeInfo_CABAC": {
+    "num_inst": 868, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMB_typeInfo_CABAC"
+  }, 
+  "mm_assign_long_term_frame_idx": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_assign_long_term_frame_idx"
+  }, 
+  "ClearRandomAccess": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearRandomAccess"
+  }, 
+  "init_lists": {
+    "num_inst": 1397, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_lists"
+  }, 
+  "GetConfigFileContent": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GetConfigFileContent"
+  }, 
+  "levrun_linfo_inter": {
+    "num_inst": 100, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "levrun_linfo_inter"
+  }, 
+  "AllocSPS": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocSPS"
+  }, 
+  "init_rdopt": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_rdopt"
+  }, 
+  "compare_pic_by_poc_desc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_pic_by_poc_desc"
+  }, 
+  "poc_ref_pic_reorder": {
+    "num_inst": 553, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "poc_ref_pic_reorder"
+  }, 
+  "ReportP": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportP"
+  }, 
+  "RestoreMVBlock8x8": {
+    "num_inst": 818, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RestoreMVBlock8x8"
+  }, 
+  "cbp_linfo_inter": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "cbp_linfo_inter"
+  }, 
+  "ReportB": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportB"
+  }, 
+  "PatchMatrix": {
+    "num_inst": 195, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PatchMatrix"
+  }, 
+  "InitUser_data_registered_itu_t_t35": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitUser_data_registered_itu_t_t35"
+  }, 
+  "free_mem2Dint64": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem2Dint64"
+  }, 
+  "get_mem_DCcoeff": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_DCcoeff"
+  }, 
+  "free_mem_mv": {
+    "num_inst": 139, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_mv"
+  }, 
+  "intrapred_luma_16x16": {
+    "num_inst": 660, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "intrapred_luma_16x16"
+  }, 
+  "free_mem3Dint64": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem3Dint64"
+  }, 
+  "dummy_slice_too_big": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dummy_slice_too_big"
+  }, 
+  "clear_gop_structure": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_gop_structure"
+  }, 
+  "updateQuantizationParameter": {
+    "num_inst": 1913, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "updateQuantizationParameter"
+  }, 
+  "Get_Reference_Block": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Get_Reference_Block"
+  }, 
+  "dec_ref_pic_marking": {
+    "num_inst": 156, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dec_ref_pic_marking"
+  }, 
+  "RTPUpdateTimestamp": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RTPUpdateTimestamp"
+  }, 
+  "Partition_BC_Header": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Partition_BC_Header"
+  }, 
+  "ParseContent": {
+    "num_inst": 246, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ParseContent"
+  }, 
+  "ComposeSparePictureMessage": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ComposeSparePictureMessage"
+  }, 
+  "writeSyntaxElement_NumCoeffTrailingOnes": {
+    "num_inst": 99, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_NumCoeffTrailingOnes"
+  }, 
+  "FmoGetNextMBNr": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGetNextMBNr"
+  }, 
+  "ClearUser_data_unregistered": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearUser_data_unregistered"
+  }, 
+  "MBType2Value": {
+    "num_inst": 142, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MBType2Value"
+  }, 
+  "BIDPartitionCost": {
+    "num_inst": 651, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BIDPartitionCost"
+  }, 
+  "dct_luma_16x16": {
+    "num_inst": 2175, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_luma_16x16"
+  }, 
+  "CheckReliabilityOfRef": {
+    "num_inst": 1070, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckReliabilityOfRef"
+  }, 
+  "RestoreMV8x8": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RestoreMV8x8"
+  }, 
+  "copy_rdopt_data": {
+    "num_inst": 1351, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_rdopt_data"
+  }, 
+  "InitSubseqChar": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSubseqChar"
+  }, 
+  "PaddAutoCropBorders": {
+    "num_inst": 247, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PaddAutoCropBorders"
+  }, 
+  "compare_fs_by_poc_desc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_fs_by_poc_desc"
+  }, 
+  "report": {
+    "num_inst": 899, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "report"
+  }, 
+  "terminate_macroblock": {
+    "num_inst": 660, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "terminate_macroblock"
+  }, 
+  "InitSubseqInfo": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSubseqInfo"
+  }, 
+  "FinalizeUser_data_unregistered": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeUser_data_unregistered"
+  }, 
+  "InitSparePicture": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSparePicture"
+  }, 
+  "free_orig_planes": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_orig_planes"
+  }, 
+  "writeChromaIntraPredMode": {
+    "num_inst": 104, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeChromaIntraPredMode"
+  }, 
+  "init_dpb": {
+    "num_inst": 140, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_dpb"
+  }, 
+  "CalculateOffset8Param": {
+    "num_inst": 207, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CalculateOffset8Param"
+  }, 
+  "free_mem2D": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem2D"
+  }, 
+  "alloc_frame_store": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_frame_store"
+  }, 
+  "writeB8_typeInfo_CABAC": {
+    "num_inst": 298, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeB8_typeInfo_CABAC"
+  }, 
+  "get_mem2Dshort": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem2Dshort"
+  }, 
+  "ZeroRef": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ZeroRef"
+  }, 
+  "CloseSEIMessages": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSEIMessages"
+  }, 
+  "FmoInit": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoInit"
+  }, 
+  "RDCost_for_8x8blocks": {
+    "num_inst": 1279, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RDCost_for_8x8blocks"
+  }, 
+  "CloseRTPFile": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseRTPFile"
+  }, 
+  "writeMotionInfo2NAL": {
+    "num_inst": 509, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMotionInfo2NAL"
+  }, 
+  "updateRCModel": {
+    "num_inst": 438, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "updateRCModel"
+  }, 
+  "FmoGenerateType0MapUnitMap": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType0MapUnitMap"
+  }, 
+  "test_wp_P_slice": {
+    "num_inst": 504, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "test_wp_P_slice"
+  }, 
+  "set_last_dquant": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_last_dquant"
+  }, 
+  "PutPel_11": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PutPel_11"
+  }, 
+  "store_coding_state_cs_cm": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "store_coding_state_cs_cm"
+  }, 
+  "RBSPtoNALU": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RBSPtoNALU"
+  }, 
+  "PutPel_14": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PutPel_14"
+  }, 
+  "AllocNALU": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocNALU"
+  }, 
+  "SetMotionVectorPredictor": {
+    "num_inst": 1580, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetMotionVectorPredictor"
+  }, 
+  "finalize_sei_message": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "finalize_sei_message"
+  }, 
+  "StoreMVBlock8x8": {
+    "num_inst": 818, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StoreMVBlock8x8"
+  }, 
+  "modify_redundant_pic_cnt": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "modify_redundant_pic_cnt"
+  }, 
+  "writeSyntaxElement_Intra4x4PredictionMode": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_Intra4x4PredictionMode"
+  }, 
+  "compute_colocated": {
+    "num_inst": 4727, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compute_colocated"
+  }, 
+  "write_unpaired_field": {
+    "num_inst": 85, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_unpaired_field"
+  }, 
+  "gen_field_ref_ids": {
+    "num_inst": 128, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gen_field_ref_ids"
+  }, 
+  "Conceal_Error": {
+    "num_inst": 966, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Conceal_Error"
+  }, 
+  "clear_sei_message": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_sei_message"
+  }, 
+  "get_mem_ACcoeff": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_ACcoeff"
+  }, 
+  "free_mem_ACcoeff": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_ACcoeff"
+  }, 
+  "clip1a_chr": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clip1a_chr"
+  }, 
+  "PartCalMad": {
+    "num_inst": 173, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PartCalMad"
+  }, 
+  "information_init": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "information_init"
+  }, 
+  "compare_fs_by_frame_num_desc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_fs_by_frame_num_desc"
+  }, 
+  "IdentifyProfile": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IdentifyProfile"
+  }, 
+  "FastIntegerPelBlockMotionSearch": {
+    "num_inst": 2804, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FastIntegerPelBlockMotionSearch"
+  }, 
+  "UMVPelY_14": {
+    "num_inst": 182, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UMVPelY_14"
+  }, 
+  "WriteRTPNALU": {
+    "num_inst": 133, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteRTPNALU"
+  }, 
+  "ReportIntra": {
+    "num_inst": 78, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportIntra"
+  }, 
+  "field_mode_buffer": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "field_mode_buffer"
+  }, 
+  "ref_pic_list_reordering": {
+    "num_inst": 232, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ref_pic_list_reordering"
+  }, 
+  "write_and_store_CBP_block_bit": {
+    "num_inst": 551, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_and_store_CBP_block_bit"
+  }, 
+  "estimate_weighting_factor_P_slice": {
+    "num_inst": 828, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "estimate_weighting_factor_P_slice"
+  }, 
+  "biari_encode_symbol_eq_prob": {
+    "num_inst": 290, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "biari_encode_symbol_eq_prob"
+  }, 
+  "AllocNalPayloadBuffer": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocNalPayloadBuffer"
+  }, 
+  "find_sad_16x16": {
+    "num_inst": 962, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "find_sad_16x16"
+  }, 
+  "writeLumaCoeff8x8": {
+    "num_inst": 85, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeLumaCoeff8x8"
+  }, 
+  "arienco_bits_written": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "arienco_bits_written"
+  }, 
+  "reorder_long_term": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reorder_long_term"
+  }, 
+  "getNonAffNeighbour": {
+    "num_inst": 237, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getNonAffNeighbour"
+  }, 
+  "copy_params": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_params"
+  }, 
+  "free_top_bot_planes": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_top_bot_planes"
+  }, 
+  "skip_intrabk_SAD": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "skip_intrabk_SAD"
+  }, 
+  "FastLineX": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FastLineX"
+  }, 
+  "get_mb_block_pos": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mb_block_pos"
+  }, 
+  "free_slice_list": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_slice_list"
+  }, 
+  "ComputeFrameMAD": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ComputeFrameMAD"
+  }, 
+  "levrun_linfo_intra": {
+    "num_inst": 101, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "levrun_linfo_intra"
+  }, 
+  "CheckAvailabilityOfNeighborsCABAC": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckAvailabilityOfNeighborsCABAC"
+  }, 
+  "dct_chroma_sp": {
+    "num_inst": 2524, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dct_chroma_sp"
+  }, 
+  "free_mem3Dshort": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem3Dshort"
+  }, 
+  "update_ltref_list": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "update_ltref_list"
+  }, 
+  "intrapred_luma8x8": {
+    "num_inst": 4545, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "intrapred_luma8x8"
+  }, 
+  "RandomIntraInit": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RandomIntraInit"
+  }, 
+  "symbol2uvlc": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "symbol2uvlc"
+  }, 
+  "cbp_linfo_intra": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "cbp_linfo_intra"
+  }, 
+  "EdgeLoop": {
+    "num_inst": 1098, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "EdgeLoop"
+  }, 
+  "FinalizePanScanRectInfo": {
+    "num_inst": 99, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizePanScanRectInfo"
+  }, 
+  "intrapred_luma": {
+    "num_inst": 1855, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "intrapred_luma"
+  }, 
+  "RDCost_for_4x4Blocks_Chroma": {
+    "num_inst": 278, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RDCost_for_4x4Blocks_Chroma"
+  }, 
+  "writeIntra4x4Modes": {
+    "num_inst": 254, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeIntra4x4Modes"
+  }, 
+  "rc_alloc": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_alloc"
+  }, 
+  "InitRandomAccess": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitRandomAccess"
+  }, 
+  "error": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "error"
+  }, 
+  "mm_update_max_long_term_frame_idx": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_update_max_long_term_frame_idx"
+  }, 
+  "PatchInp": {
+    "num_inst": 1173, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PatchInp"
+  }, 
+  "FreeParameterSets": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeParameterSets"
+  }, 
+  "GenerateSeq_parameter_set_NALU": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateSeq_parameter_set_NALU"
+  }, 
+  "Sort": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Sort"
+  }, 
+  "writeSyntaxElement2Buf_UVLC": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement2Buf_UVLC"
+  }, 
+  "WriteRTPPacket": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteRTPPacket"
+  }, 
+  "u_v": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "u_v"
+  }, 
+  "ClearFastFullIntegerSearch": {
+    "num_inst": 163, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearFastFullIntegerSearch"
+  }, 
+  "encode_one_frame": {
+    "num_inst": 827, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "encode_one_frame"
+  }, 
+  "compare_pic_by_poc_asc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_pic_by_poc_asc"
+  }, 
+  "free_mem4Dshort": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem4Dshort"
+  }, 
+  "SliceHeader": {
+    "num_inst": 596, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SliceHeader"
+  }, 
+  "unmark_for_long_term_reference": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unmark_for_long_term_reference"
+  }, 
+  "adaptive_memory_management": {
+    "num_inst": 119, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "adaptive_memory_management"
+  }, 
+  "Build_Status_Map": {
+    "num_inst": 149, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Build_Status_Map"
+  }, 
+  "calc_buffer": {
+    "num_inst": 360, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "calc_buffer"
+  }, 
+  "reset_coding_state_cs_cm": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset_coding_state_cs_cm"
+  }, 
+  "writeSyntaxElement_CABAC": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_CABAC"
+  }, 
+  "Get_Reference_Pixel": {
+    "num_inst": 1380, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Get_Reference_Pixel"
+  }, 
+  "start_slice": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "start_slice"
+  }, 
+  "ClearPanScanRectInfoPayload": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearPanScanRectInfoPayload"
+  }, 
+  "rd_pic_decision": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rd_pic_decision"
+  }, 
+  "mark_pic_long_term": {
+    "num_inst": 467, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mark_pic_long_term"
+  }, 
+  "predict_nnz": {
+    "num_inst": 145, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "predict_nnz"
+  }, 
+  "free_dpb": {
+    "num_inst": 70, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_dpb"
+  }, 
+  "FinalizeSubseqChar": {
+    "num_inst": 160, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeSubseqChar"
+  }, 
+  "OpenAnnexbFile": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "OpenAnnexbFile"
+  }, 
+  "ChromaResidualCoding": {
+    "num_inst": 923, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ChromaResidualCoding"
+  }, 
+  "writeSyntaxElement_Level_VLCN": {
+    "num_inst": 96, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_Level_VLCN"
+  }, 
+  "Qstep2QP": {
+    "num_inst": 77, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Qstep2QP"
+  }, 
+  "ReportRB": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportRB"
+  }, 
+  "SATD": {
+    "num_inst": 552, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SATD"
+  }, 
+  "report_frame_statistic": {
+    "num_inst": 711, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "report_frame_statistic"
+  }, 
+  "OneComponentLumaPrediction4x4": {
+    "num_inst": 284, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "OneComponentLumaPrediction4x4"
+  }, 
+  "rc_init_pict": {
+    "num_inst": 773, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_init_pict"
+  }, 
+  "writeChromaCoeff": {
+    "num_inst": 520, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeChromaCoeff"
+  }, 
+  "free_mem2Dint": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem2Dint"
+  }, 
+  "decide_fld_frame": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "decide_fld_frame"
+  }, 
+  "BType2CtxRef": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BType2CtxRef"
+  }, 
+  "Init_QMatrix": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Init_QMatrix"
+  }, 
+  "FmoGenerateMBAmap": {
+    "num_inst": 138, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateMBAmap"
+  }, 
+  "CloseUser_data_registered_itu_t_t35": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseUser_data_registered_itu_t_t35"
+  }, 
+  "UpdatePanScanRectInfo": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdatePanScanRectInfo"
+  }, 
+  "writeUnit": {
+    "num_inst": 136, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeUnit"
+  }, 
+  "ParameterNameToMapIndex": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ParameterNameToMapIndex"
+  }, 
+  "init_out_buffer": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_out_buffer"
+  }, 
+  "create_context_memory": {
+    "num_inst": 209, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "create_context_memory"
+  }, 
+  "writeMVD_CABAC": {
+    "num_inst": 419, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeMVD_CABAC"
+  }, 
+  "writeSyntaxElement_Level_VLC1": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_Level_VLC1"
+  }, 
+  "dct_chroma_DC": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_chroma_DC"
+  }, 
+  "find_snr": {
+    "num_inst": 807, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "find_snr"
+  }, 
+  "free_mem3D": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem3D"
+  }, 
+  "FmoGenerateType4MapUnitMap": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGenerateType4MapUnitMap"
+  }, 
+  "CalculateFrameNumber": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "CalculateFrameNumber"
+  }, 
+  "GenerateSeq_parameter_set_rbsp": {
+    "num_inst": 488, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateSeq_parameter_set_rbsp"
+  }, 
+  "SetMotionVectorsMB": {
+    "num_inst": 946, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetMotionVectorsMB"
+  }, 
+  "FmoStartPicture": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoStartPicture"
+  }, 
+  "insert_picture_in_dpb": {
+    "num_inst": 180, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "insert_picture_in_dpb"
+  }, 
+  "init_contexts": {
+    "num_inst": 1090, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_contexts"
+  }, 
+  "get_picture_type": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_picture_type"
+  }, 
+  "flush_direct_output": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "flush_direct_output"
+  }, 
+  "ue_linfo": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ue_linfo"
+  }, 
+  "writeSyntaxElement_NumCoeffTrailingOnesChromaDC": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_NumCoeffTrailingOnesChromaDC"
+  }, 
+  "CloseRandomAccess": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseRandomAccess"
+  }, 
+  "ReadOneFrame": {
+    "num_inst": 222, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadOneFrame"
+  }, 
+  "LumaPrediction4x4Bi": {
+    "num_inst": 571, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LumaPrediction4x4Bi"
+  }, 
+  "exp_golomb_encode_eq_prob": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "exp_golomb_encode_eq_prob"
+  }, 
+  "DefineThresholdMB": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DefineThresholdMB"
+  }, 
+  "free_mem2Dpel": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem2Dpel"
+  }, 
+  "FmoSetLastMacroblockInSlice": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoSetLastMacroblockInSlice"
+  }, 
+  "uninit_out_buffer": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uninit_out_buffer"
+  }, 
+  "writeFieldModeInfo_CABAC": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeFieldModeInfo_CABAC"
+  }, 
+  "mm_unmark_long_term_for_reference": {
+    "num_inst": 258, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mm_unmark_long_term_for_reference"
+  }, 
+  "writeCBPandLumaCoeff": {
+    "num_inst": 799, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeCBPandLumaCoeff"
+  }, 
+  "dct_luma_sp": {
+    "num_inst": 1543, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "dct_luma_sp"
+  }, 
+  "decide_intrabk_SAD": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "decide_intrabk_SAD"
+  }, 
+  "UpdateSubseqInfo": {
+    "num_inst": 112, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateSubseqInfo"
+  }, 
+  "dct_luma8x8": {
+    "num_inst": 2271, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_luma8x8"
+  }, 
+  "write_out_picture": {
+    "num_inst": 411, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_out_picture"
+  }, 
+  "free_context_memory": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_context_memory"
+  }, 
+  "dump_dpb": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dump_dpb"
+  }, 
+  "spec_rand": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "spec_rand"
+  }, 
+  "writeCIPredMode_CABAC": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeCIPredMode_CABAC"
+  }, 
+  "GenerateSequenceParameterSet": {
+    "num_inst": 443, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GenerateSequenceParameterSet"
+  }, 
+  "FinalizeUser_data_registered_itu_t_t35": {
+    "num_inst": 116, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeUser_data_registered_itu_t_t35"
+  }, 
+  "Mode_Decision_for_4x4IntraBlocks": {
+    "num_inst": 3252, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Mode_Decision_for_4x4IntraBlocks"
+  }, 
+  "se_v": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "se_v"
+  }, 
+  "reset_coding_state": {
+    "num_inst": 210, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset_coding_state"
+  }, 
+  "get_mem3Dint": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem3Dint"
+  }, 
+  "copyblock_sp": {
+    "num_inst": 754, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copyblock_sp"
+  }, 
+  "sliding_window_memory_management": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sliding_window_memory_management"
+  }, 
+  "FinalizeSceneInformation": {
+    "num_inst": 97, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FinalizeSceneInformation"
+  }, 
+  "MbAffPostProc": {
+    "num_inst": 439, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MbAffPostProc"
+  }, 
+  "writeUVLC2buffer": {
+    "num_inst": 82, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeUVLC2buffer"
+  }, 
+  "write_buffer": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_buffer"
+  }, 
+  "set_ref_pic_num": {
+    "num_inst": 309, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_ref_pic_num"
+  }, 
+  "malloc_picture": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "malloc_picture"
+  }, 
+  "calc_MAD": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "calc_MAD"
+  }, 
+  "rc_free": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_free"
+  }, 
+  "get_mem3D": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem3D"
+  }, 
+  "writeCBP_BIT_CABAC": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeCBP_BIT_CABAC"
+  }, 
+  "writeSyntaxElement_Run": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_Run"
+  }, 
+  "LowPassForIntra8x8Pred": {
+    "num_inst": 316, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LowPassForIntra8x8Pred"
+  }, 
+  "store_macroblock_parameters": {
+    "num_inst": 544, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "store_macroblock_parameters"
+  }, 
+  "get_mem_FME": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem_FME"
+  }, 
+  "writeSyntaxElement_VLC": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_VLC"
+  }, 
+  "Clear_Motion_Search_Module": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Clear_Motion_Search_Module"
+  }, 
+  "compare_pic_by_pic_num_desc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_pic_by_pic_num_desc"
+  }, 
+  "encode_one_macroblock": {
+    "num_inst": 10949, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "encode_one_macroblock"
+  }, 
+  "interpret_gop_structure": {
+    "num_inst": 320, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "interpret_gop_structure"
+  }, 
+  "PatchInputNoFrames": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PatchInputNoFrames"
+  }, 
+  "InitSEIMessages": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSEIMessages"
+  }, 
+  "writeRunLevel_CABAC": {
+    "num_inst": 96, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeRunLevel_CABAC"
+  }, 
+  "get_mem3Dpel": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem3Dpel"
+  }, 
+  "get_mem4Dshort": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_mem4Dshort"
+  }, 
+  "find_distortion": {
+    "num_inst": 377, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "find_distortion"
+  }, 
+  "free_mem_DCcoeff": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem_DCcoeff"
+  }, 
+  "get_LeakyBucketRate": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "get_LeakyBucketRate"
+  }, 
+  "writeSyntaxElement_TotalZeros": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeSyntaxElement_TotalZeros"
+  }, 
+  "u_1": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "u_1"
+  }, 
+  "dct_chroma": {
+    "num_inst": 4232, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_chroma"
+  }, 
+  "decode_one_b8block": {
+    "num_inst": 659, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "decode_one_b8block"
+  }, 
+  "ReportNALNonVLCBits": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReportNALNonVLCBits"
+  }, 
+  "distortion_fld": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "distortion_fld"
+  }, 
+  "IntraChromaPrediction4x4": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IntraChromaPrediction4x4"
+  }, 
+  "set_mbaff_parameters": {
+    "num_inst": 584, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_mbaff_parameters"
+  }, 
+  "dct_chroma4x4": {
+    "num_inst": 1182, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dct_chroma4x4"
+  }, 
+  "writeIntraPredMode_CABAC": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeIntraPredMode_CABAC"
+  }, 
+  "create_pyramid": {
+    "num_inst": 454, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "create_pyramid"
+  }, 
+  "RandomIntraNewPicture": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RandomIntraNewPicture"
+  }, 
+  "FastLine16Y_11": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FastLine16Y_11"
+  }, 
+  "RDCost_for_4x4IntraBlocks": {
+    "num_inst": 289, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RDCost_for_4x4IntraBlocks"
+  }, 
+  "FmoGetLastCodedMBOfSliceGroup": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FmoGetLastCodedMBOfSliceGroup"
+  }, 
+  "init_img": {
+    "num_inst": 731, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "init_img"
+  }, 
+  "IntraChromaPrediction": {
+    "num_inst": 1471, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IntraChromaPrediction"
+  }, 
+  "Scaling_List": {
+    "num_inst": 125, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Scaling_List"
+  }, 
+  "writeout_picture": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeout_picture"
+  }, 
+  "write_stored_frame": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_stored_frame"
+  }, 
+  "delete_coding_state": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "delete_coding_state"
+  }, 
+  "Mode_Decision_for_new_Intra8x8Macroblock": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Mode_Decision_for_new_Intra8x8Macroblock"
+  }, 
+  "JMHelpExit": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "JMHelpExit"
+  }, 
+  "img2buf": {
+    "num_inst": 311, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "img2buf"
+  }, 
+  "rc_update_pict_frame": {
+    "num_inst": 149, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rc_update_pict_frame"
+  }, 
+  "IdentifyLevel": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IdentifyLevel"
+  }, 
+  "SetRefAndMotionVectors": {
+    "num_inst": 1444, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetRefAndMotionVectors"
+  }, 
+  "CalculateSparePicture": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CalculateSparePicture"
+  }, 
+  "set_stored_macroblock_parameters": {
+    "num_inst": 2311, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_stored_macroblock_parameters"
+  }, 
+  "CloseUser_data_unregistered": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseUser_data_unregistered"
+  }, 
+  "compare_pic_by_lt_pic_num_asc": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compare_pic_by_lt_pic_num_asc"
+  }, 
+  "rdPictureCoding": {
+    "num_inst": 299, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rdPictureCoding"
+  }, 
+  "Get_Direct_Cost8x8": {
+    "num_inst": 264, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Get_Direct_Cost8x8"
+  }, 
+  "AllocPPS": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocPPS"
+  }, 
+  "levrun_linfo_c2x2": {
+    "num_inst": 96, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "levrun_linfo_c2x2"
+  }, 
+  "CloseSubseqLayerInfo": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CloseSubseqLayerInfo"
+  }, 
+  "FastSubPelBlockMotionSearch": {
+    "num_inst": 589, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FastSubPelBlockMotionSearch"
+  }, 
+  "free_ref_pic_list_reordering_buffer": {
+    "num_inst": 87, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_ref_pic_list_reordering_buffer"
+  }, 
+  "LumaResidualCoding8x8": {
+    "num_inst": 1028, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LumaResidualCoding8x8"
+  }, 
+  "free_img": {
+    "num_inst": 138, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_img"
+  }, 
+  "AppendTmpbits2Buf": {
+    "num_inst": 182, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AppendTmpbits2Buf"
+  }, 
+  "ReportSP": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReportSP"
+  }, 
+  "SODBtoRBSP": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SODBtoRBSP"
+  }, 
+  "InitSubseqLayerInfo": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitSubseqLayerInfo"
+  }, 
+  "RBSPtoEBSP": {
+    "num_inst": 137, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "RBSPtoEBSP"
+  }, 
+  "GetBestTransformP8x8": {
+    "num_inst": 197, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GetBestTransformP8x8"
+  }, 
+  "getDpbSize": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getDpbSize"
+  }, 
+  "store_picture_in_dpb": {
+    "num_inst": 239, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "store_picture_in_dpb"
+  }, 
+  "field_picture": {
+    "num_inst": 329, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "field_picture"
+  }, 
+  "writeCoeff4x4_CAVLC": {
+    "num_inst": 901, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "writeCoeff4x4_CAVLC"
+  }, 
+  "unary_bin_max_encode": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unary_bin_max_encode"
+  }, 
+  "picture_structure_decision": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "picture_structure_decision"
+  }, 
+  "frame_picture": {
+    "num_inst": 297, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "frame_picture"
+  }, 
+  "init_ref_pic_list_reordering": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_ref_pic_list_reordering"
+  }, 
+  "UpdateSubseqChar": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateSubseqChar"
+  }, 
+  "ClearSubseqInfoPayload": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ClearSubseqInfoPayload"
+  }, 
+  "free_mem3Dint": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_mem3Dint"
+  }, 
+  "CAVLC_init": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CAVLC_init"
+  }, 
+  "CheckOffsetParameterName": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckOffsetParameterName"
+  }, 
+  "unmark_for_reference": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unmark_for_reference"
+  }, 
+  "UpdateDecoders": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "UpdateDecoders"
+  }, 
+  "unmark_long_term_frame_for_reference_by_frame_idx": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unmark_long_term_frame_for_reference_by_frame_idx"
+  }, 
+  "malloc_slice": {
+    "num_inst": 129, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "malloc_slice"
+  }, 
+  "terminate_slice": {
+    "num_inst": 134, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "terminate_slice"
+  }
+}

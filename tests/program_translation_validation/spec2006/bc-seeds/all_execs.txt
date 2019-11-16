@@ -1,0 +1,12 @@
+../../test-suite/build/External/SPEC/CINT2006/445.gobmk/445.gobmk
+../../test-suite/build/External/SPEC/CINT2006/462.libquantum/462.libquantum
+../../test-suite/build/External/SPEC/CINT2006/403.gcc/403.gcc
+../../test-suite/build/External/SPEC/CINT2006/456.hmmer/456.hmmer
+../../test-suite/build/External/SPEC/CINT2006/429.mcf/429.mcf
+../../test-suite/build/External/SPEC/CINT2006/483.xalancbmk/483.xalancbmk
+../../test-suite/build/External/SPEC/CINT2006/401.bzip2/401.bzip2
+../../test-suite/build/External/SPEC/CINT2006/471.omnetpp/471.omnetpp
+../../test-suite/build/External/SPEC/CINT2006/400.perlbench/400.perlbench
+../../test-suite/build/External/SPEC/CINT2006/473.astar/473.astar
+../../test-suite/build/External/SPEC/CINT2006/464.h264ref/464.h264ref
+../../test-suite/build/External/SPEC/CINT2006/458.sjeng/458.sjeng

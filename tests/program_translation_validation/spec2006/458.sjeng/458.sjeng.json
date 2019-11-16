@@ -1,0 +1,866 @@
+{
+  "push_pawn": {
+    "num_inst": 94, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_pawn"
+  }, 
+  "choose_book_move": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "choose_book_move"
+  }, 
+  "seedMT": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seedMT"
+  }, 
+  "ErrorIt": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ErrorIt"
+  }, 
+  "interrupt": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "interrupt"
+  }, 
+  "post_fail_thinking": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "post_fail_thinking"
+  }, 
+  "free_hash": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_hash"
+  }, 
+  "push_slidE": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_slidE"
+  }, 
+  "post_fl_thinking": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "post_fl_thinking"
+  }, 
+  "check_legal": {
+    "num_inst": 1674, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "check_legal"
+  }, 
+  "perft_debug": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "perft_debug"
+  }, 
+  "printHolding": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "printHolding"
+  }, 
+  "alloc_ecache": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_ecache"
+  }, 
+  "print_move": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "print_move"
+  }, 
+  "CheckBadFlow": {
+    "num_inst": 741, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CheckBadFlow"
+  }, 
+  "run_epd_testsuite": {
+    "num_inst": 153, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "run_epd_testsuite"
+  }, 
+  "add_capture": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "add_capture"
+  }, 
+  "main": {
+    "num_inst": 1324, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "suicide_pn_eval": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "suicide_pn_eval"
+  }, 
+  "ProbeTT": {
+    "num_inst": 359, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ProbeTT"
+  }, 
+  "setup_epd_line": {
+    "num_inst": 434, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "setup_epd_line"
+  }, 
+  "initialize_eval": {
+    "num_inst": 377, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "initialize_eval"
+  }, 
+  "addHolding": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "addHolding"
+  }, 
+  "QStoreTT": {
+    "num_inst": 86, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "QStoreTT"
+  }, 
+  "post_stat_thinking": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "post_stat_thinking"
+  }, 
+  "SwitchPromoted": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SwitchPromoted"
+  }, 
+  "StoreTT": {
+    "num_inst": 291, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StoreTT"
+  }, 
+  "gen": {
+    "num_inst": 1227, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gen"
+  }, 
+  "reloadMT": {
+    "num_inst": 133, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reloadMT"
+  }, 
+  "order_moves": {
+    "num_inst": 977, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "order_moves"
+  }, 
+  "l_king_mobility": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "l_king_mobility"
+  }, 
+  "push_king": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_king"
+  }, 
+  "freenodes": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "freenodes"
+  }, 
+  "LearnStoreTT": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "LearnStoreTT"
+  }, 
+  "f_in_check": {
+    "num_inst": 1734, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "f_in_check"
+  }, 
+  "clear_dp_tt": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_dp_tt"
+  }, 
+  "King": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "King"
+  }, 
+  "l_bishop_mobility": {
+    "num_inst": 79, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "l_bishop_mobility"
+  }, 
+  "unmake": {
+    "num_inst": 897, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unmake"
+  }, 
+  "std_pn_eval": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "std_pn_eval"
+  }, 
+  "see": {
+    "num_inst": 253, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "see"
+  }, 
+  "check_phase": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "check_phase"
+  }, 
+  "removeHolding": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "removeHolding"
+  }, 
+  "SwitchColor": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SwitchColor"
+  }, 
+  "pn2_eval": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "pn2_eval"
+  }, 
+  "update_ancestors": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "update_ancestors"
+  }, 
+  "post_fh_thinking": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "post_fh_thinking"
+  }, 
+  "s_rook_mobility": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s_rook_mobility"
+  }, 
+  "extended_in_check": {
+    "num_inst": 326, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "extended_in_check"
+  }, 
+  "run_autotest": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "run_autotest"
+  }, 
+  "proofnumbersearch": {
+    "num_inst": 439, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "proofnumbersearch"
+  }, 
+  "text_to_piece": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "text_to_piece"
+  }, 
+  "ProcessHoldings": {
+    "num_inst": 438, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ProcessHoldings"
+  }, 
+  "calc_attackers": {
+    "num_inst": 379, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "calc_attackers"
+  }, 
+  "DropremoveHolding": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DropremoveHolding"
+  }, 
+  "read_rcfile": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_rcfile"
+  }, 
+  "comp_to_coord": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "comp_to_coord"
+  }, 
+  "s_knight_mobility": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s_knight_mobility"
+  }, 
+  "is_move": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_move"
+  }, 
+  "qsearch": {
+    "num_inst": 335, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "qsearch"
+  }, 
+  "search_root": {
+    "num_inst": 990, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "search_root"
+  }, 
+  "rinput": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rinput"
+  }, 
+  "suicide_eval": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "suicide_eval"
+  }, 
+  "initialize_hash": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "initialize_hash"
+  }, 
+  "PutPiece": {
+    "num_inst": 116, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PutPiece"
+  }, 
+  "reset_ecache": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset_ecache"
+  }, 
+  "rtime": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rtime"
+  }, 
+  "post_thinking": {
+    "num_inst": 125, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "post_thinking"
+  }, 
+  "search": {
+    "num_inst": 1562, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "search"
+  }, 
+  "develop_node": {
+    "num_inst": 216, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "develop_node"
+  }, 
+  "toggle_bool": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "toggle_bool"
+  }, 
+  "Queen": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Queen"
+  }, 
+  "alloc_hash": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "alloc_hash"
+  }, 
+  "proofnumbercheck": {
+    "num_inst": 165, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "proofnumbercheck"
+  }, 
+  "GreetPartner": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GreetPartner"
+  }, 
+  "think": {
+    "num_inst": 899, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "think"
+  }, 
+  "initialize_zobrist": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "initialize_zobrist"
+  }, 
+  "reset_board": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset_board"
+  }, 
+  "DropaddHolding": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DropaddHolding"
+  }, 
+  "start_up": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "start_up"
+  }, 
+  "s_king_mobility": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s_king_mobility"
+  }, 
+  "remove_one": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "remove_one"
+  }, 
+  "tree_debug": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "tree_debug"
+  }, 
+  "add_move": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "add_move"
+  }, 
+  "is_attacked": {
+    "num_inst": 306, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_attacked"
+  }, 
+  "proofnumberscan": {
+    "num_inst": 639, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "proofnumberscan"
+  }, 
+  "black_saccers": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "black_saccers"
+  }, 
+  "s_bishop_mobility": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s_bishop_mobility"
+  }, 
+  "losers_eval": {
+    "num_inst": 866, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "losers_eval"
+  }, 
+  "free_ecache": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "free_ecache"
+  }, 
+  "in_check": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "in_check"
+  }, 
+  "bishop_mobility": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bishop_mobility"
+  }, 
+  "l_knight_mobility": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "l_knight_mobility"
+  }, 
+  "allocate_time": {
+    "num_inst": 227, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "allocate_time"
+  }, 
+  "setup_attackers": {
+    "num_inst": 383, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "setup_attackers"
+  }, 
+  "s_pawn_mobility": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s_pawn_mobility"
+  }, 
+  "stringize_pv": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "stringize_pv"
+  }, 
+  "Xfree": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Xfree"
+  }, 
+  "display_board": {
+    "num_inst": 126, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "display_board"
+  }, 
+  "l_rook_mobility": {
+    "num_inst": 79, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "l_rook_mobility"
+  }, 
+  "BegForPartner": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BegForPartner"
+  }, 
+  "check_solution": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "check_solution"
+  }, 
+  "verify_coord": {
+    "num_inst": 109, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "verify_coord"
+  }, 
+  "comp_to_san": {
+    "num_inst": 428, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "comp_to_san"
+  }, 
+  "tree": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "tree"
+  }, 
+  "HandlePartner": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HandlePartner"
+  }, 
+  "set_proof_and_disproof_numbers": {
+    "num_inst": 566, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_proof_and_disproof_numbers"
+  }, 
+  "white_saccers": {
+    "num_inst": 121, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "white_saccers"
+  }, 
+  "is_draw": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "is_draw"
+  }, 
+  "l_pawn_mobility": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "l_pawn_mobility"
+  }, 
+  "clear_tt": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_tt"
+  }, 
+  "init_book": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_book"
+  }, 
+  "nk_attacked": {
+    "num_inst": 286, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "nk_attacked"
+  }, 
+  "rook_mobility": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rook_mobility"
+  }, 
+  "rdelay": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rdelay"
+  }, 
+  "losers_pn_eval": {
+    "num_inst": 205, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "losers_pn_eval"
+  }, 
+  "reset_piece_square": {
+    "num_inst": 98, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset_piece_square"
+  }, 
+  "push_knighT": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_knighT"
+  }, 
+  "pn_eval": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "pn_eval"
+  }, 
+  "randomMT": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "randomMT"
+  }, 
+  "ResetHandValue": {
+    "num_inst": 2, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ResetHandValue"
+  }, 
+  "QProbeTT": {
+    "num_inst": 78, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "QProbeTT"
+  }, 
+  "storeECache": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "storeECache"
+  }, 
+  "make": {
+    "num_inst": 1008, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make"
+  }, 
+  "findlowest": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "findlowest"
+  }, 
+  "init_game": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_game"
+  }, 
+  "checkECache": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "checkECache"
+  }, 
+  "Rook": {
+    "num_inst": 131, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Rook"
+  }, 
+  "rdifftime": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "rdifftime"
+  }, 
+  "push_pawn_simple": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_pawn_simple"
+  }, 
+  "Knight": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Knight"
+  }, 
+  "suicide_mid_eval": {
+    "num_inst": 810, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "suicide_mid_eval"
+  }, 
+  "perft": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "perft"
+  }, 
+  "select_most_proving": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "select_most_proving"
+  }, 
+  "eval": {
+    "num_inst": 1358, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "eval"
+  }, 
+  "Xmalloc": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Xmalloc"
+  }, 
+  "try_drop": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "try_drop"
+  }, 
+  "Pawn": {
+    "num_inst": 124, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Pawn"
+  }, 
+  "HandlePtell": {
+    "num_inst": 861, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HandlePtell"
+  }, 
+  "check_piece_square": {
+    "num_inst": 152, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "check_piece_square"
+  }, 
+  "hash_extract_pv": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "hash_extract_pv"
+  }, 
+  "push_king_castle": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "push_king_castle"
+  }, 
+  "std_eval": {
+    "num_inst": 2312, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "std_eval"
+  }, 
+  "Bishop": {
+    "num_inst": 83, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Bishop"
+  }
+}

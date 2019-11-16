@@ -27,8 +27,11 @@ mkdir build ; cd !$
 cmake ../ -DCMAKE_C_COMPILER=wllvm -DCMAKE_CXX_COMPILER=wllvm++ -DCMAKE_C_FLAGS_RELEASE="-O0" -DCMAKE_CXX_FLAGS_RELEASE="-O0"
 cd SingleSource/Benchmarks
 make -j64 |& tee ~/Junk/log
+
 # Save all execs in bc-seeds/all_execs.txt
 # Use file commands to distinguish exec and directories
+find . -executable -type f &> ~/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/bc-seeds/all_execs.txt
+
 cat all_execs.txt | parallel "mkdir \$(basename {})"
 cat all_execs.txt | parallel "extract-bc  {} --output \$(basename {})/\$(basename {}).bc"
 cat all_execs.txt | parallel "llvm-dis \$(basename {})/\$(basename {}).bc -o  \$(basename {})/\$(basename {}).ll"
