@@ -18,10 +18,10 @@ genZ3Check() {
 
 compdCheck() {
   msg=$1
-  if grep -qw "error" compd.log; then
-    echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
-    exit 1
-  fi
+#  if grep -qw "error" compd.log; then
+#    echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
+#    exit 1
+#  fi
 
   if grep -q "Decompiling: Done" compd.log; then
     echo -e "\e[32mCompd Pass\e[39m:-" `pwd`:$msg

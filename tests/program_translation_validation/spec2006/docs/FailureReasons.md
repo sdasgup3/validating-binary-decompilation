@@ -37,3 +37,12 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/subprocess.py", line 190, in check_call
     raise CalledProcessError(retcode, cmd)
 ```
+
+## Compd
+  ```
+  makefilelist: 4075
+  wc docs/compdPass.log docs/compdErr.log
+  3883   3883 111880 docs/compdPass.log
+   192    192   5306 docs/compdErr.log
+  4075   4075 117186 total
+  ```
