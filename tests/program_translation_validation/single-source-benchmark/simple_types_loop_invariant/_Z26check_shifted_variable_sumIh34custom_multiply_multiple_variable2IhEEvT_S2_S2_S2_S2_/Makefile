@@ -18,8 +18,8 @@ compd_opt: ${OUTDIR}test.proposed.ll
 
 
 match: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
-	PYTHONPATH=/home/ubuntu/Github/llir-matcher:${PYTHONPATH} python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 ${OUTDIR}test.proposed.ll:${PROG} ${INDIR}test.mcsema.calls_renamed.ll:${PROG}
-
+	PYTHONPATH=/home/ubuntu/Github/llir-matcher:${PYTHONPATH} python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 ${OUTDIR}test.proposed.ll:${PROG} ${INDIR}test.mcsema.calls_renamed.ll:${PROG} 1>match.log 2>&1
+	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match
 
 clean:
 	rm mcsema/*.bc mcsema/*.ll

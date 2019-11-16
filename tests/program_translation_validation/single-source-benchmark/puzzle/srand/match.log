@@ -1,15 +1,21 @@
-[Info]: Check for multiple matches
-Iso Match Found
-Writing 'sub_400650_srand-mcsema-diff.dot'...
-Writing 'sub_400650_srand-mcsema-diff.dot':Done
-
-Writing 'srand-proposed-diff.dot'...
-Writing 'srand-proposed-diff.dot':Done
-
-Reading LLVM: ../binary/test.mcsema.opt.ll
-Reading LLVM: mcsema/test.proposed.opt.ll
-Extracting function [srand] from ../binary/test.mcsema.opt.ll
-Extracting function [srand] from mcsema/test.proposed.opt.ll
-Matcher Done...
-0.23user 0.25system 0:00.57elapsed 85%CPU (0avgtext+0avgdata 12732maxresident)k
-0inputs+80outputs (0major+976minor)pagefaults 0swaps
+/home/ubuntu/Install/llvm/llvm.4.0.0.install/bin/opt: /tmp/tmp3h2os_of-query.ll:462:24: error: invalid redefinition of function 'srand'
+define %struct.Memory* @srand(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
+                       ^
+[x] Failed to do opt
+[x] Saved reduced files to /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/puzzle/srand/mcsema/test.proposed.reduced.ll /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/puzzle/binary/test.mcsema.calls_renamed.reduced.ll
+/home/ubuntu/Github/llir-matcher/matcher/match.py:711: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(fd)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/Github/llir-matcher/matcher/match.py", line 726, in <module>
+    args.opt_cmd, args.max_iter, pfunction)
+  File "/home/ubuntu/Github/llir-matcher/matcher/match.py", line 51, in __init__
+    self.do_opt()
+  File "/home/ubuntu/Github/llir-matcher/matcher/match.py", line 582, in do_opt
+    env=MYENV)
+  File "/usr/lib/python3.6/subprocess.py", line 311, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '/home/ubuntu/Install/llvm/llvm.4.0.0.install/bin/opt -S -inline /tmp/tmp3h2os_of-query.ll -o /tmp/tmp3h2os_of-query.ll' returned non-zero exit status 1.

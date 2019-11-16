@@ -1,15 +1,571 @@
-[Info]: Check for multiple matches
-Iso Match Found
-Writing 'sub_40eb70__ZN19custom_constant_subIdE8do_shiftEd-mcsema-diff.dot'...
-Writing 'sub_40eb70__ZN19custom_constant_subIdE8do_shiftEd-mcsema-diff.dot':Done
+Writing '/tmp/tmpejcehnjp.dot'...
+Writing '/tmp/tmpejcehnjp.dot':Done
 
-Writing '_ZN19custom_constant_subIdE8do_shiftEd-proposed-diff.dot'...
-Writing '_ZN19custom_constant_subIdE8do_shiftEd-proposed-diff.dot':Done
+Reading LLVM: /tmp/tmpm1suylqf-query.ll
+Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from /tmp/tmpm1suylqf-query.ll
+Dot file generated!
+Writing '/tmp/tmpw7cpe0mq.dot'...
+Writing '/tmp/tmpw7cpe0mq.dot':Done
 
-Reading LLVM: ../binary/test.mcsema.opt.ll
-Reading LLVM: mcsema/test.proposed.opt.ll
-Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from ../binary/test.mcsema.opt.ll
-Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from mcsema/test.proposed.opt.ll
-Matcher Done...
-5.52user 0.13system 0:05.74elapsed 98%CPU (0avgtext+0avgdata 65976maxresident)k
-0inputs+128outputs (0major+16010minor)pagefaults 0swaps
+Reading LLVM: /tmp/tmpqm822hj4-target.ll
+Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from /tmp/tmpqm822hj4-target.ll
+Dot file generated!
+================ Starting round 0
+MAPPING:
+- 0 %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 2 %4 = load i64, i64* %RBP.i, align 8
+- 3 %5 = add i64 %1, 1
+- 4 store i64 %5, i64* %3, align 8
+- 5 %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 6 %7 = load i64, i64* %6, align 8
+- 7 %8 = add i64 %7, -8
+- 8 %9 = inttoptr i64 %8 to i64*
+- 9 store i64 %4, i64* %9, align 8
+- 10 store i64 %8, i64* %6, align 8
+- 11 %10 = load i64, i64* %3, align 8
+- 12 store i64 %8, i64* %RBP.i, align 8
+- 13 %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+- 14 %12 = add i64 %10, add (i64 ptrtoint (%G_0x9f0c__rip__type* @G_0x9f0c__rip_ to i64), i64 3)
+- 15 %13 = add i64 %10, 11
+- 16 store i64 %13, i64* %3, align 8
+- 17 %14 = inttoptr i64 %12 to i64*
+- 18 %15 = load i64, i64* %14, align 8
+- 19 %16 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %11, i64 0, i32 0, i32 0, i32 0, i64 0
+- 20 store i64 %15, i64* %16, align 1
+- 21 %17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+- 22 %18 = bitcast i64* %17 to double*
+- 23 store double 0.000000e+00, double* %18, align 1
+- 24 %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
+- 25 %20 = add i64 %7, -16
+- 26 %21 = add i64 %10, 16
+- 27 store i64 %21, i64* %3, align 8
+- 28 %22 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %19, i64 0, i32 0, i32 0, i32 0, i64 0
+- 29 %23 = load i64, i64* %22, align 1
+- 30 %24 = inttoptr i64 %20 to i64*
+- 31 store i64 %23, i64* %24, align 8
+- 32 %25 = load i64, i64* %RBP.i, align 8
+- 33 %26 = add i64 %25, -8
+- 34 %27 = load i64, i64* %3, align 8
+- 35 %28 = add i64 %27, 5
+- 36 store i64 %28, i64* %3, align 8
+- 37 %29 = inttoptr i64 %26 to double*
+- 38 %30 = load double, double* %29, align 8
+- 39 %31 = bitcast %union.VectorReg* %19 to double*
+- 40 %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+- 41 %33 = bitcast %union.VectorReg* %11 to double*
+- 42 %34 = load double, double* %33, align 1
+- 43 %35 = fsub double %30, %34
+- 44 store double %35, double* %31, align 1
+- 45 store i64 0, i64* %32, align 1
+- 46 %36 = add i64 %27, 10
+- 47 store i64 %36, i64* %3, align 8
+- 48 %37 = load i64, i64* %6, align 8
+- 49 %38 = add i64 %37, 8
+- 50 %39 = inttoptr i64 %37 to i64*
+- 51 %40 = load i64, i64* %39, align 8
+- 52 store i64 %40, i64* %RBP.i, align 8
+- 53 store i64 %38, i64* %6, align 8
+- 54 %41 = add i64 %27, 11
+- 55 store i64 %41, i64* %3, align 8
+- 56 %42 = inttoptr i64 %38 to i64*
+- 57 %43 = load i64, i64* %42, align 8
+- 58 store i64 %43, i64* %3, align 8
+- 59 %44 = add i64 %37, 16
+- 60 store i64 %44, i64* %6, align 8
+- 61 \<badref\> = ret %struct.Memory* %2
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bfb7f400>, {0: {0}, 1: {1}, 2: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 3: {5}, 4: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 5: {7}, 6: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 7: {9, 29}, 8: {33, 10, 46, 52, 26}, 9: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 10: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 11: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 12: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 13: {3}, 14: set(), 15: {50}, 16: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 17: {33, 10, 46, 52, 26}, 18: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 19: {16}, 20: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 21: {18}, 22: {35, 19, 37}, 23: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 24: set(), 25: {21}, 26: {22, 55}, 27: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 28: {16}, 29: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 30: {33, 10, 46, 52, 26}, 31: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 32: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 33: {9, 29}, 34: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 35: {31}, 36: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 37: {33, 10, 46, 52, 26}, 38: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 39: {35, 19, 37}, 40: {36}, 41: {35, 19, 37}, 42: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 43: {39}, 44: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 45: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 46: {42}, 47: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 48: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 49: {45}, 50: {33, 10, 46, 52, 26}, 51: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 52: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 53: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 54: {50}, 55: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 56: {33, 10, 46, 52, 26}, 57: {34, 4, 38, 8, 44, 13, 15, 47, 53, 25, 28, 30}, 58: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 59: {22, 55}, 60: {32, 6, 40, 41, 11, 12, 43, 14, 48, 17, 49, 51, 20, 54, 23, 56, 27}, 61: {57}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bfb7f400>, {0: {0}, 1: {1}, 2: {4}, 3: {5}, 4: {6}, 5: {7}, 6: {8}, 7: {9}, 8: {10}, 9: {11}, 10: {12}, 11: {13, 30}, 12: {14}, 13: set(), 14: set(), 15: {50}, 16: {51}, 17: set(), 18: set(), 19: set(), 20: set(), 21: {18}, 22: {19}, 23: {20}, 24: set(), 25: set(), 26: {22}, 27: {23}, 28: set(), 29: set(), 30: set(), 31: set(), 32: set(), 33: set(), 34: {30}, 35: {31}, 36: {32}, 37: set(), 38: set(), 39: set(), 40: {36}, 41: set(), 42: set(), 43: set(), 44: set(), 45: {41}, 46: {42}, 47: {43}, 48: {44}, 49: {45}, 50: {46}, 51: {47}, 52: {48}, 53: {49}, 54: {50}, 55: {51}, 56: {52}, 57: {53}, 58: {54}, 59: {55}, 60: {56}, 61: {57}})
+EXACT 0 getelementptr getelementptr
+EXACT 1 getelementptr getelementptr
+EXACT 2 load load
+EXACT 3 add add
+EXACT 4 store store
+EXACT 5 getelementptr getelementptr
+EXACT 6 load load
+EXACT 7 add add
+EXACT 8 inttoptr inttoptr
+EXACT 9 store store
+EXACT 10 store store
+MORE 11 POT: 2
+EXACT 12 store store
+NO MATCH 13
+NO MATCH 14
+EXACT 15 add add
+EXACT 16 store store
+NO MATCH 17
+NO MATCH 18
+NO MATCH 19
+NO MATCH 20
+EXACT 21 getelementptr getelementptr
+EXACT 22 bitcast bitcast
+EXACT 23 store store
+NO MATCH 24
+NO MATCH 25
+EXACT 26 add add
+EXACT 27 store store
+NO MATCH 28
+NO MATCH 29
+NO MATCH 30
+NO MATCH 31
+NO MATCH 32
+NO MATCH 33
+EXACT 34 load load
+EXACT 35 add add
+EXACT 36 store store
+NO MATCH 37
+NO MATCH 38
+NO MATCH 39
+EXACT 40 getelementptr getelementptr
+NO MATCH 41
+NO MATCH 42
+NO MATCH 43
+NO MATCH 44
+EXACT 45 store store
+EXACT 46 add add
+EXACT 47 store store
+EXACT 48 load load
+EXACT 49 add add
+EXACT 50 inttoptr inttoptr
+EXACT 51 load load
+EXACT 52 store store
+EXACT 53 store store
+EXACT 54 add add
+EXACT 55 store store
+EXACT 56 inttoptr inttoptr
+EXACT 57 load load
+EXACT 58 store store
+EXACT 59 add add
+EXACT 60 store store
+EXACT 61 ret ret
+================ Starting round 1
+MAPPING:
+- 0 %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 2 %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
+- 3 %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+- 4 %5 = load i64, i64* %RBP, align 8
+- 5 %6 = add i64 %1, 1
+- 6 store i64 %6, i64* %PC, align 8
+- 7 %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 8 %8 = load i64, i64* %7, align 8
+- 9 %9 = add i64 %8, -8
+- 10 %10 = inttoptr i64 %9 to i64*
+- 11 store i64 %5, i64* %10, align 8
+- 12 store i64 %9, i64* %7, align 8
+- 13 %11 = load i64, i64* %PC, align 8
+- 14 store i64 %9, i64* %RBP, align 8
+- 15 %12 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%seg_418a20__rodata_type* @seg_418a20__rodata to i64), i64 104) to i64*), align 8
+- 16 %13 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %4, i64 0, i32 0, i32 0, i32 0, i64 0
+- 17 store i64 %12, i64* %13, align 1
+- 18 %14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+- 19 %15 = bitcast i64* %14 to double*
+- 20 store double 0.000000e+00, double* %15, align 1
+- 21 %16 = add i64 %8, -16
+- 22 %17 = add i64 %11, 16
+- 23 store i64 %17, i64* %PC, align 8
+- 24 %18 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %3, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
+- 25 %19 = load i64, i64* %18, align 1
+- 26 %20 = inttoptr i64 %16 to i64*
+- 27 store i64 %19, i64* %20, align 8
+- 28 %21 = load i64, i64* %RBP, align 8
+- 29 %22 = add i64 %21, -8
+- 30 %23 = load i64, i64* %PC, align 8
+- 31 %24 = add i64 %23, 5
+- 32 store i64 %24, i64* %PC, align 8
+- 33 %25 = inttoptr i64 %22 to double*
+- 34 %26 = load double, double* %25, align 8
+- 35 %27 = bitcast [32 x %union.VectorReg]* %3 to double*
+- 36 %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+- 37 %29 = bitcast %union.VectorReg* %4 to double*
+- 38 %30 = load double, double* %29, align 1
+- 39 %31 = fsub double %26, %30
+- 40 store double %31, double* %27, align 1
+- 41 store i64 0, i64* %28, align 1
+- 42 %32 = add i64 %23, 10
+- 43 store i64 %32, i64* %PC, align 8
+- 44 %33 = load i64, i64* %7, align 8
+- 45 %34 = add i64 %33, 8
+- 46 %35 = inttoptr i64 %33 to i64*
+- 47 %36 = load i64, i64* %35, align 8
+- 48 store i64 %36, i64* %RBP, align 8
+- 49 store i64 %34, i64* %7, align 8
+- 50 %37 = add i64 %23, 11
+- 51 store i64 %37, i64* %PC, align 8
+- 52 %38 = inttoptr i64 %34 to i64*
+- 53 %39 = load i64, i64* %38, align 8
+- 54 store i64 %39, i64* %PC, align 8
+- 55 %40 = add i64 %33, 16
+- 56 store i64 %40, i64* %7, align 8
+- 57 \<badref\> = ret %struct.Memory* %2
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bfb7f840>, {0: {0}, 1: {1}, 2: set(), 3: {13}, 4: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 5: {3}, 6: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 7: {5}, 8: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 9: {33, 7}, 10: {37, 8, 17, 50, 56, 30}, 11: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 12: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 13: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 14: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 15: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 16: {19, 28}, 17: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 18: {21}, 19: {41, 22, 39}, 20: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 21: {25}, 22: {26, 59}, 23: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 24: set(), 25: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 26: {37, 8, 17, 50, 56, 30}, 27: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 28: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 29: {33, 7}, 30: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 31: {35}, 32: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 33: {37, 8, 17, 50, 56, 30}, 34: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 35: {41, 22, 39}, 36: {40}, 37: {41, 22, 39}, 38: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 39: {43}, 40: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 41: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 42: {46}, 43: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 44: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 45: {49}, 46: {37, 8, 17, 50, 56, 30}, 47: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 48: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 49: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 50: {54, 15}, 51: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 52: {37, 8, 17, 50, 56, 30}, 53: {32, 2, 34, 6, 38, 42, 11, 48, 18, 51, 57, 29}, 54: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 55: {26, 59}, 56: {4, 36, 9, 10, 12, 44, 45, 47, 16, 20, 52, 53, 23, 55, 58, 27, 60, 31}, 57: {61}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bfb7f840>, {0: {0}, 1: {1}, 2: set(), 3: {13}, 4: {2}, 5: {3}, 6: {4}, 7: {5}, 8: {6}, 9: {7}, 10: {8}, 11: {9}, 12: {10}, 13: {11}, 14: {12}, 15: {18}, 16: {19}, 17: {20}, 18: {21}, 19: {22}, 20: {23}, 21: set(), 22: {26}, 23: {27}, 24: set(), 25: set(), 26: set(), 27: set(), 28: set(), 29: set(), 30: {34, 11}, 31: {35}, 32: {36}, 33: set(), 34: set(), 35: set(), 36: {40}, 37: set(), 38: set(), 39: set(), 40: set(), 41: {45}, 42: {46}, 43: {47}, 44: {48}, 45: {49}, 46: {50}, 47: {51}, 48: {52}, 49: {53}, 50: {54, 15}, 51: {16, 55}, 52: {56}, 53: {57}, 54: {58}, 55: {59}, 56: {60}, 57: {61}})
+EXACT 0 getelementptr getelementptr
+EXACT 1 getelementptr getelementptr
+NO MATCH 2
+EXACT 3 getelementptr getelementptr
+EXACT 4 load load
+EXACT 5 add add
+EXACT 6 store store
+EXACT 7 getelementptr getelementptr
+EXACT 8 load load
+EXACT 9 add add
+EXACT 10 inttoptr inttoptr
+EXACT 11 store store
+EXACT 12 store store
+EXACT 13 load load
+EXACT 14 store store
+EXACT 15 load load
+EXACT 16 getelementptr getelementptr
+EXACT 17 store store
+EXACT 18 getelementptr getelementptr
+EXACT 19 bitcast bitcast
+EXACT 20 store store
+NO MATCH 21
+EXACT 22 add add
+EXACT 23 store store
+NO MATCH 24
+NO MATCH 25
+NO MATCH 26
+NO MATCH 27
+NO MATCH 28
+NO MATCH 29
+MORE 30 POT: 2
+EXACT 31 add add
+EXACT 32 store store
+NO MATCH 33
+NO MATCH 34
+NO MATCH 35
+EXACT 36 getelementptr getelementptr
+NO MATCH 37
+NO MATCH 38
+NO MATCH 39
+NO MATCH 40
+EXACT 41 store store
+EXACT 42 add add
+EXACT 43 store store
+EXACT 44 load load
+EXACT 45 add add
+EXACT 46 inttoptr inttoptr
+EXACT 47 load load
+EXACT 48 store store
+EXACT 49 store store
+MORE 50 POT: 2
+MORE 51 POT: 2
+EXACT 52 inttoptr inttoptr
+EXACT 53 load load
+EXACT 54 store store
+EXACT 55 add add
+EXACT 56 store store
+EXACT 57 ret ret
+FP: 63 1.0 False
+TO REMOVE: dict_keys(['%4 = load i64, i64* %RBP.i, align 8', '%5 = add i64 %1, 1', 'store i64 %5, i64* %3, align 8', '%8 = add i64 %7, -8', '%9 = inttoptr i64 %8 to i64*', 'store i64 %4, i64* %9, align 8', 'store i64 %8, i64* %6, align 8', 'store i64 %8, i64* %RBP.i, align 8', '%13 = add i64 %10, 11', 'store i64 %13, i64* %3, align 8', '%17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1', '%18 = bitcast i64* %17 to double*', 'store double 0.000000e+00, double* %18, align 1', '%21 = add i64 %10, 16', 'store i64 %21, i64* %3, align 8', '%27 = load i64, i64* %3, align 8', '%28 = add i64 %27, 5', 'store i64 %28, i64* %3, align 8', '%32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1', 'store i64 0, i64* %32, align 1', '%36 = add i64 %27, 10', 'store i64 %36, i64* %3, align 8', '%37 = load i64, i64* %6, align 8', '%38 = add i64 %37, 8', '%39 = inttoptr i64 %37 to i64*', '%40 = load i64, i64* %39, align 8', 'store i64 %40, i64* %RBP.i, align 8', 'store i64 %38, i64* %6, align 8', '%41 = add i64 %27, 11', 'store i64 %41, i64* %3, align 8', '%42 = inttoptr i64 %38 to i64*', '%43 = load i64, i64* %42, align 8', 'store i64 %43, i64* %3, align 8', '%44 = add i64 %37, 16', 'store i64 %44, i64* %6, align 8'])
+Keep: entry:
+Keep: %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Keep: %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Found line to remove! %4 = load i64, i64* %RBP.i, align 8
+Found line to remove! %5 = add i64 %1, 1
+Found line to remove! store i64 %5, i64* %3, align 8
+Keep: %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Keep: %7 = load i64, i64* %6, align 8
+Found line to remove! %8 = add i64 %7, -8
+Found line to remove! %9 = inttoptr i64 %8 to i64*
+Found line to remove! store i64 %4, i64* %9, align 8
+Found line to remove! store i64 %8, i64* %6, align 8
+Keep: %10 = load i64, i64* %3, align 8
+Found line to remove! store i64 %8, i64* %RBP.i, align 8
+Keep: %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+Keep: %12 = add i64 %10, add (i64 ptrtoint (%G_0x9f0c__rip__type* @G_0x9f0c__rip_ to i64), i64 3)
+Found line to remove! %13 = add i64 %10, 11
+Found line to remove! store i64 %13, i64* %3, align 8
+Keep: %14 = inttoptr i64 %12 to i64*
+Keep: %15 = load i64, i64* %14, align 8
+Keep: %16 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %11, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: store i64 %15, i64* %16, align 1
+Found line to remove! %17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+Found line to remove! %18 = bitcast i64* %17 to double*
+Found line to remove! store double 0.000000e+00, double* %18, align 1
+Keep: %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
+Keep: %20 = add i64 %7, -16
+Found line to remove! %21 = add i64 %10, 16
+Found line to remove! store i64 %21, i64* %3, align 8
+Keep: %22 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %19, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: %23 = load i64, i64* %22, align 1
+Keep: %24 = inttoptr i64 %20 to i64*
+Keep: store i64 %23, i64* %24, align 8
+Keep: %25 = load i64, i64* %RBP.i, align 8
+Keep: %26 = add i64 %25, -8
+Found line to remove! %27 = load i64, i64* %3, align 8
+Found line to remove! %28 = add i64 %27, 5
+Found line to remove! store i64 %28, i64* %3, align 8
+Keep: %29 = inttoptr i64 %26 to double*
+Keep: %30 = load double, double* %29, align 8
+Keep: %31 = bitcast %union.VectorReg* %19 to double*
+Found line to remove! %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+Keep: %33 = bitcast %union.VectorReg* %11 to double*
+Keep: %34 = load double, double* %33, align 1
+Keep: %35 = fsub double %30, %34
+Keep: store double %35, double* %31, align 1
+Found line to remove! store i64 0, i64* %32, align 1
+Found line to remove! %36 = add i64 %27, 10
+Found line to remove! store i64 %36, i64* %3, align 8
+Found line to remove! %37 = load i64, i64* %6, align 8
+Found line to remove! %38 = add i64 %37, 8
+Found line to remove! %39 = inttoptr i64 %37 to i64*
+Found line to remove! %40 = load i64, i64* %39, align 8
+Found line to remove! store i64 %40, i64* %RBP.i, align 8
+Found line to remove! store i64 %38, i64* %6, align 8
+Found line to remove! %41 = add i64 %27, 11
+Found line to remove! store i64 %41, i64* %3, align 8
+Found line to remove! %42 = inttoptr i64 %38 to i64*
+Found line to remove! %43 = load i64, i64* %42, align 8
+Found line to remove! store i64 %43, i64* %3, align 8
+Found line to remove! %44 = add i64 %37, 16
+Found line to remove! store i64 %44, i64* %6, align 8
+Keep: ret %struct.Memory* %2
+Missed: dict_keys(['%4 = load i64, i64* %RBP.i, align 8', '%5 = add i64 %1, 1', 'store i64 %5, i64* %3, align 8', '%8 = add i64 %7, -8', '%9 = inttoptr i64 %8 to i64*', 'store i64 %4, i64* %9, align 8', 'store i64 %8, i64* %6, align 8', 'store i64 %8, i64* %RBP.i, align 8', '%13 = add i64 %10, 11', 'store i64 %13, i64* %3, align 8', '%17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1', '%18 = bitcast i64* %17 to double*', 'store double 0.000000e+00, double* %18, align 1', '%21 = add i64 %10, 16', 'store i64 %21, i64* %3, align 8', '%27 = load i64, i64* %3, align 8', '%28 = add i64 %27, 5', 'store i64 %28, i64* %3, align 8', '%32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1', 'store i64 0, i64* %32, align 1', '%36 = add i64 %27, 10', 'store i64 %36, i64* %3, align 8', '%37 = load i64, i64* %6, align 8', '%38 = add i64 %37, 8', '%39 = inttoptr i64 %37 to i64*', '%40 = load i64, i64* %39, align 8', 'store i64 %40, i64* %RBP.i, align 8', 'store i64 %38, i64* %6, align 8', '%41 = add i64 %27, 11', 'store i64 %41, i64* %3, align 8', '%42 = inttoptr i64 %38 to i64*', '%43 = load i64, i64* %42, align 8', 'store i64 %43, i64* %3, align 8', '%44 = add i64 %37, 16', 'store i64 %44, i64* %6, align 8'])
+TO REMOVE: dict_keys(['%5 = load i64, i64* %RBP, align 8', '%6 = add i64 %1, 1', 'store i64 %6, i64* %PC, align 8', '%9 = add i64 %8, -8', '%10 = inttoptr i64 %9 to i64*', 'store i64 %5, i64* %10, align 8', 'store i64 %9, i64* %7, align 8', '%11 = load i64, i64* %PC, align 8', 'store i64 %9, i64* %RBP, align 8', '%12 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%seg_418a20__rodata_type* @seg_418a20__rodata to i64), i64 104) to i64*), align 8', '%13 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %4, i64 0, i32 0, i32 0, i32 0, i64 0', 'store i64 %12, i64* %13, align 1', '%14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1', '%15 = bitcast i64* %14 to double*', 'store double 0.000000e+00, double* %15, align 1', '%17 = add i64 %11, 16', 'store i64 %17, i64* %PC, align 8', '%24 = add i64 %23, 5', 'store i64 %24, i64* %PC, align 8', '%28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1', 'store i64 0, i64* %28, align 1', '%32 = add i64 %23, 10', 'store i64 %32, i64* %PC, align 8', '%33 = load i64, i64* %7, align 8', '%34 = add i64 %33, 8', '%35 = inttoptr i64 %33 to i64*', '%36 = load i64, i64* %35, align 8', 'store i64 %36, i64* %RBP, align 8', 'store i64 %34, i64* %7, align 8', '%38 = inttoptr i64 %34 to i64*', '%39 = load i64, i64* %38, align 8', 'store i64 %39, i64* %PC, align 8', '%40 = add i64 %33, 16', 'store i64 %40, i64* %7, align 8'])
+Keep: block_40eb70:
+Keep: %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Keep: %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Keep: %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
+Keep: %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+Found line to remove! %5 = load i64, i64* %RBP, align 8
+Found line to remove! %6 = add i64 %1, 1
+Found line to remove! store i64 %6, i64* %PC, align 8
+Keep: %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Keep: %8 = load i64, i64* %7, align 8
+Found line to remove! %9 = add i64 %8, -8
+Found line to remove! %10 = inttoptr i64 %9 to i64*
+Found line to remove! store i64 %5, i64* %10, align 8
+Found line to remove! store i64 %9, i64* %7, align 8
+Found line to remove! %11 = load i64, i64* %PC, align 8
+Found line to remove! store i64 %9, i64* %RBP, align 8
+Found line to remove! %12 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%seg_418a20__rodata_type* @seg_418a20__rodata to i64), i64 104) to i64*), align 8
+Found line to remove! %13 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %4, i64 0, i32 0, i32 0, i32 0, i64 0
+Found line to remove! store i64 %12, i64* %13, align 1
+Found line to remove! %14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+Found line to remove! %15 = bitcast i64* %14 to double*
+Found line to remove! store double 0.000000e+00, double* %15, align 1
+Keep: %16 = add i64 %8, -16
+Found line to remove! %17 = add i64 %11, 16
+Found line to remove! store i64 %17, i64* %PC, align 8
+Keep: %18 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %3, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: %19 = load i64, i64* %18, align 1
+Keep: %20 = inttoptr i64 %16 to i64*
+Keep: store i64 %19, i64* %20, align 8
+Keep: %21 = load i64, i64* %RBP, align 8
+Keep: %22 = add i64 %21, -8
+Keep: %23 = load i64, i64* %PC, align 8
+Found line to remove! %24 = add i64 %23, 5
+Found line to remove! store i64 %24, i64* %PC, align 8
+Keep: %25 = inttoptr i64 %22 to double*
+Keep: %26 = load double, double* %25, align 8
+Keep: %27 = bitcast [32 x %union.VectorReg]* %3 to double*
+Found line to remove! %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+Keep: %29 = bitcast %union.VectorReg* %4 to double*
+Keep: %30 = load double, double* %29, align 1Writing '/tmp/tmpcnlzc32n.dot'...
+Writing '/tmp/tmpcnlzc32n.dot':Done
+
+Reading LLVM: /tmp/tmpm1suylqf-query.ll
+Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from /tmp/tmpm1suylqf-query.ll
+Dot file generated!
+Writing '/tmp/tmpw22wfq8i.dot'...
+Writing '/tmp/tmpw22wfq8i.dot':Done
+
+Reading LLVM: /tmp/tmpqm822hj4-target.ll
+Extracting function [_ZN19custom_constant_subIdE8do_shiftEd] from /tmp/tmpqm822hj4-target.ll
+Dot file generated!
+
+Keep: %31 = fsub double %26, %30
+Keep: store double %31, double* %27, align 1
+Found line to remove! store i64 0, i64* %28, align 1
+Found line to remove! %32 = add i64 %23, 10
+Found line to remove! store i64 %32, i64* %PC, align 8
+Found line to remove! %33 = load i64, i64* %7, align 8
+Found line to remove! %34 = add i64 %33, 8
+Found line to remove! %35 = inttoptr i64 %33 to i64*
+Found line to remove! %36 = load i64, i64* %35, align 8
+Found line to remove! store i64 %36, i64* %RBP, align 8
+Found line to remove! store i64 %34, i64* %7, align 8
+Keep: %37 = add i64 %23, 11
+Keep: store i64 %37, i64* %PC, align 8
+Found line to remove! %38 = inttoptr i64 %34 to i64*
+Found line to remove! %39 = load i64, i64* %38, align 8
+Found line to remove! store i64 %39, i64* %PC, align 8
+Found line to remove! %40 = add i64 %33, 16
+Found line to remove! store i64 %40, i64* %7, align 8
+Keep: ret %struct.Memory* %2
+Missed: dict_keys(['%5 = load i64, i64* %RBP, align 8', '%6 = add i64 %1, 1', 'store i64 %6, i64* %PC, align 8', '%9 = add i64 %8, -8', '%10 = inttoptr i64 %9 to i64*', 'store i64 %5, i64* %10, align 8', 'store i64 %9, i64* %7, align 8', '%11 = load i64, i64* %PC, align 8', 'store i64 %9, i64* %RBP, align 8', '%12 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%seg_418a20__rodata_type* @seg_418a20__rodata to i64), i64 104) to i64*), align 8', '%13 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %4, i64 0, i32 0, i32 0, i32 0, i64 0', 'store i64 %12, i64* %13, align 1', '%14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1', '%15 = bitcast i64* %14 to double*', 'store double 0.000000e+00, double* %15, align 1', '%17 = add i64 %11, 16', 'store i64 %17, i64* %PC, align 8', '%24 = add i64 %23, 5', 'store i64 %24, i64* %PC, align 8', '%28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1', 'store i64 0, i64* %28, align 1', '%32 = add i64 %23, 10', 'store i64 %32, i64* %PC, align 8', '%33 = load i64, i64* %7, align 8', '%34 = add i64 %33, 8', '%35 = inttoptr i64 %33 to i64*', '%36 = load i64, i64* %35, align 8', 'store i64 %36, i64* %RBP, align 8', 'store i64 %34, i64* %7, align 8', '%38 = inttoptr i64 %34 to i64*', '%39 = load i64, i64* %38, align 8', 'store i64 %39, i64* %PC, align 8', '%40 = add i64 %33, 16', 'store i64 %40, i64* %7, align 8'])
+================ Starting round 2
+MAPPING:
+- 0 %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 2 %var_2_6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 3 %var_2_7 = load i64, i64* %var_2_6, align 8
+- 4 %var_2_10 = load i64, i64* %var_2_3, align 8
+- 5 %var_2_11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+- 6 %var_2_12 = add i64 %var_2_10, add (i64 ptrtoint (%G_0x9f0c__rip__type* @G_0x9f0c__rip_ to i64), i64 3)
+- 7 %var_2_14 = inttoptr i64 %var_2_12 to i64*
+- 8 %var_2_15 = load i64, i64* %var_2_14, align 8
+- 9 %var_2_16 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %var_2_11, i64 0, i32 0, i32 0, i32 0, i64 0
+- 10 store i64 %var_2_15, i64* %var_2_16, align 1
+- 11 %var_2_19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
+- 12 %var_2_20 = add i64 %var_2_7, -16
+- 13 %var_2_22 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %var_2_19, i64 0, i32 0, i32 0, i32 0, i64 0
+- 14 %var_2_23 = load i64, i64* %var_2_22, align 1
+- 15 %var_2_24 = inttoptr i64 %var_2_20 to i64*
+- 16 store i64 %var_2_23, i64* %var_2_24, align 8
+- 17 %var_2_25 = load i64, i64* %RBP.i, align 8
+- 18 %var_2_26 = add i64 %var_2_25, -8
+- 19 %var_2_29 = inttoptr i64 %var_2_26 to double*
+- 20 %var_2_30 = load double, double* %var_2_29, align 8
+- 21 %var_2_31 = bitcast %union.VectorReg* %var_2_19 to double*
+- 22 %var_2_33 = bitcast %union.VectorReg* %var_2_11 to double*
+- 23 %var_2_34 = load double, double* %var_2_33, align 1
+- 24 %var_2_35 = fsub double %var_2_30, %var_2_34
+- 25 store double %var_2_35, double* %var_2_31, align 1
+- 26 \<badref\> = ret %struct.Memory* %2
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05beb4b158>, {0: {0}, 1: {1}, 2: {4}, 3: {5, 8, 11, 13, 15, 18}, 4: {5, 8, 11, 13, 15, 18}, 5: {3}, 6: set(), 7: {9, 14}, 8: {5, 8, 11, 13, 15, 18}, 9: set(), 10: {10, 20, 22}, 11: set(), 12: {6}, 13: set(), 14: {5, 8, 11, 13, 15, 18}, 15: {9, 14}, 16: {10, 20, 22}, 17: {5, 8, 11, 13, 15, 18}, 18: {12}, 19: {9, 14}, 20: {5, 8, 11, 13, 15, 18}, 21: {16, 17}, 22: {16, 17}, 23: {5, 8, 11, 13, 15, 18}, 24: {19}, 25: {10, 20, 22}, 26: {23}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05beb4b158>, {0: set(), 1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set(), 8: set(), 9: set(), 10: set(), 11: set(), 12: set(), 13: set(), 14: set(), 15: set(), 16: set(), 17: set(), 18: set(), 19: set(), 20: set(), 21: set(), 22: set(), 23: set(), 24: set(), 25: set(), 26: {23}})
+NO MATCH 0
+NO MATCH 1
+NO MATCH 2
+NO MATCH 3
+NO MATCH 4
+NO MATCH 5
+NO MATCH 6
+NO MATCH 7
+NO MATCH 8
+NO MATCH 9
+NO MATCH 10
+NO MATCH 11
+NO MATCH 12
+NO MATCH 13
+NO MATCH 14
+NO MATCH 15
+NO MATCH 16
+NO MATCH 17
+NO MATCH 18
+NO MATCH 19
+NO MATCH 20
+NO MATCH 21
+NO MATCH 22
+NO MATCH 23
+NO MATCH 24
+NO MATCH 25
+EXACT 26 ret ret
+================ Starting round 3
+MAPPING:
+- 0 %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 2 %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
+- 3 %var_2_4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+- 4 %var_2_7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 5 %var_2_8 = load i64, i64* %var_2_7, align 8
+- 6 %var_2_16 = add i64 %var_2_8, -16
+- 7 %var_2_18 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %var_2_3, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
+- 8 %var_2_19 = load i64, i64* %var_2_18, align 1
+- 9 %var_2_20 = inttoptr i64 %var_2_16 to i64*
+- 10 store i64 %var_2_19, i64* %var_2_20, align 8
+- 11 %var_2_21 = load i64, i64* %RBP, align 8
+- 12 %var_2_22 = add i64 %var_2_21, -8
+- 13 %var_2_23 = load i64, i64* %PC, align 8
+- 14 %var_2_25 = inttoptr i64 %var_2_22 to double*
+- 15 %var_2_26 = load double, double* %var_2_25, align 8
+- 16 %var_2_27 = bitcast [32 x %union.VectorReg]* %var_2_3 to double*
+- 17 %var_2_29 = bitcast %union.VectorReg* %var_2_4 to double*
+- 18 %var_2_30 = load double, double* %var_2_29, align 1
+- 19 %var_2_31 = fsub double %var_2_26, %var_2_30
+- 20 store double %var_2_31, double* %var_2_27, align 1
+- 21 %var_2_37 = add i64 %var_2_23, 11
+- 22 store i64 %var_2_37, i64* %PC, align 8
+- 23 \<badref\> = ret %struct.Memory* %2
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bf75d158>, {0: {0}, 1: {1}, 2: set(), 3: {5}, 4: {2}, 5: {3, 4, 8, 14, 17, 20, 23}, 6: {12}, 7: set(), 8: {3, 4, 8, 14, 17, 20, 23}, 9: {19, 15, 7}, 10: {16, 25, 10}, 11: {3, 4, 8, 14, 17, 20, 23}, 12: {18}, 13: {3, 4, 8, 14, 17, 20, 23}, 14: {19, 15, 7}, 15: {3, 4, 8, 14, 17, 20, 23}, 16: {21, 22}, 17: {21, 22}, 18: {3, 4, 8, 14, 17, 20, 23}, 19: {24}, 20: {16, 25, 10}, 21: set(), 22: {16, 25, 10}, 23: {26}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7f05bf75d158>, {0: set(), 1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set(), 8: set(), 9: set(), 10: set(), 11: set(), 12: set(), 13: set(), 14: set(), 15: set(), 16: set(), 17: set(), 18: set(), 19: set(), 20: set(), 21: set(), 22: set(), 23: {26}})
+NO MATCH 0
+NO MATCH 1
+NO MATCH 2
+NO MATCH 3
+NO MATCH 4
+NO MATCH 5
+NO MATCH 6
+NO MATCH 7
+NO MATCH 8
+NO MATCH 9
+NO MATCH 10
+NO MATCH 11
+NO MATCH 12
+NO MATCH 13
+NO MATCH 14
+NO MATCH 15
+NO MATCH 16
+NO MATCH 17
+NO MATCH 18
+NO MATCH 19
+NO MATCH 20
+NO MATCH 21
+NO MATCH 22
+EXACT 23 ret ret
+FP: 63 2.0 False
+TO REMOVE: dict_keys([])
+Keep: entry:
+Keep: %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Keep: %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Keep: %var_2_6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Keep: %var_2_7 = load i64, i64* %var_2_6, align 8
+Keep: %var_2_10 = load i64, i64* %var_2_3, align 8
+Keep: %var_2_11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+Keep: %var_2_12 = add i64 %var_2_10, add (i64 ptrtoint (%G_0x9f0c__rip__type* @G_0x9f0c__rip_ to i64), i64 3)
+Keep: %var_2_14 = inttoptr i64 %var_2_12 to i64*
+Keep: %var_2_15 = load i64, i64* %var_2_14, align 8
+Keep: %var_2_16 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %var_2_11, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: store i64 %var_2_15, i64* %var_2_16, align 1
+Keep: %var_2_19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
+Keep: %var_2_20 = add i64 %var_2_7, -16
+Keep: %var_2_22 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %var_2_19, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: %var_2_23 = load i64, i64* %var_2_22, align 1
+Keep: %var_2_24 = inttoptr i64 %var_2_20 to i64*
+Keep: store i64 %var_2_23, i64* %var_2_24, align 8
+Keep: %var_2_25 = load i64, i64* %RBP.i, align 8
+Keep: %var_2_26 = add i64 %var_2_25, -8
+Keep: %var_2_29 = inttoptr i64 %var_2_26 to double*
+Keep: %var_2_30 = load double, double* %var_2_29, align 8
+Keep: %var_2_31 = bitcast %union.VectorReg* %var_2_19 to double*
+Keep: %var_2_33 = bitcast %union.VectorReg* %var_2_11 to double*
+Keep: %var_2_34 = load double, double* %var_2_33, align 1
+Keep: %var_2_35 = fsub double %var_2_30, %var_2_34
+Keep: store double %var_2_35, double* %var_2_31, align 1
+Keep: ret %struct.Memory* %2
+Missed: dict_keys([])
+TO REMOVE: dict_keys([])
+Keep: block_40eb70:
+Keep: %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Keep: %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Keep: %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
+Keep: %var_2_4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
+Keep: %var_2_7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Keep: %var_2_8 = load i64, i64* %var_2_7, align 8
+Keep: %var_2_16 = add i64 %var_2_8, -16
+Keep: %var_2_18 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %var_2_3, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
+Keep: %var_2_19 = load i64, i64* %var_2_18, align 1
+Keep: %var_2_20 = inttoptr i64 %var_2_16 to i64*
+Keep: store i64 %var_2_19, i64* %var_2_20, align 8
+Keep: %var_2_21 = load i64, i64* %RBP, align 8
+Keep: %var_2_22 = add i64 %var_2_21, -8
+Keep: %var_2_23 = load i64, i64* %PC, align 8
+Keep: %var_2_25 = inttoptr i64 %var_2_22 to double*
+Keep: %var_2_26 = load double, double* %var_2_25, align 8
+Keep: %var_2_27 = bitcast [32 x %union.VectorReg]* %var_2_3 to double*
+Keep: %var_2_29 = bitcast %union.VectorReg* %var_2_4 to double*
+Keep: %var_2_30 = load double, double* %var_2_29, align 1
+Keep: %var_2_31 = fsub double %var_2_26, %var_2_30
+Keep: store double %var_2_31, double* %var_2_27, align 1
+Keep: %var_2_37 = add i64 %var_2_23, 11
+Keep: store i64 %var_2_37, i64* %PC, align 8
+Keep: ret %struct.Memory* %2
+Missed: dict_keys([])
+[x] Exhausted iterations without definitive match! /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_ZN19custom_constant_subIdE8do_shiftEd/mcsema/test.proposed.ll /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/binary/test.mcsema.calls_renamed.ll _ZN19custom_constant_subIdE8do_shiftEd
+[x] Saved reduced files to /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/_ZN19custom_constant_subIdE8do_shiftEd/mcsema/test.proposed.reduced.ll /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/simple_types_constant_folding/binary/test.mcsema.calls_renamed.reduced.ll
+/home/ubuntu/Github/llir-matcher/matcher/match.py:711: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(fd)
