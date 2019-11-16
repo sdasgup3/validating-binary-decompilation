@@ -34,42 +34,16 @@ compdCheck() {
 
 matchCheck() {
   msg=$1
-  status_M2P=0  
-  status_P2M=0  
 
-  if grep -q "Iso Match Found" match_mcsema_proposed.log; then
-    status_M2P=1
-  elif grep -q "Iso Match NOT Found" match_mcsema_proposed.log; then
-    status_M2P=2
+  if grep -q "Found exact, syntactic match" match.log; then
+    echo -e "\e[32mMatch Pass\e[39m:-" `pwd`:$msg
+    exit 0
+  elif grep -q "Exhausted iterations" match.log; then
+    echo -e "\e[32mMatch Fail:\e[39m:-" `pwd`:$msg
+    exit 0
   else 
-    echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
+    echo -e "\e[31mMatch Error\e[39m:-" `pwd`:$msg
     exit 1
-  fi
-
-  if grep -q "Iso Match Found" match_proposed_mcsema.log; then
-    status_P2M=1
-  elif grep -q "Iso Match NOT Found" match_proposed_mcsema.log; then
-    status_P2M=2
-  else 
-    echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
-    exit 1
-  fi
-
-  if [ $status_M2P -eq 1 ] && [ $status_M2P -eq 1 ]; then
-    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
-    exit 0
-  elif [ $status_M2P -eq 2 ]; then
-    echo -e "\e[32mMatch Pass:m2p-multi-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
-    exit 0
-  else 
-    echo -e "\e[32mMatch Pass:p2m-multi-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
-    exit 0
   fi
 }
 

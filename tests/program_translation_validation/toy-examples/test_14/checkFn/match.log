@@ -1,15 +1,852 @@
-[Info]: Check for multiple matches
-Iso Match Found
-Writing 'sub_4005f0_checkFn-mcsema-diff.dot'...
-Writing 'sub_4005f0_checkFn-mcsema-diff.dot':Done
+Writing '/tmp/tmp8k8zayip.dot'...
+Writing '/tmp/tmp8k8zayip.dot':Done
 
-Writing 'checkFn-proposed-diff.dot'...
-Writing 'checkFn-proposed-diff.dot':Done
+Reading LLVM: /tmp/tmp8pj_j8a8-query.ll
+Extracting function [checkFn] from /tmp/tmp8pj_j8a8-query.ll
+Dot file generated!
+Writing '/tmp/tmp9oatotls.dot'...
+Writing '/tmp/tmp9oatotls.dot':Done
 
-Reading LLVM: ../binary/test.mcsema.opt.ll
-Reading LLVM: mcsema/test.proposed.opt.ll
-Extracting function [checkFn] from ../binary/test.mcsema.opt.ll
-Extracting function [checkFn] from mcsema/test.proposed.opt.ll
-Matcher Done...
-0.47user 0.93system 0:01.40elapsed 99%CPU (0avgtext+0avgdata 12572maxresident)k
-0inputs+296outputs (0major+904minor)pagefaults 0swaps
+Reading LLVM: /tmp/tmpqeu2cxyi-target.ll
+Extracting function [checkFn] from /tmp/tmpqeu2cxyi-target.ll
+Dot file generated!
+================ Starting round 0
+MAPPING:
+- 0 %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 2 %4 = load i64, i64* %RBP.i, align 8
+- 3 %5 = add i64 %1, 1
+- 4 store i64 %5, i64* %3, align 8
+- 5 %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 6 %7 = load i64, i64* %6, align 8
+- 7 %8 = add i64 %7, -8
+- 8 %9 = inttoptr i64 %8 to i64*
+- 9 store i64 %4, i64* %9, align 8
+- 10 %10 = load i64, i64* %3, align 8
+- 11 store i64 %8, i64* %RBP.i, align 8
+- 12 %11 = add i64 %7, -24
+- 13 store i64 %11, i64* %6, align 8
+- 14 %12 = icmp ult i64 %8, 16
+- 15 %13 = zext i1 %12 to i8
+- 16 %14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+- 17 store i8 %13, i8* %14, align 1
+- 18 %15 = trunc i64 %11 to i32
+- 19 %16 = and i32 %15, 255
+- 20 %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+- 21 %18 = trunc i32 %17 to i8
+- 22 %19 = and i8 %18, 1
+- 23 %20 = xor i8 %19, 1
+- 24 %21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+- 25 store i8 %20, i8* %21, align 1
+- 26 %22 = xor i64 %8, 16
+- 27 %23 = xor i64 %22, %11
+- 28 %24 = lshr i64 %23, 4
+- 29 %25 = trunc i64 %24 to i8
+- 30 %26 = and i8 %25, 1
+- 31 %27 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+- 32 store i8 %26, i8* %27, align 1
+- 33 %28 = icmp eq i64 %11, 0
+- 34 %29 = zext i1 %28 to i8
+- 35 %30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+- 36 store i8 %29, i8* %30, align 1
+- 37 %31 = lshr i64 %11, 63
+- 38 %32 = trunc i64 %31 to i8
+- 39 %33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+- 40 store i8 %32, i8* %33, align 1
+- 41 %34 = lshr i64 %8, 63
+- 42 %35 = xor i64 %31, %34
+- 43 %36 = add nuw nsw i64 %35, %34
+- 44 %37 = icmp eq i64 %36, 2
+- 45 %38 = zext i1 %37 to i8
+- 46 %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+- 47 store i8 %38, i8* %39, align 1
+- 48 %RAX.i19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+- 49 store i64 ptrtoint (%G__0x4006a4_type* @G__0x4006a4 to i64), i64* %RAX.i19, align 8
+- 50 %RDI.i16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+- 51 %40 = add i64 %7, -16
+- 52 %41 = load i64, i64* %RDI.i16, align 8
+- 53 %42 = add i64 %10, 21
+- 54 store i64 %42, i64* %3, align 8
+- 55 %43 = inttoptr i64 %40 to i64*
+- 56 store i64 %41, i64* %43, align 8
+- 57 %44 = load i64, i64* %RBP.i, align 8
+- 58 %45 = add i64 %44, -16
+- 59 %46 = load i64, i64* %RAX.i19, align 8
+- 60 %47 = load i64, i64* %3, align 8
+- 61 %48 = add i64 %47, 4
+- 62 store i64 %48, i64* %3, align 8
+- 63 %49 = inttoptr i64 %45 to i64*
+- 64 store i64 %46, i64* %49, align 8
+- 65 %50 = load i64, i64* %RBP.i, align 8
+- 66 %51 = add i64 %50, -8
+- 67 %52 = load i64, i64* %3, align 8
+- 68 %53 = add i64 %52, 4
+- 69 store i64 %53, i64* %3, align 8
+- 70 %54 = inttoptr i64 %51 to i64*
+- 71 %55 = load i64, i64* %54, align 8
+- 72 store i64 %55, i64* %RDI.i16, align 8
+- 73 %RSI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+- 74 %56 = add i64 %50, -16
+- 75 %57 = add i64 %52, 8
+- 76 store i64 %57, i64* %3, align 8
+- 77 %58 = inttoptr i64 %56 to i64*
+- 78 %59 = load i64, i64* %58, align 8
+- 79 store i64 %59, i64* %RSI.i, align 8
+- 80 %60 = add i64 %52, -426
+- 81 %61 = add i64 %52, 13
+- 82 %62 = load i64, i64* %6, align 8
+- 83 %63 = add i64 %62, -8
+- 84 %64 = inttoptr i64 %63 to i64*
+- 85 store i64 %61, i64* %64, align 8
+- 86 store i64 %63, i64* %6, align 8
+- 87 store i64 %60, i64* %3, align 8
+- 88 %65 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory* %2)
+- 89 %66 = load i64, i64* %6, align 8
+- 90 %67 = load i64, i64* %3, align 8
+- 91 %68 = add i64 %66, 16
+- 92 store i64 %68, i64* %6, align 8
+- 93 %69 = icmp ugt i64 %66, -17
+- 94 %70 = zext i1 %69 to i8
+- 95 store i8 %70, i8* %14, align 1
+- 96 %71 = trunc i64 %68 to i32
+- 97 %72 = and i32 %71, 255
+- 98 %73 = tail call i32 @llvm.ctpop.i32(i32 %72)
+- 99 %74 = trunc i32 %73 to i8
+- 100 %75 = and i8 %74, 1
+- 101 %76 = xor i8 %75, 1
+- 102 store i8 %76, i8* %21, align 1
+- 103 %77 = xor i64 %66, 16
+- 104 %78 = xor i64 %77, %68
+- 105 %79 = lshr i64 %78, 4
+- 106 %80 = trunc i64 %79 to i8
+- 107 %81 = and i8 %80, 1
+- 108 store i8 %81, i8* %27, align 1
+- 109 %82 = icmp eq i64 %68, 0
+- 110 %83 = zext i1 %82 to i8
+- 111 store i8 %83, i8* %30, align 1
+- 112 %84 = lshr i64 %68, 63
+- 113 %85 = trunc i64 %84 to i8
+- 114 store i8 %85, i8* %33, align 1
+- 115 %86 = lshr i64 %66, 63
+- 116 %87 = xor i64 %84, %86
+- 117 %88 = add nuw nsw i64 %87, %84
+- 118 %89 = icmp eq i64 %88, 2
+- 119 %90 = zext i1 %89 to i8
+- 120 store i8 %90, i8* %39, align 1
+- 121 %91 = add i64 %67, 5
+- 122 store i64 %91, i64* %3, align 8
+- 123 %92 = add i64 %66, 24
+- 124 %93 = inttoptr i64 %68 to i64*
+- 125 %94 = load i64, i64* %93, align 8
+- 126 store i64 %94, i64* %RBP.i, align 8
+- 127 store i64 %92, i64* %6, align 8
+- 128 %95 = add i64 %67, 6
+- 129 store i64 %95, i64* %3, align 8
+- 130 %96 = inttoptr i64 %92 to i64*
+- 131 %97 = load i64, i64* %96, align 8
+- 132 store i64 %97, i64* %3, align 8
+- 133 %98 = add i64 %66, 32
+- 134 store i64 %98, i64* %6, align 8
+- 135 \<badref\> = ret %struct.Memory* %65
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fe94989f950>, {0: {0}, 1: {5}, 2: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 3: {7}, 4: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 5: {4}, 6: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 7: {83, 10, 67}, 8: {64, 130, 71, 11, 77, 84, 56, 124}, 9: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 10: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 11: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 12: {15}, 13: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 14: {17}, 15: {37, 110, 48, 18, 119, 94}, 16: {19}, 17: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 18: {32, 96, 99, 41, 106, 113, 21, 24}, 19: {97, 22}, 20: {88, 98, 23}, 21: {32, 96, 99, 41, 106, 113, 21, 24}, 22: {25, 107, 100, 33}, 23: {26, 101}, 24: {27}, 25: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 26: {29, 103}, 27: {104, 116, 45, 30}, 28: {105, 31}, 29: {32, 96, 99, 41, 106, 113, 21, 24}, 30: {25, 107, 100, 33}, 31: {34}, 32: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 33: {36, 109}, 34: {37, 110, 48, 18, 119, 94}, 35: {38}, 36: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 37: {40, 115, 44, 112}, 38: {32, 96, 99, 41, 106, 113, 21, 24}, 39: {42}, 40: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 41: {40, 115, 44, 112}, 42: {104, 116, 45, 30}, 43: {117, 46}, 44: {118, 47}, 45: {37, 110, 48, 18, 119, 94}, 46: {49}, 47: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 48: {1}, 49: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 50: {3}, 51: {74, 59, 52}, 52: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 53: {54}, 54: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 55: {64, 130, 71, 11, 77, 84, 56, 124}, 56: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 57: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 58: {74, 59, 52}, 59: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 60: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 61: {69, 62}, 62: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 63: {64, 130, 71, 11, 77, 84, 56, 124}, 64: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 65: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 66: {83, 10, 67}, 67: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 68: {69, 62}, 69: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 70: {64, 130, 71, 11, 77, 84, 56, 124}, 71: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 72: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 73: {2}, 74: {74, 59, 52}, 75: {75}, 76: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 77: {64, 130, 71, 11, 77, 84, 56, 124}, 78: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 79: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 80: {80}, 81: {81}, 82: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 83: {83, 10, 67}, 84: {64, 130, 71, 11, 77, 84, 56, 124}, 85: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 86: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 87: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 88: {88, 98, 23}, 89: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 90: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 91: {91}, 92: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 93: {93}, 94: {37, 110, 48, 18, 119, 94}, 95: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 96: {32, 96, 99, 41, 106, 113, 21, 24}, 97: {97, 22}, 98: {88, 98, 23}, 99: {32, 96, 99, 41, 106, 113, 21, 24}, 100: {25, 107, 100, 33}, 101: {26, 101}, 102: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 103: {29, 103}, 104: {104, 116, 45, 30}, 105: {105, 31}, 106: {32, 96, 99, 41, 106, 113, 21, 24}, 107: {25, 107, 100, 33}, 108: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 109: {36, 109}, 110: {37, 110, 48, 18, 119, 94}, 111: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 112: {40, 115, 44, 112}, 113: {32, 96, 99, 41, 106, 113, 21, 24}, 114: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 115: {40, 115, 44, 112}, 116: {104, 116, 45, 30}, 117: {117, 46}, 118: {118, 47}, 119: {37, 110, 48, 18, 119, 94}, 120: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 121: {121}, 122: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 123: {123}, 124: {64, 130, 71, 11, 77, 84, 56, 124}, 125: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 126: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 127: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 128: {128}, 129: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 130: {64, 130, 71, 11, 77, 84, 56, 124}, 131: {66, 131, 68, 90, 6, 72, 9, 13, 78, 82, 53, 125, 89, 58, 60, 61}, 132: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 133: {133}, 134: {129, 132, 134, 8, 12, 14, 16, 20, 28, 35, 39, 43, 50, 51, 55, 57, 63, 65, 70, 73, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 135: {135}})
+Equivalent! frozenset({68, 61}) {67, 60}
+Equivalent! frozenset({69, 62}) {68, 61}
+Equivalent! frozenset({70, 63}) {69, 62}
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fe94989f950>, {0: {0}, 1: {5}, 2: {6}, 3: {7}, 4: {8}, 5: {4}, 6: {9}, 7: {10}, 8: {11}, 9: {12}, 10: {13}, 11: {14}, 12: {15}, 13: {16}, 14: {17}, 15: {18}, 16: {19}, 17: {20}, 18: {21}, 19: {22}, 20: {23}, 21: {24}, 22: {25}, 23: {26}, 24: {27}, 25: {28}, 26: {29}, 27: {30}, 28: {31}, 29: {32}, 30: {33}, 31: {34}, 32: {35}, 33: {36}, 34: {37}, 35: {38}, 36: {39}, 37: {40}, 38: {41}, 39: {42}, 40: {43}, 41: {44}, 42: {45}, 43: {46}, 44: {47}, 45: {48}, 46: {49}, 47: {50}, 48: {1}, 49: {51}, 50: {3}, 51: {52}, 52: {53}, 53: {54}, 54: {55}, 55: {56}, 56: {57}, 57: {58}, 58: {59}, 59: {60}, 60: {61}, 61: {62}, 62: {63}, 63: {64}, 64: {65}, 65: {66}, 66: {67}, 67: {68}, 68: {69}, 69: {70}, 70: {71}, 71: {72}, 72: {73}, 73: {2}, 74: {74}, 75: {75}, 76: {76}, 77: {77}, 78: {78}, 79: {79}, 80: {80}, 81: {81}, 82: {82}, 83: {83}, 84: {84}, 85: {85}, 86: {86}, 87: {87}, 88: {88}, 89: {89}, 90: {90}, 91: {91}, 92: {92}, 93: {93}, 94: {94}, 95: {95}, 96: {96}, 97: {97}, 98: {98}, 99: {99}, 100: {100}, 101: {101}, 102: {102}, 103: {103}, 104: {104}, 105: {105}, 106: {106}, 107: {107}, 108: {108}, 109: {109}, 110: {110}, 111: {111}, 112: {112}, 113: {113}, 114: {114}, 115: {115}, 116: {116}, 117: {117}, 118: {118}, 119: {119}, 120: {120}, 121: {121}, 122: {122}, 123: {123}, 124: {124}, 125: {125}, 126: {126}, 127: {127}, 128: {128}, 129: {129}, 130: {130}, 131: {131}, 132: {132}, 133: {133}, 134: {134}, 135: {135}})
+EXACT 0 getelementptr getelementptr
+EXACT 1 getelementptr getelementptr
+EXACT 2 load load
+EXACT 3 add add
+EXACT 4 store store
+EXACT 5 getelementptr getelementptr
+EXACT 6 load load
+EXACT 7 add add
+EXACT 8 inttoptr inttoptr
+EXACT 9 store store
+EXACT 10 load load
+EXACT 11 store store
+EXACT 12 add add
+EXACT 13 store store
+EXACT 14 icmp icmp
+EXACT 15 zext zext
+EXACT 16 getelementptr getelementptr
+EXACT 17 store store
+EXACT 18 trunc trunc
+EXACT 19 and and
+EXACT 20 tail tail
+EXACT 21 trunc trunc
+EXACT 22 and and
+EXACT 23 xor xor
+EXACT 24 getelementptr getelementptr
+EXACT 25 store store
+EXACT 26 xor xor
+EXACT 27 xor xor
+EXACT 28 lshr lshr
+EXACT 29 trunc trunc
+EXACT 30 and and
+EXACT 31 getelementptr getelementptr
+EXACT 32 store store
+EXACT 33 icmp icmp
+EXACT 34 zext zext
+EXACT 35 getelementptr getelementptr
+EXACT 36 store store
+EXACT 37 lshr lshr
+EXACT 38 trunc trunc
+EXACT 39 getelementptr getelementptr
+EXACT 40 store store
+EXACT 41 lshr lshr
+EXACT 42 xor xor
+EXACT 43 add add
+EXACT 44 icmp icmp
+EXACT 45 zext zext
+EXACT 46 getelementptr getelementptr
+EXACT 47 store store
+EXACT 48 getelementptr getelementptr
+EXACT 49 store store
+EXACT 50 getelementptr getelementptr
+EXACT 51 add add
+EXACT 52 load load
+EXACT 53 add add
+EXACT 54 store store
+EXACT 55 inttoptr inttoptr
+EXACT 56 store store
+EXACT 57 load load
+EXACT 58 add add
+EXACT 59 load load
+EXACT 60 load load
+EXACT 61 add add
+EXACT 62 store store
+EXACT 63 inttoptr inttoptr
+EXACT 64 store store
+EXACT 65 load load
+EXACT 66 add add
+EXACT 67 load load
+EXACT 68 add add
+EXACT 69 store store
+EXACT 70 inttoptr inttoptr
+EXACT 71 load load
+EXACT 72 store store
+EXACT 73 getelementptr getelementptr
+EXACT 74 add add
+EXACT 75 add add
+EXACT 76 store store
+EXACT 77 inttoptr inttoptr
+EXACT 78 load load
+EXACT 79 store store
+EXACT 80 add add
+EXACT 81 add add
+EXACT 82 load load
+EXACT 83 add add
+EXACT 84 inttoptr inttoptr
+EXACT 85 store store
+EXACT 86 store store
+EXACT 87 store store
+EXACT 88 tail tail
+EXACT 89 load load
+EXACT 90 load load
+EXACT 91 add add
+EXACT 92 store store
+EXACT 93 icmp icmp
+EXACT 94 zext zext
+EXACT 95 store store
+EXACT 96 trunc trunc
+EXACT 97 and and
+EXACT 98 tail tail
+EXACT 99 trunc trunc
+EXACT 100 and and
+EXACT 101 xor xor
+EXACT 102 store store
+EXACT 103 xor xor
+EXACT 104 xor xor
+EXACT 105 lshr lshr
+EXACT 106 trunc trunc
+EXACT 107 and and
+EXACT 108 store store
+EXACT 109 icmp icmp
+EXACT 110 zext zext
+EXACT 111 store store
+EXACT 112 lshr lshr
+EXACT 113 trunc trunc
+EXACT 114 store store
+EXACT 115 lshr lshr
+EXACT 116 xor xor
+EXACT 117 add add
+EXACT 118 icmp icmp
+EXACT 119 zext zext
+EXACT 120 store store
+EXACT 121 add add
+EXACT 122 store store
+EXACT 123 add add
+EXACT 124 inttoptr inttoptr
+EXACT 125 load load
+EXACT 126 store store
+EXACT 127 store store
+EXACT 128 add add
+EXACT 129 store store
+EXACT 130 inttoptr inttoptr
+EXACT 131 load load
+EXACT 132 store store
+EXACT 133 add add
+EXACT 134 store store
+EXACT 135 ret ret
+================ Starting round 1
+MAPPING:
+- 0 %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+- 1 %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+- 2 %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+- 3 %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+- 4 %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+- 5 %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+- 6 %3 = load i64, i64* %RBP, align 8
+- 7 %4 = add i64 %1, 1
+- 8 store i64 %4, i64* %PC, align 8
+- 9 %5 = load i64, i64* %RSP, align 8
+- 10 %6 = add i64 %5, -8
+- 11 %7 = inttoptr i64 %6 to i64*
+- 12 store i64 %3, i64* %7, align 8
+- 13 %8 = load i64, i64* %PC, align 8
+- 14 store i64 %6, i64* %RBP, align 8
+- 15 %9 = add i64 %5, -24
+- 16 store i64 %9, i64* %RSP, align 8
+- 17 %10 = icmp ult i64 %6, 16
+- 18 %11 = zext i1 %10 to i8
+- 19 %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+- 20 store i8 %11, i8* %12, align 1
+- 21 %13 = trunc i64 %9 to i32
+- 22 %14 = and i32 %13, 255
+- 23 %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #12
+- 24 %16 = trunc i32 %15 to i8
+- 25 %17 = and i8 %16, 1
+- 26 %18 = xor i8 %17, 1
+- 27 %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+- 28 store i8 %18, i8* %19, align 1
+- 29 %20 = xor i64 %6, 16
+- 30 %21 = xor i64 %20, %9
+- 31 %22 = lshr i64 %21, 4
+- 32 %23 = trunc i64 %22 to i8
+- 33 %24 = and i8 %23, 1
+- 34 %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+- 35 store i8 %24, i8* %25, align 1
+- 36 %26 = icmp eq i64 %9, 0
+- 37 %27 = zext i1 %26 to i8
+- 38 %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+- 39 store i8 %27, i8* %28, align 1
+- 40 %29 = lshr i64 %9, 63
+- 41 %30 = trunc i64 %29 to i8
+- 42 %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+- 43 store i8 %30, i8* %31, align 1
+- 44 %32 = lshr i64 %6, 63
+- 45 %33 = xor i64 %29, %32
+- 46 %34 = add nuw nsw i64 %33, %32
+- 47 %35 = icmp eq i64 %34, 2
+- 48 %36 = zext i1 %35 to i8
+- 49 %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+- 50 store i8 %36, i8* %37, align 1
+- 51 store i64 add (i64 ptrtoint (%seg_4006a0__rodata_type* @seg_4006a0__rodata to i64), i64 4), i64* %RAX, align 8
+- 52 %38 = add i64 %5, -16
+- 53 %39 = load i64, i64* %RDI, align 8
+- 54 %40 = add i64 %8, 21
+- 55 store i64 %40, i64* %PC, align 8
+- 56 %41 = inttoptr i64 %38 to i64*
+- 57 store i64 %39, i64* %41, align 8
+- 58 %42 = load i64, i64* %RBP, align 8
+- 59 %43 = add i64 %42, -16
+- 60 %44 = load i64, i64* %RAX, align 8
+- 61 %45 = load i64, i64* %PC, align 8
+- 62 %46 = add i64 %45, 4
+- 63 store i64 %46, i64* %PC, align 8
+- 64 %47 = inttoptr i64 %43 to i64*
+- 65 store i64 %44, i64* %47, align 8
+- 66 %48 = load i64, i64* %RBP, align 8
+- 67 %49 = add i64 %48, -8
+- 68 %50 = load i64, i64* %PC, align 8
+- 69 %51 = add i64 %50, 4
+- 70 store i64 %51, i64* %PC, align 8
+- 71 %52 = inttoptr i64 %49 to i64*
+- 72 %53 = load i64, i64* %52, align 8
+- 73 store i64 %53, i64* %RDI, align 8
+- 74 %54 = add i64 %48, -16
+- 75 %55 = add i64 %50, 8
+- 76 store i64 %55, i64* %PC, align 8
+- 77 %56 = inttoptr i64 %54 to i64*
+- 78 %57 = load i64, i64* %56, align 8
+- 79 store i64 %57, i64* %RSI, align 8
+- 80 %58 = add i64 %50, -426
+- 81 %59 = add i64 %50, 13
+- 82 %60 = load i64, i64* %RSP, align 8
+- 83 %61 = add i64 %60, -8
+- 84 %62 = inttoptr i64 %61 to i64*
+- 85 store i64 %59, i64* %62, align 8
+- 86 store i64 %61, i64* %RSP, align 8
+- 87 store i64 %58, i64* %PC, align 8
+- 88 %63 = tail call fastcc %struct.Memory* @ext_601068_strcmp(%struct.State* nonnull %0, %struct.Memory* %2)
+- 89 %64 = load i64, i64* %RSP, align 8
+- 90 %65 = load i64, i64* %PC, align 8
+- 91 %66 = add i64 %64, 16
+- 92 store i64 %66, i64* %RSP, align 8
+- 93 %67 = icmp ugt i64 %64, -17
+- 94 %68 = zext i1 %67 to i8
+- 95 store i8 %68, i8* %12, align 1
+- 96 %69 = trunc i64 %66 to i32
+- 97 %70 = and i32 %69, 255
+- 98 %71 = tail call i32 @llvm.ctpop.i32(i32 %70) #12
+- 99 %72 = trunc i32 %71 to i8
+- 100 %73 = and i8 %72, 1
+- 101 %74 = xor i8 %73, 1
+- 102 store i8 %74, i8* %19, align 1
+- 103 %75 = xor i64 %64, 16
+- 104 %76 = xor i64 %75, %66
+- 105 %77 = lshr i64 %76, 4
+- 106 %78 = trunc i64 %77 to i8
+- 107 %79 = and i8 %78, 1
+- 108 store i8 %79, i8* %25, align 1
+- 109 %80 = icmp eq i64 %66, 0
+- 110 %81 = zext i1 %80 to i8
+- 111 store i8 %81, i8* %28, align 1
+- 112 %82 = lshr i64 %66, 63
+- 113 %83 = trunc i64 %82 to i8
+- 114 store i8 %83, i8* %31, align 1
+- 115 %84 = lshr i64 %64, 63
+- 116 %85 = xor i64 %82, %84
+- 117 %86 = add nuw nsw i64 %85, %82
+- 118 %87 = icmp eq i64 %86, 2
+- 119 %88 = zext i1 %87 to i8
+- 120 store i8 %88, i8* %37, align 1
+- 121 %89 = add i64 %65, 5
+- 122 store i64 %89, i64* %PC, align 8
+- 123 %90 = add i64 %64, 24
+- 124 %91 = inttoptr i64 %66 to i64*
+- 125 %92 = load i64, i64* %91, align 8
+- 126 store i64 %92, i64* %RBP, align 8
+- 127 store i64 %90, i64* %RSP, align 8
+- 128 %93 = add i64 %65, 6
+- 129 store i64 %93, i64* %PC, align 8
+- 130 %94 = inttoptr i64 %90 to i64*
+- 131 %95 = load i64, i64* %94, align 8
+- 132 store i64 %95, i64* %PC, align 8
+- 133 %96 = add i64 %64, 32
+- 134 store i64 %96, i64* %RSP, align 8
+- 135 \<badref\> = ret %struct.Memory* %63
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fe94989fae8>, {0: {0}, 1: {48}, 2: {73}, 3: {50}, 4: {5}, 5: {1}, 6: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 7: {3}, 8: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 9: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 10: {66, 83, 7}, 11: {130, 70, 8, 77, 84, 55, 124, 63}, 12: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 13: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 14: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 15: {12}, 16: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 17: {14}, 18: {34, 45, 110, 15, 119, 94}, 19: {16}, 20: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 21: {96, 99, 38, 106, 113, 18, 21, 29}, 22: {97, 19}, 23: {88, 98, 20}, 24: {96, 99, 38, 106, 113, 18, 21, 29}, 25: {107, 100, 22, 30}, 26: {101, 23}, 27: {24}, 28: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 29: {26, 103}, 30: {104, 42, 27, 116}, 31: {105, 28}, 32: {96, 99, 38, 106, 113, 18, 21, 29}, 33: {107, 100, 22, 30}, 34: {31}, 35: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 36: {33, 109}, 37: {34, 45, 110, 15, 119, 94}, 38: {35}, 39: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 40: {112, 41, 115, 37}, 41: {96, 99, 38, 106, 113, 18, 21, 29}, 42: {39}, 43: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 44: {112, 41, 115, 37}, 45: {104, 42, 27, 116}, 46: {43, 117}, 47: {44, 118}, 48: {34, 45, 110, 15, 119, 94}, 49: {46}, 50: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 51: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 52: {58, 51, 74}, 53: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 54: {53}, 55: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 56: {130, 70, 8, 77, 84, 55, 124, 63}, 57: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 58: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 59: {58, 51, 74}, 60: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 61: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 62: {68, 61}, 63: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 64: {130, 70, 8, 77, 84, 55, 124, 63}, 65: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 66: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 67: {66, 83, 7}, 68: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 69: {68, 61}, 70: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 71: {130, 70, 8, 77, 84, 55, 124, 63}, 72: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 73: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 74: {58, 51, 74}, 75: {75}, 76: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 77: {130, 70, 8, 77, 84, 55, 124, 63}, 78: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 79: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 80: {80}, 81: {81}, 82: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 83: {66, 83, 7}, 84: {130, 70, 8, 77, 84, 55, 124, 63}, 85: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 86: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 87: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 88: {88, 98, 20}, 89: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 90: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 91: {91}, 92: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 93: {93}, 94: {34, 45, 110, 15, 119, 94}, 95: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 96: {96, 99, 38, 106, 113, 18, 21, 29}, 97: {97, 19}, 98: {88, 98, 20}, 99: {96, 99, 38, 106, 113, 18, 21, 29}, 100: {107, 100, 22, 30}, 101: {101, 23}, 102: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 103: {26, 103}, 104: {104, 42, 27, 116}, 105: {105, 28}, 106: {96, 99, 38, 106, 113, 18, 21, 29}, 107: {107, 100, 22, 30}, 108: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 109: {33, 109}, 110: {34, 45, 110, 15, 119, 94}, 111: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 112: {112, 41, 115, 37}, 113: {96, 99, 38, 106, 113, 18, 21, 29}, 114: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 115: {112, 41, 115, 37}, 116: {104, 42, 27, 116}, 117: {43, 117}, 118: {44, 118}, 119: {34, 45, 110, 15, 119, 94}, 120: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 121: {121}, 122: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 123: {123}, 124: {130, 70, 8, 77, 84, 55, 124, 63}, 125: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 126: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 127: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 128: {128}, 129: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 130: {130, 70, 8, 77, 84, 55, 124, 63}, 131: {89, 65, 2, 67, 131, 6, 71, 10, 78, 82, 52, 57, 90, 59, 60, 125}, 132: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 133: {133}, 134: {129, 4, 132, 134, 9, 11, 13, 17, 25, 32, 36, 40, 47, 49, 54, 56, 62, 64, 69, 72, 76, 79, 85, 86, 87, 92, 95, 102, 108, 111, 114, 120, 122, 126, 127}, 135: {135}})
+Equivalent! frozenset({67, 60}) {68, 61}
+Equivalent! frozenset({68, 61}) {69, 62}
+Equivalent! frozenset({69, 62}) {70, 63}
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fe94989fae8>, {0: {0}, 1: {48}, 2: {73}, 3: {50}, 4: {5}, 5: {1}, 6: {2}, 7: {3}, 8: {4}, 9: {6}, 10: {7}, 11: {8}, 12: {9}, 13: {10}, 14: {11}, 15: {12}, 16: {13}, 17: {14}, 18: {15}, 19: {16}, 20: {17}, 21: {18}, 22: {19}, 23: {20}, 24: {21}, 25: {22}, 26: {23}, 27: {24}, 28: {25}, 29: {26}, 30: {27}, 31: {28}, 32: {29}, 33: {30}, 34: {31}, 35: {32}, 36: {33}, 37: {34}, 38: {35}, 39: {36}, 40: {37}, 41: {38}, 42: {39}, 43: {40}, 44: {41}, 45: {42}, 46: {43}, 47: {44}, 48: {45}, 49: {46}, 50: {47}, 51: {49}, 52: {51}, 53: {52}, 54: {53}, 55: {54}, 56: {55}, 57: {56}, 58: {57}, 59: {58}, 60: {59}, 61: {60}, 62: {61}, 63: {62}, 64: {63}, 65: {64}, 66: {65}, 67: {66}, 68: {67}, 69: {68}, 70: {69}, 71: {70}, 72: {71}, 73: {72}, 74: {74}, 75: {75}, 76: {76}, 77: {77}, 78: {78}, 79: {79}, 80: {80}, 81: {81}, 82: {82}, 83: {83}, 84: {84}, 85: {85}, 86: {86}, 87: {87}, 88: {88}, 89: {89}, 90: {90}, 91: {91}, 92: {92}, 93: {93}, 94: {94}, 95: {95}, 96: {96}, 97: {97}, 98: {98}, 99: {99}, 100: {100}, 101: {101}, 102: {102}, 103: {103}, 104: {104}, 105: {105}, 106: {106}, 107: {107}, 108: {108}, 109: {109}, 110: {110}, 111: {111}, 112: {112}, 113: {113}, 114: {114}, 115: {115}, 116: {116}, 117: {117}, 118: {118}, 119: {119}, 120: {120}, 121: {121}, 122: {122}, 123: {123}, 124: {124}, 125: {125}, 126: {126}, 127: {127}, 128: {128}, 129: {129}, 130: {130}, 131: {131}, 132: {132}, 133: {133}, 134: {134}, 135: {135}})
+EXACT 0 getelementptr getelementptr
+EXACT 1 getelementptr getelementptr
+EXACT 2 getelementptr getelementptr
+EXACT 3 getelementptr getelementptr
+EXACT 4 getelementptr getelementptr
+EXACT 5 getelementptr getelementptr
+EXACT 6 load load
+EXACT 7 add add
+EXACT 8 store store
+EXACT 9 load load
+EXACT 10 add add
+EXACT 11 inttoptr inttoptr
+EXACT 12 store store
+EXACT 13 load load
+EXACT 14 store store
+EXACT 15 add add
+EXACT 16 store store
+EXACT 17 icmp icmp
+EXACT 18 zext zext
+EXACT 19 getelementptr getelementptr
+EXACT 20 store store
+EXACT 21 trunc trunc
+EXACT 22 and and
+EXACT 23 tail tail
+EXACT 24 trunc trunc
+EXACT 25 and and
+EXACT 26 xor xor
+EXACT 27 getelementptr getelementptr
+EXACT 28 store store
+EXACT 29 xor xor
+EXACT 30 xor xor
+EXACT 31 lshr lshr
+EXACT 32 trunc trunc
+EXACT 33 and and
+EXACT 34 getelementptr getelementptr
+EXACT 35 store store
+EXACT 36 icmp icmp
+EXACT 37 zext zext
+EXACT 38 getelementptr getelementptr
+EXACT 39 store store
+EXACT 40 lshr lshr
+EXACT 41 trunc trunc
+EXACT 42 getelementptr getelementptr
+EXACT 43 store store
+EXACT 44 lshr lshr
+EXACT 45 xor xor
+EXACT 46 add add
+EXACT 47 icmp icmp
+EXACT 48 zext zext
+EXACT 49 getelementptr getelementptr
+EXACT 50 store store
+EXACT 51 store store
+EXACT 52 add add
+EXACT 53 load load
+EXACT 54 add add
+EXACT 55 store store
+EXACT 56 inttoptr inttoptr
+EXACT 57 store store
+EXACT 58 load load
+EXACT 59 add add
+EXACT 60 load load
+EXACT 61 load load
+EXACT 62 add add
+EXACT 63 store store
+EXACT 64 inttoptr inttoptr
+EXACT 65 store store
+EXACT 66 load load
+EXACT 67 add add
+EXACT 68 load load
+EXACT 69 add add
+EXACT 70 store store
+EXACT 71 inttoptr inttoptr
+EXACT 72 load load
+EXACT 73 store store
+EXACT 74 add add
+EXACT 75 add add
+EXACT 76 store store
+EXACT 77 inttoptr inttoptr
+EXACT 78 load load
+EXACT 79 store store
+EXACT 80 add add
+EXACT 81 add add
+EXACT 82 load load
+EXACT 83 add add
+EXACT 84 inttoptr inttoptr
+EXACT 85 store store
+EXACT 86 store store
+EXACT 87 store store
+EXACT 88 tail tail
+EXACT 89 load load
+EXACT 90 load load
+EXACT 91 add add
+EXACT 92 store store
+EXACT 93 icmp icmp
+EXACT 94 zext zext
+EXACT 95 store store
+EXACT 96 trunc trunc
+EXACT 97 and and
+EXACT 98 tail tail
+EXACT 99 trunc trunc
+EXACT 100 and and
+EXACT 101 xor xor
+EXACT 102 store store
+EXACT 103 xor xor
+EXACT 104 xor xor
+EXACT 105 lshr lshr
+EXACT 106 trunc trunc
+EXACT 107 and and
+EXACT 108 store store
+EXACT 109 icmp icmp
+EXACT 110 zext zext
+EXACT 111 store store
+EXACT 112 lshr lshr
+EXACT 113 trunc trunc
+EXACT 114 store store
+EXACT 115 lshr lshr
+EXACT 116 xor xor
+EXACT 117 add add
+EXACT 118 icmp icmp
+EXACT 119 zext zext
+EXACT 120 store store
+EXACT 121 add add
+EXACT 122 store store
+EXACT 123 add add
+EXACT 124 inttoptr inttoptr
+EXACT 125 load load
+EXACT 126 store store
+EXACT 127 store store
+EXACT 128 add add
+EXACT 129 store store
+EXACT 130 inttoptr inttoptr
+EXACT 131 load load
+EXACT 132 store store
+EXACT 133 add add
+EXACT 134 store store
+EXACT 135 ret ret
+FP: 63 1.0 True
+TO REMOVE: dict_keys(['%3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0', '%RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0', '%4 = load i64, i64* %RBP.i, align 8', '%5 = add i64 %1, 1', 'store i64 %5, i64* %3, align 8', '%6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0', '%7 = load i64, i64* %6, align 8', '%8 = add i64 %7, -8', '%9 = inttoptr i64 %8 to i64*', 'store i64 %4, i64* %9, align 8', '%10 = load i64, i64* %3, align 8', 'store i64 %8, i64* %RBP.i, align 8', '%11 = add i64 %7, -24', 'store i64 %11, i64* %6, align 8', '%12 = icmp ult i64 %8, 16', '%13 = zext i1 %12 to i8', '%14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1', 'store i8 %13, i8* %14, align 1', '%15 = trunc i64 %11 to i32', '%16 = and i32 %15, 255', '%17 = tail call i32 @llvm.ctpop.i32(i32 %16)', '%18 = trunc i32 %17 to i8', '%19 = and i8 %18, 1', '%20 = xor i8 %19, 1', '%21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3', 'store i8 %20, i8* %21, align 1', '%22 = xor i64 %8, 16', '%23 = xor i64 %22, %11', '%24 = lshr i64 %23, 4', '%25 = trunc i64 %24 to i8', '%26 = and i8 %25, 1', '%27 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5', 'store i8 %26, i8* %27, align 1', '%28 = icmp eq i64 %11, 0', '%29 = zext i1 %28 to i8', '%30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7', 'store i8 %29, i8* %30, align 1', '%31 = lshr i64 %11, 63', '%32 = trunc i64 %31 to i8', '%33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9', 'store i8 %32, i8* %33, align 1', '%34 = lshr i64 %8, 63', '%35 = xor i64 %31, %34', '%36 = add nuw nsw i64 %35, %34', '%37 = icmp eq i64 %36, 2', '%38 = zext i1 %37 to i8', '%39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13', 'store i8 %38, i8* %39, align 1', '%RAX.i19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0', 'store i64 ptrtoint (%G__0x4006a4_type* @G__0x4006a4 to i64), i64* %RAX.i19, align 8', '%RDI.i16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0', '%40 = add i64 %7, -16', '%41 = load i64, i64* %RDI.i16, align 8', '%42 = add i64 %10, 21', 'store i64 %42, i64* %3, align 8', '%43 = inttoptr i64 %40 to i64*', 'store i64 %41, i64* %43, align 8', '%44 = load i64, i64* %RBP.i, align 8', '%45 = add i64 %44, -16', '%46 = load i64, i64* %RAX.i19, align 8', '%47 = load i64, i64* %3, align 8', '%48 = add i64 %47, 4', 'store i64 %48, i64* %3, align 8', '%49 = inttoptr i64 %45 to i64*', 'store i64 %46, i64* %49, align 8', '%50 = load i64, i64* %RBP.i, align 8', '%51 = add i64 %50, -8', '%52 = load i64, i64* %3, align 8', '%53 = add i64 %52, 4', 'store i64 %53, i64* %3, align 8', '%54 = inttoptr i64 %51 to i64*', '%55 = load i64, i64* %54, align 8', 'store i64 %55, i64* %RDI.i16, align 8', '%RSI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0', '%56 = add i64 %50, -16', '%57 = add i64 %52, 8', 'store i64 %57, i64* %3, align 8', '%58 = inttoptr i64 %56 to i64*', '%59 = load i64, i64* %58, align 8', 'store i64 %59, i64* %RSI.i, align 8', '%60 = add i64 %52, -426', '%61 = add i64 %52, 13', '%62 = load i64, i64* %6, align 8', '%63 = add i64 %62, -8', '%64 = inttoptr i64 %63 to i64*', 'store i64 %61, i64* %64, align 8', 'store i64 %63, i64* %6, align 8', 'store i64 %60, i64* %3, align 8', '%66 = load i64, i64* %6, align 8', '%67 = load i64, i64* %3, align 8', '%68 = add i64 %66, 16', 'store i64 %68, i64* %6, align 8', '%69 = icmp ugt i64 %66, -17', '%70 = zext i1 %69 to i8', 'store i8 %70, i8* %14, align 1', '%71 = trunc i64 %68 to i32', '%72 = and i32 %71, 255', '%73 = tail call i32 @llvm.ctpop.i32(i32 %72)', '%74 = trunc i32 %73 to i8', '%75 = and i8 %74, 1', '%76 = xor i8 %75, 1', 'store i8 %76, i8* %21, align 1', '%77 = xor i64 %66, 16', '%78 = xor i64 %77, %68', '%79 = lshr i64 %78, 4', '%80 = trunc i64 %79 to i8', '%81 = and i8 %80, 1', 'store i8 %81, i8* %27, align 1', '%82 = icmp eq i64 %68, 0', '%83 = zext i1 %82 to i8', 'store i8 %83, i8* %30, align 1', '%84 = lshr i64 %68, 63', '%85 = trunc i64 %84 to i8', 'store i8 %85, i8* %33, align 1', '%86 = lshr i64 %66, 63', '%87 = xor i64 %84, %86', '%88 = add nuw nsw i64 %87, %84', '%89 = icmp eq i64 %88, 2', '%90 = zext i1 %89 to i8', 'store i8 %90, i8* %39, align 1', '%91 = add i64 %67, 5', 'store i64 %91, i64* %3, align 8', '%92 = add i64 %66, 24', '%93 = inttoptr i64 %68 to i64*', '%94 = load i64, i64* %93, align 8', 'store i64 %94, i64* %RBP.i, align 8', 'store i64 %92, i64* %6, align 8', '%95 = add i64 %67, 6', 'store i64 %95, i64* %3, align 8', '%96 = inttoptr i64 %92 to i64*', '%97 = load i64, i64* %96, align 8', 'store i64 %97, i64* %3, align 8', '%98 = add i64 %66, 32', 'store i64 %98, i64* %6, align 8'])
+Keep: entry:
+Found line to remove! %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Found line to remove! %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Found line to remove! %4 = load i64, i64* %RBP.i, align 8
+Found line to remove! %5 = add i64 %1, 1
+Found line to remove! store i64 %5, i64* %3, align 8
+Found line to remove! %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Found line to remove! %7 = load i64, i64* %6, align 8
+Found line to remove! %8 = add i64 %7, -8
+Found line to remove! %9 = inttoptr i64 %8 to i64*
+Found line to remove! store i64 %4, i64* %9, align 8
+Found line to remove! %10 = load i64, i64* %3, align 8
+Found line to remove! store i64 %8, i64* %RBP.i, align 8
+Found line to remove! %11 = add i64 %7, -24
+Found line to remove! store i64 %11, i64* %6, align 8
+Found line to remove! %12 = icmp ult i64 %8, 16
+Found line to remove! %13 = zext i1 %12 to i8
+Found line to remove! %14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+Found line to remove! store i8 %13, i8* %14, align 1
+Found line to remove! %15 = trunc i64 %11 to i32
+Found line to remove! %16 = and i32 %15, 255
+Found line to remove! %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+Found line to remove! %18 = trunc i32 %17 to i8
+Found line to remove! %19 = and i8 %18, 1
+Found line to remove! %20 = xor i8 %19, 1
+Found line to remove! %21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+Found line to remove! store i8 %20, i8* %21, align 1
+Found line to remove! %22 = xor i64 %8, 16
+Found line to remove! %23 = xor i64 %22, %11
+Found line to remove! %24 = lshr i64 %23, 4
+Found line to remove! %25 = trunc i64 %24 to i8
+Found line to remove! %26 = and i8 %25, 1
+Found line to remove! %27 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+Found line to remove! store i8 %26, i8* %27, align 1
+Found line to remove! %28 = icmp eq i64 %11, 0
+Found line to remove! %29 = zext i1 %28 to i8
+Found line to remove! %30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+Found line to remove! store i8 %29, i8* %30, align 1
+Found line to remove! %31 = lshr i64 %11, 63
+Found line to remove! %32 = trunc i64 %31 to i8
+Found line to remove! %33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+Found line to remove! store i8 %32, i8* %33, align 1
+Found line to remove! %34 = lshr i64 %8, 63
+Found line to remove! %35 = xor i64 %31, %34
+Found line to remove! %36 = add nuw nsw i64 %35, %34
+Found line to remove! %37 = icmp eq i64 %36, 2
+Found line to remove! %38 = zext i1 %37 to i8
+Found line to remove! %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+Found line to remove! store i8 %38, i8* %39, align 1
+Found line to remove! %RAX.i19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+Found line to remove! store i64 ptrtoint (%G__0x4006a4_type* @G__0x4006a4 to i64), i64* %RAX.i19, align 8
+Found line to remove! %RDI.i16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+Found line to remove! %40 = add i64 %7, -16
+Found line to remove! %41 = load i64, i64* %RDI.i16, align 8
+Found line to remove! %42 = add i64 %10, 21
+Found line to remove! store i64 %42, i64* %3, align 8
+Found line to remove! %43 = inttoptr i64 %40 to i64*
+Found line to remove! store i64 %41, i64* %43, align 8
+Found line to remove! %44 = load i64, i64* %RBP.i, align 8
+Found line to remove! %45 = add i64 %44, -16
+Found line to remove! %46 = load i64, i64* %RAX.i19, align 8
+Found line to remove! %47 = load i64, i64* %3, align 8
+Found line to remove! %48 = add i64 %47, 4
+Found line to remove! store i64 %48, i64* %3, align 8
+Found line to remove! %49 = inttoptr i64 %45 to i64*
+Found line to remove! store i64 %46, i64* %49, align 8
+Found line to remove! %50 = load i64, i64* %RBP.i, align 8
+Found line to remove! %51 = add i64 %50, -8
+Found line to remove! %52 = load i64, i64* %3, align 8
+Found line to remove! %53 = add i64 %52, 4
+Found line to remove! store i64 %53, i64* %3, align 8
+Found line to remove! %54 = inttoptr i64 %51 to i64*
+Found line to remove! %55 = load i64, i64* %54, align 8
+Found line to remove! store i64 %55, i64* %RDI.i16, align 8
+Found line to remove! %RSI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+Found line to remove! %56 = add i64 %50, -16
+Found line to remove! %57 = add i64 %52, 8
+Found line to remove! store i64 %57, i64* %3, align 8
+Found line to remove! %58 = inttoptr i64 %56 to i64*
+Found line to remove! %59 = load i64, i64* %58, align 8
+Found line to remove! store i64 %59, i64* %RSI.i, align 8
+Found line to remove! %60 = add i64 %52, -426
+Found line to remove! %61 = add i64 %52, 13
+Found line to remove! %62 = load i64, i64* %6, align 8
+Found line to remove! %63 = add i64 %62, -8
+Found line to remove! %64 = inttoptr i64 %63 to i64*
+Found line to remove! store i64 %61, i64* %64, align 8
+Found line to remove! store i64 %63, i64* %6, align 8
+Found line to remove! store i64 %60, i64* %3, align 8
+Keep: %65 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @strcmp to i64), %struct.Memory* %2)
+Found line to remove! %66 = load i64, i64* %6, align 8
+Found line to remove! %67 = load i64, i64* %3, align 8
+Found line to remove! %68 = add i64 %66, 16
+Found line to remove! store i64 %68, i64* %6, align 8
+Found line to remove! %69 = icmp ugt i64 %66, -17
+Found line to remove! %70 = zext i1 %69 to i8
+Found line to remove! store i8 %70, i8* %14, align 1
+Found line to remove! %71 = trunc i64 %68 to i32
+Found line to remove! %72 = and i32 %71, 255
+Found line to remove! %73 = tail call i32 @llvm.ctpop.i32(i32 %72)
+Found line to remove! %74 = trunc i32 %73 to i8
+Found line to remove! %75 = and i8 %74, 1
+Found line to remove! %76 = xor i8 %75, 1
+Found line to remove! store i8 %76, i8* %21, align 1
+Found line to remove! %77 = xor i64 %66, 16
+Found line to remove! %78 = xor i64 %77, %68
+Found line to remove! %79 = lshr i64 %78, 4
+Found line to remove! %80 = trunc i64 %79 to i8
+Found line to remove! %81 = and i8 %80, 1
+Found line to remove! store i8 %81, i8* %27, align 1
+Found line to remove! %82 = icmp eq i64 %68, 0
+Found line to remove! %83 = zext i1 %82 to i8
+Found line to remove! store i8 %83, i8* %30, align 1
+Found line to remove! %84 = lshr i64 %68, 63
+Found line to remove! %85 = trunc i64 %84 to i8
+Found line to remove! store i8 %85, i8* %33, align 1
+Found line to remove! %86 = lshr i64 %66, 63
+Found line to remove! %87 = xor i64 %84, %86
+Found line to remove! %88 = add nuw nsw i64 %87, %84
+Found line to remove! %89 = icmp eq i64 %88, 2
+Found line to remove! %90 = zext i1 %89 to i8
+Found line to remove! store i8 %90, i8* %39, align 1
+Found line to remove! %91 = add i64 %67, 5
+Found line to remove! store i64 %91, i64* %3, align 8
+Found line to remove! %92 = add i64 %66, 24
+Found line to remove! %93 = inttoptr i64 %68 to i64*
+Found line to remove! %94 = load i64, i64* %93, align 8
+Found line to remove! store i64 %94, i64* %RBP.i, align 8
+Found line to remove! store i64 %92, i64* %6, align 8
+Found line to remove! %95 = add i64 %67, 6
+Found line to remove! store i64 %95, i64* %3, align 8
+Found line to remove! %96 = inttoptr i64 %92 to i64*
+Found line to remove! %97 = load i64, i64* %96, align 8
+Found line to remove! store i64 %97, i64* %3, align 8
+Found line to remove! %98 = add i64 %66, 32
+Found line to remove! store i64 %98, i64* %6, align 8
+Keep: ret %struct.Memory* %65
+Missed: dict_keys(['%3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0', '%RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0', '%4 = load i64, i64* %RBP.i, align 8', '%5 = add i64 %1, 1', 'store i64 %5, i64* %3, align 8', '%6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0', '%7 = load i64, i64* %6, align 8', '%8 = add i64 %7, -8', '%9 = inttoptr i64 %8 to i64*', 'store i64 %4, i64* %9, align 8', '%10 = load i64, i64* %3, align 8', 'store i64 %8, i64* %RBP.i, align 8', '%11 = add i64 %7, -24', 'store i64 %11, i64* %6, align 8', '%12 = icmp ult i64 %8, 16', '%13 = zext i1 %12 to i8', '%14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1', 'store i8 %13, i8* %14, align 1', '%15 = trunc i64 %11 to i32', '%16 = and i32 %15, 255', '%17 = tail call i32 @llvm.ctpop.i32(i32 %16)', '%18 = trunc i32 %17 to i8', '%19 = and i8 %18, 1', '%20 = xor i8 %19, 1', '%21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3', 'store i8 %20, i8* %21, align 1', '%22 = xor i64 %8, 16', '%23 = xor i64 %22, %11', '%24 = lshr i64 %23, 4', '%25 = trunc i64 %24 to i8', '%26 = and i8 %25, 1', '%27 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5', 'store i8 %26, i8* %27, align 1', '%28 = icmp eq i64 %11, 0', '%29 = zext i1 %28 to i8', '%30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7', 'store i8 %29, i8* %30, align 1', '%31 = lshr i64 %11, 63', '%32 = trunc i64 %31 to i8', '%33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9', 'store i8 %32, i8* %33, align 1', '%34 = lshr i64 %8, 63', '%35 = xor i64 %31, %34', '%36 = add nuw nsw i64 %35, %34', '%37 = icmp eq i64 %36, 2', '%38 = zext i1 %37 to i8', '%39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13', 'store i8 %38, i8* %39, align 1', '%RAX.i19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0', 'store i64 ptrtoint (%G__0x4006a4_type* @G__0x4006a4 to i64), i64* %RAX.i19, align 8', '%RDI.i16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0', '%40 = add i64 %7, -16', '%41 = load i64, i64* %RDI.i16, align 8', '%42 = add i64 %10, 21', 'store i64 %42, i64* %3, align 8', '%43 = inttoptr i64 %40 to i64*', 'store i64 %41, i64* %43, align 8', '%44 = load i64, i64* %RBP.i, align 8', '%45 = add i64 %44, -16', '%46 = load i64, i64* %RAX.i19, align 8', '%47 = load i64, i64* %3, align 8', '%48 = add i64 %47, 4', 'store i64 %48, i64* %3, align 8', '%49 = inttoptr i64 %45 to i64*', 'store i64 %46, i64* %49, align 8', '%50 = load i64, i64* %RBP.i, align 8', '%51 = add i64 %50, -8', '%52 = load i64, i64* %3, align 8', '%53 = add i64 %52, 4', 'store i64 %53, i64* %3, align 8', '%54 = inttoptr i64 %51 to i64*', '%55 = load i64, i64* %54, align 8', 'store i64 %55, i64* %RDI.i16, align 8', '%RSI.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0', '%56 = add i64 %50, -16', '%57 = add i64 %52, 8', 'store i64 %57, i64* %3, align 8', '%58 = inttoptr i64 %56 to i64*', '%59 = load i64, i64* %58, align 8', 'store i64 %59, i64* %RSI.i, align 8', '%60 = add i64 %52, -426', '%61 = add i64 %52, 13', '%62 = load i64, i64* %6, align 8', '%63 = add i64 %62, -8', '%64 = inttoptr i64 %63 to i64*', 'store i64 %61, i64* %64, align 8', 'store i64 %63, i64* %6, align 8', 'store i64 %60, i64* %3, align 8', '%66 = load i64, i64* %6, align 8', '%67 = load i64, i64* %3, align 8', '%68 = add i64 %66, 16', 'store i64 %68, i64* %6, align 8', '%69 = icmp ugt i64 %66, -17', '%70 = zext i1 %69 to i8', 'store i8 %70, i8* %14, align 1', '%71 = trunc i64 %68 to i32', '%72 = and i32 %71, 255', '%73 = tail call i32 @llvm.ctpop.i32(i32 %72)', '%74 = trunc i32 %73 to i8', '%75 = and i8 %74, 1', '%76 = xor i8 %75, 1', 'store i8 %76, i8* %21, align 1', '%77 = xor i64 %66, 16', '%78 = xor i64 %77, %68', '%79 = lshr i64 %78, 4', '%80 = trunc i64 %79 to i8', '%81 = and i8 %80, 1', 'store i8 %81, i8* %27, align 1', '%82 = icmp eq i64 %68, 0', '%83 = zext i1 %82 to i8', 'store i8 %83, i8* %30, align 1', '%84 = lshr i64 %68, 63', '%85 = trunc i64 %84 to i8', 'store i8 %85, i8* %33, align 1', '%86 = lshr i64 %66, 63', '%87 = xor i64 %84, %86', '%88 = add nuw nsw i64 %87, %84', '%89 = icmp eq i64 %88, 2', '%90 = zext i1 %89 to i8', 'store i8 %90, i8* %39, align 1', '%91 = add i64 %67, 5', 'store i64 %91, i64* %3, align 8', '%92 = add i64 %66, 24', '%93 = inttoptr i64 %68 to i64*', '%94 = load i64, i64* %93, align 8', 'store i64 %94, i64* %RBP.i, align 8', 'store i64 %92, i64* %6, align 8', '%95 = add i64 %67, 6', 'store i64 %95, i64* %3, align 8', '%96 = inttoptr i64 %92 to i64*', '%97 = load i64, i64* %96, align 8', 'store i64 %97, i64* %3, align 8', '%98 = add i64 %66, 32', 'store i64 %98, i64* %6, align 8'])
+TO REMOVE: dict_keys(['%PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0', '%RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0', '%RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0', '%RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0', '%RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0', '%RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0', '%3 = load i64, i64* %RBP, align 8', '%4 = add i64 %1, 1', 'store i64 %4, i64* %PC, align 8', '%5 = load i64, i64* %RSP, align 8', '%6 = add i64 %5, -8', '%7 = inttoptr i64 %6 to i64*', 'store i64 %3, i64* %7, align 8', '%8 = load i64, i64* %PC, align 8', 'store i64 %6, i64* %RBP, align 8', '%9 = add i64 %5, -24', 'store i64 %9, i64* %RSP, align 8', '%10 = icmp ult i64 %6, 16', '%11 = zext i1 %10 to i8', '%12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1', 'store i8 %11, i8* %12, align 1', '%13 = trunc i64 %9 to i32', '%14 = and i32 %13, 255', '%15 = tail call i32 @llvm.ctpop.i32(i32 %14) #12', '%16 = trunc i32 %15 to i8', '%17 = and i8 %16, 1', '%18 = xor i8 %17, 1', '%19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3', 'store i8 %18, i8* %19, align 1', '%20 = xor i64 %6, 16', '%21 = xor i64 %20, %9', '%22 = lshr i64 %21, 4', '%23 = trunc i64 %22 to i8', '%24 = and i8 %23, 1', '%25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5', 'store i8 %24, i8* %25, align 1', '%26 = icmp eq i64 %9, 0', '%27 = zext i1 %26 to i8', '%28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7', 'store i8 %27, i8* %28, align 1', '%29 = lshr i64 %9, 63', '%30 = trunc i64 %29 to i8', '%31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9', 'store i8 %30, i8* %31, align 1', '%32 = lshr i64 %6, 63', '%33 = xor i64 %29, %32', '%34 = add nuw nsw i64 %33, %32', '%35 = icmp eq i64 %34, 2', '%36 = zext i1 %35 to i8', '%37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13', 'store i8 %36, i8* %37, align 1', 'store i64 add (i64 ptrtoint (%seg_4006a0__rodata_type* @seg_4006a0__rodata to i64), i64 4), i64* %RAX, align 8', '%38 = add i64 %5, -16', '%39 = load i64, i64* %RDI, align 8', '%40 = add i64 %8, 21', 'store i64 %40, i64* %PC, align 8', '%41 = inttoptr i64 %38 to i64*', 'store i64 %39, i64* %41, align 8', '%42 = load i64, i64* %RBP, align 8', '%43 = add i64 %42, -16', '%44 = load i64, i64* %RAX, align 8', '%45 = load i64, i64* %PC, align 8', '%46 = add i64 %45, 4', 'store i64 %46, i64* %PC, align 8', '%47 = inttoptr i64 %43 to i64*', 'store i64 %44, i64* %47, align 8', '%48 = load i64, i64* %RBP, align 8', '%49 = add i64 %48, -8', '%50 = load i64, i64* %PC, align 8', '%51 = add i64 %50, 4', 'store i64 %51, i64* %PC, align 8', '%52 = inttoptr i64 %49 to i64*', '%53 = load i64, i64* %52, align 8', 'store i64 %53, i64* %RDI, align 8', '%54 = add i64 %48, -16', '%55 = add i64 %50, 8', 'store i64 %55, i64* %PC, align 8', '%56 = inttoptr i64 %54 to i64*', '%57 = load i64, i64* %56, align 8', 'store i64 %57, i64* %RSI, align 8', '%58 = add i64 %50, -426', '%59 = add i64 %50, 13', '%60 = load i64, i64* %RSP, align 8', '%61 = add i64 %60, -8', '%62 = inttoptr i64 %61 to i64*', 'store i64 %59, i64* %62, align 8', 'store i64 %61, i64* %RSP, align 8', 'store i64 %58, i64* %PC, align 8', '%64 = load i64, i64* %RSP, align 8', '%65 = load i64, i64* %PC, align 8', '%66 = add i64 %64, 16', 'store i64 %66, i64* %RSP, align 8', '%67 = icmp ugt i64 %64, -17', '%68 = zext i1 %67 to i8', 'store i8 %68, i8* %12, align 1', '%69 = trunc i64 %66 to i32', '%70 = and i32 %69, 255', '%71 = tail call i32 @llvm.ctpop.i32(i32 %70) #12', '%72 = trunc i32 %71 to i8', '%73 = and i8 %72, 1', '%74 = xor i8 %73, 1', 'store i8 %74, i8* %19, align 1', '%75 = xor i64 %64, 16', '%76 = xor i64 %75, %66', '%77 = lshr i64 %76, 4', '%78 = trunc i64 %77 to i8', '%79 = and i8 %78, 1', 'store i8 %79, i8* %25, align 1', '%80 = icmp eq i64 %66, 0', '%81 = zext i1 %80 to i8', 'store i8 %81, i8* %28, align 1', '%82 = lshr i64 %66, 63', '%83 = trunc i64 %82 to i8', 'store i8 %83, i8* %31, align 1', '%84 = lshr i64 %64, 63', '%85 = xor i64 %82, %84', '%86 = add nuw nsw i64 %85, %82', '%87 = icmp eq i64 %86, 2', '%88 = zext i1 %87 to i8', 'store i8 %88, i8* %37, align 1', '%89 = add i64 %65, 5', 'store i64 %89, i64* %PC, align 8', '%90 = add i64 %64, 24', '%91 = inttoptr i64 %66 to i64*', '%92 = load i64, i64* %91, align 8', 'store i64 %92, i64* %RBP, align 8', 'store i64 %90, i64* %RSP, align 8', '%93 = add i64 %65, 6', 'store i64 %93, i64* %PC, align 8', '%94 = inttoptr i64 %90 to i64*', '%95 = load i64, i64* %94, align 8', 'store i64 %95, i64* %PC, align 8', '%96 = add i64 %64, 32', 'store i64 %96, i64* %RSP, align 8'])
+Keep: block_4005f0:
+Found line to remove! %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+Found line to remove! %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+Found line to remove! %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
+Found line to remove! %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+Found line to remove! %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+Found line to remove! %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+Found line to remove! %3 = load i64, i64* %RBP, align 8
+Found line to remove! %4 = add i64 %1, 1
+Found line to remove! store i64 %4, i64* %PC, align 8
+Found line to remove! %5 = load i64, i64* %RSP, align 8
+Found line to remove! %6 = add i64 %5, -8
+Found line to remove! %7 = inttoptr i64 %6 to i64*
+Found line to remove! store i64 %3, i64* %7, align 8
+Found line to remove! %8 = load i64, i64* %PC, align 8
+Found line to remove! store i64 %6, i64* %RBP, align 8
+Found line to remove! %9 = add i64 %5, -24
+Found line to remove! store i64 %9, i64* %RSP, align 8
+Found line to remove! %10 = icmp ult i64 %6, 16
+Found line to remove! %11 = zext i1 %10 to i8
+Found line to remove! %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+Found line to remove! store i8 %11, i8* %12, align 1
+Found line to remove! %13 = trunc i64 %9 to i32
+Found line to remove! %14 = and i32 %13, 255
+Found line to remove! %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #12
+Found line to remove! %16 = trunc i32 %15 to i8
+Found line to remove! %17 = and i8 %16, 1
+Found line to remove! %18 = xor i8 %17, 1
+Found line to remove! %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+Found line to remove! store i8 %18, i8* %19, align 1
+Found line to remove! %20 = xor i64 %6, 16
+Found line to remove! %21 = xor i64 %20, %9
+Found line to remove! %22 = lshr i64 %21, 4
+Found line to remove! %23 = trunc i64 %22 to i8
+Found line to remove! %24 = and i8 %23, 1
+Found line to remove! %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+Found line to remove! store i8 %24, i8* %25, align 1
+Found line to remove! %26 = icmp eq i64 %9, 0
+Found line to remove! %27 = zext i1 %26 to i8
+Found line to remove! %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+Found line to remove! store i8 %27, i8* %28, align 1
+Found line to remove! %29 = lshr i64 %9, 63
+Found line to remove! %30 = trunc i64 %29 to i8
+Found line to remove! %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+Found line to remove! store i8 %30, i8* %31, align 1
+Found line to remove! %32 = lshr i64 %6, 63
+Found line to remove! %33 = xor i64 %29, %32
+Found line to remove! %34 = add nuw nsw i64 %33, %32
+Found line to remove! %35 = icmp eq i64 %34, 2
+Found line to remove! %36 = zext i1 %35 to i8
+Found line to remove! %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+Found line to remove! store i8 %36, i8* %37, align 1
+Found line to remove! store i64 add (i64 ptrtoint (%seg_4006a0__rodata_type* @seg_4006a0__rodata to i64), i64 4), i64* %RAX, align 8
+Found line to remove! %38 = add i64 %5, -16
+Found line to remove! %39 = load i64, i64* %RDI, align 8
+Found line to remove! %40 = add i64 %8, 21
+Found line to remove! store i64 %40, i64* %PC, align 8
+Found line to remove! %41 = inttoptr i64 %38 to i64*
+Found line to remove! store i64 %39, i64* %41, align 8
+Found line to remove! %42 = load i64, i64* %RBP, align 8
+Found line to remove! %43 = add i64 %42, -16
+Found line to remove! %44 = load i64, i64* %RAX, align 8
+Found line to remove! %45 = load i64, i64* %PC, align 8
+Found line to remove! %46 = add i64 %45, 4
+Found line to remove! store i64 %46, i64* %PC, align 8
+Found line to remove! %47 = inttoptr i64 %43 to i64*
+Found line to remove! store i64 %44, i64* %47, align 8
+Found line to remove! %48 = load i64, i64* %RBP, align 8
+Found line to remove! %49 = add i64 %48, -8
+Found line to remove! %50 = load i64, i64* %PC, align 8
+Found line to remove! %51 = add i64 %50, 4
+Found line to remove! store i64 %51, i64* %PC, align 8
+Found line to remove! %52 = inttoptr i64 %49 to i64*
+Found line to remove! %53 = load i64, i64* %52, align 8
+Found line to remove! store i64 %53, i64* %RDI, align 8
+Found line to remove! %54 = add i64 %48, -16
+Found line to remove! %55 = add i64 %50, 8
+Found line to remove! store i64 %55, i64* %PC, align 8
+Found line to remove! %56 = inttoptr i64 %54 to i64*
+Found line to remove! %57 = load i64, i64* %56, align 8
+Found line to remove! store i64 %57, i64* %RSI, align 8
+Found line to remove! %58 = add i64 %50, -426
+Found line to remove! %59 = add i64 %50, 13
+Found line to remove! %60 = load i64, i64* %RSP, align 8
+Found line to remove! %61 = add i64 %60, -8
+Found line to remove! %62 = inttoptr i64 %61 to i64*
+Found line to remove! store i64 %59, i64* %62, align 8
+Found line to remove! store i64 %61, i64* %RSP, align 8
+Found line to remove! store i64 %58, i64* %PC, align 8
+Keep: %63 = tail call fastcc %struct.Memory* @ext_601068_strcmp(%struct.State* nonnull %0, %struct.Memory* %2)
+Found line to remove! %64 = load i64, i64* %RSP, align 8
+Found line to remove! %65 = load i64, i64* %PC, align 8
+Found line to remove! %66 = add i64 %64, 16
+Found line to remove! store i64 %66, i64* %RSP, align 8
+Found line to remove! %67 = icmp ugt i64 %64, -17
+Found line to remove! %68 = zext i1 %67 to i8
+Found line to remove! store i8 %68, i8* %12, align 1
+Found line to remove! %69 = trunc i64 %66 to i32
+Found line to remove! %70 = and i32 %69, 255
+Found line to remove! %71 = tail call i32 @llvm.ctpop.i32(i32 %70) #12
+Found line to remove! %72 = trunc i32 %71 to i8
+Found line to remove! %73 = and i8 %72, 1
+Found line to remove! %74 = xor i8 %73, 1
+Found line to remove! store i8 %74, i8* %19, align 1
+Found line to remove! %75 = xor i64 %64, 16
+Found line to remove! %76 = xor i64 %75, %66
+Found line to remove! %77 = lshr i64 %76, 4
+Found line to remove! %78 = trunc i64 %77 to i8
+Found line to remove! %79 = and i8 %78, 1
+Found line to remove! store i8 %79, i8* %25, align 1
+Found line to remove! %80 = icmp eq i64 %66, 0
+Found line to remove! %81 = zext i1 %80 to i8
+Found line to remove! store i8 %81, i8* %28, align 1
+Found line to remove! %82 = lshr i64 %66, 63
+Found line to remove! %83 = trunc i64 %82 to i8
+Found line to remove! store i8 %83, i8* %31, align 1
+Found line to remove! %84 = lshr i64 %64, 63
+Found line to remove! %85 = xor i64 %82, %84
+Found line to remove! %86 = add nuw nsw i64 %85, %82
+Found line to remove! %87 = icmp eq i64 %86, 2
+Found line to remove! %88 = zext i1 %87 to i8
+Found line to remove! store i8 %88, i8* %37, align 1
+Found line to remove! %89 = add i64 %65, 5
+Found line to remove! store i64 %89, i64* %PC, align 8
+Found line to remove! %90 = add i64 %64, 24
+Found line to remove! %91 = inttoptr i64 %66 to i64*
+Found line to remove! %92 = load i64, i64* %91, align 8
+Found line to remove! store i64 %92, i64* %RBP, align 8
+Found line to remove! store i64 %90, i64* %RSP, align 8
+Found line to remove! %93 = add i64 %65, 6
+Found line to remove! store i64 %93, i64* %PC, align 8
+Found line to remove! %94 = inttoptr i64 %90 to i64*
+Found line to remove! %95 = load i64, i64* %94, align 8
+Found line to remove! store i64 %95, i64* %PC, align 8
+Found line to remove! %96 = add i64 %64, 32
+Found line to remove! store i64 %96, i64* %RSP, align 8
+Keep: ret %struct.Memory* %63
+Missed: dict_keys(['%PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0', '%RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0', '%RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0', '%RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0', '%RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0', '%RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0', '%3 = load i64, i64* %RBP, align 8', '%4 = add i64 %1, 1', 'store i64 %4, i64* %PC, align 8', '%5 = load i64, i64* %RSP, align 8', '%6 = add i64 %5, -8', '%7 = inttoptr i64 %6 to i64*', 'store i64 %3, i64* %7, align 8', '%8 = load i64, i64* %PC, align 8', 'store i64 %6, i64* %RBP, align 8', '%9 = add i64 %5, -24', 'store i64 %9, i64* %RSP, align 8', '%10 = icmp ult i64 %6, 16', '%11 = zext i1 %10 to i8', '%12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1', 'store i8 %11, i8* %12, align 1', '%13 = trunc i64 %9 to i32', '%14 = and i32 %13, 255', '%15 = tail call i32 @llvm.ctpop.i32(i32 %14) #12', '%16 = trunc i32 %15 to i8', '%17 = and i8 %16, 1', '%18 = xor i8 %17, 1', '%19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3', 'store i8 %18, i8* %19, align 1', '%20 = xor i64 %6, 16', '%21 = xor i64 %20, %9', '%22 = lshr i64 %21, 4', '%23 = trunc i64 %22 to i8', '%24 = and i8 %23, 1', '%25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5', 'store i8 %24, i8* %25, align 1', '%26 = icmp eq i64 %9, 0', '%27 = zext i1 %26 to i8', '%28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7', 'store i8 %27, i8* %28, align 1', '%29 = lshr i64 %9, 63', '%30 = trunc i64 %29 to i8', '%31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9', 'store i8 %30, i8* %31, align 1', '%32 = lshr i64 %6, 63', '%33 = xor i64 %29, %32', '%34 = add nuw nsw i64 %33, %32', '%35 = icmp eq i64 %34, 2', '%36 = zext i1 %35 to i8', '%37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13', 'store i8 %36, i8* %37, align 1', 'store i64 add (i64 ptrtoint (%seg_4006a0__rodata_type* @seg_4006a0__rodata to i64), i64 4), i64* %RAX, align 8', '%38 = add i64 %5, -16', '%39 = load i64, i64* %RDI, align 8', '%40 = add i64 %8, 21', 'store i64 %40, i64* %PC, align 8', '%41 = inttoptr i64 %38 to i64*', 'store i64 %39, i64* %41, align 8', '%42 = load i64, i64* %RBP, align 8', '%43 = add i64 %42, -16', '%44 = load i64, i64* %RAX, align 8', '%45 = load i64, i64* %PC, align 8', '%46 = add i64 %45, 4', 'store i64 %46, i64* %PC, align 8', '%47 = inttoptr i64 %43 to i64*', 'store i64 %44, i64* %47, align 8', '%48 = load i64, i64* %RBP, align 8', '%49 = add i64 %48, -8', '%50 = load i64, i64* %PC, align 8', '%51 = add i64 %50, 4', 'store i64 %51, i64* %PC, align 8', '%52 = inttoptr i64 %49 to i64*', '%53 = load i64, i64* %52, align 8', 'store i64 %53, i64* %RDI, align 8', '%54 = add i64 %48, -16', '%55 = add i64 %50, 8', 'store i64 %55, i64* %PC, align 8', '%56 = inttoptr i64 %54 to i64*', '%57 = load i64, i64* %56, align 8', 'store i64 %57, i64* %RSI, align 8', '%58 = add i64 %50, -426', '%59 = add i64 %50, 13', '%60 = load i64, i64* %RSP, align 8', '%61 = add i64 %60, -8', '%62 = inttoptr i64 %61 to i64*', 'store i64 %59, i64* %62, align 8', 'store i64 %61, i64* %RSP, align 8', 'store i64 %58, i64* %PC, align 8', '%64 = load i64, i64* %RSP, align 8', '%65 = load i64, i64* %PC, align 8', '%66 = add i64 %64, 16', 'store i64 %66, i64* %RSP, align 8', '%67 = icmp ugt i64 %64, -17', '%68 = zext i1 %67 to i8', 'store i8 %68, i8* %12, align 1', '%69 = trunc i64 %66 to i32', '%70 = and i32 %69, 255', '%71 = tail call i32 @llvm.ctpop.i32(i32 %70) #12', '%72 = trunc i32 %71 to i8', '%73 = and i8 %72, 1', '%74 = xor i8 %73, 1', 'store i8 %74, i8* %19, align 1', '%75 = xor i64 %64, 16', '%76 = xor i64 %75, %66', '%77 = lshr i64 %76, 4', '%78 = trunc i64 %77 to i8', '%79 = and i8 %78, 1', 'store i8 %79, i8* %25, align 1', '%80 = icmp eq i64 %66, 0', '%81 = zext i1 %80 to i8', 'store i8 %81, i8* %28, align 1', '%82 = lshr i64 %66, 63', '%83 = trunc i64 %82 to i8', 'store i8 %83, i8* %31, align 1', '%84 = lshr i64 %64, 63', '%85 = xor i64 %82, %84', '%86 = add nuw nsw i64 %85, %82', '%87 = icmp eq i64 %86, 2', '%88 = zext i1 %87 to i8', 'store i8 %88, i8* %37, align 1', '%89 = add i64 %65, 5', 'store i64 %89, i64* %PC, align 8', '%90 = add i64 %64, 24', '%91 = inttoptr i64 %66 to i64*', '%92 = load i64, i64* %91, align 8', 'store i64 %92, i64* %RBP, align 8', 'store i64 %90, i64* %RSP, align 8', '%93 = add i64 %65, 6', 'store i64 %93, i64* %PC, align 8', '%94 = inttoptr i64 %90 to i64*', '%95 = load i64, i64* %94, align 8', 'store i64 %95, i64* %PC, align 8', '%96 = add i64 %64, 32', 'store i64 %96, i64* %RSP, align 8'])
+[*] Found exact, syntactic match! /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn/mcsema/test.proposed.ll /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/binary/test.mcsema.calls_renamed.ll checkFn
+/home/ubuntu/Github/llir-matcher/matcher/match.py:711: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(fd)
