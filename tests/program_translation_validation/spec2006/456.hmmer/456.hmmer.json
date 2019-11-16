@@ -1,0 +1,3230 @@
+{
+  "GSIWriteHeader": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIWriteHeader"
+  }, 
+  "ReadMultipleRseqs": {
+    "num_inst": 97, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadMultipleRseqs"
+  }, 
+  "rkcomp": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rkcomp"
+  }, 
+  "P7CountSymbol": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7CountSymbol"
+  }, 
+  "sre_hton16": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_hton16"
+  }, 
+  "P7ReadPrior": {
+    "num_inst": 285, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ReadPrior"
+  }, 
+  "WriteSeq": {
+    "num_inst": 661, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteSeq"
+  }, 
+  "MakeAlignedString": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MakeAlignedString"
+  }, 
+  "Prob2Score": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Prob2Score"
+  }, 
+  "FreeShadowMatrix": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeShadowMatrix"
+  }, 
+  "SSIFreeIndex": {
+    "num_inst": 200, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIFreeIndex"
+  }, 
+  "sre_ntoh32": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_ntoh32"
+  }, 
+  "Plan7SetCtime": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Plan7SetCtime"
+  }, 
+  "sre_strcat": {
+    "num_inst": 94, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_strcat"
+  }, 
+  "upweight": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "upweight"
+  }, 
+  "read_i64": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_i64"
+  }, 
+  "MSAGetSeqSA": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetSeqSA"
+  }, 
+  "EVDBasicFit": {
+    "num_inst": 186, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDBasicFit"
+  }, 
+  "read_plan9_binhmm": {
+    "num_inst": 636, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_plan9_binhmm"
+  }, 
+  "read_bin20hmm": {
+    "num_inst": 881, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_bin20hmm"
+  }, 
+  "MSAGetSeqSS": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetSeqSS"
+  }, 
+  "Free3DArray": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Free3DArray"
+  }, 
+  "s2upper": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s2upper"
+  }, 
+  "FMX2Multiply": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FMX2Multiply"
+  }, 
+  "FilterAlignment": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FilterAlignment"
+  }, 
+  "P7TraceCount": {
+    "num_inst": 604, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7TraceCount"
+  }, 
+  "SqdBanner": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SqdBanner"
+  }, 
+  "readUWGCG": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readUWGCG"
+  }, 
+  "HMMFileRewind": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFileRewind"
+  }, 
+  "seqndecode": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqndecode"
+  }, 
+  "P7Viterbi": {
+    "num_inst": 822, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Viterbi"
+  }, 
+  "IsBlankline": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IsBlankline"
+  }, 
+  "prob2ascii": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "prob2ascii"
+  }, 
+  "MSAShorterAlignment": {
+    "num_inst": 485, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAShorterAlignment"
+  }, 
+  "P7ReverseTrace": {
+    "num_inst": 114, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7ReverseTrace"
+  }, 
+  "DSet": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DSet"
+  }, 
+  "Plan7GlobalConfig": {
+    "num_inst": 106, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7GlobalConfig"
+  }, 
+  "parse_pkey_info": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_pkey_info"
+  }, 
+  "Panic": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Panic"
+  }, 
+  "parse_sequence": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_sequence"
+  }, 
+  "DegenerateSymbolScore": {
+    "num_inst": 90, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DegenerateSymbolScore"
+  }, 
+  "P7Fastmodelmaker": {
+    "num_inst": 171, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Fastmodelmaker"
+  }, 
+  "sqd_regcomp": {
+    "num_inst": 174, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sqd_regcomp"
+  }, 
+  "SeqfileFormat": {
+    "num_inst": 271, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileFormat"
+  }, 
+  "default_amino_prior": {
+    "num_inst": 211, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "default_amino_prior"
+  }, 
+  "MSAFileFormat": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileFormat"
+  }, 
+  "read_asc17hmm": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_asc17hmm"
+  }, 
+  "InitIntStack": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "InitIntStack"
+  }, 
+  "AllocHistogram": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AllocHistogram"
+  }, 
+  "rightjustify": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rightjustify"
+  }, 
+  "SeqfileGetLine": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileGetLine"
+  }, 
+  "TraceDomainNumber": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceDomainNumber"
+  }, 
+  "SampleGamma": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SampleGamma"
+  }, 
+  "FChoose": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FChoose"
+  }, 
+  "SeqfileClose": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileClose"
+  }, 
+  "TraceScoreCorrection": {
+    "num_inst": 204, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "TraceScoreCorrection"
+  }, 
+  "DetermineAlphabet": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DetermineAlphabet"
+  }, 
+  "HMMERBanner": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMERBanner"
+  }, 
+  "SSIForceExternalSort": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIForceExternalSort"
+  }, 
+  "ReadSELEX": {
+    "num_inst": 1565, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReadSELEX"
+  }, 
+  "SampleCountvector": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SampleCountvector"
+  }, 
+  "P7ReadNullModel": {
+    "num_inst": 100, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ReadNullModel"
+  }, 
+  "P7AllocTrace": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7AllocTrace"
+  }, 
+  "PAMPrior": {
+    "num_inst": 179, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PAMPrior"
+  }, 
+  "rkseq": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "rkseq"
+  }, 
+  "ToIUPAC": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ToIUPAC"
+  }, 
+  "P7PriorifyTransitionVector": {
+    "num_inst": 296, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7PriorifyTransitionVector"
+  }, 
+  "MSAToSqinfo": {
+    "num_inst": 175, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAToSqinfo"
+  }, 
+  "endGCGdata": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endGCGdata"
+  }, 
+  "DArgMin": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DArgMin"
+  }, 
+  "FileConcat": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileConcat"
+  }, 
+  "MSAMingap": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAMingap"
+  }, 
+  "MSAAverageSequenceLength": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAAverageSequenceLength"
+  }, 
+  "P9FreeHMM": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P9FreeHMM"
+  }, 
+  "AllocPhylo": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AllocPhylo"
+  }, 
+  "Strparse": {
+    "num_inst": 137, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Strparse"
+  }, 
+  "main": {
+    "num_inst": 745, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main"
+  }, 
+  "PrintTransition": {
+    "num_inst": 440, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintTransition"
+  }, 
+  "FSum": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FSum"
+  }, 
+  "EVDDistribution": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDDistribution"
+  }, 
+  "DMX2Free": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DMX2Free"
+  }, 
+  "Plan7NakedConfig": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7NakedConfig"
+  }, 
+  "P7DefaultNullModel": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7DefaultNullModel"
+  }, 
+  "GaussianFitHistogram": {
+    "num_inst": 352, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GaussianFitHistogram"
+  }, 
+  "DisplayPlan7Posteriors": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DisplayPlan7Posteriors"
+  }, 
+  "GKIKeyIndex": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GKIKeyIndex"
+  }, 
+  "GetRankedHit": {
+    "num_inst": 277, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GetRankedHit"
+  }, 
+  "revcomp": {
+    "num_inst": 101, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "revcomp"
+  }, 
+  "regnode": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regnode"
+  }, 
+  "FreeSequence": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeSequence"
+  }, 
+  "HMMFilePositionByName": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFilePositionByName"
+  }, 
+  "SampleDirichlet": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SampleDirichlet"
+  }, 
+  "SSIGetSubseqOffset": {
+    "num_inst": 231, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIGetSubseqOffset"
+  }, 
+  "FreeTophits": {
+    "num_inst": 116, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeTophits"
+  }, 
+  "read_i32": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_i32"
+  }, 
+  "SAMizeAlignment": {
+    "num_inst": 233, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SAMizeAlignment"
+  }, 
+  "FileSameDirectory": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileSameDirectory"
+  }, 
+  "P7FreeTrace": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7FreeTrace"
+  }, 
+  "AllocAlignment": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AllocAlignment"
+  }, 
+  "SeqfileOpenForIndexing": {
+    "num_inst": 14, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileOpenForIndexing"
+  }, 
+  "P7Traces2Alignment": {
+    "num_inst": 930, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Traces2Alignment"
+  }, 
+  "DefaultGeneticCode": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DefaultGeneticCode"
+  }, 
+  "TraceCompare": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceCompare"
+  }, 
+  "coded_revcomp": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "coded_revcomp"
+  }, 
+  "parse_skey_info": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_skey_info"
+  }, 
+  "EPSWriteSmallMSA": {
+    "num_inst": 185, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "EPSWriteSmallMSA"
+  }, 
+  "SSIWriteIndex": {
+    "num_inst": 827, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIWriteIndex"
+  }, 
+  "GSIOpen": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIOpen"
+  }, 
+  "RandomSequence": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RandomSequence"
+  }, 
+  "IncompleteGamma": {
+    "num_inst": 178, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "IncompleteGamma"
+  }, 
+  "MSAAddGF": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAAddGF"
+  }, 
+  "DisplayPlan7Matrix": {
+    "num_inst": 259, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DisplayPlan7Matrix"
+  }, 
+  "PushIntStack": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PushIntStack"
+  }, 
+  "sqd_regerror": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sqd_regerror"
+  }, 
+  "MSAAddGS": {
+    "num_inst": 243, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAAddGS"
+  }, 
+  "write_bin_string": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_bin_string"
+  }, 
+  "WriteA2M": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteA2M"
+  }, 
+  "seqencode": {
+    "num_inst": 86, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqencode"
+  }, 
+  "SantaCruzCorrection": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SantaCruzCorrection"
+  }, 
+  "GKIStatus": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GKIStatus"
+  }, 
+  "Plan7SetName": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Plan7SetName"
+  }, 
+  "P7EmitterPosterior": {
+    "num_inst": 621, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7EmitterPosterior"
+  }, 
+  "Lawless422": {
+    "num_inst": 219, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Lawless422"
+  }, 
+  "MSAVerifyParse": {
+    "num_inst": 423, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAVerifyParse"
+  }, 
+  "Score2Prob": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Score2Prob"
+  }, 
+  "P7FreePrior": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7FreePrior"
+  }, 
+  "read_offset": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_offset"
+  }, 
+  "P7DefaultPrior": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7DefaultPrior"
+  }, 
+  "MasterTraceFromMap": {
+    "num_inst": 149, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MasterTraceFromMap"
+  }, 
+  "AlignmentIdentityBySampling": {
+    "num_inst": 70, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AlignmentIdentityBySampling"
+  }, 
+  "XNU": {
+    "num_inst": 289, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "XNU"
+  }, 
+  "DMax": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DMax"
+  }, 
+  "Translate": {
+    "num_inst": 116, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Translate"
+  }, 
+  "HMMFileOpen": {
+    "num_inst": 378, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFileOpen"
+  }, 
+  "SSISetFilePosition": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSISetFilePosition"
+  }, 
+  "endPIR": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endPIR"
+  }, 
+  "Plan7ESTViterbi": {
+    "num_inst": 1479, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7ESTViterbi"
+  }, 
+  "SSIClose": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIClose"
+  }, 
+  "build_cij": {
+    "num_inst": 464, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "build_cij"
+  }, 
+  "GaussianSetHistogram": {
+    "num_inst": 255, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GaussianSetHistogram"
+  }, 
+  "FileDirname": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileDirname"
+  }, 
+  "DNorm": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DNorm"
+  }, 
+  "multiline": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "multiline"
+  }, 
+  "MakeDiffMx": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MakeDiffMx"
+  }, 
+  "EVDDensity": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDDensity"
+  }, 
+  "MSASmallerAlignment": {
+    "num_inst": 372, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSASmallerAlignment"
+  }, 
+  "RegisterHit": {
+    "num_inst": 243, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RegisterHit"
+  }, 
+  "load_indexfile": {
+    "num_inst": 429, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "load_indexfile"
+  }, 
+  "readLoop": {
+    "num_inst": 105, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readLoop"
+  }, 
+  "P7Forward": {
+    "num_inst": 728, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Forward"
+  }, 
+  "sre_strncpy": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_strncpy"
+  }, 
+  "Free2DArray": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Free2DArray"
+  }, 
+  "P7ViterbiAlignAlignment": {
+    "num_inst": 1686, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ViterbiAlignAlignment"
+  }, 
+  "write_i16": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_i16"
+  }, 
+  "sre_random_positive": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "sre_random_positive"
+  }, 
+  "activate_external_sort": {
+    "num_inst": 305, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "activate_external_sort"
+  }, 
+  "readPIR": {
+    "num_inst": 178, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readPIR"
+  }, 
+  "GSIFreeIndex": {
+    "num_inst": 44, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIFreeIndex"
+  }, 
+  "EmitSequence": {
+    "num_inst": 404, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EmitSequence"
+  }, 
+  "regtail": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regtail"
+  }, 
+  "P7Logoddsify": {
+    "num_inst": 825, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Logoddsify"
+  }, 
+  "FAdd": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FAdd"
+  }, 
+  "MSAAlloc": {
+    "num_inst": 242, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAAlloc"
+  }, 
+  "SSIAddFileToIndex": {
+    "num_inst": 189, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIAddFileToIndex"
+  }, 
+  "WriteStockholm": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteStockholm"
+  }, 
+  "CreatePlan7Matrix": {
+    "num_inst": 234, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "CreatePlan7Matrix"
+  }, 
+  "Plan7SWConfig": {
+    "num_inst": 158, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7SWConfig"
+  }, 
+  "EmitConsensusSequence": {
+    "num_inst": 362, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EmitConsensusSequence"
+  }, 
+  "GSIWriteIndex": {
+    "num_inst": 104, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIWriteIndex"
+  }, 
+  "default_nucleic_prior": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "default_nucleic_prior"
+  }, 
+  "gki_upsize": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gki_upsize"
+  }, 
+  "TophitsReport": {
+    "num_inst": 326, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "TophitsReport"
+  }, 
+  "Warn": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Warn"
+  }, 
+  "reg": {
+    "num_inst": 189, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reg"
+  }, 
+  "HMMFileClose": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFileClose"
+  }, 
+  "WriteMSF": {
+    "num_inst": 640, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "WriteMSF"
+  }, 
+  "DisplayPlan7PostAlign": {
+    "num_inst": 1039, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DisplayPlan7PostAlign"
+  }, 
+  "PrintXMGRHistogram": {
+    "num_inst": 115, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintXMGRHistogram"
+  }, 
+  "SetSeqinfoString": {
+    "num_inst": 261, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetSeqinfoString"
+  }, 
+  "SSIAddPrimaryKeyToIndex": {
+    "num_inst": 272, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIAddPrimaryKeyToIndex"
+  }, 
+  "DDot": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DDot"
+  }, 
+  "P7ViterbiTrace": {
+    "num_inst": 1307, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ViterbiTrace"
+  }, 
+  "GCGBinaryToSequence": {
+    "num_inst": 87, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GCGBinaryToSequence"
+  }, 
+  "ShadowTrace": {
+    "num_inst": 564, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ShadowTrace"
+  }, 
+  "DExp": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DExp"
+  }, 
+  "FLogSum": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FLogSum"
+  }, 
+  "s2lower": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "s2lower"
+  }, 
+  "DLog": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DLog"
+  }, 
+  "AlignmentHomogenousGapsym": {
+    "num_inst": 104, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AlignmentHomogenousGapsym"
+  }, 
+  "readGenBank": {
+    "num_inst": 251, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readGenBank"
+  }, 
+  "fake_tracebacks": {
+    "num_inst": 827, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fake_tracebacks"
+  }, 
+  "PrintPhylo": {
+    "num_inst": 181, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintPhylo"
+  }, 
+  "Plan7SetDescription": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Plan7SetDescription"
+  }, 
+  "WriteClustal": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteClustal"
+  }, 
+  "SetAlphabet": {
+    "num_inst": 127, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SetAlphabet"
+  }, 
+  "SeqfileRewind": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileRewind"
+  }, 
+  "FMax": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FMax"
+  }, 
+  "StateOccupancy": {
+    "num_inst": 247, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StateOccupancy"
+  }, 
+  "SSIErrorString": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIErrorString"
+  }, 
+  "simple_diffmx": {
+    "num_inst": 100, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "simple_diffmx"
+  }, 
+  "read_asc20hmm": {
+    "num_inst": 922, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_asc20hmm"
+  }, 
+  "WriteSimpleFASTA": {
+    "num_inst": 48, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteSimpleFASTA"
+  }, 
+  "String2SeqfileFormat": {
+    "num_inst": 155, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "String2SeqfileFormat"
+  }, 
+  "matassign2hmm": {
+    "num_inst": 283, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "matassign2hmm"
+  }, 
+  "seqncmp": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqncmp"
+  }, 
+  "MSAFilePositionByIndex": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFilePositionByIndex"
+  }, 
+  "regatom": {
+    "num_inst": 303, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regatom"
+  }, 
+  "FreePlan7Matrix": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreePlan7Matrix"
+  }, 
+  "parse_gr": {
+    "num_inst": 223, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_gr"
+  }, 
+  "FileTail": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileTail"
+  }, 
+  "specqsort": {
+    "num_inst": 183, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "specqsort"
+  }, 
+  "gsi_keysorter": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gsi_keysorter"
+  }, 
+  "SSIAddSecondaryKeyToIndex": {
+    "num_inst": 142, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIAddSecondaryKeyToIndex"
+  }, 
+  "parse_gf": {
+    "num_inst": 228, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "parse_gf"
+  }, 
+  "FLog": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FLog"
+  }, 
+  "parse_gc": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_gc"
+  }, 
+  "P9ZeroHMM": {
+    "num_inst": 107, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P9ZeroHMM"
+  }, 
+  "ReadClustal": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadClustal"
+  }, 
+  "PairwiseIdentity": {
+    "num_inst": 163, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PairwiseIdentity"
+  }, 
+  "FDot": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FDot"
+  }, 
+  "write_i32": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_i32"
+  }, 
+  "sre_tolower": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_tolower"
+  }, 
+  "MSAFileClose": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileClose"
+  }, 
+  "read_plan9_aschmm": {
+    "num_inst": 748, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_plan9_aschmm"
+  }, 
+  "LogNorm": {
+    "num_inst": 120, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "LogNorm"
+  }, 
+  "hmmcalibrate": {
+    "num_inst": 486, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "hmmcalibrate"
+  }, 
+  "Gammln": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Gammln"
+  }, 
+  "read_bin11hmm": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bin11hmm"
+  }, 
+  "Cluster": {
+    "num_inst": 1018, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Cluster"
+  }, 
+  "endEMBL": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endEMBL"
+  }, 
+  "P7OptimalAccuracy": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7OptimalAccuracy"
+  }, 
+  "FreeAlignment": {
+    "num_inst": 136, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FreeAlignment"
+  }, 
+  "PValue": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PValue"
+  }, 
+  "gki_hashvalue": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gki_hashvalue"
+  }, 
+  "InitAinfo": {
+    "num_inst": 42, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "InitAinfo"
+  }, 
+  "MSAExpand": {
+    "num_inst": 539, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAExpand"
+  }, 
+  "reginsert": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reginsert"
+  }, 
+  "ImposeMasterTrace": {
+    "num_inst": 498, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ImposeMasterTrace"
+  }, 
+  "pkeysort": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "pkeysort"
+  }, 
+  "ExtremeValueP2": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExtremeValueP2"
+  }, 
+  "ReadMSF": {
+    "num_inst": 429, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ReadMSF"
+  }, 
+  "SAMizeAlignmentByGapFrac": {
+    "num_inst": 315, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SAMizeAlignmentByGapFrac"
+  }, 
+  "init_ilogsum": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "init_ilogsum"
+  }, 
+  "MSAFileOpen": {
+    "num_inst": 149, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileOpen"
+  }, 
+  "PrintASCIIHistogram": {
+    "num_inst": 558, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintASCIIHistogram"
+  }, 
+  "MSAGetSeqidx": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetSeqidx"
+  }, 
+  "sre_ntoh16": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_ntoh16"
+  }, 
+  "Plan9toPlan7": {
+    "num_inst": 365, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan9toPlan7"
+  }, 
+  "sre_hton64": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_hton64"
+  }, 
+  "P9AllocHMM": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P9AllocHMM"
+  }, 
+  "MSAGetSeqDescription": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetSeqDescription"
+  }, 
+  "TraceSet": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceSet"
+  }, 
+  "PrintXMGRRegressionLine": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintXMGRRegressionLine"
+  }, 
+  "readGCGdata": {
+    "num_inst": 142, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readGCGdata"
+  }, 
+  "regc": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regc"
+  }, 
+  "MSAFilePositionByKey": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFilePositionByKey"
+  }, 
+  "PrintFancyAli": {
+    "num_inst": 216, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PrintFancyAli"
+  }, 
+  "P9DefaultNullModel": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P9DefaultNullModel"
+  }, 
+  "WriteSELEX": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteSELEX"
+  }, 
+  "downweight": {
+    "num_inst": 199, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "downweight"
+  }, 
+  "DArgMax": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DArgMax"
+  }, 
+  "GSCWeights": {
+    "num_inst": 133, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "GSCWeights"
+  }, 
+  "ZeroPlan7": {
+    "num_inst": 100, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ZeroPlan7"
+  }, 
+  "P7Maxmodelmaker": {
+    "num_inst": 1260, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Maxmodelmaker"
+  }, 
+  "endZuker": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endZuker"
+  }, 
+  "TraceSimpleBounds": {
+    "num_inst": 189, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceSimpleBounds"
+  }, 
+  "regpiece": {
+    "num_inst": 203, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regpiece"
+  }, 
+  "binary_search": {
+    "num_inst": 119, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "binary_search"
+  }, 
+  "LogSum": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "LogSum"
+  }, 
+  "AddToHistogram": {
+    "num_inst": 208, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AddToHistogram"
+  }, 
+  "sre_toupper": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_toupper"
+  }, 
+  "seqcmp": {
+    "num_inst": 68, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqcmp"
+  }, 
+  "PositionBasedWeights": {
+    "num_inst": 208, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PositionBasedWeights"
+  }, 
+  "DMin": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DMin"
+  }, 
+  "Getopt": {
+    "num_inst": 487, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Getopt"
+  }, 
+  "PopIntStack": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PopIntStack"
+  }, 
+  "DCopy": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DCopy"
+  }, 
+  "sre_realloc": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_realloc"
+  }, 
+  "simple_distance": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "simple_distance"
+  }, 
+  "annotate_model": {
+    "num_inst": 738, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "annotate_model"
+  }, 
+  "ExtremeValueSetHistogram": {
+    "num_inst": 246, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExtremeValueSetHistogram"
+  }, 
+  "Lawless416": {
+    "num_inst": 167, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Lawless416"
+  }, 
+  "GKIFree": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GKIFree"
+  }, 
+  "DLogSum": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DLogSum"
+  }, 
+  "AllocTophits": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocTophits"
+  }, 
+  "HMMFilePositionByIndex": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFilePositionByIndex"
+  }, 
+  "Linefit": {
+    "num_inst": 152, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Linefit"
+  }, 
+  "TophitsMaxName": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TophitsMaxName"
+  }, 
+  "SSISetFileForSubseq": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSISetFileForSubseq"
+  }, 
+  "actually_write_stockholm": {
+    "num_inst": 992, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "actually_write_stockholm"
+  }, 
+  "compare_lists": {
+    "num_inst": 93, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "compare_lists"
+  }, 
+  "P7OptimalAccuracyTrace": {
+    "num_inst": 1064, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7OptimalAccuracyTrace"
+  }, 
+  "read_bin19hmm": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bin19hmm"
+  }, 
+  "MSAAddComment": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAAddComment"
+  }, 
+  "GuessAlignmentSeqtype": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GuessAlignmentSeqtype"
+  }, 
+  "GSIAllocIndex": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIAllocIndex"
+  }, 
+  "read_bin10hmm": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bin10hmm"
+  }, 
+  "FreePlan7": {
+    "num_inst": 334, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FreePlan7"
+  }, 
+  "sre_hton32": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_hton32"
+  }, 
+  "FSet": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FSet"
+  }, 
+  "SSIGetFilePosition": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIGetFilePosition"
+  }, 
+  "ExponentialRandom": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExponentialRandom"
+  }, 
+  "WriteSELEXOneBlock": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteSELEXOneBlock"
+  }, 
+  "Strdup": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Strdup"
+  }, 
+  "GrowTophits": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GrowTophits"
+  }, 
+  "GSIClose": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIClose"
+  }, 
+  "P7PrintPrior": {
+    "num_inst": 194, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7PrintPrior"
+  }, 
+  "MSAAppendGR": {
+    "num_inst": 193, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAAppendGR"
+  }, 
+  "estimate_model_length": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "estimate_model_length"
+  }, 
+  "SeqfileFormat2String": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileFormat2String"
+  }, 
+  "IsInt": {
+    "num_inst": 137, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IsInt"
+  }, 
+  "UnfitHistogram": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "UnfitHistogram"
+  }, 
+  "clear_ssifile": {
+    "num_inst": 91, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "clear_ssifile"
+  }, 
+  "MSAAppendGC": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAAppendGC"
+  }, 
+  "AllocPlan7Body": {
+    "num_inst": 373, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AllocPlan7Body"
+  }, 
+  "readStrider": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readStrider"
+  }, 
+  "PrintPlan7Stats": {
+    "num_inst": 137, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintPlan7Stats"
+  }, 
+  "sre_strdup": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_strdup"
+  }, 
+  "MakeIdentityMx": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MakeIdentityMx"
+  }, 
+  "MSASetSeqAccession": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSASetSeqAccession"
+  }, 
+  "Byteswap": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Byteswap"
+  }, 
+  "SeqfilePosition": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfilePosition"
+  }, 
+  "CreateFancyAli": {
+    "num_inst": 811, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "CreateFancyAli"
+  }, 
+  "DSum": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DSum"
+  }, 
+  "skeysort": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "skeysort"
+  }, 
+  "MSASetSeqDescription": {
+    "num_inst": 53, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSASetSeqDescription"
+  }, 
+  "SSICreateIndex": {
+    "num_inst": 134, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSICreateIndex"
+  }, 
+  "StrReverse": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StrReverse"
+  }, 
+  "sre_ntoh64": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_ntoh64"
+  }, 
+  "read_bin17hmm": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bin17hmm"
+  }, 
+  "Getword": {
+    "num_inst": 65, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Getword"
+  }, 
+  "gki_alloc": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "gki_alloc"
+  }, 
+  "AllocPlan7Shell": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AllocPlan7Shell"
+  }, 
+  "read_i16": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_i16"
+  }, 
+  "AllocPlan7Matrix": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocPlan7Matrix"
+  }, 
+  "P7PrintTrace": {
+    "num_inst": 425, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7PrintTrace"
+  }, 
+  "GSIWriteFileRecord": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIWriteFileRecord"
+  }, 
+  "ResizePlan7Matrix": {
+    "num_inst": 323, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ResizePlan7Matrix"
+  }, 
+  "EVDCensoredFit": {
+    "num_inst": 262, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDCensoredFit"
+  }, 
+  "FileAddSuffix": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileAddSuffix"
+  }, 
+  "Strinsert": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Strinsert"
+  }, 
+  "P7TraceScore": {
+    "num_inst": 138, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7TraceScore"
+  }, 
+  "DChoose": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DChoose"
+  }, 
+  "trace_doctor": {
+    "num_inst": 588, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "trace_doctor"
+  }, 
+  "P7ParsingViterbi": {
+    "num_inst": 1273, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ParsingViterbi"
+  }, 
+  "parse_gs": {
+    "num_inst": 123, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "parse_gs"
+  }, 
+  "get_wee_midpt": {
+    "num_inst": 2472, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "get_wee_midpt"
+  }, 
+  "P9Renormalize": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P9Renormalize"
+  }, 
+  "MingapAlignment": {
+    "num_inst": 238, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MingapAlignment"
+  }, 
+  "AllocShadowMatrix": {
+    "num_inst": 222, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocShadowMatrix"
+  }, 
+  "SeqinfoCopy": {
+    "num_inst": 160, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqinfoCopy"
+  }, 
+  "qst": {
+    "num_inst": 279, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "qst"
+  }, 
+  "PostalCode": {
+    "num_inst": 154, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "PostalCode"
+  }, 
+  "ComparePairAlignments": {
+    "num_inst": 72, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ComparePairAlignments"
+  }, 
+  "AllocPlan7": {
+    "num_inst": 10, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocPlan7"
+  }, 
+  "StrRegionalShuffle": {
+    "num_inst": 96, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StrRegionalShuffle"
+  }, 
+  "P7Backward": {
+    "num_inst": 750, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7Backward"
+  }, 
+  "Logp_cvec": {
+    "num_inst": 126, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Logp_cvec"
+  }, 
+  "sre_random": {
+    "num_inst": 197, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "sre_random"
+  }, 
+  "MSAFileRewind": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileRewind"
+  }, 
+  "Plan7SetNullModel": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7SetNullModel"
+  }, 
+  "ReadPhylip": {
+    "num_inst": 172, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadPhylip"
+  }, 
+  "PrintIscore": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintIscore"
+  }, 
+  "StringChop": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "StringChop"
+  }, 
+  "WeightedLinefit": {
+    "num_inst": 156, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "WeightedLinefit"
+  }, 
+  "Plan7RenormalizeExits": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7RenormalizeExits"
+  }, 
+  "score2postcode": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "score2postcode"
+  }, 
+  "MergeTraceArrays": {
+    "num_inst": 70, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MergeTraceArrays"
+  }, 
+  "P7PriorifyHMM": {
+    "num_inst": 371, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7PriorifyHMM"
+  }, 
+  "read_bin_string": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_bin_string"
+  }, 
+  "P_PvecGivenDirichlet": {
+    "num_inst": 81, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P_PvecGivenDirichlet"
+  }, 
+  "DigitizeAlignment": {
+    "num_inst": 174, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DigitizeAlignment"
+  }, 
+  "AlphabetType2String": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AlphabetType2String"
+  }, 
+  "seqfile_open": {
+    "num_inst": 226, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqfile_open"
+  }, 
+  "RandomAlignment": {
+    "num_inst": 507, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "RandomAlignment"
+  }, 
+  "Plan7ComlogAppend": {
+    "num_inst": 106, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Plan7ComlogAppend"
+  }, 
+  "P7Handmodelmaker": {
+    "num_inst": 126, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7Handmodelmaker"
+  }, 
+  "ToRNA": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ToRNA"
+  }, 
+  "TraceVerify": {
+    "num_inst": 559, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceVerify"
+  }, 
+  "GSIGetOffset": {
+    "num_inst": 120, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIGetOffset"
+  }, 
+  "QRNAShuffle": {
+    "num_inst": 717, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "QRNAShuffle"
+  }, 
+  "endIG": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endIG"
+  }, 
+  "regtry": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regtry"
+  }, 
+  "GKIStoreKey": {
+    "num_inst": 101, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GKIStoreKey"
+  }, 
+  "main_loop_serial": {
+    "num_inst": 123, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main_loop_serial"
+  }, 
+  "BlosumWeights": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "BlosumWeights"
+  }, 
+  "Gaussrandom": {
+    "num_inst": 184, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Gaussrandom"
+  }, 
+  "main_loop_serial.393": {
+    "num_inst": 199, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "main_loop_serial.393"
+  }, 
+  "P7ReallocTrace": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7ReallocTrace"
+  }, 
+  "IsSELEXFormat": {
+    "num_inst": 129, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IsSELEXFormat"
+  }, 
+  "GCGchecksum": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GCGchecksum"
+  }, 
+  "FullSortTophits": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FullSortTophits"
+  }, 
+  "endPearson": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endPearson"
+  }, 
+  "DealignAseqs": {
+    "num_inst": 161, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DealignAseqs"
+  }, 
+  "copy_alignment_line": {
+    "num_inst": 117, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_alignment_line"
+  }, 
+  "regnext": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regnext"
+  }, 
+  "EnvFileOpen": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "EnvFileOpen"
+  }, 
+  "FArgMin": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FArgMin"
+  }, 
+  "SSIRecommendMode": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIRecommendMode"
+  }, 
+  "MSANogap": {
+    "num_inst": 135, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSANogap"
+  }, 
+  "P7SmallViterbiSize": {
+    "num_inst": 21, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7SmallViterbiSize"
+  }, 
+  "WriteAscHMM": {
+    "num_inst": 480, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "WriteAscHMM"
+  }, 
+  "readIG": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readIG"
+  }, 
+  "CompareMultAlignments": {
+    "num_inst": 85, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "CompareMultAlignments"
+  }, 
+  "SSIGetOffsetByNumber": {
+    "num_inst": 89, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIGetOffsetByNumber"
+  }, 
+  "Getline": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Getline"
+  }, 
+  "readZuker": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readZuker"
+  }, 
+  "SSIGetOffsetByName": {
+    "num_inst": 130, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIGetOffsetByName"
+  }, 
+  "GSIGetRecord": {
+    "num_inst": 90, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIGetRecord"
+  }, 
+  "ToDNA": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ToDNA"
+  }, 
+  "endStrider": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endStrider"
+  }, 
+  "SingleLinkCluster": {
+    "num_inst": 184, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SingleLinkCluster"
+  }, 
+  "FreePhylo": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreePhylo"
+  }, 
+  "Plan7ESTConfig": {
+    "num_inst": 259, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7ESTConfig"
+  }, 
+  "readPearson": {
+    "num_inst": 87, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readPearson"
+  }, 
+  "indexfile_position": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "indexfile_position"
+  }, 
+  "ExtremeValueE": {
+    "num_inst": 16, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExtremeValueE"
+  }, 
+  "Die": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Die"
+  }, 
+  "seqdecode": {
+    "num_inst": 74, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "seqdecode"
+  }, 
+  "DMX2Alloc": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DMX2Alloc"
+  }, 
+  "WritePhylip": {
+    "num_inst": 87, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WritePhylip"
+  }, 
+  "P7WeeViterbiSize": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7WeeViterbiSize"
+  }, 
+  "MSAFileRead": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileRead"
+  }, 
+  "actually_write_selex": {
+    "num_inst": 526, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "actually_write_selex"
+  }, 
+  "MSAFromAINFO": {
+    "num_inst": 481, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAFromAINFO"
+  }, 
+  "regrepeat": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regrepeat"
+  }, 
+  "DedigitizeSequence": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DedigitizeSequence"
+  }, 
+  "P7ViterbiSize": {
+    "num_inst": 52, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7ViterbiSize"
+  }, 
+  "ExtremeValueP": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExtremeValueP"
+  }, 
+  "byteswap": {
+    "num_inst": 47, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "byteswap"
+  }, 
+  "WriteStockholmOneBlock": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WriteStockholmOneBlock"
+  }, 
+  "FileExists": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FileExists"
+  }, 
+  "SSIOpen": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIOpen"
+  }, 
+  "Statetype": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Statetype"
+  }, 
+  "current_index_size": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "current_index_size"
+  }, 
+  "P7WeeViterbi": {
+    "num_inst": 962, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7WeeViterbi"
+  }, 
+  "TraceDecompose": {
+    "num_inst": 335, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "TraceDecompose"
+  }, 
+  "SeqfileOpen": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileOpen"
+  }, 
+  "Plan7LSConfig": {
+    "num_inst": 115, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7LSConfig"
+  }, 
+  "FreeHistogram": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FreeHistogram"
+  }, 
+  "P7LaplacePrior": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7LaplacePrior"
+  }, 
+  "PrintXMGRDistribution": {
+    "num_inst": 94, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintXMGRDistribution"
+  }, 
+  "GSISortIndex": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSISortIndex"
+  }, 
+  "StrDPShuffle": {
+    "num_inst": 529, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StrDPShuffle"
+  }, 
+  "CompareRefPairAlignments": {
+    "num_inst": 86, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "CompareRefPairAlignments"
+  }, 
+  "hit_comparison": {
+    "num_inst": 51, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "hit_comparison"
+  }, 
+  "MSAFileGetLine": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileGetLine"
+  }, 
+  "ParsePAMFile": {
+    "num_inst": 283, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ParsePAMFile"
+  }, 
+  "AlignmentBootstrap": {
+    "num_inst": 78, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AlignmentBootstrap"
+  }, 
+  "TransitionScoreLookup": {
+    "num_inst": 265, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "TransitionScoreLookup"
+  }, 
+  "VoronoiWeights": {
+    "num_inst": 539, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "VoronoiWeights"
+  }, 
+  "make_ref_alilist": {
+    "num_inst": 320, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_ref_alilist"
+  }, 
+  "Plan7FSConfig": {
+    "num_inst": 167, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7FSConfig"
+  }, 
+  "FreeFancyAli": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeFancyAli"
+  }, 
+  "DigitizeSequence": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DigitizeSequence"
+  }, 
+  "FArgMax": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FArgMax"
+  }, 
+  "ReadStockholm": {
+    "num_inst": 194, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadStockholm"
+  }, 
+  "regmatch": {
+    "num_inst": 352, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regmatch"
+  }, 
+  "sqd_regsub": {
+    "num_inst": 185, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sqd_regsub"
+  }, 
+  "MSAFree": {
+    "num_inst": 247, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MSAFree"
+  }, 
+  "read_asc19hmm": {
+    "num_inst": 727, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "read_asc19hmm"
+  }, 
+  "GCGMultchecksum": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GCGMultchecksum"
+  }, 
+  "readEMBL": {
+    "num_inst": 210, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "readEMBL"
+  }, 
+  "MakeDealignedString": {
+    "num_inst": 107, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MakeDealignedString"
+  }, 
+  "regoptail": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regoptail"
+  }, 
+  "SetAutocuts": {
+    "num_inst": 107, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SetAutocuts"
+  }, 
+  "main_loop_pvm": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main_loop_pvm"
+  }, 
+  "ReverseIntStack": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReverseIntStack"
+  }, 
+  "set_degenerate": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "set_degenerate"
+  }, 
+  "PostprocessSignificantHit": {
+    "num_inst": 403, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PostprocessSignificantHit"
+  }, 
+  "SqdClean": {
+    "num_inst": 28, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SqdClean"
+  }, 
+  "StrShuffle": {
+    "num_inst": 59, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StrShuffle"
+  }, 
+  "MSAFileWrite": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAFileWrite"
+  }, 
+  "DAdd": {
+    "num_inst": 31, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DAdd"
+  }, 
+  "P7SmallViterbi": {
+    "num_inst": 542, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7SmallViterbi"
+  }, 
+  "SeqfileLineParameters": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SeqfileLineParameters"
+  }, 
+  "Scorify": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Scorify"
+  }, 
+  "sre_srandom": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_srandom"
+  }, 
+  "FCopy": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FCopy"
+  }, 
+  "endGB": {
+    "num_inst": 18, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "endGB"
+  }, 
+  "WriteBinHMM": {
+    "num_inst": 321, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "WriteBinHMM"
+  }, 
+  "EVDrandom": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDrandom"
+  }, 
+  "Plan7SetAccession": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Plan7SetAccession"
+  }, 
+  "SSIFileInfo": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SSIFileInfo"
+  }, 
+  "Plan7Renormalize": {
+    "num_inst": 197, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "Plan7Renormalize"
+  }, 
+  "FScale": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FScale"
+  }, 
+  "PrintNewHampshireTree": {
+    "num_inst": 168, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "PrintNewHampshireTree"
+  }, 
+  "P7AllocPrior": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "P7AllocPrior"
+  }, 
+  "FMin": {
+    "num_inst": 38, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FMin"
+  }, 
+  "EVDMaxLikelyFit": {
+    "num_inst": 234, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "EVDMaxLikelyFit"
+  }, 
+  "GSIWriteKeyRecord": {
+    "num_inst": 64, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIWriteKeyRecord"
+  }, 
+  "read_asc10hmm": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_asc10hmm"
+  }, 
+  "GSIAddFileToIndex": {
+    "num_inst": 84, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIAddFileToIndex"
+  }, 
+  "HMMFileRead": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "HMMFileRead"
+  }, 
+  "write_offset": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_offset"
+  }, 
+  "WritePairwiseAlignment": {
+    "num_inst": 397, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "WritePairwiseAlignment"
+  }, 
+  "P7FillOptimalAccuracy": {
+    "num_inst": 770, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7FillOptimalAccuracy"
+  }, 
+  "IsReal": {
+    "num_inst": 158, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "IsReal"
+  }, 
+  "read_asc11hmm": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_asc11hmm"
+  }, 
+  "AlignmentShuffle": {
+    "num_inst": 125, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "AlignmentShuffle"
+  }, 
+  "DealignedLength": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "DealignedLength"
+  }, 
+  "MajorityRuleConsensus": {
+    "num_inst": 156, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "MajorityRuleConsensus"
+  }, 
+  "ReadSeq": {
+    "num_inst": 475, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadSeq"
+  }, 
+  "write_i64": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_i64"
+  }, 
+  "DefaultCodonBias": {
+    "num_inst": 195, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DefaultCodonBias"
+  }, 
+  "WriteProfile": {
+    "num_inst": 490, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "WriteProfile"
+  }, 
+  "MSAGetSeqAccession": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetSeqAccession"
+  }, 
+  "regbranch": {
+    "num_inst": 76, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "regbranch"
+  }, 
+  "FNorm": {
+    "num_inst": 57, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FNorm"
+  }, 
+  "sre_strtok": {
+    "num_inst": 63, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_strtok"
+  }, 
+  "parse_comment": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "parse_comment"
+  }, 
+  "Strdelete": {
+    "num_inst": 26, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Strdelete"
+  }, 
+  "make_alilist": {
+    "num_inst": 179, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "make_alilist"
+  }, 
+  "P7PriorifyEmissionVector": {
+    "num_inst": 208, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "P7PriorifyEmissionVector"
+  }, 
+  "addseq": {
+    "num_inst": 296, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "addseq"
+  }, 
+  "MSAGetGC": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "MSAGetGC"
+  }, 
+  "Seqtype": {
+    "num_inst": 155, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "Seqtype"
+  }, 
+  "ReadA2M": {
+    "num_inst": 138, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ReadA2M"
+  }, 
+  "FMX2Free": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FMX2Free"
+  }, 
+  "SampleAlignment": {
+    "num_inst": 132, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "SampleAlignment"
+  }, 
+  "FExp": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FExp"
+  }, 
+  "GKIInit": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GKIInit"
+  }, 
+  "FreeIntStack": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "FreeIntStack"
+  }, 
+  "DScale": {
+    "num_inst": 27, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "DScale"
+  }, 
+  "ExtremeValueFitHistogram": {
+    "num_inst": 345, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ExtremeValueFitHistogram"
+  }, 
+  "CompareRefMultAlignments": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "CompareRefMultAlignments"
+  }, 
+  "FMX2Alloc": {
+    "num_inst": 49, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "FMX2Alloc"
+  }, 
+  "sre_malloc": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_malloc"
+  }, 
+  "GSIAddKeyToIndex": {
+    "num_inst": 99, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "GSIAddKeyToIndex"
+  }, 
+  "sre_fgets": {
+    "num_inst": 113, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sre_fgets"
+  }, 
+  "sqd_regexec": {
+    "num_inst": 122, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sqd_regexec"
+  }, 
+  "StrMarkov1": {
+    "num_inst": 158, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StrMarkov1"
+  }, 
+  "StrMarkov0": {
+    "num_inst": 99, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "StrMarkov0"
+  }, 
+  "AllocFancyAli": {
+    "num_inst": 33, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "AllocFancyAli"
+  }, 
+  "ascii2prob": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ascii2prob"
+  }, 
+  "SymbolIndex": {
+    "num_inst": 23, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "SymbolIndex"
+  }, 
+  "ILogsum": {
+    "num_inst": 50, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ILogsum"
+  }, 
+  "main_loop_threaded": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main_loop_threaded"
+  }
+}

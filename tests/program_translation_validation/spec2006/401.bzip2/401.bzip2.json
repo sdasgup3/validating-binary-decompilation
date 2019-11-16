@@ -1,0 +1,602 @@
+{
+  "makeMaps_d": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "makeMaps_d"
+  }, 
+  "makeMaps_e": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "makeMaps_e"
+  }, 
+  "add_pair_to_block": {
+    "num_inst": 235, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "add_pair_to_block"
+  }, 
+  "uInt64_toAscii": {
+    "num_inst": 61, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uInt64_toAscii"
+  }, 
+  "bz_config_ok": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bz_config_ok"
+  }, 
+  "cleanUpAndFail": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "cleanUpAndFail"
+  }, 
+  "copy_output_until_stop": {
+    "num_inst": 82, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_output_until_stop"
+  }, 
+  "BZ2_bzBuffToBuffCompress": {
+    "num_inst": 109, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzBuffToBuffCompress"
+  }, 
+  "spec_compress": {
+    "num_inst": 12, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_compress"
+  }, 
+  "configError": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "configError"
+  }, 
+  "BZ2_bzReadOpen": {
+    "num_inst": 211, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzReadOpen"
+  }, 
+  "spec_uncompress": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_uncompress"
+  }, 
+  "spec_rewind": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_rewind"
+  }, 
+  "outOfMemory": {
+    "num_inst": 6, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "outOfMemory"
+  }, 
+  "BZ2_indexIntoF": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_indexIntoF"
+  }, 
+  "fallbackSimpleSort": {
+    "num_inst": 164, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fallbackSimpleSort"
+  }, 
+  "BZ2_bzflush": {
+    "num_inst": 3, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzflush"
+  }, 
+  "BZ2_bzlibVersion": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzlibVersion"
+  }, 
+  "BZ2_bzDecompressInit": {
+    "num_inst": 124, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzDecompressInit"
+  }, 
+  "fallbackQSort3": {
+    "num_inst": 497, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fallbackQSort3"
+  }, 
+  "BZ2_bzerror": {
+    "num_inst": 24, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzerror"
+  }, 
+  "unRLE_obuf_to_output_FAST": {
+    "num_inst": 921, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unRLE_obuf_to_output_FAST"
+  }, 
+  "spec_random_load": {
+    "num_inst": 88, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "spec_random_load"
+  }, 
+  "BZ2_bzCompressEnd": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzCompressEnd"
+  }, 
+  "uInt64_qrm10": {
+    "num_inst": 41, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uInt64_qrm10"
+  }, 
+  "spec_ungetc": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_ungetc"
+  }, 
+  "compressStream": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "compressStream"
+  }, 
+  "crcError": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "crcError"
+  }, 
+  "BZ2_bzRead": {
+    "num_inst": 253, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzRead"
+  }, 
+  "myfeof.39": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "myfeof.39"
+  }, 
+  "BZ2_bzWriteClose": {
+    "num_inst": 17, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzWriteClose"
+  }, 
+  "myfeof": {
+    "num_inst": 20, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "myfeof"
+  }, 
+  "default_bzalloc": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "default_bzalloc"
+  }, 
+  "mainGtU": {
+    "num_inst": 931, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mainGtU"
+  }, 
+  "BZ2_bzWrite": {
+    "num_inst": 194, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzWrite"
+  }, 
+  "spec_putc": {
+    "num_inst": 46, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_putc"
+  }, 
+  "BZ2_blockSort": {
+    "num_inst": 173, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "BZ2_blockSort"
+  }, 
+  "bsPutUInt32": {
+    "num_inst": 32, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bsPutUInt32"
+  }, 
+  "mmed3": {
+    "num_inst": 40, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mmed3"
+  }, 
+  "copy_input_until_stop": {
+    "num_inst": 348, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "copy_input_until_stop"
+  }, 
+  "bsFinishWrite": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bsFinishWrite"
+  }, 
+  "debug_time": {
+    "num_inst": 1, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "debug_time"
+  }, 
+  "uInt64_from_UInt32s": {
+    "num_inst": 69, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uInt64_from_UInt32s"
+  }, 
+  "BZ2_bz__AssertH__fail": {
+    "num_inst": 15, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bz__AssertH__fail"
+  }, 
+  "spec_write": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_write"
+  }, 
+  "BZ2_compressBlock": {
+    "num_inst": 170, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_compressBlock"
+  }, 
+  "BZ2_hbAssignCodes": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_hbAssignCodes"
+  }, 
+  "BZ2_decompress": {
+    "num_inst": 6619, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_decompress"
+  }, 
+  "setExit": {
+    "num_inst": 4, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "setExit"
+  }, 
+  "cadvise": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "cadvise"
+  }, 
+  "BZ2_bzread": {
+    "num_inst": 35, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzread"
+  }, 
+  "spec_reset": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_reset"
+  }, 
+  "BZ2_hbMakeCodeLengths": {
+    "num_inst": 497, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_hbMakeCodeLengths"
+  }, 
+  "default_bzfree": {
+    "num_inst": 11, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "default_bzfree"
+  }, 
+  "bzopen_or_bzdopen": {
+    "num_inst": 150, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bzopen_or_bzdopen"
+  }, 
+  "BZ2_bzReadClose": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzReadClose"
+  }, 
+  "spec_load": {
+    "num_inst": 151, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_load"
+  }, 
+  "BZ2_bzReadGetUnused": {
+    "num_inst": 95, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzReadGetUnused"
+  }, 
+  "mainQSort3": {
+    "num_inst": 705, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mainQSort3"
+  }, 
+  "BZ2_bzopen": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzopen"
+  }, 
+  "BZ2_bzdopen": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzdopen"
+  }, 
+  "mainSimpleSort": {
+    "num_inst": 274, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mainSimpleSort"
+  }, 
+  "mainSort": {
+    "num_inst": 1006, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "mainSort"
+  }, 
+  "main": {
+    "num_inst": 193, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "spec_read": {
+    "num_inst": 109, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_read"
+  }, 
+  "uInt64_isZero": {
+    "num_inst": 29, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uInt64_isZero"
+  }, 
+  "unRLE_obuf_to_output_SMALL": {
+    "num_inst": 1107, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "unRLE_obuf_to_output_SMALL"
+  }, 
+  "spec_fread": {
+    "num_inst": 120, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_fread"
+  }, 
+  "BZ2_hbCreateDecodeTables": {
+    "num_inst": 209, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_hbCreateDecodeTables"
+  }, 
+  "BZ2_bzWriteOpen": {
+    "num_inst": 170, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzWriteOpen"
+  }, 
+  "generateMTFValues": {
+    "num_inst": 313, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "generateMTFValues"
+  }, 
+  "ran": {
+    "num_inst": 30, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "ran"
+  }, 
+  "uncompressStream": {
+    "num_inst": 216, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "uncompressStream"
+  }, 
+  "BZ2_bzWriteClose64": {
+    "num_inst": 238, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzWriteClose64"
+  }, 
+  "BZ2_bzDecompress": {
+    "num_inst": 190, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzDecompress"
+  }, 
+  "spec_init": {
+    "num_inst": 75, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_init"
+  }, 
+  "BZ2_bzDecompressEnd": {
+    "num_inst": 94, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzDecompressEnd"
+  }, 
+  "prepare_new_block": {
+    "num_inst": 37, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "prepare_new_block"
+  }, 
+  "handle_compress": {
+    "num_inst": 148, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "handle_compress"
+  }, 
+  "compressedStreamEOF": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "compressedStreamEOF"
+  }, 
+  "init_RL": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "init_RL"
+  }, 
+  "BZ2_bzBuffToBuffDecompress": {
+    "num_inst": 102, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzBuffToBuffDecompress"
+  }, 
+  "showFileNames": {
+    "num_inst": 7, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "showFileNames"
+  }, 
+  "bsPutUChar": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bsPutUChar"
+  }, 
+  "BZ2_bzCompressInit": {
+    "num_inst": 287, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzCompressInit"
+  }, 
+  "panic": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "panic"
+  }, 
+  "BZ2_bzwrite": {
+    "num_inst": 22, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzwrite"
+  }, 
+  "fallbackSort": {
+    "num_inst": 578, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "fallbackSort"
+  }, 
+  "BZ2_bsInitWrite": {
+    "num_inst": 9, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bsInitWrite"
+  }, 
+  "BZ2_bzclose": {
+    "num_inst": 39, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzclose"
+  }, 
+  "spec_initbufs": {
+    "num_inst": 5, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_initbufs"
+  }, 
+  "isempty_RL": {
+    "num_inst": 19, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "isempty_RL"
+  }, 
+  "bsW": {
+    "num_inst": 62, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bsW"
+  }, 
+  "spec_getc": {
+    "num_inst": 66, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_getc"
+  }, 
+  "uInt64_to_double": {
+    "num_inst": 34, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "uInt64_to_double"
+  }, 
+  "BZ2_bzCompress": {
+    "num_inst": 174, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "BZ2_bzCompress"
+  }, 
+  "spec_fwrite": {
+    "num_inst": 71, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "spec_fwrite"
+  }, 
+  "ioError": {
+    "num_inst": 8, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "ioError"
+  }, 
+  "sendMTFValues": {
+    "num_inst": 4976, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "sendMTFValues"
+  }, 
+  "flush_RL": {
+    "num_inst": 13, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "flush_RL"
+  }
+}

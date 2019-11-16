@@ -1,0 +1,4 @@
+tests/program_translation_validation/spec2006/bc-seeds/403.gcc/403.gcc.ll filter=lfs diff=lfs merge=lfs -text
+tests/program_translation_validation/spec2006/bc-seeds/483.xalancbmk/483.xalancbmk.ll filter=lfs diff=lfs merge=lfs -text
+spec2006/bc-seeds/483.xalancbmk/483.xalancbmk.ll filter=lfs diff=lfs merge=lfs -text
+spec2006/bc-seeds/403.gcc/403.gcc.ll filter=lfs diff=lfs merge=lfs -text

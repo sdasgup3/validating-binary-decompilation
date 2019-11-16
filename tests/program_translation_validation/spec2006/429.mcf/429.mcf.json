@@ -1,0 +1,146 @@
+{
+  "flow_org_cost": {
+    "num_inst": 153, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "flow_org_cost"
+  }, 
+  "resize_prob": {
+    "num_inst": 111, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "resize_prob"
+  }, 
+  "suspend_impl": {
+    "num_inst": 153, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "suspend_impl"
+  }, 
+  "refresh_potential": {
+    "num_inst": 100, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "refresh_potential"
+  }, 
+  "insert_new_arc": {
+    "num_inst": 168, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "insert_new_arc"
+  }, 
+  "primal_start_artificial": {
+    "num_inst": 158, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_start_artificial"
+  }, 
+  "primal_iminus": {
+    "num_inst": 143, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_iminus"
+  }, 
+  "replace_weaker_arc": {
+    "num_inst": 197, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "replace_weaker_arc"
+  }, 
+  "refresh_neighbour_lists": {
+    "num_inst": 80, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "refresh_neighbour_lists"
+  }, 
+  "primal_feasible": {
+    "num_inst": 108, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_feasible"
+  }, 
+  "main": {
+    "num_inst": 45, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "main"
+  }, 
+  "bea_is_dual_infeasible": {
+    "num_inst": 25, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "bea_is_dual_infeasible"
+  }, 
+  "read_min": {
+    "num_inst": 615, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "read_min"
+  }, 
+  "getfree": {
+    "num_inst": 54, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "getfree"
+  }, 
+  "primal_bea_mpp": {
+    "num_inst": 242, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_bea_mpp"
+  }, 
+  "price_out_impl": {
+    "num_inst": 361, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "price_out_impl"
+  }, 
+  "sort_basket": {
+    "num_inst": 103, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "sort_basket"
+  }, 
+  "primal_update_flow": {
+    "num_inst": 55, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_update_flow"
+  }, 
+  "flow_cost": {
+    "num_inst": 153, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "flow_cost"
+  }, 
+  "write_circulations": {
+    "num_inst": 130, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "write_circulations"
+  }, 
+  "global_opt": {
+    "num_inst": 56, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "global_opt"
+  }, 
+  "update_tree": {
+    "num_inst": 399, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "update_tree"
+  }, 
+  "primal_net_simplex": {
+    "num_inst": 221, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "primal_net_simplex"
+  }, 
+  "dual_feasible": {
+    "num_inst": 73, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "dual_feasible"
+  }
+}
