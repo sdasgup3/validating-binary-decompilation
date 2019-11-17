@@ -1,8 +1,6 @@
-test_32/main
-test_33/main
-test_24/main
-test_25/main
-test_11/doTrans
-test_22/DoDemoFpu1
-test_22/main
-test_24/keycomp
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main:main
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1:DoDemoFpu1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main:main
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main:main
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp:keycomp

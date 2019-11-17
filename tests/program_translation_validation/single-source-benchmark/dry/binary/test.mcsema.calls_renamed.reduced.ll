@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpwqi5i2zb-target.ll'
+; ModuleID = '/tmp/tmpi8ec4ofp-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1761,7 +1761,7 @@ block_400910:
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_400630_Proc0(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+define %struct.Memory* @sub_400630_Proc0(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #6 {
 block_400630:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
@@ -1785,8 +1785,10 @@ block_4008e4.loopexit:                            ; preds = %_ZN12_GLOBAL__N_1L1
   br label %block_4008e4
 
 block_4008e4:                                     ; preds = %block_4008e4.loopexit, %block_40066b.split
-  %MEMORY.3.lcssa = phi %struct.Memory* [ %var_2_497, %block_40066b.split ], [ %var_2_681, %block_4008e4.loopexit ]
-  ret %struct.Memory* %MEMORY.3.lcssa
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_4007df:                                     ; preds = %block_4007df.preheader, %block_4007df
   br label %block_4007df
@@ -5306,7 +5308,7 @@ define dllexport void @Proc0() local_unnamed_addr #9 {
   ret void
 }
 
-define internal %struct.Memory* @Proc0_wrapper(%struct.State*, i64, %struct.Memory*) {
+define internal %struct.Memory* @Proc0_wrapper(%struct.State*, i64, %struct.Memory* returned) {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 

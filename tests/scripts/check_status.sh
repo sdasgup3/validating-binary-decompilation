@@ -39,7 +39,7 @@ matchCheck() {
     echo -e "\e[32mMatch Pass\e[39m:-" `pwd`:$msg
     exit 0
   elif grep -q "Exhausted iterations" match.log; then
-    echo -e "\e[32mMatch Fail:\e[39m:-" `pwd`:$msg
+    echo -e "\e[31mMatch Fail:\e[39m:-" `pwd`:$msg
     exit 0
   else 
     echo -e "\e[31mMatch Error\e[39m:-" `pwd`:$msg

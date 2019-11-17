@@ -538,6 +538,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rdi__MINUS0x8__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 410052 --size 4
 Decompiling instr:movq %rdi, -0x8(%rbp) Done...
 
 
@@ -557,6 +559,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_MINUS0x8__rbp____rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 410056 --size 4
 Decompiling instr:movq -0x8(%rbp), %rdi Done...
 
 
@@ -635,6 +639,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__rdx__MINUS0x10__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 410063 --size 4
 Decompiling instr:movq %rdx, -0x10(%rbp) Done...
 
 
@@ -673,6 +679,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq_MINUS0x10__rbp____rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 410069 --size 4
 Decompiling instr:movq -0x10(%rbp), %rdi Done...
 
 
@@ -814,5 +822,5 @@ Decompiling Function: _ZN31custom_multiple_constant_divideImE8do_shiftEm Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.38user 0.07system 0:06.14elapsed 7%CPU (0avgtext+0avgdata 10336maxresident)k
-0inputs+208outputs (0major+9561minor)pagefaults 0swaps
+0.37user 0.08system 0:11.94elapsed 3%CPU (0avgtext+0avgdata 10308maxresident)k
+0inputs+208outputs (0major+9903minor)pagefaults 0swaps

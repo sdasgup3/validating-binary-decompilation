@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp7hvptpyy-target.ll'
+; ModuleID = '/tmp/tmprpu_5q1k-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -18259,7 +18259,10 @@ block_40109a.us:                                  ; preds = %block_40109a.us.pre
   br label %block_40109a.us
 
 block_4014a4:                                     ; preds = %block_40123b
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_401254:                                     ; preds = %block_401254.preheader, %block_401263
   %var_2_310 = phi i64 [ %var_2_1406, %block_401263 ], [ %var_2_310.pre, %block_401254.preheader ]

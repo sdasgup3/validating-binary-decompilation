@@ -906,5 +906,5 @@ Decompiling Function: _GLOBAL__sub_I_stepanov_v1p2.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.50user 0.06system 0:00.59elapsed 95%CPU (0avgtext+0avgdata 10108maxresident)k
-0inputs+232outputs (0major+10962minor)pagefaults 0swaps
+0.50user 0.06system 0:00.59elapsed 95%CPU (0avgtext+0avgdata 10304maxresident)k
+0inputs+232outputs (0major+10929minor)pagefaults 0swaps

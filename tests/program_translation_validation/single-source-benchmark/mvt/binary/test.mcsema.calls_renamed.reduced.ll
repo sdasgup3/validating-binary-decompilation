@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp38caf0rk-target.ll'
+; ModuleID = '/tmp/tmpmlkjx6uz-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1119,7 +1119,10 @@ block_400c81.loopexit:                            ; preds = %block_400c6e
   br label %block_400c81
 
 block_400c81:                                     ; preds = %block_400c81.loopexit, %block_400b30
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline

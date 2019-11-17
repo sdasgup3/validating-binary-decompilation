@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpdaxk12mw-target.ll'
+; ModuleID = '/tmp/tmpwudphelg-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -4753,7 +4753,10 @@ block_40116b.loopexit:                            ; preds = %block_401068.block_
   br label %block_40116b
 
 block_40116b:                                     ; preds = %block_40116b.loopexit, %block_400bc0
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_40106f:                                     ; preds = %block_40106f.preheader, %block_40106f
   br i1 %var_2_2974, label %block_401087.preheader, label %block_40106f

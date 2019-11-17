@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpt0xgrqz0-target.ll'
+; ModuleID = '/tmp/tmpqyjtbf4w-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -3447,7 +3447,7 @@ block_400820:
 }
 
 ; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400e70_check_FP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+define %struct.Memory* @sub_400e70_check_FP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #6 {
 block_400e70:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -3456,34 +3456,30 @@ block_400e70:
   %var_2_43 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%seg_4012a0__rodata_type* @seg_4012a0__rodata to i64), i64 24) to i64*), align 8
   %var_2_44 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %var_2_43, i64* %var_2_44, align 1
-  %var_2_4115 = load i64, i64* %RBP, align 8
-  %var_2_4126 = add i64 %var_2_4115, -28
-  %var_2_4147 = inttoptr i64 %var_2_4126 to i32*
-  %var_2_4158 = load i32, i32* %var_2_4147, align 4
-  %var_2_4179 = add i64 %var_2_4115, -8
-  %var_2_41910 = inttoptr i64 %var_2_4179 to i32*
-  %var_2_42011 = load i32, i32* %var_2_41910, align 4
-  %var_2_42112 = sub i32 %var_2_4158, %var_2_42011
-  %var_2_43613 = lshr i32 %var_2_42112, 31
-  %var_2_43814 = lshr i32 %var_2_4158, 31
-  %var_2_43915 = lshr i32 %var_2_42011, 31
-  %var_2_44016 = xor i32 %var_2_43915, %var_2_43814
-  %var_2_44117 = xor i32 %var_2_43613, %var_2_43814
-  %var_2_44218 = add nuw nsw i32 %var_2_44117, %var_2_44016
-  %var_2_44319 = icmp eq i32 %var_2_44218, 2
-  %var_2_44520 = icmp ne i32 %var_2_43613, 0
-  %var_2_44621 = xor i1 %var_2_44520, %var_2_44319
-  br i1 %var_2_44621, label %block_400ea3.preheader, label %block_400f8c
+  %var_2_4114 = load i64, i64* %RBP, align 8
+  %var_2_4125 = add i64 %var_2_4114, -28
+  %var_2_4146 = inttoptr i64 %var_2_4125 to i32*
+  %var_2_4157 = load i32, i32* %var_2_4146, align 4
+  %var_2_4178 = add i64 %var_2_4114, -8
+  %var_2_4199 = inttoptr i64 %var_2_4178 to i32*
+  %var_2_42010 = load i32, i32* %var_2_4199, align 4
+  %var_2_42111 = sub i32 %var_2_4157, %var_2_42010
+  %var_2_43612 = lshr i32 %var_2_42111, 31
+  %var_2_43813 = lshr i32 %var_2_4157, 31
+  %var_2_43914 = lshr i32 %var_2_42010, 31
+  %var_2_44015 = xor i32 %var_2_43914, %var_2_43813
+  %var_2_44116 = xor i32 %var_2_43612, %var_2_43813
+  %var_2_44217 = add nuw nsw i32 %var_2_44116, %var_2_44015
+  %var_2_44318 = icmp eq i32 %var_2_44217, 2
+  %var_2_44519 = icmp ne i32 %var_2_43612, 0
+  %var_2_44620 = xor i1 %var_2_44519, %var_2_44318
+  br i1 %var_2_44620, label %block_400ea3.preheader, label %block_400f8c
 
 block_400ea3.preheader:                           ; preds = %block_400e70
   br label %block_400ea3
 
-block_400f1a:                                     ; preds = %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit
-  %var_2_130 = tail call fastcc %struct.Memory* @ext_6020e8_fprintf(%struct.State* nonnull %0, %struct.Memory* %var_2_335)
-  br label %block_400f8c
-
 block_400eb6:                                     ; preds = %block_400eb6.preheader, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge
-  %MEMORY.236 = phi %struct.Memory* [ %var_2_335, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge ], [ %MEMORY.122, %block_400eb6.preheader ]
+  %MEMORY.236 = phi %struct.Memory* [ %var_2_335, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge ], [ %MEMORY.121, %block_400eb6.preheader ]
   %var_2_44935 = phi i64 [ %var_2_449.pre, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge ], [ %var_2_4499, %block_400eb6.preheader ]
   %var_2_302 = add i64 %var_2_44935, -64
   %var_2_303 = load i64, i64* %PC, align 8
@@ -3516,7 +3512,7 @@ _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.
   %var_2_337 = load i8, i8* %var_2_32, align 1
   %var_2_338 = or i8 %var_2_337, %var_2_336
   %var_2_339 = icmp eq i8 %var_2_338, 0
-  br i1 %var_2_339, label %block_400f1a, label %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge
+  br i1 %var_2_339, label %block_400f8c.loopexit, label %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge
 
 _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge: ; preds = %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit
   %var_2_449.pre = load i64, i64* %RBP, align 8
@@ -3538,19 +3534,24 @@ _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.
   %var_2_484 = xor i1 %var_2_483, %var_2_481
   br i1 %var_2_484, label %block_400eb6, label %block_400e97.loopexit.loopexit
 
-block_400f8c.loopexit:                            ; preds = %block_400e97.loopexit
+block_400f8c.loopexit:                            ; preds = %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit
   br label %block_400f8c
 
-block_400f8c:                                     ; preds = %block_400f8c.loopexit, %block_400f1a, %block_400e70
-  %MEMORY.0 = phi %struct.Memory* [ %var_2_130, %block_400f1a ], [ %2, %block_400e70 ], [ %MEMORY.2.lcssa, %block_400f8c.loopexit ]
-  ret %struct.Memory* %MEMORY.0
+block_400f8c.loopexit17:                          ; preds = %block_400e97.loopexit
+  br label %block_400f8c
+
+block_400f8c:                                     ; preds = %block_400f8c.loopexit17, %block_400f8c.loopexit, %block_400e70
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400e97.loopexit.loopexit:                   ; preds = %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_.exit.block_400eaa_crit_edge
   br label %block_400e97.loopexit
 
 block_400e97.loopexit:                            ; preds = %block_400e97.loopexit.loopexit, %block_400ea3
   %var_2_449.lcssa = phi i64 [ %var_2_4499, %block_400ea3 ], [ %var_2_449.pre, %block_400e97.loopexit.loopexit ]
-  %MEMORY.2.lcssa = phi %struct.Memory* [ %MEMORY.122, %block_400ea3 ], [ %var_2_335, %block_400e97.loopexit.loopexit ]
+  %MEMORY.2.lcssa = phi %struct.Memory* [ %MEMORY.121, %block_400ea3 ], [ %var_2_335, %block_400e97.loopexit.loopexit ]
   %var_2_458.lcssa = phi i32 [ %var_2_45824, %block_400ea3 ], [ %var_2_458, %block_400e97.loopexit.loopexit ]
   %var_2_477.lcssa = phi i32 [ %var_2_47728, %block_400ea3 ], [ %var_2_477, %block_400e97.loopexit.loopexit ]
   %var_2_412 = add i64 %var_2_449.lcssa, -28
@@ -3565,11 +3566,11 @@ block_400e97.loopexit:                            ; preds = %block_400e97.loopex
   %var_2_443 = icmp eq i32 %var_2_442, 2
   %var_2_445 = icmp ne i32 %var_2_436, 0
   %var_2_446 = xor i1 %var_2_445, %var_2_443
-  br i1 %var_2_446, label %block_400ea3, label %block_400f8c.loopexit
+  br i1 %var_2_446, label %block_400ea3, label %block_400f8c.loopexit17
 
 block_400ea3:                                     ; preds = %block_400ea3.preheader, %block_400e97.loopexit
-  %var_2_4499 = phi i64 [ %var_2_449.lcssa, %block_400e97.loopexit ], [ %var_2_4115, %block_400ea3.preheader ]
-  %MEMORY.122 = phi %struct.Memory* [ %MEMORY.2.lcssa, %block_400e97.loopexit ], [ %2, %block_400ea3.preheader ]
+  %var_2_4499 = phi i64 [ %var_2_449.lcssa, %block_400e97.loopexit ], [ %var_2_4114, %block_400ea3.preheader ]
+  %MEMORY.121 = phi %struct.Memory* [ %MEMORY.2.lcssa, %block_400e97.loopexit ], [ %2, %block_400ea3.preheader ]
   %var_2_45019 = add i64 %var_2_4499, -32
   %var_2_45220 = inttoptr i64 %var_2_45019 to i32*
   %var_2_45321 = load i32, i32* %var_2_45220, align 4

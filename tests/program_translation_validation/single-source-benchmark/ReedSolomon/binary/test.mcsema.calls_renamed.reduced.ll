@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpga8q8wr0-target.ll'
+; ModuleID = '/tmp/tmpmze1of7f-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -701,7 +701,7 @@ declare extern_weak x86_64_sysvcc i64 @random() #5
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
 
 ; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400940_decode_rs(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+define %struct.Memory* @sub_400940_decode_rs(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #6 {
 block_400940:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %var_2_4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0
@@ -712,90 +712,59 @@ block_400940:
   %ESI = bitcast %union.anon* %var_2_6 to i32*
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RCX = getelementptr inbounds %union.anon, %union.anon* %var_2_4, i64 0, i32 0
-  %RDX = getelementptr inbounds %union.anon, %union.anon* %var_2_5, i64 0, i32 0
   %RSI = getelementptr inbounds %union.anon, %union.anon* %var_2_6, i64 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-  %var_2_16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  %var_2_23 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  %var_2_29 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  %var_2_32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  %var_2_35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  %var_2_41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   %var_2_50 = load i64, i64* %RBP, align 8
   %var_2_51 = add i64 %var_2_50, -4
-  %var_2_874180 = inttoptr i64 %var_2_51 to i32*
-  %var_2_875181 = load i32, i32* %var_2_874180, align 4
-  %var_2_876182 = add i32 %var_2_875181, -16
-  %var_2_889183 = icmp eq i32 %var_2_876182, 0
-  %var_2_891184 = lshr i32 %var_2_876182, 31
-  %var_2_893185 = lshr i32 %var_2_875181, 31
-  %var_2_894186 = xor i32 %var_2_891184, %var_2_893185
-  %var_2_895187 = add nuw nsw i32 %var_2_894186, %var_2_893185
-  %var_2_896188 = icmp eq i32 %var_2_895187, 2
-  %var_2_898189 = icmp ne i32 %var_2_891184, 0
-  %var_2_899190 = xor i1 %var_2_898189, %var_2_896188
-  %.demorgan191 = or i1 %var_2_889183, %var_2_899190
-  br i1 %.demorgan191, label %block_400970.preheader, label %block_400a46
+  %var_2_874142 = inttoptr i64 %var_2_51 to i32*
+  %var_2_875143 = load i32, i32* %var_2_874142, align 4
+  %var_2_876144 = add i32 %var_2_875143, -16
+  %var_2_889145 = icmp eq i32 %var_2_876144, 0
+  %var_2_891146 = lshr i32 %var_2_876144, 31
+  %var_2_893147 = lshr i32 %var_2_875143, 31
+  %var_2_894148 = xor i32 %var_2_891146, %var_2_893147
+  %var_2_895149 = add nuw nsw i32 %var_2_894148, %var_2_893147
+  %var_2_896150 = icmp eq i32 %var_2_895149, 2
+  %var_2_898151 = icmp ne i32 %var_2_891146, 0
+  %var_2_899152 = xor i1 %var_2_898151, %var_2_896150
+  %.demorgan153 = or i1 %var_2_889145, %var_2_899152
+  br i1 %.demorgan153, label %block_400970.preheader, label %block_400a46
 
 block_400970.preheader:                           ; preds = %block_400940
   br label %block_400970
 
-block_4017f8.loopexit:                            ; preds = %block_4017e0
+block_40178f.block_4017f8.loopexit_crit_edge:     ; preds = %block_4017e0
+  %var_2_1022 = load i64, i64* %PC, align 8
+  %var_2_3167.le = add i64 %var_2_1022, 5
   br label %block_4017f8
 
-block_4017f8:                                     ; preds = %block_4017f8.loopexit, %block_40178f.preheader, %block_401783
-  %var_2_56 = phi i64 [ %var_2_3077, %block_401783 ], [ %var_2_3167153, %block_40178f.preheader ], [ %var_2_3167, %block_4017f8.loopexit ]
-  %.sink30 = phi i64 [ 117, %block_401783 ], [ 5, %block_40178f.preheader ], [ 5, %block_4017f8.loopexit ]
-  %MEMORY.0 = phi %struct.Memory* [ %MEMORY.22, %block_401783 ], [ %MEMORY.27, %block_40178f.preheader ], [ %MEMORY.27, %block_4017f8.loopexit ]
+block_4017f8:                                     ; preds = %block_40178f.preheader, %block_401783, %block_40178f.block_4017f8.loopexit_crit_edge
+  %var_2_56 = phi i64 [ %var_2_3077, %block_401783 ], [ %var_2_3167.le, %block_40178f.block_4017f8.loopexit_crit_edge ], [ %var_2_3167136, %block_40178f.preheader ]
+  %.sink30 = phi i64 [ 117, %block_401783 ], [ 5, %block_40178f.block_4017f8.loopexit_crit_edge ], [ 5, %block_40178f.preheader ]
   %var_2_57 = add i64 %.sink30, %var_2_56
   store i64 %var_2_57, i64* %PC, align 8
   br label %block_40186d
 
-block_400def:                                     ; preds = %block_400ddb
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_163 = load i32, i32* %var_2_1631, align 4
-  %var_2_164 = sext i32 %var_2_163 to i64
-  %var_2_165 = shl nsw i64 %var_2_164, 6
-  %var_2_166 = load i64, i64* %RAX, align 8
-  %var_2_167 = add i64 %var_2_165, %var_2_166
-  %var_2_197 = load i32, i32* %var_2_1626, align 4
-  %var_2_198 = sext i32 %var_2_197 to i64
-  %var_2_199 = shl nsw i64 %var_2_198, 2
-  %var_2_200 = add i64 %var_2_167, %var_2_199
-  %var_2_202 = inttoptr i64 %var_2_200 to i32*
-  %var_2_203 = load i32, i32* %var_2_202, align 4
-  %var_2_204 = sext i32 %var_2_203 to i64
-  %var_2_205 = shl nsw i64 %var_2_204, 2
-  %var_2_206 = add i64 %var_2_205, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_208 = inttoptr i64 %var_2_206 to i32*
-  %var_2_209 = load i32, i32* %var_2_208, align 4
-  %var_2_210 = zext i32 %var_2_209 to i64
-  store i64 %var_2_210, i64* %RSI, align 8
-  %var_2_212 = load i32, i32* %var_2_1631, align 4
-  %var_2_213 = sext i32 %var_2_212 to i64
-  %var_2_214 = shl nsw i64 %var_2_213, 6
-  %var_2_215 = add i64 %var_2_214, %var_2_166
-  %var_2_245 = load i32, i32* %var_2_1626, align 4
-  %var_2_246 = sext i32 %var_2_245 to i64
-  %var_2_247 = shl nsw i64 %var_2_246, 2
-  %var_2_248 = add i64 %var_2_215, %var_2_247
-  %var_2_250 = inttoptr i64 %var_2_248 to i32*
-  store i32 %var_2_209, i32* %var_2_250, align 4
-  %var_2_281 = load i64, i64* %PC, align 8
-  %var_2_282 = add i64 %var_2_281, -133
-  %var_2_1623.pre = load i64, i64* %RBP, align 8
-  br label %block_400ddb
+var_2_386:                                        ; preds = %block_4009a5.us-lcssa.us
+  %var_2_369 = load i64, i64* %PC, align 8
+  %var_2_378 = add i64 %var_2_369, 11
+  %var_2_387 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_378, %struct.Memory* %MEMORY.10.ph94) #13
+  %.pre176 = load i32, i32* %EDX, align 4
+  %var_2_1025.pre.pre.pre = load i64, i64* %RBP, align 8
+  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
 
-block_4009eb:                                     ; preds = %block_400993, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
-  %var_2_1025 = phi i64 [ %var_2_372, %block_400993 ], [ %var_2_1025.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ]
-  %var_2_284 = phi i64 [ %var_2_2216, %block_400993 ], [ %.pre179, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.10171, %block_400993 ], [ %var_2_396, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ]
-  %var_2_312 = add i64 %var_2_284, 14
-  store i64 %var_2_312, i64* %PC, align 8
-  %var_2_314 = add i64 %var_2_284, -101
-  %var_2_1026 = add i64 %var_2_1025, -8
+var_2_388:                                        ; preds = %block_4009a5.us-lcssa.us
+  %var_2_389 = srem i64 %var_2_381, %var_2_379
+  %var_2_392 = trunc i64 %var_2_389 to i32
+  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
+
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8: ; preds = %var_2_388, %var_2_386
+  %var_2_1025.pre.pre = phi i64 [ %var_2_1025.pre.pre.pre, %var_2_386 ], [ %var_2_1025.pre93, %var_2_388 ]
+  %var_2_395 = phi i32 [ %.pre176, %var_2_386 ], [ %var_2_392, %var_2_388 ]
+  %var_2_396 = phi %struct.Memory* [ %var_2_387, %var_2_386 ], [ %MEMORY.10.ph94, %var_2_388 ]
+  %var_2_397 = sext i32 %var_2_395 to i64
+  store i64 %var_2_397, i64* %RCX, align 8
+  %var_2_1026 = add i64 %var_2_1025.pre.pre, -8
   %var_2_1028 = inttoptr i64 %var_2_1026 to i32*
   %var_2_1029 = load i32, i32* %var_2_1028, align 4
   %var_2_1030 = add i32 %var_2_1029, -255
@@ -806,324 +775,83 @@ block_4009eb:                                     ; preds = %block_400993, %_ZN1
   %var_2_1050 = icmp eq i32 %var_2_1049, 2
   %var_2_1052 = icmp ne i32 %var_2_1045, 0
   %var_2_1053 = xor i1 %var_2_1052, %var_2_1050
-  br i1 %var_2_1053, label %block_400993, label %block_4009fe.loopexit
+  br i1 %var_2_1053, label %block_400986.us.preheader, label %block_4009fe.loopexit
 
-block_4009a5:                                     ; preds = %block_400993
-  store i64 255, i64* %RAX, align 8, !tbaa !2428
-  %var_2_315 = add i64 %var_2_2216, 9
-  store i64 %var_2_315, i64* %PC, align 8
-  %var_2_316 = load i32, i32* %var_2_1028173, align 4
-  %var_2_317 = sext i32 %var_2_316 to i64
-  store i64 %var_2_317, i64* %RCX, align 8
-  %var_2_318 = shl nsw i64 %var_2_317, 2
-  %var_2_319 = add i64 %var_2_318, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  %var_2_320 = add i64 %var_2_2216, 16
-  store i64 %var_2_320, i64* %PC, align 8
-  %var_2_321 = inttoptr i64 %var_2_319 to i32*
-  %var_2_322 = load i32, i32* %var_2_321, align 4
-  %var_2_323 = zext i32 %var_2_322 to i64
-  store i64 %var_2_323, i64* %RDX, align 8
-  %var_2_324 = add i64 %var_2_372, -4
-  %var_2_325 = add i64 %var_2_2216, 19
-  store i64 %var_2_325, i64* %PC, align 8
-  %var_2_326 = inttoptr i64 %var_2_324 to i32*
-  %var_2_327 = load i32, i32* %var_2_326, align 4
-  %var_2_329 = add i64 %var_2_2216, 23
-  store i64 %var_2_329, i64* %PC, align 8
-  %var_2_330 = load i32, i32* %var_2_1028173, align 4
-  %var_2_331 = sext i32 %var_2_327 to i64
-  %var_2_332 = sext i32 %var_2_330 to i64
-  %var_2_333 = mul nsw i64 %var_2_332, %var_2_331
-  %var_2_335 = trunc i64 %var_2_333 to i32
-  %var_2_336 = add i32 %var_2_335, %var_2_322
-  %var_2_337 = zext i32 %var_2_336 to i64
-  store i64 %var_2_337, i64* %RDX, align 8
-  %var_2_338 = icmp ult i32 %var_2_336, %var_2_322
-  %var_2_339 = icmp ult i32 %var_2_336, %var_2_335
-  %var_2_340 = or i1 %var_2_338, %var_2_339
-  %var_2_341 = zext i1 %var_2_340 to i8
-  store i8 %var_2_341, i8* %var_2_16, align 1
-  %var_2_342 = and i32 %var_2_336, 255
-  %var_2_343 = tail call i32 @llvm.ctpop.i32(i32 %var_2_342) #10
-  %var_2_344 = trunc i32 %var_2_343 to i8
-  %var_2_345 = and i8 %var_2_344, 1
-  %var_2_346 = xor i8 %var_2_345, 1
-  store i8 %var_2_346, i8* %var_2_23, align 1
-  %var_2_347 = xor i64 %var_2_333, %var_2_323
-  %var_2_348 = trunc i64 %var_2_347 to i32
-  %var_2_349 = xor i32 %var_2_348, %var_2_336
-  %var_2_350 = lshr i32 %var_2_349, 4
-  %var_2_351 = trunc i32 %var_2_350 to i8
-  %var_2_352 = and i8 %var_2_351, 1
-  store i8 %var_2_352, i8* %var_2_29, align 1
-  %var_2_353 = icmp eq i32 %var_2_336, 0
-  %var_2_354 = zext i1 %var_2_353 to i8
-  store i8 %var_2_354, i8* %var_2_32, align 1
-  %var_2_355 = lshr i32 %var_2_336, 31
-  %var_2_356 = trunc i32 %var_2_355 to i8
-  store i8 %var_2_356, i8* %var_2_35, align 1
-  %var_2_357 = lshr i32 %var_2_322, 31
-  %var_2_358 = lshr i32 %var_2_335, 31
-  %var_2_359 = xor i32 %var_2_355, %var_2_357
-  %var_2_360 = xor i32 %var_2_355, %var_2_358
-  %var_2_361 = add nuw nsw i32 %var_2_359, %var_2_360
-  %var_2_362 = icmp eq i32 %var_2_361, 2
-  %var_2_363 = zext i1 %var_2_362 to i8
-  store i8 %var_2_363, i8* %var_2_41, align 1
-  %var_2_365 = add i64 %var_2_2216, 31
-  store i64 %var_2_365, i64* %PC, align 8
-  %var_2_370 = sext i32 %var_2_336 to i64
-  %var_2_371 = and i64 %var_2_370, -4294967296
-  %var_2_373 = add i64 %var_2_372, -2692
-  %var_2_375 = inttoptr i64 %var_2_373 to i32*
-  %var_2_376 = load i32, i32* %var_2_375, align 4
-  %var_2_379 = sext i32 %var_2_376 to i64
-  %var_2_381 = or i64 %var_2_371, %var_2_337
-  %var_2_382 = sdiv i64 %var_2_381, %var_2_379
-  %var_2_383 = shl i64 %var_2_382, 32
-  %var_2_384 = ashr exact i64 %var_2_383, 32
-  %var_2_385 = icmp eq i64 %var_2_382, %var_2_384
-  br i1 %var_2_385, label %var_2_388, label %var_2_386
-
-var_2_386:                                        ; preds = %block_4009a5
-  %var_2_378 = add i64 %var_2_2216, 42
-  %var_2_387 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_378, %struct.Memory* %MEMORY.10171) #13
-  %.pre176 = load i32, i32* %EDX, align 4
-  %.pre178 = load i64, i64* %RBP, align 8
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
-
-var_2_388:                                        ; preds = %block_4009a5
-  %var_2_389 = srem i64 %var_2_381, %var_2_379
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_392 = trunc i64 %var_2_389 to i32
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8: ; preds = %var_2_388, %var_2_386
-  %var_2_393 = phi i64 [ %.pre178, %var_2_386 ], [ %var_2_372, %var_2_388 ]
-  %var_2_395 = phi i32 [ %.pre176, %var_2_386 ], [ %var_2_392, %var_2_388 ]
-  %var_2_396 = phi %struct.Memory* [ %var_2_387, %var_2_386 ], [ %MEMORY.10171, %var_2_388 ]
-  %var_2_397 = sext i32 %var_2_395 to i64
-  store i64 %var_2_397, i64* %RCX, align 8
-  %var_2_398 = shl nsw i64 %var_2_397, 2
-  %var_2_399 = add i64 %var_2_398, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_401 = inttoptr i64 %var_2_399 to i32*
-  %var_2_402 = load i32, i32* %var_2_401, align 4
-  %var_2_403 = zext i32 %var_2_402 to i64
-  store i64 %var_2_403, i64* %RDX, align 8
-  %var_2_404 = add i64 %var_2_393, -4
-  %var_2_406 = inttoptr i64 %var_2_404 to i32*
-  %var_2_407 = load i32, i32* %var_2_406, align 4
-  %var_2_408 = sext i32 %var_2_407 to i64
-  %var_2_409 = shl nsw i64 %var_2_408, 2
-  %var_2_410 = add i64 %var_2_393, -1488
-  %var_2_411 = add i64 %var_2_410, %var_2_409
-  %var_2_413 = inttoptr i64 %var_2_411 to i32*
-  %var_2_414 = load i32, i32* %var_2_413, align 4
-  %var_2_415 = xor i32 %var_2_414, %var_2_402
-  %var_2_416 = zext i32 %var_2_415 to i64
-  store i64 %var_2_416, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_417 = and i32 %var_2_415, 255
-  %var_2_418 = tail call i32 @llvm.ctpop.i32(i32 %var_2_417) #10
-  %var_2_419 = trunc i32 %var_2_418 to i8
-  %var_2_420 = and i8 %var_2_419, 1
-  %var_2_421 = xor i8 %var_2_420, 1
-  store i8 %var_2_421, i8* %var_2_23, align 1
-  %var_2_422 = icmp eq i32 %var_2_415, 0
-  %var_2_423 = zext i1 %var_2_422 to i8
-  store i8 %var_2_423, i8* %var_2_32, align 1
-  %var_2_424 = lshr i32 %var_2_415, 31
-  %var_2_425 = trunc i32 %var_2_424 to i8
-  store i8 %var_2_425, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i32 %var_2_415, i32* %var_2_413, align 4
-  %.pre179 = load i64, i64* %PC, align 8
-  %var_2_1025.pre = load i64, i64* %RBP, align 8
-  br label %block_4009eb
+block_4017d1:                                     ; preds = %block_40179c
+  store i32 0, i32* %var_2_778, align 4
+  %var_2_3138.pre = load i64, i64* %RBP, align 8
+  br label %block_4017e0
 
 block_400bf2:                                     ; preds = %block_400bbb
   %var_2_1963 = add i64 %var_2_2346, -16
   %var_2_1814 = inttoptr i64 %var_2_1963 to i32*
   %var_2_1815 = load i32, i32* %var_2_1814, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_41, align 1
   %var_4_3 = icmp slt i32 %var_2_1815, 1
   br i1 %var_4_3, label %block_400ccb, label %block_400c15.preheader
 
 block_400c15.preheader:                           ; preds = %block_400bf2
   %var_2_5837 = add i64 %var_2_2346, -8
   %var_2_5840 = inttoptr i64 %var_2_5837 to i32*
+  %var_2_5433.pr = load i32, i32* %var_2_5840, align 4
+  %var_4_4 = icmp sgt i32 %var_2_5433.pr, 0
+  br i1 %var_4_4, label %block_400c15.preheader75, label %block_400ccb
+
+block_400c15.preheader75:                         ; preds = %block_400c15.preheader
   br label %block_400c15
 
 var_2_608:                                        ; preds = %block_40138f.preheader.block_4013c6.split_crit_edge
   %var_2_591 = load i64, i64* %PC, align 8
   %var_2_600 = add i64 %var_2_591, 11
-  %var_2_609 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_600, %struct.Memory* %MEMORY.42.ph95) #13
-  %.pre225 = load i32, i32* %EDX, align 4
-  %.pre227 = load i64, i64* %RBP, align 8
+  %var_2_609 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_600, %struct.Memory* %MEMORY.42.ph82) #13
+  %var_2_519543.pre = load i64, i64* %RBP, align 8
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7
 
-var_2_610:                                        ; preds = %block_40138f.preheader.block_4013c6.split_crit_edge
-  %var_2_611 = srem i64 %var_2_603, %var_2_601
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_614 = trunc i64 %var_2_611 to i32
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7: ; preds = %var_2_610, %var_2_608
-  %var_2_615 = phi i64 [ %.pre227, %var_2_608 ], [ %var_2_594, %var_2_610 ]
-  %var_2_617 = phi i32 [ %.pre225, %var_2_608 ], [ %var_2_614, %var_2_610 ]
-  %var_2_618 = phi %struct.Memory* [ %var_2_609, %var_2_608 ], [ %MEMORY.42.ph95, %var_2_610 ]
-  %var_2_619 = sext i32 %var_2_617 to i64
-  %var_2_620 = shl nsw i64 %var_2_619, 2
-  %var_2_621 = add i64 %var_2_620, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_623 = inttoptr i64 %var_2_621 to i32*
-  %var_2_624 = load i32, i32* %var_2_623, align 4
-  %var_2_625 = zext i32 %var_2_624 to i64
-  store i64 %var_2_625, i64* %RDX, align 8
-  %var_2_626 = add i64 %var_2_615, -4
-  %var_2_628 = inttoptr i64 %var_2_626 to i32*
-  %var_2_629 = load i32, i32* %var_2_628, align 4
-  %var_2_630 = sext i32 %var_2_629 to i64
-  %var_2_631 = shl nsw i64 %var_2_630, 2
-  %var_2_632 = add i64 %var_2_615, -1616
-  %var_2_633 = add i64 %var_2_632, %var_2_631
-  %var_2_635 = inttoptr i64 %var_2_633 to i32*
-  %var_2_636 = load i32, i32* %var_2_635, align 4
-  %var_2_637 = xor i32 %var_2_636, %var_2_624
-  %var_2_638 = zext i32 %var_2_637 to i64
-  store i64 %var_2_638, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_639 = and i32 %var_2_637, 255
-  %var_2_640 = tail call i32 @llvm.ctpop.i32(i32 %var_2_639) #10
-  %var_2_641 = trunc i32 %var_2_640 to i8
-  %var_2_642 = and i8 %var_2_641, 1
-  %var_2_643 = xor i8 %var_2_642, 1
-  store i8 %var_2_643, i8* %var_2_23, align 1
-  %var_2_644 = icmp eq i32 %var_2_637, 0
-  %var_2_645 = zext i1 %var_2_644 to i8
-  store i8 %var_2_645, i8* %var_2_32, align 1
-  %var_2_646 = lshr i32 %var_2_637, 31
-  %var_2_647 = trunc i32 %var_2_646 to i8
-  store i8 %var_2_647, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i32 %var_2_637, i32* %var_2_635, align 4
-  %var_2_519550 = load i64, i64* %RBP, align 8
-  %var_2_519651 = add i64 %var_2_519550, -8
-  %var_2_519852 = inttoptr i64 %var_2_519651 to i32*
-  %var_2_519953 = load i32, i32* %var_2_519852, align 4
-  %var_2_520154 = add i64 %var_2_519550, -4
-  %var_2_520355 = inttoptr i64 %var_2_520154 to i32*
-  %var_2_520456 = load i32, i32* %var_2_520355, align 4
-  %var_2_520557 = sub i32 %var_2_519953, %var_2_520456
-  %var_2_522058 = lshr i32 %var_2_520557, 31
-  %var_2_522259 = lshr i32 %var_2_519953, 31
-  %var_2_522360 = lshr i32 %var_2_520456, 31
-  %var_2_522461 = xor i32 %var_2_522360, %var_2_522259
-  %var_2_522562 = xor i32 %var_2_522058, %var_2_522259
-  %var_2_522663 = add nuw nsw i32 %var_2_522562, %var_2_522461
-  %var_2_522764 = icmp eq i32 %var_2_522663, 2
-  %var_2_522965 = icmp ne i32 %var_2_522058, 0
-  %var_2_523066 = xor i1 %var_2_522965, %var_2_522764
-  br i1 %var_2_523066, label %block_40138f.lr.ph, label %block_401434.loopexit104
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7: ; preds = %block_40138f.preheader.block_4013c6.split_crit_edge, %var_2_608
+  %var_2_5195436538 = phi i64 [ %var_2_519543.pre, %var_2_608 ], [ %var_2_5195436539, %block_40138f.preheader.block_4013c6.split_crit_edge ]
+  %var_2_519543 = phi i64 [ %var_2_519543.pre, %var_2_608 ], [ %var_2_594, %block_40138f.preheader.block_4013c6.split_crit_edge ]
+  %var_2_618 = phi %struct.Memory* [ %var_2_609, %var_2_608 ], [ %MEMORY.42.ph82, %block_40138f.preheader.block_4013c6.split_crit_edge ]
+  %var_2_519644 = add i64 %var_2_519543, -8
+  %var_2_519845 = inttoptr i64 %var_2_519644 to i32*
+  %var_2_519946 = load i32, i32* %var_2_519845, align 4
+  %var_2_520147 = add i64 %var_2_519543, -4
+  %var_2_520348 = inttoptr i64 %var_2_520147 to i32*
+  %var_2_520449 = load i32, i32* %var_2_520348, align 4
+  %var_2_520550 = sub i32 %var_2_519946, %var_2_520449
+  %var_2_522051 = lshr i32 %var_2_520550, 31
+  %var_2_522252 = lshr i32 %var_2_519946, 31
+  %var_2_522353 = lshr i32 %var_2_520449, 31
+  %var_2_522454 = xor i32 %var_2_522353, %var_2_522252
+  %var_2_522555 = xor i32 %var_2_522051, %var_2_522252
+  %var_2_522656 = add nuw nsw i32 %var_2_522555, %var_2_522454
+  %var_2_522757 = icmp eq i32 %var_2_522656, 2
+  %var_2_522958 = icmp ne i32 %var_2_522051, 0
+  %var_2_523059 = xor i1 %var_2_522958, %var_2_522757
+  br i1 %var_2_523059, label %block_40138f.lr.ph, label %block_401221.outer.loopexit
 
 block_4011ba:                                     ; preds = %block_4011b0
   store i64 255, i64* %RAX, align 8, !tbaa !2428
   br label %block_401114.backedge
 
 block_40179c:                                     ; preds = %block_40179c.preheader, %block_4017e0
-  %var_2_3167156 = phi i64 [ %var_2_3167, %block_4017e0 ], [ %var_2_3167153, %block_40179c.preheader ]
-  %var_2_3142155 = phi i32 [ %var_2_3142, %block_4017e0 ], [ %var_2_3142143, %block_40179c.preheader ]
-  %var_2_3141154 = phi i32* [ %var_2_3141, %block_4017e0 ], [ %var_2_3141142, %block_40179c.preheader ]
-  %var_2_774 = sext i32 %var_2_3142155 to i64
+  %var_2_313827 = phi i64 [ %var_2_3138, %block_4017e0 ], [ %var_2_4799, %block_40179c.preheader ]
+  %var_2_805 = phi i32 [ %var_2_3142, %block_4017e0 ], [ %var_2_4803, %block_40179c.preheader ]
+  %var_2_774 = sext i32 %var_2_805 to i64
   %var_2_775 = shl nsw i64 %var_2_774, 2
   %var_2_776 = add i64 %var_2_775, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
   %var_2_778 = inttoptr i64 %var_2_776 to i32*
   %var_2_779 = load i32, i32* %var_2_778, align 4
-  %var_2_780 = add i32 %var_2_779, 1
-  %var_2_781 = icmp ne i32 %var_2_779, -1
-  %var_2_782 = zext i1 %var_2_781 to i8
-  store i8 %var_2_782, i8* %var_2_16, align 1
-  %var_2_783 = and i32 %var_2_780, 255
-  %var_2_784 = tail call i32 @llvm.ctpop.i32(i32 %var_2_783) #10
-  %var_2_785 = trunc i32 %var_2_784 to i8
-  %var_2_786 = and i8 %var_2_785, 1
-  %var_2_787 = xor i8 %var_2_786, 1
-  store i8 %var_2_787, i8* %var_2_23, align 1
-  %var_2_788 = xor i32 %var_2_779, 16
-  %var_2_789 = xor i32 %var_2_788, %var_2_780
-  %var_2_790 = lshr i32 %var_2_789, 4
-  %var_2_791 = trunc i32 %var_2_790 to i8
-  %var_2_792 = and i8 %var_2_791, 1
-  store i8 %var_2_792, i8* %var_2_29, align 1
-  %var_2_793 = icmp eq i32 %var_2_780, 0
-  %var_2_794 = zext i1 %var_2_793 to i8
-  store i8 %var_2_794, i8* %var_2_32, align 1
-  %var_2_795 = lshr i32 %var_2_780, 31
-  %var_2_796 = trunc i32 %var_2_795 to i8
-  store i8 %var_2_796, i8* %var_2_35, align 1
-  %var_2_797 = lshr i32 %var_2_779, 31
-  %var_2_798 = xor i32 %var_2_797, 1
-  %var_2_799 = xor i32 %var_2_795, %var_2_797
-  %var_2_800 = add nuw nsw i32 %var_2_799, %var_2_798
-  %var_2_801 = icmp eq i32 %var_2_800, 2
-  %var_2_802 = zext i1 %var_2_801 to i8
-  store i8 %var_2_802, i8* %var_2_41, align 1
-  %.v270 = select i1 %var_2_793, i64 53, i64 18
-  %var_2_803 = add i64 %.v270, %var_2_3167156
-  %var_2_804 = add i64 %var_2_803, 4
-  store i64 %var_2_804, i64* %PC, align 8
-  %var_2_805 = load i32, i32* %var_2_3141154, align 4
-  %var_2_806 = sext i32 %var_2_805 to i64
-  %var_2_807 = shl nsw i64 %var_2_806, 2
-  %var_2_808 = add i64 %var_2_807, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br i1 %var_2_793, label %block_4017e0, label %block_4017ae
+  %var_2_793 = icmp eq i32 %var_2_779, -1
+  br i1 %var_2_793, label %block_4017d1, label %block_4017e0
 
-block_401377.sink.split:                          ; preds = %block_401332, %block_401247
-  %var_2_6156.sink104 = phi i32 [ %var_2_6156, %block_401332 ], [ %var_2_4991, %block_401247 ]
-  %RDX.sink = phi i64* [ %RDX, %block_401332 ], [ %RCX, %block_401247 ]
-  %.sink25.ph = phi i64 [ 5, %block_401332 ], [ 124, %block_401247 ]
-  %var_2_6157 = zext i32 %var_2_6156.sink104 to i64
-  store i64 %var_2_6157, i64* %RDX.sink, align 8
-  %var_2_6159 = load i32, i32* %var_2_2461, align 4
-  %var_2_6160 = sext i32 %var_2_6159 to i64
-  %var_2_6161 = shl nsw i64 %var_2_6160, 2
-  %var_2_6162 = add i64 %var_2_2458, -1616
-  %var_2_6163 = add i64 %var_2_6162, %var_2_6161
-  %var_2_6165 = inttoptr i64 %var_2_6163 to i32*
-  store i32 %var_2_6156.sink104, i32* %var_2_6165, align 4
-  br label %block_401377
-
-block_401377:                                     ; preds = %block_401312, %block_401377.sink.split
-  %.sink25 = phi i64 [ 5, %block_401312 ], [ %.sink25.ph, %block_401377.sink.split ]
+block_401377:                                     ; preds = %block_401300, %block_4012bd
+  %.sink25 = phi i64 [ 124, %block_4012bd ], [ 5, %block_401300 ]
   %var_2_809 = load i64, i64* %PC, align 8
   %var_2_810 = add i64 %var_2_809, %.sink25
   store i64 %var_2_810, i64* %PC, align 8
   br label %block_40137c
 
-block_40176b:                                     ; preds = %block_401727, %block_401739
-  %.sink1 = phi i64 [ 30, %block_401739 ], [ 15, %block_401727 ]
-  %var_2_1069.sink = phi i64 [ %var_2_1069, %block_401739 ], [ %var_2_1227, %block_401727 ]
-  %var_2_1063.sink = phi i32 [ %var_2_1063, %block_401739 ], [ 0, %block_401727 ]
-  %var_2_1070 = add i64 %.sink1, %var_2_1222
-  store i64 %var_2_1070, i64* %PC, align 8
-  %var_2_1071 = inttoptr i64 %var_2_1069.sink to i32*
-  store i32 %var_2_1063.sink, i32* %var_2_1071, align 4
-  %var_2_868 = load i64, i64* %PC, align 8
-  %var_2_869 = add i64 %var_2_868, -95
-  %var_2_4353 = load i64, i64* %RBP, align 8
+block_40176b:                                     ; preds = %block_401727, %block_40175c
+  %var_2_4353 = phi i64 [ %var_2_435330, %block_401727 ], [ %var_2_4353.pre, %block_40175c ]
   %var_2_4354 = add i64 %var_2_4353, -4
   %var_2_4356 = inttoptr i64 %var_2_4354 to i32*
   %var_2_4357 = load i32, i32* %var_2_4356, align 4
@@ -1135,38 +863,22 @@ block_40176b:                                     ; preds = %block_401727, %bloc
   %var_2_4378 = icmp eq i32 %var_2_4377, 2
   %var_2_4380 = icmp ne i32 %var_2_4373, 0
   %var_2_4381 = xor i1 %var_2_4380, %var_2_4378
-  %.v269 = select i1 %var_2_4381, i64 13, i64 100
-  %var_2_4382 = add i64 %var_2_869, %.v269
-  br i1 %var_2_4381, label %block_401727, label %block_401783.loopexit105
+  br i1 %var_2_4381, label %block_401727, label %block_40171a.block_401783.loopexit1_crit_edge
 
 block_400bbb:                                     ; preds = %block_400bbb.preheader, %block_400bbb
   store i64 0, i64* %RAX, align 8, !tbaa !2428
-  store i8 1, i8* %var_2_23, align 1
-  store i8 1, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_41, align 1
   %var_2_1954 = load i8, i8* %var_2_1953, align 1
   %var_2_1955 = and i8 %var_2_1954, 1
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
   %var_2_1961 = icmp eq i8 %var_2_1955, 0
   br i1 %var_2_1961, label %block_400bf2, label %block_400bbb
 
-block_4017e0:                                     ; preds = %block_4017ae, %block_40179c
-  %.sink = phi i64 [ 30, %block_4017ae ], [ 15, %block_40179c ]
-  %var_2_5015.sink = phi i64 [ %var_2_5015, %block_4017ae ], [ %var_2_808, %block_40179c ]
-  %var_2_5009.sink = phi i32 [ %var_2_5009, %block_4017ae ], [ 0, %block_40179c ]
-  %var_2_5016 = add i64 %.sink, %var_2_803
-  store i64 %var_2_5016, i64* %PC, align 8
-  %var_2_5017 = inttoptr i64 %var_2_5015.sink to i32*
-  store i32 %var_2_5009.sink, i32* %var_2_5017, align 4
-  %var_2_1022 = load i64, i64* %PC, align 8
-  %var_2_1023 = add i64 %var_2_1022, -95
-  %var_2_3138 = load i64, i64* %RBP, align 8
+block_40175c:                                     ; preds = %block_401727
+  store i32 0, i32* %var_2_1197, align 4
+  %var_2_4353.pre = load i64, i64* %RBP, align 8
+  br label %block_40176b
+
+block_4017e0:                                     ; preds = %block_40179c, %block_4017d1
+  %var_2_3138 = phi i64 [ %var_2_313827, %block_40179c ], [ %var_2_3138.pre, %block_4017d1 ]
   %var_2_3139 = add i64 %var_2_3138, -4
   %var_2_3141 = inttoptr i64 %var_2_3139 to i32*
   %var_2_3142 = load i32, i32* %var_2_3141, align 4
@@ -1178,437 +890,67 @@ block_4017e0:                                     ; preds = %block_4017ae, %bloc
   %var_2_3163 = icmp eq i32 %var_2_3162, 2
   %var_2_3165 = icmp ne i32 %var_2_3158, 0
   %var_2_3166 = xor i1 %var_2_3165, %var_2_3163
-  %.v271 = select i1 %var_2_3166, i64 13, i64 100
-  %var_2_3167 = add i64 %var_2_1023, %.v271
-  br i1 %var_2_3166, label %block_40179c, label %block_4017f8.loopexit
-
-block_401739:                                     ; preds = %block_401727
-  %var_2_1055 = add i64 %var_2_1222, 12
-  store i64 %var_2_1055, i64* %PC, align 8
-  %var_2_1056 = inttoptr i64 %var_2_1227 to i32*
-  %var_2_1057 = load i32, i32* %var_2_1056, align 4
-  %var_2_1058 = sext i32 %var_2_1057 to i64
-  store i64 %var_2_1058, i64* %RAX, align 8
-  %var_2_1059 = shl nsw i64 %var_2_1058, 2
-  %var_2_1060 = add i64 %var_2_1059, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_1061 = add i64 %var_2_1222, 19
-  store i64 %var_2_1061, i64* %PC, align 8
-  %var_2_1062 = inttoptr i64 %var_2_1060 to i32*
-  %var_2_1063 = load i32, i32* %var_2_1062, align 4
-  %var_2_1064 = zext i32 %var_2_1063 to i64
-  store i64 %var_2_1064, i64* %RCX, align 8
-  %var_2_1065 = add i64 %var_2_1222, 23
-  store i64 %var_2_1065, i64* %PC, align 8
-  %var_2_1066 = load i32, i32* %var_2_4356117, align 4
-  %var_2_1067 = sext i32 %var_2_1066 to i64
-  %var_2_1068 = shl nsw i64 %var_2_1067, 2
-  %var_2_1069 = add i64 %var_2_1068, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br label %block_40176b
+  br i1 %var_2_3166, label %block_40179c, label %block_40178f.block_4017f8.loopexit_crit_edge
 
 var_2_1134:                                       ; preds = %block_401155.us-lcssa.us
   %var_2_1117 = load i64, i64* %PC, align 8
   %var_2_1126 = add i64 %var_2_1117, 11
-  %var_2_1135 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1126, %struct.Memory* %MEMORY.13.ph) #13
-  %var_2_1155.pre = load i64, i64* %RBP, align 8
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6
-
-var_2_1136:                                       ; preds = %block_401155.us-lcssa.us
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6: ; preds = %var_2_1136, %var_2_1134
-  %var_2_1155 = phi i64 [ %var_2_1155.pre, %var_2_1134 ], [ %var_2_1844, %var_2_1136 ]
-  %var_2_1144 = phi %struct.Memory* [ %var_2_1135, %var_2_1134 ], [ %MEMORY.13.ph, %var_2_1136 ]
-  %var_2_1156 = add i64 %var_2_1155, -8
-  %var_2_1159 = inttoptr i64 %var_2_1156 to i32*
-  %var_2_1160 = load i32, i32* %var_2_1159, align 4
-  %var_2_1161 = sext i32 %var_2_1160 to i64
-  %var_2_1162 = shl nsw i64 %var_2_1161, 2
-  %var_2_1163 = add i64 %var_2_1155, -2688
-  %var_2_1164 = add i64 %var_2_1163, %var_2_1162
-  %var_2_1166 = inttoptr i64 %var_2_1164 to i32*
-  %var_2_1167 = load i32, i32* %var_2_1166, align 4
-  %var_2_1168 = sext i32 %var_2_1167 to i64
-  %var_2_1169 = shl nsw i64 %var_2_1168, 2
-  %var_2_1170 = add i64 %var_2_1169, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_1172 = inttoptr i64 %var_2_1170 to i32*
-  %var_2_1173 = load i32, i32* %var_2_1172, align 4
-  %var_2_1174 = zext i32 %var_2_1173 to i64
-  store i64 %var_2_1174, i64* %RDX, align 8
-  %var_2_1175 = add i64 %var_2_1155, -16
-  %var_2_1177 = inttoptr i64 %var_2_1175 to i32*
-  %var_2_1178 = load i32, i32* %var_2_1177, align 4
-  %var_2_1179 = xor i32 %var_2_1178, %var_2_1173
-  %var_2_1180 = zext i32 %var_2_1179 to i64
-  store i64 %var_2_1180, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_1181 = and i32 %var_2_1179, 255
-  %var_2_1182 = tail call i32 @llvm.ctpop.i32(i32 %var_2_1181) #10
-  %var_2_1183 = trunc i32 %var_2_1182 to i8
-  %var_2_1184 = and i8 %var_2_1183, 1
-  %var_2_1185 = xor i8 %var_2_1184, 1
-  store i8 %var_2_1185, i8* %var_2_23, align 1
-  %var_2_1186 = icmp eq i32 %var_2_1179, 0
-  %var_2_1187 = zext i1 %var_2_1186 to i8
-  store i8 %var_2_1187, i8* %var_2_32, align 1
-  %var_2_1188 = lshr i32 %var_2_1179, 31
-  %var_2_1189 = trunc i32 %var_2_1188 to i8
-  store i8 %var_2_1189, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i32 %var_2_1179, i32* %var_2_1177, align 4
-  %var_2_1844.pre = load i64, i64* %RBP, align 8
-  br label %block_40112f.outer
+  %var_2_1135 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1126, %struct.Memory* %MEMORY.13.ph.ph) #13
+  br label %block_40112f.outer.outer
 
 block_401727:                                     ; preds = %block_401727.preheader, %block_40176b
-  %var_2_4382119 = phi i64 [ %var_2_4382, %block_40176b ], [ %var_2_4382116, %block_401727.preheader ]
-  %var_2_4357118 = phi i32 [ %var_2_4357, %block_40176b ], [ %var_2_4357106, %block_401727.preheader ]
-  %var_2_4356117 = phi i32* [ %var_2_4356, %block_40176b ], [ %var_2_4356105, %block_401727.preheader ]
-  %var_2_1193 = sext i32 %var_2_4357118 to i64
+  %var_2_435330 = phi i64 [ %var_2_4353, %block_40176b ], [ %var_2_2458.pre.pre, %block_401727.preheader ]
+  %var_2_1224 = phi i32 [ %var_2_4357, %block_40176b ], [ %var_2_435790, %block_401727.preheader ]
+  %var_2_1193 = sext i32 %var_2_1224 to i64
   %var_2_1194 = shl nsw i64 %var_2_1193, 2
   %var_2_1195 = add i64 %var_2_1194, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
   %var_2_1197 = inttoptr i64 %var_2_1195 to i32*
   %var_2_1198 = load i32, i32* %var_2_1197, align 4
-  %var_2_1199 = add i32 %var_2_1198, 1
-  %var_2_1200 = icmp ne i32 %var_2_1198, -1
-  %var_2_1201 = zext i1 %var_2_1200 to i8
-  store i8 %var_2_1201, i8* %var_2_16, align 1
-  %var_2_1202 = and i32 %var_2_1199, 255
-  %var_2_1203 = tail call i32 @llvm.ctpop.i32(i32 %var_2_1202) #10
-  %var_2_1204 = trunc i32 %var_2_1203 to i8
-  %var_2_1205 = and i8 %var_2_1204, 1
-  %var_2_1206 = xor i8 %var_2_1205, 1
-  store i8 %var_2_1206, i8* %var_2_23, align 1
-  %var_2_1207 = xor i32 %var_2_1198, 16
-  %var_2_1208 = xor i32 %var_2_1207, %var_2_1199
-  %var_2_1209 = lshr i32 %var_2_1208, 4
-  %var_2_1210 = trunc i32 %var_2_1209 to i8
-  %var_2_1211 = and i8 %var_2_1210, 1
-  store i8 %var_2_1211, i8* %var_2_29, align 1
-  %var_2_1212 = icmp eq i32 %var_2_1199, 0
-  %var_2_1213 = zext i1 %var_2_1212 to i8
-  store i8 %var_2_1213, i8* %var_2_32, align 1
-  %var_2_1214 = lshr i32 %var_2_1199, 31
-  %var_2_1215 = trunc i32 %var_2_1214 to i8
-  store i8 %var_2_1215, i8* %var_2_35, align 1
-  %var_2_1216 = lshr i32 %var_2_1198, 31
-  %var_2_1217 = xor i32 %var_2_1216, 1
-  %var_2_1218 = xor i32 %var_2_1214, %var_2_1216
-  %var_2_1219 = add nuw nsw i32 %var_2_1218, %var_2_1217
-  %var_2_1220 = icmp eq i32 %var_2_1219, 2
-  %var_2_1221 = zext i1 %var_2_1220 to i8
-  store i8 %var_2_1221, i8* %var_2_41, align 1
-  %.v268 = select i1 %var_2_1212, i64 53, i64 18
-  %var_2_1222 = add i64 %.v268, %var_2_4382119
-  %var_2_1223 = add i64 %var_2_1222, 4
-  store i64 %var_2_1223, i64* %PC, align 8
-  %var_2_1224 = load i32, i32* %var_2_4356117, align 4
-  %var_2_1225 = sext i32 %var_2_1224 to i64
-  %var_2_1226 = shl nsw i64 %var_2_1225, 2
-  %var_2_1227 = add i64 %var_2_1226, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br i1 %var_2_1212, label %block_40176b, label %block_401739
+  %var_2_1212 = icmp eq i32 %var_2_1198, -1
+  br i1 %var_2_1212, label %block_40175c, label %block_40176b
 
-block_400f4e:                                     ; preds = %block_400f29
-  store i64 255, i64* %RAX, align 8, !tbaa !2428
-  %var_2_1232 = load i32, i32* %var_2_2005, align 4
-  %var_2_1233 = add i32 %var_2_1232, 1
-  %var_2_1257 = load i32, i32* %var_2_2000, align 4
-  %var_2_1258 = sub i32 %var_2_1233, %var_2_1257
-  %var_2_1282 = sext i32 %var_2_1258 to i64
-  store i64 %var_2_1282, i64* %RSI, align 8
-  %var_2_1291 = load i32, i32* %var_2_2005, align 4
-  %var_2_1292 = add i32 %var_2_1291, 1
-  %var_2_1294 = sext i32 %var_2_1292 to i64
-  %var_2_1295 = shl nsw i64 %var_2_1294, 6
-  store i64 %var_2_1295, i64* %RSI, align 8
-  %var_2_1296 = load i64, i64* %RCX, align 8
-  %var_2_1297 = add i64 %var_2_1295, %var_2_1296
-  %var_2_1328 = load i32, i32* %var_2_2000, align 4
-  %var_2_1329 = sext i32 %var_2_1328 to i64
-  store i64 %var_2_1329, i64* %RSI, align 8
-  %var_2_1330 = shl nsw i64 %var_2_1329, 2
-  %var_2_1331 = add i64 %var_2_1297, %var_2_1330
-  %var_2_1333 = inttoptr i64 %var_2_1331 to i32*
-  %var_2_1334 = load i32, i32* %var_2_1333, align 4
-  %var_2_1335 = sext i32 %var_2_1334 to i64
-  %var_2_1336 = load i64, i64* %RDX, align 8
-  %var_2_1337 = shl nsw i64 %var_2_1335, 2
-  %var_2_1338 = add i64 %var_2_1337, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_1340 = trunc i64 %var_2_1336 to i32
-  %var_2_1341 = inttoptr i64 %var_2_1338 to i32*
-  %var_2_1342 = load i32, i32* %var_2_1341, align 4
-  %var_2_1343 = add i32 %var_2_1342, %var_2_1340
-  %var_2_1344 = zext i32 %var_2_1343 to i64
-  store i64 %var_2_1344, i64* %RDX, align 8
-  %var_2_1345 = icmp ult i32 %var_2_1343, %var_2_1340
-  %var_2_1346 = icmp ult i32 %var_2_1343, %var_2_1342
-  %var_2_1347 = or i1 %var_2_1345, %var_2_1346
-  %var_2_1348 = zext i1 %var_2_1347 to i8
-  store i8 %var_2_1348, i8* %var_2_16, align 1
-  %var_2_1349 = and i32 %var_2_1343, 255
-  %var_2_1350 = tail call i32 @llvm.ctpop.i32(i32 %var_2_1349) #10
-  %var_2_1351 = trunc i32 %var_2_1350 to i8
-  %var_2_1352 = and i8 %var_2_1351, 1
-  %var_2_1353 = xor i8 %var_2_1352, 1
-  store i8 %var_2_1353, i8* %var_2_23, align 1
-  %var_2_1354 = xor i32 %var_2_1342, %var_2_1340
-  %var_2_1355 = xor i32 %var_2_1354, %var_2_1343
-  %var_2_1356 = lshr i32 %var_2_1355, 4
-  %var_2_1357 = trunc i32 %var_2_1356 to i8
-  %var_2_1358 = and i8 %var_2_1357, 1
-  store i8 %var_2_1358, i8* %var_2_29, align 1
-  %var_2_1359 = icmp eq i32 %var_2_1343, 0
-  %var_2_1360 = zext i1 %var_2_1359 to i8
-  store i8 %var_2_1360, i8* %var_2_32, align 1
-  %var_2_1361 = lshr i32 %var_2_1343, 31
-  %var_2_1362 = trunc i32 %var_2_1361 to i8
-  store i8 %var_2_1362, i8* %var_2_35, align 1
-  %var_2_1363 = lshr i32 %var_2_1340, 31
-  %var_2_1364 = lshr i32 %var_2_1342, 31
-  %var_2_1365 = xor i32 %var_2_1361, %var_2_1363
-  %var_2_1366 = xor i32 %var_2_1361, %var_2_1364
-  %var_2_1367 = add nuw nsw i32 %var_2_1365, %var_2_1366
-  %var_2_1368 = icmp eq i32 %var_2_1367, 2
-  %var_2_1369 = zext i1 %var_2_1368 to i8
-  store i8 %var_2_1369, i8* %var_2_41, align 1
-  %var_2_1377 = sext i32 %var_2_1343 to i64
-  %var_2_1378 = and i64 %var_2_1377, -4294967296
-  %var_2_1380 = add i64 %var_2_1997.pre, -2708
-  %var_2_1382 = inttoptr i64 %var_2_1380 to i32*
-  %var_2_1383 = load i32, i32* %var_2_1382, align 4
-  %var_2_1386 = sext i32 %var_2_1383 to i64
-  %var_2_1388 = or i64 %var_2_1378, %var_2_1344
-  %var_2_1389 = sdiv i64 %var_2_1388, %var_2_1386
-  %var_2_1390 = shl i64 %var_2_1389, 32
-  %var_2_1391 = ashr exact i64 %var_2_1390, 32
-  %var_2_1392 = icmp eq i64 %var_2_1389, %var_2_1391
-  br i1 %var_2_1392, label %var_2_1395, label %var_2_1393
-
-var_2_1393:                                       ; preds = %block_400f4e
+var_2_1393:                                       ; preds = %block_400f4e.us-lcssa.us
   %var_2_1376 = load i64, i64* %PC, align 8
   %var_2_1385 = add i64 %var_2_1376, 11
-  %var_2_1394 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1385, %struct.Memory* %MEMORY.16.ph) #13
-  %.pre200 = load i32, i32* %EDX, align 4
-  %.pre202 = load i64, i64* %RBP, align 8
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5
-
-var_2_1395:                                       ; preds = %block_400f4e
-  %var_2_1396 = srem i64 %var_2_1388, %var_2_1386
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_1399 = trunc i64 %var_2_1396 to i32
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5: ; preds = %var_2_1395, %var_2_1393
-  %var_2_1400 = phi i64 [ %.pre202, %var_2_1393 ], [ %var_2_1997.pre, %var_2_1395 ]
-  %var_2_1402 = phi i32 [ %.pre200, %var_2_1393 ], [ %var_2_1399, %var_2_1395 ]
-  %var_2_1403 = phi %struct.Memory* [ %var_2_1394, %var_2_1393 ], [ %MEMORY.16.ph, %var_2_1395 ]
-  %var_2_1404 = sext i32 %var_2_1402 to i64
-  %var_2_1405 = shl nsw i64 %var_2_1404, 2
-  %var_2_1406 = add i64 %var_2_1405, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_1408 = inttoptr i64 %var_2_1406 to i32*
-  %var_2_1409 = load i32, i32* %var_2_1408, align 4
-  %var_2_1410 = zext i32 %var_2_1409 to i64
-  store i64 %var_2_1410, i64* %RDX, align 8
-  %var_2_1411 = add i64 %var_2_1400, -12
-  %var_2_1413 = inttoptr i64 %var_2_1411 to i32*
-  %var_2_1414 = load i32, i32* %var_2_1413, align 4
-  %var_2_1415 = add i32 %var_2_1414, 1
-  %var_2_1438 = sext i32 %var_2_1415 to i64
-  %var_2_1439 = shl nsw i64 %var_2_1438, 2
-  %var_2_1440 = add i64 %var_2_1400, -1248
-  %var_2_1441 = add i64 %var_2_1440, %var_2_1439
-  %var_2_1443 = inttoptr i64 %var_2_1441 to i32*
-  %var_2_1444 = load i32, i32* %var_2_1443, align 4
-  %var_2_1445 = xor i32 %var_2_1444, %var_2_1409
-  %var_2_1446 = zext i32 %var_2_1445 to i64
-  store i64 %var_2_1446, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_1447 = and i32 %var_2_1445, 255
-  %var_2_1448 = tail call i32 @llvm.ctpop.i32(i32 %var_2_1447) #10
-  %var_2_1449 = trunc i32 %var_2_1448 to i8
-  %var_2_1450 = and i8 %var_2_1449, 1
-  %var_2_1451 = xor i8 %var_2_1450, 1
-  store i8 %var_2_1451, i8* %var_2_23, align 1
-  %var_2_1452 = icmp eq i32 %var_2_1445, 0
-  %var_2_1453 = zext i1 %var_2_1452 to i8
-  store i8 %var_2_1453, i8* %var_2_32, align 1
-  %var_2_1454 = lshr i32 %var_2_1445, 31
-  %var_2_1455 = trunc i32 %var_2_1454 to i8
-  store i8 %var_2_1455, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  br label %block_400ef6.outer
+  %var_2_1394 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1385, %struct.Memory* %MEMORY.16.ph.ph) #13
+  br label %block_400ef6.outer.outer
 
 var_2_1571:                                       ; preds = %block_401539.us-lcssa.us
   %var_2_1554 = load i64, i64* %PC, align 8
   %var_2_1563 = add i64 %var_2_1554, 11
-  %var_2_1572 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1563, %struct.Memory* %MEMORY.34.ph) #13
-  %.pre232 = load i32, i32* %EDX, align 4
-  %.pre234 = load i64, i64* %RBP, align 8
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4
+  %var_2_1572 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_1563, %struct.Memory* %MEMORY.34.ph.ph) #13
+  br label %block_401513.outer.outer
 
-var_2_1573:                                       ; preds = %block_401539.us-lcssa.us
-  %var_2_1574 = srem i64 %var_2_1566, %var_2_1564
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_1577 = trunc i64 %var_2_1574 to i32
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4: ; preds = %var_2_1573, %var_2_1571
-  %var_2_1578 = phi i64 [ %.pre234, %var_2_1571 ], [ %var_2_4516, %var_2_1573 ]
-  %var_2_1580 = phi i32 [ %.pre232, %var_2_1571 ], [ %var_2_1577, %var_2_1573 ]
-  %var_2_1581 = phi %struct.Memory* [ %var_2_1572, %var_2_1571 ], [ %MEMORY.34.ph, %var_2_1573 ]
-  %var_2_1582 = sext i32 %var_2_1580 to i64
-  %var_2_1583 = shl nsw i64 %var_2_1582, 2
-  %var_2_1584 = add i64 %var_2_1583, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_1586 = inttoptr i64 %var_2_1584 to i32*
-  %var_2_1587 = load i32, i32* %var_2_1586, align 4
-  %var_2_1588 = zext i32 %var_2_1587 to i64
-  store i64 %var_2_1588, i64* %RDX, align 8
-  %var_2_1589 = add i64 %var_2_1578, -4
-  %var_2_1591 = inttoptr i64 %var_2_1589 to i32*
-  %var_2_1592 = load i32, i32* %var_2_1591, align 4
-  %var_2_1593 = sext i32 %var_2_1592 to i64
-  %var_2_1594 = shl nsw i64 %var_2_1593, 2
-  %var_2_1595 = add i64 %var_2_1578, -1568
-  %var_2_1596 = add i64 %var_2_1595, %var_2_1594
-  %var_2_1598 = inttoptr i64 %var_2_1596 to i32*
-  %var_2_1599 = load i32, i32* %var_2_1598, align 4
-  %var_2_1600 = sext i32 %var_2_1599 to i64
-  %var_2_1601 = shl nsw i64 %var_2_1600, 2
-  %var_2_1602 = add i64 %var_2_1578, -2640
-  %var_2_1603 = add i64 %var_2_1602, %var_2_1601
-  %var_2_1605 = inttoptr i64 %var_2_1603 to i32*
-  %var_2_1606 = load i32, i32* %var_2_1605, align 4
-  %var_2_1607 = xor i32 %var_2_1606, %var_2_1587
-  %var_2_1608 = zext i32 %var_2_1607 to i64
-  store i64 %var_2_1608, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_1609 = and i32 %var_2_1607, 255
-  %var_2_1610 = tail call i32 @llvm.ctpop.i32(i32 %var_2_1609) #10
-  %var_2_1611 = trunc i32 %var_2_1610 to i8
-  %var_2_1612 = and i8 %var_2_1611, 1
-  %var_2_1613 = xor i8 %var_2_1612, 1
-  store i8 %var_2_1613, i8* %var_2_23, align 1
-  %var_2_1614 = icmp eq i32 %var_2_1607, 0
-  %var_2_1615 = zext i1 %var_2_1614 to i8
-  store i8 %var_2_1615, i8* %var_2_32, align 1
-  %var_2_1616 = lshr i32 %var_2_1607, 31
-  %var_2_1617 = trunc i32 %var_2_1616 to i8
-  store i8 %var_2_1617, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  br label %block_401513.sink.split
-
-block_400ddb:                                     ; preds = %block_400d13.outer.split, %block_400def
-  %var_2_1623 = phi i64 [ %var_2_2346, %block_400d13.outer.split ], [ %var_2_1623.pre, %block_400def ]
-  %var_2_1622 = phi i64 [ %.pre197, %block_400d13.outer.split ], [ %var_2_282, %block_400def ]
-  %var_2_1624 = add i64 %var_2_1623, -4
-  %var_2_1626 = inttoptr i64 %var_2_1624 to i32*
-  %var_2_1627 = load i32, i32* %var_2_1626, align 4
-  %var_2_1629 = add i64 %var_2_1623, -12
-  %var_2_1631 = inttoptr i64 %var_2_1629 to i32*
-  %var_2_1632 = load i32, i32* %var_2_1631, align 4
-  %var_2_1633 = sext i32 %var_2_1632 to i64
-  %var_2_1634 = shl nsw i64 %var_2_1633, 2
-  %var_2_1635 = add i64 %var_2_1623, -1328
-  %var_2_1636 = add i64 %var_2_1635, %var_2_1634
-  %var_2_1638 = inttoptr i64 %var_2_1636 to i32*
-  %var_2_1639 = load i32, i32* %var_2_1638, align 4
-  %var_2_1640 = sub i32 %var_2_1627, %var_2_1639
-  %var_2_1653 = icmp eq i32 %var_2_1640, 0
-  %var_2_1655 = lshr i32 %var_2_1640, 31
-  %var_2_1657 = lshr i32 %var_2_1627, 31
-  %var_2_1658 = lshr i32 %var_2_1639, 31
-  %var_2_1659 = xor i32 %var_2_1658, %var_2_1657
-  %var_2_1660 = xor i32 %var_2_1655, %var_2_1657
-  %var_2_1661 = add nuw nsw i32 %var_2_1660, %var_2_1659
-  %var_2_1662 = icmp eq i32 %var_2_1661, 2
-  %var_2_1664 = icmp ne i32 %var_2_1655, 0
-  %var_2_1665 = xor i1 %var_2_1664, %var_2_1662
-  %.demorgan277 = or i1 %var_2_1653, %var_2_1665
-  br i1 %.demorgan277, label %block_400def, label %block_400e6a.loopexit106
-
-block_400f29:                                     ; preds = %block_400f0f
-  %var_2_1673 = shl nsw i64 %var_2_2030, 6
-  %var_2_1706 = sext i32 %var_2_2001 to i64
-  %var_2_1707 = shl nsw i64 %var_2_1706, 2
-  %var_2_1674 = add i64 %var_2_1667, %var_2_1707
-  %var_2_1708 = add i64 %var_2_1674, %var_2_1673
-  %var_2_1710 = inttoptr i64 %var_2_1708 to i32*
-  %var_2_1711 = load i32, i32* %var_2_1710, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_1717 = icmp eq i32 %var_2_1711, 0
-  store i8 0, i8* %var_2_41, align 1
-  br i1 %var_2_1717, label %block_400ef6.backedge, label %block_400f4e
-
-block_400f0f:                                     ; preds = %block_400ef6
-  %var_2_1758 = sub i32 %var_2_2007, %var_2_2001
-  %var_2_1782 = sext i32 %var_2_1758 to i64
-  %var_2_1783 = shl nsw i64 %var_2_1782, 2
-  %var_2_1785 = add i64 %var_2_1784, %var_2_1783
-  %var_2_1787 = inttoptr i64 %var_2_1785 to i32*
-  %var_2_1788 = load i32, i32* %var_2_1787, align 4
-  %var_2_1802 = icmp eq i32 %var_2_1788, -1
-  br i1 %var_2_1802, label %block_400ef6.backedge, label %block_400f29
-
-block_400ef6.backedge:                            ; preds = %block_400f0f, %block_400f29
-  br label %block_400ef6
-
-block_400fd3:                                     ; preds = %block_400ef6
-  %var_2_1898 = add i64 %var_2_1997.pre, -1248
-  %var_2_1899 = add i64 %var_2_2031, %var_2_1898
-  %var_2_1901 = inttoptr i64 %var_2_1899 to i32*
-  %var_2_1902 = load i32, i32* %var_2_1901, align 4
-  %var_2_1903 = sext i32 %var_2_1902 to i64
-  %var_2_1904 = shl nsw i64 %var_2_1903, 2
-  %var_2_1905 = add i64 %var_2_1904, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_1907 = inttoptr i64 %var_2_1905 to i32*
-  %var_2_1908 = load i32, i32* %var_2_1907, align 4
-  %var_2_1909 = zext i32 %var_2_1908 to i64
-  store i64 %var_2_1909, i64* %RAX, align 8
-  %var_2_1911 = load i32, i32* %var_2_2005, align 4
-  %var_2_1912 = add i32 %var_2_1911, 1
-  %var_2_1935 = sext i32 %var_2_1912 to i64
-  %var_2_1936 = shl nsw i64 %var_2_1935, 2
-  %var_2_1938 = add i64 %var_2_1936, %var_2_1898
-  %var_2_1940 = inttoptr i64 %var_2_1938 to i32*
-  store i32 %var_2_1908, i32* %var_2_1940, align 4
-  %var_2_5369.pre = load i64, i64* %RBP, align 8
-  br label %block_400ffb
+block_400ddb:                                     ; preds = %block_400ddb, %block_400d13.outer.split
+  %var_2_1622 = phi i64 [ %.pre197, %block_400d13.outer.split ], [ %var_2_282, %block_400ddb ]
+  br i1 %.demorgan277, label %block_400ddb, label %block_400e6a.loopexit
 
 block_401121:                                     ; preds = %block_401121.preheader, %block_401114.backedge
-  %var_2_184452 = phi i64 [ %var_2_1844, %block_401114.backedge ], [ %var_2_4799, %block_401121.preheader ]
-  %MEMORY.25135 = phi %struct.Memory* [ %MEMORY.13.ph, %block_401114.backedge ], [ %MEMORY.27, %block_401121.preheader ]
+  %var_2_3287119 = phi i64 [ %var_2_1155.pre, %block_401114.backedge ], [ %var_2_4799, %block_401121.preheader ]
+  %MEMORY.25118 = phi %struct.Memory* [ %MEMORY.13.ph.ph, %block_401114.backedge ], [ %MEMORY.27, %block_401121.preheader ]
+  %var_2_1941 = add i64 %var_2_3287119, -16
+  %var_2_1943 = inttoptr i64 %var_2_1941 to i32*
+  store i32 1, i32* %var_2_1943, align 4
+  br label %block_40112f.outer.outer
+
+block_40112f.outer.outer:                         ; preds = %var_2_1134, %block_401121
+  %MEMORY.13.ph.ph = phi %struct.Memory* [ %var_2_1135, %var_2_1134 ], [ %MEMORY.25118, %block_401121 ]
+  %var_2_1155.pre = load i64, i64* %RBP, align 8
+  %var_2_1845 = add i64 %var_2_1155.pre, -8
+  %var_2_1847 = inttoptr i64 %var_2_1845 to i32*
+  %var_2_1850 = add i64 %var_2_1155.pre, -12
+  %var_2_1852 = inttoptr i64 %var_2_1850 to i32*
+  %var_2_1856 = add i64 %var_2_1155.pre, -1328
+  %var_2_1464 = add i64 %var_2_1155.pre, -2688
+  %var_2_1121 = add i64 %var_2_1155.pre, -2716
+  %var_2_1123 = inttoptr i64 %var_2_1121 to i32*
   br label %block_40112f.outer
 
-block_40112f.outer:                               ; preds = %block_401121, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6
-  %var_2_1844 = phi i64 [ %var_2_1844.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6 ], [ %var_2_184452, %block_401121 ]
-  %MEMORY.13.ph = phi %struct.Memory* [ %var_2_1144, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit6 ], [ %MEMORY.25135, %block_401121 ]
-  %var_2_1845 = add i64 %var_2_1844, -8
-  %var_2_1847 = inttoptr i64 %var_2_1845 to i32*
+block_40112f.outer:                               ; preds = %block_40112f.outer.outer, %block_401155.us-lcssa.us
   %var_2_1848 = load i32, i32* %var_2_1847, align 4
-  %var_2_1850 = add i64 %var_2_1844, -12
-  %var_2_1852 = inttoptr i64 %var_2_1850 to i32*
   %var_2_1853 = load i32, i32* %var_2_1852, align 4
   %var_2_1854 = sext i32 %var_2_1853 to i64
   %var_2_1855 = shl nsw i64 %var_2_1854, 2
-  %var_2_1856 = add i64 %var_2_1844, -1328
   %var_2_1857 = add i64 %var_2_1856, %var_2_1855
   %var_2_1859 = inttoptr i64 %var_2_1857 to i32*
   %var_2_1860 = load i32, i32* %var_2_1859, align 4
@@ -1627,7 +969,6 @@ block_40112f.outer:                               ; preds = %block_401121, %_ZN1
   br i1 %.demorgan262, label %block_40112f.us.preheader, label %block_4011b0
 
 block_40112f.us.preheader:                        ; preds = %block_40112f.outer
-  %var_2_1464 = add i64 %var_2_1844, -2688
   %var_2_1462 = sext i32 %var_2_1848 to i64
   %var_2_1463 = shl nsw i64 %var_2_1462, 2
   %var_2_1465 = add i64 %var_2_1464, %var_2_1463
@@ -1646,8 +987,6 @@ block_401155.us-lcssa.us:                         ; preds = %block_40112f.us
   %var_2_1116 = zext i32 %var_2_1115 to i64
   %var_2_1118 = sext i32 %var_2_1115 to i64
   %var_2_1119 = and i64 %var_2_1118, -4294967296
-  %var_2_1121 = add i64 %var_2_1844, -2716
-  %var_2_1123 = inttoptr i64 %var_2_1121 to i32*
   %var_2_1124 = load i32, i32* %var_2_1123, align 4
   %var_2_1127 = sext i32 %var_2_1124 to i64
   %var_2_1129 = or i64 %var_2_1119, %var_2_1116
@@ -1655,100 +994,28 @@ block_401155.us-lcssa.us:                         ; preds = %block_40112f.us
   %var_2_1131 = shl i64 %var_2_1130, 32
   %var_2_1132 = ashr exact i64 %var_2_1131, 32
   %var_2_1133 = icmp eq i64 %var_2_1130, %var_2_1132
-  br i1 %var_2_1133, label %var_2_1136, label %var_2_1134
+  br i1 %var_2_1133, label %block_40112f.outer, label %var_2_1134
 
-block_4016fb:                                     ; preds = %block_401513, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
-  %var_2_629748 = phi i64 [ %var_2_4516, %block_401513 ], [ %var_2_4844.pre.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1 ]
-  %MEMORY.15 = phi %struct.Memory* [ %MEMORY.34.ph, %block_401513 ], [ %var_2_3627, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1 ]
+block_4016fb:                                     ; preds = %block_401513.outer.split, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
+  %var_2_4844186 = phi i64 [ %var_2_4516.pre, %block_401513.outer.split ], [ %var_2_3653, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1 ]
+  %MEMORY.15 = phi %struct.Memory* [ %MEMORY.34.ph.ph, %block_401513.outer.split ], [ %var_2_3627, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1 ]
   %var_2_1994 = load i64, i64* %PC, align 8
   %var_2_1995 = add i64 %var_2_1994, -552
   br label %block_4014e1
 
-block_400ef6:                                     ; preds = %block_400ef6.backedge, %block_400ef6.outer
-  %var_2_2001 = load i32, i32* %var_2_2000, align 4
-  %var_2_2006 = load i32, i32* %var_2_2005, align 4
-  %var_2_2007 = add i32 %var_2_2006, 1
-  %var_2_2030 = sext i32 %var_2_2007 to i64
-  %var_2_2031 = shl nsw i64 %var_2_2030, 2
-  %var_2_2033 = add i64 %var_2_2032, %var_2_2031
-  %var_2_2035 = inttoptr i64 %var_2_2033 to i32*
-  %var_2_2036 = load i32, i32* %var_2_2035, align 4
-  %var_2_2037 = sub i32 %var_2_2001, %var_2_2036
-  %var_2_2050 = icmp eq i32 %var_2_2037, 0
-  %var_2_2052 = lshr i32 %var_2_2037, 31
-  %var_2_2054 = lshr i32 %var_2_2001, 31
-  %var_2_2055 = lshr i32 %var_2_2036, 31
-  %var_2_2056 = xor i32 %var_2_2055, %var_2_2054
-  %var_2_2057 = xor i32 %var_2_2052, %var_2_2054
-  %var_2_2058 = add nuw nsw i32 %var_2_2057, %var_2_2056
-  %var_2_2059 = icmp eq i32 %var_2_2058, 2
-  %var_2_2061 = icmp ne i32 %var_2_2052, 0
-  %var_2_2062 = xor i1 %var_2_2061, %var_2_2059
-  %.demorgan274 = or i1 %var_2_2050, %var_2_2062
-  br i1 %.demorgan274, label %block_400f0f, label %block_400fd3
-
-block_400993:                                     ; preds = %block_400993.preheader, %block_4009eb
-  %var_2_1029174 = phi i32 [ %var_2_1029, %block_4009eb ], [ %var_2_1029161, %block_400993.preheader ]
-  %var_2_1028173 = phi i32* [ %var_2_1028, %block_4009eb ], [ %var_2_1028160, %block_400993.preheader ]
-  %var_2_372 = phi i64 [ %var_2_1025, %block_4009eb ], [ %var_2_1025158, %block_400993.preheader ]
-  %MEMORY.10171 = phi %struct.Memory* [ %MEMORY.1, %block_4009eb ], [ %MEMORY.5192, %block_400993.preheader ]
-  %var_2_1024170 = phi i64 [ %var_2_314, %block_4009eb ], [ %.pre173, %block_400993.preheader ]
-  %var_2_1054 = add i64 %var_2_1024170, 13
-  %var_2_2187 = sext i32 %var_2_1029174 to i64
-  %var_2_2188 = shl nsw i64 %var_2_2187, 2
-  %var_2_2189 = add i64 %var_2_2188, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  %var_2_2191 = inttoptr i64 %var_2_2189 to i32*
-  %var_2_2192 = load i32, i32* %var_2_2191, align 4
-  %var_2_2193 = add i32 %var_2_2192, 1
-  %var_2_2194 = icmp ne i32 %var_2_2192, -1
-  %var_2_2195 = zext i1 %var_2_2194 to i8
-  store i8 %var_2_2195, i8* %var_2_16, align 1
-  %var_2_2196 = and i32 %var_2_2193, 255
-  %var_2_2197 = tail call i32 @llvm.ctpop.i32(i32 %var_2_2196) #10
-  %var_2_2198 = trunc i32 %var_2_2197 to i8
-  %var_2_2199 = and i8 %var_2_2198, 1
-  %var_2_2200 = xor i8 %var_2_2199, 1
-  store i8 %var_2_2200, i8* %var_2_23, align 1
-  %var_2_2201 = xor i32 %var_2_2192, 16
-  %var_2_2202 = xor i32 %var_2_2201, %var_2_2193
-  %var_2_2203 = lshr i32 %var_2_2202, 4
-  %var_2_2204 = trunc i32 %var_2_2203 to i8
-  %var_2_2205 = and i8 %var_2_2204, 1
-  store i8 %var_2_2205, i8* %var_2_29, align 1
-  %var_2_2206 = icmp eq i32 %var_2_2193, 0
-  %var_2_2207 = zext i1 %var_2_2206 to i8
-  store i8 %var_2_2207, i8* %var_2_32, align 1
-  %var_2_2208 = lshr i32 %var_2_2193, 31
-  %var_2_2209 = trunc i32 %var_2_2208 to i8
-  store i8 %var_2_2209, i8* %var_2_35, align 1
-  %var_2_2210 = lshr i32 %var_2_2192, 31
-  %var_2_2211 = xor i32 %var_2_2210, 1
-  %var_2_2212 = xor i32 %var_2_2208, %var_2_2210
-  %var_2_2213 = add nuw nsw i32 %var_2_2212, %var_2_2211
-  %var_2_2214 = icmp eq i32 %var_2_2213, 2
-  %var_2_2215 = zext i1 %var_2_2214 to i8
-  store i8 %var_2_2215, i8* %var_2_41, align 1
-  %.v322 = select i1 %var_2_2206, i64 88, i64 18
-  %var_2_2216 = add i64 %var_2_1054, %.v322
-  store i64 %var_2_2216, i64* %PC, align 8
-  br i1 %var_2_2206, label %block_4009eb, label %block_4009a5
-
 block_4017fd:                                     ; preds = %block_400a46
   %.pre255 = load i64, i64* %PC, align 8
-  %var_2_620619 = add i64 %var_2_3415, -4
-  %var_2_620820 = inttoptr i64 %var_2_620619 to i32*
-  %var_2_620921 = load i32, i32* %var_2_620820, align 4
-  %var_2_621022 = add i32 %var_2_620921, -255
-  %var_2_622523 = lshr i32 %var_2_621022, 31
-  %var_2_622724 = lshr i32 %var_2_620921, 31
-  %var_2_622825 = xor i32 %var_2_622523, %var_2_622724
-  %var_2_622926 = add nuw nsw i32 %var_2_622825, %var_2_622724
-  %var_2_623027 = icmp eq i32 %var_2_622926, 2
-  %var_2_623228 = icmp ne i32 %var_2_622523, 0
-  %var_2_623329 = xor i1 %var_2_623228, %var_2_623027
-  %.v27930 = select i1 %var_2_623329, i64 13, i64 100
-  %var_2_623431 = add i64 %.v27930, %.pre255
-  br i1 %var_2_623329, label %block_401811.preheader, label %block_40186d
+  %var_2_621017 = add i32 %var_2_620916, -255
+  %var_2_622518 = lshr i32 %var_2_621017, 31
+  %var_2_622719 = lshr i32 %var_2_620916, 31
+  %var_2_622820 = xor i32 %var_2_622518, %var_2_622719
+  %var_2_622921 = add nuw nsw i32 %var_2_622820, %var_2_622719
+  %var_2_623022 = icmp eq i32 %var_2_622921, 2
+  %var_2_623223 = icmp ne i32 %var_2_622518, 0
+  %var_2_623324 = xor i1 %var_2_623223, %var_2_623022
+  %.v27925 = select i1 %var_2_623324, i64 13, i64 100
+  %var_2_623426 = add i64 %.v27925, %.pre255
+  br i1 %var_2_623324, label %block_401811.preheader, label %block_40186d
 
 block_401811.preheader:                           ; preds = %block_4017fd
   br label %block_401811
@@ -1761,22 +1028,34 @@ block_4014da.loopexit:                            ; preds = %block_401467.backed
   br label %block_4014da
 
 block_4014da:                                     ; preds = %block_4014da.loopexit, %block_401460
-  %var_2_484441 = phi i64 [ %var_2_2458, %block_401460 ], [ %var_2_4485, %block_4014da.loopexit ]
+  %var_2_4844.pre = phi i64 [ %var_2_448529, %block_401460 ], [ %var_2_4485, %block_4014da.loopexit ]
   %.pre230 = load i64, i64* %PC, align 8
   br label %block_4014e1
 
-block_401221:                                     ; preds = %block_401221.preheader, %block_401434
-  %var_2_2458 = phi i64 [ %var_2_2458.pre, %block_401434 ], [ %var_2_4353103, %block_401221.preheader ]
-  %MEMORY.19 = phi %struct.Memory* [ %MEMORY.42.ph.lcssa, %block_401434 ], [ %MEMORY.25.lcssa, %block_401221.preheader ]
-  %var_2_2459 = add i64 %var_2_2458, -4
+block_401221.outer.loopexit:                      ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7
+  br label %block_401221.outer.backedge
+
+block_401221.outer:                               ; preds = %block_401221.outer.backedge, %block_401221.outer.preheader
+  %var_2_5195436536 = phi i64 [ %var_2_2458.pre.pre, %block_401221.outer.preheader ], [ %var_2_5195436536.be, %block_401221.outer.backedge ]
+  %var_2_2458.pre = phi i64 [ %var_2_2458.pre.pre, %block_401221.outer.preheader ], [ %var_2_2458.pre.be, %block_401221.outer.backedge ]
+  %MEMORY.19.ph = phi %struct.Memory* [ %MEMORY.25.lcssa, %block_401221.outer.preheader ], [ %MEMORY.19.ph.be, %block_401221.outer.backedge ]
+  %var_2_51964466 = add i64 %var_2_5195436536, -8
+  %var_2_51984567 = inttoptr i64 %var_2_51964466 to i32*
+  %var_2_52014769 = add i64 %var_2_5195436536, -4
+  %var_2_52034870 = inttoptr i64 %var_2_52014769 to i32*
+  br label %block_401221
+
+block_401221:                                     ; preds = %block_40137c, %block_401221.outer
+  %var_2_5666 = phi i64 [ %var_2_2458.pre, %block_401221.outer ], [ %var_2_5195436536, %block_40137c ]
+  %var_2_2459 = add i64 %var_2_5666, -4
   %var_2_2461 = inttoptr i64 %var_2_2459 to i32*
   %var_2_2462 = load i32, i32* %var_2_2461, align 4
-  %var_2_2464 = add i64 %var_2_2458, -12
+  %var_2_2464 = add i64 %var_2_5666, -12
   %var_2_2466 = inttoptr i64 %var_2_2464 to i32*
   %var_2_2467 = load i32, i32* %var_2_2466, align 4
   %var_2_2468 = sext i32 %var_2_2467 to i64
   %var_2_2469 = shl nsw i64 %var_2_2468, 2
-  %var_2_2470 = add i64 %var_2_2458, -1328
+  %var_2_2470 = add i64 %var_2_5666, -1328
   %var_2_2471 = add i64 %var_2_2470, %var_2_2469
   %var_2_2473 = inttoptr i64 %var_2_2471 to i32*
   %var_2_2474 = load i32, i32* %var_2_2473, align 4
@@ -1795,7 +1074,8 @@ block_401221:                                     ; preds = %block_401221.prehea
   br i1 %.demorgan265, label %block_401235, label %block_401460
 
 block_400ae9:                                     ; preds = %block_400ae9.preheader, %block_400ffb
-  %var_2_2346 = phi i64 [ %var_2_3138140, %block_400ffb ], [ %var_2_3415, %block_400ae9.preheader ]
+  %var_2_4754 = phi i64 [ %var_2_4799, %block_400ffb ], [ %var_2_3415, %block_400ae9.preheader ]
+  %var_2_2346 = phi i64 [ %var_2_195021, %block_400ffb ], [ %var_2_3415, %block_400ae9.preheader ]
   %MEMORY.20 = phi %struct.Memory* [ %MEMORY.27, %block_400ffb ], [ %MEMORY.5.lcssa, %block_400ae9.preheader ]
   %var_2_2533 = add i64 %var_2_2346, -12
   %var_2_2536 = inttoptr i64 %var_2_2533 to i32*
@@ -1814,78 +1094,42 @@ block_400bbb.preheader:                           ; preds = %block_400ae9
   %var_2_1953 = inttoptr i64 %var_2_1951 to i8*
   br label %block_400bbb
 
+block_4012bd:                                     ; preds = %block_4012ab
+  %var_2_2569 = add i64 %var_2_5666, -1168
+  %var_2_2573 = load i32, i32* %var_2_2466, align 4
+  %var_2_2574 = sext i32 %var_2_2573 to i64
+  %var_2_2575 = shl nsw i64 %var_2_2574, 6
+  %var_2_2576 = add i64 %var_2_2569, %var_2_2575
+  %var_2_2604 = load i32, i32* %var_2_2461, align 4
+  %var_2_2605 = sext i32 %var_2_2604 to i64
+  %var_2_2606 = shl nsw i64 %var_2_2605, 2
+  %var_2_2607 = add i64 %var_2_2576, %var_2_2606
+  %var_2_2609 = inttoptr i64 %var_2_2607 to i32*
+  %var_2_2610 = load i32, i32* %var_2_2609, align 4
+  %var_2_2624 = icmp eq i32 %var_2_2610, -1
+  br i1 %var_2_2624, label %block_401377, label %block_401300
+
 _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit3: ; preds = %block_400d13.us
   store i64 255, i64* %RCX, align 8, !tbaa !2428
-  %var_2_2785 = load i32, i32* %ESI, align 4
-  %var_2_2788 = sext i32 %var_2_2785 to i64
-  %var_2_2789 = and i64 %var_2_2788, -4294967296
-  %var_2_2786 = zext i32 %var_2_2785 to i64
-  %var_2_2794 = or i64 %var_2_2789, %var_2_2786
-  %var_2_2802 = srem i64 %var_2_2794, 255
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_2810 = shl nsw i64 %var_2_2802, 2
-  %var_2_2811 = add i64 %var_2_2810, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_2813 = inttoptr i64 %var_2_2811 to i32*
-  %var_2_2814 = load i32, i32* %var_2_2813, align 4
-  %var_2_2815 = zext i32 %var_2_2814 to i64
-  store i64 %var_2_2815, i64* %RCX, align 8
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_41, align 1
   %var_2_3083.pre = load i32, i32* %var_2_2349, align 4
+  %var_2_3088.pre = load i32, i32* %var_2_1814, align 4
   br label %block_400d13.outer
 
 block_401474:                                     ; preds = %block_401474.preheader, %block_401467.backedge
-  %var_2_448948 = phi i32 [ %var_2_4489, %block_401467.backedge ], [ %var_2_2462, %block_401474.preheader ]
-  %var_2_448847 = phi i32* [ %var_2_4488, %block_401467.backedge ], [ %var_2_2461, %block_401474.preheader ]
-  %var_2_2951 = load i64, i64* %PC, align 8
-  %var_2_2955 = sext i32 %var_2_448948 to i64
+  %var_2_448532 = phi i64 [ %var_2_4485, %block_401467.backedge ], [ %var_2_448529, %block_401474.preheader ]
+  %var_2_2986 = phi i32 [ %var_2_4489, %block_401467.backedge ], [ %var_2_448932, %block_401474.preheader ]
+  %var_2_2955 = sext i32 %var_2_2986 to i64
   %var_2_2956 = shl nsw i64 %var_2_2955, 2
   %var_2_2957 = add i64 %var_2_2956, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
   %var_2_2959 = inttoptr i64 %var_2_2957 to i32*
   %var_2_2960 = load i32, i32* %var_2_2959, align 4
-  %var_2_2961 = add i32 %var_2_2960, 1
-  %var_2_2962 = icmp ne i32 %var_2_2960, -1
-  %var_2_2963 = zext i1 %var_2_2962 to i8
-  store i8 %var_2_2963, i8* %var_2_16, align 1
-  %var_2_2964 = and i32 %var_2_2961, 255
-  %var_2_2965 = tail call i32 @llvm.ctpop.i32(i32 %var_2_2964) #10
-  %var_2_2966 = trunc i32 %var_2_2965 to i8
-  %var_2_2967 = and i8 %var_2_2966, 1
-  %var_2_2968 = xor i8 %var_2_2967, 1
-  store i8 %var_2_2968, i8* %var_2_23, align 1
-  %var_2_2969 = xor i32 %var_2_2960, 16
-  %var_2_2970 = xor i32 %var_2_2969, %var_2_2961
-  %var_2_2971 = lshr i32 %var_2_2970, 4
-  %var_2_2972 = trunc i32 %var_2_2971 to i8
-  %var_2_2973 = and i8 %var_2_2972, 1
-  store i8 %var_2_2973, i8* %var_2_29, align 1
-  %var_2_2974 = icmp eq i32 %var_2_2961, 0
-  %var_2_2975 = zext i1 %var_2_2974 to i8
-  store i8 %var_2_2975, i8* %var_2_32, align 1
-  %var_2_2976 = lshr i32 %var_2_2961, 31
-  %var_2_2977 = trunc i32 %var_2_2976 to i8
-  store i8 %var_2_2977, i8* %var_2_35, align 1
-  %var_2_2978 = lshr i32 %var_2_2960, 31
-  %var_2_2979 = xor i32 %var_2_2978, 1
-  %var_2_2980 = xor i32 %var_2_2976, %var_2_2978
-  %var_2_2981 = add nuw nsw i32 %var_2_2980, %var_2_2979
-  %var_2_2982 = icmp eq i32 %var_2_2981, 2
-  %var_2_2983 = zext i1 %var_2_2982 to i8
-  store i8 %var_2_2983, i8* %var_2_41, align 1
-  %.v267 = select i1 %var_2_2974, i64 53, i64 18
-  %var_2_2984 = add i64 %.v267, %var_2_2951
-  %var_2_2985 = add i64 %var_2_2984, 4
-  store i64 %var_2_2985, i64* %PC, align 8
-  %var_2_2986 = load i32, i32* %var_2_448847, align 4
-  %var_2_2987 = sext i32 %var_2_2986 to i64
-  %var_2_2988 = shl nsw i64 %var_2_2987, 2
-  %var_2_2989 = add i64 %var_2_2988, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br i1 %var_2_2974, label %block_401467.backedge, label %block_401495
+  %var_2_2974 = icmp eq i32 %var_2_2960, -1
+  br i1 %var_2_2974, label %block_4014b8, label %block_401467.backedge
+
+block_4014b8:                                     ; preds = %block_401474
+  store i32 0, i32* %var_2_2959, align 4
+  %var_2_4485.pre = load i64, i64* %RBP, align 8
+  br label %block_401467.backedge
 
 block_400eae:                                     ; preds = %block_400e97
   %var_2_2992 = add i64 %var_2_3266, -1488
@@ -1903,37 +1147,45 @@ block_400eae:                                     ; preds = %block_400e97
   %var_2_3007 = add i32 %var_2_3006, 1
   %var_2_3030 = sext i32 %var_2_3007 to i64
   %var_2_3031 = shl nsw i64 %var_2_3030, 2
-  %var_2_3032 = add i64 %var_2_195031, -1248
+  %var_2_3032 = add i64 %var_2_195022, -1248
   %var_2_3033 = add i64 %var_2_3032, %var_2_3031
   br label %block_400eef
+
+block_4012ab:                                     ; preds = %block_401235, %block_401247
+  store i64 %var_2_5235, i64* %RAX, align 8
+  %var_2_3051 = load i32, i32* %var_2_5240, align 4
+  %var_2_3065 = icmp eq i32 %var_2_3051, -1
+  br i1 %var_2_3065, label %block_4012ab.block_401300_crit_edge, label %block_4012bd
+
+block_4012ab.block_401300_crit_edge:              ; preds = %block_4012ab
+  %var_2_6307.pre = load i32, i32* %var_2_2461, align 4
+  br label %block_401300
 
 block_401783.loopexit:                            ; preds = %block_4014e1
   %var_2_4887.le = add i64 %var_2_4843, 557
   br label %block_401783
 
-block_401783.loopexit105:                         ; preds = %block_40176b
+block_40171a.block_401783.loopexit1_crit_edge:    ; preds = %block_40176b
+  %var_2_868 = load i64, i64* %PC, align 8
+  %var_2_4382.le = add i64 %var_2_868, 5
   br label %block_401783
 
-block_401783:                                     ; preds = %block_401783.loopexit105, %block_401713, %block_401783.loopexit
-  %var_2_3076 = phi i64 [ %var_2_4887.le, %block_401783.loopexit ], [ %var_2_4382116, %block_401713 ], [ %var_2_4382, %block_401783.loopexit105 ]
-  %.sink10 = phi i64 [ 117, %block_401783.loopexit ], [ 5, %block_401713 ], [ 5, %block_401783.loopexit105 ]
-  %MEMORY.22 = phi %struct.Memory* [ %MEMORY.38, %block_401783.loopexit ], [ %MEMORY.25.lcssa, %block_401713 ], [ %MEMORY.25.lcssa, %block_401783.loopexit105 ]
+block_401783:                                     ; preds = %block_401713, %block_40171a.block_401783.loopexit1_crit_edge, %block_401783.loopexit
+  %var_2_3076 = phi i64 [ %var_2_4887.le, %block_401783.loopexit ], [ %var_2_4382.le, %block_40171a.block_401783.loopexit1_crit_edge ], [ %var_2_4382100, %block_401713 ]
+  %.sink10 = phi i64 [ 117, %block_401783.loopexit ], [ 5, %block_40171a.block_401783.loopexit1_crit_edge ], [ 5, %block_401713 ]
   %var_2_3077 = add i64 %.sink10, %var_2_3076
   store i64 %var_2_3077, i64* %PC, align 8
   br label %block_4017f8
 
 block_4011b0:                                     ; preds = %block_40112f.outer
-  %var_2_3123 = add i64 %var_2_1844, -16
+  %var_2_3123 = add i64 %var_2_1155.pre, -16
   %var_2_3125 = inttoptr i64 %var_2_3123 to i32*
   %var_2_3126 = load i32, i32* %var_2_3125, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
   %var_2_3132 = icmp eq i32 %var_2_3126, 0
-  store i8 0, i8* %var_2_41, align 1
   br i1 %var_2_3132, label %block_4011ba, label %block_401114.backedge
 
 block_401114.backedge:                            ; preds = %block_4011b0, %block_4011ba
-  %var_2_3288 = add i64 %var_2_1844, -4
+  %var_2_3288 = add i64 %var_2_1155.pre, -4
   %var_2_3290 = inttoptr i64 %var_2_3288 to i32*
   %var_2_3291 = load i32, i32* %var_2_3290, align 4
   %var_2_3292 = add i32 %var_2_3291, -255
@@ -1949,69 +1201,78 @@ block_401114.backedge:                            ; preds = %block_4011b0, %bloc
   br i1 %.demorgan261, label %block_401121, label %block_401203.loopexit
 
 block_400970:                                     ; preds = %block_400970.preheader, %block_4009fe
-  %var_2_1025158 = phi i64 [ %var_2_871, %block_4009fe ], [ %var_2_50, %block_400970.preheader ]
-  %MEMORY.5192 = phi %struct.Memory* [ %MEMORY.10.lcssa, %block_4009fe ], [ %2, %block_400970.preheader ]
-  %var_2_1026159 = add i64 %var_2_1025158, -8
-  %var_2_1028160 = inttoptr i64 %var_2_1026159 to i32*
-  %var_2_1029161 = load i32, i32* %var_2_1028160, align 4
-  %var_2_1030162 = add i32 %var_2_1029161, -255
-  %var_2_1045163 = lshr i32 %var_2_1030162, 31
-  %var_2_1047164 = lshr i32 %var_2_1029161, 31
-  %var_2_1048165 = xor i32 %var_2_1045163, %var_2_1047164
-  %var_2_1049166 = add nuw nsw i32 %var_2_1048165, %var_2_1047164
-  %var_2_1050167 = icmp eq i32 %var_2_1049166, 2
-  %var_2_1052168 = icmp ne i32 %var_2_1045163, 0
-  %var_2_1053169 = xor i1 %var_2_1052168, %var_2_1050167
-  br i1 %var_2_1053169, label %block_400993.preheader, label %block_4009fe
+  %var_2_1025.pre18 = phi i64 [ %var_2_1025.pre.lcssa, %block_4009fe ], [ %var_2_50, %block_400970.preheader ]
+  %MEMORY.5154 = phi %struct.Memory* [ %MEMORY.10.ph.lcssa, %block_4009fe ], [ %2, %block_400970.preheader ]
+  %var_2_102682 = add i64 %var_2_1025.pre18, -8
+  %var_2_102883 = inttoptr i64 %var_2_102682 to i32*
+  %var_2_102984 = load i32, i32* %var_2_102883, align 4
+  %var_2_103085 = add i32 %var_2_102984, -255
+  %var_2_104586 = lshr i32 %var_2_103085, 31
+  %var_2_104787 = lshr i32 %var_2_102984, 31
+  %var_2_104888 = xor i32 %var_2_104586, %var_2_104787
+  %var_2_104989 = add nuw nsw i32 %var_2_104888, %var_2_104787
+  %var_2_105090 = icmp eq i32 %var_2_104989, 2
+  %var_2_105291 = icmp ne i32 %var_2_104586, 0
+  %var_2_105392 = xor i1 %var_2_105291, %var_2_105090
+  br i1 %var_2_105392, label %block_400986.us.preheader.preheader, label %block_4009fe
 
-block_400993.preheader:                           ; preds = %block_400970
-  %.pre173 = load i64, i64* %PC, align 8
-  br label %block_400993
+block_400986.us.preheader.preheader:              ; preds = %block_400970
+  br label %block_400986.us.preheader
+
+block_400986.us.preheader:                        ; preds = %block_400986.us.preheader.preheader, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
+  %var_2_102996 = phi i32 [ %var_2_1029, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ], [ %var_2_102984, %block_400986.us.preheader.preheader ]
+  %var_2_102895 = phi i32* [ %var_2_1028, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ], [ %var_2_102883, %block_400986.us.preheader.preheader ]
+  %MEMORY.10.ph94 = phi %struct.Memory* [ %var_2_396, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ], [ %MEMORY.5154, %block_400986.us.preheader.preheader ]
+  %var_2_1025.pre93 = phi i64 [ %var_2_1025.pre.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8 ], [ %var_2_1025.pre18, %block_400986.us.preheader.preheader ]
+  %var_2_2187 = sext i32 %var_2_102996 to i64
+  %var_2_2188 = shl nsw i64 %var_2_2187, 2
+  %var_2_2189 = add i64 %var_2_2188, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
+  %var_2_2191 = inttoptr i64 %var_2_2189 to i32*
+  %var_2_2192.us.pre = load i32, i32* %var_2_2191, align 4
+  br label %block_400986.us
+
+block_400986.us:                                  ; preds = %block_400986.us, %block_400986.us.preheader
+  %var_2_2192.us = phi i32 [ %var_2_2192.us.pre, %block_400986.us.preheader ], [ -1, %block_400986.us ]
+  %var_2_2206.us = icmp eq i32 %var_2_2192.us, -1
+  br i1 %var_2_2206.us, label %block_400986.us, label %block_4009a5.us-lcssa.us
+
+block_4009a5.us-lcssa.us:                         ; preds = %block_400986.us
+  store i64 255, i64* %RAX, align 8, !tbaa !2428
+  %var_2_316 = load i32, i32* %var_2_102895, align 4
+  %var_2_317 = sext i32 %var_2_316 to i64
+  store i64 %var_2_317, i64* %RCX, align 8
+  %var_2_318 = shl nsw i64 %var_2_317, 2
+  %var_2_319 = add i64 %var_2_318, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
+  %var_2_321 = inttoptr i64 %var_2_319 to i32*
+  %var_2_322 = load i32, i32* %var_2_321, align 4
+  %var_2_323 = zext i32 %var_2_322 to i64
+  %var_2_370 = sext i32 %var_2_322 to i64
+  %var_2_371 = and i64 %var_2_370, -4294967296
+  %var_2_373 = add i64 %var_2_1025.pre93, -2692
+  %var_2_375 = inttoptr i64 %var_2_373 to i32*
+  %var_2_376 = load i32, i32* %var_2_375, align 4
+  %var_2_379 = sext i32 %var_2_376 to i64
+  %var_2_381 = or i64 %var_2_371, %var_2_323
+  %var_2_382 = sdiv i64 %var_2_381, %var_2_379
+  %var_2_383 = shl i64 %var_2_382, 32
+  %var_2_384 = ashr exact i64 %var_2_383, 32
+  %var_2_385 = icmp eq i64 %var_2_382, %var_2_384
+  br i1 %var_2_385, label %var_2_388, label %var_2_386
 
 block_400e97:                                     ; preds = %block_400e6a
   %var_2_3183 = add i32 %var_2_4326, 1
   %var_2_3206 = sext i32 %var_2_3183 to i64
   %var_2_3207 = shl nsw i64 %var_2_3206, 2
-  %var_2_3208 = add i64 %var_2_195031, -1488
+  %var_2_3208 = add i64 %var_2_195022, -1488
   %var_2_3209 = add i64 %var_2_3208, %var_2_3207
   %var_2_3211 = inttoptr i64 %var_2_3209 to i32*
   %var_2_3212 = load i32, i32* %var_2_3211, align 4
   %var_2_3226 = icmp eq i32 %var_2_3212, -1
-  %var_2_3266 = add i64 %var_2_3207, %var_2_195031
+  %var_2_3266 = add i64 %var_2_3207, %var_2_195022
   br i1 %var_2_3226, label %block_400edb, label %block_400eae
 
-block_401495:                                     ; preds = %block_401474
-  %var_2_3267 = add i64 %var_2_2984, 12
-  store i64 %var_2_3267, i64* %PC, align 8
-  %var_2_3268 = inttoptr i64 %var_2_2989 to i32*
-  %var_2_3269 = load i32, i32* %var_2_3268, align 4
-  %var_2_3270 = sext i32 %var_2_3269 to i64
-  store i64 %var_2_3270, i64* %RAX, align 8
-  %var_2_3271 = shl nsw i64 %var_2_3270, 2
-  %var_2_3272 = add i64 %var_2_3271, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_3273 = add i64 %var_2_2984, 19
-  store i64 %var_2_3273, i64* %PC, align 8
-  %var_2_3274 = inttoptr i64 %var_2_3272 to i32*
-  %var_2_3275 = load i32, i32* %var_2_3274, align 4
-  %var_2_3276 = zext i32 %var_2_3275 to i64
-  store i64 %var_2_3276, i64* %RCX, align 8
-  %var_2_3277 = add i64 %var_2_2984, 23
-  store i64 %var_2_3277, i64* %PC, align 8
-  %var_2_3278 = load i32, i32* %var_2_448847, align 4
-  %var_2_3279 = sext i32 %var_2_3278 to i64
-  %var_2_3280 = shl nsw i64 %var_2_3279, 2
-  %var_2_3281 = add i64 %var_2_3280, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br label %block_401467.backedge
-
-block_401467.backedge:                            ; preds = %block_401495, %block_401474
-  %.sink197 = phi i64 [ 30, %block_401495 ], [ 15, %block_401474 ]
-  %var_2_3281.sink = phi i64 [ %var_2_3281, %block_401495 ], [ %var_2_2989, %block_401474 ]
-  %var_2_3275.sink = phi i32 [ %var_2_3275, %block_401495 ], [ 0, %block_401474 ]
-  %var_2_3282 = add i64 %.sink197, %var_2_2984
-  store i64 %var_2_3282, i64* %PC, align 8
-  %var_2_3283 = inttoptr i64 %var_2_3281.sink to i32*
-  store i32 %var_2_3275.sink, i32* %var_2_3283, align 4
-  %var_2_4485 = load i64, i64* %RBP, align 8
+block_401467.backedge:                            ; preds = %block_4014b8, %block_401474
+  %var_2_4485 = phi i64 [ %var_2_448532, %block_401474 ], [ %var_2_4485.pre, %block_4014b8 ]
   %var_2_4486 = add i64 %var_2_4485, -4
   %var_2_4488 = inttoptr i64 %var_2_4486 to i32*
   %var_2_4489 = load i32, i32* %var_2_4488, align 4
@@ -2025,48 +1286,33 @@ block_401467.backedge:                            ; preds = %block_401495, %bloc
   %var_2_4513 = xor i1 %var_2_4512, %var_2_4510
   br i1 %var_2_4513, label %block_401474, label %block_4014da.loopexit
 
-block_400ffb:                                     ; preds = %block_400e6a, %block_400fd3
-  %var_2_3138140 = phi i64 [ %var_2_195031, %block_400e6a ], [ %var_2_5369.pre, %block_400fd3 ]
-  %MEMORY.27 = phi %struct.Memory* [ %MEMORY.20, %block_400e6a ], [ %MEMORY.16.ph, %block_400fd3 ]
+block_400ffb.loopexit:                            ; preds = %block_400ef6.outer
+  br label %block_400ffb
+
+block_400ffb:                                     ; preds = %block_400ffb.loopexit, %block_400e6a
+  %var_2_4799 = phi i64 [ %var_2_4754, %block_400e6a ], [ %var_2_1997.pre.pre, %block_400ffb.loopexit ]
+  %var_2_195021 = phi i64 [ %var_2_195022, %block_400e6a ], [ %var_2_1997.pre.pre, %block_400ffb.loopexit ]
+  %MEMORY.27 = phi %struct.Memory* [ %MEMORY.20, %block_400e6a ], [ %MEMORY.16.ph.ph, %block_400ffb.loopexit ]
   store i64 0, i64* %RAX, align 8, !tbaa !2428
-  store i8 0, i8* %var_2_16, align 1
-  store i8 1, i8* %var_2_23, align 1
-  store i8 1, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_5370 = add i64 %var_2_3138140, -2709
+  %var_2_5370 = add i64 %var_2_195021, -2709
   %var_2_5372 = inttoptr i64 %var_2_5370 to i8*
   %var_2_5373 = load i8, i8* %var_2_5372, align 1
   %var_2_5374 = and i8 %var_2_5373, 1
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
   %var_2_5380 = icmp eq i8 %var_2_5374, 0
   br i1 %var_2_5380, label %block_40103c, label %block_400ae9
 
 var_2_3544:                                       ; preds = %block_4015f8.outer.split
   %var_2_3527 = load i64, i64* %PC, align 8
   %var_2_3536 = add i64 %var_2_3527, 11
-  %var_2_3545 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_3536, %struct.Memory* %MEMORY.17.ph) #13
+  %var_2_3545 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_3536, %struct.Memory* %MEMORY.17.ph.ph) #13
   %var_2_3558.pre = load i64, i64* %RBP, align 8
   %var_2_3609.pre = load i32, i32* %ECX, align 4
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2
 
-var_2_3546:                                       ; preds = %block_4015f8.outer.split
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2: ; preds = %var_2_3546, %var_2_3544
-  %var_2_3609 = phi i32 [ %var_2_3609.pre, %var_2_3544 ], [ %var_2_3525, %var_2_3546 ]
-  %var_2_3558 = phi i64 [ %var_2_3558.pre, %var_2_3544 ], [ %var_2_2218, %var_2_3546 ]
-  %var_2_3554 = phi %struct.Memory* [ %var_2_3545, %var_2_3544 ], [ %MEMORY.17.ph, %var_2_3546 ]
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2: ; preds = %block_4015f8.outer.split, %var_2_3544
+  %var_2_3609 = phi i32 [ %var_2_3609.pre, %var_2_3544 ], [ %var_2_3525, %block_4015f8.outer.split ]
+  %var_2_3558 = phi i64 [ %var_2_3558.pre, %var_2_3544 ], [ %var_2_2218.pre, %block_4015f8.outer.split ]
+  %var_2_3554 = phi %struct.Memory* [ %var_2_3545, %var_2_3544 ], [ %MEMORY.17.ph.ph, %block_4015f8.outer.split ]
   %var_2_3559 = add i64 %var_2_3558, -4
   %var_2_3560 = load i64, i64* %PC, align 8
   %var_2_3562 = inttoptr i64 %var_2_3559 to i32*
@@ -2110,252 +1356,102 @@ var_2_3618:                                       ; preds = %_ZN12_GLOBAL__N_1L1
 
 var_2_3620:                                       ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2
   %var_2_3621 = srem i64 %var_2_3613, %var_2_3611
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
   %var_2_3624 = trunc i64 %var_2_3621 to i32
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
 
 _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1: ; preds = %var_2_3620, %var_2_3618
-  %var_2_3635 = phi i64 [ %var_2_3635.pre, %var_2_3618 ], [ %var_2_3558, %var_2_3620 ]
+  %var_2_3653 = phi i64 [ %var_2_3635.pre, %var_2_3618 ], [ %var_2_3558, %var_2_3620 ]
   %var_2_3626 = phi i32 [ %.pre241, %var_2_3618 ], [ %var_2_3624, %var_2_3620 ]
   %var_2_3627 = phi %struct.Memory* [ %var_2_3619, %var_2_3618 ], [ %var_2_3554, %var_2_3620 ]
   %var_2_3628 = sext i32 %var_2_3626 to i64
   store i64 %var_2_3628, i64* %RSI, align 8
-  %var_2_3629 = shl nsw i64 %var_2_3628, 2
-  %var_2_3630 = add i64 %var_2_3629, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_3632 = inttoptr i64 %var_2_3630 to i32*
-  %var_2_3633 = load i32, i32* %var_2_3632, align 4
-  %var_2_3634 = zext i32 %var_2_3633 to i64
-  store i64 %var_2_3634, i64* %RDX, align 8
-  %var_2_3636 = add i64 %var_2_3635, -4
+  %var_2_3636 = add i64 %var_2_3653, -4
   %var_2_3638 = inttoptr i64 %var_2_3636 to i32*
   %var_2_3639 = load i32, i32* %var_2_3638, align 4
   %var_2_3640 = sext i32 %var_2_3639 to i64
   store i64 %var_2_3640, i64* %RSI, align 8
   %var_2_3641 = shl nsw i64 %var_2_3640, 2
-  %var_2_3642 = add i64 %var_2_3635, -1568
-  %var_2_3643 = add i64 %var_2_3642, %var_2_3641
+  %var_2_3642 = add i64 %var_2_3653, -1568
+  %var_2_3643 = add i64 %var_2_3641, %var_2_3642
   %var_2_3645 = inttoptr i64 %var_2_3643 to i32*
   %var_2_3646 = load i32, i32* %var_2_3645, align 4
   %var_2_3647 = sext i32 %var_2_3646 to i64
   store i64 %var_2_3647, i64* %RSI, align 8
-  %var_2_3648 = shl nsw i64 %var_2_3647, 2
-  %var_2_3649 = add i64 %var_2_3635, -2640
-  %var_2_3650 = add i64 %var_2_3649, %var_2_3648
-  %var_2_3652 = inttoptr i64 %var_2_3650 to i32*
-  store i32 %var_2_3633, i32* %var_2_3652, align 4
-  %var_2_3653 = load i64, i64* %RBP, align 8
-  %var_2_3654 = add i64 %var_2_3653, -4
-  %var_2_3657 = inttoptr i64 %var_2_3654 to i32*
-  %var_2_3658 = load i32, i32* %var_2_3657, align 4
+  %var_2_3658 = load i32, i32* %var_2_3638, align 4
   %var_2_3659 = sext i32 %var_2_3658 to i64
   store i64 %var_2_3659, i64* %RSI, align 8
   %var_2_3660 = shl nsw i64 %var_2_3659, 2
-  %var_2_3661 = add i64 %var_2_3653, -1568
-  %var_2_3662 = add i64 %var_2_3660, %var_2_3661
+  %var_2_3662 = add i64 %var_2_3660, %var_2_3642
   %var_2_3664 = inttoptr i64 %var_2_3662 to i32*
   %var_2_3665 = load i32, i32* %var_2_3664, align 4
   %var_2_3666 = sext i32 %var_2_3665 to i64
   store i64 %var_2_3666, i64* %RSI, align 8
-  %var_2_3667 = shl nsw i64 %var_2_3666, 2
-  %var_2_3668 = add i64 %var_2_3653, -2640
-  %var_2_3669 = add i64 %var_2_3668, %var_2_3667
-  %var_2_3671 = inttoptr i64 %var_2_3669 to i32*
-  %var_2_3672 = load i32, i32* %var_2_3671, align 4
-  %var_2_3675 = load i32, i32* %var_2_3657, align 4
+  %var_2_3675 = load i32, i32* %var_2_3638, align 4
   %var_2_3676 = sext i32 %var_2_3675 to i64
   store i64 %var_2_3676, i64* %RSI, align 8
   %var_2_3677 = shl nsw i64 %var_2_3676, 2
-  %var_2_3678 = add i64 %var_2_3677, %var_2_3661
+  %var_2_3678 = add i64 %var_2_3677, %var_2_3642
   %var_2_3680 = inttoptr i64 %var_2_3678 to i32*
   %var_2_3681 = load i32, i32* %var_2_3680, align 4
   %var_2_3682 = sext i32 %var_2_3681 to i64
   store i64 %var_2_3682, i64* %RSI, align 8
-  %var_2_3683 = shl nsw i64 %var_2_3682, 2
-  %var_2_3684 = add i64 %var_2_3683, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  %var_2_3686 = inttoptr i64 %var_2_3684 to i32*
-  %var_2_3687 = load i32, i32* %var_2_3686, align 4
-  %var_2_3688 = xor i32 %var_2_3687, %var_2_3672
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i32 %var_2_3688, i32* %var_2_3686, align 4
-  %var_2_4844.pre.pre = load i64, i64* %RBP, align 8
   br label %block_4016fb
 
 block_401713:                                     ; preds = %block_401203
   %.pre251 = load i64, i64* %PC, align 8
-  %var_2_4358107 = add i32 %var_2_4357106, -255
-  %var_2_4373108 = lshr i32 %var_2_4358107, 31
-  %var_2_4375109 = lshr i32 %var_2_4357106, 31
-  %var_2_4376110 = xor i32 %var_2_4373108, %var_2_4375109
-  %var_2_4377111 = add nuw nsw i32 %var_2_4376110, %var_2_4375109
-  %var_2_4378112 = icmp eq i32 %var_2_4377111, 2
-  %var_2_4380113 = icmp ne i32 %var_2_4373108, 0
-  %var_2_4381114 = xor i1 %var_2_4380113, %var_2_4378112
-  %.v269115 = select i1 %var_2_4381114, i64 13, i64 100
-  %var_2_4382116 = add i64 %.pre251, %.v269115
-  br i1 %var_2_4381114, label %block_401727.preheader, label %block_401783
+  %var_2_435891 = add i32 %var_2_435790, -255
+  %var_2_437392 = lshr i32 %var_2_435891, 31
+  %var_2_437593 = lshr i32 %var_2_435790, 31
+  %var_2_437694 = xor i32 %var_2_437392, %var_2_437593
+  %var_2_437795 = add nuw nsw i32 %var_2_437694, %var_2_437593
+  %var_2_437896 = icmp eq i32 %var_2_437795, 2
+  %var_2_438097 = icmp ne i32 %var_2_437392, 0
+  %var_2_438198 = xor i1 %var_2_438097, %var_2_437896
+  %.v26999 = select i1 %var_2_438198, i64 13, i64 100
+  %var_2_4382100 = add i64 %.pre251, %.v26999
+  br i1 %var_2_438198, label %block_401727.preheader, label %block_401783
 
 block_401727.preheader:                           ; preds = %block_401713
-  %var_2_4354104 = add i64 %var_2_4353103, -4
-  %var_2_4356105 = inttoptr i64 %var_2_4354104 to i32*
   br label %block_401727
 
-block_4010bd:                                     ; preds = %block_40105e
-  %var_2_3292125 = add i32 %var_2_4803, -255
-  %var_2_3305126 = icmp eq i32 %var_2_3292125, 0
-  %var_2_3307127 = lshr i32 %var_2_3292125, 31
-  %var_2_3310129 = xor i32 %var_2_3307127, %var_2_4833
-  %var_2_3311130 = add nuw nsw i32 %var_2_3310129, %var_2_4833
-  %var_2_3312131 = icmp eq i32 %var_2_3311130, 2
-  %var_2_3314132 = icmp ne i32 %var_2_3307127, 0
-  %var_2_3315133 = xor i1 %var_2_3314132, %var_2_3312131
-  %.demorgan261134 = or i1 %var_2_3305126, %var_2_3315133
-  br i1 %.demorgan261134, label %block_401121.preheader, label %block_401203
-
-block_401121.preheader:                           ; preds = %block_4010bd
-  br label %block_401121
-
-block_40186d.loopexit:                            ; preds = %block_401855
+block_401804.block_40186d.loopexit_crit_edge:     ; preds = %block_401855
+  %var_2_5050 = load i64, i64* %PC, align 8
+  %var_2_6234.le = add i64 %var_2_5050, 5
   br label %block_40186d
 
-block_40186d:                                     ; preds = %block_40186d.loopexit, %block_4017fd, %block_4017f8
-  %var_2_3768 = phi i64 [ %var_2_57, %block_4017f8 ], [ %var_2_623431, %block_4017fd ], [ %var_2_6234, %block_40186d.loopexit ]
-  %.sink5 = phi i64 [ 117, %block_4017f8 ], [ 5, %block_4017fd ], [ 5, %block_40186d.loopexit ]
-  %MEMORY.30 = phi %struct.Memory* [ %MEMORY.0, %block_4017f8 ], [ %MEMORY.5.lcssa, %block_4017fd ], [ %MEMORY.5.lcssa, %block_40186d.loopexit ]
+block_40186d:                                     ; preds = %block_401804.block_40186d.loopexit_crit_edge, %block_4017fd, %block_4017f8
+  %var_2_3768 = phi i64 [ %var_2_57, %block_4017f8 ], [ %var_2_6234.le, %block_401804.block_40186d.loopexit_crit_edge ], [ %var_2_623426, %block_4017fd ]
+  %.sink5 = phi i64 [ 117, %block_4017f8 ], [ 5, %block_401804.block_40186d.loopexit_crit_edge ], [ 5, %block_4017fd ]
   %var_2_3769 = add i64 %var_2_3768, 9
   %var_2_3798 = add i64 %var_2_3769, %.sink5
   store i64 %var_2_3798, i64* %PC, align 8
-  ret %struct.Memory* %MEMORY.30
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
 
-block_400b3a:                                     ; preds = %block_400b26
-  %var_2_3808 = shl nsw i64 %var_2_4764, 6
-  %var_2_3898 = load i64, i64* %RAX, align 8
-  %var_2_3930 = sext i32 %var_2_4758 to i64
-  %var_2_3931 = shl nsw i64 %var_2_3930, 2
-  %var_2_3899 = add nsw i64 %var_2_3808, %var_2_3931
-  %var_2_3932 = add i64 %var_2_3899, %var_2_3898
-  %var_2_3934 = inttoptr i64 %var_2_3932 to i32*
-  %var_2_3935 = load i32, i32* %var_2_3934, align 4
-  %var_2_3936 = sext i32 %var_2_3935 to i64
-  %var_2_3937 = shl nsw i64 %var_2_3936, 2
-  %var_2_3938 = add i64 %var_2_3937, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_3940 = inttoptr i64 %var_2_3938 to i32*
-  %var_2_3941 = load i32, i32* %var_2_3940, align 4
-  %var_2_3942 = zext i32 %var_2_3941 to i64
-  store i64 %var_2_3942, i64* %RSI, align 8
-  %var_2_3944 = load i32, i32* %var_2_4762, align 4
-  %var_2_3945 = sext i32 %var_2_3944 to i64
-  %var_2_3946 = shl nsw i64 %var_2_3945, 6
-  %var_2_3947 = add i64 %var_2_3946, %var_2_3898
-  %var_2_3977 = load i32, i32* %var_2_4757, align 4
-  %var_2_3978 = sext i32 %var_2_3977 to i64
-  %var_2_3979 = shl nsw i64 %var_2_3978, 2
-  %var_2_3980 = add i64 %var_2_3947, %var_2_3979
-  %var_2_3982 = inttoptr i64 %var_2_3980 to i32*
-  store i32 %var_2_3941, i32* %var_2_3982, align 4
-  %var_2_4013 = load i64, i64* %PC, align 8
-  %var_2_4014 = add i64 %var_2_4013, -130
-  %var_2_4754.pre = load i64, i64* %RBP, align 8
-  br label %block_400b26
 
-block_401072:                                     ; preds = %block_40105e
-  %var_2_4015 = add i64 %var_2_4799, -1168
-  %var_2_4019 = shl nsw i64 %var_2_4809, 6
-  %var_2_4049 = sext i32 %var_2_4803 to i64
-  %var_2_4050 = shl nsw i64 %var_2_4049, 2
-  %var_2_4020 = add i64 %var_2_4015, %var_2_4050
-  %var_2_4051 = add i64 %var_2_4020, %var_2_4019
-  %var_2_4053 = inttoptr i64 %var_2_4051 to i32*
-  %var_2_4054 = load i32, i32* %var_2_4053, align 4
-  %var_2_4055 = sext i32 %var_2_4054 to i64
-  %var_2_4056 = shl nsw i64 %var_2_4055, 2
-  %var_2_4057 = add i64 %var_2_4056, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_4059 = inttoptr i64 %var_2_4057 to i32*
-  %var_2_4060 = load i32, i32* %var_2_4059, align 4
-  %var_2_4061 = zext i32 %var_2_4060 to i64
-  store i64 %var_2_4061, i64* %RSI, align 8
-  %var_2_4063 = load i32, i32* %var_2_4807, align 4
-  %var_2_4064 = sext i32 %var_2_4063 to i64
-  %var_2_4065 = shl nsw i64 %var_2_4064, 6
-  %var_2_4066 = load i64, i64* %RAX, align 8
-  %var_2_4067 = add i64 %var_2_4065, %var_2_4066
-  %var_2_4098 = load i32, i32* %var_2_4802, align 4
-  %var_2_4099 = sext i32 %var_2_4098 to i64
-  %var_2_4100 = shl nsw i64 %var_2_4099, 2
-  %var_2_4101 = add i64 %var_2_4067, %var_2_4100
-  %var_2_4103 = inttoptr i64 %var_2_4101 to i32*
-  store i32 %var_2_4060, i32* %var_2_4103, align 4
-  %var_2_4799.pre = load i64, i64* %RBP, align 8
-  br label %block_40105e
+block_401846:                                     ; preds = %block_401811
+  store i32 0, i32* %var_2_5947, align 4
+  %var_2_6205.pre = load i64, i64* %RBP, align 8
+  br label %block_401855
 
 block_401267:                                     ; preds = %block_401247
-  %var_2_4154 = zext i32 %var_2_4991 to i64
-  store i64 %var_2_4154, i64* %RDX, align 8
-  %var_2_4158 = load i32, i32* %var_2_2466, align 4
-  %var_2_4159 = sext i32 %var_2_4158 to i64
-  %var_2_4160 = shl nsw i64 %var_2_4159, 6
-  %var_2_4161 = add i64 %var_2_4160, %var_2_4592
-  %var_2_4189 = load i32, i32* %var_2_2461, align 4
-  %var_2_4190 = sext i32 %var_2_4189 to i64
-  %var_2_4191 = shl nsw i64 %var_2_4190, 2
-  %var_2_4192 = add i64 %var_2_4161, %var_2_4191
-  %var_2_4194 = inttoptr i64 %var_2_4192 to i32*
-  %var_2_4195 = load i32, i32* %var_2_4194, align 4
-  %var_2_4196 = sext i32 %var_2_4195 to i64
-  %var_2_4197 = shl nsw i64 %var_2_4196, 2
-  %var_2_4198 = add i64 %var_2_4197, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_4200 = inttoptr i64 %var_2_4198 to i32*
-  %var_2_4201 = load i32, i32* %var_2_4200, align 4
-  %var_2_4202 = xor i32 %var_2_4201, %var_2_4991
-  %var_2_4203 = zext i32 %var_2_4202 to i64
-  store i64 %var_2_4203, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_4204 = and i32 %var_2_4202, 255
-  %var_2_4205 = tail call i32 @llvm.ctpop.i32(i32 %var_2_4204) #10
-  %var_2_4206 = trunc i32 %var_2_4205 to i8
-  %var_2_4207 = and i8 %var_2_4206, 1
-  %var_2_4208 = xor i8 %var_2_4207, 1
-  store i8 %var_2_4208, i8* %var_2_23, align 1
-  %var_2_4209 = icmp eq i32 %var_2_4202, 0
-  %var_2_4210 = zext i1 %var_2_4209 to i8
-  store i8 %var_2_4210, i8* %var_2_32, align 1
-  %var_2_4211 = lshr i32 %var_2_4202, 31
-  %var_2_4212 = trunc i32 %var_2_4211 to i8
-  store i8 %var_2_4212, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_4217 = load i32, i32* %var_2_2461, align 4
-  %var_2_4218 = sext i32 %var_2_4217 to i64
-  %var_2_4219 = shl nsw i64 %var_2_4218, 2
-  %var_2_4220 = add i64 %var_2_2458, -1616
-  %var_2_4221 = add i64 %var_2_4220, %var_2_4219
-  %var_2_4223 = inttoptr i64 %var_2_4221 to i32*
-  store i32 %var_2_4202, i32* %var_2_4223, align 4
   %.pre223 = load i64, i64* %PC, align 8
   br label %block_40137c
 
-block_400e6a.loopexit:                            ; preds = %block_400b26
+block_400e6a.loopexit:                            ; preds = %block_400ddb
   br label %block_400e6a
 
-block_400e6a.loopexit106:                         ; preds = %block_400ddb
-  br label %block_400e6a
-
-block_400e6a:                                     ; preds = %block_400e6a.loopexit106, %block_400e6a.loopexit
-  %var_2_195031 = phi i64 [ %var_2_4754, %block_400e6a.loopexit ], [ %var_2_1623, %block_400e6a.loopexit106 ]
-  %var_2_1622.lcssa.sink = phi i64 [ %var_2_4753, %block_400e6a.loopexit ], [ %var_2_1622, %block_400e6a.loopexit106 ]
-  %.v291.le.sink = phi i64 [ 135, %block_400e6a.loopexit ], [ 138, %block_400e6a.loopexit106 ]
-  %.sink20 = phi i64 [ 701, %block_400e6a.loopexit ], [ 5, %block_400e6a.loopexit106 ]
+block_400e6a:                                     ; preds = %block_400e6a.loopexit, %block_400b04.split
+  %var_2_195022 = phi i64 [ %var_2_4754, %block_400b04.split ], [ %var_2_2346, %block_400e6a.loopexit ]
+  %var_2_1622.lcssa.sink = phi i64 [ %.pre184, %block_400b04.split ], [ %var_2_1622, %block_400e6a.loopexit ]
+  %.v291.le.sink = phi i64 [ 135, %block_400b04.split ], [ 138, %block_400e6a.loopexit ]
+  %.sink20 = phi i64 [ 701, %block_400b04.split ], [ 5, %block_400e6a.loopexit ]
   %var_2_1666.le = add i64 %var_2_1622.lcssa.sink, 35
   %var_2_4226 = add i64 %var_2_1666.le, %.v291.le.sink
   %var_2_4319 = add i64 %var_2_4226, %.sink20
   store i64 %var_2_4319, i64* %PC, align 8
-  %var_2_4322 = add i64 %var_2_195031, -12
+  %var_2_4322 = add i64 %var_2_195022, -12
   %var_2_4325 = inttoptr i64 %var_2_4322 to i32*
   %var_2_4326 = load i32, i32* %var_2_4325, align 4
   %var_2_4327 = add i32 %var_2_4326, -16
@@ -2368,111 +1464,129 @@ block_400e6a:                                     ; preds = %block_400e6a.loopex
   %var_2_4350 = xor i1 %var_2_4349, %var_2_4347
   br i1 %var_2_4350, label %block_400e97, label %block_400ffb
 
-block_401513.sink.split:                          ; preds = %block_4014f5, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4
-  %var_2_1619.sink = phi i64 [ %var_2_1603, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4 ], [ %var_2_6298, %block_4014f5 ]
-  %var_2_1607.sink = phi i32 [ %var_2_1607, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4 ], [ 1, %block_4014f5 ]
-  %MEMORY.34.ph = phi %struct.Memory* [ %var_2_1581, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit4 ], [ %MEMORY.38, %block_4014f5 ]
-  %var_2_1621 = inttoptr i64 %var_2_1619.sink to i32*
-  store i32 %var_2_1607.sink, i32* %var_2_1621, align 4
-  %var_2_4516 = load i64, i64* %RBP, align 8
-  %var_2_4517 = add i64 %var_2_4516, -8
-  %var_2_4519 = inttoptr i64 %var_2_4517 to i32*
-  %var_2_4520 = load i32, i32* %var_2_4519, align 4
-  %var_2_4522 = add i64 %var_2_4516, -12
-  %var_2_4524 = inttoptr i64 %var_2_4522 to i32*
-  %var_2_4525 = load i32, i32* %var_2_4524, align 4
-  %var_2_4526 = sext i32 %var_2_4525 to i64
-  %var_2_4527 = shl nsw i64 %var_2_4526, 2
-  %var_2_4528 = add i64 %var_2_4516, -1328
-  %var_2_4529 = add i64 %var_2_4528, %var_2_4527
-  %var_2_4531 = inttoptr i64 %var_2_4529 to i32*
-  %var_2_4532 = load i32, i32* %var_2_4531, align 4
-  %var_2_4533 = sub i32 %var_2_4520, %var_2_4532
-  %var_2_4546 = icmp eq i32 %var_2_4533, 0
-  %var_2_4548 = lshr i32 %var_2_4533, 31
-  %var_2_4550 = lshr i32 %var_2_4520, 31
-  %var_2_4551 = lshr i32 %var_2_4532, 31
-  %var_2_4552 = xor i32 %var_2_4551, %var_2_4550
-  %var_2_4553 = xor i32 %var_2_4548, %var_2_4550
-  %var_2_4554 = add nuw nsw i32 %var_2_4553, %var_2_4552
-  %var_2_4555 = icmp eq i32 %var_2_4554, 2
-  %var_2_4557 = icmp ne i32 %var_2_4548, 0
-  %var_2_4558 = xor i1 %var_2_4557, %var_2_4555
-  %.demorgan266 = or i1 %var_2_4546, %var_2_4558
-  br i1 %.demorgan266, label %block_401513.us.preheader, label %block_401513
-
-block_401513.us.preheader:                        ; preds = %block_401513.sink.split
-  %var_2_6172 = add i64 %var_2_4516, -1616
-  %var_2_6170 = sext i32 %var_2_4520 to i64
-  %var_2_6171 = shl nsw i64 %var_2_6170, 2
-  %var_2_6173 = add i64 %var_2_6172, %var_2_6171
-  %var_2_6175 = inttoptr i64 %var_2_6173 to i32*
-  %var_2_6176.us.pre = load i32, i32* %var_2_6175, align 4
-  br label %block_401513.us
-
-block_401513.us:                                  ; preds = %block_401513.us, %block_401513.us.preheader
-  %var_2_6176.us = phi i32 [ %var_2_6176.us.pre, %block_401513.us.preheader ], [ -1, %block_401513.us ]
-  %var_2_6190.us = icmp eq i32 %var_2_6176.us, -1
-  br i1 %var_2_6190.us, label %block_401513.us, label %block_401539.us-lcssa.us
-
-block_401539.us-lcssa.us:                         ; preds = %block_401513.us
-  store i64 255, i64* %RAX, align 8, !tbaa !2428
-  %var_2_1552 = load i32, i32* %EDX, align 4
-  %var_2_1553 = zext i32 %var_2_1552 to i64
-  %var_2_1555 = sext i32 %var_2_1552 to i64
-  %var_2_1556 = and i64 %var_2_1555, -4294967296
-  %var_2_1558 = add i64 %var_2_4516, -2724
-  %var_2_1560 = inttoptr i64 %var_2_1558 to i32*
-  %var_2_1561 = load i32, i32* %var_2_1560, align 4
-  %var_2_1564 = sext i32 %var_2_1561 to i64
-  %var_2_1566 = or i64 %var_2_1556, %var_2_1553
-  %var_2_1567 = sdiv i64 %var_2_1566, %var_2_1564
-  %var_2_1568 = shl i64 %var_2_1567, 32
-  %var_2_1569 = ashr exact i64 %var_2_1568, 32
-  %var_2_1570 = icmp eq i64 %var_2_1567, %var_2_1569
-  br i1 %var_2_1570, label %var_2_1573, label %var_2_1571
-
-block_401513:                                     ; preds = %block_401513.sink.split
-  %var_2_2093 = add i64 %var_2_4516, -4
-  %var_2_2095 = inttoptr i64 %var_2_2093 to i32*
-  %var_2_2096 = load i32, i32* %var_2_2095, align 4
-  %var_2_2097 = sext i32 %var_2_2096 to i64
-  %var_2_2098 = shl nsw i64 %var_2_2097, 2
-  %var_2_2099 = add i64 %var_2_4516, -1568
-  %var_2_2100 = add i64 %var_2_2098, %var_2_2099
-  %var_2_2102 = inttoptr i64 %var_2_2100 to i32*
-  %var_2_2103 = load i32, i32* %var_2_2102, align 4
-  %var_2_2104 = sext i32 %var_2_2103 to i64
-  %var_2_2105 = shl nsw i64 %var_2_2104, 2
-  %var_2_2106 = add i64 %var_2_4516, -2640
-  %var_2_2107 = add i64 %var_2_2105, %var_2_2106
-  %var_2_2109 = inttoptr i64 %var_2_2107 to i32*
-  %var_2_2110 = load i32, i32* %var_2_2109, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_2116 = icmp eq i32 %var_2_2110, 0
-  store i8 0, i8* %var_2_41, align 1
-  br i1 %var_2_2116, label %block_4016fb, label %block_4015bc
-
-block_401312:                                     ; preds = %block_401235
-  br i1 %var_2_4647, label %block_401377, label %block_401332
-
 block_401460:                                     ; preds = %block_401221
-  %var_2_449039 = add i32 %var_2_2462, -255
-  %var_2_450540 = lshr i32 %var_2_449039, 31
-  %var_2_450842 = xor i32 %var_2_450540, %var_2_2492
-  %var_2_450943 = add nuw nsw i32 %var_2_450842, %var_2_2492
-  %var_2_451044 = icmp eq i32 %var_2_450943, 2
-  %var_2_451245 = icmp ne i32 %var_2_450540, 0
-  %var_2_451346 = xor i1 %var_2_451245, %var_2_451044
-  br i1 %var_2_451346, label %block_401474.preheader, label %block_4014da
+  store i32 0, i32* %var_2_2461, align 4
+  %var_2_448529 = load i64, i64* %RBP, align 8
+  %var_2_448630 = add i64 %var_2_448529, -4
+  %var_2_448831 = inttoptr i64 %var_2_448630 to i32*
+  %var_2_448932 = load i32, i32* %var_2_448831, align 4
+  %var_2_449033 = add i32 %var_2_448932, -255
+  %var_2_450534 = lshr i32 %var_2_449033, 31
+  %var_2_450735 = lshr i32 %var_2_448932, 31
+  %var_2_450836 = xor i32 %var_2_450534, %var_2_450735
+  %var_2_450937 = add nuw nsw i32 %var_2_450836, %var_2_450735
+  %var_2_451038 = icmp eq i32 %var_2_450937, 2
+  %var_2_451239 = icmp ne i32 %var_2_450534, 0
+  %var_2_451340 = xor i1 %var_2_451239, %var_2_451038
+  br i1 %var_2_451340, label %block_401474.preheader, label %block_4014da
 
 block_401474.preheader:                           ; preds = %block_401460
   br label %block_401474
 
-block_400b26:                                     ; preds = %block_400b04, %block_400b3a
-  %var_2_4754 = phi i64 [ %var_2_2346, %block_400b04 ], [ %var_2_4754.pre, %block_400b3a ]
-  %var_2_4753 = phi i64 [ %.pre184, %block_400b04 ], [ %var_2_4014, %block_400b3a ]
+block_4014e1:                                     ; preds = %block_4014da, %block_4016fb
+  %var_2_4844 = phi i64 [ %var_2_4844.pre, %block_4014da ], [ %var_2_4844186, %block_4016fb ]
+  %var_2_4843 = phi i64 [ %.pre230, %block_4014da ], [ %var_2_1995, %block_4016fb ]
+  %MEMORY.38 = phi %struct.Memory* [ %MEMORY.19.ph, %block_4014da ], [ %MEMORY.15, %block_4016fb ]
+  %var_2_4845 = add i64 %var_2_4844, -4
+  %var_2_4847 = inttoptr i64 %var_2_4845 to i32*
+  %var_2_4848 = load i32, i32* %var_2_4847, align 4
+  %var_2_4850 = add i64 %var_2_4844, -12
+  %var_2_4852 = inttoptr i64 %var_2_4850 to i32*
+  %var_2_4853 = load i32, i32* %var_2_4852, align 4
+  %var_2_4854 = sext i32 %var_2_4853 to i64
+  %var_2_4855 = shl nsw i64 %var_2_4854, 2
+  %var_2_4856 = add i64 %var_2_4844, -1328
+  %var_2_4857 = add i64 %var_2_4856, %var_2_4855
+  %var_2_4859 = inttoptr i64 %var_2_4857 to i32*
+  %var_2_4860 = load i32, i32* %var_2_4859, align 4
+  %var_2_4861 = sub i32 %var_2_4848, %var_2_4860
+  %var_2_4876 = lshr i32 %var_2_4861, 31
+  %var_2_4878 = lshr i32 %var_2_4848, 31
+  %var_2_4879 = lshr i32 %var_2_4860, 31
+  %var_2_4880 = xor i32 %var_2_4879, %var_2_4878
+  %var_2_4881 = xor i32 %var_2_4876, %var_2_4878
+  %var_2_4882 = add nuw nsw i32 %var_2_4881, %var_2_4880
+  %var_2_4883 = icmp eq i32 %var_2_4882, 2
+  %var_2_4885 = icmp ne i32 %var_2_4876, 0
+  %var_2_4886 = xor i1 %var_2_4885, %var_2_4883
+  br i1 %var_2_4886, label %block_4014f5, label %block_401783.loopexit
+
+block_401855:                                     ; preds = %block_401811, %block_401846
+  %var_2_6205 = phi i64 [ %var_2_620541, %block_401811 ], [ %var_2_6205.pre, %block_401846 ]
+  %var_2_6206 = add i64 %var_2_6205, -4
+  %var_2_6208 = inttoptr i64 %var_2_6206 to i32*
+  %var_2_6209 = load i32, i32* %var_2_6208, align 4
+  %var_2_6210 = add i32 %var_2_6209, -255
+  %var_2_6225 = lshr i32 %var_2_6210, 31
+  %var_2_6227 = lshr i32 %var_2_6209, 31
+  %var_2_6228 = xor i32 %var_2_6225, %var_2_6227
+  %var_2_6229 = add nuw nsw i32 %var_2_6228, %var_2_6227
+  %var_2_6230 = icmp eq i32 %var_2_6229, 2
+  %var_2_6232 = icmp ne i32 %var_2_6225, 0
+  %var_2_6233 = xor i1 %var_2_6232, %var_2_6230
+  br i1 %var_2_6233, label %block_401811, label %block_401804.block_40186d.loopexit_crit_edge
+
+block_400a53:                                     ; preds = %block_400a46
+  %var_2_5076 = add i64 %var_2_620513, -4
+  %var_2_5079 = inttoptr i64 %var_2_5076 to i32*
+  store i32 1, i32* %var_2_5079, align 4
+  %var_2_3415 = load i64, i64* %RBP, align 8
+  %var_2_3416 = add i64 %var_2_3415, -4
+  %var_2_3418 = inttoptr i64 %var_2_3416 to i32*
+  %var_2_3419 = load i32, i32* %var_2_3418, align 4
+  %var_2_3420 = add i32 %var_2_3419, -16
+  %var_2_3435 = lshr i32 %var_2_3420, 31
+  %var_2_3437 = lshr i32 %var_2_3419, 31
+  %var_2_3438 = xor i32 %var_2_3435, %var_2_3437
+  %var_2_3439 = add nuw nsw i32 %var_2_3438, %var_2_3437
+  %var_2_3440 = icmp eq i32 %var_2_3439, 2
+  %var_2_3442 = icmp ne i32 %var_2_3435, 0
+  %var_2_3443 = xor i1 %var_2_3442, %var_2_3440
+  br i1 %var_2_3443, label %block_400a84.us.preheader, label %block_400ae9.preheader
+
+block_400ae9.preheader:                           ; preds = %block_400a53
+  br label %block_400ae9
+
+block_400a84.us.preheader:                        ; preds = %block_400a53
+  br label %block_400a84.us
+
+block_400a84.us:                                  ; preds = %block_400a84.us.preheader, %block_400a84.us
+  br label %block_400a84.us
+
+block_401247:                                     ; preds = %block_401235
+  %var_2_5116 = add i64 %var_2_5666, -1168
+  %var_2_5120 = shl nsw i64 %var_2_2468, 6
+  %var_2_5121 = add i64 %var_2_5116, %var_2_5236
+  %var_2_5152 = add i64 %var_2_5121, %var_2_5120
+  %var_2_5154 = inttoptr i64 %var_2_5152 to i32*
+  %var_2_5155 = load i32, i32* %var_2_5154, align 4
+  %var_2_5169 = icmp eq i32 %var_2_5155, -1
+  br i1 %var_2_5169, label %block_4012ab, label %block_401267
+
+block_400a46.loopexit:                            ; preds = %block_4009fe
+  br label %block_400a46
+
+block_400a46:                                     ; preds = %block_400a46.loopexit, %block_400940
+  %var_2_620916 = phi i32 [ %var_2_875143, %block_400940 ], [ %var_2_875, %block_400a46.loopexit ]
+  %MEMORY.5.lcssa = phi %struct.Memory* [ %2, %block_400940 ], [ %MEMORY.10.ph.lcssa, %block_400a46.loopexit ]
+  %var_2_620513 = phi i64 [ %var_2_50, %block_400940 ], [ %var_2_1025.pre.lcssa, %block_400a46.loopexit ]
+  %var_2_5180 = add i64 %var_2_620513, -1496
+  %var_2_5182 = inttoptr i64 %var_2_5180 to i32*
+  %var_2_5183 = load i32, i32* %var_2_5182, align 4
+  %var_2_5189 = icmp eq i32 %var_2_5183, 0
+  br i1 %var_2_5189, label %block_4017fd, label %block_400a53
+
+block_401235:                                     ; preds = %block_401221
+  %var_2_5235 = sext i32 %var_2_2462 to i64
+  %var_2_5236 = shl nsw i64 %var_2_5235, 2
+  %var_2_5237 = add i64 %var_2_5666, -1488
+  %var_2_5238 = add i64 %var_2_5237, %var_2_5236
+  %var_2_5240 = inttoptr i64 %var_2_5238 to i32*
+  %var_2_5241 = load i32, i32* %var_2_5240, align 4
+  %var_2_5255 = icmp eq i32 %var_2_5241, -1
+  br i1 %var_2_5255, label %block_4012ab, label %block_401247
+
+block_400b04:                                     ; preds = %block_400ae9
   %var_2_4755 = add i64 %var_2_4754, -4
   %var_2_4757 = inttoptr i64 %var_2_4755 to i32*
   %var_2_4758 = load i32, i32* %var_2_4757, align 4
@@ -2497,13 +1611,61 @@ block_400b26:                                     ; preds = %block_400b04, %bloc
   %var_2_4795 = icmp ne i32 %var_2_4786, 0
   %var_2_4796 = xor i1 %var_2_4795, %var_2_4793
   %.demorgan257 = or i1 %var_2_4784, %var_2_4796
-  br i1 %.demorgan257, label %block_400b3a, label %block_400e6a.loopexit
+  br i1 %.demorgan257, label %block_400b26.us.preheader, label %block_400b04.split
 
-block_40105e:                                     ; preds = %block_40105e.preheader, %block_401072
-  %var_2_4799 = phi i64 [ %var_2_4799.pre, %block_401072 ], [ %var_2_3138140, %block_40105e.preheader ]
+block_400b26.us.preheader:                        ; preds = %block_400b04
+  br label %block_400b26.us
+
+block_400b26.us:                                  ; preds = %block_400b26.us.preheader, %block_400b26.us
+  br label %block_400b26.us
+
+block_400b04.split:                               ; preds = %block_400b04
+  %.pre184 = load i64, i64* %PC, align 8
+  br label %block_400e6a
+
+block_40103c:                                     ; preds = %block_400ffb
+  %var_2_5476 = add i64 %var_2_195021, -12
+  %var_2_5479 = inttoptr i64 %var_2_5476 to i32*
+  %var_2_5480 = load i32, i32* %var_2_5479, align 4
+  %var_2_5481 = sext i32 %var_2_5480 to i64
+  %var_2_5482 = shl nsw i64 %var_2_5481, 2
+  %var_2_5483 = add i64 %var_2_195021, -1328
+  %var_2_5484 = add i64 %var_2_5483, %var_2_5482
+  %var_2_5486 = inttoptr i64 %var_2_5484 to i32*
+  %var_2_5487 = load i32, i32* %var_2_5486, align 4
+  %var_2_5488 = add i32 %var_2_5487, -8
+  %var_2_5500 = icmp eq i32 %var_2_5488, 0
+  %var_2_5502 = lshr i32 %var_2_5488, 31
+  %var_2_5504 = lshr i32 %var_2_5487, 31
+  %var_2_5505 = xor i32 %var_2_5502, %var_2_5504
+  %var_2_5506 = add nuw nsw i32 %var_2_5505, %var_2_5504
+  %var_2_5507 = icmp eq i32 %var_2_5506, 2
+  %var_2_5509 = icmp ne i32 %var_2_5502, 0
+  %var_2_5510 = xor i1 %var_2_5509, %var_2_5507
+  %.demorgan258 = or i1 %var_2_5500, %var_2_5510
   %var_2_4800 = add i64 %var_2_4799, -4
   %var_2_4802 = inttoptr i64 %var_2_4800 to i32*
   %var_2_4803 = load i32, i32* %var_2_4802, align 4
+  br i1 %.demorgan258, label %block_40105e.preheader, label %block_40178f.preheader
+
+block_40178f.preheader:                           ; preds = %block_40103c
+  %.pre208 = load i64, i64* %PC, align 8
+  %var_2_3143127 = add i32 %var_2_4803, -255
+  %var_2_3158128 = lshr i32 %var_2_3143127, 31
+  %var_2_3160129 = lshr i32 %var_2_4803, 31
+  %var_2_3161130 = xor i32 %var_2_3158128, %var_2_3160129
+  %var_2_3162131 = add nuw nsw i32 %var_2_3161130, %var_2_3160129
+  %var_2_3163132 = icmp eq i32 %var_2_3162131, 2
+  %var_2_3165133 = icmp ne i32 %var_2_3158128, 0
+  %var_2_3166134 = xor i1 %var_2_3165133, %var_2_3163132
+  %.v271135 = select i1 %var_2_3166134, i64 13, i64 100
+  %var_2_3167136 = add i64 %.pre208, %.v271135
+  br i1 %var_2_3166134, label %block_40179c.preheader, label %block_4017f8
+
+block_40179c.preheader:                           ; preds = %block_40178f.preheader
+  br label %block_40179c
+
+block_40105e.preheader:                           ; preds = %block_40103c
   %var_2_4805 = add i64 %var_2_4799, -12
   %var_2_4807 = inttoptr i64 %var_2_4805 to i32*
   %var_2_4808 = load i32, i32* %var_2_4807, align 4
@@ -2525,238 +1687,35 @@ block_40105e:                                     ; preds = %block_40105e.prehea
   %var_2_4840 = icmp ne i32 %var_2_4831, 0
   %var_2_4841 = xor i1 %var_2_4840, %var_2_4838
   %.demorgan259 = or i1 %var_2_4829, %var_2_4841
-  br i1 %.demorgan259, label %block_401072, label %block_4010bd
+  br i1 %.demorgan259, label %block_40105e.us.preheader, label %block_40105e.preheader.split
 
-block_4014e1:                                     ; preds = %block_4014da, %block_4016fb
-  %var_2_6297 = phi i64 [ %var_2_484441, %block_4014da ], [ %var_2_629748, %block_4016fb ]
-  %var_2_4843 = phi i64 [ %.pre230, %block_4014da ], [ %var_2_1995, %block_4016fb ]
-  %MEMORY.38 = phi %struct.Memory* [ %MEMORY.19, %block_4014da ], [ %MEMORY.15, %block_4016fb ]
-  %var_2_4845 = add i64 %var_2_6297, -4
-  %var_2_4847 = inttoptr i64 %var_2_4845 to i32*
-  %var_2_4848 = load i32, i32* %var_2_4847, align 4
-  %var_2_4850 = add i64 %var_2_6297, -12
-  %var_2_4852 = inttoptr i64 %var_2_4850 to i32*
-  %var_2_4853 = load i32, i32* %var_2_4852, align 4
-  %var_2_4854 = sext i32 %var_2_4853 to i64
-  %var_2_4855 = shl nsw i64 %var_2_4854, 2
-  %var_2_4856 = add i64 %var_2_6297, -1328
-  %var_2_4857 = add i64 %var_2_4856, %var_2_4855
-  %var_2_4859 = inttoptr i64 %var_2_4857 to i32*
-  %var_2_4860 = load i32, i32* %var_2_4859, align 4
-  %var_2_4861 = sub i32 %var_2_4848, %var_2_4860
-  %var_2_4876 = lshr i32 %var_2_4861, 31
-  %var_2_4878 = lshr i32 %var_2_4848, 31
-  %var_2_4879 = lshr i32 %var_2_4860, 31
-  %var_2_4880 = xor i32 %var_2_4879, %var_2_4878
-  %var_2_4881 = xor i32 %var_2_4876, %var_2_4878
-  %var_2_4882 = add nuw nsw i32 %var_2_4881, %var_2_4880
-  %var_2_4883 = icmp eq i32 %var_2_4882, 2
-  %var_2_4885 = icmp ne i32 %var_2_4876, 0
-  %var_2_4886 = xor i1 %var_2_4885, %var_2_4883
-  br i1 %var_2_4886, label %block_4014f5, label %block_401783.loopexit
+block_40105e.us.preheader:                        ; preds = %block_40105e.preheader
+  br label %block_40105e.us
 
-block_4017ae:                                     ; preds = %block_40179c
-  %var_2_5001 = add i64 %var_2_803, 12
-  store i64 %var_2_5001, i64* %PC, align 8
-  %var_2_5002 = inttoptr i64 %var_2_808 to i32*
-  %var_2_5003 = load i32, i32* %var_2_5002, align 4
-  %var_2_5004 = sext i32 %var_2_5003 to i64
-  store i64 %var_2_5004, i64* %RAX, align 8
-  %var_2_5005 = shl nsw i64 %var_2_5004, 2
-  %var_2_5006 = add i64 %var_2_5005, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_5007 = add i64 %var_2_803, 19
-  store i64 %var_2_5007, i64* %PC, align 8
-  %var_2_5008 = inttoptr i64 %var_2_5006 to i32*
-  %var_2_5009 = load i32, i32* %var_2_5008, align 4
-  %var_2_5010 = zext i32 %var_2_5009 to i64
-  store i64 %var_2_5010, i64* %RCX, align 8
-  %var_2_5011 = add i64 %var_2_803, 23
-  store i64 %var_2_5011, i64* %PC, align 8
-  %var_2_5012 = load i32, i32* %var_2_3141154, align 4
-  %var_2_5013 = sext i32 %var_2_5012 to i64
-  %var_2_5014 = shl nsw i64 %var_2_5013, 2
-  %var_2_5015 = add i64 %var_2_5014, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br label %block_4017e0
+block_40105e.us:                                  ; preds = %block_40105e.us.preheader, %block_40105e.us
+  br label %block_40105e.us
 
-block_401855:                                     ; preds = %block_401811, %block_401823
-  %.sink2 = phi i64 [ 30, %block_401823 ], [ 15, %block_401811 ]
-  %var_2_5562.sink = phi i64 [ %var_2_5562, %block_401823 ], [ %var_2_5977, %block_401811 ]
-  %var_2_5556.sink = phi i32 [ %var_2_5556, %block_401823 ], [ 0, %block_401811 ]
-  %var_2_5563 = add i64 %.sink2, %var_2_5972
-  store i64 %var_2_5563, i64* %PC, align 8
-  %var_2_5564 = inttoptr i64 %var_2_5562.sink to i32*
-  store i32 %var_2_5556.sink, i32* %var_2_5564, align 4
-  %var_2_5050 = load i64, i64* %PC, align 8
-  %var_2_5051 = add i64 %var_2_5050, -95
-  %var_2_6205 = load i64, i64* %RBP, align 8
-  %var_2_6206 = add i64 %var_2_6205, -4
-  %var_2_6208 = inttoptr i64 %var_2_6206 to i32*
-  %var_2_6209 = load i32, i32* %var_2_6208, align 4
-  %var_2_6210 = add i32 %var_2_6209, -255
-  %var_2_6225 = lshr i32 %var_2_6210, 31
-  %var_2_6227 = lshr i32 %var_2_6209, 31
-  %var_2_6228 = xor i32 %var_2_6225, %var_2_6227
-  %var_2_6229 = add nuw nsw i32 %var_2_6228, %var_2_6227
-  %var_2_6230 = icmp eq i32 %var_2_6229, 2
-  %var_2_6232 = icmp ne i32 %var_2_6225, 0
-  %var_2_6233 = xor i1 %var_2_6232, %var_2_6230
-  %.v279 = select i1 %var_2_6233, i64 13, i64 100
-  %var_2_6234 = add i64 %var_2_5051, %.v279
-  br i1 %var_2_6233, label %block_401811, label %block_40186d.loopexit
+block_40105e.preheader.split:                     ; preds = %block_40105e.preheader
+  %var_2_3292108 = add i32 %var_2_4803, -255
+  %var_2_3305109 = icmp eq i32 %var_2_3292108, 0
+  %var_2_3307110 = lshr i32 %var_2_3292108, 31
+  %var_2_3310112 = xor i32 %var_2_3307110, %var_2_4833
+  %var_2_3311113 = add nuw nsw i32 %var_2_3310112, %var_2_4833
+  %var_2_3312114 = icmp eq i32 %var_2_3311113, 2
+  %var_2_3314115 = icmp ne i32 %var_2_3307110, 0
+  %var_2_3315116 = xor i1 %var_2_3314115, %var_2_3312114
+  %.demorgan261117 = or i1 %var_2_3305109, %var_2_3315116
+  br i1 %.demorgan261117, label %block_401121.preheader, label %block_401203
 
-block_400a53:                                     ; preds = %block_400a46
-  %var_2_3416 = add i64 %var_2_3415, -4
-  %var_2_3418 = inttoptr i64 %var_2_3416 to i32*
-  %var_2_3419 = load i32, i32* %var_2_3418, align 4
-  %var_2_3420 = add i32 %var_2_3419, -16
-  %var_2_3435 = lshr i32 %var_2_3420, 31
-  %var_2_3437 = lshr i32 %var_2_3419, 31
-  %var_2_3438 = xor i32 %var_2_3435, %var_2_3437
-  %var_2_3439 = add nuw nsw i32 %var_2_3438, %var_2_3437
-  %var_2_3440 = icmp eq i32 %var_2_3439, 2
-  %var_2_3442 = icmp ne i32 %var_2_3435, 0
-  %var_2_3443 = xor i1 %var_2_3442, %var_2_3440
-  br i1 %var_2_3443, label %block_400a84.us.preheader, label %block_400ae9.preheader
-
-block_400ae9.preheader:                           ; preds = %block_400a53
-  br label %block_400ae9
-
-block_400a84.us.preheader:                        ; preds = %block_400a53
-  br label %block_400a84.us
-
-block_400a84.us:                                  ; preds = %block_400a84.us.preheader, %block_400a84.us
-  br label %block_400a84.us
-
-block_401247:                                     ; preds = %block_401235
-  %var_2_4986 = sext i32 %var_2_5241 to i64
-  %var_2_4987 = shl nsw i64 %var_2_4986, 2
-  %var_2_4988 = add i64 %var_2_4987, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_4990 = inttoptr i64 %var_2_4988 to i32*
-  %var_2_4991 = load i32, i32* %var_2_4990, align 4
-  br i1 %var_2_4647, label %block_401377.sink.split, label %block_401267
-
-block_400a46.loopexit:                            ; preds = %block_4009fe
-  br label %block_400a46
-
-block_400a46:                                     ; preds = %block_400a46.loopexit, %block_400940
-  %MEMORY.5.lcssa = phi %struct.Memory* [ %2, %block_400940 ], [ %MEMORY.10.lcssa, %block_400a46.loopexit ]
-  %var_2_3415 = phi i64 [ %var_2_50, %block_400940 ], [ %var_2_871, %block_400a46.loopexit ]
-  %var_2_5180 = add i64 %var_2_3415, -1496
-  %var_2_5182 = inttoptr i64 %var_2_5180 to i32*
-  %var_2_5183 = load i32, i32* %var_2_5182, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %var_2_5189 = icmp eq i32 %var_2_5183, 0
-  store i8 0, i8* %var_2_41, align 1
-  br i1 %var_2_5189, label %block_4017fd, label %block_400a53
-
-block_401235:                                     ; preds = %block_401221
-  %var_2_5235 = sext i32 %var_2_2462 to i64
-  %var_2_5236 = shl nsw i64 %var_2_5235, 2
-  %var_2_5237 = add i64 %var_2_2458, -1488
-  %var_2_5238 = add i64 %var_2_5237, %var_2_5236
-  %var_2_5240 = inttoptr i64 %var_2_5238 to i32*
-  %var_2_5241 = load i32, i32* %var_2_5240, align 4
-  %var_2_5255 = icmp eq i32 %var_2_5241, -1
-  %var_2_4592 = add i64 %var_2_2458, -1168
-  %var_2_4598 = shl nsw i64 %var_2_2468, 6
-  %var_2_4599 = add i64 %var_2_5236, %var_2_4592
-  %var_2_4630 = add i64 %var_2_4599, %var_2_4598
-  %var_2_4632 = inttoptr i64 %var_2_4630 to i32*
-  %var_2_4633 = load i32, i32* %var_2_4632, align 4
-  %var_2_4647 = icmp eq i32 %var_2_4633, -1
-  br i1 %var_2_5255, label %block_401312, label %block_401247
-
-block_401434.loopexit:                            ; preds = %block_40138f.lr.ph.split.us, %block_40138f.preheader.split
-  %var_2_5201.le = add i64 %var_2_594, -4
-  %var_2_5203.le = inttoptr i64 %var_2_5201.le to i32*
-  br label %block_401434
-
-block_401434.loopexit104:                         ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7
-  br label %block_401434
-
-block_401434:                                     ; preds = %block_401434.loopexit104, %block_40137c, %block_401434.loopexit
-  %MEMORY.42.ph.lcssa = phi %struct.Memory* [ %MEMORY.19, %block_40137c ], [ %MEMORY.42.ph95, %block_401434.loopexit ], [ %var_2_618, %block_401434.loopexit104 ]
-  %var_2_5195.lcssa = phi i64 [ %var_2_51955078, %block_40137c ], [ %var_2_594, %block_401434.loopexit ], [ %var_2_519550, %block_401434.loopexit104 ]
-  %var_2_5203.lcssa = phi i32* [ %var_2_52035583, %block_40137c ], [ %var_2_5203.le, %block_401434.loopexit ], [ %var_2_520355, %block_401434.loopexit104 ]
-  %var_2_5204.lcssa = phi i32 [ %var_2_52045684, %block_40137c ], [ %var_2_52045698, %block_401434.loopexit ], [ %var_2_520456, %block_401434.loopexit104 ]
-  %var_2_5267 = sext i32 %var_2_5204.lcssa to i64
-  %var_2_5268 = shl nsw i64 %var_2_5267, 2
-  %var_2_5269 = add i64 %var_2_5195.lcssa, -1616
-  %var_2_5270 = add i64 %var_2_5268, %var_2_5269
-  %var_2_5272 = inttoptr i64 %var_2_5270 to i32*
-  %var_2_5273 = load i32, i32* %var_2_5272, align 4
-  %var_2_5274 = sext i32 %var_2_5273 to i64
-  %var_2_5275 = shl nsw i64 %var_2_5274, 2
-  %var_2_5276 = add i64 %var_2_5275, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_5278 = inttoptr i64 %var_2_5276 to i32*
-  %var_2_5279 = load i32, i32* %var_2_5278, align 4
-  %var_2_5280 = zext i32 %var_2_5279 to i64
-  store i64 %var_2_5280, i64* %RCX, align 8
-  %var_2_5282 = load i32, i32* %var_2_5203.lcssa, align 4
-  %var_2_5283 = sext i32 %var_2_5282 to i64
-  %var_2_5284 = shl nsw i64 %var_2_5283, 2
-  %var_2_5285 = add i64 %var_2_5284, %var_2_5269
-  %var_2_5287 = inttoptr i64 %var_2_5285 to i32*
-  store i32 %var_2_5279, i32* %var_2_5287, align 4
-  %var_2_2458.pre = load i64, i64* %RBP, align 8
-  br label %block_401221
-
-block_400b04:                                     ; preds = %block_400ae9
-  %.pre184 = load i64, i64* %PC, align 8
-  br label %block_400b26
-
-block_40103c:                                     ; preds = %block_400ffb
-  %var_2_5476 = add i64 %var_2_3138140, -12
-  %var_2_5479 = inttoptr i64 %var_2_5476 to i32*
-  %var_2_5480 = load i32, i32* %var_2_5479, align 4
-  %var_2_5481 = sext i32 %var_2_5480 to i64
-  %var_2_5482 = shl nsw i64 %var_2_5481, 2
-  %var_2_5483 = add i64 %var_2_3138140, -1328
-  %var_2_5484 = add i64 %var_2_5483, %var_2_5482
-  %var_2_5486 = inttoptr i64 %var_2_5484 to i32*
-  %var_2_5487 = load i32, i32* %var_2_5486, align 4
-  %var_2_5488 = add i32 %var_2_5487, -8
-  %var_2_5500 = icmp eq i32 %var_2_5488, 0
-  %var_2_5502 = lshr i32 %var_2_5488, 31
-  %var_2_5504 = lshr i32 %var_2_5487, 31
-  %var_2_5505 = xor i32 %var_2_5502, %var_2_5504
-  %var_2_5506 = add nuw nsw i32 %var_2_5505, %var_2_5504
-  %var_2_5507 = icmp eq i32 %var_2_5506, 2
-  %var_2_5509 = icmp ne i32 %var_2_5502, 0
-  %var_2_5510 = xor i1 %var_2_5509, %var_2_5507
-  %.demorgan258 = or i1 %var_2_5500, %var_2_5510
-  br i1 %.demorgan258, label %block_40105e.preheader, label %block_40178f.preheader
-
-block_40105e.preheader:                           ; preds = %block_40103c
-  br label %block_40105e
-
-block_40178f.preheader:                           ; preds = %block_40103c
-  %.pre208 = load i64, i64* %PC, align 8
-  %var_2_3139141 = add i64 %var_2_3138140, -4
-  %var_2_3141142 = inttoptr i64 %var_2_3139141 to i32*
-  %var_2_3142143 = load i32, i32* %var_2_3141142, align 4
-  %var_2_3143144 = add i32 %var_2_3142143, -255
-  %var_2_3158145 = lshr i32 %var_2_3143144, 31
-  %var_2_3160146 = lshr i32 %var_2_3142143, 31
-  %var_2_3161147 = xor i32 %var_2_3158145, %var_2_3160146
-  %var_2_3162148 = add nuw nsw i32 %var_2_3161147, %var_2_3160146
-  %var_2_3163149 = icmp eq i32 %var_2_3162148, 2
-  %var_2_3165150 = icmp ne i32 %var_2_3158145, 0
-  %var_2_3166151 = xor i1 %var_2_3165150, %var_2_3163149
-  %.v271152 = select i1 %var_2_3166151, i64 13, i64 100
-  %var_2_3167153 = add i64 %.v271152, %.pre208
-  br i1 %var_2_3166151, label %block_40179c.preheader, label %block_4017f8
-
-block_40179c.preheader:                           ; preds = %block_40178f.preheader
-  br label %block_40179c
+block_401121.preheader:                           ; preds = %block_40105e.preheader.split
+  br label %block_401121
 
 block_400d13.outer:                               ; preds = %block_400d13.outer.preheader, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit3
+  %var_2_3088 = phi i32 [ %var_2_3088.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit3 ], [ %var_2_1815, %block_400d13.outer.preheader ]
   %var_2_3083 = phi i32 [ %var_2_3083.pre, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit3 ], [ %var_2_2350, %block_400d13.outer.preheader ]
-  %var_2_3088 = load i32, i32* %var_2_1814, align 4
   %var_2_3089 = sext i32 %var_2_3088 to i64
   %var_2_3090 = shl nsw i64 %var_2_3089, 2
-  %var_2_3092 = add i64 %var_2_3091, %var_2_3090
+  %var_2_3092 = add i64 %var_2_3090, %var_2_3091
   %var_2_3094 = inttoptr i64 %var_2_3092 to i32*
   %var_2_3095 = load i32, i32* %var_2_3094, align 4
   %var_2_3096 = sub i32 %var_2_3083, %var_2_3095
@@ -2790,75 +1749,51 @@ block_400d13.us:                                  ; preds = %block_400d13.us, %b
 
 block_400d13.outer.split:                         ; preds = %block_400d13.outer
   %.pre197 = load i64, i64* %PC, align 8
+  %var_2_282 = add i64 %.pre197, -133
+  %var_2_1632 = load i32, i32* %var_2_2536, align 4
+  %var_2_1633 = sext i32 %var_2_1632 to i64
+  %var_2_1634 = shl nsw i64 %var_2_1633, 2
+  %var_2_1636 = add i64 %var_2_1634, %var_2_3091
+  %var_2_1638 = inttoptr i64 %var_2_1636 to i32*
+  %var_2_1639 = load i32, i32* %var_2_1638, align 4
+  %var_2_1658 = lshr i32 %var_2_1639, 31
+  %var_2_1640 = sub i32 %var_2_3083, %var_2_1639
+  %var_2_1653 = icmp eq i32 %var_2_1640, 0
+  %var_2_1655 = lshr i32 %var_2_1640, 31
+  %var_2_1659 = xor i32 %var_2_1658, %var_2_3113
+  %var_2_1660 = xor i32 %var_2_1655, %var_2_3113
+  %var_2_1661 = add nuw nsw i32 %var_2_1660, %var_2_1659
+  %var_2_1662 = icmp eq i32 %var_2_1661, 2
+  %var_2_1664 = icmp ne i32 %var_2_1655, 0
+  %var_2_1665 = xor i1 %var_2_1664, %var_2_1662
+  %.demorgan277 = or i1 %var_2_1653, %var_2_1665
   br label %block_400ddb
 
-block_401823:                                     ; preds = %block_401811
-  %var_2_5548 = add i64 %var_2_5972, 12
-  store i64 %var_2_5548, i64* %PC, align 8
-  %var_2_5549 = inttoptr i64 %var_2_5977 to i32*
-  %var_2_5550 = load i32, i32* %var_2_5549, align 4
-  %var_2_5551 = sext i32 %var_2_5550 to i64
-  store i64 %var_2_5551, i64* %RAX, align 8
-  %var_2_5552 = shl nsw i64 %var_2_5551, 2
-  %var_2_5553 = add i64 %var_2_5552, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_5554 = add i64 %var_2_5972, 19
-  store i64 %var_2_5554, i64* %PC, align 8
-  %var_2_5555 = inttoptr i64 %var_2_5553 to i32*
-  %var_2_5556 = load i32, i32* %var_2_5555, align 4
-  %var_2_5557 = zext i32 %var_2_5556 to i64
-  store i64 %var_2_5557, i64* %RCX, align 8
-  %var_2_5558 = add i64 %var_2_5972, 23
-  store i64 %var_2_5558, i64* %PC, align 8
-  %var_2_5559 = load i32, i32* %var_2_620832, align 4
-  %var_2_5560 = sext i32 %var_2_5559 to i64
-  %var_2_5561 = shl nsw i64 %var_2_5560, 2
-  %var_2_5562 = add i64 %var_2_5561, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br label %block_401855
+block_4015bc:                                     ; preds = %block_401513.outer.split
+  %var_2_5634 = add i64 %var_2_4516.pre, -16
+  %var_2_5637 = inttoptr i64 %var_2_5634 to i32*
+  store i32 0, i32* %var_2_5637, align 4
+  br label %block_4015f8.outer.outer
 
-block_4015bc:                                     ; preds = %block_401513
-  %var_2_5600 = load i32, i32* %var_2_2095, align 4
-  %var_2_5601 = sext i32 %var_2_5600 to i64
-  %var_2_5602 = shl nsw i64 %var_2_5601, 2
-  %var_2_5603 = add i64 %var_2_5602, %var_2_2099
-  %var_2_5605 = inttoptr i64 %var_2_5603 to i32*
-  %var_2_5606 = load i32, i32* %var_2_5605, align 4
-  %var_2_5607 = sext i32 %var_2_5606 to i64
-  %var_2_5608 = shl nsw i64 %var_2_5607, 2
-  %var_2_5609 = add i64 %var_2_5608, %var_2_2106
-  %var_2_5611 = inttoptr i64 %var_2_5609 to i32*
-  %var_2_5612 = load i32, i32* %var_2_5611, align 4
-  %var_2_5613 = sext i32 %var_2_5612 to i64
-  %var_2_5614 = shl nsw i64 %var_2_5613, 2
-  %var_2_5615 = add i64 %var_2_5614, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_5617 = inttoptr i64 %var_2_5615 to i32*
-  %var_2_5618 = load i32, i32* %var_2_5617, align 4
-  %var_2_5619 = zext i32 %var_2_5618 to i64
-  store i64 %var_2_5619, i64* %RCX, align 8
-  %var_2_5621 = load i32, i32* %var_2_2095, align 4
-  %var_2_5622 = sext i32 %var_2_5621 to i64
-  %var_2_5623 = shl nsw i64 %var_2_5622, 2
-  %var_2_5624 = add i64 %var_2_5623, %var_2_2099
-  %var_2_5626 = inttoptr i64 %var_2_5624 to i32*
-  %var_2_5627 = load i32, i32* %var_2_5626, align 4
-  %var_2_5628 = sext i32 %var_2_5627 to i64
-  %var_2_5629 = shl nsw i64 %var_2_5628, 2
-  %var_2_5630 = add i64 %var_2_5629, %var_2_2106
-  %var_2_5632 = inttoptr i64 %var_2_5630 to i32*
-  store i32 %var_2_5618, i32* %var_2_5632, align 4
+block_4015f8.outer.outer:                         ; preds = %var_2_5738, %block_4015bc
+  %MEMORY.17.ph.ph = phi %struct.Memory* [ %var_2_5739, %var_2_5738 ], [ %MEMORY.34.ph.ph, %block_4015bc ]
+  %var_2_2218.pre = load i64, i64* %RBP, align 8
+  %var_2_2219 = add i64 %var_2_2218.pre, -8
+  %var_2_2221 = inttoptr i64 %var_2_2219 to i32*
+  %var_2_2224 = add i64 %var_2_2218.pre, -12
+  %var_2_2226 = inttoptr i64 %var_2_2224 to i32*
+  %var_2_2230 = add i64 %var_2_2218.pre, -1328
+  %var_2_6046 = add i64 %var_2_2218.pre, -4
+  %var_2_6048 = inttoptr i64 %var_2_6046 to i32*
+  %var_2_5725 = add i64 %var_2_2218.pre, -2728
+  %var_2_5727 = inttoptr i64 %var_2_5725 to i32*
   br label %block_4015f8.outer
 
-block_4015f8.outer:                               ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit, %block_4015bc
-  %MEMORY.17.ph = phi %struct.Memory* [ %var_2_5748, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %MEMORY.34.ph, %block_4015bc ]
-  %var_2_2218 = load i64, i64* %RBP, align 8
-  %var_2_2219 = add i64 %var_2_2218, -8
-  %var_2_2221 = inttoptr i64 %var_2_2219 to i32*
+block_4015f8.outer:                               ; preds = %block_4015f8.outer.outer, %block_401618
   %var_2_2222 = load i32, i32* %var_2_2221, align 4
-  %var_2_2224 = add i64 %var_2_2218, -12
-  %var_2_2226 = inttoptr i64 %var_2_2224 to i32*
   %var_2_2227 = load i32, i32* %var_2_2226, align 4
   %var_2_2228 = sext i32 %var_2_2227 to i64
   %var_2_2229 = shl nsw i64 %var_2_2228, 2
-  %var_2_2230 = add i64 %var_2_2218, -1328
   %var_2_2231 = add i64 %var_2_2230, %var_2_2229
   %var_2_2233 = inttoptr i64 %var_2_2231 to i32*
   %var_2_2234 = load i32, i32* %var_2_2233, align 4
@@ -2875,8 +1810,6 @@ block_4015f8.outer:                               ; preds = %_ZN12_GLOBAL__N_1L1
   br i1 %var_2_2260, label %block_4015f8.us.preheader, label %block_4015f8.outer.split
 
 block_4015f8.us.preheader:                        ; preds = %block_4015f8.outer
-  %var_2_6046 = add i64 %var_2_2218, -4
-  %var_2_6048 = inttoptr i64 %var_2_6046 to i32*
   %var_2_6049.us.pre = load i32, i32* %var_2_6048, align 4
   br label %block_4015f8.us
 
@@ -2891,7 +1824,7 @@ block_4015f8.outer.split:                         ; preds = %block_4015f8.outer
   %var_2_3526 = zext i32 %var_2_3525 to i64
   %var_2_3528 = sext i32 %var_2_3525 to i64
   %var_2_3529 = and i64 %var_2_3528, -4294967296
-  %var_2_3531 = add i64 %var_2_2218, -2732
+  %var_2_3531 = add i64 %var_2_2218.pre, -2732
   %var_2_3533 = inttoptr i64 %var_2_3531 to i32*
   %var_2_3534 = load i32, i32* %var_2_3533, align 4
   %var_2_3537 = sext i32 %var_2_3534 to i64
@@ -2900,43 +1833,17 @@ block_4015f8.outer.split:                         ; preds = %block_4015f8.outer
   %var_2_3541 = shl i64 %var_2_3540, 32
   %var_2_3542 = ashr exact i64 %var_2_3541, 32
   %var_2_3543 = icmp eq i64 %var_2_3540, %var_2_3542
-  br i1 %var_2_3543, label %var_2_3546, label %var_2_3544
+  br i1 %var_2_3543, label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2, label %var_2_3544
 
-block_4009fe.loopexit:                            ; preds = %block_4009eb
+block_4009fe.loopexit:                            ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit8
   br label %block_4009fe
 
 block_4009fe:                                     ; preds = %block_4009fe.loopexit, %block_400970
-  %MEMORY.10.lcssa = phi %struct.Memory* [ %MEMORY.5192, %block_400970 ], [ %MEMORY.1, %block_4009fe.loopexit ]
-  %.pre174 = phi i64 [ %var_2_1025158, %block_400970 ], [ %var_2_1025, %block_4009fe.loopexit ]
-  %var_2_5643 = add i64 %.pre174, -4
+  %var_2_1025.pre.lcssa = phi i64 [ %var_2_1025.pre18, %block_400970 ], [ %var_2_1025.pre.pre, %block_4009fe.loopexit ]
+  %MEMORY.10.ph.lcssa = phi %struct.Memory* [ %MEMORY.5154, %block_400970 ], [ %var_2_396, %block_4009fe.loopexit ]
+  %var_2_5643 = add i64 %var_2_1025.pre.lcssa, -4
   %var_2_5645 = inttoptr i64 %var_2_5643 to i32*
-  %var_2_5649 = add i64 %.pre174, -1488
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_5983 = load i32, i32* %var_2_5645, align 4
-  %var_2_5984 = sext i32 %var_2_5983 to i64
-  %var_2_5985 = shl nsw i64 %var_2_5984, 2
-  %var_2_5987 = add i64 %var_2_5985, %var_2_5649
-  %var_2_5989 = inttoptr i64 %var_2_5987 to i32*
-  %var_2_5990 = load i32, i32* %var_2_5989, align 4
-  %var_2_5991 = sext i32 %var_2_5990 to i64
-  %var_2_5992 = shl nsw i64 %var_2_5991, 2
-  %var_2_5993 = add i64 %var_2_5992, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_5995 = inttoptr i64 %var_2_5993 to i32*
-  %var_2_5996 = load i32, i32* %var_2_5995, align 4
-  %var_2_5997 = zext i32 %var_2_5996 to i64
-  store i64 %var_2_5997, i64* %RCX, align 8
-  %var_2_5999 = load i32, i32* %var_2_5645, align 4
-  %var_2_6000 = sext i32 %var_2_5999 to i64
-  %var_2_6001 = shl nsw i64 %var_2_6000, 2
-  %var_2_6002 = add i64 %var_2_6001, %var_2_5649
-  %var_2_6004 = inttoptr i64 %var_2_6002 to i32*
-  store i32 %var_2_5996, i32* %var_2_6004, align 4
-  %var_2_871 = load i64, i64* %RBP, align 8
-  %var_2_872 = add i64 %var_2_871, -4
-  %var_2_874 = inttoptr i64 %var_2_872 to i32*
-  %var_2_875 = load i32, i32* %var_2_874, align 4
+  %var_2_875 = load i32, i32* %var_2_5645, align 4
   %var_2_876 = add i32 %var_2_875, -16
   %var_2_889 = icmp eq i32 %var_2_876, 0
   %var_2_891 = lshr i32 %var_2_876, 31
@@ -2955,34 +1862,30 @@ block_40137c:                                     ; preds = %block_401267, %bloc
   %var_2_5665 = add i64 %var_2_5664, 7
   %var_2_5668 = add i64 %var_2_5665, %.sink15
   store i64 %var_2_5668, i64* %PC, align 8
-  %var_2_51955078 = load i64, i64* %RBP, align 8
-  %var_2_51965179 = add i64 %var_2_51955078, -8
-  %var_2_51985280 = inttoptr i64 %var_2_51965179 to i32*
-  %var_2_51995381 = load i32, i32* %var_2_51985280, align 4
-  %var_2_52015482 = add i64 %var_2_51955078, -4
-  %var_2_52035583 = inttoptr i64 %var_2_52015482 to i32*
-  %var_2_52045684 = load i32, i32* %var_2_52035583, align 4
-  %var_2_52055785 = sub i32 %var_2_51995381, %var_2_52045684
-  %var_2_52205886 = lshr i32 %var_2_52055785, 31
-  %var_2_52225987 = lshr i32 %var_2_51995381, 31
-  %var_2_52236088 = lshr i32 %var_2_52045684, 31
-  %var_2_52246189 = xor i32 %var_2_52236088, %var_2_52225987
-  %var_2_52256290 = xor i32 %var_2_52205886, %var_2_52225987
-  %var_2_52266391 = add nuw nsw i32 %var_2_52256290, %var_2_52246189
-  %var_2_52276492 = icmp eq i32 %var_2_52266391, 2
-  %var_2_52296593 = icmp ne i32 %var_2_52205886, 0
-  %var_2_52306694 = xor i1 %var_2_52296593, %var_2_52276492
-  br i1 %var_2_52306694, label %block_40138f.lr.ph.preheader, label %block_401434
+  %var_2_51994668 = load i32, i32* %var_2_51984567, align 4
+  %var_2_52044971 = load i32, i32* %var_2_52034870, align 4
+  %var_2_52055072 = sub i32 %var_2_51994668, %var_2_52044971
+  %var_2_52205173 = lshr i32 %var_2_52055072, 31
+  %var_2_52225274 = lshr i32 %var_2_51994668, 31
+  %var_2_52235375 = lshr i32 %var_2_52044971, 31
+  %var_2_52245476 = xor i32 %var_2_52235375, %var_2_52225274
+  %var_2_52255577 = xor i32 %var_2_52205173, %var_2_52225274
+  %var_2_52265678 = add nuw nsw i32 %var_2_52255577, %var_2_52245476
+  %var_2_52275779 = icmp eq i32 %var_2_52265678, 2
+  %var_2_52295880 = icmp ne i32 %var_2_52205173, 0
+  %var_2_52305981 = xor i1 %var_2_52295880, %var_2_52275779
+  br i1 %var_2_52305981, label %block_40138f.lr.ph.preheader, label %block_401221
 
 block_40138f.lr.ph.preheader:                     ; preds = %block_40137c
   br label %block_40138f.lr.ph
 
 block_40138f.lr.ph:                               ; preds = %block_40138f.lr.ph.preheader, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7
-  %var_2_52045698 = phi i32 [ %var_2_520456, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_52045684, %block_40138f.lr.ph.preheader ]
-  %var_2_51995397 = phi i32 [ %var_2_519953, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_51995381, %block_40138f.lr.ph.preheader ]
-  %var_2_594 = phi i64 [ %var_2_519550, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_51955078, %block_40138f.lr.ph.preheader ]
-  %MEMORY.42.ph95 = phi %struct.Memory* [ %var_2_618, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %MEMORY.19, %block_40138f.lr.ph.preheader ]
-  %var_2_947 = sext i32 %var_2_51995397 to i64
+  %var_2_5195436539 = phi i64 [ %var_2_5195436538, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_5195436536, %block_40138f.lr.ph.preheader ]
+  %var_2_52044985 = phi i32 [ %var_2_520449, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_52044971, %block_40138f.lr.ph.preheader ]
+  %var_2_51994684 = phi i32 [ %var_2_519946, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_51994668, %block_40138f.lr.ph.preheader ]
+  %var_2_594 = phi i64 [ %var_2_519543, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %var_2_5195436536, %block_40138f.lr.ph.preheader ]
+  %MEMORY.42.ph82 = phi %struct.Memory* [ %var_2_618, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7 ], [ %MEMORY.19.ph, %block_40138f.lr.ph.preheader ]
+  %var_2_947 = sext i32 %var_2_51994684 to i64
   %var_2_948 = shl nsw i64 %var_2_947, 2
   %var_2_949 = add i64 %var_2_594, -1488
   %var_2_950 = add i64 %var_2_949, %var_2_948
@@ -2993,7 +1896,7 @@ block_40138f.lr.ph:                               ; preds = %block_40138f.lr.ph.
 
 block_40138f.preheader:                           ; preds = %block_40138f.lr.ph
   %var_2_4659 = add i64 %var_2_594, -1168
-  %var_2_4698 = sub i32 %var_2_52045698, %var_2_51995397
+  %var_2_4698 = sub i32 %var_2_52044985, %var_2_51994684
   %var_2_4723 = sext i32 %var_2_4698 to i64
   %var_2_4724 = shl nsw i64 %var_2_4723, 2
   %var_2_4666 = add i64 %var_2_4659, %var_2_4724
@@ -3023,20 +1926,20 @@ block_40138f.preheader.block_4013c6.split_crit_edge: ; preds = %block_40138f.pre
   %var_2_605 = shl i64 %var_2_604, 32
   %var_2_606 = ashr exact i64 %var_2_605, 32
   %var_2_607 = icmp eq i64 %var_2_604, %var_2_606
-  br i1 %var_2_607, label %var_2_610, label %var_2_608
+  br i1 %var_2_607, label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit7, label %var_2_608
 
 block_40138f.preheader.split:                     ; preds = %block_40138f.preheader
-  %var_2_5205.le101 = sub i32 %var_2_51995397, %var_2_52045698
-  %var_2_5220.le = lshr i32 %var_2_5205.le101, 31
-  %var_2_5222.le = lshr i32 %var_2_51995397, 31
-  %var_2_5223.le = lshr i32 %var_2_52045698, 31
-  %var_2_5224.le89 = xor i32 %var_2_5222.le, %var_2_5223.le
-  %var_2_5225.le85 = xor i32 %var_2_5220.le, %var_2_5222.le
-  %var_2_5226.le = add nuw nsw i32 %var_2_5225.le85, %var_2_5224.le89
-  %var_2_5227.le79 = icmp eq i32 %var_2_5226.le, 2
-  %var_2_5229.le77 = icmp ne i32 %var_2_5220.le, 0
-  %var_2_5230.le = xor i1 %var_2_5229.le77, %var_2_5227.le79
-  br i1 %var_2_5230.le, label %block_40138f.us.preheader, label %block_401434.loopexit
+  %var_2_5205.le66 = sub i32 %var_2_51994684, %var_2_52044985
+  %var_2_5220.le = lshr i32 %var_2_5205.le66, 31
+  %var_2_5222.le = lshr i32 %var_2_51994684, 31
+  %var_2_5223.le = lshr i32 %var_2_52044985, 31
+  %var_2_5224.le55 = xor i32 %var_2_5222.le, %var_2_5223.le
+  %var_2_5225.le51 = xor i32 %var_2_5220.le, %var_2_5222.le
+  %var_2_5226.le = add nuw nsw i32 %var_2_5225.le51, %var_2_5224.le55
+  %var_2_5227.le45 = icmp eq i32 %var_2_5226.le, 2
+  %var_2_5229.le43 = icmp ne i32 %var_2_5220.le, 0
+  %var_2_5230.le = xor i1 %var_2_5229.le43, %var_2_5227.le45
+  br i1 %var_2_5230.le, label %block_40138f.us.preheader, label %block_401221.outer.backedge
 
 block_40138f.us.preheader:                        ; preds = %block_40138f.preheader.split
   br label %block_40138f.us
@@ -3045,17 +1948,23 @@ block_40138f.us:                                  ; preds = %block_40138f.us.pre
   br label %block_40138f.us
 
 block_40138f.lr.ph.split.us:                      ; preds = %block_40138f.lr.ph
-  %var_2_5205.le = sub i32 %var_2_51995397, %var_2_52045698
-  %var_2_5220.le97 = lshr i32 %var_2_5205.le, 31
-  %var_2_5222.le95 = lshr i32 %var_2_51995397, 31
-  %var_2_5223.le93 = lshr i32 %var_2_52045698, 31
-  %var_2_5224.le = xor i32 %var_2_5222.le95, %var_2_5223.le93
-  %var_2_5225.le = xor i32 %var_2_5220.le97, %var_2_5222.le95
-  %var_2_5226.le81 = add nuw nsw i32 %var_2_5225.le, %var_2_5224.le
-  %var_2_5227.le = icmp eq i32 %var_2_5226.le81, 2
-  %var_2_5229.le = icmp ne i32 %var_2_5220.le97, 0
-  %var_2_5230.le74 = xor i1 %var_2_5229.le, %var_2_5227.le
-  br i1 %var_2_5230.le74, label %block_40138f.us.us.preheader, label %block_401434.loopexit
+  %var_2_5205.le = sub i32 %var_2_51994684, %var_2_52044985
+  %var_2_5220.le62 = lshr i32 %var_2_5205.le, 31
+  %var_2_5222.le60 = lshr i32 %var_2_51994684, 31
+  %var_2_5223.le58 = lshr i32 %var_2_52044985, 31
+  %var_2_5224.le = xor i32 %var_2_5222.le60, %var_2_5223.le58
+  %var_2_5225.le = xor i32 %var_2_5220.le62, %var_2_5222.le60
+  %var_2_5226.le47 = add nuw nsw i32 %var_2_5225.le, %var_2_5224.le
+  %var_2_5227.le = icmp eq i32 %var_2_5226.le47, 2
+  %var_2_5229.le = icmp ne i32 %var_2_5220.le62, 0
+  %var_2_5230.le40 = xor i1 %var_2_5229.le, %var_2_5227.le
+  br i1 %var_2_5230.le40, label %block_40138f.us.us.preheader, label %block_401221.outer.backedge
+
+block_401221.outer.backedge:                      ; preds = %block_40138f.lr.ph.split.us, %block_40138f.preheader.split, %block_401221.outer.loopexit
+  %var_2_5195436536.be = phi i64 [ %var_2_5195436539, %block_40138f.lr.ph.split.us ], [ %var_2_5195436539, %block_40138f.preheader.split ], [ %var_2_5195436538, %block_401221.outer.loopexit ]
+  %var_2_2458.pre.be = phi i64 [ %var_2_594, %block_40138f.lr.ph.split.us ], [ %var_2_594, %block_40138f.preheader.split ], [ %var_2_519543, %block_401221.outer.loopexit ]
+  %MEMORY.19.ph.be = phi %struct.Memory* [ %MEMORY.42.ph82, %block_40138f.lr.ph.split.us ], [ %MEMORY.42.ph82, %block_40138f.preheader.split ], [ %var_2_618, %block_401221.outer.loopexit ]
+  br label %block_401221.outer
 
 block_40138f.us.us.preheader:                     ; preds = %block_40138f.lr.ph.split.us
   br label %block_40138f.us.us
@@ -3065,12 +1974,13 @@ block_40138f.us.us:                               ; preds = %block_40138f.us.us.
 
 block_401618:                                     ; preds = %block_4015f8.us
   store i64 255, i64* %RAX, align 8, !tbaa !2428
+  %var_2_5671 = load i32, i32* %var_2_2221, align 4
+  %var_2_5672 = sext i32 %var_2_5671 to i64
+  store i64 %var_2_5672, i64* %RCX, align 8
   %var_2_5719 = load i32, i32* %EDX, align 4
   %var_2_5720 = zext i32 %var_2_5719 to i64
   %var_2_5722 = sext i32 %var_2_5719 to i64
   %var_2_5723 = and i64 %var_2_5722, -4294967296
-  %var_2_5725 = add i64 %var_2_2218, -2728
-  %var_2_5727 = inttoptr i64 %var_2_5725 to i32*
   %var_2_5728 = load i32, i32* %var_2_5727, align 4
   %var_2_5731 = sext i32 %var_2_5728 to i64
   %var_2_5733 = or i64 %var_2_5723, %var_2_5720
@@ -3078,196 +1988,133 @@ block_401618:                                     ; preds = %block_4015f8.us
   %var_2_5735 = shl i64 %var_2_5734, 32
   %var_2_5736 = ashr exact i64 %var_2_5735, 32
   %var_2_5737 = icmp eq i64 %var_2_5734, %var_2_5736
-  br i1 %var_2_5737, label %var_2_5740, label %var_2_5738
+  br i1 %var_2_5737, label %block_4015f8.outer, label %var_2_5738
 
 var_2_5738:                                       ; preds = %block_401618
   %var_2_5721 = load i64, i64* %PC, align 8
   %var_2_5730 = add i64 %var_2_5721, 11
-  %var_2_5739 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_5730, %struct.Memory* %MEMORY.17.ph) #13
-  %.pre243 = load i32, i32* %EDX, align 4
-  %.pre245 = load i64, i64* %RBP, align 8
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
+  %var_2_5739 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %var_2_5730, %struct.Memory* %MEMORY.17.ph.ph) #13
+  br label %block_4015f8.outer.outer
 
-var_2_5740:                                       ; preds = %block_401618
-  %var_2_5741 = srem i64 %var_2_5733, %var_2_5731
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_23, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_32, align 1
-  store i8 0, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_2_5744 = trunc i64 %var_2_5741 to i32
-  br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
-
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %var_2_5740, %var_2_5738
-  %var_2_5745 = phi i64 [ %.pre245, %var_2_5738 ], [ %var_2_2218, %var_2_5740 ]
-  %var_2_5747 = phi i32 [ %.pre243, %var_2_5738 ], [ %var_2_5744, %var_2_5740 ]
-  %var_2_5748 = phi %struct.Memory* [ %var_2_5739, %var_2_5738 ], [ %MEMORY.17.ph, %var_2_5740 ]
-  %var_2_5749 = sext i32 %var_2_5747 to i64
-  %var_2_5750 = shl nsw i64 %var_2_5749, 2
-  %var_2_5751 = add i64 %var_2_5750, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_5753 = inttoptr i64 %var_2_5751 to i32*
-  %var_2_5754 = load i32, i32* %var_2_5753, align 4
-  %var_2_5755 = xor i32 %var_2_5754, 1
-  %var_2_5756 = zext i32 %var_2_5755 to i64
-  store i64 %var_2_5756, i64* %RDX, align 8
-  store i8 0, i8* %var_2_16, align 1
-  %var_2_5757 = and i32 %var_2_5755, 255
-  %var_2_5758 = tail call i32 @llvm.ctpop.i32(i32 %var_2_5757) #10
-  %var_2_5759 = trunc i32 %var_2_5758 to i8
-  %var_2_5760 = and i8 %var_2_5759, 1
-  %var_2_5761 = xor i8 %var_2_5760, 1
-  store i8 %var_2_5761, i8* %var_2_23, align 1
-  %var_2_5762 = icmp eq i32 %var_2_5755, 0
-  %var_2_5763 = zext i1 %var_2_5762 to i8
-  store i8 %var_2_5763, i8* %var_2_32, align 1
-  %var_2_5764 = lshr i32 %var_2_5754, 31
-  %var_2_5765 = trunc i32 %var_2_5764 to i8
-  store i8 %var_2_5765, i8* %var_2_35, align 1
-  store i8 0, i8* %var_2_41, align 1
-  store i8 0, i8* %var_2_29, align 1
-  %sext = shl nuw i64 %var_2_5756, 32
-  %var_2_5766 = sext i32 %var_2_5755 to i64
-  store i64 %var_2_5766, i64* %RCX, align 8
-  %var_2_5767 = ashr exact i64 %sext, 30
-  %var_2_5768 = add i64 %var_2_5767, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 1056)
-  %var_2_5770 = inttoptr i64 %var_2_5768 to i32*
-  %var_2_5771 = load i32, i32* %var_2_5770, align 4
-  %var_2_5772 = zext i32 %var_2_5771 to i64
-  store i64 %var_2_5772, i64* %RDX, align 8
-  %var_2_5773 = add i64 %var_2_5745, -16
-  %var_2_5775 = inttoptr i64 %var_2_5773 to i32*
-  %var_2_5776 = load i32, i32* %var_2_5775, align 4
-  %var_2_5777 = add i32 %var_2_5776, %var_2_5771
-  %var_2_5778 = zext i32 %var_2_5777 to i64
-  store i64 %var_2_5778, i64* %RDX, align 8
-  %var_2_5779 = icmp ult i32 %var_2_5777, %var_2_5771
-  %var_2_5780 = icmp ult i32 %var_2_5777, %var_2_5776
-  %var_2_5781 = or i1 %var_2_5779, %var_2_5780
-  %var_2_5782 = zext i1 %var_2_5781 to i8
-  store i8 %var_2_5782, i8* %var_2_16, align 1
-  %var_2_5783 = and i32 %var_2_5777, 255
-  %var_2_5784 = tail call i32 @llvm.ctpop.i32(i32 %var_2_5783) #10
-  %var_2_5785 = trunc i32 %var_2_5784 to i8
-  %var_2_5786 = and i8 %var_2_5785, 1
-  %var_2_5787 = xor i8 %var_2_5786, 1
-  store i8 %var_2_5787, i8* %var_2_23, align 1
-  %var_2_5788 = xor i32 %var_2_5776, %var_2_5771
-  %var_2_5789 = xor i32 %var_2_5788, %var_2_5777
-  %var_2_5790 = lshr i32 %var_2_5789, 4
-  %var_2_5791 = trunc i32 %var_2_5790 to i8
-  %var_2_5792 = and i8 %var_2_5791, 1
-  store i8 %var_2_5792, i8* %var_2_29, align 1
-  %var_2_5793 = icmp eq i32 %var_2_5777, 0
-  %var_2_5794 = zext i1 %var_2_5793 to i8
-  store i8 %var_2_5794, i8* %var_2_32, align 1
-  %var_2_5795 = lshr i32 %var_2_5777, 31
-  %var_2_5796 = trunc i32 %var_2_5795 to i8
-  store i8 %var_2_5796, i8* %var_2_35, align 1
-  %var_2_5797 = lshr i32 %var_2_5771, 31
-  %var_2_5798 = lshr i32 %var_2_5776, 31
-  %var_2_5799 = xor i32 %var_2_5795, %var_2_5797
-  %var_2_5800 = xor i32 %var_2_5795, %var_2_5798
-  %var_2_5801 = add nuw nsw i32 %var_2_5799, %var_2_5800
-  %var_2_5802 = icmp eq i32 %var_2_5801, 2
-  %var_2_5803 = zext i1 %var_2_5802 to i8
-  store i8 %var_2_5803, i8* %var_2_41, align 1
-  store i32 %var_2_5777, i32* %var_2_5775, align 4
-  br label %block_4015f8.outer
-
-block_400c15:                                     ; preds = %block_400c15, %block_400c15.preheader
-  %var_2_5433 = load i32, i32* %var_2_5840, align 4
-  store i8 0, i8* %var_2_16, align 1
-  store i8 0, i8* %var_2_29, align 1
-  store i8 0, i8* %var_2_41, align 1
-  %var_4_4 = icmp sgt i32 %var_2_5433, 0
-  br i1 %var_4_4, label %block_400c15, label %block_400ccb.loopexit
+block_400c15:                                     ; preds = %block_400c15.preheader75, %block_400c15
+  br label %block_400c15
 
 block_400eef:                                     ; preds = %block_400eae, %block_400edb
   %var_2_3033.sink = phi i64 [ %var_2_3033, %block_400eae ], [ %var_2_2341, %block_400edb ]
   %var_2_3001.sink = phi i32 [ %var_2_3001, %block_400eae ], [ 0, %block_400edb ]
   %var_2_3035 = inttoptr i64 %var_2_3033.sink to i32*
   store i32 %var_2_3001.sink, i32* %var_2_3035, align 4
-  %var_2_5937 = load i64, i64* %RBP, align 8
-  %var_2_5938 = add i64 %var_2_5937, -4
+  br label %block_400ef6.outer.outer
+
+block_400ef6.outer.outer:                         ; preds = %var_2_1393, %block_400eef
+  %MEMORY.16.ph.ph = phi %struct.Memory* [ %var_2_1394, %var_2_1393 ], [ %MEMORY.20, %block_400eef ]
+  %var_2_1997.pre.pre = load i64, i64* %RBP, align 8
+  %var_2_1998 = add i64 %var_2_1997.pre.pre, -4
+  %var_2_2000 = inttoptr i64 %var_2_1998 to i32*
+  %var_2_2003 = add i64 %var_2_1997.pre.pre, -12
+  %var_2_2005 = inttoptr i64 %var_2_2003 to i32*
+  %var_2_2032 = add i64 %var_2_1997.pre.pre, -1328
+  %var_2_1667 = add i64 %var_2_1997.pre.pre, -1168
+  %var_2_1784 = add i64 %var_2_1997.pre.pre, -1488
+  %var_2_1380 = add i64 %var_2_1997.pre.pre, -2708
+  %var_2_1382 = inttoptr i64 %var_2_1380 to i32*
   br label %block_400ef6.outer
 
-block_400ef6.outer:                               ; preds = %block_400eef, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5
-  %var_2_1457.sink = phi i64 [ %var_2_1441, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5 ], [ %var_2_5938, %block_400eef ]
-  %var_2_1445.sink = phi i32 [ %var_2_1445, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5 ], [ 1, %block_400eef ]
-  %MEMORY.16.ph = phi %struct.Memory* [ %var_2_1403, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit5 ], [ %MEMORY.20, %block_400eef ]
-  %var_2_1459 = inttoptr i64 %var_2_1457.sink to i32*
-  store i32 %var_2_1445.sink, i32* %var_2_1459, align 4
-  %var_2_1997.pre = load i64, i64* %RBP, align 8
-  %var_2_1998 = add i64 %var_2_1997.pre, -4
-  %var_2_2000 = inttoptr i64 %var_2_1998 to i32*
-  %var_2_2003 = add i64 %var_2_1997.pre, -12
-  %var_2_2005 = inttoptr i64 %var_2_2003 to i32*
-  %var_2_2032 = add i64 %var_2_1997.pre, -1328
-  %var_2_1784 = add i64 %var_2_1997.pre, -1488
-  %var_2_1667 = add i64 %var_2_1997.pre, -1168
-  br label %block_400ef6
+block_400ef6.outer:                               ; preds = %block_400ef6.outer.outer, %block_400f4e.us-lcssa.us
+  %var_2_2001 = load i32, i32* %var_2_2000, align 4
+  %var_2_2006 = load i32, i32* %var_2_2005, align 4
+  %var_2_2007 = add i32 %var_2_2006, 1
+  %var_2_2030 = sext i32 %var_2_2007 to i64
+  %var_2_2031 = shl nsw i64 %var_2_2030, 2
+  %var_2_2033 = add i64 %var_2_2032, %var_2_2031
+  %var_2_2035 = inttoptr i64 %var_2_2033 to i32*
+  %var_2_2036 = load i32, i32* %var_2_2035, align 4
+  %var_2_2037 = sub i32 %var_2_2001, %var_2_2036
+  %var_2_2050 = icmp eq i32 %var_2_2037, 0
+  %var_2_2052 = lshr i32 %var_2_2037, 31
+  %var_2_2054 = lshr i32 %var_2_2001, 31
+  %var_2_2055 = lshr i32 %var_2_2036, 31
+  %var_2_2056 = xor i32 %var_2_2055, %var_2_2054
+  %var_2_2057 = xor i32 %var_2_2052, %var_2_2054
+  %var_2_2058 = add nuw nsw i32 %var_2_2057, %var_2_2056
+  %var_2_2059 = icmp eq i32 %var_2_2058, 2
+  %var_2_2061 = icmp ne i32 %var_2_2052, 0
+  %var_2_2062 = xor i1 %var_2_2061, %var_2_2059
+  %.demorgan274 = or i1 %var_2_2050, %var_2_2062
+  %var_2_1673 = shl nsw i64 %var_2_2030, 6
+  %var_2_1706 = sext i32 %var_2_2001 to i64
+  %var_2_1707 = shl nsw i64 %var_2_1706, 2
+  %var_2_1674 = add i64 %var_2_1667, %var_2_1707
+  %var_2_1708 = add i64 %var_2_1674, %var_2_1673
+  %var_2_1710 = inttoptr i64 %var_2_1708 to i32*
+  br i1 %.demorgan274, label %block_400ef6.outer.split.us, label %block_400ffb.loopexit
+
+block_400ef6.outer.split.us:                      ; preds = %block_400ef6.outer
+  %var_2_1758 = sub i32 %var_2_2007, %var_2_2001
+  %var_2_1782 = sext i32 %var_2_1758 to i64
+  %var_2_1783 = shl nsw i64 %var_2_1782, 2
+  %var_2_1785 = add i64 %var_2_1784, %var_2_1783
+  %var_2_1787 = inttoptr i64 %var_2_1785 to i32*
+  %var_2_1788.us = load i32, i32* %var_2_1787, align 4
+  %var_2_1802.us = icmp eq i32 %var_2_1788.us, -1
+  br i1 %var_2_1802.us, label %block_400f0f.us.us.preheader, label %block_400f0f.us.preheader
+
+block_400f0f.us.us.preheader:                     ; preds = %block_400ef6.outer.split.us
+  br label %block_400f0f.us.us
+
+block_400f0f.us.preheader:                        ; preds = %block_400ef6.outer.split.us
+  %var_2_1711.us.pre = load i32, i32* %var_2_1710, align 4
+  br label %block_400f0f.us
+
+block_400f0f.us.us:                               ; preds = %block_400f0f.us.us.preheader, %block_400f0f.us.us
+  br label %block_400f0f.us.us
+
+block_400f0f.us:                                  ; preds = %block_400f0f.us.preheader, %block_400f0f.us
+  %var_2_1711.us = phi i32 [ %var_2_1711.us.pre, %block_400f0f.us.preheader ], [ 0, %block_400f0f.us ]
+  %var_2_1717.us = icmp eq i32 %var_2_1711.us, 0
+  br i1 %var_2_1717.us, label %block_400f0f.us, label %block_400f4e.us-lcssa.us
+
+block_400f4e.us-lcssa.us:                         ; preds = %block_400f0f.us
+  store i64 255, i64* %RAX, align 8, !tbaa !2428
+  %var_2_1232 = load i32, i32* %var_2_2005, align 4
+  %var_2_1233 = add i32 %var_2_1232, 1
+  %var_2_1257 = load i32, i32* %var_2_2000, align 4
+  %var_2_1258 = sub i32 %var_2_1233, %var_2_1257
+  %var_2_1282 = sext i32 %var_2_1258 to i64
+  store i64 %var_2_1282, i64* %RSI, align 8
+  %var_2_1291 = load i32, i32* %var_2_2005, align 4
+  %var_2_1292 = add i32 %var_2_1291, 1
+  %var_2_1294 = sext i32 %var_2_1292 to i64
+  %var_2_1295 = shl nsw i64 %var_2_1294, 6
+  store i64 %var_2_1295, i64* %RSI, align 8
+  %var_2_1328 = load i32, i32* %var_2_2000, align 4
+  %var_2_1329 = sext i32 %var_2_1328 to i64
+  store i64 %var_2_1329, i64* %RSI, align 8
+  %var_2_1374 = load i32, i32* %EDX, align 4
+  %var_2_1375 = zext i32 %var_2_1374 to i64
+  %var_2_1377 = sext i32 %var_2_1374 to i64
+  %var_2_1378 = and i64 %var_2_1377, -4294967296
+  %var_2_1383 = load i32, i32* %var_2_1382, align 4
+  %var_2_1386 = sext i32 %var_2_1383 to i64
+  %var_2_1388 = or i64 %var_2_1378, %var_2_1375
+  %var_2_1389 = sdiv i64 %var_2_1388, %var_2_1386
+  %var_2_1390 = shl i64 %var_2_1389, 32
+  %var_2_1391 = ashr exact i64 %var_2_1390, 32
+  %var_2_1392 = icmp eq i64 %var_2_1389, %var_2_1391
+  br i1 %var_2_1392, label %block_400ef6.outer, label %var_2_1393
 
 block_401811:                                     ; preds = %block_401811.preheader, %block_401855
-  %var_2_623434 = phi i64 [ %var_2_6234, %block_401855 ], [ %var_2_623431, %block_401811.preheader ]
-  %var_2_620933 = phi i32 [ %var_2_6209, %block_401855 ], [ %var_2_620921, %block_401811.preheader ]
-  %var_2_620832 = phi i32* [ %var_2_6208, %block_401855 ], [ %var_2_620820, %block_401811.preheader ]
-  %var_2_5943 = sext i32 %var_2_620933 to i64
+  %var_2_620541 = phi i64 [ %var_2_6205, %block_401855 ], [ %var_2_620513, %block_401811.preheader ]
+  %var_2_5974 = phi i32 [ %var_2_6209, %block_401855 ], [ %var_2_620916, %block_401811.preheader ]
+  %var_2_5943 = sext i32 %var_2_5974 to i64
   %var_2_5944 = shl nsw i64 %var_2_5943, 2
   %var_2_5945 = add i64 %var_2_5944, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
   %var_2_5947 = inttoptr i64 %var_2_5945 to i32*
   %var_2_5948 = load i32, i32* %var_2_5947, align 4
-  %var_2_5949 = add i32 %var_2_5948, 1
-  %var_2_5950 = icmp ne i32 %var_2_5948, -1
-  %var_2_5951 = zext i1 %var_2_5950 to i8
-  store i8 %var_2_5951, i8* %var_2_16, align 1
-  %var_2_5952 = and i32 %var_2_5949, 255
-  %var_2_5953 = tail call i32 @llvm.ctpop.i32(i32 %var_2_5952) #10
-  %var_2_5954 = trunc i32 %var_2_5953 to i8
-  %var_2_5955 = and i8 %var_2_5954, 1
-  %var_2_5956 = xor i8 %var_2_5955, 1
-  store i8 %var_2_5956, i8* %var_2_23, align 1
-  %var_2_5957 = xor i32 %var_2_5948, 16
-  %var_2_5958 = xor i32 %var_2_5957, %var_2_5949
-  %var_2_5959 = lshr i32 %var_2_5958, 4
-  %var_2_5960 = trunc i32 %var_2_5959 to i8
-  %var_2_5961 = and i8 %var_2_5960, 1
-  store i8 %var_2_5961, i8* %var_2_29, align 1
-  %var_2_5962 = icmp eq i32 %var_2_5949, 0
-  %var_2_5963 = zext i1 %var_2_5962 to i8
-  store i8 %var_2_5963, i8* %var_2_32, align 1
-  %var_2_5964 = lshr i32 %var_2_5949, 31
-  %var_2_5965 = trunc i32 %var_2_5964 to i8
-  store i8 %var_2_5965, i8* %var_2_35, align 1
-  %var_2_5966 = lshr i32 %var_2_5948, 31
-  %var_2_5967 = xor i32 %var_2_5966, 1
-  %var_2_5968 = xor i32 %var_2_5964, %var_2_5966
-  %var_2_5969 = add nuw nsw i32 %var_2_5968, %var_2_5967
-  %var_2_5970 = icmp eq i32 %var_2_5969, 2
-  %var_2_5971 = zext i1 %var_2_5970 to i8
-  store i8 %var_2_5971, i8* %var_2_41, align 1
-  %.v278 = select i1 %var_2_5962, i64 53, i64 18
-  %var_2_5972 = add i64 %.v278, %var_2_623434
-  %var_2_5973 = add i64 %var_2_5972, 4
-  store i64 %var_2_5973, i64* %PC, align 8
-  %var_2_5974 = load i32, i32* %var_2_620832, align 4
-  %var_2_5975 = sext i32 %var_2_5974 to i64
-  %var_2_5976 = shl nsw i64 %var_2_5975, 2
-  %var_2_5977 = add i64 %var_2_5976, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 32)
-  br i1 %var_2_5962, label %block_401855, label %block_401823
+  %var_2_5962 = icmp eq i32 %var_2_5948, -1
+  br i1 %var_2_5962, label %block_401846, label %block_401855
 
-block_401332:                                     ; preds = %block_401312
-  %var_2_6151 = sext i32 %var_2_4633 to i64
-  %var_2_6152 = shl nsw i64 %var_2_6151, 2
-  %var_2_6153 = add i64 %var_2_6152, add (i64 ptrtoint (%seg_603060__bss_type* @seg_603060__bss to i64), i64 2080)
-  %var_2_6155 = inttoptr i64 %var_2_6153 to i32*
-  %var_2_6156 = load i32, i32* %var_2_6155, align 4
-  br label %block_401377.sink.split
-
-block_400ccb.loopexit:                            ; preds = %block_400c15
-  br label %block_400ccb
-
-block_400ccb:                                     ; preds = %block_400ccb.loopexit, %block_400bf2
+block_400ccb:                                     ; preds = %block_400c15.preheader, %block_400bf2
   %var_2_2347 = add i64 %var_2_2346, -4
   %var_2_2349 = inttoptr i64 %var_2_2347 to i32*
   %var_2_2350 = load i32, i32* %var_2_2349, align 4
@@ -3296,29 +2143,131 @@ block_401203.loopexit:                            ; preds = %block_401114.backed
   %var_2_6248.pre = load i32, i32* %var_2_1852, align 4
   br label %block_401203
 
-block_401203:                                     ; preds = %block_401203.loopexit, %block_4010bd
-  %var_2_4357106 = phi i32 [ %var_2_4803, %block_4010bd ], [ %var_2_3291, %block_401203.loopexit ]
-  %var_2_6248 = phi i32 [ %var_2_4808, %block_4010bd ], [ %var_2_6248.pre, %block_401203.loopexit ]
-  %MEMORY.25.lcssa = phi %struct.Memory* [ %MEMORY.27, %block_4010bd ], [ %MEMORY.13.ph, %block_401203.loopexit ]
-  %var_2_4353103 = phi i64 [ %var_2_4799, %block_4010bd ], [ %var_2_1844, %block_401203.loopexit ]
-  %var_2_6240 = add i64 %var_2_4353103, -1492
+block_401203:                                     ; preds = %block_401203.loopexit, %block_40105e.preheader.split
+  %var_2_435790 = phi i32 [ %var_2_4803, %block_40105e.preheader.split ], [ %var_2_3291, %block_401203.loopexit ]
+  %var_2_6248 = phi i32 [ %var_2_4808, %block_40105e.preheader.split ], [ %var_2_6248.pre, %block_401203.loopexit ]
+  %MEMORY.25.lcssa = phi %struct.Memory* [ %MEMORY.27, %block_40105e.preheader.split ], [ %MEMORY.13.ph.ph, %block_401203.loopexit ]
+  %var_2_2458.pre.pre = phi i64 [ %var_2_4799, %block_40105e.preheader.split ], [ %var_2_1155.pre, %block_401203.loopexit ]
+  %var_2_6240 = add i64 %var_2_2458.pre.pre, -1492
   %var_2_6242 = inttoptr i64 %var_2_6240 to i32*
   %var_2_6243 = load i32, i32* %var_2_6242, align 4
   %var_2_6249 = sext i32 %var_2_6248 to i64
   %var_2_6250 = shl nsw i64 %var_2_6249, 2
-  %var_2_6251 = add i64 %var_2_4353103, -1328
+  %var_2_6251 = add i64 %var_2_2458.pre.pre, -1328
   %var_2_6252 = add i64 %var_2_6251, %var_2_6250
   %var_2_6254 = inttoptr i64 %var_2_6252 to i32*
   %var_2_6255 = load i32, i32* %var_2_6254, align 4
   %var_2_6269 = icmp eq i32 %var_2_6243, %var_2_6255
-  br i1 %var_2_6269, label %block_401221.preheader, label %block_401713
+  br i1 %var_2_6269, label %block_401221.outer.preheader, label %block_401713
 
-block_401221.preheader:                           ; preds = %block_401203
-  br label %block_401221
+block_401221.outer.preheader:                     ; preds = %block_401203
+  br label %block_401221.outer
 
 block_4014f5:                                     ; preds = %block_4014e1
-  %var_2_6298 = add i64 %var_2_6297, -8
-  br label %block_401513.sink.split
+  %var_2_6284 = sext i32 %var_2_4848 to i64
+  %var_2_6285 = shl nsw i64 %var_2_6284, 2
+  %var_2_6286 = add i64 %var_2_4844, -1568
+  %var_2_6287 = add i64 %var_2_6286, %var_2_6285
+  %var_2_6289 = inttoptr i64 %var_2_6287 to i32*
+  %var_2_6290 = load i32, i32* %var_2_6289, align 4
+  %var_2_6291 = sext i32 %var_2_6290 to i64
+  %var_2_6292 = shl nsw i64 %var_2_6291, 2
+  %var_2_6293 = add i64 %var_2_4844, -2640
+  %var_2_6294 = add i64 %var_2_6293, %var_2_6292
+  %var_2_6296 = inttoptr i64 %var_2_6294 to i32*
+  store i32 1, i32* %var_2_6296, align 4
+  br label %block_401513.outer.outer
+
+block_401513.outer.outer:                         ; preds = %var_2_1571, %block_4014f5
+  %MEMORY.34.ph.ph = phi %struct.Memory* [ %var_2_1572, %var_2_1571 ], [ %MEMORY.38, %block_4014f5 ]
+  %var_2_4516.pre = load i64, i64* %RBP, align 8
+  %var_2_4517 = add i64 %var_2_4516.pre, -8
+  %var_2_4519 = inttoptr i64 %var_2_4517 to i32*
+  %var_2_4522 = add i64 %var_2_4516.pre, -12
+  %var_2_4524 = inttoptr i64 %var_2_4522 to i32*
+  %var_2_4528 = add i64 %var_2_4516.pre, -1328
+  %var_2_6172 = add i64 %var_2_4516.pre, -1616
+  %var_2_1558 = add i64 %var_2_4516.pre, -2724
+  %var_2_1560 = inttoptr i64 %var_2_1558 to i32*
+  br label %block_401513.outer
+
+block_401513.outer:                               ; preds = %block_401513.outer.outer, %block_401539.us-lcssa.us
+  %var_2_4520 = load i32, i32* %var_2_4519, align 4
+  %var_2_4525 = load i32, i32* %var_2_4524, align 4
+  %var_2_4526 = sext i32 %var_2_4525 to i64
+  %var_2_4527 = shl nsw i64 %var_2_4526, 2
+  %var_2_4529 = add i64 %var_2_4528, %var_2_4527
+  %var_2_4531 = inttoptr i64 %var_2_4529 to i32*
+  %var_2_4532 = load i32, i32* %var_2_4531, align 4
+  %var_2_4533 = sub i32 %var_2_4520, %var_2_4532
+  %var_2_4546 = icmp eq i32 %var_2_4533, 0
+  %var_2_4548 = lshr i32 %var_2_4533, 31
+  %var_2_4550 = lshr i32 %var_2_4520, 31
+  %var_2_4551 = lshr i32 %var_2_4532, 31
+  %var_2_4552 = xor i32 %var_2_4551, %var_2_4550
+  %var_2_4553 = xor i32 %var_2_4548, %var_2_4550
+  %var_2_4554 = add nuw nsw i32 %var_2_4553, %var_2_4552
+  %var_2_4555 = icmp eq i32 %var_2_4554, 2
+  %var_2_4557 = icmp ne i32 %var_2_4548, 0
+  %var_2_4558 = xor i1 %var_2_4557, %var_2_4555
+  %.demorgan266 = or i1 %var_2_4546, %var_2_4558
+  br i1 %.demorgan266, label %block_401513.us.preheader, label %block_401513.outer.split
+
+block_401513.us.preheader:                        ; preds = %block_401513.outer
+  %var_2_6170 = sext i32 %var_2_4520 to i64
+  %var_2_6171 = shl nsw i64 %var_2_6170, 2
+  %var_2_6173 = add i64 %var_2_6172, %var_2_6171
+  %var_2_6175 = inttoptr i64 %var_2_6173 to i32*
+  %var_2_6176.us.pre = load i32, i32* %var_2_6175, align 4
+  br label %block_401513.us
+
+block_401513.us:                                  ; preds = %block_401513.us, %block_401513.us.preheader
+  %var_2_6176.us = phi i32 [ %var_2_6176.us.pre, %block_401513.us.preheader ], [ -1, %block_401513.us ]
+  %var_2_6190.us = icmp eq i32 %var_2_6176.us, -1
+  br i1 %var_2_6190.us, label %block_401513.us, label %block_401539.us-lcssa.us
+
+block_401539.us-lcssa.us:                         ; preds = %block_401513.us
+  store i64 255, i64* %RAX, align 8, !tbaa !2428
+  %var_2_1494 = load i32, i32* %var_2_4519, align 4
+  %var_2_1495 = sext i32 %var_2_1494 to i64
+  store i64 %var_2_1495, i64* %RCX, align 8
+  %var_2_1552 = load i32, i32* %EDX, align 4
+  %var_2_1553 = zext i32 %var_2_1552 to i64
+  %var_2_1555 = sext i32 %var_2_1552 to i64
+  %var_2_1556 = and i64 %var_2_1555, -4294967296
+  %var_2_1561 = load i32, i32* %var_2_1560, align 4
+  %var_2_1564 = sext i32 %var_2_1561 to i64
+  %var_2_1566 = or i64 %var_2_1556, %var_2_1553
+  %var_2_1567 = sdiv i64 %var_2_1566, %var_2_1564
+  %var_2_1568 = shl i64 %var_2_1567, 32
+  %var_2_1569 = ashr exact i64 %var_2_1568, 32
+  %var_2_1570 = icmp eq i64 %var_2_1567, %var_2_1569
+  br i1 %var_2_1570, label %block_401513.outer, label %var_2_1571
+
+block_401513.outer.split:                         ; preds = %block_401513.outer
+  %var_2_2093 = add i64 %var_2_4516.pre, -4
+  %var_2_2095 = inttoptr i64 %var_2_2093 to i32*
+  %var_2_2096 = load i32, i32* %var_2_2095, align 4
+  %var_2_2097 = sext i32 %var_2_2096 to i64
+  %var_2_2098 = shl nsw i64 %var_2_2097, 2
+  %var_2_2099 = add i64 %var_2_4516.pre, -1568
+  %var_2_2100 = add i64 %var_2_2099, %var_2_2098
+  %var_2_2102 = inttoptr i64 %var_2_2100 to i32*
+  %var_2_2103 = load i32, i32* %var_2_2102, align 4
+  %var_2_2104 = sext i32 %var_2_2103 to i64
+  %var_2_2105 = shl nsw i64 %var_2_2104, 2
+  %var_2_2106 = add i64 %var_2_4516.pre, -2640
+  %var_2_2107 = add i64 %var_2_2106, %var_2_2105
+  %var_2_2109 = inttoptr i64 %var_2_2107 to i32*
+  %var_2_2110 = load i32, i32* %var_2_2109, align 4
+  %var_2_2116 = icmp eq i32 %var_2_2110, 0
+  br i1 %var_2_2116, label %block_4016fb, label %block_4015bc
+
+block_401300:                                     ; preds = %block_4012ab.block_401300_crit_edge, %block_4012bd
+  %var_2_6307 = phi i32 [ %var_2_6307.pre, %block_4012ab.block_401300_crit_edge ], [ %var_2_2604, %block_4012bd ]
+  %var_2_6308 = sext i32 %var_2_6307 to i64
+  store i64 %var_2_6308, i64* %RAX, align 8
+  br label %block_401377
 }
 
 ; Function Attrs: noinline nounwind

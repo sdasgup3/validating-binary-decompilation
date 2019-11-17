@@ -260,6 +260,24 @@ CompositionalDecompiler::handleJMPDefns(const vector<string> &local_defn) {
   return retval;
 }
 
+vector<string> CompositionalDecompiler::addAlwaysInlineAttribute(
+    const vector<string> &local_defn) {
+  vector<string> retval;
+  for (auto &line : local_defn) {
+
+    if (string::npos == line.find("define ")) {
+      retval.push_back(line);
+      continue;
+    }
+
+    auto repl_line = std::regex_replace(line, std::regex("(define.*) \\{"),
+                                        "$1 alwaysinline {");
+    retval.push_back(repl_line);
+  }
+
+  return retval;
+}
+
 vector<string>
 CompositionalDecompiler::handleJCCDefns(const vector<string> &local_defn) {
   vector<string> retval;
@@ -463,7 +481,7 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
 
   // Extract the data access operand
   bool is_mem_opr_rip_offset = false;
-  int32_t rip_disp = 0;
+  int32_t mem_disp = 0;
   if (is_any_operand_mem_type(instr)) {
     // For data accesses like movsd 0xc8(%rip), %xmm0
     // Single instr decompilation should always generate a ptr2int
@@ -471,9 +489,10 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
     auto memIndex = instr.mem_index();
     const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
     is_mem_opr_rip_offset = M_OPR.rip_offset();
-    if (is_mem_opr_rip_offset) {
-      rip_disp = M_OPR.get_disp();
-    }
+    mem_disp = M_OPR.get_disp();
+    // if (is_mem_opr_rip_offset) {
+    //   rip_disp = M_OPR.get_disp();
+    // }
     opr << M_OPR;
 
   } else if (is_any_operand_imm_type(instr)) {
@@ -532,21 +551,25 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
 
   // If relocation information is available, then do the right thing!
   bool immOperand = false;
-  bool isGlobalAccess = false;
   uint64_t hexInt = 0;
   string hexIntStr = "";
+  // bool isGlobalAccess = false;
+  bool isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
 
   if (is_hex_string(opr.str())) {
     immOperand = true;
-    isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
     hexInt = hex_to_int(opr.str());
     hexIntStr = to_string(hexInt);
   }
 
-  if (is_mem_opr_rip_offset) {
-    isGlobalAccess = true;
-    hexInt = currSize + rip_disp;
-    hexIntStr = to_string(hexInt);
+  if (mem_disp != 0) {
+    if (is_mem_opr_rip_offset) {
+      hexInt = currSize + mem_disp;
+      hexIntStr = to_string(hexInt);
+    } else {
+      hexInt = mem_disp;
+      hexIntStr = to_string(hexInt);
+    }
   }
 
   for (auto &line : local_defn) {
@@ -566,15 +589,15 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
       string globalType = "%G_" + addrExpr + "_type";
       string globalName = "@G_" + addrExpr;
 
-      if (!immOperand) {
-        auto replace_str =
-            "ptrtoint( " + globalType + "* " + globalName + " to";
-        auto repl_line =
-            regex_replace(line, regex("ptrtoint.*?to"), replace_str);
-        retval.push_back(repl_line);
+      // if (!immOperand) {
+      //   auto replace_str =
+      //       "ptrtoint( " + globalType + "* " + globalName + " to";
+      //   auto repl_line =
+      //       regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+      //   retval.push_back(repl_line);
 
-        continue;
-      }
+      //   continue;
+      // }
 
       if (isGlobalAccess) {
         // CASE 4: golden: address, mcsema: address
@@ -986,9 +1009,10 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
     mod_def = handleCALLDefns(uniq_local_defn);
   }
 
+  mod_def = addAlwaysInlineAttribute(mod_def);
+
   if (is_any_operand_mem_type(instr) || is_any_operand_imm_type(instr)) {
-    mod_def =
-        handleDataSectionAccessDefns(instr, uniq_local_defn, currRIP, currSize);
+    mod_def = handleDataSectionAccessDefns(instr, mod_def, currRIP, currSize);
   }
 
   for (auto line : mod_def) {

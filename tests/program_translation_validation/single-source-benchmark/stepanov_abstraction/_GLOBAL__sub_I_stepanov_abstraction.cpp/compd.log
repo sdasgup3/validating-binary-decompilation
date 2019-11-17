@@ -786,5 +786,5 @@ Decompiling Function: _GLOBAL__sub_I_stepanov_abstraction.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.41user 0.05system 0:00.48elapsed 94%CPU (0avgtext+0avgdata 10240maxresident)k
-0inputs+200outputs (0major+8960minor)pagefaults 0swaps
+0.42user 0.04system 0:00.48elapsed 95%CPU (0avgtext+0avgdata 10160maxresident)k
+0inputs+200outputs (0major+8946minor)pagefaults 0swaps

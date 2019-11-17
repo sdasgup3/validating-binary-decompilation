@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpn6wsc04h-target.ll'
+; ModuleID = '/tmp/tmp4mc6rt17-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1742,7 +1742,10 @@ block_400c2d.loopexit:                            ; preds = %block_400ba6.loopex
   br label %block_400c2d
 
 block_400c2d:                                     ; preds = %block_400c2d.loopexit, %block_400b9f
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400b0d:                                     ; preds = %block_400b0d.preheader, %block_400b01.loopexit
   %var_2_40314 = phi i32 [ %var_2_20024.pre, %block_400b01.loopexit ], [ %var_2_40359, %block_400b0d.preheader ]

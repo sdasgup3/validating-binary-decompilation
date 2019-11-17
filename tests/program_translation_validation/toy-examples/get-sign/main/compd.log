@@ -488,6 +488,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x0__MINUS0x4__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4004ed --size 7
 Decompiling instr:movl $0x0, -0x4(%rbp) Done...
 
 
@@ -572,5 +574,5 @@ Decompiling Function: main Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.08user 0.01system 0:00.45elapsed 21%CPU (0avgtext+0avgdata 10372maxresident)k
-0inputs+144outputs (0major+5382minor)pagefaults 0swaps
+0.14user 0.02system 0:01.01elapsed 16%CPU (0avgtext+0avgdata 10340maxresident)k
+0inputs+144outputs (0major+5458minor)pagefaults 0swaps

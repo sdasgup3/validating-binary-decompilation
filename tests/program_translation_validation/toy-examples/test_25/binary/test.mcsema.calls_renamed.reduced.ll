@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp9cpq91_n-target.ll'
+; ModuleID = '/tmp/tmp4r134fjp-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1014,7 +1014,7 @@ block_4004c1:                                     ; preds = %block_4004b0
 }
 
 ; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400560_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+define %struct.Memory* @sub_400560_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #6 {
 block_400560:
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %var_2_81 = tail call fastcc %struct.Memory* @ext_601058_strlen(%struct.State* nonnull %0, %struct.Memory* %2)
@@ -1066,9 +1066,10 @@ block_4005e2.loopexit:                            ; preds = %block_4005a2
   br label %block_4005e2
 
 block_4005e2:                                     ; preds = %block_4005e2.loopexit, %block_400560
-  %MEMORY.0.lcssa = phi %struct.Memory* [ %var_2_81, %block_400560 ], [ %var_2_141, %block_4005e2.loopexit ]
-  %var_2_242 = tail call fastcc %struct.Memory* @ext_601060_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0.lcssa)
-  ret %struct.Memory* %var_2_242
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline norecurse nounwind
@@ -1650,7 +1651,7 @@ define dllexport void @main() #9 {
 }
 
 ; Function Attrs: nounwind
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) #10 {
+define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory* returned) #10 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 

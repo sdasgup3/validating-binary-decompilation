@@ -621,5 +621,5 @@ Decompiling Function: Rand Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.16user 0.04system 0:01.31elapsed 15%CPU (0avgtext+0avgdata 10340maxresident)k
-0inputs+168outputs (0major+6232minor)pagefaults 0swaps
+0.17user 0.03system 0:01.41elapsed 14%CPU (0avgtext+0avgdata 10268maxresident)k
+0inputs+168outputs (0major+6240minor)pagefaults 0swaps

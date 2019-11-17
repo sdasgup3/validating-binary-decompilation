@@ -527,6 +527,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWItE2RnItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__cx__MINUS0x2__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 41108e --size 4
 Decompiling instr:movw %cx, -0x2(%rbp) Done...
 
 
@@ -546,6 +548,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWItE2RnItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__ax__MINUS0x4__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 411092 --size 4
 Decompiling instr:movw %ax, -0x4(%rbp) Done...
 
 
@@ -565,6 +569,8 @@ Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
 FuncCache inserted: _ZN12_GLOBAL__N_1L11CVTSD2SI_32I3MVnI7vec64_tEXadL_ZNS_L18FTruncTowardZero64EdEEEEP6MemoryS5_R5State3RnWImET_
 FuncCache inserted: routine_cvttsd2si_0x208fea__rip____esi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 411096 --size 8
 Global Access Mismatch: 2134002 Relocation: Address, McSema: Constant
 Decompiling instr:cvttsd2si 0x208fea(%rip), %esi Done...
 
@@ -623,6 +629,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movzwl_MINUS0x4__rbp____esi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4110a4 --size 4
 Decompiling instr:movzwl -0x4(%rbp), %esi Done...
 
 
@@ -661,6 +669,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3LEAI3RnWImE2MnIhEmEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_leaq_MINUS0x2__rbp____rdi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4110ad --size 4
 Decompiling instr:leaq -0x2(%rbp), %rdi Done...
 
 
@@ -680,6 +690,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3LEAI3RnWImE2MnIhEmEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_leaq_MINUS0x6__rbp____rsi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4110b1 --size 4
 Decompiling instr:leaq -0x6(%rbp), %rsi Done...
 
 
@@ -758,6 +770,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWItE2RnItEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movw__ax__MINUS0x6__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4110c1 --size 4
 Decompiling instr:movw %ax, -0x6(%rbp) Done...
 
 
@@ -921,6 +935,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__eax__MINUS0xc__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4110ea --size 3
 Decompiling instr:movl %eax, -0xc(%rbp) Done...
 
 
@@ -989,5 +1005,5 @@ Decompiling Function: _Z26check_shifted_variable_sumIt19custom_add_variableItEEv
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.52user 0.09system 0:06.81elapsed 9%CPU (0avgtext+0avgdata 10524maxresident)k
-0inputs+272outputs (0major+12651minor)pagefaults 0swaps
+0.53user 0.09system 0:14.22elapsed 4%CPU (0avgtext+0avgdata 10428maxresident)k
+0inputs+280outputs (0major+13146minor)pagefaults 0swaps

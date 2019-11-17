@@ -475,6 +475,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L6FLDmemI2MnI9float80_tEEEP6MemoryS5_R5State3RnWIdET_2InImESB_ItE
 FuncCache inserted: routine_fldt_0x10__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400528 --size 3
 Decompiling instr:fldt 0x10(%rbp) Done...
 
 
@@ -494,6 +496,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE
 FuncCache inserted: routine_fstpt_MINUS0x10__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40052b --size 3
 Decompiling instr:fstpt -0x10(%rbp) Done...
 
 
@@ -513,6 +517,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L6FLDmemI2MnI9float80_tEEEP6MemoryS5_R5State3RnWIdET_2InImESB_ItE
 FuncCache inserted: routine_fldt_MINUS0x10__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40052e --size 3
 Decompiling instr:fldt -0x10(%rbp) Done...
 
 
@@ -551,6 +557,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE
 FuncCache inserted: routine_fstpt___rax_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400534 --size 2
 Decompiling instr:fstpt (%rax) Done...
 
 
@@ -646,6 +654,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__eax__MINUS0x14__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400541 --size 3
 Decompiling instr:movl %eax, -0x14(%rbp) Done...
 
 
@@ -665,6 +675,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L4FILDI2MnIjEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE
 FuncCache inserted: routine_fildl_MINUS0x14__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400544 --size 3
 Decompiling instr:fildl -0x14(%rbp) Done...
 
 
@@ -730,5 +742,5 @@ Decompiling Function: DoDemoFpu1 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.24user 0.04system 0:00.72elapsed 40%CPU (0avgtext+0avgdata 10592maxresident)k
-0inputs+216outputs (0major+8186minor)pagefaults 0swaps
+0.27user 0.04system 0:01.92elapsed 16%CPU (0avgtext+0avgdata 10420maxresident)k
+0inputs+216outputs (0major+8586minor)pagefaults 0swaps

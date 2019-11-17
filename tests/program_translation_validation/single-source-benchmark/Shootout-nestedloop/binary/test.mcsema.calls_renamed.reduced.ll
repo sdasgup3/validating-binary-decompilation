@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpmx9479a3-target.ll'
+; ModuleID = '/tmp/tmpdljywrwf-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -681,12 +681,6 @@ declare extern_weak x86_64_sysvcc i64 @__libc_start_main(i64, i64, i64, i64, i64
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
 
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @atoi(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #5
-
 ; Function Attrs: noinline nounwind
 define %struct.Memory* @sub_400420__init_proc(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
 block_400420:
@@ -1095,58 +1089,53 @@ block_4004c1:                                     ; preds = %block_4004b0
   br label %block_4004d8
 }
 
-; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400560_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+; Function Attrs: noinline norecurse nounwind
+define %struct.Memory* @sub_400560_main(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #7 {
 block_400560:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
-  %EAX = bitcast %union.anon* %var_2_3 to i32*
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %var_2_46 = load i64, i64* %PC, align 8
-  %var_2_47 = add i64 %var_2_46, 3
-  store i64 %var_2_47, i64* %PC, align 8
   %var_2_55 = load i64, i64* %RBP, align 8
   %var_2_56 = add i64 %var_2_55, -8
   %var_2_59 = inttoptr i64 %var_2_56 to i32*
   %var_2_60 = load i32, i32* %var_2_59, align 4
   %var_2_73 = icmp eq i32 %var_2_60, 2
   %.v38 = select i1 %var_2_73, i64 10, i64 31
-  %var_2_82 = add i64 %.v38, %var_2_47
-  br i1 %var_2_73, label %block_400580, label %block_400595
+  %var_2_617.sink.v = select i1 %var_2_73, i64 8, i64 5
+  %var_2_82 = add i64 %var_2_46, 6
+  %var_2_617.sink = add i64 %var_2_82, %.v38
+  %var_2_339 = add i64 %var_2_617.sink, %var_2_617.sink.v
+  store i64 %var_2_339, i64* %PC, align 8
+  %var_2_26491 = add i64 %var_2_55, -24
+  %var_2_26692 = inttoptr i64 %var_2_26491 to i32*
+  %var_2_26793 = load i32, i32* %var_2_26692, align 4
+  %var_2_26994 = add i64 %var_2_55, -20
+  %var_2_27195 = inttoptr i64 %var_2_26994 to i32*
+  %var_2_27296 = load i32, i32* %var_2_27195, align 4
+  %var_2_27397 = sub i32 %var_2_26793, %var_2_27296
+  %var_2_28898 = lshr i32 %var_2_27397, 31
+  %var_2_29099 = lshr i32 %var_2_26793, 31
+  %var_2_291100 = lshr i32 %var_2_27296, 31
+  %var_2_292101 = xor i32 %var_2_291100, %var_2_29099
+  %var_2_293102 = xor i32 %var_2_28898, %var_2_29099
+  %var_2_294103 = add nuw nsw i32 %var_2_293102, %var_2_292101
+  %var_2_295104 = icmp eq i32 %var_2_294103, 2
+  %var_2_297105 = icmp ne i32 %var_2_28898, 0
+  %var_2_298106 = xor i1 %var_2_297105, %var_2_295104
+  br i1 %var_2_298106, label %block_4005c2.preheader, label %block_400697
 
-block_400595:                                     ; preds = %block_400560
-  %var_2_83 = add i64 %var_2_82, 5
-  store i64 %var_2_83, i64* %PC, align 8
-  br label %block_4005a2
-
-block_4005fb:                                     ; preds = %block_4005fb.preheader77, %block_4005fb
+block_4005fb:                                     ; preds = %block_4005fb.preheader, %block_4005fb
   br label %block_4005fb
 
-block_4005e8:                                     ; preds = %block_4005e8, %block_4005e8.preheader
-  br i1 %var_2_15652, label %block_4005fb.preheader, label %block_4005e8
+block_4005e8:                                     ; preds = %block_4005e8.preheader, %block_4005e8
+  br label %block_4005e8
 
-block_4005fb.preheader:                           ; preds = %block_4005e8
-  %var_2_54921 = load i32, i32* %var_2_54820, align 4
-  %var_2_55525 = sub i32 %var_2_54921, %var_2_27296
-  %var_2_57026 = lshr i32 %var_2_55525, 31
-  %var_2_57227 = lshr i32 %var_2_54921, 31
-  %var_2_57429 = xor i32 %var_2_291100, %var_2_57227
-  %var_2_57530 = xor i32 %var_2_57026, %var_2_57227
-  %var_2_57631 = add nuw nsw i32 %var_2_57530, %var_2_57429
-  %var_2_57732 = icmp eq i32 %var_2_57631, 2
-  %var_2_57933 = icmp ne i32 %var_2_57026, 0
-  %var_2_58034 = xor i1 %var_2_57933, %var_2_57732
-  br i1 %var_2_58034, label %block_4005fb.us, label %block_4005fb.preheader77
-
-block_4005fb.preheader77:                         ; preds = %block_4005fb.preheader
-  br label %block_4005fb
-
-block_4005fb.us:                                  ; preds = %block_4005fb.preheader
+block_4005fb.us:                                  ; preds = %block_4005e8.preheader.block_4005fb.preheader.split_crit_edge
   %var_2_4814.us.pre = load i32, i32* %var_2_4803, align 4
   %var_2_4878.us = sub i32 %var_2_4814.us.pre, %var_2_27296
   %var_2_5029.us = lshr i32 %var_2_4878.us, 31
   %var_2_50410.us = lshr i32 %var_2_4814.us.pre, 31
-  %var_2_50612.us = xor i32 %var_2_291100, %var_2_50410.us
+  %var_2_50612.us = xor i32 %var_2_50410.us, %var_2_291100
   %var_2_50713.us = xor i32 %var_2_5029.us, %var_2_50410.us
   %var_2_50814.us = add nuw nsw i32 %var_2_50713.us, %var_2_50612.us
   %var_2_50915.us = icmp eq i32 %var_2_50814.us, 2
@@ -1166,114 +1155,94 @@ block_40060e.us5:                                 ; preds = %block_40060e.us5.pr
 block_400621.us.us.us:                            ; preds = %block_400621.us.us.us.preheader, %block_400621.us.us.us
   br label %block_400621.us.us.us
 
-block_4005d5:                                     ; preds = %block_4005d5, %block_4005d5.preheader
-  br i1 %var_2_33670, label %block_4005e8.preheader, label %block_4005d5
+block_4005d5:                                     ; preds = %block_4005d5.preheader, %block_4005d5
+  br label %block_4005d5
 
-block_4005e8.preheader:                           ; preds = %block_4005d5
+block_4005e8.preheader.block_4005fb.preheader.split_crit_edge: ; preds = %block_4005d5.preheader.block_4005e8.preheader.split2_crit_edge
+  %var_2_54921 = load i32, i32* %var_2_54820, align 4
+  %var_2_55525 = sub i32 %var_2_54921, %var_2_27296
+  %var_2_57026 = lshr i32 %var_2_55525, 31
+  %var_2_57227 = lshr i32 %var_2_54921, 31
+  %var_2_57429 = xor i32 %var_2_57227, %var_2_291100
+  %var_2_57530 = xor i32 %var_2_57026, %var_2_57227
+  %var_2_57631 = add nuw nsw i32 %var_2_57530, %var_2_57429
+  %var_2_57732 = icmp eq i32 %var_2_57631, 2
+  %var_2_57933 = icmp ne i32 %var_2_57026, 0
+  %var_2_58034 = xor i1 %var_2_57933, %var_2_57732
+  br i1 %var_2_58034, label %block_4005fb.us, label %block_4005fb.preheader
+
+block_4005fb.preheader:                           ; preds = %block_4005e8.preheader.block_4005fb.preheader.split_crit_edge
+  br label %block_4005fb
+
+block_4005c2:                                     ; preds = %block_4005c2.preheader7, %block_4005c2
+  br label %block_4005c2
+
+block_4005d5.preheader.block_4005e8.preheader.split2_crit_edge: ; preds = %block_4005c2.preheader.block_4005d5.preheader.split3_crit_edge
   %var_2_12539 = load i32, i32* %var_2_12438, align 4
   %var_2_13143 = sub i32 %var_2_12539, %var_2_27296
   %var_2_14644 = lshr i32 %var_2_13143, 31
   %var_2_14845 = lshr i32 %var_2_12539, 31
-  %var_2_15047 = xor i32 %var_2_291100, %var_2_14845
+  %var_2_15047 = xor i32 %var_2_14845, %var_2_291100
   %var_2_15148 = xor i32 %var_2_14644, %var_2_14845
   %var_2_15249 = add nuw nsw i32 %var_2_15148, %var_2_15047
   %var_2_15350 = icmp eq i32 %var_2_15249, 2
   %var_2_15551 = icmp ne i32 %var_2_14644, 0
   %var_2_15652 = xor i1 %var_2_15551, %var_2_15350
+  br i1 %var_2_15652, label %block_4005e8.preheader.block_4005fb.preheader.split_crit_edge, label %block_4005e8.preheader
+
+block_4005e8.preheader:                           ; preds = %block_4005d5.preheader.block_4005e8.preheader.split2_crit_edge
   br label %block_4005e8
 
-block_4005c2:                                     ; preds = %block_4005c2, %block_4005c2.preheader
-  br i1 %var_2_26088, label %block_4005d5.preheader, label %block_4005c2
-
-block_4005d5.preheader:                           ; preds = %block_4005c2
-  %var_2_30557 = load i32, i32* %var_2_30456, align 4
-  %var_2_31161 = sub i32 %var_2_30557, %var_2_27296
-  %var_2_32662 = lshr i32 %var_2_31161, 31
-  %var_2_32863 = lshr i32 %var_2_30557, 31
-  %var_2_33065 = xor i32 %var_2_291100, %var_2_32863
-  %var_2_33166 = xor i32 %var_2_32662, %var_2_32863
-  %var_2_33267 = add nuw nsw i32 %var_2_33166, %var_2_33065
-  %var_2_33368 = icmp eq i32 %var_2_33267, 2
-  %var_2_33569 = icmp ne i32 %var_2_32662, 0
-  %var_2_33670 = xor i1 %var_2_33569, %var_2_33368
-  br label %block_4005d5
-
-block_4005a2:                                     ; preds = %block_400580, %block_400595
-  %var_2_338 = phi i64 [ %.pre, %block_400580 ], [ %var_2_83, %block_400595 ]
-  %.sink7.in = phi i64 [ %.sink7.in.pre, %block_400580 ], [ %var_2_55, %block_400595 ]
-  %.sink = phi i32 [ %.sink.pre, %block_400580 ], [ 46, %block_400595 ]
-  %.sink5 = phi i64 [ 24, %block_400580 ], [ 11, %block_400595 ]
-  %MEMORY.4 = phi %struct.Memory* [ %var_2_625, %block_400580 ], [ %2, %block_400595 ]
-  %.sink7 = add i64 %.sink7.in, -52
-  %var_2_339 = add i64 %var_2_338, 3
-  store i64 %var_2_339, i64* %PC, align 8
-  %var_2_340 = inttoptr i64 %.sink7 to i32*
-  store i32 %.sink, i32* %var_2_340, align 4
-  %var_2_341 = load i64, i64* %PC, align 8
-  %var_2_350 = add i64 %var_2_341, %.sink5
-  store i64 %var_2_350, i64* %PC, align 8
-  %var_2_26390 = load i64, i64* %RBP, align 8
-  %var_2_26491 = add i64 %var_2_26390, -24
-  %var_2_26692 = inttoptr i64 %var_2_26491 to i32*
-  %var_2_26793 = load i32, i32* %var_2_26692, align 4
-  %var_2_26994 = add i64 %var_2_26390, -20
-  %var_2_27195 = inttoptr i64 %var_2_26994 to i32*
-  %var_2_27296 = load i32, i32* %var_2_27195, align 4
-  %var_2_27397 = sub i32 %var_2_26793, %var_2_27296
-  %var_2_28898 = lshr i32 %var_2_27397, 31
-  %var_2_29099 = lshr i32 %var_2_26793, 31
-  %var_2_291100 = lshr i32 %var_2_27296, 31
-  %var_2_292101 = xor i32 %var_2_291100, %var_2_29099
-  %var_2_293102 = xor i32 %var_2_28898, %var_2_29099
-  %var_2_294103 = add nuw nsw i32 %var_2_293102, %var_2_292101
-  %var_2_295104 = icmp eq i32 %var_2_294103, 2
-  %var_2_297105 = icmp ne i32 %var_2_28898, 0
-  %var_2_298106 = xor i1 %var_2_297105, %var_2_295104
-  br i1 %var_2_298106, label %block_4005c2.preheader, label %block_400697
-
-block_4005c2.preheader:                           ; preds = %block_4005a2
-  %var_2_22673 = add i64 %var_2_26390, -28
+block_4005c2.preheader:                           ; preds = %block_400560
+  %var_2_22673 = add i64 %var_2_55, -28
   %var_2_22874 = inttoptr i64 %var_2_22673 to i32*
   %var_2_22975 = load i32, i32* %var_2_22874, align 4
   %var_2_23579 = sub i32 %var_2_22975, %var_2_27296
   %var_2_25080 = lshr i32 %var_2_23579, 31
   %var_2_25281 = lshr i32 %var_2_22975, 31
-  %var_2_25483 = xor i32 %var_2_291100, %var_2_25281
+  %var_2_25483 = xor i32 %var_2_25281, %var_2_291100
   %var_2_25584 = xor i32 %var_2_25080, %var_2_25281
   %var_2_25685 = add nuw nsw i32 %var_2_25584, %var_2_25483
   %var_2_25786 = icmp eq i32 %var_2_25685, 2
   %var_2_25987 = icmp ne i32 %var_2_25080, 0
   %var_2_26088 = xor i1 %var_2_25987, %var_2_25786
-  %var_2_30255 = add i64 %var_2_26390, -32
-  %var_2_30456 = inttoptr i64 %var_2_30255 to i32*
-  %var_2_12237 = add i64 %var_2_26390, -36
+  %var_2_12237 = add i64 %var_2_55, -36
   %var_2_12438 = inttoptr i64 %var_2_12237 to i32*
-  %var_2_54619 = add i64 %var_2_26390, -40
+  %var_2_54619 = add i64 %var_2_55, -40
   %var_2_54820 = inttoptr i64 %var_2_54619 to i32*
-  %var_2_4782 = add i64 %var_2_26390, -44
+  %var_2_4782 = add i64 %var_2_55, -44
   %var_2_4803 = inttoptr i64 %var_2_4782 to i32*
+  br i1 %var_2_26088, label %block_4005c2.preheader.block_4005d5.preheader.split3_crit_edge, label %block_4005c2.preheader7
+
+block_4005c2.preheader7:                          ; preds = %block_4005c2.preheader
   br label %block_4005c2
 
-block_400697:                                     ; preds = %block_4005a2
-  %var_2_432 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.4)
-  %var_2_433 = load i64, i64* %PC, align 8
-  %var_2_434 = load i64, i64* %RBP, align 8
-  %var_2_435 = add i64 %var_2_434, -56
-  %var_2_436 = load i32, i32* %EAX, align 4
-  %var_2_437 = add i64 %var_2_433, 5
-  store i64 %var_2_437, i64* %PC, align 8
-  %var_2_438 = inttoptr i64 %var_2_435 to i32*
-  store i32 %var_2_436, i32* %var_2_438, align 4
-  ret %struct.Memory* %var_2_432
+block_4005c2.preheader.block_4005d5.preheader.split3_crit_edge: ; preds = %block_4005c2.preheader
+  %var_2_30255 = add i64 %var_2_55, -32
+  %var_2_30456 = inttoptr i64 %var_2_30255 to i32*
+  %var_2_30557 = load i32, i32* %var_2_30456, align 4
+  %var_2_31161 = sub i32 %var_2_30557, %var_2_27296
+  %var_2_32662 = lshr i32 %var_2_31161, 31
+  %var_2_32863 = lshr i32 %var_2_30557, 31
+  %var_2_33065 = xor i32 %var_2_32863, %var_2_291100
+  %var_2_33166 = xor i32 %var_2_32662, %var_2_32863
+  %var_2_33267 = add nuw nsw i32 %var_2_33166, %var_2_33065
+  %var_2_33368 = icmp eq i32 %var_2_33267, 2
+  %var_2_33569 = icmp ne i32 %var_2_32662, 0
+  %var_2_33670 = xor i1 %var_2_33569, %var_2_33368
+  br i1 %var_2_33670, label %block_4005d5.preheader.block_4005e8.preheader.split2_crit_edge, label %block_4005d5.preheader
 
-block_400580:                                     ; preds = %block_400560
-  %var_2_617 = add i64 %var_2_82, 8
-  store i64 %var_2_617, i64* %PC, align 8
-  %var_2_625 = tail call fastcc %struct.Memory* @ext_601068_atoi(%struct.State* nonnull %0, %struct.Memory* %2)
-  %.sink.pre = load i32, i32* %EAX, align 4
-  %.sink7.in.pre = load i64, i64* %RBP, align 8
-  %.pre = load i64, i64* %PC, align 8
-  br label %block_4005a2
+block_4005d5.preheader:                           ; preds = %block_4005c2.preheader.block_4005d5.preheader.split3_crit_edge
+  br label %block_4005d5
+
+block_400697:                                     ; preds = %block_400560
+  %var_2_350 = select i1 %var_2_73, i64 29, i64 16
+  %var_2_437 = add i64 %var_2_350, %var_2_339
+  store i64 %var_2_437, i64* %PC, align 8
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline nounwind
@@ -1772,8 +1741,8 @@ define dllexport void @main() #9 {
   ret void
 }
 
-; Function Attrs: nounwind
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) #10 {
+; Function Attrs: norecurse nounwind
+define internal %struct.Memory* @main_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -1789,18 +1758,6 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
 ; Function Attrs: noinline nounwind
 define internal fastcc %struct.Memory* @ext_601060___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #12 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64)* @__libc_start_main to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601058_printf(%struct.State*, %struct.Memory*) unnamed_addr #12 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601068_atoi(%struct.State*, %struct.Memory*) unnamed_addr #12 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
 }
 

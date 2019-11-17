@@ -486,5 +486,5 @@ Decompiling Function: _GLOBAL__sub_I_simple_types_constant_folding.cpp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.05system 0:00.26elapsed 94%CPU (0avgtext+0avgdata 10220maxresident)k
-0inputs+128outputs (0major+3987minor)pagefaults 0swaps
+0.18user 0.05system 0:00.24elapsed 99%CPU (0avgtext+0avgdata 10108maxresident)k
+0inputs+128outputs (0major+3988minor)pagefaults 0swaps

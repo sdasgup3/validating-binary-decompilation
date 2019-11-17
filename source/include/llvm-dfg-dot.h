@@ -233,6 +233,11 @@ template <> struct DOTGraphTraits<MatchInfo *> : public DefaultDOTGraphTraits {
     raw_string_ostream OS(Str);
 
     Node->printAsOperand(OS, false);
+
+    auto BB = Node->getParent();
+    OS << "@BBInfo:";
+    BB->printAsOperand(OS, false);
+
     return OS.str();
   }
 
@@ -248,6 +253,11 @@ template <> struct DOTGraphTraits<MatchInfo *> : public DefaultDOTGraphTraits {
     }
 
     OS << *Node;
+
+    auto BB = Node->getParent();
+    OS << "@BBInfo:";
+    BB->printAsOperand(OS, false);
+
     std::string OutStr = OS.str();
     if (OutStr[0] == '\n')
       OutStr.erase(OutStr.begin());

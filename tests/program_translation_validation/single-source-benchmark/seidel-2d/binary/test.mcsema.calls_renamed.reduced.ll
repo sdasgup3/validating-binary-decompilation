@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpuc3y1afp-target.ll'
+; ModuleID = '/tmp/tmp5wo_0kgq-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1746,7 +1746,10 @@ block_400cc0.loopexit:                            ; preds = %block_400af5.loopex
   br label %block_400cc0
 
 block_400cc0:                                     ; preds = %block_400cc0.loopexit, %block_400ae0
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400c9a.loopexit:                            ; preds = %block_400b36
   br label %block_400c9a

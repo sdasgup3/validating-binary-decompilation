@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp517iftu4-target.ll'
+; ModuleID = '/tmp/tmp0074s1jt-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -5108,7 +5108,10 @@ block_400c3f:                                     ; preds = %block_400c3f.prehea
   br label %block_400c3f
 
 block_400c9b:                                     ; preds = %block_400c25
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400b34:                                     ; preds = %block_400b34.preheader15, %block_400b34
   br label %block_400b34

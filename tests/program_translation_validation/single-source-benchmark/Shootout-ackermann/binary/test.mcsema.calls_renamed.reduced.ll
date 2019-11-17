@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpb74e3av2-target.ll'
+; ModuleID = '/tmp/tmpgfg01nee-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -683,12 +683,6 @@ declare extern_weak x86_64_sysvcc i64 @__libc_start_main(i64, i64, i64, i64, i64
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @atoi(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #5
 
 ; Function Attrs: noinline
 define %struct.Memory* @sub_400660___libc_csu_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
@@ -1562,75 +1556,29 @@ block_4004c1:                                     ; preds = %block_4004b0
   br label %block_4004d8
 }
 
-; Function Attrs: noinline
-define %struct.Memory* @sub_4005e0_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+; Function Attrs: noinline norecurse nounwind
+define %struct.Memory* @sub_4005e0_main(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #7 {
 block_4005e0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
-  %EAX = bitcast %union.anon* %var_2_3 to i32*
-  %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %var_2_46 = load i64, i64* %PC, align 8
-  %var_2_47 = add i64 %var_2_46, 3
-  store i64 %var_2_47, i64* %PC, align 8
   %var_2_55 = load i64, i64* %RBP, align 8
   %var_2_56 = add i64 %var_2_55, -8
   %var_2_59 = inttoptr i64 %var_2_56 to i32*
   %var_2_60 = load i32, i32* %var_2_59, align 4
   %var_2_73 = icmp eq i32 %var_2_60, 2
   %.v = select i1 %var_2_73, i64 10, i64 31
-  %var_2_82 = add i64 %.v, %var_2_47
-  br i1 %var_2_73, label %block_400600, label %block_400615
-
-block_400615:                                     ; preds = %block_4005e0
-  %var_2_83 = add i64 %var_2_82, 5
-  store i64 %var_2_83, i64* %PC, align 8
-  br label %block_400622
-
-block_400622:                                     ; preds = %block_400600, %block_400615
-  %var_2_84 = phi i64 [ %.pre, %block_400600 ], [ %var_2_83, %block_400615 ]
-  %.sink7.in = phi i64 [ %.sink7.in.pre, %block_400600 ], [ %var_2_55, %block_400615 ]
-  %.sink = phi i32 [ %.sink.pre, %block_400600 ], [ 8, %block_400615 ]
-  %.sink5 = phi i64 [ 18, %block_400600 ], [ 5, %block_400615 ]
-  %MEMORY.0 = phi %struct.Memory* [ %var_2_188, %block_400600 ], [ %2, %block_400615 ]
-  %.sink7 = add i64 %.sink7.in, -24
-  %var_2_85 = add i64 %var_2_84, 3
-  store i64 %var_2_85, i64* %PC, align 8
-  %var_2_86 = inttoptr i64 %.sink7 to i32*
-  store i32 %.sink, i32* %var_2_86, align 4
-  %var_2_87 = load i64, i64* %PC, align 8
-  %var_2_88 = add i64 %var_2_87, %.sink5
-  %var_2_101 = add i64 %var_2_88, 14
-  store i64 %var_2_101, i64* %PC, align 8
-  %var_2_111 = load i32, i32* %EAX, align 4
-  %var_2_112 = zext i32 %var_2_111 to i64
-  store i64 %var_2_112, i64* %RSI, align 8
-  %var_2_114 = add i64 %var_2_88, -200
-  %var_2_119 = tail call %struct.Memory* @sub_400560_Ack_renamed_(%struct.State* nonnull %0, i64 %var_2_114, %struct.Memory* %MEMORY.0)
-  %var_2_127 = load i32, i32* %EAX, align 4
-  %var_2_128 = zext i32 %var_2_127 to i64
-  store i64 %var_2_128, i64* %RDX, align 8
-  %var_2_134 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %var_2_119)
-  %var_2_135 = load i64, i64* %PC, align 8
-  store i64 0, i64* %RDX, align 8, !tbaa !2428
-  %var_2_136 = load i64, i64* %RBP, align 8
-  %var_2_137 = add i64 %var_2_136, -32
-  %var_2_138 = load i32, i32* %EAX, align 4
-  %var_2_139 = add i64 %var_2_135, 5
+  %var_2_180.sink.v = select i1 %var_2_73, i64 8, i64 5
+  %.sink5 = select i1 %var_2_73, i64 37, i64 24
+  %var_2_82 = add i64 %var_2_46, 6
+  %var_2_180.sink = add i64 %var_2_82, %.v
+  %var_2_85 = add i64 %var_2_180.sink, %var_2_180.sink.v
+  %var_2_139 = add i64 %var_2_85, %.sink5
   store i64 %var_2_139, i64* %PC, align 8
-  %var_2_140 = inttoptr i64 %var_2_137 to i32*
-  store i32 %var_2_138, i32* %var_2_140, align 4
-  ret %struct.Memory* %var_2_134
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
 
-block_400600:                                     ; preds = %block_4005e0
-  %var_2_180 = add i64 %var_2_82, 8
-  store i64 %var_2_180, i64* %PC, align 8
-  %var_2_188 = tail call fastcc %struct.Memory* @ext_601068_atoi(%struct.State* nonnull %0, %struct.Memory* %2)
-  %.sink.pre = load i32, i32* %EAX, align 4
-  %.sink7.in.pre = load i64, i64* %RBP, align 8
-  %.pre = load i64, i64* %PC, align 8
-  br label %block_400622
 }
 
 ; Function Attrs: noinline nounwind
@@ -2027,18 +1975,6 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
   ret %struct.Memory* %6
 }
 
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601058_printf(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601068_atoi(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
 ; Function Attrs: naked nobuiltin noinline nounwind
 define internal void @callback_sub_4006d0___libc_csu_fini() #9 {
   tail call void asm sideeffect "pushq $0;pushq $$0x4006d0;jmpq *$1;", "*m,*m,~{dirflag},~{fpsr},~{flags}"(%struct.Memory* (%struct.State*, i64, %struct.Memory*)** nonnull @4, void ()** nonnull @2) #10
@@ -2046,7 +1982,7 @@ define internal void @callback_sub_4006d0___libc_csu_fini() #9 {
 }
 
 ; Function Attrs: norecurse nounwind
-define internal %struct.Memory* @callback_sub_4006d0___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #12 {
+define internal %struct.Memory* @callback_sub_4006d0___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -2084,7 +2020,8 @@ define dllexport void @main() #9 {
   ret void
 }
 
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) {
+; Function Attrs: norecurse nounwind
+define internal %struct.Memory* @main_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -2098,7 +2035,7 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
 }
 
 ; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601060___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #11 {
+define internal fastcc %struct.Memory* @ext_601060___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #12 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64)* @__libc_start_main to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
 }
@@ -2193,8 +2130,8 @@ attributes #7 = { noinline norecurse nounwind "correctly-rounded-divide-sqrt-fp-
 attributes #8 = { noinline nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #9 = { naked nobuiltin noinline nounwind }
 attributes #10 = { nounwind }
-attributes #11 = { noinline nounwind }
-attributes #12 = { norecurse nounwind }
+attributes #11 = { norecurse nounwind }
+attributes #12 = { noinline nounwind }
 
 !llvm.ident = !{!0, !0}
 !llvm.dbg.cu = !{!1}

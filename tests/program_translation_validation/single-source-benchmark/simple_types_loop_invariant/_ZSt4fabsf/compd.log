@@ -445,6 +445,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSS_MEMI4MVnWI7vec32_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movss__xmm0__MINUS0x4__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40c944 --size 5
 Decompiling instr:movss %xmm0, -0x4(%rbp) Done...
 
 
@@ -464,6 +466,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movss_MINUS0x4__rbp____xmm0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40c949 --size 5
 Decompiling instr:movss -0x4(%rbp), %xmm0 Done...
 
 
@@ -483,6 +487,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L6MOVxPSI3VnWI8vec128_tE3MVnIS2_EEEP6MemoryS7_R5StateT_T0_
 FuncCache inserted: routine_movaps_0x757b__rip____xmm1
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40c94e --size 7
 Global Access Mismatch: 30082 Relocation: Address, McSema: Constant
 Decompiling instr:movaps 0x757b(%rip), %xmm1 Done...
 
@@ -547,5 +553,5 @@ Decompiling Function: _ZSt4fabsf Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.21user 0.04system 0:00.25elapsed 100%CPU (0avgtext+0avgdata 10176maxresident)k
-0inputs+144outputs (0major+5009minor)pagefaults 0swaps
+0.21user 0.05system 0:02.83elapsed 9%CPU (0avgtext+0avgdata 10048maxresident)k
+0inputs+144outputs (0major+5178minor)pagefaults 0swaps

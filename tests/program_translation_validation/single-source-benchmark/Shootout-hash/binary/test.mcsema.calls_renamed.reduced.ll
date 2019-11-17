@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpkm0w9aot-target.ll'
+; ModuleID = '/tmp/tmpwso0kvk3-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -85,8 +85,6 @@ declare %struct.Memory* @sub_400710_deregister_tm_clones_renamed_(%struct.State*
 declare %struct.Memory* @sub_4007c0_ht_node_create_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400be0_ht_find_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400910_ht_destroy_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400860_ht_create_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
@@ -696,9 +694,6 @@ declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @atoi(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #5
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
@@ -3256,11 +3251,12 @@ block_400d10:                                     ; preds = %block_400d10, %bloc
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_4009c0_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #7 {
+define %struct.Memory* @sub_4009c0_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #7 {
 block_4009c0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %EAX = bitcast %union.anon* %var_2_3 to i32*
+  %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %var_2_47 = load i64, i64* %PC, align 8
   %var_2_48 = add i64 %var_2_47, 3
@@ -3279,34 +3275,26 @@ block_4009fc:                                     ; preds = %block_4009c0
   store i64 %var_2_89, i64* %PC, align 8
   br label %block_400a09
 
-block_400a76.block_400ace_crit_edge:              ; preds = %block_400a80
-  %var_2_317 = load i64, i64* %PC, align 8
-  %var_2_318.le = add i64 %var_2_317, -83
+block_400ace.loopexit:                            ; preds = %block_400a80
   br label %block_400ace
 
-block_400ace:                                     ; preds = %block_400a70, %block_400a76.block_400ace_crit_edge
-  %var_2_90.lcssa = phi i64 [ %var_2_318.le, %block_400a76.block_400ace_crit_edge ], [ %.pre18, %block_400a70 ]
-  %MEMORY.0.lcssa = phi %struct.Memory* [ %var_2_436, %block_400a76.block_400ace_crit_edge ], [ %MEMORY.2, %block_400a70 ]
-  %var_2_112 = add i64 %var_2_90.lcssa, -358
-  %var_2_117 = tail call %struct.Memory* @sub_400910_ht_destroy_renamed_(%struct.State* nonnull %0, i64 %var_2_112, %struct.Memory* %MEMORY.0.lcssa)
-  %var_2_130 = tail call fastcc %struct.Memory* @ext_602170_printf(%struct.State* nonnull %0, %struct.Memory* %var_2_117)
+block_400ace:                                     ; preds = %block_400ace.loopexit, %block_400a76.preheader
+  %var_2_132 = phi i64 [ %var_2_320, %block_400a76.preheader ], [ %var_2_287, %block_400ace.loopexit ]
+  %var_2_108 = add i64 %var_2_132, -72
+  %var_2_110 = inttoptr i64 %var_2_108 to i64*
+  %var_2_111 = load i64, i64* %var_2_110, align 8
+  store i64 %var_2_111, i64* %RDI, align 8
   %var_2_131 = load i64, i64* %PC, align 8
-  %var_2_132 = load i64, i64* %RBP, align 8
   %var_2_133 = add i64 %var_2_132, -92
   %var_2_134 = load i32, i32* %EAX, align 4
   %var_2_135 = add i64 %var_2_131, 5
   store i64 %var_2_135, i64* %PC, align 8
   %var_2_136 = inttoptr i64 %var_2_133 to i32*
   store i32 %var_2_134, i32* %var_2_136, align 4
-  ret %struct.Memory* %var_2_130
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
 
-block_400a70:                                     ; preds = %block_400a22
-  %.pre18 = load i64, i64* %PC, align 8
-  %var_4_3 = icmp slt i32 %var_2_324, 1
-  br i1 %var_4_3, label %block_400ace, label %block_400a80.preheader
-
-block_400a80.preheader:                           ; preds = %block_400a70
-  br label %block_400a80
 
 block_400a2e:                                     ; preds = %block_400a22
   %var_2_213 = tail call fastcc %struct.Memory* @ext_4006a0_sprintf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.2)
@@ -3343,7 +3331,14 @@ block_400a22:                                     ; preds = %block_400a09, %bloc
   %var_2_354 = icmp ne i32 %var_2_345, 0
   %var_2_355 = xor i1 %var_2_354, %var_2_352
   %.demorgan = or i1 %var_2_343, %var_2_355
-  br i1 %.demorgan, label %block_400a2e, label %block_400a70
+  br i1 %.demorgan, label %block_400a2e, label %block_400a76.preheader
+
+block_400a76.preheader:                           ; preds = %block_400a22
+  %var_4_3 = icmp slt i32 %var_2_324, 1
+  br i1 %var_4_3, label %block_400ace, label %block_400a80.preheader
+
+block_400a80.preheader:                           ; preds = %block_400a76.preheader
+  br label %block_400a80
 
 block_400a09:                                     ; preds = %block_4009e7, %block_4009fc
   %var_2_357 = phi i64 [ %.pre, %block_4009e7 ], [ %var_2_89, %block_4009fc ]
@@ -3389,7 +3384,7 @@ block_400a80:                                     ; preds = %block_400a80.prehea
   %var_2_290 = inttoptr i64 %var_2_288 to i32*
   %var_2_95 = load i32, i32* %var_2_290, align 4
   %var_4_4 = icmp slt i32 %var_2_95, 1
-  br i1 %var_4_4, label %block_400a76.block_400ace_crit_edge, label %block_400a80
+  br i1 %var_4_4, label %block_400ace.loopexit, label %block_400a80
 }
 
 ; Function Attrs: noinline
@@ -3876,7 +3871,7 @@ define dllexport void @main() #9 {
   ret void
 }
 
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) {
+define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory* returned) {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -3904,12 +3899,6 @@ define internal fastcc %struct.Memory* @ext_6021d8_calloc(%struct.State*, %struc
 ; Function Attrs: noinline nounwind
 define internal fastcc %struct.Memory* @ext_6021e8_malloc(%struct.State*, %struct.Memory*) unnamed_addr #11 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_602170_printf(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
 }
 

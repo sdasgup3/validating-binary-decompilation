@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp61gd28p9-target.ll'
+; ModuleID = '/tmp/tmpjsn59vvp-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -74,8 +74,6 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @10 = internal constant %struct.Memory* (%struct.State*, i64, %struct.Memory*)* @.init_proc_wrapper
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
-
-declare %struct.Memory* @sub_400520_DoDemoFpu1_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_4003f0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
@@ -691,9 +689,6 @@ declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #6
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #6
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__libc_start_main(i64, i64, i64, i64, i64, i64, i64, i64) #6
@@ -1361,561 +1356,23 @@ block_400654:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: noinline
-define %struct.Memory* @sub_400550_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #8 {
+; Function Attrs: noinline nounwind
+define %struct.Memory* @sub_400550_main(%struct.State* noalias nocapture readnone dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #7 {
 block_400550:
-  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-  %ST0 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 0, i32 1
-  %var_2_56 = load i64, i64* %PC, align 8
-  %var_2_57 = add i64 %var_2_56, 6
-  %var_2_58 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 11, i32 0, i32 0, i32 8
-  %var_2_59 = bitcast i32* %var_2_58 to i64*
-  store i64 add (i64 ptrtoint (%seg_400660__rodata_type* @seg_400660__rodata to i64), i64 4), i64* %var_2_59, align 16
-  %var_2_60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 11, i32 0, i32 0, i32 4
-  store i16 261, i16* %var_2_60, align 2
-  %var_2_61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 11, i32 0, i32 0, i32 5
-  %var_2_62 = bitcast i32* %var_2_61 to i64*
-  store i64 %var_2_56, i64* %var_2_62, align 8
-  %var_2_63 = load float, float* inttoptr (i64 add (i64 ptrtoint (%seg_400660__rodata_type* @seg_400660__rodata to i64), i64 4) to float*), align 4
-  %var_2_64 = bitcast float %var_2_63 to i32
-  %var_2_65 = and i32 %var_2_64, 2143289344
-  %var_2_66 = icmp eq i32 %var_2_65, 2139095040
-  %var_2_67 = and i32 %var_2_64, 4194303
-  %var_2_68 = icmp ne i32 %var_2_67, 0
-  %var_2_69 = and i1 %var_2_66, %var_2_68
-  %var_2_70 = zext i1 %var_2_69 to i8
-  %var_2_71 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 19
-  %var_2_72 = load i8, i8* %var_2_71, align 1
-  %var_2_73 = or i8 %var_2_70, %var_2_72
-  %var_2_83 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 17
-  %var_2_84 = fpext float %var_2_63 to double
-  %var_2_85 = icmp eq i8 %var_2_73, 0
-  br i1 %var_2_85, label %_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit, label %var_2_86
-
-var_2_86:                                         ; preds = %block_400550
-  %var_2_87 = bitcast double %var_2_84 to i64
-  %var_2_88 = or i64 %var_2_87, 2251799813685248
-  %var_2_89 = bitcast i64 %var_2_88 to double
-  br label %_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit
-
-_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit: ; preds = %var_2_86, %block_400550
-  %var_2_90 = phi double [ %var_2_89, %var_2_86 ], [ %var_2_84, %block_400550 ]
-  %var_2_91 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 6, i32 1
-  %var_2_92 = bitcast double* %var_2_91 to i64*
-  %var_2_93 = load i64, i64* %var_2_92, align 8
-  %var_2_94 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 7, i32 1
-  %var_2_95 = bitcast double* %var_2_94 to i64*
-  store i64 %var_2_93, i64* %var_2_95, align 8
-  %var_2_96 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 5, i32 1
-  %var_2_97 = bitcast double* %var_2_96 to i64*
-  %var_2_98 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_98, i64* %var_2_92, align 8
-  %var_2_99 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 4, i32 1
-  %var_2_100 = bitcast double* %var_2_99 to i64*
-  %var_2_101 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_101, i64* %var_2_97, align 8
-  %var_2_102 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 3, i32 1
-  %var_2_103 = bitcast double* %var_2_102 to i64*
-  %var_2_104 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_104, i64* %var_2_100, align 8
-  %var_2_105 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 2, i32 1
-  %var_2_106 = bitcast double* %var_2_105 to i64*
-  %var_2_107 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_107, i64* %var_2_103, align 8
-  %var_2_108 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 1, i32 1
-  %var_2_109 = bitcast double* %var_2_108 to i64*
-  %var_2_110 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_110, i64* %var_2_106, align 8
-  %var_2_111 = bitcast double* %ST0 to i64*
-  %var_2_112 = load i64, i64* %var_2_111, align 8
-  store i64 %var_2_112, i64* %var_2_109, align 8
-  %var_2_113 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 11, i32 0, i32 0, i32 1, i32 0
-  %var_2_114 = load i16, i16* %var_2_113, align 2
-  %var_2_115 = add i16 %var_2_114, 14336
-  %var_2_116 = and i16 %var_2_115, 14336
-  %var_2_117 = and i16 %var_2_114, -14337
-  %var_2_118 = or i16 %var_2_116, %var_2_117
-  store i16 %var_2_118, i16* %var_2_113, align 2
-  %var_2_119 = load i64, i64* %RBP, align 8
-  %var_2_120 = add i64 %var_2_119, -32
-  store i64 %var_2_120, i64* %var_2_59, align 16
-  store i16 893, i16* %var_2_60, align 2
-  store i64 %var_2_57, i64* %var_2_62, align 8
-  %var_2_122 = fcmp ueq double %var_2_90, 0.000000e+00
-  br i1 %var_2_122, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2, label %var_2_123
-
-var_2_123:                                        ; preds = %_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit
-  %var_2_124 = tail call double @llvm.fabs.f64(double %var_2_90) #0
-  %var_2_125 = fcmp oeq double %var_2_124, 0x7FF0000000000000
-  br i1 %var_2_125, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2, label %var_2_126
-
-var_2_126:                                        ; preds = %var_2_123
-  %var_2_127 = fcmp olt double %var_2_124, 0x10000000000000
-  br label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2
-
-_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2: ; preds = %var_2_126, %var_2_123, %_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit
-  %var_2_128 = phi i1 [ false, %_ZN12_GLOBAL__N_1L6FLDmemI2MnIfEEEP6MemoryS4_R5State3RnWIdET_2InImESA_ItE.exit ], [ false, %var_2_123 ], [ %var_2_127, %var_2_126 ]
-  %var_2_129 = zext i1 %var_2_128 to i8
-  store i8 %var_2_129, i8* %var_2_83, align 1
-  %var_2_130 = tail call i32 @__remill_fpu_exception_test_and_clear(i32 0, i32 61) #14
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2454
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2455
-  %var_2_131 = tail call i32 @__remill_fpu_exception_test_and_clear(i32 61, i32 %var_2_130) #14
-  %var_2_132 = lshr i32 %var_2_131, 5
-  %var_2_133 = and i32 %var_2_132, 1
-  %var_2_134 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 9
-  %var_2_135 = load i8, i8* %var_2_134, align 1
-  %var_2_136 = zext i8 %var_2_135 to i32
-  %var_2_137 = or i32 %var_2_136, %var_2_133
-  %var_2_138 = trunc i32 %var_2_137 to i8
-  store i8 %var_2_138, i8* %var_2_134, align 1
-  %var_2_139 = lshr i32 %var_2_131, 3
-  %var_2_140 = and i32 %var_2_139, 1
-  %var_2_141 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 13
-  %var_2_142 = load i8, i8* %var_2_141, align 1
-  %var_2_143 = zext i8 %var_2_142 to i32
-  %var_2_144 = or i32 %var_2_143, %var_2_140
-  %var_2_145 = trunc i32 %var_2_144 to i8
-  store i8 %var_2_145, i8* %var_2_141, align 1
-  %var_2_146 = lshr i32 %var_2_131, 4
-  %var_2_147 = and i32 %var_2_146, 1
-  %var_2_148 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 11
-  %var_2_149 = load i8, i8* %var_2_148, align 1
-  %var_2_150 = zext i8 %var_2_149 to i32
-  %var_2_151 = or i32 %var_2_150, %var_2_147
-  %var_2_152 = trunc i32 %var_2_151 to i8
-  store i8 %var_2_152, i8* %var_2_148, align 1
-  %var_2_153 = and i32 %var_2_131, 1
-  %var_2_154 = load i8, i8* %var_2_71, align 1
-  %var_2_155 = zext i8 %var_2_154 to i32
-  %var_2_156 = or i32 %var_2_155, %var_2_153
-  %var_2_157 = trunc i32 %var_2_156 to i8
-  store i8 %var_2_157, i8* %var_2_71, align 1
-  %var_2_158 = lshr i32 %var_2_131, 2
-  %var_2_159 = and i32 %var_2_158, 1
-  %var_2_160 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 9, i32 15
-  %var_2_161 = load i8, i8* %var_2_160, align 1
-  %var_2_162 = zext i8 %var_2_161 to i32
-  %var_2_163 = or i32 %var_2_162, %var_2_159
-  %var_2_164 = trunc i32 %var_2_163 to i8
-  store i8 %var_2_164, i8* %var_2_160, align 1
-  %var_2_165 = inttoptr i64 %var_2_120 to x86_fp80*
-  %var_2_166 = fpext double %var_2_90 to x86_fp80
-  store x86_fp80 %var_2_166, x86_fp80* %var_2_165, align 16
-  %var_2_167 = load i64, i64* %var_2_111, align 8
-  %var_2_168 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_168, i64* %var_2_111, align 8
-  %var_2_169 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_169, i64* %var_2_109, align 8
-  %var_2_170 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_170, i64* %var_2_106, align 8
-  %var_2_171 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_171, i64* %var_2_103, align 8
-  %var_2_172 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_172, i64* %var_2_100, align 8
-  %var_2_173 = load i64, i64* %var_2_92, align 8
-  store i64 %var_2_173, i64* %var_2_97, align 8
-  %var_2_174 = load i64, i64* %var_2_95, align 8
-  store i64 %var_2_174, i64* %var_2_92, align 8
-  store i64 %var_2_167, i64* %var_2_95, align 8
-  %var_2_175 = load i16, i16* %var_2_113, align 2
-  %var_2_176 = add i16 %var_2_175, 2048
-  %var_2_177 = and i16 %var_2_176, 14336
-  %var_2_178 = and i16 %var_2_175, -14337
-  %var_2_179 = or i16 %var_2_177, %var_2_178
-  store i16 %var_2_179, i16* %var_2_113, align 2
-  %var_2_180 = load i64, i64* %RBP, align 8
-  %var_2_181 = add i64 %var_2_180, -32
-  %var_2_182 = load i64, i64* %PC, align 8
-  store i64 %var_2_181, i64* %var_2_59, align 16
-  store i16 877, i16* %var_2_60, align 2
-  store i64 %var_2_182, i64* %var_2_62, align 8
-  %var_2_184 = inttoptr i64 %var_2_181 to x86_fp80*
-  %var_2_185 = load x86_fp80, x86_fp80* %var_2_184, align 16
-  %var_2_186 = fptrunc x86_fp80 %var_2_185 to double
-  %var_2_187 = bitcast double %var_2_186 to i64
-  %var_2_188 = and i64 %var_2_187, 9221120237041090560
-  %var_2_189 = icmp eq i64 %var_2_188, 9218868437227405312
-  %var_2_190 = and i64 %var_2_187, 2251799813685247
-  %var_2_191 = icmp ne i64 %var_2_190, 0
-  %var_2_192 = and i1 %var_2_189, %var_2_191
-  %var_2_193 = zext i1 %var_2_192 to i8
-  %var_2_194 = load i8, i8* %var_2_71, align 1
-  %var_2_195 = or i8 %var_2_193, %var_2_194
-  %var_2_204 = icmp eq i8 %var_2_195, 0
-  %var_2_205 = or i64 %var_2_187, 2251799813685248
-  %var_2_206 = bitcast i64 %var_2_205 to double
-  %var_2_207 = select i1 %var_2_204, double %var_2_186, double %var_2_206
-  store i64 %var_2_174, i64* %var_2_95, align 8
-  store i64 %var_2_173, i64* %var_2_92, align 8
-  store i64 %var_2_172, i64* %var_2_97, align 8
-  store i64 %var_2_171, i64* %var_2_100, align 8
-  store i64 %var_2_170, i64* %var_2_103, align 8
-  store i64 %var_2_169, i64* %var_2_106, align 8
-  store i64 %var_2_168, i64* %var_2_109, align 8
-  %var_2_208 = add i16 %var_2_179, 14336
-  %var_2_209 = and i16 %var_2_208, 14336
-  %var_2_210 = or i16 %var_2_209, %var_2_178
-  store i16 %var_2_210, i16* %var_2_113, align 2
-  %var_2_211 = load i64, i64* %RSP, align 8
-  %var_2_212 = add i64 %var_2_182, 6
-  store i64 %var_2_211, i64* %var_2_59, align 16
-  store i16 830, i16* %var_2_60, align 2
-  store i64 %var_2_212, i64* %var_2_62, align 8
-  %var_2_214 = fcmp ueq double %var_2_207, 0.000000e+00
-  br i1 %var_2_214, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3, label %var_2_215
-
-var_2_215:                                        ; preds = %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2
-  %var_2_216 = tail call double @llvm.fabs.f64(double %var_2_207) #0
-  %var_2_217 = fcmp oeq double %var_2_216, 0x7FF0000000000000
-  br i1 %var_2_217, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3, label %var_2_218
-
-var_2_218:                                        ; preds = %var_2_215
-  %var_2_219 = fcmp olt double %var_2_216, 0x10000000000000
-  br label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3
-
-_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3: ; preds = %var_2_218, %var_2_215, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2
-  %var_2_220 = phi i1 [ false, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit2 ], [ false, %var_2_215 ], [ %var_2_219, %var_2_218 ]
-  %var_2_221 = zext i1 %var_2_220 to i8
-  store i8 %var_2_221, i8* %var_2_83, align 1
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2454
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2455
-  %var_2_222 = load i8, i8* %var_2_134, align 1
-  %var_2_223 = zext i8 %var_2_222 to i32
-  %var_2_224 = or i32 %var_2_223, %var_2_133
-  %var_2_225 = trunc i32 %var_2_224 to i8
-  store i8 %var_2_225, i8* %var_2_134, align 1
-  %var_2_226 = load i8, i8* %var_2_141, align 1
-  %var_2_227 = zext i8 %var_2_226 to i32
-  %var_2_228 = or i32 %var_2_227, %var_2_140
-  %var_2_229 = trunc i32 %var_2_228 to i8
-  store i8 %var_2_229, i8* %var_2_141, align 1
-  %var_2_230 = load i8, i8* %var_2_148, align 1
-  %var_2_231 = zext i8 %var_2_230 to i32
-  %var_2_232 = or i32 %var_2_231, %var_2_147
-  %var_2_233 = trunc i32 %var_2_232 to i8
-  store i8 %var_2_233, i8* %var_2_148, align 1
-  %var_2_234 = load i8, i8* %var_2_71, align 1
-  %var_2_235 = zext i8 %var_2_234 to i32
-  %var_2_236 = or i32 %var_2_235, %var_2_153
-  %var_2_237 = trunc i32 %var_2_236 to i8
-  store i8 %var_2_237, i8* %var_2_71, align 1
-  %var_2_238 = load i8, i8* %var_2_160, align 1
-  %var_2_239 = zext i8 %var_2_238 to i32
-  %var_2_240 = or i32 %var_2_239, %var_2_159
-  %var_2_241 = trunc i32 %var_2_240 to i8
-  store i8 %var_2_241, i8* %var_2_160, align 1
-  %var_2_242 = inttoptr i64 %var_2_211 to x86_fp80*
-  %var_2_243 = fpext double %var_2_207 to x86_fp80
-  store x86_fp80 %var_2_243, x86_fp80* %var_2_242, align 16
-  %var_2_244 = load i64, i64* %var_2_111, align 8
-  %var_2_245 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_245, i64* %var_2_111, align 8
-  %var_2_246 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_246, i64* %var_2_109, align 8
-  %var_2_247 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_247, i64* %var_2_106, align 8
-  %var_2_248 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_248, i64* %var_2_103, align 8
-  %var_2_249 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_249, i64* %var_2_100, align 8
-  %var_2_250 = load i64, i64* %var_2_92, align 8
-  store i64 %var_2_250, i64* %var_2_97, align 8
-  %var_2_251 = load i64, i64* %var_2_95, align 8
-  store i64 %var_2_251, i64* %var_2_92, align 8
-  store i64 %var_2_244, i64* %var_2_95, align 8
-  %var_2_252 = load i16, i16* %var_2_113, align 2
-  %var_2_253 = add i16 %var_2_252, 2048
-  %var_2_254 = and i16 %var_2_253, 14336
-  %var_2_255 = and i16 %var_2_252, -14337
-  %var_2_256 = or i16 %var_2_254, %var_2_255
-  store i16 %var_2_256, i16* %var_2_113, align 2
-  %var_2_263 = load i64, i64* %PC, align 8
-  %var_2_264 = add i64 %var_2_263, -101
-  %var_2_269 = tail call %struct.Memory* @sub_400520_DoDemoFpu1_renamed_(%struct.State* nonnull %0, i64 %var_2_264, %struct.Memory* %2)
-  %var_2_270 = load i64, i64* %RBP, align 8
-  %var_2_271 = add i64 %var_2_270, -48
-  %var_2_272 = load double, double* %ST0, align 8
-  %var_2_273 = load i64, i64* %PC, align 8
-  store i16 893, i16* %var_2_60, align 2
-  store i64 %var_2_273, i64* %var_2_62, align 8
-  %var_2_275 = fcmp ueq double %var_2_272, 0.000000e+00
-  br i1 %var_2_275, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4, label %var_2_276
-
-var_2_276:                                        ; preds = %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3
-  %var_2_277 = tail call double @llvm.fabs.f64(double %var_2_272) #0
-  %var_2_278 = fcmp oeq double %var_2_277, 0x7FF0000000000000
-  br i1 %var_2_278, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4, label %var_2_279
-
-var_2_279:                                        ; preds = %var_2_276
-  %var_2_280 = fcmp olt double %var_2_277, 0x10000000000000
-  br label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4
-
-_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4: ; preds = %var_2_279, %var_2_276, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3
-  %var_2_281 = phi i1 [ false, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit3 ], [ false, %var_2_276 ], [ %var_2_280, %var_2_279 ]
-  %var_2_282 = zext i1 %var_2_281 to i8
-  store i8 %var_2_282, i8* %var_2_83, align 1
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2454
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2455
-  %var_2_283 = load i8, i8* %var_2_134, align 1
-  %var_2_284 = zext i8 %var_2_283 to i32
-  %var_2_285 = or i32 %var_2_284, %var_2_133
-  %var_2_286 = trunc i32 %var_2_285 to i8
-  store i8 %var_2_286, i8* %var_2_134, align 1
-  %var_2_287 = load i8, i8* %var_2_141, align 1
-  %var_2_288 = zext i8 %var_2_287 to i32
-  %var_2_289 = or i32 %var_2_288, %var_2_140
-  %var_2_290 = trunc i32 %var_2_289 to i8
-  store i8 %var_2_290, i8* %var_2_141, align 1
-  %var_2_291 = load i8, i8* %var_2_148, align 1
-  %var_2_292 = zext i8 %var_2_291 to i32
-  %var_2_293 = or i32 %var_2_292, %var_2_147
-  %var_2_294 = trunc i32 %var_2_293 to i8
-  store i8 %var_2_294, i8* %var_2_148, align 1
-  %var_2_295 = load i8, i8* %var_2_71, align 1
-  %var_2_296 = zext i8 %var_2_295 to i32
-  %var_2_297 = or i32 %var_2_296, %var_2_153
-  %var_2_298 = trunc i32 %var_2_297 to i8
-  store i8 %var_2_298, i8* %var_2_71, align 1
-  %var_2_299 = load i8, i8* %var_2_160, align 1
-  %var_2_300 = zext i8 %var_2_299 to i32
-  %var_2_301 = or i32 %var_2_300, %var_2_159
-  %var_2_302 = trunc i32 %var_2_301 to i8
-  store i8 %var_2_302, i8* %var_2_160, align 1
-  %var_2_303 = inttoptr i64 %var_2_271 to x86_fp80*
-  %var_2_304 = fpext double %var_2_272 to x86_fp80
-  store x86_fp80 %var_2_304, x86_fp80* %var_2_303, align 16
-  %var_2_305 = load i64, i64* %var_2_111, align 8
-  %var_2_306 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_306, i64* %var_2_111, align 8
-  %var_2_307 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_307, i64* %var_2_109, align 8
-  %var_2_308 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_308, i64* %var_2_106, align 8
-  %var_2_309 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_309, i64* %var_2_103, align 8
-  %var_2_310 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_310, i64* %var_2_100, align 8
-  %var_2_311 = load i64, i64* %var_2_92, align 8
-  store i64 %var_2_311, i64* %var_2_97, align 8
-  %var_2_312 = load i64, i64* %var_2_95, align 8
-  store i64 %var_2_312, i64* %var_2_92, align 8
-  store i64 %var_2_305, i64* %var_2_95, align 8
-  %var_2_313 = load i16, i16* %var_2_113, align 2
-  %var_2_314 = add i16 %var_2_313, 2048
-  %var_2_315 = and i16 %var_2_314, 14336
-  %var_2_316 = and i16 %var_2_313, -14337
-  %var_2_317 = or i16 %var_2_315, %var_2_316
-  store i16 %var_2_317, i16* %var_2_113, align 2
-  %var_2_318 = load i64, i64* %RBP, align 8
-  %var_2_319 = add i64 %var_2_318, -32
-  %var_2_320 = load i64, i64* %PC, align 8
-  store i64 %var_2_319, i64* %var_2_59, align 16
-  store i16 877, i16* %var_2_60, align 2
-  store i64 %var_2_320, i64* %var_2_62, align 8
-  %var_2_322 = inttoptr i64 %var_2_319 to x86_fp80*
-  %var_2_323 = load x86_fp80, x86_fp80* %var_2_322, align 16
-  %var_2_324 = fptrunc x86_fp80 %var_2_323 to double
-  %var_2_325 = bitcast double %var_2_324 to i64
-  %var_2_326 = and i64 %var_2_325, 9221120237041090560
-  %var_2_327 = icmp eq i64 %var_2_326, 9218868437227405312
-  %var_2_328 = and i64 %var_2_325, 2251799813685247
-  %var_2_329 = icmp ne i64 %var_2_328, 0
-  %var_2_330 = and i1 %var_2_327, %var_2_329
-  %var_2_331 = zext i1 %var_2_330 to i8
-  %var_2_332 = load i8, i8* %var_2_71, align 1
-  %var_2_333 = or i8 %var_2_331, %var_2_332
-  store i64 %var_2_312, i64* %var_2_95, align 8
-  store i64 %var_2_311, i64* %var_2_92, align 8
-  store i64 %var_2_310, i64* %var_2_97, align 8
-  store i64 %var_2_309, i64* %var_2_100, align 8
-  store i64 %var_2_308, i64* %var_2_103, align 8
-  store i64 %var_2_307, i64* %var_2_106, align 8
-  store i64 %var_2_306, i64* %var_2_109, align 8
-  %var_2_346 = add i16 %var_2_317, 14336
-  %var_2_347 = and i16 %var_2_346, 14336
-  %var_2_348 = or i16 %var_2_347, %var_2_316
-  store i16 %var_2_348, i16* %var_2_113, align 2
-  %var_2_349 = add i64 %var_2_318, -48
-  store i16 877, i16* %var_2_60, align 2
-  %var_2_351 = inttoptr i64 %var_2_349 to x86_fp80*
-  %var_2_352 = load x86_fp80, x86_fp80* %var_2_351, align 16
-  %var_2_353 = fptrunc x86_fp80 %var_2_352 to double
-  %var_2_354 = bitcast double %var_2_353 to i64
-  %var_2_355 = and i64 %var_2_354, 9221120237041090560
-  %var_2_356 = icmp eq i64 %var_2_355, 9218868437227405312
-  %var_2_357 = and i64 %var_2_354, 2251799813685247
-  %var_2_358 = icmp ne i64 %var_2_357, 0
-  %var_2_359 = and i1 %var_2_356, %var_2_358
-  %var_2_360 = zext i1 %var_2_359 to i8
-  %var_2_361 = or i8 %var_2_333, %var_2_360
-  %var_2_370 = icmp eq i8 %var_2_361, 0
-  %var_2_371 = or i64 %var_2_354, 2251799813685248
-  %var_2_372 = bitcast i64 %var_2_371 to double
-  %var_2_373 = select i1 %var_2_370, double %var_2_353, double %var_2_372
-  store i64 %var_2_311, i64* %var_2_95, align 8
-  store i64 %var_2_310, i64* %var_2_92, align 8
-  store i64 %var_2_309, i64* %var_2_97, align 8
-  store i64 %var_2_308, i64* %var_2_100, align 8
-  store i64 %var_2_307, i64* %var_2_103, align 8
-  store i64 %var_2_306, i64* %var_2_106, align 8
-  %var_2_374 = add i16 %var_2_348, 14336
-  %var_2_375 = and i16 %var_2_374, 14336
-  %var_2_376 = or i16 %var_2_375, %var_2_316
-  store i16 %var_2_376, i16* %var_2_113, align 2
-  %var_2_377 = load i64, i64* %RSP, align 8
-  %var_2_378 = add i64 %var_2_320, 9
-  %var_2_379 = add i64 %var_2_377, 16
-  store i64 %var_2_379, i64* %var_2_59, align 16
-  store i16 888, i16* %var_2_60, align 2
-  store i64 %var_2_378, i64* %var_2_62, align 8
-  %var_2_381 = fcmp ueq double %var_2_373, 0.000000e+00
-  br i1 %var_2_381, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1, label %var_2_382
-
-var_2_382:                                        ; preds = %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4
-  %var_2_383 = tail call double @llvm.fabs.f64(double %var_2_373) #0
-  %var_2_384 = fcmp oeq double %var_2_383, 0x7FF0000000000000
-  br i1 %var_2_384, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1, label %var_2_385
-
-var_2_385:                                        ; preds = %var_2_382
-  %var_2_386 = fcmp olt double %var_2_383, 0x10000000000000
-  br label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1
-
-_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1: ; preds = %var_2_385, %var_2_382, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4
-  %var_2_387 = phi i1 [ false, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit4 ], [ false, %var_2_382 ], [ %var_2_386, %var_2_385 ]
-  %var_2_388 = zext i1 %var_2_387 to i8
-  store i8 %var_2_388, i8* %var_2_83, align 1
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2454
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2455
-  %var_2_389 = load i8, i8* %var_2_134, align 1
-  %var_2_390 = zext i8 %var_2_389 to i32
-  %var_2_391 = or i32 %var_2_390, %var_2_133
-  %var_2_392 = trunc i32 %var_2_391 to i8
-  store i8 %var_2_392, i8* %var_2_134, align 1
-  %var_2_393 = load i8, i8* %var_2_141, align 1
-  %var_2_394 = zext i8 %var_2_393 to i32
-  %var_2_395 = or i32 %var_2_394, %var_2_140
-  %var_2_396 = trunc i32 %var_2_395 to i8
-  store i8 %var_2_396, i8* %var_2_141, align 1
-  %var_2_397 = load i8, i8* %var_2_148, align 1
-  %var_2_398 = zext i8 %var_2_397 to i32
-  %var_2_399 = or i32 %var_2_398, %var_2_147
-  %var_2_400 = trunc i32 %var_2_399 to i8
-  store i8 %var_2_400, i8* %var_2_148, align 1
-  %var_2_401 = load i8, i8* %var_2_71, align 1
-  %var_2_402 = zext i8 %var_2_401 to i32
-  %var_2_403 = or i32 %var_2_402, %var_2_153
-  %var_2_404 = trunc i32 %var_2_403 to i8
-  store i8 %var_2_404, i8* %var_2_71, align 1
-  %var_2_405 = load i8, i8* %var_2_160, align 1
-  %var_2_406 = zext i8 %var_2_405 to i32
-  %var_2_407 = or i32 %var_2_406, %var_2_159
-  %var_2_408 = trunc i32 %var_2_407 to i8
-  store i8 %var_2_408, i8* %var_2_160, align 1
-  %var_2_409 = inttoptr i64 %var_2_379 to x86_fp80*
-  %var_2_410 = fpext double %var_2_373 to x86_fp80
-  store x86_fp80 %var_2_410, x86_fp80* %var_2_409, align 16
-  %var_2_411 = load i64, i64* %var_2_111, align 8
-  %var_2_412 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_412, i64* %var_2_111, align 8
-  %var_2_413 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_413, i64* %var_2_109, align 8
-  %var_2_414 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_414, i64* %var_2_106, align 8
-  %var_2_415 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_415, i64* %var_2_103, align 8
-  %var_2_416 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_416, i64* %var_2_100, align 8
-  %var_2_417 = load i64, i64* %var_2_92, align 8
-  store i64 %var_2_417, i64* %var_2_97, align 8
-  %var_2_418 = load i64, i64* %var_2_95, align 8
-  store i64 %var_2_418, i64* %var_2_92, align 8
-  store i64 %var_2_411, i64* %var_2_95, align 8
-  %var_2_419 = load i16, i16* %var_2_113, align 2
-  %var_2_420 = add i16 %var_2_419, 2048
-  %var_2_421 = and i16 %var_2_420, 14336
-  %var_2_422 = and i16 %var_2_419, -14337
-  %var_2_423 = or i16 %var_2_421, %var_2_422
-  store i16 %var_2_423, i16* %var_2_113, align 2
-  %var_2_424 = load i64, i64* %RAX, align 8
-  %var_2_425 = bitcast i64 %var_2_412 to double
-  %var_2_426 = load i64, i64* %PC, align 8
-  store i64 %var_2_424, i64* %var_2_59, align 16
-  store i16 824, i16* %var_2_60, align 2
-  store i64 %var_2_426, i64* %var_2_62, align 8
-  %var_2_428 = fcmp ueq double %var_2_425, 0.000000e+00
-  br i1 %var_2_428, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit, label %var_2_429
-
-var_2_429:                                        ; preds = %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1
-  %var_2_430 = tail call double @llvm.fabs.f64(double %var_2_425) #0
-  %var_2_431 = fcmp oeq double %var_2_430, 0x7FF0000000000000
-  br i1 %var_2_431, label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit, label %var_2_432
-
-var_2_432:                                        ; preds = %var_2_429
-  %var_2_433 = fcmp olt double %var_2_430, 0x10000000000000
-  br label %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit
-
-_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit: ; preds = %var_2_432, %var_2_429, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1
-  %var_2_434 = phi i1 [ false, %_ZN12_GLOBAL__N_1L7FSTPmemI3MnWI9float80_tEEEP6MemoryS5_R5StateT_2RnIdE2InImESB_ItE.exit1 ], [ false, %var_2_429 ], [ %var_2_433, %var_2_432 ]
-  %var_2_435 = zext i1 %var_2_434 to i8
-  store i8 %var_2_435, i8* %var_2_83, align 1
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2454
   tail call void asm sideeffect "", "~{memory},~{dirflag},~{fpsr},~{flags}"() #11, !srcloc !2455
-  %var_2_436 = load i8, i8* %var_2_134, align 1
-  %var_2_437 = zext i8 %var_2_436 to i32
-  %var_2_438 = or i32 %var_2_437, %var_2_133
-  %var_2_439 = trunc i32 %var_2_438 to i8
-  store i8 %var_2_439, i8* %var_2_134, align 1
-  %var_2_440 = load i8, i8* %var_2_141, align 1
-  %var_2_441 = zext i8 %var_2_440 to i32
-  %var_2_442 = or i32 %var_2_441, %var_2_140
-  %var_2_443 = trunc i32 %var_2_442 to i8
-  store i8 %var_2_443, i8* %var_2_141, align 1
-  %var_2_444 = load i8, i8* %var_2_148, align 1
-  %var_2_445 = zext i8 %var_2_444 to i32
-  %var_2_446 = or i32 %var_2_445, %var_2_147
-  %var_2_447 = trunc i32 %var_2_446 to i8
-  store i8 %var_2_447, i8* %var_2_148, align 1
-  %var_2_448 = load i8, i8* %var_2_71, align 1
-  %var_2_449 = zext i8 %var_2_448 to i32
-  %var_2_450 = or i32 %var_2_449, %var_2_153
-  %var_2_451 = trunc i32 %var_2_450 to i8
-  store i8 %var_2_451, i8* %var_2_71, align 1
-  %var_2_452 = load i8, i8* %var_2_160, align 1
-  %var_2_453 = zext i8 %var_2_452 to i32
-  %var_2_454 = or i32 %var_2_453, %var_2_159
-  %var_2_455 = trunc i32 %var_2_454 to i8
-  store i8 %var_2_455, i8* %var_2_160, align 1
-  %var_2_456 = inttoptr i64 %var_2_424 to x86_fp80*
-  %var_2_457 = fpext double %var_2_425 to x86_fp80
-  store x86_fp80 %var_2_457, x86_fp80* %var_2_456, align 16
-  %var_2_458 = load i64, i64* %var_2_111, align 8
-  %var_2_459 = load i64, i64* %var_2_109, align 8
-  store i64 %var_2_459, i64* %var_2_111, align 8
-  %var_2_460 = load i64, i64* %var_2_106, align 8
-  store i64 %var_2_460, i64* %var_2_109, align 8
-  %var_2_461 = load i64, i64* %var_2_103, align 8
-  store i64 %var_2_461, i64* %var_2_106, align 8
-  %var_2_462 = load i64, i64* %var_2_100, align 8
-  store i64 %var_2_462, i64* %var_2_103, align 8
-  %var_2_463 = load i64, i64* %var_2_97, align 8
-  store i64 %var_2_463, i64* %var_2_100, align 8
-  %var_2_464 = load i64, i64* %var_2_92, align 8
-  store i64 %var_2_464, i64* %var_2_97, align 8
-  %var_2_465 = load i64, i64* %var_2_95, align 8
-  store i64 %var_2_465, i64* %var_2_92, align 8
-  store i64 %var_2_458, i64* %var_2_95, align 8
-  %var_2_466 = load i16, i16* %var_2_113, align 2
-  %var_2_467 = add i16 %var_2_466, 2048
-  %var_2_468 = and i16 %var_2_467, 14336
-  %var_2_469 = and i16 %var_2_466, -14337
-  %var_2_470 = or i16 %var_2_468, %var_2_469
-  store i16 %var_2_470, i16* %var_2_113, align 2
-  %var_2_477 = tail call fastcc %struct.Memory* @ext_601038_printf(%struct.State* nonnull %0, %struct.Memory* %var_2_269)
-  ret %struct.Memory* %var_2_477
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline nounwind
@@ -1946,7 +1403,7 @@ block_400510:
 }
 
 ; Function Attrs: noinline norecurse nounwind
-define %struct.Memory* @sub_400650___libc_csu_fini(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #9 {
+define %struct.Memory* @sub_400650___libc_csu_fini(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #8 {
 block_400650:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = add i64 %1, 2
@@ -1962,7 +1419,7 @@ block_400650:
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_4004e0___do_global_dtors_aux(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #8 {
+define %struct.Memory* @sub_4004e0___do_global_dtors_aux(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #9 {
 block_4004e0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -2044,7 +1501,7 @@ block_4004e9:                                     ; preds = %block_4004e0
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_4005e0___libc_csu_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #8 {
+define %struct.Memory* @sub_4005e0___libc_csu_init(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #9 {
 block_4005e0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0
@@ -2408,7 +1865,7 @@ block_400481:                                     ; preds = %block_400470
 }
 
 ; Function Attrs: noinline norecurse nounwind
-define %struct.Memory* @sub_400460__dl_relocate_static_pie(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #9 {
+define %struct.Memory* @sub_400460__dl_relocate_static_pie(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #8 {
 block_400460:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = add i64 %1, 2
@@ -2508,7 +1965,7 @@ block_400430:
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_400520_DoDemoFpu1(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #8 {
+define %struct.Memory* @sub_400520_DoDemoFpu1(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #9 {
 block_400520:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
@@ -3102,12 +2559,6 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
   ret %struct.Memory* %6
 }
 
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601038_printf(%struct.State*, %struct.Memory*) unnamed_addr #12 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
 ; Function Attrs: naked nobuiltin noinline nounwind
 define internal void @callback_sub_400650___libc_csu_fini() #10 {
   tail call void asm sideeffect "pushq $0;pushq $$0x400650;jmpq *$1;", "*m,*m,~{dirflag},~{fpsr},~{flags}"(%struct.Memory* (%struct.State*, i64, %struct.Memory*)** nonnull @4, void ()** nonnull @2) #11
@@ -3115,7 +2566,7 @@ define internal void @callback_sub_400650___libc_csu_fini() #10 {
 }
 
 ; Function Attrs: norecurse nounwind
-define internal %struct.Memory* @callback_sub_400650___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #13 {
+define internal %struct.Memory* @callback_sub_400650___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #12 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -3153,7 +2604,8 @@ define dllexport void @main() #10 {
   ret void
 }
 
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) {
+; Function Attrs: nounwind
+define internal %struct.Memory* @main_wrapper(%struct.State* nocapture readnone, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -3162,12 +2614,12 @@ define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memor
   br label %__mcsema_early_init.exit
 
 __mcsema_early_init.exit:                         ; preds = %5, %3
-  %6 = tail call %struct.Memory* @sub_400550_main(%struct.State* %0, i64 undef, %struct.Memory* %2)
+  %6 = tail call %struct.Memory* @sub_400550_main(%struct.State* undef, i64 undef, %struct.Memory* %2)
   ret %struct.Memory* %6
 }
 
 ; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601050___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #12 {
+define internal fastcc %struct.Memory* @ext_601050___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #13 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64)* @__libc_start_main to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
 }
@@ -3279,12 +2731,12 @@ attributes #4 = { noduplicate noinline nounwind optnone "correctly-rounded-divid
 attributes #5 = { noduplicate noinline nounwind optnone "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { noinline }
 attributes #7 = { noinline nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #8 = { noinline "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #9 = { noinline norecurse nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #8 = { noinline norecurse nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #9 = { noinline "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #10 = { naked nobuiltin noinline nounwind }
 attributes #11 = { nounwind }
-attributes #12 = { noinline nounwind }
-attributes #13 = { norecurse nounwind }
+attributes #12 = { norecurse nounwind }
+attributes #13 = { noinline nounwind }
 attributes #14 = { nobuiltin nounwind readnone }
 
 !llvm.ident = !{!0, !0}

@@ -533,5 +533,5 @@ Decompiling Function: __cxx_global_var_init.25 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.05system 0:00.64elapsed 27%CPU (0avgtext+0avgdata 10248maxresident)k
-0inputs+136outputs (0major+4720minor)pagefaults 0swaps
+0.14user 0.03system 0:00.67elapsed 26%CPU (0avgtext+0avgdata 10284maxresident)k
+0inputs+136outputs (0major+4704minor)pagefaults 0swaps

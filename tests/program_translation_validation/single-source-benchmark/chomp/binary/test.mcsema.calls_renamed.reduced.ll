@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpqyvyt1mb-target.ll'
+; ModuleID = '/tmp/tmpmeefvpgd-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -7368,7 +7368,7 @@ block_400821:                                     ; preds = %block_400806
 }
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_401310_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #8 {
+define %struct.Memory* @sub_401310_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #8 {
 block_401310:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -7385,8 +7385,10 @@ block_401727.loopexit:                            ; preds = %block_40145e
   br label %block_401727
 
 block_401727:                                     ; preds = %block_401727.loopexit, %block_4013be, %block_401310
-  %MEMORY.0 = phi %struct.Memory* [ %var_2_92, %block_401310 ], [ %var_2_804, %block_4013be ], [ %var_2_391, %block_401727.loopexit ]
-  ret %struct.Memory* %MEMORY.0
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_40145e:                                     ; preds = %block_40145e.preheader, %block_40145e
   %MEMORY.117 = phi %struct.Memory* [ %var_2_391, %block_40145e ], [ %var_2_804, %block_40145e.preheader ]
@@ -8890,7 +8892,7 @@ define dllexport void @main() #10 {
   ret void
 }
 
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) {
+define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory* returned) {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 

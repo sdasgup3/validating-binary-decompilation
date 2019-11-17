@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpt5b4pgne-target.ll'
+; ModuleID = '/tmp/tmpp5x5hs5l-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -750,7 +750,7 @@ declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64,
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
 
 ; Function Attrs: noinline
-define %struct.Memory* @sub_4006a0_Proc0(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+define %struct.Memory* @sub_4006a0_Proc0(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #6 {
 block_4006a0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -929,8 +929,10 @@ block_4009c0.loopexit:                            ; preds = %block_400965
   br label %block_4009c0
 
 block_4009c0:                                     ; preds = %block_4009c0.loopexit, %block_4006db.split
-  %MEMORY.0.lcssa = phi %struct.Memory* [ %var_2_698, %block_4006db.split ], [ %var_2_386, %block_4009c0.loopexit ]
-  ret %struct.Memory* %MEMORY.0.lcssa
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline norecurse nounwind
@@ -5132,7 +5134,7 @@ define dllexport void @Proc0() local_unnamed_addr #9 {
   ret void
 }
 
-define internal %struct.Memory* @Proc0_wrapper(%struct.State*, i64, %struct.Memory*) {
+define internal %struct.Memory* @Proc0_wrapper(%struct.State*, i64, %struct.Memory* returned) {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 

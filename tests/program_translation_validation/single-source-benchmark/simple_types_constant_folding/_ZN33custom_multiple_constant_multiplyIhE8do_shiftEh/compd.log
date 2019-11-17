@@ -469,6 +469,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIhE2RnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movb__al__MINUS0x1__rbp_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 416ad7 --size 3
 Decompiling instr:movb %al, -0x1(%rbp) Done...
 
 
@@ -488,6 +490,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L5MOVZXI3RnWImE2MnIhEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movzbl_MINUS0x1__rbp____edi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 416ada --size 4
 Decompiling instr:movzbl -0x1(%rbp), %edi Done...
 
 
@@ -654,5 +658,5 @@ Decompiling Function: _ZN33custom_multiple_constant_multiplyIhE8do_shiftEh Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.28user 0.07system 0:06.09elapsed 5%CPU (0avgtext+0avgdata 10300maxresident)k
-0inputs+168outputs (0major+6952minor)pagefaults 0swaps
+0.31user 0.06system 0:09.15elapsed 4%CPU (0avgtext+0avgdata 10300maxresident)k
+0inputs+176outputs (0major+7078minor)pagefaults 0swaps

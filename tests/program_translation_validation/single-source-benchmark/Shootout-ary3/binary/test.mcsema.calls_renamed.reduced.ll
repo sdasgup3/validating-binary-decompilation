@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpx33m_j2k-target.ll'
+; ModuleID = '/tmp/tmpyscqxdf7-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -679,18 +679,6 @@ declare %struct.Memory* @__remill_function_call(%struct.State* dereferenceable(3
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
 
 ; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @calloc(i64, i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @free(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @atoi(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @printf(i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64) #5
-
-; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @__libc_start_main(i64, i64, i64, i64, i64, i64, i64, i64) #5
 
 ; Function Attrs: noinline nounwind
@@ -1218,8 +1206,8 @@ block_4004aa:                                     ; preds = %block_4004a8, %bloc
   ret %struct.Memory* %MEMORY.0
 }
 
-; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_4005f0_main(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #6 {
+; Function Attrs: noinline norecurse nounwind
+define %struct.Memory* @sub_4005f0_main(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #8 {
 block_4005f0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %var_2_3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
@@ -1228,14 +1216,13 @@ block_4005f0:
   %var_2_14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
   %var_2_45 = load i64, i64* %PC, align 8
   %var_2_46 = add i64 %var_2_45, 3
-  store i64 %var_2_46, i64* %PC, align 8
   %var_2_54 = load i64, i64* %RBP, align 8
   %var_2_55 = add i64 %var_2_54, -8
   %var_2_58 = inttoptr i64 %var_2_55 to i32*
   %var_2_59 = load i32, i32* %var_2_58, align 4
   %var_2_72 = icmp eq i32 %var_2_59, 2
   %.v24 = select i1 %var_2_72, i64 10, i64 31
-  %var_2_81 = add i64 %.v24, %var_2_46
+  %var_2_81 = add i64 %var_2_46, %.v24
   br i1 %var_2_72, label %block_400610, label %block_400625
 
 block_4006b9:                                     ; preds = %block_4006b9.preheader, %block_4006b9
@@ -1265,19 +1252,14 @@ block_4006af.preheader.preheader:                 ; preds = %block_400692
 block_400610:                                     ; preds = %block_4005f0
   %var_2_176 = add i64 %var_2_81, 8
   store i64 %var_2_176, i64* %PC, align 8
-  %var_2_184 = tail call fastcc %struct.Memory* @ext_601070_atoi(%struct.State* nonnull %0, %struct.Memory* %2)
   %.sink.pre = load i32, i32* %EAX, align 4
-  %.sink7.in.pre = load i64, i64* %RBP, align 8
-  %.pre = load i64, i64* %PC, align 8
   br label %block_400632
 
 block_400632:                                     ; preds = %block_400625, %block_400610
-  %var_2_185 = phi i64 [ %var_2_534, %block_400625 ], [ %.pre, %block_400610 ]
-  %.sink7.in = phi i64 [ %var_2_54, %block_400625 ], [ %.sink7.in.pre, %block_400610 ]
+  %var_2_185 = phi i64 [ %var_2_534, %block_400625 ], [ %var_2_176, %block_400610 ]
   %.sink = phi i32 [ 1500000, %block_400625 ], [ %.sink.pre, %block_400610 ]
   %.sink5 = phi i64 [ 18, %block_400625 ], [ 31, %block_400610 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_400625 ], [ %var_2_184, %block_400610 ]
-  %.sink7 = add i64 %.sink7.in, -52
+  %.sink7 = add i64 %var_2_54, -52
   %var_2_186 = add i64 %var_2_185, 3
   store i64 %var_2_186, i64* %PC, align 8
   %var_2_187 = inttoptr i64 %.sink7 to i32*
@@ -1285,8 +1267,6 @@ block_400632:                                     ; preds = %block_400625, %bloc
   %var_2_188 = load i64, i64* %PC, align 8
   %var_2_197 = add i64 %.sink5, %var_2_188
   store i64 %var_2_197, i64* %PC, align 8
-  %var_2_211 = tail call fastcc %struct.Memory* @ext_601090_calloc(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
-  %var_2_230 = tail call fastcc %struct.Memory* @ext_601090_calloc(%struct.State* nonnull %0, %struct.Memory* %var_2_211)
   %var_2_49724 = load i64, i64* %RBP, align 8
   %var_2_49825 = add i64 %var_2_49724, -24
   %var_2_50026 = inttoptr i64 %var_2_49825 to i32*
@@ -1316,15 +1296,14 @@ block_4006f3:                                     ; preds = %block_4006f3.loopex
   %var_2_473.lcssa = phi i1 [ %var_2_47322, %block_400692 ], [ %var_2_473, %block_4006f3.loopexit ]
   %var_2_259 = zext i1 %var_2_473.lcssa to i8
   store i8 %var_2_259, i8* %var_2_14, align 1
-  %var_2_290 = tail call fastcc %struct.Memory* @ext_601058_printf(%struct.State* nonnull %0, %struct.Memory* %var_2_230)
-  %var_2_291 = load i64, i64* %RBP, align 8
-  %var_2_297 = add i64 %var_2_291, -56
+  %var_2_297 = add i64 %var_2_49724, -56
   %var_2_298 = load i32, i32* %EAX, align 4
   %var_2_300 = inttoptr i64 %var_2_297 to i32*
   store i32 %var_2_298, i32* %var_2_300, align 4
-  %var_2_307 = tail call fastcc %struct.Memory* @ext_601078_free(%struct.State* nonnull %0, %struct.Memory* %var_2_290)
-  %var_2_319 = tail call fastcc %struct.Memory* @ext_601078_free(%struct.State* nonnull %0, %struct.Memory* %var_2_307)
-  ret %struct.Memory* %var_2_319
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400699.loopexit.loopexit:                   ; preds = %block_4006b9
   br label %block_400699.loopexit
@@ -1698,30 +1677,6 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
   ret %struct.Memory* %6
 }
 
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601070_atoi(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601090_calloc(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64)* @calloc to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601058_printf(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601078_free(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @free to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
 ; Function Attrs: naked nobuiltin noinline nounwind
 define internal void @callback_sub_4007b0___libc_csu_fini() #9 {
   tail call void asm sideeffect "pushq $0;pushq $$0x4007b0;jmpq *$1;", "*m,*m,~{dirflag},~{fpsr},~{flags}"(%struct.Memory* (%struct.State*, i64, %struct.Memory*)** nonnull @4, void ()** nonnull @2) #10
@@ -1729,7 +1684,7 @@ define internal void @callback_sub_4007b0___libc_csu_fini() #9 {
 }
 
 ; Function Attrs: norecurse nounwind
-define internal %struct.Memory* @callback_sub_4007b0___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #12 {
+define internal %struct.Memory* @callback_sub_4007b0___libc_csu_fini_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -1767,8 +1722,8 @@ define dllexport void @main() #9 {
   ret void
 }
 
-; Function Attrs: nounwind
-define internal %struct.Memory* @main_wrapper(%struct.State*, i64, %struct.Memory*) #10 {
+; Function Attrs: norecurse nounwind
+define internal %struct.Memory* @main_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #11 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 
@@ -1782,7 +1737,7 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
 }
 
 ; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601088___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #11 {
+define internal fastcc %struct.Memory* @ext_601088___libc_start_main(%struct.State*, %struct.Memory*) unnamed_addr #12 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64)* @__libc_start_main to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
 }
@@ -1858,8 +1813,8 @@ attributes #7 = { noinline "correctly-rounded-divide-sqrt-fp-math"="false" "disa
 attributes #8 = { noinline norecurse nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #9 = { naked nobuiltin noinline nounwind }
 attributes #10 = { nounwind }
-attributes #11 = { noinline nounwind }
-attributes #12 = { norecurse nounwind }
+attributes #11 = { norecurse nounwind }
+attributes #12 = { noinline nounwind }
 
 !llvm.ident = !{!0, !0}
 !llvm.dbg.cu = !{!1}

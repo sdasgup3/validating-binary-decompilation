@@ -476,6 +476,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd_0x6020c0___rax_8____xmm0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40181c --size 9
+Global Access Mismatch: 6299840 Relocation: Address, McSema: Constant
 Decompiling instr:movsd 0x6020c0(,%rax,8), %xmm0 Done...
 
 
@@ -518,6 +521,9 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache inserted: routine_movsd__xmm0__0x6020c0___rax_8_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40182d --size 9
+Global Access Mismatch: 6299840 Relocation: Address, McSema: Constant
 Decompiling instr:movsd %xmm0, 0x6020c0(,%rax,8) Done...
 
 
@@ -560,6 +566,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache skipped: routine_movsd_0x6020c0___rax_8____xmm0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40183e --size 9
 Decompiling instr:movsd 0x6020c0(,%rax,8), %xmm0 Done...
 
 
@@ -601,6 +609,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache skipped: routine_movsd__xmm0__0x6020c0___rax_8_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40184f --size 9
 Decompiling instr:movsd %xmm0, 0x6020c0(,%rax,8) Done...
 
 
@@ -642,6 +652,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache skipped: routine_movsd_0x6020c0___rax_8____xmm0
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401860 --size 9
 Decompiling instr:movsd 0x6020c0(,%rax,8), %xmm0 Done...
 
 
@@ -683,6 +695,8 @@ Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400558__eh_frame
 FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
 FuncCache skipped: routine_movsd__xmm0__0x6020c0___rax_8_
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 401871 --size 9
 Decompiling instr:movsd %xmm0, 0x6020c0(,%rax,8) Done...
 
 
@@ -727,5 +741,5 @@ Decompiling Function: P0 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.05system 0:01.63elapsed 15%CPU (0avgtext+0avgdata 10188maxresident)k
-0inputs+168outputs (0major+8004minor)pagefaults 0swaps
+0.23user 0.03system 0:03.70elapsed 7%CPU (0avgtext+0avgdata 10320maxresident)k
+0inputs+176outputs (0major+8403minor)pagefaults 0swaps

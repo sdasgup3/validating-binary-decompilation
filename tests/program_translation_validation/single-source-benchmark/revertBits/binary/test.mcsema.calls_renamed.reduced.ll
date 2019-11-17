@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpyjstpbcs-target.ll'
+; ModuleID = '/tmp/tmphel7p6ot-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -2667,7 +2667,10 @@ block_400600:
   %var_2_22 = load i64, i64* %PC, align 8
   %var_2_135 = add i64 %var_2_22, 78
   store i64 %var_2_135, i64* %PC, align 8
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline nounwind

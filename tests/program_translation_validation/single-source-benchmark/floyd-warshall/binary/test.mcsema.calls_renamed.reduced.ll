@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmp587ph7hv-target.ll'
+; ModuleID = '/tmp/tmp4osi79r7-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -4779,7 +4779,7 @@ block_4007a2:                                     ; preds = %block_4007ae, %bloc
 }
 
 ; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400ac0_kernel_floyd_warshall(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #7 {
+define %struct.Memory* @sub_400ac0_kernel_floyd_warshall(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias returned) local_unnamed_addr #7 {
 block_400ac0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -4811,8 +4811,10 @@ block_400bfe.loopexit:                            ; preds = %block_400ad2.loopex
   br label %block_400bfe
 
 block_400bfe:                                     ; preds = %block_400bfe.loopexit, %block_400ac0
-  %MEMORY.1.lcssa = phi %struct.Memory* [ %2, %block_400ac0 ], [ %MEMORY.3.lcssa, %block_400bfe.loopexit ]
-  ret %struct.Memory* %MEMORY.1.lcssa
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 
 block_400ad2.loopexit.loopexit:                   ; preds = %block_400ae5.loopexit
   br label %block_400ad2.loopexit
@@ -4910,7 +4912,7 @@ block_400af1.preheader:                           ; preds = %block_400ade
   br label %block_400af1
 
 block_400b04:                                     ; preds = %block_400b04.preheader, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit
-  %var_2_31564 = phi i64 [ %var_2_315, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit ], [ %.pre14, %block_400b04.preheader ]
+  %var_2_31563 = phi i64 [ %var_2_315, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit ], [ %.pre14, %block_400b04.preheader ]
   %var_2_15923 = phi i32 [ %var_2_159, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit ], [ %var_2_1596, %block_400b04.preheader ]
   %var_2_15522 = phi i64 [ %var_2_155, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit ], [ %var_2_1553, %block_400b04.preheader ]
   %MEMORY.021 = phi %struct.Memory* [ %var_2_553, %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit ], [ %MEMORY.341, %block_400b04.preheader ]
@@ -4963,7 +4965,7 @@ var_2_535:                                        ; preds = %var_2_527
 
 _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit: ; preds = %block_400b04, %var_2_527, %var_2_535
   %var_2_155 = phi i64 [ %var_2_155.pre, %var_2_535 ], [ %var_2_15522, %var_2_527 ], [ %var_2_15522, %block_400b04 ]
-  %var_2_315 = phi i64 [ %var_2_315.pre, %var_2_535 ], [ %var_2_31564, %var_2_527 ], [ %var_2_31564, %block_400b04 ]
+  %var_2_315 = phi i64 [ %var_2_315.pre, %var_2_535 ], [ %var_2_31563, %var_2_527 ], [ %var_2_31563, %block_400b04 ]
   %var_2_553 = phi %struct.Memory* [ %var_2_536, %var_2_535 ], [ %MEMORY.021, %var_2_527 ], [ %MEMORY.021, %block_400b04 ]
   %var_2_316 = add i64 %var_2_315, -219
   %var_2_156 = add i64 %var_2_155, -24

@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpskye71o8-target.ll'
+; ModuleID = '/tmp/tmp46wvvm_j-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -1693,7 +1693,10 @@ block_40059d:                                     ; preds = %block_40059d.prehea
   br label %block_40059d
 
 block_400620:                                     ; preds = %block_400580
-  ret %struct.Memory* %2
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
+
 }
 
 ; Function Attrs: noinline

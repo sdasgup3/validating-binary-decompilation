@@ -89,6 +89,7 @@ private:
   vector<string> collectDeclarations(const vector<string> &local_defn);
   vector<string> handleJMPDefns(const vector<string> &local_defn);
   vector<string> handleJCCDefns(const vector<string> &local_defn);
+  vector<string> addAlwaysInlineAttribute(const vector<string> &local_defn);
   vector<string> handleCALLDefns(const vector<string> &local_defn);
   vector<string> handleDataSectionAccessDefns(x64asm::Instruction instr,
                                               const vector<string> &local_defn,
