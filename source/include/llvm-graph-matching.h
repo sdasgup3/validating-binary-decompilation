@@ -64,6 +64,7 @@ public:
   Matcher(Function *F1, Function *F2);
   // For each instruction in F1, retrieve feasible matches in F2.
   void retrievePotIMatches(Function *F1, Function *F2);
+  bool checkInvariant();
   bool retrievePotBBMatches();
   bool shallowMatch(Instruction *I1, Instruction *I2);
   bool deepMatch(Instruction *I1, Instruction *I2);
