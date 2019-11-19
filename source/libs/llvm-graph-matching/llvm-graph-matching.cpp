@@ -172,6 +172,43 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
 #endif
 }
 
+bool Matcher::checkInvariant() {
+  for(auto p: PotBBMatches) {
+    auto LBB = p.first;
+    auto RBB = p.second;
+
+    string LLoadStoreOrder = "";
+    for (Instruction &I : *LBB) {
+      if(dyn_cast<StoreInst>(&I)) {
+        LLoadStoreOrder =+ "S";
+      }
+      if(dyn_cast<LoadInst>(&I)) {
+        LLoadStoreOrder =+ "L";
+      }
+    }
+
+    string RLoadStoreOrder = "";
+    for (Instruction &I : *RBB) {
+      if(dyn_cast<StoreInst>(&I)) {
+        RLoadStoreOrder =+ "S";
+      }
+      if(dyn_cast<LoadInst>(&I)) {
+        RLoadStoreOrder =+ "L";
+      }
+    }
+
+    if(LLoadStoreOrder != RLoadStoreOrder) {
+      LBB->printAsOperand(errs(), false);
+      llvm::errs() << " --> ";
+      RBB->printAsOperand(errs(), false);
+      return false;  
+    }
+
+  }
+
+  return true;
+}
+
 // Retrieve BB correspondence based on exact matches
 bool Matcher::retrievePotBBMatches() {
   bool changed = false;
@@ -345,6 +382,11 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
 
     round++;
   }
+
+  // Check the invariant that that each BB has same load/store order
+  // if(!checkInvariant()) {
+  //   assert(0 && "Load/Store order not preserved");  
+  // }
 
   // Check final results
   llvm::errs() << "\n[Info]: Check for multiple matches\n";
