@@ -1,0 +1,30 @@
+Function: sub_4005e0_foo: 7 pointers, 0 call sites
+  NoAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  NoAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  NoAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %5
+  NoAlias:	%struct.Memory* %2, i64* %5
+  NoAlias:	i64* %5, i64* %PC
+  NoAlias:	i64* %5, i64* %RBP
+  NoAlias:	%struct.State* %0, i64* %8
+  NoAlias:	%struct.Memory* %2, i64* %8
+  NoAlias:	i64* %8, i64* %PC
+  NoAlias:	i64* %8, i64* %RBP
+  NoAlias:	i64* %5, i64* %8
+  NoAlias:	%struct.State* %0, i64* %13
+  NoAlias:	%struct.Memory* %2, i64* %13
+  NoAlias:	i64* %13, i64* %PC
+  NoAlias:	i64* %13, i64* %RBP
+  NoAlias:	i64* %13, i64* %5
+  MayAlias:	i64* %13, i64* %8
+===== Alias Analysis Evaluator Report =====
+  21 Total Alias Queries Performed
+  17 no alias responses (80.9%)
+  1 may alias responses (4.7%)
+  3 partial alias responses (14.2%)
+  0 must alias responses (0.0%)
+  Alias Analysis Evaluator Pointer Alias Summary: 80%/4%/14%/0%
+  Alias Analysis Mod/Ref Evaluator Summary: no mod/ref!

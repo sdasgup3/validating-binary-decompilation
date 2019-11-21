@@ -742,5 +742,5 @@ Decompiling Function: DoDemoFpu1 Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.27user 0.04system 0:01.92elapsed 16%CPU (0avgtext+0avgdata 10420maxresident)k
-0inputs+216outputs (0major+8586minor)pagefaults 0swaps
+0.27user 0.03system 0:01.90elapsed 16%CPU (0avgtext+0avgdata 10664maxresident)k
+0inputs+216outputs (0major+8554minor)pagefaults 0swaps

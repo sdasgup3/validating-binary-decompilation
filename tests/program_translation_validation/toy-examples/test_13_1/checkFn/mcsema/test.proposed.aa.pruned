@@ -1,0 +1,5 @@
+1:0:3
+  PartialAlias:	%struct.State* %0, i64* %3
+  PartialAlias:	%struct.State* %0, i64* %RBP.i
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	i64* %14, i64* %9

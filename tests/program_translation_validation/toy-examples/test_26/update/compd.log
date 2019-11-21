@@ -2124,5 +2124,5 @@ Decompiling Function: update Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.83user 0.13system 0:10.46elapsed 9%CPU (0avgtext+0avgdata 10236maxresident)k
-0inputs+464outputs (0major+34149minor)pagefaults 0swaps
+0.78user 0.13system 0:10.06elapsed 9%CPU (0avgtext+0avgdata 10200maxresident)k
+0inputs+472outputs (0major+34059minor)pagefaults 0swaps

@@ -1,0 +1,21 @@
+15:0:5
+  PartialAlias:	%struct.State* %0, i64* %3
+  PartialAlias:	%struct.State* %0, i64* %RBP.i
+  PartialAlias:	%struct.State* %0, i64* %6
+  PartialAlias:	%struct.State* %0, i64* %RDI.i
+  MayAlias:	i64* %14, i64* %9
+  MayAlias:	i32* %19, i64* %9
+  MayAlias:	i32* %19, i64* %14
+  PartialAlias:	%struct.State* %0, i64* %RAX.i
+  MayAlias:	i32* %24, i64* %9
+  MayAlias:	i32* %24, i64* %14
+  MayAlias:	i32* %19, i32* %24
+  MayAlias:	i64* %30, i64* %9
+  MayAlias:	i64* %14, i64* %30
+  MayAlias:	i32* %19, i64* %30
+  MayAlias:	i32* %24, i64* %30
+  MayAlias:	i64* %33, i64* %9
+  MayAlias:	i64* %14, i64* %33
+  MayAlias:	i32* %19, i64* %33
+  MayAlias:	i32* %24, i64* %33
+  MayAlias:	i64* %30, i64* %33

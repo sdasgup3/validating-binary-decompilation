@@ -1165,5 +1165,5 @@ Decompiling Function: Ack Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.49user 0.10system 0:04.47elapsed 13%CPU (0avgtext+0avgdata 10380maxresident)k
-0inputs+280outputs (0major+15843minor)pagefaults 0swaps
+0.50user 0.07system 0:04.41elapsed 13%CPU (0avgtext+0avgdata 10508maxresident)k
+0inputs+280outputs (0major+15896minor)pagefaults 0swaps

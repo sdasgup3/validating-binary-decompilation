@@ -1,0 +1,47 @@
+Function: sub_4004b0_get_sign: 21 pointers, 1 call sites
+  PartialAlias:	%struct.State* %0, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  PartialAlias:	%struct.State* %0, i32* %EDI
+  MustAlias:	%union.anon* %3, i32* %EDI
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	i32* %14, i64* %9
+  MayAlias:	i32* %19, i64* %9
+  MayAlias:	i32* %14, i32* %19
+  PartialAlias:	%struct.State* %0, i8* %24
+  PartialAlias:	%struct.State* %0, i8* %30
+  PartialAlias:	%struct.State* %0, i8* %35
+  PartialAlias:	%struct.State* %0, i8* %38
+  PartialAlias:	%struct.State* %0, i8* %41
+  PartialAlias:	%struct.State* %0, i8* %47
+  MayAlias:	i32* %53, i64* %9
+  MayAlias:	i32* %14, i32* %53
+  MayAlias:	i32* %19, i32* %53
+  MayAlias:	i32* %58, i64* %9
+  MayAlias:	i32* %14, i32* %58
+  MayAlias:	i32* %19, i32* %58
+  MayAlias:	i32* %53, i32* %58
+  MayAlias:	i64* %64, i64* %9
+  MayAlias:	i32* %14, i64* %64
+  MayAlias:	i32* %19, i64* %64
+  MayAlias:	i32* %53, i64* %64
+  MayAlias:	i32* %58, i64* %64
+  MayAlias:	i64* %67, i64* %9
+  MayAlias:	i32* %14, i64* %67
+  MayAlias:	i32* %19, i64* %67
+  MayAlias:	i32* %53, i64* %67
+  MayAlias:	i32* %58, i64* %67
+  MayAlias:	i64* %64, i64* %67
+===== Alias Analysis Evaluator Report =====
+  210 Total Alias Queries Performed
+  176 no alias responses (83.8%)
+  21 may alias responses (10.0%)
+  12 partial alias responses (5.7%)
+  1 must alias responses (0.4%)
+  Alias Analysis Evaluator Pointer Alias Summary: 83%/10%/5%/0%
+  21 no mod/ref responses (100.0%)
+  0 mod responses (0.0%)
+  0 ref responses (0.0%)
+  0 mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 100%/0%/0%/0%

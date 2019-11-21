@@ -1132,5 +1132,5 @@ Decompiling Function: doWork Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.54user 0.10system 0:04.89elapsed 13%CPU (0avgtext+0avgdata 10500maxresident)k
-0inputs+304outputs (0major+15293minor)pagefaults 0swaps
+0.58user 0.07system 0:04.91elapsed 13%CPU (0avgtext+0avgdata 10548maxresident)k
+0inputs+312outputs (0major+15271minor)pagefaults 0swaps

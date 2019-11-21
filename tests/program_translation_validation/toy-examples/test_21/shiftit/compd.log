@@ -768,5 +768,5 @@ Decompiling Function: shiftit Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.23user 0.06system 0:02.48elapsed 11%CPU (0avgtext+0avgdata 10360maxresident)k
-0inputs+192outputs (0major+8937minor)pagefaults 0swaps
+0.24user 0.04system 0:02.39elapsed 12%CPU (0avgtext+0avgdata 10456maxresident)k
+0inputs+192outputs (0major+8940minor)pagefaults 0swaps

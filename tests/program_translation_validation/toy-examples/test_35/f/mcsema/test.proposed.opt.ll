@@ -59,8 +59,10 @@ entry:
   %10 = load i64, i64* %3, align 8
   store i64 %8, i64* %RBP.i, align 8
   %RDI.i13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+
   %11 = add i64 %7, -16
   %12 = load i64, i64* %RDI.i13, align 8
+
   %13 = add i64 %10, 7
   store i64 %13, i64* %3, align 8
   %14 = inttoptr i64 %11 to i64*

@@ -1443,5 +1443,5 @@ Decompiling Function: binary_search Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.71user 0.11system 0:06.71elapsed 12%CPU (0avgtext+0avgdata 10548maxresident)k
-0inputs+368outputs (0major+21104minor)pagefaults 0swaps
+0.69user 0.09system 0:06.63elapsed 11%CPU (0avgtext+0avgdata 10516maxresident)k
+0inputs+376outputs (0major+21118minor)pagefaults 0swaps

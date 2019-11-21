@@ -976,5 +976,5 @@ Decompiling Function: read_bytes Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.44user 0.07system 0:04.41elapsed 11%CPU (0avgtext+0avgdata 10600maxresident)k
-0inputs+256outputs (0major+12742minor)pagefaults 0swaps
+0.44user 0.05system 0:04.24elapsed 11%CPU (0avgtext+0avgdata 10500maxresident)k
+0inputs+256outputs (0major+12729minor)pagefaults 0swaps

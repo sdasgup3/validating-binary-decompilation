@@ -1,0 +1,1170 @@
+
+test_14/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1:0:3 Vs mcsema/test.proposed.aa.pruned:  1:0:3
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+
+test_13_1/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1:0:3 Vs mcsema/test.proposed.aa.pruned:  1:0:3
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+
+test_16/printit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  15:0:5 Vs mcsema/test.proposed.aa.pruned:  15:0:5
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit:printit
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+
+add-sub/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  80:1:11 Vs mcsema/test.proposed.aa.pruned:  80:1:11
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+
+get-sign/get_sign
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  21:1:12 Vs mcsema/test.proposed.aa.pruned:  21:1:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign:get_sign
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+
+get-sign/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  75:1:10 Vs mcsema/test.proposed.aa.pruned:  75:1:10
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+
+test_28_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  80:1:11 Vs mcsema/test.proposed.aa.pruned:  80:1:11
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+
+test_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  21:4:15 Vs mcsema/test.proposed.aa.pruned:  21:4:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+
+test_13_1/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  93:1:10 Vs mcsema/test.proposed.aa.pruned:  93:1:10
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+
+test_30/stderr_driver
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  105:2:12 Vs mcsema/test.proposed.aa.pruned:  105:2:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
+test_28/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  80:1:11 Vs mcsema/test.proposed.aa.pruned:  80:1:11
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+
+sum-2-n/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  75:1:10 Vs mcsema/test.proposed.aa.pruned:  75:1:10
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+
+test_15/doOp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  28:3:13 Vs mcsema/test.proposed.aa.pruned:  25:3:13
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+
+test_36/fun
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  36:8:22 Vs mcsema/test.proposed.aa.pruned:  36:8:22
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun:fun
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+
+test_14/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  162:0:12 Vs mcsema/test.proposed.aa.pruned:  162:0:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+
+test_17/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  140:3:14 Vs mcsema/test.proposed.aa.pruned:  140:3:14
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+
+binary-search/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  148:1:13 Vs mcsema/test.proposed.aa.pruned:  147:1:13
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+
+test_28_1/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  147:9:16 Vs mcsema/test.proposed.aa.pruned:  147:9:16
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+
+test_0_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  154:9:17 Vs mcsema/test.proposed.aa.pruned:  154:9:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+
+test_30/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  140:4:14 Vs mcsema/test.proposed.aa.pruned:  140:4:14
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+test_7_1/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  105:8:17 Vs mcsema/test.proposed.aa.pruned:  105:8:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check:check
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+
+test_35/f
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  11:0:3 Vs mcsema/test.proposed.aa.pruned:  15:0:11
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f:f
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+
+test_18/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  140:3:14 Vs mcsema/test.proposed.aa.pruned:  140:3:14
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+
+test_30/print_it
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  204:9:19 Vs mcsema/test.proposed.aa.pruned:  204:9:19
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it:print_it
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+
+array-reverse/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  165:1:12 Vs mcsema/test.proposed.aa.pruned:  165:1:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+
+test_34/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  161:9:17 Vs mcsema/test.proposed.aa.pruned:  157:9:17
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+
+sum-2-n/sum_2_n
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  55:1:12 Vs mcsema/test.proposed.aa.pruned:  55:1:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+test_17/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  66:0:11 Vs mcsema/test.proposed.aa.pruned:  66:0:11
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+
+test_31/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  188:10:17 Vs mcsema/test.proposed.aa.pruned:  188:10:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+
+test_18/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  66:0:11 Vs mcsema/test.proposed.aa.pruned:  66:0:11
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+
+test_21/shiftit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  78:3:15 Vs mcsema/test.proposed.aa.pruned:  78:3:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit:shiftit
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+
+add-sub/add_sub
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  78:4:15 Vs mcsema/test.proposed.aa.pruned:  78:4:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub:add_sub
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+
+test_5/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  91:1:15 Vs mcsema/test.proposed.aa.pruned:  91:1:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+
+test_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  275:10:17 Vs mcsema/test.proposed.aa.pruned:  275:10:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+
+test_16/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  243:10:19 Vs mcsema/test.proposed.aa.pruned:  243:10:19
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
+test_3/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  91:1:15 Vs mcsema/test.proposed.aa.pruned:  91:1:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+
+test_29/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  273:1:12 Vs mcsema/test.proposed.aa.pruned:  273:1:12
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+
+test_0/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  424:9:17 Vs mcsema/test.proposed.aa.pruned:  424:9:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+test_28/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  312:9:16 Vs mcsema/test.proposed.aa.pruned:  312:9:16
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+
+test_13_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  265:13:19 Vs mcsema/test.proposed.aa.pruned:  265:13:19
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+test_24/to_byte
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  45:6:15 Vs mcsema/test.proposed.aa.pruned:  45:6:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte:to_byte
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+
+test_21/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  403:13:22 Vs mcsema/test.proposed.aa.pruned:  403:13:22
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+
+test_36/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  315:12:23 Vs mcsema/test.proposed.aa.pruned:  315:12:23
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+
+test_32/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  286:6:11 Vs mcsema/test.proposed.aa.pruned:  312:9:13
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+
+test_20/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  306:10:17 Vs mcsema/test.proposed.aa.pruned:  306:10:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+
+test_3/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  530:10:19 Vs mcsema/test.proposed.aa.pruned:  530:10:19
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+
+test_33/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  550:10:18 Vs mcsema/test.proposed.aa.pruned:  669:24:22
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+
+test_10/demo3
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  231:6:17 Vs mcsema/test.proposed.aa.pruned:  231:6:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+
+test_13/doStuff
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  231:6:17 Vs mcsema/test.proposed.aa.pruned:  231:6:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff:doStuff
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
+
+array-reverse/array_reverse
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  276:3:16 Vs mcsema/test.proposed.aa.pruned:  276:3:16
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+
+test_35/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  435:9:20 Vs mcsema/test.proposed.aa.pruned:  435:9:20
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+
+test_2/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  525:14:25 Vs mcsema/test.proposed.aa.pruned:  525:14:25
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+
+test_31/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  338:12:15 Vs mcsema/test.proposed.aa.pruned:  338:12:15
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+
+test_2_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  585:26:36 Vs mcsema/test.proposed.aa.pruned:  585:26:36
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+
+test_24/read_bytes
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  456:7:18 Vs mcsema/test.proposed.aa.pruned:  456:7:18
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes:read_bytes
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+
+test_14/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  621:18:21 Vs mcsema/test.proposed.aa.pruned:  621:18:21
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+
+test_29/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  650:9:21 Vs mcsema/test.proposed.aa.pruned:  670:10:22
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+
+test_13/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  630:6:18 Vs mcsema/test.proposed.aa.pruned:  630:6:18
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+
+test_15/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  621:18:21 Vs mcsema/test.proposed.aa.pruned:  621:18:21
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+test_2_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  765:21:32 Vs mcsema/test.proposed.aa.pruned:  765:21:32
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+
+test_32/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  671:13:20 Vs mcsema/test.proposed.aa.pruned:  802:29:24
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+
+test_5/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  692:13:21 Vs mcsema/test.proposed.aa.pruned:  692:13:21
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+test_7_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  665:11:23 Vs mcsema/test.proposed.aa.pruned:  665:11:23
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+
+test_23/draw
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  627:6:16 Vs mcsema/test.proposed.aa.pruned:  627:6:16
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+
+test_13/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  729:9:17 Vs mcsema/test.proposed.aa.pruned:  729:9:17
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+
+test_33/Ack
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  561:19:19 Vs mcsema/test.proposed.aa.pruned:  680:50:26
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+
+test_11/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1064:10:19 Vs mcsema/test.proposed.aa.pruned:  1064:10:19
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+
+test_24/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1015:10:17 Vs mcsema/test.proposed.aa.pruned:  1160:35:22
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+
+test_25/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1147:12:20 Vs mcsema/test.proposed.aa.pruned:  1147:12:20
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+binary-search/binary_search
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1050:12:22 Vs mcsema/test.proposed.aa.pruned:  1050:12:22
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+
+test_2/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  325:12:27 Vs mcsema/test.proposed.aa.pruned:  325:12:27
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+
+test_26_1/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  703:10:25 Vs mcsema/test.proposed.aa.pruned:  703:10:25
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+
+test_10/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1462:10:18 Vs mcsema/test.proposed.aa.pruned:  1462:10:18
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+
+test_11/doTrans
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1278:3:16 Vs mcsema/test.proposed.aa.pruned:  1278:3:16
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans:doTrans
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+
+test_6/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  666:16:31 Vs mcsema/test.proposed.aa.pruned:  666:16:31
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+
+test_6/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1637:14:26 Vs mcsema/test.proposed.aa.pruned:  1637:14:26
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+
+test_26_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2265:22:28 Vs mcsema/test.proposed.aa.pruned:  2265:22:28
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+
+test_26/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2498:11:22 Vs mcsema/test.proposed.aa.pruned:  2498:11:22
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+
+test_4/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  666:16:31 Vs mcsema/test.proposed.aa.pruned:  666:16:31
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+
+test_22/DoDemoFpu1
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  572:18:44 Vs mcsema/test.proposed.aa.pruned:  572:18:44
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1:DoDemoFpu1
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+
+test_27/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2615:18:29 Vs mcsema/test.proposed.aa.pruned:  2615:18:29
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+
+test_7/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2414:14:28 Vs mcsema/test.proposed.aa.pruned:  2414:14:28
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+
+test_4/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  3752:29:41 Vs mcsema/test.proposed.aa.pruned:  3752:29:41
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+
+test_26/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2016:13:28 Vs mcsema/test.proposed.aa.pruned:  2016:13:28
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+
+test_7/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1770:8:25 Vs mcsema/test.proposed.aa.pruned:  1770:8:25
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+
+test_27/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  4221:10:28 Vs mcsema/test.proposed.aa.pruned:  4221:10:28
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+
+test_22/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  1270:24:50 Vs mcsema/test.proposed.aa.pruned:  1270:24:50
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+
+test_13/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  4927:16:24 Vs mcsema/test.proposed.aa.pruned:  4927:16:24
+[32mKli Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+
+test_20/switches
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  2016:3:13 Vs mcsema/test.proposed.aa.pruned:  2016:4:14
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches:switches
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
+
+test_24/keycomp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>mcsema/test.proposed.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.proposed.aa
+Writing to file: mcsema/test.proposed.aa.pruned
+opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>mcsema/test.mcsema.aa 2>&1
+/home/ubuntu/Github/validating-binary-decompilation/source/build/bin//../../../tests/scripts//check_mem_edges.pl --file mcsema/test.mcsema.aa
+Writing to file: mcsema/test.mcsema.aa.pruned
+Matching mcsema/test.mcsema.aa.pruned:  13413:71:27 Vs mcsema/test.proposed.aa.pruned:  13542:84:28
+[31mKli Fail[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp:keycomp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/keycomp'

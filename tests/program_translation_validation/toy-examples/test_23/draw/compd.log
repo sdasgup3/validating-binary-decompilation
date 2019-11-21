@@ -1221,5 +1221,5 @@ Decompiling Function: draw Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.61user 0.08system 0:05.52elapsed 12%CPU (0avgtext+0avgdata 10524maxresident)k
-0inputs+312outputs (0major+17124minor)pagefaults 0swaps
+0.53user 0.07system 0:05.07elapsed 12%CPU (0avgtext+0avgdata 10468maxresident)k
+0inputs+320outputs (0major+17067minor)pagefaults 0swaps

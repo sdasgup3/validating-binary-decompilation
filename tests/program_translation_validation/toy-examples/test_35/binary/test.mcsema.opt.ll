@@ -1153,8 +1153,10 @@ block_400620:
   store i64 %7, i64* %5, align 8, !tbaa !2428
   %9 = load i64, i64* %PC, align 8
   store i64 %7, i64* %RBP, align 8, !tbaa !2428
+
   %10 = add i64 %6, -16
   %11 = load i64, i64* %RDI, align 8
+
   %12 = add i64 %9, 7
   store i64 %12, i64* %PC, align 8
   %13 = inttoptr i64 %10 to i64*

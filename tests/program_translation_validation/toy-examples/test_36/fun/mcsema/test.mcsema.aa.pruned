@@ -1,0 +1,67 @@
+36:8:22
+  PartialAlias:	%struct.State* %0, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  PartialAlias:	%struct.State* %0, [32 x %union.VectorReg]* %3
+  PartialAlias:	%struct.State* %0, %union.VectorReg* %4
+  PartialAlias:	%union.VectorReg* %4, [32 x %union.VectorReg]* %3
+  PartialAlias:	%struct.State* %0, i64* %7
+  PartialAlias:	%struct.State* %0, i64* %14
+  MustAlias:	[32 x %union.VectorReg]* %3, i64* %14
+  MayAlias:	i64* %10, i64* %16
+  PartialAlias:	%struct.State* %0, double* %21
+  PartialAlias:	[32 x %union.VectorReg]* %3, double* %21
+  MustAlias:	%union.VectorReg* %4, double* %21
+  PartialAlias:	%struct.State* %0, i64* %22
+  PartialAlias:	[32 x %union.VectorReg]* %3, i64* %22
+  MustAlias:	%union.VectorReg* %4, i64* %22
+  MustAlias:	double* %21, i64* %22
+  MayAlias:	i64* %10, i64* %24
+  MayAlias:	i64* %16, i64* %24
+  MayAlias:	i64* %10, i64* %29
+  MayAlias:	i64* %16, i64* %29
+  MayAlias:	i64* %24, i64* %29
+  PartialAlias:	%struct.State* %0, double* %31
+  MustAlias:	[32 x %union.VectorReg]* %3, double* %31
+  MustAlias:	double* %31, i64* %14
+  PartialAlias:	%struct.State* %0, i64* %32
+  PartialAlias:	[32 x %union.VectorReg]* %3, i64* %32
+  PartialAlias:	%struct.State* %0, double* %33
+  PartialAlias:	[32 x %union.VectorReg]* %3, double* %33
+  MustAlias:	double* %33, i64* %32
+  MayAlias:	double* %36, i64* %10
+  MayAlias:	double* %36, i64* %16
+  MayAlias:	double* %36, i64* %24
+  MayAlias:	double* %36, i64* %29
+  MayAlias:	i64* %10, i64* %41
+  MayAlias:	i64* %16, i64* %41
+  MayAlias:	i64* %24, i64* %41
+  MayAlias:	i64* %29, i64* %41
+  MayAlias:	double* %36, i64* %41
+  PartialAlias:	%struct.State* %0, i64* %43
+  PartialAlias:	[32 x %union.VectorReg]* %3, i64* %43
+  PartialAlias:	%union.VectorReg* %4, i64* %43
+  PartialAlias:	%struct.State* %0, double* %44
+  PartialAlias:	[32 x %union.VectorReg]* %3, double* %44
+  PartialAlias:	%union.VectorReg* %4, double* %44
+  MustAlias:	double* %44, i64* %43
+  MayAlias:	double* %47, i64* %10
+  MayAlias:	double* %47, i64* %16
+  MayAlias:	double* %47, i64* %24
+  MayAlias:	double* %47, i64* %29
+  MayAlias:	double* %36, double* %47
+  MayAlias:	double* %47, i64* %41
+  MayAlias:	i64* %10, i64* %54
+  MayAlias:	i64* %16, i64* %54
+  MayAlias:	i64* %24, i64* %54
+  MayAlias:	i64* %29, i64* %54
+  MayAlias:	double* %36, i64* %54
+  MayAlias:	i64* %41, i64* %54
+  MayAlias:	double* %47, i64* %54
+  MayAlias:	i64* %10, i64* %57
+  MayAlias:	i64* %16, i64* %57
+  MayAlias:	i64* %24, i64* %57
+  MayAlias:	i64* %29, i64* %57
+  MayAlias:	double* %36, i64* %57
+  MayAlias:	i64* %41, i64* %57
+  MayAlias:	double* %47, i64* %57
+  MayAlias:	i64* %54, i64* %57

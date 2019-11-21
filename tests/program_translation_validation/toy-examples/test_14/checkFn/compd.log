@@ -641,5 +641,5 @@ Decompiling Function: checkFn Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.19user 0.03system 0:01.71elapsed 13%CPU (0avgtext+0avgdata 10476maxresident)k
-0inputs+168outputs (0major+6678minor)pagefaults 0swaps
+0.18user 0.03system 0:01.62elapsed 13%CPU (0avgtext+0avgdata 10284maxresident)k
+0inputs+168outputs (0major+6700minor)pagefaults 0swaps

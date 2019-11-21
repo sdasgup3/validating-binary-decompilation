@@ -1,0 +1,45 @@
+28:3:13
+  PartialAlias:	%struct.State* %0, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  PartialAlias:	%struct.State* %0, i32* %EDI
+  MustAlias:	%union.anon* %3, i32* %EDI
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RDI
+  MustAlias:	%union.anon* %3, i64* %RDI
+  MustAlias:	i32* %EDI, i64* %RDI
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	i32* %14, i64* %9
+  MayAlias:	i32* bitcast (%g_j_type* @g_j to i32*), i64* %9
+  MayAlias:	i32* %14, i32* bitcast (%g_j_type* @g_j to i32*)
+  MayAlias:	i32* %21, i64* %9
+  MayAlias:	i32* %14, i32* %21
+  MayAlias:	i32* %21, i32* bitcast (%g_j_type* @g_j to i32*)
+  MayAlias:	i32* %26, i64* %9
+  MayAlias:	i32* %14, i32* %26
+  MayAlias:	i32* %26, i32* bitcast (%g_j_type* @g_j to i32*)
+  MayAlias:	i32* %21, i32* %26
+  PartialAlias:	%struct.State* %0, i8* %35
+  PartialAlias:	%struct.State* %0, i8* %41
+  PartialAlias:	%struct.State* %0, i8* %47
+  PartialAlias:	%struct.State* %0, i8* %50
+  PartialAlias:	%struct.State* %0, i8* %53
+  PartialAlias:	%struct.State* %0, i8* %61
+  MayAlias:	i32* %64, i64* %9
+  MayAlias:	i32* %14, i32* %64
+  MayAlias:	i32* %64, i32* bitcast (%g_j_type* @g_j to i32*)
+  MayAlias:	i32* %21, i32* %64
+  MayAlias:	i32* %26, i32* %64
+  MayAlias:	i64* %70, i64* %9
+  MayAlias:	i32* %14, i64* %70
+  MayAlias:	i32* bitcast (%g_j_type* @g_j to i32*), i64* %70
+  MayAlias:	i32* %21, i64* %70
+  MayAlias:	i32* %26, i64* %70
+  MayAlias:	i32* %64, i64* %70
+  MayAlias:	i64* %73, i64* %9
+  MayAlias:	i32* %14, i64* %73
+  MayAlias:	i32* bitcast (%g_j_type* @g_j to i32*), i64* %73
+  MayAlias:	i32* %21, i64* %73
+  MayAlias:	i32* %26, i64* %73
+  MayAlias:	i32* %64, i64* %73
+  MayAlias:	i64* %70, i64* %73

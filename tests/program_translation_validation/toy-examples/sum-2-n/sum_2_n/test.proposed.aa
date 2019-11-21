@@ -1,0 +1,816 @@
+Function: sum_2_n: 25 pointers, 3 call sites
+  NoAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %3
+  NoAlias:	%struct.Memory* %2, i64* %3
+  PartialAlias:	%struct.State* %0, i64* %RBP.i
+  NoAlias:	%struct.Memory* %2, i64* %RBP.i
+  NoAlias:	i64* %3, i64* %RBP.i
+  PartialAlias:	%struct.State* %0, i64* %6
+  NoAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %3, i64* %6
+  NoAlias:	i64* %6, i64* %RBP.i
+  NoAlias:	%struct.State* %0, i64* %9
+  NoAlias:	%struct.Memory* %2, i64* %9
+  NoAlias:	i64* %3, i64* %9
+  NoAlias:	i64* %9, i64* %RBP.i
+  NoAlias:	i64* %6, i64* %9
+  PartialAlias:	%struct.State* %0, %union.anon* %11
+  NoAlias:	%struct.Memory* %2, %union.anon* %11
+  NoAlias:	%union.anon* %11, i64* %3
+  NoAlias:	%union.anon* %11, i64* %RBP.i
+  NoAlias:	%union.anon* %11, i64* %6
+  NoAlias:	%union.anon* %11, i64* %9
+  PartialAlias:	%struct.State* %0, i32* %EDI.i
+  NoAlias:	%struct.Memory* %2, i32* %EDI.i
+  NoAlias:	i32* %EDI.i, i64* %3
+  NoAlias:	i32* %EDI.i, i64* %RBP.i
+  NoAlias:	i32* %EDI.i, i64* %6
+  NoAlias:	i32* %EDI.i, i64* %9
+  MustAlias:	%union.anon* %11, i32* %EDI.i
+  NoAlias:	%struct.State* %0, i32* %15
+  NoAlias:	%struct.Memory* %2, i32* %15
+  NoAlias:	i32* %15, i64* %3
+  NoAlias:	i32* %15, i64* %RBP.i
+  NoAlias:	i32* %15, i64* %6
+  MayAlias:	i32* %15, i64* %9
+  NoAlias:	%union.anon* %11, i32* %15
+  NoAlias:	i32* %15, i32* %EDI.i
+  NoAlias:	%struct.State* %0, i32* %20
+  NoAlias:	%struct.Memory* %2, i32* %20
+  NoAlias:	i32* %20, i64* %3
+  NoAlias:	i32* %20, i64* %RBP.i
+  NoAlias:	i32* %20, i64* %6
+  MayAlias:	i32* %20, i64* %9
+  NoAlias:	%union.anon* %11, i32* %20
+  NoAlias:	i32* %20, i32* %EDI.i
+  MayAlias:	i32* %15, i32* %20
+  NoAlias:	%struct.State* %0, i32* %25
+  NoAlias:	%struct.Memory* %2, i32* %25
+  NoAlias:	i32* %25, i64* %3
+  NoAlias:	i32* %25, i64* %RBP.i
+  NoAlias:	i32* %25, i64* %6
+  MayAlias:	i32* %25, i64* %9
+  NoAlias:	%union.anon* %11, i32* %25
+  NoAlias:	i32* %25, i32* %EDI.i
+  MayAlias:	i32* %15, i32* %25
+  MayAlias:	i32* %20, i32* %25
+  PartialAlias:	%struct.State* %0, i64* %RAX.i28
+  NoAlias:	%struct.Memory* %2, i64* %RAX.i28
+  NoAlias:	i64* %3, i64* %RAX.i28
+  NoAlias:	i64* %RAX.i28, i64* %RBP.i
+  NoAlias:	i64* %6, i64* %RAX.i28
+  NoAlias:	i64* %9, i64* %RAX.i28
+  NoAlias:	%union.anon* %11, i64* %RAX.i28
+  NoAlias:	i32* %EDI.i, i64* %RAX.i28
+  NoAlias:	i32* %15, i64* %RAX.i28
+  NoAlias:	i32* %20, i64* %RAX.i28
+  NoAlias:	i32* %25, i64* %RAX.i28
+  PartialAlias:	%struct.State* %0, i8* %26
+  NoAlias:	%struct.Memory* %2, i8* %26
+  NoAlias:	i64* %3, i8* %26
+  NoAlias:	i64* %RBP.i, i8* %26
+  NoAlias:	i64* %6, i8* %26
+  NoAlias:	i64* %9, i8* %26
+  NoAlias:	%union.anon* %11, i8* %26
+  NoAlias:	i32* %EDI.i, i8* %26
+  NoAlias:	i32* %15, i8* %26
+  NoAlias:	i32* %20, i8* %26
+  NoAlias:	i32* %25, i8* %26
+  NoAlias:	i64* %RAX.i28, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %27
+  NoAlias:	%struct.Memory* %2, i8* %27
+  NoAlias:	i64* %3, i8* %27
+  NoAlias:	i64* %RBP.i, i8* %27
+  NoAlias:	i64* %6, i8* %27
+  NoAlias:	i64* %9, i8* %27
+  NoAlias:	%union.anon* %11, i8* %27
+  NoAlias:	i32* %EDI.i, i8* %27
+  NoAlias:	i32* %15, i8* %27
+  NoAlias:	i32* %20, i8* %27
+  NoAlias:	i32* %25, i8* %27
+  NoAlias:	i64* %RAX.i28, i8* %27
+  NoAlias:	i8* %26, i8* %27
+  PartialAlias:	%struct.State* %0, i8* %28
+  NoAlias:	%struct.Memory* %2, i8* %28
+  NoAlias:	i64* %3, i8* %28
+  NoAlias:	i64* %RBP.i, i8* %28
+  NoAlias:	i64* %6, i8* %28
+  NoAlias:	i64* %9, i8* %28
+  NoAlias:	%union.anon* %11, i8* %28
+  NoAlias:	i32* %EDI.i, i8* %28
+  NoAlias:	i32* %15, i8* %28
+  NoAlias:	i32* %20, i8* %28
+  NoAlias:	i32* %25, i8* %28
+  NoAlias:	i64* %RAX.i28, i8* %28
+  NoAlias:	i8* %26, i8* %28
+  NoAlias:	i8* %27, i8* %28
+  PartialAlias:	%struct.State* %0, i8* %29
+  NoAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %3, i8* %29
+  NoAlias:	i64* %RBP.i, i8* %29
+  NoAlias:	i64* %6, i8* %29
+  NoAlias:	i64* %9, i8* %29
+  NoAlias:	%union.anon* %11, i8* %29
+  NoAlias:	i32* %EDI.i, i8* %29
+  NoAlias:	i32* %15, i8* %29
+  NoAlias:	i32* %20, i8* %29
+  NoAlias:	i32* %25, i8* %29
+  NoAlias:	i64* %RAX.i28, i8* %29
+  NoAlias:	i8* %26, i8* %29
+  NoAlias:	i8* %27, i8* %29
+  NoAlias:	i8* %28, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %30
+  NoAlias:	%struct.Memory* %2, i8* %30
+  NoAlias:	i64* %3, i8* %30
+  NoAlias:	i64* %RBP.i, i8* %30
+  NoAlias:	i64* %6, i8* %30
+  NoAlias:	i64* %9, i8* %30
+  NoAlias:	%union.anon* %11, i8* %30
+  NoAlias:	i32* %EDI.i, i8* %30
+  NoAlias:	i32* %15, i8* %30
+  NoAlias:	i32* %20, i8* %30
+  NoAlias:	i32* %25, i8* %30
+  NoAlias:	i64* %RAX.i28, i8* %30
+  NoAlias:	i8* %26, i8* %30
+  NoAlias:	i8* %27, i8* %30
+  NoAlias:	i8* %28, i8* %30
+  NoAlias:	i8* %29, i8* %30
+  PartialAlias:	%struct.State* %0, i8* %31
+  NoAlias:	%struct.Memory* %2, i8* %31
+  NoAlias:	i64* %3, i8* %31
+  NoAlias:	i64* %RBP.i, i8* %31
+  NoAlias:	i64* %6, i8* %31
+  NoAlias:	i64* %9, i8* %31
+  NoAlias:	%union.anon* %11, i8* %31
+  NoAlias:	i32* %EDI.i, i8* %31
+  NoAlias:	i32* %15, i8* %31
+  NoAlias:	i32* %20, i8* %31
+  NoAlias:	i32* %25, i8* %31
+  NoAlias:	i64* %RAX.i28, i8* %31
+  NoAlias:	i8* %26, i8* %31
+  NoAlias:	i8* %27, i8* %31
+  NoAlias:	i8* %28, i8* %31
+  NoAlias:	i8* %29, i8* %31
+  NoAlias:	i8* %30, i8* %31
+  NoAlias:	%struct.State* %0, i32* %36
+  NoAlias:	%struct.Memory* %2, i32* %36
+  NoAlias:	i32* %36, i64* %3
+  NoAlias:	i32* %36, i64* %RBP.i
+  NoAlias:	i32* %36, i64* %6
+  MayAlias:	i32* %36, i64* %9
+  NoAlias:	%union.anon* %11, i32* %36
+  NoAlias:	i32* %36, i32* %EDI.i
+  MayAlias:	i32* %15, i32* %36
+  MayAlias:	i32* %20, i32* %36
+  MayAlias:	i32* %25, i32* %36
+  NoAlias:	i32* %36, i64* %RAX.i28
+  NoAlias:	i32* %36, i8* %26
+  NoAlias:	i32* %36, i8* %27
+  NoAlias:	i32* %36, i8* %28
+  NoAlias:	i32* %36, i8* %29
+  NoAlias:	i32* %36, i8* %30
+  NoAlias:	i32* %36, i8* %31
+  NoAlias:	%struct.State* %0, i32* %41
+  NoAlias:	%struct.Memory* %2, i32* %41
+  NoAlias:	i32* %41, i64* %3
+  NoAlias:	i32* %41, i64* %RBP.i
+  NoAlias:	i32* %41, i64* %6
+  MayAlias:	i32* %41, i64* %9
+  NoAlias:	%union.anon* %11, i32* %41
+  NoAlias:	i32* %41, i32* %EDI.i
+  MayAlias:	i32* %15, i32* %41
+  MayAlias:	i32* %20, i32* %41
+  MayAlias:	i32* %25, i32* %41
+  NoAlias:	i32* %41, i64* %RAX.i28
+  NoAlias:	i32* %41, i8* %26
+  NoAlias:	i32* %41, i8* %27
+  NoAlias:	i32* %41, i8* %28
+  NoAlias:	i32* %41, i8* %29
+  NoAlias:	i32* %41, i8* %30
+  NoAlias:	i32* %41, i8* %31
+  MayAlias:	i32* %36, i32* %41
+  NoAlias:	%struct.State* %0, i32* %75
+  NoAlias:	%struct.Memory* %2, i32* %75
+  NoAlias:	i32* %75, i64* %3
+  NoAlias:	i32* %75, i64* %RBP.i
+  NoAlias:	i32* %75, i64* %6
+  MayAlias:	i32* %75, i64* %9
+  NoAlias:	%union.anon* %11, i32* %75
+  NoAlias:	i32* %75, i32* %EDI.i
+  MayAlias:	i32* %15, i32* %75
+  MayAlias:	i32* %20, i32* %75
+  MayAlias:	i32* %25, i32* %75
+  NoAlias:	i32* %75, i64* %RAX.i28
+  NoAlias:	i32* %75, i8* %26
+  NoAlias:	i32* %75, i8* %27
+  NoAlias:	i32* %75, i8* %28
+  NoAlias:	i32* %75, i8* %29
+  NoAlias:	i32* %75, i8* %30
+  NoAlias:	i32* %75, i8* %31
+  MayAlias:	i32* %36, i32* %75
+  MayAlias:	i32* %41, i32* %75
+  NoAlias:	%struct.State* %0, i32* %109
+  NoAlias:	%struct.Memory* %2, i32* %109
+  NoAlias:	i32* %109, i64* %3
+  NoAlias:	i32* %109, i64* %RBP.i
+  NoAlias:	i32* %109, i64* %6
+  MayAlias:	i32* %109, i64* %9
+  NoAlias:	%union.anon* %11, i32* %109
+  NoAlias:	i32* %109, i32* %EDI.i
+  MayAlias:	i32* %109, i32* %15
+  MayAlias:	i32* %109, i32* %20
+  MayAlias:	i32* %109, i32* %25
+  NoAlias:	i32* %109, i64* %RAX.i28
+  NoAlias:	i32* %109, i8* %26
+  NoAlias:	i32* %109, i8* %27
+  NoAlias:	i32* %109, i8* %28
+  NoAlias:	i32* %109, i8* %29
+  NoAlias:	i32* %109, i8* %30
+  NoAlias:	i32* %109, i8* %31
+  MayAlias:	i32* %109, i32* %36
+  MayAlias:	i32* %109, i32* %41
+  MayAlias:	i32* %109, i32* %75
+  NoAlias:	%struct.State* %0, i32* %139
+  NoAlias:	%struct.Memory* %2, i32* %139
+  NoAlias:	i32* %139, i64* %3
+  NoAlias:	i32* %139, i64* %RBP.i
+  NoAlias:	i32* %139, i64* %6
+  MayAlias:	i32* %139, i64* %9
+  NoAlias:	%union.anon* %11, i32* %139
+  NoAlias:	i32* %139, i32* %EDI.i
+  MayAlias:	i32* %139, i32* %15
+  MayAlias:	i32* %139, i32* %20
+  MayAlias:	i32* %139, i32* %25
+  NoAlias:	i32* %139, i64* %RAX.i28
+  NoAlias:	i32* %139, i8* %26
+  NoAlias:	i32* %139, i8* %27
+  NoAlias:	i32* %139, i8* %28
+  NoAlias:	i32* %139, i8* %29
+  NoAlias:	i32* %139, i8* %30
+  NoAlias:	i32* %139, i8* %31
+  MayAlias:	i32* %139, i32* %36
+  MayAlias:	i32* %139, i32* %41
+  MayAlias:	i32* %139, i32* %75
+  MayAlias:	i32* %109, i32* %139
+  NoAlias:	%struct.State* %0, i64* %145
+  NoAlias:	%struct.Memory* %2, i64* %145
+  NoAlias:	i64* %145, i64* %3
+  NoAlias:	i64* %145, i64* %RBP.i
+  NoAlias:	i64* %145, i64* %6
+  MayAlias:	i64* %145, i64* %9
+  NoAlias:	%union.anon* %11, i64* %145
+  NoAlias:	i32* %EDI.i, i64* %145
+  MayAlias:	i32* %15, i64* %145
+  MayAlias:	i32* %20, i64* %145
+  MayAlias:	i32* %25, i64* %145
+  NoAlias:	i64* %145, i64* %RAX.i28
+  NoAlias:	i64* %145, i8* %26
+  NoAlias:	i64* %145, i8* %27
+  NoAlias:	i64* %145, i8* %28
+  NoAlias:	i64* %145, i8* %29
+  NoAlias:	i64* %145, i8* %30
+  NoAlias:	i64* %145, i8* %31
+  MayAlias:	i32* %36, i64* %145
+  MayAlias:	i32* %41, i64* %145
+  MayAlias:	i32* %75, i64* %145
+  MayAlias:	i32* %109, i64* %145
+  MayAlias:	i32* %139, i64* %145
+  NoAlias:	%struct.State* %0, i64* %148
+  NoAlias:	%struct.Memory* %2, i64* %148
+  NoAlias:	i64* %148, i64* %3
+  NoAlias:	i64* %148, i64* %RBP.i
+  NoAlias:	i64* %148, i64* %6
+  MayAlias:	i64* %148, i64* %9
+  NoAlias:	%union.anon* %11, i64* %148
+  NoAlias:	i32* %EDI.i, i64* %148
+  MayAlias:	i32* %15, i64* %148
+  MayAlias:	i32* %20, i64* %148
+  MayAlias:	i32* %25, i64* %148
+  NoAlias:	i64* %148, i64* %RAX.i28
+  NoAlias:	i64* %148, i8* %26
+  NoAlias:	i64* %148, i8* %27
+  NoAlias:	i64* %148, i8* %28
+  NoAlias:	i64* %148, i8* %29
+  NoAlias:	i64* %148, i8* %30
+  NoAlias:	i64* %148, i8* %31
+  MayAlias:	i32* %36, i64* %148
+  MayAlias:	i32* %41, i64* %148
+  MayAlias:	i32* %75, i64* %148
+  MayAlias:	i32* %109, i64* %148
+  MayAlias:	i32* %139, i64* %148
+  MayAlias:	i64* %145, i64* %148
+  NoModRef:  Ptr: %struct.State* %0	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %3	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %6	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %9	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: %union.anon* %11	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %15	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %20	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %25	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %RAX.i28	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %26	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %27	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %28	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %29	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %30	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i8* %31	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %36	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %41	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %75	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %109	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i32* %139	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %145	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: i64* %148	<->  %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:  Ptr: %struct.State* %0	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %3	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %6	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %9	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: %union.anon* %11	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %15	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %20	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %25	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %RAX.i28	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %26	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %27	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %28	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %29	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %30	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i8* %31	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %36	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %41	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %75	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %109	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i32* %139	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %145	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: i64* %148	<->  %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:  Ptr: %struct.State* %0	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %3	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %6	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %9	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: %union.anon* %11	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %15	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %20	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %25	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %RAX.i28	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %26	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %27	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %28	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %29	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %30	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i8* %31	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %36	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %41	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %75	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %109	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i32* %139	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %145	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:  Ptr: i64* %148	<->  %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:   %47 = tail call i32 @llvm.ctpop.i32(i32 %46) <->   %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+  NoModRef:   %47 = tail call i32 @llvm.ctpop.i32(i32 %46) <->   %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:   %84 = tail call i32 @llvm.ctpop.i32(i32 %83) <->   %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:   %84 = tail call i32 @llvm.ctpop.i32(i32 %83) <->   %118 = tail call i32 @llvm.ctpop.i32(i32 %117)
+  NoModRef:   %118 = tail call i32 @llvm.ctpop.i32(i32 %117) <->   %47 = tail call i32 @llvm.ctpop.i32(i32 %46)
+  NoModRef:   %118 = tail call i32 @llvm.ctpop.i32(i32 %117) <->   %84 = tail call i32 @llvm.ctpop.i32(i32 %83)
+Function: routine_pushq__rbp: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %6, i64* %PC
+  NoAlias:	i64* %6, i64* %RBP
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %9, i64* %PC
+  MayAlias:	i64* %9, i64* %RBP
+  MayAlias:	i64* %6, i64* %9
+Function: routine_movq__rsp___rbp: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RSP
+  MayAlias:	%struct.Memory* %2, i64* %RSP
+  NoAlias:	i64* %PC, i64* %RSP
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RBP, i64* %RSP
+Function: routine_movl__edi__MINUS0x4__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EDI
+  MayAlias:	%struct.Memory* %2, i32* %EDI
+  NoAlias:	i32* %EDI, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EDI
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EDI, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EDI
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_movl__0x0__MINUS0x8__rbp_: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_movl__0x0__MINUS0xc__rbp_: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_movl_MINUS0xc__rbp____eax: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RAX
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_cmpl_MINUS0x4__rbp____eax: 13 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+  PartialAlias:	%struct.State* %0, i8* %14
+  MayAlias:	%struct.Memory* %2, i8* %14
+  NoAlias:	i64* %PC, i8* %14
+  NoAlias:	%union.anon* %3, i8* %14
+  NoAlias:	i32* %EAX, i8* %14
+  NoAlias:	i64* %RBP, i8* %14
+  MayAlias:	i32* %9, i8* %14
+  PartialAlias:	%struct.State* %0, i8* %20
+  MayAlias:	%struct.Memory* %2, i8* %20
+  NoAlias:	i64* %PC, i8* %20
+  NoAlias:	%union.anon* %3, i8* %20
+  NoAlias:	i32* %EAX, i8* %20
+  NoAlias:	i64* %RBP, i8* %20
+  MayAlias:	i32* %9, i8* %20
+  NoAlias:	i8* %14, i8* %20
+  PartialAlias:	%struct.State* %0, i8* %26
+  MayAlias:	%struct.Memory* %2, i8* %26
+  NoAlias:	i64* %PC, i8* %26
+  NoAlias:	%union.anon* %3, i8* %26
+  NoAlias:	i32* %EAX, i8* %26
+  NoAlias:	i64* %RBP, i8* %26
+  MayAlias:	i32* %9, i8* %26
+  NoAlias:	i8* %14, i8* %26
+  NoAlias:	i8* %20, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %29
+  MayAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %PC, i8* %29
+  NoAlias:	%union.anon* %3, i8* %29
+  NoAlias:	i32* %EAX, i8* %29
+  NoAlias:	i64* %RBP, i8* %29
+  MayAlias:	i32* %9, i8* %29
+  NoAlias:	i8* %14, i8* %29
+  NoAlias:	i8* %20, i8* %29
+  NoAlias:	i8* %26, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %32
+  MayAlias:	%struct.Memory* %2, i8* %32
+  NoAlias:	i64* %PC, i8* %32
+  NoAlias:	%union.anon* %3, i8* %32
+  NoAlias:	i32* %EAX, i8* %32
+  NoAlias:	i64* %RBP, i8* %32
+  MayAlias:	i32* %9, i8* %32
+  NoAlias:	i8* %14, i8* %32
+  NoAlias:	i8* %20, i8* %32
+  NoAlias:	i8* %26, i8* %32
+  NoAlias:	i8* %29, i8* %32
+  PartialAlias:	%struct.State* %0, i8* %40
+  MayAlias:	%struct.Memory* %2, i8* %40
+  NoAlias:	i64* %PC, i8* %40
+  NoAlias:	%union.anon* %3, i8* %40
+  NoAlias:	i32* %EAX, i8* %40
+  NoAlias:	i64* %RBP, i8* %40
+  MayAlias:	i32* %9, i8* %40
+  NoAlias:	i8* %14, i8* %40
+  NoAlias:	i8* %20, i8* %40
+  NoAlias:	i8* %26, i8* %40
+  NoAlias:	i8* %29, i8* %40
+  NoAlias:	i8* %32, i8* %40
+  NoModRef:  Ptr: %struct.State* %0	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i64* %PC	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: %union.anon* %3	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i32* %EAX	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i64* %RBP	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i32* %9	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %14	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %20	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %26	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %29	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %32	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+  NoModRef:  Ptr: i8* %40	<->  %16 = tail call i32 @llvm.ctpop.i32(i32 %15)
+Function: routine_jge_.L_4004e8: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  MayAlias:	%struct.State* %0, i8* %BRANCH_TAKEN
+  MayAlias:	%struct.Memory* %2, i8* %BRANCH_TAKEN
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  MayAlias:	i64* %PC, i8* %BRANCH_TAKEN
+  PartialAlias:	%struct.State* %0, i8* %4
+  MayAlias:	%struct.Memory* %2, i8* %4
+  MayAlias:	i8* %4, i8* %BRANCH_TAKEN
+  NoAlias:	i64* %PC, i8* %4
+  PartialAlias:	%struct.State* %0, i8* %7
+  MayAlias:	%struct.Memory* %2, i8* %7
+  MayAlias:	i8* %7, i8* %BRANCH_TAKEN
+  NoAlias:	i64* %PC, i8* %7
+  NoAlias:	i8* %4, i8* %7
+Function: routine_addl_MINUS0x8__rbp____eax: 12 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	i32* %9, i64* %RAX
+  MayAlias:	i32* %9, i64* %RBP
+  PartialAlias:	%struct.State* %0, i8* %17
+  MayAlias:	%struct.Memory* %2, i8* %17
+  NoAlias:	i64* %PC, i8* %17
+  NoAlias:	i64* %RAX, i8* %17
+  NoAlias:	i64* %RBP, i8* %17
+  MayAlias:	i32* %9, i8* %17
+  PartialAlias:	%struct.State* %0, i8* %23
+  MayAlias:	%struct.Memory* %2, i8* %23
+  NoAlias:	i64* %PC, i8* %23
+  NoAlias:	i64* %RAX, i8* %23
+  NoAlias:	i64* %RBP, i8* %23
+  MayAlias:	i32* %9, i8* %23
+  NoAlias:	i8* %17, i8* %23
+  PartialAlias:	%struct.State* %0, i8* %29
+  MayAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %PC, i8* %29
+  NoAlias:	i64* %RAX, i8* %29
+  NoAlias:	i64* %RBP, i8* %29
+  MayAlias:	i32* %9, i8* %29
+  NoAlias:	i8* %17, i8* %29
+  NoAlias:	i8* %23, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %32
+  MayAlias:	%struct.Memory* %2, i8* %32
+  NoAlias:	i64* %PC, i8* %32
+  NoAlias:	i64* %RAX, i8* %32
+  NoAlias:	i64* %RBP, i8* %32
+  MayAlias:	i32* %9, i8* %32
+  NoAlias:	i8* %17, i8* %32
+  NoAlias:	i8* %23, i8* %32
+  NoAlias:	i8* %29, i8* %32
+  PartialAlias:	%struct.State* %0, i8* %35
+  MayAlias:	%struct.Memory* %2, i8* %35
+  NoAlias:	i64* %PC, i8* %35
+  NoAlias:	i64* %RAX, i8* %35
+  NoAlias:	i64* %RBP, i8* %35
+  MayAlias:	i32* %9, i8* %35
+  NoAlias:	i8* %17, i8* %35
+  NoAlias:	i8* %23, i8* %35
+  NoAlias:	i8* %29, i8* %35
+  NoAlias:	i8* %32, i8* %35
+  PartialAlias:	%struct.State* %0, i8* %43
+  MayAlias:	%struct.Memory* %2, i8* %43
+  NoAlias:	i64* %PC, i8* %43
+  NoAlias:	i64* %RAX, i8* %43
+  NoAlias:	i64* %RBP, i8* %43
+  MayAlias:	i32* %9, i8* %43
+  NoAlias:	i8* %17, i8* %43
+  NoAlias:	i8* %23, i8* %43
+  NoAlias:	i8* %29, i8* %43
+  NoAlias:	i8* %32, i8* %43
+  NoAlias:	i8* %35, i8* %43
+  NoModRef:  Ptr: %struct.State* %0	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i64* %PC	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i64* %RAX	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i64* %RBP	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i32* %9	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %17	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %23	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %29	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %32	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %35	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+  NoModRef:  Ptr: i8* %43	<->  %19 = tail call i32 @llvm.ctpop.i32(i32 %18)
+Function: routine_movl__eax__MINUS0x8__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_addl__0x1___eax: 10 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i8* %13
+  MayAlias:	%struct.Memory* %2, i8* %13
+  NoAlias:	i64* %PC, i8* %13
+  NoAlias:	i64* %RAX, i8* %13
+  PartialAlias:	%struct.State* %0, i8* %19
+  MayAlias:	%struct.Memory* %2, i8* %19
+  NoAlias:	i64* %PC, i8* %19
+  NoAlias:	i64* %RAX, i8* %19
+  NoAlias:	i8* %13, i8* %19
+  PartialAlias:	%struct.State* %0, i8* %24
+  MayAlias:	%struct.Memory* %2, i8* %24
+  NoAlias:	i64* %PC, i8* %24
+  NoAlias:	i64* %RAX, i8* %24
+  NoAlias:	i8* %13, i8* %24
+  NoAlias:	i8* %19, i8* %24
+  PartialAlias:	%struct.State* %0, i8* %26
+  MayAlias:	%struct.Memory* %2, i8* %26
+  NoAlias:	i64* %PC, i8* %26
+  NoAlias:	i64* %RAX, i8* %26
+  NoAlias:	i8* %13, i8* %26
+  NoAlias:	i8* %19, i8* %26
+  NoAlias:	i8* %24, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %29
+  MayAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %PC, i8* %29
+  NoAlias:	i64* %RAX, i8* %29
+  NoAlias:	i8* %13, i8* %29
+  NoAlias:	i8* %19, i8* %29
+  NoAlias:	i8* %24, i8* %29
+  NoAlias:	i8* %26, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %35
+  MayAlias:	%struct.Memory* %2, i8* %35
+  NoAlias:	i64* %PC, i8* %35
+  NoAlias:	i64* %RAX, i8* %35
+  NoAlias:	i8* %13, i8* %35
+  NoAlias:	i8* %19, i8* %35
+  NoAlias:	i8* %24, i8* %35
+  NoAlias:	i8* %26, i8* %35
+  NoAlias:	i8* %29, i8* %35
+  NoModRef:  Ptr: %struct.State* %0	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i64* %PC	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i64* %RAX	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %13	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %19	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %24	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %26	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %29	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+  NoModRef:  Ptr: i8* %35	<->  %15 = tail call i32 @llvm.ctpop.i32(i32 %14)
+Function: routine_movl__eax__MINUS0xc__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_jmpq_.L_4004c5: 3 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+Function: routine_movl_MINUS0x8__rbp____eax: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RAX
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_popq__rbp: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %5
+  MayAlias:	%struct.Memory* %2, i64* %5
+  NoAlias:	i64* %5, i64* %PC
+  NoAlias:	i64* %5, i64* %RBP
+  MayAlias:	%struct.State* %0, i64* %8
+  MayAlias:	%struct.Memory* %2, i64* %8
+  MayAlias:	i64* %8, i64* %PC
+  MayAlias:	i64* %8, i64* %RBP
+  MayAlias:	i64* %5, i64* %8
+Function: routine_retq: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %5
+  MayAlias:	%struct.Memory* %2, i64* %5
+  NoAlias:	i64* %5, i64* %PC
+  MayAlias:	%struct.State* %0, i64* %7
+  MayAlias:	%struct.Memory* %2, i64* %7
+  MayAlias:	i64* %7, i64* %PC
+  MayAlias:	i64* %5, i64* %7
+===== Alias Analysis Evaluator Report =====
+  670 Total Alias Queries Performed
+  376 no alias responses (56.1%)
+  213 may alias responses (31.7%)
+  76 partial alias responses (11.3%)
+  5 must alias responses (0.7%)
+  Alias Analysis Evaluator Pointer Alias Summary: 56%/31%/11%/0%
+  116 Total ModRef Queries Performed
+  116 no mod/ref responses (100.0%)
+  0 mod responses (0.0%)
+  0 ref responses (0.0%)
+  0 mod & ref responses (0.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 100%/0%/0%/0%

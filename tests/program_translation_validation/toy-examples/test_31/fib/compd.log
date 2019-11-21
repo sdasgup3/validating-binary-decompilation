@@ -971,5 +971,5 @@ Decompiling Function: fib Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.48user 0.06system 0:03.47elapsed 15%CPU (0avgtext+0avgdata 10688maxresident)k
-0inputs+256outputs (0major+12383minor)pagefaults 0swaps
+0.44user 0.06system 0:03.35elapsed 15%CPU (0avgtext+0avgdata 10548maxresident)k
+0inputs+256outputs (0major+12384minor)pagefaults 0swaps

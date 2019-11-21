@@ -6136,5 +6136,5 @@ Decompiling Function: keycomp Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-2.32user 0.28system 0:24.44elapsed 10%CPU (0avgtext+0avgdata 11044maxresident)k
-0inputs+1304outputs (0major+110075minor)pagefaults 0swaps
+2.86user 0.37system 0:27.04elapsed 11%CPU (0avgtext+0avgdata 10984maxresident)k
+0inputs+1320outputs (0major+109975minor)pagefaults 0swaps

@@ -1,0 +1,162 @@
+147:1:13
+  PartialAlias:	%struct.State* %0, i64* %3
+  PartialAlias:	%struct.State* %0, i64* %RBP.i
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %3, i64* %9
+  MayAlias:	i64* %9, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %9
+  PartialAlias:	%struct.State* %0, i8* %14
+  MayAlias:	i64* %9, i8* %14
+  PartialAlias:	%struct.State* %0, i8* %21
+  MayAlias:	i64* %9, i8* %21
+  PartialAlias:	%struct.State* %0, i8* %26
+  MayAlias:	i64* %9, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %29
+  MayAlias:	i64* %9, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %32
+  MayAlias:	i64* %9, i8* %32
+  PartialAlias:	%struct.State* %0, i8* %38
+  MayAlias:	i64* %9, i8* %38
+  PartialAlias:	%struct.State* %0, i64* %RSI.i
+  MayAlias:	i64* %9, i64* %RSI.i
+  PartialAlias:	%struct.State* %0, i64* %RDX.i
+  MayAlias:	i64* %9, i64* %RDX.i
+  PartialAlias:	%struct.State* %0, i64* %RDI.i
+  MayAlias:	i64* %9, i64* %RDI.i
+  MayAlias:	%struct.State* %0, i32* %42
+  MayAlias:	%struct.Memory* %2, i32* %42
+  MayAlias:	i32* %42, i64* %3
+  MayAlias:	i32* %42, i64* %RBP.i
+  MayAlias:	i32* %42, i64* %6
+  MayAlias:	i32* %42, i64* %9
+  MayAlias:	i32* %42, i8* %14
+  MayAlias:	i32* %42, i8* %21
+  MayAlias:	i32* %42, i8* %26
+  MayAlias:	i32* %42, i8* %29
+  MayAlias:	i32* %42, i8* %32
+  MayAlias:	i32* %42, i8* %38
+  MayAlias:	i32* %42, i64* %RSI.i
+  MayAlias:	i32* %42, i64* %RDX.i
+  MayAlias:	i32* %42, i64* %RDI.i
+  PartialAlias:	%struct.State* %0, i64* %RAX.i14
+  MayAlias:	i64* %9, i64* %RAX.i14
+  MayAlias:	i32* %42, i64* %RAX.i14
+  MayAlias:	i64* %9, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i32* %42, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	%struct.State* %0, i64* %48
+  MayAlias:	%struct.Memory* %2, i64* %48
+  MayAlias:	i64* %3, i64* %48
+  MayAlias:	i64* %48, i64* %RBP.i
+  MayAlias:	i64* %48, i64* %6
+  MayAlias:	i64* %48, i64* %9
+  MayAlias:	i64* %48, i8* %14
+  MayAlias:	i64* %48, i8* %21
+  MayAlias:	i64* %48, i8* %26
+  MayAlias:	i64* %48, i8* %29
+  MayAlias:	i64* %48, i8* %32
+  MayAlias:	i64* %48, i8* %38
+  MayAlias:	i64* %48, i64* %RSI.i
+  MayAlias:	i64* %48, i64* %RDX.i
+  MayAlias:	i64* %48, i64* %RDI.i
+  MayAlias:	i32* %42, i64* %48
+  MayAlias:	i64* %48, i64* %RAX.i14
+  MayAlias:	i64* %48, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i64* %9, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	i32* %42, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	i64* %48, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	%struct.State* %0, i64* %54
+  MayAlias:	%struct.Memory* %2, i64* %54
+  MayAlias:	i64* %3, i64* %54
+  MayAlias:	i64* %54, i64* %RBP.i
+  MayAlias:	i64* %54, i64* %6
+  MayAlias:	i64* %54, i64* %9
+  MayAlias:	i64* %54, i8* %14
+  MayAlias:	i64* %54, i8* %21
+  MayAlias:	i64* %54, i8* %26
+  MayAlias:	i64* %54, i8* %29
+  MayAlias:	i64* %54, i8* %32
+  MayAlias:	i64* %54, i8* %38
+  MayAlias:	i64* %54, i64* %RSI.i
+  MayAlias:	i64* %54, i64* %RDX.i
+  MayAlias:	i64* %54, i64* %RDI.i
+  MayAlias:	i32* %42, i64* %54
+  MayAlias:	i64* %54, i64* %RAX.i14
+  MayAlias:	i64* %54, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i64* %48, i64* %54
+  MayAlias:	i64* %54, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	%struct.State* %0, i64* %60
+  MayAlias:	%struct.Memory* %2, i64* %60
+  MayAlias:	i64* %3, i64* %60
+  MayAlias:	i64* %60, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %60
+  MayAlias:	i64* %60, i64* %9
+  MayAlias:	i64* %60, i8* %14
+  MayAlias:	i64* %60, i8* %21
+  MayAlias:	i64* %60, i8* %26
+  MayAlias:	i64* %60, i8* %29
+  MayAlias:	i64* %60, i8* %32
+  MayAlias:	i64* %60, i8* %38
+  MayAlias:	i64* %60, i64* %RSI.i
+  MayAlias:	i64* %60, i64* %RDX.i
+  MayAlias:	i64* %60, i64* %RDI.i
+  MayAlias:	i32* %42, i64* %60
+  MayAlias:	i64* %60, i64* %RAX.i14
+  MayAlias:	i64* %60, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i64* %48, i64* %60
+  MayAlias:	i64* %60, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	i64* %54, i64* %60
+  MustAlias:	%struct.Memory* %2, %struct.Memory* %call2_400595
+  MayAlias:	%struct.Memory* %call2_400595, i64* %9
+  MayAlias:	%struct.Memory* %call2_400595, i32* %42
+  MayAlias:	%struct.Memory* %call2_400595, i64* %48
+  MayAlias:	%struct.Memory* %call2_400595, i64* %54
+  MayAlias:	%struct.Memory* %call2_400595, i64* %60
+  MayAlias:	%struct.State* %0, i64* %87
+  MayAlias:	%struct.Memory* %2, i64* %87
+  MayAlias:	i64* %3, i64* %87
+  MayAlias:	i64* %87, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %87
+  MayAlias:	i64* %87, i64* %9
+  MayAlias:	i64* %87, i8* %14
+  MayAlias:	i64* %87, i8* %21
+  MayAlias:	i64* %87, i8* %26
+  MayAlias:	i64* %87, i8* %29
+  MayAlias:	i64* %87, i8* %32
+  MayAlias:	i64* %87, i8* %38
+  MayAlias:	i64* %87, i64* %RSI.i
+  MayAlias:	i64* %87, i64* %RDX.i
+  MayAlias:	i64* %87, i64* %RDI.i
+  MayAlias:	i32* %42, i64* %87
+  MayAlias:	i64* %87, i64* %RAX.i14
+  MayAlias:	i64* %87, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i64* %48, i64* %87
+  MayAlias:	i64* %87, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	i64* %54, i64* %87
+  MayAlias:	i64* %60, i64* %87
+  MayAlias:	%struct.Memory* %call2_400595, i64* %87
+  MayAlias:	%struct.State* %0, i64* %90
+  MayAlias:	%struct.Memory* %2, i64* %90
+  MayAlias:	i64* %3, i64* %90
+  MayAlias:	i64* %90, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %90
+  MayAlias:	i64* %9, i64* %90
+  MayAlias:	i64* %90, i8* %14
+  MayAlias:	i64* %90, i8* %21
+  MayAlias:	i64* %90, i8* %26
+  MayAlias:	i64* %90, i8* %29
+  MayAlias:	i64* %90, i8* %32
+  MayAlias:	i64* %90, i8* %38
+  MayAlias:	i64* %90, i64* %RSI.i
+  MayAlias:	i64* %90, i64* %RDX.i
+  MayAlias:	i64* %90, i64* %RDI.i
+  MayAlias:	i32* %42, i64* %90
+  MayAlias:	i64* %90, i64* %RAX.i14
+  MayAlias:	i64* %90, i64* bitcast (%G_0x400630_type* @G_0x400630 to i64*)
+  MayAlias:	i64* %48, i64* %90
+  MayAlias:	i64* %90, i64* bitcast (%G_0x400638_type* @G_0x400638 to i64*)
+  MayAlias:	i64* %54, i64* %90
+  MayAlias:	i64* %60, i64* %90
+  MayAlias:	%struct.Memory* %call2_400595, i64* %90
+  MayAlias:	i64* %87, i64* %90

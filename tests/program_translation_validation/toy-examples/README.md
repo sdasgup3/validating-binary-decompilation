@@ -62,6 +62,14 @@ cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} matc
 grep "Pass" docs/compd.log > docs/matchPass.log
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/matchPass.log --file docs/makefilelist.txt --show 1 > docs/matchFail.log
 ```
+
+## Check the mem dep edges
+```
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} extract" |& tee ~/Junk/log
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} aainfo" |& tee ~/Junk/log
+78 exact macthes
+```
+
 ### Status files/Commands
   - docs/compdPass.log
   - docs/compdFail.log

@@ -532,5 +532,5 @@ Decompiling Function: printit Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.10user 0.01system 0:00.78elapsed 15%CPU (0avgtext+0avgdata 10340maxresident)k
-0inputs+136outputs (0major+4736minor)pagefaults 0swaps
+0.11user 0.02system 0:00.73elapsed 18%CPU (0avgtext+0avgdata 10276maxresident)k
+0inputs+136outputs (0major+4729minor)pagefaults 0swaps

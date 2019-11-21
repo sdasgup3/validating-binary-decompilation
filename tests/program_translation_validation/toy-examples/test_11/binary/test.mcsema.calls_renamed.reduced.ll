@@ -1,4 +1,4 @@
-; ModuleID = '/tmp/tmpkmdh8ne6-target.ll'
+; ModuleID = '/tmp/tmpcg363pgq-target.ll'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
@@ -687,13 +687,7 @@ declare extern_weak x86_64_sysvcc i64 @malloc(i64) #5
 declare extern_weak x86_64_sysvcc i64 @__gmon_start__() #5
 
 ; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @memset(i64, i64, i64) #5
-
-; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @free(i64) #5
-
-; Function Attrs: noinline
-declare extern_weak x86_64_sysvcc i64 @strlen(i64) #5
 
 ; Function Attrs: noinline
 declare extern_weak x86_64_sysvcc i64 @strcpy(i64, i64) #5
@@ -880,49 +874,234 @@ block_400659:                                     ; preds = %block_400650
 }
 
 ; Function Attrs: noinline nounwind
-define %struct.Memory* @sub_400720_doTrans(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) local_unnamed_addr #7 {
+define %struct.Memory* @sub_400720_doTrans(%struct.State* noalias nocapture dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr #7 {
 block_400720:
+  %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
+  %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-  %var_2_54 = tail call fastcc %struct.Memory* @ext_601070_strlen(%struct.State* nonnull %0, %struct.Memory* %2)
-  %var_2_95 = tail call fastcc %struct.Memory* @ext_6010c8_malloc(%struct.State* nonnull %0, %struct.Memory* %var_2_54)
+  %var_2_4 = load i64, i64* %RBP, align 8
+  %var_2_6 = load i64, i64* %RSP, align 8
+  %var_2_7 = add i64 %var_2_6, -8
+  %var_2_8 = inttoptr i64 %var_2_7 to i64*
+  store i64 %var_2_4, i64* %var_2_8, align 8
+  %var_2_20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  %var_2_26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  %var_2_29 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  %var_2_32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  %var_2_39 = add i64 %var_2_6, -24
+  %var_2_40 = load i64, i64* %RDI, align 8
+  %var_2_42 = inttoptr i64 %var_2_39 to i64*
+  store i64 %var_2_40, i64* %var_2_42, align 8
+  %var_2_45 = load i64, i64* %PC, align 8
+  %var_2_50 = add i64 %var_2_45, 9
+  %var_2_51 = load i64, i64* %RSP, align 8
+  %var_2_52 = add i64 %var_2_51, -8
+  %var_2_53 = inttoptr i64 %var_2_52 to i64*
+  store i64 %var_2_50, i64* %var_2_53, align 8
+  %var_2_55 = load i64, i64* %RAX, align 8
+  %var_2_57 = add i64 %var_2_55, 1
+  %var_2_59 = icmp eq i64 %var_2_57, 0
+  %var_2_68 = xor i64 %var_2_57, %var_2_55
+  %var_2_69 = lshr i64 %var_2_68, 4
+  %var_2_70 = trunc i64 %var_2_69 to i8
+  %var_2_71 = and i8 %var_2_70, 1
+  store i8 %var_2_71, i8* %var_2_26, align 1
+  %var_2_72 = zext i1 %var_2_59 to i8
+  store i8 %var_2_72, i8* %var_2_29, align 1
+  %var_2_73 = lshr i64 %var_2_57, 63
+  %var_2_74 = trunc i64 %var_2_73 to i8
+  store i8 %var_2_74, i8* %var_2_32, align 1
+  %var_2_80 = load i64, i64* %RBP, align 8
+  %var_2_81 = add i64 %var_2_80, -24
+  %var_2_83 = inttoptr i64 %var_2_81 to i64*
+  store i64 %var_2_57, i64* %var_2_83, align 8
+  %var_2_86 = load i64, i64* %PC, align 8
+  %var_2_91 = add i64 %var_2_86, 9
+  %var_2_92 = load i64, i64* %RSP, align 8
+  %var_2_93 = add i64 %var_2_92, -8
+  %var_2_94 = inttoptr i64 %var_2_93 to i64*
+  store i64 %var_2_91, i64* %var_2_94, align 8
+  %var_2_96 = load i64, i64* %RBP, align 8
+  %var_2_97 = add i64 %var_2_96, -32
+  %var_2_98 = load i64, i64* %RAX, align 8
+  %var_2_101 = inttoptr i64 %var_2_97 to i64*
+  store i64 %var_2_98, i64* %var_2_101, align 8
   %var_2_102 = load i64, i64* %RBP, align 8
   %var_2_103 = add i64 %var_2_102, -32
   %var_2_106 = inttoptr i64 %var_2_103 to i64*
   %var_2_107 = load i64, i64* %var_2_106, align 8
   %var_2_114 = icmp eq i64 %var_2_107, 0
+  %var_2_115 = zext i1 %var_2_114 to i8
+  store i8 %var_2_115, i8* %var_2_29, align 1
+  %var_2_116 = lshr i64 %var_2_107, 63
+  %var_2_117 = trunc i64 %var_2_116 to i8
+  store i8 %var_2_117, i8* %var_2_32, align 1
   br i1 %var_2_114, label %block_4007de, label %block_400755
 
-block_4007de.loopexit:                            ; preds = %block_400784
-  br label %block_4007de
+block_4007de:                                     ; preds = %block_4007c9, %block_400720
+  %var_2_302.sink = phi i64 [ %var_2_302.lcssa, %block_4007c9 ], [ %var_2_102, %block_400720 ]
+  %var_2_265.sink = phi i64 [ %var_2_265, %block_4007c9 ], [ 0, %block_400720 ]
+  %var_2_266 = add i64 %var_2_302.sink, -8
+  %var_2_268 = inttoptr i64 %var_2_266 to i64*
+  store i64 %var_2_265.sink, i64* %var_2_268, align 8
+  %var_2_125 = load i64, i64* %RSP, align 8
+  %var_2_126 = add i64 %var_2_125, 48
+  %var_2_135 = xor i64 %var_2_125, 16
+  %var_2_136 = xor i64 %var_2_135, %var_2_126
+  %var_2_137 = lshr i64 %var_2_136, 4
+  %var_2_138 = trunc i64 %var_2_137 to i8
+  %var_2_139 = and i8 %var_2_138, 1
+  store i8 %var_2_139, i8* %var_2_26, align 1
+  %var_2_140 = icmp eq i64 %var_2_126, 0
+  %var_2_141 = zext i1 %var_2_140 to i8
+  store i8 %var_2_141, i8* %var_2_29, align 1
+  %var_2_142 = lshr i64 %var_2_126, 63
+  %var_2_143 = trunc i64 %var_2_142 to i8
+  store i8 %var_2_143, i8* %var_2_32, align 1
+; Matched:\<badref\>:  ret %struct.Memory* %2
+; ret %struct.Memory* %2
+ret %struct.Memory* %2
 
-block_4007de:                                     ; preds = %block_4007de.loopexit, %block_400720, %block_400755
-  %MEMORY.0 = phi %struct.Memory* [ %var_2_188, %block_400755 ], [ %var_2_95, %block_400720 ], [ %var_2_188, %block_4007de.loopexit ]
-  ret %struct.Memory* %MEMORY.0
 
 block_400755:                                     ; preds = %block_400720
-  %var_2_188 = tail call fastcc %struct.Memory* @ext_6010b8_memset(%struct.State* nonnull %0, %struct.Memory* %var_2_95)
-  %var_2_3024 = load i64, i64* %RBP, align 8
-  %var_2_3035 = add i64 %var_2_3024, -40
-  %var_4_3 = inttoptr i64 %var_2_3035 to i8**
-  %var_2_30616 = load i8*, i8** %var_4_3, align 8
-  %var_2_3097 = load i8, i8* %var_2_30616, align 1
-  %var_2_3188 = icmp eq i8 %var_2_3097, 0
-  br i1 %var_2_3188, label %block_4007de, label %block_400784.preheader
+  store i8 1, i8* %var_2_20, align 1
+  %var_2_157 = add i64 %var_2_102, -16
+  %var_2_159 = inttoptr i64 %var_2_157 to i64*
+  %var_2_160 = load i64, i64* %var_2_159, align 8
+  %var_2_161 = add i64 %var_2_102, -40
+  %var_2_163 = inttoptr i64 %var_2_161 to i64*
+  store i64 %var_2_160, i64* %var_2_163, align 8
+  %var_2_164 = load i64, i64* %RBP, align 8
+  %var_2_165 = add i64 %var_2_164, -32
+  %var_2_168 = inttoptr i64 %var_2_165 to i64*
+  %var_2_169 = load i64, i64* %var_2_168, align 8
+  %var_2_170 = add i64 %var_2_164, -48
+  %var_2_172 = inttoptr i64 %var_2_170 to i64*
+  store i64 %var_2_169, i64* %var_2_172, align 8
+  %var_2_175 = load i64, i64* %PC, align 8
+  %var_2_184 = add i64 %var_2_175, 13
+  %var_2_185 = load i64, i64* %RSP, align 8
+  %var_2_186 = add i64 %var_2_185, -8
+  %var_2_187 = inttoptr i64 %var_2_186 to i64*
+  store i64 %var_2_184, i64* %var_2_187, align 8
+  %var_2_3025 = load i64, i64* %RBP, align 8
+  %var_2_3036 = add i64 %var_2_3025, -40
+  %var_8_3 = inttoptr i64 %var_2_3036 to i8**
+  %var_2_30617 = load i8*, i8** %var_8_3, align 8
+  %var_2_3098 = load i8, i8* %var_2_30617, align 1
+  %var_2_3129 = sext i8 %var_2_3098 to i32
+  %var_2_31310 = and i32 %var_2_3129, 255
+  %var_2_31411 = tail call i32 @llvm.ctpop.i32(i32 %var_2_31310) #10
+  %var_2_31512 = trunc i32 %var_2_31411 to i8
+  %var_2_31613 = and i8 %var_2_31512, 1
+  %var_2_31714 = xor i8 %var_2_31613, 1
+  store i8 %var_2_31714, i8* %var_2_20, align 1
+  %var_2_31815 = icmp eq i8 %var_2_3098, 0
+  %var_2_31916 = zext i1 %var_2_31815 to i8
+  store i8 %var_2_31916, i8* %var_2_29, align 1
+  %var_2_32017 = lshr i32 %var_2_3129, 31
+  %var_2_32118 = trunc i32 %var_2_32017 to i8
+  store i8 %var_2_32118, i8* %var_2_32, align 1
+  br i1 %var_2_31815, label %block_4007c9, label %block_400784.preheader
 
 block_400784.preheader:                           ; preds = %block_400755
   br label %block_400784
 
-block_400784:                                     ; preds = %block_400784.preheader, %block_400784
-  %var_2_275 = phi i8 [ %var_2_309, %block_400784 ], [ %var_2_3097, %block_400784.preheader ]
-  %var_2_3029 = phi i64 [ %var_2_302, %block_400784 ], [ %var_2_3024, %block_400784.preheader ]
-  %var_2_291 = icmp eq i8 %var_2_275, 47
-  %var_2_302 = select i1 %var_2_291, i64 %var_2_3024, i64 %var_2_3029
+block_4007ac:                                     ; preds = %block_4007a0, %block_400784
+  %var_2_327.sink = phi i8 [ %var_2_327, %block_4007a0 ], [ 92, %block_400784 ]
+  %var_2_328 = add i64 %var_2_201, -48
+  %var_8_4 = inttoptr i64 %var_2_328 to i8**
+  %var_2_3314 = load i8*, i8** %var_8_4, align 8
+  store i8 %var_2_327.sink, i8* %var_2_3314, align 1
+  %var_2_202 = add i64 %var_2_201, -40
+  %var_2_204 = inttoptr i64 %var_2_202 to i64*
+  %var_2_205 = load i64, i64* %var_2_204, align 8
+  %var_2_206 = add i64 %var_2_205, 1
+  %var_2_208 = icmp eq i64 %var_2_206, 0
+  %var_2_217 = xor i64 %var_2_206, %var_2_205
+  %var_2_218 = lshr i64 %var_2_217, 4
+  %var_2_219 = trunc i64 %var_2_218 to i8
+  %var_2_220 = and i8 %var_2_219, 1
+  store i8 %var_2_220, i8* %var_2_26, align 1
+  %var_2_221 = zext i1 %var_2_208 to i8
+  store i8 %var_2_221, i8* %var_2_29, align 1
+  %var_2_222 = lshr i64 %var_2_206, 63
+  %var_2_223 = trunc i64 %var_2_222 to i8
+  store i8 %var_2_223, i8* %var_2_32, align 1
+  store i64 %var_2_206, i64* %var_2_204, align 8
+  %var_2_230 = load i64, i64* %RBP, align 8
+  %var_2_231 = add i64 %var_2_230, -48
+  %var_2_234 = inttoptr i64 %var_2_231 to i64*
+  %var_2_235 = load i64, i64* %var_2_234, align 8
+  %var_2_236 = add i64 %var_2_235, 1
+  %var_2_238 = icmp eq i64 %var_2_236, 0
+  %var_2_247 = xor i64 %var_2_236, %var_2_235
+  %var_2_248 = lshr i64 %var_2_247, 4
+  %var_2_249 = trunc i64 %var_2_248 to i8
+  %var_2_250 = and i8 %var_2_249, 1
+  store i8 %var_2_250, i8* %var_2_26, align 1
+  %var_2_251 = zext i1 %var_2_238 to i8
+  store i8 %var_2_251, i8* %var_2_29, align 1
+  %var_2_252 = lshr i64 %var_2_236, 63
+  %var_2_253 = trunc i64 %var_2_252 to i8
+  store i8 %var_2_253, i8* %var_2_32, align 1
+  store i64 %var_2_236, i64* %var_2_234, align 8
+  %var_2_302 = load i64, i64* %RBP, align 8
   %var_2_303 = add i64 %var_2_302, -40
-  %var_4_5 = inttoptr i64 %var_2_303 to i8**
-  %var_2_3061 = load i8*, i8** %var_4_5, align 8
+  %var_8_5 = inttoptr i64 %var_2_303 to i8**
+  %var_2_3061 = load i8*, i8** %var_8_5, align 8
   %var_2_309 = load i8, i8* %var_2_3061, align 1
+  %var_2_312 = sext i8 %var_2_309 to i32
+  %var_2_313 = and i32 %var_2_312, 255
+  %var_2_314 = tail call i32 @llvm.ctpop.i32(i32 %var_2_313) #10
+  %var_2_315 = trunc i32 %var_2_314 to i8
+  %var_2_316 = and i8 %var_2_315, 1
+  %var_2_317 = xor i8 %var_2_316, 1
+  store i8 %var_2_317, i8* %var_2_20, align 1
   %var_2_318 = icmp eq i8 %var_2_309, 0
-  br i1 %var_2_318, label %block_4007de.loopexit, label %block_400784
+  %var_2_319 = zext i1 %var_2_318 to i8
+  store i8 %var_2_319, i8* %var_2_29, align 1
+  %var_2_320 = lshr i32 %var_2_312, 31
+  %var_2_321 = trunc i32 %var_2_320 to i8
+  store i8 %var_2_321, i8* %var_2_32, align 1
+  br i1 %var_2_318, label %block_4007c9.loopexit, label %block_400784
+
+block_4007c9.loopexit:                            ; preds = %block_4007ac
+  br label %block_4007c9
+
+block_4007c9:                                     ; preds = %block_4007c9.loopexit, %block_400755
+  %var_2_302.lcssa = phi i64 [ %var_2_3025, %block_400755 ], [ %var_2_302, %block_4007c9.loopexit ]
+  %var_2_262 = add i64 %var_2_302.lcssa, -32
+  %var_2_264 = inttoptr i64 %var_2_262 to i64*
+  %var_2_265 = load i64, i64* %var_2_264, align 8
+  br label %block_4007de
+
+block_400784:                                     ; preds = %block_400784.preheader, %block_4007ac
+  %var_8_6 = phi i8** [ %var_8_5, %block_4007ac ], [ %var_8_3, %block_400784.preheader ]
+  %var_2_201 = phi i64 [ %var_2_302, %block_4007ac ], [ %var_2_3025, %block_400784.preheader ]
+  %var_2_2722 = load i8*, i8** %var_8_6, align 8
+  %var_2_275 = load i8, i8* %var_2_2722, align 1
+  %var_2_278 = sext i8 %var_2_275 to i32
+  %var_2_279 = add nsw i32 %var_2_278, -47
+  %var_2_287 = xor i32 %var_2_279, %var_2_278
+  %var_2_288 = lshr i32 %var_2_287, 4
+  %var_2_289 = trunc i32 %var_2_288 to i8
+  %var_2_290 = and i8 %var_2_289, 1
+  store i8 %var_2_290, i8* %var_2_26, align 1
+  %var_2_291 = icmp eq i32 %var_2_279, 0
+  %var_2_292 = zext i1 %var_2_291 to i8
+  store i8 %var_2_292, i8* %var_2_29, align 1
+  %var_2_293 = lshr i32 %var_2_279, 31
+  %var_2_294 = trunc i32 %var_2_293 to i8
+  store i8 %var_2_294, i8* %var_2_32, align 1
+  br i1 %var_2_291, label %block_4007ac, label %block_4007a0
+
+block_4007a0:                                     ; preds = %block_400784
+  %var_2_3243 = load i8*, i8** %var_8_6, align 8
+  %var_2_327 = load i8, i8* %var_2_3243, align 1
+  br label %block_4007ac
 }
 
 ; Function Attrs: noinline
@@ -1889,18 +2068,6 @@ __mcsema_early_init.exit:                         ; preds = %5, %3
 }
 
 ; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_6010b8_memset(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64)* @memset to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
-define internal fastcc %struct.Memory* @ext_601070_strlen(%struct.State*, %struct.Memory*) unnamed_addr #11 {
-  %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @strlen to i64), %struct.Memory* %1)
-  ret %struct.Memory* %3
-}
-
-; Function Attrs: noinline nounwind
 define internal fastcc %struct.Memory* @ext_6010c8_malloc(%struct.State*, %struct.Memory*) unnamed_addr #11 {
   %3 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64)* @malloc to i64), %struct.Memory* %1)
   ret %struct.Memory* %3
@@ -2015,7 +2182,7 @@ define dllexport void @doTrans() local_unnamed_addr #9 {
 }
 
 ; Function Attrs: nounwind
-define internal %struct.Memory* @doTrans_wrapper(%struct.State*, i64, %struct.Memory*) #10 {
+define internal %struct.Memory* @doTrans_wrapper(%struct.State* nocapture, i64, %struct.Memory* readnone returned) #10 {
   %4 = load volatile i1, i1* @0, align 1
   br i1 %4, label %__mcsema_early_init.exit, label %5
 

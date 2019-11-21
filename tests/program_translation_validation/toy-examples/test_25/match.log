@@ -1,0 +1,16 @@
+/home/ubuntu/Github/llir-matcher/matcher/match.py:808: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(fd)
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ubuntu/Github/llir-matcher/matcher/match.py", line 823, in <module>
+    args.opt_cmd, args.max_iter, pfunction)
+  File "/home/ubuntu/Github/llir-matcher/matcher/match.py", line 37, in __init__
+    shutil.copy(query, self.query.name)
+  File "/usr/lib/python3.6/shutil.py", line 245, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.6/shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/mcsema/test.proposed.ll'

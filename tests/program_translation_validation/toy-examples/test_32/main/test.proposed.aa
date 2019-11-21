@@ -1,0 +1,2018 @@
+Function: main: 48 pointers, 6 call sites
+  NoAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %3
+  NoAlias:	%struct.Memory* %2, i64* %3
+  PartialAlias:	%struct.State* %0, i64* %RBP.i
+  NoAlias:	%struct.Memory* %2, i64* %RBP.i
+  NoAlias:	i64* %3, i64* %RBP.i
+  PartialAlias:	%struct.State* %0, i64* %6
+  NoAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %3, i64* %6
+  NoAlias:	i64* %6, i64* %RBP.i
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %3, i64* %9
+  MayAlias:	i64* %9, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %9
+  PartialAlias:	%struct.State* %0, i8* %14
+  NoAlias:	%struct.Memory* %2, i8* %14
+  NoAlias:	i64* %3, i8* %14
+  NoAlias:	i64* %RBP.i, i8* %14
+  NoAlias:	i64* %6, i8* %14
+  MayAlias:	i64* %9, i8* %14
+  PartialAlias:	%struct.State* %0, i8* %21
+  NoAlias:	%struct.Memory* %2, i8* %21
+  NoAlias:	i64* %3, i8* %21
+  NoAlias:	i64* %RBP.i, i8* %21
+  NoAlias:	i64* %6, i8* %21
+  MayAlias:	i64* %9, i8* %21
+  NoAlias:	i8* %14, i8* %21
+  PartialAlias:	%struct.State* %0, i8* %26
+  NoAlias:	%struct.Memory* %2, i8* %26
+  NoAlias:	i64* %3, i8* %26
+  NoAlias:	i64* %RBP.i, i8* %26
+  NoAlias:	i64* %6, i8* %26
+  MayAlias:	i64* %9, i8* %26
+  NoAlias:	i8* %14, i8* %26
+  NoAlias:	i8* %21, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %29
+  NoAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %3, i8* %29
+  NoAlias:	i64* %RBP.i, i8* %29
+  NoAlias:	i64* %6, i8* %29
+  MayAlias:	i64* %9, i8* %29
+  NoAlias:	i8* %14, i8* %29
+  NoAlias:	i8* %21, i8* %29
+  NoAlias:	i8* %26, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %32
+  NoAlias:	%struct.Memory* %2, i8* %32
+  NoAlias:	i64* %3, i8* %32
+  NoAlias:	i64* %RBP.i, i8* %32
+  NoAlias:	i64* %6, i8* %32
+  MayAlias:	i64* %9, i8* %32
+  NoAlias:	i8* %14, i8* %32
+  NoAlias:	i8* %21, i8* %32
+  NoAlias:	i8* %26, i8* %32
+  NoAlias:	i8* %29, i8* %32
+  PartialAlias:	%struct.State* %0, i8* %38
+  NoAlias:	%struct.Memory* %2, i8* %38
+  NoAlias:	i64* %3, i8* %38
+  NoAlias:	i64* %RBP.i, i8* %38
+  NoAlias:	i64* %6, i8* %38
+  MayAlias:	i64* %9, i8* %38
+  NoAlias:	i8* %14, i8* %38
+  NoAlias:	i8* %21, i8* %38
+  NoAlias:	i8* %26, i8* %38
+  NoAlias:	i8* %29, i8* %38
+  NoAlias:	i8* %32, i8* %38
+  MayAlias:	%struct.State* %0, i32* %41
+  MayAlias:	%struct.Memory* %2, i32* %41
+  MayAlias:	i32* %41, i64* %3
+  MayAlias:	i32* %41, i64* %RBP.i
+  MayAlias:	i32* %41, i64* %6
+  MayAlias:	i32* %41, i64* %9
+  MayAlias:	i32* %41, i8* %14
+  MayAlias:	i32* %41, i8* %21
+  MayAlias:	i32* %41, i8* %26
+  MayAlias:	i32* %41, i8* %29
+  MayAlias:	i32* %41, i8* %32
+  MayAlias:	i32* %41, i8* %38
+  PartialAlias:	%struct.State* %0, %union.anon* %42
+  NoAlias:	%struct.Memory* %2, %union.anon* %42
+  NoAlias:	%union.anon* %42, i64* %3
+  NoAlias:	%union.anon* %42, i64* %RBP.i
+  NoAlias:	%union.anon* %42, i64* %6
+  MayAlias:	%union.anon* %42, i64* %9
+  NoAlias:	%union.anon* %42, i8* %14
+  NoAlias:	%union.anon* %42, i8* %21
+  NoAlias:	%union.anon* %42, i8* %26
+  NoAlias:	%union.anon* %42, i8* %29
+  NoAlias:	%union.anon* %42, i8* %32
+  NoAlias:	%union.anon* %42, i8* %38
+  MayAlias:	%union.anon* %42, i32* %41
+  PartialAlias:	%struct.State* %0, i32* %EDI.i
+  NoAlias:	%struct.Memory* %2, i32* %EDI.i
+  NoAlias:	i32* %EDI.i, i64* %3
+  NoAlias:	i32* %EDI.i, i64* %RBP.i
+  NoAlias:	i32* %EDI.i, i64* %6
+  MayAlias:	i32* %EDI.i, i64* %9
+  NoAlias:	i32* %EDI.i, i8* %14
+  NoAlias:	i32* %EDI.i, i8* %21
+  NoAlias:	i32* %EDI.i, i8* %26
+  NoAlias:	i32* %EDI.i, i8* %29
+  NoAlias:	i32* %EDI.i, i8* %32
+  NoAlias:	i32* %EDI.i, i8* %38
+  MayAlias:	i32* %41, i32* %EDI.i
+  MustAlias:	%union.anon* %42, i32* %EDI.i
+  MayAlias:	%struct.State* %0, i32* %48
+  MayAlias:	%struct.Memory* %2, i32* %48
+  MayAlias:	i32* %48, i64* %3
+  MayAlias:	i32* %48, i64* %RBP.i
+  MayAlias:	i32* %48, i64* %6
+  MayAlias:	i32* %48, i64* %9
+  MayAlias:	i32* %48, i8* %14
+  MayAlias:	i32* %48, i8* %21
+  MayAlias:	i32* %48, i8* %26
+  MayAlias:	i32* %48, i8* %29
+  MayAlias:	i32* %48, i8* %32
+  MayAlias:	i32* %48, i8* %38
+  MayAlias:	i32* %41, i32* %48
+  MayAlias:	%union.anon* %42, i32* %48
+  MayAlias:	i32* %48, i32* %EDI.i
+  PartialAlias:	%struct.State* %0, i64* %RSI.i51
+  NoAlias:	%struct.Memory* %2, i64* %RSI.i51
+  NoAlias:	i64* %3, i64* %RSI.i51
+  NoAlias:	i64* %RBP.i, i64* %RSI.i51
+  NoAlias:	i64* %6, i64* %RSI.i51
+  MayAlias:	i64* %9, i64* %RSI.i51
+  NoAlias:	i64* %RSI.i51, i8* %14
+  NoAlias:	i64* %RSI.i51, i8* %21
+  NoAlias:	i64* %RSI.i51, i8* %26
+  NoAlias:	i64* %RSI.i51, i8* %29
+  NoAlias:	i64* %RSI.i51, i8* %32
+  NoAlias:	i64* %RSI.i51, i8* %38
+  MayAlias:	i32* %41, i64* %RSI.i51
+  NoAlias:	%union.anon* %42, i64* %RSI.i51
+  NoAlias:	i32* %EDI.i, i64* %RSI.i51
+  MayAlias:	i32* %48, i64* %RSI.i51
+  MayAlias:	%struct.State* %0, i64* %54
+  MayAlias:	%struct.Memory* %2, i64* %54
+  MayAlias:	i64* %3, i64* %54
+  MayAlias:	i64* %54, i64* %RBP.i
+  MayAlias:	i64* %54, i64* %6
+  MayAlias:	i64* %54, i64* %9
+  MayAlias:	i64* %54, i8* %14
+  MayAlias:	i64* %54, i8* %21
+  MayAlias:	i64* %54, i8* %26
+  MayAlias:	i64* %54, i8* %29
+  MayAlias:	i64* %54, i8* %32
+  MayAlias:	i64* %54, i8* %38
+  MayAlias:	i32* %41, i64* %54
+  MayAlias:	%union.anon* %42, i64* %54
+  MayAlias:	i32* %EDI.i, i64* %54
+  MayAlias:	i32* %48, i64* %54
+  MayAlias:	i64* %54, i64* %RSI.i51
+  MayAlias:	%struct.State* %0, i32* %59
+  MayAlias:	%struct.Memory* %2, i32* %59
+  MayAlias:	i32* %59, i64* %3
+  MayAlias:	i32* %59, i64* %RBP.i
+  MayAlias:	i32* %59, i64* %6
+  MayAlias:	i32* %59, i64* %9
+  MayAlias:	i32* %59, i8* %14
+  MayAlias:	i32* %59, i8* %21
+  MayAlias:	i32* %59, i8* %26
+  MayAlias:	i32* %59, i8* %29
+  MayAlias:	i32* %59, i8* %32
+  MayAlias:	i32* %59, i8* %38
+  MayAlias:	i32* %41, i32* %59
+  MayAlias:	%union.anon* %42, i32* %59
+  MayAlias:	i32* %59, i32* %EDI.i
+  MayAlias:	i32* %48, i32* %59
+  MayAlias:	i32* %59, i64* %RSI.i51
+  MayAlias:	i32* %59, i64* %54
+  PartialAlias:	%struct.State* %0, %union.anon* %83
+  NoAlias:	%struct.Memory* %2, %union.anon* %83
+  NoAlias:	%union.anon* %83, i64* %3
+  NoAlias:	%union.anon* %83, i64* %RBP.i
+  NoAlias:	%union.anon* %83, i64* %6
+  MayAlias:	%union.anon* %83, i64* %9
+  NoAlias:	%union.anon* %83, i8* %14
+  NoAlias:	%union.anon* %83, i8* %21
+  NoAlias:	%union.anon* %83, i8* %26
+  NoAlias:	%union.anon* %83, i8* %29
+  NoAlias:	%union.anon* %83, i8* %32
+  NoAlias:	%union.anon* %83, i8* %38
+  MayAlias:	%union.anon* %83, i32* %41
+  NoAlias:	%union.anon* %42, %union.anon* %83
+  NoAlias:	%union.anon* %83, i32* %EDI.i
+  MayAlias:	%union.anon* %83, i32* %48
+  NoAlias:	%union.anon* %83, i64* %RSI.i51
+  MayAlias:	%union.anon* %83, i64* %54
+  MayAlias:	%union.anon* %83, i32* %59
+  PartialAlias:	%struct.State* %0, i64* %RAX.i33
+  NoAlias:	%struct.Memory* %2, i64* %RAX.i33
+  NoAlias:	i64* %3, i64* %RAX.i33
+  NoAlias:	i64* %RAX.i33, i64* %RBP.i
+  NoAlias:	i64* %6, i64* %RAX.i33
+  MayAlias:	i64* %9, i64* %RAX.i33
+  NoAlias:	i64* %RAX.i33, i8* %14
+  NoAlias:	i64* %RAX.i33, i8* %21
+  NoAlias:	i64* %RAX.i33, i8* %26
+  NoAlias:	i64* %RAX.i33, i8* %29
+  NoAlias:	i64* %RAX.i33, i8* %32
+  NoAlias:	i64* %RAX.i33, i8* %38
+  MayAlias:	i32* %41, i64* %RAX.i33
+  NoAlias:	%union.anon* %42, i64* %RAX.i33
+  NoAlias:	i32* %EDI.i, i64* %RAX.i33
+  MayAlias:	i32* %48, i64* %RAX.i33
+  NoAlias:	i64* %RAX.i33, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %RAX.i33
+  MayAlias:	i32* %59, i64* %RAX.i33
+  MustAlias:	%union.anon* %83, i64* %RAX.i33
+  MayAlias:	%struct.State* %0, i64* %86
+  MayAlias:	%struct.Memory* %2, i64* %86
+  MayAlias:	i64* %3, i64* %86
+  MayAlias:	i64* %86, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %86
+  MayAlias:	i64* %86, i64* %9
+  MayAlias:	i64* %86, i8* %14
+  MayAlias:	i64* %86, i8* %21
+  MayAlias:	i64* %86, i8* %26
+  MayAlias:	i64* %86, i8* %29
+  MayAlias:	i64* %86, i8* %32
+  MayAlias:	i64* %86, i8* %38
+  MayAlias:	i32* %41, i64* %86
+  MayAlias:	%union.anon* %42, i64* %86
+  MayAlias:	i32* %EDI.i, i64* %86
+  MayAlias:	i32* %48, i64* %86
+  MayAlias:	i64* %86, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %86
+  MayAlias:	i32* %59, i64* %86
+  MayAlias:	%union.anon* %83, i64* %86
+  MayAlias:	i64* %86, i64* %RAX.i33
+  PartialAlias:	%struct.State* %0, i64* %RDI.i43
+  NoAlias:	%struct.Memory* %2, i64* %RDI.i43
+  NoAlias:	i64* %3, i64* %RDI.i43
+  NoAlias:	i64* %RBP.i, i64* %RDI.i43
+  NoAlias:	i64* %6, i64* %RDI.i43
+  MayAlias:	i64* %9, i64* %RDI.i43
+  NoAlias:	i64* %RDI.i43, i8* %14
+  NoAlias:	i64* %RDI.i43, i8* %21
+  NoAlias:	i64* %RDI.i43, i8* %26
+  NoAlias:	i64* %RDI.i43, i8* %29
+  NoAlias:	i64* %RDI.i43, i8* %32
+  NoAlias:	i64* %RDI.i43, i8* %38
+  MayAlias:	i32* %41, i64* %RDI.i43
+  MustAlias:	%union.anon* %42, i64* %RDI.i43
+  MustAlias:	i32* %EDI.i, i64* %RDI.i43
+  MayAlias:	i32* %48, i64* %RDI.i43
+  NoAlias:	i64* %RDI.i43, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %RDI.i43
+  MayAlias:	i32* %59, i64* %RDI.i43
+  NoAlias:	%union.anon* %83, i64* %RDI.i43
+  NoAlias:	i64* %RAX.i33, i64* %RDI.i43
+  MayAlias:	i64* %86, i64* %RDI.i43
+  MayAlias:	%struct.State* %0, i64* %90
+  MayAlias:	%struct.Memory* %2, i64* %90
+  MayAlias:	i64* %3, i64* %90
+  MayAlias:	i64* %90, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %90
+  MayAlias:	i64* %9, i64* %90
+  MayAlias:	i64* %90, i8* %14
+  MayAlias:	i64* %90, i8* %21
+  MayAlias:	i64* %90, i8* %26
+  MayAlias:	i64* %90, i8* %29
+  MayAlias:	i64* %90, i8* %32
+  MayAlias:	i64* %90, i8* %38
+  MayAlias:	i32* %41, i64* %90
+  MayAlias:	%union.anon* %42, i64* %90
+  MayAlias:	i32* %EDI.i, i64* %90
+  MayAlias:	i32* %48, i64* %90
+  MayAlias:	i64* %90, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %90
+  MayAlias:	i32* %59, i64* %90
+  MayAlias:	%union.anon* %83, i64* %90
+  MayAlias:	i64* %90, i64* %RAX.i33
+  MayAlias:	i64* %86, i64* %90
+  MayAlias:	i64* %90, i64* %RDI.i43
+  MayAlias:	%struct.State* %0, i64* %96
+  MayAlias:	%struct.Memory* %2, i64* %96
+  MayAlias:	i64* %3, i64* %96
+  MayAlias:	i64* %96, i64* %RBP.i
+  MayAlias:	i64* %6, i64* %96
+  MayAlias:	i64* %9, i64* %96
+  MayAlias:	i64* %96, i8* %14
+  MayAlias:	i64* %96, i8* %21
+  MayAlias:	i64* %96, i8* %26
+  MayAlias:	i64* %96, i8* %29
+  MayAlias:	i64* %96, i8* %32
+  MayAlias:	i64* %96, i8* %38
+  MayAlias:	i32* %41, i64* %96
+  MayAlias:	%union.anon* %42, i64* %96
+  MayAlias:	i32* %EDI.i, i64* %96
+  MayAlias:	i32* %48, i64* %96
+  MayAlias:	i64* %96, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %96
+  MayAlias:	i32* %59, i64* %96
+  MayAlias:	%union.anon* %83, i64* %96
+  MayAlias:	i64* %96, i64* %RAX.i33
+  MayAlias:	i64* %86, i64* %96
+  MayAlias:	i64* %96, i64* %RDI.i43
+  MayAlias:	i64* %90, i64* %96
+  MayAlias:	%struct.Memory* %97, %struct.State* %0
+  MayAlias:	%struct.Memory* %2, %struct.Memory* %97
+  MayAlias:	%struct.Memory* %97, i64* %3
+  MayAlias:	%struct.Memory* %97, i64* %RBP.i
+  MayAlias:	%struct.Memory* %97, i64* %6
+  MayAlias:	%struct.Memory* %97, i64* %9
+  MayAlias:	%struct.Memory* %97, i8* %14
+  MayAlias:	%struct.Memory* %97, i8* %21
+  MayAlias:	%struct.Memory* %97, i8* %26
+  MayAlias:	%struct.Memory* %97, i8* %29
+  MayAlias:	%struct.Memory* %97, i8* %32
+  MayAlias:	%struct.Memory* %97, i8* %38
+  MayAlias:	%struct.Memory* %97, i32* %41
+  MayAlias:	%struct.Memory* %97, %union.anon* %42
+  MayAlias:	%struct.Memory* %97, i32* %EDI.i
+  MayAlias:	%struct.Memory* %97, i32* %48
+  MayAlias:	%struct.Memory* %97, i64* %RSI.i51
+  MayAlias:	%struct.Memory* %97, i64* %54
+  MayAlias:	%struct.Memory* %97, i32* %59
+  MayAlias:	%struct.Memory* %97, %union.anon* %83
+  MayAlias:	%struct.Memory* %97, i64* %RAX.i33
+  MayAlias:	%struct.Memory* %97, i64* %86
+  MayAlias:	%struct.Memory* %97, i64* %RDI.i43
+  MayAlias:	%struct.Memory* %97, i64* %90
+  MayAlias:	%struct.Memory* %97, i64* %96
+  PartialAlias:	%struct.State* %0, i32* %EAX.i36
+  NoAlias:	%struct.Memory* %2, i32* %EAX.i36
+  NoAlias:	i32* %EAX.i36, i64* %3
+  NoAlias:	i32* %EAX.i36, i64* %RBP.i
+  NoAlias:	i32* %EAX.i36, i64* %6
+  MayAlias:	i32* %EAX.i36, i64* %9
+  NoAlias:	i32* %EAX.i36, i8* %14
+  NoAlias:	i32* %EAX.i36, i8* %21
+  NoAlias:	i32* %EAX.i36, i8* %26
+  NoAlias:	i32* %EAX.i36, i8* %29
+  NoAlias:	i32* %EAX.i36, i8* %32
+  NoAlias:	i32* %EAX.i36, i8* %38
+  MayAlias:	i32* %41, i32* %EAX.i36
+  NoAlias:	%union.anon* %42, i32* %EAX.i36
+  NoAlias:	i32* %EAX.i36, i32* %EDI.i
+  MayAlias:	i32* %48, i32* %EAX.i36
+  NoAlias:	i32* %EAX.i36, i64* %RSI.i51
+  MayAlias:	i32* %EAX.i36, i64* %54
+  MayAlias:	i32* %59, i32* %EAX.i36
+  MustAlias:	%union.anon* %83, i32* %EAX.i36
+  MustAlias:	i32* %EAX.i36, i64* %RAX.i33
+  MayAlias:	i32* %EAX.i36, i64* %86
+  NoAlias:	i32* %EAX.i36, i64* %RDI.i43
+  MayAlias:	i32* %EAX.i36, i64* %90
+  MayAlias:	i32* %EAX.i36, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %EAX.i36
+  MayAlias:	%struct.State* %0, i32* %103
+  MayAlias:	%struct.Memory* %2, i32* %103
+  MayAlias:	i32* %103, i64* %3
+  MayAlias:	i32* %103, i64* %RBP.i
+  MayAlias:	i32* %103, i64* %6
+  MayAlias:	i32* %103, i64* %9
+  MayAlias:	i32* %103, i8* %14
+  MayAlias:	i32* %103, i8* %21
+  MayAlias:	i32* %103, i8* %26
+  MayAlias:	i32* %103, i8* %29
+  MayAlias:	i32* %103, i8* %32
+  MayAlias:	i32* %103, i8* %38
+  MayAlias:	i32* %103, i32* %41
+  MayAlias:	%union.anon* %42, i32* %103
+  MayAlias:	i32* %103, i32* %EDI.i
+  MayAlias:	i32* %103, i32* %48
+  MayAlias:	i32* %103, i64* %RSI.i51
+  MayAlias:	i32* %103, i64* %54
+  MayAlias:	i32* %103, i32* %59
+  MayAlias:	%union.anon* %83, i32* %103
+  MayAlias:	i32* %103, i64* %RAX.i33
+  MayAlias:	i32* %103, i64* %86
+  MayAlias:	i32* %103, i64* %RDI.i43
+  MayAlias:	i32* %103, i64* %90
+  MayAlias:	i32* %103, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %103
+  MayAlias:	i32* %103, i32* %EAX.i36
+  PartialAlias:	%struct.State* %0, i32* %EAX.i30
+  NoAlias:	%struct.Memory* %2, i32* %EAX.i30
+  NoAlias:	i32* %EAX.i30, i64* %3
+  NoAlias:	i32* %EAX.i30, i64* %RBP.i
+  NoAlias:	i32* %EAX.i30, i64* %6
+  MayAlias:	i32* %EAX.i30, i64* %9
+  NoAlias:	i32* %EAX.i30, i8* %14
+  NoAlias:	i32* %EAX.i30, i8* %21
+  NoAlias:	i32* %EAX.i30, i8* %26
+  NoAlias:	i32* %EAX.i30, i8* %29
+  NoAlias:	i32* %EAX.i30, i8* %32
+  NoAlias:	i32* %EAX.i30, i8* %38
+  MayAlias:	i32* %41, i32* %EAX.i30
+  NoAlias:	%union.anon* %42, i32* %EAX.i30
+  NoAlias:	i32* %EAX.i30, i32* %EDI.i
+  MayAlias:	i32* %48, i32* %EAX.i30
+  NoAlias:	i32* %EAX.i30, i64* %RSI.i51
+  MayAlias:	i32* %EAX.i30, i64* %54
+  MayAlias:	i32* %59, i32* %EAX.i30
+  MustAlias:	%union.anon* %83, i32* %EAX.i30
+  MustAlias:	i32* %EAX.i30, i64* %RAX.i33
+  MayAlias:	i32* %EAX.i30, i64* %86
+  NoAlias:	i32* %EAX.i30, i64* %RDI.i43
+  MayAlias:	i32* %EAX.i30, i64* %90
+  MayAlias:	i32* %EAX.i30, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %EAX.i30
+  MustAlias:	i32* %EAX.i30, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %EAX.i30
+  MayAlias:	%struct.State* %0, i32* %108
+  MayAlias:	%struct.Memory* %2, i32* %108
+  MayAlias:	i32* %108, i64* %3
+  MayAlias:	i32* %108, i64* %RBP.i
+  MayAlias:	i32* %108, i64* %6
+  MayAlias:	i32* %108, i64* %9
+  MayAlias:	i32* %108, i8* %14
+  MayAlias:	i32* %108, i8* %21
+  MayAlias:	i32* %108, i8* %26
+  MayAlias:	i32* %108, i8* %29
+  MayAlias:	i32* %108, i8* %32
+  MayAlias:	i32* %108, i8* %38
+  MayAlias:	i32* %108, i32* %41
+  MayAlias:	%union.anon* %42, i32* %108
+  MayAlias:	i32* %108, i32* %EDI.i
+  MayAlias:	i32* %108, i32* %48
+  MayAlias:	i32* %108, i64* %RSI.i51
+  MayAlias:	i32* %108, i64* %54
+  MayAlias:	i32* %108, i32* %59
+  MayAlias:	%union.anon* %83, i32* %108
+  MayAlias:	i32* %108, i64* %RAX.i33
+  MayAlias:	i32* %108, i64* %86
+  MayAlias:	i32* %108, i64* %RDI.i43
+  MayAlias:	i32* %108, i64* %90
+  MayAlias:	i32* %108, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %108
+  MayAlias:	i32* %108, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %108
+  MayAlias:	i32* %108, i32* %EAX.i30
+  PartialAlias:	%struct.State* %0, i64* %.pre
+  NoAlias:	%struct.Memory* %2, i64* %.pre
+  NoAlias:	i64* %.pre, i64* %3
+  NoAlias:	i64* %.pre, i64* %RBP.i
+  NoAlias:	i64* %.pre, i64* %6
+  MayAlias:	i64* %.pre, i64* %9
+  NoAlias:	i64* %.pre, i8* %14
+  NoAlias:	i64* %.pre, i8* %21
+  NoAlias:	i64* %.pre, i8* %26
+  NoAlias:	i64* %.pre, i8* %29
+  NoAlias:	i64* %.pre, i8* %32
+  NoAlias:	i64* %.pre, i8* %38
+  MayAlias:	i32* %41, i64* %.pre
+  MustAlias:	%union.anon* %42, i64* %.pre
+  MustAlias:	i32* %EDI.i, i64* %.pre
+  MayAlias:	i32* %48, i64* %.pre
+  NoAlias:	i64* %.pre, i64* %RSI.i51
+  MayAlias:	i64* %.pre, i64* %54
+  MayAlias:	i32* %59, i64* %.pre
+  NoAlias:	%union.anon* %83, i64* %.pre
+  NoAlias:	i64* %.pre, i64* %RAX.i33
+  MayAlias:	i64* %.pre, i64* %86
+  MustAlias:	i64* %.pre, i64* %RDI.i43
+  MayAlias:	i64* %.pre, i64* %90
+  MayAlias:	i64* %.pre, i64* %96
+  MayAlias:	%struct.Memory* %97, i64* %.pre
+  NoAlias:	i32* %EAX.i36, i64* %.pre
+  MayAlias:	i32* %103, i64* %.pre
+  NoAlias:	i32* %EAX.i30, i64* %.pre
+  MayAlias:	i32* %108, i64* %.pre
+  PartialAlias:	%struct.State* %0, i64* %RDI.i20.pre-phi
+  NoAlias:	%struct.Memory* %2, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %3, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %RBP.i, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %6, i64* %RDI.i20.pre-phi
+  MayAlias:	i64* %9, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %14
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %21
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %26
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %29
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %32
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %38
+  MayAlias:	i32* %41, i64* %RDI.i20.pre-phi
+  MustAlias:	%union.anon* %42, i64* %RDI.i20.pre-phi
+  MustAlias:	i32* %EDI.i, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %48, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %RDI.i20.pre-phi, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %59, i64* %RDI.i20.pre-phi
+  NoAlias:	%union.anon* %83, i64* %RDI.i20.pre-phi
+  NoAlias:	i64* %RAX.i33, i64* %RDI.i20.pre-phi
+  MayAlias:	i64* %86, i64* %RDI.i20.pre-phi
+  MustAlias:	i64* %RDI.i20.pre-phi, i64* %RDI.i43
+  MayAlias:	i64* %90, i64* %RDI.i20.pre-phi
+  MayAlias:	i64* %96, i64* %RDI.i20.pre-phi
+  MayAlias:	%struct.Memory* %97, i64* %RDI.i20.pre-phi
+  NoAlias:	i32* %EAX.i36, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %103, i64* %RDI.i20.pre-phi
+  NoAlias:	i32* %EAX.i30, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %108, i64* %RDI.i20.pre-phi
+  MustAlias:	i64* %.pre, i64* %RDI.i20.pre-phi
+  PartialAlias:	%struct.State* %0, i32* %EAX.i23.pre-phi
+  NoAlias:	%struct.Memory* %2, i32* %EAX.i23.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %3
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %RBP.i
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %6
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %9
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %14
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %21
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %26
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %29
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %32
+  NoAlias:	i32* %EAX.i23.pre-phi, i8* %38
+  MayAlias:	i32* %41, i32* %EAX.i23.pre-phi
+  NoAlias:	%union.anon* %42, i32* %EAX.i23.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i32* %EDI.i
+  MayAlias:	i32* %48, i32* %EAX.i23.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %RSI.i51
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %54
+  MayAlias:	i32* %59, i32* %EAX.i23.pre-phi
+  MustAlias:	%union.anon* %83, i32* %EAX.i23.pre-phi
+  MustAlias:	i32* %EAX.i23.pre-phi, i64* %RAX.i33
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %86
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %RDI.i43
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %90
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %EAX.i23.pre-phi
+  MustAlias:	i32* %EAX.i23.pre-phi, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %EAX.i23.pre-phi
+  MustAlias:	i32* %EAX.i23.pre-phi, i32* %EAX.i30
+  MayAlias:	i32* %108, i32* %EAX.i23.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %.pre
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %RDI.i20.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, %struct.State* %0
+  MayAlias:	%struct.Memory* %2, %struct.Memory* %MEMORY.0
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %3
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RBP.i
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %6
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %9
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %14
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %21
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %26
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %29
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %32
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %38
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %41
+  MayAlias:	%struct.Memory* %MEMORY.0, %union.anon* %42
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %EDI.i
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %48
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RSI.i51
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %54
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %59
+  MayAlias:	%struct.Memory* %MEMORY.0, %union.anon* %83
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RAX.i33
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %86
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RDI.i43
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %90
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %96
+  MayAlias:	%struct.Memory* %97, %struct.Memory* %MEMORY.0
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %EAX.i36
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %103
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %EAX.i30
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %108
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %.pre
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RDI.i20.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.State* %0, i32* %114
+  MayAlias:	%struct.Memory* %2, i32* %114
+  MayAlias:	i32* %114, i64* %3
+  MayAlias:	i32* %114, i64* %RBP.i
+  MayAlias:	i32* %114, i64* %6
+  MayAlias:	i32* %114, i64* %9
+  MayAlias:	i32* %114, i8* %14
+  MayAlias:	i32* %114, i8* %21
+  MayAlias:	i32* %114, i8* %26
+  MayAlias:	i32* %114, i8* %29
+  MayAlias:	i32* %114, i8* %32
+  MayAlias:	i32* %114, i8* %38
+  MayAlias:	i32* %114, i32* %41
+  MayAlias:	%union.anon* %42, i32* %114
+  MayAlias:	i32* %114, i32* %EDI.i
+  MayAlias:	i32* %114, i32* %48
+  MayAlias:	i32* %114, i64* %RSI.i51
+  MayAlias:	i32* %114, i64* %54
+  MayAlias:	i32* %114, i32* %59
+  MayAlias:	%union.anon* %83, i32* %114
+  MayAlias:	i32* %114, i64* %RAX.i33
+  MayAlias:	i32* %114, i64* %86
+  MayAlias:	i32* %114, i64* %RDI.i43
+  MayAlias:	i32* %114, i64* %90
+  MayAlias:	i32* %114, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %114
+  MayAlias:	i32* %114, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %114
+  MayAlias:	i32* %114, i32* %EAX.i30
+  MayAlias:	i32* %108, i32* %114
+  MayAlias:	i32* %114, i64* %.pre
+  MayAlias:	i32* %114, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %114, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %114
+  MayAlias:	%struct.State* %0, i32* %119
+  MayAlias:	%struct.Memory* %2, i32* %119
+  MayAlias:	i32* %119, i64* %3
+  MayAlias:	i32* %119, i64* %RBP.i
+  MayAlias:	i32* %119, i64* %6
+  MayAlias:	i32* %119, i64* %9
+  MayAlias:	i32* %119, i8* %14
+  MayAlias:	i32* %119, i8* %21
+  MayAlias:	i32* %119, i8* %26
+  MayAlias:	i32* %119, i8* %29
+  MayAlias:	i32* %119, i8* %32
+  MayAlias:	i32* %119, i8* %38
+  MayAlias:	i32* %119, i32* %41
+  MayAlias:	%union.anon* %42, i32* %119
+  MayAlias:	i32* %119, i32* %EDI.i
+  MayAlias:	i32* %119, i32* %48
+  MayAlias:	i32* %119, i64* %RSI.i51
+  MayAlias:	i32* %119, i64* %54
+  MayAlias:	i32* %119, i32* %59
+  MayAlias:	%union.anon* %83, i32* %119
+  MayAlias:	i32* %119, i64* %RAX.i33
+  MayAlias:	i32* %119, i64* %86
+  MayAlias:	i32* %119, i64* %RDI.i43
+  MayAlias:	i32* %119, i64* %90
+  MayAlias:	i32* %119, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %119
+  MayAlias:	i32* %119, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %119
+  MayAlias:	i32* %119, i32* %EAX.i30
+  MayAlias:	i32* %108, i32* %119
+  MayAlias:	i32* %119, i64* %.pre
+  MayAlias:	i32* %119, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %119, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %119
+  MayAlias:	i32* %114, i32* %119
+  MayAlias:	%struct.State* %0, i32* %124
+  MayAlias:	%struct.Memory* %2, i32* %124
+  MayAlias:	i32* %124, i64* %3
+  MayAlias:	i32* %124, i64* %RBP.i
+  MayAlias:	i32* %124, i64* %6
+  MayAlias:	i32* %124, i64* %9
+  MayAlias:	i32* %124, i8* %14
+  MayAlias:	i32* %124, i8* %21
+  MayAlias:	i32* %124, i8* %26
+  MayAlias:	i32* %124, i8* %29
+  MayAlias:	i32* %124, i8* %32
+  MayAlias:	i32* %124, i8* %38
+  MayAlias:	i32* %124, i32* %41
+  MayAlias:	%union.anon* %42, i32* %124
+  MayAlias:	i32* %124, i32* %EDI.i
+  MayAlias:	i32* %124, i32* %48
+  MayAlias:	i32* %124, i64* %RSI.i51
+  MayAlias:	i32* %124, i64* %54
+  MayAlias:	i32* %124, i32* %59
+  MayAlias:	%union.anon* %83, i32* %124
+  MayAlias:	i32* %124, i64* %RAX.i33
+  MayAlias:	i32* %124, i64* %86
+  MayAlias:	i32* %124, i64* %RDI.i43
+  MayAlias:	i32* %124, i64* %90
+  MayAlias:	i32* %124, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %124
+  MayAlias:	i32* %124, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %124
+  MayAlias:	i32* %124, i32* %EAX.i30
+  MayAlias:	i32* %108, i32* %124
+  MayAlias:	i32* %124, i64* %.pre
+  MayAlias:	i32* %124, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %124, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %124
+  MayAlias:	i32* %114, i32* %124
+  MayAlias:	i32* %119, i32* %124
+  MayAlias:	%struct.State* %0, i64* %131
+  MayAlias:	%struct.Memory* %2, i64* %131
+  MayAlias:	i64* %131, i64* %3
+  MayAlias:	i64* %131, i64* %RBP.i
+  MayAlias:	i64* %131, i64* %6
+  MayAlias:	i64* %131, i64* %9
+  MayAlias:	i64* %131, i8* %14
+  MayAlias:	i64* %131, i8* %21
+  MayAlias:	i64* %131, i8* %26
+  MayAlias:	i64* %131, i8* %29
+  MayAlias:	i64* %131, i8* %32
+  MayAlias:	i64* %131, i8* %38
+  MayAlias:	i32* %41, i64* %131
+  MayAlias:	%union.anon* %42, i64* %131
+  MayAlias:	i32* %EDI.i, i64* %131
+  MayAlias:	i32* %48, i64* %131
+  MayAlias:	i64* %131, i64* %RSI.i51
+  MayAlias:	i64* %131, i64* %54
+  MayAlias:	i32* %59, i64* %131
+  MayAlias:	%union.anon* %83, i64* %131
+  MayAlias:	i64* %131, i64* %RAX.i33
+  MayAlias:	i64* %131, i64* %86
+  MayAlias:	i64* %131, i64* %RDI.i43
+  MayAlias:	i64* %131, i64* %90
+  MayAlias:	i64* %131, i64* %96
+  MayAlias:	%struct.Memory* %97, i64* %131
+  MayAlias:	i32* %EAX.i36, i64* %131
+  MayAlias:	i32* %103, i64* %131
+  MayAlias:	i32* %EAX.i30, i64* %131
+  MayAlias:	i32* %108, i64* %131
+  MayAlias:	i64* %.pre, i64* %131
+  MayAlias:	i64* %131, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %131
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %131
+  MayAlias:	i32* %114, i64* %131
+  MayAlias:	i32* %119, i64* %131
+  MayAlias:	i32* %124, i64* %131
+  MayAlias:	%struct.Memory* %call2_40060c, %struct.State* %0
+  MayAlias:	%struct.Memory* %2, %struct.Memory* %call2_40060c
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %3
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RBP.i
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %6
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %9
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %14
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %21
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %26
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %29
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %32
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %38
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %41
+  MayAlias:	%struct.Memory* %call2_40060c, %union.anon* %42
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %EDI.i
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %48
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RSI.i51
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %54
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %59
+  MayAlias:	%struct.Memory* %call2_40060c, %union.anon* %83
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RAX.i33
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %86
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RDI.i43
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %90
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %96
+  MayAlias:	%struct.Memory* %97, %struct.Memory* %call2_40060c
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %EAX.i36
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %103
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %EAX.i30
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %108
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %.pre
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RDI.i20.pre-phi
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %EAX.i23.pre-phi
+  MustAlias:	%struct.Memory* %MEMORY.0, %struct.Memory* %call2_40060c
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %114
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %119
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %124
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %131
+  PartialAlias:	%struct.State* %0, i8* %AL.i
+  NoAlias:	%struct.Memory* %2, i8* %AL.i
+  NoAlias:	i64* %3, i8* %AL.i
+  NoAlias:	i64* %RBP.i, i8* %AL.i
+  NoAlias:	i64* %6, i8* %AL.i
+  MayAlias:	i64* %9, i8* %AL.i
+  NoAlias:	i8* %14, i8* %AL.i
+  NoAlias:	i8* %21, i8* %AL.i
+  NoAlias:	i8* %26, i8* %AL.i
+  NoAlias:	i8* %29, i8* %AL.i
+  NoAlias:	i8* %32, i8* %AL.i
+  NoAlias:	i8* %38, i8* %AL.i
+  MayAlias:	i32* %41, i8* %AL.i
+  NoAlias:	%union.anon* %42, i8* %AL.i
+  NoAlias:	i32* %EDI.i, i8* %AL.i
+  MayAlias:	i32* %48, i8* %AL.i
+  NoAlias:	i64* %RSI.i51, i8* %AL.i
+  MayAlias:	i64* %54, i8* %AL.i
+  MayAlias:	i32* %59, i8* %AL.i
+  MustAlias:	%union.anon* %83, i8* %AL.i
+  MustAlias:	i64* %RAX.i33, i8* %AL.i
+  MayAlias:	i64* %86, i8* %AL.i
+  NoAlias:	i64* %RDI.i43, i8* %AL.i
+  MayAlias:	i64* %90, i8* %AL.i
+  MayAlias:	i64* %96, i8* %AL.i
+  MayAlias:	%struct.Memory* %97, i8* %AL.i
+  MustAlias:	i32* %EAX.i36, i8* %AL.i
+  MayAlias:	i32* %103, i8* %AL.i
+  MustAlias:	i32* %EAX.i30, i8* %AL.i
+  MayAlias:	i32* %108, i8* %AL.i
+  NoAlias:	i64* %.pre, i8* %AL.i
+  NoAlias:	i64* %RDI.i20.pre-phi, i8* %AL.i
+  MustAlias:	i32* %EAX.i23.pre-phi, i8* %AL.i
+  MayAlias:	%struct.Memory* %MEMORY.0, i8* %AL.i
+  MayAlias:	i32* %114, i8* %AL.i
+  MayAlias:	i32* %119, i8* %AL.i
+  MayAlias:	i32* %124, i8* %AL.i
+  MayAlias:	i64* %131, i8* %AL.i
+  MayAlias:	%struct.Memory* %call2_40060c, i8* %AL.i
+  MayAlias:	%struct.State* %0, i64* %138
+  MayAlias:	%struct.Memory* %2, i64* %138
+  MayAlias:	i64* %138, i64* %3
+  MayAlias:	i64* %138, i64* %RBP.i
+  MayAlias:	i64* %138, i64* %6
+  MayAlias:	i64* %138, i64* %9
+  MayAlias:	i64* %138, i8* %14
+  MayAlias:	i64* %138, i8* %21
+  MayAlias:	i64* %138, i8* %26
+  MayAlias:	i64* %138, i8* %29
+  MayAlias:	i64* %138, i8* %32
+  MayAlias:	i64* %138, i8* %38
+  MayAlias:	i32* %41, i64* %138
+  MayAlias:	%union.anon* %42, i64* %138
+  MayAlias:	i32* %EDI.i, i64* %138
+  MayAlias:	i32* %48, i64* %138
+  MayAlias:	i64* %138, i64* %RSI.i51
+  MayAlias:	i64* %138, i64* %54
+  MayAlias:	i32* %59, i64* %138
+  MayAlias:	%union.anon* %83, i64* %138
+  MayAlias:	i64* %138, i64* %RAX.i33
+  MayAlias:	i64* %138, i64* %86
+  MayAlias:	i64* %138, i64* %RDI.i43
+  MayAlias:	i64* %138, i64* %90
+  MayAlias:	i64* %138, i64* %96
+  MayAlias:	%struct.Memory* %97, i64* %138
+  MayAlias:	i32* %EAX.i36, i64* %138
+  MayAlias:	i32* %103, i64* %138
+  MayAlias:	i32* %EAX.i30, i64* %138
+  MayAlias:	i32* %108, i64* %138
+  MayAlias:	i64* %.pre, i64* %138
+  MayAlias:	i64* %138, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %138
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %138
+  MayAlias:	i32* %114, i64* %138
+  MayAlias:	i32* %119, i64* %138
+  MayAlias:	i32* %124, i64* %138
+  MayAlias:	i64* %131, i64* %138
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %138
+  MayAlias:	i64* %138, i8* %AL.i
+  MayAlias:	%struct.Memory* %139, %struct.State* %0
+  MayAlias:	%struct.Memory* %139, %struct.Memory* %2
+  MayAlias:	%struct.Memory* %139, i64* %3
+  MayAlias:	%struct.Memory* %139, i64* %RBP.i
+  MayAlias:	%struct.Memory* %139, i64* %6
+  MayAlias:	%struct.Memory* %139, i64* %9
+  MayAlias:	%struct.Memory* %139, i8* %14
+  MayAlias:	%struct.Memory* %139, i8* %21
+  MayAlias:	%struct.Memory* %139, i8* %26
+  MayAlias:	%struct.Memory* %139, i8* %29
+  MayAlias:	%struct.Memory* %139, i8* %32
+  MayAlias:	%struct.Memory* %139, i8* %38
+  MayAlias:	%struct.Memory* %139, i32* %41
+  MayAlias:	%struct.Memory* %139, %union.anon* %42
+  MayAlias:	%struct.Memory* %139, i32* %EDI.i
+  MayAlias:	%struct.Memory* %139, i32* %48
+  MayAlias:	%struct.Memory* %139, i64* %RSI.i51
+  MayAlias:	%struct.Memory* %139, i64* %54
+  MayAlias:	%struct.Memory* %139, i32* %59
+  MayAlias:	%struct.Memory* %139, %union.anon* %83
+  MayAlias:	%struct.Memory* %139, i64* %RAX.i33
+  MayAlias:	%struct.Memory* %139, i64* %86
+  MayAlias:	%struct.Memory* %139, i64* %RDI.i43
+  MayAlias:	%struct.Memory* %139, i64* %90
+  MayAlias:	%struct.Memory* %139, i64* %96
+  MayAlias:	%struct.Memory* %139, %struct.Memory* %97
+  MayAlias:	%struct.Memory* %139, i32* %EAX.i36
+  MayAlias:	%struct.Memory* %139, i32* %103
+  MayAlias:	%struct.Memory* %139, i32* %EAX.i30
+  MayAlias:	%struct.Memory* %139, i32* %108
+  MayAlias:	%struct.Memory* %139, i64* %.pre
+  MayAlias:	%struct.Memory* %139, i64* %RDI.i20.pre-phi
+  MayAlias:	%struct.Memory* %139, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %139, %struct.Memory* %MEMORY.0
+  MayAlias:	%struct.Memory* %139, i32* %114
+  MayAlias:	%struct.Memory* %139, i32* %119
+  MayAlias:	%struct.Memory* %139, i32* %124
+  MayAlias:	%struct.Memory* %139, i64* %131
+  MayAlias:	%struct.Memory* %139, %struct.Memory* %call2_40060c
+  MayAlias:	%struct.Memory* %139, i8* %AL.i
+  MayAlias:	%struct.Memory* %139, i64* %138
+  PartialAlias:	%struct.State* %0, %union.anon* %140
+  NoAlias:	%struct.Memory* %2, %union.anon* %140
+  NoAlias:	%union.anon* %140, i64* %3
+  NoAlias:	%union.anon* %140, i64* %RBP.i
+  NoAlias:	%union.anon* %140, i64* %6
+  MayAlias:	%union.anon* %140, i64* %9
+  NoAlias:	%union.anon* %140, i8* %14
+  NoAlias:	%union.anon* %140, i8* %21
+  NoAlias:	%union.anon* %140, i8* %26
+  NoAlias:	%union.anon* %140, i8* %29
+  NoAlias:	%union.anon* %140, i8* %32
+  NoAlias:	%union.anon* %140, i8* %38
+  MayAlias:	%union.anon* %140, i32* %41
+  NoAlias:	%union.anon* %140, %union.anon* %42
+  NoAlias:	%union.anon* %140, i32* %EDI.i
+  MayAlias:	%union.anon* %140, i32* %48
+  NoAlias:	%union.anon* %140, i64* %RSI.i51
+  MayAlias:	%union.anon* %140, i64* %54
+  MayAlias:	%union.anon* %140, i32* %59
+  NoAlias:	%union.anon* %140, %union.anon* %83
+  NoAlias:	%union.anon* %140, i64* %RAX.i33
+  MayAlias:	%union.anon* %140, i64* %86
+  NoAlias:	%union.anon* %140, i64* %RDI.i43
+  MayAlias:	%union.anon* %140, i64* %90
+  MayAlias:	%union.anon* %140, i64* %96
+  MayAlias:	%struct.Memory* %97, %union.anon* %140
+  NoAlias:	%union.anon* %140, i32* %EAX.i36
+  MayAlias:	%union.anon* %140, i32* %103
+  NoAlias:	%union.anon* %140, i32* %EAX.i30
+  MayAlias:	%union.anon* %140, i32* %108
+  NoAlias:	%union.anon* %140, i64* %.pre
+  NoAlias:	%union.anon* %140, i64* %RDI.i20.pre-phi
+  NoAlias:	%union.anon* %140, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, %union.anon* %140
+  MayAlias:	%union.anon* %140, i32* %114
+  MayAlias:	%union.anon* %140, i32* %119
+  MayAlias:	%union.anon* %140, i32* %124
+  MayAlias:	%union.anon* %140, i64* %131
+  MayAlias:	%struct.Memory* %call2_40060c, %union.anon* %140
+  NoAlias:	%union.anon* %140, i8* %AL.i
+  MayAlias:	%union.anon* %140, i64* %138
+  MayAlias:	%struct.Memory* %139, %union.anon* %140
+  PartialAlias:	%struct.State* %0, i32* %ECX.i9
+  NoAlias:	%struct.Memory* %2, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i64* %3
+  NoAlias:	i32* %ECX.i9, i64* %RBP.i
+  NoAlias:	i32* %ECX.i9, i64* %6
+  MayAlias:	i32* %ECX.i9, i64* %9
+  NoAlias:	i32* %ECX.i9, i8* %14
+  NoAlias:	i32* %ECX.i9, i8* %21
+  NoAlias:	i32* %ECX.i9, i8* %26
+  NoAlias:	i32* %ECX.i9, i8* %29
+  NoAlias:	i32* %ECX.i9, i8* %32
+  NoAlias:	i32* %ECX.i9, i8* %38
+  MayAlias:	i32* %41, i32* %ECX.i9
+  NoAlias:	%union.anon* %42, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i32* %EDI.i
+  MayAlias:	i32* %48, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i64* %RSI.i51
+  MayAlias:	i32* %ECX.i9, i64* %54
+  MayAlias:	i32* %59, i32* %ECX.i9
+  NoAlias:	%union.anon* %83, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i64* %RAX.i33
+  MayAlias:	i32* %ECX.i9, i64* %86
+  NoAlias:	i32* %ECX.i9, i64* %RDI.i43
+  MayAlias:	i32* %ECX.i9, i64* %90
+  MayAlias:	i32* %ECX.i9, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %ECX.i9
+  NoAlias:	i32* %EAX.i36, i32* %ECX.i9
+  MayAlias:	i32* %103, i32* %ECX.i9
+  NoAlias:	i32* %EAX.i30, i32* %ECX.i9
+  MayAlias:	i32* %108, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i64* %.pre
+  NoAlias:	i32* %ECX.i9, i64* %RDI.i20.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i32* %ECX.i9
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %ECX.i9
+  MayAlias:	i32* %114, i32* %ECX.i9
+  MayAlias:	i32* %119, i32* %ECX.i9
+  MayAlias:	i32* %124, i32* %ECX.i9
+  MayAlias:	i32* %ECX.i9, i64* %131
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %ECX.i9
+  NoAlias:	i32* %ECX.i9, i8* %AL.i
+  MayAlias:	i32* %ECX.i9, i64* %138
+  MayAlias:	%struct.Memory* %139, i32* %ECX.i9
+  MustAlias:	%union.anon* %140, i32* %ECX.i9
+  PartialAlias:	%struct.State* %0, i64* %RCX.i
+  NoAlias:	%struct.Memory* %2, i64* %RCX.i
+  NoAlias:	i64* %3, i64* %RCX.i
+  NoAlias:	i64* %RBP.i, i64* %RCX.i
+  NoAlias:	i64* %6, i64* %RCX.i
+  MayAlias:	i64* %9, i64* %RCX.i
+  NoAlias:	i64* %RCX.i, i8* %14
+  NoAlias:	i64* %RCX.i, i8* %21
+  NoAlias:	i64* %RCX.i, i8* %26
+  NoAlias:	i64* %RCX.i, i8* %29
+  NoAlias:	i64* %RCX.i, i8* %32
+  NoAlias:	i64* %RCX.i, i8* %38
+  MayAlias:	i32* %41, i64* %RCX.i
+  NoAlias:	%union.anon* %42, i64* %RCX.i
+  NoAlias:	i32* %EDI.i, i64* %RCX.i
+  MayAlias:	i32* %48, i64* %RCX.i
+  NoAlias:	i64* %RCX.i, i64* %RSI.i51
+  MayAlias:	i64* %54, i64* %RCX.i
+  MayAlias:	i32* %59, i64* %RCX.i
+  NoAlias:	%union.anon* %83, i64* %RCX.i
+  NoAlias:	i64* %RAX.i33, i64* %RCX.i
+  MayAlias:	i64* %86, i64* %RCX.i
+  NoAlias:	i64* %RCX.i, i64* %RDI.i43
+  MayAlias:	i64* %90, i64* %RCX.i
+  MayAlias:	i64* %96, i64* %RCX.i
+  MayAlias:	%struct.Memory* %97, i64* %RCX.i
+  NoAlias:	i32* %EAX.i36, i64* %RCX.i
+  MayAlias:	i32* %103, i64* %RCX.i
+  NoAlias:	i32* %EAX.i30, i64* %RCX.i
+  MayAlias:	i32* %108, i64* %RCX.i
+  NoAlias:	i64* %.pre, i64* %RCX.i
+  NoAlias:	i64* %RCX.i, i64* %RDI.i20.pre-phi
+  NoAlias:	i32* %EAX.i23.pre-phi, i64* %RCX.i
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %RCX.i
+  MayAlias:	i32* %114, i64* %RCX.i
+  MayAlias:	i32* %119, i64* %RCX.i
+  MayAlias:	i32* %124, i64* %RCX.i
+  MayAlias:	i64* %131, i64* %RCX.i
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %RCX.i
+  NoAlias:	i64* %RCX.i, i8* %AL.i
+  MayAlias:	i64* %138, i64* %RCX.i
+  MayAlias:	%struct.Memory* %139, i64* %RCX.i
+  MustAlias:	%union.anon* %140, i64* %RCX.i
+  MustAlias:	i32* %ECX.i9, i64* %RCX.i
+  MayAlias:	%struct.State* %0, i32* %146
+  MayAlias:	%struct.Memory* %2, i32* %146
+  MayAlias:	i32* %146, i64* %3
+  MayAlias:	i32* %146, i64* %RBP.i
+  MayAlias:	i32* %146, i64* %6
+  MayAlias:	i32* %146, i64* %9
+  MayAlias:	i32* %146, i8* %14
+  MayAlias:	i32* %146, i8* %21
+  MayAlias:	i32* %146, i8* %26
+  MayAlias:	i32* %146, i8* %29
+  MayAlias:	i32* %146, i8* %32
+  MayAlias:	i32* %146, i8* %38
+  MayAlias:	i32* %146, i32* %41
+  MayAlias:	%union.anon* %42, i32* %146
+  MayAlias:	i32* %146, i32* %EDI.i
+  MayAlias:	i32* %146, i32* %48
+  MayAlias:	i32* %146, i64* %RSI.i51
+  MayAlias:	i32* %146, i64* %54
+  MayAlias:	i32* %146, i32* %59
+  MayAlias:	%union.anon* %83, i32* %146
+  MayAlias:	i32* %146, i64* %RAX.i33
+  MayAlias:	i32* %146, i64* %86
+  MayAlias:	i32* %146, i64* %RDI.i43
+  MayAlias:	i32* %146, i64* %90
+  MayAlias:	i32* %146, i64* %96
+  MayAlias:	%struct.Memory* %97, i32* %146
+  MayAlias:	i32* %146, i32* %EAX.i36
+  MayAlias:	i32* %103, i32* %146
+  MayAlias:	i32* %146, i32* %EAX.i30
+  MayAlias:	i32* %108, i32* %146
+  MayAlias:	i32* %146, i64* %.pre
+  MayAlias:	i32* %146, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %146, i32* %EAX.i23.pre-phi
+  MayAlias:	%struct.Memory* %MEMORY.0, i32* %146
+  MayAlias:	i32* %114, i32* %146
+  MayAlias:	i32* %119, i32* %146
+  MayAlias:	i32* %124, i32* %146
+  MayAlias:	i32* %146, i64* %131
+  MayAlias:	%struct.Memory* %call2_40060c, i32* %146
+  MayAlias:	i32* %146, i8* %AL.i
+  MayAlias:	i32* %146, i64* %138
+  MayAlias:	%struct.Memory* %139, i32* %146
+  MayAlias:	%union.anon* %140, i32* %146
+  MayAlias:	i32* %146, i32* %ECX.i9
+  MayAlias:	i32* %146, i64* %RCX.i
+  MayAlias:	%struct.State* %0, i64* %175
+  MayAlias:	%struct.Memory* %2, i64* %175
+  MayAlias:	i64* %175, i64* %3
+  MayAlias:	i64* %175, i64* %RBP.i
+  MayAlias:	i64* %175, i64* %6
+  MayAlias:	i64* %175, i64* %9
+  MayAlias:	i64* %175, i8* %14
+  MayAlias:	i64* %175, i8* %21
+  MayAlias:	i64* %175, i8* %26
+  MayAlias:	i64* %175, i8* %29
+  MayAlias:	i64* %175, i8* %32
+  MayAlias:	i64* %175, i8* %38
+  MayAlias:	i32* %41, i64* %175
+  MayAlias:	%union.anon* %42, i64* %175
+  MayAlias:	i32* %EDI.i, i64* %175
+  MayAlias:	i32* %48, i64* %175
+  MayAlias:	i64* %175, i64* %RSI.i51
+  MayAlias:	i64* %175, i64* %54
+  MayAlias:	i32* %59, i64* %175
+  MayAlias:	%union.anon* %83, i64* %175
+  MayAlias:	i64* %175, i64* %RAX.i33
+  MayAlias:	i64* %175, i64* %86
+  MayAlias:	i64* %175, i64* %RDI.i43
+  MayAlias:	i64* %175, i64* %90
+  MayAlias:	i64* %175, i64* %96
+  MayAlias:	%struct.Memory* %97, i64* %175
+  MayAlias:	i32* %EAX.i36, i64* %175
+  MayAlias:	i32* %103, i64* %175
+  MayAlias:	i32* %EAX.i30, i64* %175
+  MayAlias:	i32* %108, i64* %175
+  MayAlias:	i64* %.pre, i64* %175
+  MayAlias:	i64* %175, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %175
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %175
+  MayAlias:	i32* %114, i64* %175
+  MayAlias:	i32* %119, i64* %175
+  MayAlias:	i32* %124, i64* %175
+  MayAlias:	i64* %131, i64* %175
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %175
+  MayAlias:	i64* %175, i8* %AL.i
+  MayAlias:	i64* %138, i64* %175
+  MayAlias:	%struct.Memory* %139, i64* %175
+  MayAlias:	%union.anon* %140, i64* %175
+  MayAlias:	i32* %ECX.i9, i64* %175
+  MayAlias:	i64* %175, i64* %RCX.i
+  MayAlias:	i32* %146, i64* %175
+  MayAlias:	%struct.State* %0, i64* %178
+  MayAlias:	%struct.Memory* %2, i64* %178
+  MayAlias:	i64* %178, i64* %3
+  MayAlias:	i64* %178, i64* %RBP.i
+  MayAlias:	i64* %178, i64* %6
+  MayAlias:	i64* %178, i64* %9
+  MayAlias:	i64* %178, i8* %14
+  MayAlias:	i64* %178, i8* %21
+  MayAlias:	i64* %178, i8* %26
+  MayAlias:	i64* %178, i8* %29
+  MayAlias:	i64* %178, i8* %32
+  MayAlias:	i64* %178, i8* %38
+  MayAlias:	i32* %41, i64* %178
+  MayAlias:	%union.anon* %42, i64* %178
+  MayAlias:	i32* %EDI.i, i64* %178
+  MayAlias:	i32* %48, i64* %178
+  MayAlias:	i64* %178, i64* %RSI.i51
+  MayAlias:	i64* %178, i64* %54
+  MayAlias:	i32* %59, i64* %178
+  MayAlias:	%union.anon* %83, i64* %178
+  MayAlias:	i64* %178, i64* %RAX.i33
+  MayAlias:	i64* %178, i64* %86
+  MayAlias:	i64* %178, i64* %RDI.i43
+  MayAlias:	i64* %178, i64* %90
+  MayAlias:	i64* %178, i64* %96
+  MayAlias:	%struct.Memory* %97, i64* %178
+  MayAlias:	i32* %EAX.i36, i64* %178
+  MayAlias:	i32* %103, i64* %178
+  MayAlias:	i32* %EAX.i30, i64* %178
+  MayAlias:	i32* %108, i64* %178
+  MayAlias:	i64* %.pre, i64* %178
+  MayAlias:	i64* %178, i64* %RDI.i20.pre-phi
+  MayAlias:	i32* %EAX.i23.pre-phi, i64* %178
+  MayAlias:	%struct.Memory* %MEMORY.0, i64* %178
+  MayAlias:	i32* %114, i64* %178
+  MayAlias:	i32* %119, i64* %178
+  MayAlias:	i32* %124, i64* %178
+  MayAlias:	i64* %131, i64* %178
+  MayAlias:	%struct.Memory* %call2_40060c, i64* %178
+  MayAlias:	i64* %178, i8* %AL.i
+  MayAlias:	i64* %138, i64* %178
+  MayAlias:	%struct.Memory* %139, i64* %178
+  MayAlias:	%union.anon* %140, i64* %178
+  MayAlias:	i32* %ECX.i9, i64* %178
+  MayAlias:	i64* %178, i64* %RCX.i
+  MayAlias:	i32* %146, i64* %178
+  MayAlias:	i64* %175, i64* %178
+  NoModRef:  Ptr: %struct.State* %0	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %3	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %6	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %9	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %14	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %21	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %26	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %29	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %32	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %38	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %41	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %union.anon* %42	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %48	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RSI.i51	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %54	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %59	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %union.anon* %83	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RAX.i33	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %86	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RDI.i43	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %90	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %96	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.Memory* %97	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %EAX.i36	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %103	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %EAX.i30	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %108	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %.pre	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %114	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %119	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %124	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %131	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i8* %AL.i	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %138	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.Memory* %139	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %union.anon* %140	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %ECX.i9	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %RCX.i	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i32* %146	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %175	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: i64* %178	<->  %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:  Ptr: %struct.State* %0	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %3	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %6	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %9	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %14	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %21	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %26	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %29	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %32	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %38	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %41	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %union.anon* %42	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %48	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RSI.i51	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %54	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %59	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %union.anon* %83	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RAX.i33	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %86	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RDI.i43	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %90	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %96	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %struct.Memory* %97	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %EAX.i36	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %103	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %EAX.i30	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %108	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %.pre	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %114	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %119	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %124	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %131	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i8* %AL.i	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %138	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %struct.Memory* %139	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: %union.anon* %140	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %ECX.i9	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %RCX.i	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i32* %146	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %175	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:  Ptr: i64* %178	<->  %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  Both ModRef:  Ptr: %struct.State* %0	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.Memory* %2	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %3	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RBP.i	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %6	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %9	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %14	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %21	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %26	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %29	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %32	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %38	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %41	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %union.anon* %42	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %EDI.i	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %48	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RSI.i51	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %54	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %59	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %union.anon* %83	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RAX.i33	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %86	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RDI.i43	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %90	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %96	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.Memory* %97	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %EAX.i36	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %103	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %EAX.i30	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %108	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %.pre	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %114	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %119	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %124	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %131	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i8* %AL.i	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %138	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.Memory* %139	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %union.anon* %140	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %ECX.i9	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %RCX.i	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i32* %146	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %175	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: i64* %178	<->  %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:  Ptr: %struct.State* %0	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.Memory* %2	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %3	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RBP.i	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %6	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %9	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %14	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %21	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %26	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %29	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %32	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %38	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %41	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %union.anon* %42	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %EDI.i	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %48	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RSI.i51	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %54	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %59	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %union.anon* %83	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RAX.i33	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %86	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RDI.i43	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %90	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %96	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.Memory* %97	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %EAX.i36	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %103	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %EAX.i30	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %108	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %.pre	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %114	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %119	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %124	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %131	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i8* %AL.i	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %138	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.Memory* %139	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %union.anon* %140	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %ECX.i9	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %RCX.i	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i32* %146	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %175	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: i64* %178	<->  %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:  Ptr: %struct.State* %0	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %struct.Memory* %2	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %3	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RBP.i	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %6	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %9	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %14	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %21	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %26	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %29	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %32	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %38	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %41	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %union.anon* %42	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %EDI.i	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %48	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RSI.i51	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %54	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %59	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %union.anon* %83	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RAX.i33	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %86	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RDI.i43	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %90	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %96	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %struct.Memory* %97	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %EAX.i36	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %103	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %EAX.i30	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %108	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %.pre	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %114	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %119	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %124	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %131	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i8* %AL.i	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %138	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %struct.Memory* %139	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: %union.anon* %140	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %ECX.i9	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %RCX.i	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i32* %146	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %175	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  Both ModRef:  Ptr: i64* %178	<->  %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  NoModRef:  Ptr: %struct.State* %0	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %3	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RBP.i	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %6	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %9	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %14	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %21	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %26	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %29	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %32	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %38	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %41	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %union.anon* %42	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %EDI.i	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %48	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RSI.i51	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %54	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %59	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %union.anon* %83	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RAX.i33	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %86	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RDI.i43	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %90	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %96	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %struct.Memory* %97	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %EAX.i36	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %103	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %EAX.i30	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %108	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %.pre	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RDI.i20.pre-phi	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %EAX.i23.pre-phi	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %struct.Memory* %MEMORY.0	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %114	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %119	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %124	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %131	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %struct.Memory* %call2_40060c	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i8* %AL.i	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %138	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %struct.Memory* %139	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: %union.anon* %140	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %ECX.i9	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %RCX.i	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i32* %146	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %175	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:  Ptr: i64* %178	<->  %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16) <->   %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16) <->   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  NoModRef:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16) <->   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  NoModRef:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16) <->   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  NoModRef:   %17 = tail call i32 @llvm.ctpop.i32(i32 %16) <->   %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %65 = tail call i32 @llvm.ctpop.i32(i32 %64) <->   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:   %65 = tail call i32 @llvm.ctpop.i32(i32 %64) <->   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  NoModRef:   %65 = tail call i32 @llvm.ctpop.i32(i32 %64) <->   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  NoModRef:   %65 = tail call i32 @llvm.ctpop.i32(i32 %64) <->   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  NoModRef:   %65 = tail call i32 @llvm.ctpop.i32(i32 %64) <->   %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2) <->   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2) <->   %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  Both ModRef:   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2) <->   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  Both ModRef:   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2) <->   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  NoModRef:   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2) <->   %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0) <->   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0) <->   %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  Both ModRef:   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0) <->   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0) <->   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+  NoModRef:   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0) <->   %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c) <->   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c) <->   %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  Both ModRef:   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c) <->   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  Both ModRef:   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c) <->   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  NoModRef:   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c) <->   %156 = tail call i32 @llvm.ctpop.i32(i32 %155)
+  NoModRef:   %156 = tail call i32 @llvm.ctpop.i32(i32 %155) <->   %17 = tail call i32 @llvm.ctpop.i32(i32 %16)
+  NoModRef:   %156 = tail call i32 @llvm.ctpop.i32(i32 %155) <->   %65 = tail call i32 @llvm.ctpop.i32(i32 %64)
+  NoModRef:   %156 = tail call i32 @llvm.ctpop.i32(i32 %155) <->   %97 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64)* @atoi to i64), %struct.Memory* %2)
+  NoModRef:   %156 = tail call i32 @llvm.ctpop.i32(i32 %155) <->   %call2_40060c = tail call %struct.Memory* @sub_400560.fib(%struct.State* nonnull %0, i64 %127, %struct.Memory* %MEMORY.0)
+  NoModRef:   %156 = tail call i32 @llvm.ctpop.i32(i32 %155) <->   %139 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %call2_40060c)
+Function: routine_pushq__rbp: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %6, i64* %PC
+  NoAlias:	i64* %6, i64* %RBP
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %9, i64* %PC
+  MayAlias:	i64* %9, i64* %RBP
+  MayAlias:	i64* %6, i64* %9
+Function: routine_movq__rsp___rbp: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RSP
+  MayAlias:	%struct.Memory* %2, i64* %RSP
+  NoAlias:	i64* %PC, i64* %RSP
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RBP, i64* %RSP
+Function: routine_subq__0x20___rsp: 10 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RSP
+  MayAlias:	%struct.Memory* %2, i64* %RSP
+  NoAlias:	i64* %PC, i64* %RSP
+  PartialAlias:	%struct.State* %0, i8* %9
+  MayAlias:	%struct.Memory* %2, i8* %9
+  NoAlias:	i64* %PC, i8* %9
+  NoAlias:	i64* %RSP, i8* %9
+  PartialAlias:	%struct.State* %0, i8* %16
+  MayAlias:	%struct.Memory* %2, i8* %16
+  NoAlias:	i64* %PC, i8* %16
+  NoAlias:	i64* %RSP, i8* %16
+  NoAlias:	i8* %16, i8* %9
+  PartialAlias:	%struct.State* %0, i8* %21
+  MayAlias:	%struct.Memory* %2, i8* %21
+  NoAlias:	i64* %PC, i8* %21
+  NoAlias:	i64* %RSP, i8* %21
+  NoAlias:	i8* %21, i8* %9
+  NoAlias:	i8* %16, i8* %21
+  PartialAlias:	%struct.State* %0, i8* %24
+  MayAlias:	%struct.Memory* %2, i8* %24
+  NoAlias:	i64* %PC, i8* %24
+  NoAlias:	i64* %RSP, i8* %24
+  NoAlias:	i8* %24, i8* %9
+  NoAlias:	i8* %16, i8* %24
+  NoAlias:	i8* %21, i8* %24
+  PartialAlias:	%struct.State* %0, i8* %27
+  MayAlias:	%struct.Memory* %2, i8* %27
+  NoAlias:	i64* %PC, i8* %27
+  NoAlias:	i64* %RSP, i8* %27
+  NoAlias:	i8* %27, i8* %9
+  NoAlias:	i8* %16, i8* %27
+  NoAlias:	i8* %21, i8* %27
+  NoAlias:	i8* %24, i8* %27
+  PartialAlias:	%struct.State* %0, i8* %33
+  MayAlias:	%struct.Memory* %2, i8* %33
+  NoAlias:	i64* %PC, i8* %33
+  NoAlias:	i64* %RSP, i8* %33
+  NoAlias:	i8* %33, i8* %9
+  NoAlias:	i8* %16, i8* %33
+  NoAlias:	i8* %21, i8* %33
+  NoAlias:	i8* %24, i8* %33
+  NoAlias:	i8* %27, i8* %33
+  NoModRef:  Ptr: %struct.State* %0	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i64* %PC	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i64* %RSP	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %9	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %16	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %21	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %24	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %27	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %33	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+Function: routine_movl__0x0__MINUS0x4__rbp_: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_movl__edi__MINUS0x8__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EDI
+  MayAlias:	%struct.Memory* %2, i32* %EDI
+  NoAlias:	i32* %EDI, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EDI
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EDI, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EDI
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_movq__rsi__MINUS0x10__rbp_: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RSI
+  MayAlias:	%struct.Memory* %2, i64* %RSI
+  NoAlias:	i64* %PC, i64* %RSI
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RBP, i64* %RSI
+  MayAlias:	%struct.State* %0, i64* %8
+  MayAlias:	%struct.Memory* %2, i64* %8
+  MayAlias:	i64* %8, i64* %PC
+  MayAlias:	i64* %8, i64* %RSI
+  MayAlias:	i64* %8, i64* %RBP
+Function: routine_cmpl__0x2__MINUS0x8__rbp_: 11 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RBP
+  PartialAlias:	%struct.State* %0, i8* %12
+  MayAlias:	%struct.Memory* %2, i8* %12
+  NoAlias:	i64* %PC, i8* %12
+  NoAlias:	i64* %RBP, i8* %12
+  MayAlias:	i32* %7, i8* %12
+  PartialAlias:	%struct.State* %0, i8* %18
+  MayAlias:	%struct.Memory* %2, i8* %18
+  NoAlias:	i64* %PC, i8* %18
+  NoAlias:	i64* %RBP, i8* %18
+  MayAlias:	i32* %7, i8* %18
+  NoAlias:	i8* %12, i8* %18
+  PartialAlias:	%struct.State* %0, i8* %23
+  MayAlias:	%struct.Memory* %2, i8* %23
+  NoAlias:	i64* %PC, i8* %23
+  NoAlias:	i64* %RBP, i8* %23
+  MayAlias:	i32* %7, i8* %23
+  NoAlias:	i8* %12, i8* %23
+  NoAlias:	i8* %18, i8* %23
+  PartialAlias:	%struct.State* %0, i8* %26
+  MayAlias:	%struct.Memory* %2, i8* %26
+  NoAlias:	i64* %PC, i8* %26
+  NoAlias:	i64* %RBP, i8* %26
+  MayAlias:	i32* %7, i8* %26
+  NoAlias:	i8* %12, i8* %26
+  NoAlias:	i8* %18, i8* %26
+  NoAlias:	i8* %23, i8* %26
+  PartialAlias:	%struct.State* %0, i8* %29
+  MayAlias:	%struct.Memory* %2, i8* %29
+  NoAlias:	i64* %PC, i8* %29
+  NoAlias:	i64* %RBP, i8* %29
+  MayAlias:	i32* %7, i8* %29
+  NoAlias:	i8* %12, i8* %29
+  NoAlias:	i8* %18, i8* %29
+  NoAlias:	i8* %23, i8* %29
+  NoAlias:	i8* %26, i8* %29
+  PartialAlias:	%struct.State* %0, i8* %35
+  MayAlias:	%struct.Memory* %2, i8* %35
+  NoAlias:	i64* %PC, i8* %35
+  NoAlias:	i64* %RBP, i8* %35
+  MayAlias:	i32* %7, i8* %35
+  NoAlias:	i8* %12, i8* %35
+  NoAlias:	i8* %18, i8* %35
+  NoAlias:	i8* %23, i8* %35
+  NoAlias:	i8* %26, i8* %35
+  NoAlias:	i8* %29, i8* %35
+  NoModRef:  Ptr: %struct.State* %0	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i64* %PC	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i64* %RBP	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i32* %7	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %12	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %18	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %23	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %26	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %29	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+  NoModRef:  Ptr: i8* %35	<->  %14 = tail call i32 @llvm.ctpop.i32(i32 %13)
+Function: routine_jne_.L_4005f5: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  MayAlias:	%struct.State* %0, i8* %BRANCH_TAKEN
+  MayAlias:	%struct.Memory* %2, i8* %BRANCH_TAKEN
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  MayAlias:	i64* %PC, i8* %BRANCH_TAKEN
+  PartialAlias:	%struct.State* %0, i8* %4
+  MayAlias:	%struct.Memory* %2, i8* %4
+  MayAlias:	i8* %4, i8* %BRANCH_TAKEN
+  NoAlias:	i64* %PC, i8* %4
+Function: routine_movq_MINUS0x10__rbp____rax: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i64* %7
+  MayAlias:	%struct.Memory* %2, i64* %7
+  MayAlias:	i64* %7, i64* %PC
+  MayAlias:	i64* %7, i64* %RAX
+  MayAlias:	i64* %7, i64* %RBP
+Function: routine_movq_0x8__rax____rdi: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RDI
+  MayAlias:	%struct.Memory* %2, i64* %RDI
+  NoAlias:	i64* %PC, i64* %RDI
+  NoAlias:	i64* %RAX, i64* %RDI
+  MayAlias:	%struct.State* %0, i64* %7
+  MayAlias:	%struct.Memory* %2, i64* %7
+  MayAlias:	i64* %7, i64* %PC
+  MayAlias:	i64* %7, i64* %RAX
+  MayAlias:	i64* %7, i64* %RDI
+Function: routine_callq_.atoi_plt: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %6, i64* %PC
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %9, i64* %PC
+  MayAlias:	i64* %6, i64* %9
+Function: routine_movl__eax__MINUS0x18__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_jmpq_.L_400602: 3 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+Function: routine_movl__0x14___eax: 4 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+Function: routine_movl_MINUS0x18__rbp____eax: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RAX
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_movl__eax__MINUS0x14__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_movslq_MINUS0x14__rbp____rdi: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RDI
+  MayAlias:	%struct.Memory* %2, i64* %RDI
+  NoAlias:	i64* %PC, i64* %RDI
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	i64* %RBP, i64* %RDI
+  MayAlias:	%struct.State* %0, i32* %7
+  MayAlias:	%struct.Memory* %2, i32* %7
+  MayAlias:	i32* %7, i64* %PC
+  MayAlias:	i32* %7, i64* %RDI
+  MayAlias:	i32* %7, i64* %RBP
+Function: routine_callq_.fib: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %6, i64* %PC
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %9, i64* %PC
+  MayAlias:	i64* %6, i64* %9
+Function: routine_movq__0x4006c4___rdi: 4 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RDI
+  MayAlias:	%struct.Memory* %2, i64* %RDI
+  NoAlias:	i64* %PC, i64* %RDI
+Function: routine_movq__rax___rsi: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  PartialAlias:	%struct.State* %0, i64* %RSI
+  MayAlias:	%struct.Memory* %2, i64* %RSI
+  NoAlias:	i64* %PC, i64* %RSI
+  NoAlias:	i64* %RAX, i64* %RSI
+Function: routine_movb__0x0___al: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i8* %AL
+  MayAlias:	%struct.Memory* %2, i8* %AL
+  NoAlias:	i64* %PC, i8* %AL
+  MustAlias:	%union.anon* %3, i8* %AL
+Function: routine_callq_.printf_plt: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %6
+  MayAlias:	%struct.Memory* %2, i64* %6
+  NoAlias:	i64* %6, i64* %PC
+  MayAlias:	%struct.State* %0, i64* %9
+  MayAlias:	%struct.Memory* %2, i64* %9
+  MayAlias:	i64* %9, i64* %PC
+  MayAlias:	i64* %6, i64* %9
+Function: routine_xorl__ecx___ecx: 10 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RCX
+  MayAlias:	%struct.Memory* %2, i64* %RCX
+  NoAlias:	i64* %PC, i64* %RCX
+  PartialAlias:	%struct.State* %0, i8* %5
+  MayAlias:	%struct.Memory* %2, i8* %5
+  NoAlias:	i64* %PC, i8* %5
+  NoAlias:	i64* %RCX, i8* %5
+  PartialAlias:	%struct.State* %0, i8* %6
+  MayAlias:	%struct.Memory* %2, i8* %6
+  NoAlias:	i64* %PC, i8* %6
+  NoAlias:	i64* %RCX, i8* %6
+  NoAlias:	i8* %5, i8* %6
+  PartialAlias:	%struct.State* %0, i8* %7
+  MayAlias:	%struct.Memory* %2, i8* %7
+  NoAlias:	i64* %PC, i8* %7
+  NoAlias:	i64* %RCX, i8* %7
+  NoAlias:	i8* %5, i8* %7
+  NoAlias:	i8* %6, i8* %7
+  PartialAlias:	%struct.State* %0, i8* %8
+  MayAlias:	%struct.Memory* %2, i8* %8
+  NoAlias:	i64* %PC, i8* %8
+  NoAlias:	i64* %RCX, i8* %8
+  NoAlias:	i8* %5, i8* %8
+  NoAlias:	i8* %6, i8* %8
+  NoAlias:	i8* %7, i8* %8
+  PartialAlias:	%struct.State* %0, i8* %9
+  MayAlias:	%struct.Memory* %2, i8* %9
+  NoAlias:	i64* %PC, i8* %9
+  NoAlias:	i64* %RCX, i8* %9
+  NoAlias:	i8* %5, i8* %9
+  NoAlias:	i8* %6, i8* %9
+  NoAlias:	i8* %7, i8* %9
+  NoAlias:	i8* %8, i8* %9
+  PartialAlias:	%struct.State* %0, i8* %10
+  MayAlias:	%struct.Memory* %2, i8* %10
+  NoAlias:	i64* %PC, i8* %10
+  NoAlias:	i64* %RCX, i8* %10
+  NoAlias:	i8* %10, i8* %5
+  NoAlias:	i8* %10, i8* %6
+  NoAlias:	i8* %10, i8* %7
+  NoAlias:	i8* %10, i8* %8
+  NoAlias:	i8* %10, i8* %9
+Function: routine_movl__eax__MINUS0x1c__rbp_: 7 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %EAX
+  MayAlias:	%struct.Memory* %2, i32* %EAX
+  NoAlias:	i32* %EAX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %EAX
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  NoAlias:	%union.anon* %3, i64* %RBP
+  NoAlias:	i32* %EAX, i64* %RBP
+  MayAlias:	%struct.State* %0, i32* %9
+  MayAlias:	%struct.Memory* %2, i32* %9
+  MayAlias:	i32* %9, i64* %PC
+  MayAlias:	%union.anon* %3, i32* %9
+  MayAlias:	i32* %9, i32* %EAX
+  MayAlias:	i32* %9, i64* %RBP
+Function: routine_movl__ecx___eax: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, %union.anon* %3
+  MayAlias:	%struct.Memory* %2, %union.anon* %3
+  NoAlias:	%union.anon* %3, i64* %PC
+  PartialAlias:	%struct.State* %0, i32* %ECX
+  MayAlias:	%struct.Memory* %2, i32* %ECX
+  NoAlias:	i32* %ECX, i64* %PC
+  MustAlias:	%union.anon* %3, i32* %ECX
+  PartialAlias:	%struct.State* %0, i64* %RAX
+  MayAlias:	%struct.Memory* %2, i64* %RAX
+  NoAlias:	i64* %PC, i64* %RAX
+  NoAlias:	%union.anon* %3, i64* %RAX
+  NoAlias:	i32* %ECX, i64* %RAX
+Function: routine_addq__0x20___rsp: 10 pointers, 1 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RSP
+  MayAlias:	%struct.Memory* %2, i64* %RSP
+  NoAlias:	i64* %PC, i64* %RSP
+  PartialAlias:	%struct.State* %0, i8* %9
+  MayAlias:	%struct.Memory* %2, i8* %9
+  NoAlias:	i64* %PC, i8* %9
+  NoAlias:	i64* %RSP, i8* %9
+  PartialAlias:	%struct.State* %0, i8* %16
+  MayAlias:	%struct.Memory* %2, i8* %16
+  NoAlias:	i64* %PC, i8* %16
+  NoAlias:	i64* %RSP, i8* %16
+  NoAlias:	i8* %16, i8* %9
+  PartialAlias:	%struct.State* %0, i8* %21
+  MayAlias:	%struct.Memory* %2, i8* %21
+  NoAlias:	i64* %PC, i8* %21
+  NoAlias:	i64* %RSP, i8* %21
+  NoAlias:	i8* %21, i8* %9
+  NoAlias:	i8* %16, i8* %21
+  PartialAlias:	%struct.State* %0, i8* %24
+  MayAlias:	%struct.Memory* %2, i8* %24
+  NoAlias:	i64* %PC, i8* %24
+  NoAlias:	i64* %RSP, i8* %24
+  NoAlias:	i8* %24, i8* %9
+  NoAlias:	i8* %16, i8* %24
+  NoAlias:	i8* %21, i8* %24
+  PartialAlias:	%struct.State* %0, i8* %27
+  MayAlias:	%struct.Memory* %2, i8* %27
+  NoAlias:	i64* %PC, i8* %27
+  NoAlias:	i64* %RSP, i8* %27
+  NoAlias:	i8* %27, i8* %9
+  NoAlias:	i8* %16, i8* %27
+  NoAlias:	i8* %21, i8* %27
+  NoAlias:	i8* %24, i8* %27
+  PartialAlias:	%struct.State* %0, i8* %33
+  MayAlias:	%struct.Memory* %2, i8* %33
+  NoAlias:	i64* %PC, i8* %33
+  NoAlias:	i64* %RSP, i8* %33
+  NoAlias:	i8* %33, i8* %9
+  NoAlias:	i8* %16, i8* %33
+  NoAlias:	i8* %21, i8* %33
+  NoAlias:	i8* %24, i8* %33
+  NoAlias:	i8* %27, i8* %33
+  NoModRef:  Ptr: %struct.State* %0	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: %struct.Memory* %2	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i64* %PC	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i64* %RSP	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %9	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %16	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %21	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %24	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %27	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+  NoModRef:  Ptr: i8* %33	<->  %12 = tail call i32 @llvm.ctpop.i32(i32 %11)
+Function: routine_popq__rbp: 6 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %RBP
+  MayAlias:	%struct.Memory* %2, i64* %RBP
+  NoAlias:	i64* %PC, i64* %RBP
+  PartialAlias:	%struct.State* %0, i64* %5
+  MayAlias:	%struct.Memory* %2, i64* %5
+  NoAlias:	i64* %5, i64* %PC
+  NoAlias:	i64* %5, i64* %RBP
+  MayAlias:	%struct.State* %0, i64* %8
+  MayAlias:	%struct.Memory* %2, i64* %8
+  MayAlias:	i64* %8, i64* %PC
+  MayAlias:	i64* %8, i64* %RBP
+  MayAlias:	i64* %5, i64* %8
+Function: routine_retq: 5 pointers, 0 call sites
+  MayAlias:	%struct.Memory* %2, %struct.State* %0
+  PartialAlias:	%struct.State* %0, i64* %PC
+  MayAlias:	%struct.Memory* %2, i64* %PC
+  PartialAlias:	%struct.State* %0, i64* %5
+  MayAlias:	%struct.Memory* %2, i64* %5
+  NoAlias:	i64* %5, i64* %PC
+  MayAlias:	%struct.State* %0, i64* %7
+  MayAlias:	%struct.Memory* %2, i64* %7
+  MayAlias:	i64* %7, i64* %PC
+  MayAlias:	i64* %5, i64* %7
+===== Alias Analysis Evaluator Report =====
+  1627 Total Alias Queries Performed
+  447 no alias responses (27.4%)
+  1022 may alias responses (62.8%)
+  123 partial alias responses (7.5%)
+  35 must alias responses (2.1%)
+  Alias Analysis Evaluator Pointer Alias Summary: 27%/62%/7%/2%
+  349 Total ModRef Queries Performed
+  199 no mod/ref responses (57.0%)
+  0 mod responses (0.0%)
+  0 ref responses (0.0%)
+  150 mod & ref responses (42.9%)
+  Alias Analysis Evaluator Mod/Ref Summary: 57%/0%/0%/42%

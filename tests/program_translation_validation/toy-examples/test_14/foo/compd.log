@@ -466,5 +466,5 @@ Decompiling Function: foo Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.05user 0.01system 0:00.07elapsed 101%CPU (0avgtext+0avgdata 10092maxresident)k
-0inputs+120outputs (0major+3568minor)pagefaults 0swaps
+0.05user 0.02system 0:00.08elapsed 98%CPU (0avgtext+0avgdata 10016maxresident)k
+0inputs+120outputs (0major+3582minor)pagefaults 0swaps

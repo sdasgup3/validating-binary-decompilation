@@ -1,17 +1,16 @@
-Writing '/tmp/tmpmjb9diij.dot'...
-Writing '/tmp/tmpmjb9diij.dot':Done
+Writing '/tmp/tmpjjia38yf.dot'...
+Writing '/tmp/tmpjjia38yf.dot':Done
 
-Reading LLVM: /tmp/tmpiwfsoarn-query.ll
-Extracting function [foo] from /tmp/tmpiwfsoarn-query.ll
+Reading LLVM: /tmp/tmp9yk_yz85-query.ll
+Extracting function [foo] from /tmp/tmp9yk_yz85-query.ll
 Dot file generated!
-Writing '/tmp/tmpa9b3jv8x.dot'...
-Writing '/tmp/tmpa9b3jv8x.dot':Done
+Writing '/tmp/tmp5xnee42b.dot'...
+Writing '/tmp/tmp5xnee42b.dot':Done
 
-Reading LLVM: /tmp/tmp7ai0iglj-target.ll
-Extracting function [foo] from /tmp/tmp7ai0iglj-target.ll
+Reading LLVM: /tmp/tmp224lnsgz-target.ll
+Extracting function [foo] from /tmp/tmp224lnsgz-target.ll
 Dot file generated!
 ================ Starting round 0
-MAPPING:
 - 0 %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
 - 1 %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
 - 2 %4 = load i64, i64* %RBP.i, align 8
@@ -38,8 +37,8 @@ MAPPING:
 - 23 %16 = add i64 %7, 8
 - 24 store i64 %16, i64* %6, align 8
 - 25 ret %struct.Memory* %2
-Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7faf0c7b5620>, {0: {0}, 1: {1}, 2: {2, 6, 11, 15, 21}, 3: {3}, 4: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 5: {5}, 6: {2, 6, 11, 15, 21}, 7: {7}, 8: {8, 20}, 9: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 10: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 11: {2, 6, 11, 15, 21}, 12: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 13: {13}, 14: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 15: {2, 6, 11, 15, 21}, 16: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 17: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 18: {18}, 19: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 20: {8, 20}, 21: {2, 6, 11, 15, 21}, 22: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 23: {23}, 24: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 25: {25}})
-PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7faf0c7b5620>, {0: {0}, 1: {1}, 2: {2}, 3: {3}, 4: {4}, 5: {5}, 6: {6}, 7: {7}, 8: {8}, 9: {9}, 10: {10}, 11: {11}, 12: {12}, 13: {13}, 14: {14}, 15: {15}, 16: {16}, 17: {17}, 18: {18}, 19: {19}, 20: {20}, 21: {21}, 22: {22}, 23: {23}, 24: {24}, 25: {25}})
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fb29cff8400>, {0: {0}, 1: {1}, 2: {2, 6, 11, 15, 21}, 3: {3}, 4: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 5: {5}, 6: {2, 6, 11, 15, 21}, 7: {7}, 8: {8, 20}, 9: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 10: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 11: {2, 6, 11, 15, 21}, 12: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 13: {13}, 14: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 15: {2, 6, 11, 15, 21}, 16: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 17: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 18: {18}, 19: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 20: {8, 20}, 21: {2, 6, 11, 15, 21}, 22: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 23: {23}, 24: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 25: {25}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fb29cff8400>, {0: {0}, 1: {1}, 2: {2}, 3: {3}, 4: {4}, 5: {5}, 6: {6}, 7: {7}, 8: {8}, 9: {9}, 10: {10}, 11: {11}, 12: {12}, 13: {13}, 14: {14}, 15: {15}, 16: {16}, 17: {17}, 18: {18}, 19: {19}, 20: {20}, 21: {21}, 22: {22}, 23: {23}, 24: {24}, 25: {25}})
 EXACT 0 getelementptr getelementptr
 EXACT 1 getelementptr getelementptr
 EXACT 2 load load
@@ -67,7 +66,6 @@ EXACT 23 add add
 EXACT 24 store store
 EXACT 25 ret ret
 ================ Starting round 1
-MAPPING:
 - 0 %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
 - 1 %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
 - 2 %3 = load i64, i64* %RBP, align 8
@@ -94,8 +92,8 @@ MAPPING:
 - 23 %15 = add i64 %6, 8
 - 24 store i64 %15, i64* %5, align 8
 - 25 ret %struct.Memory* %2
-Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7faf0c996b70>, {0: {0}, 1: {1}, 2: {2, 6, 11, 15, 21}, 3: {3}, 4: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 5: {5}, 6: {2, 6, 11, 15, 21}, 7: {7}, 8: {8, 20}, 9: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 10: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 11: {2, 6, 11, 15, 21}, 12: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 13: {13}, 14: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 15: {2, 6, 11, 15, 21}, 16: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 17: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 18: {18}, 19: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 20: {8, 20}, 21: {2, 6, 11, 15, 21}, 22: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 23: {23}, 24: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 25: {25}})
-PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7faf0c996b70>, {0: {0}, 1: {1}, 2: {2}, 3: {3}, 4: {4}, 5: {5}, 6: {6}, 7: {7}, 8: {8}, 9: {9}, 10: {10}, 11: {11}, 12: {12}, 13: {13}, 14: {14}, 15: {15}, 16: {16}, 17: {17}, 18: {18}, 19: {19}, 20: {20}, 21: {21}, 22: {22}, 23: {23}, 24: {24}, 25: {25}})
+Initial Matches: defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fb29cfc86a8>, {0: {0}, 1: {1}, 2: {2, 6, 11, 15, 21}, 3: {3}, 4: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 5: {5}, 6: {2, 6, 11, 15, 21}, 7: {7}, 8: {8, 20}, 9: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 10: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 11: {2, 6, 11, 15, 21}, 12: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 13: {13}, 14: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 15: {2, 6, 11, 15, 21}, 16: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 17: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 18: {18}, 19: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 20: {8, 20}, 21: {2, 6, 11, 15, 21}, 22: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 23: {23}, 24: {4, 9, 10, 12, 14, 16, 17, 19, 22, 24}, 25: {25}})
+PHIS defaultdict(<function Matcher._new_round.<locals>.<lambda> at 0x7fb29cfc86a8>, {0: {0}, 1: {1}, 2: {2}, 3: {3}, 4: {4}, 5: {5}, 6: {6}, 7: {7}, 8: {8}, 9: {9}, 10: {10}, 11: {11}, 12: {12}, 13: {13}, 14: {14}, 15: {15}, 16: {16}, 17: {17}, 18: {18}, 19: {19}, 20: {20}, 21: {21}, 22: {22}, 23: {23}, 24: {24}, 25: {25}})
 EXACT 0 getelementptr getelementptr
 EXACT 1 getelementptr getelementptr
 EXACT 2 load load
@@ -180,5 +178,5 @@ Found line to remove! %15 = add i64 %6, 8
 Found line to remove! store i64 %15, i64* %5, align 8
 Found line to remove! ret %struct.Memory* %2
 [*] Found exact, syntactic match! /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo/mcsema/test.proposed.ll /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/binary/test.mcsema.calls_renamed.ll foo
-/home/ubuntu/Github/llir-matcher/matcher/match.py:718: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+/home/ubuntu/Github/llir-matcher/matcher/match.py:811: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
   config = yaml.load(fd)

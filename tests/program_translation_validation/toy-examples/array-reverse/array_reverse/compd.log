@@ -1132,5 +1132,5 @@ Decompiling Function: array_reverse Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.47user 0.09system 0:05.61elapsed 10%CPU (0avgtext+0avgdata 10476maxresident)k
-0inputs+280outputs (0major+15295minor)pagefaults 0swaps
+0.48user 0.06system 0:05.50elapsed 10%CPU (0avgtext+0avgdata 10532maxresident)k
+0inputs+288outputs (0major+15318minor)pagefaults 0swaps

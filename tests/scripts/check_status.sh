@@ -74,10 +74,34 @@ kliCheck() {
   fi
 }
 
+fileSize() {
+#wc -l < $1
+  head -n 1 $1
+}
+
+aaInfoCheck() {
+  f1=$1
+  f2=$2
+  size1=$(fileSize $f1)
+  size2=$(fileSize $f2)
+  echo "Matching $f1: " $size1 Vs  "$f2: " $size2
+#if (( $(fileSize $f1) eq $(fileSize $f2) )); then
+  if [ $size1 == $size2 ]; then
+    echo -e "\e[32mKli Pass\e[39m:-" `pwd`:$msg
+  else
+    echo -e "\e[31mKli Fail\e[39m:-" `pwd`:$msg
+  fi
+}
+
+
 while [ "$1" != "" ]; do
     case $1 in
         --compd )        shift
                          compdCheck $msg
+                         ;;
+        --aainfo )       shift
+                         aaInfoCheck $1 $2
+                         exit 0
                          ;;
         --match )        shift
                          matchCheck $msg

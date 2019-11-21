@@ -1022,5 +1022,5 @@ Decompiling Function: to_byte Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.46user 0.04system 0:03.84elapsed 13%CPU (0avgtext+0avgdata 10572maxresident)k
-0inputs+232outputs (0major+13047minor)pagefaults 0swaps
+0.49user 0.08system 0:03.93elapsed 14%CPU (0avgtext+0avgdata 10472maxresident)k
+0inputs+232outputs (0major+13040minor)pagefaults 0swaps

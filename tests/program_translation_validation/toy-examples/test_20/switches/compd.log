@@ -4439,5 +4439,5 @@ Decompiling Function: switches Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-2.06user 0.28system 0:18.80elapsed 12%CPU (0avgtext+0avgdata 10524maxresident)k
-0inputs+824outputs (0major+72700minor)pagefaults 0swaps
+1.89user 0.26system 0:17.79elapsed 12%CPU (0avgtext+0avgdata 10404maxresident)k
+0inputs+832outputs (0major+72761minor)pagefaults 0swaps

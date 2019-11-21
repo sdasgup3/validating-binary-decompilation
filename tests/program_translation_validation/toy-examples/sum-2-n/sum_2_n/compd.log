@@ -780,5 +780,5 @@ Decompiling Function: sum_2_n Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.32user 0.03system 0:02.77elapsed 13%CPU (0avgtext+0avgdata 10584maxresident)k
-0inputs+200outputs (0major+9095minor)pagefaults 0swaps
+0.29user 0.05system 0:02.63elapsed 13%CPU (0avgtext+0avgdata 10408maxresident)k
+0inputs+200outputs (0major+9077minor)pagefaults 0swaps

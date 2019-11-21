@@ -1510,5 +1510,5 @@ Decompiling Function: doTrans Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.74user 0.12system 0:07.31elapsed 11%CPU (0avgtext+0avgdata 10496maxresident)k
-0inputs+360outputs (0major+22321minor)pagefaults 0swaps
+0.69user 0.08system 0:06.94elapsed 11%CPU (0avgtext+0avgdata 10448maxresident)k
+0inputs+368outputs (0major+22251minor)pagefaults 0swaps

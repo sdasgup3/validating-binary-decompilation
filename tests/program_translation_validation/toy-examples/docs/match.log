@@ -1,56 +1,623 @@
 
-test_32/fib
+test_14/foo
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:fib ../binary/test.mcsema.calls_renamed.ll:fib 1>match.log 2>&1
-[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/foo'
 
-test_10/demo3
+test_17/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:demo3 ../binary/test.mcsema.calls_renamed.ll:demo3 1>match.log 2>&1
-[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/main'
+
+test_28_1/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:func ../binary/test.mcsema.calls_renamed.ll:func  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func:func
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/func'
+
+test_28_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28_1/main'
+
+test_13_1/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:checkFn ../binary/test.mcsema.calls_renamed.ll:checkFn  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/checkFn'
+
+test_16/printit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:printit ../binary/test.mcsema.calls_renamed.ll:printit  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit:printit
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/printit'
+
+get-sign/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/main'
+
+test_18/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/main'
+
+test_30/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/main'
+
+test_30/stderr_driver
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:stderr_driver ../binary/test.mcsema.calls_renamed.ll:stderr_driver  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver:stderr_driver
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/stderr_driver'
+
+test_14/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:checkFn ../binary/test.mcsema.calls_renamed.ll:checkFn  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/checkFn'
+
+test_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/foo'
+
+test_36/fun
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:fun ../binary/test.mcsema.calls_renamed.ll:fun  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun:fun
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/fun'
+
+test_0_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0_1/main'
+
+get-sign/get_sign
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:get_sign ../binary/test.mcsema.calls_renamed.ll:get_sign  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign:get_sign
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign'
+
+test_13_1/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doWork ../binary/test.mcsema.calls_renamed.ll:doWork  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/doWork'
+
+test_28/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/main'
+
+test_30/print_it
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:print_it ../binary/test.mcsema.calls_renamed.ll:print_it  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it:print_it
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_30/print_it'
+
+test_35/f
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:f ../binary/test.mcsema.calls_renamed.ll:f  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f:f
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/f'
+
+sum-2-n/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/main'
+
+array-reverse/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/main'
+
+add-sub/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/main'
+
+test_15/doOp
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doOp ../binary/test.mcsema.calls_renamed.ll:doOp  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp:doOp
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/doOp'
+
+binary-search/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/main'
+
+test_34/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_34/main'
+
+test_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_1/main'
+
+test_7_1/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:check ../binary/test.mcsema.calls_renamed.ll:check  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check:check
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/check'
+
+test_16/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_16/main'
+
+test_31/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/main'
+
+test_36/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_36/main'
+
+test_21/shiftit
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:shiftit ../binary/test.mcsema.calls_renamed.ll:shiftit  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit:shiftit
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/shiftit'
+
+test_13_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13_1/main'
+
+test_0/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_0/main'
+
+add-sub/add_sub
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:add_sub ../binary/test.mcsema.calls_renamed.ll:add_sub  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub:add_sub
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/add-sub/add_sub'
+
+test_2/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/main'
+
+test_3/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/main'
+
+sum-2-n/sum_2_n
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:sum_2_n ../binary/test.mcsema.calls_renamed.ll:sum_2_n  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n:sum_2_n
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/sum-2-n/sum_2_n'
+
+test_2_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/main'
+
+test_21/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_21/main'
+
+test_14/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_14/main'
+
+test_29/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/main'
+
+test_2_1/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2_1/foo'
+
+test_17/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:printdata ../binary/test.mcsema.calls_renamed.ll:printdata  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_17/printdata'
+
+test_35/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_35/main'
+
+test_15/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_15/main'
+
+test_18/printdata
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:printdata ../binary/test.mcsema.calls_renamed.ll:printdata  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata:printdata
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_18/printdata'
+
+test_11/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/main'
+
+test_28/func
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:func ../binary/test.mcsema.calls_renamed.ll:func  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func:func
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_28/func'
+
+test_5/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/foo'
+
+test_3/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_3/foo'
 
 test_13/doStuff
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doStuff ../binary/test.mcsema.calls_renamed.ll:doStuff 1>match.log 2>&1
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doStuff ../binary/test.mcsema.calls_renamed.ll:doStuff  1>match.log 2>&1
 [32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff:doStuff
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doStuff'
 
-test_29/foo
+test_10/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo 1>match.log 2>&1
-[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/main'
 
-test_33/Ack
+test_20/main
 =======
-make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:Ack ../binary/test.mcsema.calls_renamed.ll:Ack 1>match.log 2>&1
-[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
-make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/main'
+
+test_7_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7_1/main'
+
+test_26_1/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:update ../binary/test.mcsema.calls_renamed.ll:update  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/update'
+
+test_32/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:fib ../binary/test.mcsema.calls_renamed.ll:fib  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib:fib
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/fib'
+
+test_5/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_5/main'
+
+test_10/demo3
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:demo3 ../binary/test.mcsema.calls_renamed.ll:demo3  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3:demo3
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_10/demo3'
+
+test_33/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/main'
+
+array-reverse/array_reverse
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:array_reverse ../binary/test.mcsema.calls_renamed.ll:array_reverse  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse:array_reverse
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/array-reverse/array_reverse'
+
+test_24/to_byte
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:to_byte ../binary/test.mcsema.calls_renamed.ll:to_byte  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte:to_byte
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/to_byte'
+
+test_13/checkFn
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:checkFn ../binary/test.mcsema.calls_renamed.ll:checkFn  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn:checkFn
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/checkFn'
+
+test_32/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_32/main'
+
+test_24/read_bytes
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:read_bytes ../binary/test.mcsema.calls_renamed.ll:read_bytes  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes:read_bytes
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/read_bytes'
+
+test_2/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_2/foo'
+
+test_22/DoDemoFpu1
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:DoDemoFpu1 ../binary/test.mcsema.calls_renamed.ll:DoDemoFpu1  1>match.log 2>&1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1:DoDemoFpu1
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/DoDemoFpu1'
+
+test_13/doWork
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doWork ../binary/test.mcsema.calls_renamed.ll:doWork  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork:doWork
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/doWork'
 
 test_24/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main 1>match.log 2>&1
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
 [32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_24/main'
+
+test_29/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_29/foo'
+
+test_31/fib
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:fib ../binary/test.mcsema.calls_renamed.ll:fib  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib:fib
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_31/fib'
+
+test_33/Ack
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:Ack ../binary/test.mcsema.calls_renamed.ll:Ack  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack:Ack
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_33/Ack'
+
+test_26_1/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26_1/main'
+
+binary-search/binary_search
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:binary_search ../binary/test.mcsema.calls_renamed.ll:binary_search  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search:binary_search
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/binary-search/binary_search'
+
+test_25/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_25/main'
+
+test_4/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/main'
+
+test_23/draw
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:draw ../binary/test.mcsema.calls_renamed.ll:draw  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw:draw
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/draw'
 
 test_27/main
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main 1>match.log 2>&1
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
 [32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main:main
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/main'
+
+test_26/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/main'
+
+test_11/doTrans
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:doTrans ../binary/test.mcsema.calls_renamed.ll:doTrans  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans:doTrans
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_11/doTrans'
+
+test_4/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_4/foo'
+
+test_6/foo
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:foo ../binary/test.mcsema.calls_renamed.ll:foo  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo:foo
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/foo'
+
+test_6/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_6/main'
+
+test_22/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[31mMatch Fail:[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_22/main'
+
+test_13/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_13/main'
+
+test_7/main
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:main ../binary/test.mcsema.calls_renamed.ll:main  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main:main
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/main'
+
+test_26/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:update ../binary/test.mcsema.calls_renamed.ll:update  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_26/update'
+
+test_27/update
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:update ../binary/test.mcsema.calls_renamed.ll:update  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update:update
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_27/update'
+
+test_7/check
+=======
+make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:check ../binary/test.mcsema.calls_renamed.ll:check  1>match.log 2>&1
+[32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check:check
+make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_7/check'
 
 test_20/switches
 =======
 make: Entering directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'
-PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:switches ../binary/test.mcsema.calls_renamed.ll:switches 1>match.log 2>&1
+PYTHONPATH=/home/ubuntu/Github/llir-matcher: python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 mcsema/test.proposed.ll:switches ../binary/test.mcsema.calls_renamed.ll:switches  1>match.log 2>&1
 [32mMatch Pass[39m:- /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches:switches
 make: Leaving directory '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_20/switches'

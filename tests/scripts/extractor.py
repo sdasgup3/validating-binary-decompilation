@@ -168,13 +168,15 @@ def createMakefile(funcName):
     makeFile.write("OUTDIR=mcsema/" + "\n")
     makeFile.write("" + "\n")
     makeFile.write(
-        ".PHONY: clean compd compd_opt match" +
+        ".PHONY: clean compd compd_opt match extract aainfo" +
         "\n\n")
 
     makeFile.write("all: compd compd_opt match")
     makeFile.write("" + "\n\n")
 
     makeFile.write("compd: ${INDIR}test" + "\n")
+    makeFile.write(
+        "	mkdir -p mcsema" + "\n")
     makeFile.write(
         "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1" + "\n")
     makeFile.write(
@@ -192,9 +194,32 @@ def createMakefile(funcName):
         "match: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-    	"	PYTHONPATH=/home/ubuntu/Github/llir-matcher:${PYTHONPATH} python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 ${OUTDIR}test.proposed.ll:${PROG} ${INDIR}test.mcsema.calls_renamed.ll:${PROG} 1>match.log 2>&1" + "\n")
+    	"	PYTHONPATH=/home/ubuntu/Github/llir-matcher:${PYTHONPATH} python3 -m matcher.match --config /home/ubuntu/Github/llir-matcher/config.yaml --max-iter 64 ${OUTDIR}test.proposed.ll:${PROG} ${INDIR}test.mcsema.calls_renamed.ll:${PROG}  1>match.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "extract:${INDIR}test.mcsema.opt.ll" +
+        "\n")
+    makeFile.write(
+    	"	llvm-extract -S  -rfunc=\"sub_.*_${PROG}\" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll" + "\n")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "aainfo:${OUTDIR}test.mcsema.opt.extract.ll ${OUTDIR}test.proposed.opt.ll" + 
+        "\n")
+    makeFile.write(
+    	"	opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>${OUTDIR}test.proposed.aa 2>&1" + "\n")
+    makeFile.write(
+    	"	${SCRIPTDIR}/check_mem_edges.pl --file ${OUTDIR}test.proposed.aa" + "\n")
+    makeFile.write(
+    	"	opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>${OUTDIR}test.mcsema.aa 2>&1" + "\n")
+    makeFile.write(
+    	"	${SCRIPTDIR}/check_mem_edges.pl --file ${OUTDIR}test.mcsema.aa" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --aainfo ${OUTDIR}test.mcsema.aa.pruned ${OUTDIR}test.proposed.aa.pruned")
+    makeFile.write("" + "\n\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write("clean:" + "\n")
