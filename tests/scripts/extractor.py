@@ -111,10 +111,10 @@ def runLLVMExtract(inputFile, func_name, num_inst):
 
 def createParentMakefile(functions):
 
+    OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
     allFuncNames = ""
     for func in functions:
         allFuncNames = allFuncNames + " " + func[0]
-
     makeFile = open("Makefile", 'w')
     makeFile.write(".PHONY: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
     makeFile.write("INDIR=binary/")
@@ -140,7 +140,7 @@ def createParentMakefile(functions):
 
     makeFile.write("mcsema_opt:" + "\n")
     makeFile.write("	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll" + "\n")
-    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
+    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S " + OPT +  " ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:
         makeFile.write(func[0] + ":" + "\n")
@@ -156,6 +156,7 @@ def createParentMakefile(functions):
 
 def createMakefile(funcName):
 
+    OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
     makeFile = open("Makefile", 'w')
     makeFile.write("PROG=" + funcName + "\n")
     makeFile.write(
@@ -168,7 +169,7 @@ def createMakefile(funcName):
     makeFile.write("OUTDIR=mcsema/" + "\n")
     makeFile.write("" + "\n")
     makeFile.write(
-        ".PHONY: clean compd compd_opt match" +
+        ".PHONY: clean compd compd_opt match extract aainfo" +
         "\n\n")
 
     makeFile.write("all: compd compd_opt match")
@@ -185,7 +186,7 @@ def createMakefile(funcName):
         "compd_opt: ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S  -O3    ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S " + OPT + " ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write(
@@ -197,6 +198,29 @@ def createMakefile(funcName):
         "	time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "extract:${INDIR}test.mcsema.opt.ll" +
+        "\n")
+    makeFile.write(
+    	"	llvm-extract -S  -rfunc=\"sub_.*_${PROG}\" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll" + "\n")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "aainfo:${OUTDIR}test.mcsema.opt.extract.ll ${OUTDIR}test.proposed.opt.ll" + 
+        "\n")
+    makeFile.write(
+    	"	opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.proposed.opt.ll -disable-output  1>${OUTDIR}test.proposed.aa 2>&1" + "\n")
+    makeFile.write(
+    	"	${SCRIPTDIR}/check_mem_edges.pl --file ${OUTDIR}test.proposed.aa" + "\n")
+    makeFile.write(
+    	"	opt -cfl-anders-aa  -aa-eval -print-all-alias-modref-info  mcsema/test.mcsema.opt.extract.ll -disable-output  1>${OUTDIR}test.mcsema.aa 2>&1" + "\n")
+    makeFile.write(
+    	"	${SCRIPTDIR}/check_mem_edges.pl --file ${OUTDIR}test.mcsema.aa" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --aainfo ${OUTDIR}test.mcsema.aa.pruned ${OUTDIR}test.proposed.aa.pruned")
+    makeFile.write("" + "\n\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write("clean:" + "\n")
