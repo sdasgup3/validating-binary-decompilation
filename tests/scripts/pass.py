@@ -28,8 +28,18 @@ O3_pipeline = ["-tti", "-tbaa", "-scoped-noalias", "-assumption-cache-tracker", 
 
 
 
-required_passes = ["-licm", "-gvn", "-early-cse", "-globalopt", "-mem2reg", "-inline", "-simplifycfg", "-memdep", "-dse", "-memdep", "-memcpyopt",
+required_passes2 = ["-licm", "-gvn", "-early-cse", "-globalopt", "-mem2reg", "-inline", "-simplifycfg", "-dse",
                    "-deadargelim", "-libcalls-shrinkwrap","-tailcallelim", "-simplifycfg", "-instcombine"]
+
+
+
+
+
+
+
+
+required_passes = ["-mem2reg", "-licm", "-gvn", "-early-cse", "-globalopt", "-simplifycfg", "-basicaa", "-aa", "-memdep", "-dse",
+                   "-deadargelim", "-libcalls-shrinkwrap","-tailcallelim", "-simplifycfg", "-basicaa", "-aa", "-instcombine"]
 
 
 
@@ -75,10 +85,12 @@ def return_to_file(temp, filepath):
 
 def run_pass(filename, temp_name):
     opt = ["opt", "-S", filename, "-o", temp_name]
-    opt[2:2] = O3_pipeline
+    #opt[2:2] = O3_pipeline
     #opt[2:2] = test
-    #opt[2:2] = required_passes
-    if subprocess.check_output(opt) != b'':
+    opt[2:2] = required_passes
+    try:
+        subprocess.call(opt)
+    except subprocess.CalledProcessError as e:
         return False
     #with open(temp_name, 'r') as f:
     #    lock.acquire()
@@ -187,12 +199,13 @@ def main():
     if(cores > mp.cpu_count()):
         cores = mp.cpu_count()
 
-    os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "program_translation_validation", "toy-examples"))
-    with open("docs/makefilelist.txt", 'r') as f:
+    #os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "program_translation_validation", "toy-examples"))
+    os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "program_translation_validation", "single-source-benchmark"))
+    with open("docs/compdPass.log", 'r') as f:
         function_list = f.read().splitlines()
     #function_list = ['test_2/main']
     l = Lock()
-    pool = mp.Pool(initializer=lock_init, initargs=(l,), processes=40)
+    pool = mp.Pool(initializer=lock_init, initargs=(l,), processes=cores)
     results = pool.map(full_match_run, function_list)
     pool.close()
     pool.join()
