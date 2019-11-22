@@ -66,7 +66,7 @@ grep "Pass" docs/compd.log > docs/matchPass.log
 ## Check the mem dep edges
 ```
 cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} extract" |& tee ~/Junk/log
-cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} aainfo" |& tee ~/Junk/log
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} aainfo" |& tee docs/aaMatching.log
 78 exact macthes
 ```
 

@@ -44,6 +44,14 @@ cat docs/filelist.txt | parallel  "echo; echo {}; ../../scripts/extractor.py -P 
 find . -mindepth 3 -maxdepth 3 -name Makefile | grep -v "test-suite" > docs/makefilelist.txt
 ```
 
+## Check the mem dep edges
+```
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} extract" |& tee ~/Junk/log
+cat docs/compdPass.log | parallel "echo; echo {}; echo =======;  make -C {} aainfo" |& tee ~/Junk/log
+78 exact macthes
+```
+
+
 ### Run Binary [Already Done; Needed for one time]
 ```bash
 cat docs/filelist.txt | parallel " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
