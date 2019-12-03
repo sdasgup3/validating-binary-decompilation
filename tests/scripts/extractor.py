@@ -111,7 +111,8 @@ def runLLVMExtract(inputFile, func_name, num_inst):
 
 def createParentMakefile(functions):
 
-    OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
+#OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
+    OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine"
     allFuncNames = ""
     for func in functions:
         allFuncNames = allFuncNames + " " + func[0]
@@ -177,7 +178,7 @@ def createMakefile(funcName):
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
     makeFile.write("" + "\n\n")
@@ -193,9 +194,9 @@ def createMakefile(funcName):
         "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1" + "\n")
     makeFile.write(
-        "	time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
     makeFile.write("" + "\n\n")
@@ -221,6 +222,14 @@ def createMakefile(funcName):
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --aainfo ${OUTDIR}test.mcsema.aa.pruned ${OUTDIR}test.proposed.aa.pruned")
     makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "llstat:${OUTDIR}test.proposed.inline.ll" +
+        "\n")
+    makeFile.write(
+        "	@sed -n '/define.*${PROG}/,/}/p' ${OUTDIR}test.proposed.inline.ll 1>${OUTDIR}test.proposed.inline.ll.tmp 2>&1" + ";"
+        "	echo -n \"size: \"; wc -l < ${OUTDIR}test.proposed.inline.ll.tmp ; echo -n \"blocks: \"; grep block ${OUTDIR}test.proposed.inline.ll.tmp | wc -l " +
+        "\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write("clean:" + "\n")
