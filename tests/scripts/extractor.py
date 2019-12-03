@@ -109,10 +109,10 @@ def runLLVMExtract(inputFile, func_name, num_inst):
     return ret
 
 
+#OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
+OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg"
 def createParentMakefile(functions):
 
-#OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
-    OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine"
     allFuncNames = ""
     for func in functions:
         allFuncNames = allFuncNames + " " + func[0]
@@ -157,7 +157,6 @@ def createParentMakefile(functions):
 
 def createMakefile(funcName):
 
-    OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
     makeFile = open("Makefile", 'w')
     makeFile.write("PROG=" + funcName + "\n")
     makeFile.write(

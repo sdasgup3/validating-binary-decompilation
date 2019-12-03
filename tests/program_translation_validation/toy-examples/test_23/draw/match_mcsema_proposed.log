@@ -1,7 +1,7 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x55a6b77f5380]:   %123 = icmp ult i64 %122, ptrtoint (%maze_type* @maze to i64)
-[0x55a6b7978290]:   %116 = icmp ult i64 %114, %112
-[0x55a6b797a790]:   %115 = icmp ult i64 %114, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
+Multiple matches exist for [0x5622fbb633c0]:   %125 = icmp ult i64 %124, ptrtoint (%maze_type* @maze to i64)
+[0x5622fbd42500]:   %115 = icmp ult i64 %114, ptrtoint (%G__0x601040_type* @G__0x601040 to i64)
+[0x5622fbd45a00]:   %116 = icmp ult i64 %114, %112
 Iso Match NOT Found
 Writing 'sub_4005d0_draw-mcsema-diff.dot'...
 Writing 'sub_4005d0_draw-mcsema-diff.dot':Done
@@ -14,5 +14,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [draw] from ../binary/test.mcsema.opt.ll
 Extracting function [draw] from mcsema/test.proposed.opt.ll
 Matcher Done...
-2.25user 7.28system 0:09.53elapsed 99%CPU (0avgtext+0avgdata 13748maxresident)k
-0inputs+1888outputs (0major+1238minor)pagefaults 0swaps
+2.79user 6.82system 0:09.61elapsed 100%CPU (0avgtext+0avgdata 13848maxresident)k
+0inputs+1912outputs (0major+1241minor)pagefaults 0swaps

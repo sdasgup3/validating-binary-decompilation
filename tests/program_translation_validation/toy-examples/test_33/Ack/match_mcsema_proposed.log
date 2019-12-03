@@ -1,8 +1,8 @@
 Matching sub_400560_Ack Vs Ack
 
 
-[Error] Failed to extract Potential Matches for:[0x55f72471e7c8]:   %EAX = bitcast %union.anon* %3 to i32*
+[Error] Failed to extract Potential Matches for:[0x55bca6bc3068]:   %EAX = bitcast %union.anon* %3 to i32*
 matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
 Command terminated by signal 6
-0.08user 0.00system 0:00.54elapsed 15%CPU (0avgtext+0avgdata 12376maxresident)k
+0.03user 0.00system 0:00.18elapsed 19%CPU (0avgtext+0avgdata 12484maxresident)k
 0inputs+8outputs (0major+908minor)pagefaults 0swaps

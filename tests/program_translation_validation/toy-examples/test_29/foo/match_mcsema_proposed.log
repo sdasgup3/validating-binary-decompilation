@@ -1,8 +1,15 @@
-Matching sub_400520_foo Vs foo
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400520_foo-mcsema-diff.dot'...
+Writing 'sub_400520_foo-mcsema-diff.dot':Done
 
+Writing 'foo-proposed-diff.dot'...
+Writing 'foo-proposed-diff.dot':Done
 
-[Error] Failed to extract Potential Matches for:[0x5564bce4a1d0]:   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.05user 0.00system 0:00.22elapsed 23%CPU (0avgtext+0avgdata 12416maxresident)k
-0inputs+8outputs (0major+905minor)pagefaults 0swaps
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [foo] from ../binary/test.mcsema.opt.ll
+Extracting function [foo] from mcsema/test.proposed.opt.ll
+Matcher Done...
+1.79user 6.30system 0:08.12elapsed 99%CPU (0avgtext+0avgdata 13008maxresident)k
+0inputs+1504outputs (0major+1006minor)pagefaults 0swaps
