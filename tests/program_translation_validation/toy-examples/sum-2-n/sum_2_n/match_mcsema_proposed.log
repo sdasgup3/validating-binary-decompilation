@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [sum_2_n] from ../binary/test.mcsema.opt.ll
 Extracting function [sum_2_n] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.49user 2.21system 0:02.70elapsed 100%CPU (0avgtext+0avgdata 12620maxresident)k
-0inputs+520outputs (0major+897minor)pagefaults 0swaps
+0.68user 1.88system 0:02.59elapsed 99%CPU (0avgtext+0avgdata 12544maxresident)k
+0inputs+520outputs (0major+902minor)pagefaults 0swaps

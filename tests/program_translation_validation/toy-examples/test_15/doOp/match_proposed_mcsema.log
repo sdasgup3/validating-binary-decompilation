@@ -1,16 +1,16 @@
 [Info]: Check for multiple matches
-Multiple matches exist for [0x558cead62928]:   %29 = load i32, i32* bitcast (%G_0x601030_type* @G_0x601030 to i32*), align 8
-[0x558ceacefb58]:   %27 = load i32, i32* %26, align 4
-[0x558ceacefbb8]:   %28 = load i32, i32* bitcast (%g_j_type* @g_j to i32*), align 8
-Multiple matches exist for [0x558cead62b80]:   %33 = icmp ult i32 %30, %29
-[0x558ceacefd90]:   %31 = icmp ult i32 %29, %27
-[0x558ceacefe10]:   %32 = icmp ult i32 %29, %28
-Multiple matches exist for [0x558cead39560]:   %56 = lshr i32 %29, 31
-[0x558ceacf0bf0]:   %54 = lshr i32 %27, 31
-[0x558ceacf0c70]:   %55 = lshr i32 %28, 31
-Multiple matches exist for [0x558cead0a500]:   %58 = xor i32 %52, %56
-[0x558ceacf0cf0]:   %56 = xor i32 %51, %54
-[0x558ceacf0d70]:   %57 = xor i32 %51, %55
+Multiple matches exist for [0x559625338758]:   %29 = load i32, i32* bitcast (%G_0x601030_type* @G_0x601030 to i32*), align 8
+[0x55962531cfb8]:   %27 = load i32, i32* %26, align 4
+[0x55962531d018]:   %28 = load i32, i32* bitcast (%g_j_type* @g_j to i32*), align 8
+Multiple matches exist for [0x55962538fac0]:   %33 = icmp ult i32 %30, %29
+[0x55962531d1f0]:   %31 = icmp ult i32 %29, %27
+[0x55962531d270]:   %32 = icmp ult i32 %29, %28
+Multiple matches exist for [0x559625366560]:   %56 = lshr i32 %29, 31
+[0x55962531e050]:   %54 = lshr i32 %27, 31
+[0x55962531e0d0]:   %55 = lshr i32 %28, 31
+Multiple matches exist for [0x559625337500]:   %58 = xor i32 %52, %56
+[0x55962531e150]:   %56 = xor i32 %51, %54
+[0x55962531e1d0]:   %57 = xor i32 %51, %55
 Iso Match NOT Found
 Writing 'doOp-mcsema-diff.dot'...
 Writing 'doOp-mcsema-diff.dot':Done
@@ -23,5 +23,5 @@ Reading LLVM: ../binary/test.mcsema.opt.ll
 Extracting function [doOp] from mcsema/test.proposed.opt.ll
 Extracting function [doOp] from ../binary/test.mcsema.opt.ll
 Matcher Done...
-1.05user 0.65system 0:01.70elapsed 99%CPU (0avgtext+0avgdata 12412maxresident)k
+0.60user 0.77system 0:01.40elapsed 98%CPU (0avgtext+0avgdata 12404maxresident)k
 0inputs+192outputs (0major+908minor)pagefaults 0swaps

@@ -14,7 +14,7 @@ compd: ${INDIR}test
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd
 
 compd_opt: ${OUTDIR}test.proposed.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S -licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
+	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
 
 
 match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll

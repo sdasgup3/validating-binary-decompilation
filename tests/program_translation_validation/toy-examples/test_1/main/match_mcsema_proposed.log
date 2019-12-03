@@ -11,5 +11,5 @@ Reading LLVM: mcsema/test.proposed.opt.ll
 Extracting function [main] from ../binary/test.mcsema.opt.ll
 Extracting function [main] from mcsema/test.proposed.opt.ll
 Matcher Done...
-0.51user 1.44system 0:01.96elapsed 99%CPU (0avgtext+0avgdata 12388maxresident)k
-0inputs+392outputs (0major+893minor)pagefaults 0swaps
+0.50user 1.24system 0:01.75elapsed 99%CPU (0avgtext+0avgdata 12520maxresident)k
+0inputs+400outputs (0major+897minor)pagefaults 0swaps
