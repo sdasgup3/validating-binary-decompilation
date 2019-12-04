@@ -1,8 +1,0 @@
-Matching sub_400520_DoDemoFpu1 Vs DoDemoFpu1
-
-
-[Error] Failed to extract Potential Matches for:[0x55dfc6c8eed8]:   %45 = bitcast i32* %44 to i64*
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.09user 0.00system 0:00.64elapsed 14%CPU (0avgtext+0avgdata 12768maxresident)k
-0inputs+8outputs (0major+972minor)pagefaults 0swaps
