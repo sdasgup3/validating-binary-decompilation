@@ -32,6 +32,7 @@ class CompositionalDecompiler {
 private:
   // bool assume_none_decl_retval;
   bool reloc_info_available;
+  bool force_artifact_gen;
   string binaryPath;
   string extractedFunction;
   string singleInstrDecompPath;
@@ -105,6 +106,7 @@ private:
                          uint64_t currSize);
 
   bool checkConstantOrAddress(uint64_t currRIP, uint64_t currSize);
+  bool isTargetOutsideFunctionBoundary(uint64_t target);
 
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
@@ -112,7 +114,7 @@ public:
                           const string &singleInstrDecompPath,
                           const string &workdir,
                           // bool assume_none_decl_retval = false,
-                          bool reloc_info_available);
+                          bool reloc_info_available, bool force_artifact_gen);
 
   /** Clears error state */
   void clear_error() {

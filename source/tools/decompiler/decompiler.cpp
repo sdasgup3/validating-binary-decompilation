@@ -60,6 +60,11 @@ auto &reloc_info = FlagArg::create("use-reloc-info")
                        .description("Use the binary relocation info "
                                     "assuming the binary is built that way.");
 
+auto &force_artifact_gen =
+    FlagArg::create("force_artifact_gen")
+        .alternate("f")
+        .description("Force generation of compd artifacts");
+
 auto &view =
     FlagArg::create("view").alternate("v").description("View cfg immediately");
 
@@ -81,9 +86,9 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  CompositionalDecompiler CompD(BinaryIn, LLVMOut, Fxn,
-                                SingleInstructionDecompilationPath,
-                                workdir_arg.value(), reloc_info.value());
+  CompositionalDecompiler CompD(
+      BinaryIn, LLVMOut, Fxn, SingleInstructionDecompilationPath,
+      workdir_arg.value(), reloc_info.value(), force_artifact_gen.value());
 
   return 0;
 }

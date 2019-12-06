@@ -18,12 +18,13 @@ genZ3Check() {
 
 compdCheck() {
   msg=$1
-#  if grep -qw "error" compd.log; then
-#    echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
-#    exit 1
-#  fi
+  dir=$2
+  if grep -qw "Error 1" $dir/compd.log; then
+    echo -e "\e[31mCompd Fail\e[39m:-" `pwd`:$msg
+    exit 1
+  fi
 
-  if grep -q "Decompiling: Done" compd.log; then
+  if grep -q "Decompiling: Done" $dir/compd.log; then
     echo -e "\e[32mCompd Pass\e[39m:-" `pwd`:$msg
     exit 0
   else
@@ -34,21 +35,22 @@ compdCheck() {
 
 matchCheck() {
   msg=$1
+  dir=$2
   status_M2P=0  
   status_P2M=0  
 
-  if grep -q "Iso Match Found" match_mcsema_proposed.log; then
+  if grep -q "Iso Match Found" $dir/match_mcsema_proposed.log; then
     status_M2P=1
-  elif grep -q "Iso Match NOT Found" match_mcsema_proposed.log; then
+  elif grep -q "Iso Match NOT Found" $dir/match_mcsema_proposed.log; then
     status_M2P=2
   else 
     echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
     exit 1
   fi
 
-  if grep -q "Iso Match Found" match_proposed_mcsema.log; then
+  if grep -q "Iso Match Found" $dir/match_proposed_mcsema.log; then
     status_P2M=1
-  elif grep -q "Iso Match NOT Found" match_proposed_mcsema.log; then
+  elif grep -q "Iso Match NOT Found" $dir/match_proposed_mcsema.log; then
     status_P2M=2
   else 
     echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
@@ -57,18 +59,18 @@ matchCheck() {
 
   if [ $status_M2P -eq 1 ] && [ $status_M2P -eq 1 ]; then
     echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   elif [ $status_M2P -eq 2 ]; then
     echo -e "\e[32mMatch Pass:m2p-multi-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   else 
     echo -e "\e[32mMatch Pass:p2m-multi-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  match_mcsema_proposed.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   fi
 }
@@ -123,14 +125,14 @@ aaInfoCheck() {
 while [ "$1" != "" ]; do
     case $1 in
         --compd )        shift
-                         compdCheck $msg
+                         compdCheck $msg $dir
                          ;;
         --aainfo )       shift
                          aaInfoCheck $1 $2
                          exit 0
                          ;;
         --match )        shift
-                         matchCheck $msg
+                         matchCheck $msg $dir
                          ;;
         --lprove )       shift
                          lproveCheck $msg
@@ -146,6 +148,9 @@ while [ "$1" != "" ]; do
                          ;;
         --msg )          shift
                          msg=$1
+                         ;;
+        --dir )          shift
+                         dir=$1
                          ;;
         --help )         usage
                          exit

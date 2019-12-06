@@ -1,4 +1,4 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl fun
@@ -6,27 +6,23 @@ Disassembled output
 
 #! file-offset 0x520
 #! rip-offset  0x400520
-#! capacity    40 bytes
+#! capacity    18 bytes
 
-# Text                      #  Line  RIP       Bytes  Opcode             Target                
-.fun:                       #        0x400520  0      OPC=<label>        18446744073709551615  
-  pushq %rbp                #  1     0x400520  1      OPC=pushq_r64_1    18446744073709551615  
-  movq %rsp, %rbp           #  2     0x400521  3      OPC=movq_r64_r64   18446744073709551615  
-  movsd %xmm0, -0x8(%rbp)   #  3     0x400524  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd %xmm1, -0x10(%rbp)  #  4     0x400529  5      OPC=movsd_m64_xmm  18446744073709551615  
-  movsd -0x8(%rbp), %xmm0   #  5     0x40052e  5      OPC=movsd_xmm_m64  18446744073709551615  
-  mulsd -0x8(%rbp), %xmm0   #  6     0x400533  5      OPC=mulsd_xmm_m64  18446744073709551615  
-  movsd -0x10(%rbp), %xmm1  #  7     0x400538  5      OPC=movsd_xmm_m64  18446744073709551615  
-  mulsd -0x10(%rbp), %xmm1  #  8     0x40053d  5      OPC=mulsd_xmm_m64  18446744073709551615  
-  addsd %xmm1, %xmm0        #  9     0x400542  4      OPC=addsd_xmm_xmm  18446744073709551615  
-  popq %rbp                 #  10    0x400546  1      OPC=popq_r64_1     18446744073709551615  
-  retq                      #  11    0x400547  1      OPC=retq           18446744073709551615  
-                                                                                               
+# Text                #  Line  RIP       Bytes  Opcode             Target                
+.fun:                 #        0x400520  0      OPC=<label>        18446744073709551615  
+  pushq %rbp          #  1     0x400520  1      OPC=pushq_r64_1    18446744073709551615  
+  movq %rsp, %rbp     #  2     0x400521  3      OPC=movq_r64_r64   18446744073709551615  
+  mulsd %xmm0, %xmm0  #  3     0x400524  4      OPC=mulsd_xmm_xmm  18446744073709551615  
+  mulsd %xmm1, %xmm1  #  4     0x400528  4      OPC=mulsd_xmm_xmm  18446744073709551615  
+  addsd %xmm1, %xmm0  #  5     0x40052c  4      OPC=addsd_xmm_xmm  18446744073709551615  
+  popq %rbp           #  6     0x400530  1      OPC=popq_r64_1     18446744073709551615  
+  retq                #  7     0x400531  1      OPC=retq           18446744073709551615  
+                                                                                         
 .size fun, .-fun
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
 .fun->4195616
 
@@ -432,118 +428,42 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:movq %rsp, %rbp Done...
 
 
-Decompiling instr:movsd %xmm0, -0x8(%rbp)...
-Instr: movsd %xmm0, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd__xmm0__MINUS0x8__rbp_
+Decompiling instr:mulsd %xmm0, %xmm0...
+Instr: mulsd %xmm0, %xmm0
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd__xmm0___xmm0
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd__xmm0__MINUS0x8__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd__xmm0___xmm0/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
-FuncCache inserted: routine_movsd__xmm0__MINUS0x8__rbp_
-Decompiling instr:movsd %xmm0, -0x8(%rbp) Done...
+FuncCache inserted: _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_
+FuncCache inserted: routine_mulsd__xmm0___xmm0
+Decompiling instr:mulsd %xmm0, %xmm0 Done...
 
 
-Decompiling instr:movsd %xmm1, -0x10(%rbp)...
-Instr: movsd %xmm1, -0x10(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd__xmm1__MINUS0x10__rbp_
+Decompiling instr:mulsd %xmm1, %xmm1...
+Instr: mulsd %xmm1, %xmm1
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd__xmm1___xmm1
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd__xmm1__MINUS0x10__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd__xmm1___xmm1/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI4MVnWI7vec64_tE2VnI8vec128_tEEEP6MemoryS8_R5StateT_T0_
-FuncCache inserted: routine_movsd__xmm1__MINUS0x10__rbp_
-Decompiling instr:movsd %xmm1, -0x10(%rbp) Done...
-
-
-Decompiling instr:movsd -0x8(%rbp), %xmm0...
-Instr: movsd -0x8(%rbp), %xmm0
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0x8__rbp____xmm0
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0x8__rbp____xmm0/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
-FuncCache inserted: routine_movsd_MINUS0x8__rbp____xmm0
-Decompiling instr:movsd -0x8(%rbp), %xmm0 Done...
-
-
-Decompiling instr:mulsd -0x8(%rbp), %xmm0...
-Instr: mulsd -0x8(%rbp), %xmm0
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_MINUS0x8__rbp____xmm0
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_MINUS0x8__rbp____xmm0/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_
-FuncCache inserted: routine_mulsd_MINUS0x8__rbp____xmm0
-Decompiling instr:mulsd -0x8(%rbp), %xmm0 Done...
-
-
-Decompiling instr:movsd -0x10(%rbp), %xmm1...
-Instr: movsd -0x10(%rbp), %xmm1
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0x10__rbp____xmm1
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movsd_MINUS0x10__rbp____xmm1/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_
-FuncCache inserted: routine_movsd_MINUS0x10__rbp____xmm1
-Decompiling instr:movsd -0x10(%rbp), %xmm1 Done...
-
-
-Decompiling instr:mulsd -0x10(%rbp), %xmm1...
-Instr: mulsd -0x10(%rbp), %xmm1
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_MINUS0x10__rbp____xmm1
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//mulsd_MINUS0x10__rbp____xmm1/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_E3MVnIS2_EEEP6MemoryS9_R5StateT_T0_T1_
-FuncCache inserted: routine_mulsd_MINUS0x10__rbp____xmm1
-Decompiling instr:mulsd -0x10(%rbp), %xmm1 Done...
+FuncCache skipped: _ZN12_GLOBAL__N_1L5MULSDI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_
+FuncCache inserted: routine_mulsd__xmm1___xmm1
+Decompiling instr:mulsd %xmm1, %xmm1 Done...
 
 
 Decompiling instr:addsd %xmm1, %xmm0...
@@ -603,8 +523,8 @@ Decompiling Function: fun Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.16user 0.02system 0:00.21elapsed 88%CPU (0avgtext+0avgdata 10156maxresident)k
-0inputs+160outputs (0major+5954minor)pagefaults 0swaps
+0.09user 0.02system 0:00.11elapsed 100%CPU (0avgtext+0avgdata 10168maxresident)k
+0inputs+136outputs (0major+4573minor)pagefaults 0swaps
