@@ -1,27 +1,27 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl foo
   .type foo, @function
 
-#! file-offset 0x5e0
-#! rip-offset  0x4005e0
+#! file-offset 0x5b0
+#! rip-offset  0x4005b0
 #! capacity    6 bytes
 
 # Text             #  Line  RIP       Bytes  Opcode            Target                
-.foo:              #        0x4005e0  0      OPC=<label>       18446744073709551615  
-  pushq %rbp       #  1     0x4005e0  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp  #  2     0x4005e1  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp        #  3     0x4005e4  1      OPC=popq_r64_1    18446744073709551615  
-  retq             #  4     0x4005e5  1      OPC=retq          18446744073709551615  
+.foo:              #        0x4005b0  0      OPC=<label>       18446744073709551615  
+  pushq %rbp       #  1     0x4005b0  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp  #  2     0x4005b1  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp        #  3     0x4005b4  1      OPC=popq_r64_1    18446744073709551615  
+  retq             #  4     0x4005b5  1      OPC=retq          18446744073709551615  
                                                                                      
 .size foo, .-foo
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
-.foo->4195808
+.foo->4195760
 
 Computing Label PC values: Done.
 
@@ -463,8 +463,8 @@ Decompiling Function: foo Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.07user 0.01system 0:00.09elapsed 93%CPU (0avgtext+0avgdata 10108maxresident)k
-0inputs+120outputs (0major+3567minor)pagefaults 0swaps
+0.05user 0.01system 0:00.06elapsed 101%CPU (0avgtext+0avgdata 10304maxresident)k
+0inputs+120outputs (0major+3572minor)pagefaults 0swaps

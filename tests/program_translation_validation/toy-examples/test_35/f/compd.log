@@ -1,4 +1,4 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl f
@@ -6,25 +6,23 @@ Disassembled output
 
 #! file-offset 0x620
 #! rip-offset  0x400620
-#! capacity    40 bytes
+#! capacity    27 bytes
 
-# Text                   #  Line  RIP       Bytes  Opcode            Target                
-.f:                      #        0x400620  0      OPC=<label>       18446744073709551615  
-  pushq %rbp             #  1     0x400620  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400621  3      OPC=movq_r64_r64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  3     0x400624  4      OPC=movq_m64_r64  18446744073709551615  
-  movq %fs:-0x8, %rdi    #  4     0x400628  9      OPC=movq_r64_m64  18446744073709551615  
-  incq %rdi              #  5     0x400631  3      OPC=incq_r64      18446744073709551615  
-  movq %rdi, %fs:-0x8    #  6     0x400634  9      OPC=movq_m64_r64  18446744073709551615  
-  movq %fs:-0x8, %rax    #  7     0x40063d  9      OPC=movq_r64_m64  18446744073709551615  
-  popq %rbp              #  8     0x400646  1      OPC=popq_r64_1    18446744073709551615  
-  retq                   #  9     0x400647  1      OPC=retq          18446744073709551615  
-                                                                                           
+# Text                 #  Line  RIP       Bytes  Opcode            Target                
+.f:                    #        0x400620  0      OPC=<label>       18446744073709551615  
+  pushq %rbp           #  1     0x400620  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp      #  2     0x400621  3      OPC=movq_r64_r64  18446744073709551615  
+  movq %fs:-0x8, %rax  #  3     0x400624  9      OPC=movq_r64_m64  18446744073709551615  
+  incq %rax            #  4     0x40062d  3      OPC=incq_r64      18446744073709551615  
+  movq %rax, %fs:-0x8  #  5     0x400630  9      OPC=movq_m64_r64  18446744073709551615  
+  popq %rbp            #  6     0x400639  1      OPC=popq_r64_1    18446744073709551615  
+  retq                 #  7     0x40063a  1      OPC=retq          18446744073709551615  
+                                                                                         
 .size f, .-f
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
 .f->4195872
 
@@ -430,82 +428,6 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:movq %rsp, %rbp Done...
 
 
-Decompiling instr:movq %rdi, -0x8(%rbp)...
-Instr: movq %rdi, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__rdi__MINUS0x8__rbp_
-Decompiling instr:movq %rdi, -0x8(%rbp) Done...
-
-
-Decompiling instr:movq %fs:-0x8, %rdi...
-Instr: movq %fs:-0x8, %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__fs_MINUS0x8___rdi
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__fs_MINUS0x8___rdi/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__fs_MINUS0x8___rdi
-Decompiling instr:movq %fs:-0x8, %rdi Done...
-
-
-Decompiling instr:incq %rdi...
-Instr: incq %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//incq__rdi
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//incq__rdi/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3INCI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_incq__rdi
-Decompiling instr:incq %rdi Done...
-
-
-Decompiling instr:movq %rdi, %fs:-0x8...
-Instr: movq %rdi, %fs:-0x8
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___fs_MINUS0x8
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___fs_MINUS0x8/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__rdi___fs_MINUS0x8
-Decompiling instr:movq %rdi, %fs:-0x8 Done...
-
-
 Decompiling instr:movq %fs:-0x8, %rax...
 Instr: movq %fs:-0x8, %rax
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__fs_MINUS0x8___rax
@@ -520,9 +442,47 @@ Running artifacts...Done.
 
 Multiple defintions of %seg_4003a0__text_type
 Multiple defintions of @seg_4003a0__text
-FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movq__fs_MINUS0x8___rax
 Decompiling instr:movq %fs:-0x8, %rax Done...
+
+
+Decompiling instr:incq %rax...
+Instr: incq %rax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//incq__rax
+Creating artifacts...
+Already Exists
+Creating artifacts... Done.
+Running artifacts...
+Reusing Declutter Output...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//incq__rax/test.mod.ll
+Running artifacts...Done.
+
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache inserted: _ZN12_GLOBAL__N_1L3INCI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_incq__rax
+Decompiling instr:incq %rax Done...
+
+
+Decompiling instr:movq %rax, %fs:-0x8...
+Instr: movq %rax, %fs:-0x8
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax___fs_MINUS0x8
+Creating artifacts...
+Already Exists
+Creating artifacts... Done.
+Running artifacts...
+Reusing Declutter Output...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax___fs_MINUS0x8/test.mod.ll
+Running artifacts...Done.
+
+Multiple defintions of %seg_4003a0__text_type
+Multiple defintions of @seg_4003a0__text
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rax___fs_MINUS0x8
+Decompiling instr:movq %rax, %fs:-0x8 Done...
 
 
 Decompiling instr:popq %rbp...
@@ -563,8 +523,8 @@ Decompiling Function: f Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.12user 0.03system 0:00.16elapsed 96%CPU (0avgtext+0avgdata 10352maxresident)k
-0inputs+144outputs (0major+5294minor)pagefaults 0swaps
+0.09user 0.03system 0:00.13elapsed 100%CPU (0avgtext+0avgdata 10272maxresident)k
+0inputs+144outputs (0major+4584minor)pagefaults 0swaps

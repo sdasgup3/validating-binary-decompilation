@@ -1,33 +1,30 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl main
   .type main, @function
 
-#! file-offset 0x570
-#! rip-offset  0x400570
-#! capacity    33 bytes
+#! file-offset 0x550
+#! rip-offset  0x400550
+#! capacity    18 bytes
 
-# Text                   #  Line  RIP       Bytes  Opcode              Target                
-.main:                   #        0x400570  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x400570  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x400571  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp       #  3     0x400574  4      OPC=subq_r64_imm8   18446744073709551615  
-  movl $0x2, %edi        #  4     0x400578  5      OPC=movl_r32_imm32  18446744073709551615  
-  movl $0x0, -0x4(%rbp)  #  5     0x40057d  7      OPC=movl_m32_imm32  18446744073709551615  
-  callq .func            #  6     0x400584  5      OPC=callq_label     4195616               
-  xorl %eax, %eax        #  7     0x400589  2      OPC=xorl_r32_r32    18446744073709551615  
-  addq $0x10, %rsp       #  8     0x40058b  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp              #  9     0x40058f  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  10    0x400590  1      OPC=retq            18446744073709551615  
-                                                                                             
+# Text             #  Line  RIP       Bytes  Opcode              Target                
+.main:             #        0x400550  0      OPC=<label>         18446744073709551615  
+  pushq %rbp       #  1     0x400550  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp  #  2     0x400551  3      OPC=movq_r64_r64    18446744073709551615  
+  movl $0x2, %edi  #  3     0x400554  5      OPC=movl_r32_imm32  18446744073709551615  
+  callq .func      #  4     0x400559  5      OPC=callq_label     4195616               
+  xorl %eax, %eax  #  5     0x40055e  2      OPC=xorl_r32_r32    18446744073709551615  
+  popq %rbp        #  6     0x400560  1      OPC=popq_r64_1      18446744073709551615  
+  retq             #  7     0x400561  1      OPC=retq            18446744073709551615  
+                                                                                       
 .size main, .-main
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
-.main->4195696
+.main->4195664
 
 Computing Label PC values: Done.
 
@@ -431,27 +428,6 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:movq %rsp, %rbp Done...
 
 
-Decompiling instr:subq $0x10, %rsp...
-Instr: subq $0x10, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x10___rsp
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x10___rsp/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_subq__0x10___rsp
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400574 --size 4
-Decompiling instr:subq $0x10, %rsp Done...
-
-
 Decompiling instr:movl $0x2, %edi...
 Instr: movl $0x2, %edi
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x2___edi
@@ -469,27 +445,8 @@ Multiple defintions of @seg_400548__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
 FuncCache inserted: routine_movl__0x2___edi
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 400578 --size 5
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary_O2/test.reloc --pc 400554 --size 5
 Decompiling instr:movl $0x2, %edi Done...
-
-
-Decompiling instr:movl $0x0, -0x4(%rbp)...
-Instr: movl $0x0, -0x4(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2InIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl__0x0__MINUS0x4__rbp_
-Decompiling instr:movl $0x0, -0x4(%rbp) Done...
 
 
 Decompiling instr:callq .func...
@@ -530,27 +487,6 @@ FuncCache inserted: routine_xorl__eax___eax
 Decompiling instr:xorl %eax, %eax Done...
 
 
-Decompiling instr:addq $0x10, %rsp...
-Instr: addq $0x10, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x10___rsp
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x10___rsp/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_addq__0x10___rsp
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 40058b --size 4
-Decompiling instr:addq $0x10, %rsp Done...
-
-
 Decompiling instr:popq %rbp...
 Instr: popq %rbp
 Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
@@ -589,8 +525,8 @@ Decompiling Function: main Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.15user 0.02system 0:00.81elapsed 22%CPU (0avgtext+0avgdata 10508maxresident)k
-0inputs+160outputs (0major+5725minor)pagefaults 0swaps
+0.10user 0.02system 0:00.33elapsed 37%CPU (0avgtext+0avgdata 10304maxresident)k
+0inputs+136outputs (0major+4618minor)pagefaults 0swaps

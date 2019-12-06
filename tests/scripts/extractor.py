@@ -117,19 +117,37 @@ def createParentMakefile(functions):
     for func in functions:
         allFuncNames = allFuncNames + " " + func[0]
     makeFile = open("Makefile", 'w')
-    makeFile.write(".PHONY: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
-    makeFile.write("INDIR=binary/")
+    makeFile.write(".PHONY: binary objdump mcsema mcsema_opt " + allFuncNames + "\n\n")
+
+    makeFile.write("ifndef BIN_OPT" + "\n")
+    makeFile.write("  BIN_OPT=O0" + "\n")
+    makeFile.write("  INDIR=binary/" + "\n")
+    makeFile.write("else" + "\n")
+    makeFile.write("  ifeq (${BIN_OPT},O0)" + "\n")
+    makeFile.write("    INDIR=binary/" + "\n")
+    makeFile.write("  else" + "\n")
+    makeFile.write("    INDIR=binary_${BIN_OPT}/" + "\n")
+    makeFile.write("  endif" + "\n")
+    makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
+
+    makeFile.write("NORM_PASS=" + OPT + "\n")
+    makeFile.write("ifdef NORM" + "\n")
+    makeFile.write("  NORM_PASS=-${NORM}" + "\n")
+    makeFile.write("endif" + "\n")
+    makeFile.write("\n\n")
+
     makeFile.write("all: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
     makeFile.write("compd:" + allFuncNames + "\n")
     makeFile.write("compd_opt:" + allFuncNames + "\n")
     makeFile.write("match:" + allFuncNames + "\n\n")
 
     makeFile.write("binary:" + "\n")
-    makeFile.write("	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test" + "\n\n")
+    makeFile.write("	mkdir -p ${INDIR}" + "\n")
+    makeFile.write("	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test" + "\n\n")
 
     makeFile.write("reloc_binary:" + "\n")
-    makeFile.write("	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc" + "\n\n")
+    makeFile.write("	/usr/bin/clang-6.0 -Wl,-emit-relocs -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test.reloc" + "\n\n")
 
     makeFile.write("objdump:" + "\n")
     makeFile.write("	objdump -d ${INDIR}test > ${INDIR}/test.objdump" + "\n\n")
@@ -140,8 +158,8 @@ def createParentMakefile(functions):
     makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
 
     makeFile.write("mcsema_opt:" + "\n")
-    makeFile.write("	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll" + "\n")
-    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S " + OPT +  " ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
+    makeFile.write("	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll" + "\n")
+    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
 
     for func in functions:
         makeFile.write(func[0] + ":" + "\n")
@@ -158,16 +176,43 @@ def createParentMakefile(functions):
 def createMakefile(funcName):
 
     makeFile = open("Makefile", 'w')
-    makeFile.write("PROG=" + funcName + "\n")
+    makeFile.write("PROG=" + funcName + "\n\n")
+
+    makeFile.write("REPO=" + "${HOME}/Github/" + "\n")
+    makeFile.write("ifdef REPO_PATH" + "\n")
+    makeFile.write("  REPO=${REPO_PATH}" + "\n")
+    makeFile.write("endif" + "\n")
+    makeFile.write("\n\n")
+
     makeFile.write(
-        "TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/" + "\n")
+        "TOOLDIR=${REPO}/validating-binary-decompilation/source/build/bin/" + "\n")
     makeFile.write(
         "SCRIPTDIR=${TOOLDIR}/../../../tests/scripts/" + "\n")
     makeFile.write(
-        "ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n")
-    makeFile.write("INDIR=../binary/" + "\n")
-    makeFile.write("OUTDIR=mcsema/" + "\n")
-    makeFile.write("" + "\n")
+        "ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n\n")
+#makeFile.write("INDIR=../binary/" + "\n")
+
+    makeFile.write("ifndef BIN_OPT" + "\n")
+    makeFile.write("  BIN_OPT=O0" + "\n")
+    makeFile.write("  INDIR=../binary/" + "\n")
+    makeFile.write("  OUTDIR=mcsema/" + "\n")
+    makeFile.write("else" + "\n")
+    makeFile.write("  ifeq (${BIN_OPT},O0)" + "\n")
+    makeFile.write("    INDIR=../binary/" + "\n")
+    makeFile.write("    OUTDIR=mcsema/" + "\n")
+    makeFile.write("  else" + "\n")
+    makeFile.write("    INDIR=../binary_${BIN_OPT}/" + "\n")
+    makeFile.write("    OUTDIR=mcsema_${BIN_OPT}/" + "\n")
+    makeFile.write("  endif" + "\n")
+    makeFile.write("endif" + "\n")
+    makeFile.write("\n\n")
+
+    makeFile.write("NORM_PASS=" + OPT + "\n")
+    makeFile.write("ifdef NORM" + "\n")
+    makeFile.write("  NORM_PASS=-${NORM}" + "\n")
+    makeFile.write("endif" + "\n")
+    makeFile.write("\n\n")
+
     makeFile.write(
         ".PHONY: clean compd compd_opt match extract aainfo" +
         "\n\n")
@@ -177,27 +222,29 @@ def createMakefile(funcName):
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1" + "\n")
+        "	mkdir -p ${OUTDIR}" + "\n")
     makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd")
+        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info   1>${OUTDIR}compd.log 2>&1" + "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd")
     makeFile.write("" + "\n\n")
 
     makeFile.write(
         "compd_opt: ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S " + OPT + " ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
     makeFile.write("" + "\n\n")
 
     makeFile.write(
         "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1" + "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1" + "\n")
     makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match")
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match")
     makeFile.write("" + "\n\n")
 
     makeFile.write(
@@ -269,7 +316,9 @@ def main():
     # Generate the binary artifacts
     if not os.path.isdir("binary"):
         os.mkdir("binary")
-    os.chdir("binary")
+    if not os.path.isdir("src"):
+        os.mkdir("src")
+    os.chdir("src")
     if not runLLVMDis(inputFile):
         print("llvm-extract failed to run for function {}".format(func[0]))
     os.chdir(os.path.join(os.getcwd(), ".."))

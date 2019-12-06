@@ -1,2 +1,13 @@
 *.dot
 test-suite
+match_proposed_mcsema.log
+match_mcsema_proposed.log
+test.mcsema.opt.ll
+test.mcsema.inline.ll
+test.mcsema.calls_renamed.ll
+test.proposed.inline.ll
+test.proposed.opt.ll
+binary_O3
+mcsema_O3
+compd.log
+match.log

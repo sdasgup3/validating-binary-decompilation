@@ -1,26 +1,53 @@
 PROG=doWork
-TOOLDIR=${HOME}/Github/validating-binary-decompilation/source/build/bin/
+
+REPO=${HOME}/Github/
+ifdef REPO_PATH
+  REPO=${REPO_PATH}
+endif
+
+
+TOOLDIR=${REPO}/validating-binary-decompilation/source/build/bin/
 SCRIPTDIR=${TOOLDIR}/../../../tests/scripts/
-ARTIFACTDIR=${HOME}/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
-INDIR=../binary/
-OUTDIR=mcsema/
+ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+
+ifndef BIN_OPT
+  BIN_OPT=O0
+  INDIR=../binary/
+  OUTDIR=mcsema/
+else
+  ifeq (${BIN_OPT},O0)
+    INDIR=../binary/
+    OUTDIR=mcsema/
+  else
+    INDIR=../binary_${BIN_OPT}/
+    OUTDIR=mcsema_${BIN_OPT}/
+  endif
+endif
+
+
+NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg
+ifdef NORM
+  NORM_PASS=-${NORM}
+endif
+
 
 .PHONY: clean compd compd_opt match extract aainfo
 
 all: compd compd_opt match
 
 compd: ${INDIR}test
-	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>compd.log 2>&1
-	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --compd
+	mkdir -p ${OUTDIR}
+	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info   1>${OUTDIR}compd.log 2>&1
+	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd
 
 compd_opt: ${OUTDIR}test.proposed.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
+	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
 
 
 match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
-	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>match_mcsema_proposed.log 2>&1
-	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>match_proposed_mcsema.log 2>&1
-	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --match
+	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1
+	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1
+	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
 
 extract:${INDIR}test.mcsema.opt.ll
 	llvm-extract -S  -rfunc="sub_.*_${PROG}" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll

@@ -46,13 +46,17 @@ static bool is_hex_string(const string &s);
 // Convert a hex string to an int */
 static uint64_t hex_to_int(const string &s);
 
+typedef pair<bool, string> isBuiltInFuncCallRetType;
+static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc);
+
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
     const string &extractedFunction, const string &singleInstrDecompPath,
-    const string &workdir, bool reloc_info_available) {
+    const string &workdir, bool reloc_info_available, bool force_artifact_gen) {
 
   this->binaryPath = inPath;
   this->reloc_info_available = reloc_info_available;
+  this->force_artifact_gen = force_artifact_gen;
   this->extractedFunction = extractedFunction;
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
@@ -498,36 +502,37 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
 
   std::smatch m;
   if (!reloc_info_available) {
-    for (auto &line : local_defn) {
+    // for (auto &line : local_defn) {
 
-      if (regex_search(line, m, regex("ptrtoint"))) {
+    //   if (regex_search(line, m, regex("ptrtoint"))) {
 
-        string addrExpr = normalize_spaces(opr.str());
+    //     string addrExpr = normalize_spaces(opr.str());
 
-        if (DataSectioGlobalsCache.count(addrExpr)) {
-          uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
-          if (accessSize > pastSize) {
-            DataSectioGlobalsCache[addrExpr] = accessSize;
-          }
-        } else {
-          DataSectioGlobalsCache[addrExpr] = accessSize;
-        }
+    //     if (DataSectioGlobalsCache.count(addrExpr)) {
+    //       uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+    //       if (accessSize > pastSize) {
+    //         DataSectioGlobalsCache[addrExpr] = accessSize;
+    //       }
+    //     } else {
+    //       DataSectioGlobalsCache[addrExpr] = accessSize;
+    //     }
 
-        string globalType = "%G_" + addrExpr + "_type";
-        string globalName = "@G_" + addrExpr;
+    //     string globalType = "%G_" + addrExpr + "_type";
+    //     string globalName = "@G_" + addrExpr;
 
-        auto replace_str =
-            "ptrtoint( " + globalType + "* " + globalName + " to";
-        auto repl_line =
-            regex_replace(line, regex("ptrtoint.*?to"), replace_str);
-        retval.push_back(repl_line);
+    //     auto replace_str =
+    //         "ptrtoint( " + globalType + "* " + globalName + " to";
+    //     auto repl_line =
+    //         regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+    //     retval.push_back(repl_line);
 
-        continue;
-      }
-      retval.push_back(line);
-    }
+    //     continue;
+    //   }
+    //   retval.push_back(line);
+    // }
 
-    return retval;
+    // return retval;
+    Console::error(1) << "Use binary with reloation information" << endl;
   }
 
   // If relocation information is available, then do the right thing!
@@ -619,9 +624,19 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
         string globalType = "%G_" + addrExpr + "_type";
         string globalName = "@G_" + addrExpr;
 
-        auto replace_str =
+        //  Off(%rip)
+        //  %7 = add i64 %PC, hexIntStr
+        auto replace_str1 =
+            "ptrtoint " + globalType + "* " + globalName + " to i64";
+        auto repl_line = regex_replace(line, regex("add .*"), replace_str1);
+
+        //  movl Off, edi
+        // %11 = call %struct.Memory* @CALL(%struct.Memory* %2, %struct.State*
+        // %0, i64* %RDI, i64 4196052)
+        auto replace_str2 =
             "ptrtoint( " + globalType + "* " + globalName + " to i64)";
-        auto repl_line = regex_replace(line, regex(hexIntStr), replace_str);
+        repl_line = regex_replace(repl_line, regex(hexIntStr), replace_str2);
+
         retval.push_back(repl_line);
       } else {
         // CASE 1: golden: constant, mcsema: constant
@@ -681,8 +696,59 @@ string CompositionalDecompiler::handleJMPBodyCalls(x64asm::Instruction instr,
        << ", %struct.Memory** %MEMORY" << endl
        << endl;
 
-  Body << "  br label %block_" << ss_label.str() << "\n\n";
-  retval << "%call_" << hex << currRIP;
+  // Recognising tail call jumps
+  if (isTargetOutsideFunctionBoundary(targetAddress)) {
+
+    // Generting load from Mem
+    Body << "  %loadMem2_" << hex << currRIP
+         << " = load %struct.Memory*, %struct.Memory** %MEMORY" << endl;
+    Body << "  %loadPC_" << hex << currRIP << " = load i64, i64* %3" << endl;
+
+    // Generating call to actual function
+    auto isBuiltIn = isBuiltInFuncCall(ss_label.str());
+    if (isBuiltIn.first) {
+      Body << "  %call2_" << hex << currRIP
+           << " = tail call %struct.Memory* @ext_" << isBuiltIn.second
+           << "(%struct.State* %0, i64  "
+           << "%loadPC_" << hex << currRIP << ", %struct.Memory* %loadMem2_"
+           << hex << currRIP << ")" << endl;
+    } else {
+      Body << "  %call2_" << hex << currRIP
+           << " = tail call %struct.Memory* @sub_" << hex << targetAddress
+           << lbl << "(%struct.State* %0, i64  "
+           << "%loadPC_" << hex << currRIP << ", %struct.Memory* %loadMem2_"
+           << hex << currRIP << ")" << endl;
+    }
+
+    // Generting store to Mem
+    Body << "  store %struct.Memory* %call2_" << hex << currRIP
+         << ", %struct.Memory** %MEMORY" << endl
+         << endl;
+
+    retval << "%call2_" << hex << currRIP;
+
+    stringstream tmp;
+
+    if (isBuiltIn.first) {
+      // For builtin we already provide the definitions using static data file
+      return retval.str();
+    }
+
+    tmp << "declare %struct.Memory* @sub_" << hex << targetAddress << lbl
+        << "(%struct.State* noalias dereferenceable(3376), i64, "
+           "%struct.Memory* "
+           "noalias readnone returned)"
+        << endl;
+    if (!DeclCache.count(tmp.str())) {
+      FuncDecls << tmp.str();
+      DeclCache.insert(pair<string, string>(tmp.str(), ""));
+    }
+
+  } else {
+
+    Body << "  br label %block_" << ss_label.str() << "\n\n";
+    retval << "%call_" << hex << currRIP;
+  }
 
   return retval.str();
 }
@@ -771,8 +837,7 @@ string CompositionalDecompiler::handleJCCBodyCalls(x64asm::Instruction instr,
   return retval.str();
 }
 
-typedef pair<bool, string> isBuiltInFuncCallRetType;
-static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc) {
+isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc) {
   if (calledFunc == ".abort_plt" || calledFunc == ".abs_plt" ||
       calledFunc == ".asin_plt" || calledFunc == ".atan_plt" ||
       calledFunc == ".atof_plt" || calledFunc == ".atoi_plt" ||
@@ -962,10 +1027,10 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   /*
   ** Generate the defns.
   */
-  if (!createSetup(instr, workdir, scriptsPath)) {
+  if (!createSetup(instr, workdir, scriptsPath, force_artifact_gen)) {
     exit(1);
   }
-  auto full_defn = runSetup(instr, workdir, scriptsPath);
+  auto full_defn = runSetup(instr, workdir, scriptsPath, force_artifact_gen);
 
   // Collect the various declarations and return the definition w/o the
   // declarations
@@ -996,6 +1061,25 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   }
 
   return retval;
+}
+
+bool CompositionalDecompiler::isTargetOutsideFunctionBoundary(uint64_t target) {
+  auto fxn = cfg->get_function();
+  uint64_t rip_offset_ = fxn.get_rip_offset();
+  auto rip_offset_it = fxn.hex_offset_begin();
+
+  auto funcStart = rip_offset_ + *rip_offset_it;
+
+  // auto size_it = fxn.hex_size_begin();
+  // for (; rip_offset_it < rip_offset_ite; rip_offset_it++, size_it++) {
+
+  //   auto currRIP = rip_offset_ + *rip_offset_it;
+  //   auto currSize = *size_it;
+  auto rip_offset_ite = fxn.hex_offset_end();
+  auto size_ite = fxn.hex_size_end();
+  auto funcEnd = rip_offset_ + *(rip_offset_ite - 1) + *(size_ite - 1);
+
+  return !(target >= funcStart && target < funcEnd);
 }
 
 string

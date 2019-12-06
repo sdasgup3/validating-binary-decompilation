@@ -1,38 +1,34 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl print_it
   .type print_it, @function
 
-#! file-offset 0x5b0
-#! rip-offset  0x4005b0
-#! capacity    54 bytes
+#! file-offset 0x580
+#! rip-offset  0x400580
+#! capacity    33 bytes
 
-# Text                   #  Line  RIP       Bytes  Opcode              Target                
-.print_it:               #        0x4005b0  0      OPC=<label>         18446744073709551615  
-  pushq %rbp             #  1     0x4005b0  1      OPC=pushq_r64_1     18446744073709551615  
-  movq %rsp, %rbp        #  2     0x4005b1  3      OPC=movq_r64_r64    18446744073709551615  
-  subq $0x10, %rsp       #  3     0x4005b4  4      OPC=subq_r64_imm8   18446744073709551615  
-  movq $0x40068d, %rsi   #  4     0x4005b8  10     OPC=movq_r64_imm64  18446744073709551615  
-  movq %rdi, -0x8(%rbp)  #  5     0x4005c2  4      OPC=movq_m64_r64    18446744073709551615  
-  movq 0x601040, %rdi    #  6     0x4005c6  8      OPC=movq_r64_m64    18446744073709551615  
-  movq -0x8(%rbp), %rdx  #  7     0x4005ce  4      OPC=movq_r64_m64    18446744073709551615  
-  movb $0x0, %al         #  8     0x4005d2  2      OPC=movb_r8_imm8    18446744073709551615  
-  callq .fprintf_plt     #  9     0x4005d4  5      OPC=callq_label     4195424               
-  xorl %ecx, %ecx        #  10    0x4005d9  2      OPC=xorl_r32_r32    18446744073709551615  
-  movl %eax, -0xc(%rbp)  #  11    0x4005db  3      OPC=movl_m32_r32    18446744073709551615  
-  movl %ecx, %eax        #  12    0x4005de  2      OPC=movl_r32_r32    18446744073709551615  
-  addq $0x10, %rsp       #  13    0x4005e0  4      OPC=addq_r64_imm8   18446744073709551615  
-  popq %rbp              #  14    0x4005e4  1      OPC=popq_r64_1      18446744073709551615  
-  retq                   #  15    0x4005e5  1      OPC=retq            18446744073709551615  
-                                                                                             
+# Text                       #  Line  RIP       Bytes  Opcode              Target                
+.print_it:                   #        0x400580  0      OPC=<label>         18446744073709551615  
+  pushq %rbp                 #  1     0x400580  1      OPC=pushq_r64_1     18446744073709551615  
+  movq %rsp, %rbp            #  2     0x400581  3      OPC=movq_r64_r64    18446744073709551615  
+  movq %rdi, %rcx            #  3     0x400584  3      OPC=movq_r64_r64    18446744073709551615  
+  movq 0x200ab2(%rip), %rdi  #  4     0x400587  7      OPC=movq_r64_m64    18446744073709551615  
+  movl $0x40064d, %esi       #  5     0x40058e  5      OPC=movl_r32_imm32  18446744073709551615  
+  xorl %eax, %eax            #  6     0x400593  2      OPC=xorl_r32_r32    18446744073709551615  
+  movq %rcx, %rdx            #  7     0x400595  3      OPC=movq_r64_r64    18446744073709551615  
+  callq .fprintf_plt         #  8     0x400598  5      OPC=callq_label     4195424               
+  xorl %eax, %eax            #  9     0x40059d  2      OPC=xorl_r32_r32    18446744073709551615  
+  popq %rbp                  #  10    0x40059f  1      OPC=popq_r64_1      18446744073709551615  
+  retq                       #  11    0x4005a0  1      OPC=retq            18446744073709551615  
+                                                                                                 
 .size print_it, .-print_it
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
-.print_it->4195760
+.print_it->4195712
 
 Computing Label PC values: Done.
 
@@ -436,129 +432,103 @@ FuncCache inserted: routine_movq__rsp___rbp
 Decompiling instr:movq %rsp, %rbp Done...
 
 
-Decompiling instr:subq $0x10, %rsp...
-Instr: subq $0x10, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x10___rsp
+Decompiling instr:movq %rdi, %rcx...
+Instr: movq %rdi, %rcx
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___rcx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x10___rsp/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi___rcx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3SUBI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_subq__0x10___rsp
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005b4 --size 4
-Decompiling instr:subq $0x10, %rsp Done...
+FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rdi___rcx
+Decompiling instr:movq %rdi, %rcx Done...
 
 
-Decompiling instr:movq $0x40068d, %rsi...
-Instr: movq $0x40068d, %rsi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x40068d___rsi
+Decompiling instr:movq 0x200ab2(%rip), %rdi...
+Instr: movq 0x200ab2(%rip), %rdi
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x200ab2__rip____rdi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x40068d___rsi/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__0x40068d___rsi
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005b8 --size 10
-Global Access Mismatch: 4195981 Relocation: Address, McSema: Constant
-Decompiling instr:movq $0x40068d, %rsi Done...
-
-
-Decompiling instr:movq %rdi, -0x8(%rbp)...
-Instr: movq %rdi, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rdi__MINUS0x8__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x200ab2__rip____rdi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq__rdi__MINUS0x8__rbp_
-Decompiling instr:movq %rdi, -0x8(%rbp) Done...
-
-
-Decompiling instr:movq 0x601040, %rdi...
-Instr: movq 0x601040, %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x601040___rdi
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_0x601040___rdi/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of %seg_4003a0__text_type
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400558__eh_frame
 FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq_0x601040___rdi
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005c6 --size 8
-Global Access Fix: 6295616 Relocation: Address, McSema: Address
-Decompiling instr:movq 0x601040, %rdi Done...
+FuncCache inserted: routine_movq_0x200ab2__rip____rdi
+Global Access Mismatch: 2099897 Relocation: Address, McSema: Constant
+Decompiling instr:movq 0x200ab2(%rip), %rdi Done...
 
 
-Decompiling instr:movq -0x8(%rbp), %rdx...
-Instr: movq -0x8(%rbp), %rdx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x8__rbp____rdx
+Decompiling instr:movl $0x40064d, %esi...
+Instr: movl $0x40064d, %esi
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x40064d___esi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x8__rbp____rdx/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x40064d___esi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2MnImEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movq_MINUS0x8__rbp____rdx
-Decompiling instr:movq -0x8(%rbp), %rdx Done...
+FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2InIjEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movl__0x40064d___esi
+
+Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary_O2/test.reloc --pc 40058e --size 5
+Global Access Mismatch: 4195917 Relocation: Address, McSema: Constant
+Decompiling instr:movl $0x40064d, %esi Done...
 
 
-Decompiling instr:movb $0x0, %al...
-Instr: movb $0x0, %al
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__0x0___al
+Decompiling instr:xorl %eax, %eax...
+Instr: xorl %eax, %eax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__eax___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__0x0___al/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__eax___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWIhE2InIhEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movb__0x0___al
+FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjES4_EEP6MemoryS6_R5StateT_T0_T1_
+FuncCache inserted: routine_xorl__eax___eax
+Decompiling instr:xorl %eax, %eax Done...
 
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005d2 --size 2
-Decompiling instr:movb $0x0, %al Done...
+
+Decompiling instr:movq %rcx, %rdx...
+Instr: movq %rcx, %rdx
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rcx___rdx
+Creating artifacts...
+Already Exists
+Creating artifacts... Done.
+Running artifacts...
+Reusing Declutter Output...
+
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rcx___rdx/test.mod.ll
+Running artifacts...Done.
+
+Multiple defintions of @seg_4003a0__text
+Multiple defintions of @seg_400548__eh_frame
+FuncCache skipped: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnImEEEP6MemoryS6_R5StateT_T0_
+FuncCache inserted: routine_movq__rcx___rdx
+Decompiling instr:movq %rcx, %rdx Done...
 
 
 Decompiling instr:callq .fprintf_plt...
@@ -580,82 +550,23 @@ FuncCache inserted: routine_callq_.fprintf_plt
 Decompiling instr:callq .fprintf_plt Done...
 
 
-Decompiling instr:xorl %ecx, %ecx...
-Instr: xorl %ecx, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__ecx___ecx
+Decompiling instr:xorl %eax, %eax...
+Instr: xorl %eax, %eax
+Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__eax___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__ecx___ecx/test.mod.ll
+Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//xorl__eax___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_4003a0__text
 Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjES4_EEP6MemoryS6_R5StateT_T0_T1_
-FuncCache inserted: routine_xorl__ecx___ecx
-Decompiling instr:xorl %ecx, %ecx Done...
-
-
-Decompiling instr:movl %eax, -0xc(%rbp)...
-Instr: movl %eax, -0xc(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0xc__rbp_
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0xc__rbp_/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3MnWIjE2RnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl__eax__MINUS0xc__rbp_
-Decompiling instr:movl %eax, -0xc(%rbp) Done...
-
-
-Decompiling instr:movl %ecx, %eax...
-Instr: movl %ecx, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3MOVI3RnWImE2RnIjEEEP6MemoryS6_R5StateT_T0_
-FuncCache inserted: routine_movl__ecx___eax
-Decompiling instr:movl %ecx, %eax Done...
-
-
-Decompiling instr:addq $0x10, %rsp...
-Instr: addq $0x10, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x10___rsp
-Creating artifacts...
-Already Exists
-Creating artifacts... Done.
-Running artifacts...
-Reusing Declutter Output...
-
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x10___rsp/test.mod.ll
-Running artifacts...Done.
-
-Multiple defintions of @seg_4003a0__text
-Multiple defintions of @seg_400548__eh_frame
-FuncCache inserted: _ZN12_GLOBAL__N_1L3ADDI3RnWImE2RnImE2InImEEEP6MemoryS8_R5StateT_T0_T1_
-FuncCache inserted: routine_addq__0x10___rsp
-
-Executing: ${HOME}/Github/validating-binary-decompilation/tests/scripts//find_pc_in_relocinfo.pl --binary ../binary/test.reloc --pc 4005e0 --size 4
-Decompiling instr:addq $0x10, %rsp Done...
+FuncCache skipped: _ZN12_GLOBAL__N_1L3XORI3RnWImE2RnIjES4_EEP6MemoryS6_R5StateT_T0_T1_
+FuncCache skipped: routine_xorl__eax___eax
+Decompiling instr:xorl %eax, %eax Done...
 
 
 Decompiling instr:popq %rbp...
@@ -696,8 +607,8 @@ Decompiling Function: print_it Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.20user 0.03system 0:01.19elapsed 19%CPU (0avgtext+0avgdata 10500maxresident)k
-0inputs+192outputs (0major+7553minor)pagefaults 0swaps
+0.12user 0.04system 0:00.38elapsed 45%CPU (0avgtext+0avgdata 10152maxresident)k
+0inputs+160outputs (0major+5963minor)pagefaults 0swaps

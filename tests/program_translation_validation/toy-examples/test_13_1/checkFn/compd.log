@@ -1,27 +1,27 @@
-Disassembling ../binary/test.reloc
+Disassembling ../binary_O2/test.reloc
 Disassembled output
   .text
   .globl checkFn
   .type checkFn, @function
 
-#! file-offset 0x560
-#! rip-offset  0x400560
+#! file-offset 0x540
+#! rip-offset  0x400540
 #! capacity    6 bytes
 
 # Text             #  Line  RIP       Bytes  Opcode            Target                
-.checkFn:          #        0x400560  0      OPC=<label>       18446744073709551615  
-  pushq %rbp       #  1     0x400560  1      OPC=pushq_r64_1   18446744073709551615  
-  movq %rsp, %rbp  #  2     0x400561  3      OPC=movq_r64_r64  18446744073709551615  
-  popq %rbp        #  3     0x400564  1      OPC=popq_r64_1    18446744073709551615  
-  retq             #  4     0x400565  1      OPC=retq          18446744073709551615  
+.checkFn:          #        0x400540  0      OPC=<label>       18446744073709551615  
+  pushq %rbp       #  1     0x400540  1      OPC=pushq_r64_1   18446744073709551615  
+  movq %rsp, %rbp  #  2     0x400541  3      OPC=movq_r64_r64  18446744073709551615  
+  popq %rbp        #  3     0x400544  1      OPC=popq_r64_1    18446744073709551615  
+  retq             #  4     0x400545  1      OPC=retq          18446744073709551615  
                                                                                      
 .size checkFn, .-checkFn
 Disassembling Done.
 
 
-Decompiling mcsema/test.proposed.ll
+Decompiling mcsema_O2/test.proposed.ll
 Computing Label PC values ...
-.checkFn->4195680
+.checkFn->4195648
 
 Computing Label PC values: Done.
 
@@ -463,8 +463,8 @@ Decompiling Function: checkFn Done.
 
 
 
-Writing to mcsema/test.proposed.ll ...
+Writing to mcsema_O2/test.proposed.ll ...
 Decompiling: Done.
 
-0.06user 0.02system 0:00.09elapsed 98%CPU (0avgtext+0avgdata 10272maxresident)k
-0inputs+120outputs (0major+3572minor)pagefaults 0swaps
+0.06user 0.01system 0:00.08elapsed 101%CPU (0avgtext+0avgdata 10076maxresident)k
+0inputs+120outputs (0major+3566minor)pagefaults 0swaps
