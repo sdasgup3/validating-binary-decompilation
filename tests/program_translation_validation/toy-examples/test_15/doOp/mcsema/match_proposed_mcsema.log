@@ -1,0 +1,27 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x56362ad8d758]:   %29 = load i32, i32* bitcast (%G_0x601030_type* @G_0x601030 to i32*), align 8
+[0x56362ad0ca48]:   %27 = load i32, i32* %26, align 4
+[0x56362ad0caa8]:   %28 = load i32, i32* bitcast (%g_j_type* @g_j to i32*), align 8
+Multiple matches exist for [0x56362ade4ac0]:   %33 = icmp ult i32 %30, %29
+[0x56362ad0cc80]:   %31 = icmp ult i32 %29, %27
+[0x56362ad0cd00]:   %32 = icmp ult i32 %29, %28
+Multiple matches exist for [0x56362adbb560]:   %56 = lshr i32 %29, 31
+[0x56362ad0e0b0]:   %54 = lshr i32 %27, 31
+[0x56362ad0e130]:   %55 = lshr i32 %28, 31
+Multiple matches exist for [0x56362ad8c500]:   %58 = xor i32 %52, %56
+[0x56362ad0e1b0]:   %56 = xor i32 %51, %54
+[0x56362ad0e230]:   %57 = xor i32 %51, %55
+Iso Match NOT Found
+Writing 'doOp-mcsema-diff.dot'...
+Writing 'doOp-mcsema-diff.dot':Done
+
+Writing 'sub_400560_doOp-proposed-diff.dot'...
+Writing 'sub_400560_doOp-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [doOp] from mcsema/test.proposed.opt.ll
+Extracting function [doOp] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+1.20user 0.65system 0:01.86elapsed 99%CPU (0avgtext+0avgdata 12428maxresident)k
+0inputs+192outputs (0major+905minor)pagefaults 0swaps
