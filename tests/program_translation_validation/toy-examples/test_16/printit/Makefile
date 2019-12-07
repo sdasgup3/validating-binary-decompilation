@@ -6,10 +6,14 @@ ifdef REPO_PATH
 endif
 
 
+ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
+ifdef COMPD_CACHE
+  ARTIFACTDIR=${COMPD_CACHE}
+endif
+
+
 TOOLDIR=${REPO}/validating-binary-decompilation/source/build/bin/
 SCRIPTDIR=${TOOLDIR}/../../../tests/scripts/
-ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/
-
 ifndef BIN_OPT
   BIN_OPT=O0
   INDIR=../binary/
@@ -37,7 +41,7 @@ all: compd compd_opt match
 
 compd: ${INDIR}test
 	mkdir -p ${OUTDIR}
-	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info   1>${OUTDIR}compd.log 2>&1
+	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>${OUTDIR}compd.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd
 
 compd_opt: ${OUTDIR}test.proposed.ll

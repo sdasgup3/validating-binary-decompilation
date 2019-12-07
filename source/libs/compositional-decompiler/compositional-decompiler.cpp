@@ -45,6 +45,8 @@ static string extractFuncName(const string &);
 static bool is_hex_string(const string &s);
 // Convert a hex string to an int */
 static uint64_t hex_to_int(const string &s);
+static vector<std::string> split(const std::string &str, char delim);
+static string trim(const std::string &str, char delim = ' ');
 
 typedef pair<bool, string> isBuiltInFuncCallRetType;
 static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc);
@@ -382,46 +384,106 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
   return retval;
 }
 
+void CompositionalDecompiler::computeRelocInfo() {
+
+  if (!reloc_info_available)
+    return;
+
+  Console::msg() << "Computing Reloc Info ...\n";
+
+  redi::ipstream *stream = NULL;
+  stringstream cmd;
+  cmd << "readelf --relocs " << binaryPath;
+  vector<string> result;
+  if (!stoke::run_command(cmd.str(), true, &stream)) {
+    Console::error(1) << "Error: " << get_error() << endl;
+    exit(1);
+  }
+
+  extractFromStream(result, *stream, false, false /* monitor error */);
+  if (result.size() == 0) {
+    Console::error(1) << "CompositionalDecompiler::computeRelocInfo::"
+                         "readelf --relocs returns nothing"
+                      << endl;
+    exit(1);
+  }
+
+  bool search_begin = false;
+  for (auto line : result) {
+    if (string::npos != line.find("Relocation section")) {
+      if (string::npos != line.find(".rela.text")) {
+        search_begin = true;
+      } else {
+        search_begin = false;
+      }
+      continue;
+    }
+    if (string::npos != line.find("Offset") || line == "" ||
+        search_begin == false) {
+      continue;
+    }
+
+    auto entries = split(line, ' ');
+    if (!entries.size()) {
+      Console::error(1) << "CompositionalDecompiler::computeRelocInfo::"
+                           "Failed to read offsetes"
+                        << endl;
+      exit(1);
+    }
+    relocInfo.push_back(stoul(entries[0], nullptr, 16));
+  }
+
+  // sort(relocInfo.begin(), relocInfo.end());
+  Console::msg() << "Computing Reloc Info: Done.\n\n";
+}
+
 // Check if the constant is an address using the binary relocation info
 // Check if any of the relocation offset of the binary `binaryPath` falls
 // within the range of [currRIP, currRIP + currSize)
 bool CompositionalDecompiler::checkConstantOrAddress(uint64_t currRIP,
                                                      uint64_t currSize) {
-  // TODO: Check if the binary has the relocation information or not.
-
   if (!reloc_info_available)
     return false;
 
-  redi::ipstream *stream = NULL;
-  stringstream cmd;
-  cmd << scriptsPath << "/find_pc_in_relocinfo.pl --binary " << binaryPath
-      << " --pc " << hex << currRIP << " --size " << dec << currSize;
-  vector<string> result;
-  if (!stoke::run_command(cmd.str(), true, &stream)) {
-    Console::error(1) << "Error: " << get_error() << endl;
-    return false;
-  }
+  uint64_t instrStart = currRIP;
+  uint64_t instrEnd = currRIP + currSize;
 
-  extractFromStream(result, *stream, false, true);
-  if (result.size() != 1) {
-    Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
-                         "find_pc_in_relocinfo returns multi-line garbase"
-                      << endl;
-    exit(1);
-  }
-
-  if (result[0] == "address") {
-    return true;
-  } else if (result[0] == "constant") {
-    return false;
-  } else {
-    Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
-                         "find_pc_in_relocinfo returns single-line garbage"
-                      << endl;
-    exit(1);
+  for (auto offset : relocInfo) {
+    if (offset >= instrStart && offset < instrEnd)
+      return true;
   }
 
   return false;
+  // redi::ipstream *stream = NULL;
+  // stringstream cmd;
+  // cmd << scriptsPath << "/find_pc_in_relocinfo.pl --binary " << binaryPath
+  //     << " --pc " << hex << currRIP << " --size " << dec << currSize;
+  // vector<string> result;
+  // if (!stoke::run_command(cmd.str(), true, &stream)) {
+  //   Console::error(1) << "Error: " << get_error() << endl;
+  //   return false;
+  // }
+
+  // extractFromStream(result, *stream, false, true);
+  // if (result.size() != 1) {
+  //   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+  //                        "find_pc_in_relocinfo returns multi-line garbase"
+  //                     << endl;
+  //   exit(1);
+  // }
+
+  // if (result[0] == "address") {
+  //   return true;
+  // } else if (result[0] == "constant") {
+  //   return false;
+  // } else {
+  //   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+  //                        "find_pc_in_relocinfo returns single-line garbage"
+  //                     << endl;
+  //   exit(1);
+  // }
+
+  // return false;
 }
 
 /*
@@ -1178,6 +1240,8 @@ void CompositionalDecompiler::decompile(string outLLVMPath) {
 
   // Compute PC updates for each instruction
   computePCUpdates();
+  // Compute reloc entries
+  computeRelocInfo();
   vector<string> funcDecls;
   // Generating intricsics declarations
   redi::ipstream *stream = NULL;
@@ -1342,6 +1406,27 @@ uint64_t hex_to_int(const string &s) {
   iss >> hex >> val;
   return val;
 }
+
+string trim(const std::string &str, char delim) {
+  std::string retval("");
+  for (auto c : str) {
+    if (c == delim)
+      continue;
+    retval += c;
+  }
+  return retval;
+}
+
+vector<string> split(const std::string &str, char delim) {
+  std::vector<std::string> tokens;
+  std::string token;
+  std::stringstream tokenStream(str);
+  while (std::getline(tokenStream, token, delim)) {
+    tokens.push_back(trim(token));
+  }
+  return tokens;
+}
+
 // string extractNummbersFromLabel(const string &str) {
 //  string retval("");
 //  auto pos = str.find('L');

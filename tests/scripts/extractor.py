@@ -185,11 +185,16 @@ def createMakefile(funcName):
     makeFile.write("\n\n")
 
     makeFile.write(
+        "ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n")
+    makeFile.write("ifdef COMPD_CACHE" + "\n")
+    makeFile.write("  ARTIFACTDIR=${COMPD_CACHE}" + "\n")
+    makeFile.write("endif" + "\n")
+    makeFile.write("\n\n")
+
+    makeFile.write(
         "TOOLDIR=${REPO}/validating-binary-decompilation/source/build/bin/" + "\n")
     makeFile.write(
         "SCRIPTDIR=${TOOLDIR}/../../../tests/scripts/" + "\n")
-    makeFile.write(
-        "ARTIFACTDIR=${REPO}/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation/" + "\n\n")
 #makeFile.write("INDIR=../binary/" + "\n")
 
     makeFile.write("ifndef BIN_OPT" + "\n")
@@ -224,7 +229,9 @@ def createMakefile(funcName):
     makeFile.write(
         "	mkdir -p ${OUTDIR}" + "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info   1>${OUTDIR}compd.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>${OUTDIR}compd.log 2>&1" + "\n")
+#    makeFile.write(
+#        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info --force_artifact_gen 1>${OUTDIR}compd.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd")
     makeFile.write("" + "\n\n")

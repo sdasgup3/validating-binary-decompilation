@@ -1,0 +1,8 @@
+Matching Ack Vs sub_400530_Ack
+
+
+[Error] Failed to extract Potential Matches for:[0x5577aa590ed8]:   %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.06user 0.00system 0:00.57elapsed 11%CPU (0avgtext+0avgdata 12768maxresident)k
+0inputs+8outputs (0major+931minor)pagefaults 0swaps

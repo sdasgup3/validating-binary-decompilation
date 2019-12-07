@@ -1,0 +1,8 @@
+Matching sub_400520_main Vs main
+
+
+[Error] Failed to extract Potential Matches for:[0x55ffa876b0c0]:   %ST0 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 7, i32 0, i64 0, i32 1
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.06user 0.00system 0:00.57elapsed 11%CPU (0avgtext+0avgdata 12912maxresident)k
+0inputs+8outputs (0major+977minor)pagefaults 0swaps

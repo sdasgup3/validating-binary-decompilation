@@ -59,7 +59,9 @@ private:
   /* Tracks the RIP of label defintions and the reverse map*/
   unordered_map<string, uint64_t> labelDefn2RIP;
   unordered_map<uint64_t, string> rip2LabelDefn;
+  vector<unsigned long> relocInfo;
   void computePCUpdates();
+  void computeRelocInfo();
 
   // Body of the decompiled function
   stringstream Body;

@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55d8d6139f60]:   %127 = icmp eq i32 %124, 0
+[0x55d8d61d3600]:   %304 = icmp ult i32 %302, %300
+[0x55d8d61d3680]:   %305 = icmp eq i32 %302, 0
+Iso Match NOT Found
+Writing 'main-mcsema-diff.dot'...
+Writing 'main-mcsema-diff.dot':Done
+
+Writing 'sub_4005e0_main-proposed-diff.dot'...
+Writing 'sub_4005e0_main-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+11.27user 5.19system 0:16.47elapsed 100%CPU (0avgtext+0avgdata 13896maxresident)k
+0inputs+4200outputs (0major+3639minor)pagefaults 0swaps

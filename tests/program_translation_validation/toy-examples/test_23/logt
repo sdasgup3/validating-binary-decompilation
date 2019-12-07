@@ -1,0 +1,29 @@
+Debugging is enabled.
+Loading Standard Definitions file: /usr/local/lib/python2.7/dist-packages/mcsema_disass-2.0-py2.7.egg/mcsema_disass/defs/linux.txt
+Using Batch mode.
+Starting analysis
+Recovering module test
+Looking for instructions in segment .init
+  Default block heads for function 4004f8 with loose bounds [4004f8, 40050f)
+    block [4004f8, 400508)
+    block [400508, 40050a)
+    block [40050a, 40050f)
+    chunk [4004f8, 40050f)
+Looking for instructions in segment .plt
+  Default block heads for function 400520 with loose bounds [400520, 400526)
+    block [400520, 400526)
+    chunk [400520, 400526)
+  Default block heads for function 400530 with loose bounds [400530, 400536)
+    block [400530, 400536)
+    chunk [400530, 400536)
+  Default block heads for function 400540 with loose bounds [400540, 400546)
+    block [400540, 400546)
+    chunk [400540, 400546)
+  Default block heads for function 400550 with loose bounds [400550, 400556)
+    block [400550, 400556)
+    chunk [400550, 400556)
+  Default block heads for function 400560 with loose bounds [400560, 400566)
+    block [400560, 400566)
+    chunk [400560, 400566)
+Looking for instructions in segment .text
+  WARNING: Adding reference from 4006a0 to 6010a1, which is near other heads

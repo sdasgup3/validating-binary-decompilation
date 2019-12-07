@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400530_checkFn-mcsema-diff.dot'...
+Writing 'sub_400530_checkFn-mcsema-diff.dot':Done
+
+Writing 'checkFn-proposed-diff.dot'...
+Writing 'checkFn-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [checkFn] from ../binary/test.mcsema.opt.ll
+Extracting function [checkFn] from mcsema/test.proposed.opt.ll
+Matcher Done...
+0.12user 0.07system 0:00.20elapsed 98%CPU (0avgtext+0avgdata 12512maxresident)k
+0inputs+56outputs (0major+892minor)pagefaults 0swaps

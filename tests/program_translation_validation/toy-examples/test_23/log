@@ -1,0 +1,300 @@
+
+v6.95 48-38F3-7EE4-0C University of Illinois
+
+Your support plan might have expired.
+To renew it, please visit our web site:
+
+https://www.hex-rays.com/idapro/idaupgrade.htm
+
+Thank you for using IDA! -> OK
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   262144    32 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   589824            total memory allocated
+
+Loading processor module /home/ubuntu/ida-6.95/procs/pc64.ilx64 for metapc...OK
+Autoanalysis subsystem has been initialized.
+Possible file format: ELF64 for x86-64 (Executable) (/home/ubuntu/ida-6.95/loaders/elf64.llx64)
+Loading file '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Assuming __cdecl calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  0. Creating a new segment  (00000000004004F8-000000000040050F) ... ... OK
+  1. Creating a new segment  (0000000000400510-0000000000400570) ... ... OK
+  2. Creating a new segment  (0000000000400570-0000000000400912) ... ... OK
+  3. Creating a new segment  (0000000000400914-000000000040091D) ... ... OK
+  4. Creating a new segment  (0000000000400920-0000000000400A40) ... ... OK
+  5. Creating a new segment  (0000000000400A40-0000000000400A84) ... ... OK
+  6. Creating a new segment  (0000000000400A88-0000000000400BA8) ... ... OK
+  7. Creating a new segment  (0000000000600DE0-0000000000600DE8) ... ... OK
+  8. Creating a new segment  (0000000000600DE8-0000000000600DF0) ... ... OK
+  9. Creating a new segment  (0000000000600FF0-0000000000601000) ... ... OK
+ 10. Creating a new segment  (0000000000601000-0000000000601040) ... ... OK
+ 11. Creating a new segment  (0000000000601040-000000000060109D) ... ... OK
+ 12. Creating a new segment  (000000000060109D-00000000006010A0) ... ... OK
+ 13. Creating a new segment  (00000000006010A0-00000000006012F8) ... ... OK
+Adding relocations...
+Patching PLT...
+Searching GOT loading... 0 items from 0 Ok
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' has been successfully loaded into the database.
+Compiling file '/home/ubuntu/ida-6.95/idc/ida.idc'...
+Executing function 'main'...
+Compiling file '/home/ubuntu/ida-6.95/idc/onload.idc'...
+Executing function 'OnLoad'...
+IDA is analysing the input file...
+You may start to explore the input file right now.
+ERROR:root:code for hash md5 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type md5
+ERROR:root:code for hash sha1 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha1
+ERROR:root:code for hash sha224 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha224
+ERROR:root:code for hash sha256 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha256
+ERROR:root:code for hash sha384 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha384
+ERROR:root:code for hash sha512 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha512
+Propagating type information...
+Function argument information has been propagated
+The initial autoanalysis has been finished.
+Oops! internal error 71 occured. -> OK
+Flushing buffers, please wait...ok
+Unloading IDP module /home/ubuntu/ida-6.95/procs/pc64.ilx64...
+
+v6.95 48-38F3-7EE4-0C University of Illinois
+
+Your support plan might have expired.
+To renew it, please visit our web site:
+
+https://www.hex-rays.com/idapro/idaupgrade.htm
+
+Thank you for using IDA! -> OK
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   262144    32 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   589824            total memory allocated
+
+Loading processor module /home/ubuntu/ida-6.95/procs/pc64.ilx64 for metapc...OK
+Autoanalysis subsystem has been initialized.
+Possible file format: ELF64 for x86-64 (Executable) (/home/ubuntu/ida-6.95/loaders/elf64.llx64)
+Loading file '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Assuming __cdecl calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  0. Creating a new segment  (00000000004004F8-000000000040050F) ... ... OK
+  1. Creating a new segment  (0000000000400510-0000000000400570) ... ... OK
+  2. Creating a new segment  (0000000000400570-0000000000400912) ... ... OK
+  3. Creating a new segment  (0000000000400914-000000000040091D) ... ... OK
+  4. Creating a new segment  (0000000000400920-0000000000400A40) ... ... OK
+  5. Creating a new segment  (0000000000400A40-0000000000400A84) ... ... OK
+  6. Creating a new segment  (0000000000400A88-0000000000400BA8) ... ... OK
+  7. Creating a new segment  (0000000000600DE0-0000000000600DE8) ... ... OK
+  8. Creating a new segment  (0000000000600DE8-0000000000600DF0) ... ... OK
+  9. Creating a new segment  (0000000000600FF0-0000000000601000) ... ... OK
+ 10. Creating a new segment  (0000000000601000-0000000000601040) ... ... OK
+ 11. Creating a new segment  (0000000000601040-000000000060109D) ... ... OK
+ 12. Creating a new segment  (000000000060109D-00000000006010A0) ... ... OK
+ 13. Creating a new segment  (00000000006010A0-00000000006012F8) ... ... OK
+Adding relocations...
+Patching PLT...
+Searching GOT loading... 0 items from 0 Ok
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' has been successfully loaded into the database.
+Compiling file '/home/ubuntu/ida-6.95/idc/ida.idc'...
+Executing function 'main'...
+Compiling file '/home/ubuntu/ida-6.95/idc/onload.idc'...
+Executing function 'OnLoad'...
+IDA is analysing the input file...
+You may start to explore the input file right now.
+ERROR:root:code for hash md5 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type md5
+ERROR:root:code for hash sha1 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha1
+ERROR:root:code for hash sha224 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha224
+ERROR:root:code for hash sha256 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha256
+ERROR:root:code for hash sha384 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha384
+ERROR:root:code for hash sha512 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha512
+Propagating type information...
+Function argument information has been propagated
+The initial autoanalysis has been finished.
+Oops! internal error 71 occured. -> OK
+Flushing buffers, please wait...ok
+Unloading IDP module /home/ubuntu/ida-6.95/procs/pc64.ilx64...
+
+v6.95 48-38F3-7EE4-0C University of Illinois
+
+Your support plan might have expired.
+To renew it, please visit our web site:
+
+https://www.hex-rays.com/idapro/idaupgrade.htm
+
+Thank you for using IDA! -> OK
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   262144    32 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   589824            total memory allocated
+
+Loading processor module /home/ubuntu/ida-6.95/procs/pc64.ilx64 for metapc...OK
+Autoanalysis subsystem has been initialized.
+Possible file format: ELF64 for x86-64 (Executable) (/home/ubuntu/ida-6.95/loaders/elf64.llx64)
+Loading file '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' into database...
+Detected file format: ELF64 for x86-64 (Executable)
+Assuming __cdecl calling convention by default
+Type library 'gnulnx_x64' loaded. Applying types...
+Types applied to 0 names.
+  0. Creating a new segment  (00000000004004F8-000000000040050F) ... ... OK
+  1. Creating a new segment  (0000000000400510-0000000000400570) ... ... OK
+  2. Creating a new segment  (0000000000400570-0000000000400912) ... ... OK
+  3. Creating a new segment  (0000000000400914-000000000040091D) ... ... OK
+  4. Creating a new segment  (0000000000400920-0000000000400A40) ... ... OK
+  5. Creating a new segment  (0000000000400A40-0000000000400A84) ... ... OK
+  6. Creating a new segment  (0000000000400A88-0000000000400BA8) ... ... OK
+  7. Creating a new segment  (0000000000600DE0-0000000000600DE8) ... ... OK
+  8. Creating a new segment  (0000000000600DE8-0000000000600DF0) ... ... OK
+  9. Creating a new segment  (0000000000600FF0-0000000000601000) ... ... OK
+ 10. Creating a new segment  (0000000000601000-0000000000601040) ... ... OK
+ 11. Creating a new segment  (0000000000601040-000000000060109D) ... ... OK
+ 12. Creating a new segment  (000000000060109D-00000000006010A0) ... ... OK
+ 13. Creating a new segment  (00000000006010A0-00000000006012F8) ... ... OK
+Adding relocations...
+Patching PLT...
+Searching GOT loading... 0 items from 0 Ok
+Marking typical code sequences...
+Flushing buffers, please wait...ok
+File '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/test_23/binary_O2/test' has been successfully loaded into the database.
+Compiling file '/home/ubuntu/ida-6.95/idc/ida.idc'...
+Executing function 'main'...
+Compiling file '/home/ubuntu/ida-6.95/idc/onload.idc'...
+Executing function 'OnLoad'...
+IDA is analysing the input file...
+You may start to explore the input file right now.
+ERROR:root:code for hash md5 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type md5
+ERROR:root:code for hash sha1 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha1
+ERROR:root:code for hash sha224 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha224
+ERROR:root:code for hash sha256 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha256
+ERROR:root:code for hash sha384 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha384
+ERROR:root:code for hash sha512 was not found.
+Traceback (most recent call last):
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 147, in <module>
+    globals()[__func_name] = __get_hash(__func_name)
+  File "/home/ubuntu/ida-6.95/python/lib/python27.zip/hashlib.py", line 97, in __get_builtin_constructor
+    raise ValueError('unsupported hash type ' + name)
+ValueError: unsupported hash type sha512
+Propagating type information...
+Function argument information has been propagated
+The initial autoanalysis has been finished.
+Oops! internal error 71 occured. -> OK
+Flushing buffers, please wait...ok
+Unloading IDP module /home/ubuntu/ida-6.95/procs/pc64.ilx64...
