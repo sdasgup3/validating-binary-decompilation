@@ -1,5 +1,22 @@
 .PHONY: binary objdump mcsema mcsema_opt  BZ2_blockSort fallbackSort mainSort mainQSort3 mainSimpleSort mmed3 mainGtU fallbackQSort3 fallbackSimpleSort compressStream myfeof uInt64_from_UInt32s uInt64_to_double uInt64_toAscii configError outOfMemory ioError panic showFileNames cleanUpAndFail setExit uInt64_qrm10 uInt64_isZero uncompressStream crcError compressedStreamEOF cadvise BZ2_bz__AssertH__fail BZ2_bzlibVersion BZ2_bzCompressInit bz_config_ok default_bzalloc default_bzfree init_RL prepare_new_block BZ2_bzCompress handle_compress isempty_RL copy_output_until_stop copy_input_until_stop flush_RL add_pair_to_block BZ2_bzCompressEnd BZ2_bzDecompressInit BZ2_indexIntoF BZ2_bzDecompress unRLE_obuf_to_output_SMALL unRLE_obuf_to_output_FAST BZ2_bzDecompressEnd BZ2_bzWriteOpen BZ2_bzWrite BZ2_bzWriteClose BZ2_bzWriteClose64 BZ2_bzReadOpen BZ2_bzReadClose BZ2_bzRead myfeof.39 BZ2_bzReadGetUnused BZ2_bzBuffToBuffCompress BZ2_bzBuffToBuffDecompress BZ2_bzopen bzopen_or_bzdopen BZ2_bzdopen BZ2_bzread BZ2_bzwrite BZ2_bzflush BZ2_bzclose BZ2_bzerror BZ2_bsInitWrite BZ2_compressBlock bsPutUChar bsPutUInt32 bsW generateMTFValues sendMTFValues bsFinishWrite makeMaps_e BZ2_decompress makeMaps_d BZ2_hbMakeCodeLengths BZ2_hbAssignCodes BZ2_hbCreateDecodeTables ran spec_init spec_random_load spec_load spec_read spec_fread spec_getc spec_ungetc spec_rewind spec_reset spec_write spec_fwrite spec_putc main debug_time spec_initbufs spec_compress spec_uncompress
-INDIR=binary/
+
+ifndef BIN_OPT
+  BIN_OPT=O0
+  INDIR=binary/
+else
+  ifeq (${BIN_OPT},O0)
+    INDIR=binary/
+  else
+    INDIR=binary_${BIN_OPT}/
+  endif
+endif
+
+
+NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg
+ifdef NORM
+  NORM_PASS=-${NORM}
+endif
+
 
 all: binary objdump mcsema mcsema_opt  BZ2_blockSort fallbackSort mainSort mainQSort3 mainSimpleSort mmed3 mainGtU fallbackQSort3 fallbackSimpleSort compressStream myfeof uInt64_from_UInt32s uInt64_to_double uInt64_toAscii configError outOfMemory ioError panic showFileNames cleanUpAndFail setExit uInt64_qrm10 uInt64_isZero uncompressStream crcError compressedStreamEOF cadvise BZ2_bz__AssertH__fail BZ2_bzlibVersion BZ2_bzCompressInit bz_config_ok default_bzalloc default_bzfree init_RL prepare_new_block BZ2_bzCompress handle_compress isempty_RL copy_output_until_stop copy_input_until_stop flush_RL add_pair_to_block BZ2_bzCompressEnd BZ2_bzDecompressInit BZ2_indexIntoF BZ2_bzDecompress unRLE_obuf_to_output_SMALL unRLE_obuf_to_output_FAST BZ2_bzDecompressEnd BZ2_bzWriteOpen BZ2_bzWrite BZ2_bzWriteClose BZ2_bzWriteClose64 BZ2_bzReadOpen BZ2_bzReadClose BZ2_bzRead myfeof.39 BZ2_bzReadGetUnused BZ2_bzBuffToBuffCompress BZ2_bzBuffToBuffDecompress BZ2_bzopen bzopen_or_bzdopen BZ2_bzdopen BZ2_bzread BZ2_bzwrite BZ2_bzflush BZ2_bzclose BZ2_bzerror BZ2_bsInitWrite BZ2_compressBlock bsPutUChar bsPutUInt32 bsW generateMTFValues sendMTFValues bsFinishWrite makeMaps_e BZ2_decompress makeMaps_d BZ2_hbMakeCodeLengths BZ2_hbAssignCodes BZ2_hbCreateDecodeTables ran spec_init spec_random_load spec_load spec_read spec_fread spec_getc spec_ungetc spec_rewind spec_reset spec_write spec_fwrite spec_putc main debug_time spec_initbufs spec_compress spec_uncompress
 compd: BZ2_blockSort fallbackSort mainSort mainQSort3 mainSimpleSort mmed3 mainGtU fallbackQSort3 fallbackSimpleSort compressStream myfeof uInt64_from_UInt32s uInt64_to_double uInt64_toAscii configError outOfMemory ioError panic showFileNames cleanUpAndFail setExit uInt64_qrm10 uInt64_isZero uncompressStream crcError compressedStreamEOF cadvise BZ2_bz__AssertH__fail BZ2_bzlibVersion BZ2_bzCompressInit bz_config_ok default_bzalloc default_bzfree init_RL prepare_new_block BZ2_bzCompress handle_compress isempty_RL copy_output_until_stop copy_input_until_stop flush_RL add_pair_to_block BZ2_bzCompressEnd BZ2_bzDecompressInit BZ2_indexIntoF BZ2_bzDecompress unRLE_obuf_to_output_SMALL unRLE_obuf_to_output_FAST BZ2_bzDecompressEnd BZ2_bzWriteOpen BZ2_bzWrite BZ2_bzWriteClose BZ2_bzWriteClose64 BZ2_bzReadOpen BZ2_bzReadClose BZ2_bzRead myfeof.39 BZ2_bzReadGetUnused BZ2_bzBuffToBuffCompress BZ2_bzBuffToBuffDecompress BZ2_bzopen bzopen_or_bzdopen BZ2_bzdopen BZ2_bzread BZ2_bzwrite BZ2_bzflush BZ2_bzclose BZ2_bzerror BZ2_bsInitWrite BZ2_compressBlock bsPutUChar bsPutUInt32 bsW generateMTFValues sendMTFValues bsFinishWrite makeMaps_e BZ2_decompress makeMaps_d BZ2_hbMakeCodeLengths BZ2_hbAssignCodes BZ2_hbCreateDecodeTables ran spec_init spec_random_load spec_load spec_read spec_fread spec_getc spec_ungetc spec_rewind spec_reset spec_write spec_fwrite spec_putc main debug_time spec_initbufs spec_compress spec_uncompress
@@ -7,10 +24,11 @@ compd_opt: BZ2_blockSort fallbackSort mainSort mainQSort3 mainSimpleSort mmed3 m
 match: BZ2_blockSort fallbackSort mainSort mainQSort3 mainSimpleSort mmed3 mainGtU fallbackQSort3 fallbackSimpleSort compressStream myfeof uInt64_from_UInt32s uInt64_to_double uInt64_toAscii configError outOfMemory ioError panic showFileNames cleanUpAndFail setExit uInt64_qrm10 uInt64_isZero uncompressStream crcError compressedStreamEOF cadvise BZ2_bz__AssertH__fail BZ2_bzlibVersion BZ2_bzCompressInit bz_config_ok default_bzalloc default_bzfree init_RL prepare_new_block BZ2_bzCompress handle_compress isempty_RL copy_output_until_stop copy_input_until_stop flush_RL add_pair_to_block BZ2_bzCompressEnd BZ2_bzDecompressInit BZ2_indexIntoF BZ2_bzDecompress unRLE_obuf_to_output_SMALL unRLE_obuf_to_output_FAST BZ2_bzDecompressEnd BZ2_bzWriteOpen BZ2_bzWrite BZ2_bzWriteClose BZ2_bzWriteClose64 BZ2_bzReadOpen BZ2_bzReadClose BZ2_bzRead myfeof.39 BZ2_bzReadGetUnused BZ2_bzBuffToBuffCompress BZ2_bzBuffToBuffDecompress BZ2_bzopen bzopen_or_bzdopen BZ2_bzdopen BZ2_bzread BZ2_bzwrite BZ2_bzflush BZ2_bzclose BZ2_bzerror BZ2_bsInitWrite BZ2_compressBlock bsPutUChar bsPutUInt32 bsW generateMTFValues sendMTFValues bsFinishWrite makeMaps_e BZ2_decompress makeMaps_d BZ2_hbMakeCodeLengths BZ2_hbAssignCodes BZ2_hbCreateDecodeTables ran spec_init spec_random_load spec_load spec_read spec_fread spec_getc spec_ungetc spec_rewind spec_reset spec_write spec_fwrite spec_putc main debug_time spec_initbufs spec_compress spec_uncompress
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	mkdir -p ${INDIR}
+	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test
 
 reloc_binary:
-	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc
+	/usr/bin/clang-6.0 -Wl,-emit-relocs -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test.reloc
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
@@ -21,8 +39,8 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
-	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll
-	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 BZ2_blockSort:
 	@echo
