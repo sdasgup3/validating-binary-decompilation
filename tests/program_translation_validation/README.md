@@ -10,11 +10,8 @@
 |  single-source (2538)|  -O0 |  SSA edges only | Naive | O3     | 2555/ | saved in matchPass\_1 | 5|
 |  single-source       |  -O0 |  SSA edges only | Naive | custom | 2791/ | saved in matchPass\_2| 6 |
 
-|  spec2006|  -O0 |  SSA edges only | Naive | O3 | | | 7 |
-|  spec2006|  -O0 |  SSA edges only | Naive | custom | | | |
-
-|  spec2006|  -O3 |  SSA edges only | Naive | O3 | | | |
-|  spec2006|  -O3 |  SSA edges only | Naive | custom | | | |
+|  spec2006|  -O0 |  SSA edges only | Naive | O3 | | saved in matchPass\_1 | 7 |
+|  spec2006|  -O0 |  SSA edges only | Naive | custom | | saved in matchPass\_2 | 8|
 
 
 ### Commands for run IDs
