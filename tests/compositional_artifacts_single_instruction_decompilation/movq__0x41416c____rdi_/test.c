@@ -1,3 +1,0 @@
-void main() {
-  __asm__("movq $0x41416c, (%rdi)");
-}

@@ -1,3 +1,0 @@
-void main() {
-  __asm__("addsd 0x603078, %xmm3");
-}

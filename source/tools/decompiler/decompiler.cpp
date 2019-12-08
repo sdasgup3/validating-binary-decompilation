@@ -46,10 +46,10 @@ auto &SingleInstructionDecompilationPath =
         .description("Path to single instrucion decompilation llvm sequences")
         .default_val("");
 
-auto &workdir_arg = ValueArg<string>::create("workdir")
-                        .usage("<path/to/dir>")
-                        .description("The working directory")
-                        .default_val("");
+// auto &workdir_arg = ValueArg<string>::create("workdir")
+//                        .usage("<path/to/dir>")
+//                        .description("The working directory")
+//                        .default_val("");
 
 // auto &decl_retval_arg = FlagArg::create("assume-none-decl-retval")
 //                             .description("Dont assume any assumption about
@@ -88,7 +88,8 @@ int main(int argc, char **argv) {
 
   CompositionalDecompiler CompD(
       BinaryIn, LLVMOut, Fxn, SingleInstructionDecompilationPath,
-      workdir_arg.value(), reloc_info.value(), force_artifact_gen.value());
+      // workdir_arg.value(), reloc_info.value(), force_artifact_gen.value());
+      reloc_info.value(), force_artifact_gen.value());
 
   return 0;
 }
