@@ -37,7 +37,7 @@ private:
   string extractedFunction;
   string singleInstrDecompPath;
   string scriptsPath;
-  string workdir;
+  // string workdir;
 
   // Cache for instruction defn which are already decompiled
   // set<string> ICache;
@@ -114,7 +114,7 @@ public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,
                           const string &extractedFunction,
                           const string &singleInstrDecompPath,
-                          const string &workdir,
+                          // const string &workdir,
                           // bool assume_none_decl_retval = false,
                           bool reloc_info_available, bool force_artifact_gen);
 

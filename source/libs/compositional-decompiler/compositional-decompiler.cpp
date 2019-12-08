@@ -54,24 +54,28 @@ static isBuiltInFuncCallRetType isBuiltInFuncCall(const string &calledFunc);
 CompositionalDecompiler::CompositionalDecompiler(
     const string &inPath, const string &outLLVMPath,
     const string &extractedFunction, const string &singleInstrDecompPath,
-    const string &workdir, bool reloc_info_available, bool force_artifact_gen) {
+    // const string &workdir,
+    bool reloc_info_available, bool force_artifact_gen) {
 
   this->binaryPath = inPath;
   this->reloc_info_available = reloc_info_available;
   this->force_artifact_gen = force_artifact_gen;
   this->extractedFunction = extractedFunction;
+  if (singleInstrDecompPath == "") {
+    Console::error(1) << "Empty compd cache!!\n";
+  }
   this->singleInstrDecompPath = singleInstrDecompPath;
   this->scriptsPath =
       "${HOME}/Github/validating-binary-decompilation/tests/scripts/";
 
-  if (workdir == "") {
-    string cacheDir(getenv("HOME"));
-    cacheDir += "/Github/validating-binary-decompilation/tests/"
-                "compositional_artifacts_single_instruction_decompilation/";
-    this->workdir = cacheDir;
-  } else {
-    this->workdir = workdir;
-  }
+  // if (workdir == "") {
+  //   string cacheDir(getenv("HOME"));
+  //   cacheDir += "/Github/validating-binary-decompilation/tests/"
+  //               "compositional_artifacts_single_instruction_decompilation/";
+  //   this->workdir = cacheDir;
+  // } else {
+  //   this->workdir = workdir;
+  // }
 
   cfg = NULL;
   clear_error();
@@ -1089,10 +1093,12 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   /*
   ** Generate the defns.
   */
-  if (!createSetup(instr, workdir, scriptsPath, force_artifact_gen)) {
+  if (!createSetup(instr, singleInstrDecompPath, scriptsPath,
+                   force_artifact_gen)) {
     exit(1);
   }
-  auto full_defn = runSetup(instr, workdir, scriptsPath, force_artifact_gen);
+  auto full_defn =
+      runSetup(instr, singleInstrDecompPath, scriptsPath, force_artifact_gen);
 
   // Collect the various declarations and return the definition w/o the
   // declarations
