@@ -1,5 +1,22 @@
 .PHONY: binary objdump mcsema mcsema_opt  calc_attackers is_attacked nk_attacked init_book choose_book_move ProcessHoldings text_to_piece SwitchColor SwitchPromoted addHolding removeHolding DropaddHolding DropremoveHolding printHolding is_draw storeECache checkECache reset_ecache alloc_ecache free_ecache setup_epd_line check_solution run_epd_testsuite run_autotest initialize_eval eval losers_eval l_pawn_mobility l_rook_mobility l_bishop_mobility l_knight_mobility l_king_mobility check_legal gen push_pawn push_pawn_simple push_knighT push_slidE push_king push_king_castle try_drop add_move add_capture in_check f_in_check extended_in_check make unmake check_phase King Queen rook_mobility bishop_mobility Rook Bishop Knight Pawn ErrorIt std_eval ResetHandValue BegForPartner GreetPartner HandlePartner HandlePtell CheckBadFlow Xmalloc Xfree freenodes pn_eval suicide_pn_eval losers_pn_eval std_pn_eval select_most_proving set_proof_and_disproof_numbers develop_node update_ancestors pn2_eval proofnumberscan proofnumbersearch proofnumbercheck read_rcfile order_moves perft qsearch remove_one search search_root think tree setup_attackers findlowest see suicide_eval suicide_mid_eval s_pawn_mobility black_saccers white_saccers s_rook_mobility s_bishop_mobility s_knight_mobility s_king_mobility main clear_tt clear_dp_tt initialize_zobrist initialize_hash QStoreTT StoreTT LearnStoreTT ProbeTT QProbeTT alloc_hash free_hash allocate_time comp_to_san comp_to_coord display_board init_game reset_piece_square is_move perft_debug rinput verify_coord hash_extract_pv stringize_pv post_thinking rtime rdifftime post_fail_thinking post_fh_thinking post_fl_thinking post_stat_thinking print_move rdelay check_piece_square start_up toggle_bool tree_debug interrupt PutPiece reset_board seedMT reloadMT randomMT
-INDIR=binary/
+
+ifndef BIN_OPT
+  BIN_OPT=O0
+  INDIR=binary/
+else
+  ifeq (${BIN_OPT},O0)
+    INDIR=binary/
+  else
+    INDIR=binary_${BIN_OPT}/
+  endif
+endif
+
+
+NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg
+ifdef NORM
+  NORM_PASS=-${NORM}
+endif
+
 
 all: binary objdump mcsema mcsema_opt  calc_attackers is_attacked nk_attacked init_book choose_book_move ProcessHoldings text_to_piece SwitchColor SwitchPromoted addHolding removeHolding DropaddHolding DropremoveHolding printHolding is_draw storeECache checkECache reset_ecache alloc_ecache free_ecache setup_epd_line check_solution run_epd_testsuite run_autotest initialize_eval eval losers_eval l_pawn_mobility l_rook_mobility l_bishop_mobility l_knight_mobility l_king_mobility check_legal gen push_pawn push_pawn_simple push_knighT push_slidE push_king push_king_castle try_drop add_move add_capture in_check f_in_check extended_in_check make unmake check_phase King Queen rook_mobility bishop_mobility Rook Bishop Knight Pawn ErrorIt std_eval ResetHandValue BegForPartner GreetPartner HandlePartner HandlePtell CheckBadFlow Xmalloc Xfree freenodes pn_eval suicide_pn_eval losers_pn_eval std_pn_eval select_most_proving set_proof_and_disproof_numbers develop_node update_ancestors pn2_eval proofnumberscan proofnumbersearch proofnumbercheck read_rcfile order_moves perft qsearch remove_one search search_root think tree setup_attackers findlowest see suicide_eval suicide_mid_eval s_pawn_mobility black_saccers white_saccers s_rook_mobility s_bishop_mobility s_knight_mobility s_king_mobility main clear_tt clear_dp_tt initialize_zobrist initialize_hash QStoreTT StoreTT LearnStoreTT ProbeTT QProbeTT alloc_hash free_hash allocate_time comp_to_san comp_to_coord display_board init_game reset_piece_square is_move perft_debug rinput verify_coord hash_extract_pv stringize_pv post_thinking rtime rdifftime post_fail_thinking post_fh_thinking post_fl_thinking post_stat_thinking print_move rdelay check_piece_square start_up toggle_bool tree_debug interrupt PutPiece reset_board seedMT reloadMT randomMT
 compd: calc_attackers is_attacked nk_attacked init_book choose_book_move ProcessHoldings text_to_piece SwitchColor SwitchPromoted addHolding removeHolding DropaddHolding DropremoveHolding printHolding is_draw storeECache checkECache reset_ecache alloc_ecache free_ecache setup_epd_line check_solution run_epd_testsuite run_autotest initialize_eval eval losers_eval l_pawn_mobility l_rook_mobility l_bishop_mobility l_knight_mobility l_king_mobility check_legal gen push_pawn push_pawn_simple push_knighT push_slidE push_king push_king_castle try_drop add_move add_capture in_check f_in_check extended_in_check make unmake check_phase King Queen rook_mobility bishop_mobility Rook Bishop Knight Pawn ErrorIt std_eval ResetHandValue BegForPartner GreetPartner HandlePartner HandlePtell CheckBadFlow Xmalloc Xfree freenodes pn_eval suicide_pn_eval losers_pn_eval std_pn_eval select_most_proving set_proof_and_disproof_numbers develop_node update_ancestors pn2_eval proofnumberscan proofnumbersearch proofnumbercheck read_rcfile order_moves perft qsearch remove_one search search_root think tree setup_attackers findlowest see suicide_eval suicide_mid_eval s_pawn_mobility black_saccers white_saccers s_rook_mobility s_bishop_mobility s_knight_mobility s_king_mobility main clear_tt clear_dp_tt initialize_zobrist initialize_hash QStoreTT StoreTT LearnStoreTT ProbeTT QProbeTT alloc_hash free_hash allocate_time comp_to_san comp_to_coord display_board init_game reset_piece_square is_move perft_debug rinput verify_coord hash_extract_pv stringize_pv post_thinking rtime rdifftime post_fail_thinking post_fh_thinking post_fl_thinking post_stat_thinking print_move rdelay check_piece_square start_up toggle_bool tree_debug interrupt PutPiece reset_board seedMT reloadMT randomMT
@@ -7,10 +24,11 @@ compd_opt: calc_attackers is_attacked nk_attacked init_book choose_book_move Pro
 match: calc_attackers is_attacked nk_attacked init_book choose_book_move ProcessHoldings text_to_piece SwitchColor SwitchPromoted addHolding removeHolding DropaddHolding DropremoveHolding printHolding is_draw storeECache checkECache reset_ecache alloc_ecache free_ecache setup_epd_line check_solution run_epd_testsuite run_autotest initialize_eval eval losers_eval l_pawn_mobility l_rook_mobility l_bishop_mobility l_knight_mobility l_king_mobility check_legal gen push_pawn push_pawn_simple push_knighT push_slidE push_king push_king_castle try_drop add_move add_capture in_check f_in_check extended_in_check make unmake check_phase King Queen rook_mobility bishop_mobility Rook Bishop Knight Pawn ErrorIt std_eval ResetHandValue BegForPartner GreetPartner HandlePartner HandlePtell CheckBadFlow Xmalloc Xfree freenodes pn_eval suicide_pn_eval losers_pn_eval std_pn_eval select_most_proving set_proof_and_disproof_numbers develop_node update_ancestors pn2_eval proofnumberscan proofnumbersearch proofnumbercheck read_rcfile order_moves perft qsearch remove_one search search_root think tree setup_attackers findlowest see suicide_eval suicide_mid_eval s_pawn_mobility black_saccers white_saccers s_rook_mobility s_bishop_mobility s_knight_mobility s_king_mobility main clear_tt clear_dp_tt initialize_zobrist initialize_hash QStoreTT StoreTT LearnStoreTT ProbeTT QProbeTT alloc_hash free_hash allocate_time comp_to_san comp_to_coord display_board init_game reset_piece_square is_move perft_debug rinput verify_coord hash_extract_pv stringize_pv post_thinking rtime rdifftime post_fail_thinking post_fh_thinking post_fl_thinking post_stat_thinking print_move rdelay check_piece_square start_up toggle_bool tree_debug interrupt PutPiece reset_board seedMT reloadMT randomMT
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	mkdir -p ${INDIR}
+	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test
 
 reloc_binary:
-	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc
+	/usr/bin/clang-6.0 -Wl,-emit-relocs -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test.reloc
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
@@ -21,8 +39,8 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
-	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll
-	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 calc_attackers:
 	@echo
