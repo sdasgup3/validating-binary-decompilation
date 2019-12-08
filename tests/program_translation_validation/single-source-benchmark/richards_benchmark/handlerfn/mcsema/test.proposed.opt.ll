@@ -50,29 +50,31 @@ target triple = "x86_64-pc-linux-gnu-elf"
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
 
-declare %struct.Memory* @sub_400af0.append(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400ad0.append(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a10.qpkt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4009f0.qpkt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4008c0.Wait(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4008a0.Wait(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: alwaysinline
-define %struct.Memory* @handlerfn(%struct.State* noalias, i64, %struct.Memory* noalias readnone) local_unnamed_addr #1 {
+define %struct.Memory* @handlerfn(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %4 = load i64, i64* %RBP.i, align 8
   %5 = add i64 %1, 1
-  store i64 %5, i64* %3, align 8
+  store i64 %5, i64* %PC.i, align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %7 = load i64, i64* %6, align 8
   %8 = add i64 %7, -8
   %9 = inttoptr i64 %8 to i64*
   store i64 %4, i64* %9, align 8
-  %10 = load i64, i64* %3, align 8
+  %RSP.i115 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %10 = load i64, i64* %PC.i, align 8
   store i64 %8, i64* %RBP.i, align 8
   %11 = add i64 %7, -56
-  store i64 %11, i64* %6, align 8
+  store i64 %11, i64* %RSP.i115, align 8
   %12 = icmp ult i64 %8, 48
   %13 = zext i1 %12 to i8
   %14 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
@@ -111,14 +113,14 @@ entry:
   %40 = add i64 %7, -24
   %41 = load i64, i64* %RDI.i110, align 8
   %42 = add i64 %10, 11
-  store i64 %42, i64* %3, align 8
+  store i64 %42, i64* %PC.i, align 8
   %43 = inttoptr i64 %40 to i64*
   store i64 %41, i64* %43, align 8
   %44 = load i64, i64* %RBP.i, align 8
   %45 = add i64 %44, -16
-  %46 = load i64, i64* %3, align 8
+  %46 = load i64, i64* %PC.i, align 8
   %47 = add i64 %46, 5
-  store i64 %47, i64* %3, align 8
+  store i64 %47, i64* %PC.i, align 8
   %48 = inttoptr i64 %45 to i64*
   %49 = load i64, i64* %48, align 8
   store i8 0, i8* %14, align 1
@@ -140,25 +142,25 @@ entry:
   %.v = select i1 %56, i64 58, i64 11
   %60 = add i64 %46, %.v
   store i64 %60, i64* %3, align 8
-  br i1 %56, label %block_.L_400d26, label %block_400cf7
+  br i1 %56, label %block_.L_400d06, label %block_400cd7
 
-block_400cf7:                                     ; preds = %entry
+block_400cd7:                                     ; preds = %entry
   %RAX.i105 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   store i64 ptrtoint (%G__0x6020f8_type* @G__0x6020f8 to i64), i64* %RAX.i105, align 8
   %RCX.i103 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   store i64 ptrtoint (%G__0x6020e8_type* @G__0x6020e8 to i64), i64* %RCX.i103, align 8
   %61 = add i64 %60, 24
-  store i64 %61, i64* %3, align 8
+  store i64 %61, i64* %PC.i, align 8
   %62 = load i64, i64* %48, align 8
   store i64 %62, i64* %RDI.i110, align 8
   %RDX.i97 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %63 = add i64 %60, 28
-  store i64 %63, i64* %3, align 8
+  store i64 %63, i64* %PC.i, align 8
   %64 = load i64, i64* %48, align 8
   store i64 %64, i64* %RDX.i97, align 8
   %65 = add i64 %64, 12
   %66 = add i64 %60, 35
-  store i64 %66, i64* %3, align 8
+  store i64 %66, i64* %PC.i, align 8
   %67 = inttoptr i64 %65 to i32*
   %68 = load i32, i32* %67, align 4
   %69 = add i32 %68, -1001
@@ -171,7 +173,7 @@ block_400cf7:                                     ; preds = %entry
   %75 = and i8 %74, 1
   %76 = xor i8 %75, 1
   store i8 %76, i8* %21, align 1
-  %77 = xor i32 %69, %68
+  %77 = xor i32 %68, %69
   %78 = lshr i32 %77, 4
   %79 = trunc i32 %78 to i8
   %80 = and i8 %79, 1
@@ -200,13 +202,13 @@ block_400cf7:                                     ; preds = %entry
   store i64 %92, i64* %95, align 8
   store i64 %94, i64* %6, align 8
   store i64 %91, i64* %3, align 8
-  %call2_400d21 = tail call %struct.Memory* @sub_400af0.append(%struct.State* nonnull %0, i64 %91, %struct.Memory* %2)
-  %.pre = load i64, i64* %3, align 8
-  br label %block_.L_400d26
+  %call2_400d01 = tail call %struct.Memory* @sub_400ad0.append(%struct.State* %0, i64 %91, %struct.Memory* %2)
+  %.pre = load i64, i64* %PC.i, align 8
+  br label %block_.L_400d06
 
-block_.L_400d26:                                  ; preds = %block_400cf7, %entry
-  %96 = phi i64 [ %60, %entry ], [ %.pre, %block_400cf7 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_400d21, %block_400cf7 ]
+block_.L_400d06:                                  ; preds = %block_400cd7, %entry
+  %96 = phi i64 [ %60, %entry ], [ %.pre, %block_400cd7 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_400d01, %block_400cd7 ]
   %97 = load i64, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
   store i8 0, i8* %14, align 1
   %98 = trunc i64 %97 to i32
@@ -224,46 +226,46 @@ block_.L_400d26:                                  ; preds = %block_400cf7, %entr
   %107 = trunc i64 %106 to i8
   store i8 %107, i8* %33, align 1
   store i8 0, i8* %39, align 1
-  %.v6 = select i1 %104, i64 186, i64 15
-  %108 = add i64 %96, %.v6
+  %.v8 = select i1 %104, i64 186, i64 15
+  %108 = add i64 %96, %.v8
   store i64 %108, i64* %3, align 8
-  %.pre5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  br i1 %104, label %block_.L_400de0, label %block_400d35
+  %.pre7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  br i1 %104, label %block_.L_400dc0, label %block_400d15
 
-block_400d35:                                     ; preds = %block_.L_400d26
-  store i64 %97, i64* %.pre5, align 8
+block_400d15:                                     ; preds = %block_.L_400d06
+  store i64 %97, i64* %.pre7, align 8
   %109 = load i64, i64* %RBP.i, align 8
   %110 = add i64 %109, -32
   %111 = add i64 %108, 12
-  store i64 %111, i64* %3, align 8
+  store i64 %111, i64* %PC.i, align 8
   %112 = inttoptr i64 %110 to i64*
   store i64 %97, i64* %112, align 8
   %113 = load i64, i64* %RBP.i, align 8
   %114 = add i64 %113, -32
-  %115 = load i64, i64* %3, align 8
+  %115 = load i64, i64* %PC.i, align 8
   %116 = add i64 %115, 4
-  store i64 %116, i64* %3, align 8
+  store i64 %116, i64* %PC.i, align 8
   %117 = inttoptr i64 %114 to i64*
   %118 = load i64, i64* %117, align 8
-  store i64 %118, i64* %.pre5, align 8
+  store i64 %118, i64* %.pre7, align 8
   %RCX.i77 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %119 = add i64 %118, 16
   %120 = add i64 %115, 7
-  store i64 %120, i64* %3, align 8
+  store i64 %120, i64* %PC.i, align 8
   %121 = inttoptr i64 %119 to i32*
   %122 = load i32, i32* %121, align 4
   %123 = zext i32 %122 to i64
   store i64 %123, i64* %RCX.i77, align 8
   %124 = add i64 %113, -20
   %125 = add i64 %115, 10
-  store i64 %125, i64* %3, align 8
+  store i64 %125, i64* %PC.i, align 8
   %126 = inttoptr i64 %124 to i32*
   store i32 %122, i32* %126, align 4
   %127 = load i64, i64* %RBP.i, align 8
   %128 = add i64 %127, -20
-  %129 = load i64, i64* %3, align 8
+  %129 = load i64, i64* %PC.i, align 8
   %130 = add i64 %129, 4
-  store i64 %130, i64* %3, align 8
+  store i64 %130, i64* %PC.i, align 8
   %131 = inttoptr i64 %128 to i32*
   %132 = load i32, i32* %131, align 4
   %133 = add i32 %132, -3
@@ -276,7 +278,7 @@ block_400d35:                                     ; preds = %block_.L_400d26
   %139 = and i8 %138, 1
   %140 = xor i8 %139, 1
   store i8 %140, i8* %21, align 1
-  %141 = xor i32 %133, %132
+  %141 = xor i32 %132, %133
   %142 = lshr i32 %141, 4
   %143 = trunc i32 %142 to i8
   %144 = and i8 %143, 1
@@ -296,23 +298,23 @@ block_400d35:                                     ; preds = %block_.L_400d26
   %154 = icmp ne i8 %148, 0
   %155 = xor i1 %154, %152
   %156 = or i1 %145, %155
-  %.v7 = select i1 %156, i64 47, i64 10
-  %157 = add i64 %129, %.v7
+  %.v9 = select i1 %156, i64 47, i64 10
+  %157 = add i64 %129, %.v9
   store i64 %157, i64* %3, align 8
-  br i1 %156, label %block_.L_400d7a, label %block_400d55
+  br i1 %156, label %block_.L_400d5a, label %block_400d35
 
-block_400d55:                                     ; preds = %block_400d35
+block_400d35:                                     ; preds = %block_400d15
   %158 = load i64, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
-  store i64 %158, i64* %.pre5, align 8
+  store i64 %158, i64* %.pre7, align 8
   %159 = add i64 %157, 11
-  store i64 %159, i64* %3, align 8
+  store i64 %159, i64* %PC.i, align 8
   %160 = inttoptr i64 %158 to i64*
   %161 = load i64, i64* %160, align 8
-  store i64 %161, i64* %.pre5, align 8
+  store i64 %161, i64* %.pre7, align 8
   store i64 %161, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
   %162 = add i64 %127, -32
   %163 = add i64 %157, 23
-  store i64 %163, i64* %3, align 8
+  store i64 %163, i64* %PC.i, align 8
   %164 = inttoptr i64 %162 to i64*
   %165 = load i64, i64* %164, align 8
   store i64 %165, i64* %RDI.i110, align 8
@@ -324,21 +326,21 @@ block_400d55:                                     ; preds = %block_400d35
   store i64 %167, i64* %170, align 8
   store i64 %169, i64* %6, align 8
   store i64 %166, i64* %3, align 8
-  %call2_400d6c = tail call %struct.Memory* @sub_400a10.qpkt(%struct.State* nonnull %0, i64 %166, %struct.Memory* %MEMORY.0)
+  %call2_400d4c = tail call %struct.Memory* @sub_4009f0.qpkt(%struct.State* %0, i64 %166, %struct.Memory* %MEMORY.0)
   %171 = load i64, i64* %RBP.i, align 8
   %172 = add i64 %171, -8
-  %173 = load i64, i64* %.pre5, align 8
-  %174 = load i64, i64* %3, align 8
+  %173 = load i64, i64* %.pre7, align 8
+  %174 = load i64, i64* %PC.i, align 8
   %175 = add i64 %174, 4
-  store i64 %175, i64* %3, align 8
+  store i64 %175, i64* %PC.i, align 8
   %176 = inttoptr i64 %172 to i64*
   store i64 %173, i64* %176, align 8
-  %177 = load i64, i64* %3, align 8
+  %177 = load i64, i64* %PC.i, align 8
   %178 = add i64 %177, 116
   store i64 %178, i64* %3, align 8
-  br label %block_.L_400de9
+  br label %block_.L_400dc9
 
-block_.L_400d7a:                                  ; preds = %block_400d35
+block_.L_400d5a:                                  ; preds = %block_400d15
   %179 = load i64, i64* bitcast (%G_0x6020f8_type* @G_0x6020f8 to i64*), align 8
   store i8 0, i8* %14, align 1
   %180 = trunc i64 %179 to i32
@@ -356,45 +358,45 @@ block_.L_400d7a:                                  ; preds = %block_400d35
   %189 = trunc i64 %188 to i8
   store i8 %189, i8* %33, align 1
   store i8 0, i8* %39, align 1
-  %.v8 = select i1 %186, i64 97, i64 15
-  %190 = add i64 %157, %.v8
+  %.v10 = select i1 %186, i64 97, i64 15
+  %190 = add i64 %157, %.v10
   store i64 %190, i64* %3, align 8
-  br i1 %186, label %block_.L_400ddb, label %block_400d89
+  br i1 %186, label %block_.L_400dbb, label %block_400d69
 
-block_400d89:                                     ; preds = %block_.L_400d7a
+block_400d69:                                     ; preds = %block_.L_400d5a
   %191 = add i64 %127, -40
   %192 = add i64 %190, 12
-  store i64 %192, i64* %3, align 8
+  store i64 %192, i64* %PC.i, align 8
   %193 = inttoptr i64 %191 to i64*
   store i64 %179, i64* %193, align 8
-  %194 = load i64, i64* %3, align 8
+  %194 = load i64, i64* %PC.i, align 8
   %195 = load i64, i64* bitcast (%G_0x6020f8_type* @G_0x6020f8 to i64*), align 8
-  store i64 %195, i64* %.pre5, align 8
+  store i64 %195, i64* %.pre7, align 8
   %196 = add i64 %194, 11
-  store i64 %196, i64* %3, align 8
+  store i64 %196, i64* %PC.i, align 8
   %197 = inttoptr i64 %195 to i64*
   %198 = load i64, i64* %197, align 8
-  store i64 %198, i64* %.pre5, align 8
+  store i64 %198, i64* %.pre7, align 8
   store i64 %198, i64* bitcast (%G_0x6020f8_type* @G_0x6020f8 to i64*), align 8
   %199 = load i64, i64* %RBP.i, align 8
   %200 = add i64 %199, -32
   %201 = add i64 %194, 23
-  store i64 %201, i64* %3, align 8
+  store i64 %201, i64* %PC.i, align 8
   %202 = inttoptr i64 %200 to i64*
   %203 = load i64, i64* %202, align 8
-  store i64 %203, i64* %.pre5, align 8
+  store i64 %203, i64* %.pre7, align 8
   %204 = add i64 %199, -20
   %205 = add i64 %194, 27
-  store i64 %205, i64* %3, align 8
+  store i64 %205, i64* %PC.i, align 8
   %206 = inttoptr i64 %204 to i32*
   %207 = load i32, i32* %206, align 4
   %208 = sext i32 %207 to i64
   store i64 %208, i64* %RCX.i77, align 8
   %RDX.i36 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %209 = add nsw i64 %208, 20
-  %210 = add i64 %209, %203
+  %209 = add i64 %203, 20
+  %210 = add i64 %209, %208
   %211 = add i64 %194, 32
-  store i64 %211, i64* %3, align 8
+  store i64 %211, i64* %PC.i, align 8
   %212 = inttoptr i64 %210 to i8*
   %213 = load i8, i8* %212, align 1
   %214 = sext i8 %213 to i64
@@ -402,21 +404,21 @@ block_400d89:                                     ; preds = %block_.L_400d7a
   store i64 %215, i64* %RDX.i36, align 8
   %216 = add i64 %199, -40
   %217 = add i64 %194, 36
-  store i64 %217, i64* %3, align 8
+  store i64 %217, i64* %PC.i, align 8
   %218 = inttoptr i64 %216 to i64*
   %219 = load i64, i64* %218, align 8
-  store i64 %219, i64* %.pre5, align 8
+  store i64 %219, i64* %.pre7, align 8
   %220 = add i64 %219, 16
   %221 = sext i8 %213 to i32
   %222 = add i64 %194, 39
-  store i64 %222, i64* %3, align 8
+  store i64 %222, i64* %PC.i, align 8
   %223 = inttoptr i64 %220 to i32*
   store i32 %221, i32* %223, align 4
   %224 = load i64, i64* %RBP.i, align 8
   %225 = add i64 %224, -20
-  %226 = load i64, i64* %3, align 8
+  %226 = load i64, i64* %PC.i, align 8
   %227 = add i64 %226, 3
-  store i64 %227, i64* %3, align 8
+  store i64 %227, i64* %PC.i, align 8
   %228 = inttoptr i64 %225 to i32*
   %229 = load i32, i32* %228, align 4
   %230 = add i32 %229, 1
@@ -433,151 +435,151 @@ block_400d89:                                     ; preds = %block_.L_400d7a
   %239 = and i8 %238, 1
   %240 = xor i8 %239, 1
   store i8 %240, i8* %21, align 1
-  %241 = xor i32 %230, %229
+  %241 = xor i32 %229, %230
   %242 = lshr i32 %241, 4
   %243 = trunc i32 %242 to i8
   %244 = and i8 %243, 1
   store i8 %244, i8* %27, align 1
-  %245 = zext i1 %233 to i8
-  store i8 %245, i8* %30, align 1
-  %246 = lshr i32 %230, 31
-  %247 = trunc i32 %246 to i8
-  store i8 %247, i8* %33, align 1
-  %248 = lshr i32 %229, 31
-  %249 = xor i32 %246, %248
-  %250 = add nuw nsw i32 %249, %246
-  %251 = icmp eq i32 %250, 2
-  %252 = zext i1 %251 to i8
-  store i8 %252, i8* %39, align 1
-  %253 = add i64 %224, -32
-  %254 = add i64 %226, 10
-  store i64 %254, i64* %3, align 8
-  %255 = inttoptr i64 %253 to i64*
-  %256 = load i64, i64* %255, align 8
-  store i64 %256, i64* %.pre5, align 8
-  %257 = add i64 %256, 16
-  %258 = add i64 %226, 13
-  store i64 %258, i64* %3, align 8
-  %259 = inttoptr i64 %257 to i32*
-  store i32 %230, i32* %259, align 4
-  %260 = load i64, i64* %RBP.i, align 8
-  %261 = add i64 %260, -40
-  %262 = load i64, i64* %3, align 8
-  %263 = add i64 %262, 4
-  store i64 %263, i64* %3, align 8
-  %264 = inttoptr i64 %261 to i64*
-  %265 = load i64, i64* %264, align 8
-  store i64 %265, i64* %RDI.i110, align 8
-  %266 = add i64 %262, -953
-  %267 = add i64 %262, 9
-  %268 = load i64, i64* %6, align 8
-  %269 = add i64 %268, -8
-  %270 = inttoptr i64 %269 to i64*
-  store i64 %267, i64* %270, align 8
-  store i64 %269, i64* %6, align 8
-  store i64 %266, i64* %3, align 8
-  %call2_400dcd = tail call %struct.Memory* @sub_400a10.qpkt(%struct.State* nonnull %0, i64 %266, %struct.Memory* %MEMORY.0)
-  %271 = load i64, i64* %RBP.i, align 8
-  %272 = add i64 %271, -8
-  %273 = load i64, i64* %.pre5, align 8
-  %274 = load i64, i64* %3, align 8
-  %275 = add i64 %274, 4
-  store i64 %275, i64* %3, align 8
-  %276 = inttoptr i64 %272 to i64*
-  store i64 %273, i64* %276, align 8
-  %277 = load i64, i64* %3, align 8
-  %278 = add i64 %277, 19
-  store i64 %278, i64* %3, align 8
-  br label %block_.L_400de9
-
-block_.L_400ddb:                                  ; preds = %block_.L_400d7a
-  %279 = add i64 %190, 5
+  %245 = icmp eq i32 %230, 0
+  %246 = zext i1 %245 to i8
+  store i8 %246, i8* %30, align 1
+  %247 = lshr i32 %230, 31
+  %248 = trunc i32 %247 to i8
+  store i8 %248, i8* %33, align 1
+  %249 = lshr i32 %229, 31
+  %250 = xor i32 %247, %249
+  %251 = add nuw nsw i32 %250, %247
+  %252 = icmp eq i32 %251, 2
+  %253 = zext i1 %252 to i8
+  store i8 %253, i8* %39, align 1
+  %254 = add i64 %224, -32
+  %255 = add i64 %226, 10
+  store i64 %255, i64* %PC.i, align 8
+  %256 = inttoptr i64 %254 to i64*
+  %257 = load i64, i64* %256, align 8
+  store i64 %257, i64* %.pre7, align 8
+  %258 = add i64 %257, 16
+  %259 = add i64 %226, 13
+  store i64 %259, i64* %PC.i, align 8
+  %260 = inttoptr i64 %258 to i32*
+  store i32 %230, i32* %260, align 4
+  %261 = load i64, i64* %RBP.i, align 8
+  %262 = add i64 %261, -40
+  %263 = load i64, i64* %PC.i, align 8
+  %264 = add i64 %263, 4
+  store i64 %264, i64* %PC.i, align 8
+  %265 = inttoptr i64 %262 to i64*
+  %266 = load i64, i64* %265, align 8
+  store i64 %266, i64* %RDI.i110, align 8
+  %267 = add i64 %263, -953
+  %268 = add i64 %263, 9
+  %269 = load i64, i64* %6, align 8
+  %270 = add i64 %269, -8
+  %271 = inttoptr i64 %270 to i64*
+  store i64 %268, i64* %271, align 8
+  store i64 %270, i64* %6, align 8
+  store i64 %267, i64* %3, align 8
+  %call2_400dad = tail call %struct.Memory* @sub_4009f0.qpkt(%struct.State* %0, i64 %267, %struct.Memory* %MEMORY.0)
+  %272 = load i64, i64* %RBP.i, align 8
+  %273 = add i64 %272, -8
+  %274 = load i64, i64* %.pre7, align 8
+  %275 = load i64, i64* %PC.i, align 8
+  %276 = add i64 %275, 4
+  store i64 %276, i64* %PC.i, align 8
+  %277 = inttoptr i64 %273 to i64*
+  store i64 %274, i64* %277, align 8
+  %278 = load i64, i64* %PC.i, align 8
+  %279 = add i64 %278, 19
   store i64 %279, i64* %3, align 8
-  br label %block_.L_400de0
+  br label %block_.L_400dc9
 
-block_.L_400de0:                                  ; preds = %block_.L_400d26, %block_.L_400ddb
-  %280 = phi i64 [ %279, %block_.L_400ddb ], [ %108, %block_.L_400d26 ]
-  %281 = add i64 %280, -1312
-  %282 = add i64 %280, 5
-  %283 = load i64, i64* %6, align 8
-  %284 = add i64 %283, -8
-  %285 = inttoptr i64 %284 to i64*
-  store i64 %282, i64* %285, align 8
-  store i64 %284, i64* %6, align 8
-  store i64 %281, i64* %3, align 8
-  %call2_400de0 = tail call %struct.Memory* @sub_4008c0.Wait(%struct.State* nonnull %0, i64 %281, %struct.Memory* %MEMORY.0)
-  %286 = load i64, i64* %RBP.i, align 8
-  %287 = add i64 %286, -8
-  %288 = load i64, i64* %.pre5, align 8
-  %289 = load i64, i64* %3, align 8
-  %290 = add i64 %289, 4
-  store i64 %290, i64* %3, align 8
-  %291 = inttoptr i64 %287 to i64*
-  store i64 %288, i64* %291, align 8
-  %.pre4 = load i64, i64* %3, align 8
-  br label %block_.L_400de9
+block_.L_400dbb:                                  ; preds = %block_.L_400d5a
+  %280 = add i64 %190, 5
+  store i64 %280, i64* %3, align 8
+  br label %block_.L_400dc0
 
-block_.L_400de9:                                  ; preds = %block_.L_400de0, %block_400d89, %block_400d55
-  %292 = phi i64 [ %.pre4, %block_.L_400de0 ], [ %278, %block_400d89 ], [ %178, %block_400d55 ]
-  %MEMORY.2 = phi %struct.Memory* [ %call2_400de0, %block_.L_400de0 ], [ %call2_400dcd, %block_400d89 ], [ %call2_400d6c, %block_400d55 ]
-  %293 = load i64, i64* %RBP.i, align 8
-  %294 = add i64 %293, -8
-  %295 = add i64 %292, 4
-  store i64 %295, i64* %3, align 8
-  %296 = inttoptr i64 %294 to i64*
-  %297 = load i64, i64* %296, align 8
-  store i64 %297, i64* %.pre5, align 8
-  %298 = load i64, i64* %6, align 8
-  %299 = add i64 %298, 48
-  store i64 %299, i64* %6, align 8
-  %300 = icmp ugt i64 %298, -49
-  %301 = zext i1 %300 to i8
-  store i8 %301, i8* %14, align 1
-  %302 = trunc i64 %299 to i32
-  %303 = and i32 %302, 255
-  %304 = tail call i32 @llvm.ctpop.i32(i32 %303)
-  %305 = trunc i32 %304 to i8
-  %306 = and i8 %305, 1
-  %307 = xor i8 %306, 1
-  store i8 %307, i8* %21, align 1
-  %308 = xor i64 %298, 16
-  %309 = xor i64 %308, %299
-  %310 = lshr i64 %309, 4
-  %311 = trunc i64 %310 to i8
-  %312 = and i8 %311, 1
-  store i8 %312, i8* %27, align 1
-  %313 = icmp eq i64 %299, 0
-  %314 = zext i1 %313 to i8
-  store i8 %314, i8* %30, align 1
-  %315 = lshr i64 %299, 63
-  %316 = trunc i64 %315 to i8
-  store i8 %316, i8* %33, align 1
-  %317 = lshr i64 %298, 63
-  %318 = xor i64 %315, %317
-  %319 = add nuw nsw i64 %318, %315
-  %320 = icmp eq i64 %319, 2
-  %321 = zext i1 %320 to i8
-  store i8 %321, i8* %39, align 1
-  %322 = add i64 %292, 9
-  store i64 %322, i64* %3, align 8
-  %323 = add i64 %298, 56
-  %324 = inttoptr i64 %299 to i64*
-  %325 = load i64, i64* %324, align 8
-  store i64 %325, i64* %RBP.i, align 8
-  store i64 %323, i64* %6, align 8
-  %326 = add i64 %292, 10
-  store i64 %326, i64* %3, align 8
-  %327 = inttoptr i64 %323 to i64*
-  %328 = load i64, i64* %327, align 8
-  store i64 %328, i64* %3, align 8
-  %329 = add i64 %298, 64
-  store i64 %329, i64* %6, align 8
+block_.L_400dc0:                                  ; preds = %block_.L_400d06, %block_.L_400dbb
+  %281 = phi i64 [ %280, %block_.L_400dbb ], [ %108, %block_.L_400d06 ]
+  %282 = add i64 %281, -1312
+  %283 = add i64 %281, 5
+  %284 = load i64, i64* %6, align 8
+  %285 = add i64 %284, -8
+  %286 = inttoptr i64 %285 to i64*
+  store i64 %283, i64* %286, align 8
+  store i64 %285, i64* %6, align 8
+  store i64 %282, i64* %3, align 8
+  %call2_400dc0 = tail call %struct.Memory* @sub_4008a0.Wait(%struct.State* %0, i64 %282, %struct.Memory* %MEMORY.0)
+  %287 = load i64, i64* %RBP.i, align 8
+  %288 = add i64 %287, -8
+  %289 = load i64, i64* %.pre7, align 8
+  %290 = load i64, i64* %PC.i, align 8
+  %291 = add i64 %290, 4
+  store i64 %291, i64* %PC.i, align 8
+  %292 = inttoptr i64 %288 to i64*
+  store i64 %289, i64* %292, align 8
+  %.pre1 = load i64, i64* %PC.i, align 8
+  br label %block_.L_400dc9
+
+block_.L_400dc9:                                  ; preds = %block_.L_400dc0, %block_400d69, %block_400d35
+  %293 = phi i64 [ %.pre1, %block_.L_400dc0 ], [ %279, %block_400d69 ], [ %178, %block_400d35 ]
+  %MEMORY.2 = phi %struct.Memory* [ %call2_400dc0, %block_.L_400dc0 ], [ %call2_400dad, %block_400d69 ], [ %call2_400d4c, %block_400d35 ]
+  %294 = load i64, i64* %RBP.i, align 8
+  %295 = add i64 %294, -8
+  %296 = add i64 %293, 4
+  store i64 %296, i64* %PC.i, align 8
+  %297 = inttoptr i64 %295 to i64*
+  %298 = load i64, i64* %297, align 8
+  store i64 %298, i64* %.pre7, align 8
+  %299 = load i64, i64* %RSP.i115, align 8
+  %300 = add i64 %299, 48
+  store i64 %300, i64* %RSP.i115, align 8
+  %301 = icmp ugt i64 %299, -49
+  %302 = zext i1 %301 to i8
+  store i8 %302, i8* %14, align 1
+  %303 = trunc i64 %300 to i32
+  %304 = and i32 %303, 255
+  %305 = tail call i32 @llvm.ctpop.i32(i32 %304)
+  %306 = trunc i32 %305 to i8
+  %307 = and i8 %306, 1
+  %308 = xor i8 %307, 1
+  store i8 %308, i8* %21, align 1
+  %309 = xor i64 %299, 16
+  %310 = xor i64 %309, %300
+  %311 = lshr i64 %310, 4
+  %312 = trunc i64 %311 to i8
+  %313 = and i8 %312, 1
+  store i8 %313, i8* %27, align 1
+  %314 = icmp eq i64 %300, 0
+  %315 = zext i1 %314 to i8
+  store i8 %315, i8* %30, align 1
+  %316 = lshr i64 %300, 63
+  %317 = trunc i64 %316 to i8
+  store i8 %317, i8* %33, align 1
+  %318 = lshr i64 %299, 63
+  %319 = xor i64 %316, %318
+  %320 = add nuw nsw i64 %319, %316
+  %321 = icmp eq i64 %320, 2
+  %322 = zext i1 %321 to i8
+  store i8 %322, i8* %39, align 1
+  %323 = add i64 %293, 9
+  store i64 %323, i64* %PC.i, align 8
+  %324 = add i64 %299, 56
+  %325 = inttoptr i64 %300 to i64*
+  %326 = load i64, i64* %325, align 8
+  store i64 %326, i64* %RBP.i, align 8
+  store i64 %324, i64* %6, align 8
+  %327 = add i64 %293, 10
+  store i64 %327, i64* %PC.i, align 8
+  %328 = inttoptr i64 %324 to i64*
+  %329 = load i64, i64* %328, align 8
+  store i64 %329, i64* %3, align 8
+  %330 = add i64 %299, 64
+  store i64 %330, i64* %6, align 8
   ret %struct.Memory* %MEMORY.2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_pushq__rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %RBP, align 8
@@ -593,9 +595,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rsp___rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rsp___rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -607,9 +608,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_subq__0x30___rsp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_subq__0x30___rsp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %3 = load i64, i64* %RSP, align 8
@@ -655,9 +655,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rdi__MINUS0x10__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rdi__MINUS0x10__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -672,9 +671,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_cmpq__0x0__MINUS0x10__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_cmpq__0x0__MINUS0x10__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %RBP, align 8
@@ -709,24 +707,23 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_je_.L_400d26(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_je_.L_400d06(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %5 = load i8, i8* %4, align 1
   store i8 %5, i8* %BRANCH_TAKEN, align 1
-  %6 = icmp ne i8 %5, 0
-  %.v = select i1 %6, i64 %rel_off1, i64 %rel_off2
-  %7 = add i64 %.v, %3
-  store i64 %7, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %7 = icmp ne i8 %5, 0
+  %.v = select i1 %7, i64 %rel_off1, i64 %rel_off2
+  %8 = add i64 %3, %.v
+  store i64 %8, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__0x6020f8___rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__0x6020f8___rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -736,9 +733,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__0x6020e8___rcx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__0x6020e8___rcx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -748,9 +744,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x10__rbp____rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x10__rbp____rdi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -765,9 +760,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x10__rbp____rdx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x10__rbp____rdx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -782,9 +776,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_cmpl__0x3e9__0xc__rdx_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_cmpl__0x3e9__0xc__rdx_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
@@ -806,7 +799,7 @@ block_400488:
   %17 = xor i8 %16, 1
   %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
   store i8 %17, i8* %18, align 1
-  %19 = xor i32 %9, %8
+  %19 = xor i32 %8, %9
   %20 = lshr i32 %19, 4
   %21 = trunc i32 %20 to i8
   %22 = and i8 %21, 1
@@ -830,9 +823,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_cmoveq__rcx___rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_cmoveq__rcx___rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -849,9 +841,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax___rsi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax___rsi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
@@ -863,9 +854,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_callq_.append(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_callq_.append(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
@@ -876,13 +866,13 @@ block_400488:
   %9 = inttoptr i64 %8 to i64*
   store i64 %5, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  store i64 %4, i64* %PC, align 8
+  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %4, i64* %10, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_cmpq__0x0__0x6020e8(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_cmpq__0x0__0x6020e8(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 9
@@ -913,24 +903,23 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_je_.L_400de0(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_je_.L_400dc0(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %5 = load i8, i8* %4, align 1
   store i8 %5, i8* %BRANCH_TAKEN, align 1
-  %6 = icmp ne i8 %5, 0
-  %.v = select i1 %6, i64 %rel_off1, i64 %rel_off2
-  %7 = add i64 %.v, %3
-  store i64 %7, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %7 = icmp ne i8 %5, 0
+  %.v = select i1 %7, i64 %rel_off1, i64 %rel_off2
+  %8 = add i64 %3, %.v
+  store i64 %8, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_0x6020e8___rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_0x6020e8___rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -941,9 +930,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax__MINUS0x20__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax__MINUS0x20__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -958,9 +946,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x20__rbp____rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x20__rbp____rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -975,9 +962,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl_0x10__rax____ecx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movl_0x10__rax____ecx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -993,9 +979,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__ecx__MINUS0x14__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movl__ecx__MINUS0x14__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0
   %ECX = bitcast %union.anon* %3 to i32*
@@ -1011,9 +996,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_cmpl__0x3__MINUS0x14__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_cmpl__0x3__MINUS0x14__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %RBP, align 8
@@ -1035,7 +1019,7 @@ block_400488:
   %17 = xor i8 %16, 1
   %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
   store i8 %17, i8* %18, align 1
-  %19 = xor i32 %9, %8
+  %19 = xor i32 %8, %9
   %20 = lshr i32 %19, 4
   %21 = trunc i32 %20 to i8
   %22 = and i8 %21, 1
@@ -1059,9 +1043,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jle_.L_400d7a(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_jle_.L_400d5a(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
@@ -1077,15 +1060,15 @@ block_400488:
   %14 = or i1 %6, %13
   %15 = zext i1 %14 to i8
   store i8 %15, i8* %BRANCH_TAKEN, align 1
+  %16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %.v = select i1 %14, i64 %rel_off1, i64 %rel_off2
-  %16 = add i64 %.v, %3
-  store i64 %16, i64* %PC, align 8
+  %17 = add i64 %3, %.v
+  store i64 %17, i64* %16, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq___rax____rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq___rax____rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = bitcast i64* %RAX to i64**
@@ -1098,9 +1081,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax__0x6020e8(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax__0x6020e8(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
@@ -1111,9 +1093,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x20__rbp____rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x20__rbp____rdi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1128,9 +1109,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_callq_.qpkt(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_callq_.qpkt(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
@@ -1141,13 +1121,13 @@ block_400488:
   %9 = inttoptr i64 %8 to i64*
   store i64 %5, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  store i64 %4, i64* %PC, align 8
+  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %4, i64* %10, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax__MINUS0x8__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax__MINUS0x8__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1162,19 +1142,18 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_400de9(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_jmpq_.L_400dc9(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
-  store i64 %4, i64* %PC, align 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %4, i64* %5, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_cmpq__0x0__0x6020f8(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_cmpq__0x0__0x6020f8(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 9
@@ -1205,24 +1184,23 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_je_.L_400ddb(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i8* nocapture %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_je_.L_400dbb(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i8* %BRANCH_TAKEN, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %5 = load i8, i8* %4, align 1
   store i8 %5, i8* %BRANCH_TAKEN, align 1
-  %6 = icmp ne i8 %5, 0
-  %.v = select i1 %6, i64 %rel_off1, i64 %rel_off2
-  %7 = add i64 %.v, %3
-  store i64 %7, i64* %PC, align 8
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %7 = icmp ne i8 %5, 0
+  %.v = select i1 %7, i64 %rel_off1, i64 %rel_off2
+  %8 = add i64 %3, %.v
+  store i64 %8, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_0x6020f8___rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_0x6020f8___rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -1233,9 +1211,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax__MINUS0x28__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax__MINUS0x28__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1250,9 +1227,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rax__0x6020f8(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq__rax__0x6020f8(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
@@ -1263,9 +1239,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movslq_MINUS0x14__rbp____rcx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movslq_MINUS0x14__rbp____rcx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1281,9 +1256,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movsbl_0x14__rax__rcx_1____edx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movsbl_0x14__rax__rcx_1____edx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -1303,9 +1277,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x28__rbp____rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x28__rbp____rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1320,9 +1293,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__edx__0x10__rax_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movl__edx__0x10__rax_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
   %EDX = bitcast %union.anon* %3 to i32*
@@ -1338,9 +1310,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl_MINUS0x14__rbp____edx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movl_MINUS0x14__rbp____edx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1356,9 +1327,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_addl__0x1___edx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_addl__0x1___edx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
@@ -1382,32 +1352,33 @@ block_400488:
   %18 = xor i8 %17, 1
   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
   store i8 %18, i8* %19, align 1
-  %20 = xor i32 %7, %6
-  %21 = lshr i32 %20, 4
-  %22 = trunc i32 %21 to i8
-  %23 = and i8 %22, 1
-  %24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %23, i8* %24, align 1
-  %25 = zext i1 %10 to i8
-  %26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %25, i8* %26, align 1
-  %27 = lshr i32 %7, 31
-  %28 = trunc i32 %27 to i8
-  %29 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %28, i8* %29, align 1
-  %30 = lshr i32 %6, 31
-  %31 = xor i32 %27, %30
-  %32 = add nuw nsw i32 %31, %27
-  %33 = icmp eq i32 %32, 2
-  %34 = zext i1 %33 to i8
-  %35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %34, i8* %35, align 1
+  %20 = trunc i64 %3 to i32
+  %21 = xor i32 %20, %7
+  %22 = lshr i32 %21, 4
+  %23 = trunc i32 %22 to i8
+  %24 = and i8 %23, 1
+  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %24, i8* %25, align 1
+  %26 = icmp eq i32 %7, 0
+  %27 = zext i1 %26 to i8
+  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %27, i8* %28, align 1
+  %29 = lshr i32 %7, 31
+  %30 = trunc i32 %29 to i8
+  %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %30, i8* %31, align 1
+  %32 = lshr i32 %6, 31
+  %33 = xor i32 %29, %32
+  %34 = add nuw nsw i32 %33, %29
+  %35 = icmp eq i32 %34, 2
+  %36 = zext i1 %35 to i8
+  %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %36, i8* %37, align 1
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x28__rbp____rdi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x28__rbp____rdi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1422,19 +1393,18 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_jmpq_.L_400de0(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_jmpq_.L_400dc0(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
-  store i64 %4, i64* %PC, align 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %4, i64* %5, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_callq_.Wait(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_callq_.Wait(%struct.State* dereferenceable(3376), i64, %struct.Memory*, i64 %rel_off1, i64 %rel_off2, i64 %rel_off3) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, %rel_off1
@@ -1445,13 +1415,13 @@ block_400488:
   %9 = inttoptr i64 %8 to i64*
   store i64 %5, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  store i64 %4, i64* %PC, align 8
+  %10 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  store i64 %4, i64* %10, align 8
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq_MINUS0x8__rbp____rax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_movq_MINUS0x8__rbp____rax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -1466,9 +1436,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: nounwind
-define %struct.Memory* @routine_addq__0x30___rsp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #3 {
-block_400488:
+define %struct.Memory* @routine_addq__0x30___rsp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %3 = load i64, i64* %RSP, align 8
@@ -1514,9 +1483,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_popq__rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_popq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -1532,24 +1500,22 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_retq(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #2 {
-block_400488:
+define %struct.Memory* @routine_retq(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 1
   store i64 %4, i64* %PC, align 8
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %6 = load i64, i64* %5, align 8
-  %7 = inttoptr i64 %6 to i64*
-  %8 = load i64, i64* %7, align 8
-  store i64 %8, i64* %PC, align 8
-  %9 = add i64 %6, 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %7 = load i64, i64* %6, align 8
+  %8 = inttoptr i64 %7 to i64*
+  %9 = load i64, i64* %8, align 8
   store i64 %9, i64* %5, align 8
+  %10 = add i64 %7, 8
+  store i64 %10, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
 attributes #0 = { nounwind readnone }
 attributes #1 = { alwaysinline }
-attributes #2 = { norecurse nounwind }
-attributes #3 = { nounwind }

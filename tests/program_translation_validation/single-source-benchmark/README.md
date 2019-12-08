@@ -110,3 +110,14 @@ grep "MEMORY" ~/Junk/log  | wc
 grep "Failed to extract" ~/Junk/log  | wc
 cat docs/matchFail.log | parallel ~/scripts-n-docs/scripts/perl/filegrep.pl --patt "Failed to extract" --file {}/match.log
 ```
+
+### Manipulating Cache
+```
+cat x | parallel grep Workdir {}/compd.log > log
+sort log | uniq > y
+mv y log 
+cat log | parallel "sed -ie 's/clang /\/usr\/bin\/clang-6.0 /g' {}/Makefile"
+cat log | parallel "cd {}; make binary; cd -"
+cat log | parallel "cd {}; make mcsema; cd -"
+cat log | parallel "cd {}; make declutter; cd -"
+```

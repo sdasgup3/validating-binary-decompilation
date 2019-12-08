@@ -45,17 +45,18 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 define %struct.Memory* @_ZN31custom_multiple_constant_divideItE8do_shiftEt(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #0 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %4 = load i64, i64* %RBP.i, align 8
   %5 = add i64 %1, 1
-  store i64 %5, i64* %3, align 8
+  store i64 %5, i64* %PC.i, align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %7 = load i64, i64* %6, align 8
   %8 = add i64 %7, -8
   %9 = inttoptr i64 %8 to i64*
   store i64 %4, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  %10 = load i64, i64* %3, align 8
+  %10 = load i64, i64* %PC.i, align 8
   store i64 %8, i64* %RBP.i, align 8
   %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %AX.i13 = bitcast %union.anon* %11 to i16*
@@ -76,15 +77,15 @@ entry:
   store i64 2, i64* %RSI.i34, align 8
   %17 = add i64 %7, -10
   %18 = add i64 %10, 30
-  store i64 %18, i64* %3, align 8
+  store i64 %18, i64* %PC.i, align 8
   %19 = inttoptr i64 %17 to i16*
   store i16 %13, i16* %19, align 2
   %RAX.i28 = getelementptr inbounds %union.anon, %union.anon* %11, i64 0, i32 0
   %20 = load i64, i64* %RBP.i, align 8
   %21 = add i64 %20, -2
-  %22 = load i64, i64* %3, align 8
+  %22 = load i64, i64* %PC.i, align 8
   %23 = add i64 %22, 4
-  store i64 %23, i64* %3, align 8
+  store i64 %23, i64* %PC.i, align 8
   %24 = inttoptr i64 %21 to i16*
   %25 = load i16, i16* %24, align 2
   %26 = zext i16 %25 to i64
@@ -93,237 +94,246 @@ entry:
   %27 = add i64 %20, -8
   %28 = load i32, i32* %EDX.i, align 4
   %29 = add i64 %22, 7
-  store i64 %29, i64* %3, align 8
+  store i64 %29, i64* %PC.i, align 8
   %30 = inttoptr i64 %27 to i32*
   store i32 %28, i32* %30, align 4
-  %31 = load i64, i64* %3, align 8
+  %31 = load i64, i64* %PC.i, align 8
   %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %33 = bitcast %union.anon* %11 to i32*
-  %34 = load i32, i32* %33, align 8
-  %35 = sext i32 %34 to i64
-  %36 = lshr i64 %35, 32
-  store i64 %36, i64* %32, align 8
+  %33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
+  %34 = bitcast %union.anon* %33 to i32*
+  %35 = load i32, i32* %34, align 8
+  %36 = sext i32 %35 to i64
+  %37 = lshr i64 %36, 32
+  store i64 %37, i64* %32, align 8
   %ESI.i21 = bitcast %union.anon* %16 to i32*
-  %37 = load i32, i32* %ESI.i21, align 4
-  %38 = add i64 %31, 3
-  store i64 %38, i64* %3, align 8
-  %39 = zext i32 %34 to i64
-  %40 = sext i32 %37 to i64
-  %41 = shl nuw i64 %36, 32
-  %42 = or i64 %41, %39
-  %43 = sdiv i64 %42, %40
-  %44 = shl i64 %43, 32
-  %45 = ashr exact i64 %44, 32
-  %46 = icmp eq i64 %43, %45
-  br i1 %46, label %49, label %47
-
-; <label>:47:                                     ; preds = %entry
-  %48 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %38, %struct.Memory* %2)
-  %.pre = load i64, i64* %3, align 8
-  %.pre1 = load i32, i32* %33, align 8
-  br label %routine_idivl__esi.exit22
+  %38 = load i32, i32* %ESI.i21, align 4
+  %39 = add i64 %31, 3
+  store i64 %39, i64* %PC.i, align 8
+  %40 = zext i32 %35 to i64
+  %41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
+  %42 = sext i32 %38 to i64
+  %43 = shl nuw i64 %37, 32
+  %44 = or i64 %43, %40
+  %45 = sdiv i64 %44, %42
+  %46 = shl i64 %45, 32
+  %47 = ashr exact i64 %46, 32
+  %48 = icmp eq i64 %45, %47
+  br i1 %48, label %51, label %49
 
 ; <label>:49:                                     ; preds = %entry
-  %50 = srem i64 %42, %40
-  %51 = and i64 %43, 4294967295
-  store i64 %51, i64* %RAX.i28, align 8
-  %52 = and i64 %50, 4294967295
-  store i64 %52, i64* %RDX.i, align 8
-  %53 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %53, align 1
-  %54 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 0, i8* %54, align 1
-  %55 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %55, align 1
-  %56 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 0, i8* %56, align 1
-  %57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %57, align 1
-  %58 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %58, align 1
-  %59 = trunc i64 %43 to i32
+  %50 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %39, %struct.Memory* %2)
+  %.pre = load i64, i64* %PC.i, align 8
+  %.pre1 = load i32, i32* %34, align 8
   br label %routine_idivl__esi.exit22
 
-routine_idivl__esi.exit22:                        ; preds = %49, %47
-  %60 = phi i32 [ %.pre1, %47 ], [ %59, %49 ]
-  %61 = phi i64 [ %.pre, %47 ], [ %38, %49 ]
-  %62 = phi %struct.Memory* [ %48, %47 ], [ %2, %49 ]
-  %63 = sext i32 %60 to i64
-  %64 = lshr i64 %63, 32
-  store i64 %64, i64* %32, align 8
-  %65 = load i64, i64* %RBP.i, align 8
-  %66 = add i64 %65, -8
-  %67 = add i64 %61, 4
-  store i64 %67, i64* %3, align 8
-  %68 = inttoptr i64 %66 to i32*
-  %69 = load i32, i32* %68, align 4
-  %70 = zext i32 %69 to i64
-  store i64 %70, i64* %RSI.i34, align 8
-  %71 = add i64 %61, 6
-  store i64 %71, i64* %3, align 8
-  %72 = zext i32 %60 to i64
-  %73 = sext i32 %69 to i64
-  %74 = shl nuw i64 %64, 32
-  %75 = or i64 %74, %72
-  %76 = sdiv i64 %75, %73
-  %77 = shl i64 %76, 32
-  %78 = ashr exact i64 %77, 32
-  %79 = icmp eq i64 %76, %78
-  br i1 %79, label %82, label %80
+; <label>:51:                                     ; preds = %entry
+  %52 = srem i64 %44, %42
+  %53 = getelementptr inbounds %union.anon, %union.anon* %33, i64 0, i32 0
+  %54 = and i64 %45, 4294967295
+  store i64 %54, i64* %53, align 8
+  %55 = getelementptr inbounds %union.anon, %union.anon* %41, i64 0, i32 0
+  %56 = and i64 %52, 4294967295
+  store i64 %56, i64* %55, align 8
+  %57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %57, align 1
+  %58 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %58, align 1
+  %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 0, i8* %59, align 1
+  %60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 0, i8* %60, align 1
+  %61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 0, i8* %61, align 1
+  %62 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 0, i8* %62, align 1
+  %63 = trunc i64 %45 to i32
+  br label %routine_idivl__esi.exit22
 
-; <label>:80:                                     ; preds = %routine_idivl__esi.exit22
-  %81 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %71, %struct.Memory* %62)
-  %.pre2 = load i64, i64* %3, align 8
-  %.pre3 = load i32, i32* %33, align 8
+routine_idivl__esi.exit22:                        ; preds = %51, %49
+  %64 = phi i32 [ %.pre1, %49 ], [ %63, %51 ]
+  %65 = phi i64 [ %.pre, %49 ], [ %39, %51 ]
+  %66 = phi %struct.Memory* [ %50, %49 ], [ %2, %51 ]
+  %67 = sext i32 %64 to i64
+  %68 = lshr i64 %67, 32
+  store i64 %68, i64* %32, align 8
+  %69 = load i64, i64* %RBP.i, align 8
+  %70 = add i64 %69, -8
+  %71 = add i64 %65, 4
+  store i64 %71, i64* %PC.i, align 8
+  %72 = inttoptr i64 %70 to i32*
+  %73 = load i32, i32* %72, align 4
+  %74 = zext i32 %73 to i64
+  store i64 %74, i64* %RSI.i34, align 8
+  %75 = add i64 %65, 6
+  store i64 %75, i64* %PC.i, align 8
+  %76 = zext i32 %64 to i64
+  %77 = sext i32 %73 to i64
+  %78 = shl nuw i64 %68, 32
+  %79 = or i64 %78, %76
+  %80 = sdiv i64 %79, %77
+  %81 = shl i64 %80, 32
+  %82 = ashr exact i64 %81, 32
+  %83 = icmp eq i64 %80, %82
+  br i1 %83, label %86, label %84
+
+; <label>:84:                                     ; preds = %routine_idivl__esi.exit22
+  %85 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %75, %struct.Memory* %66)
+  %.pre2 = load i64, i64* %PC.i, align 8
+  %.pre3 = load i32, i32* %34, align 8
   br label %routine_idivl__esi.exit
 
-; <label>:82:                                     ; preds = %routine_idivl__esi.exit22
-  %83 = srem i64 %75, %73
-  %84 = and i64 %76, 4294967295
-  store i64 %84, i64* %RAX.i28, align 8
-  %85 = and i64 %83, 4294967295
-  store i64 %85, i64* %RDX.i, align 8
-  %86 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %86, align 1
-  %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 0, i8* %87, align 1
-  %88 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %88, align 1
-  %89 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 0, i8* %89, align 1
-  %90 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %90, align 1
-  %91 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %91, align 1
-  %92 = trunc i64 %76 to i32
+; <label>:86:                                     ; preds = %routine_idivl__esi.exit22
+  %87 = srem i64 %79, %77
+  %88 = getelementptr inbounds %union.anon, %union.anon* %33, i64 0, i32 0
+  %89 = and i64 %80, 4294967295
+  store i64 %89, i64* %88, align 8
+  %90 = getelementptr inbounds %union.anon, %union.anon* %41, i64 0, i32 0
+  %91 = and i64 %87, 4294967295
+  store i64 %91, i64* %90, align 8
+  %92 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %92, align 1
+  %93 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %93, align 1
+  %94 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 0, i8* %94, align 1
+  %95 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 0, i8* %95, align 1
+  %96 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 0, i8* %96, align 1
+  %97 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 0, i8* %97, align 1
+  %98 = trunc i64 %80 to i32
   br label %routine_idivl__esi.exit
 
-routine_idivl__esi.exit:                          ; preds = %82, %80
-  %93 = phi i32 [ %.pre3, %80 ], [ %92, %82 ]
-  %94 = phi i64 [ %.pre2, %80 ], [ %71, %82 ]
-  %95 = phi %struct.Memory* [ %81, %80 ], [ %62, %82 ]
-  %96 = sext i32 %93 to i64
-  %97 = lshr i64 %96, 32
-  store i64 %97, i64* %32, align 8
+routine_idivl__esi.exit:                          ; preds = %86, %84
+  %99 = phi i32 [ %.pre3, %84 ], [ %98, %86 ]
+  %100 = phi i64 [ %.pre2, %84 ], [ %75, %86 ]
+  %101 = phi %struct.Memory* [ %85, %84 ], [ %66, %86 ]
+  %102 = sext i32 %99 to i64
+  %103 = lshr i64 %102, 32
+  store i64 %103, i64* %32, align 8
   %ECX.i = bitcast %union.anon* %14 to i32*
-  %98 = load i32, i32* %ECX.i, align 4
-  %99 = add i64 %94, 3
-  store i64 %99, i64* %3, align 8
-  %100 = zext i32 %93 to i64
-  %101 = sext i32 %98 to i64
-  %102 = shl nuw i64 %97, 32
-  %103 = or i64 %102, %100
-  %104 = sdiv i64 %103, %101
-  %105 = shl i64 %104, 32
-  %106 = ashr exact i64 %105, 32
-  %107 = icmp eq i64 %104, %106
-  br i1 %107, label %110, label %108
+  %104 = load i32, i32* %ECX.i, align 4
+  %105 = add i64 %100, 3
+  store i64 %105, i64* %PC.i, align 8
+  %106 = zext i32 %99 to i64
+  %107 = sext i32 %104 to i64
+  %108 = shl nuw i64 %103, 32
+  %109 = or i64 %108, %106
+  %110 = sdiv i64 %109, %107
+  %111 = shl i64 %110, 32
+  %112 = ashr exact i64 %111, 32
+  %113 = icmp eq i64 %110, %112
+  br i1 %113, label %116, label %114
 
-; <label>:108:                                    ; preds = %routine_idivl__esi.exit
-  %109 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %99, %struct.Memory* %95)
-  %.pre4 = load i64, i64* %3, align 8
-  %.pre5 = load i32, i32* %33, align 8
+; <label>:114:                                    ; preds = %routine_idivl__esi.exit
+  %115 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %105, %struct.Memory* %101)
+  %.pre4 = load i64, i64* %PC.i, align 8
+  %.pre5 = load i32, i32* %34, align 8
   br label %routine_idivl__ecx.exit
 
-; <label>:110:                                    ; preds = %routine_idivl__esi.exit
-  %111 = srem i64 %103, %101
-  %112 = and i64 %104, 4294967295
-  store i64 %112, i64* %RAX.i28, align 8
-  %113 = and i64 %111, 4294967295
-  store i64 %113, i64* %RDX.i, align 8
-  %114 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %114, align 1
-  %115 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 0, i8* %115, align 1
-  %116 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %116, align 1
-  %117 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 0, i8* %117, align 1
-  %118 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %118, align 1
-  %119 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %119, align 1
-  %120 = trunc i64 %104 to i32
+; <label>:116:                                    ; preds = %routine_idivl__esi.exit
+  %117 = srem i64 %109, %107
+  %118 = getelementptr inbounds %union.anon, %union.anon* %33, i64 0, i32 0
+  %119 = and i64 %110, 4294967295
+  store i64 %119, i64* %118, align 8
+  %120 = getelementptr inbounds %union.anon, %union.anon* %41, i64 0, i32 0
+  %121 = and i64 %117, 4294967295
+  store i64 %121, i64* %120, align 8
+  %122 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %122, align 1
+  %123 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %123, align 1
+  %124 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 0, i8* %124, align 1
+  %125 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 0, i8* %125, align 1
+  %126 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 0, i8* %126, align 1
+  %127 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 0, i8* %127, align 1
+  %128 = trunc i64 %110 to i32
   br label %routine_idivl__ecx.exit
 
-routine_idivl__ecx.exit:                          ; preds = %110, %108
-  %121 = phi i32 [ %.pre5, %108 ], [ %120, %110 ]
-  %122 = phi i64 [ %.pre4, %108 ], [ %99, %110 ]
-  %123 = phi %struct.Memory* [ %109, %108 ], [ %95, %110 ]
-  %124 = sext i32 %121 to i64
-  %125 = lshr i64 %124, 32
-  store i64 %125, i64* %32, align 8
+routine_idivl__ecx.exit:                          ; preds = %116, %114
+  %129 = phi i32 [ %.pre5, %114 ], [ %128, %116 ]
+  %130 = phi i64 [ %.pre4, %114 ], [ %105, %116 ]
+  %131 = phi %struct.Memory* [ %115, %114 ], [ %101, %116 ]
+  %132 = sext i32 %129 to i64
+  %133 = lshr i64 %132, 32
+  store i64 %133, i64* %32, align 8
   %EDI.i = bitcast %union.anon* %12 to i32*
-  %126 = load i32, i32* %EDI.i, align 4
-  %127 = add i64 %122, 3
-  store i64 %127, i64* %3, align 8
-  %128 = zext i32 %121 to i64
-  %129 = sext i32 %126 to i64
-  %130 = shl nuw i64 %125, 32
-  %131 = or i64 %130, %128
-  %132 = sdiv i64 %131, %129
-  %133 = shl i64 %132, 32
-  %134 = ashr exact i64 %133, 32
-  %135 = icmp eq i64 %132, %134
-  br i1 %135, label %138, label %136
+  %134 = load i32, i32* %EDI.i, align 4
+  %135 = add i64 %130, 3
+  store i64 %135, i64* %PC.i, align 8
+  %136 = zext i32 %129 to i64
+  %137 = sext i32 %134 to i64
+  %138 = shl nuw i64 %133, 32
+  %139 = or i64 %138, %136
+  %140 = sdiv i64 %139, %137
+  %141 = shl i64 %140, 32
+  %142 = ashr exact i64 %141, 32
+  %143 = icmp eq i64 %140, %142
+  br i1 %143, label %146, label %144
 
-; <label>:136:                                    ; preds = %routine_idivl__ecx.exit
-  %137 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %127, %struct.Memory* %123)
+; <label>:144:                                    ; preds = %routine_idivl__ecx.exit
+  %145 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %135, %struct.Memory* %131)
   %.pre6 = load i16, i16* %AX.i13, align 2
-  %.pre7 = load i64, i64* %3, align 8
+  %.pre7 = load i64, i64* %PC.i, align 8
   br label %routine_idivl__edi.exit
 
-; <label>:138:                                    ; preds = %routine_idivl__ecx.exit
-  %139 = srem i64 %131, %129
-  %140 = and i64 %132, 4294967295
-  store i64 %140, i64* %RAX.i28, align 8
-  %141 = and i64 %139, 4294967295
-  store i64 %141, i64* %RDX.i, align 8
-  %142 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %142, align 1
-  %143 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 0, i8* %143, align 1
-  %144 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %144, align 1
-  %145 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 0, i8* %145, align 1
-  %146 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %146, align 1
-  %147 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %147, align 1
-  %148 = trunc i64 %132 to i16
+; <label>:146:                                    ; preds = %routine_idivl__ecx.exit
+  %147 = srem i64 %139, %137
+  %148 = getelementptr inbounds %union.anon, %union.anon* %33, i64 0, i32 0
+  %149 = and i64 %140, 4294967295
+  store i64 %149, i64* %148, align 8
+  %150 = getelementptr inbounds %union.anon, %union.anon* %41, i64 0, i32 0
+  %151 = and i64 %147, 4294967295
+  store i64 %151, i64* %150, align 8
+  %152 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %152, align 1
+  %153 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %153, align 1
+  %154 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 0, i8* %154, align 1
+  %155 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 0, i8* %155, align 1
+  %156 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 0, i8* %156, align 1
+  %157 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 0, i8* %157, align 1
+  %158 = trunc i64 %140 to i16
   br label %routine_idivl__edi.exit
 
-routine_idivl__edi.exit:                          ; preds = %138, %136
-  %149 = phi i64 [ %.pre7, %136 ], [ %127, %138 ]
-  %150 = phi i16 [ %.pre6, %136 ], [ %148, %138 ]
-  %151 = phi %struct.Memory* [ %137, %136 ], [ %123, %138 ]
-  %152 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 17, i32 0
-  %R8W.i6 = bitcast %union.anon* %152 to i16*
-  store i16 %150, i16* %R8W.i6, align 2
-  %153 = zext i16 %150 to i64
-  store i64 %153, i64* %RAX.i28, align 8
-  %154 = add i64 %149, 9
-  store i64 %154, i64* %3, align 8
-  %155 = load i64, i64* %6, align 8
-  %156 = add i64 %155, 8
-  %157 = inttoptr i64 %155 to i64*
-  %158 = load i64, i64* %157, align 8
-  store i64 %158, i64* %RBP.i, align 8
-  store i64 %156, i64* %6, align 8
-  %159 = add i64 %149, 10
-  store i64 %159, i64* %3, align 8
-  %160 = inttoptr i64 %156 to i64*
-  %161 = load i64, i64* %160, align 8
-  store i64 %161, i64* %3, align 8
-  %162 = add i64 %155, 16
-  store i64 %162, i64* %6, align 8
-  ret %struct.Memory* %151
+routine_idivl__edi.exit:                          ; preds = %146, %144
+  %159 = phi i64 [ %.pre7, %144 ], [ %135, %146 ]
+  %160 = phi i16 [ %.pre6, %144 ], [ %158, %146 ]
+  %161 = phi %struct.Memory* [ %145, %144 ], [ %131, %146 ]
+  %162 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 17, i32 0
+  %R8W.i6 = bitcast %union.anon* %162 to i16*
+  %163 = zext i16 %160 to i64
+  store i16 %160, i16* %R8W.i6, align 2
+  store i64 %163, i64* %RAX.i28, align 8
+  %164 = add i64 %159, 9
+  store i64 %164, i64* %PC.i, align 8
+  %165 = load i64, i64* %6, align 8
+  %166 = add i64 %165, 8
+  %167 = inttoptr i64 %165 to i64*
+  %168 = load i64, i64* %167, align 8
+  store i64 %168, i64* %RBP.i, align 8
+  store i64 %166, i64* %6, align 8
+  %169 = add i64 %159, 10
+  store i64 %169, i64* %PC.i, align 8
+  %170 = inttoptr i64 %166 to i64*
+  %171 = load i64, i64* %170, align 8
+  store i64 %171, i64* %3, align 8
+  %172 = add i64 %165, 16
+  store i64 %172, i64* %6, align 8
+  ret %struct.Memory* %161
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_pushq__rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %RBP, align 8
@@ -339,9 +349,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movq__rsp___rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movq__rsp___rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -353,9 +362,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movw__di___ax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movw__di___ax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %AX = bitcast %union.anon* %3 to i16*
@@ -369,9 +377,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__0x5___edi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl__0x5___edi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -381,9 +388,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__0x4___ecx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl__0x4___ecx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -393,9 +399,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__0x3___edx(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl__0x3___edx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -405,9 +410,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__0x2___esi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl__0x2___esi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -417,9 +421,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movw__ax__MINUS0x2__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movw__ax__MINUS0x2__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %AX = bitcast %union.anon* %3 to i16*
@@ -435,9 +438,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movzwl_MINUS0x2__rbp____eax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movzwl_MINUS0x2__rbp____eax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -453,9 +455,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl__edx__MINUS0x8__rbp_(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl__edx__MINUS0x8__rbp_(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
   %EDX = bitcast %union.anon* %3 to i32*
@@ -471,9 +472,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_cltd(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_cltd(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 1
@@ -489,7 +489,7 @@ block_400488:
 }
 
 define %struct.Memory* @routine_idivl__esi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
-block_400488:
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0
   %ESI = bitcast %union.anon* %3 to i32*
@@ -514,11 +514,11 @@ block_400488:
   %21 = icmp eq i64 %18, %20
   br i1 %21, label %24, label %22
 
-; <label>:22:                                     ; preds = %block_400488
+; <label>:22:                                     ; preds = %block_400478
   %23 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %6, %struct.Memory* %2)
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-; <label>:24:                                     ; preds = %block_400488
+; <label>:24:                                     ; preds = %block_400478
   %25 = srem i64 %17, %15
   %26 = getelementptr inbounds %union.anon, %union.anon* %7, i64 0, i32 0
   %27 = and i64 %18, 4294967295
@@ -545,9 +545,8 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %24,
   ret %struct.Memory* %36
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movl_MINUS0x8__rbp____esi(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movl_MINUS0x8__rbp____esi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
@@ -564,7 +563,7 @@ block_400488:
 }
 
 define %struct.Memory* @routine_idivl__ecx(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
-block_400488:
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0
   %ECX = bitcast %union.anon* %3 to i32*
@@ -589,11 +588,11 @@ block_400488:
   %21 = icmp eq i64 %18, %20
   br i1 %21, label %24, label %22
 
-; <label>:22:                                     ; preds = %block_400488
+; <label>:22:                                     ; preds = %block_400478
   %23 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %6, %struct.Memory* %2)
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-; <label>:24:                                     ; preds = %block_400488
+; <label>:24:                                     ; preds = %block_400478
   %25 = srem i64 %17, %15
   %26 = getelementptr inbounds %union.anon, %union.anon* %7, i64 0, i32 0
   %27 = and i64 %18, 4294967295
@@ -621,7 +620,7 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %24,
 }
 
 define %struct.Memory* @routine_idivl__edi(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
-block_400488:
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0
   %EDI = bitcast %union.anon* %3 to i32*
@@ -646,11 +645,11 @@ block_400488:
   %21 = icmp eq i64 %18, %20
   br i1 %21, label %24, label %22
 
-; <label>:22:                                     ; preds = %block_400488
+; <label>:22:                                     ; preds = %block_400478
   %23 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %6, %struct.Memory* %2)
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-; <label>:24:                                     ; preds = %block_400488
+; <label>:24:                                     ; preds = %block_400478
   %25 = srem i64 %17, %15
   %26 = getelementptr inbounds %union.anon, %union.anon* %7, i64 0, i32 0
   %27 = and i64 %18, 4294967295
@@ -677,9 +676,8 @@ _ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %24,
   ret %struct.Memory* %36
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movw__ax___r8w(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movw__ax___r8w(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %AX = bitcast %union.anon* %3 to i16*
@@ -693,9 +691,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_movzwl__r8w___eax(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_movzwl__r8w___eax(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 17, i32 0
   %R8W = bitcast %union.anon* %3 to i16*
@@ -709,9 +706,8 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_popq__rbp(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_popq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
@@ -727,22 +723,21 @@ block_400488:
   ret %struct.Memory* %2
 }
 
-; Function Attrs: norecurse nounwind
-define %struct.Memory* @routine_retq(%struct.State* nocapture dereferenceable(3376), i64, %struct.Memory* readnone returned) local_unnamed_addr #1 {
-block_400488:
+define %struct.Memory* @routine_retq(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
+block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 1
   store i64 %4, i64* %PC, align 8
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %6 = load i64, i64* %5, align 8
-  %7 = inttoptr i64 %6 to i64*
-  %8 = load i64, i64* %7, align 8
-  store i64 %8, i64* %PC, align 8
-  %9 = add i64 %6, 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %7 = load i64, i64* %6, align 8
+  %8 = inttoptr i64 %7 to i64*
+  %9 = load i64, i64* %8, align 8
   store i64 %9, i64* %5, align 8
+  %10 = add i64 %7, 8
+  store i64 %10, i64* %6, align 8
   ret %struct.Memory* %2
 }
 
 attributes #0 = { alwaysinline }
-attributes #1 = { norecurse nounwind }
