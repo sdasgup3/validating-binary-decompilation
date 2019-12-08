@@ -7,11 +7,8 @@
 |  toy-examples (78)|  -O3 |  SSA edges only | Naive | O3 | 63/15 | 3 extra passes failing in 1 | 3 |
 |  toy-examples|  -O3 |  SSA edges only | Naive | custom  | 62/16 | | 4 |
 
-|  single-source (2538)|  -O0 |  SSA edges only | Naive | O3     | 2331| | 5|
-|  single-source       |  -O0 |  SSA edges only | Naive | custom | 2379| | 6 |
-
-|  single-source|  -O3 |  SSA edges only | Naive | O3 | | | |
-|  single-source|  -O3 |  SSA edges only | Naive | custom | | | |
+|  single-source (2538)|  -O0 |  SSA edges only | Naive | O3     | 2555/ | saved in matchPass\_1 | 5|
+|  single-source       |  -O0 |  SSA edges only | Naive | custom | 2791/ | saved in matchPass\_2| 6 |
 
 |  spec2006|  -O0 |  SSA edges only | Naive | O3 | | | 7 |
 |  spec2006|  -O0 |  SSA edges only | Naive | custom | | | |

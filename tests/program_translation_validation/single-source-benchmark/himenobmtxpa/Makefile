@@ -1,5 +1,22 @@
 .PHONY: binary objdump mcsema mcsema_opt  main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
-INDIR=binary/
+
+ifndef BIN_OPT
+  BIN_OPT=O0
+  INDIR=binary/
+else
+  ifeq (${BIN_OPT},O0)
+    INDIR=binary/
+  else
+    INDIR=binary_${BIN_OPT}/
+  endif
+endif
+
+
+NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg
+ifdef NORM
+  NORM_PASS=-${NORM}
+endif
+
 
 all: binary objdump mcsema mcsema_opt  main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
 compd: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
@@ -7,10 +24,11 @@ compd_opt: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_par
 match: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
 
 binary:
-	clang -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test
+	mkdir -p ${INDIR}
+	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test
 
 reloc_binary:
-	clang -Wl,-emit-relocs -O0 -lm -lpthread ${INDIR}test.ll -o ${INDIR}test.reloc
+	/usr/bin/clang-6.0 -Wl,-emit-relocs -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test.reloc
 
 objdump:
 	objdump -d ${INDIR}test > ${INDIR}/test.objdump
@@ -21,8 +39,8 @@ mcsema:
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
 
 mcsema_opt:
-	../../../scripts/remove_definitions.pl --file binary/test.mcsema.ll --out binary/test.mcsema.calls_renamed.ll
-	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S  -O3    ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
 
 main:
 	@echo
