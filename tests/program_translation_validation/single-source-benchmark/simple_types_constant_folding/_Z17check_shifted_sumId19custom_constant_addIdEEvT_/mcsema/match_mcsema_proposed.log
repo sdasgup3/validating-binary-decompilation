@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x556128364648]:   %63 = load double, double* inttoptr (i64 add (i64 ptrtoint (%seg_4189d0__rodata_type* @seg_4189d0__rodata to i64), i64 40) to double*), align 8
+[0x55612977f578]:   %64 = load double, double* %42, align 1
+[0x556129790678]:   %61 = load double, double* bitcast (%G_0x9d4d__rip__type* @G_0x9d4d__rip_ to double*), align 8
+Iso Match NOT Found
+Writing 'sub_40ec80__Z17check_shifted_sumId19custom_constant_addIdEEvT_-mcsema-diff.dot'...
+Writing 'sub_40ec80__Z17check_shifted_sumId19custom_constant_addIdEEvT_-mcsema-diff.dot':Done
+
+Writing '_Z17check_shifted_sumId19custom_constant_addIdEEvT_-proposed-diff.dot'...
+Writing '_Z17check_shifted_sumId19custom_constant_addIdEEvT_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z17check_shifted_sumId19custom_constant_addIdEEvT_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z17check_shifted_sumId19custom_constant_addIdEEvT_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+30.45user 0.47system 0:30.94elapsed 99%CPU (0avgtext+0avgdata 66808maxresident)k
+0inputs+672outputs (0major+29054minor)pagefaults 0swaps

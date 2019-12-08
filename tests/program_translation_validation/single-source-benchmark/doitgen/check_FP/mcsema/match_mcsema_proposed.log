@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x564e61aef7b0]:   %346 = fcmp uno double %341, %345
+[0x564e61ceaa60]:   %434 = fcmp uno double %429, %433
+[0x564e61ceba10]:   %448 = fcmp olt double %429, %433
+[0x564e61cec5b0]:   %446 = fcmp ogt double %429, %433
+[0x564e61cecba0]:   %450 = fcmp oeq double %429, %433
+Multiple matches exist for [0x564e61af03d0]:   %358 = fcmp ogt double %341, %345
+[0x564e61ceaa60]:   %434 = fcmp uno double %429, %433
+[0x564e61ceba10]:   %448 = fcmp olt double %429, %433
+[0x564e61cec5b0]:   %446 = fcmp ogt double %429, %433
+[0x564e61cecba0]:   %450 = fcmp oeq double %429, %433
+Multiple matches exist for [0x564e61af0530]:   %360 = fcmp olt double %341, %345
+[0x564e61ceaa60]:   %434 = fcmp uno double %429, %433
+[0x564e61ceba10]:   %448 = fcmp olt double %429, %433
+[0x564e61cec5b0]:   %446 = fcmp ogt double %429, %433
+[0x564e61cecba0]:   %450 = fcmp oeq double %429, %433
+Multiple matches exist for [0x564e61af0690]:   %362 = fcmp oeq double %341, %345
+[0x564e61ceaa60]:   %434 = fcmp uno double %429, %433
+[0x564e61ceba10]:   %448 = fcmp olt double %429, %433
+[0x564e61cec5b0]:   %446 = fcmp ogt double %429, %433
+[0x564e61cecba0]:   %450 = fcmp oeq double %429, %433
+Iso Match NOT Found
+Writing 'sub_400f60_check_FP-mcsema-diff.dot'...
+Writing 'sub_400f60_check_FP-mcsema-diff.dot':Done
+
+Writing 'check_FP-proposed-diff.dot'...
+Writing 'check_FP-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [check_FP] from ../binary/test.mcsema.opt.ll
+Extracting function [check_FP] from mcsema/test.proposed.opt.ll
+Matcher Done...
+61.92user 60.97system 2:03.39elapsed 99%CPU (0avgtext+0avgdata 16856maxresident)k
+0inputs+14800outputs (0major+3637minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_412910__Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc-mcsema-diff.dot'...
+Writing 'sub_412910__Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc-mcsema-diff.dot':Done
+
+Writing '_Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc-proposed-diff.dot'...
+Writing '_Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z29test_while_loop_unroll_factorILi22EiEvPKT0_iPKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+132.50user 2.66system 2:15.27elapsed 99%CPU (0avgtext+0avgdata 63756maxresident)k
+0inputs+3776outputs (0major+53497minor)pagefaults 0swaps

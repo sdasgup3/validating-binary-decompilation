@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400c10_kernel_syr2k-mcsema-diff.dot'...
+Writing 'sub_400c10_kernel_syr2k-mcsema-diff.dot':Done
+
+Writing 'kernel_syr2k-proposed-diff.dot'...
+Writing 'kernel_syr2k-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [kernel_syr2k] from ../binary/test.mcsema.opt.ll
+Extracting function [kernel_syr2k] from mcsema/test.proposed.opt.ll
+Matcher Done...
+29.98user 31.80system 1:02.16elapsed 99%CPU (0avgtext+0avgdata 17792maxresident)k
+0inputs+12600outputs (0major+4626minor)pagefaults 0swaps

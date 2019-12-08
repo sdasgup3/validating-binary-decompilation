@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv-mcsema-diff.dot'...
+Writing '_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv-mcsema-diff.dot':Done
+
+Writing 'sub_402280__ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv-proposed-diff.dot'...
+Writing 'sub_402280__ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv] from mcsema/test.proposed.opt.ll
+Extracting function [_ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+7.87user 0.71system 0:08.90elapsed 96%CPU (0avgtext+0avgdata 17640maxresident)k
+0inputs+344outputs (0major+3739minor)pagefaults 0swaps

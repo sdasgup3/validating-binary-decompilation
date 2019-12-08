@@ -1,0 +1,2 @@
+oourafft/cft1st/mcsema/match_proposed_mcsema.log filter=lfs diff=lfs merge=lfs -text
+oourafft/cft1st/mcsema/match_mcsema_proposed.log filter=lfs diff=lfs merge=lfs -text

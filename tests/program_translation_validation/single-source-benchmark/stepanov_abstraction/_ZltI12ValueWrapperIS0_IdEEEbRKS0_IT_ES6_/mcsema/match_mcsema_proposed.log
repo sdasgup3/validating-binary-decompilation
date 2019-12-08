@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4031b0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_-mcsema-diff.dot'...
+Writing 'sub_4031b0__ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_-mcsema-diff.dot':Done
+
+Writing '_ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_-proposed-diff.dot'...
+Writing '_ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZltI12ValueWrapperIS0_IdEEEbRKS0_IT_ES6_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+3.20user 0.16system 0:03.47elapsed 96%CPU (0avgtext+0avgdata 23792maxresident)k
+0inputs+272outputs (0major+3509minor)pagefaults 0swaps

@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x564306c8b990]:   %321 = fcmp uno double %316, %320
+[0x564306e259b0]:   %203 = fcmp uno double %198, %202
+[0x564306e25bc0]:   %215 = fcmp ogt double %198, %202
+[0x564306e2b560]:   %219 = fcmp oeq double %198, %202
+[0x564306e2b7c0]:   %217 = fcmp olt double %198, %202
+Multiple matches exist for [0x564306c8c4d0]:   %333 = fcmp ogt double %316, %320
+[0x564306e259b0]:   %203 = fcmp uno double %198, %202
+[0x564306e25bc0]:   %215 = fcmp ogt double %198, %202
+[0x564306e2b560]:   %219 = fcmp oeq double %198, %202
+[0x564306e2b7c0]:   %217 = fcmp olt double %198, %202
+Multiple matches exist for [0x564306c8c630]:   %335 = fcmp olt double %316, %320
+[0x564306e259b0]:   %203 = fcmp uno double %198, %202
+[0x564306e25bc0]:   %215 = fcmp ogt double %198, %202
+[0x564306e2b560]:   %219 = fcmp oeq double %198, %202
+[0x564306e2b7c0]:   %217 = fcmp olt double %198, %202
+Multiple matches exist for [0x564306c8c790]:   %337 = fcmp oeq double %316, %320
+[0x564306e259b0]:   %203 = fcmp uno double %198, %202
+[0x564306e25bc0]:   %215 = fcmp ogt double %198, %202
+[0x564306e2b560]:   %219 = fcmp oeq double %198, %202
+[0x564306e2b7c0]:   %217 = fcmp olt double %198, %202
+Iso Match NOT Found
+Writing 'sub_400e10_check_FP-mcsema-diff.dot'...
+Writing 'sub_400e10_check_FP-mcsema-diff.dot':Done
+
+Writing 'check_FP-proposed-diff.dot'...
+Writing 'check_FP-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [check_FP] from ../binary/test.mcsema.opt.ll
+Extracting function [check_FP] from mcsema/test.proposed.opt.ll
+Matcher Done...
+12.53user 22.82system 0:36.24elapsed 97%CPU (0avgtext+0avgdata 14148maxresident)k
+0inputs+5056outputs (0major+2321minor)pagefaults 0swaps

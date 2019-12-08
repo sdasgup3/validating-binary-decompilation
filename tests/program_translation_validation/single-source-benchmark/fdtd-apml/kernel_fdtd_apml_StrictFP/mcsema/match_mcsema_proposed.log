@@ -1,0 +1,8 @@
+Matching sub_401f10_kernel_fdtd_apml_StrictFP Vs kernel_fdtd_apml_StrictFP
+
+
+[Error] Failed to extract Potential Matches for:[0x5618fe0cfc38]:   %4815 = inttoptr i64 %4813 to i32*
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+23.33user 0.23system 0:24.41elapsed 96%CPU (0avgtext+0avgdata 185752maxresident)k
+0inputs+8outputs (0major+45528minor)pagefaults 0swaps

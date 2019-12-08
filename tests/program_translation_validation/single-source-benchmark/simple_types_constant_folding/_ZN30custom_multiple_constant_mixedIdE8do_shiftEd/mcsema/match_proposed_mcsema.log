@@ -1,0 +1,676 @@
+Matching _ZN30custom_multiple_constant_mixedIdE8do_shiftEd Vs sub_40e5a0__ZN30custom_multiple_constant_mixedIdE8do_shiftEd
+
+
+[Info] Retrieve Potential Matches...
+[0x559eb76de560]:   store i64 %60, i64* %3, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb76de6a0]:   store i64 %61, i64* %6, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb76fd810]:   store i64 %30, i64* %PC.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb76fdc30]:   store double %39, double* %17, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb770d040]:   store i32 %50, i32* %52, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb770d180]:   store i64 %53, i64* %PC.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb770d3e0]:   store i64 %57, i64* %RBP.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb770d460]:   store i64 %55, i64* %6, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb770d5a0]:   store i64 %58, i64* %PC.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772b7b0]:   store i64 %4, i64* %9, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772b830]:   store i64 %8, i64* %6, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772b910]:   store i64 %8, i64* %RBP.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772ba70]:   store i64 %12, i64* %13, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772bb50]:   store double 0.000000e+00, double* %15, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb772bc70]:   store i64 %12, i64* %18, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7731c60]:   store double 0.000000e+00, double* %20, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7731f20]:   store i64 %23, i64* %PC.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7732060]:   store i64 %25, i64* %26, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7739660]:   store i32 %42, i32* %43, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7739800]:   store i32 %44, i32* %46, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb7739a80]:   store i32 %47, i32* %49, align 1 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+[0x559eb773b520]:   store i64 %5, i64* %PC.i, align 8 {
+	[0x559eb7f5cd30]:  store i64 %7, i64* %PC, align 8
+	[0x559eb7f5d010]:  store i64 %6, i64* %11, align 8
+	[0x559eb7f5d090]:  store i64 %10, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5d170]:  store i64 %10, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5d3e0]:  store i64 %13, i64* %14, align 1, !tbaa !1265
+	[0x559eb7f5d5e0]:  store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+	[0x559eb7f5d810]:  store i64 %17, i64* %19, align 1, !tbaa !1265
+	[0x559eb7f5da10]:  store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+	[0x559eb7f5db90]:  store i64 %23, i64* %PC, align 8
+	[0x559eb7f5ddd0]:  store i64 %25, i64* %26, align 8
+	[0x559eb7f5e010]:  store i64 %30, i64* %PC, align 8
+	[0x559eb7f5e430]:  store double %39, double* %18, align 1, !tbaa !1265
+	[0x559eb7f5e650]:  store i32 %42, i32* %43, align 1, !tbaa !1267
+	[0x559eb7f5e7b0]:  store i32 %44, i32* %46, align 1, !tbaa !1267
+	[0x559eb7f5ea30]:  store i32 %47, i32* %49, align 1, !tbaa !1267
+	[0x559eb7f5ec20]:  store i32 %50, i32* %52, align 1, !tbaa !1267
+	[0x559eb7f5ed20]:  store i64 %53, i64* %PC, align 8
+	[0x559eb7f5ef40]:  store i64 %57, i64* %RBP, align 8, !tbaa !1261
+	[0x559eb7f5efc0]:  store i64 %55, i64* %8, align 8, !tbaa !1261
+	[0x559eb7f5f0c0]:  store i64 %58, i64* %PC, align 8
+	[0x559eb7f5f2f0]:  store i64 %61, i64* %59, align 8, !tbaa !1261
+	[0x559eb7f5f3f0]:  store i64 %62, i64* %8, align 8, !tbaa !1261
+	}
+
+
+[Info]: Phase I: Dual Simulation: Round: 0
+Round: 0
+
+Removing: [0x559eb7f5de38]:   %27 = load i64, i64* %RBP, align 8
+From the pot matches of: [0x559eb7737218]:   %4 = load i64, i64* %RBP.i, align 8
+
+
+Uprime : [0x559eb772b7b0]:   store i64 %4, i64* %9, align 8
+
+
+Uprime Matches: [0x559eb7f5cd30]:   store i64 %7, i64* %PC, align 8
+[0x559eb7f5d010]:   store i64 %6, i64* %11, align 8
+[0x559eb7f5d090]:   store i64 %10, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5d170]:   store i64 %10, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5d3e0]:   store i64 %13, i64* %14, align 1, !tbaa !1265
+[0x559eb7f5d5e0]:   store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+[0x559eb7f5d810]:   store i64 %17, i64* %19, align 1, !tbaa !1265
+[0x559eb7f5da10]:   store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+[0x559eb7f5db90]:   store i64 %23, i64* %PC, align 8
+[0x559eb7f5ddd0]:   store i64 %25, i64* %26, align 8
+[0x559eb7f5e010]:   store i64 %30, i64* %PC, align 8
+[0x559eb7f5e430]:   store double %39, double* %18, align 1, !tbaa !1265
+[0x559eb7f5e650]:   store i32 %42, i32* %43, align 1, !tbaa !1267
+[0x559eb7f5e7b0]:   store i32 %44, i32* %46, align 1, !tbaa !1267
+[0x559eb7f5ea30]:   store i32 %47, i32* %49, align 1, !tbaa !1267
+[0x559eb7f5ec20]:   store i32 %50, i32* %52, align 1, !tbaa !1267
+[0x559eb7f5ed20]:   store i64 %53, i64* %PC, align 8
+[0x559eb7f5ef40]:   store i64 %57, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5efc0]:   store i64 %55, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5f0c0]:   store i64 %58, i64* %PC, align 8
+[0x559eb7f5f2f0]:   store i64 %61, i64* %59, align 8, !tbaa !1261
+[0x559eb7f5f3f0]:   store i64 %62, i64* %8, align 8, !tbaa !1261
+
+
+Adj: [0x559eb7f5deb0]:   %28 = add i64 %27, -8
+
+
+Removing: [0x559eb7f5bc88]:   %9 = load i64, i64* %8, align 8, !tbaa !1261
+From the pot matches of: [0x559eb772b9f8]:   %12 = load i64, i64* bitcast (%G_0xa43c__rip__type* @G_0xa43c__rip_ to i64*), align 8
+
+
+Uprime : [0x559eb772bc70]:   store i64 %12, i64* %18, align 1
+
+
+Uprime Matches: [0x559eb7f5cd30]:   store i64 %7, i64* %PC, align 8
+[0x559eb7f5d010]:   store i64 %6, i64* %11, align 8
+[0x559eb7f5d090]:   store i64 %10, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5d170]:   store i64 %10, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5d3e0]:   store i64 %13, i64* %14, align 1, !tbaa !1265
+[0x559eb7f5d5e0]:   store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+[0x559eb7f5d810]:   store i64 %17, i64* %19, align 1, !tbaa !1265
+[0x559eb7f5da10]:   store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+[0x559eb7f5db90]:   store i64 %23, i64* %PC, align 8
+[0x559eb7f5ddd0]:   store i64 %25, i64* %26, align 8
+[0x559eb7f5e010]:   store i64 %30, i64* %PC, align 8
+[0x559eb7f5e430]:   store double %39, double* %18, align 1, !tbaa !1265
+[0x559eb7f5e650]:   store i32 %42, i32* %43, align 1, !tbaa !1267
+[0x559eb7f5e7b0]:   store i32 %44, i32* %46, align 1, !tbaa !1267
+[0x559eb7f5ea30]:   store i32 %47, i32* %49, align 1, !tbaa !1267
+[0x559eb7f5ec20]:   store i32 %50, i32* %52, align 1, !tbaa !1267
+[0x559eb7f5ed20]:   store i64 %53, i64* %PC, align 8
+[0x559eb7f5ef40]:   store i64 %57, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5efc0]:   store i64 %55, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5f0c0]:   store i64 %58, i64* %PC, align 8
+[0x559eb7f5f2f0]:   store i64 %61, i64* %59, align 8, !tbaa !1261
+[0x559eb7f5f3f0]:   store i64 %62, i64* %8, align 8, !tbaa !1261
+
+
+Adj: [0x559eb7f5cf30]:   %10 = add i64 %9, -8
+[0x559eb7f5da90]:   %22 = add i64 %9, -16
+
+
+Removing: [0x559eb7f5e138]:   %33 = load <2 x i32>, <2 x i32>* %32, align 1
+From the pot matches of: [0x559eb772b9f8]:   %12 = load i64, i64* bitcast (%G_0xa43c__rip__type* @G_0xa43c__rip_ to i64*), align 8
+
+
+Uprime : [0x559eb772bc70]:   store i64 %12, i64* %18, align 1
+
+
+Uprime Matches: [0x559eb7f5cd30]:   store i64 %7, i64* %PC, align 8
+[0x559eb7f5d010]:   store i64 %6, i64* %11, align 8
+[0x559eb7f5d090]:   store i64 %10, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5d170]:   store i64 %10, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5d3e0]:   store i64 %13, i64* %14, align 1, !tbaa !1265
+[0x559eb7f5d5e0]:   store double 0.000000e+00, double* %16, align 1, !tbaa !1265
+[0x559eb7f5d810]:   store i64 %17, i64* %19, align 1, !tbaa !1265
+[0x559eb7f5da10]:   store double 0.000000e+00, double* %21, align 1, !tbaa !1265
+[0x559eb7f5db90]:   store i64 %23, i64* %PC, align 8
+[0x559eb7f5ddd0]:   store i64 %25, i64* %26, align 8
+[0x559eb7f5e010]:   store i64 %30, i64* %PC, align 8
+[0x559eb7f5e430]:   store double %39, double* %18, align 1, !tbaa !1265
+[0x559eb7f5e650]:   store i32 %42, i32* %43, align 1, !tbaa !1267
+[0x559eb7f5e7b0]:   store i32 %44, i32* %46, align 1, !tbaa !1267
+[0x559eb7f5ea30]:   store i32 %47, i32* %49, align 1, !tbaa !1267
+[0x559eb7f5ec20]:   store i32 %50, i32* %52, align 1, !tbaa !1267
+[0x559eb7f5ed20]:   store i64 %53, i64* %PC, align 8
+[0x559eb7f5ef40]:   store i64 %57, i64* %RBP, align 8, !tbaa !1261
+[0x559eb7f5efc0]:   store i64 %55, i64* %8, align 8, !tbaa !1261
+[0x559eb7f5f0c0]:   store i64 %58, i64* %PC, align 8
+[0x559eb7f5f2f0]:   store i64 %61, i64* %59, align 8, !tbaa !1261
+[0x559eb7f5f3f0]:   store i64 %62, i64* %8, align 8, !tbaa !1261
+
+
+Adj: [0x559eb7f5e830]:   %47 = extractelement <2 x i32> %33, i32 0
+[0x559eb7f5eab0]:   %50 = extractelement <2 x i32> %33, i32 1
+
+
+
+No potential match for: [0x559eb772b9f8]:   %12 = load i64, i64* bitcast (%G_0xa43c__rip__type* @G_0xa43c__rip_ to i64*), align 8
+
+
+Dumping DOT FILE!Writing '_ZN30custom_multiple_constant_mixedIdE8do_shiftEd-mcsema-diff.dot'...
+Writing '_ZN30custom_multiple_constant_mixedIdE8do_shiftEd-mcsema-diff.dot':Done
+
+Writing 'sub_40e5a0__ZN30custom_multiple_constant_mixedIdE8do_shiftEd-proposed-diff.dot'...
+Writing 'sub_40e5a0__ZN30custom_multiple_constant_mixedIdE8do_shiftEd-proposed-diff.dot':Done
+
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:526: bool llvm::Matcher::dualSimulation(llvm::Function*, llvm::Function*): Assertion `0 && "Zero Match found: I"' failed.
+Command terminated by signal 6
+36.22user 0.58system 0:37.98elapsed 96%CPU (0avgtext+0avgdata 66736maxresident)k
+0inputs+152outputs (0major+75934minor)pagefaults 0swaps

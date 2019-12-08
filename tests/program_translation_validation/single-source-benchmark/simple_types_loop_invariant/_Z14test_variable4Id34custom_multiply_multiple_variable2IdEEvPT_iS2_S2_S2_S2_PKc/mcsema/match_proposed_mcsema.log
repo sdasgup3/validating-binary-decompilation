@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot'...
+Writing '_Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc-mcsema-diff.dot':Done
+
+Writing 'sub_40bae0__Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot'...
+Writing 'sub_40bae0__Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc] from mcsema/test.proposed.opt.ll
+Extracting function [_Z14test_variable4Id34custom_multiply_multiple_variable2IdEEvPT_iS2_S2_S2_S2_PKc] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+646.05user 3.25system 11:07.82elapsed 97%CPU (0avgtext+0avgdata 54912maxresident)k
+0inputs+4048outputs (0major+110726minor)pagefaults 0swaps

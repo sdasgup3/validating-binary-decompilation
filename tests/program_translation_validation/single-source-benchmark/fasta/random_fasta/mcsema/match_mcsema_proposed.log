@@ -1,0 +1,8 @@
+Matching sub_400990_random_fasta Vs random_fasta
+
+
+[Error] Failed to extract Potential Matches for:[0x55a32a50cfc8]:   %138 = phi i64 [ %.pre8, %125 ], [ %91, %137 ]
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.10user 0.00system 0:00.39elapsed 27%CPU (0avgtext+0avgdata 13168maxresident)k
+0inputs+8outputs (0major+1075minor)pagefaults 0swaps

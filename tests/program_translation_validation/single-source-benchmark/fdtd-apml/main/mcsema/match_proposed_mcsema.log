@@ -1,0 +1,8 @@
+Matching main Vs sub_400880_main
+
+
+[Error] Failed to extract Potential Matches for:[0x5577ff1f6ac8]:   %469 = load i64, i64* %RBP.i, align 8
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+1.37user 0.05system 0:01.82elapsed 78%CPU (0avgtext+0avgdata 26896maxresident)k
+0inputs+8outputs (0major+4625minor)pagefaults 0swaps

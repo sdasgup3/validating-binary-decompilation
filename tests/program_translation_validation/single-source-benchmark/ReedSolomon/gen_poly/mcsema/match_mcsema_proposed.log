@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4007b0_gen_poly-mcsema-diff.dot'...
+Writing 'sub_4007b0_gen_poly-mcsema-diff.dot':Done
+
+Writing 'gen_poly-proposed-diff.dot'...
+Writing 'gen_poly-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [gen_poly] from ../binary/test.mcsema.opt.ll
+Extracting function [gen_poly] from mcsema/test.proposed.opt.ll
+Matcher Done...
+23.36user 24.39system 0:48.35elapsed 98%CPU (0avgtext+0avgdata 16812maxresident)k
+0inputs+7176outputs (0major+4516minor)pagefaults 0swaps

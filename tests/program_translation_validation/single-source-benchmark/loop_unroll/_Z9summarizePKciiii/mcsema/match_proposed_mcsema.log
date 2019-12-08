@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z9summarizePKciiii-mcsema-diff.dot'...
+Writing '_Z9summarizePKciiii-mcsema-diff.dot':Done
+
+Writing 'sub_400890__Z9summarizePKciiii-proposed-diff.dot'...
+Writing 'sub_400890__Z9summarizePKciiii-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z9summarizePKciiii] from mcsema/test.proposed.opt.ll
+Extracting function [_Z9summarizePKciiii] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+7823.76user 38.35system 2:13:16elapsed 98%CPU (0avgtext+0avgdata 64260maxresident)k
+0inputs+41256outputs (0major+825111minor)pagefaults 0swaps

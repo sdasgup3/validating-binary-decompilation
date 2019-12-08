@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x560c4d288900]:   %34 = icmp ult i32 %31, 4
+[0x560c4e46f330]:   %35 = icmp ult i32 %32, 4
+[0x560c4e46f490]:   %34 = icmp ult i32 %32, %30
+Iso Match NOT Found
+Writing 'sub_417fb0__ZN28custom_multiple_constant_addIaE8do_shiftEa-mcsema-diff.dot'...
+Writing 'sub_417fb0__ZN28custom_multiple_constant_addIaE8do_shiftEa-mcsema-diff.dot':Done
+
+Writing '_ZN28custom_multiple_constant_addIaE8do_shiftEa-proposed-diff.dot'...
+Writing '_ZN28custom_multiple_constant_addIaE8do_shiftEa-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN28custom_multiple_constant_addIaE8do_shiftEa] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN28custom_multiple_constant_addIaE8do_shiftEa] from mcsema/test.proposed.opt.ll
+Matcher Done...
+12.09user 0.25system 0:13.19elapsed 93%CPU (0avgtext+0avgdata 66688maxresident)k
+0inputs+144outputs (0major+35802minor)pagefaults 0swaps

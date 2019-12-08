@@ -1,0 +1,8 @@
+Matching _Z13record_resultdPKc Vs sub_400800__Z13record_resultdPKc
+
+
+[Error] Failed to extract Potential Matches for:[0x555b6f74aed8]:   %.pre6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+1.60user 0.04system 0:01.89elapsed 87%CPU (0avgtext+0avgdata 67132maxresident)k
+0inputs+8outputs (0major+13004minor)pagefaults 0swaps

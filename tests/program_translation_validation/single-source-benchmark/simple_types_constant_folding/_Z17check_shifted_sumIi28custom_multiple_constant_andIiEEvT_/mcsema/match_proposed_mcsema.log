@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_-mcsema-diff.dot'...
+Writing '_Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_-mcsema-diff.dot':Done
+
+Writing 'sub_4130f0__Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_-proposed-diff.dot'...
+Writing 'sub_4130f0__Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_] from mcsema/test.proposed.opt.ll
+Extracting function [_Z17check_shifted_sumIi28custom_multiple_constant_andIiEEvT_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+294.64user 1.71system 4:56.54elapsed 99%CPU (0avgtext+0avgdata 66860maxresident)k
+0inputs+832outputs (0major+88008minor)pagefaults 0swaps

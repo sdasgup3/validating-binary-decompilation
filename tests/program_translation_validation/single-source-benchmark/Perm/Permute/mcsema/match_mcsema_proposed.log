@@ -1,0 +1,27 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x556c6c959fb0]:   %211 = icmp ult i64 %210, ptrtoint (%permarray_type* @permarray to i64)
+[0x556c6ca25380]:   %177 = icmp ult i64 %175, %172
+[0x556c6ca254e0]:   %176 = icmp ult i64 %175, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+Multiple matches exist for [0x556c6c8ec790]:   %242 = icmp ult i64 %241, ptrtoint (%permarray_type* @permarray to i64)
+[0x556c6ca41ef0]:   %208 = icmp ult i64 %206, %203
+[0x556c6ca42490]:   %207 = icmp ult i64 %206, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+Multiple matches exist for [0x556c6c8bfff0]:   %317 = icmp ult i64 %316, ptrtoint (%permarray_type* @permarray to i64)
+[0x556c6c9f3850]:   %281 = icmp ult i64 %279, %276
+[0x556c6c9f4780]:   %280 = icmp ult i64 %279, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+Multiple matches exist for [0x556c6c8c1410]:   %350 = icmp ult i64 %349, ptrtoint (%permarray_type* @permarray to i64)
+[0x556c6c9fad30]:   %313 = icmp ult i64 %312, ptrtoint (%G__0x616750_type* @G__0x616750 to i64)
+[0x556c6c9fae60]:   %314 = icmp ult i64 %312, %309
+Iso Match NOT Found
+Writing 'sub_4005c0_Permute-mcsema-diff.dot'...
+Writing 'sub_4005c0_Permute-mcsema-diff.dot':Done
+
+Writing 'Permute-proposed-diff.dot'...
+Writing 'Permute-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Permute] from ../binary/test.mcsema.opt.ll
+Extracting function [Permute] from mcsema/test.proposed.opt.ll
+Matcher Done...
+11.62user 9.67system 0:21.47elapsed 99%CPU (0avgtext+0avgdata 13860maxresident)k
+0inputs+4040outputs (0major+3530minor)pagefaults 0swaps

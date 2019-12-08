@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55c7f650d408]:   %63 = load double, double* inttoptr (i64 add (i64 ptrtoint (%seg_416560__rodata_type* @seg_416560__rodata to i64), i64 16) to double*), align 16
+[0x55c7f865df68]:   %64 = load double, double* %42, align 1
+[0x55c7f866e948]:   %61 = load double, double* bitcast (%G_0x15095__rip__type* @G_0x15095__rip_ to double*), align 8
+Iso Match NOT Found
+Writing 'sub_4014b0__Z9check_sumIdEvT_-mcsema-diff.dot'...
+Writing 'sub_4014b0__Z9check_sumIdEvT_-mcsema-diff.dot':Done
+
+Writing '_Z9check_sumIdEvT_-proposed-diff.dot'...
+Writing '_Z9check_sumIdEvT_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z9check_sumIdEvT_] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z9check_sumIdEvT_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+36.33user 0.75system 0:38.22elapsed 97%CPU (0avgtext+0avgdata 63484maxresident)k
+0inputs+680outputs (0major+112799minor)pagefaults 0swaps

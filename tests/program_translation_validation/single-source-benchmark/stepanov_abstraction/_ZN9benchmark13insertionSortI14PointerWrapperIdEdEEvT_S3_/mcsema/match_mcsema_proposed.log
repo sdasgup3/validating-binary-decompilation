@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x561e342f04f0]:   %101 = fcmp uno double %94, %99
+[0x561e34146b10]:   %222 = fcmp ogt double %203, %208
+[0x561e34276a60]:   %226 = fcmp oeq double %203, %208
+[0x561e344da520]:   %224 = fcmp olt double %203, %208
+[0x561e34862c50]:   %210 = fcmp uno double %203, %208
+Multiple matches exist for [0x561e342f0ea0]:   %113 = fcmp ogt double %94, %99
+[0x561e34146b10]:   %222 = fcmp ogt double %203, %208
+[0x561e34276a60]:   %226 = fcmp oeq double %203, %208
+[0x561e344da520]:   %224 = fcmp olt double %203, %208
+[0x561e34862c50]:   %210 = fcmp uno double %203, %208
+Multiple matches exist for [0x561e342f1000]:   %115 = fcmp olt double %94, %99
+[0x561e34146b10]:   %222 = fcmp ogt double %203, %208
+[0x561e34276a60]:   %226 = fcmp oeq double %203, %208
+[0x561e344da520]:   %224 = fcmp olt double %203, %208
+[0x561e34862c50]:   %210 = fcmp uno double %203, %208
+Multiple matches exist for [0x561e342f1160]:   %117 = fcmp oeq double %94, %99
+[0x561e34146b10]:   %222 = fcmp ogt double %203, %208
+[0x561e34276a60]:   %226 = fcmp oeq double %203, %208
+[0x561e344da520]:   %224 = fcmp olt double %203, %208
+[0x561e34862c50]:   %210 = fcmp uno double %203, %208
+Iso Match NOT Found
+Writing 'sub_405af0__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-mcsema-diff.dot'...
+Writing 'sub_405af0__ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-mcsema-diff.dot':Done
+
+Writing '_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-proposed-diff.dot'...
+Writing '_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN9benchmark13insertionSortI14PointerWrapperIdEdEEvT_S3_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+32.79user 4.41system 0:38.06elapsed 97%CPU (0avgtext+0avgdata 24092maxresident)k
+0inputs+5168outputs (0major+12102minor)pagefaults 0swaps

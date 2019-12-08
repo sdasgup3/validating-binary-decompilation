@@ -1,0 +1,8 @@
+Matching Func2 Vs sub_4009f0_Func2
+
+
+[Error] Failed to extract Potential Matches for:[0x559defa15688]:   %98 = load i64, i64* %RBP.i, align 8
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.12user 0.00system 0:00.53elapsed 24%CPU (0avgtext+0avgdata 13696maxresident)k
+0inputs+8outputs (0major+1139minor)pagefaults 0swaps

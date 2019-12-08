@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4055b0__ZltIdEbRK14PointerWrapperIT_ES4_-mcsema-diff.dot'...
+Writing 'sub_4055b0__ZltIdEbRK14PointerWrapperIT_ES4_-mcsema-diff.dot':Done
+
+Writing '_ZltIdEbRK14PointerWrapperIT_ES4_-proposed-diff.dot'...
+Writing '_ZltIdEbRK14PointerWrapperIT_ES4_-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZltIdEbRK14PointerWrapperIT_ES4_] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZltIdEbRK14PointerWrapperIT_ES4_] from mcsema/test.proposed.opt.ll
+Matcher Done...
+2.37user 0.10system 0:02.67elapsed 92%CPU (0avgtext+0avgdata 24028maxresident)k
+0inputs+176outputs (0major+6125minor)pagefaults 0swaps

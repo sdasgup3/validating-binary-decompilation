@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55abd45e5628]:   %122 = load double, double* bitcast (%G_0x7a45__rip__type* @G_0x7a45__rip_ to double*), align 8
+[0x55abd5097a88]:   %124 = load double, double* inttoptr (i64 add (i64 ptrtoint (%seg_413e20__rodata_type* @seg_413e20__rodata to i64), i64 40) to double*), align 8
+[0x55abd5097ae8]:   %125 = load double, double* %46, align 1
+Iso Match NOT Found
+Writing '_Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_-mcsema-diff.dot'...
+Writing '_Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_-mcsema-diff.dot':Done
+
+Writing 'sub_40c3b0__Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_-proposed-diff.dot'...
+Writing 'sub_40c3b0__Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_] from mcsema/test.proposed.opt.ll
+Extracting function [_Z26check_shifted_variable_sumId33custom_multiply_multiple_variableIdEEvT_S2_S2_S2_S2_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+252.71user 1.32system 4:25.12elapsed 95%CPU (0avgtext+0avgdata 54744maxresident)k
+0inputs+1472outputs (0major+82417minor)pagefaults 0swaps

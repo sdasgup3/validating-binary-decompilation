@@ -1,0 +1,8 @@
+Matching ReverseBits32 Vs sub_400540_ReverseBits32
+
+
+[Error] Failed to extract Potential Matches for:[0x562645751720]:   %57 = add i64 %18, 26
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.07user 0.00system 0:00.35elapsed 20%CPU (0avgtext+0avgdata 12708maxresident)k
+0inputs+8outputs (0major+983minor)pagefaults 0swaps

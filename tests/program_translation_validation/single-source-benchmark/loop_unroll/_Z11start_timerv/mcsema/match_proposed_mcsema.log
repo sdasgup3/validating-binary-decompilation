@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z11start_timerv-mcsema-diff.dot'...
+Writing '_Z11start_timerv-mcsema-diff.dot':Done
+
+Writing 'sub_400dd0__Z11start_timerv-proposed-diff.dot'...
+Writing 'sub_400dd0__Z11start_timerv-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z11start_timerv] from mcsema/test.proposed.opt.ll
+Extracting function [_Z11start_timerv] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+8.56user 0.18system 0:08.76elapsed 99%CPU (0avgtext+0avgdata 63572maxresident)k
+0inputs+72outputs (0major+12348minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN14PointerWrapperIdEC2EPd-mcsema-diff.dot'...
+Writing '_ZN14PointerWrapperIdEC2EPd-mcsema-diff.dot':Done
+
+Writing 'sub_401bd0__ZN14PointerWrapperIdEC2EPd-proposed-diff.dot'...
+Writing 'sub_401bd0__ZN14PointerWrapperIdEC2EPd-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN14PointerWrapperIdEC2EPd] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN14PointerWrapperIdEC2EPd] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+4.92user 0.10system 0:05.03elapsed 99%CPU (0avgtext+0avgdata 24320maxresident)k
+0inputs+128outputs (0major+3519minor)pagefaults 0swaps

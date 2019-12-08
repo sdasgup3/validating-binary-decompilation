@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'kernel_bicg_StrictFP-mcsema-diff.dot'...
+Writing 'kernel_bicg_StrictFP-mcsema-diff.dot':Done
+
+Writing 'sub_400d30_kernel_bicg_StrictFP-proposed-diff.dot'...
+Writing 'sub_400d30_kernel_bicg_StrictFP-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [kernel_bicg_StrictFP] from mcsema/test.proposed.opt.ll
+Extracting function [kernel_bicg_StrictFP] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+56.89user 26.07system 1:22.96elapsed 99%CPU (0avgtext+0avgdata 15352maxresident)k
+0inputs+5936outputs (0major+1632minor)pagefaults 0swaps

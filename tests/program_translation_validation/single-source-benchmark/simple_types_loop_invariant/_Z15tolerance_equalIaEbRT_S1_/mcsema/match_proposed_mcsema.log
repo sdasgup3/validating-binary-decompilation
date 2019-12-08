@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x55c938557530]:   %129 = fcmp uno double %120, %126
+[0x55c938898c60]:   %129 = fcmp uno double %121, %126
+[0x55c9388996f0]:   %141 = fcmp ogt double %121, %126
+[0x55c938899850]:   %143 = fcmp olt double %121, %126
+[0x55c9388999b0]:   %145 = fcmp oeq double %121, %126
+Multiple matches exist for [0x55c9385997c0]:   %141 = fcmp ogt double %120, %126
+[0x55c938898c60]:   %129 = fcmp uno double %121, %126
+[0x55c9388996f0]:   %141 = fcmp ogt double %121, %126
+[0x55c938899850]:   %143 = fcmp olt double %121, %126
+[0x55c9388999b0]:   %145 = fcmp oeq double %121, %126
+Multiple matches exist for [0x55c938599920]:   %143 = fcmp olt double %120, %126
+[0x55c938898c60]:   %129 = fcmp uno double %121, %126
+[0x55c9388996f0]:   %141 = fcmp ogt double %121, %126
+[0x55c938899850]:   %143 = fcmp olt double %121, %126
+[0x55c9388999b0]:   %145 = fcmp oeq double %121, %126
+Multiple matches exist for [0x55c938599a80]:   %145 = fcmp oeq double %120, %126
+[0x55c938898c60]:   %129 = fcmp uno double %121, %126
+[0x55c9388996f0]:   %141 = fcmp ogt double %121, %126
+[0x55c938899850]:   %143 = fcmp olt double %121, %126
+[0x55c9388999b0]:   %145 = fcmp oeq double %121, %126
+Iso Match NOT Found
+Writing '_Z15tolerance_equalIaEbRT_S1_-mcsema-diff.dot'...
+Writing '_Z15tolerance_equalIaEbRT_S1_-mcsema-diff.dot':Done
+
+Writing 'sub_413070__Z15tolerance_equalIaEbRT_S1_-proposed-diff.dot'...
+Writing 'sub_413070__Z15tolerance_equalIaEbRT_S1_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z15tolerance_equalIaEbRT_S1_] from mcsema/test.proposed.opt.ll
+Extracting function [_Z15tolerance_equalIaEbRT_S1_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+127.90user 0.70system 2:15.03elapsed 95%CPU (0avgtext+0avgdata 54856maxresident)k
+0inputs+832outputs (0major+50169minor)pagefaults 0swaps

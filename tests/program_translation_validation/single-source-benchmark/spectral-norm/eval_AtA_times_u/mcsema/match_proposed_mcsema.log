@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'eval_AtA_times_u-mcsema-diff.dot'...
+Writing 'eval_AtA_times_u-mcsema-diff.dot':Done
+
+Writing 'sub_400730_eval_AtA_times_u-proposed-diff.dot'...
+Writing 'sub_400730_eval_AtA_times_u-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [eval_AtA_times_u] from mcsema/test.proposed.opt.ll
+Extracting function [eval_AtA_times_u] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+3.90user 0.34system 0:04.27elapsed 99%CPU (0avgtext+0avgdata 12896maxresident)k
+0inputs+696outputs (0major+1007minor)pagefaults 0swaps

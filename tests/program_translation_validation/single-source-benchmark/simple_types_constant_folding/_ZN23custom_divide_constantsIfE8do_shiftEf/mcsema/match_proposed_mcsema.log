@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_ZN23custom_divide_constantsIfE8do_shiftEf-mcsema-diff.dot'...
+Writing '_ZN23custom_divide_constantsIfE8do_shiftEf-mcsema-diff.dot':Done
+
+Writing 'sub_40f740__ZN23custom_divide_constantsIfE8do_shiftEf-proposed-diff.dot'...
+Writing 'sub_40f740__ZN23custom_divide_constantsIfE8do_shiftEf-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_ZN23custom_divide_constantsIfE8do_shiftEf] from mcsema/test.proposed.opt.ll
+Extracting function [_ZN23custom_divide_constantsIfE8do_shiftEf] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+43.38user 0.31system 0:43.88elapsed 99%CPU (0avgtext+0avgdata 66700maxresident)k
+0inputs+152outputs (0major+57776minor)pagefaults 0swaps
