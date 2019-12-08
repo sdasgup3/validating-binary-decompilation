@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'dgesl-mcsema-diff.dot'...
+Writing 'dgesl-mcsema-diff.dot':Done
+
+Writing 'sub_400dd0_dgesl-proposed-diff.dot'...
+Writing 'sub_400dd0_dgesl-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [dgesl] from mcsema/test.proposed.opt.ll
+Extracting function [dgesl] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+113.81user 26.67system 2:20.64elapsed 99%CPU (0avgtext+0avgdata 16740maxresident)k
+0inputs+9112outputs (0major+3604minor)pagefaults 0swaps

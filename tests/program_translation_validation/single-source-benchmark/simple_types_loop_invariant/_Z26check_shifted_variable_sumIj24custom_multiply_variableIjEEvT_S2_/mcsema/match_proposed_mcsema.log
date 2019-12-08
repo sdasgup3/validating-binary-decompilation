@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing '_Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_-mcsema-diff.dot'...
+Writing '_Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_-mcsema-diff.dot':Done
+
+Writing 'sub_40f3a0__Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_-proposed-diff.dot'...
+Writing 'sub_40f3a0__Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_] from mcsema/test.proposed.opt.ll
+Extracting function [_Z26check_shifted_variable_sumIj24custom_multiply_variableIjEEvT_S2_] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+159.74user 0.80system 2:48.51elapsed 95%CPU (0avgtext+0avgdata 54764maxresident)k
+0inputs+1032outputs (0major+26640minor)pagefaults 0swaps

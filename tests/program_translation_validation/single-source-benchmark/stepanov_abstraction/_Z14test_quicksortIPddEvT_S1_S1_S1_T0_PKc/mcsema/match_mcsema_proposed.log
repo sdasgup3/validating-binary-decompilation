@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4025c0__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc-mcsema-diff.dot'...
+Writing 'sub_4025c0__Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc-mcsema-diff.dot':Done
+
+Writing '_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc-proposed-diff.dot'...
+Writing '_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z14test_quicksortIPddEvT_S1_S1_S1_T0_PKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+10.93user 0.83system 0:12.29elapsed 95%CPU (0avgtext+0avgdata 23996maxresident)k
+0inputs+1240outputs (0major+11085minor)pagefaults 0swaps

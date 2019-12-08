@@ -1,0 +1,35 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x562e05966860]:   %231 = fcmp uno double %229, %224
+[0x562e058dbe80]:   %231 = fcmp uno double %229, %224
+[0x562e05a60280]:   %243 = fcmp ogt double %229, %224
+[0x562e05a603e0]:   %245 = fcmp olt double %229, %224
+[0x562e05a60540]:   %247 = fcmp oeq double %229, %224
+Multiple matches exist for [0x562e05963a90]:   %243 = fcmp ogt double %229, %224
+[0x562e058dbe80]:   %231 = fcmp uno double %229, %224
+[0x562e05a60280]:   %243 = fcmp ogt double %229, %224
+[0x562e05a603e0]:   %245 = fcmp olt double %229, %224
+[0x562e05a60540]:   %247 = fcmp oeq double %229, %224
+Multiple matches exist for [0x562e05963bf0]:   %245 = fcmp olt double %229, %224
+[0x562e058dbe80]:   %231 = fcmp uno double %229, %224
+[0x562e05a60280]:   %243 = fcmp ogt double %229, %224
+[0x562e05a603e0]:   %245 = fcmp olt double %229, %224
+[0x562e05a60540]:   %247 = fcmp oeq double %229, %224
+Multiple matches exist for [0x562e05963d50]:   %247 = fcmp oeq double %229, %224
+[0x562e058dbe80]:   %231 = fcmp uno double %229, %224
+[0x562e05a60280]:   %243 = fcmp ogt double %229, %224
+[0x562e05a603e0]:   %245 = fcmp olt double %229, %224
+[0x562e05a60540]:   %247 = fcmp oeq double %229, %224
+Iso Match NOT Found
+Writing 'Proc8-mcsema-diff.dot'...
+Writing 'Proc8-mcsema-diff.dot':Done
+
+Writing 'sub_400b30_Proc8-proposed-diff.dot'...
+Writing 'sub_400b30_Proc8-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [Proc8] from mcsema/test.proposed.opt.ll
+Extracting function [Proc8] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+83.14user 34.47system 1:59.47elapsed 98%CPU (0avgtext+0avgdata 14936maxresident)k
+0inputs+8192outputs (0major+3153minor)pagefaults 0swaps

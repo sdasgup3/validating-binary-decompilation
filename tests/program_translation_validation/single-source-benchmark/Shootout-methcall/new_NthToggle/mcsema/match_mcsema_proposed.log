@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400720_new_NthToggle-mcsema-diff.dot'...
+Writing 'sub_400720_new_NthToggle-mcsema-diff.dot':Done
+
+Writing 'new_NthToggle-proposed-diff.dot'...
+Writing 'new_NthToggle-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [new_NthToggle] from ../binary/test.mcsema.opt.ll
+Extracting function [new_NthToggle] from mcsema/test.proposed.opt.ll
+Matcher Done...
+0.99user 1.44system 0:02.45elapsed 99%CPU (0avgtext+0avgdata 12660maxresident)k
+0inputs+512outputs (0major+1463minor)pagefaults 0swaps

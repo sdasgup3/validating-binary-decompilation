@@ -1,0 +1,8 @@
+Matching grad Vs sub_400be0_grad
+
+
+[Error] Failed to extract Potential Matches for:[0x56174dfb4310]:   %RCX.i57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.17user 0.00system 0:00.47elapsed 36%CPU (0avgtext+0avgdata 13852maxresident)k
+0inputs+8outputs (0major+1305minor)pagefaults 0swaps

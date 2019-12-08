@@ -1,0 +1,8 @@
+Matching benchmark_heapsort Vs sub_400610_benchmark_heapsort
+
+
+[Error] Failed to extract Potential Matches for:[0x5591c191f430]:   %76 = add i64 %34, 11
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.12user 0.00system 0:00.48elapsed 25%CPU (0avgtext+0avgdata 12908maxresident)k
+0inputs+8outputs (0major+1020minor)pagefaults 0swaps

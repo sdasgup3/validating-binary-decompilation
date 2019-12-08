@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400510_Rand-mcsema-diff.dot'...
+Writing 'sub_400510_Rand-mcsema-diff.dot':Done
+
+Writing 'Rand-proposed-diff.dot'...
+Writing 'Rand-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Rand] from ../binary/test.mcsema.opt.ll
+Extracting function [Rand] from mcsema/test.proposed.opt.ll
+Matcher Done...
+0.22user 0.18system 0:00.43elapsed 94%CPU (0avgtext+0avgdata 12776maxresident)k
+0inputs+112outputs (0major+961minor)pagefaults 0swaps

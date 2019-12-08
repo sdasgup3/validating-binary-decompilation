@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'toASCIILower-mcsema-diff.dot'...
+Writing 'toASCIILower-mcsema-diff.dot':Done
+
+Writing 'sub_4007b0_toASCIILower-proposed-diff.dot'...
+Writing 'sub_4007b0_toASCIILower-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [toASCIILower] from mcsema/test.proposed.opt.ll
+Extracting function [toASCIILower] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+4.23user 0.59system 0:04.83elapsed 99%CPU (0avgtext+0avgdata 12860maxresident)k
+0inputs+792outputs (0major+975minor)pagefaults 0swaps

@@ -1,0 +1,183 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x558aeb978160]:   %139 = fcmp uno double %133, %138
+[0x558aebb28690]:   %95 = fcmp uno double %89, %94
+[0x558aebb33af0]:   %111 = fcmp oeq double %89, %94
+[0x558aebb33cd0]:   %109 = fcmp olt double %89, %94
+[0x558aebb33e30]:   %107 = fcmp ogt double %89, %94
+Multiple matches exist for [0x558aeb978cb0]:   %151 = fcmp ogt double %133, %138
+[0x558aebb28690]:   %95 = fcmp uno double %89, %94
+[0x558aebb33af0]:   %111 = fcmp oeq double %89, %94
+[0x558aebb33cd0]:   %109 = fcmp olt double %89, %94
+[0x558aebb33e30]:   %107 = fcmp ogt double %89, %94
+Multiple matches exist for [0x558aeb978e10]:   %153 = fcmp olt double %133, %138
+[0x558aebb28690]:   %95 = fcmp uno double %89, %94
+[0x558aebb33af0]:   %111 = fcmp oeq double %89, %94
+[0x558aebb33cd0]:   %109 = fcmp olt double %89, %94
+[0x558aebb33e30]:   %107 = fcmp ogt double %89, %94
+Multiple matches exist for [0x558aeb978f70]:   %155 = fcmp oeq double %133, %138
+[0x558aebb28690]:   %95 = fcmp uno double %89, %94
+[0x558aebb33af0]:   %111 = fcmp oeq double %89, %94
+[0x558aebb33cd0]:   %109 = fcmp olt double %89, %94
+[0x558aebb33e30]:   %107 = fcmp ogt double %89, %94
+Multiple matches exist for [0x558aeb9790a8]:   %157 = phi i8 [ 0, %150 ], [ 0, %152 ], [ 1, %154 ], [ 1, %140 ]
+[0x558aebb0eb08]:   %113 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 1, %110 ], [ 1, %96 ]
+[0x558aebb156a8]:   %155 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 1, %152 ], [ 1, %138 ]
+[0x558aebb20a38]:   %197 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 1, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb979198]:   %158 = phi i8 [ 0, %150 ], [ 0, %152 ], [ 0, %154 ], [ 1, %140 ]
+[0x558aebb0e9d8]:   %114 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb15578]:   %156 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb220c8]:   %198 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb979288]:   %159 = phi i8 [ 0, %150 ], [ 1, %152 ], [ 0, %154 ], [ 1, %140 ]
+[0x558aebb0e3e8]:   %115 = phi i8 [ 0, %106 ], [ 1, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb16748]:   %157 = phi i8 [ 0, %148 ], [ 1, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb24468]:   %199 = phi i8 [ 0, %190 ], [ 1, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb9793a0]:   store i8 %157, i8* %33, align 1, !tbaa !1287
+[0x558aebb32890]:   store i8 %197, i8* %30, align 1
+[0x558aebb35180]:   store i8 %113, i8* %30, align 1
+[0x558aebb3b310]:   store i8 %155, i8* %30, align 1
+Multiple matches exist for [0x558aeb9794f0]:   store i8 %158, i8* %24, align 1, !tbaa !1287
+[0x558aebb32770]:   store i8 %198, i8* %21, align 1
+[0x558aebb36e70]:   store i8 %114, i8* %21, align 1
+[0x558aebb3b940]:   store i8 %156, i8* %21, align 1
+Multiple matches exist for [0x558aeb979b80]:   store i8 %159, i8* %17, align 1, !tbaa !1287
+[0x558aebb36d10]:   store i8 %115, i8* %14, align 1
+[0x558aebb3d480]:   store i8 %157, i8* %14, align 1
+[0x558aebb43b90]:   store i8 %199, i8* %14, align 1
+Multiple matches exist for [0x558aeb979c60]:   store i8 0, i8* %42, align 1, !tbaa !1287
+[0x558aebb36b40]:   store i8 0, i8* %39, align 1
+[0x558aebb3d320]:   store i8 0, i8* %39, align 1
+[0x558aebb44870]:   store i8 0, i8* %39, align 1
+Multiple matches exist for [0x558aeb979ce0]:   store i8 0, i8* %36, align 1, !tbaa !1287
+[0x558aebb369e0]:   store i8 0, i8* %33, align 1
+[0x558aebb3d1b0]:   store i8 0, i8* %33, align 1
+[0x558aebb44710]:   store i8 0, i8* %33, align 1
+Multiple matches exist for [0x558aeba287f0]:   store i8 0, i8* %30, align 1, !tbaa !1287
+[0x558aebb36880]:   store i8 0, i8* %27, align 1
+[0x558aebb3d050]:   store i8 0, i8* %27, align 1
+[0x558aebb444b0]:   store i8 0, i8* %27, align 1
+Multiple matches exist for [0x558aeb97c850]:   %175 = fcmp uno double %169, %174
+[0x558aebb329e0]:   %195 = fcmp oeq double %173, %178
+[0x558aebb34900]:   %193 = fcmp olt double %173, %178
+[0x558aebb34a50]:   %191 = fcmp ogt double %173, %178
+[0x558aebb36340]:   %179 = fcmp uno double %173, %178
+Multiple matches exist for [0x558aeb9c4690]:   %187 = fcmp ogt double %169, %174
+[0x558aebb329e0]:   %195 = fcmp oeq double %173, %178
+[0x558aebb34900]:   %193 = fcmp olt double %173, %178
+[0x558aebb34a50]:   %191 = fcmp ogt double %173, %178
+[0x558aebb36340]:   %179 = fcmp uno double %173, %178
+Multiple matches exist for [0x558aeb97d610]:   %189 = fcmp olt double %169, %174
+[0x558aebb329e0]:   %195 = fcmp oeq double %173, %178
+[0x558aebb34900]:   %193 = fcmp olt double %173, %178
+[0x558aebb34a50]:   %191 = fcmp ogt double %173, %178
+[0x558aebb36340]:   %179 = fcmp uno double %173, %178
+Multiple matches exist for [0x558aeb97d770]:   %191 = fcmp oeq double %169, %174
+[0x558aebb329e0]:   %195 = fcmp oeq double %173, %178
+[0x558aebb34900]:   %193 = fcmp olt double %173, %178
+[0x558aebb34a50]:   %191 = fcmp ogt double %173, %178
+[0x558aebb36340]:   %179 = fcmp uno double %173, %178
+Multiple matches exist for [0x558aeb97d8a8]:   %193 = phi i8 [ 0, %186 ], [ 0, %188 ], [ 1, %190 ], [ 1, %176 ]
+[0x558aebb0eb08]:   %113 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 1, %110 ], [ 1, %96 ]
+[0x558aebb156a8]:   %155 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 1, %152 ], [ 1, %138 ]
+[0x558aebb20a38]:   %197 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 1, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb97d998]:   %194 = phi i8 [ 0, %186 ], [ 0, %188 ], [ 0, %190 ], [ 1, %176 ]
+[0x558aebb0e9d8]:   %114 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb15578]:   %156 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb220c8]:   %198 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb97da88]:   %195 = phi i8 [ 0, %186 ], [ 1, %188 ], [ 0, %190 ], [ 1, %176 ]
+[0x558aebb0e3e8]:   %115 = phi i8 [ 0, %106 ], [ 1, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb16748]:   %157 = phi i8 [ 0, %148 ], [ 1, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb24468]:   %199 = phi i8 [ 0, %190 ], [ 1, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb97dba0]:   store i8 %193, i8* %33, align 1, !tbaa !1287
+[0x558aebb32890]:   store i8 %197, i8* %30, align 1
+[0x558aebb35180]:   store i8 %113, i8* %30, align 1
+[0x558aebb3b310]:   store i8 %155, i8* %30, align 1
+Multiple matches exist for [0x558aeb97dc20]:   store i8 %194, i8* %24, align 1, !tbaa !1287
+[0x558aebb32770]:   store i8 %198, i8* %21, align 1
+[0x558aebb36e70]:   store i8 %114, i8* %21, align 1
+[0x558aebb3b940]:   store i8 %156, i8* %21, align 1
+Multiple matches exist for [0x558aeb97dca0]:   store i8 %195, i8* %17, align 1, !tbaa !1287
+[0x558aebb36d10]:   store i8 %115, i8* %14, align 1
+[0x558aebb3d480]:   store i8 %157, i8* %14, align 1
+[0x558aebb43b90]:   store i8 %199, i8* %14, align 1
+Multiple matches exist for [0x558aeb97dd80]:   store i8 0, i8* %42, align 1, !tbaa !1287
+[0x558aebb36b40]:   store i8 0, i8* %39, align 1
+[0x558aebb3d320]:   store i8 0, i8* %39, align 1
+[0x558aebb44870]:   store i8 0, i8* %39, align 1
+Multiple matches exist for [0x558aeb97de00]:   store i8 0, i8* %36, align 1, !tbaa !1287
+[0x558aebb369e0]:   store i8 0, i8* %33, align 1
+[0x558aebb3d1b0]:   store i8 0, i8* %33, align 1
+[0x558aebb44710]:   store i8 0, i8* %33, align 1
+Multiple matches exist for [0x558aeb97de80]:   store i8 0, i8* %30, align 1, !tbaa !1287
+[0x558aebb36880]:   store i8 0, i8* %27, align 1
+[0x558aebb3d050]:   store i8 0, i8* %27, align 1
+[0x558aebb444b0]:   store i8 0, i8* %27, align 1
+Multiple matches exist for [0x558aeb980050]:   %233 = fcmp uno double %227, %232
+[0x558aebb355d0]:   %151 = fcmp olt double %131, %136
+[0x558aebb35770]:   %149 = fcmp ogt double %131, %136
+[0x558aebb37fe0]:   %137 = fcmp uno double %131, %136
+[0x558aebb3b470]:   %153 = fcmp oeq double %131, %136
+Multiple matches exist for [0x558aeb980b20]:   %245 = fcmp ogt double %227, %232
+[0x558aebb355d0]:   %151 = fcmp olt double %131, %136
+[0x558aebb35770]:   %149 = fcmp ogt double %131, %136
+[0x558aebb37fe0]:   %137 = fcmp uno double %131, %136
+[0x558aebb3b470]:   %153 = fcmp oeq double %131, %136
+Multiple matches exist for [0x558aeb980c80]:   %247 = fcmp olt double %227, %232
+[0x558aebb355d0]:   %151 = fcmp olt double %131, %136
+[0x558aebb35770]:   %149 = fcmp ogt double %131, %136
+[0x558aebb37fe0]:   %137 = fcmp uno double %131, %136
+[0x558aebb3b470]:   %153 = fcmp oeq double %131, %136
+Multiple matches exist for [0x558aeb980de0]:   %249 = fcmp oeq double %227, %232
+[0x558aebb355d0]:   %151 = fcmp olt double %131, %136
+[0x558aebb35770]:   %149 = fcmp ogt double %131, %136
+[0x558aebb37fe0]:   %137 = fcmp uno double %131, %136
+[0x558aebb3b470]:   %153 = fcmp oeq double %131, %136
+Multiple matches exist for [0x558aeb980f18]:   %251 = phi i8 [ 0, %244 ], [ 0, %246 ], [ 1, %248 ], [ 1, %234 ]
+[0x558aebb0eb08]:   %113 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 1, %110 ], [ 1, %96 ]
+[0x558aebb156a8]:   %155 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 1, %152 ], [ 1, %138 ]
+[0x558aebb20a38]:   %197 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 1, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb981008]:   %252 = phi i8 [ 0, %244 ], [ 0, %246 ], [ 0, %248 ], [ 1, %234 ]
+[0x558aebb0e9d8]:   %114 = phi i8 [ 0, %106 ], [ 0, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb15578]:   %156 = phi i8 [ 0, %148 ], [ 0, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb220c8]:   %198 = phi i8 [ 0, %190 ], [ 0, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb9810f8]:   %253 = phi i8 [ 0, %244 ], [ 1, %246 ], [ 0, %248 ], [ 1, %234 ]
+[0x558aebb0e3e8]:   %115 = phi i8 [ 0, %106 ], [ 1, %108 ], [ 0, %110 ], [ 1, %96 ]
+[0x558aebb16748]:   %157 = phi i8 [ 0, %148 ], [ 1, %150 ], [ 0, %152 ], [ 1, %138 ]
+[0x558aebb24468]:   %199 = phi i8 [ 0, %190 ], [ 1, %192 ], [ 0, %194 ], [ 1, %180 ]
+Multiple matches exist for [0x558aeb981210]:   store i8 %251, i8* %33, align 1, !tbaa !1287
+[0x558aebb32890]:   store i8 %197, i8* %30, align 1
+[0x558aebb35180]:   store i8 %113, i8* %30, align 1
+[0x558aebb3b310]:   store i8 %155, i8* %30, align 1
+Multiple matches exist for [0x558aeb981290]:   store i8 %252, i8* %24, align 1, !tbaa !1287
+[0x558aebb32770]:   store i8 %198, i8* %21, align 1
+[0x558aebb36e70]:   store i8 %114, i8* %21, align 1
+[0x558aebb3b940]:   store i8 %156, i8* %21, align 1
+Multiple matches exist for [0x558aeb981310]:   store i8 %253, i8* %17, align 1, !tbaa !1287
+[0x558aebb36d10]:   store i8 %115, i8* %14, align 1
+[0x558aebb3d480]:   store i8 %157, i8* %14, align 1
+[0x558aebb43b90]:   store i8 %199, i8* %14, align 1
+Multiple matches exist for [0x558aeb9813f0]:   store i8 0, i8* %42, align 1, !tbaa !1287
+[0x558aebb36b40]:   store i8 0, i8* %39, align 1
+[0x558aebb3d320]:   store i8 0, i8* %39, align 1
+[0x558aebb44870]:   store i8 0, i8* %39, align 1
+Multiple matches exist for [0x558aeb981470]:   store i8 0, i8* %36, align 1, !tbaa !1287
+[0x558aebb369e0]:   store i8 0, i8* %33, align 1
+[0x558aebb3d1b0]:   store i8 0, i8* %33, align 1
+[0x558aebb44710]:   store i8 0, i8* %33, align 1
+Multiple matches exist for [0x558aeb9814f0]:   store i8 0, i8* %30, align 1, !tbaa !1287
+[0x558aebb36880]:   store i8 0, i8* %27, align 1
+[0x558aebb3d050]:   store i8 0, i8* %27, align 1
+[0x558aebb444b0]:   store i8 0, i8* %27, align 1
+Iso Match NOT Found
+Writing 'sub_400560_main-mcsema-diff.dot'...
+Writing 'sub_400560_main-mcsema-diff.dot':Done
+
+Writing 'main-proposed-diff.dot'...
+Writing 'main-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [main] from ../binary/test.mcsema.opt.ll
+Extracting function [main] from mcsema/test.proposed.opt.ll
+Matcher Done...
+8.71user 9.38system 0:18.64elapsed 97%CPU (0avgtext+0avgdata 14076maxresident)k
+0inputs+4040outputs (0major+2522minor)pagefaults 0swaps

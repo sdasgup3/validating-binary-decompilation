@@ -1,0 +1,8 @@
+Matching _ZN34custom_multiply_multiple_variable2IaE8do_shiftEaaaaa Vs sub_413800__ZN34custom_multiply_multiple_variable2IaE8do_shiftEaaaaa
+
+
+[Error] Failed to extract Potential Matches for:[0x55751b6460d0]:   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.81user 0.04system 0:01.12elapsed 76%CPU (0avgtext+0avgdata 54852maxresident)k
+0inputs+8outputs (0major+10609minor)pagefaults 0swaps

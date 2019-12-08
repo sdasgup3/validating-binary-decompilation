@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x555796f13588]:   %MEMORY.0 = phi %struct.Memory* [ %call2_400748, %block_.L_40073e ], [ %call2_400734, %block_40072d ]
+[0x555796fc0238]:   %MEMORY.0 = phi %struct.Memory.31* [ %2, %block_400752 ], [ %MEMORY.1, %block_400799 ]
+[0x555796fc6ee8]:   %MEMORY.2 = phi %struct.Memory.31* [ %127, %block_40073e ], [ %209, %block_40072d ]
+Iso Match NOT Found
+Writing 'Insert-mcsema-diff.dot'...
+Writing 'Insert-mcsema-diff.dot':Done
+
+Writing 'sub_400700_Insert-proposed-diff.dot'...
+Writing 'sub_400700_Insert-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [Insert] from mcsema/test.proposed.opt.ll
+Extracting function [Insert] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+15.73user 6.77system 0:22.51elapsed 99%CPU (0avgtext+0avgdata 13188maxresident)k
+0inputs+2344outputs (0major+1134minor)pagefaults 0swaps

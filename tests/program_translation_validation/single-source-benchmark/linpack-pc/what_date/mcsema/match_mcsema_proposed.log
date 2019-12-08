@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_400600_what_date-mcsema-diff.dot'...
+Writing 'sub_400600_what_date-mcsema-diff.dot':Done
+
+Writing 'what_date-proposed-diff.dot'...
+Writing 'what_date-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [what_date] from ../binary/test.mcsema.opt.ll
+Extracting function [what_date] from mcsema/test.proposed.opt.ll
+Matcher Done...
+0.29user 0.08system 0:00.43elapsed 85%CPU (0avgtext+0avgdata 16776maxresident)k
+0inputs+56outputs (0major+1909minor)pagefaults 0swaps

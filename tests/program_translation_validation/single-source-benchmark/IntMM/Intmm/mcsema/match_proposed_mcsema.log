@@ -1,0 +1,21 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x560b96500830]:   %141 = icmp ult i64 %140, ptrtoint (%G__0x6092a0_type* @G__0x6092a0 to i64)
+[0x560b964ea640]:   %229 = icmp ult i64 %228, ptrtoint (%imr_type* @imr to i64)
+[0x560b964ea6c0]:   %230 = icmp ult i64 %228, %226
+Multiple matches exist for [0x560b964ff4f0]:   %286 = icmp ult i64 %285, ptrtoint (%G__0x6092a0_type* @G__0x6092a0 to i64)
+[0x560b964e3900]:   %86 = icmp ult i64 %85, ptrtoint (%imr_type* @imr to i64)
+[0x560b964e3980]:   %87 = icmp ult i64 %85, %83
+Iso Match NOT Found
+Writing 'Intmm-mcsema-diff.dot'...
+Writing 'Intmm-mcsema-diff.dot':Done
+
+Writing 'sub_400680_Intmm-proposed-diff.dot'...
+Writing 'sub_400680_Intmm-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [Intmm] from mcsema/test.proposed.opt.ll
+Extracting function [Intmm] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+27.74user 15.21system 0:43.41elapsed 98%CPU (0avgtext+0avgdata 13852maxresident)k
+0inputs+3840outputs (0major+2049minor)pagefaults 0swaps

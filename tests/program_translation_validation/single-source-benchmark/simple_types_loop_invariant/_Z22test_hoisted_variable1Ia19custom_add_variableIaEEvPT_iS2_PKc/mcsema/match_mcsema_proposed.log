@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_403080__Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-mcsema-diff.dot'...
+Writing 'sub_403080__Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-mcsema-diff.dot':Done
+
+Writing '_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-proposed-diff.dot'...
+Writing '_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc] from ../binary/test.mcsema.opt.ll
+Extracting function [_Z22test_hoisted_variable1Ia19custom_add_variableIaEEvPT_iS2_PKc] from mcsema/test.proposed.opt.ll
+Matcher Done...
+147.28user 2.76system 2:30.55elapsed 99%CPU (0avgtext+0avgdata 54764maxresident)k
+0inputs+3312outputs (0major+62451minor)pagefaults 0swaps

@@ -1,0 +1,8 @@
+Matching sub_4007d0_main Vs main
+
+
+[Error] Failed to extract Potential Matches for:[0x5562afe483c0]:   %309 = add i64 %250, 21
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.17user 0.00system 0:00.45elapsed 40%CPU (0avgtext+0avgdata 14016maxresident)k
+0inputs+8outputs (0major+1318minor)pagefaults 0swaps

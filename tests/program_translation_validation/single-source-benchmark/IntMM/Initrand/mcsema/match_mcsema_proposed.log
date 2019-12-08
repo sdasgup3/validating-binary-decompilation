@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'sub_4004f0_Initrand-mcsema-diff.dot'...
+Writing 'sub_4004f0_Initrand-mcsema-diff.dot':Done
+
+Writing 'Initrand-proposed-diff.dot'...
+Writing 'Initrand-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [Initrand] from ../binary/test.mcsema.opt.ll
+Extracting function [Initrand] from mcsema/test.proposed.opt.ll
+Matcher Done...
+0.14user 0.09system 0:00.24elapsed 99%CPU (0avgtext+0avgdata 12776maxresident)k
+0inputs+64outputs (0major+959minor)pagefaults 0swaps

@@ -1,0 +1,18 @@
+[Info]: Check for multiple matches
+Multiple matches exist for [0x556190b97150]:   %32 = icmp ult i32 %29, 4
+[0x556191804300]:   %33 = icmp ult i32 %30, 4
+[0x556191804460]:   %32 = icmp ult i32 %30, %28
+Iso Match NOT Found
+Writing 'sub_412710__ZN28custom_multiple_constant_addIjE8do_shiftEj-mcsema-diff.dot'...
+Writing 'sub_412710__ZN28custom_multiple_constant_addIjE8do_shiftEj-mcsema-diff.dot':Done
+
+Writing '_ZN28custom_multiple_constant_addIjE8do_shiftEj-proposed-diff.dot'...
+Writing '_ZN28custom_multiple_constant_addIjE8do_shiftEj-proposed-diff.dot':Done
+
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Reading LLVM: mcsema/test.proposed.opt.ll
+Extracting function [_ZN28custom_multiple_constant_addIjE8do_shiftEj] from ../binary/test.mcsema.opt.ll
+Extracting function [_ZN28custom_multiple_constant_addIjE8do_shiftEj] from mcsema/test.proposed.opt.ll
+Matcher Done...
+9.85user 0.26system 0:10.12elapsed 99%CPU (0avgtext+0avgdata 66756maxresident)k
+0inputs+136outputs (0major+39552minor)pagefaults 0swaps

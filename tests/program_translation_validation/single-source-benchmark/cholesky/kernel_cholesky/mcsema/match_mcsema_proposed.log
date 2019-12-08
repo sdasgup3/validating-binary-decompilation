@@ -1,0 +1,8 @@
+Matching sub_400b20_kernel_cholesky Vs kernel_cholesky
+
+
+[Error] Failed to extract Potential Matches for:[0x55faca8dc700]:   %RSP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.11user 0.00system 0:00.39elapsed 30%CPU (0avgtext+0avgdata 13372maxresident)k
+0inputs+8outputs (0major+1145minor)pagefaults 0swaps

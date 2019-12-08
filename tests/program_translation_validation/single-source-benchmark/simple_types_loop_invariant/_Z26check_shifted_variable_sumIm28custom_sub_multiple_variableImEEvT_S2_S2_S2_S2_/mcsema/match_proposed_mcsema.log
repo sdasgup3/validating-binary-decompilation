@@ -1,0 +1,8 @@
+Matching _Z26check_shifted_variable_sumIm28custom_sub_multiple_variableImEEvT_S2_S2_S2_S2_ Vs sub_40dc90__Z26check_shifted_variable_sumIm28custom_sub_multiple_variableImEEvT_S2_S2_S2_S2_
+
+
+[Error] Failed to extract Potential Matches for:[0x558a25a1a140]:   %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+1.00user 0.03system 0:01.33elapsed 77%CPU (0avgtext+0avgdata 55044maxresident)k
+0inputs+8outputs (0major+10629minor)pagefaults 0swaps

@@ -1,0 +1,15 @@
+[Info]: Check for multiple matches
+Iso Match Found
+Writing 'toggle_activate-mcsema-diff.dot'...
+Writing 'toggle_activate-mcsema-diff.dot':Done
+
+Writing 'sub_4005e0_toggle_activate-proposed-diff.dot'...
+Writing 'sub_4005e0_toggle_activate-proposed-diff.dot':Done
+
+Reading LLVM: mcsema/test.proposed.opt.ll
+Reading LLVM: ../binary/test.mcsema.opt.ll
+Extracting function [toggle_activate] from mcsema/test.proposed.opt.ll
+Extracting function [toggle_activate] from ../binary/test.mcsema.opt.ll
+Matcher Done...
+1.71user 0.56system 0:02.30elapsed 99%CPU (0avgtext+0avgdata 12844maxresident)k
+0inputs+208outputs (0major+1508minor)pagefaults 0swaps

@@ -1,0 +1,8 @@
+Matching init_array Vs sub_400a20_init_array
+
+
+[Error] Failed to extract Potential Matches for:[0x5620c2592658]:   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
+matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
+Command terminated by signal 6
+0.08user 0.01system 0:00.53elapsed 18%CPU (0avgtext+0avgdata 13288maxresident)k
+0inputs+8outputs (0major+1085minor)pagefaults 0swaps
