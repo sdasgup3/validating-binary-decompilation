@@ -9,27 +9,47 @@
 //===----------------------------------------------------------------------===//
 
 #include "llvm/ADT/DenseMap.h"
+#include "llvm/Analysis/AliasAnalysis.h"
+#include "llvm/Analysis/AssumptionCache.h"
+#include "llvm/Analysis/BasicAliasAnalysis.h"
+#include "llvm/Analysis/GlobalsModRef.h"
+#include "llvm/Analysis/TargetLibraryInfo.h"
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/CFG.h"
+#include "llvm/IR/DataLayout.h"
+#include "llvm/IR/Dominators.h"
 #include "llvm/IR/IRBuilder.h"
-#include "llvm/IR/Instructions.h"
+#include "llvm/IR/Instruction.h"
 #include "llvm/Pass.h"
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Transforms/Utils/Local.h"
 #include "llvm/Transforms/Utils/MemorySSA.h"
-#include "llvm/Analysis/AssumptionCache.h"
-#include "llvm/IR/Dominators.h"
-#include "llvm/Analysis/TargetLibraryInfo.h"
-#include "llvm/Analysis/GlobalsModRef.h"
 
+#include <map>
+#include <set>
+
+using namespace std;
+using namespace llvm;
+typedef map<Instruction *, set<Instruction *>> MemDepEdgesType;
 namespace llvm {
 
-class memssa : public FunctionPass {
+class MemSSA {
 public:
-  static char ID;
-  memssa() : FunctionPass(ID) {}
-  void getAnalysisUsage(AnalysisUsage &AU) const;
-  bool runOnFunction(Function &);
+private:
+  DominatorTree DT;
+  AssumptionCache AC;
+  TargetLibraryInfoImpl TLII;
+  TargetLibraryInfo TLI;
+  AAResults AA;
+  BasicAAResult BAA;
+  MemorySSA *MSSA;
+  MemorySSAWalker *Walker;
+  Function *F;
+
+public:
+  MemSSA(Function *F, DataLayout &DL);
+  set<Instruction *> handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi);
+  MemDepEdgesType collectMemoryDepEdges();
 };
 }
