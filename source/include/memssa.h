@@ -48,7 +48,7 @@ private:
   Function *F;
 
 public:
-  MemSSA(Function *F, DataLayout &DL);
+  MemSSA(Function *F);
   set<Instruction *> handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi);
   MemDepEdgesType collectMemoryDepEdges();
 };

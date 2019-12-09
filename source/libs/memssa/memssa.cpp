@@ -19,24 +19,18 @@
 
 using namespace llvm;
 
-MemSSA::MemSSA(Function *Func, DataLayout &DL)
-    : DT(*Func), AC(*Func), TLI(TLII), AA(TLI), BAA(DL, TLI, AC, &DT), F(Func) {
+MemSSA::MemSSA(Function *Func)
+    : DT(*Func), AC(*Func), TLI(TLII), AA(TLI),
+      BAA(Func->getParent()->getDataLayout(), TLI, AC, &DT), F(Func) {
   AA.addAAResult(BAA);
   MSSA = new MemorySSA(*F, &AA, &DT);
   Walker = MSSA->getWalker();
-
-  // MemorySSA *MSSA = &getAnalysis<MemorySSAWrapperPass>().getMSSA();
-  // MemorySSAWalker *MAW = new MemorySSAWalker(*MSSA);
-  // MemorySSAWalker *Walker = MSSA->getWalker();
-  // errs() << "\n";
 }
 
 MemDepEdgesType MemSSA::collectMemoryDepEdges() {
-  errs() << "Function Name = " << F->getName() << "\n";
   MemDepEdgesType retval;
 
   for (Function::iterator BB = F->begin(); BB != F->end(); BB++) {
-    errs() << "Basic block (name=" << BB->getName() << ")\n";
 
     // Get MemoryPhi and print it out
     // MemoryPhi *MP = MSSA->getMemoryAccess(dyn_cast<BasicBlock>(BB));
@@ -52,7 +46,6 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
       if (!dyn_cast<StoreInst>(I) && !dyn_cast<LoadInst>(I))
         continue;
 
-      errs() << "Instruction: " << *itrIns << "\n";
       MemoryAccess *MA = Walker->getClobberingMemoryAccess(&*itrIns);
       // MemoryLocation Location;
       // MemoryAccess* MAR = Walker.getClobberingMemoryAccess(MA,&Location);
@@ -64,32 +57,32 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
       // MSSA->getMemoryAccess(dyn_cast<Instruction>(&*itrIns));
 
       if (!MA) {
-        errs() << "\n\n";
+        // errs() << "\n\n";
         continue;
       }
 
-      errs() << "\tMemeory Access: \n";
-      MA->dump();
+      // errs() << "\tMemeory Access: \n";
+      // MA->dump();
 
       if (MSSA->isLiveOnEntryDef(MA)) {
-        errs() << "\n\n";
+        // errs() << "\n\n";
         continue;
       }
 
       if (dyn_cast<MemoryPhi>(MA)) {
         auto definingInstrs = handleMemPhi(MSSA, cast<MemoryPhi>(MA));
-        for (auto p : definingInstrs) {
-          errs() << "\t\tDef Inst: " << *p << "\n";
-        }
+        // for (auto p : definingInstrs) {
+        //   errs() << "\t\tDef Inst: " << *p << "\n";
+        // }
         retval[I].insert(definingInstrs.begin(), definingInstrs.end());
 
       } else {
         Instruction *u = cast<MemoryUseOrDef>(MA)->getMemoryInst();
-        errs() << "\t\tDef Inst: " << *u << "\n";
+        // errs() << "\t\tDef Inst: " << *u << "\n";
         retval[I].insert(u);
       }
 
-      errs() << "\n\n";
+      // errs() << "\n\n";
     }
   }
 
@@ -103,7 +96,7 @@ set<Instruction *> MemSSA::handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi) {
        MAitr != phi->defs_end(); MAitr++) {
 
     MemoryAccess *MA = *MAitr;
-    errs() << "\tDef: " << *MA << "\n";
+    // errs() << "\tDef: " << *MA << "\n";
 
     if (MSSA->isLiveOnEntryDef(MA)) {
       continue;

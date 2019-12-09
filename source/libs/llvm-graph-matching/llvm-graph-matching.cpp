@@ -11,6 +11,7 @@
 
 #include "llvm-dfg-dot.h"
 #include "llvm-graph-matching.h"
+#include "memssa.h"
 
 using namespace llvm;
 
@@ -34,7 +35,7 @@ Matcher::Matcher(Function *f1, Function *f2) {
   else
     llvm::errs() << "Iso Match NOT Found\n";
 
-  printDOT();
+  // printDOT();
 }
 
 void Matcher::printDOT() {
@@ -1376,11 +1377,23 @@ void Matcher::dumpPotBBMatches() {
 }
 
 /*********************************** DepGraph Implementaion ***************/
-DepGraph::DepGraph(Function *F) {
+DepGraph::DepGraph(Function *F, string dotOutName) {
 
+  bool plot =  false;
+  if(dotOutName != "") plot = true;
+
+  // std::ofstream ofs;
+  // if(plot) {
+  //   std::error_code EC;
+  //   ofs.open (dotOutName, std::ofstream::out);
+  //   ofs << "digraph \"CFG for " <<   dotOutName << "\" { \n";
+  // }
+
+  // Argument SSA edges
   auto argI = F->arg_begin();
   while (argI != F->arg_end()) {
     Value *U = &*argI;
+    set<Value *> S;
 
     for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
       Value *V = dyn_cast<Value>(*VI);
@@ -1388,13 +1401,17 @@ DepGraph::DepGraph(Function *F) {
         assert(0 && "DepGraph::User Value type error!");
       }
 
-      GImpl[U].insert(V);
+      S.insert(V);
     }
+
+    GImpl[U] = S;
     argI++;
   }
 
+  // Instruction SSA edges
   for (inst_iterator I = inst_begin(F), E = inst_end(F); I != E; ++I) {
     Value *U = &*I;
+    set<Value *> S;
 
     for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
       Value *V = dyn_cast<Value>(*VI);
@@ -1402,7 +1419,29 @@ DepGraph::DepGraph(Function *F) {
         assert(0 && "DepGraph::User Value type error!");
       }
 
-      GImpl[U].insert(V);
+      S.insert(V);
+    }
+
+    GImpl[U] = S;
+  }
+
+  // MemSSA edges
+  llvm::errs() << "\n\nMemDep Edges for: " << F->getName() << "\n";
+  MemSSA *mSSA = new MemSSA(F);
+  MemDepEdgesType edges = mSSA->collectMemoryDepEdges();
+  for (auto e : edges) {
+    Value *U = e.first;
+    auto adjList = e.second;
+
+    if (!GImpl.count(U)) {
+      llvm::errs() << *U;
+      assert(0 && "DepGraph::getAdj::Missing load/store in graph!");
+    }
+
+    llvm::errs() << *U << "\n";
+    for (auto p : adjList) {
+      llvm::errs() << "\t" << *p << "\n";
+      GImpl[U].insert(p);
     }
   }
 }
