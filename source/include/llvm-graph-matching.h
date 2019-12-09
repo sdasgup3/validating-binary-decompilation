@@ -40,7 +40,7 @@ private:
   map<Value *, set<Value *>> GImpl;
 
 public:
-  DepGraph(Function *F);
+  DepGraph(Function *F, string dotOutName = "");
   size_t numEdges() { return GImpl.size(); };
   vector<Value *> getVertices();
   set<Value *> getAdj(Value *V);
