@@ -35,12 +35,24 @@ using namespace llvm;
 
 namespace llvm {
 
+class DepGraph {
+private:
+  map<Value *, set<Value *>> GImpl;
+
+public:
+  DepGraph(Function *F);
+  size_t numEdges() { return GImpl.size(); };
+  vector<Value *> getVertices();
+  set<Value *> getAdj(Value *V);
+};
+
 class Matcher {
 private:
   std::map<Value *, set<Value *>> PotIMatches;
   std::set<Value *> exactIMatches;
   std::map<BasicBlock *, BasicBlock *> PotBBMatches;
   Function *F1, *F2;
+  DepGraph *G1, *G2;
   GlobalNumberState *GlobalNumbers;
   Type *IgnoreType;
   vector<Value *> VertexSet;
@@ -90,7 +102,7 @@ public:
   **  19:   return Φ
   **  20: end procedure
   */
-  void simpleSimulation(Function *F1, Function *F2);
+  // void simpleSimulation(Function *F1, Function *F2);
 
   /*
   **   1: procedure DualSim(G, Q, Φ):

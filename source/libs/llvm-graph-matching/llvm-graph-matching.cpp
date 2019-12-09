@@ -17,6 +17,11 @@ using namespace llvm;
 Matcher::Matcher(Function *f1, Function *f2) {
   F1 = f1;
   F2 = f2;
+
+  G1 = new DepGraph(F1);
+  G2 = new DepGraph(F2);
+  VertexSet = G1->getVertices();
+
   GlobalNumbers = new GlobalNumberState();
   llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
                << "\n";
@@ -72,12 +77,15 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
     return false;
 
   // Arity Match
-  size_t arityCount1, arityCount2;
-  arityCount1 = arityCount2 = 0;
-  for (auto it = I1->user_begin(); it != I1->user_end(); it++, arityCount1++) {
-  }
-  for (auto it = I2->user_begin(); it != I2->user_end(); it++, arityCount2++) {
-  }
+  size_t arityCount1 = G1->getAdj(I1).size();
+  size_t arityCount2 = G2->getAdj(I2).size();
+  // arityCount1 = arityCount2 = 0;
+  // for (auto it = I1->user_begin(); it != I1->user_end(); it++, arityCount1++)
+  // {
+  // }
+  // for (auto it = I2->user_begin(); it != I2->user_end(); it++, arityCount2++)
+  // {
+  // }
 
   if (arityCount1 != arityCount2)
     return false;
@@ -148,7 +156,7 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
     //    (nullptr != dyn_cast<CallInst>(&*I1))) {
     //  VertexSet.push_back(&*I1);
     //}
-    VertexSet.push_back(&*I1);
+    // VertexSet.push_back(&*I1);
     // dumpLLVMNode(&*I1);
 
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
@@ -297,7 +305,7 @@ bool Matcher::initialMatch(Function *F1, Function *F2) {
       // break;
     }
 
-    VertexSet.push_back(&*argI1);
+    // VertexSet.push_back(&*argI1);
     PotIMatches[&*argI1].insert(&*argI2);
 
     argI1++;
@@ -337,18 +345,6 @@ static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
 }
 
 bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
-  // Populate the vertices set Vq
-  // vector<Value *> V;
-  // auto argI1 = F1->arg_begin();
-  // while (argI1 != F1->arg_end()) {
-  //  V.push_back(&*argI1);
-  //  argI1++;
-  //}
-
-  // for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
-  //  V.push_back(&*U);
-  //}
-
   bool changed = true;
   size_t round = 0;
   while (changed) {
@@ -409,8 +405,6 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   return result;
 }
 
-// bool Matcher::dualSimulation(Function *F1, Function *F2,
-//                             const vector<Value *> &V) {
 bool Matcher::dualSimulation(Function *F1, Function *F2) {
 
   // 2:  changed←true
@@ -432,10 +426,11 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
         continue;
 
       // 6: for u' ←Q.adj(u) do
-      for (Value::user_iterator UPrimeI = U->user_begin();
-           UPrimeI != U->user_end(); UPrimeI++) {
-        Value *UPrime = dyn_cast<Value>(*UPrimeI);
-        assert(UPrime && "User not value");
+      // for (Value::user_iterator UPrimeI = U->user_begin();
+      //      UPrimeI != U->user_end(); UPrimeI++) {
+      //   Value *UPrime = dyn_cast<Value>(*UPrimeI);
+      //   assert(UPrime && "User not value");
+      for (auto *UPrime : G1->getAdj(U)) {
 
         // 7:        Φ'(u')←∅
         set<Value *> refinedUPrimeMatches;
@@ -443,12 +438,6 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
 
         // 8: for v ←Φ(u) do
         for (auto V : PotIMatches.at(&*U)) {
-#ifdef MATCHER_DEBUG
-//          llvm::errs() << "\nu: ";
-//          dumpLLVMNode(U);
-//          llvm::errs() << "v: ";
-//          dumpLLVMNode(V);
-#endif
 
           // 9: Φv(u')←G.adj(v) ∩ Φ(u')
           if (!PotIMatches.count(UPrime)) {
@@ -462,27 +451,13 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
           }
 
           set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
-          set<Value *> VAdj;
-          for (Value::user_iterator VPrimeI = V->user_begin();
-               VPrimeI != V->user_end(); VPrimeI++) {
-            Value *VPrime = dyn_cast<Value>(*VPrimeI);
-            assert(VPrime && "User not value");
-            VAdj.insert(VPrime);
-          }
-#ifdef MATCHER_DEBUG
-//          llvm::errs() << "\tu': ";
-//          dumpLLVMNode(UPrime);
-//          for (auto &UPrimeMatch : UPrimeMatches) {
-//            llvm::errs() << "\t\tu' match: ";
-//            dumpLLVMNode(UPrimeMatch);
-//          }
-//
-//          llvm::errs() << "\n";
-//          for (auto &adj : VAdj) {
-//            llvm::errs() << "\t\tv adj: ";
-//            dumpLLVMNode(adj);
-//          }
-#endif
+          set<Value *> VAdj = G2->getAdj(V);
+          // for (Value::user_iterator VPrimeI = V->user_begin();
+          //      VPrimeI != V->user_end(); VPrimeI++) {
+          //   Value *VPrime = dyn_cast<Value>(*VPrimeI);
+          //   assert(VPrime && "User not value");
+          //   VAdj.insert(VPrime);
+          // }
 
           auto tempList = Intersection(UPrimeMatches, VAdj);
 
@@ -1317,58 +1292,58 @@ int Matcher::cmpValues(const Value *L, const Value *R) const {
   // return cmpNumbers(LeftSN.first->second, RightSN.first->second);
 }
 
-void Matcher::simpleSimulation(Function *F1, Function *F2) {
-
-  if (!initialMatch(F1, F2))
-    return;
-
-  // 2: changed←true
-  bool changed = true;
-  // 3: while changed do
-  while (changed) {
-    // 4: changed←false
-    changed = false;
-    // 5: for u←Vq do
-    for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
-      // 6: for u' ←Q.adj(u) do
-      for (Value::user_iterator UPrimeI = U->user_begin();
-           UPrimeI != U->user_end(); UPrimeI++) {
-        // Instruction *UPrime = dyn_cast<Instruction>(*UPrimeI);
-        Value *UPrime = dyn_cast<Value>(*UPrimeI);
-        assert(UPrime && "User not value");
-
-        vector<Value *> deleteList;
-        // 7: for v ←Φ(u) do
-        for (auto V : PotIMatches.at(&*U)) {
-          // 8: if G.adj(v) ∩ Φ(u') = ∅ then
-          set<Value *> UPrimeMatches = PotIMatches.at(UPrime);
-          set<Value *> VAdj;
-          for (Value::user_iterator VPrimeI = V->user_begin();
-               VPrimeI != V->user_end(); VPrimeI++) {
-            Value *VPrime = dyn_cast<Value>(*VPrimeI);
-            assert(VPrime && "User not value");
-            VAdj.insert(VPrime);
-          }
-
-          if (!Intersection(UPrimeMatches, VAdj).size()) {
-            deleteList.push_back(V);
-            // 13: changed←true
-            changed = true;
-          }
-        }
-
-        // 9: remove v from Φ(u)
-        for (auto deleteNode : deleteList) {
-          PotIMatches.at(&*U).erase(deleteNode);
-        }
-      }
-    }
-  }
-#ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\nAfter Simple Simulation...\n";
-  dumpPotIMatches();
-#endif
-}
+// void Matcher::simpleSimulation(Function *F1, Function *F2) {
+//
+//   if (!initialMatch(F1, F2))
+//     return;
+//
+//   // 2: changed←true
+//   bool changed = true;
+//   // 3: while changed do
+//   while (changed) {
+//     // 4: changed←false
+//     changed = false;
+//     // 5: for u←Vq do
+//     for (inst_iterator U = inst_begin(F1), E = inst_end(F1); U != E; ++U) {
+//       // 6: for u' ←Q.adj(u) do
+//       for (Value::user_iterator UPrimeI = U->user_begin();
+//            UPrimeI != U->user_end(); UPrimeI++) {
+//         // Instruction *UPrime = dyn_cast<Instruction>(*UPrimeI);
+//         Value *UPrime = dyn_cast<Value>(*UPrimeI);
+//         assert(UPrime && "User not value");
+//
+//         vector<Value *> deleteList;
+//         // 7: for v ←Φ(u) do
+//         for (auto V : PotIMatches.at(&*U)) {
+//           // 8: if G.adj(v) ∩ Φ(u') = ∅ then
+//           set<Value *> UPrimeMatches = PotIMatches.at(UPrime);
+//           set<Value *> VAdj;
+//           for (Value::user_iterator VPrimeI = V->user_begin();
+//                VPrimeI != V->user_end(); VPrimeI++) {
+//             Value *VPrime = dyn_cast<Value>(*VPrimeI);
+//             assert(VPrime && "User not value");
+//             VAdj.insert(VPrime);
+//           }
+//
+//           if (!Intersection(UPrimeMatches, VAdj).size()) {
+//             deleteList.push_back(V);
+//             // 13: changed←true
+//             changed = true;
+//           }
+//         }
+//
+//         // 9: remove v from Φ(u)
+//         for (auto deleteNode : deleteList) {
+//           PotIMatches.at(&*U).erase(deleteNode);
+//         }
+//       }
+//     }
+//   }
+// #ifdef MATCHER_DEBUG
+//   llvm::errs() << "\n\nAfter Simple Simulation...\n";
+//   dumpPotIMatches();
+// #endif
+// }
 
 bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
   if (!I1 || !I2)
@@ -1398,4 +1373,54 @@ void Matcher::dumpPotBBMatches() {
                  << "\n";
     llvm::errs() << "\t}\n\n";
   }
+}
+
+/*********************************** DepGraph Implementaion ***************/
+DepGraph::DepGraph(Function *F) {
+
+  auto argI = F->arg_begin();
+  while (argI != F->arg_end()) {
+    Value *U = &*argI;
+
+    for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
+      Value *V = dyn_cast<Value>(*VI);
+      if (!V) {
+        assert(0 && "DepGraph::User Value type error!");
+      }
+
+      GImpl[U].insert(V);
+    }
+    argI++;
+  }
+
+  for (inst_iterator I = inst_begin(F), E = inst_end(F); I != E; ++I) {
+    Value *U = &*I;
+
+    for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
+      Value *V = dyn_cast<Value>(*VI);
+      if (!V) {
+        assert(0 && "DepGraph::User Value type error!");
+      }
+
+      GImpl[U].insert(V);
+    }
+  }
+}
+
+vector<Value *> DepGraph::getVertices() {
+  vector<Value *> retval;
+  for (auto p : GImpl) {
+    retval.push_back(p.first);
+  }
+  return retval;
+}
+
+set<Value *> DepGraph::getAdj(Value *V) {
+  if (!GImpl.count(V)) {
+    llvm::errs() << *V;
+    assert(0 && "DepGraph::getAdj::Missing vertex in graph!");
+    return set<Value *>();
+  }
+
+  return GImpl[V];
 }
