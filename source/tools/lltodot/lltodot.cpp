@@ -21,6 +21,7 @@
 #include "llvm/Support/SystemUtils.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Transforms/Scalar.h"
+#include <llvm/Support/GraphWriter.h>
 #include <llvm/Transforms/IPO.h>
 #include <llvm/Transforms/IPO/PassManagerBuilder.h>
 // Standard C++ imports
@@ -37,7 +38,7 @@
 #include "src/ext/cpputil/include/signal/debug_handler.h"
 #include "src/ext/cpputil/include/system/terminal.h"
 
-#include "llvm-dfg-dot.h"
+//#include "llvm-dfg-dot.h"
 #include "tools/gadgets/functions.h"
 #include "tools/gadgets/target.h"
 
@@ -53,6 +54,51 @@ auto &LLIR = ValueArg<string>::create("llir_file")
 auto &Outfile = ValueArg<string>::create("outfile")
                     .usage("<path/to/file.(dot)>: file to write dot to")
                     .description("Path to proposed output dot file");
+
+void writeHeader(raw_ostream &O, DepGraph *G) {
+  std::string GraphName = "CFG for '" + G->F->getName().str() + "' function";
+  O << "digraph \"" << DOT::EscapeString(GraphName) << "\" {\n";
+  O << "\n";
+}
+
+void writeFooter(raw_ostream &O, DepGraph *G) { O << "}\n"; }
+
+void writeNodes(raw_ostream &O, DepGraph *G) {
+  for (auto p : G->getImpl()) {
+    auto *Node = p.first;
+    auto adjList = p.second;
+    O << "\tNode" << static_cast<const void *>(Node) << " [shape=record,";
+    O << "label=\"{";
+    O << *Node;
+    O << "}\"];\n";
+
+    for (auto TargetNode : adjList) {
+      O << "\tNode" << static_cast<const void *>(Node);
+      O << " -> Node" << static_cast<const void *>(TargetNode);
+      O << ";\n";
+    }
+  }
+}
+
+void writeDFGToDotFile(DepGraph *G, string OutputDFG) {
+  std::string Filename =
+      OutputDFG == "" ? ("cfg." + G->F->getName() + ".dot").str() : OutputDFG;
+  errs() << "Writing '" << Filename << "'...";
+
+  std::error_code EC;
+  raw_fd_ostream File(Filename, EC, sys::fs::F_Text);
+
+  if (!EC) {
+    writeHeader(File, G);
+    writeNodes(File, G);
+    writeFooter(File, G);
+
+  } else {
+    errs() << "  error opening file for writing!";
+  }
+
+  errs() << "\nWriting '" << Filename << "':Done\n\n";
+}
 
 int main(int argc, char **argv) {
   target_arg.required(false);
@@ -106,8 +152,8 @@ int main(int argc, char **argv) {
 
     smatch m;
     string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$")) ==
-            false &&
+    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc +
+                                             "$")) == false &&
         (Func.getName().str().length() != TargetFunc.length() ||
          TargetFunc.compare(0, TargetFunc.length(), Func.getName().str()) != 0))
       continue;
@@ -121,10 +167,8 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  MatchInfo *MI = new MatchInfo;
-  MI->Fn = F1;
-  MI->color = false;
-  writeDFGToDotFile(MI, Outfile.value());
+  DepGraph *G = new DepGraph(F1);
+  writeDFGToDotFile(G, Outfile.value());
 
   Console::msg() << "Dot file generated!\n";
   return 0;

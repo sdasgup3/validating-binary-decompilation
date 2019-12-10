@@ -46,6 +46,7 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
       if (!dyn_cast<StoreInst>(I) && !dyn_cast<LoadInst>(I))
         continue;
 
+      errs() << *I << "\n";
       MemoryAccess *MA = Walker->getClobberingMemoryAccess(&*itrIns);
       // MemoryLocation Location;
       // MemoryAccess* MAR = Walker.getClobberingMemoryAccess(MA,&Location);
@@ -61,8 +62,8 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
         continue;
       }
 
-      // errs() << "\tMemeory Access: \n";
-      // MA->dump();
+      errs() << "\tMemeory Access: \n";
+      MA->dump();
 
       if (MSSA->isLiveOnEntryDef(MA)) {
         // errs() << "\n\n";
@@ -82,7 +83,7 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
         retval[I].insert(u);
       }
 
-      // errs() << "\n\n";
+      errs() << "\n\n";
     }
   }
 

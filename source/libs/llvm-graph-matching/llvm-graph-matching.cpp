@@ -15,12 +15,12 @@
 
 using namespace llvm;
 
-Matcher::Matcher(Function *f1, Function *f2) {
+Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges) {
   F1 = f1;
   F2 = f2;
 
-  G1 = new DepGraph(F1);
-  G2 = new DepGraph(F2);
+  G1 = new DepGraph(F1, useSSAEdges);
+  G2 = new DepGraph(F2, useSSAEdges);
   VertexSet = G1->getVertices();
 
   GlobalNumbers = new GlobalNumberState();
@@ -1377,17 +1377,9 @@ void Matcher::dumpPotBBMatches() {
 }
 
 /*********************************** DepGraph Implementaion ***************/
-DepGraph::DepGraph(Function *F, string dotOutName) {
+DepGraph::DepGraph(Function *F, bool useSSAEdges) {
 
-  bool plot =  false;
-  if(dotOutName != "") plot = true;
-
-  // std::ofstream ofs;
-  // if(plot) {
-  //   std::error_code EC;
-  //   ofs.open (dotOutName, std::ofstream::out);
-  //   ofs << "digraph \"CFG for " <<   dotOutName << "\" { \n";
-  // }
+  this->F = F;
 
   // Argument SSA edges
   auto argI = F->arg_begin();
@@ -1423,6 +1415,10 @@ DepGraph::DepGraph(Function *F, string dotOutName) {
     }
 
     GImpl[U] = S;
+  }
+
+  if (useSSAEdges) {
+    return;
   }
 
   // MemSSA edges
