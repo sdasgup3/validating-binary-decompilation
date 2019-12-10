@@ -53,6 +53,10 @@ auto &Source = ValueArg<string>::create("file2")
                    .usage("<path/to/file.(ll/bc)>:function to analyze in file2")
                    .description("Path to proposed ll/bc file");
 
+auto &SSAEdgeOnly =
+    FlagArg::create("use-ssa-edges")
+        .description("Use only the SSA edges to create the dependency graph");
+
 int main(int argc, char **argv) {
   target_arg.required(false);
   CommandLineConfig::strict_with_convenience(argc, argv);
@@ -176,7 +180,7 @@ int main(int argc, char **argv) {
   }
 
   // Matching the extracted functions
-  Matcher M(F1, F2);
+  Matcher M(F1, F2, SSAEdgeOnly.value());
 
   Console::msg() << "Matcher Done...\n";
   return 0;

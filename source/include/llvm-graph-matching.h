@@ -40,10 +40,12 @@ private:
   map<Value *, set<Value *>> GImpl;
 
 public:
-  DepGraph(Function *F, string dotOutName = "");
+  Function *F;
+  DepGraph(Function *F, bool useSSAEdges = false);
   size_t numEdges() { return GImpl.size(); };
   vector<Value *> getVertices();
   set<Value *> getAdj(Value *V);
+  map<Value *, set<Value *>> getImpl() { return GImpl; };
 };
 
 class Matcher {
@@ -73,7 +75,7 @@ private:
   int cmpMem(StringRef L, StringRef R) const;
 
 public:
-  Matcher(Function *F1, Function *F2);
+  Matcher(Function *F1, Function *F2, bool useSSAEdges = false);
   // For each instruction in F1, retrieve feasible matches in F2.
   void retrievePotIMatches(Function *F1, Function *F2);
   bool checkInvariant();
