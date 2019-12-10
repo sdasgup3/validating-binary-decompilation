@@ -466,14 +466,14 @@ Decompiling instr:.main:...
 
 Decompiling instr:pushq %rbp...
 Instr: pushq %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp
+Workdir: /home/ubuntu/Junk/compd_cache//pushq__rbp
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//pushq__rbp/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//pushq__rbp/test.mod.ll
 Running artifacts...Done.
 
 FuncCache inserted: _ZN12_GLOBAL__N_1L4PUSHI2InImEEEP6MemoryS4_R5StateT_
@@ -483,14 +483,14 @@ Decompiling instr:pushq %rbp Done...
 
 Decompiling instr:movq %rsp, %rbp...
 Instr: movq %rsp, %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp
+Workdir: /home/ubuntu/Junk/compd_cache//movq__rsp___rbp
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsp___rbp/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__rsp___rbp/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -502,14 +502,14 @@ Decompiling instr:movq %rsp, %rbp Done...
 
 Decompiling instr:subq $0x50, %rsp...
 Instr: subq $0x50, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x50___rsp
+Workdir: /home/ubuntu/Junk/compd_cache//subq__0x50___rsp
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//subq__0x50___rsp/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//subq__0x50___rsp/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -521,14 +521,14 @@ Decompiling instr:subq $0x50, %rsp Done...
 
 Decompiling instr:movl $0x28, %eax...
 Instr: movl $0x28, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x28___eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x28___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x28___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x28___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -540,14 +540,14 @@ Decompiling instr:movl $0x28, %eax Done...
 
 Decompiling instr:movl %eax, %ecx...
 Instr: movl %eax, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax___ecx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax___ecx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax___ecx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -559,14 +559,14 @@ Decompiling instr:movl %eax, %ecx Done...
 
 Decompiling instr:movl $0x0, -0x4(%rbp)...
 Instr: movl $0x0, -0x4(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x4__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x4__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x4__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -578,14 +578,14 @@ Decompiling instr:movl $0x0, -0x4(%rbp) Done...
 
 Decompiling instr:movl %edi, -0x8(%rbp)...
 Instr: movl %edi, -0x8(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__edi__MINUS0x8__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__edi__MINUS0x8__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__edi__MINUS0x8__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__edi__MINUS0x8__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -597,14 +597,14 @@ Decompiling instr:movl %edi, -0x8(%rbp) Done...
 
 Decompiling instr:movq %rsi, -0x10(%rbp)...
 Instr: movq %rsi, -0x10(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsi__MINUS0x10__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movq__rsi__MINUS0x10__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rsi__MINUS0x10__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__rsi__MINUS0x10__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -616,14 +616,14 @@ Decompiling instr:movq %rsi, -0x10(%rbp) Done...
 
 Decompiling instr:movq %rcx, %rdi...
 Instr: movq %rcx, %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rcx___rdi
+Workdir: /home/ubuntu/Junk/compd_cache//movq__rcx___rdi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rcx___rdi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__rcx___rdi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -635,14 +635,14 @@ Decompiling instr:movq %rcx, %rdi Done...
 
 Decompiling instr:callq .malloc_plt...
 Instr: callq .malloc_plt
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.malloc_plt
+Workdir: /home/ubuntu/Junk/compd_cache//callq_.malloc_plt
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.malloc_plt/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//callq_.malloc_plt/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -654,14 +654,14 @@ Decompiling instr:callq .malloc_plt Done...
 
 Decompiling instr:movl $0x28, %edx...
 Instr: movl $0x28, %edx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x28___edx
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x28___edx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x28___edx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x28___edx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -673,14 +673,14 @@ Decompiling instr:movl $0x28, %edx Done...
 
 Decompiling instr:movl %edx, %edi...
 Instr: movl %edx, %edi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__edx___edi
+Workdir: /home/ubuntu/Junk/compd_cache//movl__edx___edi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__edx___edi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__edx___edi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -692,14 +692,14 @@ Decompiling instr:movl %edx, %edi Done...
 
 Decompiling instr:movq %rax, -0x18(%rbp)...
 Instr: movq %rax, -0x18(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x18__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movq__rax__MINUS0x18__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x18__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__rax__MINUS0x18__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -711,14 +711,14 @@ Decompiling instr:movq %rax, -0x18(%rbp) Done...
 
 Decompiling instr:callq .malloc_plt...
 Instr: callq .malloc_plt
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.malloc_plt
+Workdir: /home/ubuntu/Junk/compd_cache//callq_.malloc_plt
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.malloc_plt/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//callq_.malloc_plt/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -730,14 +730,14 @@ Decompiling instr:callq .malloc_plt Done...
 
 Decompiling instr:movq %rax, -0x20(%rbp)...
 Instr: movq %rax, -0x20(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movq__rax__MINUS0x20__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__rax__MINUS0x20__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__rax__MINUS0x20__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -749,14 +749,14 @@ Decompiling instr:movq %rax, -0x20(%rbp) Done...
 
 Decompiling instr:movl $0x0, -0x24(%rbp)...
 Instr: movl $0x0, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -771,14 +771,14 @@ Decompiling instr:.L_400620:...
 
 Decompiling instr:cmpl $0xa, -0x24(%rbp)...
 Instr: cmpl $0xa, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0xa__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//cmpl__0xa__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0xa__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//cmpl__0xa__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -790,14 +790,14 @@ Decompiling instr:cmpl $0xa, -0x24(%rbp) Done...
 
 Decompiling instr:jge .L_40064c...
 Instr: jge .L_40064c
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40064c
+Workdir: /home/ubuntu/Junk/compd_cache//jge_.L_40064c
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40064c/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//jge_.L_40064c/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -809,14 +809,14 @@ Decompiling instr:jge .L_40064c Done...
 
 Decompiling instr:movl -0x24(%rbp), %eax...
 Instr: movl -0x24(%rbp), %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -828,14 +828,14 @@ Decompiling instr:movl -0x24(%rbp), %eax Done...
 
 Decompiling instr:addl $0xa, %eax...
 Instr: addl $0xa, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xa___eax
+Workdir: /home/ubuntu/Junk/compd_cache//addl__0xa___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0xa___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addl__0xa___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -847,14 +847,14 @@ Decompiling instr:addl $0xa, %eax Done...
 
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
+Workdir: /home/ubuntu/Junk/compd_cache//addl__0x1___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -866,14 +866,14 @@ Decompiling instr:addl $0x1, %eax Done...
 
 Decompiling instr:movq -0x18(%rbp), %rcx...
 Instr: movq -0x18(%rbp), %rcx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x18__rbp____rcx
+Workdir: /home/ubuntu/Junk/compd_cache//movq_MINUS0x18__rbp____rcx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x18__rbp____rcx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq_MINUS0x18__rbp____rcx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -885,14 +885,14 @@ Decompiling instr:movq -0x18(%rbp), %rcx Done...
 
 Decompiling instr:movslq -0x24(%rbp), %rdx...
 Instr: movslq -0x24(%rbp), %rdx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x24__rbp____rdx
+Workdir: /home/ubuntu/Junk/compd_cache//movslq_MINUS0x24__rbp____rdx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x24__rbp____rdx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movslq_MINUS0x24__rbp____rdx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -904,14 +904,14 @@ Decompiling instr:movslq -0x24(%rbp), %rdx Done...
 
 Decompiling instr:movl %eax, (%rcx,%rdx,4)...
 Instr: movl %eax, (%rcx,%rdx,4)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax____rcx__rdx_4_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax____rcx__rdx_4_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax____rcx__rdx_4_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax____rcx__rdx_4_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -923,14 +923,14 @@ Decompiling instr:movl %eax, (%rcx,%rdx,4) Done...
 
 Decompiling instr:movl -0x24(%rbp), %eax...
 Instr: movl -0x24(%rbp), %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -942,14 +942,14 @@ Decompiling instr:movl -0x24(%rbp), %eax Done...
 
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
+Workdir: /home/ubuntu/Junk/compd_cache//addl__0x1___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -961,14 +961,14 @@ Decompiling instr:addl $0x1, %eax Done...
 
 Decompiling instr:movl %eax, -0x24(%rbp)...
 Instr: movl %eax, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -980,14 +980,14 @@ Decompiling instr:movl %eax, -0x24(%rbp) Done...
 
 Decompiling instr:jmpq .L_400620...
 Instr: jmpq .L_400620
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400620
+Workdir: /home/ubuntu/Junk/compd_cache//jmpq_.L_400620
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400620/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//jmpq_.L_400620/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1002,14 +1002,14 @@ Decompiling instr:.L_40064c:...
 
 Decompiling instr:movl $0x0, -0x24(%rbp)...
 Instr: movl $0x0, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x0__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x0__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1024,14 +1024,14 @@ Decompiling instr:.L_400653:...
 
 Decompiling instr:cmpl $0xa, -0x24(%rbp)...
 Instr: cmpl $0xa, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0xa__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//cmpl__0xa__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//cmpl__0xa__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//cmpl__0xa__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1043,14 +1043,14 @@ Decompiling instr:cmpl $0xa, -0x24(%rbp) Done...
 
 Decompiling instr:jge .L_40067c...
 Instr: jge .L_40067c
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40067c
+Workdir: /home/ubuntu/Junk/compd_cache//jge_.L_40067c
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jge_.L_40067c/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//jge_.L_40067c/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1062,14 +1062,14 @@ Decompiling instr:jge .L_40067c Done...
 
 Decompiling instr:movl -0x24(%rbp), %eax...
 Instr: movl -0x24(%rbp), %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1081,14 +1081,14 @@ Decompiling instr:movl -0x24(%rbp), %eax Done...
 
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
+Workdir: /home/ubuntu/Junk/compd_cache//addl__0x1___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1100,14 +1100,14 @@ Decompiling instr:addl $0x1, %eax Done...
 
 Decompiling instr:movq -0x20(%rbp), %rcx...
 Instr: movq -0x20(%rbp), %rcx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rcx
+Workdir: /home/ubuntu/Junk/compd_cache//movq_MINUS0x20__rbp____rcx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____rcx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq_MINUS0x20__rbp____rcx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1119,14 +1119,14 @@ Decompiling instr:movq -0x20(%rbp), %rcx Done...
 
 Decompiling instr:movslq -0x24(%rbp), %rdx...
 Instr: movslq -0x24(%rbp), %rdx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x24__rbp____rdx
+Workdir: /home/ubuntu/Junk/compd_cache//movslq_MINUS0x24__rbp____rdx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movslq_MINUS0x24__rbp____rdx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movslq_MINUS0x24__rbp____rdx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1138,14 +1138,14 @@ Decompiling instr:movslq -0x24(%rbp), %rdx Done...
 
 Decompiling instr:movl %eax, (%rcx,%rdx,4)...
 Instr: movl %eax, (%rcx,%rdx,4)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax____rcx__rdx_4_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax____rcx__rdx_4_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax____rcx__rdx_4_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax____rcx__rdx_4_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1157,14 +1157,14 @@ Decompiling instr:movl %eax, (%rcx,%rdx,4) Done...
 
 Decompiling instr:movl -0x24(%rbp), %eax...
 Instr: movl -0x24(%rbp), %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x24__rbp____eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x24__rbp____eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1176,14 +1176,14 @@ Decompiling instr:movl -0x24(%rbp), %eax Done...
 
 Decompiling instr:addl $0x1, %eax...
 Instr: addl $0x1, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax
+Workdir: /home/ubuntu/Junk/compd_cache//addl__0x1___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addl__0x1___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addl__0x1___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1195,14 +1195,14 @@ Decompiling instr:addl $0x1, %eax Done...
 
 Decompiling instr:movl %eax, -0x24(%rbp)...
 Instr: movl %eax, -0x24(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x24__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x24__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x24__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x24__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1214,14 +1214,14 @@ Decompiling instr:movl %eax, -0x24(%rbp) Done...
 
 Decompiling instr:jmpq .L_400653...
 Instr: jmpq .L_400653
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400653
+Workdir: /home/ubuntu/Junk/compd_cache//jmpq_.L_400653
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//jmpq_.L_400653/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//jmpq_.L_400653/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1236,14 +1236,14 @@ Decompiling instr:.L_40067c:...
 
 Decompiling instr:movl $0x64, %edi...
 Instr: movl $0x64, %edi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x64___edi
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x64___edi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x64___edi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x64___edi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1255,14 +1255,14 @@ Decompiling instr:movl $0x64, %edi Done...
 
 Decompiling instr:movl $0xc8, %esi...
 Instr: movl $0xc8, %esi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xc8___esi
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0xc8___esi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xc8___esi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0xc8___esi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1274,14 +1274,14 @@ Decompiling instr:movl $0xc8, %esi Done...
 
 Decompiling instr:movl $0x12c, %edx...
 Instr: movl $0x12c, %edx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x12c___edx
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x12c___edx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x12c___edx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x12c___edx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1293,14 +1293,14 @@ Decompiling instr:movl $0x12c, %edx Done...
 
 Decompiling instr:movl $0x190, %ecx...
 Instr: movl $0x190, %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x190___ecx
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x190___ecx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x190___ecx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x190___ecx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1312,14 +1312,14 @@ Decompiling instr:movl $0x190, %ecx Done...
 
 Decompiling instr:movl $0x1f4, %r8d...
 Instr: movl $0x1f4, %r8d
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x1f4___r8d
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x1f4___r8d
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x1f4___r8d/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x1f4___r8d/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1331,14 +1331,14 @@ Decompiling instr:movl $0x1f4, %r8d Done...
 
 Decompiling instr:movl $0x258, %r9d...
 Instr: movl $0x258, %r9d
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x258___r9d
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0x258___r9d
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0x258___r9d/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0x258___r9d/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1350,14 +1350,14 @@ Decompiling instr:movl $0x258, %r9d Done...
 
 Decompiling instr:movl $0xa, %eax...
 Instr: movl $0xa, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa___eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0xa___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0xa___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1369,14 +1369,14 @@ Decompiling instr:movl $0xa, %eax Done...
 
 Decompiling instr:movq -0x18(%rbp), %r10...
 Instr: movq -0x18(%rbp), %r10
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x18__rbp____r10
+Workdir: /home/ubuntu/Junk/compd_cache//movq_MINUS0x18__rbp____r10
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x18__rbp____r10/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq_MINUS0x18__rbp____r10/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1388,14 +1388,14 @@ Decompiling instr:movq -0x18(%rbp), %r10 Done...
 
 Decompiling instr:movq -0x20(%rbp), %r11...
 Instr: movq -0x20(%rbp), %r11
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____r11
+Workdir: /home/ubuntu/Junk/compd_cache//movq_MINUS0x20__rbp____r11
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq_MINUS0x20__rbp____r11/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq_MINUS0x20__rbp____r11/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1407,14 +1407,14 @@ Decompiling instr:movq -0x20(%rbp), %r11 Done...
 
 Decompiling instr:movl $0xa, (%rsp)...
 Instr: movl $0xa, (%rsp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa____rsp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0xa____rsp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa____rsp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0xa____rsp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1426,14 +1426,14 @@ Decompiling instr:movl $0xa, (%rsp) Done...
 
 Decompiling instr:movq %r10, 0x8(%rsp)...
 Instr: movq %r10, 0x8(%rsp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__r10__0x8__rsp_
+Workdir: /home/ubuntu/Junk/compd_cache//movq__r10__0x8__rsp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__r10__0x8__rsp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__r10__0x8__rsp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1445,14 +1445,14 @@ Decompiling instr:movq %r10, 0x8(%rsp) Done...
 
 Decompiling instr:movl $0xa, 0x10(%rsp)...
 Instr: movl $0xa, 0x10(%rsp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa__0x10__rsp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__0xa__0x10__rsp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__0xa__0x10__rsp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__0xa__0x10__rsp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_400390__text_type
@@ -1464,14 +1464,14 @@ Decompiling instr:movl $0xa, 0x10(%rsp) Done...
 
 Decompiling instr:movq %r11, 0x18(%rsp)...
 Instr: movq %r11, 0x18(%rsp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__r11__0x18__rsp_
+Workdir: /home/ubuntu/Junk/compd_cache//movq__r11__0x18__rsp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__r11__0x18__rsp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__r11__0x18__rsp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1483,14 +1483,14 @@ Decompiling instr:movq %r11, 0x18(%rsp) Done...
 
 Decompiling instr:movl %eax, -0x2c(%rbp)...
 Instr: movl %eax, -0x2c(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x2c__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x2c__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x2c__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x2c__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1502,14 +1502,14 @@ Decompiling instr:movl %eax, -0x2c(%rbp) Done...
 
 Decompiling instr:callq .foo...
 Instr: callq .foo
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.foo
+Workdir: /home/ubuntu/Junk/compd_cache//callq_.foo
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.foo/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//callq_.foo/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1521,14 +1521,14 @@ Decompiling instr:callq .foo Done...
 
 Decompiling instr:movq $0x400774, %rdi...
 Instr: movq $0x400774, %rdi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400774___rdi
+Workdir: /home/ubuntu/Junk/compd_cache//movq__0x400774___rdi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movq__0x400774___rdi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movq__0x400774___rdi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of %seg_400390__text_type
@@ -1542,14 +1542,14 @@ Decompiling instr:movq $0x400774, %rdi Done...
 
 Decompiling instr:movl %eax, -0x28(%rbp)...
 Instr: movl %eax, -0x28(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x28__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x28__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x28__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x28__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1561,14 +1561,14 @@ Decompiling instr:movl %eax, -0x28(%rbp) Done...
 
 Decompiling instr:movl -0x28(%rbp), %esi...
 Instr: movl -0x28(%rbp), %esi
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x28__rbp____esi
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x28__rbp____esi
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x28__rbp____esi/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x28__rbp____esi/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1580,14 +1580,14 @@ Decompiling instr:movl -0x28(%rbp), %esi Done...
 
 Decompiling instr:movb $0x0, %al...
 Instr: movb $0x0, %al
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__0x0___al
+Workdir: /home/ubuntu/Junk/compd_cache//movb__0x0___al
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movb__0x0___al/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movb__0x0___al/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1599,14 +1599,14 @@ Decompiling instr:movb $0x0, %al Done...
 
 Decompiling instr:callq .printf_plt...
 Instr: callq .printf_plt
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.printf_plt
+Workdir: /home/ubuntu/Junk/compd_cache//callq_.printf_plt
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//callq_.printf_plt/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//callq_.printf_plt/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1618,14 +1618,14 @@ Decompiling instr:callq .printf_plt Done...
 
 Decompiling instr:movl -0x28(%rbp), %ecx...
 Instr: movl -0x28(%rbp), %ecx
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x28__rbp____ecx
+Workdir: /home/ubuntu/Junk/compd_cache//movl_MINUS0x28__rbp____ecx
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl_MINUS0x28__rbp____ecx/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl_MINUS0x28__rbp____ecx/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1637,14 +1637,14 @@ Decompiling instr:movl -0x28(%rbp), %ecx Done...
 
 Decompiling instr:movl %eax, -0x30(%rbp)...
 Instr: movl %eax, -0x30(%rbp)
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x30__rbp_
+Workdir: /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x30__rbp_
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__eax__MINUS0x30__rbp_/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__eax__MINUS0x30__rbp_/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1656,14 +1656,14 @@ Decompiling instr:movl %eax, -0x30(%rbp) Done...
 
 Decompiling instr:movl %ecx, %eax...
 Instr: movl %ecx, %eax
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax
+Workdir: /home/ubuntu/Junk/compd_cache//movl__ecx___eax
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//movl__ecx___eax/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//movl__ecx___eax/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1675,14 +1675,14 @@ Decompiling instr:movl %ecx, %eax Done...
 
 Decompiling instr:addq $0x50, %rsp...
 Instr: addq $0x50, %rsp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x50___rsp
+Workdir: /home/ubuntu/Junk/compd_cache//addq__0x50___rsp
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//addq__0x50___rsp/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//addq__0x50___rsp/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1694,14 +1694,14 @@ Decompiling instr:addq $0x50, %rsp Done...
 
 Decompiling instr:popq %rbp...
 Instr: popq %rbp
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp
+Workdir: /home/ubuntu/Junk/compd_cache//popq__rbp
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//popq__rbp/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//popq__rbp/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1712,14 +1712,14 @@ Decompiling instr:popq %rbp Done...
 
 Decompiling instr:retq...
 Instr: retq
-Workdir: /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq
+Workdir: /home/ubuntu/Junk/compd_cache//retq
 Creating artifacts...
 Already Exists
 Creating artifacts... Done.
 Running artifacts...
 Reusing Declutter Output...
 
-Executing: cat /home/ubuntu/Github/validating-binary-decompilation/tests/compositional_artifacts_single_instruction_decompilation//retq/test.mod.ll
+Executing: cat /home/ubuntu/Junk/compd_cache//retq/test.mod.ll
 Running artifacts...Done.
 
 Multiple defintions of @seg_400390__text
@@ -1733,5 +1733,5 @@ Decompiling Function: main Done.
 Writing to mcsema/test.proposed.ll ...
 Decompiling: Done.
 
-0.78user 0.15system 0:00.92elapsed 101%CPU (0avgtext+0avgdata 10436maxresident)k
-0inputs+400outputs (0major+24759minor)pagefaults 0swaps
+0.73user 0.08system 0:00.79elapsed 102%CPU (0avgtext+0avgdata 10224maxresident)k
+0inputs+376outputs (0major+24728minor)pagefaults 0swaps
