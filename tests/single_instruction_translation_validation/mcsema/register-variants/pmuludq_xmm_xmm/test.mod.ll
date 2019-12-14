@@ -177,16 +177,25 @@ define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7PMULUDQI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
   %6 = bitcast i8* %3 to i64*
   %7 = load i64, i64* %6, align 1
-  %8 = bitcast i8* %4 to i64*
-  %9 = load i64, i64* %8, align 1
-  %10 = and i64 %7, 4294967295
-  %11 = and i64 %9, 4294967295
-  %12 = mul  i64 %11, %10
-  %13 = bitcast i8* %2 to i64*
-  store i64 %12, i64* %13, align 1
-  %14 = getelementptr inbounds i8, i8* %2, i64 8
-  %15 = bitcast i8* %14 to i64*
-  store i64 0, i64* %15, align 1
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
+  %9 = bitcast i8* %8 to i64*
+  %10 = load i64, i64* %9, align 1
+  %11 = bitcast i8* %4 to i64*
+  %12 = load i64, i64* %11, align 1
+  %13 = getelementptr inbounds i8, i8* %4, i64 8
+  %14 = bitcast i8* %13 to i64*
+  %15 = load i64, i64* %14, align 1
+  %16 = and i64 %7, 4294967295
+  %17 = and i64 %12, 4294967295
+  %18 = mul  i64 %17, %16
+  %19 = and i64 %10, 4294967295
+  %20 = and i64 %15, 4294967295
+  %21 = mul  i64 %20, %19
+  %22 = bitcast i8* %2 to i64*
+  store i64 %18, i64* %22, align 1
+  %23 = getelementptr inbounds i8, i8* %2, i64 8
+  %24 = bitcast i8* %23 to i64*
+  store i64 %21, i64* %24, align 1
   ret %struct.Memory* %0
 }
 
@@ -255,6 +264,137 @@ entry:
   store i8 50, i8* %sf, align 1
   store i8 60, i8* %df, align 1
   store i8 70, i8* %of, align 1
+
+  
+  %vecr = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr, i64 0, i64 1
+  %vec512 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx, i32 0, i32 0
+  %uint64v8 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec512, i32 0, i32 0
+  %int64_arr = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v8, i32 0, i32 0
+  %arrayidx1 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr, i64 0, i64 0
+  store i64 8810, i64* %arrayidx1, align 8
+
+  %vecr2 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx3 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr2, i64 0, i64 1
+  %vec5124 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx3, i32 0, i32 0
+  %uint64v85 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec5124, i32 0, i32 0
+  %int64_arr6 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v85, i32 0, i32 0
+  %arrayidx7 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr6, i64 0, i64 1
+  store i64 8820, i64* %arrayidx7, align 8
+
+  %vecr8 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx9 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr8, i64 0, i64 1
+  %vec51210 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx9, i32 0, i32 0
+  %uint64v811 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51210, i32 0, i32 0
+  %int64_arr12 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v811, i32 0, i32 0
+  %arrayidx13 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr12, i64 0, i64 2
+  store i64 8830, i64* %arrayidx13, align 8
+
+  %vecr14 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx15 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr14, i64 0, i64 1
+  %vec51216 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx15, i32 0, i32 0
+  %uint64v817 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51216, i32 0, i32 0
+  %int64_arr18 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v817, i32 0, i32 0
+  %arrayidx19 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr18, i64 0, i64 3
+  store i64 8840, i64* %arrayidx19, align 8
+
+  %vecr20 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx21 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr20, i64 0, i64 1
+  %vec51222 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx21, i32 0, i32 0
+  %uint64v823 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51222, i32 0, i32 0
+  %int64_arr24 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v823, i32 0, i32 0
+  %arrayidx25 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr24, i64 0, i64 4
+  store i64 8850, i64* %arrayidx25, align 8
+
+  %vecr26 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx27 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr26, i64 0, i64 1
+  %vec51228 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx27, i32 0, i32 0
+  %uint64v829 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51228, i32 0, i32 0
+  %int64_arr30 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v829, i32 0, i32 0
+  %arrayidx31 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr30, i64 0, i64 5
+  store i64 8860, i64* %arrayidx31, align 8
+
+  %vecr32 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx33 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr32, i64 0, i64 1
+  %vec51234 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx33, i32 0, i32 0
+  %uint64v835 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51234, i32 0, i32 0
+  %int64_arr36 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v835, i32 0, i32 0
+  %arrayidx37 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr36, i64 0, i64 6
+  store i64 8870, i64* %arrayidx37, align 8
+
+  %vecr38 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx39 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr38, i64 0, i64 1
+  %vec51240 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx39, i32 0, i32 0
+  %uint64v841 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51240, i32 0, i32 0
+  %int64_arr42 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v841, i32 0, i32 0
+  %arrayidx43 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr42, i64 0, i64 7
+  store i64 8880, i64* %arrayidx43, align 8
+
+  %vecr44 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx45 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr44, i64 0, i64 2
+  %vec51246 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx45, i32 0, i32 0
+  %uint64v847 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51246, i32 0, i32 0
+  %int64_arr48 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v847, i32 0, i32 0
+  %arrayidx49 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr48, i64 0, i64 0
+  store i64 9910, i64* %arrayidx49, align 8
+
+  %vecr50 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx51 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr50, i64 0, i64 2
+  %vec51252 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx51, i32 0, i32 0
+  %uint64v853 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51252, i32 0, i32 0
+  %int64_arr54 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v853, i32 0, i32 0
+  %arrayidx55 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr54, i64 0, i64 1
+  store i64 9920, i64* %arrayidx55, align 8
+
+  %vecr56 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx57 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr56, i64 0, i64 2
+  %vec51258 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx57, i32 0, i32 0
+  %uint64v859 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51258, i32 0, i32 0
+  %int64_arr60 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v859, i32 0, i32 0
+  %arrayidx61 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr60, i64 0, i64 2
+  store i64 9930, i64* %arrayidx61, align 8
+
+  %vecr62 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx63 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr62, i64 0, i64 2
+  %vec51264 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx63, i32 0, i32 0
+  %uint64v865 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51264, i32 0, i32 0
+  %int64_arr66 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v865, i32 0, i32 0
+  %arrayidx67 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr66, i64 0, i64 3
+  store i64 9940, i64* %arrayidx67, align 8
+
+  %vecr68 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx69 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr68, i64 0, i64 2
+  %vec51270 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx69, i32 0, i32 0
+  %uint64v871 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51270, i32 0, i32 0
+  %int64_arr72 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v871, i32 0, i32 0
+  %arrayidx73 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr72, i64 0, i64 4
+  store i64 9950, i64* %arrayidx73, align 8
+
+  %vecr74 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx75 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr74, i64 0, i64 2
+  %vec51276 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx75, i32 0, i32 0
+  %uint64v877 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51276, i32 0, i32 0
+  %int64_arr78 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v877, i32 0, i32 0
+  %arrayidx79 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr78, i64 0, i64 5
+  store i64 9960, i64* %arrayidx79, align 8
+
+  %vecr80 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx81 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr80, i64 0, i64 2
+  %vec51282 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx81, i32 0, i32 0
+  %uint64v883 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51282, i32 0, i32 0
+  %int64_arr84 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v883, i32 0, i32 0
+  %arrayidx85 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr84, i64 0, i64 6
+  store i64 9970, i64* %arrayidx85, align 8
+
+  %vecr86 = getelementptr inbounds %struct.State, %struct.State* %state, i32 0, i32 1
+  %arrayidx87 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %vecr86, i64 0, i64 2
+  %vec51288 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %arrayidx87, i32 0, i32 0
+  %uint64v889 = getelementptr inbounds %union.vec512_t, %union.vec512_t* %vec51288, i32 0, i32 0
+  %int64_arr90 = getelementptr inbounds %struct.uint64v8_t, %struct.uint64v8_t* %uint64v889, i32 0, i32 0
+  %arrayidx91 = getelementptr inbounds [8 x i64], [8 x i64]* %int64_arr90, i64 0, i64 7
+  store i64 9980, i64* %arrayidx91, align 8
+
+
 
   %call = call %struct.Memory* @routine_pmuludq_xmm_xmm(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
