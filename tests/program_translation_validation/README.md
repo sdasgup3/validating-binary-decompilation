@@ -5,8 +5,8 @@
 |                   |  -O0 |  SSA edges only | Naive | custom   | 80/10   | same with memdep edges | A.2 |
 |  single-source (3062)|  -O0 |  SSA edges only | Naive | O3     | 2555/507 | 2508/554 with memedges; soon fixed| B.1|
 |                      |  -O0 |  SSA edges only | Naive | custom | 2791/271 | 2746/316 with memedges, soon fixed|  B.2|
-|  spec2006 (1048 partial)|  -O0 |  Mem edges only | Naive | O3 | | saved in matchPass\_1 | C.1 |
-|                         |  -O0 |  SSA edges only | Naive | custom | | saved in matchPass\_2 | C.2|
+|  spec2006 (3870 partial)|  -O0 |  Mem edges only | Naive | O3 | 2065/1805 | saved in matchPass\_1 | C.1 |
+|                         |  -O0 |  Mem edges only | Naive | custom | | saved in matchPass\_2 | C.2|
 
 
 ## Initial Setup (Required)
@@ -102,8 +102,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
 
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
   cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match.log
-  cp docs/match.log docs/match_1.log
+  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
   matcher Pass/Fails are saved in matchPass/Fail\_1.log
  ```
 
