@@ -225,7 +225,9 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L11CMPXCHG_EAXI3RnWImE2RnIjES4
   %44 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
   store i8 %43, i8* %44, align 1
   store i8 %16, i8* %33, align 1
-  store i32 %15, i32* %7, align 4
+  %45 = getelementptr inbounds %union.anon, %union.anon* %6, i64 0, i32 0
+  %46 = zext i32 %15 to i64
+  store i64 %46, i64* %45, align 8
   ret %struct.Memory* %0
 }
 
