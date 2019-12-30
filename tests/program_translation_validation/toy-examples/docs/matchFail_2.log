@@ -1,10 +1,10 @@
 test_33/main
-test_22/main
+test_32/main
+test_22/DoDemoFpu1
 test_24/main
 test_33/Ack
-test_22/DoDemoFpu1
 test_27/main
-test_32/main
-test_20/switches
 test_32/fib
+test_22/main
+test_20/switches
 test_24/keycomp

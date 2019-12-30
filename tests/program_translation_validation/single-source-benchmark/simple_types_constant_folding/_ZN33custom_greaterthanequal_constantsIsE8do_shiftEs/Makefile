@@ -35,7 +35,7 @@ ifdef NORM
 endif
 
 
-.PHONY: clean compd compd_opt match extract aainfo
+.PHONY: clean compd compd_opt match extract aainfo lltodot
 
 all: compd compd_opt match
 
@@ -52,6 +52,13 @@ match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1
 	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
+
+lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
+	-time ${TOOLDIR}/lltodot --llir_file ${INDIR}test.mcsema.opt.ll:${PROG} --outfile mcsema/test.mcsema.opt.dot
+	-dot -Tpdf mcsema/test.mcsema.opt.dot -O 
+	-time ${TOOLDIR}/lltodot --llir_file ${OUTDIR}test.proposed.opt.ll:${PROG} --outfile mcsema/test.proposed.opt.dot
+	-dot -Tpdf mcsema/test.proposed.opt.dot -O 
+
 
 extract:${INDIR}test.mcsema.opt.ll
 	llvm-extract -S  -rfunc="sub_.*_${PROG}" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll

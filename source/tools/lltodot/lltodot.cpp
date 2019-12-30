@@ -75,6 +75,11 @@ void writeNodes(raw_ostream &O, DepGraph *G) {
     for (auto TargetNode : adjList) {
       O << "\tNode" << static_cast<const void *>(Node);
       O << " -> Node" << static_cast<const void *>(TargetNode);
+      if (dyn_cast<StoreInst>(Node)) {
+        // Store instructions can only have Memdep use edges;
+        O << " [color=blue]";
+      }
+
       O << ";\n";
     }
   }
@@ -122,7 +127,10 @@ int main(int argc, char **argv) {
     TargetFunc = LLIR.value().substr(it + 1);
     TargetFile = LLIR.value().substr(0, it);
   } else {
-    TargetFile = LLIR.value();
+    // TargetFile = LLIR.value();
+    Console::msg()
+        << "Missing function name in arg. --llir_file <ll/bc file>:func1\n";
+    return 1;
   }
 
   SMDiagnostic Err;
@@ -145,10 +153,10 @@ int main(int argc, char **argv) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
 
-    if (TargetFunc == "") {
-      F1 = &Func;
-      break;
-    }
+    // if (TargetFunc == "") {
+    //   F1 = &Func;
+    //   break;
+    // }
 
     smatch m;
     string funcName(Func.getName().str());
@@ -170,6 +178,6 @@ int main(int argc, char **argv) {
   DepGraph *G = new DepGraph(F1);
   writeDFGToDotFile(G, Outfile.value());
 
-  Console::msg() << "Dot file generated!\n";
+  Console::msg() << "Dot file generated!\n\n";
   return 0;
 }

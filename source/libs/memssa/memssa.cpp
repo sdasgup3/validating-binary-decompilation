@@ -17,6 +17,8 @@
 #define DEBUG_TYPE "memssa"
 #include "memssa.h"
 
+#define MEMSSA_DEBUG
+
 using namespace llvm;
 
 MemSSA::MemSSA(Function *Func)
@@ -45,8 +47,9 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
 
       if (!dyn_cast<StoreInst>(I) && !dyn_cast<LoadInst>(I))
         continue;
-
+#ifdef MEMSSA_DEBUG
       errs() << *I << "\n";
+#endif
       MemoryAccess *MA = Walker->getClobberingMemoryAccess(&*itrIns);
       // MemoryLocation Location;
       // MemoryAccess* MAR = Walker.getClobberingMemoryAccess(MA,&Location);
@@ -62,8 +65,10 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
         continue;
       }
 
+#ifdef MEMSSA_DEBUG
       errs() << "\tMemeory Access: \n";
       MA->dump();
+#endif
 
       if (MSSA->isLiveOnEntryDef(MA)) {
         // errs() << "\n\n";
@@ -83,7 +88,9 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
         retval[I].insert(u);
       }
 
+#ifdef MEMSSA_DEBUG
       errs() << "\n\n";
+#endif
     }
   }
 
