@@ -219,7 +219,7 @@ def createMakefile(funcName):
     makeFile.write("\n\n")
 
     makeFile.write(
-        ".PHONY: clean compd compd_opt match extract aainfo" +
+        ".PHONY: clean compd compd_opt match extract aainfo lltodot" +
         "\n\n")
 
     makeFile.write("all: compd compd_opt match")
@@ -254,12 +254,28 @@ def createMakefile(funcName):
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match")
     makeFile.write("" + "\n\n")
 
+
+    makeFile.write(
+        "lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
+        "\n")
+    makeFile.write(
+        "	-time ${TOOLDIR}/lltodot --llir_file ${INDIR}test.mcsema.opt.ll:${PROG} --outfile mcsema/test.mcsema.opt.dot" + "\n")
+    makeFile.write(
+        "	-dot -Tpdf mcsema/test.mcsema.opt.dot -O " + "\n")
+    makeFile.write(
+        "	-time ${TOOLDIR}/lltodot --llir_file ${OUTDIR}test.proposed.opt.ll:${PROG} --outfile mcsema/test.proposed.opt.dot" + "\n")
+    makeFile.write(
+        "	-dot -Tpdf mcsema/test.proposed.opt.dot -O " + "\n")
+    makeFile.write("" + "\n\n")
+
+
     makeFile.write(
         "extract:${INDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
     	"	llvm-extract -S  -rfunc=\"sub_.*_${PROG}\" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll" + "\n")
     makeFile.write("" + "\n\n")
+
 
     makeFile.write(
         "aainfo:${OUTDIR}test.mcsema.opt.extract.ll ${OUTDIR}test.proposed.opt.ll" + 

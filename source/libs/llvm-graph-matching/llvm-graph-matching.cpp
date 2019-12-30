@@ -35,10 +35,13 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges) {
   else
     llvm::errs() << "Iso Match NOT Found\n";
 
-  // printDOT();
+  printDOT();
 }
 
 void Matcher::printDOT() {
+  return;
+
+  // Dead code
   MatchInfo *MI = new MatchInfo;
   MI->Fn = F1;
   MI->color = true;
@@ -1436,8 +1439,14 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
 
     llvm::errs() << *U << "\n";
     for (auto p : adjList) {
+      if (!dyn_cast<StoreInst>(p) && !dyn_cast<CallInst>(p)) {
+        llvm::errs() << "\t" << *p << "\n";
+        assert(0 && "Defining instruction should always be a store");
+      }
+
       llvm::errs() << "\t" << *p << "\n";
-      GImpl[U].insert(p);
+      // GImpl[U].insert(p);
+      GImpl[p].insert(U);
     }
   }
 }

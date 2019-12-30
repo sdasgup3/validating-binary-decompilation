@@ -550,13 +550,15 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
     auto immIndex = instr.imm_index();
     const Imm &IMM_OPR = instr.get_operand<Imm>(immIndex);
     opr << IMM_OPR;
+    // cout << opr.str() << "\n";
 
   } else {
     // TO DO
   }
 
   // Extract the access size
-  auto accessSize = instr.get_operand<Operand>(instr.arity() - 1).size();
+  // auto accessSize = instr.get_operand<Operand>(instr.arity() - 1).size();
+  auto accessSize = instr.get_operand<Operand>(0).size();
 
   // If relocation information is NOT available, then be at the mercy of
   // decompiler
