@@ -1,8 +1,0 @@
-Matching sub_400890_xmalloc Vs xmalloc
-
-
-[Error] Failed to extract Potential Matches for:[0x560655d9bbf0]:   %RBP = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.08user 0.00system 0:00.44elapsed 18%CPU (0avgtext+0avgdata 13188maxresident)k
-0inputs+8outputs (0major+1059minor)pagefaults 0swaps

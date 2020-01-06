@@ -457,18 +457,18 @@ declare %struct.Memory* @sub_400550.Cos(%struct.State* noalias dereferenceable(3
 declare %struct.Memory* @sub_400620.Min0(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x6b7__rip__type = type <{ [4 x i8] }>
-@G_0x6b7__rip_= global %G_0x6b7__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x6cf__rip__type = type <{ [4 x i8] }>
-@G_0x6cf__rip_= global %G_0x6cf__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x70a__rip__type = type <{ [4 x i8] }>
-@G_0x70a__rip_= global %G_0x70a__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x716__rip__type = type <{ [4 x i8] }>
-@G_0x716__rip_= global %G_0x716__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x755__rip__type = type <{ [4 x i8] }>
-@G_0x755__rip_= global %G_0x755__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x759__rip__type = type <{ [4 x i8] }>
-@G_0x759__rip_= global %G_0x759__rip__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6b7__rip__type = type <{ [16 x i8] }>
+@G_0x6b7__rip_= global %G_0x6b7__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x6cf__rip__type = type <{ [16 x i8] }>
+@G_0x6cf__rip_= global %G_0x6cf__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x70a__rip__type = type <{ [16 x i8] }>
+@G_0x70a__rip_= global %G_0x70a__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x716__rip__type = type <{ [16 x i8] }>
+@G_0x716__rip_= global %G_0x716__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x755__rip__type = type <{ [16 x i8] }>
+@G_0x755__rip_= global %G_0x755__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x759__rip__type = type <{ [16 x i8] }>
+@G_0x759__rip_= global %G_0x759__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @Exptab(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

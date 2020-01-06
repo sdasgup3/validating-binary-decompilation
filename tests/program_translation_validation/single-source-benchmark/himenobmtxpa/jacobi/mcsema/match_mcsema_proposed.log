@@ -1,8 +1,0 @@
-Matching sub_400cd0_jacobi Vs jacobi
-
-
-[Error] Failed to extract Potential Matches for:[0x55b401517860]:   %1109 = add i64 %7069, 337
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-11.12user 0.18system 0:12.17elapsed 92%CPU (0avgtext+0avgdata 100956maxresident)k
-0inputs+8outputs (0major+23350minor)pagefaults 0swaps

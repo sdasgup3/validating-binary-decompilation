@@ -459,10 +459,10 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 @G_0x665__rip_= global %G_0x665__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x690__rip__type = type <{ [16 x i8] }>
 @G_0x690__rip_= global %G_0x690__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
-%G_0x6b1__rip__type = type <{ [4 x i8] }>
-@G_0x6b1__rip_= global %G_0x6b1__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x6be__rip__type = type <{ [8 x i8] }>
-@G_0x6be__rip_= global %G_0x6be__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x6b1__rip__type = type <{ [16 x i8] }>
+@G_0x6b1__rip_= global %G_0x6b1__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x6be__rip__type = type <{ [16 x i8] }>
+@G_0x6be__rip_= global %G_0x6be__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @epslon(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

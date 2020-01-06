@@ -455,14 +455,14 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x9468__rip__type = type <{ [4 x i8] }>
-@G_0x9468__rip_= global %G_0x9468__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x9478__rip__type = type <{ [4 x i8] }>
-@G_0x9478__rip_= global %G_0x9478__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x9480__rip__type = type <{ [4 x i8] }>
-@G_0x9480__rip_= global %G_0x9480__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x9484__rip__type = type <{ [4 x i8] }>
-@G_0x9484__rip_= global %G_0x9484__rip__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x9468__rip__type = type <{ [16 x i8] }>
+@G_0x9468__rip_= global %G_0x9468__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x9478__rip__type = type <{ [16 x i8] }>
+@G_0x9478__rip_= global %G_0x9478__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x9480__rip__type = type <{ [16 x i8] }>
+@G_0x9480__rip_= global %G_0x9480__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x9484__rip__type = type <{ [16 x i8] }>
+@G_0x9484__rip_= global %G_0x9484__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_ZN28custom_multiple_constant_addIfE8do_shiftEf(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

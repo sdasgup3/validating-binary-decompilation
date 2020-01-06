@@ -1,8 +1,0 @@
-Matching sub_40d190__Z26check_shifted_variable_sumIm19custom_variable_xorImEEvT_S2_ Vs _Z26check_shifted_variable_sumIm19custom_variable_xorImEEvT_S2_
-
-
-[Error] Failed to extract Potential Matches for:[0x55b95809f4e0]:   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.71user 0.04system 0:01.28elapsed 58%CPU (0avgtext+0avgdata 54716maxresident)k
-0inputs+8outputs (0major+10581minor)pagefaults 0swaps

@@ -1,8 +1,0 @@
-Matching getInput Vs sub_401110_getInput
-
-
-[Error] Failed to extract Potential Matches for:[0x55a53ce3c4a0]:   %278 = add i32 %277, -1
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.25user 0.00system 0:00.63elapsed 41%CPU (0avgtext+0avgdata 15136maxresident)k
-0inputs+8outputs (0major+1583minor)pagefaults 0swaps

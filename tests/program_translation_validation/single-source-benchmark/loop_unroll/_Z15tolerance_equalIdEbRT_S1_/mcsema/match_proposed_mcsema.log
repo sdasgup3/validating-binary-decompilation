@@ -1,8 +1,0 @@
-Matching _Z15tolerance_equalIdEbRT_S1_ Vs sub_401520__Z15tolerance_equalIdEbRT_S1_
-
-
-[Error] Failed to extract Potential Matches for:[0x559dfabf5140]:   %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.94user 0.02system 0:01.28elapsed 75%CPU (0avgtext+0avgdata 63756maxresident)k
-0inputs+8outputs (0major+12381minor)pagefaults 0swaps

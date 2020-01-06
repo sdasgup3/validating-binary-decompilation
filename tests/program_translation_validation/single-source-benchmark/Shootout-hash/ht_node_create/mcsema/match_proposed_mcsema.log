@@ -1,8 +1,0 @@
-Matching ht_node_create Vs sub_400770_ht_node_create
-
-
-[Error] Failed to extract Potential Matches for:[0x562f083cd010]:   %69 = add i64 %58, %.v
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.10user 0.00system 0:00.54elapsed 18%CPU (0avgtext+0avgdata 12904maxresident)k
-0inputs+8outputs (0major+1018minor)pagefaults 0swaps

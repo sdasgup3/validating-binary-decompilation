@@ -1,8 +1,0 @@
-Matching doSearch Vs sub_400fd0_doSearch
-
-
-[Error] Failed to extract Potential Matches for:[0x55f6fe3b6cd8]:   %281 = phi i32 [ %51, %block_.L_401085 ], [ %.pre2, %block_.L_4010c2 ]
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.16user 0.00system 0:00.53elapsed 33%CPU (0avgtext+0avgdata 15016maxresident)k
-0inputs+8outputs (0major+1536minor)pagefaults 0swaps

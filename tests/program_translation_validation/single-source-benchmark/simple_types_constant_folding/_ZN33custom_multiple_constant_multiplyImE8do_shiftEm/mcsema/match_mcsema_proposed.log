@@ -1,8 +1,0 @@
-Matching sub_410220__ZN33custom_multiple_constant_multiplyImE8do_shiftEm Vs _ZN33custom_multiple_constant_multiplyImE8do_shiftEm
-
-
-[Error] Failed to extract Potential Matches for:[0x55f843ff87e0]:   %49 = add i64 %16, 22
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-2.31user 0.17system 0:03.13elapsed 79%CPU (0avgtext+0avgdata 66924maxresident)k
-0inputs+8outputs (0major+14534minor)pagefaults 0swaps

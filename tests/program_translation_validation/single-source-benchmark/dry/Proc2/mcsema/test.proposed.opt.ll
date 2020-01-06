@@ -4,7 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
-%G_0x602060_type = type <{ [1 x i8] }>
+%G_0x602060_type = type <{ [4 x i8] }>
 %G_0x6049ec_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -123,19 +123,19 @@ entry:
   store i64 %53, i64* %PC.i, align 8
   %54 = inttoptr i64 %52 to i32*
   store i32 %24, i32* %54, align 4
-  %55 = load i8, i8* getelementptr inbounds (%G_0x602060_type, %G_0x602060_type* @G_0x602060, i64 0, i32 0, i64 0), align 8
-  %56 = sext i8 %55 to i64
-  %57 = and i64 %56, 4294967295
   %RCX.i15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %.pre = load i64, i64* %PC.i, align 8
   br label %block_.L_400cd4
 
 block_.L_400cd4:                                  ; preds = %block_.L_400d14, %entry
-  %58 = phi i64 [ %185, %block_.L_400d14 ], [ %.pre, %entry ]
-  store i64 %57, i64* %RAX.i41, align 8
-  %59 = sext i8 %55 to i32
+  %55 = phi i64 [ %185, %block_.L_400d14 ], [ %.pre, %entry ]
+  %56 = load i8, i8* getelementptr inbounds (%G_0x602060_type, %G_0x602060_type* @G_0x602060, i64 0, i32 0, i64 0), align 8
+  %57 = sext i8 %56 to i64
+  %58 = and i64 %57, 4294967295
+  store i64 %58, i64* %RAX.i41, align 8
+  %59 = sext i8 %56 to i32
   %60 = add nsw i32 %59, -65
-  %61 = icmp ult i8 %55, 65
+  %61 = icmp ult i8 %56, 65
   %62 = zext i1 %61 to i8
   store i8 %62, i8* %28, align 1
   %63 = and i32 %60, 255
@@ -162,7 +162,7 @@ block_.L_400cd4:                                  ; preds = %block_.L_400d14, %e
   %80 = zext i1 %79 to i8
   store i8 %80, i8* %51, align 1
   %.v = select i1 %72, i64 17, i64 49
-  %81 = add i64 %58, %.v
+  %81 = add i64 %55, %.v
   store i64 %81, i64* %3, align 8
   br i1 %72, label %block_400ce5, label %block_.L_400d05
 

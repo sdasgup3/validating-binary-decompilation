@@ -1437,14 +1437,14 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
       assert(0 && "DepGraph::getAdj::Missing load/store in graph!");
     }
 
-    llvm::errs() << *U << "\n";
+    // llvm::errs() << *U << "\n";
     for (auto p : adjList) {
       if (!dyn_cast<StoreInst>(p) && !dyn_cast<CallInst>(p)) {
         llvm::errs() << "\t" << *p << "\n";
         assert(0 && "Defining instruction should always be a store");
       }
 
-      llvm::errs() << "\t" << *p << "\n";
+      llvm::errs() << *p << " --> " << *U << "\n";
       // GImpl[U].insert(p);
       GImpl[p].insert(U);
     }

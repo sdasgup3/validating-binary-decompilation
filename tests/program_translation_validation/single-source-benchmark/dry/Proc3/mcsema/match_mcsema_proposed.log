@@ -1,8 +1,0 @@
-Matching sub_400d60_Proc3 Vs Proc3
-
-
-[Error] Failed to extract Potential Matches for:[0x5601e5ac39e8]:   %RAX = getelementptr inbounds %union.anon, %union.anon* %3, i64 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.08user 0.01system 0:00.51elapsed 18%CPU (0avgtext+0avgdata 13132maxresident)k
-0inputs+8outputs (0major+1064minor)pagefaults 0swaps

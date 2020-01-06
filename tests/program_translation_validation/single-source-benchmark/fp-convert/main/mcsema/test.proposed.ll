@@ -456,14 +456,14 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4004f0.loop(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x177__rip__type = type <{ [4 x i8] }>
-@G_0x177__rip_= global %G_0x177__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x17b__rip__type = type <{ [4 x i8] }>
-@G_0x17b__rip_= global %G_0x17b__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x197__rip__type = type <{ [4 x i8] }>
-@G_0x197__rip_= global %G_0x197__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x201__rip__type = type <{ [4 x i8] }>
-@G_0x201__rip_= global %G_0x201__rip__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x177__rip__type = type <{ [16 x i8] }>
+@G_0x177__rip_= global %G_0x177__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x17b__rip__type = type <{ [16 x i8] }>
+@G_0x17b__rip_= global %G_0x17b__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x197__rip__type = type <{ [16 x i8] }>
+@G_0x197__rip_= global %G_0x197__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x201__rip__type = type <{ [16 x i8] }>
+@G_0x201__rip_= global %G_0x201__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x400790_type = type <{ [8 x i8] }>
 @G__0x400790= global %G__0x400790_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 

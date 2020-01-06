@@ -1,8 +1,0 @@
-Matching sub_4017c0_P0 Vs P0
-
-
-[Error] Failed to extract Potential Matches for:[0x55c7d0484638]:   %22 = sext i32 %21 to i64
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.07user 0.01system 0:00.43elapsed 20%CPU (0avgtext+0avgdata 13632maxresident)k
-0inputs+8outputs (0major+1115minor)pagefaults 0swaps

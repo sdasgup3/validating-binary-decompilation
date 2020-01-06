@@ -1,8 +1,0 @@
-Matching kernel_trisolv Vs sub_400b00_kernel_trisolv
-
-
-[Error] Failed to extract Potential Matches for:[0x555c564fb140]:   %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.09user 0.01system 0:00.35elapsed 28%CPU (0avgtext+0avgdata 13388maxresident)k
-0inputs+8outputs (0major+1088minor)pagefaults 0swaps

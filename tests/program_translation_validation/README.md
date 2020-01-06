@@ -76,7 +76,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
 
  - B.1
  ```
-  export BIN_OPT=O0
+  # export BIN_OPT=O0
   export NORM=O3
 
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
@@ -88,7 +88,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
 
  - B.2
  ```
-  export BIN_OPT=O0
+  # export BIN_OPT=O0
   unset NORM
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
   cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log

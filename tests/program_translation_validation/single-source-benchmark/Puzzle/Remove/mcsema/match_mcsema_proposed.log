@@ -1,8 +1,0 @@
-Matching sub_4006d0_Remove Vs Remove
-
-
-[Error] Failed to extract Potential Matches for:[0x557dfbaebe80]:   %107 = and i32 %106, 240
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.09user 0.01system 0:00.38elapsed 26%CPU (0avgtext+0avgdata 13748maxresident)k
-0inputs+8outputs (0major+1171minor)pagefaults 0swaps

@@ -1,8 +1,0 @@
-Matching sub_4013d0_kernel_fdtd_apml Vs kernel_fdtd_apml
-
-
-[Error] Failed to extract Potential Matches for:[0x5623cc3f2f08]:   %4815 = inttoptr i64 %4813 to i32*
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-21.74user 0.21system 0:22.45elapsed 97%CPU (0avgtext+0avgdata 185588maxresident)k
-0inputs+8outputs (0major+45559minor)pagefaults 0swaps

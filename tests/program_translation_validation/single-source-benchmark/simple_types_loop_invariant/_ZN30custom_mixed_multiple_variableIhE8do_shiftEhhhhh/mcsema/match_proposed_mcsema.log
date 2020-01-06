@@ -1,8 +1,0 @@
-Matching _ZN30custom_mixed_multiple_variableIhE8do_shiftEhhhhh Vs sub_412660__ZN30custom_mixed_multiple_variableIhE8do_shiftEhhhhh
-
-
-[Error] Failed to extract Potential Matches for:[0x556862b2d0d0]:   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.99user 0.06system 0:01.34elapsed 78%CPU (0avgtext+0avgdata 54828maxresident)k
-0inputs+8outputs (0major+10611minor)pagefaults 0swaps
