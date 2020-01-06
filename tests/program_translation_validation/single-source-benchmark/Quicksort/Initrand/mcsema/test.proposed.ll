@@ -455,8 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x60f238_type = type <{ [4 x i8] }>
-@G_0x60f238= global %G_0x60f238_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x60f238_type = type <{ [8 x i8] }>
+@G_0x60f238= global %G_0x60f238_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @Initrand(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

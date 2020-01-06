@@ -1,8 +1,0 @@
-Matching sub_403d30__ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0_ Vs _ZN9benchmark7sift_inI14PointerWrapperI12ValueWrapperIdEES3_EEvlT_lT0_
-
-
-[Error] Failed to extract Potential Matches for:[0x556c527ba330]:   %98 = add i64 %75, 16
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.42user 0.01system 0:00.82elapsed 53%CPU (0avgtext+0avgdata 24320maxresident)k
-0inputs+8outputs (0major+3520minor)pagefaults 0swaps

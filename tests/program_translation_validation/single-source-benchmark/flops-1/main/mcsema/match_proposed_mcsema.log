@@ -1,8 +1,0 @@
-Matching main Vs sub_4004f0_main
-
-
-[Error] Failed to extract Potential Matches for:[0x5606924b90a8]:   %66 = load i64, i64* bitcast (%G_0x3bf__rip__type* @G_0x3bf__rip_ to i64*), align 8
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.12user 0.00system 0:00.47elapsed 29%CPU (0avgtext+0avgdata 13224maxresident)k
-0inputs+8outputs (0major+1054minor)pagefaults 0swaps

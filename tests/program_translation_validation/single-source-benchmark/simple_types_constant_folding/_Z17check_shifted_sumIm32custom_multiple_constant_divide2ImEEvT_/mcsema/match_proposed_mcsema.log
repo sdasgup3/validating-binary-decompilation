@@ -1,8 +1,0 @@
-Matching _Z17check_shifted_sumIm32custom_multiple_constant_divide2ImEEvT_ Vs sub_40ff60__Z17check_shifted_sumIm32custom_multiple_constant_divide2ImEEvT_
-
-
-[Error] Failed to extract Potential Matches for:[0x55aade452140]:   %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-1.21user 0.08system 0:01.67elapsed 77%CPU (0avgtext+0avgdata 67148maxresident)k
-0inputs+8outputs (0major+12993minor)pagefaults 0swaps

@@ -1,8 +1,0 @@
-Matching DoDemoFpu1 Vs sub_4004f0_DoDemoFpu1
-
-
-[Error] Failed to extract Potential Matches for:[0x55dfcf144310]:   %45 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 11, i32 0, i32 0, i32 4
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.05user 0.00system 0:00.56elapsed 8%CPU (0avgtext+0avgdata 12960maxresident)k
-0inputs+8outputs (0major+1003minor)pagefaults 0swaps

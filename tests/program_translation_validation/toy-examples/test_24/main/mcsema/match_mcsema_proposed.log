@@ -1,8 +1,0 @@
-Matching sub_400690_main Vs main
-
-
-[Error] Failed to extract Potential Matches for:[0x5619804b7a38]:   %AL = bitcast %union.anon* %3 to i8*
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.04user 0.00system 0:00.25elapsed 20%CPU (0avgtext+0avgdata 12904maxresident)k
-0inputs+8outputs (0major+1024minor)pagefaults 0swaps

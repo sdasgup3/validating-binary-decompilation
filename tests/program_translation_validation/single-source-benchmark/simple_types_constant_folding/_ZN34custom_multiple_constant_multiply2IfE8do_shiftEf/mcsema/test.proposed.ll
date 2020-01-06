@@ -455,8 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x979c__rip__type = type <{ [4 x i8] }>
-@G_0x979c__rip_= global %G_0x979c__rip__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x979c__rip__type = type <{ [16 x i8] }>
+@G_0x979c__rip_= global %G_0x979c__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_ZN34custom_multiple_constant_multiply2IfE8do_shiftEf(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

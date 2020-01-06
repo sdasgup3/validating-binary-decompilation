@@ -455,14 +455,14 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x1bc__rip__type = type <{ [8 x i8] }>
-@G_0x1bc__rip_= global %G_0x1bc__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x1d2__rip__type = type <{ [8 x i8] }>
-@G_0x1d2__rip_= global %G_0x1d2__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x602070_type = type <{ [1 x i8] }>
-@G_0x602070= global %G_0x602070_type <{ [1 x i8] c"\00" }>
-%G_0x607368_type = type <{ [8 x i8] }>
-@G_0x607368= global %G_0x607368_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x1bc__rip__type = type <{ [16 x i8] }>
+@G_0x1bc__rip_= global %G_0x1bc__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x1d2__rip__type = type <{ [16 x i8] }>
+@G_0x1d2__rip_= global %G_0x1d2__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x602070_type = type <{ [4 x i8] }>
+@G_0x602070= global %G_0x602070_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x607368_type = type <{ [16 x i8] }>
+@G_0x607368= global %G_0x607368_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @Proc2(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

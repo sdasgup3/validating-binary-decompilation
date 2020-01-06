@@ -1,8 +1,0 @@
-Matching sub_4011c0_bitrv2 Vs bitrv2
-
-
-[Error] Failed to extract Potential Matches for:[0x563c7fc38e20]:   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.15user 0.01system 0:00.48elapsed 35%CPU (0avgtext+0avgdata 18072maxresident)k
-0inputs+8outputs (0major+2258minor)pagefaults 0swaps

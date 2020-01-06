@@ -1,8 +1,0 @@
-Matching sub_40fff0__ZN31custom_multiple_constant_divideImE8do_shiftEm Vs _ZN31custom_multiple_constant_divideImE8do_shiftEm
-
-
-[Error] Failed to extract Potential Matches for:[0x55862ef4f7d0]:   %30 = add i64 %17, 17
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-1.58user 0.12system 0:02.17elapsed 78%CPU (0avgtext+0avgdata 66692maxresident)k
-0inputs+8outputs (0major+12945minor)pagefaults 0swaps

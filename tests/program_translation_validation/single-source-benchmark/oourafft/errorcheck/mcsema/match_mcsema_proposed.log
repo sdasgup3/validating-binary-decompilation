@@ -1,8 +1,0 @@
-Matching sub_4010d0_errorcheck Vs errorcheck
-
-
-[Error] Failed to extract Potential Matches for:[0x557160e5d898]:   %372 = phi i64 [ %.pre5, %359 ], [ %325, %371 ]
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.23user 0.01system 0:00.62elapsed 39%CPU (0avgtext+0avgdata 18140maxresident)k
-0inputs+8outputs (0major+2355minor)pagefaults 0swaps

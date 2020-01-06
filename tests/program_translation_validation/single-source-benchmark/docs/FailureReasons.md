@@ -18,6 +18,22 @@ mandel
 mandel-2
 ```
 
+## Matcher Fails
+```
+ReedSolomon/gen_poly
+ReedSolomon/rsdec_204
+ReedSolomon/rsenc_204
+Treesort/Trees
+dry/Proc4
+dry/Proc5
+exptree/search
+fldry/Proc4
+fldry/Proc5
+lpbench/random_double
+simple_types_constant_folding/__cxx_global_var_init
+whetstone/PA
+```
+
 ## Compd/Match Failure Reasons
 
 ## match Fails turned Pass

@@ -1,8 +1,0 @@
-Matching sub_4007f0_tower Vs tower
-
-
-[Error] Failed to extract Potential Matches for:[0x5613620f8138]:   %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0
-matcher: /home/ubuntu/Github/validating-binary-decompilation/source/libs/llvm-graph-matching/llvm-graph-matching.cpp:165: void llvm::Matcher::retrievePotIMatches(llvm::Function*, llvm::Function*): Assertion `0 && "[Error in retrievePotIMatches] Failed to extract Potential Matches"' failed.
-Command terminated by signal 6
-0.07user 0.01system 0:00.40elapsed 22%CPU (0avgtext+0avgdata 13004maxresident)k
-0inputs+8outputs (0major+992minor)pagefaults 0swaps

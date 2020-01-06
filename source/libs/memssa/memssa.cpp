@@ -61,7 +61,9 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
       // MSSA->getMemoryAccess(dyn_cast<Instruction>(&*itrIns));
 
       if (!MA) {
-        // errs() << "\n\n";
+#ifdef MEMSSA_DEBUG
+        errs() << "\n\n";
+#endif
         continue;
       }
 
@@ -71,7 +73,10 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
 #endif
 
       if (MSSA->isLiveOnEntryDef(MA)) {
-        // errs() << "\n\n";
+// errs() << "\n\n";
+#ifdef MEMSSA_DEBUG
+        errs() << "\n\n";
+#endif
         continue;
       }
 
