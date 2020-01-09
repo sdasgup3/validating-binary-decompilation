@@ -20,6 +20,7 @@
 %\usepackage{amssymb}  % for math spacing
 %\usepackage{url}  % Hyphenation of URLs.
 \usepackage{lscape}  % Useful for wide tables or figures.
+\input{custom_package.tex}
 
 % Uncomment the appropriate one of the following four lines:
 %\msthesis
@@ -27,21 +28,24 @@
 %\otherdoctorate[abbrev]{Title of Degree}
 %\othermasters[abbrev]{Title of Degree}
 
-\title{Title Goes Here and Will Be Automatically Set in ALL CAPS}
-\author{Your Name Goes Here}
+\title{Scalable Validation of Binary Lifters}
+\author{Sandeep Dasgupta}
 \department{Computer Science}
-\degreeyear{year}
+\degreeyear{2020}
 
 % Advisor name is required for
 % - doctoral students for the ProQuest abstract
 % - master's students who do not have a master's committee
-\advisor{Your Adviser Here}
+\advisor{Professor Vikram S. Adve}
 
 % Uncomment the \committee command for
 % - all doctoral students
 % - master's students who have a master's committee
-\committee{Professor Firstname Lastname, Chair\\
-        Professor Firstname Lastname} % etc.
+\committee{Professor Vikram Adve, Chair\\
+        Professor Grigore Ro\c{s}u \\
+        Professor Tao Xie \\
+        Professor R. Sekar, Stony Brook University \\
+        Alastair Reid, Google Research} % etc.
 
 \begin{document}
 
@@ -66,7 +70,7 @@
 %
 \begin{abstract}
 % Put the abstract in a file called "abs.tex" and it'll be inputted here.
-%\input{abs}
+\input{abstract}
 \end{abstract}
 
 
@@ -75,7 +79,7 @@
 %
 \begin{dedication}
 % Whatever dedication you want.
-To my parents, for their love and support.
+Dedicated to my parents \& love of my life, Swetosree Sinha, for their unconditional love and support.
 \end{dedication}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,7 +87,7 @@ To my parents, for their love and support.
 %
 % Put acknowledgments in a file called "ack.tex" and it'll be inputted here.
 \begin{acknowledgments}
-%\input{ack}
+\input{ack}
 \end{acknowledgments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,10 +100,13 @@ To my parents, for their love and support.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % INSERT REAL CONTENT HERE
 %
+\input{introduction}
+\input{decompilers}
+\input{related-work}
+\input{approach}
+\input{results}
+\input{future-work}
 
-%\include{intro}	% for INTRODUCTION in "intro.tex"
-%\include{exper}
-%\include{concl}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APPENDIX
@@ -115,7 +122,8 @@ To my parents, for their love and support.
 
 \bibliographystyle{IEEE_ECE}
 % Put references in BibTeX format in thesisrefs.bib.
-\bibliography{thesisrefs}
+\bibliography{bibs/references.bib,bibs/modeling-X86-semantics.bib,bibs/bugs.bib,bibs/k.bib,bibs/decompilaion-validation.bib}
+%\bibliography{thesisrefs}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
