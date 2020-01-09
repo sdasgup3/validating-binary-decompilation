@@ -1,0 +1,126 @@
+\documentclass[draftthesis,tocnosub,noragright,centerchapter,fullpagesingle,12pt]{uiuc_csthesis18}
+
+% Updated version of the ECE department's latex resources
+
+% Use draftthesis for notes and date markings on every page.  Useful when you
+%   have multiple copies floating around.
+% Use offcenter for the extra .5 inch on the left side. Needed with fullpage and fancy.
+% Use mixcasechap for compatibility with hyperref package, which does NOT like all caps default
+% Use edeposit for the adviser/committee on the title page.
+% Use tocnosub to suppress subsection and lower entries in the TOC.
+% PhD candidates use "proquest" for the proquest abstract.
+
+\makeatletter
+
+\usepackage{setspace}
+\usepackage{epsfig}  % for figures
+%\usepackage{graphicx}  % another package that works for figures
+%\usepackage{subfigure}  % for subfigures
+\usepackage{amsmath}  % for math spacing
+%\usepackage{amssymb}  % for math spacing
+%\usepackage{url}  % Hyphenation of URLs.
+\usepackage{lscape}  % Useful for wide tables or figures.
+
+% Uncomment the appropriate one of the following four lines:
+%\msthesis
+\phdthesis
+%\otherdoctorate[abbrev]{Title of Degree}
+%\othermasters[abbrev]{Title of Degree}
+
+\title{Title Goes Here and Will Be Automatically Set in ALL CAPS}
+\author{Your Name Goes Here}
+\department{Computer Science}
+\degreeyear{year}
+
+% Advisor name is required for
+% - doctoral students for the ProQuest abstract
+% - master's students who do not have a master's committee
+\advisor{Your Adviser Here}
+
+% Uncomment the \committee command for
+% - all doctoral students
+% - master's students who have a master's committee
+\committee{Professor Firstname Lastname, Chair\\
+        Professor Firstname Lastname} % etc.
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT
+%
+%\copyrightpage
+%\blankpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE
+%
+\maketitle
+
+%\raggedright
+\parindent 1em%
+
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%
+\begin{abstract}
+% Put the abstract in a file called "abs.tex" and it'll be inputted here.
+%\input{abs}
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEDICATION
+%
+\begin{dedication}
+% Whatever dedication you want.
+To my parents, for their love and support.
+\end{dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGMENTS
+%
+% Put acknowledgments in a file called "ack.tex" and it'll be inputted here.
+\begin{acknowledgments}
+%\input{ack}
+\end{acknowledgments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS
+%
+\tableofcontents
+
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSERT REAL CONTENT HERE
+%
+
+%\include{intro}	% for INTRODUCTION in "intro.tex"
+%\include{exper}
+%\include{concl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIX
+%
+\appendix
+%\include{apx}
+
+\backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAPHY
+%
+
+\bibliographystyle{IEEE_ECE}
+% Put references in BibTeX format in thesisrefs.bib.
+\bibliography{thesisrefs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AUTHOR'S BIOGRAPHY
+% As of 10/03/2011, Author's Biography or Vita no longer accepted by Grad College
+
+\end{document}
+\endinput
