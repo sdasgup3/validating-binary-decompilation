@@ -74,9 +74,9 @@
     \addtocontents{lof}{\vspace*{-\baselineskip}~Figure\hfill Page\endgraf}%
     \addtocontents{lot}{\vspace*{-\baselineskip}~Table\hfill Page\endgraf}}
 \def\@mkuptitle#1{\gdef\@Utitle{#1}}
-\def\title#1{\gdef\@title{#1}\MakeUppercase{\protect\@mkuptitle{#1}}}
+\def\title#1{\gdef\@title{#1}\uppercase{\protect\@mkuptitle{#1}}}
 \def\@mkupauthor#1{\gdef\@Uauthor{#1}}
-\def\author#1{\gdef\@author{#1}\MakeUppercase{\protect\@mkupauthor{#1}}}
+\def\author#1{\gdef\@author{#1}\uppercase{\protect\@mkupauthor{#1}}}
 \newcommand{\otherdoctorate}[2]{\def\@degree{#1}
     \def\degree{#2}
     \def\@thesisname{DISSERTATION}
@@ -254,14 +254,14 @@
 \let\thesis@listtablename=\listtablename % JSC
 \def\listoftables{\newpage%
 \def\listtablename{\if@mixc@sech@p\thesis@listtablename
-\else\MakeUppercase{\thesis@listtablename}\fi} %% JSC
+\else\uppercase{\thesis@listtablename}\fi} %% JSC
     \addcontentsline{toc}{chapter}{\listtablename}%
     {\singlespacing\thesis@listoftables}}
 \let\thesis@listoffigures=\listoffigures
 \let\thesis@listfigurename=\listfigurename % JSC
 \def\listoffigures{\newpage%
 \def\listfigurename{\if@mixc@sech@p\thesis@listfigurename
-\else\MakeUppercase{\thesis@listfigurename}\fi} %% JSC
+\else\uppercase{\thesis@listfigurename}\fi} %% JSC
     \addcontentsline{toc}{chapter}{\listfigurename}%
     {\singlespacing\thesis@listoffigures}}
 \def\abstractname{Abstract} %% all caps (SR)
@@ -322,7 +322,7 @@
 \fi
 \newcommand\chaptertitlefont{\normalsize} %% (SR)
 \def\@chapter[#1]#2{%
-\def\c@pch@ptitl@{\if@mixc@sech@p#1\else\MakeUppercase{#1}\fi} %% (JSC)
+\def\c@pch@ptitl@{\if@mixc@sech@p#1\else\uppercase{#1}\fi} %% (JSC)
   \ifnum \c@secnumdepth >\m@ne
     \if@mainmatter
       \refstepcounter{chapter}%
@@ -381,7 +381,7 @@
   \setlength{\chaptertitleheight}{0.5in}
 \fi
 \def\@makechapterhead#1{%
-  \def\capchaptitle{\if@mixc@sech@p#1\else\MakeUppercase{#1}\fi} %% (JSC)
+  \def\capchaptitle{\if@mixc@sech@p#1\else\uppercase{#1}\fi} %% (JSC)
   \vbox{
     \def\baselinestretch{1}\@normalsize
     \parindent \z@ \raggedright \normalfont
@@ -407,7 +407,7 @@
   \par\nobreak%
   }
 \def\@makeschapterhead#1{%
-  \def\capchaptitle{\if@mixc@sech@p#1\else\MakeUppercase{#1}\fi} %% (JSC)
+  \def\capchaptitle{\if@mixc@sech@p#1\else\uppercase{#1}\fi} %% (JSC)
   \vbox to \chaptertitleheight{
     \def\baselinestretch{1}\@normalsize
     \parindent \z@ \raggedright \normalfont
@@ -427,7 +427,7 @@
 \renewcommand\section{\@startsection {section}{1}{\z@}%
   {-3.5ex \@plus -1ex \@minus -.2ex}%
   {1.8ex \@plus.2ex}%
-  {\singlespacing\raggedright\normalfont\sectiontitlefont\MakeUppercase}} %% (SR)
+  {\singlespacing\raggedright\normalfont\sectiontitlefont\uppercase}} %% (SR)
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
   {-3.25ex\@plus -1ex \@minus -.2ex}%
   {1.3ex \@plus .2ex}%
@@ -522,7 +522,7 @@
     \let\@mkboth\markboth
     \if@thesisdraft
       \def\chaptermark##1{%
-        \markboth {\MakeUppercase{%
+        \markboth {\uppercase{%
           \ifnum \c@secnumdepth >\m@ne
             \if@mainmatter
               \@chapapp\ \thechapter%
@@ -530,7 +530,7 @@
           \fi}}{}}
     \else
       \def\chaptermark##1{%
-        \def\@chaphead{\MakeUppercase{%
+        \def\@chaphead{\uppercase{%
           \ifnum \c@secnumdepth >\m@ne
             \if@mainmatter
               \if@thesisfancy
@@ -544,7 +544,7 @@
         \markboth{\@chaphead}{\@chaphead}}
     \fi
     \def\sectionmark##1{%
-      \markright {\MakeUppercase{%
+      \markright {\uppercase{%
         \ifnum \c@secnumdepth >\z@
           \thesection. \ %
         \fi
@@ -562,7 +562,7 @@
     \let\@mkboth\markboth
     \if@thesisdraft
       \def\chaptermark##1{%
-        \markright {\MakeUppercase{%
+        \markright {\uppercase{%
           \ifnum \c@secnumdepth >\m@ne
             \if@mainmatter
               \@chapapp\ \thechapter%
@@ -570,7 +570,7 @@
           \fi}}}
     \else
       \def\chaptermark##1{%
-        \markright {\MakeUppercase{%
+        \markright {\uppercase{%
           \ifnum \c@secnumdepth >\m@ne
             \if@mainmatter
               \if@thesisfancy
