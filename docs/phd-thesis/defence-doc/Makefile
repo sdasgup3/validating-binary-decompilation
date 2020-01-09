@@ -3,7 +3,7 @@ PAPER=csthesis
 TEX = $(wildcard *.tex)
 
 BIB = $(wildcard bibs/*.bib)
-FIGS =
+FIGS = scalable-validation/figs/overview_diag.tex
 
 .PHONY: all clean error-check
 
@@ -20,7 +20,7 @@ error-check: $(PAPER).pdf
 	@echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	@echo ""
 
-$(PAPER).pdf: $(TEX) $(BIB)
+$(PAPER).pdf: $(TEX) $(BIB) $(FIGS)
 	pdflatex $(PAPER)
 	pdflatex $(PAPER)
 	bibtex $(PAPER)

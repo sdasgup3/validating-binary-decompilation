@@ -1,0 +1,27 @@
+// dot -Tps imm_stats.dot -o imm_stats.ps
+digraph instr_supprt {
+  //rankdir="LR"
+    
+ /*     
+  T [shape=box,label="Instructions modifying af\n(203/157/329)"]
+    DEF        [ label="Defined\n(82/68/137)"] 
+    UNDEF      [ label="Un-Defined\n(121/89/192)"] 
+    MUST       [ label="Un-Conditional\n(101/68/148)"] 
+    MAY        [ label="Conditional\n(20/21/44)"]
+*/
+  T [shape=box,label="Instructions modifying af\n(689)"]
+    DEF        [ label="Defined\n(287)"] 
+    UNDEF      [ label="Un-Defined\n(402)"] 
+    MUST       [ label="Un-Conditional\n(317)"] 
+    MAY        [ label="Conditional\n(85)"]
+
+  T -> DEF  
+  T -> UNDEF  
+  UNDEF -> MUST  
+  UNDEF -> MAY  
+
+  {rank = same; T; }
+  {rank = same; DEF; UNDEF}
+  {rank = same; MUST; MAY}
+
+ }

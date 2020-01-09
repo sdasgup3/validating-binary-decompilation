@@ -1,0 +1,164 @@
+\chapter{Overview of the Approach}\label{sec:overview}
+\section{Problem Statement}\label{sec:statement}
+
+%We note that the faithfulness of  binary-to-IR translators
+% is pivotal to any binary analysis built on top of it.  Any bug
+%in the translation would invalidate the binary analysis results. For example, a
+%malware analysis system might give false alarms or a binary instrumentation
+%system instrumenting a buggy IR might lead to failure or even crash in
+%interpreting the instrumented program.
+
+Given the importance of binary analysis, establishing the faithfulness of
+binary lifter (or translator) is most desirable, which is what we propose as
+our future work. Having said that, we formulated our problem statement as
+follows:
+
+\vspace{10pt}
+
+\noindent\textbf{Problem Statement}: \emph{Developing
+  \cmt{binary-translator-agnostic} tools and techniques to formally validate the
+    translation from binary to high level IR}
+
+Specifically, we would like to validate the translation from \ISA binary
+program  to high level LLVM~\cite{LLVM:CGO04} IR. This is in contrast with  verifying the
+translator\footnote{Translator verification uses a theorem prover or proof
+    assistant to verify a translator correct, once and for all, so that all
+    translator output is guaranteed correct for all valid source programs.
+    Translation validation, on the other hand, runs a theorem prover after each
+    translation to check that the output of the translator is semantically
+    equivalent to the source program.}, as in  compiler
+verification~\cite{Leroy:2009}, which is not only more involving but is
+specific to individual translators. Whereas, \tv allows us to apply the technique to multiple state-of-art binary
+lifters/translators. 
+
+Next, we will discuss challenges in the proposed work (Section
+    ~\ref{sec:challenges}) and the detailed steps (Section~\ref{sec:approach})
+that we envision to mitigate those.
+
+\section{Challenges in Translation Validation of
+  Decompilers}\label{sec:challenges} According to the pioneering work by Pnueli
+  \etal ~\cite{Pnueli:1998}, following are three key ingredients to set up a
+  fully automatic translation validation system:
+
+\subsection{Providing Common Semantic framework} This ingredient requires a
+common semantic framework in order to represent both the source (as \ISA binary
+    program) and the target code (as LLVM IR). Such a common framework allows
+the source and target programs to be both represented using a common
+specification language which assist reasoning over them. Moreover, the employed
+semantics framework need to be general enough to model programs written in
+different languages.
+
+One of the long standing challenge, which deters many previous efforts like
+~\cite{ASE2017}, in employing a formal validation approach for binary
+lifters, is the lack of formal specification of the \ISA instructions
+specifying binary program. \ISA instruction are massive in both numbers and
+complexity and are specified in an informal manner in the Intel
+manual~\cite{IntelManual} worth over $3,800$ pages. The \ISA ISA is huge
+, partly because of a large number of complex
+  instructions and partly because it keeps most of the legacy and deprecated
+  instructions ($~336$+) for the sake of backwards compatibility. It consists
+  of $996$ mnemonics, and each mnemonic admits several variants, depending on
+  the types (i.e., register, memory, or constant) and the size (i.e., the
+      bit-width) of operands. Moreover, the x86-64 reference manual informally
+  explains the instruction behaviors, leaving certain details unspecified or
+  ambiguous, which requires  to consult with an actual processor implementation
+  to clarify such details. Completely formalizing the vast number of
+  instructions with carefully identifying all the corner cases from the
+  informal document, thus, is highly non-trivial.
+
+\subsection{Providing Formal Notion of Program Equivalence} This ingredient
+expects the existence of designated control location(s) in the computations of
+the source and target programs, that can serve as an observation point(s) for
+comparing the values of a set of externally observable variables (input/output
+    variables, for example). The challenge here is to formally establish the
+notion that the lifted LLVM IR  correctly implements the \ISA binary code.
+Given the recent advances in translation validation in validating
+compilation~\cite{VOC2002,TVOC:CAV2005,Necula:2000,Sewell:2013,Kundu:2009,Kedar:SAS2013,DDEC:OOPSLA:2013,Tate:2009,Tristan:2011},
+  a basic version of this strategy is likely quite feasible today, however,
+  there are additional challenges to deal with when it comes to validating the
+  decompilation pipeline. For example, finding variable or  basic block
+  correspondence for checking equivalence is complicated by
+  glue-code\footnote{This is mainly to facilitate native execution of external
+    function calls} added by the lifter during decompilation. Moreover,
+    decompilers like
+    McSema~\cite{McSema:Recon14},llvm-mctoll~\cite{llvm-mctoll} and
+    reopt~\cite{reopt} performs analysis and optimization on top of the
+    decompiled IR to identity function prototypes, types and variables.
+    Naive approaches, like identifying and/or pruning glue code added during
+    decompilation or to make the equivalence checker aware of the optimizations
+    performed by the decompiler, might work for a specific decompiler but,
+    being ad-hoc, will not be easily scalable to others. \cmt{Also, Binary decompilation in the presence of indirect calls makes the control-flow-recovery challenging.    }
+      
+
+\subsection{Providing automated proof generator and checker} This ingredient is
+about generating a machine-checkable proof  of valid translation for a given
+pair of input and output programs as per the notion of equivalence established
+above. The proof can be generated by  the binary-translator itself.
+Intuitively, the proofs, using an equivalence checker,  will try to establish
+equivalence between synchronization points which are symbolic descriptions that
+capture the set of pairs of relevant states of the input and output programs.
+One of the essential requirements of the equivalence checker,  in the context
+of binary lifting, is language independence, to proof equivalence
+between programs in different languages (like \ISA and LLVM). \cmt{Moreover, the
+proof generator has to take into account the specifics of the translation which
+could be achieved by using translator-generated hints or heuristics inspired by
+the translation's effect. }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proposed Approach}\label{sec:approach} In this section we would
+outline our setup to validate the translation from \ISA program to LLVM IR and
+propose solution to mitigate some of the challenges mentioned in
+Section~\ref{sec:challenges}.
+
+
+As the common semantic framework for the representation of the binary code and
+the lifted LLVM IR code, we decided to build on K~\cite{k-primer-2013-v32}.
+%    which is a one of the state-of-the-art frameworks for defining formal
+%    language semantics (Refer to Section~\ref{sec:related-work} for the other
+    %    framework options). 
+        Given a syntax and a semantics of a language, K generates a parser, an
+        interpreter, as well as formal analysis tools such as model checkers
+        and deductive program verifiers, at no additional cost.  Using the
+        interpreter, one can test the semantics immediately, which
+        significantly increases the efficiency of semantics developments.
+        Furthermore, the formal analysis tools facilitate formal reasoning
+        about the given language semantics. This helps in terms of both
+        applicability of the semantics and engineering the semantics itself.
+    
+
+In formal-method's literature, the notion of program (or semantic) equivalence
+is usually formalized as a bi-simulation relation~\cite{Sangiorgi:2011} between
+pairs of states of the two programs.
+Ideally, we want a bi-simulation variant that allows us to simply relate the
+states where the two programs actually synchronize, i.e., at the start of
+corresponding functions or basic blocks, at the loop headers, etc. Such related states are called \syncps, which are a pair of symbolic states of the input and output programs accompanied by a set of equality constraints over symbolic variables found in the two states. Kasampalis \etal~\cite{TheoSAS19} realized such a variant of bi-simulation, referred to as  \emph{cut-bisimulation}, which is  well-suited for translation  across
+language changes, as it can ignore program points of no interest in the input
+and/or output program.
+%
+
+As for the last ingredient of a \TV system, we would like to design proof
+generator and the checker with language-independence in mind.
+Language-independence makes them applicable for (1) different source (\ISA) and
+translated program ( the high-level-IR), and (2) different high-level translated
+IRs (like LLVM, BIL etc.) supported by different binary lifters.  Towards that
+goal, we proposed to borrow a language-independent equivalence checking
+algorithm \m{Keq}~\cite{TheoSAS19} that can be parameterized with the input and output
+language semantics. The algorithm employs the notion of cut-bisimulation,
+         mentioned above, and the \syncp  needed for the proof are
+         provided  as an input to the algorithm. Keq is robust enough to apply to the Instruction Selection (ISel) phase of LLVM to validate the translation from LLVM IR to the output of the ISel phase, called Virtual x86. 
+  
+ % X86
+ The \m{Keq} tool, being parametric on the semantics of the input/output languages, need to be provided the semantics of LLVM and \ISA as inputs. Given the size and the complexity of the \ISA specification, providing the \ISA semantics is a non-trivial task which deters many previous efforts from using semantics driven approach to validate the binary translation. We are the first to develop 
+ the most complete and thoroughly tested formal
+ semantics of \ISA to date (Refer Section~\ref{sec:results}). Our semantics faithfully formalizes all the non-deprecated, sequential user-level instructions
+ of the x86-64 Haswell instruction set architecture. This totals
+ 3155 instruction variants, corresponding to 774 mnemonics.
+ The semantics is fully executable and has been tested against
+ more than 7,000 instruction-level test cases and the GCC
+ torture test suite. This extensive testing paid off, revealing
+ bugs in both the x86-64 reference manual and other existing
+ semantics.  Moreover, the semantics of a subset of
+ LLVM IR is already available~\cite{LLVMSEMA} for us to leverage and build on.
+%
+%\subsection{Generating Synchronization Points}

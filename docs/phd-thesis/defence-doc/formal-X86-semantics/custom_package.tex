@@ -9,14 +9,14 @@
 \usepackage{forest}
 \usepackage{amsmath,amssymb}
 \usepackage{ctable}
-\usepackage[textsize=tiny]{todonotes}
 \usepackage{pifont}
 \usepackage{calculator}
-\usepackage{csquotes}
-%\usepackage[ruled,vlined]{algorithm2e}
-%\usepackage{algorithm}
-%\usepackage{algorithmic}
-\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+% balance
+\usepackage{flushend}
+\usepackage{balance}
 
 % opphans
 \clubpenalty = 10000
@@ -34,10 +34,10 @@
 }
 
 % FIXME: overleaf broken if uncommented
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows,shadows,backgrounds}
-\usetikzlibrary{arrows.meta}
-\usepackage{amsmath,bm,times}
+% \usepackage{tikz-qtree}
+% \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+% \usetikzlibrary{shadows,trees}
+
 
 %% Custom Commands
 \def\Code#1{\texttt{#1} }
@@ -57,31 +57,18 @@
 \newcommand{\xmark}{{\color{red} \ding{55}}}
 \newcommand{\cmark}{{\color{green} \ding{51}}}
 \newcommand{\ISA}{x86-64\xspace}
-\newcommand{\LLVM}{LLVM IR\xspace}
-\newcommand{\compd}{Compositional Lifter\xspace}
-\newcommand{\siv}{single-instruction validation\xspace}
-\newcommand{\Siv}{Single-instruction validation\xspace}
-\newcommand{\plv}{program-level validation\xspace}
-\newcommand{\tv}{translation validation\xspace}
-\newcommand{\Mcstate}{\emph{State}\xspace}
 %\newcommand{\K}{\mbox{$\mathbb{K}$}\xspace}
 \newcommand{\Z}{$\mathbb{Z}3$\xspace}
-\newcommand{\mcsema}{McSema\xspace}
-\newcommand{\dlifted}{McSema-lifted\xspace}
 \newcommand{\uif}{uninterpreted functions}
-\newcommand{\TV}{Translation Validation\xspace}
-\newcommand{\syncps}{synchronization points\xspace}
-\newcommand{\syncp}{synchronization point\xspace}
 \newcommand{\Strata}{Strata\xspace}
 \newcommand{\Stoke}{Stoke\xspace}
 \newcommand{\initS}{{\tt initial search}}
 \newcommand{\secS}{{\tt secondary searches}}
 %\newcommand{\K}{\ensuremath{\mathcal{{\tt K}}}\xspace}
 \newcommand{\TS}[1]{{\tt #1}}
-\newcommand{\matcher}{Matcher\xspace}
 %\newcommand{\instr}[1]{\texttt{#1}}
 \newcommand{\instr}[1]{\textbf{\color{brown}\m{#1}}}
-\newcommand{\reg}[1]{\texttt{\%#1}}
+\newcommand{\reg}[1]{\s{\%#1}}
 \newcommand{\mem}[2]{\s{#1(\%#2)}}
 \newcommand{\opcode}[1]{\ensuremath{#1}}
 %\newcommand{\cond}[1]{\ensuremath{#1}}
@@ -92,43 +79,10 @@
 \newcommand{\bool}{\texttt{Bool}\xspace}
 \newcommand{\incfig}[1]{\includegraphics[scale=.7]{#1}}
 \newcommand{\CF}[2]{$\s{F}_{\s{#2}}^{\s{#1}}$}
-%\newcommand{\GN}[2]{$G{[#2]}^{#1}$}
+\newcommand{\GN}[2]{$G{[#2]}^{#1}$}
 \newcommand{\udef}{\emph{undef}\xspace}
-\newcommand{\bv}[2]{$#1\text{'}#2$\xspace}
-%% Graph algo
-\newcommand{\N}{\s{N}\xspace}
-\newcommand{\NP}{\s{N$^\prime$}\xspace}
-
-\newcommand{\T}{\s{T}\xspace}
-\newcommand{\TP}{\s{T$^\prime$}\xspace}
-
-\newcommand{\un}{$u$\xspace}
-\newcommand{\vn}{$v$\xspace}
-\newcommand{\up}{$u^\prime$\xspace}
-\newcommand{\IN}{\s{I$_{N}$}\xspace}
-\newcommand{\INP}{\s{I$_{N^\prime}$}\xspace}
-\newcommand{\F}{\s{F}\xspace}
-\newcommand{\FP}{\s{F$^\prime$}\xspace}
-\newcommand{\FN}{\s{F$_{N}$}\xspace}
-\newcommand{\FNP}{\s{F$_{N}^\prime$}\xspace}
-\newcommand{\GN}{\s{G$_{\FN}$}\xspace}
-\newcommand{\GNP}{\s{G$_{\FNP}$}\xspace}
-\newcommand{\Ap}{\s{A$^\prime$}\xspace}
-\newcommand{\Bp}{\s{B$^\prime$}\xspace}
-\newcommand{\Dp}{\s{D$^\prime$}\xspace}
-\newcommand{\Lp}{\s{L$^\prime$}\xspace}
-\newcommand{\Np}{\s{N$^\prime$}\xspace}
-\newcommand{\Sp}{\s{S$^\prime$}\xspace}
-\newcommand{\Tp}{\s{T$^\prime$}\xspace}
-
-\newcommand{\pot}{$\phi$\xspace}
-\newcommand{\potp}{\s{$\phi^\prime$}\xspace}
-\newcommand{\potpup}{$\phi^\prime$(\up)\xspace}
-\newcommand{\potvup}{$\phi_{v}$(\up)\xspace}
-\newcommand{\potu}{$\phi$(\un)\xspace}
-\newcommand{\potup}{$\phi$(\up)\xspace}
-
-%%
+%\newcommand{\bv}[2]{$#1\text{'}#2$\xspace}
+\newcommand{\bv}[2]{\s{#1}\text{'}\s{#2}}
 
 \newcommand{\rating}[1]{%
     \begin{tikzpicture}[x=1ex,y=1ex]
@@ -141,23 +95,17 @@
 }
 
 % Current Support
-\newcommand{\currentIS}{$3155$\xspace}
-\newcommand{\currentIntel}{$774$\xspace}
+%\newcommand{\currentIS}{$3186$} %including jmp label
+\newcommand{\currentIS}{$3155$}
+\newcommand{\currentIntel}{$774$}
+%\newcommand{\currentManual}{$1199$} %3104 - 1905
+%\newcommand{\currentManual}{$1281$} %3186 - 1905
+%\newcommand{\currentManualPerc}{$40\%$} %100 - \strataPerc
 % Total
-\newcommand{\totalIS}{$3736$\xspace}
-\newcommand{\totalIntel}{$996$\xspace}
-\newcommand{\dup}{$109$\xspace}
-% Mcsema
-\newcommand{\mcsemaIS}{$1922$\xspace}
-%
-\newcommand{\plvT}{$2348$\xspace}
-\newcommand{\plvP}{$2189$\xspace}
-%
-\newcommand{\sivIS}{$1349$\xspace}
-\newcommand{\sivExc}{$573$\xspace}
-\newcommand{\sivFail}{$29$\xspace}
-\newcommand{\sivTO}{$6$\xspace}
-%
+\newcommand{\totalIS}{$3736$}
+\newcommand{\totalIntel}{$996$}
+%\newcommand{\totalIntel}{$1,000$}
+\newcommand{\dup}{$109$}
 % Strata
 \newcommand{\strataIS}{$1796$}
 \newcommand{\strataIntel}{$466$}
@@ -204,28 +152,19 @@
 \newcommand{\undefIntel}{$32$}
 \newcommand{\undefPerc}{$3$} %32/1000
 
-\input{header.tex}
-\input{macro.tex}
-
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    bookmarks=true,
-}
+\input{formal-X86-semantics/header.tex}
+\input{formal-X86-semantics/macro.tex}
 
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-\usepackage{courier}
+
 
 \lstdefinestyle{Bash}{
     language=Bash,                % choose the language of the code
-    basicstyle=\footnotesize\ttfamily,       % the size of the fonts that are used for the code
+    basicstyle=\footnotesize,       % the size of the fonts that are used for the code
     numbers=left,                   % where to put the line-numbers
     numberstyle=\tiny\color{codegray},      % the size of the fonts that are used for the line-numbers
     stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
@@ -245,69 +184,34 @@
     morekeywords={andnq, jp, jz, movw, movq, xorq, orq, retq, pushw}
 }
 
-\lstdefinestyle{LLVM}{
-       %language=C,
-   %basicstyle=\footnotesize,      
-   basicstyle=\scriptsize\ttfamily,
-   backgroundcolor=\color{white},  % choose the background color. You must add 
-   %\usepackage{color}
-   showspaces=false,               % show spaces adding particular underscores
-   showstringspaces=false,         % underline spaces within strings
-   showtabs=false,                 % show tabs within strings adding particular 
-   %underscores
-   frame=single,           % adds a frame around the code
-   %tabsize=2,          % sets default tabsize to 2 spaces
-   captionpos=b,           % sets the caption-position to bottom
-   breaklines=true,        % sets automatic line breaking
-   breakatwhitespace=false,    % sets if automatic breaks should only happen at 
-   %whitespace
-   escapeinside={(*}{*)},          % if you want to add a comment within your 
-   %code
-   commentstyle=\color{gray},
-   morecomment=[l]{;},
-   keywordstyle=\color{blue},
-   %morekeywords={regstate, stackmem, andBool, requires, ensures, codemem, 
-   %memstate, and}
-   morekeywords={andBool, requires, ensures, and, rule, type, getelementptr, 
-       extract, add, if, then, else, fi, concat, define, internal, i64, 
-       call,ret, store, load,global, zeroinitializer,i8}
-}
-
-\lstdefinestyle{LLVMWOBORDER}{
-    %language=C,
-    %basicstyle=\footnotesize,      
-    basicstyle=\scriptsize\ttfamily,
-    backgroundcolor=\color{white},  % choose the background color. You must add 
-    %\usepackage{color}
+\lstdefinestyle{C++}{
+    language=C++,                % choose the language of the code
+    basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+    numbers=left,                   % where to put the line-numbers
+    numberstyle=\tiny\color{codegray},      % the size of the fonts that are used for the line-numbers
+    stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+    numbersep=5pt,                  % how far the line-numbers are from the code
+    backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
     showspaces=false,               % show spaces adding particular underscores
     showstringspaces=false,         % underline spaces within strings
-    showtabs=false,                 % show tabs within strings adding 
-    %particular 
-    %underscores
-    %frame=single,           % adds a frame around the code
+    showtabs=false,                 % show tabs within strings adding particular underscores
+    frame=single,           % adds a frame around the code
     %tabsize=2,          % sets default tabsize to 2 spaces
     captionpos=b,           % sets the caption-position to bottom
     breaklines=true,        % sets automatic line breaking
-    breakatwhitespace=false,    % sets if automatic breaks should only happen 
-    %at 
-    %whitespace
-    escapeinside={(*}{*)},          % if you want to add a comment within your 
-    %code
+    breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+    escapeinside={\%*}{*)},          % if you want to add a comment within your code
     commentstyle=\color{gray},
-    morecomment=[l]{;},
     keywordstyle=\color{blue},
-    %morekeywords={regstate, stackmem, andBool, requires, ensures, codemem, 
-    %memstate, and}
-    morekeywords={andBool, requires, ensures, and, rule, type, getelementptr, 
-        extract, add, if, then, else, fi, concat, define, internal, i64, 
-        call,ret, store, load,global, zeroinitializer,i8,gep}
 }
 
-
-\lstdefinestyle{KRULE}{
-    %language=C,
-    %basicstyle=\footnotesize,      
-    basicstyle=\scriptsize\ttfamily,
+\lstdefinestyle{SMTLIB}{
+    language=Java,
+    basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+    numbers=left,                   % where to put the line-numbers
+    numberstyle=\tiny\color{codegray},      % the size of the fonts that are used for the line-numbers
+    stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+    numbersep=5pt,                  % how far the line-numbers are from the code
     backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
     showspaces=false,               % show spaces adding particular underscores
     showstringspaces=false,         % underline spaces within strings
@@ -319,46 +223,35 @@
     breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
     escapeinside={(*}{*)},          % if you want to add a comment within your code
     commentstyle=\color{gray},
-    morecomment=[l]{//},
     keywordstyle=\color{blue},
-    %morekeywords={regstate, stackmem, andBool, requires, ensures, codemem, memstate, and}
-    morekeywords={andBool, requires, ensures, and, rule, type, getelementptr, 
-    extract, add, if, then, else, fi, concat}
+    morekeywords={bvand, bvnot, concat, extract, bvxor}
 }
 
-\lstdefinestyle{SMTLIB}{
-    language=Java,
-    basicstyle=\footnotesize\ttfamily,       % the size of the fonts that are used for 
-    %the code
-    numbers=left,                   % where to put the line-numbers
-    numberstyle=\tiny\color{codegray},      % the size of the fonts that are 
-    %used for the line-numbers
-    stepnumber=1,                   % the step between two line-numbers. If it 
-    %is 1 each line will be numbered
-    numbersep=5pt,                  % how far the line-numbers are from the code
-    backgroundcolor=\color{white},  % choose the background color. You must add 
-    %\usepackage{color}
+\lstdefinestyle{KRULE}{
+    %language=Java,
+    %basicstyle=\footnotesize,      
+    basicstyle=\scriptsize,
+    backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
     showspaces=false,               % show spaces adding particular underscores
     showstringspaces=false,         % underline spaces within strings
-    showtabs=false,                 % show tabs within strings adding 
-    %particular underscores
-    frame=single,           % adds a frame around the code
+    showtabs=false,                 % show tabs within strings adding particular underscores
+    %frame=single,           % adds a frame around the code
     %tabsize=2,          % sets default tabsize to 2 spaces
     captionpos=b,           % sets the caption-position to bottom
     breaklines=true,        % sets automatic line breaking
-    breakatwhitespace=false,    % sets if automatic breaks should only happen 
-    %at whitespace
-    escapeinside={(*}{*)},          % if you want to add a comment within your 
-    %code
+    breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+    escapeinside={(*}{*)},          % if you want to add a comment within your code
     commentstyle=\color{gray},
+    morecomment=[l]{//},
     keywordstyle=\color{blue},
-    morekeywords={bvand, bvnot, concat, extract, bvxor}
+    %morekeywords={regstate, stackmem, andBool, requires, ensures, codemem, memstate, and}
+    morekeywords={andBool, requires, ensures, and, rule}
 }
 
 \lstdefinestyle{KRULEWOBORDER}{
     %language=Java,
     %basicstyle=\footnotesize,      
-    basicstyle=\scriptsize\ttfamily,
+    basicstyle=\scriptsize,
     backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
     showspaces=false,               % show spaces adding particular underscores
     showstringspaces=false,         % underline spaces within strings
@@ -377,7 +270,7 @@
 
 \lstdefinestyle{SIMPRULES}{
     language=Java,
-    basicstyle=\footnotesize\ttfamily,       % the size of the fonts that are used for the code
+    basicstyle=\footnotesize,       % the size of the fonts that are used for the code
     backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
     escapeinside={(*}{*)},          % if you want to add a comment within your code
     commentstyle=\color{gray},

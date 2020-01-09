@@ -49,10 +49,6 @@
 \newcommand{\Qt}[1]{{\color{red} Theo: #1}}
 \newcommand{\BW}[1]{{\color{red} Borrowed: #1}}
 \newcommand{\Added}[1]{{\color{red} #1}}
-%\newcommand{\SC}[1]{{\color{blue} #1}}
-%\newcommand{\AEC}[1]{{\color{blue} #1}}
-\newcommand{\SC}[1]{#1}
-\newcommand{\AEC}[1]{#1}
 \newcommand{\cmt}[1]{}
 \newcommand{\xmark}{{\color{red} \ding{55}}}
 \newcommand{\cmark}{{\color{green} \ding{51}}}
@@ -170,16 +166,7 @@
 
 \newcommand{\strataPerc}{$47\%$} % 466/996 or  1905 / 3736
 \newcommand{\goelPerc}{$33\%$} 
-\newcommand{\sailPerc}{$15\%$} 
-% Stoke disjoin from Strata
-%\newcommand{\stokeIS}{$332$} % 262 + 15 + 9 + 46. ALso 332/3767 == 9%
-% 1432(strata common) + 332
 \newcommand{\stokeIS}{${\sim}1764$}
-%\newcommand{\stokeExcPerc}{$9\%$}
-% Strata stoke combined
-%\newcommand{\strataPlusStokeIS}{$2237$} % 
-
-%\newcommand{\unsupp}{$939$}
 
 %%%%%% Immediates
 %\newcommand{\ImmUg}{$146$} % 118 + 28
@@ -192,29 +179,8 @@
 %\newcommand{\RegSTOK}{$262$}
 %\newcommand{\RegMAN}{$129$}
 
-%%% toture status
-\newcommand{\TortureTotal}{$1576$} %
-\newcommand{\TortureExclude}{$6$} % 6 + 22
-\newcommand{\TortureInclude}{$1548$}
-\newcommand{\TortureUifsInstr}{$293$} % 134(all three jobs) +  48
-\newcommand{\TortureUifs}{$35$}
-\newcommand{\TortureCoverage}{$963$}
-%%% Undef counts
-\newcommand{\undefTotal}{$474$}
-\newcommand{\undefIntel}{$32$}
-\newcommand{\undefPerc}{$3$} %32/1000
-
 \input{header.tex}
 \input{macro.tex}
-
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-    bookmarks=true,
-}
 
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
