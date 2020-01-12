@@ -63,13 +63,57 @@ void writeHeader(raw_ostream &O, DepGraph *G) {
 
 void writeFooter(raw_ostream &O, DepGraph *G) { O << "}\n"; }
 
+std::string getNodeLabel(const Value *Node) {
+  enum { MaxColumns = 1024 };
+  std::string Str;
+  raw_string_ostream OS(Str);
+
+  if (Node->getName().empty()) {
+    Node->printAsOperand(OS, false);
+    OS << ":";
+  }
+
+  OS << *Node;
+  std::string OutStr = OS.str();
+  if (OutStr[0] == '\n')
+    OutStr.erase(OutStr.begin());
+
+  // Process string output to make it nicer...
+  unsigned ColNum = 0;
+  unsigned LastSpace = 0;
+  for (unsigned i = 0; i != OutStr.length(); ++i) {
+    if (OutStr[i] == '\n') { // Left justify
+      OutStr[i] = '\\';
+      OutStr.insert(OutStr.begin() + i + 1, 'l');
+      ColNum = 0;
+      LastSpace = 0;
+    } else if (OutStr[i] == ';') {             // Delete comments!
+      unsigned Idx = OutStr.find('\n', i + 1); // Find end of line
+      OutStr.erase(OutStr.begin() + i, OutStr.begin() + Idx);
+      --i;
+    } else if (ColNum == MaxColumns) { // Wrap lines.
+      // Wrap very long names even though we can't find a space.
+      if (!LastSpace)
+        LastSpace = i;
+      OutStr.insert(LastSpace, "\\l...");
+      ColNum = i - LastSpace;
+      LastSpace = 0;
+      i += 3; // The loop will advance 'i' again.
+    } else
+      ++ColNum;
+    if (OutStr[i] == ' ')
+      LastSpace = i;
+  }
+  return OutStr;
+}
+
 void writeNodes(raw_ostream &O, DepGraph *G) {
   for (auto p : G->getImpl()) {
     auto *Node = p.first;
     auto adjList = p.second;
     O << "\tNode" << static_cast<const void *>(Node) << " [shape=record,";
     O << "label=\"{";
-    O << *Node;
+    O << DOT::EscapeString(getNodeLabel(Node));
     O << "}\"];\n";
 
     for (auto TargetNode : adjList) {

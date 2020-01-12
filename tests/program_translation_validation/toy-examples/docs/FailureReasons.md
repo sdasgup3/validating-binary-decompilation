@@ -9,7 +9,13 @@ Could not encode 'fmulp  %st,%st(1)' within 2 bytes.
 
 R2: Jump table for switch statement
 
-
+match Fails
+=============
+```
+cat docs/matchFail_2.log | parallel  grep -l  \"fldt\\\|stpt\" {}/mcsema/compd.log 
+test_22/DoDemoFpu1/mcsema/compd.log
+test_22/main/mcsema/compd.log
+```
 
 Tips
 ========

@@ -81,7 +81,7 @@ grep "Pass" docs/match.log > docs/matchPass.log
 ## To find the the binaary size excersized by  a particular set of test-cases
 ```
 # This is useful to pick up a representative which s smallest in binary size
-cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/compd.log | wc -l"
+cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/mcsema/compd.log | wc -l"
 ```
 
 ### Handling: --assume-none-decl-retval
