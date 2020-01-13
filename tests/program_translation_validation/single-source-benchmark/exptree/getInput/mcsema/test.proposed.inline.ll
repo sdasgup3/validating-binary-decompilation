@@ -18,7 +18,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
 %G_0x602080_type = type <{ [8 x i8] }>
 %G_0x6020c0_type = type <{ [8 x i8] }>
-%G_0x6020c8_type = type <{ [4 x i8] }>
+%G_0x6020c8_type = type <{ [8 x i8] }>
 %G_0x6020cc_type = type <{ [4 x i8] }>
 %G_0x6020d8_type = type <{ [8 x i8] }>
 %G_0x6020e0_type = type <{ [8 x i8] }>
@@ -1627,7 +1627,7 @@ block_.L_4011d0:                                  ; preds = %block_4011c9, %bloc
   %RAX.i37 = bitcast %union.anon* %901 to i64*
   %902 = load i64, i64* %RAX.i37
   %903 = load i64, i64* %PC.i36
-  %904 = add i64 %903, 2
+  %904 = add i64 %903, 3
   store i64 %904, i64* %PC.i36
   %905 = trunc i64 %902 to i32
   %906 = shl i32 %905, 1
@@ -3557,7 +3557,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

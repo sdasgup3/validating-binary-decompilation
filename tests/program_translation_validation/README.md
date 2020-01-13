@@ -1,13 +1,14 @@
 ## Run Stats
 | Test-suite  | Binary Opt Level | Graph Traits | Matcher | Normalizer | Pass/Fail | Comments | run ID |
 |---|---|---|---|---|---|---|---|
-|  toy-examples (90)|  -O0 |  Mem edges only | Naive | O3       | 77/13   | same with ssa edges | A.1 |
-|                   |  -O0 |  Mem edges only | Naive | custom   | 80/10   | same with ssa edges | A.2 |
-|  single-source (3062)|  -O0 |  Mem edges only | Naive | O3     | 2544/518 | 2555/507 with ssa edges| B.1|
-|                      |  -O0 |  Mem edges only | Naive | custom | 2779/283 | 2791/271 with ssa edges|  B.2|
-|  spec2006 (3870 partial)|  -O0 |  Mem edges only | Naive | O3 | 2065/1805 | saved in matchPass\_1 | C.1 |
-|                         |  -O0 |  Mem edges only | Naive | custom | 2176/1694 | saved in matchPass\_2 | C.2|
+|  toy-examples (90)|  -O0 |  Mem edges only | Naive | O3       | \*77/13   | same with ssa edges | A.1 |
+|                   |  -O0 |  Mem edges only | Naive | custom   | 81/7   | same with ssa edges | A.2 |
+|  single-source (3021)|  -O0 |  Mem edges only | Naive | O3     | \*2544/477 | 2555/507 with ssa edges| B.1|
+|                      |  -O0 |  Mem edges only | Naive | custom | 2832/189 | 2791/271 with ssa edges|  B.2|
+|  spec2006 (3870 partial)|  -O0 |  Mem edges only | Naive | O3 | \*2065/1805 | saved in matchPass\_1 | C.1 |
+|                         |  -O0 |  Mem edges only | Naive | custom | 2262/1608 | saved in matchPass\_2 | C.2|
 
+\*: not updated for a while
 
 ## Initial Setup (Required)
 ### Compd Cache Setup
@@ -47,6 +48,11 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} compd_opt" |& t
 cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match.log
 ```
 
+## Check binary size (optional)
+```
+cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/mcsema/compd.log | wc -l"
+```
+
 
 ## Commands for run IDs
  - A.1
@@ -56,8 +62,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
 
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
   cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match.log
-  cp docs/match.log docs/match_1.log
+  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
   ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
   ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
  ```
@@ -68,8 +73,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
   unset NORM
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
   cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match.log
-  cp docs/match.log docs/match_2.log
+  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
   ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
   ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
  ```
@@ -116,5 +120,6 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
   cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
   cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
-  matcher Pass/Fails are saved in matchPass/Fail\_2.log
+  ../../scripts/triage.sh Pass  docs/match_2.log  spec2006 &> docs/matchPass_2.log
+  ../../scripts/triage.sh Fail  docs/match_2.log  spec2006 &> docs/matchFail_2.log
  ```

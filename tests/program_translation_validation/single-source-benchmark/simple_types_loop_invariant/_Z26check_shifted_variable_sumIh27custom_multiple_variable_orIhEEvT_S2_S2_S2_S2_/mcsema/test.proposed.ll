@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_412340._ZN27custom_multiple_variable_orIhE8do_shift
 declare %struct.Memory* @sub_412250._Z15tolerance_equalIhEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x207cc6__rip__type = type <{ [8 x i8] }>
-@G_0x207cc6__rip_= global %G_0x207cc6__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x207cc6__rip__4268994__type = type <{ [4 x i8] }>
+@G_0x207cc6__rip__4268994_= global %G_0x207cc6__rip__4268994__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x61a0a8_type = type <{ [4 x i8] }>
 @G_0x61a0a8= global %G_0x61a0a8_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x414aee_type = type <{ [8 x i8] }>
@@ -1151,7 +1151,7 @@ block_400478:
   %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x207cc6__rip__type* @G_0x207cc6__rip_ to i64
+  %10 = ptrtoint %G_0x207cc6__rip__4268994__type* @G_0x207cc6__rip__4268994_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

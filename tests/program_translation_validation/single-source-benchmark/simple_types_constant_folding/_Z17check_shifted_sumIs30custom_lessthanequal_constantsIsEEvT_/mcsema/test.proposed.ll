@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_415cf0._ZN30custom_lessthanequal_constantsIsE8do_sh
 declare %struct.Memory* @sub_415170._Z15tolerance_equalIsEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x20c361__rip__type = type <{ [8 x i8] }>
-@G_0x20c361__rip_= global %G_0x20c361__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x20c361__rip__4283687__type = type <{ [16 x i8] }>
+@G_0x20c361__rip__4283687_= global %G_0x20c361__rip__4283687__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x6220a8_type = type <{ [4 x i8] }>
 @G_0x6220a8= global %G_0x6220a8_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x419d48_type = type <{ [8 x i8] }>
@@ -835,7 +835,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x20c361__rip__type* @G_0x20c361__rip_ to i64
+  %10 = ptrtoint %G_0x20c361__rip__4283687__type* @G_0x20c361__rip__4283687_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

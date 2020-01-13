@@ -455,14 +455,14 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x14ff6__rip__type = type <{ [8 x i8] }>
-@G_0x14ff6__rip_= global %G_0x14ff6__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x1500a__rip__type = type <{ [16 x i8] }>
-@G_0x1500a__rip_= global %G_0x1500a__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
-%G_0x1503e__rip__type = type <{ [16 x i8] }>
-@G_0x1503e__rip_= global %G_0x1503e__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
-%G_0x1504c__rip__type = type <{ [8 x i8] }>
-@G_0x1504c__rip_= global %G_0x1504c__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x14ff6__rip__4199818__type = type <{ [16 x i8] }>
+@G_0x14ff6__rip__4199818_= global %G_0x14ff6__rip__4199818__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x1500a__rip__4199830__type = type <{ [16 x i8] }>
+@G_0x1500a__rip__4199830_= global %G_0x1500a__rip__4199830__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x1503e__rip__4199778__type = type <{ [16 x i8] }>
+@G_0x1503e__rip__4199778_= global %G_0x1503e__rip__4199778__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x1504c__rip__4199724__type = type <{ [16 x i8] }>
+@G_0x1504c__rip__4199724_= global %G_0x1504c__rip__4199724__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_Z15tolerance_equalIdEbRT_S1_(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -724,7 +724,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x1504c__rip__type* @G_0x1504c__rip_ to i64
+  %10 = ptrtoint %G_0x1504c__rip__4199724__type* @G_0x1504c__rip__4199724_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1024,7 +1024,7 @@ block_400478:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x1503e__rip__type* @G_0x1503e__rip_ to i64
+  %10 = ptrtoint %G_0x1503e__rip__4199778__type* @G_0x1503e__rip__4199778_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC
@@ -1326,7 +1326,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x14ff6__rip__type* @G_0x14ff6__rip_ to i64
+  %10 = ptrtoint %G_0x14ff6__rip__4199818__type* @G_0x14ff6__rip__4199818_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1370,7 +1370,7 @@ block_400478:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x1500a__rip__type* @G_0x1500a__rip_ to i64
+  %10 = ptrtoint %G_0x1500a__rip__4199830__type* @G_0x1500a__rip__4199830_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC

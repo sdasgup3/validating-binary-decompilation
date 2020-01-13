@@ -93,6 +93,8 @@ private:
   vector<string> handleJMPDefns(const vector<string> &local_defn);
   vector<string> handleJCCDefns(const vector<string> &local_defn);
   vector<string> handleCALLDefns(const vector<string> &local_defn);
+  vector<string> handleInstrSizeMismatch(const vector<string> &local_defn,
+                                         uint64_t currSize);
   vector<string> handleDataSectionAccessDefns(x64asm::Instruction instr,
                                               const vector<string> &local_defn,
                                               uint64_t currRIP,

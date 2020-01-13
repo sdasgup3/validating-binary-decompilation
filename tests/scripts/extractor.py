@@ -110,7 +110,8 @@ def runLLVMExtract(inputFile, func_name, num_inst):
 
 
 #OPT = "-licm -gvn -early-cse -globalopt -mem2reg -inline -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -instcombine"
-OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg"
+#OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg"
+OPT="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse"
 def createParentMakefile(functions):
 
     allFuncNames = ""

@@ -472,8 +472,8 @@ declare %struct.Memory* @sub_401b00._Z4testI16reverse_iteratorIS0_I14Double_poin
 declare %struct.Memory* @sub_400a80._Z9summarizev(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x1f01__rip__type = type <{ [8 x i8] }>
-@G_0x1f01__rip_= global %G_0x1f01__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x1f01__rip__4197935__type = type <{ [16 x i8] }>
+@G_0x1f01__rip__4197935_= global %G_0x1f01__rip__4197935__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x605050_type = type <{ [4 x i8] }>
 @G_0x605050= global %G_0x605050_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x605058_type = type <{ [8 x i8] }>
@@ -484,8 +484,8 @@ declare %struct.Memory* @sub_400a80._Z9summarizev(%struct.State* noalias derefer
 @G_0x605068= global %G_0x605068_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x605070_type = type <{ [8 x i8] }>
 @G_0x605070= global %G_0x605070_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x60ce50_type = type <{ [8 x i8] }>
-@G_0x60ce50= global %G_0x60ce50_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x60ce50_type = type <{ [16 x i8] }>
+@G_0x60ce50= global %G_0x60ce50_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x60ce58_type = type <{ [8 x i8] }>
 @G_0x60ce58= global %G_0x60ce58_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x60ce60_type = type <{ [8 x i8] }>
@@ -1746,7 +1746,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x1f01__rip__type* @G_0x1f01__rip_ to i64
+  %10 = ptrtoint %G_0x1f01__rip__4197935__type* @G_0x1f01__rip__4197935_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

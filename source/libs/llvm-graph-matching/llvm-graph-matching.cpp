@@ -426,6 +426,10 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
     // 5: for u←Vq do
     for (auto U : VertexSet) {
 
+#ifdef MATCHER_DEBUG
+      llvm::errs() << "Fixing: ";
+      dumpLLVMNode(U);
+#endif
       if (dyn_cast<CallInst>(U))
         continue;
 
@@ -1357,8 +1361,8 @@ bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
 
 void Matcher::dumpPotIMatches() {
   for (auto PotMatch : PotIMatches) {
-    if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
-      continue;
+    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
+    //   continue;
     llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
     for (auto match : PotMatch.second) {
       llvm::errs() << "\t"

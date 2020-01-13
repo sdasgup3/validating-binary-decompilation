@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_413150._ZN19custom_constant_andIiE8do_shiftEi(%stru
 declare %struct.Memory* @sub_412f20._Z15tolerance_equalIiEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x622088_type = type <{ [8 x i8] }>
-@G_0x622088= global %G_0x622088_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x622088_type = type <{ [4 x i8] }>
+@G_0x622088= global %G_0x622088_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6220a8_type = type <{ [4 x i8] }>
 @G_0x6220a8= global %G_0x6220a8_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x419d48_type = type <{ [8 x i8] }>

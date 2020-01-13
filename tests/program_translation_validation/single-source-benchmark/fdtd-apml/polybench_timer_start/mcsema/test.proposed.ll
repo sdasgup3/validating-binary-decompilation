@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_400720.polybench_prepare_instruments(%struct.State*
 declare %struct.Memory* @sub_400750.rtclock(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x604090_type = type <{ [16 x i8] }>
-@G_0x604090= global %G_0x604090_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x604090_type = type <{ [8 x i8] }>
+@G_0x604090= global %G_0x604090_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @polybench_timer_start(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

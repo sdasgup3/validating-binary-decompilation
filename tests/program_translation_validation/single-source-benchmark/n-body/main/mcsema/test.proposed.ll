@@ -458,8 +458,8 @@ declare %struct.Memory* @sub_4007d0.energy(%struct.State* noalias dereferenceabl
 declare %struct.Memory* @sub_400550.advance(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0xe0__rip__type = type <{ [8 x i8] }>
-@G_0xe0__rip_= global %G_0xe0__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0xe0__rip__type = type <{ [16 x i8] }>
+@G_0xe0__rip_= global %G_0xe0__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x400c20_type = type <{ [8 x i8] }>
 @G__0x400c20= global %G__0x400c20_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x601040_type = type <{ [8 x i8] }>

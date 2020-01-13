@@ -456,10 +456,10 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4005e0.gen_random(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x11a__rip__type = type <{ [8 x i8] }>
-@G_0x11a__rip_= global %G_0x11a__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x131__rip__type = type <{ [8 x i8] }>
-@G_0x131__rip_= global %G_0x131__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x11a__rip__type = type <{ [16 x i8] }>
+@G_0x11a__rip_= global %G_0x11a__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x131__rip__type = type <{ [16 x i8] }>
+@G_0x131__rip_= global %G_0x131__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x4006d8_type = type <{ [8 x i8] }>
 @G__0x4006d8= global %G__0x4006d8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 

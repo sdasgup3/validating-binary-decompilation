@@ -55,6 +55,10 @@ auto &Outfile = ValueArg<string>::create("outfile")
                     .usage("<path/to/file.(dot)>: file to write dot to")
                     .description("Path to proposed output dot file");
 
+auto &SSAEdgeOnly =
+    FlagArg::create("use-ssa-edges")
+        .description("Use only the SSA edges to create the dependency graph");
+
 void writeHeader(raw_ostream &O, DepGraph *G) {
   std::string GraphName = "CFG for '" + G->F->getName().str() + "' function";
   O << "digraph \"" << DOT::EscapeString(GraphName) << "\" {\n";
@@ -219,7 +223,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  DepGraph *G = new DepGraph(F1);
+  DepGraph *G = new DepGraph(F1, SSAEdgeOnly.value());
   writeDFGToDotFile(G, Outfile.value());
 
   Console::msg() << "Dot file generated!\n\n";

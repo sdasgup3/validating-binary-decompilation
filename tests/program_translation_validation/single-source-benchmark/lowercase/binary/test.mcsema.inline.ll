@@ -94,11 +94,11 @@ declare %struct.Memory* @sub_4004d0_deregister_tm_clones_renamed_(%struct.State*
 
 declare %struct.Memory* @sub_4005d0_doTest_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
-declare %struct.Memory* @sub_4007b0_toASCIILower_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
-
 declare %struct.Memory* @sub_400700_lower_StringImpl_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 declare %struct.Memory* @sub_400438__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
+
+declare %struct.Memory* @sub_4007b0_toASCIILower_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 declare %struct.Memory* @__remill_sync_hyper_call(%struct.State* dereferenceable(3376), %struct.Memory*, i32) #0
 

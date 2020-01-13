@@ -687,7 +687,7 @@ block_401c15:                                     ; preds = %block_.L_401c06
   %RAX.i1583 = bitcast %union.anon* %278 to i64*
   %279 = load i64, i64* %RAX.i1583
   %280 = load i64, i64* %PC.i1582
-  %281 = add i64 %280, 2
+  %281 = add i64 %280, 3
   store i64 %281, i64* %PC.i1582
   %282 = shl i64 %279, 32
   %283 = ashr i64 %282, 33
@@ -1320,7 +1320,7 @@ block_.L_401c5d:                                  ; preds = %block_.L_401c25
   %RAX.i1529 = bitcast %union.anon* %735 to i64*
   %736 = load i64, i64* %RAX.i1529
   %737 = load i64, i64* %PC.i1528
-  %738 = add i64 %737, 2
+  %738 = add i64 %737, 3
   store i64 %738, i64* %PC.i1528
   %739 = trunc i64 %736 to i32
   %740 = shl i32 %739, 1
@@ -1426,7 +1426,7 @@ block_.L_401c6b:                                  ; preds = %block_.L_401c06
   %RAX.i1520 = bitcast %union.anon* %807 to i64*
   %808 = load i64, i64* %RAX.i1520
   %809 = load i64, i64* %PC.i1519
-  %810 = add i64 %809, 2
+  %810 = add i64 %809, 3
   store i64 %810, i64* %PC.i1519
   %811 = trunc i64 %808 to i32
   %812 = shl i32 %811, 1
@@ -1947,7 +1947,7 @@ block_401ca9:                                     ; preds = %block_.L_401c9d
   %RCX.i1483 = bitcast %union.anon* %1176 to i64*
   %1177 = load i64, i64* %RCX.i1483
   %1178 = load i64, i64* %PC.i1482
-  %1179 = add i64 %1178, 2
+  %1179 = add i64 %1178, 3
   store i64 %1179, i64* %PC.i1482
   %1180 = trunc i64 %1177 to i32
   %1181 = shl i32 %1180, 1
@@ -2151,7 +2151,7 @@ block_401ca9:                                     ; preds = %block_.L_401c9d
   %RCX.i1465 = bitcast %union.anon* %1326 to i64*
   %1327 = load i64, i64* %RCX.i1465
   %1328 = load i64, i64* %PC.i1464
-  %1329 = add i64 %1328, 2
+  %1329 = add i64 %1328, 3
   store i64 %1329, i64* %PC.i1464
   %1330 = trunc i64 %1327 to i32
   %1331 = shl i32 %1330, 1
@@ -3740,7 +3740,7 @@ block_401ca9:                                     ; preds = %block_.L_401c9d
   %RCX.i1296 = bitcast %union.anon* %2462 to i64*
   %2463 = load i64, i64* %RCX.i1296
   %2464 = load i64, i64* %PC.i1295
-  %2465 = add i64 %2464, 2
+  %2465 = add i64 %2464, 3
   store i64 %2465, i64* %PC.i1295
   %2466 = trunc i64 %2463 to i32
   %2467 = shl i32 %2466, 1
@@ -6792,7 +6792,7 @@ block_401ca9:                                     ; preds = %block_.L_401c9d
   %RCX.i973 = bitcast %union.anon* %4643 to i64*
   %4644 = load i64, i64* %RCX.i973
   %4645 = load i64, i64* %PC.i972
-  %4646 = add i64 %4645, 2
+  %4646 = add i64 %4645, 3
   store i64 %4646, i64* %PC.i972
   %4647 = trunc i64 %4644 to i32
   %4648 = shl i32 %4647, 1
@@ -8351,7 +8351,7 @@ block_.L_40201f:                                  ; preds = %block_.L_401c9d
   %RCX.i809 = bitcast %union.anon* %5751 to i64*
   %5752 = load i64, i64* %RCX.i809
   %5753 = load i64, i64* %PC.i808
-  %5754 = add i64 %5753, 2
+  %5754 = add i64 %5753, 3
   store i64 %5754, i64* %PC.i808
   %5755 = trunc i64 %5752 to i32
   %5756 = shl i32 %5755, 1
@@ -11930,7 +11930,7 @@ block_40220b:                                     ; preds = %block_.L_4021ff
   %RCX.i453 = bitcast %union.anon* %8301 to i64*
   %8302 = load i64, i64* %RCX.i453
   %8303 = load i64, i64* %PC.i452
-  %8304 = add i64 %8303, 2
+  %8304 = add i64 %8303, 3
   store i64 %8304, i64* %PC.i452
   %8305 = trunc i64 %8302 to i32
   %8306 = shl i32 %8305, 1
@@ -12134,7 +12134,7 @@ block_40220b:                                     ; preds = %block_.L_4021ff
   %RCX.i435 = bitcast %union.anon* %8451 to i64*
   %8452 = load i64, i64* %RCX.i435
   %8453 = load i64, i64* %PC.i434
-  %8454 = add i64 %8453, 2
+  %8454 = add i64 %8453, 3
   store i64 %8454, i64* %PC.i434
   %8455 = trunc i64 %8452 to i32
   %8456 = shl i32 %8455, 1
@@ -15238,7 +15238,7 @@ block_.L_4023d9:                                  ; preds = %block_.L_4021ff
   %RCX.i104 = bitcast %union.anon* %10663 to i64*
   %10664 = load i64, i64* %RCX.i104
   %10665 = load i64, i64* %PC.i103
-  %10666 = add i64 %10665, 2
+  %10666 = add i64 %10665, 3
   store i64 %10666, i64* %PC.i103
   %10667 = trunc i64 %10664 to i32
   %10668 = shl i32 %10667, 1
@@ -16922,7 +16922,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = shl i64 %9, 32
   %13 = ashr i64 %12, 33
@@ -17527,7 +17527,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1
@@ -17875,7 +17875,7 @@ block_400478:
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RCX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

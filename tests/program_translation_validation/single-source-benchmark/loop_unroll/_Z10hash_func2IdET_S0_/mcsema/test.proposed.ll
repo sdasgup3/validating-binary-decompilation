@@ -455,8 +455,12 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x14fcc__rip__type = type <{ [8 x i8] }>
-@G_0x14fcc__rip_= global %G_0x14fcc__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x14fcc__rip__4199868__type = type <{ [16 x i8] }>
+@G_0x14fcc__rip__4199868_= global %G_0x14fcc__rip__4199868__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x14fcc__rip__4199876__type = type <{ [16 x i8] }>
+@G_0x14fcc__rip__4199876_= global %G_0x14fcc__rip__4199876__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x14fcc__rip__4199884__type = type <{ [16 x i8] }>
+@G_0x14fcc__rip__4199884_= global %G_0x14fcc__rip__4199884__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_Z10hash_func2IdET_S0_(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -609,7 +613,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x14fcc__rip__type* @G_0x14fcc__rip_ to i64
+  %10 = ptrtoint %G_0x14fcc__rip__4199868__type* @G_0x14fcc__rip__4199868_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -629,7 +633,7 @@ block_400478:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x14fcc__rip__type* @G_0x14fcc__rip_ to i64
+  %10 = ptrtoint %G_0x14fcc__rip__4199876__type* @G_0x14fcc__rip__4199876_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -649,7 +653,7 @@ block_400478:
   %YMM3 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM3 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x14fcc__rip__type* @G_0x14fcc__rip_ to i64
+  %10 = ptrtoint %G_0x14fcc__rip__4199884__type* @G_0x14fcc__rip__4199884_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

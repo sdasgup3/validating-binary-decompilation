@@ -18,23 +18,67 @@ mandel
 mandel-2
 ```
 
-## Matcher Fails
-```
-ReedSolomon/gen_poly
-ReedSolomon/rsdec_204
-ReedSolomon/rsenc_204
-Treesort/Trees
-dry/Proc4
-dry/Proc5
-exptree/search
-fldry/Proc4
-fldry/Proc5
-lpbench/random_double
-simple_types_constant_folding/__cxx_global_var_init
-whetstone/PA
-```
+## Match Failure Reasons
+ - McSema hosts globals with different sizes that the compd
+  ```
+  ReedSolomon/gen_poly
+  ReedSolomon/rsdec_204
+  ReedSolomon/rsenc_204
+  Treesort/Trees
+  dry/Proc4
+  dry/Proc5
+  exptree/search
+  fldry/Proc4
+  fldry/Proc5
+  lpbench/random_double
+  simple_types_constant_folding/__cxx_global_var_init
+  whetstone/PA
+  ```
+  - exit_plt: McSema puts a remill_error call after exit_plt (41): Removed from compdPass_1/2.log
+  ```
+  2mm/xmalloc
+  3mm/xmalloc
+  Shootout-hash/ht_node_create
+  Shootout-lists/test_lists
+  Shootout-strcat/main
+  adi/xmalloc
+  atax/xmalloc
+  bicg/xmalloc
+  cholesky/xmalloc
+  correlation/xmalloc
+  covariance/xmalloc
+  doitgen/xmalloc
+  durbin/xmalloc
+  dynprog/xmalloc
+  exptree/newCombList
+  exptree/newWorkList
+  fdtd-2d/xmalloc
+  fdtd-apml/xmalloc
+  ffbench/main
+  floyd-warshall/xmalloc
+  gemm/xmalloc
+  gemver/xmalloc
+  gesummv/xmalloc
+  gramschmidt/xmalloc
+  himenobmtxpa/set_param
+  jacobi-1d-imper/xmalloc
+  jacobi-2d-imper/xmalloc
+  loop_unroll/_Z13record_resultdPKc
+  lu/xmalloc
+  mvt/xmalloc
+  queens/main
+  reg_detect/xmalloc
+  seidel-2d/xmalloc
+  simple_types_constant_folding/_Z13record_resultdPKc
+  simple_types_loop_invariant/_Z13record_resultdPKc
+  stepanov_abstraction/_Z13record_resultdPKc
+  symm/xmalloc
+  syr2k/xmalloc
+  syrk/xmalloc
+  trisolv/xmalloc
+  trmm/xmalloc
+  ```
 
-## Compd/Match Failure Reasons
 
 ## match Fails turned Pass
   - (~800) Function defintion (S1)

@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_40c0d0._Z18complete_hash_funcIiET_S0_(%struct.State
 declare %struct.Memory* @sub_40c160._Z15tolerance_equalIiEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x61c080_type = type <{ [8 x i8] }>
-@G_0x61c080= global %G_0x61c080_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x61c080_type = type <{ [4 x i8] }>
+@G_0x61c080= global %G_0x61c080_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x61c0a8_type = type <{ [4 x i8] }>
 @G_0x61c0a8= global %G_0x61c0a8_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x4167aa_type = type <{ [8 x i8] }>

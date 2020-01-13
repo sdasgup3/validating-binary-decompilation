@@ -1176,7 +1176,7 @@ block_.L_4007b9:                                  ; preds = %block_.L_400797
   %RAX.i517 = bitcast %union.anon* %608 to i64*
   %609 = load i64, i64* %RAX.i517
   %610 = load i64, i64* %PC.i516
-  %611 = add i64 %610, 2
+  %611 = add i64 %610, 3
   store i64 %611, i64* %PC.i516
   %612 = trunc i64 %609 to i32
   %613 = shl i32 %612, 1
@@ -8574,7 +8574,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

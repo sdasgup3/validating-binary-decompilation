@@ -16,7 +16,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400510__rodata_type = type <{ [4 x i8] }>
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
-%G_0x603058_type = type <{ [4 x i8] }>
+%G_0x603058_type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -4820,7 +4820,7 @@ block_400d76:                                     ; preds = %block_.L_400d6a
   %RDX.i2185 = bitcast %union.anon* %3297 to i64*
   %3298 = load i64, i64* %RDX.i2185
   %3299 = load i64, i64* %PC.i2184
-  %3300 = add i64 %3299, 2
+  %3300 = add i64 %3299, 3
   store i64 %3300, i64* %PC.i2184
   %3301 = trunc i64 %3298 to i32
   %3302 = shl i32 %3301, 1
@@ -15273,7 +15273,7 @@ block_400d76:                                     ; preds = %block_.L_400d6a
   %RDX.i1361 = bitcast %union.anon* %11008 to i64*
   %11009 = load i64, i64* %RDX.i1361
   %11010 = load i64, i64* %PC.i1360
-  %11011 = add i64 %11010, 2
+  %11011 = add i64 %11010, 3
   store i64 %11011, i64* %PC.i1360
   %11012 = trunc i64 %11009 to i32
   %11013 = shl i32 %11012, 1
@@ -22986,7 +22986,7 @@ block_400d76:                                     ; preds = %block_.L_400d6a
   %RDX.i748 = bitcast %union.anon* %16692 to i64*
   %16693 = load i64, i64* %RDX.i748
   %16694 = load i64, i64* %PC.i747
-  %16695 = add i64 %16694, 2
+  %16695 = add i64 %16694, 3
   store i64 %16695, i64* %PC.i747
   %16696 = trunc i64 %16693 to i32
   %16697 = shl i32 %16696, 1
@@ -34451,7 +34451,7 @@ block_400478:
   %RDX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RDX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

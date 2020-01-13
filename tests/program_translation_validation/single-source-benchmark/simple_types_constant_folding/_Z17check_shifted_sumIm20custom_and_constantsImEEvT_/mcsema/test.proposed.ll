@@ -457,12 +457,12 @@ declare %struct.Memory* @sub_410790._ZN20custom_and_constantsImE8do_shiftEm(%str
 declare %struct.Memory* @sub_40fad0._Z15tolerance_equalImEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x2118d4__rip__type = type <{ [8 x i8] }>
-@G_0x2118d4__rip_= global %G_0x2118d4__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x2118d4__rip__4261812__type = type <{ [16 x i8] }>
+@G_0x2118d4__rip__4261812_= global %G_0x2118d4__rip__4261812__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x6220a8_type = type <{ [4 x i8] }>
 @G_0x6220a8= global %G_0x6220a8_type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x8224__rip__type = type <{ [8 x i8] }>
-@G_0x8224__rip_= global %G_0x8224__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x8224__rip__4261820__type = type <{ [16 x i8] }>
+@G_0x8224__rip__4261820_= global %G_0x8224__rip__4261820__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x419d48_type = type <{ [8 x i8] }>
 @G__0x419d48= global %G__0x419d48_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
@@ -821,7 +821,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x2118d4__rip__type* @G_0x2118d4__rip_ to i64
+  %10 = ptrtoint %G_0x2118d4__rip__4261812__type* @G_0x2118d4__rip__4261812_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -841,7 +841,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x8224__rip__type* @G_0x8224__rip_ to i64
+  %10 = ptrtoint %G_0x8224__rip__4261820__type* @G_0x8224__rip__4261820_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

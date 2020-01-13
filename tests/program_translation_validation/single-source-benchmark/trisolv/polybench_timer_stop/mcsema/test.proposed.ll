@@ -456,8 +456,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4007e0.rtclock(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x6020a8_type = type <{ [16 x i8] }>
-@G_0x6020a8= global %G_0x6020a8_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x6020a8_type = type <{ [8 x i8] }>
+@G_0x6020a8= global %G_0x6020a8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @polybench_timer_stop(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {

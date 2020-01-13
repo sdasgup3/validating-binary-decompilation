@@ -458,12 +458,12 @@ declare %struct.Memory* @sub_400bc0.init(%struct.State* noalias dereferenceable(
 declare %struct.Memory* @sub_400c00.simulate(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x602074_type = type <{ [4 x i8] }>
-@G_0x602074= global %G_0x602074_type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x778__rip__type = type <{ [8 x i8] }>
-@G_0x778__rip_= global %G_0x778__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x914__rip__type = type <{ [8 x i8] }>
-@G_0x914__rip_= global %G_0x914__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x602074_type = type <{ [8 x i8] }>
+@G_0x602074= global %G_0x602074_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x778__rip__4196632__type = type <{ [16 x i8] }>
+@G_0x778__rip__4196632_= global %G_0x778__rip__4196632__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x914__rip__4196212__type = type <{ [16 x i8] }>
+@G_0x914__rip__4196212_= global %G_0x914__rip__4196212__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x4010a8_type = type <{ [8 x i8] }>
 @G__0x4010a8= global %G__0x4010a8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4010ac_type = type <{ [8 x i8] }>
@@ -1801,7 +1801,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x914__rip__type* @G_0x914__rip_ to i64
+  %10 = ptrtoint %G_0x914__rip__4196212__type* @G_0x914__rip__4196212_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -3426,7 +3426,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x778__rip__type* @G_0x778__rip_ to i64
+  %10 = ptrtoint %G_0x778__rip__4196632__type* @G_0x778__rip__4196632_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

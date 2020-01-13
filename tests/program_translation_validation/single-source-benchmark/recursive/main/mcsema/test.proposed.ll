@@ -460,12 +460,12 @@ declare %struct.Memory* @sub_400570.fib(%struct.State* noalias dereferenceable(3
 declare %struct.Memory* @sub_4006e0.takFP(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x198__rip__type = type <{ [8 x i8] }>
-@G_0x198__rip_= global %G_0x198__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0xb6__rip__type = type <{ [8 x i8] }>
-@G_0xb6__rip_= global %G_0xb6__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0xce__rip__type = type <{ [8 x i8] }>
-@G_0xce__rip_= global %G_0xce__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x198__rip__4196392__type = type <{ [16 x i8] }>
+@G_0x198__rip__4196392_= global %G_0x198__rip__4196392__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0xb6__rip__type = type <{ [16 x i8] }>
+@G_0xb6__rip_= global %G_0xb6__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0xce__rip__type = type <{ [16 x i8] }>
+@G_0xce__rip_= global %G_0xce__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x4009c8_type = type <{ [8 x i8] }>
 @G__0x4009c8= global %G__0x4009c8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x4009d7_type = type <{ [8 x i8] }>
@@ -1578,7 +1578,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x198__rip__type* @G_0x198__rip_ to i64
+  %10 = ptrtoint %G_0x198__rip__4196392__type* @G_0x198__rip__4196392_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -2073,7 +2073,7 @@ block_400478:
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RCX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64* %RCX, i64 %9, i64 1)
   ret %struct.Memory* %12
@@ -2167,7 +2167,7 @@ block_400478:
   %10 = load i32, i32* %R8D
   %11 = zext i32 %10 to i64
   %12 = load i64, i64* %PC
-  %13 = add i64 %12, 3
+  %13 = add i64 %12, 4
   store i64 %13, i64* %PC
   %14 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64* %9, i64 %11, i64 1)
   ret %struct.Memory* %14
