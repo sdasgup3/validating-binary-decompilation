@@ -388,6 +388,41 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
   return retval;
 }
 
+/*
+** For local definition of routine_shlq__0x1___rdi,
+** ...
+** %11 = add i64 %10, 3 <--- this need to be updated to %11 = add i64 %10, 4
+** store i64 %11, i64* %PC
+** ...
+**
+*/
+vector<string> CompositionalDecompiler::handleInstrSizeMismatch(
+    const vector<string> &local_defn, uint64_t currSize) {
+  vector<string> retval;
+  bool funcSignature = true;
+  int count = 0;
+
+  std::smatch m;
+  auto sanity_search = ", " + to_string(currSize) + "$";
+  auto replace_with = ", " + to_string(currSize);
+  for (auto &line : local_defn) {
+
+    if (std::regex_search(line, m, std::regex("store i64 .*PC$"))) {
+      auto prev_line = retval[retval.size() - 1];
+      if (std::regex_search(prev_line, m, std::regex("add"))) {
+        if (false ==
+            std::regex_search(prev_line, m, std::regex(sanity_search))) {
+          retval[retval.size() - 1] = std::regex_replace(
+              prev_line, std::regex(", [0-9][0-9]*$"), replace_with);
+        }
+      }
+    }
+    retval.push_back(line);
+  }
+
+  return retval;
+}
+
 void CompositionalDecompiler::computeRelocInfo() {
 
   if (!reloc_info_available)
@@ -679,6 +714,17 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
                        << " Relocation: Address, McSema: Constant" << endl;
 
         string addrExpr = normalize_spaces(opr.str());
+
+        /* For example,
+           movsd 0xa43c(%rip), %xmm1
+           movsd 0xa43c(%rip), %xmm2
+           We have no way to distinguish the above two globals which for both
+           the cases is G_0xa43c__rip__type* @G_0xa43c__rip_
+           To make 'em distinct, we add the rip value to the type and global
+           var.
+        */
+        auto effective_rip_str = "_rip__" + to_string(currRIP + currSize);
+        addrExpr = regex_replace(addrExpr, regex("_rip"), effective_rip_str);
 
         if (DataSectioGlobalsCache.count(addrExpr)) {
           uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
@@ -1112,18 +1158,36 @@ string CompositionalDecompiler::decompileInstruction(x64asm::Instruction instr,
   vector<string> mod_def = uniq_local_defn;
 
   if (instr.is_jcc()) {
-    mod_def = handleJCCDefns(uniq_local_defn);
+    mod_def = handleJCCDefns(mod_def);
   }
   if (instr.is_jmp()) {
-    mod_def = handleJMPDefns(uniq_local_defn);
+    mod_def = handleJMPDefns(mod_def);
   }
   if (instr.is_any_call()) {
-    mod_def = handleCALLDefns(uniq_local_defn);
+    mod_def = handleCALLDefns(mod_def);
+  }
+
+  // For instruction families of "shl", "shr", "sal", "sar", "rcl", "rcr",
+  // "rol", "ror"
+  // while instr is 4 byte "shl $0x1, %rdi", then the local_defn has the
+  // implementation
+  // of the 3 byte variant "shl %rdi". As a result, we got a mismatch against
+  // the mcsema decompilation
+  // w.r.t the PC update. The following is to fix the PC update.
+
+  if ((string::npos != normalizedInstructionName.find("shl", 0)) ||
+      (string::npos != normalizedInstructionName.find("shr", 0)) ||
+      (string::npos != normalizedInstructionName.find("sal", 0)) ||
+      (string::npos != normalizedInstructionName.find("sar", 0)) ||
+      (string::npos != normalizedInstructionName.find("rcl", 0)) ||
+      (string::npos != normalizedInstructionName.find("rcr", 0)) ||
+      (string::npos != normalizedInstructionName.find("rol", 0)) ||
+      (string::npos != normalizedInstructionName.find("ror", 0))) {
+    mod_def = handleInstrSizeMismatch(mod_def, currSize);
   }
 
   if (is_any_operand_mem_type(instr) || is_any_operand_imm_type(instr)) {
-    mod_def =
-        handleDataSectionAccessDefns(instr, uniq_local_defn, currRIP, currSize);
+    mod_def = handleDataSectionAccessDefns(instr, mod_def, currRIP, currSize);
   }
 
   for (auto line : mod_def) {

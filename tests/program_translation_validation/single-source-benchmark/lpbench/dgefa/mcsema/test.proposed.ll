@@ -458,8 +458,8 @@ declare %struct.Memory* @sub_4009c0.dscal(%struct.State* noalias dereferenceable
 declare %struct.Memory* @sub_400a80.daxpy(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x521__rip__type = type <{ [8 x i8] }>
-@G_0x521__rip_= global %G_0x521__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x521__rip__4197583__type = type <{ [16 x i8] }>
+@G_0x521__rip__4197583_= global %G_0x521__rip__4197583__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @dgefa(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -2692,7 +2692,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x521__rip__type* @G_0x521__rip_ to i64
+  %10 = ptrtoint %G_0x521__rip__4197583__type* @G_0x521__rip__4197583_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

@@ -16,9 +16,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400510__rodata_type = type <{ [4 x i8] }>
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
-%G_0x2f47__rip__type = type <{ [16 x i8] }>
-%G_0x2f70__rip__type = type <{ [16 x i8] }>
-%G_0x2fac__rip__type = type <{ [8 x i8] }>
+%G_0x2f47__rip__4198793__type = type <{ [16 x i8] }>
+%G_0x2f70__rip__4198752__type = type <{ [16 x i8] }>
+%G_0x2fac__rip__4198668__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -81,9 +81,9 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400510__rodata = internal constant %seg_400510__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
 @seg_400514__eh_frame_hdr = internal constant %seg_400514__eh_frame_hdr_type <{ [52 x i8] c"\01\1B\03;0\00\00\00\05\00\00\00|\FE\FF\FFL\00\00\00\AC\FE\FF\FFx\00\00\00d\FF\FF\FF\8C\00\00\00|\FF\FF\FF\A4\00\00\00\EC\FF\FF\FF\EC\00\00\00" }>
 @seg_400548__eh_frame = internal constant %seg_400548__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\09\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
-@G_0x2f47__rip_ = global %G_0x2f47__rip__type zeroinitializer
-@G_0x2f70__rip_ = global %G_0x2f70__rip__type zeroinitializer
-@G_0x2fac__rip_ = global %G_0x2fac__rip__type zeroinitializer
+@G_0x2f47__rip__4198793_ = global %G_0x2f47__rip__4198793__type zeroinitializer
+@G_0x2f70__rip__4198752_ = global %G_0x2f70__rip__4198752__type zeroinitializer
+@G_0x2fac__rip__4198668_ = global %G_0x2fac__rip__4198668__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -689,7 +689,7 @@ block_401104:                                     ; preds = %block_.L_4010f8
   %282 = load i64, i64* %PC.i94
   %283 = add i64 %282, 8
   store i64 %283, i64* %PC.i94
-  %284 = load double, double* bitcast (%G_0x2fac__rip__type* @G_0x2fac__rip_ to double*)
+  %284 = load double, double* bitcast (%G_0x2fac__rip__4198668__type* @G_0x2fac__rip__4198668_ to double*)
   %285 = bitcast i8* %280 to double*
   store double %284, double* %285, align 1
   %286 = getelementptr inbounds i8, i8* %280, i64 8
@@ -1264,10 +1264,10 @@ routine_idivl__ecx.exit:                          ; preds = %457, %461
   %689 = load i64, i64* %PC.i42
   %690 = add i64 %689, 7
   store i64 %690, i64* %PC.i42
-  %691 = load float, float* bitcast (%G_0x2f70__rip__type* @G_0x2f70__rip_ to float*)
-  %692 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__type* @G_0x2f70__rip_ to i64), i64 4) to float*)
-  %693 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__type* @G_0x2f70__rip_ to i64), i64 8) to float*)
-  %694 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__type* @G_0x2f70__rip_ to i64), i64 12) to float*)
+  %691 = load float, float* bitcast (%G_0x2f70__rip__4198752__type* @G_0x2f70__rip__4198752_ to float*)
+  %692 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__4198752__type* @G_0x2f70__rip__4198752_ to i64), i64 4) to float*)
+  %693 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__4198752__type* @G_0x2f70__rip__4198752_ to i64), i64 8) to float*)
+  %694 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f70__rip__4198752__type* @G_0x2f70__rip__4198752_ to i64), i64 12) to float*)
   %695 = bitcast i8* %687 to float*
   store float %691, float* %695, align 1
   %696 = getelementptr inbounds i8, i8* %687, i64 4
@@ -1535,10 +1535,10 @@ block_.L_40117d:                                  ; preds = %routine_ucomisd__xm
   %870 = load i64, i64* %PC.i23
   %871 = add i64 %870, 7
   store i64 %871, i64* %PC.i23
-  %872 = load float, float* bitcast (%G_0x2f47__rip__type* @G_0x2f47__rip_ to float*)
-  %873 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__type* @G_0x2f47__rip_ to i64), i64 4) to float*)
-  %874 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__type* @G_0x2f47__rip_ to i64), i64 8) to float*)
-  %875 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__type* @G_0x2f47__rip_ to i64), i64 12) to float*)
+  %872 = load float, float* bitcast (%G_0x2f47__rip__4198793__type* @G_0x2f47__rip__4198793_ to float*)
+  %873 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__4198793__type* @G_0x2f47__rip__4198793_ to i64), i64 4) to float*)
+  %874 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__4198793__type* @G_0x2f47__rip__4198793_ to i64), i64 8) to float*)
+  %875 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x2f47__rip__4198793__type* @G_0x2f47__rip__4198793_ to i64), i64 12) to float*)
   %876 = bitcast i8* %868 to float*
   store float %872, float* %876, align 1
   %877 = getelementptr inbounds i8, i8* %868, i64 4
@@ -2283,7 +2283,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x2fac__rip__type* @G_0x2fac__rip_ to i64
+  %10 = ptrtoint %G_0x2fac__rip__4198668__type* @G_0x2fac__rip__4198668_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -2920,7 +2920,7 @@ block_400478:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x2f70__rip__type* @G_0x2f70__rip_ to i64
+  %10 = ptrtoint %G_0x2f70__rip__4198752__type* @G_0x2f70__rip__4198752_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC
@@ -3186,7 +3186,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x2f47__rip__type* @G_0x2f47__rip_ to i64
+  %10 = ptrtoint %G_0x2f47__rip__4198793__type* @G_0x2f47__rip__4198793_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC

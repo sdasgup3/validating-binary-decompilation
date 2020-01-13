@@ -457,10 +457,10 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 ; Data Access Globals
 %G_0x609110_type = type <{ [8 x i8] }>
 @G_0x609110= global %G_0x609110_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x609118_type = type <{ [4 x i8] }>
-@G_0x609118= global %G_0x609118_type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x60911c_type = type <{ [4 x i8] }>
-@G_0x60911c= global %G_0x60911c_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x609118_type = type <{ [8 x i8] }>
+@G_0x609118= global %G_0x609118_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x60911c_type = type <{ [8 x i8] }>
+@G_0x60911c= global %G_0x60911c_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x406718_type = type <{ [8 x i8] }>
 @G__0x406718= global %G__0x406718_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 

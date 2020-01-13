@@ -17,7 +17,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
 %G_0x603480_type = type <{ [4 x i8] }>
-%G_0x6038a0_type = type <{ [4 x i8] }>
+%G_0x6038a0_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -825,7 +825,7 @@ block_.L_4006ce:                                  ; preds = %block_4006bd, %bloc
   %RAX.i112 = bitcast %union.anon* %366 to i64*
   %367 = load i64, i64* %RAX.i112
   %368 = load i64, i64* %PC.i111
-  %369 = add i64 %368, 2
+  %369 = add i64 %368, 3
   store i64 %369, i64* %PC.i111
   %370 = trunc i64 %367 to i32
   %371 = shl i32 %370, 1
@@ -1065,7 +1065,7 @@ block_.L_4006e5:                                  ; preds = %block_.L_40067d
   %RCX.i91 = bitcast %union.anon* %534 to i64*
   %535 = load i64, i64* %RCX.i91
   %536 = load i64, i64* %PC.i90
-  %537 = add i64 %536, 2
+  %537 = add i64 %536, 3
   store i64 %537, i64* %PC.i90
   %538 = shl i64 %535, 32
   %539 = ashr i64 %538, 33
@@ -1626,7 +1626,7 @@ block_40072e:                                     ; preds = %block_400715
   %RCX.i50 = bitcast %union.anon* %937 to i64*
   %938 = load i64, i64* %RCX.i50
   %939 = load i64, i64* %PC.i49
-  %940 = add i64 %939, 2
+  %940 = add i64 %939, 3
   store i64 %940, i64* %PC.i49
   %941 = trunc i64 %938 to i32
   %942 = shl i32 %941, 1
@@ -1899,7 +1899,7 @@ block_.L_40075d:                                  ; preds = %block_400715
   %RAX.i29 = bitcast %union.anon* %1130 to i64*
   %1131 = load i64, i64* %RAX.i29
   %1132 = load i64, i64* %PC.i28
-  %1133 = add i64 %1132, 2
+  %1133 = add i64 %1132, 3
   store i64 %1133, i64* %PC.i28
   %1134 = trunc i64 %1131 to i32
   %1135 = shl i32 %1134, 1
@@ -2718,7 +2718,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1
@@ -2956,7 +2956,7 @@ block_400478:
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RCX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = shl i64 %9, 32
   %13 = ashr i64 %12, 33
@@ -3529,7 +3529,7 @@ block_400478:
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RCX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

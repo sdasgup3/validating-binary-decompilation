@@ -760,7 +760,7 @@ entry:
   %RDX.i44 = bitcast %union.anon* %292 to i64*
   %293 = load i64, i64* %RDX.i44
   %294 = load i64, i64* %PC.i43
-  %295 = add i64 %294, 3
+  %295 = add i64 %294, 4
   store i64 %295, i64* %PC.i43
   %296 = shl i64 %293, 1
   %297 = icmp slt i64 %293, 0
@@ -1816,7 +1816,7 @@ block_400478:
   %RDX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RDX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 3
+  %11 = add i64 %10, 4
   store i64 %11, i64* %PC
   %12 = shl i64 %9, 1
   %13 = icmp slt i64 %9, 0

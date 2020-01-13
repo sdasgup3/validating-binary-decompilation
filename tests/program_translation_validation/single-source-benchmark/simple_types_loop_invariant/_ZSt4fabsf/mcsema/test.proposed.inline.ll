@@ -12,7 +12,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400538__eh_frame_type = type <{ [208 x i8] }>
 %seg_601018__data_type = type <{ [16 x i8] }>
 %__bss_start_type = type <{ [8 x i8] }>
-%G_0x757b__rip__type = type <{ [16 x i8] }>
+%G_0x757b__rip__4245781__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -71,7 +71,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_601018__data = internal global %seg_601018__data_type zeroinitializer
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
-@G_0x757b__rip_ = global %G_0x757b__rip__type zeroinitializer
+@G_0x757b__rip__4245781_ = global %G_0x757b__rip__4245781__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -389,10 +389,10 @@ entry:
   %75 = load i64, i64* %PC.i5
   %76 = add i64 %75, 7
   store i64 %76, i64* %PC.i5
-  %77 = load float, float* bitcast (%G_0x757b__rip__type* @G_0x757b__rip_ to float*)
-  %78 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 4) to float*)
-  %79 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 8) to float*)
-  %80 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__type* @G_0x757b__rip_ to i64), i64 12) to float*)
+  %77 = load float, float* bitcast (%G_0x757b__rip__4245781__type* @G_0x757b__rip__4245781_ to float*)
+  %78 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__4245781__type* @G_0x757b__rip__4245781_ to i64), i64 4) to float*)
+  %79 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__4245781__type* @G_0x757b__rip__4245781_ to i64), i64 8) to float*)
+  %80 = load float, float* inttoptr (i64 add (i64 ptrtoint (%G_0x757b__rip__4245781__type* @G_0x757b__rip__4245781_ to i64), i64 12) to float*)
   %81 = bitcast i8* %73 to float*
   store float %77, float* %81, align 1
   %82 = getelementptr inbounds i8, i8* %73, i64 4
@@ -610,7 +610,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x757b__rip__type* @G_0x757b__rip_ to i64
+  %10 = ptrtoint %G_0x757b__rip__4245781__type* @G_0x757b__rip__4245781_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 7
   store i64 %12, i64* %PC

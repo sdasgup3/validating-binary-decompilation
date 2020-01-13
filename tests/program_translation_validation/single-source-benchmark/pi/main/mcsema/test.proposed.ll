@@ -456,18 +456,20 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4004f0.myadd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x105__rip__type = type <{ [8 x i8] }>
-@G_0x105__rip_= global %G_0x105__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x188__rip__type = type <{ [8 x i8] }>
-@G_0x188__rip_= global %G_0x188__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x253__rip__type = type <{ [8 x i8] }>
-@G_0x253__rip_= global %G_0x253__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x297__rip__type = type <{ [4 x i8] }>
-@G_0x297__rip_= global %G_0x297__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x29b__rip__type = type <{ [4 x i8] }>
-@G_0x29b__rip_= global %G_0x29b__rip__type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x29f__rip__type = type <{ [4 x i8] }>
-@G_0x29f__rip_= global %G_0x29f__rip__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x105__rip__type = type <{ [16 x i8] }>
+@G_0x105__rip_= global %G_0x105__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x188__rip__type = type <{ [16 x i8] }>
+@G_0x188__rip_= global %G_0x188__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x188__rip__4195968__type = type <{ [16 x i8] }>
+@G_0x188__rip__4195968_= global %G_0x188__rip__4195968__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x253__rip__4195773__type = type <{ [16 x i8] }>
+@G_0x253__rip__4195773_= global %G_0x253__rip__4195773__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x297__rip__4195685__type = type <{ [16 x i8] }>
+@G_0x297__rip__4195685_= global %G_0x297__rip__4195685__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x29b__rip__4195677__type = type <{ [16 x i8] }>
+@G_0x29b__rip__4195677_= global %G_0x29b__rip__4195677__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x29f__rip__4195669__type = type <{ [16 x i8] }>
+@G_0x29f__rip__4195669_= global %G_0x29f__rip__4195669__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x400818_type = type <{ [8 x i8] }>
 @G__0x400818= global %G__0x400818_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x400828_type = type <{ [8 x i8] }>
@@ -1501,7 +1503,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x29f__rip__type* @G_0x29f__rip_ to i64
+  %10 = ptrtoint %G_0x29f__rip__4195669__type* @G_0x29f__rip__4195669_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1521,7 +1523,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x29b__rip__type* @G_0x29b__rip_ to i64
+  %10 = ptrtoint %G_0x29b__rip__4195677__type* @G_0x29b__rip__4195677_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -1541,7 +1543,7 @@ block_400478:
   %YMM2 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x297__rip__type* @G_0x297__rip_ to i64
+  %10 = ptrtoint %G_0x297__rip__4195685__type* @G_0x297__rip__4195685_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -2028,7 +2030,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x253__rip__type* @G_0x253__rip_ to i64
+  %10 = ptrtoint %G_0x253__rip__4195773__type* @G_0x253__rip__4195773_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -3390,7 +3392,7 @@ block_400478:
 
 
 define %struct.Memory* @routine_movsd_0x188__rip____xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
-block_ptrtoint( %G_0x188__rip__type* @G_0x188__rip_ to i64)478:
+block_ptrtoint( %G_0x188__rip__4195968__type* @G_0x188__rip__4195968_ to i64)478:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0

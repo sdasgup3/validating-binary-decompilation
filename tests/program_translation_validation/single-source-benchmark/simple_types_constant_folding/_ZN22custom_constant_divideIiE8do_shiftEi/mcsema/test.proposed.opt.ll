@@ -45,18 +45,17 @@ declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i6
 define %struct.Memory* @_ZN22custom_constant_divideIiE8do_shiftEi(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #0 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %4 = load i64, i64* %RBP.i, align 8
   %5 = add i64 %1, 1
-  store i64 %5, i64* %PC.i, align 8
+  store i64 %5, i64* %3, align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %7 = load i64, i64* %6, align 8
   %8 = add i64 %7, -8
   %9 = inttoptr i64 %8 to i64*
   store i64 %4, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  %10 = load i64, i64* %PC.i, align 8
+  %10 = load i64, i64* %3, align 8
   store i64 %8, i64* %RBP.i, align 8
   %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
   %RAX.i21 = getelementptr inbounds %union.anon, %union.anon* %11, i64 0, i32 0
@@ -66,15 +65,15 @@ entry:
   %13 = add i64 %7, -12
   %14 = load i32, i32* %EDI.i18, align 4
   %15 = add i64 %10, 11
-  store i64 %15, i64* %PC.i, align 8
+  store i64 %15, i64* %3, align 8
   %16 = inttoptr i64 %13 to i32*
   store i32 %14, i32* %16, align 4
   %RDI.i15 = getelementptr inbounds %union.anon, %union.anon* %12, i64 0, i32 0
   %17 = load i64, i64* %RBP.i, align 8
   %18 = add i64 %17, -4
-  %19 = load i64, i64* %PC.i, align 8
+  %19 = load i64, i64* %3, align 8
   %20 = add i64 %19, 3
-  store i64 %20, i64* %PC.i, align 8
+  store i64 %20, i64* %3, align 8
   %21 = inttoptr i64 %18 to i32*
   %22 = load i32, i32* %21, align 4
   %23 = zext i32 %22 to i64
@@ -83,12 +82,12 @@ entry:
   %24 = add i64 %17, -8
   %25 = load i32, i32* %EAX.i, align 4
   %26 = add i64 %19, 6
-  store i64 %26, i64* %PC.i, align 8
+  store i64 %26, i64* %3, align 8
   %27 = inttoptr i64 %24 to i32*
   store i32 %25, i32* %27, align 4
   %28 = load i32, i32* %EDI.i18, align 4
   %29 = zext i32 %28 to i64
-  %30 = load i64, i64* %PC.i, align 8
+  %30 = load i64, i64* %3, align 8
   store i64 %29, i64* %RAX.i21, align 8
   %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %32 = sext i32 %28 to i64
@@ -97,69 +96,67 @@ entry:
   %34 = load i64, i64* %RBP.i, align 8
   %35 = add i64 %34, -8
   %36 = add i64 %30, 6
-  store i64 %36, i64* %PC.i, align 8
+  store i64 %36, i64* %3, align 8
   %37 = inttoptr i64 %35 to i32*
   %38 = load i32, i32* %37, align 4
   %39 = zext i32 %38 to i64
   store i64 %39, i64* %RDI.i15, align 8
   %40 = add i64 %30, 8
-  store i64 %40, i64* %PC.i, align 8
-  %41 = zext i32 %28 to i64
-  %42 = sext i32 %38 to i64
-  %43 = shl nuw i64 %33, 32
-  %44 = or i64 %43, %41
-  %45 = sdiv i64 %44, %42
-  %46 = shl i64 %45, 32
-  %47 = ashr exact i64 %46, 32
-  %48 = icmp eq i64 %45, %47
-  br i1 %48, label %51, label %49
+  store i64 %40, i64* %3, align 8
+  %41 = sext i32 %38 to i64
+  %42 = shl nuw i64 %33, 32
+  %43 = or i64 %42, %29
+  %44 = sdiv i64 %43, %41
+  %45 = shl i64 %44, 32
+  %46 = ashr exact i64 %45, 32
+  %47 = icmp eq i64 %44, %46
+  br i1 %47, label %50, label %48
 
-; <label>:49:                                     ; preds = %entry
-  %50 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %40, %struct.Memory* %2)
-  %.pre = load i64, i64* %PC.i, align 8
+; <label>:48:                                     ; preds = %entry
+  %49 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %40, %struct.Memory* %2)
+  %.pre = load i64, i64* %3, align 8
   br label %routine_idivl__edi.exit
 
-; <label>:51:                                     ; preds = %entry
-  %52 = srem i64 %44, %42
-  %53 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %54 = and i64 %45, 4294967295
-  store i64 %54, i64* %53, align 8
-  %55 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %56 = and i64 %52, 4294967295
-  store i64 %56, i64* %55, align 8
-  %57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+; <label>:50:                                     ; preds = %entry
+  %51 = srem i64 %43, %41
+  %52 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  %53 = and i64 %44, 4294967295
+  store i64 %53, i64* %52, align 8
+  %54 = and i64 %51, 4294967295
+  store i64 %54, i64* %31, align 8
+  %55 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %55, align 1
+  %56 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %56, align 1
+  %57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
   store i8 0, i8* %57, align 1
-  %58 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  %58 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   store i8 0, i8* %58, align 1
-  %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
   store i8 0, i8* %59, align 1
-  %60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  %60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 0, i8* %60, align 1
-  %61 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %61, align 1
-  %62 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %62, align 1
   br label %routine_idivl__edi.exit
 
-routine_idivl__edi.exit:                          ; preds = %51, %49
-  %63 = phi i64 [ %.pre, %49 ], [ %40, %51 ]
-  %64 = phi %struct.Memory* [ %50, %49 ], [ %2, %51 ]
-  %65 = add i64 %63, 1
-  store i64 %65, i64* %PC.i, align 8
-  %66 = load i64, i64* %6, align 8
-  %67 = add i64 %66, 8
-  %68 = inttoptr i64 %66 to i64*
-  %69 = load i64, i64* %68, align 8
-  store i64 %69, i64* %RBP.i, align 8
-  store i64 %67, i64* %6, align 8
-  %70 = add i64 %63, 2
-  store i64 %70, i64* %PC.i, align 8
-  %71 = inttoptr i64 %67 to i64*
-  %72 = load i64, i64* %71, align 8
-  store i64 %72, i64* %3, align 8
-  %73 = add i64 %66, 16
-  store i64 %73, i64* %6, align 8
-  ret %struct.Memory* %64
+routine_idivl__edi.exit:                          ; preds = %50, %48
+  %61 = phi i64 [ %.pre, %48 ], [ %40, %50 ]
+  %62 = phi %struct.Memory* [ %49, %48 ], [ %2, %50 ]
+  %63 = add i64 %61, 1
+  store i64 %63, i64* %3, align 8
+  %64 = load i64, i64* %6, align 8
+  %65 = add i64 %64, 8
+  %66 = inttoptr i64 %64 to i64*
+  %67 = load i64, i64* %66, align 8
+  store i64 %67, i64* %RBP.i, align 8
+  store i64 %65, i64* %6, align 8
+  %68 = add i64 %61, 2
+  store i64 %68, i64* %3, align 8
+  %69 = inttoptr i64 %65 to i64*
+  %70 = load i64, i64* %69, align 8
+  store i64 %70, i64* %3, align 8
+  %71 = add i64 %64, 16
+  store i64 %71, i64* %6, align 8
+  ret %struct.Memory* %62
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
@@ -382,14 +379,13 @@ block_400478:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 1
   store i64 %4, i64* %PC, align 8
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %7 = load i64, i64* %6, align 8
-  %8 = inttoptr i64 %7 to i64*
-  %9 = load i64, i64* %8, align 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %6 = load i64, i64* %5, align 8
+  %7 = inttoptr i64 %6 to i64*
+  %8 = load i64, i64* %7, align 8
+  store i64 %8, i64* %PC, align 8
+  %9 = add i64 %6, 8
   store i64 %9, i64* %5, align 8
-  %10 = add i64 %7, 8
-  store i64 %10, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

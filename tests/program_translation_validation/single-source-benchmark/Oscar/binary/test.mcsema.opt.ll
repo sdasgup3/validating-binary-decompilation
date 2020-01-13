@@ -148,23 +148,23 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 @llvm.global_dtors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_destructor, i8* null }]
 
+declare %struct.Memory* @sub_400550_Cos_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400440_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
 declare %struct.Memory* @sub_400cd0_Oscar_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
+declare %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
 declare %struct.Memory* @sub_400a20_Fft_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400620_Min0_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400650_Printcomplex_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_4003c8__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400550_Cos_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
 declare %struct.Memory* @sub_400780_Exptab_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400620_Min0_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400440_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -930,28 +930,26 @@ block_400730:
   store i64 %103, i64* %RSI, align 8, !tbaa !2428
   %104 = add i64 %64, 22
   store i64 %104, i64* %PC, align 8
-  %105 = bitcast %union.VectorReg* %4 to <2 x float>*
-  %106 = load <2 x float>, <2 x float>* %105, align 1
-  %107 = extractelement <2 x float> %106, i32 0
-  %108 = inttoptr i64 %103 to float*
-  store float %107, float* %108, align 4
-  %109 = load i64, i64* %PC, align 8
-  %110 = add i64 %109, 1
-  store i64 %110, i64* %PC, align 8
-  %111 = load i64, i64* %7, align 8, !tbaa !2428
-  %112 = add i64 %111, 8
-  %113 = inttoptr i64 %111 to i64*
-  %114 = load i64, i64* %113, align 8
-  store i64 %114, i64* %RBP, align 8, !tbaa !2428
-  store i64 %112, i64* %7, align 8, !tbaa !2428
-  %115 = add i64 %109, 2
-  store i64 %115, i64* %PC, align 8
-  %116 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %117 = inttoptr i64 %112 to i64*
-  %118 = load i64, i64* %117, align 8
-  store i64 %118, i64* %116, align 8, !tbaa !2428
-  %119 = add i64 %111, 16
-  store i64 %119, i64* %7, align 8, !tbaa !2428
+  %105 = load <2 x float>, <2 x float>* %88, align 1
+  %106 = extractelement <2 x float> %105, i32 0
+  %107 = inttoptr i64 %103 to float*
+  store float %106, float* %107, align 4
+  %108 = load i64, i64* %PC, align 8
+  %109 = add i64 %108, 1
+  store i64 %109, i64* %PC, align 8
+  %110 = load i64, i64* %7, align 8, !tbaa !2428
+  %111 = add i64 %110, 8
+  %112 = inttoptr i64 %110 to i64*
+  %113 = load i64, i64* %112, align 8
+  store i64 %113, i64* %RBP, align 8, !tbaa !2428
+  store i64 %111, i64* %7, align 8, !tbaa !2428
+  %114 = add i64 %108, 2
+  store i64 %114, i64* %PC, align 8
+  %115 = inttoptr i64 %111 to i64*
+  %116 = load i64, i64* %115, align 8
+  store i64 %116, i64* %PC, align 8, !tbaa !2428
+  %117 = add i64 %110, 16
+  store i64 %117, i64* %7, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -989,9 +987,8 @@ block_400440:
   %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 zext (i1 icmp eq (i64 add (i64 xor (i64 lshr (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 63), i64 lshr (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 63)), i64 xor (i64 lshr (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 63), i64 lshr (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 63))), i64 2) to i8), i8* %19, align 1, !tbaa !2451
   store i64 %7, i64* %RBP, align 8, !tbaa !2428
-  %20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %21 = add i64 %9, select (i1 icmp eq (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 0), i64 39, i64 16)
-  store i64 %21, i64* %20, align 8, !tbaa !2428
+  %20 = add i64 %9, select (i1 icmp eq (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 0), i64 39, i64 16)
+  store i64 %20, i64* %PC, align 8, !tbaa !2428
   br i1 icmp eq (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 0), label %block_400468, label %block_400451
 
 block_400451:                                     ; preds = %block_400440
@@ -1002,24 +999,24 @@ block_400451:                                     ; preds = %block_400440
   store i8 0, i8* %18, align 1, !tbaa !2450
   store i8 0, i8* %19, align 1, !tbaa !2451
   store i8 0, i8* %16, align 1, !tbaa !2452
-  %22 = add i64 %9, add (i64 select (i1 icmp eq (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 0), i64 39, i64 16), i64 23)
-  store i64 %22, i64* %20, align 8, !tbaa !2428
+  %21 = add i64 %9, add (i64 select (i1 icmp eq (i64 sub (i64 and (i64 ptrtoint (%__bss_start_type* @__bss_start to i64), i64 4294967295), i64 ptrtoint (%__bss_start_type* @__bss_start to i64)), i64 0), i64 39, i64 16), i64 23)
+  store i64 %21, i64* %PC, align 8, !tbaa !2428
   br label %block_400468
 
 block_400468:                                     ; preds = %block_400451, %block_400440
-  %23 = phi i64 [ %22, %block_400451 ], [ %21, %block_400440 ]
-  %24 = add i64 %23, 1
-  store i64 %24, i64* %PC, align 8
-  %25 = load i64, i64* %8, align 8
-  store i64 %25, i64* %RBP, align 8, !tbaa !2428
+  %22 = phi i64 [ %21, %block_400451 ], [ %20, %block_400440 ]
+  %23 = add i64 %22, 1
+  store i64 %23, i64* %PC, align 8
+  %24 = load i64, i64* %8, align 8
+  store i64 %24, i64* %RBP, align 8, !tbaa !2428
   store i64 %6, i64* %5, align 8, !tbaa !2428
-  %26 = add i64 %23, 2
-  store i64 %26, i64* %PC, align 8
-  %27 = inttoptr i64 %6 to i64*
-  %28 = load i64, i64* %27, align 8
-  store i64 %28, i64* %20, align 8, !tbaa !2428
-  %29 = add i64 %6, 8
-  store i64 %29, i64* %5, align 8, !tbaa !2428
+  %25 = add i64 %22, 2
+  store i64 %25, i64* %PC, align 8
+  %26 = inttoptr i64 %6 to i64*
+  %27 = load i64, i64* %26, align 8
+  store i64 %27, i64* %PC, align 8, !tbaa !2428
+  %28 = add i64 %6, 8
+  store i64 %28, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -1033,211 +1030,208 @@ block_400e20:
   %3 = load i64, i64* %RBP, align 8
   %4 = add i64 %1, 1
   store i64 %4, i64* %PC, align 8
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %6 = load i64, i64* %5, align 8, !tbaa !2428
-  %7 = add i64 %6, -8
-  %8 = inttoptr i64 %7 to i64*
-  store i64 %3, i64* %8, align 8
-  %9 = load i64, i64* %PC, align 8
-  store i64 %7, i64* %RBP, align 8, !tbaa !2428
-  %10 = add i64 %6, -24
-  store i64 %10, i64* %RSP, align 8, !tbaa !2428
-  %11 = icmp ult i64 %7, 16
-  %12 = zext i1 %11 to i8
-  %13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 %12, i8* %13, align 1, !tbaa !2434
-  %14 = trunc i64 %10 to i32
-  %15 = and i32 %14, 255
-  %16 = tail call i32 @llvm.ctpop.i32(i32 %15) #8
-  %17 = trunc i32 %16 to i8
-  %18 = and i8 %17, 1
-  %19 = xor i8 %18, 1
-  %20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 %19, i8* %20, align 1, !tbaa !2448
-  %21 = xor i64 %7, 16
-  %22 = xor i64 %21, %10
-  %23 = lshr i64 %22, 4
-  %24 = trunc i64 %23 to i8
-  %25 = and i8 %24, 1
-  %26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %25, i8* %26, align 1, !tbaa !2452
-  %27 = icmp eq i64 %10, 0
-  %28 = zext i1 %27 to i8
-  %29 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %28, i8* %29, align 1, !tbaa !2449
-  %30 = lshr i64 %10, 63
-  %31 = trunc i64 %30 to i8
-  %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %31, i8* %32, align 1, !tbaa !2450
-  %33 = lshr i64 %7, 63
-  %34 = xor i64 %30, %33
-  %35 = add nuw nsw i64 %34, %33
-  %36 = icmp eq i64 %35, 2
-  %37 = zext i1 %36 to i8
-  %38 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %37, i8* %38, align 1, !tbaa !2451
-  %39 = add i64 %6, -12
-  %40 = add i64 %9, 14
-  store i64 %40, i64* %PC, align 8
-  %41 = inttoptr i64 %39 to i32*
-  store i32 0, i32* %41, align 4
-  %42 = load i64, i64* %RBP, align 8
-  %43 = add i64 %42, -8
-  %44 = load i64, i64* %PC, align 8
-  %45 = add i64 %44, 7
-  store i64 %45, i64* %PC, align 8
-  %46 = inttoptr i64 %43 to i32*
-  store i32 0, i32* %46, align 4
-  %47 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
+  %5 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %6 = add i64 %5, -8
+  %7 = inttoptr i64 %6 to i64*
+  store i64 %3, i64* %7, align 8
+  %8 = load i64, i64* %PC, align 8
+  store i64 %6, i64* %RBP, align 8, !tbaa !2428
+  %9 = add i64 %5, -24
+  store i64 %9, i64* %RSP, align 8, !tbaa !2428
+  %10 = icmp ult i64 %6, 16
+  %11 = zext i1 %10 to i8
+  %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 %11, i8* %12, align 1, !tbaa !2434
+  %13 = trunc i64 %9 to i32
+  %14 = and i32 %13, 255
+  %15 = tail call i32 @llvm.ctpop.i32(i32 %14) #8
+  %16 = trunc i32 %15 to i8
+  %17 = and i8 %16, 1
+  %18 = xor i8 %17, 1
+  %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 %18, i8* %19, align 1, !tbaa !2448
+  %20 = xor i64 %6, 16
+  %21 = xor i64 %20, %9
+  %22 = lshr i64 %21, 4
+  %23 = trunc i64 %22 to i8
+  %24 = and i8 %23, 1
+  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %24, i8* %25, align 1, !tbaa !2452
+  %26 = icmp eq i64 %9, 0
+  %27 = zext i1 %26 to i8
+  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %27, i8* %28, align 1, !tbaa !2449
+  %29 = lshr i64 %9, 63
+  %30 = trunc i64 %29 to i8
+  %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %30, i8* %31, align 1, !tbaa !2450
+  %32 = lshr i64 %6, 63
+  %33 = xor i64 %29, %32
+  %34 = add nuw nsw i64 %33, %32
+  %35 = icmp eq i64 %34, 2
+  %36 = zext i1 %35 to i8
+  %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %36, i8* %37, align 1, !tbaa !2451
+  %38 = add i64 %5, -12
+  %39 = add i64 %8, 14
+  store i64 %39, i64* %PC, align 8
+  %40 = inttoptr i64 %38 to i32*
+  store i32 0, i32* %40, align 4
+  %41 = load i64, i64* %RBP, align 8
+  %42 = add i64 %41, -8
+  %43 = load i64, i64* %PC, align 8
+  %44 = add i64 %43, 7
+  store i64 %44, i64* %PC, align 8
+  %45 = inttoptr i64 %42 to i32*
+  store i32 0, i32* %45, align 4
   %.pre = load i64, i64* %PC, align 8
   br label %block_400e36
 
 block_400e53:                                     ; preds = %block_400e36
   store i64 0, i64* %RAX, align 8, !tbaa !2428
-  %48 = load i64, i64* %RSP, align 8
-  %49 = add i64 %48, 16
-  store i64 %49, i64* %RSP, align 8, !tbaa !2428
-  %50 = icmp ugt i64 %48, -17
-  %51 = zext i1 %50 to i8
-  store i8 %51, i8* %13, align 1, !tbaa !2434
-  %52 = trunc i64 %49 to i32
-  %53 = and i32 %52, 255
-  %54 = tail call i32 @llvm.ctpop.i32(i32 %53) #8
-  %55 = trunc i32 %54 to i8
-  %56 = and i8 %55, 1
-  %57 = xor i8 %56, 1
-  store i8 %57, i8* %20, align 1, !tbaa !2448
-  %58 = xor i64 %48, 16
-  %59 = xor i64 %58, %49
-  %60 = lshr i64 %59, 4
-  %61 = trunc i64 %60 to i8
-  %62 = and i8 %61, 1
-  store i8 %62, i8* %26, align 1, !tbaa !2452
-  %63 = icmp eq i64 %49, 0
-  %64 = zext i1 %63 to i8
-  store i8 %64, i8* %29, align 1, !tbaa !2449
-  %65 = lshr i64 %49, 63
-  %66 = trunc i64 %65 to i8
-  store i8 %66, i8* %32, align 1, !tbaa !2450
-  %67 = lshr i64 %48, 63
-  %68 = xor i64 %65, %67
-  %69 = add nuw nsw i64 %68, %65
-  %70 = icmp eq i64 %69, 2
-  %71 = zext i1 %70 to i8
-  store i8 %71, i8* %38, align 1, !tbaa !2451
-  %72 = add i64 %109, 7
-  store i64 %72, i64* %PC, align 8
-  %73 = add i64 %48, 24
-  %74 = inttoptr i64 %49 to i64*
-  %75 = load i64, i64* %74, align 8
-  store i64 %75, i64* %RBP, align 8, !tbaa !2428
-  store i64 %73, i64* %5, align 8, !tbaa !2428
-  %76 = add i64 %109, 8
-  store i64 %76, i64* %PC, align 8
-  %77 = inttoptr i64 %73 to i64*
-  %78 = load i64, i64* %77, align 8
-  store i64 %78, i64* %47, align 8, !tbaa !2428
-  %79 = add i64 %48, 32
-  store i64 %79, i64* %5, align 8, !tbaa !2428
+  %46 = load i64, i64* %RSP, align 8
+  %47 = add i64 %46, 16
+  store i64 %47, i64* %RSP, align 8, !tbaa !2428
+  %48 = icmp ugt i64 %46, -17
+  %49 = zext i1 %48 to i8
+  store i8 %49, i8* %12, align 1, !tbaa !2434
+  %50 = trunc i64 %47 to i32
+  %51 = and i32 %50, 255
+  %52 = tail call i32 @llvm.ctpop.i32(i32 %51) #8
+  %53 = trunc i32 %52 to i8
+  %54 = and i8 %53, 1
+  %55 = xor i8 %54, 1
+  store i8 %55, i8* %19, align 1, !tbaa !2448
+  %56 = xor i64 %46, 16
+  %57 = xor i64 %56, %47
+  %58 = lshr i64 %57, 4
+  %59 = trunc i64 %58 to i8
+  %60 = and i8 %59, 1
+  store i8 %60, i8* %25, align 1, !tbaa !2452
+  %61 = icmp eq i64 %47, 0
+  %62 = zext i1 %61 to i8
+  store i8 %62, i8* %28, align 1, !tbaa !2449
+  %63 = lshr i64 %47, 63
+  %64 = trunc i64 %63 to i8
+  store i8 %64, i8* %31, align 1, !tbaa !2450
+  %65 = lshr i64 %46, 63
+  %66 = xor i64 %63, %65
+  %67 = add nuw nsw i64 %66, %63
+  %68 = icmp eq i64 %67, 2
+  %69 = zext i1 %68 to i8
+  store i8 %69, i8* %37, align 1, !tbaa !2451
+  %70 = add i64 %107, 7
+  store i64 %70, i64* %PC, align 8
+  %71 = add i64 %46, 24
+  %72 = inttoptr i64 %47 to i64*
+  %73 = load i64, i64* %72, align 8
+  store i64 %73, i64* %RBP, align 8, !tbaa !2428
+  store i64 %71, i64* %RSP, align 8, !tbaa !2428
+  %74 = add i64 %107, 8
+  store i64 %74, i64* %PC, align 8
+  %75 = inttoptr i64 %71 to i64*
+  %76 = load i64, i64* %75, align 8
+  store i64 %76, i64* %PC, align 8, !tbaa !2428
+  %77 = add i64 %46, 32
+  store i64 %77, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 
 block_400e36:                                     ; preds = %block_400e40, %block_400e20
-  %80 = phi i64 [ %.pre, %block_400e20 ], [ %148, %block_400e40 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_400e20 ], [ %115, %block_400e40 ]
-  %81 = load i64, i64* %RBP, align 8
-  %82 = add i64 %81, -8
-  %83 = add i64 %80, 4
-  store i64 %83, i64* %PC, align 8
-  %84 = inttoptr i64 %82 to i32*
-  %85 = load i32, i32* %84, align 4
-  %86 = add i32 %85, -10
-  %87 = icmp ult i32 %85, 10
-  %88 = zext i1 %87 to i8
-  store i8 %88, i8* %13, align 1, !tbaa !2434
-  %89 = and i32 %86, 255
-  %90 = tail call i32 @llvm.ctpop.i32(i32 %89) #8
-  %91 = trunc i32 %90 to i8
-  %92 = and i8 %91, 1
-  %93 = xor i8 %92, 1
-  store i8 %93, i8* %20, align 1, !tbaa !2448
-  %94 = xor i32 %85, %86
-  %95 = lshr i32 %94, 4
-  %96 = trunc i32 %95 to i8
-  %97 = and i8 %96, 1
-  store i8 %97, i8* %26, align 1, !tbaa !2452
-  %98 = icmp eq i32 %86, 0
-  %99 = zext i1 %98 to i8
-  store i8 %99, i8* %29, align 1, !tbaa !2449
-  %100 = lshr i32 %86, 31
-  %101 = trunc i32 %100 to i8
-  store i8 %101, i8* %32, align 1, !tbaa !2450
-  %102 = lshr i32 %85, 31
-  %103 = xor i32 %100, %102
-  %104 = add nuw nsw i32 %103, %102
-  %105 = icmp eq i32 %104, 2
-  %106 = zext i1 %105 to i8
-  store i8 %106, i8* %38, align 1, !tbaa !2451
-  %107 = icmp ne i8 %101, 0
-  %108 = xor i1 %107, %105
-  %.v = select i1 %108, i64 10, i64 29
-  %109 = add i64 %80, %.v
-  store i64 %109, i64* %47, align 8, !tbaa !2428
-  br i1 %108, label %block_400e40, label %block_400e53
+  %78 = phi i64 [ %.pre, %block_400e20 ], [ %145, %block_400e40 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %block_400e20 ], [ %113, %block_400e40 ]
+  %79 = load i64, i64* %RBP, align 8
+  %80 = add i64 %79, -8
+  %81 = add i64 %78, 4
+  store i64 %81, i64* %PC, align 8
+  %82 = inttoptr i64 %80 to i32*
+  %83 = load i32, i32* %82, align 4
+  %84 = add i32 %83, -10
+  %85 = icmp ult i32 %83, 10
+  %86 = zext i1 %85 to i8
+  store i8 %86, i8* %12, align 1, !tbaa !2434
+  %87 = and i32 %84, 255
+  %88 = tail call i32 @llvm.ctpop.i32(i32 %87) #8
+  %89 = trunc i32 %88 to i8
+  %90 = and i8 %89, 1
+  %91 = xor i8 %90, 1
+  store i8 %91, i8* %19, align 1, !tbaa !2448
+  %92 = xor i32 %83, %84
+  %93 = lshr i32 %92, 4
+  %94 = trunc i32 %93 to i8
+  %95 = and i8 %94, 1
+  store i8 %95, i8* %25, align 1, !tbaa !2452
+  %96 = icmp eq i32 %84, 0
+  %97 = zext i1 %96 to i8
+  store i8 %97, i8* %28, align 1, !tbaa !2449
+  %98 = lshr i32 %84, 31
+  %99 = trunc i32 %98 to i8
+  store i8 %99, i8* %31, align 1, !tbaa !2450
+  %100 = lshr i32 %83, 31
+  %101 = xor i32 %98, %100
+  %102 = add nuw nsw i32 %101, %100
+  %103 = icmp eq i32 %102, 2
+  %104 = zext i1 %103 to i8
+  store i8 %104, i8* %37, align 1, !tbaa !2451
+  %105 = icmp ne i8 %99, 0
+  %106 = xor i1 %105, %103
+  %.v = select i1 %106, i64 10, i64 29
+  %107 = add i64 %78, %.v
+  store i64 %107, i64* %PC, align 8, !tbaa !2428
+  br i1 %106, label %block_400e40, label %block_400e53
 
 block_400e40:                                     ; preds = %block_400e36
-  %110 = add i64 %109, -368
-  %111 = add i64 %109, 5
-  %112 = load i64, i64* %5, align 8, !tbaa !2428
-  %113 = add i64 %112, -8
-  %114 = inttoptr i64 %113 to i64*
-  store i64 %111, i64* %114, align 8
-  store i64 %113, i64* %5, align 8, !tbaa !2428
-  store i64 %110, i64* %47, align 8, !tbaa !2428
-  %115 = tail call %struct.Memory* @sub_400cd0_Oscar_renamed_(%struct.State* nonnull %0, i64 %110, %struct.Memory* %MEMORY.0)
-  %116 = load i64, i64* %RBP, align 8
-  %117 = add i64 %116, -8
-  %118 = load i64, i64* %PC, align 8
-  %119 = add i64 %118, 3
-  store i64 %119, i64* %PC, align 8
-  %120 = inttoptr i64 %117 to i32*
-  %121 = load i32, i32* %120, align 4
-  %122 = add i32 %121, 1
-  %123 = zext i32 %122 to i64
-  store i64 %123, i64* %RAX, align 8, !tbaa !2428
-  %124 = icmp eq i32 %121, -1
-  %125 = icmp eq i32 %122, 0
-  %126 = or i1 %124, %125
-  %127 = zext i1 %126 to i8
-  store i8 %127, i8* %13, align 1, !tbaa !2434
-  %128 = and i32 %122, 255
-  %129 = tail call i32 @llvm.ctpop.i32(i32 %128) #8
-  %130 = trunc i32 %129 to i8
-  %131 = and i8 %130, 1
-  %132 = xor i8 %131, 1
-  store i8 %132, i8* %20, align 1, !tbaa !2448
-  %133 = xor i32 %121, %122
-  %134 = lshr i32 %133, 4
-  %135 = trunc i32 %134 to i8
-  %136 = and i8 %135, 1
-  store i8 %136, i8* %26, align 1, !tbaa !2452
-  %137 = icmp eq i32 %122, 0
-  %138 = zext i1 %137 to i8
-  store i8 %138, i8* %29, align 1, !tbaa !2449
-  %139 = lshr i32 %122, 31
-  %140 = trunc i32 %139 to i8
-  store i8 %140, i8* %32, align 1, !tbaa !2450
-  %141 = lshr i32 %121, 31
-  %142 = xor i32 %139, %141
-  %143 = add nuw nsw i32 %142, %139
-  %144 = icmp eq i32 %143, 2
-  %145 = zext i1 %144 to i8
-  store i8 %145, i8* %38, align 1, !tbaa !2451
-  %146 = add i64 %118, 9
-  store i64 %146, i64* %PC, align 8
-  store i32 %122, i32* %120, align 4
-  %147 = load i64, i64* %PC, align 8
-  %148 = add i64 %147, -24
-  store i64 %148, i64* %47, align 8, !tbaa !2428
+  %108 = add i64 %107, -368
+  %109 = add i64 %107, 5
+  %110 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %111 = add i64 %110, -8
+  %112 = inttoptr i64 %111 to i64*
+  store i64 %109, i64* %112, align 8
+  store i64 %111, i64* %RSP, align 8, !tbaa !2428
+  store i64 %108, i64* %PC, align 8, !tbaa !2428
+  %113 = tail call %struct.Memory* @sub_400cd0_Oscar_renamed_(%struct.State* nonnull %0, i64 %108, %struct.Memory* %MEMORY.0)
+  %114 = load i64, i64* %RBP, align 8
+  %115 = add i64 %114, -8
+  %116 = load i64, i64* %PC, align 8
+  %117 = add i64 %116, 3
+  store i64 %117, i64* %PC, align 8
+  %118 = inttoptr i64 %115 to i32*
+  %119 = load i32, i32* %118, align 4
+  %120 = add i32 %119, 1
+  %121 = zext i32 %120 to i64
+  store i64 %121, i64* %RAX, align 8, !tbaa !2428
+  %122 = icmp eq i32 %119, -1
+  %123 = icmp eq i32 %120, 0
+  %124 = or i1 %122, %123
+  %125 = zext i1 %124 to i8
+  store i8 %125, i8* %12, align 1, !tbaa !2434
+  %126 = and i32 %120, 255
+  %127 = tail call i32 @llvm.ctpop.i32(i32 %126) #8
+  %128 = trunc i32 %127 to i8
+  %129 = and i8 %128, 1
+  %130 = xor i8 %129, 1
+  store i8 %130, i8* %19, align 1, !tbaa !2448
+  %131 = xor i32 %119, %120
+  %132 = lshr i32 %131, 4
+  %133 = trunc i32 %132 to i8
+  %134 = and i8 %133, 1
+  store i8 %134, i8* %25, align 1, !tbaa !2452
+  %135 = zext i1 %123 to i8
+  store i8 %135, i8* %28, align 1, !tbaa !2449
+  %136 = lshr i32 %120, 31
+  %137 = trunc i32 %136 to i8
+  store i8 %137, i8* %31, align 1, !tbaa !2450
+  %138 = lshr i32 %119, 31
+  %139 = xor i32 %136, %138
+  %140 = add nuw nsw i32 %139, %136
+  %141 = icmp eq i32 %140, 2
+  %142 = zext i1 %141 to i8
+  store i8 %142, i8* %37, align 1, !tbaa !2451
+  %143 = add i64 %116, 9
+  store i64 %143, i64* %PC, align 8
+  store i32 %120, i32* %118, align 4
+  %144 = load i64, i64* %PC, align 8
+  %145 = add i64 %144, -24
+  store i64 %145, i64* %PC, align 8, !tbaa !2428
   br label %block_400e36
 }
 
@@ -1284,26 +1278,23 @@ block_400510:
   store i8 0, i8* %17, align 1, !tbaa !2451
   store i8 0, i8* %14, align 1, !tbaa !2452
   store i64 %19, i64* bitcast (%seed_type* @seed to i64*), align 8
-  %27 = and i64 %18, 65535
-  store i64 %27, i64* %RCX, align 8, !tbaa !2428
-  %28 = and i64 %18, 65535
-  store i64 %28, i64* %RAX, align 8, !tbaa !2428
-  %29 = add i64 %9, 48
-  store i64 %29, i64* %PC, align 8
-  %30 = load i64, i64* %5, align 8, !tbaa !2428
-  %31 = add i64 %30, 8
-  %32 = inttoptr i64 %30 to i64*
-  %33 = load i64, i64* %32, align 8
-  store i64 %33, i64* %RBP, align 8, !tbaa !2428
-  store i64 %31, i64* %5, align 8, !tbaa !2428
-  %34 = add i64 %9, 49
-  store i64 %34, i64* %PC, align 8
-  %35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %36 = inttoptr i64 %31 to i64*
-  %37 = load i64, i64* %36, align 8
-  store i64 %37, i64* %35, align 8, !tbaa !2428
-  %38 = add i64 %30, 16
-  store i64 %38, i64* %5, align 8, !tbaa !2428
+  store i64 %19, i64* %RCX, align 8, !tbaa !2428
+  store i64 %19, i64* %RAX, align 8, !tbaa !2428
+  %27 = add i64 %9, 48
+  store i64 %27, i64* %PC, align 8
+  %28 = load i64, i64* %5, align 8, !tbaa !2428
+  %29 = add i64 %28, 8
+  %30 = inttoptr i64 %28 to i64*
+  %31 = load i64, i64* %30, align 8
+  store i64 %31, i64* %RBP, align 8, !tbaa !2428
+  store i64 %29, i64* %5, align 8, !tbaa !2428
+  %32 = add i64 %9, 49
+  store i64 %32, i64* %PC, align 8
+  %33 = inttoptr i64 %29 to i64*
+  %34 = load i64, i64* %33, align 8
+  store i64 %34, i64* %PC, align 8, !tbaa !2428
+  %35 = add i64 %28, 16
+  store i64 %35, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -1332,508 +1323,504 @@ block_400650:
   %9 = load i64, i64* %RBP, align 8
   %10 = add i64 %1, 1
   store i64 %10, i64* %PC, align 8
-  %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %12 = load i64, i64* %11, align 8, !tbaa !2428
-  %13 = add i64 %12, -8
-  %14 = inttoptr i64 %13 to i64*
-  store i64 %9, i64* %14, align 8
-  %15 = load i64, i64* %PC, align 8
-  store i64 %13, i64* %RBP, align 8, !tbaa !2428
-  %16 = add i64 %12, -56
-  store i64 %16, i64* %RSP, align 8, !tbaa !2428
-  %17 = icmp ult i64 %13, 48
-  %18 = zext i1 %17 to i8
-  %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 %18, i8* %19, align 1, !tbaa !2434
-  %20 = trunc i64 %16 to i32
-  %21 = and i32 %20, 255
-  %22 = tail call i32 @llvm.ctpop.i32(i32 %21) #8
-  %23 = trunc i32 %22 to i8
-  %24 = and i8 %23, 1
-  %25 = xor i8 %24, 1
-  %26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 %25, i8* %26, align 1, !tbaa !2448
-  %27 = xor i64 %13, 16
-  %28 = xor i64 %27, %16
-  %29 = lshr i64 %28, 4
-  %30 = trunc i64 %29 to i8
-  %31 = and i8 %30, 1
-  %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %31, i8* %32, align 1, !tbaa !2452
-  %33 = icmp eq i64 %16, 0
-  %34 = zext i1 %33 to i8
-  %35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %34, i8* %35, align 1, !tbaa !2449
-  %36 = lshr i64 %16, 63
-  %37 = trunc i64 %36 to i8
-  %38 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %37, i8* %38, align 1, !tbaa !2450
-  %39 = lshr i64 %13, 63
-  %40 = xor i64 %36, %39
-  %41 = add nuw nsw i64 %40, %39
-  %42 = icmp eq i64 %41, 2
-  %43 = zext i1 %42 to i8
-  %44 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %43, i8* %44, align 1, !tbaa !2451
+  %11 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %12 = add i64 %11, -8
+  %13 = inttoptr i64 %12 to i64*
+  store i64 %9, i64* %13, align 8
+  %14 = load i64, i64* %PC, align 8
+  store i64 %12, i64* %RBP, align 8, !tbaa !2428
+  %15 = add i64 %11, -56
+  store i64 %15, i64* %RSP, align 8, !tbaa !2428
+  %16 = icmp ult i64 %12, 48
+  %17 = zext i1 %16 to i8
+  %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 %17, i8* %18, align 1, !tbaa !2434
+  %19 = trunc i64 %15 to i32
+  %20 = and i32 %19, 255
+  %21 = tail call i32 @llvm.ctpop.i32(i32 %20) #8
+  %22 = trunc i32 %21 to i8
+  %23 = and i8 %22, 1
+  %24 = xor i8 %23, 1
+  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 %24, i8* %25, align 1, !tbaa !2448
+  %26 = xor i64 %12, 16
+  %27 = xor i64 %26, %15
+  %28 = lshr i64 %27, 4
+  %29 = trunc i64 %28 to i8
+  %30 = and i8 %29, 1
+  %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %30, i8* %31, align 1, !tbaa !2452
+  %32 = icmp eq i64 %15, 0
+  %33 = zext i1 %32 to i8
+  %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %33, i8* %34, align 1, !tbaa !2449
+  %35 = lshr i64 %15, 63
+  %36 = trunc i64 %35 to i8
+  %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %36, i8* %37, align 1, !tbaa !2450
+  %38 = lshr i64 %12, 63
+  %39 = xor i64 %35, %38
+  %40 = add nuw nsw i64 %39, %38
+  %41 = icmp eq i64 %40, 2
+  %42 = zext i1 %41 to i8
+  %43 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %42, i8* %43, align 1, !tbaa !2451
   store i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 40), i64* %RAX, align 8, !tbaa !2428
-  %45 = add i64 %12, -16
-  %46 = load i64, i64* %RDI, align 8
-  %47 = add i64 %15, 21
-  store i64 %47, i64* %PC, align 8
-  %48 = inttoptr i64 %45 to i64*
-  store i64 %46, i64* %48, align 8
-  %49 = load i64, i64* %RBP, align 8
-  %50 = add i64 %49, -12
-  %51 = load i32, i32* %ESI, align 4
-  %52 = load i64, i64* %PC, align 8
-  %53 = add i64 %52, 3
-  store i64 %53, i64* %PC, align 8
-  %54 = inttoptr i64 %50 to i32*
-  store i32 %51, i32* %54, align 4
-  %55 = load i64, i64* %RBP, align 8
-  %56 = add i64 %55, -16
-  %57 = load i32, i32* %EDX, align 4
-  %58 = load i64, i64* %PC, align 8
-  %59 = add i64 %58, 3
-  store i64 %59, i64* %PC, align 8
-  %60 = inttoptr i64 %56 to i32*
-  store i32 %57, i32* %60, align 4
-  %61 = load i64, i64* %RBP, align 8
-  %62 = add i64 %61, -20
-  %63 = load i32, i32* %ECX, align 4
-  %64 = load i64, i64* %PC, align 8
-  %65 = add i64 %64, 3
-  store i64 %65, i64* %PC, align 8
-  %66 = inttoptr i64 %62 to i32*
-  store i32 %63, i32* %66, align 4
-  %67 = load i64, i64* %RAX, align 8
-  %68 = load i64, i64* %PC, align 8
-  store i64 %67, i64* %RDI, align 8, !tbaa !2428
+  %44 = add i64 %11, -16
+  %45 = load i64, i64* %RDI, align 8
+  %46 = add i64 %14, 21
+  store i64 %46, i64* %PC, align 8
+  %47 = inttoptr i64 %44 to i64*
+  store i64 %45, i64* %47, align 8
+  %48 = load i64, i64* %RBP, align 8
+  %49 = add i64 %48, -12
+  %50 = load i32, i32* %ESI, align 4
+  %51 = load i64, i64* %PC, align 8
+  %52 = add i64 %51, 3
+  store i64 %52, i64* %PC, align 8
+  %53 = inttoptr i64 %49 to i32*
+  store i32 %50, i32* %53, align 4
+  %54 = load i64, i64* %RBP, align 8
+  %55 = add i64 %54, -16
+  %56 = load i32, i32* %EDX, align 4
+  %57 = load i64, i64* %PC, align 8
+  %58 = add i64 %57, 3
+  store i64 %58, i64* %PC, align 8
+  %59 = inttoptr i64 %55 to i32*
+  store i32 %56, i32* %59, align 4
+  %60 = load i64, i64* %RBP, align 8
+  %61 = add i64 %60, -20
+  %62 = load i32, i32* %ECX, align 4
+  %63 = load i64, i64* %PC, align 8
+  %64 = add i64 %63, 3
+  store i64 %64, i64* %PC, align 8
+  %65 = inttoptr i64 %61 to i32*
+  store i32 %62, i32* %65, align 4
+  %66 = load i64, i64* %RAX, align 8
+  %67 = load i64, i64* %PC, align 8
+  store i64 %66, i64* %RDI, align 8, !tbaa !2428
   store i8 0, i8* %AL, align 1, !tbaa !2453
-  %69 = add i64 %68, -639
-  %70 = add i64 %68, 10
-  %71 = load i64, i64* %11, align 8, !tbaa !2428
-  %72 = add i64 %71, -8
-  %73 = inttoptr i64 %72 to i64*
-  store i64 %70, i64* %73, align 8
-  store i64 %72, i64* %11, align 8, !tbaa !2428
-  %74 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  store i64 %69, i64* %74, align 8, !tbaa !2428
-  %75 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %2)
-  %76 = load i64, i64* %RBP, align 8
-  %77 = add i64 %76, -12
-  %78 = load i64, i64* %PC, align 8
-  %79 = add i64 %78, 3
-  store i64 %79, i64* %PC, align 8
-  %80 = inttoptr i64 %77 to i32*
-  %81 = load i32, i32* %80, align 4
-  %82 = zext i32 %81 to i64
-  store i64 %82, i64* %RCX, align 8, !tbaa !2428
-  %83 = add i64 %76, -24
-  %84 = add i64 %78, 6
-  store i64 %84, i64* %PC, align 8
-  %85 = inttoptr i64 %83 to i32*
-  store i32 %81, i32* %85, align 4
-  %86 = load i64, i64* %RBP, align 8
-  %87 = add i64 %86, -28
-  %88 = load i32, i32* %EAX, align 4
-  %89 = load i64, i64* %PC, align 8
-  %90 = add i64 %89, 3
-  store i64 %90, i64* %PC, align 8
-  %91 = inttoptr i64 %87 to i32*
-  store i32 %88, i32* %91, align 4
-  %92 = bitcast [32 x %union.VectorReg]* %7 to i8*
-  %93 = getelementptr inbounds i8, i8* %92, i64 4
-  %94 = bitcast i8* %93 to float*
-  %95 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
-  %96 = bitcast i64* %95 to float*
-  %97 = getelementptr inbounds i8, i8* %92, i64 12
-  %98 = bitcast i8* %97 to float*
-  %99 = bitcast [32 x %union.VectorReg]* %7 to <2 x float>*
-  %100 = bitcast [32 x %union.VectorReg]* %7 to double*
-  %101 = bitcast %union.VectorReg* %8 to i8*
-  %102 = getelementptr inbounds i8, i8* %101, i64 4
-  %103 = bitcast i8* %102 to float*
-  %104 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
-  %105 = bitcast i64* %104 to float*
-  %106 = getelementptr inbounds i8, i8* %101, i64 12
-  %107 = bitcast i8* %106 to float*
-  %108 = bitcast %union.VectorReg* %8 to <2 x float>*
-  %109 = bitcast %union.VectorReg* %8 to double*
+  %68 = add i64 %67, -639
+  %69 = add i64 %67, 10
+  %70 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %71 = add i64 %70, -8
+  %72 = inttoptr i64 %71 to i64*
+  store i64 %69, i64* %72, align 8
+  store i64 %71, i64* %RSP, align 8, !tbaa !2428
+  store i64 %68, i64* %PC, align 8, !tbaa !2428
+  %73 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %2)
+  %74 = load i64, i64* %RBP, align 8
+  %75 = add i64 %74, -12
+  %76 = load i64, i64* %PC, align 8
+  %77 = add i64 %76, 3
+  store i64 %77, i64* %PC, align 8
+  %78 = inttoptr i64 %75 to i32*
+  %79 = load i32, i32* %78, align 4
+  %80 = zext i32 %79 to i64
+  store i64 %80, i64* %RCX, align 8, !tbaa !2428
+  %81 = add i64 %74, -24
+  %82 = add i64 %76, 6
+  store i64 %82, i64* %PC, align 8
+  %83 = inttoptr i64 %81 to i32*
+  store i32 %79, i32* %83, align 4
+  %84 = load i64, i64* %RBP, align 8
+  %85 = add i64 %84, -28
+  %86 = load i32, i32* %EAX, align 4
+  %87 = load i64, i64* %PC, align 8
+  %88 = add i64 %87, 3
+  store i64 %88, i64* %PC, align 8
+  %89 = inttoptr i64 %85 to i32*
+  store i32 %86, i32* %89, align 4
+  %90 = bitcast [32 x %union.VectorReg]* %7 to i8*
+  %91 = getelementptr inbounds i8, i8* %90, i64 4
+  %92 = bitcast i8* %91 to float*
+  %93 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+  %94 = bitcast i64* %93 to float*
+  %95 = getelementptr inbounds i8, i8* %90, i64 12
+  %96 = bitcast i8* %95 to float*
+  %97 = bitcast [32 x %union.VectorReg]* %7 to <2 x float>*
+  %98 = bitcast [32 x %union.VectorReg]* %7 to double*
+  %99 = bitcast %union.VectorReg* %8 to i8*
+  %100 = getelementptr inbounds i8, i8* %99, i64 4
+  %101 = bitcast i8* %100 to float*
+  %102 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+  %103 = bitcast i64* %102 to float*
+  %104 = getelementptr inbounds i8, i8* %99, i64 12
+  %105 = bitcast i8* %104 to float*
+  %106 = bitcast %union.VectorReg* %8 to <2 x float>*
+  %107 = bitcast %union.VectorReg* %8 to double*
   %.pre = load i64, i64* %PC, align 8
   %.pre1 = load i64, i64* %RBP, align 8
   br label %block_400682
 
 block_400722:                                     ; preds = %block_400682
-  %110 = load i64, i64* %RSP, align 8
-  %111 = add i64 %110, 48
-  store i64 %111, i64* %RSP, align 8, !tbaa !2428
-  %112 = icmp ugt i64 %110, -49
-  %113 = zext i1 %112 to i8
-  store i8 %113, i8* %19, align 1, !tbaa !2434
-  %114 = trunc i64 %111 to i32
-  %115 = and i32 %114, 255
-  %116 = tail call i32 @llvm.ctpop.i32(i32 %115) #8
-  %117 = trunc i32 %116 to i8
-  %118 = and i8 %117, 1
-  %119 = xor i8 %118, 1
-  store i8 %119, i8* %26, align 1, !tbaa !2448
-  %120 = xor i64 %110, 16
-  %121 = xor i64 %120, %111
-  %122 = lshr i64 %121, 4
-  %123 = trunc i64 %122 to i8
-  %124 = and i8 %123, 1
-  store i8 %124, i8* %32, align 1, !tbaa !2452
-  %125 = icmp eq i64 %111, 0
-  %126 = zext i1 %125 to i8
-  store i8 %126, i8* %35, align 1, !tbaa !2449
-  %127 = lshr i64 %111, 63
-  %128 = trunc i64 %127 to i8
-  store i8 %128, i8* %38, align 1, !tbaa !2450
-  %129 = lshr i64 %110, 63
-  %130 = xor i64 %127, %129
-  %131 = add nuw nsw i64 %130, %127
-  %132 = icmp eq i64 %131, 2
-  %133 = zext i1 %132 to i8
-  store i8 %133, i8* %44, align 1, !tbaa !2451
-  %134 = add i64 %364, 5
-  store i64 %134, i64* %PC, align 8
-  %135 = add i64 %110, 56
-  %136 = inttoptr i64 %111 to i64*
-  %137 = load i64, i64* %136, align 8
-  store i64 %137, i64* %RBP, align 8, !tbaa !2428
-  store i64 %135, i64* %11, align 8, !tbaa !2428
-  %138 = add i64 %364, 6
-  store i64 %138, i64* %PC, align 8
-  %139 = inttoptr i64 %135 to i64*
-  %140 = load i64, i64* %139, align 8
-  store i64 %140, i64* %74, align 8, !tbaa !2428
-  %141 = add i64 %110, 64
-  store i64 %141, i64* %11, align 8, !tbaa !2428
-  ret %struct.Memory* %280
+  %108 = load i64, i64* %RSP, align 8
+  %109 = add i64 %108, 48
+  store i64 %109, i64* %RSP, align 8, !tbaa !2428
+  %110 = icmp ugt i64 %108, -49
+  %111 = zext i1 %110 to i8
+  store i8 %111, i8* %18, align 1, !tbaa !2434
+  %112 = trunc i64 %109 to i32
+  %113 = and i32 %112, 255
+  %114 = tail call i32 @llvm.ctpop.i32(i32 %113) #8
+  %115 = trunc i32 %114 to i8
+  %116 = and i8 %115, 1
+  %117 = xor i8 %116, 1
+  store i8 %117, i8* %25, align 1, !tbaa !2448
+  %118 = xor i64 %108, 16
+  %119 = xor i64 %118, %109
+  %120 = lshr i64 %119, 4
+  %121 = trunc i64 %120 to i8
+  %122 = and i8 %121, 1
+  store i8 %122, i8* %31, align 1, !tbaa !2452
+  %123 = icmp eq i64 %109, 0
+  %124 = zext i1 %123 to i8
+  store i8 %124, i8* %34, align 1, !tbaa !2449
+  %125 = lshr i64 %109, 63
+  %126 = trunc i64 %125 to i8
+  store i8 %126, i8* %37, align 1, !tbaa !2450
+  %127 = lshr i64 %108, 63
+  %128 = xor i64 %125, %127
+  %129 = add nuw nsw i64 %128, %125
+  %130 = icmp eq i64 %129, 2
+  %131 = zext i1 %130 to i8
+  store i8 %131, i8* %43, align 1, !tbaa !2451
+  %132 = add i64 %360, 5
+  store i64 %132, i64* %PC, align 8
+  %133 = add i64 %108, 56
+  %134 = inttoptr i64 %109 to i64*
+  %135 = load i64, i64* %134, align 8
+  store i64 %135, i64* %RBP, align 8, !tbaa !2428
+  store i64 %133, i64* %RSP, align 8, !tbaa !2428
+  %136 = add i64 %360, 6
+  store i64 %136, i64* %PC, align 8
+  %137 = inttoptr i64 %133 to i64*
+  %138 = load i64, i64* %137, align 8
+  store i64 %138, i64* %PC, align 8, !tbaa !2428
+  %139 = add i64 %108, 64
+  store i64 %139, i64* %RSP, align 8, !tbaa !2428
+  ret %struct.Memory* %276
 
 block_400682:                                     ; preds = %block_400682, %block_400650
-  %142 = phi i64 [ %.pre1, %block_400650 ], [ %326, %block_400682 ]
-  %143 = phi i64 [ %.pre, %block_400650 ], [ %364, %block_400682 ]
-  %MEMORY.0 = phi %struct.Memory* [ %75, %block_400650 ], [ %280, %block_400682 ]
+  %140 = phi i64 [ %.pre1, %block_400650 ], [ %322, %block_400682 ]
+  %141 = phi i64 [ %.pre, %block_400650 ], [ %360, %block_400682 ]
+  %MEMORY.0 = phi %struct.Memory* [ %73, %block_400650 ], [ %276, %block_400682 ]
   store i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 42), i64* %RDI, align 8, !tbaa !2428
-  %144 = add i64 %142, -8
-  %145 = add i64 %143, 14
-  store i64 %145, i64* %PC, align 8
-  %146 = inttoptr i64 %144 to i64*
-  %147 = load i64, i64* %146, align 8
-  store i64 %147, i64* %RAX, align 8, !tbaa !2428
-  %148 = add i64 %142, -24
-  %149 = add i64 %143, 18
-  store i64 %149, i64* %PC, align 8
-  %150 = inttoptr i64 %148 to i32*
-  %151 = load i32, i32* %150, align 4
-  %152 = sext i32 %151 to i64
-  store i64 %152, i64* %RCX, align 8, !tbaa !2428
-  %153 = shl nsw i64 %152, 3
-  %154 = add i64 %153, %147
-  %155 = add i64 %143, 23
-  store i64 %155, i64* %PC, align 8
-  %156 = inttoptr i64 %154 to i32*
-  %157 = load i32, i32* %156, align 4
-  %158 = bitcast [32 x %union.VectorReg]* %7 to i32*
-  store i32 %157, i32* %158, align 1, !tbaa !2432
+  %142 = add i64 %140, -8
+  %143 = add i64 %141, 14
+  store i64 %143, i64* %PC, align 8
+  %144 = inttoptr i64 %142 to i64*
+  %145 = load i64, i64* %144, align 8
+  store i64 %145, i64* %RAX, align 8, !tbaa !2428
+  %146 = add i64 %140, -24
+  %147 = add i64 %141, 18
+  store i64 %147, i64* %PC, align 8
+  %148 = inttoptr i64 %146 to i32*
+  %149 = load i32, i32* %148, align 4
+  %150 = sext i32 %149 to i64
+  store i64 %150, i64* %RCX, align 8, !tbaa !2428
+  %151 = shl nsw i64 %150, 3
+  %152 = add i64 %151, %145
+  %153 = add i64 %141, 23
+  store i64 %153, i64* %PC, align 8
+  %154 = inttoptr i64 %152 to i32*
+  %155 = load i32, i32* %154, align 4
+  %156 = bitcast [32 x %union.VectorReg]* %7 to i32*
+  store i32 %155, i32* %156, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %92, align 1, !tbaa !2432
   store float 0.000000e+00, float* %94, align 1, !tbaa !2432
   store float 0.000000e+00, float* %96, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %98, align 1, !tbaa !2432
-  %159 = load <2 x float>, <2 x float>* %99, align 1
-  %160 = extractelement <2 x float> %159, i32 0
-  %161 = fpext float %160 to double
-  store double %161, double* %100, align 1, !tbaa !2454
-  %162 = add i64 %143, 31
+  %157 = load <2 x float>, <2 x float>* %97, align 1
+  %158 = extractelement <2 x float> %157, i32 0
+  %159 = fpext float %158 to double
+  store double %159, double* %98, align 1, !tbaa !2454
+  %160 = add i64 %141, 31
+  store i64 %160, i64* %PC, align 8
+  %161 = load i64, i64* %144, align 8
+  store i64 %161, i64* %RAX, align 8, !tbaa !2428
+  %162 = add i64 %141, 35
   store i64 %162, i64* %PC, align 8
-  %163 = load i64, i64* %146, align 8
-  store i64 %163, i64* %RAX, align 8, !tbaa !2428
-  %164 = add i64 %143, 35
-  store i64 %164, i64* %PC, align 8
-  %165 = load i32, i32* %150, align 4
-  %166 = sext i32 %165 to i64
-  store i64 %166, i64* %RCX, align 8, !tbaa !2428
-  %167 = shl nsw i64 %166, 3
-  %168 = add i64 %163, 4
-  %169 = add i64 %168, %167
-  %170 = add i64 %143, 41
-  store i64 %170, i64* %PC, align 8
-  %171 = inttoptr i64 %169 to i32*
-  %172 = load i32, i32* %171, align 4
-  %173 = bitcast %union.VectorReg* %8 to i32*
-  store i32 %172, i32* %173, align 1, !tbaa !2432
+  %163 = load i32, i32* %148, align 4
+  %164 = sext i32 %163 to i64
+  store i64 %164, i64* %RCX, align 8, !tbaa !2428
+  %165 = shl nsw i64 %164, 3
+  %166 = add i64 %161, 4
+  %167 = add i64 %166, %165
+  %168 = add i64 %141, 41
+  store i64 %168, i64* %PC, align 8
+  %169 = inttoptr i64 %167 to i32*
+  %170 = load i32, i32* %169, align 4
+  %171 = bitcast %union.VectorReg* %8 to i32*
+  store i32 %170, i32* %171, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %101, align 1, !tbaa !2432
   store float 0.000000e+00, float* %103, align 1, !tbaa !2432
   store float 0.000000e+00, float* %105, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  %174 = load <2 x float>, <2 x float>* %108, align 1
-  %175 = extractelement <2 x float> %174, i32 0
-  %176 = fpext float %175 to double
-  store double %176, double* %109, align 1, !tbaa !2454
+  %172 = load <2 x float>, <2 x float>* %106, align 1
+  %173 = extractelement <2 x float> %172, i32 0
+  %174 = fpext float %173 to double
+  store double %174, double* %107, align 1, !tbaa !2454
   store i8 2, i8* %AL, align 1, !tbaa !2453
-  %177 = add i64 %143, -658
-  %178 = add i64 %143, 52
-  %179 = load i64, i64* %11, align 8, !tbaa !2428
-  %180 = add i64 %179, -8
-  %181 = inttoptr i64 %180 to i64*
-  store i64 %178, i64* %181, align 8
-  store i64 %180, i64* %11, align 8, !tbaa !2428
-  store i64 %177, i64* %74, align 8, !tbaa !2428
-  %182 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
-  %183 = load i64, i64* %PC, align 8
+  %175 = add i64 %141, -658
+  %176 = add i64 %141, 52
+  %177 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %178 = add i64 %177, -8
+  %179 = inttoptr i64 %178 to i64*
+  store i64 %176, i64* %179, align 8
+  store i64 %178, i64* %RSP, align 8, !tbaa !2428
+  store i64 %175, i64* %PC, align 8, !tbaa !2428
+  %180 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %MEMORY.0)
+  %181 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 42), i64* %RDI, align 8, !tbaa !2428
-  %184 = load i64, i64* %RBP, align 8
-  %185 = add i64 %184, -24
-  %186 = add i64 %183, 13
-  store i64 %186, i64* %PC, align 8
-  %187 = inttoptr i64 %185 to i32*
-  %188 = load i32, i32* %187, align 4
-  %189 = zext i32 %188 to i64
-  store i64 %189, i64* %RDX, align 8, !tbaa !2428
-  %190 = add i64 %184, -20
-  %191 = add i64 %183, 16
-  store i64 %191, i64* %PC, align 8
-  %192 = inttoptr i64 %190 to i32*
-  %193 = load i32, i32* %192, align 4
-  %194 = add i32 %193, %188
-  %195 = zext i32 %194 to i64
-  store i64 %195, i64* %RDX, align 8, !tbaa !2428
-  %196 = icmp ult i32 %194, %188
-  %197 = icmp ult i32 %194, %193
-  %198 = or i1 %196, %197
-  %199 = zext i1 %198 to i8
-  store i8 %199, i8* %19, align 1, !tbaa !2434
-  %200 = and i32 %194, 255
-  %201 = tail call i32 @llvm.ctpop.i32(i32 %200) #8
-  %202 = trunc i32 %201 to i8
-  %203 = and i8 %202, 1
-  %204 = xor i8 %203, 1
-  store i8 %204, i8* %26, align 1, !tbaa !2448
-  %205 = xor i32 %193, %188
-  %206 = xor i32 %205, %194
-  %207 = lshr i32 %206, 4
-  %208 = trunc i32 %207 to i8
-  %209 = and i8 %208, 1
-  store i8 %209, i8* %32, align 1, !tbaa !2452
-  %210 = icmp eq i32 %194, 0
-  %211 = zext i1 %210 to i8
-  store i8 %211, i8* %35, align 1, !tbaa !2449
-  %212 = lshr i32 %194, 31
-  %213 = trunc i32 %212 to i8
-  store i8 %213, i8* %38, align 1, !tbaa !2450
-  %214 = lshr i32 %188, 31
-  %215 = lshr i32 %193, 31
-  %216 = xor i32 %212, %214
-  %217 = xor i32 %212, %215
-  %218 = add nuw nsw i32 %216, %217
-  %219 = icmp eq i32 %218, 2
-  %220 = zext i1 %219 to i8
-  store i8 %220, i8* %44, align 1, !tbaa !2451
-  %221 = add i64 %183, 19
-  store i64 %221, i64* %PC, align 8
-  store i32 %194, i32* %187, align 4
-  %222 = load i64, i64* %RBP, align 8
-  %223 = add i64 %222, -8
-  %224 = load i64, i64* %PC, align 8
-  %225 = add i64 %224, 4
-  store i64 %225, i64* %PC, align 8
-  %226 = inttoptr i64 %223 to i64*
-  %227 = load i64, i64* %226, align 8
-  store i64 %227, i64* %RCX, align 8, !tbaa !2428
-  %228 = add i64 %222, -24
-  %229 = add i64 %224, 8
-  store i64 %229, i64* %PC, align 8
-  %230 = inttoptr i64 %228 to i32*
-  %231 = load i32, i32* %230, align 4
-  %232 = sext i32 %231 to i64
-  store i64 %232, i64* %RSI, align 8, !tbaa !2428
-  %233 = shl nsw i64 %232, 3
-  %234 = add i64 %233, %227
-  %235 = add i64 %224, 13
-  store i64 %235, i64* %PC, align 8
-  %236 = inttoptr i64 %234 to i32*
-  %237 = load i32, i32* %236, align 4
-  %238 = bitcast [32 x %union.VectorReg]* %7 to i32*
-  store i32 %237, i32* %238, align 1, !tbaa !2432
+  %182 = load i64, i64* %RBP, align 8
+  %183 = add i64 %182, -24
+  %184 = add i64 %181, 13
+  store i64 %184, i64* %PC, align 8
+  %185 = inttoptr i64 %183 to i32*
+  %186 = load i32, i32* %185, align 4
+  %187 = zext i32 %186 to i64
+  store i64 %187, i64* %RDX, align 8, !tbaa !2428
+  %188 = add i64 %182, -20
+  %189 = add i64 %181, 16
+  store i64 %189, i64* %PC, align 8
+  %190 = inttoptr i64 %188 to i32*
+  %191 = load i32, i32* %190, align 4
+  %192 = add i32 %191, %186
+  %193 = zext i32 %192 to i64
+  store i64 %193, i64* %RDX, align 8, !tbaa !2428
+  %194 = icmp ult i32 %192, %186
+  %195 = icmp ult i32 %192, %191
+  %196 = or i1 %194, %195
+  %197 = zext i1 %196 to i8
+  store i8 %197, i8* %18, align 1, !tbaa !2434
+  %198 = and i32 %192, 255
+  %199 = tail call i32 @llvm.ctpop.i32(i32 %198) #8
+  %200 = trunc i32 %199 to i8
+  %201 = and i8 %200, 1
+  %202 = xor i8 %201, 1
+  store i8 %202, i8* %25, align 1, !tbaa !2448
+  %203 = xor i32 %191, %186
+  %204 = xor i32 %203, %192
+  %205 = lshr i32 %204, 4
+  %206 = trunc i32 %205 to i8
+  %207 = and i8 %206, 1
+  store i8 %207, i8* %31, align 1, !tbaa !2452
+  %208 = icmp eq i32 %192, 0
+  %209 = zext i1 %208 to i8
+  store i8 %209, i8* %34, align 1, !tbaa !2449
+  %210 = lshr i32 %192, 31
+  %211 = trunc i32 %210 to i8
+  store i8 %211, i8* %37, align 1, !tbaa !2450
+  %212 = lshr i32 %186, 31
+  %213 = lshr i32 %191, 31
+  %214 = xor i32 %210, %212
+  %215 = xor i32 %210, %213
+  %216 = add nuw nsw i32 %214, %215
+  %217 = icmp eq i32 %216, 2
+  %218 = zext i1 %217 to i8
+  store i8 %218, i8* %43, align 1, !tbaa !2451
+  %219 = add i64 %181, 19
+  store i64 %219, i64* %PC, align 8
+  store i32 %192, i32* %185, align 4
+  %220 = load i64, i64* %RBP, align 8
+  %221 = add i64 %220, -8
+  %222 = load i64, i64* %PC, align 8
+  %223 = add i64 %222, 4
+  store i64 %223, i64* %PC, align 8
+  %224 = inttoptr i64 %221 to i64*
+  %225 = load i64, i64* %224, align 8
+  store i64 %225, i64* %RCX, align 8, !tbaa !2428
+  %226 = add i64 %220, -24
+  %227 = add i64 %222, 8
+  store i64 %227, i64* %PC, align 8
+  %228 = inttoptr i64 %226 to i32*
+  %229 = load i32, i32* %228, align 4
+  %230 = sext i32 %229 to i64
+  store i64 %230, i64* %RSI, align 8, !tbaa !2428
+  %231 = shl nsw i64 %230, 3
+  %232 = add i64 %231, %225
+  %233 = add i64 %222, 13
+  store i64 %233, i64* %PC, align 8
+  %234 = inttoptr i64 %232 to i32*
+  %235 = load i32, i32* %234, align 4
+  store i32 %235, i32* %156, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %92, align 1, !tbaa !2432
   store float 0.000000e+00, float* %94, align 1, !tbaa !2432
   store float 0.000000e+00, float* %96, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %98, align 1, !tbaa !2432
-  %239 = load <2 x float>, <2 x float>* %99, align 1
-  %240 = extractelement <2 x float> %239, i32 0
-  %241 = fpext float %240 to double
-  store double %241, double* %100, align 1, !tbaa !2454
-  %242 = add i64 %224, 21
-  store i64 %242, i64* %PC, align 8
-  %243 = load i64, i64* %226, align 8
-  store i64 %243, i64* %RCX, align 8, !tbaa !2428
-  %244 = add i64 %224, 25
-  store i64 %244, i64* %PC, align 8
-  %245 = load i32, i32* %230, align 4
-  %246 = sext i32 %245 to i64
-  store i64 %246, i64* %RSI, align 8, !tbaa !2428
-  %247 = shl nsw i64 %246, 3
-  %248 = add i64 %243, 4
-  %249 = add i64 %248, %247
-  %250 = add i64 %224, 31
-  store i64 %250, i64* %PC, align 8
-  %251 = inttoptr i64 %249 to i32*
-  %252 = load i32, i32* %251, align 4
-  %253 = bitcast %union.VectorReg* %8 to i32*
-  store i32 %252, i32* %253, align 1, !tbaa !2432
+  %236 = load <2 x float>, <2 x float>* %97, align 1
+  %237 = extractelement <2 x float> %236, i32 0
+  %238 = fpext float %237 to double
+  store double %238, double* %98, align 1, !tbaa !2454
+  %239 = add i64 %222, 21
+  store i64 %239, i64* %PC, align 8
+  %240 = load i64, i64* %224, align 8
+  store i64 %240, i64* %RCX, align 8, !tbaa !2428
+  %241 = add i64 %222, 25
+  store i64 %241, i64* %PC, align 8
+  %242 = load i32, i32* %228, align 4
+  %243 = sext i32 %242 to i64
+  store i64 %243, i64* %RSI, align 8, !tbaa !2428
+  %244 = shl nsw i64 %243, 3
+  %245 = add i64 %240, 4
+  %246 = add i64 %245, %244
+  %247 = add i64 %222, 31
+  store i64 %247, i64* %PC, align 8
+  %248 = inttoptr i64 %246 to i32*
+  %249 = load i32, i32* %248, align 4
+  store i32 %249, i32* %171, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %101, align 1, !tbaa !2432
   store float 0.000000e+00, float* %103, align 1, !tbaa !2432
   store float 0.000000e+00, float* %105, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  %254 = load <2 x float>, <2 x float>* %108, align 1
-  %255 = extractelement <2 x float> %254, i32 0
-  %256 = fpext float %255 to double
-  store double %256, double* %109, align 1, !tbaa !2454
-  %257 = add i64 %222, -32
-  %258 = load i32, i32* %EAX, align 4
-  %259 = add i64 %224, 38
-  store i64 %259, i64* %PC, align 8
-  %260 = inttoptr i64 %257 to i32*
-  store i32 %258, i32* %260, align 4
-  %261 = load i64, i64* %PC, align 8
+  %250 = load <2 x float>, <2 x float>* %106, align 1
+  %251 = extractelement <2 x float> %250, i32 0
+  %252 = fpext float %251 to double
+  store double %252, double* %107, align 1, !tbaa !2454
+  %253 = add i64 %220, -32
+  %254 = load i32, i32* %EAX, align 4
+  %255 = add i64 %222, 38
+  store i64 %255, i64* %PC, align 8
+  %256 = inttoptr i64 %253 to i32*
+  store i32 %254, i32* %256, align 4
+  %257 = load i64, i64* %PC, align 8
   store i8 2, i8* %AL, align 1, !tbaa !2453
-  %262 = add i64 %261, -767
-  %263 = add i64 %261, 7
-  %264 = load i64, i64* %11, align 8, !tbaa !2428
-  %265 = add i64 %264, -8
-  %266 = inttoptr i64 %265 to i64*
-  store i64 %263, i64* %266, align 8
-  store i64 %265, i64* %11, align 8, !tbaa !2428
-  store i64 %262, i64* %74, align 8, !tbaa !2428
-  %267 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %182)
-  %268 = load i64, i64* %PC, align 8
+  %258 = add i64 %257, -767
+  %259 = add i64 %257, 7
+  %260 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %261 = add i64 %260, -8
+  %262 = inttoptr i64 %261 to i64*
+  store i64 %259, i64* %262, align 8
+  store i64 %261, i64* %RSP, align 8, !tbaa !2428
+  store i64 %258, i64* %PC, align 8, !tbaa !2428
+  %263 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %180)
+  %264 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 40), i64* %RDI, align 8, !tbaa !2428
-  %269 = load i64, i64* %RBP, align 8
-  %270 = add i64 %269, -36
-  %271 = load i32, i32* %EAX, align 4
-  %272 = add i64 %268, 13
-  store i64 %272, i64* %PC, align 8
-  %273 = inttoptr i64 %270 to i32*
-  store i32 %271, i32* %273, align 4
-  %274 = load i64, i64* %PC, align 8
+  %265 = load i64, i64* %RBP, align 8
+  %266 = add i64 %265, -36
+  %267 = load i32, i32* %EAX, align 4
+  %268 = add i64 %264, 13
+  store i64 %268, i64* %PC, align 8
+  %269 = inttoptr i64 %266 to i32*
+  store i32 %267, i32* %269, align 4
+  %270 = load i64, i64* %PC, align 8
   store i8 0, i8* %AL, align 1, !tbaa !2453
-  %275 = add i64 %274, -787
-  %276 = add i64 %274, 7
-  %277 = load i64, i64* %11, align 8, !tbaa !2428
-  %278 = add i64 %277, -8
-  %279 = inttoptr i64 %278 to i64*
-  store i64 %276, i64* %279, align 8
-  store i64 %278, i64* %11, align 8, !tbaa !2428
-  store i64 %275, i64* %74, align 8, !tbaa !2428
-  %280 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %267)
-  %281 = load i64, i64* %RBP, align 8
-  %282 = add i64 %281, -24
-  %283 = load i64, i64* %PC, align 8
-  %284 = add i64 %283, 3
-  store i64 %284, i64* %PC, align 8
-  %285 = inttoptr i64 %282 to i32*
-  %286 = load i32, i32* %285, align 4
-  %287 = zext i32 %286 to i64
-  store i64 %287, i64* %RDX, align 8, !tbaa !2428
-  %288 = add i64 %281, -20
-  %289 = add i64 %283, 6
-  store i64 %289, i64* %PC, align 8
-  %290 = inttoptr i64 %288 to i32*
-  %291 = load i32, i32* %290, align 4
-  %292 = add i32 %291, %286
-  %293 = zext i32 %292 to i64
-  store i64 %293, i64* %RDX, align 8, !tbaa !2428
-  %294 = icmp ult i32 %292, %286
-  %295 = icmp ult i32 %292, %291
-  %296 = or i1 %294, %295
-  %297 = zext i1 %296 to i8
-  store i8 %297, i8* %19, align 1, !tbaa !2434
-  %298 = and i32 %292, 255
-  %299 = tail call i32 @llvm.ctpop.i32(i32 %298) #8
-  %300 = trunc i32 %299 to i8
-  %301 = and i8 %300, 1
-  %302 = xor i8 %301, 1
-  store i8 %302, i8* %26, align 1, !tbaa !2448
-  %303 = xor i32 %291, %286
-  %304 = xor i32 %303, %292
-  %305 = lshr i32 %304, 4
-  %306 = trunc i32 %305 to i8
-  %307 = and i8 %306, 1
-  store i8 %307, i8* %32, align 1, !tbaa !2452
-  %308 = icmp eq i32 %292, 0
-  %309 = zext i1 %308 to i8
-  store i8 %309, i8* %35, align 1, !tbaa !2449
-  %310 = lshr i32 %292, 31
-  %311 = trunc i32 %310 to i8
-  store i8 %311, i8* %38, align 1, !tbaa !2450
-  %312 = lshr i32 %286, 31
-  %313 = lshr i32 %291, 31
-  %314 = xor i32 %310, %312
-  %315 = xor i32 %310, %313
-  %316 = add nuw nsw i32 %314, %315
-  %317 = icmp eq i32 %316, 2
-  %318 = zext i1 %317 to i8
-  store i8 %318, i8* %44, align 1, !tbaa !2451
-  %319 = add i64 %283, 9
-  store i64 %319, i64* %PC, align 8
-  store i32 %292, i32* %285, align 4
-  %320 = load i64, i64* %RBP, align 8
-  %321 = add i64 %320, -40
-  %322 = load i32, i32* %EAX, align 4
-  %323 = load i64, i64* %PC, align 8
-  %324 = add i64 %323, 3
-  store i64 %324, i64* %PC, align 8
-  %325 = inttoptr i64 %321 to i32*
-  store i32 %322, i32* %325, align 4
-  %326 = load i64, i64* %RBP, align 8
-  %327 = add i64 %326, -24
-  %328 = load i64, i64* %PC, align 8
-  %329 = add i64 %328, 3
-  store i64 %329, i64* %PC, align 8
-  %330 = inttoptr i64 %327 to i32*
-  %331 = load i32, i32* %330, align 4
-  %332 = zext i32 %331 to i64
-  store i64 %332, i64* %RAX, align 8, !tbaa !2428
-  %333 = add i64 %326, -16
-  %334 = add i64 %328, 6
-  store i64 %334, i64* %PC, align 8
-  %335 = inttoptr i64 %333 to i32*
-  %336 = load i32, i32* %335, align 4
-  %337 = sub i32 %331, %336
-  %338 = icmp ult i32 %331, %336
-  %339 = zext i1 %338 to i8
-  store i8 %339, i8* %19, align 1, !tbaa !2434
-  %340 = and i32 %337, 255
-  %341 = tail call i32 @llvm.ctpop.i32(i32 %340) #8
-  %342 = trunc i32 %341 to i8
-  %343 = and i8 %342, 1
-  %344 = xor i8 %343, 1
-  store i8 %344, i8* %26, align 1, !tbaa !2448
-  %345 = xor i32 %336, %331
-  %346 = xor i32 %345, %337
-  %347 = lshr i32 %346, 4
-  %348 = trunc i32 %347 to i8
-  %349 = and i8 %348, 1
-  store i8 %349, i8* %32, align 1, !tbaa !2452
-  %350 = icmp eq i32 %337, 0
-  %351 = zext i1 %350 to i8
-  store i8 %351, i8* %35, align 1, !tbaa !2449
-  %352 = lshr i32 %337, 31
-  %353 = trunc i32 %352 to i8
-  store i8 %353, i8* %38, align 1, !tbaa !2450
-  %354 = lshr i32 %331, 31
-  %355 = lshr i32 %336, 31
-  %356 = xor i32 %355, %354
-  %357 = xor i32 %352, %354
-  %358 = add nuw nsw i32 %357, %356
-  %359 = icmp eq i32 %358, 2
-  %360 = zext i1 %359 to i8
-  store i8 %360, i8* %44, align 1, !tbaa !2451
-  %361 = icmp ne i8 %353, 0
-  %362 = xor i1 %361, %359
-  %363 = or i1 %350, %362
-  %.v = select i1 %363, i64 -148, i64 12
-  %364 = add i64 %328, %.v
-  store i64 %364, i64* %74, align 8, !tbaa !2428
-  br i1 %363, label %block_400682, label %block_400722
+  %271 = add i64 %270, -787
+  %272 = add i64 %270, 7
+  %273 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %274 = add i64 %273, -8
+  %275 = inttoptr i64 %274 to i64*
+  store i64 %272, i64* %275, align 8
+  store i64 %274, i64* %RSP, align 8, !tbaa !2428
+  store i64 %271, i64* %PC, align 8, !tbaa !2428
+  %276 = tail call fastcc %struct.Memory* @ext_619238_printf(%struct.State* nonnull %0, %struct.Memory* %263)
+  %277 = load i64, i64* %RBP, align 8
+  %278 = add i64 %277, -24
+  %279 = load i64, i64* %PC, align 8
+  %280 = add i64 %279, 3
+  store i64 %280, i64* %PC, align 8
+  %281 = inttoptr i64 %278 to i32*
+  %282 = load i32, i32* %281, align 4
+  %283 = zext i32 %282 to i64
+  store i64 %283, i64* %RDX, align 8, !tbaa !2428
+  %284 = add i64 %277, -20
+  %285 = add i64 %279, 6
+  store i64 %285, i64* %PC, align 8
+  %286 = inttoptr i64 %284 to i32*
+  %287 = load i32, i32* %286, align 4
+  %288 = add i32 %287, %282
+  %289 = zext i32 %288 to i64
+  store i64 %289, i64* %RDX, align 8, !tbaa !2428
+  %290 = icmp ult i32 %288, %282
+  %291 = icmp ult i32 %288, %287
+  %292 = or i1 %290, %291
+  %293 = zext i1 %292 to i8
+  store i8 %293, i8* %18, align 1, !tbaa !2434
+  %294 = and i32 %288, 255
+  %295 = tail call i32 @llvm.ctpop.i32(i32 %294) #8
+  %296 = trunc i32 %295 to i8
+  %297 = and i8 %296, 1
+  %298 = xor i8 %297, 1
+  store i8 %298, i8* %25, align 1, !tbaa !2448
+  %299 = xor i32 %287, %282
+  %300 = xor i32 %299, %288
+  %301 = lshr i32 %300, 4
+  %302 = trunc i32 %301 to i8
+  %303 = and i8 %302, 1
+  store i8 %303, i8* %31, align 1, !tbaa !2452
+  %304 = icmp eq i32 %288, 0
+  %305 = zext i1 %304 to i8
+  store i8 %305, i8* %34, align 1, !tbaa !2449
+  %306 = lshr i32 %288, 31
+  %307 = trunc i32 %306 to i8
+  store i8 %307, i8* %37, align 1, !tbaa !2450
+  %308 = lshr i32 %282, 31
+  %309 = lshr i32 %287, 31
+  %310 = xor i32 %306, %308
+  %311 = xor i32 %306, %309
+  %312 = add nuw nsw i32 %310, %311
+  %313 = icmp eq i32 %312, 2
+  %314 = zext i1 %313 to i8
+  store i8 %314, i8* %43, align 1, !tbaa !2451
+  %315 = add i64 %279, 9
+  store i64 %315, i64* %PC, align 8
+  store i32 %288, i32* %281, align 4
+  %316 = load i64, i64* %RBP, align 8
+  %317 = add i64 %316, -40
+  %318 = load i32, i32* %EAX, align 4
+  %319 = load i64, i64* %PC, align 8
+  %320 = add i64 %319, 3
+  store i64 %320, i64* %PC, align 8
+  %321 = inttoptr i64 %317 to i32*
+  store i32 %318, i32* %321, align 4
+  %322 = load i64, i64* %RBP, align 8
+  %323 = add i64 %322, -24
+  %324 = load i64, i64* %PC, align 8
+  %325 = add i64 %324, 3
+  store i64 %325, i64* %PC, align 8
+  %326 = inttoptr i64 %323 to i32*
+  %327 = load i32, i32* %326, align 4
+  %328 = zext i32 %327 to i64
+  store i64 %328, i64* %RAX, align 8, !tbaa !2428
+  %329 = add i64 %322, -16
+  %330 = add i64 %324, 6
+  store i64 %330, i64* %PC, align 8
+  %331 = inttoptr i64 %329 to i32*
+  %332 = load i32, i32* %331, align 4
+  %333 = sub i32 %327, %332
+  %334 = icmp ult i32 %327, %332
+  %335 = zext i1 %334 to i8
+  store i8 %335, i8* %18, align 1, !tbaa !2434
+  %336 = and i32 %333, 255
+  %337 = tail call i32 @llvm.ctpop.i32(i32 %336) #8
+  %338 = trunc i32 %337 to i8
+  %339 = and i8 %338, 1
+  %340 = xor i8 %339, 1
+  store i8 %340, i8* %25, align 1, !tbaa !2448
+  %341 = xor i32 %332, %327
+  %342 = xor i32 %341, %333
+  %343 = lshr i32 %342, 4
+  %344 = trunc i32 %343 to i8
+  %345 = and i8 %344, 1
+  store i8 %345, i8* %31, align 1, !tbaa !2452
+  %346 = icmp eq i32 %333, 0
+  %347 = zext i1 %346 to i8
+  store i8 %347, i8* %34, align 1, !tbaa !2449
+  %348 = lshr i32 %333, 31
+  %349 = trunc i32 %348 to i8
+  store i8 %349, i8* %37, align 1, !tbaa !2450
+  %350 = lshr i32 %327, 31
+  %351 = lshr i32 %332, 31
+  %352 = xor i32 %351, %350
+  %353 = xor i32 %348, %350
+  %354 = add nuw nsw i32 %353, %352
+  %355 = icmp eq i32 %354, 2
+  %356 = zext i1 %355 to i8
+  store i8 %356, i8* %43, align 1, !tbaa !2451
+  %357 = icmp ne i8 %349, 0
+  %358 = xor i1 %357, %355
+  %359 = or i1 %346, %358
+  %.v = select i1 %359, i64 -148, i64 12
+  %360 = add i64 %324, %.v
+  store i64 %360, i64* %PC, align 8, !tbaa !2428
+  br i1 %359, label %block_400682, label %block_400722
 }
 
 ; Function Attrs: noinline
@@ -1858,10 +1845,9 @@ block_4004e0:
   store i64 %11, i64* %RBP, align 8, !tbaa !2428
   store i64 %6, i64* %5, align 8, !tbaa !2428
   %12 = add i64 %9, -113
-  %13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  store i64 %12, i64* %13, align 8, !tbaa !2428
-  %14 = tail call %struct.Memory* @sub_400470_register_tm_clones(%struct.State* nonnull %0, i64 %12, %struct.Memory* %2)
-  ret %struct.Memory* %14
+  store i64 %12, i64* %PC, align 8, !tbaa !2428
+  %13 = tail call %struct.Memory* @sub_400470_register_tm_clones(%struct.State* nonnull %0, i64 %12, %struct.Memory* %2)
+  ret %struct.Memory* %13
 }
 
 ; Function Attrs: noinline
@@ -1952,63 +1938,62 @@ block_400620:
   store i8 %61, i8* %62, align 1, !tbaa !2451
   %63 = icmp ne i8 %53, 0
   %64 = xor i1 %63, %60
-  %65 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %.v = select i1 %64, i64 12, i64 23
-  %66 = add i64 %24, %.v
-  %67 = add i64 %66, 3
-  store i64 %67, i64* %PC, align 8
+  %65 = add i64 %24, %.v
+  %66 = add i64 %65, 3
+  store i64 %66, i64* %PC, align 8
   br i1 %64, label %block_400636, label %block_400641
 
 block_400636:                                     ; preds = %block_400620
-  %68 = load i32, i32* %26, align 4
-  %69 = zext i32 %68 to i64
-  store i64 %69, i64* %RAX, align 8, !tbaa !2428
-  %70 = add i64 %22, -4
-  %71 = add i64 %66, 6
-  store i64 %71, i64* %PC, align 8
-  %72 = inttoptr i64 %70 to i32*
-  store i32 %68, i32* %72, align 4
-  %73 = load i64, i64* %PC, align 8
-  %74 = add i64 %73, 11
-  store i64 %74, i64* %65, align 8, !tbaa !2428
+  %67 = load i32, i32* %26, align 4
+  %68 = zext i32 %67 to i64
+  store i64 %68, i64* %RAX, align 8, !tbaa !2428
+  %69 = add i64 %22, -4
+  %70 = add i64 %65, 6
+  store i64 %70, i64* %PC, align 8
+  %71 = inttoptr i64 %69 to i32*
+  store i32 %67, i32* %71, align 4
+  %72 = load i64, i64* %PC, align 8
+  %73 = add i64 %72, 11
+  store i64 %73, i64* %PC, align 8, !tbaa !2428
   br label %block_400647
 
 block_400647:                                     ; preds = %block_400641, %block_400636
-  %75 = phi i64 [ %.pre, %block_400641 ], [ %74, %block_400636 ]
-  %76 = load i64, i64* %RBP, align 8
-  %77 = add i64 %76, -4
-  %78 = add i64 %75, 3
-  store i64 %78, i64* %PC, align 8
-  %79 = inttoptr i64 %77 to i32*
-  %80 = load i32, i32* %79, align 4
-  %81 = zext i32 %80 to i64
-  store i64 %81, i64* %RAX, align 8, !tbaa !2428
-  %82 = add i64 %75, 4
-  store i64 %82, i64* %PC, align 8
-  %83 = load i64, i64* %7, align 8, !tbaa !2428
-  %84 = add i64 %83, 8
-  %85 = inttoptr i64 %83 to i64*
-  %86 = load i64, i64* %85, align 8
-  store i64 %86, i64* %RBP, align 8, !tbaa !2428
-  store i64 %84, i64* %7, align 8, !tbaa !2428
-  %87 = add i64 %75, 5
-  store i64 %87, i64* %PC, align 8
-  %88 = inttoptr i64 %84 to i64*
-  %89 = load i64, i64* %88, align 8
-  store i64 %89, i64* %65, align 8, !tbaa !2428
-  %90 = add i64 %83, 16
-  store i64 %90, i64* %7, align 8, !tbaa !2428
+  %74 = phi i64 [ %.pre, %block_400641 ], [ %73, %block_400636 ]
+  %75 = load i64, i64* %RBP, align 8
+  %76 = add i64 %75, -4
+  %77 = add i64 %74, 3
+  store i64 %77, i64* %PC, align 8
+  %78 = inttoptr i64 %76 to i32*
+  %79 = load i32, i32* %78, align 4
+  %80 = zext i32 %79 to i64
+  store i64 %80, i64* %RAX, align 8, !tbaa !2428
+  %81 = add i64 %74, 4
+  store i64 %81, i64* %PC, align 8
+  %82 = load i64, i64* %7, align 8, !tbaa !2428
+  %83 = add i64 %82, 8
+  %84 = inttoptr i64 %82 to i64*
+  %85 = load i64, i64* %84, align 8
+  store i64 %85, i64* %RBP, align 8, !tbaa !2428
+  store i64 %83, i64* %7, align 8, !tbaa !2428
+  %86 = add i64 %74, 5
+  store i64 %86, i64* %PC, align 8
+  %87 = inttoptr i64 %83 to i64*
+  %88 = load i64, i64* %87, align 8
+  store i64 %88, i64* %PC, align 8, !tbaa !2428
+  %89 = add i64 %82, 16
+  store i64 %89, i64* %7, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_400641:                                     ; preds = %block_400620
-  %91 = load i32, i32* %31, align 4
-  %92 = zext i32 %91 to i64
-  store i64 %92, i64* %RAX, align 8, !tbaa !2428
-  %93 = add i64 %22, -4
-  %94 = add i64 %66, 6
-  store i64 %94, i64* %PC, align 8
-  %95 = inttoptr i64 %93 to i32*
-  store i32 %91, i32* %95, align 4
+  %90 = load i32, i32* %31, align 4
+  %91 = zext i32 %90 to i64
+  store i64 %91, i64* %RAX, align 8, !tbaa !2428
+  %92 = add i64 %22, -4
+  %93 = add i64 %65, 6
+  store i64 %93, i64* %PC, align 8
+  %94 = inttoptr i64 %92 to i32*
+  store i32 %90, i32* %94, align 4
   %.pre = load i64, i64* %PC, align 8
   br label %block_400647
 }
@@ -2037,12 +2022,11 @@ block_4004f0:
   store i64 %6, i64* %5, align 8, !tbaa !2428
   %12 = add i64 %9, 17
   store i64 %12, i64* %PC, align 8
-  %13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %14 = inttoptr i64 %6 to i64*
-  %15 = load i64, i64* %14, align 8
-  store i64 %15, i64* %13, align 8, !tbaa !2428
-  %16 = add i64 %6, 8
-  store i64 %16, i64* %5, align 8, !tbaa !2428
+  %13 = inttoptr i64 %6 to i64*
+  %14 = load i64, i64* %13, align 8
+  store i64 %14, i64* %PC, align 8, !tbaa !2428
+  %15 = add i64 %6, 8
+  store i64 %15, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -2067,280 +2051,277 @@ block_400e60:
   %5 = load i64, i64* %R15, align 8
   %6 = add i64 %1, 2
   store i64 %6, i64* %PC, align 8
-  %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %8 = load i64, i64* %7, align 8, !tbaa !2428
-  %9 = add i64 %8, -8
-  %10 = inttoptr i64 %9 to i64*
-  store i64 %5, i64* %10, align 8
-  %11 = load i64, i64* %R14, align 8
-  %12 = load i64, i64* %PC, align 8
-  %13 = add i64 %12, 2
-  store i64 %13, i64* %PC, align 8
-  %14 = add i64 %8, -16
-  %15 = inttoptr i64 %14 to i64*
-  store i64 %11, i64* %15, align 8
-  %16 = load i64, i64* %RDX, align 8
-  %17 = load i64, i64* %PC, align 8
-  store i64 %16, i64* %R15, align 8, !tbaa !2428
-  %18 = load i64, i64* %R13, align 8
-  %19 = add i64 %17, 5
-  store i64 %19, i64* %PC, align 8
-  %20 = add i64 %8, -24
-  %21 = inttoptr i64 %20 to i64*
-  store i64 %18, i64* %21, align 8
-  %22 = load i64, i64* %R12, align 8
-  %23 = load i64, i64* %PC, align 8
-  %24 = add i64 %23, 2
-  store i64 %24, i64* %PC, align 8
-  %25 = add i64 %8, -32
-  %26 = inttoptr i64 %25 to i64*
-  store i64 %22, i64* %26, align 8
-  %27 = load i64, i64* %PC, align 8
+  %7 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %8 = add i64 %7, -8
+  %9 = inttoptr i64 %8 to i64*
+  store i64 %5, i64* %9, align 8
+  %10 = load i64, i64* %R14, align 8
+  %11 = load i64, i64* %PC, align 8
+  %12 = add i64 %11, 2
+  store i64 %12, i64* %PC, align 8
+  %13 = add i64 %7, -16
+  %14 = inttoptr i64 %13 to i64*
+  store i64 %10, i64* %14, align 8
+  %15 = load i64, i64* %RDX, align 8
+  %16 = load i64, i64* %PC, align 8
+  store i64 %15, i64* %R15, align 8, !tbaa !2428
+  %17 = load i64, i64* %R13, align 8
+  %18 = add i64 %16, 5
+  store i64 %18, i64* %PC, align 8
+  %19 = add i64 %7, -24
+  %20 = inttoptr i64 %19 to i64*
+  store i64 %17, i64* %20, align 8
+  %21 = load i64, i64* %R12, align 8
+  %22 = load i64, i64* %PC, align 8
+  %23 = add i64 %22, 2
+  store i64 %23, i64* %PC, align 8
+  %24 = add i64 %7, -32
+  %25 = inttoptr i64 %24 to i64*
+  store i64 %21, i64* %25, align 8
+  %26 = load i64, i64* %PC, align 8
   store i64 ptrtoint (%seg_601df0__init_array_type* @seg_601df0__init_array to i64), i64* %R12, align 8, !tbaa !2428
-  %28 = load i64, i64* %RBP, align 8
-  %29 = add i64 %27, 8
-  store i64 %29, i64* %PC, align 8
-  %30 = add i64 %8, -40
-  %31 = inttoptr i64 %30 to i64*
-  store i64 %28, i64* %31, align 8
-  %32 = load i64, i64* %PC, align 8
+  %27 = load i64, i64* %RBP, align 8
+  %28 = add i64 %26, 8
+  store i64 %28, i64* %PC, align 8
+  %29 = add i64 %7, -40
+  %30 = inttoptr i64 %29 to i64*
+  store i64 %27, i64* %30, align 8
+  %31 = load i64, i64* %PC, align 8
   store i64 add (i64 ptrtoint (%seg_601df0__init_array_type* @seg_601df0__init_array to i64), i64 8), i64* %RBP, align 8, !tbaa !2428
-  %33 = load i64, i64* %RBX, align 8
-  %34 = add i64 %32, 8
-  store i64 %34, i64* %PC, align 8
-  %35 = add i64 %8, -48
-  %36 = inttoptr i64 %35 to i64*
-  store i64 %33, i64* %36, align 8
-  %37 = getelementptr inbounds %union.anon, %union.anon* %4, i64 0, i32 0
-  %38 = load i32, i32* %EDI, align 4
-  %39 = zext i32 %38 to i64
-  %40 = load i64, i64* %PC, align 8
-  store i64 %39, i64* %37, align 8, !tbaa !2428
-  %41 = load i64, i64* %RSI, align 8
-  store i64 %41, i64* %R14, align 8, !tbaa !2428
-  %42 = load i64, i64* %RBP, align 8
-  %43 = load i64, i64* %R12, align 8
-  %44 = sub i64 %42, %43
-  %45 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  %46 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  %47 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  %48 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  %49 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  %50 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  %51 = lshr i64 %44, 2
-  %52 = trunc i64 %51 to i8
-  %53 = and i8 %52, 1
-  %54 = ashr i64 %44, 3
-  store i64 %54, i64* %RBP, align 8, !tbaa !2428
-  store i8 %53, i8* %45, align 1, !tbaa !2453
-  %55 = trunc i64 %54 to i32
-  %56 = and i32 %55, 255
-  %57 = tail call i32 @llvm.ctpop.i32(i32 %56) #8
-  %58 = trunc i32 %57 to i8
-  %59 = and i8 %58, 1
-  %60 = xor i8 %59, 1
+  %32 = load i64, i64* %RBX, align 8
+  %33 = add i64 %31, 8
+  store i64 %33, i64* %PC, align 8
+  %34 = add i64 %7, -48
+  %35 = inttoptr i64 %34 to i64*
+  store i64 %32, i64* %35, align 8
+  %36 = load i32, i32* %EDI, align 4
+  %37 = zext i32 %36 to i64
+  %38 = load i64, i64* %PC, align 8
+  store i64 %37, i64* %R13, align 8, !tbaa !2428
+  %39 = load i64, i64* %RSI, align 8
+  store i64 %39, i64* %R14, align 8, !tbaa !2428
+  %40 = load i64, i64* %RBP, align 8
+  %41 = load i64, i64* %R12, align 8
+  %42 = sub i64 %40, %41
+  %43 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  %44 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  %45 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  %46 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  %47 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  %48 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  %49 = lshr i64 %42, 2
+  %50 = trunc i64 %49 to i8
+  %51 = and i8 %50, 1
+  %52 = ashr i64 %42, 3
+  store i64 %52, i64* %RBP, align 8, !tbaa !2428
+  store i8 %51, i8* %43, align 1, !tbaa !2453
+  %53 = trunc i64 %52 to i32
+  %54 = and i32 %53, 255
+  %55 = tail call i32 @llvm.ctpop.i32(i32 %54) #8
+  %56 = trunc i32 %55 to i8
+  %57 = and i8 %56, 1
+  %58 = xor i8 %57, 1
+  store i8 %58, i8* %44, align 1, !tbaa !2453
+  store i8 0, i8* %45, align 1, !tbaa !2453
+  %59 = icmp eq i64 %52, 0
+  %60 = zext i1 %59 to i8
   store i8 %60, i8* %46, align 1, !tbaa !2453
-  store i8 0, i8* %47, align 1, !tbaa !2453
-  %61 = icmp eq i64 %54, 0
-  %62 = zext i1 %61 to i8
-  store i8 %62, i8* %48, align 1, !tbaa !2453
-  %63 = lshr i64 %54, 63
-  %64 = trunc i64 %63 to i8
-  store i8 %64, i8* %49, align 1, !tbaa !2453
-  store i8 0, i8* %50, align 1, !tbaa !2453
-  %65 = add i64 %40, -2739
-  %66 = add i64 %40, 22
-  %67 = add i64 %8, -64
-  %68 = inttoptr i64 %67 to i64*
-  store i64 %66, i64* %68, align 8
-  store i64 %67, i64* %7, align 8, !tbaa !2428
-  %69 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  store i64 %65, i64* %69, align 8, !tbaa !2428
-  %70 = tail call %struct.Memory* @sub_4003c8__init_proc_renamed_(%struct.State* nonnull %0, i64 %65, %struct.Memory* %2)
-  %71 = load i64, i64* %RBP, align 8
-  %72 = load i64, i64* %PC, align 8
-  store i8 0, i8* %45, align 1, !tbaa !2434
-  %73 = trunc i64 %71 to i32
-  %74 = and i32 %73, 255
-  %75 = tail call i32 @llvm.ctpop.i32(i32 %74) #8
-  %76 = trunc i32 %75 to i8
-  %77 = and i8 %76, 1
-  %78 = xor i8 %77, 1
-  store i8 %78, i8* %46, align 1, !tbaa !2448
-  %79 = icmp eq i64 %71, 0
-  %80 = zext i1 %79 to i8
-  store i8 %80, i8* %48, align 1, !tbaa !2449
-  %81 = lshr i64 %71, 63
-  %82 = trunc i64 %81 to i8
-  store i8 %82, i8* %49, align 1, !tbaa !2450
-  store i8 0, i8* %50, align 1, !tbaa !2451
-  store i8 0, i8* %47, align 1, !tbaa !2452
-  %.v = select i1 %79, i64 37, i64 5
-  %83 = add i64 %72, %.v
-  store i64 %83, i64* %69, align 8, !tbaa !2428
-  br i1 %79, label %block_400eb6, label %block_400e96
+  %61 = lshr i64 %52, 63
+  %62 = trunc i64 %61 to i8
+  store i8 %62, i8* %47, align 1, !tbaa !2453
+  store i8 0, i8* %48, align 1, !tbaa !2453
+  %63 = add i64 %38, -2739
+  %64 = add i64 %38, 22
+  %65 = add i64 %7, -64
+  %66 = inttoptr i64 %65 to i64*
+  store i64 %64, i64* %66, align 8
+  store i64 %65, i64* %RSP, align 8, !tbaa !2428
+  store i64 %63, i64* %PC, align 8, !tbaa !2428
+  %67 = tail call %struct.Memory* @sub_4003c8__init_proc_renamed_(%struct.State* nonnull %0, i64 %63, %struct.Memory* %2)
+  %68 = load i64, i64* %RBP, align 8
+  %69 = load i64, i64* %PC, align 8
+  store i8 0, i8* %43, align 1, !tbaa !2434
+  %70 = trunc i64 %68 to i32
+  %71 = and i32 %70, 255
+  %72 = tail call i32 @llvm.ctpop.i32(i32 %71) #8
+  %73 = trunc i32 %72 to i8
+  %74 = and i8 %73, 1
+  %75 = xor i8 %74, 1
+  store i8 %75, i8* %44, align 1, !tbaa !2448
+  %76 = icmp eq i64 %68, 0
+  %77 = zext i1 %76 to i8
+  store i8 %77, i8* %46, align 1, !tbaa !2449
+  %78 = lshr i64 %68, 63
+  %79 = trunc i64 %78 to i8
+  store i8 %79, i8* %47, align 1, !tbaa !2450
+  store i8 0, i8* %48, align 1, !tbaa !2451
+  store i8 0, i8* %45, align 1, !tbaa !2452
+  %.v = select i1 %76, i64 37, i64 5
+  %80 = add i64 %69, %.v
+  store i64 %80, i64* %PC, align 8, !tbaa !2428
+  br i1 %76, label %block_400eb6, label %block_400e96
 
 block_400eb6:                                     ; preds = %block_400ea0, %block_400e60
-  %84 = phi i64 [ %83, %block_400e60 ], [ %182, %block_400ea0 ]
-  %MEMORY.0 = phi %struct.Memory* [ %70, %block_400e60 ], [ %152, %block_400ea0 ]
-  %85 = load i64, i64* %RSP, align 8
-  %86 = add i64 %85, 8
-  store i64 %86, i64* %RSP, align 8, !tbaa !2428
-  %87 = icmp ugt i64 %85, -9
-  %88 = zext i1 %87 to i8
-  store i8 %88, i8* %45, align 1, !tbaa !2434
-  %89 = trunc i64 %86 to i32
-  %90 = and i32 %89, 255
-  %91 = tail call i32 @llvm.ctpop.i32(i32 %90) #8
-  %92 = trunc i32 %91 to i8
-  %93 = and i8 %92, 1
-  %94 = xor i8 %93, 1
-  store i8 %94, i8* %46, align 1, !tbaa !2448
-  %95 = xor i64 %85, %86
-  %96 = lshr i64 %95, 4
-  %97 = trunc i64 %96 to i8
-  %98 = and i8 %97, 1
-  store i8 %98, i8* %47, align 1, !tbaa !2452
-  %99 = icmp eq i64 %86, 0
-  %100 = zext i1 %99 to i8
-  store i8 %100, i8* %48, align 1, !tbaa !2449
-  %101 = lshr i64 %86, 63
-  %102 = trunc i64 %101 to i8
-  store i8 %102, i8* %49, align 1, !tbaa !2450
-  %103 = lshr i64 %85, 63
-  %104 = xor i64 %101, %103
-  %105 = add nuw nsw i64 %104, %101
-  %106 = icmp eq i64 %105, 2
-  %107 = zext i1 %106 to i8
-  store i8 %107, i8* %50, align 1, !tbaa !2451
-  %108 = add i64 %84, 5
-  store i64 %108, i64* %PC, align 8
-  %109 = add i64 %85, 16
-  %110 = inttoptr i64 %86 to i64*
-  %111 = load i64, i64* %110, align 8
-  store i64 %111, i64* %RBX, align 8, !tbaa !2428
-  store i64 %109, i64* %7, align 8, !tbaa !2428
-  %112 = add i64 %84, 6
-  store i64 %112, i64* %PC, align 8
-  %113 = add i64 %85, 24
-  %114 = inttoptr i64 %109 to i64*
-  %115 = load i64, i64* %114, align 8
-  store i64 %115, i64* %RBP, align 8, !tbaa !2428
-  store i64 %113, i64* %7, align 8, !tbaa !2428
-  %116 = add i64 %84, 8
-  store i64 %116, i64* %PC, align 8
-  %117 = add i64 %85, 32
-  %118 = inttoptr i64 %113 to i64*
-  %119 = load i64, i64* %118, align 8
-  store i64 %119, i64* %R12, align 8, !tbaa !2428
-  store i64 %117, i64* %7, align 8, !tbaa !2428
-  %120 = add i64 %84, 10
-  store i64 %120, i64* %PC, align 8
-  %121 = add i64 %85, 40
-  %122 = inttoptr i64 %117 to i64*
-  %123 = load i64, i64* %122, align 8
-  store i64 %123, i64* %R13, align 8, !tbaa !2428
-  store i64 %121, i64* %7, align 8, !tbaa !2428
-  %124 = add i64 %84, 12
-  store i64 %124, i64* %PC, align 8
-  %125 = add i64 %85, 48
-  %126 = inttoptr i64 %121 to i64*
-  %127 = load i64, i64* %126, align 8
-  store i64 %127, i64* %R14, align 8, !tbaa !2428
-  store i64 %125, i64* %7, align 8, !tbaa !2428
-  %128 = add i64 %84, 14
-  store i64 %128, i64* %PC, align 8
-  %129 = add i64 %85, 56
-  %130 = inttoptr i64 %125 to i64*
+  %81 = phi i64 [ %80, %block_400e60 ], [ %179, %block_400ea0 ]
+  %MEMORY.0 = phi %struct.Memory* [ %67, %block_400e60 ], [ %149, %block_400ea0 ]
+  %82 = load i64, i64* %RSP, align 8
+  %83 = add i64 %82, 8
+  store i64 %83, i64* %RSP, align 8, !tbaa !2428
+  %84 = icmp ugt i64 %82, -9
+  %85 = zext i1 %84 to i8
+  store i8 %85, i8* %43, align 1, !tbaa !2434
+  %86 = trunc i64 %83 to i32
+  %87 = and i32 %86, 255
+  %88 = tail call i32 @llvm.ctpop.i32(i32 %87) #8
+  %89 = trunc i32 %88 to i8
+  %90 = and i8 %89, 1
+  %91 = xor i8 %90, 1
+  store i8 %91, i8* %44, align 1, !tbaa !2448
+  %92 = xor i64 %82, %83
+  %93 = lshr i64 %92, 4
+  %94 = trunc i64 %93 to i8
+  %95 = and i8 %94, 1
+  store i8 %95, i8* %45, align 1, !tbaa !2452
+  %96 = icmp eq i64 %83, 0
+  %97 = zext i1 %96 to i8
+  store i8 %97, i8* %46, align 1, !tbaa !2449
+  %98 = lshr i64 %83, 63
+  %99 = trunc i64 %98 to i8
+  store i8 %99, i8* %47, align 1, !tbaa !2450
+  %100 = lshr i64 %82, 63
+  %101 = xor i64 %98, %100
+  %102 = add nuw nsw i64 %101, %98
+  %103 = icmp eq i64 %102, 2
+  %104 = zext i1 %103 to i8
+  store i8 %104, i8* %48, align 1, !tbaa !2451
+  %105 = add i64 %81, 5
+  store i64 %105, i64* %PC, align 8
+  %106 = add i64 %82, 16
+  %107 = inttoptr i64 %83 to i64*
+  %108 = load i64, i64* %107, align 8
+  store i64 %108, i64* %RBX, align 8, !tbaa !2428
+  store i64 %106, i64* %RSP, align 8, !tbaa !2428
+  %109 = add i64 %81, 6
+  store i64 %109, i64* %PC, align 8
+  %110 = add i64 %82, 24
+  %111 = inttoptr i64 %106 to i64*
+  %112 = load i64, i64* %111, align 8
+  store i64 %112, i64* %RBP, align 8, !tbaa !2428
+  store i64 %110, i64* %RSP, align 8, !tbaa !2428
+  %113 = add i64 %81, 8
+  store i64 %113, i64* %PC, align 8
+  %114 = add i64 %82, 32
+  %115 = inttoptr i64 %110 to i64*
+  %116 = load i64, i64* %115, align 8
+  store i64 %116, i64* %R12, align 8, !tbaa !2428
+  store i64 %114, i64* %RSP, align 8, !tbaa !2428
+  %117 = add i64 %81, 10
+  store i64 %117, i64* %PC, align 8
+  %118 = add i64 %82, 40
+  %119 = inttoptr i64 %114 to i64*
+  %120 = load i64, i64* %119, align 8
+  store i64 %120, i64* %R13, align 8, !tbaa !2428
+  store i64 %118, i64* %RSP, align 8, !tbaa !2428
+  %121 = add i64 %81, 12
+  store i64 %121, i64* %PC, align 8
+  %122 = add i64 %82, 48
+  %123 = inttoptr i64 %118 to i64*
+  %124 = load i64, i64* %123, align 8
+  store i64 %124, i64* %R14, align 8, !tbaa !2428
+  store i64 %122, i64* %RSP, align 8, !tbaa !2428
+  %125 = add i64 %81, 14
+  store i64 %125, i64* %PC, align 8
+  %126 = add i64 %82, 56
+  %127 = inttoptr i64 %122 to i64*
+  %128 = load i64, i64* %127, align 8
+  store i64 %128, i64* %R15, align 8, !tbaa !2428
+  store i64 %126, i64* %RSP, align 8, !tbaa !2428
+  %129 = add i64 %81, 15
+  store i64 %129, i64* %PC, align 8
+  %130 = inttoptr i64 %126 to i64*
   %131 = load i64, i64* %130, align 8
-  store i64 %131, i64* %R15, align 8, !tbaa !2428
-  store i64 %129, i64* %7, align 8, !tbaa !2428
-  %132 = add i64 %84, 15
-  store i64 %132, i64* %PC, align 8
-  %133 = inttoptr i64 %129 to i64*
-  %134 = load i64, i64* %133, align 8
-  store i64 %134, i64* %69, align 8, !tbaa !2428
-  %135 = add i64 %85, 64
-  store i64 %135, i64* %7, align 8, !tbaa !2428
+  store i64 %131, i64* %PC, align 8, !tbaa !2428
+  %132 = add i64 %82, 64
+  store i64 %132, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 
 block_400e96:                                     ; preds = %block_400e60
   store i64 0, i64* %RBX, align 8, !tbaa !2428
-  store i8 0, i8* %45, align 1, !tbaa !2434
-  store i8 1, i8* %46, align 1, !tbaa !2448
-  store i8 1, i8* %48, align 1, !tbaa !2449
-  store i8 0, i8* %49, align 1, !tbaa !2450
-  store i8 0, i8* %50, align 1, !tbaa !2451
-  store i8 0, i8* %47, align 1, !tbaa !2452
-  %136 = add i64 %83, 10
-  store i64 %136, i64* %PC, align 8
+  store i8 0, i8* %43, align 1, !tbaa !2434
+  store i8 1, i8* %44, align 1, !tbaa !2448
+  store i8 1, i8* %46, align 1, !tbaa !2449
+  store i8 0, i8* %47, align 1, !tbaa !2450
+  store i8 0, i8* %48, align 1, !tbaa !2451
+  store i8 0, i8* %45, align 1, !tbaa !2452
+  %133 = add i64 %80, 10
+  store i64 %133, i64* %PC, align 8
   br label %block_400ea0
 
 block_400ea0:                                     ; preds = %block_400ea0, %block_400e96
-  %137 = phi i64 [ 0, %block_400e96 ], [ %155, %block_400ea0 ]
-  %138 = phi i64 [ %136, %block_400e96 ], [ %182, %block_400ea0 ]
-  %MEMORY.1 = phi %struct.Memory* [ %70, %block_400e96 ], [ %152, %block_400ea0 ]
-  %139 = load i64, i64* %R15, align 8
-  store i64 %139, i64* %RDX, align 8, !tbaa !2428
-  %140 = load i64, i64* %R14, align 8
-  store i64 %140, i64* %RSI, align 8, !tbaa !2428
-  %141 = load i32, i32* %R13D, align 4
-  %142 = zext i32 %141 to i64
-  store i64 %142, i64* %RDI, align 8, !tbaa !2428
-  %143 = load i64, i64* %R12, align 8
-  %144 = shl i64 %137, 3
-  %145 = add i64 %144, %143
-  %146 = add i64 %138, 13
-  store i64 %146, i64* %PC, align 8
-  %147 = load i64, i64* %7, align 8, !tbaa !2428
-  %148 = add i64 %147, -8
-  %149 = inttoptr i64 %148 to i64*
-  store i64 %146, i64* %149, align 8
-  store i64 %148, i64* %7, align 8, !tbaa !2428
-  %150 = inttoptr i64 %145 to i64*
-  %151 = load i64, i64* %150, align 8
-  store i64 %151, i64* %69, align 8, !tbaa !2428
-  %152 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 %151, %struct.Memory* %MEMORY.1)
-  %153 = load i64, i64* %RBX, align 8
-  %154 = load i64, i64* %PC, align 8
-  %155 = add i64 %153, 1
-  store i64 %155, i64* %RBX, align 8, !tbaa !2428
-  %156 = lshr i64 %155, 63
-  %157 = load i64, i64* %RBP, align 8
-  %158 = sub i64 %157, %155
-  %159 = icmp ult i64 %157, %155
-  %160 = zext i1 %159 to i8
-  store i8 %160, i8* %45, align 1, !tbaa !2434
-  %161 = trunc i64 %158 to i32
-  %162 = and i32 %161, 255
-  %163 = tail call i32 @llvm.ctpop.i32(i32 %162) #8
-  %164 = trunc i32 %163 to i8
-  %165 = and i8 %164, 1
-  %166 = xor i8 %165, 1
-  store i8 %166, i8* %46, align 1, !tbaa !2448
-  %167 = xor i64 %155, %157
-  %168 = xor i64 %167, %158
-  %169 = lshr i64 %168, 4
-  %170 = trunc i64 %169 to i8
-  %171 = and i8 %170, 1
-  store i8 %171, i8* %47, align 1, !tbaa !2452
-  %172 = icmp eq i64 %158, 0
-  %173 = zext i1 %172 to i8
-  store i8 %173, i8* %48, align 1, !tbaa !2449
-  %174 = lshr i64 %158, 63
-  %175 = trunc i64 %174 to i8
-  store i8 %175, i8* %49, align 1, !tbaa !2450
-  %176 = lshr i64 %157, 63
-  %177 = xor i64 %156, %176
-  %178 = xor i64 %174, %176
-  %179 = add nuw nsw i64 %178, %177
-  %180 = icmp eq i64 %179, 2
-  %181 = zext i1 %180 to i8
-  store i8 %181, i8* %50, align 1, !tbaa !2451
-  %.v1 = select i1 %172, i64 9, i64 -13
-  %182 = add i64 %154, %.v1
-  store i64 %182, i64* %69, align 8, !tbaa !2428
-  br i1 %172, label %block_400eb6, label %block_400ea0
+  %134 = phi i64 [ 0, %block_400e96 ], [ %152, %block_400ea0 ]
+  %135 = phi i64 [ %133, %block_400e96 ], [ %179, %block_400ea0 ]
+  %MEMORY.1 = phi %struct.Memory* [ %67, %block_400e96 ], [ %149, %block_400ea0 ]
+  %136 = load i64, i64* %R15, align 8
+  store i64 %136, i64* %RDX, align 8, !tbaa !2428
+  %137 = load i64, i64* %R14, align 8
+  store i64 %137, i64* %RSI, align 8, !tbaa !2428
+  %138 = load i32, i32* %R13D, align 4
+  %139 = zext i32 %138 to i64
+  store i64 %139, i64* %RDI, align 8, !tbaa !2428
+  %140 = load i64, i64* %R12, align 8
+  %141 = shl i64 %134, 3
+  %142 = add i64 %141, %140
+  %143 = add i64 %135, 13
+  store i64 %143, i64* %PC, align 8
+  %144 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %145 = add i64 %144, -8
+  %146 = inttoptr i64 %145 to i64*
+  store i64 %143, i64* %146, align 8
+  store i64 %145, i64* %RSP, align 8, !tbaa !2428
+  %147 = inttoptr i64 %142 to i64*
+  %148 = load i64, i64* %147, align 8
+  store i64 %148, i64* %PC, align 8, !tbaa !2428
+  %149 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 %148, %struct.Memory* %MEMORY.1)
+  %150 = load i64, i64* %RBX, align 8
+  %151 = load i64, i64* %PC, align 8
+  %152 = add i64 %150, 1
+  store i64 %152, i64* %RBX, align 8, !tbaa !2428
+  %153 = lshr i64 %152, 63
+  %154 = load i64, i64* %RBP, align 8
+  %155 = sub i64 %154, %152
+  %156 = icmp ult i64 %154, %152
+  %157 = zext i1 %156 to i8
+  store i8 %157, i8* %43, align 1, !tbaa !2434
+  %158 = trunc i64 %155 to i32
+  %159 = and i32 %158, 255
+  %160 = tail call i32 @llvm.ctpop.i32(i32 %159) #8
+  %161 = trunc i32 %160 to i8
+  %162 = and i8 %161, 1
+  %163 = xor i8 %162, 1
+  store i8 %163, i8* %44, align 1, !tbaa !2448
+  %164 = xor i64 %152, %154
+  %165 = xor i64 %164, %155
+  %166 = lshr i64 %165, 4
+  %167 = trunc i64 %166 to i8
+  %168 = and i8 %167, 1
+  store i8 %168, i8* %45, align 1, !tbaa !2452
+  %169 = icmp eq i64 %155, 0
+  %170 = zext i1 %169 to i8
+  store i8 %170, i8* %46, align 1, !tbaa !2449
+  %171 = lshr i64 %155, 63
+  %172 = trunc i64 %171 to i8
+  store i8 %172, i8* %47, align 1, !tbaa !2450
+  %173 = lshr i64 %154, 63
+  %174 = xor i64 %153, %173
+  %175 = xor i64 %171, %173
+  %176 = add nuw nsw i64 %175, %174
+  %177 = icmp eq i64 %176, 2
+  %178 = zext i1 %177 to i8
+  store i8 %178, i8* %48, align 1, !tbaa !2451
+  %.v1 = select i1 %169, i64 9, i64 -13
+  %179 = add i64 %151, %.v1
+  store i64 %179, i64* %PC, align 8, !tbaa !2428
+  br i1 %169, label %block_400eb6, label %block_400ea0
 }
 
 ; Function Attrs: noinline
@@ -2442,375 +2423,364 @@ block_400550:
   %70 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
   %71 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
   %72 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  %73 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %74 = bitcast [32 x %union.VectorReg]* %3 to <2 x float>*
-  %75 = bitcast i64* %53 to <2 x i32>*
-  %76 = bitcast i8* %51 to i32*
-  %77 = bitcast i64* %53 to i32*
-  %78 = bitcast i8* %55 to i32*
-  %79 = bitcast %union.VectorReg* %5 to i8*
-  %80 = bitcast %union.VectorReg* %5 to <2 x i32>*
-  %81 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
-  %82 = bitcast i64* %81 to <2 x i32>*
-  %83 = bitcast %union.VectorReg* %5 to float*
-  %84 = getelementptr inbounds i8, i8* %79, i64 4
-  %85 = bitcast i8* %84 to i32*
-  %86 = bitcast i64* %81 to i32*
-  %87 = getelementptr inbounds i8, i8* %79, i64 12
-  %88 = bitcast i8* %87 to i32*
-  %89 = bitcast %union.VectorReg* %4 to <2 x float>*
-  %90 = bitcast i64* %19 to <2 x i32>*
-  %91 = bitcast %union.VectorReg* %5 to <2 x float>*
-  %92 = bitcast i8* %17 to i32*
-  %93 = bitcast i64* %19 to i32*
-  %94 = bitcast i8* %21 to i32*
+  %73 = bitcast i64* %53 to <2 x i32>*
+  %74 = bitcast i8* %51 to i32*
+  %75 = bitcast i64* %53 to i32*
+  %76 = bitcast i8* %55 to i32*
+  %77 = bitcast %union.VectorReg* %5 to i8*
+  %78 = bitcast %union.VectorReg* %5 to <2 x i32>*
+  %79 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
+  %80 = bitcast i64* %79 to <2 x i32>*
+  %81 = bitcast %union.VectorReg* %5 to float*
+  %82 = getelementptr inbounds i8, i8* %77, i64 4
+  %83 = bitcast i8* %82 to i32*
+  %84 = bitcast i64* %79 to i32*
+  %85 = getelementptr inbounds i8, i8* %77, i64 12
+  %86 = bitcast i8* %85 to i32*
+  %87 = bitcast i64* %19 to <2 x i32>*
+  %88 = bitcast %union.VectorReg* %5 to <2 x float>*
+  %89 = bitcast i8* %17 to i32*
+  %90 = bitcast i64* %19 to i32*
+  %91 = bitcast i8* %21 to i32*
   %.pre = load i64, i64* %PC, align 8
   br label %block_40057e
 
 block_40057e:                                     ; preds = %block_400605, %block_400550
-  %95 = phi i64 [ %.pre, %block_400550 ], [ %295, %block_400605 ]
-  %96 = load i64, i64* %RBP, align 8
-  %97 = add i64 %96, -8
-  %98 = add i64 %95, 4
-  store i64 %98, i64* %PC, align 8
-  %99 = inttoptr i64 %97 to i32*
-  %100 = load i32, i32* %99, align 4
-  %101 = add i32 %100, -10
-  %102 = icmp ult i32 %100, 10
-  %103 = zext i1 %102 to i8
-  store i8 %103, i8* %67, align 1, !tbaa !2434
-  %104 = and i32 %101, 255
-  %105 = tail call i32 @llvm.ctpop.i32(i32 %104) #8
-  %106 = trunc i32 %105 to i8
-  %107 = and i8 %106, 1
-  %108 = xor i8 %107, 1
-  store i8 %108, i8* %68, align 1, !tbaa !2448
-  %109 = xor i32 %100, %101
-  %110 = lshr i32 %109, 4
-  %111 = trunc i32 %110 to i8
-  %112 = and i8 %111, 1
-  store i8 %112, i8* %69, align 1, !tbaa !2452
-  %113 = icmp eq i32 %101, 0
-  %114 = zext i1 %113 to i8
-  store i8 %114, i8* %70, align 1, !tbaa !2449
-  %115 = lshr i32 %101, 31
-  %116 = trunc i32 %115 to i8
-  store i8 %116, i8* %71, align 1, !tbaa !2450
-  %117 = lshr i32 %100, 31
-  %118 = xor i32 %115, %117
-  %119 = add nuw nsw i32 %118, %117
-  %120 = icmp eq i32 %119, 2
-  %121 = zext i1 %120 to i8
-  store i8 %121, i8* %72, align 1, !tbaa !2451
-  %122 = icmp ne i8 %116, 0
-  %123 = xor i1 %122, %120
-  %.demorgan = or i1 %113, %123
+  %92 = phi i64 [ %.pre, %block_400550 ], [ %284, %block_400605 ]
+  %93 = load i64, i64* %RBP, align 8
+  %94 = add i64 %93, -8
+  %95 = add i64 %92, 4
+  store i64 %95, i64* %PC, align 8
+  %96 = inttoptr i64 %94 to i32*
+  %97 = load i32, i32* %96, align 4
+  %98 = add i32 %97, -10
+  %99 = icmp ult i32 %97, 10
+  %100 = zext i1 %99 to i8
+  store i8 %100, i8* %67, align 1, !tbaa !2434
+  %101 = and i32 %98, 255
+  %102 = tail call i32 @llvm.ctpop.i32(i32 %101) #8
+  %103 = trunc i32 %102 to i8
+  %104 = and i8 %103, 1
+  %105 = xor i8 %104, 1
+  store i8 %105, i8* %68, align 1, !tbaa !2448
+  %106 = xor i32 %97, %98
+  %107 = lshr i32 %106, 4
+  %108 = trunc i32 %107 to i8
+  %109 = and i8 %108, 1
+  store i8 %109, i8* %69, align 1, !tbaa !2452
+  %110 = icmp eq i32 %98, 0
+  %111 = zext i1 %110 to i8
+  store i8 %111, i8* %70, align 1, !tbaa !2449
+  %112 = lshr i32 %98, 31
+  %113 = trunc i32 %112 to i8
+  store i8 %113, i8* %71, align 1, !tbaa !2450
+  %114 = lshr i32 %97, 31
+  %115 = xor i32 %112, %114
+  %116 = add nuw nsw i32 %115, %114
+  %117 = icmp eq i32 %116, 2
+  %118 = zext i1 %117 to i8
+  store i8 %118, i8* %72, align 1, !tbaa !2451
+  %119 = icmp ne i8 %113, 0
+  %120 = xor i1 %119, %117
+  %.demorgan = or i1 %110, %120
   %.v = select i1 %.demorgan, i64 10, i64 154
-  %124 = add i64 %95, %.v
-  store i64 %124, i64* %73, align 8, !tbaa !2428
+  %121 = add i64 %92, %.v
+  store i64 %121, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan, label %block_400588, label %block_400618
 
 block_400618:                                     ; preds = %block_40057e
-  %125 = add i64 %96, -16
-  %126 = add i64 %124, 5
-  store i64 %126, i64* %PC, align 8
-  %127 = inttoptr i64 %125 to i32*
-  %128 = load i32, i32* %127, align 4
-  %129 = bitcast [32 x %union.VectorReg]* %3 to i32*
-  store i32 %128, i32* %129, align 1, !tbaa !2432
+  %122 = add i64 %93, -16
+  %123 = add i64 %121, 5
+  store i64 %123, i64* %PC, align 8
+  %124 = inttoptr i64 %122 to i32*
+  %125 = load i32, i32* %124, align 4
+  store i32 %125, i32* %50, align 1, !tbaa !2432
   store float 0.000000e+00, float* %52, align 1, !tbaa !2432
   store float 0.000000e+00, float* %54, align 1, !tbaa !2432
   store float 0.000000e+00, float* %56, align 1, !tbaa !2432
-  %130 = add i64 %124, 6
-  store i64 %130, i64* %PC, align 8
-  %131 = load i64, i64* %8, align 8, !tbaa !2428
-  %132 = add i64 %131, 8
-  %133 = inttoptr i64 %131 to i64*
-  %134 = load i64, i64* %133, align 8
-  store i64 %134, i64* %RBP, align 8, !tbaa !2428
-  store i64 %132, i64* %8, align 8, !tbaa !2428
-  %135 = add i64 %124, 7
-  store i64 %135, i64* %PC, align 8
-  %136 = inttoptr i64 %132 to i64*
-  %137 = load i64, i64* %136, align 8
-  store i64 %137, i64* %73, align 8, !tbaa !2428
-  %138 = add i64 %131, 16
-  store i64 %138, i64* %8, align 8, !tbaa !2428
+  %126 = add i64 %121, 6
+  store i64 %126, i64* %PC, align 8
+  %127 = load i64, i64* %8, align 8, !tbaa !2428
+  %128 = add i64 %127, 8
+  %129 = inttoptr i64 %127 to i64*
+  %130 = load i64, i64* %129, align 8
+  store i64 %130, i64* %RBP, align 8, !tbaa !2428
+  store i64 %128, i64* %8, align 8, !tbaa !2428
+  %131 = add i64 %121, 7
+  store i64 %131, i64* %PC, align 8
+  %132 = inttoptr i64 %128 to i64*
+  %133 = load i64, i64* %132, align 8
+  store i64 %133, i64* %PC, align 8, !tbaa !2428
+  %134 = add i64 %127, 16
+  store i64 %134, i64* %8, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_4005b0:                                     ; preds = %block_400588
-  %139 = add i64 %262, 3
-  store i64 %139, i64* %PC, align 8
-  %140 = load i32, i32* %251, align 4
-  %141 = and i32 %140, 3
-  %142 = zext i32 %141 to i64
-  store i64 %142, i64* %RAX, align 8, !tbaa !2428
-  %143 = and i32 %140, 3
-  %144 = tail call i32 @llvm.ctpop.i32(i32 %143) #8
-  %145 = trunc i32 %144 to i8
-  %146 = and i8 %145, 1
-  %147 = xor i8 %146, 1
-  %148 = icmp eq i32 %141, 0
-  %149 = zext i1 %148 to i8
+  %135 = add i64 %252, 3
+  store i64 %135, i64* %PC, align 8
+  %136 = load i32, i32* %242, align 4
+  %137 = and i32 %136, 3
+  %138 = zext i32 %137 to i64
+  store i64 %138, i64* %RAX, align 8, !tbaa !2428
+  %139 = tail call i32 @llvm.ctpop.i32(i32 %137) #8
+  %140 = trunc i32 %139 to i8
+  %141 = and i8 %140, 1
+  %142 = xor i8 %141, 1
+  %143 = icmp eq i32 %137, 0
+  %144 = zext i1 %143 to i8
   store i8 0, i8* %67, align 1, !tbaa !2434
-  store i8 %147, i8* %68, align 1, !tbaa !2448
+  store i8 %142, i8* %68, align 1, !tbaa !2448
   store i8 0, i8* %69, align 1, !tbaa !2452
-  store i8 %149, i8* %70, align 1, !tbaa !2449
+  store i8 %144, i8* %70, align 1, !tbaa !2449
   store i8 0, i8* %71, align 1, !tbaa !2450
   store i8 0, i8* %72, align 1, !tbaa !2451
-  %.v4 = select i1 %148, i64 15, i64 50
-  %150 = add i64 %262, %.v4
-  %151 = add i64 %247, -16
-  %152 = add i64 %150, 5
-  store i64 %152, i64* %PC, align 8
-  %153 = inttoptr i64 %151 to float*
-  %154 = inttoptr i64 %151 to i32*
-  %155 = load i32, i32* %154, align 4
-  %156 = bitcast [32 x %union.VectorReg]* %3 to i32*
-  store i32 %155, i32* %156, align 1, !tbaa !2432
+  %.v4 = select i1 %143, i64 15, i64 50
+  %145 = add i64 %252, %.v4
+  %146 = add i64 %238, -16
+  %147 = add i64 %145, 5
+  store i64 %147, i64* %PC, align 8
+  %148 = inttoptr i64 %146 to float*
+  %149 = inttoptr i64 %146 to i32*
+  %150 = load i32, i32* %149, align 4
+  store i32 %150, i32* %50, align 1, !tbaa !2432
   store float 0.000000e+00, float* %52, align 1, !tbaa !2432
   store float 0.000000e+00, float* %54, align 1, !tbaa !2432
   store float 0.000000e+00, float* %56, align 1, !tbaa !2432
-  %157 = add i64 %247, -20
-  %158 = add i64 %150, 10
-  store i64 %158, i64* %PC, align 8
-  %159 = inttoptr i64 %157 to i32*
-  %160 = load i32, i32* %159, align 4
-  %161 = bitcast %union.VectorReg* %4 to i32*
-  store i32 %160, i32* %161, align 1, !tbaa !2432
+  %151 = add i64 %238, -20
+  %152 = add i64 %145, 10
+  store i64 %152, i64* %PC, align 8
+  %153 = inttoptr i64 %151 to i32*
+  %154 = load i32, i32* %153, align 4
+  store i32 %154, i32* %16, align 1, !tbaa !2432
   store float 0.000000e+00, float* %18, align 1, !tbaa !2432
   store float 0.000000e+00, float* %20, align 1, !tbaa !2432
   store float 0.000000e+00, float* %22, align 1, !tbaa !2432
-  %162 = add i64 %247, -12
-  %163 = add i64 %150, 13
-  store i64 %163, i64* %PC, align 8
-  %164 = inttoptr i64 %162 to i32*
-  %165 = load i32, i32* %164, align 4
-  %166 = zext i32 %165 to i64
-  store i64 %166, i64* %RAX, align 8, !tbaa !2428
-  %167 = load <2 x i32>, <2 x i32>* %80, align 1
-  %168 = load <2 x i32>, <2 x i32>* %82, align 1
-  %169 = sitofp i32 %165 to float
-  store float %169, float* %83, align 1, !tbaa !2432
-  %170 = extractelement <2 x i32> %167, i32 1
-  store i32 %170, i32* %85, align 1, !tbaa !2432
-  %171 = extractelement <2 x i32> %168, i32 0
-  store i32 %171, i32* %86, align 1, !tbaa !2432
-  %172 = extractelement <2 x i32> %168, i32 1
-  store i32 %172, i32* %88, align 1, !tbaa !2432
-  %173 = load <2 x float>, <2 x float>* %89, align 1
-  %174 = load <2 x i32>, <2 x i32>* %90, align 1
-  %175 = load <2 x float>, <2 x float>* %91, align 1
-  %176 = extractelement <2 x float> %173, i32 0
-  %177 = extractelement <2 x float> %175, i32 0
-  %178 = fdiv float %176, %177
-  store float %178, float* %15, align 1, !tbaa !2432
-  %179 = bitcast <2 x float> %173 to <2 x i32>
-  %180 = extractelement <2 x i32> %179, i32 1
-  store i32 %180, i32* %92, align 1, !tbaa !2432
-  %181 = extractelement <2 x i32> %174, i32 0
-  store i32 %181, i32* %93, align 1, !tbaa !2432
-  %182 = extractelement <2 x i32> %174, i32 1
-  store i32 %182, i32* %94, align 1, !tbaa !2432
-  %183 = add i64 %150, 25
-  store i64 %183, i64* %PC, align 8
-  %184 = load <2 x float>, <2 x float>* %74, align 1
-  %185 = load <2 x i32>, <2 x i32>* %75, align 1
-  %186 = load <2 x float>, <2 x float>* %33, align 1
-  %187 = extractelement <2 x float> %184, i32 0
-  %188 = extractelement <2 x float> %186, i32 0
-  br i1 %148, label %block_4005bf, label %block_4005e2
+  %155 = add i64 %238, -12
+  %156 = add i64 %145, 13
+  store i64 %156, i64* %PC, align 8
+  %157 = inttoptr i64 %155 to i32*
+  %158 = load i32, i32* %157, align 4
+  %159 = zext i32 %158 to i64
+  store i64 %159, i64* %RAX, align 8, !tbaa !2428
+  %160 = load <2 x i32>, <2 x i32>* %78, align 1
+  %161 = load <2 x i32>, <2 x i32>* %80, align 1
+  %162 = sitofp i32 %158 to float
+  store float %162, float* %81, align 1, !tbaa !2432
+  %163 = extractelement <2 x i32> %160, i32 1
+  store i32 %163, i32* %83, align 1, !tbaa !2432
+  %164 = extractelement <2 x i32> %161, i32 0
+  store i32 %164, i32* %84, align 1, !tbaa !2432
+  %165 = extractelement <2 x i32> %161, i32 1
+  store i32 %165, i32* %86, align 1, !tbaa !2432
+  %166 = load <2 x float>, <2 x float>* %33, align 1
+  %167 = load <2 x i32>, <2 x i32>* %87, align 1
+  %168 = load <2 x float>, <2 x float>* %88, align 1
+  %169 = extractelement <2 x float> %166, i32 0
+  %170 = extractelement <2 x float> %168, i32 0
+  %171 = fdiv float %169, %170
+  store float %171, float* %15, align 1, !tbaa !2432
+  %172 = bitcast <2 x float> %166 to <2 x i32>
+  %173 = extractelement <2 x i32> %172, i32 1
+  store i32 %173, i32* %89, align 1, !tbaa !2432
+  %174 = extractelement <2 x i32> %167, i32 0
+  store i32 %174, i32* %90, align 1, !tbaa !2432
+  %175 = extractelement <2 x i32> %167, i32 1
+  store i32 %175, i32* %91, align 1, !tbaa !2432
+  %176 = add i64 %145, 25
+  store i64 %176, i64* %PC, align 8
+  %177 = load <2 x float>, <2 x float>* %25, align 1
+  %178 = load <2 x i32>, <2 x i32>* %73, align 1
+  %179 = load <2 x float>, <2 x float>* %33, align 1
+  %180 = extractelement <2 x float> %177, i32 0
+  %181 = extractelement <2 x float> %179, i32 0
+  br i1 %143, label %block_4005bf, label %block_4005e2
 
 block_4005bf:                                     ; preds = %block_4005b0
-  %189 = fadd float %187, %188
-  store float %189, float* %49, align 1, !tbaa !2432
-  %190 = bitcast <2 x float> %184 to <2 x i32>
-  %191 = extractelement <2 x i32> %190, i32 1
-  store i32 %191, i32* %76, align 1, !tbaa !2432
-  %192 = extractelement <2 x i32> %185, i32 0
-  store i32 %192, i32* %77, align 1, !tbaa !2432
-  %193 = extractelement <2 x i32> %185, i32 1
-  store i32 %193, i32* %78, align 1, !tbaa !2432
-  %194 = add i64 %150, 30
-  store i64 %194, i64* %PC, align 8
-  %195 = load <2 x float>, <2 x float>* %25, align 1
-  %196 = extractelement <2 x float> %195, i32 0
-  store float %196, float* %153, align 4
-  %197 = load i64, i64* %PC, align 8
-  %198 = add i64 %197, 35
-  store i64 %198, i64* %73, align 8, !tbaa !2428
+  %182 = fadd float %180, %181
+  store float %182, float* %49, align 1, !tbaa !2432
+  %183 = bitcast <2 x float> %177 to <2 x i32>
+  %184 = extractelement <2 x i32> %183, i32 1
+  store i32 %184, i32* %74, align 1, !tbaa !2432
+  %185 = extractelement <2 x i32> %178, i32 0
+  store i32 %185, i32* %75, align 1, !tbaa !2432
+  %186 = extractelement <2 x i32> %178, i32 1
+  store i32 %186, i32* %76, align 1, !tbaa !2432
+  %187 = add i64 %145, 30
+  store i64 %187, i64* %PC, align 8
+  %188 = load <2 x float>, <2 x float>* %25, align 1
+  %189 = extractelement <2 x float> %188, i32 0
+  store float %189, float* %148, align 4
+  %190 = load i64, i64* %PC, align 8
+  %191 = add i64 %190, 35
+  store i64 %191, i64* %PC, align 8, !tbaa !2428
   br label %block_400600
 
 block_400588:                                     ; preds = %block_40057e
-  %199 = add i64 %96, -12
-  %200 = add i64 %124, 3
-  store i64 %200, i64* %PC, align 8
-  %201 = inttoptr i64 %199 to i32*
-  %202 = load i32, i32* %201, align 4
-  %203 = zext i32 %202 to i64
+  %192 = add i64 %93, -12
+  %193 = add i64 %121, 3
+  store i64 %193, i64* %PC, align 8
+  %194 = inttoptr i64 %192 to i32*
+  %195 = load i32, i32* %194, align 4
+  %196 = zext i32 %195 to i64
+  store i64 %196, i64* %RAX, align 8, !tbaa !2428
+  %197 = add i64 %121, 7
+  store i64 %197, i64* %PC, align 8
+  %198 = load i32, i32* %96, align 4
+  %199 = sext i32 %195 to i64
+  %200 = sext i32 %198 to i64
+  %201 = mul nsw i64 %200, %199
+  %202 = trunc i64 %201 to i32
+  %203 = and i64 %201, 4294967295
   store i64 %203, i64* %RAX, align 8, !tbaa !2428
-  %204 = add i64 %124, 7
-  store i64 %204, i64* %PC, align 8
-  %205 = load i32, i32* %99, align 4
-  %206 = sext i32 %202 to i64
-  %207 = sext i32 %205 to i64
-  %208 = mul nsw i64 %207, %206
-  %209 = trunc i64 %208 to i32
-  %210 = and i64 %208, 4294967295
-  store i64 %210, i64* %RAX, align 8, !tbaa !2428
-  %211 = shl i64 %208, 32
-  %212 = ashr exact i64 %211, 32
-  %213 = icmp ne i64 %212, %208
-  %214 = zext i1 %213 to i8
-  store i8 %214, i8* %67, align 1, !tbaa !2434
-  %215 = and i32 %209, 255
-  %216 = tail call i32 @llvm.ctpop.i32(i32 %215) #8
-  %217 = trunc i32 %216 to i8
-  %218 = and i8 %217, 1
-  %219 = xor i8 %218, 1
-  store i8 %219, i8* %68, align 1, !tbaa !2448
+  %204 = shl i64 %201, 32
+  %205 = ashr exact i64 %204, 32
+  %206 = icmp ne i64 %205, %201
+  %207 = zext i1 %206 to i8
+  store i8 %207, i8* %67, align 1, !tbaa !2434
+  %208 = and i32 %202, 255
+  %209 = tail call i32 @llvm.ctpop.i32(i32 %208) #8
+  %210 = trunc i32 %209 to i8
+  %211 = and i8 %210, 1
+  %212 = xor i8 %211, 1
+  store i8 %212, i8* %68, align 1, !tbaa !2448
   store i8 0, i8* %69, align 1, !tbaa !2452
   store i8 0, i8* %70, align 1, !tbaa !2449
-  %220 = lshr i32 %209, 31
-  %221 = trunc i32 %220 to i8
-  store i8 %221, i8* %71, align 1, !tbaa !2450
-  store i8 %214, i8* %72, align 1, !tbaa !2451
-  %222 = trunc i64 %208 to i32
-  %223 = add i64 %124, 10
-  store i64 %223, i64* %PC, align 8
-  store i32 %222, i32* %201, align 4
-  %224 = load i64, i64* %RBP, align 8
-  %225 = add i64 %224, -20
-  %226 = load i64, i64* %PC, align 8
-  %227 = add i64 %226, 5
-  store i64 %227, i64* %PC, align 8
-  %228 = inttoptr i64 %225 to float*
-  %229 = inttoptr i64 %225 to i32*
-  %230 = load i32, i32* %229, align 4
-  %231 = bitcast [32 x %union.VectorReg]* %3 to i32*
-  store i32 %230, i32* %231, align 1, !tbaa !2432
+  %213 = lshr i32 %202, 31
+  %214 = trunc i32 %213 to i8
+  store i8 %214, i8* %71, align 1, !tbaa !2450
+  store i8 %207, i8* %72, align 1, !tbaa !2451
+  %215 = add i64 %121, 10
+  store i64 %215, i64* %PC, align 8
+  store i32 %202, i32* %194, align 4
+  %216 = load i64, i64* %RBP, align 8
+  %217 = add i64 %216, -20
+  %218 = load i64, i64* %PC, align 8
+  %219 = add i64 %218, 5
+  store i64 %219, i64* %PC, align 8
+  %220 = inttoptr i64 %217 to float*
+  %221 = inttoptr i64 %217 to i32*
+  %222 = load i32, i32* %221, align 4
+  store i32 %222, i32* %50, align 1, !tbaa !2432
   store float 0.000000e+00, float* %52, align 1, !tbaa !2432
   store float 0.000000e+00, float* %54, align 1, !tbaa !2432
   store float 0.000000e+00, float* %56, align 1, !tbaa !2432
-  %232 = add i64 %224, -4
-  %233 = add i64 %226, 10
-  store i64 %233, i64* %PC, align 8
-  %234 = load <2 x float>, <2 x float>* %74, align 1
-  %235 = load <2 x i32>, <2 x i32>* %75, align 1
-  %236 = inttoptr i64 %232 to float*
-  %237 = load float, float* %236, align 4
-  %238 = extractelement <2 x float> %234, i32 0
-  %239 = fmul float %238, %237
-  store float %239, float* %49, align 1, !tbaa !2432
-  %240 = bitcast <2 x float> %234 to <2 x i32>
-  %241 = extractelement <2 x i32> %240, i32 1
-  store i32 %241, i32* %76, align 1, !tbaa !2432
-  %242 = extractelement <2 x i32> %235, i32 0
-  store i32 %242, i32* %77, align 1, !tbaa !2432
-  %243 = extractelement <2 x i32> %235, i32 1
-  store i32 %243, i32* %78, align 1, !tbaa !2432
-  %244 = add i64 %226, 15
-  store i64 %244, i64* %PC, align 8
-  %245 = load <2 x float>, <2 x float>* %25, align 1
-  %246 = extractelement <2 x float> %245, i32 0
-  store float %246, float* %228, align 4
-  %247 = load i64, i64* %RBP, align 8
-  %248 = add i64 %247, -8
-  %249 = load i64, i64* %PC, align 8
-  %250 = add i64 %249, 3
-  store i64 %250, i64* %PC, align 8
-  %251 = inttoptr i64 %248 to i32*
-  %252 = load i32, i32* %251, align 4
-  %253 = and i32 %252, 1
-  %254 = zext i32 %253 to i64
-  store i64 %254, i64* %RAX, align 8, !tbaa !2428
-  %255 = and i32 %252, 1
-  %256 = tail call i32 @llvm.ctpop.i32(i32 %255) #8
-  %257 = trunc i32 %256 to i8
-  %258 = xor i8 %257, 1
-  %259 = trunc i32 %253 to i8
-  %260 = xor i8 %259, 1
+  %223 = add i64 %216, -4
+  %224 = add i64 %218, 10
+  store i64 %224, i64* %PC, align 8
+  %225 = load <2 x float>, <2 x float>* %25, align 1
+  %226 = load <2 x i32>, <2 x i32>* %73, align 1
+  %227 = inttoptr i64 %223 to float*
+  %228 = load float, float* %227, align 4
+  %229 = extractelement <2 x float> %225, i32 0
+  %230 = fmul float %229, %228
+  store float %230, float* %49, align 1, !tbaa !2432
+  %231 = bitcast <2 x float> %225 to <2 x i32>
+  %232 = extractelement <2 x i32> %231, i32 1
+  store i32 %232, i32* %74, align 1, !tbaa !2432
+  %233 = extractelement <2 x i32> %226, i32 0
+  store i32 %233, i32* %75, align 1, !tbaa !2432
+  %234 = extractelement <2 x i32> %226, i32 1
+  store i32 %234, i32* %76, align 1, !tbaa !2432
+  %235 = add i64 %218, 15
+  store i64 %235, i64* %PC, align 8
+  %236 = load <2 x float>, <2 x float>* %25, align 1
+  %237 = extractelement <2 x float> %236, i32 0
+  store float %237, float* %220, align 4
+  %238 = load i64, i64* %RBP, align 8
+  %239 = add i64 %238, -8
+  %240 = load i64, i64* %PC, align 8
+  %241 = add i64 %240, 3
+  store i64 %241, i64* %PC, align 8
+  %242 = inttoptr i64 %239 to i32*
+  %243 = load i32, i32* %242, align 4
+  %244 = and i32 %243, 1
+  %245 = zext i32 %244 to i64
+  store i64 %245, i64* %RAX, align 8, !tbaa !2428
+  %246 = tail call i32 @llvm.ctpop.i32(i32 %244) #8
+  %247 = trunc i32 %246 to i8
+  %248 = xor i8 %247, 1
+  %249 = trunc i32 %244 to i8
+  %250 = xor i8 %249, 1
   store i8 0, i8* %67, align 1, !tbaa !2434
-  store i8 %258, i8* %68, align 1, !tbaa !2448
+  store i8 %248, i8* %68, align 1, !tbaa !2448
   store i8 0, i8* %69, align 1, !tbaa !2452
-  store i8 %260, i8* %70, align 1, !tbaa !2449
+  store i8 %250, i8* %70, align 1, !tbaa !2449
   store i8 0, i8* %71, align 1, !tbaa !2450
   store i8 0, i8* %72, align 1, !tbaa !2451
-  %261 = icmp eq i8 %260, 0
-  %.v3 = select i1 %261, i64 100, i64 15
-  %262 = add i64 %249, %.v3
-  store i64 %262, i64* %73, align 8, !tbaa !2428
-  br i1 %261, label %block_400605, label %block_4005b0
+  %251 = icmp eq i8 %250, 0
+  %.v3 = select i1 %251, i64 100, i64 15
+  %252 = add i64 %240, %.v3
+  store i64 %252, i64* %PC, align 8, !tbaa !2428
+  br i1 %251, label %block_400605, label %block_4005b0
 
 block_400605:                                     ; preds = %block_400600, %block_400588
-  %263 = phi i64 [ %.pre2, %block_400600 ], [ %247, %block_400588 ]
-  %264 = phi i64 [ %305, %block_400600 ], [ %262, %block_400588 ]
-  %265 = add i64 %263, -8
-  %266 = add i64 %264, 8
-  store i64 %266, i64* %PC, align 8
-  %267 = inttoptr i64 %265 to i32*
-  %268 = load i32, i32* %267, align 4
-  %269 = add i32 %268, 1
-  %270 = zext i32 %269 to i64
-  store i64 %270, i64* %RAX, align 8, !tbaa !2428
-  %271 = icmp eq i32 %268, -1
-  %272 = icmp eq i32 %269, 0
-  %273 = or i1 %271, %272
-  %274 = zext i1 %273 to i8
-  store i8 %274, i8* %67, align 1, !tbaa !2434
-  %275 = and i32 %269, 255
-  %276 = tail call i32 @llvm.ctpop.i32(i32 %275) #8
-  %277 = trunc i32 %276 to i8
-  %278 = and i8 %277, 1
-  %279 = xor i8 %278, 1
-  store i8 %279, i8* %68, align 1, !tbaa !2448
-  %280 = xor i32 %268, %269
-  %281 = lshr i32 %280, 4
-  %282 = trunc i32 %281 to i8
-  %283 = and i8 %282, 1
-  store i8 %283, i8* %69, align 1, !tbaa !2452
-  %284 = icmp eq i32 %269, 0
-  %285 = zext i1 %284 to i8
-  store i8 %285, i8* %70, align 1, !tbaa !2449
-  %286 = lshr i32 %269, 31
-  %287 = trunc i32 %286 to i8
-  store i8 %287, i8* %71, align 1, !tbaa !2450
-  %288 = lshr i32 %268, 31
-  %289 = xor i32 %286, %288
-  %290 = add nuw nsw i32 %289, %286
-  %291 = icmp eq i32 %290, 2
-  %292 = zext i1 %291 to i8
-  store i8 %292, i8* %72, align 1, !tbaa !2451
-  %293 = add i64 %264, 14
-  store i64 %293, i64* %PC, align 8
-  store i32 %269, i32* %267, align 4
-  %294 = load i64, i64* %PC, align 8
-  %295 = add i64 %294, -149
-  store i64 %295, i64* %73, align 8, !tbaa !2428
+  %253 = phi i64 [ %.pre2, %block_400600 ], [ %238, %block_400588 ]
+  %254 = phi i64 [ %294, %block_400600 ], [ %252, %block_400588 ]
+  %255 = add i64 %253, -8
+  %256 = add i64 %254, 8
+  store i64 %256, i64* %PC, align 8
+  %257 = inttoptr i64 %255 to i32*
+  %258 = load i32, i32* %257, align 4
+  %259 = add i32 %258, 1
+  %260 = zext i32 %259 to i64
+  store i64 %260, i64* %RAX, align 8, !tbaa !2428
+  %261 = icmp eq i32 %258, -1
+  %262 = icmp eq i32 %259, 0
+  %263 = or i1 %261, %262
+  %264 = zext i1 %263 to i8
+  store i8 %264, i8* %67, align 1, !tbaa !2434
+  %265 = and i32 %259, 255
+  %266 = tail call i32 @llvm.ctpop.i32(i32 %265) #8
+  %267 = trunc i32 %266 to i8
+  %268 = and i8 %267, 1
+  %269 = xor i8 %268, 1
+  store i8 %269, i8* %68, align 1, !tbaa !2448
+  %270 = xor i32 %258, %259
+  %271 = lshr i32 %270, 4
+  %272 = trunc i32 %271 to i8
+  %273 = and i8 %272, 1
+  store i8 %273, i8* %69, align 1, !tbaa !2452
+  %274 = zext i1 %262 to i8
+  store i8 %274, i8* %70, align 1, !tbaa !2449
+  %275 = lshr i32 %259, 31
+  %276 = trunc i32 %275 to i8
+  store i8 %276, i8* %71, align 1, !tbaa !2450
+  %277 = lshr i32 %258, 31
+  %278 = xor i32 %275, %277
+  %279 = add nuw nsw i32 %278, %275
+  %280 = icmp eq i32 %279, 2
+  %281 = zext i1 %280 to i8
+  store i8 %281, i8* %72, align 1, !tbaa !2451
+  %282 = add i64 %254, 14
+  store i64 %282, i64* %PC, align 8
+  store i32 %259, i32* %257, align 4
+  %283 = load i64, i64* %PC, align 8
+  %284 = add i64 %283, -149
+  store i64 %284, i64* %PC, align 8, !tbaa !2428
   br label %block_40057e
 
 block_4005e2:                                     ; preds = %block_4005b0
-  %296 = fsub float %187, %188
-  store float %296, float* %49, align 1, !tbaa !2432
-  %297 = bitcast <2 x float> %184 to <2 x i32>
-  %298 = extractelement <2 x i32> %297, i32 1
-  store i32 %298, i32* %76, align 1, !tbaa !2432
-  %299 = extractelement <2 x i32> %185, i32 0
-  store i32 %299, i32* %77, align 1, !tbaa !2432
-  %300 = extractelement <2 x i32> %185, i32 1
-  store i32 %300, i32* %78, align 1, !tbaa !2432
-  %301 = add i64 %150, 30
-  store i64 %301, i64* %PC, align 8
-  %302 = load <2 x float>, <2 x float>* %25, align 1
-  %303 = extractelement <2 x float> %302, i32 0
-  store float %303, float* %153, align 4
+  %285 = fsub float %180, %181
+  store float %285, float* %49, align 1, !tbaa !2432
+  %286 = bitcast <2 x float> %177 to <2 x i32>
+  %287 = extractelement <2 x i32> %286, i32 1
+  store i32 %287, i32* %74, align 1, !tbaa !2432
+  %288 = extractelement <2 x i32> %178, i32 0
+  store i32 %288, i32* %75, align 1, !tbaa !2432
+  %289 = extractelement <2 x i32> %178, i32 1
+  store i32 %289, i32* %76, align 1, !tbaa !2432
+  %290 = add i64 %145, 30
+  store i64 %290, i64* %PC, align 8
+  %291 = load <2 x float>, <2 x float>* %25, align 1
+  %292 = extractelement <2 x float> %291, i32 0
+  store float %292, float* %148, align 4
   %.pre1 = load i64, i64* %PC, align 8
   br label %block_400600
 
 block_400600:                                     ; preds = %block_4005e2, %block_4005bf
-  %304 = phi i64 [ %.pre1, %block_4005e2 ], [ %198, %block_4005bf ]
-  %305 = add i64 %304, 5
-  store i64 %305, i64* %73, align 8, !tbaa !2428
+  %293 = phi i64 [ %.pre1, %block_4005e2 ], [ %191, %block_4005bf ]
+  %294 = add i64 %293, 5
+  store i64 %294, i64* %PC, align 8, !tbaa !2428
   %.pre2 = load i64, i64* %RBP, align 8
   br label %block_400605
 }
@@ -2835,7 +2805,6 @@ block_400ed4:
   %15 = icmp eq i64 %14, 2
   %16 = zext i1 %15 to i8
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i64 %3, i64* %RSP, align 8, !tbaa !2428
   %18 = zext i1 %5 to i8
   store i8 %18, i8* %6, align 1, !tbaa !2434
   %19 = trunc i64 %3 to i32
@@ -2858,13 +2827,11 @@ block_400ed4:
   store i8 %16, i8* %17, align 1, !tbaa !2451
   %32 = add i64 %1, 9
   store i64 %32, i64* %PC, align 8
-  %33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %35 = inttoptr i64 %3 to i64*
-  %36 = load i64, i64* %35, align 8
-  store i64 %36, i64* %33, align 8, !tbaa !2428
-  %37 = add i64 %3, 8
-  store i64 %37, i64* %34, align 8, !tbaa !2428
+  %33 = inttoptr i64 %3 to i64*
+  %34 = load i64, i64* %33, align 8
+  store i64 %34, i64* %PC, align 8, !tbaa !2428
+  %35 = add i64 %3, 8
+  store i64 %35, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -2956,32 +2923,30 @@ block_400a20:
   %57 = zext i32 %56 to i64
   %58 = load i64, i64* %PC, align 8
   store i64 %57, i64* %RAX, align 8, !tbaa !2428
-  %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %60 = sext i32 %56 to i64
-  %61 = lshr i64 %60, 32
-  store i64 %61, i64* %59, align 8, !tbaa !2428
-  %62 = load i64, i64* %RBP, align 8
-  %63 = add i64 %62, -64
-  %64 = add i64 %58, 6
-  store i64 %64, i64* %PC, align 8
-  %65 = inttoptr i64 %63 to i32*
-  %66 = load i32, i32* %65, align 4
-  %67 = zext i32 %66 to i64
-  store i64 %67, i64* %RDI, align 8, !tbaa !2428
-  %68 = add i64 %58, 8
-  store i64 %68, i64* %PC, align 8
-  %69 = zext i32 %56 to i64
-  %70 = sext i32 %66 to i64
-  %71 = shl nuw i64 %61, 32
-  %72 = or i64 %71, %69
-  %73 = sdiv i64 %72, %70
-  %74 = shl i64 %73, 32
-  %75 = ashr exact i64 %74, 32
-  %76 = icmp eq i64 %73, %75
-  br i1 %76, label %79, label %77
+  %59 = sext i32 %56 to i64
+  %60 = lshr i64 %59, 32
+  store i64 %60, i64* %RDX, align 8, !tbaa !2428
+  %61 = load i64, i64* %RBP, align 8
+  %62 = add i64 %61, -64
+  %63 = add i64 %58, 6
+  store i64 %63, i64* %PC, align 8
+  %64 = inttoptr i64 %62 to i32*
+  %65 = load i32, i32* %64, align 4
+  %66 = zext i32 %65 to i64
+  store i64 %66, i64* %RDI, align 8, !tbaa !2428
+  %67 = add i64 %58, 8
+  store i64 %67, i64* %PC, align 8
+  %68 = sext i32 %65 to i64
+  %69 = shl nuw i64 %60, 32
+  %70 = or i64 %69, %57
+  %71 = sdiv i64 %70, %68
+  %72 = shl i64 %71, 32
+  %73 = ashr exact i64 %72, 32
+  %74 = icmp eq i64 %71, %73
+  br i1 %74, label %77, label %75
 
-; <label>:77:                                     ; preds = %block_400a20
-  %78 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %68, %struct.Memory* %2) #9
+; <label>:75:                                     ; preds = %block_400a20
+  %76 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %67, %struct.Memory* %2) #9
   %.pre = load i64, i64* %RBP, align 8
   %.pre1 = load i32, i32* %EAX, align 4
   %.pre2 = load i64, i64* %PC, align 8
@@ -2993,2000 +2958,1977 @@ block_400a20:
   %.pre22 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-; <label>:79:                                     ; preds = %block_400a20
-  %80 = srem i64 %72, %70
-  %81 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %82 = and i64 %73, 4294967295
-  store i64 %82, i64* %81, align 8, !tbaa !2428
-  %83 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %84 = and i64 %80, 4294967295
-  store i64 %84, i64* %83, align 8, !tbaa !2428
-  %85 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %85, align 1, !tbaa !2434
-  %86 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 0, i8* %86, align 1, !tbaa !2448
-  %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %87, align 1, !tbaa !2452
-  %88 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 0, i8* %88, align 1, !tbaa !2449
-  %89 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %89, align 1, !tbaa !2450
-  %90 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %90, align 1, !tbaa !2451
-  %91 = trunc i64 %73 to i32
+; <label>:77:                                     ; preds = %block_400a20
+  %78 = srem i64 %70, %68
+  %79 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  %80 = and i64 %71, 4294967295
+  store i64 %80, i64* %79, align 8, !tbaa !2428
+  %81 = and i64 %78, 4294967295
+  store i64 %81, i64* %RDX, align 8, !tbaa !2428
+  %82 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 0, i8* %82, align 1, !tbaa !2434
+  %83 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 0, i8* %83, align 1, !tbaa !2448
+  %84 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 0, i8* %84, align 1, !tbaa !2452
+  %85 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 0, i8* %85, align 1, !tbaa !2449
+  %86 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 0, i8* %86, align 1, !tbaa !2450
+  %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 0, i8* %87, align 1, !tbaa !2451
+  %88 = trunc i64 %71 to i32
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %79, %77
-  %.pre-phi23 = phi i8* [ %90, %79 ], [ %.pre22, %77 ]
-  %.pre-phi21 = phi i8* [ %89, %79 ], [ %.pre20, %77 ]
-  %.pre-phi19 = phi i8* [ %88, %79 ], [ %.pre18, %77 ]
-  %.pre-phi17 = phi i8* [ %87, %79 ], [ %.pre16, %77 ]
-  %.pre-phi15 = phi i8* [ %86, %79 ], [ %.pre14, %77 ]
-  %.pre-phi13 = phi i8* [ %85, %79 ], [ %.pre12, %77 ]
-  %92 = phi i64 [ %68, %79 ], [ %.pre2, %77 ]
-  %93 = phi i32 [ %91, %79 ], [ %.pre1, %77 ]
-  %94 = phi i64 [ %62, %79 ], [ %.pre, %77 ]
-  %95 = phi %struct.Memory* [ %2, %79 ], [ %78, %77 ]
-  %.pre-phi = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %96 = add i64 %94, -56
-  %97 = add i64 %92, 3
-  store i64 %97, i64* %PC, align 8
-  %98 = inttoptr i64 %96 to i32*
-  store i32 %93, i32* %98, align 4
-  %99 = load i64, i64* %RBP, align 8
-  %100 = add i64 %99, -52
-  %101 = load i64, i64* %PC, align 8
-  %102 = add i64 %101, 7
-  store i64 %102, i64* %PC, align 8
-  %103 = inttoptr i64 %100 to i32*
-  store i32 1, i32* %103, align 4
-  %104 = bitcast [32 x %union.VectorReg]* %5 to i8*
-  %105 = bitcast [32 x %union.VectorReg]* %5 to float*
-  %106 = getelementptr inbounds i8, i8* %104, i64 4
-  %107 = bitcast i8* %106 to float*
-  %108 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
-  %109 = bitcast i64* %108 to float*
-  %110 = getelementptr inbounds i8, i8* %104, i64 12
-  %111 = bitcast i8* %110 to float*
-  %112 = bitcast [32 x %union.VectorReg]* %5 to <2 x float>*
-  %113 = bitcast i64* %108 to <2 x i32>*
-  %114 = bitcast i8* %106 to i32*
-  %115 = bitcast i64* %108 to i32*
-  %116 = bitcast i8* %110 to i32*
-  %117 = bitcast %union.VectorReg* %6 to i8*
-  %118 = bitcast %union.VectorReg* %6 to float*
-  %119 = getelementptr inbounds i8, i8* %117, i64 4
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %77, %75
+  %.pre-phi23 = phi i8* [ %87, %77 ], [ %.pre22, %75 ]
+  %.pre-phi21 = phi i8* [ %86, %77 ], [ %.pre20, %75 ]
+  %.pre-phi19 = phi i8* [ %85, %77 ], [ %.pre18, %75 ]
+  %.pre-phi17 = phi i8* [ %84, %77 ], [ %.pre16, %75 ]
+  %.pre-phi15 = phi i8* [ %83, %77 ], [ %.pre14, %75 ]
+  %.pre-phi13 = phi i8* [ %82, %77 ], [ %.pre12, %75 ]
+  %89 = phi i64 [ %67, %77 ], [ %.pre2, %75 ]
+  %90 = phi i32 [ %88, %77 ], [ %.pre1, %75 ]
+  %91 = phi i64 [ %61, %77 ], [ %.pre, %75 ]
+  %92 = phi %struct.Memory* [ %2, %77 ], [ %76, %75 ]
+  %93 = add i64 %91, -56
+  %94 = add i64 %89, 3
+  store i64 %94, i64* %PC, align 8
+  %95 = inttoptr i64 %93 to i32*
+  store i32 %90, i32* %95, align 4
+  %96 = load i64, i64* %RBP, align 8
+  %97 = add i64 %96, -52
+  %98 = load i64, i64* %PC, align 8
+  %99 = add i64 %98, 7
+  store i64 %99, i64* %PC, align 8
+  %100 = inttoptr i64 %97 to i32*
+  store i32 1, i32* %100, align 4
+  %101 = bitcast [32 x %union.VectorReg]* %5 to i8*
+  %102 = bitcast [32 x %union.VectorReg]* %5 to float*
+  %103 = getelementptr inbounds i8, i8* %101, i64 4
+  %104 = bitcast i8* %103 to float*
+  %105 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+  %106 = bitcast i64* %105 to float*
+  %107 = getelementptr inbounds i8, i8* %101, i64 12
+  %108 = bitcast i8* %107 to float*
+  %109 = bitcast i64* %105 to <2 x i32>*
+  %110 = bitcast i8* %103 to i32*
+  %111 = bitcast i64* %105 to i32*
+  %112 = bitcast i8* %107 to i32*
+  %113 = bitcast %union.VectorReg* %6 to i8*
+  %114 = bitcast %union.VectorReg* %6 to float*
+  %115 = getelementptr inbounds i8, i8* %113, i64 4
+  %116 = bitcast i8* %115 to float*
+  %117 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+  %118 = bitcast i64* %117 to float*
+  %119 = getelementptr inbounds i8, i8* %113, i64 12
   %120 = bitcast i8* %119 to float*
-  %121 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
-  %122 = bitcast i64* %121 to float*
-  %123 = getelementptr inbounds i8, i8* %117, i64 12
-  %124 = bitcast i8* %123 to float*
-  %125 = bitcast %union.VectorReg* %6 to <2 x float>*
-  %126 = bitcast i64* %121 to <2 x i32>*
-  %127 = bitcast i8* %119 to i32*
-  %128 = bitcast i64* %121 to i32*
-  %129 = bitcast i8* %123 to i32*
-  %130 = bitcast %union.VectorReg* %6 to <2 x float>*
-  %131 = bitcast %union.VectorReg* %7 to i8*
-  %132 = bitcast %union.VectorReg* %7 to float*
-  %133 = getelementptr inbounds i8, i8* %131, i64 4
-  %134 = bitcast i8* %133 to float*
-  %135 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
-  %136 = bitcast i64* %135 to float*
-  %137 = getelementptr inbounds i8, i8* %131, i64 12
-  %138 = bitcast i8* %137 to float*
-  %139 = bitcast %union.VectorReg* %7 to <2 x float>*
-  %140 = bitcast i64* %135 to <2 x i32>*
-  %141 = bitcast i8* %133 to i32*
-  %142 = bitcast i64* %135 to i32*
-  %143 = bitcast i8* %137 to i32*
-  %144 = bitcast %union.VectorReg* %7 to <2 x float>*
+  %121 = bitcast %union.VectorReg* %6 to <2 x float>*
+  %122 = bitcast i64* %117 to <2 x i32>*
+  %123 = bitcast i8* %115 to i32*
+  %124 = bitcast i64* %117 to i32*
+  %125 = bitcast i8* %119 to i32*
+  %126 = bitcast %union.VectorReg* %7 to i8*
+  %127 = bitcast %union.VectorReg* %7 to float*
+  %128 = getelementptr inbounds i8, i8* %126, i64 4
+  %129 = bitcast i8* %128 to float*
+  %130 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
+  %131 = bitcast i64* %130 to float*
+  %132 = getelementptr inbounds i8, i8* %126, i64 12
+  %133 = bitcast i8* %132 to float*
+  %134 = bitcast %union.VectorReg* %7 to <2 x float>*
+  %135 = bitcast i64* %130 to <2 x i32>*
+  %136 = bitcast i8* %128 to i32*
+  %137 = bitcast i64* %130 to i32*
+  %138 = bitcast i8* %132 to i32*
   %.pre3 = load i64, i64* %RBP, align 8
   %.pre4 = load i64, i64* %PC, align 8
   br label %block_400a55
 
 block_400a55:                                     ; preds = %block_400c3e, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
-  %145 = phi i64 [ %343, %block_400c3e ], [ %.pre4, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ]
-  %146 = phi i64 [ %305, %block_400c3e ], [ %.pre3, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ]
-  %147 = add i64 %146, -48
-  %148 = add i64 %145, 7
-  store i64 %148, i64* %PC, align 8
-  %149 = inttoptr i64 %147 to i32*
-  store i32 0, i32* %149, align 4
-  %150 = load i64, i64* %RBP, align 8
-  %151 = add i64 %150, -52
-  %152 = load i64, i64* %PC, align 8
-  %153 = add i64 %152, 3
-  store i64 %153, i64* %PC, align 8
-  %154 = inttoptr i64 %151 to i32*
-  %155 = load i32, i32* %154, align 4
-  %156 = zext i32 %155 to i64
-  store i64 %156, i64* %RAX, align 8, !tbaa !2428
-  %157 = add i64 %150, -44
-  %158 = add i64 %152, 6
-  store i64 %158, i64* %PC, align 8
-  %159 = inttoptr i64 %157 to i32*
-  store i32 %155, i32* %159, align 4
-  %160 = load i64, i64* %RBP, align 8
-  %161 = add i64 %160, -40
-  %162 = load i64, i64* %PC, align 8
-  %163 = add i64 %162, 7
-  store i64 %163, i64* %PC, align 8
-  %164 = inttoptr i64 %161 to i32*
-  store i32 1, i32* %164, align 4
+  %139 = phi i64 [ %335, %block_400c3e ], [ %.pre4, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ]
+  %140 = phi i64 [ %297, %block_400c3e ], [ %.pre3, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ]
+  %141 = add i64 %140, -48
+  %142 = add i64 %139, 7
+  store i64 %142, i64* %PC, align 8
+  %143 = inttoptr i64 %141 to i32*
+  store i32 0, i32* %143, align 4
+  %144 = load i64, i64* %RBP, align 8
+  %145 = add i64 %144, -52
+  %146 = load i64, i64* %PC, align 8
+  %147 = add i64 %146, 3
+  store i64 %147, i64* %PC, align 8
+  %148 = inttoptr i64 %145 to i32*
+  %149 = load i32, i32* %148, align 4
+  %150 = zext i32 %149 to i64
+  store i64 %150, i64* %RAX, align 8, !tbaa !2428
+  %151 = add i64 %144, -44
+  %152 = add i64 %146, 6
+  store i64 %152, i64* %PC, align 8
+  %153 = inttoptr i64 %151 to i32*
+  store i32 %149, i32* %153, align 4
+  %154 = load i64, i64* %RBP, align 8
+  %155 = add i64 %154, -40
+  %156 = load i64, i64* %PC, align 8
+  %157 = add i64 %156, 7
+  store i64 %157, i64* %PC, align 8
+  %158 = inttoptr i64 %155 to i32*
+  store i32 1, i32* %158, align 4
   %.pre5 = load i64, i64* %PC, align 8
   %.pre6.pre = load i64, i64* %RBP, align 8
   br label %block_400a69
 
 block_400c53:                                     ; preds = %block_400c3e
-  %165 = add i64 %305, -40
-  %166 = add i64 %343, 7
-  store i64 %166, i64* %PC, align 8
-  %167 = inttoptr i64 %165 to i32*
-  store i32 1, i32* %167, align 4
-  %168 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %5, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
-  %169 = bitcast i64* %RDX to [2 x i32]*
-  %170 = bitcast i64* %RDX to i32*
-  %171 = getelementptr inbounds [2 x i32], [2 x i32]* %169, i64 0, i64 1
-  %172 = bitcast [32 x %union.VectorReg]* %5 to i32*
+  %159 = add i64 %297, -40
+  %160 = add i64 %335, 7
+  store i64 %160, i64* %PC, align 8
+  %161 = inttoptr i64 %159 to i32*
+  store i32 1, i32* %161, align 4
+  %162 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %5, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
+  %163 = bitcast i64* %RDX to [2 x i32]*
+  %164 = bitcast i64* %RDX to i32*
+  %165 = getelementptr inbounds [2 x i32], [2 x i32]* %163, i64 0, i64 1
   %.pre9 = load i64, i64* %PC, align 8
   br label %block_400c5a
 
 block_400c11:                                     ; preds = %block_400c0a, %block_400c11
-  %173 = phi i64 [ %.pre8, %block_400c0a ], [ %269, %block_400c11 ]
-  %174 = phi i64 [ %.pre7, %block_400c0a ], [ %231, %block_400c11 ]
-  %175 = add i64 %174, -16
-  %176 = add i64 %173, 4
-  store i64 %176, i64* %PC, align 8
-  %177 = inttoptr i64 %175 to i64*
-  %178 = load i64, i64* %177, align 8
-  store i64 %178, i64* %RAX, align 8, !tbaa !2428
-  %179 = add i64 %174, -60
-  %180 = add i64 %173, 8
-  store i64 %180, i64* %PC, align 8
-  %181 = inttoptr i64 %179 to i32*
-  %182 = load i32, i32* %181, align 4
+  %166 = phi i64 [ %.pre8, %block_400c0a ], [ %261, %block_400c11 ]
+  %167 = phi i64 [ %.pre7, %block_400c0a ], [ %223, %block_400c11 ]
+  %168 = add i64 %167, -16
+  %169 = add i64 %166, 4
+  store i64 %169, i64* %PC, align 8
+  %170 = inttoptr i64 %168 to i64*
+  %171 = load i64, i64* %170, align 8
+  store i64 %171, i64* %RAX, align 8, !tbaa !2428
+  %172 = add i64 %167, -60
+  %173 = add i64 %166, 8
+  store i64 %173, i64* %PC, align 8
+  %174 = inttoptr i64 %172 to i32*
+  %175 = load i32, i32* %174, align 4
+  %176 = sext i32 %175 to i64
+  store i64 %176, i64* %RCX, align 8, !tbaa !2428
+  %177 = add i64 %167, -24
+  %178 = add i64 %166, 12
+  store i64 %178, i64* %PC, align 8
+  %179 = inttoptr i64 %177 to i64*
+  %180 = load i64, i64* %179, align 8
+  store i64 %180, i64* %RDX, align 8, !tbaa !2428
+  %181 = add i64 %166, 16
+  store i64 %181, i64* %PC, align 8
+  %182 = load i32, i32* %174, align 4
   %183 = sext i32 %182 to i64
-  store i64 %183, i64* %RCX, align 8, !tbaa !2428
-  %184 = add i64 %174, -24
-  %185 = add i64 %173, 12
-  store i64 %185, i64* %PC, align 8
-  %186 = inttoptr i64 %184 to i64*
-  %187 = load i64, i64* %186, align 8
-  store i64 %187, i64* %RDX, align 8, !tbaa !2428
-  %188 = add i64 %173, 16
-  store i64 %188, i64* %PC, align 8
-  %189 = load i32, i32* %181, align 4
-  %190 = sext i32 %189 to i64
-  store i64 %190, i64* %RSI, align 8, !tbaa !2428
-  %191 = shl nsw i64 %190, 3
-  %192 = add i64 %191, %187
-  %193 = add i64 %173, 20
-  store i64 %193, i64* %PC, align 8
-  %194 = inttoptr i64 %192 to i64*
-  %195 = load i64, i64* %194, align 8
-  store i64 %195, i64* %RDX, align 8, !tbaa !2428
-  %196 = shl nsw i64 %183, 3
-  %197 = add i64 %196, %178
-  %198 = add i64 %173, 24
-  store i64 %198, i64* %PC, align 8
-  %199 = inttoptr i64 %197 to i64*
-  store i64 %195, i64* %199, align 8
-  %200 = load i64, i64* %RBP, align 8
-  %201 = add i64 %200, -60
-  %202 = load i64, i64* %PC, align 8
-  %203 = add i64 %202, 3
-  store i64 %203, i64* %PC, align 8
-  %204 = inttoptr i64 %201 to i32*
-  %205 = load i32, i32* %204, align 4
-  %206 = add i32 %205, 1
-  %207 = zext i32 %206 to i64
-  store i64 %207, i64* %RDI, align 8, !tbaa !2428
-  %208 = icmp eq i32 %205, -1
-  %209 = icmp eq i32 %206, 0
-  %210 = or i1 %208, %209
-  %211 = zext i1 %210 to i8
-  store i8 %211, i8* %.pre-phi13, align 1, !tbaa !2434
-  %212 = and i32 %206, 255
-  %213 = tail call i32 @llvm.ctpop.i32(i32 %212) #8
-  %214 = trunc i32 %213 to i8
-  %215 = and i8 %214, 1
-  %216 = xor i8 %215, 1
-  store i8 %216, i8* %.pre-phi15, align 1, !tbaa !2448
-  %217 = xor i32 %205, %206
-  %218 = lshr i32 %217, 4
-  %219 = trunc i32 %218 to i8
-  %220 = and i8 %219, 1
-  store i8 %220, i8* %.pre-phi17, align 1, !tbaa !2452
-  %221 = icmp eq i32 %206, 0
-  %222 = zext i1 %221 to i8
-  store i8 %222, i8* %.pre-phi19, align 1, !tbaa !2449
-  %223 = lshr i32 %206, 31
-  %224 = trunc i32 %223 to i8
-  store i8 %224, i8* %.pre-phi21, align 1, !tbaa !2450
-  %225 = lshr i32 %205, 31
-  %226 = xor i32 %223, %225
-  %227 = add nuw nsw i32 %226, %223
-  %228 = icmp eq i32 %227, 2
-  %229 = zext i1 %228 to i8
-  store i8 %229, i8* %.pre-phi23, align 1, !tbaa !2451
-  %230 = add i64 %202, 9
-  store i64 %230, i64* %PC, align 8
-  store i32 %206, i32* %204, align 4
-  %231 = load i64, i64* %RBP, align 8
-  %232 = add i64 %231, -60
-  %233 = load i64, i64* %PC, align 8
-  %234 = add i64 %233, 3
-  store i64 %234, i64* %PC, align 8
-  %235 = inttoptr i64 %232 to i32*
-  %236 = load i32, i32* %235, align 4
-  %237 = zext i32 %236 to i64
-  store i64 %237, i64* %RAX, align 8, !tbaa !2428
-  %238 = add i64 %231, -4
-  %239 = add i64 %233, 6
-  store i64 %239, i64* %PC, align 8
-  %240 = inttoptr i64 %238 to i32*
-  %241 = load i32, i32* %240, align 4
-  %242 = sub i32 %236, %241
-  %243 = icmp ult i32 %236, %241
-  %244 = zext i1 %243 to i8
-  store i8 %244, i8* %.pre-phi13, align 1, !tbaa !2434
-  %245 = and i32 %242, 255
-  %246 = tail call i32 @llvm.ctpop.i32(i32 %245) #8
-  %247 = trunc i32 %246 to i8
-  %248 = and i8 %247, 1
-  %249 = xor i8 %248, 1
-  store i8 %249, i8* %.pre-phi15, align 1, !tbaa !2448
-  %250 = xor i32 %241, %236
-  %251 = xor i32 %250, %242
-  %252 = lshr i32 %251, 4
-  %253 = trunc i32 %252 to i8
-  %254 = and i8 %253, 1
-  store i8 %254, i8* %.pre-phi17, align 1, !tbaa !2452
-  %255 = icmp eq i32 %242, 0
-  %256 = zext i1 %255 to i8
-  store i8 %256, i8* %.pre-phi19, align 1, !tbaa !2449
-  %257 = lshr i32 %242, 31
-  %258 = trunc i32 %257 to i8
-  store i8 %258, i8* %.pre-phi21, align 1, !tbaa !2450
-  %259 = lshr i32 %236, 31
-  %260 = lshr i32 %241, 31
-  %261 = xor i32 %260, %259
-  %262 = xor i32 %257, %259
-  %263 = add nuw nsw i32 %262, %261
-  %264 = icmp eq i32 %263, 2
-  %265 = zext i1 %264 to i8
-  store i8 %265, i8* %.pre-phi23, align 1, !tbaa !2451
-  %266 = icmp ne i8 %258, 0
-  %267 = xor i1 %266, %264
-  %268 = or i1 %255, %267
-  %.v25 = select i1 %268, i64 -33, i64 12
-  %269 = add i64 %233, %.v25
-  store i64 %269, i64* %.pre-phi, align 8, !tbaa !2428
-  br i1 %268, label %block_400c11, label %block_400c3e
+  store i64 %183, i64* %RSI, align 8, !tbaa !2428
+  %184 = shl nsw i64 %183, 3
+  %185 = add i64 %184, %180
+  %186 = add i64 %166, 20
+  store i64 %186, i64* %PC, align 8
+  %187 = inttoptr i64 %185 to i64*
+  %188 = load i64, i64* %187, align 8
+  store i64 %188, i64* %RDX, align 8, !tbaa !2428
+  %189 = shl nsw i64 %176, 3
+  %190 = add i64 %189, %171
+  %191 = add i64 %166, 24
+  store i64 %191, i64* %PC, align 8
+  %192 = inttoptr i64 %190 to i64*
+  store i64 %188, i64* %192, align 8
+  %193 = load i64, i64* %RBP, align 8
+  %194 = add i64 %193, -60
+  %195 = load i64, i64* %PC, align 8
+  %196 = add i64 %195, 3
+  store i64 %196, i64* %PC, align 8
+  %197 = inttoptr i64 %194 to i32*
+  %198 = load i32, i32* %197, align 4
+  %199 = add i32 %198, 1
+  %200 = zext i32 %199 to i64
+  store i64 %200, i64* %RDI, align 8, !tbaa !2428
+  %201 = icmp eq i32 %198, -1
+  %202 = icmp eq i32 %199, 0
+  %203 = or i1 %201, %202
+  %204 = zext i1 %203 to i8
+  store i8 %204, i8* %.pre-phi13, align 1, !tbaa !2434
+  %205 = and i32 %199, 255
+  %206 = tail call i32 @llvm.ctpop.i32(i32 %205) #8
+  %207 = trunc i32 %206 to i8
+  %208 = and i8 %207, 1
+  %209 = xor i8 %208, 1
+  store i8 %209, i8* %.pre-phi15, align 1, !tbaa !2448
+  %210 = xor i32 %198, %199
+  %211 = lshr i32 %210, 4
+  %212 = trunc i32 %211 to i8
+  %213 = and i8 %212, 1
+  store i8 %213, i8* %.pre-phi17, align 1, !tbaa !2452
+  %214 = zext i1 %202 to i8
+  store i8 %214, i8* %.pre-phi19, align 1, !tbaa !2449
+  %215 = lshr i32 %199, 31
+  %216 = trunc i32 %215 to i8
+  store i8 %216, i8* %.pre-phi21, align 1, !tbaa !2450
+  %217 = lshr i32 %198, 31
+  %218 = xor i32 %215, %217
+  %219 = add nuw nsw i32 %218, %215
+  %220 = icmp eq i32 %219, 2
+  %221 = zext i1 %220 to i8
+  store i8 %221, i8* %.pre-phi23, align 1, !tbaa !2451
+  %222 = add i64 %195, 9
+  store i64 %222, i64* %PC, align 8
+  store i32 %199, i32* %197, align 4
+  %223 = load i64, i64* %RBP, align 8
+  %224 = add i64 %223, -60
+  %225 = load i64, i64* %PC, align 8
+  %226 = add i64 %225, 3
+  store i64 %226, i64* %PC, align 8
+  %227 = inttoptr i64 %224 to i32*
+  %228 = load i32, i32* %227, align 4
+  %229 = zext i32 %228 to i64
+  store i64 %229, i64* %RAX, align 8, !tbaa !2428
+  %230 = add i64 %223, -4
+  %231 = add i64 %225, 6
+  store i64 %231, i64* %PC, align 8
+  %232 = inttoptr i64 %230 to i32*
+  %233 = load i32, i32* %232, align 4
+  %234 = sub i32 %228, %233
+  %235 = icmp ult i32 %228, %233
+  %236 = zext i1 %235 to i8
+  store i8 %236, i8* %.pre-phi13, align 1, !tbaa !2434
+  %237 = and i32 %234, 255
+  %238 = tail call i32 @llvm.ctpop.i32(i32 %237) #8
+  %239 = trunc i32 %238 to i8
+  %240 = and i8 %239, 1
+  %241 = xor i8 %240, 1
+  store i8 %241, i8* %.pre-phi15, align 1, !tbaa !2448
+  %242 = xor i32 %233, %228
+  %243 = xor i32 %242, %234
+  %244 = lshr i32 %243, 4
+  %245 = trunc i32 %244 to i8
+  %246 = and i8 %245, 1
+  store i8 %246, i8* %.pre-phi17, align 1, !tbaa !2452
+  %247 = icmp eq i32 %234, 0
+  %248 = zext i1 %247 to i8
+  store i8 %248, i8* %.pre-phi19, align 1, !tbaa !2449
+  %249 = lshr i32 %234, 31
+  %250 = trunc i32 %249 to i8
+  store i8 %250, i8* %.pre-phi21, align 1, !tbaa !2450
+  %251 = lshr i32 %228, 31
+  %252 = lshr i32 %233, 31
+  %253 = xor i32 %252, %251
+  %254 = xor i32 %249, %251
+  %255 = add nuw nsw i32 %254, %253
+  %256 = icmp eq i32 %255, 2
+  %257 = zext i1 %256 to i8
+  store i8 %257, i8* %.pre-phi23, align 1, !tbaa !2451
+  %258 = icmp ne i8 %250, 0
+  %259 = xor i1 %258, %256
+  %260 = or i1 %247, %259
+  %.v25 = select i1 %260, i64 -33, i64 12
+  %261 = add i64 %225, %.v25
+  store i64 %261, i64* %PC, align 8, !tbaa !2428
+  br i1 %260, label %block_400c11, label %block_400c3e
 
 block_400c3e:                                     ; preds = %block_400c11
-  %270 = add i64 %231, -52
-  %271 = add i64 %269, 3
-  store i64 %271, i64* %PC, align 8
-  %272 = inttoptr i64 %270 to i32*
-  %273 = load i32, i32* %272, align 4
-  %274 = zext i32 %273 to i64
-  store i64 %274, i64* %RAX, align 8, !tbaa !2428
-  %275 = add i64 %269, 6
-  store i64 %275, i64* %PC, align 8
-  %276 = load i32, i32* %272, align 4
-  %277 = add i32 %276, %273
-  %278 = zext i32 %277 to i64
-  store i64 %278, i64* %RAX, align 8, !tbaa !2428
-  %279 = icmp ult i32 %277, %273
-  %280 = icmp ult i32 %277, %276
-  %281 = or i1 %279, %280
-  %282 = zext i1 %281 to i8
-  store i8 %282, i8* %.pre-phi13, align 1, !tbaa !2434
-  %283 = and i32 %277, 255
-  %284 = tail call i32 @llvm.ctpop.i32(i32 %283) #8
-  %285 = trunc i32 %284 to i8
-  %286 = and i8 %285, 1
-  %287 = xor i8 %286, 1
-  store i8 %287, i8* %.pre-phi15, align 1, !tbaa !2448
-  %288 = xor i32 %276, %273
-  %289 = xor i32 %288, %277
-  %290 = lshr i32 %289, 4
-  %291 = trunc i32 %290 to i8
-  %292 = and i8 %291, 1
-  store i8 %292, i8* %.pre-phi17, align 1, !tbaa !2452
-  %293 = icmp eq i32 %277, 0
-  %294 = zext i1 %293 to i8
-  store i8 %294, i8* %.pre-phi19, align 1, !tbaa !2449
-  %295 = lshr i32 %277, 31
-  %296 = trunc i32 %295 to i8
-  store i8 %296, i8* %.pre-phi21, align 1, !tbaa !2450
-  %297 = lshr i32 %273, 31
-  %298 = lshr i32 %276, 31
-  %299 = xor i32 %295, %297
-  %300 = xor i32 %295, %298
-  %301 = add nuw nsw i32 %299, %300
-  %302 = icmp eq i32 %301, 2
-  %303 = zext i1 %302 to i8
-  store i8 %303, i8* %.pre-phi23, align 1, !tbaa !2451
-  %304 = add i64 %269, 9
-  store i64 %304, i64* %PC, align 8
-  store i32 %277, i32* %272, align 4
-  %305 = load i64, i64* %RBP, align 8
-  %306 = add i64 %305, -52
-  %307 = load i64, i64* %PC, align 8
-  %308 = add i64 %307, 3
-  store i64 %308, i64* %PC, align 8
-  %309 = inttoptr i64 %306 to i32*
-  %310 = load i32, i32* %309, align 4
-  %311 = zext i32 %310 to i64
-  store i64 %311, i64* %RAX, align 8, !tbaa !2428
-  %312 = add i64 %305, -56
-  %313 = add i64 %307, 6
-  store i64 %313, i64* %PC, align 8
-  %314 = inttoptr i64 %312 to i32*
-  %315 = load i32, i32* %314, align 4
-  %316 = sub i32 %310, %315
-  %317 = icmp ult i32 %310, %315
-  %318 = zext i1 %317 to i8
-  store i8 %318, i8* %.pre-phi13, align 1, !tbaa !2434
-  %319 = and i32 %316, 255
-  %320 = tail call i32 @llvm.ctpop.i32(i32 %319) #8
-  %321 = trunc i32 %320 to i8
-  %322 = and i8 %321, 1
-  %323 = xor i8 %322, 1
-  store i8 %323, i8* %.pre-phi15, align 1, !tbaa !2448
-  %324 = xor i32 %315, %310
-  %325 = xor i32 %324, %316
-  %326 = lshr i32 %325, 4
-  %327 = trunc i32 %326 to i8
-  %328 = and i8 %327, 1
-  store i8 %328, i8* %.pre-phi17, align 1, !tbaa !2452
-  %329 = icmp eq i32 %316, 0
-  %330 = zext i1 %329 to i8
-  store i8 %330, i8* %.pre-phi19, align 1, !tbaa !2449
-  %331 = lshr i32 %316, 31
-  %332 = trunc i32 %331 to i8
-  store i8 %332, i8* %.pre-phi21, align 1, !tbaa !2450
-  %333 = lshr i32 %310, 31
-  %334 = lshr i32 %315, 31
-  %335 = xor i32 %334, %333
-  %336 = xor i32 %331, %333
-  %337 = add nuw nsw i32 %336, %335
-  %338 = icmp eq i32 %337, 2
-  %339 = zext i1 %338 to i8
-  store i8 %339, i8* %.pre-phi23, align 1, !tbaa !2451
-  %340 = icmp ne i8 %332, 0
-  %341 = xor i1 %340, %338
-  %342 = or i1 %329, %341
-  %.v26 = select i1 %342, i64 -498, i64 12
-  %343 = add i64 %307, %.v26
-  store i64 %343, i64* %.pre-phi, align 8, !tbaa !2428
-  br i1 %342, label %block_400a55, label %block_400c53
+  %262 = add i64 %223, -52
+  %263 = add i64 %261, 3
+  store i64 %263, i64* %PC, align 8
+  %264 = inttoptr i64 %262 to i32*
+  %265 = load i32, i32* %264, align 4
+  %266 = zext i32 %265 to i64
+  store i64 %266, i64* %RAX, align 8, !tbaa !2428
+  %267 = add i64 %261, 6
+  store i64 %267, i64* %PC, align 8
+  %268 = load i32, i32* %264, align 4
+  %269 = add i32 %268, %265
+  %270 = zext i32 %269 to i64
+  store i64 %270, i64* %RAX, align 8, !tbaa !2428
+  %271 = icmp ult i32 %269, %265
+  %272 = icmp ult i32 %269, %268
+  %273 = or i1 %271, %272
+  %274 = zext i1 %273 to i8
+  store i8 %274, i8* %.pre-phi13, align 1, !tbaa !2434
+  %275 = and i32 %269, 255
+  %276 = tail call i32 @llvm.ctpop.i32(i32 %275) #8
+  %277 = trunc i32 %276 to i8
+  %278 = and i8 %277, 1
+  %279 = xor i8 %278, 1
+  store i8 %279, i8* %.pre-phi15, align 1, !tbaa !2448
+  %280 = xor i32 %268, %265
+  %281 = xor i32 %280, %269
+  %282 = lshr i32 %281, 4
+  %283 = trunc i32 %282 to i8
+  %284 = and i8 %283, 1
+  store i8 %284, i8* %.pre-phi17, align 1, !tbaa !2452
+  %285 = icmp eq i32 %269, 0
+  %286 = zext i1 %285 to i8
+  store i8 %286, i8* %.pre-phi19, align 1, !tbaa !2449
+  %287 = lshr i32 %269, 31
+  %288 = trunc i32 %287 to i8
+  store i8 %288, i8* %.pre-phi21, align 1, !tbaa !2450
+  %289 = lshr i32 %265, 31
+  %290 = lshr i32 %268, 31
+  %291 = xor i32 %287, %289
+  %292 = xor i32 %287, %290
+  %293 = add nuw nsw i32 %291, %292
+  %294 = icmp eq i32 %293, 2
+  %295 = zext i1 %294 to i8
+  store i8 %295, i8* %.pre-phi23, align 1, !tbaa !2451
+  %296 = add i64 %261, 9
+  store i64 %296, i64* %PC, align 8
+  store i32 %269, i32* %264, align 4
+  %297 = load i64, i64* %RBP, align 8
+  %298 = add i64 %297, -52
+  %299 = load i64, i64* %PC, align 8
+  %300 = add i64 %299, 3
+  store i64 %300, i64* %PC, align 8
+  %301 = inttoptr i64 %298 to i32*
+  %302 = load i32, i32* %301, align 4
+  %303 = zext i32 %302 to i64
+  store i64 %303, i64* %RAX, align 8, !tbaa !2428
+  %304 = add i64 %297, -56
+  %305 = add i64 %299, 6
+  store i64 %305, i64* %PC, align 8
+  %306 = inttoptr i64 %304 to i32*
+  %307 = load i32, i32* %306, align 4
+  %308 = sub i32 %302, %307
+  %309 = icmp ult i32 %302, %307
+  %310 = zext i1 %309 to i8
+  store i8 %310, i8* %.pre-phi13, align 1, !tbaa !2434
+  %311 = and i32 %308, 255
+  %312 = tail call i32 @llvm.ctpop.i32(i32 %311) #8
+  %313 = trunc i32 %312 to i8
+  %314 = and i8 %313, 1
+  %315 = xor i8 %314, 1
+  store i8 %315, i8* %.pre-phi15, align 1, !tbaa !2448
+  %316 = xor i32 %307, %302
+  %317 = xor i32 %316, %308
+  %318 = lshr i32 %317, 4
+  %319 = trunc i32 %318 to i8
+  %320 = and i8 %319, 1
+  store i8 %320, i8* %.pre-phi17, align 1, !tbaa !2452
+  %321 = icmp eq i32 %308, 0
+  %322 = zext i1 %321 to i8
+  store i8 %322, i8* %.pre-phi19, align 1, !tbaa !2449
+  %323 = lshr i32 %308, 31
+  %324 = trunc i32 %323 to i8
+  store i8 %324, i8* %.pre-phi21, align 1, !tbaa !2450
+  %325 = lshr i32 %302, 31
+  %326 = lshr i32 %307, 31
+  %327 = xor i32 %326, %325
+  %328 = xor i32 %323, %325
+  %329 = add nuw nsw i32 %328, %327
+  %330 = icmp eq i32 %329, 2
+  %331 = zext i1 %330 to i8
+  store i8 %331, i8* %.pre-phi23, align 1, !tbaa !2451
+  %332 = icmp ne i8 %324, 0
+  %333 = xor i1 %332, %330
+  %334 = or i1 %321, %333
+  %.v26 = select i1 %334, i64 -498, i64 12
+  %335 = add i64 %299, %.v26
+  store i64 %335, i64* %PC, align 8, !tbaa !2428
+  br i1 %334, label %block_400a55, label %block_400c53
 
 block_400c0a:                                     ; preds = %block_400bef
-  %344 = add i64 %394, -60
-  %345 = add i64 %432, 7
-  store i64 %345, i64* %PC, align 8
-  %346 = inttoptr i64 %344 to i32*
-  store i32 1, i32* %346, align 4
+  %336 = add i64 %386, -60
+  %337 = add i64 %424, 7
+  store i64 %337, i64* %PC, align 8
+  %338 = inttoptr i64 %336 to i32*
+  store i32 1, i32* %338, align 4
   %.pre7 = load i64, i64* %RBP, align 8
   %.pre8 = load i64, i64* %PC, align 8
   br label %block_400c11
 
 block_400bef:                                     ; preds = %block_400a6e
-  %347 = add i64 %1500, 3
-  store i64 %347, i64* %PC, align 8
-  %348 = load i32, i32* %1471, align 4
-  %349 = zext i32 %348 to i64
-  store i64 %349, i64* %RAX, align 8, !tbaa !2428
-  %350 = add i64 %1462, -48
-  %351 = add i64 %1500, 6
-  store i64 %351, i64* %PC, align 8
-  %352 = inttoptr i64 %350 to i32*
-  store i32 %348, i32* %352, align 4
-  %353 = load i64, i64* %RBP, align 8
-  %354 = add i64 %353, -48
-  %355 = load i64, i64* %PC, align 8
-  %356 = add i64 %355, 3
-  store i64 %356, i64* %PC, align 8
-  %357 = inttoptr i64 %354 to i32*
-  %358 = load i32, i32* %357, align 4
-  %359 = zext i32 %358 to i64
-  store i64 %359, i64* %RAX, align 8, !tbaa !2428
-  %360 = add i64 %353, -52
-  %361 = add i64 %355, 6
-  store i64 %361, i64* %PC, align 8
-  %362 = inttoptr i64 %360 to i32*
-  %363 = load i32, i32* %362, align 4
-  %364 = add i32 %363, %358
-  %365 = zext i32 %364 to i64
-  store i64 %365, i64* %RAX, align 8, !tbaa !2428
-  %366 = icmp ult i32 %364, %358
-  %367 = icmp ult i32 %364, %363
-  %368 = or i1 %366, %367
-  %369 = zext i1 %368 to i8
-  store i8 %369, i8* %.pre-phi13, align 1, !tbaa !2434
-  %370 = and i32 %364, 255
-  %371 = tail call i32 @llvm.ctpop.i32(i32 %370) #8
-  %372 = trunc i32 %371 to i8
-  %373 = and i8 %372, 1
-  %374 = xor i8 %373, 1
-  store i8 %374, i8* %.pre-phi15, align 1, !tbaa !2448
-  %375 = xor i32 %363, %358
-  %376 = xor i32 %375, %364
-  %377 = lshr i32 %376, 4
-  %378 = trunc i32 %377 to i8
-  %379 = and i8 %378, 1
-  store i8 %379, i8* %.pre-phi17, align 1, !tbaa !2452
-  %380 = icmp eq i32 %364, 0
-  %381 = zext i1 %380 to i8
-  store i8 %381, i8* %.pre-phi19, align 1, !tbaa !2449
-  %382 = lshr i32 %364, 31
-  %383 = trunc i32 %382 to i8
-  store i8 %383, i8* %.pre-phi21, align 1, !tbaa !2450
-  %384 = lshr i32 %358, 31
-  %385 = lshr i32 %363, 31
-  %386 = xor i32 %382, %384
-  %387 = xor i32 %382, %385
-  %388 = add nuw nsw i32 %386, %387
-  %389 = icmp eq i32 %388, 2
-  %390 = zext i1 %389 to i8
-  store i8 %390, i8* %.pre-phi23, align 1, !tbaa !2451
-  %391 = add i64 %353, -44
-  %392 = add i64 %355, 9
-  store i64 %392, i64* %PC, align 8
-  %393 = inttoptr i64 %391 to i32*
-  store i32 %364, i32* %393, align 4
-  %394 = load i64, i64* %RBP, align 8
-  %395 = add i64 %394, -44
-  %396 = load i64, i64* %PC, align 8
-  %397 = add i64 %396, 3
-  store i64 %397, i64* %PC, align 8
-  %398 = inttoptr i64 %395 to i32*
-  %399 = load i32, i32* %398, align 4
-  %400 = zext i32 %399 to i64
-  store i64 %400, i64* %RAX, align 8, !tbaa !2428
-  %401 = add i64 %394, -56
-  %402 = add i64 %396, 6
-  store i64 %402, i64* %PC, align 8
-  %403 = inttoptr i64 %401 to i32*
-  %404 = load i32, i32* %403, align 4
-  %405 = sub i32 %399, %404
-  %406 = icmp ult i32 %399, %404
-  %407 = zext i1 %406 to i8
-  store i8 %407, i8* %.pre-phi13, align 1, !tbaa !2434
-  %408 = and i32 %405, 255
-  %409 = tail call i32 @llvm.ctpop.i32(i32 %408) #8
-  %410 = trunc i32 %409 to i8
-  %411 = and i8 %410, 1
-  %412 = xor i8 %411, 1
-  store i8 %412, i8* %.pre-phi15, align 1, !tbaa !2448
-  %413 = xor i32 %404, %399
-  %414 = xor i32 %413, %405
-  %415 = lshr i32 %414, 4
-  %416 = trunc i32 %415 to i8
-  %417 = and i8 %416, 1
-  store i8 %417, i8* %.pre-phi17, align 1, !tbaa !2452
-  %418 = icmp eq i32 %405, 0
-  %419 = zext i1 %418 to i8
-  store i8 %419, i8* %.pre-phi19, align 1, !tbaa !2449
-  %420 = lshr i32 %405, 31
-  %421 = trunc i32 %420 to i8
-  store i8 %421, i8* %.pre-phi21, align 1, !tbaa !2450
-  %422 = lshr i32 %399, 31
-  %423 = lshr i32 %404, 31
-  %424 = xor i32 %423, %422
-  %425 = xor i32 %420, %422
-  %426 = add nuw nsw i32 %425, %424
-  %427 = icmp eq i32 %426, 2
-  %428 = zext i1 %427 to i8
-  store i8 %428, i8* %.pre-phi23, align 1, !tbaa !2451
-  %429 = icmp ne i8 %421, 0
-  %430 = xor i1 %429, %427
-  %431 = or i1 %418, %430
-  %.v24 = select i1 %431, i64 -405, i64 12
-  %432 = add i64 %396, %.v24
-  store i64 %432, i64* %.pre-phi, align 8, !tbaa !2428
-  br i1 %431, label %block_400a69, label %block_400c0a
+  %339 = add i64 %1476, 3
+  store i64 %339, i64* %PC, align 8
+  %340 = load i32, i32* %1447, align 4
+  %341 = zext i32 %340 to i64
+  store i64 %341, i64* %RAX, align 8, !tbaa !2428
+  %342 = add i64 %1438, -48
+  %343 = add i64 %1476, 6
+  store i64 %343, i64* %PC, align 8
+  %344 = inttoptr i64 %342 to i32*
+  store i32 %340, i32* %344, align 4
+  %345 = load i64, i64* %RBP, align 8
+  %346 = add i64 %345, -48
+  %347 = load i64, i64* %PC, align 8
+  %348 = add i64 %347, 3
+  store i64 %348, i64* %PC, align 8
+  %349 = inttoptr i64 %346 to i32*
+  %350 = load i32, i32* %349, align 4
+  %351 = zext i32 %350 to i64
+  store i64 %351, i64* %RAX, align 8, !tbaa !2428
+  %352 = add i64 %345, -52
+  %353 = add i64 %347, 6
+  store i64 %353, i64* %PC, align 8
+  %354 = inttoptr i64 %352 to i32*
+  %355 = load i32, i32* %354, align 4
+  %356 = add i32 %355, %350
+  %357 = zext i32 %356 to i64
+  store i64 %357, i64* %RAX, align 8, !tbaa !2428
+  %358 = icmp ult i32 %356, %350
+  %359 = icmp ult i32 %356, %355
+  %360 = or i1 %358, %359
+  %361 = zext i1 %360 to i8
+  store i8 %361, i8* %.pre-phi13, align 1, !tbaa !2434
+  %362 = and i32 %356, 255
+  %363 = tail call i32 @llvm.ctpop.i32(i32 %362) #8
+  %364 = trunc i32 %363 to i8
+  %365 = and i8 %364, 1
+  %366 = xor i8 %365, 1
+  store i8 %366, i8* %.pre-phi15, align 1, !tbaa !2448
+  %367 = xor i32 %355, %350
+  %368 = xor i32 %367, %356
+  %369 = lshr i32 %368, 4
+  %370 = trunc i32 %369 to i8
+  %371 = and i8 %370, 1
+  store i8 %371, i8* %.pre-phi17, align 1, !tbaa !2452
+  %372 = icmp eq i32 %356, 0
+  %373 = zext i1 %372 to i8
+  store i8 %373, i8* %.pre-phi19, align 1, !tbaa !2449
+  %374 = lshr i32 %356, 31
+  %375 = trunc i32 %374 to i8
+  store i8 %375, i8* %.pre-phi21, align 1, !tbaa !2450
+  %376 = lshr i32 %350, 31
+  %377 = lshr i32 %355, 31
+  %378 = xor i32 %374, %376
+  %379 = xor i32 %374, %377
+  %380 = add nuw nsw i32 %378, %379
+  %381 = icmp eq i32 %380, 2
+  %382 = zext i1 %381 to i8
+  store i8 %382, i8* %.pre-phi23, align 1, !tbaa !2451
+  %383 = add i64 %345, -44
+  %384 = add i64 %347, 9
+  store i64 %384, i64* %PC, align 8
+  %385 = inttoptr i64 %383 to i32*
+  store i32 %356, i32* %385, align 4
+  %386 = load i64, i64* %RBP, align 8
+  %387 = add i64 %386, -44
+  %388 = load i64, i64* %PC, align 8
+  %389 = add i64 %388, 3
+  store i64 %389, i64* %PC, align 8
+  %390 = inttoptr i64 %387 to i32*
+  %391 = load i32, i32* %390, align 4
+  %392 = zext i32 %391 to i64
+  store i64 %392, i64* %RAX, align 8, !tbaa !2428
+  %393 = add i64 %386, -56
+  %394 = add i64 %388, 6
+  store i64 %394, i64* %PC, align 8
+  %395 = inttoptr i64 %393 to i32*
+  %396 = load i32, i32* %395, align 4
+  %397 = sub i32 %391, %396
+  %398 = icmp ult i32 %391, %396
+  %399 = zext i1 %398 to i8
+  store i8 %399, i8* %.pre-phi13, align 1, !tbaa !2434
+  %400 = and i32 %397, 255
+  %401 = tail call i32 @llvm.ctpop.i32(i32 %400) #8
+  %402 = trunc i32 %401 to i8
+  %403 = and i8 %402, 1
+  %404 = xor i8 %403, 1
+  store i8 %404, i8* %.pre-phi15, align 1, !tbaa !2448
+  %405 = xor i32 %396, %391
+  %406 = xor i32 %405, %397
+  %407 = lshr i32 %406, 4
+  %408 = trunc i32 %407 to i8
+  %409 = and i8 %408, 1
+  store i8 %409, i8* %.pre-phi17, align 1, !tbaa !2452
+  %410 = icmp eq i32 %397, 0
+  %411 = zext i1 %410 to i8
+  store i8 %411, i8* %.pre-phi19, align 1, !tbaa !2449
+  %412 = lshr i32 %397, 31
+  %413 = trunc i32 %412 to i8
+  store i8 %413, i8* %.pre-phi21, align 1, !tbaa !2450
+  %414 = lshr i32 %391, 31
+  %415 = lshr i32 %396, 31
+  %416 = xor i32 %415, %414
+  %417 = xor i32 %412, %414
+  %418 = add nuw nsw i32 %417, %416
+  %419 = icmp eq i32 %418, 2
+  %420 = zext i1 %419 to i8
+  store i8 %420, i8* %.pre-phi23, align 1, !tbaa !2451
+  %421 = icmp ne i8 %413, 0
+  %422 = xor i1 %421, %419
+  %423 = or i1 %410, %422
+  %.v24 = select i1 %423, i64 -405, i64 12
+  %424 = add i64 %388, %.v24
+  store i64 %424, i64* %PC, align 8, !tbaa !2428
+  br i1 %423, label %block_400a69, label %block_400c0a
 
 block_400a69:                                     ; preds = %block_400bef, %block_400a55
-  %.pre6 = phi i64 [ %394, %block_400bef ], [ %.pre6.pre, %block_400a55 ]
-  %433 = phi i64 [ %432, %block_400bef ], [ %.pre5, %block_400a55 ]
-  %434 = add i64 %433, 5
-  store i64 %434, i64* %.pre-phi, align 8, !tbaa !2428
+  %.pre6 = phi i64 [ %386, %block_400bef ], [ %.pre6.pre, %block_400a55 ]
+  %425 = phi i64 [ %424, %block_400bef ], [ %.pre5, %block_400a55 ]
+  %426 = add i64 %425, 5
+  store i64 %426, i64* %PC, align 8, !tbaa !2428
   br label %block_400a6e
 
 block_400c66:                                     ; preds = %block_400c5a
-  %435 = add i64 %565, -36
-  %436 = add i64 %601, 5
-  store i64 %436, i64* %PC, align 8
-  %437 = inttoptr i64 %435 to i32*
-  %438 = load i32, i32* %437, align 4
-  %439 = bitcast [32 x %union.VectorReg]* %5 to i32*
-  store i32 %438, i32* %439, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %109, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %111, align 1, !tbaa !2432
-  %440 = add i64 %565, -16
-  %441 = add i64 %601, 9
-  store i64 %441, i64* %PC, align 8
-  %442 = inttoptr i64 %440 to i64*
-  %443 = load i64, i64* %442, align 8
-  store i64 %443, i64* %RAX, align 8, !tbaa !2428
-  %444 = add i64 %601, 13
-  store i64 %444, i64* %PC, align 8
-  %445 = load i32, i32* %568, align 4
-  %446 = sext i32 %445 to i64
-  store i64 %446, i64* %RCX, align 8, !tbaa !2428
-  %447 = shl nsw i64 %446, 3
-  %448 = add i64 %447, %443
-  %449 = add i64 %601, 18
-  store i64 %449, i64* %PC, align 8
-  %450 = load <2 x float>, <2 x float>* %112, align 1
-  %451 = load <2 x i32>, <2 x i32>* %113, align 1
-  %452 = inttoptr i64 %448 to float*
-  %453 = load float, float* %452, align 4
-  %454 = extractelement <2 x float> %450, i32 0
-  %455 = fmul float %454, %453
-  store float %455, float* %105, align 1, !tbaa !2432
-  %456 = bitcast <2 x float> %450 to <2 x i32>
-  %457 = extractelement <2 x i32> %456, i32 1
-  store i32 %457, i32* %114, align 1, !tbaa !2432
-  %458 = extractelement <2 x i32> %451, i32 0
-  store i32 %458, i32* %115, align 1, !tbaa !2432
-  %459 = extractelement <2 x i32> %451, i32 1
-  store i32 %459, i32* %116, align 1, !tbaa !2432
-  %460 = add i64 %601, 22
-  store i64 %460, i64* %PC, align 8
-  %461 = load i64, i64* %442, align 8
-  store i64 %461, i64* %RAX, align 8, !tbaa !2428
-  %462 = add i64 %601, 26
-  store i64 %462, i64* %PC, align 8
-  %463 = load i32, i32* %568, align 4
-  %464 = sext i32 %463 to i64
-  store i64 %464, i64* %RCX, align 8, !tbaa !2428
-  %465 = shl nsw i64 %464, 3
-  %466 = add i64 %465, %461
-  %467 = add i64 %601, 31
-  store i64 %467, i64* %PC, align 8
-  %468 = load <2 x float>, <2 x float>* %41, align 1
-  %469 = extractelement <2 x float> %468, i32 0
-  %470 = inttoptr i64 %466 to float*
-  store float %469, float* %470, align 4
-  %471 = load i64, i64* %RBP, align 8
-  %472 = add i64 %471, -36
-  %473 = load i64, i64* %PC, align 8
-  %474 = add i64 %473, 5
-  store i64 %474, i64* %PC, align 8
-  %475 = inttoptr i64 %472 to i32*
-  %476 = load i32, i32* %475, align 4
-  %477 = bitcast [32 x %union.VectorReg]* %5 to i32*
-  store i32 %476, i32* %477, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  %478 = add i64 %473, 9
-  store i64 %478, i64* %PC, align 8
-  %479 = load i64, i64* %168, align 1
-  %480 = trunc i64 %479 to i32
-  store i32 %480, i32* %170, align 1, !tbaa !2456
-  store i32 0, i32* %171, align 1, !tbaa !2456
-  %481 = load i64, i64* %RDX, align 8
-  %482 = xor i64 %481, -2147483648
-  %483 = trunc i64 %482 to i32
-  %484 = and i64 %482, 4294967295
-  store i64 %484, i64* %RDX, align 8, !tbaa !2428
+  %427 = add i64 %553, -36
+  %428 = add i64 %589, 5
+  store i64 %428, i64* %PC, align 8
+  %429 = inttoptr i64 %427 to i32*
+  %430 = load i32, i32* %429, align 4
+  store i32 %430, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  %431 = add i64 %553, -16
+  %432 = add i64 %589, 9
+  store i64 %432, i64* %PC, align 8
+  %433 = inttoptr i64 %431 to i64*
+  %434 = load i64, i64* %433, align 8
+  store i64 %434, i64* %RAX, align 8, !tbaa !2428
+  %435 = add i64 %589, 13
+  store i64 %435, i64* %PC, align 8
+  %436 = load i32, i32* %556, align 4
+  %437 = sext i32 %436 to i64
+  store i64 %437, i64* %RCX, align 8, !tbaa !2428
+  %438 = shl nsw i64 %437, 3
+  %439 = add i64 %438, %434
+  %440 = add i64 %589, 18
+  store i64 %440, i64* %PC, align 8
+  %441 = load <2 x float>, <2 x float>* %41, align 1
+  %442 = load <2 x i32>, <2 x i32>* %109, align 1
+  %443 = inttoptr i64 %439 to float*
+  %444 = load float, float* %443, align 4
+  %445 = extractelement <2 x float> %441, i32 0
+  %446 = fmul float %445, %444
+  store float %446, float* %102, align 1, !tbaa !2432
+  %447 = bitcast <2 x float> %441 to <2 x i32>
+  %448 = extractelement <2 x i32> %447, i32 1
+  store i32 %448, i32* %110, align 1, !tbaa !2432
+  %449 = extractelement <2 x i32> %442, i32 0
+  store i32 %449, i32* %111, align 1, !tbaa !2432
+  %450 = extractelement <2 x i32> %442, i32 1
+  store i32 %450, i32* %112, align 1, !tbaa !2432
+  %451 = add i64 %589, 22
+  store i64 %451, i64* %PC, align 8
+  %452 = load i64, i64* %433, align 8
+  store i64 %452, i64* %RAX, align 8, !tbaa !2428
+  %453 = add i64 %589, 26
+  store i64 %453, i64* %PC, align 8
+  %454 = load i32, i32* %556, align 4
+  %455 = sext i32 %454 to i64
+  store i64 %455, i64* %RCX, align 8, !tbaa !2428
+  %456 = shl nsw i64 %455, 3
+  %457 = add i64 %456, %452
+  %458 = add i64 %589, 31
+  store i64 %458, i64* %PC, align 8
+  %459 = load <2 x float>, <2 x float>* %41, align 1
+  %460 = extractelement <2 x float> %459, i32 0
+  %461 = inttoptr i64 %457 to float*
+  store float %460, float* %461, align 4
+  %462 = load i64, i64* %RBP, align 8
+  %463 = add i64 %462, -36
+  %464 = load i64, i64* %PC, align 8
+  %465 = add i64 %464, 5
+  store i64 %465, i64* %PC, align 8
+  %466 = inttoptr i64 %463 to i32*
+  %467 = load i32, i32* %466, align 4
+  store i32 %467, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  %468 = add i64 %464, 9
+  store i64 %468, i64* %PC, align 8
+  %469 = load i64, i64* %162, align 1
+  %470 = trunc i64 %469 to i32
+  store i32 %470, i32* %164, align 1, !tbaa !2456
+  store i32 0, i32* %165, align 1, !tbaa !2456
+  %471 = load i64, i64* %RDX, align 8
+  %472 = xor i64 %471, -2147483648
+  %473 = trunc i64 %472 to i32
+  %474 = and i64 %472, 4294967295
+  store i64 %474, i64* %RDX, align 8, !tbaa !2428
   store i8 0, i8* %.pre-phi13, align 1, !tbaa !2434
-  %485 = and i32 %483, 255
-  %486 = tail call i32 @llvm.ctpop.i32(i32 %485) #8
-  %487 = trunc i32 %486 to i8
-  %488 = and i8 %487, 1
-  %489 = xor i8 %488, 1
-  store i8 %489, i8* %.pre-phi15, align 1, !tbaa !2448
-  %490 = icmp eq i32 %483, 0
-  %491 = zext i1 %490 to i8
-  store i8 %491, i8* %.pre-phi19, align 1, !tbaa !2449
-  %492 = lshr i32 %483, 31
-  %493 = trunc i32 %492 to i8
-  store i8 %493, i8* %.pre-phi21, align 1, !tbaa !2450
+  %475 = and i32 %473, 255
+  %476 = tail call i32 @llvm.ctpop.i32(i32 %475) #8
+  %477 = trunc i32 %476 to i8
+  %478 = and i8 %477, 1
+  %479 = xor i8 %478, 1
+  store i8 %479, i8* %.pre-phi15, align 1, !tbaa !2448
+  %480 = icmp eq i32 %473, 0
+  %481 = zext i1 %480 to i8
+  store i8 %481, i8* %.pre-phi19, align 1, !tbaa !2449
+  %482 = lshr i32 %473, 31
+  %483 = trunc i32 %482 to i8
+  store i8 %483, i8* %.pre-phi21, align 1, !tbaa !2450
   store i8 0, i8* %.pre-phi23, align 1, !tbaa !2451
   store i8 0, i8* %.pre-phi17, align 1, !tbaa !2452
-  %494 = trunc i64 %482 to i32
-  store i32 %494, i32* %172, align 1, !tbaa !2456
-  store i32 0, i32* %114, align 1, !tbaa !2456
-  store i32 0, i32* %115, align 1, !tbaa !2456
-  store i32 0, i32* %116, align 1, !tbaa !2456
-  %495 = load i64, i64* %RBP, align 8
-  %496 = add i64 %495, -16
-  %497 = add i64 %473, 23
+  store i32 %473, i32* %615, align 1, !tbaa !2456
+  store i32 0, i32* %110, align 1, !tbaa !2456
+  store i32 0, i32* %111, align 1, !tbaa !2456
+  store i32 0, i32* %112, align 1, !tbaa !2456
+  %484 = load i64, i64* %RBP, align 8
+  %485 = add i64 %484, -16
+  %486 = add i64 %464, 23
+  store i64 %486, i64* %PC, align 8
+  %487 = inttoptr i64 %485 to i64*
+  %488 = load i64, i64* %487, align 8
+  store i64 %488, i64* %RAX, align 8, !tbaa !2428
+  %489 = add i64 %484, -40
+  %490 = add i64 %464, 27
+  store i64 %490, i64* %PC, align 8
+  %491 = inttoptr i64 %489 to i32*
+  %492 = load i32, i32* %491, align 4
+  %493 = sext i32 %492 to i64
+  store i64 %493, i64* %RCX, align 8, !tbaa !2428
+  %494 = shl nsw i64 %493, 3
+  %495 = add i64 %488, 4
+  %496 = add i64 %495, %494
+  %497 = add i64 %464, 33
   store i64 %497, i64* %PC, align 8
-  %498 = inttoptr i64 %496 to i64*
-  %499 = load i64, i64* %498, align 8
-  store i64 %499, i64* %RAX, align 8, !tbaa !2428
-  %500 = add i64 %495, -40
-  %501 = add i64 %473, 27
-  store i64 %501, i64* %PC, align 8
-  %502 = inttoptr i64 %500 to i32*
-  %503 = load i32, i32* %502, align 4
-  %504 = sext i32 %503 to i64
-  store i64 %504, i64* %RCX, align 8, !tbaa !2428
-  %505 = shl nsw i64 %504, 3
-  %506 = add i64 %499, 4
-  %507 = add i64 %506, %505
-  %508 = add i64 %473, 33
+  %498 = load <2 x float>, <2 x float>* %41, align 1
+  %499 = load <2 x i32>, <2 x i32>* %109, align 1
+  %500 = inttoptr i64 %496 to float*
+  %501 = load float, float* %500, align 4
+  %502 = extractelement <2 x float> %498, i32 0
+  %503 = fmul float %502, %501
+  store float %503, float* %102, align 1, !tbaa !2432
+  %504 = bitcast <2 x float> %498 to <2 x i32>
+  %505 = extractelement <2 x i32> %504, i32 1
+  store i32 %505, i32* %110, align 1, !tbaa !2432
+  %506 = extractelement <2 x i32> %499, i32 0
+  store i32 %506, i32* %111, align 1, !tbaa !2432
+  %507 = extractelement <2 x i32> %499, i32 1
+  store i32 %507, i32* %112, align 1, !tbaa !2432
+  %508 = add i64 %464, 37
   store i64 %508, i64* %PC, align 8
-  %509 = load <2 x float>, <2 x float>* %112, align 1
-  %510 = load <2 x i32>, <2 x i32>* %113, align 1
-  %511 = inttoptr i64 %507 to float*
-  %512 = load float, float* %511, align 4
-  %513 = extractelement <2 x float> %509, i32 0
-  %514 = fmul float %513, %512
-  store float %514, float* %105, align 1, !tbaa !2432
-  %515 = bitcast <2 x float> %509 to <2 x i32>
-  %516 = extractelement <2 x i32> %515, i32 1
-  store i32 %516, i32* %114, align 1, !tbaa !2432
-  %517 = extractelement <2 x i32> %510, i32 0
-  store i32 %517, i32* %115, align 1, !tbaa !2432
-  %518 = extractelement <2 x i32> %510, i32 1
-  store i32 %518, i32* %116, align 1, !tbaa !2432
-  %519 = add i64 %473, 37
-  store i64 %519, i64* %PC, align 8
-  %520 = load i64, i64* %498, align 8
-  store i64 %520, i64* %RAX, align 8, !tbaa !2428
-  %521 = add i64 %473, 41
-  store i64 %521, i64* %PC, align 8
-  %522 = load i32, i32* %502, align 4
-  %523 = sext i32 %522 to i64
-  store i64 %523, i64* %RCX, align 8, !tbaa !2428
-  %524 = shl nsw i64 %523, 3
-  %525 = add i64 %520, 4
-  %526 = add i64 %525, %524
-  %527 = add i64 %473, 47
-  store i64 %527, i64* %PC, align 8
-  %528 = load <2 x float>, <2 x float>* %41, align 1
-  %529 = extractelement <2 x float> %528, i32 0
-  %530 = inttoptr i64 %526 to float*
-  store float %529, float* %530, align 4
-  %531 = load i64, i64* %RBP, align 8
-  %532 = add i64 %531, -40
-  %533 = load i64, i64* %PC, align 8
-  %534 = add i64 %533, 3
-  store i64 %534, i64* %PC, align 8
-  %535 = inttoptr i64 %532 to i32*
-  %536 = load i32, i32* %535, align 4
-  %537 = add i32 %536, 1
-  %538 = zext i32 %537 to i64
-  store i64 %538, i64* %RAX, align 8, !tbaa !2428
-  %539 = icmp eq i32 %536, -1
-  %540 = icmp eq i32 %537, 0
-  %541 = or i1 %539, %540
-  %542 = zext i1 %541 to i8
-  store i8 %542, i8* %.pre-phi13, align 1, !tbaa !2434
-  %543 = and i32 %537, 255
-  %544 = tail call i32 @llvm.ctpop.i32(i32 %543) #8
-  %545 = trunc i32 %544 to i8
-  %546 = and i8 %545, 1
-  %547 = xor i8 %546, 1
-  store i8 %547, i8* %.pre-phi15, align 1, !tbaa !2448
-  %548 = xor i32 %536, %537
-  %549 = lshr i32 %548, 4
-  %550 = trunc i32 %549 to i8
-  %551 = and i8 %550, 1
-  store i8 %551, i8* %.pre-phi17, align 1, !tbaa !2452
-  %552 = icmp eq i32 %537, 0
-  %553 = zext i1 %552 to i8
-  store i8 %553, i8* %.pre-phi19, align 1, !tbaa !2449
-  %554 = lshr i32 %537, 31
-  %555 = trunc i32 %554 to i8
-  store i8 %555, i8* %.pre-phi21, align 1, !tbaa !2450
-  %556 = lshr i32 %536, 31
-  %557 = xor i32 %554, %556
-  %558 = add nuw nsw i32 %557, %554
-  %559 = icmp eq i32 %558, 2
-  %560 = zext i1 %559 to i8
-  store i8 %560, i8* %.pre-phi23, align 1, !tbaa !2451
-  %561 = add i64 %533, 9
-  store i64 %561, i64* %PC, align 8
-  store i32 %537, i32* %535, align 4
-  %562 = load i64, i64* %PC, align 8
-  %563 = add i64 %562, -99
-  store i64 %563, i64* %.pre-phi, align 8, !tbaa !2428
+  %509 = load i64, i64* %487, align 8
+  store i64 %509, i64* %RAX, align 8, !tbaa !2428
+  %510 = add i64 %464, 41
+  store i64 %510, i64* %PC, align 8
+  %511 = load i32, i32* %491, align 4
+  %512 = sext i32 %511 to i64
+  store i64 %512, i64* %RCX, align 8, !tbaa !2428
+  %513 = shl nsw i64 %512, 3
+  %514 = add i64 %509, 4
+  %515 = add i64 %514, %513
+  %516 = add i64 %464, 47
+  store i64 %516, i64* %PC, align 8
+  %517 = load <2 x float>, <2 x float>* %41, align 1
+  %518 = extractelement <2 x float> %517, i32 0
+  %519 = inttoptr i64 %515 to float*
+  store float %518, float* %519, align 4
+  %520 = load i64, i64* %RBP, align 8
+  %521 = add i64 %520, -40
+  %522 = load i64, i64* %PC, align 8
+  %523 = add i64 %522, 3
+  store i64 %523, i64* %PC, align 8
+  %524 = inttoptr i64 %521 to i32*
+  %525 = load i32, i32* %524, align 4
+  %526 = add i32 %525, 1
+  %527 = zext i32 %526 to i64
+  store i64 %527, i64* %RAX, align 8, !tbaa !2428
+  %528 = icmp eq i32 %525, -1
+  %529 = icmp eq i32 %526, 0
+  %530 = or i1 %528, %529
+  %531 = zext i1 %530 to i8
+  store i8 %531, i8* %.pre-phi13, align 1, !tbaa !2434
+  %532 = and i32 %526, 255
+  %533 = tail call i32 @llvm.ctpop.i32(i32 %532) #8
+  %534 = trunc i32 %533 to i8
+  %535 = and i8 %534, 1
+  %536 = xor i8 %535, 1
+  store i8 %536, i8* %.pre-phi15, align 1, !tbaa !2448
+  %537 = xor i32 %525, %526
+  %538 = lshr i32 %537, 4
+  %539 = trunc i32 %538 to i8
+  %540 = and i8 %539, 1
+  store i8 %540, i8* %.pre-phi17, align 1, !tbaa !2452
+  %541 = zext i1 %529 to i8
+  store i8 %541, i8* %.pre-phi19, align 1, !tbaa !2449
+  %542 = lshr i32 %526, 31
+  %543 = trunc i32 %542 to i8
+  store i8 %543, i8* %.pre-phi21, align 1, !tbaa !2450
+  %544 = lshr i32 %525, 31
+  %545 = xor i32 %542, %544
+  %546 = add nuw nsw i32 %545, %542
+  %547 = icmp eq i32 %546, 2
+  %548 = zext i1 %547 to i8
+  store i8 %548, i8* %.pre-phi23, align 1, !tbaa !2451
+  %549 = add i64 %522, 9
+  store i64 %549, i64* %PC, align 8
+  store i32 %526, i32* %524, align 4
+  %550 = load i64, i64* %PC, align 8
+  %551 = add i64 %550, -99
+  store i64 %551, i64* %PC, align 8, !tbaa !2428
   br label %block_400c5a
 
 block_400c5a:                                     ; preds = %block_400c66, %block_400c53
-  %564 = phi i64 [ %563, %block_400c66 ], [ %.pre9, %block_400c53 ]
-  %565 = load i64, i64* %RBP, align 8
-  %566 = add i64 %565, -40
-  %567 = add i64 %564, 3
-  store i64 %567, i64* %PC, align 8
-  %568 = inttoptr i64 %566 to i32*
-  %569 = load i32, i32* %568, align 4
-  %570 = zext i32 %569 to i64
-  store i64 %570, i64* %RAX, align 8, !tbaa !2428
-  %571 = add i64 %565, -4
-  %572 = add i64 %564, 6
-  store i64 %572, i64* %PC, align 8
-  %573 = inttoptr i64 %571 to i32*
-  %574 = load i32, i32* %573, align 4
-  %575 = sub i32 %569, %574
-  %576 = icmp ult i32 %569, %574
+  %552 = phi i64 [ %551, %block_400c66 ], [ %.pre9, %block_400c53 ]
+  %553 = load i64, i64* %RBP, align 8
+  %554 = add i64 %553, -40
+  %555 = add i64 %552, 3
+  store i64 %555, i64* %PC, align 8
+  %556 = inttoptr i64 %554 to i32*
+  %557 = load i32, i32* %556, align 4
+  %558 = zext i32 %557 to i64
+  store i64 %558, i64* %RAX, align 8, !tbaa !2428
+  %559 = add i64 %553, -4
+  %560 = add i64 %552, 6
+  store i64 %560, i64* %PC, align 8
+  %561 = inttoptr i64 %559 to i32*
+  %562 = load i32, i32* %561, align 4
+  %563 = sub i32 %557, %562
+  %564 = icmp ult i32 %557, %562
+  %565 = zext i1 %564 to i8
+  store i8 %565, i8* %.pre-phi13, align 1, !tbaa !2434
+  %566 = and i32 %563, 255
+  %567 = tail call i32 @llvm.ctpop.i32(i32 %566) #8
+  %568 = trunc i32 %567 to i8
+  %569 = and i8 %568, 1
+  %570 = xor i8 %569, 1
+  store i8 %570, i8* %.pre-phi15, align 1, !tbaa !2448
+  %571 = xor i32 %562, %557
+  %572 = xor i32 %571, %563
+  %573 = lshr i32 %572, 4
+  %574 = trunc i32 %573 to i8
+  %575 = and i8 %574, 1
+  store i8 %575, i8* %.pre-phi17, align 1, !tbaa !2452
+  %576 = icmp eq i32 %563, 0
   %577 = zext i1 %576 to i8
-  store i8 %577, i8* %.pre-phi13, align 1, !tbaa !2434
-  %578 = and i32 %575, 255
-  %579 = tail call i32 @llvm.ctpop.i32(i32 %578) #8
-  %580 = trunc i32 %579 to i8
-  %581 = and i8 %580, 1
-  %582 = xor i8 %581, 1
-  store i8 %582, i8* %.pre-phi15, align 1, !tbaa !2448
-  %583 = xor i32 %574, %569
-  %584 = xor i32 %583, %575
-  %585 = lshr i32 %584, 4
-  %586 = trunc i32 %585 to i8
-  %587 = and i8 %586, 1
-  store i8 %587, i8* %.pre-phi17, align 1, !tbaa !2452
-  %588 = icmp eq i32 %575, 0
-  %589 = zext i1 %588 to i8
-  store i8 %589, i8* %.pre-phi19, align 1, !tbaa !2449
-  %590 = lshr i32 %575, 31
-  %591 = trunc i32 %590 to i8
-  store i8 %591, i8* %.pre-phi21, align 1, !tbaa !2450
-  %592 = lshr i32 %569, 31
-  %593 = lshr i32 %574, 31
-  %594 = xor i32 %593, %592
-  %595 = xor i32 %590, %592
-  %596 = add nuw nsw i32 %595, %594
-  %597 = icmp eq i32 %596, 2
-  %598 = zext i1 %597 to i8
-  store i8 %598, i8* %.pre-phi23, align 1, !tbaa !2451
-  %599 = icmp ne i8 %591, 0
-  %600 = xor i1 %599, %597
-  %.demorgan = or i1 %588, %600
+  store i8 %577, i8* %.pre-phi19, align 1, !tbaa !2449
+  %578 = lshr i32 %563, 31
+  %579 = trunc i32 %578 to i8
+  store i8 %579, i8* %.pre-phi21, align 1, !tbaa !2450
+  %580 = lshr i32 %557, 31
+  %581 = lshr i32 %562, 31
+  %582 = xor i32 %581, %580
+  %583 = xor i32 %578, %580
+  %584 = add nuw nsw i32 %583, %582
+  %585 = icmp eq i32 %584, 2
+  %586 = zext i1 %585 to i8
+  store i8 %586, i8* %.pre-phi23, align 1, !tbaa !2451
+  %587 = icmp ne i8 %579, 0
+  %588 = xor i1 %587, %585
+  %.demorgan = or i1 %576, %588
   %.v27 = select i1 %.demorgan, i64 12, i64 104
-  %601 = add i64 %564, %.v27
-  store i64 %601, i64* %.pre-phi, align 8, !tbaa !2428
+  %589 = add i64 %552, %.v27
+  store i64 %589, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan, label %block_400c66, label %block_400cc2
 
 block_400cc2:                                     ; preds = %block_400c5a
-  %602 = add i64 %601, 1
-  store i64 %602, i64* %PC, align 8
-  %603 = load i64, i64* %10, align 8, !tbaa !2428
-  %604 = add i64 %603, 8
-  %605 = inttoptr i64 %603 to i64*
-  %606 = load i64, i64* %605, align 8
-  store i64 %606, i64* %RBP, align 8, !tbaa !2428
-  store i64 %604, i64* %10, align 8, !tbaa !2428
-  %607 = add i64 %601, 2
-  store i64 %607, i64* %PC, align 8
-  %608 = inttoptr i64 %604 to i64*
-  %609 = load i64, i64* %608, align 8
-  store i64 %609, i64* %.pre-phi, align 8, !tbaa !2428
-  %610 = add i64 %603, 16
-  store i64 %610, i64* %10, align 8, !tbaa !2428
-  ret %struct.Memory* %95
+  %590 = add i64 %589, 1
+  store i64 %590, i64* %PC, align 8
+  %591 = load i64, i64* %10, align 8, !tbaa !2428
+  %592 = add i64 %591, 8
+  %593 = inttoptr i64 %591 to i64*
+  %594 = load i64, i64* %593, align 8
+  store i64 %594, i64* %RBP, align 8, !tbaa !2428
+  store i64 %592, i64* %10, align 8, !tbaa !2428
+  %595 = add i64 %589, 2
+  store i64 %595, i64* %PC, align 8
+  %596 = inttoptr i64 %592 to i64*
+  %597 = load i64, i64* %596, align 8
+  store i64 %597, i64* %PC, align 8, !tbaa !2428
+  %598 = add i64 %591, 16
+  store i64 %598, i64* %10, align 8, !tbaa !2428
+  ret %struct.Memory* %92
 
 block_400a6e:                                     ; preds = %block_400a6e, %block_400a69
-  %611 = phi i64 [ %1500, %block_400a6e ], [ %434, %block_400a69 ]
-  %612 = phi i64 [ %1462, %block_400a6e ], [ %.pre6, %block_400a69 ]
-  %613 = add i64 %612, -16
-  %614 = add i64 %611, 4
-  store i64 %614, i64* %PC, align 8
-  %615 = inttoptr i64 %613 to i64*
-  %616 = load i64, i64* %615, align 8
-  store i64 %616, i64* %RAX, align 8, !tbaa !2428
-  %617 = add i64 %612, -40
-  %618 = add i64 %611, 8
-  store i64 %618, i64* %PC, align 8
-  %619 = inttoptr i64 %617 to i32*
-  %620 = load i32, i32* %619, align 4
-  %621 = sext i32 %620 to i64
-  store i64 %621, i64* %RCX, align 8, !tbaa !2428
-  %622 = shl nsw i64 %621, 3
-  %623 = add i64 %622, %616
-  %624 = add i64 %611, 13
-  store i64 %624, i64* %PC, align 8
-  %625 = inttoptr i64 %623 to i32*
-  %626 = load i32, i32* %625, align 4
-  %627 = bitcast [32 x %union.VectorReg]* %5 to i32*
-  store i32 %626, i32* %627, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %109, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %111, align 1, !tbaa !2432
-  %628 = add i64 %611, 17
-  store i64 %628, i64* %PC, align 8
-  %629 = load i64, i64* %615, align 8
-  store i64 %629, i64* %RAX, align 8, !tbaa !2428
-  %630 = add i64 %612, -56
-  %631 = add i64 %611, 20
-  store i64 %631, i64* %PC, align 8
-  %632 = inttoptr i64 %630 to i32*
-  %633 = load i32, i32* %632, align 4
-  %634 = zext i32 %633 to i64
-  store i64 %634, i64* %RDX, align 8, !tbaa !2428
-  %635 = add i64 %611, 23
-  store i64 %635, i64* %PC, align 8
-  %636 = load i32, i32* %619, align 4
-  %637 = add i32 %636, %633
-  %638 = zext i32 %637 to i64
-  store i64 %638, i64* %RDX, align 8, !tbaa !2428
-  %639 = icmp ult i32 %637, %633
-  %640 = icmp ult i32 %637, %636
-  %641 = or i1 %639, %640
+  %599 = phi i64 [ %1476, %block_400a6e ], [ %426, %block_400a69 ]
+  %600 = phi i64 [ %1438, %block_400a6e ], [ %.pre6, %block_400a69 ]
+  %601 = add i64 %600, -16
+  %602 = add i64 %599, 4
+  store i64 %602, i64* %PC, align 8
+  %603 = inttoptr i64 %601 to i64*
+  %604 = load i64, i64* %603, align 8
+  store i64 %604, i64* %RAX, align 8, !tbaa !2428
+  %605 = add i64 %600, -40
+  %606 = add i64 %599, 8
+  store i64 %606, i64* %PC, align 8
+  %607 = inttoptr i64 %605 to i32*
+  %608 = load i32, i32* %607, align 4
+  %609 = sext i32 %608 to i64
+  store i64 %609, i64* %RCX, align 8, !tbaa !2428
+  %610 = shl nsw i64 %609, 3
+  %611 = add i64 %610, %604
+  %612 = add i64 %599, 13
+  store i64 %612, i64* %PC, align 8
+  %613 = inttoptr i64 %611 to i32*
+  %614 = load i32, i32* %613, align 4
+  %615 = bitcast [32 x %union.VectorReg]* %5 to i32*
+  store i32 %614, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  %616 = add i64 %599, 17
+  store i64 %616, i64* %PC, align 8
+  %617 = load i64, i64* %603, align 8
+  store i64 %617, i64* %RAX, align 8, !tbaa !2428
+  %618 = add i64 %600, -56
+  %619 = add i64 %599, 20
+  store i64 %619, i64* %PC, align 8
+  %620 = inttoptr i64 %618 to i32*
+  %621 = load i32, i32* %620, align 4
+  %622 = zext i32 %621 to i64
+  store i64 %622, i64* %RDX, align 8, !tbaa !2428
+  %623 = add i64 %599, 23
+  store i64 %623, i64* %PC, align 8
+  %624 = load i32, i32* %607, align 4
+  %625 = add i32 %624, %621
+  %626 = zext i32 %625 to i64
+  store i64 %626, i64* %RDX, align 8, !tbaa !2428
+  %627 = icmp ult i32 %625, %621
+  %628 = icmp ult i32 %625, %624
+  %629 = or i1 %627, %628
+  %630 = zext i1 %629 to i8
+  store i8 %630, i8* %.pre-phi13, align 1, !tbaa !2434
+  %631 = and i32 %625, 255
+  %632 = tail call i32 @llvm.ctpop.i32(i32 %631) #8
+  %633 = trunc i32 %632 to i8
+  %634 = and i8 %633, 1
+  %635 = xor i8 %634, 1
+  store i8 %635, i8* %.pre-phi15, align 1, !tbaa !2448
+  %636 = xor i32 %624, %621
+  %637 = xor i32 %636, %625
+  %638 = lshr i32 %637, 4
+  %639 = trunc i32 %638 to i8
+  %640 = and i8 %639, 1
+  store i8 %640, i8* %.pre-phi17, align 1, !tbaa !2452
+  %641 = icmp eq i32 %625, 0
   %642 = zext i1 %641 to i8
-  store i8 %642, i8* %.pre-phi13, align 1, !tbaa !2434
-  %643 = and i32 %637, 255
-  %644 = tail call i32 @llvm.ctpop.i32(i32 %643) #8
-  %645 = trunc i32 %644 to i8
-  %646 = and i8 %645, 1
-  %647 = xor i8 %646, 1
-  store i8 %647, i8* %.pre-phi15, align 1, !tbaa !2448
-  %648 = xor i32 %636, %633
-  %649 = xor i32 %648, %637
-  %650 = lshr i32 %649, 4
-  %651 = trunc i32 %650 to i8
-  %652 = and i8 %651, 1
-  store i8 %652, i8* %.pre-phi17, align 1, !tbaa !2452
-  %653 = icmp eq i32 %637, 0
-  %654 = zext i1 %653 to i8
-  store i8 %654, i8* %.pre-phi19, align 1, !tbaa !2449
-  %655 = lshr i32 %637, 31
-  %656 = trunc i32 %655 to i8
-  store i8 %656, i8* %.pre-phi21, align 1, !tbaa !2450
-  %657 = lshr i32 %633, 31
-  %658 = lshr i32 %636, 31
-  %659 = xor i32 %655, %657
-  %660 = xor i32 %655, %658
-  %661 = add nuw nsw i32 %659, %660
-  %662 = icmp eq i32 %661, 2
-  %663 = zext i1 %662 to i8
-  store i8 %663, i8* %.pre-phi23, align 1, !tbaa !2451
-  %664 = sext i32 %637 to i64
-  store i64 %664, i64* %RCX, align 8, !tbaa !2428
-  %665 = shl nsw i64 %664, 3
-  %666 = add i64 %665, %629
-  %667 = add i64 %611, 31
+  store i8 %642, i8* %.pre-phi19, align 1, !tbaa !2449
+  %643 = lshr i32 %625, 31
+  %644 = trunc i32 %643 to i8
+  store i8 %644, i8* %.pre-phi21, align 1, !tbaa !2450
+  %645 = lshr i32 %621, 31
+  %646 = lshr i32 %624, 31
+  %647 = xor i32 %643, %645
+  %648 = xor i32 %643, %646
+  %649 = add nuw nsw i32 %647, %648
+  %650 = icmp eq i32 %649, 2
+  %651 = zext i1 %650 to i8
+  store i8 %651, i8* %.pre-phi23, align 1, !tbaa !2451
+  %652 = sext i32 %625 to i64
+  store i64 %652, i64* %RCX, align 8, !tbaa !2428
+  %653 = shl nsw i64 %652, 3
+  %654 = add i64 %653, %617
+  %655 = add i64 %599, 31
+  store i64 %655, i64* %PC, align 8
+  %656 = load <2 x float>, <2 x float>* %41, align 1
+  %657 = load <2 x i32>, <2 x i32>* %109, align 1
+  %658 = inttoptr i64 %654 to float*
+  %659 = load float, float* %658, align 4
+  %660 = extractelement <2 x float> %656, i32 0
+  %661 = fadd float %660, %659
+  store float %661, float* %102, align 1, !tbaa !2432
+  %662 = bitcast <2 x float> %656 to <2 x i32>
+  %663 = extractelement <2 x i32> %662, i32 1
+  store i32 %663, i32* %110, align 1, !tbaa !2432
+  %664 = extractelement <2 x i32> %657, i32 0
+  store i32 %664, i32* %111, align 1, !tbaa !2432
+  %665 = extractelement <2 x i32> %657, i32 1
+  store i32 %665, i32* %112, align 1, !tbaa !2432
+  %666 = add i64 %600, -24
+  %667 = add i64 %599, 35
   store i64 %667, i64* %PC, align 8
-  %668 = load <2 x float>, <2 x float>* %112, align 1
-  %669 = load <2 x i32>, <2 x i32>* %113, align 1
-  %670 = inttoptr i64 %666 to float*
-  %671 = load float, float* %670, align 4
-  %672 = extractelement <2 x float> %668, i32 0
-  %673 = fadd float %672, %671
-  store float %673, float* %105, align 1, !tbaa !2432
-  %674 = bitcast <2 x float> %668 to <2 x i32>
-  %675 = extractelement <2 x i32> %674, i32 1
-  store i32 %675, i32* %114, align 1, !tbaa !2432
-  %676 = extractelement <2 x i32> %669, i32 0
-  store i32 %676, i32* %115, align 1, !tbaa !2432
-  %677 = extractelement <2 x i32> %669, i32 1
-  store i32 %677, i32* %116, align 1, !tbaa !2432
-  %678 = add i64 %612, -24
-  %679 = add i64 %611, 35
-  store i64 %679, i64* %PC, align 8
-  %680 = inttoptr i64 %678 to i64*
-  %681 = load i64, i64* %680, align 8
-  store i64 %681, i64* %RAX, align 8, !tbaa !2428
-  %682 = load i64, i64* %RBP, align 8
-  %683 = add i64 %682, -40
-  %684 = add i64 %611, 38
-  store i64 %684, i64* %PC, align 8
-  %685 = inttoptr i64 %683 to i32*
-  %686 = load i32, i32* %685, align 4
-  %687 = zext i32 %686 to i64
-  store i64 %687, i64* %RDX, align 8, !tbaa !2428
-  %688 = add i64 %682, -48
-  %689 = add i64 %611, 41
-  store i64 %689, i64* %PC, align 8
-  %690 = inttoptr i64 %688 to i32*
-  %691 = load i32, i32* %690, align 4
-  %692 = add i32 %691, %686
-  %693 = zext i32 %692 to i64
-  store i64 %693, i64* %RDX, align 8, !tbaa !2428
-  %694 = icmp ult i32 %692, %686
-  %695 = icmp ult i32 %692, %691
-  %696 = or i1 %694, %695
+  %668 = inttoptr i64 %666 to i64*
+  %669 = load i64, i64* %668, align 8
+  store i64 %669, i64* %RAX, align 8, !tbaa !2428
+  %670 = load i64, i64* %RBP, align 8
+  %671 = add i64 %670, -40
+  %672 = add i64 %599, 38
+  store i64 %672, i64* %PC, align 8
+  %673 = inttoptr i64 %671 to i32*
+  %674 = load i32, i32* %673, align 4
+  %675 = zext i32 %674 to i64
+  store i64 %675, i64* %RDX, align 8, !tbaa !2428
+  %676 = add i64 %670, -48
+  %677 = add i64 %599, 41
+  store i64 %677, i64* %PC, align 8
+  %678 = inttoptr i64 %676 to i32*
+  %679 = load i32, i32* %678, align 4
+  %680 = add i32 %679, %674
+  %681 = zext i32 %680 to i64
+  store i64 %681, i64* %RDX, align 8, !tbaa !2428
+  %682 = icmp ult i32 %680, %674
+  %683 = icmp ult i32 %680, %679
+  %684 = or i1 %682, %683
+  %685 = zext i1 %684 to i8
+  store i8 %685, i8* %.pre-phi13, align 1, !tbaa !2434
+  %686 = and i32 %680, 255
+  %687 = tail call i32 @llvm.ctpop.i32(i32 %686) #8
+  %688 = trunc i32 %687 to i8
+  %689 = and i8 %688, 1
+  %690 = xor i8 %689, 1
+  store i8 %690, i8* %.pre-phi15, align 1, !tbaa !2448
+  %691 = xor i32 %679, %674
+  %692 = xor i32 %691, %680
+  %693 = lshr i32 %692, 4
+  %694 = trunc i32 %693 to i8
+  %695 = and i8 %694, 1
+  store i8 %695, i8* %.pre-phi17, align 1, !tbaa !2452
+  %696 = icmp eq i32 %680, 0
   %697 = zext i1 %696 to i8
-  store i8 %697, i8* %.pre-phi13, align 1, !tbaa !2434
-  %698 = and i32 %692, 255
-  %699 = tail call i32 @llvm.ctpop.i32(i32 %698) #8
-  %700 = trunc i32 %699 to i8
-  %701 = and i8 %700, 1
-  %702 = xor i8 %701, 1
-  store i8 %702, i8* %.pre-phi15, align 1, !tbaa !2448
-  %703 = xor i32 %691, %686
-  %704 = xor i32 %703, %692
-  %705 = lshr i32 %704, 4
-  %706 = trunc i32 %705 to i8
-  %707 = and i8 %706, 1
-  store i8 %707, i8* %.pre-phi17, align 1, !tbaa !2452
-  %708 = icmp eq i32 %692, 0
-  %709 = zext i1 %708 to i8
-  store i8 %709, i8* %.pre-phi19, align 1, !tbaa !2449
-  %710 = lshr i32 %692, 31
-  %711 = trunc i32 %710 to i8
-  store i8 %711, i8* %.pre-phi21, align 1, !tbaa !2450
-  %712 = lshr i32 %686, 31
-  %713 = lshr i32 %691, 31
-  %714 = xor i32 %710, %712
-  %715 = xor i32 %710, %713
-  %716 = add nuw nsw i32 %714, %715
-  %717 = icmp eq i32 %716, 2
-  %718 = zext i1 %717 to i8
-  store i8 %718, i8* %.pre-phi23, align 1, !tbaa !2451
-  %719 = sext i32 %692 to i64
-  store i64 %719, i64* %RCX, align 8, !tbaa !2428
-  %720 = shl nsw i64 %719, 3
-  %721 = add i64 %720, %681
-  %722 = add i64 %611, 49
-  store i64 %722, i64* %PC, align 8
-  %723 = load <2 x float>, <2 x float>* %41, align 1
-  %724 = extractelement <2 x float> %723, i32 0
-  %725 = inttoptr i64 %721 to float*
-  store float %724, float* %725, align 4
-  %726 = load i64, i64* %RBP, align 8
-  %727 = add i64 %726, -16
-  %728 = load i64, i64* %PC, align 8
-  %729 = add i64 %728, 4
-  store i64 %729, i64* %PC, align 8
-  %730 = inttoptr i64 %727 to i64*
-  %731 = load i64, i64* %730, align 8
-  store i64 %731, i64* %RAX, align 8, !tbaa !2428
-  %732 = add i64 %726, -40
-  %733 = add i64 %728, 8
-  store i64 %733, i64* %PC, align 8
-  %734 = inttoptr i64 %732 to i32*
-  %735 = load i32, i32* %734, align 4
-  %736 = sext i32 %735 to i64
-  store i64 %736, i64* %RCX, align 8, !tbaa !2428
-  %737 = shl nsw i64 %736, 3
-  %738 = add i64 %731, 4
-  %739 = add i64 %738, %737
-  %740 = add i64 %728, 14
-  store i64 %740, i64* %PC, align 8
-  %741 = inttoptr i64 %739 to i32*
-  %742 = load i32, i32* %741, align 4
-  %743 = bitcast [32 x %union.VectorReg]* %5 to i32*
-  store i32 %742, i32* %743, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %109, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %111, align 1, !tbaa !2432
-  %744 = add i64 %728, 18
-  store i64 %744, i64* %PC, align 8
-  %745 = load i64, i64* %730, align 8
-  store i64 %745, i64* %RAX, align 8, !tbaa !2428
-  %746 = add i64 %726, -56
-  %747 = add i64 %728, 21
-  store i64 %747, i64* %PC, align 8
-  %748 = inttoptr i64 %746 to i32*
-  %749 = load i32, i32* %748, align 4
-  %750 = zext i32 %749 to i64
-  store i64 %750, i64* %RDX, align 8, !tbaa !2428
-  %751 = add i64 %728, 24
-  store i64 %751, i64* %PC, align 8
-  %752 = load i32, i32* %734, align 4
-  %753 = add i32 %752, %749
-  %754 = zext i32 %753 to i64
-  store i64 %754, i64* %RDX, align 8, !tbaa !2428
-  %755 = icmp ult i32 %753, %749
-  %756 = icmp ult i32 %753, %752
-  %757 = or i1 %755, %756
-  %758 = zext i1 %757 to i8
-  store i8 %758, i8* %.pre-phi13, align 1, !tbaa !2434
-  %759 = and i32 %753, 255
-  %760 = tail call i32 @llvm.ctpop.i32(i32 %759) #8
-  %761 = trunc i32 %760 to i8
-  %762 = and i8 %761, 1
-  %763 = xor i8 %762, 1
-  store i8 %763, i8* %.pre-phi15, align 1, !tbaa !2448
-  %764 = xor i32 %752, %749
-  %765 = xor i32 %764, %753
-  %766 = lshr i32 %765, 4
-  %767 = trunc i32 %766 to i8
-  %768 = and i8 %767, 1
-  store i8 %768, i8* %.pre-phi17, align 1, !tbaa !2452
-  %769 = icmp eq i32 %753, 0
-  %770 = zext i1 %769 to i8
-  store i8 %770, i8* %.pre-phi19, align 1, !tbaa !2449
-  %771 = lshr i32 %753, 31
-  %772 = trunc i32 %771 to i8
-  store i8 %772, i8* %.pre-phi21, align 1, !tbaa !2450
-  %773 = lshr i32 %749, 31
-  %774 = lshr i32 %752, 31
-  %775 = xor i32 %771, %773
-  %776 = xor i32 %771, %774
-  %777 = add nuw nsw i32 %775, %776
-  %778 = icmp eq i32 %777, 2
-  %779 = zext i1 %778 to i8
-  store i8 %779, i8* %.pre-phi23, align 1, !tbaa !2451
-  %780 = sext i32 %753 to i64
-  store i64 %780, i64* %RCX, align 8, !tbaa !2428
-  %781 = shl nsw i64 %780, 3
-  %782 = add i64 %745, 4
-  %783 = add i64 %782, %781
-  %784 = add i64 %728, 33
+  store i8 %697, i8* %.pre-phi19, align 1, !tbaa !2449
+  %698 = lshr i32 %680, 31
+  %699 = trunc i32 %698 to i8
+  store i8 %699, i8* %.pre-phi21, align 1, !tbaa !2450
+  %700 = lshr i32 %674, 31
+  %701 = lshr i32 %679, 31
+  %702 = xor i32 %698, %700
+  %703 = xor i32 %698, %701
+  %704 = add nuw nsw i32 %702, %703
+  %705 = icmp eq i32 %704, 2
+  %706 = zext i1 %705 to i8
+  store i8 %706, i8* %.pre-phi23, align 1, !tbaa !2451
+  %707 = sext i32 %680 to i64
+  store i64 %707, i64* %RCX, align 8, !tbaa !2428
+  %708 = shl nsw i64 %707, 3
+  %709 = add i64 %708, %669
+  %710 = add i64 %599, 49
+  store i64 %710, i64* %PC, align 8
+  %711 = load <2 x float>, <2 x float>* %41, align 1
+  %712 = extractelement <2 x float> %711, i32 0
+  %713 = inttoptr i64 %709 to float*
+  store float %712, float* %713, align 4
+  %714 = load i64, i64* %RBP, align 8
+  %715 = add i64 %714, -16
+  %716 = load i64, i64* %PC, align 8
+  %717 = add i64 %716, 4
+  store i64 %717, i64* %PC, align 8
+  %718 = inttoptr i64 %715 to i64*
+  %719 = load i64, i64* %718, align 8
+  store i64 %719, i64* %RAX, align 8, !tbaa !2428
+  %720 = add i64 %714, -40
+  %721 = add i64 %716, 8
+  store i64 %721, i64* %PC, align 8
+  %722 = inttoptr i64 %720 to i32*
+  %723 = load i32, i32* %722, align 4
+  %724 = sext i32 %723 to i64
+  store i64 %724, i64* %RCX, align 8, !tbaa !2428
+  %725 = shl nsw i64 %724, 3
+  %726 = add i64 %719, 4
+  %727 = add i64 %726, %725
+  %728 = add i64 %716, 14
+  store i64 %728, i64* %PC, align 8
+  %729 = inttoptr i64 %727 to i32*
+  %730 = load i32, i32* %729, align 4
+  store i32 %730, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  %731 = add i64 %716, 18
+  store i64 %731, i64* %PC, align 8
+  %732 = load i64, i64* %718, align 8
+  store i64 %732, i64* %RAX, align 8, !tbaa !2428
+  %733 = add i64 %714, -56
+  %734 = add i64 %716, 21
+  store i64 %734, i64* %PC, align 8
+  %735 = inttoptr i64 %733 to i32*
+  %736 = load i32, i32* %735, align 4
+  %737 = zext i32 %736 to i64
+  store i64 %737, i64* %RDX, align 8, !tbaa !2428
+  %738 = add i64 %716, 24
+  store i64 %738, i64* %PC, align 8
+  %739 = load i32, i32* %722, align 4
+  %740 = add i32 %739, %736
+  %741 = zext i32 %740 to i64
+  store i64 %741, i64* %RDX, align 8, !tbaa !2428
+  %742 = icmp ult i32 %740, %736
+  %743 = icmp ult i32 %740, %739
+  %744 = or i1 %742, %743
+  %745 = zext i1 %744 to i8
+  store i8 %745, i8* %.pre-phi13, align 1, !tbaa !2434
+  %746 = and i32 %740, 255
+  %747 = tail call i32 @llvm.ctpop.i32(i32 %746) #8
+  %748 = trunc i32 %747 to i8
+  %749 = and i8 %748, 1
+  %750 = xor i8 %749, 1
+  store i8 %750, i8* %.pre-phi15, align 1, !tbaa !2448
+  %751 = xor i32 %739, %736
+  %752 = xor i32 %751, %740
+  %753 = lshr i32 %752, 4
+  %754 = trunc i32 %753 to i8
+  %755 = and i8 %754, 1
+  store i8 %755, i8* %.pre-phi17, align 1, !tbaa !2452
+  %756 = icmp eq i32 %740, 0
+  %757 = zext i1 %756 to i8
+  store i8 %757, i8* %.pre-phi19, align 1, !tbaa !2449
+  %758 = lshr i32 %740, 31
+  %759 = trunc i32 %758 to i8
+  store i8 %759, i8* %.pre-phi21, align 1, !tbaa !2450
+  %760 = lshr i32 %736, 31
+  %761 = lshr i32 %739, 31
+  %762 = xor i32 %758, %760
+  %763 = xor i32 %758, %761
+  %764 = add nuw nsw i32 %762, %763
+  %765 = icmp eq i32 %764, 2
+  %766 = zext i1 %765 to i8
+  store i8 %766, i8* %.pre-phi23, align 1, !tbaa !2451
+  %767 = sext i32 %740 to i64
+  store i64 %767, i64* %RCX, align 8, !tbaa !2428
+  %768 = shl nsw i64 %767, 3
+  %769 = add i64 %732, 4
+  %770 = add i64 %769, %768
+  %771 = add i64 %716, 33
+  store i64 %771, i64* %PC, align 8
+  %772 = load <2 x float>, <2 x float>* %41, align 1
+  %773 = load <2 x i32>, <2 x i32>* %109, align 1
+  %774 = inttoptr i64 %770 to float*
+  %775 = load float, float* %774, align 4
+  %776 = extractelement <2 x float> %772, i32 0
+  %777 = fadd float %776, %775
+  store float %777, float* %102, align 1, !tbaa !2432
+  %778 = bitcast <2 x float> %772 to <2 x i32>
+  %779 = extractelement <2 x i32> %778, i32 1
+  store i32 %779, i32* %110, align 1, !tbaa !2432
+  %780 = extractelement <2 x i32> %773, i32 0
+  store i32 %780, i32* %111, align 1, !tbaa !2432
+  %781 = extractelement <2 x i32> %773, i32 1
+  store i32 %781, i32* %112, align 1, !tbaa !2432
+  %782 = load i64, i64* %RBP, align 8
+  %783 = add i64 %782, -24
+  %784 = add i64 %716, 37
   store i64 %784, i64* %PC, align 8
-  %785 = load <2 x float>, <2 x float>* %112, align 1
-  %786 = load <2 x i32>, <2 x i32>* %113, align 1
-  %787 = inttoptr i64 %783 to float*
-  %788 = load float, float* %787, align 4
-  %789 = extractelement <2 x float> %785, i32 0
-  %790 = fadd float %789, %788
-  store float %790, float* %105, align 1, !tbaa !2432
-  %791 = bitcast <2 x float> %785 to <2 x i32>
-  %792 = extractelement <2 x i32> %791, i32 1
-  store i32 %792, i32* %114, align 1, !tbaa !2432
-  %793 = extractelement <2 x i32> %786, i32 0
-  store i32 %793, i32* %115, align 1, !tbaa !2432
-  %794 = extractelement <2 x i32> %786, i32 1
-  store i32 %794, i32* %116, align 1, !tbaa !2432
-  %795 = load i64, i64* %RBP, align 8
-  %796 = add i64 %795, -24
-  %797 = add i64 %728, 37
-  store i64 %797, i64* %PC, align 8
-  %798 = inttoptr i64 %796 to i64*
-  %799 = load i64, i64* %798, align 8
-  store i64 %799, i64* %RAX, align 8, !tbaa !2428
-  %800 = add i64 %795, -40
-  %801 = add i64 %728, 40
-  store i64 %801, i64* %PC, align 8
-  %802 = inttoptr i64 %800 to i32*
-  %803 = load i32, i32* %802, align 4
-  %804 = zext i32 %803 to i64
-  store i64 %804, i64* %RDX, align 8, !tbaa !2428
-  %805 = add i64 %795, -48
-  %806 = add i64 %728, 43
-  store i64 %806, i64* %PC, align 8
-  %807 = inttoptr i64 %805 to i32*
-  %808 = load i32, i32* %807, align 4
-  %809 = add i32 %808, %803
-  %810 = zext i32 %809 to i64
-  store i64 %810, i64* %RDX, align 8, !tbaa !2428
-  %811 = icmp ult i32 %809, %803
-  %812 = icmp ult i32 %809, %808
-  %813 = or i1 %811, %812
-  %814 = zext i1 %813 to i8
-  store i8 %814, i8* %.pre-phi13, align 1, !tbaa !2434
-  %815 = and i32 %809, 255
-  %816 = tail call i32 @llvm.ctpop.i32(i32 %815) #8
-  %817 = trunc i32 %816 to i8
-  %818 = and i8 %817, 1
-  %819 = xor i8 %818, 1
-  store i8 %819, i8* %.pre-phi15, align 1, !tbaa !2448
-  %820 = xor i32 %808, %803
-  %821 = xor i32 %820, %809
-  %822 = lshr i32 %821, 4
-  %823 = trunc i32 %822 to i8
-  %824 = and i8 %823, 1
-  store i8 %824, i8* %.pre-phi17, align 1, !tbaa !2452
-  %825 = icmp eq i32 %809, 0
-  %826 = zext i1 %825 to i8
-  store i8 %826, i8* %.pre-phi19, align 1, !tbaa !2449
-  %827 = lshr i32 %809, 31
-  %828 = trunc i32 %827 to i8
-  store i8 %828, i8* %.pre-phi21, align 1, !tbaa !2450
-  %829 = lshr i32 %803, 31
-  %830 = lshr i32 %808, 31
-  %831 = xor i32 %827, %829
-  %832 = xor i32 %827, %830
-  %833 = add nuw nsw i32 %831, %832
-  %834 = icmp eq i32 %833, 2
-  %835 = zext i1 %834 to i8
-  store i8 %835, i8* %.pre-phi23, align 1, !tbaa !2451
-  %836 = sext i32 %809 to i64
-  store i64 %836, i64* %RCX, align 8, !tbaa !2428
-  %837 = shl nsw i64 %836, 3
-  %838 = add i64 %799, 4
-  %839 = add i64 %838, %837
-  %840 = add i64 %728, 52
-  store i64 %840, i64* %PC, align 8
-  %841 = load <2 x float>, <2 x float>* %41, align 1
-  %842 = extractelement <2 x float> %841, i32 0
-  %843 = inttoptr i64 %839 to float*
-  store float %842, float* %843, align 4
-  %844 = load i64, i64* %RBP, align 8
-  %845 = add i64 %844, -32
-  %846 = load i64, i64* %PC, align 8
-  %847 = add i64 %846, 4
-  store i64 %847, i64* %PC, align 8
-  %848 = inttoptr i64 %845 to i64*
-  %849 = load i64, i64* %848, align 8
-  store i64 %849, i64* %RAX, align 8, !tbaa !2428
-  %850 = add i64 %844, -48
-  %851 = add i64 %846, 7
-  store i64 %851, i64* %PC, align 8
-  %852 = inttoptr i64 %850 to i32*
-  %853 = load i32, i32* %852, align 4
-  %854 = add i32 %853, 1
-  %855 = zext i32 %854 to i64
-  store i64 %855, i64* %RDX, align 8, !tbaa !2428
-  %856 = icmp eq i32 %853, -1
-  %857 = icmp eq i32 %854, 0
-  %858 = or i1 %856, %857
-  %859 = zext i1 %858 to i8
-  store i8 %859, i8* %.pre-phi13, align 1, !tbaa !2434
-  %860 = and i32 %854, 255
-  %861 = tail call i32 @llvm.ctpop.i32(i32 %860) #8
-  %862 = trunc i32 %861 to i8
-  %863 = and i8 %862, 1
-  %864 = xor i8 %863, 1
-  store i8 %864, i8* %.pre-phi15, align 1, !tbaa !2448
-  %865 = xor i32 %853, %854
-  %866 = lshr i32 %865, 4
-  %867 = trunc i32 %866 to i8
-  %868 = and i8 %867, 1
-  store i8 %868, i8* %.pre-phi17, align 1, !tbaa !2452
-  %869 = icmp eq i32 %854, 0
-  %870 = zext i1 %869 to i8
-  store i8 %870, i8* %.pre-phi19, align 1, !tbaa !2449
-  %871 = lshr i32 %854, 31
-  %872 = trunc i32 %871 to i8
-  store i8 %872, i8* %.pre-phi21, align 1, !tbaa !2450
-  %873 = lshr i32 %853, 31
-  %874 = xor i32 %871, %873
-  %875 = add nuw nsw i32 %874, %871
-  %876 = icmp eq i32 %875, 2
-  %877 = zext i1 %876 to i8
-  store i8 %877, i8* %.pre-phi23, align 1, !tbaa !2451
-  %878 = sext i32 %854 to i64
+  %785 = inttoptr i64 %783 to i64*
+  %786 = load i64, i64* %785, align 8
+  store i64 %786, i64* %RAX, align 8, !tbaa !2428
+  %787 = add i64 %782, -40
+  %788 = add i64 %716, 40
+  store i64 %788, i64* %PC, align 8
+  %789 = inttoptr i64 %787 to i32*
+  %790 = load i32, i32* %789, align 4
+  %791 = zext i32 %790 to i64
+  store i64 %791, i64* %RDX, align 8, !tbaa !2428
+  %792 = add i64 %782, -48
+  %793 = add i64 %716, 43
+  store i64 %793, i64* %PC, align 8
+  %794 = inttoptr i64 %792 to i32*
+  %795 = load i32, i32* %794, align 4
+  %796 = add i32 %795, %790
+  %797 = zext i32 %796 to i64
+  store i64 %797, i64* %RDX, align 8, !tbaa !2428
+  %798 = icmp ult i32 %796, %790
+  %799 = icmp ult i32 %796, %795
+  %800 = or i1 %798, %799
+  %801 = zext i1 %800 to i8
+  store i8 %801, i8* %.pre-phi13, align 1, !tbaa !2434
+  %802 = and i32 %796, 255
+  %803 = tail call i32 @llvm.ctpop.i32(i32 %802) #8
+  %804 = trunc i32 %803 to i8
+  %805 = and i8 %804, 1
+  %806 = xor i8 %805, 1
+  store i8 %806, i8* %.pre-phi15, align 1, !tbaa !2448
+  %807 = xor i32 %795, %790
+  %808 = xor i32 %807, %796
+  %809 = lshr i32 %808, 4
+  %810 = trunc i32 %809 to i8
+  %811 = and i8 %810, 1
+  store i8 %811, i8* %.pre-phi17, align 1, !tbaa !2452
+  %812 = icmp eq i32 %796, 0
+  %813 = zext i1 %812 to i8
+  store i8 %813, i8* %.pre-phi19, align 1, !tbaa !2449
+  %814 = lshr i32 %796, 31
+  %815 = trunc i32 %814 to i8
+  store i8 %815, i8* %.pre-phi21, align 1, !tbaa !2450
+  %816 = lshr i32 %790, 31
+  %817 = lshr i32 %795, 31
+  %818 = xor i32 %814, %816
+  %819 = xor i32 %814, %817
+  %820 = add nuw nsw i32 %818, %819
+  %821 = icmp eq i32 %820, 2
+  %822 = zext i1 %821 to i8
+  store i8 %822, i8* %.pre-phi23, align 1, !tbaa !2451
+  %823 = sext i32 %796 to i64
+  store i64 %823, i64* %RCX, align 8, !tbaa !2428
+  %824 = shl nsw i64 %823, 3
+  %825 = add i64 %786, 4
+  %826 = add i64 %825, %824
+  %827 = add i64 %716, 52
+  store i64 %827, i64* %PC, align 8
+  %828 = load <2 x float>, <2 x float>* %41, align 1
+  %829 = extractelement <2 x float> %828, i32 0
+  %830 = inttoptr i64 %826 to float*
+  store float %829, float* %830, align 4
+  %831 = load i64, i64* %RBP, align 8
+  %832 = add i64 %831, -32
+  %833 = load i64, i64* %PC, align 8
+  %834 = add i64 %833, 4
+  store i64 %834, i64* %PC, align 8
+  %835 = inttoptr i64 %832 to i64*
+  %836 = load i64, i64* %835, align 8
+  store i64 %836, i64* %RAX, align 8, !tbaa !2428
+  %837 = add i64 %831, -48
+  %838 = add i64 %833, 7
+  store i64 %838, i64* %PC, align 8
+  %839 = inttoptr i64 %837 to i32*
+  %840 = load i32, i32* %839, align 4
+  %841 = add i32 %840, 1
+  %842 = zext i32 %841 to i64
+  store i64 %842, i64* %RDX, align 8, !tbaa !2428
+  %843 = icmp eq i32 %840, -1
+  %844 = icmp eq i32 %841, 0
+  %845 = or i1 %843, %844
+  %846 = zext i1 %845 to i8
+  store i8 %846, i8* %.pre-phi13, align 1, !tbaa !2434
+  %847 = and i32 %841, 255
+  %848 = tail call i32 @llvm.ctpop.i32(i32 %847) #8
+  %849 = trunc i32 %848 to i8
+  %850 = and i8 %849, 1
+  %851 = xor i8 %850, 1
+  store i8 %851, i8* %.pre-phi15, align 1, !tbaa !2448
+  %852 = xor i32 %840, %841
+  %853 = lshr i32 %852, 4
+  %854 = trunc i32 %853 to i8
+  %855 = and i8 %854, 1
+  store i8 %855, i8* %.pre-phi17, align 1, !tbaa !2452
+  %856 = zext i1 %844 to i8
+  store i8 %856, i8* %.pre-phi19, align 1, !tbaa !2449
+  %857 = lshr i32 %841, 31
+  %858 = trunc i32 %857 to i8
+  store i8 %858, i8* %.pre-phi21, align 1, !tbaa !2450
+  %859 = lshr i32 %840, 31
+  %860 = xor i32 %857, %859
+  %861 = add nuw nsw i32 %860, %857
+  %862 = icmp eq i32 %861, 2
+  %863 = zext i1 %862 to i8
+  store i8 %863, i8* %.pre-phi23, align 1, !tbaa !2451
+  %864 = sext i32 %841 to i64
+  store i64 %864, i64* %RCX, align 8, !tbaa !2428
+  %865 = shl nsw i64 %864, 3
+  %866 = add i64 %865, %836
+  %867 = add i64 %833, 18
+  store i64 %867, i64* %PC, align 8
+  %868 = inttoptr i64 %866 to i32*
+  %869 = load i32, i32* %868, align 4
+  store i32 %869, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  %870 = add i64 %831, -16
+  %871 = add i64 %833, 22
+  store i64 %871, i64* %PC, align 8
+  %872 = inttoptr i64 %870 to i64*
+  %873 = load i64, i64* %872, align 8
+  store i64 %873, i64* %RAX, align 8, !tbaa !2428
+  %874 = add i64 %831, -40
+  %875 = add i64 %833, 26
+  store i64 %875, i64* %PC, align 8
+  %876 = inttoptr i64 %874 to i32*
+  %877 = load i32, i32* %876, align 4
+  %878 = sext i32 %877 to i64
   store i64 %878, i64* %RCX, align 8, !tbaa !2428
   %879 = shl nsw i64 %878, 3
-  %880 = add i64 %879, %849
-  %881 = add i64 %846, 18
+  %880 = add i64 %879, %873
+  %881 = add i64 %833, 31
   store i64 %881, i64* %PC, align 8
   %882 = inttoptr i64 %880 to i32*
   %883 = load i32, i32* %882, align 4
-  %884 = bitcast [32 x %union.VectorReg]* %5 to i32*
+  %884 = bitcast %union.VectorReg* %6 to i32*
   store i32 %883, i32* %884, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %109, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %111, align 1, !tbaa !2432
-  %885 = add i64 %844, -16
-  %886 = add i64 %846, 22
-  store i64 %886, i64* %PC, align 8
-  %887 = inttoptr i64 %885 to i64*
-  %888 = load i64, i64* %887, align 8
-  store i64 %888, i64* %RAX, align 8, !tbaa !2428
-  %889 = add i64 %844, -40
-  %890 = add i64 %846, 26
-  store i64 %890, i64* %PC, align 8
-  %891 = inttoptr i64 %889 to i32*
-  %892 = load i32, i32* %891, align 4
-  %893 = sext i32 %892 to i64
-  store i64 %893, i64* %RCX, align 8, !tbaa !2428
-  %894 = shl nsw i64 %893, 3
-  %895 = add i64 %894, %888
-  %896 = add i64 %846, 31
-  store i64 %896, i64* %PC, align 8
-  %897 = inttoptr i64 %895 to i32*
-  %898 = load i32, i32* %897, align 4
-  %899 = bitcast %union.VectorReg* %6 to i32*
-  store i32 %898, i32* %899, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %116, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %118, align 1, !tbaa !2432
   store float 0.000000e+00, float* %120, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %122, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %124, align 1, !tbaa !2432
-  %900 = add i64 %846, 35
-  store i64 %900, i64* %PC, align 8
-  %901 = load i64, i64* %887, align 8
-  store i64 %901, i64* %RAX, align 8, !tbaa !2428
-  %902 = add i64 %846, 38
-  store i64 %902, i64* %PC, align 8
-  %903 = load i32, i32* %891, align 4
-  %904 = zext i32 %903 to i64
-  store i64 %904, i64* %RDX, align 8, !tbaa !2428
-  %905 = add i64 %844, -56
-  %906 = add i64 %846, 41
-  store i64 %906, i64* %PC, align 8
-  %907 = inttoptr i64 %905 to i32*
-  %908 = load i32, i32* %907, align 4
-  %909 = add i32 %908, %903
-  %910 = zext i32 %909 to i64
-  store i64 %910, i64* %RDX, align 8, !tbaa !2428
-  %911 = icmp ult i32 %909, %903
-  %912 = icmp ult i32 %909, %908
-  %913 = or i1 %911, %912
-  %914 = zext i1 %913 to i8
-  store i8 %914, i8* %.pre-phi13, align 1, !tbaa !2434
-  %915 = and i32 %909, 255
-  %916 = tail call i32 @llvm.ctpop.i32(i32 %915) #8
-  %917 = trunc i32 %916 to i8
-  %918 = and i8 %917, 1
-  %919 = xor i8 %918, 1
-  store i8 %919, i8* %.pre-phi15, align 1, !tbaa !2448
-  %920 = xor i32 %908, %903
-  %921 = xor i32 %920, %909
-  %922 = lshr i32 %921, 4
-  %923 = trunc i32 %922 to i8
-  %924 = and i8 %923, 1
-  store i8 %924, i8* %.pre-phi17, align 1, !tbaa !2452
-  %925 = icmp eq i32 %909, 0
-  %926 = zext i1 %925 to i8
-  store i8 %926, i8* %.pre-phi19, align 1, !tbaa !2449
-  %927 = lshr i32 %909, 31
-  %928 = trunc i32 %927 to i8
-  store i8 %928, i8* %.pre-phi21, align 1, !tbaa !2450
-  %929 = lshr i32 %903, 31
-  %930 = lshr i32 %908, 31
-  %931 = xor i32 %927, %929
-  %932 = xor i32 %927, %930
-  %933 = add nuw nsw i32 %931, %932
-  %934 = icmp eq i32 %933, 2
-  %935 = zext i1 %934 to i8
-  store i8 %935, i8* %.pre-phi23, align 1, !tbaa !2451
-  %936 = sext i32 %909 to i64
-  store i64 %936, i64* %RCX, align 8, !tbaa !2428
-  %937 = shl nsw i64 %936, 3
-  %938 = add i64 %937, %901
-  %939 = add i64 %846, 49
-  store i64 %939, i64* %PC, align 8
-  %940 = load <2 x float>, <2 x float>* %125, align 1
-  %941 = load <2 x i32>, <2 x i32>* %126, align 1
-  %942 = inttoptr i64 %938 to float*
-  %943 = load float, float* %942, align 4
-  %944 = extractelement <2 x float> %940, i32 0
-  %945 = fsub float %944, %943
-  store float %945, float* %118, align 1, !tbaa !2432
-  %946 = bitcast <2 x float> %940 to <2 x i32>
-  %947 = extractelement <2 x i32> %946, i32 1
-  store i32 %947, i32* %127, align 1, !tbaa !2432
-  %948 = extractelement <2 x i32> %941, i32 0
-  store i32 %948, i32* %128, align 1, !tbaa !2432
-  %949 = extractelement <2 x i32> %941, i32 1
-  store i32 %949, i32* %129, align 1, !tbaa !2432
-  %950 = load <2 x float>, <2 x float>* %112, align 1
-  %951 = load <2 x i32>, <2 x i32>* %113, align 1
-  %952 = load <2 x float>, <2 x float>* %130, align 1
-  %953 = extractelement <2 x float> %950, i32 0
-  %954 = extractelement <2 x float> %952, i32 0
-  %955 = fmul float %953, %954
-  store float %955, float* %105, align 1, !tbaa !2432
-  %956 = bitcast <2 x float> %950 to <2 x i32>
-  %957 = extractelement <2 x i32> %956, i32 1
-  store i32 %957, i32* %114, align 1, !tbaa !2432
-  %958 = extractelement <2 x i32> %951, i32 0
-  store i32 %958, i32* %115, align 1, !tbaa !2432
-  %959 = extractelement <2 x i32> %951, i32 1
-  store i32 %959, i32* %116, align 1, !tbaa !2432
-  %960 = load i64, i64* %RBP, align 8
-  %961 = add i64 %960, -32
-  %962 = add i64 %846, 57
-  store i64 %962, i64* %PC, align 8
-  %963 = inttoptr i64 %961 to i64*
-  %964 = load i64, i64* %963, align 8
-  store i64 %964, i64* %RAX, align 8, !tbaa !2428
-  %965 = add i64 %960, -48
-  %966 = add i64 %846, 60
-  store i64 %966, i64* %PC, align 8
-  %967 = inttoptr i64 %965 to i32*
-  %968 = load i32, i32* %967, align 4
-  %969 = add i32 %968, 1
-  %970 = zext i32 %969 to i64
-  store i64 %970, i64* %RDX, align 8, !tbaa !2428
-  %971 = icmp eq i32 %968, -1
-  %972 = icmp eq i32 %969, 0
-  %973 = or i1 %971, %972
-  %974 = zext i1 %973 to i8
-  store i8 %974, i8* %.pre-phi13, align 1, !tbaa !2434
-  %975 = and i32 %969, 255
-  %976 = tail call i32 @llvm.ctpop.i32(i32 %975) #8
-  %977 = trunc i32 %976 to i8
-  %978 = and i8 %977, 1
-  %979 = xor i8 %978, 1
-  store i8 %979, i8* %.pre-phi15, align 1, !tbaa !2448
-  %980 = xor i32 %968, %969
-  %981 = lshr i32 %980, 4
-  %982 = trunc i32 %981 to i8
-  %983 = and i8 %982, 1
-  store i8 %983, i8* %.pre-phi17, align 1, !tbaa !2452
-  %984 = icmp eq i32 %969, 0
-  %985 = zext i1 %984 to i8
-  store i8 %985, i8* %.pre-phi19, align 1, !tbaa !2449
-  %986 = lshr i32 %969, 31
-  %987 = trunc i32 %986 to i8
-  store i8 %987, i8* %.pre-phi21, align 1, !tbaa !2450
-  %988 = lshr i32 %968, 31
-  %989 = xor i32 %986, %988
-  %990 = add nuw nsw i32 %989, %986
-  %991 = icmp eq i32 %990, 2
-  %992 = zext i1 %991 to i8
-  store i8 %992, i8* %.pre-phi23, align 1, !tbaa !2451
-  %993 = sext i32 %969 to i64
-  store i64 %993, i64* %RCX, align 8, !tbaa !2428
-  %994 = shl nsw i64 %993, 3
-  %995 = add i64 %964, 4
-  %996 = add i64 %995, %994
-  %997 = add i64 %846, 72
-  store i64 %997, i64* %PC, align 8
-  %998 = inttoptr i64 %996 to i32*
-  %999 = load i32, i32* %998, align 4
-  %1000 = bitcast %union.VectorReg* %6 to i32*
-  store i32 %999, i32* %1000, align 1, !tbaa !2432
+  %885 = add i64 %833, 35
+  store i64 %885, i64* %PC, align 8
+  %886 = load i64, i64* %872, align 8
+  store i64 %886, i64* %RAX, align 8, !tbaa !2428
+  %887 = add i64 %833, 38
+  store i64 %887, i64* %PC, align 8
+  %888 = load i32, i32* %876, align 4
+  %889 = zext i32 %888 to i64
+  store i64 %889, i64* %RDX, align 8, !tbaa !2428
+  %890 = add i64 %831, -56
+  %891 = add i64 %833, 41
+  store i64 %891, i64* %PC, align 8
+  %892 = inttoptr i64 %890 to i32*
+  %893 = load i32, i32* %892, align 4
+  %894 = add i32 %893, %888
+  %895 = zext i32 %894 to i64
+  store i64 %895, i64* %RDX, align 8, !tbaa !2428
+  %896 = icmp ult i32 %894, %888
+  %897 = icmp ult i32 %894, %893
+  %898 = or i1 %896, %897
+  %899 = zext i1 %898 to i8
+  store i8 %899, i8* %.pre-phi13, align 1, !tbaa !2434
+  %900 = and i32 %894, 255
+  %901 = tail call i32 @llvm.ctpop.i32(i32 %900) #8
+  %902 = trunc i32 %901 to i8
+  %903 = and i8 %902, 1
+  %904 = xor i8 %903, 1
+  store i8 %904, i8* %.pre-phi15, align 1, !tbaa !2448
+  %905 = xor i32 %893, %888
+  %906 = xor i32 %905, %894
+  %907 = lshr i32 %906, 4
+  %908 = trunc i32 %907 to i8
+  %909 = and i8 %908, 1
+  store i8 %909, i8* %.pre-phi17, align 1, !tbaa !2452
+  %910 = icmp eq i32 %894, 0
+  %911 = zext i1 %910 to i8
+  store i8 %911, i8* %.pre-phi19, align 1, !tbaa !2449
+  %912 = lshr i32 %894, 31
+  %913 = trunc i32 %912 to i8
+  store i8 %913, i8* %.pre-phi21, align 1, !tbaa !2450
+  %914 = lshr i32 %888, 31
+  %915 = lshr i32 %893, 31
+  %916 = xor i32 %912, %914
+  %917 = xor i32 %912, %915
+  %918 = add nuw nsw i32 %916, %917
+  %919 = icmp eq i32 %918, 2
+  %920 = zext i1 %919 to i8
+  store i8 %920, i8* %.pre-phi23, align 1, !tbaa !2451
+  %921 = sext i32 %894 to i64
+  store i64 %921, i64* %RCX, align 8, !tbaa !2428
+  %922 = shl nsw i64 %921, 3
+  %923 = add i64 %922, %886
+  %924 = add i64 %833, 49
+  store i64 %924, i64* %PC, align 8
+  %925 = load <2 x float>, <2 x float>* %121, align 1
+  %926 = load <2 x i32>, <2 x i32>* %122, align 1
+  %927 = inttoptr i64 %923 to float*
+  %928 = load float, float* %927, align 4
+  %929 = extractelement <2 x float> %925, i32 0
+  %930 = fsub float %929, %928
+  store float %930, float* %114, align 1, !tbaa !2432
+  %931 = bitcast <2 x float> %925 to <2 x i32>
+  %932 = extractelement <2 x i32> %931, i32 1
+  store i32 %932, i32* %123, align 1, !tbaa !2432
+  %933 = extractelement <2 x i32> %926, i32 0
+  store i32 %933, i32* %124, align 1, !tbaa !2432
+  %934 = extractelement <2 x i32> %926, i32 1
+  store i32 %934, i32* %125, align 1, !tbaa !2432
+  %935 = load <2 x float>, <2 x float>* %41, align 1
+  %936 = load <2 x i32>, <2 x i32>* %109, align 1
+  %937 = load <2 x float>, <2 x float>* %121, align 1
+  %938 = extractelement <2 x float> %935, i32 0
+  %939 = extractelement <2 x float> %937, i32 0
+  %940 = fmul float %938, %939
+  store float %940, float* %102, align 1, !tbaa !2432
+  %941 = bitcast <2 x float> %935 to <2 x i32>
+  %942 = extractelement <2 x i32> %941, i32 1
+  store i32 %942, i32* %110, align 1, !tbaa !2432
+  %943 = extractelement <2 x i32> %936, i32 0
+  store i32 %943, i32* %111, align 1, !tbaa !2432
+  %944 = extractelement <2 x i32> %936, i32 1
+  store i32 %944, i32* %112, align 1, !tbaa !2432
+  %945 = load i64, i64* %RBP, align 8
+  %946 = add i64 %945, -32
+  %947 = add i64 %833, 57
+  store i64 %947, i64* %PC, align 8
+  %948 = inttoptr i64 %946 to i64*
+  %949 = load i64, i64* %948, align 8
+  store i64 %949, i64* %RAX, align 8, !tbaa !2428
+  %950 = add i64 %945, -48
+  %951 = add i64 %833, 60
+  store i64 %951, i64* %PC, align 8
+  %952 = inttoptr i64 %950 to i32*
+  %953 = load i32, i32* %952, align 4
+  %954 = add i32 %953, 1
+  %955 = zext i32 %954 to i64
+  store i64 %955, i64* %RDX, align 8, !tbaa !2428
+  %956 = icmp eq i32 %953, -1
+  %957 = icmp eq i32 %954, 0
+  %958 = or i1 %956, %957
+  %959 = zext i1 %958 to i8
+  store i8 %959, i8* %.pre-phi13, align 1, !tbaa !2434
+  %960 = and i32 %954, 255
+  %961 = tail call i32 @llvm.ctpop.i32(i32 %960) #8
+  %962 = trunc i32 %961 to i8
+  %963 = and i8 %962, 1
+  %964 = xor i8 %963, 1
+  store i8 %964, i8* %.pre-phi15, align 1, !tbaa !2448
+  %965 = xor i32 %953, %954
+  %966 = lshr i32 %965, 4
+  %967 = trunc i32 %966 to i8
+  %968 = and i8 %967, 1
+  store i8 %968, i8* %.pre-phi17, align 1, !tbaa !2452
+  %969 = zext i1 %957 to i8
+  store i8 %969, i8* %.pre-phi19, align 1, !tbaa !2449
+  %970 = lshr i32 %954, 31
+  %971 = trunc i32 %970 to i8
+  store i8 %971, i8* %.pre-phi21, align 1, !tbaa !2450
+  %972 = lshr i32 %953, 31
+  %973 = xor i32 %970, %972
+  %974 = add nuw nsw i32 %973, %970
+  %975 = icmp eq i32 %974, 2
+  %976 = zext i1 %975 to i8
+  store i8 %976, i8* %.pre-phi23, align 1, !tbaa !2451
+  %977 = sext i32 %954 to i64
+  store i64 %977, i64* %RCX, align 8, !tbaa !2428
+  %978 = shl nsw i64 %977, 3
+  %979 = add i64 %949, 4
+  %980 = add i64 %979, %978
+  %981 = add i64 %833, 72
+  store i64 %981, i64* %PC, align 8
+  %982 = inttoptr i64 %980 to i32*
+  %983 = load i32, i32* %982, align 4
+  store i32 %983, i32* %884, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %116, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %118, align 1, !tbaa !2432
   store float 0.000000e+00, float* %120, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %122, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %124, align 1, !tbaa !2432
-  %1001 = add i64 %960, -16
-  %1002 = add i64 %846, 76
+  %984 = add i64 %945, -16
+  %985 = add i64 %833, 76
+  store i64 %985, i64* %PC, align 8
+  %986 = inttoptr i64 %984 to i64*
+  %987 = load i64, i64* %986, align 8
+  store i64 %987, i64* %RAX, align 8, !tbaa !2428
+  %988 = add i64 %945, -40
+  %989 = add i64 %833, 80
+  store i64 %989, i64* %PC, align 8
+  %990 = inttoptr i64 %988 to i32*
+  %991 = load i32, i32* %990, align 4
+  %992 = sext i32 %991 to i64
+  store i64 %992, i64* %RCX, align 8, !tbaa !2428
+  %993 = shl nsw i64 %992, 3
+  %994 = add i64 %987, 4
+  %995 = add i64 %994, %993
+  %996 = add i64 %833, 86
+  store i64 %996, i64* %PC, align 8
+  %997 = inttoptr i64 %995 to i32*
+  %998 = load i32, i32* %997, align 4
+  %999 = bitcast %union.VectorReg* %7 to i32*
+  store i32 %998, i32* %999, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %129, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %131, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %133, align 1, !tbaa !2432
+  %1000 = add i64 %833, 90
+  store i64 %1000, i64* %PC, align 8
+  %1001 = load i64, i64* %986, align 8
+  store i64 %1001, i64* %RAX, align 8, !tbaa !2428
+  %1002 = add i64 %833, 93
   store i64 %1002, i64* %PC, align 8
-  %1003 = inttoptr i64 %1001 to i64*
-  %1004 = load i64, i64* %1003, align 8
-  store i64 %1004, i64* %RAX, align 8, !tbaa !2428
-  %1005 = add i64 %960, -40
-  %1006 = add i64 %846, 80
-  store i64 %1006, i64* %PC, align 8
-  %1007 = inttoptr i64 %1005 to i32*
-  %1008 = load i32, i32* %1007, align 4
-  %1009 = sext i32 %1008 to i64
-  store i64 %1009, i64* %RCX, align 8, !tbaa !2428
-  %1010 = shl nsw i64 %1009, 3
-  %1011 = add i64 %1004, 4
-  %1012 = add i64 %1011, %1010
-  %1013 = add i64 %846, 86
-  store i64 %1013, i64* %PC, align 8
-  %1014 = inttoptr i64 %1012 to i32*
-  %1015 = load i32, i32* %1014, align 4
-  %1016 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %1015, i32* %1016, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %134, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %136, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %138, align 1, !tbaa !2432
-  %1017 = add i64 %846, 90
-  store i64 %1017, i64* %PC, align 8
-  %1018 = load i64, i64* %1003, align 8
-  store i64 %1018, i64* %RAX, align 8, !tbaa !2428
-  %1019 = add i64 %846, 93
-  store i64 %1019, i64* %PC, align 8
-  %1020 = load i32, i32* %1007, align 4
-  %1021 = zext i32 %1020 to i64
-  store i64 %1021, i64* %RDX, align 8, !tbaa !2428
-  %1022 = load i64, i64* %RBP, align 8
-  %1023 = add i64 %1022, -56
-  %1024 = add i64 %846, 96
-  store i64 %1024, i64* %PC, align 8
-  %1025 = inttoptr i64 %1023 to i32*
-  %1026 = load i32, i32* %1025, align 4
-  %1027 = add i32 %1026, %1020
-  %1028 = zext i32 %1027 to i64
-  store i64 %1028, i64* %RDX, align 8, !tbaa !2428
-  %1029 = icmp ult i32 %1027, %1020
-  %1030 = icmp ult i32 %1027, %1026
-  %1031 = or i1 %1029, %1030
-  %1032 = zext i1 %1031 to i8
-  store i8 %1032, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1033 = and i32 %1027, 255
-  %1034 = tail call i32 @llvm.ctpop.i32(i32 %1033) #8
-  %1035 = trunc i32 %1034 to i8
-  %1036 = and i8 %1035, 1
-  %1037 = xor i8 %1036, 1
-  store i8 %1037, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1038 = xor i32 %1026, %1020
-  %1039 = xor i32 %1038, %1027
-  %1040 = lshr i32 %1039, 4
-  %1041 = trunc i32 %1040 to i8
-  %1042 = and i8 %1041, 1
-  store i8 %1042, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1043 = icmp eq i32 %1027, 0
-  %1044 = zext i1 %1043 to i8
-  store i8 %1044, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1045 = lshr i32 %1027, 31
-  %1046 = trunc i32 %1045 to i8
-  store i8 %1046, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1047 = lshr i32 %1020, 31
-  %1048 = lshr i32 %1026, 31
-  %1049 = xor i32 %1045, %1047
-  %1050 = xor i32 %1045, %1048
-  %1051 = add nuw nsw i32 %1049, %1050
-  %1052 = icmp eq i32 %1051, 2
-  %1053 = zext i1 %1052 to i8
-  store i8 %1053, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1054 = sext i32 %1027 to i64
-  store i64 %1054, i64* %RCX, align 8, !tbaa !2428
-  %1055 = shl nsw i64 %1054, 3
-  %1056 = add i64 %1018, 4
-  %1057 = add i64 %1056, %1055
-  %1058 = add i64 %846, 105
-  store i64 %1058, i64* %PC, align 8
-  %1059 = load <2 x float>, <2 x float>* %139, align 1
-  %1060 = load <2 x i32>, <2 x i32>* %140, align 1
-  %1061 = inttoptr i64 %1057 to float*
-  %1062 = load float, float* %1061, align 4
-  %1063 = extractelement <2 x float> %1059, i32 0
-  %1064 = fsub float %1063, %1062
-  store float %1064, float* %132, align 1, !tbaa !2432
-  %1065 = bitcast <2 x float> %1059 to <2 x i32>
-  %1066 = extractelement <2 x i32> %1065, i32 1
-  store i32 %1066, i32* %141, align 1, !tbaa !2432
-  %1067 = extractelement <2 x i32> %1060, i32 0
-  store i32 %1067, i32* %142, align 1, !tbaa !2432
-  %1068 = extractelement <2 x i32> %1060, i32 1
-  store i32 %1068, i32* %143, align 1, !tbaa !2432
-  %1069 = load <2 x float>, <2 x float>* %125, align 1
-  %1070 = load <2 x i32>, <2 x i32>* %126, align 1
-  %1071 = load <2 x float>, <2 x float>* %144, align 1
-  %1072 = extractelement <2 x float> %1069, i32 0
-  %1073 = extractelement <2 x float> %1071, i32 0
-  %1074 = fmul float %1072, %1073
-  store float %1074, float* %118, align 1, !tbaa !2432
-  %1075 = bitcast <2 x float> %1069 to <2 x i32>
-  %1076 = extractelement <2 x i32> %1075, i32 1
-  store i32 %1076, i32* %127, align 1, !tbaa !2432
-  %1077 = extractelement <2 x i32> %1070, i32 0
-  store i32 %1077, i32* %128, align 1, !tbaa !2432
-  %1078 = extractelement <2 x i32> %1070, i32 1
-  store i32 %1078, i32* %129, align 1, !tbaa !2432
-  %1079 = load <2 x float>, <2 x float>* %112, align 1
-  %1080 = load <2 x i32>, <2 x i32>* %113, align 1
-  %1081 = load <2 x float>, <2 x float>* %130, align 1
-  %1082 = extractelement <2 x float> %1079, i32 0
-  %1083 = extractelement <2 x float> %1081, i32 0
-  %1084 = fsub float %1082, %1083
-  store float %1084, float* %105, align 1, !tbaa !2432
-  %1085 = bitcast <2 x float> %1079 to <2 x i32>
-  %1086 = extractelement <2 x i32> %1085, i32 1
-  store i32 %1086, i32* %114, align 1, !tbaa !2432
-  %1087 = extractelement <2 x i32> %1080, i32 0
-  store i32 %1087, i32* %115, align 1, !tbaa !2432
-  %1088 = extractelement <2 x i32> %1080, i32 1
-  store i32 %1088, i32* %116, align 1, !tbaa !2432
-  %1089 = add i64 %1022, -24
-  %1090 = add i64 %846, 117
-  store i64 %1090, i64* %PC, align 8
-  %1091 = inttoptr i64 %1089 to i64*
-  %1092 = load i64, i64* %1091, align 8
-  store i64 %1092, i64* %RAX, align 8, !tbaa !2428
-  %1093 = load i64, i64* %RBP, align 8
-  %1094 = add i64 %1093, -40
-  %1095 = add i64 %846, 120
-  store i64 %1095, i64* %PC, align 8
-  %1096 = inttoptr i64 %1094 to i32*
-  %1097 = load i32, i32* %1096, align 4
-  %1098 = zext i32 %1097 to i64
-  store i64 %1098, i64* %RDX, align 8, !tbaa !2428
-  %1099 = add i64 %1093, -44
-  %1100 = add i64 %846, 123
-  store i64 %1100, i64* %PC, align 8
-  %1101 = inttoptr i64 %1099 to i32*
-  %1102 = load i32, i32* %1101, align 4
-  %1103 = add i32 %1102, %1097
-  %1104 = zext i32 %1103 to i64
-  store i64 %1104, i64* %RDX, align 8, !tbaa !2428
-  %1105 = icmp ult i32 %1103, %1097
-  %1106 = icmp ult i32 %1103, %1102
-  %1107 = or i1 %1105, %1106
-  %1108 = zext i1 %1107 to i8
-  store i8 %1108, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1109 = and i32 %1103, 255
-  %1110 = tail call i32 @llvm.ctpop.i32(i32 %1109) #8
-  %1111 = trunc i32 %1110 to i8
-  %1112 = and i8 %1111, 1
-  %1113 = xor i8 %1112, 1
-  store i8 %1113, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1114 = xor i32 %1102, %1097
-  %1115 = xor i32 %1114, %1103
-  %1116 = lshr i32 %1115, 4
-  %1117 = trunc i32 %1116 to i8
-  %1118 = and i8 %1117, 1
-  store i8 %1118, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1119 = icmp eq i32 %1103, 0
-  %1120 = zext i1 %1119 to i8
-  store i8 %1120, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1121 = lshr i32 %1103, 31
-  %1122 = trunc i32 %1121 to i8
-  store i8 %1122, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1123 = lshr i32 %1097, 31
-  %1124 = lshr i32 %1102, 31
-  %1125 = xor i32 %1121, %1123
-  %1126 = xor i32 %1121, %1124
-  %1127 = add nuw nsw i32 %1125, %1126
-  %1128 = icmp eq i32 %1127, 2
-  %1129 = zext i1 %1128 to i8
-  store i8 %1129, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1130 = sext i32 %1103 to i64
-  store i64 %1130, i64* %RCX, align 8, !tbaa !2428
-  %1131 = shl nsw i64 %1130, 3
-  %1132 = add i64 %1131, %1092
-  %1133 = add i64 %846, 131
-  store i64 %1133, i64* %PC, align 8
-  %1134 = load <2 x float>, <2 x float>* %41, align 1
-  %1135 = extractelement <2 x float> %1134, i32 0
-  %1136 = inttoptr i64 %1132 to float*
-  store float %1135, float* %1136, align 4
-  %1137 = load i64, i64* %RBP, align 8
-  %1138 = add i64 %1137, -32
-  %1139 = load i64, i64* %PC, align 8
-  %1140 = add i64 %1139, 4
-  store i64 %1140, i64* %PC, align 8
-  %1141 = inttoptr i64 %1138 to i64*
-  %1142 = load i64, i64* %1141, align 8
-  store i64 %1142, i64* %RAX, align 8, !tbaa !2428
-  %1143 = add i64 %1137, -48
-  %1144 = add i64 %1139, 7
-  store i64 %1144, i64* %PC, align 8
-  %1145 = inttoptr i64 %1143 to i32*
-  %1146 = load i32, i32* %1145, align 4
-  %1147 = add i32 %1146, 1
-  %1148 = zext i32 %1147 to i64
-  store i64 %1148, i64* %RDX, align 8, !tbaa !2428
-  %1149 = icmp eq i32 %1146, -1
-  %1150 = icmp eq i32 %1147, 0
-  %1151 = or i1 %1149, %1150
+  %1003 = load i32, i32* %990, align 4
+  %1004 = zext i32 %1003 to i64
+  store i64 %1004, i64* %RDX, align 8, !tbaa !2428
+  %1005 = load i64, i64* %RBP, align 8
+  %1006 = add i64 %1005, -56
+  %1007 = add i64 %833, 96
+  store i64 %1007, i64* %PC, align 8
+  %1008 = inttoptr i64 %1006 to i32*
+  %1009 = load i32, i32* %1008, align 4
+  %1010 = add i32 %1009, %1003
+  %1011 = zext i32 %1010 to i64
+  store i64 %1011, i64* %RDX, align 8, !tbaa !2428
+  %1012 = icmp ult i32 %1010, %1003
+  %1013 = icmp ult i32 %1010, %1009
+  %1014 = or i1 %1012, %1013
+  %1015 = zext i1 %1014 to i8
+  store i8 %1015, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1016 = and i32 %1010, 255
+  %1017 = tail call i32 @llvm.ctpop.i32(i32 %1016) #8
+  %1018 = trunc i32 %1017 to i8
+  %1019 = and i8 %1018, 1
+  %1020 = xor i8 %1019, 1
+  store i8 %1020, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1021 = xor i32 %1009, %1003
+  %1022 = xor i32 %1021, %1010
+  %1023 = lshr i32 %1022, 4
+  %1024 = trunc i32 %1023 to i8
+  %1025 = and i8 %1024, 1
+  store i8 %1025, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1026 = icmp eq i32 %1010, 0
+  %1027 = zext i1 %1026 to i8
+  store i8 %1027, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1028 = lshr i32 %1010, 31
+  %1029 = trunc i32 %1028 to i8
+  store i8 %1029, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1030 = lshr i32 %1003, 31
+  %1031 = lshr i32 %1009, 31
+  %1032 = xor i32 %1028, %1030
+  %1033 = xor i32 %1028, %1031
+  %1034 = add nuw nsw i32 %1032, %1033
+  %1035 = icmp eq i32 %1034, 2
+  %1036 = zext i1 %1035 to i8
+  store i8 %1036, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1037 = sext i32 %1010 to i64
+  store i64 %1037, i64* %RCX, align 8, !tbaa !2428
+  %1038 = shl nsw i64 %1037, 3
+  %1039 = add i64 %1001, 4
+  %1040 = add i64 %1039, %1038
+  %1041 = add i64 %833, 105
+  store i64 %1041, i64* %PC, align 8
+  %1042 = load <2 x float>, <2 x float>* %134, align 1
+  %1043 = load <2 x i32>, <2 x i32>* %135, align 1
+  %1044 = inttoptr i64 %1040 to float*
+  %1045 = load float, float* %1044, align 4
+  %1046 = extractelement <2 x float> %1042, i32 0
+  %1047 = fsub float %1046, %1045
+  store float %1047, float* %127, align 1, !tbaa !2432
+  %1048 = bitcast <2 x float> %1042 to <2 x i32>
+  %1049 = extractelement <2 x i32> %1048, i32 1
+  store i32 %1049, i32* %136, align 1, !tbaa !2432
+  %1050 = extractelement <2 x i32> %1043, i32 0
+  store i32 %1050, i32* %137, align 1, !tbaa !2432
+  %1051 = extractelement <2 x i32> %1043, i32 1
+  store i32 %1051, i32* %138, align 1, !tbaa !2432
+  %1052 = load <2 x float>, <2 x float>* %121, align 1
+  %1053 = load <2 x i32>, <2 x i32>* %122, align 1
+  %1054 = load <2 x float>, <2 x float>* %134, align 1
+  %1055 = extractelement <2 x float> %1052, i32 0
+  %1056 = extractelement <2 x float> %1054, i32 0
+  %1057 = fmul float %1055, %1056
+  store float %1057, float* %114, align 1, !tbaa !2432
+  %1058 = bitcast <2 x float> %1052 to <2 x i32>
+  %1059 = extractelement <2 x i32> %1058, i32 1
+  store i32 %1059, i32* %123, align 1, !tbaa !2432
+  %1060 = extractelement <2 x i32> %1053, i32 0
+  store i32 %1060, i32* %124, align 1, !tbaa !2432
+  %1061 = extractelement <2 x i32> %1053, i32 1
+  store i32 %1061, i32* %125, align 1, !tbaa !2432
+  %1062 = load <2 x float>, <2 x float>* %41, align 1
+  %1063 = load <2 x i32>, <2 x i32>* %109, align 1
+  %1064 = load <2 x float>, <2 x float>* %121, align 1
+  %1065 = extractelement <2 x float> %1062, i32 0
+  %1066 = extractelement <2 x float> %1064, i32 0
+  %1067 = fsub float %1065, %1066
+  store float %1067, float* %102, align 1, !tbaa !2432
+  %1068 = bitcast <2 x float> %1062 to <2 x i32>
+  %1069 = extractelement <2 x i32> %1068, i32 1
+  store i32 %1069, i32* %110, align 1, !tbaa !2432
+  %1070 = extractelement <2 x i32> %1063, i32 0
+  store i32 %1070, i32* %111, align 1, !tbaa !2432
+  %1071 = extractelement <2 x i32> %1063, i32 1
+  store i32 %1071, i32* %112, align 1, !tbaa !2432
+  %1072 = add i64 %1005, -24
+  %1073 = add i64 %833, 117
+  store i64 %1073, i64* %PC, align 8
+  %1074 = inttoptr i64 %1072 to i64*
+  %1075 = load i64, i64* %1074, align 8
+  store i64 %1075, i64* %RAX, align 8, !tbaa !2428
+  %1076 = load i64, i64* %RBP, align 8
+  %1077 = add i64 %1076, -40
+  %1078 = add i64 %833, 120
+  store i64 %1078, i64* %PC, align 8
+  %1079 = inttoptr i64 %1077 to i32*
+  %1080 = load i32, i32* %1079, align 4
+  %1081 = zext i32 %1080 to i64
+  store i64 %1081, i64* %RDX, align 8, !tbaa !2428
+  %1082 = add i64 %1076, -44
+  %1083 = add i64 %833, 123
+  store i64 %1083, i64* %PC, align 8
+  %1084 = inttoptr i64 %1082 to i32*
+  %1085 = load i32, i32* %1084, align 4
+  %1086 = add i32 %1085, %1080
+  %1087 = zext i32 %1086 to i64
+  store i64 %1087, i64* %RDX, align 8, !tbaa !2428
+  %1088 = icmp ult i32 %1086, %1080
+  %1089 = icmp ult i32 %1086, %1085
+  %1090 = or i1 %1088, %1089
+  %1091 = zext i1 %1090 to i8
+  store i8 %1091, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1092 = and i32 %1086, 255
+  %1093 = tail call i32 @llvm.ctpop.i32(i32 %1092) #8
+  %1094 = trunc i32 %1093 to i8
+  %1095 = and i8 %1094, 1
+  %1096 = xor i8 %1095, 1
+  store i8 %1096, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1097 = xor i32 %1085, %1080
+  %1098 = xor i32 %1097, %1086
+  %1099 = lshr i32 %1098, 4
+  %1100 = trunc i32 %1099 to i8
+  %1101 = and i8 %1100, 1
+  store i8 %1101, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1102 = icmp eq i32 %1086, 0
+  %1103 = zext i1 %1102 to i8
+  store i8 %1103, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1104 = lshr i32 %1086, 31
+  %1105 = trunc i32 %1104 to i8
+  store i8 %1105, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1106 = lshr i32 %1080, 31
+  %1107 = lshr i32 %1085, 31
+  %1108 = xor i32 %1104, %1106
+  %1109 = xor i32 %1104, %1107
+  %1110 = add nuw nsw i32 %1108, %1109
+  %1111 = icmp eq i32 %1110, 2
+  %1112 = zext i1 %1111 to i8
+  store i8 %1112, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1113 = sext i32 %1086 to i64
+  store i64 %1113, i64* %RCX, align 8, !tbaa !2428
+  %1114 = shl nsw i64 %1113, 3
+  %1115 = add i64 %1114, %1075
+  %1116 = add i64 %833, 131
+  store i64 %1116, i64* %PC, align 8
+  %1117 = load <2 x float>, <2 x float>* %41, align 1
+  %1118 = extractelement <2 x float> %1117, i32 0
+  %1119 = inttoptr i64 %1115 to float*
+  store float %1118, float* %1119, align 4
+  %1120 = load i64, i64* %RBP, align 8
+  %1121 = add i64 %1120, -32
+  %1122 = load i64, i64* %PC, align 8
+  %1123 = add i64 %1122, 4
+  store i64 %1123, i64* %PC, align 8
+  %1124 = inttoptr i64 %1121 to i64*
+  %1125 = load i64, i64* %1124, align 8
+  store i64 %1125, i64* %RAX, align 8, !tbaa !2428
+  %1126 = add i64 %1120, -48
+  %1127 = add i64 %1122, 7
+  store i64 %1127, i64* %PC, align 8
+  %1128 = inttoptr i64 %1126 to i32*
+  %1129 = load i32, i32* %1128, align 4
+  %1130 = add i32 %1129, 1
+  %1131 = zext i32 %1130 to i64
+  store i64 %1131, i64* %RDX, align 8, !tbaa !2428
+  %1132 = icmp eq i32 %1129, -1
+  %1133 = icmp eq i32 %1130, 0
+  %1134 = or i1 %1132, %1133
+  %1135 = zext i1 %1134 to i8
+  store i8 %1135, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1136 = and i32 %1130, 255
+  %1137 = tail call i32 @llvm.ctpop.i32(i32 %1136) #8
+  %1138 = trunc i32 %1137 to i8
+  %1139 = and i8 %1138, 1
+  %1140 = xor i8 %1139, 1
+  store i8 %1140, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1141 = xor i32 %1129, %1130
+  %1142 = lshr i32 %1141, 4
+  %1143 = trunc i32 %1142 to i8
+  %1144 = and i8 %1143, 1
+  store i8 %1144, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1145 = zext i1 %1133 to i8
+  store i8 %1145, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1146 = lshr i32 %1130, 31
+  %1147 = trunc i32 %1146 to i8
+  store i8 %1147, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1148 = lshr i32 %1129, 31
+  %1149 = xor i32 %1146, %1148
+  %1150 = add nuw nsw i32 %1149, %1146
+  %1151 = icmp eq i32 %1150, 2
   %1152 = zext i1 %1151 to i8
-  store i8 %1152, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1153 = and i32 %1147, 255
-  %1154 = tail call i32 @llvm.ctpop.i32(i32 %1153) #8
-  %1155 = trunc i32 %1154 to i8
-  %1156 = and i8 %1155, 1
-  %1157 = xor i8 %1156, 1
-  store i8 %1157, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1158 = xor i32 %1146, %1147
-  %1159 = lshr i32 %1158, 4
-  %1160 = trunc i32 %1159 to i8
-  %1161 = and i8 %1160, 1
-  store i8 %1161, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1162 = icmp eq i32 %1147, 0
-  %1163 = zext i1 %1162 to i8
-  store i8 %1163, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1164 = lshr i32 %1147, 31
-  %1165 = trunc i32 %1164 to i8
-  store i8 %1165, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1166 = lshr i32 %1146, 31
-  %1167 = xor i32 %1164, %1166
-  %1168 = add nuw nsw i32 %1167, %1164
-  %1169 = icmp eq i32 %1168, 2
-  %1170 = zext i1 %1169 to i8
-  store i8 %1170, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1171 = sext i32 %1147 to i64
-  store i64 %1171, i64* %RCX, align 8, !tbaa !2428
-  %1172 = shl nsw i64 %1171, 3
-  %1173 = add i64 %1172, %1142
-  %1174 = add i64 %1139, 18
+  store i8 %1152, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1153 = sext i32 %1130 to i64
+  store i64 %1153, i64* %RCX, align 8, !tbaa !2428
+  %1154 = shl nsw i64 %1153, 3
+  %1155 = add i64 %1154, %1125
+  %1156 = add i64 %1122, 18
+  store i64 %1156, i64* %PC, align 8
+  %1157 = inttoptr i64 %1155 to i32*
+  %1158 = load i32, i32* %1157, align 4
+  store i32 %1158, i32* %615, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  %1159 = add i64 %1120, -16
+  %1160 = add i64 %1122, 22
+  store i64 %1160, i64* %PC, align 8
+  %1161 = inttoptr i64 %1159 to i64*
+  %1162 = load i64, i64* %1161, align 8
+  store i64 %1162, i64* %RAX, align 8, !tbaa !2428
+  %1163 = add i64 %1120, -40
+  %1164 = add i64 %1122, 26
+  store i64 %1164, i64* %PC, align 8
+  %1165 = inttoptr i64 %1163 to i32*
+  %1166 = load i32, i32* %1165, align 4
+  %1167 = sext i32 %1166 to i64
+  store i64 %1167, i64* %RCX, align 8, !tbaa !2428
+  %1168 = shl nsw i64 %1167, 3
+  %1169 = add i64 %1162, 4
+  %1170 = add i64 %1169, %1168
+  %1171 = add i64 %1122, 32
+  store i64 %1171, i64* %PC, align 8
+  %1172 = inttoptr i64 %1170 to i32*
+  %1173 = load i32, i32* %1172, align 4
+  store i32 %1173, i32* %884, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %116, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %118, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %120, align 1, !tbaa !2432
+  %1174 = add i64 %1122, 36
   store i64 %1174, i64* %PC, align 8
-  %1175 = inttoptr i64 %1173 to i32*
-  %1176 = load i32, i32* %1175, align 4
-  %1177 = bitcast [32 x %union.VectorReg]* %5 to i32*
-  store i32 %1176, i32* %1177, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %107, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %109, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %111, align 1, !tbaa !2432
-  %1178 = add i64 %1137, -16
-  %1179 = add i64 %1139, 22
-  store i64 %1179, i64* %PC, align 8
-  %1180 = inttoptr i64 %1178 to i64*
-  %1181 = load i64, i64* %1180, align 8
-  store i64 %1181, i64* %RAX, align 8, !tbaa !2428
-  %1182 = add i64 %1137, -40
-  %1183 = add i64 %1139, 26
-  store i64 %1183, i64* %PC, align 8
-  %1184 = inttoptr i64 %1182 to i32*
-  %1185 = load i32, i32* %1184, align 4
-  %1186 = sext i32 %1185 to i64
-  store i64 %1186, i64* %RCX, align 8, !tbaa !2428
-  %1187 = shl nsw i64 %1186, 3
-  %1188 = add i64 %1181, 4
-  %1189 = add i64 %1188, %1187
-  %1190 = add i64 %1139, 32
-  store i64 %1190, i64* %PC, align 8
-  %1191 = inttoptr i64 %1189 to i32*
-  %1192 = load i32, i32* %1191, align 4
-  %1193 = bitcast %union.VectorReg* %6 to i32*
-  store i32 %1192, i32* %1193, align 1, !tbaa !2432
+  %1175 = load i64, i64* %1161, align 8
+  store i64 %1175, i64* %RAX, align 8, !tbaa !2428
+  %1176 = add i64 %1122, 39
+  store i64 %1176, i64* %PC, align 8
+  %1177 = load i32, i32* %1165, align 4
+  %1178 = zext i32 %1177 to i64
+  store i64 %1178, i64* %RDX, align 8, !tbaa !2428
+  %1179 = load i64, i64* %RBP, align 8
+  %1180 = add i64 %1179, -56
+  %1181 = add i64 %1122, 42
+  store i64 %1181, i64* %PC, align 8
+  %1182 = inttoptr i64 %1180 to i32*
+  %1183 = load i32, i32* %1182, align 4
+  %1184 = add i32 %1183, %1177
+  %1185 = zext i32 %1184 to i64
+  store i64 %1185, i64* %RDX, align 8, !tbaa !2428
+  %1186 = icmp ult i32 %1184, %1177
+  %1187 = icmp ult i32 %1184, %1183
+  %1188 = or i1 %1186, %1187
+  %1189 = zext i1 %1188 to i8
+  store i8 %1189, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1190 = and i32 %1184, 255
+  %1191 = tail call i32 @llvm.ctpop.i32(i32 %1190) #8
+  %1192 = trunc i32 %1191 to i8
+  %1193 = and i8 %1192, 1
+  %1194 = xor i8 %1193, 1
+  store i8 %1194, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1195 = xor i32 %1183, %1177
+  %1196 = xor i32 %1195, %1184
+  %1197 = lshr i32 %1196, 4
+  %1198 = trunc i32 %1197 to i8
+  %1199 = and i8 %1198, 1
+  store i8 %1199, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1200 = icmp eq i32 %1184, 0
+  %1201 = zext i1 %1200 to i8
+  store i8 %1201, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1202 = lshr i32 %1184, 31
+  %1203 = trunc i32 %1202 to i8
+  store i8 %1203, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1204 = lshr i32 %1177, 31
+  %1205 = lshr i32 %1183, 31
+  %1206 = xor i32 %1202, %1204
+  %1207 = xor i32 %1202, %1205
+  %1208 = add nuw nsw i32 %1206, %1207
+  %1209 = icmp eq i32 %1208, 2
+  %1210 = zext i1 %1209 to i8
+  store i8 %1210, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1211 = sext i32 %1184 to i64
+  store i64 %1211, i64* %RCX, align 8, !tbaa !2428
+  %1212 = shl nsw i64 %1211, 3
+  %1213 = add i64 %1175, 4
+  %1214 = add i64 %1213, %1212
+  %1215 = add i64 %1122, 51
+  store i64 %1215, i64* %PC, align 8
+  %1216 = load <2 x float>, <2 x float>* %121, align 1
+  %1217 = load <2 x i32>, <2 x i32>* %122, align 1
+  %1218 = inttoptr i64 %1214 to float*
+  %1219 = load float, float* %1218, align 4
+  %1220 = extractelement <2 x float> %1216, i32 0
+  %1221 = fsub float %1220, %1219
+  store float %1221, float* %114, align 1, !tbaa !2432
+  %1222 = bitcast <2 x float> %1216 to <2 x i32>
+  %1223 = extractelement <2 x i32> %1222, i32 1
+  store i32 %1223, i32* %123, align 1, !tbaa !2432
+  %1224 = extractelement <2 x i32> %1217, i32 0
+  store i32 %1224, i32* %124, align 1, !tbaa !2432
+  %1225 = extractelement <2 x i32> %1217, i32 1
+  store i32 %1225, i32* %125, align 1, !tbaa !2432
+  %1226 = load <2 x float>, <2 x float>* %41, align 1
+  %1227 = load <2 x i32>, <2 x i32>* %109, align 1
+  %1228 = load <2 x float>, <2 x float>* %121, align 1
+  %1229 = extractelement <2 x float> %1226, i32 0
+  %1230 = extractelement <2 x float> %1228, i32 0
+  %1231 = fmul float %1229, %1230
+  store float %1231, float* %102, align 1, !tbaa !2432
+  %1232 = bitcast <2 x float> %1226 to <2 x i32>
+  %1233 = extractelement <2 x i32> %1232, i32 1
+  store i32 %1233, i32* %110, align 1, !tbaa !2432
+  %1234 = extractelement <2 x i32> %1227, i32 0
+  store i32 %1234, i32* %111, align 1, !tbaa !2432
+  %1235 = extractelement <2 x i32> %1227, i32 1
+  store i32 %1235, i32* %112, align 1, !tbaa !2432
+  %1236 = add i64 %1179, -32
+  %1237 = add i64 %1122, 59
+  store i64 %1237, i64* %PC, align 8
+  %1238 = inttoptr i64 %1236 to i64*
+  %1239 = load i64, i64* %1238, align 8
+  store i64 %1239, i64* %RAX, align 8, !tbaa !2428
+  %1240 = add i64 %1179, -48
+  %1241 = add i64 %1122, 62
+  store i64 %1241, i64* %PC, align 8
+  %1242 = inttoptr i64 %1240 to i32*
+  %1243 = load i32, i32* %1242, align 4
+  %1244 = add i32 %1243, 1
+  %1245 = zext i32 %1244 to i64
+  store i64 %1245, i64* %RDX, align 8, !tbaa !2428
+  %1246 = icmp eq i32 %1243, -1
+  %1247 = icmp eq i32 %1244, 0
+  %1248 = or i1 %1246, %1247
+  %1249 = zext i1 %1248 to i8
+  store i8 %1249, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1250 = and i32 %1244, 255
+  %1251 = tail call i32 @llvm.ctpop.i32(i32 %1250) #8
+  %1252 = trunc i32 %1251 to i8
+  %1253 = and i8 %1252, 1
+  %1254 = xor i8 %1253, 1
+  store i8 %1254, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1255 = xor i32 %1243, %1244
+  %1256 = lshr i32 %1255, 4
+  %1257 = trunc i32 %1256 to i8
+  %1258 = and i8 %1257, 1
+  store i8 %1258, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1259 = zext i1 %1247 to i8
+  store i8 %1259, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1260 = lshr i32 %1244, 31
+  %1261 = trunc i32 %1260 to i8
+  store i8 %1261, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1262 = lshr i32 %1243, 31
+  %1263 = xor i32 %1260, %1262
+  %1264 = add nuw nsw i32 %1263, %1260
+  %1265 = icmp eq i32 %1264, 2
+  %1266 = zext i1 %1265 to i8
+  store i8 %1266, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1267 = sext i32 %1244 to i64
+  store i64 %1267, i64* %RCX, align 8, !tbaa !2428
+  %1268 = shl nsw i64 %1267, 3
+  %1269 = add i64 %1239, 4
+  %1270 = add i64 %1269, %1268
+  %1271 = add i64 %1122, 74
+  store i64 %1271, i64* %PC, align 8
+  %1272 = inttoptr i64 %1270 to i32*
+  %1273 = load i32, i32* %1272, align 4
+  store i32 %1273, i32* %884, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %116, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %118, align 1, !tbaa !2432
   store float 0.000000e+00, float* %120, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %122, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %124, align 1, !tbaa !2432
-  %1194 = add i64 %1139, 36
-  store i64 %1194, i64* %PC, align 8
-  %1195 = load i64, i64* %1180, align 8
-  store i64 %1195, i64* %RAX, align 8, !tbaa !2428
-  %1196 = add i64 %1139, 39
-  store i64 %1196, i64* %PC, align 8
-  %1197 = load i32, i32* %1184, align 4
-  %1198 = zext i32 %1197 to i64
-  store i64 %1198, i64* %RDX, align 8, !tbaa !2428
-  %1199 = load i64, i64* %RBP, align 8
-  %1200 = add i64 %1199, -56
-  %1201 = add i64 %1139, 42
-  store i64 %1201, i64* %PC, align 8
-  %1202 = inttoptr i64 %1200 to i32*
-  %1203 = load i32, i32* %1202, align 4
-  %1204 = add i32 %1203, %1197
-  %1205 = zext i32 %1204 to i64
-  store i64 %1205, i64* %RDX, align 8, !tbaa !2428
-  %1206 = icmp ult i32 %1204, %1197
-  %1207 = icmp ult i32 %1204, %1203
-  %1208 = or i1 %1206, %1207
-  %1209 = zext i1 %1208 to i8
-  store i8 %1209, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1210 = and i32 %1204, 255
-  %1211 = tail call i32 @llvm.ctpop.i32(i32 %1210) #8
-  %1212 = trunc i32 %1211 to i8
-  %1213 = and i8 %1212, 1
-  %1214 = xor i8 %1213, 1
-  store i8 %1214, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1215 = xor i32 %1203, %1197
-  %1216 = xor i32 %1215, %1204
-  %1217 = lshr i32 %1216, 4
-  %1218 = trunc i32 %1217 to i8
-  %1219 = and i8 %1218, 1
-  store i8 %1219, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1220 = icmp eq i32 %1204, 0
-  %1221 = zext i1 %1220 to i8
-  store i8 %1221, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1222 = lshr i32 %1204, 31
-  %1223 = trunc i32 %1222 to i8
-  store i8 %1223, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1224 = lshr i32 %1197, 31
-  %1225 = lshr i32 %1203, 31
-  %1226 = xor i32 %1222, %1224
-  %1227 = xor i32 %1222, %1225
-  %1228 = add nuw nsw i32 %1226, %1227
-  %1229 = icmp eq i32 %1228, 2
-  %1230 = zext i1 %1229 to i8
-  store i8 %1230, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1231 = sext i32 %1204 to i64
-  store i64 %1231, i64* %RCX, align 8, !tbaa !2428
-  %1232 = shl nsw i64 %1231, 3
-  %1233 = add i64 %1195, 4
-  %1234 = add i64 %1233, %1232
-  %1235 = add i64 %1139, 51
-  store i64 %1235, i64* %PC, align 8
-  %1236 = load <2 x float>, <2 x float>* %125, align 1
-  %1237 = load <2 x i32>, <2 x i32>* %126, align 1
-  %1238 = inttoptr i64 %1234 to float*
-  %1239 = load float, float* %1238, align 4
-  %1240 = extractelement <2 x float> %1236, i32 0
-  %1241 = fsub float %1240, %1239
-  store float %1241, float* %118, align 1, !tbaa !2432
-  %1242 = bitcast <2 x float> %1236 to <2 x i32>
-  %1243 = extractelement <2 x i32> %1242, i32 1
-  store i32 %1243, i32* %127, align 1, !tbaa !2432
-  %1244 = extractelement <2 x i32> %1237, i32 0
-  store i32 %1244, i32* %128, align 1, !tbaa !2432
-  %1245 = extractelement <2 x i32> %1237, i32 1
-  store i32 %1245, i32* %129, align 1, !tbaa !2432
-  %1246 = load <2 x float>, <2 x float>* %112, align 1
-  %1247 = load <2 x i32>, <2 x i32>* %113, align 1
-  %1248 = load <2 x float>, <2 x float>* %130, align 1
-  %1249 = extractelement <2 x float> %1246, i32 0
-  %1250 = extractelement <2 x float> %1248, i32 0
-  %1251 = fmul float %1249, %1250
-  store float %1251, float* %105, align 1, !tbaa !2432
-  %1252 = bitcast <2 x float> %1246 to <2 x i32>
-  %1253 = extractelement <2 x i32> %1252, i32 1
-  store i32 %1253, i32* %114, align 1, !tbaa !2432
-  %1254 = extractelement <2 x i32> %1247, i32 0
-  store i32 %1254, i32* %115, align 1, !tbaa !2432
-  %1255 = extractelement <2 x i32> %1247, i32 1
-  store i32 %1255, i32* %116, align 1, !tbaa !2432
-  %1256 = add i64 %1199, -32
-  %1257 = add i64 %1139, 59
-  store i64 %1257, i64* %PC, align 8
-  %1258 = inttoptr i64 %1256 to i64*
-  %1259 = load i64, i64* %1258, align 8
-  store i64 %1259, i64* %RAX, align 8, !tbaa !2428
-  %1260 = add i64 %1199, -48
-  %1261 = add i64 %1139, 62
-  store i64 %1261, i64* %PC, align 8
-  %1262 = inttoptr i64 %1260 to i32*
-  %1263 = load i32, i32* %1262, align 4
-  %1264 = add i32 %1263, 1
-  %1265 = zext i32 %1264 to i64
-  store i64 %1265, i64* %RDX, align 8, !tbaa !2428
-  %1266 = icmp eq i32 %1263, -1
-  %1267 = icmp eq i32 %1264, 0
-  %1268 = or i1 %1266, %1267
-  %1269 = zext i1 %1268 to i8
-  store i8 %1269, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1270 = and i32 %1264, 255
-  %1271 = tail call i32 @llvm.ctpop.i32(i32 %1270) #8
-  %1272 = trunc i32 %1271 to i8
-  %1273 = and i8 %1272, 1
-  %1274 = xor i8 %1273, 1
-  store i8 %1274, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1275 = xor i32 %1263, %1264
-  %1276 = lshr i32 %1275, 4
-  %1277 = trunc i32 %1276 to i8
-  %1278 = and i8 %1277, 1
-  store i8 %1278, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1279 = icmp eq i32 %1264, 0
-  %1280 = zext i1 %1279 to i8
-  store i8 %1280, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1281 = lshr i32 %1264, 31
-  %1282 = trunc i32 %1281 to i8
-  store i8 %1282, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1283 = lshr i32 %1263, 31
-  %1284 = xor i32 %1281, %1283
-  %1285 = add nuw nsw i32 %1284, %1281
-  %1286 = icmp eq i32 %1285, 2
-  %1287 = zext i1 %1286 to i8
-  store i8 %1287, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1288 = sext i32 %1264 to i64
-  store i64 %1288, i64* %RCX, align 8, !tbaa !2428
-  %1289 = shl nsw i64 %1288, 3
-  %1290 = add i64 %1259, 4
-  %1291 = add i64 %1290, %1289
-  %1292 = add i64 %1139, 74
-  store i64 %1292, i64* %PC, align 8
-  %1293 = inttoptr i64 %1291 to i32*
-  %1294 = load i32, i32* %1293, align 4
-  %1295 = bitcast %union.VectorReg* %6 to i32*
-  store i32 %1294, i32* %1295, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %120, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %122, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %124, align 1, !tbaa !2432
-  %1296 = load i64, i64* %RBP, align 8
-  %1297 = add i64 %1296, -16
-  %1298 = add i64 %1139, 78
-  store i64 %1298, i64* %PC, align 8
-  %1299 = inttoptr i64 %1297 to i64*
-  %1300 = load i64, i64* %1299, align 8
-  store i64 %1300, i64* %RAX, align 8, !tbaa !2428
-  %1301 = add i64 %1296, -40
-  %1302 = add i64 %1139, 82
-  store i64 %1302, i64* %PC, align 8
-  %1303 = inttoptr i64 %1301 to i32*
-  %1304 = load i32, i32* %1303, align 4
-  %1305 = sext i32 %1304 to i64
-  store i64 %1305, i64* %RCX, align 8, !tbaa !2428
-  %1306 = shl nsw i64 %1305, 3
-  %1307 = add i64 %1306, %1300
-  %1308 = add i64 %1139, 87
-  store i64 %1308, i64* %PC, align 8
-  %1309 = inttoptr i64 %1307 to i32*
-  %1310 = load i32, i32* %1309, align 4
-  %1311 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %1310, i32* %1311, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %134, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %136, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %138, align 1, !tbaa !2432
-  %1312 = add i64 %1139, 91
-  store i64 %1312, i64* %PC, align 8
-  %1313 = load i64, i64* %1299, align 8
-  store i64 %1313, i64* %RAX, align 8, !tbaa !2428
-  %1314 = add i64 %1139, 94
-  store i64 %1314, i64* %PC, align 8
-  %1315 = load i32, i32* %1303, align 4
-  %1316 = zext i32 %1315 to i64
-  store i64 %1316, i64* %RDX, align 8, !tbaa !2428
-  %1317 = add i64 %1296, -56
-  %1318 = add i64 %1139, 97
-  store i64 %1318, i64* %PC, align 8
-  %1319 = inttoptr i64 %1317 to i32*
-  %1320 = load i32, i32* %1319, align 4
-  %1321 = add i32 %1320, %1315
-  %1322 = zext i32 %1321 to i64
-  store i64 %1322, i64* %RDX, align 8, !tbaa !2428
-  %1323 = icmp ult i32 %1321, %1315
-  %1324 = icmp ult i32 %1321, %1320
-  %1325 = or i1 %1323, %1324
-  %1326 = zext i1 %1325 to i8
-  store i8 %1326, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1327 = and i32 %1321, 255
-  %1328 = tail call i32 @llvm.ctpop.i32(i32 %1327) #8
-  %1329 = trunc i32 %1328 to i8
-  %1330 = and i8 %1329, 1
-  %1331 = xor i8 %1330, 1
-  store i8 %1331, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1332 = xor i32 %1320, %1315
-  %1333 = xor i32 %1332, %1321
-  %1334 = lshr i32 %1333, 4
-  %1335 = trunc i32 %1334 to i8
-  %1336 = and i8 %1335, 1
-  store i8 %1336, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1337 = icmp eq i32 %1321, 0
-  %1338 = zext i1 %1337 to i8
-  store i8 %1338, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1339 = lshr i32 %1321, 31
-  %1340 = trunc i32 %1339 to i8
-  store i8 %1340, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1341 = lshr i32 %1315, 31
-  %1342 = lshr i32 %1320, 31
-  %1343 = xor i32 %1339, %1341
-  %1344 = xor i32 %1339, %1342
-  %1345 = add nuw nsw i32 %1343, %1344
-  %1346 = icmp eq i32 %1345, 2
-  %1347 = zext i1 %1346 to i8
-  store i8 %1347, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1348 = sext i32 %1321 to i64
-  store i64 %1348, i64* %RCX, align 8, !tbaa !2428
-  %1349 = shl nsw i64 %1348, 3
-  %1350 = add i64 %1349, %1313
-  %1351 = add i64 %1139, 105
-  store i64 %1351, i64* %PC, align 8
-  %1352 = load <2 x float>, <2 x float>* %139, align 1
-  %1353 = load <2 x i32>, <2 x i32>* %140, align 1
-  %1354 = inttoptr i64 %1350 to float*
-  %1355 = load float, float* %1354, align 4
-  %1356 = extractelement <2 x float> %1352, i32 0
-  %1357 = fsub float %1356, %1355
-  store float %1357, float* %132, align 1, !tbaa !2432
-  %1358 = bitcast <2 x float> %1352 to <2 x i32>
-  %1359 = extractelement <2 x i32> %1358, i32 1
-  store i32 %1359, i32* %141, align 1, !tbaa !2432
-  %1360 = extractelement <2 x i32> %1353, i32 0
-  store i32 %1360, i32* %142, align 1, !tbaa !2432
-  %1361 = extractelement <2 x i32> %1353, i32 1
-  store i32 %1361, i32* %143, align 1, !tbaa !2432
-  %1362 = load <2 x float>, <2 x float>* %125, align 1
-  %1363 = load <2 x i32>, <2 x i32>* %126, align 1
-  %1364 = load <2 x float>, <2 x float>* %144, align 1
-  %1365 = extractelement <2 x float> %1362, i32 0
-  %1366 = extractelement <2 x float> %1364, i32 0
-  %1367 = fmul float %1365, %1366
-  store float %1367, float* %118, align 1, !tbaa !2432
-  %1368 = bitcast <2 x float> %1362 to <2 x i32>
-  %1369 = extractelement <2 x i32> %1368, i32 1
-  store i32 %1369, i32* %127, align 1, !tbaa !2432
-  %1370 = extractelement <2 x i32> %1363, i32 0
-  store i32 %1370, i32* %128, align 1, !tbaa !2432
-  %1371 = extractelement <2 x i32> %1363, i32 1
-  store i32 %1371, i32* %129, align 1, !tbaa !2432
-  %1372 = load <2 x float>, <2 x float>* %112, align 1
-  %1373 = load <2 x i32>, <2 x i32>* %113, align 1
-  %1374 = load <2 x float>, <2 x float>* %130, align 1
-  %1375 = extractelement <2 x float> %1372, i32 0
-  %1376 = extractelement <2 x float> %1374, i32 0
-  %1377 = fadd float %1375, %1376
-  store float %1377, float* %105, align 1, !tbaa !2432
-  %1378 = bitcast <2 x float> %1372 to <2 x i32>
-  %1379 = extractelement <2 x i32> %1378, i32 1
-  store i32 %1379, i32* %114, align 1, !tbaa !2432
-  %1380 = extractelement <2 x i32> %1373, i32 0
-  store i32 %1380, i32* %115, align 1, !tbaa !2432
-  %1381 = extractelement <2 x i32> %1373, i32 1
-  store i32 %1381, i32* %116, align 1, !tbaa !2432
-  %1382 = load i64, i64* %RBP, align 8
-  %1383 = add i64 %1382, -24
-  %1384 = add i64 %1139, 117
-  store i64 %1384, i64* %PC, align 8
-  %1385 = inttoptr i64 %1383 to i64*
-  %1386 = load i64, i64* %1385, align 8
-  store i64 %1386, i64* %RAX, align 8, !tbaa !2428
-  %1387 = add i64 %1382, -40
-  %1388 = add i64 %1139, 120
-  store i64 %1388, i64* %PC, align 8
-  %1389 = inttoptr i64 %1387 to i32*
-  %1390 = load i32, i32* %1389, align 4
-  %1391 = zext i32 %1390 to i64
-  store i64 %1391, i64* %RDX, align 8, !tbaa !2428
-  %1392 = add i64 %1382, -44
-  %1393 = add i64 %1139, 123
-  store i64 %1393, i64* %PC, align 8
-  %1394 = inttoptr i64 %1392 to i32*
-  %1395 = load i32, i32* %1394, align 4
-  %1396 = add i32 %1395, %1390
-  %1397 = zext i32 %1396 to i64
-  store i64 %1397, i64* %RDX, align 8, !tbaa !2428
-  %1398 = icmp ult i32 %1396, %1390
-  %1399 = icmp ult i32 %1396, %1395
-  %1400 = or i1 %1398, %1399
-  %1401 = zext i1 %1400 to i8
-  store i8 %1401, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1402 = and i32 %1396, 255
-  %1403 = tail call i32 @llvm.ctpop.i32(i32 %1402) #8
-  %1404 = trunc i32 %1403 to i8
-  %1405 = and i8 %1404, 1
-  %1406 = xor i8 %1405, 1
-  store i8 %1406, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1407 = xor i32 %1395, %1390
-  %1408 = xor i32 %1407, %1396
-  %1409 = lshr i32 %1408, 4
-  %1410 = trunc i32 %1409 to i8
-  %1411 = and i8 %1410, 1
-  store i8 %1411, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1412 = icmp eq i32 %1396, 0
-  %1413 = zext i1 %1412 to i8
-  store i8 %1413, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1414 = lshr i32 %1396, 31
-  %1415 = trunc i32 %1414 to i8
-  store i8 %1415, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1416 = lshr i32 %1390, 31
-  %1417 = lshr i32 %1395, 31
-  %1418 = xor i32 %1414, %1416
-  %1419 = xor i32 %1414, %1417
-  %1420 = add nuw nsw i32 %1418, %1419
-  %1421 = icmp eq i32 %1420, 2
-  %1422 = zext i1 %1421 to i8
-  store i8 %1422, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1423 = sext i32 %1396 to i64
-  store i64 %1423, i64* %RCX, align 8, !tbaa !2428
-  %1424 = shl nsw i64 %1423, 3
-  %1425 = add i64 %1386, 4
-  %1426 = add i64 %1425, %1424
-  %1427 = add i64 %1139, 132
-  store i64 %1427, i64* %PC, align 8
-  %1428 = load <2 x float>, <2 x float>* %41, align 1
-  %1429 = extractelement <2 x float> %1428, i32 0
-  %1430 = inttoptr i64 %1426 to float*
-  store float %1429, float* %1430, align 4
-  %1431 = load i64, i64* %RBP, align 8
-  %1432 = add i64 %1431, -40
-  %1433 = load i64, i64* %PC, align 8
-  %1434 = add i64 %1433, 3
-  store i64 %1434, i64* %PC, align 8
-  %1435 = inttoptr i64 %1432 to i32*
-  %1436 = load i32, i32* %1435, align 4
-  %1437 = add i32 %1436, 1
-  %1438 = zext i32 %1437 to i64
-  store i64 %1438, i64* %RDX, align 8, !tbaa !2428
-  %1439 = icmp eq i32 %1436, -1
-  %1440 = icmp eq i32 %1437, 0
-  %1441 = or i1 %1439, %1440
-  %1442 = zext i1 %1441 to i8
-  store i8 %1442, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1443 = and i32 %1437, 255
-  %1444 = tail call i32 @llvm.ctpop.i32(i32 %1443) #8
-  %1445 = trunc i32 %1444 to i8
-  %1446 = and i8 %1445, 1
-  %1447 = xor i8 %1446, 1
-  store i8 %1447, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1448 = xor i32 %1436, %1437
-  %1449 = lshr i32 %1448, 4
-  %1450 = trunc i32 %1449 to i8
-  %1451 = and i8 %1450, 1
-  store i8 %1451, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1452 = icmp eq i32 %1437, 0
-  %1453 = zext i1 %1452 to i8
-  store i8 %1453, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1454 = lshr i32 %1437, 31
-  %1455 = trunc i32 %1454 to i8
-  store i8 %1455, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1456 = lshr i32 %1436, 31
-  %1457 = xor i32 %1454, %1456
-  %1458 = add nuw nsw i32 %1457, %1454
-  %1459 = icmp eq i32 %1458, 2
-  %1460 = zext i1 %1459 to i8
-  store i8 %1460, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1461 = add i64 %1433, 9
-  store i64 %1461, i64* %PC, align 8
-  store i32 %1437, i32* %1435, align 4
-  %1462 = load i64, i64* %RBP, align 8
-  %1463 = add i64 %1462, -40
-  %1464 = load i64, i64* %PC, align 8
-  %1465 = add i64 %1464, 3
-  store i64 %1465, i64* %PC, align 8
-  %1466 = inttoptr i64 %1463 to i32*
-  %1467 = load i32, i32* %1466, align 4
-  %1468 = zext i32 %1467 to i64
-  store i64 %1468, i64* %RAX, align 8, !tbaa !2428
-  %1469 = add i64 %1462, -44
-  %1470 = add i64 %1464, 6
-  store i64 %1470, i64* %PC, align 8
-  %1471 = inttoptr i64 %1469 to i32*
-  %1472 = load i32, i32* %1471, align 4
-  %1473 = sub i32 %1467, %1472
-  %1474 = icmp ult i32 %1467, %1472
-  %1475 = zext i1 %1474 to i8
-  store i8 %1475, i8* %.pre-phi13, align 1, !tbaa !2434
-  %1476 = and i32 %1473, 255
-  %1477 = tail call i32 @llvm.ctpop.i32(i32 %1476) #8
-  %1478 = trunc i32 %1477 to i8
-  %1479 = and i8 %1478, 1
-  %1480 = xor i8 %1479, 1
-  store i8 %1480, i8* %.pre-phi15, align 1, !tbaa !2448
-  %1481 = xor i32 %1472, %1467
-  %1482 = xor i32 %1481, %1473
-  %1483 = lshr i32 %1482, 4
-  %1484 = trunc i32 %1483 to i8
-  %1485 = and i8 %1484, 1
-  store i8 %1485, i8* %.pre-phi17, align 1, !tbaa !2452
-  %1486 = icmp eq i32 %1473, 0
-  %1487 = zext i1 %1486 to i8
-  store i8 %1487, i8* %.pre-phi19, align 1, !tbaa !2449
-  %1488 = lshr i32 %1473, 31
-  %1489 = trunc i32 %1488 to i8
-  store i8 %1489, i8* %.pre-phi21, align 1, !tbaa !2450
-  %1490 = lshr i32 %1467, 31
-  %1491 = lshr i32 %1472, 31
-  %1492 = xor i32 %1491, %1490
-  %1493 = xor i32 %1488, %1490
-  %1494 = add nuw nsw i32 %1493, %1492
-  %1495 = icmp eq i32 %1494, 2
-  %1496 = zext i1 %1495 to i8
-  store i8 %1496, i8* %.pre-phi23, align 1, !tbaa !2451
-  %1497 = icmp ne i8 %1489, 0
-  %1498 = xor i1 %1497, %1495
-  %1499 = or i1 %1486, %1498
-  %.v = select i1 %1499, i64 -373, i64 12
-  %1500 = add i64 %1464, %.v
-  store i64 %1500, i64* %.pre-phi, align 8, !tbaa !2428
-  br i1 %1499, label %block_400a6e, label %block_400bef
+  %1274 = load i64, i64* %RBP, align 8
+  %1275 = add i64 %1274, -16
+  %1276 = add i64 %1122, 78
+  store i64 %1276, i64* %PC, align 8
+  %1277 = inttoptr i64 %1275 to i64*
+  %1278 = load i64, i64* %1277, align 8
+  store i64 %1278, i64* %RAX, align 8, !tbaa !2428
+  %1279 = add i64 %1274, -40
+  %1280 = add i64 %1122, 82
+  store i64 %1280, i64* %PC, align 8
+  %1281 = inttoptr i64 %1279 to i32*
+  %1282 = load i32, i32* %1281, align 4
+  %1283 = sext i32 %1282 to i64
+  store i64 %1283, i64* %RCX, align 8, !tbaa !2428
+  %1284 = shl nsw i64 %1283, 3
+  %1285 = add i64 %1284, %1278
+  %1286 = add i64 %1122, 87
+  store i64 %1286, i64* %PC, align 8
+  %1287 = inttoptr i64 %1285 to i32*
+  %1288 = load i32, i32* %1287, align 4
+  store i32 %1288, i32* %999, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %129, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %131, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %133, align 1, !tbaa !2432
+  %1289 = add i64 %1122, 91
+  store i64 %1289, i64* %PC, align 8
+  %1290 = load i64, i64* %1277, align 8
+  store i64 %1290, i64* %RAX, align 8, !tbaa !2428
+  %1291 = add i64 %1122, 94
+  store i64 %1291, i64* %PC, align 8
+  %1292 = load i32, i32* %1281, align 4
+  %1293 = zext i32 %1292 to i64
+  store i64 %1293, i64* %RDX, align 8, !tbaa !2428
+  %1294 = add i64 %1274, -56
+  %1295 = add i64 %1122, 97
+  store i64 %1295, i64* %PC, align 8
+  %1296 = inttoptr i64 %1294 to i32*
+  %1297 = load i32, i32* %1296, align 4
+  %1298 = add i32 %1297, %1292
+  %1299 = zext i32 %1298 to i64
+  store i64 %1299, i64* %RDX, align 8, !tbaa !2428
+  %1300 = icmp ult i32 %1298, %1292
+  %1301 = icmp ult i32 %1298, %1297
+  %1302 = or i1 %1300, %1301
+  %1303 = zext i1 %1302 to i8
+  store i8 %1303, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1304 = and i32 %1298, 255
+  %1305 = tail call i32 @llvm.ctpop.i32(i32 %1304) #8
+  %1306 = trunc i32 %1305 to i8
+  %1307 = and i8 %1306, 1
+  %1308 = xor i8 %1307, 1
+  store i8 %1308, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1309 = xor i32 %1297, %1292
+  %1310 = xor i32 %1309, %1298
+  %1311 = lshr i32 %1310, 4
+  %1312 = trunc i32 %1311 to i8
+  %1313 = and i8 %1312, 1
+  store i8 %1313, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1314 = icmp eq i32 %1298, 0
+  %1315 = zext i1 %1314 to i8
+  store i8 %1315, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1316 = lshr i32 %1298, 31
+  %1317 = trunc i32 %1316 to i8
+  store i8 %1317, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1318 = lshr i32 %1292, 31
+  %1319 = lshr i32 %1297, 31
+  %1320 = xor i32 %1316, %1318
+  %1321 = xor i32 %1316, %1319
+  %1322 = add nuw nsw i32 %1320, %1321
+  %1323 = icmp eq i32 %1322, 2
+  %1324 = zext i1 %1323 to i8
+  store i8 %1324, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1325 = sext i32 %1298 to i64
+  store i64 %1325, i64* %RCX, align 8, !tbaa !2428
+  %1326 = shl nsw i64 %1325, 3
+  %1327 = add i64 %1326, %1290
+  %1328 = add i64 %1122, 105
+  store i64 %1328, i64* %PC, align 8
+  %1329 = load <2 x float>, <2 x float>* %134, align 1
+  %1330 = load <2 x i32>, <2 x i32>* %135, align 1
+  %1331 = inttoptr i64 %1327 to float*
+  %1332 = load float, float* %1331, align 4
+  %1333 = extractelement <2 x float> %1329, i32 0
+  %1334 = fsub float %1333, %1332
+  store float %1334, float* %127, align 1, !tbaa !2432
+  %1335 = bitcast <2 x float> %1329 to <2 x i32>
+  %1336 = extractelement <2 x i32> %1335, i32 1
+  store i32 %1336, i32* %136, align 1, !tbaa !2432
+  %1337 = extractelement <2 x i32> %1330, i32 0
+  store i32 %1337, i32* %137, align 1, !tbaa !2432
+  %1338 = extractelement <2 x i32> %1330, i32 1
+  store i32 %1338, i32* %138, align 1, !tbaa !2432
+  %1339 = load <2 x float>, <2 x float>* %121, align 1
+  %1340 = load <2 x i32>, <2 x i32>* %122, align 1
+  %1341 = load <2 x float>, <2 x float>* %134, align 1
+  %1342 = extractelement <2 x float> %1339, i32 0
+  %1343 = extractelement <2 x float> %1341, i32 0
+  %1344 = fmul float %1342, %1343
+  store float %1344, float* %114, align 1, !tbaa !2432
+  %1345 = bitcast <2 x float> %1339 to <2 x i32>
+  %1346 = extractelement <2 x i32> %1345, i32 1
+  store i32 %1346, i32* %123, align 1, !tbaa !2432
+  %1347 = extractelement <2 x i32> %1340, i32 0
+  store i32 %1347, i32* %124, align 1, !tbaa !2432
+  %1348 = extractelement <2 x i32> %1340, i32 1
+  store i32 %1348, i32* %125, align 1, !tbaa !2432
+  %1349 = load <2 x float>, <2 x float>* %41, align 1
+  %1350 = load <2 x i32>, <2 x i32>* %109, align 1
+  %1351 = load <2 x float>, <2 x float>* %121, align 1
+  %1352 = extractelement <2 x float> %1349, i32 0
+  %1353 = extractelement <2 x float> %1351, i32 0
+  %1354 = fadd float %1352, %1353
+  store float %1354, float* %102, align 1, !tbaa !2432
+  %1355 = bitcast <2 x float> %1349 to <2 x i32>
+  %1356 = extractelement <2 x i32> %1355, i32 1
+  store i32 %1356, i32* %110, align 1, !tbaa !2432
+  %1357 = extractelement <2 x i32> %1350, i32 0
+  store i32 %1357, i32* %111, align 1, !tbaa !2432
+  %1358 = extractelement <2 x i32> %1350, i32 1
+  store i32 %1358, i32* %112, align 1, !tbaa !2432
+  %1359 = load i64, i64* %RBP, align 8
+  %1360 = add i64 %1359, -24
+  %1361 = add i64 %1122, 117
+  store i64 %1361, i64* %PC, align 8
+  %1362 = inttoptr i64 %1360 to i64*
+  %1363 = load i64, i64* %1362, align 8
+  store i64 %1363, i64* %RAX, align 8, !tbaa !2428
+  %1364 = add i64 %1359, -40
+  %1365 = add i64 %1122, 120
+  store i64 %1365, i64* %PC, align 8
+  %1366 = inttoptr i64 %1364 to i32*
+  %1367 = load i32, i32* %1366, align 4
+  %1368 = zext i32 %1367 to i64
+  store i64 %1368, i64* %RDX, align 8, !tbaa !2428
+  %1369 = add i64 %1359, -44
+  %1370 = add i64 %1122, 123
+  store i64 %1370, i64* %PC, align 8
+  %1371 = inttoptr i64 %1369 to i32*
+  %1372 = load i32, i32* %1371, align 4
+  %1373 = add i32 %1372, %1367
+  %1374 = zext i32 %1373 to i64
+  store i64 %1374, i64* %RDX, align 8, !tbaa !2428
+  %1375 = icmp ult i32 %1373, %1367
+  %1376 = icmp ult i32 %1373, %1372
+  %1377 = or i1 %1375, %1376
+  %1378 = zext i1 %1377 to i8
+  store i8 %1378, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1379 = and i32 %1373, 255
+  %1380 = tail call i32 @llvm.ctpop.i32(i32 %1379) #8
+  %1381 = trunc i32 %1380 to i8
+  %1382 = and i8 %1381, 1
+  %1383 = xor i8 %1382, 1
+  store i8 %1383, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1384 = xor i32 %1372, %1367
+  %1385 = xor i32 %1384, %1373
+  %1386 = lshr i32 %1385, 4
+  %1387 = trunc i32 %1386 to i8
+  %1388 = and i8 %1387, 1
+  store i8 %1388, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1389 = icmp eq i32 %1373, 0
+  %1390 = zext i1 %1389 to i8
+  store i8 %1390, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1391 = lshr i32 %1373, 31
+  %1392 = trunc i32 %1391 to i8
+  store i8 %1392, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1393 = lshr i32 %1367, 31
+  %1394 = lshr i32 %1372, 31
+  %1395 = xor i32 %1391, %1393
+  %1396 = xor i32 %1391, %1394
+  %1397 = add nuw nsw i32 %1395, %1396
+  %1398 = icmp eq i32 %1397, 2
+  %1399 = zext i1 %1398 to i8
+  store i8 %1399, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1400 = sext i32 %1373 to i64
+  store i64 %1400, i64* %RCX, align 8, !tbaa !2428
+  %1401 = shl nsw i64 %1400, 3
+  %1402 = add i64 %1363, 4
+  %1403 = add i64 %1402, %1401
+  %1404 = add i64 %1122, 132
+  store i64 %1404, i64* %PC, align 8
+  %1405 = load <2 x float>, <2 x float>* %41, align 1
+  %1406 = extractelement <2 x float> %1405, i32 0
+  %1407 = inttoptr i64 %1403 to float*
+  store float %1406, float* %1407, align 4
+  %1408 = load i64, i64* %RBP, align 8
+  %1409 = add i64 %1408, -40
+  %1410 = load i64, i64* %PC, align 8
+  %1411 = add i64 %1410, 3
+  store i64 %1411, i64* %PC, align 8
+  %1412 = inttoptr i64 %1409 to i32*
+  %1413 = load i32, i32* %1412, align 4
+  %1414 = add i32 %1413, 1
+  %1415 = zext i32 %1414 to i64
+  store i64 %1415, i64* %RDX, align 8, !tbaa !2428
+  %1416 = icmp eq i32 %1413, -1
+  %1417 = icmp eq i32 %1414, 0
+  %1418 = or i1 %1416, %1417
+  %1419 = zext i1 %1418 to i8
+  store i8 %1419, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1420 = and i32 %1414, 255
+  %1421 = tail call i32 @llvm.ctpop.i32(i32 %1420) #8
+  %1422 = trunc i32 %1421 to i8
+  %1423 = and i8 %1422, 1
+  %1424 = xor i8 %1423, 1
+  store i8 %1424, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1425 = xor i32 %1413, %1414
+  %1426 = lshr i32 %1425, 4
+  %1427 = trunc i32 %1426 to i8
+  %1428 = and i8 %1427, 1
+  store i8 %1428, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1429 = zext i1 %1417 to i8
+  store i8 %1429, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1430 = lshr i32 %1414, 31
+  %1431 = trunc i32 %1430 to i8
+  store i8 %1431, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1432 = lshr i32 %1413, 31
+  %1433 = xor i32 %1430, %1432
+  %1434 = add nuw nsw i32 %1433, %1430
+  %1435 = icmp eq i32 %1434, 2
+  %1436 = zext i1 %1435 to i8
+  store i8 %1436, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1437 = add i64 %1410, 9
+  store i64 %1437, i64* %PC, align 8
+  store i32 %1414, i32* %1412, align 4
+  %1438 = load i64, i64* %RBP, align 8
+  %1439 = add i64 %1438, -40
+  %1440 = load i64, i64* %PC, align 8
+  %1441 = add i64 %1440, 3
+  store i64 %1441, i64* %PC, align 8
+  %1442 = inttoptr i64 %1439 to i32*
+  %1443 = load i32, i32* %1442, align 4
+  %1444 = zext i32 %1443 to i64
+  store i64 %1444, i64* %RAX, align 8, !tbaa !2428
+  %1445 = add i64 %1438, -44
+  %1446 = add i64 %1440, 6
+  store i64 %1446, i64* %PC, align 8
+  %1447 = inttoptr i64 %1445 to i32*
+  %1448 = load i32, i32* %1447, align 4
+  %1449 = sub i32 %1443, %1448
+  %1450 = icmp ult i32 %1443, %1448
+  %1451 = zext i1 %1450 to i8
+  store i8 %1451, i8* %.pre-phi13, align 1, !tbaa !2434
+  %1452 = and i32 %1449, 255
+  %1453 = tail call i32 @llvm.ctpop.i32(i32 %1452) #8
+  %1454 = trunc i32 %1453 to i8
+  %1455 = and i8 %1454, 1
+  %1456 = xor i8 %1455, 1
+  store i8 %1456, i8* %.pre-phi15, align 1, !tbaa !2448
+  %1457 = xor i32 %1448, %1443
+  %1458 = xor i32 %1457, %1449
+  %1459 = lshr i32 %1458, 4
+  %1460 = trunc i32 %1459 to i8
+  %1461 = and i8 %1460, 1
+  store i8 %1461, i8* %.pre-phi17, align 1, !tbaa !2452
+  %1462 = icmp eq i32 %1449, 0
+  %1463 = zext i1 %1462 to i8
+  store i8 %1463, i8* %.pre-phi19, align 1, !tbaa !2449
+  %1464 = lshr i32 %1449, 31
+  %1465 = trunc i32 %1464 to i8
+  store i8 %1465, i8* %.pre-phi21, align 1, !tbaa !2450
+  %1466 = lshr i32 %1443, 31
+  %1467 = lshr i32 %1448, 31
+  %1468 = xor i32 %1467, %1466
+  %1469 = xor i32 %1464, %1466
+  %1470 = add nuw nsw i32 %1469, %1468
+  %1471 = icmp eq i32 %1470, 2
+  %1472 = zext i1 %1471 to i8
+  store i8 %1472, i8* %.pre-phi23, align 1, !tbaa !2451
+  %1473 = icmp ne i8 %1465, 0
+  %1474 = xor i1 %1473, %1471
+  %1475 = or i1 %1462, %1474
+  %.v = select i1 %1475, i64 -373, i64 12
+  %1476 = add i64 %1440, %.v
+  store i64 %1476, i64* %PC, align 8, !tbaa !2428
+  br i1 %1475, label %block_400a6e, label %block_400bef
 }
 
 ; Function Attrs: noinline
@@ -5015,61 +4957,60 @@ block_4004b0:
   store i8 %15, i8* %16, align 1, !tbaa !2450
   %17 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 0, i8* %17, align 1, !tbaa !2451
-  %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %.v = select i1 %12, i64 9, i64 32
-  %19 = add i64 %.v, %1
-  store i64 %19, i64* %18, align 8, !tbaa !2428
+  %18 = add i64 %.v, %1
+  store i64 %18, i64* %PC, align 8, !tbaa !2428
   br i1 %12, label %block_4004b9, label %block_4004d0
 
 block_4004d0:                                     ; preds = %block_4004b0
-  %20 = add i64 %19, 2
-  store i64 %20, i64* %PC, align 8
-  %21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %22 = load i64, i64* %21, align 8, !tbaa !2428
-  %23 = inttoptr i64 %22 to i64*
-  %24 = load i64, i64* %23, align 8
-  store i64 %24, i64* %18, align 8, !tbaa !2428
-  %25 = add i64 %22, 8
-  store i64 %25, i64* %21, align 8, !tbaa !2428
+  %19 = add i64 %18, 2
+  store i64 %19, i64* %PC, align 8
+  %20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %21 = load i64, i64* %20, align 8, !tbaa !2428
+  %22 = inttoptr i64 %21 to i64*
+  %23 = load i64, i64* %22, align 8
+  store i64 %23, i64* %PC, align 8, !tbaa !2428
+  %24 = add i64 %21, 8
+  store i64 %24, i64* %20, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_4004b9:                                     ; preds = %block_4004b0
-  %26 = load i64, i64* %RBP, align 8
-  %27 = add i64 %19, 1
-  store i64 %27, i64* %PC, align 8
-  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %29 = load i64, i64* %28, align 8, !tbaa !2428
-  %30 = add i64 %29, -8
-  %31 = inttoptr i64 %30 to i64*
-  store i64 %26, i64* %31, align 8
-  %32 = load i64, i64* %PC, align 8
-  store i64 %30, i64* %RBP, align 8, !tbaa !2428
-  %33 = add i64 %32, -122
-  %34 = add i64 %32, 8
-  %35 = add i64 %29, -16
-  %36 = inttoptr i64 %35 to i64*
-  store i64 %34, i64* %36, align 8
-  store i64 %35, i64* %28, align 8, !tbaa !2428
-  store i64 %33, i64* %18, align 8, !tbaa !2428
-  %37 = tail call %struct.Memory* @sub_400440_deregister_tm_clones_renamed_(%struct.State* nonnull %0, i64 %33, %struct.Memory* %2)
-  %38 = load i64, i64* %PC, align 8
+  %25 = load i64, i64* %RBP, align 8
+  %26 = add i64 %18, 1
+  store i64 %26, i64* %PC, align 8
+  %27 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %28 = load i64, i64* %27, align 8, !tbaa !2428
+  %29 = add i64 %28, -8
+  %30 = inttoptr i64 %29 to i64*
+  store i64 %25, i64* %30, align 8
+  %31 = load i64, i64* %PC, align 8
+  store i64 %29, i64* %RBP, align 8, !tbaa !2428
+  %32 = add i64 %31, -122
+  %33 = add i64 %31, 8
+  %34 = add i64 %28, -16
+  %35 = inttoptr i64 %34 to i64*
+  store i64 %33, i64* %35, align 8
+  store i64 %34, i64* %27, align 8, !tbaa !2428
+  store i64 %32, i64* %PC, align 8, !tbaa !2428
+  %36 = tail call %struct.Memory* @sub_400440_deregister_tm_clones_renamed_(%struct.State* nonnull %0, i64 %32, %struct.Memory* %2)
+  %37 = load i64, i64* %PC, align 8
   store i8 1, i8* getelementptr inbounds (%__bss_start_type, %__bss_start_type* @__bss_start, i64 0, i32 0, i64 0), align 8
-  %39 = add i64 %38, 8
-  store i64 %39, i64* %PC, align 8
-  %40 = load i64, i64* %28, align 8, !tbaa !2428
-  %41 = add i64 %40, 8
-  %42 = inttoptr i64 %40 to i64*
-  %43 = load i64, i64* %42, align 8
-  store i64 %43, i64* %RBP, align 8, !tbaa !2428
-  store i64 %41, i64* %28, align 8, !tbaa !2428
-  %44 = add i64 %38, 9
-  store i64 %44, i64* %PC, align 8
-  %45 = inttoptr i64 %41 to i64*
-  %46 = load i64, i64* %45, align 8
-  store i64 %46, i64* %18, align 8, !tbaa !2428
-  %47 = add i64 %40, 16
-  store i64 %47, i64* %28, align 8, !tbaa !2428
-  ret %struct.Memory* %37
+  %38 = add i64 %37, 8
+  store i64 %38, i64* %PC, align 8
+  %39 = load i64, i64* %27, align 8, !tbaa !2428
+  %40 = add i64 %39, 8
+  %41 = inttoptr i64 %39 to i64*
+  %42 = load i64, i64* %41, align 8
+  store i64 %42, i64* %RBP, align 8, !tbaa !2428
+  store i64 %40, i64* %27, align 8, !tbaa !2428
+  %43 = add i64 %37, 9
+  store i64 %43, i64* %PC, align 8
+  %44 = inttoptr i64 %40 to i64*
+  %45 = load i64, i64* %44, align 8
+  store i64 %45, i64* %PC, align 8, !tbaa !2428
+  %46 = add i64 %39, 16
+  store i64 %46, i64* %27, align 8, !tbaa !2428
+  ret %struct.Memory* %36
 }
 
 ; Function Attrs: noinline
@@ -5105,70 +5046,67 @@ block_4003c8:
   store i8 %21, i8* %9, align 1, !tbaa !2450
   store i8 0, i8* %10, align 1, !tbaa !2451
   store i8 0, i8* %7, align 1, !tbaa !2452
-  %22 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %.v = select i1 %18, i64 18, i64 16
-  %23 = add i64 %.v, %1
-  store i64 %23, i64* %22, align 8, !tbaa !2428
+  %22 = add i64 %.v, %1
+  store i64 %22, i64* %PC, align 8, !tbaa !2428
   br i1 %18, label %block_4003c8.block_4003da_crit_edge, label %block_4003d8
 
 block_4003c8.block_4003da_crit_edge:              ; preds = %block_4003c8
-  %.pre2 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   br label %block_4003da
 
 block_4003d8:                                     ; preds = %block_4003c8
-  %24 = add i64 %23, 2
-  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %26 = add i64 %3, -16
-  %27 = inttoptr i64 %26 to i64*
-  store i64 %24, i64* %27, align 8
-  store i64 %26, i64* %25, align 8, !tbaa !2428
-  store i64 %11, i64* %22, align 8, !tbaa !2428
-  %28 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
+  %23 = add i64 %22, 2
+  %24 = add i64 %3, -16
+  %25 = inttoptr i64 %24 to i64*
+  store i64 %23, i64* %25, align 8
+  store i64 %24, i64* %RSP, align 8, !tbaa !2428
+  store i64 %11, i64* %PC, align 8, !tbaa !2428
+  %26 = tail call %struct.Memory* @__remill_function_call(%struct.State* nonnull %0, i64 %11, %struct.Memory* %2)
   %.pre = load i64, i64* %RSP, align 8
   %.pre1 = load i64, i64* %PC, align 8
   br label %block_4003da
 
 block_4003da:                                     ; preds = %block_4003c8.block_4003da_crit_edge, %block_4003d8
-  %.pre-phi = phi i64* [ %.pre2, %block_4003c8.block_4003da_crit_edge ], [ %25, %block_4003d8 ]
-  %29 = phi i64 [ %23, %block_4003c8.block_4003da_crit_edge ], [ %.pre1, %block_4003d8 ]
-  %30 = phi i64 [ %4, %block_4003c8.block_4003da_crit_edge ], [ %.pre, %block_4003d8 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_4003c8.block_4003da_crit_edge ], [ %28, %block_4003d8 ]
-  %31 = add i64 %30, 8
-  store i64 %31, i64* %RSP, align 8, !tbaa !2428
-  %32 = icmp ugt i64 %30, -9
-  %33 = zext i1 %32 to i8
-  store i8 %33, i8* %5, align 1, !tbaa !2434
-  %34 = trunc i64 %31 to i32
-  %35 = and i32 %34, 255
-  %36 = tail call i32 @llvm.ctpop.i32(i32 %35) #8
-  %37 = trunc i32 %36 to i8
-  %38 = and i8 %37, 1
-  %39 = xor i8 %38, 1
-  store i8 %39, i8* %6, align 1, !tbaa !2448
-  %40 = xor i64 %30, %31
-  %41 = lshr i64 %40, 4
-  %42 = trunc i64 %41 to i8
-  %43 = and i8 %42, 1
-  store i8 %43, i8* %7, align 1, !tbaa !2452
-  %44 = icmp eq i64 %31, 0
-  %45 = zext i1 %44 to i8
-  store i8 %45, i8* %8, align 1, !tbaa !2449
-  %46 = lshr i64 %31, 63
-  %47 = trunc i64 %46 to i8
-  store i8 %47, i8* %9, align 1, !tbaa !2450
-  %48 = lshr i64 %30, 63
-  %49 = xor i64 %46, %48
-  %50 = add nuw nsw i64 %49, %46
-  %51 = icmp eq i64 %50, 2
-  %52 = zext i1 %51 to i8
-  store i8 %52, i8* %10, align 1, !tbaa !2451
-  %53 = add i64 %29, 5
-  store i64 %53, i64* %PC, align 8
-  %54 = inttoptr i64 %31 to i64*
-  %55 = load i64, i64* %54, align 8
-  store i64 %55, i64* %22, align 8, !tbaa !2428
-  %56 = add i64 %30, 16
-  store i64 %56, i64* %.pre-phi, align 8, !tbaa !2428
+  %.pre-phi = phi i64* [ %RSP, %block_4003c8.block_4003da_crit_edge ], [ %RSP, %block_4003d8 ]
+  %27 = phi i64 [ %22, %block_4003c8.block_4003da_crit_edge ], [ %.pre1, %block_4003d8 ]
+  %28 = phi i64 [ %4, %block_4003c8.block_4003da_crit_edge ], [ %.pre, %block_4003d8 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %block_4003c8.block_4003da_crit_edge ], [ %26, %block_4003d8 ]
+  %29 = add i64 %28, 8
+  store i64 %29, i64* %RSP, align 8, !tbaa !2428
+  %30 = icmp ugt i64 %28, -9
+  %31 = zext i1 %30 to i8
+  store i8 %31, i8* %5, align 1, !tbaa !2434
+  %32 = trunc i64 %29 to i32
+  %33 = and i32 %32, 255
+  %34 = tail call i32 @llvm.ctpop.i32(i32 %33) #8
+  %35 = trunc i32 %34 to i8
+  %36 = and i8 %35, 1
+  %37 = xor i8 %36, 1
+  store i8 %37, i8* %6, align 1, !tbaa !2448
+  %38 = xor i64 %28, %29
+  %39 = lshr i64 %38, 4
+  %40 = trunc i64 %39 to i8
+  %41 = and i8 %40, 1
+  store i8 %41, i8* %7, align 1, !tbaa !2452
+  %42 = icmp eq i64 %29, 0
+  %43 = zext i1 %42 to i8
+  store i8 %43, i8* %8, align 1, !tbaa !2449
+  %44 = lshr i64 %29, 63
+  %45 = trunc i64 %44 to i8
+  store i8 %45, i8* %9, align 1, !tbaa !2450
+  %46 = lshr i64 %28, 63
+  %47 = xor i64 %44, %46
+  %48 = add nuw nsw i64 %47, %44
+  %49 = icmp eq i64 %48, 2
+  %50 = zext i1 %49 to i8
+  store i8 %50, i8* %10, align 1, !tbaa !2451
+  %51 = add i64 %27, 5
+  store i64 %51, i64* %PC, align 8
+  %52 = inttoptr i64 %29 to i64*
+  %53 = load i64, i64* %52, align 8
+  store i64 %53, i64* %PC, align 8, !tbaa !2428
+  %54 = add i64 %28, 16
+  store i64 %54, i64* %.pre-phi, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 }
 
@@ -5189,149 +5127,143 @@ block_400cd0:
   %6 = load i64, i64* %RBP, align 8
   %7 = add i64 %1, 1
   store i64 %7, i64* %PC, align 8
-  %8 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %9 = load i64, i64* %8, align 8, !tbaa !2428
-  %10 = add i64 %9, -8
-  %11 = inttoptr i64 %10 to i64*
-  store i64 %6, i64* %11, align 8
-  %12 = load i64, i64* %PC, align 8
-  store i64 %10, i64* %RBP, align 8, !tbaa !2428
-  %13 = add i64 %9, -24
-  %14 = icmp ult i64 %10, 16
-  %15 = zext i1 %14 to i8
-  %16 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 %15, i8* %16, align 1, !tbaa !2434
-  %17 = trunc i64 %13 to i32
-  %18 = and i32 %17, 255
-  %19 = tail call i32 @llvm.ctpop.i32(i32 %18) #8
-  %20 = trunc i32 %19 to i8
-  %21 = and i8 %20, 1
-  %22 = xor i8 %21, 1
-  %23 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 %22, i8* %23, align 1, !tbaa !2448
-  %24 = xor i64 %10, 16
-  %25 = xor i64 %24, %13
-  %26 = lshr i64 %25, 4
-  %27 = trunc i64 %26 to i8
-  %28 = and i8 %27, 1
-  %29 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %28, i8* %29, align 1, !tbaa !2452
-  %30 = icmp eq i64 %13, 0
-  %31 = zext i1 %30 to i8
-  %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %31, i8* %32, align 1, !tbaa !2449
-  %33 = lshr i64 %13, 63
-  %34 = trunc i64 %33 to i8
-  %35 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %34, i8* %35, align 1, !tbaa !2450
-  %36 = lshr i64 %10, 63
-  %37 = xor i64 %33, %36
-  %38 = add nuw nsw i64 %37, %36
-  %39 = icmp eq i64 %38, 2
-  %40 = zext i1 %39 to i8
-  %41 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %40, i8* %41, align 1, !tbaa !2451
+  %8 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %9 = add i64 %8, -8
+  %10 = inttoptr i64 %9 to i64*
+  store i64 %6, i64* %10, align 8
+  %11 = load i64, i64* %PC, align 8
+  store i64 %9, i64* %RBP, align 8, !tbaa !2428
+  %12 = add i64 %8, -24
+  %13 = icmp ult i64 %9, 16
+  %14 = zext i1 %13 to i8
+  %15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 %14, i8* %15, align 1, !tbaa !2434
+  %16 = trunc i64 %12 to i32
+  %17 = and i32 %16, 255
+  %18 = tail call i32 @llvm.ctpop.i32(i32 %17) #8
+  %19 = trunc i32 %18 to i8
+  %20 = and i8 %19, 1
+  %21 = xor i8 %20, 1
+  %22 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 %21, i8* %22, align 1, !tbaa !2448
+  %23 = xor i64 %9, 16
+  %24 = xor i64 %23, %12
+  %25 = lshr i64 %24, 4
+  %26 = trunc i64 %25 to i8
+  %27 = and i8 %26, 1
+  %28 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %27, i8* %28, align 1, !tbaa !2452
+  %29 = icmp eq i64 %12, 0
+  %30 = zext i1 %29 to i8
+  %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %30, i8* %31, align 1, !tbaa !2449
+  %32 = lshr i64 %12, 63
+  %33 = trunc i64 %32 to i8
+  %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %33, i8* %34, align 1, !tbaa !2450
+  %35 = lshr i64 %9, 63
+  %36 = xor i64 %32, %35
+  %37 = add nuw nsw i64 %36, %35
+  %38 = icmp eq i64 %37, 2
+  %39 = zext i1 %38 to i8
+  %40 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %39, i8* %40, align 1, !tbaa !2451
   store i64 256, i64* %RDI, align 8, !tbaa !2428
   store i64 ptrtoint (%e_type* @e to i64), i64* %RSI, align 8, !tbaa !2428
-  %42 = add i64 %12, -1361
-  %43 = add i64 %12, 27
-  %44 = add i64 %9, -32
-  %45 = inttoptr i64 %44 to i64*
-  store i64 %43, i64* %45, align 8
-  store i64 %44, i64* %8, align 8, !tbaa !2428
-  %46 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  store i64 %42, i64* %46, align 8, !tbaa !2428
-  %47 = tail call %struct.Memory* @sub_400780_Exptab_renamed_(%struct.State* nonnull %0, i64 %42, %struct.Memory* %2)
-  %48 = load i64, i64* %PC, align 8
+  %41 = add i64 %11, -1361
+  %42 = add i64 %11, 27
+  %43 = add i64 %8, -32
+  %44 = inttoptr i64 %43 to i64*
+  store i64 %42, i64* %44, align 8
+  store i64 %43, i64* %RSP, align 8, !tbaa !2428
+  store i64 %41, i64* %PC, align 8, !tbaa !2428
+  %45 = tail call %struct.Memory* @sub_400780_Exptab_renamed_(%struct.State* nonnull %0, i64 %41, %struct.Memory* %2)
+  %46 = load i64, i64* %PC, align 8
   store i64 5767, i64* bitcast (%seed_type* @seed to i64*), align 8
-  %49 = load i64, i64* %RBP, align 8
-  %50 = add i64 %49, -4
-  %51 = add i64 %48, 19
-  store i64 %51, i64* %PC, align 8
-  %52 = inttoptr i64 %50 to i32*
-  store i32 1, i32* %52, align 4
-  %53 = bitcast [32 x %union.VectorReg]* %3 to i8*
-  %54 = getelementptr inbounds i8, i8* %53, i64 4
-  %55 = bitcast i8* %54 to float*
-  %56 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
-  %57 = bitcast i64* %56 to float*
-  %58 = getelementptr inbounds i8, i8* %53, i64 12
-  %59 = bitcast i8* %58 to float*
-  %60 = bitcast %union.VectorReg* %4 to i8*
-  %61 = bitcast %union.VectorReg* %4 to float*
-  %62 = getelementptr inbounds i8, i8* %60, i64 4
-  %63 = bitcast i8* %62 to float*
-  %64 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
-  %65 = bitcast i64* %64 to float*
-  %66 = getelementptr inbounds i8, i8* %60, i64 12
-  %67 = bitcast i8* %66 to float*
-  %68 = bitcast %union.VectorReg* %5 to i8*
-  %69 = bitcast %union.VectorReg* %4 to <2 x i32>*
-  %70 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
-  %71 = bitcast i64* %70 to <2 x i32>*
-  %72 = bitcast %union.VectorReg* %5 to i32*
-  %73 = getelementptr inbounds i8, i8* %68, i64 4
-  %74 = bitcast i8* %73 to i32*
-  %75 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
-  %76 = bitcast i64* %75 to i32*
-  %77 = getelementptr inbounds i8, i8* %68, i64 12
-  %78 = bitcast i8* %77 to i32*
-  %79 = bitcast %union.VectorReg* %5 to <2 x float>*
-  %80 = bitcast i64* %75 to <2 x i32>*
-  %81 = bitcast %union.VectorReg* %5 to float*
-  %82 = bitcast [32 x %union.VectorReg]* %3 to <2 x float>*
-  %83 = bitcast %union.VectorReg* %5 to <2 x float>*
-  %84 = bitcast %union.VectorReg* %4 to <2 x float>*
-  %85 = bitcast i64* %64 to <2 x i32>*
-  %86 = bitcast i8* %62 to i32*
-  %87 = bitcast i64* %64 to i32*
-  %88 = bitcast i8* %66 to i32*
-  %89 = bitcast %union.VectorReg* %4 to <2 x float>*
+  %47 = load i64, i64* %RBP, align 8
+  %48 = add i64 %47, -4
+  %49 = add i64 %46, 19
+  store i64 %49, i64* %PC, align 8
+  %50 = inttoptr i64 %48 to i32*
+  store i32 1, i32* %50, align 4
+  %51 = bitcast [32 x %union.VectorReg]* %3 to i8*
+  %52 = getelementptr inbounds i8, i8* %51, i64 4
+  %53 = bitcast i8* %52 to float*
+  %54 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+  %55 = bitcast i64* %54 to float*
+  %56 = getelementptr inbounds i8, i8* %51, i64 12
+  %57 = bitcast i8* %56 to float*
+  %58 = bitcast %union.VectorReg* %4 to i8*
+  %59 = bitcast %union.VectorReg* %4 to float*
+  %60 = getelementptr inbounds i8, i8* %58, i64 4
+  %61 = bitcast i8* %60 to float*
+  %62 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+  %63 = bitcast i64* %62 to float*
+  %64 = getelementptr inbounds i8, i8* %58, i64 12
+  %65 = bitcast i8* %64 to float*
+  %66 = bitcast %union.VectorReg* %5 to i8*
+  %67 = bitcast %union.VectorReg* %4 to <2 x i32>*
+  %68 = bitcast i64* %62 to <2 x i32>*
+  %69 = bitcast %union.VectorReg* %5 to i32*
+  %70 = getelementptr inbounds i8, i8* %66, i64 4
+  %71 = bitcast i8* %70 to i32*
+  %72 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
+  %73 = bitcast i64* %72 to i32*
+  %74 = getelementptr inbounds i8, i8* %66, i64 12
+  %75 = bitcast i8* %74 to i32*
+  %76 = bitcast %union.VectorReg* %5 to <2 x float>*
+  %77 = bitcast i64* %72 to <2 x i32>*
+  %78 = bitcast %union.VectorReg* %5 to float*
+  %79 = bitcast [32 x %union.VectorReg]* %3 to <2 x float>*
+  %80 = bitcast %union.VectorReg* %4 to <2 x float>*
+  %81 = bitcast i8* %60 to i32*
+  %82 = bitcast i64* %62 to i32*
+  %83 = bitcast i8* %64 to i32*
   %.pre = load i64, i64* %PC, align 8
   br label %block_400cff
 
 block_400cff:                                     ; preds = %block_400d0c, %block_400cd0
-  %90 = phi i64 [ %.pre, %block_400cd0 ], [ %369, %block_400d0c ]
-  %MEMORY.0 = phi %struct.Memory* [ %47, %block_400cd0 ], [ %257, %block_400d0c ]
-  %91 = load i64, i64* %RBP, align 8
-  %92 = add i64 %91, -4
-  %93 = add i64 %90, 7
-  store i64 %93, i64* %PC, align 8
-  %94 = inttoptr i64 %92 to i32*
-  %95 = load i32, i32* %94, align 4
-  %96 = add i32 %95, -256
-  %97 = icmp ult i32 %95, 256
-  %98 = zext i1 %97 to i8
-  store i8 %98, i8* %16, align 1, !tbaa !2434
-  %99 = and i32 %96, 255
-  %100 = tail call i32 @llvm.ctpop.i32(i32 %99) #8
-  %101 = trunc i32 %100 to i8
-  %102 = and i8 %101, 1
-  %103 = xor i8 %102, 1
-  store i8 %103, i8* %23, align 1, !tbaa !2448
-  %104 = xor i32 %95, %96
-  %105 = lshr i32 %104, 4
-  %106 = trunc i32 %105 to i8
-  %107 = and i8 %106, 1
-  store i8 %107, i8* %29, align 1, !tbaa !2452
-  %108 = icmp eq i32 %96, 0
-  %109 = zext i1 %108 to i8
-  store i8 %109, i8* %32, align 1, !tbaa !2449
-  %110 = lshr i32 %96, 31
-  %111 = trunc i32 %110 to i8
-  store i8 %111, i8* %35, align 1, !tbaa !2450
-  %112 = lshr i32 %95, 31
-  %113 = xor i32 %110, %112
-  %114 = add nuw nsw i32 %113, %112
-  %115 = icmp eq i32 %114, 2
-  %116 = zext i1 %115 to i8
-  store i8 %116, i8* %41, align 1, !tbaa !2451
-  %117 = icmp ne i8 %111, 0
-  %118 = xor i1 %117, %115
-  %.demorgan = or i1 %108, %118
+  %84 = phi i64 [ %.pre, %block_400cd0 ], [ %361, %block_400d0c ]
+  %MEMORY.0 = phi %struct.Memory* [ %45, %block_400cd0 ], [ %250, %block_400d0c ]
+  %85 = load i64, i64* %RBP, align 8
+  %86 = add i64 %85, -4
+  %87 = add i64 %84, 7
+  store i64 %87, i64* %PC, align 8
+  %88 = inttoptr i64 %86 to i32*
+  %89 = load i32, i32* %88, align 4
+  %90 = add i32 %89, -256
+  %91 = icmp ult i32 %89, 256
+  %92 = zext i1 %91 to i8
+  store i8 %92, i8* %15, align 1, !tbaa !2434
+  %93 = and i32 %90, 255
+  %94 = tail call i32 @llvm.ctpop.i32(i32 %93) #8
+  %95 = trunc i32 %94 to i8
+  %96 = and i8 %95, 1
+  %97 = xor i8 %96, 1
+  store i8 %97, i8* %22, align 1, !tbaa !2448
+  %98 = xor i32 %89, %90
+  %99 = lshr i32 %98, 4
+  %100 = trunc i32 %99 to i8
+  %101 = and i8 %100, 1
+  store i8 %101, i8* %28, align 1, !tbaa !2452
+  %102 = icmp eq i32 %90, 0
+  %103 = zext i1 %102 to i8
+  store i8 %103, i8* %31, align 1, !tbaa !2449
+  %104 = lshr i32 %90, 31
+  %105 = trunc i32 %104 to i8
+  store i8 %105, i8* %34, align 1, !tbaa !2450
+  %106 = lshr i32 %89, 31
+  %107 = xor i32 %104, %106
+  %108 = add nuw nsw i32 %107, %106
+  %109 = icmp eq i32 %108, 2
+  %110 = zext i1 %109 to i8
+  store i8 %110, i8* %40, align 1, !tbaa !2451
+  %111 = icmp ne i8 %105, 0
+  %112 = xor i1 %111, %109
+  %.demorgan = or i1 %102, %112
   %.v = select i1 %.demorgan, i64 13, i64 173
-  %119 = add i64 %90, %.v
-  store i64 %119, i64* %46, align 8, !tbaa !2428
+  %113 = add i64 %84, %.v
+  store i64 %113, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan, label %block_400d0c, label %block_400dac
 
 block_400dbd:                                     ; preds = %block_400db3
@@ -5339,65 +5271,64 @@ block_400dbd:                                     ; preds = %block_400db3
   store i64 ptrtoint (%z_type* @z to i64), i64* %RSI, align 8, !tbaa !2428
   store i64 ptrtoint (%w_type* @w to i64), i64* %RDX, align 8, !tbaa !2428
   store i64 ptrtoint (%e_type* @e to i64), i64* %RCX, align 8, !tbaa !2428
-  %120 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 28) to i32*), align 4
-  %121 = bitcast [32 x %union.VectorReg]* %3 to i32*
-  store i32 %120, i32* %121, align 1, !tbaa !2432
+  %114 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 28) to i32*), align 4
+  %115 = bitcast [32 x %union.VectorReg]* %3 to i32*
+  store i32 %114, i32* %115, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
   store float 0.000000e+00, float* %55, align 1, !tbaa !2432
   store float 0.000000e+00, float* %57, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  %122 = add i64 %230, -925
-  %123 = add i64 %230, 48
-  %124 = load i64, i64* %8, align 8, !tbaa !2428
-  %125 = add i64 %124, -8
-  %126 = inttoptr i64 %125 to i64*
-  store i64 %123, i64* %126, align 8
-  store i64 %125, i64* %8, align 8, !tbaa !2428
-  store i64 %122, i64* %46, align 8, !tbaa !2428
-  %127 = tail call %struct.Memory* @sub_400a20_Fft_renamed_(%struct.State* nonnull %0, i64 %122, %struct.Memory* %MEMORY.1)
-  %128 = load i64, i64* %RBP, align 8
-  %129 = add i64 %128, -4
-  %130 = load i64, i64* %PC, align 8
-  %131 = add i64 %130, 3
-  store i64 %131, i64* %PC, align 8
-  %132 = inttoptr i64 %129 to i32*
-  %133 = load i32, i32* %132, align 4
-  %134 = add i32 %133, 1
-  %135 = zext i32 %134 to i64
-  store i64 %135, i64* %RAX, align 8, !tbaa !2428
-  %136 = icmp eq i32 %133, -1
-  %137 = icmp eq i32 %134, 0
-  %138 = or i1 %136, %137
-  %139 = zext i1 %138 to i8
-  store i8 %139, i8* %16, align 1, !tbaa !2434
-  %140 = and i32 %134, 255
-  %141 = tail call i32 @llvm.ctpop.i32(i32 %140) #8
-  %142 = trunc i32 %141 to i8
-  %143 = and i8 %142, 1
-  %144 = xor i8 %143, 1
-  store i8 %144, i8* %23, align 1, !tbaa !2448
-  %145 = xor i32 %133, %134
-  %146 = lshr i32 %145, 4
-  %147 = trunc i32 %146 to i8
-  %148 = and i8 %147, 1
-  store i8 %148, i8* %29, align 1, !tbaa !2452
-  %149 = icmp eq i32 %134, 0
+  %116 = add i64 %223, -925
+  %117 = add i64 %223, 48
+  %118 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %119 = add i64 %118, -8
+  %120 = inttoptr i64 %119 to i64*
+  store i64 %117, i64* %120, align 8
+  store i64 %119, i64* %RSP, align 8, !tbaa !2428
+  store i64 %116, i64* %PC, align 8, !tbaa !2428
+  %121 = tail call %struct.Memory* @sub_400a20_Fft_renamed_(%struct.State* nonnull %0, i64 %116, %struct.Memory* %MEMORY.1)
+  %122 = load i64, i64* %RBP, align 8
+  %123 = add i64 %122, -4
+  %124 = load i64, i64* %PC, align 8
+  %125 = add i64 %124, 3
+  store i64 %125, i64* %PC, align 8
+  %126 = inttoptr i64 %123 to i32*
+  %127 = load i32, i32* %126, align 4
+  %128 = add i32 %127, 1
+  %129 = zext i32 %128 to i64
+  store i64 %129, i64* %RAX, align 8, !tbaa !2428
+  %130 = icmp eq i32 %127, -1
+  %131 = icmp eq i32 %128, 0
+  %132 = or i1 %130, %131
+  %133 = zext i1 %132 to i8
+  store i8 %133, i8* %15, align 1, !tbaa !2434
+  %134 = and i32 %128, 255
+  %135 = tail call i32 @llvm.ctpop.i32(i32 %134) #8
+  %136 = trunc i32 %135 to i8
+  %137 = and i8 %136, 1
+  %138 = xor i8 %137, 1
+  store i8 %138, i8* %22, align 1, !tbaa !2448
+  %139 = xor i32 %127, %128
+  %140 = lshr i32 %139, 4
+  %141 = trunc i32 %140 to i8
+  %142 = and i8 %141, 1
+  store i8 %142, i8* %28, align 1, !tbaa !2452
+  %143 = zext i1 %131 to i8
+  store i8 %143, i8* %31, align 1, !tbaa !2449
+  %144 = lshr i32 %128, 31
+  %145 = trunc i32 %144 to i8
+  store i8 %145, i8* %34, align 1, !tbaa !2450
+  %146 = lshr i32 %127, 31
+  %147 = xor i32 %144, %146
+  %148 = add nuw nsw i32 %147, %144
+  %149 = icmp eq i32 %148, 2
   %150 = zext i1 %149 to i8
-  store i8 %150, i8* %32, align 1, !tbaa !2449
-  %151 = lshr i32 %134, 31
-  %152 = trunc i32 %151 to i8
-  store i8 %152, i8* %35, align 1, !tbaa !2450
-  %153 = lshr i32 %133, 31
-  %154 = xor i32 %151, %153
-  %155 = add nuw nsw i32 %154, %151
-  %156 = icmp eq i32 %155, 2
-  %157 = zext i1 %156 to i8
-  store i8 %157, i8* %41, align 1, !tbaa !2451
-  %158 = add i64 %130, 9
-  store i64 %158, i64* %PC, align 8
-  store i32 %134, i32* %132, align 4
-  %159 = load i64, i64* %PC, align 8
-  %160 = add i64 %159, -67
-  store i64 %160, i64* %46, align 8, !tbaa !2428
+  store i8 %150, i8* %40, align 1, !tbaa !2451
+  %151 = add i64 %124, 9
+  store i64 %151, i64* %PC, align 8
+  store i32 %128, i32* %126, align 4
+  %152 = load i64, i64* %PC, align 8
+  %153 = add i64 %152, -67
+  store i64 %153, i64* %PC, align 8, !tbaa !2428
   br label %block_400db3
 
 block_400dfb:                                     ; preds = %block_400db3
@@ -5405,321 +5336,320 @@ block_400dfb:                                     ; preds = %block_400db3
   store i64 1, i64* %RSI, align 8, !tbaa !2428
   store i64 256, i64* %RDX, align 8, !tbaa !2428
   store i64 17, i64* %RCX, align 8, !tbaa !2428
-  %161 = add i64 %230, -1963
-  %162 = add i64 %230, 30
-  %163 = load i64, i64* %8, align 8, !tbaa !2428
-  %164 = add i64 %163, -8
-  %165 = inttoptr i64 %164 to i64*
-  store i64 %162, i64* %165, align 8
-  store i64 %164, i64* %8, align 8, !tbaa !2428
-  store i64 %161, i64* %46, align 8, !tbaa !2428
-  %166 = tail call %struct.Memory* @sub_400650_Printcomplex_renamed_(%struct.State* nonnull %0, i64 %161, %struct.Memory* %MEMORY.1)
-  %167 = load i64, i64* %RSP, align 8
-  %168 = load i64, i64* %PC, align 8
-  %169 = add i64 %167, 16
-  store i64 %169, i64* %RSP, align 8, !tbaa !2428
-  %170 = icmp ugt i64 %167, -17
-  %171 = zext i1 %170 to i8
-  store i8 %171, i8* %16, align 1, !tbaa !2434
-  %172 = trunc i64 %169 to i32
-  %173 = and i32 %172, 255
-  %174 = tail call i32 @llvm.ctpop.i32(i32 %173) #8
-  %175 = trunc i32 %174 to i8
-  %176 = and i8 %175, 1
-  %177 = xor i8 %176, 1
-  store i8 %177, i8* %23, align 1, !tbaa !2448
-  %178 = xor i64 %167, 16
-  %179 = xor i64 %178, %169
-  %180 = lshr i64 %179, 4
-  %181 = trunc i64 %180 to i8
-  %182 = and i8 %181, 1
-  store i8 %182, i8* %29, align 1, !tbaa !2452
-  %183 = icmp eq i64 %169, 0
+  %154 = add i64 %223, -1963
+  %155 = add i64 %223, 30
+  %156 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %157 = add i64 %156, -8
+  %158 = inttoptr i64 %157 to i64*
+  store i64 %155, i64* %158, align 8
+  store i64 %157, i64* %RSP, align 8, !tbaa !2428
+  store i64 %154, i64* %PC, align 8, !tbaa !2428
+  %159 = tail call %struct.Memory* @sub_400650_Printcomplex_renamed_(%struct.State* nonnull %0, i64 %154, %struct.Memory* %MEMORY.1)
+  %160 = load i64, i64* %RSP, align 8
+  %161 = load i64, i64* %PC, align 8
+  %162 = add i64 %160, 16
+  store i64 %162, i64* %RSP, align 8, !tbaa !2428
+  %163 = icmp ugt i64 %160, -17
+  %164 = zext i1 %163 to i8
+  store i8 %164, i8* %15, align 1, !tbaa !2434
+  %165 = trunc i64 %162 to i32
+  %166 = and i32 %165, 255
+  %167 = tail call i32 @llvm.ctpop.i32(i32 %166) #8
+  %168 = trunc i32 %167 to i8
+  %169 = and i8 %168, 1
+  %170 = xor i8 %169, 1
+  store i8 %170, i8* %22, align 1, !tbaa !2448
+  %171 = xor i64 %160, 16
+  %172 = xor i64 %171, %162
+  %173 = lshr i64 %172, 4
+  %174 = trunc i64 %173 to i8
+  %175 = and i8 %174, 1
+  store i8 %175, i8* %28, align 1, !tbaa !2452
+  %176 = icmp eq i64 %162, 0
+  %177 = zext i1 %176 to i8
+  store i8 %177, i8* %31, align 1, !tbaa !2449
+  %178 = lshr i64 %162, 63
+  %179 = trunc i64 %178 to i8
+  store i8 %179, i8* %34, align 1, !tbaa !2450
+  %180 = lshr i64 %160, 63
+  %181 = xor i64 %178, %180
+  %182 = add nuw nsw i64 %181, %178
+  %183 = icmp eq i64 %182, 2
   %184 = zext i1 %183 to i8
-  store i8 %184, i8* %32, align 1, !tbaa !2449
-  %185 = lshr i64 %169, 63
-  %186 = trunc i64 %185 to i8
-  store i8 %186, i8* %35, align 1, !tbaa !2450
-  %187 = lshr i64 %167, 63
-  %188 = xor i64 %185, %187
-  %189 = add nuw nsw i64 %188, %185
-  %190 = icmp eq i64 %189, 2
-  %191 = zext i1 %190 to i8
-  store i8 %191, i8* %41, align 1, !tbaa !2451
-  %192 = add i64 %168, 5
-  store i64 %192, i64* %PC, align 8
-  %193 = add i64 %167, 24
-  %194 = inttoptr i64 %169 to i64*
-  %195 = load i64, i64* %194, align 8
-  store i64 %195, i64* %RBP, align 8, !tbaa !2428
-  store i64 %193, i64* %8, align 8, !tbaa !2428
-  %196 = add i64 %168, 6
-  store i64 %196, i64* %PC, align 8
-  %197 = inttoptr i64 %193 to i64*
-  %198 = load i64, i64* %197, align 8
-  store i64 %198, i64* %46, align 8, !tbaa !2428
-  %199 = add i64 %167, 32
-  store i64 %199, i64* %8, align 8, !tbaa !2428
-  ret %struct.Memory* %166
+  store i8 %184, i8* %40, align 1, !tbaa !2451
+  %185 = add i64 %161, 5
+  store i64 %185, i64* %PC, align 8
+  %186 = add i64 %160, 24
+  %187 = inttoptr i64 %162 to i64*
+  %188 = load i64, i64* %187, align 8
+  store i64 %188, i64* %RBP, align 8, !tbaa !2428
+  store i64 %186, i64* %RSP, align 8, !tbaa !2428
+  %189 = add i64 %161, 6
+  store i64 %189, i64* %PC, align 8
+  %190 = inttoptr i64 %186 to i64*
+  %191 = load i64, i64* %190, align 8
+  store i64 %191, i64* %PC, align 8, !tbaa !2428
+  %192 = add i64 %160, 32
+  store i64 %192, i64* %RSP, align 8, !tbaa !2428
+  ret %struct.Memory* %159
 
 block_400db3:                                     ; preds = %block_400dac, %block_400dbd
-  %200 = phi i64 [ %.pre2, %block_400dac ], [ %160, %block_400dbd ]
-  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_400dac ], [ %127, %block_400dbd ]
-  %201 = load i64, i64* %RBP, align 8
-  %202 = add i64 %201, -4
-  %203 = add i64 %200, 4
-  store i64 %203, i64* %PC, align 8
-  %204 = inttoptr i64 %202 to i32*
-  %205 = load i32, i32* %204, align 4
-  %206 = add i32 %205, -20
-  %207 = icmp ult i32 %205, 20
-  %208 = zext i1 %207 to i8
-  store i8 %208, i8* %16, align 1, !tbaa !2434
-  %209 = and i32 %206, 255
-  %210 = tail call i32 @llvm.ctpop.i32(i32 %209) #8
-  %211 = trunc i32 %210 to i8
-  %212 = and i8 %211, 1
-  %213 = xor i8 %212, 1
-  store i8 %213, i8* %23, align 1, !tbaa !2448
-  %214 = xor i32 %205, 16
-  %215 = xor i32 %214, %206
-  %216 = lshr i32 %215, 4
-  %217 = trunc i32 %216 to i8
-  %218 = and i8 %217, 1
-  store i8 %218, i8* %29, align 1, !tbaa !2452
-  %219 = icmp eq i32 %206, 0
+  %193 = phi i64 [ %.pre2, %block_400dac ], [ %153, %block_400dbd ]
+  %MEMORY.1 = phi %struct.Memory* [ %MEMORY.0, %block_400dac ], [ %121, %block_400dbd ]
+  %194 = load i64, i64* %RBP, align 8
+  %195 = add i64 %194, -4
+  %196 = add i64 %193, 4
+  store i64 %196, i64* %PC, align 8
+  %197 = inttoptr i64 %195 to i32*
+  %198 = load i32, i32* %197, align 4
+  %199 = add i32 %198, -20
+  %200 = icmp ult i32 %198, 20
+  %201 = zext i1 %200 to i8
+  store i8 %201, i8* %15, align 1, !tbaa !2434
+  %202 = and i32 %199, 255
+  %203 = tail call i32 @llvm.ctpop.i32(i32 %202) #8
+  %204 = trunc i32 %203 to i8
+  %205 = and i8 %204, 1
+  %206 = xor i8 %205, 1
+  store i8 %206, i8* %22, align 1, !tbaa !2448
+  %207 = xor i32 %198, 16
+  %208 = xor i32 %207, %199
+  %209 = lshr i32 %208, 4
+  %210 = trunc i32 %209 to i8
+  %211 = and i8 %210, 1
+  store i8 %211, i8* %28, align 1, !tbaa !2452
+  %212 = icmp eq i32 %199, 0
+  %213 = zext i1 %212 to i8
+  store i8 %213, i8* %31, align 1, !tbaa !2449
+  %214 = lshr i32 %199, 31
+  %215 = trunc i32 %214 to i8
+  store i8 %215, i8* %34, align 1, !tbaa !2450
+  %216 = lshr i32 %198, 31
+  %217 = xor i32 %214, %216
+  %218 = add nuw nsw i32 %217, %216
+  %219 = icmp eq i32 %218, 2
   %220 = zext i1 %219 to i8
-  store i8 %220, i8* %32, align 1, !tbaa !2449
-  %221 = lshr i32 %206, 31
-  %222 = trunc i32 %221 to i8
-  store i8 %222, i8* %35, align 1, !tbaa !2450
-  %223 = lshr i32 %205, 31
-  %224 = xor i32 %221, %223
-  %225 = add nuw nsw i32 %224, %223
-  %226 = icmp eq i32 %225, 2
-  %227 = zext i1 %226 to i8
-  store i8 %227, i8* %41, align 1, !tbaa !2451
-  %228 = icmp ne i8 %222, 0
-  %229 = xor i1 %228, %226
-  %.demorgan3 = or i1 %219, %229
+  store i8 %220, i8* %40, align 1, !tbaa !2451
+  %221 = icmp ne i8 %215, 0
+  %222 = xor i1 %221, %219
+  %.demorgan3 = or i1 %212, %222
   %.v4 = select i1 %.demorgan3, i64 10, i64 72
-  %230 = add i64 %200, %.v4
-  store i64 %230, i64* %46, align 8, !tbaa !2428
+  %223 = add i64 %193, %.v4
+  store i64 %223, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan3, label %block_400dbd, label %block_400dfb
 
 block_400dac:                                     ; preds = %block_400cff
-  %231 = add i64 %119, 7
-  store i64 %231, i64* %PC, align 8
-  store i32 1, i32* %94, align 4
+  %224 = add i64 %113, 7
+  store i64 %224, i64* %PC, align 8
+  store i32 1, i32* %88, align 4
   %.pre2 = load i64, i64* %PC, align 8
   br label %block_400db3
 
 block_400d0c:                                     ; preds = %block_400cff
-  %232 = add i64 %91, -8
-  store i64 %232, i64* %RDI, align 8, !tbaa !2428
+  %225 = add i64 %85, -8
+  store i64 %225, i64* %RDI, align 8, !tbaa !2428
   store i64 ptrtoint (%zr_type* @zr to i64), i64* %RSI, align 8, !tbaa !2428
-  %233 = load i64, i64* bitcast (%seed_type* @seed to i64*), align 8
-  store i64 %233, i64* %RAX, align 8, !tbaa !2428
-  %234 = and i64 %233, 4294967295
-  store i64 %234, i64* %RCX, align 8, !tbaa !2428
-  %235 = trunc i64 %233 to i32
-  %236 = add i64 %119, 27
-  store i64 %236, i64* %PC, align 8
-  %237 = inttoptr i64 %232 to i32*
-  store i32 %235, i32* %237, align 4
-  %238 = load i64, i64* %PC, align 8
-  %239 = add i64 %238, -1527
-  %240 = add i64 %238, 5
-  %241 = load i64, i64* %8, align 8, !tbaa !2428
-  %242 = add i64 %241, -8
-  %243 = inttoptr i64 %242 to i64*
-  store i64 %240, i64* %243, align 8
-  store i64 %242, i64* %8, align 8, !tbaa !2428
-  store i64 %239, i64* %46, align 8, !tbaa !2428
-  %244 = tail call %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* nonnull %0, i64 %239, %struct.Memory* %MEMORY.0)
-  %245 = load i64, i64* %RBP, align 8
-  %246 = add i64 %245, -8
-  %247 = load i64, i64* %PC, align 8
-  store i64 %246, i64* %RDI, align 8, !tbaa !2428
+  %226 = load i64, i64* bitcast (%seed_type* @seed to i64*), align 8
+  store i64 %226, i64* %RAX, align 8, !tbaa !2428
+  %227 = and i64 %226, 4294967295
+  store i64 %227, i64* %RCX, align 8, !tbaa !2428
+  %228 = trunc i64 %226 to i32
+  %229 = add i64 %113, 27
+  store i64 %229, i64* %PC, align 8
+  %230 = inttoptr i64 %225 to i32*
+  store i32 %228, i32* %230, align 4
+  %231 = load i64, i64* %PC, align 8
+  %232 = add i64 %231, -1527
+  %233 = add i64 %231, 5
+  %234 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %235 = add i64 %234, -8
+  %236 = inttoptr i64 %235 to i64*
+  store i64 %233, i64* %236, align 8
+  store i64 %235, i64* %RSP, align 8, !tbaa !2428
+  store i64 %232, i64* %PC, align 8, !tbaa !2428
+  %237 = tail call %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* nonnull %0, i64 %232, %struct.Memory* %MEMORY.0)
+  %238 = load i64, i64* %RBP, align 8
+  %239 = add i64 %238, -8
+  %240 = load i64, i64* %PC, align 8
+  store i64 %239, i64* %RDI, align 8, !tbaa !2428
   store i64 ptrtoint (%zi_type* @zi to i64), i64* %RSI, align 8, !tbaa !2428
-  %248 = add i64 %247, 18
-  store i64 %248, i64* %PC, align 8
-  %249 = inttoptr i64 %246 to i32*
-  %250 = load i32, i32* %249, align 4
-  %251 = sext i32 %250 to i64
-  store i64 %251, i64* %RAX, align 8, !tbaa !2428
-  store i64 %251, i64* bitcast (%seed_type* @seed to i64*), align 8
-  %252 = add i64 %247, -1532
-  %253 = add i64 %247, 31
-  %254 = load i64, i64* %8, align 8, !tbaa !2428
-  %255 = add i64 %254, -8
-  %256 = inttoptr i64 %255 to i64*
-  store i64 %253, i64* %256, align 8
-  store i64 %255, i64* %8, align 8, !tbaa !2428
-  store i64 %252, i64* %46, align 8, !tbaa !2428
-  %257 = tail call %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* nonnull %0, i64 %252, %struct.Memory* %244)
-  %258 = load i64, i64* %PC, align 8
-  %259 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 32) to i32*), align 16
-  %260 = bitcast [32 x %union.VectorReg]* %3 to i32*
-  store i32 %259, i32* %260, align 1, !tbaa !2432
+  %241 = add i64 %240, 18
+  store i64 %241, i64* %PC, align 8
+  %242 = inttoptr i64 %239 to i32*
+  %243 = load i32, i32* %242, align 4
+  %244 = sext i32 %243 to i64
+  store i64 %244, i64* %RAX, align 8, !tbaa !2428
+  store i64 %244, i64* bitcast (%seed_type* @seed to i64*), align 8
+  %245 = add i64 %240, -1532
+  %246 = add i64 %240, 31
+  %247 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %248 = add i64 %247, -8
+  %249 = inttoptr i64 %248 to i64*
+  store i64 %246, i64* %249, align 8
+  store i64 %248, i64* %RSP, align 8, !tbaa !2428
+  store i64 %245, i64* %PC, align 8, !tbaa !2428
+  %250 = tail call %struct.Memory* @sub_400730_Uniform11_renamed_(%struct.State* nonnull %0, i64 %245, %struct.Memory* %237)
+  %251 = load i64, i64* %PC, align 8
+  %252 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 32) to i32*), align 16
+  %253 = bitcast [32 x %union.VectorReg]* %3 to i32*
+  store i32 %252, i32* %253, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
   store float 0.000000e+00, float* %55, align 1, !tbaa !2432
   store float 0.000000e+00, float* %57, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  %261 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 36) to i32*), align 4
-  %262 = bitcast %union.VectorReg* %4 to i32*
-  store i32 %261, i32* %262, align 1, !tbaa !2432
+  %254 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 36) to i32*), align 4
+  %255 = bitcast %union.VectorReg* %4 to i32*
+  store i32 %254, i32* %255, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
   store float 0.000000e+00, float* %63, align 1, !tbaa !2432
   store float 0.000000e+00, float* %65, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %67, align 1, !tbaa !2432
-  %263 = load i64, i64* %RBP, align 8
-  %264 = add i64 %263, -8
-  %265 = add i64 %258, 20
-  store i64 %265, i64* %PC, align 8
-  %266 = inttoptr i64 %264 to i32*
-  %267 = load i32, i32* %266, align 4
-  %268 = sext i32 %267 to i64
-  store i64 %268, i64* %RAX, align 8, !tbaa !2428
-  store i64 %268, i64* bitcast (%seed_type* @seed to i64*), align 8
-  %269 = load <2 x i32>, <2 x i32>* %69, align 1
-  %270 = load <2 x i32>, <2 x i32>* %71, align 1
-  %271 = extractelement <2 x i32> %269, i32 0
-  store i32 %271, i32* %72, align 1, !tbaa !2432
-  %272 = extractelement <2 x i32> %269, i32 1
-  store i32 %272, i32* %74, align 1, !tbaa !2432
-  %273 = extractelement <2 x i32> %270, i32 0
-  store i32 %273, i32* %76, align 1, !tbaa !2432
-  %274 = extractelement <2 x i32> %270, i32 1
-  store i32 %274, i32* %78, align 1, !tbaa !2432
-  %275 = load <2 x float>, <2 x float>* %79, align 1
-  %276 = load <2 x i32>, <2 x i32>* %80, align 1
-  %277 = load float, float* bitcast (%zr_type* @zr to float*), align 8
-  %278 = extractelement <2 x float> %275, i32 0
-  %279 = fmul float %278, %277
-  store float %279, float* %81, align 1, !tbaa !2432
-  %280 = bitcast <2 x float> %275 to <2 x i32>
-  %281 = extractelement <2 x i32> %280, i32 1
-  store i32 %281, i32* %74, align 1, !tbaa !2432
-  %282 = extractelement <2 x i32> %276, i32 0
-  store i32 %282, i32* %76, align 1, !tbaa !2432
-  %283 = extractelement <2 x i32> %276, i32 1
-  store i32 %283, i32* %78, align 1, !tbaa !2432
-  %284 = load <2 x float>, <2 x float>* %79, align 1
-  %285 = load <2 x i32>, <2 x i32>* %80, align 1
-  %286 = load <2 x float>, <2 x float>* %82, align 1
-  %287 = extractelement <2 x float> %284, i32 0
-  %288 = extractelement <2 x float> %286, i32 0
-  %289 = fsub float %287, %288
-  store float %289, float* %81, align 1, !tbaa !2432
-  %290 = bitcast <2 x float> %284 to <2 x i32>
-  %291 = extractelement <2 x i32> %290, i32 1
-  store i32 %291, i32* %74, align 1, !tbaa !2432
-  %292 = extractelement <2 x i32> %285, i32 0
-  store i32 %292, i32* %76, align 1, !tbaa !2432
-  %293 = extractelement <2 x i32> %285, i32 1
-  store i32 %293, i32* %78, align 1, !tbaa !2432
-  %294 = add i64 %263, -4
-  %295 = add i64 %258, 48
-  store i64 %295, i64* %PC, align 8
-  %296 = inttoptr i64 %294 to i32*
-  %297 = load i32, i32* %296, align 4
-  %298 = sext i32 %297 to i64
-  store i64 %298, i64* %RAX, align 8, !tbaa !2428
-  %299 = shl nsw i64 %298, 3
-  %300 = add i64 %299, ptrtoint (%z_type* @z to i64)
-  %301 = add i64 %258, 57
-  store i64 %301, i64* %PC, align 8
-  %302 = load <2 x float>, <2 x float>* %83, align 1
-  %303 = extractelement <2 x float> %302, i32 0
-  %304 = inttoptr i64 %300 to float*
-  store float %303, float* %304, align 8
-  %305 = load i64, i64* %PC, align 8
-  %306 = load <2 x float>, <2 x float>* %84, align 1
-  %307 = load <2 x i32>, <2 x i32>* %85, align 1
-  %308 = load float, float* bitcast (%zi_type* @zi to float*), align 8
-  %309 = extractelement <2 x float> %306, i32 0
-  %310 = fmul float %309, %308
-  store float %310, float* %61, align 1, !tbaa !2432
-  %311 = bitcast <2 x float> %306 to <2 x i32>
-  %312 = extractelement <2 x i32> %311, i32 1
-  store i32 %312, i32* %86, align 1, !tbaa !2432
-  %313 = extractelement <2 x i32> %307, i32 0
-  store i32 %313, i32* %87, align 1, !tbaa !2432
-  %314 = extractelement <2 x i32> %307, i32 1
-  store i32 %314, i32* %88, align 1, !tbaa !2432
-  %315 = load <2 x float>, <2 x float>* %84, align 1
-  %316 = load <2 x i32>, <2 x i32>* %85, align 1
-  %317 = load <2 x float>, <2 x float>* %82, align 1
-  %318 = extractelement <2 x float> %315, i32 0
-  %319 = extractelement <2 x float> %317, i32 0
-  %320 = fsub float %318, %319
-  store float %320, float* %61, align 1, !tbaa !2432
-  %321 = bitcast <2 x float> %315 to <2 x i32>
-  %322 = extractelement <2 x i32> %321, i32 1
-  store i32 %322, i32* %86, align 1, !tbaa !2432
-  %323 = extractelement <2 x i32> %316, i32 0
-  store i32 %323, i32* %87, align 1, !tbaa !2432
-  %324 = extractelement <2 x i32> %316, i32 1
-  store i32 %324, i32* %88, align 1, !tbaa !2432
-  %325 = load i64, i64* %RBP, align 8
-  %326 = add i64 %325, -4
-  %327 = add i64 %305, 17
-  store i64 %327, i64* %PC, align 8
-  %328 = inttoptr i64 %326 to i32*
-  %329 = load i32, i32* %328, align 4
-  %330 = sext i32 %329 to i64
-  store i64 %330, i64* %RAX, align 8, !tbaa !2428
-  %331 = shl nsw i64 %330, 3
-  %332 = add i64 %331, add (i64 ptrtoint (%z_type* @z to i64), i64 4)
-  %333 = add i64 %305, 26
+  %256 = load i64, i64* %RBP, align 8
+  %257 = add i64 %256, -8
+  %258 = add i64 %251, 20
+  store i64 %258, i64* %PC, align 8
+  %259 = inttoptr i64 %257 to i32*
+  %260 = load i32, i32* %259, align 4
+  %261 = sext i32 %260 to i64
+  store i64 %261, i64* %RAX, align 8, !tbaa !2428
+  store i64 %261, i64* bitcast (%seed_type* @seed to i64*), align 8
+  %262 = load <2 x i32>, <2 x i32>* %67, align 1
+  %263 = load <2 x i32>, <2 x i32>* %68, align 1
+  %264 = extractelement <2 x i32> %262, i32 0
+  store i32 %264, i32* %69, align 1, !tbaa !2432
+  %265 = extractelement <2 x i32> %262, i32 1
+  store i32 %265, i32* %71, align 1, !tbaa !2432
+  %266 = extractelement <2 x i32> %263, i32 0
+  store i32 %266, i32* %73, align 1, !tbaa !2432
+  %267 = extractelement <2 x i32> %263, i32 1
+  store i32 %267, i32* %75, align 1, !tbaa !2432
+  %268 = load <2 x float>, <2 x float>* %76, align 1
+  %269 = load <2 x i32>, <2 x i32>* %77, align 1
+  %270 = load float, float* bitcast (%zr_type* @zr to float*), align 8
+  %271 = extractelement <2 x float> %268, i32 0
+  %272 = fmul float %271, %270
+  store float %272, float* %78, align 1, !tbaa !2432
+  %273 = bitcast <2 x float> %268 to <2 x i32>
+  %274 = extractelement <2 x i32> %273, i32 1
+  store i32 %274, i32* %71, align 1, !tbaa !2432
+  %275 = extractelement <2 x i32> %269, i32 0
+  store i32 %275, i32* %73, align 1, !tbaa !2432
+  %276 = extractelement <2 x i32> %269, i32 1
+  store i32 %276, i32* %75, align 1, !tbaa !2432
+  %277 = load <2 x float>, <2 x float>* %76, align 1
+  %278 = load <2 x i32>, <2 x i32>* %77, align 1
+  %279 = load <2 x float>, <2 x float>* %79, align 1
+  %280 = extractelement <2 x float> %277, i32 0
+  %281 = extractelement <2 x float> %279, i32 0
+  %282 = fsub float %280, %281
+  store float %282, float* %78, align 1, !tbaa !2432
+  %283 = bitcast <2 x float> %277 to <2 x i32>
+  %284 = extractelement <2 x i32> %283, i32 1
+  store i32 %284, i32* %71, align 1, !tbaa !2432
+  %285 = extractelement <2 x i32> %278, i32 0
+  store i32 %285, i32* %73, align 1, !tbaa !2432
+  %286 = extractelement <2 x i32> %278, i32 1
+  store i32 %286, i32* %75, align 1, !tbaa !2432
+  %287 = add i64 %256, -4
+  %288 = add i64 %251, 48
+  store i64 %288, i64* %PC, align 8
+  %289 = inttoptr i64 %287 to i32*
+  %290 = load i32, i32* %289, align 4
+  %291 = sext i32 %290 to i64
+  store i64 %291, i64* %RAX, align 8, !tbaa !2428
+  %292 = shl nsw i64 %291, 3
+  %293 = add i64 %292, ptrtoint (%z_type* @z to i64)
+  %294 = add i64 %251, 57
+  store i64 %294, i64* %PC, align 8
+  %295 = load <2 x float>, <2 x float>* %76, align 1
+  %296 = extractelement <2 x float> %295, i32 0
+  %297 = inttoptr i64 %293 to float*
+  store float %296, float* %297, align 8
+  %298 = load i64, i64* %PC, align 8
+  %299 = load <2 x float>, <2 x float>* %80, align 1
+  %300 = load <2 x i32>, <2 x i32>* %68, align 1
+  %301 = load float, float* bitcast (%zi_type* @zi to float*), align 8
+  %302 = extractelement <2 x float> %299, i32 0
+  %303 = fmul float %302, %301
+  store float %303, float* %59, align 1, !tbaa !2432
+  %304 = bitcast <2 x float> %299 to <2 x i32>
+  %305 = extractelement <2 x i32> %304, i32 1
+  store i32 %305, i32* %81, align 1, !tbaa !2432
+  %306 = extractelement <2 x i32> %300, i32 0
+  store i32 %306, i32* %82, align 1, !tbaa !2432
+  %307 = extractelement <2 x i32> %300, i32 1
+  store i32 %307, i32* %83, align 1, !tbaa !2432
+  %308 = load <2 x float>, <2 x float>* %80, align 1
+  %309 = load <2 x i32>, <2 x i32>* %68, align 1
+  %310 = load <2 x float>, <2 x float>* %79, align 1
+  %311 = extractelement <2 x float> %308, i32 0
+  %312 = extractelement <2 x float> %310, i32 0
+  %313 = fsub float %311, %312
+  store float %313, float* %59, align 1, !tbaa !2432
+  %314 = bitcast <2 x float> %308 to <2 x i32>
+  %315 = extractelement <2 x i32> %314, i32 1
+  store i32 %315, i32* %81, align 1, !tbaa !2432
+  %316 = extractelement <2 x i32> %309, i32 0
+  store i32 %316, i32* %82, align 1, !tbaa !2432
+  %317 = extractelement <2 x i32> %309, i32 1
+  store i32 %317, i32* %83, align 1, !tbaa !2432
+  %318 = load i64, i64* %RBP, align 8
+  %319 = add i64 %318, -4
+  %320 = add i64 %298, 17
+  store i64 %320, i64* %PC, align 8
+  %321 = inttoptr i64 %319 to i32*
+  %322 = load i32, i32* %321, align 4
+  %323 = sext i32 %322 to i64
+  store i64 %323, i64* %RAX, align 8, !tbaa !2428
+  %324 = shl nsw i64 %323, 3
+  %325 = add i64 %324, add (i64 ptrtoint (%z_type* @z to i64), i64 4)
+  %326 = add i64 %298, 26
+  store i64 %326, i64* %PC, align 8
+  %327 = load <2 x float>, <2 x float>* %80, align 1
+  %328 = extractelement <2 x float> %327, i32 0
+  %329 = inttoptr i64 %325 to float*
+  store float %328, float* %329, align 4
+  %330 = load i64, i64* %RBP, align 8
+  %331 = add i64 %330, -4
+  %332 = load i64, i64* %PC, align 8
+  %333 = add i64 %332, 3
   store i64 %333, i64* %PC, align 8
-  %334 = load <2 x float>, <2 x float>* %89, align 1
-  %335 = extractelement <2 x float> %334, i32 0
-  %336 = inttoptr i64 %332 to float*
-  store float %335, float* %336, align 4
-  %337 = load i64, i64* %RBP, align 8
-  %338 = add i64 %337, -4
-  %339 = load i64, i64* %PC, align 8
-  %340 = add i64 %339, 3
-  store i64 %340, i64* %PC, align 8
-  %341 = inttoptr i64 %338 to i32*
-  %342 = load i32, i32* %341, align 4
-  %343 = add i32 %342, 1
-  %344 = zext i32 %343 to i64
-  store i64 %344, i64* %RAX, align 8, !tbaa !2428
-  %345 = icmp eq i32 %342, -1
-  %346 = icmp eq i32 %343, 0
-  %347 = or i1 %345, %346
-  %348 = zext i1 %347 to i8
-  store i8 %348, i8* %16, align 1, !tbaa !2434
-  %349 = and i32 %343, 255
-  %350 = tail call i32 @llvm.ctpop.i32(i32 %349) #8
-  %351 = trunc i32 %350 to i8
-  %352 = and i8 %351, 1
-  %353 = xor i8 %352, 1
-  store i8 %353, i8* %23, align 1, !tbaa !2448
-  %354 = xor i32 %342, %343
-  %355 = lshr i32 %354, 4
-  %356 = trunc i32 %355 to i8
-  %357 = and i8 %356, 1
-  store i8 %357, i8* %29, align 1, !tbaa !2452
-  %358 = icmp eq i32 %343, 0
-  %359 = zext i1 %358 to i8
-  store i8 %359, i8* %32, align 1, !tbaa !2449
-  %360 = lshr i32 %343, 31
-  %361 = trunc i32 %360 to i8
-  store i8 %361, i8* %35, align 1, !tbaa !2450
-  %362 = lshr i32 %342, 31
-  %363 = xor i32 %360, %362
-  %364 = add nuw nsw i32 %363, %360
-  %365 = icmp eq i32 %364, 2
-  %366 = zext i1 %365 to i8
-  store i8 %366, i8* %41, align 1, !tbaa !2451
-  %367 = add i64 %339, 9
-  store i64 %367, i64* %PC, align 8
-  store i32 %343, i32* %341, align 4
-  %368 = load i64, i64* %PC, align 8
-  %369 = add i64 %368, -168
-  store i64 %369, i64* %46, align 8, !tbaa !2428
+  %334 = inttoptr i64 %331 to i32*
+  %335 = load i32, i32* %334, align 4
+  %336 = add i32 %335, 1
+  %337 = zext i32 %336 to i64
+  store i64 %337, i64* %RAX, align 8, !tbaa !2428
+  %338 = icmp eq i32 %335, -1
+  %339 = icmp eq i32 %336, 0
+  %340 = or i1 %338, %339
+  %341 = zext i1 %340 to i8
+  store i8 %341, i8* %15, align 1, !tbaa !2434
+  %342 = and i32 %336, 255
+  %343 = tail call i32 @llvm.ctpop.i32(i32 %342) #8
+  %344 = trunc i32 %343 to i8
+  %345 = and i8 %344, 1
+  %346 = xor i8 %345, 1
+  store i8 %346, i8* %22, align 1, !tbaa !2448
+  %347 = xor i32 %335, %336
+  %348 = lshr i32 %347, 4
+  %349 = trunc i32 %348 to i8
+  %350 = and i8 %349, 1
+  store i8 %350, i8* %28, align 1, !tbaa !2452
+  %351 = zext i1 %339 to i8
+  store i8 %351, i8* %31, align 1, !tbaa !2449
+  %352 = lshr i32 %336, 31
+  %353 = trunc i32 %352 to i8
+  store i8 %353, i8* %34, align 1, !tbaa !2450
+  %354 = lshr i32 %335, 31
+  %355 = xor i32 %352, %354
+  %356 = add nuw nsw i32 %355, %352
+  %357 = icmp eq i32 %356, 2
+  %358 = zext i1 %357 to i8
+  store i8 %358, i8* %40, align 1, !tbaa !2451
+  %359 = add i64 %332, 9
+  store i64 %359, i64* %PC, align 8
+  store i32 %336, i32* %334, align 4
+  %360 = load i64, i64* %PC, align 8
+  %361 = add i64 %360, -168
+  store i64 %361, i64* %PC, align 8, !tbaa !2428
   br label %block_400cff
 }
 
@@ -5797,15 +5727,14 @@ block_400400:
   %38 = inttoptr i64 %37 to i64*
   store i64 %36, i64* %38, align 8
   store i64 %37, i64* %11, align 8, !tbaa !2428
-  %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %40 = load i64, i64* getelementptr inbounds (%seg_601ff0__got_type, %seg_601ff0__got_type* @seg_601ff0__got, i64 0, i32 0), align 8
-  store i64 %40, i64* %39, align 8, !tbaa !2428
-  %41 = tail call fastcc %struct.Memory* @ext_619230___libc_start_main(%struct.State* nonnull %0, %struct.Memory* %2)
-  %42 = load i64, i64* %PC, align 8
-  %43 = add i64 %42, 1
-  store i64 %43, i64* %PC, align 8
-  %44 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull %0, i64 %43, %struct.Memory* %41)
-  ret %struct.Memory* %44
+  %39 = load i64, i64* getelementptr inbounds (%seg_601ff0__got_type, %seg_601ff0__got_type* @seg_601ff0__got, i64 0, i32 0), align 8
+  store i64 %39, i64* %PC, align 8, !tbaa !2428
+  %40 = tail call fastcc %struct.Memory* @ext_619230___libc_start_main(%struct.State* nonnull %0, %struct.Memory* %2)
+  %41 = load i64, i64* %PC, align 8
+  %42 = add i64 %41, 1
+  store i64 %42, i64* %PC, align 8
+  %43 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull %0, i64 %42, %struct.Memory* %40)
+  ret %struct.Memory* %43
 }
 
 ; Function Attrs: noinline
@@ -5814,14 +5743,13 @@ block_400430:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = add i64 %1, 2
   store i64 %3, i64* %PC, align 8
-  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %6 = load i64, i64* %5, align 8, !tbaa !2428
-  %7 = inttoptr i64 %6 to i64*
-  %8 = load i64, i64* %7, align 8
+  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %5 = load i64, i64* %4, align 8, !tbaa !2428
+  %6 = inttoptr i64 %5 to i64*
+  %7 = load i64, i64* %6, align 8
+  store i64 %7, i64* %PC, align 8, !tbaa !2428
+  %8 = add i64 %5, 8
   store i64 %8, i64* %4, align 8, !tbaa !2428
-  %9 = add i64 %6, 8
-  store i64 %9, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -5876,10 +5804,9 @@ block_400470:
   %33 = trunc i64 %32 to i8
   store i8 %33, i8* %16, align 1, !tbaa !2453
   store i8 0, i8* %17, align 1, !tbaa !2453
-  %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %.v = select i1 %30, i64 50, i64 29
-  %35 = add i64 %10, %.v
-  store i64 %35, i64* %34, align 8, !tbaa !2428
+  %34 = add i64 %10, %.v
+  store i64 %34, i64* %PC, align 8, !tbaa !2428
   br i1 %30, label %block_4004a8, label %block_400493
 
 block_400493:                                     ; preds = %block_400470
@@ -5890,27 +5817,27 @@ block_400493:                                     ; preds = %block_400470
   store i8 0, i8* %16, align 1, !tbaa !2450
   store i8 0, i8* %17, align 1, !tbaa !2451
   store i8 0, i8* %14, align 1, !tbaa !2452
-  %36 = add i64 %35, 21
-  store i64 %36, i64* %34, align 8, !tbaa !2428
+  %35 = add i64 %34, 21
+  store i64 %35, i64* %PC, align 8, !tbaa !2428
   br label %block_4004a8
 
 block_4004a8:                                     ; preds = %block_400493, %block_400470
-  %37 = phi i64 [ %36, %block_400493 ], [ %35, %block_400470 ]
-  %38 = add i64 %37, 1
-  store i64 %38, i64* %PC, align 8
-  %39 = load i64, i64* %5, align 8, !tbaa !2428
-  %40 = add i64 %39, 8
-  %41 = inttoptr i64 %39 to i64*
-  %42 = load i64, i64* %41, align 8
-  store i64 %42, i64* %RBP, align 8, !tbaa !2428
-  store i64 %40, i64* %5, align 8, !tbaa !2428
-  %43 = add i64 %37, 2
-  store i64 %43, i64* %PC, align 8
-  %44 = inttoptr i64 %40 to i64*
-  %45 = load i64, i64* %44, align 8
-  store i64 %45, i64* %34, align 8, !tbaa !2428
-  %46 = add i64 %39, 16
-  store i64 %46, i64* %5, align 8, !tbaa !2428
+  %36 = phi i64 [ %35, %block_400493 ], [ %34, %block_400470 ]
+  %37 = add i64 %36, 1
+  store i64 %37, i64* %PC, align 8
+  %38 = load i64, i64* %5, align 8, !tbaa !2428
+  %39 = add i64 %38, 8
+  %40 = inttoptr i64 %38 to i64*
+  %41 = load i64, i64* %40, align 8
+  store i64 %41, i64* %RBP, align 8, !tbaa !2428
+  store i64 %39, i64* %5, align 8, !tbaa !2428
+  %42 = add i64 %36, 2
+  store i64 %42, i64* %PC, align 8
+  %43 = inttoptr i64 %39 to i64*
+  %44 = load i64, i64* %43, align 8
+  store i64 %44, i64* %PC, align 8, !tbaa !2428
+  %45 = add i64 %38, 16
+  store i64 %45, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -5920,14 +5847,13 @@ block_400ed0:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %3 = add i64 %1, 2
   store i64 %3, i64* %PC, align 8
-  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %6 = load i64, i64* %5, align 8, !tbaa !2428
-  %7 = inttoptr i64 %6 to i64*
-  %8 = load i64, i64* %7, align 8
+  %4 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %5 = load i64, i64* %4, align 8, !tbaa !2428
+  %6 = inttoptr i64 %5 to i64*
+  %7 = load i64, i64* %6, align 8
+  store i64 %7, i64* %PC, align 8, !tbaa !2428
+  %8 = add i64 %5, 8
   store i64 %8, i64* %4, align 8, !tbaa !2428
-  %9 = add i64 %6, 8
-  store i64 %9, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -5954,1580 +5880,1547 @@ block_400780:
   %9 = load i64, i64* %RBP, align 8
   %10 = add i64 %1, 1
   store i64 %10, i64* %PC, align 8
-  %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %12 = load i64, i64* %11, align 8, !tbaa !2428
-  %13 = add i64 %12, -8
-  %14 = inttoptr i64 %13 to i64*
-  store i64 %9, i64* %14, align 8
-  %15 = load i64, i64* %PC, align 8
-  store i64 %13, i64* %RBP, align 8, !tbaa !2428
-  %16 = add i64 %12, -168
-  store i64 %16, i64* %RSP, align 8, !tbaa !2428
-  %17 = icmp ult i64 %13, 160
-  %18 = zext i1 %17 to i8
-  %19 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 %18, i8* %19, align 1, !tbaa !2434
-  %20 = trunc i64 %16 to i32
-  %21 = and i32 %20, 255
-  %22 = tail call i32 @llvm.ctpop.i32(i32 %21) #8
-  %23 = trunc i32 %22 to i8
-  %24 = and i8 %23, 1
-  %25 = xor i8 %24, 1
-  %26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 %25, i8* %26, align 1, !tbaa !2448
-  %27 = xor i64 %13, %16
-  %28 = lshr i64 %27, 4
-  %29 = trunc i64 %28 to i8
-  %30 = and i8 %29, 1
-  %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 %30, i8* %31, align 1, !tbaa !2452
-  %32 = icmp eq i64 %16, 0
-  %33 = zext i1 %32 to i8
-  %34 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 %33, i8* %34, align 1, !tbaa !2449
-  %35 = lshr i64 %16, 63
-  %36 = trunc i64 %35 to i8
-  %37 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 %36, i8* %37, align 1, !tbaa !2450
-  %38 = lshr i64 %13, 63
-  %39 = xor i64 %35, %38
-  %40 = add nuw nsw i64 %39, %38
-  %41 = icmp eq i64 %40, 2
-  %42 = zext i1 %41 to i8
-  %43 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 %42, i8* %43, align 1, !tbaa !2451
-  %44 = bitcast [32 x %union.VectorReg]* %6 to i8*
-  %45 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 12) to i32*), align 4
-  %46 = bitcast [32 x %union.VectorReg]* %6 to float*
-  %47 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 %45, i32* %47, align 1, !tbaa !2432
-  %48 = getelementptr inbounds i8, i8* %44, i64 4
-  %49 = bitcast i8* %48 to float*
-  store float 0.000000e+00, float* %49, align 1, !tbaa !2432
-  %50 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
-  %51 = bitcast i64* %50 to float*
-  store float 0.000000e+00, float* %51, align 1, !tbaa !2432
-  %52 = getelementptr inbounds i8, i8* %44, i64 12
-  %53 = bitcast i8* %52 to float*
-  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
-  %54 = bitcast %union.VectorReg* %7 to i8*
-  %55 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 16) to i32*), align 16
-  %56 = bitcast %union.VectorReg* %7 to float*
-  %57 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %55, i32* %57, align 1, !tbaa !2432
-  %58 = getelementptr inbounds i8, i8* %54, i64 4
-  %59 = bitcast i8* %58 to float*
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  %60 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
-  %61 = bitcast i64* %60 to float*
-  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
-  %62 = getelementptr inbounds i8, i8* %54, i64 12
-  %63 = bitcast i8* %62 to float*
-  store float 0.000000e+00, float* %63, align 1, !tbaa !2432
-  %64 = add i64 %12, -12
-  %65 = load i32, i32* %EDI, align 4
-  %66 = add i64 %15, 29
-  store i64 %66, i64* %PC, align 8
-  %67 = inttoptr i64 %64 to i32*
-  store i32 %65, i32* %67, align 4
-  %68 = load i64, i64* %RBP, align 8
-  %69 = add i64 %68, -16
-  %70 = load i64, i64* %RSI, align 8
-  %71 = load i64, i64* %PC, align 8
-  %72 = add i64 %71, 4
-  store i64 %72, i64* %PC, align 8
-  %73 = inttoptr i64 %69 to i64*
-  store i64 %70, i64* %73, align 8
-  %74 = load i64, i64* %RBP, align 8
-  %75 = add i64 %74, -20
-  %76 = load i64, i64* %PC, align 8
-  %77 = add i64 %76, 5
-  store i64 %77, i64* %PC, align 8
-  %78 = bitcast %union.VectorReg* %7 to <2 x float>*
-  %79 = load <2 x float>, <2 x float>* %78, align 1
-  %80 = extractelement <2 x float> %79, i32 0
-  %81 = inttoptr i64 %75 to float*
-  store float %80, float* %81, align 4
-  %82 = load i64, i64* %RBP, align 8
-  %83 = add i64 %82, -24
-  %84 = load i64, i64* %PC, align 8
-  %85 = add i64 %84, 5
-  store i64 %85, i64* %PC, align 8
-  %86 = bitcast [32 x %union.VectorReg]* %6 to <2 x float>*
-  %87 = load <2 x float>, <2 x float>* %86, align 1
-  %88 = extractelement <2 x float> %87, i32 0
-  %89 = inttoptr i64 %83 to float*
-  store float %88, float* %89, align 4
-  %90 = load i64, i64* %RBP, align 8
-  %91 = add i64 %90, -132
-  %92 = load i64, i64* %PC, align 8
-  %93 = add i64 %92, 10
-  store i64 %93, i64* %PC, align 8
-  %94 = inttoptr i64 %91 to i32*
-  store i32 1, i32* %94, align 4
-  %95 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %96 = bitcast [32 x %union.VectorReg]* %6 to <2 x float>*
-  %97 = bitcast i64* %50 to <2 x i32>*
-  %98 = bitcast i8* %48 to i32*
-  %99 = bitcast i64* %50 to i32*
-  %100 = bitcast i8* %52 to i32*
-  %101 = bitcast %union.VectorReg* %8 to i8*
-  %102 = bitcast %union.VectorReg* %8 to float*
-  %103 = getelementptr inbounds i8, i8* %101, i64 4
-  %104 = bitcast i8* %103 to float*
-  %105 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
-  %106 = bitcast i64* %105 to float*
-  %107 = getelementptr inbounds i8, i8* %101, i64 12
-  %108 = bitcast i8* %107 to float*
-  %109 = bitcast %union.VectorReg* %8 to <2 x float>*
-  %110 = bitcast i64* %105 to <2 x i32>*
-  %111 = bitcast i8* %103 to i32*
-  %112 = bitcast i64* %105 to i32*
-  %113 = bitcast i8* %107 to i32*
-  %114 = bitcast %union.VectorReg* %7 to <2 x float>*
-  %115 = bitcast i64* %60 to <2 x i32>*
-  %116 = bitcast %union.VectorReg* %8 to <2 x float>*
-  %117 = bitcast i8* %58 to i32*
-  %118 = bitcast i64* %60 to i32*
-  %119 = bitcast i8* %62 to i32*
+  %11 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %12 = add i64 %11, -8
+  %13 = inttoptr i64 %12 to i64*
+  store i64 %9, i64* %13, align 8
+  %14 = load i64, i64* %PC, align 8
+  store i64 %12, i64* %RBP, align 8, !tbaa !2428
+  %15 = add i64 %11, -168
+  store i64 %15, i64* %RSP, align 8, !tbaa !2428
+  %16 = icmp ult i64 %12, 160
+  %17 = zext i1 %16 to i8
+  %18 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
+  store i8 %17, i8* %18, align 1, !tbaa !2434
+  %19 = trunc i64 %15 to i32
+  %20 = and i32 %19, 255
+  %21 = tail call i32 @llvm.ctpop.i32(i32 %20) #8
+  %22 = trunc i32 %21 to i8
+  %23 = and i8 %22, 1
+  %24 = xor i8 %23, 1
+  %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
+  store i8 %24, i8* %25, align 1, !tbaa !2448
+  %26 = xor i64 %12, %15
+  %27 = lshr i64 %26, 4
+  %28 = trunc i64 %27 to i8
+  %29 = and i8 %28, 1
+  %30 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
+  store i8 %29, i8* %30, align 1, !tbaa !2452
+  %31 = icmp eq i64 %15, 0
+  %32 = zext i1 %31 to i8
+  %33 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
+  store i8 %32, i8* %33, align 1, !tbaa !2449
+  %34 = lshr i64 %15, 63
+  %35 = trunc i64 %34 to i8
+  %36 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
+  store i8 %35, i8* %36, align 1, !tbaa !2450
+  %37 = lshr i64 %12, 63
+  %38 = xor i64 %34, %37
+  %39 = add nuw nsw i64 %38, %37
+  %40 = icmp eq i64 %39, 2
+  %41 = zext i1 %40 to i8
+  %42 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
+  store i8 %41, i8* %42, align 1, !tbaa !2451
+  %43 = bitcast [32 x %union.VectorReg]* %6 to i8*
+  %44 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 12) to i32*), align 4
+  %45 = bitcast [32 x %union.VectorReg]* %6 to float*
+  %46 = bitcast [32 x %union.VectorReg]* %6 to i32*
+  store i32 %44, i32* %46, align 1, !tbaa !2432
+  %47 = getelementptr inbounds i8, i8* %43, i64 4
+  %48 = bitcast i8* %47 to float*
+  store float 0.000000e+00, float* %48, align 1, !tbaa !2432
+  %49 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+  %50 = bitcast i64* %49 to float*
+  store float 0.000000e+00, float* %50, align 1, !tbaa !2432
+  %51 = getelementptr inbounds i8, i8* %43, i64 12
+  %52 = bitcast i8* %51 to float*
+  store float 0.000000e+00, float* %52, align 1, !tbaa !2432
+  %53 = bitcast %union.VectorReg* %7 to i8*
+  %54 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 16) to i32*), align 16
+  %55 = bitcast %union.VectorReg* %7 to float*
+  %56 = bitcast %union.VectorReg* %7 to i32*
+  store i32 %54, i32* %56, align 1, !tbaa !2432
+  %57 = getelementptr inbounds i8, i8* %53, i64 4
+  %58 = bitcast i8* %57 to float*
+  store float 0.000000e+00, float* %58, align 1, !tbaa !2432
+  %59 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
+  %60 = bitcast i64* %59 to float*
+  store float 0.000000e+00, float* %60, align 1, !tbaa !2432
+  %61 = getelementptr inbounds i8, i8* %53, i64 12
+  %62 = bitcast i8* %61 to float*
+  store float 0.000000e+00, float* %62, align 1, !tbaa !2432
+  %63 = add i64 %11, -12
+  %64 = load i32, i32* %EDI, align 4
+  %65 = add i64 %14, 29
+  store i64 %65, i64* %PC, align 8
+  %66 = inttoptr i64 %63 to i32*
+  store i32 %64, i32* %66, align 4
+  %67 = load i64, i64* %RBP, align 8
+  %68 = add i64 %67, -16
+  %69 = load i64, i64* %RSI, align 8
+  %70 = load i64, i64* %PC, align 8
+  %71 = add i64 %70, 4
+  store i64 %71, i64* %PC, align 8
+  %72 = inttoptr i64 %68 to i64*
+  store i64 %69, i64* %72, align 8
+  %73 = load i64, i64* %RBP, align 8
+  %74 = add i64 %73, -20
+  %75 = load i64, i64* %PC, align 8
+  %76 = add i64 %75, 5
+  store i64 %76, i64* %PC, align 8
+  %77 = bitcast %union.VectorReg* %7 to <2 x float>*
+  %78 = load <2 x float>, <2 x float>* %77, align 1
+  %79 = extractelement <2 x float> %78, i32 0
+  %80 = inttoptr i64 %74 to float*
+  store float %79, float* %80, align 4
+  %81 = load i64, i64* %RBP, align 8
+  %82 = add i64 %81, -24
+  %83 = load i64, i64* %PC, align 8
+  %84 = add i64 %83, 5
+  store i64 %84, i64* %PC, align 8
+  %85 = bitcast [32 x %union.VectorReg]* %6 to <2 x float>*
+  %86 = load <2 x float>, <2 x float>* %85, align 1
+  %87 = extractelement <2 x float> %86, i32 0
+  %88 = inttoptr i64 %82 to float*
+  store float %87, float* %88, align 4
+  %89 = load i64, i64* %RBP, align 8
+  %90 = add i64 %89, -132
+  %91 = load i64, i64* %PC, align 8
+  %92 = add i64 %91, 10
+  store i64 %92, i64* %PC, align 8
+  %93 = inttoptr i64 %90 to i32*
+  store i32 1, i32* %93, align 4
+  %94 = bitcast i64* %49 to <2 x i32>*
+  %95 = bitcast i8* %47 to i32*
+  %96 = bitcast i64* %49 to i32*
+  %97 = bitcast i8* %51 to i32*
+  %98 = bitcast %union.VectorReg* %8 to i8*
+  %99 = bitcast %union.VectorReg* %8 to float*
+  %100 = getelementptr inbounds i8, i8* %98, i64 4
+  %101 = bitcast i8* %100 to float*
+  %102 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2, i32 0, i32 0, i32 0, i64 1
+  %103 = bitcast i64* %102 to float*
+  %104 = getelementptr inbounds i8, i8* %98, i64 12
+  %105 = bitcast i8* %104 to float*
+  %106 = bitcast %union.VectorReg* %8 to <2 x float>*
+  %107 = bitcast i64* %102 to <2 x i32>*
+  %108 = bitcast i8* %100 to i32*
+  %109 = bitcast i64* %102 to i32*
+  %110 = bitcast i8* %104 to i32*
+  %111 = bitcast i64* %59 to <2 x i32>*
+  %112 = bitcast i8* %57 to i32*
+  %113 = bitcast i64* %59 to i32*
+  %114 = bitcast i8* %61 to i32*
   %.pre = load i64, i64* %PC, align 8
   br label %block_4007b6
 
 block_4009da:                                     ; preds = %block_4008fb
   store i64 25, i64* %RSI, align 8, !tbaa !2428
-  %120 = add i64 %597, -136
-  %121 = add i64 %635, 11
-  store i64 %121, i64* %PC, align 8
-  %122 = inttoptr i64 %120 to i32*
-  %123 = load i32, i32* %122, align 4
-  %124 = add i32 %123, 1
-  %125 = zext i32 %124 to i64
-  store i64 %125, i64* %RAX, align 8, !tbaa !2428
-  %126 = icmp eq i32 %123, -1
-  %127 = icmp eq i32 %124, 0
-  %128 = or i1 %126, %127
-  %129 = zext i1 %128 to i8
-  store i8 %129, i8* %19, align 1, !tbaa !2434
-  %130 = and i32 %124, 255
-  %131 = tail call i32 @llvm.ctpop.i32(i32 %130) #8
+  %115 = add i64 %581, -136
+  %116 = add i64 %619, 11
+  store i64 %116, i64* %PC, align 8
+  %117 = inttoptr i64 %115 to i32*
+  %118 = load i32, i32* %117, align 4
+  %119 = add i32 %118, 1
+  %120 = zext i32 %119 to i64
+  store i64 %120, i64* %RAX, align 8, !tbaa !2428
+  %121 = icmp eq i32 %118, -1
+  %122 = icmp eq i32 %119, 0
+  %123 = or i1 %121, %122
+  %124 = zext i1 %123 to i8
+  store i8 %124, i8* %18, align 1, !tbaa !2434
+  %125 = and i32 %119, 255
+  %126 = tail call i32 @llvm.ctpop.i32(i32 %125) #8
+  %127 = trunc i32 %126 to i8
+  %128 = and i8 %127, 1
+  %129 = xor i8 %128, 1
+  store i8 %129, i8* %25, align 1, !tbaa !2448
+  %130 = xor i32 %118, %119
+  %131 = lshr i32 %130, 4
   %132 = trunc i32 %131 to i8
   %133 = and i8 %132, 1
-  %134 = xor i8 %133, 1
-  store i8 %134, i8* %26, align 1, !tbaa !2448
-  %135 = xor i32 %123, %124
-  %136 = lshr i32 %135, 4
-  %137 = trunc i32 %136 to i8
-  %138 = and i8 %137, 1
-  store i8 %138, i8* %31, align 1, !tbaa !2452
-  %139 = icmp eq i32 %124, 0
-  %140 = zext i1 %139 to i8
-  store i8 %140, i8* %34, align 1, !tbaa !2449
-  %141 = lshr i32 %124, 31
-  %142 = trunc i32 %141 to i8
-  store i8 %142, i8* %37, align 1, !tbaa !2450
-  %143 = lshr i32 %123, 31
-  %144 = xor i32 %141, %143
-  %145 = add nuw nsw i32 %144, %141
-  %146 = icmp eq i32 %145, 2
-  %147 = zext i1 %146 to i8
-  store i8 %147, i8* %43, align 1, !tbaa !2451
-  store i64 %125, i64* %RDI, align 8, !tbaa !2428
-  %148 = add i64 %635, -954
-  %149 = add i64 %635, 21
-  %150 = load i64, i64* %11, align 8, !tbaa !2428
-  %151 = add i64 %150, -8
-  %152 = inttoptr i64 %151 to i64*
-  store i64 %149, i64* %152, align 8
-  store i64 %151, i64* %11, align 8, !tbaa !2428
-  store i64 %148, i64* %95, align 8, !tbaa !2428
-  %153 = tail call %struct.Memory* @sub_400620_Min0_renamed_(%struct.State* nonnull %0, i64 %148, %struct.Memory* %707)
+  store i8 %133, i8* %30, align 1, !tbaa !2452
+  %134 = zext i1 %122 to i8
+  store i8 %134, i8* %33, align 1, !tbaa !2449
+  %135 = lshr i32 %119, 31
+  %136 = trunc i32 %135 to i8
+  store i8 %136, i8* %36, align 1, !tbaa !2450
+  %137 = lshr i32 %118, 31
+  %138 = xor i32 %135, %137
+  %139 = add nuw nsw i32 %138, %135
+  %140 = icmp eq i32 %139, 2
+  %141 = zext i1 %140 to i8
+  store i8 %141, i8* %42, align 1, !tbaa !2451
+  store i64 %120, i64* %RDI, align 8, !tbaa !2428
+  %142 = add i64 %619, -954
+  %143 = add i64 %619, 21
+  %144 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %145 = add i64 %144, -8
+  %146 = inttoptr i64 %145 to i64*
+  store i64 %143, i64* %146, align 8
+  store i64 %145, i64* %RSP, align 8, !tbaa !2428
+  store i64 %142, i64* %PC, align 8, !tbaa !2428
+  %147 = tail call %struct.Memory* @sub_400620_Min0_renamed_(%struct.State* nonnull %0, i64 %142, %struct.Memory* %690)
+  %148 = load i64, i64* %RBP, align 8
+  %149 = add i64 %148, -136
+  %150 = load i32, i32* %EAX, align 4
+  %151 = load i64, i64* %PC, align 8
+  %152 = add i64 %151, 6
+  store i64 %152, i64* %PC, align 8
+  %153 = inttoptr i64 %149 to i32*
+  store i32 %150, i32* %153, align 4
   %154 = load i64, i64* %RBP, align 8
-  %155 = add i64 %154, -136
-  %156 = load i32, i32* %EAX, align 4
-  %157 = load i64, i64* %PC, align 8
-  %158 = add i64 %157, 6
-  store i64 %158, i64* %PC, align 8
-  %159 = inttoptr i64 %155 to i32*
-  store i32 %156, i32* %159, align 4
-  %160 = load i64, i64* %RBP, align 8
-  %161 = add i64 %160, -132
-  %162 = load i64, i64* %PC, align 8
-  %163 = add i64 %162, 6
-  store i64 %163, i64* %PC, align 8
-  %164 = inttoptr i64 %161 to i32*
-  %165 = load i32, i32* %164, align 4
-  %166 = zext i32 %165 to i64
-  store i64 %166, i64* %RAX, align 8, !tbaa !2428
-  %167 = add i64 %160, -144
-  %168 = add i64 %162, 12
-  store i64 %168, i64* %PC, align 8
-  %169 = inttoptr i64 %167 to i32*
-  store i32 %165, i32* %169, align 4
-  %170 = load i64, i64* %RBP, align 8
-  %171 = add i64 %170, -144
-  %172 = load i64, i64* %PC, align 8
-  %173 = add i64 %172, 7
-  store i64 %173, i64* %PC, align 8
-  %174 = inttoptr i64 %171 to i32*
-  %175 = load i32, i32* %174, align 4
-  %176 = add i32 %175, -1
-  %177 = icmp eq i32 %175, 0
-  %178 = zext i1 %177 to i8
-  store i8 %178, i8* %19, align 1, !tbaa !2434
-  %179 = and i32 %176, 255
-  %180 = tail call i32 @llvm.ctpop.i32(i32 %179) #8
-  %181 = trunc i32 %180 to i8
-  %182 = and i8 %181, 1
-  %183 = xor i8 %182, 1
-  store i8 %183, i8* %26, align 1, !tbaa !2448
-  %184 = xor i32 %175, %176
-  %185 = lshr i32 %184, 4
-  %186 = trunc i32 %185 to i8
-  %187 = and i8 %186, 1
-  store i8 %187, i8* %31, align 1, !tbaa !2452
-  %188 = icmp eq i32 %176, 0
-  %189 = zext i1 %188 to i8
-  store i8 %189, i8* %34, align 1, !tbaa !2449
-  %190 = lshr i32 %176, 31
-  %191 = trunc i32 %190 to i8
-  store i8 %191, i8* %37, align 1, !tbaa !2450
-  %192 = lshr i32 %175, 31
-  %193 = xor i32 %190, %192
-  %194 = add nuw nsw i32 %193, %192
-  %195 = icmp eq i32 %194, 2
-  %196 = zext i1 %195 to i8
-  store i8 %196, i8* %43, align 1, !tbaa !2451
-  %197 = icmp ne i8 %191, 0
-  %198 = xor i1 %197, %195
-  %.demorgan19 = or i1 %188, %198
+  %155 = add i64 %154, -132
+  %156 = load i64, i64* %PC, align 8
+  %157 = add i64 %156, 6
+  store i64 %157, i64* %PC, align 8
+  %158 = inttoptr i64 %155 to i32*
+  %159 = load i32, i32* %158, align 4
+  %160 = zext i32 %159 to i64
+  store i64 %160, i64* %RAX, align 8, !tbaa !2428
+  %161 = add i64 %154, -144
+  %162 = add i64 %156, 12
+  store i64 %162, i64* %PC, align 8
+  %163 = inttoptr i64 %161 to i32*
+  store i32 %159, i32* %163, align 4
+  %164 = load i64, i64* %RBP, align 8
+  %165 = add i64 %164, -144
+  %166 = load i64, i64* %PC, align 8
+  %167 = add i64 %166, 7
+  store i64 %167, i64* %PC, align 8
+  %168 = inttoptr i64 %165 to i32*
+  %169 = load i32, i32* %168, align 4
+  %170 = add i32 %169, -1
+  %171 = icmp eq i32 %169, 0
+  %172 = zext i1 %171 to i8
+  store i8 %172, i8* %18, align 1, !tbaa !2434
+  %173 = and i32 %170, 255
+  %174 = tail call i32 @llvm.ctpop.i32(i32 %173) #8
+  %175 = trunc i32 %174 to i8
+  %176 = and i8 %175, 1
+  %177 = xor i8 %176, 1
+  store i8 %177, i8* %25, align 1, !tbaa !2448
+  %178 = xor i32 %169, %170
+  %179 = lshr i32 %178, 4
+  %180 = trunc i32 %179 to i8
+  %181 = and i8 %180, 1
+  store i8 %181, i8* %30, align 1, !tbaa !2452
+  %182 = icmp eq i32 %170, 0
+  %183 = zext i1 %182 to i8
+  store i8 %183, i8* %33, align 1, !tbaa !2449
+  %184 = lshr i32 %170, 31
+  %185 = trunc i32 %184 to i8
+  store i8 %185, i8* %36, align 1, !tbaa !2450
+  %186 = lshr i32 %169, 31
+  %187 = xor i32 %184, %186
+  %188 = add nuw nsw i32 %187, %186
+  %189 = icmp eq i32 %188, 2
+  %190 = zext i1 %189 to i8
+  store i8 %190, i8* %42, align 1, !tbaa !2451
+  %191 = icmp ne i8 %185, 0
+  %192 = xor i1 %191, %189
+  %.demorgan19 = or i1 %182, %192
   %.v20 = select i1 %.demorgan19, i64 13, i64 -308
-  %199 = add i64 %172, %.v20
-  store i64 %199, i64* %95, align 8, !tbaa !2428
+  %193 = add i64 %166, %.v20
+  store i64 %193, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan19, label %block_400a0e, label %block_4008cd
 
 block_4007b6:                                     ; preds = %block_4007c3, %block_400780
-  %200 = phi i64 [ %.pre, %block_400780 ], [ %835, %block_4007c3 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %block_400780 ], [ %743, %block_4007c3 ]
-  %201 = load i64, i64* %RBP, align 8
-  %202 = add i64 %201, -132
-  %203 = add i64 %200, 7
-  store i64 %203, i64* %PC, align 8
-  %204 = inttoptr i64 %202 to i32*
-  %205 = load i32, i32* %204, align 4
-  %206 = add i32 %205, -25
-  %207 = icmp ult i32 %205, 25
-  %208 = zext i1 %207 to i8
-  store i8 %208, i8* %19, align 1, !tbaa !2434
-  %209 = and i32 %206, 255
-  %210 = tail call i32 @llvm.ctpop.i32(i32 %209) #8
+  %194 = phi i64 [ %.pre, %block_400780 ], [ %814, %block_4007c3 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %block_400780 ], [ %725, %block_4007c3 ]
+  %195 = load i64, i64* %RBP, align 8
+  %196 = add i64 %195, -132
+  %197 = add i64 %194, 7
+  store i64 %197, i64* %PC, align 8
+  %198 = inttoptr i64 %196 to i32*
+  %199 = load i32, i32* %198, align 4
+  %200 = add i32 %199, -25
+  %201 = icmp ult i32 %199, 25
+  %202 = zext i1 %201 to i8
+  store i8 %202, i8* %18, align 1, !tbaa !2434
+  %203 = and i32 %200, 255
+  %204 = tail call i32 @llvm.ctpop.i32(i32 %203) #8
+  %205 = trunc i32 %204 to i8
+  %206 = and i8 %205, 1
+  %207 = xor i8 %206, 1
+  store i8 %207, i8* %25, align 1, !tbaa !2448
+  %208 = xor i32 %199, 16
+  %209 = xor i32 %208, %200
+  %210 = lshr i32 %209, 4
   %211 = trunc i32 %210 to i8
   %212 = and i8 %211, 1
-  %213 = xor i8 %212, 1
-  store i8 %213, i8* %26, align 1, !tbaa !2448
-  %214 = xor i32 %205, 16
-  %215 = xor i32 %214, %206
-  %216 = lshr i32 %215, 4
-  %217 = trunc i32 %216 to i8
-  %218 = and i8 %217, 1
-  store i8 %218, i8* %31, align 1, !tbaa !2452
-  %219 = icmp eq i32 %206, 0
-  %220 = zext i1 %219 to i8
-  store i8 %220, i8* %34, align 1, !tbaa !2449
-  %221 = lshr i32 %206, 31
-  %222 = trunc i32 %221 to i8
-  store i8 %222, i8* %37, align 1, !tbaa !2450
-  %223 = lshr i32 %205, 31
-  %224 = xor i32 %221, %223
-  %225 = add nuw nsw i32 %224, %223
-  %226 = icmp eq i32 %225, 2
-  %227 = zext i1 %226 to i8
-  store i8 %227, i8* %43, align 1, !tbaa !2451
-  %228 = icmp ne i8 %222, 0
-  %229 = xor i1 %228, %226
-  %.demorgan = or i1 %219, %229
+  store i8 %212, i8* %30, align 1, !tbaa !2452
+  %213 = icmp eq i32 %200, 0
+  %214 = zext i1 %213 to i8
+  store i8 %214, i8* %33, align 1, !tbaa !2449
+  %215 = lshr i32 %200, 31
+  %216 = trunc i32 %215 to i8
+  store i8 %216, i8* %36, align 1, !tbaa !2450
+  %217 = lshr i32 %199, 31
+  %218 = xor i32 %215, %217
+  %219 = add nuw nsw i32 %218, %217
+  %220 = icmp eq i32 %219, 2
+  %221 = zext i1 %220 to i8
+  store i8 %221, i8* %42, align 1, !tbaa !2451
+  %222 = icmp ne i8 %216, 0
+  %223 = xor i1 %222, %220
+  %.demorgan = or i1 %213, %223
   %.v = select i1 %.demorgan, i64 13, i64 100
-  %230 = add i64 %200, %.v
-  store i64 %230, i64* %95, align 8, !tbaa !2428
+  %224 = add i64 %194, %.v
+  store i64 %224, i64* %PC, align 8, !tbaa !2428
   br i1 %.demorgan, label %block_4007c3, label %block_40081a
 
 block_4008fb:                                     ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2, %block_4008fb
-  %231 = phi i64 [ %.pre14, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2 ], [ %635, %block_4008fb ]
-  %232 = phi i64 [ %.pre13, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2 ], [ %597, %block_4008fb ]
-  %233 = add i64 %232, -136
-  %234 = add i64 %231, 7
-  store i64 %234, i64* %PC, align 8
-  %235 = inttoptr i64 %233 to i32*
-  %236 = load i32, i32* %235, align 4
-  %237 = sext i32 %236 to i64
-  store i64 %237, i64* %RAX, align 8, !tbaa !2428
-  %238 = shl nsw i64 %237, 2
-  %239 = add i64 %232, -128
-  %240 = add i64 %239, %238
-  %241 = add i64 %231, 13
-  store i64 %241, i64* %PC, align 8
-  %242 = inttoptr i64 %240 to i32*
-  %243 = load i32, i32* %242, align 4
-  %244 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 %243, i32* %244, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %49, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %51, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
-  %245 = add i64 %232, -16
-  %246 = add i64 %231, 17
-  store i64 %246, i64* %PC, align 8
-  %247 = inttoptr i64 %245 to i64*
-  %248 = load i64, i64* %247, align 8
-  store i64 %248, i64* %RAX, align 8, !tbaa !2428
-  %249 = add i64 %232, -140
-  %250 = add i64 %231, 23
-  store i64 %250, i64* %PC, align 8
-  %251 = inttoptr i64 %249 to i32*
-  %252 = load i32, i32* %251, align 4
-  %253 = zext i32 %252 to i64
-  store i64 %253, i64* %RCX, align 8, !tbaa !2428
-  %254 = add i64 %232, -132
-  %255 = add i64 %231, 29
-  store i64 %255, i64* %PC, align 8
-  %256 = inttoptr i64 %254 to i32*
-  %257 = load i32, i32* %256, align 4
-  %258 = add i32 %257, %252
-  %259 = lshr i32 %258, 31
-  %260 = add i32 %258, 1
-  %261 = zext i32 %260 to i64
-  store i64 %261, i64* %RCX, align 8, !tbaa !2428
-  %262 = icmp eq i32 %258, -1
-  %263 = icmp eq i32 %260, 0
-  %264 = or i1 %262, %263
-  %265 = zext i1 %264 to i8
-  store i8 %265, i8* %19, align 1, !tbaa !2434
-  %266 = and i32 %260, 255
-  %267 = tail call i32 @llvm.ctpop.i32(i32 %266) #8
-  %268 = trunc i32 %267 to i8
-  %269 = and i8 %268, 1
-  %270 = xor i8 %269, 1
-  store i8 %270, i8* %26, align 1, !tbaa !2448
-  %271 = xor i32 %258, %260
-  %272 = lshr i32 %271, 4
-  %273 = trunc i32 %272 to i8
-  %274 = and i8 %273, 1
-  store i8 %274, i8* %31, align 1, !tbaa !2452
-  %275 = icmp eq i32 %260, 0
-  %276 = zext i1 %275 to i8
-  store i8 %276, i8* %34, align 1, !tbaa !2449
-  %277 = lshr i32 %260, 31
-  %278 = trunc i32 %277 to i8
-  store i8 %278, i8* %37, align 1, !tbaa !2450
-  %279 = xor i32 %277, %259
-  %280 = add nuw nsw i32 %279, %277
-  %281 = icmp eq i32 %280, 2
-  %282 = zext i1 %281 to i8
-  store i8 %282, i8* %43, align 1, !tbaa !2451
-  %283 = sext i32 %260 to i64
-  store i64 %283, i64* %RDX, align 8, !tbaa !2428
-  %284 = shl nsw i64 %283, 3
-  %285 = add i64 %284, %248
-  %286 = add i64 %231, 40
-  store i64 %286, i64* %PC, align 8
-  %287 = inttoptr i64 %285 to i32*
-  %288 = load i32, i32* %287, align 4
-  %289 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %288, i32* %289, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %63, align 1, !tbaa !2432
-  %290 = load i64, i64* %RBP, align 8
-  %291 = add i64 %290, -16
-  %292 = add i64 %231, 44
+  %225 = phi i64 [ %.pre14, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2 ], [ %619, %block_4008fb ]
+  %226 = phi i64 [ %.pre13, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2 ], [ %581, %block_4008fb ]
+  %227 = add i64 %226, -136
+  %228 = add i64 %225, 7
+  store i64 %228, i64* %PC, align 8
+  %229 = inttoptr i64 %227 to i32*
+  %230 = load i32, i32* %229, align 4
+  %231 = sext i32 %230 to i64
+  store i64 %231, i64* %RAX, align 8, !tbaa !2428
+  %232 = shl nsw i64 %231, 2
+  %233 = add i64 %226, -128
+  %234 = add i64 %233, %232
+  %235 = add i64 %225, 13
+  store i64 %235, i64* %PC, align 8
+  %236 = inttoptr i64 %234 to i32*
+  %237 = load i32, i32* %236, align 4
+  store i32 %237, i32* %46, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %48, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %50, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %52, align 1, !tbaa !2432
+  %238 = add i64 %226, -16
+  %239 = add i64 %225, 17
+  store i64 %239, i64* %PC, align 8
+  %240 = inttoptr i64 %238 to i64*
+  %241 = load i64, i64* %240, align 8
+  store i64 %241, i64* %RAX, align 8, !tbaa !2428
+  %242 = add i64 %226, -140
+  %243 = add i64 %225, 23
+  store i64 %243, i64* %PC, align 8
+  %244 = inttoptr i64 %242 to i32*
+  %245 = load i32, i32* %244, align 4
+  %246 = zext i32 %245 to i64
+  store i64 %246, i64* %RCX, align 8, !tbaa !2428
+  %247 = add i64 %226, -132
+  %248 = add i64 %225, 29
+  store i64 %248, i64* %PC, align 8
+  %249 = inttoptr i64 %247 to i32*
+  %250 = load i32, i32* %249, align 4
+  %251 = add i32 %250, %245
+  %252 = lshr i32 %251, 31
+  %253 = add i32 %251, 1
+  %254 = zext i32 %253 to i64
+  store i64 %254, i64* %RCX, align 8, !tbaa !2428
+  %255 = icmp eq i32 %251, -1
+  %256 = icmp eq i32 %253, 0
+  %257 = or i1 %255, %256
+  %258 = zext i1 %257 to i8
+  store i8 %258, i8* %18, align 1, !tbaa !2434
+  %259 = and i32 %253, 255
+  %260 = tail call i32 @llvm.ctpop.i32(i32 %259) #8
+  %261 = trunc i32 %260 to i8
+  %262 = and i8 %261, 1
+  %263 = xor i8 %262, 1
+  store i8 %263, i8* %25, align 1, !tbaa !2448
+  %264 = xor i32 %251, %253
+  %265 = lshr i32 %264, 4
+  %266 = trunc i32 %265 to i8
+  %267 = and i8 %266, 1
+  store i8 %267, i8* %30, align 1, !tbaa !2452
+  %268 = zext i1 %256 to i8
+  store i8 %268, i8* %33, align 1, !tbaa !2449
+  %269 = lshr i32 %253, 31
+  %270 = trunc i32 %269 to i8
+  store i8 %270, i8* %36, align 1, !tbaa !2450
+  %271 = xor i32 %269, %252
+  %272 = add nuw nsw i32 %271, %269
+  %273 = icmp eq i32 %272, 2
+  %274 = zext i1 %273 to i8
+  store i8 %274, i8* %42, align 1, !tbaa !2451
+  %275 = sext i32 %253 to i64
+  store i64 %275, i64* %RDX, align 8, !tbaa !2428
+  %276 = shl nsw i64 %275, 3
+  %277 = add i64 %276, %241
+  %278 = add i64 %225, 40
+  store i64 %278, i64* %PC, align 8
+  %279 = inttoptr i64 %277 to i32*
+  %280 = load i32, i32* %279, align 4
+  store i32 %280, i32* %56, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %58, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %60, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %62, align 1, !tbaa !2432
+  %281 = load i64, i64* %RBP, align 8
+  %282 = add i64 %281, -16
+  %283 = add i64 %225, 44
+  store i64 %283, i64* %PC, align 8
+  %284 = inttoptr i64 %282 to i64*
+  %285 = load i64, i64* %284, align 8
+  store i64 %285, i64* %RAX, align 8, !tbaa !2428
+  %286 = add i64 %281, -140
+  %287 = add i64 %225, 50
+  store i64 %287, i64* %PC, align 8
+  %288 = inttoptr i64 %286 to i32*
+  %289 = load i32, i32* %288, align 4
+  %290 = zext i32 %289 to i64
+  store i64 %290, i64* %RCX, align 8, !tbaa !2428
+  %291 = add i64 %281, -132
+  %292 = add i64 %225, 56
   store i64 %292, i64* %PC, align 8
-  %293 = inttoptr i64 %291 to i64*
-  %294 = load i64, i64* %293, align 8
-  store i64 %294, i64* %RAX, align 8, !tbaa !2428
-  %295 = add i64 %290, -140
-  %296 = add i64 %231, 50
-  store i64 %296, i64* %PC, align 8
-  %297 = inttoptr i64 %295 to i32*
-  %298 = load i32, i32* %297, align 4
-  %299 = zext i32 %298 to i64
-  store i64 %299, i64* %RCX, align 8, !tbaa !2428
-  %300 = add i64 %290, -132
-  %301 = add i64 %231, 56
-  store i64 %301, i64* %PC, align 8
-  %302 = inttoptr i64 %300 to i32*
-  %303 = load i32, i32* %302, align 4
-  %304 = sub i32 %298, %303
-  %305 = lshr i32 %304, 31
-  %306 = add i32 %304, 1
-  %307 = zext i32 %306 to i64
-  store i64 %307, i64* %RCX, align 8, !tbaa !2428
-  %308 = icmp eq i32 %304, -1
-  %309 = icmp eq i32 %306, 0
-  %310 = or i1 %308, %309
-  %311 = zext i1 %310 to i8
-  store i8 %311, i8* %19, align 1, !tbaa !2434
-  %312 = and i32 %306, 255
-  %313 = tail call i32 @llvm.ctpop.i32(i32 %312) #8
+  %293 = inttoptr i64 %291 to i32*
+  %294 = load i32, i32* %293, align 4
+  %295 = sub i32 %289, %294
+  %296 = lshr i32 %295, 31
+  %297 = add i32 %295, 1
+  %298 = zext i32 %297 to i64
+  store i64 %298, i64* %RCX, align 8, !tbaa !2428
+  %299 = icmp eq i32 %295, -1
+  %300 = icmp eq i32 %297, 0
+  %301 = or i1 %299, %300
+  %302 = zext i1 %301 to i8
+  store i8 %302, i8* %18, align 1, !tbaa !2434
+  %303 = and i32 %297, 255
+  %304 = tail call i32 @llvm.ctpop.i32(i32 %303) #8
+  %305 = trunc i32 %304 to i8
+  %306 = and i8 %305, 1
+  %307 = xor i8 %306, 1
+  store i8 %307, i8* %25, align 1, !tbaa !2448
+  %308 = xor i32 %295, %297
+  %309 = lshr i32 %308, 4
+  %310 = trunc i32 %309 to i8
+  %311 = and i8 %310, 1
+  store i8 %311, i8* %30, align 1, !tbaa !2452
+  %312 = zext i1 %300 to i8
+  store i8 %312, i8* %33, align 1, !tbaa !2449
+  %313 = lshr i32 %297, 31
   %314 = trunc i32 %313 to i8
-  %315 = and i8 %314, 1
-  %316 = xor i8 %315, 1
-  store i8 %316, i8* %26, align 1, !tbaa !2448
-  %317 = xor i32 %304, %306
-  %318 = lshr i32 %317, 4
-  %319 = trunc i32 %318 to i8
-  %320 = and i8 %319, 1
-  store i8 %320, i8* %31, align 1, !tbaa !2452
-  %321 = icmp eq i32 %306, 0
-  %322 = zext i1 %321 to i8
-  store i8 %322, i8* %34, align 1, !tbaa !2449
-  %323 = lshr i32 %306, 31
-  %324 = trunc i32 %323 to i8
-  store i8 %324, i8* %37, align 1, !tbaa !2450
-  %325 = xor i32 %323, %305
-  %326 = add nuw nsw i32 %325, %323
-  %327 = icmp eq i32 %326, 2
-  %328 = zext i1 %327 to i8
-  store i8 %328, i8* %43, align 1, !tbaa !2451
-  %329 = sext i32 %306 to i64
-  store i64 %329, i64* %RDX, align 8, !tbaa !2428
-  %330 = shl nsw i64 %329, 3
-  %331 = add i64 %330, %294
-  %332 = add i64 %231, 67
-  store i64 %332, i64* %PC, align 8
-  %333 = load <2 x float>, <2 x float>* %114, align 1
-  %334 = load <2 x i32>, <2 x i32>* %115, align 1
-  %335 = inttoptr i64 %331 to float*
-  %336 = load float, float* %335, align 4
-  %337 = extractelement <2 x float> %333, i32 0
-  %338 = fadd float %337, %336
-  store float %338, float* %56, align 1, !tbaa !2432
+  store i8 %314, i8* %36, align 1, !tbaa !2450
+  %315 = xor i32 %313, %296
+  %316 = add nuw nsw i32 %315, %313
+  %317 = icmp eq i32 %316, 2
+  %318 = zext i1 %317 to i8
+  store i8 %318, i8* %42, align 1, !tbaa !2451
+  %319 = sext i32 %297 to i64
+  store i64 %319, i64* %RDX, align 8, !tbaa !2428
+  %320 = shl nsw i64 %319, 3
+  %321 = add i64 %320, %285
+  %322 = add i64 %225, 67
+  store i64 %322, i64* %PC, align 8
+  %323 = load <2 x float>, <2 x float>* %77, align 1
+  %324 = load <2 x i32>, <2 x i32>* %111, align 1
+  %325 = inttoptr i64 %321 to float*
+  %326 = load float, float* %325, align 4
+  %327 = extractelement <2 x float> %323, i32 0
+  %328 = fadd float %327, %326
+  store float %328, float* %55, align 1, !tbaa !2432
+  %329 = bitcast <2 x float> %323 to <2 x i32>
+  %330 = extractelement <2 x i32> %329, i32 1
+  store i32 %330, i32* %112, align 1, !tbaa !2432
+  %331 = extractelement <2 x i32> %324, i32 0
+  store i32 %331, i32* %113, align 1, !tbaa !2432
+  %332 = extractelement <2 x i32> %324, i32 1
+  store i32 %332, i32* %114, align 1, !tbaa !2432
+  %333 = load <2 x float>, <2 x float>* %85, align 1
+  %334 = load <2 x i32>, <2 x i32>* %94, align 1
+  %335 = load <2 x float>, <2 x float>* %77, align 1
+  %336 = extractelement <2 x float> %333, i32 0
+  %337 = extractelement <2 x float> %335, i32 0
+  %338 = fmul float %336, %337
+  store float %338, float* %45, align 1, !tbaa !2432
   %339 = bitcast <2 x float> %333 to <2 x i32>
   %340 = extractelement <2 x i32> %339, i32 1
-  store i32 %340, i32* %117, align 1, !tbaa !2432
+  store i32 %340, i32* %95, align 1, !tbaa !2432
   %341 = extractelement <2 x i32> %334, i32 0
-  store i32 %341, i32* %118, align 1, !tbaa !2432
+  store i32 %341, i32* %96, align 1, !tbaa !2432
   %342 = extractelement <2 x i32> %334, i32 1
-  store i32 %342, i32* %119, align 1, !tbaa !2432
-  %343 = load <2 x float>, <2 x float>* %96, align 1
-  %344 = load <2 x i32>, <2 x i32>* %97, align 1
-  %345 = load <2 x float>, <2 x float>* %78, align 1
-  %346 = extractelement <2 x float> %343, i32 0
-  %347 = extractelement <2 x float> %345, i32 0
-  %348 = fmul float %346, %347
-  store float %348, float* %46, align 1, !tbaa !2432
-  %349 = bitcast <2 x float> %343 to <2 x i32>
-  %350 = extractelement <2 x i32> %349, i32 1
-  store i32 %350, i32* %98, align 1, !tbaa !2432
-  %351 = extractelement <2 x i32> %344, i32 0
-  store i32 %351, i32* %99, align 1, !tbaa !2432
-  %352 = extractelement <2 x i32> %344, i32 1
-  store i32 %352, i32* %100, align 1, !tbaa !2432
-  %353 = load i64, i64* %RBP, align 8
-  %354 = add i64 %353, -16
-  %355 = add i64 %231, 75
-  store i64 %355, i64* %PC, align 8
-  %356 = inttoptr i64 %354 to i64*
-  %357 = load i64, i64* %356, align 8
-  store i64 %357, i64* %RAX, align 8, !tbaa !2428
-  %358 = add i64 %353, -140
-  %359 = add i64 %231, 81
-  store i64 %359, i64* %PC, align 8
-  %360 = inttoptr i64 %358 to i32*
-  %361 = load i32, i32* %360, align 4
-  %362 = add i32 %361, 1
-  %363 = zext i32 %362 to i64
-  store i64 %363, i64* %RCX, align 8, !tbaa !2428
-  %364 = icmp eq i32 %361, -1
-  %365 = icmp eq i32 %362, 0
-  %366 = or i1 %364, %365
-  %367 = zext i1 %366 to i8
-  store i8 %367, i8* %19, align 1, !tbaa !2434
-  %368 = and i32 %362, 255
-  %369 = tail call i32 @llvm.ctpop.i32(i32 %368) #8
-  %370 = trunc i32 %369 to i8
-  %371 = and i8 %370, 1
-  %372 = xor i8 %371, 1
-  store i8 %372, i8* %26, align 1, !tbaa !2448
-  %373 = xor i32 %361, %362
-  %374 = lshr i32 %373, 4
-  %375 = trunc i32 %374 to i8
-  %376 = and i8 %375, 1
-  store i8 %376, i8* %31, align 1, !tbaa !2452
-  %377 = icmp eq i32 %362, 0
-  %378 = zext i1 %377 to i8
-  store i8 %378, i8* %34, align 1, !tbaa !2449
-  %379 = lshr i32 %362, 31
-  %380 = trunc i32 %379 to i8
-  store i8 %380, i8* %37, align 1, !tbaa !2450
-  %381 = lshr i32 %361, 31
-  %382 = xor i32 %379, %381
-  %383 = add nuw nsw i32 %382, %379
-  %384 = icmp eq i32 %383, 2
-  %385 = zext i1 %384 to i8
-  store i8 %385, i8* %43, align 1, !tbaa !2451
-  %386 = sext i32 %362 to i64
-  store i64 %386, i64* %RDX, align 8, !tbaa !2428
-  %387 = shl nsw i64 %386, 3
-  %388 = add i64 %387, %357
-  %389 = add i64 %231, 92
-  store i64 %389, i64* %PC, align 8
-  %390 = load <2 x float>, <2 x float>* %86, align 1
-  %391 = extractelement <2 x float> %390, i32 0
-  %392 = inttoptr i64 %388 to float*
-  store float %391, float* %392, align 4
-  %393 = load i64, i64* %RBP, align 8
-  %394 = add i64 %393, -136
-  %395 = load i64, i64* %PC, align 8
-  %396 = add i64 %395, 7
+  store i32 %342, i32* %97, align 1, !tbaa !2432
+  %343 = load i64, i64* %RBP, align 8
+  %344 = add i64 %343, -16
+  %345 = add i64 %225, 75
+  store i64 %345, i64* %PC, align 8
+  %346 = inttoptr i64 %344 to i64*
+  %347 = load i64, i64* %346, align 8
+  store i64 %347, i64* %RAX, align 8, !tbaa !2428
+  %348 = add i64 %343, -140
+  %349 = add i64 %225, 81
+  store i64 %349, i64* %PC, align 8
+  %350 = inttoptr i64 %348 to i32*
+  %351 = load i32, i32* %350, align 4
+  %352 = add i32 %351, 1
+  %353 = zext i32 %352 to i64
+  store i64 %353, i64* %RCX, align 8, !tbaa !2428
+  %354 = icmp eq i32 %351, -1
+  %355 = icmp eq i32 %352, 0
+  %356 = or i1 %354, %355
+  %357 = zext i1 %356 to i8
+  store i8 %357, i8* %18, align 1, !tbaa !2434
+  %358 = and i32 %352, 255
+  %359 = tail call i32 @llvm.ctpop.i32(i32 %358) #8
+  %360 = trunc i32 %359 to i8
+  %361 = and i8 %360, 1
+  %362 = xor i8 %361, 1
+  store i8 %362, i8* %25, align 1, !tbaa !2448
+  %363 = xor i32 %351, %352
+  %364 = lshr i32 %363, 4
+  %365 = trunc i32 %364 to i8
+  %366 = and i8 %365, 1
+  store i8 %366, i8* %30, align 1, !tbaa !2452
+  %367 = zext i1 %355 to i8
+  store i8 %367, i8* %33, align 1, !tbaa !2449
+  %368 = lshr i32 %352, 31
+  %369 = trunc i32 %368 to i8
+  store i8 %369, i8* %36, align 1, !tbaa !2450
+  %370 = lshr i32 %351, 31
+  %371 = xor i32 %368, %370
+  %372 = add nuw nsw i32 %371, %368
+  %373 = icmp eq i32 %372, 2
+  %374 = zext i1 %373 to i8
+  store i8 %374, i8* %42, align 1, !tbaa !2451
+  %375 = sext i32 %352 to i64
+  store i64 %375, i64* %RDX, align 8, !tbaa !2428
+  %376 = shl nsw i64 %375, 3
+  %377 = add i64 %376, %347
+  %378 = add i64 %225, 92
+  store i64 %378, i64* %PC, align 8
+  %379 = load <2 x float>, <2 x float>* %85, align 1
+  %380 = extractelement <2 x float> %379, i32 0
+  %381 = inttoptr i64 %377 to float*
+  store float %380, float* %381, align 4
+  %382 = load i64, i64* %RBP, align 8
+  %383 = add i64 %382, -136
+  %384 = load i64, i64* %PC, align 8
+  %385 = add i64 %384, 7
+  store i64 %385, i64* %PC, align 8
+  %386 = inttoptr i64 %383 to i32*
+  %387 = load i32, i32* %386, align 4
+  %388 = sext i32 %387 to i64
+  store i64 %388, i64* %RAX, align 8, !tbaa !2428
+  %389 = shl nsw i64 %388, 2
+  %390 = add i64 %382, -128
+  %391 = add i64 %390, %389
+  %392 = add i64 %384, 13
+  store i64 %392, i64* %PC, align 8
+  %393 = inttoptr i64 %391 to i32*
+  %394 = load i32, i32* %393, align 4
+  store i32 %394, i32* %46, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %48, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %50, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %52, align 1, !tbaa !2432
+  %395 = add i64 %382, -16
+  %396 = add i64 %384, 17
   store i64 %396, i64* %PC, align 8
-  %397 = inttoptr i64 %394 to i32*
-  %398 = load i32, i32* %397, align 4
-  %399 = sext i32 %398 to i64
-  store i64 %399, i64* %RAX, align 8, !tbaa !2428
-  %400 = shl nsw i64 %399, 2
-  %401 = add i64 %393, -128
-  %402 = add i64 %401, %400
-  %403 = add i64 %395, 13
-  store i64 %403, i64* %PC, align 8
-  %404 = inttoptr i64 %402 to i32*
-  %405 = load i32, i32* %404, align 4
-  %406 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 %405, i32* %406, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %49, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %51, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
-  %407 = add i64 %393, -16
-  %408 = add i64 %395, 17
-  store i64 %408, i64* %PC, align 8
-  %409 = inttoptr i64 %407 to i64*
-  %410 = load i64, i64* %409, align 8
-  store i64 %410, i64* %RAX, align 8, !tbaa !2428
-  %411 = add i64 %393, -140
-  %412 = add i64 %395, 23
-  store i64 %412, i64* %PC, align 8
-  %413 = inttoptr i64 %411 to i32*
-  %414 = load i32, i32* %413, align 4
-  %415 = zext i32 %414 to i64
-  store i64 %415, i64* %RCX, align 8, !tbaa !2428
-  %416 = add i64 %393, -132
-  %417 = add i64 %395, 29
-  store i64 %417, i64* %PC, align 8
-  %418 = inttoptr i64 %416 to i32*
-  %419 = load i32, i32* %418, align 4
-  %420 = add i32 %419, %414
-  %421 = lshr i32 %420, 31
-  %422 = add i32 %420, 1
-  %423 = zext i32 %422 to i64
-  store i64 %423, i64* %RCX, align 8, !tbaa !2428
-  %424 = icmp eq i32 %420, -1
-  %425 = icmp eq i32 %422, 0
-  %426 = or i1 %424, %425
-  %427 = zext i1 %426 to i8
-  store i8 %427, i8* %19, align 1, !tbaa !2434
-  %428 = and i32 %422, 255
-  %429 = tail call i32 @llvm.ctpop.i32(i32 %428) #8
-  %430 = trunc i32 %429 to i8
-  %431 = and i8 %430, 1
-  %432 = xor i8 %431, 1
-  store i8 %432, i8* %26, align 1, !tbaa !2448
-  %433 = xor i32 %420, %422
-  %434 = lshr i32 %433, 4
-  %435 = trunc i32 %434 to i8
-  %436 = and i8 %435, 1
-  store i8 %436, i8* %31, align 1, !tbaa !2452
-  %437 = icmp eq i32 %422, 0
-  %438 = zext i1 %437 to i8
-  store i8 %438, i8* %34, align 1, !tbaa !2449
-  %439 = lshr i32 %422, 31
-  %440 = trunc i32 %439 to i8
-  store i8 %440, i8* %37, align 1, !tbaa !2450
-  %441 = xor i32 %439, %421
-  %442 = add nuw nsw i32 %441, %439
-  %443 = icmp eq i32 %442, 2
-  %444 = zext i1 %443 to i8
-  store i8 %444, i8* %43, align 1, !tbaa !2451
-  %445 = sext i32 %422 to i64
-  store i64 %445, i64* %RDX, align 8, !tbaa !2428
-  %446 = shl nsw i64 %445, 3
-  %447 = add i64 %410, 4
-  %448 = add i64 %447, %446
-  %449 = add i64 %395, 41
-  store i64 %449, i64* %PC, align 8
-  %450 = inttoptr i64 %448 to i32*
-  %451 = load i32, i32* %450, align 4
-  %452 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %451, i32* %452, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %63, align 1, !tbaa !2432
-  %453 = load i64, i64* %RBP, align 8
-  %454 = add i64 %453, -16
-  %455 = add i64 %395, 45
-  store i64 %455, i64* %PC, align 8
-  %456 = inttoptr i64 %454 to i64*
-  %457 = load i64, i64* %456, align 8
-  store i64 %457, i64* %RAX, align 8, !tbaa !2428
-  %458 = add i64 %453, -140
-  %459 = add i64 %395, 51
-  store i64 %459, i64* %PC, align 8
-  %460 = inttoptr i64 %458 to i32*
-  %461 = load i32, i32* %460, align 4
-  %462 = zext i32 %461 to i64
-  store i64 %462, i64* %RCX, align 8, !tbaa !2428
-  %463 = add i64 %453, -132
-  %464 = add i64 %395, 57
-  store i64 %464, i64* %PC, align 8
-  %465 = inttoptr i64 %463 to i32*
-  %466 = load i32, i32* %465, align 4
-  %467 = sub i32 %461, %466
-  %468 = lshr i32 %467, 31
-  %469 = add i32 %467, 1
-  %470 = zext i32 %469 to i64
-  store i64 %470, i64* %RCX, align 8, !tbaa !2428
-  %471 = icmp eq i32 %467, -1
-  %472 = icmp eq i32 %469, 0
-  %473 = or i1 %471, %472
-  %474 = zext i1 %473 to i8
-  store i8 %474, i8* %19, align 1, !tbaa !2434
-  %475 = and i32 %469, 255
-  %476 = tail call i32 @llvm.ctpop.i32(i32 %475) #8
-  %477 = trunc i32 %476 to i8
-  %478 = and i8 %477, 1
-  %479 = xor i8 %478, 1
-  store i8 %479, i8* %26, align 1, !tbaa !2448
-  %480 = xor i32 %467, %469
-  %481 = lshr i32 %480, 4
-  %482 = trunc i32 %481 to i8
-  %483 = and i8 %482, 1
-  store i8 %483, i8* %31, align 1, !tbaa !2452
-  %484 = icmp eq i32 %469, 0
-  %485 = zext i1 %484 to i8
-  store i8 %485, i8* %34, align 1, !tbaa !2449
-  %486 = lshr i32 %469, 31
-  %487 = trunc i32 %486 to i8
-  store i8 %487, i8* %37, align 1, !tbaa !2450
-  %488 = xor i32 %486, %468
-  %489 = add nuw nsw i32 %488, %486
-  %490 = icmp eq i32 %489, 2
-  %491 = zext i1 %490 to i8
-  store i8 %491, i8* %43, align 1, !tbaa !2451
-  %492 = sext i32 %469 to i64
-  store i64 %492, i64* %RDX, align 8, !tbaa !2428
-  %493 = shl nsw i64 %492, 3
-  %494 = add i64 %457, 4
-  %495 = add i64 %494, %493
-  %496 = add i64 %395, 69
-  store i64 %496, i64* %PC, align 8
-  %497 = load <2 x float>, <2 x float>* %114, align 1
-  %498 = load <2 x i32>, <2 x i32>* %115, align 1
-  %499 = inttoptr i64 %495 to float*
-  %500 = load float, float* %499, align 4
-  %501 = extractelement <2 x float> %497, i32 0
-  %502 = fadd float %501, %500
-  store float %502, float* %56, align 1, !tbaa !2432
-  %503 = bitcast <2 x float> %497 to <2 x i32>
-  %504 = extractelement <2 x i32> %503, i32 1
-  store i32 %504, i32* %117, align 1, !tbaa !2432
-  %505 = extractelement <2 x i32> %498, i32 0
-  store i32 %505, i32* %118, align 1, !tbaa !2432
-  %506 = extractelement <2 x i32> %498, i32 1
-  store i32 %506, i32* %119, align 1, !tbaa !2432
-  %507 = load <2 x float>, <2 x float>* %96, align 1
-  %508 = load <2 x i32>, <2 x i32>* %97, align 1
-  %509 = load <2 x float>, <2 x float>* %78, align 1
-  %510 = extractelement <2 x float> %507, i32 0
-  %511 = extractelement <2 x float> %509, i32 0
-  %512 = fmul float %510, %511
-  store float %512, float* %46, align 1, !tbaa !2432
-  %513 = bitcast <2 x float> %507 to <2 x i32>
-  %514 = extractelement <2 x i32> %513, i32 1
-  store i32 %514, i32* %98, align 1, !tbaa !2432
-  %515 = extractelement <2 x i32> %508, i32 0
-  store i32 %515, i32* %99, align 1, !tbaa !2432
-  %516 = extractelement <2 x i32> %508, i32 1
-  store i32 %516, i32* %100, align 1, !tbaa !2432
-  %517 = load i64, i64* %RBP, align 8
-  %518 = add i64 %517, -16
-  %519 = add i64 %395, 77
-  store i64 %519, i64* %PC, align 8
-  %520 = inttoptr i64 %518 to i64*
-  %521 = load i64, i64* %520, align 8
-  store i64 %521, i64* %RAX, align 8, !tbaa !2428
-  %522 = add i64 %517, -140
-  %523 = add i64 %395, 83
-  store i64 %523, i64* %PC, align 8
-  %524 = inttoptr i64 %522 to i32*
-  %525 = load i32, i32* %524, align 4
-  %526 = add i32 %525, 1
-  %527 = zext i32 %526 to i64
-  store i64 %527, i64* %RCX, align 8, !tbaa !2428
-  %528 = icmp eq i32 %525, -1
-  %529 = icmp eq i32 %526, 0
-  %530 = or i1 %528, %529
-  %531 = zext i1 %530 to i8
-  store i8 %531, i8* %19, align 1, !tbaa !2434
-  %532 = and i32 %526, 255
-  %533 = tail call i32 @llvm.ctpop.i32(i32 %532) #8
-  %534 = trunc i32 %533 to i8
-  %535 = and i8 %534, 1
-  %536 = xor i8 %535, 1
-  store i8 %536, i8* %26, align 1, !tbaa !2448
-  %537 = xor i32 %525, %526
-  %538 = lshr i32 %537, 4
-  %539 = trunc i32 %538 to i8
-  %540 = and i8 %539, 1
-  store i8 %540, i8* %31, align 1, !tbaa !2452
-  %541 = icmp eq i32 %526, 0
-  %542 = zext i1 %541 to i8
-  store i8 %542, i8* %34, align 1, !tbaa !2449
-  %543 = lshr i32 %526, 31
-  %544 = trunc i32 %543 to i8
-  store i8 %544, i8* %37, align 1, !tbaa !2450
-  %545 = lshr i32 %525, 31
-  %546 = xor i32 %543, %545
-  %547 = add nuw nsw i32 %546, %543
-  %548 = icmp eq i32 %547, 2
-  %549 = zext i1 %548 to i8
-  store i8 %549, i8* %43, align 1, !tbaa !2451
-  %550 = sext i32 %526 to i64
-  store i64 %550, i64* %RDX, align 8, !tbaa !2428
-  %551 = shl nsw i64 %550, 3
-  %552 = add i64 %521, 4
-  %553 = add i64 %552, %551
-  %554 = add i64 %395, 95
-  store i64 %554, i64* %PC, align 8
-  %555 = load <2 x float>, <2 x float>* %86, align 1
-  %556 = extractelement <2 x float> %555, i32 0
-  %557 = inttoptr i64 %553 to float*
-  store float %556, float* %557, align 4
-  %558 = load i64, i64* %RBP, align 8
-  %559 = add i64 %558, -140
-  %560 = load i64, i64* %PC, align 8
-  %561 = add i64 %560, 6
-  store i64 %561, i64* %PC, align 8
-  %562 = inttoptr i64 %559 to i32*
-  %563 = load i32, i32* %562, align 4
-  %564 = zext i32 %563 to i64
-  store i64 %564, i64* %RCX, align 8, !tbaa !2428
-  %565 = add i64 %558, -144
-  %566 = add i64 %560, 12
-  store i64 %566, i64* %PC, align 8
-  %567 = inttoptr i64 %565 to i32*
-  %568 = load i32, i32* %567, align 4
-  %569 = add i32 %568, %563
-  %570 = zext i32 %569 to i64
-  store i64 %570, i64* %RCX, align 8, !tbaa !2428
-  %571 = icmp ult i32 %569, %563
-  %572 = icmp ult i32 %569, %568
-  %573 = or i1 %571, %572
-  %574 = zext i1 %573 to i8
-  store i8 %574, i8* %19, align 1, !tbaa !2434
-  %575 = and i32 %569, 255
-  %576 = tail call i32 @llvm.ctpop.i32(i32 %575) #8
-  %577 = trunc i32 %576 to i8
-  %578 = and i8 %577, 1
-  %579 = xor i8 %578, 1
-  store i8 %579, i8* %26, align 1, !tbaa !2448
-  %580 = xor i32 %568, %563
-  %581 = xor i32 %580, %569
-  %582 = lshr i32 %581, 4
-  %583 = trunc i32 %582 to i8
-  %584 = and i8 %583, 1
-  store i8 %584, i8* %31, align 1, !tbaa !2452
-  %585 = icmp eq i32 %569, 0
-  %586 = zext i1 %585 to i8
-  store i8 %586, i8* %34, align 1, !tbaa !2449
-  %587 = lshr i32 %569, 31
-  %588 = trunc i32 %587 to i8
-  store i8 %588, i8* %37, align 1, !tbaa !2450
-  %589 = lshr i32 %563, 31
-  %590 = lshr i32 %568, 31
-  %591 = xor i32 %587, %589
-  %592 = xor i32 %587, %590
-  %593 = add nuw nsw i32 %591, %592
-  %594 = icmp eq i32 %593, 2
-  %595 = zext i1 %594 to i8
-  store i8 %595, i8* %43, align 1, !tbaa !2451
-  %596 = add i64 %560, 18
-  store i64 %596, i64* %PC, align 8
-  store i32 %569, i32* %562, align 4
-  %597 = load i64, i64* %RBP, align 8
-  %598 = add i64 %597, -140
-  %599 = load i64, i64* %PC, align 8
-  %600 = add i64 %599, 6
-  store i64 %600, i64* %PC, align 8
-  %601 = inttoptr i64 %598 to i32*
-  %602 = load i32, i32* %601, align 4
-  %603 = zext i32 %602 to i64
-  store i64 %603, i64* %RAX, align 8, !tbaa !2428
-  %604 = add i64 %597, -148
-  %605 = add i64 %599, 12
-  store i64 %605, i64* %PC, align 8
-  %606 = inttoptr i64 %604 to i32*
-  %607 = load i32, i32* %606, align 4
-  %608 = sub i32 %602, %607
-  %609 = icmp ult i32 %602, %607
-  %610 = zext i1 %609 to i8
-  store i8 %610, i8* %19, align 1, !tbaa !2434
-  %611 = and i32 %608, 255
-  %612 = tail call i32 @llvm.ctpop.i32(i32 %611) #8
-  %613 = trunc i32 %612 to i8
-  %614 = and i8 %613, 1
-  %615 = xor i8 %614, 1
-  store i8 %615, i8* %26, align 1, !tbaa !2448
-  %616 = xor i32 %607, %602
-  %617 = xor i32 %616, %608
-  %618 = lshr i32 %617, 4
-  %619 = trunc i32 %618 to i8
-  %620 = and i8 %619, 1
-  store i8 %620, i8* %31, align 1, !tbaa !2452
-  %621 = icmp eq i32 %608, 0
-  %622 = zext i1 %621 to i8
-  store i8 %622, i8* %34, align 1, !tbaa !2449
-  %623 = lshr i32 %608, 31
-  %624 = trunc i32 %623 to i8
-  store i8 %624, i8* %37, align 1, !tbaa !2450
-  %625 = lshr i32 %602, 31
-  %626 = lshr i32 %607, 31
-  %627 = xor i32 %626, %625
-  %628 = xor i32 %623, %625
-  %629 = add nuw nsw i32 %628, %627
-  %630 = icmp eq i32 %629, 2
-  %631 = zext i1 %630 to i8
-  store i8 %631, i8* %43, align 1, !tbaa !2451
-  %632 = icmp ne i8 %624, 0
-  %633 = xor i1 %632, %630
-  %634 = or i1 %621, %633
-  %.v18 = select i1 %634, i64 -205, i64 18
-  %635 = add i64 %599, %.v18
-  store i64 %635, i64* %95, align 8, !tbaa !2428
-  br i1 %634, label %block_4008fb, label %block_4009da
+  %397 = inttoptr i64 %395 to i64*
+  %398 = load i64, i64* %397, align 8
+  store i64 %398, i64* %RAX, align 8, !tbaa !2428
+  %399 = add i64 %382, -140
+  %400 = add i64 %384, 23
+  store i64 %400, i64* %PC, align 8
+  %401 = inttoptr i64 %399 to i32*
+  %402 = load i32, i32* %401, align 4
+  %403 = zext i32 %402 to i64
+  store i64 %403, i64* %RCX, align 8, !tbaa !2428
+  %404 = add i64 %382, -132
+  %405 = add i64 %384, 29
+  store i64 %405, i64* %PC, align 8
+  %406 = inttoptr i64 %404 to i32*
+  %407 = load i32, i32* %406, align 4
+  %408 = add i32 %407, %402
+  %409 = lshr i32 %408, 31
+  %410 = add i32 %408, 1
+  %411 = zext i32 %410 to i64
+  store i64 %411, i64* %RCX, align 8, !tbaa !2428
+  %412 = icmp eq i32 %408, -1
+  %413 = icmp eq i32 %410, 0
+  %414 = or i1 %412, %413
+  %415 = zext i1 %414 to i8
+  store i8 %415, i8* %18, align 1, !tbaa !2434
+  %416 = and i32 %410, 255
+  %417 = tail call i32 @llvm.ctpop.i32(i32 %416) #8
+  %418 = trunc i32 %417 to i8
+  %419 = and i8 %418, 1
+  %420 = xor i8 %419, 1
+  store i8 %420, i8* %25, align 1, !tbaa !2448
+  %421 = xor i32 %408, %410
+  %422 = lshr i32 %421, 4
+  %423 = trunc i32 %422 to i8
+  %424 = and i8 %423, 1
+  store i8 %424, i8* %30, align 1, !tbaa !2452
+  %425 = zext i1 %413 to i8
+  store i8 %425, i8* %33, align 1, !tbaa !2449
+  %426 = lshr i32 %410, 31
+  %427 = trunc i32 %426 to i8
+  store i8 %427, i8* %36, align 1, !tbaa !2450
+  %428 = xor i32 %426, %409
+  %429 = add nuw nsw i32 %428, %426
+  %430 = icmp eq i32 %429, 2
+  %431 = zext i1 %430 to i8
+  store i8 %431, i8* %42, align 1, !tbaa !2451
+  %432 = sext i32 %410 to i64
+  store i64 %432, i64* %RDX, align 8, !tbaa !2428
+  %433 = shl nsw i64 %432, 3
+  %434 = add i64 %398, 4
+  %435 = add i64 %434, %433
+  %436 = add i64 %384, 41
+  store i64 %436, i64* %PC, align 8
+  %437 = inttoptr i64 %435 to i32*
+  %438 = load i32, i32* %437, align 4
+  store i32 %438, i32* %56, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %58, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %60, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %62, align 1, !tbaa !2432
+  %439 = load i64, i64* %RBP, align 8
+  %440 = add i64 %439, -16
+  %441 = add i64 %384, 45
+  store i64 %441, i64* %PC, align 8
+  %442 = inttoptr i64 %440 to i64*
+  %443 = load i64, i64* %442, align 8
+  store i64 %443, i64* %RAX, align 8, !tbaa !2428
+  %444 = add i64 %439, -140
+  %445 = add i64 %384, 51
+  store i64 %445, i64* %PC, align 8
+  %446 = inttoptr i64 %444 to i32*
+  %447 = load i32, i32* %446, align 4
+  %448 = zext i32 %447 to i64
+  store i64 %448, i64* %RCX, align 8, !tbaa !2428
+  %449 = add i64 %439, -132
+  %450 = add i64 %384, 57
+  store i64 %450, i64* %PC, align 8
+  %451 = inttoptr i64 %449 to i32*
+  %452 = load i32, i32* %451, align 4
+  %453 = sub i32 %447, %452
+  %454 = lshr i32 %453, 31
+  %455 = add i32 %453, 1
+  %456 = zext i32 %455 to i64
+  store i64 %456, i64* %RCX, align 8, !tbaa !2428
+  %457 = icmp eq i32 %453, -1
+  %458 = icmp eq i32 %455, 0
+  %459 = or i1 %457, %458
+  %460 = zext i1 %459 to i8
+  store i8 %460, i8* %18, align 1, !tbaa !2434
+  %461 = and i32 %455, 255
+  %462 = tail call i32 @llvm.ctpop.i32(i32 %461) #8
+  %463 = trunc i32 %462 to i8
+  %464 = and i8 %463, 1
+  %465 = xor i8 %464, 1
+  store i8 %465, i8* %25, align 1, !tbaa !2448
+  %466 = xor i32 %453, %455
+  %467 = lshr i32 %466, 4
+  %468 = trunc i32 %467 to i8
+  %469 = and i8 %468, 1
+  store i8 %469, i8* %30, align 1, !tbaa !2452
+  %470 = zext i1 %458 to i8
+  store i8 %470, i8* %33, align 1, !tbaa !2449
+  %471 = lshr i32 %455, 31
+  %472 = trunc i32 %471 to i8
+  store i8 %472, i8* %36, align 1, !tbaa !2450
+  %473 = xor i32 %471, %454
+  %474 = add nuw nsw i32 %473, %471
+  %475 = icmp eq i32 %474, 2
+  %476 = zext i1 %475 to i8
+  store i8 %476, i8* %42, align 1, !tbaa !2451
+  %477 = sext i32 %455 to i64
+  store i64 %477, i64* %RDX, align 8, !tbaa !2428
+  %478 = shl nsw i64 %477, 3
+  %479 = add i64 %443, 4
+  %480 = add i64 %479, %478
+  %481 = add i64 %384, 69
+  store i64 %481, i64* %PC, align 8
+  %482 = load <2 x float>, <2 x float>* %77, align 1
+  %483 = load <2 x i32>, <2 x i32>* %111, align 1
+  %484 = inttoptr i64 %480 to float*
+  %485 = load float, float* %484, align 4
+  %486 = extractelement <2 x float> %482, i32 0
+  %487 = fadd float %486, %485
+  store float %487, float* %55, align 1, !tbaa !2432
+  %488 = bitcast <2 x float> %482 to <2 x i32>
+  %489 = extractelement <2 x i32> %488, i32 1
+  store i32 %489, i32* %112, align 1, !tbaa !2432
+  %490 = extractelement <2 x i32> %483, i32 0
+  store i32 %490, i32* %113, align 1, !tbaa !2432
+  %491 = extractelement <2 x i32> %483, i32 1
+  store i32 %491, i32* %114, align 1, !tbaa !2432
+  %492 = load <2 x float>, <2 x float>* %85, align 1
+  %493 = load <2 x i32>, <2 x i32>* %94, align 1
+  %494 = load <2 x float>, <2 x float>* %77, align 1
+  %495 = extractelement <2 x float> %492, i32 0
+  %496 = extractelement <2 x float> %494, i32 0
+  %497 = fmul float %495, %496
+  store float %497, float* %45, align 1, !tbaa !2432
+  %498 = bitcast <2 x float> %492 to <2 x i32>
+  %499 = extractelement <2 x i32> %498, i32 1
+  store i32 %499, i32* %95, align 1, !tbaa !2432
+  %500 = extractelement <2 x i32> %493, i32 0
+  store i32 %500, i32* %96, align 1, !tbaa !2432
+  %501 = extractelement <2 x i32> %493, i32 1
+  store i32 %501, i32* %97, align 1, !tbaa !2432
+  %502 = load i64, i64* %RBP, align 8
+  %503 = add i64 %502, -16
+  %504 = add i64 %384, 77
+  store i64 %504, i64* %PC, align 8
+  %505 = inttoptr i64 %503 to i64*
+  %506 = load i64, i64* %505, align 8
+  store i64 %506, i64* %RAX, align 8, !tbaa !2428
+  %507 = add i64 %502, -140
+  %508 = add i64 %384, 83
+  store i64 %508, i64* %PC, align 8
+  %509 = inttoptr i64 %507 to i32*
+  %510 = load i32, i32* %509, align 4
+  %511 = add i32 %510, 1
+  %512 = zext i32 %511 to i64
+  store i64 %512, i64* %RCX, align 8, !tbaa !2428
+  %513 = icmp eq i32 %510, -1
+  %514 = icmp eq i32 %511, 0
+  %515 = or i1 %513, %514
+  %516 = zext i1 %515 to i8
+  store i8 %516, i8* %18, align 1, !tbaa !2434
+  %517 = and i32 %511, 255
+  %518 = tail call i32 @llvm.ctpop.i32(i32 %517) #8
+  %519 = trunc i32 %518 to i8
+  %520 = and i8 %519, 1
+  %521 = xor i8 %520, 1
+  store i8 %521, i8* %25, align 1, !tbaa !2448
+  %522 = xor i32 %510, %511
+  %523 = lshr i32 %522, 4
+  %524 = trunc i32 %523 to i8
+  %525 = and i8 %524, 1
+  store i8 %525, i8* %30, align 1, !tbaa !2452
+  %526 = zext i1 %514 to i8
+  store i8 %526, i8* %33, align 1, !tbaa !2449
+  %527 = lshr i32 %511, 31
+  %528 = trunc i32 %527 to i8
+  store i8 %528, i8* %36, align 1, !tbaa !2450
+  %529 = lshr i32 %510, 31
+  %530 = xor i32 %527, %529
+  %531 = add nuw nsw i32 %530, %527
+  %532 = icmp eq i32 %531, 2
+  %533 = zext i1 %532 to i8
+  store i8 %533, i8* %42, align 1, !tbaa !2451
+  %534 = sext i32 %511 to i64
+  store i64 %534, i64* %RDX, align 8, !tbaa !2428
+  %535 = shl nsw i64 %534, 3
+  %536 = add i64 %506, 4
+  %537 = add i64 %536, %535
+  %538 = add i64 %384, 95
+  store i64 %538, i64* %PC, align 8
+  %539 = load <2 x float>, <2 x float>* %85, align 1
+  %540 = extractelement <2 x float> %539, i32 0
+  %541 = inttoptr i64 %537 to float*
+  store float %540, float* %541, align 4
+  %542 = load i64, i64* %RBP, align 8
+  %543 = add i64 %542, -140
+  %544 = load i64, i64* %PC, align 8
+  %545 = add i64 %544, 6
+  store i64 %545, i64* %PC, align 8
+  %546 = inttoptr i64 %543 to i32*
+  %547 = load i32, i32* %546, align 4
+  %548 = zext i32 %547 to i64
+  store i64 %548, i64* %RCX, align 8, !tbaa !2428
+  %549 = add i64 %542, -144
+  %550 = add i64 %544, 12
+  store i64 %550, i64* %PC, align 8
+  %551 = inttoptr i64 %549 to i32*
+  %552 = load i32, i32* %551, align 4
+  %553 = add i32 %552, %547
+  %554 = zext i32 %553 to i64
+  store i64 %554, i64* %RCX, align 8, !tbaa !2428
+  %555 = icmp ult i32 %553, %547
+  %556 = icmp ult i32 %553, %552
+  %557 = or i1 %555, %556
+  %558 = zext i1 %557 to i8
+  store i8 %558, i8* %18, align 1, !tbaa !2434
+  %559 = and i32 %553, 255
+  %560 = tail call i32 @llvm.ctpop.i32(i32 %559) #8
+  %561 = trunc i32 %560 to i8
+  %562 = and i8 %561, 1
+  %563 = xor i8 %562, 1
+  store i8 %563, i8* %25, align 1, !tbaa !2448
+  %564 = xor i32 %552, %547
+  %565 = xor i32 %564, %553
+  %566 = lshr i32 %565, 4
+  %567 = trunc i32 %566 to i8
+  %568 = and i8 %567, 1
+  store i8 %568, i8* %30, align 1, !tbaa !2452
+  %569 = icmp eq i32 %553, 0
+  %570 = zext i1 %569 to i8
+  store i8 %570, i8* %33, align 1, !tbaa !2449
+  %571 = lshr i32 %553, 31
+  %572 = trunc i32 %571 to i8
+  store i8 %572, i8* %36, align 1, !tbaa !2450
+  %573 = lshr i32 %547, 31
+  %574 = lshr i32 %552, 31
+  %575 = xor i32 %571, %573
+  %576 = xor i32 %571, %574
+  %577 = add nuw nsw i32 %575, %576
+  %578 = icmp eq i32 %577, 2
+  %579 = zext i1 %578 to i8
+  store i8 %579, i8* %42, align 1, !tbaa !2451
+  %580 = add i64 %544, 18
+  store i64 %580, i64* %PC, align 8
+  store i32 %553, i32* %546, align 4
+  %581 = load i64, i64* %RBP, align 8
+  %582 = add i64 %581, -140
+  %583 = load i64, i64* %PC, align 8
+  %584 = add i64 %583, 6
+  store i64 %584, i64* %PC, align 8
+  %585 = inttoptr i64 %582 to i32*
+  %586 = load i32, i32* %585, align 4
+  %587 = zext i32 %586 to i64
+  store i64 %587, i64* %RAX, align 8, !tbaa !2428
+  %588 = add i64 %581, -148
+  %589 = add i64 %583, 12
+  store i64 %589, i64* %PC, align 8
+  %590 = inttoptr i64 %588 to i32*
+  %591 = load i32, i32* %590, align 4
+  %592 = sub i32 %586, %591
+  %593 = icmp ult i32 %586, %591
+  %594 = zext i1 %593 to i8
+  store i8 %594, i8* %18, align 1, !tbaa !2434
+  %595 = and i32 %592, 255
+  %596 = tail call i32 @llvm.ctpop.i32(i32 %595) #8
+  %597 = trunc i32 %596 to i8
+  %598 = and i8 %597, 1
+  %599 = xor i8 %598, 1
+  store i8 %599, i8* %25, align 1, !tbaa !2448
+  %600 = xor i32 %591, %586
+  %601 = xor i32 %600, %592
+  %602 = lshr i32 %601, 4
+  %603 = trunc i32 %602 to i8
+  %604 = and i8 %603, 1
+  store i8 %604, i8* %30, align 1, !tbaa !2452
+  %605 = icmp eq i32 %592, 0
+  %606 = zext i1 %605 to i8
+  store i8 %606, i8* %33, align 1, !tbaa !2449
+  %607 = lshr i32 %592, 31
+  %608 = trunc i32 %607 to i8
+  store i8 %608, i8* %36, align 1, !tbaa !2450
+  %609 = lshr i32 %586, 31
+  %610 = lshr i32 %591, 31
+  %611 = xor i32 %610, %609
+  %612 = xor i32 %607, %609
+  %613 = add nuw nsw i32 %612, %611
+  %614 = icmp eq i32 %613, 2
+  %615 = zext i1 %614 to i8
+  store i8 %615, i8* %42, align 1, !tbaa !2451
+  %616 = icmp ne i8 %608, 0
+  %617 = xor i1 %616, %614
+  %618 = or i1 %605, %617
+  %.v18 = select i1 %618, i64 -205, i64 18
+  %619 = add i64 %583, %.v18
+  store i64 %619, i64* %PC, align 8, !tbaa !2428
+  br i1 %618, label %block_4008fb, label %block_4009da
 
 block_400a0e:                                     ; preds = %block_4009da
-  %636 = load i64, i64* %RSP, align 8
-  %637 = add i64 %636, 160
-  store i64 %637, i64* %RSP, align 8, !tbaa !2428
-  %638 = icmp ugt i64 %636, -161
-  %639 = zext i1 %638 to i8
-  store i8 %639, i8* %19, align 1, !tbaa !2434
-  %640 = trunc i64 %637 to i32
-  %641 = and i32 %640, 255
-  %642 = tail call i32 @llvm.ctpop.i32(i32 %641) #8
-  %643 = trunc i32 %642 to i8
-  %644 = and i8 %643, 1
-  %645 = xor i8 %644, 1
-  store i8 %645, i8* %26, align 1, !tbaa !2448
-  %646 = xor i64 %636, %637
-  %647 = lshr i64 %646, 4
-  %648 = trunc i64 %647 to i8
-  %649 = and i8 %648, 1
-  store i8 %649, i8* %31, align 1, !tbaa !2452
-  %650 = icmp eq i64 %637, 0
-  %651 = zext i1 %650 to i8
-  store i8 %651, i8* %34, align 1, !tbaa !2449
-  %652 = lshr i64 %637, 63
-  %653 = trunc i64 %652 to i8
-  store i8 %653, i8* %37, align 1, !tbaa !2450
-  %654 = lshr i64 %636, 63
-  %655 = xor i64 %652, %654
-  %656 = add nuw nsw i64 %655, %652
-  %657 = icmp eq i64 %656, 2
-  %658 = zext i1 %657 to i8
-  store i8 %658, i8* %43, align 1, !tbaa !2451
-  %659 = add i64 %199, 8
-  store i64 %659, i64* %PC, align 8
-  %660 = add i64 %636, 168
-  %661 = inttoptr i64 %637 to i64*
-  %662 = load i64, i64* %661, align 8
-  store i64 %662, i64* %RBP, align 8, !tbaa !2428
-  store i64 %660, i64* %11, align 8, !tbaa !2428
-  %663 = add i64 %199, 9
-  store i64 %663, i64* %PC, align 8
-  %664 = inttoptr i64 %660 to i64*
-  %665 = load i64, i64* %664, align 8
-  store i64 %665, i64* %95, align 8, !tbaa !2428
-  %666 = add i64 %636, 176
-  store i64 %666, i64* %11, align 8, !tbaa !2428
-  ret %struct.Memory* %153
+  %620 = load i64, i64* %RSP, align 8
+  %621 = add i64 %620, 160
+  store i64 %621, i64* %RSP, align 8, !tbaa !2428
+  %622 = icmp ugt i64 %620, -161
+  %623 = zext i1 %622 to i8
+  store i8 %623, i8* %18, align 1, !tbaa !2434
+  %624 = trunc i64 %621 to i32
+  %625 = and i32 %624, 255
+  %626 = tail call i32 @llvm.ctpop.i32(i32 %625) #8
+  %627 = trunc i32 %626 to i8
+  %628 = and i8 %627, 1
+  %629 = xor i8 %628, 1
+  store i8 %629, i8* %25, align 1, !tbaa !2448
+  %630 = xor i64 %620, %621
+  %631 = lshr i64 %630, 4
+  %632 = trunc i64 %631 to i8
+  %633 = and i8 %632, 1
+  store i8 %633, i8* %30, align 1, !tbaa !2452
+  %634 = icmp eq i64 %621, 0
+  %635 = zext i1 %634 to i8
+  store i8 %635, i8* %33, align 1, !tbaa !2449
+  %636 = lshr i64 %621, 63
+  %637 = trunc i64 %636 to i8
+  store i8 %637, i8* %36, align 1, !tbaa !2450
+  %638 = lshr i64 %620, 63
+  %639 = xor i64 %636, %638
+  %640 = add nuw nsw i64 %639, %636
+  %641 = icmp eq i64 %640, 2
+  %642 = zext i1 %641 to i8
+  store i8 %642, i8* %42, align 1, !tbaa !2451
+  %643 = add i64 %193, 8
+  store i64 %643, i64* %PC, align 8
+  %644 = add i64 %620, 168
+  %645 = inttoptr i64 %621 to i64*
+  %646 = load i64, i64* %645, align 8
+  store i64 %646, i64* %RBP, align 8, !tbaa !2428
+  store i64 %644, i64* %RSP, align 8, !tbaa !2428
+  %647 = add i64 %193, 9
+  store i64 %647, i64* %PC, align 8
+  %648 = inttoptr i64 %644 to i64*
+  %649 = load i64, i64* %648, align 8
+  store i64 %649, i64* %PC, align 8, !tbaa !2428
+  %650 = add i64 %620, 176
+  store i64 %650, i64* %RSP, align 8, !tbaa !2428
+  ret %struct.Memory* %147
 
 block_4008cd:                                     ; preds = %block_4009da, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
-  %667 = phi i64 [ %.pre9, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %170, %block_4009da ]
-  %668 = phi i64 [ %.pre8, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %199, %block_4009da ]
-  %MEMORY.2 = phi %struct.Memory* [ %918, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %153, %block_4009da ]
+  %651 = phi i64 [ %.pre9, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %164, %block_4009da ]
+  %652 = phi i64 [ %.pre8, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %193, %block_4009da ]
+  %MEMORY.2 = phi %struct.Memory* [ %890, %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit ], [ %147, %block_4009da ]
   store i64 2, i64* %RAX, align 8, !tbaa !2428
-  %669 = add i64 %667, -144
-  %670 = add i64 %668, 11
-  store i64 %670, i64* %PC, align 8
-  %671 = inttoptr i64 %669 to i32*
-  %672 = load i32, i32* %671, align 4
-  %673 = zext i32 %672 to i64
-  store i64 %673, i64* %RCX, align 8, !tbaa !2428
-  %674 = add i64 %667, -156
-  %675 = add i64 %668, 17
-  store i64 %675, i64* %PC, align 8
-  %676 = inttoptr i64 %674 to i32*
-  store i32 2, i32* %676, align 4
-  %677 = load i32, i32* %ECX, align 4
-  %678 = zext i32 %677 to i64
-  %679 = load i64, i64* %PC, align 8
-  store i64 %678, i64* %RAX, align 8, !tbaa !2428
-  %680 = sext i32 %677 to i64
-  %681 = lshr i64 %680, 32
-  store i64 %681, i64* %852, align 8, !tbaa !2428
-  %682 = load i64, i64* %RBP, align 8
-  %683 = add i64 %682, -156
-  %684 = add i64 %679, 9
-  store i64 %684, i64* %PC, align 8
-  %685 = inttoptr i64 %683 to i32*
-  %686 = load i32, i32* %685, align 4
-  %687 = zext i32 %686 to i64
-  store i64 %687, i64* %RCX, align 8, !tbaa !2428
-  %688 = add i64 %679, 11
-  store i64 %688, i64* %PC, align 8
-  %689 = zext i32 %677 to i64
-  %690 = sext i32 %686 to i64
-  %691 = shl nuw i64 %681, 32
-  %692 = or i64 %691, %689
-  %693 = sdiv i64 %692, %690
-  %694 = shl i64 %693, 32
-  %695 = ashr exact i64 %694, 32
-  %696 = icmp eq i64 %693, %695
-  br i1 %696, label %699, label %697
+  %653 = add i64 %651, -144
+  %654 = add i64 %652, 11
+  store i64 %654, i64* %PC, align 8
+  %655 = inttoptr i64 %653 to i32*
+  %656 = load i32, i32* %655, align 4
+  %657 = zext i32 %656 to i64
+  store i64 %657, i64* %RCX, align 8, !tbaa !2428
+  %658 = add i64 %651, -156
+  %659 = add i64 %652, 17
+  store i64 %659, i64* %PC, align 8
+  %660 = inttoptr i64 %658 to i32*
+  store i32 2, i32* %660, align 4
+  %661 = load i32, i32* %ECX, align 4
+  %662 = zext i32 %661 to i64
+  %663 = load i64, i64* %PC, align 8
+  store i64 %662, i64* %RAX, align 8, !tbaa !2428
+  %664 = sext i32 %661 to i64
+  %665 = lshr i64 %664, 32
+  store i64 %665, i64* %RDX, align 8, !tbaa !2428
+  %666 = load i64, i64* %RBP, align 8
+  %667 = add i64 %666, -156
+  %668 = add i64 %663, 9
+  store i64 %668, i64* %PC, align 8
+  %669 = inttoptr i64 %667 to i32*
+  %670 = load i32, i32* %669, align 4
+  %671 = zext i32 %670 to i64
+  store i64 %671, i64* %RCX, align 8, !tbaa !2428
+  %672 = add i64 %663, 11
+  store i64 %672, i64* %PC, align 8
+  %673 = sext i32 %670 to i64
+  %674 = shl nuw i64 %665, 32
+  %675 = or i64 %674, %662
+  %676 = sdiv i64 %675, %673
+  %677 = shl i64 %676, 32
+  %678 = ashr exact i64 %677, 32
+  %679 = icmp eq i64 %676, %678
+  br i1 %679, label %682, label %680
 
-; <label>:697:                                    ; preds = %block_4008cd
-  %698 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %688, %struct.Memory* %MEMORY.2) #9
+; <label>:680:                                    ; preds = %block_4008cd
+  %681 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %672, %struct.Memory* %MEMORY.2) #9
   %.pre10 = load i64, i64* %RBP, align 8
   %.pre11 = load i32, i32* %EAX, align 4
   %.pre12 = load i64, i64* %PC, align 8
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2
 
-; <label>:699:                                    ; preds = %block_4008cd
-  %700 = srem i64 %692, %690
-  %701 = and i64 %693, 4294967295
-  store i64 %701, i64* %.pre-phi, align 8, !tbaa !2428
-  %702 = and i64 %700, 4294967295
-  store i64 %702, i64* %.pre-phi17, align 8, !tbaa !2428
-  store i8 0, i8* %19, align 1, !tbaa !2434
-  store i8 0, i8* %26, align 1, !tbaa !2448
-  store i8 0, i8* %31, align 1, !tbaa !2452
-  store i8 0, i8* %34, align 1, !tbaa !2449
-  store i8 0, i8* %37, align 1, !tbaa !2450
-  store i8 0, i8* %43, align 1, !tbaa !2451
-  %703 = trunc i64 %693 to i32
+; <label>:682:                                    ; preds = %block_4008cd
+  %683 = srem i64 %675, %673
+  %684 = and i64 %676, 4294967295
+  store i64 %684, i64* %.pre-phi, align 8, !tbaa !2428
+  %685 = and i64 %683, 4294967295
+  store i64 %685, i64* %.pre-phi17, align 8, !tbaa !2428
+  store i8 0, i8* %18, align 1, !tbaa !2434
+  store i8 0, i8* %25, align 1, !tbaa !2448
+  store i8 0, i8* %30, align 1, !tbaa !2452
+  store i8 0, i8* %33, align 1, !tbaa !2449
+  store i8 0, i8* %36, align 1, !tbaa !2450
+  store i8 0, i8* %42, align 1, !tbaa !2451
+  %686 = trunc i64 %676 to i32
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2
 
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2: ; preds = %699, %697
-  %704 = phi i64 [ %.pre12, %697 ], [ %688, %699 ]
-  %705 = phi i32 [ %.pre11, %697 ], [ %703, %699 ]
-  %706 = phi i64 [ %.pre10, %697 ], [ %682, %699 ]
-  %707 = phi %struct.Memory* [ %698, %697 ], [ %MEMORY.2, %699 ]
-  %708 = add i64 %706, -132
-  %709 = add i64 %704, 6
-  store i64 %709, i64* %PC, align 8
-  %710 = inttoptr i64 %708 to i32*
-  store i32 %705, i32* %710, align 4
-  %711 = load i64, i64* %RBP, align 8
-  %712 = add i64 %711, -132
-  %713 = load i64, i64* %PC, align 8
-  %714 = add i64 %713, 6
-  store i64 %714, i64* %PC, align 8
-  %715 = inttoptr i64 %712 to i32*
-  %716 = load i32, i32* %715, align 4
-  %717 = zext i32 %716 to i64
-  store i64 %717, i64* %RAX, align 8, !tbaa !2428
-  %718 = add i64 %711, -140
-  %719 = add i64 %713, 12
-  store i64 %719, i64* %PC, align 8
-  %720 = inttoptr i64 %718 to i32*
-  store i32 %716, i32* %720, align 4
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit2: ; preds = %682, %680
+  %687 = phi i64 [ %.pre12, %680 ], [ %672, %682 ]
+  %688 = phi i32 [ %.pre11, %680 ], [ %686, %682 ]
+  %689 = phi i64 [ %.pre10, %680 ], [ %666, %682 ]
+  %690 = phi %struct.Memory* [ %681, %680 ], [ %MEMORY.2, %682 ]
+  %691 = add i64 %689, -132
+  %692 = add i64 %687, 6
+  store i64 %692, i64* %PC, align 8
+  %693 = inttoptr i64 %691 to i32*
+  store i32 %688, i32* %693, align 4
+  %694 = load i64, i64* %RBP, align 8
+  %695 = add i64 %694, -132
+  %696 = load i64, i64* %PC, align 8
+  %697 = add i64 %696, 6
+  store i64 %697, i64* %PC, align 8
+  %698 = inttoptr i64 %695 to i32*
+  %699 = load i32, i32* %698, align 4
+  %700 = zext i32 %699 to i64
+  store i64 %700, i64* %RAX, align 8, !tbaa !2428
+  %701 = add i64 %694, -140
+  %702 = add i64 %696, 12
+  store i64 %702, i64* %PC, align 8
+  %703 = inttoptr i64 %701 to i32*
+  store i32 %699, i32* %703, align 4
   %.pre13 = load i64, i64* %RBP, align 8
   %.pre14 = load i64, i64* %PC, align 8
   br label %block_4008fb
 
 block_4007c3:                                     ; preds = %block_4007b6
-  %721 = add i64 %201, -20
-  %722 = add i64 %230, 5
-  store i64 %722, i64* %PC, align 8
-  %723 = inttoptr i64 %721 to i32*
-  %724 = load i32, i32* %723, align 4
-  %725 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 %724, i32* %725, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %49, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %51, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
-  %726 = add i64 %201, -24
-  %727 = add i64 %230, 10
-  store i64 %727, i64* %PC, align 8
-  %728 = load <2 x float>, <2 x float>* %96, align 1
-  %729 = load <2 x i32>, <2 x i32>* %97, align 1
-  %730 = inttoptr i64 %726 to float*
-  %731 = load float, float* %730, align 4
-  %732 = extractelement <2 x float> %728, i32 0
-  %733 = fdiv float %732, %731
-  store float %733, float* %46, align 1, !tbaa !2432
-  %734 = bitcast <2 x float> %728 to <2 x i32>
-  %735 = extractelement <2 x i32> %734, i32 1
-  store i32 %735, i32* %98, align 1, !tbaa !2432
-  %736 = extractelement <2 x i32> %729, i32 0
-  store i32 %736, i32* %99, align 1, !tbaa !2432
-  %737 = extractelement <2 x i32> %729, i32 1
-  store i32 %737, i32* %100, align 1, !tbaa !2432
-  %738 = add i64 %230, -627
-  %739 = add i64 %230, 15
-  %740 = load i64, i64* %11, align 8, !tbaa !2428
-  %741 = add i64 %740, -8
-  %742 = inttoptr i64 %741 to i64*
-  store i64 %739, i64* %742, align 8
-  store i64 %741, i64* %11, align 8, !tbaa !2428
-  store i64 %738, i64* %95, align 8, !tbaa !2428
-  %743 = tail call %struct.Memory* @sub_400550_Cos_renamed_(%struct.State* nonnull %0, i64 %738, %struct.Memory* %MEMORY.0)
-  %744 = load i64, i64* %PC, align 8
-  %745 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 4) to i32*), align 4
-  %746 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %745, i32* %746, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %63, align 1, !tbaa !2432
-  %747 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 24) to i32*), align 8
-  %748 = bitcast %union.VectorReg* %8 to i32*
-  store i32 %747, i32* %748, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
-  %749 = load <2 x float>, <2 x float>* %109, align 1
-  %750 = load <2 x i32>, <2 x i32>* %110, align 1
-  %751 = load <2 x float>, <2 x float>* %86, align 1
-  %752 = extractelement <2 x float> %749, i32 0
-  %753 = extractelement <2 x float> %751, i32 0
-  %754 = fmul float %752, %753
-  store float %754, float* %102, align 1, !tbaa !2432
-  %755 = bitcast <2 x float> %749 to <2 x i32>
-  %756 = extractelement <2 x i32> %755, i32 1
-  store i32 %756, i32* %111, align 1, !tbaa !2432
-  %757 = extractelement <2 x i32> %750, i32 0
-  store i32 %757, i32* %112, align 1, !tbaa !2432
-  %758 = extractelement <2 x i32> %750, i32 1
-  store i32 %758, i32* %113, align 1, !tbaa !2432
-  %759 = load <2 x float>, <2 x float>* %114, align 1
-  %760 = load <2 x i32>, <2 x i32>* %115, align 1
-  %761 = load <2 x float>, <2 x float>* %116, align 1
-  %762 = extractelement <2 x float> %759, i32 0
-  %763 = extractelement <2 x float> %761, i32 0
-  %764 = fdiv float %762, %763
-  store float %764, float* %56, align 1, !tbaa !2432
-  %765 = bitcast <2 x float> %759 to <2 x i32>
-  %766 = extractelement <2 x i32> %765, i32 1
-  store i32 %766, i32* %117, align 1, !tbaa !2432
-  %767 = extractelement <2 x i32> %760, i32 0
-  store i32 %767, i32* %118, align 1, !tbaa !2432
-  %768 = extractelement <2 x i32> %760, i32 1
-  store i32 %768, i32* %119, align 1, !tbaa !2432
-  %769 = load i64, i64* %RBP, align 8
-  %770 = add i64 %769, -132
-  %771 = add i64 %744, 31
-  store i64 %771, i64* %PC, align 8
-  %772 = inttoptr i64 %770 to i32*
-  %773 = load i32, i32* %772, align 4
-  %774 = sext i32 %773 to i64
-  store i64 %774, i64* %RAX, align 8, !tbaa !2428
-  %775 = shl nsw i64 %774, 2
-  %776 = add i64 %769, -128
-  %777 = add i64 %776, %775
-  %778 = add i64 %744, 37
-  store i64 %778, i64* %PC, align 8
-  %779 = load <2 x float>, <2 x float>* %78, align 1
-  %780 = extractelement <2 x float> %779, i32 0
-  %781 = inttoptr i64 %777 to float*
-  store float %780, float* %781, align 4
-  %782 = load i64, i64* %RBP, align 8
-  %783 = add i64 %782, -24
-  %784 = load i64, i64* %PC, align 8
-  %785 = add i64 %784, 5
-  store i64 %785, i64* %PC, align 8
-  %786 = inttoptr i64 %783 to float*
-  %787 = inttoptr i64 %783 to i32*
+  %704 = add i64 %195, -20
+  %705 = add i64 %224, 5
+  store i64 %705, i64* %PC, align 8
+  %706 = inttoptr i64 %704 to i32*
+  %707 = load i32, i32* %706, align 4
+  store i32 %707, i32* %46, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %48, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %50, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %52, align 1, !tbaa !2432
+  %708 = add i64 %195, -24
+  %709 = add i64 %224, 10
+  store i64 %709, i64* %PC, align 8
+  %710 = load <2 x float>, <2 x float>* %85, align 1
+  %711 = load <2 x i32>, <2 x i32>* %94, align 1
+  %712 = inttoptr i64 %708 to float*
+  %713 = load float, float* %712, align 4
+  %714 = extractelement <2 x float> %710, i32 0
+  %715 = fdiv float %714, %713
+  store float %715, float* %45, align 1, !tbaa !2432
+  %716 = bitcast <2 x float> %710 to <2 x i32>
+  %717 = extractelement <2 x i32> %716, i32 1
+  store i32 %717, i32* %95, align 1, !tbaa !2432
+  %718 = extractelement <2 x i32> %711, i32 0
+  store i32 %718, i32* %96, align 1, !tbaa !2432
+  %719 = extractelement <2 x i32> %711, i32 1
+  store i32 %719, i32* %97, align 1, !tbaa !2432
+  %720 = add i64 %224, -627
+  %721 = add i64 %224, 15
+  %722 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %723 = add i64 %722, -8
+  %724 = inttoptr i64 %723 to i64*
+  store i64 %721, i64* %724, align 8
+  store i64 %723, i64* %RSP, align 8, !tbaa !2428
+  store i64 %720, i64* %PC, align 8, !tbaa !2428
+  %725 = tail call %struct.Memory* @sub_400550_Cos_renamed_(%struct.State* nonnull %0, i64 %720, %struct.Memory* %MEMORY.0)
+  %726 = load i64, i64* %PC, align 8
+  %727 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 4) to i32*), align 4
+  store i32 %727, i32* %56, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %58, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %60, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %62, align 1, !tbaa !2432
+  %728 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 24) to i32*), align 8
+  %729 = bitcast %union.VectorReg* %8 to i32*
+  store i32 %728, i32* %729, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %101, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %103, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %105, align 1, !tbaa !2432
+  %730 = load <2 x float>, <2 x float>* %106, align 1
+  %731 = load <2 x i32>, <2 x i32>* %107, align 1
+  %732 = load <2 x float>, <2 x float>* %85, align 1
+  %733 = extractelement <2 x float> %730, i32 0
+  %734 = extractelement <2 x float> %732, i32 0
+  %735 = fmul float %733, %734
+  store float %735, float* %99, align 1, !tbaa !2432
+  %736 = bitcast <2 x float> %730 to <2 x i32>
+  %737 = extractelement <2 x i32> %736, i32 1
+  store i32 %737, i32* %108, align 1, !tbaa !2432
+  %738 = extractelement <2 x i32> %731, i32 0
+  store i32 %738, i32* %109, align 1, !tbaa !2432
+  %739 = extractelement <2 x i32> %731, i32 1
+  store i32 %739, i32* %110, align 1, !tbaa !2432
+  %740 = load <2 x float>, <2 x float>* %77, align 1
+  %741 = load <2 x i32>, <2 x i32>* %111, align 1
+  %742 = load <2 x float>, <2 x float>* %106, align 1
+  %743 = extractelement <2 x float> %740, i32 0
+  %744 = extractelement <2 x float> %742, i32 0
+  %745 = fdiv float %743, %744
+  store float %745, float* %55, align 1, !tbaa !2432
+  %746 = bitcast <2 x float> %740 to <2 x i32>
+  %747 = extractelement <2 x i32> %746, i32 1
+  store i32 %747, i32* %112, align 1, !tbaa !2432
+  %748 = extractelement <2 x i32> %741, i32 0
+  store i32 %748, i32* %113, align 1, !tbaa !2432
+  %749 = extractelement <2 x i32> %741, i32 1
+  store i32 %749, i32* %114, align 1, !tbaa !2432
+  %750 = load i64, i64* %RBP, align 8
+  %751 = add i64 %750, -132
+  %752 = add i64 %726, 31
+  store i64 %752, i64* %PC, align 8
+  %753 = inttoptr i64 %751 to i32*
+  %754 = load i32, i32* %753, align 4
+  %755 = sext i32 %754 to i64
+  store i64 %755, i64* %RAX, align 8, !tbaa !2428
+  %756 = shl nsw i64 %755, 2
+  %757 = add i64 %750, -128
+  %758 = add i64 %757, %756
+  %759 = add i64 %726, 37
+  store i64 %759, i64* %PC, align 8
+  %760 = load <2 x float>, <2 x float>* %77, align 1
+  %761 = extractelement <2 x float> %760, i32 0
+  %762 = inttoptr i64 %758 to float*
+  store float %761, float* %762, align 4
+  %763 = load i64, i64* %RBP, align 8
+  %764 = add i64 %763, -24
+  %765 = load i64, i64* %PC, align 8
+  %766 = add i64 %765, 5
+  store i64 %766, i64* %PC, align 8
+  %767 = inttoptr i64 %764 to float*
+  %768 = inttoptr i64 %764 to i32*
+  %769 = load i32, i32* %768, align 4
+  store i32 %769, i32* %46, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %48, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %50, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %52, align 1, !tbaa !2432
+  %770 = add i64 %765, 10
+  store i64 %770, i64* %PC, align 8
+  %771 = load <2 x float>, <2 x float>* %85, align 1
+  %772 = load <2 x i32>, <2 x i32>* %94, align 1
+  %773 = load float, float* %767, align 4
+  %774 = extractelement <2 x float> %771, i32 0
+  %775 = fadd float %774, %773
+  store float %775, float* %45, align 1, !tbaa !2432
+  %776 = bitcast <2 x float> %771 to <2 x i32>
+  %777 = extractelement <2 x i32> %776, i32 1
+  store i32 %777, i32* %95, align 1, !tbaa !2432
+  %778 = extractelement <2 x i32> %772, i32 0
+  store i32 %778, i32* %96, align 1, !tbaa !2432
+  %779 = extractelement <2 x i32> %772, i32 1
+  store i32 %779, i32* %97, align 1, !tbaa !2432
+  %780 = add i64 %765, 15
+  store i64 %780, i64* %PC, align 8
+  %781 = load <2 x float>, <2 x float>* %85, align 1
+  %782 = extractelement <2 x float> %781, i32 0
+  store float %782, float* %767, align 4
+  %783 = load i64, i64* %RBP, align 8
+  %784 = add i64 %783, -132
+  %785 = load i64, i64* %PC, align 8
+  %786 = add i64 %785, 6
+  store i64 %786, i64* %PC, align 8
+  %787 = inttoptr i64 %784 to i32*
   %788 = load i32, i32* %787, align 4
-  %789 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 %788, i32* %789, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %49, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %51, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %53, align 1, !tbaa !2432
-  %790 = add i64 %784, 10
-  store i64 %790, i64* %PC, align 8
-  %791 = load <2 x float>, <2 x float>* %96, align 1
-  %792 = load <2 x i32>, <2 x i32>* %97, align 1
-  %793 = load float, float* %786, align 4
-  %794 = extractelement <2 x float> %791, i32 0
-  %795 = fadd float %794, %793
-  store float %795, float* %46, align 1, !tbaa !2432
-  %796 = bitcast <2 x float> %791 to <2 x i32>
-  %797 = extractelement <2 x i32> %796, i32 1
-  store i32 %797, i32* %98, align 1, !tbaa !2432
-  %798 = extractelement <2 x i32> %792, i32 0
-  store i32 %798, i32* %99, align 1, !tbaa !2432
-  %799 = extractelement <2 x i32> %792, i32 1
-  store i32 %799, i32* %100, align 1, !tbaa !2432
-  %800 = add i64 %784, 15
-  store i64 %800, i64* %PC, align 8
-  %801 = load <2 x float>, <2 x float>* %86, align 1
-  %802 = extractelement <2 x float> %801, i32 0
-  store float %802, float* %786, align 4
-  %803 = load i64, i64* %RBP, align 8
-  %804 = add i64 %803, -132
-  %805 = load i64, i64* %PC, align 8
-  %806 = add i64 %805, 6
-  store i64 %806, i64* %PC, align 8
-  %807 = inttoptr i64 %804 to i32*
-  %808 = load i32, i32* %807, align 4
-  %809 = add i32 %808, 1
-  %810 = zext i32 %809 to i64
-  store i64 %810, i64* %RAX, align 8, !tbaa !2428
-  %811 = icmp eq i32 %808, -1
-  %812 = icmp eq i32 %809, 0
-  %813 = or i1 %811, %812
-  %814 = zext i1 %813 to i8
-  store i8 %814, i8* %19, align 1, !tbaa !2434
-  %815 = and i32 %809, 255
-  %816 = tail call i32 @llvm.ctpop.i32(i32 %815) #8
-  %817 = trunc i32 %816 to i8
-  %818 = and i8 %817, 1
-  %819 = xor i8 %818, 1
-  store i8 %819, i8* %26, align 1, !tbaa !2448
-  %820 = xor i32 %808, %809
-  %821 = lshr i32 %820, 4
-  %822 = trunc i32 %821 to i8
-  %823 = and i8 %822, 1
-  store i8 %823, i8* %31, align 1, !tbaa !2452
-  %824 = icmp eq i32 %809, 0
-  %825 = zext i1 %824 to i8
-  store i8 %825, i8* %34, align 1, !tbaa !2449
-  %826 = lshr i32 %809, 31
-  %827 = trunc i32 %826 to i8
-  store i8 %827, i8* %37, align 1, !tbaa !2450
-  %828 = lshr i32 %808, 31
-  %829 = xor i32 %826, %828
-  %830 = add nuw nsw i32 %829, %826
-  %831 = icmp eq i32 %830, 2
-  %832 = zext i1 %831 to i8
-  store i8 %832, i8* %43, align 1, !tbaa !2451
-  %833 = add i64 %805, 15
-  store i64 %833, i64* %PC, align 8
-  store i32 %809, i32* %807, align 4
-  %834 = load i64, i64* %PC, align 8
-  %835 = add i64 %834, -95
-  store i64 %835, i64* %95, align 8, !tbaa !2428
+  %789 = add i32 %788, 1
+  %790 = zext i32 %789 to i64
+  store i64 %790, i64* %RAX, align 8, !tbaa !2428
+  %791 = icmp eq i32 %788, -1
+  %792 = icmp eq i32 %789, 0
+  %793 = or i1 %791, %792
+  %794 = zext i1 %793 to i8
+  store i8 %794, i8* %18, align 1, !tbaa !2434
+  %795 = and i32 %789, 255
+  %796 = tail call i32 @llvm.ctpop.i32(i32 %795) #8
+  %797 = trunc i32 %796 to i8
+  %798 = and i8 %797, 1
+  %799 = xor i8 %798, 1
+  store i8 %799, i8* %25, align 1, !tbaa !2448
+  %800 = xor i32 %788, %789
+  %801 = lshr i32 %800, 4
+  %802 = trunc i32 %801 to i8
+  %803 = and i8 %802, 1
+  store i8 %803, i8* %30, align 1, !tbaa !2452
+  %804 = zext i1 %792 to i8
+  store i8 %804, i8* %33, align 1, !tbaa !2449
+  %805 = lshr i32 %789, 31
+  %806 = trunc i32 %805 to i8
+  store i8 %806, i8* %36, align 1, !tbaa !2450
+  %807 = lshr i32 %788, 31
+  %808 = xor i32 %805, %807
+  %809 = add nuw nsw i32 %808, %805
+  %810 = icmp eq i32 %809, 2
+  %811 = zext i1 %810 to i8
+  store i8 %811, i8* %42, align 1, !tbaa !2451
+  %812 = add i64 %785, 15
+  store i64 %812, i64* %PC, align 8
+  store i32 %789, i32* %787, align 4
+  %813 = load i64, i64* %PC, align 8
+  %814 = add i64 %813, -95
+  store i64 %814, i64* %PC, align 8, !tbaa !2428
   br label %block_4007b6
 
 block_40081a:                                     ; preds = %block_4007b6
-  %836 = bitcast [32 x %union.VectorReg]* %6 to i32*
-  store i32 0, i32* %836, align 1, !tbaa !2456
-  store i32 0, i32* %98, align 1, !tbaa !2456
-  store i32 0, i32* %99, align 1, !tbaa !2456
-  store i32 0, i32* %100, align 1, !tbaa !2456
-  %837 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 20) to i32*), align 4
-  %838 = bitcast %union.VectorReg* %7 to i32*
-  store i32 %837, i32* %838, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %59, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %61, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %63, align 1, !tbaa !2432
-  %839 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 4) to i32*), align 4
-  %840 = bitcast %union.VectorReg* %8 to i32*
-  store i32 %839, i32* %840, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %104, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %106, align 1, !tbaa !2432
-  store float 0.000000e+00, float* %108, align 1, !tbaa !2432
+  store i32 0, i32* %46, align 1, !tbaa !2456
+  store i32 0, i32* %95, align 1, !tbaa !2456
+  store i32 0, i32* %96, align 1, !tbaa !2456
+  store i32 0, i32* %97, align 1, !tbaa !2456
+  %815 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 20) to i32*), align 4
+  store i32 %815, i32* %56, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %58, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %60, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %62, align 1, !tbaa !2432
+  %816 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%seg_400ee0__rodata_type* @seg_400ee0__rodata to i64), i64 4) to i32*), align 4
+  %817 = bitcast %union.VectorReg* %8 to i32*
+  store i32 %816, i32* %817, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %101, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %103, align 1, !tbaa !2432
+  store float 0.000000e+00, float* %105, align 1, !tbaa !2432
   store i64 2, i64* %RAX, align 8, !tbaa !2428
-  %841 = add i64 %201, -4
-  %842 = add i64 %230, 27
-  store i64 %842, i64* %PC, align 8
-  %843 = inttoptr i64 %841 to i32*
-  %844 = load i32, i32* %843, align 4
-  %845 = zext i32 %844 to i64
-  store i64 %845, i64* %RCX, align 8, !tbaa !2428
-  %846 = add i64 %201, -152
-  %847 = add i64 %230, 33
-  store i64 %847, i64* %PC, align 8
-  %848 = inttoptr i64 %846 to i32*
-  store i32 2, i32* %848, align 4
-  %849 = load i32, i32* %ECX, align 4
-  %850 = zext i32 %849 to i64
-  %851 = load i64, i64* %PC, align 8
-  store i64 %850, i64* %RAX, align 8, !tbaa !2428
-  %852 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  %853 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0
-  %854 = sext i32 %849 to i64
-  %855 = lshr i64 %854, 32
-  store i64 %855, i64* %852, align 8, !tbaa !2428
-  %856 = load i64, i64* %RBP, align 8
-  %857 = add i64 %856, -152
-  %858 = add i64 %851, 9
-  store i64 %858, i64* %PC, align 8
-  %859 = inttoptr i64 %857 to i32*
-  %860 = load i32, i32* %859, align 4
-  %861 = zext i32 %860 to i64
-  store i64 %861, i64* %RCX, align 8, !tbaa !2428
-  %862 = add i64 %851, 11
-  store i64 %862, i64* %PC, align 8
-  %863 = zext i32 %849 to i64
-  %864 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
-  %865 = sext i32 %860 to i64
-  %866 = shl nuw i64 %855, 32
-  %867 = or i64 %866, %863
-  %868 = sdiv i64 %867, %865
-  %869 = shl i64 %868, 32
-  %870 = ashr exact i64 %869, 32
-  %871 = icmp eq i64 %868, %870
-  br i1 %871, label %874, label %872
+  %818 = add i64 %195, -4
+  %819 = add i64 %224, 27
+  store i64 %819, i64* %PC, align 8
+  %820 = inttoptr i64 %818 to i32*
+  %821 = load i32, i32* %820, align 4
+  %822 = zext i32 %821 to i64
+  store i64 %822, i64* %RCX, align 8, !tbaa !2428
+  %823 = add i64 %195, -152
+  %824 = add i64 %224, 33
+  store i64 %824, i64* %PC, align 8
+  %825 = inttoptr i64 %823 to i32*
+  store i32 2, i32* %825, align 4
+  %826 = load i32, i32* %ECX, align 4
+  %827 = zext i32 %826 to i64
+  %828 = load i64, i64* %PC, align 8
+  store i64 %827, i64* %RAX, align 8, !tbaa !2428
+  %829 = sext i32 %826 to i64
+  %830 = lshr i64 %829, 32
+  store i64 %830, i64* %RDX, align 8, !tbaa !2428
+  %831 = load i64, i64* %RBP, align 8
+  %832 = add i64 %831, -152
+  %833 = add i64 %828, 9
+  store i64 %833, i64* %PC, align 8
+  %834 = inttoptr i64 %832 to i32*
+  %835 = load i32, i32* %834, align 4
+  %836 = zext i32 %835 to i64
+  store i64 %836, i64* %RCX, align 8, !tbaa !2428
+  %837 = add i64 %828, 11
+  store i64 %837, i64* %PC, align 8
+  %838 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0
+  %839 = sext i32 %835 to i64
+  %840 = shl nuw i64 %830, 32
+  %841 = or i64 %840, %827
+  %842 = sdiv i64 %841, %839
+  %843 = shl i64 %842, 32
+  %844 = ashr exact i64 %843, 32
+  %845 = icmp eq i64 %842, %844
+  br i1 %845, label %848, label %846
 
-; <label>:872:                                    ; preds = %block_40081a
-  %873 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %862, %struct.Memory* %MEMORY.0) #9
+; <label>:846:                                    ; preds = %block_40081a
+  %847 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %837, %struct.Memory* %MEMORY.0) #9
   %.pre2 = load i64, i64* %RBP, align 8
   %.pre3 = load i32, i32* %EAX, align 4
   %.pre4 = load i64, i64* %PC, align 8
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
 
-; <label>:874:                                    ; preds = %block_40081a
-  %875 = srem i64 %867, %865
-  %876 = getelementptr inbounds %union.anon, %union.anon* %853, i64 0, i32 0
-  %877 = and i64 %868, 4294967295
-  store i64 %877, i64* %876, align 8, !tbaa !2428
-  %878 = getelementptr inbounds %union.anon, %union.anon* %864, i64 0, i32 0
-  %879 = and i64 %875, 4294967295
-  store i64 %879, i64* %878, align 8, !tbaa !2428
-  store i8 0, i8* %19, align 1, !tbaa !2434
-  store i8 0, i8* %26, align 1, !tbaa !2448
-  store i8 0, i8* %31, align 1, !tbaa !2452
-  store i8 0, i8* %34, align 1, !tbaa !2449
-  store i8 0, i8* %37, align 1, !tbaa !2450
-  store i8 0, i8* %43, align 1, !tbaa !2451
-  %880 = trunc i64 %868 to i32
+; <label>:848:                                    ; preds = %block_40081a
+  %849 = srem i64 %841, %839
+  %850 = and i64 %842, 4294967295
+  store i64 %850, i64* %RAX, align 8, !tbaa !2428
+  %851 = getelementptr inbounds %union.anon, %union.anon* %838, i64 0, i32 0
+  %852 = and i64 %849, 4294967295
+  store i64 %852, i64* %851, align 8, !tbaa !2428
+  store i8 0, i8* %18, align 1, !tbaa !2434
+  store i8 0, i8* %25, align 1, !tbaa !2448
+  store i8 0, i8* %30, align 1, !tbaa !2452
+  store i8 0, i8* %33, align 1, !tbaa !2449
+  store i8 0, i8* %36, align 1, !tbaa !2450
+  store i8 0, i8* %42, align 1, !tbaa !2451
+  %853 = trunc i64 %842 to i32
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
 
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1: ; preds = %874, %872
-  %881 = phi i64 [ %.pre4, %872 ], [ %862, %874 ]
-  %882 = phi i32 [ %.pre3, %872 ], [ %880, %874 ]
-  %883 = phi i64 [ %.pre2, %872 ], [ %856, %874 ]
-  %884 = phi %struct.Memory* [ %873, %872 ], [ %MEMORY.0, %874 ]
-  %885 = add i64 %883, -148
-  %886 = add i64 %881, 6
-  store i64 %886, i64* %PC, align 8
-  %887 = inttoptr i64 %885 to i32*
-  store i32 %882, i32* %887, align 4
-  %888 = load i64, i64* %RBP, align 8
-  %889 = add i64 %888, -148
-  %890 = load i64, i64* %PC, align 8
-  %891 = add i64 %890, 6
-  store i64 %891, i64* %PC, align 8
-  %892 = inttoptr i64 %889 to i32*
-  %893 = load i32, i32* %892, align 4
-  %894 = zext i32 %893 to i64
-  store i64 %894, i64* %RAX, align 8, !tbaa !2428
-  %895 = sext i32 %893 to i64
-  %896 = lshr i64 %895, 32
-  store i64 %896, i64* %852, align 8, !tbaa !2428
-  %897 = load i32, i32* %ECX, align 4
-  %898 = add i64 %890, 9
-  store i64 %898, i64* %PC, align 8
-  %899 = sext i32 %897 to i64
-  %900 = shl nuw i64 %896, 32
-  %901 = or i64 %900, %894
-  %902 = sdiv i64 %901, %899
-  %903 = shl i64 %902, 32
-  %904 = ashr exact i64 %903, 32
-  %905 = icmp eq i64 %902, %904
-  br i1 %905, label %908, label %906
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1: ; preds = %848, %846
+  %854 = phi i64 [ %.pre4, %846 ], [ %837, %848 ]
+  %855 = phi i32 [ %.pre3, %846 ], [ %853, %848 ]
+  %856 = phi i64 [ %.pre2, %846 ], [ %831, %848 ]
+  %857 = phi %struct.Memory* [ %847, %846 ], [ %MEMORY.0, %848 ]
+  %858 = add i64 %856, -148
+  %859 = add i64 %854, 6
+  store i64 %859, i64* %PC, align 8
+  %860 = inttoptr i64 %858 to i32*
+  store i32 %855, i32* %860, align 4
+  %861 = load i64, i64* %RBP, align 8
+  %862 = add i64 %861, -148
+  %863 = load i64, i64* %PC, align 8
+  %864 = add i64 %863, 6
+  store i64 %864, i64* %PC, align 8
+  %865 = inttoptr i64 %862 to i32*
+  %866 = load i32, i32* %865, align 4
+  %867 = zext i32 %866 to i64
+  store i64 %867, i64* %RAX, align 8, !tbaa !2428
+  %868 = sext i32 %866 to i64
+  %869 = lshr i64 %868, 32
+  store i64 %869, i64* %RDX, align 8, !tbaa !2428
+  %870 = load i32, i32* %ECX, align 4
+  %871 = add i64 %863, 9
+  store i64 %871, i64* %PC, align 8
+  %872 = sext i32 %870 to i64
+  %873 = shl nuw i64 %869, 32
+  %874 = or i64 %873, %867
+  %875 = sdiv i64 %874, %872
+  %876 = shl i64 %875, 32
+  %877 = ashr exact i64 %876, 32
+  %878 = icmp eq i64 %875, %877
+  br i1 %878, label %881, label %879
 
-; <label>:906:                                    ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
-  %907 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %898, %struct.Memory* %884) #9
+; <label>:879:                                    ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
+  %880 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %871, %struct.Memory* %857) #9
   %.pre5 = load i64, i64* %RBP, align 8
   %.pre6 = load i32, i32* %EAX, align 4
   %.pre7 = load i64, i64* %PC, align 8
-  %.pre15 = getelementptr inbounds %union.anon, %union.anon* %853, i64 0, i32 0
-  %.pre16 = getelementptr inbounds %union.anon, %union.anon* %864, i64 0, i32 0
+  %.pre16 = getelementptr inbounds %union.anon, %union.anon* %838, i64 0, i32 0
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-; <label>:908:                                    ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
-  %909 = srem i64 %901, %899
-  %910 = getelementptr inbounds %union.anon, %union.anon* %853, i64 0, i32 0
-  %911 = and i64 %902, 4294967295
-  store i64 %911, i64* %910, align 8, !tbaa !2428
-  %912 = getelementptr inbounds %union.anon, %union.anon* %864, i64 0, i32 0
-  %913 = and i64 %909, 4294967295
-  store i64 %913, i64* %912, align 8, !tbaa !2428
-  store i8 0, i8* %19, align 1, !tbaa !2434
-  store i8 0, i8* %26, align 1, !tbaa !2448
-  store i8 0, i8* %31, align 1, !tbaa !2452
-  store i8 0, i8* %34, align 1, !tbaa !2449
-  store i8 0, i8* %37, align 1, !tbaa !2450
-  store i8 0, i8* %43, align 1, !tbaa !2451
-  %914 = trunc i64 %902 to i32
+; <label>:881:                                    ; preds = %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit1
+  %882 = srem i64 %874, %872
+  %883 = and i64 %875, 4294967295
+  store i64 %883, i64* %RAX, align 8, !tbaa !2428
+  %884 = getelementptr inbounds %union.anon, %union.anon* %838, i64 0, i32 0
+  %885 = and i64 %882, 4294967295
+  store i64 %885, i64* %884, align 8, !tbaa !2428
+  store i8 0, i8* %18, align 1, !tbaa !2434
+  store i8 0, i8* %25, align 1, !tbaa !2448
+  store i8 0, i8* %30, align 1, !tbaa !2452
+  store i8 0, i8* %33, align 1, !tbaa !2449
+  store i8 0, i8* %36, align 1, !tbaa !2450
+  store i8 0, i8* %42, align 1, !tbaa !2451
+  %886 = trunc i64 %875 to i32
   br label %_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit
 
-_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %908, %906
-  %.pre-phi17 = phi i64* [ %912, %908 ], [ %.pre16, %906 ]
-  %.pre-phi = phi i64* [ %910, %908 ], [ %.pre15, %906 ]
-  %915 = phi i64 [ %898, %908 ], [ %.pre7, %906 ]
-  %916 = phi i32 [ %914, %908 ], [ %.pre6, %906 ]
-  %917 = phi i64 [ %888, %908 ], [ %.pre5, %906 ]
-  %918 = phi %struct.Memory* [ %884, %908 ], [ %907, %906 ]
-  %919 = add i64 %917, -144
-  %920 = add i64 %915, 6
-  store i64 %920, i64* %PC, align 8
-  %921 = inttoptr i64 %919 to i32*
-  store i32 %916, i32* %921, align 4
-  %922 = load i64, i64* %RBP, align 8
-  %923 = add i64 %922, -136
-  %924 = load i64, i64* %PC, align 8
-  %925 = add i64 %924, 10
-  store i64 %925, i64* %PC, align 8
-  %926 = inttoptr i64 %923 to i32*
-  store i32 1, i32* %926, align 4
-  %927 = load i64, i64* %RBP, align 8
-  %928 = add i64 %927, -16
-  %929 = load i64, i64* %PC, align 8
-  %930 = add i64 %929, 4
-  store i64 %930, i64* %PC, align 8
-  %931 = inttoptr i64 %928 to i64*
-  %932 = load i64, i64* %931, align 8
-  store i64 %932, i64* %RSI, align 8, !tbaa !2428
-  %933 = add i64 %932, 8
-  %934 = add i64 %929, 9
-  store i64 %934, i64* %PC, align 8
-  %935 = load <2 x float>, <2 x float>* %116, align 1
-  %936 = extractelement <2 x float> %935, i32 0
-  %937 = inttoptr i64 %933 to float*
-  store float %936, float* %937, align 4
-  %938 = load i64, i64* %RBP, align 8
-  %939 = add i64 %938, -16
-  %940 = load i64, i64* %PC, align 8
-  %941 = add i64 %940, 4
-  store i64 %941, i64* %PC, align 8
-  %942 = inttoptr i64 %939 to i64*
-  %943 = load i64, i64* %942, align 8
-  store i64 %943, i64* %RSI, align 8, !tbaa !2428
-  %944 = add i64 %943, 12
-  %945 = add i64 %940, 9
-  store i64 %945, i64* %PC, align 8
-  %946 = load <2 x float>, <2 x float>* %86, align 1
-  %947 = extractelement <2 x float> %946, i32 0
-  %948 = inttoptr i64 %944 to float*
-  store float %947, float* %948, align 4
-  %949 = load i64, i64* %RBP, align 8
-  %950 = add i64 %949, -16
-  %951 = load i64, i64* %PC, align 8
-  %952 = add i64 %951, 4
-  store i64 %952, i64* %PC, align 8
-  %953 = inttoptr i64 %950 to i64*
-  %954 = load i64, i64* %953, align 8
-  store i64 %954, i64* %RSI, align 8, !tbaa !2428
-  %955 = add i64 %949, -144
-  %956 = add i64 %951, 10
-  store i64 %956, i64* %PC, align 8
-  %957 = inttoptr i64 %955 to i32*
-  %958 = load i32, i32* %957, align 4
-  %959 = add i32 %958, 1
-  %960 = zext i32 %959 to i64
-  store i64 %960, i64* %RAX, align 8, !tbaa !2428
-  %961 = icmp eq i32 %958, -1
-  %962 = icmp eq i32 %959, 0
-  %963 = or i1 %961, %962
-  %964 = zext i1 %963 to i8
-  store i8 %964, i8* %19, align 1, !tbaa !2434
-  %965 = and i32 %959, 255
-  %966 = tail call i32 @llvm.ctpop.i32(i32 %965) #8
-  %967 = trunc i32 %966 to i8
-  %968 = and i8 %967, 1
-  %969 = xor i8 %968, 1
-  store i8 %969, i8* %26, align 1, !tbaa !2448
-  %970 = xor i32 %958, %959
-  %971 = lshr i32 %970, 4
-  %972 = trunc i32 %971 to i8
-  %973 = and i8 %972, 1
-  store i8 %973, i8* %31, align 1, !tbaa !2452
-  %974 = icmp eq i32 %959, 0
-  %975 = zext i1 %974 to i8
-  store i8 %975, i8* %34, align 1, !tbaa !2449
-  %976 = lshr i32 %959, 31
-  %977 = trunc i32 %976 to i8
-  store i8 %977, i8* %37, align 1, !tbaa !2450
-  %978 = lshr i32 %958, 31
-  %979 = xor i32 %976, %978
-  %980 = add nuw nsw i32 %979, %976
-  %981 = icmp eq i32 %980, 2
-  %982 = zext i1 %981 to i8
-  store i8 %982, i8* %43, align 1, !tbaa !2451
-  %983 = sext i32 %959 to i64
-  store i64 %983, i64* %RDI, align 8, !tbaa !2428
-  %984 = shl nsw i64 %983, 3
-  %985 = add i64 %984, %954
-  %986 = add i64 %951, 21
-  store i64 %986, i64* %PC, align 8
-  %987 = load <2 x float>, <2 x float>* %86, align 1
-  %988 = extractelement <2 x float> %987, i32 0
-  %989 = inttoptr i64 %985 to float*
-  store float %988, float* %989, align 4
-  %990 = load i64, i64* %RBP, align 8
-  %991 = add i64 %990, -16
-  %992 = load i64, i64* %PC, align 8
-  %993 = add i64 %992, 4
-  store i64 %993, i64* %PC, align 8
-  %994 = inttoptr i64 %991 to i64*
-  %995 = load i64, i64* %994, align 8
-  store i64 %995, i64* %RSI, align 8, !tbaa !2428
-  %996 = add i64 %990, -144
-  %997 = add i64 %992, 10
-  store i64 %997, i64* %PC, align 8
-  %998 = inttoptr i64 %996 to i32*
-  %999 = load i32, i32* %998, align 4
-  %1000 = add i32 %999, 1
-  %1001 = zext i32 %1000 to i64
-  store i64 %1001, i64* %RAX, align 8, !tbaa !2428
-  %1002 = icmp eq i32 %999, -1
-  %1003 = icmp eq i32 %1000, 0
-  %1004 = or i1 %1002, %1003
-  %1005 = zext i1 %1004 to i8
-  store i8 %1005, i8* %19, align 1, !tbaa !2434
-  %1006 = and i32 %1000, 255
-  %1007 = tail call i32 @llvm.ctpop.i32(i32 %1006) #8
-  %1008 = trunc i32 %1007 to i8
-  %1009 = and i8 %1008, 1
-  %1010 = xor i8 %1009, 1
-  store i8 %1010, i8* %26, align 1, !tbaa !2448
-  %1011 = xor i32 %999, %1000
-  %1012 = lshr i32 %1011, 4
-  %1013 = trunc i32 %1012 to i8
-  %1014 = and i8 %1013, 1
-  store i8 %1014, i8* %31, align 1, !tbaa !2452
-  %1015 = icmp eq i32 %1000, 0
-  %1016 = zext i1 %1015 to i8
-  store i8 %1016, i8* %34, align 1, !tbaa !2449
-  %1017 = lshr i32 %1000, 31
-  %1018 = trunc i32 %1017 to i8
-  store i8 %1018, i8* %37, align 1, !tbaa !2450
-  %1019 = lshr i32 %999, 31
-  %1020 = xor i32 %1017, %1019
-  %1021 = add nuw nsw i32 %1020, %1017
-  %1022 = icmp eq i32 %1021, 2
-  %1023 = zext i1 %1022 to i8
-  store i8 %1023, i8* %43, align 1, !tbaa !2451
-  %1024 = sext i32 %1000 to i64
-  store i64 %1024, i64* %RDI, align 8, !tbaa !2428
-  %1025 = shl nsw i64 %1024, 3
-  %1026 = add i64 %995, 4
-  %1027 = add i64 %1026, %1025
-  %1028 = add i64 %992, 22
-  store i64 %1028, i64* %PC, align 8
-  %1029 = load <2 x float>, <2 x float>* %116, align 1
-  %1030 = extractelement <2 x float> %1029, i32 0
-  %1031 = inttoptr i64 %1027 to float*
-  store float %1030, float* %1031, align 4
-  %1032 = load i64, i64* %RBP, align 8
-  %1033 = add i64 %1032, -16
-  %1034 = load i64, i64* %PC, align 8
-  %1035 = add i64 %1034, 4
-  store i64 %1035, i64* %PC, align 8
-  %1036 = inttoptr i64 %1033 to i64*
-  %1037 = load i64, i64* %1036, align 8
-  store i64 %1037, i64* %RSI, align 8, !tbaa !2428
-  %1038 = add i64 %1032, -148
-  %1039 = add i64 %1034, 10
-  store i64 %1039, i64* %PC, align 8
-  %1040 = inttoptr i64 %1038 to i32*
-  %1041 = load i32, i32* %1040, align 4
-  %1042 = add i32 %1041, 1
-  %1043 = zext i32 %1042 to i64
-  store i64 %1043, i64* %RAX, align 8, !tbaa !2428
-  %1044 = icmp eq i32 %1041, -1
-  %1045 = icmp eq i32 %1042, 0
-  %1046 = or i1 %1044, %1045
-  %1047 = zext i1 %1046 to i8
-  store i8 %1047, i8* %19, align 1, !tbaa !2434
-  %1048 = and i32 %1042, 255
-  %1049 = tail call i32 @llvm.ctpop.i32(i32 %1048) #8
-  %1050 = trunc i32 %1049 to i8
-  %1051 = and i8 %1050, 1
-  %1052 = xor i8 %1051, 1
-  store i8 %1052, i8* %26, align 1, !tbaa !2448
-  %1053 = xor i32 %1041, %1042
-  %1054 = lshr i32 %1053, 4
-  %1055 = trunc i32 %1054 to i8
-  %1056 = and i8 %1055, 1
-  store i8 %1056, i8* %31, align 1, !tbaa !2452
-  %1057 = icmp eq i32 %1042, 0
-  %1058 = zext i1 %1057 to i8
-  store i8 %1058, i8* %34, align 1, !tbaa !2449
-  %1059 = lshr i32 %1042, 31
+_ZN12_GLOBAL__N_1L10IDIVedxeaxI2RnIjEEEP6MemoryS4_R5StateT_.exit: ; preds = %881, %879
+  %.pre-phi17 = phi i64* [ %884, %881 ], [ %.pre16, %879 ]
+  %.pre-phi = phi i64* [ %RAX, %881 ], [ %RAX, %879 ]
+  %887 = phi i64 [ %871, %881 ], [ %.pre7, %879 ]
+  %888 = phi i32 [ %886, %881 ], [ %.pre6, %879 ]
+  %889 = phi i64 [ %861, %881 ], [ %.pre5, %879 ]
+  %890 = phi %struct.Memory* [ %857, %881 ], [ %880, %879 ]
+  %891 = add i64 %889, -144
+  %892 = add i64 %887, 6
+  store i64 %892, i64* %PC, align 8
+  %893 = inttoptr i64 %891 to i32*
+  store i32 %888, i32* %893, align 4
+  %894 = load i64, i64* %RBP, align 8
+  %895 = add i64 %894, -136
+  %896 = load i64, i64* %PC, align 8
+  %897 = add i64 %896, 10
+  store i64 %897, i64* %PC, align 8
+  %898 = inttoptr i64 %895 to i32*
+  store i32 1, i32* %898, align 4
+  %899 = load i64, i64* %RBP, align 8
+  %900 = add i64 %899, -16
+  %901 = load i64, i64* %PC, align 8
+  %902 = add i64 %901, 4
+  store i64 %902, i64* %PC, align 8
+  %903 = inttoptr i64 %900 to i64*
+  %904 = load i64, i64* %903, align 8
+  store i64 %904, i64* %RSI, align 8, !tbaa !2428
+  %905 = add i64 %904, 8
+  %906 = add i64 %901, 9
+  store i64 %906, i64* %PC, align 8
+  %907 = load <2 x float>, <2 x float>* %106, align 1
+  %908 = extractelement <2 x float> %907, i32 0
+  %909 = inttoptr i64 %905 to float*
+  store float %908, float* %909, align 4
+  %910 = load i64, i64* %RBP, align 8
+  %911 = add i64 %910, -16
+  %912 = load i64, i64* %PC, align 8
+  %913 = add i64 %912, 4
+  store i64 %913, i64* %PC, align 8
+  %914 = inttoptr i64 %911 to i64*
+  %915 = load i64, i64* %914, align 8
+  store i64 %915, i64* %RSI, align 8, !tbaa !2428
+  %916 = add i64 %915, 12
+  %917 = add i64 %912, 9
+  store i64 %917, i64* %PC, align 8
+  %918 = load <2 x float>, <2 x float>* %85, align 1
+  %919 = extractelement <2 x float> %918, i32 0
+  %920 = inttoptr i64 %916 to float*
+  store float %919, float* %920, align 4
+  %921 = load i64, i64* %RBP, align 8
+  %922 = add i64 %921, -16
+  %923 = load i64, i64* %PC, align 8
+  %924 = add i64 %923, 4
+  store i64 %924, i64* %PC, align 8
+  %925 = inttoptr i64 %922 to i64*
+  %926 = load i64, i64* %925, align 8
+  store i64 %926, i64* %RSI, align 8, !tbaa !2428
+  %927 = add i64 %921, -144
+  %928 = add i64 %923, 10
+  store i64 %928, i64* %PC, align 8
+  %929 = inttoptr i64 %927 to i32*
+  %930 = load i32, i32* %929, align 4
+  %931 = add i32 %930, 1
+  %932 = zext i32 %931 to i64
+  store i64 %932, i64* %RAX, align 8, !tbaa !2428
+  %933 = icmp eq i32 %930, -1
+  %934 = icmp eq i32 %931, 0
+  %935 = or i1 %933, %934
+  %936 = zext i1 %935 to i8
+  store i8 %936, i8* %18, align 1, !tbaa !2434
+  %937 = and i32 %931, 255
+  %938 = tail call i32 @llvm.ctpop.i32(i32 %937) #8
+  %939 = trunc i32 %938 to i8
+  %940 = and i8 %939, 1
+  %941 = xor i8 %940, 1
+  store i8 %941, i8* %25, align 1, !tbaa !2448
+  %942 = xor i32 %930, %931
+  %943 = lshr i32 %942, 4
+  %944 = trunc i32 %943 to i8
+  %945 = and i8 %944, 1
+  store i8 %945, i8* %30, align 1, !tbaa !2452
+  %946 = zext i1 %934 to i8
+  store i8 %946, i8* %33, align 1, !tbaa !2449
+  %947 = lshr i32 %931, 31
+  %948 = trunc i32 %947 to i8
+  store i8 %948, i8* %36, align 1, !tbaa !2450
+  %949 = lshr i32 %930, 31
+  %950 = xor i32 %947, %949
+  %951 = add nuw nsw i32 %950, %947
+  %952 = icmp eq i32 %951, 2
+  %953 = zext i1 %952 to i8
+  store i8 %953, i8* %42, align 1, !tbaa !2451
+  %954 = sext i32 %931 to i64
+  store i64 %954, i64* %RDI, align 8, !tbaa !2428
+  %955 = shl nsw i64 %954, 3
+  %956 = add i64 %955, %926
+  %957 = add i64 %923, 21
+  store i64 %957, i64* %PC, align 8
+  %958 = load <2 x float>, <2 x float>* %85, align 1
+  %959 = extractelement <2 x float> %958, i32 0
+  %960 = inttoptr i64 %956 to float*
+  store float %959, float* %960, align 4
+  %961 = load i64, i64* %RBP, align 8
+  %962 = add i64 %961, -16
+  %963 = load i64, i64* %PC, align 8
+  %964 = add i64 %963, 4
+  store i64 %964, i64* %PC, align 8
+  %965 = inttoptr i64 %962 to i64*
+  %966 = load i64, i64* %965, align 8
+  store i64 %966, i64* %RSI, align 8, !tbaa !2428
+  %967 = add i64 %961, -144
+  %968 = add i64 %963, 10
+  store i64 %968, i64* %PC, align 8
+  %969 = inttoptr i64 %967 to i32*
+  %970 = load i32, i32* %969, align 4
+  %971 = add i32 %970, 1
+  %972 = zext i32 %971 to i64
+  store i64 %972, i64* %RAX, align 8, !tbaa !2428
+  %973 = icmp eq i32 %970, -1
+  %974 = icmp eq i32 %971, 0
+  %975 = or i1 %973, %974
+  %976 = zext i1 %975 to i8
+  store i8 %976, i8* %18, align 1, !tbaa !2434
+  %977 = and i32 %971, 255
+  %978 = tail call i32 @llvm.ctpop.i32(i32 %977) #8
+  %979 = trunc i32 %978 to i8
+  %980 = and i8 %979, 1
+  %981 = xor i8 %980, 1
+  store i8 %981, i8* %25, align 1, !tbaa !2448
+  %982 = xor i32 %970, %971
+  %983 = lshr i32 %982, 4
+  %984 = trunc i32 %983 to i8
+  %985 = and i8 %984, 1
+  store i8 %985, i8* %30, align 1, !tbaa !2452
+  %986 = zext i1 %974 to i8
+  store i8 %986, i8* %33, align 1, !tbaa !2449
+  %987 = lshr i32 %971, 31
+  %988 = trunc i32 %987 to i8
+  store i8 %988, i8* %36, align 1, !tbaa !2450
+  %989 = lshr i32 %970, 31
+  %990 = xor i32 %987, %989
+  %991 = add nuw nsw i32 %990, %987
+  %992 = icmp eq i32 %991, 2
+  %993 = zext i1 %992 to i8
+  store i8 %993, i8* %42, align 1, !tbaa !2451
+  %994 = sext i32 %971 to i64
+  store i64 %994, i64* %RDI, align 8, !tbaa !2428
+  %995 = shl nsw i64 %994, 3
+  %996 = add i64 %966, 4
+  %997 = add i64 %996, %995
+  %998 = add i64 %963, 22
+  store i64 %998, i64* %PC, align 8
+  %999 = load <2 x float>, <2 x float>* %106, align 1
+  %1000 = extractelement <2 x float> %999, i32 0
+  %1001 = inttoptr i64 %997 to float*
+  store float %1000, float* %1001, align 4
+  %1002 = load i64, i64* %RBP, align 8
+  %1003 = add i64 %1002, -16
+  %1004 = load i64, i64* %PC, align 8
+  %1005 = add i64 %1004, 4
+  store i64 %1005, i64* %PC, align 8
+  %1006 = inttoptr i64 %1003 to i64*
+  %1007 = load i64, i64* %1006, align 8
+  store i64 %1007, i64* %RSI, align 8, !tbaa !2428
+  %1008 = add i64 %1002, -148
+  %1009 = add i64 %1004, 10
+  store i64 %1009, i64* %PC, align 8
+  %1010 = inttoptr i64 %1008 to i32*
+  %1011 = load i32, i32* %1010, align 4
+  %1012 = add i32 %1011, 1
+  %1013 = zext i32 %1012 to i64
+  store i64 %1013, i64* %RAX, align 8, !tbaa !2428
+  %1014 = icmp eq i32 %1011, -1
+  %1015 = icmp eq i32 %1012, 0
+  %1016 = or i1 %1014, %1015
+  %1017 = zext i1 %1016 to i8
+  store i8 %1017, i8* %18, align 1, !tbaa !2434
+  %1018 = and i32 %1012, 255
+  %1019 = tail call i32 @llvm.ctpop.i32(i32 %1018) #8
+  %1020 = trunc i32 %1019 to i8
+  %1021 = and i8 %1020, 1
+  %1022 = xor i8 %1021, 1
+  store i8 %1022, i8* %25, align 1, !tbaa !2448
+  %1023 = xor i32 %1011, %1012
+  %1024 = lshr i32 %1023, 4
+  %1025 = trunc i32 %1024 to i8
+  %1026 = and i8 %1025, 1
+  store i8 %1026, i8* %30, align 1, !tbaa !2452
+  %1027 = zext i1 %1015 to i8
+  store i8 %1027, i8* %33, align 1, !tbaa !2449
+  %1028 = lshr i32 %1012, 31
+  %1029 = trunc i32 %1028 to i8
+  store i8 %1029, i8* %36, align 1, !tbaa !2450
+  %1030 = lshr i32 %1011, 31
+  %1031 = xor i32 %1028, %1030
+  %1032 = add nuw nsw i32 %1031, %1028
+  %1033 = icmp eq i32 %1032, 2
+  %1034 = zext i1 %1033 to i8
+  store i8 %1034, i8* %42, align 1, !tbaa !2451
+  %1035 = sext i32 %1012 to i64
+  store i64 %1035, i64* %RDI, align 8, !tbaa !2428
+  %1036 = shl nsw i64 %1035, 3
+  %1037 = add i64 %1036, %1007
+  %1038 = add i64 %1004, 21
+  store i64 %1038, i64* %PC, align 8
+  %1039 = load <2 x float>, <2 x float>* %77, align 1
+  %1040 = extractelement <2 x float> %1039, i32 0
+  %1041 = inttoptr i64 %1037 to float*
+  store float %1040, float* %1041, align 4
+  %1042 = load i64, i64* %RBP, align 8
+  %1043 = add i64 %1042, -16
+  %1044 = load i64, i64* %PC, align 8
+  %1045 = add i64 %1044, 4
+  store i64 %1045, i64* %PC, align 8
+  %1046 = inttoptr i64 %1043 to i64*
+  %1047 = load i64, i64* %1046, align 8
+  store i64 %1047, i64* %RSI, align 8, !tbaa !2428
+  %1048 = add i64 %1042, -148
+  %1049 = add i64 %1044, 10
+  store i64 %1049, i64* %PC, align 8
+  %1050 = inttoptr i64 %1048 to i32*
+  %1051 = load i32, i32* %1050, align 4
+  %1052 = add i32 %1051, 1
+  %1053 = zext i32 %1052 to i64
+  store i64 %1053, i64* %RAX, align 8, !tbaa !2428
+  %1054 = icmp eq i32 %1051, -1
+  %1055 = icmp eq i32 %1052, 0
+  %1056 = or i1 %1054, %1055
+  %1057 = zext i1 %1056 to i8
+  store i8 %1057, i8* %18, align 1, !tbaa !2434
+  %1058 = and i32 %1052, 255
+  %1059 = tail call i32 @llvm.ctpop.i32(i32 %1058) #8
   %1060 = trunc i32 %1059 to i8
-  store i8 %1060, i8* %37, align 1, !tbaa !2450
-  %1061 = lshr i32 %1041, 31
-  %1062 = xor i32 %1059, %1061
-  %1063 = add nuw nsw i32 %1062, %1059
-  %1064 = icmp eq i32 %1063, 2
-  %1065 = zext i1 %1064 to i8
-  store i8 %1065, i8* %43, align 1, !tbaa !2451
-  %1066 = sext i32 %1042 to i64
-  store i64 %1066, i64* %RDI, align 8, !tbaa !2428
-  %1067 = shl nsw i64 %1066, 3
-  %1068 = add i64 %1067, %1037
-  %1069 = add i64 %1034, 21
-  store i64 %1069, i64* %PC, align 8
-  %1070 = load <2 x float>, <2 x float>* %78, align 1
-  %1071 = extractelement <2 x float> %1070, i32 0
-  %1072 = inttoptr i64 %1068 to float*
-  store float %1071, float* %1072, align 4
-  %1073 = load i64, i64* %RBP, align 8
-  %1074 = add i64 %1073, -16
-  %1075 = load i64, i64* %PC, align 8
-  %1076 = add i64 %1075, 4
-  store i64 %1076, i64* %PC, align 8
-  %1077 = inttoptr i64 %1074 to i64*
-  %1078 = load i64, i64* %1077, align 8
-  store i64 %1078, i64* %RSI, align 8, !tbaa !2428
-  %1079 = add i64 %1073, -148
-  %1080 = add i64 %1075, 10
-  store i64 %1080, i64* %PC, align 8
-  %1081 = inttoptr i64 %1079 to i32*
-  %1082 = load i32, i32* %1081, align 4
-  %1083 = add i32 %1082, 1
-  %1084 = zext i32 %1083 to i64
-  store i64 %1084, i64* %RAX, align 8, !tbaa !2428
-  %1085 = icmp eq i32 %1082, -1
-  %1086 = icmp eq i32 %1083, 0
-  %1087 = or i1 %1085, %1086
-  %1088 = zext i1 %1087 to i8
-  store i8 %1088, i8* %19, align 1, !tbaa !2434
-  %1089 = and i32 %1083, 255
-  %1090 = tail call i32 @llvm.ctpop.i32(i32 %1089) #8
-  %1091 = trunc i32 %1090 to i8
-  %1092 = and i8 %1091, 1
-  %1093 = xor i8 %1092, 1
-  store i8 %1093, i8* %26, align 1, !tbaa !2448
-  %1094 = xor i32 %1082, %1083
-  %1095 = lshr i32 %1094, 4
-  %1096 = trunc i32 %1095 to i8
-  %1097 = and i8 %1096, 1
-  store i8 %1097, i8* %31, align 1, !tbaa !2452
-  %1098 = icmp eq i32 %1083, 0
-  %1099 = zext i1 %1098 to i8
-  store i8 %1099, i8* %34, align 1, !tbaa !2449
-  %1100 = lshr i32 %1083, 31
-  %1101 = trunc i32 %1100 to i8
-  store i8 %1101, i8* %37, align 1, !tbaa !2450
-  %1102 = lshr i32 %1082, 31
-  %1103 = xor i32 %1100, %1102
-  %1104 = add nuw nsw i32 %1103, %1100
-  %1105 = icmp eq i32 %1104, 2
-  %1106 = zext i1 %1105 to i8
-  store i8 %1106, i8* %43, align 1, !tbaa !2451
-  %1107 = sext i32 %1083 to i64
-  store i64 %1107, i64* %RDI, align 8, !tbaa !2428
-  %1108 = shl nsw i64 %1107, 3
-  %1109 = add i64 %1078, 4
-  %1110 = add i64 %1109, %1108
-  %1111 = add i64 %1075, 22
-  store i64 %1111, i64* %PC, align 8
-  %1112 = load <2 x float>, <2 x float>* %86, align 1
-  %1113 = extractelement <2 x float> %1112, i32 0
-  %1114 = inttoptr i64 %1110 to float*
-  store float %1113, float* %1114, align 4
+  %1061 = and i8 %1060, 1
+  %1062 = xor i8 %1061, 1
+  store i8 %1062, i8* %25, align 1, !tbaa !2448
+  %1063 = xor i32 %1051, %1052
+  %1064 = lshr i32 %1063, 4
+  %1065 = trunc i32 %1064 to i8
+  %1066 = and i8 %1065, 1
+  store i8 %1066, i8* %30, align 1, !tbaa !2452
+  %1067 = zext i1 %1055 to i8
+  store i8 %1067, i8* %33, align 1, !tbaa !2449
+  %1068 = lshr i32 %1052, 31
+  %1069 = trunc i32 %1068 to i8
+  store i8 %1069, i8* %36, align 1, !tbaa !2450
+  %1070 = lshr i32 %1051, 31
+  %1071 = xor i32 %1068, %1070
+  %1072 = add nuw nsw i32 %1071, %1068
+  %1073 = icmp eq i32 %1072, 2
+  %1074 = zext i1 %1073 to i8
+  store i8 %1074, i8* %42, align 1, !tbaa !2451
+  %1075 = sext i32 %1052 to i64
+  store i64 %1075, i64* %RDI, align 8, !tbaa !2428
+  %1076 = shl nsw i64 %1075, 3
+  %1077 = add i64 %1047, 4
+  %1078 = add i64 %1077, %1076
+  %1079 = add i64 %1044, 22
+  store i64 %1079, i64* %PC, align 8
+  %1080 = load <2 x float>, <2 x float>* %85, align 1
+  %1081 = extractelement <2 x float> %1080, i32 0
+  %1082 = inttoptr i64 %1078 to float*
+  store float %1081, float* %1082, align 4
   %.pre8 = load i64, i64* %PC, align 8
   %.pre9 = load i64, i64* %RBP, align 8
   br label %block_4008cd

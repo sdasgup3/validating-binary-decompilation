@@ -5,7 +5,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
 %G_0x601038_type = type <{ [8 x i8] }>
-%G_0xe4__rip__type = type <{ [8 x i8] }>
+%G_0xe4__rip__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -52,18 +52,17 @@ declare i32 @llvm.ctpop.i32(i32) #0
 define %struct.Memory* @gen_random(%struct.State* noalias, i64, %struct.Memory* noalias) local_unnamed_addr #1 {
 entry:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %PC.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RBP.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 15, i32 0, i32 0
   %4 = load i64, i64* %RBP.i, align 8
   %5 = add i64 %1, 1
-  store i64 %5, i64* %PC.i, align 8
+  store i64 %5, i64* %3, align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
   %7 = load i64, i64* %6, align 8
   %8 = add i64 %7, -8
   %9 = inttoptr i64 %8 to i64*
   store i64 %4, i64* %9, align 8
   store i64 %8, i64* %6, align 8
-  %10 = load i64, i64* %PC.i, align 8
+  %10 = load i64, i64* %3, align 8
   store i64 %8, i64* %RBP.i, align 8
   %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
   %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
@@ -78,12 +77,12 @@ entry:
   store i64 139968, i64* %RCX.i28, align 8
   %17 = add i64 %7, -16
   %18 = add i64 %10, 23
-  store i64 %18, i64* %PC.i, align 8
+  store i64 %18, i64* %3, align 8
   %19 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %11, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
   %20 = load i64, i64* %19, align 1
   %21 = inttoptr i64 %17 to i64*
   store i64 %20, i64* %21, align 8
-  %22 = load i64, i64* %PC.i, align 8
+  %22 = load i64, i64* %3, align 8
   %23 = load i64, i64* bitcast (%G_0x601038_type* @G_0x601038 to i64*), align 8
   %24 = mul i64 %23, 3877
   %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
@@ -126,7 +125,7 @@ entry:
   store i64 %54, i64* %53, align 8
   %55 = load i64, i64* %RCX.i28, align 8
   %56 = add i64 %22, 27
-  store i64 %56, i64* %PC.i, align 8
+  store i64 %56, i64* %3, align 8
   %57 = sext i64 %55 to i128
   %58 = and i128 %57, -18446744073709551616
   %59 = zext i64 %54 to i128
@@ -145,18 +144,16 @@ entry:
   br i1 %71, label %74, label %72
 
 ; <label>:72:                                     ; preds = %entry
-  %RDX.i24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %73 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %56, %struct.Memory* %2)
-  %.pre = load i64, i64* %RDX.i24, align 8
-  %.pre1 = load i64, i64* %PC.i, align 8
+  %.pre = load i64, i64* %53, align 8
+  %.pre1 = load i64, i64* %3, align 8
   br label %routine_idivq__rcx.exit
 
 ; <label>:74:                                     ; preds = %entry
-  %75 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
-  %76 = srem i128 %62, %64
-  %77 = trunc i128 %76 to i64
-  store i64 %66, i64* %75, align 8
-  store i64 %77, i64* %53, align 8
+  %75 = srem i128 %62, %64
+  %76 = trunc i128 %75 to i64
+  store i64 %66, i64* %RAX.i30, align 8
+  store i64 %76, i64* %53, align 8
   store i8 0, i8* %25, align 1
   store i8 0, i8* %26, align 1
   store i8 0, i8* %27, align 1
@@ -166,45 +163,45 @@ entry:
   br label %routine_idivq__rcx.exit
 
 routine_idivq__rcx.exit:                          ; preds = %74, %72
-  %78 = phi i64 [ %.pre1, %72 ], [ %56, %74 ]
-  %79 = phi i64 [ %.pre, %72 ], [ %77, %74 ]
-  %80 = phi %struct.Memory* [ %73, %72 ], [ %2, %74 ]
-  store i64 %79, i64* bitcast (%G_0x601038_type* @G_0x601038 to i64*), align 8
-  %81 = load i64, i64* %RBP.i, align 8
-  %82 = add i64 %81, -8
-  %83 = add i64 %78, 13
-  store i64 %83, i64* %PC.i, align 8
-  %84 = inttoptr i64 %82 to double*
-  %85 = load double, double* %84, align 8
-  %86 = bitcast [32 x %union.VectorReg]* %11 to double*
-  %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
-  store i64 %79, i64* %RCX.i28, align 8
-  %88 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
-  %89 = sitofp i64 %79 to double
-  %90 = bitcast %union.VectorReg* %88 to double*
-  store double %89, double* %90, align 1
-  %91 = fmul double %85, %89
-  %92 = bitcast %union.VectorReg* %12 to double*
-  %93 = load double, double* %92, align 1
-  %94 = fdiv double %91, %93
-  store double %94, double* %86, align 1
-  store i64 0, i64* %87, align 1
-  %95 = add i64 %78, 35
-  store i64 %95, i64* %PC.i, align 8
-  %96 = load i64, i64* %6, align 8
-  %97 = add i64 %96, 8
-  %98 = inttoptr i64 %96 to i64*
-  %99 = load i64, i64* %98, align 8
-  store i64 %99, i64* %RBP.i, align 8
-  store i64 %97, i64* %6, align 8
-  %100 = add i64 %78, 36
-  store i64 %100, i64* %PC.i, align 8
-  %101 = inttoptr i64 %97 to i64*
-  %102 = load i64, i64* %101, align 8
-  store i64 %102, i64* %3, align 8
-  %103 = add i64 %96, 16
-  store i64 %103, i64* %6, align 8
-  ret %struct.Memory* %80
+  %77 = phi i64 [ %.pre1, %72 ], [ %56, %74 ]
+  %78 = phi i64 [ %.pre, %72 ], [ %76, %74 ]
+  %79 = phi %struct.Memory* [ %73, %72 ], [ %2, %74 ]
+  store i64 %78, i64* bitcast (%G_0x601038_type* @G_0x601038 to i64*), align 8
+  %80 = load i64, i64* %RBP.i, align 8
+  %81 = add i64 %80, -8
+  %82 = add i64 %77, 13
+  store i64 %82, i64* %3, align 8
+  %83 = inttoptr i64 %81 to double*
+  %84 = load double, double* %83, align 8
+  %85 = bitcast [32 x %union.VectorReg]* %11 to double*
+  %86 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
+  store i64 %78, i64* %RCX.i28, align 8
+  %87 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 2
+  %88 = sitofp i64 %78 to double
+  %89 = bitcast %union.VectorReg* %87 to double*
+  store double %88, double* %89, align 1
+  %90 = fmul double %84, %88
+  %91 = bitcast %union.VectorReg* %12 to double*
+  %92 = load double, double* %91, align 1
+  %93 = fdiv double %90, %92
+  store double %93, double* %85, align 1
+  store i64 0, i64* %86, align 1
+  %94 = add i64 %77, 35
+  store i64 %94, i64* %3, align 8
+  %95 = load i64, i64* %6, align 8
+  %96 = add i64 %95, 8
+  %97 = inttoptr i64 %95 to i64*
+  %98 = load i64, i64* %97, align 8
+  store i64 %98, i64* %RBP.i, align 8
+  store i64 %96, i64* %6, align 8
+  %99 = add i64 %77, 36
+  store i64 %99, i64* %3, align 8
+  %100 = inttoptr i64 %96 to i64*
+  %101 = load i64, i64* %100, align 8
+  store i64 %101, i64* %3, align 8
+  %102 = add i64 %95, 16
+  store i64 %102, i64* %6, align 8
+  ret %struct.Memory* %79
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {
@@ -580,14 +577,13 @@ block_400478:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 1
   store i64 %4, i64* %PC, align 8
-  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
-  %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
-  %7 = load i64, i64* %6, align 8
-  %8 = inttoptr i64 %7 to i64*
-  %9 = load i64, i64* %8, align 8
+  %5 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 13, i32 0, i32 0
+  %6 = load i64, i64* %5, align 8
+  %7 = inttoptr i64 %6 to i64*
+  %8 = load i64, i64* %7, align 8
+  store i64 %8, i64* %PC, align 8
+  %9 = add i64 %6, 8
   store i64 %9, i64* %5, align 8
-  %10 = add i64 %7, 8
-  store i64 %10, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

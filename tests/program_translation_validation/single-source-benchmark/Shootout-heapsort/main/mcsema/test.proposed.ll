@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_4005c0.gen_random(%struct.State* noalias dereferenc
 declare %struct.Memory* @sub_400610.benchmark_heapsort(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0xf4__rip__type = type <{ [8 x i8] }>
-@G_0xf4__rip_= global %G_0xf4__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0xf4__rip__type = type <{ [16 x i8] }>
+@G_0xf4__rip_= global %G_0xf4__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x4008e8_type = type <{ [8 x i8] }>
 @G__0x4008e8= global %G__0x4008e8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 

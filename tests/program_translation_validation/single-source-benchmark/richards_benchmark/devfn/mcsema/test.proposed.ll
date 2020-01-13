@@ -459,8 +459,8 @@ declare %struct.Memory* @sub_400690.trace(%struct.State* noalias dereferenceable
 declare %struct.Memory* @sub_4008c0.holdself(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x60205c_type = type <{ [1 x i8] }>
-@G_0x60205c= global %G_0x60205c_type <{ [1 x i8] c"\00" }>
+%G_0x60205c_type = type <{ [4 x i8] }>
+@G_0x60205c= global %G_0x60205c_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6020e8_type = type <{ [8 x i8] }>
 @G_0x6020e8= global %G_0x6020e8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 

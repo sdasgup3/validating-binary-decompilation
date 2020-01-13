@@ -28,7 +28,7 @@
 
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-graph-matching"
-#define MATCHER_DEBUG 1
+#define MATCHER_DEBUG
 
 using namespace std;
 using namespace llvm;

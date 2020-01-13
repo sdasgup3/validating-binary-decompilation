@@ -455,8 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x14d0__rip__type = type <{ [8 x i8] }>
-@G_0x14d0__rip_= global %G_0x14d0__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x14d0__rip__4205552__type = type <{ [16 x i8] }>
+@G_0x14d0__rip__4205552_= global %G_0x14d0__rip__4205552__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @cft1st(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -6100,7 +6100,7 @@ block_400478:
   %YMM0 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x14d0__rip__type* @G_0x14d0__rip_ to i64
+  %10 = ptrtoint %G_0x14d0__rip__4205552__type* @G_0x14d0__rip__4205552_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -6299,7 +6299,7 @@ block_400478:
   %RCX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RCX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64* %RCX, i64 %9, i64 1)
   ret %struct.Memory* %12

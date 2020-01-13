@@ -455,12 +455,12 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
-%G_0x609090_type = type <{ [8 x i8] }>
-@G_0x609090= global %G_0x609090_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x609090_type = type <{ [16 x i8] }>
+@G_0x609090= global %G_0x609090_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x609118_type = type <{ [4 x i8] }>
 @G_0x609118= global %G_0x609118_type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x950__rip__type = type <{ [8 x i8] }>
-@G_0x950__rip_= global %G_0x950__rip__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x950__rip__4218304__type = type <{ [16 x i8] }>
+@G_0x950__rip__4218304_= global %G_0x950__rip__4218304__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x406b09_type = type <{ [8 x i8] }>
 @G__0x406b09= global %G__0x406b09_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
@@ -734,7 +734,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x950__rip__type* @G_0x950__rip_ to i64
+  %10 = ptrtoint %G_0x950__rip__4218304__type* @G_0x950__rip__4218304_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

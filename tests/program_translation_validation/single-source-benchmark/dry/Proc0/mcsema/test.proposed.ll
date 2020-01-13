@@ -470,8 +470,8 @@ declare %struct.Memory* @sub_400cc0.Proc2(%struct.State* noalias dereferenceable
 @G_0x6026ec= global %G_0x6026ec_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6049f0_type = type <{ [4 x i8] }>
 @G_0x6049f0= global %G_0x6049f0_type <{ [4 x i8] c"\00\00\00\00" }>
-%G_0x6049f4_type = type <{ [1 x i8] }>
-@G_0x6049f4= global %G_0x6049f4_type <{ [1 x i8] c"\00" }>
+%G_0x6049f4_type = type <{ [4 x i8] }>
+@G_0x6049f4= global %G_0x6049f4_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6049f8_type = type <{ [8 x i8] }>
 @G_0x6049f8= global %G_0x6049f8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x400e54_type = type <{ [4 x i8] }>

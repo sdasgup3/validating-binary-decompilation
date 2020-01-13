@@ -463,8 +463,8 @@ declare %struct.Memory* @sub_400890.initCombList(%struct.State* noalias derefere
 @G_0x602080= global %G_0x602080_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020c0_type = type <{ [8 x i8] }>
 @G_0x6020c0= global %G_0x6020c0_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0x6020c8_type = type <{ [4 x i8] }>
-@G_0x6020c8= global %G_0x6020c8_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6020c8_type = type <{ [8 x i8] }>
+@G_0x6020c8= global %G_0x6020c8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020cc_type = type <{ [4 x i8] }>
 @G_0x6020cc= global %G_0x6020cc_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6020d8_type = type <{ [8 x i8] }>
@@ -2565,7 +2565,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = call %struct.Memory* @_ZN12_GLOBAL__N_1L3SHLI3RnWImE2RnIjE2InIjEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory* %2, %struct.State* %0, i64* %RAX, i64 %9, i64 1)
   ret %struct.Memory* %12

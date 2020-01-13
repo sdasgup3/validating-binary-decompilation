@@ -457,8 +457,8 @@ declare %struct.Memory* @sub_40fce0._ZN34custom_multiply_multiple_variable2IiE8d
 declare %struct.Memory* @sub_40f740._Z15tolerance_equalIiEbRT_S1_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x61a088_type = type <{ [8 x i8] }>
-@G_0x61a088= global %G_0x61a088_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x61a088_type = type <{ [4 x i8] }>
+@G_0x61a088= global %G_0x61a088_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x61a0a8_type = type <{ [4 x i8] }>
 @G_0x61a0a8= global %G_0x61a0a8_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x414aee_type = type <{ [8 x i8] }>

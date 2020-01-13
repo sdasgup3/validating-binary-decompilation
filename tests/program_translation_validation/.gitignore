@@ -19,3 +19,4 @@ spec2006/docs/opt.log
 match_mcsema_proposed.log
 match_proposed_mcsema.log
 *.sw*
+compd.log

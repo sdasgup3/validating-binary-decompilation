@@ -393,7 +393,7 @@ entry:
   %RDI.i14 = bitcast %union.anon* %79 to i64*
   %80 = load i64, i64* %RDI.i14
   %81 = load i64, i64* %PC.i13
-  %82 = add i64 %81, 2
+  %82 = add i64 %81, 3
   store i64 %82, i64* %PC.i13
   %83 = trunc i64 %80 to i32
   %84 = shl i32 %83, 1
@@ -778,7 +778,7 @@ block_400478:
   %RDI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RDI
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 2
+  %11 = add i64 %10, 3
   store i64 %11, i64* %PC
   %12 = trunc i64 %9 to i32
   %13 = shl i32 %12, 1

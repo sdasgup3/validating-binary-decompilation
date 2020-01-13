@@ -712,7 +712,7 @@ entry:
   %RDI.i135 = bitcast %union.anon* %296 to i64*
   %297 = load i64, i64* %RDI.i135
   %298 = load i64, i64* %PC.i134
-  %299 = add i64 %298, 3
+  %299 = add i64 %298, 4
   store i64 %299, i64* %PC.i134
   %300 = shl i64 %297, 1
   %301 = icmp slt i64 %297, 0
@@ -1282,7 +1282,7 @@ block_.L_40066f:                                  ; preds = %block_.L_400615
   %RAX.i76 = bitcast %union.anon* %687 to i64*
   %688 = load i64, i64* %RAX.i76
   %689 = load i64, i64* %PC.i75
-  %690 = add i64 %689, 3
+  %690 = add i64 %689, 4
   store i64 %690, i64* %PC.i75
   %691 = shl i64 %688, 1
   %692 = icmp slt i64 %688, 0
@@ -1578,7 +1578,7 @@ block_.L_40066f:                                  ; preds = %block_.L_400615
   %RDI.i44 = bitcast %union.anon* %884 to i64*
   %885 = load i64, i64* %RDI.i44
   %886 = load i64, i64* %PC.i43
-  %887 = add i64 %886, 3
+  %887 = add i64 %886, 4
   store i64 %887, i64* %PC.i43
   %888 = shl i64 %885, 1
   %889 = icmp slt i64 %885, 0
@@ -2590,7 +2590,7 @@ block_400478:
   %RDI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RDI
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 3
+  %11 = add i64 %10, 4
   store i64 %11, i64* %PC
   %12 = shl i64 %9, 1
   %13 = icmp slt i64 %9, 0
@@ -3186,7 +3186,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = load i64, i64* %PC
-  %11 = add i64 %10, 3
+  %11 = add i64 %10, 4
   store i64 %11, i64* %PC
   %12 = shl i64 %9, 1
   %13 = icmp slt i64 %9, 0
