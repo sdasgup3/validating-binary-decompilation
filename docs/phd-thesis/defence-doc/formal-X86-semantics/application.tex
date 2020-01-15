@@ -3,7 +3,12 @@
 In this section, we illustrate a few applications of our formal semantics, in addition to the reference model mentioned in the previous section.
 Our goal here is to explain that our semantics can be used for formal reasoning of \ISA programs for a wide variety of purposes.
 For this reason, the applications are illustrative only, \AEC{not meant to serve as a comprehensive evaluation or make any claim of scalability.
-Moreover, the reported performance of the applications is not optimized, and there is room for improvement, e.g., by providing custom abstractions and lemmas specific to x86-64, similarly to~\cite{Park:2018}.}
+Moreover, the reported performance of the applications is not 
+optimized\footnote{All these applications are realized based on the  generic 
+tools offered by the employed \K semantic framework and  we do not work for 
+improving their runtime, which is not impressive at time of writing this 
+paper.}, and there is room for improvement, e.g., by providing custom 
+abstractions and lemmas specific to x86-64, similarly to~\cite{Park:2018}.}
 % are not impressive either.
 %Moreover, for each application, we simply used the tools which \K framework provides out of the box and do not work for improving their runtime, which is not impressive at time of writing this paper.
 However, we believe that each application has the potential to be leveraged into a standalone tool, with its own user interface and case studies, % and even reference manual
@@ -155,7 +160,7 @@ style=KRULE,
 ...</memstate>
   requires N (*$\ge$*) 0 and N < 2^31 and (N*(N+1))/2 < 2^31
 \end{lstlisting}
-\vspace{-5pt}
+%\vspace{-5pt}
 \begin{center}
 {\small (a) Top-level specification}
 \end{center}
@@ -184,13 +189,13 @@ style=KRULE,
        and B + ((A * (A + 1)) / 2) >= 0  
        and B + ((A * (A + 1)) / 2) < 2^31
 \end{lstlisting}
-\vspace{-5pt}
+%\vspace{-5pt}
 \begin{center}
 {\small (b) Loop invariant}
 \end{center}
 % \caption{Loop Invariant Rule. X and Y denote concrete code memory addresses corresponding to instructions at loop header (at line 10) and following the loop (at line 25) resp.}
 % \label{fig:loop-invariant}
-\vspace{-5pt}
+%\vspace{-5pt}
 \caption{Specification of \s{sum-to-n} program}
 %\vspace{-15pt}
 \label{fig:sum-to-n-spec}
@@ -199,10 +204,21 @@ style=KRULE,
 % \paragraph{Top-Level Specification}
 Figure~\ref{fig:sum-to-n-spec}(a) shows the functional correctness specification of the \s{sum-to-n} program.
 The \s{regstate} cell specifies the relevant registers used in the program, omitting the irrelevant ones denoted by ``...''.
-Specifically, it specifies that \reg{rdi} holds the value $N$ without being updated during the program execution, and \reg{rax} will have the expected return value.
-The \s{memstate} cell specifies the relevant part of the memory omitting others (denoted by ``...'').
-It specifies the stack memory addresses \s{-8(\%rbp)} and \s{-4(\%rbp)} corresponding to \m{n} and \m{s}, respectively.
-The \m{requires} clause specifies the condition of $N$ that prevents the arithmetic overflow.
+Specifically, it specifies that \reg{rdi} holds the value $N$ without being 
+updated during the program execution, and 
+%\reg{rax} will have the expected return value.
+\reg{rax}, which is pre-conditioned on \emph{any} symbolic value (denoted by 
+\m{mi(64, \_:Int):MInt}), is ensured to have the expected return value.
+
+The \s{memstate}~ cell specifies the relevant part of the memory omitting 
+others (denoted by ``...'').
+It specifies the stack memory addresses \mem{-8}{rbp} and \mem{-4}{rbp} 
+corresponding to \m{n} and \m{s}, respectively. Specifically, the stack memory 
+addresses \s{-4(\%rbp)} and \s{-8(\%rbp)} start with \emph{any} state  and 
+ensures to have respectively the correct sum and $0$ when the program 
+terminates. 
+The \m{requires}~ clause specifies the condition of $N$ that prevents the 
+arithmetic overflow.
 % The program counter \reg{rip} starts from $0$ (the code memory address) and ends at the return address (which we specify using $-1$).
 % The first part of the rule is largely static, which means that the contents of configuration cells are not going to change during execution and is given by the \K specifications as follows:
 % which essentially represents the initial values of \reg{rdi} and \reg{rbp} and the fact that these values will remain the same throughout the program execution.
@@ -273,41 +289,105 @@ We asked Z3 to solve the above path condition and it returned a solution (i.e., 
 
 
 % TODO: we can add this if we have enough space.
-% \begin{figure}[t]
-% \begin{lstlisting}[style=KRULE,numbers=left, numberstyle=\tiny\color{codegray}]
-% <regstate>...
-%     "RIP" |-> (mi(64, 0) => L2)
-%     "RBP" |-> (mi(64, 56))
-% ...</regstate>
-% <memstate>... 
-%   // -8(%rbp): a
-%   40 |-> (byte ( 0 , mi(64, B)))
-%   41 |-> (byte ( 1 , mi(64, B)))
-%   42 |-> (byte ( 2 , mi(64, B)))
-%   43 |-> (byte ( 3 , mi(64, B)))
-%   44 |-> (byte ( 4 , mi(64, B)))
-%   45 |-> (byte ( 5 , mi(64, B)))
-%   46 |-> (byte ( 6 , mi(64, B)))
-%   47 |-> (byte ( 7 , mi(64, B)))
-%   // -16(%rbp): b
-%   48 |-> (byte ( 0 , mi(64, A))) 
-%   49 |-> (byte ( 1 , mi(64, A))) 
-%   50 |-> (byte ( 2 , mi(64, A))) 
-%   51 |-> (byte ( 3 , mi(64, A))) 
-%   52 |-> (byte ( 4 , mi(64, A))) 
-%   53 |-> (byte ( 5 , mi(64, A))) 
-%   54 |-> (byte ( 6 , mi(64, A))) 
-%   55 |-> (byte ( 7 , mi(64, A))) 
-% ...</memstate>
-%     requires  A >= 0 and A < 2 ^Int 64 
-%         and   B >= 0 and B < 2 ^Int 64 
-%     // check if the oerflow condition is true.
-%     ensures   A + B >= 2 ^ 32
-% endmodule
-% \end{lstlisting}
-% \caption{Specification used to do symbolic execution on code snippet at Figure 7.}
-% \label{lst:CSHISTAR}
-% \end{figure}
+%\begin{figure}[t]
+%\begin{lstlisting}[style=KRULE]
+%<regstate>...
+%    "RIP" |-> ( ptr (symloc(-1, 0), mi(64, 0))  => mi(64, 4294967295)) //@ensure
+%    "RSP" |-> ( ptr (symloc(1, 128), mi(64, 60))  => ptr(symloc(1, 128), mi(64, 
+%    64))) //@ensure
+%...</regstate>
+%<memstate>... 
+% // b will be stored
+% 24 |-> (byte ( 0 , undefMInt) => _) // -32(%ebp)
+% 25 |-> (byte ( 0 , undefMInt) => _)
+% 26 |-> (byte ( 0 , undefMInt) => _)
+% 27 |-> (byte ( 0 , undefMInt) => _)
+% 28 |-> (byte ( 0 , undefMInt) => _) // -28(%ebp)
+% 29 |-> (byte ( 0 , undefMInt) => _)
+% 30 |-> (byte ( 0 , undefMInt) => _)
+% 31 |-> (byte ( 0 , undefMInt) => _)
+% // a will be stored
+% 32 |-> (byte ( 0 , undefMInt) => _) // -24(%ebp)
+% 33 |-> (byte ( 0 , undefMInt) => _) 
+% 34 |-> (byte ( 0 , undefMInt) => _) 
+% 35 |-> (byte ( 0 , undefMInt) => _) 
+% 36 |-> (byte ( 0 , undefMInt) => _) // -20(%ebp)
+% 37 |-> (byte ( 0 , undefMInt) => _) 
+% 38 |-> (byte ( 0 , undefMInt) => _) 
+% 39 |-> (byte ( 0 , undefMInt) => _) 
+% 
+% 40 |-> (byte ( 0 , undefMInt))
+% 41 |-> (byte ( 0 , undefMInt))
+% 42 |-> (byte ( 0 , undefMInt))
+% 43 |-> (byte ( 0 , undefMInt))
+% 44 |-> (byte ( 0 , undefMInt))
+% 45 |-> (byte ( 0 , undefMInt))
+% 46 |-> (byte ( 0 , undefMInt))
+% 47 |-> (byte ( 0 , undefMInt))
+% 48 |-> (byte ( 0 , undefMInt)) 
+% 49 |-> (byte ( 0 , undefMInt)) 
+% 50 |-> (byte ( 0 , undefMInt)) 
+% 51 |-> (byte ( 0 , undefMInt)) 
+% 
+% // temp value of a + b will be stored
+% 52 |-> (byte ( 0 , undefMInt) => _) 
+% 53 |-> (byte ( 0 , undefMInt) => _) 
+% 54 |-> (byte ( 0 , undefMInt) => _) 
+% 55 |-> (byte ( 0 , undefMInt) => _) 
+% 
+% // ebp will be pushed
+% 56 |-> (byte ( 0 , mi(32, E))) 
+% 57 |-> (byte ( 1 , mi(32, E))) 
+% 58 |-> (byte ( 2 , mi(32, E))) 
+% 59 |-> (byte ( 3 , mi(32, E))) 
+% 
+% // return address
+% 60 |-> byte ( 0 , mi(64,-1) )
+% 61 |-> byte ( 1 , mi(64,-1) )
+% 62 |-> byte ( 2 , mi(64,-1) )
+% 63 |-> byte ( 3 , mi(64,-1) )
+% 
+% // Address of of
+% 64 |-> byte ( 0 , ptr ( symloc ( 1 , 128 ) , mi(32, 84)))
+% 65 |-> byte ( 1 , ptr ( symloc ( 1 , 128 ) , mi(32, 84)))
+% 66 |-> byte ( 2 , ptr ( symloc ( 1 , 128 ) , mi(32, 84)))
+% 67 |-> byte ( 3 , ptr ( symloc ( 1 , 128 ) , mi(32, 84)))
+% 
+% // Value of a
+% 68 |-> (byte ( 0 , mi(64, A))) 
+% 69 |-> (byte ( 1 , mi(64, A))) 
+% 70 |-> (byte ( 2 , mi(64, A))) 
+% 71 |-> (byte ( 3 , mi(64, A))) 
+% 72 |-> (byte ( 4 , mi(64, A))) 
+% 73 |-> (byte ( 5 , mi(64, A))) 
+% 74 |-> (byte ( 6 , mi(64, A))) 
+% 75 |-> (byte ( 7 , mi(64, A))) 
+% 
+% // Value of b
+% 76 |-> (byte ( 0 , mi(64, B))) 
+% 77 |-> (byte ( 1 , mi(64, B))) 
+% 78 |-> (byte ( 2 , mi(64, B))) 
+% 79 |-> (byte ( 3 , mi(64, B))) 
+% 80 |-> (byte ( 4 , mi(64, B))) 
+% 81 |-> (byte ( 5 , mi(64, B))) 
+% 82 |-> (byte ( 6 , mi(64, B))) 
+% 83 |-> (byte ( 7 , mi(64, B))) 
+% 
+% // Value of of
+% 84 |-> byte ( 0 , mi(64, 0)) //@ensure
+% 85 |-> byte ( 1 , mi(64, 0)) //@ensure
+% 86 |-> byte ( 2 , mi(64, 0)) //@ensure
+% 87 |-> byte ( 3 , mi(64, 0)) //@ensure
+%...</memstate>
+%    requires  A >=Int 0 andBool A <Int 2 ^Int 64 
+%        andBool   B >=Int 0 andBool B <Int 2 ^Int 64 
+%    ensures   A +Int B >=Int 2 ^Int 32
+%endmodule
+%\end{lstlisting}
+%\caption{\K specification to drive symbolic execution on code snippet at Figure 
+%\ref{fig:histar}.}
+%\label{lst:CSHISTAR}
+%\end{figure}
 
 
 
@@ -367,7 +447,7 @@ keywordstyle=\color{blue},
     for (; x > 0; x >>= 1) { res += x & 0x1ull; }
     return res; }
 \end{lstlisting}
-\vspace{-5pt}
+%\vspace{-5pt}
 \caption{\s{popcnt} program}
 \label{fig:popcnt}
 \end{figure}

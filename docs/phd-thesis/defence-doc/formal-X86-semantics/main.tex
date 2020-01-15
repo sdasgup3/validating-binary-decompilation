@@ -10,14 +10,12 @@ formalizes all the non-deprecated, sequential user-level instructions of the
 instruction variants, corresponding to \currentIntel{} mnemonics. %
 %~\cite{IntelManual} (Section~\ref{sec:IC}).  
 The semantics is fully executable and has been tested against more than 7,000
-instruction-level test cases and the GCC torture test suite. % using the
-co-simulation method, This extensive testing paid off, revealing bugs in both
-the \ISA reference manual and other existing semantics.  \AEC{We also
-  illustrate potential applications of our semantics in different formal
-    analyses,
-%such as symbolic execution, deductive verification, and translation
-  %validation,
-and discuss how it can be useful for processor verification.}
+instruction-level test cases and the GCC torture test suite. This extensive
+testing paid off, revealing bugs in both the \ISA reference manual and other
+existing semantics. We will also illustrate potential applications of our
+  semantics in different formal analyses, such as symbolic execution, deductive
+    verification, and translation validation, and discuss how it can be useful
+    for processor verification.
 
 \input{formal-X86-semantics/introduction.tex}
 \input{formal-X86-semantics/preliminaries.tex}

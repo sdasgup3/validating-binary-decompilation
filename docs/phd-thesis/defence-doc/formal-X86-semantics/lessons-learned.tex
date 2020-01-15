@@ -16,7 +16,9 @@ Specifically, in a vast instruction set like \ISA \cmt{computer (CISC) architect
 %One approach to automatic semantics synthesize is to employ stratification approach~\cite{Heule2016a} to learn the semantics of instruction variants in a group using the representatives of the group.
 An automatic synthesis technique leveraging such a group, such as the stratification approach~\cite{Heule2016a}, would effectively synthesize such instruction variants' semantics, provided that the semantics of representative instructions in each group are given in advance.\footnote{For certain complex instructions, the size of their group is very small (i.e., they are quite different to each other), and thus the automatic synthesis would not yield a sufficient gain over the effort of specifying the semantics of their representatives, but we found that the number of such isolated instructions of x86-64 is small.}
 The problem, however, is that it is non-trivial to properly partition all the instructions into such groups, providing the representative instruction semantics for each group, \emph{without} a priori knowledge about the semantics of all instructions.
-%The stratification approach~\cite{Heule2016a} had been proposed to solve this dilemma, but it turned out to be not sufficient, leaving a substantial part of semantics unspecified.
+The stratification approach~\cite{Heule2016a} had been proposed to solve this 
+dilemma, but it turned out to be not sufficient, leaving a substantial part of 
+semantics unspecified.
 The vanilla stratification approach~\cite{Heule2016a} turned out to be not sufficient to solve this dilemma, leaving a substantial part of the semantics unspecified.
 Thus, we decided to manually provide the information about the partition and representatives, for which we had to consult the manual to obtain knowledge about the remaining part of semantics.
 Once we obtained the required knowledge, however, we realized that it would be more straightforward to directly turn the knowledge into the semantics than going through the synthesis process, and thus we ended up manually specifying the remaining part of the semantics.

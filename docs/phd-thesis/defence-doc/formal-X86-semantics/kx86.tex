@@ -80,8 +80,10 @@ rule <k> fetch (*$\Rightarrow$*) exec(OpC OpR) (*$\kra$*) fetch ... </k>
 \end{lstlisting}
 %\Comment{It is not clear what kind of term \Code{exec(OpC OpR)} is: is it a special function defined somewhere, or a separate rule? I'm not familiar enough with K, but remember that reviewers won't be familiar either!}
 %
- The rule above says that if the next thing to be evaluated is a fetch computation (referred in the rule as \s{fetch}), then one should match \reg{rip} in the environment to find its value \s{L}
- in \s{regstate}, where \s{L} is matched in \s{memstate} to find the mapped instruction.
+ The rule above says that if the next thing to be evaluated is a fetch computation 
+ (referred in the rule as \s{fetch}), then one should match \reg{rip} in the environment 
+ to find its value \s{L}
+ in \s{regstate}, where \m{L} is matched in \s{memstate} to find the mapped instruction.
  The mapped instruction is then put at the head of the \s{k} cell to be computed next, using a rule \s{exec} for execution (defined later), along with the \s{fetch} computation to be executed in order. The rule also updates the value of \reg{rip} to point to the following instruction. The execution will be terminated when there is no instruction stored in the memory at the address pointed to by \reg{rip}.\footnote{While initializing the stack section of memory, we store an invalid address just before the entry-point function as return address. When the entry point function returned, the invalid return address is popped out of the stack and stored in \reg{rip} leading to program termination.} 
 
 \subsection{Semantics of Individual Instructions}
@@ -94,7 +96,7 @@ Here we explain how we define the semantics of an instruction in \K using a runn
 
 The semantics of most of the instructions can be modeled broadly in $3$ phases: (1) read the data from source operand(s), which could be a register, memory or constant value; (2) operate on the data based on the mnemonic; and (3) write the result(s) to destination operand(s), which could be a register or memory. An instruction may exercise some or all of the above phases. 
    
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Read from Source Operand(s)}
 
 Instruction in the running example reads from  register (\reg{rbx}) and memory (\mem{-4}{rsp}) operands. A read from register is modeled as a lookup with register name in the \s{regstate} map and subsequent read of the mapped value or,
@@ -104,9 +106,9 @@ rule <k> getRegisterVal(R:R64) (*$\Rightarrow$*) BV(*$_\s{r}$*) ...</k>
   <regstate>... R (*$\mapsto$*) BV(*$_\s{r}$*) ...</regstate>
 \end{lstlisting}
  In the context of the running example, this rule
-is applied when the current computation (at top of the \s{k} cell) is a $64$-bit register
-lookup, appeared as  \s{getRegisterVal(\reg{rbx})}, and \s{regstate} contains a register
-with name ``\s{RBX}''. This rule resolves the register lookup  to the mapped bit-vector value \s{BV$_\s{r}$} (or \s{BV$_\s{RBX}$} for the running example). 
+is applied when the current computation (at top of the \m{k} cell) is a $64$-bit register
+lookup, appeared as  \m{getRegisterVal(\reg{rbx})}, and \m{regstate} contains a register
+with name ``\m{RBX}''. This rule resolves the register lookup  to the mapped bit-vector value \m{BV$_r$} (or \m{BV$_\m{RBX}$} for the running example). 
 
 A read from memory involves computing the effective address in the memory, looking-up that address in memory, and reading requested bytes from memory if the memory access is within allowed range.
 The following rule is applied to compute the effective address:
@@ -119,12 +121,12 @@ rule <k>
 \SC{The term to the left of $\Rightarrow$ shows the memory addressing expression, of type \s{Mem}, at the 
 top of \s{k} cell, which gets reduced to an effective memory address (or EA).} The EA for the memory operand used in the running example is (64'-4 + \s{BV$_\s{rsp}$}) and is used to do memory read access. The rule for memory read access is responsible to read a memory value of requested number of bits ($64$-bits for the current example) starting from the EA. 
  
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Operate on Data}
 
 The rules for operating on operands will be different for each instruction based on the mnemonic. For example, the mnemonic \instr{andnq} requires logical-and-not operation to be computed on the operands.
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Write to Destination Operand(s)}
 
 The example instruction writes the result to a destination register \reg{rax}. Also, the flags \s{sf} and \s{zf} are updated based on the result; \s{of} and \s{cf}  are cleared, and \s{af} and \s{pf} are undefined. The rule shown in Figure~\ref{fig:andn-semantics} realizes the destination write operation, where \s{memVal$_{64}$} and \s{BV$_\s{r}$} represents the $64$-bit data values evaluated using the respective rules for reading register and memory operands (mentioned above).
@@ -146,7 +148,7 @@ rule <k>
     "PF" (*$\mapsto$*) undef // pf are undefined.
   ...</regstate>  
 \end{lstlisting}
-\vspace{-5pt}
+%\vspace{-5pt}
 \caption{Example instruction semantics of \instr{andn}}
 %\vspace*{-12pt}
 \label{fig:andn-semantics}
@@ -169,7 +171,9 @@ We systematically translated their semantics into \K.
 %
 Specifically, \Strata offers the semantics of \strataWithDupIS{} instruction variants as SMT formulas specifying the behavior of output registers.
 For each instruction, we converted the SMT formulas that \Strata provides to a \K specification using a simple script ($\sim$500 LOC).
-% The ease of this porting is facilitated by the fact that SMT-LIB expressions use s-expression (or "symbolic-expression") notation ~\cite{Steele} which eases the parsing effort significantly.
+The ease of this porting is facilitated by the fact that SMT-LIB expressions 
+use s-expression (or "symbolic-expression") notation ~\cite{Steele} which eases 
+the parsing effort significantly.
 
 To validate the translation, we generated SMT formulas from the translated \K specifications (using APIs provided by the \K framework), and use the Z3 SMT solver to check their equivalence to the corresponding formulas provided by \Strata.
 % In the course of the validation, we found bugs in \Strata's SMT formula extraction module.
@@ -179,7 +183,7 @@ While translating and validating their semantics, we found various issues that w
 Below we describe the issues we found in \Strata.%, and how we fixed them  as follows.
 
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Status Flags}
 
 We found that \Strata omitted to specify the \reg{af} flag behaviors, as the flag is not commonly used.
@@ -190,7 +194,7 @@ However, we faithfully specified the semantics of all the status flags in the \r
 
 
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Instruction Variants}
 
 \Strata essentially provides the semantics of the register instructions, assuming that the semantics of the memory and immediate instruction variants can be obtained by generalizing the register instructions\footnote{Generalization is based on a hypothesis that the memory or immediate variants will behave identically, on their operands, with corresponding register variant.}.
@@ -242,7 +246,7 @@ We found that another 128-bit SSE instruction, \instr{movss}, has the same gener
 For the other instructions, we obtained the memory and immediate variants by generalizing the register variants, and validated the generalization by co-simulating the inferred semantics against a processor.
 
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Immediate Instruction Variants}
 
 There are 118 immediate instruction variants (over the 8-bit constants) that do not have corresponding register instructions.
@@ -274,12 +278,15 @@ We validated our generalization by cross-checking the generalized semantics with
 
 %\footnote{Even though \Strata have simplification rules to prevent formula blowup but we found that they are not adequate for many instructions. Hence we added $13$ additional rules.}
  
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Formula Simplification}
 
 Due to the nature of the stratification, \Strata provides complex formulae for certain instructions.
 %
-We simplified those complex formulae by either applying some simplification rules or manually translating into simpler ones.
+We simplified those complex formulae by either applying additional $13+$ 
+simplification rules (Figure~\ref{fig:simpl-rules} mentions some of those) than what \Strata originally had  or 
+manually 
+translating into simpler ones.  
 Then we validated the simplification by checking the equivalence between them using the SMT solver.
 %
 For example, the original \Strata-provided formula for \instr{shrxl} \instr{\%edx,} \instr{\%ecx,} \instr{\%ebx} consists of 8971\cmt{2560} terms (including the operator symbols), but we could simplify it to a formula consisting of only 7 terms.
@@ -295,35 +302,39 @@ For example, the original \Strata-provided formula for \instr{shrxl} \instr{\%ed
 
 % After applying the simplification rules, we checked the \Strata formulas\footnote{Note that we have to check the formulas of only the register variants which are generated by \Strata as the rest are obtained either by``generalization'', in which case, the formulas for memory and immediate variants are guaranteed to be simple if the register variants are simple, or has been already written manually in simplified form.} if they are still un-simplified. In that case, we write the specification of that instruction in \K (similar to Figure~\ref{fig:pushw}) and compare the SMT formula, obtained by using \K APIs, with the \Strata formula for equivalence. .
 
-% Following are some of them:
-% \begin{lstlisting}[style=SIMPRULES]
-% /* Assume 
-%     A, B, C are symbolic bit-vector values of 
-%         width W,
-%     W'N denotes a constant bit-vector value of 
-%         width W and integer value N.    
-%     Cond is a symbolic boolean value, and  
-%     I, J and K are symbolic integers s.t.  
-%         K (*$\geq$*) J (*$\geq$*) I (*$\geq$*) 0.
-    
-%   A (*$\circ$*) B  denote bit-vector concatenation. 
-%   A[J:I] denotes bitvector-extract operation. 
-%   '+'    denote addition over bit-vectors
-%   '(*$\otimes$*)' denote  any of xor, or, add operators.
-% */
-% // Emilimitae redundant uninterpreted functions.
-%   (*$\bullet$*) (*$\s{add\_double(W'0, A)}\;\;\equiv\;\;\s{A}\;\;\text{{\color{blue} if}}\;\; \s{A}\equiv$\;\;\text{\s{concat(W1'0, W2'N) s.t. W1 + W2 = W}}*) 
-% // Distribute over if-then-else
-%   (*$\bullet$*) (*\s{(Cond ? A : B)[J:I]} $\equiv$ \s{(Cond ? A[J:I] : B[J:I])}*)
-%   (*$\bullet$*) (*\s{X} $\circ$ \s{(Cond ? A : B)} $\equiv$ \s{(Cond ? X$\circ$A : X$\circ$B)}*)
-%   (*$\bullet$*) (*\s{(Cond ? A : B)} $\otimes$ \s{(Cond ? C : D)} $\equiv$ \s{(Cond ? A $\otimes$ B : C $\otimes$ D)}*)
-% // Distribute extract over addition.
-%   (*$\bullet$*) (*\s{(A + B)[J:0]} $\equiv$ \s{A[J:0] + B[J:0]}*)
-% // Merge consecutive  concatenations.  
-%   (*$\bullet$*) (*\s{(A[K][J] $\circ$ (B[J][I] $\circ$ C))} $\equiv$ \s{A[K:I] $\circ$ C}*)  
-  
-% \end{lstlisting}
+\begin{figure}
+\begin{lstlisting}[style=KRULE]
+ /* Assume
+ **   A, B, C, D are symbolic bit-vector values of width W,
+ **   W'N denotes a constant bit-vector value of width W & integer value N,    
+ **   Cond is a symbolic boolean value, 
+ **   I, J & K are symbolic integers s.t. K (*$\geq$*) J (*$\geq$*) I (*$\geq$*) 0.
+ ** 
+ **   A (*$\circ$*) B  denote bit-vector concatenation. 
+ **   A[J:I] denotes bitvector-extract operation (assuming that J & I are within A's bounds). 
+ **   '+'    denote addition over bit-vectors.
+ **   '(*$\otimes$*)' denote  any of xor, or, add operators.
+ */
 
+  /* Emilimitae redundant uninterpreted functions */
+  (*$\bullet$*) (*$\s{add\_double(W'0, A)}\;\;\equiv\;\;\s{A}\;\;\text{{\color{blue} if}}\;\; \s{A}\equiv$\;\;\text{\s{concat(X'0, Y'N) s.t. X + Y = W}}*) 
+
+  /* Distribute over if-then-else */
+  (*$\bullet$*) (*\s{(Cond ? A : B) [J:I]} $\equiv$ \s{(Cond ? A[J:I] : B[J:I])}*)
+  (*$\bullet$*) (*\s{X} $\circ$ \s{(Cond ? A : B)} $\equiv$ \s{(Cond ? X $\circ$ A : X $\circ$ B)}*)
+  (*$\bullet$*) (*\s{(Cond ? A : B)} $\otimes$ \s{(Cond ? C : D)} $\equiv$ \s{(Cond ? A $\otimes$ B : C $\otimes$ D)}*)
+
+  /* Distribute extract over addition */
+  (*$\bullet$*) (*\s{(A + B) [J:0]} $\equiv$ \s{A[J:0] + B[J:0]}*)
+
+  /* Merge consecutive  concatenations */ 
+  (*$\bullet$*) (*\s{(A[K][J] $\circ$ (B[J][I] $\circ$ C))} $\equiv$ \s{A[K:I] $\circ$ C}*)  
+\end{lstlisting}
+%\vspace{-5pt}
+\caption{Additional simplification rules over bit-vector logic}
+%\vspace*{-12pt}
+\label{fig:simpl-rules}
+\end{figure}
 
 
 

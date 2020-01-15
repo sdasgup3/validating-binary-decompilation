@@ -82,7 +82,7 @@
 %\newcommand{\instr}[1]{\texttt{#1}}
 \newcommand{\instr}[1]{\textbf{\color{brown}\m{#1}}}
 \newcommand{\reg}[1]{\texttt{\%#1}}
-\newcommand{\mem}[2]{\s{#1(\%#2)}}
+\newcommand{\mem}[2]{\texttt{#1(\%#2)}}
 \newcommand{\opcode}[1]{\ensuremath{#1}}
 %\newcommand{\cond}[1]{\ensuremath{#1}}
 \newcommand{\extract}{\emph{extract}\xspace}
@@ -322,8 +322,9 @@
     morecomment=[l]{//},
     keywordstyle=\color{blue},
     %morekeywords={regstate, stackmem, andBool, requires, ensures, codemem, memstate, and}
-    morekeywords={andBool, requires, ensures, and, rule, type, getelementptr, 
-    extract, add, if, then, else, fi, concat}
+    %morekeywords={andBool, requires, ensures, and, rule, type, getelementptr, 
+    %extract, add, if, then, else, fi, concat}
+    morekeywords={andBool, requires, ensures, and, rule}
 }
 
 \lstdefinestyle{SMTLIB}{

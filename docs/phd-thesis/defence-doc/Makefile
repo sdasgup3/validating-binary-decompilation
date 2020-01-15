@@ -1,6 +1,6 @@
 PAPER=csthesis
 
-TEX = $(wildcard *.tex)
+TEX = $(wildcard *.tex) $(wildcard formal-X86-semantics/*.tex) $(wildcard scalable-validation/*.tex)
 
 BIB = $(wildcard bibs/*.bib)
 FIGS = scalable-validation/figs/overview_diag.tex

@@ -27,16 +27,18 @@ than in some other formalisms.
 
 
 
-% One of the most appealing aspects of K is its modularity. It is very rarely the
-% case that one needs to touch existing rules in order to add a new feature to
-% the language. This is achieved by structuring the configuration as nested cells
-% and by requiring the language designer to mention only the cells that are
-% needed in each rule, and only the needed portions of those cells. For example,
+One of the most appealing aspects of K is its modularity. It is very rarely the
+case that one needs to touch existing rules in order to add a new feature to
+the language. This is achieved by structuring the configuration as nested cells
+and by requiring the language designer to mention only the cells that are
+needed in each rule, and only the needed portions of those cells. 
+%For example,
 % the above rule only refers to the \s{k} and \s{regstate} cells, while
 % the entire configuration contains many more cells (Figure
-% ~\ref{fig:config}). This modularity makes for compact and human
-% readable semantics, and also helps with the overall effectiveness of the
-% semantics development. For example, even if new cells are later added to
+% ~\ref{fig:config}). 
+This modularity makes for compact and human readable semantics, and also helps 
+with the overall effectiveness of the semantics development. 
+%For example, even if new cells are later added to
 % configuration, to support new features, the above rule does not change.
 
 % \input{figures/configuration.tex}

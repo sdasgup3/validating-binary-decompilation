@@ -11,7 +11,7 @@ Empowered by the fact that we can directly execute the semantics using the \K fr
 
 We first describe our test-infrastructure and then talk about individual validation experiments and results.
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Test Harness}
 
 During co-simulations, we need to make sure that the program must be instrumented similarly both on our model and the real hardware. We use the GNU Debugger~\cite{GDB} to instrument programs on hardware. We developed instrumentation tools based on \K framework to gain similar capabilities for our model. Using these tools we can record the output state (including memory) after the execution of each instruction. 
@@ -19,14 +19,14 @@ To facilitate debugging, in the event when the output states do not match, we de
 
 The co-simulation experiments are done in the following two phases: (1) Instruction level validation: testing individual instructions, and (2) Program level validation: testing a combination of instructions  as a part of real-world programs. 
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Instruction Level Validation}
 
 The goal here is to execute individual instructions both on hardware and our model using test inputs and then compare the output states. 
 
 \K already has matured library support for bit-vector, integer and floating-point theories. \SC{We use bit-vectors to implement the values stored in registers or memory.} Depending upon an instruction mnemonic, these values can be interpreted as integers (signed/unsigned) or floating-point values (with various precisions).  We augmented the library support in \K framework to interpret these bit-vectors accordingly. With that support, we can execute and hence test instructions implementing various floating-point operations including conversions (to and from integer/floating-point values) with selectable rounding modes (e.g. Nearest, +Inf, -Inf and Truncate).   
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \subparagraph{Test Inputs} %6630 + 67 (ROL mcsema) + 200 (FP)
 %\vspace{2pt}
 %\noindent\emph{Test Inputs}
@@ -38,34 +38,69 @@ A test input is a CPU state which includes values for all registers, flags and m
 %    \item We used the (${\sim}100$) test-inputs offered by Remill~\cite{Remill}.
 %    \item We manually implemented a regression test-suite worth of around $200$ test-inputs which we accumulated over the course of the project. 
 %\end{itemize}  
-(1) In section~\ref{sec:prelimstrata}, we mentioned that \Strata starts its algorithm with a set of test inputs which keeps on augmenting itself during the process of stratification. We used the final augmented test-suite of  $6630$ test inputs,
-(2) While testing instructions implementing floating-point operations, we found that many of the test inputs are representing a NaN or Infinity and it makes no sense to test with such instances. We did our best effort by manually generating more than $100$ unique floating-point values by  consulting the IEEE floating-point arithmetic standard~\cite{FP}, 
-(3) We used the (${\sim}100$) test-inputs offered by Remill~\cite{Remill}, and 
-(4) We manually implemented a regression test-suite worth of around $200$ test-inputs which we accumulated over the course of the project.
+\begin{itemize}
+ \item In section~\ref{sec:prelimstrata}, we mentioned that \Strata starts its 
+ algorithm with a set of test inputs which keeps on augmenting itself during 
+ the process of stratification. We used the final augmented test-suite of  
+ $6630$ test inputs,
+ 
+ \item While testing instructions implementing floating-point operations, we 
+ found that many of the test inputs are representing a NaN or Infinity and it 
+ makes no sense to test with such instances. We did our best effort by manually 
+ generating more than $100$ unique floating-point values by  consulting the 
+ IEEE floating-point arithmetic standard~\cite{FP}, 
+ 
+ \item We used the (${\sim}100$) test-inputs offered by Remill~\cite{Remill}, 
+ and 
 
-\SC{Note that, each instruction semantics consists of one or more semantic rules, where those rules cover different cases of the instruction behaviors (including the undefined ones). We ensure that our test inputs are sufficient enough to trigger all of the semantic rules, achieving the full ``semantic-rule'' coverage.}
+ \item We manually implemented a regression test-suite worth of around $200$ 
+ test-inputs which we accumulated over the course of the project.
+
+
+\end{itemize}
+\SC{Note that, each instruction semantics consists of one or more 
+    semantic rules, where those rules cover different cases of the instruction 
+    behaviors (including the undefined ones). We ensure that our test inputs 
+    are 
+    sufficient enough to trigger all of the semantic rules, achieving the full 
+    ``semantic-rule'' coverage.}
 
 \cmt{The extended test-inputs are tried with different combinations to test individual instructions and we ensured that all the instruction are tested with test inputs unique to the combination of its operands.}   
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \subparagraph{Results}
 %\vspace{2pt}
-%\noindent\emph{Results} For each immediate instruction with a constant operand of size $8$-bits, we tested all the $256$ variants of the instruction using the above set of test inputs. There are $62$ immediate instructions  with a constant operand width larger than $8$-bits.  Testing with all possible values of the constant (which could be $2^{32}$ for a $32$-bit constant) is impractical, so we limited the constant operand to the first $256$ values and other interesting values like  all ones, setting or resetting the bits at the byte/word/quad-word boundaries etc.  
+%\noindent\emph{Results} 
+For each immediate instruction with a constant operand of size $8$-bits, we 
+tested all the $256$ variants of the instruction using the above set of test 
+inputs. There are $62$ immediate instructions  with a constant operand width 
+larger than $8$-bits.  Testing with all possible values of the constant (which 
+could be $2^{32}$ for a $32$-bit constant) is impractical, so we limited the 
+constant operand to the first $256$ values and other interesting values like  
+all ones, setting or resetting the bits at the byte/word/quad-word boundaries 
+etc.  
 
-Our current implementation of the fused-multiply-add operation\footnote{According to the standard IEEE-754-2008~\cite{FP} (Definition 2.1.28), the operation \s{fused-multiply-add(x, y, z)} computes $\s{x} \times \s{y} + \s{z}$ as if with unbounded range and precision, rounding only once to the destination format.} incorrectly rounds the operation twice (after multiplication and addition) as opposed to once. As a result, we encountered floating-point precision issues while testing instructions implementing those operations (\instr{vfmadd132pd}).
+Our current implementation of the fused-multiply-add 
+operation\footnote{According to the standard IEEE-754-2008~\cite{FP} 
+(Definition 2.1.28), the operation \s{fused-multiply-add(x, y, z)} computes 
+$\s{x} \times \s{y} + \s{z}$ as if with unbounded range and precision, rounding 
+only once to the destination format.} incorrectly rounds the operation twice 
+(after multiplication and addition) as opposed to once. As a result, we 
+encountered floating-point precision issues while testing instructions 
+implementing those operations (for example \instr{vfmadd132pd}).
 \SC{This is a limitation of the underlying \K library and more details about this limitation can be found in Section~\ref{sec:limit}.}% of our floating-point library support in \K. 
  
  
 While performing the validation tests, we encountered various cases where the output state obtained by executing the semantics on our model does not agree with that of the hardware execution. 
 The instruction semantics in our model is either based on the Strata project (for the part we borrowed) or on the Intel manual. A difference in the output state could mean a bug in Strata's instruction semantics or in our interpretation of the Intel manual or in the Intel manual itself. We found many bugs in our interpretation which we fixed, but in other cases, we found issues  in Intel manual and Strata project.
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \subparagraph{Inconsistencies Found in the Intel Manual} Here are inconsistencies found during development and testing. \cmt{This is unsurprising given that fact that there are over $3,800$ pages of technical content and the vast majority of which is not machine-checked.} 
 According to the manual, the semantics of \instr{vpsravd} \instr{\%xmm3,} \instr{\%xmm2,} \instr{\%xmm1} seems to depend on the lower $100$ bits of \reg{xmm3}, whereas the actual hardware execution suggests that it should depend on the lower $128$ bits. Similar inconsistencies are found in instructions with mnemonics \instr{vpsllvd}, \instr{vpsllvq}, \instr{vpsravd}.
 Also, we found misleading typos related to instructions with opcodes \instr{vpsravw}, \instr{vpsravd}, \instr{vpsravq}, \instr{packsswb}.    
 All these findings were reported and acknowledged by Intel as issues in the manual~\cite{BugIntel}.
  
-\vspace{-2pt}
+%\vspace{-2pt}
 \subparagraph{Inconsistencies Found in \Strata's Simplification Rules}
 %\vspace{2pt}
 %\noindent\emph{Inconsistencies Found in \Strata's Simplification Rules}
@@ -78,7 +113,7 @@ All the instruction sequences are testing as part of the their algorithm, but th
 The simplification rule \s{add\_double(A, 0) == A} does not hold for \s{A = $-0.0$}. Same for \s{add\_single}. These were reported~\cite{PC1}.
 Also, the simplification rule \s{sub\_double(A, A) == 0} does not hold for \s{A = $NaN$}.  Same is true for \s{sub\_single}. We found this bug in the  branch of Stoke which is used in \Strata. But this has been already fixed in the latest \Stoke branch.
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \paragraph{Program Level Validation}
 
 The goal here is to test the combination of instructions as part of real-world programs and we chose to use GCC C-torture tests~\cite{CTORTURE} for this purpose. Specifically, we used the tests inside the ``testsuite/gcc.c-torture/execute'' directory for GCC version 8.1.0.  
@@ -88,9 +123,42 @@ There are originally \TortureTotal{} tests, which we compiled using the GCC swit
 \subsection{Comparing with \Stoke}\label{subsec:compare-stoke}
 \SC{\Stoke~\cite{Stoke2013}}\footnote{\SC{Recall that \Stoke is a stochastic super-optimizer  leveraged by Strata for stochastic search.}} contains manually written semantics for \stokeIS{} x86-64 instruction variants, a large fraction ($81\%$) of which is also supported by \Strata. The remaining fraction is exclusive to Stoke. Comparing with \Stoke provides an additional crosscheck on our model.  Moreover, these manually written formulas are based on a similar model of the CPU state to ours, which makes it easier to compare them against ours by using an SMT solver. While doing so we found inconsistencies between the two formalisms in a total of 16 mnemonics (42 instruction variants), and after careful analysis, identified these as errors in the \Stoke specification of instruction semantics, as follows.
 
-\vspace{-2pt}
+%\vspace{-2pt}
 \subparagraph{Inconsistencies Found in \Stoke}
 
+\begin{enumerate}%[noitemsep,topsep=0pt]
+    \item For instructions like \instr{addsubpd \%xmm1, \%xmm2} , the order of 
+addition and subtraction specified by \Stoke is opposite to the one specified 
+in the Intel Manual. Same is true with the mnemonic \instr{addsubps}. (Found 
+in 
+$12$ instruction variants.)
+    
+    \item  The instruction \instr{pslld \%xmm1, \%xmm2} implements a logical 
+left shift of packed data by a count specified in \reg{xmm1}. \Stoke's 
+specification vectorized the operand \reg{xmm1} which is incorrect according 
+to 
+the manual. Similar issues were found in instructions implementing the logical 
+right shift operations on packed data. (Found in  $18$ instructions.)
+    
+    \item Instructions \instr{cvtsi2sdl \%eax, \%xmm1} \& \instr{vcvtsi2sdl} 
+\instr{\%eax, \%xmm0, \%xmm1} are respectively SSE- and AVX-versions of the 
+instruction to  convert a double-word ($32$-bit) integer to a scalar 
+single-precision floating-point value. According to the manual, in the 
+AVX-version,  the  destination bits $127-64$ of the  register \reg{xmm1} are 
+updated to the corresponding bits in the first source operand \reg{xmm0}. 
+This  
+is in contrast to the SSE-version of the instruction where the destination 
+bits 
+$127-64$ should remain unmodified. \Stoke specifies the semantics of the 
+AVX-version similar to the SSE-version, which is incorrect.  (Found in $4$ 
+instruction variants.)
+    
+    \item Some instructions, like \instr{imulb \%al}, which drive flag 
+registers to an undefined state are not modeled correctly in \Stoke.    (found 
+in $8$ instruction variants)  
+\end{enumerate}
+
+\cmt{
 First, for instructions like \instr{addsubpd \%xmm1, \%xmm2} , the order of addition and subtraction specified by \Stoke is opposite to the one specified in the Intel Manual. Same is true with the mnemonic \instr{addsubps}. (Found in $12$ instruction variants.)
 
 Second, the instruction \instr{pslld \%xmm1, \%xmm2} implements a logical left shift of packed data by a count specified in \reg{xmm1}. \Stoke's specification vectorized the operand \reg{xmm1} which is incorrect according to the manual. Similar issues were found in instructions implementing the logical right shift operations on packed data. (Found in  $18$ instructions.)
@@ -98,18 +166,10 @@ Second, the instruction \instr{pslld \%xmm1, \%xmm2} implements a logical left s
 Third, \instr{cvtsi2sdl} \instr{\%eax,} \instr{\%xmm1} and \instr{vcvtsi2sdl} \instr{\%eax,} \instr{\%xmm0,} \instr{\%xmm1} are respectively SSE- and AVX-versions of the instruction to  convert a double-word ($32$-bit) integer to a scalar single-precision floating-point value. According to the manual, in the AVX-version,  the  destination bits $127-64$ of the  register \reg{xmm1} are updated to the corresponding bits in the first source operand \reg{xmm0}. This  is in contrast to the SSE-version of the instruction where the destination bits $127-64$ should remain unmodified. \Stoke specifies the semantics of the AVX-version similar to the SSE-version, which is incorrect.  (Found in $4$ instruction variants.)
 
 Finally, some instructions, like \instr{imulb \%al}, which drive flag registers to an undefined state are not modeled correctly in \Stoke.    (found in $8$ instruction variants)
-
+}
 All these errors were reported and confirmed~\cite{BugStoke983,BugStoke986}.
 
-%\begin{enumerate}%[noitemsep,topsep=0pt]
-%    \item For instructions like \instr{addsubpd \%xmm1, \%xmm2} , the order of addition and subtraction specified by \Stoke is opposite to the one specified in the Intel Manual. Same is true with the mnemonic \instr{addsubps}. (Found in $12$ instruction variants.)
-%    
-%    \item  The instruction \instr{pslld \%xmm1, \%xmm2} implements a logical left shift of packed data by a count specified in \reg{xmm1}. \Stoke's specification vectorized the operand \reg{xmm1} which is incorrect according to the manual. Similar issues were found in instructions implementing the logical right shift operations on packed data. (Found in  $18$ instructions.)
-%    
-%    \item Instructions \instr{cvtsi2sdl \%eax, \%xmm1} \& \instr{vcvtsi2sdl} \instr{\%eax, \%xmm0, \%xmm1} are respectively SSE- and AVX-versions of the instruction to  convert a double-word ($32$-bit) integer to a scalar single-precision floating-point value. According to the manual, in the AVX-version,  the  destination bits $127-64$ of the  register \reg{xmm1} are updated to the corresponding bits in the first source operand \reg{xmm0}. This  is in contrast to the SSE-version of the instruction where the destination bits $127-64$ should remain unmodified. \Stoke specifies the semantics of the AVX-version similar to the SSE-version, which is incorrect.  (Found in $4$ instruction variants.)
-%    
-%    \item Some instructions, like \instr{imulb \%al}, which drive flag registers to an undefined state are not modeled correctly in \Stoke.    (found in $8$ instruction variants)  
-%\end{enumerate}
+
 
 
 %\cmt{ 
