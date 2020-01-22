@@ -151,7 +151,7 @@ negatives.
 %
 We build on a subgraph-isomorphism algorithm from Saltz 
 et al.~\cite{Saltz2014}, named 
-\emph{dual-simulation},  to check if both \GN \& \GNP are 
+\emph{dual-simulation} (refer Algorithm~\ref{alg:DS}),  to check if both \GN \& \GNP are 
 subgraph-isomorphic to each other. The algorithm, in general, first 
 retrieves initial potential match sets, $\Phi$,  for each vertex in one 
 graph based on semantic and/or neighborhood information in the other graph.
@@ -170,6 +170,47 @@ they have identical (isomorphic) sets of predecessors and successors.
 %
 Two edges will be marked as isomorphic if their source and sink nodes are isomorphic.
 
+\begin{algorithm}
+    \SetKwInOut{Input}{Inputs}
+    \SetKwInOut{Output}{Output}
+    \Input{ \\
+        \textbf{\GN:} data-dependence graph of \N. \\
+        \textbf{\GNP:} data-dependence graph of  \NP.
+    }
+    \Output{Check if \textbf{\GN} \& \textbf{\GNP} are isomorphic}
+    \BlankLine
+
+    changed $\gets$ true \\
+    \While{changed} { 
+       changed $\gets$ false \\
+       \For{\un $\gets$ \GN } {
+           \For{ \up $\gets$ \GN.adj(\un)} {
+               \potpup $\gets$ $\emptyset$ \\
+               \For{ \vn $\gets$ \potu } {
+                   \potvup $\gets$ \GN.adj(\vn) $\cap$ \potup \\
+                   \If{\potvup = $\empty$} {
+                       remove \vn from \potu \\
+                       \If{\potu = $\emptyset$} {
+                           \KwRet{$\emptyset$} \\
+                       }
+                       changed $\gets$ true \\
+                   }
+                   \potpup $\gets$ \potpup $\cap$ \potvup \\
+               }
+               \If{ \potpup = $\emptyset$} {
+                   \KwRet{$\emptyset$} \\
+               }
+               \If{ \potpup is smaller than \potup} {
+                   changed $\gets$ true \\
+               }
+               \potup $\gets$ \potup $\cap$ \potpup \\
+           }
+       }
+   }
+   \KwRet{$\emptyset$} \\
+    %\NoCaptionOfAlgo
+    \caption{\textbf{Dual Simulation}}\label{alg:DS}
+\end{algorithm}
 
 %\cmt{Then we augmented the algorithm to infer the basic-block 
 %correspondence 
@@ -308,48 +349,7 @@ Two edges will be marked as isomorphic if their source and sink nodes are isomor
 %\todo[inline]{The soundness problem that Vikram pointed out: Removing code
 %    might introduce undefined behavior, which the later opt passes might abuse
 %    and we might end up getting false positive or false negatives.}
-%\begin{algorithm}
-%    \SetKwInOut{Input}{Inputs}
-%    \SetKwInOut{Output}{Output}
-%    \Input{ \\
-%        \textbf{\GN:} SSA graph of \N. \\
-%        \textbf{\GNP:} SSA graph of  \NP.
-%    }
-%    \Output{Check if \textbf{T} \& \textbf{T$^\prime$} are semantically 
-%        equivalent}
-%    \BlankLine
-%
-%    changed $\gets$ true \\
-%    \While{changed} { 
-%       changed $\gets$ false \\
-%       \For{\un $\gets$ \GN } {
-%           \For{ \up $\gets$ \GN.adj(\un)} {
-%               \potpup $\gets$ $\emptyset$ \\
-%               \For{ \vn $\gets$ \potu } {
-%                   \potvup $\gets$ \GN.adj(\vn) $\cap$ \potup \\
-%                   \If{\potvup = $\empty$} {
-%                       remove \vn from \potu \\
-%                       \If{\potu = $\emptyset$} {
-%                           \KwRet{$\emptyset$} \\
-%                       }
-%                       changed $\gets$ true \\
-%                   }
-%                   \potpup $\gets$ \potpup $\cap$ \potvup \\
-%               }
-%               \If{ \potpup = $\emptyset$} {
-%                   \KwRet{$\emptyset$} \\
-%               }
-%               \If{ \potpup is smaller than \potup} {
-%                   changed $\gets$ true \\
-%               }
-%               \potup $\gets$ \potup $\cap$ \potpup \\
-%           }
-%       }
-%   }
-%   \KwRet{$\emptyset$} \\
-%    %\NoCaptionOfAlgo
-%    \caption{\textbf{Dual Simulation}}\label{alg:DS}
-%\end{algorithm}
+
 
  
 

@@ -45,32 +45,33 @@ have been confirmed as bugs by the \mcsema developers.
 %
 The following gives some brief examples of some of the
 discrepancies we found.
+\begin{itemize}
+    \item \instr{xaddq \%rax, \%rbx} expects the operations 
+    (1) temp $\leftarrow$ \reg{rax} + \reg{rbx}, (2) \reg{rax} 
+    $\leftarrow$ \reg{rbx}, and (3) \reg{rbx} $\leftarrow$ temp, in that 
+    order. \mcsema performs the same operation differently as (A) old\_rbx = 
+    \reg{rbx}, (B) temp $\leftarrow$ \reg{rax} + \reg{rbx}, (C) \reg{rbx} 
+    $\leftarrow$ temp, and (D) \reg{rax} 
+    $\leftarrow$ old\_rbx. This will fail to  work when the operands 
+    are the same registers.
 
-First, \instr{xaddq \%rax, \%rbx} expects the operations 
-(1) temp $\leftarrow$ \reg{rax} + \reg{rbx}, (2) \reg{rax} 
-$\leftarrow$ \reg{rbx}, and (3) \reg{rbx} $\leftarrow$ temp, in that 
-order. \mcsema performs the same operation differently as (A) old\_rbx = 
-\reg{rbx}, (B) temp $\leftarrow$ \reg{rax} + \reg{rbx}, (C) \reg{rbx} 
-$\leftarrow$ temp, and (D) \reg{rax} 
-$\leftarrow$ old\_rbx. This will fail to  work when the operands 
-are the same registers. 
-
-Second, for instruction \instr{andnps \%xmm2, \%xmm1}, the Intel 
-Manual~\cite{IntelManual} says the implementation should be \reg{xmm1}  
-$\leftarrow$ $\sim$\reg{xmm1} \& \reg{xmm2}, whereas \mcsema 
-interchanges the source operands. 
-
-Third, for \instr{pmuludq \%xmm2, \%xmm1} instruction, both the higher and 
-lower double-words of the source operands need to multiply, whereas 
-\mcsema multiplies just the lower double-words.
-
-Fourth, for \instr{cmpxchgl \%ecx, \%ebx}, \mcsema compares the entire $64$-bit 
-\reg{rbx} (instead of just \reg{ebx}) with the accumulator 
-\s{Concat(0x00000000, \reg{eax}}).
-
-Finally, for \instr{cmpxchgb \%ah, \%al}, the lower $8$-bits of \reg{rax} 
-should be replaced with the higher $8$-bits at the end of the instruction, whereas 
-\mcsema keeps them unchanged.
+    \item For instruction \instr{andnps \%xmm2, \%xmm1}, the Intel 
+    Manual~\cite{IntelManual} says the implementation should be \reg{xmm1}  
+    $\leftarrow$ $\sim$\reg{xmm1} \& \reg{xmm2}, whereas \mcsema 
+    interchanges the source operands.
+    
+    \item For \instr{pmuludq \%xmm2, \%xmm1} instruction, both the higher and 
+    lower double-words of the source operands need to multiply, whereas 
+    \mcsema multiplies just the lower double-words.
+    
+    \item For  \instr{cmpxchgl \%ecx, \%ebx}, \mcsema compares the entire $64$-bit 
+    \reg{rbx} (instead of just \reg{ebx}) with the accumulator 
+    \s{Concat(0x00000000, \reg{eax}}).
+    
+    \item For \instr{cmpxchgb \%ah, \%al}, the lower $8$-bits of \reg{rax} 
+    should be replaced with the higher $8$-bits at the end of the instruction, whereas 
+    \mcsema keeps them unchanged.
+\end{itemize}
 
 %\todo{Is it mcsema to remill bugs}
 

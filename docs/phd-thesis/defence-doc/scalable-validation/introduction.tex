@@ -92,6 +92,12 @@ Despite the correctness challenges in binary lifting, such lifters are sometimes
 used for tasks where correctness is especially important, e.g., when looking for security
 vulnerabilities in binary code, binary emulation of one processor ISA on another,
 or recompiling embedded software to run on new platforms.
+Any bug in the lifting would invalidate the binary analysis results.
+For example, a malware analysis system might miss vulnerabilities or a binary
+instrumentation system, instrumenting a buggy IR, might lead to failure or
+even crash in interpreting the instrumented program. Therefore, automatic
+validation tools are needed urgently to uncover hidden problems in a binary
+lifters, which constitute the motivation and theme of our work.
 %
 Beyond these more critical tasks, gaining confidence in decompilers through more 
 effective testing is also generally important for developers of decompilers,
@@ -136,7 +142,7 @@ correctness~\cite{Galois:SPISA19}.
 %raising into an intermediate representation such as assembly code or LLVM is
 %sufficient.
 
-The goal of the work in this paper is to develop formal and informal techniques
+The goal of the work  is to develop formal and informal techniques
 to achieve high confidence in the correctness of a lifter from a complex machine
 ISA (e.g., X86-64) to a rich IR (e.g., LLVM IR).
 %
@@ -189,17 +195,18 @@ We present four key contributions.
   \s{norm(T)} and \s{norm(T$^\prime$)} are \emph{syntactically} equivalent iff \s{T} 
   and \s{T$^\prime$} are \emph{semantically} equivalent.  If such a normalizer
   exists, then we can reduce the problem of program-level semantics checking to
-  a much cheaper program-level syntactic check!  In this paper, we construct a 
-  normalizer out of a very short sequence of 15 LLVM IR passes, of which 11 are
+  a much cheaper program-level syntactic check!  In this work, we construct a 
+  normalizer out of a very short sequence of $15$ LLVM IR passes, of which 11 are
   transformation passes.  We have found this approach to be effective at proving
   syntactic equivalence between \s{T} and \Tp for \plvP out of \plvT functions
-  taken from  ''single-source-benchmark'' of LLVM test-suite.
+  taken from  ``single-source-benchmark'' of LLVM test-suite.
   %
 \end{enumerate}
 
-%Our validation framework is publicly available at ~\cite{Suppl}.
+Our validation framework is publicly available at ~\cite{lifter-validator-github}.
+
 %
-The rest of this paper proceeds as follows.
+The rest of this chapter proceeds as follows.
 %
 The next section gives a high-level overview of our approach.
 %

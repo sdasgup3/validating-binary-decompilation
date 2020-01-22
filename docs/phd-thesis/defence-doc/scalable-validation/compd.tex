@@ -12,10 +12,10 @@ instructions.
 %important because the Matcher (Section~\ref{sec:matcher}) will work at
 %function-level granularity\todo{SD:makes sense?  CF: unclear whether this was 
 %%%fundamental or just a design choice}. 
-\cmt{Moreover, the framework 
+Note that, the framework 
 is
 plug-and-play in
-using disassemblers other than ObjDump (line 2), like Intel's  XED~\cite{xed}.}
+using disassemblers other than ObjDump (line 2), like Intel's  XED~\cite{xed}.
 If the disassembled instruction $I_{disass}$ is already in Store, then its
 corresponding (validated) IR sequence is reused.
 Otherwise $I_{disass}$
@@ -147,7 +147,7 @@ define %struct.Mem* @composedFunc(%struct.State*,
         i64, %struct.Mem* mem)  {
     ; Code: adcq %rax, %rbx	
     %loadMem = load %struct.Mem*, %struct.Mem** %mem
-    %retval = call %struct.Mem* @routine_adcq_rax_rbx(
+    %retval = call %struct.Mem* @sub_adcq_rax_rbx(
         %struct.State* %0, %struct.Mem* %loadMem)
     store %struct.Mem* %call, %struct.Mem** %mem
 
@@ -200,7 +200,7 @@ define %struct.Mem* @composedFunc( %struct.State*,
   ; ... previously composed code ...
   ; Code: jne .L_40087e	 RIP: 400855	 Bytes: 6
   %loadMem = load %struct.Mem*, %struct.Mem** %mem
-  %retval = call %struct.Mem* @routine_jne_.L_40087e(
+  %retval = call %struct.Mem* @sub_jne_.L_40087e(
         %struct.State* %0, %struct.Mem* %loadMem, 
         i64 (*\textbf{41}*), i64 (*\textbf{6}*))
   store %struct.Mem* %retval, %struct.Mem** %mem
@@ -209,9 +209,9 @@ define %struct.Mem* @composedFunc( %struct.State*,
 \end{lstlisting}
 
 \paragraph{Composing data-section access instructions}
-Instructions accessing the data section, like \instr{movq 0x602040, \%rdi}
+Instructions accessing the data section, for example \instr{movq 0x602040, \%rdi},
 with the first operand being an address, cannot be lifted correctly in
-isolation (without program context) because \mcsema does not have sufficient information to to distinguish constant from address. 
+isolation (without program context) because \mcsema does not have sufficient information to distinguish constant from address. 
 \Siv can only validate the fact whether the constant
 (which could potentially be an address) is correctly moved to the destination register. 
 However, the problem is the \plv cannot use that lifting because the resulting 

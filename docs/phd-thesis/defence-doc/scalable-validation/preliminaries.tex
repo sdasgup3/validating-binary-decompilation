@@ -19,7 +19,13 @@ the most robust, and supported option.
 Conceptually, the backend implementation of \mcsema is fairly straightforward:
 \mcsema exposes all of architecture state, i.e., the program registers,
 conditional flags, and program memory, through an LLVM \emph{struct}, aptly
-named \Mcstate. \mcsema simply scans through the disassembly of the binary
+named \Mcstate. 
+Member fields
+of the structure correspond to every register (register name, not a physical
+register) and flags that can be used during the execution of the program. Instructions
+operating on the stack must retrieve the current top of stack from the
+appropriate member field (corresponding to \reg{rsp}) in the structure.
+\mcsema simply scans through the disassembly of the binary
 and lifts each instruction one by one, emitting code to read and update the
 members of \emph{state} as defined by the instruction semantics. In essence,
 the code lifted by \mcsema simply \emph{simulates} the binary in \LLVM.
@@ -45,6 +51,21 @@ the code lifted by \mcsema simply \emph{simulates} the binary in \LLVM.
 %and~\cite{LLVMSEMA} respectively. Both semantics are developed using
 %\K~\cite{k-primer-2013-v32}\cmt{\url{http://kframework.org}}, which is a
 %framework for defining formal language semantics.
+
+\paragraph{K-Framework}\label{par:k} The presented work needs the formal
+semantics of \ISA and LLVM, which we borrowed from~\cite{DasguptaAdve:PLDI19}
+and~\cite{LLVMSEMA} respectively (and described next). Both semantics are developed using
+\K~\cite{k-primer-2013-v32}\cmt{\url{http://kframework.org}}, which is a
+framework for defining formal language semantics. Given a syntax and a
+semantics of a language, \K automatically generates a parser, an interpreter, 
+a symbolic execution engine, as well as
+formal analysis tools such as model checkers and deductive program verifiers,
+at no additional effort. Using the interpreter, one can test their
+semantics immediately, which significantly increases the efficiency of
+semantics developments. Furthermore, the formal analysis tools
+facilitate formal reasoning about the given language semantics.  This
+helps both the applicability of the semantics and in the
+engineering the semantics itself.
 
 \paragraph{\ISA Formal Semantics} Our work uses the state-of-the-art \ISA
 semantics developed by Dasgupta et al.~\cite{DasguptaAdve:PLDI19}, which
@@ -73,20 +94,7 @@ most LLVM intrinsic functions and therefore we cannot validate the \tv for
 such instructions.  This is a limitation of the available LLVM semantics, and
 not a limitation of our work.
 
-%\paragraph{K-Framework}\label{par:k} The present work needs the formal
-%semantics of \ISA and LLVM, which we borrowed from~\cite{DasguptaAdve:PLDI19}
-%and~\cite{LLVMSEMA} respectively. Both semantics are developed using
-%\K~\cite{k-primer-2013-v32}\cmt{\url{http://kframework.org}}, which is a
-%framework for defining formal language semantics. Given a syntax and a
-%semantics of a language, \K automatically generates a parser, an interpreter, 
-%a symbolic execution engine, as well as
-%formal analysis tools such as model checkers and deductive program verifiers,
-%       at no additional effort. Using the interpreter, one can test their
-%       semantics immediately, which significantly increases the efficiency of
-%       semantics developments. Furthermore, the formal analysis tools
-%       facilitate formal reasoning about the given language semantics.  This
-%       helps both the applicability of the semantics and in the
-%       engineering the semantics itself.
+.
 %\todo[inline]{The last 2 sentences are nice, but could be dropped if space is tight.}
 %\todo[color=yellow]{These two semantics are two of the most
 %    important building blocks. Can we make them top-level paragraphs?}
