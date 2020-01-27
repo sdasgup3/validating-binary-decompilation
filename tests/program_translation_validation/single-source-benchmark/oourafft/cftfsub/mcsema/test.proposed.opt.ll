@@ -174,6 +174,7 @@ entry:
 
 entry.block_.L_4018b0_crit_edge:                  ; preds = %entry
   %.pre6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  %.pre13 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   br label %block_.L_4018b0
 
 block_401864:                                     ; preds = %entry
@@ -363,6 +364,7 @@ block_.L_4018ab:                                  ; preds = %block_.L_40187b
   br label %block_.L_4018b0
 
 block_.L_4018b0:                                  ; preds = %entry.block_.L_4018b0_crit_edge, %block_.L_4018ab
+  %RCX.i152.pre-phi = phi i64* [ %.pre13, %entry.block_.L_4018b0_crit_edge ], [ %RCX.i609, %block_.L_4018ab ]
   %RAX.i597.pre-phi = phi i64* [ %.pre6, %entry.block_.L_4018b0_crit_edge ], [ %RAX.i626, %block_.L_4018ab ]
   %209 = phi i64 [ %92, %entry.block_.L_4018b0_crit_edge ], [ %208, %block_.L_4018ab ]
   %210 = phi i64 [ %62, %entry.block_.L_4018b0_crit_edge ], [ %115, %block_.L_4018ab ]
@@ -435,16 +437,21 @@ block_.L_4018b0:                                  ; preds = %entry.block_.L_4018
   store i64 %259, i64* %3, align 8
   %260 = inttoptr i64 %258 to i32*
   store i32 0, i32* %260, align 4
-  %RCX.i152 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %261 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0
   %262 = bitcast %union.VectorReg* %261 to double*
   %263 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
   %264 = bitcast i64* %263 to double*
   %.pre2 = load i64, i64* %3, align 8
-  br i1 %247, label %block_.L_4018c6, label %block_.L_401af3
+  br i1 %247, label %block_.L_4018b0.block_.L_4018c6_crit_edge, label %block_.L_4018b0.block_.L_401af3_crit_edge
 
-block_.L_4018c6:                                  ; preds = %block_.L_4018b0, %block_4018d2
-  %265 = phi i64 [ %1178, %block_4018d2 ], [ %.pre2, %block_.L_4018b0 ]
+block_.L_4018b0.block_.L_4018c6_crit_edge:        ; preds = %block_.L_4018b0
+  br label %block_.L_4018c6
+
+block_.L_4018b0.block_.L_401af3_crit_edge:        ; preds = %block_.L_4018b0
+  br label %block_.L_401af3
+
+block_.L_4018c6:                                  ; preds = %block_.L_4018b0.block_.L_4018c6_crit_edge, %block_4018d2
+  %265 = phi i64 [ %1178, %block_4018d2 ], [ %.pre2, %block_.L_4018b0.block_.L_4018c6_crit_edge ]
   %266 = load i64, i64* %RBP.i, align 8
   %267 = add i64 %266, -28
   %268 = add i64 %265, 3
@@ -656,7 +663,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %423, i64* %3, align 8
   %424 = inttoptr i64 %421 to i64*
   %425 = load i64, i64* %424, align 8
-  store i64 %425, i64* %RCX.i152, align 8
+  store i64 %425, i64* %RCX.i152.pre-phi, align 8
   %426 = add i64 %420, -28
   %427 = add i64 %422, 8
   store i64 %427, i64* %3, align 8
@@ -675,7 +682,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %436 = add i64 %422, 17
   store i64 %436, i64* %3, align 8
   %437 = load i64, i64* %424, align 8
-  store i64 %437, i64* %RCX.i152, align 8
+  store i64 %437, i64* %RCX.i152.pre-phi, align 8
   %438 = add i64 %420, -32
   %439 = add i64 %422, 21
   store i64 %439, i64* %3, align 8
@@ -704,7 +711,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %455, i64* %3, align 8
   %456 = inttoptr i64 %453 to i64*
   %457 = load i64, i64* %456, align 8
-  store i64 %457, i64* %RCX.i152, align 8
+  store i64 %457, i64* %RCX.i152.pre-phi, align 8
   %458 = add i64 %452, -28
   %459 = add i64 %454, 7
   store i64 %459, i64* %3, align 8
@@ -753,7 +760,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %491 = add i64 %454, 22
   store i64 %491, i64* %3, align 8
   %492 = load i64, i64* %456, align 8
-  store i64 %492, i64* %RCX.i152, align 8
+  store i64 %492, i64* %RCX.i152.pre-phi, align 8
   %493 = add i64 %452, -32
   %494 = add i64 %454, 25
   store i64 %494, i64* %3, align 8
@@ -813,7 +820,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %534, i64* %3, align 8
   %535 = inttoptr i64 %532 to i64*
   %536 = load i64, i64* %535, align 8
-  store i64 %536, i64* %RCX.i152, align 8
+  store i64 %536, i64* %RCX.i152.pre-phi, align 8
   %537 = add i64 %531, -28
   %538 = add i64 %533, 8
   store i64 %538, i64* %3, align 8
@@ -832,7 +839,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %547 = add i64 %533, 17
   store i64 %547, i64* %3, align 8
   %548 = load i64, i64* %535, align 8
-  store i64 %548, i64* %RCX.i152, align 8
+  store i64 %548, i64* %RCX.i152.pre-phi, align 8
   %549 = add i64 %531, -32
   %550 = add i64 %533, 21
   store i64 %550, i64* %3, align 8
@@ -861,7 +868,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %566, i64* %3, align 8
   %567 = inttoptr i64 %564 to i64*
   %568 = load i64, i64* %567, align 8
-  store i64 %568, i64* %RCX.i152, align 8
+  store i64 %568, i64* %RCX.i152.pre-phi, align 8
   %569 = add i64 %563, -28
   %570 = add i64 %565, 7
   store i64 %570, i64* %3, align 8
@@ -910,7 +917,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %602 = add i64 %565, 22
   store i64 %602, i64* %3, align 8
   %603 = load i64, i64* %567, align 8
-  store i64 %603, i64* %RCX.i152, align 8
+  store i64 %603, i64* %RCX.i152.pre-phi, align 8
   %604 = add i64 %563, -32
   %605 = add i64 %565, 25
   store i64 %605, i64* %3, align 8
@@ -970,7 +977,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %645, i64* %3, align 8
   %646 = inttoptr i64 %643 to i64*
   %647 = load i64, i64* %646, align 8
-  store i64 %647, i64* %RCX.i152, align 8
+  store i64 %647, i64* %RCX.i152.pre-phi, align 8
   %648 = add i64 %642, -36
   %649 = add i64 %644, 8
   store i64 %649, i64* %3, align 8
@@ -989,7 +996,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %658 = add i64 %644, 17
   store i64 %658, i64* %3, align 8
   %659 = load i64, i64* %646, align 8
-  store i64 %659, i64* %RCX.i152, align 8
+  store i64 %659, i64* %RCX.i152.pre-phi, align 8
   %660 = add i64 %642, -40
   %661 = add i64 %644, 21
   store i64 %661, i64* %3, align 8
@@ -1018,7 +1025,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %677, i64* %3, align 8
   %678 = inttoptr i64 %675 to i64*
   %679 = load i64, i64* %678, align 8
-  store i64 %679, i64* %RCX.i152, align 8
+  store i64 %679, i64* %RCX.i152.pre-phi, align 8
   %680 = add i64 %674, -36
   %681 = add i64 %676, 7
   store i64 %681, i64* %3, align 8
@@ -1067,7 +1074,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %713 = add i64 %676, 22
   store i64 %713, i64* %3, align 8
   %714 = load i64, i64* %678, align 8
-  store i64 %714, i64* %RCX.i152, align 8
+  store i64 %714, i64* %RCX.i152.pre-phi, align 8
   %715 = add i64 %674, -40
   %716 = add i64 %676, 25
   store i64 %716, i64* %3, align 8
@@ -1127,7 +1134,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %756, i64* %3, align 8
   %757 = inttoptr i64 %754 to i64*
   %758 = load i64, i64* %757, align 8
-  store i64 %758, i64* %RCX.i152, align 8
+  store i64 %758, i64* %RCX.i152.pre-phi, align 8
   %759 = add i64 %753, -36
   %760 = add i64 %755, 8
   store i64 %760, i64* %3, align 8
@@ -1146,7 +1153,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %769 = add i64 %755, 17
   store i64 %769, i64* %3, align 8
   %770 = load i64, i64* %757, align 8
-  store i64 %770, i64* %RCX.i152, align 8
+  store i64 %770, i64* %RCX.i152.pre-phi, align 8
   %771 = add i64 %753, -40
   %772 = add i64 %755, 21
   store i64 %772, i64* %3, align 8
@@ -1175,7 +1182,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %788, i64* %3, align 8
   %789 = inttoptr i64 %786 to i64*
   %790 = load i64, i64* %789, align 8
-  store i64 %790, i64* %RCX.i152, align 8
+  store i64 %790, i64* %RCX.i152.pre-phi, align 8
   %791 = add i64 %785, -36
   %792 = add i64 %787, 7
   store i64 %792, i64* %3, align 8
@@ -1224,7 +1231,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   %824 = add i64 %787, 22
   store i64 %824, i64* %3, align 8
   %825 = load i64, i64* %789, align 8
-  store i64 %825, i64* %RCX.i152, align 8
+  store i64 %825, i64* %RCX.i152.pre-phi, align 8
   %826 = add i64 %785, -40
   %827 = add i64 %787, 25
   store i64 %827, i64* %3, align 8
@@ -1299,7 +1306,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %876, i64* %3, align 8
   %877 = inttoptr i64 %875 to i64*
   %878 = load i64, i64* %877, align 8
-  store i64 %878, i64* %RCX.i152, align 8
+  store i64 %878, i64* %RCX.i152.pre-phi, align 8
   %879 = add i64 %864, -28
   %880 = add i64 %866, 18
   store i64 %880, i64* %3, align 8
@@ -1335,7 +1342,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %900, i64* %3, align 8
   %901 = inttoptr i64 %899 to i64*
   %902 = load i64, i64* %901, align 8
-  store i64 %902, i64* %RCX.i152, align 8
+  store i64 %902, i64* %RCX.i152.pre-phi, align 8
   %903 = add i64 %888, -28
   %904 = add i64 %890, 17
   store i64 %904, i64* %3, align 8
@@ -1401,7 +1408,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %947, i64* %3, align 8
   %948 = inttoptr i64 %946 to i64*
   %949 = load i64, i64* %948, align 8
-  store i64 %949, i64* %RCX.i152, align 8
+  store i64 %949, i64* %RCX.i152.pre-phi, align 8
   %950 = add i64 %935, -36
   %951 = add i64 %937, 18
   store i64 %951, i64* %3, align 8
@@ -1437,7 +1444,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %971, i64* %3, align 8
   %972 = inttoptr i64 %970 to i64*
   %973 = load i64, i64* %972, align 8
-  store i64 %973, i64* %RCX.i152, align 8
+  store i64 %973, i64* %RCX.i152.pre-phi, align 8
   %974 = add i64 %959, -36
   %975 = add i64 %961, 17
   store i64 %975, i64* %3, align 8
@@ -1503,7 +1510,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %1018, i64* %3, align 8
   %1019 = inttoptr i64 %1017 to i64*
   %1020 = load i64, i64* %1019, align 8
-  store i64 %1020, i64* %RCX.i152, align 8
+  store i64 %1020, i64* %RCX.i152.pre-phi, align 8
   %1021 = add i64 %1006, -32
   %1022 = add i64 %1008, 18
   store i64 %1022, i64* %3, align 8
@@ -1539,7 +1546,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %1042, i64* %3, align 8
   %1043 = inttoptr i64 %1041 to i64*
   %1044 = load i64, i64* %1043, align 8
-  store i64 %1044, i64* %RCX.i152, align 8
+  store i64 %1044, i64* %RCX.i152.pre-phi, align 8
   %1045 = add i64 %1030, -32
   %1046 = add i64 %1032, 17
   store i64 %1046, i64* %3, align 8
@@ -1605,7 +1612,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %1089, i64* %3, align 8
   %1090 = inttoptr i64 %1088 to i64*
   %1091 = load i64, i64* %1090, align 8
-  store i64 %1091, i64* %RCX.i152, align 8
+  store i64 %1091, i64* %RCX.i152.pre-phi, align 8
   %1092 = add i64 %1077, -40
   %1093 = add i64 %1079, 18
   store i64 %1093, i64* %3, align 8
@@ -1641,7 +1648,7 @@ block_4018d2:                                     ; preds = %block_.L_4018c6
   store i64 %1113, i64* %3, align 8
   %1114 = inttoptr i64 %1112 to i64*
   %1115 = load i64, i64* %1114, align 8
-  store i64 %1115, i64* %RCX.i152, align 8
+  store i64 %1115, i64* %RCX.i152.pre-phi, align 8
   %1116 = add i64 %1101, -40
   %1117 = add i64 %1103, 17
   store i64 %1117, i64* %3, align 8
@@ -1733,8 +1740,8 @@ block_.L_401ae7:                                  ; preds = %block_.L_4018c6
   %1179 = add i64 %302, 237
   br label %block_.L_401bd4
 
-block_.L_401af3:                                  ; preds = %block_.L_4018b0, %block_401aff
-  %1180 = phi i64 [ %1562, %block_401aff ], [ %.pre2, %block_.L_4018b0 ]
+block_.L_401af3:                                  ; preds = %block_.L_4018b0.block_.L_401af3_crit_edge, %block_401aff
+  %1180 = phi i64 [ %1562, %block_401aff ], [ %.pre2, %block_.L_4018b0.block_.L_401af3_crit_edge ]
   %1181 = load i64, i64* %RBP.i, align 8
   %1182 = add i64 %1181, -28
   %1183 = add i64 %1180, 3
@@ -1840,7 +1847,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1256, i64* %3, align 8
   %1257 = inttoptr i64 %1254 to i64*
   %1258 = load i64, i64* %1257, align 8
-  store i64 %1258, i64* %RCX.i152, align 8
+  store i64 %1258, i64* %RCX.i152.pre-phi, align 8
   %1259 = add i64 %1253, -28
   %1260 = add i64 %1255, 8
   store i64 %1260, i64* %3, align 8
@@ -1859,7 +1866,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   %1269 = add i64 %1255, 17
   store i64 %1269, i64* %3, align 8
   %1270 = load i64, i64* %1257, align 8
-  store i64 %1270, i64* %RCX.i152, align 8
+  store i64 %1270, i64* %RCX.i152.pre-phi, align 8
   %1271 = add i64 %1253, -32
   %1272 = add i64 %1255, 21
   store i64 %1272, i64* %3, align 8
@@ -1888,7 +1895,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1288, i64* %3, align 8
   %1289 = inttoptr i64 %1286 to i64*
   %1290 = load i64, i64* %1289, align 8
-  store i64 %1290, i64* %RCX.i152, align 8
+  store i64 %1290, i64* %RCX.i152.pre-phi, align 8
   %1291 = add i64 %1285, -28
   %1292 = add i64 %1287, 7
   store i64 %1292, i64* %3, align 8
@@ -1937,7 +1944,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   %1324 = add i64 %1287, 22
   store i64 %1324, i64* %3, align 8
   %1325 = load i64, i64* %1289, align 8
-  store i64 %1325, i64* %RCX.i152, align 8
+  store i64 %1325, i64* %RCX.i152.pre-phi, align 8
   %1326 = add i64 %1285, -32
   %1327 = add i64 %1287, 25
   store i64 %1327, i64* %3, align 8
@@ -1997,7 +2004,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1367, i64* %3, align 8
   %1368 = inttoptr i64 %1365 to i64*
   %1369 = load i64, i64* %1368, align 8
-  store i64 %1369, i64* %RCX.i152, align 8
+  store i64 %1369, i64* %RCX.i152.pre-phi, align 8
   %1370 = add i64 %1364, -32
   %1371 = add i64 %1366, 8
   store i64 %1371, i64* %3, align 8
@@ -2016,7 +2023,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   %1380 = add i64 %1366, 17
   store i64 %1380, i64* %3, align 8
   %1381 = load i64, i64* %1368, align 8
-  store i64 %1381, i64* %RCX.i152, align 8
+  store i64 %1381, i64* %RCX.i152.pre-phi, align 8
   %1382 = add i64 %1364, -28
   %1383 = add i64 %1366, 21
   store i64 %1383, i64* %3, align 8
@@ -2043,7 +2050,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1397, i64* %3, align 8
   %1398 = inttoptr i64 %1395 to i64*
   %1399 = load i64, i64* %1398, align 8
-  store i64 %1399, i64* %RCX.i152, align 8
+  store i64 %1399, i64* %RCX.i152.pre-phi, align 8
   %1400 = add i64 %1394, -32
   %1401 = add i64 %1396, 7
   store i64 %1401, i64* %3, align 8
@@ -2092,7 +2099,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   %1433 = add i64 %1396, 22
   store i64 %1433, i64* %3, align 8
   %1434 = load i64, i64* %1398, align 8
-  store i64 %1434, i64* %RCX.i152, align 8
+  store i64 %1434, i64* %RCX.i152.pre-phi, align 8
   %1435 = add i64 %1394, -28
   %1436 = add i64 %1396, 25
   store i64 %1436, i64* %3, align 8
@@ -2157,7 +2164,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1478, i64* %3, align 8
   %1479 = inttoptr i64 %1477 to i64*
   %1480 = load i64, i64* %1479, align 8
-  store i64 %1480, i64* %RCX.i152, align 8
+  store i64 %1480, i64* %RCX.i152.pre-phi, align 8
   %1481 = add i64 %1470, -32
   %1482 = add i64 %1472, 13
   store i64 %1482, i64* %3, align 8
@@ -2185,7 +2192,7 @@ block_401aff:                                     ; preds = %block_.L_401af3
   store i64 %1497, i64* %3, align 8
   %1498 = inttoptr i64 %1496 to i64*
   %1499 = load i64, i64* %1498, align 8
-  store i64 %1499, i64* %RCX.i152, align 8
+  store i64 %1499, i64* %RCX.i152.pre-phi, align 8
   %1500 = add i64 %1490, -32
   %1501 = add i64 %1492, 12
   store i64 %1501, i64* %3, align 8

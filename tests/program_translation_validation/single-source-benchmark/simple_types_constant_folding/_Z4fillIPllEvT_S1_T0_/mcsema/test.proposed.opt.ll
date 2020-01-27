@@ -95,7 +95,7 @@ entry:
   br label %block_.L_40a8b0
 
 block_.L_40a8b0:                                  ; preds = %block_40a8be, %entry
-  %33 = phi i64 [ %103, %block_40a8be ], [ %.pre, %entry ]
+  %33 = phi i64 [ %102, %block_40a8be ], [ %.pre, %entry ]
   %34 = load i64, i64* %RBP.i, align 8
   %35 = add i64 %34, -8
   %36 = add i64 %33, 4
@@ -191,29 +191,27 @@ block_40a8be:                                     ; preds = %block_.L_40a8b0
   %99 = load i64*, i64** %98, align 8
   %100 = load i64, i64* %RAX.i24, align 8
   %101 = load i64, i64* %3, align 8
-  %102 = add i64 %101, 3
-  store i64 %102, i64* %3, align 8
   store i64 %100, i64* %99, align 8
-  %103 = add i64 %101, -33
-  store i64 %103, i64* %3, align 8
+  %102 = add i64 %101, -33
+  store i64 %102, i64* %3, align 8
   br label %block_.L_40a8b0
 
 block_.L_40a8d9:                                  ; preds = %block_.L_40a8b0
-  %104 = add i64 %68, 1
-  store i64 %104, i64* %3, align 8
-  %105 = load i64, i64* %6, align 8
-  %106 = add i64 %105, 8
-  %107 = inttoptr i64 %105 to i64*
-  %108 = load i64, i64* %107, align 8
-  store i64 %108, i64* %RBP.i, align 8
-  store i64 %106, i64* %6, align 8
-  %109 = add i64 %68, 2
-  store i64 %109, i64* %3, align 8
-  %110 = inttoptr i64 %106 to i64*
-  %111 = load i64, i64* %110, align 8
-  store i64 %111, i64* %3, align 8
-  %112 = add i64 %105, 16
-  store i64 %112, i64* %6, align 8
+  %103 = add i64 %68, 1
+  store i64 %103, i64* %3, align 8
+  %104 = load i64, i64* %6, align 8
+  %105 = add i64 %104, 8
+  %106 = inttoptr i64 %104 to i64*
+  %107 = load i64, i64* %106, align 8
+  store i64 %107, i64* %RBP.i, align 8
+  store i64 %105, i64* %6, align 8
+  %108 = add i64 %68, 2
+  store i64 %108, i64* %3, align 8
+  %109 = inttoptr i64 %105 to i64*
+  %110 = load i64, i64* %109, align 8
+  store i64 %110, i64* %3, align 8
+  %111 = add i64 %104, 16
+  store i64 %111, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

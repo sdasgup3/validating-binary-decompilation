@@ -4,7 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
-%G_0xc8__rip__type = type <{ [16 x i8] }>
+%G_0xc8__rip__4195632__type = type <{ [16 x i8] }>
 %G__0x400600_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -40,7 +40,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G_0xc8__rip_ = local_unnamed_addr global %G_0xc8__rip__type zeroinitializer
+@G_0xc8__rip__4195632_ = local_unnamed_addr global %G_0xc8__rip__4195632__type zeroinitializer
 @G__0x400600 = global %G__0x400600_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
@@ -103,7 +103,7 @@ entry:
   %38 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   store i8 %37, i8* %38, align 1
   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
-  %40 = load i64, i64* bitcast (%G_0xc8__rip__type* @G_0xc8__rip_ to i64*), align 8
+  %40 = load i64, i64* bitcast (%G_0xc8__rip__4195632__type* @G_0xc8__rip__4195632_ to i64*), align 8
   %41 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %39, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %40, i64* %41, align 1
   %42 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
@@ -305,7 +305,7 @@ block_400478:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* bitcast (%G_0xc8__rip__type* @G_0xc8__rip_ to i64*), align 8
+  %5 = load i64, i64* bitcast (%G_0xc8__rip__4195632__type* @G_0xc8__rip__4195632_ to i64*), align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %5, i64* %6, align 1
   %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1

@@ -4,8 +4,8 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
-%G_0x14c__rip__type = type <{ [16 x i8] }>
-%G_0x190__rip__type = type <{ [16 x i8] }>
+%G_0x14c__rip__4197620__type = type <{ [16 x i8] }>
+%G_0x190__rip__4197568__type = type <{ [16 x i8] }>
 %G_0x602060_type = type <{ [8 x i8] }>
 %G__0x400e96_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -42,8 +42,8 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
-@G_0x14c__rip_ = global %G_0x14c__rip__type zeroinitializer
-@G_0x190__rip_ = global %G_0x190__rip__type zeroinitializer
+@G_0x14c__rip__4197620_ = global %G_0x14c__rip__4197620__type zeroinitializer
+@G_0x190__rip__4197568_ = global %G_0x190__rip__4197568__type zeroinitializer
 @G_0x602060 = local_unnamed_addr global %G_0x602060_type zeroinitializer
 @G__0x400e96 = global %G__0x400e96_type zeroinitializer
 
@@ -108,7 +108,7 @@ entry:
   store i8 %37, i8* %38, align 1
   %39 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
   %40 = bitcast [32 x %union.VectorReg]* %39 to i8*
-  %41 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0x190__rip__type* @G_0x190__rip_ to i64), i64 200) to i64*), align 8
+  %41 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0x190__rip__4197568__type* @G_0x190__rip__4197568_ to i64), i64 200) to i64*), align 8
   %42 = bitcast [32 x %union.VectorReg]* %39 to double*
   %43 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %39, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %41, i64* %43, align 1
@@ -191,10 +191,10 @@ entry:
   %96 = fsub double %91, %95
   %97 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
   %98 = bitcast %union.VectorReg* %97 to i8*
-  %99 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 147) to i32*), align 4
-  %100 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 151) to i32*), align 4
-  %101 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 155) to i32*), align 4
-  %102 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 159) to i32*), align 4
+  %99 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 147) to i32*), align 4
+  %100 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 151) to i32*), align 4
+  %101 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 155) to i32*), align 4
+  %102 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 159) to i32*), align 4
   %103 = bitcast %union.VectorReg* %97 to i32*
   store i32 %99, i32* %103, align 1
   %104 = getelementptr inbounds i8, i8* %98, i64 4
@@ -515,7 +515,7 @@ block_400478:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0x190__rip__type* @G_0x190__rip_ to i64), i64 200) to i64*), align 8
+  %5 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0x190__rip__4197568__type* @G_0x190__rip__4197568_ to i64), i64 200) to i64*), align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %5, i64* %6, align 1
   %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 0, i32 0, i32 0, i32 0, i64 1
@@ -702,10 +702,10 @@ block_400478:
   %5 = load i64, i64* %PC, align 8
   %6 = add i64 %5, 7
   store i64 %6, i64* %PC, align 8
-  %7 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 147) to i32*), align 4
-  %8 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 151) to i32*), align 4
-  %9 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 155) to i32*), align 4
-  %10 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__type* @G_0x14c__rip_ to i64), i64 159) to i32*), align 4
+  %7 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 147) to i32*), align 4
+  %8 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 151) to i32*), align 4
+  %9 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 155) to i32*), align 4
+  %10 = load i32, i32* inttoptr (i64 add (i64 ptrtoint (%G_0x14c__rip__4197620__type* @G_0x14c__rip__4197620_ to i64), i64 159) to i32*), align 4
   %11 = bitcast %union.VectorReg* %3 to i32*
   store i32 %7, i32* %11, align 1
   %12 = getelementptr inbounds i8, i8* %4, i64 4

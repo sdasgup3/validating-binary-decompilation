@@ -18,7 +18,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
 %G_0x603064_type = type <{ [8 x i8] }>
 %G_0x603068_type = type <{ [8 x i8] }>
-%G_0xed__rip__type = type <{ [16 x i8] }>
+%G_0xed__rip__4201667__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -83,7 +83,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400548__eh_frame = internal constant %seg_400548__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\09\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
 @G_0x603064 = global %G_0x603064_type zeroinitializer
 @G_0x603068 = global %G_0x603068_type zeroinitializer
-@G_0xed__rip_ = global %G_0xed__rip__type zeroinitializer
+@G_0xed__rip__4201667_ = global %G_0xed__rip__4201667__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -856,7 +856,7 @@ block_.L_401cbb:                                  ; preds = %block_401c86, %entr
   %384 = load i64, i64* %PC.i31
   %385 = add i64 %384, 8
   store i64 %385, i64* %PC.i31
-  %386 = load double, double* inttoptr (i64 add (i64 ptrtoint (%G_0xed__rip__type* @G_0xed__rip_ to i64), i64 37) to double*)
+  %386 = load double, double* inttoptr (i64 add (i64 ptrtoint (%G_0xed__rip__4201667__type* @G_0xed__rip__4201667_ to i64), i64 37) to double*)
   %387 = bitcast i8* %383 to double*
   store double %386, double* %387, align 1
   %388 = getelementptr inbounds i8, i8* %383, i64 8
@@ -1863,7 +1863,7 @@ block_400478:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = load double, double* inttoptr (i64 add (i64 ptrtoint (%G_0xed__rip__type* @G_0xed__rip_ to i64), i64 37) to double*)
+  %11 = load double, double* inttoptr (i64 add (i64 ptrtoint (%G_0xed__rip__4201667__type* @G_0xed__rip__4201667_ to i64), i64 37) to double*)
   %12 = bitcast i8* %8 to double*
   store double %11, double* %12, align 1
   %13 = getelementptr inbounds i8, i8* %8, i64 8

@@ -460,6 +460,36 @@ declare %struct.Memory* @sub_400770.Trial(%struct.State* noalias dereferenceable
 ; Data Access Globals
 %G_0x603a94_type = type <{ [4 x i8] }>
 @G_0x603a94= global %G_0x603a94_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x603aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x603aa0___rsi_4_= global %G_0x603aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6042a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6042a0___rsi_4_= global %G_0x6042a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x604aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x604aa0___rsi_4_= global %G_0x604aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6052a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6052a0___rsi_4_= global %G_0x6052a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x605aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x605aa0___rsi_4_= global %G_0x605aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6062a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6062a0___rsi_4_= global %G_0x6062a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x606aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x606aa0___rsi_4_= global %G_0x606aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6072a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6072a0___rsi_4_= global %G_0x6072a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x607aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x607aa0___rsi_4_= global %G_0x607aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6082a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6082a0___rsi_4_= global %G_0x6082a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x608aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x608aa0___rsi_4_= global %G_0x608aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6092a0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x6092a0___rsi_4_= global %G_0x6092a0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x609aa0___rsi_4__type = type <{ [4 x i8] }>
+@G_0x609aa0___rsi_4_= global %G_0x609aa0___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x60df50___rax_4__type = type <{ [4 x i8] }>
+@G_0x60df50___rax_4_= global %G_0x60df50___rax_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x60df50___rsi_4__type = type <{ [4 x i8] }>
+@G_0x60df50___rsi_4_= global %G_0x60df50___rsi_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x610250_type = type <{ [4 x i8] }>
 @G_0x610250= global %G_0x610250_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x610254_type = type <{ [4 x i8] }>
@@ -4465,7 +4495,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6348624
+  %11 = add i64 %10, ptrtoint( %G_0x60df50___rax_4__type* @G_0x60df50___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -5106,7 +5136,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6348624
+  %11 = add i64 %10, ptrtoint( %G_0x60df50___rsi_4__type* @G_0x60df50___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -5892,7 +5922,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6306464
+  %11 = add i64 %10, ptrtoint( %G_0x603aa0___rsi_4__type* @G_0x603aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -6175,7 +6205,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6308512
+  %11 = add i64 %10, ptrtoint( %G_0x6042a0___rsi_4__type* @G_0x6042a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -6458,7 +6488,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6310560
+  %11 = add i64 %10, ptrtoint( %G_0x604aa0___rsi_4__type* @G_0x604aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -6687,7 +6717,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6312608
+  %11 = add i64 %10, ptrtoint( %G_0x6052a0___rsi_4__type* @G_0x6052a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -6916,7 +6946,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6314656
+  %11 = add i64 %10, ptrtoint( %G_0x605aa0___rsi_4__type* @G_0x605aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -7145,7 +7175,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6316704
+  %11 = add i64 %10, ptrtoint( %G_0x6062a0___rsi_4__type* @G_0x6062a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -7392,7 +7422,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6318752
+  %11 = add i64 %10, ptrtoint( %G_0x606aa0___rsi_4__type* @G_0x606aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -7639,7 +7669,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6320800
+  %11 = add i64 %10, ptrtoint( %G_0x6072a0___rsi_4__type* @G_0x6072a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -7886,7 +7916,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6322848
+  %11 = add i64 %10, ptrtoint( %G_0x607aa0___rsi_4__type* @G_0x607aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -8115,7 +8145,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6324896
+  %11 = add i64 %10, ptrtoint( %G_0x6082a0___rsi_4__type* @G_0x6082a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -8344,7 +8374,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6326944
+  %11 = add i64 %10, ptrtoint( %G_0x608aa0___rsi_4__type* @G_0x608aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -8573,7 +8603,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6328992
+  %11 = add i64 %10, ptrtoint( %G_0x6092a0___rsi_4__type* @G_0x6092a0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -8802,7 +8832,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6331040
+  %11 = add i64 %10, ptrtoint( %G_0x609aa0___rsi_4__type* @G_0x609aa0___rsi_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC

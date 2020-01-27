@@ -266,6 +266,7 @@ block_.L_400835:                                  ; preds = %routine_idivq__rcx.
   %135 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %122, %struct.Memory* %50)
   %.pre3 = load i64, i64* %RDX.i69, align 8
   %.pre4 = load i64, i64* %3, align 8
+  %.pre5 = load i64, i64* %RBP.i, align 8
   br label %routine_idivq__rcx.exit
 
 ; <label>:136:                                    ; preds = %block_.L_400835
@@ -282,15 +283,15 @@ block_.L_400835:                                  ; preds = %routine_idivq__rcx.
   br label %routine_idivq__rcx.exit
 
 routine_idivq__rcx.exit:                          ; preds = %136, %134
-  %139 = phi i64 [ %.pre4, %134 ], [ %122, %136 ]
-  %140 = phi i64 [ %.pre3, %134 ], [ %138, %136 ]
-  %141 = phi %struct.Memory* [ %135, %134 ], [ %50, %136 ]
-  %142 = load i64, i64* %RBP.i, align 8
-  %143 = add i64 %142, -16
-  %144 = add i64 %139, 4
+  %139 = phi i64 [ %.pre5, %134 ], [ %56, %136 ]
+  %140 = phi i64 [ %.pre4, %134 ], [ %122, %136 ]
+  %141 = phi i64 [ %.pre3, %134 ], [ %138, %136 ]
+  %142 = phi %struct.Memory* [ %135, %134 ], [ %50, %136 ]
+  %143 = add i64 %139, -16
+  %144 = add i64 %140, 4
   store i64 %144, i64* %3, align 8
   %145 = inttoptr i64 %143 to i64*
-  store i64 %140, i64* %145, align 8
+  store i64 %141, i64* %145, align 8
   %146 = load i64, i64* %3, align 8
   %147 = load i64, i64* bitcast (%G_0x602060_type* @G_0x602060 to i64*), align 8
   %148 = xor i64 %147, 123459876
@@ -335,7 +336,7 @@ routine_idivq__rcx.exit:                          ; preds = %136, %134
   store i64 %171, i64* %3, align 8
   %172 = add i64 %165, 16
   store i64 %172, i64* %6, align 8
-  ret %struct.Memory* %141
+  ret %struct.Memory* %142
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {

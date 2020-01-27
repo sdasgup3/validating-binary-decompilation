@@ -472,6 +472,8 @@ declare %struct.Memory* @sub_400d30.lerp(%struct.State* noalias dereferenceable(
 @G_0x58a__rip__4196534_= global %G_0x58a__rip__4196534__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x5dc__rip__4196452__type = type <{ [16 x i8] }>
 @G_0x5dc__rip__4196452_= global %G_0x5dc__rip__4196452__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x602450___rcx_4__type = type <{ [4 x i8] }>
+@G_0x602450___rcx_4_= global %G_0x602450___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 
 
 define %struct.Memory* @noise(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -2631,7 +2633,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6300752
+  %14 = add i64 %13, ptrtoint( %G_0x602450___rcx_4__type* @G_0x602450___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -3245,7 +3247,7 @@ block_400478:
   %RDI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6300752
+  %14 = add i64 %13, ptrtoint( %G_0x602450___rcx_4__type* @G_0x602450___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC

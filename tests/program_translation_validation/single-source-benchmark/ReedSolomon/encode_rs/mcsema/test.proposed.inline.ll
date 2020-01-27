@@ -16,8 +16,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400510__rodata_type = type <{ [4 x i8] }>
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
+%G_0x603480___rax_4__type = type <{ [4 x i8] }>
+%G_0x603880___rdi_4__type = type <{ [4 x i8] }>
+%G_0x603880___rsi_4__type = type <{ [4 x i8] }>
 %G_0x603c80_type = type <{ [4 x i8] }>
+%G_0x603c80___rax_4__type = type <{ [4 x i8] }>
+%G_0x603c80___rdx_4__type = type <{ [4 x i8] }>
+%G_0x603cd0___rax_4__type = type <{ [4 x i8] }>
 %G_0x604090_type = type <{ [4 x i8] }>
+%G_0x604090___rax_4__type = type <{ [4 x i8] }>
+%G_0x604090___rcx_4__type = type <{ [4 x i8] }>
+%G_0x604090___rdi_4__type = type <{ [4 x i8] }>
+%G_0x604090___rdx_4__type = type <{ [4 x i8] }>
 %G_0x6040cc_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -79,8 +89,18 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400510__rodata = internal constant %seg_400510__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
 @seg_400514__eh_frame_hdr = internal constant %seg_400514__eh_frame_hdr_type <{ [52 x i8] c"\01\1B\03;0\00\00\00\05\00\00\00|\FE\FF\FFL\00\00\00\AC\FE\FF\FFx\00\00\00d\FF\FF\FF\8C\00\00\00|\FF\FF\FF\A4\00\00\00\EC\FF\FF\FF\EC\00\00\00" }>
 @seg_400548__eh_frame = internal constant %seg_400548__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\0C\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
+@G_0x603480___rax_4_ = global %G_0x603480___rax_4__type zeroinitializer
+@G_0x603880___rdi_4_ = global %G_0x603880___rdi_4__type zeroinitializer
+@G_0x603880___rsi_4_ = global %G_0x603880___rsi_4__type zeroinitializer
 @G_0x603c80 = global %G_0x603c80_type zeroinitializer
+@G_0x603c80___rax_4_ = global %G_0x603c80___rax_4__type zeroinitializer
+@G_0x603c80___rdx_4_ = global %G_0x603c80___rdx_4__type zeroinitializer
+@G_0x603cd0___rax_4_ = global %G_0x603cd0___rax_4__type zeroinitializer
 @G_0x604090 = global %G_0x604090_type zeroinitializer
+@G_0x604090___rax_4_ = global %G_0x604090___rax_4__type zeroinitializer
+@G_0x604090___rcx_4_ = global %G_0x604090___rcx_4__type zeroinitializer
+@G_0x604090___rdi_4_ = global %G_0x604090___rdi_4__type zeroinitializer
+@G_0x604090___rdx_4_ = global %G_0x604090___rdx_4__type zeroinitializer
 @G_0x6040cc = global %G_0x6040cc_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
@@ -466,7 +486,7 @@ block_401995:                                     ; preds = %block_.L_40198b
   %RAX.i189 = bitcast %union.anon* %121 to i64*
   %122 = load i64, i64* %RAX.i189
   %123 = mul i64 %122, 4
-  %124 = add i64 %123, 6307984
+  %124 = add i64 %123, ptrtoint (%G_0x604090___rax_4__type* @G_0x604090___rax_4_ to i64)
   %125 = load i64, i64* %PC.i188
   %126 = add i64 %125, 11
   store i64 %126, i64* %PC.i188
@@ -720,7 +740,7 @@ block_4019c3:                                     ; preds = %block_.L_4019b9
   %RCX.i170 = bitcast %union.anon* %296 to i64*
   %297 = load i64, i64* %RAX.i169
   %298 = mul i64 %297, 4
-  %299 = add i64 %298, 6307024
+  %299 = add i64 %298, ptrtoint (%G_0x603cd0___rax_4__type* @G_0x603cd0___rax_4_ to i64)
   %300 = load i64, i64* %PC.i168
   %301 = add i64 %300, 7
   store i64 %301, i64* %PC.i168
@@ -806,7 +826,7 @@ block_4019c3:                                     ; preds = %block_.L_4019b9
   %RCX.i162 = bitcast %union.anon* %356 to i64*
   %357 = load i64, i64* %RAX.i161
   %358 = mul i64 %357, 4
-  %359 = add i64 %358, 6304896
+  %359 = add i64 %358, ptrtoint (%G_0x603480___rax_4__type* @G_0x603480___rax_4_ to i64)
   %360 = load i64, i64* %PC.i160
   %361 = add i64 %360, 7
   store i64 %361, i64* %PC.i160
@@ -1046,7 +1066,7 @@ block_4019fd:                                     ; preds = %block_.L_4019f3
   %RAX.i145 = bitcast %union.anon* %523 to i64*
   %524 = load i64, i64* %RAX.i145
   %525 = mul i64 %524, 4
-  %526 = add i64 %525, 6306944
+  %526 = add i64 %525, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %527 = load i64, i64* %PC.i144
   %528 = add i64 %527, 8
   store i64 %528, i64* %PC.i144
@@ -1239,7 +1259,7 @@ block_401a0f:                                     ; preds = %block_4019fd
   %RDX.i132 = bitcast %union.anon* %661 to i64*
   %662 = load i64, i64* %RDX.i132
   %663 = mul i64 %662, 4
-  %664 = add i64 %663, 6307984
+  %664 = add i64 %663, ptrtoint (%G_0x604090___rdx_4__type* @G_0x604090___rdx_4_ to i64)
   %665 = load i64, i64* %PC.i130
   %666 = add i64 %665, 7
   store i64 %666, i64* %PC.i130
@@ -1286,7 +1306,7 @@ block_401a0f:                                     ; preds = %block_4019fd
   %RSI.i126 = bitcast %union.anon* %694 to i64*
   %695 = load i64, i64* %RDX.i125
   %696 = mul i64 %695, 4
-  %697 = add i64 %696, 6306944
+  %697 = add i64 %696, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %698 = load i64, i64* %PC.i124
   %699 = add i64 %698, 7
   store i64 %699, i64* %PC.i124
@@ -1542,7 +1562,7 @@ routine_idivl__esi.exit:                          ; preds = %836, %840
   %877 = load i64, i64* %RCX.i103
   %878 = load i64, i64* %RDI.i104
   %879 = mul i64 %878, 4
-  %880 = add i64 %879, 6305920
+  %880 = add i64 %879, ptrtoint (%G_0x603880___rdi_4__type* @G_0x603880___rdi_4_ to i64)
   %881 = load i64, i64* %PC.i102
   %882 = add i64 %881, 7
   store i64 %882, i64* %PC.i102
@@ -1612,7 +1632,7 @@ routine_idivl__esi.exit:                          ; preds = %836, %840
   %RDI.i = bitcast %union.anon* %927 to i64*
   %928 = load i64, i64* %RDI.i
   %929 = mul i64 %928, 4
-  %930 = add i64 %929, 6307984
+  %930 = add i64 %929, ptrtoint (%G_0x604090___rdi_4__type* @G_0x604090___rdi_4_ to i64)
   %931 = load i32, i32* %ECX.i98
   %932 = zext i32 %931 to i64
   %933 = load i64, i64* %PC.i97
@@ -1749,7 +1769,7 @@ block_.L_401a57:                                  ; preds = %block_4019fd
   %RCX.i87 = bitcast %union.anon* %1023 to i64*
   %1024 = load i64, i64* %RCX.i87
   %1025 = mul i64 %1024, 4
-  %1026 = add i64 %1025, 6307984
+  %1026 = add i64 %1025, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %1027 = load i64, i64* %PC.i85
   %1028 = add i64 %1027, 7
   store i64 %1028, i64* %PC.i85
@@ -1796,7 +1816,7 @@ block_.L_401a57:                                  ; preds = %block_4019fd
   %RCX.i81 = bitcast %union.anon* %1056 to i64*
   %1057 = load i64, i64* %RCX.i81
   %1058 = mul i64 %1057, 4
-  %1059 = add i64 %1058, 6307984
+  %1059 = add i64 %1058, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %1060 = load i32, i32* %EAX.i80
   %1061 = zext i32 %1060 to i64
   %1062 = load i64, i64* %PC.i79
@@ -2217,7 +2237,7 @@ routine_idivl__ecx.exit:                          ; preds = %1307, %1311
   %RSI.i = bitcast %union.anon* %1347 to i64*
   %1348 = load i64, i64* %RSI.i
   %1349 = mul i64 %1348, 4
-  %1350 = add i64 %1349, 6305920
+  %1350 = add i64 %1349, ptrtoint (%G_0x603880___rsi_4__type* @G_0x603880___rsi_4_ to i64)
   %1351 = load i64, i64* %PC.i45
   %1352 = add i64 %1351, 7
   store i64 %1352, i64* %PC.i45
@@ -2467,7 +2487,7 @@ block_401ac6:                                     ; preds = %block_.L_401abc
   %RCX.i29 = bitcast %union.anon* %1519 to i64*
   %1520 = load i64, i64* %RCX.i29
   %1521 = mul i64 %1520, 4
-  %1522 = add i64 %1521, 6307984
+  %1522 = add i64 %1521, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %1523 = load i64, i64* %PC.i27
   %1524 = add i64 %1523, 7
   store i64 %1524, i64* %PC.i27
@@ -2514,7 +2534,7 @@ block_401ac6:                                     ; preds = %block_.L_401abc
   %RCX.i = bitcast %union.anon* %1552 to i64*
   %1553 = load i64, i64* %RCX.i
   %1554 = mul i64 %1553, 4
-  %1555 = add i64 %1554, 6307984
+  %1555 = add i64 %1554, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %1556 = load i32, i32* %EAX.i23
   %1557 = zext i32 %1556 to i64
   %1558 = load i64, i64* %PC.i22
@@ -3012,7 +3032,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6307984
+  %11 = add i64 %10, ptrtoint (%G_0x604090___rax_4__type* @G_0x604090___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC
@@ -3256,7 +3276,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6307024
+  %14 = add i64 %13, ptrtoint (%G_0x603cd0___rax_4__type* @G_0x603cd0___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -3351,7 +3371,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6304896
+  %14 = add i64 %13, ptrtoint (%G_0x603480___rax_4__type* @G_0x603480___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -3602,7 +3622,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6306944
+  %11 = add i64 %10, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 8
   store i64 %13, i64* %PC
@@ -3808,7 +3828,7 @@ block_400478:
   %RDX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RDX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6307984
+  %14 = add i64 %13, ptrtoint (%G_0x604090___rdx_4__type* @G_0x604090___rdx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -3861,7 +3881,7 @@ block_400478:
   %RSI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RDX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6306944
+  %14 = add i64 %13, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -4141,7 +4161,7 @@ block_400478:
   %12 = load i64, i64* %RCX
   %13 = load i64, i64* %RDI
   %14 = mul i64 %13, 4
-  %15 = add i64 %14, 6305920
+  %15 = add i64 %14, ptrtoint (%G_0x603880___rdi_4__type* @G_0x603880___rdi_4_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 7
   store i64 %17, i64* %PC
@@ -4217,7 +4237,7 @@ block_400478:
   %RDI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RDI
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6307984
+  %14 = add i64 %13, ptrtoint (%G_0x604090___rdi_4__type* @G_0x604090___rdi_4_ to i64)
   %15 = load i32, i32* %ECX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC
@@ -4366,7 +4386,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6307984
+  %14 = add i64 %13, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -4419,7 +4439,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6307984
+  %14 = add i64 %13, ptrtoint (%G_0x604090___rcx_4__type* @G_0x604090___rcx_4_ to i64)
   %15 = load i32, i32* %EAX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC
@@ -4814,7 +4834,7 @@ block_400478:
   %RSI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RSI
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6305920
+  %14 = add i64 %13, ptrtoint (%G_0x603880___rsi_4__type* @G_0x603880___rsi_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC

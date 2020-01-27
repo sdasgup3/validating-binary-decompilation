@@ -307,7 +307,6 @@ block_.L_4005f2:                                  ; preds = %routine_ucomisd_MIN
 
 block_.L_400637:                                  ; preds = %block_.L_4005f2, %block_4005e0
   %.pre-phi4 = phi double* [ %101, %block_.L_4005f2 ], [ %92, %block_4005e0 ]
-  %.pre-phi2 = phi double* [ %48, %block_.L_4005f2 ], [ %48, %block_4005e0 ]
   %162 = phi i64 [ %.pre1, %block_.L_4005f2 ], [ %98, %block_4005e0 ]
   %MEMORY.0 = phi %struct.Memory* [ %call2_400624, %block_.L_4005f2 ], [ %82, %block_4005e0 ]
   %163 = load i64, i64* %RBP.i, align 8
@@ -316,7 +315,7 @@ block_.L_400637:                                  ; preds = %block_.L_4005f2, %b
   store i64 %165, i64* %3, align 8
   %166 = inttoptr i64 %164 to i64*
   %167 = load i64, i64* %166, align 8
-  %168 = bitcast double* %.pre-phi2 to i64*
+  %168 = bitcast double* %48 to i64*
   store i64 %167, i64* %168, align 1
   store double 0.000000e+00, double* %.pre-phi4, align 1
   %169 = load i64, i64* %6, align 8

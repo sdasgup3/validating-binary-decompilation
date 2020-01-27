@@ -476,7 +476,7 @@ block_.L_4006a5:                                  ; preds = %block_.L_4006a0, %b
 
 block_.L_4006b4:                                  ; preds = %block_.L_40074e, %block_.L_4006a5
   %291 = phi i64 [ %.pre1, %block_.L_4006a5 ], [ %623, %block_.L_40074e ]
-  %MEMORY.3 = phi %struct.Memory* [ %MEMORY.0, %block_.L_4006a5 ], [ %511, %block_.L_40074e ]
+  %MEMORY.3 = phi %struct.Memory* [ %MEMORY.0, %block_.L_4006a5 ], [ %512, %block_.L_40074e ]
   %292 = load i64, i64* %RBP.i, align 8
   %293 = add i64 %292, -24
   %294 = add i64 %291, 3
@@ -797,6 +797,7 @@ block_.L_4006fe:                                  ; preds = %block_4006c0, %bloc
 ; <label>:497:                                    ; preds = %489
   %498 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %487, %struct.Memory* %MEMORY.4)
   %.pre6 = load i64, i64* %3, align 8
+  %.pre14 = load i64, i64* %RBP.i, align 8
   br label %routine_ucomisd__xmm0___xmm1.exit
 
 ; <label>:499:                                    ; preds = %block_.L_4006fe
@@ -827,27 +828,27 @@ block_.L_4006fe:                                  ; preds = %block_4006c0, %bloc
   br label %routine_ucomisd__xmm0___xmm1.exit
 
 routine_ucomisd__xmm0___xmm1.exit:                ; preds = %509, %497
-  %510 = phi i64 [ %.pre6, %497 ], [ %487, %509 ]
-  %511 = phi %struct.Memory* [ %498, %497 ], [ %MEMORY.4, %509 ]
-  %512 = load i8, i8* %41, align 1
-  %513 = load i8, i8* %44, align 1
-  %514 = or i8 %513, %512
-  %515 = icmp ne i8 %514, 0
-  %.v12 = select i1 %515, i64 49, i64 6
-  %516 = add i64 %510, %.v12
-  store i64 %516, i64* %3, align 8
-  %517 = load i64, i64* %RBP.i, align 8
-  br i1 %515, label %block_.L_400745, label %block_40071a
+  %510 = phi i64 [ %.pre14, %497 ], [ %468, %509 ]
+  %511 = phi i64 [ %.pre6, %497 ], [ %487, %509 ]
+  %512 = phi %struct.Memory* [ %498, %497 ], [ %MEMORY.4, %509 ]
+  %513 = load i8, i8* %41, align 1
+  %514 = load i8, i8* %44, align 1
+  %515 = or i8 %514, %513
+  %516 = icmp ne i8 %515, 0
+  %.v12 = select i1 %516, i64 49, i64 6
+  %517 = add i64 %511, %.v12
+  store i64 %517, i64* %3, align 8
+  br i1 %516, label %block_.L_400745, label %block_40071a
 
 block_40071a:                                     ; preds = %routine_ucomisd__xmm0___xmm1.exit
-  %518 = add i64 %517, -16
-  %519 = add i64 %516, 4
+  %518 = add i64 %510, -16
+  %519 = add i64 %517, 4
   store i64 %519, i64* %3, align 8
   %520 = inttoptr i64 %518 to i64*
   %521 = load i64, i64* %520, align 8
   store i64 %521, i64* %RAX.i186, align 8
-  %522 = add i64 %517, -24
-  %523 = add i64 %516, 8
+  %522 = add i64 %510, -24
+  %523 = add i64 %517, 8
   store i64 %523, i64* %3, align 8
   %524 = inttoptr i64 %522 to i32*
   %525 = load i32, i32* %524, align 4
@@ -855,19 +856,19 @@ block_40071a:                                     ; preds = %routine_ucomisd__xm
   store i64 %526, i64* %RCX.i183, align 8
   %527 = shl nsw i64 %526, 3
   %528 = add i64 %527, %521
-  %529 = add i64 %516, 13
+  %529 = add i64 %517, 13
   store i64 %529, i64* %3, align 8
   %530 = inttoptr i64 %528 to i64*
   %531 = load i64, i64* %530, align 8
   %532 = getelementptr inbounds [32 x %union.VectorReg], [32 x %union.VectorReg]* %77, i64 0, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %531, i64* %532, align 1
   store double 0.000000e+00, double* %80, align 1
-  %533 = add i64 %516, 17
+  %533 = add i64 %517, 17
   store i64 %533, i64* %3, align 8
   %534 = load i64, i64* %520, align 8
   store i64 %534, i64* %RAX.i186, align 8
-  %535 = add i64 %517, -20
-  %536 = add i64 %516, 21
+  %535 = add i64 %510, -20
+  %536 = add i64 %517, 21
   store i64 %536, i64* %3, align 8
   %537 = inttoptr i64 %535 to i32*
   %538 = load i32, i32* %537, align 4
@@ -875,7 +876,7 @@ block_40071a:                                     ; preds = %routine_ucomisd__xm
   store i64 %539, i64* %RCX.i183, align 8
   %540 = shl nsw i64 %539, 3
   %541 = add i64 %540, %534
-  %542 = add i64 %516, 26
+  %542 = add i64 %517, 26
   store i64 %542, i64* %3, align 8
   %543 = inttoptr i64 %541 to i64*
   store i64 %531, i64* %543, align 8
@@ -945,8 +946,8 @@ block_40071a:                                     ; preds = %routine_ucomisd__xm
   br label %block_.L_40074e
 
 block_.L_400745:                                  ; preds = %routine_ucomisd__xmm0___xmm1.exit
-  %592 = add i64 %517, -28
-  %593 = add i64 %516, 3
+  %592 = add i64 %510, -28
+  %593 = add i64 %517, 3
   store i64 %593, i64* %3, align 8
   %594 = inttoptr i64 %592 to i32*
   %595 = load i32, i32* %594, align 4
@@ -980,8 +981,8 @@ block_.L_400745:                                  ; preds = %routine_ucomisd__xm
   %617 = icmp eq i32 %616, 2
   %618 = zext i1 %617 to i8
   store i8 %618, i8* %46, align 1
-  %619 = add i64 %517, -24
-  %620 = add i64 %516, 9
+  %619 = add i64 %510, -24
+  %620 = add i64 %517, 9
   store i64 %620, i64* %3, align 8
   %621 = inttoptr i64 %619 to i32*
   store i32 %596, i32* %621, align 4

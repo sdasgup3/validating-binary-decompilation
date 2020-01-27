@@ -91,19 +91,16 @@ entry:
   store i64 %20, i64* %RAX.i15, align 8
   %28 = add i64 %10, 48
   store i64 %28, i64* %3, align 8
-  %29 = load i64, i64* %6, align 8
-  %30 = add i64 %29, 8
-  %31 = inttoptr i64 %29 to i64*
+  %29 = load i64, i64* %9, align 8
+  store i64 %29, i64* %RBP.i, align 8
+  store i64 %7, i64* %6, align 8
+  %30 = add i64 %10, 49
+  store i64 %30, i64* %3, align 8
+  %31 = inttoptr i64 %7 to i64*
   %32 = load i64, i64* %31, align 8
-  store i64 %32, i64* %RBP.i, align 8
-  store i64 %30, i64* %6, align 8
-  %33 = add i64 %10, 49
-  store i64 %33, i64* %3, align 8
-  %34 = inttoptr i64 %30 to i64*
-  %35 = load i64, i64* %34, align 8
-  store i64 %35, i64* %3, align 8
-  %36 = add i64 %29, 16
-  store i64 %36, i64* %6, align 8
+  store i64 %32, i64* %3, align 8
+  %33 = add i64 %8, 16
+  store i64 %33, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

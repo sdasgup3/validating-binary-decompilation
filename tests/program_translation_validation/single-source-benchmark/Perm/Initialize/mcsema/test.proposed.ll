@@ -447,6 +447,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
+%G_0x616750___rcx_4__type = type <{ [4 x i8] }>
+@G_0x616750___rcx_4_= global %G_0x616750___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 
 
 define %struct.Memory* @Initialize(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -880,7 +882,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6383440
+  %14 = add i64 %13, ptrtoint( %G_0x616750___rcx_4__type* @G_0x616750___rcx_4_ to i64)
   %15 = load i32, i32* %EAX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC

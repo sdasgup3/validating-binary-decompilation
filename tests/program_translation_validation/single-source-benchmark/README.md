@@ -121,3 +121,8 @@ cat log | parallel "cd {}; make binary; cd -"
 cat log | parallel "cd {}; make mcsema; cd -"
 cat log | parallel "cd {}; make declutter; cd -"
 ```
+
+### Cases where rip offset are used
+```
+movad/movss/movaps/cvt*
+```

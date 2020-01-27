@@ -457,6 +457,8 @@ declare %struct.Memory* @sub_4008a0.Wait(%struct.State* noalias dereferenceable(
 declare %struct.Memory* @sub_4009f0.qpkt(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x602040___rax_1__type = type <{ [1 x i8] }>
+@G_0x602040___rax_1_= global %G_0x602040___rax_1__type <{ [1 x i8] c"\00" }>
 %G_0x6020e8_type = type <{ [8 x i8] }>
 @G_0x6020e8= global %G_0x6020e8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020f8_type = type <{ [8 x i8] }>
@@ -1633,7 +1635,7 @@ block_400478:
   %12 = getelementptr inbounds %struct.Reg, %struct.Reg* %11, i32 0, i32 0
   %RAX = bitcast %union.anon* %12 to i64*
   %13 = load i64, i64* %RAX
-  %14 = add i64 %13, 6299712
+  %14 = add i64 %13, ptrtoint( %G_0x602040___rax_1__type* @G_0x602040___rax_1_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC

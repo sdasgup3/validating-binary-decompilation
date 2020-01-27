@@ -111,6 +111,10 @@ private:
 
   bool checkConstantOrAddress(uint64_t currRIP, uint64_t currSize);
   bool isTargetOutsideFunctionBoundary(uint64_t target);
+  std::pair<string, string> createGlobalName(const string &expr,
+                                             uint64_t currRIP,
+                                             uint64_t currSize,
+                                             uint16_t accessSize);
 
 public:
   CompositionalDecompiler(const string &inPath, const string &outLLVMPath,

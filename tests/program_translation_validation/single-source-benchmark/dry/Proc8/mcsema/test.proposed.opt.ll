@@ -674,46 +674,42 @@ block_.L_400ac8:                                  ; preds = %block_.L_400a8d
   %453 = icmp eq i64 %452, 2
   %454 = zext i1 %453 to i8
   store i8 %454, i8* %68, align 1
-  %455 = load i64, i64* %RBP.i, align 8
-  %456 = add i64 %455, -36
-  %457 = add i64 %403, 38
-  store i64 %457, i64* %3, align 8
-  %458 = inttoptr i64 %456 to i32*
-  %459 = load i32, i32* %458, align 4
-  %460 = sext i32 %459 to i64
-  store i64 %460, i64* %RCX.i171, align 8
-  %461 = shl nsw i64 %460, 2
-  %462 = add i64 %461, %429
-  %463 = load i32, i32* %EDX.i177, align 4
-  %464 = add i64 %403, 41
-  store i64 %464, i64* %3, align 8
-  %465 = inttoptr i64 %462 to i32*
-  store i32 %463, i32* %465, align 4
-  %466 = load i64, i64* %3, align 8
+  %455 = add i64 %403, 38
+  store i64 %455, i64* %3, align 8
+  %456 = load i32, i32* %409, align 4
+  %457 = sext i32 %456 to i64
+  store i64 %457, i64* %RCX.i171, align 8
+  %458 = shl nsw i64 %457, 2
+  %459 = add i64 %458, %429
+  %460 = add i64 %403, 41
+  store i64 %460, i64* %3, align 8
+  %461 = inttoptr i64 %459 to i32*
+  store i32 %416, i32* %461, align 4
+  %462 = load i64, i64* %3, align 8
   store i32 5, i32* bitcast (%G_0x6049ec_type* @G_0x6049ec to i32*), align 8
-  %467 = load i64, i64* %RBP.i, align 8
-  %468 = add i64 %467, -4
-  %469 = add i64 %466, 14
+  %463 = load i64, i64* %RBP.i, align 8
+  %464 = add i64 %463, -4
+  %465 = add i64 %462, 14
+  store i64 %465, i64* %3, align 8
+  %466 = inttoptr i64 %464 to i32*
+  %467 = load i32, i32* %466, align 4
+  %468 = zext i32 %467 to i64
+  store i64 %468, i64* %RAX.i102, align 8
+  %469 = add i64 %462, 15
   store i64 %469, i64* %3, align 8
-  %470 = inttoptr i64 %468 to i32*
-  %471 = load i32, i32* %470, align 4
-  %472 = zext i32 %471 to i64
-  store i64 %472, i64* %RAX.i102, align 8
-  %473 = add i64 %466, 15
-  store i64 %473, i64* %3, align 8
-  %474 = load i64, i64* %6, align 8
-  %475 = add i64 %474, 8
-  %476 = inttoptr i64 %474 to i64*
-  %477 = load i64, i64* %476, align 8
-  store i64 %477, i64* %RBP.i, align 8
-  store i64 %475, i64* %6, align 8
-  %478 = add i64 %466, 16
-  store i64 %478, i64* %3, align 8
-  %479 = inttoptr i64 %475 to i64*
-  %480 = load i64, i64* %479, align 8
-  store i64 %480, i64* %3, align 8
-  %481 = add i64 %474, 16
-  store i64 %481, i64* %6, align 8
+  %470 = load i64, i64* %6, align 8
+  %471 = add i64 %470, 8
+  %472 = inttoptr i64 %470 to i64*
+  %473 = load i64, i64* %472, align 8
+  store i64 %473, i64* %RBP.i, align 8
+  store i64 %471, i64* %6, align 8
+  %474 = add i64 %462, 16
+  store i64 %474, i64* %3, align 8
+  %475 = inttoptr i64 %471 to i64*
+  %476 = load i64, i64* %475, align 8
+  store i64 %476, i64* %3, align 8
+  %477 = add i64 %470, 16
+  store i64 %477, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

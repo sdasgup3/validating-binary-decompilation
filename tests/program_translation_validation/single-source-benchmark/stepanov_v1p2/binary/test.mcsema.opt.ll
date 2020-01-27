@@ -242,259 +242,259 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @llvm.global_ctors = appending global [1 x { i32, void ()*, i8* }] [{ i32, void ()*, i8* } { i32 101, void ()* @__mcsema_constructor, i8* null }]
 @seg_605080__bss.0.0 = internal unnamed_addr global i1 false, align 8
 
-declare %struct.Memory* @sub_401fc0__ZNK16reverse_iteratorIS_I14double_pointerdEdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401c30__ZN6DoublecvdEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401230__ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400710___cxx_global_var_init_13_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402000__ZN16reverse_iteratorI14double_pointerdEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402450__ZN16reverse_iteratorIS_IPddEdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4024c0__ZN16reverse_iteratorIPddEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401340__Z5checkd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401eb0__ZeqRK14Double_pointerS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4012b0__ZN14Double_pointerC2EP6Double_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4012f0__ZN6DoubleC2ERKd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4008a0___cxx_global_var_init_22_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4004c0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402660__ZN16reverse_iteratorI14Double_pointer6DoubleEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401c90__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401210__ZN16reverse_iteratorIS_IPddEdEC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400870___cxx_global_var_init_21_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402070__ZN14double_pointermmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402890__ZN16reverse_iteratorIP6DoubleS0_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401bb0__Z10accumulateI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_ET0_T_S6_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4006d0___cxx_global_var_init_11_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402100__ZeqI16reverse_iteratorI14double_pointerdEdEiRKS0_IT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402990__ZN16reverse_iteratorIPddEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4007b0___cxx_global_var_init_17_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402690__ZN16reverse_iteratorI14Double_pointer6DoubleEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401230__ZN16reverse_iteratorI14Double_pointer6DoubleEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4006f0___cxx_global_var_init_12_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4022c0__ZN16reverse_iteratorIP6DoubleS0_EmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401930__Z4testI16reverse_iteratorIS0_IPddEdEdEvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4022e0__ZNK16reverse_iteratorIP6DoubleS0_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4027d0__Z10accumulateI16reverse_iteratorIP6DoubleS1_ES1_ET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4025a0__Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4026c0__Z10accumulateI16reverse_iteratorI14double_pointerdEdET0_T_S4_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402570__ZeqIPddEiRK16reverse_iteratorIT_T0_ES6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401e20__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401e00__ZN14Double_pointerppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4020d0__ZN16reverse_iteratorIS_I14double_pointerdEdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401570__Z4testI14double_pointerdEvT_S1_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401600__Z4testI14Double_pointer6DoubleEvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400650___cxx_global_var_init_7_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400d30__Z5test0PdS__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400a80__Z9summarizev_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402410__ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401e80__ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400650___cxx_global_var_init_7_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4029c0__ZN16reverse_iteratorIPddEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401cc0__ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4024e0__ZNK16reverse_iteratorIPddEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400670___cxx_global_var_init_8_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402b40__ZneI14double_pointerEiRKT_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400730___cxx_global_var_init_14_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401290__ZN16reverse_iteratorIPddEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4020b0__ZN14double_pointerppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401c50__ZneI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_EEiRKT_S7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401e50__ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4023a0__Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400620___cxx_global_var_init_6_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401d50__ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402770__ZN16reverse_iteratorI14double_pointerdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4029e0__Z10accumulateI14Double_pointer6DoubleET0_T_S3_S2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
 declare %struct.Memory* @sub_402aa0__ZN14Double_pointerppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402190__Z10accumulateI16reverse_iteratorIS0_IP6DoubleS1_ES1_ES1_ET0_T_S6_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4007e0___cxx_global_var_init_18_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400960___cxx_global_var_init_26_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401f90__ZN16reverse_iteratorIS_I14double_pointerdEdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4006b0___cxx_global_var_init_10_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402340__ZeqI16reverse_iteratorIP6DoubleS1_ES1_EiRKS0_IT_T0_ES8__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400750___cxx_global_var_init_15_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401d00__ZplRK6DoubleS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402c20__Z10accumulateIPddET0_T_S2_S1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401250__ZN16reverse_iteratorI14double_pointerdEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400810___cxx_global_var_init_19_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401d80__ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4011f0__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402950__ZneI16reverse_iteratorIPddEEiRKT_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402730__ZneI16reverse_iteratorI14double_pointerdEEiRKT_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401180__ZN3__0clERKdS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401140__ZN3__0clERK6DoubleS2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4012d0__ZN14double_pointerC2EPd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401740__Z4testI16reverse_iteratorIP6DoubleS1_ES1_EvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400780___cxx_global_var_init_16_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401b00__Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402130__ZeqI14double_pointerdEiRK16reverse_iteratorIT_T0_ES6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4014d0__Z4testIP6DoubleS0_EvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402ad0__Z10accumulateI14double_pointerdET0_T_S2_S1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402a60__ZneI14Double_pointerEiRKT_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401f50__ZneI16reverse_iteratorIS0_I14double_pointerdEdEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4017f0__Z4testI16reverse_iteratorI14double_pointerdEdEvT_S3_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402bb0__Z10accumulateIP6DoubleS0_ET0_T_S3_S2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402090__ZNK14double_pointerdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402030__ZNK16reverse_iteratorI14double_pointerdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402540__ZeqI16reverse_iteratorIPddEdEiRKS0_IT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4027a0__ZN16reverse_iteratorI14double_pointerdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402370__ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400690___cxx_global_var_init_9_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400900___cxx_global_var_init_24_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4008d0___cxx_global_var_init_23_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402250__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401310__ZN6DoubleC2Ev_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401450__Z4testIPddEvT_S1_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401a70__Z4testI16reverse_iteratorIS0_I14double_pointerdEdEdEvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402280__ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4019c0__Z4testI16reverse_iteratorIS0_IP6DoubleS1_ES1_ES1_EvT_S5_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401410__Z4fillIP6DoubleS0_EvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401ee0__Z10accumulateI16reverse_iteratorIS0_I14double_pointerdEdEdET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402310__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_400840___cxx_global_var_init_20_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4011d0__ZN16reverse_iteratorIS_I14double_pointerdEdEC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4028c0__ZN16reverse_iteratorIP6DoubleS0_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402480__ZNK16reverse_iteratorIS_IPddEdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402620__ZneI16reverse_iteratorI14Double_pointer6DoubleEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_401320__Z11start_timerv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_4016b0__Z4testI16reverse_iteratorIPddEdEvT_S3_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
-
-declare %struct.Memory* @sub_402b80__ZN14double_pointerppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_401de0__ZNK14Double_pointerdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4009d0_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401fc0__ZNK16reverse_iteratorIS_I14double_pointerdEdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4028e0__Z10accumulateI16reverse_iteratorIPddEdET0_T_S4_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4022c0__ZN16reverse_iteratorIP6DoubleS0_EmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400930___cxx_global_var_init_25_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_401410__Z4fillIP6DoubleS0_EvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4011b0__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EC2ES2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400750___cxx_global_var_init_15_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4005c0___cxx_global_var_init_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4007e0___cxx_global_var_init_18_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401270__ZN16reverse_iteratorIP6DoubleS0_EC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4008a0___cxx_global_var_init_22_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402620__ZneI16reverse_iteratorI14Double_pointer6DoubleEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401250__ZN16reverse_iteratorI14double_pointerdEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402540__ZeqI16reverse_iteratorIPddEdEiRKS0_IT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401ee0__Z10accumulateI16reverse_iteratorIS0_I14double_pointerdEdEdET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402950__ZneI16reverse_iteratorIPddEEiRKT_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400670___cxx_global_var_init_8_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401930__Z4testI16reverse_iteratorIS0_IPddEdEdEvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400900___cxx_global_var_init_24_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_401dc0__ZN14Double_pointermmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402850__ZneI16reverse_iteratorIP6DoubleS1_EEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400620___cxx_global_var_init_6_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_401390__Z5timerv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402510__ZN16reverse_iteratorIS_IPddEdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401600__Z4testI14Double_pointer6DoubleEvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402c20__Z10accumulateIPddET0_T_S2_S1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401e00__ZN14Double_pointerppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400780___cxx_global_var_init_16_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402450__ZN16reverse_iteratorIS_IPddEdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402770__ZN16reverse_iteratorI14double_pointerdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401290__ZN16reverse_iteratorIPddEC2ES0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401740__Z4testI16reverse_iteratorIP6DoubleS1_ES1_EvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400810___cxx_global_var_init_19_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4009d0_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4023a0__Z10accumulateI16reverse_iteratorIS0_IPddEdEdET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401f50__ZneI16reverse_iteratorIS0_I14double_pointerdEdEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4011f0__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EC2ES2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401a70__Z4testI16reverse_iteratorIS0_I14double_pointerdEdEdEvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4005c0___cxx_global_var_init_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_401880__Z4testI16reverse_iteratorI14Double_pointer6DoubleES2_EvT_S4_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_402510__ZN16reverse_iteratorIS_IPddEdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_402bb0__Z10accumulateIP6DoubleS0_ET0_T_S3_S2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402480__ZNK16reverse_iteratorIS_IPddEdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401320__Z11start_timerv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402030__ZNK16reverse_iteratorI14double_pointerdEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402090__ZNK14double_pointerdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401340__Z5checkd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4029e0__Z10accumulateI14Double_pointer6DoubleET0_T_S3_S2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401d80__ZNK16reverse_iteratorI14Double_pointer6DoubleEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4017f0__Z4testI16reverse_iteratorI14double_pointerdEdEvT_S3_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402660__ZN16reverse_iteratorI14Double_pointer6DoubleEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4022e0__ZNK16reverse_iteratorIP6DoubleS0_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400690___cxx_global_var_init_9_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402ad0__Z10accumulateI14double_pointerdET0_T_S2_S1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402070__ZN14double_pointermmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402570__ZeqIPddEiRK16reverse_iteratorIT_T0_ES6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401270__ZN16reverse_iteratorIP6DoubleS0_EC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4024e0__ZNK16reverse_iteratorIPddEdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402310__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402690__ZN16reverse_iteratorI14Double_pointer6DoubleEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4004c0__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400a80__Z9summarizev_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401140__ZN3__0clERK6DoubleS2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400930___cxx_global_var_init_25_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4028e0__Z10accumulateI16reverse_iteratorIPddEdET0_T_S4_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402000__ZN16reverse_iteratorI14double_pointerdEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401310__ZN6DoubleC2Ev_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4012f0__ZN6DoubleC2ERKd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4012b0__ZN14Double_pointerC2EP6Double_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401eb0__ZeqRK14Double_pointerS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401c90__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401c30__ZN6DoublecvdEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401180__ZN3__0clERKdS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402730__ZneI16reverse_iteratorI14double_pointerdEEiRKT_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402b80__ZN14double_pointerppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4011d0__ZN16reverse_iteratorIS_I14double_pointerdEdEC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400840___cxx_global_var_init_20_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4020b0__ZN14double_pointerppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400870___cxx_global_var_init_21_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4027d0__Z10accumulateI16reverse_iteratorIP6DoubleS1_ES1_ET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402250__ZN16reverse_iteratorIS_IP6DoubleS0_ES0_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402340__ZeqI16reverse_iteratorIP6DoubleS1_ES1_EiRKS0_IT_T0_ES8__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401e50__ZeqI16reverse_iteratorI14Double_pointer6DoubleES2_EiRKS0_IT_T0_ES8__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4006b0___cxx_global_var_init_10_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4026c0__Z10accumulateI16reverse_iteratorI14double_pointerdEdET0_T_S4_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401bb0__Z10accumulateI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_ET0_T_S6_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402410__ZneI16reverse_iteratorIS0_IPddEdEEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402850__ZneI16reverse_iteratorIP6DoubleS1_EEiRKT_S6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_4013d0__Z4fillIPddEvT_S1_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_402210__ZneI16reverse_iteratorIS0_IP6DoubleS1_ES1_EEiRKT_S7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
+declare %struct.Memory* @sub_4020d0__ZN16reverse_iteratorIS_I14double_pointerdEdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401390__Z5timerv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4016b0__Z4testI16reverse_iteratorIPddEdEvT_S3_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400730___cxx_global_var_init_14_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4019c0__Z4testI16reverse_iteratorIS0_IP6DoubleS1_ES1_ES1_EvT_S5_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4024c0__ZN16reverse_iteratorIPddEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4006f0___cxx_global_var_init_12_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4011b0__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EC2ES2__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4007b0___cxx_global_var_init_17_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402370__ZeqIP6DoubleS0_EiRK16reverse_iteratorIT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401f90__ZN16reverse_iteratorIS_I14double_pointerdEdEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402b40__ZneI14double_pointerEiRKT_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_400960___cxx_global_var_init_26_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402130__ZeqI14double_pointerdEiRK16reverse_iteratorIT_T0_ES6__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4008d0___cxx_global_var_init_23_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402100__ZeqI16reverse_iteratorI14double_pointerdEdEiRKS0_IT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401c50__ZneI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_EEiRKT_S7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4012d0__ZN14double_pointerC2EPd_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
 declare %struct.Memory* @sub_402160__ZeqRK14double_pointerS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401d50__ZN16reverse_iteratorI14Double_pointer6DoubleEmmEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402990__ZN16reverse_iteratorIPddEppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401b00__Z4testI16reverse_iteratorIS0_I14Double_pointer6DoubleES2_ES2_EvT_S5_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402890__ZN16reverse_iteratorIP6DoubleS0_EppEi_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401e80__ZeqI14Double_pointer6DoubleEiRK16reverse_iteratorIT_T0_ES7__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4027a0__ZN16reverse_iteratorI14double_pointerdEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402280__ZNK16reverse_iteratorIS_IP6DoubleS0_ES0_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402190__Z10accumulateI16reverse_iteratorIS0_IP6DoubleS1_ES1_ES1_ET0_T_S6_S5__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401570__Z4testI14double_pointerdEvT_S1_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4028c0__ZN16reverse_iteratorIP6DoubleS0_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401210__ZN16reverse_iteratorIS_IPddEdEC2ES1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4014d0__Z4testIP6DoubleS0_EvT_S2_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4025a0__Z10accumulateI16reverse_iteratorI14Double_pointer6DoubleES2_ET0_T_S5_S4__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401d00__ZplRK6DoubleS1__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401e20__ZN16reverse_iteratorIS_I14Double_pointer6DoubleES1_EppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4029c0__ZN16reverse_iteratorIPddEppEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_4006d0___cxx_global_var_init_11_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401450__Z4testIPddEvT_S1_T0__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_401cc0__ZNK16reverse_iteratorIS_I14Double_pointer6DoubleES1_EdeEv_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+
+declare %struct.Memory* @sub_402a60__ZneI14Double_pointerEiRKT_S3__renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -8028,7 +8028,6 @@ block_4004d0:                                     ; preds = %block_4004c0
   br label %block_4004d2
 
 block_4004d2:                                     ; preds = %block_4004c0.block_4004d2_crit_edge, %block_4004d0
-  %.pre-phi = phi i64* [ %RSP, %block_4004c0.block_4004d2_crit_edge ], [ %RSP, %block_4004d0 ]
   %27 = phi i64 [ %22, %block_4004c0.block_4004d2_crit_edge ], [ %.pre1, %block_4004d0 ]
   %28 = phi i64 [ %4, %block_4004c0.block_4004d2_crit_edge ], [ %.pre, %block_4004d0 ]
   %MEMORY.0 = phi %struct.Memory* [ %2, %block_4004c0.block_4004d2_crit_edge ], [ %26, %block_4004d0 ]
@@ -8067,7 +8066,7 @@ block_4004d2:                                     ; preds = %block_4004c0.block_
   %53 = load i64, i64* %52, align 8
   store i64 %53, i64* %PC, align 8, !tbaa !2428
   %54 = add i64 %28, 16
-  store i64 %54, i64* %.pre-phi, align 8, !tbaa !2428
+  store i64 %54, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 }
 
@@ -16232,16 +16231,16 @@ block_4013d0:
   br label %block_4013e1
 
 block_4013ef:                                     ; preds = %block_4013e1
-  %36 = add i64 %72, -24
-  %37 = add i64 %106, 5
+  %36 = add i64 %71, -24
+  %37 = add i64 %105, 5
   store i64 %37, i64* %PC, align 8
   %38 = inttoptr i64 %36 to i64*
   %39 = load i64, i64* %38, align 8
   store i64 %39, i64* %25, align 1, !tbaa !2451
   store double 0.000000e+00, double* %35, align 1, !tbaa !2451
-  %40 = add i64 %106, 9
+  %40 = add i64 %105, 9
   store i64 %40, i64* %PC, align 8
-  %41 = load i64, i64* %75, align 8
+  %41 = load i64, i64* %74, align 8
   store i64 %41, i64* %RAX, align 8, !tbaa !2428
   %42 = add i64 %41, 8
   store i64 %42, i64* %RCX, align 8, !tbaa !2428
@@ -16272,86 +16271,84 @@ block_4013ef:                                     ; preds = %block_4013e1
   %62 = icmp eq i64 %61, 2
   %63 = zext i1 %62 to i8
   store i8 %63, i8* %33, align 1, !tbaa !2450
-  %64 = add i64 %106, 20
+  %64 = add i64 %105, 20
   store i64 %64, i64* %PC, align 8
-  store i64 %42, i64* %75, align 8
+  store i64 %42, i64* %74, align 8
   %65 = bitcast i64* %RAX to i64**
   %66 = load i64*, i64** %65, align 8
   %67 = load i64, i64* %PC, align 8
-  %68 = add i64 %67, 4
-  store i64 %68, i64* %PC, align 8
-  %69 = load i64, i64* %25, align 1
-  store i64 %69, i64* %66, align 8
-  %70 = add i64 %67, -34
-  store i64 %70, i64* %PC, align 8, !tbaa !2428
+  %68 = load i64, i64* %25, align 1
+  store i64 %68, i64* %66, align 8
+  %69 = add i64 %67, -34
+  store i64 %69, i64* %PC, align 8, !tbaa !2428
   br label %block_4013e1
 
 block_4013e1:                                     ; preds = %block_4013ef, %block_4013d0
-  %71 = phi i64 [ %70, %block_4013ef ], [ %.pre, %block_4013d0 ]
-  %72 = load i64, i64* %RBP, align 8
-  %73 = add i64 %72, -8
-  %74 = add i64 %71, 4
-  store i64 %74, i64* %PC, align 8
-  %75 = inttoptr i64 %73 to i64*
-  %76 = load i64, i64* %75, align 8
-  store i64 %76, i64* %RAX, align 8, !tbaa !2428
-  %77 = add i64 %72, -16
-  %78 = add i64 %71, 8
-  store i64 %78, i64* %PC, align 8
-  %79 = inttoptr i64 %77 to i64*
-  %80 = load i64, i64* %79, align 8
-  %81 = sub i64 %76, %80
-  %82 = icmp ult i64 %76, %80
-  %83 = zext i1 %82 to i8
-  store i8 %83, i8* %28, align 1, !tbaa !2432
-  %84 = trunc i64 %81 to i32
-  %85 = and i32 %84, 255
-  %86 = tail call i32 @llvm.ctpop.i32(i32 %85) #8
-  %87 = trunc i32 %86 to i8
-  %88 = and i8 %87, 1
-  %89 = xor i8 %88, 1
-  store i8 %89, i8* %29, align 1, !tbaa !2446
-  %90 = xor i64 %80, %76
-  %91 = xor i64 %90, %81
-  %92 = lshr i64 %91, 4
-  %93 = trunc i64 %92 to i8
-  %94 = and i8 %93, 1
-  store i8 %94, i8* %30, align 1, !tbaa !2447
-  %95 = icmp eq i64 %81, 0
-  %96 = zext i1 %95 to i8
-  store i8 %96, i8* %31, align 1, !tbaa !2448
-  %97 = lshr i64 %81, 63
-  %98 = trunc i64 %97 to i8
-  store i8 %98, i8* %32, align 1, !tbaa !2449
-  %99 = lshr i64 %76, 63
-  %100 = lshr i64 %80, 63
-  %101 = xor i64 %100, %99
-  %102 = xor i64 %97, %99
-  %103 = add nuw nsw i64 %102, %101
-  %104 = icmp eq i64 %103, 2
-  %105 = zext i1 %104 to i8
-  store i8 %105, i8* %33, align 1, !tbaa !2450
-  %.v = select i1 %95, i64 43, i64 14
-  %106 = add i64 %71, %.v
-  store i64 %106, i64* %PC, align 8, !tbaa !2428
-  br i1 %95, label %block_40140c, label %block_4013ef
+  %70 = phi i64 [ %69, %block_4013ef ], [ %.pre, %block_4013d0 ]
+  %71 = load i64, i64* %RBP, align 8
+  %72 = add i64 %71, -8
+  %73 = add i64 %70, 4
+  store i64 %73, i64* %PC, align 8
+  %74 = inttoptr i64 %72 to i64*
+  %75 = load i64, i64* %74, align 8
+  store i64 %75, i64* %RAX, align 8, !tbaa !2428
+  %76 = add i64 %71, -16
+  %77 = add i64 %70, 8
+  store i64 %77, i64* %PC, align 8
+  %78 = inttoptr i64 %76 to i64*
+  %79 = load i64, i64* %78, align 8
+  %80 = sub i64 %75, %79
+  %81 = icmp ult i64 %75, %79
+  %82 = zext i1 %81 to i8
+  store i8 %82, i8* %28, align 1, !tbaa !2432
+  %83 = trunc i64 %80 to i32
+  %84 = and i32 %83, 255
+  %85 = tail call i32 @llvm.ctpop.i32(i32 %84) #8
+  %86 = trunc i32 %85 to i8
+  %87 = and i8 %86, 1
+  %88 = xor i8 %87, 1
+  store i8 %88, i8* %29, align 1, !tbaa !2446
+  %89 = xor i64 %79, %75
+  %90 = xor i64 %89, %80
+  %91 = lshr i64 %90, 4
+  %92 = trunc i64 %91 to i8
+  %93 = and i8 %92, 1
+  store i8 %93, i8* %30, align 1, !tbaa !2447
+  %94 = icmp eq i64 %80, 0
+  %95 = zext i1 %94 to i8
+  store i8 %95, i8* %31, align 1, !tbaa !2448
+  %96 = lshr i64 %80, 63
+  %97 = trunc i64 %96 to i8
+  store i8 %97, i8* %32, align 1, !tbaa !2449
+  %98 = lshr i64 %75, 63
+  %99 = lshr i64 %79, 63
+  %100 = xor i64 %99, %98
+  %101 = xor i64 %96, %98
+  %102 = add nuw nsw i64 %101, %100
+  %103 = icmp eq i64 %102, 2
+  %104 = zext i1 %103 to i8
+  store i8 %104, i8* %33, align 1, !tbaa !2450
+  %.v = select i1 %94, i64 43, i64 14
+  %105 = add i64 %70, %.v
+  store i64 %105, i64* %PC, align 8, !tbaa !2428
+  br i1 %94, label %block_40140c, label %block_4013ef
 
 block_40140c:                                     ; preds = %block_4013e1
-  %107 = add i64 %106, 1
-  store i64 %107, i64* %PC, align 8
-  %108 = load i64, i64* %6, align 8, !tbaa !2428
-  %109 = add i64 %108, 8
-  %110 = inttoptr i64 %108 to i64*
-  %111 = load i64, i64* %110, align 8
-  store i64 %111, i64* %RBP, align 8, !tbaa !2428
-  store i64 %109, i64* %6, align 8, !tbaa !2428
-  %112 = add i64 %106, 2
-  store i64 %112, i64* %PC, align 8
-  %113 = inttoptr i64 %109 to i64*
-  %114 = load i64, i64* %113, align 8
-  store i64 %114, i64* %PC, align 8, !tbaa !2428
-  %115 = add i64 %108, 16
-  store i64 %115, i64* %6, align 8, !tbaa !2428
+  %106 = add i64 %105, 1
+  store i64 %106, i64* %PC, align 8
+  %107 = load i64, i64* %6, align 8, !tbaa !2428
+  %108 = add i64 %107, 8
+  %109 = inttoptr i64 %107 to i64*
+  %110 = load i64, i64* %109, align 8
+  store i64 %110, i64* %RBP, align 8, !tbaa !2428
+  store i64 %108, i64* %6, align 8, !tbaa !2428
+  %111 = add i64 %105, 2
+  store i64 %111, i64* %PC, align 8
+  %112 = inttoptr i64 %108 to i64*
+  %113 = load i64, i64* %112, align 8
+  store i64 %113, i64* %PC, align 8, !tbaa !2428
+  %114 = add i64 %107, 16
+  store i64 %114, i64* %6, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 
@@ -16412,22 +16409,19 @@ block_400a00:
   br i1 %30, label %block_400a38, label %block_400a23
 
 block_400a38:                                     ; preds = %block_400a23, %block_400a00
-  %35 = phi i64 [ %45, %block_400a23 ], [ %34, %block_400a00 ]
+  %35 = phi i64 [ %42, %block_400a23 ], [ %34, %block_400a00 ]
   %36 = add i64 %35, 1
   store i64 %36, i64* %PC, align 8
-  %37 = load i64, i64* %5, align 8, !tbaa !2428
-  %38 = add i64 %37, 8
-  %39 = inttoptr i64 %37 to i64*
+  %37 = load i64, i64* %8, align 8
+  store i64 %37, i64* %RBP, align 8, !tbaa !2428
+  store i64 %6, i64* %5, align 8, !tbaa !2428
+  %38 = add i64 %35, 2
+  store i64 %38, i64* %PC, align 8
+  %39 = inttoptr i64 %6 to i64*
   %40 = load i64, i64* %39, align 8
-  store i64 %40, i64* %RBP, align 8, !tbaa !2428
-  store i64 %38, i64* %5, align 8, !tbaa !2428
-  %41 = add i64 %35, 2
-  store i64 %41, i64* %PC, align 8
-  %42 = inttoptr i64 %38 to i64*
-  %43 = load i64, i64* %42, align 8
-  store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %44 = add i64 %37, 16
-  store i64 %44, i64* %5, align 8, !tbaa !2428
+  store i64 %40, i64* %PC, align 8, !tbaa !2428
+  %41 = add i64 %7, 16
+  store i64 %41, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_400a23:                                     ; preds = %block_400a00
@@ -16438,8 +16432,8 @@ block_400a23:                                     ; preds = %block_400a00
   store i8 0, i8* %16, align 1, !tbaa !2449
   store i8 0, i8* %17, align 1, !tbaa !2450
   store i8 0, i8* %14, align 1, !tbaa !2447
-  %45 = add i64 %34, 21
-  store i64 %45, i64* %PC, align 8, !tbaa !2428
+  %42 = add i64 %34, 21
+  store i64 %42, i64* %PC, align 8, !tbaa !2428
   br label %block_400a38
 }
 
@@ -19305,8 +19299,8 @@ block_400d5c:                                     ; preds = %block_400d4c
   br label %block_400d6b
 
 block_400d4c:                                     ; preds = %block_400dac, %block_400d30
-  %81 = phi i64 [ %.pre, %block_400d30 ], [ %203, %block_400dac ]
-  %MEMORY.0 = phi %struct.Memory* [ %55, %block_400d30 ], [ %171, %block_400dac ]
+  %81 = phi i64 [ %.pre, %block_400d30 ], [ %202, %block_400dac ]
+  %MEMORY.0 = phi %struct.Memory* [ %55, %block_400d30 ], [ %170, %block_400dac ]
   %82 = load i64, i64* %RBP, align 8
   %83 = add i64 %82, -20
   %84 = add i64 %81, 3
@@ -19354,7 +19348,7 @@ block_400d4c:                                     ; preds = %block_400dac, %bloc
   br i1 %114, label %block_400d5c, label %block_400dc4
 
 block_400d6b:                                     ; preds = %block_400d87, %block_400d5c
-  %116 = phi i64 [ %255, %block_400d87 ], [ %.pre1, %block_400d5c ]
+  %116 = phi i64 [ %250, %block_400d87 ], [ %.pre1, %block_400d5c ]
   %117 = load i64, i64* %RBP, align 8
   %118 = add i64 %117, -36
   %119 = add i64 %116, 4
@@ -19414,224 +19408,219 @@ block_400d6b:                                     ; preds = %block_400d87, %bloc
   %.v2 = select i1 %159, i64 28, i64 65
   %160 = add i64 %116, %.v2
   store i64 %160, i64* %PC, align 8, !tbaa !2428
-  %161 = load i64, i64* %RBP, align 8
   br i1 %159, label %block_400d87, label %block_400dac
 
 block_400dac:                                     ; preds = %block_400d6b
-  %162 = add i64 %161, -32
-  %163 = add i64 %160, 5
-  store i64 %163, i64* %PC, align 8
-  %164 = inttoptr i64 %162 to i64*
-  %165 = load i64, i64* %164, align 8
-  store i64 %165, i64* %73, align 1, !tbaa !2451
+  %161 = add i64 %117, -32
+  %162 = add i64 %160, 5
+  store i64 %162, i64* %PC, align 8
+  %163 = inttoptr i64 %161 to i64*
+  %164 = load i64, i64* %163, align 8
+  store i64 %164, i64* %73, align 1, !tbaa !2451
   store double 0.000000e+00, double* %70, align 1, !tbaa !2451
-  %166 = add i64 %160, 1428
-  %167 = add i64 %160, 10
-  %168 = load i64, i64* %RSP, align 8, !tbaa !2428
-  %169 = add i64 %168, -8
-  %170 = inttoptr i64 %169 to i64*
-  store i64 %167, i64* %170, align 8
-  store i64 %169, i64* %RSP, align 8, !tbaa !2428
-  store i64 %166, i64* %PC, align 8, !tbaa !2428
-  %171 = tail call %struct.Memory* @sub_401340__Z5checkd_renamed_(%struct.State* nonnull %0, i64 %166, %struct.Memory* %MEMORY.0)
-  %172 = load i64, i64* %RBP, align 8
-  %173 = add i64 %172, -20
-  %174 = load i64, i64* %PC, align 8
-  %175 = add i64 %174, 3
-  store i64 %175, i64* %PC, align 8
-  %176 = inttoptr i64 %173 to i32*
-  %177 = load i32, i32* %176, align 4
-  %178 = add i32 %177, 1
-  %179 = zext i32 %178 to i64
-  store i64 %179, i64* %RAX, align 8, !tbaa !2428
-  %180 = icmp eq i32 %177, -1
-  %181 = icmp eq i32 %178, 0
-  %182 = or i1 %180, %181
-  %183 = zext i1 %182 to i8
-  store i8 %183, i8* %13, align 1, !tbaa !2432
-  %184 = and i32 %178, 255
-  %185 = tail call i32 @llvm.ctpop.i32(i32 %184) #8
-  %186 = trunc i32 %185 to i8
-  %187 = and i8 %186, 1
-  %188 = xor i8 %187, 1
-  store i8 %188, i8* %20, align 1, !tbaa !2446
-  %189 = xor i32 %177, %178
-  %190 = lshr i32 %189, 4
-  %191 = trunc i32 %190 to i8
-  %192 = and i8 %191, 1
-  store i8 %192, i8* %26, align 1, !tbaa !2447
-  %193 = zext i1 %181 to i8
-  store i8 %193, i8* %29, align 1, !tbaa !2448
-  %194 = lshr i32 %178, 31
-  %195 = trunc i32 %194 to i8
-  store i8 %195, i8* %32, align 1, !tbaa !2449
-  %196 = lshr i32 %177, 31
-  %197 = xor i32 %194, %196
-  %198 = add nuw nsw i32 %197, %194
-  %199 = icmp eq i32 %198, 2
-  %200 = zext i1 %199 to i8
-  store i8 %200, i8* %38, align 1, !tbaa !2450
-  %201 = add i64 %174, 9
-  store i64 %201, i64* %PC, align 8
-  store i32 %178, i32* %176, align 4
-  %202 = load i64, i64* %PC, align 8
-  %203 = add i64 %202, -115
-  store i64 %203, i64* %PC, align 8, !tbaa !2428
+  %165 = add i64 %160, 1428
+  %166 = add i64 %160, 10
+  %167 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %168 = add i64 %167, -8
+  %169 = inttoptr i64 %168 to i64*
+  store i64 %166, i64* %169, align 8
+  store i64 %168, i64* %RSP, align 8, !tbaa !2428
+  store i64 %165, i64* %PC, align 8, !tbaa !2428
+  %170 = tail call %struct.Memory* @sub_401340__Z5checkd_renamed_(%struct.State* nonnull %0, i64 %165, %struct.Memory* %MEMORY.0)
+  %171 = load i64, i64* %RBP, align 8
+  %172 = add i64 %171, -20
+  %173 = load i64, i64* %PC, align 8
+  %174 = add i64 %173, 3
+  store i64 %174, i64* %PC, align 8
+  %175 = inttoptr i64 %172 to i32*
+  %176 = load i32, i32* %175, align 4
+  %177 = add i32 %176, 1
+  %178 = zext i32 %177 to i64
+  store i64 %178, i64* %RAX, align 8, !tbaa !2428
+  %179 = icmp eq i32 %176, -1
+  %180 = icmp eq i32 %177, 0
+  %181 = or i1 %179, %180
+  %182 = zext i1 %181 to i8
+  store i8 %182, i8* %13, align 1, !tbaa !2432
+  %183 = and i32 %177, 255
+  %184 = tail call i32 @llvm.ctpop.i32(i32 %183) #8
+  %185 = trunc i32 %184 to i8
+  %186 = and i8 %185, 1
+  %187 = xor i8 %186, 1
+  store i8 %187, i8* %20, align 1, !tbaa !2446
+  %188 = xor i32 %176, %177
+  %189 = lshr i32 %188, 4
+  %190 = trunc i32 %189 to i8
+  %191 = and i8 %190, 1
+  store i8 %191, i8* %26, align 1, !tbaa !2447
+  %192 = zext i1 %180 to i8
+  store i8 %192, i8* %29, align 1, !tbaa !2448
+  %193 = lshr i32 %177, 31
+  %194 = trunc i32 %193 to i8
+  store i8 %194, i8* %32, align 1, !tbaa !2449
+  %195 = lshr i32 %176, 31
+  %196 = xor i32 %193, %195
+  %197 = add nuw nsw i32 %196, %193
+  %198 = icmp eq i32 %197, 2
+  %199 = zext i1 %198 to i8
+  store i8 %199, i8* %38, align 1, !tbaa !2450
+  %200 = add i64 %173, 9
+  store i64 %200, i64* %PC, align 8
+  store i32 %177, i32* %175, align 4
+  %201 = load i64, i64* %PC, align 8
+  %202 = add i64 %201, -115
+  store i64 %202, i64* %PC, align 8, !tbaa !2428
   br label %block_400d4c
 
 block_400d87:                                     ; preds = %block_400d6b
-  %204 = add i64 %161, -8
-  %205 = add i64 %160, 4
+  %203 = add i64 %160, 4
+  store i64 %203, i64* %PC, align 8
+  %204 = load i64, i64* %129, align 8
+  store i64 %204, i64* %RAX, align 8, !tbaa !2428
+  %205 = add i64 %160, 8
   store i64 %205, i64* %PC, align 8
-  %206 = inttoptr i64 %204 to i64*
-  %207 = load i64, i64* %206, align 8
-  store i64 %207, i64* %RAX, align 8, !tbaa !2428
-  %208 = add i64 %161, -36
-  %209 = add i64 %160, 8
-  store i64 %209, i64* %PC, align 8
-  %210 = inttoptr i64 %208 to i32*
-  %211 = load i32, i32* %210, align 4
-  %212 = sext i32 %211 to i64
-  store i64 %212, i64* %RCX, align 8, !tbaa !2428
-  %213 = shl nsw i64 %212, 3
-  %214 = add i64 %213, %207
-  %215 = add i64 %160, 13
-  store i64 %215, i64* %PC, align 8
-  %216 = inttoptr i64 %214 to double*
-  %217 = load double, double* %216, align 8
-  store double %217, double* %69, align 1, !tbaa !2451
+  %206 = load i32, i32* %120, align 4
+  %207 = sext i32 %206 to i64
+  store i64 %207, i64* %RCX, align 8, !tbaa !2428
+  %208 = shl nsw i64 %207, 3
+  %209 = add i64 %208, %204
+  %210 = add i64 %160, 13
+  store i64 %210, i64* %PC, align 8
+  %211 = inttoptr i64 %209 to double*
+  %212 = load double, double* %211, align 8
+  store double %212, double* %69, align 1, !tbaa !2451
   store double 0.000000e+00, double* %70, align 1, !tbaa !2451
-  %218 = add i64 %161, -32
-  %219 = add i64 %160, 18
-  store i64 %219, i64* %PC, align 8
-  %220 = inttoptr i64 %218 to double*
-  %221 = load double, double* %220, align 8
-  %222 = fadd double %217, %221
-  store double %222, double* %69, align 1, !tbaa !2451
+  %213 = add i64 %117, -32
+  %214 = add i64 %160, 18
+  store i64 %214, i64* %PC, align 8
+  %215 = inttoptr i64 %213 to double*
+  %216 = load double, double* %215, align 8
+  %217 = fadd double %212, %216
+  store double %217, double* %69, align 1, !tbaa !2451
   store i64 0, i64* %62, align 1, !tbaa !2451
-  %223 = add i64 %160, 23
-  store i64 %223, i64* %PC, align 8
-  store double %222, double* %220, align 8
-  %224 = load i64, i64* %RBP, align 8
-  %225 = add i64 %224, -36
-  %226 = load i64, i64* %PC, align 8
-  %227 = add i64 %226, 3
-  store i64 %227, i64* %PC, align 8
-  %228 = inttoptr i64 %225 to i32*
-  %229 = load i32, i32* %228, align 4
-  %230 = add i32 %229, 1
-  %231 = zext i32 %230 to i64
-  store i64 %231, i64* %RAX, align 8, !tbaa !2428
-  %232 = icmp eq i32 %229, -1
-  %233 = icmp eq i32 %230, 0
-  %234 = or i1 %232, %233
-  %235 = zext i1 %234 to i8
-  store i8 %235, i8* %13, align 1, !tbaa !2432
-  %236 = and i32 %230, 255
-  %237 = tail call i32 @llvm.ctpop.i32(i32 %236) #8
+  %218 = add i64 %160, 23
+  store i64 %218, i64* %PC, align 8
+  store double %217, double* %215, align 8
+  %219 = load i64, i64* %RBP, align 8
+  %220 = add i64 %219, -36
+  %221 = load i64, i64* %PC, align 8
+  %222 = add i64 %221, 3
+  store i64 %222, i64* %PC, align 8
+  %223 = inttoptr i64 %220 to i32*
+  %224 = load i32, i32* %223, align 4
+  %225 = add i32 %224, 1
+  %226 = zext i32 %225 to i64
+  store i64 %226, i64* %RAX, align 8, !tbaa !2428
+  %227 = icmp eq i32 %224, -1
+  %228 = icmp eq i32 %225, 0
+  %229 = or i1 %227, %228
+  %230 = zext i1 %229 to i8
+  store i8 %230, i8* %13, align 1, !tbaa !2432
+  %231 = and i32 %225, 255
+  %232 = tail call i32 @llvm.ctpop.i32(i32 %231) #8
+  %233 = trunc i32 %232 to i8
+  %234 = and i8 %233, 1
+  %235 = xor i8 %234, 1
+  store i8 %235, i8* %20, align 1, !tbaa !2446
+  %236 = xor i32 %224, %225
+  %237 = lshr i32 %236, 4
   %238 = trunc i32 %237 to i8
   %239 = and i8 %238, 1
-  %240 = xor i8 %239, 1
-  store i8 %240, i8* %20, align 1, !tbaa !2446
-  %241 = xor i32 %229, %230
-  %242 = lshr i32 %241, 4
-  %243 = trunc i32 %242 to i8
-  %244 = and i8 %243, 1
-  store i8 %244, i8* %26, align 1, !tbaa !2447
-  %245 = zext i1 %233 to i8
-  store i8 %245, i8* %29, align 1, !tbaa !2448
-  %246 = lshr i32 %230, 31
-  %247 = trunc i32 %246 to i8
-  store i8 %247, i8* %32, align 1, !tbaa !2449
-  %248 = lshr i32 %229, 31
-  %249 = xor i32 %246, %248
-  %250 = add nuw nsw i32 %249, %246
-  %251 = icmp eq i32 %250, 2
-  %252 = zext i1 %251 to i8
-  store i8 %252, i8* %38, align 1, !tbaa !2450
-  %253 = add i64 %226, 9
-  store i64 %253, i64* %PC, align 8
-  store i32 %230, i32* %228, align 4
-  %254 = load i64, i64* %PC, align 8
-  %255 = add i64 %254, -60
-  store i64 %255, i64* %PC, align 8, !tbaa !2428
+  store i8 %239, i8* %26, align 1, !tbaa !2447
+  %240 = zext i1 %228 to i8
+  store i8 %240, i8* %29, align 1, !tbaa !2448
+  %241 = lshr i32 %225, 31
+  %242 = trunc i32 %241 to i8
+  store i8 %242, i8* %32, align 1, !tbaa !2449
+  %243 = lshr i32 %224, 31
+  %244 = xor i32 %241, %243
+  %245 = add nuw nsw i32 %244, %241
+  %246 = icmp eq i32 %245, 2
+  %247 = zext i1 %246 to i8
+  store i8 %247, i8* %38, align 1, !tbaa !2450
+  %248 = add i64 %221, 9
+  store i64 %248, i64* %PC, align 8
+  store i32 %225, i32* %223, align 4
+  %249 = load i64, i64* %PC, align 8
+  %250 = add i64 %249, -60
+  store i64 %250, i64* %PC, align 8, !tbaa !2428
   br label %block_400d6b
 
 block_400dc4:                                     ; preds = %block_400d4c
-  %256 = add i64 %115, 1484
-  %257 = add i64 %115, 5
-  %258 = load i64, i64* %RSP, align 8, !tbaa !2428
-  %259 = add i64 %258, -8
-  %260 = inttoptr i64 %259 to i64*
-  store i64 %257, i64* %260, align 8
-  store i64 %259, i64* %RSP, align 8, !tbaa !2428
-  store i64 %256, i64* %PC, align 8, !tbaa !2428
-  %261 = tail call %struct.Memory* @sub_401390__Z5timerv_renamed_(%struct.State* nonnull %0, i64 %256, %struct.Memory* %MEMORY.0)
-  %262 = load i64, i64* %PC, align 8
-  %263 = load i32, i32* bitcast (%current_test_type* @current_test to i32*), align 8
-  %264 = zext i32 %263 to i64
-  store i64 %264, i64* %RAX, align 8, !tbaa !2428
-  %265 = add i32 %263, 1
-  %266 = zext i32 %265 to i64
-  store i64 %266, i64* %RCX, align 8, !tbaa !2428
-  store i32 %265, i32* bitcast (%current_test_type* @current_test to i32*), align 8
-  %267 = sext i32 %263 to i64
-  store i64 %267, i64* %RDX, align 8, !tbaa !2428
-  %268 = shl nsw i64 %267, 3
-  %269 = add i64 %268, ptrtoint (%result_times_type* @result_times to i64)
-  %270 = add i64 %262, 31
-  store i64 %270, i64* %PC, align 8
-  %271 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %3, i64 0, i32 0, i32 0, i32 0, i64 0
-  %272 = load i64, i64* %271, align 1
-  %273 = inttoptr i64 %269 to i64*
-  store i64 %272, i64* %273, align 8
-  %274 = load i64, i64* %RSP, align 8
-  %275 = load i64, i64* %PC, align 8
-  %276 = add i64 %274, 48
-  store i64 %276, i64* %RSP, align 8, !tbaa !2428
-  %277 = icmp ugt i64 %274, -49
-  %278 = zext i1 %277 to i8
-  store i8 %278, i8* %13, align 1, !tbaa !2432
-  %279 = trunc i64 %276 to i32
-  %280 = and i32 %279, 255
-  %281 = tail call i32 @llvm.ctpop.i32(i32 %280) #8
-  %282 = trunc i32 %281 to i8
-  %283 = and i8 %282, 1
-  %284 = xor i8 %283, 1
-  store i8 %284, i8* %20, align 1, !tbaa !2446
-  %285 = xor i64 %274, 16
-  %286 = xor i64 %285, %276
-  %287 = lshr i64 %286, 4
+  %251 = add i64 %115, 1484
+  %252 = add i64 %115, 5
+  %253 = load i64, i64* %RSP, align 8, !tbaa !2428
+  %254 = add i64 %253, -8
+  %255 = inttoptr i64 %254 to i64*
+  store i64 %252, i64* %255, align 8
+  store i64 %254, i64* %RSP, align 8, !tbaa !2428
+  store i64 %251, i64* %PC, align 8, !tbaa !2428
+  %256 = tail call %struct.Memory* @sub_401390__Z5timerv_renamed_(%struct.State* nonnull %0, i64 %251, %struct.Memory* %MEMORY.0)
+  %257 = load i64, i64* %PC, align 8
+  %258 = load i32, i32* bitcast (%current_test_type* @current_test to i32*), align 8
+  %259 = zext i32 %258 to i64
+  store i64 %259, i64* %RAX, align 8, !tbaa !2428
+  %260 = add i32 %258, 1
+  %261 = zext i32 %260 to i64
+  store i64 %261, i64* %RCX, align 8, !tbaa !2428
+  store i32 %260, i32* bitcast (%current_test_type* @current_test to i32*), align 8
+  %262 = sext i32 %258 to i64
+  store i64 %262, i64* %RDX, align 8, !tbaa !2428
+  %263 = shl nsw i64 %262, 3
+  %264 = add i64 %263, ptrtoint (%result_times_type* @result_times to i64)
+  %265 = add i64 %257, 31
+  store i64 %265, i64* %PC, align 8
+  %266 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %3, i64 0, i32 0, i32 0, i32 0, i64 0
+  %267 = load i64, i64* %266, align 1
+  %268 = inttoptr i64 %264 to i64*
+  store i64 %267, i64* %268, align 8
+  %269 = load i64, i64* %RSP, align 8
+  %270 = load i64, i64* %PC, align 8
+  %271 = add i64 %269, 48
+  store i64 %271, i64* %RSP, align 8, !tbaa !2428
+  %272 = icmp ugt i64 %269, -49
+  %273 = zext i1 %272 to i8
+  store i8 %273, i8* %13, align 1, !tbaa !2432
+  %274 = trunc i64 %271 to i32
+  %275 = and i32 %274, 255
+  %276 = tail call i32 @llvm.ctpop.i32(i32 %275) #8
+  %277 = trunc i32 %276 to i8
+  %278 = and i8 %277, 1
+  %279 = xor i8 %278, 1
+  store i8 %279, i8* %20, align 1, !tbaa !2446
+  %280 = xor i64 %269, 16
+  %281 = xor i64 %280, %271
+  %282 = lshr i64 %281, 4
+  %283 = trunc i64 %282 to i8
+  %284 = and i8 %283, 1
+  store i8 %284, i8* %26, align 1, !tbaa !2447
+  %285 = icmp eq i64 %271, 0
+  %286 = zext i1 %285 to i8
+  store i8 %286, i8* %29, align 1, !tbaa !2448
+  %287 = lshr i64 %271, 63
   %288 = trunc i64 %287 to i8
-  %289 = and i8 %288, 1
-  store i8 %289, i8* %26, align 1, !tbaa !2447
-  %290 = icmp eq i64 %276, 0
-  %291 = zext i1 %290 to i8
-  store i8 %291, i8* %29, align 1, !tbaa !2448
-  %292 = lshr i64 %276, 63
-  %293 = trunc i64 %292 to i8
-  store i8 %293, i8* %32, align 1, !tbaa !2449
-  %294 = lshr i64 %274, 63
-  %295 = xor i64 %292, %294
-  %296 = add nuw nsw i64 %295, %292
-  %297 = icmp eq i64 %296, 2
-  %298 = zext i1 %297 to i8
-  store i8 %298, i8* %38, align 1, !tbaa !2450
-  %299 = add i64 %275, 5
-  store i64 %299, i64* %PC, align 8
-  %300 = add i64 %274, 56
-  %301 = inttoptr i64 %276 to i64*
-  %302 = load i64, i64* %301, align 8
-  store i64 %302, i64* %RBP, align 8, !tbaa !2428
-  store i64 %300, i64* %RSP, align 8, !tbaa !2428
-  %303 = add i64 %275, 6
-  store i64 %303, i64* %PC, align 8
-  %304 = inttoptr i64 %300 to i64*
-  %305 = load i64, i64* %304, align 8
-  store i64 %305, i64* %PC, align 8, !tbaa !2428
-  %306 = add i64 %274, 64
-  store i64 %306, i64* %RSP, align 8, !tbaa !2428
-  ret %struct.Memory* %261
+  store i8 %288, i8* %32, align 1, !tbaa !2449
+  %289 = lshr i64 %269, 63
+  %290 = xor i64 %287, %289
+  %291 = add nuw nsw i64 %290, %287
+  %292 = icmp eq i64 %291, 2
+  %293 = zext i1 %292 to i8
+  store i8 %293, i8* %38, align 1, !tbaa !2450
+  %294 = add i64 %270, 5
+  store i64 %294, i64* %PC, align 8
+  %295 = add i64 %269, 56
+  %296 = inttoptr i64 %271 to i64*
+  %297 = load i64, i64* %296, align 8
+  store i64 %297, i64* %RBP, align 8, !tbaa !2428
+  store i64 %295, i64* %RSP, align 8, !tbaa !2428
+  %298 = add i64 %270, 6
+  store i64 %298, i64* %PC, align 8
+  %299 = inttoptr i64 %295 to i64*
+  %300 = load i64, i64* %299, align 8
+  store i64 %300, i64* %PC, align 8, !tbaa !2428
+  %301 = add i64 %269, 64
+  store i64 %301, i64* %RSP, align 8, !tbaa !2428
+  ret %struct.Memory* %256
 }
 
 ; Function Attrs: noinline
@@ -20107,12 +20096,13 @@ block_401410:
   %31 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
   %32 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
   %.pre = load i64, i64* %PC, align 8
+  %.pre1 = load i64, i64* %RBP, align 8
   br label %block_401421
 
 block_40142f:                                     ; preds = %block_401421
-  %33 = add i64 %112, 4
+  %33 = add i64 %111, 4
   store i64 %33, i64* %PC, align 8
-  %34 = load i64, i64* %81, align 8
+  %34 = load i64, i64* %80, align 8
   store i64 %34, i64* %RAX, align 8, !tbaa !2428
   %35 = add i64 %34, 8
   store i64 %35, i64* %RCX, align 8, !tbaa !2428
@@ -20143,9 +20133,9 @@ block_40142f:                                     ; preds = %block_401421
   %55 = icmp eq i64 %54, 2
   %56 = zext i1 %55 to i8
   store i8 %56, i8* %32, align 1, !tbaa !2450
-  %57 = add i64 %112, 15
+  %57 = add i64 %111, 15
   store i64 %57, i64* %PC, align 8
-  store i64 %35, i64* %81, align 8
+  store i64 %35, i64* %80, align 8
   %58 = load i64, i64* %RBP, align 8
   %59 = add i64 %58, -8
   %60 = load i64, i64* %PC, align 8
@@ -20156,80 +20146,78 @@ block_40142f:                                     ; preds = %block_401421
   store i64 %63, i64* %RCX, align 8, !tbaa !2428
   %64 = bitcast i64* %RAX to i64**
   %65 = load i64*, i64** %64, align 8
-  %66 = add i64 %60, 7
-  store i64 %66, i64* %PC, align 8
   store i64 %63, i64* %65, align 8
-  %67 = add i64 %60, -29
-  store i64 %67, i64* %PC, align 8, !tbaa !2428
+  %66 = add i64 %60, -29
+  store i64 %66, i64* %PC, align 8, !tbaa !2428
   br label %block_401421
 
 block_40144a:                                     ; preds = %block_401421
-  %68 = add i64 %112, 1
-  store i64 %68, i64* %PC, align 8
-  %69 = load i64, i64* %5, align 8, !tbaa !2428
-  %70 = add i64 %69, 8
-  %71 = inttoptr i64 %69 to i64*
-  %72 = load i64, i64* %71, align 8
-  store i64 %72, i64* %RBP, align 8, !tbaa !2428
-  store i64 %70, i64* %5, align 8, !tbaa !2428
-  %73 = add i64 %112, 2
-  store i64 %73, i64* %PC, align 8
-  %74 = inttoptr i64 %70 to i64*
-  %75 = load i64, i64* %74, align 8
-  store i64 %75, i64* %PC, align 8, !tbaa !2428
-  %76 = add i64 %69, 16
-  store i64 %76, i64* %5, align 8, !tbaa !2428
+  %67 = add i64 %111, 1
+  store i64 %67, i64* %PC, align 8
+  %68 = load i64, i64* %5, align 8, !tbaa !2428
+  %69 = add i64 %68, 8
+  %70 = inttoptr i64 %68 to i64*
+  %71 = load i64, i64* %70, align 8
+  store i64 %71, i64* %RBP, align 8, !tbaa !2428
+  store i64 %69, i64* %5, align 8, !tbaa !2428
+  %72 = add i64 %111, 2
+  store i64 %72, i64* %PC, align 8
+  %73 = inttoptr i64 %69 to i64*
+  %74 = load i64, i64* %73, align 8
+  store i64 %74, i64* %PC, align 8, !tbaa !2428
+  %75 = add i64 %68, 16
+  store i64 %75, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_401421:                                     ; preds = %block_40142f, %block_401410
-  %77 = phi i64 [ %67, %block_40142f ], [ %.pre, %block_401410 ]
-  %78 = load i64, i64* %RBP, align 8
-  %79 = add i64 %78, -16
-  %80 = add i64 %77, 4
-  store i64 %80, i64* %PC, align 8
-  %81 = inttoptr i64 %79 to i64*
-  %82 = load i64, i64* %81, align 8
-  store i64 %82, i64* %RAX, align 8, !tbaa !2428
-  %83 = add i64 %78, -24
-  %84 = add i64 %77, 8
-  store i64 %84, i64* %PC, align 8
-  %85 = inttoptr i64 %83 to i64*
-  %86 = load i64, i64* %85, align 8
-  %87 = sub i64 %82, %86
-  %88 = icmp ult i64 %82, %86
-  %89 = zext i1 %88 to i8
-  store i8 %89, i8* %27, align 1, !tbaa !2432
-  %90 = trunc i64 %87 to i32
-  %91 = and i32 %90, 255
-  %92 = tail call i32 @llvm.ctpop.i32(i32 %91) #8
-  %93 = trunc i32 %92 to i8
-  %94 = and i8 %93, 1
-  %95 = xor i8 %94, 1
-  store i8 %95, i8* %28, align 1, !tbaa !2446
-  %96 = xor i64 %86, %82
-  %97 = xor i64 %96, %87
-  %98 = lshr i64 %97, 4
-  %99 = trunc i64 %98 to i8
-  %100 = and i8 %99, 1
-  store i8 %100, i8* %29, align 1, !tbaa !2447
-  %101 = icmp eq i64 %87, 0
-  %102 = zext i1 %101 to i8
-  store i8 %102, i8* %30, align 1, !tbaa !2448
-  %103 = lshr i64 %87, 63
-  %104 = trunc i64 %103 to i8
-  store i8 %104, i8* %31, align 1, !tbaa !2449
-  %105 = lshr i64 %82, 63
-  %106 = lshr i64 %86, 63
-  %107 = xor i64 %106, %105
-  %108 = xor i64 %103, %105
-  %109 = add nuw nsw i64 %108, %107
-  %110 = icmp eq i64 %109, 2
-  %111 = zext i1 %110 to i8
-  store i8 %111, i8* %32, align 1, !tbaa !2450
-  %.v = select i1 %101, i64 41, i64 14
-  %112 = add i64 %77, %.v
-  store i64 %112, i64* %PC, align 8, !tbaa !2428
-  br i1 %101, label %block_40144a, label %block_40142f
+  %76 = phi i64 [ %58, %block_40142f ], [ %.pre1, %block_401410 ]
+  %77 = phi i64 [ %66, %block_40142f ], [ %.pre, %block_401410 ]
+  %78 = add i64 %76, -16
+  %79 = add i64 %77, 4
+  store i64 %79, i64* %PC, align 8
+  %80 = inttoptr i64 %78 to i64*
+  %81 = load i64, i64* %80, align 8
+  store i64 %81, i64* %RAX, align 8, !tbaa !2428
+  %82 = add i64 %76, -24
+  %83 = add i64 %77, 8
+  store i64 %83, i64* %PC, align 8
+  %84 = inttoptr i64 %82 to i64*
+  %85 = load i64, i64* %84, align 8
+  %86 = sub i64 %81, %85
+  %87 = icmp ult i64 %81, %85
+  %88 = zext i1 %87 to i8
+  store i8 %88, i8* %27, align 1, !tbaa !2432
+  %89 = trunc i64 %86 to i32
+  %90 = and i32 %89, 255
+  %91 = tail call i32 @llvm.ctpop.i32(i32 %90) #8
+  %92 = trunc i32 %91 to i8
+  %93 = and i8 %92, 1
+  %94 = xor i8 %93, 1
+  store i8 %94, i8* %28, align 1, !tbaa !2446
+  %95 = xor i64 %85, %81
+  %96 = xor i64 %95, %86
+  %97 = lshr i64 %96, 4
+  %98 = trunc i64 %97 to i8
+  %99 = and i8 %98, 1
+  store i8 %99, i8* %29, align 1, !tbaa !2447
+  %100 = icmp eq i64 %86, 0
+  %101 = zext i1 %100 to i8
+  store i8 %101, i8* %30, align 1, !tbaa !2448
+  %102 = lshr i64 %86, 63
+  %103 = trunc i64 %102 to i8
+  store i8 %103, i8* %31, align 1, !tbaa !2449
+  %104 = lshr i64 %81, 63
+  %105 = lshr i64 %85, 63
+  %106 = xor i64 %105, %104
+  %107 = xor i64 %102, %104
+  %108 = add nuw nsw i64 %107, %106
+  %109 = icmp eq i64 %108, 2
+  %110 = zext i1 %109 to i8
+  store i8 %110, i8* %32, align 1, !tbaa !2450
+  %.v = select i1 %100, i64 41, i64 14
+  %111 = add i64 %77, %.v
+  store i64 %111, i64* %PC, align 8, !tbaa !2428
+  br i1 %100, label %block_40144a, label %block_40142f
 }
 
 ; Function Attrs: noinline
@@ -23411,7 +23399,6 @@ _ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit: ; pre
   %85 = phi %struct.Memory* [ %72, %71 ], [ %2, %83 ]
   %86 = add i64 %84, 17
   %87 = add i64 %84, 6
-  store i64 %87, i64* %PC, align 8
   %88 = load i8, i8* %31, align 1, !tbaa !2448
   %89 = icmp eq i8 %88, 0
   %90 = select i1 %89, i64 %86, i64 %87
@@ -23471,7 +23458,6 @@ block_40138a:                                     ; preds = %block_40136a, %bloc
 block_401364:                                     ; preds = %_ZN12_GLOBAL__N_1L6COMISDI2VnI8vec128_tES3_EEP6MemoryS5_R5StateT_T0_.exit
   %124 = add i64 %90, 11
   %125 = add i64 %90, 6
-  store i64 %125, i64* %PC, align 8
   %126 = load i8, i8* %22, align 1, !tbaa !2446
   %127 = icmp ne i8 %126, 0
   %128 = select i1 %127, i64 %124, i64 %125
@@ -23488,7 +23474,6 @@ block_40136f:                                     ; preds = %block_401364, %_ZN1
   store i8 0, i8* %AL, align 1, !tbaa !2453
   %133 = add i64 %130, -3679
   %134 = add i64 %130, 24
-  store i64 %134, i64* %PC, align 8
   %135 = load i64, i64* %RSP, align 8, !tbaa !2428
   %136 = add i64 %135, -8
   %137 = inttoptr i64 %136 to i64*

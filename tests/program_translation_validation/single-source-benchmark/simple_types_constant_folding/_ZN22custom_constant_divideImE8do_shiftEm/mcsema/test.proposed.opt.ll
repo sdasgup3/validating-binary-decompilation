@@ -78,49 +78,39 @@ entry:
   store i64 %18, i64* %3, align 8
   %19 = inttoptr i64 %16 to i64*
   %20 = load i64, i64* %19, align 8
-  store i64 %20, i64* %RAX.i15, align 8
   %RDX.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  store i64 0, i64* %RDX.i, align 8
   %21 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 1
-  store i8 0, i8* %21, align 1
   %22 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 3
-  store i8 1, i8* %22, align 1
   %23 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 7
-  store i8 1, i8* %23, align 1
   %24 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 9
-  store i8 0, i8* %24, align 1
   %25 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 13
-  store i8 0, i8* %25, align 1
   %26 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 2, i32 5
-  store i8 0, i8* %26, align 1
   %27 = load i64, i64* %RCX.i13, align 8
-  %28 = add i64 %17, 9
-  store i64 %28, i64* %3, align 8
   %div = udiv i64 %20, %27
-  %29 = urem i64 %20, %27
+  %28 = urem i64 %20, %27
   store i64 %div, i64* %RAX.i15, align 8
-  store i64 %29, i64* %RDX.i, align 8
+  store i64 %28, i64* %RDX.i, align 8
   store i8 0, i8* %21, align 1
   store i8 0, i8* %22, align 1
   store i8 0, i8* %26, align 1
   store i8 0, i8* %23, align 1
   store i8 0, i8* %24, align 1
   store i8 0, i8* %25, align 1
-  %30 = add i64 %17, 10
-  store i64 %30, i64* %3, align 8
-  %31 = load i64, i64* %6, align 8
-  %32 = add i64 %31, 8
-  %33 = inttoptr i64 %31 to i64*
-  %34 = load i64, i64* %33, align 8
-  store i64 %34, i64* %RBP.i, align 8
-  store i64 %32, i64* %6, align 8
-  %35 = add i64 %17, 11
-  store i64 %35, i64* %3, align 8
-  %36 = inttoptr i64 %32 to i64*
-  %37 = load i64, i64* %36, align 8
-  store i64 %37, i64* %3, align 8
-  %38 = add i64 %31, 16
-  store i64 %38, i64* %6, align 8
+  %29 = add i64 %17, 10
+  store i64 %29, i64* %3, align 8
+  %30 = load i64, i64* %6, align 8
+  %31 = add i64 %30, 8
+  %32 = inttoptr i64 %30 to i64*
+  %33 = load i64, i64* %32, align 8
+  store i64 %33, i64* %RBP.i, align 8
+  store i64 %31, i64* %6, align 8
+  %34 = add i64 %17, 11
+  store i64 %34, i64* %3, align 8
+  %35 = inttoptr i64 %31 to i64*
+  %36 = load i64, i64* %35, align 8
+  store i64 %36, i64* %3, align 8
+  %37 = add i64 %30, 16
+  store i64 %37, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

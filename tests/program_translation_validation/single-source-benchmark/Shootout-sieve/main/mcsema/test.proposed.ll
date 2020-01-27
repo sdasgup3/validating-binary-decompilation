@@ -455,6 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
+%G_0x601050___rax_1__type = type <{ [1 x i8] }>
+@G_0x601050___rax_1_= global %G_0x601050___rax_1__type <{ [1 x i8] c"\00" }>
 %G__0x400704_type = type <{ [8 x i8] }>
 @G__0x400704= global %G__0x400704_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
@@ -1853,7 +1855,7 @@ block_400478:
   %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
-  %10 = add i64 %9, 6295632
+  %10 = add i64 %9, ptrtoint( %G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -2042,7 +2044,7 @@ block_400478:
   %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
-  %10 = add i64 %9, 6295632
+  %10 = add i64 %9, ptrtoint( %G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC
@@ -2239,7 +2241,7 @@ block_400478:
   %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
-  %10 = add i64 %9, 6295632
+  %10 = add i64 %9, ptrtoint( %G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

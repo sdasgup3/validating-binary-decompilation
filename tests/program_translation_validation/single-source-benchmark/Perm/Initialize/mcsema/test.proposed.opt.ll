@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x616750___rcx_4__type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -38,6 +39,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x616750___rcx_4_ = global %G_0x616750___rcx_4__type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -156,7 +158,7 @@ block_400595:                                     ; preds = %block_.L_40058b
   %76 = sext i32 %75 to i64
   store i64 %76, i64* %RCX.i14, align 8
   %77 = shl nsw i64 %76, 2
-  %78 = add nsw i64 %77, 6383440
+  %78 = add i64 %77, ptrtoint (%G_0x616750___rcx_4__type* @G_0x616750___rcx_4_ to i64)
   %79 = add i64 %49, 17
   store i64 %79, i64* %3, align 8
   %80 = inttoptr i64 %78 to i32*
@@ -429,7 +431,7 @@ block_400478:
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %4 = load i64, i64* %RCX, align 8
   %5 = shl i64 %4, 2
-  %6 = add i64 %5, 6383440
+  %6 = add i64 %5, ptrtoint (%G_0x616750___rcx_4__type* @G_0x616750___rcx_4_ to i64)
   %7 = load i32, i32* %EAX, align 4
   %8 = load i64, i64* %PC, align 8
   %9 = add i64 %8, 7

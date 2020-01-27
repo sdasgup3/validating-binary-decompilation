@@ -458,6 +458,12 @@ declare %struct.Memory* @sub_400f30.trace_line(%struct.State* noalias dereferenc
 ; Data Access Globals
 %G_0x602070_type = type <{ [4 x i8] }>
 @G_0x602070= global %G_0x602070_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x602100___rcx_8__type = type <{ [8 x i8] }>
+@G_0x602100___rcx_8_= global %G_0x602100___rcx_8__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x602100___rdi_8__type = type <{ [8 x i8] }>
+@G_0x602100___rdi_8_= global %G_0x602100___rdi_8__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x602100___rsi_8__type = type <{ [8 x i8] }>
+@G_0x602100___rsi_8_= global %G_0x602100___rsi_8__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x602158_type = type <{ [8 x i8] }>
 @G_0x602158= global %G_0x602158_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x602160_type = type <{ [8 x i8] }>
@@ -7384,7 +7390,7 @@ block_400478:
   %RSI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6299904
+  %14 = add i64 %13, ptrtoint( %G_0x602100___rcx_8__type* @G_0x602100___rcx_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 8
   store i64 %16, i64* %PC
@@ -7790,7 +7796,7 @@ block_400478:
   %RDI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6299904
+  %14 = add i64 %13, ptrtoint( %G_0x602100___rcx_8__type* @G_0x602100___rcx_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 8
   store i64 %16, i64* %PC
@@ -8011,7 +8017,7 @@ block_400478:
   %RSI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RSI
   %10 = mul i64 %9, 8
-  %11 = add i64 %10, 6299904
+  %11 = add i64 %10, ptrtoint( %G_0x602100___rsi_8__type* @G_0x602100___rsi_8_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 8
   store i64 %13, i64* %PC
@@ -8268,7 +8274,7 @@ block_400478:
   %RDI = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RDI
   %10 = mul i64 %9, 8
-  %11 = add i64 %10, 6299904
+  %11 = add i64 %10, ptrtoint( %G_0x602100___rdi_8__type* @G_0x602100___rdi_8_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 8
   store i64 %13, i64* %PC

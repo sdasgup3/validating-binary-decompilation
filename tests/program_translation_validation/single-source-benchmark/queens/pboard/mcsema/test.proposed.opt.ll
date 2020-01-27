@@ -8,6 +8,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x602090_type = type <{ [4 x i8] }>
 %G_0x602098_type = type <{ [8 x i8] }>
 %G_0x6020b4_type = type <{ [4 x i8] }>
+%G_0x6020c0___rcx_4__type = type <{ [4 x i8] }>
 %G_0x602a20_type = type <{ [4 x i8] }>
 %G__0x400f89_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -48,6 +49,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x602090 = local_unnamed_addr global %G_0x602090_type zeroinitializer
 @G_0x602098 = local_unnamed_addr global %G_0x602098_type zeroinitializer
 @G_0x6020b4 = local_unnamed_addr global %G_0x6020b4_type zeroinitializer
+@G_0x6020c0___rcx_4_ = global %G_0x6020c0___rcx_4__type zeroinitializer
 @G_0x602a20 = local_unnamed_addr global %G_0x602a20_type zeroinitializer
 @G__0x400f89 = global %G__0x400f89_type zeroinitializer
 
@@ -294,7 +296,7 @@ block_400ce0:                                     ; preds = %block_.L_400cd0
   %138 = sext i32 %137 to i64
   store i64 %138, i64* %RCX.i59, align 8
   %139 = shl nsw i64 %138, 2
-  %140 = add nsw i64 %139, 6299840
+  %140 = add i64 %139, ptrtoint (%G_0x6020c0___rcx_4__type* @G_0x6020c0___rcx_4_ to i64)
   %141 = add i64 %129, 14
   store i64 %141, i64* %3, align 8
   %142 = inttoptr i64 %140 to i32*
@@ -1028,7 +1030,7 @@ block_400478:
   %4 = load i32, i32* %EDI, align 4
   %5 = load i64, i64* %RCX, align 8
   %6 = shl i64 %5, 2
-  %7 = add i64 %6, 6299840
+  %7 = add i64 %6, ptrtoint (%G_0x6020c0___rcx_4__type* @G_0x6020c0___rcx_4_ to i64)
   %8 = load i64, i64* %PC, align 8
   %9 = add i64 %8, 7
   store i64 %9, i64* %PC, align 8

@@ -1219,7 +1219,6 @@ block_400418:                                     ; preds = %block_400408
   br label %block_40041a
 
 block_40041a:                                     ; preds = %block_400408.block_40041a_crit_edge, %block_400418
-  %.pre-phi = phi i64* [ %RSP, %block_400408.block_40041a_crit_edge ], [ %RSP, %block_400418 ]
   %27 = phi i64 [ %22, %block_400408.block_40041a_crit_edge ], [ %.pre1, %block_400418 ]
   %28 = phi i64 [ %4, %block_400408.block_40041a_crit_edge ], [ %.pre, %block_400418 ]
   %MEMORY.0 = phi %struct.Memory* [ %2, %block_400408.block_40041a_crit_edge ], [ %26, %block_400418 ]
@@ -1258,7 +1257,7 @@ block_40041a:                                     ; preds = %block_400408.block_
   %53 = load i64, i64* %52, align 8
   store i64 %53, i64* %PC, align 8, !tbaa !2428
   %54 = add i64 %28, 16
-  store i64 %54, i64* %.pre-phi, align 8, !tbaa !2428
+  store i64 %54, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 }
 
@@ -1671,19 +1670,16 @@ block_4004e8:                                     ; preds = %block_4004d3, %bloc
   %36 = phi i64 [ %35, %block_4004d3 ], [ %34, %block_4004b0 ]
   %37 = add i64 %36, 1
   store i64 %37, i64* %PC, align 8
-  %38 = load i64, i64* %5, align 8, !tbaa !2428
-  %39 = add i64 %38, 8
-  %40 = inttoptr i64 %38 to i64*
+  %38 = load i64, i64* %8, align 8
+  store i64 %38, i64* %RBP, align 8, !tbaa !2428
+  store i64 %6, i64* %5, align 8, !tbaa !2428
+  %39 = add i64 %36, 2
+  store i64 %39, i64* %PC, align 8
+  %40 = inttoptr i64 %6 to i64*
   %41 = load i64, i64* %40, align 8
-  store i64 %41, i64* %RBP, align 8, !tbaa !2428
-  store i64 %39, i64* %5, align 8, !tbaa !2428
-  %42 = add i64 %36, 2
-  store i64 %42, i64* %PC, align 8
-  %43 = inttoptr i64 %39 to i64*
-  %44 = load i64, i64* %43, align 8
-  store i64 %44, i64* %PC, align 8, !tbaa !2428
-  %45 = add i64 %38, 16
-  store i64 %45, i64* %5, align 8, !tbaa !2428
+  store i64 %41, i64* %PC, align 8, !tbaa !2428
+  %42 = add i64 %7, 16
+  store i64 %42, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 }
 

@@ -6,6 +6,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %__bss_start_type = type <{ [8 x i8] }>
 %G_0x605050_type = type <{ [4 x i8] }>
 %G_0x605090_type = type <{ [4 x i8] }>
+%G_0x6050a0___rdx_8__type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -42,6 +43,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 @G_0x605050 = local_unnamed_addr global %G_0x605050_type zeroinitializer
 @G_0x605090 = local_unnamed_addr global %G_0x605090_type zeroinitializer
+@G_0x6050a0___rdx_8_ = global %G_0x6050a0___rdx_8__type zeroinitializer
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -309,7 +311,7 @@ block_.L_4014a6:                                  ; preds = %block_.L_401471
   %170 = sext i32 %166 to i64
   store i64 %170, i64* %RDX.i7, align 8
   %171 = shl nsw i64 %170, 3
-  %172 = add nsw i64 %171, 6312096
+  %172 = add i64 %171, ptrtoint (%G_0x6050a0___rdx_8__type* @G_0x6050a0___rdx_8_ to i64)
   %173 = add i64 %165, 31
   store i64 %173, i64* %3, align 8
   %174 = load i64, i64* %54, align 1
@@ -886,7 +888,7 @@ block_400478:
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
   %4 = shl i64 %3, 3
-  %5 = add i64 %4, 6312096
+  %5 = add i64 %4, ptrtoint (%G_0x6050a0___rdx_8__type* @G_0x6050a0___rdx_8_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 9
   store i64 %7, i64* %PC, align 8

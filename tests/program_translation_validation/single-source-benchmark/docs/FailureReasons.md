@@ -19,6 +19,11 @@ mandel-2
 ```
 
 ## Match Failure Reasons
+ - Pass with O3 but not with  custom
+ ```
+simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIsE8do_shiftEsssss
+simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa
+ ```
  - McSema hosts globals with different sizes that the compd
   ```
   ReedSolomon/gen_poly
@@ -33,6 +38,7 @@ mandel-2
   lpbench/random_double
   simple_types_constant_folding/__cxx_global_var_init
   whetstone/PA
+  chomp/copy_data
   ```
   - exit_plt: McSema puts a remill_error call after exit_plt (41): Removed from compdPass_1/2.log
   ```

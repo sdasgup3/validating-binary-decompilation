@@ -456,6 +456,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4010d0.transit_surface(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x602150___rcx_8__type = type <{ [16 x i8] }>
+@G_0x602150___rcx_8_= global %G_0x602150___rcx_8__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x602168_type = type <{ [16 x i8] }>
 @G_0x602168= global %G_0x602168_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x602170_type = type <{ [16 x i8] }>
@@ -2018,7 +2020,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %13 = load i64, i64* %RCX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6299984
+  %15 = add i64 %14, ptrtoint( %G_0x602150___rcx_8__type* @G_0x602150___rcx_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC

@@ -101,7 +101,7 @@ entry:
   br label %block_.L_402fa1
 
 block_.L_402fa1:                                  ; preds = %block_402faf, %entry
-  %36 = phi i64 [ %107, %block_402faf ], [ %.pre, %entry ]
+  %36 = phi i64 [ %106, %block_402faf ], [ %.pre, %entry ]
   %37 = load i64, i64* %RBP.i, align 8
   %38 = add i64 %37, -8
   %39 = add i64 %36, 4
@@ -198,29 +198,27 @@ block_402faf:                                     ; preds = %block_.L_402fa1
   %103 = load i8*, i8** %102, align 8
   %104 = load i8, i8* %AL.i33, align 1
   %105 = load i64, i64* %3, align 8
-  %106 = add i64 %105, 2
-  store i64 %106, i64* %3, align 8
   store i8 %104, i8* %103, align 1
-  %107 = add i64 %105, -32
-  store i64 %107, i64* %3, align 8
+  %106 = add i64 %105, -32
+  store i64 %106, i64* %3, align 8
   br label %block_.L_402fa1
 
 block_.L_402fc8:                                  ; preds = %block_.L_402fa1
-  %108 = add i64 %71, 1
-  store i64 %108, i64* %3, align 8
-  %109 = load i64, i64* %6, align 8
-  %110 = add i64 %109, 8
-  %111 = inttoptr i64 %109 to i64*
-  %112 = load i64, i64* %111, align 8
-  store i64 %112, i64* %RBP.i, align 8
-  store i64 %110, i64* %6, align 8
-  %113 = add i64 %71, 2
-  store i64 %113, i64* %3, align 8
-  %114 = inttoptr i64 %110 to i64*
-  %115 = load i64, i64* %114, align 8
-  store i64 %115, i64* %3, align 8
-  %116 = add i64 %109, 16
-  store i64 %116, i64* %6, align 8
+  %107 = add i64 %71, 1
+  store i64 %107, i64* %3, align 8
+  %108 = load i64, i64* %6, align 8
+  %109 = add i64 %108, 8
+  %110 = inttoptr i64 %108 to i64*
+  %111 = load i64, i64* %110, align 8
+  store i64 %111, i64* %RBP.i, align 8
+  store i64 %109, i64* %6, align 8
+  %112 = add i64 %71, 2
+  store i64 %112, i64* %3, align 8
+  %113 = inttoptr i64 %109 to i64*
+  %114 = load i64, i64* %113, align 8
+  store i64 %114, i64* %3, align 8
+  %115 = add i64 %108, 16
+  store i64 %115, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

@@ -477,6 +477,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 @G_0x605090= global %G_0x605090_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x6050a0_type = type <{ [16 x i8] }>
 @G_0x6050a0= global %G_0x6050a0_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x6050a0___rax_8__type = type <{ [16 x i8] }>
+@G_0x6050a0___rax_8_= global %G_0x6050a0___rax_8__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G__0x402d38_type = type <{ [8 x i8] }>
 @G__0x402d38= global %G__0x402d38_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G__0x402d69_type = type <{ [8 x i8] }>
@@ -2070,7 +2072,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint( %G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
@@ -2138,7 +2140,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint( %G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
@@ -2188,7 +2190,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM3 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6312096
+  %14 = add i64 %13, ptrtoint( %G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -2659,7 +2661,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6312096
+  %14 = add i64 %13, ptrtoint( %G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -2803,7 +2805,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint( %G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC

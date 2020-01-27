@@ -84,13 +84,13 @@ declare %struct.Memory* @sub_400660_new_Toggle_renamed_(%struct.State* noalias d
 
 declare %struct.Memory* @sub_400510_deregister_tm_clones_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400720_new_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_4006e0_init_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 declare %struct.Memory* @sub_400610_init_Toggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_400468__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400720_new_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
-declare %struct.Memory* @sub_4006e0_init_NthToggle_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
+declare %struct.Memory* @sub_400468__init_proc_renamed_(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned) local_unnamed_addr
 
 ; Function Attrs: nounwind readnone
 declare i32 @llvm.ctpop.i32(i32) #0
@@ -1581,7 +1581,6 @@ block_400478:                                     ; preds = %block_400468
   br label %block_40047a
 
 block_40047a:                                     ; preds = %block_400468.block_40047a_crit_edge, %block_400478
-  %.pre-phi = phi i64* [ %RSP, %block_400468.block_40047a_crit_edge ], [ %RSP, %block_400478 ]
   %27 = phi i64 [ %22, %block_400468.block_40047a_crit_edge ], [ %.pre1, %block_400478 ]
   %28 = phi i64 [ %4, %block_400468.block_40047a_crit_edge ], [ %.pre, %block_400478 ]
   %MEMORY.0 = phi %struct.Memory* [ %2, %block_400468.block_40047a_crit_edge ], [ %26, %block_400478 ]
@@ -1620,7 +1619,7 @@ block_40047a:                                     ; preds = %block_400468.block_
   %53 = load i64, i64* %52, align 8
   store i64 %53, i64* %PC, align 8, !tbaa !2428
   %54 = add i64 %28, 16
-  store i64 %54, i64* %.pre-phi, align 8, !tbaa !2428
+  store i64 %54, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 }
 
@@ -3026,22 +3025,19 @@ block_400540:
   br i1 %30, label %block_400578, label %block_400563
 
 block_400578:                                     ; preds = %block_400563, %block_400540
-  %35 = phi i64 [ %45, %block_400563 ], [ %34, %block_400540 ]
+  %35 = phi i64 [ %42, %block_400563 ], [ %34, %block_400540 ]
   %36 = add i64 %35, 1
   store i64 %36, i64* %PC, align 8
-  %37 = load i64, i64* %5, align 8, !tbaa !2428
-  %38 = add i64 %37, 8
-  %39 = inttoptr i64 %37 to i64*
+  %37 = load i64, i64* %8, align 8
+  store i64 %37, i64* %RBP, align 8, !tbaa !2428
+  store i64 %6, i64* %5, align 8, !tbaa !2428
+  %38 = add i64 %35, 2
+  store i64 %38, i64* %PC, align 8
+  %39 = inttoptr i64 %6 to i64*
   %40 = load i64, i64* %39, align 8
-  store i64 %40, i64* %RBP, align 8, !tbaa !2428
-  store i64 %38, i64* %5, align 8, !tbaa !2428
-  %41 = add i64 %35, 2
-  store i64 %41, i64* %PC, align 8
-  %42 = inttoptr i64 %38 to i64*
-  %43 = load i64, i64* %42, align 8
-  store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %44 = add i64 %37, 16
-  store i64 %44, i64* %5, align 8, !tbaa !2428
+  store i64 %40, i64* %PC, align 8, !tbaa !2428
+  %41 = add i64 %7, 16
+  store i64 %41, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_400563:                                     ; preds = %block_400540
@@ -3052,8 +3048,8 @@ block_400563:                                     ; preds = %block_400540
   store i8 0, i8* %16, align 1, !tbaa !2449
   store i8 0, i8* %17, align 1, !tbaa !2450
   store i8 0, i8* %14, align 1, !tbaa !2447
-  %45 = add i64 %34, 21
-  store i64 %45, i64* %PC, align 8, !tbaa !2428
+  %42 = add i64 %34, 21
+  store i64 %42, i64* %PC, align 8, !tbaa !2428
   br label %block_400578
 }
 

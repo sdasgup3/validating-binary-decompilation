@@ -19,6 +19,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x602090_type = type <{ [8 x i8] }>
 %G_0x6020a8_type = type <{ [8 x i8] }>
 %G_0x6020ac_type = type <{ [8 x i8] }>
+%G_0x6020c0___rax_8__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -84,6 +85,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x602090 = global %G_0x602090_type zeroinitializer
 @G_0x6020a8 = global %G_0x6020a8_type zeroinitializer
 @G_0x6020ac = global %G_0x6020ac_type zeroinitializer
+@G_0x6020c0___rax_8_ = global %G_0x6020c0___rax_8__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -363,7 +365,7 @@ entry:
   %47 = bitcast %"class.std::bitset"* %YMM0.i28 to i8*
   %48 = load i64, i64* %RAX.i27
   %49 = mul i64 %48, 8
-  %50 = add i64 %49, 6299840
+  %50 = add i64 %49, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %51 = load i64, i64* %PC.i26
   %52 = add i64 %51, 9
   store i64 %52, i64* %PC.i26
@@ -405,7 +407,7 @@ entry:
   %XMM0.i23 = bitcast %union.VectorReg* %75 to %union.vec128_t*
   %76 = load i64, i64* %RAX.i22
   %77 = mul i64 %76, 8
-  %78 = add i64 %77, 6299840
+  %78 = add i64 %77, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %79 = bitcast %union.vec128_t* %XMM0.i23 to i8*
   %80 = load i64, i64* %PC.i21
   %81 = add i64 %80, 9
@@ -446,7 +448,7 @@ entry:
   %103 = bitcast %"class.std::bitset"* %YMM0.i18 to i8*
   %104 = load i64, i64* %RAX.i17
   %105 = mul i64 %104, 8
-  %106 = add i64 %105, 6299840
+  %106 = add i64 %105, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %107 = load i64, i64* %PC.i16
   %108 = add i64 %107, 9
   store i64 %108, i64* %PC.i16
@@ -488,7 +490,7 @@ entry:
   %XMM0.i13 = bitcast %union.VectorReg* %131 to %union.vec128_t*
   %132 = load i64, i64* %RAX.i12
   %133 = mul i64 %132, 8
-  %134 = add i64 %133, 6299840
+  %134 = add i64 %133, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %135 = bitcast %union.vec128_t* %XMM0.i13 to i8*
   %136 = load i64, i64* %PC.i11
   %137 = add i64 %136, 9
@@ -529,7 +531,7 @@ entry:
   %159 = bitcast %"class.std::bitset"* %YMM0.i to i8*
   %160 = load i64, i64* %RAX.i8
   %161 = mul i64 %160, 8
-  %162 = add i64 %161, 6299840
+  %162 = add i64 %161, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %163 = load i64, i64* %PC.i7
   %164 = add i64 %163, 9
   store i64 %164, i64* %PC.i7
@@ -571,7 +573,7 @@ entry:
   %XMM0.i = bitcast %union.VectorReg* %187 to %union.vec128_t*
   %188 = load i64, i64* %RAX.i
   %189 = mul i64 %188, 8
-  %190 = add i64 %189, 6299840
+  %190 = add i64 %189, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %191 = bitcast %union.vec128_t* %XMM0.i to i8*
   %192 = load i64, i64* %PC.i4
   %193 = add i64 %192, 9
@@ -701,7 +703,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6299840
+  %14 = add i64 %13, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -749,7 +751,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 8
-  %13 = add i64 %12, 6299840
+  %13 = add i64 %12, ptrtoint (%G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9

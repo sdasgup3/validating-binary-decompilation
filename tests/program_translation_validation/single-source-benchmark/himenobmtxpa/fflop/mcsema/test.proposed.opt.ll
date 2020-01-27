@@ -186,78 +186,77 @@ entry:
   %104 = load <2 x i32>, <2 x i32>* %103, align 1
   %105 = fmul double %71, %100
   store double %105, double* %72, align 1
-  %106 = load i64, i64* %RBP.i, align 8
-  %107 = add i64 %106, -4
-  %108 = add i64 %38, 27
-  store i64 %108, i64* %3, align 8
-  %109 = inttoptr i64 %107 to i32*
-  %110 = load i32, i32* %109, align 4
-  %111 = add i32 %110, -2
-  %112 = zext i32 %111 to i64
-  store i64 %112, i64* %RDX.i30, align 8
-  %113 = icmp ult i32 %110, 2
-  %114 = zext i1 %113 to i8
-  store i8 %114, i8* %46, align 1
-  %115 = and i32 %111, 255
-  %116 = tail call i32 @llvm.ctpop.i32(i32 %115)
-  %117 = trunc i32 %116 to i8
-  %118 = and i8 %117, 1
-  %119 = xor i8 %118, 1
-  store i8 %119, i8* %52, align 1
-  %120 = xor i32 %110, %111
-  %121 = lshr i32 %120, 4
-  %122 = trunc i32 %121 to i8
-  %123 = and i8 %122, 1
-  store i8 %123, i8* %57, align 1
-  %124 = icmp eq i32 %111, 0
-  %125 = zext i1 %124 to i8
-  store i8 %125, i8* %60, align 1
-  %126 = lshr i32 %111, 31
-  %127 = trunc i32 %126 to i8
-  store i8 %127, i8* %63, align 1
-  %128 = lshr i32 %110, 31
-  %129 = xor i32 %126, %128
-  %130 = add nuw nsw i32 %129, %128
-  %131 = icmp eq i32 %130, 2
-  %132 = zext i1 %131 to i8
-  store i8 %132, i8* %69, align 1
-  %133 = sitofp i32 %111 to double
-  store double %133, double* %101, align 1
-  %134 = fmul double %105, %133
-  %135 = bitcast [32 x %union.VectorReg]* %11 to double*
-  %136 = load double, double* %135, align 1
-  %137 = fmul double %134, %136
-  store double %137, double* %72, align 1
-  %138 = bitcast double %137 to <2 x i32>
-  %139 = extractelement <2 x i32> %138, i32 0
-  %140 = bitcast [32 x %union.VectorReg]* %11 to i32*
-  store i32 %139, i32* %140, align 1
-  %141 = extractelement <2 x i32> %138, i32 1
-  %142 = getelementptr inbounds i8, i8* %12, i64 4
-  %143 = bitcast i8* %142 to i32*
-  store i32 %141, i32* %143, align 1
-  %144 = extractelement <2 x i32> %104, i32 0
-  %145 = bitcast i64* %15 to i32*
-  store i32 %144, i32* %145, align 1
-  %146 = extractelement <2 x i32> %104, i32 1
-  %147 = getelementptr inbounds i8, i8* %12, i64 12
-  %148 = bitcast i8* %147 to i32*
-  store i32 %146, i32* %148, align 1
-  %149 = add i64 %38, 46
-  store i64 %149, i64* %3, align 8
-  %150 = load i64, i64* %6, align 8
-  %151 = add i64 %150, 8
-  %152 = inttoptr i64 %150 to i64*
-  %153 = load i64, i64* %152, align 8
-  store i64 %153, i64* %RBP.i, align 8
-  store i64 %151, i64* %6, align 8
-  %154 = add i64 %38, 47
-  store i64 %154, i64* %3, align 8
-  %155 = inttoptr i64 %151 to i64*
-  %156 = load i64, i64* %155, align 8
-  store i64 %156, i64* %3, align 8
-  %157 = add i64 %150, 16
-  store i64 %157, i64* %6, align 8
+  %106 = add i64 %36, -4
+  %107 = add i64 %38, 27
+  store i64 %107, i64* %3, align 8
+  %108 = inttoptr i64 %106 to i32*
+  %109 = load i32, i32* %108, align 4
+  %110 = add i32 %109, -2
+  %111 = zext i32 %110 to i64
+  store i64 %111, i64* %RDX.i30, align 8
+  %112 = icmp ult i32 %109, 2
+  %113 = zext i1 %112 to i8
+  store i8 %113, i8* %46, align 1
+  %114 = and i32 %110, 255
+  %115 = tail call i32 @llvm.ctpop.i32(i32 %114)
+  %116 = trunc i32 %115 to i8
+  %117 = and i8 %116, 1
+  %118 = xor i8 %117, 1
+  store i8 %118, i8* %52, align 1
+  %119 = xor i32 %109, %110
+  %120 = lshr i32 %119, 4
+  %121 = trunc i32 %120 to i8
+  %122 = and i8 %121, 1
+  store i8 %122, i8* %57, align 1
+  %123 = icmp eq i32 %110, 0
+  %124 = zext i1 %123 to i8
+  store i8 %124, i8* %60, align 1
+  %125 = lshr i32 %110, 31
+  %126 = trunc i32 %125 to i8
+  store i8 %126, i8* %63, align 1
+  %127 = lshr i32 %109, 31
+  %128 = xor i32 %125, %127
+  %129 = add nuw nsw i32 %128, %127
+  %130 = icmp eq i32 %129, 2
+  %131 = zext i1 %130 to i8
+  store i8 %131, i8* %69, align 1
+  %132 = sitofp i32 %110 to double
+  store double %132, double* %101, align 1
+  %133 = fmul double %105, %132
+  %134 = bitcast [32 x %union.VectorReg]* %11 to double*
+  %135 = load double, double* %134, align 1
+  %136 = fmul double %133, %135
+  store double %136, double* %72, align 1
+  %137 = bitcast double %136 to <2 x i32>
+  %138 = extractelement <2 x i32> %137, i32 0
+  %139 = bitcast [32 x %union.VectorReg]* %11 to i32*
+  store i32 %138, i32* %139, align 1
+  %140 = extractelement <2 x i32> %137, i32 1
+  %141 = getelementptr inbounds i8, i8* %12, i64 4
+  %142 = bitcast i8* %141 to i32*
+  store i32 %140, i32* %142, align 1
+  %143 = extractelement <2 x i32> %104, i32 0
+  %144 = bitcast i64* %15 to i32*
+  store i32 %143, i32* %144, align 1
+  %145 = extractelement <2 x i32> %104, i32 1
+  %146 = getelementptr inbounds i8, i8* %12, i64 12
+  %147 = bitcast i8* %146 to i32*
+  store i32 %145, i32* %147, align 1
+  %148 = add i64 %38, 46
+  store i64 %148, i64* %3, align 8
+  %149 = load i64, i64* %6, align 8
+  %150 = add i64 %149, 8
+  %151 = inttoptr i64 %149 to i64*
+  %152 = load i64, i64* %151, align 8
+  store i64 %152, i64* %RBP.i, align 8
+  store i64 %150, i64* %6, align 8
+  %153 = add i64 %38, 47
+  store i64 %153, i64* %3, align 8
+  %154 = inttoptr i64 %150 to i64*
+  %155 = load i64, i64* %154, align 8
+  store i64 %155, i64* %3, align 8
+  %156 = add i64 %149, 16
+  store i64 %156, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

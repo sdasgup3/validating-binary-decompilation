@@ -463,6 +463,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 @G_0x602098= global %G_0x602098_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020b4_type = type <{ [4 x i8] }>
 @G_0x6020b4= global %G_0x6020b4_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6020c0___rcx_4__type = type <{ [4 x i8] }>
+@G_0x6020c0___rcx_4_= global %G_0x6020c0___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x602a20_type = type <{ [4 x i8] }>
 @G_0x602a20= global %G_0x602a20_type <{ [4 x i8] c"\00\00\00\00" }>
 %G__0x400f89_type = type <{ [8 x i8] }>
@@ -1498,7 +1500,7 @@ block_400478:
   %13 = zext i32 %12 to i64
   %14 = load i64, i64* %RCX
   %15 = mul i64 %14, 4
-  %16 = add i64 %15, 6299840
+  %16 = add i64 %15, ptrtoint( %G_0x6020c0___rcx_4__type* @G_0x6020c0___rcx_4_ to i64)
   %17 = load i64, i64* %PC
   %18 = add i64 %17, 7
   store i64 %18, i64* %PC

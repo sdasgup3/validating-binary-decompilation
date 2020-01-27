@@ -5,7 +5,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
 %G_0x601038_type = type <{ [8 x i8] }>
-%G_0xe4__rip__type = type <{ [16 x i8] }>
+%G_0xe4__rip__4195820__type = type <{ [16 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -41,7 +41,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
 @G_0x601038 = local_unnamed_addr global %G_0x601038_type zeroinitializer
-@G_0xe4__rip_ = global %G_0xe4__rip__type zeroinitializer
+@G_0xe4__rip__4195820_ = global %G_0xe4__rip__4195820__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
 
@@ -66,7 +66,7 @@ entry:
   store i64 %8, i64* %RBP.i, align 8
   %11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1
   %12 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1
-  %13 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0xe4__rip__type* @G_0xe4__rip_ to i64), i64 28) to i64*), align 8
+  %13 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0xe4__rip__4195820__type* @G_0xe4__rip__4195820_ to i64), i64 28) to i64*), align 8
   %14 = getelementptr inbounds %union.VectorReg, %union.VectorReg* %12, i64 0, i32 0, i32 0, i32 0, i64 0
   store i64 %13, i64* %14, align 1
   %15 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1
@@ -240,7 +240,7 @@ block_400478:
   %3 = load i64, i64* %PC, align 8
   %4 = add i64 %3, 8
   store i64 %4, i64* %PC, align 8
-  %5 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0xe4__rip__type* @G_0xe4__rip_ to i64), i64 28) to i64*), align 8
+  %5 = load i64, i64* inttoptr (i64 add (i64 ptrtoint (%G_0xe4__rip__4195820__type* @G_0xe4__rip__4195820_ to i64), i64 28) to i64*), align 8
   %6 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 0
   store i64 %5, i64* %6, align 1
   %7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 1, i32 0, i32 0, i32 0, i64 1

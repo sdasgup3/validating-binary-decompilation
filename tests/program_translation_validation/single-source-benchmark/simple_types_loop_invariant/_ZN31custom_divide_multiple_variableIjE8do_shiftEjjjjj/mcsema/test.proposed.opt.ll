@@ -140,17 +140,8 @@ entry:
   %61 = load i32, i32* %60, align 4
   %div = udiv i32 %49, %61
   %62 = zext i32 %div to i64
-  %63 = urem i32 %49, %61
-  %64 = zext i32 %63 to i64
-  %65 = getelementptr inbounds %union.anon, %union.anon* %59, i64 0, i32 0
-  store i64 %62, i64* %65, align 8
-  store i64 %64, i64* %RDX.i37, align 8
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %52, align 1
-  store i8 0, i8* %56, align 1
-  store i8 0, i8* %53, align 1
-  store i8 0, i8* %54, align 1
-  store i8 0, i8* %55, align 1
+  %63 = getelementptr inbounds %union.anon, %union.anon* %59, i64 0, i32 0
+  store i64 %62, i64* %63, align 8
   %RCX.i30 = getelementptr inbounds %union.anon, %union.anon* %30, i64 0, i32 0
   store i64 0, i64* %RCX.i30, align 8
   store i8 0, i8* %51, align 1
@@ -160,23 +151,14 @@ entry:
   store i8 0, i8* %55, align 1
   store i8 0, i8* %56, align 1
   store i64 0, i64* %RDX.i37, align 8
-  %66 = add i64 %44, -12
-  %67 = add i64 %46, 15
-  store i64 %67, i64* %3, align 8
-  %68 = inttoptr i64 %66 to i32*
-  %69 = load i32, i32* %68, align 4
-  %div12 = udiv i32 %div, %69
-  %70 = zext i32 %div12 to i64
-  %71 = urem i32 %div, %69
-  %72 = zext i32 %71 to i64
-  store i64 %70, i64* %65, align 8
-  store i64 %72, i64* %RDX.i37, align 8
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %52, align 1
-  store i8 0, i8* %56, align 1
-  store i8 0, i8* %53, align 1
-  store i8 0, i8* %54, align 1
-  store i8 0, i8* %55, align 1
+  %64 = add i64 %44, -12
+  %65 = add i64 %46, 15
+  store i64 %65, i64* %3, align 8
+  %66 = inttoptr i64 %64 to i32*
+  %67 = load i32, i32* %66, align 4
+  %div12 = udiv i32 %div, %67
+  %68 = zext i32 %div12 to i64
+  store i64 %68, i64* %63, align 8
   store i64 0, i64* %RCX.i30, align 8
   store i8 0, i8* %51, align 1
   store i8 1, i8* %52, align 1
@@ -185,23 +167,14 @@ entry:
   store i8 0, i8* %55, align 1
   store i8 0, i8* %56, align 1
   store i64 0, i64* %RDX.i37, align 8
-  %73 = add i64 %44, -16
-  %74 = add i64 %46, 22
-  store i64 %74, i64* %3, align 8
-  %75 = inttoptr i64 %73 to i32*
-  %76 = load i32, i32* %75, align 4
-  %div13 = udiv i32 %div12, %76
-  %77 = zext i32 %div13 to i64
-  %78 = urem i32 %div12, %76
-  %79 = zext i32 %78 to i64
-  store i64 %77, i64* %65, align 8
-  store i64 %79, i64* %RDX.i37, align 8
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %52, align 1
-  store i8 0, i8* %56, align 1
-  store i8 0, i8* %53, align 1
-  store i8 0, i8* %54, align 1
-  store i8 0, i8* %55, align 1
+  %69 = add i64 %44, -16
+  %70 = add i64 %46, 22
+  store i64 %70, i64* %3, align 8
+  %71 = inttoptr i64 %69 to i32*
+  %72 = load i32, i32* %71, align 4
+  %div13 = udiv i32 %div12, %72
+  %73 = zext i32 %div13 to i64
+  store i64 %73, i64* %63, align 8
   store i64 0, i64* %RCX.i30, align 8
   store i8 0, i8* %51, align 1
   store i8 1, i8* %52, align 1
@@ -210,38 +183,38 @@ entry:
   store i8 0, i8* %55, align 1
   store i8 0, i8* %56, align 1
   store i64 0, i64* %RDX.i37, align 8
-  %80 = add i64 %44, -20
-  %81 = add i64 %46, 29
+  %74 = add i64 %44, -20
+  %75 = add i64 %46, 29
+  store i64 %75, i64* %3, align 8
+  %76 = inttoptr i64 %74 to i32*
+  %77 = load i32, i32* %76, align 4
+  %div14 = udiv i32 %div13, %77
+  %78 = zext i32 %div14 to i64
+  %79 = urem i32 %div13, %77
+  %80 = zext i32 %79 to i64
+  store i64 %78, i64* %63, align 8
+  store i64 %80, i64* %RDX.i37, align 8
+  store i8 0, i8* %51, align 1
+  store i8 0, i8* %52, align 1
+  store i8 0, i8* %56, align 1
+  store i8 0, i8* %53, align 1
+  store i8 0, i8* %54, align 1
+  store i8 0, i8* %55, align 1
+  %81 = add i64 %46, 30
   store i64 %81, i64* %3, align 8
-  %82 = inttoptr i64 %80 to i32*
-  %83 = load i32, i32* %82, align 4
-  %div14 = udiv i32 %div13, %83
-  %84 = zext i32 %div14 to i64
-  %85 = urem i32 %div13, %83
-  %86 = zext i32 %85 to i64
-  store i64 %84, i64* %65, align 8
-  store i64 %86, i64* %RDX.i37, align 8
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %52, align 1
-  store i8 0, i8* %56, align 1
-  store i8 0, i8* %53, align 1
-  store i8 0, i8* %54, align 1
-  store i8 0, i8* %55, align 1
-  %87 = add i64 %46, 30
-  store i64 %87, i64* %3, align 8
-  %88 = load i64, i64* %6, align 8
-  %89 = add i64 %88, 8
-  %90 = inttoptr i64 %88 to i64*
-  %91 = load i64, i64* %90, align 8
-  store i64 %91, i64* %RBP.i, align 8
+  %82 = load i64, i64* %6, align 8
+  %83 = add i64 %82, 8
+  %84 = inttoptr i64 %82 to i64*
+  %85 = load i64, i64* %84, align 8
+  store i64 %85, i64* %RBP.i, align 8
+  store i64 %83, i64* %6, align 8
+  %86 = add i64 %46, 31
+  store i64 %86, i64* %3, align 8
+  %87 = inttoptr i64 %83 to i64*
+  %88 = load i64, i64* %87, align 8
+  store i64 %88, i64* %3, align 8
+  %89 = add i64 %82, 16
   store i64 %89, i64* %6, align 8
-  %92 = add i64 %46, 31
-  store i64 %92, i64* %3, align 8
-  %93 = inttoptr i64 %89 to i64*
-  %94 = load i64, i64* %93, align 8
-  store i64 %94, i64* %3, align 8
-  %95 = add i64 %88, 16
-  store i64 %95, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

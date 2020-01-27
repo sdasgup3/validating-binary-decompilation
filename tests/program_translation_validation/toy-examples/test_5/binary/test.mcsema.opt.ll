@@ -768,22 +768,19 @@ block_4004c0:
   br i1 %30, label %block_4004f8, label %block_4004e3
 
 block_4004f8:                                     ; preds = %block_4004e3, %block_4004c0
-  %35 = phi i64 [ %45, %block_4004e3 ], [ %34, %block_4004c0 ]
+  %35 = phi i64 [ %42, %block_4004e3 ], [ %34, %block_4004c0 ]
   %36 = add i64 %35, 1
   store i64 %36, i64* %PC, align 8
-  %37 = load i64, i64* %5, align 8, !tbaa !2428
-  %38 = add i64 %37, 8
-  %39 = inttoptr i64 %37 to i64*
+  %37 = load i64, i64* %8, align 8
+  store i64 %37, i64* %RBP, align 8, !tbaa !2428
+  store i64 %6, i64* %5, align 8, !tbaa !2428
+  %38 = add i64 %35, 2
+  store i64 %38, i64* %PC, align 8
+  %39 = inttoptr i64 %6 to i64*
   %40 = load i64, i64* %39, align 8
-  store i64 %40, i64* %RBP, align 8, !tbaa !2428
-  store i64 %38, i64* %5, align 8, !tbaa !2428
-  %41 = add i64 %35, 2
-  store i64 %41, i64* %PC, align 8
-  %42 = inttoptr i64 %38 to i64*
-  %43 = load i64, i64* %42, align 8
-  store i64 %43, i64* %PC, align 8, !tbaa !2428
-  %44 = add i64 %37, 16
-  store i64 %44, i64* %5, align 8, !tbaa !2428
+  store i64 %40, i64* %PC, align 8, !tbaa !2428
+  %41 = add i64 %7, 16
+  store i64 %41, i64* %5, align 8, !tbaa !2428
   ret %struct.Memory* %2
 
 block_4004e3:                                     ; preds = %block_4004c0
@@ -794,8 +791,8 @@ block_4004e3:                                     ; preds = %block_4004c0
   store i8 0, i8* %16, align 1, !tbaa !2449
   store i8 0, i8* %17, align 1, !tbaa !2450
   store i8 0, i8* %14, align 1, !tbaa !2451
-  %45 = add i64 %34, 21
-  store i64 %45, i64* %PC, align 8, !tbaa !2428
+  %42 = add i64 %34, 21
+  store i64 %42, i64* %PC, align 8, !tbaa !2428
   br label %block_4004f8
 }
 
@@ -1674,7 +1671,6 @@ block_400410:                                     ; preds = %block_400400
   br label %block_400412
 
 block_400412:                                     ; preds = %block_400400.block_400412_crit_edge, %block_400410
-  %.pre-phi = phi i64* [ %RSP, %block_400400.block_400412_crit_edge ], [ %RSP, %block_400410 ]
   %27 = phi i64 [ %22, %block_400400.block_400412_crit_edge ], [ %.pre1, %block_400410 ]
   %28 = phi i64 [ %4, %block_400400.block_400412_crit_edge ], [ %.pre, %block_400410 ]
   %MEMORY.0 = phi %struct.Memory* [ %2, %block_400400.block_400412_crit_edge ], [ %26, %block_400410 ]
@@ -1713,7 +1709,7 @@ block_400412:                                     ; preds = %block_400400.block_
   %53 = load i64, i64* %52, align 8
   store i64 %53, i64* %PC, align 8, !tbaa !2428
   %54 = add i64 %28, 16
-  store i64 %54, i64* %.pre-phi, align 8, !tbaa !2428
+  store i64 %54, i64* %RSP, align 8, !tbaa !2428
   ret %struct.Memory* %MEMORY.0
 }
 

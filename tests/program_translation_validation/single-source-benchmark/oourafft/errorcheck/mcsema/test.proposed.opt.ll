@@ -183,7 +183,7 @@ entry:
 
 block_.L_4010f8:                                  ; preds = %block_.L_401192, %entry
   %94 = phi i64 [ %.pre, %entry ], [ %349, %block_.L_401192 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %276, %block_.L_401192 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %277, %block_.L_401192 ]
   %95 = load i64, i64* %RBP.i, align 8
   %96 = add i64 %95, -28
   %97 = add i64 %94, 3
@@ -438,6 +438,7 @@ routine_idivl__ecx.exit:                          ; preds = %187, %185
 ; <label>:262:                                    ; preds = %254
   %263 = tail call %struct.Memory* @__remill_error(%struct.State* nonnull dereferenceable(3376) %0, i64 %251, %struct.Memory* %195)
   %.pre4 = load i64, i64* %3, align 8
+  %.pre7 = load i64, i64* %RBP.i, align 8
   br label %routine_ucomisd__xmm1___xmm0.exit
 
 ; <label>:264:                                    ; preds = %routine_idivl__ecx.exit
@@ -468,28 +469,28 @@ routine_idivl__ecx.exit:                          ; preds = %187, %185
   br label %routine_ucomisd__xmm1___xmm0.exit
 
 routine_ucomisd__xmm1___xmm0.exit:                ; preds = %274, %262
-  %275 = phi i64 [ %.pre4, %262 ], [ %251, %274 ]
-  %276 = phi %struct.Memory* [ %263, %262 ], [ %195, %274 ]
-  %277 = load i8, i8* %71, align 1
-  %278 = load i8, i8* %74, align 1
-  %279 = or i8 %278, %277
-  %280 = icmp ne i8 %279, 0
-  %.v6 = select i1 %280, i64 21, i64 6
-  %281 = add i64 %275, %.v6
-  store i64 %281, i64* %3, align 8
-  %282 = load i64, i64* %RBP.i, align 8
-  br i1 %280, label %block_.L_40117d, label %block_40116e
+  %275 = phi i64 [ %.pre7, %262 ], [ %228, %274 ]
+  %276 = phi i64 [ %.pre4, %262 ], [ %251, %274 ]
+  %277 = phi %struct.Memory* [ %263, %262 ], [ %195, %274 ]
+  %278 = load i8, i8* %71, align 1
+  %279 = load i8, i8* %74, align 1
+  %280 = or i8 %279, %278
+  %281 = icmp ne i8 %280, 0
+  %.v6 = select i1 %281, i64 21, i64 6
+  %282 = add i64 %276, %.v6
+  store i64 %282, i64* %3, align 8
+  br i1 %281, label %block_.L_40117d, label %block_40116e
 
 block_40116e:                                     ; preds = %routine_ucomisd__xmm1___xmm0.exit
-  %283 = add i64 %282, -40
-  %284 = add i64 %281, 5
+  %283 = add i64 %275, -40
+  %284 = add i64 %282, 5
   store i64 %284, i64* %3, align 8
   %285 = inttoptr i64 %283 to i64*
   %286 = load i64, i64* %285, align 8
   store i64 %286, i64* %39, align 1
   store double 0.000000e+00, double* %79, align 1
-  %287 = add i64 %282, -64
-  %288 = add i64 %281, 10
+  %287 = add i64 %275, -64
+  %288 = add i64 %282, 10
   store i64 %288, i64* %3, align 8
   %289 = inttoptr i64 %287 to i64*
   store i64 %286, i64* %289, align 8
@@ -499,8 +500,8 @@ block_40116e:                                     ; preds = %routine_ucomisd__xm
   br label %block_.L_401192
 
 block_.L_40117d:                                  ; preds = %routine_ucomisd__xmm1___xmm0.exit
-  %292 = add i64 %282, -48
-  %293 = add i64 %281, 5
+  %292 = add i64 %275, -48
+  %293 = add i64 %282, 5
   store i64 %293, i64* %3, align 8
   %294 = inttoptr i64 %292 to i64*
   %295 = load i64, i64* %294, align 8
@@ -521,8 +522,8 @@ block_.L_40117d:                                  ; preds = %routine_ucomisd__xm
   store i32 %304, i32* %90, align 1
   store i32 0, i32* %91, align 1
   store i32 0, i32* %93, align 1
-  %305 = add i64 %282, -64
-  %306 = add i64 %281, 21
+  %305 = add i64 %275, -64
+  %306 = add i64 %282, 21
   store i64 %306, i64* %3, align 8
   %307 = load i64, i64* %39, align 1
   %308 = inttoptr i64 %305 to i64*
