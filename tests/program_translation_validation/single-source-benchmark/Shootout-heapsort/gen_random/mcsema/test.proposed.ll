@@ -641,7 +641,7 @@ block_400478:
   %YMM1 = bitcast %union.VectorReg* %7 to %"class.std::bitset"*
   %8 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %9 = load i64, i64* %PC
-  %10 = ptrtoint %G_0x30c__rip__4195ptrtoint( %G_0x30c__rip__4195788__type* @G_0x30c__rip__4195788_ to i64)__type* @G_0x30c__rip__4195ptrtoint( %G_0x30c__rip__4195788__type* @G_0x30c__rip__4195788_ to i64)_ to i64
+  %10 = ptrtoint %G_0x30c__rip__4195788__type* @G_0x30c__rip__4195788_ to i64
   %11 = load i64, i64* %PC
   %12 = add i64 %11, 8
   store i64 %12, i64* %PC

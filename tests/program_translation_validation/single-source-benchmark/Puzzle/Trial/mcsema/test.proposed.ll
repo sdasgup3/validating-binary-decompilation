@@ -461,6 +461,10 @@ declare %struct.Memory* @sub_4006d0.Remove(%struct.State* noalias dereferenceabl
 ; Data Access Globals
 %G_0x6191c4_type = type <{ [4 x i8] }>
 @G_0x6191c4= global %G_0x6191c4_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6191e0___rax_4__type = type <{ [4 x i8] }>
+@G_0x6191e0___rax_4_= global %G_0x6191e0___rax_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6191f0___rax_4__type = type <{ [8 x i8] }>
+@G_0x6191f0___rax_4_= global %G_0x6191f0___rax_4__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @Trial(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -1213,7 +1217,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6394352
+  %11 = add i64 %10, ptrtoint( %G_0x6191f0___rax_4__type* @G_0x6191f0___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 8
   store i64 %13, i64* %PC
@@ -1234,7 +1238,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6394336
+  %11 = add i64 %10, ptrtoint( %G_0x6191e0___rax_4__type* @G_0x6191e0___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 8
   store i64 %13, i64* %PC

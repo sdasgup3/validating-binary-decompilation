@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x60f1a4___rcx_8__type = type <{ [4 x i8] }>
 %G_0x615f30_type = type <{ [8 x i8] }>
 %G__0x400a0a_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -40,6 +41,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x60f1a4___rcx_8_ = global %G_0x60f1a4___rcx_8__type zeroinitializer
 @G_0x615f30 = local_unnamed_addr global %G_0x615f30_type zeroinitializer
 @G__0x400a0a = global %G__0x400a0a_type zeroinitializer
 
@@ -116,11 +118,11 @@ block_4005bd:                                     ; preds = %entry
   %42 = sext i32 %41 to i64
   store i64 %42, i64* %RCX.i14, align 8
   %43 = shl nsw i64 %42, 3
-  %44 = add nsw i64 %43, 6353316
+  %44 = add i64 %43, ptrtoint (%G_0x60f1a4___rcx_8__type* @G_0x60f1a4___rcx_8_ to i64)
   %45 = add i64 %40, 15
   store i64 %45, i64* %3, align 8
   %46 = inttoptr i64 %44 to i32*
-  %47 = load i32, i32* %46, align 4
+  %47 = load i32, i32* %46, align 8
   %48 = zext i32 %47 to i64
   store i64 %48, i64* %RAX.i19, align 8
   store i32 %47, i32* bitcast (%G_0x615f30_type* @G_0x615f30 to i32*), align 8
@@ -399,12 +401,12 @@ block_400478:
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %3 = load i64, i64* %RCX, align 8
   %4 = shl i64 %3, 3
-  %5 = add i64 %4, 6353316
+  %5 = add i64 %4, ptrtoint (%G_0x60f1a4___rcx_8__type* @G_0x60f1a4___rcx_8_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
   %8 = inttoptr i64 %5 to i32*
-  %9 = load i32, i32* %8, align 4
+  %9 = load i32, i32* %8, align 8
   %10 = zext i32 %9 to i64
   store i64 %10, i64* %RAX, align 8
   ret %struct.Memory* %2

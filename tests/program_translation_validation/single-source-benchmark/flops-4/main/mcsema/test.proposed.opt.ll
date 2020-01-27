@@ -445,7 +445,7 @@ entry:
   br label %block_.L_400674
 
 block_.L_400674:                                  ; preds = %block_400689, %entry
-  %216 = phi i64 [ %353, %block_400689 ], [ %.pre, %entry ]
+  %216 = phi i64 [ %350, %block_400689 ], [ %.pre, %entry ]
   %217 = load i64, i64* %RBP.i, align 8
   %218 = add i64 %217, -72
   %219 = add i64 %216, 4
@@ -613,55 +613,52 @@ block_400689:                                     ; preds = %block_.L_400674
   %317 = fadd double %315, %316
   store double %317, double* %67, align 1
   store i64 0, i64* %69, align 1
-  %318 = load i64, i64* %RBP.i, align 8
-  %319 = add i64 %318, -16
-  %320 = add i64 %280, 127
-  store i64 %320, i64* %3, align 8
-  %321 = inttoptr i64 %319 to double*
-  store double %317, double* %321, align 8
-  %322 = load i64, i64* %RBP.i, align 8
-  %323 = add i64 %322, -72
-  %324 = load i64, i64* %3, align 8
-  %325 = add i64 %324, 4
-  store i64 %325, i64* %3, align 8
-  %326 = inttoptr i64 %323 to i64*
-  %327 = load i64, i64* %326, align 8
-  %328 = add i64 %327, 1
-  store i64 %328, i64* %RAX.i264, align 8
-  %329 = icmp eq i64 %327, -1
-  %330 = icmp eq i64 %328, 0
-  %331 = or i1 %329, %330
-  %332 = zext i1 %331 to i8
-  store i8 %332, i8* %14, align 1
-  %333 = trunc i64 %328 to i32
-  %334 = and i32 %333, 255
-  %335 = tail call i32 @llvm.ctpop.i32(i32 %334)
-  %336 = trunc i32 %335 to i8
-  %337 = and i8 %336, 1
-  %338 = xor i8 %337, 1
-  store i8 %338, i8* %21, align 1
-  %339 = xor i64 %327, %328
-  %340 = lshr i64 %339, 4
-  %341 = trunc i64 %340 to i8
-  %342 = and i8 %341, 1
-  store i8 %342, i8* %26, align 1
-  %343 = zext i1 %330 to i8
-  store i8 %343, i8* %29, align 1
-  %344 = lshr i64 %328, 63
-  %345 = trunc i64 %344 to i8
-  store i8 %345, i8* %32, align 1
-  %346 = lshr i64 %327, 63
-  %347 = xor i64 %344, %346
-  %348 = add nuw nsw i64 %347, %344
-  %349 = icmp eq i64 %348, 2
-  %350 = zext i1 %349 to i8
-  store i8 %350, i8* %38, align 1
-  %351 = add i64 %324, 12
-  store i64 %351, i64* %3, align 8
-  store i64 %328, i64* %326, align 8
-  %352 = load i64, i64* %3, align 8
-  %353 = add i64 %352, -194
-  store i64 %353, i64* %3, align 8
+  %318 = add i64 %280, 127
+  store i64 %318, i64* %3, align 8
+  store double %317, double* %282, align 8
+  %319 = load i64, i64* %RBP.i, align 8
+  %320 = add i64 %319, -72
+  %321 = load i64, i64* %3, align 8
+  %322 = add i64 %321, 4
+  store i64 %322, i64* %3, align 8
+  %323 = inttoptr i64 %320 to i64*
+  %324 = load i64, i64* %323, align 8
+  %325 = add i64 %324, 1
+  store i64 %325, i64* %RAX.i264, align 8
+  %326 = icmp eq i64 %324, -1
+  %327 = icmp eq i64 %325, 0
+  %328 = or i1 %326, %327
+  %329 = zext i1 %328 to i8
+  store i8 %329, i8* %14, align 1
+  %330 = trunc i64 %325 to i32
+  %331 = and i32 %330, 255
+  %332 = tail call i32 @llvm.ctpop.i32(i32 %331)
+  %333 = trunc i32 %332 to i8
+  %334 = and i8 %333, 1
+  %335 = xor i8 %334, 1
+  store i8 %335, i8* %21, align 1
+  %336 = xor i64 %324, %325
+  %337 = lshr i64 %336, 4
+  %338 = trunc i64 %337 to i8
+  %339 = and i8 %338, 1
+  store i8 %339, i8* %26, align 1
+  %340 = zext i1 %327 to i8
+  store i8 %340, i8* %29, align 1
+  %341 = lshr i64 %325, 63
+  %342 = trunc i64 %341 to i8
+  store i8 %342, i8* %32, align 1
+  %343 = lshr i64 %324, 63
+  %344 = xor i64 %341, %343
+  %345 = add nuw nsw i64 %344, %341
+  %346 = icmp eq i64 %345, 2
+  %347 = zext i1 %346 to i8
+  store i8 %347, i8* %38, align 1
+  %348 = add i64 %321, 12
+  store i64 %348, i64* %3, align 8
+  store i64 %325, i64* %323, align 8
+  %349 = load i64, i64* %3, align 8
+  %350 = add i64 %349, -194
+  store i64 %350, i64* %3, align 8
   br label %block_.L_400674
 
 block_.L_40073b:                                  ; preds = %block_.L_400674
@@ -670,341 +667,339 @@ block_.L_40073b:                                  ; preds = %block_.L_400674
   store i32 0, i32* %146, align 1
   store i32 0, i32* %147, align 1
   store i32 0, i32* %149, align 1
-  %354 = load i64, i64* bitcast (%G_0x288__rip__4196176__type* @G_0x288__rip__4196176_ to i64*), align 8
-  store i64 %354, i64* %74, align 1
+  %351 = load i64, i64* bitcast (%G_0x288__rip__4196176__type* @G_0x288__rip__4196176_ to i64*), align 8
+  store i64 %351, i64* %74, align 1
   store double 0.000000e+00, double* %76, align 1
-  %355 = load double, double* bitcast (%G_0x601260_type* @G_0x601260 to double*), align 8
-  %356 = load double, double* bitcast (%G_0x6012a0_type* @G_0x6012a0 to double*), align 8
-  %357 = fdiv double %355, %356
-  store double %357, double* %79, align 1
+  %352 = load double, double* bitcast (%G_0x601260_type* @G_0x601260 to double*), align 8
+  %353 = load double, double* bitcast (%G_0x6012a0_type* @G_0x6012a0 to double*), align 8
+  %354 = fdiv double %352, %353
+  store double %354, double* %79, align 1
   store i64 0, i64* %81, align 1
-  %358 = add i64 %217, -24
-  %359 = add i64 %254, 44
-  store i64 %359, i64* %3, align 8
-  %360 = inttoptr i64 %358 to double*
-  store double %357, double* %360, align 8
-  %361 = load i64, i64* %RBP.i, align 8
-  %362 = add i64 %361, -24
-  %363 = load i64, i64* %3, align 8
-  %364 = add i64 %363, 5
+  %355 = add i64 %217, -24
+  %356 = add i64 %254, 44
+  store i64 %356, i64* %3, align 8
+  %357 = inttoptr i64 %355 to double*
+  store double %354, double* %357, align 8
+  %358 = load i64, i64* %RBP.i, align 8
+  %359 = add i64 %358, -24
+  %360 = load i64, i64* %3, align 8
+  %361 = add i64 %360, 5
+  store i64 %361, i64* %3, align 8
+  %362 = inttoptr i64 %359 to double*
+  %363 = load double, double* %362, align 8
+  store double %363, double* %79, align 1
+  store double 0.000000e+00, double* %82, align 1
+  %364 = add i64 %360, 10
   store i64 %364, i64* %3, align 8
-  %365 = inttoptr i64 %362 to double*
-  %366 = load double, double* %365, align 8
+  %365 = load double, double* %362, align 8
+  %366 = fmul double %363, %365
   store double %366, double* %79, align 1
-  store double 0.000000e+00, double* %82, align 1
-  %367 = add i64 %363, 10
-  store i64 %367, i64* %3, align 8
-  %368 = load double, double* %365, align 8
-  %369 = fmul double %366, %368
-  store double %369, double* %79, align 1
   store i64 0, i64* %81, align 1
-  %370 = add i64 %361, -40
-  %371 = add i64 %363, 15
-  store i64 %371, i64* %3, align 8
-  %372 = inttoptr i64 %370 to double*
-  store double %369, double* %372, align 8
-  %373 = load i64, i64* %RBP.i, align 8
-  %374 = add i64 %373, -40
-  %375 = load i64, i64* %3, align 8
-  %376 = add i64 %375, 5
+  %367 = add i64 %358, -40
+  %368 = add i64 %360, 15
+  store i64 %368, i64* %3, align 8
+  %369 = inttoptr i64 %367 to double*
+  store double %366, double* %369, align 8
+  %370 = load i64, i64* %RBP.i, align 8
+  %371 = add i64 %370, -40
+  %372 = load i64, i64* %3, align 8
+  %373 = add i64 %372, 5
+  store i64 %373, i64* %3, align 8
+  %374 = inttoptr i64 %371 to double*
+  %375 = load double, double* %374, align 8
+  store double %375, double* %79, align 1
+  store double 0.000000e+00, double* %82, align 1
+  %376 = add i64 %372, 10
   store i64 %376, i64* %3, align 8
-  %377 = inttoptr i64 %374 to double*
-  %378 = load double, double* %377, align 8
-  store double %378, double* %79, align 1
-  store double 0.000000e+00, double* %82, align 1
-  %379 = add i64 %375, 10
-  store i64 %379, i64* %3, align 8
-  %380 = load double, double* %377, align 8
-  store double %380, double* %85, align 1
+  %377 = load double, double* %374, align 8
+  store double %377, double* %85, align 1
   store double 0.000000e+00, double* %88, align 1
-  %381 = add i64 %375, 15
-  store i64 %381, i64* %3, align 8
-  %382 = load double, double* %377, align 8
-  store double %382, double* %91, align 1
+  %378 = add i64 %372, 15
+  store i64 %378, i64* %3, align 8
+  %379 = load double, double* %374, align 8
+  store double %379, double* %91, align 1
   store double 0.000000e+00, double* %94, align 1
-  %383 = add i64 %375, 20
-  store i64 %383, i64* %3, align 8
-  %384 = load double, double* %377, align 8
-  store double %384, double* %97, align 1
+  %380 = add i64 %372, 20
+  store i64 %380, i64* %3, align 8
+  %381 = load double, double* %374, align 8
+  store double %381, double* %97, align 1
   store double 0.000000e+00, double* %100, align 1
-  %385 = add i64 %375, 25
-  store i64 %385, i64* %3, align 8
-  %386 = load double, double* %377, align 8
-  store double %386, double* %213, align 1
+  %382 = add i64 %372, 25
+  store i64 %382, i64* %3, align 8
+  %383 = load double, double* %374, align 8
+  store double %383, double* %213, align 1
   store double 0.000000e+00, double* %215, align 1
-  %387 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 7
-  %388 = load double, double* bitcast (%G_0x601098_type* @G_0x601098 to double*), align 8
-  %389 = bitcast %union.VectorReg* %387 to double*
-  store double %388, double* %389, align 1
-  %390 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 7, i32 0, i32 0, i32 0, i64 1
-  %391 = bitcast i64* %390 to double*
-  store double 0.000000e+00, double* %391, align 1
-  %392 = add i64 %375, 39
-  store i64 %392, i64* %3, align 8
-  %393 = load double, double* %377, align 8
-  %394 = fmul double %388, %393
-  %395 = load double, double* bitcast (%G_0x601090_type* @G_0x601090 to double*), align 8
+  %384 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 7
+  %385 = load double, double* bitcast (%G_0x601098_type* @G_0x601098 to double*), align 8
+  %386 = bitcast %union.VectorReg* %384 to double*
+  store double %385, double* %386, align 1
+  %387 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 1, i64 7, i32 0, i32 0, i32 0, i64 1
+  %388 = bitcast i64* %387 to double*
+  store double 0.000000e+00, double* %388, align 1
+  %389 = add i64 %372, 39
+  store i64 %389, i64* %3, align 8
+  %390 = load double, double* %374, align 8
+  %391 = fmul double %385, %390
+  %392 = load double, double* bitcast (%G_0x601090_type* @G_0x601090 to double*), align 8
+  %393 = fadd double %391, %392
+  store double %393, double* %386, align 1
+  store i64 0, i64* %387, align 1
+  %394 = fmul double %383, %393
+  %395 = load double, double* bitcast (%G_0x601088_type* @G_0x601088 to double*), align 8
   %396 = fadd double %394, %395
-  store double %396, double* %389, align 1
-  store i64 0, i64* %390, align 1
-  %397 = fmul double %386, %396
-  %398 = load double, double* bitcast (%G_0x601088_type* @G_0x601088 to double*), align 8
-  %399 = fadd double %397, %398
-  store double %399, double* %213, align 1
+  store double %396, double* %213, align 1
   store i64 0, i64* %214, align 1
-  %400 = fmul double %384, %399
-  %401 = load double, double* bitcast (%G_0x601080_type* @G_0x601080 to double*), align 8
-  %402 = fadd double %400, %401
-  store double %402, double* %97, align 1
+  %397 = fmul double %381, %396
+  %398 = load double, double* bitcast (%G_0x601080_type* @G_0x601080 to double*), align 8
+  %399 = fadd double %397, %398
+  store double %399, double* %97, align 1
   store i64 0, i64* %99, align 1
-  %403 = fmul double %382, %402
-  %404 = load double, double* bitcast (%G_0x601078_type* @G_0x601078 to double*), align 8
+  %400 = fmul double %379, %399
+  %401 = load double, double* bitcast (%G_0x601078_type* @G_0x601078 to double*), align 8
+  %402 = fadd double %400, %401
+  store double %402, double* %91, align 1
+  store i64 0, i64* %93, align 1
+  %403 = fmul double %377, %402
+  %404 = load double, double* bitcast (%G_0x601070_type* @G_0x601070 to double*), align 8
   %405 = fadd double %403, %404
-  store double %405, double* %91, align 1
-  store i64 0, i64* %93, align 1
-  %406 = fmul double %380, %405
-  %407 = load double, double* bitcast (%G_0x601070_type* @G_0x601070 to double*), align 8
+  store double %405, double* %85, align 1
+  store i64 0, i64* %87, align 1
+  %406 = fmul double %375, %405
+  %407 = load double, double* bitcast (%G_0x601288_type* @G_0x601288 to double*), align 8
   %408 = fadd double %406, %407
-  store double %408, double* %85, align 1
-  store i64 0, i64* %87, align 1
-  %409 = fmul double %378, %408
-  %410 = load double, double* bitcast (%G_0x601288_type* @G_0x601288 to double*), align 8
-  %411 = fadd double %409, %410
-  store double %411, double* %79, align 1
+  store double %408, double* %79, align 1
   store i64 0, i64* %81, align 1
-  store double %411, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
-  %412 = load i64, i64* %RBP.i, align 8
-  %413 = add i64 %412, -48
-  %414 = add i64 %375, 127
-  store i64 %414, i64* %3, align 8
-  %415 = inttoptr i64 %413 to double*
-  %416 = load double, double* %415, align 8
-  store double %416, double* %79, align 1
+  store double %408, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
+  %409 = add i64 %370, -48
+  %410 = add i64 %372, 127
+  store i64 %410, i64* %3, align 8
+  %411 = inttoptr i64 %409 to double*
+  %412 = load double, double* %411, align 8
+  store double %412, double* %79, align 1
   store double 0.000000e+00, double* %82, align 1
-  %417 = fadd double %411, %410
-  store double %417, double* %85, align 1
+  %413 = fadd double %408, %407
+  store double %413, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %418 = load double, double* bitcast (%G_0x601120_type* @G_0x601120 to double*), align 8
-  store double %418, double* %91, align 1
+  %414 = load double, double* bitcast (%G_0x601120_type* @G_0x601120 to double*), align 8
+  store double %414, double* %91, align 1
   store double 0.000000e+00, double* %94, align 1
-  %419 = add i64 %412, -16
-  %420 = add i64 %375, 159
-  store i64 %420, i64* %3, align 8
-  %421 = inttoptr i64 %419 to double*
-  %422 = load double, double* %421, align 8
-  %423 = fmul double %418, %422
-  store double %423, double* %91, align 1
+  %415 = add i64 %370, -16
+  %416 = add i64 %372, 159
+  store i64 %416, i64* %3, align 8
+  %417 = inttoptr i64 %415 to double*
+  %418 = load double, double* %417, align 8
+  %419 = fmul double %414, %418
+  store double %419, double* %91, align 1
   store i64 0, i64* %93, align 1
-  %424 = fadd double %417, %423
-  store double %424, double* %85, align 1
+  %420 = fadd double %413, %419
+  store double %420, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %425 = fmul double %416, %424
-  %426 = fdiv double %425, %418
-  store double %426, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
-  %427 = load double, double* bitcast (%G_0x601260_type* @G_0x601260 to double*), align 8
-  %428 = load double, double* bitcast (%G_0x6012a0_type* @G_0x6012a0 to double*), align 8
-  %429 = fdiv double %427, %428
-  store double %429, double* %79, align 1
+  %421 = fmul double %412, %420
+  %422 = fdiv double %421, %414
+  store double %422, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
+  %423 = load double, double* bitcast (%G_0x601260_type* @G_0x601260 to double*), align 8
+  %424 = load double, double* bitcast (%G_0x6012a0_type* @G_0x6012a0 to double*), align 8
+  %425 = fdiv double %423, %424
+  store double %425, double* %79, align 1
   store i64 0, i64* %81, align 1
-  %430 = add i64 %412, -24
-  %431 = add i64 %375, 208
-  store i64 %431, i64* %3, align 8
-  %432 = inttoptr i64 %430 to double*
-  store double %429, double* %432, align 8
-  %433 = load i64, i64* %RBP.i, align 8
-  %434 = add i64 %433, -24
-  %435 = load i64, i64* %3, align 8
-  %436 = add i64 %435, 5
-  store i64 %436, i64* %3, align 8
-  %437 = inttoptr i64 %434 to double*
-  %438 = load double, double* %437, align 8
-  store double %438, double* %79, align 1
+  %426 = add i64 %370, -24
+  %427 = add i64 %372, 208
+  store i64 %427, i64* %3, align 8
+  %428 = inttoptr i64 %426 to double*
+  store double %425, double* %428, align 8
+  %429 = load i64, i64* %RBP.i, align 8
+  %430 = add i64 %429, -24
+  %431 = load i64, i64* %3, align 8
+  %432 = add i64 %431, 5
+  store i64 %432, i64* %3, align 8
+  %433 = inttoptr i64 %430 to double*
+  %434 = load double, double* %433, align 8
+  store double %434, double* %79, align 1
   store double 0.000000e+00, double* %82, align 1
-  %439 = add i64 %435, 10
+  %435 = add i64 %431, 10
+  store i64 %435, i64* %3, align 8
+  %436 = load double, double* %433, align 8
+  %437 = fmul double %434, %436
+  store double %437, double* %79, align 1
+  store i64 0, i64* %81, align 1
+  %438 = add i64 %429, -40
+  %439 = add i64 %431, 15
   store i64 %439, i64* %3, align 8
-  %440 = load double, double* %437, align 8
-  %441 = fmul double %438, %440
-  store double %441, double* %79, align 1
-  store i64 0, i64* %81, align 1
-  %442 = add i64 %433, -40
-  %443 = add i64 %435, 15
-  store i64 %443, i64* %3, align 8
-  %444 = inttoptr i64 %442 to double*
-  store double %441, double* %444, align 8
-  %445 = load i64, i64* %RBP.i, align 8
-  %446 = add i64 %445, -24
-  %447 = load i64, i64* %3, align 8
-  %448 = add i64 %447, 5
-  store i64 %448, i64* %3, align 8
-  %449 = inttoptr i64 %446 to double*
-  %450 = load double, double* %449, align 8
-  store double %450, double* %79, align 1
+  %440 = inttoptr i64 %438 to double*
+  store double %437, double* %440, align 8
+  %441 = load i64, i64* %RBP.i, align 8
+  %442 = add i64 %441, -24
+  %443 = load i64, i64* %3, align 8
+  %444 = add i64 %443, 5
+  store i64 %444, i64* %3, align 8
+  %445 = inttoptr i64 %442 to double*
+  %446 = load double, double* %445, align 8
+  store double %446, double* %79, align 1
   store double 0.000000e+00, double* %82, align 1
-  %451 = load double, double* bitcast (%G_0x601060_type* @G_0x601060 to double*), align 8
-  store double %451, double* %85, align 1
+  %447 = load double, double* bitcast (%G_0x601060_type* @G_0x601060 to double*), align 8
+  store double %447, double* %85, align 1
   store double 0.000000e+00, double* %88, align 1
-  %452 = add i64 %445, -40
-  %453 = add i64 %447, 19
-  store i64 %453, i64* %3, align 8
-  %454 = inttoptr i64 %452 to double*
-  %455 = load double, double* %454, align 8
-  %456 = fmul double %451, %455
-  %457 = load double, double* bitcast (%G_0x601058_type* @G_0x601058 to double*), align 8
-  %458 = fadd double %456, %457
-  store double %458, double* %85, align 1
+  %448 = add i64 %441, -40
+  %449 = add i64 %443, 19
+  store i64 %449, i64* %3, align 8
+  %450 = inttoptr i64 %448 to double*
+  %451 = load double, double* %450, align 8
+  %452 = fmul double %447, %451
+  %453 = load double, double* bitcast (%G_0x601058_type* @G_0x601058 to double*), align 8
+  %454 = fadd double %452, %453
+  store double %454, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %459 = add i64 %447, 33
-  store i64 %459, i64* %3, align 8
-  %460 = load double, double* %454, align 8
-  %461 = fmul double %458, %460
-  %462 = load double, double* bitcast (%G_0x601050_type* @G_0x601050 to double*), align 8
-  %463 = fadd double %461, %462
-  store double %463, double* %85, align 1
+  %455 = add i64 %443, 33
+  store i64 %455, i64* %3, align 8
+  %456 = load double, double* %450, align 8
+  %457 = fmul double %454, %456
+  %458 = load double, double* bitcast (%G_0x601050_type* @G_0x601050 to double*), align 8
+  %459 = fadd double %457, %458
+  store double %459, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %464 = add i64 %447, 47
-  store i64 %464, i64* %3, align 8
-  %465 = load double, double* %454, align 8
-  %466 = fmul double %463, %465
-  %467 = load double, double* bitcast (%G_0x601048_type* @G_0x601048 to double*), align 8
-  %468 = fadd double %466, %467
-  store double %468, double* %85, align 1
+  %460 = add i64 %443, 47
+  store i64 %460, i64* %3, align 8
+  %461 = load double, double* %450, align 8
+  %462 = fmul double %459, %461
+  %463 = load double, double* bitcast (%G_0x601048_type* @G_0x601048 to double*), align 8
+  %464 = fadd double %462, %463
+  store double %464, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %469 = add i64 %447, 61
-  store i64 %469, i64* %3, align 8
-  %470 = load double, double* %454, align 8
-  %471 = fmul double %468, %470
-  %472 = load double, double* bitcast (%G_0x601040_type* @G_0x601040 to double*), align 8
-  %473 = fadd double %471, %472
-  store double %473, double* %85, align 1
+  %465 = add i64 %443, 61
+  store i64 %465, i64* %3, align 8
+  %466 = load double, double* %450, align 8
+  %467 = fmul double %464, %466
+  %468 = load double, double* bitcast (%G_0x601040_type* @G_0x601040 to double*), align 8
+  %469 = fadd double %467, %468
+  store double %469, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %474 = add i64 %447, 75
-  store i64 %474, i64* %3, align 8
-  %475 = load double, double* %454, align 8
-  %476 = fmul double %473, %475
-  %477 = load double, double* bitcast (%G_0x601038_type* @G_0x601038 to double*), align 8
-  %478 = fadd double %476, %477
-  store double %478, double* %85, align 1
+  %470 = add i64 %443, 75
+  store i64 %470, i64* %3, align 8
+  %471 = load double, double* %450, align 8
+  %472 = fmul double %469, %471
+  %473 = load double, double* bitcast (%G_0x601038_type* @G_0x601038 to double*), align 8
+  %474 = fadd double %472, %473
+  store double %474, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %479 = add i64 %447, 89
-  store i64 %479, i64* %3, align 8
-  %480 = load double, double* %454, align 8
-  %481 = fmul double %478, %480
-  %482 = load double, double* bitcast (%G_0x601030_type* @G_0x601030 to double*), align 8
-  %483 = fadd double %481, %482
-  store double %483, double* %85, align 1
+  %475 = add i64 %443, 89
+  store i64 %475, i64* %3, align 8
+  %476 = load double, double* %450, align 8
+  %477 = fmul double %474, %476
+  %478 = load double, double* bitcast (%G_0x601030_type* @G_0x601030 to double*), align 8
+  %479 = fadd double %477, %478
+  store double %479, double* %85, align 1
   store i64 0, i64* %87, align 1
-  %484 = fmul double %450, %483
-  store double %484, double* bitcast (%G_0x601258_type* @G_0x601258 to double*), align 8
-  %485 = load double, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
-  %486 = fsub double %485, %484
-  store double %486, double* %79, align 1
+  %480 = fmul double %446, %479
+  store double %480, double* bitcast (%G_0x601258_type* @G_0x601258 to double*), align 8
+  %481 = load double, double* bitcast (%G_0x601298_type* @G_0x601298 to double*), align 8
+  %482 = fsub double %481, %480
+  store double %482, double* %79, align 1
   store i64 0, i64* %81, align 1
-  store double %486, double* bitcast (%G_0x601290_type* @G_0x601290 to double*), align 8
-  %487 = load double, double* %73, align 1
-  %488 = fmul double %487, %486
-  store double %488, double* %73, align 1
-  %489 = load i64, i64* %RBP.i, align 8
-  %490 = add i64 %489, -112
-  %491 = add i64 %447, 152
-  store i64 %491, i64* %3, align 8
-  %492 = load i64, i64* %68, align 1
-  %493 = inttoptr i64 %490 to i64*
-  store i64 %492, i64* %493, align 8
-  %494 = load i64, i64* %3, align 8
-  %495 = bitcast %union.VectorReg* %71 to <2 x i32>*
-  %496 = load <2 x i32>, <2 x i32>* %495, align 1
-  %497 = bitcast i64* %75 to <2 x i32>*
-  %498 = load <2 x i32>, <2 x i32>* %497, align 1
-  %499 = extractelement <2 x i32> %496, i32 0
-  store i32 %499, i32* %144, align 1
-  %500 = extractelement <2 x i32> %496, i32 1
-  store i32 %500, i32* %146, align 1
-  %501 = extractelement <2 x i32> %498, i32 0
-  store i32 %501, i32* %147, align 1
-  %502 = extractelement <2 x i32> %498, i32 1
-  store i32 %502, i32* %149, align 1
-  %503 = load i64, i64* %RBP.i, align 8
-  %504 = add i64 %503, -112
-  %505 = add i64 %494, 8
-  store i64 %505, i64* %3, align 8
-  %506 = inttoptr i64 %504 to i64*
-  %507 = load i64, i64* %506, align 8
-  store i64 %507, i64* %74, align 1
+  store double %482, double* bitcast (%G_0x601290_type* @G_0x601290 to double*), align 8
+  %483 = load double, double* %73, align 1
+  %484 = fmul double %483, %482
+  store double %484, double* %73, align 1
+  %485 = add i64 %441, -112
+  %486 = add i64 %443, 152
+  store i64 %486, i64* %3, align 8
+  %487 = load i64, i64* %68, align 1
+  %488 = inttoptr i64 %485 to i64*
+  store i64 %487, i64* %488, align 8
+  %489 = load i64, i64* %3, align 8
+  %490 = bitcast %union.VectorReg* %71 to <2 x i32>*
+  %491 = load <2 x i32>, <2 x i32>* %490, align 1
+  %492 = bitcast i64* %75 to <2 x i32>*
+  %493 = load <2 x i32>, <2 x i32>* %492, align 1
+  %494 = extractelement <2 x i32> %491, i32 0
+  store i32 %494, i32* %144, align 1
+  %495 = extractelement <2 x i32> %491, i32 1
+  store i32 %495, i32* %146, align 1
+  %496 = extractelement <2 x i32> %493, i32 0
+  store i32 %496, i32* %147, align 1
+  %497 = extractelement <2 x i32> %493, i32 1
+  store i32 %497, i32* %149, align 1
+  %498 = load i64, i64* %RBP.i, align 8
+  %499 = add i64 %498, -112
+  %500 = add i64 %489, 8
+  store i64 %500, i64* %3, align 8
+  %501 = inttoptr i64 %499 to i64*
+  %502 = load i64, i64* %501, align 8
+  store i64 %502, i64* %74, align 1
   store double 0.000000e+00, double* %76, align 1
-  %508 = add i64 %494, 13
-  store i64 %508, i64* %3, align 8
-  %509 = load i64, i64* %506, align 8
-  store i64 %509, i64* %80, align 1
+  %503 = add i64 %489, 13
+  store i64 %503, i64* %3, align 8
+  %504 = load i64, i64* %501, align 8
+  store i64 %504, i64* %80, align 1
   store double 0.000000e+00, double* %82, align 1
   store i8 3, i8* %AL.i398, align 1
-  %510 = add i64 %494, -1277
-  %511 = add i64 %494, 20
-  %512 = load i64, i64* %6, align 8
-  %513 = add i64 %512, -8
-  %514 = inttoptr i64 %513 to i64*
-  store i64 %511, i64* %514, align 8
-  store i64 %513, i64* %6, align 8
-  store i64 %510, i64* %3, align 8
-  %515 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %142)
+  %505 = add i64 %489, -1277
+  %506 = add i64 %489, 20
+  %507 = load i64, i64* %6, align 8
+  %508 = add i64 %507, -8
+  %509 = inttoptr i64 %508 to i64*
+  store i64 %506, i64* %509, align 8
+  store i64 %508, i64* %6, align 8
+  store i64 %505, i64* %3, align 8
+  %510 = tail call %struct.Memory* @__remill_function_call(%struct.State* %0, i64 ptrtoint (i64 (i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64, i64)* @printf to i64), %struct.Memory* %142)
   %ECX.i9 = bitcast %union.anon* %150 to i32*
-  %516 = load i64, i64* %3, align 8
+  %511 = load i64, i64* %3, align 8
   store i64 0, i64* %RCX.i326, align 8
-  %517 = load i64, i64* %RBP.i, align 8
-  %518 = add i64 %517, -116
-  %519 = load i32, i32* %EAX.i393, align 4
-  %520 = add i64 %516, 5
-  store i64 %520, i64* %3, align 8
-  %521 = inttoptr i64 %518 to i32*
-  store i32 %519, i32* %521, align 4
-  %522 = load i32, i32* %ECX.i9, align 4
-  %523 = zext i32 %522 to i64
-  %524 = load i64, i64* %3, align 8
-  store i64 %523, i64* %RAX.i264, align 8
-  %525 = load i64, i64* %6, align 8
-  %526 = add i64 %525, 128
-  store i64 %526, i64* %6, align 8
-  %527 = icmp ugt i64 %525, -129
-  %528 = zext i1 %527 to i8
-  store i8 %528, i8* %14, align 1
-  %529 = trunc i64 %526 to i32
-  %530 = and i32 %529, 255
-  %531 = tail call i32 @llvm.ctpop.i32(i32 %530)
-  %532 = trunc i32 %531 to i8
+  %512 = load i64, i64* %RBP.i, align 8
+  %513 = add i64 %512, -116
+  %514 = load i32, i32* %EAX.i393, align 4
+  %515 = add i64 %511, 5
+  store i64 %515, i64* %3, align 8
+  %516 = inttoptr i64 %513 to i32*
+  store i32 %514, i32* %516, align 4
+  %517 = load i32, i32* %ECX.i9, align 4
+  %518 = zext i32 %517 to i64
+  %519 = load i64, i64* %3, align 8
+  store i64 %518, i64* %RAX.i264, align 8
+  %520 = load i64, i64* %6, align 8
+  %521 = add i64 %520, 128
+  store i64 %521, i64* %6, align 8
+  %522 = icmp ugt i64 %520, -129
+  %523 = zext i1 %522 to i8
+  store i8 %523, i8* %14, align 1
+  %524 = trunc i64 %521 to i32
+  %525 = and i32 %524, 255
+  %526 = tail call i32 @llvm.ctpop.i32(i32 %525)
+  %527 = trunc i32 %526 to i8
+  %528 = and i8 %527, 1
+  %529 = xor i8 %528, 1
+  store i8 %529, i8* %21, align 1
+  %530 = xor i64 %520, %521
+  %531 = lshr i64 %530, 4
+  %532 = trunc i64 %531 to i8
   %533 = and i8 %532, 1
-  %534 = xor i8 %533, 1
-  store i8 %534, i8* %21, align 1
-  %535 = xor i64 %525, %526
-  %536 = lshr i64 %535, 4
+  store i8 %533, i8* %26, align 1
+  %534 = icmp eq i64 %521, 0
+  %535 = zext i1 %534 to i8
+  store i8 %535, i8* %29, align 1
+  %536 = lshr i64 %521, 63
   %537 = trunc i64 %536 to i8
-  %538 = and i8 %537, 1
-  store i8 %538, i8* %26, align 1
-  %539 = icmp eq i64 %526, 0
-  %540 = zext i1 %539 to i8
-  store i8 %540, i8* %29, align 1
-  %541 = lshr i64 %526, 63
-  %542 = trunc i64 %541 to i8
-  store i8 %542, i8* %32, align 1
-  %543 = lshr i64 %525, 63
-  %544 = xor i64 %541, %543
-  %545 = add nuw nsw i64 %544, %541
-  %546 = icmp eq i64 %545, 2
-  %547 = zext i1 %546 to i8
-  store i8 %547, i8* %38, align 1
-  %548 = add i64 %524, 10
-  store i64 %548, i64* %3, align 8
-  %549 = add i64 %525, 136
-  %550 = inttoptr i64 %526 to i64*
-  %551 = load i64, i64* %550, align 8
-  store i64 %551, i64* %RBP.i, align 8
-  store i64 %549, i64* %6, align 8
-  %552 = add i64 %524, 11
-  store i64 %552, i64* %3, align 8
-  %553 = inttoptr i64 %549 to i64*
-  %554 = load i64, i64* %553, align 8
-  store i64 %554, i64* %3, align 8
-  %555 = add i64 %525, 144
-  store i64 %555, i64* %6, align 8
-  ret %struct.Memory* %515
+  store i8 %537, i8* %32, align 1
+  %538 = lshr i64 %520, 63
+  %539 = xor i64 %536, %538
+  %540 = add nuw nsw i64 %539, %536
+  %541 = icmp eq i64 %540, 2
+  %542 = zext i1 %541 to i8
+  store i8 %542, i8* %38, align 1
+  %543 = add i64 %519, 10
+  store i64 %543, i64* %3, align 8
+  %544 = add i64 %520, 136
+  %545 = inttoptr i64 %521 to i64*
+  %546 = load i64, i64* %545, align 8
+  store i64 %546, i64* %RBP.i, align 8
+  store i64 %544, i64* %6, align 8
+  %547 = add i64 %519, 11
+  store i64 %547, i64* %3, align 8
+  %548 = inttoptr i64 %544 to i64*
+  %549 = load i64, i64* %548, align 8
+  store i64 %549, i64* %3, align 8
+  %550 = add i64 %520, 144
+  store i64 %550, i64* %6, align 8
+  ret %struct.Memory* %510
 }
 
 define %struct.Memory* @routine_pushq__rbp(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr {

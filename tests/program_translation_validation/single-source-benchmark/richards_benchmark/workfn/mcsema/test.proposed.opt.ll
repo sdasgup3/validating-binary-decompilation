@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x602040___rax_1__type = type <{ [1 x i8] }>
 %G_0x6020e8_type = type <{ [8 x i8] }>
 %G_0x6020f8_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
@@ -40,6 +41,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x602040___rax_1_ = global %G_0x602040___rax_1__type zeroinitializer
 @G_0x6020e8 = local_unnamed_addr global %G_0x6020e8_type zeroinitializer
 @G_0x6020f8 = local_unnamed_addr global %G_0x6020f8_type zeroinitializer
 
@@ -324,7 +326,7 @@ block_.L_400c78:                                  ; preds = %block_400c6c, %bloc
   %176 = phi i64 [ 1, %block_400c6c ], [ %147, %block_400c49 ]
   %177 = phi i64 [ %175, %block_400c6c ], [ %174, %block_400c49 ]
   store i64 %176, i64* %RAX.i70, align 8
-  %178 = add i64 %176, 6299712
+  %178 = add i64 %176, ptrtoint (%G_0x602040___rax_1__type* @G_0x602040___rax_1_ to i64)
   %179 = add i64 %177, 15
   store i64 %179, i64* %3, align 8
   %180 = inttoptr i64 %178 to i8*
@@ -1064,7 +1066,7 @@ block_400478:
   %CL = bitcast %union.anon* %3 to i8*
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %4 = load i64, i64* %RAX, align 8
-  %5 = add i64 %4, 6299712
+  %5 = add i64 %4, ptrtoint (%G_0x602040___rax_1__type* @G_0x602040___rax_1_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8

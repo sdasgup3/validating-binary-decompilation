@@ -479,7 +479,6 @@ block_.L_400ca4:                                  ; preds = %block_.L_400c7c
   store i64 %269, i64* %3, align 8
   %270 = inttoptr i64 %268 to double*
   %271 = load double, double* %270, align 8
-  store double %271, double* %.pre-phi5, align 1
   store double 0.000000e+00, double* %.pre-phi7, align 1
   %RCX.i57 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %272 = bitcast double %271 to i64
@@ -581,7 +580,6 @@ block_.L_400ced:                                  ; preds = %block_.L_400cc5
   store i64 %323, i64* %3, align 8
   %324 = inttoptr i64 %322 to double*
   %325 = load double, double* %324, align 8
-  store double %325, double* %.pre-phi5, align 1
   store double 0.000000e+00, double* %.pre-phi7, align 1
   %RCX.i20 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %326 = bitcast double %325 to i64

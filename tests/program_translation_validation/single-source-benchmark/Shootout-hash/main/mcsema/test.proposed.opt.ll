@@ -241,7 +241,6 @@ block_.L_4009b9:                                  ; preds = %block_.L_4009ac, %b
   %RDI.i132.pre-phi = phi i64* [ %RDI.i155, %block_400997 ], [ %.pre4, %block_.L_4009ac ]
   %EAX.i135.pre-phi = phi i32* [ %EAX.i148, %block_400997 ], [ %EAX.i142, %block_.L_4009ac ]
   %MEMORY.0 = phi %struct.Memory* [ %103, %block_400997 ], [ %2, %block_.L_4009ac ]
-  store i64 %storemerge, i64* %3, align 8
   %117 = load i64, i64* %RBP.i, align 8
   %118 = add i64 %117, -76
   %119 = add i64 %storemerge, 3

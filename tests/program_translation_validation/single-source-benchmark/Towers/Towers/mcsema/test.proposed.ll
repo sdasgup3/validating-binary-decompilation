@@ -458,6 +458,8 @@ declare %struct.Memory* @sub_400580.Makenull(%struct.State* noalias dereferencea
 declare %struct.Memory* @sub_4007f0.tower(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x60f1a4___rcx_8__type = type <{ [4 x i8] }>
+@G_0x60f1a4___rcx_8_= global %G_0x60f1a4___rcx_8__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x60f240_type = type <{ [4 x i8] }>
 @G_0x60f240= global %G_0x60f240_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x615f30_type = type <{ [4 x i8] }>
@@ -1128,7 +1130,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6353316
+  %14 = add i64 %13, ptrtoint( %G_0x60f1a4___rcx_8__type* @G_0x60f1a4___rcx_8_ to i64)
   %15 = load i32, i32* %EAX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC

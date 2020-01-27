@@ -130,15 +130,7 @@ entry:
   %54 = inttoptr i64 %52 to i64*
   %55 = load i64, i64* %54, align 8
   %div = udiv i64 %44, %55
-  %56 = urem i64 %44, %55
   store i64 %div, i64* %RAX.i, align 8
-  store i64 %56, i64* %RDX.i32, align 8
-  store i8 0, i8* %46, align 1
-  store i8 0, i8* %47, align 1
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %48, align 1
-  store i8 0, i8* %49, align 1
-  store i8 0, i8* %50, align 1
   store i64 0, i64* %45, align 8
   store i8 0, i8* %46, align 1
   store i8 1, i8* %47, align 1
@@ -147,21 +139,13 @@ entry:
   store i8 0, i8* %50, align 1
   store i8 0, i8* %51, align 1
   store i64 0, i64* %RDX.i32, align 8
-  %57 = add i64 %39, -24
-  %58 = add i64 %41, 24
-  store i64 %58, i64* %3, align 8
-  %59 = inttoptr i64 %57 to i64*
-  %60 = load i64, i64* %59, align 8
-  %div13 = udiv i64 %div, %60
-  %61 = urem i64 %div, %60
+  %56 = add i64 %39, -24
+  %57 = add i64 %41, 24
+  store i64 %57, i64* %3, align 8
+  %58 = inttoptr i64 %56 to i64*
+  %59 = load i64, i64* %58, align 8
+  %div13 = udiv i64 %div, %59
   store i64 %div13, i64* %RAX.i, align 8
-  store i64 %61, i64* %RDX.i32, align 8
-  store i8 0, i8* %46, align 1
-  store i8 0, i8* %47, align 1
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %48, align 1
-  store i8 0, i8* %49, align 1
-  store i8 0, i8* %50, align 1
   store i64 0, i64* %45, align 8
   store i8 0, i8* %46, align 1
   store i8 1, i8* %47, align 1
@@ -170,21 +154,13 @@ entry:
   store i8 0, i8* %50, align 1
   store i8 0, i8* %51, align 1
   store i64 0, i64* %RDX.i32, align 8
-  %62 = add i64 %39, -32
-  %63 = add i64 %41, 34
-  store i64 %63, i64* %3, align 8
-  %64 = inttoptr i64 %62 to i64*
-  %65 = load i64, i64* %64, align 8
-  %div14 = udiv i64 %div13, %65
-  %66 = urem i64 %div13, %65
+  %60 = add i64 %39, -32
+  %61 = add i64 %41, 34
+  store i64 %61, i64* %3, align 8
+  %62 = inttoptr i64 %60 to i64*
+  %63 = load i64, i64* %62, align 8
+  %div14 = udiv i64 %div13, %63
   store i64 %div14, i64* %RAX.i, align 8
-  store i64 %66, i64* %RDX.i32, align 8
-  store i8 0, i8* %46, align 1
-  store i8 0, i8* %47, align 1
-  store i8 0, i8* %51, align 1
-  store i8 0, i8* %48, align 1
-  store i8 0, i8* %49, align 1
-  store i8 0, i8* %50, align 1
   store i64 0, i64* %45, align 8
   store i8 0, i8* %46, align 1
   store i8 1, i8* %47, align 1
@@ -193,36 +169,36 @@ entry:
   store i8 0, i8* %50, align 1
   store i8 0, i8* %51, align 1
   store i64 0, i64* %RDX.i32, align 8
-  %67 = add i64 %39, -40
-  %68 = add i64 %41, 44
-  store i64 %68, i64* %3, align 8
-  %69 = inttoptr i64 %67 to i64*
-  %70 = load i64, i64* %69, align 8
-  %div15 = udiv i64 %div14, %70
-  %71 = urem i64 %div14, %70
+  %64 = add i64 %39, -40
+  %65 = add i64 %41, 44
+  store i64 %65, i64* %3, align 8
+  %66 = inttoptr i64 %64 to i64*
+  %67 = load i64, i64* %66, align 8
+  %div15 = udiv i64 %div14, %67
+  %68 = urem i64 %div14, %67
   store i64 %div15, i64* %RAX.i, align 8
-  store i64 %71, i64* %RDX.i32, align 8
+  store i64 %68, i64* %RDX.i32, align 8
   store i8 0, i8* %46, align 1
   store i8 0, i8* %47, align 1
   store i8 0, i8* %51, align 1
   store i8 0, i8* %48, align 1
   store i8 0, i8* %49, align 1
   store i8 0, i8* %50, align 1
-  %72 = add i64 %41, 45
-  store i64 %72, i64* %3, align 8
-  %73 = load i64, i64* %6, align 8
-  %74 = add i64 %73, 8
-  %75 = inttoptr i64 %73 to i64*
+  %69 = add i64 %41, 45
+  store i64 %69, i64* %3, align 8
+  %70 = load i64, i64* %6, align 8
+  %71 = add i64 %70, 8
+  %72 = inttoptr i64 %70 to i64*
+  %73 = load i64, i64* %72, align 8
+  store i64 %73, i64* %RBP.i, align 8
+  store i64 %71, i64* %6, align 8
+  %74 = add i64 %41, 46
+  store i64 %74, i64* %3, align 8
+  %75 = inttoptr i64 %71 to i64*
   %76 = load i64, i64* %75, align 8
-  store i64 %76, i64* %RBP.i, align 8
-  store i64 %74, i64* %6, align 8
-  %77 = add i64 %41, 46
-  store i64 %77, i64* %3, align 8
-  %78 = inttoptr i64 %74 to i64*
-  %79 = load i64, i64* %78, align 8
-  store i64 %79, i64* %3, align 8
-  %80 = add i64 %73, 16
-  store i64 %80, i64* %6, align 8
+  store i64 %76, i64* %3, align 8
+  %77 = add i64 %70, 16
+  store i64 %77, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

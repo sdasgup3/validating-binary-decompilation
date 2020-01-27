@@ -456,10 +456,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_4004f0.myadd(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x105__rip__type = type <{ [16 x i8] }>
-@G_0x105__rip_= global %G_0x105__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
-%G_0x188__rip__type = type <{ [16 x i8] }>
-@G_0x188__rip_= global %G_0x188__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x105__rip__4196091__type = type <{ [16 x i8] }>
+@G_0x105__rip__4196091_= global %G_0x105__rip__4196091__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x188__rip__4195968__type = type <{ [16 x i8] }>
 @G_0x188__rip__4195968_= global %G_0x188__rip__4195968__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x253__rip__4195773__type = type <{ [16 x i8] }>
@@ -3392,7 +3390,7 @@ block_400478:
 
 
 define %struct.Memory* @routine_movsd_0x188__rip____xmm0(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
-block_ptrtoint( %G_0x188__rip__4195968__type* @G_0x188__rip__4195968_ to i64)478:
+block_400478:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
   %5 = getelementptr inbounds %struct.Reg, %struct.Reg* %4, i32 0, i32 0
@@ -3404,7 +3402,7 @@ block_ptrtoint( %G_0x188__rip__4195968__type* @G_0x188__rip__4195968_ to i64)478
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x188__rip__type* @G_0x188__rip_ to i64), i64 192))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x188__rip__4195968__type* @G_0x188__rip__4195968_ to i64), i64 192))
   ret %struct.Memory* %11
 }
 
@@ -3898,7 +3896,7 @@ block_400478:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x105__rip__type* @G_0x105__rip_ to i64), i64 61))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x105__rip__4196091__type* @G_0x105__rip__4196091_ to i64), i64 61))
   ret %struct.Memory* %11
 }
 

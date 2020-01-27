@@ -27,6 +27,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %G_0x605050_type = type <{ [4 x i8] }>
 %G_0x605090_type = type <{ [4 x i8] }>
 %G_0x6050a0_type = type <{ [16 x i8] }>
+%G_0x6050a0___rax_8__type = type <{ [16 x i8] }>
 %G__0x402d38_type = type <{ [8 x i8] }>
 %G__0x402d69_type = type <{ [8 x i8] }>
 %G__0x402d95_type = type <{ [8 x i8] }>
@@ -107,6 +108,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @G_0x605050 = global %G_0x605050_type zeroinitializer
 @G_0x605090 = global %G_0x605090_type zeroinitializer
 @G_0x6050a0 = global %G_0x6050a0_type zeroinitializer
+@G_0x6050a0___rax_8_ = global %G_0x6050a0___rax_8__type zeroinitializer
 @G__0x402d38 = global %G__0x402d38_type zeroinitializer
 @G__0x402d69 = global %G__0x402d69_type zeroinitializer
 @G__0x402d95 = global %G__0x402d95_type zeroinitializer
@@ -987,7 +989,7 @@ block_400aef:                                     ; preds = %block_.L_400adf
   %453 = bitcast %"class.std::bitset"* %YMM1.i274 to i8*
   %454 = load i64, i64* %RAX.i273
   %455 = mul i64 %454, 8
-  %456 = add i64 %455, 6312096
+  %456 = add i64 %455, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %457 = load i64, i64* %PC.i272
   %458 = add i64 %457, 9
   store i64 %458, i64* %PC.i272
@@ -1070,7 +1072,7 @@ block_400aef:                                     ; preds = %block_.L_400adf
   %513 = bitcast %"class.std::bitset"* %YMM2.i265 to i8*
   %514 = load i64, i64* %RAX.i264
   %515 = mul i64 %514, 8
-  %516 = add i64 %515, 6312096
+  %516 = add i64 %515, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %517 = load i64, i64* %PC.i263
   %518 = add i64 %517, 9
   store i64 %518, i64* %PC.i263
@@ -1157,7 +1159,7 @@ block_400aef:                                     ; preds = %block_.L_400adf
   %577 = bitcast %"class.std::bitset"* %YMM3.i256 to i8*
   %578 = load i64, i64* %RAX.i255
   %579 = mul i64 %578, 8
-  %580 = add i64 %579, 6312096
+  %580 = add i64 %579, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %581 = load i64, i64* %PC.i254
   %582 = add i64 %581, 9
   store i64 %582, i64* %PC.i254
@@ -1819,7 +1821,7 @@ block_400b93:                                     ; preds = %block_.L_400b83
   %1046 = bitcast %"class.std::bitset"* %YMM0.i198 to i8*
   %1047 = load i64, i64* %RAX.i197
   %1048 = mul i64 %1047, 8
-  %1049 = add i64 %1048, 6312096
+  %1049 = add i64 %1048, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %1050 = load i64, i64* %PC.i196
   %1051 = add i64 %1050, 9
   store i64 %1051, i64* %PC.i196
@@ -1925,7 +1927,7 @@ block_400b93:                                     ; preds = %block_.L_400b83
   %1122 = bitcast %"class.std::bitset"* %YMM0.i186 to i8*
   %1123 = load i64, i64* %RAX.i185
   %1124 = mul i64 %1123, 8
-  %1125 = add i64 %1124, 6312096
+  %1125 = add i64 %1124, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %1126 = load i64, i64* %PC.i184
   %1127 = add i64 %1126, 9
   store i64 %1127, i64* %PC.i184
@@ -2083,7 +2085,7 @@ block_400b93:                                     ; preds = %block_.L_400b83
   %1232 = bitcast %"class.std::bitset"* %YMM0.i168 to i8*
   %1233 = load i64, i64* %RAX.i167
   %1234 = mul i64 %1233, 8
-  %1235 = add i64 %1234, 6312096
+  %1235 = add i64 %1234, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %1236 = load i64, i64* %PC.i166
   %1237 = add i64 %1236, 9
   store i64 %1237, i64* %PC.i166
@@ -2220,7 +2222,7 @@ block_400b93:                                     ; preds = %block_.L_400b83
   %1329 = bitcast %"class.std::bitset"* %YMM0.i154 to i8*
   %1330 = load i64, i64* %RAX.i153
   %1331 = mul i64 %1330, 8
-  %1332 = add i64 %1331, 6312096
+  %1332 = add i64 %1331, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %1333 = load i64, i64* %PC.i152
   %1334 = add i64 %1333, 9
   store i64 %1334, i64* %PC.i152
@@ -4468,7 +4470,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
@@ -4534,7 +4536,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
@@ -4604,7 +4606,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM3 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6312096
+  %14 = add i64 %13, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -5143,7 +5145,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6312096
+  %14 = add i64 %13, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -5299,7 +5301,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %13 = load i64, i64* %RAX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6312096
+  %15 = add i64 %14, ptrtoint (%G_0x6050a0___rax_8__type* @G_0x6050a0___rax_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC

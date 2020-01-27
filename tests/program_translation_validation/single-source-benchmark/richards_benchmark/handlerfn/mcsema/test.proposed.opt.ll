@@ -140,7 +140,11 @@ entry:
   %.v = select i1 %56, i64 58, i64 11
   %60 = add i64 %46, %.v
   store i64 %60, i64* %3, align 8
-  br i1 %56, label %block_.L_400d06, label %block_400cd7
+  br i1 %56, label %entry.block_.L_400d06_crit_edge, label %block_400cd7
+
+entry.block_.L_400d06_crit_edge:                  ; preds = %entry
+  %.pre11 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
+  br label %block_.L_400d06
 
 block_400cd7:                                     ; preds = %entry
   %RAX.i105 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
@@ -204,9 +208,10 @@ block_400cd7:                                     ; preds = %entry
   %.pre = load i64, i64* %3, align 8
   br label %block_.L_400d06
 
-block_.L_400d06:                                  ; preds = %block_400cd7, %entry
-  %96 = phi i64 [ %60, %entry ], [ %.pre, %block_400cd7 ]
-  %MEMORY.0 = phi %struct.Memory* [ %2, %entry ], [ %call2_400d01, %block_400cd7 ]
+block_.L_400d06:                                  ; preds = %entry.block_.L_400d06_crit_edge, %block_400cd7
+  %.pre7.pre-phi = phi i64* [ %.pre11, %entry.block_.L_400d06_crit_edge ], [ %RAX.i105, %block_400cd7 ]
+  %96 = phi i64 [ %60, %entry.block_.L_400d06_crit_edge ], [ %.pre, %block_400cd7 ]
+  %MEMORY.0 = phi %struct.Memory* [ %2, %entry.block_.L_400d06_crit_edge ], [ %call2_400d01, %block_400cd7 ]
   %97 = load i64, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
   store i8 0, i8* %14, align 1
   %98 = trunc i64 %97 to i32
@@ -227,11 +232,10 @@ block_.L_400d06:                                  ; preds = %block_400cd7, %entr
   %.v8 = select i1 %104, i64 186, i64 15
   %108 = add i64 %96, %.v8
   store i64 %108, i64* %3, align 8
-  %.pre7 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   br i1 %104, label %block_.L_400dc0, label %block_400d15
 
 block_400d15:                                     ; preds = %block_.L_400d06
-  store i64 %97, i64* %.pre7, align 8
+  store i64 %97, i64* %.pre7.pre-phi, align 8
   %109 = load i64, i64* %RBP.i, align 8
   %110 = add i64 %109, -32
   %111 = add i64 %108, 12
@@ -245,7 +249,7 @@ block_400d15:                                     ; preds = %block_.L_400d06
   store i64 %116, i64* %3, align 8
   %117 = inttoptr i64 %114 to i64*
   %118 = load i64, i64* %117, align 8
-  store i64 %118, i64* %.pre7, align 8
+  store i64 %118, i64* %.pre7.pre-phi, align 8
   %RCX.i77 = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %119 = add i64 %118, 16
   %120 = add i64 %115, 7
@@ -303,12 +307,12 @@ block_400d15:                                     ; preds = %block_.L_400d06
 
 block_400d35:                                     ; preds = %block_400d15
   %158 = load i64, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
-  store i64 %158, i64* %.pre7, align 8
+  store i64 %158, i64* %.pre7.pre-phi, align 8
   %159 = add i64 %157, 11
   store i64 %159, i64* %3, align 8
   %160 = inttoptr i64 %158 to i64*
   %161 = load i64, i64* %160, align 8
-  store i64 %161, i64* %.pre7, align 8
+  store i64 %161, i64* %.pre7.pre-phi, align 8
   store i64 %161, i64* bitcast (%G_0x6020e8_type* @G_0x6020e8 to i64*), align 8
   %162 = add i64 %127, -32
   %163 = add i64 %157, 23
@@ -327,7 +331,7 @@ block_400d35:                                     ; preds = %block_400d15
   %call2_400d4c = tail call %struct.Memory* @sub_4009f0.qpkt(%struct.State* %0, i64 %166, %struct.Memory* %MEMORY.0)
   %171 = load i64, i64* %RBP.i, align 8
   %172 = add i64 %171, -8
-  %173 = load i64, i64* %.pre7, align 8
+  %173 = load i64, i64* %.pre7.pre-phi, align 8
   %174 = load i64, i64* %3, align 8
   %175 = add i64 %174, 4
   store i64 %175, i64* %3, align 8
@@ -369,12 +373,12 @@ block_400d69:                                     ; preds = %block_.L_400d5a
   store i64 %179, i64* %193, align 8
   %194 = load i64, i64* %3, align 8
   %195 = load i64, i64* bitcast (%G_0x6020f8_type* @G_0x6020f8 to i64*), align 8
-  store i64 %195, i64* %.pre7, align 8
+  store i64 %195, i64* %.pre7.pre-phi, align 8
   %196 = add i64 %194, 11
   store i64 %196, i64* %3, align 8
   %197 = inttoptr i64 %195 to i64*
   %198 = load i64, i64* %197, align 8
-  store i64 %198, i64* %.pre7, align 8
+  store i64 %198, i64* %.pre7.pre-phi, align 8
   store i64 %198, i64* bitcast (%G_0x6020f8_type* @G_0x6020f8 to i64*), align 8
   %199 = load i64, i64* %RBP.i, align 8
   %200 = add i64 %199, -32
@@ -382,7 +386,7 @@ block_400d69:                                     ; preds = %block_.L_400d5a
   store i64 %201, i64* %3, align 8
   %202 = inttoptr i64 %200 to i64*
   %203 = load i64, i64* %202, align 8
-  store i64 %203, i64* %.pre7, align 8
+  store i64 %203, i64* %.pre7.pre-phi, align 8
   %204 = add i64 %199, -20
   %205 = add i64 %194, 27
   store i64 %205, i64* %3, align 8
@@ -405,7 +409,7 @@ block_400d69:                                     ; preds = %block_.L_400d5a
   store i64 %217, i64* %3, align 8
   %218 = inttoptr i64 %216 to i64*
   %219 = load i64, i64* %218, align 8
-  store i64 %219, i64* %.pre7, align 8
+  store i64 %219, i64* %.pre7.pre-phi, align 8
   %220 = add i64 %219, 16
   %221 = sext i8 %213 to i32
   %222 = add i64 %194, 39
@@ -454,7 +458,7 @@ block_400d69:                                     ; preds = %block_.L_400d5a
   store i64 %254, i64* %3, align 8
   %255 = inttoptr i64 %253 to i64*
   %256 = load i64, i64* %255, align 8
-  store i64 %256, i64* %.pre7, align 8
+  store i64 %256, i64* %.pre7.pre-phi, align 8
   %257 = add i64 %256, 16
   %258 = add i64 %226, 13
   store i64 %258, i64* %3, align 8
@@ -479,7 +483,7 @@ block_400d69:                                     ; preds = %block_.L_400d5a
   %call2_400dad = tail call %struct.Memory* @sub_4009f0.qpkt(%struct.State* %0, i64 %266, %struct.Memory* %MEMORY.0)
   %271 = load i64, i64* %RBP.i, align 8
   %272 = add i64 %271, -8
-  %273 = load i64, i64* %.pre7, align 8
+  %273 = load i64, i64* %.pre7.pre-phi, align 8
   %274 = load i64, i64* %3, align 8
   %275 = add i64 %274, 4
   store i64 %275, i64* %3, align 8
@@ -508,7 +512,7 @@ block_.L_400dc0:                                  ; preds = %block_.L_400d06, %b
   %call2_400dc0 = tail call %struct.Memory* @sub_4008a0.Wait(%struct.State* %0, i64 %281, %struct.Memory* %MEMORY.0)
   %286 = load i64, i64* %RBP.i, align 8
   %287 = add i64 %286, -8
-  %288 = load i64, i64* %.pre7, align 8
+  %288 = load i64, i64* %.pre7.pre-phi, align 8
   %289 = load i64, i64* %3, align 8
   %290 = add i64 %289, 4
   store i64 %290, i64* %3, align 8
@@ -526,7 +530,7 @@ block_.L_400dc9:                                  ; preds = %block_.L_400dc0, %b
   store i64 %295, i64* %3, align 8
   %296 = inttoptr i64 %294 to i64*
   %297 = load i64, i64* %296, align 8
-  store i64 %297, i64* %.pre7, align 8
+  store i64 %297, i64* %.pre7.pre-phi, align 8
   %298 = load i64, i64* %6, align 8
   %299 = add i64 %298, 48
   store i64 %299, i64* %6, align 8

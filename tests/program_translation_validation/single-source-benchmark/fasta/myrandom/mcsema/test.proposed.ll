@@ -457,8 +457,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 ; Data Access Globals
 %G_0x602100_type = type <{ [8 x i8] }>
 @G_0x602100= global %G_0x602100_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0xfc__rip__type = type <{ [16 x i8] }>
-@G_0xfc__rip_= global %G_0xfc__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0xfc__rip__4197052__type = type <{ [16 x i8] }>
+@G_0xfc__rip__4197052_= global %G_0xfc__rip__4197052__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @myrandom(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -674,7 +674,7 @@ block_400478:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0xfc__rip__type* @G_0xfc__rip_ to i64), i64 52))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0xfc__rip__4197052__type* @G_0xfc__rip__4197052_ to i64), i64 52))
   ret %struct.Memory* %11
 }
 

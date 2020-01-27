@@ -200,8 +200,6 @@ CompositionalDecompiler::uniquifyFuncDefns(const vector<string> &local_defn) {
 
 vector<string>
 CompositionalDecompiler::collectDeclarations(const vector<string> &local_defn) {
-  bool skipFunction = false;
-
   std::smatch m;
   size_t i = 0;
   for (auto &line : local_defn) {
@@ -399,8 +397,6 @@ CompositionalDecompiler::handleCALLDefns(const vector<string> &local_defn) {
 vector<string> CompositionalDecompiler::handleInstrSizeMismatch(
     const vector<string> &local_defn, uint64_t currSize) {
   vector<string> retval;
-  bool funcSignature = true;
-  int count = 0;
 
   std::smatch m;
   auto sanity_search = ", " + to_string(currSize) + "$";
@@ -493,36 +489,37 @@ bool CompositionalDecompiler::checkConstantOrAddress(uint64_t currRIP,
   }
 
   return false;
-  // redi::ipstream *stream = NULL;
-  // stringstream cmd;
-  // cmd << scriptsPath << "/find_pc_in_relocinfo.pl --binary " << binaryPath
-  //     << " --pc " << hex << currRIP << " --size " << dec << currSize;
-  // vector<string> result;
-  // if (!stoke::run_command(cmd.str(), true, &stream)) {
-  //   Console::error(1) << "Error: " << get_error() << endl;
-  //   return false;
-  // }
+}
 
-  // extractFromStream(result, *stream, false, true);
-  // if (result.size() != 1) {
-  //   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
-  //                        "find_pc_in_relocinfo returns multi-line garbase"
-  //                     << endl;
-  //   exit(1);
-  // }
+std::pair<string, string>
+CompositionalDecompiler::createGlobalName(const string &expr, uint64_t currRIP,
+                                          uint64_t currSize,
+                                          uint16_t accessSize) {
+  /* Create globals variables */
+  string addrExpr = normalize_spaces(expr);
+  // For example,
+  // movsd 0xa43c(%rip), %xmm1
+  // movsd 0xa43c(%rip), %xmm2
+  // We have no way to distinguish the above two globals which for both
+  // the cases is G_0xa43c__rip__type* @G_0xa43c__rip_
+  // To make 'em distinct, we add the rip value to the type and global
+  // var.
+  auto effective_rip_str = "_rip__" + to_string(currRIP + currSize);
+  addrExpr = regex_replace(addrExpr, regex("_rip"), effective_rip_str);
 
-  // if (result[0] == "address") {
-  //   return true;
-  // } else if (result[0] == "constant") {
-  //   return false;
-  // } else {
-  //   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
-  //                        "find_pc_in_relocinfo returns single-line garbage"
-  //                     << endl;
-  //   exit(1);
-  // }
+  if (DataSectioGlobalsCache.count(addrExpr)) {
+    uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+    if (accessSize > pastSize) {
+      DataSectioGlobalsCache[addrExpr] = accessSize;
+    }
+  } else {
+    DataSectioGlobalsCache[addrExpr] = accessSize;
+  }
 
-  // return false;
+  string globalType = "%G_" + addrExpr + "_type";
+  string globalName = "@G_" + addrExpr;
+
+  return pair<string, string>(globalType, globalName);
 }
 
 /*
@@ -563,30 +560,34 @@ insruction decompilation involving data acccess.
 vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
     x64asm::Instruction instr, const vector<string> &local_defn,
     uint64_t currRIP, uint64_t currSize) {
+  if (!reloc_info_available) {
+    Console::error(1) << "Use binary with reloation information" << endl;
+  }
+
+  bool isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
   vector<string> retval;
   stringstream opr;
 
   // Extract the data access operand
   bool is_mem_opr_rip_offset = false;
-  int32_t rip_disp = 0;
+  // int32_t rip_disp = 0;
+  int32_t disp = 0;
   if (is_any_operand_mem_type(instr)) {
-    // For data accesses like movsd 0xc8(%rip), %xmm0
-    // Single instr decompilation should always generate a ptr2int
-    // But it does.
+    // For data accesses like
+    //  movsd Addr(%rip), %xmm0
+    //  cvttsd2si Addr(%rip), %edi
+    //  mov Constant, (%rbp); no need to handle
     auto memIndex = instr.mem_index();
     const Mem &M_OPR = instr.get_operand<Mem>(memIndex);
     is_mem_opr_rip_offset = M_OPR.rip_offset();
-    if (is_mem_opr_rip_offset) {
-      rip_disp = M_OPR.get_disp();
-    }
+    disp = M_OPR.get_disp();
     opr << M_OPR;
-
   } else if (is_any_operand_imm_type(instr)) {
+    // For data accesses like
+    //  movq Addr, %rdi
     auto immIndex = instr.imm_index();
     const Imm &IMM_OPR = instr.get_operand<Imm>(immIndex);
     opr << IMM_OPR;
-    // cout << opr.str() << "\n";
-
   } else {
     // TO DO
   }
@@ -595,86 +596,39 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
   // auto accessSize = instr.get_operand<Operand>(instr.arity() - 1).size();
   auto accessSize = instr.get_operand<Operand>(0).size();
 
-  // If relocation information is NOT available, then be at the mercy of
-  // decompiler
-  // and borrow its inderence on global data access. Note that McSema's single
-  // instruction
-  // decompilation could be incorrect (as it lacks the whole program context)
-  // and
-  // we will be inheriting those wrong decompilations.
-
-  std::smatch m;
-  if (!reloc_info_available) {
-    // for (auto &line : local_defn) {
-
-    //   if (regex_search(line, m, regex("ptrtoint"))) {
-
-    //     string addrExpr = normalize_spaces(opr.str());
-
-    //     if (DataSectioGlobalsCache.count(addrExpr)) {
-    //       uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
-    //       if (accessSize > pastSize) {
-    //         DataSectioGlobalsCache[addrExpr] = accessSize;
-    //       }
-    //     } else {
-    //       DataSectioGlobalsCache[addrExpr] = accessSize;
-    //     }
-
-    //     string globalType = "%G_" + addrExpr + "_type";
-    //     string globalName = "@G_" + addrExpr;
-
-    //     auto replace_str =
-    //         "ptrtoint( " + globalType + "* " + globalName + " to";
-    //     auto repl_line =
-    //         regex_replace(line, regex("ptrtoint.*?to"), replace_str);
-    //     retval.push_back(repl_line);
-
-    //     continue;
-    //   }
-    //   retval.push_back(line);
-    // }
-
-    // return retval;
-    Console::error(1) << "Use binary with reloation information" << endl;
-  }
-
   // If relocation information is available, then do the right thing!
   bool immOperand = false;
-  bool isGlobalAccess = false;
   uint64_t hexInt = 0;
   string hexIntStr = "";
 
   if (is_hex_string(opr.str())) {
     immOperand = true;
-    isGlobalAccess = checkConstantOrAddress(currRIP, currSize);
     hexInt = hex_to_int(opr.str());
     hexIntStr = to_string(hexInt);
-  }
-
-  if (is_mem_opr_rip_offset) {
+  } else if (is_mem_opr_rip_offset) {
     isGlobalAccess = true;
-    hexInt = currSize + rip_disp;
+    hexInt = currSize + disp;
     hexIntStr = to_string(hexInt);
+  } else if (isGlobalAccess && disp != 0) {
+    hexInt = disp;
+    hexIntStr = to_string(hexInt);
+  } else {
+    // hack to accomodate the case
+    // movq Addr, (%rdi)
+    isGlobalAccess = false;
   }
 
+  /* Modify single-instruction decompilation IR sequences to accomodate various
+   * globall access changes*/
+  std::smatch m;
   for (auto &line : local_defn) {
-
     if (regex_search(line, m, regex("ptrtoint"))) {
-      string addrExpr = normalize_spaces(opr.str());
-
-      if (DataSectioGlobalsCache.count(addrExpr)) {
-        uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
-        if (accessSize > pastSize) {
-          DataSectioGlobalsCache[addrExpr] = accessSize;
-        }
-      } else {
-        DataSectioGlobalsCache[addrExpr] = accessSize;
-      }
-
-      string globalType = "%G_" + addrExpr + "_type";
-      string globalName = "@G_" + addrExpr;
 
       if (!immOperand) {
+        auto gName = createGlobalName(opr.str(), currRIP, currSize, accessSize);
+        auto globalType = gName.first;
+        auto globalName = gName.second;
+
         auto replace_str =
             "ptrtoint( " + globalType + "* " + globalName + " to";
         auto repl_line =
@@ -689,6 +643,18 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
         Console::msg() << "Global Access Fix: " << hexIntStr
                        << " Relocation: Address, McSema: Address" << endl;
 
+        auto gName = createGlobalName(opr.str(), currRIP, currSize, accessSize);
+        auto globalType = gName.first;
+        auto globalName = gName.second;
+
+        // For movsd 0xb6(%rip), %xmm1
+        // Mcsema SIV generates:
+        // %11 = call %struct.Memory*
+        // @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory*
+        // %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint
+        // (%seg_400514__eh_frame_hdr_type* @seg_400514__eh_frame_hdr to i64),
+        // i64 34))
+        // where we need to replace the ptrtoint.* with the defined globals.
         auto replace_str =
             "ptrtoint( " + globalType + "* " + globalName + " to";
         auto repl_line =
@@ -713,43 +679,38 @@ vector<string> CompositionalDecompiler::handleDataSectionAccessDefns(
         Console::msg() << "Global Access Mismatch: " << hexIntStr
                        << " Relocation: Address, McSema: Constant" << endl;
 
-        string addrExpr = normalize_spaces(opr.str());
+        auto gName = createGlobalName(opr.str(), currRIP, currSize, accessSize);
+        auto globalType = gName.first;
+        auto globalName = gName.second;
 
-        /* For example,
-           movsd 0xa43c(%rip), %xmm1
-           movsd 0xa43c(%rip), %xmm2
-           We have no way to distinguish the above two globals which for both
-           the cases is G_0xa43c__rip__type* @G_0xa43c__rip_
-           To make 'em distinct, we add the rip value to the type and global
-           var.
-        */
-        auto effective_rip_str = "_rip__" + to_string(currRIP + currSize);
-        addrExpr = regex_replace(addrExpr, regex("_rip"), effective_rip_str);
-
-        if (DataSectioGlobalsCache.count(addrExpr)) {
-          uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
-          if (accessSize > pastSize) {
-            DataSectioGlobalsCache[addrExpr] = accessSize;
-          }
+        //  cvttsd2si 0x20aa62(%rip), %edi
+        //  Mcsema SIV generates: %7 = add i64 %PC, hexIntStr
+        //  , where the entire add needed to be replaced in order
+        // to match the mcsema decompilation.
+        // lly for movsd 0xa95(%rip), %xmm0
+        // Mcsema SIV generates:
+        // %9 = load i64, i64* %PC
+        // %10 = add i64 %9, 2717
+        // where the entire add need to be replaced.
+        string repl_line = line;
+        if (is_mem_opr_rip_offset) {
+          auto replace_str1 =
+              "ptrtoint " + globalType + "* " + globalName + " to i64";
+          repl_line = regex_replace(line, regex("add.*"), replace_str1);
         } else {
-          DataSectioGlobalsCache[addrExpr] = accessSize;
+          //  movl Off, edi
+          // Mcsema SIV generates:
+          // %11 = call %struct.Memory* @CALL(%struct.Memory* %2, %struct.State*
+          // %0, i64* %RDI, i64 4196052)
+          //
+          //  or cmpl 0x610250(,%rcx,4), %eax
+          // Mcsema SIV generates:  %16 = add i64 %15, 6357584
+          //
+          // In both the cases we need to replace the constant only.
+          auto replace_str2 =
+              "ptrtoint( " + globalType + "* " + globalName + " to i64)";
+          repl_line = regex_replace(repl_line, regex(hexIntStr), replace_str2);
         }
-
-        string globalType = "%G_" + addrExpr + "_type";
-        string globalName = "@G_" + addrExpr;
-
-        //  Off(%rip)
-        //  %7 = add i64 %PC, hexIntStr
-        auto replace_str1 =
-            "ptrtoint " + globalType + "* " + globalName + " to i64";
-        auto repl_line = regex_replace(line, regex("add .*"), replace_str1);
-
-        //  movl Off, edi
-        // %11 = call %struct.Memory* @CALL(%struct.Memory* %2, %struct.State*
-        // %0, i64* %RDI, i64 4196052)
-        auto replace_str2 =
-            "ptrtoint( " + globalType + "* " + globalName + " to i64)";
-        repl_line = regex_replace(repl_line, regex(hexIntStr), replace_str2);
 
         retval.push_back(repl_line);
       } else {
@@ -1640,3 +1601,74 @@ vector<string> split(const std::string &str, char delim) {
 //    << isBuiltIn.second << " to i64), %struct.Memory* %2)" << endl
 //    << "  ret %struct.Memory* %4" << endl
 //    << "}" << endl;
+
+// If relocation information is NOT available, then be at the mercy of
+// decompiler
+// and borrow its inderence on global data access. Note that McSema's single
+// instruction
+// decompilation could be incorrect (as it lacks the whole program context)
+// and
+// we will be inheriting those wrong decompilations.
+// if (!reloc_info_available) {
+// for (auto &line : local_defn) {
+
+//   if (regex_search(line, m, regex("ptrtoint"))) {
+
+//     string addrExpr = normalize_spaces(opr.str());
+
+//     if (DataSectioGlobalsCache.count(addrExpr)) {
+//       uint16_t pastSize = DataSectioGlobalsCache.at(addrExpr);
+//       if (accessSize > pastSize) {
+//         DataSectioGlobalsCache[addrExpr] = accessSize;
+//       }
+//     } else {
+//       DataSectioGlobalsCache[addrExpr] = accessSize;
+//     }
+
+//     string globalType = "%G_" + addrExpr + "_type";
+//     string globalName = "@G_" + addrExpr;
+
+//     auto replace_str =
+//         "ptrtoint( " + globalType + "* " + globalName + " to";
+//     auto repl_line =
+//         regex_replace(line, regex("ptrtoint.*?to"), replace_str);
+//     retval.push_back(repl_line);
+
+//     continue;
+//   }
+//   retval.push_back(line);
+// }
+
+// return retval;
+// Console::error(1) << "Use binary with reloation information" << endl;
+// }
+// redi::ipstream *stream = NULL;
+// stringstream cmd;
+// cmd << scriptsPath << "/find_pc_in_relocinfo.pl --binary " << binaryPath
+//     << " --pc " << hex << currRIP << " --size " << dec << currSize;
+// vector<string> result;
+// if (!stoke::run_command(cmd.str(), true, &stream)) {
+//   Console::error(1) << "Error: " << get_error() << endl;
+//   return false;
+// }
+
+// extractFromStream(result, *stream, false, true);
+// if (result.size() != 1) {
+//   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+//                        "find_pc_in_relocinfo returns multi-line garbase"
+//                     << endl;
+//   exit(1);
+// }
+
+// if (result[0] == "address") {
+//   return true;
+// } else if (result[0] == "constant") {
+//   return false;
+// } else {
+//   Console::error(1) << "CompositionalDecompiler::checkConstantOrAddress::"
+//                        "find_pc_in_relocinfo returns single-line garbage"
+//                     << endl;
+//   exit(1);
+// }
+
+// return false;

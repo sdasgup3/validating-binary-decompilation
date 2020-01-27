@@ -456,6 +456,10 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 declare %struct.Memory* @sub_400550.bInitarr(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
+%G_0x60f290___rax_4__type = type <{ [4 x i8] }>
+@G_0x60f290___rax_4_= global %G_0x60f290___rax_4__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x60f290___rcx_4__type = type <{ [4 x i8] }>
+@G_0x60f290___rcx_4_= global %G_0x60f290___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x60f294_type = type <{ [4 x i8] }>
 @G_0x60f294= global %G_0x60f294_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x60fa60_type = type <{ [4 x i8] }>
@@ -1347,7 +1351,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6353552
+  %14 = add i64 %13, ptrtoint( %G_0x60f290___rax_4__type* @G_0x60f290___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC
@@ -1493,7 +1497,7 @@ block_400478:
   %13 = zext i32 %12 to i64
   %14 = load i64, i64* %RAX
   %15 = mul i64 %14, 4
-  %16 = add i64 %15, 6353552
+  %16 = add i64 %15, ptrtoint( %G_0x60f290___rax_4__type* @G_0x60f290___rax_4_ to i64)
   %17 = load i64, i64* %PC
   %18 = add i64 %17, 7
   store i64 %18, i64* %PC
@@ -1637,7 +1641,7 @@ block_400478:
   %RAX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6353552
+  %14 = add i64 %13, ptrtoint( %G_0x60f290___rax_4__type* @G_0x60f290___rax_4_ to i64)
   %15 = load i32, i32* %ECX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC
@@ -2172,7 +2176,7 @@ block_400478:
   %RSI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6353552
+  %14 = add i64 %13, ptrtoint( %G_0x60f290___rcx_4__type* @G_0x60f290___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC

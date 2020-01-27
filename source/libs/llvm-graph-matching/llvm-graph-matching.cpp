@@ -80,6 +80,7 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   if (I1->getOpcode() != I2->getOpcode())
     return false;
 
+  llvm::errs() << *I2 << "\n";
   // Arity Match
   size_t arityCount1 = G1->getAdj(I1).size();
   size_t arityCount2 = G2->getAdj(I2).size();
@@ -161,7 +162,8 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
     //  VertexSet.push_back(&*I1);
     //}
     // VertexSet.push_back(&*I1);
-    // dumpLLVMNode(&*I1);
+    llvm::errs() << *I1;
+    llvm::errs() << "Checking: \n";
 
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
       if (deepMatch(&*I1, &*I2)) {
@@ -1163,6 +1165,16 @@ int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
     if (LE->getOpcode() == RE->getOpcode() &&
         LE->getOpcode() == Instruction::PtrToInt)
       return 0;
+
+    if (LE->getOpcode() != RE->getOpcode() &&
+        ((LE->getOpcode() == Instruction::PtrToInt &&
+          RE->getOpcode() == Instruction::Add) ||
+         (LE->getOpcode() == Instruction::Add &&
+          RE->getOpcode() == Instruction::PtrToInt)))
+      return 0;
+
+    llvm::errs() << LE->getOpcode() << "\n";
+    llvm::errs() << RE->getOpcode() << "\n";
 
     unsigned NumOperandsL = LE->getNumOperands();
     unsigned NumOperandsR = RE->getNumOperands();

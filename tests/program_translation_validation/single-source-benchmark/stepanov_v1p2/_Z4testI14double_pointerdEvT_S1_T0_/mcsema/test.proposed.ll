@@ -463,6 +463,8 @@ declare %struct.Memory* @sub_401390._Z5timerv(%struct.State* noalias dereference
 @G_0x605050= global %G_0x605050_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x605090_type = type <{ [4 x i8] }>
 @G_0x605090= global %G_0x605090_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x6050a0___rdx_8__type = type <{ [8 x i8] }>
+@G_0x6050a0___rdx_8_= global %G_0x6050a0___rdx_8__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @_Z4testI14double_pointerdEvT_S1_T0_(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -1557,7 +1559,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RDX
   %12 = mul i64 %11, 8
-  %13 = add i64 %12, 6312096
+  %13 = add i64 %12, ptrtoint( %G_0x6050a0___rdx_8__type* @G_0x6050a0___rdx_8_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9

@@ -459,8 +459,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 @G_0x603064= global %G_0x603064_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x603068_type = type <{ [8 x i8] }>
 @G_0x603068= global %G_0x603068_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
-%G_0xed__rip__type = type <{ [16 x i8] }>
-@G_0xed__rip_= global %G_0xed__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0xed__rip__4201667__type = type <{ [16 x i8] }>
+@G_0xed__rip__4201667_= global %G_0xed__rip__4201667__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @second(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -1323,7 +1323,7 @@ block_400478:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0xed__rip__type* @G_0xed__rip_ to i64), i64 37))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSD_MEMI3VnWI8vec128_tE3MVnI7vec64_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0xed__rip__4201667__type* @G_0xed__rip__4201667_ to i64), i64 37))
   ret %struct.Memory* %11
 }
 

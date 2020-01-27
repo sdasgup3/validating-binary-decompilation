@@ -4,7 +4,7 @@
 |  toy-examples (90)|  -O0 |  Mem edges only | Naive | O3       | \*77/13   | same with ssa edges | A.1 |
 |                   |  -O0 |  Mem edges only | Naive | custom   | 81/7   | same with ssa edges | A.2 |
 |  single-source (3021)|  -O0 |  Mem edges only | Naive | O3     | \*2544/477 | 2555/507 with ssa edges| B.1|
-|                      |  -O0 |  Mem edges only | Naive | custom | 2832/189 | 2791/271 with ssa edges|  B.2|
+|                      |  -O0 |  Mem edges only | Naive | custom | 2901/120 | 2791/271 with ssa edges|  B.2|
 |  spec2006 (3870 partial)|  -O0 |  Mem edges only | Naive | O3 | \*2065/1805 | saved in matchPass\_1 | C.1 |
 |                         |  -O0 |  Mem edges only | Naive | custom | 2262/1608 | saved in matchPass\_2 | C.2|
 
@@ -50,7 +50,7 @@ cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee d
 
 ## Check binary size (optional)
 ```
-cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/mcsema/compd.log | wc -l"
+cat docs/matchFail_2.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q' {}/mcsema/compd.log | wc -l"
 ```
 
 
@@ -95,8 +95,8 @@ cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q
   # export BIN_OPT=O0
   unset NORM
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+  cat docs/matchPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
+  cat docs/matchPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
   ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
   ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
  ```
@@ -118,8 +118,8 @@ cat docs/matchPass.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done/q
   unset NORM
 
   cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+  cat docs/matchFail_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
+  cat docs/matchFail_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
   ../../scripts/triage.sh Pass  docs/match_2.log  spec2006 &> docs/matchPass_2.log
   ../../scripts/triage.sh Fail  docs/match_2.log  spec2006 &> docs/matchFail_2.log
  ```

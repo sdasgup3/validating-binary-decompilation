@@ -72,7 +72,9 @@ for my $tline (@lines) {
     if (    $rela_address_unsigned >= $instr_start
         and $rela_address_unsigned < $instr_end )
     {
-        print "address";
+        print "address\n";
+        print $offset . " within [" . $instr_start . " - " . $instr_end . "]\n";
+
         exit 0;
     }
 }

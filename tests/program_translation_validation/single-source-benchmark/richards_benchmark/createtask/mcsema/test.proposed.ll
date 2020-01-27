@@ -455,6 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
+%G_0x602070___rdx_8__type = type <{ [8 x i8] }>
+@G_0x602070___rdx_8_= global %G_0x602070___rdx_8__type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020c8_type = type <{ [8 x i8] }>
 @G_0x6020c8= global %G_0x6020c8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 
@@ -1254,7 +1256,7 @@ block_400478:
   %RDX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RDX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6299760
+  %14 = add i64 %13, ptrtoint( %G_0x602070___rdx_8__type* @G_0x602070___rdx_8_ to i64)
   %15 = load i64, i64* %RAX
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 8

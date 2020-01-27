@@ -16,6 +16,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400510__rodata_type = type <{ [4 x i8] }>
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
+%G_0x60f290___rcx_4__type = type <{ [4 x i8] }>
 %G_0x60f294_type = type <{ [4 x i8] }>
 %G_0x6140b0_type = type <{ [4 x i8] }>
 %G_0x615b14_type = type <{ [4 x i8] }>
@@ -84,6 +85,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400510__rodata = internal constant %seg_400510__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
 @seg_400514__eh_frame_hdr = internal constant %seg_400514__eh_frame_hdr_type <{ [52 x i8] c"\01\1B\03;0\00\00\00\05\00\00\00|\FE\FF\FFL\00\00\00\AC\FE\FF\FFx\00\00\00d\FF\FF\FF\8C\00\00\00|\FF\FF\FF\A4\00\00\00\EC\FF\FF\FF\EC\00\00\00" }>
 @seg_400548__eh_frame = internal constant %seg_400548__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\0B\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
+@G_0x60f290___rcx_4_ = global %G_0x60f290___rcx_4__type zeroinitializer
 @G_0x60f294 = global %G_0x60f294_type zeroinitializer
 @G_0x6140b0 = global %G_0x6140b0_type zeroinitializer
 @G_0x615b14 = global %G_0x615b14_type zeroinitializer
@@ -903,7 +905,7 @@ block_.L_4007e5:                                  ; preds = %block_.L_4007d1, %b
   %RSI.i = bitcast %union.anon* %403 to i64*
   %404 = load i64, i64* %RCX.i
   %405 = mul i64 %404, 4
-  %406 = add i64 %405, 6353552
+  %406 = add i64 %405, ptrtoint (%G_0x60f290___rcx_4__type* @G_0x60f290___rcx_4_ to i64)
   %407 = load i64, i64* %PC.i12
   %408 = add i64 %407, 7
   store i64 %408, i64* %PC.i12
@@ -1711,7 +1713,7 @@ block_400478:
   %RSI = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6353552
+  %14 = add i64 %13, ptrtoint (%G_0x60f290___rcx_4__type* @G_0x60f290___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 7
   store i64 %16, i64* %PC

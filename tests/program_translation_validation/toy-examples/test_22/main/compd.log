@@ -1,6 +1,0 @@
-WARNING: Cannot parse function 'main', skipping.  Error(s): Could not encode 'fld    %st(0)' within 2 bytes.
-FATAL ERROR: CFG not yet created!
-decompiler: /home/ubuntu/Github/stoke-develop/src/ext/cpputil/include/io/abort.h:35: void cpputil::Abort::operator()(std::streambuf*, char): Assertion `false' failed.
-Command terminated by signal 6
-0.01user 0.01system 0:00.20elapsed 16%CPU (0avgtext+0avgdata 9664maxresident)k
-0inputs+8outputs (0major+1886minor)pagefaults 0swaps

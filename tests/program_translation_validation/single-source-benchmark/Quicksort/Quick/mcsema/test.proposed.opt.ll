@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x60f290___rcx_4__type = type <{ [4 x i8] }>
 %G_0x60f294_type = type <{ [4 x i8] }>
 %G_0x6140b0_type = type <{ [4 x i8] }>
 %G_0x615b14_type = type <{ [4 x i8] }>
@@ -45,6 +46,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x60f290___rcx_4_ = global %G_0x60f290___rcx_4__type zeroinitializer
 @G_0x60f294 = local_unnamed_addr global %G_0x60f294_type zeroinitializer
 @G_0x6140b0 = local_unnamed_addr global %G_0x6140b0_type zeroinitializer
 @G_0x615b14 = local_unnamed_addr global %G_0x615b14_type zeroinitializer
@@ -315,7 +317,7 @@ block_.L_4007e5:                                  ; preds = %block_4007bd.block_
   %156 = sext i32 %133 to i64
   store i64 %156, i64* %RCX.i15, align 8
   %157 = shl nsw i64 %156, 2
-  %158 = add nsw i64 %157, 6353552
+  %158 = add i64 %157, ptrtoint (%G_0x60f290___rcx_4__type* @G_0x60f290___rcx_4_ to i64)
   %159 = add i64 %127, 26
   store i64 %159, i64* %3, align 8
   %160 = inttoptr i64 %158 to i32*
@@ -855,7 +857,7 @@ block_400478:
   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %3 = load i64, i64* %RCX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6353552
+  %5 = add i64 %4, ptrtoint (%G_0x60f290___rcx_4__type* @G_0x60f290___rcx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8

@@ -4,7 +4,16 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x603480___rax_4__type = type <{ [4 x i8] }>
+%G_0x603480___rcx_4__type = type <{ [4 x i8] }>
+%G_0x603480___rdx_4__type = type <{ [4 x i8] }>
+%G_0x603880___rcx_4__type = type <{ [4 x i8] }>
+%G_0x603880___rdi_4__type = type <{ [4 x i8] }>
 %G_0x603c80_type = type <{ [8 x i8] }>
+%G_0x603c80___rax_4__type = type <{ [8 x i8] }>
+%G_0x603c80___rcx_4__type = type <{ [4 x i8] }>
+%G_0x603c80___rdi_4__type = type <{ [4 x i8] }>
+%G_0x603c80___rdx_4__type = type <{ [8 x i8] }>
 %G_0x603c84_type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -40,7 +49,16 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x603480___rax_4_ = global %G_0x603480___rax_4__type zeroinitializer
+@G_0x603480___rcx_4_ = global %G_0x603480___rcx_4__type zeroinitializer
+@G_0x603480___rdx_4_ = global %G_0x603480___rdx_4__type zeroinitializer
+@G_0x603880___rcx_4_ = global %G_0x603880___rcx_4__type zeroinitializer
+@G_0x603880___rdi_4_ = global %G_0x603880___rdi_4__type zeroinitializer
 @G_0x603c80 = local_unnamed_addr global %G_0x603c80_type zeroinitializer
+@G_0x603c80___rax_4_ = global %G_0x603c80___rax_4__type zeroinitializer
+@G_0x603c80___rcx_4_ = global %G_0x603c80___rcx_4__type zeroinitializer
+@G_0x603c80___rdi_4_ = global %G_0x603c80___rdi_4__type zeroinitializer
+@G_0x603c80___rdx_4_ = global %G_0x603c80___rdx_4__type zeroinitializer
 @G_0x603c84 = local_unnamed_addr global %G_0x603c84_type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*) local_unnamed_addr
@@ -145,7 +163,7 @@ block_4007db:                                     ; preds = %block_.L_4007d1
   %58 = sext i32 %57 to i64
   store i64 %58, i64* %RAX.i162, align 8
   %59 = shl nsw i64 %58, 2
-  %60 = add nsw i64 %59, 6306944
+  %60 = add i64 %59, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %61 = add i64 %55, 15
   store i64 %61, i64* %3, align 8
   %62 = inttoptr i64 %60 to i32*
@@ -232,7 +250,7 @@ block_4007fd:                                     ; preds = %block_.L_4007f3
   %114 = sext i32 %113 to i64
   store i64 %114, i64* %RAX.i162, align 8
   %115 = shl nsw i64 %114, 2
-  %116 = add nsw i64 %115, 6306944
+  %116 = add i64 %115, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %117 = add i64 %111, 12
   store i64 %117, i64* %3, align 8
   %118 = inttoptr i64 %116 to i32*
@@ -294,7 +312,7 @@ block_40080f:                                     ; preds = %block_4007fd
   %154 = sext i32 %132 to i64
   store i64 %154, i64* %RDX.i134, align 8
   %155 = shl nsw i64 %154, 2
-  %156 = add nsw i64 %155, 6306944
+  %156 = add i64 %155, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %157 = add i64 %129, 21
   store i64 %157, i64* %3, align 8
   %158 = inttoptr i64 %156 to i32*
@@ -307,7 +325,7 @@ block_40080f:                                     ; preds = %block_4007fd
   %163 = sext i32 %162 to i64
   store i64 %163, i64* %RDX.i134, align 8
   %164 = shl nsw i64 %163, 2
-  %165 = add nsw i64 %164, 6306944
+  %165 = add i64 %164, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %166 = add i64 %129, 33
   store i64 %166, i64* %3, align 8
   %167 = inttoptr i64 %165 to i32*
@@ -315,7 +333,7 @@ block_40080f:                                     ; preds = %block_4007fd
   %169 = sext i32 %168 to i64
   store i64 %169, i64* %RDX.i134, align 8
   %170 = shl nsw i64 %169, 2
-  %171 = add nsw i64 %170, 6304896
+  %171 = add i64 %170, ptrtoint (%G_0x603480___rdx_4__type* @G_0x603480___rdx_4_ to i64)
   %172 = add i64 %129, 40
   store i64 %172, i64* %3, align 8
   %173 = inttoptr i64 %171 to i32*
@@ -425,7 +443,7 @@ routine_idivl__esi.exit106:                       ; preds = %233, %231
   store i64 %242, i64* %RDI.i103, align 8
   %243 = load i64, i64* %RCX.i157, align 8
   %244 = shl nsw i64 %242, 2
-  %245 = add nsw i64 %244, 6305920
+  %245 = add i64 %244, ptrtoint (%G_0x603880___rdi_4__type* @G_0x603880___rdi_4_ to i64)
   %246 = add i64 %239, 10
   store i64 %246, i64* %3, align 8
   %247 = trunc i64 %243 to i32
@@ -457,7 +475,7 @@ routine_idivl__esi.exit106:                       ; preds = %233, %231
   %265 = sext i32 %264 to i64
   store i64 %265, i64* %RDI.i103, align 8
   %266 = shl nsw i64 %265, 2
-  %267 = add nsw i64 %266, 6306944
+  %267 = add i64 %266, ptrtoint (%G_0x603c80___rdi_4__type* @G_0x603c80___rdi_4_ to i64)
   %268 = add i64 %239, 21
   store i64 %268, i64* %3, align 8
   %269 = inttoptr i64 %267 to i32*
@@ -503,7 +521,7 @@ block_.L_40085f:                                  ; preds = %block_4007fd
   %296 = sext i32 %274 to i64
   store i64 %296, i64* %RCX.i157, align 8
   %297 = shl nsw i64 %296, 2
-  %298 = add nsw i64 %297, 6306944
+  %298 = add i64 %297, ptrtoint (%G_0x603c80___rcx_4__type* @G_0x603c80___rcx_4_ to i64)
   %299 = add i64 %129, 16
   store i64 %299, i64* %3, align 8
   %300 = inttoptr i64 %298 to i32*
@@ -516,7 +534,7 @@ block_.L_40085f:                                  ; preds = %block_4007fd
   %305 = sext i32 %304 to i64
   store i64 %305, i64* %RCX.i157, align 8
   %306 = shl nsw i64 %305, 2
-  %307 = add nsw i64 %306, 6306944
+  %307 = add i64 %306, ptrtoint (%G_0x603c80___rcx_4__type* @G_0x603c80___rcx_4_ to i64)
   %308 = add i64 %129, 27
   store i64 %308, i64* %3, align 8
   %309 = inttoptr i64 %307 to i32*
@@ -578,7 +596,7 @@ block_.L_40088d:                                  ; preds = %block_.L_4007f3
   %344 = sext i32 %343 to i64
   store i64 %344, i64* %RCX.i157, align 8
   %345 = shl nsw i64 %344, 2
-  %346 = add nsw i64 %345, 6304896
+  %346 = add i64 %345, ptrtoint (%G_0x603480___rcx_4__type* @G_0x603480___rcx_4_ to i64)
   %347 = add i64 %111, 20
   store i64 %347, i64* %3, align 8
   %348 = inttoptr i64 %346 to i32*
@@ -685,7 +703,7 @@ routine_idivl__esi.exit:                          ; preds = %406, %404
   %415 = sext i32 %413 to i64
   store i64 %415, i64* %RCX.i157, align 8
   %416 = shl nsw i64 %415, 2
-  %417 = add nsw i64 %416, 6305920
+  %417 = add i64 %416, ptrtoint (%G_0x603880___rcx_4__type* @G_0x603880___rcx_4_ to i64)
   %418 = add i64 %412, 10
   store i64 %418, i64* %3, align 8
   %419 = inttoptr i64 %417 to i32*
@@ -794,7 +812,7 @@ block_4008df:                                     ; preds = %block_.L_4008d5
   %486 = sext i32 %485 to i64
   store i64 %486, i64* %RAX.i162, align 8
   %487 = shl nsw i64 %486, 2
-  %488 = add nsw i64 %487, 6306944
+  %488 = add i64 %487, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %489 = add i64 %483, 12
   store i64 %489, i64* %3, align 8
   %490 = inttoptr i64 %488 to i32*
@@ -802,7 +820,7 @@ block_4008df:                                     ; preds = %block_.L_4008d5
   %492 = sext i32 %491 to i64
   store i64 %492, i64* %RAX.i162, align 8
   %493 = shl nsw i64 %492, 2
-  %494 = add nsw i64 %493, 6304896
+  %494 = add i64 %493, ptrtoint (%G_0x603480___rax_4__type* @G_0x603480___rax_4_ to i64)
   %495 = add i64 %483, 19
   store i64 %495, i64* %3, align 8
   %496 = inttoptr i64 %494 to i32*
@@ -815,7 +833,7 @@ block_4008df:                                     ; preds = %block_.L_4008d5
   %501 = sext i32 %500 to i64
   store i64 %501, i64* %RAX.i162, align 8
   %502 = shl nsw i64 %501, 2
-  %503 = add nsw i64 %502, 6306944
+  %503 = add i64 %502, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %504 = add i64 %483, 30
   store i64 %504, i64* %3, align 8
   %505 = inttoptr i64 %503 to i32*
@@ -1043,7 +1061,7 @@ block_400478:
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 11
   store i64 %7, i64* %PC, align 8
@@ -1214,7 +1232,7 @@ block_400478:
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 8
   store i64 %7, i64* %PC, align 8
@@ -1308,7 +1326,7 @@ block_400478:
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -1342,7 +1360,7 @@ block_400478:
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rdx_4__type* @G_0x603c80___rdx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 8
   store i64 %7, i64* %PC, align 8
@@ -1360,7 +1378,7 @@ block_400478:
   %RSI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 9, i32 0, i32 0
   %3 = load i64, i64* %RDX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6304896
+  %5 = add i64 %4, ptrtoint (%G_0x603480___rdx_4__type* @G_0x603480___rdx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -1573,7 +1591,7 @@ block_400478:
   %3 = load i64, i64* %RCX, align 8
   %4 = load i64, i64* %RDI, align 8
   %5 = shl i64 %4, 2
-  %6 = add i64 %5, 6305920
+  %6 = add i64 %5, ptrtoint (%G_0x603880___rdi_4__type* @G_0x603880___rdi_4_ to i64)
   %7 = load i64, i64* %PC, align 8
   %8 = add i64 %7, 7
   store i64 %8, i64* %PC, align 8
@@ -1632,7 +1650,7 @@ block_400478:
   %RDI = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 11, i32 0, i32 0
   %4 = load i64, i64* %RDI, align 8
   %5 = shl i64 %4, 2
-  %6 = add i64 %5, 6306944
+  %6 = add i64 %5, ptrtoint (%G_0x603c80___rdi_4__type* @G_0x603c80___rdi_4_ to i64)
   %7 = load i32, i32* %ECX, align 4
   %8 = load i64, i64* %PC, align 8
   %9 = add i64 %8, 7
@@ -1737,7 +1755,7 @@ block_400478:
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %3 = load i64, i64* %RCX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rcx_4__type* @G_0x603c80___rcx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -1773,7 +1791,7 @@ block_400478:
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %4 = load i64, i64* %RCX, align 8
   %5 = shl i64 %4, 2
-  %6 = add i64 %5, 6306944
+  %6 = add i64 %5, ptrtoint (%G_0x603c80___rcx_4__type* @G_0x603c80___rcx_4_ to i64)
   %7 = load i32, i32* %EAX, align 4
   %8 = load i64, i64* %PC, align 8
   %9 = add i64 %8, 7
@@ -1887,7 +1905,7 @@ block_400478:
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RCX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6304896
+  %5 = add i64 %4, ptrtoint (%G_0x603480___rcx_4__type* @G_0x603480___rcx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -2026,7 +2044,7 @@ block_400478:
   %RDX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
   %3 = load i64, i64* %RCX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6305920
+  %5 = add i64 %4, ptrtoint (%G_0x603880___rcx_4__type* @G_0x603880___rcx_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -2185,7 +2203,7 @@ block_400478:
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6306944
+  %5 = add i64 %4, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 8
   store i64 %7, i64* %PC, align 8
@@ -2203,7 +2221,7 @@ block_400478:
   %RCX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 5, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
   %4 = shl i64 %3, 2
-  %5 = add i64 %4, 6304896
+  %5 = add i64 %4, ptrtoint (%G_0x603480___rax_4__type* @G_0x603480___rax_4_ to i64)
   %6 = load i64, i64* %PC, align 8
   %7 = add i64 %6, 7
   store i64 %7, i64* %PC, align 8
@@ -2222,7 +2240,7 @@ block_400478:
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %4 = load i64, i64* %RAX, align 8
   %5 = shl i64 %4, 2
-  %6 = add i64 %5, 6306944
+  %6 = add i64 %5, ptrtoint (%G_0x603c80___rax_4__type* @G_0x603c80___rax_4_ to i64)
   %7 = load i32, i32* %ECX, align 4
   %8 = load i64, i64* %PC, align 8
   %9 = add i64 %8, 7

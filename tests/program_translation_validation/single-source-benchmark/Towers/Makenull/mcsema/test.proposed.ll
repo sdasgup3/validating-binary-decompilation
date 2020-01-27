@@ -455,6 +455,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 
 
 ; Data Access Globals
+%G_0x6181d0___rax_4__type = type <{ [4 x i8] }>
+@G_0x6181d0___rax_4_= global %G_0x6181d0___rax_4__type <{ [4 x i8] c"\00\00\00\00" }>
 
 
 define %struct.Memory* @Makenull(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -642,7 +644,7 @@ block_400478:
   %RAX = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RAX
   %10 = mul i64 %9, 4
-  %11 = add i64 %10, 6390224
+  %11 = add i64 %10, ptrtoint( %G_0x6181d0___rax_4__type* @G_0x6181d0___rax_4_ to i64)
   %12 = load i64, i64* %PC
   %13 = add i64 %12, 11
   store i64 %13, i64* %PC

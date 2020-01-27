@@ -266,43 +266,32 @@ block_.L_400c66:                                  ; preds = %block_.L_400c34
   %146 = sext i32 %145 to i64
   store i64 %146, i64* %RCX.i37, align 8
   %RDX.i = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 7, i32 0, i32 0
-  store i64 0, i64* %RDX.i, align 8
-  store i8 0, i8* %26, align 1
-  store i8 1, i8* %27, align 1
-  store i8 1, i8* %29, align 1
-  store i8 0, i8* %30, align 1
-  store i8 0, i8* %31, align 1
-  store i8 0, i8* %28, align 1
-  %147 = add i64 %49, 16
-  store i64 %147, i64* %3, align 8
-  %div = udiv i64 %138, %146
-  %148 = urem i64 %138, %146
-  store i64 %div, i64* %RAX.i46, align 8
-  store i64 %148, i64* %RDX.i, align 8
+  %147 = urem i64 %138, %146
+  store i64 %147, i64* %RDX.i, align 8
   store i8 0, i8* %26, align 1
   store i8 0, i8* %27, align 1
   store i8 0, i8* %28, align 1
   store i8 0, i8* %29, align 1
   store i8 0, i8* %30, align 1
   store i8 0, i8* %31, align 1
-  %phitmp = and i64 %148, 4294967295
+  %phitmp = and i64 %147, 4294967295
   store i64 %phitmp, i64* %RSI.i51, align 8
   store i64 %phitmp, i64* %RAX.i46, align 8
-  %149 = add i64 %49, 21
-  store i64 %149, i64* %3, align 8
-  %150 = load i64, i64* %6, align 8
-  %151 = add i64 %150, 8
-  %152 = inttoptr i64 %150 to i64*
-  %153 = load i64, i64* %152, align 8
-  store i64 %153, i64* %RBP.i, align 8
-  store i64 %151, i64* %6, align 8
-  %154 = add i64 %49, 22
-  store i64 %154, i64* %3, align 8
-  %155 = inttoptr i64 %151 to i64*
-  %156 = load i64, i64* %155, align 8
-  store i64 %156, i64* %3, align 8
-  %157 = add i64 %150, 16
-  store i64 %157, i64* %6, align 8
+  %148 = add i64 %49, 21
+  store i64 %148, i64* %3, align 8
+  %149 = load i64, i64* %6, align 8
+  %150 = add i64 %149, 8
+  %151 = inttoptr i64 %149 to i64*
+  %152 = load i64, i64* %151, align 8
+  store i64 %152, i64* %RBP.i, align 8
+  store i64 %150, i64* %6, align 8
+  %153 = add i64 %49, 22
+  store i64 %153, i64* %3, align 8
+  %154 = inttoptr i64 %150 to i64*
+  %155 = load i64, i64* %154, align 8
+  store i64 %155, i64* %3, align 8
+  %156 = add i64 %149, 16
+  store i64 %156, i64* %6, align 8
   ret %struct.Memory* %2
 }
 

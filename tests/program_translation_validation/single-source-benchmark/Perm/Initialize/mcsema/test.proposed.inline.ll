@@ -12,6 +12,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400538__eh_frame_type = type <{ [208 x i8] }>
 %seg_601018__data_type = type <{ [16 x i8] }>
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x616750___rcx_4__type = type <{ [4 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
@@ -68,6 +69,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_601018__data = internal global %seg_601018__data_type zeroinitializer
 @__bss_start = global %__bss_start_type zeroinitializer
 @0 = internal global i1 false
+@G_0x616750___rcx_4_ = global %G_0x616750___rcx_4__type zeroinitializer
 
 declare %struct.Memory* @__remill_error(%struct.State* dereferenceable(3376), i64, %struct.Memory*)
 
@@ -535,7 +537,7 @@ block_400595:                                     ; preds = %block_.L_40058b
   %RCX.i = bitcast %union.anon* %184 to i64*
   %185 = load i64, i64* %RCX.i
   %186 = mul i64 %185, 4
-  %187 = add i64 %186, 6383440
+  %187 = add i64 %186, ptrtoint (%G_0x616750___rcx_4__type* @G_0x616750___rcx_4_ to i64)
   %188 = load i32, i32* %EAX.i12
   %189 = zext i32 %188 to i64
   %190 = load i64, i64* %PC.i11
@@ -975,7 +977,7 @@ block_400478:
   %RCX = bitcast %union.anon* %11 to i64*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6383440
+  %14 = add i64 %13, ptrtoint (%G_0x616750___rcx_4__type* @G_0x616750___rcx_4_ to i64)
   %15 = load i32, i32* %EAX
   %16 = zext i32 %15 to i64
   %17 = load i64, i64* %PC

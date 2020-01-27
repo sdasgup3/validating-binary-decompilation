@@ -341,7 +341,6 @@ block_.L_40054e:                                  ; preds = %block_.L_400541, %b
   %RSI.i.pre-phi = phi i64* [ %RSI.i30, %block_400529 ], [ %.pre2, %block_.L_400541 ]
   %RDI.i.pre-phi = phi i64* [ %RDI.i37, %block_400529 ], [ %.pre1, %block_.L_400541 ]
   %MEMORY.0 = phi %struct.Memory* [ %call2_400534, %block_400529 ], [ %2, %block_.L_400541 ]
-  store i64 %storemerge, i64* %3, align 8
   %195 = load i64, i64* %RBP.i, align 8
   %196 = add i64 %195, -20
   %197 = add i64 %storemerge, 3

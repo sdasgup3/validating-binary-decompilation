@@ -504,26 +504,44 @@ declare %struct.Memory* @sub_4028d0.print_time(%struct.State* noalias dereferenc
 @G_0x604054= global %G_0x604054_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x604058_type = type <{ [4 x i8] }>
 @G_0x604058= global %G_0x604058_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x62b480___rax_4__type = type <{ [16 x i8] }>
+@G_0x62b480___rax_4_= global %G_0x62b480___rax_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bad0_type = type <{ [16 x i8] }>
 @G_0x62bad0= global %G_0x62bad0_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x62bad0___rcx_4__type = type <{ [16 x i8] }>
+@G_0x62bad0___rcx_4_= global %G_0x62bad0___rcx_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bb0c_type = type <{ [16 x i8] }>
 @G_0x62bb0c= global %G_0x62bb0c_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x62bb0c___rcx_4__type = type <{ [16 x i8] }>
+@G_0x62bb0c___rcx_4_= global %G_0x62bb0c___rcx_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bb48_type = type <{ [4 x i8] }>
 @G_0x62bb48= global %G_0x62bb48_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x62bb48___rcx_4__type = type <{ [4 x i8] }>
+@G_0x62bb48___rcx_4_= global %G_0x62bb48___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x62bb84_type = type <{ [16 x i8] }>
 @G_0x62bb84= global %G_0x62bb84_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x62bb84___rcx_4__type = type <{ [16 x i8] }>
+@G_0x62bb84___rcx_4_= global %G_0x62bb84___rcx_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bb9c_type = type <{ [16 x i8] }>
 @G_0x62bb9c= global %G_0x62bb9c_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bbb4_type = type <{ [16 x i8] }>
 @G_0x62bbb4= global %G_0x62bbb4_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62bbc0_type = type <{ [4 x i8] }>
 @G_0x62bbc0= global %G_0x62bbc0_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x62bbc0___rcx_4__type = type <{ [4 x i8] }>
+@G_0x62bbc0___rcx_4_= global %G_0x62bbc0___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x62bbfc_type = type <{ [4 x i8] }>
 @G_0x62bbfc= global %G_0x62bbfc_type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x62bbfc___rcx_4__type = type <{ [4 x i8] }>
+@G_0x62bbfc___rcx_4_= global %G_0x62bbfc___rcx_4__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x62bcec_type = type <{ [8 x i8] }>
 @G_0x62bcec= global %G_0x62bcec_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x62bcf0_type = type <{ [16 x i8] }>
 @G_0x62bcf0= global %G_0x62bcf0_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x62bcf0___rax_4__type = type <{ [16 x i8] }>
+@G_0x62bcf0___rax_4_= global %G_0x62bcf0___rax_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x62bcf0___rcx_4__type = type <{ [16 x i8] }>
+@G_0x62bcf0___rcx_4_= global %G_0x62bcf0___rcx_4__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x62c010_type = type <{ [4 x i8] }>
 @G_0x62c010= global %G_0x62c010_type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x62c014_type = type <{ [8 x i8] }>
@@ -7090,7 +7108,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6468736
+  %14 = add i64 %13, ptrtoint( %G_0x62b480___rax_4__type* @G_0x62b480___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -7116,7 +7134,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470896
+  %13 = add i64 %12, ptrtoint( %G_0x62bcf0___rax_4__type* @G_0x62bcf0___rax_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -7410,7 +7428,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6468736
+  %13 = add i64 %12, ptrtoint( %G_0x62b480___rax_4__type* @G_0x62b480___rax_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -7752,7 +7770,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6468736
+  %14 = add i64 %13, ptrtoint( %G_0x62b480___rax_4__type* @G_0x62b480___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -8192,7 +8210,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM1 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6470896
+  %14 = add i64 %13, ptrtoint( %G_0x62bcf0___rax_4__type* @G_0x62bcf0___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -8307,7 +8325,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6470896
+  %14 = add i64 %13, ptrtoint( %G_0x62bcf0___rax_4__type* @G_0x62bcf0___rax_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -8988,7 +9006,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6470896
+  %14 = add i64 %13, ptrtoint( %G_0x62bcf0___rcx_4__type* @G_0x62bcf0___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -11896,7 +11914,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470352
+  %13 = add i64 %12, ptrtoint( %G_0x62bad0___rcx_4__type* @G_0x62bad0___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12080,7 +12098,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470412
+  %13 = add i64 %12, ptrtoint( %G_0x62bb0c___rcx_4__type* @G_0x62bb0c___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12108,7 +12126,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6470352
+  %14 = add i64 %13, ptrtoint( %G_0x62bad0___rcx_4__type* @G_0x62bad0___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -12136,7 +12154,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %13 = load i64, i64* %RCX
   %14 = mul i64 %13, 4
-  %15 = add i64 %14, 6470412
+  %15 = add i64 %14, ptrtoint( %G_0x62bb0c___rcx_4__type* @G_0x62bb0c___rcx_4_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
@@ -12166,7 +12184,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470472
+  %13 = add i64 %12, ptrtoint( %G_0x62bb48___rcx_4__type* @G_0x62bb48___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12271,7 +12289,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470532
+  %13 = add i64 %12, ptrtoint( %G_0x62bb84___rcx_4__type* @G_0x62bb84___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12299,7 +12317,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RCX
   %13 = mul i64 %12, 4
-  %14 = add i64 %13, 6470532
+  %14 = add i64 %13, ptrtoint( %G_0x62bb84___rcx_4__type* @G_0x62bb84___rcx_4_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -12372,7 +12390,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470592
+  %13 = add i64 %12, ptrtoint( %G_0x62bbc0___rcx_4__type* @G_0x62bbc0___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12403,7 +12421,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RCX
   %12 = mul i64 %11, 4
-  %13 = add i64 %12, 6470652
+  %13 = add i64 %12, ptrtoint( %G_0x62bbfc___rcx_4__type* @G_0x62bbfc___rcx_4_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -12450,7 +12468,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %13 = load i64, i64* %RCX
   %14 = mul i64 %13, 4
-  %15 = add i64 %14, 6470532
+  %15 = add i64 %14, ptrtoint( %G_0x62bb84___rcx_4__type* @G_0x62bb84___rcx_4_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC

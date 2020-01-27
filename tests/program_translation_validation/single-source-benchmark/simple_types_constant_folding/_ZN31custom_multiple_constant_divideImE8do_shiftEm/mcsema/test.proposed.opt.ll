@@ -154,43 +154,33 @@ routine_divq__rdi.exit:                           ; preds = %53, %51
   %58 = phi i64 [ %.pre, %51 ], [ %56, %53 ]
   %59 = phi %struct.Memory* [ %52, %51 ], [ %2, %53 ]
   %60 = lshr i64 %58, 2
-  store i64 %60, i64* %RAX.i13, align 8
   store i64 0, i64* %RSI.i25, align 8
-  store i8 0, i8* %22, align 1
-  store i8 1, i8* %23, align 1
-  store i8 1, i8* %25, align 1
-  store i8 0, i8* %26, align 1
-  store i8 0, i8* %27, align 1
-  store i8 0, i8* %24, align 1
-  store i64 0, i64* %RDX.i38, align 8
   %61 = load i64, i64* %RCX.i43, align 8
-  %62 = add i64 %57, 11
-  store i64 %62, i64* %3, align 8
   %div = udiv i64 %60, %61
-  %63 = urem i64 %60, %61
+  %62 = urem i64 %60, %61
   store i64 %div, i64* %RAX.i13, align 8
-  store i64 %63, i64* %RDX.i38, align 8
+  store i64 %62, i64* %RDX.i38, align 8
   store i8 0, i8* %22, align 1
   store i8 0, i8* %23, align 1
   store i8 0, i8* %24, align 1
   store i8 0, i8* %25, align 1
   store i8 0, i8* %26, align 1
   store i8 0, i8* %27, align 1
-  %64 = add i64 %57, 12
-  store i64 %64, i64* %3, align 8
-  %65 = load i64, i64* %6, align 8
-  %66 = add i64 %65, 8
-  %67 = inttoptr i64 %65 to i64*
-  %68 = load i64, i64* %67, align 8
-  store i64 %68, i64* %RBP.i, align 8
-  store i64 %66, i64* %6, align 8
-  %69 = add i64 %57, 13
-  store i64 %69, i64* %3, align 8
-  %70 = inttoptr i64 %66 to i64*
-  %71 = load i64, i64* %70, align 8
-  store i64 %71, i64* %3, align 8
-  %72 = add i64 %65, 16
-  store i64 %72, i64* %6, align 8
+  %63 = add i64 %57, 12
+  store i64 %63, i64* %3, align 8
+  %64 = load i64, i64* %6, align 8
+  %65 = add i64 %64, 8
+  %66 = inttoptr i64 %64 to i64*
+  %67 = load i64, i64* %66, align 8
+  store i64 %67, i64* %RBP.i, align 8
+  store i64 %65, i64* %6, align 8
+  %68 = add i64 %57, 13
+  store i64 %68, i64* %3, align 8
+  %69 = inttoptr i64 %65 to i64*
+  %70 = load i64, i64* %69, align 8
+  store i64 %70, i64* %3, align 8
+  %71 = add i64 %64, 16
+  store i64 %71, i64* %6, align 8
   ret %struct.Memory* %59
 }
 

@@ -4,6 +4,7 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
 
 %__bss_start_type = type <{ [8 x i8] }>
+%G_0x601050___rax_1__type = type <{ [1 x i8] }>
 %G__0x400704_type = type <{ [8 x i8] }>
 %struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
@@ -39,6 +40,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %struct.Memory = type opaque
 
 @__bss_start = local_unnamed_addr global %__bss_start_type zeroinitializer
+@G_0x601050___rax_1_ = global %G_0x601050___rax_1__type zeroinitializer
 @G__0x400704 = global %G__0x400704_type zeroinitializer
 
 ; Function Attrs: nounwind readnone
@@ -344,7 +346,7 @@ block_4005b0:                                     ; preds = %block_.L_4005a2
   store i64 %183, i64* %3, align 8
   %184 = load i64, i64* %156, align 8
   store i64 %184, i64* %RAX.i122, align 8
-  %185 = add i64 %184, 6295632
+  %185 = add i64 %184, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %186 = add i64 %182, 12
   store i64 %186, i64* %3, align 8
   %187 = inttoptr i64 %185 to i8*
@@ -450,7 +452,7 @@ block_4005e3:                                     ; preds = %block_.L_4005d5
   store i64 %252, i64* %3, align 8
   %253 = load i64, i64* %225, align 8
   store i64 %253, i64* %RAX.i122, align 8
-  %254 = add i64 %253, 6295632
+  %254 = add i64 %253, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %255 = add i64 %251, 12
   store i64 %255, i64* %3, align 8
   %256 = inttoptr i64 %254 to i8*
@@ -573,7 +575,7 @@ block_40060f:                                     ; preds = %block_.L_400601
   store i64 %332, i64* %3, align 8
   %333 = load i64, i64* %305, align 8
   store i64 %333, i64* %RAX.i122, align 8
-  %334 = add i64 %333, 6295632
+  %334 = add i64 %333, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %335 = add i64 %331, 12
   store i64 %335, i64* %3, align 8
   %336 = inttoptr i64 %334 to i8*
@@ -1380,7 +1382,7 @@ block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
-  %4 = add i64 %3, 6295632
+  %4 = add i64 %3, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %5 = load i64, i64* %PC, align 8
   %6 = add i64 %5, 8
   store i64 %6, i64* %PC, align 8
@@ -1490,7 +1492,7 @@ block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
-  %4 = add i64 %3, 6295632
+  %4 = add i64 %3, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %5 = load i64, i64* %PC, align 8
   %6 = add i64 %5, 8
   store i64 %6, i64* %PC, align 8
@@ -1698,7 +1700,7 @@ block_400478:
   %PC = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 33, i32 0, i32 0
   %RAX = getelementptr inbounds %struct.State, %struct.State* %0, i64 0, i32 6, i32 1, i32 0, i32 0
   %3 = load i64, i64* %RAX, align 8
-  %4 = add i64 %3, 6295632
+  %4 = add i64 %3, ptrtoint (%G_0x601050___rax_1__type* @G_0x601050___rax_1_ to i64)
   %5 = load i64, i64* %PC, align 8
   %6 = add i64 %5, 8
   store i64 %6, i64* %PC, align 8

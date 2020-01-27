@@ -459,12 +459,16 @@ declare %struct.Memory* @sub_400a20.Fft(%struct.State* noalias dereferenceable(3
 declare %struct.Memory* @sub_400650.Printcomplex(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias readnone returned)
 
 ; Data Access Globals
-%G_0x114__rip__type = type <{ [16 x i8] }>
-@G_0x114__rip_= global %G_0x114__rip__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x114__rip__4197864__type = type <{ [16 x i8] }>
+@G_0x114__rip__4197864_= global %G_0x114__rip__4197864__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x1a9__rip__4197723__type = type <{ [16 x i8] }>
 @G_0x1a9__rip__4197723_= global %G_0x1a9__rip__4197723__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x1ad__rip__4197715__type = type <{ [16 x i8] }>
 @G_0x1ad__rip__4197715_= global %G_0x1ad__rip__4197715__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
+%G_0x60d740___rax_8__type = type <{ [4 x i8] }>
+@G_0x60d740___rax_8_= global %G_0x60d740___rax_8__type <{ [4 x i8] c"\00\00\00\00" }>
+%G_0x60d744___rax_8__type = type <{ [4 x i8] }>
+@G_0x60d744___rax_8_= global %G_0x60d744___rax_8__type <{ [4 x i8] c"\00\00\00\00" }>
 %G_0x610194_type = type <{ [16 x i8] }>
 @G_0x610194= global %G_0x610194_type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 %G_0x610238_type = type <{ [8 x i8] }>
@@ -1654,7 +1658,7 @@ block_400478:
   %XMM2 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 8
-  %13 = add i64 %12, 6346560
+  %13 = add i64 %12, ptrtoint( %G_0x60d740___rax_8__type* @G_0x60d740___rax_8_ to i64)
   %14 = bitcast %union.vec128_t* %XMM2 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -1723,7 +1727,7 @@ block_400478:
   %XMM1 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 8
-  %13 = add i64 %12, 6346564
+  %13 = add i64 %12, ptrtoint( %G_0x60d744___rax_8__type* @G_0x60d744___rax_8_ to i64)
   %14 = bitcast %union.vec128_t* %XMM1 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
@@ -1985,7 +1989,7 @@ block_400478:
   %9 = load i64, i64* %PC
   %10 = add i64 %9, 8
   store i64 %10, i64* %PC
-  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x114__rip__type* @G_0x114__rip_ to i64), i64 76))
+  %11 = call %struct.Memory* @_ZN12_GLOBAL__N_1L9MOVSS_MEMI3VnWI8vec128_tE3MVnI7vec32_tEEEP6MemoryS8_R5StateT_T0_(%struct.Memory* %2, %struct.State* %0, i8* %8, i64 add (i64 ptrtoint( %G_0x114__rip__4197864__type* @G_0x114__rip__4197864_ to i64), i64 76))
   ret %struct.Memory* %11
 }
 

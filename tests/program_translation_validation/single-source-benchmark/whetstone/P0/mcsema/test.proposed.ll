@@ -461,6 +461,8 @@ declare %struct.Memory* @ext_sin(%struct.State* noalias dereferenceable(3376), i
 @G_0x6020a8= global %G_0x6020a8_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
 %G_0x6020ac_type = type <{ [8 x i8] }>
 @G_0x6020ac= global %G_0x6020ac_type <{ [8 x i8] c"\00\00\00\00\00\00\00\00" }>
+%G_0x6020c0___rax_8__type = type <{ [16 x i8] }>
+@G_0x6020c0___rax_8_= global %G_0x6020c0___rax_8__type <{ [16 x i8] c"\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00\00" }>
 
 
 define %struct.Memory* @P0(%struct.State* noalias , i64, %struct.Memory* noalias) alwaysinline  {
@@ -663,7 +665,7 @@ block_400478:
   %11 = bitcast %"class.std::bitset"* %YMM0 to i8*
   %12 = load i64, i64* %RAX
   %13 = mul i64 %12, 8
-  %14 = add i64 %13, 6299840
+  %14 = add i64 %13, ptrtoint( %G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9
   store i64 %16, i64* %PC
@@ -712,7 +714,7 @@ block_400478:
   %XMM0 = bitcast %union.VectorReg* %10 to %union.vec128_t*
   %11 = load i64, i64* %RAX
   %12 = mul i64 %11, 8
-  %13 = add i64 %12, 6299840
+  %13 = add i64 %12, ptrtoint( %G_0x6020c0___rax_8__type* @G_0x6020c0___rax_8_ to i64)
   %14 = bitcast %union.vec128_t* %XMM0 to i8*
   %15 = load i64, i64* %PC
   %16 = add i64 %15, 9

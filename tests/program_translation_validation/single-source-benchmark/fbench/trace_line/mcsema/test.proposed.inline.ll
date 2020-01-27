@@ -16,6 +16,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 %seg_400510__rodata_type = type <{ [4 x i8] }>
 %seg_400514__eh_frame_hdr_type = type <{ [52 x i8] }>
 %seg_400548__eh_frame_type = type <{ [208 x i8] }>
+%G_0x602150___rcx_8__type = type <{ [16 x i8] }>
 %G_0x602168_type = type <{ [16 x i8] }>
 %G_0x602170_type = type <{ [16 x i8] }>
 %G_0x602180_type = type <{ [16 x i8] }>
@@ -91,6 +92,7 @@ target triple = "x86_64-pc-linux-gnu-elf"
 @seg_400510__rodata = internal constant %seg_400510__rodata_type <{ [4 x i8] c"\01\00\02\00" }>
 @seg_400514__eh_frame_hdr = internal constant %seg_400514__eh_frame_hdr_type <{ [52 x i8] c"\01\1B\03;0\00\00\00\05\00\00\00|\FE\FF\FFL\00\00\00\AC\FE\FF\FFx\00\00\00d\FF\FF\FF\8C\00\00\00|\FF\FF\FF\A4\00\00\00\EC\FF\FF\FF\EC\00\00\00" }>
 @seg_400548__eh_frame = internal constant %seg_400548__eh_frame_type <{ [208 x i8] c"\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\07\10\10\00\00\00\1C\00\00\00(\FE\FF\FF+\00\00\00\00\00\00\00\14\00\00\00\00\00\00\00\01zR\00\01x\10\01\1B\0C\07\08\90\01\00\00\10\00\00\00\1C\00\00\00,\FE\FF\FF\02\00\00\00\00\00\00\00\14\00\00\000\00\00\00\D0\FE\FF\FF\09\00\00\00\00\00\00\00\00\00\00\00D\00\00\00H\00\00\00\D0\FE\FF\FFe\00\00\00\00B\0E\10\8F\02B\0E\18\8E\03E\0E \8D\04B\0E(\8C\05H\0E0\86\06H\0E8\83\07M\0E@r\0E8A\0E0A\0E(B\0E B\0E\18B\0E\10B\0E\08\00\10\00\00\00\90\00\00\00\F8\FE\FF\FF\02\00\00\00\00\00\00\00\00\00\00\00" }>
+@G_0x602150___rcx_8_ = global %G_0x602150___rcx_8__type zeroinitializer
 @G_0x602168 = global %G_0x602168_type zeroinitializer
 @G_0x602170 = global %G_0x602170_type zeroinitializer
 @G_0x602180 = global %G_0x602180_type zeroinitializer
@@ -1367,7 +1369,7 @@ block_400fdf:                                     ; preds = %routine_ucomisd__xm
   %728 = bitcast %"class.std::bitset"* %YMM2.i81 to i8*
   %729 = load i64, i64* %RCX.i80
   %730 = mul i64 %729, 8
-  %731 = add i64 %730, 6299984
+  %731 = add i64 %730, ptrtoint (%G_0x602150___rcx_8__type* @G_0x602150___rcx_8_ to i64)
   %732 = load i64, i64* %PC.i79
   %733 = add i64 %732, 9
   store i64 %733, i64* %PC.i79
@@ -3595,7 +3597,7 @@ block_400478:
   %12 = bitcast %"class.std::bitset"* %YMM2 to i8*
   %13 = load i64, i64* %RCX
   %14 = mul i64 %13, 8
-  %15 = add i64 %14, 6299984
+  %15 = add i64 %14, ptrtoint (%G_0x602150___rcx_8__type* @G_0x602150___rcx_8_ to i64)
   %16 = load i64, i64* %PC
   %17 = add i64 %16, 9
   store i64 %17, i64* %PC
