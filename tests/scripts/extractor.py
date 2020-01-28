@@ -270,6 +270,15 @@ def createMakefile(funcName):
         "	-dot -Tpdf mcsema/test.proposed.opt.dot -O " + "\n")
     makeFile.write("" + "\n\n")
 
+    makeFile.write(
+        "tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
+        "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30" + "\n")
+    makeFile.write(
+        "	python -m json.tool normalizer_final_config.json")
+    makeFile.write("" + "\n\n")
+
 
     makeFile.write(
         "extract:${INDIR}test.mcsema.opt.ll" +

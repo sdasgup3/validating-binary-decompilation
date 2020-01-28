@@ -12,6 +12,12 @@ two IR programs are closer in semantics to each other and can be compared using
 syntactic graph matching or even with heavy weight semantics based equivalence
 checks. 
 
+# Repository Checkout
+```C
+git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+// submodule includes an experimental opentuner
+```
+
 
 # Directory Structure 
 ## [Source](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)
@@ -20,51 +26,12 @@ checks.
 ### [Single Instruction Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)
 
 
-
-### [NOTES]
-- In the previous matching algorithm (based on graph matching of X86 and lifted
-    LLVM IR data flow graphs), decompiler agnostic matching was the sole novelty whereas now the novelty
-lies in using "Single Instruction Validation" to assist program level
-Validation and the compositional Decompiler.
-- Single instruction validation and Program level V can be implemented
-isolation
-
-
 ## TB Done
-  - Mcsema Single Instruction Validation
-  - Implementing fallback mechanism for the matcher in case the match fails
-  - Single Source Benchmark Testing (Triaging and Debugging)
-  - FInding minimum llvm opt passes required for the normalizaton phase (to reduce trust base on the entire llvm 03 passes)
-  - Semantics preserving reordering
+  - handling the false positives on Matcher failures.
+  - Automatically finding llvm opt passes required for the normalizaton phase
   - Efficient Caching: Right now all the instances of an instruction is cache; leads to large cahce size ~100G; Resuse similar instances
     - Reusing jmp/jcc/call is prety trivial
     - mov imm64 to ... or mov mem to ... is non trivial
-  - Regenerate the cache Makefiles with phone targets
-```bash
-.PHONY: binary objdump mcsema declutter
-CLEAN_ASM=${HOME}/Github/X86-64-semantics/scripts/remove_directives.pl
-DVAL_SCRIPT_DIR=${HOME}/Github/validating-binary-decompilation/tests/scripts/
-
-objdump:
-	objdump -d test > test.objdump
-
-mcsema:
-	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output test.cfg --binary test --entrypoint main
-	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg test.cfg --output test.bc -disable_dead_store_elimination -disable_optimizer
-	llvm-dis test.bc -o test.ll
-
-declutter:
-	${DVAL_SCRIPT_DIR}/declutter.pl --file test.ll --norenameintrinsics --opc callq_._Z13test_constantIj20custom_xor_constantsIjEEvPT_iPKc
-
-binary:
-	clang -Os test.c -o test
-```
-
-## Done
-  -   Compositional decompiler to propose a decompilation output | 10  |
-  -   Matching the proposed decompilation Vs Mcsema generated decompilation For Equiv checking ( Syntactic matching / Semantic matching )  | 10 |
 
 ## Not Immediate Goal
-  -  FCD Single Instruction Validation  | 10  |
-  -  Revng Single Instruction Validation  | 10  |
-  -  Same as above for fcd/Revng  | 5 |
+  -  Extending the methodology to other lifters like fcd/rev.ng

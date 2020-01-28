@@ -1,3 +1,6 @@
 [submodule "docs/pldi_2020"]
 	path = docs/pldi_2020
 	url = https://github.com/sdasgup3/PLDI20-Validating-Decompilers
+[submodule "tests/scripts/opentuner"]
+	path = tests/scripts/opentuner
+	url = https://github.com/sdasgup3/opentuner.git

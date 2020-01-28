@@ -17,7 +17,7 @@
 #define DEBUG_TYPE "memssa"
 #include "memssa.h"
 
-#define MEMSSA_DEBUG
+//#define MEMSSA_DEBUG
 
 using namespace llvm;
 

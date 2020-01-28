@@ -60,6 +60,10 @@ lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 	-dot -Tpdf mcsema/test.proposed.opt.dot -O 
 
 
+tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
+	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30
+	python -m json.tool normalizer_final_config.json
+
 extract:${INDIR}test.mcsema.opt.ll
 	llvm-extract -S  -rfunc="sub_.*_${PROG}" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll
 
