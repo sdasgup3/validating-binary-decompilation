@@ -15,7 +15,8 @@
 
 using namespace llvm;
 
-Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges) {
+Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
+                 bool potentialMatchAccuracy) {
   F1 = f1;
   F2 = f2;
 
@@ -24,46 +25,22 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges) {
   VertexSet = G1->getVertices();
 
   GlobalNumbers = new GlobalNumberState();
+#ifdef MATCHER_DEBUG
   llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
                << "\n";
+#endif
 
-  retrievePotIMatches(F1, F2);
+  retrievePotIMatches(F1, F2, potentialMatchAccuracy);
+
+  if (potentialMatchAccuracy)
+    return;
+
   auto res = dualSimulationDriver(F1, F2);
 
   if (res)
     llvm::errs() << "Iso Match Found\n";
   else
     llvm::errs() << "Iso Match NOT Found\n";
-
-  printDOT();
-}
-
-void Matcher::printDOT() {
-  return;
-
-  // Dead code
-  MatchInfo *MI = new MatchInfo;
-  MI->Fn = F1;
-  MI->color = true;
-
-  MatchInfo *MI2 = new MatchInfo;
-  MI2->Fn = F2;
-  MI2->color = true;
-
-  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
-    auto PotMatch = PotIMatches.at(&*I1);
-    MI->match[&*I1] = PotMatch.size();
-    for (auto match : PotMatch) {
-      auto I2 = dyn_cast<Instruction>(match);
-      if (MI2->match.find(&*I2) == MI2->match.end()) {
-        MI2->match[&*I2] = 0;
-      }
-      MI2->match[&*I2] += 1;
-    }
-  }
-
-  writeDFGToDotFile(MI, (MI->Fn->getName() + "-mcsema-diff.dot").str());
-  writeDFGToDotFile(MI2, (MI2->Fn->getName() + "-proposed-diff.dot").str());
 }
 
 /*
@@ -80,17 +57,9 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   if (I1->getOpcode() != I2->getOpcode())
     return false;
 
-  llvm::errs() << *I2 << "\n";
   // Arity Match
   size_t arityCount1 = G1->getAdj(I1).size();
   size_t arityCount2 = G2->getAdj(I2).size();
-  // arityCount1 = arityCount2 = 0;
-  // for (auto it = I1->user_begin(); it != I1->user_end(); it++, arityCount1++)
-  // {
-  // }
-  // for (auto it = I2->user_begin(); it != I2->user_end(); it++, arityCount2++)
-  // {
-  // }
 
   if (arityCount1 != arityCount2)
     return false;
@@ -103,13 +72,6 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   }
 
   if (I1->isBinaryOp()) {
-
-    // if (I1->getOpcode() == Instruction::Add) {
-    //   dumpLLVMNode(I1);
-    //   dumpLLVMNode(I2);
-    //   llvm::errs() << "END\n";
-    // }
-
     assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
            "deepMatch Assert!!");
     for (size_t i = 0; i < I1->getNumOperands(); i++) {
@@ -124,19 +86,11 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
 
       if (L->getValueID() == Value::ConstantExprVal &&
           R->getValueID() == Value::ConstantIntVal) {
-        // const ConstantExpr *LE = cast<ConstantExpr>(L);
-        // if (LE->getOpcode() == Instruction::PtrToInt) {
-        //   continue;
-        // }
         continue;
       }
 
       if (R->getValueID() == Value::ConstantExprVal &&
           L->getValueID() == Value::ConstantIntVal) {
-        // const ConstantExpr *RE = cast<ConstantExpr>(R);
-        // if (RE->getOpcode() == Instruction::PtrToInt) {
-        //   continue;
-        // }
         continue;
       }
 
@@ -149,35 +103,48 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-void Matcher::retrievePotIMatches(Function *F1, Function *F2) {
-  if (!initialMatch(F1, F2)) {
-    printDOT();
+void Matcher::retrievePotIMatches(Function *F1, Function *F2,
+                                  bool potentialMatchAccuracy) {
+  if (!initialArgumentsMatch(F1, F2)) {
     assert(0 && "Problem with Initial Match");
     return;
   }
 
-  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
-    // if ((I1->getType() != IgnoreType) ||
-    //    (nullptr != dyn_cast<CallInst>(&*I1))) {
-    //  VertexSet.push_back(&*I1);
-    //}
-    // VertexSet.push_back(&*I1);
-    llvm::errs() << *I1;
-    llvm::errs() << "Checking: \n";
+  auto totalNodes = 0;
+  size_t foundPotMatches = 0;
 
+  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+    totalNodes++;
     for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
       if (deepMatch(&*I1, &*I2)) {
         PotIMatches[&*I1].insert(&*I2);
+
+        if (potentialMatchAccuracy) {
+          foundPotMatches++;
+          break;
+        }
       }
     }
 
+    if (potentialMatchAccuracy) {
+      continue;
+    }
+
     if (PotIMatches[&*I1].size() == 0) {
-      llvm::errs() << "\n\n[Error] Failed to extract Potential Matches for:";
+      llvm::errs()
+          << "\n\n[Error] Failed to extract initial Potential Matches for:";
       dumpLLVMNode(&*I1);
       assert(
           0 &&
           "[Error in retrievePotIMatches] Failed to extract Potential Matches");
     }
+  }
+
+  if (potentialMatchAccuracy) {
+    llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
+                 << "\n";
+    llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
+    return;
   }
 
 #ifdef MATCHER_DEBUG
@@ -272,7 +239,6 @@ bool Matcher::retrievePotBBMatches() {
         llvm::errs() << "\nThe current BB belongs to the instr\n";
         dumpLLVMNode(*pMatches.begin());
 
-        printDOT();
         assert(0 && "BB Mismatch");
       }
     }
@@ -290,7 +256,7 @@ bool Matcher::retrievePotBBMatches() {
 /*
 ** Assume that the arguments of the two functions are potential matches
 */
-bool Matcher::initialMatch(Function *F1, Function *F2) {
+bool Matcher::initialArgumentsMatch(Function *F1, Function *F2) {
   if (F1->arg_size() != F1->arg_size()) {
     llvm::errs() << "Argument count mismatch\n";
     return false;
@@ -300,18 +266,10 @@ bool Matcher::initialMatch(Function *F1, Function *F2) {
 
   int count = 0;
   while (argI1 != F1->arg_end() && argI2 != F2->arg_end()) {
-    // if (argI1->getType() != argI2->getType()) {
-    //  llvm::errs() << "Argument type mismatch\n";
-    //  llvm::errs() << *argI1 << " [" << *(argI1->getType()) << "]\n";
-    //  llvm::errs() << *argI2 << " [" << *(argI2->getType()) << "]\n";
-    //  return false;
-    //}
     if (count == 2) {
       IgnoreType = argI1->getType();
-      // break;
     }
 
-    // VertexSet.push_back(&*argI1);
     PotIMatches[&*argI1].insert(&*argI2);
 
     argI1++;
@@ -328,8 +286,6 @@ static std::map<Value *, int> getStoreInstOrder(BasicBlock *BB) {
   for (Instruction &I : *BB) {
     StoreInst *StoreInstr = dyn_cast<StoreInst>(&I);
     if (StoreInstr) {
-      // Value *VI = dyn_cast<Value>(&I);
-      // retval[VI] = index++;
       retval[&I] = index++;
     }
   }
@@ -352,11 +308,15 @@ static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
 
 bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   bool changed = true;
+#ifdef MATCHER_DEBUG
   size_t round = 0;
+#endif
   while (changed) {
-    // Run dual simulation
+// Run dual simulation
+#ifdef MATCHER_DEBUG
     llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
                  << ": Round: " << round << "\n";
+#endif
     // changed = dualSimulation(F1, F2, V);
     changed = dualSimulation(F1, F2);
 
@@ -366,22 +326,30 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
     dumpPotIMatches();
 #endif
 
-    // Find BasicBlock correspondence
+// Find BasicBlock correspondence
+#ifdef MATCHER_DEBUG
     llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
                  << ": Round: " << round << "\n";
+#endif
     // changed |= retrievePotBBMatches(V);
     changed |= retrievePotBBMatches();
 
-    // Handle conflicting stores/calls
+// Handle conflicting stores/calls
+#ifdef MATCHER_DEBUG
     llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
                  << ": Round: " << round << "\n";
+#endif
     changed |= handleConflictingStores();
 
+#ifdef MATCHER_DEBUG
     llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
                  << ": Round: " << round << "\n";
+#endif
     changed |= handleConflictingCalls();
 
+#ifdef MATCHER_DEBUG
     round++;
+#endif
   }
 
   // Check the invariant that that each BB has same load/store order
@@ -415,7 +383,9 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
 
   // 2:  changed←true
   bool changed = true;
+#ifdef MATCHER_DEBUG
   size_t round = 0;
+#endif
   // 3:  while changed do
   while (changed) {
 #ifdef MATCHER_DEBUG
@@ -436,10 +406,6 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
         continue;
 
       // 6: for u' ←Q.adj(u) do
-      // for (Value::user_iterator UPrimeI = U->user_begin();
-      //      UPrimeI != U->user_end(); UPrimeI++) {
-      //   Value *UPrime = dyn_cast<Value>(*UPrimeI);
-      //   assert(UPrime && "User not value");
       for (auto *UPrime : G1->getAdj(U)) {
 
         // 7:        Φ'(u')←∅
@@ -456,7 +422,6 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
             llvm::errs() << "Corresponding U: ";
             dumpLLVMNode(U);
 
-            printDOT();
             assert(0 && "No potential matches for UPrime");
           }
 
@@ -477,9 +442,9 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
             // 11:           remove v from Φ(u)
             deleteList.push_back(V);
 #ifdef MATCHER_DEBUG
-            llvm::errs() << "\nRemoving: ";
+            llvm::errs() << "\nRemoving: V";
             dumpLLVMNode(V);
-            llvm::errs() << "From the pot matches of: ";
+            llvm::errs() << "From the pot matches of U: ";
             dumpLLVMNode(&*U);
 
             llvm::errs() << "\n\nUprime : ";
@@ -506,8 +471,6 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
               for (auto deleteNode : deleteList) {
                 PotIMatches.at(&*U).erase(deleteNode);
               }
-              llvm::errs() << "\n\nDumping DOT FILE!";
-              printDOT();
               assert(0 && "Zero Match found: I");
             }
 
@@ -533,7 +496,6 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
           // Update UPrimeMatches before dumping DOT.
           set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
           UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
-          printDOT();
           assert(0 && "Zero Match found: II");
         }
 
@@ -1365,11 +1327,11 @@ int Matcher::cmpValues(const Value *L, const Value *R) const {
 // #endif
 // }
 
-bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
-  if (!I1 || !I2)
-    return false;
-  return (I1->getOpcode() == I2->getOpcode());
-}
+// bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
+//   if (!I1 || !I2)
+//     return false;
+//   return (I1->getOpcode() == I2->getOpcode());
+// }
 
 void Matcher::dumpPotIMatches() {
   for (auto PotMatch : PotIMatches) {
@@ -1394,6 +1356,47 @@ void Matcher::dumpPotBBMatches() {
     llvm::errs() << "\t}\n\n";
   }
 }
+
+// void Matcher::printDOT() {
+//   return;
+//
+//   // Dead code
+//   MatchInfo *MI = new MatchInfo;
+//   MI->Fn = F1;
+//   MI->color = true;
+//
+//   MatchInfo *MI2 = new MatchInfo;
+//   MI2->Fn = F2;
+//   MI2->color = true;
+//
+//   for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1)
+//   {
+//     auto PotMatch = PotIMatches.at(&*I1);
+//     MI->match[&*I1] = PotMatch.size();
+//     for (auto match : PotMatch) {
+//       auto I2 = dyn_cast<Instruction>(match);
+//       if (MI2->match.find(&*I2) == MI2->match.end()) {
+//         MI2->match[&*I2] = 0;
+//       }
+//       MI2->match[&*I2] += 1;
+//     }
+//   }
+//
+//   writeDFGToDotFile(MI, (MI->Fn->getName() + "-mcsema-diff.dot").str());
+//   writeDFGToDotFile(MI2, (MI2->Fn->getName() + "-proposed-diff.dot").str());
+// }
+//
+// double Matcher::matchRatio() {
+//   size_t totalNodes = VertexSet.size();
+//   size_t numMatches = 0;
+//   for (auto U : VertexSet) {
+//     if (PotIMatches.at(&*U).size() == 1 || dyn_cast<BranchInst>(&*U)) {
+//       numMatches++;
+//     }
+//   }
+//
+//   return ((double)numMatches) / totalNodes;
+// }
 
 /*********************************** DepGraph Implementaion ***************/
 DepGraph::DepGraph(Function *F, bool useSSAEdges) {
@@ -1440,8 +1443,10 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
     return;
   }
 
-  // MemSSA edges
+// MemSSA edges
+#ifdef MATCHER_DEBUG
   llvm::errs() << "\n\nMemDep Edges for: " << F->getName() << "\n";
+#endif
   MemSSA *mSSA = new MemSSA(F);
   MemDepEdgesType edges = mSSA->collectMemoryDepEdges();
   for (auto e : edges) {
@@ -1460,8 +1465,9 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
         assert(0 && "Defining instruction should always be a store");
       }
 
+#ifdef MATCHER_DEBUG
       llvm::errs() << *p << " --> " << *U << "\n";
-      // GImpl[U].insert(p);
+#endif
       GImpl[p].insert(U);
     }
   }

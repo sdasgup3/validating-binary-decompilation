@@ -57,6 +57,11 @@ auto &SSAEdgeOnly =
     FlagArg::create("use-ssa-edges")
         .description("Use only the SSA edges to create the dependency graph");
 
+auto &PotentialMatchAccurancy =
+    FlagArg::create("potential-match-accuracy")
+        .description("Report the accuracy of inital potential match without "
+                     "running the dual-sim matching algo");
+
 int main(int argc, char **argv) {
   target_arg.required(false);
   CommandLineConfig::strict_with_convenience(argc, argv);
@@ -180,7 +185,7 @@ int main(int argc, char **argv) {
   }
 
   // Matching the extracted functions
-  Matcher M(F1, F2, SSAEdgeOnly.value());
+  Matcher M(F1, F2, SSAEdgeOnly.value(), PotentialMatchAccurancy.value());
 
   Console::msg() << "Matcher Done...\n";
   return 0;

@@ -156,10 +156,11 @@ subgraph-isomorphic to each other. The algorithm, in general, first
 retrieves initial potential match sets, $\Phi$,  for each vertex in one 
 graph based on semantic and/or neighborhood information in the other graph.
 In our case, the initial potential match set for an instruction 
-\IN in \GN contains all the instructions in \GNP which have the same 
-instruction opcode. Also, if \IN has constant operands then its potential 
-matches must share 
-those.  
+\IN in \GN contains all the instructions in \GNP which satisfies the following 
+three criteria (1) they have the same 
+instruction opcode as \IN, (2) if \IN has constant operands then its potential 
+matches must share those, and (3) the potential matches should have the same number
+of outgoing data dependence edges as that of \IN. 
 Then the algorithm iteratively prunes out elements from the 
 potential match 
 set of each vertex based on its parents/child relations until it reaches a 

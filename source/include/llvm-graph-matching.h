@@ -28,7 +28,7 @@
 
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-graph-matching"
-#define MATCHER_DEBUG
+//#define MATCHER_DEBUG
 
 using namespace std;
 using namespace llvm;
@@ -74,13 +74,16 @@ private:
   int cmpGlobalValues(GlobalValue *L, GlobalValue *R) const;
   int cmpMem(StringRef L, StringRef R) const;
 
+  // double matchRatio();
 public:
-  Matcher(Function *F1, Function *F2, bool useSSAEdges = false);
+  Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
+          bool potentialMatchAccuracy = false);
   // For each instruction in F1, retrieve feasible matches in F2.
-  void retrievePotIMatches(Function *F1, Function *F2);
+  void retrievePotIMatches(Function *F1, Function *F2,
+                           bool potentialMatchAccuracy = false);
   bool checkInvariant();
   bool retrievePotBBMatches();
-  bool shallowMatch(Instruction *I1, Instruction *I2);
+  // bool shallowMatch(Instruction *I1, Instruction *I2);
   bool deepMatch(Instruction *I1, Instruction *I2);
   /*
   **   1: procedure SimpleSim(G, Q, Φ):
@@ -142,7 +145,7 @@ public:
   bool dualSimulation(Function *F1, Function *F2);
   bool dualSimulationDriver(Function *F1, Function *F2);
 
-  bool initialMatch(Function *F1, Function *F2);
+  bool initialArgumentsMatch(Function *F1, Function *F2);
   void dumpPotIMatches();
   void dumpPotBBMatches();
   void dumpLLVMNode(const Value *);
@@ -152,8 +155,6 @@ public:
   bool handleConflictingStores();
   bool handleConflictingCalls();
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
-
-  void printDOT();
 };
 
 } // end llvm namespace
