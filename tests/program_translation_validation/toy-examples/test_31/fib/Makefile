@@ -32,6 +32,10 @@ endif
 NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
 ifdef NORM
   NORM_PASS=-${NORM}
+else
+  ifneq ("$(wildcard $(OUTDIR)/normalizer_final_config.json)", "")
+    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`
+  endif
 endif
 
 
@@ -67,7 +71,7 @@ lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 
 
 tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30 --parallel-compile
+	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=500 --parallel-compile
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner
 
 extract:${INDIR}test.mcsema.opt.ll

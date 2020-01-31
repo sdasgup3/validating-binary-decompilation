@@ -38,16 +38,11 @@ tunerCheck() {
   dir=$2
 
   if [ -f $dir/normalizer_final_config.json ]; then
-    if grep -qw "T:" $dir/normalizer_final_config.json; then
-      echo -e "\e[32mTuner Pass\e[39m:-" `pwd`:$msg
-      exit 0
-    else
-      echo -e "\e[31mTuner Fail [Default pass]\e[39m:-" `pwd`:$msg
-      exit 1
-    fi
+    echo -e "\e[32mTuner Pass\e[39m:-" `pwd`:$msg
+    exit 0
   else
-      echo -e "\e[31mTuner Fail [No Tuning]\e[39m:-" `pwd`:$msg
-      exit 1
+    echo -e "\e[31mTuner Fail\e[39m:-" `pwd`:$msg
+    exit 1
   fi
 }
 

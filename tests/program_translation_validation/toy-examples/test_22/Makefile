@@ -12,12 +12,6 @@ else
 endif
 
 
-NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
-ifdef NORM
-  NORM_PASS=-${NORM}
-endif
-
-
 all: binary objdump mcsema  DoDemoFpu1 main timespi
 compd: DoDemoFpu1 main timespi
 compd_opt: DoDemoFpu1 main timespi

@@ -133,12 +133,6 @@ def createParentMakefile(functions):
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
 
-    makeFile.write("NORM_PASS=" + OPT + "\n")
-    makeFile.write("ifdef NORM" + "\n")
-    makeFile.write("  NORM_PASS=-${NORM}" + "\n")
-    makeFile.write("endif" + "\n")
-    makeFile.write("\n\n")
-
     makeFile.write("all: binary objdump mcsema " + allFuncNames + "\n")
     makeFile.write("compd:" + allFuncNames + "\n")
     makeFile.write("compd_opt:" + allFuncNames + "\n")
@@ -216,6 +210,10 @@ def createMakefile(funcName):
     makeFile.write("NORM_PASS=" + OPT + "\n")
     makeFile.write("ifdef NORM" + "\n")
     makeFile.write("  NORM_PASS=-${NORM}" + "\n")
+    makeFile.write("else" + "\n")
+    makeFile.write("  ifneq (\"$(wildcard $(OUTDIR)/normalizer_final_config.json)\", \"\")" + "\n")
+    makeFile.write("    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`" + "\n")
+    makeFile.write("  endif" + "\n")
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
 
@@ -281,7 +279,7 @@ def createMakefile(funcName):
         "tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30 --parallel-compile" + "\n")
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=500 --parallel-compile" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner")
 #makeFile.write(

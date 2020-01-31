@@ -12,12 +12,6 @@ else
 endif
 
 
-NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
-ifdef NORM
-  NORM_PASS=-${NORM}
-endif
-
-
 all: binary objdump mcsema  to_byte read_bytes main keycomp
 compd: to_byte read_bytes main keycomp
 compd_opt: to_byte read_bytes main keycomp
