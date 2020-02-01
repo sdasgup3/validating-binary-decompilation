@@ -20,8 +20,8 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
   F1 = f1;
   F2 = f2;
 
-  G1 = new DepGraph(F1, useSSAEdges);
-  G2 = new DepGraph(F2, useSSAEdges);
+  G1 = new DepGraph(F1, useSSAEdges, !potentialMatchAccuracy);
+  G2 = new DepGraph(F2, useSSAEdges, !potentialMatchAccuracy);
   VertexSet = G1->getVertices();
 
   GlobalNumbers = new GlobalNumberState();
@@ -1399,7 +1399,7 @@ void Matcher::dumpPotBBMatches() {
 // }
 
 /*********************************** DepGraph Implementaion ***************/
-DepGraph::DepGraph(Function *F, bool useSSAEdges) {
+DepGraph::DepGraph(Function *F, bool useSSAEdges, bool debug) {
 
   this->F = F;
 
@@ -1443,10 +1443,10 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
     return;
   }
 
-// MemSSA edges
-#ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\nMemDep Edges for: " << F->getName() << "\n";
-#endif
+  // MemSSA edges
+  if (debug)
+    llvm::errs() << "\n\nMemDep Edges for: " << F->getName() << "\n";
+
   MemSSA *mSSA = new MemSSA(F);
   MemDepEdgesType edges = mSSA->collectMemoryDepEdges();
   for (auto e : edges) {
@@ -1465,9 +1465,9 @@ DepGraph::DepGraph(Function *F, bool useSSAEdges) {
         assert(0 && "Defining instruction should always be a store");
       }
 
-#ifdef MATCHER_DEBUG
-      llvm::errs() << *p << " --> " << *U << "\n";
-#endif
+      if (debug)
+        llvm::errs() << *p << " --> " << *U << "\n";
+
       GImpl[p].insert(U);
     }
   }

@@ -119,7 +119,7 @@ def createParentMakefile(functions):
     for func in functions:
         allFuncNames = allFuncNames + " " + func[0]
     makeFile = open("Makefile", 'w')
-    makeFile.write(".PHONY: binary objdump mcsema mcsema_opt " + allFuncNames + "\n\n")
+    makeFile.write(".PHONY: binary objdump mcsema " + allFuncNames + "\n\n")
 
     makeFile.write("ifndef BIN_OPT" + "\n")
     makeFile.write("  BIN_OPT=O0" + "\n")
@@ -133,13 +133,7 @@ def createParentMakefile(functions):
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
 
-    makeFile.write("NORM_PASS=" + OPT + "\n")
-    makeFile.write("ifdef NORM" + "\n")
-    makeFile.write("  NORM_PASS=-${NORM}" + "\n")
-    makeFile.write("endif" + "\n")
-    makeFile.write("\n\n")
-
-    makeFile.write("all: binary objdump mcsema mcsema_opt " + allFuncNames + "\n")
+    makeFile.write("all: binary objdump mcsema " + allFuncNames + "\n")
     makeFile.write("compd:" + allFuncNames + "\n")
     makeFile.write("compd_opt:" + allFuncNames + "\n")
     makeFile.write("match:" + allFuncNames + "\n\n")
@@ -157,11 +151,10 @@ def createParentMakefile(functions):
     makeFile.write("mcsema:" + "\n")
     makeFile.write("	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main" + "\n")
     makeFile.write("	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer" + "\n")
-    makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n\n")
-
-    makeFile.write("mcsema_opt:" + "\n")
+    makeFile.write("	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll" + "\n")
     makeFile.write("	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll" + "\n")
-    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll" + "\n\n");
+    makeFile.write("	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll" + "\n");
+    makeFile.write("\n\n")
 
     for func in functions:
         makeFile.write(func[0] + ":" + "\n")
@@ -217,41 +210,54 @@ def createMakefile(funcName):
     makeFile.write("NORM_PASS=" + OPT + "\n")
     makeFile.write("ifdef NORM" + "\n")
     makeFile.write("  NORM_PASS=-${NORM}" + "\n")
+    makeFile.write("else" + "\n")
+    makeFile.write("  ifneq (\"$(wildcard $(OUTDIR)/normalizer_final_config.json)\", \"\")" + "\n")
+#makeFile.write("    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`" + "\n")
+    makeFile.write("    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`" + "\n")
+    makeFile.write("  endif" + "\n")
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
 
     makeFile.write(
-        ".PHONY: clean compd compd_opt match extract aainfo lltodot" +
+        ".PHONY: clean compd compd_opt mcsema_opt match extract aainfo lltodot" +
         "\n\n")
 
-    makeFile.write("all: compd compd_opt match")
+    makeFile.write("all: compd compd_opt mcsema_opt match")
     makeFile.write("" + "\n\n")
+
 
     makeFile.write("compd: ${INDIR}test" + "\n")
     makeFile.write(
         "	mkdir -p ${OUTDIR}" + "\n")
     makeFile.write(
         "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>${OUTDIR}compd.log 2>&1" + "\n")
-#    makeFile.write(
-#        "	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info --force_artifact_gen 1>${OUTDIR}compd.log 2>&1" + "\n")
     makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd")
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd" + "\n")
+    makeFile.write(
+        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll" + "\n")
     makeFile.write("" + "\n\n")
+
 
     makeFile.write(
         "compd_opt: ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
+        "	opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
     makeFile.write("" + "\n\n")
 
+
+    makeFile.write("mcsema_opt:" + "\n")
+    makeFile.write("	opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${OUTDIR}test.mcsema.opt.ll" + "\n");
+    makeFile.write("\n\n")
+
+
     makeFile.write(
-        "match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll" +
+        "match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll" +
         "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1" + "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1" + "\n")
+        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match")
     makeFile.write("" + "\n\n")
@@ -274,9 +280,11 @@ def createMakefile(funcName):
         "tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30" + "\n")
+        "	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1" + "\n")
     makeFile.write(
-        "	python -m json.tool normalizer_final_config.json")
+        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner")
+#makeFile.write(
+#        "	python -m json.tool normalizer_final_config.json")
     makeFile.write("" + "\n\n")
 
 

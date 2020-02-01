@@ -32,25 +32,35 @@ endif
 NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
 ifdef NORM
   NORM_PASS=-${NORM}
+else
+  ifneq ("$(wildcard $(OUTDIR)/normalizer_final_config.json)", "")
+    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`
+  endif
 endif
 
 
-.PHONY: clean compd compd_opt match extract aainfo lltodot
+.PHONY: clean compd compd_opt mcsema_opt match extract aainfo lltodot
 
-all: compd compd_opt match
+all: compd compd_opt mcsema_opt match
 
 compd: ${INDIR}test
 	mkdir -p ${OUTDIR}
 	-time ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info 1>${OUTDIR}compd.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR} --compd
+	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll
+
 
 compd_opt: ${OUTDIR}test.proposed.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll;  opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
+	opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
 
 
-match: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
-	-time ${TOOLDIR}/matcher --file1 ${INDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1
-	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${INDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1
+mcsema_opt:
+	opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${OUTDIR}test.mcsema.opt.ll
+
+
+match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll
+	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1
+	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
 
 lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
@@ -61,8 +71,8 @@ lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 
 
 tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --no-dups --stop-after=30
-	python -m json.tool normalizer_final_config.json
+	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1
+	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner
 
 extract:${INDIR}test.mcsema.opt.ll
 	llvm-extract -S  -rfunc="sub_.*_${PROG}" ${INDIR}test.mcsema.opt.ll -o ${OUTDIR}test.mcsema.opt.extract.ll

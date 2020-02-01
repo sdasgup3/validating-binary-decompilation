@@ -1,0 +1,1 @@
+ -gvn -globalopt -simplifycfg -memdep -deadargelim -tailcallelim -instcombine -gvn -globalopt -simplifycfg -memdep -deadargelim -tailcallelim -instcombine
