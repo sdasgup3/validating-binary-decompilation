@@ -1,0 +1,1 @@
+ -gvn -globalopt -basicaa -dse -deadargelim -instcombine

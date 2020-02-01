@@ -1,4 +1,4 @@
-.PHONY: binary objdump mcsema mcsema_opt  Initrand Rand rInitmatrix rInnerproduct Mm main
+.PHONY: binary objdump mcsema  Initrand Rand rInitmatrix rInnerproduct Mm main
 
 ifndef BIN_OPT
   BIN_OPT=O0
@@ -12,13 +12,7 @@ else
 endif
 
 
-NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
-ifdef NORM
-  NORM_PASS=-${NORM}
-endif
-
-
-all: binary objdump mcsema mcsema_opt  Initrand Rand rInitmatrix rInnerproduct Mm main
+all: binary objdump mcsema  Initrand Rand rInitmatrix rInnerproduct Mm main
 compd: Initrand Rand rInitmatrix rInnerproduct Mm main
 compd_opt: Initrand Rand rInitmatrix rInnerproduct Mm main
 match: Initrand Rand rInitmatrix rInnerproduct Mm main
@@ -37,10 +31,9 @@ mcsema:
 	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
 	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
-
-mcsema_opt:
 	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll
-	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll
+
 
 Initrand:
 	@echo

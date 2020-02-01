@@ -34,7 +34,7 @@ ifdef NORM
   NORM_PASS=-${NORM}
 else
   ifneq ("$(wildcard $(OUTDIR)/normalizer_final_config.json)", "")
-    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`
+    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`
   endif
 endif
 
@@ -71,7 +71,7 @@ lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 
 
 tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
-	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=500 --parallel-compile
+	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner
 
 extract:${INDIR}test.mcsema.opt.ll
