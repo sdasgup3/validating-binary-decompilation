@@ -1,0 +1,1 @@
+ -mem2reg -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine

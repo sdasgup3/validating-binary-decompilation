@@ -1,0 +1,1 @@
+ -licm -gvn -globalopt -aa -memdep -dse -instcombine -memcpyopt

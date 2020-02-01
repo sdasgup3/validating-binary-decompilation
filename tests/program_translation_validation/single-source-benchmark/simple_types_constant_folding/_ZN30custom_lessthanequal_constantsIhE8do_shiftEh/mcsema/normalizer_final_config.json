@@ -1,0 +1,1 @@
+ -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine

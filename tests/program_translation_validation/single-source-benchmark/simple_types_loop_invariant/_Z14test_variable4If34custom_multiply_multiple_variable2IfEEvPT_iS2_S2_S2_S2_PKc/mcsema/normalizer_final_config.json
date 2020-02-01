@@ -1,0 +1,1 @@
+ -licm -gvn -simplifycfg -aa -dse -tailcallelim -instcombine

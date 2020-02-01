@@ -41,7 +41,7 @@ private:
 
 public:
   Function *F;
-  DepGraph(Function *F, bool useSSAEdges = false);
+  DepGraph(Function *F, bool useSSAEdges = false, bool debug = false);
   size_t numEdges() { return GImpl.size(); };
   vector<Value *> getVertices();
   set<Value *> getAdj(Value *V);

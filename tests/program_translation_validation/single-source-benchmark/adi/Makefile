@@ -1,4 +1,4 @@
-.PHONY: binary objdump mcsema mcsema_opt  polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
+.PHONY: binary objdump mcsema  polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
 
 ifndef BIN_OPT
   BIN_OPT=O0
@@ -12,13 +12,7 @@ else
 endif
 
 
-NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
-ifdef NORM
-  NORM_PASS=-${NORM}
-endif
-
-
-all: binary objdump mcsema mcsema_opt  polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
+all: binary objdump mcsema  polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
 compd: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
 compd_opt: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
 match: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_adi check_FP print_array print_element
@@ -37,10 +31,9 @@ mcsema:
 	mcsema-disass --disassembler ${HOME}/ida-6.95/idal64 --os linux --arch amd64_avx --output ${INDIR}test.mcsema.cfg --binary ${INDIR}/test --entrypoint main
 	mcsema-lift-4.0 --os linux --arch amd64_avx --cfg ${INDIR}test.mcsema.cfg --output ${INDIR}test.mcsema.bc -disable_dead_store_elimination -disable_optimizer
 	llvm-dis ${INDIR}test.mcsema.bc -o ${INDIR}test.mcsema.ll
-
-mcsema_opt:
 	../../../scripts/remove_definitions.pl --file ${INDIR}test.mcsema.ll --out ${INDIR}test.mcsema.calls_renamed.ll
-	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll;  opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${INDIR}test.mcsema.opt.ll
+	opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll
+
 
 polybench_flush_cache:
 	@echo

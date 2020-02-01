@@ -20,3 +20,10 @@ match_mcsema_proposed.log
 match_proposed_mcsema.log
 *.sw*
 compd.log
+test.mcsema.opt.ll
+opentuner.db
+opentuner.log
+tmp
+test.proposed.opt.ll
+test.mcsema.opt.ll
+tuner.log
