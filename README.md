@@ -20,11 +20,10 @@ git clone --recursive https://github.com/sdasgup3/validating-binary-decompilatio
 
 
 # Directory Structure 
-## [Source](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)
-## Testing
-### [Program Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)
-### [Single Instruction Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)
-
+ - [Source Code](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)
+ -  Testing
+  - [Program Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)
+  - [Single Instruction Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)
 
 ## TB Done
   - handling the false positives on Matcher failures.

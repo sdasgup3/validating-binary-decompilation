@@ -1,0 +1,1 @@
+ -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt

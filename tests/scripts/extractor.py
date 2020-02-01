@@ -212,7 +212,8 @@ def createMakefile(funcName):
     makeFile.write("  NORM_PASS=-${NORM}" + "\n")
     makeFile.write("else" + "\n")
     makeFile.write("  ifneq (\"$(wildcard $(OUTDIR)/normalizer_final_config.json)\", \"\")" + "\n")
-    makeFile.write("    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`" + "\n")
+#makeFile.write("    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`" + "\n")
+    makeFile.write("    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`" + "\n")
     makeFile.write("  endif" + "\n")
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
@@ -279,7 +280,7 @@ def createMakefile(funcName):
         "tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-        "	opt -S  -inline   ${OUTDIR}test.proposed.ll -o ${OUTDIR}test.proposed.inline.ll; opt -S  -inline   ${INDIR}test.mcsema.calls_renamed.ll -o ${INDIR}test.mcsema.inline.ll; ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=500 --parallel-compile" + "\n")
+        "	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner")
 #makeFile.write(
