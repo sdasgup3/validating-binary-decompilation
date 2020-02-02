@@ -207,17 +207,6 @@ def createMakefile(funcName):
     makeFile.write("endif" + "\n")
     makeFile.write("\n\n")
 
-    makeFile.write("NORM_PASS=" + OPT + "\n")
-    makeFile.write("ifdef NORM" + "\n")
-    makeFile.write("  NORM_PASS=-${NORM}" + "\n")
-    makeFile.write("else" + "\n")
-    makeFile.write("  ifneq (\"$(wildcard $(OUTDIR)/normalizer_final_config.json)\", \"\")" + "\n")
-#makeFile.write("    NORM_PASS = `cat $(OUTDIR)/normalizer_final_config.json`" + "\n")
-    makeFile.write("    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`" + "\n")
-    makeFile.write("  endif" + "\n")
-    makeFile.write("endif" + "\n")
-    makeFile.write("\n\n")
-
     makeFile.write(
         ".PHONY: clean compd compd_opt mcsema_opt match extract aainfo lltodot" +
         "\n\n")
@@ -242,24 +231,20 @@ def createMakefile(funcName):
         "compd_opt: ${OUTDIR}test.proposed.ll" +
         "\n")
     makeFile.write(
-        "	opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll" + "\n")
+        "	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --prog ${PROG} --compd_opt" + "\n")
     makeFile.write("" + "\n\n")
 
 
     makeFile.write("mcsema_opt:" + "\n")
-    makeFile.write("	opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${OUTDIR}test.mcsema.opt.ll" + "\n");
+    makeFile.write("	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --prog ${PROG} --mcsema_opt" + "\n");
     makeFile.write("\n\n")
 
 
     makeFile.write(
-        "match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll" +
+        "match:" +
         "\n")
     makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1" + "\n")
-    makeFile.write(
-        "	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1" + "\n")
-    makeFile.write(
-        "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match")
+        "	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --tooldir ${TOOLDIR} --prog ${PROG} --match")
     makeFile.write("" + "\n\n")
 
 
