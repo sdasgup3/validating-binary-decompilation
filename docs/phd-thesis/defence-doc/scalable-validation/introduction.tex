@@ -196,8 +196,11 @@ We present four key contributions.
   and \s{T$^\prime$} are \emph{semantically} equivalent.  If such a normalizer
   exists, then we can reduce the problem of program-level semantics checking to
   a much cheaper program-level syntactic check!  In this work, we construct a 
-  normalizer out of a very short sequence of $15$ LLVM IR passes, of which 11 are
-  transformation passes.  We have found this approach to be effective at proving
+  normalizer out of a very short sequence (of average length \avgPassLength) of LLVM IR passes. 
+  The sequence is auto-selected using an auto-tuner by searching over the space of \s{-O3}
+  LLVM compilation passes.
+   
+   We have found this approach to be effective at proving
   syntactic equivalence between \s{T} and \Tp for \plvP out of \plvT functions
   taken from  ``single-source-benchmark'' of LLVM test-suite.
   %
