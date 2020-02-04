@@ -1,4 +1,4 @@
-\subsection{Matcher}\label{sec:matcher}
+\subsection{Normalizer \& Matcher}\label{sec:matcher}
 % How does the normalized outs look like
 % Choice os SSA graph -> Why not conflow graph
 % Why the matcher + Semantics Preserving Transformation is sufficient.
@@ -8,8 +8,8 @@ of the composition, \T \& \TP are structurally very similar.
 We leverage this observation to establish 
 semantic equivalence between the two using a graph-isomorphism based 
 algorithm assisted by 
-normalization.  The algorithm is realized by a tool 
-we develop called the \matcher. If the   
+normalization (line 2-3).  The algorithm is realized by a tool 
+we develop called the \matcher (line 4). If the   
 \matcher fails to match \T \& \TP, there is a \emph{potential} bug in the lifted program. 
 %comparing (using \emph{Matcher}) 
 %the \emph{canonical 
@@ -35,11 +35,12 @@ we develop called the \matcher. If the
     
     
     \BlankLine
-    
+  
     \ForEach{\textup{corresponding function pair (\F,\FP) in 
             (\T, \TP)}}{%
-        
-        \If{\textup{!Matcher(\F, \FP)}}{%
+        \FN = Normalizer(\F) \\
+        \FNP = Normalizer(\FP) \\
+        \If{\textup{!Matcher(\FN, \FNP)}}{%
             \tcp{\textup{A potential bug in McSema while lifting \s{F}}}
             \KwRet{false}  \\ 
         }
@@ -50,7 +51,7 @@ we develop called the \matcher. If the
     \caption{\textbf{Matcher Strategy}}\label{alg:NM}
 \end{algorithm}
 
-The matcher algorithm is based on the following key observations on input IR 
+The above algorithm is based on the following key observations on input IR 
 programs, \s{T} \& \Tp, informally stated:
 %
 (I) Both exhibit identical control-flow and identical sequences of memory allocation
@@ -82,9 +83,12 @@ each dynamic instance of the corresponding instructions.
 These two observations motivate an intuitively simple graph isomorphism strategy for
 proving the equivalence of \T and \Tp.
 %
-Let us name the normalized versions of the function pair, \F \& \FP, as \FN \& 
-\FNP.
-The Matcher algorithm works on data dependence graphs, \GN \& \GNP, generated  
+At first, the function pair (\F \& \FP) is normalized to (\FN, \FNP), using LLVM optimization
+passes, to prune-off any syntactic differences. 
+%
+%Let us name the normalized versions of the function pair, \F \& \FP, as \FN \& 
+%\FNP.
+Next, the Matcher algorithm works on data dependence graphs, \GN \& \GNP, generated  
 from \FN \& \FNP. A vertex of the graph represents an 
 LLVM instruction and an edge between two vertices captures SSA def-use  or   
 memory 
@@ -213,6 +217,33 @@ Two edges will be marked as isomorphic if their source and sink nodes are isomor
     \caption{\textbf{Dual Simulation}}\label{alg:DS}
 \end{algorithm}
 
+\paragraph{Autotuning based Normalizer}
+
+As per the aforementioned matching strategy, in order to prove that two
+functions \F \& \FP are semantically equivalent, they need to be reduced to
+isomorphic graphs via normalization. Initially, the LLVM optimization passes
+that we used for normalization are the ones comprising standard LLVM \s{opt
+  -O3} sequence, with a total of $~187$ individual passes. Later
+  experimentations on normalizer revealed that changing the order of passes
+  yields better results by reducing more semantically equivalent functions to isomorphic graphs. Also,
+  only a few passes of the \s{opt -O3} sequence are effective for normalizing a
+  given pair of functions.  Such observations, coupled with few manual
+  experimentations, intrigues us to frame the problem of selecting the best
+  optimization sequence for normalization as an application of program
+  autotuning. We used the OpenTuner~\cite{opentuner2014} framework for
+  the purpose. The OpenTuner framework requires the user to specify a configuration space
+  to search for, which in our case includes the passes in \s{opt -O3} sequence. The 
+  framework then uses various machine learning techniques to  find the best configuration which
+  can minimize an objective function within a given resource budget. The objective function in our 
+  case is to maximize the initial potential match set, $\Phi$.  
+  %
+  
+  The matching results obtained after such autotuner-based Normalizer
+  exceeds our expectation in two ways: (1) Improved matching with very low false 
+  positive rates (refer to Section~\ref{sec:eval}), and (2) the average length of the OpenTuner-generated pass sequence 
+  is just \avgPassLength (min: $3$, max: $24$), as apposed length of the \s{opt -O3} sequence. A shorter normalizer
+  sequence encourages practical solutions towards formally validating the normalizer. 
+   
 %\cmt{Then we augmented the algorithm to infer the basic-block 
 %correspondence 
 %on the fly and use that information to prune out the potential sets of store 

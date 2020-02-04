@@ -101,8 +101,8 @@ yet to be validated) IR sequences, corresponding to the x86-64 instructions to
 generate an \LLVM program, \s{T$^\prime$}.
 %
 Next, we seek to compare \s{T} and \s{T$^\prime$} for a syntactical match,
-\emph{one function at a time}. Towards that goal, we use a set of $15$ LLVM
-optimization passes as a normalizer to close the syntactic gap between \s{T}
+\emph{one function at a time}. Towards that goal, we use a small set of LLVM
+optimization passes (of average length \avgPassLength) as a normalizer to close the syntactic gap between \s{T}
 \& \s{T$^\prime$} to be compared for syntactic equivalence by a matcher
 (Section~\ref{sec:matcher}). 
 %%

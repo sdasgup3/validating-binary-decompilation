@@ -8,3 +8,4 @@ Validation and the compositional Decompiler.
 - Single instruction validation and Program level V can be implemented
 isolation
 
+- Report time of compd/tuner/matcher ; compare w/wo tuner 
