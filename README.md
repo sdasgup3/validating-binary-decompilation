@@ -32,5 +32,5 @@ git clone --recursive https://github.com/sdasgup3/validating-binary-decompilatio
     - Reusing jmp/jcc/call is prety trivial
     - mov imm64 to ... or mov mem to ... is non trivial
 
-## Not Immediate Goal
+## Immediate Goal
   -  Extending the methodology to other lifters like fcd/rev.ng
