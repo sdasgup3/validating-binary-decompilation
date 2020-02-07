@@ -34,13 +34,14 @@ print_stats <- function (df, chart, range_min, range_max, step) {
 
   # Compd
   median_c <- median(elapsed_c_sec)
+  mean_c <- mean(elapsed_c_sec)
   max_c <- max(elapsed_c_sec)
   min_c <- min(elapsed_c_sec)
   max_c_id <- which(max_c == elapsed_c_sec)
   min_c_id <- which(min_c == elapsed_c_sec)
   max_c_label <- paste("F: ", test[max_c_id[1]], "\nS: ", size[max_c_id[1]])
   min_c_label <- paste("F: ", test[min_c_id[1]], "\nS: ", size[min_c_id[1]])
-  print_quartile(median_c, min_c, max_c, "compd", min_c_label, max_c_label)
+  print_quartile(mean_c, median_c, min_c, max_c, "compd", min_c_label, max_c_label)
 
   # mp
   median_mp <- median(elapsed_mp_sec)
