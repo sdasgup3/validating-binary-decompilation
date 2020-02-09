@@ -13,7 +13,10 @@ experiments:
   \item[Q2.] What fraction of function translations are successfully proven correct
   by \plv, and what is the false alarm rate of the tool?
   %
-  \item[Q3.] Is \plv effective at finding additional potential bugs in a complex 
+  \item[Q3.] Given the fact the \plv  comprises of a \compd and \matcher, how is
+  the performance of this phase?
+  %
+  \item[Q4.] Is \plv effective at finding additional potential bugs in a complex 
   lifter like McSema, beyond those found by \siv alone?  We studied this question
   using artificially injected bugs, because all real bugs were caught by \siv.
 \end{itemize}
@@ -31,13 +34,31 @@ functions. (However, we do support intrinsics like llvm.ctpop, which is
 pervasively generated in the lifted IR for updating the \reg{pf} flag.) This 
 brings us to a total of \sivIS viable instruction variants, and we apply
 \TV to each of them individually.
-
+%
 Out of the \sivIS translation validations, \sivFail cases fail (hence are bugs) and 
-\sivTO terminate with timeouts. The timeouts all correspond to \instr{paddb}, 
-\instr{psubb}, and \instr{mulq} family of instructions, and are because of
-complex summaries coming out of the lifted IR. For all the cases that timed out,
-we manually inspected them to check that the generated code fragments are 
-semantically equivalent.
+\sivTO timed out. Note that, the solver found conclusive results in all the cases 
+(except the timeouts) within a solver timeout of 30 secs. Figure~\ref{fig:solvertime}
+shows the distribution of Solver times on tests producing conclusive results. The outliers are
+the ones having complex summaries coming out of the lifted IR.
+
+\begin{figure}
+    \includegraphics[scale=0.5]{scalable-validation/figs/solver.png}
+    \caption{Distribution of \Z solver time} \label{fig:solvertime}
+\end{figure}
+%%
+
+Timeouts, declared based on a threshold of 24 hrs, correspond to \instr{paddb},
+  \instr{psubb}, and \instr{mulq} family of instructions. On further
+  investigation, we found that $4$ out of \sivTO timeouts, related to
+  \instr{paddb}, \instr{psubb}, are flaky: the \Z solver result toggled between
+  \textit{unknown} and \textit{unsat} depending on the order in which other
+  unrelated constraints are added (which is a known issue~\cite{ZIssue}). By
+  removing the unrelated constraints, \Z concludes them to be equivalent. The
+  remaining two cases (related to \instr{mulq}) include solver constraints
+  containing bit-vector multiplication which the state-of-the-art SMT solvers
+  are not very efficient at reasoning about. However, we manually inspected
+  them to check that the generated code fragments are semantically equivalent.
+%%
 
 The \sivFail failures were all reported 
 as possible bugs~\cite{Suppl} to the \mcsema project, and all \sivFail 
@@ -99,15 +120,82 @@ of $777$.
 Of the \plvT usable functions, our matcher can correctly and formally 
 prove the correctness of the translations for \plvP using graph-isomorphism, 
 i.e., a success rate of 93\%.
-We manually checked the remaining $159$ and found them to be false alarms.
-Overall, a false alarm rate of about 7\% is low enough that we believe
+We manually checked the remaining $159$ and found them to be false alarms, with the
+following root causes:
+
+\begin{itemize}
+ \item \textbf{Phase ordering problem ($~80\%$)}: The normalizer passes are not able to
+converge functions into isomorphic graphs mainly because of the order in which
+the normalizer passes are applied. We believe that an auto-tuner
+(e.g. ~\cite{opentuner2014,HyperOpt13}) exploring
+different normalizer pass sequences can greatly improves these results.
+
+ \item \textbf{Difference in Lifting globals ($~20\%$)}: For data section addresses, Mcsema
+lifts a global with over-approximated size (as determined by IDA) which need
+not be equal to the actual source code size, whereas, we determine the size as
+the width of the maximum access across all the instructions accessing that
+particular global.  As a result, the lifted global sizes might be different from
+\mcsema. The memory-dependence edges that we extract using \LLVM \textit{memoryssa}
+analysis depend on the size of the globals and hence the generated graphs will
+be different. A more accurate memory analysis might solve these issues.
+    
+\end{itemize}
+%%
+
+%%
+
+Overall, a false alarm rate of about \FPRate is low enough that we believe
 our Matcher can be of practical use for validation and testing of a decompiler.
+
+
+\paragraph{Program-level validation: Performance:}
+The performance of this phase is primarily dominated by that of \compd and
+\matcher.  We chose to validate single instruction in batch after \plv (thereby
+ skipping line 8 in Algorithm~\ref{alg:compd}). Figure~\ref{fig:compdtime} demonstrates
+ performance of \compd using a distribution of its runtime. The
+ performance depends heavily on the availability of instructions in the Store
+ Cache for reuse. For example, even though   ``oourafft/cftmdl'' has the largest number of
+ binary instruction (to be lifted to IR), most of the instructions are reused from the
+ Store while compositing and hence its composition time is not the most dominating.
+ 
+The amount of reuse depends on the order in which the test functions are
+executed.  For example, a bulky function, with many commonly occurring
+instructions, if decompiled first (using \compd), will populate  the Store
+sufficiently to be reused across other functions.  Even with an
+arbitrary order of test execution, the Store reuse is found significant.
+Figure~\ref{fig:reuse} shows the distribution of reuse percentage (both across
+    \& within functions) for an arbitrary order of lifter execution on \plvT
+test-functions.
+
+\begin{figure}
+    \includegraphics[scale=0.5]{scalable-validation/figs/reuse.png}
+    \caption{Distribution of reuse \% within \& across functions
+        for an arbitrary execution sequence \compd 
+        on test-subjects (i.e. functions)} \label{fig:reuse}
+\end{figure}
+
+
+\begin{figure}
+    \includegraphics[scale=0.5]{scalable-validation/figs/compdtime.png}
+    \caption{Distribution of  \compd time} \label{fig:compdtime}
+\end{figure}
+
+The matcher includes includes an algorithm~\cite{Saltz2014} for subgraph-isomorphism
+having a complexity of $\Theta(n \times e \times p)$ (worst-case $\mathcal{O}(n^3)$), where $n, e, p$ are
+the number of nodes in \GN (or \GNP), the average number of edges per node, and the average
+size of the potential-match set $\Phi$ respectively. However, the way we define the initial match set $\Phi$
+keeps $p$ pretty low, thereby improving the performance, as shown in Figure~\ref{fig:matchtime}. 
+\begin{figure}
+    \includegraphics[scale=0.5]{scalable-validation/figs/matchtime.png}
+    \caption{Distribution of  \matcher time} \label{fig:matchtime}
+\end{figure}
+
 
 \paragraph{Program-level validation: Effectiveness at finding bugs:}
 %
 In order to evaluate whether our strategy is effective in finding bugs in lifters like 
 McSema, we manually injected bugs in their implementation. The injected bugs 
-covers the following aspects of \mcsema's lifting: (1) \emph{Instruction 
+cover the following aspects of \mcsema's lifting: (1) \emph{Instruction 
 lifting}: McSema 
 while lifting uses code templates to generate IR sequences for each instruction. 
 The injected bug forces the tool to choose wrong templates. The injected bug is 
@@ -133,7 +221,7 @@ the use of incorrect simulated address for general purpose registers and flags.
 
 Each of the above bugs are injected one at a time and in combination and the 
 resulting buggy lifter is tested against the \compd on the same evaluation 
-test-suite before. All the injected bugs are correctly detected by the Matcher,
+test-suite as before. All the injected bugs are correctly detected by the Matcher,
 showing that \plv is useful for detecting bugs, not just proving correctness.
 
 Note that only the first of these bugs would be caught by \siv: the binary instruction

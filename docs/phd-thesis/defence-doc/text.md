@@ -9,3 +9,5 @@ Validation and the compositional Decompiler.
 isolation
 
 - Report time of compd/tuner/matcher ; compare w/wo tuner 
+
+- remove 32 from introduction reference
