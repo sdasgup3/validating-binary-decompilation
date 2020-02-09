@@ -85,7 +85,7 @@ genz3:
 	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --genz3
 
 provez3:
-	python Output/test-z3.py ${PROG}
+	time python Output/test-z3.py ${PROG}
 
 
 ##

@@ -1,80 +1,1899 @@
+ -early-cse -basicaa -instcombine -early-cse -basicaa -instcombine
+ -early-cse -basicaa -memdep -instcombine -early-cse -basicaa -memdep -instcombine
+ -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -early-cse -simplifycfg -memdep -tailcallelim -instcombine -early-cse -simplifycfg -memdep -tailcallelim -instcombine
+ -gvn -aa -deadargelim -tailcallelim -instcombine -gvn -aa -deadargelim -tailcallelim -instcombine
+ -gvn -aa -dse -deadargelim -instcombine
+ -gvn -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -aa -dse -instcombine
+ -gvn -aa -dse -instcombine -memcpyopt
  -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -aa -memdep -dse -deadargelim -instcombine
+ -gvn -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -aa -memdep -dse -instcombine
+ -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -basicaa -aa -dse -instcombine
+ -gvn -basicaa -aa -dse -instcombine -memcpyopt
+ -gvn -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -basicaa -aa -dse -tailcallelim -instcombine
+ -gvn -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -gvn -basicaa -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -basicaa -aa -memdep -dse -instcombine
+ -gvn -basicaa -deadargelim -tailcallelim -instcombine -gvn -basicaa -deadargelim -tailcallelim -instcombine
+ -gvn -basicaa -dse -deadargelim -instcombine
+ -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -basicaa -dse -instcombine
+ -gvn -basicaa -dse -instcombine -memcpyopt
+ -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
  -gvn -basicaa -dse -tailcallelim -instcombine
+ -gvn -basicaa -memdep -dse -deadargelim -instcombine
+ -gvn -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -basicaa -memdep -dse -instcombine
+ -gvn -basicaa -memdep -dse -instcombine -memcpyopt
+ -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -dse -deadargelim -instcombine
+ -gvn -dse -deadargelim -instcombine -gvn -dse -deadargelim -instcombine
+ -gvn -dse -deadargelim -instcombine -memcpyopt
+ -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -dse -deadargelim -tailcallelim -instcombine
+ -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -dse -instcombine
+ -gvn -dse -instcombine -memcpyopt
+ -gvn -dse -libcalls-shrinkwrap -instcombine
+ -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -dse -tailcallelim -instcombine
+ -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -deadargelim -instcombine
+ -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -instcombine
+ -gvn -early-cse -aa -dse -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -gvn -early-cse -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -aa -memdep -dse -instcombine
+ -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -aa -dse -instcombine
+ -gvn -early-cse -basicaa -aa -memdep -dse -deadargelim -instcombine
  -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -gvn -early-cse -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -gvn -early-cse -basicaa -dse -deadargelim -instcombine
+ -gvn -early-cse -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -basicaa -dse -instcombine
+ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -dse -tailcallelim -instcombine
+ -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -gvn -early-cse -basicaa -memdep -dse -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -basicaa -memdep -dse -tailcallelim -instcombine
  -gvn -early-cse -dse -deadargelim -instcombine
+ -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -dse -instcombine
+ -gvn -early-cse -dse -instcombine -memcpyopt
+ -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -dse -tailcallelim -instcombine
+ -gvn -early-cse -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine
  -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -instcombine
+ -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -instcombine -memcpyopt
  -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -aa -memdep -dse -instcombine
+ -gvn -early-cse -globalopt -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
  -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine
+ -gvn -early-cse -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -basicaa -dse -instcombine
+ -gvn -early-cse -globalopt -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -basicaa -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -instcombine
  -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -gvn -early-cse -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
  -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -dse -deadargelim -instcombine -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -dse -instcombine
  -gvn -early-cse -globalopt -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -dse -tailcallelim -instcombine
  -gvn -early-cse -globalopt -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
  -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -memdep -dse -instcombine
+ -gvn -early-cse -globalopt -memdep -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -aa -deadargelim -instcombine -memcpyopt -gvn -early-cse -globalopt -simplifycfg -aa -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -aa -memdep -instcombine -gvn -early-cse -globalopt -simplifycfg -aa -memdep -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -dse -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -dse -instcombine -memcpyopt
+ -gvn -early-cse -globalopt -simplifycfg -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -memdep -deadargelim -instcombine -memcpyopt -gvn -early-cse -memdep -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -memdep -dse -instcombine
  -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -memdep -dse -tailcallelim -instcombine
+ -gvn -early-cse -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt -gvn -early-cse -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
  -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -instcombine
+ -gvn -early-cse -simplifycfg -aa -dse -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -dse -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -dse -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -dse -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
  -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -deadargelim -instcombine -gvn -early-cse -simplifycfg -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -dse -instcombine
+ -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine
+ -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -instcombine
  -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -gvn -early-cse -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -gvn -globalopt -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -aa -dse -instcombine
+ -gvn -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -aa -dse -tailcallelim -instcombine
+ -gvn -globalopt -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine
+ -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -aa -memdep -dse -instcombine
+ -gvn -globalopt -aa -memdep -dse -instcombine -memcpyopt
+ -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -basicaa -aa -dse -instcombine
+ -gvn -globalopt -basicaa -aa -dse -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine
+ -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -gvn -globalopt -basicaa -dse -deadargelim -instcombine
+ -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -dse -instcombine
+ -gvn -globalopt -basicaa -dse -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -basicaa -dse -tailcallelim -instcombine
+ -gvn -globalopt -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -gvn -globalopt -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -basicaa -memdep -dse -instcombine -memcpyopt
  -gvn -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -dse -deadargelim -instcombine
+ -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -gvn -globalopt -dse -instcombine
+ -gvn -globalopt -dse -instcombine -memcpyopt
+ -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -dse -tailcallelim -instcombine
+ -gvn -globalopt -memdep -dse -deadargelim -instcombine
+ -gvn -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -memdep -dse -instcombine
+ -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -aa -dse -instcombine
+ -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -aa -memdep -dse -instcombine
  -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -dse -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -dse -instcombine
+ -gvn -globalopt -simplifycfg -dse -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -memdep -deadargelim -tailcallelim -instcombine -gvn -globalopt -simplifycfg -memdep -deadargelim -tailcallelim -instcombine
  -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -memdep -dse -instcombine -gvn -globalopt -simplifycfg -memdep -dse -instcombine
+ -gvn -globalopt -simplifycfg -memdep -dse -instcombine -memcpyopt
  -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -gvn -memdep -dse -deadargelim -instcombine
+ -gvn -memdep -dse -deadargelim -instcombine -gvn -memdep -dse -deadargelim -instcombine
+ -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -memdep -dse -instcombine
+ -gvn -memdep -dse -instcombine -memcpyopt
+ -gvn -memdep -dse -libcalls-shrinkwrap -instcombine
+ -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -memdep -dse -tailcallelim -instcombine
+ -gvn -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -memdep -tailcallelim -instcombine -memcpyopt -gvn -memdep -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -gvn -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -dse -instcombine
+ -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -memdep -deadargelim -instcombine -memcpyopt -gvn -simplifycfg -aa -memdep -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -gvn -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -simplifycfg -aa -memdep -dse -instcombine
+ -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -gvn -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -aa -dse -instcombine
+ -gvn -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine
+ -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine
+ -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -gvn -simplifycfg -basicaa -dse -instcombine
+ -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -simplifycfg -basicaa -memdep -dse -instcombine
+ -gvn -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -gvn -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -gvn -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -dse -deadargelim -instcombine
+ -gvn -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -dse -instcombine
+ -gvn -simplifycfg -dse -instcombine -memcpyopt
  -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -gvn -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -memdep -deadargelim -instcombine -memcpyopt -gvn -simplifycfg -memdep -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -gvn -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -gvn -simplifycfg -memdep -dse -instcombine
+ -gvn -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -early-cse -simplifycfg -aa -memdep -dse -instcombine -licm -early-cse -simplifycfg -aa -memdep -dse -instcombine
+ -licm -gvn -aa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -licm -gvn -aa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
  -licm -gvn -aa -dse -deadargelim -instcombine
+ -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -aa -dse -instcombine
+ -licm -gvn -aa -dse -instcombine -memcpyopt
+ -licm -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -aa -dse -tailcallelim -instcombine
+ -licm -gvn -aa -memdep -deadargelim -instcombine -memcpyopt -licm -gvn -aa -memdep -deadargelim -instcombine -memcpyopt
+ -licm -gvn -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -aa -memdep -dse -instcombine
+ -licm -gvn -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -aa -deadargelim -instcombine -licm -gvn -basicaa -aa -deadargelim -instcombine
+ -licm -gvn -basicaa -aa -dse -deadargelim -instcombine
+ -licm -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -basicaa -aa -memdep -dse -instcombine
+ -licm -gvn -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -dse -deadargelim -instcombine
+ -licm -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -basicaa -dse -instcombine
+ -licm -gvn -basicaa -dse -instcombine -memcpyopt
  -licm -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -dse -tailcallelim -instcombine
+ -licm -gvn -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -basicaa -memdep -dse -instcombine
+ -licm -gvn -basicaa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -dse -deadargelim -instcombine
+ -licm -gvn -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -dse -instcombine
+ -licm -gvn -dse -instcombine -memcpyopt
+ -licm -gvn -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -dse -tailcallelim -instcombine
+ -licm -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -aa -dse -instcombine
+ -licm -gvn -early-cse -aa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -aa -deadargelim -instcombine -licm -gvn -early-cse -basicaa -aa -deadargelim -instcombine
+ -licm -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -basicaa -aa -dse -instcombine
+ -licm -gvn -early-cse -basicaa -aa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -licm -gvn -early-cse -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -basicaa -aa -memdep -dse -tailcallelim -instcombine
  -licm -gvn -early-cse -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -dse -instcombine
+ -licm -gvn -early-cse -basicaa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -licm -gvn -early-cse -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -dse -instcombine
+ -licm -gvn -early-cse -dse -instcombine -memcpyopt
  -licm -gvn -early-cse -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -aa -dse -instcombine
+ -licm -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -globalopt -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -aa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine
+ -licm -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -instcombine
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine
  -licm -gvn -early-cse -globalopt -basicaa -dse -instcombine
+ -licm -gvn -early-cse -globalopt -basicaa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -basicaa -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -instcombine
+ -licm -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -dse -instcombine
+ -licm -gvn -early-cse -globalopt -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -memdep -dse -instcombine
+ -licm -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -tailcallelim -instcombine
  -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
  -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -instcombine
  -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -dse -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
  -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -aa -dse -instcombine
  -licm -gvn -early-cse -simplifycfg -aa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine
+ -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -deadargelim -instcombine -licm -gvn -early-cse -simplifycfg -deadargelim -instcombine
  -licm -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -dse -instcombine
+ -licm -gvn -early-cse -simplifycfg -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine
+ -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -aa -dse -instcombine
+ -licm -gvn -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -aa -dse -instcombine
+ -licm -gvn -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -instcombine
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -basicaa -dse -instcombine
+ -licm -gvn -globalopt -basicaa -dse -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -basicaa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -dse -deadargelim -instcombine
  -licm -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -dse -instcombine
+ -licm -gvn -globalopt -dse -instcombine -memcpyopt
+ -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -memdep -dse -instcombine
+ -licm -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -memcpyopt
  -licm -gvn -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
  -licm -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -dse -instcombine
+ -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -dse -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -instcombine -memcpyopt -licm -gvn -globalopt -simplifycfg -instcombine -memcpyopt
  -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -instcombine
  -licm -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -memdep -dse -deadargelim -instcombine
+ -licm -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -memdep -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -memdep -dse -instcombine
+ -licm -gvn -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -aa -dse -instcombine
+ -licm -gvn -simplifycfg -aa -dse -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -aa -dse -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -aa -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
  -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -libcalls-shrinkwrap -instcombine -licm -gvn -simplifycfg -basicaa -aa -memdep -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -dse -instcombine
+ -licm -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -instcombine
+ -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -dse -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -licm -gvn -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -memdep -dse -instcombine
+ -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -mem2reg -early-cse -globalopt -aa -memdep -deadargelim -instcombine -mem2reg -early-cse -globalopt -aa -memdep -deadargelim -instcombine
+ -mem2reg -early-cse -globalopt -basicaa -memdep -dse -deadargelim -instcombine -mem2reg -early-cse -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -early-cse -globalopt -simplifycfg -deadargelim -instcombine -mem2reg -early-cse -globalopt -simplifycfg -deadargelim -instcombine
+ -mem2reg -gvn -aa -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -gvn -aa -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -aa -dse
+ -mem2reg -gvn -aa -dse -deadargelim
+ -mem2reg -gvn -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -aa -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -aa -dse -instcombine
+ -mem2reg -gvn -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -aa -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -aa -dse -memcpyopt
+ -mem2reg -gvn -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -aa -memdep -dse -deadargelim
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -aa -memdep -dse -instcombine
+ -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -mem2reg -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -aa -dse -memcpyopt
+ -mem2reg -gvn -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -aa -memdep -dse
+ -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -aa -memdep -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -basicaa -deadargelim -instcombine -mem2reg -gvn -basicaa -deadargelim -instcombine
+ -mem2reg -gvn -basicaa -dse
+ -mem2reg -gvn -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -basicaa -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -instcombine
+ -mem2reg -gvn -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -dse -memcpyopt
+ -mem2reg -gvn -basicaa -dse -tailcallelim
+ -mem2reg -gvn -basicaa -memdep -dse
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -instcombine
  -mem2reg -gvn -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -basicaa -memdep -dse -tailcallelim
+ -mem2reg -gvn -basicaa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -dse
+ -mem2reg -gvn -dse -deadargelim
+ -mem2reg -gvn -dse -deadargelim -instcombine
+ -mem2reg -gvn -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap
  -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -dse -deadargelim -tailcallelim -memcpyopt
  -mem2reg -gvn -dse -instcombine
+ -mem2reg -gvn -dse -instcombine -memcpyopt
+ -mem2reg -gvn -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -dse -memcpyopt
+ -mem2reg -gvn -dse -tailcallelim -instcombine
+ -mem2reg -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -dse -tailcallelim -memcpyopt
  -mem2reg -gvn -early-cse -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -instcombine -memcpyopt
  -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -aa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -aa -memdep -dse -memcpyopt
+ -mem2reg -gvn -early-cse -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -aa -dse
+ -mem2reg -gvn -early-cse -basicaa -aa -dse -deadargelim
+ -mem2reg -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -aa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse
+ -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -dse
+ -mem2reg -gvn -early-cse -dse -deadargelim
  -mem2reg -gvn -early-cse -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim -memcpyopt
  -mem2reg -gvn -early-cse -dse -instcombine
+ -mem2reg -gvn -early-cse -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -dse -tailcallelim
+ -mem2reg -gvn -early-cse -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -dse
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim
  -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -dse
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse
+ -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -dse
+ -mem2reg -gvn -early-cse -globalopt -dse -deadargelim
+ -mem2reg -gvn -early-cse -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -dse -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -gvn -early-cse -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -tailcallelim
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -libcalls-shrinkwrap -instcombine -mem2reg -gvn -early-cse -globalopt -simplifycfg -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -memdep -dse -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse
  -mem2reg -gvn -early-cse -memdep -dse -deadargelim
+ -mem2reg -gvn -early-cse -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -deadargelim
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -aa -dse -tailcallelim
+ -mem2reg -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap
  -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -tailcallelim
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -deadargelim -instcombine -memcpyopt -mem2reg -gvn -early-cse -simplifycfg -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -dse
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -dse -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -dse -tailcallelim
+ -mem2reg -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -aa -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -gvn -globalopt -aa -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -aa -dse
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim
  -mem2reg -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -aa -dse -instcombine
+ -mem2reg -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -aa -dse -memcpyopt
+ -mem2reg -gvn -globalopt -aa -dse -tailcallelim
+ -mem2reg -gvn -globalopt -aa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -aa -memdep -dse
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -aa -memdep -dse -instcombine
+ -mem2reg -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -aa -memdep -dse -tailcallelim
+ -mem2reg -gvn -globalopt -basicaa -aa -dse
  -mem2reg -gvn -globalopt -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine -mem2reg -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -aa -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -deadargelim -instcombine -memcpyopt -mem2reg -gvn -globalopt -basicaa -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -instcombine
+ -mem2reg -gvn -globalopt -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -dse -tailcallelim
+ -mem2reg -gvn -globalopt -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -instcombine
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -tailcallelim
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -deadargelim -instcombine -memcpyopt -mem2reg -gvn -globalopt -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -dse
+ -mem2reg -gvn -globalopt -dse -deadargelim
+ -mem2reg -gvn -globalopt -dse -deadargelim -instcombine
  -mem2reg -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -dse -instcombine
+ -mem2reg -gvn -globalopt -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -gvn -globalopt -dse -memcpyopt
+ -mem2reg -gvn -globalopt -dse -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -instcombine -mem2reg -gvn -globalopt -instcombine
+ -mem2reg -gvn -globalopt -memdep -deadargelim -instcombine -mem2reg -gvn -globalopt -memdep -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap
  -mem2reg -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -instcombine
+ -mem2reg -gvn -globalopt -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -globalopt -memdep -dse -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -mem2reg -gvn -globalopt -simplifycfg -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse -instcombine
  -mem2reg -gvn -globalopt -simplifycfg -aa -dse -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -gvn -globalopt -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
  -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -memdep -dse -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -simplifycfg -dse
  -mem2reg -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -dse -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim
+ -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -libcalls-shrinkwrap -tailcallelim -instcombine -mem2reg -gvn -globalopt -simplifycfg -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -memdep -dse
+ -mem2reg -gvn -memdep -dse -deadargelim
  -mem2reg -gvn -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -memdep -dse -instcombine
+ -mem2reg -gvn -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -memdep -dse -memcpyopt
+ -mem2reg -gvn -memdep -dse -tailcallelim
+ -mem2reg -gvn -memdep -dse -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -dse
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -simplifycfg -aa -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
  -mem2reg -gvn -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -simplifycfg -aa -memdep -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -basicaa -deadargelim -instcombine -mem2reg -gvn -simplifycfg -basicaa -deadargelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -simplifycfg -basicaa -dse -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -basicaa -memdep -dse
+ -mem2reg -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -gvn -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -dse
+ -mem2reg -gvn -simplifycfg -dse -deadargelim
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -instcombine -mem2reg -gvn -simplifycfg -dse -deadargelim -instcombine
  -mem2reg -gvn -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -instcombine
+ -mem2reg -gvn -simplifycfg -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -memcpyopt
+ -mem2reg -gvn -simplifycfg -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -dse -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -dse -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -gvn -simplifycfg -memdep -dse -tailcallelim
+ -mem2reg -gvn -simplifycfg -memdep -dse -tailcallelim -instcombine -mem2reg -gvn -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -early-cse -globalopt -aa -memdep -deadargelim -instcombine -mem2reg -licm -early-cse -globalopt -aa -memdep -deadargelim -instcombine
+ -mem2reg -licm -early-cse -globalopt -simplifycfg -aa -memdep -libcalls-shrinkwrap -instcombine -mem2reg -licm -early-cse -globalopt -simplifycfg -aa -memdep -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -licm -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -early-cse -globalopt -simplifycfg -memdep -dse -instcombine -mem2reg -licm -early-cse -globalopt -simplifycfg -memdep -dse -instcombine
  -mem2reg -licm -early-cse -simplifycfg -aa -tailcallelim -instcombine -memcpyopt -mem2reg -licm -early-cse -simplifycfg -aa -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -early-cse -simplifycfg -memdep -instcombine -memcpyopt -mem2reg -licm -early-cse -simplifycfg -memdep -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -dse -instcombine
+ -mem2reg -licm -gvn -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -memdep -dse
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -aa -memdep -dse -memcpyopt
+ -mem2reg -licm -gvn -basicaa -aa -dse
+ -mem2reg -licm -gvn -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -dse -tailcallelim
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -dse
+ -mem2reg -licm -gvn -basicaa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -basicaa -dse -tailcallelim
+ -mem2reg -licm -gvn -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -tailcallelim
  -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -basicaa -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -basicaa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -deadargelim -tailcallelim -instcombine -mem2reg -licm -gvn -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -dse
+ -mem2reg -licm -gvn -dse -deadargelim
+ -mem2reg -licm -gvn -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -dse -deadargelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -dse -instcombine
+ -mem2reg -licm -gvn -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -dse -memcpyopt
+ -mem2reg -licm -gvn -dse -tailcallelim
+ -mem2reg -licm -gvn -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse
+ -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -licm -gvn -early-cse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -dse
  -mem2reg -licm -gvn -early-cse -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -early-cse -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -dse -libcalls-shrinkwrap -memcpyopt
  -mem2reg -licm -gvn -early-cse -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -deadargelim -instcombine -memcpyopt -mem2reg -licm -gvn -early-cse -globalopt -aa -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine
  -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine -mem2reg -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
  -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -deadargelim -tailcallelim -instcombine -mem2reg -licm -gvn -early-cse -simplifycfg -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -deadargelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -licm -gvn -early-cse -simplifycfg -dse -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -tailcallelim
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -dse -instcombine
  -mem2reg -licm -gvn -globalopt -aa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -libcalls-shrinkwrap -instcombine -memcpyopt -mem2reg -licm -gvn -globalopt -aa -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -tailcallelim
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -memcpyopt
+ -mem2reg -licm -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -deadargelim -instcombine -memcpyopt -mem2reg -licm -gvn -globalopt -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -dse -instcombine
  -mem2reg -licm -gvn -globalopt -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine -memcpyopt -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine -memcpyopt
  -mem2reg -licm -gvn -globalopt -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -dse -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -instcombine -mem2reg -licm -gvn -globalopt -instcombine
+ -mem2reg -licm -gvn -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -memdep -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -memdep -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine -memcpyopt -mem2reg -licm -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -deadargelim -instcombine -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -libcalls-shrinkwrap -instcombine -memcpyopt -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -deadargelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -tailcallelim
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -instcombine
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -memdep -dse
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -instcombine
+ -mem2reg -licm -gvn -memdep -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -memcpyopt
+ -mem2reg -licm -gvn -memdep -dse -tailcallelim
  -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -instcombine -mem2reg -licm -gvn -simplifycfg -aa -memdep -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -tailcallelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -deadargelim -libcalls-shrinkwrap -instcombine -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -instcombine
+ -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -simplifycfg -dse
  -mem2reg -licm -gvn -simplifycfg -dse -deadargelim
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -instcombine -memcpyopt
  -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -dse -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -dse -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -dse -tailcallelim -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -memcpyopt
+ -targetlibinfo -tti -domtree -deadargelim -domtree -instcombine -simplifycfg -basiccg -globals-aa -inline -domtree -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -gvn -sccp -domtree -instcombine -domtree -dse -simplifycfg -domtree -instcombine -basiccg -globals-aa -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -constmerge -domtree
