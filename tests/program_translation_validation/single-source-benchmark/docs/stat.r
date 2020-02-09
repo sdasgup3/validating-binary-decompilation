@@ -10,8 +10,9 @@ options(width=250)
 # Remove all the variables 
 rm(list=setdiff(ls(), lsf.str()))
 
-print_quartile <- function (median, min, max, msg, minlabel, maxlabel) {
+print_quartile <- function (mean, median, min, max, msg, minlabel, maxlabel) {
   print(msg)
+  cat("Mean:", mean, "\n")
   cat("Median:", median, "\n")
   cat("Max:", max, ":" , maxlabel, "\n")
   cat("Min:", min, ":", minlabel, "\n")
@@ -43,23 +44,25 @@ print_stats <- function (df, chart, range_min, range_max, step) {
 
   # mp
   median_mp <- median(elapsed_mp_sec)
+  mean_mp <- mean(elapsed_mp_sec)
   max_mp <- max(elapsed_mp_sec)
   min_mp <- min(elapsed_mp_sec)
   max_mp_id <- which(max_mp == elapsed_mp_sec)
   min_mp_id <- which(min_mp == elapsed_mp_sec)
   max_mp_label <- paste("F: ", test[max_mp_id[1]], "\nS: ", size[max_mp_id[1]])
   min_mp_label <- paste("F: ", test[min_mp_id[1]], "\nS: ", size[min_mp_id[1]])
-  print_quartile(median_mp, min_mp, max_mp, "mp", min_mp_label, max_mp_label)
+  print_quartile(mean_mp, median_mp, min_mp, max_mp, "mp", min_mp_label, max_mp_label)
 
   # pm
   median_pm <- median(elapsed_pm_sec)
+  mean_pm <- mean(elapsed_mp_sec)
   max_pm <- max(elapsed_pm_sec)
   min_pm <- min(elapsed_pm_sec)
   max_pm_id <- which(max_pm == elapsed_pm_sec)
   min_pm_id <- which(min_pm == elapsed_pm_sec)
   max_pm_label <- paste("F: ", test[max_pm_id[1]], "\nS: ", size[max_pm_id[1]])
   min_pm_label <- paste("F: ", test[min_pm_id[1]], "\nS: ", size[min_pm_id[1]])
-  print_quartile(median_pm, min_pm, max_pm, "pm", min_pm_label, max_pm_label)
+  print_quartile(mean_pm, median_pm, min_pm, max_pm, "pm", min_pm_label, max_pm_label)
 
   lmts <- range(elapsed_mp_sec,elapsed_pm_sec)
   par(mfrow = c(1, 2))

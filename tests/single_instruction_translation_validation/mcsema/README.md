@@ -172,9 +172,9 @@ cat docs/kliPassSameR.log | parallel -j10 "cd register-variants-samereg/{}; make
 
 ## Generate and Compare the z3 output
 ```
-cat docs/genz3Pass.log | parallel  "cd register-variants/{}; make genz3; cd -"
+cat docs/genz3PassR.log | parallel  "cd register-variants/{}; make genz3; cd -"
 // genz3 pass/fails are stored at genz3(Pass/Fail).log 
-cat docs/genPassz3.log | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -"
+cat docs/genz3PassR.log | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -"
 //provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk).log
 
 or 

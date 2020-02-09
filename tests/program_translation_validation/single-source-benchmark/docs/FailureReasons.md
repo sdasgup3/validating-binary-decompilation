@@ -18,6 +18,23 @@ mandel
 mandel-2
 ```
 
+### Match failures supported by opentuner based normalizer
+```
+Shootout-lists/list_equal
+recursive/takFP
+stepanov_v1p2/_Z5checkd
+trisolv/kernel_trisolv
+fp-convert/main
+Puzzle/Place
+exptree/doSearch
+stepanov_abstraction/_Z9check_sumd
+symm/kernel_symm
+symm/kernel_symm_StrictFP
+linpack-pc/matgen
+misr/simulate
+fdtd-apml/main
+```
+
 ## Match Failure Reasons
  - Pass with O3 but not with  custom
  ```
@@ -31,7 +48,7 @@ simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaa
   ReedSolomon/rsenc_204
   Treesort/Trees
   dry/Proc4
-  dry/Proc5
+  dry/Proc5 --> good example
   exptree/search
   fldry/Proc4
   fldry/Proc5
@@ -84,7 +101,6 @@ simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaa
   trisolv/xmalloc
   trmm/xmalloc
   ```
-
 
 ## match Fails turned Pass
   - (~800) Function defintion (S1)

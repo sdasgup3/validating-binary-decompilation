@@ -29,16 +29,6 @@ else
 endif
 
 
-NORM_PASS=-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt
-ifdef NORM
-  NORM_PASS=-${NORM}
-else
-  ifneq ("$(wildcard $(OUTDIR)/normalizer_final_config.json)", "")
-    NORM_PASS = `tail -n 1 $(OUTDIR)/normalizer_final_config.json`
-  endif
-endif
-
-
 .PHONY: clean compd compd_opt mcsema_opt match extract aainfo lltodot
 
 all: compd compd_opt mcsema_opt match
@@ -51,17 +41,15 @@ compd: ${INDIR}test
 
 
 compd_opt: ${OUTDIR}test.proposed.ll
-	opt -S ${NORM_PASS} ${OUTDIR}test.proposed.inline.ll -o ${OUTDIR}test.proposed.opt.ll
+	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --prog ${PROG} --compd_opt
 
 
 mcsema_opt:
-	opt -S ${NORM_PASS} ${INDIR}test.mcsema.inline.ll -o ${OUTDIR}test.mcsema.opt.ll
+	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --prog ${PROG} --mcsema_opt
 
 
-match: ${OUTDIR}test.proposed.opt.ll ${OUTDIR}test.mcsema.opt.ll
-	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} 1>${OUTDIR}match_mcsema_proposed.log 2>&1
-	-time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG}  1>${OUTDIR}match_proposed_mcsema.log 2>&1
-	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
+match:
+	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --tooldir ${TOOLDIR} --prog ${PROG} --match
 
 lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 	-time ${TOOLDIR}/lltodot --llir_file ${INDIR}test.mcsema.opt.ll:${PROG} --outfile mcsema/test.mcsema.opt.dot
