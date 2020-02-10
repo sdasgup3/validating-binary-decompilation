@@ -44,39 +44,25 @@ print_stats <- function (df, chart, range_min, range_max, step) {
   cat("Max:", max, ":" , max_label, "\n")
   cat("Min:", min, ":", min_label, "\n")
 
-  imp_point <- c(min, max)
-  imp_label <- c(min_label, max_label)
+  imp_point <- c(19, 24.5, 29)
+  imp_label <- c("paddd", "xorps", "cmpxchgq")
 
 #range_min <- floor(min)
 #  range_max <- ceiling(min)
 
 #boxplot(elapsed_sec, ylab =  "Time (secs)", main = chart, horizontal = TRUE, axes = FALSE, staplewex = 1);
-  boxplot(elapsed_sec, xlab =  "Time (secs)", main = chart, axes=TRUE, horizontal=TRUE)
-  text(y=imp_point, labels=imp_label, x=1.25)
-  axis(2, at = seq(range_min,range_max,step))
+#boxplot(elapsed_sec, xlab =  "Time (secs)", main = chart, axes=TRUE, horizontal=TRUE)
+  boxplot(elapsed_sec, xlab =  "Solver Time (in secs)", axes=TRUE, horizontal=TRUE)
+  text(x=imp_point, labels=imp_label, y=1.05)
 }
 
-# Give the chart file a name.
-pdf(file = "docs/siv.pdf")
-
-print("Stats: Xspec \n")
-# cat docs/kliPassR.log | parallel "echo {}; echo ==; tail -n3 register-variants/{}/Output/test-xspec.out" > docs/stat_xspec.time
-df <- read.table("docs/stat_xspec.time", header = FALSE, sep=',')
-print_stats(df, "Summary Generation Time for X86-64 instructions", 110, 370, 20)
-
-print("Stats: Lspec \n")
-# cat docs/kliPassR.log | parallel "echo {}; echo ==; tail -n3 register-variants/{}/Output/test-lspec.out" > docs/stat_lspec.time
-df <- read.table("docs/stat_lspec.time", header = FALSE, sep=',')
-print_stats(df, "Summary generation Time for Lifted LLVM IR", 110, 310, 20)
-
-# Save the file.
-dev.off()
-
-png(file = "docs/solver.png")
+#png(file = "docs/solver.png")
+setEPS()
+postscript("docs/solver.eps")
 print("Stats: Prove \n")
 # cat docs/genz3PassR.log  | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -" |& tee log  
 df <- read.table("docs/stat_prove.time", header = FALSE, sep=',')
-print_stats(df, "Z3 Solver Time", 0, 30, 1)
+print_stats(df, "Z3 Solver Time", 0, 35, 1)
 
 # Save the file.
 dev.off()
