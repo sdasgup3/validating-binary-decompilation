@@ -1,3 +1,3 @@
-main, 175, False, False
-find, 95, False, False
-pboard, 46, False, False
+queens/main, 175, False, False
+queens/find, 95, False, False
+queens/pboard, 46, False, False

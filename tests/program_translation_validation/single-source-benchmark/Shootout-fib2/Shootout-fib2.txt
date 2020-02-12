@@ -1,2 +1,2 @@
-fib, 19, False, False
-main, 23, False, False
+Shootout-fib2/fib, 19, False, False
+Shootout-fib2/main, 23, False, False

@@ -18,9 +18,12 @@ selectPassSeq() {
              -gvn -basicaa -aa -memdep -dse -memcpyopt"
 
   if [ -v NORM ]; then
-    NORM_PASS="-${NORM}"
-    return 0 
+    if [ "$NORM" != "CUSTOM" ]; then
+      NORM_PASS="-${NORM}"
+    fi
+    return 0
   fi
+
 
   if [ -f ${OUTDIR}/normalizer_final_config.json ]; then
     NORM_PASS=`tail -n 1 ${OUTDIR}/normalizer_final_config.json`
@@ -67,6 +70,7 @@ match() {
 }
 
 shouldContinue() {
+  # Return in NORM is defined.
   if [ -v NORM ]; then
     return 0
   fi

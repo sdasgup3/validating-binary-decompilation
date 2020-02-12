@@ -38,6 +38,7 @@ fdtd-apml/main
 ## Match Failure Reasons
  - Pass with O3 but not with  custom
  ```
+Shootout-heapsort/gen_random
 simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIsE8do_shiftEsssss
 simple_types_loop_invariant/_ZN30custom_mixed_multiple_variableIaE8do_shiftEaaaaa
  ```

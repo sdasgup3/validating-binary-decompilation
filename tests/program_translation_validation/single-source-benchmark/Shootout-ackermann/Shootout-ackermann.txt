@@ -1,2 +1,2 @@
-Ack, 31, False, False
-main, 23, False, False
+Shootout-ackermann/Ack, 31, False, False
+Shootout-ackermann/main, 23, False, False
