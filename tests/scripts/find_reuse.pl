@@ -31,7 +31,7 @@ if ($help) {
 
 #my $find_out = execute("find /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark -name invoke_compd_seq.log");
 my $find_out = execute(
-"cat /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/docs/reuse_perc_eval_cand.log"
+"cat /home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/docs/reported_stats/1_2_4.log"
 );
 my @files = split( "\n", $find_out );
 
@@ -40,6 +40,7 @@ my %FMap;
 my $first = "true";
 for my $file (@files) {
     my $cfile = trim($file);
+    $cfile = $cfile . "/mcsema/invoke_compd_seq.log";
     open( my $fp, "<", $cfile ) or die "cannot open: $!";
     my @lines = <$fp>;
     close $fp;

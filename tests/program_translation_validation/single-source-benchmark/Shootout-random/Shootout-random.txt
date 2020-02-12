@@ -1,2 +1,2 @@
-main, 30, True, False
-gen_random, 13, True, False
+Shootout-random/main, 30, True, False
+Shootout-random/gen_random, 13, True, False

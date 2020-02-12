@@ -1,2 +1,2 @@
-myadd, 12, True, False
-main, 117, True, False
+pi/myadd, 12, True, False
+pi/main, 117, True, False

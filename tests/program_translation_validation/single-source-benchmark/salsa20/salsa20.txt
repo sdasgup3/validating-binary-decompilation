@@ -1,3 +1,3 @@
-salsa20, 605, False, False
-salsa, 18, False, False
-main, 53, False, False
+salsa20/salsa20, 605, False, False
+salsa20/salsa, 18, False, False
+salsa20/main, 53, False, False

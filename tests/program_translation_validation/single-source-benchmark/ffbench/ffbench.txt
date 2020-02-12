@@ -1,2 +1,2 @@
-main, 273, True, False
-fourn, 400, True, False
+ffbench/main, 273, True, False
+ffbench/fourn, 400, True, False

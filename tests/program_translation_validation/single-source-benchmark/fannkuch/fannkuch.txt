@@ -1,2 +1,2 @@
-main, 13, False, False
-fannkuch, 268, False, False
+fannkuch/main, 13, False, False
+fannkuch/fannkuch, 268, False, False

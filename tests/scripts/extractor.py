@@ -65,8 +65,16 @@ def writeJSON(functions, file_basename):
 
 
 def writeTXT(output_str, file_basename):
+    content = output_str.splitlines()
+    res = ""
+    for x in content:
+      res += "{0}/{1}\n".format(file_basename, x)
+#content = [x.strip() for x in content]
+#content = ["{0}/{1}".format(file_basename, x) for x in content]
+
     with open('{}.txt'.format(file_basename), 'w') as txt:
-        txt.write(output_str)
+#txt.write(output_str)
+        txt.write(res)
 
 
 def runLLVMDis(inputFile):
