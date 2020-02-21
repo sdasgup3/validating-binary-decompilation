@@ -7,6 +7,18 @@ library(gridExtra)
 # Remove all the variables 
 rm(list=setdiff(ls(), lsf.str()))
 
+print_quartile <- function (v) {
+  median <- median(v)
+  mean <- mean(v)
+  max <- max(v)
+  min <- min(v)
+
+  cat("Mean:", mean, "\n")
+  cat("Median:", median, "\n")
+  cat("Max:", max, "\n")
+  cat("Min:", min, "\n")
+}
+
 max_three <- function (v, label, size) {
   sortd <- sort(v)
 
@@ -22,6 +34,7 @@ max_three <- function (v, label, size) {
 
   retl <- list("value" = ret_value, "label" = ret_label)
 
+  print(retl)
   return (retl);
 }
 
@@ -42,8 +55,14 @@ print_stats <- function (df) {
   print("MP")
   setEPS()
   postscript("matcher.eps");
+
+  cat("Compd stat:", "\n\n")
+  print_quartile(elapsed_c_sec)
   retval_c <- max_three(elapsed_c_sec, test, size)
+  cat("Matcher stat:", "\n\n")
+  print_quartile(elapsed_mp_sec)
   retval_m <- max_three(elapsed_mp_sec, test, size)
+
   imp_point <- c(retval_c$value[3] + 10, floor(retval_m$value[3]) - 2.5)
 #imp_label <- c(gsub("/","::", retval_c$label[3]), gsub("/","::", retval_m$label[3]))
   imp_label <- c(gsub(".*/","", retval_c$label[3]), gsub(".*/","", retval_m$label[3]))
@@ -89,23 +108,8 @@ print_stats(df)
 
 
 
-#  median_c <- median(elapsed_c_sec)
-#  mean_c <- mean(elapsed_c_sec)
-#  max_c <- max(elapsed_c_sec)
-#  min_c <- min(elapsed_c_sec)
-#  max_c_id <- which(max_c == elapsed_c_sec)
-#  min_c_id <- which(min_c == elapsed_c_sec)
-#  max_c_label <- paste("F: ", test[max_c_id[1]], "\nS: ", size[max_c_id[1]])
-#  min_c_label <- paste("F: ", test[min_c_id[1]], "\nS: ", size[min_c_id[1]])
 #  print_quartile(mean_c, median_c, min_c, max_c, "compd", min_c_label, max_c_label)
 
-#print_quartile <- function (mean, median, min, max, msg, minlabel, maxlabel) {
-#  print(msg)
-#  cat("Mean:", mean, "\n")
-#  cat("Median:", median, "\n")
-#  cat("Max:", max, ":" , maxlabel, "\n")
-#  cat("Min:", min, ":", minlabel, "\n")
-#}
 
 #  lmts <- range(elapsed,elapsed_pm_sec)
 #  par(mfrow = c(1, 2))

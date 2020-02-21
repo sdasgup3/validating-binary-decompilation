@@ -1,2 +1,2 @@
-binary_search, 58, False, False
-main, 8, False, False
+binary-search/binary_search, 58, False, False
+binary-search/main, 8, False, False

@@ -1,2 +1,2 @@
-main, 12, False, False
-printit, 6, False, False
+test_16/main, 12, False, False
+test_16/printit, 6, False, False

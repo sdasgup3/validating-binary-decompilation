@@ -1,2 +1,2 @@
-foo, 21, False, False
-main, 8, False, False
+test_2_1/foo, 21, False, False
+test_2_1/main, 8, False, False

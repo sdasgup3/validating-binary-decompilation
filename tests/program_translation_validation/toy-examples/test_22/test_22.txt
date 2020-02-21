@@ -1,3 +1,3 @@
-DoDemoFpu1, 6, True, False
-main, 16, True, False
-timespi, 8, True, False
+test_22/DoDemoFpu1, 6, True, False
+test_22/main, 16, True, False
+test_22/timespi, 8, True, False

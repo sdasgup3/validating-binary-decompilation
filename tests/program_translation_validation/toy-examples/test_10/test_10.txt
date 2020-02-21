@@ -1,2 +1,2 @@
-main, 32, False, False
-demo3, 41, False, False
+test_10/main, 32, False, False
+test_10/demo3, 41, False, False

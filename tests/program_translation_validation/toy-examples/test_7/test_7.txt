@@ -1,2 +1,2 @@
-check, 120, False, False
-main, 61, False, False
+test_7/check, 120, False, False
+test_7/main, 61, False, False

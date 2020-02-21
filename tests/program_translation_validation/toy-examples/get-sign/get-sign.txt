@@ -1,2 +1,2 @@
-get_sign, 12, False, False
-main, 4, False, False
+get-sign/get_sign, 12, False, False
+get-sign/main, 4, False, False

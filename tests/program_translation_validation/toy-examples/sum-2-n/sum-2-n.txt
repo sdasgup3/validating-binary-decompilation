@@ -1,2 +1,2 @@
-sum_2_n, 22, False, False
-main, 4, False, False
+sum-2-n/sum_2_n, 22, False, False
+sum-2-n/main, 4, False, False

@@ -1,2 +1,2 @@
-main, 8, False, False
-printdata, 31, False, False
+test_17/main, 8, False, False
+test_17/printdata, 31, False, False

@@ -1,2 +1,2 @@
-foo, 62, False, False
-main, 59, False, False
+test_6/foo, 62, False, False
+test_6/main, 59, False, False

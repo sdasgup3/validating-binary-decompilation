@@ -1,2 +1,2 @@
-fun, 12, True, False
-main, 5, True, False
+test_36/fun, 12, True, False
+test_36/main, 5, True, False

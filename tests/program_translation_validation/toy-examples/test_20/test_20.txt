@@ -1,2 +1,2 @@
-main, 21, False, False
-switches, 88, False, False
+test_20/main, 21, False, False
+test_20/switches, 88, False, False
