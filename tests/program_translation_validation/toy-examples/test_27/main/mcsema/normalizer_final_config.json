@@ -1,0 +1,1 @@
+ -gvn -simplifycfg -basicaa -memdep -deadargelim -instcombine -early-cse-memssa
