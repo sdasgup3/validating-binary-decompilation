@@ -108,17 +108,35 @@ sudo dpkg --add-architecture i386
 sudo apt-get install zip zlib1g-dev:i386
 
 git clone --depth 1 git@github.com:sdasgup3/mcsema.git
+cd mcsema; git checkout  develop; cd -
 export REMILL_VERSION=`cat ./mcsema/.remill_commit_id`
 
 git clone https://github.com/trailofbits/remill.git
 cd remill
 git checkout -b temp ${REMILL_VERSION}
-
 mv ../mcsema tools
+
+
 ./scripts/build.sh
 cd remill-build
 sudo make install -j64
 ```
+
+OR
+
+```
+git clone  git@github.com:sdasgup3/mcsema.git
+cd mcsema; git checkout  develop; cd -
+
+git clone https://github.com/sdasgup3/remill.git
+cd remill; git checkout  develop_ae;
+mv ../mcsema tools
+
+./scripts/build.sh
+cd remill-build
+sudo make install -j64
+```
+
 
 ### Install IDA
 ```bash
