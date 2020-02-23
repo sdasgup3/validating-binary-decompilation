@@ -40,11 +40,13 @@ All the tools are build using the libraries of stoke and LLVM.
 git clone git@github.com:sdasgup3/scripts-n-docs.git
 ```
 
-### Install GCC
+### Install GCC/Clang
 ```bash
 Install gcc
 https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed
 sudo update-alternatives --config gcc
+
+sudo apt-get install clang-6.0
 ```
 
 ### Install Essentials
