@@ -1,0 +1,10 @@
+2mm/check_FP
+2mm/init_array
+2mm/kernel_2mm
+2mm/kernel_2mm_StrictFP
+2mm/main
+2mm/polybench_alloc_data
+2mm/polybench_prepare_instruments
+2mm/print_element
+2mm/rtclock
+3mm/check_FP
