@@ -273,7 +273,7 @@ def createMakefile(funcName):
         "tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll" +
         "\n")
     makeFile.write(
-        "	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=3000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1" + "\n")
+        "	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1" + "\n")
     makeFile.write(
         "	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner")
 #makeFile.write(

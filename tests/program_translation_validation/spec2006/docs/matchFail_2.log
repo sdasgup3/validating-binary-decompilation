@@ -1161,11 +1161,6 @@
 401.bzip2/BZ2_bzWriteOpen
 401.bzip2/BZ2_compressBlock
 401.bzip2/cleanUpAndFail
-401.bzip2/cleanUpAndFail'
-time /home/ubuntu/Github//validating-binary-decompilation/source/build/bin//matcher --file1 ../binary/test.mcsema.opt.ll
-time /home/ubuntu/Github//validating-binary-decompilation/source/build/bin//matcher --file1 mcsema/test.proposed.opt.ll
-401.bzip2/cleanUpAndFail
-401.bzip2/cleanUpAndFail'
 401.bzip2/spec_ungetc
 445.gobmk/report_worm
 401.bzip2/ran
