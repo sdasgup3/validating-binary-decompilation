@@ -60,7 +60,8 @@ sudo apt-get install parallel
 ```bash
 mkdir -p ~/Install/llvm
 cd ~/Install/llvm
-~/scripts-n-docs/scripts/bash/download-llvm.sh 4.0.0
+~/scripts-n-docs/scripts/bash/download-llvm.sh 4.0.0  ./ fast
+rm -rf *.xz
 mkdir llvm.4.0.0.install llvm.4.0.0.obj
 cd llvm.4.0.0.obj
 INSTALL_PREFIX=/home/sdasgup3/Install/llvm/llvm.4.0.0.install
@@ -87,18 +88,19 @@ git clone --recursive   git@github.com:sdasgup3/stoke.git stoke-develop
 
 cd  stoke-develop/src/ext/z3
 git checkout master
+git checkout 4192c81fae01e90fd8110a00b14172be818f028b
 
-cd /home/ubuntu/Github/stoke-develop/src/ext/x64asm
+cd ~/Github/stoke-develop/src/ext/x64asm
 git remote add upstream git@github.com:sdasgup3/x64asm.git
 git fetch upstream
 git checkout working
 
-cd /home/ubuntu/Github/stoke-develop/
-./configure.sh -d
-cd /home/ubuntu/Github/stoke-develop/src/ext/x64asm
+cd ~/Github/stoke-develop/
+./configure.sh -d --no-cvc4
+cd ~/Github/stoke-develop/src/ext/x64asm
 make -j64 debug
 
-cd /home/ubuntu/Github/stoke-develop
+cd ~/Github/stoke-develop
 mkdir lib
 make -j64 debug
 ```
