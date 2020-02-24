@@ -108,28 +108,12 @@ make -j64 debug
 
 ### Install mcsema
 ```bash
-sudo apt-get install      git      curl      cmake      python2.7 python-pip python-virtualenv      wget      build-essential      gcc-multilib g++-multilib      libtinfo-dev      lsb-release            zlib1g-dev
+sudo apt-get install      git      curl      cmake      python2.7 python-pip \ 
+python-virtualenv      wget      build-essential  gcc-multilib g++-multilib  \
+    libtinfo-dev      lsb-release            zlib1g-dev
 sudo dpkg --add-architecture i386
 sudo apt-get install zip zlib1g-dev:i386
 
-git clone --depth 1 git@github.com:sdasgup3/mcsema.git
-cd mcsema; git checkout  develop; cd -
-export REMILL_VERSION=`cat ./mcsema/.remill_commit_id`
-
-git clone https://github.com/trailofbits/remill.git
-cd remill
-git checkout -b temp ${REMILL_VERSION}
-mv ../mcsema tools
-
-
-./scripts/build.sh
-cd remill-build
-sudo make install -j64
-```
-
-OR
-
-```
 git clone  git@github.com:sdasgup3/mcsema.git
 cd mcsema; git checkout  develop; cd -
 
@@ -155,6 +139,13 @@ sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:
 
 ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
 ```
+
+#### Troubleshoot
+  - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
+  - ImportError: No module named google.protobuf
+  ```
+    ln -s /usr/local/lib/python2.7/dist-packages/protobuf-3.2.0-py2.7.egg/google /usr/local/lib/python2.7/dist-packages/google
+  ```
 
 ### Tools Build Instructions
 ```bash
@@ -206,8 +197,30 @@ validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
 ```
 
 
-#### To analyze the llvm dfg as a atndalone opt pass
+#### To analyze the llvm dfg as a standalone opt pass
 ```
 cd /home/sdasgup3/Github/validating-binary-decompilation/tests/get_sign
 ~/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < get_sign_instrumented.ll   --var_corr -debug-only=variable_correspondence  -disable-output -target-function sub_660_get_sign -init-state-function sub_67b_init_var_correspondence
 ```
+
+### Install mcsema
+```bash
+sudo apt-get install      git      curl      cmake      python2.7 python-pip python-virtualenv      wget      build-essential      gcc-multilib g++-multilib      libtinfo-dev      lsb-release            zlib1g-dev
+sudo dpkg --add-architecture i386
+sudo apt-get install zip zlib1g-dev:i386
+
+git clone --depth 1 git@github.com:sdasgup3/mcsema.git
+cd mcsema; git checkout  develop; cd -
+export REMILL_VERSION=`cat ./mcsema/.remill_commit_id`
+
+git clone https://github.com/trailofbits/remill.git
+cd remill
+git checkout -b temp ${REMILL_VERSION}
+mv ../mcsema tools
+
+
+./scripts/build.sh
+cd remill-build
+sudo make install -j64
+```
+

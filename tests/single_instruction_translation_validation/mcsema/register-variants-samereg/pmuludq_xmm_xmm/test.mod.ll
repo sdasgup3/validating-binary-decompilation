@@ -177,25 +177,16 @@ define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L7PMULUDQI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
   %6 = bitcast i8* %3 to i64*
   %7 = load i64, i64* %6, align 1
-  %8 = getelementptr inbounds i8, i8* %3, i64 8
-  %9 = bitcast i8* %8 to i64*
-  %10 = load i64, i64* %9, align 1
-  %11 = bitcast i8* %4 to i64*
-  %12 = load i64, i64* %11, align 1
-  %13 = getelementptr inbounds i8, i8* %4, i64 8
-  %14 = bitcast i8* %13 to i64*
-  %15 = load i64, i64* %14, align 1
-  %16 = and i64 %7, 4294967295
-  %17 = and i64 %12, 4294967295
-  %18 = mul  i64 %17, %16
-  %19 = and i64 %10, 4294967295
-  %20 = and i64 %15, 4294967295
-  %21 = mul  i64 %20, %19
-  %22 = bitcast i8* %2 to i64*
-  store i64 %18, i64* %22, align 1
-  %23 = getelementptr inbounds i8, i8* %2, i64 8
-  %24 = bitcast i8* %23 to i64*
-  store i64 %21, i64* %24, align 1
+  %8 = bitcast i8* %4 to i64*
+  %9 = load i64, i64* %8, align 1
+  %10 = and i64 %7, 4294967295
+  %11 = and i64 %9, 4294967295
+  %12 = mul  i64 %11, %10
+  %13 = bitcast i8* %2 to i64*
+  store i64 %12, i64* %13, align 1
+  %14 = getelementptr inbounds i8, i8* %2, i64 8
+  %15 = bitcast i8* %14 to i64*
+  store i64 0, i64* %15, align 1
   ret %struct.Memory* %0
 }
 

@@ -175,11 +175,11 @@ define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
 
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6MemoryS6_R5StateT_T0_T1_T2_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64* nocapture, i64, i64* nocapture, i64) #0 {
-  %7 = load i64, i64* %4, align 8
-  store i64 %3, i64* %4, align 8
-  %8 = add i64 %7, %3
-  %9 = icmp ult i64 %8, %3
-  %10 = icmp ult i64 %8, %5
+  %7 = load i64, i64* %2, align 8
+  %8 = add i64 %7, %5
+  store i64 %8, i64* %2, align 8
+  %9 = icmp ult i64 %8, %5
+  %10 = icmp ult i64 %8, %7
   %11 = or i1 %9, %10
   %12 = zext i1 %11 to i8
   %13 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 1
@@ -192,7 +192,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6
   %19 = xor i8 %18, 1
   %20 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 3
   store i8 %19, i8* %20, align 1
-  %21 = xor i64 %5, %3
+  %21 = xor i64 %7, %5
   %22 = xor i64 %21, %8
   %23 = lshr i64 %22, 4
   %24 = trunc i64 %23 to i8
@@ -207,8 +207,8 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6
   %31 = trunc i64 %30 to i8
   %32 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 9
   store i8 %31, i8* %32, align 1
-  %33 = lshr i64 %3, 63
-  %34 = lshr i64 %5, 63
+  %33 = lshr i64 %5, 63
+  %34 = lshr i64 %7, 63
   %35 = xor i64 %30, %33
   %36 = xor i64 %30, %34
   %37 = add   i64 %35, %36
@@ -216,7 +216,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6
   %39 = zext i1 %38 to i8
   %40 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
   store i8 %39, i8* %40, align 1
-  store i64 %8, i64* %2, align 8
+  store i64 %7, i64* %4, align 8
   ret %struct.Memory* %0
 }
 

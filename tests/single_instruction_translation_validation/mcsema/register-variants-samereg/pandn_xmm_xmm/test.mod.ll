@@ -175,14 +175,14 @@ define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
 
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5PANDNI3VnWI8vec128_tE2VnIS2_ES5_EEP6MemoryS7_R5StateT_T0_T1_(%struct.Memory* readnone returned, %struct.State* nocapture readnone dereferenceable(3376), i8* nocapture, i8* nocapture readonly, i8* nocapture readonly) #0 {
-  %6 = bitcast i8* %4 to i64*
+  %6 = bitcast i8* %3 to i64*
   %7 = load i64, i64* %6, align 1
-  %8 = getelementptr inbounds i8, i8* %4, i64 8
+  %8 = getelementptr inbounds i8, i8* %3, i64 8
   %9 = bitcast i8* %8 to i64*
   %10 = load i64, i64* %9, align 1
-  %11 = bitcast i8* %3 to i64*
+  %11 = bitcast i8* %4 to i64*
   %12 = load i64, i64* %11, align 1
-  %13 = getelementptr inbounds i8, i8* %3, i64 8
+  %13 = getelementptr inbounds i8, i8* %4, i64 8
   %14 = bitcast i8* %13 to i64*
   %15 = load i64, i64* %14, align 1
   %16 = and i64 %12, -4294967296

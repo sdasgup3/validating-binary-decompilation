@@ -191,7 +191,7 @@ s.pop()
 ## =******= RAX =******=
 s.push()
 
-lvar = (V_R == z3.Concat(z3.Extract(63, 56, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(55, 48, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(47, 40, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(39, 32, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(31, 24, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(23, 16, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(15, 8, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64))), z3.Extract(7, 0, ((VL_RAX + VL_RAX) & z3.BitVecVal(18446744073709551616 - 1, 64)))))
+lvar = (V_R == z3.Concat(z3.Extract(63, 56, VL_RAX), z3.Extract(55, 48, VL_RAX), z3.Extract(47, 40, VL_RAX), z3.Extract(39, 32, VL_RAX), z3.Extract(31, 24, VL_RAX), z3.Extract(23, 16, VL_RAX), z3.Extract(15, 8, VL_RAX), z3.Extract(7, 0, VL_RAX)))
 
 xvar = (V_R == z3.Extract(63, 0, (z3.Concat(z3.BitVecVal(0, 1), VX_RAX) + z3.Concat(z3.BitVecVal(0, 1), VX_RAX))))
 
