@@ -39,6 +39,18 @@
   ./scripts/build-parser.sh
   ```
 
+  - Python Binding for z3
+  ```
+    sudo apt install python-pip
+    sudo pip install setuptools
+    git clone git@github.com:Z3Prover/z3.git
+    cd z3
+    python scripts/mk_make.py --python
+    cd build
+    make -j 8
+    sudo make install
+  ```
+
 ### Run Instructions
   - [Register Variants](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation/mcsema/README.md)
 

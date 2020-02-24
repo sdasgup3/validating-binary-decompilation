@@ -76,7 +76,7 @@ parallel -a docs/selective_jmp.txt  "mkdir -p system-variants/{}/seed"
 parallel -a docs/selective_jmp.txt  "mv system-variants/{}/instructions/* system-variants/{}/seed"
 parallel -a docs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 ```
-### Populate C and Makefiles
+### Populate C and Makefiles [One time]
 ```
 cd tests/mcsema
 
@@ -88,7 +88,7 @@ ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl 
 ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s --opc {}
 ```
 
-### Populate Binary
+### Populate Binary [One time]
 ```
 cd tests/mcsema
 ls register-variants/  | parallel "cd register-variants/{}; make binary; make assemble;  cd -"
@@ -97,6 +97,27 @@ ls register-variants-samereg/  | parallel "cd register-variants-samereg/{}; make
 ls immediate-variants/ | parallel "cd immediate-variants/{}; make binary; make assemble; cd -"
 ls memory-variants/    | parallel "cd memory-variants/{}; make binary; make assemble; cd -"
 ls system-variants/    | parallel "cd system-variants/{}; make binary; make assemble; cd -"
+```
+
+
+## Populate the decompiled output and modifiled llvm file
+```
+cd  tests/mcsema
+
+cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
+
+cat docs/supported_decompilation_register_samereg.txt  | parallel "cd register-variants-samereg/{}; make mcsema; cd -"
+cat docs/supported_decompilation_register_samereg.txt | parallel "cd register-variants-samereg/{}; make declutter; cd -"
+
+cat docs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
+
+cat docs/supported_decompilation_memory.txt | parallel "cd memory-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
+
+cat docs/supported_decompilation_system.txt | parallel "cd system-variants/{}; make mcsema; cd -"
+cat docs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
 ```
 
 ## Finding the (un)supported lists
@@ -120,30 +141,11 @@ grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee docs/unsupported_dec
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_memories.txt --file docs/unsupported_decompilation_memory.txt --show 0 > docs/supported_decompilation_memory.txt
 ```
 
-## Populate the decompiled output and modifiled llvm file
-```
-cd  tests/mcsema
-
-cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make mcsema; cd -"
-cat docs/supported_decompilation_register.txt | parallel "cd register-variants/{}; make declutter; cd -"
-
-cat docs/supported_decompilation_register_samereg.txt  | parallel "cd register-variants-samereg/{}; make mcsema; cd -"
-cat docs/supported_decompilation_register_samereg.txt | parallel "cd register-variants-samereg/{}; make declutter; cd -"
-
-cat docs/supported_decompilation_immediate.txt | parallel "cd immediate-variants/{}; make mcsema; cd -"
-cat docs/supported_decompilation_immediate.txt | parallel  "echo; ../../scripts/declutter.pl --file immediate-variants/{}/test.ll --opc {}"
-
-cat docs/supported_decompilation_memory.txt | parallel "cd memory-variants/{}; make mcsema; cd -"
-cat docs/supported_decompilation_memory.txt   | parallel   "echo; ../../scripts/declutter.pl --file memory-variants/{}/test.ll --opc {}"
-
-cat docs/supported_decompilation_system.txt | parallel "cd system-variants/{}; make mcsema; cd -"
-cat docs/supported_decompilation_system.txt   | parallel   "echo; ../../scripts/declutter.pl --file system-variants/{}/test.ll --opc {}"
-```
-
 ## Generate spec output file for x86
 ```
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make genxspec; cd -"
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make collect; cd -"
+cd ~/Github/X86-64-semantics/semantics; ../scripts/kompile.pl --backend java
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make xprove; cd -"
 
 cat docs/supported_decompilation_register_samereg.txt | parallel mv register-variants-samereg/{}/seed/{}.samereg.s register-variants-samereg/{}/seed/{}.s

@@ -92,8 +92,10 @@ lproveCheck() {
   msg=$1
   if grep -q "Success final states" Output/test-lspec.out; then
     echo -e "\e[32mLProve Pass\e[39m:-" `pwd`:$msg
+    exit 0
   else
     echo -e "\e[31mLProve Fail\e[39m:-" `pwd`:$msg
+    exit 1
   fi
 }
 
@@ -101,8 +103,10 @@ xproveCheck() {
   msg=$1
   if sed -ne '/SPEC FAILED/,$ p' Output/test-xspec.out | grep -q exit_0 ; then
     echo -e "\e[32mXProve Pass\e[39m:-" `pwd`:$msg
+    exit 0
   else
     echo -e "\e[31mXProve Fail\e[39m:-" `pwd`:$msg
+    exit 1
   fi
 }
 
@@ -110,8 +114,10 @@ kliCheck() {
   msg=$1
   if grep -q "exitCode ( 0 )" Output/test-lstate.out; then
     echo -e "\e[32mKli Pass\e[39m:-" `pwd`:$msg
+    exit 0
   else
     echo -e "\e[31mKli Fail\e[39m:-" `pwd`:$msg
+    exit 1
   fi
 }
 
@@ -132,6 +138,7 @@ aaInfoCheck() {
   else
     echo -e "\e[31mKli Fail\e[39m:-" `pwd`:$msg
   fi
+  exit 0
 }
 
 
