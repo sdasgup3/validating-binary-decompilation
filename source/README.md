@@ -65,7 +65,8 @@ rm -rf *.xz
 mkdir llvm.4.0.0.install llvm.4.0.0.obj
 cd llvm.4.0.0.obj
 INSTALL_PREFIX=/home/sdasgup3/Install/llvm/llvm.4.0.0.install
-cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
+# cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
+cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="Release" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
 make -j64
 sudo make install
 # Keep the llvm-config path set to the version of llvm we want to use using $PATH
@@ -190,7 +191,7 @@ make clean; make -j64
 
 
 
-### [DEPRECATED TOOLS]
+### DEPRECATED
 #### Runnning the variable\_and\_basic\_block\_correspondence tool
 ```
 validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence

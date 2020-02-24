@@ -5,9 +5,9 @@
   ```bash
   cd Github
   git clone --recursive git@github.com:sdasgup3/k.git
+  cd k
   git checkout bin-decomp-val
 
-  cd k
   git submodule update --init --recursive
   sudo apt-get install build-essential m4 openjdk-8-jdk libgmp-dev libmpfr-dev pkg-config flex z3 libz3-dev maven opam python3 cmake zlib1g-dev libboost-test-dev libyaml-dev libjemalloc-dev
   curl -sSL https://get.haskellstack.org/ | sh
