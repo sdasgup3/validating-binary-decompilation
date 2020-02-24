@@ -141,7 +141,7 @@ grep -lr  "cal.*HandleUnsupported" system-variants/* |& tee docs/unsupported_dec
 ~/scripts-n-docs/scripts/perl/comparefiles.pl --file docs/all_memories.txt --file docs/unsupported_decompilation_memory.txt --show 0 > docs/supported_decompilation_memory.txt
 ```
 
-## Generate spec output file for x86
+## Generate spec output file for x86 (Register)
 ```
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make genxspec; cd -"
 cat docs/supported_decompilation_register.txt | parallel -j15 "cd register-variants/{}; make collect; cd -"
@@ -152,6 +152,14 @@ cat docs/supported_decompilation_register_samereg.txt | parallel mv register-var
 cat docs/supported_decompilation_register_samereg.txt | parallel  "cd register-variants-samereg/{}; make genxspec; cd -"
 cat docs/supported_decompilation_register_samereg.txt | parallel  "cd register-variants-samereg/{}; make collect; cd -"
 cat docs/supported_decompilation_register_samereg.txt | parallel -j10 "cd register-variants-samereg/{}; make xprove; cd -"
+```
+
+## Generate spec output file for x86 (Immediate)
+```
+cat docs/genz3PassI.log | parallel -j15 "cd {}; make genxspec; cd -"
+cat docs/genz3PassI.log | parallel -j15 "cd {}; make collect; cd -"
+cd /home/ubuntu/Github/X86-64-semantics/semantics; ../scripts/kompile.pl --backend java
+cat docs/genz3PassI.log | parallel -j15 "cd {}; make xprove; cd -"
 ```
 
 ## Generate spec output file for LLVM
@@ -176,7 +184,7 @@ cat docs/kliPassSameR.log | parallel -j10 "cd register-variants-samereg/{}; make
 ```
 cat docs/genz3PassR.log | parallel  "cd register-variants/{}; make genz3; cd -"
 // genz3 pass/fails are stored at genz3(Pass/Fail).log 
-cat docs/genz3PassR.log | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -"
+cat docs/genz3PassR.log | parallel  "echo; echo; cd {}; make provez3; cd -"
 //provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk).log
 
 or 
@@ -187,7 +195,7 @@ or
 // samereg
 cat docs/lprove_xprovePassSameR.log | parallel  "cd register-variants-samereg/{}; make genz3; cd -" |& tee log
 // genz3 pass/fails are stored at genz3(Pass/Fail)SameR.log 
-cat docs/genz3PassSameR.log | parallel  "echo; echo; cd register-variants-samereg/{}; make provez3; cd -" |& tee run.log
+cat docs/genz3PassSameR.log | parallel  "echo; echo; cd {}; make provez3; cd -" |& tee run.log
 //provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk)SameR.log
 ```
 
