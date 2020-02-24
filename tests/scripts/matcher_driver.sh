@@ -17,12 +17,12 @@ selectPassSeq() {
              -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
              -simplifycfg -basicaa -aa -instcombine"
 
-## More effective pass list derived after submission.
-#  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-#             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-#             -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
-#             -gvn -basicaa -aa -memdep -dse -memcpyopt"
-#
+  ## More effective pass list derived after submission.
+  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+             -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
+             -gvn -basicaa -aa -memdep -dse -memcpyopt"
+
   if [ -v NORM ]; then
     if [ "$NORM" != "CUSTOM" ]; then
       NORM_PASS="-${NORM}"
