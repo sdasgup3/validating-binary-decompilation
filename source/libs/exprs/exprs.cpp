@@ -270,6 +270,10 @@ string dispatchSummaryExpr(string &str, SummaryExprAbstract **ptr) {
     *ptr = new SummaryExprUndefMInt();
     return (*ptr)->read_spec(str);
 
+  } else if (regex_search(str, m, regex("^`undefBool_MINT-WRAPPER-SYNTAX`"))) {
+    *ptr = new SummaryExprUndefBool();
+    return (*ptr)->read_spec(str);
+
   } else if (regex_search(str, m, regex("^lshrMInt"))) {
     *ptr = new SummaryExprLogicalRightShiftMInt();
     return (*ptr)->read_spec(str);
@@ -2101,5 +2105,17 @@ string SummaryExprUndefMInt::read_spec(string &ss) {
 
 ostream &SummaryExprUndefMInt::write_spec(ostream &os) const {
   os << "VX_UNDEF_1";
+  return os;
+}
+
+/************** SummaryExprUndefBool ******************/
+string SummaryExprUndefBool::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  width_ = 1;
+  return ss.substr(result.second + 1);
+}
+
+ostream &SummaryExprUndefBool::write_spec(ostream &os) const {
+  os << "VX_UNDEF_BOOL";
   return os;
 }

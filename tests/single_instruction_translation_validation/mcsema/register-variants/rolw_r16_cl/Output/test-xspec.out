@@ -1,9 +1,9 @@
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/rolw_r16_cl/././test-xspec.k)
 Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/rolw_r16_cl/test-xspec.k)
-Parse spec modules [1/9 rules]                               =  0.021s
+Parse spec modules [5/9 rules]                               =  0.027s
 StateLog: /home/ubuntu/Github/X86-64-semantics/semantics/x86-semantics-kompiled/stateLog/prove-2044796696.log
 
-Parsing finished:  288.505 s
+Parsing finished:  399.797 s
 Pre-processing rule:
 rule too long...
 	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/register-variants/rolw_r16_cl/test-xspec.k Location(6,5,108,55)
@@ -12,22 +12,22 @@ rule too long...
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  289.009 s,	 4277 MB, gc:  1.390 %
-  Parsing             :  288.505 s,	 4103 MB, gc:  1.392 %
-  Init                :    0.504 s,	 4277 MB, gc:  0.000 %
+Total                 :  400.539 s,	 3782 MB, gc:  3.565 %
+  Parsing             :  399.797 s,	 3622 MB, gc:  3.572 %
+  Init                :    0.742 s,	 3782 MB, gc:  0.000 %
 
-Init+Execution time:       0.504 s
+Init+Execution time:       0.742 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.074 s,      #        495
-    evaluateFunction time            :    0.057 s,      #        240
+  resolveFunctionAndAnywhere time  :    0.093 s,      #        495
+    evaluateFunction time            :    0.070 s,      #        240
       builtin evaluation               :           ,      #        156
       function rule                    :           ,      #         12
-      no rule applicable               :           ,      #         12
-      no function rules                :           ,      #         60
+      no rule applicable               :           ,      #         36
+      no function rules                :           ,      #         36
     applyAnywhereRules time          :    0.001 s,      #         91
       no anywhere rules                :           ,      #         91
-    remaining time & # cached        :    0.017 s,      #        164
+    remaining time & # cached        :    0.022 s,      #        164
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #        192
@@ -58,11 +58,11 @@ Target term
 #True(.KList)
 
 
-STEP 1 v1 :    2.160 s, 		 5527 MB, gc:  0.000 %
+STEP 1 v1 :    2.450 s, 		 5110 MB, gc:  0.000 %
 ===================
 `<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1008","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1009","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1010","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1011","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1012","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1013","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1014","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1015","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1016","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1017","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1018","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1019","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1020","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1021","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1022","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1023","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList)))
 
-STEP 14 v1 :    2.917 s, 		 6023 MB, gc:  0.000 %
+STEP 14 v1 :    3.283 s, 		 2396 MB, gc:  5.645 %
 ===================
 `<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1008","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1009","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1010","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1011","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1012","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1013","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1014","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1015","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1016","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1017","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1018","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1019","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1020","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1021","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1022","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1023","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList)))
 
@@ -74,48 +74,60 @@ Success execution paths: 0
 Failed execution paths: 1
 Longest path: 14 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  292.393 s,	 6375 MB, gc:  1.374 %
-  Parsing             :  288.505 s,	 4103 MB, gc:  1.392 %
-  Init                :    0.504 s,	 4277 MB, gc:  0.000 %
-  Execution           :    3.384 s,	 6375 MB, gc:  0.000 %
+Total                 :  404.330 s,	 2764 MB, gc:  3.544 %
+  Parsing             :  399.797 s,	 3622 MB, gc:  3.572 %
+  Init                :    0.742 s,	 3782 MB, gc:  0.000 %
+  Execution           :    3.791 s,	 2764 MB, gc:  1.240 %
 
-Init+Execution time:       3.888 s
-  query build time                 :    0.009 s,      #          6
+Init+Execution time:       4.533 s
+  query build time                 :    0.012 s,      #         15
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.165 s,      #       1131
-    evaluateFunction time            :    0.140 s,      #        497
+  resolveFunctionAndAnywhere time  :    0.231 s,      #       1131
+    evaluateFunction time            :    0.183 s,      #        496
       builtin evaluation               :           ,      #        199
       function rule                    :           ,      #         43
       sort predicate                   :           ,      #          2
-      no rule applicable               :           ,      #         84
-      no function rules                :           ,      #        169
+      no rule applicable               :           ,      #        167
+      no function rules                :           ,      #         85
     applyAnywhereRules time          :    0.001 s,      #        146
       no anywhere rules                :           ,      #        146
-    remaining time & # cached        :    0.024 s,      #        488
-  log time                         :    0.983 s,      #         15
-  impliesSMT time                  :    0.009 s,      #          6
+    remaining time & # cached        :    0.047 s,      #        489
+  log time                         :    1.066 s,      #         15
+  impliesSMT time                  :    0.012 s,      #         17
 
   Recursive event counts:
-  resolveFunctionAndAnywhere time  :           ,      #       1466
-    evaluateFunction time            :           ,      #        256
-      builtin evaluation               :           ,      #        140
-      function rule                    :           ,      #         83
+  resolveFunctionAndAnywhere time  :           ,      #       1578
+    evaluateFunction time            :           ,      #        329
+      builtin evaluation               :           ,      #        150
+      function rule                    :           ,      #        123
       sort predicate                   :           ,      #          0
-      no rule applicable               :           ,      #          5
-      no function rules                :           ,      #         27
+      no rule applicable               :           ,      #         20
+      no function rules                :           ,      #         35
     applyAnywhereRules time          :           ,      #         19
       no anywhere rules                :           ,      #         19
-    # cached                         :           ,      #       1191
+    # cached                         :           ,      #       1230
 
 Max memory : 262144 MB
 ==================================
 
 `<generatedTop>`(`<k>`(`exit_0_X86-FETCH-EXECUTE`(.KList)),`<functargets>`(`_|->_`(#token("_start","X86Id"),ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'0","MInt")))),`<rotargets>`(`.Map`(.KList)),`<datatargets>`(`.Map`(.KList)),`<bsstargets>`(`.Map`(.KList)),`<entrypoint>`(#EmptyK(.KList)),`<nextLocPc>`(_0),`<lastseenlabel>`(#EmptyK(.KList)),`<currentsection>`(#token("\"text\"","String")),`<memstate>`(`<text>`(code(`_Map_`(`_|->_`(ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'0","MInt")),storedInstr(`___X86-SYNTAX`(`rolw_X86-SYNTAX`(.KList),operandlist(`%cl_X86-SYNTAX`(.KList),operandlist(`%bx_X86-SYNTAX`(.KList),`.List{"operandlist"}`(.KList)))))),`_|->_`(ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'1","MInt")),storedInstr(`___X86-SYNTAX`(`ret_X86-SYNTAX`(.KList),`.List{"operandlist"}`(.KList))))))),`<stack>`(`<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1008","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1009","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1010","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1011","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1012","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1013","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1014","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1015","Int")),byte(#token("0","Int"),`undefMInt_MINT-WRAPPER-SYNTAX`(.KList))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1016","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1017","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1018","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1019","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1020","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1021","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1022","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("1023","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList))),`<stackbase>`(stackBaseInfo(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("0","Int")),#token("64'1016","MInt"))),`<robase>`(roBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))),`<database>`(dataBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))),`<bssbase>`(bssBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))))),`<environment>`(`<argc>`(#EmptyK(.KList)),`<argv>`(#EmptyK(.KList))),`<regstate>`(`_Map_`(`_|->_`(#token("\"AF\"","String"),mi(#token("1","Int"),VX_AF)),`_|->_`(#token("\"CF\"","String"),`#ifMInt_#then_#else_#fi_MINT-WRAPPER-SYNTAX`(`_orBool_`(`_andBool_`(`notBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'0","MInt"))),eqMInt(extractMInt(rolHelper(extractMInt(mi(#token("64","Int"),VX_RBX),#token("48","Int"),#token("64","Int")),uvalueMInt(concatenateMInt(#token("8'0","MInt"),andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")))),#token("0","Int")),#token("15","Int"),#token("16","Int")),#token("1'1","MInt"))),`_andBool_`(`notBool_`(`notBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'0","MInt")))),eqMInt(mi(#token("1","Int"),VX_CF),#token("1'1","MInt")))),#token("1'1","MInt"),#token("1'0","MInt"))),`_|->_`(#token("\"OF\"","String"),`#ifMInt_#then_#else_#fi_MINT-WRAPPER-SYNTAX`(`_orBool_`(`_andBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'1","MInt")),`_xorBool_`(eqMInt(extractMInt(rolHelper(extractMInt(mi(#token("64","Int"),VX_RBX),#token("48","Int"),#token("64","Int")),uvalueMInt(concatenateMInt(#token("8'0","MInt"),andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")))),#token("0","Int")),#token("0","Int"),#token("1","Int")),#token("1'1","MInt")),eqMInt(extractMInt(rolHelper(extractMInt(mi(#token("64","Int"),VX_RBX),#token("48","Int"),#token("64","Int")),uvalueMInt(concatenateMInt(#token("8'0","MInt"),andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")))),#token("0","Int")),#token("15","Int"),#token("16","Int")),#token("1'1","MInt")))),`_andBool_`(`notBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'1","MInt"))),`_orBool_`(`_andBool_`(`notBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'0","MInt"))),`undefBool_MINT-WRAPPER-SYNTAX`(.KList)),`_andBool_`(`notBool_`(`notBool_`(eqMInt(andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")),#token("8'0","MInt")))),eqMInt(mi(#token("1","Int"),VX_OF),#token("1'1","MInt")))))),#token("1'1","MInt"),#token("1'0","MInt"))),`_|->_`(#token("\"PF\"","String"),mi(#token("1","Int"),VX_PF)),`_|->_`(#token("\"RAX\"","String"),mi(#token("64","Int"),VX_RAX)),`_|->_`(#token("\"RBP\"","String"),ptr(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("0","Int")),#token("64'1016","MInt"))),`_|->_`(#token("\"RBX\"","String"),concatenateMInt(extractMInt(mi(#token("64","Int"),VX_RBX),#token("0","Int"),#token("48","Int")),rolHelper(extractMInt(mi(#token("64","Int"),VX_RBX),#token("48","Int"),#token("64","Int")),uvalueMInt(concatenateMInt(#token("8'0","MInt"),andMInt(extractMInt(mi(#token("64","Int"),VX_RCX),#token("56","Int"),#token("64","Int")),#token("8'31","MInt")))),#token("0","Int")))),`_|->_`(#token("\"RCX\"","String"),mi(#token("64","Int"),VX_RCX)),`_|->_`(#token("\"RDI\"","String"),mi(#token("64","Int"),VX_RDI)),`_|->_`(#token("\"RDX\"","String"),mi(#token("64","Int"),VX_RDX)),`_|->_`(#token("\"RIP\"","String"),#token("64'18446744073709551615","MInt")),`_|->_`(#token("\"RSI\"","String"),mi(#token("64","Int"),VX_RSI)),`_|->_`(#token("\"RSP\"","String"),ptr(symloc(#token("1","Int"),#token("128","Int"),#token("1024","Int"),#token("8","Int"),#token("0","Int")),#token("64'1024","MInt"))),`_|->_`(#token("\"SF\"","String"),mi(#token("1","Int"),VX_SF)),`_|->_`(#token("\"ZF\"","String"),mi(#token("1","Int"),VX_ZF)))),_29,_30,_31,_32,_33)
+[Warning] Internal: execution phase: missing SMTLib translation for
+bitwidthMInt . Please re-run with the --debug-z3 flag. Search the logs starting
+with 'Z3 warning' to see the Z3 implication that generated the warning.
+(missing SMTLib translation for bitwidthMInt)
 [Warning] Internal: execution phase: missing SMTLib translation for mi . Please
 re-run with the --debug-z3 flag. Search the logs starting with 'Z3 warning' to
 see the Z3 implication that generated the warning. (missing SMTLib translation
 for mi)
+[Warning] Internal: execution phase: missing SMTLib translation for rolHelper .
+Please re-run with the --debug-z3 flag. Search the logs starting with 'Z3
+warning' to see the Z3 implication that generated the warning. (missing SMTLib
+translation for rolHelper)
+[Warning] Internal: execution phase: missing SMTLib translation for svalueMInt
+. Please re-run with the --debug-z3 flag. Search the logs starting with 'Z3
+warning' to see the Z3 implication that generated the warning. (missing SMTLib
+translation for svalueMInt)
 Command exited with non-zero status 1
-432.81user 53.56system 4:54.35elapsed 165%CPU (0avgtext+0avgdata 10149124maxresident)k
-0inputs+205320outputs (0major+7485823minor)pagefaults 0swaps
+510.50user 406.81system 6:47.02elapsed 225%CPU (0avgtext+0avgdata 19154668maxresident)k
+800inputs+283720outputs (0major+12804663minor)pagefaults 0swaps

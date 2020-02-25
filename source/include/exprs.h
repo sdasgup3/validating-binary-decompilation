@@ -53,6 +53,7 @@ class SummaryExprIntFromBytesAux;
 class SummaryExprIntFromBytes;
 class SummaryExprCommonMemSyntax;
 class SummaryExprUndefMInt;
+class SummaryExprUndefBool;
 class SummaryExprBitwidthMInt;
 class SummaryExprShiftRight;
 class SummaryExprSignShiftRight;
@@ -1189,6 +1190,23 @@ inline ostream &operator<<(ostream &os, const SummaryExprUndefMInt &op) {
 }
 
 inline string operator>>(string &os, SummaryExprUndefMInt &op) {
+  return op.read_spec(os);
+}
+
+/************** SummaryExprUndefBool ******************/
+class SummaryExprUndefBool : public SummaryExprAbstract {
+public:
+  SummaryExprUndefBool() {}
+  SummaryExpr::Type type() const { return SummaryExpr::Type::UNDEF_MINT; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const SummaryExprUndefBool &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, SummaryExprUndefBool &op) {
   return op.read_spec(os);
 }
 

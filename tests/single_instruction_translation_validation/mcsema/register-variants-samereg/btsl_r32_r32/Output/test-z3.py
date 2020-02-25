@@ -62,6 +62,7 @@ VX_YMM2 = z3.BitVec('VX_YMM2', 256)
 
 ## Undef
 VX_UNDEF_1 = z3.BitVec('VX_UNDEF_1', 1)
+VX_UNDEF_BOOL = z3.Bool('VX_UNDEF_BOOL')
 
 ##############################
 ## X86 specific variables ####
