@@ -1,3 +1,3 @@
 .target:
-  vcomiss -4(%rbp), %xmm1
+  vcomiss -16(%rbp), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  rcrl $0x1, -4(%rbp)
+  rcrl $0x1, -16(%rbp)
   retq

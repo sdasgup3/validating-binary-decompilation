@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmpb -4(%rbp), %bl
+    cmpb -16(%rbp), %bl
     
     
     ret

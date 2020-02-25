@@ -1,3 +1,3 @@
 .target:
-  vsubps -4(%rbp), %ymm2, %ymm1
+  vsubps -16(%rbp), %ymm2, %ymm1
   retq

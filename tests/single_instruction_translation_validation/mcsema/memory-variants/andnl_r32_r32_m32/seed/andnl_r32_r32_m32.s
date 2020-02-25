@@ -1,3 +1,3 @@
 .target:
-  andnl -4(%rbp), %ecx, %ebx
+  andnl -16(%rbp), %ecx, %ebx
   retq

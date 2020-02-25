@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    popcntq -4(%rbp), %rbx
+    popcntq -16(%rbp), %rbx
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    psignb -4(%rbp), %xmm1
+    psignb -16(%rbp), %xmm1
     
     
     ret

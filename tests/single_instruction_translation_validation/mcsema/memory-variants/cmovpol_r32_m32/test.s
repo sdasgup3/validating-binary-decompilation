@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmovpol -4(%rbp), %ebx
+    cmovpol -16(%rbp), %ebx
     
     
     ret

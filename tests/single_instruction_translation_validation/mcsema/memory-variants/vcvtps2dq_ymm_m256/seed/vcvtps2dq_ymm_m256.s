@@ -1,3 +1,3 @@
 .target:
-  vcvtps2dq -4(%rbp), %ymm1
+  vcvtps2dq -16(%rbp), %ymm1
   retq

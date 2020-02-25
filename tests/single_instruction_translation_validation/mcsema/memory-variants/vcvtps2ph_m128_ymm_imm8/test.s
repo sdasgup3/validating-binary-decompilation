@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vcvtps2ph $0xa, %ymm1, -4(%rbp)
+    vcvtps2ph $0xa, %ymm1, -16(%rbp)
     
     
     ret

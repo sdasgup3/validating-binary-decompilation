@@ -1,3 +1,3 @@
 .target:
-  vcmpsd $0xa, -4(%rbp), %xmm2, %xmm1
+  vcmpsd $0xa, -16(%rbp), %xmm2, %xmm1
   retq

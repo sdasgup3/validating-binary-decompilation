@@ -1,3 +1,3 @@
 .target:
-  mulss -4(%rbp), %xmm1
+  mulss -16(%rbp), %xmm1
   retq

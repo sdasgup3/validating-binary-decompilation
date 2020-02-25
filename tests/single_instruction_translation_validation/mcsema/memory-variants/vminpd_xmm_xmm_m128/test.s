@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vminpd -4(%rbp), %xmm2, %xmm1
+    vminpd -16(%rbp), %xmm2, %xmm1
     
     
     ret

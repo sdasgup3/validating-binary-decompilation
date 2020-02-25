@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vandnpd -4(%rbp), %xmm2, %xmm1
+    vandnpd -16(%rbp), %xmm2, %xmm1
     
     
     ret

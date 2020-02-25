@@ -1,3 +1,3 @@
 .target:
-  cmovew -4(%rbp), %bx
+  cmovew -16(%rbp), %bx
   retq

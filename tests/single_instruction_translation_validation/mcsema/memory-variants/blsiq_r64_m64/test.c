@@ -1,3 +1,3 @@
 void main() {
-  __asm__("blsiq -4(%rbp), %rbx");
+  __asm__("blsiq -16(%rbp), %rbx");
 }

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpackusdw -4(%rbp), %ymm2, %ymm1
+    vpackusdw -16(%rbp), %ymm2, %ymm1
     
     
     ret

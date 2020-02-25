@@ -1,3 +1,3 @@
 .target:
-  psraw -4(%rbp), %xmm1
+  psraw -16(%rbp), %xmm1
   retq

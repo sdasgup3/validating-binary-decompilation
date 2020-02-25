@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    leaq -4(%rbp), %rbx
+    leaq -16(%rbp), %rbx
     
     
     ret

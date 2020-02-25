@@ -1,3 +1,3 @@
 .target:
-  stosb -4(%rbp)
+  stosb -16(%rbp)
   retq

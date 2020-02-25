@@ -1,3 +1,3 @@
 void main() {
-  __asm__("bsrl -4(%rbp), %ebx");
+  __asm__("bsrl -16(%rbp), %ebx");
 }

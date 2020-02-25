@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vsqrtss -4(%rbp), %xmm2, %xmm1
+    vsqrtss -16(%rbp), %xmm2, %xmm1
     
     
     ret

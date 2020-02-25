@@ -1,3 +1,3 @@
 .target:
-  vpalignr $0xa, -4(%rbp), %ymm2, %ymm1
+  vpalignr $0xa, -16(%rbp), %ymm2, %ymm1
   retq

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("xchgb %ah, -4(%rbp)");
+  __asm__("xchgb %ah, -16(%rbp)");
 }

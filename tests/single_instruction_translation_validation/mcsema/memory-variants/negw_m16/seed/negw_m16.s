@@ -1,3 +1,3 @@
 .target:
-  negw -4(%rbp)
+  negw -16(%rbp)
   retq

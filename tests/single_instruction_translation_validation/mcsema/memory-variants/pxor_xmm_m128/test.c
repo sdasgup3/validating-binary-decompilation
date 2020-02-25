@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pxor -4(%rbp), %xmm1");
+  __asm__("pxor -16(%rbp), %xmm1");
 }

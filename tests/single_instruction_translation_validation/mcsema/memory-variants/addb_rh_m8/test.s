@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    addb -4(%rbp), %ah
+    addb -16(%rbp), %ah
     
     
     ret

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("andnq -4(%rbp), %rcx, %rbx");
+  __asm__("andnq -16(%rbp), %rcx, %rbx");
 }

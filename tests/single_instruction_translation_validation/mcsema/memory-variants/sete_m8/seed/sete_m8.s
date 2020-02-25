@@ -1,3 +1,3 @@
 .target:
-  sete -4(%rbp)
+  sete -16(%rbp)
   retq

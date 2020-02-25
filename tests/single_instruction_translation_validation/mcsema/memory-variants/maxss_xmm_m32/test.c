@@ -1,3 +1,3 @@
 void main() {
-  __asm__("maxss -4(%rbp), %xmm1");
+  __asm__("maxss -16(%rbp), %xmm1");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpsubusw -4(%rbp), %xmm2, %xmm1
+  vpsubusw -16(%rbp), %xmm2, %xmm1
   retq

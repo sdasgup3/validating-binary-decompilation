@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    salw %cl, -4(%rbp)
+    salw %cl, -16(%rbp)
     
     
     ret

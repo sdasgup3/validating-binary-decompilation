@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pmaddubsw -4(%rbp), %xmm1");
+  __asm__("pmaddubsw -16(%rbp), %xmm1");
 }

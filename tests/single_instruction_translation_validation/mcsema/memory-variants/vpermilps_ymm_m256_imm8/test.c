@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpermilps $0xa, -4(%rbp), %ymm1");
+  __asm__("vpermilps $0xa, -16(%rbp), %ymm1");
 }

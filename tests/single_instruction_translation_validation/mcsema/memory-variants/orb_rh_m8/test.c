@@ -1,3 +1,3 @@
 void main() {
-  __asm__("orb -4(%rbp), %ah");
+  __asm__("orb -16(%rbp), %ah");
 }

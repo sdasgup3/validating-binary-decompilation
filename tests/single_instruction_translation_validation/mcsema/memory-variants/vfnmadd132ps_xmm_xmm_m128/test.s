@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vfnmadd132ps -4(%rbp), %xmm2, %xmm1
+    vfnmadd132ps -16(%rbp), %xmm2, %xmm1
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cvtsi2ssl -4(%rbp), %xmm1
+    cvtsi2ssl -16(%rbp), %xmm1
     
     
     ret

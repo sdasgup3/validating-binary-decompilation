@@ -1,3 +1,3 @@
 void main() {
-  __asm__("negl -4(%rbp)");
+  __asm__("negl -16(%rbp)");
 }

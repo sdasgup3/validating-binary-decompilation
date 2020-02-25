@@ -1,3 +1,3 @@
 void main() {
-  __asm__("blendps $0xa, -4(%rbp), %xmm1");
+  __asm__("blendps $0xa, -16(%rbp), %xmm1");
 }

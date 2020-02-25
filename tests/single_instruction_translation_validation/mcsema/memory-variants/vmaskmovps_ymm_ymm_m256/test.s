@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vmaskmovps -4(%rbp), %ymm2, %ymm1
+    vmaskmovps -16(%rbp), %ymm2, %ymm1
     
     
     ret

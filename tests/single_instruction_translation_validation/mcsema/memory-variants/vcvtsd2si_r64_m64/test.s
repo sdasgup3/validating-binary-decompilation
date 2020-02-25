@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vcvtsd2si -4(%rbp), %rbx
+    vcvtsd2si -16(%rbp), %rbx
     
     
     ret

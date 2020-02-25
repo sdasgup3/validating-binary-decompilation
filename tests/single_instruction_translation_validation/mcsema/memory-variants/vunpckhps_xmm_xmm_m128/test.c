@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vunpckhps -4(%rbp), %xmm2, %xmm1");
+  __asm__("vunpckhps -16(%rbp), %xmm2, %xmm1");
 }

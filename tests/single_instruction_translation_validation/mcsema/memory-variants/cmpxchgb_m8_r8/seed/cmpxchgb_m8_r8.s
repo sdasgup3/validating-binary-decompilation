@@ -1,3 +1,3 @@
 .target:
-  cmpxchgb %cl, -4(%rbp)
+  cmpxchgb %cl, -16(%rbp)
   retq

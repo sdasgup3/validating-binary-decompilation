@@ -1,3 +1,3 @@
 void main() {
-  __asm__("psubq -4(%rbp), %xmm1");
+  __asm__("psubq -16(%rbp), %xmm1");
 }

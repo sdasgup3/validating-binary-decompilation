@@ -1,3 +1,3 @@
 .target:
-  vunpckhps -4(%rbp), %ymm2, %ymm1
+  vunpckhps -16(%rbp), %ymm2, %ymm1
   retq

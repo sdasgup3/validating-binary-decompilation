@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    addsd -4(%rbp), %xmm1
+    addsd -16(%rbp), %xmm1
     
     
     ret

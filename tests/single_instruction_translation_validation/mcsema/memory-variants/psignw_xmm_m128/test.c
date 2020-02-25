@@ -1,3 +1,3 @@
 void main() {
-  __asm__("psignw -4(%rbp), %xmm1");
+  __asm__("psignw -16(%rbp), %xmm1");
 }

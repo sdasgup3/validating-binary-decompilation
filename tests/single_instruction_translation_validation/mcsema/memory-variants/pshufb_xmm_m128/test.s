@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pshufb -4(%rbp), %xmm1
+    pshufb -16(%rbp), %xmm1
     
     
     ret

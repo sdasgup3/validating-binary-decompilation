@@ -1,3 +1,3 @@
 .target:
-  vpcmpeqd -4(%rbp), %xmm2, %xmm1
+  vpcmpeqd -16(%rbp), %xmm2, %xmm1
   retq

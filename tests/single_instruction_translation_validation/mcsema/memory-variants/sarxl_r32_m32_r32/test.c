@@ -1,3 +1,3 @@
 void main() {
-  __asm__("sarxl %edx, -4(%rbp), %ebx");
+  __asm__("sarxl %edx, -16(%rbp), %ebx");
 }

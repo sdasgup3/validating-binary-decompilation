@@ -1,3 +1,3 @@
 .target:
-  vaddsubps -4(%rbp), %xmm2, %xmm1
+  vaddsubps -16(%rbp), %xmm2, %xmm1
   retq

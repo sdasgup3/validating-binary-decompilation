@@ -1,3 +1,3 @@
 .target:
-  vextracti128 $0xa, %ymm1, -4(%rbp)
+  vextracti128 $0xa, %ymm1, -16(%rbp)
   retq

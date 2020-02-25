@@ -1,3 +1,3 @@
 .target:
-  cmpl %ecx, -4(%rbp)
+  cmpl %ecx, -16(%rbp)
   retq

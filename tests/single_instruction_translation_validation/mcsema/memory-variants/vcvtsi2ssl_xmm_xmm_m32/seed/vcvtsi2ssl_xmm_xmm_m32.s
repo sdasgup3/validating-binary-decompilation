@@ -1,3 +1,3 @@
 .target:
-  vcvtsi2ssl -4(%rbp), %xmm2, %xmm1
+  vcvtsi2ssl -16(%rbp), %xmm2, %xmm1
   retq

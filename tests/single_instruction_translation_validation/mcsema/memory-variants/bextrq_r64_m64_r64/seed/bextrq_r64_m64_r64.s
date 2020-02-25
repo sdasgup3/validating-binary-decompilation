@@ -1,3 +1,3 @@
 .target:
-  bextrq %rdx, -4(%rbp), %rbx
+  bextrq %rdx, -16(%rbp), %rbx
   retq

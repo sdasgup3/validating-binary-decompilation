@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pextrw $0xa, %xmm1, -4(%rbp)
+    pextrw $0xa, %xmm1, -16(%rbp)
     
     
     ret

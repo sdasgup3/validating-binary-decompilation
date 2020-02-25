@@ -1,3 +1,3 @@
 .target:
-  vorps -4(%rbp), %xmm2, %xmm1
+  vorps -16(%rbp), %xmm2, %xmm1
   retq

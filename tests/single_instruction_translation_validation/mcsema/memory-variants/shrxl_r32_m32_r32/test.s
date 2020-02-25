@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    shrxl %edx, -4(%rbp), %ebx
+    shrxl %edx, -16(%rbp), %ebx
     
     
     ret

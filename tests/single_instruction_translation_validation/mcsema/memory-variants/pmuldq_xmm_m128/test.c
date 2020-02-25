@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pmuldq -4(%rbp), %xmm1");
+  __asm__("pmuldq -16(%rbp), %xmm1");
 }

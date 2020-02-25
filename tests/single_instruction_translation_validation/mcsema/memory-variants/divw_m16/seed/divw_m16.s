@@ -1,3 +1,3 @@
 .target:
-  divw -4(%rbp)
+  divw -16(%rbp)
   retq

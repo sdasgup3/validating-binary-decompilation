@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vunpckhps -4(%rbp), %xmm2, %xmm1
+    vunpckhps -16(%rbp), %xmm2, %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  sbbw %cx, -4(%rbp)
+  sbbw %cx, -16(%rbp)
   retq

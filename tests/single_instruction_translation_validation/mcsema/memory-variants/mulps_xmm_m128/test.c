@@ -1,3 +1,3 @@
 void main() {
-  __asm__("mulps -4(%rbp), %xmm1");
+  __asm__("mulps -16(%rbp), %xmm1");
 }

@@ -1,3 +1,3 @@
 .target:
-  btcw %cx, -4(%rbp)
+  btcw %cx, -16(%rbp)
   retq

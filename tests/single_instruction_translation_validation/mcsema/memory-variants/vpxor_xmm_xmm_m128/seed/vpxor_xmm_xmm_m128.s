@@ -1,3 +1,3 @@
 .target:
-  vpxor -4(%rbp), %xmm2, %xmm1
+  vpxor -16(%rbp), %xmm2, %xmm1
   retq

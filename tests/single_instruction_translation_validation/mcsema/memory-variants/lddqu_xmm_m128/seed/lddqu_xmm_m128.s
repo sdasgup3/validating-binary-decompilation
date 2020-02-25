@@ -1,3 +1,3 @@
 .target:
-  lddqu -4(%rbp), %xmm1
+  lddqu -16(%rbp), %xmm1
   retq

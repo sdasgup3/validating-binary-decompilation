@@ -1,3 +1,3 @@
 .target:
-  btcw $0xa, -4(%rbp)
+  btcw $0xa, -16(%rbp)
   retq

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cmpxchg8b -4(%rbp)");
+  __asm__("cmpxchg8b -16(%rbp)");
 }

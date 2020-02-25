@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vphsubw -4(%rbp), %ymm2, %ymm1
+    vphsubw -16(%rbp), %ymm2, %ymm1
     
     
     ret

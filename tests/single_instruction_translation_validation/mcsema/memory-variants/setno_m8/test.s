@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    setno -4(%rbp)
+    setno -16(%rbp)
     
     
     ret

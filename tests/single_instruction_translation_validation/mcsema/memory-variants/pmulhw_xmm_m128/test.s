@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pmulhw -4(%rbp), %xmm1
+    pmulhw -16(%rbp), %xmm1
     
     
     ret

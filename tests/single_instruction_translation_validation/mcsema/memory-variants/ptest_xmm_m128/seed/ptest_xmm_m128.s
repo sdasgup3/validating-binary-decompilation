@@ -1,3 +1,3 @@
 .target:
-  ptest -4(%rbp), %xmm1
+  ptest -16(%rbp), %xmm1
   retq

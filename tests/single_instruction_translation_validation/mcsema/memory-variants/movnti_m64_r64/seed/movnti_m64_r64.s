@@ -1,3 +1,3 @@
 .target:
-  movnti %rcx, -4(%rbp)
+  movnti %rcx, -16(%rbp)
   retq

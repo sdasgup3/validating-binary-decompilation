@@ -1,3 +1,3 @@
 void main() {
-  __asm__("packsswb -4(%rbp), %xmm1");
+  __asm__("packsswb -16(%rbp), %xmm1");
 }

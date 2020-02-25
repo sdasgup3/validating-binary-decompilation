@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    sbbq -4(%rbp), %rbx
+    sbbq -16(%rbp), %rbx
     
     
     ret

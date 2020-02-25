@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    dppd $0xa, -4(%rbp), %xmm1
+    dppd $0xa, -16(%rbp), %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  salb $0x1, -4(%rbp)
+  salb $0x1, -16(%rbp)
   retq

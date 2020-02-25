@@ -1,3 +1,3 @@
 .target:
-  shrdl $0xa, %ecx, -4(%rbp)
+  shrdl $0xa, %ecx, -16(%rbp)
   retq

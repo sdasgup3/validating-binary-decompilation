@@ -1,3 +1,3 @@
 .target:
-  leaq -4(%rbp), %rbx
+  leaq -16(%rbp), %rbx
   retq

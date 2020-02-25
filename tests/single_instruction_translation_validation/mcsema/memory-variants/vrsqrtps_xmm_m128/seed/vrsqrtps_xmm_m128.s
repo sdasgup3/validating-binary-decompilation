@@ -1,3 +1,3 @@
 .target:
-  vrsqrtps -4(%rbp), %xmm1
+  vrsqrtps -16(%rbp), %xmm1
   retq

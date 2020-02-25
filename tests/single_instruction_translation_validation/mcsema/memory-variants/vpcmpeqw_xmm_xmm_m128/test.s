@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpcmpeqw -4(%rbp), %xmm2, %xmm1
+    vpcmpeqw -16(%rbp), %xmm2, %xmm1
     
     
     ret

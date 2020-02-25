@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpminsb -4(%rbp), %xmm2, %xmm1
+    vpminsb -16(%rbp), %xmm2, %xmm1
     
     
     ret

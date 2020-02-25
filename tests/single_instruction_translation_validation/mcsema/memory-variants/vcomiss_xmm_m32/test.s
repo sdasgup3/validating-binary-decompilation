@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vcomiss -4(%rbp), %xmm1
+    vcomiss -16(%rbp), %xmm1
     
     
     ret

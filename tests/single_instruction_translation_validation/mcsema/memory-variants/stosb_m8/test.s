@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    stosb -4(%rbp)
+    stosb -16(%rbp)
     
     
     ret

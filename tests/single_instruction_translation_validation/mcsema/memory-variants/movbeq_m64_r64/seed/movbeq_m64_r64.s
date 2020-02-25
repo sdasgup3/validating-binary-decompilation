@@ -1,3 +1,3 @@
 .target:
-  movbeq %rcx, -4(%rbp)
+  movbeq %rcx, -16(%rbp)
   retq

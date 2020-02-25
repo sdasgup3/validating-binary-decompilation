@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pavgw -4(%rbp), %xmm1
+    pavgw -16(%rbp), %xmm1
     
     
     ret

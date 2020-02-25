@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    bextrq %rdx, -4(%rbp), %rbx
+    bextrq %rdx, -16(%rbp), %rbx
     
     
     ret

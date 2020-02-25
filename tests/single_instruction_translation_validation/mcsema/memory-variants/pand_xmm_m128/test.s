@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pand -4(%rbp), %xmm1
+    pand -16(%rbp), %xmm1
     
     
     ret

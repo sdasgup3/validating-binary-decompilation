@@ -1,3 +1,3 @@
 .target:
-  setna -4(%rbp)
+  setna -16(%rbp)
   retq

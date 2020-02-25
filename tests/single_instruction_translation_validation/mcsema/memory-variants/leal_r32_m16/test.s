@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    leal -4(%rbp), %ebx
+    leal -16(%rbp), %ebx
     
     
     ret

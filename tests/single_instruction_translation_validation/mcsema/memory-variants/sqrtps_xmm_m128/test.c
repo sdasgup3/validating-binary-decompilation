@@ -1,3 +1,3 @@
 void main() {
-  __asm__("sqrtps -4(%rbp), %xmm1");
+  __asm__("sqrtps -16(%rbp), %xmm1");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpermpd $0xa, -4(%rbp), %ymm1
+  vpermpd $0xa, -16(%rbp), %ymm1
   retq

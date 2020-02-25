@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    punpckhqdq -4(%rbp), %xmm1
+    punpckhqdq -16(%rbp), %xmm1
     
     
     ret

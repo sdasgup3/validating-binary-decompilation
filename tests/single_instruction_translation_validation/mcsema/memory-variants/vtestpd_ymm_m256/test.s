@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vtestpd -4(%rbp), %ymm1
+    vtestpd -16(%rbp), %ymm1
     
     
     ret

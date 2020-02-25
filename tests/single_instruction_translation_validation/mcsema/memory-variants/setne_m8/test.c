@@ -1,3 +1,3 @@
 void main() {
-  __asm__("setne -4(%rbp)");
+  __asm__("setne -16(%rbp)");
 }

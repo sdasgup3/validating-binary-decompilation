@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cvtpi2ps -4(%rbp), %xmm1
+    cvtpi2ps -16(%rbp), %xmm1
     
     
     ret

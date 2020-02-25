@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpaddb -4(%rbp), %ymm2, %ymm1
+    vpaddb -16(%rbp), %ymm2, %ymm1
     
     
     ret

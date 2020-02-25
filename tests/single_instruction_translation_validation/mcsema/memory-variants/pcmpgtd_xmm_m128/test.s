@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pcmpgtd -4(%rbp), %xmm1
+    pcmpgtd -16(%rbp), %xmm1
     
     
     ret

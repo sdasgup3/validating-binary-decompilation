@@ -1,3 +1,3 @@
 .target:
-  adcb -4(%rbp), %ah
+  adcb -16(%rbp), %ah
   retq

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    negq -4(%rbp)
+    negq -16(%rbp)
     
     
     ret

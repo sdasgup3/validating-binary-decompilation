@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    movswl -4(%rbp), %ebx
+    movswl -16(%rbp), %ebx
     
     
     ret

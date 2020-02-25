@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    shrdw $0xa, %cx, -4(%rbp)
+    shrdw $0xa, %cx, -16(%rbp)
     
     
     ret

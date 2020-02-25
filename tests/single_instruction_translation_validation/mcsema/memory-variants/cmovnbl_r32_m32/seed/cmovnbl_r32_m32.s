@@ -1,3 +1,3 @@
 .target:
-  cmovnbl -4(%rbp), %ebx
+  cmovnbl -16(%rbp), %ebx
   retq

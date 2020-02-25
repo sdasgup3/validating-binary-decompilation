@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    divl -4(%rbp)
+    divl -16(%rbp)
     
     
     ret
