@@ -162,7 +162,7 @@ cd /home/ubuntu/Github/X86-64-semantics/semantics; ../scripts/kompile.pl --backe
 cat docs/genz3PassI.log | parallel -j15 "cd {}; make xprove; cd -"
 ```
 
-## Generate spec output file for LLVM
+## Generate spec output file for LLVM (Register)
 ```
 cat docs/supported_decompilation_register.txt | parallel -j15 "echo; echo  {}; echo ====;  cd register-variants/{}; make kli; cd -"
 cat docs/supported_decompilation_register_samereg.txt | parallel -j50 "echo; echo  {}; echo ====;  cd register-variants-samereg/{}; make kli; cd -" |& tee docs/kliRunSamereg.log
@@ -180,7 +180,15 @@ cat docs/kliPassSameR.log | parallel -j10 "cd register-variants-samereg/{}; make
 
 ```
 
-## Generate and Compare the z3 output
+## Generate spec output file for LLVM (Immediate)
+```
+cat docs/genz3PassI.log  | parallel -j15 "echo; echo  {}; echo ====;  cd {}; make declutter; cd -" |& tee ~/Junk/log
+cat docs/genz3PassI.log  | parallel -j15 "echo; echo  {}; echo ====;  cd {}; make kli; cd -" |& tee ~/Junk/log
+cat docs/genz3PassI.log  | parallel -j15 "echo; echo  {}; echo ====;  cd {}; make genlspec; cd -" |& tee ~/Junk/log
+cat docs/genz3PassI.log | parallel -j15 "echo; echo  {}; echo ====;  cd {}; make lprove; cd -" |& tee ~/Junk/log
+```
+
+## Generate and Compare the z3 output (Register)
 ```
 cat docs/genz3PassR.log | parallel  "cd register-variants/{}; make genz3; cd -"
 // genz3 pass/fails are stored at genz3(Pass/Fail).log 
@@ -199,6 +207,11 @@ cat docs/genz3PassSameR.log | parallel  "echo; echo; cd {}; make provez3; cd -" 
 //provez3(Pass/Fail/Unk) are stored at docs/provez3(Pass/Fail/Unk)SameR.log
 ```
 
+## Generate and Compare the z3 output (Immediate) 
+```
+cat docs/genz3PassI.log | parallel  "cd {}; make genz3; cd -" |& tee ~/Junk/log
+cat docs/genz3PassI.log | parallel  "echo; echo; cd {}; make provez3; cd -" |& tee ~/Junk/log
+```
 
 
 ## Deprecated
