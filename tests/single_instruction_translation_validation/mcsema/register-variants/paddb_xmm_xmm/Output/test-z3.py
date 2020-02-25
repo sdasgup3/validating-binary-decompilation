@@ -241,20 +241,20 @@ solve("RDX", lvar, xvar, s)
 
 s.pop()
 
-## =******= SF =******=
-s.push()
+### =******= SF =******=       <-------- REMOVE: START
+#s.push()
+#
+#lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF)))
+#
+#xvar = (V_F == VX_SF)
+#
+#s.add(lvar != xvar)
+#
+#solve("SF", lvar, xvar, s)
+#
+#s.pop()                     # <--------- REMOVE: END
 
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF)))
-
-xvar = (V_F == VX_SF)
-
-s.add(lvar != xvar)
-
-solve("SF", lvar, xvar, s)
-
-s.pop()
-
-## =******= YMM1 =******=
+## =******= YMM1 =******= 
 s.push()
 
 lvar = (V_Y == z3.Concat(z3.Extract(63, 56, VL_YMM1_3), z3.Extract(55, 48, VL_YMM1_3), z3.Extract(47, 40, VL_YMM1_3), z3.Extract(39, 32, VL_YMM1_3), z3.Extract(31, 24, VL_YMM1_3), z3.Extract(23, 16, VL_YMM1_3), z3.Extract(15, 8, VL_YMM1_3), z3.Extract(7, 0, VL_YMM1_3), z3.Extract(63, 56, VL_YMM1_2), z3.Extract(55, 48, VL_YMM1_2), z3.Extract(47, 40, VL_YMM1_2), z3.Extract(39, 32, VL_YMM1_2), z3.Extract(31, 24, VL_YMM1_2), z3.Extract(23, 16, VL_YMM1_2), z3.Extract(15, 8, VL_YMM1_2), z3.Extract(7, 0, VL_YMM1_2), z3.Extract(7, 0, ((((z3.LShR(VL_YMM2_1, z3.BitVecVal(56, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + (z3.LShR(VL_YMM1_1, z3.BitVecVal(56, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(71776119061217280, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(48, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(280375465082880, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(40, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(1095216660480, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(4278190080, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(24, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(16711680, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(16, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_1 & z3.BitVecVal(65280, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(8, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, (((VL_YMM2_1 + VL_YMM1_1) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((((z3.LShR(VL_YMM2_0, z3.BitVecVal(56, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + (z3.LShR(VL_YMM1_0, z3.BitVecVal(56, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64))) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(71776119061217280, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(48, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(280375465082880, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(40, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(1095216660480, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(32, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(4278190080, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(24, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(16711680, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(16, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, ((z3.LShR(((((VL_YMM2_0 & z3.BitVecVal(65280, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)), z3.BitVecVal(8, 64)) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64))), z3.Extract(7, 0, (((VL_YMM2_0 + VL_YMM1_0) & z3.BitVecVal(18446744073709551616 - 1, 64)) & z3.BitVecVal(256 - 1, 64)))))

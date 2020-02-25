@@ -1,0 +1,4 @@
+register-variants/psubb_xmm_xmm
+register-variants/paddb_xmm_xmm
+register-variants-samereg/psubb_xmm_xmm
+register-variants-samereg/paddb_xmm_xmm

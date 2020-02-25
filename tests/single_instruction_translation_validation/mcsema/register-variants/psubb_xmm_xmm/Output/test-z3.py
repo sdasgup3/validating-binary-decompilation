@@ -241,18 +241,18 @@ solve("RDX", lvar, xvar, s)
 
 s.pop()
 
-## =******= SF =******=
-s.push()
-
-lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF)))
-
-xvar = (V_F == VX_SF)
-
-s.add(lvar != xvar)
-
-solve("SF", lvar, xvar, s)
-
-s.pop()
+### =******= SF =******=    <-------- REMOVE: START
+#s.push()
+#
+#lvar = (V_F == z3.Extract(0, 0, z3.Extract(7, 0, VL_SF)))
+#
+#xvar = (V_F == VX_SF)
+#
+#s.add(lvar != xvar)
+#
+#solve("SF", lvar, xvar, s)
+#
+#s.pop()                  # <--------- REMOVE: END
 
 ## =******= YMM1 =******=
 s.push()

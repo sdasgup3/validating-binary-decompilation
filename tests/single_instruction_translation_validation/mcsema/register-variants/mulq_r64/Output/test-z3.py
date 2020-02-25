@@ -13,7 +13,7 @@ if(len(sys.argv) > 1):
 def solve(msg, lvar, xvar, s):
   global status
 
-  s.set("timeout", 60000)
+  s.set("timeout", 86400000)
   res = s.check()
 
   if(z3.unknown == res):
