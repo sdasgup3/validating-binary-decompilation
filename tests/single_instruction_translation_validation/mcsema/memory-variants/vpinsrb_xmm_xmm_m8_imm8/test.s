@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpinsrb $0xa, -4(%rbp), %xmm2, %xmm1
+    vpinsrb $0xa, -16(%rbp), %xmm2, %xmm1
     
     
     ret

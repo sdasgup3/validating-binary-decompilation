@@ -1,3 +1,3 @@
 .target:
-  setnc -4(%rbp)
+  setnc -16(%rbp)
   retq

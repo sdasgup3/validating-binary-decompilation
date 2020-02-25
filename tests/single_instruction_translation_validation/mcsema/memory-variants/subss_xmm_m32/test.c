@@ -1,3 +1,3 @@
 void main() {
-  __asm__("subss -4(%rbp), %xmm1");
+  __asm__("subss -16(%rbp), %xmm1");
 }

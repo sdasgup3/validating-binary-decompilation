@@ -1,3 +1,3 @@
 void main() {
-  __asm__("decq -4(%rbp)");
+  __asm__("decq -16(%rbp)");
 }

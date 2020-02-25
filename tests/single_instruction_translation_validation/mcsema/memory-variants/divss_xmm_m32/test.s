@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    divss -4(%rbp), %xmm1
+    divss -16(%rbp), %xmm1
     
     
     ret

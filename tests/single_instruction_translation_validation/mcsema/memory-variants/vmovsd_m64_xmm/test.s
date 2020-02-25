@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vmovsd %xmm1, -4(%rbp)
+    vmovsd %xmm1, -16(%rbp)
     
     
     ret

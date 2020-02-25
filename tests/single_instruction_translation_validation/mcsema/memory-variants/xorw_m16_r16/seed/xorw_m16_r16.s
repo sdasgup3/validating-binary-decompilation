@@ -1,3 +1,3 @@
 .target:
-  xorw %cx, -4(%rbp)
+  xorw %cx, -16(%rbp)
   retq

@@ -1,3 +1,3 @@
 .target:
-  orb -4(%rbp), %bl
+  orb -16(%rbp), %bl
   retq

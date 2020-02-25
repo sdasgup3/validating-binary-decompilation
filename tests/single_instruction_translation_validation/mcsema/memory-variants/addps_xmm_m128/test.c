@@ -1,3 +1,3 @@
 void main() {
-  __asm__("addps -4(%rbp), %xmm1");
+  __asm__("addps -16(%rbp), %xmm1");
 }

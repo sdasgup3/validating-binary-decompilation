@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpblendvb %ymm3, -4(%rbp), %ymm2, %ymm1
+    vpblendvb %ymm3, -16(%rbp), %ymm2, %ymm1
     
     
     ret

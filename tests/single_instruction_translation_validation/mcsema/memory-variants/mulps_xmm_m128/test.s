@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    mulps -4(%rbp), %xmm1
+    mulps -16(%rbp), %xmm1
     
     
     ret

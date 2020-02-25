@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpbroadcastw -4(%rbp), %ymm1
+    vpbroadcastw -16(%rbp), %ymm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  shrl %cl, -4(%rbp)
+  shrl %cl, -16(%rbp)
   retq

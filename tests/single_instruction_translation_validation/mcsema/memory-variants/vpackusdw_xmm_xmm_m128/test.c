@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpackusdw -4(%rbp), %xmm2, %xmm1");
+  __asm__("vpackusdw -16(%rbp), %xmm2, %xmm1");
 }

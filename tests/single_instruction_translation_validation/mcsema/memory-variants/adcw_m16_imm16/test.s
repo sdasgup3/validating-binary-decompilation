@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    adcw $0xa, -4(%rbp)
+    adcw $0xa, -16(%rbp)
     
     
     ret

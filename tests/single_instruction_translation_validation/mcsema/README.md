@@ -84,6 +84,7 @@ ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl 
 ls register-variants-samereg/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants-samereg/{}/seed/{}.sameregs --opc {}
 
 ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s --opc {}
+find . -name "*.s" | grep seed | parallel "sed -i -e 's/-4/-16/g' {}"
 ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s --opc {}
 ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s --opc {}
 ```
@@ -161,6 +162,15 @@ cat docs/genz3PassI.log | parallel -j15 "cd {}; make collect; cd -"
 cd /home/ubuntu/Github/X86-64-semantics/semantics; ../scripts/kompile.pl --backend java
 cat docs/genz3PassI.log | parallel -j15 "cd {}; make xprove; cd -"
 ```
+
+## Generate spec output file for x86 (Memory)
+```
+cat docs/genz3PassM.log | parallel -j15 "cd {}; make genxspec; cd -"
+cat docs/genz3PassM.log | parallel -j15 "cd {}; make collect; cd -"
+cd /home/ubuntu/Github/X86-64-semantics/semantics; ../scripts/kompile.pl --backend java
+cat docs/genz3PassM.log | parallel -j15 "cd {}; make xprove; cd -"
+```
+
 
 ## Generate spec output file for LLVM (Register)
 ```

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpunpckhdq -4(%rbp), %xmm2, %xmm1");
+  __asm__("vpunpckhdq -16(%rbp), %xmm2, %xmm1");
 }

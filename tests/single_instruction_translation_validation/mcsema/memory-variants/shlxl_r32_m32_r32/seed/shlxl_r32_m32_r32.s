@@ -1,3 +1,3 @@
 .target:
-  shlxl %edx, -4(%rbp), %ebx
+  shlxl %edx, -16(%rbp), %ebx
   retq

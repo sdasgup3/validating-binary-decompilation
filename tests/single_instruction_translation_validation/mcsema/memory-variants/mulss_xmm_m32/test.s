@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    mulss -4(%rbp), %xmm1
+    mulss -16(%rbp), %xmm1
     
     
     ret

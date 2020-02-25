@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    sbbq $0xa, -4(%rbp)
+    sbbq $0xa, -16(%rbp)
     
     
     ret

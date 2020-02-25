@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    adcb %ah, -4(%rbp)
+    adcb %ah, -16(%rbp)
     
     
     ret

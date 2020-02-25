@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpshuflw $0xa, -4(%rbp), %ymm1");
+  __asm__("vpshuflw $0xa, -16(%rbp), %ymm1");
 }

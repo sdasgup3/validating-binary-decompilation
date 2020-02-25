@@ -1,3 +1,3 @@
 .target:
-  sarb %cl, -4(%rbp)
+  sarb %cl, -16(%rbp)
   retq

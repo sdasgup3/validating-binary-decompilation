@@ -1,3 +1,3 @@
 .target:
-  addl $0xa, -4(%rbp)
+  addl $0xa, -16(%rbp)
   retq

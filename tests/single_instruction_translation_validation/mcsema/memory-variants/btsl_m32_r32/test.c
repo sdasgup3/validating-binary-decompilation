@@ -1,3 +1,3 @@
 void main() {
-  __asm__("btsl %ecx, -4(%rbp)");
+  __asm__("btsl %ecx, -16(%rbp)");
 }

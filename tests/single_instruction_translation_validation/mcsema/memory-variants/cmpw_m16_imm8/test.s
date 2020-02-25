@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmpw $0xa, -4(%rbp)
+    cmpw $0xa, -16(%rbp)
     
     
     ret

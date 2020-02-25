@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpandn -4(%rbp), %xmm2, %xmm1");
+  __asm__("vpandn -16(%rbp), %xmm2, %xmm1");
 }

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    sarq %cl, -4(%rbp)
+    sarq %cl, -16(%rbp)
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    movntdq %xmm1, -4(%rbp)
+    movntdq %xmm1, -16(%rbp)
     
     
     ret

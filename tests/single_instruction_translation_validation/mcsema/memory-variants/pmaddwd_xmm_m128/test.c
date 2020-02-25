@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pmaddwd -4(%rbp), %xmm1");
+  __asm__("pmaddwd -16(%rbp), %xmm1");
 }

@@ -1,3 +1,3 @@
 .target:
-  vblendvps %ymm3, -4(%rbp), %ymm2, %ymm1
+  vblendvps %ymm3, -16(%rbp), %ymm2, %ymm1
   retq

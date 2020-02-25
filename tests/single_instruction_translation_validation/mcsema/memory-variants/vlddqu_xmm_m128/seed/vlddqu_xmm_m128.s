@@ -1,3 +1,3 @@
 .target:
-  vlddqu -4(%rbp), %xmm1
+  vlddqu -16(%rbp), %xmm1
   retq

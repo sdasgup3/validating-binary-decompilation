@@ -1,3 +1,3 @@
 void main() {
-  __asm__("paddusb -4(%rbp), %xmm1");
+  __asm__("paddusb -16(%rbp), %xmm1");
 }

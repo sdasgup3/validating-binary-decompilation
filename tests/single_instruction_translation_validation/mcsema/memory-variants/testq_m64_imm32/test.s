@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    testq $0xa, -4(%rbp)
+    testq $0xa, -16(%rbp)
     
     
     ret

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cvtpi2pd -4(%rbp), %xmm1");
+  __asm__("cvtpi2pd -16(%rbp), %xmm1");
 }

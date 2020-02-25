@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vbroadcastsd -4(%rbp), %ymm1");
+  __asm__("vbroadcastsd -16(%rbp), %ymm1");
 }

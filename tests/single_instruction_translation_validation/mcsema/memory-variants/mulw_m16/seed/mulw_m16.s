@@ -1,3 +1,3 @@
 .target:
-  mulw -4(%rbp)
+  mulw -16(%rbp)
   retq

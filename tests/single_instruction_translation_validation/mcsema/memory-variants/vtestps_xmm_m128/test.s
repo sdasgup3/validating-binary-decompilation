@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vtestps -4(%rbp), %xmm1
+    vtestps -16(%rbp), %xmm1
     
     
     ret

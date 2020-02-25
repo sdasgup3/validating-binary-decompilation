@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpmaxud -4(%rbp), %xmm2, %xmm1
+    vpmaxud -16(%rbp), %xmm2, %xmm1
     
     
     ret

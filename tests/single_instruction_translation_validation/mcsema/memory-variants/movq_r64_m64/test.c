@@ -1,3 +1,3 @@
 void main() {
-  __asm__("movq -4(%rbp), %rbx");
+  __asm__("movq -16(%rbp), %rbx");
 }

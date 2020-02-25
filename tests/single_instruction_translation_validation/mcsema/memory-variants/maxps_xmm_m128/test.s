@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    maxps -4(%rbp), %xmm1
+    maxps -16(%rbp), %xmm1
     
     
     ret

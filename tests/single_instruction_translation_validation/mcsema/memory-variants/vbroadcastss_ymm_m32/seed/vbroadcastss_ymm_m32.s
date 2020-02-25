@@ -1,3 +1,3 @@
 .target:
-  vbroadcastss -4(%rbp), %ymm1
+  vbroadcastss -16(%rbp), %ymm1
   retq

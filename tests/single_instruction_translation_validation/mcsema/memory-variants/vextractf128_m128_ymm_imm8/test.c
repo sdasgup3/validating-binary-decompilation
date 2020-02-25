@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vextractf128 $0xa, %ymm1, -4(%rbp)");
+  __asm__("vextractf128 $0xa, %ymm1, -16(%rbp)");
 }

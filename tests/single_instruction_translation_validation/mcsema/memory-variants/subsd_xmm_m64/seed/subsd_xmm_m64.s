@@ -1,3 +1,3 @@
 .target:
-  subsd -4(%rbp), %xmm1
+  subsd -16(%rbp), %xmm1
   retq

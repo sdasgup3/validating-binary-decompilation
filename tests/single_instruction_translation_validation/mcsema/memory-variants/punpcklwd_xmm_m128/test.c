@@ -1,3 +1,3 @@
 void main() {
-  __asm__("punpcklwd -4(%rbp), %xmm1");
+  __asm__("punpcklwd -16(%rbp), %xmm1");
 }

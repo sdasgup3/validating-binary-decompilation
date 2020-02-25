@@ -1,3 +1,3 @@
 .target:
-  pmulld -4(%rbp), %xmm1
+  pmulld -16(%rbp), %xmm1
   retq

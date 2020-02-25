@@ -1,3 +1,3 @@
 .target:
-  vmulsd -4(%rbp), %xmm2, %xmm1
+  vmulsd -16(%rbp), %xmm2, %xmm1
   retq

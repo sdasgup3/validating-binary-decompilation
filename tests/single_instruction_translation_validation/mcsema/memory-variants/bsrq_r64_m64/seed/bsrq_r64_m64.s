@@ -1,3 +1,3 @@
 .target:
-  bsrq -4(%rbp), %rbx
+  bsrq -16(%rbp), %rbx
   retq

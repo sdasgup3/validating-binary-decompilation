@@ -1,3 +1,3 @@
 void main() {
-  __asm__("psrld -4(%rbp), %xmm1");
+  __asm__("psrld -16(%rbp), %xmm1");
 }

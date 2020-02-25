@@ -1,3 +1,3 @@
 void main() {
-  __asm__("phsubsw -4(%rbp), %xmm1");
+  __asm__("phsubsw -16(%rbp), %xmm1");
 }

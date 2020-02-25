@@ -1,3 +1,3 @@
 void main() {
-  __asm__("blendvpd %xmm0, -4(%rbp), %xmm1");
+  __asm__("blendvpd %xmm0, -16(%rbp), %xmm1");
 }

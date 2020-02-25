@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cvtsi2ssl -4(%rbp), %xmm1");
+  __asm__("cvtsi2ssl -16(%rbp), %xmm1");
 }

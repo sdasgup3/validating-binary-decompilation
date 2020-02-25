@@ -1,3 +1,3 @@
 .target:
-  vmovddup -4(%rbp), %xmm1
+  vmovddup -16(%rbp), %xmm1
   retq

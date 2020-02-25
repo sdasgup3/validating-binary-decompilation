@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpacksswb -4(%rbp), %xmm2, %xmm1
+    vpacksswb -16(%rbp), %xmm2, %xmm1
     
     
     ret

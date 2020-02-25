@@ -1,3 +1,3 @@
 .target:
-  vpermilpd -4(%rbp), %ymm2, %ymm1
+  vpermilpd -16(%rbp), %ymm2, %ymm1
   retq

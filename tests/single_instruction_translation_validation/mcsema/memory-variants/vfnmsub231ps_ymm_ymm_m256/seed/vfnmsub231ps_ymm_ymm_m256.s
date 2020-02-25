@@ -1,3 +1,3 @@
 .target:
-  vfnmsub231ps -4(%rbp), %ymm2, %ymm1
+  vfnmsub231ps -16(%rbp), %ymm2, %ymm1
   retq

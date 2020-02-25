@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmovzl -4(%rbp), %ebx
+    cmovzl -16(%rbp), %ebx
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  vpaddd -4(%rbp), %xmm2, %xmm1
+  vpaddd -16(%rbp), %xmm2, %xmm1
   retq

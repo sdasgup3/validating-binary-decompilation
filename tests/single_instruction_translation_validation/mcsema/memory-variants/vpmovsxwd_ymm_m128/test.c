@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpmovsxwd -4(%rbp), %ymm1");
+  __asm__("vpmovsxwd -16(%rbp), %ymm1");
 }

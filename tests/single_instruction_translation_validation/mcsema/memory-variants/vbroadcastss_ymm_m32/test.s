@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vbroadcastss -4(%rbp), %ymm1
+    vbroadcastss -16(%rbp), %ymm1
     
     
     ret

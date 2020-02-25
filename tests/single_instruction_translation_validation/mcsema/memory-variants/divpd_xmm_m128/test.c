@@ -1,3 +1,3 @@
 void main() {
-  __asm__("divpd -4(%rbp), %xmm1");
+  __asm__("divpd -16(%rbp), %xmm1");
 }

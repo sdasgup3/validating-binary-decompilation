@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    imull -4(%rbp), %ebx
+    imull -16(%rbp), %ebx
     
     
     ret

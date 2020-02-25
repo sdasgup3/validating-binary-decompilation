@@ -1,3 +1,3 @@
 .target:
-  rcll %cl, -4(%rbp)
+  rcll %cl, -16(%rbp)
   retq

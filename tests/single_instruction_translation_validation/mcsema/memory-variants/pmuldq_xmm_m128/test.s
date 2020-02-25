@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pmuldq -4(%rbp), %xmm1
+    pmuldq -16(%rbp), %xmm1
     
     
     ret

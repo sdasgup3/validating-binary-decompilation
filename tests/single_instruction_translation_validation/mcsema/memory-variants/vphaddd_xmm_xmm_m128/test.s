@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vphaddd -4(%rbp), %xmm2, %xmm1
+    vphaddd -16(%rbp), %xmm2, %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  andnps -4(%rbp), %xmm1
+  andnps -16(%rbp), %xmm1
   retq

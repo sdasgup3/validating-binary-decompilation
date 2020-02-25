@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpsignw -4(%rbp), %xmm2, %xmm1
+    vpsignw -16(%rbp), %xmm2, %xmm1
     
     
     ret

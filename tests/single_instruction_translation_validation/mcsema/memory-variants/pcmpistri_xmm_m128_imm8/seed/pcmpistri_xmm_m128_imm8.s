@@ -1,3 +1,3 @@
 .target:
-  pcmpistri $0xa, -4(%rbp), %xmm1
+  pcmpistri $0xa, -16(%rbp), %xmm1
   retq

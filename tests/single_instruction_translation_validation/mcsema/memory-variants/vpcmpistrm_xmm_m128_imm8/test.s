@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vpcmpistrm $0xa, -4(%rbp), %xmm1
+    vpcmpistrm $0xa, -16(%rbp), %xmm1
     
     
     ret

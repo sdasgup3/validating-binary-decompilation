@@ -1,3 +1,3 @@
 .target:
-  vpminud -4(%rbp), %xmm2, %xmm1
+  vpminud -16(%rbp), %xmm2, %xmm1
   retq

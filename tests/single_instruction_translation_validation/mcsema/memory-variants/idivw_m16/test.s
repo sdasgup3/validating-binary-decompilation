@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    idivw -4(%rbp)
+    idivw -16(%rbp)
     
     
     ret

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("movhps -4(%rbp), %xmm1");
+  __asm__("movhps -16(%rbp), %xmm1");
 }

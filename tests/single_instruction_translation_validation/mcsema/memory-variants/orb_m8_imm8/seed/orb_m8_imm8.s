@@ -1,3 +1,3 @@
 .target:
-  orb $0xa, -4(%rbp)
+  orb $0xa, -16(%rbp)
   retq

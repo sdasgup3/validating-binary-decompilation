@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    vfmsubadd213pd -4(%rbp), %xmm2, %xmm1
+    vfmsubadd213pd -16(%rbp), %xmm2, %xmm1
     
     
     ret

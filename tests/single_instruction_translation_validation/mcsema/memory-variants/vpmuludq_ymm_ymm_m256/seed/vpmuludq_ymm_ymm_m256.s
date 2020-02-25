@@ -1,3 +1,3 @@
 .target:
-  vpmuludq -4(%rbp), %ymm2, %ymm1
+  vpmuludq -16(%rbp), %ymm2, %ymm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  vextractps $0xa, %xmm1, -4(%rbp)
+  vextractps $0xa, %xmm1, -16(%rbp)
   retq

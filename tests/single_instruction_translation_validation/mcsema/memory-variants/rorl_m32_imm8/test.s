@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    rorl $0xa, -4(%rbp)
+    rorl $0xa, -16(%rbp)
     
     
     ret

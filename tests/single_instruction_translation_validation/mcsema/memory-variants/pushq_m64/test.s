@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pushq -4(%rbp)
+    pushq -16(%rbp)
     
     
     ret

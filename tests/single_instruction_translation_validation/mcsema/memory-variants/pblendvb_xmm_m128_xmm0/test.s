@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    pblendvb %xmm0, -4(%rbp), %xmm1
+    pblendvb %xmm0, -16(%rbp), %xmm1
     
     
     ret

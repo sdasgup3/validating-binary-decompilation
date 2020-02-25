@@ -1,3 +1,3 @@
 .target:
-  cmoveq -4(%rbp), %rbx
+  cmoveq -16(%rbp), %rbx
   retq

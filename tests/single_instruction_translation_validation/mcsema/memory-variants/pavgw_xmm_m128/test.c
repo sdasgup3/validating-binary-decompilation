@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pavgw -4(%rbp), %xmm1");
+  __asm__("pavgw -16(%rbp), %xmm1");
 }

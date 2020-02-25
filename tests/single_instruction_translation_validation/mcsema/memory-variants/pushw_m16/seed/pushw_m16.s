@@ -1,3 +1,3 @@
 .target:
-  pushw -4(%rbp)
+  pushw -16(%rbp)
   retq

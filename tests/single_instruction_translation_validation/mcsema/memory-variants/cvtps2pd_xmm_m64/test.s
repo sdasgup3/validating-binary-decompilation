@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cvtps2pd -4(%rbp), %xmm1
+    cvtps2pd -16(%rbp), %xmm1
     
     
     ret

@@ -1,3 +1,3 @@
 .target:
-  decl -4(%rbp)
+  decl -16(%rbp)
   retq

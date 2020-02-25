@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    leaw -4(%rbp), %bx
+    leaw -16(%rbp), %bx
     
     
     ret

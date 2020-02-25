@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpmulld -4(%rbp), %ymm2, %ymm1");
+  __asm__("vpmulld -16(%rbp), %ymm2, %ymm1");
 }

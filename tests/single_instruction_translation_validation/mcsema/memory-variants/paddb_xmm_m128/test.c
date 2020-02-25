@@ -1,3 +1,3 @@
 void main() {
-  __asm__("paddb -4(%rbp), %xmm1");
+  __asm__("paddb -16(%rbp), %xmm1");
 }

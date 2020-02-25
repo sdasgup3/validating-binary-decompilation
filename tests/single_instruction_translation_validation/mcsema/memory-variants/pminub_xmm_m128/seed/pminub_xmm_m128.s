@@ -1,3 +1,3 @@
 .target:
-  pminub -4(%rbp), %xmm1
+  pminub -16(%rbp), %xmm1
   retq

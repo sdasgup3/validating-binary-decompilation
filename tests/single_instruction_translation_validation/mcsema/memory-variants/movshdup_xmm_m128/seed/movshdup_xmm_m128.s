@@ -1,3 +1,3 @@
 .target:
-  movshdup -4(%rbp), %xmm1
+  movshdup -16(%rbp), %xmm1
   retq

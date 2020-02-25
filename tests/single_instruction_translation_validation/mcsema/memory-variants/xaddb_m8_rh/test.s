@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    xaddb %ah, -4(%rbp)
+    xaddb %ah, -16(%rbp)
     
     
     ret

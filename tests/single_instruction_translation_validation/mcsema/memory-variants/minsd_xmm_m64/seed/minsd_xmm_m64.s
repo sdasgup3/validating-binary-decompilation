@@ -1,3 +1,3 @@
 .target:
-  minsd -4(%rbp), %xmm1
+  minsd -16(%rbp), %xmm1
   retq

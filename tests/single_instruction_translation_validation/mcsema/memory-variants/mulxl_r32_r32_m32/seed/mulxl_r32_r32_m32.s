@@ -1,3 +1,3 @@
 .target:
-  mulxl -4(%rbp), %ecx, %ebx
+  mulxl -16(%rbp), %ecx, %ebx
   retq
