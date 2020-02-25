@@ -1,7 +1,4 @@
-register-variants-samereg/andnps_xmm_xmm
-register-variants-samereg/pandn_xmm_xmm
 register-variants-samereg/cmpxchgb_r8_rh
-register-variants-samereg/pmuludq_xmm_xmm
 register-variants-samereg/cmpxchgl_r32_r32
 register-variants-samereg/xaddq_r64_r64
 register-variants-samereg/xaddb_r8_r8
