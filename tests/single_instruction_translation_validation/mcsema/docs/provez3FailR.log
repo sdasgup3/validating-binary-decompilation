@@ -1,4 +1,4 @@
-cmpxchgl_r32_r32
-andnps_xmm_xmm
-pandn_xmm_xmm
-pmuludq_xmm_xmm
+register-variants/cmpxchgl_r32_r32
+register-variants/andnps_xmm_xmm
+register-variants/pandn_xmm_xmm
+register-variants/pmuludq_xmm_xmm
