@@ -120,6 +120,7 @@ public:
     PTR,
     SYMLOC,
     BYTE,
+    X86BYTE,
     TOKEN,
     INT_FROM_BYTES_AUX,
     INT_FROM_BYTES,
@@ -1112,6 +1113,26 @@ inline ostream &operator<<(ostream &os, const ByteExpr &op) {
 }
 
 inline string operator>>(string &os, ByteExpr &op) { return op.read_spec(os); }
+
+/************** X86ByteExpr ******************/
+class X86ByteExpr : public SummaryExprAbstract {
+public:
+  int byteIndex;
+  SummaryExpr expr;
+
+  X86ByteExpr() {}
+  SummaryExpr::Type type() const { return SummaryExpr::Type::X86BYTE; }
+  string read_spec(string &is);
+  ostream &write_spec(ostream &os) const;
+};
+
+inline ostream &operator<<(ostream &os, const X86ByteExpr &op) {
+  return op.write_spec(os);
+}
+
+inline string operator>>(string &os, X86ByteExpr &op) {
+  return op.read_spec(os);
+}
 
 /************** SummaryExprCommonMemSyntax ******************/
 class SummaryExprCommonMemSyntax : public SummaryExprAbstract {

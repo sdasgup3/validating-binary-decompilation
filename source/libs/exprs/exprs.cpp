@@ -1963,6 +1963,54 @@ ostream &ByteExpr::write_spec(ostream &os) const {
   return os;
 }
 
+/************** X86ByteExpr ******************/
+string X86ByteExpr::read_spec(string &ss) {
+  auto result = extractNearestBracedExp(0, ss);
+  auto str = result.first;
+
+  SummaryExprToken tk1;
+
+  str = tk1.read_spec(str);
+  byteIndex = stoi(tk1.value_);
+
+  // Ignoring ','
+  str = str.substr(1);
+
+  str = expr.read_spec(str);
+
+  return ss.substr(result.second + 1);
+}
+
+ostream &X86ByteExpr::write_spec(ostream &os) const {
+  auto expr_width = expr.ptr->width_;
+  if (expr.ptr->type_ == SummaryExpr::Type::TOKEN &&
+      ((SummaryExprToken *)expr.ptr)->type_to_ignore == "Int") {
+    expr_width = 8;
+  }
+
+  if (expr_width == 0) {
+    Console::error(1) << "ByteExpr::write_spec: expr width zero!!" << expr
+                      << endl;
+    exit(1);
+  }
+
+  stringstream expr_ss;
+
+  // if (expr_width < numBytes * 8) {
+  //   expr_ss << "z3.Concat(";
+  //   expr_ss << "z3.BitVecVal(0, " << numBytes * 8 - expr_width << "), " <<
+  //   expr;
+  //   expr_ss << ")";
+  // } else {
+  expr_ss << expr;
+  // }
+
+  os << "z3.Extract(" << byteIndex * 8 + 7 << ", " << byteIndex * 8 << ", "
+     << expr_ss.str() << ")";
+
+  return os;
+}
+
 /************** SummaryExprIntFromBytesAux ******************/
 string SummaryExprIntFromBytesAux::read_spec(string &ss) {
   auto result = extractNearestBracedExp(0, ss);

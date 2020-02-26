@@ -22,6 +22,10 @@ using namespace std;
 using namespace cpputil;
 using namespace stoke;
 
+auto &Opcode = ValueArg<string>::create("opc")
+                   .usage("addq_r64_m64")
+                   .description("Att instruction opcode");
+
 auto &LSpec = ValueArg<string>::create("lspec")
                   .usage("<path/to/test-lspec.out")
                   .description("Path to llvm spec output file");
@@ -42,14 +46,15 @@ int main(int argc, char **argv) {
 
   if (LSpec.value().empty() || XSpec.value().empty() || Z3Out.value().empty()) {
     Console::msg() << "Provide --lspec test-lspec.out --xspec test-xspec.out "
-                      "--z3out test-z3.py\n";
+                      "--z3out test-z3.py --opc addq_r64_m64\n";
     return 1;
   }
 
   Console::msg() << "LLVM Spec file: " << LSpec.value() << "\n";
   Console::msg() << "X86 Spec file: " << XSpec.value() << "\n";
   Console::msg() << "Z3 Out file: " << Z3Out.value() << "\n";
+  Console::msg() << "Opcode: " << Opcode.value() << "\n";
 
-  SMTGenerator(LSpec.value(), XSpec.value(), Z3Out.value());
+  SMTGenerator(LSpec.value(), XSpec.value(), Z3Out.value(), Opcode.value());
   return 0;
 }

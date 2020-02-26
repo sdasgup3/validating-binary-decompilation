@@ -10,8 +10,16 @@ using namespace cpputil;
 // using namespace stoke;
 
 SMTGenerator::SMTGenerator(const string &lspec, const string &xspec,
-                           const string &z3out)
+                           const string &z3out, const string &opcode)
     : lspecfile(lspec), xspecfile(xspec), z3pyfile(z3out) {
+
+  if ((opcode.find("_m") != string::npos)) {
+    std::smatch m;
+    std::regex_search(opcode, m, std::regex(".*_m(\\d*).*"));
+    memSize = stoi(m[1]);
+  } else {
+    memSize = 0;
+  }
 
   auto lSpecSummaryAndSideConds = processLSpec();
   auto lSpecRegMap = uniquifyLSpec(lSpecSummaryAndSideConds);
@@ -22,18 +30,24 @@ SMTGenerator::SMTGenerator(const string &lspec, const string &xspec,
   dumpZ3(lSpecRegMap, xSpecRegMap);
 }
 
+static size_t x86MemBaseOffset = 1000;
 static vector<LSpecStateInfoType> info = {
     {4097, 1, "CF"},    {4099, 1, "PF"},    {4101, 1, "AF"},  {4103, 1, "ZF"},
     {4105, 1, "SF"},    {4107, 1, "DF"},    {4109, 1, "OF"},  {4360, 8, "RAX"},
     {4376, 8, "RBX"},   {4392, 8, "RCX"},   {4408, 8, "RDX"}, {4424, 8, "RSI"},
     {4440, 8, "RDI"},   {4456, 8, "RSP"},   {4472, 8, "RBP"}, {4616, 8, "RIP"},
-    {2112, 32, "YMM1"}, {2176, 32, "YMM2"},
+    {2112, 32, "YMM1"}, {2176, 32, "YMM2"}, {0, 0, "MEM"},
 };
 
-static LSpecStateInfoType getLSpecStateInfo(size_t offset) {
+LSpecStateInfoType SMTGenerator::getLSpecStateInfo(size_t offset) {
 
   for (auto i : info) {
-    if (offset >= i.offset && offset < i.offset + i.nBytes) {
+    size_t nBytes = i.nBytes;
+    if (i.regName == "MEM") {
+      nBytes = memSize / 8;
+    }
+
+    if (offset >= i.offset && offset < i.offset + nBytes) {
       return i;
     }
   }
@@ -58,7 +72,7 @@ static int getRegBitWidthByName(string regName) {
 /*
 ** Process LSpec
 */
-static map<string, string> processLSummary(const string &summary) {
+map<string, string> SMTGenerator::processLSummary(const string &summary) {
 
   Console::msg() << "\tStarting processLSummary..." << endl;
   string prunedSummary = summary;
@@ -108,7 +122,7 @@ static map<string, string> processLSummary(const string &summary) {
     // ignore ','
     str = str.substr(1);
 
-    if (L.locId == 4) {
+    if ((L.locId == 4) || (L.locId == 5)) {
       auto stateInfo = getLSpecStateInfo(L.offset);
       auto base_offset = stateInfo.offset;
 
@@ -282,7 +296,10 @@ map<string, string> SMTGenerator::uniquifyLSpec(
       auto regName = summary.first;
       auto regSummary = summary.second;
       auto width = getRegBitWidthByName(regName);
-      if (width == 8) {
+
+      if (regName == "MEM") {
+        retval[regName] = "(V_M" + to_string(memSize) + " == " + regSummary + ")";
+      } else if (width == 8) {
         // In LLVM semantics, the flags are represented as 8 bits, whereas in
         // X86 semantics it is a bit. Hence we will do the conversion here.
         regSummary = "z3.Extract(0, 0, " + regSummary + ")";
@@ -322,7 +339,9 @@ map<string, string> SMTGenerator::uniquifyLSpec(
         retval[regName] = "";
       }
 
-      if (width == 8) {
+      if (regName == "MEM") {
+        retval[regName] = "(V_M" + to_string(memSize) + " == " + regSummary + ")";
+      } else if (width == 8) {
         // In LLVM semantics, the flags are represented as 8 bits, whereas in
         // X86 semantics it is a bit. Hence we will do the conversion here.
         regSummary = "z3.Extract(0, 0, " + regSummary + ")";
@@ -355,13 +374,13 @@ map<string, string> SMTGenerator::uniquifyLSpec(
 /*
 ** Process XSpec
 */
-static map<string, string> processXSummary(const string &summary) {
+map<string, string> SMTGenerator::processXSummary(const string &summary) {
 
   Console::msg() << "\tStarting processXSummary..." << endl;
   map<string, string> retval;
   string prunedSummary = summary;
 
-  // Extract the regstate cell
+  /************* Extract the regstate cell **********/
   auto pos = prunedSummary.find("regstate", 0);
   if (pos == string::npos) {
     Console::error(1) << "Summary does not have regstate cell!";
@@ -406,6 +425,101 @@ static map<string, string> processXSummary(const string &summary) {
     pos = prunedSummary.find("_|->_", retvalPrunedSummary.second);
   }
 
+  /************* Extract the mem cell **********/
+  prunedSummary = summary;
+
+  // Extract the objects cell
+  pos = prunedSummary.find("objects", 0);
+  if (pos == string::npos) {
+    Console::error(1) << "Summary does not have a objects cell!";
+    exit(1);
+  }
+
+  retvalPrunedSummary = extractNearestBracedExp(pos, prunedSummary);
+  prunedSummary = retvalPrunedSummary.first;
+
+  // Extract the mem
+  pos = prunedSummary.find("mem", 0, 3);
+  if (pos == string::npos) {
+    Console::error(1) << "Summary does not have mem cell!";
+    exit(1);
+  }
+  retvalPrunedSummary = extractNearestBracedExp(pos, prunedSummary);
+  prunedSummary = retvalPrunedSummary.first;
+
+  // Extract the mem-map "_Map_" cell
+  pos = prunedSummary.find("_Map_", 0);
+  if (pos == string::npos) {
+    Console::error(1) << "Summary does not have reg map cell!";
+    exit(1);
+  }
+
+  retvalPrunedSummary = extractNearestBracedExp(pos, prunedSummary);
+  prunedSummary = retvalPrunedSummary.first;
+
+  // Extract pair (E1, E2) from the mapping "_|->(
+  //    symloc(
+  //      #token("1","Int"),
+  //      #token("128","Int"),
+  //      #token("1040","Int"),
+  //      #token("8","Int"),
+  //      #token("1000","Int")
+  //    ),byte(#token("0","Int"), E)
+  // )
+  pos = prunedSummary.find("_|->_", 0);
+  vector<string> x86StateComposer(32, "");
+
+  while (pos != string::npos) {
+
+    retvalPrunedSummary = extractNearestBracedExp(pos, prunedSummary);
+
+    SymLoc L;
+    auto str = L.read_spec(retvalPrunedSummary.first);
+    Console::msg() << "Reading the value for: " << L.offset << endl;
+
+    // ignore ','
+    str = str.substr(1);
+
+    if (L.locId == 1 && (L.offset >= x86MemBaseOffset &&
+                         L.offset < x86MemBaseOffset + memSize / 8)) {
+
+      X86ByteExpr byte;
+      str = byte.read_spec(str);
+      stringstream ss;
+      ss << byte;
+
+      x86StateComposer[L.offset - x86MemBaseOffset] = ss.str();
+    }
+
+    pos = prunedSummary.find("_|->_", retvalPrunedSummary.second);
+  }
+
+  // Composing the states
+  stringstream ss;
+
+  if (x86StateComposer[1] != "") {
+    ss << "z3.Concat(";
+  }
+
+  for (int i = x86StateComposer.size() - 1; i >= 0; i--) {
+    if (x86StateComposer[i] == "")
+      continue;
+
+    ss << x86StateComposer[i];
+
+    if (i != 0) {
+      ss << ", ";
+    }
+  }
+
+  if (x86StateComposer[1] != "") {
+    ss << ")";
+  }
+
+  if (!ss.str().empty()) {
+    retval["MEM"] = ss.str();
+  }
+
   Console::msg() << "\tDone processXSummary." << endl;
   return retval;
 }
@@ -437,12 +551,9 @@ SMTGenerator::uniquifyXSpec(map<string, string> &xSpecSummary) {
 
     auto width = getRegBitWidthByName(regName);
 
-    // // In case regSummary is "UnDef", generate appropriate BitvecVal
-    // if(regSummary == "UnDef") {
-    //   regSummary =
-    // }
-
-    if (width == 8) {
+    if (regName == "MEM") {
+      retval[regName] = "(V_M" + to_string(memSize) + " == " + regSummary + ")";
+    } else if (width == 8) {
       // wisth 8 bits corresponds to flags which are 1 bit on x86 semantics
       retval[regName] = "(V_F == " + regSummary + ")";
     } else if (width == 64) {
@@ -510,6 +621,15 @@ void SMTGenerator::dumpZ3(map<string, string> &lSpecRegMap,
 
   for (auto p : lSpecRegMap) {
     if (p.first == "RIP")
+      continue;
+
+    // Do not check rbp equiv for mem instr as X86 and LLVM semantics has diff
+    // idioms to store the address there
+    if (p.first == "RBP" && memSize != 0)
+      continue;
+
+    // Do not compare mamval in case of non-memory instr.
+    if (p.first == "MEM" && memSize == 0)
       continue;
 
     if (xSpecRegMap.count(p.first)) {

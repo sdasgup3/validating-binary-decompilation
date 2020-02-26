@@ -44,9 +44,12 @@ private:
   const string lspecfile;
   const string xspecfile;
   const string z3pyfile;
+  size_t memSize;
+
   stringstream proofScript;
 
   vector<summaryAndSideConds> processLSpec();
+  map<string, string> processLSummary(const string &summary);
 
   map<string, string> uniquifyXSpec(map<string, string> &);
 
@@ -54,12 +57,16 @@ private:
   uniquifyLSpec(vector<summaryAndSideConds> &lSpecSummaryAndSideConds);
 
   map<string, string> processXSpec();
+  map<string, string> processXSummary(const string &summary);
 
   void dumpZ3(map<string, string> &lSpecRegMap,
               map<string, string> &xSpecRegMap);
 
+  LSpecStateInfoType getLSpecStateInfo(size_t offset);
+
 public:
-  SMTGenerator(const string &lspec, const string &xspec, const string &z3out);
+  SMTGenerator(const string &lspec, const string &xspec, const string &z3out,
+               const string &opcode);
 };
 
 #endif

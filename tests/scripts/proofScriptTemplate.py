@@ -65,7 +65,12 @@ VX_UNDEF_1 = z3.BitVec('VX_UNDEF_1', 1)
 VX_UNDEF_BOOL = z3.Bool('VX_UNDEF_BOOL')
 
 ## Memeory
-VX_MEM_64 =  z3.BitVec('VX_RAX',64)
+VX_MEM_8 =    z3.BitVec('VX_RAX',8)
+VX_MEM_16 =   z3.BitVec('VX_RAX',16)
+VX_MEM_32 =   z3.BitVec('VX_RAX',32)
+VX_MEM_64 =   z3.BitVec('VX_RAX',64)
+VX_MEM_128 =  z3.BitVec('VX_RAX',128)
+VX_MEM_256 =  z3.BitVec('VX_RAX',256)
 
 ##############################
 ## X86 specific variables ####
@@ -99,7 +104,12 @@ VL_YMM2_2 = z3.BitVec('VL_YMM2_2', 64)
 VL_YMM2_3 = z3.BitVec('VL_YMM2_3', 64)
 
 ## Memeory
-VL_MEM_64 =  z3.BitVec('VL_RAX',64)
+VL_MEM_8 =    z3.BitVec('VL_RAX',8)
+VL_MEM_16 =   z3.BitVec('VL_RAX',16)
+VL_MEM_32 =   z3.BitVec('VL_RAX',32)
+VL_MEM_64 =   z3.BitVec('VL_RAX',64)
+VL_MEM_128 =  z3.BitVec('VL_RAX',128)
+VL_MEM_256 =  z3.BitVec('VL_RAX',256)
 
 ##############################
 ## Proof variables ###########
@@ -107,6 +117,12 @@ VL_MEM_64 =  z3.BitVec('VL_RAX',64)
 V_R = z3.BitVec('V_R',64)
 V_F = z3.BitVec('V_F',1)
 V_Y = z3.BitVec('V_Y',256)
+V_M8 = z3.BitVec('V_M8',8)
+V_M16 = z3.BitVec('V_M16',16)
+V_M32 = z3.BitVec('V_M32',32)
+V_M64 = z3.BitVec('V_M64',64)
+V_M128 = z3.BitVec('V_M128',128)
+V_M256 = z3.BitVec('V_M256',256)
 
 ## Solver instance
 s = z3.Solver()
@@ -144,4 +160,10 @@ s.add(z3.Concat(VL_YMM2_3, VL_YMM2_2, VL_YMM2_1, VL_YMM2_0) == VX_YMM2)
 
 
 ## Memeory
+s.add(VX_MEM_8 == VL_MEM_8)
+s.add(VX_MEM_16 == VL_MEM_16)
+s.add(VX_MEM_32 == VL_MEM_32)
 s.add(VX_MEM_64 == VL_MEM_64)
+s.add(VX_MEM_128 == VL_MEM_128)
+s.add(VX_MEM_256 == VL_MEM_256)
+
