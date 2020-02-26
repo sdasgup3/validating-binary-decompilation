@@ -1760,6 +1760,16 @@ ostream &SummaryExprPtr::write_spec(ostream &os) const {
 void SummaryExprVar::deriveWidth() {
   assert(varName != "" && "VarName empty!!");
 
+  // Matching with mem
+  if ((varName.find("VL_MEM") != string::npos) ||
+      (varName.find("VX_MEM") != string::npos)) {
+
+    std::smatch m;
+    std::regex_search(varName, m, std::regex("V.*_MEM_(.*)"));
+    width_ = stoi(m[1]);
+    return;
+  }
+
   // Matching with gprs
   if ((varName.find("VL_R") != string::npos) ||
       (varName.find("VX_R") != string::npos)) {

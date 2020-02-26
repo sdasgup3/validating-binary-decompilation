@@ -16,9 +16,9 @@ module TEST-XSPEC
       <currentsection> "text" </currentsection>
       <regstate>
         "RIP" |-> ( ptr (symloc(-1, 0, 0 , 0 , 0), mi(64, 0))  => mi(64, 18446744073709551615)) //@ensure
-        "RSP" |-> ( ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1016) ) =>
-                      ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1024) )) //@ensure
-        "RBP" |-> ptr ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64,1016) ) // @ensure
+        "RSP" |-> ( ptr ( symloc ( 1 , 128 , 1040 , 8 , 0 ) , mi(64,1032) ) =>
+                      ptr ( symloc ( 1 , 128 , 1040 , 8 , 0 ) , mi(64,1040) )) //@ensure
+        "RBP" |-> ptr ( symloc ( 1 , 128 , 1040 , 8 , 0 ) , mi(64,1032) ) // @ensure
 
         "RAX" |-> (mi(64, VX_RAX:Int):MInt => mi(64, _:Int))
         "RBX" |-> (mi(64, VX_RBX:Int):MInt => mi(64, _:Int))
@@ -42,7 +42,7 @@ module TEST-XSPEC
       <memstate>
         <text> 
           code ( 
-      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( addq -16(%rbp), %rbx, .Operands )
+      ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,0) ) |-> storedInstr ( addq -32(%rbp), %rbx, .Operands )
       ptr ( symloc ( -1 , 0 , 0 , 0 , 0) , mi(64,1) ) |-> storedInstr ( ret .Operands )
              )
         </text>
@@ -52,24 +52,24 @@ module TEST-XSPEC
             <objects>  
                mem( 
                     // allocated memory
-                    symloc ( 1 , 128 , 1024 , 8 , 1000 ) |-> (byte ( 0 ,  mi(8, VX_MEM_0)) => _) // -16(%ebp)
-                    symloc ( 1 , 128 , 1024 , 8 , 1001 ) |-> (byte ( 0 ,  mi(8, VX_MEM_1)) => _)
-                    symloc ( 1 , 128 , 1024 , 8 , 1002 ) |-> (byte ( 0 ,  mi(8, VX_MEM_2)) => _)
-                    symloc ( 1 , 128 , 1024 , 8 , 1003 ) |-> (byte ( 0 ,  mi(8, VX_MEM_3)) => _)
-                    symloc ( 1 , 128 , 1024 , 8 , 1004 ) |-> (byte ( 0 ,  mi(8, VX_MEM_4)) => _) // -12(%ebp)
-                    symloc ( 1 , 128 , 1024 , 8 , 1005 ) |-> (byte ( 0 ,  mi(8, VX_MEM_5)) => _)
-                    symloc ( 1 , 128 , 1024 , 8 , 1006 ) |-> (byte ( 0 ,  mi(8, VX_MEM_6)) => _)
-                    symloc ( 1 , 128 , 1024 , 8 , 1007 ) |-> (byte ( 0 ,  mi(8, VX_MEM_7)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1000 ) |-> (byte ( 0 ,  mi(64, VX_MEM_64)) => _) // -16(%ebp)
+                    symloc ( 1 , 128 , 1040 , 8 , 1001 ) |-> (byte ( 1 ,  mi(64, VX_MEM_64)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1002 ) |-> (byte ( 2 ,  mi(64, VX_MEM_64)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1003 ) |-> (byte ( 3 ,  mi(64, VX_MEM_64)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1004 ) |-> (byte ( 4 ,  mi(64, VX_MEM_64)) => _) // -12(%ebp)
+                    symloc ( 1 , 128 , 1040 , 8 , 1005 ) |-> (byte ( 5 ,  mi(64, VX_MEM_64)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1006 ) |-> (byte ( 6 ,  mi(64, VX_MEM_64)) => _)
+                    symloc ( 1 , 128 , 1040 , 8 , 1007 ) |-> (byte ( 7 ,  mi(64, VX_MEM_64)) => _)
 
                     // return address
-                    symloc ( 1 , 128 , 1024 , 8 , 1016 ) |-> byte ( 0 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1017 ) |-> byte ( 1 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1018 ) |-> byte ( 2 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1019 ) |-> byte ( 3 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1020 ) |-> byte ( 4 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1021 ) |-> byte ( 5 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1022 ) |-> byte ( 6 , mi(64,-1) )
-                    symloc ( 1 , 128 , 1024 , 8 , 1023 ) |-> byte ( 7 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1032 ) |-> byte ( 0 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1033 ) |-> byte ( 1 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1034 ) |-> byte ( 2 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1035 ) |-> byte ( 3 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1036 ) |-> byte ( 4 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1037 ) |-> byte ( 5 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1038 ) |-> byte ( 6 , mi(64,-1) )
+                    symloc ( 1 , 128 , 1040 , 8 , 1039 ) |-> byte ( 7 , mi(64,-1) )
                   )
             </objects>
             <freed>
@@ -77,7 +77,7 @@ module TEST-XSPEC
             </freed>
           </memory>
           <stackbase>
-            stackBaseInfo ( symloc ( 1 , 128 , 1024 , 8 , 0 ) , mi(64, 1016) )
+            stackBaseInfo ( symloc ( 1 , 128 , 1040 , 8 , 0 ) , mi(64, 1032) )
           </stackbase>
           <robase>    roBaseInfo(.K , .K , .K  ) </robase>
           <database>  dataBaseInfo(.K , .K , .K ) </database>
@@ -101,12 +101,5 @@ module TEST-XSPEC
         andBool   (VX_ZF ==Int 0 orBool VX_ZF ==Int 1)
         andBool   (VX_AF ==Int 0 orBool VX_AF ==Int 1)
         andBool   (VX_OF ==Int 0 orBool VX_OF ==Int 1)
-        andBool   VX_MEM_0 >=Int 0 andBool VX_MEM_0 <Int 2 ^Int 8
-        andBool   VX_MEM_1 >=Int 0 andBool VX_MEM_1 <Int 2 ^Int 8
-        andBool   VX_MEM_2 >=Int 0 andBool VX_MEM_2 <Int 2 ^Int 8
-        andBool   VX_MEM_3 >=Int 0 andBool VX_MEM_3 <Int 2 ^Int 8
-        andBool   VX_MEM_4 >=Int 0 andBool VX_MEM_4 <Int 2 ^Int 8
-        andBool   VX_MEM_5 >=Int 0 andBool VX_MEM_5 <Int 2 ^Int 8
-        andBool   VX_MEM_6 >=Int 0 andBool VX_MEM_6 <Int 2 ^Int 8
-        andBool   VX_MEM_7 >=Int 0 andBool VX_MEM_7 <Int 2 ^Int 8
+        andBool   VX_MEM_64 >=Int 0 andBool VX_MEM_64 <Int 2 ^Int 64
 endmodule

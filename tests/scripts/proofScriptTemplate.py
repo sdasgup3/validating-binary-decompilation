@@ -64,6 +64,9 @@ VX_YMM2 = z3.BitVec('VX_YMM2', 256)
 VX_UNDEF_1 = z3.BitVec('VX_UNDEF_1', 1)
 VX_UNDEF_BOOL = z3.Bool('VX_UNDEF_BOOL')
 
+## Memeory
+VX_MEM_64 =  z3.BitVec('VX_RAX',64)
+
 ##############################
 ## X86 specific variables ####
 ##############################
@@ -94,6 +97,9 @@ VL_YMM2_0 = z3.BitVec('VL_YMM2_0', 64)
 VL_YMM2_1 = z3.BitVec('VL_YMM2_1', 64)
 VL_YMM2_2 = z3.BitVec('VL_YMM2_2', 64)
 VL_YMM2_3 = z3.BitVec('VL_YMM2_3', 64)
+
+## Memeory
+VL_MEM_64 =  z3.BitVec('VL_RAX',64)
 
 ##############################
 ## Proof variables ###########
@@ -137,3 +143,5 @@ s.add(z3.Concat(VL_YMM1_3, VL_YMM1_2, VL_YMM1_1, VL_YMM1_0) == VX_YMM1)
 s.add(z3.Concat(VL_YMM2_3, VL_YMM2_2, VL_YMM2_1, VL_YMM2_0) == VX_YMM2)
 
 
+## Memeory
+s.add(VX_MEM_64 == VL_MEM_64)
