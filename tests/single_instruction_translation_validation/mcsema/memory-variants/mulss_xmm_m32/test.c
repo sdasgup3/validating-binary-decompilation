@@ -1,3 +1,3 @@
 void main() {
-  __asm__("mulss -16(%rbp), %xmm1");
+  __asm__("mulss -32(%rbp), %xmm1");
 }

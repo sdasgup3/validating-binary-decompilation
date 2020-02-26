@@ -1,3 +1,3 @@
 void main() {
-  __asm__("divl -16(%rbp)");
+  __asm__("divl -32(%rbp)");
 }

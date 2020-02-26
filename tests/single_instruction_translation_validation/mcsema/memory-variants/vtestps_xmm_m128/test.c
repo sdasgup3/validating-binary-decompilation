@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vtestps -16(%rbp), %xmm1");
+  __asm__("vtestps -32(%rbp), %xmm1");
 }

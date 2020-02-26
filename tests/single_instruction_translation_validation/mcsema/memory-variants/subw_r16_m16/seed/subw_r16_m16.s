@@ -1,3 +1,3 @@
 .target:
-  subw -16(%rbp), %bx
+  subw -32(%rbp), %bx
   retq

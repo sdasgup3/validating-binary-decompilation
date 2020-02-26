@@ -1,3 +1,3 @@
 void main() {
-  __asm__("andb %ah, -16(%rbp)");
+  __asm__("andb %ah, -32(%rbp)");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpmaddubsw -16(%rbp), %xmm2, %xmm1
+  vpmaddubsw -32(%rbp), %xmm2, %xmm1
   retq

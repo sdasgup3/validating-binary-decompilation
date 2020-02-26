@@ -1,3 +1,3 @@
 void main() {
-  __asm__("tzcntw -16(%rbp), %bx");
+  __asm__("tzcntw -32(%rbp), %bx");
 }

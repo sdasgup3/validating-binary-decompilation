@@ -1,3 +1,3 @@
 .target:
-  vmovhpd -16(%rbp), %xmm2, %xmm1
+  vmovhpd -32(%rbp), %xmm2, %xmm1
   retq

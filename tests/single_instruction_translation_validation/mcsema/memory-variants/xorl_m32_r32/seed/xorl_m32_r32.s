@@ -1,3 +1,3 @@
 .target:
-  xorl %ecx, -16(%rbp)
+  xorl %ecx, -32(%rbp)
   retq

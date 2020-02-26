@@ -1,3 +1,3 @@
 .target:
-  vtestps -16(%rbp), %xmm1
+  vtestps -32(%rbp), %xmm1
   retq

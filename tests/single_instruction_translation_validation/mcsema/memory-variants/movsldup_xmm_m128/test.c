@@ -1,3 +1,3 @@
 void main() {
-  __asm__("movsldup -16(%rbp), %xmm1");
+  __asm__("movsldup -32(%rbp), %xmm1");
 }

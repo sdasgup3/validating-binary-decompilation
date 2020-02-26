@@ -81,7 +81,7 @@ parallel -a docs/selective_jmp.txt  "rm -rf system-variants/{}/instructions"
 cd tests/mcsema
 
 ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants/{}/seed/{}.s --opc {}
-ls register-variants-samereg/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants-samereg/{}/seed/{}.sameregs --opc {}
+ls register-variants-samereg/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants-samereg/{}/seed/{}.s --opc {}
 
 ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s --opc {}
 find . -name "*.s" | grep seed | parallel "sed -i -e 's/-4/-16/g' {}"

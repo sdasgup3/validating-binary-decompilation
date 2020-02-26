@@ -1,3 +1,3 @@
 .target:
-  vptest -16(%rbp), %ymm1
+  vptest -32(%rbp), %ymm1
   retq

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("rsqrtss -16(%rbp), %xmm1");
+  __asm__("rsqrtss -32(%rbp), %xmm1");
 }

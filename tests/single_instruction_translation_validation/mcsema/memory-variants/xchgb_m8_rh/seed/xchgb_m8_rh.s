@@ -1,3 +1,3 @@
 .target:
-  xchgb %ah, -16(%rbp)
+  xchgb %ah, -32(%rbp)
   retq

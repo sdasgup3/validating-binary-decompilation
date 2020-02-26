@@ -1,3 +1,3 @@
 void main() {
-  __asm__("orw -16(%rbp), %bx");
+  __asm__("orw -32(%rbp), %bx");
 }

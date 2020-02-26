@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpminsd -16(%rbp), %ymm2, %ymm1");
+  __asm__("vpminsd -32(%rbp), %ymm2, %ymm1");
 }

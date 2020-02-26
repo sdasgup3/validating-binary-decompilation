@@ -1,3 +1,3 @@
 .target:
-  psrlq -16(%rbp), %xmm1
+  psrlq -32(%rbp), %xmm1
   retq

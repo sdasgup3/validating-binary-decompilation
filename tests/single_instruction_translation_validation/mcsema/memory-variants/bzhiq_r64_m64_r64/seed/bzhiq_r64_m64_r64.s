@@ -1,3 +1,3 @@
 .target:
-  bzhiq %rdx, -16(%rbp), %rbx
+  bzhiq %rdx, -32(%rbp), %rbx
   retq

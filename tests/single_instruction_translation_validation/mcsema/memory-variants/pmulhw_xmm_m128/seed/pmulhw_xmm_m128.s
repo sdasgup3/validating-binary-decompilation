@@ -1,3 +1,3 @@
 .target:
-  pmulhw -16(%rbp), %xmm1
+  pmulhw -32(%rbp), %xmm1
   retq

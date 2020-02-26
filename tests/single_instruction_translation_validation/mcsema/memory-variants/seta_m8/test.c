@@ -1,3 +1,3 @@
 void main() {
-  __asm__("seta -16(%rbp)");
+  __asm__("seta -32(%rbp)");
 }

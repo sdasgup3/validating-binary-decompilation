@@ -1,3 +1,3 @@
 void main() {
-  __asm__("notb -16(%rbp)");
+  __asm__("notb -32(%rbp)");
 }

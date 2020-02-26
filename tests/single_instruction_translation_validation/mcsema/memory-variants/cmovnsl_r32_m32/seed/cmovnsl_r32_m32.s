@@ -1,3 +1,3 @@
 .target:
-  cmovnsl -16(%rbp), %ebx
+  cmovnsl -32(%rbp), %ebx
   retq

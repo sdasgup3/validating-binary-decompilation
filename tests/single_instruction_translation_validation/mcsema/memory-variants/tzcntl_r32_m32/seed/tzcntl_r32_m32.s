@@ -1,3 +1,3 @@
 .target:
-  tzcntl -16(%rbp), %ebx
+  tzcntl -32(%rbp), %ebx
   retq

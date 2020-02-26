@@ -1,3 +1,3 @@
 .target:
-  vpmullw -16(%rbp), %xmm2, %xmm1
+  vpmullw -32(%rbp), %xmm2, %xmm1
   retq

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("bextrl %edx, -16(%rbp), %ebx");
+  __asm__("bextrl %edx, -32(%rbp), %ebx");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpermilps -16(%rbp), %xmm2, %xmm1
+  vpermilps -32(%rbp), %xmm2, %xmm1
   retq

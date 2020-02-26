@@ -1,3 +1,3 @@
 .target:
-  leaw -16(%rbp), %bx
+  leaw -32(%rbp), %bx
   retq

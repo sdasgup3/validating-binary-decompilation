@@ -1,3 +1,3 @@
 .target:
-  movbew -16(%rbp), %bx
+  movbew -32(%rbp), %bx
   retq

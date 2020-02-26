@@ -1,3 +1,3 @@
 .target:
-  movzwl -16(%rbp), %ebx
+  movzwl -32(%rbp), %ebx
   retq

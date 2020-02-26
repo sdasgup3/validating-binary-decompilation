@@ -1,3 +1,3 @@
 void main() {
-  __asm__("shrdl %cl, %ecx, -16(%rbp)");
+  __asm__("shrdl %cl, %ecx, -32(%rbp)");
 }

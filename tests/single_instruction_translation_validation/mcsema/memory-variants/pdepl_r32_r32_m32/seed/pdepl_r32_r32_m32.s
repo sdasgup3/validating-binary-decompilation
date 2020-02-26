@@ -1,3 +1,3 @@
 .target:
-  pdepl -16(%rbp), %ecx, %ebx
+  pdepl -32(%rbp), %ecx, %ebx
   retq

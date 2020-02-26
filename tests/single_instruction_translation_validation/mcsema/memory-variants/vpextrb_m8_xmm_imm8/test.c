@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpextrb $0xa, %xmm1, -16(%rbp)");
+  __asm__("vpextrb $0xa, %xmm1, -32(%rbp)");
 }

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("negw -16(%rbp)");
+  __asm__("negw -32(%rbp)");
 }

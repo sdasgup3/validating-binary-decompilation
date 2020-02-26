@@ -1,3 +1,3 @@
 .target:
-  cmovngel -16(%rbp), %ebx
+  cmovngel -32(%rbp), %ebx
   retq

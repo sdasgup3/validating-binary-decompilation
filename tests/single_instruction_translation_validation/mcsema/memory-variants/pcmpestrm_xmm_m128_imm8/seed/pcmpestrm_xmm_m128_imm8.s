@@ -1,3 +1,3 @@
 .target:
-  pcmpestrm $0xa, -16(%rbp), %xmm1
+  pcmpestrm $0xa, -32(%rbp), %xmm1
   retq

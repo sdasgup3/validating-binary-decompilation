@@ -1,3 +1,3 @@
 .target:
-  vpmaxub -16(%rbp), %ymm2, %ymm1
+  vpmaxub -32(%rbp), %ymm2, %ymm1
   retq

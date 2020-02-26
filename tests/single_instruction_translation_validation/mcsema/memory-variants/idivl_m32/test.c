@@ -1,3 +1,3 @@
 void main() {
-  __asm__("idivl -16(%rbp)");
+  __asm__("idivl -32(%rbp)");
 }

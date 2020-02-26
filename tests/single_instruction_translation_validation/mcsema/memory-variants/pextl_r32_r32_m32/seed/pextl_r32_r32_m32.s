@@ -1,3 +1,3 @@
 .target:
-  pextl -16(%rbp), %ecx, %ebx
+  pextl -32(%rbp), %ecx, %ebx
   retq

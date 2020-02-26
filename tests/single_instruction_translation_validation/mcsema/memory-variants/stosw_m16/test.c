@@ -1,3 +1,3 @@
 void main() {
-  __asm__("stosw -16(%rbp)");
+  __asm__("stosw -32(%rbp)");
 }

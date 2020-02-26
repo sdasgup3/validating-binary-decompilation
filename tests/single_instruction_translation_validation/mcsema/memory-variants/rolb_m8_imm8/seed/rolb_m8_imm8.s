@@ -1,3 +1,3 @@
 .target:
-  rolb $0xa, -16(%rbp)
+  rolb $0xa, -32(%rbp)
   retq

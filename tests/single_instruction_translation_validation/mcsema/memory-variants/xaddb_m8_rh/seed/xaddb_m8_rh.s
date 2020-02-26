@@ -1,3 +1,3 @@
 .target:
-  xaddb %ah, -16(%rbp)
+  xaddb %ah, -32(%rbp)
   retq

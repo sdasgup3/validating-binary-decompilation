@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpmaxuw -16(%rbp), %ymm2, %ymm1");
+  __asm__("vpmaxuw -32(%rbp), %ymm2, %ymm1");
 }

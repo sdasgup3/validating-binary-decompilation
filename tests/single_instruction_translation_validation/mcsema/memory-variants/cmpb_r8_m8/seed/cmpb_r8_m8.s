@@ -1,3 +1,3 @@
 .target:
-  cmpb -16(%rbp), %bl
+  cmpb -32(%rbp), %bl
   retq

@@ -1,3 +1,3 @@
 .target:
-  orb -16(%rbp), %ah
+  orb -32(%rbp), %ah
   retq

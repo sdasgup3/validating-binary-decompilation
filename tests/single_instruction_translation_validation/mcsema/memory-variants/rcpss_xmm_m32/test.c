@@ -1,3 +1,3 @@
 void main() {
-  __asm__("rcpss -16(%rbp), %xmm1");
+  __asm__("rcpss -32(%rbp), %xmm1");
 }

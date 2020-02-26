@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cmpq -16(%rbp), %rbx");
+  __asm__("cmpq -32(%rbp), %rbx");
 }

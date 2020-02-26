@@ -1,3 +1,3 @@
 void main() {
-  __asm__("xchgl -16(%rbp), %ebx");
+  __asm__("xchgl -32(%rbp), %ebx");
 }

@@ -1,3 +1,3 @@
 .target:
-  roll $0xa, -16(%rbp)
+  roll $0xa, -32(%rbp)
   retq

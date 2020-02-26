@@ -1,3 +1,3 @@
 .target:
-  addss -16(%rbp), %xmm1
+  addss -32(%rbp), %xmm1
   retq

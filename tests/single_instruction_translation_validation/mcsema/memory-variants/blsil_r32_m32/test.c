@@ -1,3 +1,3 @@
 void main() {
-  __asm__("blsil -16(%rbp), %ebx");
+  __asm__("blsil -32(%rbp), %ebx");
 }

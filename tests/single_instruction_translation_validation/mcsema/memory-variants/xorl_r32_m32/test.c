@@ -1,3 +1,3 @@
 void main() {
-  __asm__("xorl -16(%rbp), %ebx");
+  __asm__("xorl -32(%rbp), %ebx");
 }

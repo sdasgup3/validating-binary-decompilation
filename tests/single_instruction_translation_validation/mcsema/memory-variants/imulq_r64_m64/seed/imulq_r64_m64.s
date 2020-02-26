@@ -1,3 +1,3 @@
 .target:
-  imulq -16(%rbp), %rbx
+  imulq -32(%rbp), %rbx
   retq

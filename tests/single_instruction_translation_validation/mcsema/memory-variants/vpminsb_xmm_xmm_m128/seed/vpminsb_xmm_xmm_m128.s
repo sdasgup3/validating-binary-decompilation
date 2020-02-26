@@ -1,3 +1,3 @@
 .target:
-  vpminsb -16(%rbp), %xmm2, %xmm1
+  vpminsb -32(%rbp), %xmm2, %xmm1
   retq

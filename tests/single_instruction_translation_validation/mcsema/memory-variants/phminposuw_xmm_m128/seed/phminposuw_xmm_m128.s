@@ -1,3 +1,3 @@
 .target:
-  phminposuw -16(%rbp), %xmm1
+  phminposuw -32(%rbp), %xmm1
   retq

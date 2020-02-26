@@ -1,3 +1,3 @@
 void main() {
-  __asm__("paddw -16(%rbp), %xmm1");
+  __asm__("paddw -32(%rbp), %xmm1");
 }

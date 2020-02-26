@@ -1,3 +1,3 @@
 void main() {
-  __asm__("incl -16(%rbp)");
+  __asm__("incl -32(%rbp)");
 }

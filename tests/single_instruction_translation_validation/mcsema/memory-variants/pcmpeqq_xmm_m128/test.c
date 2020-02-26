@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pcmpeqq -16(%rbp), %xmm1");
+  __asm__("pcmpeqq -32(%rbp), %xmm1");
 }

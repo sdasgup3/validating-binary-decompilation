@@ -1,3 +1,3 @@
 .target:
-  cvttsd2si -16(%rbp), %rbx
+  cvttsd2si -32(%rbp), %rbx
   retq

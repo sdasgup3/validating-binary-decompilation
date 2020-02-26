@@ -1,3 +1,3 @@
 .target:
-  cvtsi2sdl -16(%rbp), %xmm1
+  cvtsi2sdl -32(%rbp), %xmm1
   retq

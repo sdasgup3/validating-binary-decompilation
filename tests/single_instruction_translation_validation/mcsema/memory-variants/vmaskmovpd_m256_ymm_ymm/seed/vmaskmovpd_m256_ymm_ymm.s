@@ -1,3 +1,3 @@
 .target:
-  vmaskmovpd %ymm2, %ymm1, -16(%rbp)
+  vmaskmovpd %ymm2, %ymm1, -32(%rbp)
   retq

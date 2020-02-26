@@ -1,3 +1,3 @@
 .target:
-  lzcntw -16(%rbp), %bx
+  lzcntw -32(%rbp), %bx
   retq

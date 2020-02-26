@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pminsd -16(%rbp), %xmm1");
+  __asm__("pminsd -32(%rbp), %xmm1");
 }

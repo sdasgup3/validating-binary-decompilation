@@ -1,3 +1,3 @@
 .target:
-  divl -16(%rbp)
+  divl -32(%rbp)
   retq

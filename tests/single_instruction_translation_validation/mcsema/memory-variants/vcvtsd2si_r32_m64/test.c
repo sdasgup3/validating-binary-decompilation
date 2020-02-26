@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vcvtsd2si -16(%rbp), %ebx");
+  __asm__("vcvtsd2si -32(%rbp), %ebx");
 }

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("xaddl %ecx, -16(%rbp)");
+  __asm__("xaddl %ecx, -32(%rbp)");
 }

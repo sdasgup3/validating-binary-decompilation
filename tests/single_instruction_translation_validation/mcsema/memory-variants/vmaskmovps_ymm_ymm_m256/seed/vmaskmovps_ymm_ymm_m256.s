@@ -1,3 +1,3 @@
 .target:
-  vmaskmovps -16(%rbp), %ymm2, %ymm1
+  vmaskmovps -32(%rbp), %ymm2, %ymm1
   retq

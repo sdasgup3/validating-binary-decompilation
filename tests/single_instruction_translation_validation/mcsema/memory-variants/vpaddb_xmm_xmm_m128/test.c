@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vpaddb -16(%rbp), %xmm2, %xmm1");
+  __asm__("vpaddb -32(%rbp), %xmm2, %xmm1");
 }

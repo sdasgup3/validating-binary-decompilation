@@ -1,3 +1,3 @@
 .target:
-  unpckhps -16(%rbp), %xmm1
+  unpckhps -32(%rbp), %xmm1
   retq

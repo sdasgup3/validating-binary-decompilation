@@ -1,3 +1,3 @@
 void main() {
-  __asm__("popcntq -16(%rbp), %rbx");
+  __asm__("popcntq -32(%rbp), %rbx");
 }

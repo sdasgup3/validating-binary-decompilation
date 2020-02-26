@@ -1,3 +1,3 @@
 .target:
-  vpunpckhbw -16(%rbp), %ymm2, %ymm1
+  vpunpckhbw -32(%rbp), %ymm2, %ymm1
   retq

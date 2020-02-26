@@ -1,3 +1,3 @@
 void main() {
-  __asm__("leal -16(%rbp), %ebx");
+  __asm__("leal -32(%rbp), %ebx");
 }

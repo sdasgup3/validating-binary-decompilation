@@ -1,3 +1,3 @@
 .target:
-  vpaddsw -16(%rbp), %ymm2, %ymm1
+  vpaddsw -32(%rbp), %ymm2, %ymm1
   retq

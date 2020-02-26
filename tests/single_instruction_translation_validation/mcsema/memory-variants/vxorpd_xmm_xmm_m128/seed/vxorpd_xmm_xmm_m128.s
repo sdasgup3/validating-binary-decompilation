@@ -1,3 +1,3 @@
 .target:
-  vxorpd -16(%rbp), %xmm2, %xmm1
+  vxorpd -32(%rbp), %xmm2, %xmm1
   retq

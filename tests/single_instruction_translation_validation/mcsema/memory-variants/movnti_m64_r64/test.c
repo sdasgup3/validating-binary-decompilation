@@ -1,3 +1,3 @@
 void main() {
-  __asm__("movnti %rcx, -16(%rbp)");
+  __asm__("movnti %rcx, -32(%rbp)");
 }

@@ -1,3 +1,3 @@
 .target:
-  vpandn -16(%rbp), %ymm2, %ymm1
+  vpandn -32(%rbp), %ymm2, %ymm1
   retq

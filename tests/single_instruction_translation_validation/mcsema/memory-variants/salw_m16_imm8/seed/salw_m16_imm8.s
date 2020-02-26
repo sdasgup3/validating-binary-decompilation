@@ -1,3 +1,3 @@
 .target:
-  salw $0xa, -16(%rbp)
+  salw $0xa, -32(%rbp)
   retq

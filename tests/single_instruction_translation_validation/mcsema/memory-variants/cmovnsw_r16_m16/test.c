@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cmovnsw -16(%rbp), %bx");
+  __asm__("cmovnsw -32(%rbp), %bx");
 }

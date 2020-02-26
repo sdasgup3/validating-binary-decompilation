@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pmaxsw -16(%rbp), %xmm1");
+  __asm__("pmaxsw -32(%rbp), %xmm1");
 }

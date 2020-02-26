@@ -1,3 +1,3 @@
 .target:
-  packusdw -16(%rbp), %xmm1
+  packusdw -32(%rbp), %xmm1
   retq

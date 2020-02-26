@@ -1,3 +1,3 @@
 .target:
-  xorq $0xa, -16(%rbp)
+  xorq $0xa, -32(%rbp)
   retq

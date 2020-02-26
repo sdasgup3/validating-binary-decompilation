@@ -1,3 +1,3 @@
 .target:
-  xaddq %rcx, -16(%rbp)
+  xaddq %rcx, -32(%rbp)
   retq

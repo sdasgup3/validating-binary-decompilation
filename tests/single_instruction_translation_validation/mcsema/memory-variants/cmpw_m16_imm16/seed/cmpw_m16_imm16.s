@@ -1,3 +1,3 @@
 .target:
-  cmpw $0xa, -16(%rbp)
+  cmpw $0xa, -32(%rbp)
   retq

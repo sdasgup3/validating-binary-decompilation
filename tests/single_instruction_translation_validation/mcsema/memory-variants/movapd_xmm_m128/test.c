@@ -1,3 +1,3 @@
 void main() {
-  __asm__("movapd -16(%rbp), %xmm1");
+  __asm__("movapd -32(%rbp), %xmm1");
 }

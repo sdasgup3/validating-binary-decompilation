@@ -1,3 +1,3 @@
 .target:
-  testb %ah, -16(%rbp)
+  testb %ah, -32(%rbp)
   retq

@@ -1,3 +1,3 @@
 void main() {
-  __asm__("setnl -16(%rbp)");
+  __asm__("setnl -32(%rbp)");
 }

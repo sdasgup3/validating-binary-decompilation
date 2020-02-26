@@ -1,3 +1,3 @@
 .target:
-  psignw -16(%rbp), %xmm1
+  psignw -32(%rbp), %xmm1
   retq

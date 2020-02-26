@@ -1,3 +1,3 @@
 .target:
-  vphaddd -16(%rbp), %ymm2, %ymm1
+  vphaddd -32(%rbp), %ymm2, %ymm1
   retq

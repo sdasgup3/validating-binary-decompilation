@@ -1,3 +1,3 @@
 .target:
-  movss -16(%rbp), %xmm1
+  movss -32(%rbp), %xmm1
   retq

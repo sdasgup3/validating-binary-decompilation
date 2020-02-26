@@ -1,3 +1,3 @@
 void main() {
-  __asm__("pcmpgtb -16(%rbp), %xmm1");
+  __asm__("pcmpgtb -32(%rbp), %xmm1");
 }

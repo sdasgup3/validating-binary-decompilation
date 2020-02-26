@@ -1,3 +1,3 @@
 .target:
-  vpmaxsw -16(%rbp), %xmm2, %xmm1
+  vpmaxsw -32(%rbp), %xmm2, %xmm1
   retq

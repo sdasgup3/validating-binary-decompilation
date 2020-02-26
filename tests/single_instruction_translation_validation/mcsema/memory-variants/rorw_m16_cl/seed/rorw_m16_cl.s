@@ -1,3 +1,3 @@
 .target:
-  rorw %cl, -16(%rbp)
+  rorw %cl, -32(%rbp)
   retq

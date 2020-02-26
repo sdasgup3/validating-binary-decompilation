@@ -1,3 +1,3 @@
 .target:
-  vpsrlq -16(%rbp), %xmm2, %xmm1
+  vpsrlq -32(%rbp), %xmm2, %xmm1
   retq

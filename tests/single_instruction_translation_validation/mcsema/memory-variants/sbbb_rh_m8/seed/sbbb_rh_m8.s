@@ -1,3 +1,3 @@
 .target:
-  sbbb -16(%rbp), %ah
+  sbbb -32(%rbp), %ah
   retq

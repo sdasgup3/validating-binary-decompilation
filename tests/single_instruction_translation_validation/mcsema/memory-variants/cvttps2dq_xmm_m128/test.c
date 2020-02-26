@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cvttps2dq -16(%rbp), %xmm1");
+  __asm__("cvttps2dq -32(%rbp), %xmm1");
 }

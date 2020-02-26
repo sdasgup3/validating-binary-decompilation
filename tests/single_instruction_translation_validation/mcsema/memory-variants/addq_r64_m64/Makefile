@@ -82,7 +82,7 @@ xprove: test-xspec.k
 
 genz3:
 	${TOOLDIR}/spec-to-smt --lspec Output/test-lspec.out --xspec Output/test-xspec.out --z3out Output/test-z3.py --opc ${PROG}
-	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --genz3 --opc ${PROG}
+	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --genz3
 
 provez3:
 	python Output/test-z3.py ${PROG}

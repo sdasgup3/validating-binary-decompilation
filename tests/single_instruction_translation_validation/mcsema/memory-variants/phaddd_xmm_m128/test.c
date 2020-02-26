@@ -1,3 +1,3 @@
 void main() {
-  __asm__("phaddd -16(%rbp), %xmm1");
+  __asm__("phaddd -32(%rbp), %xmm1");
 }

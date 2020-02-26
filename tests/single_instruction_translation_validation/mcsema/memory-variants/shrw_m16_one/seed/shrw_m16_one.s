@@ -1,3 +1,3 @@
 .target:
-  shrw $0x1, -16(%rbp)
+  shrw $0x1, -32(%rbp)
   retq

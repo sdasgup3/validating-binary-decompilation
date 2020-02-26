@@ -1,3 +1,3 @@
 void main() {
-  __asm__("bextrq %rdx, -16(%rbp), %rbx");
+  __asm__("bextrq %rdx, -32(%rbp), %rbx");
 }

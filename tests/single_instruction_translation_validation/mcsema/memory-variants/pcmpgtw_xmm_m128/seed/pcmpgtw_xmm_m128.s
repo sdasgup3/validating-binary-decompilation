@@ -1,3 +1,3 @@
 .target:
-  pcmpgtw -16(%rbp), %xmm1
+  pcmpgtw -32(%rbp), %xmm1
   retq

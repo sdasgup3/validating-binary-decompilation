@@ -1,3 +1,3 @@
 .target:
-  pmaxsb -16(%rbp), %xmm1
+  pmaxsb -32(%rbp), %xmm1
   retq

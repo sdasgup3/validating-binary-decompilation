@@ -1,3 +1,3 @@
 .target:
-  punpckhqdq -16(%rbp), %xmm1
+  punpckhqdq -32(%rbp), %xmm1
   retq

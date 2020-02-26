@@ -1,3 +1,3 @@
 .target:
-  popcntw -16(%rbp), %bx
+  popcntw -32(%rbp), %bx
   retq

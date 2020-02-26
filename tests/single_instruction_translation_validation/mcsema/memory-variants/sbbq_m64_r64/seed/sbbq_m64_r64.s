@@ -1,3 +1,3 @@
 .target:
-  sbbq %rcx, -16(%rbp)
+  sbbq %rcx, -32(%rbp)
   retq

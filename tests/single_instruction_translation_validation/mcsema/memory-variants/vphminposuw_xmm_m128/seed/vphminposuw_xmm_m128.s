@@ -1,3 +1,3 @@
 .target:
-  vphminposuw -16(%rbp), %xmm1
+  vphminposuw -32(%rbp), %xmm1
   retq

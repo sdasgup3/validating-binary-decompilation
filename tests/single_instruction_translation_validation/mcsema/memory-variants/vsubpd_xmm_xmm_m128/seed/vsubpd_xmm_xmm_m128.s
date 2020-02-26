@@ -1,3 +1,3 @@
 .target:
-  vsubpd -16(%rbp), %xmm2, %xmm1
+  vsubpd -32(%rbp), %xmm2, %xmm1
   retq

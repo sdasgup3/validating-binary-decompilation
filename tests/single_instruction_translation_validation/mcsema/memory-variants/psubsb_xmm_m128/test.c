@@ -1,3 +1,3 @@
 void main() {
-  __asm__("psubsb -16(%rbp), %xmm1");
+  __asm__("psubsb -32(%rbp), %xmm1");
 }

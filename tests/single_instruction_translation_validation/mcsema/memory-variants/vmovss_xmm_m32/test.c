@@ -1,3 +1,3 @@
 void main() {
-  __asm__("vmovss -16(%rbp), %xmm1");
+  __asm__("vmovss -32(%rbp), %xmm1");
 }

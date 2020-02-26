@@ -1,3 +1,3 @@
 .target:
-  pcmpeqq -16(%rbp), %xmm1
+  pcmpeqq -32(%rbp), %xmm1
   retq

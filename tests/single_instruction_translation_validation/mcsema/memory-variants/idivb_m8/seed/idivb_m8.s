@@ -1,3 +1,3 @@
 .target:
-  idivb -16(%rbp)
+  idivb -32(%rbp)
   retq

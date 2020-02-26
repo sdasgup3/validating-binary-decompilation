@@ -1,3 +1,3 @@
 void main() {
-  __asm__("idivw -16(%rbp)");
+  __asm__("idivw -32(%rbp)");
 }

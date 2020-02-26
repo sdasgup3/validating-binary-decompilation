@@ -1,3 +1,3 @@
 void main() {
-  __asm__("sarb $0x1, -16(%rbp)");
+  __asm__("sarb $0x1, -32(%rbp)");
 }

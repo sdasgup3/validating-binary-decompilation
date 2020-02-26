@@ -1,3 +1,3 @@
 .target:
-  movl %ecx, -16(%rbp)
+  movl %ecx, -32(%rbp)
   retq

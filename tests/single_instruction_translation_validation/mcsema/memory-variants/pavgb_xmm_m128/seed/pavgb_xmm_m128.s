@@ -1,3 +1,3 @@
 .target:
-  pavgb -16(%rbp), %xmm1
+  pavgb -32(%rbp), %xmm1
   retq

@@ -1,3 +1,3 @@
 .target:
-  vpshufhw $0xa, -16(%rbp), %ymm1
+  vpshufhw $0xa, -32(%rbp), %ymm1
   retq

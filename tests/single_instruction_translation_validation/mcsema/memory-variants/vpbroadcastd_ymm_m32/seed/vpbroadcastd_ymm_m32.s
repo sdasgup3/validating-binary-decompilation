@@ -1,3 +1,3 @@
 .target:
-  vpbroadcastd -16(%rbp), %ymm1
+  vpbroadcastd -32(%rbp), %ymm1
   retq

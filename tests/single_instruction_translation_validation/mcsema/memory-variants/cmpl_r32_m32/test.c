@@ -1,3 +1,3 @@
 void main() {
-  __asm__("cmpl -16(%rbp), %ebx");
+  __asm__("cmpl -32(%rbp), %ebx");
 }

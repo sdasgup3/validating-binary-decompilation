@@ -1,3 +1,3 @@
 .target:
-  andb $0xa, -16(%rbp)
+  andb $0xa, -32(%rbp)
   retq

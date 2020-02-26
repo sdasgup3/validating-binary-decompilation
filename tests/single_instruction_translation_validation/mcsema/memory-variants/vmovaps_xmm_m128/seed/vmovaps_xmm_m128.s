@@ -1,3 +1,3 @@
 .target:
-  vmovaps -16(%rbp), %xmm1
+  vmovaps -32(%rbp), %xmm1
   retq

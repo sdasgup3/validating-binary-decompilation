@@ -1,3 +1,3 @@
 .target:
-  movd %xmm1, -16(%rbp)
+  movd %xmm1, -32(%rbp)
   retq

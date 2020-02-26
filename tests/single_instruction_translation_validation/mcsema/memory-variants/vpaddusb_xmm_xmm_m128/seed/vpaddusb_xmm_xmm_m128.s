@@ -1,3 +1,3 @@
 .target:
-  vpaddusb -16(%rbp), %xmm2, %xmm1
+  vpaddusb -32(%rbp), %xmm2, %xmm1
   retq

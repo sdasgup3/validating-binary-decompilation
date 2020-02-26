@@ -1,3 +1,3 @@
 void main() {
-  __asm__("rolb %cl, -16(%rbp)");
+  __asm__("rolb %cl, -32(%rbp)");
 }

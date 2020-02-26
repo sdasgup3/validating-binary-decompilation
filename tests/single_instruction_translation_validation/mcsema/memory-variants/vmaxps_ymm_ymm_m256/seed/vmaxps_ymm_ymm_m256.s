@@ -1,3 +1,3 @@
 .target:
-  vmaxps -16(%rbp), %ymm2, %ymm1
+  vmaxps -32(%rbp), %ymm2, %ymm1
   retq

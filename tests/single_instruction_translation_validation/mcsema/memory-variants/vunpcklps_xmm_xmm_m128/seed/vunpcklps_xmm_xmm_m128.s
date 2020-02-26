@@ -1,3 +1,3 @@
 .target:
-  vunpcklps -16(%rbp), %xmm2, %xmm1
+  vunpcklps -32(%rbp), %xmm2, %xmm1
   retq

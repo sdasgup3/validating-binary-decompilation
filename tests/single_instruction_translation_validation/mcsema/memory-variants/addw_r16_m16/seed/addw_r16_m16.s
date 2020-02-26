@@ -1,3 +1,3 @@
 .target:
-  addw -16(%rbp), %bx
+  addw -32(%rbp), %bx
   retq
