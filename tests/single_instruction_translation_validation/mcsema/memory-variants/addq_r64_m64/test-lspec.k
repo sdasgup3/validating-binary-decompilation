@@ -135,14 +135,14 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4622 ) |-> ( byte ( 6 , 8 , 0 ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4623 ) |-> ( byte ( 7 , 8 , 0 ) => _)
 
-      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> byte ( 0 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> byte ( 1 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> byte ( 2 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> byte ( 3 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 4 ) |-> byte ( 4 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 5 ) |-> byte ( 5 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 6 ) |-> byte ( 6 , 8 , VL_MEM_64:Int )
-      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> byte ( 7 , 8 , VL_MEM_64:Int )
+      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 4 ) |-> ( byte ( 4 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 5 ) |-> ( byte ( 5 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 6 ) |-> ( byte ( 6 , 8 , VL_MEM_64:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> ( byte ( 7 , 8 , VL_MEM_64:Int ) => _)
   )
 </objects>
 <freed> .MemorySet </freed>
