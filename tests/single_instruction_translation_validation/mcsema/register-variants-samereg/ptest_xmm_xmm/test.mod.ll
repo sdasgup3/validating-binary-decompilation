@@ -253,6 +253,7 @@ define i32 @main() {
 entry:
   %state = alloca %struct.State
 
+  
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
   store i64 51, i64* %memf0, align 8

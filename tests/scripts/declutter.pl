@@ -22,17 +22,17 @@ BEGIN {
 use kutils;
 use utils;
 
-my $help               = "";
-my $file               = "";
-my $outdir             = "";
-my $opcode             = "";
-my $renameintrinsics   = "";
-my $defineintrinsics   = "";
-my $definememtype      = "";
-my $definemain         = "";
-my $removedoublecolon  = "";
-my $singleiv           = "";
-my $programiv          = "";
+my $help              = "";
+my $file              = "";
+my $outdir            = "";
+my $opcode            = "";
+my $renameintrinsics  = "";
+my $defineintrinsics  = "";
+my $definememtype     = "";
+my $definemain        = "";
+my $removedoublecolon = "";
+my $singleiv          = "";
+my $programiv         = "";
 
 ## Global consants
 my $maxTargetInfoLength = 4;
@@ -40,15 +40,15 @@ my $terminatingInstr =
 qr/.*\%struct\.State, \%struct.State\* \%0, i64 0, i32 6, i32 13, i32 0, i32 0/;
 
 GetOptions(
-    "help"               => \$help,
-    "renameintrinsics"   => \$renameintrinsics,
-    "singleiv"           => \$singleiv,
-    "programiv"          => \$programiv,
-    "defineintrinsics"   => \$defineintrinsics,
-    "definemain"         => \$definemain,
-    "definememtype"      => \$definememtype,
-    "file:s"             => \$file,
-    "opc:s"              => \$opcode,
+    "help"             => \$help,
+    "renameintrinsics" => \$renameintrinsics,
+    "singleiv"         => \$singleiv,
+    "programiv"        => \$programiv,
+    "defineintrinsics" => \$defineintrinsics,
+    "definemain"       => \$definemain,
+    "definememtype"    => \$definememtype,
+    "file:s"           => \$file,
+    "opc:s"            => \$opcode,
 ) or die("Error in command line arguments\n");
 
 sub usage {
@@ -69,31 +69,60 @@ open( my $fp, "<", $file ) or die "cannot open: $!";
 my @lines = <$fp>;
 close $fp;
 
-if($singleiv ne "") {
-  $definemain = 1;
-  $renameintrinsics = 1;
-  $defineintrinsics = 1;
-  $definememtype = 1;
-  $removedoublecolon = 1;
+### Process memory
+my $memSize = 0;
+if ( $opcode =~ m/_m(\d+)/ ) {
+    $memSize = $1;
 }
 
-if($programiv ne "") {
-  $definemain = "";
-  $renameintrinsics = "";
-  $defineintrinsics = "";
-  $definememtype = "";
-  $removedoublecolon = "";
+my $memAccessCode  = "";
+my $valueOrAddress = 800;
+if ( $memSize != 0 ) {
+    $memAccessCode =
+        $memAccessCode . "\n"
+      . "  %memaddr = alloca i"
+      . $memSize . "\n"
+      . "  store i"
+      . $memSize
+      . " 800, i"
+      . $memSize
+      . "* %memaddr" . "\n"
+      . "  %memaddr2int = ptrtoint i"
+      . $memSize
+      . "* %memaddr to i64"
+      . "\n" . "  %memaddr2intoff = add i64 32, %memaddr2int " . "\n";
+
+    if($opcode eq "pmuludq_xmm_m128") {
+      $memAccessCode = pmuludq_xmm_m128();
+    }
+
+    $valueOrAddress = "%memaddr2intoff";
+}
+####################
+
+if ( $singleiv ne "" ) {
+    $definemain        = 1;
+    $renameintrinsics  = 1;
+    $defineintrinsics  = 1;
+    $definememtype     = 1;
+    $removedoublecolon = 1;
 }
 
+if ( $programiv ne "" ) {
+    $definemain        = "";
+    $renameintrinsics  = "";
+    $defineintrinsics  = "";
+    $definememtype     = "";
+    $removedoublecolon = "";
+}
 
 ## Remove ::bitset
-if($removedoublecolon) {
-  for (my $i = 0 ; $i < scalar(@lines); $i = $i +1) {
-    $lines[$i] =~ s/::BitMatrix/__BitMatrix/g;
-    $lines[$i] =~ s/::bitset/__bitset/g;
-  }
+if ($removedoublecolon) {
+    for ( my $i = 0 ; $i < scalar(@lines) ; $i = $i + 1 ) {
+        $lines[$i] =~ s/::BitMatrix/__BitMatrix/g;
+        $lines[$i] =~ s/::bitset/__bitset/g;
+    }
 }
-
 
 ## Get Target Info
 #my $targetInfo = "";
@@ -162,10 +191,11 @@ for my $itr (@funcs) {
 print $ofp "\n";
 
 if ( $definemain ne "" ) {
-    if($opcode =~ m/xmm|ymm/) {
-      print $ofp getMainDefintion(1);
-    } else { 
-      print $ofp getMainDefintion(0);
+    if ( $opcode =~ m/xmm|ymm/ ) {
+        print $ofp getMainDefintion(1);
+    }
+    else {
+        print $ofp getMainDefintion(0);
     }
 }
 
@@ -239,16 +269,17 @@ sub getMainBody {
         ## call
         if ( $tline =~ m/$callSignature/ ) {
             my $calledRetVal = $1;
-            my $calledFunc = $2;
+            my $calledFunc   = $2;
 
-            if($countCalls == 1) {
-              if($calledFunc eq "__remill_atomic_end") {
-                push @mainBody, $line;
-                $mainRetval = $calledRetVal;
-              } else {
-                exit(1);
-              }
-              last;
+            if ( $countCalls == 1 ) {
+                if ( $calledFunc eq "__remill_atomic_end" ) {
+                    push @mainBody, $line;
+                    $mainRetval = $calledRetVal;
+                }
+                else {
+                    exit(1);
+                }
+                last;
             }
 
             if ( isDefined($calledFunc) == 1 ) {
@@ -259,8 +290,8 @@ sub getMainBody {
             }
         }
 
-        if($countCalls == 1) {
-          last;
+        if ( $countCalls == 1 ) {
+            last;
         }
 
         if ( $tline =~ m/store i64 \%1, i64\* \%PC, align 8/ ) {
@@ -366,6 +397,7 @@ sub isDefined {
 
 sub getDeclarations {
     my $decls = "";
+
     # my @decls = ();
 
     for my $line (@lines) {
@@ -375,61 +407,63 @@ sub getDeclarations {
             last;
         }
 
-        if($tline =~ m/__mcsema|wrapper|__got|callback/) {
-          next;
+        if ( $tline =~ m/__mcsema|wrapper|__got|callback/ ) {
+            next;
         }
 
-        if($singleiv) {
-          if($tline =~ m/^@/) {
-            next;
-          }
+        if ($singleiv) {
+            if ( $tline =~ m/^@/ ) {
+                next;
+            }
         }
 
         if ( $tline =~ m/(.*) = (.*)/g ) {
 
             # push @decls, $line;
-            if($definememtype) {
-              if($tline =~ m/%struct.Memory/ and $tline =~ m/type opaque/) {
-                $line = "%struct.Memory = type { i64 }" . "\n";
-              }
+            if ($definememtype) {
+                if ( $tline =~ m/%struct.Memory/ and $tline =~ m/type opaque/ )
+                {
+                    $line = "%struct.Memory = type { i64 }" . "\n";
+                }
             }
             $decls = $decls . $line;
         }
     }
 
     return $decls;
+
     # return \@decls;
 }
 
 sub refineDecls {
-  my @decls = @{shift @_};
-  my @funcBody = @{shift @_};
+    my @decls    = @{ shift @_ };
+    my @funcBody = @{ shift @_ };
 
-  my @refinedDecls = ();
+    my @refinedDecls = ();
 
-  for my $decl (@decls) {
-    my $tdecl = utils::trim($decl);
+    for my $decl (@decls) {
+        my $tdecl = utils::trim($decl);
 
-    my $defn = "";
-    if ( $tdecl =~ m/(.*) = (.*)/g ) {
-      $defn = $1; 
+        my $defn = "";
+        if ( $tdecl =~ m/(.*) = (.*)/g ) {
+            $defn = $1;
+        }
+
+        my $used = "false";
+        for my $line (@funcBody) {
+            my $tline = utils::trim($line);
+            if ( $tline =~ m/$defn/ ) {
+                $used = "true";
+            }
+        }
+
+        if ( $used eq "true" ) {
+            push @refinedDecls, $decl;
+        }
     }
 
-    my $used = "false";
-    for my $line (@funcBody) {
-      my $tline = utils::trim($line);
-      if($tline =~ m/$defn/) {
-        $used = "true";
-      }
-    }
-
-    if($used eq "true") {
-      push @refinedDecls, $decl;
-    }
-  }
-
-  print @refinedDecls;
-  return \@refinedDecls;
+    print @refinedDecls;
+    return \@refinedDecls;
 }
 
 sub getInstrinticsDefinitions {
@@ -677,15 +711,15 @@ sub getMainDefintion {
   store i64 9980, i64* %arrayidx91, align 8
 
 );
-    if($isXMM) {
-
+    if ($isXMM == 0) {
+      $xmmAccessCode = "";
     }
-
 
     my $mainDefn = qq(define i32 \@main() {
 entry:
   %state = alloca %struct.State
 
+  $memAccessCode
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
   store i64 51, i64* %memf0, align 8
@@ -715,7 +749,7 @@ entry:
   store i64 500, i64* %addr5, align 8
   store i64 600, i64* %addr6, align 8
   store i64 700, i64* %addr7, align 8
-  store i64 800, i64* %addr8, align 8
+  store i64 $valueOrAddress, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
 
   store i8 10, i8* %cf, align 1
@@ -759,4 +793,19 @@ sub getStructureLayout {
 );
     return $structLayout;
 }
+
+sub pmuludq_xmm_m128 {
+    my $structLayout = qq(
+  %memaddr = alloca [2 x i64]
+  %memaddr0 = getelementptr inbounds [2 x i64], [2 x i64]* %memaddr, i64 0,  i64 0
+  %memaddr1 = getelementptr inbounds [2 x i64], [2 x i64]* %memaddr, i64 0,  i64 1
+  store i64 1, i64* %memaddr0
+  store i64 1, i64* %memaddr1
+
+  %memaddr2int = ptrtoint [2 x i64]* %memaddr to i64  
+  %memaddr2intoff = add i64 32, %memaddr2int
+);
+    return $structLayout;
+}
+
 

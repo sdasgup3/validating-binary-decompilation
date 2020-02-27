@@ -176,7 +176,9 @@ define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6MemoryS6_R5StateT_T0_T1_T2_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64* nocapture, i64, i64* nocapture, i64) #0 {
   %7 = load i64, i64* %2, align 8
+  ;  d+s
   %8 = add i64 %7, %5
+  ; store to d
   store i64 %8, i64* %2, align 8
   %9 = icmp ult i64 %8, %5
   %10 = icmp ult i64 %8, %7
@@ -216,6 +218,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L4XADDI3RnWImE2RnImES2_S4_EEP6
   %39 = zext i1 %38 to i8
   %40 = getelementptr inbounds %struct.State, %struct.State* %1, i64 0, i32 2, i32 13
   store i8 %39, i8* %40, align 1
+  ; store d to s
   store i64 %7, i64* %4, align 8
   ret %struct.Memory* %0
 }
@@ -249,6 +252,7 @@ define i32 @main() {
 entry:
   %state = alloca %struct.State
 
+  
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
   store i64 51, i64* %memf0, align 8
@@ -288,6 +292,8 @@ entry:
   store i8 50, i8* %sf, align 1
   store i8 60, i8* %df, align 1
   store i8 70, i8* %of, align 1
+
+  
 
   %call = call %struct.Memory* @routine_xaddq_r64_r64(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0

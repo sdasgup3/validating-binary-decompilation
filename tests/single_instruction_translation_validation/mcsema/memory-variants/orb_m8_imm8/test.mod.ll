@@ -2,27 +2,70 @@
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu-elf"
-
 %union.anon = type { i64 }
-%struct.State = type {%struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, i64, i64, i64, %struct.GPR}
-
+%seg_4f8__init_type = type <{ [23 x i8] }>
+%seg_510__plt_type = type <{ [16 x i8] }>
+%seg_520__plt_got_type = type <{ [8 x i8] }>
+%seg_530__text_type = type <{ [434 x i8] }>
+%seg_6e4__fini_type = type <{ [9 x i8] }>
+%seg_6f0__rodata_type = type <{ [4 x i8] }>
+%seg_6f4__eh_frame_hdr_type = type <{ [60 x i8] }>
+%seg_730__eh_frame_type = type <{ [256 x i8] }>
+%seg_200de0__init_array_type = type <{ i64, i64 }>
+%seg_200df0__jcr_type = type <{ [8 x i8] }>
+%seg_201000__data_type = type <{ [8 x i8], i64 }>
+%__bss_start_type = type <{ [8 x i8] }>
+%struct.State = type { %struct.ArchState, [32 x %union.VectorReg], %struct.ArithFlags, %union.anon, %struct.Segments, %struct.AddressSpace, %struct.GPR, %struct.X87Stack, %struct.MMX, %struct.FPUStatusFlags, %union.anon, %union.FPU, %struct.SegmentCaches }
 %struct.ArchState = type { i32, i32, %union.anon }
 %union.VectorReg = type { %union.vec512_t }
 %union.vec512_t = type { %struct.uint64v8_t }
 %struct.uint64v8_t = type { [8 x i64] }
 %struct.ArithFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8 }
+%struct.Segments = type { i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector }
+%union.SegmentSelector = type { i16 }
+%struct.AddressSpace = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
 %struct.Reg = type { %union.anon }
 %struct.GPR = type { i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg, i64, %struct.Reg }
-%struct.float32v8_t = type { [8 x float] }
-%struct.int32v8_t = type { [8 x i32] }
-%struct.uint16v16_t = type { [16 x i16] }
-%struct.uint8v32_t = type { [32 x i8] }
-%"class.std::bitset" = type { %struct.uint64v4_t }
-%struct.uint64v4_t = type { [4 x i64] }
-%struct.anon.2 = type { i8, i8 }
+%struct.X87Stack = type { [8 x %struct.anon.3] }
+%struct.anon.3 = type { i64, double }
+%struct.MMX = type { [8 x %struct.anon.4] }
+%struct.anon.4 = type { i64, %union.vec64_t }
+%union.vec64_t = type { %struct.uint64v1_t }
+%struct.uint64v1_t = type { [1 x i64] }
+%struct.FPUStatusFlags = type { i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, i8, [4 x i8] }
+%union.FPU = type { %struct.anon.13 }
+%struct.anon.13 = type { %struct.FpuFXSAVE, [96 x i8] }
+%struct.FpuFXSAVE = type { %union.SegmentSelector, %union.SegmentSelector, %union.FPUAbridgedTagWord, i8, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, %union.FPUControlStatus, %union.FPUControlStatus, [8 x %struct.FPUStackElem], [16 x %union.vec128_t] }
+%union.FPUAbridgedTagWord = type { i8 }
+%union.FPUControlStatus = type { i32 }
+%struct.FPUStackElem = type { %union.anon.11, [6 x i8] }
+%union.anon.11 = type { %struct.float80_t }
+%struct.float80_t = type { [10 x i8] }
 %union.vec128_t = type { %struct.uint128v1_t }
 %struct.uint128v1_t = type { [1 x i128] }
+%struct.SegmentCaches = type { %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow, %struct.SegmentShadow }
+%struct.SegmentShadow = type { %union.anon, i32, i32 }
 %struct.Memory = type { i64 }
+%struct.uint8v32_t = type { [32 x i8] }
+%struct.anon.2 = type { i8, i8 }
+%struct.int32v8_t = type { [8 x i32] }
+%struct.float32v8_t = type { [8 x float] }
+%struct.uint8v8_t = type { [8 x i8] }
+%struct.uint8v16_t = type { [16 x i8] }
+%struct.uint16v8_t = type { [8 x i16] }
+%struct.uint8v4_t = type { [4 x i8] }
+%struct.int16v4_t = type { [4 x i16] }
+%struct.int32v4_t = type { [4 x i32] }
+%struct.uint64v2_t = type { [2 x i64] }
+%struct.uint64v4_t = type { [4 x i64] }
+%struct.uint128v2_t = type { [2 x i128] }
+%struct.uint16v16_t = type { [16 x i16] }
+%struct.float64v4_t = type { [4 x double] }
+%"class.(anonymous namespace)__BitMatrix" = type { %"class.std__bitset", [16 x [16 x i8]] }
+%"class.std__bitset" = type { %struct.uint64v4_t }
+%struct.bcd80_t = type { [9 x %union.FPUAbridgedTagWord], %union.FPUAbridgedTagWord }
+%struct.FpuFSAVE = type { %union.SegmentSelector, i16, %union.SegmentSelector, i16, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, i32, %union.SegmentSelector, i16, [8 x %struct.FPUStackElem] }
+%struct.anon.5 = type { i32, i32 }
 
 define i32 @my.ctpop.i32(i32 %x) {
 entry:
@@ -121,8 +164,15 @@ entry:
   %add91 = add i32 %add88, %and87
   ret i32 %add91
 }
-declare %struct.Memory* @__remill_atomic_begin(%struct.Memory*);
-declare %struct.Memory* @__remill_atomic_end(%struct.Memory*);
+
+define %struct.Memory* @__remill_atomic_begin(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
+define %struct.Memory* @__remill_atomic_end(%struct.Memory*) {
+  ret %struct.Memory* %0
+}
+
 
 define internal %struct.Memory* @_ZN12_GLOBAL__N_1L2ORI3MnWIhE2MnIhE2InIhEEEP6MemoryS8_R5StateT_T0_T1_(%struct.Memory*, %struct.State* nocapture dereferenceable(3376), i64, i64, i64) #0 {
   %6 = inttoptr i64 %3 to i8*
@@ -154,7 +204,7 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L2ORI3MnWIhE2MnIhE2InIhEEEP6Me
   ret %struct.Memory* %0
 }
 
-define %struct.Memory* @routine_orb_m8_imm8(%struct.State* noalias dereferenceable(3376), i64, %struct.Memory* noalias) #19 {
+define %struct.Memory* @routine_orb_m8_imm8(%struct.State*  dereferenceable(3376), i64, %struct.Memory* ) #19 {
 block_530:
   %3 = getelementptr inbounds %struct.State, %struct.State* %0, i32 0, i32 6
   %4 = getelementptr inbounds %struct.GPR, %struct.GPR* %3, i32 0, i32 33
@@ -165,9 +215,9 @@ block_530:
   %8 = getelementptr inbounds %struct.Reg, %struct.Reg* %7, i32 0, i32 0
   %RBP = bitcast %union.anon* %8 to i64*
   %9 = load i64, i64* %RBP
-  %10 = sub i64 %9, 4
+  %10 = sub i64 %9, 32
   %11 = load i64, i64* %RBP
-  %12 = sub i64 %11, 4
+  %12 = sub i64 %11, 32
   %13 = load i64, i64* %PC
   %14 = add i64 %13, 4
   store i64 %14, i64* %PC
@@ -178,7 +228,17 @@ block_530:
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+
+  
+  %memaddr = alloca i8
+  store i8 800, i8* %memaddr
+  %memaddr2int = ptrtoint i8* %memaddr to i64
+  %memaddr2intoff = add i64 32, %memaddr2int 
+
   %mem = alloca %struct.Memory
+  %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
+  store i64 51, i64* %memf0, align 8
+  
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
@@ -188,6 +248,15 @@ entry:
   %addr7 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 13, i32 0, i32 0
   %addr8 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 15, i32 0, i32 0
   %addr9 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 33, i32 0, i32 0
+
+  %cf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 1
+  %pf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 3
+  %af = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 5
+  %zf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 7
+  %sf = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 9
+  %df = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 11
+  %of = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 2, i32 13
+
   store i64 100, i64* %addr1, align 8
   store i64 200, i64* %addr2, align 8
   store i64 300, i64* %addr3, align 8
@@ -195,8 +264,19 @@ entry:
   store i64 500, i64* %addr5, align 8
   store i64 600, i64* %addr6, align 8
   store i64 700, i64* %addr7, align 8
-  store i64 800, i64* %addr8, align 8
+  store i64 %memaddr2intoff, i64* %addr8, align 8
   store i64 900, i64* %addr9, align 8
+
+  store i8 10, i8* %cf, align 1
+  store i8 20, i8* %pf, align 1
+  store i8 30, i8* %af, align 1
+  store i8 40, i8* %zf, align 1
+  store i8 50, i8* %sf, align 1
+  store i8 60, i8* %df, align 1
+  store i8 70, i8* %of, align 1
+
+  
+
   %call = call %struct.Memory* @routine_orb_m8_imm8(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0
 }

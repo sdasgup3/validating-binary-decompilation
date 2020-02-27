@@ -211,6 +211,7 @@ define i32 @main() {
 entry:
   %state = alloca %struct.State
 
+  
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
   store i64 51, i64* %memf0, align 8
@@ -250,6 +251,8 @@ entry:
   store i8 50, i8* %sf, align 1
   store i8 60, i8* %df, align 1
   store i8 70, i8* %of, align 1
+
+  
 
   %call = call %struct.Memory* @routine_xchgw_r16_ax(%struct.State* %state, i64 0, %struct.Memory* %mem)
   ret i32 0

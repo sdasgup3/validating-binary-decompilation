@@ -230,6 +230,7 @@ Exluded | Count |
   But its trvial to verify that mcsema is correct.
 
   - E3: xprove failure: bt instruction has load from a computed address. X86 semantics cucrrently do not support it
+  - E4: mcsema unsupported memory
 
 
 
@@ -671,4 +672,14 @@ memory-variants/btsl_m32_r32
 memory-variants/btsw_m16_r16
 memory-variants/btsq_m64_r64
 memory-variants/btw_m16_r16
+```
+
+#### E4
+```
+memory-variants/movbel_m32_r32/test.mod.ll
+memory-variants/movbel_r32_m32/test.mod.ll
+memory-variants/movbeq_m64_r64/test.mod.ll
+memory-variants/movbeq_r64_m64/test.mod.ll
+memory-variants/movbew_m16_r16/test.mod.ll
+memory-variants/movbew_r16_m16/test.mod.ll
 ```

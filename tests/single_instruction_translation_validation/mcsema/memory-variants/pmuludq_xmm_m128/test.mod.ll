@@ -217,6 +217,8 @@ block_530:
 define i32 @main() {
 entry:
   %state = alloca %struct.State
+
+  
   %memaddr = alloca [2 x i64]
   %memaddr0 = getelementptr inbounds [2 x i64], [2 x i64]* %memaddr, i64 0,  i64 0
   %memaddr1 = getelementptr inbounds [2 x i64], [2 x i64]* %memaddr, i64 0,  i64 1
@@ -224,12 +226,12 @@ entry:
   store i64 1, i64* %memaddr1
 
   %memaddr2int = ptrtoint [2 x i64]* %memaddr to i64  
-  %memaddr2intoff = add i64 32, %memaddr2int  
+  %memaddr2intoff = add i64 32, %memaddr2int
 
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0
   store i64 51, i64* %memf0, align 8
-
+  
   %addr1 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 1, i32 0, i32 0
   %addr2 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 3, i32 0, i32 0
   %addr3 = getelementptr inbounds %struct.State, %struct.State* %state, i64 0, i32 6, i32 5, i32 0, i32 0
