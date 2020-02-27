@@ -84,7 +84,7 @@ if ( $memSize != 0 ) {
       . $memSize . "\n"
       . "  store i"
       . $memSize
-      . " 800, i"
+      . " 80, i"
       . $memSize
       . "* %memaddr" . "\n"
       . "  %memaddr2int = ptrtoint i"

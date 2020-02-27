@@ -211,7 +211,7 @@ entry:
 
   
   %memaddr = alloca i16
-  store i16 800, i16* %memaddr
+  store i16 80, i16* %memaddr
   %memaddr2int = ptrtoint i16* %memaddr to i64
   %memaddr2intoff = add i64 32, %memaddr2int 
 
