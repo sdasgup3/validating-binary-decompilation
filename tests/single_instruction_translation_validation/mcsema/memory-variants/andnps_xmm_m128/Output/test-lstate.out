@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:251:49: error: invalid getelementptr indices
+  %memaddr0 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0, i64 0
+                                                ^
+0.01user 0.01system 0:00.02elapsed 100%CPU (0avgtext+0avgdata 27052maxresident)k
+0inputs+16outputs (0major+3232minor)pagefaults 0swaps

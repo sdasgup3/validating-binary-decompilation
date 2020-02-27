@@ -65,12 +65,12 @@ VX_UNDEF_1 = z3.BitVec('VX_UNDEF_1', 1)
 VX_UNDEF_BOOL = z3.Bool('VX_UNDEF_BOOL')
 
 ## Memeory
-VX_MEM_8 =    z3.BitVec('VX_RAX',8)
-VX_MEM_16 =   z3.BitVec('VX_RAX',16)
-VX_MEM_32 =   z3.BitVec('VX_RAX',32)
-VX_MEM_64 =   z3.BitVec('VX_RAX',64)
-VX_MEM_128 =  z3.BitVec('VX_RAX',128)
-VX_MEM_256 =  z3.BitVec('VX_RAX',256)
+VX_MEM_8 =    z3.BitVec('VX_MEM_8',8)
+VX_MEM_16 =   z3.BitVec('VX_MEM_16',16)
+VX_MEM_32 =   z3.BitVec('VX_MEM_32',32)
+VX_MEM_64 =   z3.BitVec('VX_MEM_64',64)
+VX_MEM_128 =  z3.BitVec('VX_MEM_128',128)
+VX_MEM_256 =  z3.BitVec('VX_MEM_256',256)
 
 ##############################
 ## X86 specific variables ####
@@ -104,12 +104,14 @@ VL_YMM2_2 = z3.BitVec('VL_YMM2_2', 64)
 VL_YMM2_3 = z3.BitVec('VL_YMM2_3', 64)
 
 ## Memeory
-VL_MEM_8 =    z3.BitVec('VL_RAX',8)
-VL_MEM_16 =   z3.BitVec('VL_RAX',16)
-VL_MEM_32 =   z3.BitVec('VL_RAX',32)
-VL_MEM_64 =   z3.BitVec('VL_RAX',64)
-VL_MEM_128 =  z3.BitVec('VL_RAX',128)
-VL_MEM_256 =  z3.BitVec('VL_RAX',256)
+VL_MEM_8 =    z3.BitVec('VL_MEM_8',8)
+VL_MEM_16 =   z3.BitVec('VL_MEM_16',16)
+VL_MEM_32 =   z3.BitVec('VL_MEM_32',32)
+VL_MEM_64 =   z3.BitVec('VL_MEM_64',64)
+VL_MEM_64_0 =   z3.BitVec('VL_MEM_64_0',64)
+VL_MEM_64_1 =   z3.BitVec('VL_MEM_64_1',64)
+VL_MEM_128 =  z3.BitVec('VL_MEM_128',128)
+VL_MEM_256 =  z3.BitVec('VL_MEM_256',256)
 
 ##############################
 ## Proof variables ###########
@@ -166,4 +168,5 @@ s.add(VX_MEM_32 == VL_MEM_32)
 s.add(VX_MEM_64 == VL_MEM_64)
 s.add(VX_MEM_128 == VL_MEM_128)
 s.add(VX_MEM_256 == VL_MEM_256)
-
+s.add(VX_MEM_128 == z3.Concat(VL_MEM_64_1, VL_MEM_64_0))
+  
