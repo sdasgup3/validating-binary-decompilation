@@ -36,7 +36,7 @@ declutter: test.ll
 
 kli: test.mod.ll
 	mkdir -p ${OUTDIR}
-	time ${HOME}/Github/llvm-verified-backend/scripts/kli $< 1> Output/test-lstate.out 2>&1
+	time ${HOME}/Github/llvm-verified-backend-mem/scripts/kli $< 1> Output/test-lstate.out 2>&1
 	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --kli
 
 genlspec: Output/test-lstate.out
@@ -45,7 +45,7 @@ genlspec: Output/test-lstate.out
 lprove: test-lspec.k
 	mkdir -p ${OUTDIR}
 	@echo "KProve LLVM program"
-	time kprove $< --directory ${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude ${HOME}/Github/llvm-verified-backend/scripts/prelude.smt2 ${KPROVE_OPTS}  ${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
+	time kprove $< --directory ${HOME}/Github/llvm-verified-backend-mem/kompiled-defs/llvm/ --smt_prelude ${HOME}/Github/llvm-verified-backend-mem/scripts/prelude.smt2 ${KPROVE_OPTS}  ${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
 	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --lprove
 
 ##
