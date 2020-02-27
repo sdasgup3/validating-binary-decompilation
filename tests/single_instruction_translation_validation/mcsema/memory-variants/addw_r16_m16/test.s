@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    addw -16(%rbp), %bx
+    addw -32(%rbp), %bx
     
     
     ret

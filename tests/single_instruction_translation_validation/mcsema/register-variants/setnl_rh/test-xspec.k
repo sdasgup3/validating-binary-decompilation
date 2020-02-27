@@ -33,6 +33,9 @@ module TEST-XSPEC
         "PF" |->  (mi(1,  VX_PF:Int):MInt  => mi(1,  _:Int))
         "SF" |->  (mi(1,  VX_SF:Int):MInt  => mi(1,  _:Int))
         "ZF" |->  (mi(1,  VX_ZF:Int):MInt  => mi(1,  _:Int))
+        // Ymms
+        "YMM1" |->  (mi(256,  VX_YMM1:Int):MInt  => mi(256,  _:Int))
+        "YMM2" |->  (mi(256,  VX_YMM2:Int):MInt  => mi(256,  _:Int))
          // Main Claim
       </regstate>
 

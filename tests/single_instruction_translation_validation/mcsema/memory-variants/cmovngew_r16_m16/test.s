@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmovngew -16(%rbp), %bx
+    cmovngew -32(%rbp), %bx
     
     
     ret

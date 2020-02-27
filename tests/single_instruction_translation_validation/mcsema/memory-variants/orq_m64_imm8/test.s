@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    orq $0xa, -16(%rbp)
+    orq $0xa, -32(%rbp)
     
     
     ret

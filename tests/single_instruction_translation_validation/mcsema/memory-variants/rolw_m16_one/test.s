@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    rolw $0x1, -16(%rbp)
+    rolw $0x1, -32(%rbp)
     
     
     ret

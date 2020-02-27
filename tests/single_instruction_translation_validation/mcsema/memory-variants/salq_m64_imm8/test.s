@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    salq $0xa, -16(%rbp)
+    salq $0xa, -32(%rbp)
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    movl $0xa, -16(%rbp)
+    movl $0xa, -32(%rbp)
     
     
     ret

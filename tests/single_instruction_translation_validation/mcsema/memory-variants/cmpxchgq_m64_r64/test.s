@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    cmpxchgq %rcx, -16(%rbp)
+    cmpxchgq %rcx, -32(%rbp)
     
     
     ret

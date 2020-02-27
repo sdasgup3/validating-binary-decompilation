@@ -52,14 +52,16 @@ module TEST-XSPEC
             <objects>  
                mem( 
                     // allocated memory
-                    symloc ( 1 , 128 , 1040 , 8 , 1000 ) |-> (byte ( 0 ,  mi(64, VX_MEM_64)) => _) // -16(%ebp)
-                    symloc ( 1 , 128 , 1040 , 8 , 1001 ) |-> (byte ( 1 ,  mi(64, VX_MEM_64)) => _)
-                    symloc ( 1 , 128 , 1040 , 8 , 1002 ) |-> (byte ( 2 ,  mi(64, VX_MEM_64)) => _)
-                    symloc ( 1 , 128 , 1040 , 8 , 1003 ) |-> (byte ( 3 ,  mi(64, VX_MEM_64)) => _)
-                    symloc ( 1 , 128 , 1040 , 8 , 1004 ) |-> (byte ( 4 ,  mi(64, VX_MEM_64)) => _) // -12(%ebp)
-                    symloc ( 1 , 128 , 1040 , 8 , 1005 ) |-> (byte ( 5 ,  mi(64, VX_MEM_64)) => _)
-                    symloc ( 1 , 128 , 1040 , 8 , 1006 ) |-> (byte ( 6 ,  mi(64, VX_MEM_64)) => _)
-                    symloc ( 1 , 128 , 1040 , 8 , 1007 ) |-> (byte ( 7 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1000 ) |-> (byte ( 0 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1001 ) |-> (byte ( 1 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1002 ) |-> (byte ( 2 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1003 ) |-> (byte ( 3 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1004 ) |-> (byte ( 4 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1005 ) |-> (byte ( 5 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1006 ) |-> (byte ( 6 ,  mi(64, VX_MEM_64)) => _)
+symloc ( 1 , 128 , 1040 , 8 , 1007 ) |-> (byte ( 7 ,  mi(64, VX_MEM_64)) => _)
+
+
 
                     // return address
                     symloc ( 1 , 128 , 1040 , 8 , 1032 ) |-> byte ( 0 , mi(64,-1) )

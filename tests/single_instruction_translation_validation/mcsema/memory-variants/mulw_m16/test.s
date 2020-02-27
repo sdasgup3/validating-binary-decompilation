@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    mulw -16(%rbp)
+    mulw -32(%rbp)
     
     
     ret

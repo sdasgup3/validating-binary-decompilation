@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    decb -16(%rbp)
+    decb -32(%rbp)
     
     
     ret

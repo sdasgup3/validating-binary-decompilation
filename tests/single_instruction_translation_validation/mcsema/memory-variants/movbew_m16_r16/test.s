@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    movbew %cx, -16(%rbp)
+    movbew %cx, -32(%rbp)
     
     
     ret

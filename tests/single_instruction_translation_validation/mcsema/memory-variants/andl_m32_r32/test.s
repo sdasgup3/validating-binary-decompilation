@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    andl %ecx, -16(%rbp)
+    andl %ecx, -32(%rbp)
     
     
     ret

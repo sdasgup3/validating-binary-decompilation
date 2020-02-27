@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    orb -16(%rbp), %ah
+    orb -32(%rbp), %ah
     
     
     ret

@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    btcw $0xa, -16(%rbp)
+    btcw $0xa, -32(%rbp)
     
     
     ret

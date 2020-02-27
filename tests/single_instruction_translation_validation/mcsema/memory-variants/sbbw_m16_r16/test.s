@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    sbbw %cx, -16(%rbp)
+    sbbw %cx, -32(%rbp)
     
     
     ret

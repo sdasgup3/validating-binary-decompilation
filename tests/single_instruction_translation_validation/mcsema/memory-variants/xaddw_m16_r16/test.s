@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    xaddw %cx, -16(%rbp)
+    xaddw %cx, -32(%rbp)
     
     
     ret

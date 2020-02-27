@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    addb $0xa, -16(%rbp)
+    addb $0xa, -32(%rbp)
     
     
     ret

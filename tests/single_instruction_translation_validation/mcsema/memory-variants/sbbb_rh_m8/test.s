@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    sbbb -16(%rbp), %ah
+    sbbb -32(%rbp), %ah
     
     
     ret

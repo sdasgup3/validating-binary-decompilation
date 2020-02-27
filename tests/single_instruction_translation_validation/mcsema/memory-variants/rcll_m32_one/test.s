@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    rcll $0x1, -16(%rbp)
+    rcll $0x1, -32(%rbp)
     
     
     ret

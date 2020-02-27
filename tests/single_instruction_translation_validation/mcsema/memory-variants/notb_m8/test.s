@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    notb -16(%rbp)
+    notb -32(%rbp)
     
     
     ret

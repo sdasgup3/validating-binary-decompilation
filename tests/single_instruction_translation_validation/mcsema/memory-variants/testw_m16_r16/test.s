@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    testw %cx, -16(%rbp)
+    testw %cx, -32(%rbp)
     
     
     ret

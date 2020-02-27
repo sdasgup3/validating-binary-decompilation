@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    testb %cl, -16(%rbp)
+    testb %cl, -32(%rbp)
     
     
     ret

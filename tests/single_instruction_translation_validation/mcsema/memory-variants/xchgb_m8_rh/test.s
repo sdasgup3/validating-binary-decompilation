@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    xchgb %ah, -16(%rbp)
+    xchgb %ah, -32(%rbp)
     
     
     ret

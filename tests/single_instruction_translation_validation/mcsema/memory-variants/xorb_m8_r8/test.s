@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    xorb %cl, -16(%rbp)
+    xorb %cl, -32(%rbp)
     
     
     ret

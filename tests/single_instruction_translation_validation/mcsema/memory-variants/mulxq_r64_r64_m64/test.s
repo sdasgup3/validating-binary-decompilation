@@ -4,7 +4,7 @@ _start:
 LFB0:
     
     
-    mulxq -16(%rbp), %rcx, %rbx
+    mulxq -32(%rbp), %rcx, %rbx
     
     
     ret
