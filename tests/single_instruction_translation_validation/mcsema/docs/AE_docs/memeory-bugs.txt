@@ -1,0 +1,12 @@
+andnps_xmm_m128
+pandn_xmm_m128
+pmuludq_xmm_m128
+andnq_r64_r64_m64
+vandnpd_xmm_xmm_m128
+vandnpd_ymm_ymm_m256
+vandnps_xmm_xmm_m128
+vandnps_ymm_ymm_m256
+vpandn_xmm_xmm_m128
+vpandn_ymm_ymm_m256
+andnl_r32_r32_m32
+andnpd_xmm_m128
