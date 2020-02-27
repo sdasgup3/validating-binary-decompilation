@@ -155,6 +155,11 @@ vmovdqu_ymm_ymm
   ```
   - Implement rolHelper
   ```
+memory-variants/rolb_m8_cl
+memory-variants/roll_m32_cl
+memory-variants/rolq_m64_cl
+memory-variants/rolw_m16_cl
+
   rclb_r8_cl
 rclb_rh_cl
 rcll_r32_cl
@@ -223,6 +228,8 @@ Exluded | Count |
 
   - E2: vzeroupper requierd providing all the YMM mem specification; which makes the krpove run deadly slow.
   But its trvial to verify that mcsema is correct.
+
+  - E3: xprove failure: bt instruction has load from a computed address. X86 semantics cucrrently do not support it
 
 
 
@@ -648,4 +655,20 @@ cmpxchgb_r8_rh
 cmpxchgw_r16_r16
 xaddb_r8_r8
 xaddb_rh_r8
+```
+
+#### E3
+```
+memory-variants/btcl_m32_r32
+memory-variants/btcq_m64_r64
+memory-variants/btl_m32_r32
+memory-variants/btcw_m16_r16
+memory-variants/btq_m64_r64
+memory-variants/btrl_m32_r32
+memory-variants/btrq_m64_r64
+memory-variants/btrw_m16_r16
+memory-variants/btsl_m32_r32
+memory-variants/btsw_m16_r16
+memory-variants/btsq_m64_r64
+memory-variants/btw_m16_r16
 ```
