@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:185:30: error: use of undefined value '@__remill_compare_exchange_memory_8'
+  %11 = call %struct.Memory* @__remill_compare_exchange_memory_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %6, i8 zeroext %7) #24
+                             ^
+0.01user 0.02system 0:00.04elapsed 97%CPU (0avgtext+0avgdata 27280maxresident)k
+0inputs+16outputs (0major+3230minor)pagefaults 0swaps

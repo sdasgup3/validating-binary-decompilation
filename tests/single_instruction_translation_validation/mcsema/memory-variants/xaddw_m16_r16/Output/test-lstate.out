@@ -1,0 +1,5 @@
+/home/ubuntu/Install/llvm/llvm.4.0.0.install//bin/opt: test.mod.ll:183:30: error: use of undefined value '@__remill_fetch_and_add_16'
+  %10 = call %struct.Memory* @__remill_fetch_and_add_16(%struct.Memory* %0, i64 %2, i16* nonnull dereferenceable(2) %7) #24
+                             ^
+0.01user 0.01system 0:00.03elapsed 106%CPU (0avgtext+0avgdata 27564maxresident)k
+0inputs+16outputs (0major+3246minor)pagefaults 0swaps

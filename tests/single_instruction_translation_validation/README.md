@@ -31,9 +31,17 @@
 
   cd Github
   git clone git@github.com:sdasgup3/llvm-verified-backend.git
+  git clone git@github.com:sdasgup3/llvm-verified-backend.git llvm-verified-backend-mem
+
   cd llvm-verified-backend
   # git checkout working // Takes insane time for krove run
   git checkout single-instruction-val
+
+  ./scripts/kompile-all.sh --llvm
+  ./scripts/build-parser.sh
+
+  cd llvm-verified-backend-mem
+  git checkout single-instruction-val-mem
 
   ./scripts/kompile-all.sh --llvm
   ./scripts/build-parser.sh

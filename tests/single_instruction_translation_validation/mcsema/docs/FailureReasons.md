@@ -231,6 +231,11 @@ Exluded | Count |
 
   - E3: xprove failure: bt instruction has load from a computed address. X86 semantics cucrrently do not support it
   - E4: mcsema unsupported memory
+  - E5: Kli failed: unsupported instrinsics
+  ```
+  %11 = call %struct.Memory* @__remill_compare_exchange_memory_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %6, i8 zeroext %7) #24
+  %9 = call %struct.Memory* @__remill_fetch_and_add_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %7) #24
+  ```
 
 
 
@@ -682,4 +687,18 @@ memory-variants/movbeq_m64_r64/test.mod.ll
 memory-variants/movbeq_r64_m64/test.mod.ll
 memory-variants/movbew_m16_r16/test.mod.ll
 memory-variants/movbew_r16_m16/test.mod.ll
+```
+
+#### E5
+```
+memory-variants/cmpxchgb_m8_r8:cmpxchgb_m8_r8
+memory-variants/cmpxchgb_m8_rh:cmpxchgb_m8_rh
+memory-variants/cmpxchgl_m32_r32:cmpxchgl_m32_r32
+memory-variants/cmpxchgq_m64_r64:cmpxchgq_m64_r64
+memory-variants/cmpxchgw_m16_r16:cmpxchgw_m16_r16
+memory-variants/xaddb_m8_r8:xaddb_m8_r8
+memory-variants/xaddb_m8_rh:xaddb_m8_rh
+memory-variants/xaddl_m32_r32:xaddl_m32_r32
+memory-variants/xaddq_m64_r64:xaddq_m64_r64
+memory-variants/xaddw_m16_r16:xaddw_m16_r16
 ```
