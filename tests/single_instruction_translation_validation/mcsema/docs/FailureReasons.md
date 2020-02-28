@@ -237,6 +237,7 @@ Exluded | Count |
   %9 = call %struct.Memory* @__remill_fetch_and_add_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %7) #24
   ```
   - E6: Problem with infromBytes
+  - E7: Problem of LLVM semantics with pointer arithmatic followed by load
 
 
 
@@ -708,4 +709,27 @@ memory-variants/xaddw_m16_r16:xaddw_m16_r16
 ```
 memory-variants/adcb_m8_rh:adcb_m8_rh
 memory-variants/adcb_rh_m8:adcb_rh_m8
+```
+
+#### E7: Changing Src test.ll
+```
+memory-variants/andnps_xmm_m128
+
+@@ -185,13 +185,13 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5PANDNI3VnWI8vec128_tE2VnIS2_
+   %13 = trunc i64 %12 to i32
+   %14 = inttoptr i64 %4 to i32*
+   %15 = load i32, i32* %14
+-  %16 = add i64 %4, 4
++  %16 = add i64 %4, 32
+   %17 = inttoptr i64 %16 to i32*
+   %18 = load i32, i32* %17
+-  %19 = add i64 %4, 8
++  %19 = add i64 %4, 64
+   %20 = inttoptr i64 %19 to i32*
+   %21 = load i32, i32* %20
+-  %22 = add i64 %4, 12
++  %22 = add i64 %4, 96
+
+
+memory-variants/pandn_xmm_m128
 ```

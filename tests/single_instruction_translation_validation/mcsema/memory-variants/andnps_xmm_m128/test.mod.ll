@@ -185,13 +185,13 @@ define internal %struct.Memory* @_ZN12_GLOBAL__N_1L5PANDNI3VnWI8vec128_tE2VnIS2_
   %13 = trunc i64 %12 to i32
   %14 = inttoptr i64 %4 to i32*
   %15 = load i32, i32* %14
-  %16 = add i64 %4, 4
+  %16 = add i64 %4, 32
   %17 = inttoptr i64 %16 to i32*
   %18 = load i32, i32* %17
-  %19 = add i64 %4, 8
+  %19 = add i64 %4, 64
   %20 = inttoptr i64 %19 to i32*
   %21 = load i32, i32* %20
-  %22 = add i64 %4, 12
+  %22 = add i64 %4, 96
   %23 = inttoptr i64 %22 to i32*
   %24 = load i32, i32* %23
   %25 = xor i32 %15, -1
@@ -246,19 +246,20 @@ block_530:
 define i32 @main() {
 entry:
   %state = alloca %struct.State
-  ;%memaddr = alloca i128
+
+  
   %memaddr = alloca [4 x i32]
-  %memaddr0 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0, i64 0
-  %memaddr1 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0, i64 1
-  %memaddr2 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0, i64 2
-  %memaddr3 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0, i64 3
+  %memaddr0 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0
+  %memaddr1 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 1
+  %memaddr2 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 2
+  %memaddr3 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 3
   store i32 1, i32* %memaddr0
   store i32 1, i32* %memaddr1
   store i32 1, i32* %memaddr2
   store i32 1, i32* %memaddr3
 
-  %memaddr2int = ptrtoint [4 x i32]* %memaddr to i64  
-  %memaddr2intoff = add i64 32, %memaddr2int  
+  %memaddr2int = ptrtoint i32* %memaddr0 to i64
+  %memaddr2intoff = add i64 32, %memaddr2int
 
   %mem = alloca %struct.Memory
   %memf0 = getelementptr inbounds %struct.Memory, %struct.Memory* %mem, i32 0, i32 0

@@ -95,6 +95,12 @@ if ( $memSize != 0 ) {
     if($opcode eq "pmuludq_xmm_m128") {
       $memAccessCode = pmuludq_xmm_m128();
     }
+    if($opcode eq "pandn_xmm_m128") {
+      $memAccessCode = pandn_xmm_m128();
+    }
+    if($opcode eq "andnps_xmm_m128") {
+      $memAccessCode = pandn_xmm_m128();
+    }
 
     $valueOrAddress = "%memaddr2intoff";
 }
@@ -803,6 +809,42 @@ sub pmuludq_xmm_m128 {
   store i64 1, i64* %memaddr1
 
   %memaddr2int = ptrtoint [2 x i64]* %memaddr to i64  
+  %memaddr2intoff = add i64 32, %memaddr2int
+);
+    return $structLayout;
+}
+
+sub andnps_xmm_m128 {
+    my $structLayout = qq(
+  %memaddr = alloca [4 x i32]
+  %memaddr0 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0
+  %memaddr1 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 1
+  %memaddr2 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 2
+  %memaddr3 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 3
+  store i32 1, i32* %memaddr0
+  store i32 1, i32* %memaddr1
+  store i32 1, i32* %memaddr2
+  store i32 1, i32* %memaddr3
+
+  %memaddr2int = ptrtoint i32* %memaddr0 to i64
+  %memaddr2intoff = add i64 32, %memaddr2int
+);
+    return $structLayout;
+}
+
+sub pandn_xmm_m128 {
+    my $structLayout = qq(
+  %memaddr = alloca [4 x i32]
+  %memaddr0 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 0
+  %memaddr1 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 1
+  %memaddr2 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 2
+  %memaddr3 = getelementptr inbounds [4 x i32], [4 x i32]* %memaddr, i64 0,  i64 3
+  store i32 1, i32* %memaddr0
+  store i32 1, i32* %memaddr1
+  store i32 1, i32* %memaddr2
+  store i32 1, i32* %memaddr3
+
+  %memaddr2int = ptrtoint i32* %memaddr0 to i64
   %memaddr2intoff = add i64 32, %memaddr2int
 );
     return $structLayout;

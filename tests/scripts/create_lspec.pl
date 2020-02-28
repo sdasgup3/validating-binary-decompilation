@@ -61,12 +61,30 @@ if ( $opc =~ m/_m(\d+)/ ) {
 my $memVals        = "";
 my $settingAddress = "";
 if ( $memSize != 0 ) {
+
+    # Find the symloc
+    my $symlocSubExpr = "";
+    for my $line (@lines) {
+        chomp $line;
+
+        if ( $line =~
+            m/(symloc\s*\(\s*5\s*,\s*\d+\s*,\s*\d+\s*,\s*\d+\s*),\s*\d+\s*\)/ )
+        {
+            $symlocSubExpr = $1;
+        }
+    }
+
+    if ( $symlocSubExpr eq "" ) {
+        exit(1);
+    }
+
     for ( my $i = 0 ; $i < $memSize / 8 ; $i++ ) {
         $memVals =
             $memVals
-          . "      symloc ( 5 , 64 , 8 , 8 , "
-          . $i
-          . " ) |-> ( byte ( "
+          . "      "
+          . $symlocSubExpr . ", "
+          . $i . " )"
+          . " |-> ( byte ( "
           . $i
           . " , 8 , "
           . "VL_MEM_"
@@ -75,29 +93,37 @@ if ( $memSize != 0 ) {
         $memVals = $memVals . "\n";
     }
 
-    if($opc eq "pmuludq_xmm_m128") {
-      $memVals = pmuludq_xmm_m128();
+    if ( $opc eq "pmuludq_xmm_m128" ) {
+        $memVals = pmuludq_xmm_m128();
     }
 
+    if ( ( $opc eq "andnps_xmm_m128" ) or ( $opc eq "pandn_xmm_m128" ) ) {
+        $memVals = andnps_xmm_m128();
+    }
+
+    my $symlocExpr = $symlocSubExpr . ", 0 )";
     $settingAddress = qq(
-      symloc ( 4 , 64 , 6144 , 8 , 4472 ) |-> byte ( 0 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4473 ) |-> byte ( 1 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4474 ) |-> byte ( 2 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4475 ) |-> byte ( 3 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4476 ) |-> byte ( 4 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> byte ( 5 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> byte ( 6 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> byte ( 7 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4472 ) |-> byte ( 0 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4473 ) |-> byte ( 1 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4474 ) |-> byte ( 2 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4475 ) |-> byte ( 3 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4476 ) |-> byte ( 4 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> byte ( 5 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> byte ( 6 , 8 , ptr ( $symlocExpr , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> byte ( 7 , 8 , ptr ( $symlocExpr , 32 ) )
     );
 }
 ############
-
+my $isXMM     = 0;
+my $isXMM2Req = 0;
 if ( $opc =~ m/xmm|ymm/ ) {
-    print $lfp getLSpecTemplate(1);
+    $isXMM = 1;
 }
-else {
-    print $lfp getLSpecTemplate(0);
+
+if ( $opc =~ m/xmm2|ymm2/ ) {
+    $isXMM2Req = 1;
 }
+print $lfp getLSpecTemplate( $isXMM, $isXMM2Req );
 
 close $lfp;
 
@@ -130,7 +156,88 @@ sub extractLStateInfo {
 }
 
 sub getLSpecTemplate {
-    my $isXMM = shift @_;
+    my $isXMM     = shift @_;
+    my $isXMM2Req = shift @_;
+
+    my $XMM2Code = "";
+
+    if ($isXMM2Req) {
+        $XMM2Code = qq(
+      // YMM2
+      symloc ( 4 , 64 , 6144 , 8 , 2176 ) |->  ( byte ( 0 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2177 ) |->  ( byte ( 1 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2178 ) |->  ( byte ( 2 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2179 ) |->  ( byte ( 3 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2180 ) |->  ( byte ( 4 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2181 ) |->  ( byte ( 5 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2182 ) |->  ( byte ( 6 , 8 , VL_YMM2_0:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2183 ) |->  ( byte ( 7 , 8 , VL_YMM2_0:Int ) => _)
+
+      symloc ( 4 , 64 , 6144 , 8 , 2184 ) |->  ( byte ( 0 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2185 ) |->  ( byte ( 1 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2186 ) |->  ( byte ( 2 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2187 ) |->  ( byte ( 3 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2188 ) |->  ( byte ( 4 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2189 ) |->  ( byte ( 5 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2190 ) |->  ( byte ( 6 , 8 , VL_YMM2_1:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2191 ) |->  ( byte ( 7 , 8 , VL_YMM2_1:Int ) => _)
+
+      symloc ( 4 , 64 , 6144 , 8 , 2192 ) |->  ( byte ( 0 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2193 ) |->  ( byte ( 1 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2194 ) |->  ( byte ( 2 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2195 ) |->  ( byte ( 3 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2196 ) |->  ( byte ( 4 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2197 ) |->  ( byte ( 5 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2198 ) |->  ( byte ( 6 , 8 , VL_YMM2_2:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2199 ) |->  ( byte ( 7 , 8 , VL_YMM2_2:Int ) => _)
+
+      symloc ( 4 , 64 , 6144 , 8 , 2200 ) |->  ( byte ( 0 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2201 ) |->  ( byte ( 1 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2202 ) |->  ( byte ( 2 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2203 ) |->  ( byte ( 3 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2204 ) |->  ( byte ( 4 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2205 ) |->  ( byte ( 5 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2206 ) |->  ( byte ( 6 , 8 , VL_YMM2_3:Int ) => _)
+      symloc ( 4 , 64 , 6144 , 8 , 2207 ) |->  ( byte ( 7 , 8 , VL_YMM2_3:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2208 ) |->  ( byte ( 0 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2209 ) |->  ( byte ( 1 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2210 ) |->  ( byte ( 2 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2211 ) |->  ( byte ( 3 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2212 ) |->  ( byte ( 4 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2213 ) |->  ( byte ( 5 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2214 ) |->  ( byte ( 6 , 8 , VL_YMM2_4:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2215 ) |->  ( byte ( 7 , 8 , VL_YMM2_4:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2216 ) |->  ( byte ( 0 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2217 ) |->  ( byte ( 1 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2218 ) |->  ( byte ( 2 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2219 ) |->  ( byte ( 3 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2220 ) |->  ( byte ( 4 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2221 ) |->  ( byte ( 5 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2222 ) |->  ( byte ( 6 , 8 , VL_YMM2_5:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2223 ) |->  ( byte ( 7 , 8 , VL_YMM2_5:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2224 ) |->  ( byte ( 0 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2225 ) |->  ( byte ( 1 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2226 ) |->  ( byte ( 2 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2227 ) |->  ( byte ( 3 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2228 ) |->  ( byte ( 4 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2229 ) |->  ( byte ( 5 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2230 ) |->  ( byte ( 6 , 8 , VL_YMM2_6:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2231 ) |->  ( byte ( 7 , 8 , VL_YMM2_6:Int ) => _)
+
+      // symloc ( 4 , 64 , 6144 , 8 , 2232 ) |->  ( byte ( 0 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2233 ) |->  ( byte ( 1 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2234 ) |->  ( byte ( 2 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2235 ) |->  ( byte ( 3 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2236 ) |->  ( byte ( 4 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2237 ) |->  ( byte ( 5 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2238 ) |->  ( byte ( 6 , 8 , VL_YMM2_7:Int ) => _)
+      // symloc ( 4 , 64 , 6144 , 8 , 2239 ) |->  ( byte ( 7 , 8 , VL_YMM2_7:Int ) => _)
+
+    );
+    }
 
     my $globals    = join "", @globals;
     my $functions  = join "", @functions;
@@ -213,78 +320,7 @@ sub getLSpecTemplate {
       // symloc ( 4 , 64 , 6144 , 8 , 2174 ) |->  ( byte ( 6 , 8 , VL_YMM1_7:Int ) => _)
       // symloc ( 4 , 64 , 6144 , 8 , 2175 ) |->  ( byte ( 7 , 8 , VL_YMM1_7:Int ) => _)
 
-      // YMM2
-      symloc ( 4 , 64 , 6144 , 8 , 2176 ) |->  ( byte ( 0 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2177 ) |->  ( byte ( 1 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2178 ) |->  ( byte ( 2 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2179 ) |->  ( byte ( 3 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2180 ) |->  ( byte ( 4 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2181 ) |->  ( byte ( 5 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2182 ) |->  ( byte ( 6 , 8 , VL_YMM2_0:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2183 ) |->  ( byte ( 7 , 8 , VL_YMM2_0:Int ) => _)
-
-      symloc ( 4 , 64 , 6144 , 8 , 2184 ) |->  ( byte ( 0 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2185 ) |->  ( byte ( 1 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2186 ) |->  ( byte ( 2 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2187 ) |->  ( byte ( 3 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2188 ) |->  ( byte ( 4 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2189 ) |->  ( byte ( 5 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2190 ) |->  ( byte ( 6 , 8 , VL_YMM2_1:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2191 ) |->  ( byte ( 7 , 8 , VL_YMM2_1:Int ) => _)
-
-      symloc ( 4 , 64 , 6144 , 8 , 2192 ) |->  ( byte ( 0 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2193 ) |->  ( byte ( 1 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2194 ) |->  ( byte ( 2 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2195 ) |->  ( byte ( 3 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2196 ) |->  ( byte ( 4 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2197 ) |->  ( byte ( 5 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2198 ) |->  ( byte ( 6 , 8 , VL_YMM2_2:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2199 ) |->  ( byte ( 7 , 8 , VL_YMM2_2:Int ) => _)
-
-      symloc ( 4 , 64 , 6144 , 8 , 2200 ) |->  ( byte ( 0 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2201 ) |->  ( byte ( 1 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2202 ) |->  ( byte ( 2 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2203 ) |->  ( byte ( 3 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2204 ) |->  ( byte ( 4 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2205 ) |->  ( byte ( 5 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2206 ) |->  ( byte ( 6 , 8 , VL_YMM2_3:Int ) => _)
-      symloc ( 4 , 64 , 6144 , 8 , 2207 ) |->  ( byte ( 7 , 8 , VL_YMM2_3:Int ) => _)
-
-      // symloc ( 4 , 64 , 6144 , 8 , 2208 ) |->  ( byte ( 0 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2209 ) |->  ( byte ( 1 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2210 ) |->  ( byte ( 2 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2211 ) |->  ( byte ( 3 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2212 ) |->  ( byte ( 4 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2213 ) |->  ( byte ( 5 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2214 ) |->  ( byte ( 6 , 8 , VL_YMM2_4:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2215 ) |->  ( byte ( 7 , 8 , VL_YMM2_4:Int ) => _)
-
-      // symloc ( 4 , 64 , 6144 , 8 , 2216 ) |->  ( byte ( 0 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2217 ) |->  ( byte ( 1 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2218 ) |->  ( byte ( 2 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2219 ) |->  ( byte ( 3 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2220 ) |->  ( byte ( 4 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2221 ) |->  ( byte ( 5 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2222 ) |->  ( byte ( 6 , 8 , VL_YMM2_5:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2223 ) |->  ( byte ( 7 , 8 , VL_YMM2_5:Int ) => _)
-
-      // symloc ( 4 , 64 , 6144 , 8 , 2224 ) |->  ( byte ( 0 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2225 ) |->  ( byte ( 1 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2226 ) |->  ( byte ( 2 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2227 ) |->  ( byte ( 3 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2228 ) |->  ( byte ( 4 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2229 ) |->  ( byte ( 5 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2230 ) |->  ( byte ( 6 , 8 , VL_YMM2_6:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2231 ) |->  ( byte ( 7 , 8 , VL_YMM2_6:Int ) => _)
-
-      // symloc ( 4 , 64 , 6144 , 8 , 2232 ) |->  ( byte ( 0 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2233 ) |->  ( byte ( 1 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2234 ) |->  ( byte ( 2 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2235 ) |->  ( byte ( 3 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2236 ) |->  ( byte ( 4 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2237 ) |->  ( byte ( 5 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2238 ) |->  ( byte ( 6 , 8 , VL_YMM2_7:Int ) => _)
-      // symloc ( 4 , 64 , 6144 , 8 , 2239 ) |->  ( byte ( 7 , 8 , VL_YMM2_7:Int ) => _)
+      $XMM2Code
 );
 
         $XMMPreConds = qq(
@@ -485,5 +521,27 @@ sub pmuludq_xmm_m128 {
       symloc ( 5 , 64 , 16 , 8 , 13 ) |-> ( byte ( 5 , 8 , VL_MEM_64_1:Int ) => _) 
       symloc ( 5 , 64 , 16 , 8 , 14 ) |-> ( byte ( 6 , 8 , VL_MEM_64_1:Int ) => _) 
       symloc ( 5 , 64 , 16 , 8 , 15 ) |-> ( byte ( 7 , 8 , VL_MEM_64_1:Int ) => _) );
+    return $structLayout;
+}
+
+sub andnps_xmm_m128 {
+    my $structLayout = qq(
+      symloc ( 5 , 32 , 16 , 8 , 0 ) |-> ( byte ( 0 , 4 , VL_MEM_32_0:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 1 ) |-> ( byte ( 1 , 4 , VL_MEM_32_0:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 2 ) |-> ( byte ( 2 , 4 , VL_MEM_32_0:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 3 ) |-> ( byte ( 3 , 4 , VL_MEM_32_0:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 4 ) |-> ( byte ( 0 , 4 , VL_MEM_32_1:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 5 ) |-> ( byte ( 1 , 4 , VL_MEM_32_1:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 6 ) |-> ( byte ( 2 , 4 , VL_MEM_32_1:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 7 ) |-> ( byte ( 3 , 4 , VL_MEM_32_1:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 8 ) |-> ( byte ( 0 , 4 , VL_MEM_32_2:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 9 ) |-> ( byte ( 1 , 4 , VL_MEM_32_2:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 10 ) |-> ( byte ( 2 , 4 , VL_MEM_32_2:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 11 ) |-> ( byte ( 3 , 4 , VL_MEM_32_2:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 12 ) |-> ( byte ( 0 , 4 , VL_MEM_32_3:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 13 ) |-> ( byte ( 1 , 4 , VL_MEM_32_3:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 14 ) |-> ( byte ( 2 , 4 , VL_MEM_32_3:Int ) => _)
+      symloc ( 5 , 32 , 16 , 8 , 15 ) |-> ( byte ( 3 , 4 , VL_MEM_32_3:Int ) => _)
+      );
     return $structLayout;
 }
