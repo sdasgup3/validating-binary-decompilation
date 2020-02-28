@@ -24,9 +24,11 @@ use utils;
 my $help     = "";
 my $seedfile = "";
 my $opc = "";
+my $memory = "";
 
 GetOptions(
     "help"   => \$help,
+    "memory"   => \$memory,
     "seed:s" => \$seedfile,
     "opc:s" => \$opc,
 ) or die("Error in command line arguments\n");
@@ -88,6 +90,38 @@ sub getCFileTemplate {
 }
 
 sub getMakeFileTemplate {
+  my $LLTargets = qq(
+kli: test.mod.ll
+	mkdir -p \${OUTDIR}
+	time \${HOME}/Github/llvm-verified-backend/scripts/kli \$< 1> Output/test-lstate.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --kli
+
+genlspec: Output/test-lstate.out seed/\${PROG}.s
+	\${DVAL_SCRIPT_DIR}/create_lspec.pl --file \$< --opc \${PROG} --seed seed/\${PROG}.s
+
+lprove: test-lspec.k
+	mkdir -p \${OUTDIR}
+	\@echo "KProve LLVM program"
+	time kprove \$< --directory \${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude \${HOME}/Github/llvm-verified-backend/scripts/prelude.smt2 \${KPROVE_OPTS}  \${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --lprove);
+
+    if($memory) {
+      $LLTargets = qq(
+kli: test.mod.ll
+	mkdir -p \${OUTDIR}
+	time \${HOME}/Github/llvm-verified-backend-mem/scripts/kli \$< 1> Output/test-lstate.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --kli
+
+genlspec: Output/test-lstate.out seed/\${PROG}.s
+	\${DVAL_SCRIPT_DIR}/create_lspec.pl --file \$< --opc \${PROG} --seed seed/\${PROG}.s
+
+lprove: test-lspec.k
+	mkdir -p \${OUTDIR}
+	\@echo "KProve LLVM program"
+	time kprove \$< --directory \${HOME}/Github/llvm-verified-backend-mem/kompiled-defs/llvm/ --smt_prelude \${HOME}/Github/llvm-verified-backend-mem/scripts/prelude.smt2 \${KPROVE_OPTS}  \${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
+	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --lprove);
+    }
+
     my $MakeFileTemplate = qq(PROG=$opc
 .PHONY: objdump mcsema assemble binary lprove xprove declutter kli xstate collect kompile genxspec genlspec genz3 provez3 clean
 KPROVE_OPTS=--log-cells "(\\#initTerm),(\\#target),(\\#result),(registers),(memory)" --log-basic  --state-log --log-success --no-alpha-renaming --restore-original-names --output kast
@@ -123,20 +157,7 @@ mcsema: test
 declutter: test.ll
 	\${DVAL_SCRIPT_DIR}/declutter.pl --file \$<  --singleiv --opc \${PROG}
 
-
-kli: test.mod.ll
-	mkdir -p \${OUTDIR}
-	time \${HOME}/Github/llvm-verified-backend/scripts/kli \$< 1> Output/test-lstate.out 2>&1
-	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --kli
-
-genlspec: Output/test-lstate.out
-	\${DVAL_SCRIPT_DIR}/create_lspec.pl --file \$< --opc \${PROG}
-
-lprove: test-lspec.k
-	mkdir -p \${OUTDIR}
-	\@echo "KProve LLVM program"
-	time kprove \$< --directory \${HOME}/Github/llvm-verified-backend/kompiled-defs/llvm/ --smt_prelude \${HOME}/Github/llvm-verified-backend/scripts/prelude.smt2 \${KPROVE_OPTS}  \${LPROVE_OPTS} 1>Output/test-lspec.out 2>&1
-	\${DVAL_SCRIPT_DIR}/check_status.sh --msg \${PROG} --lprove
+$LLTargets
 
 ##
 ## X86 Targets

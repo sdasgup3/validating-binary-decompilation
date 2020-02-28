@@ -29,7 +29,7 @@ echo "Batch Run Begin using $P jobs in parallel"
 
 cat $LIST | parallel -j $P "echo ; echo {}; echo ======; cd ${TESTARENA}/{}; \
       make genxspec; make xprove; \
-      make declutter; make kli; make genlspec; \
+      make declutter; make kli; make genlspec; make lprove; \
       make genz3; \
       make provez3; \
       cd -"

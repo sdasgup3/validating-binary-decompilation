@@ -22,11 +22,13 @@ use utils;
 my $help = "";
 my $file = "";
 my $opc  = "";
+my $seedfile = "";
 
 GetOptions(
     "help"   => \$help,
     "file:s" => \$file,
     "opc:s"  => \$opc,
+    "seed:s" => \$seedfile,
 ) or die("Error in command line arguments\n");
 
 sub usage {
@@ -37,12 +39,29 @@ if ( $help or $file eq "" ) {
     exit(1);
 }
 
-## Read from seed file
+## Read from lstate file
 my ( $filedir, $filebasse, $fileext ) = utils::split_filename($file);
 
 open( my $fp, "<", $file ) or die "cannot open: $!";
 my @lines = <$fp>;
 close $fp;
+
+## Read from seed file to check if we need YMM2 code
+open( my $fps, "<", $seedfile ) or die "cannot open: $!";
+my @lines_seed = <$fps>;
+close $fps;
+
+my $instr = "";
+for my $line (@lines_seed) {
+    if ( $line !~ m/target|retq/ ) {
+        $instr = utils::trim($line);
+    }
+}
+
+my $isXMM2Req = 0;
+if ( $instr =~ m/xmm2|ymm2/ ) {
+    $isXMM2Req = 1;
+}
 
 ## Extract Information from lstate file
 my @globals    = extractLStateInfo("globals");
@@ -115,14 +134,10 @@ if ( $memSize != 0 ) {
 }
 ############
 my $isXMM     = 0;
-my $isXMM2Req = 0;
 if ( $opc =~ m/xmm|ymm/ ) {
     $isXMM = 1;
 }
 
-if ( $opc =~ m/xmm2|ymm2/ ) {
-    $isXMM2Req = 1;
-}
 print $lfp getLSpecTemplate( $isXMM, $isXMM2Req );
 
 close $lfp;
@@ -504,14 +519,14 @@ endmodule
 
 sub pmuludq_xmm_m128 {
     my $structLayout = qq(
-      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 4 ) |-> ( byte ( 4 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 5 ) |-> ( byte ( 5 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 6 ) |-> ( byte ( 6 , 8 , VL_MEM_64_0:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> ( byte ( 7 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 4 ) |-> ( byte ( 4 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 5 ) |-> ( byte ( 5 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 6 ) |-> ( byte ( 6 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 16 , 8 , 7 ) |-> ( byte ( 7 , 8 , VL_MEM_64_0:Int ) => _)
 
       symloc ( 5 , 64 , 16 , 8 , 8 ) |->  ( byte ( 0 , 8 , VL_MEM_64_1:Int ) => _) 
       symloc ( 5 , 64 , 16 , 8 , 9 ) |->  ( byte ( 1 , 8 , VL_MEM_64_1:Int ) => _) 

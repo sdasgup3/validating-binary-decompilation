@@ -1000,5 +1000,5 @@
     </getenv>
   </c-library>
 </generatedTop>
-162.87user 166.39system 1:18.62elapsed 418%CPU (0avgtext+0avgdata 3595292maxresident)k
-40inputs+5568outputs (0major+2094078minor)pagefaults 0swaps
+160.42user 87.58system 1:18.17elapsed 317%CPU (0avgtext+0avgdata 2989980maxresident)k
+0inputs+5104outputs (0major+2014751minor)pagefaults 0swaps

@@ -107,6 +107,10 @@ VL_YMM2_3 = z3.BitVec('VL_YMM2_3', 64)
 VL_MEM_8 =    z3.BitVec('VL_MEM_8',8)
 VL_MEM_16 =   z3.BitVec('VL_MEM_16',16)
 VL_MEM_32 =   z3.BitVec('VL_MEM_32',32)
+VL_MEM_32_0 =   z3.BitVec('VL_MEM_32_0',32)
+VL_MEM_32_1 =   z3.BitVec('VL_MEM_32_1',32)
+VL_MEM_32_2 =   z3.BitVec('VL_MEM_32_2',32)
+VL_MEM_32_3 =   z3.BitVec('VL_MEM_32_3',32)
 VL_MEM_64 =   z3.BitVec('VL_MEM_64',64)
 VL_MEM_64_0 =   z3.BitVec('VL_MEM_64_0',64)
 VL_MEM_64_1 =   z3.BitVec('VL_MEM_64_1',64)
@@ -169,7 +173,8 @@ s.add(VX_MEM_64 == VL_MEM_64)
 s.add(VX_MEM_128 == VL_MEM_128)
 s.add(VX_MEM_256 == VL_MEM_256)
 s.add(VX_MEM_128 == z3.Concat(VL_MEM_64_1, VL_MEM_64_0))
-  
+s.add(VX_MEM_128 == z3.Concat(VL_MEM_32_3, VL_MEM_32_2, VL_MEM_32_1, VL_MEM_32_0))
+
 ## =******= AF =******=
 s.push()
 
@@ -297,19 +302,6 @@ xvar = (V_Y == VX_YMM1)
 s.add(lvar != xvar)
 
 solve("YMM1", lvar, xvar, s)
-
-s.pop()
-
-## =******= YMM2 =******=
-s.push()
-
-lvar = (V_Y == z3.Concat(z3.Extract(63, 56, VL_YMM2_3), z3.Extract(55, 48, VL_YMM2_3), z3.Extract(47, 40, VL_YMM2_3), z3.Extract(39, 32, VL_YMM2_3), z3.Extract(31, 24, VL_YMM2_3), z3.Extract(23, 16, VL_YMM2_3), z3.Extract(15, 8, VL_YMM2_3), z3.Extract(7, 0, VL_YMM2_3), z3.Extract(63, 56, VL_YMM2_2), z3.Extract(55, 48, VL_YMM2_2), z3.Extract(47, 40, VL_YMM2_2), z3.Extract(39, 32, VL_YMM2_2), z3.Extract(31, 24, VL_YMM2_2), z3.Extract(23, 16, VL_YMM2_2), z3.Extract(15, 8, VL_YMM2_2), z3.Extract(7, 0, VL_YMM2_2), z3.Extract(63, 56, VL_YMM2_1), z3.Extract(55, 48, VL_YMM2_1), z3.Extract(47, 40, VL_YMM2_1), z3.Extract(39, 32, VL_YMM2_1), z3.Extract(31, 24, VL_YMM2_1), z3.Extract(23, 16, VL_YMM2_1), z3.Extract(15, 8, VL_YMM2_1), z3.Extract(7, 0, VL_YMM2_1), z3.Extract(63, 56, VL_YMM2_0), z3.Extract(55, 48, VL_YMM2_0), z3.Extract(47, 40, VL_YMM2_0), z3.Extract(39, 32, VL_YMM2_0), z3.Extract(31, 24, VL_YMM2_0), z3.Extract(23, 16, VL_YMM2_0), z3.Extract(15, 8, VL_YMM2_0), z3.Extract(7, 0, VL_YMM2_0)))
-
-xvar = (V_Y == VX_YMM2)
-
-s.add(lvar != xvar)
-
-solve("YMM2", lvar, xvar, s)
 
 s.pop()
 

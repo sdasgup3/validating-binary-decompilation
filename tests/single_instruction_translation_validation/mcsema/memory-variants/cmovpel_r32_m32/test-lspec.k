@@ -126,14 +126,14 @@ mem (
       // symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> ( byte ( 6 , 8 , VL_RBP:Int ) => _)
       // symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> ( byte ( 7 , 8 , VL_RBP:Int ) => _)
       
-      symloc ( 4 , 64 , 6144 , 8 , 4472 ) |-> byte ( 0 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4473 ) |-> byte ( 1 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4474 ) |-> byte ( 2 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4475 ) |-> byte ( 3 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4476 ) |-> byte ( 4 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> byte ( 5 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> byte ( 6 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
-      symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> byte ( 7 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4472 ) |-> byte ( 0 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4473 ) |-> byte ( 1 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4474 ) |-> byte ( 2 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4475 ) |-> byte ( 3 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4476 ) |-> byte ( 4 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> byte ( 5 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> byte ( 6 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> byte ( 7 , 8 , ptr ( symloc ( 5 , 32 , 4 , 8 , 0 ) , 32 ) )
     
 
       symloc ( 4 , 64 , 6144 , 8 , 4616 ) |-> ( byte ( 0 , 8 , 0 ) => _)
@@ -145,10 +145,10 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4622 ) |-> ( byte ( 6 , 8 , 0 ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4623 ) |-> ( byte ( 7 , 8 , 0 ) => _)
 
-      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_32:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_32:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_32:Int ) => _)
-      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_32:Int ) => _)
+      symloc ( 5 , 32 , 4 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_32:Int ) => _)
+      symloc ( 5 , 32 , 4 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_32:Int ) => _)
+      symloc ( 5 , 32 , 4 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_32:Int ) => _)
+      symloc ( 5 , 32 , 4 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_32:Int ) => _)
 
   )
 </objects>

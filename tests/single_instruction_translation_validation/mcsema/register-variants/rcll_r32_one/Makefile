@@ -39,8 +39,8 @@ kli: test.mod.ll
 	time ${HOME}/Github/llvm-verified-backend/scripts/kli $< 1> Output/test-lstate.out 2>&1
 	${DVAL_SCRIPT_DIR}/check_status.sh --msg ${PROG} --kli
 
-genlspec: Output/test-lstate.out
-	${DVAL_SCRIPT_DIR}/create_lspec.pl --file $< --opc ${PROG}
+genlspec: Output/test-lstate.out seed/${PROG}.s
+	${DVAL_SCRIPT_DIR}/create_lspec.pl --file $< --opc ${PROG} --seed seed/${PROG}.s
 
 lprove: test-lspec.k
 	mkdir -p ${OUTDIR}

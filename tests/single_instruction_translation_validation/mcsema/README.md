@@ -65,6 +65,7 @@ parallel -a docs/all_memories.txt  "mv memory-variants/{}/instructions/* memory-
 parallel -a docs/all_memories.txt  "rm -rf memory-variants/{}/instructions"
 parallel -a docs/all_memories.txt  "sed -i 's/(%rbx)\|(%rcx)\|(%rdx)/-4(%rbp)/g'  memory-variants/{}/seed/{}.s"
 parallel -a docs/all_memories.txt  "sed -i 's/0x0/0xa/g'  memory-variants/{}/seed/{}.s"
+find . -name "*.s" | grep seed | parallel "sed -i -e 's/-4/-32/g' {}"
 
 // System Instructions
 parallel -a docs/all_system_instructions.txt  "/home/sdasgup3/Github/stoke-develop/bin/specgen_setup --prepare_concrete --opcode {} --workdir system-variants/{}"
@@ -82,10 +83,8 @@ cd tests/mcsema
 
 ls register-variants/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants/{}/seed/{}.s --opc {}
 ls register-variants-samereg/   | parallel ../../scripts/create_directtory_structure.pl --seed register-variants-samereg/{}/seed/{}.s --opc {}
-
 ls immediate-variants/  | parallel ../../scripts/create_directtory_structure.pl --seed immediate-variants/{}/seed/{}.s --opc {}
-find . -name "*.s" | grep seed | parallel "sed -i -e 's/-4/-16/g' {}"
-ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s --opc {}
+ls memory-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed memory-variants/{}/seed/{}.s --opc {} --memory
 ls system-variants/     | parallel ../../scripts/create_directtory_structure.pl --seed system-variants/{}/seed/{}.s --opc {}
 ```
 

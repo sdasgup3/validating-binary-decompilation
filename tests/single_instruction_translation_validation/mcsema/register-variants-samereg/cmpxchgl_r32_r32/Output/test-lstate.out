@@ -871,5 +871,5 @@
 intFromBytesAux . Please re-run with the --debug-z3 flag. Search the logs
 starting with 'Z3 warning' to see the Z3 implication that generated the
 warning. (missing SMTLib translation for intFromBytesAux)
-154.53user 19.89system 1:11.23elapsed 244%CPU (0avgtext+0avgdata 1856484maxresident)k
-0inputs+5416outputs (0major+1566645minor)pagefaults 0swaps
+119.41user 17.07system 0:57.37elapsed 237%CPU (0avgtext+0avgdata 1938172maxresident)k
+0inputs+5408outputs (0major+1278245minor)pagefaults 0swaps
