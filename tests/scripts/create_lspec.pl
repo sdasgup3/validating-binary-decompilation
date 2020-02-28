@@ -19,9 +19,9 @@ BEGIN {
 use kutils;
 use utils;
 
-my $help     = "";
-my $file     = "";
-my $opc     = "";
+my $help = "";
+my $file = "";
+my $opc  = "";
 
 GetOptions(
     "help"   => \$help,
@@ -45,18 +45,58 @@ my @lines = <$fp>;
 close $fp;
 
 ## Extract Information from lstate file
-my @globals = extractLStateInfo("globals");
-my @functions = extractLStateInfo("functions");
+my @globals    = extractLStateInfo("globals");
+my @functions  = extractLStateInfo("functions");
 my @structures = extractLStateInfo("structures");
 
 my $LSpecFile = "$filedir/../test-lspec.k";
 open( my $lfp, ">", $LSpecFile ) or die "cannot open: $!";
 print("LSpec File:$LSpecFile\n");
 
-if($opc =~ m/xmm|ymm/) {
-  print $lfp getLSpecTemplate(1);
-} else {
-  print $lfp getLSpecTemplate(0);
+### Process memory
+my $memSize = 0;
+if ( $opc =~ m/_m(\d+)/ ) {
+    $memSize = $1;
+}
+my $memVals        = "";
+my $settingAddress = "";
+if ( $memSize != 0 ) {
+    for ( my $i = 0 ; $i < $memSize / 8 ; $i++ ) {
+        $memVals =
+            $memVals
+          . "      symloc ( 5 , 64 , 8 , 8 , "
+          . $i
+          . " ) |-> ( byte ( "
+          . $i
+          . " , 8 , "
+          . "VL_MEM_"
+          . $memSize
+          . ":Int ) => _)";
+        $memVals = $memVals . "\n";
+    }
+
+    if($opc eq "pmuludq_xmm_m128") {
+      $memVals = pmuludq_xmm_m128();
+    }
+
+    $settingAddress = qq(
+      symloc ( 4 , 64 , 6144 , 8 , 4472 ) |-> byte ( 0 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4473 ) |-> byte ( 1 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4474 ) |-> byte ( 2 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4475 ) |-> byte ( 3 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4476 ) |-> byte ( 4 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> byte ( 5 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> byte ( 6 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+      symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> byte ( 7 , 8 , ptr ( symloc ( 5 , 64 , 8 , 8 , 0 ) , 32 ) )
+    );
+}
+############
+
+if ( $opc =~ m/xmm|ymm/ ) {
+    print $lfp getLSpecTemplate(1);
+}
+else {
+    print $lfp getLSpecTemplate(0);
 }
 
 close $lfp;
@@ -64,41 +104,42 @@ close $lfp;
 ######################## Routines
 
 sub extractLStateInfo {
-  my $nameLbl = shift @_;
-  my @store = ();
-  my $foundLbl = 0;
+    my $nameLbl  = shift @_;
+    my @store    = ();
+    my $foundLbl = 0;
 
-  for my $line (@lines) {
-    if($foundLbl == 0 and ($line !~ m/\<$nameLbl\>/)) {
-      next;
+    for my $line (@lines) {
+        if ( $foundLbl == 0 and ( $line !~ m/\<$nameLbl\>/ ) ) {
+            next;
+        }
+
+        $foundLbl = 1;
+        push @store, $line;
+
+        if ( $line =~ m/\<\/$nameLbl\>/ ) {
+            last;
+        }
     }
 
-    $foundLbl = 1;
-    push @store, $line;
-
-    if($line =~ m/\<\/$nameLbl\>/) {
-      last;
+    if ( scalar(@store) == 0 ) {
+        exit(1);
     }
-  }
 
-  if(scalar(@store) == 0) {
-    exit (1);
-  }
-  #printArray(\@store);
-  return @store;
+    #printArray(\@store);
+    return @store;
 }
 
 sub getLSpecTemplate {
     my $isXMM = shift @_;
 
-    my $globals = join "", @globals;
-    my $functions = join "", @functions;
+    my $globals    = join "", @globals;
+    my $functions  = join "", @functions;
     my $structures = join "", @structures;
 
     my $XMMMemLayout = "";
-    my $XMMPreConds = "";
-    if($isXMM) {
-      $XMMMemLayout = qq(
+    my $XMMPreConds  = "";
+    if ($isXMM) {
+        $XMMMemLayout = qq(
       // YMM1
       symloc ( 4 , 64 , 6144 , 8 , 2112 ) |->  ( byte ( 0 , 8 , VL_YMM1_0:Int ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 2113 ) |->  ( byte ( 1 , 8 , VL_YMM1_0:Int ) => _)
@@ -246,7 +287,7 @@ sub getLSpecTemplate {
       // symloc ( 4 , 64 , 6144 , 8 , 2239 ) |->  ( byte ( 7 , 8 , VL_YMM2_7:Int ) => _)
 );
 
-      $XMMPreConds = qq(
+        $XMMPreConds = qq(
         andBool   (VL_YMM1_0 >=Int -9223372036854775808) andBool (VL_YMM1_0 <=Int 9223372036854775807)
         andBool   (VL_YMM1_1 >=Int -9223372036854775808) andBool (VL_YMM1_1 <=Int 9223372036854775807)
         andBool   (VL_YMM1_2 >=Int -9223372036854775808) andBool (VL_YMM1_2 <=Int 9223372036854775807)
@@ -257,8 +298,7 @@ sub getLSpecTemplate {
         andBool   (VL_YMM2_3 >=Int -9223372036854775808) andBool (VL_YMM2_3 <=Int 9223372036854775807)
 
 );
-    } ## End if(isXMM)
-
+    }    ## End if(isXMM)
 
     my $LSpecTemplate = qq(module TEST-LSPEC
 imports LLVM-SEMANTICS
@@ -387,6 +427,7 @@ mem (
       // symloc ( 4 , 64 , 6144 , 8 , 4477 ) |-> ( byte ( 5 , 8 , VL_RBP:Int ) => _)
       // symloc ( 4 , 64 , 6144 , 8 , 4478 ) |-> ( byte ( 6 , 8 , VL_RBP:Int ) => _)
       // symloc ( 4 , 64 , 6144 , 8 , 4479 ) |-> ( byte ( 7 , 8 , VL_RBP:Int ) => _)
+      $settingAddress
 
       symloc ( 4 , 64 , 6144 , 8 , 4616 ) |-> ( byte ( 0 , 8 , 0 ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4617 ) |-> ( byte ( 1 , 8 , 0 ) => _)
@@ -396,6 +437,8 @@ mem (
       symloc ( 4 , 64 , 6144 , 8 , 4621 ) |-> ( byte ( 5 , 8 , 0 ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4622 ) |-> ( byte ( 6 , 8 , 0 ) => _)
       symloc ( 4 , 64 , 6144 , 8 , 4623 ) |-> ( byte ( 7 , 8 , 0 ) => _)
+
+$memVals
   )
 </objects>
 <freed> .MemorySet </freed>
@@ -423,3 +466,24 @@ endmodule
     return $LSpecTemplate;
 }
 
+sub pmuludq_xmm_m128 {
+    my $structLayout = qq(
+      symloc ( 5 , 64 , 8 , 8 , 0 ) |-> ( byte ( 0 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 1 ) |-> ( byte ( 1 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 2 ) |-> ( byte ( 2 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 3 ) |-> ( byte ( 3 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 4 ) |-> ( byte ( 4 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 5 ) |-> ( byte ( 5 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 6 ) |-> ( byte ( 6 , 8 , VL_MEM_64_0:Int ) => _)
+      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> ( byte ( 7 , 8 , VL_MEM_64_0:Int ) => _)
+
+      symloc ( 5 , 64 , 16 , 8 , 8 ) |->  ( byte ( 0 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 9 ) |->  ( byte ( 1 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 10 ) |-> ( byte ( 2 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 11 ) |-> ( byte ( 3 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 12 ) |-> ( byte ( 4 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 13 ) |-> ( byte ( 5 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 14 ) |-> ( byte ( 6 , 8 , VL_MEM_64_1:Int ) => _) 
+      symloc ( 5 , 64 , 16 , 8 , 15 ) |-> ( byte ( 7 , 8 , VL_MEM_64_1:Int ) => _) );
+    return $structLayout;
+}

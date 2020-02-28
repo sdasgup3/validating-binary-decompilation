@@ -236,6 +236,7 @@ Exluded | Count |
   %11 = call %struct.Memory* @__remill_compare_exchange_memory_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %6, i8 zeroext %7) #24
   %9 = call %struct.Memory* @__remill_fetch_and_add_8(%struct.Memory* %0, i64 %2, i8* nonnull dereferenceable(1) %7) #24
   ```
+  - E6: Problem with infromBytes
 
 
 
@@ -701,4 +702,10 @@ memory-variants/xaddb_m8_rh:xaddb_m8_rh
 memory-variants/xaddl_m32_r32:xaddl_m32_r32
 memory-variants/xaddq_m64_r64:xaddq_m64_r64
 memory-variants/xaddw_m16_r16:xaddw_m16_r16
+```
+
+#### E6
+```
+memory-variants/adcb_m8_rh:adcb_m8_rh
+memory-variants/adcb_rh_m8:adcb_rh_m8
 ```
