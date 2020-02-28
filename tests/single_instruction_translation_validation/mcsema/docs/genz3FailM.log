@@ -1,0 +1,16 @@
+memory-variants/rclb_m8_cl
+memory-variants/rcll_m32_cl
+memory-variants/rclq_m64_cl
+memory-variants/rclw_m16_cl
+memory-variants/salb_m8_cl
+memory-variants/sall_m32_cl
+memory-variants/salq_m64_cl
+memory-variants/salw_m16_cl
+memory-variants/shlb_m8_cl
+memory-variants/shll_m32_cl
+memory-variants/shlq_m64_cl
+memory-variants/shlw_m16_cl
+memory-variants/shrb_m8_cl
+memory-variants/shrl_m32_cl
+memory-variants/shrq_m64_cl
+memory-variants/shrw_m16_cl

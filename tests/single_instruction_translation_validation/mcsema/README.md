@@ -222,6 +222,11 @@ cat docs/genz3PassI.log | parallel  "cd {}; make genz3; cd -" |& tee ~/Junk/log
 cat docs/genz3PassI.log | parallel  "echo; echo; cd {}; make provez3; cd -" |& tee ~/Junk/log
 ```
 
+## Generate all pass casess
+```
+cat docs/gen*Pass* > docs/AE_docs/all_instructions.txt
+```
+
 
 ## Deprecated
 

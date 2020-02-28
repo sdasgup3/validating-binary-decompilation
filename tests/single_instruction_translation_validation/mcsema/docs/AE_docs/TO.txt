@@ -1,1 +1,2 @@
 register-variants/mulq_r64
+memory-variants/mulq_m64
