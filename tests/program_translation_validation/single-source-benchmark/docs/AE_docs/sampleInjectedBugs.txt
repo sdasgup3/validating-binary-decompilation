@@ -1,4 +1,4 @@
-/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Inject.1/Rand/
-/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Inject.2/Rand/
-/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Inject.3/Rand/
-/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Inject.4/Rand/
+Inject.1/Rand/
+Inject.2/Rand/
+Inject.3/Rand/
+Inject.4/Rand/
