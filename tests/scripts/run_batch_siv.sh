@@ -3,7 +3,7 @@ LIST=$1
 P=$2
 
 if [ -z "$P" ]; then
-  P=15
+  P=1
 fi
 
 TESTARENA="~/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/" 
@@ -15,11 +15,11 @@ rm -rf underTestInstructions/*
 cd -
 
 echo
-echo "Collecting instructions"
+echo "Collecting instructions from binary"
 cat $LIST | parallel "cd $TESTARENA/{}; make collect; cd -"
 
 echo
-echo "Kompiling"
+echo "Kompiling the collected X86 semantics to create a sym-ex"
 cd ~/Github/X86-64-semantics/semantics
 ../scripts/kompile.pl --backend java
 cd -
@@ -28,9 +28,13 @@ echo
 echo "Batch Run Begin using $P jobs in parallel"
 
 cat $LIST | parallel -j $P "echo ; echo {}; echo ======; cd ${TESTARENA}/{}; \
+      echo; echo \"Generating symbolic summary for binary instruction\"; \
       make genxspec; make xprove; \
+      echo; echo \"Generating symbolic summary for lifted LLVM IR\"; \
       make declutter; make kli; make genlspec; make lprove; \
+      echo; echo \"Generating verification conditions\"; \
       make genz3; \
+      echo; echo \"Prove verification conditions\"; \
       make provez3; \
       cd -"
 

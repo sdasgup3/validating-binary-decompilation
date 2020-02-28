@@ -118,7 +118,7 @@
       symloc ( 4 , 64 , 6144 , 8 , 4365 ) |-> byte ( 5 , 8 , 100 )
       symloc ( 4 , 64 , 6144 , 8 , 4366 ) |-> byte ( 6 , 8 , 100 )
       symloc ( 4 , 64 , 6144 , 8 , 4367 ) |-> byte ( 7 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4376 ) |-> byte ( 0 , 1 , 1 )
+      symloc ( 4 , 64 , 6144 , 8 , 4376 ) |-> byte ( 0 , 1 , zeroExtend ( 1 , 1 , 8 ) )
       symloc ( 4 , 64 , 6144 , 8 , 4377 ) |-> byte ( 1 , 8 , 200 )
       symloc ( 4 , 64 , 6144 , 8 , 4378 ) |-> byte ( 2 , 8 , 200 )
       symloc ( 4 , 64 , 6144 , 8 , 4379 ) |-> byte ( 3 , 8 , 200 )
@@ -869,5 +869,5 @@
     </getenv>
   </c-library>
 </generatedTop>
-131.38user 34.52system 1:06.36elapsed 249%CPU (0avgtext+0avgdata 2348252maxresident)k
-0inputs+5392outputs (0major+1709071minor)pagefaults 0swaps
+65.36user 7.72system 0:52.22elapsed 139%CPU (0avgtext+0avgdata 1044148maxresident)k
+264inputs+4976outputs (0major+444962minor)pagefaults 0swaps

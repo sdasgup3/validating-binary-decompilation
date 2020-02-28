@@ -868,8 +868,6 @@ register-variants/vmovq_r64_xmm
 register-variants/vmovdqu_xmm_xmm
 register-variants/vptest_xmm_xmm
 register-variants/xorps_xmm_xmm
-register-variants/vmovdqu_ymm_ymm
-register-variants/vmovdqa_ymm_ymm
 register-variants/vptest_ymm_ymm
 register-variants/psllq_xmm_xmm
 register-variants/psrlq_xmm_xmm
@@ -1183,8 +1181,6 @@ register-variants-samereg/vptest_xmm_xmm
 register-variants-samereg/salq_r64_one
 register-variants-samereg/cmpb_r8_r8
 register-variants-samereg/xorps_xmm_xmm
-register-variants-samereg/vmovdqu_ymm_ymm
-register-variants-samereg/vmovdqa_ymm_ymm
 register-variants-samereg/mulw_r16
 register-variants-samereg/addw_r16_r16
 register-variants-samereg/cmpxchgw_r16_r16

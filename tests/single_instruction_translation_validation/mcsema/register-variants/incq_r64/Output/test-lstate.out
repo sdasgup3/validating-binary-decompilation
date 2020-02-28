@@ -106,10 +106,10 @@
       symloc ( 4 , 64 , 6144 , 8 , 4097 ) |-> byte ( 0 , 1 , 10 )
       symloc ( 4 , 64 , 6144 , 8 , 4099 ) |-> byte ( 0 , 1 , 1 )
       symloc ( 4 , 64 , 6144 , 8 , 4101 ) |-> byte ( 0 , 1 , 0 )
-      symloc ( 4 , 64 , 6144 , 8 , 4103 ) |-> byte ( 0 , 1 , 0 )
+      symloc ( 4 , 64 , 6144 , 8 , 4103 ) |-> byte ( 0 , 1 , zeroExtend ( 0 , 1 , 8 ) )
       symloc ( 4 , 64 , 6144 , 8 , 4105 ) |-> byte ( 0 , 1 , 0 )
       symloc ( 4 , 64 , 6144 , 8 , 4107 ) |-> byte ( 0 , 1 , 60 )
-      symloc ( 4 , 64 , 6144 , 8 , 4109 ) |-> byte ( 0 , 1 , 0 )
+      symloc ( 4 , 64 , 6144 , 8 , 4109 ) |-> byte ( 0 , 1 , zeroExtend ( 0 , 1 , 8 ) )
       symloc ( 4 , 64 , 6144 , 8 , 4360 ) |-> byte ( 0 , 8 , 100 )
       symloc ( 4 , 64 , 6144 , 8 , 4361 ) |-> byte ( 1 , 8 , 100 )
       symloc ( 4 , 64 , 6144 , 8 , 4362 ) |-> byte ( 2 , 8 , 100 )
@@ -864,5 +864,5 @@
     </getenv>
   </c-library>
 </generatedTop>
-130.56user 41.26system 1:06.01elapsed 260%CPU (0avgtext+0avgdata 2341776maxresident)k
-0inputs+5376outputs (0major+1778178minor)pagefaults 0swaps
+67.62user 7.17system 0:48.85elapsed 153%CPU (0avgtext+0avgdata 1110888maxresident)k
+0inputs+5104outputs (0major+457643minor)pagefaults 0swaps

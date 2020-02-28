@@ -1,33 +1,33 @@
-Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/././test-xspec.k)
-Importing: Source(/home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k)
-Parse spec modules [9/9 rules]                               =  0.027s
-StateLog: /home/ubuntu/Github/X86-64-semantics/semantics/x86-semantics-kompiled/stateLog/prove-2044796696.log
+Importing: Source(/home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/././test-xspec.k)
+Importing: Source(/home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k)
+Parse spec modules [5/9 rules]                               =  0.013s
+StateLog: /home/sdasgup3/Github/X86-64-semantics/semantics/x86-semantics-kompiled/stateLog/prove-2044796696.log
 
-Parsing finished:  605.167 s
+Parsing finished:  133.787 s
 Pre-processing rule:
 rule too long...
-	Source: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k Location(6,5,106,69)
+	Source: /home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k Location(6,5,106,69)
 ==================================
 
 Initialization finished
 ==================================
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  605.683 s,	 7018 MB, gc:  1.242 %
-  Parsing             :  605.167 s,	 6781 MB, gc:  1.243 %
-  Init                :    0.515 s,	 7018 MB, gc:  0.000 %
+Total                 :  134.225 s,	 2473 MB, gc:  2.809 %
+  Parsing             :  133.787 s,	 2392 MB, gc:  2.819 %
+  Init                :    0.438 s,	 2473 MB, gc:  0.000 %
 
-Init+Execution time:       0.515 s
+Init+Execution time:       0.438 s
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.081 s,      #        450
-    evaluateFunction time            :    0.065 s,      #        225
+  resolveFunctionAndAnywhere time  :    0.091 s,      #        450
+    evaluateFunction time            :    0.071 s,      #        225
       builtin evaluation               :           ,      #        132
       function rule                    :           ,      #         12
       no rule applicable               :           ,      #         41
       no function rules                :           ,      #         40
     applyAnywhereRules time          :    0.000 s,      #         90
       no anywhere rules                :           ,      #         90
-    remaining time & # cached        :    0.015 s,      #        135
+    remaining time & # cached        :    0.020 s,      #        135
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #        464
@@ -58,33 +58,33 @@ Target term
 #True(.KList)
 
 
-STEP 1 v1 :    2.165 s, 		 8381 MB, gc:  0.000 %
+STEP 1 v1 :    1.474 s, 		 1678 MB, gc:  0.000 %
 ===================
 `<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("1","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("2","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("3","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("4","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("5","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("6","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("7","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1032","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1033","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1034","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1035","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1036","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1037","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1038","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1039","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList)))
 
-STEP 23 v1 :    2.948 s, 		 9037 MB, gc:  0.000 %
+STEP 23 v1 :    2.052 s, 		 1959 MB, gc:  0.000 %
 ===================
 `<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("1","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("2","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("3","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("4","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("5","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("6","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("7","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1032","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1033","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1034","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1035","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1036","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1037","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1038","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1039","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList)))
 
 Step above: 23, evaluation ended with no successors.
 
-SPEC FAILED: /home/ubuntu/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k Location(6,5,106,69)
+SPEC FAILED: /home/sdasgup3/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/memory-variants/cmovaq_r64_m64/test-xspec.k Location(6,5,106,69)
 ==================================
 Success execution paths: 0
 Failed execution paths: 1
 Longest path: 23 steps
 Stats for each phase, time, used memory, implicit main GC time percentage:
-Total                 :  609.134 s,	 9421 MB, gc:  1.235 %
-  Parsing             :  605.167 s,	 6781 MB, gc:  1.243 %
-  Init                :    0.515 s,	 7018 MB, gc:  0.000 %
-  Execution           :    3.451 s,	 9421 MB, gc:  0.000 %
+Total                 :  136.604 s,	 2209 MB, gc:  2.844 %
+  Parsing             :  133.787 s,	 2392 MB, gc:  2.819 %
+  Init                :    0.438 s,	 2473 MB, gc:  0.000 %
+  Execution           :    2.379 s,	 2209 MB, gc:  4.791 %
 
-Init+Execution time:       3.967 s
-  query build time                 :    0.009 s,      #         11
+Init+Execution time:       2.817 s
+  query build time                 :    0.005 s,      #         11
 
   Time and top-level event counts:
-  resolveFunctionAndAnywhere time  :    0.198 s,      #        963
-    evaluateFunction time            :    0.177 s,      #        459
+  resolveFunctionAndAnywhere time  :    0.209 s,      #        963
+    evaluateFunction time            :    0.178 s,      #        459
       builtin evaluation               :           ,      #        172
       function rule                    :           ,      #         48
       sort predicate                   :           ,      #          6
@@ -92,9 +92,9 @@ Init+Execution time:       3.967 s
       no function rules                :           ,      #         94
     applyAnywhereRules time          :    0.001 s,      #        217
       no anywhere rules                :           ,      #        217
-    remaining time & # cached        :    0.021 s,      #        287
-  log time                         :    0.951 s,      #         24
-  impliesSMT time                  :    0.010 s,      #         25
+    remaining time & # cached        :    0.031 s,      #        287
+  log time                         :    0.680 s,      #         24
+  impliesSMT time                  :    0.006 s,      #         25
 
   Recursive event counts:
   resolveFunctionAndAnywhere time  :           ,      #       1426
@@ -108,7 +108,7 @@ Init+Execution time:       3.967 s
       no anywhere rules                :           ,      #         36
     # cached                         :           ,      #        952
 
-Max memory : 262144 MB
+Max memory : 8192 MB
 ==================================
 
 `<generatedTop>`(`<k>`(`exit_0_X86-FETCH-EXECUTE`(.KList)),`<functargets>`(`_|->_`(#token("_start","X86Id"),ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'0","MInt")))),`<rotargets>`(`.Map`(.KList)),`<datatargets>`(`.Map`(.KList)),`<bsstargets>`(`.Map`(.KList)),`<entrypoint>`(#EmptyK(.KList)),`<nextLocPc>`(_0),`<lastseenlabel>`(#EmptyK(.KList)),`<currentsection>`(#token("\"text\"","String")),`<memstate>`(`<text>`(code(`_Map_`(`_|->_`(ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'0","MInt")),storedInstr(`___X86-SYNTAX`(`cmovaq_X86-SYNTAX`(.KList),operandlist(`_(_)_X86-SYNTAX`(#token("-32","Int"),`%rbp_X86-SYNTAX`(.KList)),operandlist(`%rbx_X86-SYNTAX`(.KList),`.List{"operandlist"}`(.KList)))))),`_|->_`(ptr(symloc(#token("-1","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int"),#token("0","Int")),#token("64'1","MInt")),storedInstr(`___X86-SYNTAX`(`ret_X86-SYNTAX`(.KList),`.List{"operandlist"}`(.KList))))))),`<stack>`(`<memory>`(`<nextLoc>`(#token("1","Int")),`<objects>`(mem(`_Map_`(`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1000","Int")),byte(#token("0","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1001","Int")),byte(#token("1","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1002","Int")),byte(#token("2","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1003","Int")),byte(#token("3","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1004","Int")),byte(#token("4","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1005","Int")),byte(#token("5","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1006","Int")),byte(#token("6","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1007","Int")),byte(#token("7","Int"),mi(#token("64","Int"),VX_MEM_64))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1032","Int")),byte(#token("0","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1033","Int")),byte(#token("1","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1034","Int")),byte(#token("2","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1035","Int")),byte(#token("3","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1036","Int")),byte(#token("4","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1037","Int")),byte(#token("5","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1038","Int")),byte(#token("6","Int"),#token("64'-1","MInt"))),`_|->_`(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("1039","Int")),byte(#token("7","Int"),#token("64'-1","MInt")))))),`<freed>`(`.Set`(.KList))),`<stackbase>`(stackBaseInfo(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("0","Int")),#token("64'1032","MInt"))),`<robase>`(roBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))),`<database>`(dataBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))),`<bssbase>`(bssBaseInfo(#EmptyK(.KList),#EmptyK(.KList),#EmptyK(.KList))))),`<environment>`(`<argc>`(#EmptyK(.KList)),`<argv>`(#EmptyK(.KList))),`<regstate>`(`_Map_`(`_|->_`(#token("\"AF\"","String"),mi(#token("1","Int"),VX_AF)),`_|->_`(#token("\"CF\"","String"),mi(#token("1","Int"),VX_CF)),`_|->_`(#token("\"OF\"","String"),mi(#token("1","Int"),VX_OF)),`_|->_`(#token("\"PF\"","String"),mi(#token("1","Int"),VX_PF)),`_|->_`(#token("\"RAX\"","String"),mi(#token("64","Int"),VX_RAX)),`_|->_`(#token("\"RBP\"","String"),ptr(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("0","Int")),#token("64'1032","MInt"))),`_|->_`(#token("\"RBX\"","String"),`#ifMInt_#then_#else_#fi_MINT-WRAPPER-SYNTAX`(`_andBool_`(`notBool_`(eqMInt(mi(#token("1","Int"),VX_CF),#token("1'1","MInt"))),`notBool_`(eqMInt(mi(#token("1","Int"),VX_ZF),#token("1'1","MInt")))),mi(#token("64","Int"),VX_MEM_64),mi(#token("64","Int"),VX_RBX))),`_|->_`(#token("\"RCX\"","String"),mi(#token("64","Int"),VX_RCX)),`_|->_`(#token("\"RDI\"","String"),mi(#token("64","Int"),VX_RDI)),`_|->_`(#token("\"RDX\"","String"),mi(#token("64","Int"),VX_RDX)),`_|->_`(#token("\"RIP\"","String"),#token("64'18446744073709551615","MInt")),`_|->_`(#token("\"RSI\"","String"),mi(#token("64","Int"),VX_RSI)),`_|->_`(#token("\"RSP\"","String"),ptr(symloc(#token("1","Int"),#token("128","Int"),#token("1040","Int"),#token("8","Int"),#token("0","Int")),#token("64'1040","MInt"))),`_|->_`(#token("\"SF\"","String"),mi(#token("1","Int"),VX_SF)),`_|->_`(#token("\"YMM1\"","String"),mi(#token("256","Int"),VX_YMM1)),`_|->_`(#token("\"YMM2\"","String"),mi(#token("256","Int"),VX_YMM2)),`_|->_`(#token("\"ZF\"","String"),mi(#token("1","Int"),VX_ZF)))),_23,_24,_25,_26,_27)
@@ -117,5 +117,5 @@ re-run with the --debug-z3 flag. Search the logs starting with 'Z3 warning' to
 see the Z3 implication that generated the warning. (missing SMTLib translation
 for mi)
 Command exited with non-zero status 1
-758.51user 226.73system 10:12.40elapsed 160%CPU (0avgtext+0avgdata 39500500maxresident)k
-0inputs+250664outputs (0major+37732258minor)pagefaults 0swaps
+161.76user 15.02system 2:17.89elapsed 128%CPU (0avgtext+0avgdata 3685832maxresident)k
+112inputs+211448outputs (0major+1679482minor)pagefaults 0swaps

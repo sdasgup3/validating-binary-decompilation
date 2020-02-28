@@ -79,7 +79,7 @@
       6
     </nextLoc>
     <objects>
-      mem ( writeMemValueAux ( symloc ( 4 , 64 , 6144 , 8 , 0 ) , 4360 , 8 , toMemData ( V0 , tInt ( 64 ) , .MemData ) , symloc ( 1 , 32 , 4 , 8 , 0 ) |-> byte ( 0 , 4 , 0 )
+      mem ( symloc ( 1 , 32 , 4 , 8 , 0 ) |-> byte ( 0 , 4 , 0 )
       symloc ( 1 , 32 , 4 , 8 , 1 ) |-> byte ( 1 , 4 , 0 )
       symloc ( 1 , 32 , 4 , 8 , 2 ) |-> byte ( 2 , 4 , 0 )
       symloc ( 1 , 32 , 4 , 8 , 3 ) |-> byte ( 3 , 4 , 0 )
@@ -110,14 +110,14 @@
       symloc ( 4 , 64 , 6144 , 8 , 4105 ) |-> byte ( 0 , 1 , 50 )
       symloc ( 4 , 64 , 6144 , 8 , 4107 ) |-> byte ( 0 , 1 , 60 )
       symloc ( 4 , 64 , 6144 , 8 , 4109 ) |-> byte ( 0 , 1 , 70 )
-      symloc ( 4 , 64 , 6144 , 8 , 4360 ) |-> byte ( 0 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4361 ) |-> byte ( 1 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4362 ) |-> byte ( 2 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4363 ) |-> byte ( 3 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4364 ) |-> byte ( 4 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4365 ) |-> byte ( 5 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4366 ) |-> byte ( 6 , 8 , 100 )
-      symloc ( 4 , 64 , 6144 , 8 , 4367 ) |-> byte ( 7 , 8 , 100 )
+      symloc ( 4 , 64 , 6144 , 8 , 4360 ) |-> byte ( 0 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4361 ) |-> byte ( 1 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4362 ) |-> byte ( 2 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4363 ) |-> byte ( 3 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4364 ) |-> byte ( 4 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4365 ) |-> byte ( 5 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4366 ) |-> byte ( 6 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
+      symloc ( 4 , 64 , 6144 , 8 , 4367 ) |-> byte ( 7 , 8 , ( signExtend ( intFromBytesAux ( 2 , 100 , 0 , byte ( 0 , 8 , 100 ) byte ( 1 , 8 , 100 ) .MemData ) , 16 , 64 ) &Int 4294967295 ) modInt 18446744073709551616 )
       symloc ( 4 , 64 , 6144 , 8 , 4376 ) |-> byte ( 0 , 8 , 200 )
       symloc ( 4 , 64 , 6144 , 8 , 4377 ) |-> byte ( 1 , 8 , 200 )
       symloc ( 4 , 64 , 6144 , 8 , 4378 ) |-> byte ( 2 , 8 , 200 )
@@ -189,7 +189,7 @@
       symloc ( 5 , 64 , 8 , 8 , 4 ) |-> byte ( 4 , 8 , 51 )
       symloc ( 5 , 64 , 8 , 8 , 5 ) |-> byte ( 5 , 8 , 51 )
       symloc ( 5 , 64 , 8 , 8 , 6 ) |-> byte ( 6 , 8 , 51 )
-      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> byte ( 7 , 8 , 51 ) ) )
+      symloc ( 5 , 64 , 8 , 8 , 7 ) |-> byte ( 7 , 8 , 51 ) )
     </objects>
     <freed>
       SetItem ( symloc ( 4 , 64 , 6144 , 8 , 0 ) )
@@ -864,5 +864,5 @@
     </getenv>
   </c-library>
 </generatedTop>
-125.75user 17.42system 1:03.84elapsed 224%CPU (0avgtext+0avgdata 1627292maxresident)k
-0inputs+5296outputs (0major+1093203minor)pagefaults 0swaps
+62.16user 7.39system 0:47.59elapsed 146%CPU (0avgtext+0avgdata 1075896maxresident)k
+94640inputs+5000outputs (241major+438779minor)pagefaults 0swaps
