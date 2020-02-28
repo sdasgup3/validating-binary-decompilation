@@ -238,6 +238,7 @@ Exluded | Count |
   ```
   - E6: Problem with infromBytes
   - E7: Problem of LLVM semantics with pointer arithmatic followed by load
+  - E8: Kli fail loading from ah bug for mem instr
 
 
 
@@ -732,4 +733,26 @@ memory-variants/andnps_xmm_m128
 
 
 memory-variants/pandn_xmm_m128
+```
+
+#### E8 
+```
+memory-variants/addb_m8_rh
+memory-variants/addb_rh_m8
+memory-variants/andb_m8_rh
+memory-variants/andb_rh_m8
+memory-variants/cmpb_m8_rh
+memory-variants/cmpb_rh_m8
+memory-variants/movb_m8_rh
+memory-variants/orb_m8_rh
+memory-variants/orb_rh_m8
+memory-variants/sbbb_m8_rh
+memory-variants/sbbb_rh_m8
+memory-variants/subb_m8_rh
+memory-variants/subb_rh_m8
+memory-variants/testb_m8_rh
+memory-variants/xchgb_m8_rh
+memory-variants/xchgb_rh_m8
+memory-variants/xorb_m8_rh
+memory-variants/xorb_rh_m8
 ```
