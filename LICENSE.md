@@ -1,6 +1,7 @@
 University of Illinois/NCSA Open Source License Copyright (c) 2019 Iniversit of Illinois Urbana Champaign. All rights reserved.
 
-Developed by: Sandeep Dasgupta
+Developed by:
+Sandeep Dasgupta
 University of Illinois at Urbana-Champaign
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
