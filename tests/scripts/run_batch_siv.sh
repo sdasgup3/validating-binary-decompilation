@@ -1,5 +1,7 @@
 #!/bin/bash
 LIST=$1
+
+## Number of jobs to issue in parallel
 P=$2
 
 if [ -z "$P" ]; then
