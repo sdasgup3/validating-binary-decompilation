@@ -23,29 +23,42 @@ print_stats <- function (df, chart, range_min, range_max, step) {
   median <- median(elapsed_sec)
   max <- max(elapsed_sec)
   min <- min(elapsed_sec)
+  srtd <- tail(sort(elapsed_sec), 5)
+  max_but_one <-  srtd[4]
+  max_but_two <-  srtd[3]
 
   max_idx <- which(elapsed_sec == max)
   min_idx <- which(elapsed_sec == min)
   median_idx <-  which(elapsed_sec == median)
+  max_but_one_idx <-  which(elapsed_sec == max_but_one)
+  max_but_two_idx <-  which(elapsed_sec == max_but_two)
 
   max_idx
   min_idx
   median_idx
+
   max_label <- label[max_idx[1]]
-  max_label <- gsub("(.*?)_.*","\\1", max_label)
+#max_label <- gsub("(.*?)_.*","\\1", max_label)
 
   min_label <- label[min_idx[1]]
-  min_label <- gsub("(.*?)_.*","\\1", min_label)
+#min_label <- gsub("(.*?)_.*","\\1", min_label)
 
   median_label <- label[median_idx[1]]
-  median_label <- gsub("(.*?)_.*","\\1", median_label)
+#median_label <- gsub("(.*?)_.*","\\1", median_label)
  
+  max_but_one_label <- label[max_but_one_idx[1]]
+  max_but_two_label <- label[max_but_two_idx[1]]
+
   cat("Median:", median, ":", median_label, "\n")
   cat("Max:", max, ":" , max_label, "\n")
   cat("Min:", min, ":", min_label, "\n")
+  cat("Max but One:", max_but_one, ":", max_but_one_label, "\n")
+  cat("Max but Two:", max_but_two, ":", max_but_two_label, "\n")
+  cat("Quartile: ", quantile(elapsed_sec), "\n")
+  cat(srtd, "\n")
 
-  imp_point <- c(19, 24.5, 29)
-  imp_label <- c("paddd", "xorps", "cmpxchgq")
+  imp_point <- c(22.55, 23.88, 29.89)
+  imp_label <- c("psubb", "xorps", "cmpxchgq")
 
 #range_min <- floor(min)
 #  range_max <- ceiling(min)
@@ -65,4 +78,5 @@ df <- read.table("docs/stat_prove.time", header = FALSE, sep=',')
 print_stats(df, "Z3 Solver Time", 0, 35, 1)
 
 # Save the file.
+cat("Writing to docs/solver.eps", "\n")
 dev.off()

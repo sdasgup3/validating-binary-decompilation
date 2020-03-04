@@ -52,30 +52,33 @@ print_stats <- function (df) {
   print(max(size))
   print(min(size))
 
-  print("MP")
-  setEPS()
-  postscript("matcher.eps");
+#  print("MP")
+#  setEPS()
+#  postscript("matcher.eps");
 
   cat("Compd stat:", "\n\n")
   print_quartile(elapsed_c_sec)
   retval_c <- max_three(elapsed_c_sec, test, size)
+
   cat("Matcher stat:", "\n\n")
   print_quartile(elapsed_mp_sec)
   retval_m <- max_three(elapsed_mp_sec, test, size)
 
-  imp_point <- c(retval_c$value[3] + 10, floor(retval_m$value[3]) - 2.5)
-#imp_label <- c(gsub("/","::", retval_c$label[3]), gsub("/","::", retval_m$label[3]))
-  imp_label <- c(gsub(".*/","", retval_c$label[3]), gsub(".*/","", retval_m$label[3]))
-  print(imp_point)
-  print(imp_label)
-  boxplot(elapsed_c_sec, elapsed_mp_sec, names=c("Compositional\nDecompiler\n(a)","Matcher\n(b)"), horizontal = TRUE, xlab = "Time (in secs)", axes=TRUE)
-  text(x=imp_point, labels=imp_label, y=c(1.15, 2.15),  cex=0.8)
-
-  dev.off()
+#  imp_point <- c(retval_c$value[3] + 10, floor(retval_m$value[3]) - 2.5)
+##imp_label <- c(gsub("/","::", retval_c$label[3]), gsub("/","::", retval_m$label[3]))
+#  imp_label <- c(gsub(".*/","", retval_c$label[3]), gsub(".*/","", retval_m$label[3]))
+#  print(imp_point)
+#  print(imp_label)
+#  boxplot(elapsed_c_sec, elapsed_mp_sec, names=c("Compositional\nDecompiler\n(a)","Matcher\n(b)"), horizontal = TRUE, xlab = "Time (in secs)", axes=TRUE)
+#  text(x=imp_point, labels=imp_label, y=c(1.15, 2.15),  cex=0.8)
+#
+#  dev.off()
 }
 
-# cat docs/reported_stats/1.log | parallel "echo {}; cd {}; make llstat; tail -n2 mcsema/compd.log ; tail -n3  mcsema/match_mcsema_proposed.log; tail -n3  mcsema/match_proposed_mcsema.log;cd - "   > docs/reported_stats/stats_compd_matcher.time
-df <- read.table("stats_compd_matcher.time", header = FALSE, sep=',')
+# cat docs/reported_stats/1.log | parallel "echo {}; cd {}; make llstat; tail -n2 mcsema/compd.log ; tail -n3  mcsema/match_mcsema_proposed.log; tail -n3  mcsema/match_proposed_mcsema.log;cd - "   > docs/reported_stats/stats_compd_matcher_BS.time
+# cat docs/reported_stats/1_7.log | parallel "echo {}; cd {}; make llstat; tail -n2 mcsema/compd.log ; tail -n3  mcsema/match_mcsema_proposed.log; tail -n3  mcsema/match_proposed_mcsema.log;cd - "   > docs/reported_stats/stats_compd_matcher_AS.time
+df <- read.table("stats_compd_matcher_AS.time", header = FALSE, sep=',')
+#df <- read.table("stats_compd_matcher_BS.time", header = FALSE, sep=',')
 print_stats(df)
 
 
