@@ -43,24 +43,26 @@ print_stats <- function (df, chart, range_min, range_max, step) {
   cat("Median:", median, ":", median_label, "\n")
   cat("Max:", max, ":" , max_label, "\n")
   cat("Min:", min, ":", min_label, "\n")
+  cat("Quartile", quantile(elapsed_sec), "\n")
+  cat("Mean", mean(elapsed_sec), "\n")
 
-  imp_point <- c(min, max)
-  imp_label <- c(min_label, max_label)
-
+#  imp_point <- c(min, max)
+#  imp_label <- c(min_label, max_label)
+#
 #range_min <- floor(min)
 #  range_max <- ceiling(min)
 
 #boxplot(elapsed_sec, ylab =  "Time (secs)", main = chart, horizontal = TRUE, axes = FALSE, staplewex = 1);
-  boxplot(elapsed_sec, xlab =  "Time (secs)", main = chart, axes=TRUE, horizontal=TRUE)
-  text(y=imp_point, labels=imp_label, x=1.25)
-  axis(2, at = seq(range_min,range_max,step))
+#  boxplot(elapsed_sec, xlab =  "Time (secs)", main = chart, axes=TRUE, horizontal=TRUE)
+#  text(y=imp_point, labels=imp_label, x=1.25)
+#  axis(2, at = seq(range_min,range_max,step))
 }
 
 # Give the chart file a name.
-pdf(file = "docs/siv.pdf")
+#pdf(file = "docs/siv.pdf")
 
 print("Stats: Xspec \n")
-# cat docs/kliPassR.log | parallel "echo {}; echo ==; tail -n3 register-variants/{}/Output/test-xspec.out" > docs/stat_xspec.time
+# cat docs/AE_docs/all_instructions.txt | parallel "echo {}; echo ==; tail -n3 {}/Output/test-xspec.out" > docs/stat_xspec.time
 df <- read.table("docs/stat_xspec.time", header = FALSE, sep=',')
 print_stats(df, "Summary Generation Time for X86-64 instructions", 110, 370, 20)
 
@@ -70,13 +72,13 @@ df <- read.table("docs/stat_lspec.time", header = FALSE, sep=',')
 print_stats(df, "Summary generation Time for Lifted LLVM IR", 110, 310, 20)
 
 # Save the file.
-dev.off()
+#dev.off()
 
-png(file = "docs/solver.png")
-print("Stats: Prove \n")
-# cat docs/genz3PassR.log  | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -" |& tee log  
-df <- read.table("docs/stat_prove.time", header = FALSE, sep=',')
-print_stats(df, "Z3 Solver Time", 0, 30, 1)
-
-# Save the file.
-dev.off()
+#png(file = "docs/solver.png")
+#print("Stats: Prove \n")
+## cat docs/genz3PassR.log  | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -" |& tee log  
+#df <- read.table("docs/stat_prove.time", header = FALSE, sep=',')
+#print_stats(df, "Z3 Solver Time", 0, 30, 1)
+#
+## Save the file.
+#dev.off()

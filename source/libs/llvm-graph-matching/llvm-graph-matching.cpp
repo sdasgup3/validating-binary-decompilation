@@ -151,6 +151,7 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2,
 #ifdef MATCHER_DEBUG
   llvm::errs() << "\n\n[Info] Retrieve Potential Matches...\n";
   dumpPotIMatches();
+  dumpPotIMatchesStats();
 #endif
 }
 
@@ -1347,15 +1348,14 @@ void Matcher::dumpPotIMatches() {
   }
 }
 
-void Matcher::dumpPotBBMatches() {
-  for (auto PotMatch : PotBBMatches) {
-    llvm::errs() << "[" << PotMatch.first << "]: " << PotMatch.first->getName()
-                 << " {\n";
-    llvm::errs() << "\t"
-                 << "[" << PotMatch.second << "]:" << PotMatch.second->getName()
-                 << "\n";
-    llvm::errs() << "\t}\n\n";
+void Matcher::dumpPotIMatchesStats() {
+  auto n = PotIMatches.size();
+  auto p = 0;
+  for (auto PotMatch : PotIMatches) {
+    p += PotMatch.second.size();
   }
+  llvm::errs() << "Pot Match Stat: Avg p = " << ((double)p / n)
+               << " n = : " << n << "\n";
 }
 
 // void Matcher::printDOT() {

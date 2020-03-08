@@ -148,6 +148,7 @@ public:
 
   bool initialArgumentsMatch(Function *F1, Function *F2);
   void dumpPotIMatches();
+  void dumpPotIMatchesStats();
   void dumpPotBBMatches();
   void dumpLLVMNode(const Value *);
   set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);

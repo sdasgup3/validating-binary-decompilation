@@ -298,7 +298,8 @@ map<string, string> SMTGenerator::uniquifyLSpec(
       auto width = getRegBitWidthByName(regName);
 
       if (regName == "MEM") {
-        retval[regName] = "(V_M" + to_string(memSize) + " == " + regSummary + ")";
+        retval[regName] =
+            "(V_M" + to_string(memSize) + " == " + regSummary + ")";
       } else if (width == 8) {
         // In LLVM semantics, the flags are represented as 8 bits, whereas in
         // X86 semantics it is a bit. Hence we will do the conversion here.
@@ -340,7 +341,8 @@ map<string, string> SMTGenerator::uniquifyLSpec(
       }
 
       if (regName == "MEM") {
-        retval[regName] = "(V_M" + to_string(memSize) + " == " + regSummary + ")";
+        retval[regName] =
+            "(V_M" + to_string(memSize) + " == " + regSummary + ")";
       } else if (width == 8) {
         // In LLVM semantics, the flags are represented as 8 bits, whereas in
         // X86 semantics it is a bit. Hence we will do the conversion here.

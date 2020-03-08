@@ -55,22 +55,22 @@ print_stats <- function (df, chart, range_min, range_max, step) {
   cat("Max but One:", max_but_one, ":", max_but_one_label, "\n")
   cat("Max but Two:", max_but_two, ":", max_but_two_label, "\n")
   cat("Quartile: ", quantile(elapsed_sec), "\n")
-  cat(srtd, "\n")
+  cat("Mean: ", mean(elapsed_sec), "\n")
+#cat(srtd, "\n")
 
-  imp_point <- c(22.55, 23.88, 29.89)
-  imp_label <- c("psubb", "xorps", "cmpxchgq")
+#  imp_point <- c(22.55, 23.88, 29.89)
+#  imp_label <- c("psubb", "xorps", "cmpxchgq")
 
 #range_min <- floor(min)
 #  range_max <- ceiling(min)
 
 #boxplot(elapsed_sec, ylab =  "Time (secs)", main = chart, horizontal = TRUE, axes = FALSE, staplewex = 1);
 #boxplot(elapsed_sec, xlab =  "Time (secs)", main = chart, axes=TRUE, horizontal=TRUE)
-  boxplot(elapsed_sec, xlab =  "Solver Time (in secs)", axes=TRUE, horizontal=TRUE)
-  text(x=imp_point, labels=imp_label, y=1.05)
+#  boxplot(elapsed_sec, xlab =  "Solver Time (in secs)", axes=TRUE, horizontal=TRUE)
+#  text(x=imp_point, labels=imp_label, y=1.05)
 }
 
-#png(file = "docs/solver.png")
-setEPS()
+#setEPS()
 postscript("docs/solver.eps")
 print("Stats: Prove \n")
 # cat docs/genz3PassR.log  | parallel  "echo; echo; cd register-variants/{}; make provez3; cd -" |& tee log  
@@ -78,5 +78,5 @@ df <- read.table("docs/stat_prove.time", header = FALSE, sep=',')
 print_stats(df, "Z3 Solver Time", 0, 35, 1)
 
 # Save the file.
-cat("Writing to docs/solver.eps", "\n")
-dev.off()
+#cat("Writing to docs/solver.eps", "\n")
+#dev.off()
