@@ -13,4 +13,4 @@ cat $LIST | parallel "echo ; echo {}; echo =======; cd {}; \
       echo \"Running Compositional Lifter\"; make  compd; echo ; \
       echo \"Running Matcher\"; make match; cd - "
 
-echo "Batch Run Begin"
+echo "Batch Run End"
