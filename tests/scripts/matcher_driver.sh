@@ -18,10 +18,10 @@ selectPassSeq() {
              -simplifycfg -basicaa -aa -instcombine"
 
   ## More effective pass list derived after submission.
-#  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-#             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-#             -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
-#             -gvn -basicaa -aa -memdep -dse -memcpyopt"
+  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+             -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
+             -gvn -basicaa -aa -memdep -dse -memcpyopt"
 
   if [ -v NORM ]; then
     if [ "$NORM" != "CUSTOM" ]; then
@@ -70,8 +70,10 @@ match() {
   TOOLDIR=$2
   PROG=$3
 
-  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1"
-  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )  1>${OUTDIR}match_proposed_mcsema.log 2>&1"
+#executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1 & ( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )  1>${OUTDIR}match_proposed_mcsema.log 2>&1 &"
+  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG}   --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1 &"
+  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )   1>${OUTDIR}match_proposed_mcsema.log 2>&1 &"
+  wait
   ${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
 }
 
