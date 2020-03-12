@@ -152,7 +152,7 @@ sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:
 ```bash
 mkdir -p ~/Github
 cd !$
-git clone git@github.com:sdasgup3/validating-binary-decompilation.git
+git clone --recursive git@github.com:sdasgup3/validating-binary-decompilation.git
 mkdir -p ${HOME}/Github/validating-binary-decompilation/source/build
 cd !$
 
