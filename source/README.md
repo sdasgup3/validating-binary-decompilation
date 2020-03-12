@@ -42,7 +42,7 @@ git clone git@github.com:sdasgup3/scripts-n-docs.git
 
 ### Install GCC/Clang
 ```bash
-Install gcc
+Install gcc (> ver. 6)
 https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed
 sudo update-alternatives --config gcc
 
@@ -57,6 +57,7 @@ sudo apt-get install parallel
 ```
 
 ### Install LLVM-4.0.0
+
 ```bash
 mkdir -p ~/Install/llvm
 cd ~/Install/llvm
