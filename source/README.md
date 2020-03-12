@@ -65,7 +65,7 @@ cd ~/Install/llvm
 rm -rf *.xz
 mkdir llvm.4.0.0.install llvm.4.0.0.obj
 cd llvm.4.0.0.obj
-INSTALL_PREFIX=/home/sdasgup3/Install/llvm/llvm.4.0.0.install
+INSTALL_PREFIX=~/Install/llvm/llvm.4.0.0.install
 # cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
 cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="Release" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
 make -j64
@@ -156,7 +156,7 @@ git clone git@github.com:sdasgup3/validating-binary-decompilation.git
 mkdir -p ${HOME}/Github/validating-binary-decompilation/source/build
 cd !$
 
-cmake .. -DLLVM_ROOT=/home/sdasgup3/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
+cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
 make -j8
 
 make check-format
@@ -200,8 +200,8 @@ validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
 
 #### To analyze the llvm dfg as a standalone opt pass
 ```
-cd /home/sdasgup3/Github/validating-binary-decompilation/tests/get_sign
-~/Install/llvm/llvm.4.0.0.install/bin/opt -load /home/sdasgup3/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < get_sign_instrumented.ll   --var_corr -debug-only=variable_correspondence  -disable-output -target-function sub_660_get_sign -init-state-function sub_67b_init_var_correspondence
+cd ~/Github/validating-binary-decompilation/tests/get_sign
+~/Install/llvm/llvm.4.0.0.install/bin/opt -load ~/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < get_sign_instrumented.ll   --var_corr -debug-only=variable_correspondence  -disable-output -target-function sub_660_get_sign -init-state-function sub_67b_init_var_correspondence
 ```
 
 ### Install mcsema
