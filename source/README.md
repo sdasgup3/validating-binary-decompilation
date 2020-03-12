@@ -181,7 +181,11 @@ cd ~/Github/validating-binary-decompilation/source/build
 make clean; make -j64
 ```
 
-
+### Clone the compositional compiler cache
+```
+cd ~/Github
+git clone https://github.com/sdasgup3/compd_cache
+```
 
 ### DEPRECATED
 #### Runnning the variable\_and\_basic\_block\_correspondence tool
