@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -indvars -mldst-motion -demanded-bits -instcombine -dse -postdomtree -adce -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine
+ -licm -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

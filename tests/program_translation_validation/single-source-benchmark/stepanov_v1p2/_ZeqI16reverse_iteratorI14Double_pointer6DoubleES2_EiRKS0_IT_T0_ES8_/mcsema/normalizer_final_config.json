@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -domtree -mem2reg -domtree -basicaa -instcombine -basiccg -prune-eh -domtree -sroa -early-cse -domtree -basicaa -instcombine -tailcallelim -reassociate -domtree -basicaa -domtree -basicaa -instcombine -memdep -basicaa -memdep -domtree -basicaa -instcombine -domtree -basicaa -memdep -dse -postdomtree -adce -domtree -basicaa -instcombine -barrier -elim-avail-extern -basiccg -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa
+ -mem2reg -gvn -early-cse -memdep -dse

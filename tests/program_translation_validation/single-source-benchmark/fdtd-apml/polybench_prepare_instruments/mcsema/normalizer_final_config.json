@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -instcombine -basiccg -argpromotion -early-cse -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -instcombine -bdce -instcombine -lazy-value-info -correlated-propagation -instcombine -barrier -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -instsimplify
+ -licm -early-cse -globalopt -simplifycfg -memdep -tailcallelim -instcombine -memcpyopt -early-cse-memssa

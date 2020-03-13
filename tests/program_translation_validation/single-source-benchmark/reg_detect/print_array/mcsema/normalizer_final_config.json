@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -basicaa -aa -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -instcombine -simplifycfg -globals-aa -prune-eh -early-cse -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -indvars -mldst-motion -gvn -memcpyopt -sccp -demanded-bits -instcombine -licm -adce -simplifycfg -instcombine -barrier -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -instsimplify
+ -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt

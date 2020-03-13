@@ -1,1 +1,1 @@
- -tti -scoped-noalias -basicaa -sroa -basicaa -reassociate -basicaa -basicaa -indvars -mldst-motion -gvn -basicaa -demanded-bits -basicaa -basicaa -dse -postdomtree -adce -basicaa -barrier -float2int -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -basicaa -instsimplify
+ -mem2reg -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim -memcpyopt

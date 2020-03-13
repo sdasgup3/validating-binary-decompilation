@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -globalopt -domtree -deadargelim -domtree -instcombine -domtree -early-cse -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -gvn -domtree -bdce -instcombine -jump-threading -correlated-propagation -domtree -postdomtree -domtree -instcombine -barrier -elim-avail-extern -float2int -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree
+ -mem2reg -gvn -globalopt -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa

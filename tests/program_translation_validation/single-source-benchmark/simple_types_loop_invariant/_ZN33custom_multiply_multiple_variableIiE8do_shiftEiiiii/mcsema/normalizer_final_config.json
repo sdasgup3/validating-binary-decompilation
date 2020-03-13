@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -instcombine -prune-eh -instcombine -reassociate -instcombine -indvars -mldst-motion -gvn -memcpyopt -sccp -bdce -instcombine -jump-threading -dse -instcombine -elim-avail-extern -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -constmerge
+ -licm -early-cse -memdep -instcombine -memcpyopt -early-cse-memssa

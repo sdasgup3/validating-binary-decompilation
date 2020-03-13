@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -instcombine -instcombine -libcalls-shrinkwrap -reassociate -instcombine -indvars -memdep -gvn -memdep -sccp -instcombine -jump-threading -memdep -dse -adce -instcombine -float2int -instcombine -instcombine -instcombine -globaldce
+ -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine

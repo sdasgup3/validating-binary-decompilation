@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -globalopt -deadargelim -basicaa -instcombine -basiccg -inline -argpromotion -sroa -early-cse -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -memdep -basicaa -memdep -memcpyopt -bdce -basicaa -instcombine -correlated-propagation -basicaa -memdep -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa
+ -licm -gvn -basicaa -aa -dse -instcombine

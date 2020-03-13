@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -instcombine -simplifycfg -argpromotion -lazy-value-info -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -sccp -instcombine -lazy-value-info -memdep -dse -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -instsimplify
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine

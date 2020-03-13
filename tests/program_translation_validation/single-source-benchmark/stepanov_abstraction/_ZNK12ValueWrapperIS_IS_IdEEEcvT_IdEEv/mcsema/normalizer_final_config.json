@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -deadargelim -aa -simplifycfg -sroa -correlated-propagation -simplifycfg -aa -tailcallelim -simplifycfg -aa -simplifycfg -aa -mldst-motion -aa -gvn -aa -bdce -aa -correlated-propagation -aa -dse -aa -simplifycfg -aa -barrier -aa -aa -aa -aa -simplifycfg -aa -globaldce -aa
+ -mem2reg -gvn -basicaa -memdep -dse -deadargelim -memcpyopt

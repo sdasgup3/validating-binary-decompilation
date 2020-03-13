@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -domtree -domtree -instcombine -domtree -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -memdep -gvn -memdep -memcpyopt -sccp -domtree -instcombine -correlated-propagation -domtree -memdep -dse -postdomtree -domtree -instcombine -barrier -elim-avail-extern -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -constmerge -domtree
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -memcpyopt

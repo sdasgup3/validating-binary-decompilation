@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -mem2reg -deadargelim -aa -instcombine -basiccg -prune-eh -argpromotion -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -demanded-bits -bdce -aa -instcombine -aa -memdep -aa -postdomtree -aa -instcombine -basiccg -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -constmerge -aa
+ -mem2reg -gvn -early-cse -globalopt -deadargelim -instcombine -early-cse-memssa

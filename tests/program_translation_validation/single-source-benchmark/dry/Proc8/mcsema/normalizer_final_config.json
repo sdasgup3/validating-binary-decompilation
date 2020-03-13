@@ -1,1 +1,1 @@
- -globalopt -deadargelim -aa -instcombine -simplifycfg -inline -lazy-value-info -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -aa -licm -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -sccp -demanded-bits -aa -instcombine -lazy-value-info -aa -aa -licm -adce -simplifycfg -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -licm -globaldce -aa
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa

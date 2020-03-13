@@ -1,1 +1,1 @@
- -domtree -mem2reg -deadargelim -domtree -domtree -domtree -tailcallelim -reassociate -domtree -scalar-evolution -licm -domtree -scalar-evolution -indvars -gvn -domtree -demanded-bits -jump-threading -domtree -dse -scalar-evolution -licm -domtree -domtree -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -domtree -scalar-evolution -scalar-evolution -licm -strip-dead-prototypes -domtree -scalar-evolution
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -assumption-cache-tracker -instcombine -inline -sroa -early-cse -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -memdep -memdep -bdce -instcombine -lazy-value-info -memdep -adce -instcombine -barrier -elim-avail-extern -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce -instsimplify
+ -mem2reg -licm -gvn -globalopt -basicaa -dse -tailcallelim -instcombine

@@ -1,1 +1,1 @@
- -scoped-noalias -instcombine -globals-aa -prune-eh -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -mldst-motion -gvn -sccp -demanded-bits -instcombine -correlated-propagation -dse -licm -instcombine -elim-avail-extern -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm
+ -mem2reg -gvn -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

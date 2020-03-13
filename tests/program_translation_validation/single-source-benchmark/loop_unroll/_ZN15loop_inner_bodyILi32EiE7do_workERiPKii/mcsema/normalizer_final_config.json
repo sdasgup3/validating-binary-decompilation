@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -aa -instcombine -basiccg -prune-eh -early-cse -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -dse -aa -postdomtree -aa -instcombine -barrier -elim-avail-extern -basiccg -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa
+ -mem2reg -gvn -early-cse -globalopt -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

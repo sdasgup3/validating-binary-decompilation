@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -deadargelim -instcombine -sroa -early-cse -lazy-value-info -instcombine -licm -instcombine -gvn -sccp -instcombine -lazy-value-info -dse -licm -instcombine -instcombine -instcombine -instcombine -licm -strip-dead-prototypes
+ -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt

@@ -1,1 +1,1 @@
- -tbaa -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -sroa -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -indvars -gvn -sccp -instcombine -jump-threading -postdomtree -simplifycfg -instcombine -barrier -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

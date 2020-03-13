@@ -1,1 +1,1 @@
- -tti -tbaa -mem2reg -basiccg -sroa -early-cse -indvars -memdep -gvn -memdep -sccp -memdep -dse -barrier -basiccg -strip-dead-prototypes -constmerge
+ -gvn -basicaa -memdep -tailcallelim -instcombine -early-cse-memssa

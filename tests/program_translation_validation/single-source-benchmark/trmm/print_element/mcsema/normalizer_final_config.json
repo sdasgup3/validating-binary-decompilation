@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -basicaa -aa -instcombine -basiccg -globals-aa -argpromotion -early-cse -basicaa -aa -instcombine -libcalls-shrinkwrap -basicaa -aa -licm -basicaa -aa -instcombine -aa -gvn -basicaa -aa -bdce -basicaa -aa -instcombine -jump-threading -basicaa -aa -aa -licm -postdomtree -basicaa -aa -instcombine -elim-avail-extern -basiccg -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -basicaa -aa -instsimplify
+ -gvn -aa -dse -tailcallelim -instcombine -early-cse-memssa

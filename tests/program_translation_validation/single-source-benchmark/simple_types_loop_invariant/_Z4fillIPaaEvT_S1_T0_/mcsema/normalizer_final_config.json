@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -instcombine -basiccg -sroa -correlated-propagation -instcombine -licm -instcombine -mldst-motion -gvn -memcpyopt -instcombine -correlated-propagation -licm -instcombine -barrier -basiccg -instcombine -instcombine -instcombine -licm -constmerge -instsimplify
+ -gvn -early-cse -tailcallelim -instcombine -early-cse-memssa

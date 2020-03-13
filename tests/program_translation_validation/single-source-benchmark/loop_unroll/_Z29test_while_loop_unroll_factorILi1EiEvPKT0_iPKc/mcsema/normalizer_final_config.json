@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -sroa -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -correlated-propagation -memdep -dse -licm -postdomtree -adce -simplifycfg -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes
+ -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt

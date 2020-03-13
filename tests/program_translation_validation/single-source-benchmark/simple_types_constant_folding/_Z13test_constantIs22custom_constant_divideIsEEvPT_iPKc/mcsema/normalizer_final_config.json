@@ -1,1 +1,1 @@
- -tti -mem2reg -deadargelim -basicaa -instcombine -inline -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -memdep -licm -postdomtree -basicaa -instcombine -barrier -elim-avail-extern -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -constmerge -basicaa
+ -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine

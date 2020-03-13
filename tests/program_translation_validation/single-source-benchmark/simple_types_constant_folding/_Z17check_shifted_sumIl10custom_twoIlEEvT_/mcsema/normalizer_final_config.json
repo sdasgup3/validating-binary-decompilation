@@ -1,1 +1,1 @@
- -targetlibinfo -tti -deadargelim -aa -instcombine -simplifycfg -prune-eh -sroa -early-cse -lazy-value-info -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -aa -instcombine -lazy-value-info -jump-threading -aa -memdep -aa -simplifycfg -aa -instcombine -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -aa -instsimplify
+ -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt

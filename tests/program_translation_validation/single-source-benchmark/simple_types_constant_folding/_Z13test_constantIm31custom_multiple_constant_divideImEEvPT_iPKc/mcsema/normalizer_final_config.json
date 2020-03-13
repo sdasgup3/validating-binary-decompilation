@@ -1,1 +1,1 @@
- -targetlibinfo -domtree -deadargelim -domtree -instcombine -domtree -sroa -early-cse -domtree -instcombine -tailcallelim -reassociate -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -domtree -licm -postdomtree -adce -domtree -instcombine -barrier -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -domtree
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -instcombine

@@ -1,1 +1,1 @@
- -tti -scoped-noalias -basicaa -instcombine -basiccg -globals-aa -sroa -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -correlated-propagation -basicaa -memdep -licm -basicaa -instcombine -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa -instsimplify
+ -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine

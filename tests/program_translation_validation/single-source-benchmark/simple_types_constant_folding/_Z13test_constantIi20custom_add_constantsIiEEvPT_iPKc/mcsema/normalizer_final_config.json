@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -deadargelim -aa -instcombine -basiccg -inline -sroa -lazy-value-info -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -lazy-value-info -correlated-propagation -aa -memdep -dse -aa -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -aa
+ -gvn -early-cse -basicaa -dse -deadargelim -instcombine

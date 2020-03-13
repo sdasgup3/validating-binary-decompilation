@@ -1,1 +1,1 @@
- -globalopt -instcombine -basiccg -sroa -instcombine -libcalls-shrinkwrap -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -sccp -instcombine -memdep -scalar-evolution -postdomtree -adce -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify
+ -gvn -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

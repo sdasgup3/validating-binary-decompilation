@@ -1,1 +1,1 @@
- -targetlibinfo -tti -deadargelim -instcombine -inline -sroa -lazy-value-info -instcombine -licm -instcombine -gvn -demanded-bits -bdce -instcombine -lazy-value-info -licm -adce -instcombine -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes -constmerge
+ -mem2reg -licm -early-cse -globalopt -basicaa -tailcallelim -instcombine -early-cse-memssa

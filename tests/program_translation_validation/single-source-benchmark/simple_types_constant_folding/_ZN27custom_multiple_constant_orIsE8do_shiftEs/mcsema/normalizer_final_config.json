@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -aa -prune-eh -inline -sroa -early-cse -correlated-propagation -aa -aa -aa -indvars -aa -gvn -aa -sccp -demanded-bits -aa -correlated-propagation -aa -dse -aa -adce -aa -elim-avail-extern -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -strip-dead-prototypes -globaldce -aa
+ -gvn -globalopt -dse -tailcallelim -instcombine

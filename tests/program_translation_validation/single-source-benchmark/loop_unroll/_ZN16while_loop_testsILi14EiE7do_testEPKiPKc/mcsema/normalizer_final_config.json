@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -globalopt -domtree -domtree -instcombine -argpromotion -domtree -early-cse -domtree -instcombine -libcalls-shrinkwrap -reassociate -domtree -licm -domtree -instcombine -indvars -mldst-motion -memdep -memdep -domtree -instcombine -domtree -memdep -licm -domtree -instcombine -elim-avail-extern -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree -instsimplify
+ -early-cse -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -basicaa -simplifycfg -globals-aa -prune-eh -sroa -early-cse -correlated-propagation -simplifycfg -basicaa -tailcallelim -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -indvars -mldst-motion -gvn -basicaa -memcpyopt -basicaa -correlated-propagation -basicaa -dse -licm -simplifycfg -basicaa -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -simplifycfg -basicaa -licm -strip-dead-prototypes -constmerge -basicaa
+ -mem2reg -gvn -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

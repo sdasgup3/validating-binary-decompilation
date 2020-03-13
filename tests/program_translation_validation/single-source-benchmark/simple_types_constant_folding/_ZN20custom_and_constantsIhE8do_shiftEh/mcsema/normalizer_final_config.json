@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -aa -instcombine -correlated-propagation -aa -instcombine -aa -licm -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -aa -instcombine -correlated-propagation -aa -aa -licm -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -aa
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -instcombine -early-cse-memssa

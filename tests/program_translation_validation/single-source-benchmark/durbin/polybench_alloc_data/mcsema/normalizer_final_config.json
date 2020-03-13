@@ -1,1 +1,1 @@
- -tbaa -instcombine -basiccg -globals-aa -early-cse -instcombine -libcalls-shrinkwrap -reassociate -scalar-evolution -instcombine -scalar-evolution -mldst-motion -instcombine -dse -scalar-evolution -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

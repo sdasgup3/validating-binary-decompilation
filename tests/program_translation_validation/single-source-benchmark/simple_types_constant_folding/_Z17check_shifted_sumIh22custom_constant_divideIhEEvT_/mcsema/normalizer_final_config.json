@@ -1,1 +1,1 @@
- -targetlibinfo -tti -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -prune-eh -inline -argpromotion -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -instcombine -memdep -dse -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -instcombine -simplifycfg -instcombine -instcombine
+ -licm -gvn -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

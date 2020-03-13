@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -deadargelim -aa -instcombine -basiccg -inline -early-cse -lazy-value-info -aa -instcombine -aa -aa -instcombine -indvars -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -aa -instcombine -lazy-value-info -jump-threading -aa -memdep -dse -aa -aa -instcombine -basiccg -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify
+ -gvn -early-cse -simplifycfg -aa -dse -instcombine -memcpyopt -early-cse-memssa

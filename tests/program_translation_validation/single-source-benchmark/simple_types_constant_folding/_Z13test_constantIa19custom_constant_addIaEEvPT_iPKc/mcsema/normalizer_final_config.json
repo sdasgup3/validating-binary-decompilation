@@ -1,1 +1,1 @@
- -domtree -domtree -instcombine -prune-eh -argpromotion -domtree -domtree -instcombine -reassociate -domtree -domtree -instcombine -memdep -gvn -memdep -domtree -instcombine -jump-threading -domtree -memdep -postdomtree -adce -domtree -instcombine -float2int -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree
+ -gvn -simplifycfg -tailcallelim -instcombine -early-cse-memssa

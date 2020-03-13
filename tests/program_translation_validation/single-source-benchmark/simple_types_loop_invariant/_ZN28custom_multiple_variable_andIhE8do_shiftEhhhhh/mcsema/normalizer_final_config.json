@@ -1,1 +1,1 @@
- -tbaa -mem2reg -simplifycfg -globals-aa -inline -argpromotion -lazy-value-info -simplifycfg -simplifycfg -licm -simplifycfg -indvars -gvn -demanded-bits -lazy-value-info -dse -licm -postdomtree -simplifycfg -barrier -elim-avail-extern -globals-aa -demanded-bits -demanded-bits -simplifycfg -licm -instsimplify
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -tailcallelim

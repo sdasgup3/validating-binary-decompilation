@@ -1,1 +1,1 @@
- -globalopt -aa -instcombine -globals-aa -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -mldst-motion -aa -gvn -aa -aa -instcombine -lazy-value-info -aa -dse -aa -adce -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -aa -instsimplify
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim

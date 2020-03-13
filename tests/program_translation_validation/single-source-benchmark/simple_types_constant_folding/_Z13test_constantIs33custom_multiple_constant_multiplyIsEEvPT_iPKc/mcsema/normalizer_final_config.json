@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -basicaa -instcombine -simplifycfg -globals-aa -sroa -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -memcpyopt -sccp -bdce -basicaa -instcombine -basicaa -adce -simplifycfg -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -basicaa
+ -gvn -early-cse -memdep -tailcallelim -instcombine -early-cse-memssa

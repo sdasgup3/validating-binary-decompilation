@@ -1,0 +1,18 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     7s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    12s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #264, cost time=0.0049, found by NormalGreedyMutation
+[    24s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #264, cost time=0.0049, found by NormalGreedyMutation
+[    34s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #264, cost time=0.0049, found by NormalGreedyMutation
+[    50s]    INFO opentuner.search.plugin.DisplayPlugin: tests=35, best #278, cost time=0.0024, found by NormalGreedyMutation
+[    64s]    INFO opentuner.search.plugin.DisplayPlugin: tests=47, best #278, cost time=0.0024, found by NormalGreedyMutation
+[    75s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #278, cost time=0.0024, found by NormalGreedyMutation
+[    86s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #278, cost time=0.0024, found by NormalGreedyMutation
+[    99s]    INFO opentuner.search.plugin.DisplayPlugin: tests=74, best #278, cost time=0.0024, found by NormalGreedyMutation
+[   109s]    INFO opentuner.search.plugin.DisplayPlugin: tests=82, best #278, cost time=0.0024, found by NormalGreedyMutation
+[   125s]    INFO opentuner.search.plugin.DisplayPlugin: tests=93, best #278, cost time=0.0024, found by NormalGreedyMutation
+[   134s]    INFO opentuner.search.plugin.DisplayPlugin: tests=100, best #278, cost time=0.0024, found by NormalGreedyMutation
+[   134s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -globalopt -instcombine -libcalls-shrinkwrap -aa -early-cse-memssa -tailcallelim -deadargelim -gvn ]
+74.01user 18.09system 2:15.17elapsed 68%CPU (0avgtext+0avgdata 54892maxresident)k
+0inputs+108808outputs (0major+899065minor)pagefaults 0swaps

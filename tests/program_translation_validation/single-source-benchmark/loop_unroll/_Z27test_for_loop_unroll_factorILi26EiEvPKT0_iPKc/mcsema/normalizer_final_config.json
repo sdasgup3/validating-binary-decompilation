@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -deadargelim -aa -instcombine -prune-eh -lazy-value-info -aa -instcombine -reassociate -aa -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -aa -instcombine -lazy-value-info -aa -dse -aa -aa -instcombine -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -tailcallelim -instcombine -early-cse-memssa

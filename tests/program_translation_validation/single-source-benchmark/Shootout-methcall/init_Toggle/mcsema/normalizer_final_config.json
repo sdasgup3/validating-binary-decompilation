@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -assumption-cache-tracker -deadargelim -basicaa -instcombine -basiccg -inline -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -adce -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -basicaa -instsimplify
+ -gvn -basicaa -instcombine -early-cse-memssa

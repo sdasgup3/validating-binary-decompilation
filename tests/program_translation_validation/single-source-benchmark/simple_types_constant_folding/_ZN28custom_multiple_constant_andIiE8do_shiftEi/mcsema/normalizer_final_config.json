@@ -1,1 +1,1 @@
- -globalopt -instcombine -globals-aa -inline -argpromotion -sroa -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -indvars -gvn -memcpyopt -demanded-bits -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -licm -postdomtree -adce -instcombine -barrier -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm
+ -mem2reg -gvn -early-cse -globalopt -memdep -dse -deadargelim -memcpyopt

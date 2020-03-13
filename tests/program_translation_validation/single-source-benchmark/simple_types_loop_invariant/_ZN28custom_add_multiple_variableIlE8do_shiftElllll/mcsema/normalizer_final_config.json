@@ -1,1 +1,1 @@
- -tti -globalopt -domtree -mem2reg -deadargelim -domtree -aa -instcombine -basiccg -inline -domtree -domtree -aa -instcombine -tailcallelim -domtree -aa -domtree -aa -instcombine -aa -gvn -aa -sccp -domtree -demanded-bits -bdce -aa -instcombine -domtree -aa -dse -aa -domtree -aa -instcombine -barrier -basiccg -float2int -domtree -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -domtree -aa -instcombine -instcombine -domtree -aa -instsimplify
+ -mem2reg -gvn -globalopt -dse -libcalls-shrinkwrap -early-cse-memssa

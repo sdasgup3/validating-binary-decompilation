@@ -1,1 +1,1 @@
- -tti -scoped-noalias -globalopt -mem2reg -instcombine -simplifycfg -basiccg -sroa -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -indvars -gvn -bdce -instcombine -jump-threading -dse -licm -simplifycfg -instcombine -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine -licm
+ -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine -memcpyopt -early-cse-memssa

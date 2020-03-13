@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -mem2reg -instcombine -basiccg -globals-aa -inline -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -mldst-motion -memdep -memdep -bdce -instcombine -memdep -dse -postdomtree -adce -instcombine -elim-avail-extern -basiccg -globals-aa -instcombine -instcombine -instcombine
+ -licm -early-cse -simplifycfg -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

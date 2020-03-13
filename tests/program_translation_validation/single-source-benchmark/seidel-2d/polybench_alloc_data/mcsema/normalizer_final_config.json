@@ -1,1 +1,1 @@
- -globalopt -domtree -deadargelim -domtree -instcombine -globals-aa -inline -domtree -sroa -early-cse -lazy-value-info -domtree -instcombine -domtree -licm -domtree -instcombine -memdep -memdep -memcpyopt -domtree -demanded-bits -instcombine -lazy-value-info -jump-threading -domtree -memdep -licm -postdomtree -adce -domtree -instcombine -elim-avail-extern -globals-aa -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -licm -globaldce -constmerge -domtree
+ -gvn -tailcallelim -instcombine -memcpyopt -early-cse-memssa

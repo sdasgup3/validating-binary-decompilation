@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -sroa -early-cse -indvars -mldst-motion -gvn -demanded-bits -dse -postdomtree -barrier -elim-avail-extern -demanded-bits -demanded-bits
+ -licm -early-cse -aa -memdep -tailcallelim -instcombine -early-cse-memssa

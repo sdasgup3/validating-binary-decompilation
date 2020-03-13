@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -globalopt -instcombine -early-cse -lazy-value-info -correlated-propagation -instcombine -reassociate -instcombine -mldst-motion -gvn -demanded-bits -instcombine -lazy-value-info -correlated-propagation -instcombine -elim-avail-extern -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -instsimplify
+ -gvn -globalopt -dse -tailcallelim -instcombine

@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -deadargelim -instcombine
+ -licm -gvn -basicaa -deadargelim -instcombine -early-cse-memssa

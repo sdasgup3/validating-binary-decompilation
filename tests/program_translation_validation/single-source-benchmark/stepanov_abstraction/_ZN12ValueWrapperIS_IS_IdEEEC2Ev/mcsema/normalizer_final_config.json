@@ -1,1 +1,1 @@
- -tti -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -sroa -lazy-value-info -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -instcombine -indvars -memdep -gvn -memdep -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -memdep -simplifycfg -instcombine -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -instsimplify
+ -gvn -early-cse -simplifycfg -dse -instcombine -memcpyopt

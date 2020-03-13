@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -deadargelim -aa -instcombine -basiccg -inline -argpromotion -early-cse -lazy-value-info -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -aa -instcombine -lazy-value-info -jump-threading -aa -dse -aa -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -aa
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

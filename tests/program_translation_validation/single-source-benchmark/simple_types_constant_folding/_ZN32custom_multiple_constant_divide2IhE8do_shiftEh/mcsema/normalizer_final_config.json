@@ -1,1 +1,1 @@
- -globalopt -basicaa -simplifycfg -basiccg -globals-aa -argpromotion -sroa -simplifycfg -basicaa -simplifycfg -basicaa -licm -simplifycfg -basicaa -gvn -basicaa -demanded-bits -basicaa -basicaa -dse -licm -adce -simplifycfg -basicaa -basiccg -globals-aa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -basicaa -licm -globaldce -basicaa
+ -mem2reg -gvn -globalopt -aa -dse -deadargelim -memcpyopt

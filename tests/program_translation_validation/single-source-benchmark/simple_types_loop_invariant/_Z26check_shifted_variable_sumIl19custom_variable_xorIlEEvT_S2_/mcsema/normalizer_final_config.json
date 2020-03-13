@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -aa -instcombine -simplifycfg -basiccg -sroa -early-cse -simplifycfg -aa -instcombine -simplifycfg -aa -simplifycfg -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -aa -aa -adce -simplifycfg -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa -instsimplify
+ -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

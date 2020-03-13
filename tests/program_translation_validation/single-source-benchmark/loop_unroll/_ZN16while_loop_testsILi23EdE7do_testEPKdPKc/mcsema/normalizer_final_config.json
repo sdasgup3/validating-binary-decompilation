@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basicaa -early-cse -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -gvn -basicaa -basicaa -basicaa -dse -adce -basicaa -barrier -elim-avail-extern -float2int -basicaa -basicaa -basicaa -basicaa -strip-dead-prototypes -globaldce -basicaa -instsimplify
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -early-cse-memssa

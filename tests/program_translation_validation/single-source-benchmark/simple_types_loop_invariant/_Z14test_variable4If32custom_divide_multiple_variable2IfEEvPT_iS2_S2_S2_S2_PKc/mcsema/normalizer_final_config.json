@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -prune-eh -inline -argpromotion -sroa -early-cse -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -gvn -memcpyopt -instcombine -licm -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify
+ -licm -gvn -early-cse -deadargelim -tailcallelim -instcombine -early-cse-memssa

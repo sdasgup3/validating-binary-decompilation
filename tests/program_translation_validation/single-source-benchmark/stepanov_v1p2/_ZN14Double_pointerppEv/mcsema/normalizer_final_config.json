@@ -1,1 +1,1 @@
- -targetlibinfo -tti -globalopt -mem2reg -basicaa -sroa -early-cse -correlated-propagation -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -memdep -gvn -basicaa -memdep -memcpyopt -sccp -basicaa -jump-threading -correlated-propagation -basicaa -memdep -dse -scalar-evolution -postdomtree -adce -basicaa -elim-avail-extern -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -constmerge -basicaa -scalar-evolution
+ -early-cse -aa -instcombine -early-cse-memssa

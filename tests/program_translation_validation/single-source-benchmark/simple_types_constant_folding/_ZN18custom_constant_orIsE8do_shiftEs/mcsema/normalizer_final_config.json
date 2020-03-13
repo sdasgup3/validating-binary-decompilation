@@ -1,1 +1,1 @@
- -targetlibinfo -deadargelim -aa -basiccg -globals-aa -prune-eh -sroa -correlated-propagation -aa -aa -licm -aa -indvars -mldst-motion -aa -gvn -aa -memcpyopt -sccp -demanded-bits -aa -correlated-propagation -aa -dse -aa -licm -postdomtree -aa -basiccg -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -licm -aa
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt

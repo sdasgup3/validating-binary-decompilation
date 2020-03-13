@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -globalopt -deadargelim -aa -instcombine -prune-eh -argpromotion -lazy-value-info -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -bdce -aa -instcombine -lazy-value-info -jump-threading -aa -dse -aa -adce -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa
+ -licm -gvn -early-cse -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

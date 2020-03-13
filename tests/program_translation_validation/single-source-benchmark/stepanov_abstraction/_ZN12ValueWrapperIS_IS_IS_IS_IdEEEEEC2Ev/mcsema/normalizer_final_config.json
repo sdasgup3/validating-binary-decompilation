@@ -1,1 +1,1 @@
- -globalopt -sroa -lazy-value-info -correlated-propagation -libcalls-shrinkwrap -scalar-evolution -licm -scalar-evolution -indvars -mldst-motion -memdep -gvn -memdep -lazy-value-info -jump-threading -correlated-propagation -memdep -dse -scalar-evolution -licm -adce -barrier -float2int -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -licm -globaldce -constmerge -scalar-evolution
+ -mem2reg -licm -gvn -simplifycfg -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

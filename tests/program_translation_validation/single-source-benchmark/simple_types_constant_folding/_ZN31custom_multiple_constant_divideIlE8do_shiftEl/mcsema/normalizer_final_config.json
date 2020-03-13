@@ -1,1 +1,1 @@
- -tbaa -instcombine -simplifycfg -basiccg -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -gvn -instcombine -jump-threading -dse -scalar-evolution -simplifycfg -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -globaldce -scalar-evolution
+ -mem2reg -licm -gvn -early-cse -memdep -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -domtree -mem2reg -domtree -aa -simplifycfg -basiccg -domtree -simplifycfg -domtree -aa -tailcallelim -simplifycfg -domtree -aa -simplifycfg -domtree -aa -mldst-motion -aa -gvn -aa -domtree -demanded-bits -bdce -aa -domtree -aa -dse -aa -adce -simplifycfg -domtree -aa -elim-avail-extern -basiccg -domtree -aa -aa -demanded-bits -aa -aa -demanded-bits -simplifycfg -domtree -aa -domtree -aa -instsimplify
+ -mem2reg -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -early-cse-memssa

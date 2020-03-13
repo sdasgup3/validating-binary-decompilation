@@ -1,1 +1,1 @@
- -scoped-noalias -basicaa -instcombine -inline -argpromotion -sroa -lazy-value-info -basicaa -instcombine -reassociate -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -bdce -basicaa -instcombine -lazy-value-info -basicaa -memdep -licm -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa
+ -mem2reg -licm -early-cse -simplifycfg -aa -memdep -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

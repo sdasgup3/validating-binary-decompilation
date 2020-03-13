@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -inline -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -licm
+ -gvn -basicaa -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

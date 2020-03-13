@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -instcombine -simplifycfg -prune-eh -sroa -early-cse -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -indvars -mldst-motion -memdep -memdep -sccp -bdce -instcombine -jump-threading -correlated-propagation -memdep -licm -adce -simplifycfg -instcombine -barrier -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify
+ -mem2reg -gvn -aa -dse -deadargelim -memcpyopt -early-cse-memssa

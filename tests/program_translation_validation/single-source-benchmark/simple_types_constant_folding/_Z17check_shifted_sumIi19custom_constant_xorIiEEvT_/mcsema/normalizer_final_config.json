@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -basicaa -instcombine -basiccg -inline -argpromotion -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -basicaa -instcombine -basicaa -licm -adce -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa
+ -mem2reg -early-cse -aa -deadargelim -instcombine -early-cse-memssa

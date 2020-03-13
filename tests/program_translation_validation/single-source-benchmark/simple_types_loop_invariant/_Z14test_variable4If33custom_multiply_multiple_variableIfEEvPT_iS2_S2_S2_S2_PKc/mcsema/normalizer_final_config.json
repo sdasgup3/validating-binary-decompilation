@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -basicaa -instcombine -globals-aa -argpromotion -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -correlated-propagation -basicaa -memdep -licm -postdomtree -basicaa -instcombine -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa -instsimplify
+ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

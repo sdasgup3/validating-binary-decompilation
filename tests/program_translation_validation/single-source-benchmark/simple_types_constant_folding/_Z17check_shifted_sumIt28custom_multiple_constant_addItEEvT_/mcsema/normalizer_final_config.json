@@ -1,1 +1,1 @@
- -domtree -deadargelim -domtree -instcombine -globals-aa -prune-eh -argpromotion -domtree -correlated-propagation -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -domtree -demanded-bits -bdce -instcombine -correlated-propagation -domtree -memdep -dse -domtree -instcombine -barrier -globals-aa -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -instcombine

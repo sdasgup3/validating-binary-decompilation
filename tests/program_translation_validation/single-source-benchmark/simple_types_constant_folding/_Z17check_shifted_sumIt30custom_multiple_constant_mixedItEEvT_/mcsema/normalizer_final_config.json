@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -deadargelim -instcombine -globals-aa -instcombine -scalar-evolution -instcombine -scalar-evolution -indvars -mldst-motion -memdep -gvn -memdep -sccp -instcombine -memdep -scalar-evolution -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution
+ -mem2reg -early-cse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

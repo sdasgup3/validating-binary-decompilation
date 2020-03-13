@@ -1,1 +1,1 @@
- -targetlibinfo -tti -domtree -domtree -aa -basiccg -prune-eh -inline -domtree -sroa -lazy-value-info -domtree -aa -reassociate -domtree -aa -domtree -aa -indvars -mldst-motion -aa -memdep -gvn -aa -memdep -sccp -domtree -demanded-bits -bdce -aa -lazy-value-info -domtree -aa -memdep -dse -aa -domtree -aa -elim-avail-extern -basiccg -domtree -aa -aa -demanded-bits -aa -aa -demanded-bits -domtree -aa -globaldce -domtree -aa
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -tailcallelim -instcombine -early-cse-memssa

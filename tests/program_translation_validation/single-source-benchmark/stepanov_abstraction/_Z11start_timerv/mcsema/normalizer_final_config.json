@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -mem2reg -deadargelim -basicaa -aa -instcombine -prune-eh -early-cse -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -mldst-motion -aa -basicaa -aa -sccp -bdce -basicaa -aa -instcombine -basicaa -aa -dse -aa -licm -basicaa -aa -instcombine -barrier -elim-avail-extern -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -constmerge -basicaa -aa -instsimplify
+ -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine

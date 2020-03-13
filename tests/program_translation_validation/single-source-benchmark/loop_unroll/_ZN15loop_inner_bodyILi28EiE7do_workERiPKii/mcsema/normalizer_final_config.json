@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -deadargelim -aa -instcombine -simplifycfg -globals-aa -argpromotion -sroa -correlated-propagation -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -demanded-bits -bdce -aa -instcombine -correlated-propagation -aa -memdep -dse -aa -simplifycfg -aa -instcombine -elim-avail-extern -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -aa
+ -gvn -globalopt -instcombine -memcpyopt -early-cse-memssa

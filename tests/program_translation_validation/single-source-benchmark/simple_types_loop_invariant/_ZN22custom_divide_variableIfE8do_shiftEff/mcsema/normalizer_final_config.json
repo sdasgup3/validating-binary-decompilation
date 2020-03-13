@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -aa -instcombine -basiccg -argpromotion -early-cse -aa -instcombine -aa -licm -aa -instcombine -indvars -aa -gvn -aa -bdce -aa -instcombine -aa -aa -licm -adce -aa -instcombine -basiccg -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -constmerge -aa
+ -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -instcombine -simplifycfg -basiccg -argpromotion -sroa -early-cse -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -indvars -mldst-motion -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -adce -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -mem2reg -licm -gvn -early-cse -aa -instcombine -early-cse-memssa

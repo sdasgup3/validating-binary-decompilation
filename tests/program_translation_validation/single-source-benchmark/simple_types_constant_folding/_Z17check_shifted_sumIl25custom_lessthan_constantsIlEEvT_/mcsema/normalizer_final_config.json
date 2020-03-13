@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -mem2reg -deadargelim -instcombine -basiccg -globals-aa -inline -lazy-value-info -instcombine -tailcallelim -licm -instcombine -indvars -gvn -memcpyopt -sccp -demanded-bits -instcombine -lazy-value-info -dse -licm -postdomtree -instcombine -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge
+ -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt

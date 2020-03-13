@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -simplifycfg -globals-aa -simplifycfg -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -gvn -memcpyopt -sccp -bdce -jump-threading -dse -simplifycfg -globals-aa -simplifycfg -constmerge
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse -early-cse-memssa

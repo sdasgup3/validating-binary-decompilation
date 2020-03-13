@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -mem2reg -deadargelim -basicaa -instcombine -inline -early-cse -lazy-value-info -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -basicaa -instcombine -lazy-value-info -basicaa -dse -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -mem2reg -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt

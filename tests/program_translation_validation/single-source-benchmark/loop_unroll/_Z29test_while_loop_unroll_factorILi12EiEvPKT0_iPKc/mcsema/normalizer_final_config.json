@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -mem2reg -instcombine -basiccg -globals-aa -argpromotion -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -indvars -mldst-motion -gvn -sccp -demanded-bits -bdce -instcombine -correlated-propagation -dse -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce
+ -mem2reg -gvn -aa -memdep -instcombine -memcpyopt -early-cse-memssa

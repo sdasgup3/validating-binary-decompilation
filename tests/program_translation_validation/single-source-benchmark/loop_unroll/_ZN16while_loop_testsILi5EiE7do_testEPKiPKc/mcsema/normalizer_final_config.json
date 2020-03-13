@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -deadargelim -aa -instcombine -argpromotion -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -sccp -demanded-bits -aa -instcombine -aa -aa -aa -instcombine -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -aa
+ -early-cse -basicaa -aa -deadargelim -instcombine -early-cse-memssa

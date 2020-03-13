@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -deadargelim -instcombine -prune-eh -early-cse -correlated-propagation -instcombine -tailcallelim -reassociate -instcombine -indvars -mldst-motion -memdep -memdep -memcpyopt -bdce -instcombine -jump-threading -correlated-propagation -memdep -instcombine -barrier -float2int -instcombine -instcombine -instcombine -constmerge
+ -gvn -aa -memdep -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa

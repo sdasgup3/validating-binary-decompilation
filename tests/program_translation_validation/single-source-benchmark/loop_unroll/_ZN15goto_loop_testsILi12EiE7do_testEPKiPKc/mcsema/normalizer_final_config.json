@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -basiccg -inline -argpromotion -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -memdep -instcombine -jump-threading -correlated-propagation -memdep -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine -constmerge
+ -gvn -early-cse -simplifycfg -basicaa -instcombine -early-cse-memssa

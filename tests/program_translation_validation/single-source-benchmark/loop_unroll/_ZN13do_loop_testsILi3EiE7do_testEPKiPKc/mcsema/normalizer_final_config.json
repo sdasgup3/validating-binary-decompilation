@@ -1,1 +1,1 @@
- -scoped-noalias -domtree -mem2reg -deadargelim -domtree -basicaa -basiccg -domtree -early-cse -lazy-value-info -correlated-propagation -domtree -basicaa -domtree -basicaa -domtree -basicaa -gvn -basicaa -domtree -basicaa -lazy-value-info -jump-threading -correlated-propagation -domtree -basicaa -dse -domtree -basicaa -basiccg -domtree -basicaa -basicaa -basicaa -domtree -basicaa -globaldce -domtree -basicaa
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse

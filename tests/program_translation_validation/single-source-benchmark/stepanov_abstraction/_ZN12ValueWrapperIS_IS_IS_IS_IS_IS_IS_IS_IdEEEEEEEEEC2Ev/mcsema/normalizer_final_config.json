@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -globals-aa -inline -argpromotion -instcombine -reassociate -instcombine -gvn -memcpyopt -demanded-bits -bdce -instcombine -dse -adce -instcombine -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes
+ -early-cse -memdep -tailcallelim -instcombine -memcpyopt -early-cse-memssa

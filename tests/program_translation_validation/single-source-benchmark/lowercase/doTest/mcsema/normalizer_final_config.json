@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -deadargelim -instcombine -basiccg -sroa -correlated-propagation -instcombine -tailcallelim -licm -instcombine -indvars -memdep -gvn -memdep -demanded-bits -instcombine -correlated-propagation -memdep -licm -adce -instcombine -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify
+ -licm -gvn -deadargelim -instcombine -memcpyopt -early-cse-memssa

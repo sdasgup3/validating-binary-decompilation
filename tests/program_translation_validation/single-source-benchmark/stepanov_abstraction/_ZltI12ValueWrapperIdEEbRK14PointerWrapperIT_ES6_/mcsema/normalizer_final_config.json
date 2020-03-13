@@ -1,1 +1,1 @@
- -tti -aa -instcombine -simplifycfg -prune-eh -early-cse -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -bdce -aa -instcombine -aa -memdep -dse -aa -postdomtree -adce -simplifycfg -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa -instsimplify
+ -gvn -globalopt -memdep -dse -instcombine -memcpyopt

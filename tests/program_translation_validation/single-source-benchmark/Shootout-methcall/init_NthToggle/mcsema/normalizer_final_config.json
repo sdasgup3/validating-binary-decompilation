@@ -1,1 +1,1 @@
- -globalopt -instcombine -simplifycfg -globals-aa -inline -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -simplifycfg -instcombine -indvars -sccp -instcombine -simplifycfg -instcombine -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -globaldce -constmerge
+ -early-cse -globalopt -simplifycfg -basicaa -aa -tailcallelim -instcombine -early-cse-memssa

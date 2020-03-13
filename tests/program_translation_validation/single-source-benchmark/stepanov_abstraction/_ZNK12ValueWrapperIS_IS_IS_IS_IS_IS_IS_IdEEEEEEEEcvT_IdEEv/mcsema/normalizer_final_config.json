@@ -1,1 +1,1 @@
- -targetlibinfo -basicaa -instcombine -simplifycfg -prune-eh -inline -early-cse -lazy-value-info -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -mldst-motion -gvn -basicaa -demanded-bits -basicaa -instcombine -lazy-value-info -basicaa -dse -simplifycfg -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -simplifycfg -basicaa -instcombine -instcombine -globaldce -basicaa -instsimplify
+ -licm -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt

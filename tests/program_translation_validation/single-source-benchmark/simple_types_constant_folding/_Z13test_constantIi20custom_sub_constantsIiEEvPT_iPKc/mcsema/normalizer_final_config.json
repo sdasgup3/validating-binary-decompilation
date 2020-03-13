@@ -1,1 +1,1 @@
- -mem2reg -basicaa -instcombine -basiccg -inline -basicaa -instcombine -basicaa -basicaa -instcombine -gvn -basicaa -memcpyopt -demanded-bits -basicaa -instcombine -jump-threading -basicaa -dse -postdomtree -adce -basicaa -instcombine -elim-avail-extern -basiccg -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -constmerge -basicaa
+ -mem2reg -gvn -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt

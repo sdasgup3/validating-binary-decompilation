@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -basicaa -instcombine -simplifycfg -basiccg -argpromotion -sroa -early-cse -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -licm -simplifycfg -basicaa -instcombine -barrier -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa
+ -licm -gvn -early-cse -dse -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -mem2reg -instcombine -globals-aa -sroa -early-cse -instcombine -tailcallelim -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -memdep -adce -instcombine -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine
+ -gvn -memdep -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -deadargelim -instcombine -prune-eh -argpromotion -early-cse -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -bdce -instcombine -scalar-evolution -adce -instcombine -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution
+ -mem2reg -licm -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

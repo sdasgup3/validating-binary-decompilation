@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -simplifycfg -basiccg -inline -lazy-value-info -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -indvars -mldst-motion -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -dse -licm -postdomtree -adce -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -globaldce
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -tailcallelim -instcombine -early-cse-memssa

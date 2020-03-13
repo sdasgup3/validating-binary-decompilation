@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -basicaa -instcombine -basiccg -prune-eh -inline -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -licm -basicaa -instcombine -indvars -basicaa -sccp -bdce -basicaa -instcombine -jump-threading -basicaa -licm -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa
+ -gvn -tailcallelim -instcombine -early-cse-memssa

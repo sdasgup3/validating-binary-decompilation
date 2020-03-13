@@ -1,1 +1,1 @@
- -tti -domtree -mem2reg -domtree -aa -instcombine -basiccg -prune-eh -domtree -domtree -aa -instcombine -tailcallelim -domtree -aa -licm -domtree -aa -instcombine -aa -gvn -aa -domtree -aa -instcombine -domtree -aa -dse -aa -licm -adce -domtree -aa -instcombine -elim-avail-extern -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -globaldce -domtree -aa
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -instcombine -early-cse-memssa

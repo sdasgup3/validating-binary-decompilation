@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -instcombine -inline -sroa -lazy-value-info -correlated-propagation -instcombine -instcombine -gvn -sccp -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -adce -instcombine -elim-avail-extern -float2int -instcombine -instcombine -instcombine
+ -gvn -globalopt -deadargelim -instcombine -early-cse-memssa

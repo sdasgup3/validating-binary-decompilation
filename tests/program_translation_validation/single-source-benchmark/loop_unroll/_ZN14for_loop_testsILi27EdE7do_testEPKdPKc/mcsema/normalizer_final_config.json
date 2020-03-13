@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -assumption-cache-tracker -aa -instcombine -simplifycfg -basiccg -prune-eh -early-cse -lazy-value-info -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -licm -simplifycfg -aa -instcombine -indvars -aa -aa -sccp -aa -instcombine -lazy-value-info -jump-threading -aa -dse -aa -licm -simplifycfg -aa -instcombine -basiccg -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -aa -instsimplify
+ -mem2reg -licm -gvn -globalopt -dse

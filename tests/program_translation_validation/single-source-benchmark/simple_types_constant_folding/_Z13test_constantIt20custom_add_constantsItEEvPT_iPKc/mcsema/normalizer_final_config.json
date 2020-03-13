@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -deadargelim -instcombine -early-cse -correlated-propagation -instcombine -tailcallelim -licm -instcombine -gvn -memcpyopt -sccp -instcombine -correlated-propagation -dse -licm -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -globaldce
+ -gvn -early-cse -aa -dse -tailcallelim -instcombine -memcpyopt

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -domtree -domtree -aa -inline -domtree -sroa -early-cse -correlated-propagation -domtree -aa -reassociate -domtree -aa -licm -domtree -aa -indvars -aa -gvn -aa -domtree -aa -jump-threading -correlated-propagation -domtree -aa -dse -aa -licm -domtree -aa -domtree -aa -aa -aa -aa -domtree -aa -licm -strip-dead-prototypes -constmerge -domtree -aa
+ -mem2reg -gvn -early-cse -globalopt -dse -instcombine

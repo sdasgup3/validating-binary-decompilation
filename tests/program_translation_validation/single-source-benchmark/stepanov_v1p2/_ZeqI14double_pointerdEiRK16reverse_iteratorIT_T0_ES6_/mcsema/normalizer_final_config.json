@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -basiccg -sroa -early-cse -lazy-value-info -instcombine -instcombine -gvn -instcombine -lazy-value-info -jump-threading -dse -postdomtree -instcombine -barrier -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -constmerge
+ -mem2reg -gvn -basicaa -dse -memcpyopt

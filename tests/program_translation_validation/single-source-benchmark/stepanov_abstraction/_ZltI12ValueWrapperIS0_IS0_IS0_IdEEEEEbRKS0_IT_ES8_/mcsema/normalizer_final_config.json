@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -basicaa -aa -instcombine -sroa -early-cse -lazy-value-info -basicaa -aa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -aa -licm -basicaa -aa -instcombine -mldst-motion -aa -basicaa -aa -basicaa -aa -instcombine -lazy-value-info -basicaa -aa -aa -licm -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -globaldce -basicaa -aa -instsimplify
+ -gvn -early-cse -simplifycfg -basicaa -instcombine -early-cse-memssa

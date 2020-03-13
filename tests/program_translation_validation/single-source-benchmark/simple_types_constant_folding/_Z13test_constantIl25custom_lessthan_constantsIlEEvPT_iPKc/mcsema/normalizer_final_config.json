@@ -1,1 +1,1 @@
- -tti -scoped-noalias -globalopt -instcombine -simplifycfg -prune-eh -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -sccp -bdce -instcombine -memdep -dse -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -globaldce -constmerge
+ -mem2reg -gvn -early-cse -aa -instcombine -memcpyopt -early-cse-memssa

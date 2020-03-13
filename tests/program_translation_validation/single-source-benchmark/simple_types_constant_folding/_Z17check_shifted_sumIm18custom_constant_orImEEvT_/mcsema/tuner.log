@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[    80s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #1232, cost time=0.0194, found by DifferentialEvolutionAlt
+[    80s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[   145s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #1232, cost time=0.0194, found by DifferentialEvolutionAlt
+[   203s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #1232, cost time=0.0194, found by DifferentialEvolutionAlt
+[   255s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #1232, cost time=0.0194, found by DifferentialEvolutionAlt
+[   312s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #1274, cost time=0.0188, found by UniformGreedyMutation
+[   383s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   428s]    INFO opentuner.search.plugin.DisplayPlugin: tests=27, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   485s]    INFO opentuner.search.plugin.DisplayPlugin: tests=31, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   536s]    INFO opentuner.search.plugin.DisplayPlugin: tests=35, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   586s]    INFO opentuner.search.plugin.DisplayPlugin: tests=39, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   635s]    INFO opentuner.search.plugin.DisplayPlugin: tests=43, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   682s]    INFO opentuner.search.plugin.DisplayPlugin: tests=47, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   729s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   777s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   821s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   864s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   902s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   950s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[   993s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[  1032s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[  1075s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #1277, cost time=0.0135, found by UniformGreedyMutation
+[  1116s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1156s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1198s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1232s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1265s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1265s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #1252, cost time=0.0110, found by DifferentialEvolutionAlt
+[  1265s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -basicaa -globalopt -instcombine -memcpyopt -aa -licm -tailcallelim -deadargelim -gvn ]
+1464.91user 39.63system 21:05.93elapsed 118%CPU (0avgtext+0avgdata 116400maxresident)k
+32inputs+2905096outputs (0major+5587478minor)pagefaults 0swaps

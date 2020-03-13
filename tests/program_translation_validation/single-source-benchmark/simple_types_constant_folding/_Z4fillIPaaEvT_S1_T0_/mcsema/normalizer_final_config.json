@@ -1,1 +1,1 @@
- -tti -scoped-noalias -domtree -mem2reg -deadargelim -domtree -instcombine -basiccg -prune-eh -inline -argpromotion -domtree -sroa -early-cse -domtree -instcombine -domtree -licm -domtree -instcombine -indvars -memdep -gvn -memdep -domtree -instcombine -domtree -memdep -dse -licm -postdomtree -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -domtree
+ -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -deadargelim -aa -instcombine -prune-eh -sroa -aa -instcombine -aa -aa -instcombine -mldst-motion -aa -gvn -aa -sccp -aa -instcombine -aa -dse -aa -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -aa -instsimplify
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -tailcallelim -instcombine -memcpyopt -early-cse-memssa

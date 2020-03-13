@@ -1,1 +1,1 @@
- -tti -globalopt -deadargelim -basiccg -argpromotion -sroa -early-cse -lazy-value-info -libcalls-shrinkwrap -reassociate -licm -mldst-motion -gvn -bdce -lazy-value-info -jump-threading -dse -licm -adce -basiccg -licm
+ -licm -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine

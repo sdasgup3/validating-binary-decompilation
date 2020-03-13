@@ -1,1 +1,1 @@
- -basicaa -instcombine -simplifycfg -prune-eh -sroa -correlated-propagation -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -correlated-propagation -basicaa -memdep -dse -licm -simplifycfg -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa
+ -gvn -early-cse -globalopt -deadargelim -instcombine -early-cse-memssa

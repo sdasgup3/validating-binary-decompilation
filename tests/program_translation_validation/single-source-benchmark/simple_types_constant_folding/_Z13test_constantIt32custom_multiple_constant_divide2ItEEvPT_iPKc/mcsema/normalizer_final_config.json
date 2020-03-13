@@ -1,1 +1,1 @@
- -domtree -domtree -instcombine -simplifycfg -argpromotion -domtree -sroa -correlated-propagation -simplifycfg -domtree -instcombine -tailcallelim -simplifycfg -reassociate -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -memcpyopt -domtree -bdce -instcombine -correlated-propagation -domtree -dse -licm -adce -simplifycfg -domtree -instcombine -elim-avail-extern -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree
+ -gvn -globalopt -basicaa -aa -dse -instcombine

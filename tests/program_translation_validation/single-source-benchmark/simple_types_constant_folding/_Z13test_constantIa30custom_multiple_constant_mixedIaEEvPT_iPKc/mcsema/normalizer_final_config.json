@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -domtree -mem2reg -domtree -instcombine -basiccg -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -libcalls-shrinkwrap -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -lazy-value-info -domtree -licm -domtree -instcombine -barrier -elim-avail-extern -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -domtree -instsimplify
+ -mem2reg -gvn -dse -tailcallelim -instcombine

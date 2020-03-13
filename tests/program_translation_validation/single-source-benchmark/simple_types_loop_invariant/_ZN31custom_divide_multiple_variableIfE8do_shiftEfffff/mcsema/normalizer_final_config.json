@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -globalopt -mem2reg -deadargelim -instcombine -inline -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -instcombine -mldst-motion -instcombine -lazy-value-info -correlated-propagation -adce -instcombine -barrier -float2int -instcombine -instcombine -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -aa -dse

@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -argpromotion -early-cse -lazy-value-info -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -indvars -instcombine -lazy-value-info -jump-threading -dse -simplifycfg -instcombine -elim-avail-extern -basiccg -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine
+ -mem2reg -gvn -dse -deadargelim -early-cse-memssa

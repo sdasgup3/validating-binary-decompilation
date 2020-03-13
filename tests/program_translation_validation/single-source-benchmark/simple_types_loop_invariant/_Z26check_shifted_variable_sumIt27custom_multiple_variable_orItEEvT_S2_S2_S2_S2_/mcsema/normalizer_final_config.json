@@ -1,1 +1,1 @@
- -tbaa -deadargelim -instcombine -simplifycfg -prune-eh -lazy-value-info -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -gvn -instcombine -lazy-value-info -correlated-propagation -dse -simplifycfg -instcombine -elim-avail-extern -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -licm -gvn -simplifycfg -basicaa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -mem2reg -instcombine -globals-aa -argpromotion -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -instcombine -indvars -gvn -memcpyopt -sccp -instcombine -jump-threading -correlated-propagation -dse -postdomtree -instcombine -barrier -globals-aa -instcombine -instcombine -instcombine -constmerge
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -memcpyopt

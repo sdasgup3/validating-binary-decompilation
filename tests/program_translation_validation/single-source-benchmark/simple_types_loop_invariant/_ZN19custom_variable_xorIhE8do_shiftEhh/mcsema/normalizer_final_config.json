@@ -1,1 +1,1 @@
- -tbaa -mem2reg -deadargelim -aa -globals-aa -prune-eh -inline -aa -libcalls-shrinkwrap -reassociate -aa -aa -aa -gvn -aa -aa -aa -dse -aa -adce -aa -barrier -globals-aa -float2int -aa -aa -aa -aa -aa -aa -instsimplify
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -memcpyopt -early-cse-memssa

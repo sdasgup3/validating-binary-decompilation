@@ -1,1 +1,1 @@
- -targetlibinfo -aa -instcombine -prune-eh -inline -aa -instcombine -aa -licm -aa -instcombine -mldst-motion -aa -gvn -aa -bdce -aa -instcombine -aa -dse -aa -licm -postdomtree -adce -aa -instcombine -barrier -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -aa
+ -mem2reg -gvn -early-cse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

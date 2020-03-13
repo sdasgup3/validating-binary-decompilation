@@ -1,1 +1,1 @@
- -tti -globalopt -basicaa -instcombine -inline -argpromotion -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -basicaa -memdep -adce -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa -instsimplify
+ -mem2reg -licm -gvn -aa -memdep -dse -deadargelim -memcpyopt -early-cse-memssa

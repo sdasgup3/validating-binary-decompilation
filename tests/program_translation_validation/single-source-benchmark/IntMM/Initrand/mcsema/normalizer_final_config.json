@@ -1,1 +1,1 @@
- -globalopt -domtree -domtree -instcombine -inline -domtree -sroa -early-cse -lazy-value-info -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -mldst-motion -domtree -instcombine -lazy-value-info -domtree -scalar-evolution -domtree -instcombine -float2int -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution
+ -licm -gvn -globalopt -basicaa -memdep -dse -instcombine -early-cse-memssa

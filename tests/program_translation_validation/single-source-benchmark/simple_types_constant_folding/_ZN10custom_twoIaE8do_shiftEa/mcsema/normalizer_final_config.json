@@ -1,1 +1,1 @@
- -tti -basicaa -instcombine -globals-aa -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -basicaa -memdep -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine

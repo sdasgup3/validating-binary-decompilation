@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -simplifycfg -globals-aa -inline -simplifycfg -tailcallelim -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -gvn -demanded-bits -dse -scalar-evolution -simplifycfg -elim-avail-extern -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -simplifycfg -scalar-evolution -scalar-evolution -strip-dead-prototypes -scalar-evolution -instsimplify
+ -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -early-cse-memssa

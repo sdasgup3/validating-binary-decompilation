@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -basicaa -instcombine -simplifycfg -basiccg -argpromotion -correlated-propagation -simplifycfg -basicaa -instcombine -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -memcpyopt -bdce -basicaa -instcombine -correlated-propagation -basicaa -simplifycfg -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa
+ -mem2reg -gvn -aa -memdep -dse -tailcallelim -instcombine

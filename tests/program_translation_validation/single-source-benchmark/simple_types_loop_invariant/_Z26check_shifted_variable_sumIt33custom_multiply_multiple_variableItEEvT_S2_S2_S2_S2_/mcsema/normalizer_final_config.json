@@ -1,1 +1,1 @@
- -tti -tbaa -mem2reg -deadargelim -instcombine -argpromotion -instcombine -instcombine -indvars -mldst-motion -gvn -instcombine -jump-threading -dse -instcombine -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce -instsimplify
+ -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -early-cse-memssa

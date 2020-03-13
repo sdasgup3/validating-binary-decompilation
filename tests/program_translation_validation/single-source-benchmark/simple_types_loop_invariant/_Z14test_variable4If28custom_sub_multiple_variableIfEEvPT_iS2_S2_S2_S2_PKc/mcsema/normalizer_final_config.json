@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -mem2reg -instcombine -simplifycfg -argpromotion -early-cse -lazy-value-info -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -licm -adce -simplifycfg -instcombine -barrier -float2int -instcombine -simplifycfg -instcombine -instcombine -licm
+ -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -instcombine -simplifycfg -inline -sroa -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -simplifycfg -instcombine -memdep -gvn -memdep -sccp -demanded-bits -instcombine -memdep -adce -simplifycfg -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -globaldce -instsimplify
+ -gvn -globalopt -basicaa -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

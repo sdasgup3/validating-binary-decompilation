@@ -1,1 +1,1 @@
- -tti -scoped-noalias -deadargelim -globals-aa -prune-eh -sroa -lazy-value-info -correlated-propagation -reassociate -licm -indvars -gvn -lazy-value-info -correlated-propagation -dse -licm -adce -globals-aa -licm -strip-dead-prototypes -globaldce -instsimplify
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap

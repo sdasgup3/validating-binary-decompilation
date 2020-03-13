@@ -1,1 +1,1 @@
- -scoped-noalias -deadargelim -instcombine -early-cse -lazy-value-info -instcombine -tailcallelim -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -memcpyopt -bdce -instcombine -lazy-value-info -memdep -scalar-evolution -instcombine -barrier -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution
+ -mem2reg -licm -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine

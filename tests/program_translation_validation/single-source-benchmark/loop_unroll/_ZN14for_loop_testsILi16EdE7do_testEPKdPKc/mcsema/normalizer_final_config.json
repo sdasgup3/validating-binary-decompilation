@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -basiccg -early-cse -lazy-value-info -instcombine -tailcallelim -instcombine -mldst-motion -demanded-bits -instcombine -lazy-value-info -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine

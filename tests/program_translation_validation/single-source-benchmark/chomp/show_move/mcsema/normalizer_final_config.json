@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -deadargelim -basicaa -instcombine -simplifycfg -early-cse -lazy-value-info -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -instcombine -basicaa -sccp -bdce -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -licm -simplifycfg -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa
+ -mem2reg -gvn -early-cse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

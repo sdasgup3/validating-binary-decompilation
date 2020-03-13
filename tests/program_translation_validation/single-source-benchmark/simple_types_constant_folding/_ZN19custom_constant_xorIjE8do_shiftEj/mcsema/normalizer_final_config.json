@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -mem2reg -deadargelim -aa -simplifycfg -globals-aa -early-cse -lazy-value-info -simplifycfg -aa -simplifycfg -aa -licm -simplifycfg -aa -indvars -mldst-motion -aa -gvn -aa -memcpyopt -sccp -demanded-bits -bdce -aa -lazy-value-info -aa -dse -aa -licm -simplifycfg -aa -barrier -elim-avail-extern -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -demanded-bits -simplifycfg -aa -licm -strip-dead-prototypes -aa
+ -gvn -globalopt -aa -memdep -tailcallelim -instcombine -early-cse-memssa

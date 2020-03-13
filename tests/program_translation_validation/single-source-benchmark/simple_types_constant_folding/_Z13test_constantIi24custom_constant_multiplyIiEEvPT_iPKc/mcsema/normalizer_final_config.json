@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -deadargelim -aa -instcombine -simplifycfg -globals-aa -sroa -lazy-value-info -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -aa -licm -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -aa -instcombine -lazy-value-info -aa -dse -aa -licm -simplifycfg -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -globaldce -aa
+ -mem2reg -gvn -early-cse -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

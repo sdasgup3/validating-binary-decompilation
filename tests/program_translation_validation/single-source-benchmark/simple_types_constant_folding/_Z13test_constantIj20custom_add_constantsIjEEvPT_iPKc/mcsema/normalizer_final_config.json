@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -globalopt -instcombine -basiccg -inline -sroa -lazy-value-info -instcombine -libcalls-shrinkwrap -licm -instcombine -memdep -gvn -memdep -memcpyopt -sccp -instcombine -lazy-value-info -memdep -dse -licm -adce -instcombine -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -licm -globaldce -constmerge
+ -mem2reg -gvn -early-cse -dse -tailcallelim -instcombine

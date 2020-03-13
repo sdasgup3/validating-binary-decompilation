@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -instcombine -globals-aa -instcombine -reassociate -instcombine -gvn -demanded-bits -instcombine -dse -instcombine -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -globaldce
+ -mem2reg -early-cse -aa -memdep -instcombine -memcpyopt -early-cse-memssa

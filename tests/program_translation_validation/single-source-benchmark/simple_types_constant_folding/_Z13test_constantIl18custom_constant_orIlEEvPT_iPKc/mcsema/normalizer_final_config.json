@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -instcombine -globals-aa -prune-eh -inline -argpromotion -sroa -early-cse -lazy-value-info -instcombine -instcombine -indvars -gvn -memcpyopt -sccp -instcombine -lazy-value-info -jump-threading -instcombine -globals-aa -instcombine -instcombine -instcombine
+ -mem2reg -gvn -globalopt -simplifycfg -aa -memdep -tailcallelim -instcombine -early-cse-memssa

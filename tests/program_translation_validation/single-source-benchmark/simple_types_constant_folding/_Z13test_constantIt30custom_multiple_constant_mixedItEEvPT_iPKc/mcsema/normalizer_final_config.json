@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -assumption-cache-tracker -globalopt -mem2reg -instcombine -prune-eh -sroa -early-cse -lazy-value-info -instcombine -tailcallelim -reassociate -instcombine -memdep -gvn -memdep -demanded-bits -bdce -instcombine -lazy-value-info -memdep -dse -instcombine -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine

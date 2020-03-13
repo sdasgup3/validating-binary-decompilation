@@ -1,1 +1,1 @@
- -targetlibinfo -tti -globalopt -domtree -mem2reg -deadargelim -domtree -aa -instcombine -domtree -early-cse -lazy-value-info -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -aa -aa -memcpyopt -domtree -demanded-bits -aa -instcombine -lazy-value-info -domtree -aa -dse -aa -postdomtree -domtree -aa -instcombine -domtree -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -domtree -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -domtree -aa
+ -gvn -early-cse -globalopt -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa

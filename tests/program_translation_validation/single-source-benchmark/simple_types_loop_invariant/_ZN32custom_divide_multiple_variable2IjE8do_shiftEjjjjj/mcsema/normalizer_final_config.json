@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -instcombine -simplifycfg -prune-eh -argpromotion -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -indvars -gvn -memcpyopt -sccp -bdce -instcombine -jump-threading -correlated-propagation -dse -simplifycfg -instcombine -elim-avail-extern -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes
+ -licm -gvn -globalopt -basicaa -aa -memdep -dse -instcombine -early-cse-memssa

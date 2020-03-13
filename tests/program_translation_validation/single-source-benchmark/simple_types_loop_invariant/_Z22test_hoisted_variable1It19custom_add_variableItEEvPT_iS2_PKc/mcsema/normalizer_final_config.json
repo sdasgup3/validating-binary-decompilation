@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -sroa -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -mldst-motion -gvn -demanded-bits -bdce -instcombine -jump-threading -licm -simplifycfg -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -globaldce
+ -licm -gvn -early-cse -simplifycfg -basicaa -memdep -instcombine -memcpyopt -early-cse-memssa

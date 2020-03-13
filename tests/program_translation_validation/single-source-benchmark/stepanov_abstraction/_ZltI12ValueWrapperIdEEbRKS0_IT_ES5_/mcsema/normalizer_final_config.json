@@ -1,1 +1,1 @@
- -tbaa -deadargelim -instcombine -simplifycfg -sroa -lazy-value-info -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -memcpyopt -demanded-bits -bdce -instcombine -lazy-value-info -jump-threading -licm -adce -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm
+ -early-cse -deadargelim -tailcallelim -instcombine -early-cse-memssa

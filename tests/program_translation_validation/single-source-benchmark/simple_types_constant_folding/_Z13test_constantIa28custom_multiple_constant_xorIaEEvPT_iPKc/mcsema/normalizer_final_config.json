@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -instcombine -early-cse -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -mldst-motion -gvn -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -dse -postdomtree -instcombine -instcombine -instcombine -instcombine -constmerge
+ -gvn -early-cse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

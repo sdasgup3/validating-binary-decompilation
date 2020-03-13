@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -instcombine -globals-aa -sroa -lazy-value-info -instcombine -tailcallelim -reassociate -instcombine -memdep -gvn -memdep -demanded-bits -bdce -instcombine -lazy-value-info -memdep -adce -instcombine -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine
+ -licm -gvn -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tbaa -mem2reg -basicaa -instcombine -simplifycfg -basiccg -lazy-value-info -simplifycfg -basicaa -instcombine -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -sccp -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -adce -simplifycfg -basicaa -instcombine -barrier -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa -instsimplify
+ -mem2reg -gvn -globalopt -dse -tailcallelim -instcombine -memcpyopt

@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -aa -instcombine -early-cse -lazy-value-info -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -lazy-value-info -correlated-propagation -aa -aa -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify
+ -mem2reg -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

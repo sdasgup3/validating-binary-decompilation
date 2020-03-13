@@ -1,1 +1,1 @@
- -tti -scoped-noalias -globalopt -deadargelim -instcombine -simplifycfg -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -gvn -instcombine -jump-threading -scalar-evolution -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution
+ -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt

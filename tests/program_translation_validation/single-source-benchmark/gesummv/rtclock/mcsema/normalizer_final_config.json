@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -instcombine -inline -sroa -instcombine -licm -instcombine -gvn -memcpyopt -instcombine -licm -adce -instcombine -barrier -instcombine -instcombine -instcombine -licm
+ -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine

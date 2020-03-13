@@ -1,1 +1,1 @@
- -deadargelim -prune-eh -argpromotion -sroa -correlated-propagation -libcalls-shrinkwrap -tailcallelim -licm -indvars -gvn -sccp -jump-threading -correlated-propagation -dse -licm -postdomtree -licm -strip-dead-prototypes -constmerge
+ -gvn -basicaa -memdep -dse -tailcallelim -instcombine

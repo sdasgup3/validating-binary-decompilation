@@ -1,1 +1,1 @@
- -targetlibinfo -tti -deadargelim -instcombine -simplifycfg -inline -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -memcpyopt -sccp -instcombine -jump-threading -dse -licm -postdomtree -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce
+ -licm -gvn -dse -deadargelim -instcombine -early-cse-memssa

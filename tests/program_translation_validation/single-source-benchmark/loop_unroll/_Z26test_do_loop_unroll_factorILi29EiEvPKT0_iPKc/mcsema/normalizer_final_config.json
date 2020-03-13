@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -deadargelim -instcombine -argpromotion -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -memdep -gvn -memdep -demanded-bits -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm
+ -licm -gvn -early-cse -instcombine -early-cse-memssa

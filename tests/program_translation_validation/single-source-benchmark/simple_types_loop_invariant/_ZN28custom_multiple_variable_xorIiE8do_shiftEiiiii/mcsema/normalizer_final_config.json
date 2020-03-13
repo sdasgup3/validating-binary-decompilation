@@ -1,1 +1,1 @@
- -tbaa -globalopt -domtree -mem2reg -deadargelim -domtree -instcombine -simplifycfg -domtree -sroa -early-cse -correlated-propagation -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -licm -simplifycfg -domtree -instcombine -memcpyopt -domtree -bdce -instcombine -correlated-propagation -domtree -licm -postdomtree -simplifycfg -domtree -instcombine -elim-avail-extern -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree
+ -mem2reg -gvn -early-cse -aa -deadargelim -instcombine -early-cse-memssa

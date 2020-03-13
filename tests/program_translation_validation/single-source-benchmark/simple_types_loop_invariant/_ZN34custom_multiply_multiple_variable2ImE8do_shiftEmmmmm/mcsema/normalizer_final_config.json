@@ -1,1 +1,1 @@
- -aa -instcombine -simplifycfg -globals-aa -prune-eh -sroa -early-cse -lazy-value-info -correlated-propagation -simplifycfg -aa -instcombine -simplifycfg -aa -simplifycfg -aa -instcombine -mldst-motion -aa -gvn -aa -bdce -aa -instcombine -lazy-value-info -correlated-propagation -aa -aa -postdomtree -simplifycfg -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -globaldce -constmerge -aa
+ -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa

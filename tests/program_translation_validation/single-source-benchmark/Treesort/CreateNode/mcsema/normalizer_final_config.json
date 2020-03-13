@@ -1,1 +1,1 @@
- -tti -deadargelim -basicaa -instcombine -prune-eh -inline -lazy-value-info -correlated-propagation -basicaa -instcombine -basicaa -basicaa -instcombine -indvars -gvn -basicaa -sccp -demanded-bits -basicaa -instcombine -lazy-value-info -jump-threading -correlated-propagation -basicaa -basicaa -instcombine -barrier -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa
+ -early-cse -globalopt -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa

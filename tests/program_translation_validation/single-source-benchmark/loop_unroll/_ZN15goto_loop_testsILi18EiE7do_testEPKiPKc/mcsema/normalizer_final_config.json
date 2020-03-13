@@ -1,1 +1,1 @@
- -domtree -deadargelim -domtree -aa -instcombine -basiccg -prune-eh -domtree -early-cse -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -indvars -mldst-motion -aa -aa -memcpyopt -domtree -aa -instcombine -domtree -aa -dse -aa -postdomtree -domtree -aa -instcombine -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -domtree -aa
+ -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

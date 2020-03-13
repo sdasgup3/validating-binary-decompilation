@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -aa -instcombine -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -aa -licm -aa -instcombine -aa -memdep -aa -memdep -bdce -aa -instcombine -aa -memdep -aa -licm -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -constmerge -aa
+ -early-cse -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

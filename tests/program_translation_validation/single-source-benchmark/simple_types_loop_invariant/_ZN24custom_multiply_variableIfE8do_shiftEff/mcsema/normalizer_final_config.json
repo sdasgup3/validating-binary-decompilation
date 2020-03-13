@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -mem2reg -instcombine -early-cse -lazy-value-info -correlated-propagation -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -mldst-motion -sccp -instcombine -lazy-value-info -correlated-propagation -scalar-evolution -licm -postdomtree -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution -instsimplify
+ -licm -gvn -early-cse -basicaa -dse -instcombine -early-cse-memssa

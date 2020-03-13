@@ -1,1 +1,1 @@
- -domtree -deadargelim -domtree -aa -instcombine -globals-aa -domtree -sroa -domtree -aa -instcombine -tailcallelim -reassociate -domtree -aa -domtree -aa -instcombine -aa -gvn -aa -domtree -bdce -aa -instcombine -jump-threading -domtree -aa -aa -domtree -aa -instcombine -globals-aa -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -domtree -aa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -deadargelim -instcombine -early-cse-memssa

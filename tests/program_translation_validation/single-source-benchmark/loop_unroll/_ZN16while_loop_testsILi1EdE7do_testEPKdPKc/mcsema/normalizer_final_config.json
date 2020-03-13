@@ -1,1 +1,1 @@
- -assumption-cache-tracker -instcombine -basiccg -early-cse -correlated-propagation -instcombine -tailcallelim -licm -instcombine -indvars -memcpyopt -demanded-bits -instcombine -jump-threading -correlated-propagation -licm -instcombine -elim-avail-extern -basiccg -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge
+ -mem2reg -gvn -early-cse -memdep -dse -tailcallelim -instcombine -memcpyopt

@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -simplifycfg -basiccg -prune-eh -domtree -sroa -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -simplifycfg -domtree -simplifycfg -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -jump-threading -domtree -postdomtree -adce -simplifycfg -domtree -instcombine -barrier -elim-avail-extern -basiccg -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -domtree
+ -mem2reg -licm -gvn -simplifycfg -dse -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -instcombine -basiccg -prune-eh -sroa -instcombine -reassociate -instcombine -gvn -sccp -bdce -instcombine -jump-threading -dse -postdomtree -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -globaldce -constmerge
+ -licm -gvn -globalopt -simplifycfg -aa -memdep -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -inline -early-cse -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -instcombine -mldst-motion -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -aa -dse -aa -adce -simplifycfg -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -globaldce -aa -instsimplify
+ -mem2reg -gvn -simplifycfg -dse -instcombine

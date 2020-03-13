@@ -1,1 +1,1 @@
- -tti -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -prune-eh -argpromotion -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -indvars -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -memdep -simplifycfg -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -instsimplify
+ -mem2reg -licm -gvn -dse -deadargelim -memcpyopt -early-cse-memssa

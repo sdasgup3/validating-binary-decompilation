@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -argpromotion -sroa -early-cse -instcombine -instcombine -memdep -gvn -memdep -memcpyopt -sccp -demanded-bits -instcombine -memdep -postdomtree -adce -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -instsimplify
+ -mem2reg -gvn -basicaa -memdep -dse -memcpyopt

@@ -1,1 +1,1 @@
- -globalopt -mem2reg -basicaa -simplifycfg -sroa -early-cse -lazy-value-info -simplifycfg -basicaa -libcalls-shrinkwrap -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -gvn -basicaa -memcpyopt -bdce -basicaa -lazy-value-info -basicaa -dse -simplifycfg -basicaa -basicaa -basicaa -basicaa -simplifycfg -basicaa -strip-dead-prototypes -basicaa -instsimplify
+ -mem2reg -gvn -basicaa -aa -memdep -dse -instcombine

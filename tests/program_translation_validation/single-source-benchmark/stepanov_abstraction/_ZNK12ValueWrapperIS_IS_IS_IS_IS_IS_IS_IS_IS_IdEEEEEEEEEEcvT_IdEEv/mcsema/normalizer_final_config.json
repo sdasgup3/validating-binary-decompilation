@@ -1,1 +1,1 @@
- -globalopt -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -globals-aa -sroa -early-cse -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -sccp -demanded-bits -basicaa -instcombine -basicaa -simplifycfg -basicaa -instcombine -barrier -globals-aa -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -simplifycfg -basicaa -instcombine -instcombine -basicaa -instsimplify
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim

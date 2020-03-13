@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -mem2reg -deadargelim -aa -basiccg -argpromotion -early-cse -aa -reassociate -aa -aa -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -aa -jump-threading -aa -memdep -dse -aa -adce -aa -basiccg -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -aa
+ -licm -gvn -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -deadargelim -basicaa -instcombine -inline -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -basicaa -instcombine -basicaa -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa
+ -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

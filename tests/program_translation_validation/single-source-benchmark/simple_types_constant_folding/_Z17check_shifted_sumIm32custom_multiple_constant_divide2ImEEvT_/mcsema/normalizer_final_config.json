@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -basicaa -instcombine -argpromotion -sroa -early-cse -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -bdce -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -postdomtree -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa
+ -licm -gvn -basicaa -aa -deadargelim -instcombine -early-cse-memssa

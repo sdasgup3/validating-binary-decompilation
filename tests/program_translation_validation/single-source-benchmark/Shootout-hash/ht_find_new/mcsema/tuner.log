@@ -1,0 +1,19 @@
+[     2s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     3s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    13s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #1900, cost time=0.0144, found by DifferentialEvolutionAlt
+[    28s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #1900, cost time=0.0144, found by DifferentialEvolutionAlt
+[    42s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #1900, cost time=0.0144, found by DifferentialEvolutionAlt
+[    57s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #1900, cost time=0.0144, found by DifferentialEvolutionAlt
+[    68s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #1900, cost time=0.0144, found by DifferentialEvolutionAlt
+[    79s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #1921, cost time=0.0102, found by DifferentialEvolutionAlt
+[    90s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   101s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   113s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   126s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   139s]    INFO opentuner.search.plugin.DisplayPlugin: tests=100, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   145s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #1967, cost time=0.0041, found by DifferentialEvolutionAlt
+[   145s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse-memssa -early-cse -instcombine -simplifycfg -libcalls-shrinkwrap -deadargelim -gvn ]
+105.66user 23.16system 2:25.49elapsed 88%CPU (0avgtext+0avgdata 57648maxresident)k
+0inputs+126976outputs (0major+962108minor)pagefaults 0swaps

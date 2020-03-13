@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -globalopt -deadargelim -instcombine -simplifycfg -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -licm -simplifycfg -instcombine -indvars -gvn -demanded-bits -instcombine -jump-threading -licm -simplifycfg -instcombine -barrier -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm
+ -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine

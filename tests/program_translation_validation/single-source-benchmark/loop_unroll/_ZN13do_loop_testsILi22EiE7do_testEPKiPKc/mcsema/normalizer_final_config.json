@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -deadargelim -instcombine -globals-aa -prune-eh -sroa -correlated-propagation -instcombine -tailcallelim -instcombine -memdep -gvn -memdep -memcpyopt -instcombine -correlated-propagation -memdep -adce -instcombine -globals-aa -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes
+ -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

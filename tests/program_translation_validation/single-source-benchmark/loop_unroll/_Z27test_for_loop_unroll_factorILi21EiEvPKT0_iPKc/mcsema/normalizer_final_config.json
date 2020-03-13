@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -deadargelim -aa -instcombine -basiccg -globals-aa -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -indvars -mldst-motion -aa -memdep -gvn -aa -memdep -sccp -aa -instcombine -aa -memdep -dse -aa -postdomtree -aa -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -aa
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -instcombine -early-cse-memssa

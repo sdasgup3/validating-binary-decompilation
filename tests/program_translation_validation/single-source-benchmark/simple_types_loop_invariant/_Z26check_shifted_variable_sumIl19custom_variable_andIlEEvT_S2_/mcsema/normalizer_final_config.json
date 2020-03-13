@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -domtree -mem2reg -deadargelim -domtree -instcombine -simplifycfg -globals-aa -inline -domtree -early-cse -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -simplifycfg -domtree -simplifycfg -domtree -instcombine -gvn -domtree -instcombine -jump-threading -domtree -dse -simplifycfg -domtree -instcombine -barrier -elim-avail-extern -globals-aa -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -strip-dead-prototypes -domtree
+ -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine

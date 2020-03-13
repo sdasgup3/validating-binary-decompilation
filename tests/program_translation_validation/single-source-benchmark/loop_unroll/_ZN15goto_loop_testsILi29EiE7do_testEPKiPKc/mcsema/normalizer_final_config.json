@@ -1,1 +1,1 @@
- -mem2reg -basicaa -aa -instcombine -simplifycfg -inline -early-cse -simplifycfg -basicaa -aa -instcombine -tailcallelim -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -aa -simplifycfg -basicaa -aa -instcombine -elim-avail-extern -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa -instsimplify
+ -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -early-cse-memssa

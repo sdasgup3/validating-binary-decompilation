@@ -1,1 +1,1 @@
- -tti -instcombine -argpromotion -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -scalar-evolution -licm -instcombine -scalar-evolution -indvars -mldst-motion -gvn -bdce -instcombine -jump-threading -correlated-propagation -scalar-evolution -licm -instcombine -elim-avail-extern -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution
+ -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -early-cse-memssa

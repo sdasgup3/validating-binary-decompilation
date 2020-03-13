@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -globalopt -aa -instcombine -sroa -aa -instcombine -aa -licm -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -memcpyopt -aa -instcombine -jump-threading -aa -dse -aa -licm -adce -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -aa -instsimplify
+ -licm -gvn -basicaa -instcombine -early-cse-memssa

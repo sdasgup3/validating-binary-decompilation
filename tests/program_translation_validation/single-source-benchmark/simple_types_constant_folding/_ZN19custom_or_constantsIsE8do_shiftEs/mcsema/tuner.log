@@ -1,0 +1,35 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[    47s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #190, cost time=0.0421, found by NormalGreedyMutation
+[    48s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    88s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #193, cost time=0.0247, found by DifferentialEvolutionAlt
+[   131s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #193, cost time=0.0247, found by DifferentialEvolutionAlt
+[   170s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #193, cost time=0.0247, found by DifferentialEvolutionAlt
+[   214s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #197, cost time=0.0211, found by DifferentialEvolutionAlt
+[   259s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   304s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   349s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   390s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   431s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   477s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   519s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   537s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   559s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   590s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   643s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   682s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   721s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   767s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   818s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   871s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   891s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   916s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #202, cost time=0.0122, found by DifferentialEvolutionAlt
+[   940s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -basicaa -dse -instcombine]
+[   943s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #283, cost time=0.0000, found by DifferentialEvolutionAlt
+[   967s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #283, cost time=0.0000, found by DifferentialEvolutionAlt
+[   992s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #283, cost time=0.0000, found by DifferentialEvolutionAlt
+[   992s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #283, cost time=0.0000, found by DifferentialEvolutionAlt
+[   992s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-basicaa -instcombine -dse -licm -gvn ]
+860.08user 32.38system 16:32.79elapsed 89%CPU (0avgtext+0avgdata 116376maxresident)k
+0inputs+2946760outputs (0major+5213579minor)pagefaults 0swaps

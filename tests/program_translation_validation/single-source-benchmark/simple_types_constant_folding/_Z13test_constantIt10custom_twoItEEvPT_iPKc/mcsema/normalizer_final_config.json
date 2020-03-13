@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -instcombine -instcombine -licm -instcombine -memdep -gvn -memdep -sccp -demanded-bits -instcombine -jump-threading -memdep -dse -licm -postdomtree -adce -instcombine -barrier -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce -instsimplify
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine

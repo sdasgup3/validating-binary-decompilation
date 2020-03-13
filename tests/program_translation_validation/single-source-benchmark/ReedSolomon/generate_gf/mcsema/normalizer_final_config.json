@@ -1,1 +1,1 @@
- -tti -tbaa -deadargelim -instcombine -inline -sroa -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -gvn -sccp -instcombine -jump-threading -scalar-evolution -licm -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -globaldce -scalar-evolution
+ -licm -gvn -early-cse -aa -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tbaa -globalopt -instcombine -simplifycfg -basiccg -inline -argpromotion -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -mldst-motion -gvn -memcpyopt -demanded-bits -instcombine -jump-threading -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -constmerge
+ -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

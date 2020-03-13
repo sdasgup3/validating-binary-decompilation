@@ -1,1 +1,1 @@
- -targetlibinfo -aa -instcombine -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -aa -memdep -dse -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa
+ -mem2reg -gvn -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -instcombine -simplifycfg -globals-aa -argpromotion -early-cse -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -gvn -instcombine -licm -adce -simplifycfg -instcombine -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -globaldce
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine

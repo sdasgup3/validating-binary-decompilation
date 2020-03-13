@@ -1,1 +1,1 @@
- -tti -aa -instcombine -globals-aa -argpromotion -sroa -early-cse -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -aa -gvn -aa -memcpyopt -bdce -aa -instcombine -lazy-value-info -aa -aa -aa -instcombine -globals-aa -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify
+ -gvn -early-cse -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

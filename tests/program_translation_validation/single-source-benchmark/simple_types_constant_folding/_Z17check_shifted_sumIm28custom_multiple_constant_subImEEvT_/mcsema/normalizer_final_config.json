@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -globals-aa -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -indvars -gvn -instcombine -lazy-value-info -licm -simplifycfg -instcombine -elim-avail-extern -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce -constmerge -instsimplify
+ -mem2reg -licm -early-cse -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -globalopt -domtree -mem2reg -deadargelim -domtree -basicaa -instcombine -inline -argpromotion -domtree -early-cse -lazy-value-info -domtree -basicaa -instcombine -reassociate -domtree -basicaa -domtree -basicaa -instcombine -basicaa -sccp -domtree -basicaa -instcombine -lazy-value-info -domtree -basicaa -dse -domtree -basicaa -instcombine -barrier -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -globaldce -domtree -basicaa
+ -mem2reg -gvn -early-cse -dse -deadargelim -instcombine

@@ -1,1 +1,1 @@
- -mem2reg -basicaa -instcombine -globals-aa -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -basicaa -instcombine -basicaa -memcpyopt -demanded-bits -basicaa -instcombine -lazy-value-info -basicaa -postdomtree -basicaa -instcombine -globals-aa -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -globaldce -basicaa
+ -early-cse -aa -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -mem2reg -instcombine -simplifycfg -argpromotion -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -sccp -instcombine -memdep -adce -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -instsimplify
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim

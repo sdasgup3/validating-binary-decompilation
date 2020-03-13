@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -basicaa -aa -simplifycfg -basiccg -sroa -lazy-value-info -simplifycfg -basicaa -aa -libcalls-shrinkwrap -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -mldst-motion -aa -memdep -gvn -basicaa -aa -memdep -sccp -basicaa -aa -lazy-value-info -basicaa -aa -memdep -dse -aa -simplifycfg -basicaa -aa -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -simplifycfg -basicaa -aa -basicaa -aa
+ -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim

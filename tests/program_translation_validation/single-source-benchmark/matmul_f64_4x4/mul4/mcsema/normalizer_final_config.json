@@ -1,1 +1,1 @@
- -early-cse -basicaa -instcombine -early-cse -basicaa -instcombine
+ -early-cse -globalopt -basicaa -aa -deadargelim -instcombine -early-cse-memssa

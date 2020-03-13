@@ -1,1 +1,1 @@
- -tti -tbaa -deadargelim -instcombine -basiccg -prune-eh -early-cse -instcombine -licm -instcombine -memdep -memdep -instcombine -memdep -licm -postdomtree -instcombine -barrier -basiccg -instcombine -instcombine -instcombine -licm -globaldce
+ -early-cse -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

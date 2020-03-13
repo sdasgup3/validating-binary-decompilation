@@ -1,1 +1,1 @@
- -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -argpromotion -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -mldst-motion -gvn -demanded-bits -instcombine -licm -postdomtree -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -tailcallelim

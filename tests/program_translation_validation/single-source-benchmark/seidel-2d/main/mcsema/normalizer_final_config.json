@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -dse -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -constmerge
+ -gvn -early-cse -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

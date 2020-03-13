@@ -1,1 +1,1 @@
- -tti -mem2reg -simplifycfg -globals-aa -prune-eh -early-cse -correlated-propagation -simplifycfg -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -mldst-motion -gvn -memcpyopt -bdce -correlated-propagation -dse -scalar-evolution -adce -simplifycfg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -globaldce -scalar-evolution
+ -licm -gvn -early-cse -aa -instcombine -early-cse-memssa

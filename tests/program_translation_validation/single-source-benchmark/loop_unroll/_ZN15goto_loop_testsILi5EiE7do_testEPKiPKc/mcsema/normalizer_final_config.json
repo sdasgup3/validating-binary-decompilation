@@ -1,1 +1,1 @@
- -tti -globalopt -mem2reg -deadargelim -globals-aa -inline -early-cse -correlated-propagation -tailcallelim -scalar-evolution -scalar-evolution -indvars -gvn -sccp -demanded-bits -jump-threading -correlated-propagation -dse -scalar-evolution -postdomtree -adce -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -globaldce -scalar-evolution -instsimplify
+ -gvn -globalopt -simplifycfg -aa -instcombine -early-cse-memssa

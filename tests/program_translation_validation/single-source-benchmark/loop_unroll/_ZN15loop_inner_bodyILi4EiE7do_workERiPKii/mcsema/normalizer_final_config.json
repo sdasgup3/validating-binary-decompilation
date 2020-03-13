@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -sroa -lazy-value-info -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -demanded-bits -bdce -instcombine -lazy-value-info -jump-threading -dse -adce -simplifycfg -instcombine -barrier -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify
+ -licm -gvn -globalopt -memdep -dse -instcombine -memcpyopt

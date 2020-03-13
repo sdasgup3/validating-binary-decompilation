@@ -1,1 +1,1 @@
- -globalopt -domtree -mem2reg -deadargelim -domtree -simplifycfg -basiccg -inline -domtree -early-cse -simplifycfg -domtree -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -indvars -mldst-motion -gvn -memcpyopt -domtree -demanded-bits -jump-threading -domtree -dse -adce -simplifycfg -domtree -barrier -elim-avail-extern -basiccg -domtree -demanded-bits -demanded-bits -simplifycfg -domtree -strip-dead-prototypes -constmerge -domtree
+ -mem2reg -licm -gvn -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

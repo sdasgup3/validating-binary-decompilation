@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -lazy-value-info -instcombine -reassociate -instcombine -mldst-motion -gvn -sccp -bdce -instcombine -lazy-value-info -dse -adce -instcombine -instcombine -instcombine -instcombine -strip-dead-prototypes
+ -mem2reg -gvn -dse -instcombine -memcpyopt -early-cse-memssa

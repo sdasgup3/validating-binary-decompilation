@@ -1,1 +1,1 @@
- -basicaa -instcombine -simplifycfg -basiccg -argpromotion -sroa -early-cse -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -dse -simplifycfg -basicaa -instcombine -barrier -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -basicaa
+ -gvn -globalopt -basicaa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

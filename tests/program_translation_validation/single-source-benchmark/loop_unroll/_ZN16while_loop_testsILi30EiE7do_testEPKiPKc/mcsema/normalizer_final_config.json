@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -mem2reg -aa -basiccg -argpromotion -sroa -correlated-propagation -aa -libcalls-shrinkwrap -reassociate -aa -licm -aa -indvars -mldst-motion -aa -gvn -aa -aa -jump-threading -correlated-propagation -aa -dse -aa -licm -adce -aa -barrier -elim-avail-extern -basiccg -aa -aa -aa -aa -aa -licm -strip-dead-prototypes -globaldce -constmerge -aa -instsimplify
+ -licm -gvn -simplifycfg -basicaa -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

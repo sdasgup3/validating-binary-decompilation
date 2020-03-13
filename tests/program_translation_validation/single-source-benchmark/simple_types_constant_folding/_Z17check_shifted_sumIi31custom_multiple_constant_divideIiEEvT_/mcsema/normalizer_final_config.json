@@ -1,1 +1,1 @@
- -deadargelim -instcombine -globals-aa -inline -argpromotion -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -gvn -memcpyopt -sccp -demanded-bits -instcombine -jump-threading -correlated-propagation -licm -instcombine -barrier -elim-avail-extern -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge -instsimplify
+ -licm -gvn -early-cse -memdep -dse -deadargelim -instcombine

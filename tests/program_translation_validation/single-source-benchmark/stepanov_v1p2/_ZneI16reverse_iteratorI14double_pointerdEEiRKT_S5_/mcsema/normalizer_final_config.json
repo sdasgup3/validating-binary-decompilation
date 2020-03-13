@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -domtree -deadargelim -domtree -instcombine -argpromotion -domtree -early-cse -lazy-value-info -domtree -instcombine -libcalls-shrinkwrap -reassociate -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -domtree -instcombine -lazy-value-info -domtree -memdep -postdomtree -domtree -instcombine -barrier -float2int -domtree -instcombine -domtree -instcombine -instcombine -globaldce -domtree
+ -licm -gvn -basicaa -memdep -instcombine -early-cse-memssa

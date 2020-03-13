@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -aa -instcombine -simplifycfg -globals-aa -inline -argpromotion -correlated-propagation -simplifycfg -aa -instcombine -simplifycfg -aa -licm -simplifycfg -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -aa -instcombine -correlated-propagation -aa -aa -licm -simplifycfg -aa -instcombine -elim-avail-extern -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -licm -aa
+ -mem2reg -licm -gvn -early-cse -basicaa -dse -early-cse-memssa

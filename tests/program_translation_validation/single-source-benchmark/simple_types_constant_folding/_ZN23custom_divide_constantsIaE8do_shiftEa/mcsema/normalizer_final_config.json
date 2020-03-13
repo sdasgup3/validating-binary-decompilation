@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -lazy-value-info -instcombine -tailcallelim -instcombine -indvars -gvn -instcombine -lazy-value-info -instcombine -barrier -instcombine -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -mem2reg -licm -gvn -globalopt -simplifycfg -dse -memcpyopt

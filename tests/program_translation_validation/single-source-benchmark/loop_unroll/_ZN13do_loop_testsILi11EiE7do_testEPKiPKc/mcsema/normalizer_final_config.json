@@ -1,1 +1,1 @@
- -globalopt -argpromotion -sroa -tailcallelim -gvn -memcpyopt -dse -adce
+ -gvn -basicaa -aa -dse -deadargelim -instcombine -early-cse-memssa

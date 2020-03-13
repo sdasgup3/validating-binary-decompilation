@@ -1,1 +1,1 @@
- -tti -deadargelim -aa -instcombine -basiccg -globals-aa -inline -argpromotion -early-cse -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -licm -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -bdce -aa -instcombine -jump-threading -aa -aa -licm -postdomtree -aa -instcombine -barrier -basiccg -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -aa
+ -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine

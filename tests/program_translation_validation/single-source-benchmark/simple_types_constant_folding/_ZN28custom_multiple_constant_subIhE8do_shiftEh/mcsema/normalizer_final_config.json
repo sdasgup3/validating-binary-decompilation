@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -basiccg -prune-eh -inline -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -mldst-motion -gvn -memcpyopt -instcombine -correlated-propagation -adce -simplifycfg -instcombine -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine -instsimplify
+ -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt

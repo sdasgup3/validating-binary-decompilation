@@ -1,1 +1,1 @@
- -tti -instcombine -prune-eh -inline -sroa -instcombine -scalar-evolution -instcombine -scalar-evolution -gvn -sccp -instcombine -dse -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -globaldce -scalar-evolution -instsimplify
+ -mem2reg -licm -gvn -simplifycfg -aa -dse -instcombine -early-cse-memssa

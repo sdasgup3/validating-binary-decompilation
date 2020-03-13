@@ -1,1 +1,1 @@
- -domtree -mem2reg -domtree -prune-eh -argpromotion -domtree -lazy-value-info -domtree -reassociate -domtree -scalar-evolution -licm -domtree -scalar-evolution -mldst-motion -gvn -domtree -lazy-value-info -domtree -dse -scalar-evolution -licm -postdomtree -domtree -barrier -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -domtree -scalar-evolution -scalar-evolution -licm -globaldce -domtree -scalar-evolution
+ -mem2reg -licm -gvn -dse -libcalls-shrinkwrap

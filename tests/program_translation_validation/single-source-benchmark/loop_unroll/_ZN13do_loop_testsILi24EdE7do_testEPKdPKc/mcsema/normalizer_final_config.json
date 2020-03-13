@@ -1,1 +1,1 @@
- -domtree -mem2reg -domtree -aa -simplifycfg -prune-eh -inline -domtree -sroa -simplifycfg -domtree -aa -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -aa -memdep -gvn -aa -memdep -domtree -bdce -aa -domtree -aa -memdep -dse -aa -simplifycfg -domtree -aa -domtree -aa -aa -aa -aa -simplifycfg -domtree -aa -globaldce -domtree -aa
+ -gvn -early-cse -dse -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tbaa -instcombine -globals-aa -argpromotion -early-cse -instcombine -licm -instcombine -indvars -memdep -memdep -demanded-bits -instcombine -memdep -dse -licm -postdomtree -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge
+ -gvn -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -deadargelim -domtree -instcombine -inline -domtree -sroa -early-cse -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -domtree -demanded-bits -bdce -instcombine -jump-threading -correlated-propagation -domtree -memdep -postdomtree -domtree -instcombine -elim-avail-extern -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree -instsimplify
+ -mem2reg -gvn -simplifycfg -dse -tailcallelim -memcpyopt

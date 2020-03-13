@@ -1,1 +1,1 @@
- -tbaa -globalopt -mem2reg -basicaa -aa -instcombine -globals-aa -argpromotion -lazy-value-info -basicaa -aa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -aa -licm -basicaa -aa -instcombine -indvars -aa -gvn -basicaa -aa -sccp -bdce -basicaa -aa -instcombine -lazy-value-info -basicaa -aa -aa -licm -postdomtree -basicaa -aa -instcombine -globals-aa -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -basicaa -aa
+ -gvn -globalopt -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -basicaa -inline -sroa -basicaa -reassociate -basicaa -basicaa -memdep -gvn -basicaa -memdep -memcpyopt -sccp -demanded-bits -basicaa -basicaa -memdep -dse -postdomtree -adce -basicaa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -basicaa
+ -mem2reg -early-cse -globalopt -memdep -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -aa -instcombine -simplifycfg -basiccg -globals-aa -sroa -early-cse -lazy-value-info -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -sccp -bdce -aa -instcombine -lazy-value-info -aa -dse -aa -licm -simplifycfg -aa -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa
+ -mem2reg -gvn -early-cse -deadargelim -tailcallelim -instcombine -early-cse-memssa

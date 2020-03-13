@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -globalopt -domtree -domtree -instcombine -simplifycfg -prune-eh -domtree -sroa -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -memdep -gvn -memdep -domtree -instcombine -jump-threading -domtree -memdep -dse -simplifycfg -domtree -instcombine -barrier -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -constmerge -domtree
+ -gvn -aa -dse -tailcallelim -instcombine

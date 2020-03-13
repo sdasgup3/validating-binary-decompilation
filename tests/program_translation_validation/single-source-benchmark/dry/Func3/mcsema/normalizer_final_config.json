@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -instcombine -simplifycfg -basiccg -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -memdep -licm -simplifycfg -instcombine -elim-avail-extern -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge
+ -gvn -early-cse -globalopt -simplifycfg -dse -instcombine -memcpyopt

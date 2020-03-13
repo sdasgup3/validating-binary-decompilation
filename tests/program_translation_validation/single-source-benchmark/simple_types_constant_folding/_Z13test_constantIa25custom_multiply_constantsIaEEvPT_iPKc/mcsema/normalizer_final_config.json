@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -basicaa -instcombine -basicaa -instcombine -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -dse -basicaa -instcombine -barrier -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa
+ -licm -gvn -early-cse -aa -dse -tailcallelim -instcombine -early-cse-memssa

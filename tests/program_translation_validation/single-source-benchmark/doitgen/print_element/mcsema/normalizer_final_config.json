@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -mem2reg -prune-eh -inline -tailcallelim -reassociate -scalar-evolution -scalar-evolution -gvn -memcpyopt -sccp -jump-threading -dse -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt

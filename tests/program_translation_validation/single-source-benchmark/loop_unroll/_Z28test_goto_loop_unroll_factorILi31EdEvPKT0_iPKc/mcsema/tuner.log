@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[   120s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #324, cost time=0.0146, found by UniformGreedyMutation
+[   244s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #358, cost time=0.0124, found by UniformGreedyMutation
+[   378s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #358, cost time=0.0124, found by UniformGreedyMutation
+[   492s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #358, cost time=0.0124, found by UniformGreedyMutation
+[   639s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #358, cost time=0.0124, found by UniformGreedyMutation
+[   769s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #373, cost time=0.0120, found by NormalGreedyMutation
+[   865s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #377, cost time=0.0119, found by NormalGreedyMutation
+[   994s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1098s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1249s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1341s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1450s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1585s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1707s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1796s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  1903s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2059s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2135s]    INFO opentuner.search.plugin.DisplayPlugin: tests=70, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2260s]    INFO opentuner.search.plugin.DisplayPlugin: tests=74, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2388s]    INFO opentuner.search.plugin.DisplayPlugin: tests=78, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2506s]    INFO opentuner.search.plugin.DisplayPlugin: tests=82, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2589s]    INFO opentuner.search.plugin.DisplayPlugin: tests=85, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2732s]    INFO opentuner.search.plugin.DisplayPlugin: tests=89, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  2868s]    INFO opentuner.search.plugin.DisplayPlugin: tests=93, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  3004s]    INFO opentuner.search.plugin.DisplayPlugin: tests=97, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  3137s]    INFO opentuner.search.plugin.DisplayPlugin: tests=101, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  3137s]    INFO opentuner.search.plugin.DisplayPlugin: tests=101, best #377, cost time=0.0119, found by NormalGreedyMutation
+[  3137s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -globalopt -dse -tailcallelim -gvn ]
+2746.12user 61.34system 52:18.08elapsed 89%CPU (0avgtext+0avgdata 109700maxresident)k
+0inputs+2516560outputs (0major+5474866minor)pagefaults 0swaps

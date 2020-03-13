@@ -1,1 +1,1 @@
- -tbaa -deadargelim -aa -instcombine -basiccg -inline -argpromotion -sroa -early-cse -aa -instcombine -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -demanded-bits -aa -instcombine -aa -memdep -aa -postdomtree -aa -instcombine -basiccg -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa

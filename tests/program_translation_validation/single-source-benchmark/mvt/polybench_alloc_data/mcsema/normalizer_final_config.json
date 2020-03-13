@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -aa -instcombine -simplifycfg -globals-aa -prune-eh -inline -early-cse -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -jump-threading -aa -aa -licm -simplifycfg -aa -instcombine -barrier -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -globaldce -aa -instsimplify
+ -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine

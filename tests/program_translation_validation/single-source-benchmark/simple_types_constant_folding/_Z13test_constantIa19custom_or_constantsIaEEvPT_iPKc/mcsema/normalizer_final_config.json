@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -globalopt -deadargelim -basicaa -instcombine -argpromotion -sroa -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -memcpyopt -demanded-bits -bdce -basicaa -instcombine -basicaa -dse -basicaa -instcombine -barrier -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa

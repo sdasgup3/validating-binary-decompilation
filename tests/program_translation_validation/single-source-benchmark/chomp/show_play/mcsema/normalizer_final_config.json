@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -domtree -deadargelim -domtree -instcombine -basiccg -globals-aa -prune-eh -domtree -sroa -early-cse -domtree -instcombine -domtree -domtree -instcombine -mldst-motion -gvn -domtree -instcombine -jump-threading -domtree -dse -domtree -instcombine -basiccg -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -domtree -instsimplify
+ -early-cse -globalopt -simplifycfg -memdep -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

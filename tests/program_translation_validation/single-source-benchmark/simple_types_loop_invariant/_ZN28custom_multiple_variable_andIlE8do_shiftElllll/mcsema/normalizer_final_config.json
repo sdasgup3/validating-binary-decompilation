@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -globalopt -aa -instcombine -simplifycfg -prune-eh -argpromotion -correlated-propagation -simplifycfg -aa -instcombine -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -aa -instcombine -jump-threading -correlated-propagation -aa -memdep -aa -licm -adce -simplifycfg -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -strip-dead-prototypes -aa
+ -licm -gvn -aa -memdep -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -deadargelim -instcombine -globals-aa -lazy-value-info -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -mldst-motion -gvn -sccp -instcombine -lazy-value-info -jump-threading -dse -licm -postdomtree -instcombine -globals-aa -float2int -instcombine -instcombine -instcombine -licm -globaldce -constmerge
+ -gvn -early-cse -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

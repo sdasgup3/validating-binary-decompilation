@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -assumption-cache-tracker -instcombine -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -gvn -sccp -demanded-bits -instcombine -licm -instcombine -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm
+ -gvn -early-cse -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

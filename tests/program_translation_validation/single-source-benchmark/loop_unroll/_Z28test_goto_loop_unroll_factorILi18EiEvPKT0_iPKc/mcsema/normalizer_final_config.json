@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -basiccg -prune-eh -inline -domtree -early-cse -domtree -instcombine -reassociate -domtree -licm -domtree -instcombine -memcpyopt -sccp -domtree -bdce -instcombine -domtree -dse -licm -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -domtree
+ -gvn -basicaa -memdep -dse -tailcallelim -instcombine

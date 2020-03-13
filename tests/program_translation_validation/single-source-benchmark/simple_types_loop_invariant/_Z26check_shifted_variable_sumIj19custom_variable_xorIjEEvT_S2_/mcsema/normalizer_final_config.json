@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -instcombine -globals-aa -prune-eh -inline -instcombine -tailcallelim -instcombine -indvars -memdep -gvn -memdep -instcombine -memdep -dse -instcombine -barrier -globals-aa -float2int -instcombine -instcombine -instcombine
+ -mem2reg -early-cse -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

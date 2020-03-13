@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -aa -instcombine -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -aa -memcpyopt -aa -instcombine -jump-threading -aa -aa -aa -instcombine -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa -instsimplify
+ -mem2reg -gvn -simplifycfg -dse -deadargelim -memcpyopt

@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -basiccg -correlated-propagation -licm -mldst-motion -memdep -gvn -memdep -demanded-bits -correlated-propagation -memdep -dse -licm -barrier -basiccg -demanded-bits -demanded-bits -licm -constmerge -instsimplify
+ -licm -gvn -early-cse -basicaa -aa -instcombine -early-cse-memssa

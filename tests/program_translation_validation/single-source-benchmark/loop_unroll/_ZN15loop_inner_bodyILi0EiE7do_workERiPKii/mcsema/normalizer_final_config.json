@@ -1,1 +1,1 @@
- -globalopt -deadargelim -aa -instcombine -simplifycfg -inline -sroa -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -aa -instcombine -aa -memdep -aa -licm -simplifycfg -aa -instcombine -elim-avail-extern -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -aa
+ -gvn -simplifycfg -aa -instcombine -early-cse-memssa

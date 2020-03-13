@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -globalopt -simplifycfg -memdep -dse -instcombine -mem2reg -licm -early-cse -globalopt -simplifycfg -memdep -dse -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

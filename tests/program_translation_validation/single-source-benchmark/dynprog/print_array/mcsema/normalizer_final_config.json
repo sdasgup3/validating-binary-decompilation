@@ -1,1 +1,1 @@
- -scoped-noalias -deadargelim -basicaa -aa -instcombine -prune-eh -argpromotion -lazy-value-info -basicaa -aa -instcombine -tailcallelim -basicaa -aa -licm -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -lazy-value-info -jump-threading -basicaa -aa -memdep -aa -licm -postdomtree -adce -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -basicaa -aa -instsimplify
+ -mem2reg -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine

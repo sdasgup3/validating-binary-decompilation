@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -inline -early-cse -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -sccp -demanded-bits -instcombine -jump-threading -dse -licm -simplifycfg -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -instcombine

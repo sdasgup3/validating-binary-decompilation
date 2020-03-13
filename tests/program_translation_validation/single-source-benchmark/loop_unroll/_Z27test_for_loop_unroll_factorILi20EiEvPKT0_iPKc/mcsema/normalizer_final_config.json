@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -instcombine -prune-eh -instcombine -reassociate -licm -instcombine -memdep -gvn -memdep -demanded-bits -bdce -instcombine -memdep -dse -licm -postdomtree -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes -constmerge
+ -licm -gvn -early-cse -aa -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -prune-eh -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -gvn -memcpyopt -sccp -demanded-bits -bdce -instcombine -dse -licm -postdomtree -adce -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -globaldce -constmerge
+ -mem2reg -gvn -simplifycfg -basicaa -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -instcombine -basiccg -globals-aa -prune-eh -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -indvars -mldst-motion -gvn -sccp -bdce -instcombine -dse -scalar-evolution -licm -postdomtree -adce -instcombine -basiccg -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -globaldce -constmerge -scalar-evolution
+ -mem2reg -gvn -globalopt -dse -tailcallelim

@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -sroa -early-cse -lazy-value-info -simplifycfg -instcombine -simplifycfg -reassociate -licm -simplifycfg -instcombine -bdce -instcombine -lazy-value-info -dse -licm -simplifycfg -instcombine -elim-avail-extern -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes
+ -gvn -early-cse -basicaa -dse -tailcallelim -instcombine

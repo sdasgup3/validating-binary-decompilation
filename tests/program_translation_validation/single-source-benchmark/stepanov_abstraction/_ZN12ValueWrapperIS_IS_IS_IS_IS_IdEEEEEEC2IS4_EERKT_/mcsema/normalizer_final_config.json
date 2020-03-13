@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -instcombine -simplifycfg -argpromotion -early-cse -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -instcombine -correlated-propagation -dse -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

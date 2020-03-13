@@ -1,1 +1,1 @@
- -tti -globalopt -mem2reg -deadargelim -instcombine -inline -sroa -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -instcombine -gvn -demanded-bits -bdce -instcombine -jump-threading -correlated-propagation -dse -postdomtree -adce -instcombine -elim-avail-extern -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce -instsimplify
+ -gvn -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa

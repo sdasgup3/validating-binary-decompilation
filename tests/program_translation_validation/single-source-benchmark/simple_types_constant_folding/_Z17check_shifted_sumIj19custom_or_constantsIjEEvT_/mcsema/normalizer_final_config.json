@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -argpromotion -correlated-propagation -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -postdomtree -simplifycfg -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -constmerge -basicaa -instsimplify
+ -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -instcombine

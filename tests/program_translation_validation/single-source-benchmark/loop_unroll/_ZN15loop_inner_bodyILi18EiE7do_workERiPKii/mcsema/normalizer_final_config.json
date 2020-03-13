@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -deadargelim -instcombine -globals-aa -prune-eh -inline -sroa -lazy-value-info -instcombine -reassociate -instcombine -gvn -bdce -instcombine -lazy-value-info -dse -postdomtree -adce -instcombine -barrier -globals-aa -instcombine -instcombine -instcombine -strip-dead-prototypes
+ -gvn -globalopt -basicaa -dse -tailcallelim -instcombine

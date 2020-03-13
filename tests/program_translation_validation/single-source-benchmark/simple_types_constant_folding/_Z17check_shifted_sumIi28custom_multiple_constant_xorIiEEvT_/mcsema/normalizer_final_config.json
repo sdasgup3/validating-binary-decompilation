@@ -1,1 +1,1 @@
- -deadargelim -instcombine -basiccg -prune-eh -sroa -instcombine -instcombine -memdep -gvn -memdep -instcombine -memdep -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine -instsimplify
+ -mem2reg -gvn -early-cse -globalopt -deadargelim -instcombine -early-cse-memssa

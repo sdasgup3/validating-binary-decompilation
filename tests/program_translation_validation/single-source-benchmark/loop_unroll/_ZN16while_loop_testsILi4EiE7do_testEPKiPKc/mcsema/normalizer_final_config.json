@@ -1,1 +1,1 @@
- -tti -tbaa -deadargelim -instcombine -sroa -early-cse -instcombine -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -dse -scalar-evolution -postdomtree -instcombine -elim-avail-extern -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution
+ -gvn -simplifycfg -aa -dse -deadargelim -instcombine -early-cse-memssa

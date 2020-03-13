@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -instcombine -simplifycfg -inline -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -postdomtree -simplifycfg -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm
+ -licm -gvn -memdep -dse -instcombine

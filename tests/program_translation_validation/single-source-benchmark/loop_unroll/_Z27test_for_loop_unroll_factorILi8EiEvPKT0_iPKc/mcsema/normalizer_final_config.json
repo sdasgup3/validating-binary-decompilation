@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -mem2reg -instcombine -basiccg -inline -early-cse -lazy-value-info -instcombine -libcalls-shrinkwrap -licm -instcombine -memdep -gvn -memdep -bdce -instcombine -lazy-value-info -memdep -dse -licm -adce -instcombine -basiccg -float2int -instcombine -instcombine -instcombine -licm -strip-dead-prototypes
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -instcombine

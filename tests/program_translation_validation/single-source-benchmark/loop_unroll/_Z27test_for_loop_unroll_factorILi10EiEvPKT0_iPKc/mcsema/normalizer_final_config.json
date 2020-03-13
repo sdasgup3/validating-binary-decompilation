@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -mem2reg -deadargelim -domtree -aa -instcombine -basiccg -argpromotion -domtree -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -aa -gvn -aa -memcpyopt -domtree -bdce -aa -instcombine -domtree -aa -dse -aa -adce -domtree -aa -instcombine -barrier -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -globaldce -constmerge -domtree -aa
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine -memcpyopt -early-cse-memssa

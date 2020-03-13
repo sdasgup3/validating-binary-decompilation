@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -deadargelim -aa -instcombine -prune-eh -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -aa -memdep -gvn -aa -memdep -demanded-bits -bdce -aa -instcombine -aa -memdep -aa -licm -adce -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -strip-dead-prototypes -aa
+ -mem2reg -licm -gvn -basicaa -memdep -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

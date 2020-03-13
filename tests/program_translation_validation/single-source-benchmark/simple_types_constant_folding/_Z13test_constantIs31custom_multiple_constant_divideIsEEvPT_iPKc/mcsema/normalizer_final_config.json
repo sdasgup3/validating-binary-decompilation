@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -instcombine -basiccg -sroa -instcombine -libcalls-shrinkwrap -instcombine -gvn -memcpyopt -instcombine -jump-threading -instcombine -basiccg -instcombine -instcombine -instcombine
+ -licm -gvn -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -instcombine -globals-aa -lazy-value-info -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -gvn -instcombine -lazy-value-info -dse -licm -instcombine -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -licm -instsimplify
+ -licm -gvn -early-cse -dse -deadargelim -instcombine

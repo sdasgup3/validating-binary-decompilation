@@ -1,1 +1,1 @@
- -deadargelim -instcombine -simplifycfg -globals-aa -inline -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -indvars -memdep -gvn -memdep -demanded-bits -instcombine -jump-threading -memdep -dse -adce -simplifycfg -instcombine -barrier -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -mem2reg -gvn -early-cse -globalopt -basicaa -dse -instcombine

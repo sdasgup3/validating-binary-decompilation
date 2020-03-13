@@ -1,1 +1,1 @@
- -targetlibinfo -deadargelim -basicaa -simplifycfg -sroa -simplifycfg -basicaa -simplifycfg -basicaa -simplifycfg -basicaa -mldst-motion -gvn -basicaa -memcpyopt -sccp -basicaa -jump-threading -basicaa -dse -postdomtree -adce -simplifycfg -basicaa -basicaa -basicaa -basicaa -simplifycfg -basicaa -constmerge -basicaa -instsimplify
+ -gvn -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basicaa -instcombine -prune-eh -early-cse -lazy-value-info -correlated-propagation -basicaa -instcombine -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -memcpyopt -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -postdomtree -adce -basicaa -instcombine -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa
+ -mem2reg -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt

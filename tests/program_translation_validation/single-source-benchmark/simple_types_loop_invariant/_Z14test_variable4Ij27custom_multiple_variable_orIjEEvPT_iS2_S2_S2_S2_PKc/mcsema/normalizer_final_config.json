@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -mem2reg -licm -early-cse -basicaa -aa -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa
