@@ -1,1 +1,1 @@
- -domtree -domtree -instcombine -domtree -early-cse -domtree -instcombine -domtree -domtree -instcombine -domtree -demanded-bits -bdce -instcombine -domtree -domtree -instcombine -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree
+ -gvn -early-cse -basicaa -memdep -instcombine -memcpyopt -early-cse-memssa

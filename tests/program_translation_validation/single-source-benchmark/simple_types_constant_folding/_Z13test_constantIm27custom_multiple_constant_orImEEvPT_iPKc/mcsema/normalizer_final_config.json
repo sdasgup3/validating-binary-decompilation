@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -assumption-cache-tracker -globalopt -mem2reg -instcombine -simplifycfg -globals-aa -argpromotion -early-cse -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -instcombine -gvn -sccp -instcombine -lazy-value-info -jump-threading -dse -simplifycfg -instcombine -barrier -globals-aa -instcombine -simplifycfg -instcombine -instcombine
+ -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -early-cse-memssa

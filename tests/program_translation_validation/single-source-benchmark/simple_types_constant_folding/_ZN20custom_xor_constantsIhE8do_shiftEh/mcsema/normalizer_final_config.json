@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -instcombine -prune-eh -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -tailcallelim -reassociate -licm -instcombine -memdep -gvn -memdep -bdce -instcombine -lazy-value-info -correlated-propagation -memdep -dse -licm -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -globaldce -instsimplify
+ -mem2reg -licm -gvn -aa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

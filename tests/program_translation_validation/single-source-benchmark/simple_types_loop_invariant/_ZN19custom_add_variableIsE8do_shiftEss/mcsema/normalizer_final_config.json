@@ -1,1 +1,1 @@
- -deadargelim -simplifycfg -globals-aa -inline -sroa -lazy-value-info -simplifycfg -simplifycfg -reassociate -simplifycfg -memdep -gvn -memdep -demanded-bits -bdce -lazy-value-info -memdep -dse -simplifycfg -elim-avail-extern -globals-aa -float2int -demanded-bits -demanded-bits -simplifycfg
+ -gvn -early-cse -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

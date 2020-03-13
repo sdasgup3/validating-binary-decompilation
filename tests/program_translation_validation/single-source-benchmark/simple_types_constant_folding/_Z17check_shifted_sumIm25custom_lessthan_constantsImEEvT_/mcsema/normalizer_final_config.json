@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes
+ -mem2reg -licm -gvn -basicaa -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     2s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    79s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #787, cost time=0.0279, found by DifferentialEvolutionAlt
+[   139s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #787, cost time=0.0279, found by DifferentialEvolutionAlt
+[   209s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #787, cost time=0.0279, found by DifferentialEvolutionAlt
+[   273s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #795, cost time=0.0188, found by DifferentialEvolutionAlt
+[   333s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   385s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   437s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   489s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   532s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   581s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   623s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #796, cost time=0.0145, found by DifferentialEvolutionAlt
+[   663s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #834, cost time=0.0137, found by DifferentialEvolutionAlt
+[   712s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #834, cost time=0.0137, found by DifferentialEvolutionAlt
+[   759s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #834, cost time=0.0137, found by DifferentialEvolutionAlt
+[   797s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #834, cost time=0.0137, found by DifferentialEvolutionAlt
+[   830s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #848, cost time=0.0028, found by NormalGreedyMutation
+[   866s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #848, cost time=0.0028, found by NormalGreedyMutation
+[   902s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #848, cost time=0.0028, found by NormalGreedyMutation
+[   940s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #848, cost time=0.0028, found by NormalGreedyMutation
+[   978s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1008s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1042s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1078s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1116s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1146s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1176s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1176s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #848, cost time=0.0028, found by NormalGreedyMutation
+[  1176s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -globalopt -instcombine -aa -early-cse-memssa -licm -gvn ]
+1505.12user 36.34system 19:36.77elapsed 130%CPU (0avgtext+0avgdata 116304maxresident)k
+8inputs+2823304outputs (0major+5701773minor)pagefaults 0swaps

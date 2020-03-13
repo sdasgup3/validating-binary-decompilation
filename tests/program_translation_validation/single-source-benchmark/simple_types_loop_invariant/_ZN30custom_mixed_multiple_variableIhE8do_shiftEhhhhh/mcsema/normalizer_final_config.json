@@ -1,1 +1,1 @@
- -basicaa -instcombine -prune-eh -inline -lazy-value-info -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -demanded-bits -basicaa -instcombine -lazy-value-info -basicaa -dse -basicaa -instcombine -barrier -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa
+ -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -instcombine -early-cse-memssa

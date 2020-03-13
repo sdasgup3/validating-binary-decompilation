@@ -1,1 +1,1 @@
- -assumption-cache-tracker -deadargelim -aa -instcombine -basiccg -globals-aa -prune-eh -inline -argpromotion -early-cse -aa -instcombine -aa -aa -instcombine -mldst-motion -aa -memdep -aa -memdep -memcpyopt -aa -instcombine -jump-threading -aa -memdep -aa -postdomtree -adce -aa -instcombine -barrier -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa
+ -mem2reg -early-cse -memdep -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

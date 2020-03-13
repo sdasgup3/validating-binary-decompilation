@@ -1,1 +1,1 @@
- -scoped-noalias -mem2reg -deadargelim -basicaa -instcombine -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -basicaa -memdep -dse -basicaa -instcombine -elim-avail-extern -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa
+ -mem2reg -gvn -simplifycfg -memdep -deadargelim -instcombine -early-cse-memssa

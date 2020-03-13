@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -instcombine -basiccg -prune-eh -early-cse -lazy-value-info -correlated-propagation -instcombine -reassociate -instcombine -mldst-motion -gvn -memcpyopt -bdce -instcombine -lazy-value-info -correlated-propagation -postdomtree -adce -instcombine -basiccg -float2int -instcombine -instcombine -instcombine
+ -mem2reg -gvn -globalopt -dse -deadargelim -instcombine -early-cse-memssa

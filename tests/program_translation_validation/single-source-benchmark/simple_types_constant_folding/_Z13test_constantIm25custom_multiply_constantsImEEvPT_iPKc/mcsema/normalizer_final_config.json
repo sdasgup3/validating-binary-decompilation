@@ -1,1 +1,1 @@
- -deadargelim -instcombine -globals-aa -inline -sroa -instcombine -reassociate -licm -instcombine -mldst-motion -gvn -memcpyopt -demanded-bits -instcombine -jump-threading -licm -instcombine -barrier -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge -instsimplify
+ -licm -gvn -early-cse -globalopt -aa -memdep -dse -deadargelim -instcombine

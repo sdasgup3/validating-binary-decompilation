@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -domtree -domtree -aa -prune-eh -inline -argpromotion -domtree -sroa -early-cse -domtree -aa -reassociate -domtree -aa -licm -domtree -aa -mldst-motion -aa -gvn -aa -sccp -domtree -demanded-bits -bdce -aa -jump-threading -domtree -aa -dse -aa -licm -domtree -aa -barrier -float2int -domtree -aa -aa -demanded-bits -aa -aa -demanded-bits -domtree -aa -licm -constmerge -domtree -aa -instsimplify
+ -early-cse -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa

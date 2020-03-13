@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -instcombine -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -instcombine -gvn -sccp -demanded-bits -instcombine -dse -instcombine -barrier -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce -instsimplify
+ -gvn -early-cse -globalopt -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

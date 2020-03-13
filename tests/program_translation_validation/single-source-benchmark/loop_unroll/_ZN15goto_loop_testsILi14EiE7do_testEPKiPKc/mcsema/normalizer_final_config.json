@@ -1,1 +1,1 @@
- -targetlibinfo -domtree -deadargelim -domtree -instcombine -inline -argpromotion -domtree -early-cse -domtree -instcombine -tailcallelim -domtree -licm -domtree -instcombine -mldst-motion -memdep -memdep -memcpyopt -domtree -bdce -instcombine -jump-threading -domtree -memdep -dse -licm -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -domtree
+ -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

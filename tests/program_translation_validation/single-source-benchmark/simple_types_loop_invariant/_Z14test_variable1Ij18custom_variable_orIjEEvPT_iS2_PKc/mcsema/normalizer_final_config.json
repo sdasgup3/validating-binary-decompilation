@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -argpromotion -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -gvn -demanded-bits -instcombine -dse -scalar-evolution -licm -instcombine -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -scalar-evolution
+ -mem2reg -licm -gvn -tailcallelim -instcombine -early-cse-memssa

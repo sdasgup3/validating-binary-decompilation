@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[   101s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #250, cost time=0.0147, found by NormalGreedyMutation
+[   101s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[   209s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #255, cost time=0.0111, found by UniformGreedyMutation
+[   291s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #255, cost time=0.0111, found by UniformGreedyMutation
+[   379s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #287, cost time=0.0082, found by NormalGreedyMutation
+[   448s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #287, cost time=0.0082, found by NormalGreedyMutation
+[   523s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #287, cost time=0.0082, found by NormalGreedyMutation
+[   594s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #301, cost time=0.0082, found by NormalGreedyMutation
+[   673s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #301, cost time=0.0082, found by NormalGreedyMutation
+[   757s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #301, cost time=0.0082, found by NormalGreedyMutation
+[   833s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #301, cost time=0.0082, found by NormalGreedyMutation
+[   913s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1001s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1071s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1152s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1211s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1283s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1365s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1459s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #301, cost time=0.0082, found by NormalGreedyMutation
+[  1536s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1615s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1691s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1780s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1853s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1930s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  1997s]    INFO opentuner.search.plugin.DisplayPlugin: tests=100, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  2091s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  2091s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #339, cost time=0.0071, found by NormalGreedyMutation
+[  2091s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -instcombine -dse -deadargelim -gvn ]
+1919.21user 48.08system 34:51.98elapsed 94%CPU (0avgtext+0avgdata 90092maxresident)k
+0inputs+2094296outputs (0major+4287286minor)pagefaults 0swaps

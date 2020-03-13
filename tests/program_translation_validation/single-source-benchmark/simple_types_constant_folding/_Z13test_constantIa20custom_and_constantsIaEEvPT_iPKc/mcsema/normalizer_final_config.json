@@ -1,1 +1,1 @@
- -scoped-noalias -domtree -domtree -instcombine -basiccg -prune-eh -domtree -early-cse -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -domtree -instcombine -mldst-motion -gvn -sccp -domtree -instcombine -domtree -domtree -instcombine -basiccg -float2int -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -constmerge -domtree -instsimplify
+ -mem2reg -gvn -simplifycfg -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

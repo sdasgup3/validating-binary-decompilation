@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -mem2reg -instcombine -basiccg -inline -lazy-value-info -instcombine -tailcallelim -licm -instcombine -gvn -sccp -demanded-bits -instcombine -lazy-value-info -dse -licm -adce -instcombine -barrier -basiccg -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes
+ -licm -gvn -globalopt -basicaa -instcombine -early-cse-memssa

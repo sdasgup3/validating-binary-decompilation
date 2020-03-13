@@ -1,1 +1,1 @@
- -tti -domtree -domtree -argpromotion -domtree -sroa -correlated-propagation -domtree -domtree -domtree -indvars -mldst-motion -gvn -domtree -demanded-bits -correlated-propagation -domtree -dse -adce -domtree -domtree -demanded-bits -demanded-bits -domtree -globaldce -constmerge -domtree -instsimplify
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim

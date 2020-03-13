@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -scoped-noalias -simplifycfg -prune-eh -sroa -simplifycfg -simplifycfg -reassociate -licm -simplifycfg -gvn -demanded-bits -dse -licm -simplifycfg -barrier -demanded-bits -demanded-bits -simplifycfg -licm -strip-dead-prototypes
+ -mem2reg -gvn -simplifycfg -memdep -dse -tailcallelim -instcombine -early-cse-memssa

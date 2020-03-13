@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -aa -instcombine -simplifycfg -basiccg -inline -sroa -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -gvn -aa -memcpyopt -bdce -aa -instcombine -jump-threading -aa -aa -postdomtree -simplifycfg -aa -instcombine -barrier -basiccg -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -aa
+ -gvn -dse -deadargelim -instcombine

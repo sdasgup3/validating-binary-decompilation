@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -mem2reg -basicaa -correlated-propagation -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -scalar-evolution -licm -basicaa -scalar-evolution -indvars -gvn -basicaa -bdce -basicaa -correlated-propagation -basicaa -dse -scalar-evolution -licm -adce -basicaa -float2int -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -licm -strip-dead-prototypes -basicaa -scalar-evolution
+ -licm -gvn -simplifycfg -aa -dse -instcombine

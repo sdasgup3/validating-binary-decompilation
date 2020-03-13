@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -basicaa -instcombine -prune-eh -inline -argpromotion -sroa -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -dse -postdomtree -basicaa -instcombine -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa -instsimplify
+ -licm -gvn -dse -deadargelim -tailcallelim -instcombine

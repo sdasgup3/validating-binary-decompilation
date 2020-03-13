@@ -1,1 +1,1 @@
- -targetlibinfo -tti -basicaa -instcombine -globals-aa -prune-eh -sroa -early-cse -basicaa -instcombine -reassociate -basicaa -licm -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -basicaa -licm -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -constmerge -basicaa
+ -mem2reg -early-cse -memdep -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

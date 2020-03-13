@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -basiccg -inline -argpromotion -sroa -lazy-value-info -licm -gvn -sccp -bdce -lazy-value-info -dse -licm -adce -barrier -basiccg -licm -instsimplify
+ -gvn -dse -instcombine -early-cse-memssa

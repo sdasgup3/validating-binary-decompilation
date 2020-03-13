@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -instcombine -simplifycfg -basiccg -globals-aa -early-cse -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -simplifycfg -instcombine -memdep -memdep -instcombine -correlated-propagation -memdep -postdomtree -adce -simplifycfg -instcombine -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -early-cse-memssa

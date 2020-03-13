@@ -1,1 +1,1 @@
- -globalopt -mem2reg -basicaa -instcombine -simplifycfg -sroa -simplifycfg -basicaa -instcombine -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -jump-threading -basicaa -dse -postdomtree -adce -simplifycfg -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -basicaa
+ -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt

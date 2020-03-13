@@ -1,1 +1,1 @@
- -deadargelim -basicaa -instcombine -prune-eh -argpromotion -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -bdce -basicaa -instcombine -basicaa -memdep -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -licm -gvn -globalopt -aa -memdep -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

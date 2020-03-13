@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -globals-aa -domtree -domtree -instcombine -domtree -domtree -instcombine -mldst-motion -gvn -sccp -domtree -instcombine -jump-threading -domtree -postdomtree -domtree -instcombine -elim-avail-extern -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree -instsimplify
+ -gvn -early-cse -dse -deadargelim -instcombine -early-cse-memssa

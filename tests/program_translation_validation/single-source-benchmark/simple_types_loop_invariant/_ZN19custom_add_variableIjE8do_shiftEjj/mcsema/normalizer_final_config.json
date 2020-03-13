@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -instcombine -basiccg -globals-aa -prune-eh -argpromotion -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -memcpyopt -sccp -instcombine -jump-threading -scalar-evolution -postdomtree -adce -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution
+ -gvn -globalopt -basicaa -aa -memdep -dse -tailcallelim -instcombine

@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -globalopt -mem2reg -instcombine -globals-aa -inline -early-cse -correlated-propagation -instcombine -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -sccp -instcombine -jump-threading -correlated-propagation -memdep -scalar-evolution -instcombine -barrier -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify
+ -mem2reg -gvn -early-cse -aa -memdep -dse -instcombine

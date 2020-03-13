@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -assumption-cache-tracker -basicaa -instcombine -sroa -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -instcombine -indvars -mldst-motion -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -basicaa -memdep -adce -basicaa -instcombine -barrier -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa
+ -mem2reg -gvn -simplifycfg -basicaa -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

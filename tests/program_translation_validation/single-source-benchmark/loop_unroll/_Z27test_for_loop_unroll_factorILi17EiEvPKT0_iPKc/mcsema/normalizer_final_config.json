@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -mem2reg -instcombine -prune-eh -argpromotion -early-cse -lazy-value-info -instcombine -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -indvars -gvn -instcombine -lazy-value-info -dse -scalar-evolution -licm -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify
+ -mem2reg -licm -gvn -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

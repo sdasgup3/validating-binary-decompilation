@@ -1,1 +1,1 @@
- -scoped-noalias -deadargelim -instcombine -globals-aa -prune-eh -sroa -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -mldst-motion -memdep -gvn -memdep -demanded-bits -bdce -instcombine -memdep -scalar-evolution -licm -instcombine -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution
+ -mem2reg -early-cse -deadargelim -instcombine -early-cse-memssa

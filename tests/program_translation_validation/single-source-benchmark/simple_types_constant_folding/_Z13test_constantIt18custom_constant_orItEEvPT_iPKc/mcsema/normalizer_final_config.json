@@ -1,1 +1,1 @@
- -tbaa -instcombine -globals-aa -argpromotion -instcombine -tailcallelim -instcombine -mldst-motion -gvn -memcpyopt -demanded-bits -bdce -instcombine -jump-threading -dse -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce
+ -mem2reg -licm -gvn -early-cse -simplifycfg -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa

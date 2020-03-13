@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -domtree -domtree -aa -simplifycfg -domtree -sroa -lazy-value-info -simplifycfg -domtree -aa -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -indvars -aa -gvn -aa -sccp -domtree -aa -lazy-value-info -domtree -aa -dse -aa -postdomtree -simplifycfg -domtree -aa -elim-avail-extern -float2int -domtree -aa -aa -aa -aa -simplifycfg -domtree -aa -globaldce -constmerge -domtree -aa
+ -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim

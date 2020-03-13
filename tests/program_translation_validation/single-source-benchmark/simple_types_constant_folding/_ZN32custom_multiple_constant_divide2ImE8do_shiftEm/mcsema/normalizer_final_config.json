@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -basiccg -globals-aa -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -mldst-motion -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -aa -aa -adce -simplifycfg -aa -instcombine -basiccg -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa
+ -mem2reg -early-cse -globalopt -simplifycfg -memdep -deadargelim -instcombine -early-cse-memssa

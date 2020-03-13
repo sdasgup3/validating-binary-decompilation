@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -aa -instcombine -globals-aa -early-cse -correlated-propagation -aa -instcombine -aa -licm -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -correlated-propagation -aa -memdep -dse -aa -licm -aa -instcombine -barrier -elim-avail-extern -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -aa
+ -mem2reg -licm -gvn -early-cse -memdep -dse -instcombine

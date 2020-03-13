@@ -1,1 +1,1 @@
- -targetlibinfo -tti -deadargelim -instcombine -simplifycfg -globals-aa -prune-eh -sroa -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -instcombine -lazy-value-info -correlated-propagation -simplifycfg -instcombine -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -constmerge -instsimplify
+ -licm -gvn -deadargelim -tailcallelim -instcombine -early-cse-memssa

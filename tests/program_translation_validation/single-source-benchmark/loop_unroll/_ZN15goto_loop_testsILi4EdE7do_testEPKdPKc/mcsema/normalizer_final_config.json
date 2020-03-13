@@ -1,1 +1,1 @@
- -basiccg -globals-aa -inline -sroa -reassociate -scalar-evolution -scalar-evolution -indvars -mldst-motion -gvn -demanded-bits -bdce -dse -scalar-evolution -basiccg -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -globaldce -constmerge -scalar-evolution
+ -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

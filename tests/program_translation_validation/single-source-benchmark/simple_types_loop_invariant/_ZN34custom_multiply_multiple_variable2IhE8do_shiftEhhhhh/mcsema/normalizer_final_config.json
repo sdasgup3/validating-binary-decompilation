@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -scoped-noalias -domtree -domtree -instcombine -globals-aa -inline -domtree -lazy-value-info -domtree -instcombine -reassociate -domtree -domtree -instcombine -gvn -domtree -demanded-bits -instcombine -lazy-value-info -jump-threading -domtree -postdomtree -domtree -instcombine -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -globaldce -domtree
+ -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

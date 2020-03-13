@@ -1,1 +1,1 @@
- -domtree -deadargelim -domtree -instcombine -prune-eh -domtree -sroa -early-cse -lazy-value-info -correlated-propagation -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -memdep -gvn -memdep -domtree -demanded-bits -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -domtree -memdep -domtree -instcombine -barrier -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -globaldce -domtree
+ -mem2reg -gvn -aa -memdep -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

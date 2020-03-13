@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -mem2reg -simplifycfg -inline -argpromotion -correlated-propagation -simplifycfg -libcalls-shrinkwrap -simplifycfg -simplifycfg -mldst-motion -gvn -bdce -correlated-propagation -dse -simplifycfg -elim-avail-extern -simplifycfg
+ -gvn -globalopt -aa -memdep -dse -tailcallelim -instcombine

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -globalopt -domtree -mem2reg -domtree -basiccg -argpromotion -domtree -domtree -domtree -domtree -gvn -memcpyopt -domtree -bdce -domtree -dse -adce -domtree -barrier -basiccg -domtree -domtree -domtree
+ -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim -memcpyopt -early-cse-memssa

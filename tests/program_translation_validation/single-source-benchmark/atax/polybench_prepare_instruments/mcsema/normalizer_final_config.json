@@ -1,1 +1,1 @@
- -tbaa -domtree -domtree -aa -instcombine -domtree -sroa -early-cse -domtree -aa -instcombine -tailcallelim -domtree -aa -domtree -aa -instcombine -aa -memdep -aa -memdep -memcpyopt -domtree -demanded-bits -aa -instcombine -domtree -aa -memdep -dse -aa -domtree -aa -instcombine -domtree -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -domtree -aa -instcombine -instcombine -domtree -aa
+ -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -tailcallelim -instcombine

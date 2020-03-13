@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -deadargelim -aa -instcombine -globals-aa -argpromotion -sroa -aa -instcombine -aa -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -aa -dse -aa -postdomtree -adce -aa -instcombine -barrier -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -aa
+ -mem2reg -licm -early-cse -aa -deadargelim -instcombine -early-cse-memssa

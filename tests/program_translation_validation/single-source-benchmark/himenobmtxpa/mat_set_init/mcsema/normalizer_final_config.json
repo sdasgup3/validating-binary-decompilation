@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -instcombine -simplifycfg -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -demanded-bits -instcombine -correlated-propagation -licm -postdomtree -simplifycfg -instcombine -elim-avail-extern -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -constmerge
+ -licm -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

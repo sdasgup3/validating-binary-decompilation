@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -mem2reg -deadargelim -basicaa -instcombine -inline -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -basicaa -instcombine -indvars -mldst-motion -basicaa -bdce -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -dse -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -mem2reg -licm -gvn -memdep -dse -tailcallelim -instcombine -memcpyopt -early-cse-memssa

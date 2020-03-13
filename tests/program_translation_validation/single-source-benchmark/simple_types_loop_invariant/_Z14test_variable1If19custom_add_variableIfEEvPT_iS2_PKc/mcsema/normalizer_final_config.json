@@ -1,1 +1,1 @@
- -globalopt -basicaa -instcombine -simplifycfg -sroa -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -mldst-motion -gvn -basicaa -basicaa -instcombine -basicaa -licm -postdomtree -simplifycfg -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa
+ -mem2reg -licm -gvn -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

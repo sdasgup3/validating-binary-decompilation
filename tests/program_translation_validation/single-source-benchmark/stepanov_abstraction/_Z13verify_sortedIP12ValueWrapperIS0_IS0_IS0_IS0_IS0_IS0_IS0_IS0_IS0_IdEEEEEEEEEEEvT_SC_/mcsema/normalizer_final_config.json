@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -globalopt -deadargelim -instcombine -simplifycfg -basiccg -argpromotion -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -sccp -instcombine -memdep -postdomtree -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine
+ -mem2reg -licm -gvn -early-cse -dse -deadargelim -instcombine -early-cse-memssa

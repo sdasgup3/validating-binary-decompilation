@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -deadargelim -instcombine -basiccg -argpromotion -sroa -early-cse -instcombine -instcombine -gvn -memcpyopt -demanded-bits -bdce -instcombine -dse -adce -instcombine -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -constmerge
+ -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

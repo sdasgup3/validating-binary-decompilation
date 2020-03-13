@@ -1,1 +1,1 @@
- -scoped-noalias -domtree -mem2reg -domtree -basicaa -simplifycfg -basiccg -domtree -simplifycfg -domtree -basicaa -simplifycfg -reassociate -domtree -basicaa -licm -simplifycfg -domtree -basicaa -gvn -basicaa -sccp -domtree -demanded-bits -basicaa -domtree -basicaa -dse -licm -simplifycfg -domtree -basicaa -elim-avail-extern -basiccg -float2int -domtree -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -domtree -basicaa -licm -globaldce -domtree -basicaa -instsimplify
+ -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse -libcalls-shrinkwrap

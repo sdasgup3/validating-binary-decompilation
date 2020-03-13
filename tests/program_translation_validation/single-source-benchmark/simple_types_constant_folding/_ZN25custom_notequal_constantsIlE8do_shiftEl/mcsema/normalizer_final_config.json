@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -domtree -mem2reg -domtree -simplifycfg -basiccg -globals-aa -inline -domtree -simplifycfg -domtree -libcalls-shrinkwrap -simplifycfg -reassociate -domtree -licm -simplifycfg -domtree -indvars -mldst-motion -memdep -gvn -memdep -domtree -jump-threading -domtree -memdep -dse -licm -postdomtree -simplifycfg -domtree -basiccg -globals-aa -float2int -domtree -simplifycfg -domtree -licm -domtree -instsimplify
+ -gvn -simplifycfg -aa -dse -instcombine

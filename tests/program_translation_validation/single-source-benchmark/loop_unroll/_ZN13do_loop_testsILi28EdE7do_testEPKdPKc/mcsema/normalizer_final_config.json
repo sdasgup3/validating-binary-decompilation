@@ -1,1 +1,1 @@
- -tbaa -deadargelim -basicaa -aa -instcombine -simplifycfg -basiccg -early-cse -correlated-propagation -simplifycfg -basicaa -aa -instcombine -tailcallelim -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -instcombine -aa -basicaa -aa -basicaa -aa -instcombine -correlated-propagation -basicaa -aa -dse -aa -postdomtree -adce -simplifycfg -basicaa -aa -instcombine -basiccg -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -basicaa -aa
+ -gvn -globalopt -dse -instcombine

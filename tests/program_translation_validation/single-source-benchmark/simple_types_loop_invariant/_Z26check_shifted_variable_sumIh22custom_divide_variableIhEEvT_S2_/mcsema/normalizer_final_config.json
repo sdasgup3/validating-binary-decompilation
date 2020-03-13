@@ -1,1 +1,1 @@
- -deadargelim -instcombine -basiccg -prune-eh -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -indvars -mldst-motion -gvn -memcpyopt -instcombine -jump-threading -dse -instcombine -basiccg -instcombine -instcombine -instcombine
+ -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine

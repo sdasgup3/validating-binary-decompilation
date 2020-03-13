@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -mem2reg -basicaa -instcombine -basiccg -argpromotion -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -demanded-bits -basicaa -instcombine -jump-threading -basicaa -dse -adce -basicaa -instcombine -basiccg -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa
+ -early-cse -basicaa -memdep -instcombine -early-cse-memssa

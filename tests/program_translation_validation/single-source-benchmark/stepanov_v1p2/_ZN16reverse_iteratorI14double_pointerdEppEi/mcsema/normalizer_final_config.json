@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -mem2reg -basicaa -aa -instcombine -sroa -early-cse -lazy-value-info -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -lazy-value-info -jump-threading -basicaa -aa -memdep -aa -postdomtree -adce -basicaa -aa -instcombine -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -basicaa -aa
+ -gvn -early-cse -simplifycfg -memdep -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -mem2reg -deadargelim -instcombine -sroa -early-cse -instcombine -instcombine -indvars -memdep -gvn -memdep -bdce -instcombine -memdep -postdomtree -instcombine -barrier -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce
+ -licm -gvn -early-cse -basicaa -memdep -dse -instcombine -early-cse-memssa

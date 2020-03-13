@@ -1,1 +1,1 @@
- -tti -deadargelim -aa -instcombine -basiccg -globals-aa -inline -early-cse -aa -instcombine -aa -scalar-evolution -aa -instcombine -scalar-evolution -indvars -aa -aa -memcpyopt -aa -instcombine -aa -aa -scalar-evolution -postdomtree -aa -instcombine -basiccg -globals-aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -aa -scalar-evolution
+ -gvn -globalopt -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

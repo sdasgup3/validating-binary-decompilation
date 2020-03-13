@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -instcombine -basiccg -inline -argpromotion -early-cse -instcombine -reassociate -licm -instcombine -memdep -gvn -memdep -instcombine -memdep -licm -postdomtree -adce -instcombine -basiccg -instcombine -instcombine -instcombine -licm
+ -gvn -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

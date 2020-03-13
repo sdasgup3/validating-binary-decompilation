@@ -1,1 +1,1 @@
- -scoped-noalias -mem2reg -deadargelim -basicaa -aa -globals-aa -prune-eh -argpromotion -basicaa -aa -basicaa -aa -licm -basicaa -aa -aa -memdep -gvn -basicaa -aa -memdep -sccp -demanded-bits -bdce -basicaa -aa -basicaa -aa -memdep -dse -aa -licm -adce -basicaa -aa -globals-aa -float2int -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -demanded-bits -basicaa -aa -licm -strip-dead-prototypes -basicaa -aa -instsimplify
+ -gvn -simplifycfg -memdep -instcombine -memcpyopt -early-cse-memssa

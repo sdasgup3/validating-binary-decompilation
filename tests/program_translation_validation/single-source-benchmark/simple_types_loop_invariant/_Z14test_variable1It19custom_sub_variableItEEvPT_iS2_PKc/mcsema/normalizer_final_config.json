@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -instcombine -inline -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -mldst-motion -memdep -gvn -memdep -bdce -instcombine -correlated-propagation -memdep -dse -licm -instcombine -barrier -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -globaldce
+ -licm -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -instcombine -early-cse-memssa

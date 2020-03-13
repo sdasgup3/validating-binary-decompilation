@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -sroa -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -demanded-bits -instcombine -memdep -postdomtree -simplifycfg -instcombine -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -mem2reg -gvn -globalopt -dse -deadargelim -memcpyopt

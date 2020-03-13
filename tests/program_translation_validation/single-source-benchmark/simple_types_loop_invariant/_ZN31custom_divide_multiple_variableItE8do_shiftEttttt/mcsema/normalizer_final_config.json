@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -domtree -domtree -basicaa -instcombine -globals-aa -argpromotion -domtree -early-cse -domtree -basicaa -instcombine -libcalls-shrinkwrap -domtree -basicaa -domtree -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -sccp -domtree -basicaa -instcombine -jump-threading -domtree -basicaa -memdep -domtree -basicaa -instcombine -barrier -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa -instsimplify
+ -gvn -globalopt -simplifycfg -dse -instcombine

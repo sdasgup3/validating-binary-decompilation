@@ -1,1 +1,1 @@
- -scoped-noalias -instcombine -basiccg -inline -argpromotion -early-cse -lazy-value-info -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -scalar-evolution -licm -instcombine -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -constmerge -scalar-evolution
+ -mem2reg -gvn -memdep -deadargelim -instcombine -early-cse-memssa

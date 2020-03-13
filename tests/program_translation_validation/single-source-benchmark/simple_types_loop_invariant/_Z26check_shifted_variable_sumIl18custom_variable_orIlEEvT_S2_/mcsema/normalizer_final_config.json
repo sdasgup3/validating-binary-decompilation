@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -basicaa -instcombine -inline -argpromotion -sroa -early-cse -lazy-value-info -basicaa -instcombine -tailcallelim -basicaa -licm -basicaa -instcombine -basicaa -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -dse -licm -adce -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa

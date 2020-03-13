@@ -1,1 +1,1 @@
- -deadargelim -prune-eh -argpromotion -sroa -correlated-propagation -scalar-evolution -scalar-evolution -memdep -gvn -memdep -memcpyopt -sccp -demanded-bits -bdce -correlated-propagation -memdep -dse -scalar-evolution -adce -barrier -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -strip-dead-prototypes -scalar-evolution
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -instcombine -memcpyopt -early-cse-memssa

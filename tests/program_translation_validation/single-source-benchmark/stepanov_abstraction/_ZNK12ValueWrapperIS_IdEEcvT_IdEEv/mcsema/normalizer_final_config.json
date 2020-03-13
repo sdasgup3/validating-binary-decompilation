@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -domtree -instcombine -basiccg -inline -domtree -domtree -instcombine -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -demanded-bits -bdce -instcombine -jump-threading -domtree -licm -adce -domtree -instcombine -elim-avail-extern -basiccg -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -domtree
+ -licm -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine -memcpyopt

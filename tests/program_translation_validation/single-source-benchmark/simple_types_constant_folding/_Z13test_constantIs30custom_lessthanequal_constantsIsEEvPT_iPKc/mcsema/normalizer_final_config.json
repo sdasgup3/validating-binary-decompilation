@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -globalopt -instcombine -simplifycfg -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -memdep -gvn -memdep -demanded-bits -instcombine -lazy-value-info -jump-threading -correlated-propagation -memdep -dse -postdomtree -simplifycfg -instcombine -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine
+ -gvn -globalopt -simplifycfg -dse -instcombine

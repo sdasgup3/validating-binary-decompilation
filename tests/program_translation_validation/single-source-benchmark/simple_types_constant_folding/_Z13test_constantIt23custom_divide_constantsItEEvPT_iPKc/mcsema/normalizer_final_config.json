@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -scoped-noalias -globalopt -domtree -deadargelim -domtree -instcombine -globals-aa -prune-eh -inline -domtree -early-cse -correlated-propagation -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -mldst-motion -gvn -domtree -instcombine -correlated-propagation -domtree -dse -postdomtree -domtree -instcombine -elim-avail-extern -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree
+ -mem2reg -gvn -aa -dse -tailcallelim -instcombine -memcpyopt

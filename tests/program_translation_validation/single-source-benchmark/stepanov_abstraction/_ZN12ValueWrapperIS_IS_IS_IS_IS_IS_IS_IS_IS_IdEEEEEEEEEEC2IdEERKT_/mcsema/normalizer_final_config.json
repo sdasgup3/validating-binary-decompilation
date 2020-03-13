@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -licm -gvn -sccp -dse -licm -adce -barrier -licm -constmerge
+ -licm -gvn -globalopt -instcombine -memcpyopt -early-cse-memssa

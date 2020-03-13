@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -instcombine -basiccg -globals-aa -prune-eh -inline -sroa -early-cse -instcombine -licm -instcombine -indvars -mldst-motion -sccp -instcombine -dse -licm -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -float2int -instcombine -instcombine -instcombine -licm -globaldce -instsimplify
+ -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -memcpyopt

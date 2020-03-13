@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -deadargelim -instcombine -globals-aa -inline -instcombine -libcalls-shrinkwrap -reassociate -scalar-evolution -instcombine -scalar-evolution -mldst-motion -memdep -gvn -memdep -instcombine -jump-threading -memdep -dse -scalar-evolution -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution
+ -gvn -simplifycfg -basicaa -memdep -deadargelim -instcombine -early-cse-memssa

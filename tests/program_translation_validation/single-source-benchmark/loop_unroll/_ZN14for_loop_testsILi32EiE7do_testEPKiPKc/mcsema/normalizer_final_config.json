@@ -1,1 +1,1 @@
- -targetlibinfo -instcombine -basiccg -argpromotion -early-cse -instcombine -instcombine -gvn -memcpyopt -instcombine -jump-threading -instcombine -barrier -elim-avail-extern -basiccg -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify
+ -mem2reg -gvn -early-cse -aa -dse -memcpyopt

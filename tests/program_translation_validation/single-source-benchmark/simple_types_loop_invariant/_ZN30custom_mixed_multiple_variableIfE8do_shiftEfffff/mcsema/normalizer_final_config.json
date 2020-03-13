@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -inline -sroa -lazy-value-info -licm -memdep -gvn -memdep -memcpyopt -lazy-value-info -memdep -dse -licm -postdomtree -adce -barrier -elim-avail-extern -licm -strip-dead-prototypes -globaldce
+ -mem2reg -licm -gvn -basicaa -dse

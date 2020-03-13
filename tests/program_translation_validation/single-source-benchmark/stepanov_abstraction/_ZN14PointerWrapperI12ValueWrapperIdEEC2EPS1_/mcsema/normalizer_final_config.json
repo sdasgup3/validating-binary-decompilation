@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -mem2reg -deadargelim -basicaa -basiccg -argpromotion -basicaa -basicaa -licm -basicaa -gvn -basicaa -sccp -basicaa -basicaa -dse -licm -postdomtree -adce -basicaa -barrier -basiccg -basicaa -basicaa -basicaa -basicaa -licm -strip-dead-prototypes -basicaa
+ -mem2reg -licm -gvn -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

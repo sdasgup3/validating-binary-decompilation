@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -globalopt -mem2reg -instcombine -inline -sroa -early-cse -correlated-propagation -instcombine -scalar-evolution -instcombine -scalar-evolution -mldst-motion -gvn -instcombine -correlated-propagation -dse -scalar-evolution -instcombine -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify
+ -mem2reg -gvn -basicaa -instcombine -early-cse-memssa

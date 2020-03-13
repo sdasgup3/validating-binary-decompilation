@@ -1,1 +1,1 @@
- -domtree -mem2reg -domtree -aa -instcombine -prune-eh -argpromotion -domtree -early-cse -lazy-value-info -domtree -aa -instcombine -tailcallelim -reassociate -domtree -aa -licm -domtree -aa -instcombine -aa -memdep -aa -memdep -domtree -aa -instcombine -lazy-value-info -jump-threading -domtree -aa -memdep -aa -licm -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -domtree -aa
+ -mem2reg -early-cse -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -tti -tbaa -deadargelim -basicaa -sroa -early-cse -lazy-value-info -basicaa -tailcallelim -basicaa -basicaa -gvn -basicaa -memcpyopt -sccp -basicaa -lazy-value-info -jump-threading -basicaa -dse -postdomtree -basicaa -basicaa -basicaa -basicaa -basicaa -basicaa
+ -licm -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine

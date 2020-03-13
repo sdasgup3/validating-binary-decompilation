@@ -1,1 +1,1 @@
- -tti -scoped-noalias -mem2reg -instcombine -globals-aa -early-cse -correlated-propagation -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -memcpyopt -bdce -instcombine -correlated-propagation -memdep -scalar-evolution -licm -postdomtree -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify
+ -gvn -basicaa -aa -memdep -dse -instcombine

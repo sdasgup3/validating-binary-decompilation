@@ -1,1 +1,1 @@
- -globalopt -instcombine -basiccg -prune-eh -argpromotion -sroa -early-cse -lazy-value-info -instcombine -tailcallelim -instcombine -gvn -bdce -instcombine -lazy-value-info -jump-threading -dse -instcombine -barrier -basiccg -instcombine -instcombine -instcombine -globaldce
+ -mem2reg -gvn -early-cse -globalopt -basicaa -instcombine -early-cse-memssa

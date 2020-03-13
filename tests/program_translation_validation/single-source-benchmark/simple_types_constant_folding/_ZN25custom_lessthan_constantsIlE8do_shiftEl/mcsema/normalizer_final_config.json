@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -basicaa -early-cse -basicaa -libcalls-shrinkwrap -basicaa -scalar-evolution -licm -basicaa -scalar-evolution -gvn -basicaa -basicaa -basicaa -dse -scalar-evolution -licm -adce -basicaa -float2int -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -licm -globaldce -basicaa -scalar-evolution -instsimplify
+ -mem2reg -gvn -globalopt -simplifycfg -instcombine -memcpyopt -early-cse-memssa

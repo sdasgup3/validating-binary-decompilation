@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -mem2reg -deadargelim -basicaa -instcombine -argpromotion -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -demanded-bits -basicaa -instcombine -jump-threading -basicaa -memdep -dse -postdomtree -basicaa -instcombine -barrier -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa -instsimplify
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine

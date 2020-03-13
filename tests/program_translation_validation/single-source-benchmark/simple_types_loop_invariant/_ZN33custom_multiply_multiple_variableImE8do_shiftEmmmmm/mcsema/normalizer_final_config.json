@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -globals-aa -inline -sroa -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -memdep -instcombine -memdep -simplifycfg -instcombine -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge
+ -gvn -early-cse -globalopt -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

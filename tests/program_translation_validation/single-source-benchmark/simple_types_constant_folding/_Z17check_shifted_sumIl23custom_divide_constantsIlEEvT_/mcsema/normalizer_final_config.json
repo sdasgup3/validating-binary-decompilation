@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -mem2reg -deadargelim -instcombine -sroa -instcombine -licm -instcombine -gvn -sccp -instcombine -licm -adce -instcombine -barrier -instcombine -instcombine -instcombine -licm
+ -mem2reg -licm -early-cse -globalopt -basicaa -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

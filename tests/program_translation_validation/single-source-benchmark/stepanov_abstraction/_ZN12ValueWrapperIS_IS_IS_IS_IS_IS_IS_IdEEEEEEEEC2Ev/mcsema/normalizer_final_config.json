@@ -1,1 +1,1 @@
- -domtree -mem2reg -domtree -basicaa -instcombine -domtree -early-cse -domtree -basicaa -instcombine -libcalls-shrinkwrap -domtree -basicaa -domtree -basicaa -instcombine -basicaa -domtree -bdce -basicaa -instcombine -domtree -basicaa -dse -postdomtree -domtree -basicaa -instcombine -float2int -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa
+ -gvn -globalopt -simplifycfg -dse -instcombine

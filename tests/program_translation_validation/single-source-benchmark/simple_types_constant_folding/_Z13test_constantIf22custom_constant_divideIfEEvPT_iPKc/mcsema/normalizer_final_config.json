@@ -1,1 +1,1 @@
- -assumption-cache-tracker -deadargelim -instcombine -basiccg -prune-eh -inline -sroa -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -memcpyopt -bdce -instcombine -scalar-evolution -licm -adce -instcombine -barrier -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution
+ -gvn -instcombine -memcpyopt -early-cse-memssa

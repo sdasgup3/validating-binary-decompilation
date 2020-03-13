@@ -1,1 +1,1 @@
- -assumption-cache-tracker -basicaa -instcombine -sroa -early-cse -basicaa -instcombine -basicaa -licm -basicaa -instcombine -mldst-motion -basicaa -demanded-bits -bdce -basicaa -instcombine -jump-threading -basicaa -licm -basicaa -instcombine -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -basicaa
+ -mem2reg -gvn -early-cse -tailcallelim -instcombine -early-cse-memssa

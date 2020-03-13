@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -globalopt -domtree -deadargelim -domtree -argpromotion -domtree -sroa -lazy-value-info -domtree -libcalls-shrinkwrap -tailcallelim -reassociate -domtree -domtree -gvn -memcpyopt -sccp -domtree -lazy-value-info -domtree -dse -postdomtree -domtree -domtree -domtree -domtree -instsimplify
+ -mem2reg -gvn -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

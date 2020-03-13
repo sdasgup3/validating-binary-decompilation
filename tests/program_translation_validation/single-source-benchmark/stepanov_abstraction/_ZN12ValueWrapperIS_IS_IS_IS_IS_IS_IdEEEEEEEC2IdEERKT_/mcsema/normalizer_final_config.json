@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -domtree -mem2reg -deadargelim -domtree -aa -simplifycfg -argpromotion -domtree -sroa -simplifycfg -domtree -aa -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -indvars -mldst-motion -aa -gvn -aa -sccp -domtree -bdce -aa -domtree -aa -dse -aa -simplifycfg -domtree -aa -domtree -aa -aa -aa -aa -simplifycfg -domtree -aa -constmerge -domtree -aa
+ -licm -gvn -early-cse -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt

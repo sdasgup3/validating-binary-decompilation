@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -globalopt -mem2reg -basicaa -instcombine -basiccg -prune-eh -argpromotion -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -gvn -basicaa -demanded-bits -basicaa -instcombine -correlated-propagation -basicaa -dse -licm -postdomtree -adce -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa
+ -mem2reg -licm -gvn -globalopt -basicaa -deadargelim -instcombine -early-cse-memssa

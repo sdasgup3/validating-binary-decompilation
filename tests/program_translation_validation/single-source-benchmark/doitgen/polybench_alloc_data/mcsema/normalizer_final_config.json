@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -globalopt -domtree -mem2reg -domtree -simplifycfg -prune-eh -argpromotion -domtree -lazy-value-info -simplifycfg -domtree -simplifycfg -domtree -licm -simplifycfg -domtree -mldst-motion -gvn -domtree -demanded-bits -bdce -lazy-value-info -jump-threading -domtree -dse -licm -postdomtree -simplifycfg -domtree -float2int -domtree -demanded-bits -demanded-bits -simplifycfg -domtree -licm -strip-dead-prototypes -domtree
+ -mem2reg -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -globalopt -domtree -mem2reg -deadargelim -domtree -instcombine -domtree -sroa -early-cse -correlated-propagation -domtree -instcombine -tailcallelim -reassociate -domtree -domtree -instcombine -mldst-motion -gvn -memcpyopt -sccp -domtree -instcombine -jump-threading -correlated-propagation -domtree -domtree -instcombine -barrier -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree
+ -licm -gvn -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -domtree -mem2reg -domtree -aa -instcombine -inline -domtree -sroa -domtree -aa -instcombine -libcalls-shrinkwrap -reassociate -domtree -aa -domtree -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -domtree -aa -instcombine -domtree -aa -dse -aa -adce -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -domtree -aa
+ -mem2reg -gvn -dse -libcalls-shrinkwrap -instcombine

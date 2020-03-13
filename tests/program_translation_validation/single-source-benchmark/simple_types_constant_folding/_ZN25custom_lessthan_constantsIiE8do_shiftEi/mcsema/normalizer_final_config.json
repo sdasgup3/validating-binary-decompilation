@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -domtree -domtree -basicaa -prune-eh -argpromotion -domtree -sroa -early-cse -lazy-value-info -correlated-propagation -domtree -basicaa -libcalls-shrinkwrap -reassociate -domtree -basicaa -domtree -basicaa -indvars -gvn -basicaa -domtree -demanded-bits -bdce -basicaa -lazy-value-info -correlated-propagation -domtree -basicaa -dse -domtree -basicaa -float2int -domtree -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -domtree -basicaa -domtree -basicaa -instsimplify
+ -mem2reg -gvn -aa -memdep -dse -memcpyopt

@@ -1,1 +1,1 @@
- -tbaa -deadargelim -instcombine -sroa -instcombine -licm -instcombine -indvars -mldst-motion -gvn -memcpyopt -instcombine -licm -postdomtree -adce -instcombine -instcombine -instcombine -instcombine -licm
+ -licm -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

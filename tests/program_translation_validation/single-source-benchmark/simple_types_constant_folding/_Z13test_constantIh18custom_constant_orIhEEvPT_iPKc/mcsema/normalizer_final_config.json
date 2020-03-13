@@ -1,1 +1,1 @@
- -tti -tbaa -instcombine -inline -sroa -instcombine -tailcallelim -licm -instcombine -gvn -sccp -bdce -instcombine -jump-threading -dse -licm -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -constmerge
+ -mem2reg -gvn -early-cse -simplifycfg -dse -instcombine

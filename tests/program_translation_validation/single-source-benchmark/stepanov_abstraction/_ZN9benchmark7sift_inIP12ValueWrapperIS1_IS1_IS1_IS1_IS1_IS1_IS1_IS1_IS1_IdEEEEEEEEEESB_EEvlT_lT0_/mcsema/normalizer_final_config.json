@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -mem2reg -instcombine -basiccg -globals-aa -argpromotion -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -memdep -gvn -memdep -sccp -demanded-bits -instcombine -lazy-value-info -memdep -licm -postdomtree -adce -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce -constmerge -instsimplify
+ -licm -gvn -globalopt -basicaa -dse -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -deadargelim -basicaa -aa -instcombine -simplifycfg -argpromotion -early-cse -simplifycfg -basicaa -aa -instcombine -libcalls-shrinkwrap -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -instcombine -indvars -aa -gvn -basicaa -aa -basicaa -aa -instcombine -jump-threading -basicaa -aa -dse -aa -simplifycfg -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -basicaa -aa
+ -mem2reg -early-cse -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -tti -tbaa -domtree -mem2reg -domtree -instcombine -basiccg -globals-aa -domtree -early-cse -correlated-propagation -domtree -instcombine -domtree -licm -domtree -instcombine -mldst-motion -memdep -memdep -domtree -instcombine -jump-threading -correlated-propagation -domtree -memdep -dse -licm -domtree -instcombine -basiccg -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree
+ -mem2reg -gvn -memdep -dse -early-cse-memssa

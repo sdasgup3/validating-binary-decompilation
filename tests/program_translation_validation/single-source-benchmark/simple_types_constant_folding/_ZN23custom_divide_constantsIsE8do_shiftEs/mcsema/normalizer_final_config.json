@@ -1,1 +1,1 @@
- -tti -domtree -deadargelim -domtree -aa -basiccg -domtree -sroa -lazy-value-info -correlated-propagation -domtree -aa -tailcallelim -domtree -aa -domtree -aa -mldst-motion -aa -gvn -aa -domtree -aa -lazy-value-info -jump-threading -correlated-propagation -domtree -aa -dse -aa -adce -domtree -aa -basiccg -float2int -domtree -aa -aa -aa -aa -domtree -aa -domtree -aa
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -instcombine

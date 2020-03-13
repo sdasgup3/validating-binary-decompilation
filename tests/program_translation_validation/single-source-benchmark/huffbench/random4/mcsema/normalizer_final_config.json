@@ -1,1 +1,1 @@
- -tti -basicaa -aa -instcombine -inline -argpromotion -early-cse -correlated-propagation -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -basicaa -aa -instcombine -correlated-propagation -basicaa -aa -memdep -aa -postdomtree -adce -basicaa -aa -instcombine -barrier -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -basicaa -aa
+ -gvn -early-cse -aa -memdep -dse -tailcallelim -instcombine

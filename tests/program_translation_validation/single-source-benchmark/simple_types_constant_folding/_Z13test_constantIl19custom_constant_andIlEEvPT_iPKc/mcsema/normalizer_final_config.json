@@ -1,1 +1,1 @@
- -mem2reg -instcombine -inline -sroa -early-cse -lazy-value-info -instcombine -reassociate -licm -instcombine -gvn -demanded-bits -bdce -instcombine -lazy-value-info -licm -instcombine -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge
+ -mem2reg -gvn -instcombine -memcpyopt -early-cse-memssa

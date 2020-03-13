@@ -1,1 +1,1 @@
- -tti -mem2reg -deadargelim -aa -instcombine -globals-aa -inline -early-cse -lazy-value-info -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -aa -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -aa -instcombine -lazy-value-info -correlated-propagation -aa -aa -postdomtree -aa -instcombine -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -aa
+ -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine

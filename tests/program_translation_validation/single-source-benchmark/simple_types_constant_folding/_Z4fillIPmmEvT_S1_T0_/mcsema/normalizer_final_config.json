@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -aa -instcombine -globals-aa -sroa -lazy-value-info -correlated-propagation -aa -instcombine -aa -licm -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -demanded-bits -bdce -aa -instcombine -lazy-value-info -correlated-propagation -aa -dse -aa -licm -adce -aa -instcombine -elim-avail-extern -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -globaldce -aa -instsimplify
+ -gvn -dse -instcombine -memcpyopt -early-cse-memssa

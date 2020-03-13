@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -mem2reg -simplifycfg -basiccg -argpromotion -simplifycfg -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -indvars -memdep -gvn -memdep -sccp -bdce -memdep -dse -scalar-evolution -simplifycfg -barrier -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -instsimplify
+ -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine

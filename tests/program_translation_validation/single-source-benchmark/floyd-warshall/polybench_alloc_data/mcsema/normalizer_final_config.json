@@ -1,1 +1,1 @@
- -aa -instcombine -inline -sroa -aa -instcombine -aa -licm -aa -instcombine -mldst-motion -aa -gvn -aa -demanded-bits -aa -instcombine -jump-threading -aa -dse -aa -licm -adce -aa -instcombine -barrier -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -globaldce -aa
+ -mem2reg -gvn -aa -memdep -dse -instcombine -memcpyopt

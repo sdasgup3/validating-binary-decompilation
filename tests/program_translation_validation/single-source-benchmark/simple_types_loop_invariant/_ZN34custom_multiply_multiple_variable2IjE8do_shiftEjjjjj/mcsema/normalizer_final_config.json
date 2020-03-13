@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -instcombine -prune-eh -argpromotion -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -gvn -sccp -bdce -instcombine -correlated-propagation -licm -instcombine -barrier -instcombine -instcombine -instcombine -licm
+ -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt

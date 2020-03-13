@@ -1,1 +1,1 @@
- -tti -domtree -mem2reg -domtree -simplifycfg -prune-eh -domtree -correlated-propagation -simplifycfg -domtree -simplifycfg -domtree -simplifycfg -domtree -mldst-motion -gvn -memcpyopt -sccp -domtree -correlated-propagation -domtree -dse -adce -simplifycfg -domtree -barrier -domtree -simplifycfg -domtree -domtree -instsimplify
+ -licm -gvn -aa -tailcallelim -instcombine -early-cse-memssa

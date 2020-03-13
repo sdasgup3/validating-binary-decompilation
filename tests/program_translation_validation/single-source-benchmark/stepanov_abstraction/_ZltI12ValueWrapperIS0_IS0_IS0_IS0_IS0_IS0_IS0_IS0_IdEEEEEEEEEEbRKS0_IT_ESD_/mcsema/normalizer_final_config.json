@@ -1,1 +1,1 @@
- -tti -globalopt -mem2reg -basiccg -prune-eh -lazy-value-info -licm -gvn -memcpyopt -sccp -lazy-value-info -jump-threading -dse -licm -postdomtree -basiccg -licm -strip-dead-prototypes -globaldce
+ -early-cse -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

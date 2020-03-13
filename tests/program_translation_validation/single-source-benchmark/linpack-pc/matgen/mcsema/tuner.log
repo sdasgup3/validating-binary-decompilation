@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[    30s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #2422, cost time=0.0058, found by UniformGreedyMutation
+[    30s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    60s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #2455, cost time=0.0022, found by NormalGreedyMutation
+[    81s]    INFO opentuner.search.plugin.DisplayPlugin: tests=11, best #2455, cost time=0.0022, found by NormalGreedyMutation
+[   106s]    INFO opentuner.search.plugin.DisplayPlugin: tests=15, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   135s]    INFO opentuner.search.plugin.DisplayPlugin: tests=19, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   178s]    INFO opentuner.search.plugin.DisplayPlugin: tests=23, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   208s]    INFO opentuner.search.plugin.DisplayPlugin: tests=27, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   227s]    INFO opentuner.search.plugin.DisplayPlugin: tests=30, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   254s]    INFO opentuner.search.plugin.DisplayPlugin: tests=34, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   277s]    INFO opentuner.search.plugin.DisplayPlugin: tests=38, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   297s]    INFO opentuner.search.plugin.DisplayPlugin: tests=42, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   317s]    INFO opentuner.search.plugin.DisplayPlugin: tests=46, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   337s]    INFO opentuner.search.plugin.DisplayPlugin: tests=50, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   367s]    INFO opentuner.search.plugin.DisplayPlugin: tests=54, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   386s]    INFO opentuner.search.plugin.DisplayPlugin: tests=58, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   407s]    INFO opentuner.search.plugin.DisplayPlugin: tests=62, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   423s]    INFO opentuner.search.plugin.DisplayPlugin: tests=65, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   448s]    INFO opentuner.search.plugin.DisplayPlugin: tests=69, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   468s]    INFO opentuner.search.plugin.DisplayPlugin: tests=73, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   481s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   509s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   532s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   549s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   572s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   587s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   599s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   599s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #2462, cost time=0.0015, found by NormalGreedyMutation
+[   599s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse-memssa -basicaa -instcombine -simplifycfg -libcalls-shrinkwrap -dse -early-cse -deadargelim -gvn ]
+568.23user 41.79system 9:59.73elapsed 101%CPU (0avgtext+0avgdata 55768maxresident)k
+0inputs+319672outputs (0major+1332794minor)pagefaults 0swaps

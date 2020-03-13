@@ -1,1 +1,1 @@
- -assumption-cache-tracker -aa -instcombine -prune-eh -argpromotion -sroa -aa -instcombine -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -aa -gvn -aa -memcpyopt -aa -instcombine -jump-threading -aa -dse -aa -scalar-evolution -licm -adce -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -aa -scalar-evolution
+ -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine

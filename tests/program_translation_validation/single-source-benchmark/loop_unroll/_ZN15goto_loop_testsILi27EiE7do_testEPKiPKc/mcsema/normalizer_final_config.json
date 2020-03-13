@@ -1,1 +1,1 @@
- -mem2reg -basiccg -globals-aa -lazy-value-info -libcalls-shrinkwrap -tailcallelim -scalar-evolution -scalar-evolution -gvn -memcpyopt -sccp -lazy-value-info -jump-threading -dse -scalar-evolution -barrier -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution
+ -licm -early-cse -aa -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

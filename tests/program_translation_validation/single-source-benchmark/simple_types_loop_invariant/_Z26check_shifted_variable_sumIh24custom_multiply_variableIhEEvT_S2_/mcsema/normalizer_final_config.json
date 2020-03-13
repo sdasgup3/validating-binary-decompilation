@@ -1,1 +1,1 @@
- -globalopt -domtree -mem2reg -deadargelim -domtree -instcombine -basiccg -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -indvars -gvn -memcpyopt -domtree -instcombine -lazy-value-info -jump-threading -domtree -dse -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -domtree -instsimplify
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine

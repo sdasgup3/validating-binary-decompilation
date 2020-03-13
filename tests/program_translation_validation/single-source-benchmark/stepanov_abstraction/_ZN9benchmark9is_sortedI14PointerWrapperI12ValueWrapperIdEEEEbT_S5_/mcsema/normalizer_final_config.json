@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -globalopt -mem2reg -deadargelim -instcombine -basiccg -prune-eh -instcombine -libcalls-shrinkwrap -reassociate -instcombine -mldst-motion -memdep -gvn -memdep -bdce -instcombine -memdep -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -globaldce -instsimplify
+ -gvn -early-cse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

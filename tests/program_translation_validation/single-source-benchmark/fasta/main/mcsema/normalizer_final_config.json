@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -deadargelim -basicaa -instcombine -simplifycfg -prune-eh -argpromotion -correlated-propagation -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -basicaa -instcombine -correlated-propagation -basicaa -memdep -dse -simplifycfg -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -globaldce -basicaa -instsimplify
+ -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine

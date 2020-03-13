@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -globalopt -instcombine -globals-aa -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -instcombine -dse -licm -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify
+ -mem2reg -gvn -early-cse -simplifycfg -dse

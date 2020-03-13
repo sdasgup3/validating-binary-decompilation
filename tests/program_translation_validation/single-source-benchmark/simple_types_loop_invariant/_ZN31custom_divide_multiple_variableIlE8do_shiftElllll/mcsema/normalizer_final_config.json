@@ -1,1 +1,1 @@
- -tti -tbaa -globalopt -deadargelim -aa -instcombine -inline -sroa -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -mldst-motion -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -correlated-propagation -aa -dse -aa -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -aa
+ -licm -gvn -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt

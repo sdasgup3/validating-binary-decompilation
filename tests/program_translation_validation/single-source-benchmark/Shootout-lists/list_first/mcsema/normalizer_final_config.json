@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -instcombine -globals-aa -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -tailcallelim -instcombine -memcpyopt -instcombine -lazy-value-info -correlated-propagation -instcombine -barrier -globals-aa -instcombine -instcombine -instcombine
+ -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

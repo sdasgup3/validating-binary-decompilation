@@ -1,1 +1,1 @@
- -tbaa -globalopt -instcombine -simplifycfg -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -gvn -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -dse -licm -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge
+ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -instcombine -early-cse-memssa

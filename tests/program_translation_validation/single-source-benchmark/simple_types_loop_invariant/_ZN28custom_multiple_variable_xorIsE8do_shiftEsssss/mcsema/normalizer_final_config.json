@@ -1,1 +1,1 @@
- -targetlibinfo -tti -mem2reg -basicaa -basicaa -tailcallelim -basicaa -licm -basicaa -gvn -basicaa -sccp -demanded-bits -basicaa -jump-threading -basicaa -dse -licm -basicaa -barrier -float2int -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -licm -basicaa
+ -gvn -early-cse -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

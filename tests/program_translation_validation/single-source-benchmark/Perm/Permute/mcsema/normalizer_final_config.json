@@ -1,1 +1,1 @@
- -tti -scoped-noalias -mem2reg -deadargelim -aa -instcombine -inline -argpromotion -sroa -early-cse -lazy-value-info -aa -instcombine -aa -licm -aa -instcombine -mldst-motion -aa -gvn -aa -memcpyopt -sccp -demanded-bits -bdce -aa -instcombine -lazy-value-info -jump-threading -aa -dse -aa -licm -aa -instcombine -barrier -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -globaldce -constmerge -aa
+ -mem2reg -early-cse -basicaa -tailcallelim -instcombine -early-cse-memssa

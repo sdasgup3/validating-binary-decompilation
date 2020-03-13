@@ -1,1 +1,1 @@
- -scoped-noalias -basicaa -basiccg -globals-aa -argpromotion -sroa -lazy-value-info -correlated-propagation -basicaa -libcalls-shrinkwrap -basicaa -basicaa -mldst-motion -gvn -basicaa -basicaa -lazy-value-info -jump-threading -correlated-propagation -basicaa -dse -basicaa -elim-avail-extern -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -basicaa -globaldce -basicaa
+ -mem2reg -licm -gvn -globalopt -aa -memdep -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -mem2reg -basicaa -aa -instcombine -basiccg -inline -argpromotion -sroa -lazy-value-info -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -lazy-value-info -basicaa -aa -dse -aa -postdomtree -basicaa -aa -instcombine -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -basicaa -aa
+ -mem2reg -gvn -early-cse -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

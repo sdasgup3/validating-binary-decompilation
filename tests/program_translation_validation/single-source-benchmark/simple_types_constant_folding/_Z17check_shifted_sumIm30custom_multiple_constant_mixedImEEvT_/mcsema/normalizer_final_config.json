@@ -1,1 +1,1 @@
- -tbaa -mem2reg -deadargelim -instcombine -basiccg -inline -early-cse -instcombine -tailcallelim -reassociate -instcombine -indvars -mldst-motion -memdep -gvn -memdep -memcpyopt -sccp -bdce -instcombine -jump-threading -memdep -instcombine -basiccg -float2int -instcombine -instcombine -instcombine
+ -gvn -early-cse -deadargelim -instcombine -early-cse-memssa

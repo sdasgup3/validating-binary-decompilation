@@ -1,1 +1,1 @@
- -tti -scoped-noalias -globalopt -mem2reg -basicaa -basiccg -prune-eh -argpromotion -sroa -early-cse -lazy-value-info -basicaa -libcalls-shrinkwrap -basicaa -basicaa -gvn -basicaa -demanded-bits -bdce -basicaa -lazy-value-info -jump-threading -basicaa -dse -postdomtree -basicaa -barrier -basiccg -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -strip-dead-prototypes -basicaa
+ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -memcpyopt -early-cse-memssa

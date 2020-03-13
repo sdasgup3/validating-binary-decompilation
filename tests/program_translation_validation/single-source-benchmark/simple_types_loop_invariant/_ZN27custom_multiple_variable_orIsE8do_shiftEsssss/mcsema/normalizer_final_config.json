@@ -1,1 +1,1 @@
- -tti -mem2reg -deadargelim -globals-aa -inline -correlated-propagation -libcalls-shrinkwrap -indvars -mldst-motion -gvn -sccp -correlated-propagation -dse -postdomtree -globals-aa -globaldce -constmerge
+ -mem2reg -licm -gvn -simplifycfg -aa -dse

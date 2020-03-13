@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -mem2reg -deadargelim -instcombine -prune-eh -inline -argpromotion -correlated-propagation -instcombine -scalar-evolution -instcombine -scalar-evolution -gvn -instcombine -correlated-propagation -scalar-evolution -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution
+ -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

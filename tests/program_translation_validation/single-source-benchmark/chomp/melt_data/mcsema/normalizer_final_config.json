@@ -1,1 +1,1 @@
- -tti -globalopt -instcombine -globals-aa -prune-eh -sroa -correlated-propagation -instcombine -scalar-evolution -instcombine -scalar-evolution -gvn -memcpyopt -demanded-bits -instcombine -correlated-propagation -scalar-evolution -postdomtree -adce -instcombine -globals-aa -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution -instsimplify
+ -mem2reg -licm -gvn -globalopt -aa -memdep -instcombine -early-cse-memssa

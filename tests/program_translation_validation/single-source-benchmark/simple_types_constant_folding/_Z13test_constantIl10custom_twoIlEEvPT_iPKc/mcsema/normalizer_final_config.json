@@ -1,1 +1,1 @@
- -globalopt -mem2reg -instcombine -basiccg -prune-eh -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -mldst-motion -memdep -gvn -memdep -instcombine -jump-threading -memdep -scalar-evolution -licm -postdomtree -instcombine -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution
+ -mem2reg -licm -gvn -globalopt -basicaa -instcombine -early-cse-memssa

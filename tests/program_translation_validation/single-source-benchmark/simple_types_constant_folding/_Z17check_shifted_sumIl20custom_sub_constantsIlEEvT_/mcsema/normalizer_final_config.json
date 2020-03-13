@@ -1,1 +1,1 @@
- -domtree -mem2reg -deadargelim -domtree -instcombine -globals-aa -domtree -early-cse -correlated-propagation -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -memcpyopt -domtree -bdce -instcombine -correlated-propagation -domtree -memdep -postdomtree -domtree -instcombine -barrier -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree
+ -licm -gvn -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -domtree -mem2reg -domtree -inline -domtree -sroa -lazy-value-info -domtree -libcalls-shrinkwrap -domtree -domtree -indvars -gvn -memcpyopt -sccp -domtree -demanded-bits -lazy-value-info -domtree -dse -postdomtree -domtree -barrier -elim-avail-extern -float2int -domtree -demanded-bits -demanded-bits -domtree -strip-dead-prototypes -globaldce -domtree
+ -mem2reg -gvn -simplifycfg -basicaa -dse

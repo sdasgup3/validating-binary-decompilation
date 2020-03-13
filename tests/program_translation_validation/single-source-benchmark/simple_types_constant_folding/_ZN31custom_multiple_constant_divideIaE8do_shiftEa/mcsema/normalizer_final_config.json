@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -mem2reg -instcombine -argpromotion -instcombine -libcalls-shrinkwrap -tailcallelim -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -sccp -bdce -instcombine -memdep -dse -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution
+ -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -instcombine

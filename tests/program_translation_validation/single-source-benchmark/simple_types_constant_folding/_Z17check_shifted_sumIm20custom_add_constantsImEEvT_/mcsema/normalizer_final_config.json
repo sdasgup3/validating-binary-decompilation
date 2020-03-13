@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -deadargelim -basicaa -instcombine -basiccg -globals-aa -inline -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -dse -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -gvn -basicaa -aa -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

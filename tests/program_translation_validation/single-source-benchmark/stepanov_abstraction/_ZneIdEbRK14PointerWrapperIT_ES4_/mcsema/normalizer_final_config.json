@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -globals-aa -sroa -licm -memdep -gvn -memdep -bdce -memdep -dse -licm -barrier -globals-aa -licm -strip-dead-prototypes -constmerge
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt

@@ -1,1 +1,1 @@
- -mem2reg -aa -instcombine -inline -early-cse -correlated-propagation -aa -instcombine -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -demanded-bits -aa -instcombine -jump-threading -correlated-propagation -aa -memdep -aa -aa -instcombine -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa
+ -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine

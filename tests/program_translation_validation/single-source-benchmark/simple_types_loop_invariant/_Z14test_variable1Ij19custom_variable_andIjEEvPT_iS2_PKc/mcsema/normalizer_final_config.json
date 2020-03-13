@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -mem2reg -instcombine -basiccg -globals-aa -argpromotion -sroa -lazy-value-info -instcombine -reassociate -licm -instcombine -gvn -demanded-bits -instcombine -lazy-value-info -jump-threading -dse -licm -adce -instcombine -barrier -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce -constmerge
+ -mem2reg -licm -gvn -early-cse -globalopt -aa -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

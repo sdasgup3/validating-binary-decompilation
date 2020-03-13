@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -globalopt -domtree -mem2reg -deadargelim -domtree -basicaa -aa -inline -domtree -sroa -domtree -basicaa -aa -domtree -basicaa -aa -domtree -basicaa -aa -aa -gvn -basicaa -aa -memcpyopt -domtree -demanded-bits -basicaa -aa -domtree -basicaa -aa -dse -aa -domtree -basicaa -aa -elim-avail-extern -float2int -domtree -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -demanded-bits -domtree -basicaa -aa -globaldce -domtree -basicaa -aa
+ -gvn -early-cse -dse -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -deadargelim -instcombine -basiccg -sroa -early-cse -instcombine -libcalls-shrinkwrap -reassociate -instcombine -indvars -mldst-motion -memdep -memdep -instcombine -memdep -adce -instcombine -elim-avail-extern -basiccg -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce
+ -gvn -basicaa -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -tti -scoped-noalias -mem2reg -basicaa -instcombine -simplifycfg -basiccg -inline -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -dse -licm -simplifycfg -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa -instsimplify
+ -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt

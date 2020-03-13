@@ -1,1 +1,1 @@
- -tti -mem2reg -deadargelim -instcombine -globals-aa -argpromotion -early-cse -instcombine -libcalls-shrinkwrap -licm -instcombine -indvars -memdep -gvn -memdep -memcpyopt -bdce -instcombine -memdep -licm -instcombine -globals-aa -float2int -instcombine -instcombine -instcombine -licm -constmerge
+ -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt

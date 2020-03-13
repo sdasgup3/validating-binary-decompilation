@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -basiccg -domtree -early-cse -domtree -instcombine -domtree -licm -domtree -instcombine -indvars -memdep -memdep -memcpyopt -domtree -instcombine -domtree -memdep -licm -domtree -instcombine -barrier -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree
+ -early-cse -globalopt -simplifycfg -instcombine -early-cse-memssa

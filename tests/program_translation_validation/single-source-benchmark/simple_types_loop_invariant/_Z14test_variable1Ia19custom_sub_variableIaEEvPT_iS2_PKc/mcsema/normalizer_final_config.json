@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -globalopt -deadargelim -instcombine -simplifycfg -globals-aa -prune-eh -inline -sroa -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -licm -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -bdce -instcombine -jump-threading -memdep -licm -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes
+ -licm -gvn -simplifycfg -basicaa -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

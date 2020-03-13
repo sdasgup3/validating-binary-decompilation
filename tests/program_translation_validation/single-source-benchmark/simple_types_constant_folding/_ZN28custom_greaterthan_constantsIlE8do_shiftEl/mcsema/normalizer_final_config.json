@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -globalopt -mem2reg -aa -instcombine -prune-eh -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -indvars -aa -aa -sccp -demanded-bits -aa -instcombine -aa -aa -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -constmerge -aa
+ -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -simplifycfg -inline -sroa -simplifycfg -simplifycfg -simplifycfg -indvars -mldst-motion -gvn -demanded-bits -bdce -jump-threading -dse -simplifycfg -demanded-bits -demanded-bits -simplifycfg -strip-dead-prototypes -instsimplify
+ -early-cse -simplifycfg -aa -instcombine -early-cse-memssa

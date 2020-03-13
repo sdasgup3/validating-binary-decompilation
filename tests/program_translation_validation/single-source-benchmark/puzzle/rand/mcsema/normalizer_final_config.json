@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -dse -instcombine -tti -tbaa -scoped-noalias -basiccg -prune-eh -sroa -memdep -gvn -memdep -demanded-bits -bdce -jump-threading -memdep -dse -basiccg -demanded-bits -demanded-bits
+ -mem2reg -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -memcpyopt -demanded-bits -bdce -instcombine -jump-threading -correlated-propagation -dse -licm -simplifycfg -instcombine -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -globaldce
+ -mem2reg -gvn -globalopt -simplifycfg -aa -memdep -dse -instcombine -memcpyopt

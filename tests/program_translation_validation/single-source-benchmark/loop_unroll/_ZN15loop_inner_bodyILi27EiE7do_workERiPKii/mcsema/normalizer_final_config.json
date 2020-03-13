@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -basicaa -instcombine -globals-aa -sroa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -licm -basicaa -instcombine -indvars -gvn -basicaa -demanded-bits -bdce -basicaa -instcombine -jump-threading -basicaa -dse -licm -basicaa -instcombine -barrier -globals-aa -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -globaldce -basicaa
+ -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine

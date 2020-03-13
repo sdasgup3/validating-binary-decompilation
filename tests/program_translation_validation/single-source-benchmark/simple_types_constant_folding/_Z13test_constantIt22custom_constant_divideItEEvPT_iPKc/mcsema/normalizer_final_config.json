@@ -1,1 +1,1 @@
- -mem2reg -instcombine -basiccg -sroa -correlated-propagation -instcombine -tailcallelim -licm -instcombine -memdep -gvn -memdep -instcombine -correlated-propagation -memdep -dse -licm -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -licm -strip-dead-prototypes
+ -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine

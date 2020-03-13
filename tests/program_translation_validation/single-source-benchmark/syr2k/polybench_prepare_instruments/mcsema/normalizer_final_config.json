@@ -1,1 +1,1 @@
- -targetlibinfo -tti -assumption-cache-tracker -aa -instcombine -basiccg -sroa -aa -instcombine -tailcallelim -reassociate -aa -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -bdce -aa -instcombine -jump-threading -aa -memdep -dse -aa -aa -instcombine -barrier -basiccg -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa
+ -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

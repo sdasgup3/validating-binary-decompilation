@@ -1,1 +1,1 @@
- -domtree -deadargelim -domtree -basicaa -instcombine -inline -argpromotion -domtree -sroa -domtree -basicaa -instcombine -tailcallelim -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -domtree -demanded-bits -basicaa -instcombine -domtree -basicaa -domtree -basicaa -instcombine -float2int -domtree -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -domtree -basicaa -instcombine -instcombine -strip-dead-prototypes -domtree -basicaa -instsimplify
+ -gvn -globalopt -basicaa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -deadargelim -basicaa -instcombine -basiccg -globals-aa -inline -argpromotion -early-cse -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -licm -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -jump-threading -basicaa -dse -licm -adce -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa
+ -mem2reg -licm -gvn -dse -deadargelim -instcombine

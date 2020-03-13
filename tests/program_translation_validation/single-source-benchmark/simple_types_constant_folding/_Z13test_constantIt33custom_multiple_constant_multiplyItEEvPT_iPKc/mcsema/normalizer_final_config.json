@@ -1,1 +1,1 @@
- -globalopt -mem2reg -instcombine -sroa -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -mldst-motion -gvn -sccp -demanded-bits -bdce -instcombine -dse -scalar-evolution -postdomtree -instcombine -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution -instsimplify
+ -gvn -basicaa -deadargelim -tailcallelim -instcombine -early-cse-memssa

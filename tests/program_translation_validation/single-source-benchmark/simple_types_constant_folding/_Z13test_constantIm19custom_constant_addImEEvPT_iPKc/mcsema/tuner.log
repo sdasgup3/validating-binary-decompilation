@@ -1,0 +1,71 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[   112s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #281, cost time=0.0137, found by UniformGreedyMutation
+[   214s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #281, cost time=0.0137, found by UniformGreedyMutation
+[   333s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #283, cost time=0.0113, found by UniformGreedyMutation
+[   445s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #290, cost time=0.0041, found by UniformGreedyMutation
+[   544s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #290, cost time=0.0041, found by UniformGreedyMutation
+[   621s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[   643s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #297, cost time=0.0000, found by UniformGreedyMutation
+[   680s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[   696s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -basicaa -dse -instcombine]
+[   712s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -dse -instcombine -memcpyopt]
+[   724s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -aa -dse -instcombine -memcpyopt]
+[   724s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #297, cost time=0.0000, found by UniformGreedyMutation
+[   763s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -globalopt -basicaa -dse -instcombine -memcpyopt]
+[   815s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -dse -instcombine -memcpyopt]
+[   815s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #297, cost time=0.0000, found by UniformGreedyMutation
+[   850s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[   894s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[   912s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[   913s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1023s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1062s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -memcpyopt]
+[  1100s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  1116s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  1116s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1150s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -dse -instcombine -memcpyopt]
+[  1169s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -aa -dse -instcombine -memcpyopt]
+[  1202s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  1202s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1262s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt -early-cse-memssa]
+[  1279s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -dse -instcombine -memcpyopt]
+[  1279s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1390s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1484s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1543s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -dse -instcombine -memcpyopt]
+[  1559s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -simplifycfg -basicaa -dse -instcombine -memcpyopt]
+[  1580s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1657s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -basicaa -dse -instcombine -memcpyopt]
+[  1681s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1783s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1828s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine -memcpyopt]
+[  1840s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -dse -instcombine -memcpyopt]
+[  1854s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -deadargelim -instcombine -memcpyopt -early-cse-memssa]
+[  1855s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1880s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -basicaa -memdep -dse -instcombine -memcpyopt]
+[  1893s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -basicaa -dse -instcombine -memcpyopt]
+[  1907s]    INFO opentuner.search.plugin.DisplayPlugin: tests=78, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  1937s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  1953s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  1954s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2048s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -simplifycfg -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa]
+[  2048s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2089s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -aa -dse -instcombine]
+[  2107s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  2127s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2180s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -memcpyopt]
+[  2200s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -basicaa -dse -deadargelim -instcombine -memcpyopt -early-cse-memssa]
+[  2218s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -basicaa -dse -instcombine -memcpyopt -early-cse-memssa]
+[  2218s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2251s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -dse -instcombine -memcpyopt]
+[  2265s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -early-cse -basicaa -memdep -dse -instcombine -memcpyopt]
+[  2284s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -instcombine]
+[  2284s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2400s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2400s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #297, cost time=0.0000, found by UniformGreedyMutation
+[  2400s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse -basicaa -instcombine -memcpyopt -dse -gvn ]
+2281.78user 53.31system 40:00.86elapsed 97%CPU (0avgtext+0avgdata 116392maxresident)k
+0inputs+2580888outputs (0major+5731470minor)pagefaults 0swaps

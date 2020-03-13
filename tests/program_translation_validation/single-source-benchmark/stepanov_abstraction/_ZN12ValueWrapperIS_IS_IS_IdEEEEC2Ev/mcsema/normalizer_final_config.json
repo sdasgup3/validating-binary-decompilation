@@ -1,1 +1,1 @@
- -targetlibinfo -globalopt -instcombine -simplifycfg -globals-aa -prune-eh -argpromotion -lazy-value-info -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -gvn -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -licm -simplifycfg -instcombine -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge -instsimplify
+ -mem2reg -licm -early-cse -simplifycfg -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

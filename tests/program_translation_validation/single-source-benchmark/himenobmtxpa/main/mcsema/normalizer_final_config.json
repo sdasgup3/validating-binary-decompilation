@@ -1,1 +1,1 @@
- -targetlibinfo -deadargelim -basicaa -instcombine -argpromotion -early-cse -correlated-propagation -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -sccp -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -postdomtree -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa -instsimplify
+ -gvn -basicaa -dse -deadargelim -instcombine

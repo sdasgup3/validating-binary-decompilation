@@ -1,1 +1,1 @@
- -instcombine -basiccg -globals-aa -prune-eh -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -instcombine -indvars -mldst-motion -gvn -memcpyopt -sccp -demanded-bits -instcombine -lazy-value-info -correlated-propagation -postdomtree -adce -instcombine -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -constmerge -instsimplify
+ -gvn -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa

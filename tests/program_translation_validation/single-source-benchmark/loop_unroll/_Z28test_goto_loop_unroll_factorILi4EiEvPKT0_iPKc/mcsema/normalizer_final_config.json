@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -mem2reg -deadargelim -basicaa -instcombine -globals-aa -prune-eh -sroa -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -lazy-value-info -basicaa -dse -basicaa -instcombine -barrier -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -mem2reg -gvn -early-cse -simplifycfg -aa -instcombine -early-cse-memssa

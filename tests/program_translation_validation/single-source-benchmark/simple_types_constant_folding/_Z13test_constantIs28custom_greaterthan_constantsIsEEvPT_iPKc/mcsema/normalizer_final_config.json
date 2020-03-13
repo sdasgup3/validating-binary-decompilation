@@ -1,1 +1,1 @@
- -assumption-cache-tracker -instcombine -simplifycfg -basiccg -globals-aa -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -demanded-bits -instcombine -correlated-propagation -memdep -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -constmerge
+ -gvn -early-cse -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

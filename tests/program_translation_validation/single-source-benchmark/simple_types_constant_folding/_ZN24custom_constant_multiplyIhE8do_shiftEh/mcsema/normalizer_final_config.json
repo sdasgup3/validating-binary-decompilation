@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -simplifycfg -sroa -simplifycfg -tailcallelim -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -memdep -gvn -memdep -memcpyopt -sccp -demanded-bits -memdep -dse -scalar-evolution -simplifycfg -elim-avail-extern -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

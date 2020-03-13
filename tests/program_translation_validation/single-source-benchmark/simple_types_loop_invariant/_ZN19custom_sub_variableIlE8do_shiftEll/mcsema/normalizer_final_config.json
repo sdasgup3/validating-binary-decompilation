@@ -1,1 +1,1 @@
- -tti -mem2reg -aa -prune-eh -sroa -lazy-value-info -aa -tailcallelim -reassociate -aa -scalar-evolution -aa -scalar-evolution -aa -memdep -gvn -aa -memdep -aa -lazy-value-info -aa -memdep -dse -aa -scalar-evolution -aa -barrier -elim-avail-extern -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -globaldce -constmerge -aa -scalar-evolution
+ -mem2reg -gvn -dse -tailcallelim -instcombine

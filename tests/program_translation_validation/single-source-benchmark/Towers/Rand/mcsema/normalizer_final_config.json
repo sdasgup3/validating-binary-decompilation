@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -aa -prune-eh -sroa -lazy-value-info -correlated-propagation -aa -aa -licm -aa -indvars -aa -gvn -aa -memcpyopt -sccp -aa -lazy-value-info -jump-threading -correlated-propagation -aa -dse -aa -licm -aa -float2int -aa -aa -aa -aa -aa -licm -aa
+ -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt

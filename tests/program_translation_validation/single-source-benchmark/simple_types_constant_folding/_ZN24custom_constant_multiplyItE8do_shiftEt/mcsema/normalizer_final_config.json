@@ -1,1 +1,1 @@
- -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -demanded-bits -bdce -instcombine -memdep -dse -simplifycfg -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine
+ -mem2reg -gvn -globalopt -aa -instcombine -memcpyopt -early-cse-memssa

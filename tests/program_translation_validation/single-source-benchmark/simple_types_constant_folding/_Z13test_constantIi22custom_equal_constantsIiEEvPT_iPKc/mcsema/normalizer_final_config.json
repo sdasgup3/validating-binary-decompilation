@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -basiccg -inline -domtree -sroa -early-cse -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -domtree -instcombine -memdep -gvn -memdep -memcpyopt -domtree -bdce -instcombine -domtree -memdep -dse -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -domtree
+ -gvn -basicaa -instcombine -early-cse-memssa

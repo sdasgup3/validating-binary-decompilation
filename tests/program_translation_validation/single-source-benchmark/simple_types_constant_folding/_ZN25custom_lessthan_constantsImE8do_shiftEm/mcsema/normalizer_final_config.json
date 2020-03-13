@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -aa -basiccg -sroa -correlated-propagation -aa -libcalls-shrinkwrap -tailcallelim -aa -scalar-evolution -aa -scalar-evolution -aa -gvn -aa -memcpyopt -bdce -aa -jump-threading -correlated-propagation -aa -dse -aa -scalar-evolution -aa -basiccg -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -strip-dead-prototypes -constmerge -aa -scalar-evolution
+ -mem2reg -gvn -early-cse -basicaa -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa

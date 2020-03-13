@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -assumption-cache-tracker -instcombine -basiccg -globals-aa -inline -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -instcombine -memdep -gvn -memdep -bdce -instcombine -lazy-value-info -jump-threading -memdep -dse -postdomtree -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -globaldce
+ -licm -gvn -early-cse -instcombine -early-cse-memssa

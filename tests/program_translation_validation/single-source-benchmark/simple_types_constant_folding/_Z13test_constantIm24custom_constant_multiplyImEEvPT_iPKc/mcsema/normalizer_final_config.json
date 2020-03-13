@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -mem2reg -basicaa -instcombine -basiccg -globals-aa -inline -sroa -early-cse -correlated-propagation -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -correlated-propagation -basicaa -memdep -dse -postdomtree -adce -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa -instsimplify
+ -mem2reg -gvn -simplifycfg -dse -instcombine -early-cse-memssa

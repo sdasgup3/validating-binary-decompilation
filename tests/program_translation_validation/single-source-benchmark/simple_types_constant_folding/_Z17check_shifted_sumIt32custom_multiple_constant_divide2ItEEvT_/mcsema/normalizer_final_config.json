@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -basicaa -instcombine -prune-eh -argpromotion -sroa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -indvars -basicaa -memcpyopt -demanded-bits -basicaa -instcombine -basicaa -dse -basicaa -instcombine -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa
+ -licm -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

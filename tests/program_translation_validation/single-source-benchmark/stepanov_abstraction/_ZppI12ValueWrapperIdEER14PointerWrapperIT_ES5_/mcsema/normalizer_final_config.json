@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -instcombine -basiccg -prune-eh -inline -argpromotion -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -sccp -demanded-bits -bdce -instcombine -lazy-value-info -correlated-propagation -memdep -dse -adce -instcombine -barrier -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -instsimplify
+ -early-cse -instcombine -memcpyopt -early-cse-memssa

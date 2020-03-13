@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -aa -instcombine -simplifycfg -globals-aa -inline -early-cse -lazy-value-info -correlated-propagation -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -mldst-motion -aa -aa -sccp -aa -instcombine -lazy-value-info -correlated-propagation -aa -aa -postdomtree -simplifycfg -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa
+ -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim

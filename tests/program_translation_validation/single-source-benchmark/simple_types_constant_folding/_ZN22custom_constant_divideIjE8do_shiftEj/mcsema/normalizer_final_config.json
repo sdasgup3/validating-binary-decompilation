@@ -1,1 +1,1 @@
- -tti -scoped-noalias -assumption-cache-tracker -globalopt -basicaa -instcombine -basiccg -argpromotion -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -indvars -gvn -basicaa -sccp -demanded-bits -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -licm -basicaa -instcombine -elim-avail-extern -basiccg -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -basicaa
+ -mem2reg -gvn -early-cse -memdep -dse -instcombine

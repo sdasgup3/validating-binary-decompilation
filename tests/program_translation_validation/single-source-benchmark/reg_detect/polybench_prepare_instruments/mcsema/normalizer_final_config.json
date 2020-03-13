@@ -1,1 +1,1 @@
- -assumption-cache-tracker -instcombine -sroa -early-cse -lazy-value-info -instcombine -tailcallelim -reassociate -scalar-evolution -instcombine -scalar-evolution -mldst-motion -gvn -memcpyopt -instcombine -lazy-value-info -jump-threading -scalar-evolution -postdomtree -instcombine -barrier -elim-avail-extern -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution
+ -licm -early-cse -globalopt -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -deadargelim -basicaa -instcombine -globals-aa -sroa -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -mldst-motion -basicaa -basicaa -instcombine -lazy-value-info -basicaa -dse -adce -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa
+ -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine

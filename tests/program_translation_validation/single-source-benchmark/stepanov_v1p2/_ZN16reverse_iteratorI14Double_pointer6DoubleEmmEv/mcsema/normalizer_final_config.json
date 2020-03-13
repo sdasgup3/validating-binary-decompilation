@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -instcombine -basiccg -argpromotion -early-cse -instcombine -reassociate -instcombine -instcombine -dse -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine
+ -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa

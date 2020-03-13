@@ -1,1 +1,1 @@
- -scoped-noalias -globalopt -deadargelim -instcombine -basiccg -globals-aa -prune-eh -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -gvn -instcombine -jump-threading -dse -scalar-evolution -instcombine -elim-avail-extern -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution
+ -mem2reg -gvn -basicaa -memdep -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -domtree -mem2reg -deadargelim -domtree -basicaa -globals-aa -argpromotion -domtree -lazy-value-info -domtree -basicaa -libcalls-shrinkwrap -domtree -basicaa -domtree -basicaa -indvars -mldst-motion -gvn -basicaa -domtree -basicaa -lazy-value-info -jump-threading -domtree -basicaa -dse -domtree -basicaa -barrier -globals-aa -domtree -basicaa -basicaa -basicaa -domtree -basicaa -domtree -basicaa
+ -gvn -early-cse -simplifycfg -basicaa -tailcallelim -instcombine -early-cse-memssa

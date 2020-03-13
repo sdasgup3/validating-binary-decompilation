@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -mem2reg -deadargelim -domtree -basicaa -aa -instcombine -prune-eh -domtree -sroa -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -domtree -basicaa -aa -instcombine -aa -gvn -basicaa -aa -domtree -basicaa -aa -instcombine -jump-threading -domtree -basicaa -aa -aa -adce -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -domtree -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -domtree -basicaa -aa
+ -licm -gvn -basicaa -dse -instcombine

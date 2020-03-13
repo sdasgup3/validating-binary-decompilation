@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -globalopt -deadargelim -aa -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -early-cse -lazy-value-info -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -mldst-motion -aa -memdep -aa -memdep -memcpyopt -aa -instcombine -lazy-value-info -aa -memdep -dse -aa -licm -adce -simplifycfg -aa -instcombine -barrier -basiccg -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa
+ -mem2reg -gvn -memdep -dse -deadargelim

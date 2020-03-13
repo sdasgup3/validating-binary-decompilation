@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -assumption-cache-tracker -instcombine -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -tailcallelim -reassociate -instcombine -mldst-motion -memdep -memdep -memcpyopt -sccp -demanded-bits -instcombine -lazy-value-info -correlated-propagation -memdep -adce -instcombine -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -constmerge
+ -mem2reg -licm -gvn -memdep -dse

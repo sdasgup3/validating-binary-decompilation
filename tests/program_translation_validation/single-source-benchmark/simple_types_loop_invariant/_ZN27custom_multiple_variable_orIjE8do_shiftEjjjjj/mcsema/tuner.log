@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[    41s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #262, cost time=0.0111, found by UniformGreedyMutation
+[    41s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    76s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #295, cost time=0.0093, found by UniformGreedyMutation
+[   107s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #295, cost time=0.0093, found by UniformGreedyMutation
+[   140s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #295, cost time=0.0093, found by UniformGreedyMutation
+[   164s]    INFO opentuner.search.plugin.DisplayPlugin: tests=19, best #295, cost time=0.0093, found by UniformGreedyMutation
+[   188s]    INFO opentuner.search.plugin.DisplayPlugin: tests=22, best #295, cost time=0.0093, found by UniformGreedyMutation
+[   215s]    INFO opentuner.search.plugin.DisplayPlugin: tests=26, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   246s]    INFO opentuner.search.plugin.DisplayPlugin: tests=30, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   279s]    INFO opentuner.search.plugin.DisplayPlugin: tests=34, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   308s]    INFO opentuner.search.plugin.DisplayPlugin: tests=38, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   342s]    INFO opentuner.search.plugin.DisplayPlugin: tests=42, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   379s]    INFO opentuner.search.plugin.DisplayPlugin: tests=46, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   409s]    INFO opentuner.search.plugin.DisplayPlugin: tests=50, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   441s]    INFO opentuner.search.plugin.DisplayPlugin: tests=54, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   473s]    INFO opentuner.search.plugin.DisplayPlugin: tests=58, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   509s]    INFO opentuner.search.plugin.DisplayPlugin: tests=62, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   539s]    INFO opentuner.search.plugin.DisplayPlugin: tests=66, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   570s]    INFO opentuner.search.plugin.DisplayPlugin: tests=70, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   603s]    INFO opentuner.search.plugin.DisplayPlugin: tests=74, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   633s]    INFO opentuner.search.plugin.DisplayPlugin: tests=78, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   663s]    INFO opentuner.search.plugin.DisplayPlugin: tests=82, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   688s]    INFO opentuner.search.plugin.DisplayPlugin: tests=85, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   710s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   738s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   770s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   792s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   792s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #311, cost time=0.0043, found by NormalGreedyMutation
+[   792s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -early-cse -globalopt -simplifycfg -libcalls-shrinkwrap -memdep ]
+866.84user 28.43system 13:12.38elapsed 112%CPU (0avgtext+0avgdata 90156maxresident)k
+0inputs+2112848outputs (0major+3712036minor)pagefaults 0swaps

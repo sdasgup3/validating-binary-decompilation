@@ -1,1 +1,1 @@
- -tbaa -basicaa -aa -instcombine -basiccg -prune-eh -inline -early-cse -lazy-value-info -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -indvars -mldst-motion -aa -gvn -basicaa -aa -memcpyopt -bdce -basicaa -aa -instcombine -lazy-value-info -basicaa -aa -aa -licm -adce -basicaa -aa -instcombine -barrier -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -basicaa -aa -instsimplify
+ -mem2reg -early-cse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

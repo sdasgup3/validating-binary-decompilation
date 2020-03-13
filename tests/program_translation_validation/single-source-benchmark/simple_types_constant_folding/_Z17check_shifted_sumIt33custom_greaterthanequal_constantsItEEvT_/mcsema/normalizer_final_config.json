@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -assumption-cache-tracker -domtree -deadargelim -domtree -instcombine -basiccg -domtree -early-cse -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -indvars -gvn -domtree -instcombine -correlated-propagation -domtree -adce -domtree -instcombine -barrier -elim-avail-extern -basiccg -domtree -instcombine -domtree -instcombine -instcombine -domtree
+ -gvn -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

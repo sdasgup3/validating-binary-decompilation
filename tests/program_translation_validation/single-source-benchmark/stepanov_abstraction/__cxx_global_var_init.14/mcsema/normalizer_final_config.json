@@ -1,1 +1,1 @@
- -basiccg -globals-aa -inline -argpromotion -sroa -correlated-propagation -tailcallelim -reassociate -memdep -gvn -memdep -memcpyopt -bdce -correlated-propagation -memdep -dse -barrier -elim-avail-extern -basiccg -globals-aa -strip-dead-prototypes -globaldce
+ -mem2reg -gvn -basicaa -aa -dse -tailcallelim -early-cse-memssa

@@ -1,1 +1,1 @@
- -globalopt -instcombine -prune-eh -early-cse -correlated-propagation -instcombine -tailcallelim -reassociate -licm -instcombine -gvn -memcpyopt -instcombine -correlated-propagation -licm -postdomtree -adce -instcombine -instcombine -instcombine -instcombine -licm -globaldce -instsimplify
+ -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -instcombine -memcpyopt

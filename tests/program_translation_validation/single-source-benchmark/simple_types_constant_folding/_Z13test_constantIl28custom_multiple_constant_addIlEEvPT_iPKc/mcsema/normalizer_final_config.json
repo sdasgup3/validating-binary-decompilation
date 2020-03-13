@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -globalopt -basicaa -instcombine -globals-aa -argpromotion -early-cse -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -basicaa -instcombine -correlated-propagation -basicaa -memdep -dse -postdomtree -basicaa -instcombine -barrier -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa
+ -gvn -early-cse -globalopt -basicaa -deadargelim -instcombine -early-cse-memssa

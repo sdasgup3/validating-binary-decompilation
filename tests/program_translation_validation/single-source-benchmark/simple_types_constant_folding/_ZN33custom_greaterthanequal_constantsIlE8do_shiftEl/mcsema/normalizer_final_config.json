@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -globalopt -deadargelim -instcombine -prune-eh -inline -sroa -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -indvars -memdep -memdep -memcpyopt -sccp -demanded-bits -bdce -instcombine -jump-threading -memdep -dse -adce -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes
+ -mem2reg -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

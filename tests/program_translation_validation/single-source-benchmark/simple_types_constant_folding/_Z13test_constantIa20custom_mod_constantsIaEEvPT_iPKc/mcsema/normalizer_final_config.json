@@ -1,1 +1,1 @@
- -instcombine -argpromotion -sroa -instcombine -licm -instcombine -gvn -memcpyopt -bdce -instcombine -jump-threading -licm -postdomtree -instcombine -instcombine -instcombine -instcombine -licm -instsimplify
+ -gvn -early-cse -basicaa -aa -instcombine -memcpyopt -early-cse-memssa

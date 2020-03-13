@@ -1,1 +1,1 @@
- -tti -scoped-noalias -mem2reg -instcombine -simplifycfg -prune-eh -inline -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -instcombine -lazy-value-info -dse -licm -postdomtree -adce -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -instsimplify
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim -instcombine

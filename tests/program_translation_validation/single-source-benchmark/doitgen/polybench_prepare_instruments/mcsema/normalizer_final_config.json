@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -domtree -deadargelim -domtree -basicaa -instcombine -inline -domtree -domtree -basicaa -instcombine -tailcallelim -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -domtree -basicaa -instcombine -domtree -basicaa -dse -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -strip-dead-prototypes -domtree -basicaa -instsimplify
+ -gvn -instcombine -early-cse-memssa

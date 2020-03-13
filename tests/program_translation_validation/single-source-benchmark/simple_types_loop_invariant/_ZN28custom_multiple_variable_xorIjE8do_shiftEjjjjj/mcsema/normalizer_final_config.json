@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -basicaa -globals-aa -inline -argpromotion -sroa -lazy-value-info -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -gvn -basicaa -memcpyopt -sccp -demanded-bits -bdce -basicaa -lazy-value-info -jump-threading -basicaa -dse -scalar-evolution -basicaa -barrier -globals-aa -float2int -basicaa -scalar-evolution -scalar-evolution -basicaa -demanded-bits -scalar-evolution -basicaa -scalar-evolution -demanded-bits -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution
+ -mem2reg -gvn -early-cse -dse -deadargelim

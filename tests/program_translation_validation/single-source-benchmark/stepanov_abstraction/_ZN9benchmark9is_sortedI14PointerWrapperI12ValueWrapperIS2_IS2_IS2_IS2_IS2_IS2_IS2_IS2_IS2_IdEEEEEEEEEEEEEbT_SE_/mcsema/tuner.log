@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    34s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #192, cost time=0.0048, found by DifferentialEvolutionAlt
+[    64s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #192, cost time=0.0048, found by DifferentialEvolutionAlt
+[    90s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #192, cost time=0.0048, found by DifferentialEvolutionAlt
+[   118s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #192, cost time=0.0048, found by DifferentialEvolutionAlt
+[   153s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   184s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   211s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   241s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   270s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   304s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   335s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=47, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   387s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   414s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   435s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   462s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   491s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   521s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   549s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   580s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   606s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   632s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   657s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   682s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   708s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   733s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   733s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #199, cost time=0.0020, found by DifferentialEvolutionAlt
+[   733s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse -basicaa -memdep -instcombine -simplifycfg -libcalls-shrinkwrap -aa -tailcallelim ]
+554.51user 29.34system 12:13.78elapsed 79%CPU (0avgtext+0avgdata 56112maxresident)k
+0inputs+676360outputs (0major+1745095minor)pagefaults 0swaps

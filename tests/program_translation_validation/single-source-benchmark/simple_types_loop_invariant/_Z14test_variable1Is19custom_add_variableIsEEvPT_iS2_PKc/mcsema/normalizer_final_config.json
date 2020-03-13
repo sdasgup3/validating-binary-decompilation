@@ -1,1 +1,1 @@
- -tti -globalopt -mem2reg -deadargelim -instcombine -basiccg -globals-aa -prune-eh -inline -argpromotion -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -gvn -memcpyopt -demanded-bits -instcombine -jump-threading -correlated-propagation -licm -instcombine -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes
+ -licm -gvn -globalopt -aa -memdep -dse -tailcallelim -instcombine -early-cse-memssa

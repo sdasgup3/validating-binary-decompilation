@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -deadargelim -simplifycfg -globals-aa -inline -sroa -lazy-value-info -correlated-propagation -simplifycfg -tailcallelim -simplifycfg -reassociate -simplifycfg -gvn -demanded-bits -lazy-value-info -correlated-propagation -dse -postdomtree -adce -simplifycfg -globals-aa -demanded-bits -demanded-bits -simplifycfg -strip-dead-prototypes -constmerge
+ -mem2reg -gvn -early-cse -simplifycfg -dse -early-cse-memssa

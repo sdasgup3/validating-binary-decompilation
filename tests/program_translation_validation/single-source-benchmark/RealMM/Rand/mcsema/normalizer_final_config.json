@@ -1,1 +1,1 @@
- -scoped-noalias -mem2reg -basicaa -simplifycfg -inline -sroa -early-cse -lazy-value-info -simplifycfg -basicaa -libcalls-shrinkwrap -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -gvn -basicaa -bdce -basicaa -lazy-value-info -basicaa -dse -postdomtree -simplifycfg -basicaa -basicaa -basicaa -basicaa -simplifycfg -basicaa -globaldce -constmerge -basicaa -instsimplify
+ -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim

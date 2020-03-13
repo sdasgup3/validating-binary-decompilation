@@ -1,1 +1,1 @@
- -tti -tbaa -assumption-cache-tracker -instcombine -basiccg -globals-aa -prune-eh -argpromotion -early-cse -lazy-value-info -instcombine -libcalls-shrinkwrap -instcombine -demanded-bits -bdce -instcombine -lazy-value-info -adce -instcombine -elim-avail-extern -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce -constmerge -instsimplify
+ -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt

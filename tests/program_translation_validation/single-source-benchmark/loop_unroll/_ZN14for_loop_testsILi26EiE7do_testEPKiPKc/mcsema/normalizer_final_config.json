@@ -1,1 +1,1 @@
- -tbaa -globalopt -instcombine -argpromotion -early-cse -correlated-propagation -instcombine -licm -instcombine -mldst-motion -bdce -instcombine -correlated-propagation -licm -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -globaldce -instsimplify
+ -gvn -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

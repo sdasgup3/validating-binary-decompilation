@@ -1,1 +1,1 @@
- -tbaa -globalopt -mem2reg -basicaa -instcombine -simplifycfg -basiccg -argpromotion -sroa -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -mldst-motion -gvn -basicaa -demanded-bits -basicaa -instcombine -basicaa -dse -simplifycfg -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -simplifycfg -basicaa -instcombine -instcombine -basicaa -instsimplify
+ -licm -gvn -globalopt -basicaa -instcombine -early-cse-memssa

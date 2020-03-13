@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -domtree -deadargelim -domtree -instcombine -basiccg -prune-eh -domtree -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -mldst-motion -gvn -memcpyopt -sccp -domtree -demanded-bits -instcombine -domtree -dse -adce -domtree -instcombine -basiccg -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -strip-dead-prototypes -domtree -instsimplify
+ -gvn -globalopt -basicaa -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -domtree -mem2reg -domtree -aa -instcombine -simplifycfg -argpromotion -domtree -lazy-value-info -simplifycfg -domtree -aa -instcombine -simplifycfg -domtree -aa -simplifycfg -domtree -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -domtree -bdce -aa -instcombine -lazy-value-info -domtree -aa -memdep -dse -aa -simplifycfg -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -domtree -aa
+ -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine

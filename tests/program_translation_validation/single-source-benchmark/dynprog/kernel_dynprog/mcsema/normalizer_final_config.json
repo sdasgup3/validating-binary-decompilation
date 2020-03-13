@@ -1,2 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -instcombine -simplifycfg -inline -sroa -early-cse -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution
- -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -early-cse -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

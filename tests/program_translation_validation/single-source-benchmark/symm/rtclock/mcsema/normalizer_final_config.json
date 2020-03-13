@@ -1,1 +1,1 @@
- -tti -tbaa -mem2reg -instcombine -inline -instcombine -reassociate -instcombine -gvn -bdce -instcombine -dse -instcombine -instcombine -instcombine -instcombine -globaldce
+ -mem2reg -gvn -memdep -tailcallelim -instcombine -memcpyopt -early-cse-memssa

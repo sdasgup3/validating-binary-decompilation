@@ -1,1 +1,1 @@
- -targetlibinfo -mem2reg -deadargelim -instcombine -globals-aa -prune-eh -inline -instcombine -tailcallelim -licm -instcombine -mldst-motion -gvn -sccp -demanded-bits -instcombine -licm -instcombine -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -instsimplify
+ -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine

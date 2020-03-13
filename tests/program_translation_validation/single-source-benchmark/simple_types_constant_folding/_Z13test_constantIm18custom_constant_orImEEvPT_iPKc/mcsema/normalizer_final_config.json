@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -aa -instcombine -basiccg -argpromotion -early-cse -correlated-propagation -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -jump-threading -correlated-propagation -aa -aa -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -aa
+ -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine

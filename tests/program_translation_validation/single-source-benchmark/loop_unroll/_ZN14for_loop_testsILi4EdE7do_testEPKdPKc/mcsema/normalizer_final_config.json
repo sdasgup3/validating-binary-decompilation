@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -simplifycfg -prune-eh -early-cse -lazy-value-info -correlated-propagation -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -gvn -bdce -lazy-value-info -correlated-propagation -dse -scalar-evolution -adce -simplifycfg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution
+ -gvn -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

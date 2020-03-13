@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -mem2reg -basicaa -instcombine -simplifycfg -globals-aa -prune-eh -simplifycfg -basicaa -instcombine -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -memcpyopt -demanded-bits -bdce -basicaa -instcombine -basicaa -dse -adce -simplifycfg -basicaa -instcombine -globals-aa -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -simplifycfg -basicaa -instcombine -instcombine -constmerge -basicaa
+ -mem2reg -gvn -globalopt -basicaa -dse -instcombine

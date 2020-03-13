@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -deadargelim -basicaa -instcombine -basiccg -globals-aa -sroa -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -postdomtree -basicaa -instcombine -elim-avail-extern -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -basicaa
+ -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine

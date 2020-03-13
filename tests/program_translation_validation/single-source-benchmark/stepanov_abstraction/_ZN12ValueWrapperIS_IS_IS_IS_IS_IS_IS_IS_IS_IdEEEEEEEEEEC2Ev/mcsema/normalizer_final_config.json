@@ -1,1 +1,1 @@
- -tti -tbaa -scoped-noalias -instcombine -basiccg -prune-eh -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -memdep -gvn -memdep -instcombine -correlated-propagation -memdep -licm -instcombine -barrier -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -licm -instsimplify
+ -mem2reg -gvn -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -memcpyopt

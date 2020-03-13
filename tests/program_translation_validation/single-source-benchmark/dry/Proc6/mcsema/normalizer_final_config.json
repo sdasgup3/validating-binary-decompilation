@@ -1,1 +1,1 @@
- -deadargelim -simplifycfg -sroa -early-cse -correlated-propagation -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -mldst-motion -memdep -gvn -memdep -memcpyopt -sccp -bdce -jump-threading -correlated-propagation -memdep -dse -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -constmerge -scalar-evolution
+ -gvn -early-cse -simplifycfg -memdep -dse -tailcallelim -instcombine

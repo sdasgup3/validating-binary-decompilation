@@ -1,1 +1,1 @@
- -tti -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -basiccg -globals-aa -sroa -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -gvn -aa -demanded-bits -aa -instcombine -aa -dse -aa -postdomtree -simplifycfg -aa -instcombine -basiccg -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -aa -instsimplify
+ -gvn -globalopt -aa -instcombine -early-cse-memssa

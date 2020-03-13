@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    85s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #256, cost time=0.0172, found by UniformGreedyMutation
+[   168s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #258, cost time=0.0115, found by DifferentialEvolutionAlt
+[   243s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   315s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   392s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   460s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   534s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   610s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   683s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   764s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   842s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   916s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #290, cost time=0.0039, found by NormalGreedyMutation
+[   988s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1073s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1159s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1225s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1316s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1404s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1479s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1569s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1654s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1733s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1814s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1871s]    INFO opentuner.search.plugin.DisplayPlugin: tests=94, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  1948s]    INFO opentuner.search.plugin.DisplayPlugin: tests=98, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  2032s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  2032s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #290, cost time=0.0039, found by NormalGreedyMutation
+[  2032s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse -early-cse-memssa -instcombine -simplifycfg -gvn ]
+1684.81user 46.67system 33:52.42elapsed 85%CPU (0avgtext+0avgdata 116284maxresident)k
+0inputs+2686952outputs (0major+5804082minor)pagefaults 0swaps

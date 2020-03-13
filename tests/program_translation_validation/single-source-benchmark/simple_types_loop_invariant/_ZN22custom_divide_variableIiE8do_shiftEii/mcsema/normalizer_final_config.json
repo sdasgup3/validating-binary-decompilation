@@ -1,1 +1,1 @@
- -targetlibinfo -tti -globalopt -deadargelim -instcombine -prune-eh -inline -early-cse -instcombine -libcalls-shrinkwrap -instcombine -mldst-motion -gvn -memcpyopt -demanded-bits -instcombine -jump-threading -instcombine -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -instsimplify
+ -gvn -globalopt -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa

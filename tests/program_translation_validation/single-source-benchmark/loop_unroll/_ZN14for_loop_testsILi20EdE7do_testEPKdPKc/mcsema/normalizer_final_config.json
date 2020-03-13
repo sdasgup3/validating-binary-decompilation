@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -instcombine -simplifycfg -early-cse -lazy-value-info -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -simplifycfg -instcombine -indvars -instcombine -lazy-value-info -jump-threading -dse -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -constmerge
+ -mem2reg -licm -gvn -simplifycfg -memdep -dse -tailcallelim -memcpyopt

@@ -1,1 +1,1 @@
- -scoped-noalias -mem2reg -basicaa -aa -globals-aa -inline -argpromotion -sroa -early-cse -correlated-propagation -basicaa -aa -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -aa -basicaa -aa -indvars -mldst-motion -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -basicaa -aa -correlated-propagation -basicaa -aa -memdep -dse -aa -postdomtree -adce -basicaa -aa -globals-aa -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -globaldce -constmerge -basicaa -aa
+ -mem2reg -licm -gvn -aa -dse -instcombine

@@ -1,1 +1,1 @@
- -globalopt -instcombine -early-cse -instcombine -reassociate -instcombine -gvn -sccp -demanded-bits -instcombine -dse -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -constmerge
+ -mem2reg -licm -early-cse -aa -tailcallelim -instcombine -memcpyopt -early-cse-memssa

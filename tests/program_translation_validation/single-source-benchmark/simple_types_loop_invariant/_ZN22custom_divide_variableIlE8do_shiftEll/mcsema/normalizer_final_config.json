@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -deadargelim -aa -instcombine -basiccg -argpromotion -early-cse -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -aa -licm -aa -instcombine -aa -aa -sccp -aa -instcombine -aa -dse -aa -licm -adce -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -constmerge -aa -instsimplify
+ -gvn -dse -tailcallelim -instcombine -memcpyopt

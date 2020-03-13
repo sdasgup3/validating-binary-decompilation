@@ -1,1 +1,1 @@
- -targetlibinfo -tti -scoped-noalias -mem2reg -instcombine -basiccg -globals-aa -early-cse -correlated-propagation -instcombine -licm -instcombine -mldst-motion -sccp -demanded-bits -instcombine -jump-threading -correlated-propagation -dse -licm -postdomtree -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -instsimplify
+ -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa

@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -instcombine -globals-aa -sroa -early-cse -correlated-propagation -instcombine -tailcallelim -reassociate -licm -instcombine -indvars -mldst-motion -memdep -memdep -memcpyopt -demanded-bits -instcombine -correlated-propagation -memdep -licm -instcombine -barrier -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce -instsimplify
+ -licm -gvn -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa

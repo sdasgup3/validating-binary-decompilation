@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -instcombine -memdep -gvn -memdep -instcombine -jump-threading -correlated-propagation -memdep -adce -instcombine -instcombine -instcombine -instcombine -globaldce
+ -mem2reg -licm -gvn -early-cse -globalopt -dse -early-cse-memssa

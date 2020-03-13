@@ -1,1 +1,1 @@
- -tbaa -globalopt -deadargelim -basicaa -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -bdce -basicaa -instcombine -basicaa -memdep -adce -simplifycfg -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -basicaa
+ -gvn -basicaa -memdep -tailcallelim -instcombine -early-cse-memssa

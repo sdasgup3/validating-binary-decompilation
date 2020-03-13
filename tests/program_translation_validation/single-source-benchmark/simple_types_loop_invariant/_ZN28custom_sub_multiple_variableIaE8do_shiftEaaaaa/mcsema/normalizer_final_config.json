@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -globalopt -domtree -mem2reg -domtree -basiccg -globals-aa -argpromotion -domtree -sroa -early-cse -domtree -tailcallelim -reassociate -domtree -domtree -mldst-motion -memdep -gvn -memdep -memcpyopt -domtree -domtree -memdep -dse -postdomtree -domtree -barrier -basiccg -globals-aa -domtree -domtree -domtree
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa

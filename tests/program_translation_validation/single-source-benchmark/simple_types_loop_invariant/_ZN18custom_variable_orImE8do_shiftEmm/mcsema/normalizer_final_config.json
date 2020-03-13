@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -early-cse -instcombine -tailcallelim -instcombine -memcpyopt -sccp -instcombine -jump-threading -dse -adce -instcombine -barrier -elim-avail-extern -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine

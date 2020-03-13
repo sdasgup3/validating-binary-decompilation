@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine

@@ -1,1 +1,1 @@
- -scoped-noalias -simplifycfg -basiccg -globals-aa -sroa -simplifycfg -tailcallelim -simplifycfg -reassociate -simplifycfg -indvars -gvn -dse -simplifycfg -barrier -elim-avail-extern -basiccg -globals-aa -float2int -simplifycfg -globaldce
+ -mem2reg -gvn -globalopt -aa -memdep -instcombine -early-cse-memssa

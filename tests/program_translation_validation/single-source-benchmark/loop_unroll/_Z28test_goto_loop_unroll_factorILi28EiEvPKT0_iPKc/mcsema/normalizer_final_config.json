@@ -1,1 +1,1 @@
- -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basicaa -instcombine -globals-aa -inline -argpromotion -lazy-value-info -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -instcombine -lazy-value-info -basicaa -memdep -dse -basicaa -instcombine -barrier -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa
+ -gvn -early-cse -basicaa -memdep -dse -deadargelim -instcombine

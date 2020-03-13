@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -basiccg -globals-aa -inline -sroa -correlated-propagation -instcombine -instcombine -gvn -memcpyopt -instcombine -correlated-propagation -instcombine -elim-avail-extern -basiccg -globals-aa -float2int -instcombine -instcombine -instcombine -constmerge -instsimplify
+ -mem2reg -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -memcpyopt

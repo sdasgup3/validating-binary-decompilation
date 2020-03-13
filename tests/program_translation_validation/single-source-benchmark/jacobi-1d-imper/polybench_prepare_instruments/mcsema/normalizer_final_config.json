@@ -1,1 +1,1 @@
- -tti -deadargelim -instcombine -basiccg -prune-eh -argpromotion -correlated-propagation -instcombine -libcalls-shrinkwrap -instcombine -memdep -gvn -memdep -memcpyopt -instcombine -correlated-propagation -memdep -dse -postdomtree -instcombine -basiccg -float2int -instcombine -instcombine -instcombine -globaldce
+ -licm -gvn -basicaa -aa -dse -instcombine

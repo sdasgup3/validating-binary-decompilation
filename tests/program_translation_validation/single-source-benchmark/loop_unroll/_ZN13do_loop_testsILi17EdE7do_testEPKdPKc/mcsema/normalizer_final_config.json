@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -instcombine -argpromotion -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -gvn -sccp -demanded-bits -instcombine -dse -licm -adce -instcombine -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -instsimplify
+ -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa

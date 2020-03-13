@@ -1,1 +1,1 @@
- -tti -domtree -domtree -instcombine -basiccg -inline -domtree -lazy-value-info -domtree -instcombine -tailcallelim -domtree -licm -domtree -instcombine -mldst-motion -gvn -domtree -instcombine -lazy-value-info -jump-threading -domtree -dse -licm -postdomtree -domtree -instcombine -barrier -elim-avail-extern -basiccg -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -constmerge -domtree
+ -gvn -globalopt -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

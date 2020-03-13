@@ -1,1 +1,1 @@
- -targetlibinfo -tti -globalopt -deadargelim -aa -inline -sroa -early-cse -aa -libcalls-shrinkwrap -tailcallelim -aa -aa -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -bdce -aa -aa -memdep -dse -aa -adce -aa -barrier -float2int -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -strip-dead-prototypes -globaldce -aa -instsimplify
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse

@@ -1,1 +1,1 @@
- -tbaa -instcombine -argpromotion -early-cse -instcombine -tailcallelim -licm -instcombine -mldst-motion -gvn -instcombine -jump-threading -dse -licm -instcombine -barrier -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -constmerge
+ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -instcombine -early-cse-memssa

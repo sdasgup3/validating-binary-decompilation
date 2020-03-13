@@ -1,1 +1,1 @@
- -assumption-cache-tracker -globalopt -mem2reg -reassociate -indvars -memdep -gvn -memdep -bdce -memdep -dse -adce -strip-dead-prototypes
+ -mem2reg -gvn -globalopt -deadargelim -tailcallelim -instcombine -early-cse-memssa

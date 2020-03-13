@@ -1,1 +1,1 @@
- -scoped-noalias -instcombine -basiccg -globals-aa -argpromotion -instcombine -libcalls-shrinkwrap -licm -instcombine -gvn -demanded-bits -bdce -instcombine -jump-threading -dse -licm -adce -instcombine -basiccg -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm
+ -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa

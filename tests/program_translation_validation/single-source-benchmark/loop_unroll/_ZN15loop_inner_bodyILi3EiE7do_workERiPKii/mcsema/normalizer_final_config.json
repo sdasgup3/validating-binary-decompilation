@@ -1,1 +1,1 @@
- -targetlibinfo -tti -tbaa -assumption-cache-tracker -globalopt -domtree -domtree -instcombine -basiccg -inline -domtree -sroa -early-cse -lazy-value-info -domtree -instcombine -domtree -licm -domtree -instcombine -indvars -gvn -domtree -instcombine -lazy-value-info -domtree -dse -licm -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -constmerge -domtree -instsimplify
+ -mem2reg -gvn -early-cse -basicaa -aa -instcombine -early-cse-memssa

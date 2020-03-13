@@ -1,1 +1,1 @@
- -assumption-cache-tracker -instcombine -prune-eh -inline -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -memdep -gvn -memdep -sccp -instcombine -jump-threading -memdep -dse -adce -instcombine -instcombine -instcombine -instcombine -constmerge
+ -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt

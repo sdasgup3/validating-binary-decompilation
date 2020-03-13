@@ -1,1 +1,1 @@
- -tti -scoped-noalias -instcombine -basiccg -inline -argpromotion -early-cse -correlated-propagation -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -bdce -instcombine -correlated-propagation -dse -scalar-evolution -adce -instcombine -barrier -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -scalar-evolution
+ -licm -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt

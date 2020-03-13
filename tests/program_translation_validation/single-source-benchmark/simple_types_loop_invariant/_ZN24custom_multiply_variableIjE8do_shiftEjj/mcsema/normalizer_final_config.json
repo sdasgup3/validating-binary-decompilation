@@ -1,1 +1,1 @@
- -assumption-cache-tracker -mem2reg -instcombine -basiccg -globals-aa -argpromotion -instcombine -tailcallelim -instcombine -indvars -gvn -memcpyopt -sccp -instcombine -jump-threading -instcombine -basiccg -globals-aa -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes -instsimplify
+ -early-cse -simplifycfg -deadargelim -instcombine -early-cse-memssa

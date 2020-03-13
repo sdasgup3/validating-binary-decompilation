@@ -1,1 +1,1 @@
- -scoped-noalias -instcombine -simplifycfg -basiccg -prune-eh -sroa -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -lazy-value-info -correlated-propagation -licm -simplifycfg -instcombine -barrier -basiccg -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce
+ -licm -gvn -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -assumption-cache-tracker -aa -instcombine -simplifycfg -globals-aa -prune-eh -inline -argpromotion -lazy-value-info -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -aa -instcombine -lazy-value-info -aa -dse -aa -postdomtree -simplifycfg -aa -instcombine -barrier -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa
+ -gvn -basicaa -dse -instcombine

@@ -1,1 +1,1 @@
- -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -basicaa -aa -instcombine -basiccg -globals-aa -early-cse -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -indvars -mldst-motion -aa -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -aa -licm -adce -basicaa -aa -instcombine -barrier -basiccg -globals-aa -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa -aa -instsimplify
+ -mem2reg -licm -gvn -memdep -dse -tailcallelim

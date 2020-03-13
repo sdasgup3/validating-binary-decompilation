@@ -1,1 +1,1 @@
- -mem2reg -aa -instcombine -basiccg -early-cse -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -aa -aa -memcpyopt -aa -instcombine -lazy-value-info -aa -dse -aa -licm -postdomtree -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa
+ -mem2reg -licm -gvn -basicaa -memdep -deadargelim -instcombine -early-cse-memssa

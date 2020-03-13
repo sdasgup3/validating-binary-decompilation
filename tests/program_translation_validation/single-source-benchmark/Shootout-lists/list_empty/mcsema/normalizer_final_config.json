@@ -1,1 +1,1 @@
- -tbaa -assumption-cache-tracker -basicaa -instcombine -argpromotion -early-cse -correlated-propagation -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -sccp -demanded-bits -basicaa -instcombine -correlated-propagation -basicaa -dse -adce -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -globaldce -basicaa -instsimplify
+ -mem2reg -early-cse -globalopt -basicaa -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa

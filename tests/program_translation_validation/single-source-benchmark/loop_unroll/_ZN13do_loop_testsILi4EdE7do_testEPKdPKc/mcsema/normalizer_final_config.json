@@ -1,1 +1,1 @@
- -targetlibinfo -assumption-cache-tracker -instcombine -early-cse -correlated-propagation -instcombine -licm -instcombine -indvars -sccp -bdce -instcombine -correlated-propagation -dse -licm -postdomtree -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -strip-dead-prototypes
+ -mem2reg -licm -early-cse -globalopt -basicaa -deadargelim -tailcallelim -instcombine -early-cse-memssa

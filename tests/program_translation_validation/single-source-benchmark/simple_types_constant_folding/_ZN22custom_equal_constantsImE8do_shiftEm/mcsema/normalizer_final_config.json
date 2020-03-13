@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -assumption-cache-tracker -deadargelim -aa -instcombine -simplifycfg -prune-eh -correlated-propagation -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -jump-threading -correlated-propagation -aa -memdep -dse -aa -adce -simplifycfg -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -aa
+ -mem2reg -gvn -dse -early-cse-memssa

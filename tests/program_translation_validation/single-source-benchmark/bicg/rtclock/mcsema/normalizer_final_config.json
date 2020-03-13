@@ -1,1 +1,1 @@
- -targetlibinfo -tbaa -basiccg -inline -sroa -libcalls-shrinkwrap -licm -indvars -mldst-motion -gvn -dse -licm -postdomtree -adce -basiccg -licm -strip-dead-prototypes
+ -gvn -memdep -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

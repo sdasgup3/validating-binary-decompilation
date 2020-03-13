@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -instcombine -targetlibinfo -tti -tbaa -scoped-noalias -mem2reg -instcombine -simplifycfg -basiccg -prune-eh -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -memcpyopt -instcombine -dse -licm -adce -simplifycfg -instcombine -elim-avail-extern -basiccg -instcombine -simplifycfg -instcombine -instcombine -licm
+ -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine -memcpyopt -early-cse-memssa

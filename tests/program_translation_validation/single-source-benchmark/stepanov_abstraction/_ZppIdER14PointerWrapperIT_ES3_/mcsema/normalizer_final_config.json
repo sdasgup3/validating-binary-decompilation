@@ -1,1 +1,1 @@
- -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -inline -argpromotion -domtree -early-cse -lazy-value-info -domtree -instcombine -libcalls-shrinkwrap -domtree -licm -domtree -instcombine -gvn -domtree -demanded-bits -instcombine -lazy-value-info -jump-threading -domtree -licm -adce -domtree -instcombine -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -domtree
+ -mem2reg -licm -gvn -globalopt -memdep -dse -deadargelim

@@ -1,1 +1,1 @@
- -targetlibinfo -scoped-noalias -aa -instcombine -globals-aa -argpromotion -aa -instcombine -reassociate -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -aa -gvn -aa -bdce -aa -instcombine -aa -aa -scalar-evolution -licm -aa -instcombine -globals-aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -aa -scalar-evolution -instsimplify
+ -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt

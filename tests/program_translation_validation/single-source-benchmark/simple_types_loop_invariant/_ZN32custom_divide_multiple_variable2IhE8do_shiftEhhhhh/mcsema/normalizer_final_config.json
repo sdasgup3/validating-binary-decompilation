@@ -1,1 +1,1 @@
- -tti -domtree -domtree -instcombine -globals-aa -inline -domtree -early-cse -domtree -instcombine -domtree -scalar-evolution -licm -domtree -instcombine -scalar-evolution -gvn -memcpyopt -domtree -instcombine -domtree -scalar-evolution -licm -domtree -instcombine -globals-aa -float2int -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -domtree -scalar-evolution -instsimplify
+ -gvn -basicaa -aa -memdep -dse -instcombine -memcpyopt -early-cse-memssa

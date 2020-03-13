@@ -1,1 +1,1 @@
- -globalopt -deadargelim -instcombine -simplifycfg -globals-aa -inline -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -instcombine -jump-threading -dse -licm -postdomtree -adce -simplifycfg -instcombine -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce
+ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine

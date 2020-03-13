@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    64s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   128s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   190s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   255s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   318s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   383s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   461s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   516s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   568s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   622s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   669s]    INFO opentuner.search.plugin.DisplayPlugin: tests=43, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   748s]    INFO opentuner.search.plugin.DisplayPlugin: tests=47, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   812s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   882s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[   961s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[  1028s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[  1078s]    INFO opentuner.search.plugin.DisplayPlugin: tests=66, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[  1159s]    INFO opentuner.search.plugin.DisplayPlugin: tests=70, best #211, cost time=0.0118, found by DifferentialEvolutionAlt
+[  1234s]    INFO opentuner.search.plugin.DisplayPlugin: tests=74, best #236, cost time=0.0046, found by DifferentialEvolutionAlt
+[  1308s]    INFO opentuner.search.plugin.DisplayPlugin: tests=78, best #236, cost time=0.0046, found by DifferentialEvolutionAlt
+[  1382s]    INFO opentuner.search.plugin.DisplayPlugin: tests=82, best #236, cost time=0.0046, found by DifferentialEvolutionAlt
+[  1452s]    INFO opentuner.search.plugin.DisplayPlugin: tests=86, best #236, cost time=0.0046, found by DifferentialEvolutionAlt
+[  1525s]    INFO opentuner.search.plugin.DisplayPlugin: tests=90, best #236, cost time=0.0046, found by DifferentialEvolutionAlt
+[  1604s]    INFO opentuner.search.plugin.DisplayPlugin: tests=94, best #304, cost time=0.0041, found by DifferentialEvolutionAlt
+[  1683s]    INFO opentuner.search.plugin.DisplayPlugin: tests=98, best #304, cost time=0.0041, found by DifferentialEvolutionAlt
+[  1753s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #304, cost time=0.0041, found by DifferentialEvolutionAlt
+[  1753s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #304, cost time=0.0041, found by DifferentialEvolutionAlt
+[  1753s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -early-cse -globalopt -instcombine -simplifycfg -memcpyopt -early-cse-memssa -tailcallelim ]
+1476.06user 43.64system 29:13.78elapsed 86%CPU (0avgtext+0avgdata 116320maxresident)k
+0inputs+2835144outputs (0major+5659180minor)pagefaults 0swaps
