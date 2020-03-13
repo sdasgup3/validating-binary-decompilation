@@ -76,12 +76,12 @@ matchCheck() {
     sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   elif [ $status_M2P -eq 2 ]; then
-    echo -e "\e[32mMatch Pass:m2p-multi-match\e[39m:-" `pwd`:$msg
+    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
     sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
     sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   else 
-    echo -e "\e[32mMatch Pass:p2m-multi-match\e[39m:-" `pwd`:$msg
+    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
     sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
     sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
