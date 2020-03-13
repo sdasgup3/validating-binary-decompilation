@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse
+ -assumption-cache-tracker -mem2reg -licm -gvn -sccp -dse -licm -adce -barrier -licm -constmerge

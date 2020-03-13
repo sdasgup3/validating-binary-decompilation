@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tti -scoped-noalias -assumption-cache-tracker -deadargelim -aa -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -memcpyopt -aa -instcombine -aa -dse -aa -postdomtree -simplifycfg -aa -instcombine -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -constmerge -aa -instsimplify

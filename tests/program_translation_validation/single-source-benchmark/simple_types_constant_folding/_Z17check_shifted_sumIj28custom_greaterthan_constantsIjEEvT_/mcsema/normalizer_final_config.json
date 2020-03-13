@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -scoped-noalias -domtree -mem2reg -deadargelim -domtree -basicaa -instcombine -argpromotion -domtree -domtree -basicaa -instcombine -domtree -basicaa -licm -domtree -basicaa -instcombine -gvn -basicaa -domtree -basicaa -instcombine -domtree -basicaa -dse -licm -domtree -basicaa -instcombine -barrier -float2int -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -licm -domtree -basicaa

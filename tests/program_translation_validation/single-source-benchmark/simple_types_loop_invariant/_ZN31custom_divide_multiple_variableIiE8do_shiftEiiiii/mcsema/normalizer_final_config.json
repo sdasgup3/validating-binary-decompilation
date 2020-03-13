@@ -1,1 +1,1 @@
- -gvn -dse -libcalls-shrinkwrap -instcombine
+ -deadargelim -instcombine -basiccg -globals-aa -inline -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -mldst-motion -gvn -instcombine -lazy-value-info -dse -postdomtree -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -instsimplify

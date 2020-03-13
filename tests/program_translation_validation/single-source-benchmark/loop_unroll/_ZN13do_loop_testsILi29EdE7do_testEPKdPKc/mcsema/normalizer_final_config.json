@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim
+ -scoped-noalias -basicaa -instcombine -simplifycfg -early-cse -lazy-value-info -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -memdep -licm -postdomtree -adce -simplifycfg -basicaa -instcombine -barrier -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa

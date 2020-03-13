@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -tti -globalopt -mem2reg -deadargelim -basicaa -aa -prune-eh -early-cse -basicaa -aa -basicaa -aa -licm -basicaa -aa -indvars -mldst-motion -aa -gvn -basicaa -aa -sccp -demanded-bits -bdce -basicaa -aa -basicaa -aa -dse -aa -licm -basicaa -aa -elim-avail-extern -float2int -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -demanded-bits -basicaa -aa -licm -strip-dead-prototypes -globaldce -basicaa -aa -instsimplify

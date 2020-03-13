@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -memcpyopt
+ -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basicaa -aa -lazy-value-info -correlated-propagation -basicaa -aa -reassociate -basicaa -aa -basicaa -aa -indvars -aa -gvn -basicaa -aa -bdce -basicaa -aa -lazy-value-info -correlated-propagation -basicaa -aa -dse -aa -postdomtree -basicaa -aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -globaldce -constmerge -basicaa -aa -instsimplify

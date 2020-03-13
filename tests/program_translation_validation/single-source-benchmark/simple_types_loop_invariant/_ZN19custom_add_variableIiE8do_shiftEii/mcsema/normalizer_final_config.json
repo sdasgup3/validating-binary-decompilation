@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap
+ -tbaa -scoped-noalias -deadargelim -instcombine -basiccg -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -indvars -memdep -gvn -memdep -demanded-bits -instcombine -lazy-value-info -jump-threading -correlated-propagation -memdep -licm -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge

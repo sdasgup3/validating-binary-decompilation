@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -tbaa -scoped-noalias -mem2reg -deadargelim -instcombine -simplifycfg -inline -argpromotion -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -gvn -demanded-bits -instcombine -jump-threading -dse -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine

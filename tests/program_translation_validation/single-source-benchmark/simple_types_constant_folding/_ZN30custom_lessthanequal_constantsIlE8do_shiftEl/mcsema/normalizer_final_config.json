@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -aa -instcombine -inline -sroa -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -jump-threading -aa -aa -licm -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -aa

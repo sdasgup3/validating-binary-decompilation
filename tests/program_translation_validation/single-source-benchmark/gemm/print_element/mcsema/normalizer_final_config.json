@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -targetlibinfo -scoped-noalias -assumption-cache-tracker -basicaa -simplifycfg -prune-eh -argpromotion -sroa -simplifycfg -basicaa -tailcallelim -simplifycfg -basicaa -licm -simplifycfg -basicaa -memdep -gvn -basicaa -memdep -bdce -basicaa -basicaa -memdep -dse -licm -adce -simplifycfg -basicaa -barrier -float2int -basicaa -basicaa -basicaa -simplifycfg -basicaa -licm -strip-dead-prototypes -globaldce -basicaa -instsimplify

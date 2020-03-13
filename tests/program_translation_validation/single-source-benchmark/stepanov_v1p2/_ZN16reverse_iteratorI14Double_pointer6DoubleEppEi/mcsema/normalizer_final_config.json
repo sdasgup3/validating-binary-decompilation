@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -tti -domtree -mem2reg -domtree -aa -simplifycfg -globals-aa -prune-eh -inline -domtree -sroa -early-cse -simplifycfg -domtree -aa -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -aa -memdep -gvn -aa -memdep -sccp -domtree -aa -domtree -aa -memdep -dse -aa -postdomtree -adce -simplifycfg -domtree -aa -barrier -elim-avail-extern -globals-aa -float2int -domtree -aa -aa -aa -aa -simplifycfg -domtree -aa -strip-dead-prototypes -constmerge -domtree -aa

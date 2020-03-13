@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -tailcallelim -instcombine
+ -tti -deadargelim -instcombine -basiccg -prune-eh -early-cse -lazy-value-info -instcombine -licm -instcombine -mldst-motion -gvn -sccp -instcombine -lazy-value-info -licm -adce -instcombine -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -licm -instsimplify

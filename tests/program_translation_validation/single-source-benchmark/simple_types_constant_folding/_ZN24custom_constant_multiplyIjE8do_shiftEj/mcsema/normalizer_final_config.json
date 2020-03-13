@@ -1,1 +1,1 @@
- -gvn -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -globalopt -instcombine -prune-eh -instcombine -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -sccp -demanded-bits -instcombine -jump-threading -memdep -dse -scalar-evolution -adce -instcombine -elim-avail-extern -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -globaldce -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -aa -dse -instcombine
+ -targetlibinfo -mem2reg -instcombine -basiccg -argpromotion -early-cse -instcombine -reassociate -instcombine -instcombine -dse -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine

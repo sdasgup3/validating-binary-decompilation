@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -globalopt -mem2reg -aa -instcombine -simplifycfg -globals-aa -argpromotion -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -aa -aa -adce -simplifycfg -aa -instcombine -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -aa -instsimplify

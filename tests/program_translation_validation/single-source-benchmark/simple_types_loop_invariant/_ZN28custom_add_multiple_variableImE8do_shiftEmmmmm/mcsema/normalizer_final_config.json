@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -memcpyopt
+ -tti -scoped-noalias -globalopt -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -globals-aa -argpromotion -early-cse -lazy-value-info -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -basicaa -sccp -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -adce -simplifycfg -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -globaldce -basicaa

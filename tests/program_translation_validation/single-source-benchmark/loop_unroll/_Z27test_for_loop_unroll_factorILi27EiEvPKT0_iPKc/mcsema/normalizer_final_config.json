@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tti -tbaa -assumption-cache-tracker -mem2reg -deadargelim -instcombine -argpromotion -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -gvn -memcpyopt -instcombine -dse -licm -instcombine -barrier -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -constmerge

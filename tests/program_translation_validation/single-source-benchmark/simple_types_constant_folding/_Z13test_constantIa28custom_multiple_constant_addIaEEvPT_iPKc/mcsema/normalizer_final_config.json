@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -instcombine -memcpyopt
+ -instcombine -basiccg -prune-eh -inline -sroa -early-cse -lazy-value-info -instcombine -tailcallelim -reassociate -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -constmerge

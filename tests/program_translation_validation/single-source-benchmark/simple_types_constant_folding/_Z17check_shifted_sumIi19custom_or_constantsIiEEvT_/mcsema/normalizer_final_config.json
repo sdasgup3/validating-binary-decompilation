@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -aa -instcombine -basiccg -prune-eh -inline -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -aa -gvn -aa -aa -instcombine -lazy-value-info -aa -aa -aa -instcombine -barrier -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

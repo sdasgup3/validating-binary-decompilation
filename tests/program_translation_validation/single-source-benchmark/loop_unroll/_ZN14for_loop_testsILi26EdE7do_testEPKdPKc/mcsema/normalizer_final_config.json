@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim
+ -assumption-cache-tracker -domtree -domtree -basicaa -instcombine -domtree -lazy-value-info -correlated-propagation -domtree -basicaa -instcombine -reassociate -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -memcpyopt -domtree -basicaa -instcombine -lazy-value-info -correlated-propagation -domtree -basicaa -dse -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa -instsimplify

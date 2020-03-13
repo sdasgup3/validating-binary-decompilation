@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -deadargelim -instcombine -memcpyopt -mem2reg -gvn -globalopt -deadargelim -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -mem2reg -deadargelim -instcombine -simplifycfg -argpromotion -early-cse -lazy-value-info -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -mldst-motion -gvn -sccp -instcombine -lazy-value-info -jump-threading -correlated-propagation -adce -simplifycfg -instcombine -barrier -instcombine -simplifycfg -instcombine -instcombine

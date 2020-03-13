@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -scoped-noalias -assumption-cache-tracker -domtree -deadargelim -domtree -instcombine -domtree -domtree -instcombine -libcalls-shrinkwrap -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -domtree -demanded-bits -bdce -instcombine -domtree -memdep -domtree -instcombine -barrier -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree -instsimplify

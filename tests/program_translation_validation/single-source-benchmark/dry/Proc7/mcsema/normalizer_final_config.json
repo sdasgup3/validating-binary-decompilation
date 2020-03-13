@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse
+ -tti -scoped-noalias -globalopt -instcombine -simplifycfg -inline -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -gvn -sccp -instcombine -dse -scalar-evolution -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

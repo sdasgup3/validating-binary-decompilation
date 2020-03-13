@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -instcombine
+ -tti -assumption-cache-tracker -mem2reg -instcombine -globals-aa -prune-eh -argpromotion -lazy-value-info -instcombine -libcalls-shrinkwrap -licm -instcombine -gvn -instcombine -lazy-value-info -jump-threading -dse -licm -instcombine -barrier -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -licm -globaldce

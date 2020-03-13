@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -deadargelim -instcombine
+ -scoped-noalias -instcombine -simplifycfg -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -correlated-propagation -memdep -licm -simplifycfg -instcombine -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm

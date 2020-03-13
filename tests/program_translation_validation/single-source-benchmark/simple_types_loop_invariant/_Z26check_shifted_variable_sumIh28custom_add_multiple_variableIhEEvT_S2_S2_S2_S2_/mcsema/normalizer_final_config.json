@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tbaa -mem2reg -deadargelim -instcombine -basiccg -globals-aa -early-cse -instcombine -licm -instcombine -mldst-motion -gvn -memcpyopt -sccp -instcombine -jump-threading -dse -licm -instcombine -barrier -basiccg -globals-aa -instcombine -instcombine -instcombine -licm -globaldce -constmerge -instsimplify

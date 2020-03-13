@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -memdep -dse
+ -tti -domtree -domtree -instcombine -domtree -sroa -early-cse -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -indvars -domtree -demanded-bits -instcombine -correlated-propagation -domtree -dse -adce -domtree -instcombine -barrier -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -domtree -instsimplify

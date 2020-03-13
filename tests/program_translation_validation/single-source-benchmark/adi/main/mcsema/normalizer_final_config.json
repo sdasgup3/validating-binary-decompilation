@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -scoped-noalias -assumption-cache-tracker -domtree -deadargelim -domtree -aa -instcombine -argpromotion -domtree -sroa -domtree -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -domtree -aa -domtree -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -domtree -bdce -aa -instcombine -domtree -aa -memdep -dse -aa -domtree -aa -instcombine -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -strip-dead-prototypes -domtree -aa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -assumption-cache-tracker -domtree -mem2reg -domtree -basicaa -simplifycfg -basiccg -globals-aa -domtree -early-cse -simplifycfg -domtree -basicaa -simplifycfg -domtree -basicaa -licm -simplifycfg -domtree -basicaa -indvars -memdep -gvn -basicaa -memdep -memcpyopt -sccp -domtree -basicaa -domtree -basicaa -memdep -dse -licm -simplifycfg -domtree -basicaa -basiccg -globals-aa -domtree -basicaa -basicaa -basicaa -simplifycfg -domtree -basicaa -licm -domtree -basicaa

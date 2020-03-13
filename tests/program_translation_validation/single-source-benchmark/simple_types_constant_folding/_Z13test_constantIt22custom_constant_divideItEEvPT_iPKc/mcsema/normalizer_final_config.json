@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -tailcallelim -instcombine
+ -mem2reg -instcombine -basiccg -sroa -correlated-propagation -instcombine -tailcallelim -licm -instcombine -memdep -gvn -memdep -instcombine -correlated-propagation -memdep -dse -licm -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -licm -strip-dead-prototypes

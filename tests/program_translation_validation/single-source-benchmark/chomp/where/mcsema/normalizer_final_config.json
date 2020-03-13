@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -instcombine
+ -domtree -domtree -instcombine -globals-aa -prune-eh -inline -domtree -sroa -domtree -instcombine -domtree -domtree -instcombine -gvn -domtree -demanded-bits -instcombine -domtree -domtree -instcombine -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -globaldce -domtree -instsimplify

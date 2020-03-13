@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim -memcpyopt
+ -instcombine -globals-aa -prune-eh -sroa -lazy-value-info -correlated-propagation -instcombine -instcombine -indvars -mldst-motion -gvn -bdce -instcombine -lazy-value-info -correlated-propagation -dse -postdomtree -adce -instcombine -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -constmerge -instsimplify

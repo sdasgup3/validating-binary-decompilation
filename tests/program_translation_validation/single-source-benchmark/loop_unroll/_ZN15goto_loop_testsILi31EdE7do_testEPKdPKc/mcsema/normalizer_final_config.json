@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -instcombine
+ -globalopt -deadargelim -simplifycfg -basiccg -sroa -lazy-value-info -simplifycfg -simplifycfg -simplifycfg -indvars -mldst-motion -gvn -demanded-bits -lazy-value-info -dse -simplifycfg -basiccg -float2int -demanded-bits -demanded-bits -simplifycfg -constmerge

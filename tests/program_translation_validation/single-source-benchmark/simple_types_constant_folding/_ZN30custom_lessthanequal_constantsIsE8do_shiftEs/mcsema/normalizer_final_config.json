@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse
+ -tti -tbaa -scoped-noalias -assumption-cache-tracker -deadargelim -basicaa -instcombine -inline -early-cse -basicaa -instcombine -basicaa -licm -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -sccp -demanded-bits -bdce -basicaa -instcombine -basicaa -dse -licm -adce -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -constmerge -basicaa

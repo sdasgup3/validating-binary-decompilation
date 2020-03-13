@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -basicaa -instcombine -basiccg -argpromotion -sroa -early-cse -correlated-propagation -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -gvn -basicaa -sccp -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -basicaa -instcombine -barrier -elim-avail-extern -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa

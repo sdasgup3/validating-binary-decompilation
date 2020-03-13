@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -deadargelim
+ -tbaa -scoped-noalias -globalopt -mem2reg -aa -prune-eh -argpromotion -aa -reassociate -aa -aa -indvars -aa -gvn -aa -sccp -demanded-bits -aa -jump-threading -aa -dse -aa -postdomtree -aa -barrier -elim-avail-extern -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -aa

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -scoped-noalias -globalopt -domtree -deadargelim -domtree -instcombine -basiccg -prune-eh -inline -domtree -early-cse -correlated-propagation -domtree -instcombine -tailcallelim -domtree -licm -domtree -instcombine -indvars -gvn -domtree -instcombine -correlated-propagation -domtree -licm -postdomtree -domtree -instcombine -barrier -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

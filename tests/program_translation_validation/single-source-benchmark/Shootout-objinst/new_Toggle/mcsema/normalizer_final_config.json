@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -assumption-cache-tracker -globalopt -deadargelim -aa -instcombine -inline -aa -instcombine -aa -scalar-evolution -aa -instcombine -scalar-evolution -aa -gvn -aa -memcpyopt -aa -instcombine -jump-threading -aa -aa -scalar-evolution -adce -aa -instcombine -float2int -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -aa -scalar-evolution

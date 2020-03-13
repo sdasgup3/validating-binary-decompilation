@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -deadargelim -instcombine -memcpyopt
+ -tti -tbaa -globalopt -mem2reg -deadargelim -instcombine -sroa -instcombine -licm -instcombine -gvn -sccp -instcombine -licm -adce -instcombine -barrier -instcombine -instcombine -instcombine -licm

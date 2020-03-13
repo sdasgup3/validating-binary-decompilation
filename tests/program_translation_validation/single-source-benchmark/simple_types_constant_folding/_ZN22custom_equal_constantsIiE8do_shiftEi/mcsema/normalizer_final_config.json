@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -dse -tailcallelim
+ -tbaa -instcombine -inline -sroa -lazy-value-info -instcombine -reassociate -instcombine -gvn -memcpyopt -instcombine -lazy-value-info -instcombine -instcombine -instcombine -instcombine -globaldce -constmerge

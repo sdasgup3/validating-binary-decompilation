@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim
+ -targetlibinfo -globalopt -mem2reg -prune-eh -inline -tailcallelim -reassociate -scalar-evolution -scalar-evolution -gvn -memcpyopt -sccp -jump-threading -dse -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution

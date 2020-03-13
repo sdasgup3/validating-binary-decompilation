@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -tailcallelim -instcombine
+ -tbaa -scoped-noalias -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -argpromotion -sroa -early-cse -correlated-propagation -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -correlated-propagation -aa -aa -licm -postdomtree -simplifycfg -aa -instcombine -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -globaldce -constmerge -aa

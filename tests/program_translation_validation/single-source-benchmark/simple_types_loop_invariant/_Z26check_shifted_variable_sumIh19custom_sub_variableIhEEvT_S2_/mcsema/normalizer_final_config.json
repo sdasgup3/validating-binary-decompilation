@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -targetlibinfo -tbaa -deadargelim -instcombine -globals-aa -prune-eh -inline -correlated-propagation -instcombine -reassociate -instcombine -memdep -gvn -memdep -memcpyopt -sccp -instcombine -correlated-propagation -memdep -dse -postdomtree -instcombine -barrier -globals-aa -instcombine -instcombine -instcombine -strip-dead-prototypes -constmerge

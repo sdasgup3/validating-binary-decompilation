@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -scoped-noalias -deadargelim -aa -basiccg -inline -sroa -aa -libcalls-shrinkwrap -aa -licm -aa -indvars -aa -gvn -aa -demanded-bits -aa -aa -dse -aa -licm -adce -aa -barrier -basiccg -float2int -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -licm -globaldce -aa

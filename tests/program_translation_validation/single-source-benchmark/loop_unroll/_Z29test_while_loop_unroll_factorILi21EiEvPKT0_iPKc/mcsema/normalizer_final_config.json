@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -dse -instcombine
+ -targetlibinfo -assumption-cache-tracker -globalopt -instcombine -basiccg -globals-aa -lazy-value-info -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -memdep -gvn -memdep -instcombine -lazy-value-info -jump-threading -memdep -dse -scalar-evolution -licm -postdomtree -adce -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution

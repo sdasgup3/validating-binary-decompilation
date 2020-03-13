@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -assumption-cache-tracker -deadargelim -aa -instcombine -basiccg -globals-aa -prune-eh -inline -argpromotion -early-cse -aa -instcombine -aa -aa -instcombine -mldst-motion -aa -memdep -aa -memdep -memcpyopt -aa -instcombine -jump-threading -aa -memdep -aa -postdomtree -adce -aa -instcombine -barrier -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

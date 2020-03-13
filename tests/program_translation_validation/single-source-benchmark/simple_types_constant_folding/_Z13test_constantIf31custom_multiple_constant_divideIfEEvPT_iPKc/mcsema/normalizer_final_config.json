@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -memdep -dse -instcombine
+ -targetlibinfo -basicaa -instcombine -inline -argpromotion -sroa -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -mldst-motion -gvn -basicaa -memcpyopt -sccp -demanded-bits -basicaa -instcombine -correlated-propagation -basicaa -licm -adce -basicaa -instcombine -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -basicaa -instsimplify

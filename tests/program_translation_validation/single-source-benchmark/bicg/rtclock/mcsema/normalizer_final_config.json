@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tbaa -basiccg -inline -sroa -libcalls-shrinkwrap -licm -indvars -mldst-motion -gvn -dse -licm -postdomtree -adce -basiccg -licm -strip-dead-prototypes

@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim
+ -tti -domtree -mem2reg -domtree -simplifycfg -basiccg -prune-eh -inline -domtree -simplifycfg -domtree -libcalls-shrinkwrap -simplifycfg -domtree -licm -simplifycfg -domtree -indvars -memdep -gvn -memdep -sccp -domtree -domtree -memdep -dse -licm -simplifycfg -domtree -elim-avail-extern -basiccg -float2int -domtree -simplifycfg -domtree -licm -strip-dead-prototypes -domtree -instsimplify

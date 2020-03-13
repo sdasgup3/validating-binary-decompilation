@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -memdep -dse -memcpyopt
+ -targetlibinfo -scoped-noalias -globalopt -aa -basiccg -globals-aa -inline -sroa -early-cse -lazy-value-info -aa -aa -aa -indvars -mldst-motion -aa -gvn -aa -sccp -aa -lazy-value-info -aa -dse -aa -adce -aa -barrier -basiccg -globals-aa -aa -aa -aa -aa -aa -globaldce -aa -instsimplify

@@ -1,1 +1,1 @@
- -gvn -aa -dse -instcombine
+ -tti -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -globals-aa -inline -sroa -correlated-propagation -libcalls-shrinkwrap -tailcallelim -licm -gvn -sccp -jump-threading -correlated-propagation -dse -licm -postdomtree -barrier -elim-avail-extern -globals-aa -licm

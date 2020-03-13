@@ -1,1 +1,11 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tbaa -assumption-cache-tracker -domtree -mem2reg -deadargelim -domtree -aa -instcombine -simplifycfg -argpromotion -domtree -early-cse -correlated-propagation -simplifycfg -domtree -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -domtree -aa -licm -simplifycfg -domtree -aa -instcombine -indvars -aa -gvn -aa -sccp -domtree -aa -instcombine -jump-threading -correlated-propagation -domtree -aa -aa -licm -simplifycfg -domtree -aa -instcombine -barrier -elim-avail-extern -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -domtree -aa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -memdep -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa

@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine
+ -deadargelim -basicaa -instcombine -early-cse -basicaa -instcombine -reassociate -basicaa -licm -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa

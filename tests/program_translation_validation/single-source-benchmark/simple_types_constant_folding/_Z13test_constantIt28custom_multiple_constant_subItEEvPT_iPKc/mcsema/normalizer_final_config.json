@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -mem2reg -basicaa -aa -instcombine -sroa -early-cse -basicaa -aa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -sccp -demanded-bits -bdce -basicaa -aa -instcombine -basicaa -aa -dse -aa -basicaa -aa -instcombine -barrier -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -instcombine -demanded-bits -basicaa -aa -instcombine -instcombine -globaldce -basicaa -aa

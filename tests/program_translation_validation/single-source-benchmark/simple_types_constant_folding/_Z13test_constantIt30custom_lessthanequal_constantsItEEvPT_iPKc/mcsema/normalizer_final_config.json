@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -instcombine
+ -tti -assumption-cache-tracker -globalopt -domtree -mem2reg -deadargelim -domtree -aa -instcombine -simplifycfg -prune-eh -inline -domtree -simplifycfg -domtree -aa -instcombine -simplifycfg -domtree -aa -licm -simplifycfg -domtree -aa -instcombine -aa -gvn -aa -domtree -aa -instcombine -jump-threading -domtree -aa -dse -aa -licm -postdomtree -simplifycfg -domtree -aa -instcombine -elim-avail-extern -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -licm -globaldce -domtree -aa -instsimplify

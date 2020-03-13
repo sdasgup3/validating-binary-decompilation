@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -mem2reg -aa -instcombine -simplifycfg -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -aa -memdep -bdce -aa -instcombine -lazy-value-info -jump-threading -aa -memdep -dse -aa -simplifycfg -aa -instcombine -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa

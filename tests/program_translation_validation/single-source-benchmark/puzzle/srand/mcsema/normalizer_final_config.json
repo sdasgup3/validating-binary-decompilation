@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine
+ -tbaa -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -globals-aa -prune-eh -sroa -early-cse -correlated-propagation -instcombine -instcombine -bdce -instcombine -jump-threading -correlated-propagation -instcombine -globals-aa -instcombine -instcombine -instcombine

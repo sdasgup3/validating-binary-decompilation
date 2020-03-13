@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -instcombine
+ -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -basicaa -aa -globals-aa -lazy-value-info -basicaa -aa -basicaa -aa -basicaa -aa -aa -gvn -basicaa -aa -bdce -basicaa -aa -lazy-value-info -basicaa -aa -dse -aa -postdomtree -basicaa -aa -elim-avail-extern -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -globaldce -basicaa -aa

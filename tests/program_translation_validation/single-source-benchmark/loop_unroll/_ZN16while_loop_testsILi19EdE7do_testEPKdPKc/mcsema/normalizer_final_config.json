@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -deadargelim
+ -mem2reg -aa -instcombine -prune-eh -inline -sroa -early-cse -lazy-value-info -aa -instcombine -aa -aa -instcombine -aa -aa -memcpyopt -demanded-bits -bdce -aa -instcombine -lazy-value-info -aa -dse -aa -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa

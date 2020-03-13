@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -dse -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -aa -instcombine -argpromotion -early-cse -aa -instcombine -reassociate -aa -aa -instcombine -aa -aa -sccp -demanded-bits -aa -instcombine -aa -dse -aa -postdomtree -aa -instcombine -barrier -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -constmerge -aa

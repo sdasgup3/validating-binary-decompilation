@@ -1,1 +1,1 @@
- -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tbaa -assumption-cache-tracker -globalopt -basicaa -instcombine -basiccg -sroa -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -licm -basicaa -instcombine -indvars -mldst-motion -memdep -gvn -basicaa -memdep -basicaa -instcombine -correlated-propagation -basicaa -memdep -licm -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa

@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -dse -instcombine
+ -assumption-cache-tracker -globalopt -mem2reg -reassociate -indvars -memdep -gvn -memdep -bdce -memdep -dse -adce -strip-dead-prototypes

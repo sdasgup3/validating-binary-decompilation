@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -mem2reg -simplifycfg -basiccg -argpromotion -simplifycfg -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -indvars -memdep -gvn -memdep -sccp -bdce -memdep -dse -scalar-evolution -simplifycfg -barrier -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -instsimplify

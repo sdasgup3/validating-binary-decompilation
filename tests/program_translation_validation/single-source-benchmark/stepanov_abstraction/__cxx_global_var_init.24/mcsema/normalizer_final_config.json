@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -scoped-noalias -instcombine -globals-aa -sroa -early-cse -instcombine -scalar-evolution -instcombine -scalar-evolution -indvars -mldst-motion -demanded-bits -instcombine -jump-threading -dse -scalar-evolution -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

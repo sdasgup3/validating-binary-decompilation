@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -scoped-noalias -assumption-cache-tracker -globalopt -aa -instcombine -inline -argpromotion -early-cse -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -mldst-motion -aa -memdep -aa -memdep -aa -instcombine -aa -memdep -aa -licm -postdomtree -adce -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -aa

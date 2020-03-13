@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine
+ -targetlibinfo -tti -scoped-noalias -domtree -domtree -aa -instcombine -prune-eh -argpromotion -domtree -sroa -early-cse -domtree -aa -instcombine -domtree -aa -licm -domtree -aa -instcombine -aa -gvn -aa -domtree -aa -instcombine -domtree -aa -aa -licm -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -constmerge -domtree -aa

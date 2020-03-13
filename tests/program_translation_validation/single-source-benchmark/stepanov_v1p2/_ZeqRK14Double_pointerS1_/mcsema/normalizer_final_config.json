@@ -1,1 +1,1 @@
- -gvn -basicaa -memdep -dse -instcombine
+ -assumption-cache-tracker -mem2reg -deadargelim -simplifycfg -inline -sroa -early-cse -simplifycfg -simplifycfg -simplifycfg -mldst-motion -gvn -sccp -bdce -jump-threading -dse -simplifycfg -simplifycfg -constmerge -instsimplify

@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -deadargelim -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -gvn -memcpyopt -instcombine -dse -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes

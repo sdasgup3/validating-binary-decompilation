@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tbaa -scoped-noalias -mem2reg -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -bdce -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -memdep -dse -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

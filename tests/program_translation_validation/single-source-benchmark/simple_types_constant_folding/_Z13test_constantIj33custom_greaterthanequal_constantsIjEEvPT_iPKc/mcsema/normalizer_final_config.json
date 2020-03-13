@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -tbaa -instcombine -simplifycfg -argpromotion -lazy-value-info -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -sccp -instcombine -lazy-value-info -memdep -dse -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -instsimplify

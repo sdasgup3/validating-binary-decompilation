@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -instcombine -inline -sroa -lazy-value-info -instcombine -tailcallelim -licm -instcombine -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -licm -adce -instcombine -instcombine -instcombine -instcombine -licm -instsimplify

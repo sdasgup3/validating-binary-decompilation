@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -globalopt -mem2reg -basicaa -aa -instcombine -prune-eh -inline -sroa -early-cse -basicaa -aa -instcombine -tailcallelim -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -dse -aa -postdomtree -basicaa -aa -instcombine -elim-avail-extern -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa -aa -instsimplify

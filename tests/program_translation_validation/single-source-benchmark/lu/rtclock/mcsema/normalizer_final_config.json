@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -memcpyopt
+ -tti -tbaa -scoped-noalias -domtree -deadargelim -domtree -aa -basiccg -globals-aa -prune-eh -inline -domtree -sroa -early-cse -correlated-propagation -domtree -aa -libcalls-shrinkwrap -domtree -aa -licm -domtree -aa -indvars -aa -gvn -aa -domtree -bdce -aa -correlated-propagation -domtree -aa -dse -aa -licm -domtree -aa -basiccg -globals-aa -domtree -aa -aa -aa -aa -domtree -aa -licm -domtree -aa

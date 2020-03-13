@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -domtree -mem2reg -deadargelim -domtree -basiccg -globals-aa -prune-eh -argpromotion -domtree -early-cse -domtree -tailcallelim -reassociate -domtree -domtree -gvn -domtree -domtree -dse -postdomtree -domtree -basiccg -globals-aa -domtree -domtree -domtree

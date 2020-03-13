@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -instcombine
+ -tti -deadargelim -instcombine -sroa -correlated-propagation -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -mldst-motion -gvn -sccp -instcombine -correlated-propagation -dse -scalar-evolution -adce -instcombine -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

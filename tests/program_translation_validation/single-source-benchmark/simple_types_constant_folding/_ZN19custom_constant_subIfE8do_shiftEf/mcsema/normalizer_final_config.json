@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -dse -tailcallelim -instcombine
+ -targetlibinfo -tti -globalopt -instcombine -simplifycfg -inline -argpromotion -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memcpyopt -bdce -instcombine -postdomtree -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine

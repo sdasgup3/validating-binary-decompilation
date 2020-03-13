@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -tti -scoped-noalias -domtree -deadargelim -domtree -instcombine -basiccg -globals-aa -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -domtree -licm -domtree -instcombine -memdep -memdep -domtree -instcombine -lazy-value-info -domtree -memdep -licm -domtree -instcombine -basiccg -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -constmerge -domtree

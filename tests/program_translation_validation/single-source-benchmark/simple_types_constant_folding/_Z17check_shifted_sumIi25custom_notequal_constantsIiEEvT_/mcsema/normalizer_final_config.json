@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -domtree -mem2reg -deadargelim -domtree -instcombine -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -reassociate -domtree -domtree -instcombine -mldst-motion -sccp -domtree -instcombine -lazy-value-info -domtree -dse -domtree -instcombine -barrier -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

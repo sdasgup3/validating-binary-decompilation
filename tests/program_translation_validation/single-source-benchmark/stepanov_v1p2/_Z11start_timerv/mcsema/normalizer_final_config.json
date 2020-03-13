@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -scoped-noalias -deadargelim -basicaa -instcombine -basiccg -inline -early-cse -lazy-value-info -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -mldst-motion -basicaa -demanded-bits -bdce -basicaa -instcombine -lazy-value-info -jump-threading -correlated-propagation -basicaa -dse -basicaa -instcombine -basiccg -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa -instsimplify

@@ -1,1 +1,1 @@
- -licm -gvn -memdep -dse -instcombine
+ -targetlibinfo -tti -tbaa -assumption-cache-tracker -globalopt -aa -instcombine -prune-eh -inline -early-cse -aa -instcombine -tailcallelim -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -aa -gvn -aa -bdce -aa -instcombine -aa -aa -scalar-evolution -licm -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -aa -scalar-evolution

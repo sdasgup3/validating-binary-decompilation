@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -domtree -domtree -instcombine -prune-eh -inline -argpromotion -domtree -domtree -instcombine -tailcallelim -reassociate -domtree -scalar-evolution -licm -domtree -instcombine -scalar-evolution -indvars -gvn -domtree -instcombine -domtree -scalar-evolution -licm -adce -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -domtree -scalar-evolution

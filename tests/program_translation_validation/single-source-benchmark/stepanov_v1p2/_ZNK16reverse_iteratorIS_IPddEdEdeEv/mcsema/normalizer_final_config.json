@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -targetlibinfo -tti -scoped-noalias -assumption-cache-tracker -aa -instcombine -globals-aa -prune-eh -sroa -early-cse -correlated-propagation -aa -instcombine -reassociate -aa -aa -instcombine -mldst-motion -aa -gvn -aa -sccp -demanded-bits -bdce -aa -instcombine -correlated-propagation -aa -aa -adce -aa -instcombine -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa -instsimplify

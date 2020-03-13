@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -memdep -dse
+ -targetlibinfo -mem2reg -aa -instcombine -simplifycfg -inline -simplifycfg -aa -instcombine -simplifycfg -aa -licm -simplifycfg -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -aa -instcombine -aa -memdep -aa -licm -postdomtree -adce -simplifycfg -aa -instcombine -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -licm -aa

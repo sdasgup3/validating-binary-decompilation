@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -dse -memcpyopt
+ -tti -assumption-cache-tracker -globalopt -domtree -mem2reg -domtree -simplifycfg -domtree -simplifycfg -domtree -tailcallelim -simplifycfg -domtree -simplifycfg -domtree -indvars -gvn -domtree -demanded-bits -bdce -domtree -dse -adce -simplifycfg -domtree -float2int -domtree -demanded-bits -demanded-bits -simplifycfg -domtree -globaldce -domtree

@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -mem2reg -aa -instcombine -globals-aa -inline -sroa -early-cse -correlated-propagation -aa -instcombine -tailcallelim -aa -aa -instcombine -indvars -aa -gvn -aa -bdce -aa -instcombine -jump-threading -correlated-propagation -aa -dse -aa -aa -instcombine -elim-avail-extern -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -constmerge -aa

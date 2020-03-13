@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tbaa -deadargelim -instcombine -globals-aa -prune-eh -sroa -early-cse -instcombine -libcalls-shrinkwrap -licm -instcombine -mldst-motion -gvn -instcombine -jump-threading -licm -postdomtree -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -licm -instsimplify

@@ -1,1 +1,1 @@
- -gvn -globalopt -memdep -dse -instcombine
+ -deadargelim -aa -instcombine -simplifycfg -globals-aa -sroa -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -gvn -aa -demanded-bits -bdce -aa -instcombine -aa -dse -aa -adce -simplifycfg -aa -instcombine -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -aa -instsimplify

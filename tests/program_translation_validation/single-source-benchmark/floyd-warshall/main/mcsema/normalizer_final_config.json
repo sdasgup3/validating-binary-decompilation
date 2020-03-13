@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -globalopt -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -bdce -instcombine -memdep -dse -licm -simplifycfg -instcombine -barrier -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge

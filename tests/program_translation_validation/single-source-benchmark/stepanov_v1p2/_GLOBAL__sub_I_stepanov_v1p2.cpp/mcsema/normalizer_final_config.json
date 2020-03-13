@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -instcombine
+ -tti -scoped-noalias -globalopt -aa -instcombine -inline -correlated-propagation -aa -instcombine -aa -aa -instcombine -indvars -mldst-motion -aa -memdep -gvn -aa -memdep -sccp -aa -instcombine -correlated-propagation -aa -memdep -dse -aa -postdomtree -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa

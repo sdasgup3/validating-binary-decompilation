@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine
+ -targetlibinfo -tti -tbaa -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -aa -instcombine -simplifycfg -sroa -early-cse -correlated-propagation -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -indvars -aa -aa -aa -instcombine -correlated-propagation -aa -dse -aa -licm -simplifycfg -aa -instcombine -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -strip-dead-prototypes -aa

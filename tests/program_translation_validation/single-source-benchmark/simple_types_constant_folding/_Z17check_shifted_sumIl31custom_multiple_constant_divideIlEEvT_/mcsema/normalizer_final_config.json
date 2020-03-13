@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine
+ -tbaa -deadargelim -instcombine -sroa -correlated-propagation -instcombine -reassociate -instcombine -gvn -instcombine -jump-threading -correlated-propagation -dse -postdomtree -instcombine -instcombine -instcombine -instcombine

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -basiccg -inline -domtree -sroa -early-cse -domtree -instcombine -domtree -domtree -instcombine -indvars -memdep -memdep -domtree -instcombine -domtree -memdep -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -domtree

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -dse -instcombine
+ -tbaa -scoped-noalias -basicaa -instcombine -globals-aa -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -sccp -basicaa -instcombine -basicaa -basicaa -instcombine -barrier -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa

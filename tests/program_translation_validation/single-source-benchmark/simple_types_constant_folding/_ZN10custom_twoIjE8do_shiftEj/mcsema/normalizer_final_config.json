@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse
+ -tti -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -basicaa -basiccg -globals-aa -prune-eh -argpromotion -sroa -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -licm -basicaa -indvars -memdep -gvn -basicaa -memdep -memcpyopt -basicaa -jump-threading -basicaa -memdep -dse -licm -basicaa -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -basicaa -licm -globaldce -basicaa

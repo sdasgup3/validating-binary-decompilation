@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse -instcombine -memcpyopt
+ -aa -instcombine -prune-eh -inline -argpromotion -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -indvars -aa -gvn -aa -aa -instcombine -aa -aa -licm -adce -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -aa -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -deadargelim -instcombine
+ -targetlibinfo -tti -tbaa -globalopt -deadargelim -instcombine -inline -sroa -lazy-value-info -instcombine -tailcallelim -instcombine -gvn -sccp -instcombine -lazy-value-info -dse -instcombine -barrier -instcombine -instcombine -instcombine -constmerge

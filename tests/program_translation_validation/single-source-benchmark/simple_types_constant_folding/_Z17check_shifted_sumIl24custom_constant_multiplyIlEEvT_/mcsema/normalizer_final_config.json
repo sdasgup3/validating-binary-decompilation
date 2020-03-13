@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -jump-threading -memdep -adce -simplifycfg -instcombine -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge

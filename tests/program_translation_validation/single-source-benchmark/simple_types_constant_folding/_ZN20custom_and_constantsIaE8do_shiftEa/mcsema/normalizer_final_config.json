@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -basicaa -memdep -dse
+ -assumption-cache-tracker -instcombine -prune-eh -inline -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -memdep -gvn -memdep -sccp -instcombine -jump-threading -memdep -dse -adce -instcombine -instcombine -instcombine -instcombine -constmerge

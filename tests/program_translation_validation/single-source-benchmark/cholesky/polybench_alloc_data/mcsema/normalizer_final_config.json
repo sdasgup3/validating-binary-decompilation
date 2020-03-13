@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap
+ -targetlibinfo -globalopt -basicaa -inline -sroa -basicaa -reassociate -basicaa -basicaa -memdep -gvn -basicaa -memdep -memcpyopt -sccp -demanded-bits -basicaa -basicaa -memdep -dse -postdomtree -adce -basicaa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -basicaa

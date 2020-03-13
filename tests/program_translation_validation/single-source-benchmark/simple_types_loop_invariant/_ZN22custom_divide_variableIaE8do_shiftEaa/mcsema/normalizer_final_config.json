@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -instcombine -prune-eh -argpromotion -early-cse -instcombine -tailcallelim -reassociate -instcombine -indvars -mldst-motion -memdep -gvn -memdep -sccp -demanded-bits -instcombine -jump-threading -memdep -instcombine -barrier -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

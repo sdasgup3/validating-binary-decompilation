@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -dse -tailcallelim
+ -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -demanded-bits -bdce -instcombine -memdep -dse -simplifycfg -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine

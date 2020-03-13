@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -aa -dse
+ -scoped-noalias -globalopt -domtree -mem2reg -domtree -prune-eh -domtree -domtree -libcalls-shrinkwrap -tailcallelim -domtree -domtree -mldst-motion -memdep -gvn -memdep -memcpyopt -domtree -domtree -memdep -dse -postdomtree -domtree -float2int -domtree -domtree -strip-dead-prototypes -globaldce -domtree -instsimplify

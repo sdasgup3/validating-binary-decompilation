@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -tti -scoped-noalias -mem2reg -instcombine -simplifycfg -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -gvn -memcpyopt -sccp -instcombine -jump-threading -simplifycfg -instcombine -barrier -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes

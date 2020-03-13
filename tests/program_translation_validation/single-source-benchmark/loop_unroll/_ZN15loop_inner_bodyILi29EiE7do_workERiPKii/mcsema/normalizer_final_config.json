@@ -1,1 +1,1 @@
- -gvn -globalopt -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -domtree -deadargelim -domtree -instcombine -simplifycfg -inline -argpromotion -domtree -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -domtree -bdce -instcombine -domtree -memdep -dse -licm -simplifycfg -domtree -instcombine -elim-avail-extern -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -globaldce -domtree

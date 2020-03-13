@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -domtree -deadargelim -domtree -aa -instcombine -basiccg -prune-eh -argpromotion -domtree -correlated-propagation -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -aa -gvn -aa -domtree -bdce -aa -instcombine -jump-threading -correlated-propagation -domtree -aa -dse -aa -postdomtree -domtree -aa -instcombine -basiccg -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -constmerge -domtree -aa

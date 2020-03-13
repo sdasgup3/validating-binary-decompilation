@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -memdep -dse -tailcallelim
+ -targetlibinfo -tbaa -deadargelim -instcombine -inline -argpromotion -correlated-propagation -instcombine -reassociate -instcombine -gvn -memcpyopt -instcombine -correlated-propagation -dse -adce -instcombine -barrier -float2int -instcombine -instcombine -instcombine -constmerge -instsimplify

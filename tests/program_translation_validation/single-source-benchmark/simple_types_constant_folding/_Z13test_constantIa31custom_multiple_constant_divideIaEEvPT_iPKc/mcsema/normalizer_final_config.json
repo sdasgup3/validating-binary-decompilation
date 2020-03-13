@@ -1,1 +1,1 @@
- -gvn -dse -instcombine
+ -assumption-cache-tracker -domtree -domtree -instcombine -inline -argpromotion -domtree -sroa -lazy-value-info -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -memdep -gvn -memdep -domtree -instcombine -lazy-value-info -jump-threading -domtree -memdep -dse -scalar-evolution -adce -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution -instsimplify

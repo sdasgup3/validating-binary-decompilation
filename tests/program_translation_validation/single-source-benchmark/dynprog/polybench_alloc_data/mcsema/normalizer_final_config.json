@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -globalopt -mem2reg -basicaa -prune-eh -argpromotion -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -indvars -mldst-motion -gvn -basicaa -basicaa -basicaa -dse -scalar-evolution -basicaa -barrier -float2int -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -instsimplify

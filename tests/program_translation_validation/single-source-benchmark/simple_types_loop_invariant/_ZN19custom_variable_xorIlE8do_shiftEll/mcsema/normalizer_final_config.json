@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -tti -tbaa -assumption-cache-tracker -sroa -early-cse -indvars -mldst-motion -gvn -demanded-bits -dse -postdomtree -barrier -elim-avail-extern -demanded-bits -demanded-bits

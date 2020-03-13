@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -tbaa -scoped-noalias -deadargelim -basicaa -instcombine -simplifycfg -correlated-propagation -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -mldst-motion -gvn -basicaa -memcpyopt -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -dse -licm -adce -simplifycfg -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa -instsimplify

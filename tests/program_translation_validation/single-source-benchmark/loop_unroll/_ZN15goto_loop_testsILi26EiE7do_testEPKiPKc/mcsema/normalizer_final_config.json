@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse
+ -tbaa -scoped-noalias -assumption-cache-tracker -mem2reg -simplifycfg -argpromotion -lazy-value-info -simplifycfg -simplifycfg -reassociate -simplifycfg -gvn -memcpyopt -demanded-bits -bdce -lazy-value-info -jump-threading -dse -simplifycfg -demanded-bits -demanded-bits -simplifycfg

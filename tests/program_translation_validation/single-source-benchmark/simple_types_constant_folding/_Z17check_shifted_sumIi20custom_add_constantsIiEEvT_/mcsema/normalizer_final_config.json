@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -instcombine
+ -targetlibinfo -scoped-noalias -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -inline -early-cse -lazy-value-info -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -mldst-motion -gvn -demanded-bits -instcombine -lazy-value-info -jump-threading -dse -licm -postdomtree -adce -simplifycfg -instcombine -barrier -basiccg -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes

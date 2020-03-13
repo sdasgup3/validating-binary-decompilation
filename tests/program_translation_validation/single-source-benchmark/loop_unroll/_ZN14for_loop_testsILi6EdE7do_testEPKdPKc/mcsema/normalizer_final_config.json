@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -deadargelim
+ -globalopt -instcombine -basiccg -sroa -instcombine -instcombine -indvars -mldst-motion -memdep -gvn -memdep -bdce -instcombine -jump-threading -memdep -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine -strip-dead-prototypes

@@ -1,1 +1,1 @@
- -gvn -globalopt -memdep -dse -libcalls-shrinkwrap -instcombine
+ -basiccg -prune-eh -sroa -early-cse -libcalls-shrinkwrap -reassociate -indvars -mldst-motion -memdep -gvn -memdep -demanded-bits -bdce -memdep -dse -barrier -elim-avail-extern -basiccg -demanded-bits -demanded-bits -globaldce

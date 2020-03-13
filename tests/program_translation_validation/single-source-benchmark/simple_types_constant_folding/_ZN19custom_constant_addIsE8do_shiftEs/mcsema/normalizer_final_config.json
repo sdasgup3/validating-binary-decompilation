@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -tti -domtree -mem2reg -deadargelim -domtree -aa -basiccg -inline -domtree -domtree -aa -domtree -aa -domtree -aa -aa -gvn -aa -domtree -demanded-bits -aa -jump-threading -domtree -aa -dse -aa -postdomtree -adce -domtree -aa -barrier -basiccg -float2int -domtree -aa -aa -demanded-bits -aa -aa -demanded-bits -domtree -aa -strip-dead-prototypes -globaldce -domtree -aa

@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tti -assumption-cache-tracker -deadargelim -instcombine -prune-eh -sroa -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -instcombine -mldst-motion -gvn -demanded-bits -instcombine -correlated-propagation -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -instcombine
+ -tti -scoped-noalias -basicaa -aa -instcombine -basiccg -sroa -early-cse -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -mldst-motion -aa -basicaa -aa -sccp -demanded-bits -basicaa -aa -instcombine -jump-threading -basicaa -aa -aa -licm -postdomtree -basicaa -aa -instcombine -barrier -basiccg -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -instcombine -demanded-bits -basicaa -aa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa -aa

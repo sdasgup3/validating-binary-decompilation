@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -tti -scoped-noalias -deadargelim -instcombine -simplifycfg -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -gvn -bdce -instcombine -dse -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -constmerge -instsimplify

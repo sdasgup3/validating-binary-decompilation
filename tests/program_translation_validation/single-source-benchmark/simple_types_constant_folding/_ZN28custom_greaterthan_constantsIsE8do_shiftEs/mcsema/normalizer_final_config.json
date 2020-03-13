@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -globalopt -domtree -domtree -globals-aa -argpromotion -domtree -sroa -early-cse -lazy-value-info -correlated-propagation -domtree -libcalls-shrinkwrap -reassociate -domtree -domtree -gvn -sccp -domtree -lazy-value-info -jump-threading -correlated-propagation -domtree -dse -domtree -barrier -globals-aa -domtree -domtree -domtree -instsimplify

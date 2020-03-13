@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse
+ -tbaa -scoped-noalias -domtree -mem2reg -deadargelim -domtree -aa -instcombine -domtree -correlated-propagation -domtree -aa -instcombine -domtree -aa -licm -domtree -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -domtree -bdce -aa -instcombine -jump-threading -correlated-propagation -domtree -aa -memdep -dse -aa -licm -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -constmerge -domtree -aa

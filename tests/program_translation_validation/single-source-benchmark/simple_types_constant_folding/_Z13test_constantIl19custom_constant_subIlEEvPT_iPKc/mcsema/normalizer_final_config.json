@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -tti -scoped-noalias -domtree -deadargelim -domtree -instcombine -basiccg -inline -domtree -sroa -domtree -instcombine -libcalls-shrinkwrap -domtree -domtree -instcombine -memdep -gvn -memdep -domtree -instcombine -jump-threading -domtree -memdep -dse -domtree -instcombine -elim-avail-extern -basiccg -float2int -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

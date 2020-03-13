@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim
+ -targetlibinfo -tbaa -mem2reg -instcombine -simplifycfg -basiccg -argpromotion -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -sccp -instcombine -memdep -dse -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine

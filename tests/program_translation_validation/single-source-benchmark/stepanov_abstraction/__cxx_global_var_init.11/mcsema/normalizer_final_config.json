@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -domtree -domtree -aa -instcombine -domtree -early-cse -lazy-value-info -domtree -aa -instcombine -tailcallelim -domtree -aa -licm -domtree -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -domtree -aa -instcombine -lazy-value-info -domtree -aa -memdep -aa -licm -postdomtree -domtree -aa -instcombine -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -domtree -aa

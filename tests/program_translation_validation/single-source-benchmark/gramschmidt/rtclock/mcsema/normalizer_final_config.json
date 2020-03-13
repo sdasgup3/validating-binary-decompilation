@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -tailcallelim -instcombine
+ -targetlibinfo -scoped-noalias -instcombine -basiccg -argpromotion -early-cse -lazy-value-info -instcombine -scalar-evolution -instcombine -scalar-evolution -gvn -bdce -instcombine -lazy-value-info -dse -scalar-evolution -instcombine -barrier -elim-avail-extern -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

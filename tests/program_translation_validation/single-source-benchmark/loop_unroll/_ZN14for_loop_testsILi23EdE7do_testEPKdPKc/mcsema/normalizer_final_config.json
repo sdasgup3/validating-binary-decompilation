@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim
+ -tti -tbaa -scoped-noalias -deadargelim -basicaa -instcombine -globals-aa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -instcombine -basicaa -basicaa -instcombine -jump-threading -basicaa -licm -adce -basicaa -instcombine -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -tailcallelim
+ -globalopt -mem2reg -aa -instcombine -basiccg -early-cse -lazy-value-info -correlated-propagation -aa -instcombine -reassociate -aa -aa -instcombine -aa -memdep -aa -memdep -sccp -bdce -aa -instcombine -lazy-value-info -correlated-propagation -aa -memdep -aa -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -aa

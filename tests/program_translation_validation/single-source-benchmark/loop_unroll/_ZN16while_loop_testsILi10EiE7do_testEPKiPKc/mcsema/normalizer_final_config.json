@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -dse -instcombine
+ -deadargelim -aa -globals-aa -inline -sroa -aa -aa -scalar-evolution -aa -scalar-evolution -mldst-motion -aa -memdep -gvn -aa -memdep -sccp -demanded-bits -aa -aa -memdep -dse -aa -scalar-evolution -adce -aa -globals-aa -aa -scalar-evolution -scalar-evolution -aa -demanded-bits -scalar-evolution -aa -aa -scalar-evolution -demanded-bits -aa -scalar-evolution -scalar-evolution -strip-dead-prototypes -constmerge -aa -scalar-evolution -instsimplify

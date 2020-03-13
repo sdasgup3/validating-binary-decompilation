@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -dse -instcombine
+ -targetlibinfo -tti -tbaa -instcombine -prune-eh -early-cse -lazy-value-info -instcombine -instcombine -memdep -gvn -memdep -memcpyopt -sccp -bdce -instcombine -lazy-value-info -memdep -postdomtree -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -strip-dead-prototypes

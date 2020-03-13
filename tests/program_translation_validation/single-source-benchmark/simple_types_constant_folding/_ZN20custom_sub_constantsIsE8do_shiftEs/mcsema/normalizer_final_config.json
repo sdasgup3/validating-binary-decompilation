@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -dse -instcombine
+ -targetlibinfo -tti -tbaa -scoped-noalias -mem2reg -instcombine -basiccg -prune-eh -argpromotion -lazy-value-info -instcombine -instcombine -indvars -memdep -gvn -memdep -sccp -bdce -instcombine -lazy-value-info -memdep -instcombine -basiccg -instcombine -instcombine -instcombine -strip-dead-prototypes

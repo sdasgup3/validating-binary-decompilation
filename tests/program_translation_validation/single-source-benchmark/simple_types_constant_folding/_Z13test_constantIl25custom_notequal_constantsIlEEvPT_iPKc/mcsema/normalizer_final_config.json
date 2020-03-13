@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -scoped-noalias -domtree -domtree -aa -instcombine -basiccg -domtree -lazy-value-info -domtree -aa -instcombine -reassociate -domtree -aa -domtree -aa -instcombine -mldst-motion -aa -gvn -aa -domtree -bdce -aa -instcombine -lazy-value-info -jump-threading -domtree -aa -aa -domtree -aa -instcombine -barrier -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -constmerge -domtree -aa -instsimplify

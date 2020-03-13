@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -mem2reg -instcombine -simplifycfg -globals-aa -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -instcombine -mldst-motion -gvn -bdce -instcombine -lazy-value-info -jump-threading -dse -postdomtree -simplifycfg -instcombine -elim-avail-extern -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -globaldce -constmerge

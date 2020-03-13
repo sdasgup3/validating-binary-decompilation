@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -deadargelim -instcombine
+ -tti -tbaa -globalopt -mem2reg -instcombine -globals-aa -prune-eh -argpromotion -correlated-propagation -instcombine -tailcallelim -instcombine -mldst-motion -gvn -sccp -demanded-bits -instcombine -correlated-propagation -dse -adce -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

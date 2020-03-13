@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -instcombine -memcpyopt
+ -tti -tbaa -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -aa -instcombine -basiccg -lazy-value-info -aa -instcombine -tailcallelim -aa -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -demanded-bits -bdce -aa -instcombine -lazy-value-info -aa -memdep -dse -aa -postdomtree -aa -instcombine -elim-avail-extern -basiccg -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa

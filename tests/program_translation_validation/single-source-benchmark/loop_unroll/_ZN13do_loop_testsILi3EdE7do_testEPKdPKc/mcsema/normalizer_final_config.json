@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -tti -basicaa -instcombine -argpromotion -early-cse -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -correlated-propagation -basicaa -memdep -licm -adce -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -basicaa

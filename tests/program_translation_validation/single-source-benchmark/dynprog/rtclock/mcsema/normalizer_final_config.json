@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -aa -dse -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -globalopt -mem2reg -instcombine -globals-aa -prune-eh -inline -sroa -instcombine -reassociate -licm -instcombine -indvars -gvn -instcombine -licm -instcombine -barrier -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -constmerge

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -domtree -mem2reg -deadargelim -domtree -instcombine -basiccg -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -tailcallelim -reassociate -domtree -domtree -instcombine -memdep -memdep -memcpyopt -sccp -domtree -bdce -instcombine -lazy-value-info -domtree -memdep -domtree -instcombine -elim-avail-extern -basiccg -domtree -instcombine -domtree -instcombine -instcombine -domtree

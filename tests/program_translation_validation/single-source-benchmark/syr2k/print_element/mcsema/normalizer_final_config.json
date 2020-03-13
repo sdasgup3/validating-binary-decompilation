@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -aa -basiccg -sroa -lazy-value-info -aa -aa -scalar-evolution -aa -scalar-evolution -aa -gvn -aa -memcpyopt -sccp -bdce -aa -lazy-value-info -aa -dse -aa -scalar-evolution -aa -basiccg -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution

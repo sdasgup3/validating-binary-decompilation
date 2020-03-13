@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -scoped-noalias -deadargelim -instcombine -globals-aa -inline -argpromotion -sroa -instcombine -licm -instcombine -mldst-motion -gvn -demanded-bits -bdce -instcombine -jump-threading -dse -licm -instcombine -barrier -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge

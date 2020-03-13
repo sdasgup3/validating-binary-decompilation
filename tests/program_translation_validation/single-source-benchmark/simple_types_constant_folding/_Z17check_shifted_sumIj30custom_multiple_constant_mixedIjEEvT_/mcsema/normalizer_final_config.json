@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -deadargelim -instcombine
+ -tti -tbaa -scoped-noalias -deadargelim -instcombine -simplifycfg -basiccg -inline -sroa -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -memcpyopt -sccp -instcombine -memdep -scalar-evolution -simplifycfg -instcombine -basiccg -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

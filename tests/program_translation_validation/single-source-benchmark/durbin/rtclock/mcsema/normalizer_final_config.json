@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -deadargelim
+ -targetlibinfo -tti -scoped-noalias -mem2reg -simplifycfg -globals-aa -inline -lazy-value-info -correlated-propagation -simplifycfg -libcalls-shrinkwrap -simplifycfg -simplifycfg -mldst-motion -memdep -gvn -memdep -memcpyopt -demanded-bits -bdce -lazy-value-info -correlated-propagation -memdep -dse -simplifycfg -elim-avail-extern -globals-aa -float2int -demanded-bits -demanded-bits -simplifycfg -constmerge

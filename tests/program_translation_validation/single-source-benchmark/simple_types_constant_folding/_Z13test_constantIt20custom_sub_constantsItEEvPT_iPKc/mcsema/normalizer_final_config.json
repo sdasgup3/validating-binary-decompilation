@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -argpromotion -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -sccp -instcombine -jump-threading -correlated-propagation -dse -licm -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm

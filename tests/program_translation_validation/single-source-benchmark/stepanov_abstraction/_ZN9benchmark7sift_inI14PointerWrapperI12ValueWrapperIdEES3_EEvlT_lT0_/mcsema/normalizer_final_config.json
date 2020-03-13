@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -assumption-cache-tracker -instcombine -simplifycfg -globals-aa -prune-eh -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -demanded-bits -instcombine -dse -licm -simplifycfg -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -instsimplify

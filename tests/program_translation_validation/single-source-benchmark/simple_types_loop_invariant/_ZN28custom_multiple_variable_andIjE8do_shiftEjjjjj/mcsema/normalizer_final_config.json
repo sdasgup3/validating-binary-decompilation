@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -mem2reg -aa -instcombine -globals-aa -prune-eh -correlated-propagation -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -correlated-propagation -aa -memdep -aa -postdomtree -aa -instcombine -barrier -globals-aa -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -aa

@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt
+ -targetlibinfo -instcombine -prune-eh -inline -sroa -early-cse -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -memcpyopt -instcombine -jump-threading -scalar-evolution -adce -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

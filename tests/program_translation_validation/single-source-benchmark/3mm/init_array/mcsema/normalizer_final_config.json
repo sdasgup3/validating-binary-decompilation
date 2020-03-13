@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -dse -instcombine
+ -tti -assumption-cache-tracker -globalopt -mem2reg -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -instcombine -simplifycfg -reassociate -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -gvn -sccp -instcombine -jump-threading -dse -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

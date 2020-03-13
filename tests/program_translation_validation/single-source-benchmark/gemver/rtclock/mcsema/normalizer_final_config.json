@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -dse -tailcallelim -instcombine -memcpyopt
+ -tti -aa -instcombine -simplifycfg -globals-aa -correlated-propagation -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -aa -instcombine -correlated-propagation -aa -memdep -dse -aa -simplifycfg -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa

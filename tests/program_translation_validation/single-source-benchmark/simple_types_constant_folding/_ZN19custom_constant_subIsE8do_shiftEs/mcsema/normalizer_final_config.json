@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -instcombine
+ -tti -mem2reg -basicaa -simplifycfg -globals-aa -inline -argpromotion -lazy-value-info -simplifycfg -basicaa -simplifycfg -basicaa -simplifycfg -basicaa -mldst-motion -gvn -basicaa -bdce -basicaa -lazy-value-info -basicaa -dse -simplifycfg -basicaa -barrier -elim-avail-extern -globals-aa -float2int -basicaa -basicaa -basicaa -simplifycfg -basicaa -globaldce -constmerge -basicaa

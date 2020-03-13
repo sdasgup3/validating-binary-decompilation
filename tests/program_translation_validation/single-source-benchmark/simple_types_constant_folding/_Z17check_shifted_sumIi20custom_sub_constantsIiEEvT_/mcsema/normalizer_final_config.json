@@ -1,1 +1,1 @@
- -licm -gvn -dse -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -mem2reg -deadargelim -instcombine -globals-aa -sroa -correlated-propagation -instcombine -tailcallelim -instcombine -gvn -memcpyopt -demanded-bits -bdce -instcombine -jump-threading -correlated-propagation -postdomtree -instcombine -barrier -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes

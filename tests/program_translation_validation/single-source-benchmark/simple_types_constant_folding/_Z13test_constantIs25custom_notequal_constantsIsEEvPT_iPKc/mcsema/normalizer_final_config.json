@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -basicaa -instcombine -globals-aa -inline -sroa -lazy-value-info -correlated-propagation -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -dse -postdomtree -basicaa -instcombine -barrier -elim-avail-extern -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -mem2reg -instcombine -inline -argpromotion -early-cse -correlated-propagation -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -indvars -sccp -bdce -instcombine -correlated-propagation -dse -scalar-evolution -licm -postdomtree -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -scalar-evolution

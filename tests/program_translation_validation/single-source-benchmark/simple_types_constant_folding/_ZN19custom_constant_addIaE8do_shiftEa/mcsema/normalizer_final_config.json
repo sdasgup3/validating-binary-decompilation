@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse
+ -targetlibinfo -scoped-noalias -basiccg -inline -argpromotion -sroa -lazy-value-info -licm -gvn -sccp -bdce -lazy-value-info -dse -licm -adce -barrier -basiccg -licm -instsimplify

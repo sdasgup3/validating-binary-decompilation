@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tti -scoped-noalias -globalopt -deadargelim -instcombine -simplifycfg -prune-eh -inline -early-cse -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -instcombine -correlated-propagation -licm -postdomtree -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify

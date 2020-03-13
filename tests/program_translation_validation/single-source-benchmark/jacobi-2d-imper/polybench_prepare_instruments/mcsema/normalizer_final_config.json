@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -targetlibinfo -tti -tbaa -domtree -domtree -instcombine -argpromotion -domtree -sroa -lazy-value-info -domtree -instcombine -reassociate -domtree -domtree -instcombine -indvars -mldst-motion -gvn -domtree -bdce -instcombine -lazy-value-info -domtree -dse -adce -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree

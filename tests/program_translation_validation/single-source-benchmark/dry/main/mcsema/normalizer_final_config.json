@@ -1,1 +1,1 @@
- -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tbaa -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -globals-aa -early-cse -simplifycfg -aa -instcombine -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -aa -instcombine -aa -dse -aa -postdomtree -adce -simplifycfg -aa -instcombine -barrier -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -aa

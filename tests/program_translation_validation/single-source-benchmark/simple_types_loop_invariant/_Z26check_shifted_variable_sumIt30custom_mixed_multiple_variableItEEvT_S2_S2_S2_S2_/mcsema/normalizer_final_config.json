@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tbaa -mem2reg -deadargelim -aa -instcombine -prune-eh -argpromotion -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -correlated-propagation -aa -dse -aa -postdomtree -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -constmerge -aa

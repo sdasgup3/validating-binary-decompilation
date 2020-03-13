@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tti -tbaa -deadargelim -instcombine -globals-aa -prune-eh -sroa -instcombine -tailcallelim -licm -instcombine -indvars -gvn -instcombine -jump-threading -dse -licm -adce -instcombine -barrier -globals-aa -float2int -instcombine -instcombine -instcombine -licm

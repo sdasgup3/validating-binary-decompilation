@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -globalopt -domtree -domtree -prune-eh -inline -argpromotion -domtree -sroa -domtree -libcalls-shrinkwrap -domtree -domtree -gvn -memcpyopt -domtree -bdce -domtree -dse -postdomtree -domtree -domtree -domtree -strip-dead-prototypes -globaldce -domtree

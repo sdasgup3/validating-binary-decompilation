@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -aa -dse -instcombine
+ -tti -scoped-noalias -mem2reg -instcombine -prune-eh -correlated-propagation -instcombine -tailcallelim -reassociate -licm -instcombine -indvars -gvn -demanded-bits -bdce -instcombine -correlated-propagation -licm -postdomtree -instcombine -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce -constmerge

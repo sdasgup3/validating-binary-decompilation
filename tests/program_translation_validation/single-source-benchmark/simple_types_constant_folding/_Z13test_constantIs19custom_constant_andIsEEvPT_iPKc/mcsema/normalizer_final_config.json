@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -instcombine
+ -targetlibinfo -tti -globalopt -domtree -domtree -instcombine -globals-aa -prune-eh -domtree -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -mldst-motion -gvn -memcpyopt -domtree -demanded-bits -bdce -instcombine -domtree -dse -postdomtree -domtree -instcombine -barrier -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -constmerge -domtree -instsimplify

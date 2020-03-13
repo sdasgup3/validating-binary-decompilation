@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -aa -dse -libcalls-shrinkwrap
+ -targetlibinfo -tbaa -assumption-cache-tracker -globalopt -basicaa -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -basicaa -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -indvars -mldst-motion -gvn -basicaa -demanded-bits -basicaa -jump-threading -basicaa -dse -simplifycfg -basicaa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -basicaa -constmerge -basicaa

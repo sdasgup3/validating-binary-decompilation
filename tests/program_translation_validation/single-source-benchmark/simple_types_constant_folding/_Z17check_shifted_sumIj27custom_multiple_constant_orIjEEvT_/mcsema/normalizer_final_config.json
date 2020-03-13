@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -deadargelim -aa -instcombine -basiccg -prune-eh -argpromotion -early-cse -lazy-value-info -aa -instcombine -tailcallelim -aa -licm -aa -instcombine -indvars -aa -aa -aa -instcombine -lazy-value-info -aa -dse -aa -licm -adce -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -aa

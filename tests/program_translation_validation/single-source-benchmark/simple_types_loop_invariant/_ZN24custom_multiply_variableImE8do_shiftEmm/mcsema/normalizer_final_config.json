@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -deadargelim
+ -targetlibinfo -tbaa -assumption-cache-tracker -deadargelim -instcombine -basiccg -inline -early-cse -instcombine -libcalls-shrinkwrap -instcombine -indvars -mldst-motion -demanded-bits -instcombine -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -constmerge

@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -instcombine -memcpyopt
+ -tbaa -assumption-cache-tracker -mem2reg -instcombine -simplifycfg -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -demanded-bits -instcombine -correlated-propagation -licm -postdomtree -simplifycfg -instcombine -elim-avail-extern -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -constmerge

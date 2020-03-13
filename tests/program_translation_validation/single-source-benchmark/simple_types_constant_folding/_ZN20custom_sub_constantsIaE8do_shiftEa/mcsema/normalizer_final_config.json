@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -memcpyopt
+ -globalopt -domtree -mem2reg -domtree -instcombine -globals-aa -inline -domtree -early-cse -correlated-propagation -domtree -instcombine -reassociate -domtree -domtree -instcombine -mldst-motion -memdep -gvn -memdep -sccp -domtree -bdce -instcombine -jump-threading -correlated-propagation -domtree -memdep -domtree -instcombine -barrier -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree -instsimplify

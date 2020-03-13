@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse
+ -tti -scoped-noalias -globalopt -mem2reg -aa -instcombine -prune-eh -early-cse -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -aa -memcpyopt -demanded-bits -aa -instcombine -aa -dse -aa -postdomtree -aa -instcombine -barrier -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -aa

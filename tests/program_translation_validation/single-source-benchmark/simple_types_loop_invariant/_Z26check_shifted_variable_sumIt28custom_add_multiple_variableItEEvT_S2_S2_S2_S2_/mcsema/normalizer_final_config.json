@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -assumption-cache-tracker -globalopt -domtree -deadargelim -domtree -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -domtree -simplifycfg -domtree -instcombine -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -gvn -sccp -domtree -demanded-bits -instcombine -domtree -dse -simplifycfg -domtree -instcombine -basiccg -globals-aa -float2int -domtree -demanded-bits -instcombine -demanded-bits -simplifycfg -domtree -instcombine -instcombine -domtree

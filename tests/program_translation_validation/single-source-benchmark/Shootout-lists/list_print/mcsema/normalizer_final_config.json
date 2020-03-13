@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -instcombine
+ -scoped-noalias -deadargelim -basicaa -instcombine -simplifycfg -globals-aa -prune-eh -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -mldst-motion -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -basicaa -memdep -licm -simplifycfg -basicaa -instcombine -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa -instsimplify

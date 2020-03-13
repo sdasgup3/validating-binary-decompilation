@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -tailcallelim -instcombine
+ -tbaa -globalopt -mem2reg -aa -instcombine -simplifycfg -basiccg -inline -argpromotion -simplifycfg -aa -instcombine -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -aa -instcombine -jump-threading -aa -aa -simplifycfg -aa -instcombine -barrier -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine
+ -targetlibinfo -mem2reg -globals-aa -prune-eh -lazy-value-info -tailcallelim -reassociate -scalar-evolution -scalar-evolution -indvars -gvn -demanded-bits -lazy-value-info -dse -scalar-evolution -barrier -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -dse
+ -tti -assumption-cache-tracker -aa -instcombine -aa -instcombine -aa -scalar-evolution -aa -instcombine -scalar-evolution -mldst-motion -aa -gvn -aa -aa -instcombine -jump-threading -aa -aa -scalar-evolution -postdomtree -adce -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -aa -scalar-evolution

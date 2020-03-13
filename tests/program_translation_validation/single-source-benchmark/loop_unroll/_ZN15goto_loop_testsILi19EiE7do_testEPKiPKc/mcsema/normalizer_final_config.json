@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -basicaa -dse -memcpyopt
+ -tti -globalopt -domtree -deadargelim -domtree -instcombine -simplifycfg -basiccg -argpromotion -domtree -early-cse -correlated-propagation -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -sccp -domtree -instcombine -correlated-propagation -domtree -licm -simplifycfg -domtree -instcombine -basiccg -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree -instsimplify

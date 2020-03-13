@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -deadargelim -memcpyopt
+ -tti -tbaa -domtree -deadargelim -domtree -instcombine -prune-eh -argpromotion -domtree -early-cse -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -gvn -domtree -bdce -instcombine -domtree -adce -domtree -instcombine -float2int -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

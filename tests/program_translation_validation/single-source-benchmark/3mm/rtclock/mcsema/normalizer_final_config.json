@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -memdep -dse -deadargelim
+ -targetlibinfo -tbaa -globalopt -domtree -deadargelim -domtree -prune-eh -domtree -sroa -domtree -tailcallelim -domtree -domtree -memdep -gvn -memdep -sccp -domtree -demanded-bits -bdce -jump-threading -domtree -memdep -dse -domtree -float2int -domtree -demanded-bits -demanded-bits -domtree -domtree

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine -mem2reg -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine
+ -tti -mem2reg -deadargelim -instcombine -basiccg -argpromotion -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -instcombine -memdep -gvn -memdep -demanded-bits -bdce -instcombine -lazy-value-info -jump-threading -correlated-propagation -memdep -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -instsimplify

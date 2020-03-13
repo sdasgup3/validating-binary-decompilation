@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -instcombine
+ -tbaa -assumption-cache-tracker -domtree -mem2reg -deadargelim -domtree -basicaa -instcombine -globals-aa -domtree -sroa -lazy-value-info -domtree -basicaa -instcombine -domtree -basicaa -licm -domtree -basicaa -instcombine -indvars -gvn -basicaa -memcpyopt -sccp -domtree -basicaa -instcombine -lazy-value-info -domtree -basicaa -dse -licm -postdomtree -domtree -basicaa -instcombine -barrier -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -licm -domtree -basicaa -instsimplify

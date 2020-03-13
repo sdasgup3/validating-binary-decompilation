@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine -gvn -globalopt -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -tti -tbaa -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes

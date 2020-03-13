@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -instcombine
+ -scoped-noalias -globalopt -aa -instcombine -aa -instcombine -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -aa -instcombine -aa -memdep -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa

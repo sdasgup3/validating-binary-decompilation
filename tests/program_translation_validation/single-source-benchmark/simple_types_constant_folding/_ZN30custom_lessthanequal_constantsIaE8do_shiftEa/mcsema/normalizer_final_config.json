@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -deadargelim
+ -mem2reg -deadargelim -instcombine -basiccg -globals-aa -sroa -early-cse -instcombine -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -mldst-motion -gvn -demanded-bits -instcombine -scalar-evolution -licm -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

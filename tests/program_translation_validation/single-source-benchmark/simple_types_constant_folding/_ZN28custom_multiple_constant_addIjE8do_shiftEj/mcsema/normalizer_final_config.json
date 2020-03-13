@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -dse -instcombine
+ -targetlibinfo -tti -scoped-noalias -mem2reg -instcombine -basiccg -prune-eh -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -gvn -demanded-bits -instcombine -scalar-evolution -postdomtree -adce -instcombine -basiccg -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

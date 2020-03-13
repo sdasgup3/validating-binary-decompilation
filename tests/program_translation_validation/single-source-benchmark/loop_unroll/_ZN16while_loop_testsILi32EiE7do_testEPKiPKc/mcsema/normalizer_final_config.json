@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -aa -dse
+ -targetlibinfo -tti -domtree -deadargelim -domtree -aa -instcombine -basiccg -inline -domtree -early-cse -lazy-value-info -domtree -aa -instcombine -reassociate -domtree -aa -licm -domtree -aa -instcombine -indvars -aa -aa -domtree -bdce -aa -instcombine -lazy-value-info -jump-threading -domtree -aa -aa -licm -domtree -aa -instcombine -basiccg -float2int -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -globaldce -constmerge -domtree -aa -instsimplify

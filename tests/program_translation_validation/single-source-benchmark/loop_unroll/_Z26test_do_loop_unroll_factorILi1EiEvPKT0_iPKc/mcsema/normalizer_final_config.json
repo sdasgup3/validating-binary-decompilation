@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -memdep -dse -instcombine
+ -assumption-cache-tracker -globalopt -mem2reg -instcombine -basiccg -inline -sroa -correlated-propagation -instcombine -licm -instcombine -mldst-motion -gvn -demanded-bits -instcombine -correlated-propagation -dse -licm -adce -instcombine -elim-avail-extern -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -instsimplify

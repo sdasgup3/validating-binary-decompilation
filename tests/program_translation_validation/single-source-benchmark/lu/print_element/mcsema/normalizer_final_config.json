@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -assumption-cache-tracker -prune-eh -sroa -early-cse -correlated-propagation -tailcallelim -licm -memdep -gvn -memdep -bdce -correlated-propagation -memdep -dse -licm -postdomtree -adce -barrier -licm

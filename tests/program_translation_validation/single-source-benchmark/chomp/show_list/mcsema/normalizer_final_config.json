@@ -1,1 +1,1 @@
- -licm -gvn -dse -tailcallelim -instcombine
+ -scoped-noalias -domtree -deadargelim -domtree -instcombine -prune-eh -inline -domtree -domtree -instcombine -reassociate -domtree -domtree -instcombine -memdep -gvn -memdep -sccp -domtree -demanded-bits -instcombine -jump-threading -domtree -memdep -dse -domtree -instcombine -elim-avail-extern -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -constmerge -domtree

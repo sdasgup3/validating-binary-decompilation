@@ -1,1 +1,1 @@
- -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tbaa -mem2reg -deadargelim -instcombine -basiccg -inline -early-cse -instcombine -tailcallelim -reassociate -instcombine -indvars -mldst-motion -memdep -gvn -memdep -memcpyopt -sccp -bdce -instcombine -jump-threading -memdep -instcombine -basiccg -float2int -instcombine -instcombine -instcombine

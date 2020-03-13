@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -memcpyopt
+ -tti -assumption-cache-tracker -globalopt -domtree -deadargelim -domtree -instcombine -basiccg -domtree -correlated-propagation -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -jump-threading -correlated-propagation -domtree -dse -licm -postdomtree -adce -domtree -instcombine -barrier -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -domtree

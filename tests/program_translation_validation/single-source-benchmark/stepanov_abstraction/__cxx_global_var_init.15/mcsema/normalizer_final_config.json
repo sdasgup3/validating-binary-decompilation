@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -assumption-cache-tracker -deadargelim -sroa -early-cse -correlated-propagation -indvars -gvn -correlated-propagation -dse -adce -float2int -constmerge -instsimplify

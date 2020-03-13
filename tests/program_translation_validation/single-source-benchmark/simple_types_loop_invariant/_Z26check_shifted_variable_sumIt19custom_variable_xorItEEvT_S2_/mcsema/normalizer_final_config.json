@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -deadargelim -instcombine -simplifycfg -basiccg -inline -sroa -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -gvn -instcombine -dse -scalar-evolution -licm -postdomtree -adce -simplifycfg -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

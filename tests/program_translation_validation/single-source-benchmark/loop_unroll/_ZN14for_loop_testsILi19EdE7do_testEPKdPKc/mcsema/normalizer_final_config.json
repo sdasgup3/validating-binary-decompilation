@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse
+ -targetlibinfo -tti -scoped-noalias -instcombine -inline -instcombine -reassociate -licm -instcombine -indvars -mldst-motion -gvn -memcpyopt -instcombine -dse -licm -postdomtree -instcombine -barrier -instcombine -instcombine -instcombine -licm -instsimplify

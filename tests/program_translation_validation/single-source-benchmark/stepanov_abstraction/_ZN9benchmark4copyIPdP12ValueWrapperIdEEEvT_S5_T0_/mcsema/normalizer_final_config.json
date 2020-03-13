@@ -1,1 +1,1 @@
- -licm -gvn -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -scoped-noalias -mem2reg -instcombine -basiccg -globals-aa -sroa -early-cse -correlated-propagation -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -indvars -memdep -memdep -sccp -bdce -instcombine -correlated-propagation -memdep -scalar-evolution -licm -instcombine -barrier -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -scalar-evolution

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -aa -dse
+ -targetlibinfo -tbaa -scoped-noalias -globalopt -domtree -mem2reg -domtree -simplifycfg -basiccg -domtree -sroa -simplifycfg -domtree -simplifycfg -domtree -licm -simplifycfg -domtree -gvn -memcpyopt -domtree -domtree -dse -licm -postdomtree -simplifycfg -domtree -basiccg -domtree -simplifycfg -domtree -licm -globaldce -domtree -instsimplify

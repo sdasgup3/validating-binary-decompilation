@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -targetlibinfo -tti -scoped-noalias -deadargelim -instcombine -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -instcombine -sccp -demanded-bits -bdce -instcombine -lazy-value-info -correlated-propagation -dse -instcombine -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify

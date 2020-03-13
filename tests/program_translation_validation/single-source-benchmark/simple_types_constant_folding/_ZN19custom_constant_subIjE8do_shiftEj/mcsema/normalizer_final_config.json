@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim
+ -targetlibinfo -tti -tbaa -mem2reg -globals-aa -correlated-propagation -licm -memdep -gvn -memdep -correlated-propagation -memdep -dse -licm -globals-aa -licm -globaldce -instsimplify

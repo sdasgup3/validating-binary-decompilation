@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -basicaa -globals-aa -inline -early-cse -basicaa -reassociate -basicaa -basicaa -indvars -gvn -basicaa -sccp -demanded-bits -basicaa -basicaa -dse -basicaa -barrier -globals-aa -float2int -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -basicaa -strip-dead-prototypes -globaldce -basicaa

@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -instcombine -simplifycfg -inline -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -instcombine -dse -postdomtree -adce -simplifycfg -instcombine -barrier -float2int -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify

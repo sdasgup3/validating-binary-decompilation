@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -assumption-cache-tracker -instcombine -inline -argpromotion -correlated-propagation -instcombine -reassociate -instcombine -gvn -bdce -instcombine -correlated-propagation -adce -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge

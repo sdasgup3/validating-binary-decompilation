@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim
+ -targetlibinfo -scoped-noalias -deadargelim -basicaa -instcombine -basiccg -inline -early-cse -lazy-value-info -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -basicaa -memdep -demanded-bits -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -memdep -adce -basicaa -instcombine -barrier -basiccg -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa -instsimplify

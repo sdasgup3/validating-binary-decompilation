@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -domtree -domtree -instcombine -basiccg -inline -argpromotion -domtree -sroa -early-cse -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -gvn -memcpyopt -domtree -bdce -instcombine -jump-threading -correlated-propagation -domtree -domtree -instcombine -barrier -basiccg -domtree -instcombine -domtree -instcombine -instcombine -domtree

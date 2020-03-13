@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -scoped-noalias -mem2reg -basicaa -instcombine -globals-aa -early-cse -correlated-propagation -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -basicaa -memcpyopt -basicaa -instcombine -jump-threading -correlated-propagation -basicaa -dse -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -constmerge -basicaa

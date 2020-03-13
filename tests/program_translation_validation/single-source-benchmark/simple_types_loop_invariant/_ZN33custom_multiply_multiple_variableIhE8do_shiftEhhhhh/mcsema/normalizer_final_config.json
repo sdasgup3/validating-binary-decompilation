@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -aa -dse -memcpyopt
+ -tbaa -scoped-noalias -mem2reg -deadargelim -aa -globals-aa -argpromotion -sroa -aa -aa -scalar-evolution -aa -scalar-evolution -indvars -mldst-motion -aa -gvn -aa -memcpyopt -demanded-bits -aa -jump-threading -aa -dse -aa -scalar-evolution -postdomtree -aa -globals-aa -aa -scalar-evolution -scalar-evolution -aa -demanded-bits -scalar-evolution -aa -aa -scalar-evolution -demanded-bits -aa -scalar-evolution -scalar-evolution -constmerge -aa -scalar-evolution

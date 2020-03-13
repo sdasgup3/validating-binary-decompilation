@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -deadargelim -memcpyopt
+ -targetlibinfo -globalopt -mem2reg -simplifycfg -globals-aa -early-cse -simplifycfg -simplifycfg -reassociate -simplifycfg -gvn -memcpyopt -sccp -bdce -jump-threading -dse -postdomtree -simplifycfg -globals-aa -float2int -simplifycfg -globaldce

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -dse -tailcallelim
+ -tti -assumption-cache-tracker -domtree -domtree -aa -instcombine -prune-eh -domtree -sroa -correlated-propagation -domtree -aa -instcombine -tailcallelim -reassociate -domtree -aa -domtree -aa -instcombine -aa -gvn -aa -domtree -demanded-bits -aa -instcombine -correlated-propagation -domtree -aa -aa -postdomtree -adce -domtree -aa -instcombine -elim-avail-extern -float2int -domtree -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -domtree -aa -instcombine -instcombine -domtree -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -dse -deadargelim
+ -tti -scoped-noalias -mem2reg -basicaa -basiccg -prune-eh -sroa -lazy-value-info -basicaa -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -basicaa -indvars -gvn -basicaa -basicaa -lazy-value-info -basicaa -dse -basicaa -barrier -basiccg -float2int -basicaa -basicaa -basicaa -basicaa -globaldce -constmerge -basicaa

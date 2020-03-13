@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -dse -instcombine
+ -targetlibinfo -tti -tbaa -aa -instcombine -inline -argpromotion -lazy-value-info -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -lazy-value-info -correlated-propagation -aa -dse -aa -adce -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa -instsimplify

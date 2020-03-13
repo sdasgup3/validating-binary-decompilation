@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -assumption-cache-tracker -globalopt -domtree -deadargelim -domtree -aa -instcombine -prune-eh -inline -domtree -early-cse -correlated-propagation -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -aa -aa -domtree -aa -instcombine -correlated-propagation -domtree -aa -aa -postdomtree -adce -domtree -aa -instcombine -barrier -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -globaldce -domtree -aa -instsimplify

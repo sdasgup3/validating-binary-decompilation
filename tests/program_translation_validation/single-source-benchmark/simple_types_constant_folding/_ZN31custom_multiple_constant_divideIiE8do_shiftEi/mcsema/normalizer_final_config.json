@@ -1,1 +1,1 @@
- -licm -gvn -dse -instcombine
+ -tti -scoped-noalias -assumption-cache-tracker -mem2reg -aa -instcombine -simplifycfg -prune-eh -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -jump-threading -aa -memdep -dse -aa -licm -postdomtree -adce -simplifycfg -aa -instcombine -barrier -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa

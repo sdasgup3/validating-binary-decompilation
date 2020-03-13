@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -deadargelim -instcombine
+ -targetlibinfo -tbaa -globalopt -basicaa -aa -instcombine -globals-aa -lazy-value-info -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -mldst-motion -aa -memdep -gvn -basicaa -aa -memdep -sccp -bdce -basicaa -aa -instcombine -lazy-value-info -jump-threading -basicaa -aa -memdep -dse -aa -postdomtree -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -basicaa -aa

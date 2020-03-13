@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -tti -mem2reg -deadargelim -instcombine -basiccg -globals-aa -argpromotion -sroa -instcombine -libcalls-shrinkwrap -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -demanded-bits -instcombine -scalar-evolution -instcombine -basiccg -globals-aa -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution -instsimplify

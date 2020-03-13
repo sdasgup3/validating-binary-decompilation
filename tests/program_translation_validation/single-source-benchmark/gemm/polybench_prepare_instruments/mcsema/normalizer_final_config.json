@@ -1,1 +1,1 @@
- -gvn -dse -instcombine
+ -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -sroa -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memcpyopt -demanded-bits -instcombine -jump-threading -correlated-propagation -dse -postdomtree -simplifycfg -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -globaldce

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -instcombine
+ -globalopt -mem2reg -aa -instcombine -prune-eh -inline -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -licm -aa -instcombine -aa -gvn -aa -demanded-bits -aa -instcombine -lazy-value-info -aa -aa -licm -postdomtree -adce -aa -instcombine -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -aa

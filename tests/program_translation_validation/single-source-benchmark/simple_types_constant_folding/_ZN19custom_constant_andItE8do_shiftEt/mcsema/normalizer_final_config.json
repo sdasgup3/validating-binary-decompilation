@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -deadargelim -instcombine
+ -deadargelim -basicaa -instcombine -argpromotion -lazy-value-info -correlated-propagation -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -gvn -basicaa -memcpyopt -bdce -basicaa -instcombine -lazy-value-info -jump-threading -correlated-propagation -basicaa -dse -postdomtree -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

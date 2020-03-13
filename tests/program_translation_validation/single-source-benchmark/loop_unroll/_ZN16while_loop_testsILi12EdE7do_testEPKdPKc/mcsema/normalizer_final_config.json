@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -deadargelim -memcpyopt
+ -targetlibinfo -scoped-noalias -aa -argpromotion -sroa -aa -libcalls-shrinkwrap -tailcallelim -aa -scalar-evolution -licm -aa -scalar-evolution -aa -gvn -aa -memcpyopt -bdce -aa -jump-threading -aa -dse -aa -scalar-evolution -licm -aa -elim-avail-extern -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -licm -aa -scalar-evolution

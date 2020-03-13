@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -memdep -dse -tailcallelim
+ -tti -scoped-noalias -mem2reg -globals-aa -prune-eh -inline -lazy-value-info -correlated-propagation -libcalls-shrinkwrap -indvars -gvn -lazy-value-info -jump-threading -correlated-propagation -dse -postdomtree -elim-avail-extern -globals-aa -globaldce -constmerge

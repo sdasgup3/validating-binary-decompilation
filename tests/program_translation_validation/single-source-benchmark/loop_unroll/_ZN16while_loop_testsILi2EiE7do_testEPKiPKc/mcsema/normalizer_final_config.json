@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse
+ -scoped-noalias -domtree -domtree -aa -instcombine -globals-aa -inline -domtree -domtree -aa -instcombine -domtree -aa -domtree -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -domtree -aa -instcombine -jump-threading -domtree -aa -memdep -aa -postdomtree -domtree -aa -instcombine -globals-aa -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -domtree -aa -instsimplify

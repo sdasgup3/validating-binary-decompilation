@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -instcombine -globals-aa -inline -instcombine -reassociate -licm -instcombine -memdep -gvn -memdep -demanded-bits -instcombine -memdep -dse -licm -postdomtree -instcombine -barrier -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -constmerge -instsimplify

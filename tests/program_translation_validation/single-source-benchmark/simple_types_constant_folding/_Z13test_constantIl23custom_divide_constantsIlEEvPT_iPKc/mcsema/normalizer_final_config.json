@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -tti -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -prune-eh -domtree -early-cse -domtree -instcombine -reassociate -domtree -domtree -instcombine -gvn -domtree -demanded-bits -bdce -instcombine -domtree -dse -adce -domtree -instcombine -barrier -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree

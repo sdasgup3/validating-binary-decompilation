@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap
+ -assumption-cache-tracker -domtree -deadargelim -domtree -aa -instcombine -basiccg -globals-aa -domtree -domtree -aa -instcombine -tailcallelim -reassociate -domtree -aa -domtree -aa -instcombine -indvars -aa -gvn -aa -domtree -aa -instcombine -domtree -aa -aa -domtree -aa -instcombine -basiccg -globals-aa -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -domtree -aa

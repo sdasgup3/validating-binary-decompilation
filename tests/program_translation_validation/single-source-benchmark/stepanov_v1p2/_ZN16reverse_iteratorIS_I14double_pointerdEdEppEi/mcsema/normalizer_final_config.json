@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -tbaa -aa -instcombine -inline -argpromotion -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -lazy-value-info -aa -memdep -aa -aa -instcombine -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -aa

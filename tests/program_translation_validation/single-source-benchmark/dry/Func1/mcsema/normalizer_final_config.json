@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -tailcallelim
+ -tti -scoped-noalias -domtree -mem2reg -domtree -instcombine -simplifycfg -inline -argpromotion -domtree -lazy-value-info -simplifycfg -domtree -instcombine -tailcallelim -simplifycfg -domtree -simplifycfg -domtree -instcombine -indvars -mldst-motion -memdep -gvn -memdep -memcpyopt -domtree -instcombine -lazy-value-info -domtree -memdep -dse -simplifycfg -domtree -instcombine -barrier -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -domtree

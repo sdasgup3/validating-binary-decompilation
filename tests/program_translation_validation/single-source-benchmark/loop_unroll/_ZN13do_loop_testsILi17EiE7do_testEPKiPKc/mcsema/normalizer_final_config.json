@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -memcpyopt
+ -scoped-noalias -mem2reg -basicaa -instcombine -prune-eh -early-cse -correlated-propagation -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -demanded-bits -basicaa -instcombine -correlated-propagation -basicaa -postdomtree -adce -basicaa -instcombine -barrier -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa

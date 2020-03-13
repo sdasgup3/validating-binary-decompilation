@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -memdep -dse -instcombine
+ -assumption-cache-tracker -globalopt -domtree -domtree -instcombine -basiccg -argpromotion -domtree -domtree -instcombine -reassociate -domtree -domtree -instcombine -indvars -memdep -gvn -memdep -memcpyopt -domtree -bdce -instcombine -jump-threading -domtree -memdep -dse -postdomtree -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

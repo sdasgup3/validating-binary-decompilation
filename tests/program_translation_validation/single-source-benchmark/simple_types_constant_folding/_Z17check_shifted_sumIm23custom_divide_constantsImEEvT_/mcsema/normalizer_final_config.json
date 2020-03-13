@@ -1,1 +1,1 @@
- -gvn -aa -deadargelim -tailcallelim -instcombine -gvn -aa -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -globalopt -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -basiccg -sroa -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -jump-threading -basicaa -memdep -simplifycfg -basicaa -instcombine -elim-avail-extern -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa

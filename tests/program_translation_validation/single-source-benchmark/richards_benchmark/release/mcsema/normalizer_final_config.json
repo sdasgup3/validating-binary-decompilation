@@ -1,1 +1,1 @@
- -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -globalopt -deadargelim -aa -instcombine -globals-aa -lazy-value-info -aa -instcombine -aa -aa -instcombine -indvars -aa -gvn -aa -demanded-bits -aa -instcombine -lazy-value-info -aa -dse -aa -aa -instcombine -elim-avail-extern -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -aa -instsimplify

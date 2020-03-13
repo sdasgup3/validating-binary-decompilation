@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -globalopt -argpromotion -sroa -tailcallelim -gvn -memcpyopt -dse -adce

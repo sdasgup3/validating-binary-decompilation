@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -targetlibinfo -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -globals-aa -domtree -domtree -instcombine -domtree -domtree -instcombine -mldst-motion -gvn -sccp -domtree -instcombine -jump-threading -domtree -postdomtree -domtree -instcombine -elim-avail-extern -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree -instsimplify

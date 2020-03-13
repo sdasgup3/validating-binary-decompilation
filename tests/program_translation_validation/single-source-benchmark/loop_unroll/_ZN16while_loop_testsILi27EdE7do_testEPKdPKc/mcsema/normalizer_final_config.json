@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -dse -instcombine -memcpyopt
+ -tti -globalopt -basicaa -instcombine -inline -argpromotion -basicaa -instcombine -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -basicaa -instcombine -basicaa -memdep -adce -basicaa -instcombine -elim-avail-extern -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa -instsimplify

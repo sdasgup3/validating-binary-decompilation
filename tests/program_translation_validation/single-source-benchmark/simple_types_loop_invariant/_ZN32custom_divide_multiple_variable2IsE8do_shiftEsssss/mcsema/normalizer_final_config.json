@@ -1,1 +1,1 @@
- -gvn -aa -dse -deadargelim -instcombine
+ -basicaa -aa -instcombine -basiccg -early-cse -basicaa -aa -instcombine -libcalls-shrinkwrap -basicaa -aa -licm -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -basicaa -aa -instcombine -basicaa -aa -memdep -aa -licm -postdomtree -basicaa -aa -instcombine -elim-avail-extern -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -basicaa -aa

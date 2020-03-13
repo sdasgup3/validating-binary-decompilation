@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -globalopt -instcombine -basiccg -prune-eh -sroa -instcombine -reassociate -instcombine -gvn -sccp -bdce -instcombine -jump-threading -dse -postdomtree -instcombine -barrier -basiccg -float2int -instcombine -instcombine -instcombine -globaldce -constmerge

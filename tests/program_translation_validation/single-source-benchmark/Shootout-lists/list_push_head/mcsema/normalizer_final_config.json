@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine
+ -tbaa -aa -instcombine -basiccg -globals-aa -inline -argpromotion -correlated-propagation -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -sccp -demanded-bits -bdce -aa -instcombine -correlated-propagation -aa -aa -aa -instcombine -basiccg -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify

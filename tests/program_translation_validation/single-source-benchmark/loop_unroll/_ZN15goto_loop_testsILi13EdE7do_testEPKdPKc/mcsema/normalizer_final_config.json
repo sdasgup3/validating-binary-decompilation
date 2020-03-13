@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap
+ -assumption-cache-tracker -mem2reg -deadargelim -simplifycfg -globals-aa -inline -sroa -lazy-value-info -correlated-propagation -simplifycfg -tailcallelim -simplifycfg -reassociate -simplifycfg -gvn -demanded-bits -lazy-value-info -correlated-propagation -dse -postdomtree -adce -simplifycfg -globals-aa -demanded-bits -demanded-bits -simplifycfg -strip-dead-prototypes -constmerge

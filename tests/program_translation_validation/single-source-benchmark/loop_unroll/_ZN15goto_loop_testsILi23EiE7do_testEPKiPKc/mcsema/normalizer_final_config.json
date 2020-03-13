@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -tti -domtree -domtree -instcombine -simplifycfg -basiccg -inline -argpromotion -domtree -lazy-value-info -simplifycfg -domtree -instcombine -simplifycfg -domtree -simplifycfg -domtree -instcombine -gvn -memcpyopt -sccp -domtree -instcombine -lazy-value-info -domtree -simplifycfg -domtree -instcombine -basiccg -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -strip-dead-prototypes -globaldce -domtree -instsimplify

@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -mem2reg -instcombine -simplifycfg -argpromotion -sroa -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -memdep -gvn -memdep -bdce -instcombine -jump-threading -memdep -dse -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution

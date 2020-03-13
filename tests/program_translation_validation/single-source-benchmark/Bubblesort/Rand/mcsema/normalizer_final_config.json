@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -tti -scoped-noalias -assumption-cache-tracker -aa -simplifycfg -basiccg -sroa -simplifycfg -aa -simplifycfg -aa -simplifycfg -aa -aa -gvn -aa -bdce -aa -jump-threading -aa -dse -aa -postdomtree -simplifycfg -aa -basiccg -float2int -aa -aa -aa -aa -simplifycfg -aa -globaldce -aa

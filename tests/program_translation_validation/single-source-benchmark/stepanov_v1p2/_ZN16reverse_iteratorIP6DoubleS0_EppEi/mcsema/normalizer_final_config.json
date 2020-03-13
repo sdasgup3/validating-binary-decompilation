@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -tbaa -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -sroa -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -memdep -instcombine -memdep -adce -simplifycfg -instcombine -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -instsimplify

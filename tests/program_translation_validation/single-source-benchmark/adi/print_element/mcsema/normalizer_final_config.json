@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -memdep -dse -tailcallelim -instcombine
+ -mem2reg -aa -simplifycfg -prune-eh -correlated-propagation -simplifycfg -aa -simplifycfg -aa -licm -simplifycfg -aa -aa -gvn -aa -sccp -demanded-bits -aa -jump-threading -correlated-propagation -aa -dse -aa -licm -simplifycfg -aa -barrier -aa -aa -demanded-bits -aa -aa -demanded-bits -simplifycfg -aa -licm -aa

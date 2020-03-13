@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -tti -mem2reg -deadargelim -instcombine -globals-aa -prune-eh -argpromotion -sroa -early-cse -correlated-propagation -instcombine -reassociate -instcombine -indvars -gvn -demanded-bits -instcombine -correlated-propagation -dse -postdomtree -adce -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

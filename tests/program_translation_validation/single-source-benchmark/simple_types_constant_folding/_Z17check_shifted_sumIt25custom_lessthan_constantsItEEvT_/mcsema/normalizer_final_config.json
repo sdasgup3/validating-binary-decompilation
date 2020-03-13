@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -mem2reg -deadargelim -instcombine -simplifycfg -lazy-value-info -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -indvars -mldst-motion -gvn -memcpyopt -instcombine -lazy-value-info -correlated-propagation -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes

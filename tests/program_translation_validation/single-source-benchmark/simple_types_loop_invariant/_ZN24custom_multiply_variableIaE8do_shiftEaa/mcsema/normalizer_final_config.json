@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -tti -tbaa -scoped-noalias -basicaa -instcombine -basiccg -globals-aa -sroa -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -sccp -demanded-bits -bdce -basicaa -instcombine -basicaa -postdomtree -basicaa -instcombine -barrier -basiccg -globals-aa -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa

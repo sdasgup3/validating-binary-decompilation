@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -tbaa -assumption-cache-tracker -instcombine -inline -sroa -lazy-value-info -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -scalar-evolution -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution

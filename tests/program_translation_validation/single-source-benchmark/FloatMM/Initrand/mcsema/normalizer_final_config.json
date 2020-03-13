@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -globalopt -instcombine -simplifycfg -argpromotion -lazy-value-info -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -gvn -bdce -instcombine -lazy-value-info -scalar-evolution -adce -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -globaldce -scalar-evolution

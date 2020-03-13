@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -tailcallelim
+ -tbaa -assumption-cache-tracker -instcombine -prune-eh -instcombine -tailcallelim -instcombine -indvars -memdep -gvn -memdep -instcombine -memdep -postdomtree -adce -instcombine -barrier -instcombine -instcombine -instcombine -globaldce

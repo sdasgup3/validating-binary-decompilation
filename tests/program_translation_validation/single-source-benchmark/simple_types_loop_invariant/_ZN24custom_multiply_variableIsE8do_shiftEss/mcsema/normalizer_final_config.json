@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tbaa -globalopt -domtree -domtree -simplifycfg -basiccg -globals-aa -prune-eh -domtree -sroa -early-cse -lazy-value-info -simplifycfg -domtree -simplifycfg -domtree -licm -simplifycfg -domtree -indvars -memdep -gvn -memdep -memcpyopt -domtree -bdce -lazy-value-info -domtree -memdep -dse -licm -postdomtree -simplifycfg -domtree -basiccg -globals-aa -float2int -domtree -simplifycfg -domtree -licm -domtree -instsimplify

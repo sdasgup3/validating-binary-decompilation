@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -memdep -dse
+ -tbaa -globalopt -domtree -mem2reg -domtree -aa -simplifycfg -inline -domtree -simplifycfg -domtree -aa -libcalls-shrinkwrap -tailcallelim -simplifycfg -domtree -aa -simplifycfg -domtree -aa -aa -memdep -gvn -aa -memdep -domtree -bdce -aa -jump-threading -domtree -aa -memdep -dse -aa -postdomtree -simplifycfg -domtree -aa -barrier -domtree -aa -aa -aa -aa -simplifycfg -domtree -aa -strip-dead-prototypes -domtree -aa

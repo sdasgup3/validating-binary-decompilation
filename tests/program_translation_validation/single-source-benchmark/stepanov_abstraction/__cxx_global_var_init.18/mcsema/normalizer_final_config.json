@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -tti -tbaa -assumption-cache-tracker -globalopt -domtree -deadargelim -domtree -aa -instcombine -globals-aa -prune-eh -domtree -domtree -aa -instcombine -reassociate -domtree -aa -domtree -aa -instcombine -mldst-motion -aa -gvn -aa -sccp -domtree -demanded-bits -aa -instcombine -domtree -aa -aa -domtree -aa -instcombine -globals-aa -float2int -domtree -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -domtree -aa -instcombine -instcombine -domtree -aa

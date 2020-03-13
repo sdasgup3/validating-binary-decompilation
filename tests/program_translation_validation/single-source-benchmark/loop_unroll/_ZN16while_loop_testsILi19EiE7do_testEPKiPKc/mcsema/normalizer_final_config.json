@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -aa -instcombine -basiccg -prune-eh -sroa -aa -instcombine -aa -licm -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -aa -licm -postdomtree -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa -instsimplify

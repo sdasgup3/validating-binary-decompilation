@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -tailcallelim -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -deadargelim -instcombine -early-cse -correlated-propagation -instcombine -tailcallelim -licm -instcombine -gvn -memcpyopt -sccp -instcombine -correlated-propagation -dse -licm -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -globaldce

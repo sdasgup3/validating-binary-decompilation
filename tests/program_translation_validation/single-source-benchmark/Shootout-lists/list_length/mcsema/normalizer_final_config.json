@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine
+ -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -early-cse -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -gvn -bdce -instcombine -jump-threading -scalar-evolution -postdomtree -adce -simplifycfg -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

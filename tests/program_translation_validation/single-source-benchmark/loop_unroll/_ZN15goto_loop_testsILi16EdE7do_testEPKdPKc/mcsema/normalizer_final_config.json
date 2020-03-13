@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -instcombine
+ -aa -instcombine -simplifycfg -globals-aa -prune-eh -early-cse -lazy-value-info -correlated-propagation -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -instcombine -aa -aa -demanded-bits -bdce -aa -instcombine -lazy-value-info -correlated-propagation -aa -dse -aa -adce -simplifycfg -aa -instcombine -elim-avail-extern -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa

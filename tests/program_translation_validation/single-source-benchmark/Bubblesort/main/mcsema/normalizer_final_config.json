@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -instcombine -memcpyopt
+ -tbaa -domtree -domtree -instcombine -basiccg -prune-eh -domtree -early-cse -lazy-value-info -domtree -instcombine -tailcallelim -domtree -licm -domtree -instcombine -indvars -gvn -memcpyopt -sccp -domtree -instcombine -lazy-value-info -domtree -dse -licm -adce -domtree -instcombine -basiccg -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

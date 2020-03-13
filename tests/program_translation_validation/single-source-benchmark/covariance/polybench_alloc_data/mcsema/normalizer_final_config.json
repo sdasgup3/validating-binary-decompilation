@@ -1,1 +1,1 @@
- -gvn -globalopt -aa -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -tti -tbaa -assumption-cache-tracker -prune-eh -argpromotion -sroa -lazy-value-info -gvn -demanded-bits -bdce -lazy-value-info -dse -elim-avail-extern -demanded-bits -demanded-bits -globaldce -instsimplify

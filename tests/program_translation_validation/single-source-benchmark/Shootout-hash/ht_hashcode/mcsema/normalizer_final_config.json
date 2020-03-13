@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tti -scoped-noalias -deadargelim -instcombine -simplifycfg -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -memcpyopt -sccp -bdce -instcombine -licm -postdomtree -adce -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes

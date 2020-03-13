@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -dse -instcombine
+ -assumption-cache-tracker -mem2reg -deadargelim -basicaa -simplifycfg -argpromotion -correlated-propagation -simplifycfg -basicaa -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -indvars -gvn -basicaa -memcpyopt -demanded-bits -bdce -basicaa -correlated-propagation -basicaa -dse -simplifycfg -basicaa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -basicaa -strip-dead-prototypes -basicaa

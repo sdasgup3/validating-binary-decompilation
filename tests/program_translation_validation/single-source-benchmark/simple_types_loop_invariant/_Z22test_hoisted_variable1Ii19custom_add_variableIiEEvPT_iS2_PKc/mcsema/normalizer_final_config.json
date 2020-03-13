@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -instcombine
+ -targetlibinfo -tti -tbaa -deadargelim -instcombine -basiccg -argpromotion -sroa -early-cse -instcombine -instcombine -gvn -memcpyopt -demanded-bits -bdce -instcombine -dse -adce -instcombine -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes -constmerge

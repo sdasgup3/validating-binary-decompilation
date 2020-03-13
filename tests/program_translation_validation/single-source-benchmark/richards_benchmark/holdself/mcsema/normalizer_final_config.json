@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -aa -dse
+ -tti -assumption-cache-tracker -globalopt -domtree -domtree -instcombine -basiccg -globals-aa -prune-eh -domtree -domtree -instcombine -tailcallelim -reassociate -domtree -domtree -instcombine -memdep -gvn -memdep -memcpyopt -sccp -domtree -instcombine -jump-threading -domtree -memdep -dse -postdomtree -domtree -instcombine -basiccg -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -domtree

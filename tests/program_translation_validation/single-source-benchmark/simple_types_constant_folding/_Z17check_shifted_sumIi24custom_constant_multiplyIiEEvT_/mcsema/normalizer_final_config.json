@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -tti -mem2reg -deadargelim -aa -instcombine -basiccg -globals-aa -inline -lazy-value-info -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -lazy-value-info -aa -dse -aa -aa -instcombine -elim-avail-extern -basiccg -globals-aa -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim -memcpyopt
+ -tti -globalopt -instcombine -globals-aa -argpromotion -early-cse -lazy-value-info -instcombine -tailcallelim -scalar-evolution -licm -instcombine -scalar-evolution -sccp -instcombine -lazy-value-info -jump-threading -scalar-evolution -licm -postdomtree -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution

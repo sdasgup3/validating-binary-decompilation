@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -basicaa -instcombine -argpromotion -early-cse -lazy-value-info -correlated-propagation -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -basicaa -sccp -bdce -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -basicaa -instcombine -barrier -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa

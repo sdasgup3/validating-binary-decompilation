@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -scoped-noalias -domtree -deadargelim -domtree -instcombine -inline -argpromotion -domtree -sroa -early-cse -correlated-propagation -domtree -instcombine -libcalls-shrinkwrap -reassociate -domtree -domtree -instcombine -memdep -gvn -memdep -sccp -domtree -bdce -instcombine -jump-threading -correlated-propagation -domtree -memdep -adce -domtree -instcombine -elim-avail-extern -float2int -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree -instsimplify

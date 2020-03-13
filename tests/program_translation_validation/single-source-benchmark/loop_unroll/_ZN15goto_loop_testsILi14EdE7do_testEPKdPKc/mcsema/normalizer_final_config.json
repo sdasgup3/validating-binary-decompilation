@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -globalopt -mem2reg -deadargelim -basiccg -argpromotion -lazy-value-info -correlated-propagation -scalar-evolution -licm -scalar-evolution -indvars -mldst-motion -memdep -gvn -memdep -memcpyopt -demanded-bits -lazy-value-info -correlated-propagation -memdep -dse -scalar-evolution -licm -adce -elim-avail-extern -basiccg -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -licm -strip-dead-prototypes -scalar-evolution -instsimplify

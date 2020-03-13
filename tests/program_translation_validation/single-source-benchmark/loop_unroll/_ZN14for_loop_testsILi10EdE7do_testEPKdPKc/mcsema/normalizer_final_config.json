@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -tailcallelim -memcpyopt
+ -assumption-cache-tracker -instcombine -basiccg -prune-eh -inline -argpromotion -early-cse -correlated-propagation -instcombine -instcombine -indvars -instcombine -correlated-propagation -dse -adce -instcombine -basiccg -instcombine -instcombine -instcombine

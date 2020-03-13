@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -tti -scoped-noalias -assumption-cache-tracker -mem2reg -deadargelim -instcombine -basiccg -globals-aa -argpromotion -instcombine -reassociate -licm -instcombine -indvars -gvn -memcpyopt -instcombine -jump-threading -dse -licm -postdomtree -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -licm

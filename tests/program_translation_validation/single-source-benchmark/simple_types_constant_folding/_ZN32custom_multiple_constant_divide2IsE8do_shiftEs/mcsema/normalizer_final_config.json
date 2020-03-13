@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -aa -dse -instcombine
+ -tbaa -assumption-cache-tracker -domtree -deadargelim -domtree -basicaa -basiccg -domtree -sroa -domtree -basicaa -libcalls-shrinkwrap -reassociate -domtree -basicaa -domtree -basicaa -memdep -gvn -basicaa -memdep -domtree -bdce -basicaa -domtree -basicaa -memdep -dse -postdomtree -domtree -basicaa -basiccg -domtree -basicaa -basicaa -basicaa -domtree -basicaa -strip-dead-prototypes -domtree -basicaa

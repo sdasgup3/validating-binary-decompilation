@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -domtree -deadargelim -domtree -basicaa -instcombine -prune-eh -inline -argpromotion -domtree -early-cse -lazy-value-info -domtree -basicaa -instcombine -reassociate -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -domtree -demanded-bits -bdce -basicaa -instcombine -lazy-value-info -domtree -basicaa -postdomtree -domtree -basicaa -instcombine -domtree -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -domtree -basicaa -instcombine -instcombine -strip-dead-prototypes -domtree -basicaa

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -domtree -mem2reg -deadargelim -domtree -instcombine -globals-aa -domtree -early-cse -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -domtree -instcombine -indvars -memdep -memdep -domtree -instcombine -jump-threading -domtree -memdep -dse -domtree -instcombine -barrier -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

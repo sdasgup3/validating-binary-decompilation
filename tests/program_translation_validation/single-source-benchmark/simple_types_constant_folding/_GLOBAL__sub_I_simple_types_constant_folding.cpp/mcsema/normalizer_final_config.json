@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -dse -tailcallelim -memcpyopt
+ -tti -tbaa -deadargelim -aa -instcombine -basiccg -early-cse -aa -instcombine -aa -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -demanded-bits -aa -instcombine -aa -memdep -aa -aa -instcombine -elim-avail-extern -basiccg -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify

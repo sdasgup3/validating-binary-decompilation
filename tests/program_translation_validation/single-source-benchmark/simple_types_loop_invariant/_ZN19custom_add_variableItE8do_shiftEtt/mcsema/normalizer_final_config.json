@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine
+ -scoped-noalias -globalopt -aa -instcombine -early-cse -lazy-value-info -aa -instcombine -tailcallelim -aa -aa -instcombine -indvars -aa -gvn -aa -aa -instcombine -lazy-value-info -jump-threading -aa -aa -aa -instcombine -barrier -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -aa

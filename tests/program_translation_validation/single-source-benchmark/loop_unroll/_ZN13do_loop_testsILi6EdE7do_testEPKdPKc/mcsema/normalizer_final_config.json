@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -tbaa -deadargelim -instcombine -globals-aa -argpromotion -early-cse -instcombine -libcalls-shrinkwrap -licm -instcombine -indvars -bdce -instcombine -jump-threading -dse -licm -instcombine -globals-aa -float2int -instcombine -instcombine -instcombine -licm -strip-dead-prototypes

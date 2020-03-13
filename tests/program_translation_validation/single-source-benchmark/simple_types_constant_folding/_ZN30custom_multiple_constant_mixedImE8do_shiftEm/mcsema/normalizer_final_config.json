@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -tti -globalopt -domtree -mem2reg -deadargelim -domtree -basiccg -prune-eh -inline -domtree -early-cse -domtree -libcalls-shrinkwrap -tailcallelim -domtree -domtree -memdep -gvn -memdep -domtree -bdce -domtree -memdep -dse -adce -domtree -basiccg -domtree -domtree -globaldce -constmerge -domtree -instsimplify

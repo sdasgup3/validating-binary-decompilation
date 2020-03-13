@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -instcombine -memcpyopt
+ -targetlibinfo -tbaa -deadargelim -instcombine -simplifycfg -globals-aa -inline -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -demanded-bits -instcombine -postdomtree -simplifycfg -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -constmerge

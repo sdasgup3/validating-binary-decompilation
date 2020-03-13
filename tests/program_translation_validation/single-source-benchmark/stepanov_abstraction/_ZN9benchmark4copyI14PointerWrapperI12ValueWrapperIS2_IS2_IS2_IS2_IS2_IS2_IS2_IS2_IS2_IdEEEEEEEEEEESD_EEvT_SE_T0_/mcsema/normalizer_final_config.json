@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -targetlibinfo -tti -scoped-noalias -assumption-cache-tracker -basicaa -instcombine -simplifycfg -globals-aa -prune-eh -sroa -early-cse -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -licm -simplifycfg -basicaa -instcombine -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa

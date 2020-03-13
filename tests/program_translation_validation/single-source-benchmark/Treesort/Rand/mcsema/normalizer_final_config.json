@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -tailcallelim -instcombine
+ -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basiccg -sroa -lazy-value-info -correlated-propagation -libcalls-shrinkwrap -mldst-motion -gvn -lazy-value-info -jump-threading -correlated-propagation -dse -adce -basiccg -float2int -globaldce

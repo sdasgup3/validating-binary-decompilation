@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tbaa -mem2reg -aa -instcombine -argpromotion -lazy-value-info -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -licm -aa -instcombine -aa -gvn -aa -memcpyopt -demanded-bits -aa -instcombine -lazy-value-info -jump-threading -aa -aa -licm -aa -instcombine -barrier -elim-avail-extern -float2int -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -licm -aa -instsimplify

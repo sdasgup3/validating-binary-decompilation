@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tti -tbaa -deadargelim -instcombine -inline -sroa -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -gvn -sccp -instcombine -jump-threading -scalar-evolution -licm -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -globaldce -scalar-evolution

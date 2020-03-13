@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -globalopt -instcombine -globals-aa -sroa -instcombine -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -instcombine -jump-threading -scalar-evolution -adce -instcombine -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

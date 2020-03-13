@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tti -scoped-noalias -deadargelim -instcombine -simplifycfg -basiccg -argpromotion -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -memdep -memdep -memcpyopt -bdce -instcombine -correlated-propagation -memdep -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine

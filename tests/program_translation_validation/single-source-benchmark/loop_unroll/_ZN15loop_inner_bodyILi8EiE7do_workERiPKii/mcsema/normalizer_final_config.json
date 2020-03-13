@@ -1,1 +1,1 @@
- -licm -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -globalopt -domtree -mem2reg -deadargelim -domtree -instcombine -simplifycfg -argpromotion -domtree -early-cse -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -mldst-motion -memdep -gvn -memdep -domtree -instcombine -jump-threading -domtree -memdep -dse -licm -simplifycfg -domtree -instcombine -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree

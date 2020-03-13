@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -aa -dse -instcombine
+ -tti -scoped-noalias -domtree -mem2reg -domtree -instcombine -simplifycfg -globals-aa -prune-eh -domtree -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -mldst-motion -gvn -memcpyopt -sccp -domtree -demanded-bits -instcombine -domtree -dse -licm -simplifycfg -domtree -instcombine -barrier -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -simplifycfg -domtree -instcombine -instcombine -licm -globaldce -constmerge -domtree

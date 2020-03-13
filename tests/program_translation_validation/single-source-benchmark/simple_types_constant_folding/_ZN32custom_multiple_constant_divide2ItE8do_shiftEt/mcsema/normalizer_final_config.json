@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tbaa -assumption-cache-tracker -mem2reg -basiccg -inline -argpromotion -early-cse -lazy-value-info -reassociate -licm -gvn -sccp -lazy-value-info -dse -licm -barrier -basiccg -float2int -licm -strip-dead-prototypes -globaldce

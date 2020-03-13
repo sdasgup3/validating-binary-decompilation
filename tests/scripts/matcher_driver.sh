@@ -17,6 +17,13 @@ selectPassSeq() {
              -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
              -simplifycfg -basicaa -aa -instcombine"
 
+  if [ -v NORM ]; then
+    if [ "$NORM" == "CUSTOM" ]; then
+      return 0
+    fi
+  fi
+
+
   ## More effective pass list derived after submission.
   NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
              -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -memdep -dse -memcpyopt
+ -tti -scoped-noalias -instcombine -simplifycfg -globals-aa -inline -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -indvars -memdep -gvn -memdep -demanded-bits -bdce -instcombine -memdep -simplifycfg -instcombine -barrier -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -memcpyopt
+ -targetlibinfo -scoped-noalias -domtree -domtree -instcombine -inline -domtree -sroa -lazy-value-info -domtree -instcombine -domtree -licm -domtree -instcombine -mldst-motion -memdep -gvn -memdep -sccp -domtree -instcombine -lazy-value-info -jump-threading -domtree -memdep -licm -postdomtree -adce -domtree -instcombine -elim-avail-extern -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -mem2reg -deadargelim -instcombine -simplifycfg -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -sccp -instcombine -jump-threading -correlated-propagation -memdep -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -constmerge

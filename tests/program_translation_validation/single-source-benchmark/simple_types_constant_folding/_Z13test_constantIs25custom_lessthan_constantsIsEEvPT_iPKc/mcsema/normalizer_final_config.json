@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -instcombine
+ -targetlibinfo -domtree -domtree -basicaa -instcombine -domtree -lazy-value-info -correlated-propagation -domtree -basicaa -instcombine -tailcallelim -domtree -basicaa -domtree -basicaa -instcombine -mldst-motion -gvn -basicaa -sccp -domtree -bdce -basicaa -instcombine -lazy-value-info -jump-threading -correlated-propagation -domtree -basicaa -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -globaldce -domtree -basicaa

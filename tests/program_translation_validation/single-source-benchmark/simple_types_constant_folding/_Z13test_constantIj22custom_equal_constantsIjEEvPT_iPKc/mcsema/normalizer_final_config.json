@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine
+ -domtree -mem2reg -domtree -instcombine -simplifycfg -prune-eh -inline -domtree -early-cse -lazy-value-info -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -sccp -domtree -bdce -instcombine -lazy-value-info -domtree -dse -licm -simplifycfg -domtree -instcombine -elim-avail-extern -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree

@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -aa -dse -instcombine
+ -targetlibinfo -scoped-noalias -assumption-cache-tracker -globalopt -mem2reg -basicaa -early-cse -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -gvn -basicaa -basicaa -basicaa -dse -adce -basicaa -barrier -elim-avail-extern -float2int -basicaa -basicaa -basicaa -basicaa -strip-dead-prototypes -globaldce -basicaa -instsimplify

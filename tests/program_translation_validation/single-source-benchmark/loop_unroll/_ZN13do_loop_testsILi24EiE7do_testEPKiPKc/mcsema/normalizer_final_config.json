@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -globalopt -instcombine -globals-aa -prune-eh -sroa -early-cse -instcombine -scalar-evolution -instcombine -scalar-evolution -mldst-motion -memdep -memdep -memcpyopt -bdce -instcombine -jump-threading -memdep -scalar-evolution -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -scalar-evolution

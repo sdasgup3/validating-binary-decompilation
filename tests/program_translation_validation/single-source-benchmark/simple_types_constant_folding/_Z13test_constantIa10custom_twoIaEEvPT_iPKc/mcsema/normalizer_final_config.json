@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -globalopt -instcombine -early-cse -instcombine -reassociate -instcombine -gvn -sccp -demanded-bits -instcombine -dse -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -constmerge

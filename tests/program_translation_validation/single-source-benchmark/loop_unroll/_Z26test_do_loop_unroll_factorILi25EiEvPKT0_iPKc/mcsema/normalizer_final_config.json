@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -instcombine
+ -scoped-noalias -mem2reg -instcombine -prune-eh -early-cse -correlated-propagation -instcombine -licm -instcombine -indvars -mldst-motion -memdep -gvn -memdep -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -adce -instcombine -barrier -elim-avail-extern -instcombine -instcombine -instcombine -licm -constmerge

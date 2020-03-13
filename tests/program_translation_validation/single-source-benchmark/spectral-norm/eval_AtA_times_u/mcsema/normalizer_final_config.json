@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tti -mem2reg -deadargelim -instcombine -globals-aa -prune-eh -argpromotion -early-cse -correlated-propagation -instcombine -reassociate -licm -instcombine -indvars -mldst-motion -memcpyopt -sccp -bdce -instcombine -jump-threading -correlated-propagation -dse -licm -instcombine -barrier -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -licm

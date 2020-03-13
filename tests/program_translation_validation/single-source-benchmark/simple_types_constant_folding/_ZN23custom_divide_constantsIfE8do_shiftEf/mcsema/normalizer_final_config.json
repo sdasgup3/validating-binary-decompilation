@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -scoped-noalias -globalopt -mem2reg -deadargelim -instcombine -prune-eh -inline -sroa -early-cse -lazy-value-info -instcombine -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -constmerge

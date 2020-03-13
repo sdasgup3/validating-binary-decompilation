@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -assumption-cache-tracker -mem2reg -basicaa -aa -sroa -basicaa -aa -basicaa -aa -basicaa -aa -aa -memdep -gvn -basicaa -aa -memdep -bdce -basicaa -aa -basicaa -aa -memdep -dse -aa -postdomtree -basicaa -aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -constmerge -basicaa -aa

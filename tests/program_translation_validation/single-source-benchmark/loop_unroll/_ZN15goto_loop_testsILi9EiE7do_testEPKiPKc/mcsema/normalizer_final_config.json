@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -dse -deadargelim
+ -tti -tbaa -domtree -domtree -instcombine -simplifycfg -domtree -early-cse -lazy-value-info -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -memdep -memdep -sccp -domtree -bdce -instcombine -lazy-value-info -domtree -memdep -dse -postdomtree -simplifycfg -domtree -instcombine -barrier -elim-avail-extern -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -domtree -instsimplify

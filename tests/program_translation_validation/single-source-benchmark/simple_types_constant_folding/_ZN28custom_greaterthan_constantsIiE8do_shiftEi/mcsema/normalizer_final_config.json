@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim
+ -tbaa -scoped-noalias -instcombine -simplifycfg -globals-aa -prune-eh -inline -argpromotion -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -licm -simplifycfg -instcombine -indvars -mldst-motion -gvn -sccp -bdce -instcombine -licm -postdomtree -simplifycfg -instcombine -elim-avail-extern -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge

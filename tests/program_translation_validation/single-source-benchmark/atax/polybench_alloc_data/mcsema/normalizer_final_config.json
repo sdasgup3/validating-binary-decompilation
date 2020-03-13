@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -libcalls-shrinkwrap
+ -tti -scoped-noalias -mem2reg -aa -instcombine -simplifycfg -globals-aa -inline -sroa -early-cse -lazy-value-info -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -aa -instcombine -lazy-value-info -jump-threading -aa -aa -simplifycfg -aa -instcombine -globals-aa -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -aa

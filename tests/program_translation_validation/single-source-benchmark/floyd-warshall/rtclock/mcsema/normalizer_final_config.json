@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -memcpyopt
+ -tti -tbaa -deadargelim -basicaa -instcombine -simplifycfg -basiccg -globals-aa -sroa -early-cse -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -basicaa -memcpyopt -sccp -basicaa -instcombine -basicaa -dse -licm -adce -simplifycfg -basicaa -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa

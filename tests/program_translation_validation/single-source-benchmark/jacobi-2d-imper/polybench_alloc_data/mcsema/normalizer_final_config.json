@@ -1,1 +1,1 @@
- -gvn -dse -instcombine
+ -tbaa -scoped-noalias -assumption-cache-tracker -globalopt -aa -instcombine -simplifycfg -basiccg -prune-eh -inline -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -aa -aa -instcombine -jump-threading -aa -aa -simplifycfg -aa -instcombine -barrier -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -constmerge -aa

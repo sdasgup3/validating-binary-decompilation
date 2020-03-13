@@ -1,1 +1,1 @@
- -gvn -basicaa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -globals-aa -inline -argpromotion -domtree -domtree -instcombine -domtree -licm -domtree -instcombine -memdep -gvn -memdep -memcpyopt -domtree -demanded-bits -instcombine -domtree -memdep -dse -licm -adce -domtree -instcombine -elim-avail-extern -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -licm -strip-dead-prototypes -domtree

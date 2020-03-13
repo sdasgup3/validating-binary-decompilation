@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -mem2reg -deadargelim -instcombine -sroa -early-cse -lazy-value-info -instcombine -scalar-evolution -instcombine -scalar-evolution -sccp -instcombine -lazy-value-info -dse -scalar-evolution -postdomtree -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

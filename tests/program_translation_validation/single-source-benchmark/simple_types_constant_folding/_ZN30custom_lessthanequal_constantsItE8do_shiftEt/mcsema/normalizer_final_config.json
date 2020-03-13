@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -deadargelim
+ -targetlibinfo -tbaa -mem2reg -instcombine -simplifycfg -globals-aa -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -demanded-bits -bdce -instcombine -lazy-value-info -memdep -dse -simplifycfg -instcombine -barrier -elim-avail-extern -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -strip-dead-prototypes -constmerge

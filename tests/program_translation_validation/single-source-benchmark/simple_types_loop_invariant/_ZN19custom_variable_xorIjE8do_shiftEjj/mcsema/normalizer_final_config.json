@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -targetlibinfo -tti -globalopt -mem2reg -instcombine -simplifycfg -prune-eh -sroa -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -reassociate -simplifycfg -instcombine -memcpyopt -sccp -instcombine -dse -postdomtree -adce -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -memdep -dse -deadargelim
+ -scoped-noalias -deadargelim -instcombine -simplifycfg -inline -argpromotion -lazy-value-info -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -sccp -instcombine -lazy-value-info -postdomtree -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -globaldce

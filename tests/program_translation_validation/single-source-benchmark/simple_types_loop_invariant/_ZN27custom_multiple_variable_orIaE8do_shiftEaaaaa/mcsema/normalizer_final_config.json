@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse
+ -tbaa -globalopt -mem2reg -deadargelim -basicaa -instcombine -basiccg -globals-aa -prune-eh -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -gvn -basicaa -demanded-bits -basicaa -instcombine -lazy-value-info -basicaa -dse -postdomtree -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -basicaa -instsimplify

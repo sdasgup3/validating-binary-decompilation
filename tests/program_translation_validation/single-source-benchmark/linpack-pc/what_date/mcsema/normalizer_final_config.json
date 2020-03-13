@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -targetlibinfo -tti -tbaa -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -indvars -memdep -gvn -memdep -memcpyopt -sccp -instcombine -memdep -postdomtree -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -globaldce

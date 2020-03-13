@@ -1,1 +1,1 @@
- -gvn -dse -instcombine
+ -targetlibinfo -tti -tbaa -mem2reg -basicaa -inline -sroa -correlated-propagation -basicaa -libcalls-shrinkwrap -reassociate -basicaa -scalar-evolution -licm -basicaa -scalar-evolution -memdep -gvn -basicaa -memdep -bdce -basicaa -correlated-propagation -basicaa -memdep -dse -scalar-evolution -licm -basicaa -float2int -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -licm -strip-dead-prototypes -globaldce -basicaa -scalar-evolution -instsimplify

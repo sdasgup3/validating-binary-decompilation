@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine
+ -targetlibinfo -assumption-cache-tracker -deadargelim -instcombine -prune-eh -instcombine -tailcallelim -licm -instcombine -indvars -gvn -memcpyopt -sccp -instcombine -jump-threading -licm -postdomtree -adce -instcombine -barrier -elim-avail-extern -float2int -instcombine -instcombine -instcombine -licm

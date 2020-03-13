@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tti -tbaa -scoped-noalias -globalopt -deadargelim -basicaa -instcombine -globals-aa -prune-eh -argpromotion -sroa -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -postdomtree -basicaa -instcombine -elim-avail-extern -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa

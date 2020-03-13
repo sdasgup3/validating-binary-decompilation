@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap
+ -targetlibinfo -tbaa -deadargelim -simplifycfg -argpromotion -sroa -simplifycfg -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -gvn -memcpyopt -dse -simplifycfg -barrier -simplifycfg -instsimplify

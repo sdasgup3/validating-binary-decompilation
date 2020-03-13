@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -globalopt -basicaa -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -jump-threading -basicaa -licm -postdomtree -simplifycfg -basicaa -instcombine -float2int -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa -instsimplify

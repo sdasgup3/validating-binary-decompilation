@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -scoped-noalias -mem2reg -deadargelim -basicaa -simplifycfg -early-cse -simplifycfg -basicaa -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -memdep -gvn -basicaa -memdep -demanded-bits -basicaa -basicaa -memdep -dse -simplifycfg -basicaa -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -basicaa -strip-dead-prototypes -constmerge -basicaa

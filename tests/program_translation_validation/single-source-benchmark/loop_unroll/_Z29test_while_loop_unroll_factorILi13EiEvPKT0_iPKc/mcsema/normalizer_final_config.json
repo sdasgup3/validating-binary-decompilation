@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -instcombine
+ -instcombine -simplifycfg -prune-eh -inline -sroa -early-cse -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes

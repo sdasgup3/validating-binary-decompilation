@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tti -aa -globals-aa -inline -sroa -correlated-propagation -aa -libcalls-shrinkwrap -aa -aa -indvars -aa -gvn -aa -sccp -bdce -aa -correlated-propagation -aa -dse -aa -adce -aa -barrier -globals-aa -float2int -aa -aa -aa -aa -aa -aa

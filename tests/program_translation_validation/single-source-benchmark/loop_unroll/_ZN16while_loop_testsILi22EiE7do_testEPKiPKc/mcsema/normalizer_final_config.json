@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -basicaa -instcombine -prune-eh -inline -argpromotion -sroa -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -dse -postdomtree -basicaa -instcombine -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa -instsimplify

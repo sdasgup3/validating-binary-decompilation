@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -deadargelim -instcombine -instcombine -reassociate -licm -instcombine -gvn -demanded-bits -instcombine -dse -licm -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -strip-dead-prototypes -globaldce

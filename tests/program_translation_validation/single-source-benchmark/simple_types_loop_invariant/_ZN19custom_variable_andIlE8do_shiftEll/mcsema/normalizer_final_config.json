@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -instcombine -memcpyopt
+ -tti -basicaa -basiccg -prune-eh -inline -sroa -lazy-value-info -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -indvars -gvn -basicaa -memcpyopt -basicaa -lazy-value-info -basicaa -dse -scalar-evolution -postdomtree -basicaa -elim-avail-extern -basiccg -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -globaldce -basicaa -scalar-evolution -instsimplify

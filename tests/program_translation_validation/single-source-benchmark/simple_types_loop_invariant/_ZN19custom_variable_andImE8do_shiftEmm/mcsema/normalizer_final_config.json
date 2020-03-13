@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -domtree -deadargelim -domtree -instcombine -simplifycfg -prune-eh -domtree -early-cse -correlated-propagation -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -domtree -demanded-bits -bdce -instcombine -correlated-propagation -domtree -licm -simplifycfg -domtree -instcombine -domtree -demanded-bits -instcombine -demanded-bits -simplifycfg -domtree -instcombine -instcombine -licm -constmerge -domtree -instsimplify

@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -deadargelim -instcombine -instcombine -scalar-evolution -instcombine -scalar-evolution -gvn -sccp -instcombine -dse -scalar-evolution -postdomtree -adce -instcombine -elim-avail-extern -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

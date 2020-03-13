@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -assumption-cache-tracker -deadargelim -aa -inline -sroa -early-cse -lazy-value-info -aa -libcalls-shrinkwrap -tailcallelim -reassociate -aa -scalar-evolution -aa -scalar-evolution -mldst-motion -aa -gvn -aa -bdce -aa -lazy-value-info -aa -dse -aa -scalar-evolution -adce -aa -elim-avail-extern -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -globaldce -aa -scalar-evolution -instsimplify

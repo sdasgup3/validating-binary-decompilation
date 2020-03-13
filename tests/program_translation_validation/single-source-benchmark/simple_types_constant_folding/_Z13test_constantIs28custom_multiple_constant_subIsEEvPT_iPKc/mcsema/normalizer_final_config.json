@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -tbaa -instcombine -basiccg -prune-eh -instcombine -instcombine -mldst-motion -gvn -instcombine -adce -instcombine -basiccg -instcombine -instcombine -instcombine

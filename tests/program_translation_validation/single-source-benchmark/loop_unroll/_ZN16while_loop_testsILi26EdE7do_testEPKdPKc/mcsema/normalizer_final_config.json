@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -deadargelim -instcombine
+ -tti -domtree -domtree -aa -instcombine -basiccg -domtree -sroa -early-cse -lazy-value-info -domtree -aa -instcombine -tailcallelim -domtree -aa -domtree -aa -instcombine -indvars -aa -aa -memcpyopt -domtree -bdce -aa -instcombine -lazy-value-info -domtree -aa -dse -aa -adce -domtree -aa -instcombine -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -globaldce -constmerge -domtree -aa

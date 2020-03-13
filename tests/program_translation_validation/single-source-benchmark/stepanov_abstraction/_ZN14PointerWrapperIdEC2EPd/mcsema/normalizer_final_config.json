@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -instcombine
+ -scoped-noalias -globalopt -domtree -deadargelim -domtree -basicaa -basiccg -globals-aa -domtree -sroa -lazy-value-info -domtree -basicaa -libcalls-shrinkwrap -reassociate -domtree -basicaa -licm -domtree -basicaa -memdep -gvn -basicaa -memdep -sccp -domtree -basicaa -lazy-value-info -domtree -basicaa -memdep -dse -licm -domtree -basicaa -barrier -elim-avail-extern -basiccg -globals-aa -domtree -basicaa -basicaa -basicaa -domtree -basicaa -licm -domtree -basicaa

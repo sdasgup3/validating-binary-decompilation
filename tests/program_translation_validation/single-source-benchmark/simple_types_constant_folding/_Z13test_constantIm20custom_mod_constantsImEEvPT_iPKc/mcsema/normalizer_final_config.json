@@ -1,1 +1,1 @@
- -gvn -aa -memdep -dse -instcombine
+ -tbaa -scoped-noalias -deadargelim -instcombine -simplifycfg -lazy-value-info -simplifycfg -instcombine -simplifycfg -reassociate -licm -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -instcombine -lazy-value-info -jump-threading -memdep -dse -licm -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -tti -basicaa -instcombine -globals-aa -prune-eh -early-cse -basicaa -instcombine -tailcallelim -basicaa -licm -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -jump-threading -basicaa -licm -basicaa -instcombine -barrier -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -basicaa

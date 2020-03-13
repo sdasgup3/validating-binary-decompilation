@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -tbaa -sroa -libcalls-shrinkwrap -reassociate -scalar-evolution -scalar-evolution -indvars -mldst-motion -gvn -demanded-bits -bdce -dse -scalar-evolution -barrier -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -strip-dead-prototypes -scalar-evolution

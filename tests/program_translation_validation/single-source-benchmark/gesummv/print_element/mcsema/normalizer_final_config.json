@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -aa -instcombine -simplifycfg -early-cse -lazy-value-info -simplifycfg -aa -instcombine -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -lazy-value-info -aa -memdep -dse -aa -simplifycfg -aa -instcombine -barrier -float2int -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -aa

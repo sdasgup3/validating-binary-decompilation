@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine
+ -targetlibinfo -tti -deadargelim -basicaa -instcombine -basiccg -sroa -correlated-propagation -basicaa -instcombine -tailcallelim -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -demanded-bits -bdce -basicaa -instcombine -correlated-propagation -basicaa -memdep -basicaa -instcombine -basiccg -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa -instsimplify

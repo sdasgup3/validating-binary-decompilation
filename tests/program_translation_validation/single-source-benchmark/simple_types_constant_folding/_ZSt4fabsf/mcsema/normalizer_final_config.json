@@ -1,1 +1,1 @@
- -licm -gvn -dse -libcalls-shrinkwrap -instcombine
+ -tti -globalopt -domtree -domtree -instcombine -basiccg -domtree -sroa -lazy-value-info -domtree -instcombine -reassociate -domtree -licm -domtree -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -domtree -instcombine -lazy-value-info -domtree -memdep -licm -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -strip-dead-prototypes -domtree -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -libcalls-shrinkwrap -tailcallelim
+ -targetlibinfo -scoped-noalias -instcombine -globals-aa -inline -early-cse -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -memcpyopt -instcombine -lazy-value-info -scalar-evolution -postdomtree -instcombine -barrier -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution

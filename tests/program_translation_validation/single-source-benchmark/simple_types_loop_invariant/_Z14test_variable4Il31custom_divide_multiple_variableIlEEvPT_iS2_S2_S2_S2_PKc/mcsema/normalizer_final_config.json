@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tti -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -sroa -early-cse -lazy-value-info -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -demanded-bits -instcombine -lazy-value-info -correlated-propagation -licm -adce -simplifycfg -instcombine -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm

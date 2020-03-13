@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -instcombine
+ -targetlibinfo -scoped-noalias -assumption-cache-tracker -mem2reg -instcombine -inline -argpromotion -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -gvn -bdce -instcombine -dse -licm -adce -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -globaldce

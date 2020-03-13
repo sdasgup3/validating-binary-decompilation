@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -tti -scoped-noalias -assumption-cache-tracker -globalopt -domtree -domtree -instcombine -globals-aa -inline -argpromotion -domtree -sroa -lazy-value-info -domtree -instcombine -tailcallelim -reassociate -domtree -licm -domtree -instcombine -indvars -gvn -domtree -demanded-bits -bdce -instcombine -lazy-value-info -domtree -licm -postdomtree -adce -domtree -instcombine -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -licm -domtree

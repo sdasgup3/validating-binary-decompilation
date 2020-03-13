@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -memdep -dse -instcombine -memcpyopt
+ -deadargelim -instcombine -prune-eh -early-cse -instcombine -libcalls-shrinkwrap -reassociate -instcombine -mldst-motion -memdep -gvn -memdep -bdce -instcombine -memdep -adce -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -instsimplify

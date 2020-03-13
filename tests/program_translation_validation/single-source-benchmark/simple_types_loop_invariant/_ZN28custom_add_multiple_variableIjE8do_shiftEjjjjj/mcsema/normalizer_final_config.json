@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -aa -dse -deadargelim -instcombine
+ -targetlibinfo -globalopt -basicaa -instcombine -simplifycfg -argpromotion -sroa -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -gvn -basicaa -memcpyopt -sccp -basicaa -instcombine -basicaa -dse -postdomtree -adce -simplifycfg -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -constmerge -basicaa

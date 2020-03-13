@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -dse -instcombine
+ -globalopt -mem2reg -deadargelim -instcombine -prune-eh -argpromotion -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -mldst-motion -gvn -demanded-bits -bdce -instcombine -jump-threading -scalar-evolution -licm -instcombine -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

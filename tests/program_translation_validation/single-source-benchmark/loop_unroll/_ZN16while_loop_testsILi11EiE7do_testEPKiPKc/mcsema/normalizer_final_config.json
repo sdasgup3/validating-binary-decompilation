@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -deadargelim -memcpyopt
+ -targetlibinfo -tbaa -globalopt -domtree -domtree -basicaa -instcombine -inline -domtree -early-cse -correlated-propagation -domtree -basicaa -instcombine -domtree -basicaa -domtree -basicaa -instcombine -mldst-motion -basicaa -domtree -basicaa -instcombine -jump-threading -correlated-propagation -domtree -basicaa -domtree -basicaa -instcombine -barrier -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa

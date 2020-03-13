@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -assumption-cache-tracker -globalopt -deadargelim -instcombine -simplifycfg -inline -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -instcombine -indvars -gvn -memcpyopt -sccp -bdce -instcombine -jump-threading -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -constmerge -instsimplify

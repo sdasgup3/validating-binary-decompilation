@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -aa -dse -tailcallelim
+ -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -deadargelim -aa -instcombine -early-cse -aa -instcombine -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -aa -instcombine -aa -memdep -dse -aa -postdomtree -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -globalopt -domtree -mem2reg -domtree -instcombine -globals-aa -inline -domtree -sroa -early-cse -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -mldst-motion -gvn -sccp -domtree -instcombine -domtree -dse -scalar-evolution -domtree -instcombine -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution

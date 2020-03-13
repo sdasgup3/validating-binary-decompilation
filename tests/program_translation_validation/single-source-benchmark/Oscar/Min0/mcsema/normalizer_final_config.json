@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -aa -dse -tailcallelim -instcombine
+ -domtree -mem2reg -domtree -instcombine -simplifycfg -basiccg -globals-aa -domtree -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -indvars -memdep -gvn -memdep -sccp -domtree -demanded-bits -instcombine -domtree -memdep -simplifycfg -domtree -instcombine -elim-avail-extern -basiccg -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -simplifycfg -domtree -instcombine -instcombine -domtree

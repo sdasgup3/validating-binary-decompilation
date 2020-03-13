@@ -1,1 +1,1 @@
- -gvn -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tti -tbaa -globalopt -mem2reg -deadargelim -basicaa -basiccg -argpromotion -basicaa -basicaa -licm -basicaa -gvn -basicaa -sccp -basicaa -basicaa -dse -licm -postdomtree -adce -basicaa -barrier -basiccg -basicaa -basicaa -basicaa -basicaa -licm -strip-dead-prototypes -basicaa

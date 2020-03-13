@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -instcombine -early-cse -lazy-value-info -instcombine -tailcallelim -reassociate -scalar-evolution -instcombine -scalar-evolution -gvn -memcpyopt -instcombine -lazy-value-info -scalar-evolution -adce -instcombine -elim-avail-extern -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -inline -early-cse -tailcallelim -reassociate -memdep -gvn -memdep -sccp -memdep -dse -float2int -constmerge

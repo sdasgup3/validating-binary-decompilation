@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -gvn -globalopt -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -scoped-noalias -domtree -deadargelim -domtree -instcombine -basiccg -domtree -early-cse -domtree -instcombine -libcalls-shrinkwrap -reassociate -domtree -licm -domtree -instcombine -memdep -gvn -memdep -memcpyopt -sccp -domtree -bdce -instcombine -domtree -memdep -licm -domtree -instcombine -elim-avail-extern -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree -instsimplify

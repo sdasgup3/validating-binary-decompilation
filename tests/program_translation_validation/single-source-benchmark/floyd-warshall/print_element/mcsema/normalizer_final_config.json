@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse
+ -tti -tbaa -assumption-cache-tracker -domtree -domtree -basicaa -instcombine -prune-eh -domtree -sroa -early-cse -lazy-value-info -domtree -basicaa -instcombine -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -domtree -basicaa -instcombine -lazy-value-info -jump-threading -domtree -basicaa -postdomtree -adce -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -strip-dead-prototypes -domtree -basicaa -instsimplify

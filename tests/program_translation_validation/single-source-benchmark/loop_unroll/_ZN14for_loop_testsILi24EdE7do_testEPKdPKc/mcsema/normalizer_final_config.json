@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -deadargelim
+ -tti -globalopt -mem2reg -simplifycfg -basiccg -globals-aa -prune-eh -early-cse -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -memdep -gvn -memdep -sccp -bdce -jump-threading -memdep -dse -scalar-evolution -postdomtree -simplifycfg -barrier -elim-avail-extern -basiccg -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution

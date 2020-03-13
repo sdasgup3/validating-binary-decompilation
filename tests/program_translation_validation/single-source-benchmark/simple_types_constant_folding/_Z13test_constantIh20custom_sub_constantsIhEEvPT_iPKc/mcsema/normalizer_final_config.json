@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -memdep -dse -instcombine
+ -assumption-cache-tracker -globalopt -instcombine -early-cse -instcombine -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -indvars -mldst-motion -gvn -bdce -instcombine -jump-threading -dse -scalar-evolution -licm -instcombine -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -strip-dead-prototypes -scalar-evolution

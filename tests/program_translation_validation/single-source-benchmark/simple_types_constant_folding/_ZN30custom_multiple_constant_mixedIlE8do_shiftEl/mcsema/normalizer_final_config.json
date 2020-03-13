@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap
+ -scoped-noalias -globalopt -basiccg -inline -sroa -libcalls-shrinkwrap -reassociate -mldst-motion -memdep -gvn -memdep -memcpyopt -sccp -bdce -jump-threading -memdep -dse -postdomtree -adce -elim-avail-extern -basiccg -float2int -constmerge -instsimplify

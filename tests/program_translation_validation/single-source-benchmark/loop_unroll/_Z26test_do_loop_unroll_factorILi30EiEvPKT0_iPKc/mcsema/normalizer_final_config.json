@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -instcombine
+ -tbaa -assumption-cache-tracker -mem2reg -instcombine -basiccg -lazy-value-info -correlated-propagation -instcombine -reassociate -licm -instcombine -gvn -instcombine -lazy-value-info -correlated-propagation -dse -licm -instcombine -barrier -basiccg -instcombine -instcombine -instcombine -licm

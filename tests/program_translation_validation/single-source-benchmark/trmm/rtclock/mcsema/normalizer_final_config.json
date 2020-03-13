@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine
+ -targetlibinfo -scoped-noalias -assumption-cache-tracker -instcombine -simplifycfg -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -memdep -gvn -memdep -memcpyopt -instcombine -memdep -licm -adce -simplifycfg -instcombine -barrier -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -instsimplify

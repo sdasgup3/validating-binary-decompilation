@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -instcombine
+ -tbaa -domtree -mem2reg -deadargelim -domtree -instcombine -simplifycfg -inline -domtree -sroa -early-cse -correlated-propagation -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -mldst-motion -gvn -domtree -instcombine -correlated-propagation -domtree -dse -licm -adce -simplifycfg -domtree -instcombine -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -constmerge -domtree

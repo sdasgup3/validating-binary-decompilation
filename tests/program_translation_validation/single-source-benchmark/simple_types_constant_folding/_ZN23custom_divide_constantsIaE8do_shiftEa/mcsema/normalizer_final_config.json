@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -memdep -dse -libcalls-shrinkwrap -instcombine
+ -scoped-noalias -assumption-cache-tracker -deadargelim -instcombine -lazy-value-info -instcombine -tailcallelim -instcombine -indvars -gvn -instcombine -lazy-value-info -instcombine -barrier -instcombine -instcombine -instcombine -strip-dead-prototypes -instsimplify

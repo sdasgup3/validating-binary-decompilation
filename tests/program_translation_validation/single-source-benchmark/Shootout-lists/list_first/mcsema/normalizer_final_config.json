@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim
+ -scoped-noalias -assumption-cache-tracker -instcombine -globals-aa -sroa -early-cse -lazy-value-info -correlated-propagation -instcombine -tailcallelim -instcombine -memcpyopt -instcombine -lazy-value-info -correlated-propagation -instcombine -barrier -globals-aa -instcombine -instcombine -instcombine

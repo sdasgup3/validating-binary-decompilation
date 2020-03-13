@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -instcombine -simplifycfg -prune-eh -sroa -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -simplifycfg -instcombine -indvars -mldst-motion -memdep -gvn -memdep -memcpyopt -instcombine -lazy-value-info -memdep -dse -simplifycfg -instcombine -barrier -instcombine -simplifycfg -instcombine -instcombine -strip-dead-prototypes -instsimplify

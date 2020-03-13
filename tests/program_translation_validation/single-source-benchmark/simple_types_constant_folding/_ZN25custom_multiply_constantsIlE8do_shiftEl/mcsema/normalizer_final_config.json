@@ -1,1 +1,1 @@
- -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -mem2reg -basicaa -instcombine -simplifycfg -globals-aa -argpromotion -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -basicaa -basicaa -instcombine -basicaa -licm -simplifycfg -basicaa -instcombine -barrier -elim-avail-extern -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa

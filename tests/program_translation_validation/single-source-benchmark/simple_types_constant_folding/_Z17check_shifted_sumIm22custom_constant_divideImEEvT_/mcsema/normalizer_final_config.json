@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -deadargelim -instcombine -basiccg -prune-eh -argpromotion -sroa -instcombine -instcombine -gvn -sccp -demanded-bits -bdce -instcombine -instcombine -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce -instsimplify

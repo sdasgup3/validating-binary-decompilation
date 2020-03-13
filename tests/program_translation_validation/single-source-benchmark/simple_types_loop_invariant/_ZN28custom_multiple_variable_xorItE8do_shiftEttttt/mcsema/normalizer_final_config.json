@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap
+ -targetlibinfo -globalopt -domtree -mem2reg -deadargelim -domtree -basicaa -prune-eh -inline -domtree -early-cse -lazy-value-info -domtree -basicaa -reassociate -domtree -basicaa -licm -domtree -basicaa -mldst-motion -gvn -basicaa -memcpyopt -sccp -domtree -demanded-bits -basicaa -lazy-value-info -domtree -basicaa -dse -licm -adce -domtree -basicaa -domtree -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -domtree -basicaa -licm -strip-dead-prototypes -globaldce -domtree -basicaa

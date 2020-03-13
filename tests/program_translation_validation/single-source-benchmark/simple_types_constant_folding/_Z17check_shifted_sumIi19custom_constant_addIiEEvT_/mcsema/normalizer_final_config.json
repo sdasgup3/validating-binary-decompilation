@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -lazy-value-info -instcombine -tailcallelim -reassociate -instcombine -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -postdomtree -adce -instcombine -elim-avail-extern -instcombine -instcombine -instcombine

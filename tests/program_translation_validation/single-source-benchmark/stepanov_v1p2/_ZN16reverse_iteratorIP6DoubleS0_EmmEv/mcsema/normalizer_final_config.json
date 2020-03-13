@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -assumption-cache-tracker -instcombine -globals-aa -prune-eh -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -scalar-evolution -instcombine -scalar-evolution -indvars -bdce -instcombine -correlated-propagation -dse -scalar-evolution -instcombine -barrier -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -instcombine -simplifycfg -basiccg -prune-eh -sroa -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -instcombine -jump-threading -correlated-propagation -licm -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -basiccg -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes

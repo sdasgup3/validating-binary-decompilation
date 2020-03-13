@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tbaa -assumption-cache-tracker -aa -basiccg -prune-eh -inline -sroa -aa -reassociate -aa -aa -mldst-motion -aa -gvn -aa -demanded-bits -bdce -aa -jump-threading -aa -dse -aa -aa -elim-avail-extern -basiccg -float2int -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -aa -instsimplify

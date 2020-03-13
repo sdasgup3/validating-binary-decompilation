@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tti -tbaa -scoped-noalias -domtree -mem2reg -domtree -instcombine -globals-aa -argpromotion -domtree -early-cse -domtree -instcombine -domtree -domtree -instcombine -gvn -memcpyopt -domtree -demanded-bits -bdce -instcombine -domtree -postdomtree -domtree -instcombine -barrier -globals-aa -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -strip-dead-prototypes -domtree

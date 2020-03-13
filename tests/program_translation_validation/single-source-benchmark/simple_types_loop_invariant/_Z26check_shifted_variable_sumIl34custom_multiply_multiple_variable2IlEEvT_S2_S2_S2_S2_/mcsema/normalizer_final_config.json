@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -basicaa -aa -memdep -dse -deadargelim -instcombine
+ -scoped-noalias -globalopt -mem2reg -deadargelim -basicaa -instcombine -basiccg -globals-aa -inline -lazy-value-info -basicaa -instcombine -tailcallelim -reassociate -basicaa -licm -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -lazy-value-info -basicaa -dse -licm -adce -basicaa -instcombine -basiccg -globals-aa -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa -instsimplify

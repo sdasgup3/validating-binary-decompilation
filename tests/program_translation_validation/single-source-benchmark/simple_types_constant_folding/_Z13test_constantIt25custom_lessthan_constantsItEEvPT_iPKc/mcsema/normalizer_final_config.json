@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -instcombine -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -mem2reg -deadargelim -instcombine -globals-aa -correlated-propagation -instcombine -libcalls-shrinkwrap -licm -instcombine -gvn -memcpyopt -sccp -demanded-bits -bdce -instcombine -correlated-propagation -dse -licm -postdomtree -instcombine -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm

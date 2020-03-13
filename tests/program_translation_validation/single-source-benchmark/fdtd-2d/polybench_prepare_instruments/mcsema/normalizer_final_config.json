@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -instcombine
+ -tti -assumption-cache-tracker -instcombine -inline -argpromotion -early-cse -lazy-value-info -correlated-propagation -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -demanded-bits -instcombine -lazy-value-info -correlated-propagation -scalar-evolution -postdomtree -adce -instcombine -barrier -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -instcombine -scalar-evolution -demanded-bits -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

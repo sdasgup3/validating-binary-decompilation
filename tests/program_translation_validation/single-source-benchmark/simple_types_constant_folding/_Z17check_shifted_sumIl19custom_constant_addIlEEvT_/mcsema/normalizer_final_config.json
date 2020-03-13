@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -mem2reg -deadargelim -basicaa -aa -instcombine -simplifycfg -prune-eh -simplifycfg -basicaa -aa -instcombine -simplifycfg -reassociate -basicaa -aa -simplifycfg -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -jump-threading -basicaa -aa -aa -postdomtree -simplifycfg -basicaa -aa -instcombine -elim-avail-extern -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -basicaa -aa

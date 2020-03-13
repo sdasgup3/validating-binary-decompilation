@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -memdep -dse -tailcallelim -instcombine
+ -tti -tbaa -mem2reg -instcombine -simplifycfg -prune-eh -argpromotion -correlated-propagation -simplifycfg -instcombine -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -instcombine -correlated-propagation -dse -licm -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce -constmerge -instsimplify

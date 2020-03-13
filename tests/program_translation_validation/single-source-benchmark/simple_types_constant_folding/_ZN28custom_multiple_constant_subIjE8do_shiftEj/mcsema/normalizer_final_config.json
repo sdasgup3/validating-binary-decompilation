@@ -1,1 +1,1 @@
- -gvn -dse -tailcallelim -instcombine
+ -tti -tbaa -mem2reg -instcombine -early-cse -lazy-value-info -correlated-propagation -instcombine -licm -instcombine -indvars -memdep -memdep -sccp -bdce -instcombine -lazy-value-info -correlated-propagation -memdep -dse -licm -postdomtree -instcombine -barrier -instcombine -instcombine -instcombine -licm -constmerge

@@ -1,1 +1,1 @@
- -licm -gvn -dse -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -domtree -domtree -instcombine -basiccg -globals-aa -prune-eh -domtree -early-cse -lazy-value-info -correlated-propagation -domtree -instcombine -reassociate -domtree -domtree -instcombine -memdep -gvn -memdep -sccp -domtree -instcombine -lazy-value-info -correlated-propagation -domtree -memdep -postdomtree -adce -domtree -instcombine -barrier -basiccg -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree

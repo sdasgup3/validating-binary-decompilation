@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -basicaa -instcombine -argpromotion -correlated-propagation -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -mldst-motion -gvn -basicaa -basicaa -instcombine -correlated-propagation -basicaa -dse -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -basicaa

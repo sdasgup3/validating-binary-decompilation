@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -aa -dse -tailcallelim
+ -tti -tbaa -deadargelim -instcombine -basiccg -prune-eh -early-cse -instcombine -licm -instcombine -memdep -memdep -instcombine -memdep -licm -postdomtree -instcombine -barrier -basiccg -instcombine -instcombine -instcombine -licm -globaldce

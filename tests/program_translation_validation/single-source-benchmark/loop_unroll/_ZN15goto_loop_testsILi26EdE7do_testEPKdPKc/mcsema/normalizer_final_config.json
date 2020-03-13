@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tbaa -assumption-cache-tracker -mem2reg -inline -argpromotion -lazy-value-info -libcalls-shrinkwrap -licm -memdep -gvn -memdep -bdce -lazy-value-info -memdep -dse -licm -adce -barrier -elim-avail-extern -licm

@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tti -tbaa -scoped-noalias -globalopt -mem2reg -deadargelim -aa -sroa -early-cse -lazy-value-info -aa -libcalls-shrinkwrap -tailcallelim -aa -aa -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -aa -lazy-value-info -aa -memdep -dse -aa -postdomtree -adce -aa -aa -aa -aa -aa -aa -strip-dead-prototypes -constmerge -aa -instsimplify

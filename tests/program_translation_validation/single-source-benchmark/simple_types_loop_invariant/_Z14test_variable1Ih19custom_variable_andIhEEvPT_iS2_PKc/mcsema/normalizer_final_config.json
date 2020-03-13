@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -instcombine
+ -targetlibinfo -basicaa -instcombine -simplifycfg -basiccg -globals-aa -inline -sroa -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -gvn -basicaa -memcpyopt -demanded-bits -basicaa -instcombine -jump-threading -basicaa -dse -licm -adce -simplifycfg -basicaa -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -instcombine
+ -targetlibinfo -scoped-noalias -globalopt -mem2reg -deadargelim -basicaa -aa -instcombine -inline -sroa -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -adce -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa -aa

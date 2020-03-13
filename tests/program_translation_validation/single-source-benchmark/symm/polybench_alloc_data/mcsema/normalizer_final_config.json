@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -aa -memdep -dse -instcombine
+ -tti -scoped-noalias -instcombine -basiccg -globals-aa -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -bdce -instcombine -jump-threading -scalar-evolution -licm -postdomtree -instcombine -basiccg -globals-aa -float2int -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -dse -tailcallelim -instcombine
+ -targetlibinfo -instcombine -simplifycfg -globals-aa -argpromotion -correlated-propagation -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -gvn -bdce -instcombine -jump-threading -correlated-propagation -dse -licm -postdomtree -simplifycfg -instcombine -barrier -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce

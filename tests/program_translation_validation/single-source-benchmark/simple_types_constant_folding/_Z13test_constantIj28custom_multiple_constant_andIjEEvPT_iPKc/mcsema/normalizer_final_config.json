@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -scoped-noalias -assumption-cache-tracker -mem2reg -aa -instcombine -prune-eh -inline -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -correlated-propagation -aa -dse -aa -adce -aa -instcombine -barrier -elim-avail-extern -float2int -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -constmerge -aa -instsimplify

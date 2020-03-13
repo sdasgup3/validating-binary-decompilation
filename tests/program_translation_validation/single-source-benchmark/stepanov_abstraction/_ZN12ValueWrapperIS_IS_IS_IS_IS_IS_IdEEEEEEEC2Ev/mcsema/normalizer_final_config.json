@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -basicaa -simplifycfg -argpromotion -sroa -lazy-value-info -simplifycfg -basicaa -libcalls-shrinkwrap -simplifycfg -basicaa -simplifycfg -basicaa -gvn -basicaa -sccp -basicaa -lazy-value-info -jump-threading -basicaa -dse -simplifycfg -basicaa -float2int -basicaa -basicaa -basicaa -simplifycfg -basicaa -strip-dead-prototypes -globaldce -basicaa

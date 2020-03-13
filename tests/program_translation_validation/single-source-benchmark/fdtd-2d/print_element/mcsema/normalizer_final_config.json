@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -aa -dse
+ -tti -assumption-cache-tracker -aa -sroa -lazy-value-info -aa -aa -scalar-evolution -aa -scalar-evolution -indvars -mldst-motion -aa -gvn -aa -sccp -demanded-bits -aa -lazy-value-info -jump-threading -aa -dse -aa -scalar-evolution -adce -aa -elim-avail-extern -float2int -aa -scalar-evolution -scalar-evolution -aa -demanded-bits -scalar-evolution -aa -aa -scalar-evolution -demanded-bits -aa -scalar-evolution -scalar-evolution -strip-dead-prototypes -aa -scalar-evolution

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -deadargelim -instcombine -globals-aa -prune-eh -inline -argpromotion -early-cse -correlated-propagation -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -mldst-motion -gvn -sccp -demanded-bits -instcombine -correlated-propagation -licm -postdomtree -instcombine -barrier -elim-avail-extern -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -licm -globaldce

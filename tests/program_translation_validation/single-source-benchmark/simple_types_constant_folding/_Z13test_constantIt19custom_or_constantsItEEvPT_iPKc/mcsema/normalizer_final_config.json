@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -tailcallelim -instcombine
+ -deadargelim -basicaa -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -indvars -basicaa -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -dse -licm -adce -simplifycfg -basicaa -instcombine -barrier -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa

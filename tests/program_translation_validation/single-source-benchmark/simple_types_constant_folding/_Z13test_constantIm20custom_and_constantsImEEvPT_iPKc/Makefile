@@ -59,7 +59,7 @@ lltodot: ${OUTDIR}test.proposed.opt.ll ${INDIR}test.mcsema.opt.ll
 
 
 tuner: ${OUTDIR}test.proposed.ll ${INDIR}test.mcsema.ll
-	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=1000 --parallel-compile 1>${OUTDIR}tuner.log 2>&1
+	-time ${SCRIPTDIR}/opentuner/examples/normalizer/normalizer_tuner.py --func ${PROG} --outdir ${OUTDIR} --matcher ${TOOLDIR}matcher --no-dups --test-limit=100 --parallel-compile 1>${OUTDIR}tuner.log 2>&1
 	@${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --tuner
 
 extract:${INDIR}test.mcsema.opt.ll

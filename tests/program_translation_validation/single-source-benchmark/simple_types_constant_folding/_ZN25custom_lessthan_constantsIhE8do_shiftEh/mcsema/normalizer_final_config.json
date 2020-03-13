@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim
+ -scoped-noalias -basicaa -aa -instcombine -basiccg -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -indvars -mldst-motion -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -basicaa -aa -memdep -aa -basicaa -aa -instcombine -basiccg -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -basicaa -aa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tti -deadargelim -instcombine -argpromotion -sroa -early-cse -correlated-propagation -instcombine -reassociate -instcombine -indvars -gvn -sccp -demanded-bits -instcombine -correlated-propagation -dse -instcombine -elim-avail-extern -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -strip-dead-prototypes

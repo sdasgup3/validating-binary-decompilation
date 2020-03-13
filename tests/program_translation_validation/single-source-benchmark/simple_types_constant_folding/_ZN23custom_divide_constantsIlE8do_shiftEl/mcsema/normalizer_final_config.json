@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim
+ -targetlibinfo -tbaa -scoped-noalias -basicaa -instcombine -sroa -early-cse -basicaa -instcombine -basicaa -basicaa -instcombine -gvn -basicaa -memcpyopt -sccp -bdce -basicaa -instcombine -basicaa -postdomtree -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa -instsimplify

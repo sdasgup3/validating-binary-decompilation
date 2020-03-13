@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -basicaa -dse -instcombine
+ -targetlibinfo -scoped-noalias -domtree -domtree -basicaa -instcombine -prune-eh -domtree -domtree -basicaa -instcombine -domtree -basicaa -licm -domtree -basicaa -instcombine -gvn -basicaa -memcpyopt -sccp -domtree -demanded-bits -basicaa -instcombine -jump-threading -domtree -basicaa -licm -adce -domtree -basicaa -instcombine -barrier -domtree -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -domtree -basicaa -instcombine -instcombine -licm -globaldce -domtree -basicaa -instsimplify

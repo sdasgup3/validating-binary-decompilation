@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -basicaa -aa -memdep -dse -libcalls-shrinkwrap
+ -tti -tbaa -assumption-cache-tracker -domtree -deadargelim -domtree -simplifycfg -globals-aa -domtree -sroa -early-cse -simplifycfg -domtree -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -indvars -memdep -gvn -memdep -memcpyopt -domtree -domtree -memdep -dse -postdomtree -simplifycfg -domtree -barrier -elim-avail-extern -globals-aa -domtree -simplifycfg -domtree -strip-dead-prototypes -domtree

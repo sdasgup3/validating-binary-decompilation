@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -aa -dse -deadargelim -instcombine
+ -targetlibinfo -tbaa -scoped-noalias -assumption-cache-tracker -instcombine -inline -argpromotion -lazy-value-info -instcombine -licm -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -instcombine -lazy-value-info -memdep -licm -instcombine -instcombine -instcombine -instcombine -licm -globaldce -instsimplify

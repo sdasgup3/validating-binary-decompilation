@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -targetlibinfo -tti -tbaa -globalopt -deadargelim -instcombine -prune-eh -early-cse -instcombine -instcombine -memdep -memdep -memcpyopt -demanded-bits -instcombine -memdep -dse -postdomtree -instcombine -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tti -globalopt -mem2reg -instcombine -simplifycfg -prune-eh -inline -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -licm -simplifycfg -instcombine -mldst-motion -gvn -memcpyopt -instcombine -lazy-value-info -jump-threading -licm -simplifycfg -instcombine -barrier -instcombine -simplifycfg -instcombine -instcombine -licm

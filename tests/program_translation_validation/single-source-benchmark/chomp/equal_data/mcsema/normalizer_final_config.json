@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -memdep -dse -tailcallelim -instcombine
+ -targetlibinfo -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -argpromotion -sroa -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -bdce -instcombine -correlated-propagation -dse -licm -simplifycfg -instcombine -basiccg -globals-aa -float2int -instcombine -simplifycfg -instcombine -instcombine -licm -instsimplify

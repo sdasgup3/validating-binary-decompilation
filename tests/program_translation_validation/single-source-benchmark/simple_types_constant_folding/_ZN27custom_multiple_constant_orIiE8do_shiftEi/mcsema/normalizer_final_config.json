@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim
+ -tti -scoped-noalias -assumption-cache-tracker -basicaa -instcombine -basiccg -sroa -basicaa -instcombine -tailcallelim -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -jump-threading -basicaa -memdep -dse -licm -adce -basicaa -instcombine -barrier -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -tbaa -basicaa -instcombine -early-cse -lazy-value-info -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -mldst-motion -gvn -basicaa -sccp -basicaa -instcombine -lazy-value-info -correlated-propagation -basicaa -dse -licm -postdomtree -adce -basicaa -instcombine -barrier -float2int -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa

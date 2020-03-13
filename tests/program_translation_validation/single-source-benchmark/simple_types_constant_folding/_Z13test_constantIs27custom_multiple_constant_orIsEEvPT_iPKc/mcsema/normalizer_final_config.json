@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -instcombine
+ -targetlibinfo -tti -assumption-cache-tracker -globalopt -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -licm -simplifycfg -instcombine -indvars -memdep -gvn -memdep -sccp -instcombine -memdep -dse -licm -simplifycfg -instcombine -barrier -basiccg -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -constmerge

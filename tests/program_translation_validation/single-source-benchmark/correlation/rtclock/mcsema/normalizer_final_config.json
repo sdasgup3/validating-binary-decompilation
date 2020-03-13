@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -dse
+ -targetlibinfo -tbaa -assumption-cache-tracker -globalopt -instcombine -basiccg -inline -argpromotion -sroa -early-cse -instcombine -reassociate -instcombine -indvars -mldst-motion -demanded-bits -instcombine -jump-threading -dse -adce -instcombine -basiccg -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

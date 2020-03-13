@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -instcombine -memcpyopt
+ -licm -gvn -early-cse -dse -instcombine -memcpyopt -tbaa -assumption-cache-tracker -globalopt -mem2reg -deadargelim -instcombine -simplifycfg -globals-aa -inline -argpromotion -sroa -correlated-propagation -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -indvars -gvn -bdce -instcombine -correlated-propagation -dse -licm -simplifycfg -instcombine -elim-avail-extern -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce

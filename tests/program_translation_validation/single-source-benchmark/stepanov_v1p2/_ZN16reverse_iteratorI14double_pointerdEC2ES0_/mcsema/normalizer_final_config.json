@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -libcalls-shrinkwrap -memcpyopt
+ -scoped-noalias -deadargelim -aa -instcombine -prune-eh -early-cse -lazy-value-info -aa -instcombine -aa -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -lazy-value-info -aa -dse -aa -postdomtree -aa -instcombine -barrier -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

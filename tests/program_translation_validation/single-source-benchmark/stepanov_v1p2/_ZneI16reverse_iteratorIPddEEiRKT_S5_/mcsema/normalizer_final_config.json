@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -instcombine -memcpyopt
+ -targetlibinfo -tti -tbaa -globalopt -domtree -domtree -instcombine -prune-eh -inline -argpromotion -domtree -early-cse -domtree -instcombine -tailcallelim -reassociate -domtree -domtree -instcombine -memdep -memdep -domtree -instcombine -domtree -memdep -postdomtree -domtree -instcombine -float2int -domtree -instcombine -domtree -instcombine -instcombine -strip-dead-prototypes -domtree -instsimplify

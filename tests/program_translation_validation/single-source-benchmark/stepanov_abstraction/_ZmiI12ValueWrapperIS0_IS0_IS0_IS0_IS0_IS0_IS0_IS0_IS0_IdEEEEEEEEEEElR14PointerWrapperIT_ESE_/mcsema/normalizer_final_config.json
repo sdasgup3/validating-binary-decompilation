@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -aa -dse -tailcallelim -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -globalopt -mem2reg -deadargelim -aa -instcombine -basiccg -inline -early-cse -lazy-value-info -aa -instcombine -aa -aa -instcombine -indvars -mldst-motion -aa -aa -memcpyopt -aa -instcombine -lazy-value-info -aa -aa -postdomtree -aa -instcombine -barrier -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa -instsimplify

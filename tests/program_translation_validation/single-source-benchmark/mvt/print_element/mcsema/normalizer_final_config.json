@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -globalopt -mem2reg -basiccg -globals-aa -argpromotion -lazy-value-info -libcalls-shrinkwrap -indvars -gvn -memcpyopt -demanded-bits -lazy-value-info -dse -basiccg -globals-aa -float2int -demanded-bits -demanded-bits

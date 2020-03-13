@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -memdep -dse -memcpyopt
+ -targetlibinfo -globalopt -domtree -mem2reg -domtree -basicaa -aa -instcombine -domtree -early-cse -domtree -basicaa -aa -instcombine -tailcallelim -domtree -basicaa -aa -domtree -basicaa -aa -instcombine -mldst-motion -aa -basicaa -aa -sccp -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -dse -aa -postdomtree -adce -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -domtree -basicaa -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -domtree -basicaa -aa

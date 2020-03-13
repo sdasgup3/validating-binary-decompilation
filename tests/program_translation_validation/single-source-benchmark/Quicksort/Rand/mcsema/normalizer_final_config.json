@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -aa -dse -instcombine
+ -tbaa -assumption-cache-tracker -globalopt -mem2reg -aa -basiccg -globals-aa -argpromotion -early-cse -correlated-propagation -aa -aa -licm -aa -indvars -mldst-motion -aa -gvn -aa -memcpyopt -bdce -aa -jump-threading -correlated-propagation -aa -dse -aa -licm -aa -basiccg -globals-aa -aa -aa -aa -aa -aa -licm -aa -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -memdep -dse -tailcallelim -memcpyopt
+ -targetlibinfo -tti -domtree -mem2reg -domtree -instcombine -simplifycfg -basiccg -globals-aa -prune-eh -argpromotion -domtree -simplifycfg -domtree -instcombine -simplifycfg -domtree -simplifycfg -domtree -instcombine -mldst-motion -memdep -gvn -memdep -domtree -instcombine -domtree -memdep -adce -simplifycfg -domtree -instcombine -elim-avail-extern -basiccg -globals-aa -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -domtree -instsimplify

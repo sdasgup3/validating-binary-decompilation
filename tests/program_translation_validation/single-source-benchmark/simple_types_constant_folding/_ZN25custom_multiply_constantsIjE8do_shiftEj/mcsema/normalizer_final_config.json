@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -instcombine
+ -tti -tbaa -globalopt -basicaa -instcombine -basiccg -prune-eh -argpromotion -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -demanded-bits -bdce -basicaa -instcombine -basicaa -memdep -basicaa -instcombine -barrier -elim-avail-extern -basiccg -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -strip-dead-prototypes -globaldce -basicaa

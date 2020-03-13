@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -tailcallelim
+ -tbaa -assumption-cache-tracker -instcombine -prune-eh -argpromotion -instcombine -reassociate -instcombine -gvn -sccp -instcombine -postdomtree -instcombine -elim-avail-extern -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes

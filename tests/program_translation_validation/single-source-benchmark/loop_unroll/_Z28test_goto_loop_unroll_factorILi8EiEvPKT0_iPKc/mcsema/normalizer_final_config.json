@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -tailcallelim -instcombine -memcpyopt
+ -globalopt -mem2reg -instcombine -basiccg -globals-aa -argpromotion -sroa -instcombine -instcombine -indvars -mldst-motion -gvn -demanded-bits -instcombine -dse -postdomtree -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -globaldce

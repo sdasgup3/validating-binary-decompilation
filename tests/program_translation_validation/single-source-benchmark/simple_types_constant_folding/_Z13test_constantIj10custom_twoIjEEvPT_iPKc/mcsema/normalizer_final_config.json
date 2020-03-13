@@ -1,1 +1,1 @@
- -licm -gvn -dse -instcombine -memcpyopt
+ -tti -scoped-noalias -globalopt -instcombine -globals-aa -inline -early-cse -correlated-propagation -instcombine -tailcallelim -instcombine -memdep -gvn -memdep -sccp -instcombine -jump-threading -correlated-propagation -memdep -dse -instcombine -globals-aa -instcombine -instcombine -instcombine -strip-dead-prototypes -constmerge -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -tti -tbaa -assumption-cache-tracker -deadargelim -instcombine -simplifycfg -globals-aa -sroa -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -sccp -instcombine -memdep -postdomtree -simplifycfg -instcombine -elim-avail-extern -globals-aa -instcombine -simplifycfg -instcombine -instcombine -instsimplify

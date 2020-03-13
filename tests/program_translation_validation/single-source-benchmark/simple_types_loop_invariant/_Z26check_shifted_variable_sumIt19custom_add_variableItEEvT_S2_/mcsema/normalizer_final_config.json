@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -deadargelim -instcombine -globals-aa -prune-eh -inline -argpromotion -sroa -lazy-value-info -correlated-propagation -instcombine -reassociate -instcombine -indvars -memdep -gvn -memdep -sccp -bdce -instcombine -lazy-value-info -correlated-propagation -memdep -dse -adce -instcombine -elim-avail-extern -globals-aa -instcombine -instcombine -instcombine -instsimplify

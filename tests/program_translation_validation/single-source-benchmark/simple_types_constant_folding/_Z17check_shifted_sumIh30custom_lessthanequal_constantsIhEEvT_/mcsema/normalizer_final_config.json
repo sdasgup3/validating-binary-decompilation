@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -deadargelim -instcombine -basiccg -globals-aa -argpromotion -sroa -early-cse -instcombine -reassociate -licm -instcombine -gvn -memcpyopt -sccp -bdce -instcombine -licm -adce -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -licm -strip-dead-prototypes

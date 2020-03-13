@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap
+ -targetlibinfo -tti -scoped-noalias -basicaa -instcombine -globals-aa -inline -lazy-value-info -basicaa -instcombine -tailcallelim -basicaa -licm -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -memcpyopt -sccp -demanded-bits -bdce -basicaa -instcombine -lazy-value-info -jump-threading -basicaa -memdep -dse -licm -basicaa -instcombine -elim-avail-extern -globals-aa -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -basicaa

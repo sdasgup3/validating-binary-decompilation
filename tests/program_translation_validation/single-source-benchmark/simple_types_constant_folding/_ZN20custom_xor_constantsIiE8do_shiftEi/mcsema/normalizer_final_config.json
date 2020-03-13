@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -tbaa -globalopt -simplifycfg -inline -sroa -lazy-value-info -simplifycfg -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -indvars -gvn -demanded-bits -lazy-value-info -jump-threading -dse -scalar-evolution -simplifycfg -float2int -scalar-evolution -scalar-evolution -demanded-bits -scalar-evolution -scalar-evolution -demanded-bits -simplifycfg -scalar-evolution -scalar-evolution -globaldce -constmerge -scalar-evolution

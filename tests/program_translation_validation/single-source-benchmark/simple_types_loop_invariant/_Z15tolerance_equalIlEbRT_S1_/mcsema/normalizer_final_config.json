@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -tailcallelim
+ -targetlibinfo -instcombine -early-cse -correlated-propagation -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -mldst-motion -gvn -instcombine -correlated-propagation -scalar-evolution -instcombine -barrier -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution -instsimplify

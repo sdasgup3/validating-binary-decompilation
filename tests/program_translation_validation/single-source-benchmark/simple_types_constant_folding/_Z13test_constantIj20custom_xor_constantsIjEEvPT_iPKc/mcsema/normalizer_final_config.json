@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -aa -dse -instcombine
+ -targetlibinfo -tti -deadargelim -aa -instcombine -inline -sroa -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -demanded-bits -aa -instcombine -jump-threading -aa -memdep -dse -aa -adce -aa -instcombine -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -globaldce -constmerge -aa

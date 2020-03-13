@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -instcombine -memcpyopt
+ -tti -scoped-noalias -domtree -domtree -instcombine -inline -domtree -sroa -early-cse -domtree -instcombine -tailcallelim -reassociate -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -gvn -memcpyopt -sccp -domtree -bdce -instcombine -domtree -dse -scalar-evolution -domtree -instcombine -barrier -elim-avail-extern -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution

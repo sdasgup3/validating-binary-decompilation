@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -targetlibinfo -tbaa -globalopt -mem2reg -aa -prune-eh -inline -sroa -lazy-value-info -aa -aa -licm -aa -mldst-motion -aa -memdep -gvn -aa -memdep -sccp -demanded-bits -aa -lazy-value-info -aa -memdep -dse -aa -licm -adce -aa -aa -aa -demanded-bits -aa -aa -demanded-bits -aa -licm -globaldce -aa -instsimplify

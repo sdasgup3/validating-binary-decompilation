@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -basicaa -instcombine -globals-aa -inline -early-cse -correlated-propagation -basicaa -instcombine -basicaa -licm -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -correlated-propagation -basicaa -memdep -dse -licm -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -constmerge -basicaa

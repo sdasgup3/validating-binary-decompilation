@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -instcombine -memcpyopt
+ -scoped-noalias -basicaa -aa -instcombine -early-cse -correlated-propagation -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -indvars -mldst-motion -aa -gvn -basicaa -aa -memcpyopt -demanded-bits -basicaa -aa -instcombine -correlated-propagation -basicaa -aa -dse -aa -licm -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -instcombine -demanded-bits -basicaa -aa -instcombine -instcombine -licm -globaldce -basicaa -aa

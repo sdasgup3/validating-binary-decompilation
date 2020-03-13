@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -targetlibinfo -tbaa -instcombine -inline -sroa -instcombine -licm -instcombine -gvn -memcpyopt -instcombine -licm -adce -instcombine -barrier -instcombine -instcombine -instcombine -licm

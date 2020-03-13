@@ -1,1 +1,1 @@
- -gvn -simplifycfg -memdep -dse -instcombine
+ -tbaa -assumption-cache-tracker -basicaa -aa -instcombine -inline -argpromotion -sroa -basicaa -aa -instcombine -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -memcpyopt -bdce -basicaa -aa -instcombine -basicaa -aa -dse -aa -basicaa -aa -instcombine -elim-avail-extern -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa

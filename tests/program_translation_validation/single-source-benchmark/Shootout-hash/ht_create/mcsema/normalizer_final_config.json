@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tti -domtree -deadargelim -domtree -instcombine -globals-aa -inline -domtree -sroa -early-cse -lazy-value-info -correlated-propagation -domtree -instcombine -domtree -domtree -instcombine -memdep -gvn -memdep -domtree -demanded-bits -instcombine -lazy-value-info -correlated-propagation -domtree -memdep -adce -domtree -instcombine -globals-aa -float2int -domtree -demanded-bits -instcombine -demanded-bits -domtree -instcombine -instcombine -domtree

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -basicaa -dse -tailcallelim -memcpyopt
+ -targetlibinfo -assumption-cache-tracker -instcombine -early-cse -correlated-propagation -instcombine -licm -instcombine -indvars -sccp -bdce -instcombine -correlated-propagation -dse -licm -postdomtree -instcombine -elim-avail-extern -instcombine -instcombine -instcombine -licm -strip-dead-prototypes

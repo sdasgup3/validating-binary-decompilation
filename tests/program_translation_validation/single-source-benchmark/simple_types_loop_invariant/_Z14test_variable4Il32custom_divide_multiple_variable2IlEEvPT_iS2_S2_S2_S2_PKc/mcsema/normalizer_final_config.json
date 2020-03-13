@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tti -tbaa -deadargelim -instcombine -simplifycfg -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -indvars -memdep -gvn -memdep -demanded-bits -instcombine -memdep -licm -postdomtree -adce -simplifycfg -instcombine -barrier -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes -constmerge

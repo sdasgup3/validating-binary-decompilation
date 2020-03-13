@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -memcpyopt
+ -targetlibinfo -scoped-noalias -deadargelim -instcombine -simplifycfg -globals-aa -prune-eh -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -gvn -sccp -instcombine -licm -postdomtree -simplifycfg -instcombine -barrier -elim-avail-extern -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge

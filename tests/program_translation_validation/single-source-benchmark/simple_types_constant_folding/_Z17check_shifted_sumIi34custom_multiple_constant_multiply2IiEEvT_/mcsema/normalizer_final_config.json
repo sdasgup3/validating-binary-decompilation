@@ -1,1 +1,1 @@
- -licm -gvn -dse -deadargelim -instcombine
+ -tti -tbaa -deadargelim -aa -instcombine -basiccg -globals-aa -argpromotion -aa -instcombine -tailcallelim -aa -aa -instcombine -indvars -mldst-motion -aa -gvn -aa -demanded-bits -bdce -aa -instcombine -aa -dse -aa -aa -instcombine -elim-avail-extern -basiccg -globals-aa -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa

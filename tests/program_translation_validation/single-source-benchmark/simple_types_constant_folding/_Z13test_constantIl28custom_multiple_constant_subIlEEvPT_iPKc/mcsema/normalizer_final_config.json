@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tbaa -scoped-noalias -globalopt -deadargelim -instcombine -globals-aa -prune-eh -inline -argpromotion -sroa -early-cse -instcombine -instcombine -gvn -memcpyopt -demanded-bits -instcombine -dse -instcombine -globals-aa -demanded-bits -instcombine -demanded-bits -instcombine -instcombine

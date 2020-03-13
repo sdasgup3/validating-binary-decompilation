@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -scoped-noalias -globalopt -mem2reg -instcombine -basiccg -globals-aa -argpromotion -sroa -correlated-propagation -instcombine -licm -instcombine -indvars -mldst-motion -gvn -sccp -instcombine -jump-threading -correlated-propagation -dse -licm -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -instsimplify

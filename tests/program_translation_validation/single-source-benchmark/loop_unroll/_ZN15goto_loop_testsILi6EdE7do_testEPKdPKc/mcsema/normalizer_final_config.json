@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -assumption-cache-tracker -aa -instcombine -simplifycfg -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -mldst-motion -aa -memdep -aa -memdep -demanded-bits -bdce -aa -instcombine -aa -memdep -aa -postdomtree -simplifycfg -aa -instcombine -barrier -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa

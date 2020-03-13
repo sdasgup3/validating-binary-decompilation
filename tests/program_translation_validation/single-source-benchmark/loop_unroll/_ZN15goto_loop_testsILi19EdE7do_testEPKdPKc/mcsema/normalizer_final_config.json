@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -tbaa -globalopt -deadargelim -basicaa -instcombine -simplifycfg -argpromotion -sroa -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -memdep -gvn -basicaa -memdep -sccp -bdce -basicaa -instcombine -basicaa -memdep -adce -simplifycfg -basicaa -instcombine -barrier -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -basicaa

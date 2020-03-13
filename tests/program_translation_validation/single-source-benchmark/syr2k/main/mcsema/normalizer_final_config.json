@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -tti -assumption-cache-tracker -globalopt -deadargelim -instcombine -simplifycfg -inline -sroa -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -instcombine -jump-threading -correlated-propagation -memdep -adce -simplifycfg -instcombine -elim-avail-extern -float2int -instcombine -simplifycfg -instcombine -instcombine

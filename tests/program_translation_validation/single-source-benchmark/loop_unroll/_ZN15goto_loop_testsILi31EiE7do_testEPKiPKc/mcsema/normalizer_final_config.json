@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim
+ -scoped-noalias -assumption-cache-tracker -domtree -domtree -instcombine -simplifycfg -domtree -simplifycfg -domtree -instcombine -simplifycfg -domtree -simplifycfg -domtree -instcombine -indvars -gvn -domtree -instcombine -domtree -dse -simplifycfg -domtree -instcombine -barrier -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -domtree -instsimplify

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt
+ -tti -domtree -mem2reg -domtree -instcombine -globals-aa -inline -domtree -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -gvn -sccp -domtree -bdce -instcombine -jump-threading -domtree -dse -adce -domtree -instcombine -barrier -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree -instsimplify

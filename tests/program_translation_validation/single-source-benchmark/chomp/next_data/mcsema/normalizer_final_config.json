@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -scoped-noalias -aa -instcombine -simplifycfg -inline -argpromotion -sroa -lazy-value-info -correlated-propagation -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -aa -instcombine -lazy-value-info -jump-threading -correlated-propagation -aa -aa -simplifycfg -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -globaldce -aa -instsimplify

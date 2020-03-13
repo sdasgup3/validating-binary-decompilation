@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -basicaa -memdep -dse -libcalls-shrinkwrap
+ -targetlibinfo -tbaa -scoped-noalias -globalopt -aa -instcombine -inline -aa -instcombine -tailcallelim -aa -aa -instcombine -indvars -aa -memdep -gvn -aa -memdep -demanded-bits -bdce -aa -instcombine -jump-threading -aa -memdep -dse -aa -aa -instcombine -barrier -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -aa -instsimplify

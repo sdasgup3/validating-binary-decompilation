@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -memcpyopt
+ -targetlibinfo -tbaa -assumption-cache-tracker -basicaa -instcombine -simplifycfg -basiccg -prune-eh -early-cse -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -indvars -mldst-motion -gvn -basicaa -basicaa -instcombine -basicaa -dse -postdomtree -simplifycfg -basicaa -instcombine -elim-avail-extern -basiccg -float2int -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -strip-dead-prototypes -basicaa -instsimplify

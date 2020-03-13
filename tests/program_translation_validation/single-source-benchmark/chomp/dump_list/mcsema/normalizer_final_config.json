@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -assumption-cache-tracker -mem2reg -deadargelim -instcombine -basiccg -globals-aa -inline -sroa -instcombine -instcombine -memdep -gvn -memdep -memcpyopt -sccp -instcombine -memdep -dse -instcombine -barrier -elim-avail-extern -basiccg -globals-aa -instcombine -instcombine -instcombine -strip-dead-prototypes -globaldce -instsimplify

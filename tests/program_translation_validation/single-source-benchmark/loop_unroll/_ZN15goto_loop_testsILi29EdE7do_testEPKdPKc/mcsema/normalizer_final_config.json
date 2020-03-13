@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -aa -memdep -dse -libcalls-shrinkwrap
+ -tti -tbaa -aa -instcombine -basiccg -globals-aa -early-cse -lazy-value-info -correlated-propagation -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -lazy-value-info -correlated-propagation -aa -aa -aa -instcombine -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa -instsimplify

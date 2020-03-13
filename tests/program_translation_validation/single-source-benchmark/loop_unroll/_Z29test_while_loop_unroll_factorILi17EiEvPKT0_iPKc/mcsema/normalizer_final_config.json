@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -tti -scoped-noalias -mem2reg -aa -instcombine -prune-eh -argpromotion -sroa -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -demanded-bits -bdce -aa -instcombine -aa -memdep -dse -aa -aa -instcombine -elim-avail-extern -aa -aa -demanded-bits -aa -aa -instcombine -demanded-bits -aa -instcombine -instcombine -strip-dead-prototypes -aa

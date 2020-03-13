@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -memcpyopt
+ -tti -mem2reg -deadargelim -prune-eh -inline -argpromotion -sroa -reassociate -mldst-motion -gvn -memcpyopt -jump-threading -dse -globaldce

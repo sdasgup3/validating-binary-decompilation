@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -memdep -dse -instcombine
+ -tti -scoped-noalias -mem2reg -deadargelim -instcombine -simplifycfg -inline -correlated-propagation -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -mldst-motion -memdep -gvn -memdep -memcpyopt -demanded-bits -instcombine -correlated-propagation -memdep -simplifycfg -instcombine -barrier -float2int -demanded-bits -instcombine -demanded-bits -simplifycfg -instcombine -instcombine -globaldce -constmerge -instsimplify

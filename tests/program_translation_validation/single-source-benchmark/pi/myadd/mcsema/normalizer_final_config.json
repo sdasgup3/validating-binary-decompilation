@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -mem2reg -instcombine -simplifycfg -basiccg -early-cse -correlated-propagation -simplifycfg -instcombine -tailcallelim -simplifycfg -licm -simplifycfg -instcombine -indvars -memdep -memdep -memcpyopt -instcombine -jump-threading -correlated-propagation -memdep -dse -licm -postdomtree -adce -simplifycfg -instcombine -elim-avail-extern -basiccg -instcombine -simplifycfg -instcombine -instcombine -licm -strip-dead-prototypes

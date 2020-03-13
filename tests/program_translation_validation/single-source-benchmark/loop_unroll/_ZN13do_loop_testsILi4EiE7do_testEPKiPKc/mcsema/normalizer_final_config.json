@@ -1,1 +1,1 @@
- -gvn -globalopt -aa -dse -instcombine
+ -scoped-noalias -assumption-cache-tracker -aa -instcombine -globals-aa -lazy-value-info -aa -instcombine -tailcallelim -reassociate -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -mldst-motion -aa -gvn -aa -aa -instcombine -lazy-value-info -aa -aa -scalar-evolution -licm -adce -aa -instcombine -globals-aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -aa -scalar-evolution

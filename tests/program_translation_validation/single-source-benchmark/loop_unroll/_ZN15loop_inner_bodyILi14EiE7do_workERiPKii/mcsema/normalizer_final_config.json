@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -tbaa -assumption-cache-tracker -instcombine -simplifycfg -inline -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -bdce -instcombine -memdep -dse -postdomtree -simplifycfg -instcombine -float2int -instcombine -simplifycfg -instcombine -instcombine

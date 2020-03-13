@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -targetlibinfo -tti -scoped-noalias -aa -instcombine -argpromotion -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -reassociate -aa -aa -instcombine -indvars -aa -aa -sccp -aa -instcombine -jump-threading -aa -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa -instsimplify

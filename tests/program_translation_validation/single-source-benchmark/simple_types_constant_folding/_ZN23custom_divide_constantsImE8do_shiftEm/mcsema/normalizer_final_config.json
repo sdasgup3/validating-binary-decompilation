@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -aa -dse -instcombine
+ -scoped-noalias -mem2reg -instcombine -basiccg -globals-aa -lazy-value-info -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -indvars -mldst-motion -memdep -gvn -memdep -instcombine -lazy-value-info -memdep -instcombine -barrier -basiccg -globals-aa -instcombine -instcombine -instcombine -globaldce -constmerge

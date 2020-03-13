@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -tailcallelim -instcombine
+ -targetlibinfo -tti -instcombine -simplifycfg -early-cse -lazy-value-info -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -memdep -memdep -sccp -instcombine -lazy-value-info -memdep -dse -licm -simplifycfg -instcombine -elim-avail-extern -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce -instsimplify

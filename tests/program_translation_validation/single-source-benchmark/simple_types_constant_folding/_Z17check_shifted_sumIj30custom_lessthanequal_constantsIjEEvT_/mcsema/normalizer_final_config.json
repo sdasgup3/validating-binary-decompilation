@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -tti -scoped-noalias -deadargelim -basicaa -aa -instcombine -inline -argpromotion -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -mldst-motion -aa -gvn -basicaa -aa -memcpyopt -bdce -basicaa -aa -instcombine -jump-threading -basicaa -aa -dse -aa -licm -adce -basicaa -aa -instcombine -float2int -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -strip-dead-prototypes -basicaa -aa -instsimplify

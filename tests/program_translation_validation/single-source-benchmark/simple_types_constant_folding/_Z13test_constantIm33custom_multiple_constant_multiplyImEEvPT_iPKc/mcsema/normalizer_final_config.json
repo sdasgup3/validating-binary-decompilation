@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine
+ -tti -domtree -domtree -instcombine -basiccg -globals-aa -domtree -correlated-propagation -domtree -instcombine -libcalls-shrinkwrap -domtree -licm -domtree -instcombine -gvn -domtree -instcombine -correlated-propagation -domtree -licm -adce -domtree -instcombine -basiccg -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree -instsimplify

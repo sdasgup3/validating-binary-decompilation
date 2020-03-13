@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -instcombine -globals-aa -inline -sroa -early-cse -instcombine -instcombine -sccp -demanded-bits -instcombine -postdomtree -instcombine -globals-aa -float2int -demanded-bits -instcombine -demanded-bits -instcombine -instcombine -instsimplify

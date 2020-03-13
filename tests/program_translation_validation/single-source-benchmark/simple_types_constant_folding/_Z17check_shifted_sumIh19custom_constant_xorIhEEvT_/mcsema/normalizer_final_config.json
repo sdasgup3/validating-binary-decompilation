@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -globalopt -deadargelim -aa -instcombine -globals-aa -sroa -early-cse -lazy-value-info -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -aa -aa -instcombine -lazy-value-info -aa -dse -aa -postdomtree -aa -instcombine -barrier -elim-avail-extern -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

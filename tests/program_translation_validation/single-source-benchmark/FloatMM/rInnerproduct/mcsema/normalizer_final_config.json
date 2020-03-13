@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -targetlibinfo -globalopt -mem2reg -instcombine -basiccg -prune-eh -argpromotion -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -gvn -instcombine -jump-threading -scalar-evolution -licm -postdomtree -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution -instsimplify

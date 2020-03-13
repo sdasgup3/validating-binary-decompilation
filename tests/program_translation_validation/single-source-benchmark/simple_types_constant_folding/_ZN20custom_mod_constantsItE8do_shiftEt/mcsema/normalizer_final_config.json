@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -aa -dse -tailcallelim -instcombine
+ -targetlibinfo -basicaa -instcombine -simplifycfg -prune-eh -sroa -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -basicaa -licm -simplifycfg -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -licm -postdomtree -adce -simplifycfg -basicaa -instcombine -barrier -elim-avail-extern -float2int -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -constmerge -basicaa -instsimplify

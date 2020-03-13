@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -dse -deadargelim -libcalls-shrinkwrap
+ -targetlibinfo -tti -deadargelim -basicaa -instcombine -globals-aa -prune-eh -inline -sroa -early-cse -lazy-value-info -basicaa -instcombine -libcalls-shrinkwrap -basicaa -licm -basicaa -instcombine -gvn -basicaa -sccp -demanded-bits -basicaa -instcombine -lazy-value-info -basicaa -dse -licm -postdomtree -adce -basicaa -instcombine -globals-aa -float2int -basicaa -basicaa -demanded-bits -basicaa -instcombine -demanded-bits -basicaa -instcombine -instcombine -licm -basicaa

@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -instcombine
+ -targetlibinfo -tti -tbaa -mem2reg -aa -instcombine -simplifycfg -prune-eh -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -bdce -aa -instcombine -jump-threading -aa -memdep -aa -simplifycfg -aa -instcombine -barrier -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -globaldce -aa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -instcombine
+ -targetlibinfo -aa -instcombine -globals-aa -sroa -early-cse -lazy-value-info -aa -instcombine -aa -licm -aa -instcombine -mldst-motion -aa -memdep -gvn -aa -memdep -aa -instcombine -lazy-value-info -jump-threading -aa -memdep -aa -licm -adce -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -constmerge -aa

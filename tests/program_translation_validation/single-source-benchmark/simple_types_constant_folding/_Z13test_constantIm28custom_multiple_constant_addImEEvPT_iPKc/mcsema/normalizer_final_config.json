@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -scoped-noalias -globalopt -domtree -mem2reg -domtree -instcombine -globals-aa -inline -argpromotion -domtree -domtree -instcombine -libcalls-shrinkwrap -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -jump-threading -domtree -dse -licm -domtree -instcombine -globals-aa -float2int -domtree -instcombine -domtree -instcombine -instcombine -licm -constmerge -domtree

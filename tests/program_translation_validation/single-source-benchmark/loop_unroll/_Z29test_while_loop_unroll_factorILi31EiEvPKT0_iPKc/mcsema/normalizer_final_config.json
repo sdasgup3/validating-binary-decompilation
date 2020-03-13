@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -targetlibinfo -tbaa -assumption-cache-tracker -globalopt -instcombine -simplifycfg -prune-eh -argpromotion -sroa -early-cse -lazy-value-info -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -licm -simplifycfg -instcombine -instcombine -lazy-value-info -dse -licm -adce -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce -instsimplify

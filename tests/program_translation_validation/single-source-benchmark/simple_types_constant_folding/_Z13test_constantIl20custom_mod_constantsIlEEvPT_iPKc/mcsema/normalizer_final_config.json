@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -scoped-noalias -aa -instcombine -simplifycfg -basiccg -inline -early-cse -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -jump-threading -aa -dse -aa -licm -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -strip-dead-prototypes -globaldce -constmerge -aa

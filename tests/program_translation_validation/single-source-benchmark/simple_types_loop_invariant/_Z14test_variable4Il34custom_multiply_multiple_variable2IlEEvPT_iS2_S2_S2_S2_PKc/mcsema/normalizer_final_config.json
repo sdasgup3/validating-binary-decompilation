@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -tailcallelim -instcombine -memcpyopt
+ -deadargelim -instcombine -basiccg -instcombine -licm -instcombine -mldst-motion -gvn -sccp -instcombine -licm -instcombine -elim-avail-extern -basiccg -instcombine -instcombine -instcombine -licm -constmerge

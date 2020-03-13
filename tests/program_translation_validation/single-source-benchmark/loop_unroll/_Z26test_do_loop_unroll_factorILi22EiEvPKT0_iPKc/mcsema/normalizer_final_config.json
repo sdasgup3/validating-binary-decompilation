@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -memdep -dse -instcombine
+ -tti -scoped-noalias -globalopt -domtree -mem2reg -domtree -instcombine -simplifycfg -basiccg -domtree -sroa -early-cse -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -memcpyopt -domtree -instcombine -domtree -dse -licm -adce -simplifycfg -domtree -instcombine -barrier -basiccg -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -domtree

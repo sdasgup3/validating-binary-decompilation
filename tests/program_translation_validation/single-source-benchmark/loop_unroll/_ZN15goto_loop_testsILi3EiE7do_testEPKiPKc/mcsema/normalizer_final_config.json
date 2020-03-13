@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -instcombine -memcpyopt
+ -targetlibinfo -globalopt -deadargelim -instcombine -basiccg -prune-eh -inline -early-cse -correlated-propagation -instcombine -instcombine -memdep -gvn -memdep -memcpyopt -instcombine -correlated-propagation -memdep -postdomtree -adce -instcombine -elim-avail-extern -basiccg -float2int -instcombine -instcombine -instcombine -strip-dead-prototypes

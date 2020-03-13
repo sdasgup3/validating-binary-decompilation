@@ -1,1 +1,1 @@
- -licm -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -scoped-noalias -globalopt -mem2reg -deadargelim -aa -instcombine -simplifycfg -basiccg -argpromotion -sroa -early-cse -simplifycfg -aa -instcombine -libcalls-shrinkwrap -simplifycfg -aa -licm -simplifycfg -aa -instcombine -indvars -aa -gvn -aa -bdce -aa -instcombine -aa -dse -aa -licm -simplifycfg -aa -instcombine -elim-avail-extern -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa -instsimplify

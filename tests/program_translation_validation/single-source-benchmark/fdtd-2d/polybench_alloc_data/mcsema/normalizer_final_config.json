@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -instcombine -memcpyopt
+ -tti -assumption-cache-tracker -globalopt -instcombine -globals-aa -inline -lazy-value-info -correlated-propagation -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -gvn -sccp -instcombine -lazy-value-info -correlated-propagation -dse -scalar-evolution -instcombine -barrier -elim-avail-extern -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -strip-dead-prototypes -scalar-evolution

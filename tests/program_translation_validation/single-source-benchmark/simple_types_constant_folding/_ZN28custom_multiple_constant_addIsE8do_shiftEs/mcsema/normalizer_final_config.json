@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -aa -dse
+ -domtree -mem2reg -deadargelim -domtree -basicaa -aa -basiccg -domtree -sroa -domtree -basicaa -aa -reassociate -domtree -basicaa -aa -domtree -basicaa -aa -aa -gvn -basicaa -aa -domtree -demanded-bits -basicaa -aa -domtree -basicaa -aa -dse -aa -postdomtree -adce -domtree -basicaa -aa -barrier -basiccg -domtree -basicaa -aa -basicaa -aa -demanded-bits -aa -basicaa -aa -demanded-bits -domtree -basicaa -aa -strip-dead-prototypes -constmerge -domtree -basicaa -aa -instsimplify

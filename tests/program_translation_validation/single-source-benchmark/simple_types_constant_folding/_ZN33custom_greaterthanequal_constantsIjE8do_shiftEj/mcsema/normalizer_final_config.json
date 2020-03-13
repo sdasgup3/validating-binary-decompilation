@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse
+ -tti -tbaa -scoped-noalias -globalopt -mem2reg -globals-aa -inline -correlated-propagation -tailcallelim -licm -gvn -memcpyopt -correlated-propagation -dse -licm -postdomtree -barrier -globals-aa -licm -strip-dead-prototypes -globaldce -constmerge -instsimplify
