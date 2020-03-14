@@ -1,1 +1,1 @@
- -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -tbaa -mem2reg -deadargelim -aa -instcombine -sroa -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -aa -gvn -aa -bdce -aa -instcombine -aa -aa -adce -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -constmerge -aa -instsimplify

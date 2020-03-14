@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -mem2reg -deadargelim -instcombine -globals-aa -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -gvn -memcpyopt -sccp -instcombine -scalar-evolution -licm -postdomtree -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution -instsimplify

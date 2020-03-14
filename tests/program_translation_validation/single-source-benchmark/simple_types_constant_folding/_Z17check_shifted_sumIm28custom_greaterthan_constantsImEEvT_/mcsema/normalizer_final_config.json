@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -memdep -deadargelim -instcombine -early-cse-memssa
+ -globalopt -deadargelim -instcombine -basiccg -sroa -instcombine -instcombine -gvn -memcpyopt -sccp -instcombine -instcombine -basiccg -instcombine -instcombine -instcombine

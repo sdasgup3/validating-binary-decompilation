@@ -1,1 +1,1 @@
- -licm -gvn -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -domtree -mem2reg -deadargelim -domtree -basicaa -instcombine -globals-aa -inline -domtree -sroa -domtree -basicaa -instcombine -domtree -basicaa -domtree -basicaa -instcombine -memdep -gvn -basicaa -memdep -memcpyopt -sccp -domtree -basicaa -instcombine -domtree -basicaa -memdep -domtree -basicaa -instcombine -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -globaldce -domtree -basicaa -instsimplify
