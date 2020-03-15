@@ -26,7 +26,7 @@ during single-instruction-validation (as all the decompiled artifacts of all
 ### Project Repo setup
 In case validating-binary-decompilation  repository is checked-out at a local path other that `${HOME}/Github`, setup the `REPO` env variable as follows
 ```
-export REPO=<path of the directory containing validating-binary-decompilation  repository>
+export REPO_PATH=<path of the directory containing validating-binary-decompilation  repository>
 ```
 
 ### Binary-opt and normalizer setup
