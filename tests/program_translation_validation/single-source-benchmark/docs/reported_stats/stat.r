@@ -70,7 +70,8 @@ print_stats <- function (df) {
   elapsed_c_sec <-  as.vector(sapply(elapsed_compd, function(x) eval(parse(text=x))))
   elapsed_mp_sec <- as.vector(sapply(elapsed_mp, function(x) eval(parse(text=x))))
   elapsed_pm_sec <- as.vector(sapply(elapsed_pm, function(x) eval(parse(text=x))))
-  elapsed_m_sec <- elapsed_mp_sec + elapsed_pm_sec
+#elapsed_m_sec <- elapsed_mp_sec + elapsed_pm_sec
+  elapsed_m_sec <- pmax(elapsed_mp_sec, elapsed_pm_sec)
 
   print(max(size))
   print(min(size))

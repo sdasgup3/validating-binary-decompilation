@@ -70,8 +70,10 @@ match() {
   TOOLDIR=$2
   PROG=$3
 
-  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1"
-  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )  1>${OUTDIR}match_proposed_mcsema.log 2>&1"
+#executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG} --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1 & ( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )  1>${OUTDIR}match_proposed_mcsema.log 2>&1 &"
+  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG}   --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}match_mcsema_proposed.log 2>&1 &"
+  executeNPrint "( time ${TOOLDIR}/matcher --file1 ${OUTDIR}test.proposed.opt.ll:${PROG} --file2 ${OUTDIR}test.mcsema.opt.ll:${PROG} )   1>${OUTDIR}match_proposed_mcsema.log 2>&1 &"
+  wait
   ${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --match
 }
 
