@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -instcombine -instcombine -instcombine -indvars -gvn -sccp -instcombine -dse -postdomtree -instcombine -instcombine -instcombine -instcombine -instsimplify

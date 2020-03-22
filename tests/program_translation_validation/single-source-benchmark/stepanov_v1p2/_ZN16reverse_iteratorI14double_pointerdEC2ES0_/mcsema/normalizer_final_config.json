@@ -1,1 +1,1 @@
- -gvn -simplifycfg -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -mem2reg -aa -instcombine -early-cse -aa -instcombine -tailcallelim -reassociate -aa -aa -instcombine -indvars -aa -gvn -aa -bdce -aa -instcombine -aa -dse -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

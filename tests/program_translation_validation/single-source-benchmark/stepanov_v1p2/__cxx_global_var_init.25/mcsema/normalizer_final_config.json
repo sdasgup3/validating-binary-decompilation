@@ -1,1 +1,1 @@
- -licm -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -globalopt -basicaa -instcombine -simplifycfg -globals-aa -early-cse -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -basicaa -memcpyopt -sccp -basicaa -instcombine -basicaa -licm -adce -simplifycfg -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -globaldce -basicaa

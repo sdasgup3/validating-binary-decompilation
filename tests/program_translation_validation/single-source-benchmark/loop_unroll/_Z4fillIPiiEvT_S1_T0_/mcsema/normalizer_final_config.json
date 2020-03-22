@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -instcombine -globals-aa -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -bdce -instcombine -scalar-evolution -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

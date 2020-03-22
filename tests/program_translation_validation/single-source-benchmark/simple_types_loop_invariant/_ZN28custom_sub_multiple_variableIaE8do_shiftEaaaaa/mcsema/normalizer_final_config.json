@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -basicaa -basiccg -globals-aa -early-cse -basicaa -tailcallelim -basicaa -scalar-evolution -basicaa -scalar-evolution -indvars -gvn -basicaa -sccp -basicaa -basicaa -dse -scalar-evolution -postdomtree -basicaa -basiccg -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -instsimplify

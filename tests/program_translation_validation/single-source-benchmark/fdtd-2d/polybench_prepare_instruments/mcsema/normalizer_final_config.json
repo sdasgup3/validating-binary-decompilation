@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine
+ -tbaa -mem2reg -deadargelim -aa -instcombine -globals-aa -inline -aa -instcombine -aa -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -sccp -bdce -aa -instcombine -aa -aa -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify

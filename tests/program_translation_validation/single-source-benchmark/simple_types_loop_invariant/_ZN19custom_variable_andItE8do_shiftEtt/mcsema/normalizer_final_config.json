@@ -1,1 +1,1 @@
- -gvn -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -mem2reg -instcombine -basiccg -early-cse -instcombine -instcombine -indvars -gvn -memcpyopt -instcombine -dse -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine

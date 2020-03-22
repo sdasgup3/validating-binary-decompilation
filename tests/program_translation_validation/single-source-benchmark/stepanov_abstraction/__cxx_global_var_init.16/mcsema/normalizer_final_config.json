@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -dse -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -deadargelim -aa -instcombine -globals-aa -inline -early-cse -aa -instcombine -reassociate -aa -licm -aa -instcombine -indvars -aa -aa -memcpyopt -sccp -aa -instcombine -aa -aa -licm -postdomtree -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa

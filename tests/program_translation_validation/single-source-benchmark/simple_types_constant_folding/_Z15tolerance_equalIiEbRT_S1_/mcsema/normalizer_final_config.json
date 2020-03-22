@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -instcombine -early-cse-memssa
+ -mem2reg -aa -instcombine -simplifycfg -basiccg -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -aa -aa -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -aa -instsimplify

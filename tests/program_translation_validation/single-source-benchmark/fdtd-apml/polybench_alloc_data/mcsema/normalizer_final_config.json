@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -dse -instcombine
+ -globalopt -instcombine -simplifycfg -basiccg -inline -sroa -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -memdep -gvn -memdep -instcombine -memdep -dse -postdomtree -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine -globaldce

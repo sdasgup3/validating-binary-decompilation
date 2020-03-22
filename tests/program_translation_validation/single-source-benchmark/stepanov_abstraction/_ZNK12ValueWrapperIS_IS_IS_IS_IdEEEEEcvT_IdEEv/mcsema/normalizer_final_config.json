@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -instcombine
+ -domtree -mem2reg -domtree -instcombine -basiccg -globals-aa -inline -domtree -early-cse -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -indvars -sccp -domtree -bdce -instcombine -domtree -dse -scalar-evolution -domtree -instcombine -basiccg -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -domtree -scalar-evolution

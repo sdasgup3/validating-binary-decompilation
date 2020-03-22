@@ -1,1 +1,1 @@
- -early-cse -basicaa -aa -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -deadargelim -aa -instcombine -basiccg -early-cse -aa -instcombine -libcalls-shrinkwrap -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -aa -instcombine -aa -memdep -aa -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify

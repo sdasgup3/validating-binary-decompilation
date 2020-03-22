@@ -1,1 +1,1 @@
- -early-cse -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -instcombine -globals-aa -inline -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -instcombine -indvars -gvn -memcpyopt -instcombine -adce -instcombine -globals-aa -instcombine -instcombine -instcombine

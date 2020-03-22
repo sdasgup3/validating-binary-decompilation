@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -basicaa -aa -instcombine -inline -early-cse -basicaa -aa -instcombine -tailcallelim -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -dse -aa -postdomtree -adce -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -globaldce -constmerge -basicaa -aa

@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -globalopt -mem2reg -aa -instcombine -sroa -early-cse -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify

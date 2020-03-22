@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -domtree -deadargelim -domtree -aa -instcombine -simplifycfg -globals-aa -domtree -sroa -simplifycfg -domtree -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -instcombine -aa -gvn -aa -sccp -domtree -aa -instcombine -domtree -aa -aa -adce -simplifycfg -domtree -aa -instcombine -globals-aa -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -globaldce -constmerge -domtree -aa

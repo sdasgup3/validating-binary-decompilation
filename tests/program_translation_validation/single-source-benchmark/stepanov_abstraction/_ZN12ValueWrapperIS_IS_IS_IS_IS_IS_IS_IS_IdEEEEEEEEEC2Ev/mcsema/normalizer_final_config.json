@@ -1,1 +1,1 @@
- -early-cse -memdep -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -instcombine -globals-aa -early-cse -instcombine -instcombine -memdep -gvn -memdep -sccp -instcombine -memdep -dse -postdomtree -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -globaldce

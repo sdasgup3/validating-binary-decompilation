@@ -1,1 +1,1 @@
- -gvn -dse -instcombine -memcpyopt
+ -basicaa -instcombine -basiccg -inline -early-cse -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -basicaa -sccp -basicaa -instcombine -basicaa -adce -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse
+ -tbaa -mem2reg -basicaa -inline -basicaa -tailcallelim -basicaa -scalar-evolution -licm -basicaa -scalar-evolution -gvn -basicaa -memcpyopt -basicaa -basicaa -dse -scalar-evolution -licm -basicaa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -licm -constmerge -basicaa -scalar-evolution -instsimplify

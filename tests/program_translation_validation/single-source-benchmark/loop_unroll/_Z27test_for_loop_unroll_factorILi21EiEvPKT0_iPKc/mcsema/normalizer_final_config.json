@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -deadargelim -instcombine -early-cse-memssa
+ -tbaa -basicaa -aa -instcombine -globals-aa -inline -sroa -early-cse -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -indvars -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -postdomtree -adce -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -globaldce -constmerge -basicaa -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse
+ -mem2reg -basicaa -aa -instcombine -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -indvars -aa -gvn -basicaa -aa -bdce -basicaa -aa -instcombine -basicaa -aa -aa -adce -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa

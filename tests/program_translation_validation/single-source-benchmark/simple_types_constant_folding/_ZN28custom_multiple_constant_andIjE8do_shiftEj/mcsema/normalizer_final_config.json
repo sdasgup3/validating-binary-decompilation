@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -deadargelim -memcpyopt
+ -globalopt -mem2reg -basiccg -inline -libcalls-shrinkwrap -tailcallelim -reassociate -gvn -sccp -bdce -dse -basiccg

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -basicaa -sroa -early-cse -basicaa -tailcallelim -reassociate -basicaa -scalar-evolution -basicaa -scalar-evolution -indvars -memdep -gvn -basicaa -memdep -sccp -basicaa -basicaa -memdep -dse -scalar-evolution -postdomtree -basicaa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -globaldce -basicaa -scalar-evolution

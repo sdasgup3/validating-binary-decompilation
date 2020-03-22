@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -mem2reg -deadargelim -instcombine -basiccg -globals-aa -instcombine -reassociate -licm -instcombine -gvn -bdce -instcombine -licm -postdomtree -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -licm -globaldce

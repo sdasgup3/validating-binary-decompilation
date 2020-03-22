@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -memcpyopt
+ -mem2reg -deadargelim -instcombine -basiccg -sroa -early-cse -instcombine -instcombine -memcpyopt -sccp -instcombine -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine

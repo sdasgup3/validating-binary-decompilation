@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -aa -memdep -instcombine -early-cse-memssa
+ -tbaa -domtree -mem2reg -domtree -aa -basiccg -domtree -sroa -domtree -aa -tailcallelim -domtree -aa -licm -domtree -aa -aa -gvn -aa -memcpyopt -domtree -aa -domtree -aa -dse -aa -licm -adce -domtree -aa -basiccg -domtree -aa -aa -aa -aa -domtree -aa -licm -domtree -aa -instsimplify

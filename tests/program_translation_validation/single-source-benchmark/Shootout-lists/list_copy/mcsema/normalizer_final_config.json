@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -globalopt -mem2reg -deadargelim -aa -instcombine -simplifycfg -basiccg -globals-aa -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -aa -licm -adce -simplifycfg -aa -instcombine -basiccg -globals-aa -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -globaldce -aa

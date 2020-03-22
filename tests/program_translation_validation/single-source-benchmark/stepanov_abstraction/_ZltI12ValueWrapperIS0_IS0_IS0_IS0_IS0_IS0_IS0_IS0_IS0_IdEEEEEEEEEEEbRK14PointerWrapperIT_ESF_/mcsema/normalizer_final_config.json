@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -memdep -dse -deadargelim
+ -globalopt -deadargelim -basicaa -instcombine -basiccg -sroa -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -postdomtree -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa -instsimplify

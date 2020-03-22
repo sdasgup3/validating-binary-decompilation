@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tbaa -deadargelim -basicaa -instcombine -inline -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -gvn -basicaa -basicaa -instcombine -basicaa -dse -licm -postdomtree -adce -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa

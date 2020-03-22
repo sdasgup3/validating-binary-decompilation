@@ -1,1 +1,1 @@
- -gvn -globalopt -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -domtree -domtree -instcombine -globals-aa -domtree -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -domtree -domtree -instcombine -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -globaldce -domtree -instsimplify

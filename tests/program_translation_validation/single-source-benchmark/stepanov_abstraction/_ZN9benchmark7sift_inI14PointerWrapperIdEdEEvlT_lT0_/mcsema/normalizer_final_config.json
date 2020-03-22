@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -memdep -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -deadargelim -aa -instcombine -basiccg -inline -sroa -aa -instcombine -aa -licm -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -aa -dse -aa -licm -postdomtree -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -aa -dse -deadargelim -instcombine
+ -deadargelim -aa -instcombine -inline -sroa -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -aa -licm -aa -instcombine -indvars -aa -gvn -aa -bdce -aa -instcombine -aa -aa -licm -postdomtree -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -constmerge -aa

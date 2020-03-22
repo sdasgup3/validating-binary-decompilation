@@ -1,1 +1,1 @@
- -gvn -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -basicaa -aa -instcombine -sroa -early-cse -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -bdce -basicaa -aa -instcombine -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa -instsimplify

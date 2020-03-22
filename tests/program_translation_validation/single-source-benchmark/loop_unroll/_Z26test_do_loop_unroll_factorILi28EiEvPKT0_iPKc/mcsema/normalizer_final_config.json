@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -globalopt -mem2reg -instcombine -simplifycfg -basiccg -globals-aa -simplifycfg -instcombine -tailcallelim -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -gvn -memcpyopt -instcombine -dse -scalar-evolution -licm -simplifycfg -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -constmerge -scalar-evolution

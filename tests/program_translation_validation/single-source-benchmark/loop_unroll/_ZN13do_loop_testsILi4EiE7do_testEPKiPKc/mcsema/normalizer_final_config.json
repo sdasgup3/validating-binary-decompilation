@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -dse -tailcallelim -instcombine
+ -globalopt -domtree -deadargelim -domtree -basicaa -simplifycfg -basiccg -domtree -sroa -simplifycfg -domtree -basicaa -simplifycfg -domtree -basicaa -licm -simplifycfg -domtree -basicaa -gvn -basicaa -domtree -bdce -basicaa -domtree -basicaa -dse -licm -simplifycfg -domtree -basicaa -basiccg -domtree -basicaa -basicaa -basicaa -simplifycfg -domtree -basicaa -licm -constmerge -domtree -basicaa -instsimplify

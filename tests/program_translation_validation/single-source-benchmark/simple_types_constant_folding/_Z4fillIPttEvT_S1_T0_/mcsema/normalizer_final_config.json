@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -instcombine
+ -aa -instcombine -simplifycfg -inline -sroa -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -licm -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -sccp -aa -instcombine -aa -memdep -aa -licm -simplifycfg -aa -instcombine -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa

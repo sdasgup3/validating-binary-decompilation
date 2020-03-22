@@ -1,1 +1,1 @@
- -mem2reg -gvn -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -domtree -domtree -instcombine -simplifycfg -domtree -early-cse -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -indvars -memdep -memdep -sccp -domtree -instcombine -domtree -memdep -dse -licm -postdomtree -simplifycfg -domtree -instcombine -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -globaldce -domtree

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -basicaa -instcombine -basiccg -inline -early-cse -basicaa -instcombine -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -memdep -gvn -basicaa -memdep -bdce -basicaa -instcombine -basicaa -memdep -scalar-evolution -postdomtree -basicaa -instcombine -basiccg -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -basicaa -scalar-evolution

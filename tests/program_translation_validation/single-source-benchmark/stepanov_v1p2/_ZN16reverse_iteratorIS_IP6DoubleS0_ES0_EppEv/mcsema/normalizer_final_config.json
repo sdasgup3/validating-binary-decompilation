@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -dse -instcombine -early-cse-memssa
+ -mem2reg -instcombine -sroa -instcombine -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -bdce -instcombine -scalar-evolution -postdomtree -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

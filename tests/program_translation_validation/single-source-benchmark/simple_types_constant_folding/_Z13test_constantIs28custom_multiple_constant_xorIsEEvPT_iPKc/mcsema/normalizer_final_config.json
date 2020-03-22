@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -deadargelim -instcombine -early-cse-memssa
+ -domtree -deadargelim -domtree -instcombine -inline -domtree -sroa -early-cse -domtree -instcombine -domtree -domtree -instcombine -indvars -gvn -sccp -domtree -instcombine -domtree -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

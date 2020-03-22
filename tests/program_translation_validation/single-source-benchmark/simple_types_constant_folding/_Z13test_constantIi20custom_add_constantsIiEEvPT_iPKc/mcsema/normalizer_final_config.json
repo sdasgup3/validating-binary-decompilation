@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -dse -deadargelim -instcombine
+ -globalopt -instcombine -globals-aa -inline -sroa -instcombine -libcalls-shrinkwrap -reassociate -instcombine -memdep -gvn -memdep -instcombine -memdep -dse -postdomtree -instcombine -globals-aa -instcombine -instcombine -instcombine -globaldce

@@ -1,1 +1,1 @@
- -early-cse -globalopt -simplifycfg -basicaa -aa -instcombine -early-cse-memssa
+ -mem2reg -simplifycfg -early-cse -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -indvars -gvn -dse -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -domtree -deadargelim -domtree -instcombine -basiccg -inline -domtree -sroa -domtree -instcombine -libcalls-shrinkwrap -domtree -licm -domtree -instcombine -gvn -memcpyopt -domtree -instcombine -domtree -dse -licm -postdomtree -adce -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

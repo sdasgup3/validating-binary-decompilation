@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -simplifycfg -simplifycfg -tailcallelim -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -gvn -memcpyopt -dse -scalar-evolution -postdomtree -adce -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -globaldce -scalar-evolution

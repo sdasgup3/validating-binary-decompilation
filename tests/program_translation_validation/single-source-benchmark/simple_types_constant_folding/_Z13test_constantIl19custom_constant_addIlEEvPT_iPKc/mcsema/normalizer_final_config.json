@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -deadargelim -instcombine -simplifycfg -basiccg -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -gvn -sccp -bdce -instcombine -scalar-evolution -postdomtree -simplifycfg -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

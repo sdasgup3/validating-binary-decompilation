@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -dse -deadargelim -instcombine -early-cse-memssa
+ -domtree -mem2reg -deadargelim -domtree -instcombine -globals-aa -domtree -sroa -early-cse -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -gvn -domtree -instcombine -domtree -dse -postdomtree -domtree -instcombine -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree -instsimplify

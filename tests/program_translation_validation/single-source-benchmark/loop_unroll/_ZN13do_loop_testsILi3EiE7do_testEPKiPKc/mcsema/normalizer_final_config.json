@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse
+ -tbaa -basicaa -instcombine -inline -basicaa -instcombine -basicaa -basicaa -instcombine -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -adce -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa

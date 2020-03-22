@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -tailcallelim -instcombine -memcpyopt
+ -tbaa -globalopt -instcombine -simplifycfg -globals-aa -inline -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -simplifycfg -instcombine -indvars -instcombine -dse -adce -simplifycfg -instcombine -globals-aa -instcombine -simplifycfg -instcombine -instcombine -constmerge

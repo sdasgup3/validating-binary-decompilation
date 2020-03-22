@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -dse -tailcallelim -memcpyopt
+ -domtree -deadargelim -domtree -inline -domtree -sroa -domtree -libcalls-shrinkwrap -domtree -licm -domtree -gvn -domtree -domtree -dse -licm -adce -domtree -domtree -domtree -licm -globaldce -constmerge -domtree

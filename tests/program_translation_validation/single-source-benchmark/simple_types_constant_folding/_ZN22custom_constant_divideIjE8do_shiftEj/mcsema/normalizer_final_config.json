@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -instcombine
+ -tbaa -globalopt -mem2reg -deadargelim -instcombine -inline -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -instcombine -indvars -gvn -memcpyopt -instcombine -postdomtree -instcombine -instcombine -instcombine -instcombine -instsimplify

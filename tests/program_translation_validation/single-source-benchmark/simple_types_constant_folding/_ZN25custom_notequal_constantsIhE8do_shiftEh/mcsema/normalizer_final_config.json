@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -deadargelim -instcombine
+ -aa -instcombine -globals-aa -sroa -aa -instcombine -reassociate -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -aa -memdep -aa -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

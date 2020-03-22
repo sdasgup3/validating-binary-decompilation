@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -memdep -dse -deadargelim -memcpyopt
+ -globalopt -instcombine -instcombine -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -gvn -instcombine -scalar-evolution -licm -postdomtree -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution -instsimplify

@@ -1,52 +1,255 @@
-[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+[     1s]    INFO tuneNormalizer:  Search Space: ['-tbaa', '-globalopt', '-domtree', '-mem2reg', '-deadargelim', '-domtree', '-basicaa', '-aa', '-instcombine', '-simplifycfg', '-basiccg', '-globals-aa', '-inline', '-domtree', '-sroa', '-early-cse', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-libcalls-shrinkwrap', '-tailcallelim', '-simplifycfg', '-reassociate', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-licm', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-indvars', '-aa', '-memdep', '-gvn', '-basicaa', '-aa', '-memdep', '-memcpyopt', '-sccp', '-domtree', '-bdce', '-basicaa', '-aa', '-instcombine', '-domtree', '-basicaa', '-aa', '-memdep', '-dse', '-aa', '-scalar-evolution', '-licm', '-postdomtree', '-adce', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-basiccg', '-globals-aa', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-scalar-evolution', '-basicaa', '-aa', '-scalar-evolution', '-aa', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-instcombine', '-scalar-evolution', '-licm', '-globaldce', '-constmerge', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-instsimplify']
 
 
-[     2s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
-[    15s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #194, cost time=0.0117, found by UniformGreedyMutation
-[    31s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #227, cost time=0.0026, found by NormalGreedyMutation
-[    46s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #227, cost time=0.0026, found by NormalGreedyMutation
-[    61s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #227, cost time=0.0026, found by NormalGreedyMutation
-[    75s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #227, cost time=0.0026, found by NormalGreedyMutation
-[    86s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #227, cost time=0.0026, found by NormalGreedyMutation
-[    98s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #227, cost time=0.0026, found by NormalGreedyMutation
-[   106s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -instcombine]
-[   111s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   121s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -tailcallelim -instcombine]
-[   121s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   134s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   142s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -simplifycfg -dse -deadargelim -instcombine]
-[   145s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   156s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -basicaa -dse -instcombine]
-[   156s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   160s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -basicaa -aa -memdep -dse -instcombine]
-[   167s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -globalopt -memdep -dse -instcombine]
-[   167s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   171s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -basicaa -aa -memdep -dse -instcombine]
-[   173s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -instcombine]
-[   176s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -instcombine]
-[   179s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   199s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   202s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -basicaa -memdep -dse -instcombine]
-[   204s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -instcombine]
-[   208s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -instcombine]
-[   219s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   221s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -tailcallelim -instcombine]
-[   230s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   240s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   242s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -deadargelim -instcombine]
-[   244s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -libcalls-shrinkwrap -instcombine]
-[   246s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -early-cse -memdep -dse -instcombine]
-[   254s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   266s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   273s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -memdep -dse -tailcallelim -instcombine]
-[   275s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -libcalls-shrinkwrap -instcombine]
-[   276s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   287s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -dse -instcombine]
-[   287s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   289s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -deadargelim -instcombine]
-[   294s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -memdep -dse -deadargelim -instcombine]
-[   302s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   302s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #249, cost time=0.0000, found by NormalGreedyMutation
-[   302s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-instcombine -dse -memdep -licm -gvn ]
-186.19user 27.76system 5:02.49elapsed 70%CPU (0avgtext+0avgdata 55344maxresident)k
-0inputs+155752outputs (0major+1022171minor)pagefaults 0swaps
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    23s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #309, cost time=0.0104, found by DifferentialEvolutionAlt
+[    41s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #313, cost time=0.0073, found by DifferentialEvolutionAlt
+[    52s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[    63s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[    79s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[    97s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[   109s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[   126s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[   139s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #315, cost time=0.0048, found by DifferentialEvolutionAlt
+[   156s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   178s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   197s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   210s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   223s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   237s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   251s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   270s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   286s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   299s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   313s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   329s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   344s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   370s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   388s]    INFO opentuner.search.plugin.DisplayPlugin: tests=100, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   401s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   414s]    INFO opentuner.search.plugin.DisplayPlugin: tests=108, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   429s]    INFO opentuner.search.plugin.DisplayPlugin: tests=112, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   442s]    INFO opentuner.search.plugin.DisplayPlugin: tests=116, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   456s]    INFO opentuner.search.plugin.DisplayPlugin: tests=120, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   472s]    INFO opentuner.search.plugin.DisplayPlugin: tests=124, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   489s]    INFO opentuner.search.plugin.DisplayPlugin: tests=128, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   503s]    INFO opentuner.search.plugin.DisplayPlugin: tests=132, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   517s]    INFO opentuner.search.plugin.DisplayPlugin: tests=136, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   534s]    INFO opentuner.search.plugin.DisplayPlugin: tests=140, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   548s]    INFO opentuner.search.plugin.DisplayPlugin: tests=144, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   563s]    INFO opentuner.search.plugin.DisplayPlugin: tests=148, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   579s]    INFO opentuner.search.plugin.DisplayPlugin: tests=152, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   591s]    INFO opentuner.search.plugin.DisplayPlugin: tests=156, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   603s]    INFO opentuner.search.plugin.DisplayPlugin: tests=160, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   614s]    INFO opentuner.search.plugin.DisplayPlugin: tests=164, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   636s]    INFO opentuner.search.plugin.DisplayPlugin: tests=172, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   648s]    INFO opentuner.search.plugin.DisplayPlugin: tests=176, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   660s]    INFO opentuner.search.plugin.DisplayPlugin: tests=180, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   679s]    INFO opentuner.search.plugin.DisplayPlugin: tests=184, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   694s]    INFO opentuner.search.plugin.DisplayPlugin: tests=188, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   708s]    INFO opentuner.search.plugin.DisplayPlugin: tests=192, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   719s]    INFO opentuner.search.plugin.DisplayPlugin: tests=196, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   733s]    INFO opentuner.search.plugin.DisplayPlugin: tests=200, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   747s]    INFO opentuner.search.plugin.DisplayPlugin: tests=204, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   760s]    INFO opentuner.search.plugin.DisplayPlugin: tests=208, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   773s]    INFO opentuner.search.plugin.DisplayPlugin: tests=212, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   784s]    INFO opentuner.search.plugin.DisplayPlugin: tests=216, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   801s]    INFO opentuner.search.plugin.DisplayPlugin: tests=220, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   816s]    INFO opentuner.search.plugin.DisplayPlugin: tests=224, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   830s]    INFO opentuner.search.plugin.DisplayPlugin: tests=228, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   846s]    INFO opentuner.search.plugin.DisplayPlugin: tests=232, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   864s]    INFO opentuner.search.plugin.DisplayPlugin: tests=236, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   875s]    INFO opentuner.search.plugin.DisplayPlugin: tests=240, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   887s]    INFO opentuner.search.plugin.DisplayPlugin: tests=244, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   904s]    INFO opentuner.search.plugin.DisplayPlugin: tests=248, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   917s]    INFO opentuner.search.plugin.DisplayPlugin: tests=252, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   931s]    INFO opentuner.search.plugin.DisplayPlugin: tests=256, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   944s]    INFO opentuner.search.plugin.DisplayPlugin: tests=260, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   958s]    INFO opentuner.search.plugin.DisplayPlugin: tests=264, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   974s]    INFO opentuner.search.plugin.DisplayPlugin: tests=268, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[   987s]    INFO opentuner.search.plugin.DisplayPlugin: tests=272, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1000s]    INFO opentuner.search.plugin.DisplayPlugin: tests=276, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1017s]    INFO opentuner.search.plugin.DisplayPlugin: tests=280, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1029s]    INFO opentuner.search.plugin.DisplayPlugin: tests=284, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1041s]    INFO opentuner.search.plugin.DisplayPlugin: tests=288, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1055s]    INFO opentuner.search.plugin.DisplayPlugin: tests=292, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1074s]    INFO opentuner.search.plugin.DisplayPlugin: tests=300, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1085s]    INFO opentuner.search.plugin.DisplayPlugin: tests=304, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1102s]    INFO opentuner.search.plugin.DisplayPlugin: tests=308, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1115s]    INFO opentuner.search.plugin.DisplayPlugin: tests=312, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1131s]    INFO opentuner.search.plugin.DisplayPlugin: tests=316, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1145s]    INFO opentuner.search.plugin.DisplayPlugin: tests=320, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1160s]    INFO opentuner.search.plugin.DisplayPlugin: tests=324, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1172s]    INFO opentuner.search.plugin.DisplayPlugin: tests=328, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1186s]    INFO opentuner.search.plugin.DisplayPlugin: tests=332, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1197s]    INFO opentuner.search.plugin.DisplayPlugin: tests=336, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1210s]    INFO opentuner.search.plugin.DisplayPlugin: tests=340, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1222s]    INFO opentuner.search.plugin.DisplayPlugin: tests=344, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1234s]    INFO opentuner.search.plugin.DisplayPlugin: tests=348, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1250s]    INFO opentuner.search.plugin.DisplayPlugin: tests=352, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1268s]    INFO opentuner.search.plugin.DisplayPlugin: tests=356, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1282s]    INFO opentuner.search.plugin.DisplayPlugin: tests=360, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1294s]    INFO opentuner.search.plugin.DisplayPlugin: tests=364, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1309s]    INFO opentuner.search.plugin.DisplayPlugin: tests=368, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1321s]    INFO opentuner.search.plugin.DisplayPlugin: tests=372, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1336s]    INFO opentuner.search.plugin.DisplayPlugin: tests=376, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1348s]    INFO opentuner.search.plugin.DisplayPlugin: tests=380, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1362s]    INFO opentuner.search.plugin.DisplayPlugin: tests=384, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1375s]    INFO opentuner.search.plugin.DisplayPlugin: tests=388, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1388s]    INFO opentuner.search.plugin.DisplayPlugin: tests=392, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1402s]    INFO opentuner.search.plugin.DisplayPlugin: tests=396, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1412s]    INFO opentuner.search.plugin.DisplayPlugin: tests=400, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1423s]    INFO opentuner.search.plugin.DisplayPlugin: tests=404, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1435s]    INFO opentuner.search.plugin.DisplayPlugin: tests=408, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1448s]    INFO opentuner.search.plugin.DisplayPlugin: tests=412, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1463s]    INFO opentuner.search.plugin.DisplayPlugin: tests=416, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1476s]    INFO opentuner.search.plugin.DisplayPlugin: tests=420, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1488s]    INFO opentuner.search.plugin.DisplayPlugin: tests=424, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1499s]    INFO opentuner.search.plugin.DisplayPlugin: tests=428, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1513s]    INFO opentuner.search.plugin.DisplayPlugin: tests=432, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1528s]    INFO opentuner.search.plugin.DisplayPlugin: tests=436, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1542s]    INFO opentuner.search.plugin.DisplayPlugin: tests=440, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1556s]    INFO opentuner.search.plugin.DisplayPlugin: tests=444, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1570s]    INFO opentuner.search.plugin.DisplayPlugin: tests=448, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1584s]    INFO opentuner.search.plugin.DisplayPlugin: tests=452, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1597s]    INFO opentuner.search.plugin.DisplayPlugin: tests=456, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1613s]    INFO opentuner.search.plugin.DisplayPlugin: tests=460, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1626s]    INFO opentuner.search.plugin.DisplayPlugin: tests=464, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1638s]    INFO opentuner.search.plugin.DisplayPlugin: tests=468, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1653s]    INFO opentuner.search.plugin.DisplayPlugin: tests=472, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1668s]    INFO opentuner.search.plugin.DisplayPlugin: tests=476, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1682s]    INFO opentuner.search.plugin.DisplayPlugin: tests=480, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1693s]    INFO opentuner.search.plugin.DisplayPlugin: tests=484, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1706s]    INFO opentuner.search.plugin.DisplayPlugin: tests=488, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1720s]    INFO opentuner.search.plugin.DisplayPlugin: tests=492, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1733s]    INFO opentuner.search.plugin.DisplayPlugin: tests=496, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1747s]    INFO opentuner.search.plugin.DisplayPlugin: tests=500, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1747s]    INFO opentuner.search.metatechniques: AUCBanditMetaTechniqueA: [('DifferentialEvolutionAlt', 196), ('NormalGreedyMutation', 154), ('UniformGreedyMutation', 151)]
+[  1762s]    INFO opentuner.search.plugin.DisplayPlugin: tests=504, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1774s]    INFO opentuner.search.plugin.DisplayPlugin: tests=508, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1785s]    INFO opentuner.search.plugin.DisplayPlugin: tests=512, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1799s]    INFO opentuner.search.plugin.DisplayPlugin: tests=516, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1816s]    INFO opentuner.search.plugin.DisplayPlugin: tests=520, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1829s]    INFO opentuner.search.plugin.DisplayPlugin: tests=524, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1844s]    INFO opentuner.search.plugin.DisplayPlugin: tests=528, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1854s]    INFO opentuner.search.plugin.DisplayPlugin: tests=532, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1867s]    INFO opentuner.search.plugin.DisplayPlugin: tests=536, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1878s]    INFO opentuner.search.plugin.DisplayPlugin: tests=540, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1890s]    INFO opentuner.search.plugin.DisplayPlugin: tests=544, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1903s]    INFO opentuner.search.plugin.DisplayPlugin: tests=548, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1915s]    INFO opentuner.search.plugin.DisplayPlugin: tests=552, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1928s]    INFO opentuner.search.plugin.DisplayPlugin: tests=556, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1951s]    INFO opentuner.search.plugin.DisplayPlugin: tests=563, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1963s]    INFO opentuner.search.plugin.DisplayPlugin: tests=567, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1978s]    INFO opentuner.search.plugin.DisplayPlugin: tests=571, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  1991s]    INFO opentuner.search.plugin.DisplayPlugin: tests=575, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2006s]    INFO opentuner.search.plugin.DisplayPlugin: tests=579, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2017s]    INFO opentuner.search.plugin.DisplayPlugin: tests=583, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2029s]    INFO opentuner.search.plugin.DisplayPlugin: tests=587, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2039s]    INFO opentuner.search.plugin.DisplayPlugin: tests=591, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2052s]    INFO opentuner.search.plugin.DisplayPlugin: tests=595, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2077s]    INFO opentuner.search.plugin.DisplayPlugin: tests=603, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2090s]    INFO opentuner.search.plugin.DisplayPlugin: tests=607, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2102s]    INFO opentuner.search.plugin.DisplayPlugin: tests=611, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2117s]    INFO opentuner.search.plugin.DisplayPlugin: tests=615, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2132s]    INFO opentuner.search.plugin.DisplayPlugin: tests=619, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2146s]    INFO opentuner.search.plugin.DisplayPlugin: tests=623, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2157s]    INFO opentuner.search.plugin.DisplayPlugin: tests=627, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2169s]    INFO opentuner.search.plugin.DisplayPlugin: tests=631, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2183s]    INFO opentuner.search.plugin.DisplayPlugin: tests=635, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2196s]    INFO opentuner.search.plugin.DisplayPlugin: tests=639, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2208s]    INFO opentuner.search.plugin.DisplayPlugin: tests=643, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2221s]    INFO opentuner.search.plugin.DisplayPlugin: tests=647, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2234s]    INFO opentuner.search.plugin.DisplayPlugin: tests=651, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2246s]    INFO opentuner.search.plugin.DisplayPlugin: tests=655, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2259s]    INFO opentuner.search.plugin.DisplayPlugin: tests=659, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2270s]    INFO opentuner.search.plugin.DisplayPlugin: tests=663, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2283s]    INFO opentuner.search.plugin.DisplayPlugin: tests=667, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2297s]    INFO opentuner.search.plugin.DisplayPlugin: tests=671, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2310s]    INFO opentuner.search.plugin.DisplayPlugin: tests=675, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2323s]    INFO opentuner.search.plugin.DisplayPlugin: tests=679, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2335s]    INFO opentuner.search.plugin.DisplayPlugin: tests=683, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2350s]    INFO opentuner.search.plugin.DisplayPlugin: tests=687, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2364s]    INFO opentuner.search.plugin.DisplayPlugin: tests=691, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2379s]    INFO opentuner.search.plugin.DisplayPlugin: tests=695, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2394s]    INFO opentuner.search.plugin.DisplayPlugin: tests=699, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2407s]    INFO opentuner.search.plugin.DisplayPlugin: tests=703, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2418s]    INFO opentuner.search.plugin.DisplayPlugin: tests=707, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2431s]    INFO opentuner.search.plugin.DisplayPlugin: tests=711, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2445s]    INFO opentuner.search.plugin.DisplayPlugin: tests=715, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2458s]    INFO opentuner.search.plugin.DisplayPlugin: tests=719, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2472s]    INFO opentuner.search.plugin.DisplayPlugin: tests=723, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2484s]    INFO opentuner.search.plugin.DisplayPlugin: tests=727, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2500s]    INFO opentuner.search.plugin.DisplayPlugin: tests=731, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2511s]    INFO opentuner.search.plugin.DisplayPlugin: tests=735, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2522s]    INFO opentuner.search.plugin.DisplayPlugin: tests=739, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2534s]    INFO opentuner.search.plugin.DisplayPlugin: tests=743, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2549s]    INFO opentuner.search.plugin.DisplayPlugin: tests=747, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2561s]    INFO opentuner.search.plugin.DisplayPlugin: tests=751, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2584s]    INFO opentuner.search.plugin.DisplayPlugin: tests=759, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2599s]    INFO opentuner.search.plugin.DisplayPlugin: tests=763, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2612s]    INFO opentuner.search.plugin.DisplayPlugin: tests=767, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2624s]    INFO opentuner.search.plugin.DisplayPlugin: tests=771, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2637s]    INFO opentuner.search.plugin.DisplayPlugin: tests=775, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2649s]    INFO opentuner.search.plugin.DisplayPlugin: tests=779, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2663s]    INFO opentuner.search.plugin.DisplayPlugin: tests=783, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2675s]    INFO opentuner.search.plugin.DisplayPlugin: tests=787, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2687s]    INFO opentuner.search.plugin.DisplayPlugin: tests=791, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2699s]    INFO opentuner.search.plugin.DisplayPlugin: tests=795, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2713s]    INFO opentuner.search.plugin.DisplayPlugin: tests=799, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2724s]    INFO opentuner.search.plugin.DisplayPlugin: tests=803, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2735s]    INFO opentuner.search.plugin.DisplayPlugin: tests=807, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2745s]    INFO opentuner.search.plugin.DisplayPlugin: tests=811, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2757s]    INFO opentuner.search.plugin.DisplayPlugin: tests=815, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2770s]    INFO opentuner.search.plugin.DisplayPlugin: tests=819, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2784s]    INFO opentuner.search.plugin.DisplayPlugin: tests=823, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2795s]    INFO opentuner.search.plugin.DisplayPlugin: tests=827, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2807s]    INFO opentuner.search.plugin.DisplayPlugin: tests=831, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2821s]    INFO opentuner.search.plugin.DisplayPlugin: tests=835, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2836s]    INFO opentuner.search.plugin.DisplayPlugin: tests=839, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2849s]    INFO opentuner.search.plugin.DisplayPlugin: tests=843, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2863s]    INFO opentuner.search.plugin.DisplayPlugin: tests=847, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2874s]    INFO opentuner.search.plugin.DisplayPlugin: tests=851, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2886s]    INFO opentuner.search.plugin.DisplayPlugin: tests=855, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2900s]    INFO opentuner.search.plugin.DisplayPlugin: tests=859, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2912s]    INFO opentuner.search.plugin.DisplayPlugin: tests=863, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2925s]    INFO opentuner.search.plugin.DisplayPlugin: tests=867, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2936s]    INFO opentuner.search.plugin.DisplayPlugin: tests=871, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2953s]    INFO opentuner.search.plugin.DisplayPlugin: tests=879, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2968s]    INFO opentuner.search.plugin.DisplayPlugin: tests=883, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2981s]    INFO opentuner.search.plugin.DisplayPlugin: tests=887, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  2995s]    INFO opentuner.search.plugin.DisplayPlugin: tests=891, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3007s]    INFO opentuner.search.plugin.DisplayPlugin: tests=895, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3022s]    INFO opentuner.search.plugin.DisplayPlugin: tests=899, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3034s]    INFO opentuner.search.plugin.DisplayPlugin: tests=903, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3047s]    INFO opentuner.search.plugin.DisplayPlugin: tests=907, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3058s]    INFO opentuner.search.plugin.DisplayPlugin: tests=911, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3070s]    INFO opentuner.search.plugin.DisplayPlugin: tests=915, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3084s]    INFO opentuner.search.plugin.DisplayPlugin: tests=919, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3097s]    INFO opentuner.search.plugin.DisplayPlugin: tests=923, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3110s]    INFO opentuner.search.plugin.DisplayPlugin: tests=927, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3123s]    INFO opentuner.search.plugin.DisplayPlugin: tests=931, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3136s]    INFO opentuner.search.plugin.DisplayPlugin: tests=935, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3150s]    INFO opentuner.search.plugin.DisplayPlugin: tests=939, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3161s]    INFO opentuner.search.plugin.DisplayPlugin: tests=943, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3172s]    INFO opentuner.search.plugin.DisplayPlugin: tests=947, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3184s]    INFO opentuner.search.plugin.DisplayPlugin: tests=951, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3196s]    INFO opentuner.search.plugin.DisplayPlugin: tests=955, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3210s]    INFO opentuner.search.plugin.DisplayPlugin: tests=959, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3222s]    INFO opentuner.search.plugin.DisplayPlugin: tests=963, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3233s]    INFO opentuner.search.plugin.DisplayPlugin: tests=967, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3248s]    INFO opentuner.search.plugin.DisplayPlugin: tests=971, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3260s]    INFO opentuner.search.plugin.DisplayPlugin: tests=975, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3273s]    INFO opentuner.search.plugin.DisplayPlugin: tests=979, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3288s]    INFO opentuner.search.plugin.DisplayPlugin: tests=983, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3299s]    INFO opentuner.search.plugin.DisplayPlugin: tests=987, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3313s]    INFO opentuner.search.plugin.DisplayPlugin: tests=991, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3327s]    INFO opentuner.search.plugin.DisplayPlugin: tests=995, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3338s]    INFO opentuner.search.plugin.DisplayPlugin: tests=999, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3338s]    INFO opentuner.search.metatechniques: AUCBanditMetaTechniqueA: [('DifferentialEvolutionAlt', 169), ('NormalGreedyMutation', 166), ('UniformGreedyMutation', 166)]
+[  3349s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1003, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3349s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1003, best #332, cost time=0.0024, found by DifferentialEvolutionAlt
+[  3349s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-aa -gvn -globaldce -deadargelim -early-cse -scalar-evolution -globalopt -reassociate -instcombine -libcalls-shrinkwrap -licm ]
+1956.79user 256.52system 55:49.79elapsed 66%CPU (0avgtext+0avgdata 63340maxresident)k
+0inputs+1497744outputs (0major+10118046minor)pagefaults 0swaps

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -globals-aa -inline -sroa -early-cse -tailcallelim -licm -gvn -memcpyopt -bdce -dse -licm -postdomtree -globals-aa -licm -globaldce

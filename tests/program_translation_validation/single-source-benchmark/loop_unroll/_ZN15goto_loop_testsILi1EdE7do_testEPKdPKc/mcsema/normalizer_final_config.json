@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt
+ -sroa -scalar-evolution -licm -scalar-evolution -indvars -gvn -sccp -dse -scalar-evolution -licm -postdomtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -licm -globaldce -constmerge -scalar-evolution

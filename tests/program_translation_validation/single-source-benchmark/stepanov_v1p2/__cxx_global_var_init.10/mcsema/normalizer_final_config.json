@@ -1,1 +1,1 @@
- -early-cse -globalopt -simplifycfg -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -bdce -instcombine -dse -scalar-evolution -licm -postdomtree -adce -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution

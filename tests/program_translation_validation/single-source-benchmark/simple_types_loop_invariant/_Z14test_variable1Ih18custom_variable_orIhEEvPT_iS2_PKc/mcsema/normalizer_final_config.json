@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -instcombine -early-cse-memssa
+ -tbaa -globalopt -instcombine -globals-aa -early-cse -instcombine -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -gvn -memcpyopt -bdce -instcombine -dse -scalar-evolution -licm -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution

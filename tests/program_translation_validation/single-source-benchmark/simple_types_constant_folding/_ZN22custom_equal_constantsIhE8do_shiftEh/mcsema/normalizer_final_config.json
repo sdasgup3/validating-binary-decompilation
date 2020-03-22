@@ -1,1 +1,1 @@
- -gvn -basicaa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -deadargelim -basicaa -aa -instcombine -sroa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -dse -aa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa

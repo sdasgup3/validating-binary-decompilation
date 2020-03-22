@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -instcombine -inline -instcombine -libcalls-shrinkwrap -instcombine -gvn -sccp -instcombine -dse -postdomtree -instcombine -instcombine -instcombine -instcombine -constmerge

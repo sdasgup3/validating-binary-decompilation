@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -dse -instcombine -memcpyopt
+ -sroa -libcalls-shrinkwrap -tailcallelim -memdep -gvn -memdep -bdce -memdep -dse

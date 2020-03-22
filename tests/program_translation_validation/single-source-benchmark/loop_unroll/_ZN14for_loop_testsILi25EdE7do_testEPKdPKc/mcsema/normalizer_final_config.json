@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -dse -instcombine
+ -tbaa -mem2reg -globals-aa -libcalls-shrinkwrap -tailcallelim -scalar-evolution -scalar-evolution -gvn -sccp -dse -scalar-evolution -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution

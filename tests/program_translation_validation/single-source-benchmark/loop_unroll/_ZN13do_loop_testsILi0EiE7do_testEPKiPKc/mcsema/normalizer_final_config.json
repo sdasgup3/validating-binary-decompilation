@@ -1,1 +1,1 @@
- -early-cse -globalopt -simplifycfg -aa -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -domtree -domtree -inline -domtree -sroa -early-cse -domtree -reassociate -domtree -domtree -memdep -gvn -memdep -domtree -domtree -memdep -dse -domtree -domtree -domtree -domtree

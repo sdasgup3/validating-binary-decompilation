@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -memcpyopt
+ -mem2reg -aa -aa -libcalls-shrinkwrap -aa -scalar-evolution -aa -scalar-evolution -aa -gvn -aa -memcpyopt -aa -aa -dse -aa -scalar-evolution -adce -aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -instsimplify

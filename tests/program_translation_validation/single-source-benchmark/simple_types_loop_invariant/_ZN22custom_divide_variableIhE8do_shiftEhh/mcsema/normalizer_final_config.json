@@ -1,1 +1,1 @@
- -licm -gvn -memdep -dse -instcombine
+ -domtree -deadargelim -domtree -aa -instcombine -domtree -domtree -aa -instcombine -tailcallelim -domtree -aa -scalar-evolution -licm -domtree -aa -instcombine -scalar-evolution -aa -gvn -aa -sccp -domtree -bdce -aa -instcombine -domtree -aa -dse -aa -scalar-evolution -licm -adce -domtree -aa -instcombine -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -domtree -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -domtree -aa -scalar-evolution

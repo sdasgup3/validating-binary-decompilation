@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -memdep -dse -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -mem2reg -aa -instcombine -globals-aa -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -dse -aa -postdomtree -aa -instcombine -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

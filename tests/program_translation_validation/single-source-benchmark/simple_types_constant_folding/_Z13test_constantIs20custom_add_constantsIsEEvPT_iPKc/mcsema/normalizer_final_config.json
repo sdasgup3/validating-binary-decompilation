@@ -1,1 +1,1 @@
- -licm -gvn -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -domtree -deadargelim -domtree -instcombine -domtree -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -memdep -gvn -memdep -memcpyopt -domtree -instcombine -domtree -memdep -dse -scalar-evolution -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -domtree -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -deadargelim -instcombine
+ -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -globals-aa -simplifycfg -basicaa -instcombine -tailcallelim -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -basicaa -instcombine -basicaa -simplifycfg -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -basicaa -instsimplify

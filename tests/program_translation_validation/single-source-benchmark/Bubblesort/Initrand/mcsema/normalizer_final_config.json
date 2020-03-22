@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -dse -instcombine
+ -globalopt -domtree -deadargelim -domtree -aa -instcombine -simplifycfg -domtree -early-cse -simplifycfg -domtree -aa -instcombine -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -instcombine -aa -memdep -aa -memdep -sccp -domtree -aa -instcombine -domtree -aa -memdep -aa -simplifycfg -domtree -aa -instcombine -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -constmerge -domtree -aa

@@ -1,1 +1,1 @@
- -gvn -memdep -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -basicaa -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -indvars -gvn -basicaa -basicaa -basicaa -dse -scalar-evolution -basicaa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -globaldce -basicaa -scalar-evolution

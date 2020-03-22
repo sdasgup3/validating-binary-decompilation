@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -tbaa -globalopt -deadargelim -instcombine -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -memcpyopt -instcombine -dse -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution

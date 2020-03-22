@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -basicaa -instcombine -basicaa -instcombine -reassociate -basicaa -licm -basicaa -instcombine -indvars -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -dse -licm -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa -instsimplify

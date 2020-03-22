@@ -1,1 +1,1 @@
- -mem2reg -early-cse -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -instcombine -simplifycfg -globals-aa -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -gvn -memcpyopt -bdce -instcombine -dse -postdomtree -simplifycfg -instcombine -globals-aa -instcombine -simplifycfg -instcombine -instcombine -globaldce

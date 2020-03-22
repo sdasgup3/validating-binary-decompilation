@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -aa -instcombine -early-cse -aa -instcombine -tailcallelim -reassociate -aa -aa -instcombine -aa -memdep -aa -memdep -aa -instcombine -aa -memdep -dse -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

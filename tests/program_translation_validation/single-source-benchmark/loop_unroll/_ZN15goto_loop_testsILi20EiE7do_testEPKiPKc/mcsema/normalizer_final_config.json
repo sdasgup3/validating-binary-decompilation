@@ -1,1 +1,1 @@
- -gvn -memdep -dse -instcombine
+ -instcombine -sroa -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -memdep -memdep -sccp -instcombine -memdep -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

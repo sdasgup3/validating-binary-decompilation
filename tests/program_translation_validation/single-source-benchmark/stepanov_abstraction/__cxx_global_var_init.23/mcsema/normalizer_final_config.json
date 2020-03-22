@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -deadargelim -instcombine -basiccg -globals-aa -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -scalar-evolution -instcombine -scalar-evolution -gvn -sccp -instcombine -scalar-evolution -postdomtree -adce -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

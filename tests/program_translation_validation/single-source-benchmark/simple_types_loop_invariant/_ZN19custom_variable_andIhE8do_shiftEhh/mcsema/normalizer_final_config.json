@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -basicaa -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -domtree -domtree -instcombine -domtree -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -memdep -gvn -memdep -domtree -instcombine -domtree -memdep -dse -scalar-evolution -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution

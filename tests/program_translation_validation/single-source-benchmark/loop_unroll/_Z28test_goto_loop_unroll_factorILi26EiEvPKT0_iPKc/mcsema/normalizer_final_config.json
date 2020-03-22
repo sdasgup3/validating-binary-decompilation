@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -aa -dse -deadargelim -instcombine
+ -mem2reg -deadargelim -instcombine -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -memdep -gvn -memdep -instcombine -memdep -dse -scalar-evolution -licm -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution

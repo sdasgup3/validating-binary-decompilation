@@ -1,1 +1,1 @@
- -gvn -globalopt -aa -dse -tailcallelim -instcombine
+ -instcombine -early-cse -instcombine -reassociate -instcombine -gvn -sccp -instcombine -dse -instcombine -instcombine -instcombine -instcombine -constmerge

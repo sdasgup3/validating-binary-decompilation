@@ -1,1 +1,1 @@
- -mem2reg -early-cse -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -instcombine -simplifycfg -basiccg -inline -sroa -early-cse -simplifycfg -instcombine -simplifycfg -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -instcombine -dse -scalar-evolution -adce -simplifycfg -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

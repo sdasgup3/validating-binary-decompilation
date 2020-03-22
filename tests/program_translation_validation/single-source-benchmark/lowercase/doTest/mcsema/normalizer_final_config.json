@@ -1,1 +1,1 @@
- -licm -gvn -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -deadargelim -instcombine -simplifycfg -inline -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -licm -postdomtree -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -licm

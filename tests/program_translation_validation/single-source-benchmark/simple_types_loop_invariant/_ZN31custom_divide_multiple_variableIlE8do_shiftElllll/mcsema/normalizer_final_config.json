@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -aa -dse -instcombine -memcpyopt
+ -globalopt -mem2reg -deadargelim -instcombine -early-cse -instcombine -tailcallelim -instcombine -memcpyopt -bdce -instcombine -postdomtree -adce -instcombine -instcombine -instcombine -instcombine -constmerge -instsimplify

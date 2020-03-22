@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -domtree -mem2reg -domtree -inline -domtree -sroa -domtree -domtree -scalar-evolution -domtree -scalar-evolution -indvars -memdep -gvn -memdep -domtree -domtree -memdep -dse -scalar-evolution -domtree -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -domtree -scalar-evolution -scalar-evolution -globaldce -domtree -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -deadargelim -basicaa -instcombine -sroa -early-cse -basicaa -instcombine -basicaa -scalar-evolution -licm -basicaa -instcombine -scalar-evolution -memdep -basicaa -memdep -basicaa -instcombine -basicaa -memdep -dse -scalar-evolution -licm -adce -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -basicaa -scalar-evolution

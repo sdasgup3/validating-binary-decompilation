@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -memdep -dse -deadargelim -instcombine
+ -globalopt -domtree -mem2reg -domtree -basicaa -basiccg -inline -domtree -sroa -domtree -basicaa -tailcallelim -domtree -basicaa -licm -domtree -basicaa -gvn -basicaa -memcpyopt -domtree -basicaa -domtree -basicaa -dse -licm -domtree -basicaa -basiccg -domtree -basicaa -basicaa -basicaa -domtree -basicaa -licm -domtree -basicaa -instsimplify

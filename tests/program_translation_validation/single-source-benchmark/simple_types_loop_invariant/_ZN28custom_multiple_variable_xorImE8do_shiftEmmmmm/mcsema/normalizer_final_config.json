@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -basicaa -aa -dse
+ -tbaa -aa -instcombine -aa -instcombine -tailcallelim -aa -scalar-evolution -aa -instcombine -scalar-evolution -aa -gvn -aa -bdce -aa -instcombine -aa -aa -scalar-evolution -postdomtree -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -aa -scalar-evolution

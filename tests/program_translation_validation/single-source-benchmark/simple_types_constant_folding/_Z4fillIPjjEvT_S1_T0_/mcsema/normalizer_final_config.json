@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -basicaa -aa -instcombine -simplifycfg -basiccg -globals-aa -inline -sroa -early-cse -simplifycfg -basicaa -aa -instcombine -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -instcombine -indvars -aa -basicaa -aa -memcpyopt -basicaa -aa -instcombine -basicaa -aa -aa -adce -simplifycfg -basicaa -aa -instcombine -basiccg -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -basicaa -aa

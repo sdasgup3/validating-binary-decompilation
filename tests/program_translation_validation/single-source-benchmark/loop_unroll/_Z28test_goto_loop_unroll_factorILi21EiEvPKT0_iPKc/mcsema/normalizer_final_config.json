@@ -1,1 +1,1 @@
- -gvn -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -instcombine -basiccg -globals-aa -instcombine -tailcallelim -scalar-evolution -licm -instcombine -scalar-evolution -gvn -memcpyopt -sccp -instcombine -dse -scalar-evolution -licm -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -scalar-evolution

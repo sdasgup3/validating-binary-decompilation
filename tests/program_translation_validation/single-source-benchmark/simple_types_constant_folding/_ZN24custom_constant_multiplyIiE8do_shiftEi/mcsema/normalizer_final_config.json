@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -instcombine
+ -deadargelim -basicaa -instcombine -early-cse -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -indvars -basicaa -basicaa -instcombine -basicaa -adce -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -constmerge -basicaa -instsimplify

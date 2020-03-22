@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -globalopt -mem2reg -deadargelim -instcombine -basiccg -globals-aa -sroa -instcombine -tailcallelim -instcombine -gvn -instcombine -dse -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -globaldce -instsimplify

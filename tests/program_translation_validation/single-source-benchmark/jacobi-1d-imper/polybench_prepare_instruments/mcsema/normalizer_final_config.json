@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -dse -instcombine
+ -globalopt -domtree -deadargelim -domtree -instcombine -globals-aa -inline -domtree -domtree -instcombine -reassociate -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -gvn -sccp -domtree -bdce -instcombine -domtree -dse -scalar-evolution -postdomtree -domtree -instcombine -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution -instsimplify

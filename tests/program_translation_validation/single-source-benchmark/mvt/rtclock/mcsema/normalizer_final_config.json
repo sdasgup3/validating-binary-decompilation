@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -instcombine -early-cse-memssa
+ -globalopt -mem2reg -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -reassociate -scalar-evolution -simplifycfg -instcombine -scalar-evolution -indvars -memdep -memdep -instcombine -memdep -dse -scalar-evolution -postdomtree -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

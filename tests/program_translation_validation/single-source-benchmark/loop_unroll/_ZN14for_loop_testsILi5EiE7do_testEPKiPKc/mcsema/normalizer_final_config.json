@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -instcombine -sroa -early-cse -instcombine -instcombine -gvn -instcombine -dse -postdomtree -instcombine -instcombine -instcombine -instcombine

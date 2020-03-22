@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -dse -early-cse-memssa
+ -tbaa -basicaa -instcombine -basiccg -globals-aa -inline -early-cse -basicaa -instcombine -tailcallelim -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -indvars -gvn -basicaa -bdce -basicaa -instcombine -basicaa -scalar-evolution -basicaa -instcombine -basiccg -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -basicaa -scalar-evolution -instsimplify

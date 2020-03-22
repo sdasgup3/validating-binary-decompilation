@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -dse -instcombine
+ -tbaa -basicaa -aa -instcombine -globals-aa -sroa -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -memcpyopt -basicaa -aa -instcombine -basicaa -aa -aa -postdomtree -adce -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -basicaa -aa

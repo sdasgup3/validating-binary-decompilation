@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -libcalls-shrinkwrap
+ -domtree -domtree -aa -basiccg -globals-aa -domtree -sroa -early-cse -domtree -aa -domtree -aa -scalar-evolution -domtree -aa -scalar-evolution -aa -gvn -aa -domtree -aa -domtree -aa -dse -aa -scalar-evolution -adce -domtree -aa -basiccg -globals-aa -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -domtree -aa -scalar-evolution -scalar-evolution -domtree -aa -scalar-evolution

@@ -1,52 +1,261 @@
-[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+[     1s]    INFO tuneNormalizer:  Search Space: ['-tbaa', '-globalopt', '-domtree', '-mem2reg', '-deadargelim', '-domtree', '-basicaa', '-aa', '-instcombine', '-simplifycfg', '-basiccg', '-globals-aa', '-inline', '-domtree', '-sroa', '-early-cse', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-libcalls-shrinkwrap', '-tailcallelim', '-simplifycfg', '-reassociate', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-licm', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-indvars', '-aa', '-memdep', '-gvn', '-basicaa', '-aa', '-memdep', '-memcpyopt', '-sccp', '-domtree', '-bdce', '-basicaa', '-aa', '-instcombine', '-domtree', '-basicaa', '-aa', '-memdep', '-dse', '-aa', '-scalar-evolution', '-licm', '-postdomtree', '-adce', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-basiccg', '-globals-aa', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-scalar-evolution', '-basicaa', '-aa', '-scalar-evolution', '-aa', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-simplifycfg', '-domtree', '-basicaa', '-aa', '-instcombine', '-scalar-evolution', '-instcombine', '-scalar-evolution', '-licm', '-globaldce', '-constmerge', '-domtree', '-basicaa', '-aa', '-scalar-evolution', '-instsimplify']
 
 
-[   105s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #834, cost time=0.0126, found by NormalGreedyMutation
-[   105s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
-[   229s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #836, cost time=0.0116, found by UniformGreedyMutation
-[   394s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #836, cost time=0.0116, found by UniformGreedyMutation
-[   534s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #841, cost time=0.0013, found by NormalGreedyMutation
-[   657s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #841, cost time=0.0013, found by NormalGreedyMutation
-[   774s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #849, cost time=0.0013, found by UniformGreedyMutation
-[   904s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #849, cost time=0.0013, found by UniformGreedyMutation
-[   966s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine]
-[  1032s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1132s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1231s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -libcalls-shrinkwrap -instcombine]
-[  1231s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1347s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1449s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -globalopt -basicaa -aa -dse -instcombine]
-[  1449s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1527s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -globalopt -basicaa -aa -instcombine -early-cse-memssa]
-[  1584s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine]
-[  1584s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1658s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine]
-[  1679s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -aa -dse -instcombine]
-[  1679s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1718s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -dse -instcombine]
-[  1767s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -simplifycfg -aa -dse -instcombine]
-[  1792s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  1940s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2032s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2150s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2186s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -aa -memdep -dse -tailcallelim -instcombine -early-cse-memssa]
-[  2259s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2396s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2436s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -basicaa -dse -instcombine]
-[  2458s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -basicaa -aa -dse -instcombine]
-[  2477s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -early-cse -globalopt -aa -memdep -dse -instcombine]
-[  2477s]    INFO opentuner.search.plugin.DisplayPlugin: tests=82, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2530s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse -instcombine -memcpyopt]
-[  2574s]    INFO opentuner.search.plugin.DisplayPlugin: tests=86, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2707s]    INFO opentuner.search.plugin.DisplayPlugin: tests=90, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2744s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -globalopt -basicaa -aa -dse -instcombine]
-[  2826s]    INFO opentuner.search.plugin.DisplayPlugin: tests=94, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  2864s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -gvn -early-cse -aa -memdep -dse -instcombine -early-cse-memssa]
-[  2882s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -early-cse -globalopt -aa -dse -instcombine]
-[  2928s]    INFO opentuner.search.plugin.DisplayPlugin: tests=98, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  3017s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -licm -gvn -globalopt -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine]
-[  3039s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  3039s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #858, cost time=0.0000, found by NormalGreedyMutation
-[  3039s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse -basicaa -globalopt -instcombine -dse -aa -licm -gvn ]
-2880.93user 64.82system 50:40.09elapsed 96%CPU (0avgtext+0avgdata 109680maxresident)k
-0inputs+2414608outputs (0major+5668366minor)pagefaults 0swaps
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[   132s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #916, cost time=0.0090, found by NormalGreedyMutation
+[   267s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #916, cost time=0.0090, found by NormalGreedyMutation
+[   373s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #951, cost time=0.0058, found by UniformGreedyMutation
+[   484s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #951, cost time=0.0058, found by UniformGreedyMutation
+[   584s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #951, cost time=0.0058, found by UniformGreedyMutation
+[   695s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #951, cost time=0.0058, found by UniformGreedyMutation
+[   800s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #968, cost time=0.0044, found by UniformGreedyMutation
+[   912s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #968, cost time=0.0044, found by UniformGreedyMutation
+[  1016s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #968, cost time=0.0044, found by UniformGreedyMutation
+[  1126s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #968, cost time=0.0044, found by UniformGreedyMutation
+[  1228s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #968, cost time=0.0044, found by UniformGreedyMutation
+[  1337s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  1442s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  1555s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  1663s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  1816s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  1932s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2033s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2148s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2302s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2413s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2523s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2642s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2779s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2889s]    INFO opentuner.search.plugin.DisplayPlugin: tests=100, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  2996s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3107s]    INFO opentuner.search.plugin.DisplayPlugin: tests=108, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3257s]    INFO opentuner.search.plugin.DisplayPlugin: tests=112, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3397s]    INFO opentuner.search.plugin.DisplayPlugin: tests=116, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3514s]    INFO opentuner.search.plugin.DisplayPlugin: tests=120, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3686s]    INFO opentuner.search.plugin.DisplayPlugin: tests=124, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3793s]    INFO opentuner.search.plugin.DisplayPlugin: tests=128, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  3947s]    INFO opentuner.search.plugin.DisplayPlugin: tests=132, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4076s]    INFO opentuner.search.plugin.DisplayPlugin: tests=136, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4229s]    INFO opentuner.search.plugin.DisplayPlugin: tests=140, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4347s]    INFO opentuner.search.plugin.DisplayPlugin: tests=144, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4464s]    INFO opentuner.search.plugin.DisplayPlugin: tests=148, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4616s]    INFO opentuner.search.plugin.DisplayPlugin: tests=152, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4747s]    INFO opentuner.search.plugin.DisplayPlugin: tests=156, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  4934s]    INFO opentuner.search.plugin.DisplayPlugin: tests=160, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5105s]    INFO opentuner.search.plugin.DisplayPlugin: tests=164, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5228s]    INFO opentuner.search.plugin.DisplayPlugin: tests=168, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5377s]    INFO opentuner.search.plugin.DisplayPlugin: tests=172, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5529s]    INFO opentuner.search.plugin.DisplayPlugin: tests=176, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5647s]    INFO opentuner.search.plugin.DisplayPlugin: tests=180, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5777s]    INFO opentuner.search.plugin.DisplayPlugin: tests=184, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  5944s]    INFO opentuner.search.plugin.DisplayPlugin: tests=188, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6083s]    INFO opentuner.search.plugin.DisplayPlugin: tests=192, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6233s]    INFO opentuner.search.plugin.DisplayPlugin: tests=196, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6403s]    INFO opentuner.search.plugin.DisplayPlugin: tests=200, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6523s]    INFO opentuner.search.plugin.DisplayPlugin: tests=204, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6636s]    INFO opentuner.search.plugin.DisplayPlugin: tests=208, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6782s]    INFO opentuner.search.plugin.DisplayPlugin: tests=212, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  6930s]    INFO opentuner.search.plugin.DisplayPlugin: tests=216, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7099s]    INFO opentuner.search.plugin.DisplayPlugin: tests=220, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7242s]    INFO opentuner.search.plugin.DisplayPlugin: tests=224, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7363s]    INFO opentuner.search.plugin.DisplayPlugin: tests=228, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7516s]    INFO opentuner.search.plugin.DisplayPlugin: tests=232, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7641s]    INFO opentuner.search.plugin.DisplayPlugin: tests=236, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7763s]    INFO opentuner.search.plugin.DisplayPlugin: tests=240, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  7934s]    INFO opentuner.search.plugin.DisplayPlugin: tests=244, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8063s]    INFO opentuner.search.plugin.DisplayPlugin: tests=248, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8182s]    INFO opentuner.search.plugin.DisplayPlugin: tests=252, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8322s]    INFO opentuner.search.plugin.DisplayPlugin: tests=256, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8440s]    INFO opentuner.search.plugin.DisplayPlugin: tests=260, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8556s]    INFO opentuner.search.plugin.DisplayPlugin: tests=264, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8714s]    INFO opentuner.search.plugin.DisplayPlugin: tests=268, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8852s]    INFO opentuner.search.plugin.DisplayPlugin: tests=272, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  8968s]    INFO opentuner.search.plugin.DisplayPlugin: tests=276, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9127s]    INFO opentuner.search.plugin.DisplayPlugin: tests=280, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9256s]    INFO opentuner.search.plugin.DisplayPlugin: tests=284, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9368s]    INFO opentuner.search.plugin.DisplayPlugin: tests=288, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9532s]    INFO opentuner.search.plugin.DisplayPlugin: tests=292, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9625s]    INFO opentuner.search.plugin.DisplayPlugin: tests=296, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9732s]    INFO opentuner.search.plugin.DisplayPlugin: tests=300, best #986, cost time=0.0029, found by UniformGreedyMutation
+[  9919s]    INFO opentuner.search.plugin.DisplayPlugin: tests=304, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10057s]    INFO opentuner.search.plugin.DisplayPlugin: tests=308, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10181s]    INFO opentuner.search.plugin.DisplayPlugin: tests=312, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10359s]    INFO opentuner.search.plugin.DisplayPlugin: tests=316, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10482s]    INFO opentuner.search.plugin.DisplayPlugin: tests=320, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10625s]    INFO opentuner.search.plugin.DisplayPlugin: tests=324, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10775s]    INFO opentuner.search.plugin.DisplayPlugin: tests=328, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 10903s]    INFO opentuner.search.plugin.DisplayPlugin: tests=332, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11023s]    INFO opentuner.search.plugin.DisplayPlugin: tests=336, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11195s]    INFO opentuner.search.plugin.DisplayPlugin: tests=340, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=344, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11481s]    INFO opentuner.search.plugin.DisplayPlugin: tests=348, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11630s]    INFO opentuner.search.plugin.DisplayPlugin: tests=352, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11778s]    INFO opentuner.search.plugin.DisplayPlugin: tests=356, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 11901s]    INFO opentuner.search.plugin.DisplayPlugin: tests=360, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12065s]    INFO opentuner.search.plugin.DisplayPlugin: tests=364, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12192s]    INFO opentuner.search.plugin.DisplayPlugin: tests=368, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12312s]    INFO opentuner.search.plugin.DisplayPlugin: tests=372, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12468s]    INFO opentuner.search.plugin.DisplayPlugin: tests=376, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12616s]    INFO opentuner.search.plugin.DisplayPlugin: tests=380, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12747s]    INFO opentuner.search.plugin.DisplayPlugin: tests=384, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 12924s]    INFO opentuner.search.plugin.DisplayPlugin: tests=388, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13049s]    INFO opentuner.search.plugin.DisplayPlugin: tests=392, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13212s]    INFO opentuner.search.plugin.DisplayPlugin: tests=396, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13377s]    INFO opentuner.search.plugin.DisplayPlugin: tests=400, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13503s]    INFO opentuner.search.plugin.DisplayPlugin: tests=404, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13635s]    INFO opentuner.search.plugin.DisplayPlugin: tests=408, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13782s]    INFO opentuner.search.plugin.DisplayPlugin: tests=412, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 13961s]    INFO opentuner.search.plugin.DisplayPlugin: tests=416, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14125s]    INFO opentuner.search.plugin.DisplayPlugin: tests=420, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14229s]    INFO opentuner.search.plugin.DisplayPlugin: tests=424, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14353s]    INFO opentuner.search.plugin.DisplayPlugin: tests=428, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14518s]    INFO opentuner.search.plugin.DisplayPlugin: tests=432, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14639s]    INFO opentuner.search.plugin.DisplayPlugin: tests=436, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14771s]    INFO opentuner.search.plugin.DisplayPlugin: tests=440, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 14939s]    INFO opentuner.search.plugin.DisplayPlugin: tests=444, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15072s]    INFO opentuner.search.plugin.DisplayPlugin: tests=448, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15207s]    INFO opentuner.search.plugin.DisplayPlugin: tests=452, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15327s]    INFO opentuner.search.plugin.DisplayPlugin: tests=456, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15469s]    INFO opentuner.search.plugin.DisplayPlugin: tests=460, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15594s]    INFO opentuner.search.plugin.DisplayPlugin: tests=464, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15710s]    INFO opentuner.search.plugin.DisplayPlugin: tests=468, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 15831s]    INFO opentuner.search.plugin.DisplayPlugin: tests=472, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16003s]    INFO opentuner.search.plugin.DisplayPlugin: tests=476, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16137s]    INFO opentuner.search.plugin.DisplayPlugin: tests=480, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16303s]    INFO opentuner.search.plugin.DisplayPlugin: tests=484, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16425s]    INFO opentuner.search.plugin.DisplayPlugin: tests=488, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16590s]    INFO opentuner.search.plugin.DisplayPlugin: tests=492, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16742s]    INFO opentuner.search.plugin.DisplayPlugin: tests=496, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16871s]    INFO opentuner.search.plugin.DisplayPlugin: tests=500, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 16871s]    INFO opentuner.search.metatechniques: AUCBanditMetaTechniqueA: [('UniformGreedyMutation', 196), ('NormalGreedyMutation', 157), ('DifferentialEvolutionAlt', 148)]
+[ 17022s]    INFO opentuner.search.plugin.DisplayPlugin: tests=504, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17150s]    INFO opentuner.search.plugin.DisplayPlugin: tests=508, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17284s]    INFO opentuner.search.plugin.DisplayPlugin: tests=512, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17389s]    INFO opentuner.search.plugin.DisplayPlugin: tests=516, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17572s]    INFO opentuner.search.plugin.DisplayPlugin: tests=520, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17722s]    INFO opentuner.search.plugin.DisplayPlugin: tests=524, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17843s]    INFO opentuner.search.plugin.DisplayPlugin: tests=528, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 17994s]    INFO opentuner.search.plugin.DisplayPlugin: tests=532, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18124s]    INFO opentuner.search.plugin.DisplayPlugin: tests=536, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18257s]    INFO opentuner.search.plugin.DisplayPlugin: tests=540, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18420s]    INFO opentuner.search.plugin.DisplayPlugin: tests=544, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18550s]    INFO opentuner.search.plugin.DisplayPlugin: tests=548, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18687s]    INFO opentuner.search.plugin.DisplayPlugin: tests=552, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 18858s]    INFO opentuner.search.plugin.DisplayPlugin: tests=556, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19001s]    INFO opentuner.search.plugin.DisplayPlugin: tests=560, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19126s]    INFO opentuner.search.plugin.DisplayPlugin: tests=564, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19293s]    INFO opentuner.search.plugin.DisplayPlugin: tests=568, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19422s]    INFO opentuner.search.plugin.DisplayPlugin: tests=572, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19563s]    INFO opentuner.search.plugin.DisplayPlugin: tests=576, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19734s]    INFO opentuner.search.plugin.DisplayPlugin: tests=580, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 19863s]    INFO opentuner.search.plugin.DisplayPlugin: tests=584, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20012s]    INFO opentuner.search.plugin.DisplayPlugin: tests=588, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20168s]    INFO opentuner.search.plugin.DisplayPlugin: tests=592, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20301s]    INFO opentuner.search.plugin.DisplayPlugin: tests=596, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20465s]    INFO opentuner.search.plugin.DisplayPlugin: tests=600, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20599s]    INFO opentuner.search.plugin.DisplayPlugin: tests=604, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20722s]    INFO opentuner.search.plugin.DisplayPlugin: tests=608, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 20922s]    INFO opentuner.search.plugin.DisplayPlugin: tests=612, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21042s]    INFO opentuner.search.plugin.DisplayPlugin: tests=616, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21185s]    INFO opentuner.search.plugin.DisplayPlugin: tests=620, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=624, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21487s]    INFO opentuner.search.plugin.DisplayPlugin: tests=628, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21608s]    INFO opentuner.search.plugin.DisplayPlugin: tests=632, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21786s]    INFO opentuner.search.plugin.DisplayPlugin: tests=636, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 21935s]    INFO opentuner.search.plugin.DisplayPlugin: tests=640, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22064s]    INFO opentuner.search.plugin.DisplayPlugin: tests=644, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22211s]    INFO opentuner.search.plugin.DisplayPlugin: tests=648, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22346s]    INFO opentuner.search.plugin.DisplayPlugin: tests=652, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22448s]    INFO opentuner.search.plugin.DisplayPlugin: tests=656, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22602s]    INFO opentuner.search.plugin.DisplayPlugin: tests=660, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22729s]    INFO opentuner.search.plugin.DisplayPlugin: tests=664, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 22855s]    INFO opentuner.search.plugin.DisplayPlugin: tests=668, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23018s]    INFO opentuner.search.plugin.DisplayPlugin: tests=672, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23142s]    INFO opentuner.search.plugin.DisplayPlugin: tests=676, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23270s]    INFO opentuner.search.plugin.DisplayPlugin: tests=680, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23474s]    INFO opentuner.search.plugin.DisplayPlugin: tests=684, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23596s]    INFO opentuner.search.plugin.DisplayPlugin: tests=688, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23738s]    INFO opentuner.search.plugin.DisplayPlugin: tests=692, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 23918s]    INFO opentuner.search.plugin.DisplayPlugin: tests=696, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24053s]    INFO opentuner.search.plugin.DisplayPlugin: tests=700, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24178s]    INFO opentuner.search.plugin.DisplayPlugin: tests=704, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24372s]    INFO opentuner.search.plugin.DisplayPlugin: tests=708, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24504s]    INFO opentuner.search.plugin.DisplayPlugin: tests=712, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24657s]    INFO opentuner.search.plugin.DisplayPlugin: tests=716, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24821s]    INFO opentuner.search.plugin.DisplayPlugin: tests=720, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 24942s]    INFO opentuner.search.plugin.DisplayPlugin: tests=724, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25066s]    INFO opentuner.search.plugin.DisplayPlugin: tests=728, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25263s]    INFO opentuner.search.plugin.DisplayPlugin: tests=732, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25378s]    INFO opentuner.search.plugin.DisplayPlugin: tests=736, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25536s]    INFO opentuner.search.plugin.DisplayPlugin: tests=740, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25652s]    INFO opentuner.search.plugin.DisplayPlugin: tests=744, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25782s]    INFO opentuner.search.plugin.DisplayPlugin: tests=748, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 25894s]    INFO opentuner.search.plugin.DisplayPlugin: tests=752, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26067s]    INFO opentuner.search.plugin.DisplayPlugin: tests=756, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26198s]    INFO opentuner.search.plugin.DisplayPlugin: tests=760, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26325s]    INFO opentuner.search.plugin.DisplayPlugin: tests=764, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26507s]    INFO opentuner.search.plugin.DisplayPlugin: tests=768, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26649s]    INFO opentuner.search.plugin.DisplayPlugin: tests=772, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 26816s]    INFO opentuner.search.plugin.DisplayPlugin: tests=776, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27008s]    INFO opentuner.search.plugin.DisplayPlugin: tests=780, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27133s]    INFO opentuner.search.plugin.DisplayPlugin: tests=784, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27290s]    INFO opentuner.search.plugin.DisplayPlugin: tests=788, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27430s]    INFO opentuner.search.plugin.DisplayPlugin: tests=792, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27554s]    INFO opentuner.search.plugin.DisplayPlugin: tests=796, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27723s]    INFO opentuner.search.plugin.DisplayPlugin: tests=800, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 27860s]    INFO opentuner.search.plugin.DisplayPlugin: tests=804, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28001s]    INFO opentuner.search.plugin.DisplayPlugin: tests=808, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28158s]    INFO opentuner.search.plugin.DisplayPlugin: tests=812, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28280s]    INFO opentuner.search.plugin.DisplayPlugin: tests=816, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28391s]    INFO opentuner.search.plugin.DisplayPlugin: tests=820, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28542s]    INFO opentuner.search.plugin.DisplayPlugin: tests=824, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28674s]    INFO opentuner.search.plugin.DisplayPlugin: tests=828, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28803s]    INFO opentuner.search.plugin.DisplayPlugin: tests=832, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 28928s]    INFO opentuner.search.plugin.DisplayPlugin: tests=836, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29046s]    INFO opentuner.search.plugin.DisplayPlugin: tests=840, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29141s]    INFO opentuner.search.plugin.DisplayPlugin: tests=844, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29254s]    INFO opentuner.search.plugin.DisplayPlugin: tests=848, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29377s]    INFO opentuner.search.plugin.DisplayPlugin: tests=852, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29510s]    INFO opentuner.search.plugin.DisplayPlugin: tests=856, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29653s]    INFO opentuner.search.plugin.DisplayPlugin: tests=860, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29803s]    INFO opentuner.search.plugin.DisplayPlugin: tests=864, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 29922s]    INFO opentuner.search.plugin.DisplayPlugin: tests=868, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30065s]    INFO opentuner.search.plugin.DisplayPlugin: tests=872, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30191s]    INFO opentuner.search.plugin.DisplayPlugin: tests=876, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=880, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30507s]    INFO opentuner.search.plugin.DisplayPlugin: tests=884, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30616s]    INFO opentuner.search.plugin.DisplayPlugin: tests=888, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30729s]    INFO opentuner.search.plugin.DisplayPlugin: tests=892, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 30863s]    INFO opentuner.search.plugin.DisplayPlugin: tests=896, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31039s]    INFO opentuner.search.plugin.DisplayPlugin: tests=900, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31168s]    INFO opentuner.search.plugin.DisplayPlugin: tests=904, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31304s]    INFO opentuner.search.plugin.DisplayPlugin: tests=908, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31470s]    INFO opentuner.search.plugin.DisplayPlugin: tests=912, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31586s]    INFO opentuner.search.plugin.DisplayPlugin: tests=916, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31700s]    INFO opentuner.search.plugin.DisplayPlugin: tests=920, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31847s]    INFO opentuner.search.plugin.DisplayPlugin: tests=924, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 31970s]    INFO opentuner.search.plugin.DisplayPlugin: tests=928, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32118s]    INFO opentuner.search.plugin.DisplayPlugin: tests=932, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32266s]    INFO opentuner.search.plugin.DisplayPlugin: tests=936, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32373s]    INFO opentuner.search.plugin.DisplayPlugin: tests=940, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32524s]    INFO opentuner.search.plugin.DisplayPlugin: tests=944, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32683s]    INFO opentuner.search.plugin.DisplayPlugin: tests=948, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32813s]    INFO opentuner.search.plugin.DisplayPlugin: tests=952, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 32945s]    INFO opentuner.search.plugin.DisplayPlugin: tests=956, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33107s]    INFO opentuner.search.plugin.DisplayPlugin: tests=960, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33239s]    INFO opentuner.search.plugin.DisplayPlugin: tests=964, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33388s]    INFO opentuner.search.plugin.DisplayPlugin: tests=968, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33541s]    INFO opentuner.search.plugin.DisplayPlugin: tests=972, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33673s]    INFO opentuner.search.plugin.DisplayPlugin: tests=976, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33822s]    INFO opentuner.search.plugin.DisplayPlugin: tests=980, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 33927s]    INFO opentuner.search.plugin.DisplayPlugin: tests=984, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34053s]    INFO opentuner.search.plugin.DisplayPlugin: tests=988, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34201s]    INFO opentuner.search.plugin.DisplayPlugin: tests=992, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34343s]    INFO opentuner.search.plugin.DisplayPlugin: tests=996, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34476s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1000, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34477s]    INFO opentuner.search.metatechniques: AUCBanditMetaTechniqueA: [('UniformGreedyMutation', 171), ('DifferentialEvolutionAlt', 166), ('NormalGreedyMutation', 164)]
+[ 34619s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1004, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34619s]    INFO opentuner.search.plugin.DisplayPlugin: tests=1004, best #986, cost time=0.0029, found by UniformGreedyMutation
+[ 34619s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -gvn -adce -memcpyopt -memdep -globals-aa -tbaa -constmerge -instcombine -simplifycfg -dse -domtree -sccp -licm ]
+31450.68user 583.33system 9:36:59elapsed 92%CPU (0avgtext+0avgdata 109700maxresident)k
+0inputs+24146864outputs (0major+51393337minor)pagefaults 0swaps

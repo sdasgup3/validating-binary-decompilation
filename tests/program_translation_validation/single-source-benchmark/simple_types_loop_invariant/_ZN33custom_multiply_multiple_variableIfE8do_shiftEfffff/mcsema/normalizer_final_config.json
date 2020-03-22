@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -basicaa -instcombine -sroa -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -deadargelim -instcombine -inline -sroa -early-cse -instcombine -licm -instcombine -indvars -memdep -gvn -memdep -memcpyopt -instcombine -memdep -dse -licm -adce -instcombine -instcombine -instcombine -instcombine -licm

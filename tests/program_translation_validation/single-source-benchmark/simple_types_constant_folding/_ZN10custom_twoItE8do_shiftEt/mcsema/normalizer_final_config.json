@@ -1,1 +1,1 @@
- -gvn -basicaa -instcombine -early-cse-memssa
+ -mem2reg -instcombine -basiccg -globals-aa -sroa -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -memcpyopt -bdce -instcombine -scalar-evolution -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -dse -tailcallelim -memcpyopt -early-cse-memssa
+ -domtree -domtree -instcombine -inline -domtree -early-cse -domtree -instcombine -domtree -domtree -instcombine -gvn -sccp -domtree -bdce -instcombine -domtree -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -domtree

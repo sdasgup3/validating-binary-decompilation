@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -instcombine -early-cse-memssa
+ -domtree -domtree -instcombine -inline -domtree -sroa -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -gvn -memcpyopt -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -domtree -scalar-evolution -instsimplify

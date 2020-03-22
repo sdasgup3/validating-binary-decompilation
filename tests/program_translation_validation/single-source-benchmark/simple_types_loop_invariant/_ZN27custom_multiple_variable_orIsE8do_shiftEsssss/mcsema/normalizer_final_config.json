@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -dse
+ -mem2reg -globals-aa -sroa -early-cse -licm -memdep -gvn -memdep -memdep -dse -licm -globals-aa -licm

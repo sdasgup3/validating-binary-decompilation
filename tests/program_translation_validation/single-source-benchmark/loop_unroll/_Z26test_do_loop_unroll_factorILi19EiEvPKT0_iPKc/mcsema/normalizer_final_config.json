@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tbaa -globalopt -mem2reg -deadargelim -basicaa -instcombine -globals-aa -inline -sroa -basicaa -instcombine -tailcallelim -reassociate -basicaa -licm -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -dse -licm -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa

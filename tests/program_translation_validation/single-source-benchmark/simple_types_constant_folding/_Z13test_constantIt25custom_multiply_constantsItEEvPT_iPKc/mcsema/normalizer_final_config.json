@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -memdep -dse -instcombine
+ -tbaa -instcombine -sroa -early-cse -instcombine -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -indvars -gvn -sccp -bdce -instcombine -dse -scalar-evolution -licm -postdomtree -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution -instsimplify

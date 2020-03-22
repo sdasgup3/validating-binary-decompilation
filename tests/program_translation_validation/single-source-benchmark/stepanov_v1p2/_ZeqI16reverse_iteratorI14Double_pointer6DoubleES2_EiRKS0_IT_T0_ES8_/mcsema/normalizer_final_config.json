@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse
+ -tbaa -mem2reg -instcombine -basiccg -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -memcpyopt -instcombine -memdep -dse -scalar-evolution -licm -adce -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution -instsimplify

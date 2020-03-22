@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -domtree -deadargelim -domtree -inline -domtree -sroa -domtree -domtree -domtree -gvn -memcpyopt -sccp -domtree -domtree -dse -domtree -domtree -domtree -domtree

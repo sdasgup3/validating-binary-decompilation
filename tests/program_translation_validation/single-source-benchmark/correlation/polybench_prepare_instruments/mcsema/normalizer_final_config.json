@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -instcombine -basiccg -globals-aa -early-cse -instcombine -tailcallelim -reassociate -instcombine -indvars -instcombine -adce -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -globaldce -constmerge

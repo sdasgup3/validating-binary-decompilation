@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -deadargelim -instcombine -early-cse-memssa
+ -tbaa -mem2reg -deadargelim -instcombine -sroa -instcombine -libcalls-shrinkwrap -licm -instcombine -indvars -gvn -sccp -instcombine -licm -instcombine -instcombine -instcombine -instcombine -licm

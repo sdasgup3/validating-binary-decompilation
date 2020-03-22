@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -domtree -deadargelim -domtree -inline -domtree -sroa -early-cse -domtree -domtree -domtree -indvars -gvn -memcpyopt -sccp -domtree -bdce -domtree -dse -domtree -domtree -domtree -globaldce -domtree

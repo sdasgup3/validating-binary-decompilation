@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -aa -instcombine -early-cse-memssa
+ -domtree -mem2reg -deadargelim -domtree -instcombine -globals-aa -domtree -early-cse -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -indvars -domtree -instcombine -domtree -dse -domtree -instcombine -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree

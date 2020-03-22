@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -instcombine
+ -deadargelim -basicaa -aa -instcombine -globals-aa -sroa -basicaa -aa -instcombine -tailcallelim -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -postdomtree -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa

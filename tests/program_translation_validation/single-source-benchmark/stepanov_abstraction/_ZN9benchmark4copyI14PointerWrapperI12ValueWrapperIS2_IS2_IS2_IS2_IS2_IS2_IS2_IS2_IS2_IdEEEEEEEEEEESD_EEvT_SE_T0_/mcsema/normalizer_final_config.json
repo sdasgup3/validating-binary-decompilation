@@ -1,1 +1,1 @@
- -gvn -early-cse -instcombine -early-cse-memssa
+ -globalopt -instcombine -sroa -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -gvn -sccp -instcombine -dse -scalar-evolution -postdomtree -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -scalar-evolution -instsimplify

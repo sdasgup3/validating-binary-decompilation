@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -aa -dse -instcombine
+ -basicaa -aa -instcombine -simplifycfg -basiccg -simplifycfg -basicaa -aa -instcombine -simplifycfg -reassociate -basicaa -aa -simplifycfg -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -sccp -bdce -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -adce -simplifycfg -basicaa -aa -instcombine -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -simplifycfg -basicaa -aa -instcombine -instcombine -basicaa -aa

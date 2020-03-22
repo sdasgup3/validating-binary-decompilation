@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -aa -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -aa -instcombine -basiccg -globals-aa -inline -sroa -early-cse -aa -instcombine -aa -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -sccp -bdce -aa -instcombine -aa -dse -aa -adce -aa -instcombine -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

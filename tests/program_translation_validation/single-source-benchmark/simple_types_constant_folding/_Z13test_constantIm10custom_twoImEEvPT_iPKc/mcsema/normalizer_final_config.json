@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -instcombine -simplifycfg -basiccg -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -gvn -sccp -instcombine -licm -simplifycfg -instcombine -basiccg -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge

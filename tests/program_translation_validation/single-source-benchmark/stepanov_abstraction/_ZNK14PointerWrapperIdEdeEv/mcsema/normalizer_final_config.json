@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -tailcallelim -early-cse-memssa
+ -globalopt -mem2reg -basicaa -aa -sroa -early-cse -basicaa -aa -libcalls-shrinkwrap -basicaa -aa -licm -basicaa -aa -aa -gvn -basicaa -aa -memcpyopt -basicaa -aa -basicaa -aa -dse -aa -licm -basicaa -aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -licm -basicaa -aa -instsimplify

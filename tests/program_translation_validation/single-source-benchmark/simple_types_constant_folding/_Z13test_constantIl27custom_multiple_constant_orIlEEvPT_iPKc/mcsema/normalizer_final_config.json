@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -aa -tailcallelim -instcombine -early-cse-memssa
+ -instcombine -globals-aa -sroa -early-cse -instcombine -instcombine -gvn -instcombine -instcombine -globals-aa -instcombine -instcombine -instcombine -instsimplify

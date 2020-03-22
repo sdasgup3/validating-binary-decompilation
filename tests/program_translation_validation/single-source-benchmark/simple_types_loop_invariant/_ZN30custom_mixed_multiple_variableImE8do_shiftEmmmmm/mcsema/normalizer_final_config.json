@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -memdep -dse -deadargelim -instcombine
+ -tbaa -deadargelim -basicaa -instcombine -basiccg -basicaa -instcombine -basicaa -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -basicaa -adce -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa -instsimplify

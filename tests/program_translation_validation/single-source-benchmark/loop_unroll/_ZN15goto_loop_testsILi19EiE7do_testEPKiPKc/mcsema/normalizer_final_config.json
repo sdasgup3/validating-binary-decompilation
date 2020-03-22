@@ -1,1 +1,1 @@
- -early-cse -globalopt -basicaa -memdep -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -domtree -domtree -aa -basiccg -globals-aa -domtree -sroa -domtree -aa -domtree -aa -scalar-evolution -domtree -aa -scalar-evolution -aa -memdep -gvn -aa -memdep -sccp -domtree -aa -domtree -aa -memdep -dse -aa -scalar-evolution -adce -domtree -aa -basiccg -globals-aa -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -domtree -aa -scalar-evolution -scalar-evolution -constmerge -domtree -aa -scalar-evolution -instsimplify

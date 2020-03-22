@@ -1,1 +1,1 @@
- -early-cse -deadargelim -instcombine -early-cse-memssa
+ -tbaa -basicaa -instcombine -globals-aa -sroa -early-cse -basicaa -instcombine -reassociate -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -basicaa -instcombine -basicaa -dse -scalar-evolution -adce -basicaa -instcombine -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -basicaa -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -instcombine
+ -deadargelim -basicaa -instcombine -basiccg -globals-aa -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -indvars -gvn -basicaa -bdce -basicaa -instcombine -basicaa -licm -adce -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa

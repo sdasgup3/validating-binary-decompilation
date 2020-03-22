@@ -1,1 +1,1 @@
- -licm -gvn -aa -memdep -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -domtree -deadargelim -domtree -globals-aa -domtree -sroa -domtree -libcalls-shrinkwrap -domtree -scalar-evolution -domtree -scalar-evolution -indvars -memdep -gvn -memdep -domtree -domtree -memdep -dse -scalar-evolution -postdomtree -domtree -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -domtree -scalar-evolution -scalar-evolution -constmerge -domtree -scalar-evolution

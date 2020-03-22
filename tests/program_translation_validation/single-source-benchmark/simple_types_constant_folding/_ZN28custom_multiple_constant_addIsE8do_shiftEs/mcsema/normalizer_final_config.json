@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -tailcallelim -instcombine
+ -globalopt -domtree -mem2reg -domtree -basiccg -inline -domtree -early-cse -domtree -reassociate -domtree -scalar-evolution -licm -domtree -scalar-evolution -gvn -domtree -bdce -domtree -dse -scalar-evolution -licm -postdomtree -domtree -basiccg -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -domtree -scalar-evolution -scalar-evolution -licm -globaldce -domtree -scalar-evolution -instsimplify

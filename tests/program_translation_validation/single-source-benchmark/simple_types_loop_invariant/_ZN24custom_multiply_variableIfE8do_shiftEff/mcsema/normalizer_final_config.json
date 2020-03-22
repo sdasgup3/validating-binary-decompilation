@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -dse -instcombine -early-cse-memssa
+ -aa -instcombine -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -scalar-evolution -aa -instcombine -scalar-evolution -aa -gvn -aa -sccp -bdce -aa -instcombine -aa -aa -scalar-evolution -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -aa -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -basicaa -aa -instcombine -inline -sroa -basicaa -aa -instcombine -reassociate -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -memcpyopt -sccp -bdce -basicaa -aa -instcombine -basicaa -aa -dse -aa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -constmerge -basicaa -aa -instsimplify

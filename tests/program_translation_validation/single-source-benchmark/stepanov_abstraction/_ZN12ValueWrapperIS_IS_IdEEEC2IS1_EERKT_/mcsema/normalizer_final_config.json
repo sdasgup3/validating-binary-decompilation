@@ -1,1 +1,1 @@
- -gvn -basicaa -memdep -dse -instcombine -early-cse-memssa
+ -globals-aa -sroa -libcalls-shrinkwrap -reassociate -indvars -memdep -gvn -memdep -bdce -memdep -dse -globals-aa -constmerge

@@ -1,1 +1,1 @@
- -early-cse -globalopt -basicaa -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -aa -instcombine -inline -sroa -aa -instcombine -reassociate -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -indvars -aa -gvn -aa -aa -instcombine -aa -aa -scalar-evolution -licm -postdomtree -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -aa -scalar-evolution

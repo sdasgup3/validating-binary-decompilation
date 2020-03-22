@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -dse -deadargelim -instcombine
+ -mem2reg -instcombine -globals-aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -gvn -sccp -instcombine -scalar-evolution -licm -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -constmerge -scalar-evolution -instsimplify

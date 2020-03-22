@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -early-cse-memssa
+ -tbaa -domtree -mem2reg -domtree -aa -domtree -domtree -aa -reassociate -domtree -aa -domtree -aa -aa -memdep -gvn -aa -memdep -domtree -aa -domtree -aa -memdep -dse -aa -domtree -aa -domtree -aa -aa -aa -aa -domtree -aa -globaldce -constmerge -domtree -aa

@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -dse
+ -basicaa -instcombine -inline -early-cse -basicaa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -instcombine -indvars -basicaa -sccp -basicaa -instcombine -basicaa -licm -postdomtree -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa

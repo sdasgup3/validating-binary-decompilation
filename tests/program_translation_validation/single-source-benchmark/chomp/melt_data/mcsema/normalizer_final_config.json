@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -aa -memdep -instcombine -early-cse-memssa
+ -tbaa -instcombine -inline -sroa -early-cse -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -memdep -memdep -instcombine -memdep -dse -scalar-evolution -licm -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution

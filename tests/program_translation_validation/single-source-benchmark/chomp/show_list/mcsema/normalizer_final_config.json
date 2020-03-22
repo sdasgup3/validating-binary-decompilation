@@ -1,1 +1,1 @@
- -gvn -basicaa -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -basicaa -aa -instcombine -early-cse -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -sccp -bdce -basicaa -aa -instcombine -basicaa -aa -dse -aa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -basicaa -aa

@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -mem2reg -globals-aa -inline -early-cse -indvars -gvn -bdce -dse -postdomtree -adce -globals-aa -constmerge -instsimplify

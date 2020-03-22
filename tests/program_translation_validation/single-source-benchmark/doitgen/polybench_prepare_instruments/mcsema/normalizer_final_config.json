@@ -1,1 +1,1 @@
- -gvn -instcombine -early-cse-memssa
+ -basicaa -instcombine -basiccg -early-cse -basicaa -instcombine -tailcallelim -reassociate -basicaa -basicaa -instcombine -basicaa -memcpyopt -sccp -basicaa -instcombine -basicaa -dse -postdomtree -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -basicaa

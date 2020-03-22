@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -aa -instcombine -basiccg -inline -early-cse -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -memdep -aa -memdep -sccp -aa -instcombine -aa -memdep -dse -aa -postdomtree -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

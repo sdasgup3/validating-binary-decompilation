@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -instcombine
+ -tbaa -mem2reg -basicaa -aa -globals-aa -basicaa -aa -reassociate -basicaa -aa -basicaa -aa -aa -gvn -basicaa -aa -bdce -basicaa -aa -basicaa -aa -dse -aa -adce -basicaa -aa -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -constmerge -basicaa -aa -instsimplify

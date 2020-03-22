@@ -29,10 +29,18 @@ print_stats <- function (df, c) {
   print_quartile(elapsed_sec)
 }
 
-# cat docs/reported_stats/1_7.log | parallel tail -n2 {}/mcsema/tuner.log > docs/reported_stats/ot.time
+## cat docs/reported_stats/1_7.log | parallel tail -n2 {}/mcsema/tuner.log > docs/reported_stats/ot.time
+#df <- read.table("ot.time", header = FALSE, sep=',')
+#print_stats(df, 3)
+#cat("\n\nSize: \n")
+## cat docs/reported_stats/1_7.log | parallel wc -w  {}/mcsema/normalizer_final_config.json > docs/reported_stats/ot.size
+#df <- read.table("ot.size", header = FALSE, sep=',')
+#print_stats(df, 1)
+
+# cat docs/reported_stats/full_O3_OT.log | parallel tail -n2 {}/mcsema/tuner.log > docs/reported_stats/ot.time
 df <- read.table("ot.time", header = FALSE, sep=',')
 print_stats(df, 3)
 cat("\n\nSize: \n")
-# cat docs/reported_stats/1_7.log | parallel wc -w  {}/mcsema/normalizer_final_config.json > docs/reported_stats/ot.size
+# cat docs/reported_stats/full_O3_OT.log | parallel wc -w  {}/mcsema/normalizer_final_config.json > docs/reported_stats/ot.size
 df <- read.table("ot.size", header = FALSE, sep=',')
 print_stats(df, 1)

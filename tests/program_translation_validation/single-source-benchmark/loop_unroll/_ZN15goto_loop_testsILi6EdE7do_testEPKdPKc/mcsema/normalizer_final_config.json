@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse
+ -globalopt -mem2reg -aa -simplifycfg -basiccg -early-cse -simplifycfg -aa -libcalls-shrinkwrap -simplifycfg -aa -simplifycfg -aa -aa -gvn -aa -memcpyopt -sccp -aa -aa -dse -aa -postdomtree -simplifycfg -aa -basiccg -aa -aa -aa -aa -simplifycfg -aa -globaldce -aa -instsimplify

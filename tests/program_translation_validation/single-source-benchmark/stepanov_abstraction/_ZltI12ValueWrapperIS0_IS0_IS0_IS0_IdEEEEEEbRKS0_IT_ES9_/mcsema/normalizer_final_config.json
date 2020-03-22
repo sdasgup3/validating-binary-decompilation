@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -globalopt -simplifycfg -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -sccp -instcombine -scalar-evolution -licm -adce -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -constmerge -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -aa -memdep -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -instcombine -globals-aa -early-cse -instcombine -instcombine -memcpyopt -sccp -bdce -instcombine -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -constmerge

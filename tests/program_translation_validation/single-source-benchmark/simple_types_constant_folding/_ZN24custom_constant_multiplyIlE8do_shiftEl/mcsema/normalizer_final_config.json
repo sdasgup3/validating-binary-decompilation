@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -tailcallelim -instcombine
+ -domtree -domtree -instcombine -inline -domtree -early-cse -domtree -instcombine -libcalls-shrinkwrap -domtree -domtree -instcombine -sccp -domtree -bdce -instcombine -domtree -dse -postdomtree -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -instcombine
+ -instcombine -simplifycfg -inline -simplifycfg -instcombine -simplifycfg -reassociate -scalar-evolution -simplifycfg -instcombine -scalar-evolution -memdep -gvn -memdep -memcpyopt -sccp -instcombine -memdep -dse -scalar-evolution -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

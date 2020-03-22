@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tbaa -mem2reg -deadargelim -instcombine -globals-aa -sroa -instcombine -tailcallelim -instcombine -memdep -gvn -memdep -bdce -instcombine -memdep -dse -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -globaldce

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -domtree -domtree -instcombine -basiccg -domtree -early-cse -domtree -instcombine -domtree -licm -domtree -instcombine -indvars -gvn -sccp -domtree -bdce -instcombine -domtree -licm -adce -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -globaldce -domtree

@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -deadargelim -basicaa -basiccg -globals-aa -inline -sroa -basicaa -basicaa -scalar-evolution -licm -basicaa -scalar-evolution -indvars -gvn -basicaa -memcpyopt -bdce -basicaa -basicaa -dse -scalar-evolution -licm -basicaa -basiccg -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -licm -basicaa -scalar-evolution -instsimplify

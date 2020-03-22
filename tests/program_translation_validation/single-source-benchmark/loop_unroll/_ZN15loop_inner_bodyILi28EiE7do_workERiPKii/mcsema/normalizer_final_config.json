@@ -1,1 +1,1 @@
- -gvn -globalopt -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -aa -instcombine -sroa -aa -instcombine -reassociate -aa -licm -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -aa -memdep -dse -aa -licm -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -constmerge -aa

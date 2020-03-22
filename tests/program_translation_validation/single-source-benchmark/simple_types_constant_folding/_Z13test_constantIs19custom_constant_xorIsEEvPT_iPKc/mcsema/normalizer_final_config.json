@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -aa -memdep -dse -instcombine -early-cse-memssa
+ -globalopt -instcombine -inline -instcombine -tailcallelim -reassociate -licm -instcombine -gvn -sccp -bdce -instcombine -licm -instcombine -instcombine -instcombine -instcombine -licm -globaldce

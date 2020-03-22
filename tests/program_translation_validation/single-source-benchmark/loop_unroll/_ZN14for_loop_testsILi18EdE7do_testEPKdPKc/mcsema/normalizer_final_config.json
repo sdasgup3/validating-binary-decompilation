@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -basicaa -memdep -dse -deadargelim -memcpyopt
+ -globalopt -mem2reg -basicaa -basicaa -tailcallelim -basicaa -scalar-evolution -basicaa -scalar-evolution -memdep -gvn -basicaa -memdep -basicaa -basicaa -memdep -dse -scalar-evolution -basicaa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution

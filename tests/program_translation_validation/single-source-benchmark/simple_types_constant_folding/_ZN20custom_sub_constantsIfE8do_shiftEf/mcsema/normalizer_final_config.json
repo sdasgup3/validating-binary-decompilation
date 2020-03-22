@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -aa -dse -instcombine
+ -globalopt -deadargelim -aa -instcombine -inline -early-cse -aa -instcombine -tailcallelim -aa -aa -instcombine -indvars -aa -aa -sccp -aa -instcombine -aa -dse -aa -postdomtree -adce -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify

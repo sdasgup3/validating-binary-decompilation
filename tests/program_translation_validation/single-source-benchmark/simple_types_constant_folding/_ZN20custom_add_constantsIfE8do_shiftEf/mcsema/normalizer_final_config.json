@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -dse -deadargelim -instcombine
+ -tbaa -deadargelim -instcombine -inline -early-cse -instcombine -instcombine -indvars -bdce -instcombine -postdomtree -adce -instcombine -instcombine -instcombine -instcombine -instsimplify

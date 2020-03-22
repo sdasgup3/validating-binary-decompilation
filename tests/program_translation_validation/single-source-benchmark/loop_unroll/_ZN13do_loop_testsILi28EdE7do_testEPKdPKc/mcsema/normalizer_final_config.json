@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -instcombine
+ -mem2reg -aa -sroa -early-cse -aa -aa -aa -indvars -aa -memdep -gvn -aa -memdep -sccp -aa -aa -memdep -dse -aa -adce -aa -aa -aa -aa -aa -aa -aa -instsimplify

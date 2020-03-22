@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -tbaa -instcombine -simplifycfg -globals-aa -simplifycfg -instcombine -simplifycfg -licm -simplifycfg -instcombine -gvn -memcpyopt -instcombine -dse -licm -postdomtree -simplifycfg -instcombine -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -globaldce

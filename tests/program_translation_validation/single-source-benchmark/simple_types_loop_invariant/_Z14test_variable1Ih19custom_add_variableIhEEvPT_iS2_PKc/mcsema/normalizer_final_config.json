@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -instcombine
+ -tbaa -domtree -domtree -instcombine -basiccg -inline -domtree -early-cse -domtree -instcombine -domtree -licm -domtree -instcombine -memdep -gvn -memdep -domtree -bdce -instcombine -domtree -memdep -dse -licm -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

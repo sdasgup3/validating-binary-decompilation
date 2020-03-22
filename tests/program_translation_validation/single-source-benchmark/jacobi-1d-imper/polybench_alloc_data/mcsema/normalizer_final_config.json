@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -libcalls-shrinkwrap -early-cse-memssa
+ -tbaa -domtree -domtree -simplifycfg -basiccg -globals-aa -domtree -sroa -simplifycfg -domtree -simplifycfg -domtree -simplifycfg -domtree -gvn -domtree -domtree -dse -postdomtree -simplifycfg -domtree -basiccg -globals-aa -domtree -simplifycfg -domtree -domtree

@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -dse -memcpyopt
+ -deadargelim -sroa -reassociate -licm -indvars -gvn -sccp -dse -licm -postdomtree -adce -licm

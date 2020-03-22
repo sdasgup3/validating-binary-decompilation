@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -memcpyopt -early-cse-memssa
+ -globalopt -mem2reg -basicaa -aa -basiccg -early-cse -basicaa -aa -reassociate -basicaa -aa -scalar-evolution -basicaa -aa -scalar-evolution -indvars -aa -gvn -basicaa -aa -bdce -basicaa -aa -basicaa -aa -dse -aa -scalar-evolution -postdomtree -basicaa -aa -basiccg -basicaa -aa -scalar-evolution -scalar-evolution -basicaa -aa -scalar-evolution -aa -basicaa -aa -scalar-evolution -basicaa -aa -scalar-evolution -scalar-evolution -constmerge -basicaa -aa -scalar-evolution -instsimplify

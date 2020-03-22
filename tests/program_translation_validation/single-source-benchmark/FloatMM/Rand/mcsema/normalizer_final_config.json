@@ -1,1 +1,1 @@
- -gvn -simplifycfg -memdep -instcombine -memcpyopt -early-cse-memssa
+ -aa -simplifycfg -inline -sroa -simplifycfg -aa -simplifycfg -aa -simplifycfg -aa -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -aa -aa -memdep -dse -aa -simplifycfg -aa -aa -aa -aa -aa -simplifycfg -aa -aa -instsimplify

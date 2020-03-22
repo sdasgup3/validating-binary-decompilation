@@ -1,1 +1,1 @@
- -gvn -basicaa -memdep -dse -instcombine -memcpyopt
+ -tbaa -mem2reg -aa -instcombine -sroa -early-cse -aa -instcombine -aa -licm -aa -instcombine -indvars -aa -aa -aa -instcombine -aa -dse -aa -licm -postdomtree -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -constmerge -aa -instsimplify

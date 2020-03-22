@@ -1,1 +1,1 @@
- -early-cse -basicaa -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -domtree -domtree -instcombine -basiccg -domtree -sroa -early-cse -domtree -instcombine -reassociate -domtree -domtree -instcombine -domtree -bdce -instcombine -domtree -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree

@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -instcombine
+ -globalopt -mem2reg -deadargelim -aa -inline -early-cse -aa -aa -licm -aa -aa -gvn -aa -sccp -aa -aa -dse -aa -licm -postdomtree -aa -aa -aa -aa -aa -aa -licm -globaldce -constmerge -aa

@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -tbaa -deadargelim -basicaa -aa -instcombine -globals-aa -inline -basicaa -aa -instcombine -libcalls-shrinkwrap -basicaa -aa -licm -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -dse -aa -licm -postdomtree -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -constmerge -basicaa -aa

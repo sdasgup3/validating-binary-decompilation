@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -dse
+ -tbaa -globalopt -sroa -libcalls-shrinkwrap -gvn -bdce -dse

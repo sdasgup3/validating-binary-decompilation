@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -instcombine -early-cse-memssa
+ -tbaa -instcombine -globals-aa -inline -early-cse -instcombine -reassociate -instcombine -memdep -gvn -memdep -sccp -bdce -instcombine -memdep -dse -instcombine -globals-aa -instcombine -instcombine -instcombine -globaldce -constmerge

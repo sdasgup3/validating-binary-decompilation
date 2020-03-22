@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -instcombine
+ -tbaa -mem2reg -instcombine -globals-aa -instcombine -libcalls-shrinkwrap -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -sccp -instcombine -memdep -dse -scalar-evolution -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

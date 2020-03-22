@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -basicaa -aa -instcombine -early-cse-memssa
+ -tbaa -basicaa -instcombine -globals-aa -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -dse -licm -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -constmerge -basicaa -instsimplify

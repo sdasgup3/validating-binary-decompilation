@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -aa -dse -instcombine -memcpyopt
+ -domtree -domtree -instcombine -simplifycfg -domtree -early-cse -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -sccp -domtree -instcombine -domtree -dse -licm -adce -simplifycfg -domtree -instcombine -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -globaldce -domtree

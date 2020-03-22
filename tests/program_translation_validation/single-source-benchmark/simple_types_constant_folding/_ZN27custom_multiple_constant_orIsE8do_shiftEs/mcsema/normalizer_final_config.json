@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -tailcallelim -instcombine
+ -globalopt -mem2reg -deadargelim -scalar-evolution -licm -scalar-evolution -gvn -dse -scalar-evolution -licm -postdomtree -adce -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -licm -globaldce -scalar-evolution -instsimplify

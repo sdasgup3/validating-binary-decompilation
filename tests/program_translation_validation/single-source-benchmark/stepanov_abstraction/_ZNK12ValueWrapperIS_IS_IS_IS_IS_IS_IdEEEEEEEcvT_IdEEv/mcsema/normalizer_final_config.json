@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -dse
+ -mem2reg -instcombine -basiccg -sroa -early-cse -instcombine -reassociate -instcombine -gvn -memcpyopt -instcombine -dse -instcombine -basiccg -instcombine -instcombine -instcombine -instsimplify

@@ -1,1 +1,1 @@
- -early-cse -globalopt -basicaa -instcombine -early-cse-memssa
+ -instcombine -globals-aa -inline -early-cse -instcombine -instcombine -indvars -instcombine -dse -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -constmerge

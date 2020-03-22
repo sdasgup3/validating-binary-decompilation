@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -mem2reg -deadargelim -instcombine -sroa -instcombine -libcalls-shrinkwrap -instcombine -indvars -memdep -gvn -memdep -instcombine -memdep -adce -instcombine -instcombine -instcombine -instcombine

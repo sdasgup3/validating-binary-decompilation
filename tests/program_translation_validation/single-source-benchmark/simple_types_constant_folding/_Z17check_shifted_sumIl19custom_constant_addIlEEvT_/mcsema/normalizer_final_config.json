@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -globalopt -deadargelim -instcombine -globals-aa -inline -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -instcombine -indvars -memdep -gvn -memdep -sccp -instcombine -memdep -adce -instcombine -globals-aa -instcombine -instcombine -instcombine

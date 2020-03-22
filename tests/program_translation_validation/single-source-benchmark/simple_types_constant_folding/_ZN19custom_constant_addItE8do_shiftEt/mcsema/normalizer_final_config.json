@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -memdep -dse -instcombine -early-cse-memssa
+ -basicaa -instcombine -inline -early-cse -basicaa -instcombine -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -scalar-evolution -adce -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -basicaa -scalar-evolution

@@ -1,1 +1,1 @@
- -licm -gvn -dse -tailcallelim -instcombine
+ -instcombine -basiccg -sroa -instcombine -libcalls-shrinkwrap -reassociate -instcombine -gvn -instcombine -postdomtree -adce -instcombine -basiccg -instcombine -instcombine -instcombine -globaldce -constmerge

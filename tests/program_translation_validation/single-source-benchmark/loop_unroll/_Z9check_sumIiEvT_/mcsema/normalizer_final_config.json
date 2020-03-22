@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -tbaa -deadargelim -instcombine -globals-aa -sroa -early-cse -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -memdep -gvn -memdep -memcpyopt -sccp -instcombine -memdep -scalar-evolution -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

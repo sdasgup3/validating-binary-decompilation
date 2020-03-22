@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -dse -tailcallelim -instcombine
+ -tbaa -domtree -mem2reg -domtree -simplifycfg -basiccg -domtree -simplifycfg -domtree -libcalls-shrinkwrap -tailcallelim -simplifycfg -domtree -scalar-evolution -simplifycfg -domtree -scalar-evolution -indvars -gvn -domtree -bdce -domtree -dse -scalar-evolution -simplifycfg -domtree -basiccg -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -domtree -scalar-evolution -scalar-evolution -globaldce -domtree -scalar-evolution

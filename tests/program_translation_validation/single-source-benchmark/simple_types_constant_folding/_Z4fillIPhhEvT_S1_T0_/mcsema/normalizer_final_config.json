@@ -1,1 +1,1 @@
- -licm -gvn -dse -tailcallelim -instcombine
+ -tbaa -globalopt -basicaa -instcombine -basicaa -instcombine -reassociate -basicaa -scalar-evolution -licm -basicaa -instcombine -scalar-evolution -indvars -memdep -gvn -basicaa -memdep -bdce -basicaa -instcombine -basicaa -memdep -dse -scalar-evolution -licm -adce -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -basicaa -scalar-evolution

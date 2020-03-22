@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -deadargelim -instcombine
+ -deadargelim -instcombine -globals-aa -early-cse -instcombine -tailcallelim -instcombine -gvn -instcombine -dse -postdomtree -instcombine -globals-aa -instcombine -instcombine -instcombine -constmerge

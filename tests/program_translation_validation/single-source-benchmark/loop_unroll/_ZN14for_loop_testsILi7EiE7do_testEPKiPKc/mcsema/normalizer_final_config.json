@@ -1,1 +1,1 @@
- -mem2reg -early-cse -memdep -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -globalopt -deadargelim -instcombine -inline -instcombine -scalar-evolution -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -memcpyopt -sccp -bdce -instcombine -memdep -scalar-evolution -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -scalar-evolution -instsimplify

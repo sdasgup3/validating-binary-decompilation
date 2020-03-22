@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -domtree -deadargelim -domtree -aa -instcombine -basiccg -inline -domtree -sroa -domtree -aa -instcombine -domtree -aa -licm -domtree -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -domtree -aa -instcombine -domtree -aa -memdep -dse -aa -licm -domtree -aa -instcombine -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -domtree -aa

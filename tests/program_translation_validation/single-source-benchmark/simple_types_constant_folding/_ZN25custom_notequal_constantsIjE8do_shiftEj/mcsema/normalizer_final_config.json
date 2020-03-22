@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -basicaa -simplifycfg -basiccg -inline -sroa -early-cse -simplifycfg -basicaa -libcalls-shrinkwrap -simplifycfg -basicaa -scalar-evolution -simplifycfg -basicaa -scalar-evolution -memdep -gvn -basicaa -memdep -basicaa -basicaa -memdep -dse -scalar-evolution -adce -simplifycfg -basicaa -basiccg -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -simplifycfg -basicaa -scalar-evolution -scalar-evolution -constmerge -basicaa -scalar-evolution

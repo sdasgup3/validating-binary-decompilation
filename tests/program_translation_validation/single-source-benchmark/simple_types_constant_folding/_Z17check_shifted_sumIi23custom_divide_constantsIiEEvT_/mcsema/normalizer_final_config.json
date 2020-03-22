@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -aa -dse -deadargelim -instcombine
+ -globalopt -deadargelim -aa -instcombine -sroa -early-cse -aa -instcombine -tailcallelim -aa -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -aa -dse -aa -postdomtree -adce -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa -instsimplify

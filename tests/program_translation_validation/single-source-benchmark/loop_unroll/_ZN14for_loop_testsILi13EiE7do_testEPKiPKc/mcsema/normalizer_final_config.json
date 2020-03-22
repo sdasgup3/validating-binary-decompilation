@@ -1,1 +1,1 @@
- -licm -gvn -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -globalopt -mem2reg -instcombine -early-cse -instcombine -instcombine -instcombine -dse -postdomtree -adce -instcombine -instcombine -instcombine -instcombine

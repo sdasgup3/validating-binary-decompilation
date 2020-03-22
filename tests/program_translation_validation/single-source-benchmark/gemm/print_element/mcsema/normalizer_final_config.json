@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -tailcallelim -memcpyopt
+ -mem2reg -basicaa -sroa -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -gvn -basicaa -memcpyopt -bdce -basicaa -basicaa -dse -postdomtree -basicaa -basicaa -basicaa -basicaa -basicaa -globaldce -basicaa

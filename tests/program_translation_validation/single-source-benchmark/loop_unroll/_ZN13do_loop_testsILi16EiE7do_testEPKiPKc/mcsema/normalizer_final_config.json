@@ -1,1 +1,1 @@
- -gvn -memdep -dse -instcombine
+ -domtree -mem2reg -domtree -basicaa -aa -basiccg -domtree -sroa -domtree -basicaa -aa -domtree -basicaa -aa -domtree -basicaa -aa -aa -gvn -basicaa -aa -domtree -basicaa -aa -domtree -basicaa -aa -dse -aa -domtree -basicaa -aa -basiccg -domtree -basicaa -aa -basicaa -aa -aa -basicaa -aa -domtree -basicaa -aa -constmerge -domtree -basicaa -aa
