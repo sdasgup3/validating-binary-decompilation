@@ -1,1 +1,1 @@
- -licm -early-cse -basicaa -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -deadargelim -simplifycfg -basiccg -globals-aa -sroa -early-cse -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -memdep -gvn -memdep -memcpyopt -memdep -dse -scalar-evolution -simplifycfg -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -globaldce -scalar-evolution

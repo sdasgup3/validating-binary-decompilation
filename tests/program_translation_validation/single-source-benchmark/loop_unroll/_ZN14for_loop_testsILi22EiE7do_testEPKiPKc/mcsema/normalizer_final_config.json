@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -memdep -dse
+ -mem2reg -deadargelim -simplifycfg -inline -simplifycfg -simplifycfg -licm -simplifycfg -gvn -memcpyopt -dse -licm -simplifycfg -simplifycfg -licm -constmerge

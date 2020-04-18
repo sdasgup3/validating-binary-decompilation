@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -instcombine
+ -tbaa -domtree -mem2reg -domtree -basicaa -instcombine -simplifycfg -inline -domtree -sroa -early-cse -simplifycfg -domtree -basicaa -instcombine -tailcallelim -simplifycfg -domtree -basicaa -licm -simplifycfg -domtree -basicaa -instcombine -indvars -gvn -basicaa -domtree -basicaa -instcombine -domtree -basicaa -dse -licm -adce -simplifycfg -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -simplifycfg -domtree -basicaa -instcombine -instcombine -licm -domtree -basicaa -instsimplify

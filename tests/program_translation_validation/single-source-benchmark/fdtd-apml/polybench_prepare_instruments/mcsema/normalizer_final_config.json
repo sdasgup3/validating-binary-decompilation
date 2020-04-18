@@ -1,1 +1,1 @@
- -licm -early-cse -globalopt -simplifycfg -memdep -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -instcombine -globals-aa -inline -sroa -instcombine -libcalls-shrinkwrap -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -sccp -instcombine -memdep -scalar-evolution -postdomtree -adce -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution

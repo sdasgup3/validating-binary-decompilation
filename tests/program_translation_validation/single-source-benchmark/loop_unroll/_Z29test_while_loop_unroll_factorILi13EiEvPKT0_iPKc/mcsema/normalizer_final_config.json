@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -aa -instcombine -basiccg -early-cse -aa -instcombine -aa -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -aa -memdep -dse -aa -postdomtree -adce -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -constmerge -aa

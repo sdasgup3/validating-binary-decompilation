@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -dse -deadargelim -instcombine -memcpyopt
+ -domtree -mem2reg -deadargelim -domtree -instcombine -basiccg -domtree -early-cse -domtree -instcombine -tailcallelim -domtree -domtree -instcombine -domtree -bdce -instcombine -domtree -dse -postdomtree -adce -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -aa -dse -deadargelim -memcpyopt
+ -globalopt -simplifycfg -sroa -simplifycfg -tailcallelim -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -memdep -gvn -memdep -memdep -dse -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution

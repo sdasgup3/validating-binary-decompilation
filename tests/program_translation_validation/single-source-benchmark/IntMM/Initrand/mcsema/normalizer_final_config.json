@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -memdep -dse -instcombine -early-cse-memssa
+ -mem2reg -globals-aa -early-cse -reassociate -indvars -gvn -sccp -bdce -dse -adce -globals-aa -instsimplify

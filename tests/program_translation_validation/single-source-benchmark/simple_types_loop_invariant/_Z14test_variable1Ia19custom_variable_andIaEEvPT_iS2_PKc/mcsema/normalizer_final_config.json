@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tbaa -globalopt -deadargelim -aa -instcombine -basiccg -aa -instcombine -libcalls-shrinkwrap -aa -licm -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -aa -memdep -aa -licm -adce -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa -instsimplify

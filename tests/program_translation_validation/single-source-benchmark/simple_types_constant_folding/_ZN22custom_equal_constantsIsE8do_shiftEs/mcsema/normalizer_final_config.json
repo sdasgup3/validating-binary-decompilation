@@ -1,1 +1,1 @@
- -gvn -early-cse -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -domtree -mem2reg -domtree -basicaa -instcombine -basiccg -domtree -sroa -early-cse -domtree -basicaa -instcombine -libcalls-shrinkwrap -reassociate -domtree -basicaa -domtree -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -memcpyopt -sccp -domtree -basicaa -instcombine -domtree -basicaa -memdep -dse -adce -domtree -basicaa -instcombine -basiccg -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -globaldce -constmerge -domtree -basicaa -instsimplify

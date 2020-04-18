@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -memdep -dse -instcombine -memcpyopt
+ -deadargelim -instcombine -simplifycfg -inline -simplifycfg -instcombine -simplifycfg -reassociate -simplifycfg -instcombine -indvars -gvn -memcpyopt -sccp -instcombine -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine

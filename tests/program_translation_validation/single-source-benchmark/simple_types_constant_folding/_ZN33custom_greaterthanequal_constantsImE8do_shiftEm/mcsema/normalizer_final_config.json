@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -dse -deadargelim
+ -instcombine -early-cse -instcombine -scalar-evolution -instcombine -scalar-evolution -sccp -instcombine -dse -scalar-evolution -postdomtree -adce -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -scalar-evolution

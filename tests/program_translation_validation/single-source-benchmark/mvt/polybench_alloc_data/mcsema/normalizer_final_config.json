@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -deadargelim -aa -globals-aa -aa -reassociate -aa -scalar-evolution -aa -scalar-evolution -aa -memdep -gvn -aa -memdep -memcpyopt -aa -aa -memdep -dse -aa -scalar-evolution -postdomtree -aa -globals-aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -tailcallelim -memcpyopt -early-cse-memssa
+ -mem2reg -deadargelim -basicaa -basiccg -basicaa -basicaa -basicaa -gvn -basicaa -memcpyopt -bdce -basicaa -basicaa -dse -basicaa -basiccg -basicaa -basicaa -basicaa -basicaa -globaldce -constmerge -basicaa -instsimplify

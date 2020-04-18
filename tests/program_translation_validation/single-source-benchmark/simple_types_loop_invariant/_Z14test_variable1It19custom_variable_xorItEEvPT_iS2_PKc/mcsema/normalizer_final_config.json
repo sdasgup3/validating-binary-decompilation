@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -dse -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -aa -instcombine -basiccg -inline -aa -instcombine -reassociate -aa -licm -aa -instcombine -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -bdce -aa -instcombine -aa -memdep -dse -aa -licm -adce -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -aa

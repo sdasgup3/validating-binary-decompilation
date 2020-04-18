@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -instcombine -early-cse-memssa
+ -tbaa -globalopt -deadargelim -aa -instcombine -simplifycfg -basiccg -inline -sroa -simplifycfg -aa -instcombine -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -aa -instcombine -aa -memdep -dse -aa -licm -postdomtree -adce -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -globaldce -aa

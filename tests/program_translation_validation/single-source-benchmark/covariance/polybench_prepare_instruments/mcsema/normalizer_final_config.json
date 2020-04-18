@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -globalopt -basicaa -instcombine -basiccg -globals-aa -inline -sroa -early-cse -basicaa -instcombine -tailcallelim -basicaa -licm -basicaa -instcombine -indvars -basicaa -bdce -basicaa -instcombine -basicaa -licm -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -constmerge -basicaa

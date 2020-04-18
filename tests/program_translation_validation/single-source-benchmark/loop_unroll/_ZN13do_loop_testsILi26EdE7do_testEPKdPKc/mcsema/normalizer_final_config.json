@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -libcalls-shrinkwrap
+ -mem2reg -basicaa -globals-aa -basicaa -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -gvn -basicaa -memcpyopt -bdce -basicaa -basicaa -dse -licm -basicaa -globals-aa -basicaa -basicaa -basicaa -basicaa -licm -globaldce -basicaa

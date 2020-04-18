@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -memdep -dse -tailcallelim -memcpyopt
+ -globalopt -mem2reg -aa -basiccg -aa -reassociate -aa -scalar-evolution -aa -scalar-evolution -indvars -aa -gvn -aa -memcpyopt -aa -aa -dse -aa -scalar-evolution -aa -basiccg -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -constmerge -aa -scalar-evolution -instsimplify

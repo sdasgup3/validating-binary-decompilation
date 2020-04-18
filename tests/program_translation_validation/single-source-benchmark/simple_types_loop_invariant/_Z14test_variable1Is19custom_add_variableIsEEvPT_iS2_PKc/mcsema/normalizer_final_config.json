@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -aa -memdep -dse -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -deadargelim -aa -instcombine -inline -early-cse -aa -instcombine -reassociate -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -aa -gvn -aa -sccp -aa -instcombine -aa -aa -scalar-evolution -licm -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -aa -scalar-evolution -instsimplify

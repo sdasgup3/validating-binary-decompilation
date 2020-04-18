@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -globalopt -instcombine -basiccg -inline -sroa -instcombine -libcalls-shrinkwrap -reassociate -licm -instcombine -gvn -memcpyopt -bdce -instcombine -licm -instcombine -basiccg -instcombine -instcombine -instcombine -licm -instsimplify

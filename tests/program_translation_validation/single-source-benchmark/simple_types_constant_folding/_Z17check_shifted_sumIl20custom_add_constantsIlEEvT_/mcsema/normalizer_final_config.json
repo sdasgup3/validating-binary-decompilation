@@ -1,1 +1,1 @@
- -licm -gvn -aa -dse -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -deadargelim -basicaa -aa -instcombine -inline -sroa -early-cse -basicaa -aa -instcombine -tailcallelim -basicaa -aa -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -postdomtree -adce -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -globaldce -constmerge -basicaa -aa

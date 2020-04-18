@@ -1,1 +1,1 @@
- -gvn -memdep -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -basicaa -instcombine -sroa -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -indvars -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -dse -postdomtree -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

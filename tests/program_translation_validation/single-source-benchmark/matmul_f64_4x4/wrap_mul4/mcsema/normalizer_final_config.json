@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -early-cse-memssa
+ -tbaa -deadargelim -basicaa -aa -globals-aa -sroa -basicaa -aa -basicaa -aa -licm -basicaa -aa -indvars -aa -gvn -basicaa -aa -memcpyopt -sccp -bdce -basicaa -aa -basicaa -aa -dse -aa -licm -adce -basicaa -aa -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -licm -basicaa -aa

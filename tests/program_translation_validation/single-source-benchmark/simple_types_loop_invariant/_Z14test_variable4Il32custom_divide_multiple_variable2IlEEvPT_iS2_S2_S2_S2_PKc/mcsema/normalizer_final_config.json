@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -aa -instcombine -aa -instcombine -libcalls-shrinkwrap -tailcallelim -aa -licm -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -dse -aa -licm -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -aa

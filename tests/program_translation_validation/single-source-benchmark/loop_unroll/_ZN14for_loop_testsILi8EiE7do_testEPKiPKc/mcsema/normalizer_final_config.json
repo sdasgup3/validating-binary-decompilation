@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -simplifycfg -simplifycfg -libcalls-shrinkwrap -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -gvn -memcpyopt -dse -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -constmerge -scalar-evolution -instsimplify

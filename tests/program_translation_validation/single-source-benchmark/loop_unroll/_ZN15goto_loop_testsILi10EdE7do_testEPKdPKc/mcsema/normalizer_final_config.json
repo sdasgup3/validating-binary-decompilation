@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -libcalls-shrinkwrap -instcombine
+ -domtree -domtree -basicaa -inline -domtree -sroa -early-cse -domtree -basicaa -libcalls-shrinkwrap -domtree -basicaa -scalar-evolution -licm -domtree -basicaa -scalar-evolution -gvn -basicaa -memcpyopt -sccp -domtree -basicaa -domtree -basicaa -dse -scalar-evolution -licm -postdomtree -domtree -basicaa -domtree -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -domtree -basicaa -scalar-evolution -scalar-evolution -licm -domtree -basicaa -scalar-evolution

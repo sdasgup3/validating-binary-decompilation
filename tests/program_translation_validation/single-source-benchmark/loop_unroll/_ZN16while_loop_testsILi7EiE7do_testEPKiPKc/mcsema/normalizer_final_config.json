@@ -1,1 +1,1 @@
- -mem2reg -early-cse -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -domtree -domtree -basicaa -instcombine -globals-aa -inline -domtree -early-cse -domtree -basicaa -instcombine -tailcallelim -reassociate -domtree -basicaa -domtree -basicaa -instcombine -gvn -basicaa -domtree -basicaa -instcombine -domtree -basicaa -adce -domtree -basicaa -instcombine -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -globaldce -domtree -basicaa

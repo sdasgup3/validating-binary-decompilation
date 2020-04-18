@@ -1,1 +1,1 @@
- -gvn -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -deadargelim -instcombine -inline -early-cse -instcombine -tailcallelim -reassociate -licm -instcombine -memdep -gvn -memdep -instcombine -memdep -dse -licm -instcombine -instcombine -instcombine -instcombine -licm -globaldce

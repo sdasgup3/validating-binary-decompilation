@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -tbaa -globalopt -domtree -mem2reg -domtree -instcombine -simplifycfg -basiccg -domtree -sroa -early-cse -simplifycfg -domtree -instcombine -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -indvars -gvn -sccp -domtree -instcombine -domtree -dse -licm -postdomtree -simplifycfg -domtree -instcombine -basiccg -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree -instsimplify

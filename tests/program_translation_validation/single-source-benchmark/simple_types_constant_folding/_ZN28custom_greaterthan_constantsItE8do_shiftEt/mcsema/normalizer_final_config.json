@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -aa -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -instcombine -basiccg -globals-aa -sroa -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -memdep -gvn -memdep -sccp -bdce -instcombine -memdep -dse -scalar-evolution -adce -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

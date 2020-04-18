@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -memcpyopt
+ -tbaa -mem2reg -deadargelim -instcombine -simplifycfg -globals-aa -inline -sroa -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -gvn -instcombine -dse -scalar-evolution -licm -postdomtree -simplifycfg -instcombine -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution

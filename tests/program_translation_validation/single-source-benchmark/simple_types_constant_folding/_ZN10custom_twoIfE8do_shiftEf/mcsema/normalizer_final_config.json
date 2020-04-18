@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -aa -memdep -dse -memcpyopt -early-cse-memssa
+ -deadargelim -aa -instcombine -simplifycfg -basiccg -inline -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -aa -sccp -bdce -aa -instcombine -aa -dse -aa -postdomtree -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -constmerge -aa

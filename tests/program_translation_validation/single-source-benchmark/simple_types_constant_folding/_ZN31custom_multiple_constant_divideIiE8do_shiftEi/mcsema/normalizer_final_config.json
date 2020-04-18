@@ -1,1 +1,1 @@
- -gvn -early-cse -instcombine -early-cse-memssa
+ -deadargelim -instcombine -basiccg -globals-aa -early-cse -instcombine -reassociate -instcombine -gvn -sccp -instcombine -dse -adce -instcombine -basiccg -globals-aa -instcombine -instcombine -instcombine -globaldce -instsimplify

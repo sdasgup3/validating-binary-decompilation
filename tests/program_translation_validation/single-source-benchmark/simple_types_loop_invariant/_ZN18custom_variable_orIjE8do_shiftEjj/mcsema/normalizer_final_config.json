@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -basicaa -memdep -deadargelim -instcombine -early-cse-memssa
+ -tbaa -mem2reg -simplifycfg -basiccg -simplifycfg -tailcallelim -simplifycfg -licm -simplifycfg -memdep -gvn -memdep -memcpyopt -sccp -memdep -dse -licm -postdomtree -adce -simplifycfg -basiccg -simplifycfg -licm

@@ -1,1 +1,1 @@
- -gvn -early-cse -basicaa -dse -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -basicaa -aa -instcombine -globals-aa -sroa -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -instcombine -aa -gvn -basicaa -aa -basicaa -aa -instcombine -basicaa -aa -dse -aa -postdomtree -adce -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -globaldce -basicaa -aa

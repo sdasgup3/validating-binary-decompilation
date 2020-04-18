@@ -1,1 +1,1 @@
- -early-cse -deadargelim -instcombine -early-cse-memssa
+ -globalopt -basiccg -globals-aa -inline -sroa -reassociate -gvn -dse -postdomtree -basiccg -globals-aa -globaldce

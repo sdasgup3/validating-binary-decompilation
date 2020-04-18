@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -memdep -dse -instcombine -memcpyopt
+ -globalopt -basicaa -basiccg -sroa -early-cse -basicaa -libcalls-shrinkwrap -reassociate -basicaa -licm -basicaa -memdep -gvn -basicaa -memdep -sccp -bdce -basicaa -basicaa -memdep -dse -licm -adce -basicaa -basiccg -basicaa -basicaa -basicaa -basicaa -licm -basicaa

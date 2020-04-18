@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -domtree -domtree -basicaa -aa -instcombine -domtree -early-cse -domtree -basicaa -aa -instcombine -reassociate -domtree -basicaa -aa -domtree -basicaa -aa -instcombine -aa -memdep -gvn -basicaa -aa -memdep -memcpyopt -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -memdep -aa -postdomtree -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -domtree -basicaa -aa -instcombine -instcombine -globaldce -domtree -basicaa -aa

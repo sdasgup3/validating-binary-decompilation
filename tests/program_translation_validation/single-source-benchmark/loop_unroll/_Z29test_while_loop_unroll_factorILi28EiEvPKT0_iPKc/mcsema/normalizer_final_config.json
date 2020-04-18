@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -instcombine
+ -mem2reg -deadargelim -instcombine -simplifycfg -inline -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -gvn -sccp -bdce -instcombine -dse -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine

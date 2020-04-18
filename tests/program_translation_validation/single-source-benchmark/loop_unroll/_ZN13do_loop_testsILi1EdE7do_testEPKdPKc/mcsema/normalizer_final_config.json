@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -dse -deadargelim -instcombine -memcpyopt
+ -globalopt -basicaa -aa -basiccg -inline -sroa -early-cse -basicaa -aa -tailcallelim -reassociate -basicaa -aa -basicaa -aa -aa -gvn -basicaa -aa -sccp -basicaa -aa -basicaa -aa -dse -aa -basicaa -aa -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -globaldce -constmerge -basicaa -aa

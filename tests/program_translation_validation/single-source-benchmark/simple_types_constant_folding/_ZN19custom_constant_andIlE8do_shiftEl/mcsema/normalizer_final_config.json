@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -dse -early-cse-memssa
+ -tbaa -simplifycfg -basiccg -sroa -simplifycfg -tailcallelim -simplifycfg -simplifycfg -gvn -memcpyopt -dse -simplifycfg -basiccg -simplifycfg

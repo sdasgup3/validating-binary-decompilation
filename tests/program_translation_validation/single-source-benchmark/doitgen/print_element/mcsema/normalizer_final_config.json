@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -globalopt -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -basicaa -inline -sroa -basicaa -libcalls-shrinkwrap -tailcallelim -basicaa -basicaa -indvars -gvn -basicaa -bdce -basicaa -basicaa -dse -postdomtree -basicaa -basicaa -basicaa -basicaa -basicaa -basicaa

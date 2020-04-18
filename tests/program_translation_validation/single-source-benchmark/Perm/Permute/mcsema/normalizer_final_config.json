@@ -1,1 +1,1 @@
- -mem2reg -early-cse -basicaa -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -instcombine -basiccg -sroa -early-cse -instcombine -reassociate -instcombine -indvars -gvn -memcpyopt -instcombine -dse -adce -instcombine -basiccg -instcombine -instcombine -instcombine -globaldce

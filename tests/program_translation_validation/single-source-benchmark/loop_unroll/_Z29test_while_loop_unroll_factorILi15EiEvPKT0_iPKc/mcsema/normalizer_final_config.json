@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -instcombine -early-cse-memssa
+ -domtree -mem2reg -domtree -instcombine -simplifycfg -domtree -sroa -early-cse -simplifycfg -domtree -instcombine -tailcallelim -simplifycfg -domtree -licm -simplifycfg -domtree -instcombine -domtree -instcombine -domtree -dse -licm -adce -simplifycfg -domtree -instcombine -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree

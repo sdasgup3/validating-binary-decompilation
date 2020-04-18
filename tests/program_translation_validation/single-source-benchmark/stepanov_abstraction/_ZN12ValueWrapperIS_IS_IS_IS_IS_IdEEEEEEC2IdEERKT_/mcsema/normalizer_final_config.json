@@ -1,1 +1,1 @@
- -early-cse -memdep -instcombine -memcpyopt -early-cse-memssa
+ -basicaa -instcombine -early-cse -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -licm -basicaa -instcombine -basicaa -sccp -bdce -basicaa -instcombine -basicaa -licm -postdomtree -adce -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa

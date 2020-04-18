@@ -1,1 +1,1 @@
- -gvn -simplifycfg -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -globalopt -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -indvars -gvn -sccp -instcombine -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -instsimplify

@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -aa -memdep -dse -instcombine -early-cse-memssa
+ -globalopt -domtree -domtree -instcombine -globals-aa -domtree -early-cse -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -sccp -domtree -instcombine -domtree -scalar-evolution -postdomtree -adce -domtree -instcombine -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -domtree -scalar-evolution

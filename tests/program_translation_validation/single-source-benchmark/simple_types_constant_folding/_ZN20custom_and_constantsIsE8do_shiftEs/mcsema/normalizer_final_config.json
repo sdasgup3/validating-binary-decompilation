@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -dse -instcombine
+ -globalopt -mem2reg -instcombine -early-cse -instcombine -libcalls-shrinkwrap -instcombine -gvn -bdce -instcombine -instcombine -instcombine -instcombine -instcombine -constmerge

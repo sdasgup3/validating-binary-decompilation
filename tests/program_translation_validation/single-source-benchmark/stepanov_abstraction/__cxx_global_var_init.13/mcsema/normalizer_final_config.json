@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -tbaa -aa -instcombine -sroa -aa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -aa -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -sccp -aa -instcombine -aa -aa -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

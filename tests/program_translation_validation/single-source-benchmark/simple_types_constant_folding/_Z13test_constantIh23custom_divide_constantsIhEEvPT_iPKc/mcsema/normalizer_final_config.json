@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -aa -memdep -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -mem2reg -instcombine -basiccg -instcombine -tailcallelim -scalar-evolution -instcombine -scalar-evolution -indvars -gvn -memcpyopt -instcombine -dse -scalar-evolution -postdomtree -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -scalar-evolution

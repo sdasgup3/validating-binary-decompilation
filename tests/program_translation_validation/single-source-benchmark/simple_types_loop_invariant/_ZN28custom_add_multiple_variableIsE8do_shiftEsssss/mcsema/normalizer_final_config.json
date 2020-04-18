@@ -1,1 +1,1 @@
- -gvn -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -aa -globals-aa -inline -aa -aa -aa -aa -gvn -aa -sccp -bdce -aa -aa -dse -aa -aa -globals-aa -aa -aa -aa -aa -aa -aa -instsimplify

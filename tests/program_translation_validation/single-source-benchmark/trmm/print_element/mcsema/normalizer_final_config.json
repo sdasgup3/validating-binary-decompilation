@@ -1,1 +1,1 @@
- -gvn -aa -dse -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -aa -simplifycfg -inline -simplifycfg -aa -tailcallelim -simplifycfg -aa -scalar-evolution -simplifycfg -aa -scalar-evolution -aa -memdep -gvn -aa -memdep -bdce -aa -aa -memdep -dse -aa -scalar-evolution -simplifycfg -aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -simplifycfg -aa -scalar-evolution -scalar-evolution -globaldce -aa -scalar-evolution -instsimplify

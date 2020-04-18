@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -mem2reg -deadargelim -basicaa -globals-aa -basicaa -basicaa -licm -basicaa -gvn -basicaa -memcpyopt -basicaa -basicaa -dse -licm -postdomtree -basicaa -globals-aa -basicaa -basicaa -basicaa -basicaa -licm -basicaa

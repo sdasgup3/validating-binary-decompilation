@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -dse -instcombine -memcpyopt
+ -mem2reg -basicaa -instcombine -basiccg -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -indvars -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -dse -licm -postdomtree -adce -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -globaldce -basicaa -instsimplify

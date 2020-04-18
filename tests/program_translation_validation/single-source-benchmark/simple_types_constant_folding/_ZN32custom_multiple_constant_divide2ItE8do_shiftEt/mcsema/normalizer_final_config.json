@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -aa -memdep -dse
+ -tbaa -mem2reg -deadargelim -simplifycfg -inline -sroa -simplifycfg -libcalls-shrinkwrap -simplifycfg -simplifycfg -memdep -gvn -memdep -sccp -memdep -dse -simplifycfg -simplifycfg -globaldce

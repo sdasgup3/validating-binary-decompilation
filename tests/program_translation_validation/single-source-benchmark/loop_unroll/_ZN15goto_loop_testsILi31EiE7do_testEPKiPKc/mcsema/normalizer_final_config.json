@@ -1,1 +1,1 @@
- -early-cse -memdep -instcombine -memcpyopt -early-cse-memssa
+ -domtree -domtree -instcombine -domtree -sroa -domtree -instcombine -domtree -licm -domtree -instcombine -indvars -gvn -domtree -bdce -instcombine -domtree -licm -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -licm -constmerge -domtree

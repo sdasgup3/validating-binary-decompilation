@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -simplifycfg -aa -dse
+ -globalopt -domtree -mem2reg -domtree -aa -instcombine -simplifycfg -globals-aa -domtree -sroa -early-cse -simplifycfg -domtree -aa -instcombine -simplifycfg -reassociate -domtree -aa -simplifycfg -domtree -aa -instcombine -aa -aa -domtree -bdce -aa -instcombine -domtree -aa -dse -aa -simplifycfg -domtree -aa -instcombine -globals-aa -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -domtree -aa

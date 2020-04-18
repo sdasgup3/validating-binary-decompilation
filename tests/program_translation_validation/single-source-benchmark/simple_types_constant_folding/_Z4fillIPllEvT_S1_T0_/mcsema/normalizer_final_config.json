@@ -1,1 +1,1 @@
- -gvn -globalopt -memdep -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -basicaa -instcombine -simplifycfg -basiccg -inline -sroa -early-cse -simplifycfg -basicaa -instcombine -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -indvars -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -simplifycfg -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -basicaa

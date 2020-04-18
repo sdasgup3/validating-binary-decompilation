@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -memdep -dse -instcombine
+ -domtree -domtree -instcombine -inline -domtree -early-cse -domtree -instcombine -domtree -scalar-evolution -domtree -instcombine -scalar-evolution -indvars -memdep -memdep -memcpyopt -domtree -bdce -instcombine -domtree -memdep -dse -scalar-evolution -postdomtree -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -constmerge -domtree -scalar-evolution -instsimplify

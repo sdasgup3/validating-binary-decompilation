@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine
+ -domtree -deadargelim -domtree -instcombine -simplifycfg -basiccg -inline -domtree -sroa -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -licm -simplifycfg -domtree -instcombine -memdep -gvn -memdep -domtree -instcombine -domtree -memdep -licm -simplifycfg -domtree -instcombine -basiccg -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -licm -domtree

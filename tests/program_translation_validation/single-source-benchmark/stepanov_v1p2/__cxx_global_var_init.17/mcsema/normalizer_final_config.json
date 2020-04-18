@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -mem2reg -basicaa -aa -simplifycfg -basiccg -inline -simplifycfg -basicaa -aa -simplifycfg -basicaa -aa -scalar-evolution -simplifycfg -basicaa -aa -scalar-evolution -aa -gvn -basicaa -aa -basicaa -aa -basicaa -aa -dse -aa -scalar-evolution -postdomtree -simplifycfg -basicaa -aa -basiccg -basicaa -aa -scalar-evolution -scalar-evolution -basicaa -aa -scalar-evolution -aa -basicaa -aa -scalar-evolution -simplifycfg -basicaa -aa -scalar-evolution -scalar-evolution -basicaa -aa -scalar-evolution -instsimplify

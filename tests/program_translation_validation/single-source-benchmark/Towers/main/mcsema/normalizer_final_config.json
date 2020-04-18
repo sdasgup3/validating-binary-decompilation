@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -simplifycfg -aa -memdep -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -basicaa -instcombine -sroa -basicaa -instcombine -basicaa -licm -basicaa -instcombine -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -licm -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -constmerge -basicaa

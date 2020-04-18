@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -instcombine
+ -globalopt -simplifycfg -basiccg -globals-aa -inline -sroa -simplifycfg -simplifycfg -reassociate -simplifycfg -memdep -gvn -memdep -sccp -bdce -memdep -dse -simplifycfg -basiccg -globals-aa -simplifycfg -globaldce

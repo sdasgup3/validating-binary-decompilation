@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -aa -instcombine -basiccg -globals-aa -sroa -early-cse -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -aa -instcombine -aa -aa -postdomtree -adce -aa -instcombine -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -constmerge -aa

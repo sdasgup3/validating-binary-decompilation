@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -globalopt -deadargelim -instcombine -simplifycfg -globals-aa -inline -sroa -early-cse -simplifycfg -instcombine -libcalls-shrinkwrap -simplifycfg -reassociate -licm -simplifycfg -instcombine -memdep -memdep -sccp -bdce -instcombine -memdep -dse -licm -adce -simplifycfg -instcombine -globals-aa -instcombine -simplifycfg -instcombine -instcombine -licm -constmerge

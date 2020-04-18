@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -memdep -dse -instcombine
+ -tbaa -mem2reg -aa -instcombine -basiccg -early-cse -aa -instcombine -aa -licm -aa -instcombine -indvars -aa -aa -sccp -bdce -aa -instcombine -aa -aa -licm -postdomtree -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -globaldce -aa

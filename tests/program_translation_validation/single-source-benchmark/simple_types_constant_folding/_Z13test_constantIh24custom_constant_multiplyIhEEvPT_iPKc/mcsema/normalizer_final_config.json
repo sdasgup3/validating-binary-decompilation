@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -aa -instcombine -simplifycfg -inline -sroa -early-cse -simplifycfg -aa -instcombine -simplifycfg -reassociate -aa -scalar-evolution -simplifycfg -aa -instcombine -scalar-evolution -aa -gvn -aa -bdce -aa -instcombine -aa -dse -aa -scalar-evolution -adce -simplifycfg -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -simplifycfg -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -aa -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -simplifycfg -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -globalopt -deadargelim -basicaa -aa -instcombine -early-cse -basicaa -aa -instcombine -basicaa -aa -licm -basicaa -aa -instcombine -indvars -aa -memdep -gvn -basicaa -aa -memdep -bdce -basicaa -aa -instcombine -basicaa -aa -memdep -dse -aa -licm -postdomtree -basicaa -aa -instcombine -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -globaldce -basicaa -aa

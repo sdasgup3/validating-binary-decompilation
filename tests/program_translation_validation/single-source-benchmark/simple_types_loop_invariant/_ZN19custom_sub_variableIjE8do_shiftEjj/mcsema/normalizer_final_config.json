@@ -1,1 +1,1 @@
- -gvn -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -mem2reg -basiccg -reassociate -gvn -dse -basiccg -instsimplify

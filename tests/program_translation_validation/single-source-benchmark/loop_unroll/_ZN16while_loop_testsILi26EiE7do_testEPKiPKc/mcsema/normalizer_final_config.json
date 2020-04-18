@@ -1,1 +1,1 @@
- -mem2reg -gvn -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -domtree -deadargelim -domtree -basicaa -instcombine -domtree -early-cse -domtree -basicaa -instcombine -domtree -basicaa -domtree -basicaa -instcombine -indvars -memdep -basicaa -memdep -domtree -basicaa -instcombine -domtree -basicaa -memdep -postdomtree -domtree -basicaa -instcombine -domtree -basicaa -basicaa -basicaa -instcombine -domtree -basicaa -instcombine -instcombine -domtree -basicaa

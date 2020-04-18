@@ -1,1 +1,1 @@
- -early-cse -globalopt -simplifycfg -basicaa -aa -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -domtree -domtree -instcombine -simplifycfg -basiccg -globals-aa -domtree -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -indvars -gvn -memcpyopt -sccp -domtree -instcombine -domtree -dse -simplifycfg -domtree -instcombine -basiccg -globals-aa -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -domtree -instsimplify

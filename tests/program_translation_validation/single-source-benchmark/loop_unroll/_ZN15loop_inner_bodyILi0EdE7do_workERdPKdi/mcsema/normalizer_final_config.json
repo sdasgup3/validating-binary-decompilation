@@ -1,1 +1,1 @@
- -licm -early-cse -simplifycfg -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -basiccg -libcalls-shrinkwrap -gvn -memcpyopt -bdce -dse -postdomtree -adce -basiccg -globaldce

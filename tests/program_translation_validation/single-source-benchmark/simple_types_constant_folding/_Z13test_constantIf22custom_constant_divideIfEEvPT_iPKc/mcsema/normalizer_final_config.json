@@ -1,1 +1,1 @@
- -gvn -instcombine -memcpyopt -early-cse-memssa
+ -basicaa -instcombine -inline -sroa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -indvars -memdep -gvn -basicaa -memdep -bdce -basicaa -instcombine -basicaa -memdep -dse -scalar-evolution -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -globaldce -basicaa -scalar-evolution

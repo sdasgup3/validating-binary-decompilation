@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine -early-cse-memssa
+ -tbaa -basicaa -aa -instcombine -globals-aa -basicaa -aa -instcombine -tailcallelim -basicaa -aa -licm -basicaa -aa -instcombine -aa -gvn -basicaa -aa -memcpyopt -bdce -basicaa -aa -instcombine -basicaa -aa -aa -licm -adce -basicaa -aa -instcombine -globals-aa -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -basicaa -aa -instcombine -instcombine -licm -constmerge -basicaa -aa

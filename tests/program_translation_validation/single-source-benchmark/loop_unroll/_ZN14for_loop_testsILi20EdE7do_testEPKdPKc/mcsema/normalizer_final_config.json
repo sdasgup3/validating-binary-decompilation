@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -simplifycfg -memdep -dse -tailcallelim -memcpyopt
+ -tbaa -globalopt -mem2reg -deadargelim -aa -basiccg -inline -aa -aa -aa -indvars -aa -gvn -aa -aa -aa -dse -aa -postdomtree -aa -basiccg -aa -aa -aa -aa -aa -constmerge -aa

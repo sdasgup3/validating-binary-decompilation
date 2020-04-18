@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -tailcallelim -instcombine
+ -tbaa -globalopt -basiccg -inline -sroa -reassociate -gvn -sccp -bdce -dse -postdomtree -basiccg -instsimplify

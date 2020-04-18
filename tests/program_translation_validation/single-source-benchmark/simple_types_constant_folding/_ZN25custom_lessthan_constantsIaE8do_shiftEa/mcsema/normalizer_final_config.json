@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -aa -dse -deadargelim -memcpyopt
+ -globals-aa -sroa -memdep -gvn -memdep -sccp -bdce -memdep -dse -globals-aa

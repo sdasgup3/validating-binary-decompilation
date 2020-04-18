@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -aa -instcombine -early-cse -aa -instcombine -reassociate -aa -aa -instcombine -aa -gvn -aa -memcpyopt -sccp -bdce -aa -instcombine -aa -aa -adce -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

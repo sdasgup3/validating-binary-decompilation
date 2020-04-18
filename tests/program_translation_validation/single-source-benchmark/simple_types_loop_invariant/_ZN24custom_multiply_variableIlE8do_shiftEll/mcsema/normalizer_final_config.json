@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -basicaa -instcombine -early-cse-memssa
+ -tbaa -mem2reg -basicaa -globals-aa -inline -basicaa -basicaa -basicaa -gvn -basicaa -bdce -basicaa -basicaa -dse -adce -basicaa -globals-aa -basicaa -basicaa -basicaa -basicaa -globaldce -basicaa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -aa -dse -deadargelim -early-cse-memssa
+ -tbaa -mem2reg -basicaa -instcombine -basiccg -basicaa -instcombine -basicaa -scalar-evolution -licm -basicaa -instcombine -scalar-evolution -gvn -basicaa -memcpyopt -basicaa -instcombine -basicaa -dse -scalar-evolution -licm -adce -basicaa -instcombine -basiccg -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -basicaa -scalar-evolution

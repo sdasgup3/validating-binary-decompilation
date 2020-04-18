@@ -1,1 +1,1 @@
- -early-cse -memdep -deadargelim -instcombine -early-cse-memssa
+ -globalopt -deadargelim -aa -instcombine -sroa -early-cse -aa -instcombine -aa -licm -aa -instcombine -aa -aa -bdce -aa -instcombine -aa -dse -aa -licm -aa -instcombine -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -licm -constmerge -aa

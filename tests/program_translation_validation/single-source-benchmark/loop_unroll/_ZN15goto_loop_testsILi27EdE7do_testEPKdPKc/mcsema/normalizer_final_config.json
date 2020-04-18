@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine
+ -instcombine -basiccg -inline -early-cse -instcombine -instcombine -gvn -instcombine -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine -globaldce -constmerge

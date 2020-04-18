@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -deadargelim -instcombine -early-cse -instcombine -tailcallelim -reassociate -licm -instcombine -indvars -gvn -instcombine -dse -licm -postdomtree -instcombine -instcombine -instcombine -instcombine -licm -instsimplify

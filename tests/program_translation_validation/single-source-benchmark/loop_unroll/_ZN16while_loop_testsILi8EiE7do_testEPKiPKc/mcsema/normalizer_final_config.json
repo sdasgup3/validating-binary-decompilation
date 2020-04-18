@@ -1,1 +1,1 @@
- -early-cse -aa -memdep -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -mem2reg -inline -tailcallelim -licm -indvars -gvn -dse -licm -postdomtree -adce -licm

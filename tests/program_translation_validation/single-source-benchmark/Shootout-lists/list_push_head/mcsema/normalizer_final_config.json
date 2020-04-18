@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -aa -dse -instcombine -early-cse-memssa
+ -mem2reg -basicaa -instcombine -basiccg -globals-aa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -basicaa -instcombine -basicaa -bdce -basicaa -instcombine -basicaa -dse -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

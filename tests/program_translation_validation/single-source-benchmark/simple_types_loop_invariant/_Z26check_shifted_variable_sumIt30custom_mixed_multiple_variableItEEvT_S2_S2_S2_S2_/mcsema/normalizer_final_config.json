@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -instcombine
+ -deadargelim -basicaa -instcombine -globals-aa -inline -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -gvn -basicaa -bdce -basicaa -instcombine -basicaa -dse -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -basicaa

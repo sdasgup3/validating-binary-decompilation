@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse -instcombine
+ -globalopt -mem2reg -basiccg -globals-aa -libcalls-shrinkwrap -scalar-evolution -scalar-evolution -gvn -dse -scalar-evolution -adce -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution

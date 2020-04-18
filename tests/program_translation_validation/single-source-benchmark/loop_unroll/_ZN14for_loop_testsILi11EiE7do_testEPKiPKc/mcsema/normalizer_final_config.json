@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -dse -libcalls-shrinkwrap -instcombine
+ -globalopt -deadargelim -instcombine -globals-aa -inline -instcombine -tailcallelim -reassociate -licm -instcombine -gvn -memcpyopt -instcombine -licm -adce -instcombine -globals-aa -instcombine -instcombine -instcombine -licm -globaldce -constmerge

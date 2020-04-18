@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -mem2reg -deadargelim -aa -instcombine -basiccg -globals-aa -inline -sroa -aa -instcombine -aa -scalar-evolution -licm -aa -instcombine -scalar-evolution -indvars -aa -gvn -aa -memcpyopt -bdce -aa -instcombine -aa -aa -scalar-evolution -licm -aa -instcombine -basiccg -globals-aa -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -aa -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -licm -early-cse -instcombine -early-cse-memssa
+ -tbaa -basicaa -instcombine -sroa -early-cse -basicaa -instcombine -libcalls-shrinkwrap -tailcallelim -basicaa -scalar-evolution -licm -basicaa -instcombine -scalar-evolution -basicaa -sccp -basicaa -instcombine -basicaa -dse -scalar-evolution -licm -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -constmerge -basicaa -scalar-evolution

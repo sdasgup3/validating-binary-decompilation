@@ -1,1 +1,1 @@
- -gvn -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -deadargelim -instcombine -simplifycfg -basiccg -globals-aa -sroa -simplifycfg -instcombine -tailcallelim -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -gvn -instcombine -dse -scalar-evolution -licm -adce -simplifycfg -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution

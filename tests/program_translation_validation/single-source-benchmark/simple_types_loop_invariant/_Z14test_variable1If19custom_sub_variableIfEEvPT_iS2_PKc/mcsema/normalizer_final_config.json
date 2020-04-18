@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -instcombine -early-cse-memssa
+ -tbaa -basicaa -instcombine -globals-aa -sroa -early-cse -basicaa -instcombine -reassociate -basicaa -scalar-evolution -licm -basicaa -instcombine -scalar-evolution -gvn -basicaa -basicaa -instcombine -basicaa -scalar-evolution -licm -postdomtree -adce -basicaa -instcombine -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -basicaa -scalar-evolution -instsimplify

@@ -1,1 +1,1 @@
- -gvn -dse -tailcallelim -instcombine
+ -tbaa -instcombine -inline -early-cse -instcombine -licm -instcombine -memdep -memdep -instcombine -memdep -licm -adce -instcombine -instcombine -instcombine -instcombine -licm

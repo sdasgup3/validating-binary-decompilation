@@ -1,1 +1,1 @@
- -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -instcombine -basiccg -inline -sroa -instcombine -reassociate -licm -instcombine -indvars -gvn -memcpyopt -instcombine -licm -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine -licm -globaldce

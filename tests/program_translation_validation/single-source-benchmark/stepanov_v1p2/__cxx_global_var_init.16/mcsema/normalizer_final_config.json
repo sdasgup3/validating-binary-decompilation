@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -dse -tailcallelim
+ -tbaa -domtree -mem2reg -deadargelim -domtree -domtree -early-cse -domtree -tailcallelim -domtree -domtree -memdep -gvn -memdep -memcpyopt -domtree -bdce -domtree -memdep -dse -postdomtree -domtree -domtree -domtree -globaldce -domtree

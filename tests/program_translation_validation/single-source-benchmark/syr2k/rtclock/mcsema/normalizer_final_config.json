@@ -1,1 +1,1 @@
- -gvn -memdep -dse -libcalls-shrinkwrap -instcombine -memcpyopt
+ -domtree -domtree -instcombine -basiccg -domtree -early-cse -domtree -instcombine -reassociate -domtree -licm -domtree -instcombine -domtree -bdce -instcombine -domtree -dse -licm -domtree -instcombine -basiccg -domtree -instcombine -domtree -instcombine -instcombine -licm -domtree

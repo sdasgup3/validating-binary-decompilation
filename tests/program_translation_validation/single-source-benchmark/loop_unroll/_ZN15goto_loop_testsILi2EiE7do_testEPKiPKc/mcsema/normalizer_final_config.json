@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -deadargelim -tailcallelim
+ -deadargelim -basicaa -instcombine -early-cse -basicaa -instcombine -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -memcpyopt -sccp -bdce -basicaa -instcombine -basicaa -scalar-evolution -adce -basicaa -instcombine -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -instcombine -scalar-evolution -basicaa -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -basicaa -scalar-evolution

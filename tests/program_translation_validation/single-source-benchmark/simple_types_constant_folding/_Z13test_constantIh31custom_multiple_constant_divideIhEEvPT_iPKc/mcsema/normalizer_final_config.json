@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -instcombine -globals-aa -sroa -instcombine -licm -instcombine -indvars -memdep -gvn -memdep -bdce -instcombine -memdep -dse -licm -instcombine -globals-aa -instcombine -instcombine -instcombine -licm -constmerge -instsimplify

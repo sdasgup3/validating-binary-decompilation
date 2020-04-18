@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -dse -early-cse-memssa
+ -domtree -domtree -basicaa -instcombine -simplifycfg -globals-aa -inline -domtree -early-cse -simplifycfg -domtree -basicaa -instcombine -simplifycfg -domtree -basicaa -simplifycfg -domtree -basicaa -instcombine -basicaa -sccp -domtree -bdce -basicaa -instcombine -domtree -basicaa -postdomtree -adce -simplifycfg -domtree -basicaa -instcombine -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -simplifycfg -domtree -basicaa -instcombine -instcombine -globaldce -domtree -basicaa

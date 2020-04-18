@@ -1,1 +1,1 @@
- -gvn -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -deadargelim -basicaa -instcombine -basiccg -inline -early-cse -basicaa -instcombine -libcalls-shrinkwrap -basicaa -licm -basicaa -instcombine -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -dse -licm -postdomtree -basicaa -instcombine -basiccg -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -licm -basicaa -instsimplify

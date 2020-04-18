@@ -1,1 +1,1 @@
- -gvn -memdep -instcombine -memcpyopt -early-cse-memssa
+ -mem2reg -instcombine -early-cse -instcombine -reassociate -licm -instcombine -indvars -gvn -sccp -bdce -instcombine -licm -postdomtree -adce -instcombine -instcombine -instcombine -instcombine -licm

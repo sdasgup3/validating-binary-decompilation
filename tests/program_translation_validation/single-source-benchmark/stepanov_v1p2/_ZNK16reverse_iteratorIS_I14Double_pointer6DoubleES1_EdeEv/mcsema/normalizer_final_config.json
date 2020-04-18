@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -deadargelim -memcpyopt -early-cse-memssa
+ -domtree -deadargelim -domtree -basiccg -globals-aa -domtree -sroa -early-cse -domtree -domtree -scalar-evolution -domtree -scalar-evolution -gvn -domtree -domtree -dse -scalar-evolution -domtree -basiccg -globals-aa -domtree -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -domtree -scalar-evolution -scalar-evolution -constmerge -domtree -scalar-evolution

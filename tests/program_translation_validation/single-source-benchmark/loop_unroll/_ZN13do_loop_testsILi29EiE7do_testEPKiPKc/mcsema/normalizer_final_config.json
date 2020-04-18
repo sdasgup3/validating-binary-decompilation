@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -libcalls-shrinkwrap -instcombine
+ -deadargelim -sroa -libcalls-shrinkwrap -scalar-evolution -scalar-evolution -memdep -gvn -memdep -memdep -dse -scalar-evolution -postdomtree -adce -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution

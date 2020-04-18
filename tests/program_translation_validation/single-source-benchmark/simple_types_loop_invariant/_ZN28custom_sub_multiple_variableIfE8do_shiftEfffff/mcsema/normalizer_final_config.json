@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -instcombine -early-cse-memssa
+ -globalopt -deadargelim -sroa -reassociate -scalar-evolution -scalar-evolution -indvars -gvn -bdce -dse -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -globaldce -scalar-evolution

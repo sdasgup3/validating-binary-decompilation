@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -domtree -deadargelim -domtree -basicaa -instcombine -simplifycfg -globals-aa -domtree -simplifycfg -domtree -basicaa -instcombine -simplifycfg -domtree -basicaa -simplifycfg -domtree -basicaa -instcombine -gvn -basicaa -domtree -basicaa -instcombine -domtree -basicaa -simplifycfg -domtree -basicaa -instcombine -globals-aa -domtree -basicaa -basicaa -basicaa -instcombine -simplifycfg -domtree -basicaa -instcombine -instcombine -domtree -basicaa -instsimplify

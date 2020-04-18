@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -memcpyopt
+ -basicaa -aa -basiccg -sroa -early-cse -basicaa -aa -reassociate -basicaa -aa -basicaa -aa -aa -memdep -gvn -basicaa -aa -memdep -basicaa -aa -basicaa -aa -memdep -dse -aa -postdomtree -basicaa -aa -basiccg -basicaa -aa -basicaa -aa -aa -basicaa -aa -basicaa -aa -globaldce -basicaa -aa -instsimplify

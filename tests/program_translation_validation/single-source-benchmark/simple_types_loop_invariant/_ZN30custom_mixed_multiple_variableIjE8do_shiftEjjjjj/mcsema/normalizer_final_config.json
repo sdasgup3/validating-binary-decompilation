@@ -1,1 +1,1 @@
- -gvn -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -domtree -domtree -instcombine -domtree -domtree -instcombine -libcalls-shrinkwrap -domtree -domtree -instcombine -memdep -gvn -memdep -domtree -bdce -instcombine -domtree -memdep -dse -postdomtree -adce -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -globaldce -constmerge -domtree

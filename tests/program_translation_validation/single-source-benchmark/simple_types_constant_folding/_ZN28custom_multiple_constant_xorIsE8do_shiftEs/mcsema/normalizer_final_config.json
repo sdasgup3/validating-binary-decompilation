@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -dse -deadargelim -tailcallelim -instcombine
+ -basicaa -sroa -basicaa -tailcallelim -basicaa -basicaa -indvars -memdep -gvn -basicaa -memdep -sccp -basicaa -basicaa -memdep -dse -postdomtree -basicaa -basicaa -basicaa -basicaa -basicaa -basicaa

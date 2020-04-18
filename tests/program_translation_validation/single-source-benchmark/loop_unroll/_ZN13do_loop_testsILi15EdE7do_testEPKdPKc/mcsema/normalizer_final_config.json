@@ -1,1 +1,1 @@
- -licm -early-cse -globalopt -basicaa -aa -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -globals-aa -inline -sroa -early-cse -reassociate -licm -indvars -gvn -memcpyopt -bdce -dse -licm -globals-aa -licm

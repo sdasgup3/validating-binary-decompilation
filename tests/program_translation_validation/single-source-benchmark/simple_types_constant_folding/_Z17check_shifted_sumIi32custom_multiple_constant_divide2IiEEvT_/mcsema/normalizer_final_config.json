@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -aa -deadargelim -instcombine -early-cse-memssa
+ -deadargelim -aa -instcombine -simplifycfg -basiccg -inline -sroa -early-cse -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -sccp -aa -instcombine -aa -aa -licm -adce -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -constmerge -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -aa -memdep -dse -memcpyopt
+ -globalopt -mem2reg -deadargelim -aa -inline -aa -libcalls-shrinkwrap -reassociate -aa -aa -aa -gvn -aa -memcpyopt -aa -aa -dse -aa -postdomtree -adce -aa -aa -aa -aa -aa -aa -globaldce -constmerge -aa

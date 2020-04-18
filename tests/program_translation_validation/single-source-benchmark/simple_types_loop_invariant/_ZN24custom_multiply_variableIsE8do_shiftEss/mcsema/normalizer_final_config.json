@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -memdep -dse -instcombine -memcpyopt
+ -globalopt -mem2reg -deadargelim -basicaa -simplifycfg -inline -sroa -simplifycfg -basicaa -simplifycfg -reassociate -basicaa -scalar-evolution -simplifycfg -basicaa -scalar-evolution -gvn -basicaa -memcpyopt -bdce -basicaa -basicaa -dse -scalar-evolution -simplifycfg -basicaa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -simplifycfg -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -instsimplify

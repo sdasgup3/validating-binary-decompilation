@@ -1,1 +1,1 @@
- -early-cse -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -globalopt -domtree -domtree -simplifycfg -inline -domtree -sroa -early-cse -simplifycfg -domtree -simplifycfg -domtree -licm -simplifycfg -domtree -indvars -gvn -domtree -domtree -dse -licm -adce -simplifycfg -domtree -domtree -simplifycfg -domtree -licm -domtree

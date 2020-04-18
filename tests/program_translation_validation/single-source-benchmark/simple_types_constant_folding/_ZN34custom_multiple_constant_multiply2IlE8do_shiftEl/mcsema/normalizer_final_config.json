@@ -1,1 +1,1 @@
- -gvn -basicaa -dse -deadargelim -instcombine
+ -aa -instcombine -basiccg -sroa -early-cse -aa -instcombine -aa -aa -instcombine -aa -aa -sccp -bdce -aa -instcombine -aa -dse -aa -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -aa

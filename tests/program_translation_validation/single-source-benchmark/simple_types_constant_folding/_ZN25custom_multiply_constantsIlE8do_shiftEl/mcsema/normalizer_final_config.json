@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -tailcallelim -instcombine -memcpyopt
+ -tbaa -domtree -deadargelim -domtree -aa -basiccg -domtree -sroa -domtree -aa -tailcallelim -domtree -aa -scalar-evolution -domtree -aa -scalar-evolution -aa -gvn -aa -memcpyopt -domtree -aa -domtree -aa -dse -aa -scalar-evolution -adce -domtree -aa -basiccg -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -domtree -aa -scalar-evolution -scalar-evolution -globaldce -domtree -aa -scalar-evolution

@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -tbaa -deadargelim -instcombine -basiccg -inline -early-cse -instcombine -reassociate -scalar-evolution -instcombine -scalar-evolution -indvars -sccp -instcombine -scalar-evolution -postdomtree -instcombine -basiccg -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -constmerge -scalar-evolution -instsimplify

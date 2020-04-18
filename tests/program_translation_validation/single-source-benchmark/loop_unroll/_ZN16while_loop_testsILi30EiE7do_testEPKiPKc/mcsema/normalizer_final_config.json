@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -aa -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -tbaa -aa -instcombine -inline -sroa -early-cse -aa -instcombine -libcalls-shrinkwrap -aa -scalar-evolution -aa -instcombine -scalar-evolution -aa -gvn -aa -memcpyopt -aa -instcombine -aa -aa -scalar-evolution -postdomtree -adce -aa -instcombine -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -instcombine -scalar-evolution -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -aa -scalar-evolution

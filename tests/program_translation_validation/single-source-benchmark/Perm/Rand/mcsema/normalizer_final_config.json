@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -tailcallelim -instcombine
+ -mem2reg -basiccg -gvn -memcpyopt -dse -postdomtree -basiccg -globaldce

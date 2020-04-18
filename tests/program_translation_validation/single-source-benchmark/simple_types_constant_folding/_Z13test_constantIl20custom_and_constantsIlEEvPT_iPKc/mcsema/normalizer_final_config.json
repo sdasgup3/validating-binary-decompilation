@@ -1,1 +1,1 @@
- -licm -gvn -globalopt -basicaa -aa -dse -tailcallelim -instcombine -memcpyopt
+ -basicaa -instcombine -basicaa -instcombine -reassociate -basicaa -basicaa -instcombine -memdep -gvn -basicaa -memdep -basicaa -instcombine -basicaa -memdep -basicaa -instcombine -basicaa -basicaa -basicaa -instcombine -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa -instsimplify

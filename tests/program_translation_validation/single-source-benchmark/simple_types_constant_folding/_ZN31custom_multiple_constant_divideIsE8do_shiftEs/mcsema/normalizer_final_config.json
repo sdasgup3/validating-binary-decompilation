@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -aa -dse -deadargelim -instcombine
+ -domtree -domtree -instcombine -simplifycfg -globals-aa -domtree -early-cse -simplifycfg -domtree -instcombine -simplifycfg -domtree -simplifycfg -domtree -instcombine -indvars -gvn -domtree -instcombine -domtree -postdomtree -simplifycfg -domtree -instcombine -globals-aa -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -domtree

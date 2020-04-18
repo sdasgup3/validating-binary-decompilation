@@ -1,1 +1,1 @@
- -mem2reg -early-cse -globalopt -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -domtree -deadargelim -domtree -aa -globals-aa -domtree -sroa -domtree -aa -libcalls-shrinkwrap -tailcallelim -domtree -aa -scalar-evolution -domtree -aa -scalar-evolution -aa -gvn -aa -memcpyopt -domtree -aa -domtree -aa -dse -aa -scalar-evolution -postdomtree -domtree -aa -globals-aa -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -domtree -aa -scalar-evolution -scalar-evolution -domtree -aa -scalar-evolution

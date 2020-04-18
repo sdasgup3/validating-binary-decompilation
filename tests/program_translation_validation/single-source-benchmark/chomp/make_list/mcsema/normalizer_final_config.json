@@ -1,1 +1,1 @@
- -mem2reg -gvn -deadargelim -instcombine -early-cse-memssa
+ -globalopt -mem2reg -deadargelim -basicaa -instcombine -simplifycfg -basiccg -globals-aa -inline -sroa -early-cse -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -basicaa -simplifycfg -basicaa -instcombine -gvn -basicaa -sccp -bdce -basicaa -instcombine -basicaa -dse -postdomtree -simplifycfg -basicaa -instcombine -basiccg -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -globaldce -constmerge -basicaa

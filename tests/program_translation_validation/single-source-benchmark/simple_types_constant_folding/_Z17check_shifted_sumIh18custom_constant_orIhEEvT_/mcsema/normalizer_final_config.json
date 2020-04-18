@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -domtree -deadargelim -domtree -basicaa -aa -instcombine -domtree -early-cse -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -licm -domtree -basicaa -aa -instcombine -indvars -aa -gvn -basicaa -aa -sccp -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -aa -licm -domtree -basicaa -aa -instcombine -domtree -basicaa -aa -basicaa -aa -aa -basicaa -aa -instcombine -domtree -basicaa -aa -instcombine -instcombine -licm -globaldce -constmerge -domtree -basicaa -aa

@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -mem2reg -aa -basiccg -inline -sroa -aa -tailcallelim -reassociate -aa -aa -aa -gvn -aa -aa -aa -dse -aa -aa -basiccg -aa -aa -aa -aa -aa -globaldce -aa

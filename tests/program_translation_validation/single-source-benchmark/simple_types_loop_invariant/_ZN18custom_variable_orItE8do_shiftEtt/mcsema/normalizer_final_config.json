@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -basicaa -aa -deadargelim -instcombine -early-cse-memssa
+ -simplifycfg -sroa -simplifycfg -simplifycfg -scalar-evolution -simplifycfg -scalar-evolution -memdep -gvn -memdep -memcpyopt -sccp -memdep -dse -scalar-evolution -postdomtree -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -constmerge -scalar-evolution -instsimplify

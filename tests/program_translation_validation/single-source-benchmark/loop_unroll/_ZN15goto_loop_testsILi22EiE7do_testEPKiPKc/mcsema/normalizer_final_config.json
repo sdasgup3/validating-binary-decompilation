@@ -1,1 +1,1 @@
- -early-cse -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -basicaa -instcombine -simplifycfg -globals-aa -sroa -early-cse -simplifycfg -basicaa -instcombine -libcalls-shrinkwrap -simplifycfg -basicaa -licm -simplifycfg -basicaa -instcombine -indvars -basicaa -bdce -basicaa -instcombine -basicaa -licm -simplifycfg -basicaa -instcombine -globals-aa -basicaa -basicaa -basicaa -instcombine -simplifycfg -basicaa -instcombine -instcombine -licm -basicaa

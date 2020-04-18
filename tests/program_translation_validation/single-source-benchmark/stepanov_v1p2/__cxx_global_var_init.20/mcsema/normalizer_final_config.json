@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -simplifycfg -basicaa -aa -dse -deadargelim -instcombine -memcpyopt
+ -tbaa -mem2reg -basicaa -basicaa -basicaa -licm -basicaa -gvn -basicaa -sccp -basicaa -basicaa -dse -licm -adce -basicaa -basicaa -basicaa -basicaa -basicaa -licm -basicaa

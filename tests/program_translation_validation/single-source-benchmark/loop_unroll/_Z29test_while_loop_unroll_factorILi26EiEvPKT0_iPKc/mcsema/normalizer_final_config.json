@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -instcombine -simplifycfg -inline -simplifycfg -instcombine -simplifycfg -scalar-evolution -licm -simplifycfg -instcombine -scalar-evolution -indvars -gvn -memcpyopt -sccp -instcombine -dse -scalar-evolution -licm -adce -simplifycfg -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -simplifycfg -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -globaldce -scalar-evolution -instsimplify

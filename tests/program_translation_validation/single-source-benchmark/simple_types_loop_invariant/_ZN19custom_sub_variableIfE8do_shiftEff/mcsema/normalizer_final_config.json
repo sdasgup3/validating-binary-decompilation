@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -tbaa -mem2reg -deadargelim -inline -reassociate -scalar-evolution -licm -scalar-evolution -gvn -memcpyopt -dse -scalar-evolution -licm -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -licm -constmerge -scalar-evolution

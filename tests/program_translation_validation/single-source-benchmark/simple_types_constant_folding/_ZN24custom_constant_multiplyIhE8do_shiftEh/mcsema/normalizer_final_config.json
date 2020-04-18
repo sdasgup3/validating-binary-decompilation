@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -deadargelim -aa -instcombine -simplifycfg -basiccg -simplifycfg -aa -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -memcpyopt -sccp -aa -instcombine -aa -memdep -dse -aa -postdomtree -adce -simplifycfg -aa -instcombine -basiccg -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -globaldce -aa -instsimplify

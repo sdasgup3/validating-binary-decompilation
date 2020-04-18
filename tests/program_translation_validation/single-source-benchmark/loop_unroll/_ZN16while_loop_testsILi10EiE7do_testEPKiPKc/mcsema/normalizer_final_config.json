@@ -1,1 +1,1 @@
- -gvn -simplifycfg -basicaa -dse -deadargelim -tailcallelim -instcombine
+ -basicaa -globals-aa -sroa -basicaa -basicaa -scalar-evolution -basicaa -scalar-evolution -gvn -basicaa -basicaa -basicaa -dse -scalar-evolution -adce -basicaa -globals-aa -basicaa -scalar-evolution -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -basicaa -scalar-evolution -scalar-evolution -constmerge -basicaa -scalar-evolution

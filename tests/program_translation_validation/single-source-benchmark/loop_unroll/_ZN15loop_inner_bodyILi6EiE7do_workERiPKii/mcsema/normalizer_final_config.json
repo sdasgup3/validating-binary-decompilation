@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -memdep -dse -instcombine -early-cse-memssa
+ -tbaa -domtree -deadargelim -domtree -instcombine -inline -domtree -sroa -early-cse -domtree -instcombine -domtree -domtree -instcombine -indvars -gvn -domtree -instcombine -domtree -dse -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree -instsimplify

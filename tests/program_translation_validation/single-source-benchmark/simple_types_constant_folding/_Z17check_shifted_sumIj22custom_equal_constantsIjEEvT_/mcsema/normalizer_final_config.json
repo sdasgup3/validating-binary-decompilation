@@ -1,1 +1,1 @@
- -mem2reg -early-cse -deadargelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -instcombine -basiccg -early-cse -instcombine -instcombine -memdep -gvn -memdep -memcpyopt -bdce -instcombine -memdep -postdomtree -adce -instcombine -basiccg -instcombine -instcombine -instcombine -instsimplify

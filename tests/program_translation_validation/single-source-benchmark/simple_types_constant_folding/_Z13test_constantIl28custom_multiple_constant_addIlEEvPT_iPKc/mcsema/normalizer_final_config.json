@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -basicaa -deadargelim -instcombine -early-cse-memssa
+ -instcombine -sroa -instcombine -tailcallelim -reassociate -licm -instcombine -gvn -instcombine -licm -instcombine -instcombine -instcombine -instcombine -licm -instsimplify

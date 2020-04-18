@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -aa -memdep -tailcallelim -instcombine -early-cse-memssa
+ -globalopt -mem2reg -deadargelim -instcombine -basiccg -globals-aa -sroa -instcombine -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -memdep -gvn -memdep -sccp -instcombine -memdep -dse -scalar-evolution -licm -instcombine -basiccg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution

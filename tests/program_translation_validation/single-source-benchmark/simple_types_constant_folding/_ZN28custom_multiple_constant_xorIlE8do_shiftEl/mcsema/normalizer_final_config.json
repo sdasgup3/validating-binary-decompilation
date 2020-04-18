@@ -1,1 +1,1 @@
- -gvn -early-cse -dse -deadargelim -instcombine -early-cse-memssa
+ -globalopt -deadargelim -basiccg -sroa -tailcallelim -gvn -sccp -dse -postdomtree -basiccg -globaldce

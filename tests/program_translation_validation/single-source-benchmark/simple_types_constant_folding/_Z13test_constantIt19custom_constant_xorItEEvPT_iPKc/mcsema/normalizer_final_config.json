@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -globalopt -domtree -mem2reg -domtree -instcombine -globals-aa -domtree -domtree -instcombine -reassociate -domtree -domtree -instcombine -indvars -gvn -domtree -bdce -instcombine -domtree -dse -domtree -instcombine -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -constmerge -domtree

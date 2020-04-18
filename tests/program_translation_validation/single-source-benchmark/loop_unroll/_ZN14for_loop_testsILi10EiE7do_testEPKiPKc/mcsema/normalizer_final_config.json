@@ -1,1 +1,1 @@
- -gvn -early-cse -globalopt -dse -libcalls-shrinkwrap -instcombine -early-cse-memssa
+ -globalopt -instcombine -inline -early-cse -instcombine -tailcallelim -licm -instcombine -memcpyopt -instcombine -licm -postdomtree -instcombine -instcombine -instcombine -instcombine -licm

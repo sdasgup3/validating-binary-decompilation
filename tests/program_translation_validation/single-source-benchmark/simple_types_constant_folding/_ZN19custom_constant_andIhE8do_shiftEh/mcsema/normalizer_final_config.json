@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -basicaa -instcombine -early-cse-memssa
+ -globalopt -aa -basiccg -sroa -early-cse -aa -aa -scalar-evolution -aa -scalar-evolution -indvars -aa -gvn -aa -sccp -aa -aa -dse -aa -scalar-evolution -aa -basiccg -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -aa -scalar-evolution -scalar-evolution -constmerge -aa -scalar-evolution

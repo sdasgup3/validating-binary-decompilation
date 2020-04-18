@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -aa -memdep -dse
+ -mem2reg -deadargelim -simplifycfg -inline -early-cse -simplifycfg -simplifycfg -reassociate -scalar-evolution -simplifycfg -scalar-evolution -gvn -sccp -dse -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -globaldce -scalar-evolution

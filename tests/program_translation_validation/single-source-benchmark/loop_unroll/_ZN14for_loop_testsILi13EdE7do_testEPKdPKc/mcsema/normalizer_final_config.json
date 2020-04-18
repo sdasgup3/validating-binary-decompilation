@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -tailcallelim -instcombine
+ -globalopt -mem2reg -deadargelim -simplifycfg -globals-aa -simplifycfg -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -scalar-evolution -licm -simplifycfg -scalar-evolution -gvn -bdce -dse -scalar-evolution -licm -simplifycfg -globals-aa -scalar-evolution -scalar-evolution -scalar-evolution -scalar-evolution -simplifycfg -scalar-evolution -scalar-evolution -licm -constmerge -scalar-evolution

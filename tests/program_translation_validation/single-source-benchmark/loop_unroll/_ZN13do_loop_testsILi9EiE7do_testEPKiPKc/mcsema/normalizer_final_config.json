@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -simplifycfg -tailcallelim -instcombine -memcpyopt -early-cse-memssa
+ -globalopt -aa -instcombine -simplifycfg -inline -sroa -early-cse -simplifycfg -aa -instcombine -simplifycfg -aa -licm -simplifycfg -aa -instcombine -aa -gvn -aa -bdce -aa -instcombine -aa -aa -licm -postdomtree -simplifycfg -aa -instcombine -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -licm -aa

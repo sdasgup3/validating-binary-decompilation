@@ -1,1 +1,1 @@
- -mem2reg -gvn -dse
+ -tbaa -deadargelim -basicaa -aa -instcombine -early-cse -basicaa -aa -instcombine -libcalls-shrinkwrap -reassociate -basicaa -aa -scalar-evolution -basicaa -aa -instcombine -scalar-evolution -aa -gvn -basicaa -aa -sccp -basicaa -aa -instcombine -basicaa -aa -dse -aa -scalar-evolution -adce -basicaa -aa -instcombine -basicaa -aa -scalar-evolution -scalar-evolution -basicaa -aa -scalar-evolution -aa -basicaa -aa -instcombine -scalar-evolution -basicaa -aa -instcombine -scalar-evolution -instcombine -scalar-evolution -basicaa -aa -scalar-evolution

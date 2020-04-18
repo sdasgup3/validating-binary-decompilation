@@ -1,1 +1,1 @@
- -early-cse -simplifycfg -deadargelim -instcombine -early-cse-memssa
+ -tbaa -globalopt -domtree -domtree -instcombine -domtree -domtree -instcombine -domtree -domtree -instcombine -indvars -gvn -domtree -bdce -instcombine -domtree -dse -postdomtree -domtree -instcombine -domtree -instcombine -domtree -instcombine -instcombine -domtree

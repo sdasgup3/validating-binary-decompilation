@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -tailcallelim -instcombine -early-cse-memssa
+ -tbaa -instcombine -sroa -early-cse -instcombine -tailcallelim -instcombine -memdep -memdep -memcpyopt -instcombine -memdep -dse -postdomtree -instcombine -instcombine -instcombine -instcombine -globaldce -instsimplify

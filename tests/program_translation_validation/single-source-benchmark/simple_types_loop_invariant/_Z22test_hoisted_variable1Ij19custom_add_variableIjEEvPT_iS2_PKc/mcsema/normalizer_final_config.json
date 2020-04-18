@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -basicaa -instcombine -early-cse-memssa
+ -tbaa -domtree -domtree -aa -instcombine -simplifycfg -basiccg -domtree -simplifycfg -domtree -aa -instcombine -simplifycfg -domtree -aa -simplifycfg -domtree -aa -instcombine -indvars -aa -gvn -aa -memcpyopt -domtree -aa -instcombine -domtree -aa -dse -aa -adce -simplifycfg -domtree -aa -instcombine -basiccg -domtree -aa -aa -aa -aa -instcombine -simplifycfg -domtree -aa -instcombine -instcombine -constmerge -domtree -aa

@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa
+ -mem2reg -deadargelim -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -simplifycfg -simplifycfg -instcombine -instcombine -dse -adce -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -instsimplify

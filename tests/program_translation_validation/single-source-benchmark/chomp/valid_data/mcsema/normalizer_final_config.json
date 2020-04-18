@@ -1,1 +1,1 @@
- -licm -gvn -deadargelim -instcombine -early-cse-memssa
+ -tbaa -globalopt -deadargelim -instcombine -early-cse -instcombine -licm -instcombine -indvars -gvn -sccp -instcombine -dse -licm -instcombine -instcombine -instcombine -instcombine -licm -globaldce

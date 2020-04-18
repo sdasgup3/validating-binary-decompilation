@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa
+ -domtree -mem2reg -deadargelim -domtree -aa -basiccg -inline -domtree -early-cse -domtree -aa -tailcallelim -reassociate -domtree -aa -scalar-evolution -licm -domtree -aa -scalar-evolution -aa -memdep -gvn -aa -memdep -domtree -aa -domtree -aa -memdep -dse -aa -scalar-evolution -licm -adce -domtree -aa -basiccg -domtree -aa -scalar-evolution -scalar-evolution -aa -scalar-evolution -aa -aa -scalar-evolution -domtree -aa -scalar-evolution -scalar-evolution -licm -domtree -aa -scalar-evolution

@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -memdep -dse -memcpyopt -early-cse-memssa
+ -domtree -deadargelim -domtree -instcombine -simplifycfg -domtree -early-cse -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -memcpyopt -domtree -instcombine -domtree -dse -postdomtree -simplifycfg -domtree -instcombine -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -constmerge -domtree

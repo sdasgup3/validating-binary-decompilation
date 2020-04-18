@@ -1,1 +1,1 @@
- -early-cse -globalopt -basicaa -instcombine -early-cse-memssa
+ -tbaa -mem2reg -aa -instcombine -basiccg -globals-aa -early-cse -aa -instcombine -tailcallelim -reassociate -aa -aa -instcombine -aa -aa -bdce -aa -instcombine -aa -aa -adce -aa -instcombine -basiccg -globals-aa -aa -aa -aa -aa -instcombine -aa -instcombine -instcombine -globaldce -aa -instsimplify

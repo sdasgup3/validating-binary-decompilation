@@ -1,1 +1,1 @@
- -mem2reg -licm -early-cse -instcombine -early-cse-memssa
+ -globalopt -domtree -mem2reg -domtree -aa -instcombine -basiccg -domtree -sroa -domtree -aa -instcombine -domtree -aa -licm -domtree -aa -instcombine -aa -memdep -gvn -aa -memdep -domtree -aa -instcombine -domtree -aa -memdep -dse -aa -licm -postdomtree -domtree -aa -instcombine -basiccg -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -domtree -aa -instsimplify

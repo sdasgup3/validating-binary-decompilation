@@ -1,1 +1,1 @@
- -licm -gvn -dse -tailcallelim -instcombine -memcpyopt
+ -deadargelim -instcombine -sroa -instcombine -libcalls-shrinkwrap -tailcallelim -reassociate -scalar-evolution -licm -instcombine -scalar-evolution -indvars -gvn -instcombine -scalar-evolution -licm -instcombine -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -scalar-evolution -instsimplify

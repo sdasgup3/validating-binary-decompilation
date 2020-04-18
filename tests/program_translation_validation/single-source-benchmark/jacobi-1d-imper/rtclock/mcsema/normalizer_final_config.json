@@ -1,1 +1,1 @@
- -early-cse -basicaa -instcombine -early-cse-memssa
+ -tbaa -instcombine -basiccg -inline -sroa -instcombine -instcombine -indvars -memdep -gvn -memdep -instcombine -memdep -postdomtree -instcombine -basiccg -instcombine -instcombine -instcombine -constmerge

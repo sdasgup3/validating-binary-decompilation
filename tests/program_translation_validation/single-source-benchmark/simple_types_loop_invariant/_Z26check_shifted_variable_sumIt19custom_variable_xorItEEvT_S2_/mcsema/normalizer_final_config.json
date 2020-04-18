@@ -1,1 +1,1 @@
- -gvn -early-cse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa
+ -domtree -deadargelim -domtree -instcombine -domtree -sroa -domtree -instcombine -domtree -scalar-evolution -licm -domtree -instcombine -scalar-evolution -memdep -gvn -memdep -domtree -bdce -instcombine -domtree -memdep -dse -scalar-evolution -licm -domtree -instcombine -domtree -scalar-evolution -scalar-evolution -scalar-evolution -instcombine -scalar-evolution -domtree -instcombine -scalar-evolution -instcombine -scalar-evolution -licm -constmerge -domtree -scalar-evolution

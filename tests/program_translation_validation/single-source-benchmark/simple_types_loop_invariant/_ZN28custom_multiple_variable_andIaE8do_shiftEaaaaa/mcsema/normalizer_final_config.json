@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -dse -tailcallelim -early-cse-memssa
+ -domtree -domtree -aa -instcombine -inline -domtree -domtree -aa -instcombine -tailcallelim -domtree -aa -licm -domtree -aa -instcombine -indvars -aa -memdep -gvn -aa -memdep -memcpyopt -domtree -aa -instcombine -domtree -aa -memdep -aa -licm -postdomtree -domtree -aa -instcombine -domtree -aa -aa -aa -aa -instcombine -domtree -aa -instcombine -instcombine -licm -globaldce -domtree -aa

@@ -1,1 +1,1 @@
- -mem2reg -gvn -globalopt -dse -tailcallelim -instcombine -memcpyopt
+ -globalopt -mem2reg -instcombine -simplifycfg -early-cse -simplifycfg -instcombine -tailcallelim -simplifycfg -simplifycfg -instcombine -gvn -memcpyopt -bdce -instcombine -dse -simplifycfg -instcombine -instcombine -simplifycfg -instcombine -instcombine -globaldce -instsimplify
