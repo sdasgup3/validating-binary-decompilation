@@ -12,37 +12,30 @@ executeNPrint() {
 selectPassSeq() {
   OUTDIR=$1
 
-  ## Pass list reported during PLDI submission.
+##  ## Pass list reported during PLDI submission.
+##  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+##             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+##             -simplifycfg -basicaa -aa -instcombine"
+
+  ## More effective pass list derived after submission.
   NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-             -simplifycfg -basicaa -aa -instcombine"
+         -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+         -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
+         -gvn -basicaa -aa -memdep -dse -memcpyopt"
 
   if [ -v NORM ]; then
     if [ "$NORM" == "CUSTOM" ]; then
       return 0
     fi
-  fi
-
-
-  ## More effective pass list derived after submission.
-  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-             -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
-             -gvn -basicaa -aa -memdep -dse -memcpyopt"
-
-  if [ -v NORM ]; then
-    if [ "$NORM" != "CUSTOM" ]; then
-      NORM_PASS="-${NORM}"
-    fi
+    NORM_PASS="-${NORM}"
     return 0
   fi
-
 
   if [ -f ${OUTDIR}/normalizer_final_config.json ]; then
     NORM_PASS=`tail -n 1 ${OUTDIR}/normalizer_final_config.json`
   fi
 
-  return 0 
+  return 0
 }
 
 compdOpt() {
