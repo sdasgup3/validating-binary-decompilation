@@ -12,16 +12,16 @@ executeNPrint() {
 selectPassSeq() {
   OUTDIR=$1
 
-##  ## Pass list reported during PLDI submission.
-##  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-##             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-##             -simplifycfg -basicaa -aa -instcombine"
+  ## Pass list reported during PLDI submission.
+  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+             -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+             -simplifycfg -basicaa -aa -instcombine"
 
   ## More effective pass list derived after submission.
-  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-         -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-         -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
-         -gvn -basicaa -aa -memdep -dse -memcpyopt"
+##  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+##         -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+##         -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
+##         -gvn -basicaa -aa -memdep -dse -memcpyopt"
 
   if [ -v NORM ]; then
     if [ "$NORM" == "CUSTOM" ]; then
