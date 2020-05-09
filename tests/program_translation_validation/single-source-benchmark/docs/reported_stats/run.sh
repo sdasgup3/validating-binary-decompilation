@@ -29,7 +29,7 @@ echo -n "Total: "
 echo $TOTAL_B
 
 echo 
-echo "After submission"
+echo "After submission w auto-tuner"
 
 echo -n "Fail (2) = Pass(7) + Fail (8): "
 echo $SEVEN + $EIGHT    | bc

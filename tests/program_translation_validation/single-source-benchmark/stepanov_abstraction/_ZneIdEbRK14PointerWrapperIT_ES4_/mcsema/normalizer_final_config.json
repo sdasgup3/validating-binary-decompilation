@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -memdep -dse
+ -mem2reg -gvn -simplifycfg -dse -libcalls-shrinkwrap -memcpyopt

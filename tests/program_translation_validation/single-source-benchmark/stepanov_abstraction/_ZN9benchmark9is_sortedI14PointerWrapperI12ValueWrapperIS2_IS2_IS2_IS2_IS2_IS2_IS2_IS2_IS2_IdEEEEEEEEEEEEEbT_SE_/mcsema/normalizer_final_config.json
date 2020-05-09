@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -dse -instcombine
+ -assumption-cache-tracker -domtree -mem2reg -domtree -instcombine -basiccg -globals-aa -prune-eh -argpromotion -domtree -lazy-value-info -domtree -instcombine -domtree -domtree -instcombine -mldst-motion -memdep -gvn -memdep -domtree -bdce -instcombine -lazy-value-info -domtree -memdep -postdomtree -domtree -instcombine -barrier -basiccg -globals-aa -domtree -instcombine -domtree -instcombine -instcombine -domtree

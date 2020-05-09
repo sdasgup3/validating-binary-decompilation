@@ -1,1 +1,1 @@
- -gvn -globalopt -dse -tailcallelim -instcombine
+ -licm -gvn -basicaa -deadargelim -instcombine -memcpyopt -early-cse-memssa

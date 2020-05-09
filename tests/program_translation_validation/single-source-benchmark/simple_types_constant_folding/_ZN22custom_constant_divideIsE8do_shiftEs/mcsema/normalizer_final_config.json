@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -deadargelim -instcombine -gvn -early-cse -simplifycfg -deadargelim -instcombine
+ -licm -gvn -globalopt -simplifycfg -libcalls-shrinkwrap -instcombine -early-cse-memssa

@@ -1,0 +1,33 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    48s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #481, cost time=0.0072, found by DifferentialEvolutionAlt
+[    85s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #481, cost time=0.0072, found by DifferentialEvolutionAlt
+[   118s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   161s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   193s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   231s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   260s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   300s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   329s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   357s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   386s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   407s]    INFO opentuner.search.plugin.DisplayPlugin: tests=47, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   437s]    INFO opentuner.search.plugin.DisplayPlugin: tests=51, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   463s]    INFO opentuner.search.plugin.DisplayPlugin: tests=55, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   489s]    INFO opentuner.search.plugin.DisplayPlugin: tests=59, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   518s]    INFO opentuner.search.plugin.DisplayPlugin: tests=63, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   543s]    INFO opentuner.search.plugin.DisplayPlugin: tests=67, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   572s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   592s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   614s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   637s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   653s]    INFO opentuner.search.plugin.DisplayPlugin: tests=86, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   670s]    INFO opentuner.search.plugin.DisplayPlugin: tests=89, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   692s]    INFO opentuner.search.plugin.DisplayPlugin: tests=93, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   716s]    INFO opentuner.search.plugin.DisplayPlugin: tests=97, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   722s]    INFO opentuner.search.plugin.DisplayPlugin: tests=98, best #515, cost time=0.0059, found by UniformGreedyMutation
+[   722s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse -globalopt -instcombine -tailcallelim -deadargelim -gvn ]
+771.30user 35.53system 12:02.57elapsed 111%CPU (0avgtext+0avgdata 56944maxresident)k
+0inputs+640072outputs (0major+1696631minor)pagefaults 0swaps

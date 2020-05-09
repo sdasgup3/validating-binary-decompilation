@@ -1,1 +1,1 @@
- -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt -gvn -simplifycfg -aa -deadargelim -tailcallelim -instcombine -memcpyopt
+ -mem2reg -gvn -simplifycfg -aa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

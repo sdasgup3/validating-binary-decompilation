@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine
+ -tti -scoped-noalias -domtree -deadargelim -domtree -instcombine -simplifycfg -inline -argpromotion -domtree -sroa -simplifycfg -domtree -instcombine -libcalls-shrinkwrap -tailcallelim -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -indvars -gvn -domtree -bdce -instcombine -domtree -dse -simplifycfg -domtree -instcombine -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -domtree

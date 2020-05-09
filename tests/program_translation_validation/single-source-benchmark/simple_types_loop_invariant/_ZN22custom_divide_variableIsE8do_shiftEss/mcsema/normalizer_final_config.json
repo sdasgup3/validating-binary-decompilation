@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -dse -deadargelim -instcombine -memcpyopt
+ -gvn -globalopt -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine

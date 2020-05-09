@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -libcalls-shrinkwrap
+ -mem2reg -licm -gvn -globalopt -aa -memdep -dse -tailcallelim -memcpyopt

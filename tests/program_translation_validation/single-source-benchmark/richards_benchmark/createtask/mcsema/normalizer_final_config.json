@@ -1,1 +1,1 @@
- -gvn -simplifycfg -memdep -dse -deadargelim -instcombine
+ -licm -gvn -dse -deadargelim -instcombine

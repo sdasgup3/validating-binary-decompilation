@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -memdep -dse -tailcallelim
+ -licm -gvn -dse -tailcallelim -instcombine

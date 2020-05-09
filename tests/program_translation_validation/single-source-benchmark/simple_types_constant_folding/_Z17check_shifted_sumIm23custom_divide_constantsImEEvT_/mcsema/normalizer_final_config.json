@@ -1,1 +1,1 @@
- -gvn -aa -deadargelim -tailcallelim -instcombine -gvn -aa -deadargelim -tailcallelim -instcombine
+ -gvn -deadargelim -tailcallelim -instcombine -early-cse-memssa

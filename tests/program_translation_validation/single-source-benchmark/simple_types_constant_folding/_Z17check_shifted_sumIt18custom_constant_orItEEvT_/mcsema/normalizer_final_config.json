@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -basicaa -memdep -dse -deadargelim -tailcallelim -instcombine
+ -tti -scoped-noalias -globalopt -deadargelim -instcombine -globals-aa -inline -sroa -early-cse -correlated-propagation -instcombine -instcombine -indvars -gvn -instcombine -correlated-propagation -instcombine -barrier -globals-aa -float2int -instcombine -instcombine -instcombine -globaldce -instsimplify

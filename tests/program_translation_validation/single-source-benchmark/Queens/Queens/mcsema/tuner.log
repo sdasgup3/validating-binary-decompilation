@@ -1,0 +1,14 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     5s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    14s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #1417, cost time=0.0101, found by DifferentialEvolutionAlt
+[    26s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #1427, cost time=0.0067, found by DifferentialEvolutionAlt
+[    37s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #1455, cost time=0.0034, found by NormalGreedyMutation
+[    49s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #1455, cost time=0.0034, found by NormalGreedyMutation
+[    61s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #1455, cost time=0.0034, found by NormalGreedyMutation
+[    74s]    INFO opentuner.search.plugin.DisplayPlugin: tests=96, best #1455, cost time=0.0034, found by NormalGreedyMutation
+[    80s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #1455, cost time=0.0034, found by NormalGreedyMutation
+[    80s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-early-cse-memssa -basicaa -instcombine -memdep -tailcallelim -deadargelim -gvn ]
+58.53user 14.64system 1:20.32elapsed 91%CPU (0avgtext+0avgdata 55956maxresident)k
+0inputs+111208outputs (0major+943788minor)pagefaults 0swaps

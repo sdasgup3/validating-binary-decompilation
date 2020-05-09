@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -memdep -dse -deadargelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -basicaa -aa -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

@@ -1,0 +1,38 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    78s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #252, cost time=0.0162, found by DifferentialEvolutionAlt
+[   152s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #282, cost time=0.0115, found by UniformGreedyMutation
+[   229s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #254, cost time=0.0113, found by DifferentialEvolutionAlt
+[   294s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   358s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   413s]    INFO opentuner.search.plugin.DisplayPlugin: tests=23, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   485s]    INFO opentuner.search.plugin.DisplayPlugin: tests=27, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   547s]    INFO opentuner.search.plugin.DisplayPlugin: tests=31, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   622s]    INFO opentuner.search.plugin.DisplayPlugin: tests=35, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   674s]    INFO opentuner.search.plugin.DisplayPlugin: tests=38, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   739s]    INFO opentuner.search.plugin.DisplayPlugin: tests=42, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   790s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   874s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[   943s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #259, cost time=0.0047, found by DifferentialEvolutionAlt
+[  1012s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1090s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1163s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1241s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1348s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1420s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1509s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1583s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1667s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #304, cost time=0.0039, found by DifferentialEvolutionAlt
+[  1741s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -early-cse -globalopt -basicaa -deadargelim -tailcallelim -instcombine -early-cse-memssa]
+[  1741s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #341, cost time=0.0000, found by UniformGreedyMutation
+[  1799s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -early-cse -globalopt -basicaa -aa -deadargelim -tailcallelim -instcombine -early-cse-memssa]
+[  1799s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #341, cost time=0.0000, found by UniformGreedyMutation
+[  1829s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -early-cse -globalopt -basicaa -deadargelim -tailcallelim -instcombine -early-cse-memssa]
+[  1878s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -early-cse -globalopt -basicaa -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1878s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #341, cost time=0.0000, found by UniformGreedyMutation
+[  1878s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #341, cost time=0.0000, found by UniformGreedyMutation
+[  1878s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -early-cse -basicaa -globalopt -instcombine -early-cse-memssa -tailcallelim -deadargelim ]
+1569.42user 43.19system 31:18.60elapsed 85%CPU (0avgtext+0avgdata 116372maxresident)k
+0inputs+2679088outputs (0major+5422407minor)pagefaults 0swaps

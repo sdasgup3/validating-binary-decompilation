@@ -1,1 +1,1 @@
- -gvn -globalopt -simplifycfg -dse -instcombine -memcpyopt
+ -gvn -simplifycfg -memdep -dse -instcombine

@@ -1,1 +1,1 @@
- -targetlibinfo -tti -domtree -deadargelim -domtree -instcombine -simplifycfg -basiccg -globals-aa -inline -domtree -simplifycfg -domtree -instcombine -simplifycfg -reassociate -domtree -simplifycfg -domtree -instcombine -gvn -sccp -domtree -instcombine -domtree -dse -simplifycfg -domtree -instcombine -basiccg -globals-aa -float2int -domtree -instcombine -simplifycfg -domtree -instcombine -instcombine -globaldce -constmerge -domtree
+ -gvn -early-cse -simplifycfg -memdep -deadargelim -tailcallelim -instcombine -memcpyopt -early-cse-memssa

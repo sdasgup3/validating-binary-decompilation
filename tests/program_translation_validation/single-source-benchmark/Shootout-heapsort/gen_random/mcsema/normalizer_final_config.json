@@ -1,1 +1,1 @@
- -early-cse -basicaa -memdep -instcombine -early-cse -basicaa -memdep -instcombine
+ -early-cse -basicaa -memdep -deadargelim -instcombine -early-cse-memssa

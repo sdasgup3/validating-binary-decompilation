@@ -26,5 +26,4 @@ opentuner.log
 tmp
 test.proposed.opt.ll
 test.mcsema.opt.ll
-tuner.log
 invoke_compd_seq.log

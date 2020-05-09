@@ -1,1 +1,1 @@
- -mem2reg -gvn -simplifycfg -aa -dse -tailcallelim
+ -tti -tbaa -assumption-cache-tracker -mem2reg -basicaa -simplifycfg -argpromotion -sroa -correlated-propagation -simplifycfg -basicaa -simplifycfg -reassociate -basicaa -simplifycfg -basicaa -gvn -basicaa -demanded-bits -basicaa -correlated-propagation -basicaa -dse -postdomtree -simplifycfg -basicaa -barrier -float2int -basicaa -basicaa -demanded-bits -basicaa -demanded-bits -simplifycfg -basicaa -strip-dead-prototypes -basicaa

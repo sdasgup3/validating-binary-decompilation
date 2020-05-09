@@ -1,1 +1,1 @@
- -gvn -memdep -dse -instcombine
+ -gvn -globalopt -dse -libcalls-shrinkwrap -instcombine

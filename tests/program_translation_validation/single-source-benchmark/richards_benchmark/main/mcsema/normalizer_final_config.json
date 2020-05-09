@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -instcombine
+ -globalopt -deadargelim -aa -instcombine -simplifycfg -sroa -simplifycfg -aa -instcombine -tailcallelim -simplifycfg -aa -simplifycfg -aa -instcombine -aa -memdep -gvn -aa -memdep -bdce -aa -instcombine -aa -memdep -aa -simplifycfg -aa -instcombine -elim-avail-extern -aa -aa -aa -aa -instcombine -simplifycfg -aa -instcombine -instcombine -strip-dead-prototypes -constmerge -aa

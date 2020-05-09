@@ -1,1 +1,1 @@
- -licm -gvn -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -gvn -dse -instcombine

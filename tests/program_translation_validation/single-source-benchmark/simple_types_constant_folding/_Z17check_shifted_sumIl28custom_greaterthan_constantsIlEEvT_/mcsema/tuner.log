@@ -1,0 +1,34 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    46s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #251, cost time=0.0187, found by DifferentialEvolutionAlt
+[    90s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #283, cost time=0.0186, found by UniformGreedyMutation
+[   147s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #283, cost time=0.0186, found by UniformGreedyMutation
+[   197s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #283, cost time=0.0186, found by UniformGreedyMutation
+[   244s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #283, cost time=0.0186, found by UniformGreedyMutation
+[   297s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #283, cost time=0.0186, found by UniformGreedyMutation
+[   347s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #263, cost time=0.0083, found by DifferentialEvolutionAlt
+[   390s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #266, cost time=0.0047, found by DifferentialEvolutionAlt
+[   447s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   503s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   551s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   601s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   649s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   701s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   747s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   792s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   842s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   889s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   942s]    INFO opentuner.search.plugin.DisplayPlugin: tests=76, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[   989s]    INFO opentuner.search.plugin.DisplayPlugin: tests=80, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1038s]    INFO opentuner.search.plugin.DisplayPlugin: tests=84, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1084s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1135s]    INFO opentuner.search.plugin.DisplayPlugin: tests=92, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1169s]    INFO opentuner.search.plugin.DisplayPlugin: tests=95, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1218s]    INFO opentuner.search.plugin.DisplayPlugin: tests=99, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1266s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1266s]    INFO opentuner.search.plugin.DisplayPlugin: tests=103, best #270, cost time=0.0042, found by DifferentialEvolutionAlt
+[  1266s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-basicaa -globalopt -instcombine -simplifycfg -memcpyopt -gvn -early-cse-memssa ]
+1547.93user 41.46system 21:06.76elapsed 125%CPU (0avgtext+0avgdata 116364maxresident)k
+0inputs+2823176outputs (0major+5560228minor)pagefaults 0swaps

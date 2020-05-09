@@ -1,0 +1,16 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     2s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    12s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #1437, cost time=0.0092, found by NormalGreedyMutation
+[    24s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #1437, cost time=0.0092, found by NormalGreedyMutation
+[    36s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #1459, cost time=0.0075, found by NormalGreedyMutation
+[    46s]    INFO opentuner.search.plugin.DisplayPlugin: tests=72, best #1459, cost time=0.0075, found by NormalGreedyMutation
+[    57s]    INFO opentuner.search.plugin.DisplayPlugin: tests=88, best #1459, cost time=0.0075, found by NormalGreedyMutation
+[    62s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -early-cse -simplifycfg -aa -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt -early-cse-memssa]
+[    66s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -licm -early-cse -simplifycfg -aa -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa]
+[    67s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #1506, cost time=0.0000, found by NormalGreedyMutation
+[    67s]    INFO opentuner.search.plugin.DisplayPlugin: tests=104, best #1506, cost time=0.0000, found by NormalGreedyMutation
+[    67s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-mem2reg -early-cse -instcombine -simplifycfg -memcpyopt -libcalls-shrinkwrap -aa -early-cse-memssa -licm -deadargelim ]
+53.00user 13.04system 1:07.62elapsed 97%CPU (0avgtext+0avgdata 54664maxresident)k
+0inputs+108728outputs (0major+926965minor)pagefaults 0swaps

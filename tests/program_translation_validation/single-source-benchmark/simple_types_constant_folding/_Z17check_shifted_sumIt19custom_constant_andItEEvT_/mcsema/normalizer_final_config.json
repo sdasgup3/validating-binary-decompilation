@@ -1,1 +1,1 @@
- -gvn -early-cse -aa -dse -deadargelim -tailcallelim -instcombine
+ -mem2reg -licm -early-cse -memdep -deadargelim -tailcallelim -instcombine -early-cse-memssa

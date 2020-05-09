@@ -1,1 +1,1 @@
- -gvn -basicaa -aa -dse -instcombine
+ -mem2reg -gvn -early-cse -basicaa -dse -tailcallelim -memcpyopt

@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -memcpyopt
+ -mem2reg -gvn -basicaa -aa -memdep -dse -instcombine

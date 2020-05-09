@@ -1,1 +1,1 @@
- -gvn -early-cse -simplifycfg -basicaa -memdep -dse -instcombine -memcpyopt
+ -licm -gvn -globalopt -simplifycfg -deadargelim -instcombine -early-cse-memssa

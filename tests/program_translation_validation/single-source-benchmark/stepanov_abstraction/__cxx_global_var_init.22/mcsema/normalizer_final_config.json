@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -dse -tailcallelim
+ -early-cse -globalopt -simplifycfg -instcombine -early-cse-memssa

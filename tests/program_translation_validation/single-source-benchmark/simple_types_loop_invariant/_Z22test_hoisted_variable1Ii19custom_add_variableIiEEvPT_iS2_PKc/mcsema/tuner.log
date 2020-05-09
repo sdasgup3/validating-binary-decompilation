@@ -1,0 +1,51 @@
+[     1s]    INFO tuneNormalizer:  Search Space: ['-mem2reg', '-licm', '-gvn', '-early-cse', '-globalopt', '-simplifycfg', '-basicaa', '-aa', '-memdep', '-dse', '-deadargelim', '-libcalls-shrinkwrap', '-tailcallelim', '-instcombine', '-memcpyopt', '-early-cse-memssa']
+
+
+[     1s] WARNING opentuner.search.simplextechniques: only 1 point in simplex, will not use RandomNelderMead
+[    80s]    INFO opentuner.search.plugin.DisplayPlugin: tests=4, best #249, cost time=0.0098, found by DifferentialEvolutionAlt
+[   157s]    INFO opentuner.search.plugin.DisplayPlugin: tests=8, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   231s]    INFO opentuner.search.plugin.DisplayPlugin: tests=12, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   317s]    INFO opentuner.search.plugin.DisplayPlugin: tests=16, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   403s]    INFO opentuner.search.plugin.DisplayPlugin: tests=20, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   482s]    INFO opentuner.search.plugin.DisplayPlugin: tests=24, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   567s]    INFO opentuner.search.plugin.DisplayPlugin: tests=28, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   641s]    INFO opentuner.search.plugin.DisplayPlugin: tests=32, best #250, cost time=0.0018, found by DifferentialEvolutionAlt
+[   722s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[   722s]    INFO opentuner.search.plugin.DisplayPlugin: tests=36, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[   816s]    INFO opentuner.search.plugin.DisplayPlugin: tests=40, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[   907s]    INFO opentuner.search.plugin.DisplayPlugin: tests=44, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[   932s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -basicaa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -instcombine]
+[   985s]    INFO opentuner.search.plugin.DisplayPlugin: tests=48, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1010s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -dse -tailcallelim -instcombine]
+[  1023s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -globalopt -simplifycfg -dse -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1038s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -memdep -tailcallelim -instcombine -early-cse-memssa]
+[  1057s]    INFO opentuner.search.plugin.DisplayPlugin: tests=52, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1117s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -globalopt -memdep -tailcallelim -instcombine -early-cse-memssa]
+[  1134s]    INFO opentuner.search.plugin.DisplayPlugin: tests=56, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1176s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -mem2reg -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1194s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1209s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1209s]    INFO opentuner.search.plugin.DisplayPlugin: tests=60, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1308s]    INFO opentuner.search.plugin.DisplayPlugin: tests=64, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1336s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1388s]    INFO opentuner.search.plugin.DisplayPlugin: tests=68, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1412s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -simplifycfg -memdep -tailcallelim -instcombine -early-cse-memssa]
+[  1445s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1445s]    INFO opentuner.search.plugin.DisplayPlugin: tests=71, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1544s]    INFO opentuner.search.plugin.DisplayPlugin: tests=75, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1609s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -aa -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1629s]    INFO opentuner.search.plugin.DisplayPlugin: tests=79, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1673s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -basicaa -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  1709s]    INFO opentuner.search.plugin.DisplayPlugin: tests=83, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1805s]    INFO opentuner.search.plugin.DisplayPlugin: tests=87, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1899s]    INFO opentuner.search.plugin.DisplayPlugin: tests=91, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1933s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa]
+[  1967s]    INFO opentuner.search.plugin.DisplayPlugin: tests=94, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  1998s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -libcalls-shrinkwrap -tailcallelim -instcombine -early-cse-memssa]
+[  2034s]    INFO tuneNormalizer: run_precompiled: Early Exit: Optimal pass sequence written to mcsema//normalizer_final_config.json: [ -gvn -globalopt -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine -memcpyopt -early-cse-memssa]
+[  2049s]    INFO opentuner.search.plugin.DisplayPlugin: tests=98, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  2148s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  2148s]    INFO opentuner.search.plugin.DisplayPlugin: tests=102, best #263, cost time=0.0000, found by DifferentialEvolutionAlt
+[  2148s]    INFO tuneNormalizer: Optimal pass sequence seen so far: [-globalopt -instcombine -simplifycfg -libcalls-shrinkwrap -memdep -early-cse-memssa -tailcallelim -gvn ]
+1863.16user 48.24system 35:48.56elapsed 88%CPU (0avgtext+0avgdata 90196maxresident)k
+0inputs+2100984outputs (0major+4306725minor)pagefaults 0swaps

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -basicaa -dse -instcombine
+ -licm -gvn -globalopt -dse -deadargelim -instcombine

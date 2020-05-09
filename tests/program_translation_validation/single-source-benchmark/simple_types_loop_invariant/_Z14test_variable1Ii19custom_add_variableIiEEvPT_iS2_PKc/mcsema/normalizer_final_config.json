@@ -1,1 +1,1 @@
- -licm -gvn -simplifycfg -memdep -dse -libcalls-shrinkwrap -tailcallelim -instcombine
+ -licm -gvn -simplifycfg -basicaa -aa -memdep -dse -tailcallelim -instcombine

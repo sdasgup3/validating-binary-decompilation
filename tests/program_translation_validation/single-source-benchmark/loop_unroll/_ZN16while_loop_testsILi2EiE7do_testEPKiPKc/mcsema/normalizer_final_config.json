@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -globalopt -basicaa -aa -memdep -dse
+ -early-cse -basicaa -aa -memdep -instcombine -memcpyopt -early-cse-memssa

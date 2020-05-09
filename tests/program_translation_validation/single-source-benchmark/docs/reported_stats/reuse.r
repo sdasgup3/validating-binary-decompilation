@@ -20,7 +20,7 @@ data <- as.vector(df[,1])
 
 #counts <- table(data)
 #barplot(counts, xlab="Perc. of instructions reused", ylab="# of test-subjects(functions)")
-hist(data, xlab="Percentage of instructions reused", ylab="Number of test-functions",breaks=10, xlim=c(0,100),  las=1, main="", labels=TRUE)
+hist(data, xlab="Perc. of instructions reused", ylab="# of test-subjects(functions)",breaks=10, xlim=c(0,100),  las=1, main="", labels=TRUE)
 
 
 dev.off()

@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -globalopt -memdep -dse -tailcallelim -instcombine -memcpyopt
+ -licm -gvn -early-cse -memdep -dse -instcombine

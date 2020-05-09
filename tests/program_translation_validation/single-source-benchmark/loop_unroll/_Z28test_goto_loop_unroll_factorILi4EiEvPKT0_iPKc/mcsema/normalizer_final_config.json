@@ -1,1 +1,1 @@
- -mem2reg -gvn -early-cse -simplifycfg -aa -memdep -dse -deadargelim -instcombine
+ -mem2reg -gvn -early-cse -simplifycfg -aa -instcombine -early-cse-memssa

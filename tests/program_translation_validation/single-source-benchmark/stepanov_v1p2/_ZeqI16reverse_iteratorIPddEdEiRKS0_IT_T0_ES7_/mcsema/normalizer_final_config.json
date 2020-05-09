@@ -1,1 +1,1 @@
- -gvn -globalopt -basicaa -dse -instcombine
+ -early-cse -instcombine -early-cse-memssa

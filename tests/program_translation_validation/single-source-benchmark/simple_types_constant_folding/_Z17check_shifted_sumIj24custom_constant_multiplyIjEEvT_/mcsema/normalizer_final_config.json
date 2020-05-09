@@ -1,1 +1,1 @@
- -mem2reg -gvn -basicaa -aa -dse -deadargelim -libcalls-shrinkwrap -instcombine -memcpyopt
+ -targetlibinfo -tbaa -mem2reg -deadargelim -instcombine -prune-eh -sroa -early-cse -instcombine -libcalls-shrinkwrap -tailcallelim -licm -instcombine -indvars -gvn -instcombine -licm -instcombine -instcombine -instcombine -instcombine -licm -strip-dead-prototypes -constmerge -instsimplify

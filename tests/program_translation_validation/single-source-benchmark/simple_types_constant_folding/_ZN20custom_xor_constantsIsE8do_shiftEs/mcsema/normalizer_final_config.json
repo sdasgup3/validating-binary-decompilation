@@ -1,1 +1,1 @@
- -mem2reg -licm -gvn -early-cse -basicaa -aa -dse -memcpyopt
+ -globalopt -domtree -mem2reg -domtree -aa -basiccg -inline -domtree -lazy-value-info -domtree -aa -domtree -aa -domtree -aa -mldst-motion -aa -gvn -aa -memcpyopt -domtree -aa -lazy-value-info -domtree -aa -dse -aa -postdomtree -domtree -aa -elim-avail-extern -basiccg -domtree -aa -aa -aa -aa -domtree -aa -strip-dead-prototypes -globaldce -domtree -aa -instsimplify

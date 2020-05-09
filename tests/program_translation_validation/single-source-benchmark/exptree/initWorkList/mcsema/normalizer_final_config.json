@@ -1,1 +1,1 @@
- -gvn -dse -deadargelim -tailcallelim -instcombine -memcpyopt
+ -gvn -simplifycfg -dse -tailcallelim -instcombine -memcpyopt

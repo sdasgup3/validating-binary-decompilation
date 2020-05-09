@@ -1,1 +1,1 @@
- -licm -gvn -early-cse -basicaa -aa -memdep -dse -tailcallelim -instcombine
+ -gvn -early-cse -globalopt -deadargelim -libcalls-shrinkwrap -instcombine -early-cse-memssa
