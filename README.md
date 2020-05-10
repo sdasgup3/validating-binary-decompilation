@@ -60,7 +60,7 @@ git clone https://github.com/sdasgup3/compd_cache.git # required only if you wis
  - [tests/program_translation_validation: Program Level Validation](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)
 
 ## Installation
-The installation goal is to buil tools like [Compositinal-Decompiler](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/decompiler) and  [Matcher](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/matcher). The tools are build using the libraries of stoke 
+The installation goal is to build tools like [Compositinal-Decompiler](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/decompiler) and  [Matcher](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/matcher). The tools are build using the libraries of stoke 
 and LLVM, to be installed as pre-requisites.
 
 ### Installing pre-requisites
@@ -171,7 +171,7 @@ and LLVM, to be installed as pre-requisites.
     ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
   ```
 
-    - Troubleshoot
+   - Troubleshoot
       - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
       - ImportError: No module named google.protobuf
       ```
@@ -180,10 +180,7 @@ and LLVM, to be installed as pre-requisites.
 
 ### Tools Build Instructions
 ```bash
-mkdir -p ~/Github
-cd !$
-git clone --recursive git@github.com:sdasgup3/validating-binary-decompilation.git
-mkdir -p ${HOME}/Github/validating-binary-decompilation/source/build
+mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
 cd !$
 
 cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
