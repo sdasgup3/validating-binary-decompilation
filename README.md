@@ -20,14 +20,22 @@ compositional lifter based on the validated translations to generate LLVM IR,
               by translating each into a graph and checking whether the graphs
               match.
 
+## Table of Contents
+  - [Publication](#Publication)
+  - [Evaluation w/o Installation](#Evaluation-w/o-Installation)
+  - [Checkout Repository](#Checkout-Repository)
+  - [Directory Structure](#Directory-Structure)
+  - [Installation](#Installation)
+  - [Tools Build Instructions](#Tools-Build-Instructions)
+
 ## Publication
  - [Accepted PLDI'20 Paper](https://sdasgup3.github.io/files/pldi_2020.pdf)
 
-## Evaluation w/o installation
+## Evaluation w/o Installation
  - [Peer Evaluated Artifacts](https://github.com/sdasgup3/PLDI20-Artifact-Evaluation)
 
 
-### Checkout Repository
+## Checkout Repository
 ```C
 export REPO_PATH=${HOME}/Github/ # could be any path
 cd $REPO_PATH/
@@ -36,7 +44,7 @@ git clone https://github.com/sdasgup3/compd_cache.git # required only if you wis
                                                       # evaluate the project.
 ```
 
-# Directory Structure 
+## Directory Structure 
  - [source: Source Code](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)
   The above directory hosts the tools & libraries relevant for validating the
   decompilation performed by McSema. The important tools are:
@@ -147,11 +155,11 @@ and LLVM, to be installed as pre-requisites.
     
     git clone  git@github.com:sdasgup3/mcsema.git
     cd mcsema; git checkout  develop; cd -
-    
+ 
     git clone https://github.com/sdasgup3/remill.git
     cd remill; git checkout  develop_ae;
     mv ../mcsema tools
-    
+
     ./scripts/build.sh
     cd remill-build
     sudo make install -j64
@@ -159,36 +167,46 @@ and LLVM, to be installed as pre-requisites.
 
 
   - Install IDA
-  ```bash
-    mkdir -p ~/Github
-    cd ~/Github
-    git clone https://gitlab.engr.illinois.edu/llvm/IDA.git
-    Install Ida_software/*.run
-    echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
-    sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
-    ~/ida-6.95/idal64
-    
-    ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
-  ```
+    - Installation of licensed copy
+    ```bash
+      mkdir -p $REPO_PATH
+      cd !$
+      git clone https://gitlab.engr.illinois.edu/llvm/IDA.git
+      Install Ida_software/*.run
+      echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
+      sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
+      ~/ida-6.95/idal64
 
-   - Troubleshoot
-      - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
-      - ImportError: No module named google.protobuf
-      ```
+      ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
+    ```
+    - Troubleshoot
+        - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
+        - ImportError: No module named google.protobuf
+        ```
         ln -s /usr/local/lib/python2.7/dist-packages/protobuf-3.2.0-py2.7.egg/google /usr/local/lib/python2.7/dist-packages/google
-      ```
+        ```
 
 ### Tools Build Instructions
-```bash
-mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
-cd !$
+  - Checkout Repository
+  ```bash
+    export REPO_PATH=${HOME}/Github/ # could be any path
+    cd $REPO_PATH/
+    git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+    git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
+                                                          # evaluate the project.
+  ```
 
-cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
-make -j8
+  - Install
+  ```bash
+    mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
+    cd !$
 
-make check-format
-make update-format
-```
+    cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
+    make -j8
+
+    make check-format
+    make update-format
+  ```
 
 ## Improvement/Extension Opportunities
   -  Extending the methodology to other lifters like fcd/rev.ng
