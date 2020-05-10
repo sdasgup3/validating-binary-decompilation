@@ -22,7 +22,7 @@ compositional lifter based on the validated translations to generate LLVM IR,
 
 ## Table of Contents
   - [Publication](#Publication)
-  - [Evaluation w/o Installation](#Evaluation-w/o-Installation)
+  - [Evaluation w/o Installation](#Evaluation-without-Installation)
   - [Checkout Repository](#Checkout-Repository)
   - [Directory Structure](#Directory-Structure)
   - [Installation](#Installation)
@@ -31,7 +31,7 @@ compositional lifter based on the validated translations to generate LLVM IR,
 ## Publication
  - [Accepted PLDI'20 Paper](https://sdasgup3.github.io/files/pldi_2020.pdf)
 
-## Evaluation w/o Installation
+## Evaluation without Installation
  - [Peer Evaluated Artifacts](https://github.com/sdasgup3/PLDI20-Artifact-Evaluation)
 
 
