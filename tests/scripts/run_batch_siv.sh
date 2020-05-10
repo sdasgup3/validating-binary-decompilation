@@ -8,11 +8,15 @@ if [ -z "$P" ]; then
   P=1
 fi
 
-TESTARENA="~/Github/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/" 
+if [ -z "$REPO_PATH" ]; then
+  REPO_PATH="~/Github/"
+fi
+
+TESTARENA="$REPO_PATH/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/" 
 
 echo
 echo "Cleaning Stale instr semantics definitions"
-cd ~/Github/X86-64-semantics/semantics
+cd $REPO_PATH/X86-64-semantics/semantics
 rm -rf underTestInstructions/*
 cd -
 
@@ -22,7 +26,7 @@ cat $LIST | parallel "cd $TESTARENA/{}; make collect; cd -"
 
 echo
 echo "Kompiling the collected X86 semantics to create a sym-ex"
-cd ~/Github/X86-64-semantics/semantics
+cd $REPO_PATH/X86-64-semantics/semantics
 ../scripts/kompile.pl --backend java
 cd -
 

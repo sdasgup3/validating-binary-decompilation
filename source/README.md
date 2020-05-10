@@ -11,6 +11,9 @@ The current directory hosts the tools & libraries relevant for validating the de
     - Associated Library Path:   [llvm-graph-matching](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/libs/llvm-graph-matching)
 
 # Run Instructions
+The above tools will be run as part of a pipleline and will seldom be run in isolation.
+For the purpose of explanation, we are describing the usage model of the above tools.
+
 ```bash
 # Set path of the directory containing validating-binary-decompilation repository
 export REPO_PATH=${HOME}/Github/
@@ -50,163 +53,8 @@ ${ARTIFACTDIR}=${REPO_PATH}/compd_cache/
   ```
 ```
 
-# Build Instructions
-## Pre-requisite
-All the tools are build using the libraries of stoke and LLVM.
 
-### Download scripts-n-docs
-```bash
-git clone git@github.com:sdasgup3/scripts-n-docs.git
-```
-
-### Install GCC/Clang
-```bash
-Install gcc (> ver. 6)
-https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed
-sudo update-alternatives --config gcc
-
-sudo apt-get install clang-6.0
-```
-
-### Install Essentials
-```bash
-sudo apt  install cmake
-sudo apt-get install z3
-sudo apt-get install parallel
-```
-
-### Install LLVM-4.0.0
-
-```bash
-mkdir -p ~/Install/llvm
-cd ~/Install/llvm
-~/scripts-n-docs/scripts/bash/download-llvm.sh 4.0.0  ./ fast
-rm -rf *.xz
-mkdir llvm.4.0.0.install llvm.4.0.0.obj
-cd llvm.4.0.0.obj
-INSTALL_PREFIX=~/Install/llvm/llvm.4.0.0.install
-# cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
-cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="Release" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
-make -j64
-sudo make install
-# Keep the llvm-config path set to the version of llvm we want to use using $PATH
-# Make sure to export PATH like: export PATH=<llvm/install/dir/>:$PATH
-
-For `signal stack problems`, apply the [patch](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/docs/patches) using
-cd ${HOME}/Install/llvm/llvm-4.0.0.src
-patch -p6 < <patch file>
-
-Note: the patch is borrowed from
-https://github.com/google/sanitizers/issues/822
-https://github.com/llvm-mirror/compiler-rt/commit/8a5e425a68de4d2c80ff00a97bbcb3722a4716da
-```
-
-### Install Stoke
-```bash
-sudo apt-get install bison ccache cmake doxygen exuberant-ctags flex  g++-multilib  ghc git libantlr3c-dev libboost-dev libboost-filesystem-dev libboost-thread-dev libcln-dev libghc-regex-compat-dev libghc-regex-tdfa-dev libghc-split-dev libjsoncpp-dev python subversion libiml-dev libgmp-dev libboost-regex-dev autoconf libtool antlr pccts pkg-config
-cd ~/Github
-git clone --recursive   git@github.com:sdasgup3/stoke.git stoke-develop
-
-cd  stoke-develop/src/ext/z3
-git checkout master
-git checkout 4192c81fae01e90fd8110a00b14172be818f028b
-
-cd ~/Github/stoke-develop/src/ext/x64asm
-git remote add upstream git@github.com:sdasgup3/x64asm.git
-git fetch upstream
-git checkout working
-
-cd ~/Github/stoke-develop/
-./configure.sh -d --no-cvc4
-cd ~/Github/stoke-develop/src/ext/x64asm
-make -j64 debug
-
-cd ~/Github/stoke-develop
-mkdir lib
-make -j64 debug
-```
-
-### Install mcsema
-```bash
-sudo apt-get install      git      curl      cmake      python2.7 python-pip \ 
-python-virtualenv      wget      build-essential  gcc-multilib g++-multilib  \
-    libtinfo-dev      lsb-release            zlib1g-dev
-sudo dpkg --add-architecture i386
-sudo apt-get install zip zlib1g-dev:i386
-
-git clone  git@github.com:sdasgup3/mcsema.git
-cd mcsema; git checkout  develop; cd -
-
-git clone https://github.com/sdasgup3/remill.git
-cd remill; git checkout  develop_ae;
-mv ../mcsema tools
-
-./scripts/build.sh
-cd remill-build
-sudo make install -j64
-```
-
-
-### Install IDA
-```bash
-mkdir -p ~/Github
-cd ~/Github
-git clone https://gitlab.engr.illinois.edu/llvm/IDA.git
-Install Ida_software/*.run
-echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
-sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
-~/ida-6.95/idal64
-
-## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
-```
-
-#### Troubleshoot
-  - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
-  - ImportError: No module named google.protobuf
-  ```
-    ln -s /usr/local/lib/python2.7/dist-packages/protobuf-3.2.0-py2.7.egg/google /usr/local/lib/python2.7/dist-packages/google
-  ```
-
-### Tools Build Instructions
-```bash
-mkdir -p ~/Github
-cd !$
-git clone --recursive git@github.com:sdasgup3/validating-binary-decompilation.git
-mkdir -p ${HOME}/Github/validating-binary-decompilation/source/build
-cd !$
-
-cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
-make -j8
-
-make check-format
-make update-format
-```
-
-### Recommended Build Practise once there is any update in any source repo
-```bash
-
-## Update/Build x64asm
-cd ~/Github/stoke-develop/src/ext/x64asm
-git pull upstream working
-make clean; make -j64 debug
-
-## Update/Build stoke
-cd ~/Github/stoke-develop
-git pull origin working
-make -j64 debug
-
-## Update/Build Matcher/compD
-cd ~/Github/validating-binary-decompilation/source/build
-make clean; make -j64
-```
-
-### Clone the compositional compiler cache
-```
-cd ~/Github
-git clone https://github.com/sdasgup3/compd_cache
-```
-
-### DEPRECATED
+### Deprecated Tools
 #### Runnning the variable\_and\_basic\_block\_correspondence tool
 ```
 validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
