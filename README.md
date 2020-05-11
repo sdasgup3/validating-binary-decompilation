@@ -33,15 +33,18 @@ compositional lifter based on the validated translations to generate LLVM IR,
     - [Running PLV Pipeline](#Running-PLV-Pipeline)
   - [Experimental Matcher](#Experimental-Matcher)
 
-## Documentation [&#11181;](#Table-of-Contents)
+## Documentation
  - A Scalable Validation of Binary Lifters, PLDI 2020
 by Sandeep Dasgupta, Sushant Dinesh, Deepan Venkatesh, Vikram S. Adve & Christopher W. Fletcher., accepted at Proceedings of the 41st ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI ‘20), June 15–20, 2020, London, UK, [PDF](https://sdasgup3.github.io/files/pldi_2020.pdf), [BIB](https://sdasgup3.github.io/files/pldi_2020.bib)
 
-## Evaluation without Installation [&#11181;](#Table-of-Contents)
+[&#11181;](#Table-of-Contents)
+
+## Evaluation without Installation
  - [Peer Evaluated Artifacts](https://github.com/sdasgup3/PLDI20-Artifact-Evaluation)
 
+[&#11181;](#Table-of-Contents)
 
-## Directory Structure  [&#11181;](#Table-of-Contents)
+## Directory Structure
  - [source: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)Source Code :-
   The above directory hosts the tools & libraries relevant for validating the
   decompilation performed by McSema. The important tools are:
@@ -68,8 +71,9 @@ by Sandeep Dasgupta, Sushant Dinesh, Deepan Venkatesh, Vikram S. Adve & Christop
  - [tests/single_instruction_translation_validation: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)Single Instruction Validation
  - [tests/program_translation_validation: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)Program Level Validation
 
+[&#11181;](#Table-of-Contents)
 
-## Checkout Repository [&#11181;](#Table-of-Contents)
+## Checkout Repository
 ```C
 export REPO_PATH=${HOME}/Github/ # could be any path
 cd $REPO_PATH/
@@ -78,7 +82,9 @@ git clone https://github.com/sdasgup3/compd_cache.git # required only if you wis
                                                       # evaluate the project.
 ```
 
-## Installation [&#11181;](#Table-of-Contents)
+[&#11181;](#Table-of-Contents)
+
+## Installation
 
 ### Relevant for Single Instruction Validation
  The tools and environments relevant to achieve SIV include (1) the symbolic
@@ -308,7 +314,9 @@ as pre-requisites.
   make clean; make -j64
   ```
 
-## Testing [&#11181;](#Table-of-Contents)
+[&#11181;](#Table-of-Contents)
+
+## Testing
 ### Running SIV Pipeline
 #### An example run
 Running SIV on an isolated example instruction `addq_r64_r64` involves the following step
@@ -419,6 +427,8 @@ cd $REPO_PATH/validating-binary-decompilation/tests/single_instruction_translati
 sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo ===; cd {}; make provez3; cd -" |& tee ~/Junk/log
 ```
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation/mcsema/README.md)
+
+[&#11181;](#Table-of-Contents)
 
 ### Running PLV Pipeline
 
@@ -572,8 +582,9 @@ The functions in `docs/reported_stats/7.log docs/reported_stats/1.log` constitut
 
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation/README.md)
 
+[&#11181;](#Table-of-Contents)
 
-## Experimental Matcher [&#11181;](#Table-of-Contents)
+## Experimental Matcher
 **Iterative Pruning based Matcher:** Iteratively prunes the matched sub-
 graphs and look for more isomorphic matches after canonicalizing the residual graph.
 This ehancement of the matcher is based on the insight that the residual graphs will be much straight-
@@ -597,3 +608,4 @@ passes to canonicalize effectively.
     make -j8 matcher
   ```
 
+[&#11181;](#Table-of-Contents)
