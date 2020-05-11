@@ -132,8 +132,8 @@ int main(int argc, char **argv) {
     break;
   }
 
-  outs() << "Extracting function [" << SourceFunc << "] from "
-                 << SourceFile << "\n";
+  outs() << "Extracting function [" << SourceFunc << "] from " << SourceFile
+         << "\n";
   for (auto &Func : *SMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;

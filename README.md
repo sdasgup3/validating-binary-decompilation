@@ -155,6 +155,8 @@ In order to install (1), (2), and (4), the followings need to be done.
     sudo make install
   ```
 
+[&#11181;](#Table-of-Contents)
+
 ### Relevant for Program Level Validation
 The installation goal is to build tools like
 [Compositional-Decompiler](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/decompiler),

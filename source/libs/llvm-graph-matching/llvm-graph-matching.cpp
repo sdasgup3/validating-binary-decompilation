@@ -1,4 +1,4 @@
-//===-- variable_correspondence.h --===//
+//===-- llvm-graph-matching.cpp --===//
 //
 //                     The LLVM Compiler Infrastructure
 //
@@ -7,28 +7,24 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include <unordered_map>
-
 #include "llvm-graph-matching.h"
-#include "memssa.h"
 
 using namespace llvm;
 
+/*********************
+********** Matcher ***********
+*********************/
 Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
-                 bool potentialMatchAccuracy) {
-  F1 = f1;
-  F2 = f2;
+                 bool potentialMatchAccuracy)
+    : MatcherBase(f1, f2, useSSAEdges) {
 
-  // G1 = new DepGraph(F1, useSSAEdges, !potentialMatchAccuracy);
-  G1 = new DepGraph(F1, useSSAEdges);
-  G2 = new DepGraph(F2, useSSAEdges);
-  VertexSet = G1->getVertices();
-
-  GlobalNumbers = new GlobalNumberState();
 #ifdef MATCHER_DEBUG
   llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
                << "\n";
 #endif
+
+  G1 = new DataDepGraph(F1, useSSAEdges);
+  G2 = new DataDepGraph(F2, useSSAEdges);
 
   retrievePotIMatches(F1, F2, potentialMatchAccuracy);
 
@@ -43,6 +39,16 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
     llvm::errs() << "Iso Match NOT Found\n";
 }
 
+/*********************
+********** MatcherBase ***********
+*********************/
+MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
+  F1 = f1;
+  F2 = f2;
+
+  GlobalNumbers = new GlobalNumberState();
+}
+
 /*
   Contraining the potential matches for geps, helps
   disamguating many downstream istructions including stores.
@@ -50,7 +56,7 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
   We should not constrain the stores based on control flow at this point,
   because the dualSim algo can handle to some degree out of order stores.
 */
-bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
+bool MatcherBase::deepMatch(Instruction *I1, Instruction *I2) {
   if (!I1 || !I2)
     return false;
 
@@ -103,8 +109,8 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-void Matcher::retrievePotIMatches(Function *F1, Function *F2,
-                                  bool potentialMatchAccuracy) {
+void MatcherBase::retrievePotIMatches(Function *F1, Function *F2,
+                                      bool potentialMatchAccuracy) {
   if (!initialArgumentsMatch(F1, F2)) {
     assert(0 && "Problem with Initial Match");
     return;
@@ -154,47 +160,11 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2,
 #endif
 }
 
-bool Matcher::checkInvariant() {
-  for (auto p : PotBBMatches) {
-    auto LBB = p.first;
-    auto RBB = p.second;
-
-    string LLoadStoreOrder = "";
-    for (Instruction &I : *LBB) {
-      if (dyn_cast<StoreInst>(&I)) {
-        LLoadStoreOrder = +"S";
-      }
-      if (dyn_cast<LoadInst>(&I)) {
-        LLoadStoreOrder = +"L";
-      }
-    }
-
-    string RLoadStoreOrder = "";
-    for (Instruction &I : *RBB) {
-      if (dyn_cast<StoreInst>(&I)) {
-        RLoadStoreOrder = +"S";
-      }
-      if (dyn_cast<LoadInst>(&I)) {
-        RLoadStoreOrder = +"L";
-      }
-    }
-
-    if (LLoadStoreOrder != RLoadStoreOrder) {
-      LBB->printAsOperand(errs(), false);
-      llvm::errs() << " --> ";
-      RBB->printAsOperand(errs(), false);
-      return false;
-    }
-  }
-
-  return true;
-}
-
 // Retrieve BB correspondence based on exact matches
-bool Matcher::retrievePotBBMatches() {
+bool MatcherBase::retrievePotBBMatches() {
   bool changed = false;
 
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto &pMatches = PotIMatches.at(U);
     if (pMatches.size() != 1)
       continue;
@@ -257,7 +227,7 @@ bool Matcher::retrievePotBBMatches() {
 /*
 ** Assume that the arguments of the two functions are potential matches
 */
-bool Matcher::initialArgumentsMatch(Function *F1, Function *F2) {
+bool MatcherBase::initialArgumentsMatch(Function *F1, Function *F2) {
   if (F1->arg_size() != F1->arg_size()) {
     llvm::errs() << "Argument count mismatch\n";
     return false;
@@ -267,9 +237,9 @@ bool Matcher::initialArgumentsMatch(Function *F1, Function *F2) {
 
   int count = 0;
   while (argI1 != F1->arg_end() && argI2 != F2->arg_end()) {
-    if (count == 2) {
-      IgnoreType = argI1->getType();
-    }
+    // if (count == 2) {
+    //   IgnoreType = argI1->getType();
+    // }
 
     PotIMatches[&*argI1].insert(&*argI2);
 
@@ -307,7 +277,7 @@ static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
   return retval;
 }
 
-bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
+bool MatcherBase::dualSimulationDriver(Function *F1, Function *F2) {
   bool changed = true;
 #ifdef MATCHER_DEBUG
   size_t round = 0;
@@ -353,15 +323,10 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
 #endif
   }
 
-  // Check the invariant that that each BB has same load/store order
-  // if(!checkInvariant()) {
-  //   assert(0 && "Load/Store order not preserved");
-  // }
-
   // Check final results
   llvm::errs() << "\n[Info]: Check for multiple matches\n";
   bool result = true;
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto V = PotIMatches.at(&*U);
     if (V.size() != 1) {
       if (dyn_cast<BranchInst>(&*U))
@@ -380,7 +345,39 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
   return result;
 }
 
-bool Matcher::dualSimulation(Function *F1, Function *F2) {
+/*
+**   1: procedure DualSim(G, Q, Φ):
+**   2:  changed←true
+**   3:  while changed do
+**   4:    changed←false
+**   5:    for u←Vq do
+**   6:      for u' ←Q.adj(u) do
+**   7:        Φ'(u')←∅
+**   8:        for v ←Φ(u) do
+**   9:          Φv(u')←G.adj(v) ∩ Φ(u')
+**   10:         if Φv(u') = ∅ then
+**   11:           remove v from Φ(u)
+**   12:           if Φ(u) = ∅ then
+**   13:             return empty Φ
+**   14:           end if
+**   15:           changed←true
+**   16:         end if
+**   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
+**   18:       end for
+**   19:       if Φ'(u') = ∅ then
+**   20:         return empty Φ
+**   21:       end if
+**   22:       if Φ'(u') is smaller than Φ(u') then
+**   23:         changed←true
+**   24:       end if
+**   25:       Φ(u') = Φ(u') ∩ Φ'(u')
+**   26:     end for
+**   27:   end for
+**   28: end while
+**   29: return Φ
+**   30: end procedure
+*/
+bool MatcherBase::dualSimulation(Function *F1, Function *F2) {
 
   // 2:  changed←true
   bool changed = true;
@@ -397,7 +394,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
     changed = false;
 
     // 5: for u←Vq do
-    for (auto U : VertexSet) {
+    for (auto U : G1->VertexSet) {
 
 #ifdef MATCHER_DEBUG
       llvm::errs() << "Fixing: ";
@@ -532,7 +529,7 @@ bool Matcher::dualSimulation(Function *F1, Function *F2) {
 }
 
 // Check if all the instructions belong to same BB
-std::pair<bool, BasicBlock *> Matcher::sameBB(std::set<Value *> S) {
+std::pair<bool, BasicBlock *> MatcherBase::sameBB(std::set<Value *> S) {
   BasicBlock *candBB = NULL;
   for (auto candInstr : S) {
     Instruction *I = dyn_cast<Instruction>(candInstr);
@@ -555,9 +552,9 @@ std::pair<bool, BasicBlock *> Matcher::sameBB(std::set<Value *> S) {
   return std::pair<bool, BasicBlock *>(true, candBB);
 }
 
-bool Matcher::handleConflictingCalls() {
+bool MatcherBase::handleConflictingCalls() {
   bool changed = false;
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto &pMatches = PotIMatches.at(U);
 
     // Hadling multiple (>1) potential matches.
@@ -637,7 +634,7 @@ bool Matcher::handleConflictingCalls() {
     }
   }
 
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto &pMatches = PotIMatches.at(U);
 
     CallInst *LCallInstr = dyn_cast<CallInst>(U);
@@ -673,9 +670,9 @@ bool Matcher::handleConflictingCalls() {
   return changed;
 }
 
-bool Matcher::handleConflictingStores() {
+bool MatcherBase::handleConflictingStores() {
   bool changed = false;
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto &pMatches = PotIMatches.at(U);
 
     // Hadling multiple (>1) potential matches.
@@ -757,7 +754,7 @@ bool Matcher::handleConflictingStores() {
     }
   }
 
-  for (auto U : VertexSet) {
+  for (auto U : G1->VertexSet) {
     auto &pMatches = PotIMatches.at(U);
 
     StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
@@ -796,8 +793,8 @@ bool Matcher::handleConflictingStores() {
 /*
 ** Intersection of S1 and S2
 */
-set<Value *> Matcher::Intersection(const set<Value *> &S1,
-                                   const set<Value *> &S2) {
+set<Value *> MatcherBase::Intersection(const set<Value *> &S1,
+                                       const set<Value *> &S2) {
   set<Value *> retval;
   if ((!S1.size() && S2.size()) || (!S2.size() && S1.size()))
     return retval;
@@ -819,11 +816,11 @@ set<Value *> Matcher::Intersection(const set<Value *> &S1,
   return retval;
 }
 
-void Matcher::dumpLLVMNode(const Value *V) {
+void MatcherBase::dumpLLVMNode(const Value *V) {
   llvm::errs() << "[" << V << "]: " << *V << "\n";
 }
 
-int Matcher::cmpNumbers(uint64_t L, uint64_t R) const {
+int MatcherBase::cmpNumbers(uint64_t L, uint64_t R) const {
   if (L < R)
     return -1;
   if (L > R)
@@ -831,7 +828,7 @@ int Matcher::cmpNumbers(uint64_t L, uint64_t R) const {
   return 0;
 }
 
-int Matcher::cmpAPInts(const APInt &L, const APInt &R) const {
+int MatcherBase::cmpAPInts(const APInt &L, const APInt &R) const {
   if (int Res = cmpNumbers(L.getBitWidth(), R.getBitWidth()))
     return Res;
   if (L.ugt(R))
@@ -844,7 +841,7 @@ int Matcher::cmpAPInts(const APInt &L, const APInt &R) const {
 /// cmpType - compares two types,
 /// defines total ordering among the types set.
 /// See method declaration comments for more details.
-int Matcher::cmpTypes(Type *TyL, Type *TyR) const {
+int MatcherBase::cmpTypes(Type *TyL, Type *TyR) const {
   PointerType *PTyL = dyn_cast<PointerType>(TyL);
   PointerType *PTyR = dyn_cast<PointerType>(TyR);
 
@@ -936,7 +933,8 @@ int Matcher::cmpTypes(Type *TyL, Type *TyR) const {
 // Determine whether two GEP operations perform the same underlying
 // arithmetic.
 // Read method declaration comments for more details.
-int Matcher::cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const {
+int MatcherBase::cmpGEPs(const GEPOperator *GEPL,
+                         const GEPOperator *GEPR) const {
 
   unsigned int ASL = GEPL->getPointerAddressSpace();
   unsigned int ASR = GEPR->getPointerAddressSpace();
@@ -976,7 +974,7 @@ int Matcher::cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const {
 /// type.
 /// 2. Compare constant contents.
 /// For more details see declaration comments.
-int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
+int MatcherBase::cmpConstants(const Constant *L, const Constant *R) const {
 
   Type *TyL = L->getType();
   Type *TyR = R->getType();
@@ -1191,13 +1189,13 @@ int Matcher::cmpConstants(const Constant *L, const Constant *R) const {
   }
 }
 
-int Matcher::cmpGlobalValues(GlobalValue *L, GlobalValue *R) const {
+int MatcherBase::cmpGlobalValues(GlobalValue *L, GlobalValue *R) const {
   uint64_t LNumber = GlobalNumbers->getNumber(L);
   uint64_t RNumber = GlobalNumbers->getNumber(R);
   return cmpNumbers(LNumber, RNumber);
 }
 
-int Matcher::cmpAPFloats(const APFloat &L, const APFloat &R) const {
+int MatcherBase::cmpAPFloats(const APFloat &L, const APFloat &R) const {
   // Floats are ordered first by semantics (i.e. float, double, half, etc.),
   // then by value interpreted as a bitstring (aka APInt).
   const fltSemantics &SL = L.getSemantics(), &SR = R.getSemantics();
@@ -1216,7 +1214,7 @@ int Matcher::cmpAPFloats(const APFloat &L, const APFloat &R) const {
   return cmpAPInts(L.bitcastToAPInt(), R.bitcastToAPInt());
 }
 
-int Matcher::cmpMem(StringRef L, StringRef R) const {
+int MatcherBase::cmpMem(StringRef L, StringRef R) const {
   // Prevent heavy comparison, compare sizes first.
   if (int Res = cmpNumbers(L.size(), R.size()))
     return Res;
@@ -1232,7 +1230,7 @@ int Matcher::cmpMem(StringRef L, StringRef R) const {
 /// so
 /// that we will detect mismatches on next use.
 /// See comments in declaration for more details.
-int Matcher::cmpValues(const Value *L, const Value *R) const {
+int MatcherBase::cmpValues(const Value *L, const Value *R) const {
   // Catch self-reference case.
   if (L == F1) {
     if (R == F2)
@@ -1275,7 +1273,32 @@ int Matcher::cmpValues(const Value *L, const Value *R) const {
   // return cmpNumbers(LeftSN.first->second, RightSN.first->second);
 }
 
-// void Matcher::simpleSimulation(Function *F1, Function *F2) {
+void MatcherBase::dumpPotIMatches() {
+  for (auto PotMatch : PotIMatches) {
+    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
+    //   continue;
+    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+    for (auto match : PotMatch.second) {
+      llvm::errs() << "\t"
+                   << "[" << match << "]:" << *match << "\n";
+    }
+    llvm::errs() << "\t}\n\n";
+  }
+}
+
+void MatcherBase::dumpPotIMatchesStats() {
+  auto n = PotIMatches.size();
+  auto p = 0;
+  for (auto PotMatch : PotIMatches) {
+    p += PotMatch.second.size();
+  }
+  llvm::errs() << "Pot Match Stat: Avg p = " << ((double)p / n)
+               << " n = : " << n << "\n";
+}
+
+// ========================================================================
+
+// void MatcherBase::simpleSimulation(Function *F1, Function *F2) {
 //
 //   if (!initialMatch(F1, F2))
 //     return;
@@ -1328,165 +1351,44 @@ int Matcher::cmpValues(const Value *L, const Value *R) const {
 // #endif
 // }
 
-// bool Matcher::shallowMatch(Instruction *I1, Instruction *I2) {
+// bool MatcherBase::shallowMatch(Instruction *I1, Instruction *I2) {
 //   if (!I1 || !I2)
 //     return false;
 //   return (I1->getOpcode() == I2->getOpcode());
 // }
 
-void Matcher::dumpPotIMatches() {
-  for (auto PotMatch : PotIMatches) {
-    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
-    //   continue;
-    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
-    for (auto match : PotMatch.second) {
-      llvm::errs() << "\t"
-                   << "[" << match << "]:" << *match << "\n";
-    }
-    llvm::errs() << "\t}\n\n";
-  }
-}
-
-void Matcher::dumpPotIMatchesStats() {
-  auto n = PotIMatches.size();
-  auto p = 0;
-  for (auto PotMatch : PotIMatches) {
-    p += PotMatch.second.size();
-  }
-  llvm::errs() << "Pot Match Stat: Avg p = " << ((double)p / n)
-               << " n = : " << n << "\n";
-}
-
-// void Matcher::printDOT() {
-//   return;
+// bool MatcherBase::checkInvariant() {
+//   for (auto p : PotBBMatches) {
+//     auto LBB = p.first;
+//     auto RBB = p.second;
 //
-//   // Dead code
-//   MatchInfo *MI = new MatchInfo;
-//   MI->Fn = F1;
-//   MI->color = true;
-//
-//   MatchInfo *MI2 = new MatchInfo;
-//   MI2->Fn = F2;
-//   MI2->color = true;
-//
-//   for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1)
-//   {
-//     auto PotMatch = PotIMatches.at(&*I1);
-//     MI->match[&*I1] = PotMatch.size();
-//     for (auto match : PotMatch) {
-//       auto I2 = dyn_cast<Instruction>(match);
-//       if (MI2->match.find(&*I2) == MI2->match.end()) {
-//         MI2->match[&*I2] = 0;
+//     string LLoadStoreOrder = "";
+//     for (Instruction &I : *LBB) {
+//       if (dyn_cast<StoreInst>(&I)) {
+//         LLoadStoreOrder = +"S";
 //       }
-//       MI2->match[&*I2] += 1;
+//       if (dyn_cast<LoadInst>(&I)) {
+//         LLoadStoreOrder = +"L";
+//       }
+//     }
+//
+//     string RLoadStoreOrder = "";
+//     for (Instruction &I : *RBB) {
+//       if (dyn_cast<StoreInst>(&I)) {
+//         RLoadStoreOrder = +"S";
+//       }
+//       if (dyn_cast<LoadInst>(&I)) {
+//         RLoadStoreOrder = +"L";
+//       }
+//     }
+//
+//     if (LLoadStoreOrder != RLoadStoreOrder) {
+//       LBB->printAsOperand(errs(), false);
+//       llvm::errs() << " --> ";
+//       RBB->printAsOperand(errs(), false);
+//       return false;
 //     }
 //   }
 //
-//   writeDFGToDotFile(MI, (MI->Fn->getName() + "-mcsema-diff.dot").str());
-//   writeDFGToDotFile(MI2, (MI2->Fn->getName() + "-proposed-diff.dot").str());
+//   return true;
 // }
-//
-// double Matcher::matchRatio() {
-//   size_t totalNodes = VertexSet.size();
-//   size_t numMatches = 0;
-//   for (auto U : VertexSet) {
-//     if (PotIMatches.at(&*U).size() == 1 || dyn_cast<BranchInst>(&*U)) {
-//       numMatches++;
-//     }
-//   }
-//
-//   return ((double)numMatches) / totalNodes;
-// }
-
-/*********************************** DepGraph Implementaion ***************/
-DepGraph::DepGraph(Function *F, bool useSSAEdges) {
-
-  this->F = F;
-
-  // Argument SSA edges
-  auto argI = F->arg_begin();
-  while (argI != F->arg_end()) {
-    Value *U = &*argI;
-    set<Value *> S;
-
-    for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
-      Value *V = dyn_cast<Value>(*VI);
-      if (!V) {
-        assert(0 && "DepGraph::User Value type error!");
-      }
-
-      S.insert(V);
-    }
-
-    GImpl[U] = S;
-    argI++;
-  }
-
-  // Instruction SSA edges
-  for (inst_iterator I = inst_begin(F), E = inst_end(F); I != E; ++I) {
-    Value *U = &*I;
-    set<Value *> S;
-
-    for (Value::user_iterator VI = U->user_begin(); VI != U->user_end(); VI++) {
-      Value *V = dyn_cast<Value>(*VI);
-      if (!V) {
-        assert(0 && "DepGraph::User Value type error!");
-      }
-
-      S.insert(V);
-    }
-
-    GImpl[U] = S;
-  }
-
-  if (useSSAEdges) {
-    return;
-  }
-
-// MemSSA edges
-#ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\nMemDep Edges for: " << F->getName() << "\n";
-#endif
-
-  MemSSA *mSSA = new MemSSA(F);
-  MemDepEdgesType edges = mSSA->collectMemoryDepEdges();
-  for (auto e : edges) {
-    Value *U = e.first;
-    auto adjList = e.second;
-
-    if (!GImpl.count(U)) {
-      llvm::errs() << *U;
-      assert(0 && "DepGraph::getAdj::Missing load/store in graph!");
-    }
-
-    // llvm::errs() << *U << "\n";
-    for (auto p : adjList) {
-      if (!dyn_cast<StoreInst>(p) && !dyn_cast<CallInst>(p)) {
-        llvm::errs() << "\t" << *p << "\n";
-        assert(0 && "Defining instruction should always be a store");
-      }
-
-      llvm::errs() << *p << " --> " << *U << "\n";
-
-      GImpl[p].insert(U);
-    }
-  }
-}
-
-vector<Value *> DepGraph::getVertices() {
-  vector<Value *> retval;
-  for (auto p : GImpl) {
-    retval.push_back(p.first);
-  }
-  return retval;
-}
-
-set<Value *> DepGraph::getAdj(Value *V) {
-  if (!GImpl.count(V)) {
-    llvm::errs() << *V;
-    assert(0 && "DepGraph::getAdj::Missing vertex in graph!");
-    return set<Value *>();
-  }
-
-  return GImpl[V];
-}

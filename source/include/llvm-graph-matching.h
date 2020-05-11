@@ -1,4 +1,4 @@
-//===-- signature.h --===//
+//===-- llvm-graph-matching.h --===//
 //
 //                     The LLVM Compiler Infrastructure
 //
@@ -14,6 +14,8 @@
 
 #ifndef __LLVM_GRAPH_MATCHING_H__
 #define __LLVM_GRAPH_MATCHING_H__
+
+#include "data-dep-graph.h"
 
 #include "llvm/IR/InstIterator.h"
 #include "llvm/IR/InstVisitor.h"
@@ -35,30 +37,14 @@ using namespace llvm;
 
 namespace llvm {
 
-class DepGraph {
-private:
-  map<Value *, set<Value *>> GImpl;
-
-public:
-  Function *F;
-  // DepGraph(Function *F, bool useSSAEdges = false, bool debug = false);
-  DepGraph(Function *F, bool useSSAEdges = false);
-  size_t numEdges() { return GImpl.size(); };
-  vector<Value *> getVertices();
-  set<Value *> getAdj(Value *V);
-  map<Value *, set<Value *>> getImpl() { return GImpl; };
-};
-
-class Matcher {
-private:
+class MatcherBase {
+protected:
   std::map<Value *, set<Value *>> PotIMatches;
   std::set<Value *> exactIMatches;
   std::map<BasicBlock *, BasicBlock *> PotBBMatches;
   Function *F1, *F2;
-  DepGraph *G1, *G2;
+  DataDepGraph *G1, *G2;
   GlobalNumberState *GlobalNumbers;
-  Type *IgnoreType;
-  vector<Value *> VertexSet;
 
   int cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const;
   int cmpGEPs(const GetElementPtrInst *GEPL,
@@ -75,74 +61,14 @@ private:
   int cmpGlobalValues(GlobalValue *L, GlobalValue *R) const;
   int cmpMem(StringRef L, StringRef R) const;
 
-  // double matchRatio();
 public:
-  Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
-          bool potentialMatchAccuracy = false);
-  // For each instruction in F1, retrieve feasible matches in F2.
+  MatcherBase(Function *F1, Function *F2, bool useSSAEdges = false);
+
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
-  bool checkInvariant();
   bool retrievePotBBMatches();
-  // bool shallowMatch(Instruction *I1, Instruction *I2);
   bool deepMatch(Instruction *I1, Instruction *I2);
-  /*
-  **   1: procedure SimpleSim(G, Q, Φ):
-  **   2:   changed←true
-  **   3:   while changed do
-  **   4:     changed←false
-  **   5:     for u←Vq do
-  **   6:       for u' ←Q.adj(u) do
-  **   7:         for v ←Φ(u) do
-  **   8:           if G.adj(v) ∩ Φ(u') = ∅ then
-  **   9:             remove v from Φ(u)
-  **  10:             if Φ(u) = ∅ then
-  **  11:               return empty Φ
-  **  12:             end if
-  **  13:             changed←true
-  **  14:           end if
-  **  15:         end for
-  **  16:       end for
-  **  17:     end for
-  **  18:   end while
-  **  19:   return Φ
-  **  20: end procedure
-  */
-  // void simpleSimulation(Function *F1, Function *F2);
 
-  /*
-  **   1: procedure DualSim(G, Q, Φ):
-  **   2:  changed←true
-  **   3:  while changed do
-  **   4:    changed←false
-  **   5:    for u←Vq do
-  **   6:      for u' ←Q.adj(u) do
-  **   7:        Φ'(u')←∅
-  **   8:        for v ←Φ(u) do
-  **   9:          Φv(u')←G.adj(v) ∩ Φ(u')
-  **   10:         if Φv(u') = ∅ then
-  **   11:           remove v from Φ(u)
-  **   12:           if Φ(u) = ∅ then
-  **   13:             return empty Φ
-  **   14:           end if
-  **   15:           changed←true
-  **   16:         end if
-  **   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
-  **   18:       end for
-  **   19:       if Φ'(u') = ∅ then
-  **   20:         return empty Φ
-  **   21:       end if
-  **   22:       if Φ'(u') is smaller than Φ(u') then
-  **   23:         changed←true
-  **   24:       end if
-  **   25:       Φ(u') = Φ(u') ∩ Φ'(u')
-  **   26:     end for
-  **   27:   end for
-  **   28: end while
-  **   29: return Φ
-  **   30: end procedure
-  */
-  // bool dualSimulation(Function *F1, Function *F2, const vector<Value *> &V);
   bool dualSimulation(Function *F1, Function *F2);
   bool dualSimulationDriver(Function *F1, Function *F2);
 
@@ -153,10 +79,15 @@ public:
   void dumpLLVMNode(const Value *);
   set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);
 
-  void findBBCorrespondence();
   bool handleConflictingStores();
   bool handleConflictingCalls();
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
+};
+
+class Matcher : public MatcherBase {
+public:
+  Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
+          bool potentialMatchAccuracy = false);
 };
 
 } // end llvm namespace

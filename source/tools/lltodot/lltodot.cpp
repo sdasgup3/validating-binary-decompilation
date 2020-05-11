@@ -36,25 +36,26 @@
 using namespace std;
 using namespace llvm;
 
-static cl::opt<std::string> LLIR("llir_file",
-                                   cl::desc("<path/to/file.(ll/bc)>:function to convert to dot"),
-                                   cl::value_desc("Path to decompiled ll/bc file"));
+static cl::opt<std::string>
+    LLIR("llir_file",
+         cl::desc("<path/to/file.(ll/bc)>:function to convert to dot"),
+         cl::value_desc("Path to decompiled ll/bc file"));
 
-static cl::opt<std::string> Outfile("outfile",
-                                   cl::desc("<path/to/file.(dot)>: file to write dot to"),
-                                   cl::value_desc("Path to proposed output dot file"));
+static cl::opt<std::string>
+    Outfile("outfile", cl::desc("<path/to/file.(dot)>: file to write dot to"),
+            cl::value_desc("Path to proposed output dot file"));
 
 static cl::opt<bool> SSAEdgeOnly(
     "use-ssa-edges",
     cl::desc("Use only the SSA edges to create the dependency graph"));
 
-void writeHeader(raw_ostream &O, DepGraph *G) {
+void writeHeader(raw_ostream &O, DataDepGraph *G) {
   std::string GraphName = "CFG for '" + G->F->getName().str() + "' function";
   O << "digraph \"" << DOT::EscapeString(GraphName) << "\" {\n";
   O << "\n";
 }
 
-void writeFooter(raw_ostream &O, DepGraph *G) { O << "}\n"; }
+void writeFooter(raw_ostream &O, DataDepGraph *G) { O << "}\n"; }
 
 std::string getNodeLabel(const Value *Node) {
   enum { MaxColumns = 1024 };
@@ -100,7 +101,7 @@ std::string getNodeLabel(const Value *Node) {
   return OutStr;
 }
 
-void writeNodes(raw_ostream &O, DepGraph *G) {
+void writeNodes(raw_ostream &O, DataDepGraph *G) {
   for (auto p : G->getImpl()) {
     auto *Node = p.first;
     auto adjList = p.second;
@@ -122,7 +123,7 @@ void writeNodes(raw_ostream &O, DepGraph *G) {
   }
 }
 
-void writeDFGToDotFile(DepGraph *G, string OutputDFG) {
+void writeDFGToDotFile(DataDepGraph *G, string OutputDFG) {
   std::string Filename =
       OutputDFG == "" ? ("cfg." + G->F->getName() + ".dot").str() : OutputDFG;
   errs() << "Writing '" << Filename << "'...";
@@ -148,7 +149,6 @@ int main(int argc, char **argv) {
   llvm_shutdown_obj Y; // Call llvm_shutdown() on exit.
   cl::ParseCommandLineOptions(argc, argv, "Basic Matcher Algorithm\n");
 
-
   if (LLIR.empty() || Outfile.empty()) {
     errs()
         << "Provide --llir_file <ll/bc file>:func1 --outfile <path/to/dot>\n";
@@ -166,8 +166,7 @@ int main(int argc, char **argv) {
     TargetFile = LLIR.substr(0, it);
   } else {
     // TargetFile = LLIR.value();
-    errs()
-        << "Missing function name in arg. --llir_file <ll/bc file>:func1\n";
+    errs() << "Missing function name in arg. --llir_file <ll/bc file>:func1\n";
     return 1;
   }
 
@@ -184,8 +183,8 @@ int main(int argc, char **argv) {
 
   llvm::Function *F1 = nullptr;
 
-  outs() << "Extracting function [" << TargetFunc << "] from "
-                 << TargetFile << "\n";
+  outs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
+         << "\n";
 
   for (auto &Func : *TMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -213,7 +212,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  DepGraph *G = new DepGraph(F1, SSAEdgeOnly);
+  DataDepGraph *G = new DataDepGraph(F1, SSAEdgeOnly);
   writeDFGToDotFile(G, Outfile);
 
   outs() << "Dot file generated!\n\n";
