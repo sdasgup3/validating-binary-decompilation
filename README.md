@@ -23,14 +23,15 @@ compositional lifter based on the validated translations to generate LLVM IR,
 ## Table of Contents
   - [Documentation](#Documentation)
   - [Evaluation w/o Installation](#Evaluation-without-Installation)
+  - [Directory Structure & Tool Information](#Directory-Structure)
   - [Checkout Repository](#Checkout-Repository)
-  - [Directory Structure](#Directory-Structure)
   - [Installation](#Installation)
     - [Relevant for Single Instruction Validation](#Relevant-for-Single-Instruction-Validation)
     - [Relevant for Program Level Validation](#Relevant-for-Program-Level-Validation)
   - [Evaluation/Testing](#Testing)
     - [Running SIV Pipeline](#Running-SIV-Pipeline)
     - [Running PLV Pipeline](#Running-PLV-Pipeline)
+  - [Experimental Matcher](#Experimental-Matcher)
 
 ## Documentation
  - A Scalable Validation of Binary Lifters, PLDI 2020
@@ -39,15 +40,6 @@ by Sandeep Dasgupta, Sushant Dinesh, Deepan Venkatesh, Vikram S. Adve & Christop
 ## Evaluation without Installation
  - [Peer Evaluated Artifacts](https://github.com/sdasgup3/PLDI20-Artifact-Evaluation)
 
-
-## Checkout Repository
-```C
-export REPO_PATH=${HOME}/Github/ # could be any path
-cd $REPO_PATH/
-git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
-git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
-                                                      # evaluate the project.
-```
 
 ## Directory Structure 
  - [source: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source)Source Code :-
@@ -75,6 +67,16 @@ git clone https://github.com/sdasgup3/compd_cache.git # required only if you wis
 
  - [tests/single_instruction_translation_validation: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation)Single Instruction Validation
  - [tests/program_translation_validation: ](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation)Program Level Validation
+
+
+## Checkout Repository
+```C
+export REPO_PATH=${HOME}/Github/ # could be any path
+cd $REPO_PATH/
+git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
+                                                      # evaluate the project.
+```
 
 ## Installation
 
@@ -153,7 +155,7 @@ The installation goal is to build tools like
 [Matcher](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/matcher),
 and
 [spec-to-smt](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/tools/spec-to-smt).
-The tools are developed using the libraries of stoke and LLVM, to be installed
+Except The Matcher, which is purely a LLVM based tool, the other tools are developed using the libraries of Stoke and LLVM, to be installed
 as pre-requisites.
 
 #### Installing Pre-requisites
@@ -275,8 +277,6 @@ as pre-requisites.
     export REPO_PATH=${HOME}/Github/ # could be any path
     cd $REPO_PATH/
     git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
-    git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
-                                                          # evaluate the project.
   ```
 
   - Install
@@ -571,3 +571,29 @@ Note that, for each function entry in `docs/reported_stats/7.log docs/reported_s
 The functions in `docs/reported_stats/7.log docs/reported_stats/1.log` constitutes the total passing cases.
 
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation/README.md)
+
+
+## Experimental Matcher
+**Iterative Pruning based Matcher:** Iteratively prunes the matched sub-
+graphs and look for more isomorphic matches after canonicalizing the residual graph.
+This ehancement of the matcher is based on the insight that the residual graphs will be much straight-
+forward, in terms of the aliasing relations among instructions, for the optimization
+passes to canonicalize effectively. 
+
+### Build Instructions
+  - Checkout Repository
+  ```bash
+    export REPO_PATH=${HOME}/Github/ # could be any path
+    cd $REPO_PATH/
+    git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+  ```
+
+  - Install
+  ```bash
+    mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
+    cd !$
+
+    cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
+    make -j8 matcher
+  ```
+

@@ -32,32 +32,21 @@
 #include <regex>
 #include <string>
 #include <vector>
-// Stoke imports
-#include "src/ext/cpputil/include/command_line/command_line.h"
-#include "src/ext/cpputil/include/io/console.h"
-#include "src/ext/cpputil/include/signal/debug_handler.h"
-#include "src/ext/cpputil/include/system/terminal.h"
-
-//#include "llvm-dfg-dot.h"
-#include "tools/gadgets/functions.h"
-#include "tools/gadgets/target.h"
 
 using namespace std;
 using namespace llvm;
-using namespace cpputil;
-using namespace stoke;
 
-auto &LLIR = ValueArg<string>::create("llir_file")
-                 .usage("<path/to/file.(ll/bc)>:function to convert to dot")
-                 .description("Path to decompiled ll/bc file");
+static cl::opt<std::string> LLIR("llir_file",
+                                   cl::desc("<path/to/file.(ll/bc)>:function to convert to dot"),
+                                   cl::value_desc("Path to decompiled ll/bc file"));
 
-auto &Outfile = ValueArg<string>::create("outfile")
-                    .usage("<path/to/file.(dot)>: file to write dot to")
-                    .description("Path to proposed output dot file");
+static cl::opt<std::string> Outfile("outfile",
+                                   cl::desc("<path/to/file.(dot)>: file to write dot to"),
+                                   cl::value_desc("Path to proposed output dot file"));
 
-auto &SSAEdgeOnly =
-    FlagArg::create("use-ssa-edges")
-        .description("Use only the SSA edges to create the dependency graph");
+static cl::opt<bool> SSAEdgeOnly(
+    "use-ssa-edges",
+    cl::desc("Use only the SSA edges to create the dependency graph"));
 
 void writeHeader(raw_ostream &O, DepGraph *G) {
   std::string GraphName = "CFG for '" + G->F->getName().str() + "' function";
@@ -154,13 +143,14 @@ void writeDFGToDotFile(DepGraph *G, string OutputDFG) {
 }
 
 int main(int argc, char **argv) {
-  target_arg.required(false);
-  CommandLineConfig::strict_with_convenience(argc, argv);
-  DebugHandler::install_sigsegv();
-  DebugHandler::install_sigill();
+  sys::PrintStackTraceOnErrorSignal(argv[0]);
+  PrettyStackTraceProgram X(argc, argv);
+  llvm_shutdown_obj Y; // Call llvm_shutdown() on exit.
+  cl::ParseCommandLineOptions(argc, argv, "Basic Matcher Algorithm\n");
 
-  if (LLIR.value().empty() || Outfile.value().empty()) {
-    Console::msg()
+
+  if (LLIR.empty() || Outfile.empty()) {
+    errs()
         << "Provide --llir_file <ll/bc file>:func1 --outfile <path/to/dot>\n";
     return 1;
   }
@@ -171,12 +161,12 @@ int main(int argc, char **argv) {
 
   size_t it;
 
-  if ((it = LLIR.value().find(':')) != string::npos) {
-    TargetFunc = LLIR.value().substr(it + 1);
-    TargetFile = LLIR.value().substr(0, it);
+  if ((it = LLIR.find(':')) != string::npos) {
+    TargetFunc = LLIR.substr(it + 1);
+    TargetFile = LLIR.substr(0, it);
   } else {
     // TargetFile = LLIR.value();
-    Console::msg()
+    errs()
         << "Missing function name in arg. --llir_file <ll/bc file>:func1\n";
     return 1;
   }
@@ -185,7 +175,7 @@ int main(int argc, char **argv) {
   LLVMContext Context;
 
   // Reading llvm files and extracting functions to match
-  Console::msg() << "Reading LLVM: " << TargetFile << "\n";
+  outs() << "Reading LLVM: " << TargetFile << "\n";
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
@@ -194,7 +184,7 @@ int main(int argc, char **argv) {
 
   llvm::Function *F1 = nullptr;
 
-  Console::msg() << "Extracting function [" << TargetFunc << "] from "
+  outs() << "Extracting function [" << TargetFunc << "] from "
                  << TargetFile << "\n";
 
   for (auto &Func : *TMod) {
@@ -219,13 +209,13 @@ int main(int argc, char **argv) {
   }
 
   if (!F1) {
-    Console::msg() << "Missing function name: " << TargetFunc << endl;
+    errs() << "Missing function name: " << TargetFunc << "\n";
     return 1;
   }
 
-  DepGraph *G = new DepGraph(F1, SSAEdgeOnly.value());
-  writeDFGToDotFile(G, Outfile.value());
+  DepGraph *G = new DepGraph(F1, SSAEdgeOnly);
+  writeDFGToDotFile(G, Outfile);
 
-  Console::msg() << "Dot file generated!\n\n";
+  outs() << "Dot file generated!\n\n";
   return 0;
 }

@@ -9,7 +9,6 @@
 
 #include <unordered_map>
 
-#include "llvm-dfg-dot.h"
 #include "llvm-graph-matching.h"
 #include "memssa.h"
 

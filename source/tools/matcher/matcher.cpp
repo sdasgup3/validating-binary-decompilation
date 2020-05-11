@@ -31,46 +31,34 @@
 #include <regex>
 #include <string>
 #include <vector>
-// Stoke imports
-#include "src/ext/cpputil/include/command_line/command_line.h"
-#include "src/ext/cpputil/include/io/console.h"
-#include "src/ext/cpputil/include/signal/debug_handler.h"
-#include "src/ext/cpputil/include/system/terminal.h"
-
-#include "tools/gadgets/functions.h"
-#include "tools/gadgets/target.h"
 
 using namespace std;
 using namespace llvm;
-using namespace cpputil;
-using namespace stoke;
+static cl::opt<std::string> Target("file1",
+                                   cl::desc("<input .llvm file>:function"),
+                                   cl::value_desc("filename"));
 
-auto &Target = ValueArg<string>::create("file1")
-                   .usage("<path/to/file.(ll/bc)>:function to analyze in file1")
-                   .description("Path to decompiled ll/bc file");
+static cl::opt<std::string> Source("file2",
+                                   cl::desc("<input .llvm file>:function"),
+                                   cl::value_desc("filename"));
 
-auto &Source = ValueArg<string>::create("file2")
-                   .usage("<path/to/file.(ll/bc)>:function to analyze in file2")
-                   .description("Path to proposed ll/bc file");
+static cl::opt<bool> SSAEdgeOnly(
+    "use-ssa-edges",
+    cl::desc("Use only the SSA edges to create the dependency graph"));
 
-auto &SSAEdgeOnly =
-    FlagArg::create("use-ssa-edges")
-        .description("Use only the SSA edges to create the dependency graph");
-
-auto &PotentialMatchAccurancy =
-    FlagArg::create("potential-match-accuracy")
-        .description("Report the accuracy of inital potential match without "
-                     "running the dual-sim matching algo");
+static cl::opt<bool> PotentialMatchAccurancy(
+    "potential-match-accuracy",
+    cl::desc("Report the accuracy of inital potential match without "
+             "running the dual-sim matching algo"));
 
 int main(int argc, char **argv) {
-  target_arg.required(false);
-  CommandLineConfig::strict_with_convenience(argc, argv);
-  DebugHandler::install_sigsegv();
-  DebugHandler::install_sigill();
+  sys::PrintStackTraceOnErrorSignal(argv[0]);
+  PrettyStackTraceProgram X(argc, argv);
+  llvm_shutdown_obj Y; // Call llvm_shutdown() on exit.
+  cl::ParseCommandLineOptions(argc, argv, "Basic Matcher Algorithm\n");
 
-  if (Target.value().empty() || Source.value().empty()) {
-    Console::msg()
-        << "Provide --file1 <ll/bc file>:func1 --file2 <ll/bc file>:func2\n";
+  if (Target.empty() || Source.empty()) {
+    errs() << "Provide --file1 <ll/bc file>:func1 --file2 <ll/bc file>:func2\n";
     return 1;
   }
 
@@ -78,34 +66,34 @@ int main(int argc, char **argv) {
   std::string TargetFunc("");
   std::string TargetFile("");
   size_t it;
-  if ((it = Target.value().find(':')) != string::npos) {
-    TargetFunc = Target.value().substr(it + 1);
-    TargetFile = Target.value().substr(0, it);
+  if ((it = Target.find(':')) != string::npos) {
+    TargetFunc = Target.substr(it + 1);
+    TargetFile = Target.substr(0, it);
   } else {
-    TargetFile = Target.value();
+    TargetFile = Target;
   }
 
   std::string SourceFunc("");
   std::string SourceFile("");
-  if ((it = Source.value().find(':')) != string::npos) {
-    SourceFunc = Source.value().substr(it + 1);
-    SourceFile = Source.value().substr(0, it);
+  if ((it = Source.find(':')) != string::npos) {
+    SourceFunc = Source.substr(it + 1);
+    SourceFile = Source.substr(0, it);
   } else {
-    SourceFile = Source.value();
+    SourceFile = Source;
   }
 
   SMDiagnostic Err;
   LLVMContext Context;
 
   // Reading llvm files and extracting functions to match
-  Console::msg() << "Reading LLVM: " << TargetFile << "\n";
+  outs() << "Reading LLVM: " << TargetFile << "\n";
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
-  Console::msg() << "Reading LLVM: " << SourceFile << "\n";
+  outs() << "Reading LLVM: " << SourceFile << "\n";
   std::unique_ptr<Module> SMod(parseIRFile(SourceFile, Err, Context));
   if (!SMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
@@ -114,8 +102,8 @@ int main(int argc, char **argv) {
 
   llvm::Function *F1 = nullptr, *F2 = nullptr;
 
-  Console::msg() << "Extracting function [" << TargetFunc << "] from "
-                 << TargetFile << "\n";
+  outs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
+         << "\n";
   for (auto &Func : *TMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
@@ -131,22 +119,20 @@ int main(int argc, char **argv) {
     } else if (string::npos != TargetFile.find("mcsema")) {
       smatch m;
       string funcName(Func.getName().str());
-      // if (regex_search(funcName, m, std::regex("sub.*_" + TargetFunc + "$"))
-      // ==
       if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
                                                TargetFunc + "$")) == false) {
         continue;
       }
     } else {
-      Console::error(1) << "Missing mcsema/proposed keyword in the file names"
-                        << endl;
+      errs() << "Missing mcsema/proposed keyword in the file names"
+             << "\n";
     }
 
     F1 = &Func;
     break;
   }
 
-  Console::msg() << "Extracting function [" << SourceFunc << "] from "
+  outs() << "Extracting function [" << SourceFunc << "] from "
                  << SourceFile << "\n";
   for (auto &Func : *SMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -163,15 +149,13 @@ int main(int argc, char **argv) {
     } else if (string::npos != SourceFile.find("mcsema")) {
       smatch m;
       string funcName(Func.getName().str());
-      // if (regex_search(funcName, m, std::regex("sub.*_" + SourceFunc + "$"))
-      // ==
       if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
                                                SourceFunc + "$")) == false) {
         continue;
       }
     } else {
-      Console::error(1) << "Missing mcsema/proposed keyword in the file names"
-                        << endl;
+      errs() << "Missing mcsema/proposed keyword in the file names"
+             << "\n";
     }
 
     F2 = &Func;
@@ -179,14 +163,14 @@ int main(int argc, char **argv) {
   }
 
   if (!F1 || !F2) {
-    Console::msg() << "Missing function name: " << TargetFunc << " or "
-                   << SourceFunc << "\n";
+    errs() << "Missing function name: " << TargetFunc << " or " << SourceFunc
+           << "\n";
     return 1;
   }
 
   // Matching the extracted functions
-  Matcher M(F1, F2, SSAEdgeOnly.value(), PotentialMatchAccurancy.value());
+  Matcher M(F1, F2, SSAEdgeOnly, PotentialMatchAccurancy);
 
-  Console::msg() << "Matcher Done...\n";
+  errs() << "Matcher Done...\n";
   return 0;
 }
