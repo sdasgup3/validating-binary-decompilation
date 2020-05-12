@@ -12,6 +12,199 @@
 using namespace llvm;
 
 /*********************
+********** IterativePruningMatcher ***********
+*********************/
+IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
+                                                 bool useSSAEdges,
+                                                 bool potentialMatchAccuracy)
+    : MatcherBase(f1, f2, useSSAEdges) {
+
+#ifdef MATCHER_DEBUG
+  llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
+               << "\n";
+#endif
+
+  G1 = new DataDepGraph(F1, useSSAEdges);
+  G2 = new DataDepGraph(F2, useSSAEdges);
+
+  retrievePotIMatches(F1, F2, potentialMatchAccuracy);
+
+  if (potentialMatchAccuracy)
+    return;
+
+  auto res = dualSimulationDriver(F1, F2);
+
+  if (res)
+    llvm::errs() << "Iso Match Found\n";
+  else
+    llvm::errs() << "Iso Match NOT Found\n";
+}
+
+void IterativePruningMatcher::retrievePotIMatches(Function *F1, Function *F2,
+                                                  bool potentialMatchAccuracy) {
+  if (!initialArgumentsMatch(F1, F2)) {
+    assert(0 && "Problem with Initial Match");
+    return;
+  }
+
+  auto totalNodes = 0;
+  size_t foundPotMatches = 0;
+
+  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+    totalNodes++;
+    for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
+      if (deepMatch(&*I1, &*I2)) {
+        PotIMatches[&*I1].insert(&*I2);
+
+        if (potentialMatchAccuracy) {
+          foundPotMatches++;
+          break;
+        }
+      }
+    }
+  }
+
+  if (potentialMatchAccuracy) {
+    llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
+                 << "\n";
+    llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
+    return;
+  }
+
+#ifdef MATCHER_DEBUG
+  llvm::errs() << "\n\n[Info] Retrieve Potential Matches...\n";
+  dumpPotIMatches();
+  dumpPotIMatchesStats();
+#endif
+}
+
+/*
+  Contraining the potential matches for geps, helps
+  disamguating many downstream istructions including stores.
+
+  We should not constrain the stores based on control flow at this point,
+  because the dualSim algo can handle to some degree out of order stores.
+*/
+bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2) {
+  if (!I1 || !I2)
+    return false;
+
+  if (I1->getOpcode() != I2->getOpcode())
+    return false;
+
+  // Arity Match
+  // size_t arityCount1 = G1->getAdj(I1).size();
+  // size_t arityCount2 = G2->getAdj(I2).size();
+
+  // if (arityCount1 != arityCount2)
+  //   return false;
+
+  const GetElementPtrInst *GEPL = dyn_cast<GetElementPtrInst>(I1);
+  const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
+
+  if (GEPL && GEPR) {
+    return cmpGEPs(GEPL, GEPR) == 0;
+  }
+
+  if (I1->isBinaryOp()) {
+    assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands() &&
+           "deepMatch Assert!!");
+    for (size_t i = 0; i < I1->getNumOperands(); i++) {
+      Constant *L = dyn_cast<Constant>(I1->getOperand(i));
+      Constant *R = dyn_cast<Constant>(I2->getOperand(i));
+
+      if (!L && !R)
+        continue;
+
+      if ((L && !R) || (!L && R))
+        return false;
+
+      if (L->getValueID() == Value::ConstantExprVal &&
+          R->getValueID() == Value::ConstantIntVal) {
+        continue;
+      }
+
+      if (R->getValueID() == Value::ConstantExprVal &&
+          L->getValueID() == Value::ConstantIntVal) {
+        continue;
+      }
+
+      if (cmpConstants(L, R) != 0) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+bool IterativePruningMatcher::dualSimulationDriver(Function *F1, Function *F2) {
+  bool changed = true;
+#ifdef MATCHER_DEBUG
+  size_t round = 0;
+#endif
+  while (changed) {
+// Run dual simulation
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
+                 << ": Round: " << round << "\n";
+#endif
+    changed = dualSimulation(F1, F2);
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n\n[Info] After Dual Simulation"
+                 << ": Round: " << round << "\n";
+    dumpPotIMatches();
+#endif
+
+// Find BasicBlock correspondence
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= retrievePotBBMatches();
+
+// Handle conflicting stores/calls
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingStores();
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingCalls();
+
+#ifdef MATCHER_DEBUG
+    round++;
+#endif
+  }
+
+  // Check final results
+  llvm::errs() << "\n[Info]: Check for multiple matches\n";
+  bool result = true;
+  for (auto U : G1->VertexSet) {
+    auto V = PotIMatches.at(&*U);
+    if (V.size() != 1) {
+      if (dyn_cast<BranchInst>(&*U))
+        continue;
+
+      result = false;
+      // Multiple matches
+      llvm::errs() << "Multiple matches exist for ";
+      dumpLLVMNode(U);
+      for (auto p : V) {
+        dumpLLVMNode(p);
+      }
+    }
+  }
+
+  return result;
+}
+
+/*********************
 ********** Matcher ***********
 *********************/
 Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
@@ -39,14 +232,55 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
     llvm::errs() << "Iso Match NOT Found\n";
 }
 
-/*********************
-********** MatcherBase ***********
-*********************/
-MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
-  F1 = f1;
-  F2 = f2;
+void Matcher::retrievePotIMatches(Function *F1, Function *F2,
+                                  bool potentialMatchAccuracy) {
+  if (!initialArgumentsMatch(F1, F2)) {
+    assert(0 && "Problem with Initial Match");
+    return;
+  }
 
-  GlobalNumbers = new GlobalNumberState();
+  auto totalNodes = 0;
+  size_t foundPotMatches = 0;
+
+  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+    totalNodes++;
+    for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
+      if (deepMatch(&*I1, &*I2)) {
+        PotIMatches[&*I1].insert(&*I2);
+
+        if (potentialMatchAccuracy) {
+          foundPotMatches++;
+          break;
+        }
+      }
+    }
+
+    if (potentialMatchAccuracy) {
+      continue;
+    }
+
+    if (PotIMatches[&*I1].size() == 0) {
+      llvm::errs()
+          << "\n\n[Error] Failed to extract initial Potential Matches for:";
+      dumpLLVMNode(&*I1);
+      assert(
+          0 &&
+          "[Error in retrievePotIMatches] Failed to extract Potential Matches");
+    }
+  }
+
+  if (potentialMatchAccuracy) {
+    llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
+                 << "\n";
+    llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
+    return;
+  }
+
+#ifdef MATCHER_DEBUG
+  llvm::errs() << "\n\n[Info] Retrieve Potential Matches...\n";
+  dumpPotIMatches();
+  dumpPotIMatchesStats();
+#endif
 }
 
 /*
@@ -56,7 +290,7 @@ MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
   We should not constrain the stores based on control flow at this point,
   because the dualSim algo can handle to some degree out of order stores.
 */
-bool MatcherBase::deepMatch(Instruction *I1, Instruction *I2) {
+bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   if (!I1 || !I2)
     return false;
 
@@ -109,55 +343,80 @@ bool MatcherBase::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-void MatcherBase::retrievePotIMatches(Function *F1, Function *F2,
-                                      bool potentialMatchAccuracy) {
-  if (!initialArgumentsMatch(F1, F2)) {
-    assert(0 && "Problem with Initial Match");
-    return;
-  }
-
-  auto totalNodes = 0;
-  size_t foundPotMatches = 0;
-
-  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
-    totalNodes++;
-    for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
-      if (deepMatch(&*I1, &*I2)) {
-        PotIMatches[&*I1].insert(&*I2);
-
-        if (potentialMatchAccuracy) {
-          foundPotMatches++;
-          break;
-        }
-      }
-    }
-
-    if (potentialMatchAccuracy) {
-      continue;
-    }
-
-    if (PotIMatches[&*I1].size() == 0) {
-      llvm::errs()
-          << "\n\n[Error] Failed to extract initial Potential Matches for:";
-      dumpLLVMNode(&*I1);
-      assert(
-          0 &&
-          "[Error in retrievePotIMatches] Failed to extract Potential Matches");
-    }
-  }
-
-  if (potentialMatchAccuracy) {
-    llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
-                 << "\n";
-    llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
-    return;
-  }
+bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
+  bool changed = true;
+#ifdef MATCHER_DEBUG
+  size_t round = 0;
+#endif
+  while (changed) {
+// Run dual simulation
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
+                 << ": Round: " << round << "\n";
+#endif
+    changed = dualSimulation(F1, F2);
 
 #ifdef MATCHER_DEBUG
-  llvm::errs() << "\n\n[Info] Retrieve Potential Matches...\n";
-  dumpPotIMatches();
-  dumpPotIMatchesStats();
+    llvm::errs() << "\n\n[Info] After Dual Simulation"
+                 << ": Round: " << round << "\n";
+    dumpPotIMatches();
 #endif
+
+// Find BasicBlock correspondence
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= retrievePotBBMatches();
+
+// Handle conflicting stores/calls
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingStores();
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingCalls();
+
+#ifdef MATCHER_DEBUG
+    round++;
+#endif
+  }
+
+  // Check final results
+  llvm::errs() << "\n[Info]: Check for multiple matches\n";
+  bool result = true;
+  for (auto U : G1->VertexSet) {
+    auto V = PotIMatches.at(&*U);
+    if (V.size() != 1) {
+      if (dyn_cast<BranchInst>(&*U))
+        continue;
+
+      result = false;
+      // Multiple matches
+      llvm::errs() << "Multiple matches exist for ";
+      dumpLLVMNode(U);
+      for (auto p : V) {
+        dumpLLVMNode(p);
+      }
+    }
+  }
+
+  return result;
+}
+
+/*********************
+********** MatcherBase ***********
+*********************/
+MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
+  F1 = f1;
+  F2 = f2;
+
+  GlobalNumbers = new GlobalNumberState();
 }
 
 // Retrieve BB correspondence based on exact matches
@@ -275,74 +534,6 @@ static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
   }
 
   return retval;
-}
-
-bool MatcherBase::dualSimulationDriver(Function *F1, Function *F2) {
-  bool changed = true;
-#ifdef MATCHER_DEBUG
-  size_t round = 0;
-#endif
-  while (changed) {
-// Run dual simulation
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
-                 << ": Round: " << round << "\n";
-#endif
-    // changed = dualSimulation(F1, F2, V);
-    changed = dualSimulation(F1, F2);
-
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n\n[Info] After Dual Simulation"
-                 << ": Round: " << round << "\n";
-    dumpPotIMatches();
-#endif
-
-// Find BasicBlock correspondence
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
-                 << ": Round: " << round << "\n";
-#endif
-    // changed |= retrievePotBBMatches(V);
-    changed |= retrievePotBBMatches();
-
-// Handle conflicting stores/calls
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= handleConflictingStores();
-
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= handleConflictingCalls();
-
-#ifdef MATCHER_DEBUG
-    round++;
-#endif
-  }
-
-  // Check final results
-  llvm::errs() << "\n[Info]: Check for multiple matches\n";
-  bool result = true;
-  for (auto U : G1->VertexSet) {
-    auto V = PotIMatches.at(&*U);
-    if (V.size() != 1) {
-      if (dyn_cast<BranchInst>(&*U))
-        continue;
-
-      result = false;
-      // Multiple matches
-      llvm::errs() << "Multiple matches exist for ";
-      dumpLLVMNode(U);
-      for (auto p : V) {
-        dumpLLVMNode(p);
-      }
-    }
-  }
-
-  return result;
 }
 
 /*

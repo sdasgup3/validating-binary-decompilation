@@ -37,6 +37,9 @@ using namespace llvm;
 
 namespace llvm {
 
+/*********************
+********** MatcherBase ***********
+*********************/
 class MatcherBase {
 protected:
   std::map<Value *, set<Value *>> PotIMatches;
@@ -64,13 +67,14 @@ protected:
 public:
   MatcherBase(Function *F1, Function *F2, bool useSSAEdges = false);
 
-  void retrievePotIMatches(Function *F1, Function *F2,
-                           bool potentialMatchAccuracy = false);
+  virtual void retrievePotIMatches(Function *F1, Function *F2,
+                                   bool potentialMatchAccuracy = false) = 0;
+  virtual bool deepMatch(Instruction *I1, Instruction *I2) = 0;
+  virtual bool dualSimulationDriver(Function *F1, Function *F2) = 0;
+
   bool retrievePotBBMatches();
-  bool deepMatch(Instruction *I1, Instruction *I2);
 
   bool dualSimulation(Function *F1, Function *F2);
-  bool dualSimulationDriver(Function *F1, Function *F2);
 
   bool initialArgumentsMatch(Function *F1, Function *F2);
   void dumpPotIMatches();
@@ -84,10 +88,30 @@ public:
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
 };
 
+/*********************
+********** Matcher ***********
+*********************/
 class Matcher : public MatcherBase {
 public:
   Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
           bool potentialMatchAccuracy = false);
+  void retrievePotIMatches(Function *F1, Function *F2,
+                           bool potentialMatchAccuracy = false);
+  virtual bool deepMatch(Instruction *I1, Instruction *I2);
+  bool dualSimulationDriver(Function *F1, Function *F2);
+};
+
+/*********************
+********** IterativePruningMatcher ***********
+*********************/
+class IterativePruningMatcher : public MatcherBase {
+public:
+  IterativePruningMatcher(Function *F1, Function *F2, bool useSSAEdges = false,
+                          bool potentialMatchAccuracy = false);
+  void retrievePotIMatches(Function *F1, Function *F2,
+                           bool potentialMatchAccuracy = false);
+  virtual bool deepMatch(Instruction *I1, Instruction *I2);
+  bool dualSimulationDriver(Function *F1, Function *F2);
 };
 
 } // end llvm namespace
