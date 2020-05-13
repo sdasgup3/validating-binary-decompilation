@@ -42,7 +42,6 @@ namespace llvm {
 *********************/
 class MatcherBase {
 protected:
-  std::map<Value *, set<Value *>> PotIMatches;
   std::set<Value *> exactIMatches;
   std::map<BasicBlock *, BasicBlock *> PotBBMatches;
   Function *F1, *F2;
@@ -67,18 +66,28 @@ protected:
 public:
   MatcherBase(Function *F1, Function *F2, bool useSSAEdges = false);
 
+  // To be overridden
   virtual void retrievePotIMatches(Function *F1, Function *F2,
                                    bool potentialMatchAccuracy = false) = 0;
   virtual bool deepMatch(Instruction *I1, Instruction *I2) = 0;
-  virtual bool dualSimulationDriver(Function *F1, Function *F2) = 0;
+  virtual void dumpPotIMatches() = 0;
+  virtual void dumpPotIMatchesStats() = 0;
+  virtual bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
+                              std::map<Value *, set<Value *>> &Phi) = 0;
+  virtual void postMatchingAction() = 0;
 
-  bool retrievePotBBMatches();
+  virtual void dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
+                                    std::map<Value *, set<Value *>> &Phi);
+  bool retrievePotBBMatches(DataDepGraph *g1,
+                            std::map<Value *, set<Value *>> &Phi);
+  bool handleConflictingStores(DataDepGraph *g1,
+                               std::map<Value *, set<Value *>> &Phi);
+  bool handleConflictingCalls(DataDepGraph *g1,
+                              std::map<Value *, set<Value *>> &Phi);
 
-  bool dualSimulation(Function *F1, Function *F2);
-
-  bool initialArgumentsMatch(Function *F1, Function *F2);
-  void dumpPotIMatches();
-  void dumpPotIMatchesStats();
+  // Common Functionality
+  bool initialArgumentsMatch(Function *F1, Function *F2,
+                             std::map<Value *, set<Value *>> &Phi);
   void dumpPotBBMatches();
   void dumpLLVMNode(const Value *);
   set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);
@@ -92,26 +101,41 @@ public:
 ********** Matcher ***********
 *********************/
 class Matcher : public MatcherBase {
+private:
+  std::map<Value *, set<Value *>> PotIMatches;
+
 public:
   Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
   virtual bool deepMatch(Instruction *I1, Instruction *I2);
-  bool dualSimulationDriver(Function *F1, Function *F2);
+  void dumpPotIMatches();
+  void dumpPotIMatchesStats();
+  bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
+                      std::map<Value *, set<Value *>> &Phi);
+  void postMatchingAction();
 };
 
 /*********************
 ********** IterativePruningMatcher ***********
 *********************/
 class IterativePruningMatcher : public MatcherBase {
+private:
+  std::map<Value *, set<Value *>> PotIMatches1;
+  std::map<Value *, set<Value *>> PotIMatches2;
+
 public:
   IterativePruningMatcher(Function *F1, Function *F2, bool useSSAEdges = false,
                           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
   virtual bool deepMatch(Instruction *I1, Instruction *I2);
-  bool dualSimulationDriver(Function *F1, Function *F2);
+  void dumpPotIMatches();
+  void dumpPotIMatchesStats();
+  bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
+                      std::map<Value *, set<Value *>> &Phi);
+  void postMatchingAction();
 };
 
 } // end llvm namespace

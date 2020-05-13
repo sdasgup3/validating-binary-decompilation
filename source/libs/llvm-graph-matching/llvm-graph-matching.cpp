@@ -12,7 +12,7 @@
 using namespace llvm;
 
 /*********************
-********** IterativePruningMatcher ***********
+********** Class::IterativePruningMatcher ***********
 *********************/
 IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
                                                  bool useSSAEdges,
@@ -20,55 +20,42 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
     : MatcherBase(f1, f2, useSSAEdges) {
 
 #ifdef MATCHER_DEBUG
-  llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
+  llvm::errs() << "Matching " << f1->getName() << " Vs " << f2->getName()
                << "\n";
 #endif
 
-  G1 = new DataDepGraph(F1, useSSAEdges);
-  G2 = new DataDepGraph(F2, useSSAEdges);
+  G1 = new DataDepGraph(f1, useSSAEdges);
+  G2 = new DataDepGraph(f2, useSSAEdges);
 
-  retrievePotIMatches(F1, F2, potentialMatchAccuracy);
+  retrievePotIMatches(f1, f2, potentialMatchAccuracy);
 
-  if (potentialMatchAccuracy)
-    return;
-
-  auto res = dualSimulationDriver(F1, F2);
-
-  if (res)
-    llvm::errs() << "Iso Match Found\n";
-  else
-    llvm::errs() << "Iso Match NOT Found\n";
+  dualSimulationDriver(G1, G2, PotIMatches1);
+  dualSimulationDriver(G2, G1, PotIMatches2);
+  postMatchingAction();
 }
 
-void IterativePruningMatcher::retrievePotIMatches(Function *F1, Function *F2,
+void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
                                                   bool potentialMatchAccuracy) {
-  if (!initialArgumentsMatch(F1, F2)) {
+  if (!initialArgumentsMatch(f1, f2, PotIMatches1) ||
+      !initialArgumentsMatch(f2, f1, PotIMatches2)) {
     assert(0 && "Problem with Initial Match");
     return;
   }
 
-  auto totalNodes = 0;
-  size_t foundPotMatches = 0;
-
-  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
-    totalNodes++;
-    for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
+  for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
+    for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
       if (deepMatch(&*I1, &*I2)) {
-        PotIMatches[&*I1].insert(&*I2);
-
-        if (potentialMatchAccuracy) {
-          foundPotMatches++;
-          break;
-        }
+        PotIMatches1[&*I1].insert(&*I2);
       }
     }
   }
 
-  if (potentialMatchAccuracy) {
-    llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
-                 << "\n";
-    llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
-    return;
+  for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
+    for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
+      if (deepMatch(&*I2, &*I1)) {
+        PotIMatches2[&*I2].insert(&*I1);
+      }
+    }
   }
 
 #ifdef MATCHER_DEBUG
@@ -138,103 +125,160 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-bool IterativePruningMatcher::dualSimulationDriver(Function *F1, Function *F2) {
+/*
+**   1: procedure DualSim(G, Q, Φ):
+**   2:  changed←true
+**   3:  while changed do
+**   4:    changed←false
+**   5:    for u←Vq do
+**   6:      for u' ←Q.adj(u) do
+**   7:        Φ'(u')←∅
+**   8:        for v ←Φ(u) do
+**   9:          Φv(u')←G.adj(v) ∩ Φ(u')
+**   10:         if Φv(u') = ∅ then
+**   11:           remove v from Φ(u)
+**   12:           if Φ(u) = ∅ then
+**   13:             return empty Φ
+**   14:           end if
+**   15:           changed←true
+**   16:         end if
+**   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
+**   18:       end for
+**   19:       if Φ'(u') = ∅ then
+**   20:         return empty Φ
+**   21:       end if
+**   22:       if Φ'(u') is smaller than Φ(u') then
+**   23:         changed←true
+**   24:       end if
+**   25:       Φ(u') = Φ(u') ∩ Φ'(u')
+**   26:     end for
+**   27:   end for
+**   28: end while
+**   29: return Φ
+**   30: end procedure
+*/
+bool IterativePruningMatcher::dualSimulation(
+    DataDepGraph *g1, DataDepGraph *g2, std::map<Value *, set<Value *>> &Phi) {
+
+  // 2:  changed←true
   bool changed = true;
-#ifdef MATCHER_DEBUG
-  size_t round = 0;
-#endif
+  // 3:  while changed do
   while (changed) {
-// Run dual simulation
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
-                 << ": Round: " << round << "\n";
-#endif
-    changed = dualSimulation(F1, F2);
 
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n\n[Info] After Dual Simulation"
-                 << ": Round: " << round << "\n";
-    dumpPotIMatches();
-#endif
+    // 4: changed←false
+    changed = false;
 
-// Find BasicBlock correspondence
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= retrievePotBBMatches();
+    // 5: for u←Vq do
+    for (auto U : g1->VertexSet) {
 
-// Handle conflicting stores/calls
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= handleConflictingStores();
-
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= handleConflictingCalls();
-
-#ifdef MATCHER_DEBUG
-    round++;
-#endif
-  }
-
-  // Check final results
-  llvm::errs() << "\n[Info]: Check for multiple matches\n";
-  bool result = true;
-  for (auto U : G1->VertexSet) {
-    auto V = PotIMatches.at(&*U);
-    if (V.size() != 1) {
-      if (dyn_cast<BranchInst>(&*U))
+      if (dyn_cast<CallInst>(U))
         continue;
 
-      result = false;
-      // Multiple matches
-      llvm::errs() << "Multiple matches exist for ";
-      dumpLLVMNode(U);
-      for (auto p : V) {
-        dumpLLVMNode(p);
+      map<Value *, set<Value *>> matchingVForAllUPrime;
+      // 6: for u' ←Q.adj(u) do
+      for (auto *UPrime : g1->getAdj(U)) {
+
+        // 7:        Φ'(u')←∅
+        set<Value *> refinedUPrimeMatches;
+        // vector<Value *> deleteList;
+
+        // 8: for v ←Φ(u) do
+        for (auto V : Phi.at(&*U)) {
+
+          // 9: Φv(u')←G.adj(v) ∩ Φ(u')
+          if (!Phi.count(UPrime)) {
+            continue;
+          }
+
+          set<Value *> &UPrimeMatches = Phi.at(UPrime);
+          set<Value *> VAdj = g2->getAdj(V);
+
+          auto tempList = Intersection(UPrimeMatches, VAdj);
+
+          // 17: Φ'(u')←Φ'(u') ∪ Φv(u')
+          matchingVForAllUPrime[V].insert(tempList.begin(), tempList.end());
+          refinedUPrimeMatches.insert(tempList.begin(), tempList.end());
+        }
+
+        // 11: remove v from Φ(u)
+        for (auto p : matchingVForAllUPrime) {
+          if (p.second.size() == 0) {
+            Phi.at(&*U).erase(p.first);
+          }
+        }
+
+        // 22: if Φ'(u') is smaller than Φ(u') then
+        // 23: changed←true
+        set<Value *> &UPrimeMatches = Phi.at(UPrime);
+        if (refinedUPrimeMatches.size() < UPrimeMatches.size()) {
+          changed = true;
+        }
+
+        // 24: Φ(u') = Φ(u') ∩ Φ'(u')
+        UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
       }
     }
   }
 
-  return result;
+  return changed;
+}
+
+void IterativePruningMatcher::postMatchingAction() {}
+
+void IterativePruningMatcher::dumpPotIMatches() {
+  llvm::errs() << "Potential matches of Query\n";
+  for (auto PotMatch : PotIMatches1) {
+    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+    for (auto match : PotMatch.second) {
+      llvm::errs() << "\t"
+                   << "[" << match << "]:" << *match << "\n";
+    }
+    llvm::errs() << "\t}\n\n";
+  }
+
+  llvm::errs() << "\n\nPotential matches of Target\n";
+  for (auto PotMatch : PotIMatches2) {
+    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+    for (auto match : PotMatch.second) {
+      llvm::errs() << "\t"
+                   << "[" << match << "]:" << *match << "\n";
+    }
+    llvm::errs() << "\t}\n\n";
+  }
+}
+
+void IterativePruningMatcher::dumpPotIMatchesStats() {
+  llvm::errs() << "TBD"
+               << "\n";
 }
 
 /*********************
-********** Matcher ***********
+********** Class::Matcher ***********
 *********************/
 Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
                  bool potentialMatchAccuracy)
     : MatcherBase(f1, f2, useSSAEdges) {
 
 #ifdef MATCHER_DEBUG
-  llvm::errs() << "Matching " << F1->getName() << " Vs " << F2->getName()
+  llvm::errs() << "Matching " << f1->getName() << " Vs " << f2->getName()
                << "\n";
 #endif
 
-  G1 = new DataDepGraph(F1, useSSAEdges);
-  G2 = new DataDepGraph(F2, useSSAEdges);
+  G1 = new DataDepGraph(f1, useSSAEdges);
+  G2 = new DataDepGraph(f2, useSSAEdges);
 
-  retrievePotIMatches(F1, F2, potentialMatchAccuracy);
+  retrievePotIMatches(f1, f2, potentialMatchAccuracy);
 
   if (potentialMatchAccuracy)
     return;
 
-  auto res = dualSimulationDriver(F1, F2);
-
-  if (res)
-    llvm::errs() << "Iso Match Found\n";
-  else
-    llvm::errs() << "Iso Match NOT Found\n";
+  dualSimulationDriver(G1, G2, PotIMatches);
+  postMatchingAction();
 }
 
-void Matcher::retrievePotIMatches(Function *F1, Function *F2,
+void Matcher::retrievePotIMatches(Function *f1, Function *f2,
                                   bool potentialMatchAccuracy) {
-  if (!initialArgumentsMatch(F1, F2)) {
+  if (!initialArgumentsMatch(f1, f2, PotIMatches)) {
     assert(0 && "Problem with Initial Match");
     return;
   }
@@ -242,9 +286,9 @@ void Matcher::retrievePotIMatches(Function *F1, Function *F2,
   auto totalNodes = 0;
   size_t foundPotMatches = 0;
 
-  for (inst_iterator I1 = inst_begin(F1), E1 = inst_end(F1); I1 != E1; ++I1) {
+  for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
     totalNodes++;
-    for (inst_iterator I2 = inst_begin(F2), E2 = inst_end(F2); I2 != E2; ++I2) {
+    for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
       if (deepMatch(&*I1, &*I2)) {
         PotIMatches[&*I1].insert(&*I2);
 
@@ -343,50 +387,170 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2) {
   return true;
 }
 
-bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
+/*
+**   1: procedure DualSim(G, Q, Φ):
+**   2:  changed←true
+**   3:  while changed do
+**   4:    changed←false
+**   5:    for u←Vq do
+**   6:      for u' ←Q.adj(u) do
+**   7:        Φ'(u')←∅
+**   8:        for v ←Φ(u) do
+**   9:          Φv(u')←G.adj(v) ∩ Φ(u')
+**   10:         if Φv(u') = ∅ then
+**   11:           remove v from Φ(u)
+**   12:           if Φ(u) = ∅ then
+**   13:             return empty Φ
+**   14:           end if
+**   15:           changed←true
+**   16:         end if
+**   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
+**   18:       end for
+**   19:       if Φ'(u') = ∅ then
+**   20:         return empty Φ
+**   21:       end if
+**   22:       if Φ'(u') is smaller than Φ(u') then
+**   23:         changed←true
+**   24:       end if
+**   25:       Φ(u') = Φ(u') ∩ Φ'(u')
+**   26:     end for
+**   27:   end for
+**   28: end while
+**   29: return Φ
+**   30: end procedure
+*/
+bool Matcher::dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
+                             std::map<Value *, set<Value *>> &Phi) {
+
+  // 2:  changed←true
   bool changed = true;
 #ifdef MATCHER_DEBUG
   size_t round = 0;
 #endif
+  // 3:  while changed do
   while (changed) {
-// Run dual simulation
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
-                 << ": Round: " << round << "\n";
-#endif
-    changed = dualSimulation(F1, F2);
-
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n\n[Info] After Dual Simulation"
-                 << ": Round: " << round << "\n";
-    dumpPotIMatches();
+    llvm::errs() << "Round: " << round++ << "\n";
 #endif
 
-// Find BasicBlock correspondence
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= retrievePotBBMatches();
+    // 4: changed←false
+    changed = false;
 
-// Handle conflicting stores/calls
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
-                 << ": Round: " << round << "\n";
-#endif
-    changed |= handleConflictingStores();
+    // 5: for u←Vq do
+    for (auto U : g1->VertexSet) {
 
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
-                 << ": Round: " << round << "\n";
+      llvm::errs() << "Fixing: ";
+      dumpLLVMNode(U);
 #endif
-    changed |= handleConflictingCalls();
+      if (dyn_cast<CallInst>(U))
+        continue;
 
+      // 6: for u' ←Q.adj(u) do
+      for (auto *UPrime : g1->getAdj(U)) {
+
+        // 7:        Φ'(u')←∅
+        set<Value *> refinedUPrimeMatches;
+        vector<Value *> deleteList;
+
+        // 8: for v ←Φ(u) do
+        for (auto V : Phi.at(&*U)) {
+
+          // 9: Φv(u')←G.adj(v) ∩ Φ(u')
+          if (!Phi.count(UPrime)) {
+            llvm::errs() << "No potential matches for UPrime: ";
+            dumpLLVMNode(UPrime);
+            llvm::errs() << "Corresponding U: ";
+            dumpLLVMNode(U);
+
+            assert(0 && "No potential matches for UPrime");
+          }
+
+          set<Value *> &UPrimeMatches = Phi.at(UPrime);
+          set<Value *> VAdj = g2->getAdj(V);
+
+          auto tempList = Intersection(UPrimeMatches, VAdj);
+
+          // 10: if Φv(u') = ∅ then
+          if (!tempList.size()) {
+
+            // 11:           remove v from Φ(u)
+            deleteList.push_back(V);
 #ifdef MATCHER_DEBUG
-    round++;
+            llvm::errs() << "\nRemoving: V";
+            dumpLLVMNode(V);
+            llvm::errs() << "From the pot matches of U: ";
+            dumpLLVMNode(&*U);
+
+            llvm::errs() << "\n\nUprime : ";
+            dumpLLVMNode(UPrime);
+            llvm::errs() << "\n\nUprime Matches: ";
+            for (auto &UPrimeMatch : UPrimeMatches) {
+              dumpLLVMNode(UPrimeMatch);
+            }
+
+            llvm::errs() << "\n\nAdj: ";
+            for (auto &adj : VAdj) {
+              dumpLLVMNode(adj);
+            }
+            llvm::errs() << "\n";
 #endif
+
+            // 12:           if Φ(u) = ∅ then
+            // 13:           return empty Φ
+            if (Phi.at(&*U).size() == deleteList.size()) {
+              llvm::errs() << "\n\nNo potential match for: ";
+              dumpLLVMNode(&*U);
+
+              // Update Phi before dumping.
+              for (auto deleteNode : deleteList) {
+                Phi.at(&*U).erase(deleteNode);
+              }
+              assert(0 && "Zero Match found: I");
+            }
+
+            // 15: changed←true
+            changed = true;
+          }
+
+          // 17: Φ'(u')←Φ'(u') ∪ Φv(u')
+          refinedUPrimeMatches.insert(tempList.begin(), tempList.end());
+        }
+
+        // 11: remove v from Φ(u)
+        for (auto deleteNode : deleteList) {
+          Phi.at(&*U).erase(deleteNode);
+        }
+
+        // 19: if Φ'(u') = ∅ then
+        // 20:         return empty Φ
+        if (refinedUPrimeMatches.size() == 0) {
+          llvm::errs() << "\n\nNo potential match for: ";
+          dumpLLVMNode(UPrime);
+
+          // Update UPrimeMatches before dumping DOT.
+          set<Value *> &UPrimeMatches = Phi.at(UPrime);
+          UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
+          assert(0 && "Zero Match found: II");
+        }
+
+        // 22: if Φ'(u') is smaller than Φ(u') then
+        // 23: changed←true
+        set<Value *> &UPrimeMatches = Phi.at(UPrime);
+        if (refinedUPrimeMatches.size() < UPrimeMatches.size()) {
+          changed = true;
+        }
+
+        // 24: Φ(u') = Φ(u') ∩ Φ'(u')
+        UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
+      }
+    }
   }
 
+  return changed;
+}
+
+void Matcher::postMatchingAction() {
   // Check final results
   llvm::errs() << "\n[Info]: Check for multiple matches\n";
   bool result = true;
@@ -406,33 +570,57 @@ bool Matcher::dualSimulationDriver(Function *F1, Function *F2) {
     }
   }
 
-  return result;
+  if (result)
+    llvm::errs() << "Iso Match Found\n";
+  else
+    llvm::errs() << "Iso Match NOT Found\n";
+}
+
+void Matcher::dumpPotIMatches() {
+  for (auto PotMatch : PotIMatches) {
+    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
+    //   continue;
+    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+    for (auto match : PotMatch.second) {
+      llvm::errs() << "\t"
+                   << "[" << match << "]:" << *match << "\n";
+    }
+    llvm::errs() << "\t}\n\n";
+  }
+}
+
+void Matcher::dumpPotIMatchesStats() {
+  auto n = PotIMatches.size();
+  auto p = 0;
+  for (auto PotMatch : PotIMatches) {
+    p += PotMatch.second.size();
+  }
+  llvm::errs() << "Pot Match Stat: Avg p = " << ((double)p / n)
+               << " n = : " << n << "\n";
 }
 
 /*********************
-********** MatcherBase ***********
+********** Class::MatcherBase ***********
 *********************/
 MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
   F1 = f1;
   F2 = f2;
-
   GlobalNumbers = new GlobalNumberState();
 }
 
 // Retrieve BB correspondence based on exact matches
-bool MatcherBase::retrievePotBBMatches() {
+bool MatcherBase::retrievePotBBMatches(DataDepGraph *g1,
+                                       std::map<Value *, set<Value *>> &Phi) {
   bool changed = false;
 
-  for (auto U : G1->VertexSet) {
-    auto &pMatches = PotIMatches.at(U);
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
     if (pMatches.size() != 1)
       continue;
 
     if (!dyn_cast<Instruction>(U))
       continue;
 
-    // if (dyn_cast<GetElementPtrInst>(U) || dyn_cast<BitCastInst>(U))
-    //   continue;
     if (!dyn_cast<StoreInst>(U))
       continue;
 
@@ -473,8 +661,7 @@ bool MatcherBase::retrievePotBBMatches() {
       }
     }
   }
-// llvm::errs() << *LBB << "\n";
-// llvm::errs() << *PotBBMatches.at(LBB) << "\n";
+
 #ifdef MATCHER_DEBUG
   llvm::errs() << "Retrieved BB Matches...\n";
   dumpPotBBMatches();
@@ -483,24 +670,71 @@ bool MatcherBase::retrievePotBBMatches() {
   return changed;
 }
 
+void MatcherBase::dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
+                                       std::map<Value *, set<Value *>> &Phi) {
+  bool changed = true;
+#ifdef MATCHER_DEBUG
+  size_t round = 0;
+#endif
+  while (changed) {
+// Run dual simulation
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase I: Dual Simulation"
+                 << ": Round: " << round << "\n";
+#endif
+    changed = dualSimulation(g1, g2, Phi);
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n\n[Info] After Dual Simulation"
+                 << ": Round: " << round << "\n";
+    dumpPotIMatches();
+#endif
+
+// Find BasicBlock correspondence
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Retrieve potential BB matches"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= retrievePotBBMatches(g1, Phi);
+
+// Handle conflicting stores/calls
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingStores(g1, Phi);
+
+#ifdef MATCHER_DEBUG
+    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
+                 << ": Round: " << round << "\n";
+#endif
+    changed |= handleConflictingCalls(g1, Phi);
+
+#ifdef MATCHER_DEBUG
+    round++;
+#endif
+  }
+}
+
 /*
 ** Assume that the arguments of the two functions are potential matches
 */
-bool MatcherBase::initialArgumentsMatch(Function *F1, Function *F2) {
-  if (F1->arg_size() != F1->arg_size()) {
+bool MatcherBase::initialArgumentsMatch(Function *f1, Function *f2,
+                                        std::map<Value *, set<Value *>> &Phi) {
+  if (f1->arg_size() != f2->arg_size()) {
     llvm::errs() << "Argument count mismatch\n";
     return false;
   }
-  auto argI1 = F1->arg_begin();
-  auto argI2 = F2->arg_begin();
+  auto argI1 = f1->arg_begin();
+  auto argI2 = f2->arg_begin();
 
   int count = 0;
-  while (argI1 != F1->arg_end() && argI2 != F2->arg_end()) {
+  while (argI1 != f1->arg_end() && argI2 != f2->arg_end()) {
     // if (count == 2) {
     //   IgnoreType = argI1->getType();
     // }
 
-    PotIMatches[&*argI1].insert(&*argI2);
+    Phi[&*argI1].insert(&*argI2);
 
     argI1++;
     argI2++;
@@ -536,189 +770,6 @@ static std::map<Value *, int> getCallInstOrder(BasicBlock *BB) {
   return retval;
 }
 
-/*
-**   1: procedure DualSim(G, Q, Φ):
-**   2:  changed←true
-**   3:  while changed do
-**   4:    changed←false
-**   5:    for u←Vq do
-**   6:      for u' ←Q.adj(u) do
-**   7:        Φ'(u')←∅
-**   8:        for v ←Φ(u) do
-**   9:          Φv(u')←G.adj(v) ∩ Φ(u')
-**   10:         if Φv(u') = ∅ then
-**   11:           remove v from Φ(u)
-**   12:           if Φ(u) = ∅ then
-**   13:             return empty Φ
-**   14:           end if
-**   15:           changed←true
-**   16:         end if
-**   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
-**   18:       end for
-**   19:       if Φ'(u') = ∅ then
-**   20:         return empty Φ
-**   21:       end if
-**   22:       if Φ'(u') is smaller than Φ(u') then
-**   23:         changed←true
-**   24:       end if
-**   25:       Φ(u') = Φ(u') ∩ Φ'(u')
-**   26:     end for
-**   27:   end for
-**   28: end while
-**   29: return Φ
-**   30: end procedure
-*/
-bool MatcherBase::dualSimulation(Function *F1, Function *F2) {
-
-  // 2:  changed←true
-  bool changed = true;
-#ifdef MATCHER_DEBUG
-  size_t round = 0;
-#endif
-  // 3:  while changed do
-  while (changed) {
-#ifdef MATCHER_DEBUG
-    llvm::errs() << "Round: " << round++ << "\n";
-#endif
-
-    // 4: changed←false
-    changed = false;
-
-    // 5: for u←Vq do
-    for (auto U : G1->VertexSet) {
-
-#ifdef MATCHER_DEBUG
-      llvm::errs() << "Fixing: ";
-      dumpLLVMNode(U);
-#endif
-      if (dyn_cast<CallInst>(U))
-        continue;
-
-      // 6: for u' ←Q.adj(u) do
-      for (auto *UPrime : G1->getAdj(U)) {
-
-        // 7:        Φ'(u')←∅
-        set<Value *> refinedUPrimeMatches;
-        vector<Value *> deleteList;
-
-        // 8: for v ←Φ(u) do
-        for (auto V : PotIMatches.at(&*U)) {
-
-          // 9: Φv(u')←G.adj(v) ∩ Φ(u')
-          if (!PotIMatches.count(UPrime)) {
-            llvm::errs() << "No potential matches for UPrime: ";
-            dumpLLVMNode(UPrime);
-            llvm::errs() << "Corresponding U: ";
-            dumpLLVMNode(U);
-
-            assert(0 && "No potential matches for UPrime");
-          }
-
-          set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
-          set<Value *> VAdj = G2->getAdj(V);
-          // for (Value::user_iterator VPrimeI = V->user_begin();
-          //      VPrimeI != V->user_end(); VPrimeI++) {
-          //   Value *VPrime = dyn_cast<Value>(*VPrimeI);
-          //   assert(VPrime && "User not value");
-          //   VAdj.insert(VPrime);
-          // }
-
-          auto tempList = Intersection(UPrimeMatches, VAdj);
-
-          // 10: if Φv(u') = ∅ then
-          if (!tempList.size()) {
-
-            // 11:           remove v from Φ(u)
-            deleteList.push_back(V);
-#ifdef MATCHER_DEBUG
-            llvm::errs() << "\nRemoving: V";
-            dumpLLVMNode(V);
-            llvm::errs() << "From the pot matches of U: ";
-            dumpLLVMNode(&*U);
-
-            llvm::errs() << "\n\nUprime : ";
-            dumpLLVMNode(UPrime);
-            llvm::errs() << "\n\nUprime Matches: ";
-            for (auto &UPrimeMatch : UPrimeMatches) {
-              dumpLLVMNode(UPrimeMatch);
-            }
-
-            llvm::errs() << "\n\nAdj: ";
-            for (auto &adj : VAdj) {
-              dumpLLVMNode(adj);
-            }
-            llvm::errs() << "\n";
-#endif
-
-            // 12:           if Φ(u) = ∅ then
-            // 13:           return empty Φ
-            if (PotIMatches.at(&*U).size() == deleteList.size()) {
-              llvm::errs() << "\n\nNo potential match for: ";
-              dumpLLVMNode(&*U);
-
-              // Update PotIMatches before dumping.
-              for (auto deleteNode : deleteList) {
-                PotIMatches.at(&*U).erase(deleteNode);
-              }
-              assert(0 && "Zero Match found: I");
-            }
-
-            // 15: changed←true
-            changed = true;
-          }
-
-          // 17: Φ'(u')←Φ'(u') ∪ Φv(u')
-          refinedUPrimeMatches.insert(tempList.begin(), tempList.end());
-        }
-
-        // 11: remove v from Φ(u)
-        for (auto deleteNode : deleteList) {
-          PotIMatches.at(&*U).erase(deleteNode);
-        }
-
-        // 19: if Φ'(u') = ∅ then
-        // 20:         return empty Φ
-        if (refinedUPrimeMatches.size() == 0) {
-          llvm::errs() << "\n\nNo potential match for: ";
-          dumpLLVMNode(UPrime);
-
-          // Update UPrimeMatches before dumping DOT.
-          set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
-          UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
-          assert(0 && "Zero Match found: II");
-        }
-
-        // 22: if Φ'(u') is smaller than Φ(u') then
-        // 23: changed←true
-        set<Value *> &UPrimeMatches = PotIMatches.at(UPrime);
-        if (refinedUPrimeMatches.size() < UPrimeMatches.size()) {
-          changed = true;
-        }
-
-        // 24: Φ(u') = Φ(u') ∩ Φ'(u')
-        UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
-#ifdef MATCHER_DEBUG
-//        llvm::errs() << "\n\tRefined u matches: ";
-//        dumpLLVMNode(&*U);
-//        for (auto &UMatch : PotIMatches.at(&*U)) {
-//          llvm::errs() << "\t\tu match: ";
-//          dumpLLVMNode(UMatch);
-//        }
-//
-//        llvm::errs() << "\n\tRefined u' matches: ";
-//        dumpLLVMNode(UPrime);
-//        for (auto &UPrimeMatch : UPrimeMatches) {
-//          llvm::errs() << "\t\tu' match: ";
-//          dumpLLVMNode(UPrimeMatch);
-//        }
-#endif
-      }
-    }
-  }
-
-  return changed;
-}
-
 // Check if all the instructions belong to same BB
 std::pair<bool, BasicBlock *> MatcherBase::sameBB(std::set<Value *> S) {
   BasicBlock *candBB = NULL;
@@ -743,10 +794,11 @@ std::pair<bool, BasicBlock *> MatcherBase::sameBB(std::set<Value *> S) {
   return std::pair<bool, BasicBlock *>(true, candBB);
 }
 
-bool MatcherBase::handleConflictingCalls() {
+bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
+                                         std::map<Value *, set<Value *>> &Phi) {
   bool changed = false;
-  for (auto U : G1->VertexSet) {
-    auto &pMatches = PotIMatches.at(U);
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
 
     // Hadling multiple (>1) potential matches.
     if (pMatches.size() == 1) {
@@ -825,8 +877,8 @@ bool MatcherBase::handleConflictingCalls() {
     }
   }
 
-  for (auto U : G1->VertexSet) {
-    auto &pMatches = PotIMatches.at(U);
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
 
     CallInst *LCallInstr = dyn_cast<CallInst>(U);
     if (!LCallInstr)
@@ -861,10 +913,11 @@ bool MatcherBase::handleConflictingCalls() {
   return changed;
 }
 
-bool MatcherBase::handleConflictingStores() {
+bool MatcherBase::handleConflictingStores(
+    DataDepGraph *g1, std::map<Value *, set<Value *>> &Phi) {
   bool changed = false;
-  for (auto U : G1->VertexSet) {
-    auto &pMatches = PotIMatches.at(U);
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
 
     // Hadling multiple (>1) potential matches.
     if (pMatches.size() == 1) {
@@ -945,8 +998,8 @@ bool MatcherBase::handleConflictingStores() {
     }
   }
 
-  for (auto U : G1->VertexSet) {
-    auto &pMatches = PotIMatches.at(U);
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
 
     StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
     if (!LStoreInstr)
@@ -1462,29 +1515,6 @@ int MatcherBase::cmpValues(const Value *L, const Value *R) const {
   //     RightSN = sn_mapR.insert(std::make_pair(R, sn_mapR.size()));
 
   // return cmpNumbers(LeftSN.first->second, RightSN.first->second);
-}
-
-void MatcherBase::dumpPotIMatches() {
-  for (auto PotMatch : PotIMatches) {
-    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
-    //   continue;
-    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
-    for (auto match : PotMatch.second) {
-      llvm::errs() << "\t"
-                   << "[" << match << "]:" << *match << "\n";
-    }
-    llvm::errs() << "\t}\n\n";
-  }
-}
-
-void MatcherBase::dumpPotIMatchesStats() {
-  auto n = PotIMatches.size();
-  auto p = 0;
-  for (auto PotMatch : PotIMatches) {
-    p += PotMatch.second.size();
-  }
-  llvm::errs() << "Pot Match Stat: Avg p = " << ((double)p / n)
-               << " n = : " << n << "\n";
 }
 
 // ========================================================================
