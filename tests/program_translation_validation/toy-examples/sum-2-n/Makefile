@@ -17,6 +17,8 @@ compd: sum_2_n main
 compd_opt: sum_2_n main
 match: sum_2_n main
 
+imatch: sum_2_n main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

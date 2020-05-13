@@ -17,6 +17,8 @@ compd: DoDemoFpu1 main timespi
 compd_opt: DoDemoFpu1 main timespi
 match: DoDemoFpu1 main timespi
 
+imatch: DoDemoFpu1 main timespi
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

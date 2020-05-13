@@ -17,6 +17,8 @@ compd: stderr_driver main print_it
 compd_opt: stderr_driver main print_it
 match: stderr_driver main print_it
 
+imatch: stderr_driver main print_it
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

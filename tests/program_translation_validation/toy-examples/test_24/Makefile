@@ -17,6 +17,8 @@ compd: to_byte read_bytes main keycomp
 compd_opt: to_byte read_bytes main keycomp
 match: to_byte read_bytes main keycomp
 
+imatch: to_byte read_bytes main keycomp
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

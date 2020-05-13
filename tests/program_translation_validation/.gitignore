@@ -27,3 +27,7 @@ tmp
 test.proposed.opt.ll
 test.mcsema.opt.ll
 invoke_compd_seq.log
+
+query.ll
+target.ll
+imatch.log

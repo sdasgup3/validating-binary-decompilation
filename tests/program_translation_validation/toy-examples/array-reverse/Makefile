@@ -17,6 +17,8 @@ compd: array_reverse main
 compd_opt: array_reverse main
 match: array_reverse main
 
+imatch: array_reverse main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

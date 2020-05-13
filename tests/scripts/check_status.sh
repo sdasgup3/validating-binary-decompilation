@@ -72,19 +72,47 @@ matchCheck() {
 
   if [ $status_M2P -eq 1 ] && [ $status_M2P -eq 1 ]; then
     echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   elif [ $status_M2P -eq 2 ]; then
-    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
+    echo -e "\e[32mMatch Pass:m2p-multi-match\e[39m:-" `pwd`:$msg
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
   else 
-    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
-    sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
+    echo -e "\e[32mMatch Pass:p2m-multi-match\e[39m:-" `pwd`:$msg
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_proposed_mcsema.log
+    # sed -i -n -e '/Check for multiple matches/,$p'  $dir/match_mcsema_proposed.log
     exit 0
+  fi
+}
+
+imatchCheck() {
+  msg=$1
+  dir=$2
+  statu=0  
+
+  if grep -q "Iso Match Found" $dir/imatch.log; then
+    status=1
+  elif grep -q "Iso Match NOT Found" $dir/imatch.log; then
+    status=2
+  elif grep -q "Partial Iso Match Found" $dir/imatch.log; then
+    status=3
+  else 
+    echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
+    exit 1
+  fi
+
+  if [ $status -eq 1 ]; then
+    echo -e "\e[32mMatch Pass:both-exact-match\e[39m:-" `pwd`:$msg
+    exit 0
+  elif [ $status -eq 3 ]; then
+    echo -e "\e[32mMatch Pass:partial-match\e[39m:-" `pwd`:$msg
+    exit 0
+  else 
+    echo -e "\e[31mMatch Fail\e[39m:-" `pwd`:$msg
+    exit 1
   fi
 }
 
@@ -156,6 +184,9 @@ while [ "$1" != "" ]; do
                          ;;
         --match )        shift
                          matchCheck $msg $dir
+                         ;;
+        --imatch )       shift
+                         imatchCheck $msg $dir
                          ;;
         --lprove )       shift
                          lproveCheck $msg

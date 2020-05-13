@@ -17,6 +17,8 @@ compd: main printdata
 compd_opt: main printdata
 match: main printdata
 
+imatch: main printdata
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -1,6 +1,7 @@
 #add_subdirectory(allin)
 #add_subdirectory(variable_bb_correspondence)
 add_subdirectory(matcher)
+add_subdirectory(iterative-pruning-matcher)
 add_subdirectory(decompiler)
 add_subdirectory(spec-to-smt)
 add_subdirectory(lltodot)

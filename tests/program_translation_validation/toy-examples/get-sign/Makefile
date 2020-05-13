@@ -17,6 +17,8 @@ compd: get_sign main
 compd_opt: get_sign main
 match: get_sign main
 
+imatch: get_sign main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

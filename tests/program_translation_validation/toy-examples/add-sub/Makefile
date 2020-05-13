@@ -17,6 +17,8 @@ compd: add_sub main
 compd_opt: add_sub main
 match: add_sub main
 
+imatch: add_sub main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

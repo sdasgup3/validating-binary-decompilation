@@ -17,6 +17,8 @@ compd: update main
 compd_opt: update main
 match: update main
 
+imatch: update main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

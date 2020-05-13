@@ -74,6 +74,9 @@ by Sandeep Dasgupta, Sushant Dinesh, Deepan Venkatesh, Vikram S. Adve & Christop
 [&#11181;](#Table-of-Contents)
 
 ## Checkout Repository
+<details><summary>expand</summary>
+<p>
+
 ```C
 export REPO_PATH=${HOME}/Github/ # could be any path
 cd $REPO_PATH/
@@ -81,6 +84,9 @@ git clone --recursive https://github.com/sdasgup3/validating-binary-decompilatio
 git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
                                                       # evaluate the project.
 ```
+
+</p>
+</details>
 
 [&#11181;](#Table-of-Contents)
 
@@ -97,63 +103,87 @@ git clone https://github.com/sdasgup3/compd_cache.git # required only if you wis
 
 In order to install (1), (2), and (4), the followings need to be done.
  
-  - Build K
-  ```bash
-    cd $REPO_PATH
-    git clone --recursive git@github.com:sdasgup3/k.git
-    cd k
-    git checkout bin-decomp-val
+  - **Build K**
+    <details><summary>expand</summary>
+    <p>
 
-    git submodule update --init --recursive
-    sudo apt-get install build-essential m4 openjdk-8-jdk libgmp-dev libmpfr-dev pkg-config flex z3 libz3-dev maven opam python3 cmake zlib1g-dev libboost-test-dev libyaml-dev libjemalloc-dev
-    curl -sSL https://get.haskellstack.org/ | sh
+    ```bash
+      cd $REPO_PATH
+      git clone --recursive git@github.com:sdasgup3/k.git
+      cd k
+      git checkout bin-decomp-val
 
-    sudo apt-get install openjdk-8-jdk
-    sudo apt-get install maven
-    mvn package -DskipTests   -DskipKTest -Dllvm.backend.skip -DskipDocs -Dhaskell.backend.skip
-  ```
+      git submodule update --init --recursive
+      sudo apt-get install build-essential m4 openjdk-8-jdk libgmp-dev libmpfr-dev pkg-config flex z3 libz3-dev maven opam python3 cmake zlib1g-dev libboost-test-dev libyaml-dev libjemalloc-dev
+      curl -sSL https://get.haskellstack.org/ | sh
 
-  - Build X86 Semantics
-  ```bash
-    cd $REPO_PATH
-    git clone git@github.com:kframework/X86-64-semantics.git
-    cd X86-semantics/semantics
-    ../scripts/kompile.pl --backend java
-    # To validate the working of the executable semantics
-    ../scripts/run-single-c-file.sh ../tests/program-tests/bubblesort/test.c java |& tee /tmp/run.log
-  ```
+      sudo apt-get install openjdk-8-jdk
+      sudo apt-get install maven
+      mvn package -DskipTests   -DskipKTest -Dllvm.backend.skip -DskipDocs -Dhaskell.backend.skip
+    ```
 
-  - Build LLVM Semantics
-  ```bash
-    cd $REPO_PATH
-    git clone git@github.com:sdasgup3/llvm-verified-backend.git
-    git clone git@github.com:sdasgup3/llvm-verified-backend.git llvm-verified-backend-mem
+    </p>
+    </details>
 
-    cd llvm-verified-backend
-    # git checkout working // Takes insane time for krove run
-    git checkout single-instruction-val
+  - **Build X86 Semantics**
+    <details><summary>expand</summary>
+    <p>
 
-    ./scripts/kompile-all.sh --llvm
-    ./scripts/build-parser.sh
+    ```bash
+      cd $REPO_PATH
+      git clone git@github.com:kframework/X86-64-semantics.git
+      cd X86-semantics/semantics
+      ../scripts/kompile.pl --backend java
+      # To validate the working of the executable semantics
+      ../scripts/run-single-c-file.sh ../tests/program-tests/bubblesort/test.c java |& tee /tmp/run.log
+    ```
 
-    cd llvm-verified-backend-mem
-    git checkout single-instruction-val-mem
+    </p>
+    </details>
 
-    ./scripts/kompile-all.sh --llvm
-    ./scripts/build-parser.sh
-  ```
+  - **Build LLVM Semantics**
+    <details><summary>expand</summary>
+    <p>
 
-  - Python Binding for z3
-  ```
-    sudo apt install python-pip
-    sudo pip install setuptools
-    git clone git@github.com:Z3Prover/z3.git
-    cd z3
-    python scripts/mk_make.py --python
-    cd build
-    make -j 8
-    sudo make install
-  ```
+    ```bash
+      cd $REPO_PATH
+      git clone git@github.com:sdasgup3/llvm-verified-backend.git
+      git clone git@github.com:sdasgup3/llvm-verified-backend.git llvm-verified-backend-mem
+
+      cd llvm-verified-backend
+      # git checkout working // Takes insane time for krove run
+      git checkout single-instruction-val
+
+      ./scripts/kompile-all.sh --llvm
+      ./scripts/build-parser.sh
+
+      cd llvm-verified-backend-mem
+      git checkout single-instruction-val-mem
+
+      ./scripts/kompile-all.sh --llvm
+      ./scripts/build-parser.sh
+    ```
+
+    </p>
+    </details>
+
+  - **Python Binding for z3**
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+      sudo apt install python-pip
+      sudo pip install setuptools
+      git clone git@github.com:Z3Prover/z3.git
+      cd z3
+      python scripts/mk_make.py --python
+      cd build
+      make -j 8
+      sudo make install
+    ```
+
+    </p>
+    </details>
 
 [&#11181;](#Table-of-Contents)
 
@@ -167,160 +197,222 @@ Except The Matcher, which is purely a LLVM based tool, the other tools are devel
 as pre-requisites.
 
 #### Installing Pre-requisites
-  - Install Essentials
-  ```bash
-  sudo apt-get  install \
-    cmake \
-    z3 \
-    parallel
+  - **Install Essentials**
+    <details><summary>expand</summary>
+    <p>
 
-  export REPO_PATH=${HOME}/Github/ # could be any path
-  cd $REPO_PATH
-  git clone git@github.com:sdasgup3/scripts-n-docs.git
-  ```
-
-  - Install GCC/Clang
-  ```bash
-  [Install gcc (> ver. 6)](https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed)
-  sudo update-alternatives --config gcc
-
-  sudo apt-get install clang-6.0
-  ```
-  
-  - Install LLVM-4.0.0
-
-  ```bash
-    mkdir -p ~/Install/llvm
-    cd ~/Install/llvm
-    $REPO_PATH/scripts-n-docs/scripts/bash/download-llvm.sh 4.0.0  ./ fast
-    rm -rf *.xz
-    mkdir llvm.4.0.0.install llvm.4.0.0.obj
-    cd llvm.4.0.0.obj
-    INSTALL_PREFIX=~/Install/llvm/llvm.4.0.0.install
-    # cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
-    cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="Release" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
-    make -j64
-    sudo make install
-    # Keep the llvm-config path set to the version of llvm we want to use using $PATH
-    # Make sure to export PATH like: export PATH=<llvm/install/dir/>:$PATH
-    
-    For `signal stack problems`, apply the [patch](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/docs/patches) using
-    cd ${HOME}/Install/llvm/llvm-4.0.0.src
-    patch -p6 < <patch file>
-    
-    Note: the patch is borrowed from
-    https://github.com/google/sanitizers/issues/822
-    https://github.com/llvm-mirror/compiler-rt/commit/8a5e425a68de4d2c80ff00a97bbcb3722a4716da
-  ```
-
-  - Install Stoke
-  ```bash
-    sudo apt-get install bison ccache cmake doxygen exuberant-ctags flex  g++-multilib  ghc git libantlr3c-dev libboost-dev libboost-filesystem-dev libboost-thread-dev libcln-dev libghc-regex-compat-dev libghc-regex-tdfa-dev libghc-split-dev libjsoncpp-dev python subversion libiml-dev libgmp-dev libboost-regex-dev autoconf libtool antlr pccts pkg-config
-    cd $REPO_PATH
-    git clone --recursive   git@github.com:sdasgup3/stoke.git stoke-develop
-    
-    cd  stoke-develop/src/ext/z3
-    git checkout master
-    git checkout 4192c81fae01e90fd8110a00b14172be818f028b
-    
-    cd $REPO_PATH/stoke-develop/src/ext/x64asm
-    git remote add upstream git@github.com:sdasgup3/x64asm.git
-    git fetch upstream
-    git checkout working
-    
-    cd $REPO_PATH/stoke-develop/
-    ./configure.sh -d --no-cvc4
-    cd $REPO_PATH/stoke-develop/src/ext/x64asm
-    make -j64 debug
-    
-    cd $REPO_PATH/stoke-develop
-    mkdir lib
-    make -j64 debug
-  ```
-  
-
-  - Install mcsema
-  ```bash
-    sudo apt-get install      git      curl      cmake      python2.7 python-pip \ 
-    python-virtualenv      wget      build-essential  gcc-multilib g++-multilib  \
-        libtinfo-dev      lsb-release            zlib1g-dev
-    sudo dpkg --add-architecture i386
-    sudo apt-get install zip zlib1g-dev:i386
-    
-    git clone  git@github.com:sdasgup3/mcsema.git
-    cd mcsema; git checkout  develop; cd -
- 
-    git clone https://github.com/sdasgup3/remill.git
-    cd remill; git checkout  develop_ae;
-    mv ../mcsema tools
-
-    ./scripts/build.sh
-    cd remill-build
-    sudo make install -j64
-  ```
-
-
-  - Install IDA
-    - Installation of licensed copy
     ```bash
-      mkdir -p $REPO_PATH
-      cd !$
-      git clone https://gitlab.engr.illinois.edu/llvm/IDA.git
-      Install Ida_software/*.run
-      echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
-      sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
-      ~/ida-6.95/idal64
-      ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
+    sudo apt-get  install \
+      cmake \
+      z3 \
+      parallel
+
+    export REPO_PATH=${HOME}/Github/ # could be any path
+    cd $REPO_PATH
+    git clone git@github.com:sdasgup3/scripts-n-docs.git
     ```
+
+    </p>
+    </details>
+
+  - **Install GCC/Clang**
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+    [Install gcc (> ver. 6)](https://gist.github.com/zuyu/7d5682a5c75282c596449758d21db5ed)
+    sudo update-alternatives --config gcc
+
+    sudo apt-get install clang-6.0
+    ```
+
+    </p>
+    </details>
+  
+  - **Install LLVM-4.0.0**
+    <details><summary>expand</summary>
+    <p>
+
+
+    ```bash
+      mkdir -p ~/Install/llvm
+      cd ~/Install/llvm
+      $REPO_PATH/scripts-n-docs/scripts/bash/download-llvm.sh 4.0.0  ./ fast
+      rm -rf *.xz
+      mkdir llvm.4.0.0.install llvm.4.0.0.obj
+      cd llvm.4.0.0.obj
+      INSTALL_PREFIX=~/Install/llvm/llvm.4.0.0.install
+      # cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="RelWithDebInfo" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
+      cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE="Release" -DLLVM_TARGETS_TO_BUILD="host" ../llvm-4.0.0.src/
+      make -j64
+      sudo make install
+      # Keep the llvm-config path set to the version of llvm we want to use using $PATH
+      # Make sure to export PATH like: export PATH=<llvm/install/dir/>:$PATH
+
+      For `signal stack problems`, apply the [patch](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/docs/patches) using
+      cd ${HOME}/Install/llvm/llvm-4.0.0.src
+      patch -p6 < <patch file>
+
+      Note: the patch is borrowed from
+      https://github.com/google/sanitizers/issues/822
+      https://github.com/llvm-mirror/compiler-rt/commit/8a5e425a68de4d2c80ff00a97bbcb3722a4716da
+    ```
+
+    </p>
+    </details>
+
+  - **Install Stoke**
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+      sudo apt-get install bison ccache cmake doxygen exuberant-ctags flex  g++-multilib  ghc git libantlr3c-dev libboost-dev libboost-filesystem-dev libboost-thread-dev libcln-dev libghc-regex-compat-dev libghc-regex-tdfa-dev libghc-split-dev libjsoncpp-dev python subversion libiml-dev libgmp-dev libboost-regex-dev autoconf libtool antlr pccts pkg-config
+      cd $REPO_PATH
+      git clone --recursive   git@github.com:sdasgup3/stoke.git stoke-develop
+      
+      cd  stoke-develop/src/ext/z3
+      git checkout master
+      git checkout 4192c81fae01e90fd8110a00b14172be818f028b
+      
+      cd $REPO_PATH/stoke-develop/src/ext/x64asm
+      git remote add upstream git@github.com:sdasgup3/x64asm.git
+      git fetch upstream
+      git checkout working
+      
+      cd $REPO_PATH/stoke-develop/
+      ./configure.sh -d --no-cvc4
+      cd $REPO_PATH/stoke-develop/src/ext/x64asm
+      make -j64 debug
+      
+      cd $REPO_PATH/stoke-develop
+      mkdir lib
+      make -j64 debug
+    ```
+
+    </p>
+    </details>
+
+  - **Install mcsema**
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+      sudo apt-get install      git      curl      cmake      python2.7 python-pip \ 
+      python-virtualenv      wget      build-essential  gcc-multilib g++-multilib  \
+          libtinfo-dev      lsb-release            zlib1g-dev
+      sudo dpkg --add-architecture i386
+      sudo apt-get install zip zlib1g-dev:i386
+      
+      git clone  git@github.com:sdasgup3/mcsema.git
+      cd mcsema; git checkout  develop; cd -
+ 
+      git clone https://github.com/sdasgup3/remill.git
+      cd remill; git checkout  develop_ae;
+      mv ../mcsema tools
+
+      ./scripts/build.sh
+      cd remill-build
+      sudo make install -j64
+    ```
+
+    </p>
+    </details>
+
+
+  - **Install IDA**
+    - Installation of licensed copy
+      <details><summary>expand</summary>
+      <p>
+
+      ```bash
+        mkdir -p $REPO_PATH
+        cd !$
+        git clone https://gitlab.engr.illinois.edu/llvm/IDA.git
+        Install Ida_software/*.run
+        echo "HEXRAYS_LICENSE_FILE=@presto.cs.illinois.edu" > ~/.flexlmrc
+        sudo apt-get install libc6-i686:i386 libexpat1:i386 libffi6:i386 libfontconfig1:i386 libfreetype6:i386 libgcc1:i386 libglib2.0-0:i386 libice6:i386 libpcre3:i386  libsm6:i386 libstdc++6:i386 libuuid1:i386 libx11-6:i386 libxau6:i386 libxcb1:i386 libxdmcp6:i386 libxext6:i386 libxrender1:i386 zlib1g:i386 libx11-xcb1:i386 libdbus-1-3:i386 libxi6:i386 libsm6:i386 libcurl3:i386
+        ~/ida-6.95/idal64
+        ## If the ida run cannot find the google protobuf imports, add [patch](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/docs/patches/mcsema_ida_import_protobuf_fix.patch) to mcsema.
+      ```
+
+      </p>
+      </details>
     - Troubleshoot
         - [TVision error: Can not load libcurses.so](https://stackoverflow.com/questions/30098029/ida-doesnt-work-inside-screen)
         - ImportError: No module named google.protobuf
-        ```
-        ln -s /usr/local/lib/python2.7/dist-packages/protobuf-3.2.0-py2.7.egg/google /usr/local/lib/python2.7/dist-packages/google
-        ```
+          <details><summary>expand</summary>
+          <p>
+
+          ```
+            ln -s /usr/local/lib/python2.7/dist-packages/protobuf-3.2.0-py2.7.egg/google /usr/local/lib/python2.7/dist-packages/google
+          ```
+
+          </p>
+          </details>
 
 #### Tools Build Instructions
-  - Checkout Repository
-  ```bash
-    export REPO_PATH=${HOME}/Github/ # could be any path
-    cd $REPO_PATH/
-    git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
-  ```
+  - **Checkout Repository**
+    <details><summary>expand</summary>
+    <p>
 
-  - Install
-  ```bash
-    mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
-    cd !$
+    ```bash
+      export REPO_PATH=${HOME}/Github/ # could be any path
+      cd $REPO_PATH/
+      git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+    ```
 
-    cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
-    make -j8
+    </p>
+    </details>
 
-    make check-format
-    make update-format
-  ```
+  - **Install**
+    <details><summary>expand</summary>
+    <p>
 
-  - Recommended Build Practice (applicable only if there is an update in any stoke repo)
-  ```
-  ## Update/Build x64asm
-  cd $REPO_PATH/stoke-develop/src/ext/x64asm
-  git pull upstream working
-  make clean; make -j64 debug
+    ```bash
+      mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
+      cd !$
 
-  ## Update/Build stoke
-  cd $REPO_PATH/stoke-develop
-  git pull origin working
-  make -j64 debug
+      cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
+      make -j8
 
-  ## Update/Build Matcher/compD
-  cd $REPO_PATH/validating-binary-decompilation/source/build
-  make clean; make -j64
-  ```
+      make check-format
+      make update-format
+    ```
+
+    </p>
+    </details>
+
+  - **Recommended Build Practice** (applicable only if there is an update in any stoke repo)
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+    ## Update/Build x64asm
+      cd $REPO_PATH/stoke-develop/src/ext/x64asm
+      git pull upstream working
+      make clean; make -j64 debug
+
+      ## Update/Build stoke
+      cd $REPO_PATH/stoke-develop
+      git pull origin working
+      make -j64 debug
+
+      ## Update/Build Matcher/compD
+      cd $REPO_PATH/validating-binary-decompilation/source/build
+      make clean; make -j64
+    ```
+
+    </p>
+    </details>
 
 [&#11181;](#Table-of-Contents)
 
 ## Testing
 ### Running SIV Pipeline
 #### An example run
+<details><summary>expand</summary>
+<p>
+
 Running SIV on an isolated example instruction `addq_r64_r64` involves the following step
 ```
 export REPO_PATH=${HOME}/Github/ # could be any path
@@ -393,6 +485,9 @@ echo register-variants/addq_r64_r64 > /tmp/sample.txt
 
 2. The entire execution will take up-to 4-5 mins.
 
+</p>
+</details>
+
 #### Batch runs
 The goal of all the make targets except `make provez3` (as mentioned above) is to reproduce the file verification-query file `Output/test-z3.py`
 from scratch.
@@ -402,20 +497,27 @@ encoding the verification conditions, which is then dispatched (using Make
 target `provez3`) to z3 for verification.
 
 The python file has the following format:
+  <details><summary>expand</summary>
+  <p>
 
-```python 
- s = z3.solver()
- For each E in {registers, flags, memory values}: s.push()
-  s.push()
-  lvar = symbolic summary corresponding to E, obtained by sym-execution of the LLVM IR (generated by McSema by lifting the binary instruction)
-  xvar = symbolic summary corresponding to E, obtained by sym-execution the binary instruction.
 
-  s.add(lvar != xvar)
+  ```python 
+   s = z3.solver()
+   For each E in {registers, flags, memory values}: s.push()
+    s.push()
+    lvar = symbolic summary corresponding to E, obtained by sym-execution of the LLVM IR (generated by McSema by lifting the binary instruction)
+    xvar = symbolic summary corresponding to E, obtained by sym-execution the binary instruction.
 
-  solve s for unsat/sat/timeout
+    s.add(lvar != xvar)
 
-  s.pop()
-```
+    solve s for unsat/sat/timeout
+
+    s.pop()
+  ```
+
+  </p>
+  </details>
+
 Upon dispatch of the verification queries, using `make provez3`, for each register/flag/memory
 values,  the output `Test-Pass` is generated if all the queries results in
 `unsat`. Conversely, the output says `Test-Fail` if any of query results in
@@ -424,10 +526,18 @@ values,  the output `Test-Pass` is generated if all the queries results in
 In order to run this final prover step on a random sample of [non-buggy
 instructions](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation/mcsema/docs/AE_docs/non-bugs.txt),
 do the following:
-```
-cd $REPO_PATH/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/
-sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo ===; cd {}; make provez3; cd -" |& tee ~/Junk/log
-```
+
+  <details><summary>expand</summary>
+  <p>
+  
+  ```
+  cd $REPO_PATH/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/
+  sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo ===; cd {}; make provez3; cd -" |& tee ~/Junk/log
+  ```
+
+  </p>
+  </details>
+
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/single_instruction_translation_validation/mcsema/README.md)
 
 [&#11181;](#Table-of-Contents)
@@ -445,40 +555,45 @@ for normalization. Also, there is an option for NORM which enables
 AutoTuner for pass selection (to be described later).
 
 Running PLV on it involves the following steps
-```
+<details><summary>expand</summary>
+<p>
+
+```bash
 export REPO_PATH=${HOME}/Github/ # could be any path
 export NORM=CUSTOM
 cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
 make binary
 make reloc_binary
-## The step below (i.e., make mcsema) is responsible for running Mcsema to lift the binary "binary/test"
-## and creating  "../binary/test.mcsema.inline.ll" (already populated)
-make mcsema
-# One may skip the above step as the binaries and McSema generated files are populated
+make mcsema   ## This step is responsible for running Mcsema to lift the binary "binary/test"
+              ## and creating  "../binary/test.mcsema.inline.ll"
+# One may skip the above steps if the binaries and McSema generated files are pre-populated
 
 cd Doit/
 
 ## Running Compositional lifter (Compd) on the corresponding binary ../binary/test.reloc
 ## Creates mcsema/test.proposed.inline.ll
-make compd # One may skip the step as the Compd generated files are populated
+make compd # One may skip the step if the Compd generated files are pre-populated
 
 ## Running the Matcher on the candidate LLVM IR programs after normalization
 make match # expect "Match Pass" upon execution
 ```
 
 **Side Note**
-Behind the scene, the Make target `match` includes other targets like `compd_opt` & `mcsema_opt`,
+Behind the scene, the make target `match` includes other targets like `compd_opt` & `mcsema_opt`,
 responsible for normalization. These targets can be run independently as well.
 Following shows the deatils of those targets
 ```
 ## Normalizing mcsema/test.proposed.inline.ll
 ## Creates mcsema/test.proposed.opt.ll
-make compd_opt # expect "Compd Pass" upon execution
+make compd_opt
 
 ## Normalizing ../binary/test.mcsema.inline.ll (Already populated using make mcsema)
 ## Creates mcsema/test.mcsema.opt.ll
 make mcsema_opt
 ```
+
+</p>
+</details>
 
 #### An Example Run (w/ autotuning)
 In order to prove that two functions F & F ′ are semantically equivalent, they
@@ -501,15 +616,17 @@ need to be reduced to isomorphic graphs via normalization. For normalization,
 Next, we will show how the auto-tuner helps discover a pass sequence
 effective for normalization and subsequent matching.
 
+<details><summary>expand</summary>
+<p>
+
 ```bash
 export REPO_PATH=${HOME}/Github/ # could be any path
 cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
 make binary
 make reloc_binary
-## The step below (i.e., make mcsema) is responsible for running Mcsema to lift the binary "binary/test"
-## and creating  "../binary/test.mcsema.inline.ll" (already populated)
-make mcsema
-# One may skip the above step as the binaries and McSema generated files are populated
+make mcsema   ## This step is responsible for running Mcsema to lift the binary "binary/test"
+              ## and creating  "../binary/test.mcsema.inline.ll"
+# One may skip the above steps if the binaries and McSema generated files are pre-populated
 
 cd Queens/
 
@@ -526,116 +643,143 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
            # all the candidate pass sequences are exhausted (declare Fail).
 ```
 
+</p>
+</details>
+
 ### Batch run (Recommended)
 
 #### Running a batch PLV run on toy-examples 
-  - w/o autotuner
-  ```
+  - **w/o autotuner**
+    <details><summary>expand</summary>
+    <p>
+    
+    ```bash
 
-    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
+      cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
 
-    ## Create Binaries from toy-example C functions
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries from toy-example C functions
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 
-    ## Create Binaries with relocation information
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries with relocation information
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
 
-    ## Create McSema  generated IR programs
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      ## Create McSema  generated IR programs
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
 
-    ## Create Compositional Lifter generated IR programs
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+      ## Create Compositional Lifter generated IR programs
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
-    ## Following run the matcher after normalization
-    export NORM=CUSTOM
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+      ## Following run the matcher after normalization
+      export NORM=CUSTOM
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
 
-    ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
-    ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
-  ```
+      ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
+      ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
+    ```
+  
+  </p>
+  </details>
 
-  - w/ autotuner
-  ```
+  - **w/ autotuner**
+    <details><summary>expand</summary>
+    <p>
+    
+    ```bash
 
-    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
+      cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
 
-    ## Create Binaries from toy-example C functions
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries from toy-example C functions
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 
-    ## Create Binaries with relocation information
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries with relocation information
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
 
-    ## Create McSema  generated IR programs
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      ## Create McSema  generated IR programs
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
 
-    ## Create Compositional Lifter generated IR programs
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+      ## Create Compositional Lifter generated IR programs
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
-    ## Run autotuner to select an effective pass sequence
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
+      ## Run autotuner to select an effective pass sequence
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
 
-    ## Following run the matcher after normalization
-    unset NORM
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+      ## Following run the matcher after normalization
+      unset NORM
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
 
-    ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
-    ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
-  ```
+      ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
+      ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
+    ```
+  
+  </p>
+  </details>
 
 #### Running a batch PLV run on single-source-benchmark
-  - w/o autotuner
-  ```
+  - **w/o autotuner**
+    <details><summary>expand</summary>
+    <p>
+    
+    ```bash
 
-    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
+      cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
 
-    ## Create Binaries from toy-example C functions
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries from toy-example C functions
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 
-    ## Create Binaries with relocation information
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries with relocation information
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
 
-    ## Create McSema  generated IR programs
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      ## Create McSema  generated IR programs
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
 
-    ## Create Compositional Lifter generated IR programs
-    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+      ## Create Compositional Lifter generated IR programs
+      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
-    ## Following run the matcher after normalization
-    export NORM=CUSTOM
-    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+      ## Following run the matcher after normalization
+      export NORM=CUSTOM
+      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
 
-    ../../scripts/triage.sh Pass  docs/match_1.log  single-source-benchmark &> docs/matchPass_1.log
-    ../../scripts/triage.sh Fail  docs/match_1.log  single-source-benchmark &> docs/matchFail_1.log
+      ../../scripts/triage.sh Pass  docs/match_1.log  single-source-benchmark &> docs/matchPass_1.log
+      ../../scripts/triage.sh Fail  docs/match_1.log  single-source-benchmark &> docs/matchFail_1.log
 
-  ```
+    ```
+  
+  </p>
+  </details>
 
-  - w/ autotuner
-  ```
+  - **w/ autotuner**
+    <details><summary>expand</summary>
+    <p>
+    
+    ```bash
 
-    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
+      cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
 
-    ## Create Binaries from toy-example C functions
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries from toy-example C functions
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 
-    ## Create Binaries with relocation information
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      ## Create Binaries with relocation information
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
 
-    ## Create McSema  generated IR programs
-    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      ## Create McSema  generated IR programs
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
 
-    ## Create Compositional Lifter generated IR programs
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+      ## Create Compositional Lifter generated IR programs
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
-    ## Run autotuner to select an effective pass sequence
-    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
+      ## Run autotuner to select an effective pass sequence
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
 
-    ## Following run the matcher after normalization
-    unset NORM
-    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+      ## Following run the matcher after normalization
+      unset NORM
+      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
 
-    ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
-    ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
-  ```
+      ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
+      ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
+    ```
+
+  </p>
+  </details>
 
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation/README.md)
 
@@ -650,19 +794,31 @@ passes to canonicalize effectively.
 
 ### Build Instructions
   - Checkout Repository
-  ```bash
-    export REPO_PATH=${HOME}/Github/ # could be any path
-    cd $REPO_PATH/
-    git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
-  ```
+    <details><summary>expand</summary>
+    <p>
+
+    ```bash
+      export REPO_PATH=${HOME}/Github/ # could be any path
+      cd $REPO_PATH/
+      git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
+    ```
+  
+    </p>
+    </details>
 
   - Install
-  ```bash
-    mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
-    cd !$
+    <details><summary>expand</summary>
+    <p>
+    
+    ```bash
+      mkdir -p ${REPO_PATH}/validating-binary-decompilation/source/build
+      cd !$
 
-    cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
-    make -j8 matcher
-  ```
+      cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
+      make iterative-pruning-matcher
+    ```
+
+    </p>
+    </details>
 
 [&#11181;](#Table-of-Contents)

@@ -17,6 +17,8 @@ compd: main checkFn doWork
 compd_opt: main checkFn doWork
 match: main checkFn doWork
 
+imatch: main checkFn doWork
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

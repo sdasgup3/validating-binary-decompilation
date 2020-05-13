@@ -17,6 +17,8 @@ compd: main doTrans
 compd_opt: main doTrans
 match: main doTrans
 
+imatch: main doTrans
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -145,6 +145,7 @@ def createParentMakefile(functions):
     makeFile.write("compd:" + allFuncNames + "\n")
     makeFile.write("compd_opt:" + allFuncNames + "\n")
     makeFile.write("match:" + allFuncNames + "\n\n")
+    makeFile.write("imatch:" + allFuncNames + "\n\n")
 
     makeFile.write("binary:" + "\n")
     makeFile.write("	mkdir -p ${INDIR}" + "\n")
@@ -253,6 +254,13 @@ def createMakefile(funcName):
         "\n")
     makeFile.write(
         "	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --tooldir ${TOOLDIR} --prog ${PROG} --match")
+    makeFile.write("" + "\n\n")
+
+    makeFile.write(
+        "imatch:" +
+        "\n")
+    makeFile.write(
+        "	@${SCRIPTDIR}//matcher_driver.sh  --outdir ${OUTDIR} --indir ${INDIR} --tooldir ${TOOLDIR} --prog ${PROG} --imatch")
     makeFile.write("" + "\n\n")
 
 

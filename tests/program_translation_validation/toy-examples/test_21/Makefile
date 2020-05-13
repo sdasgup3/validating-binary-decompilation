@@ -17,6 +17,8 @@ compd: main shiftit
 compd_opt: main shiftit
 match: main shiftit
 
+imatch: main shiftit
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

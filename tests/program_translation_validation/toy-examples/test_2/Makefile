@@ -17,6 +17,8 @@ compd: foo main
 compd_opt: foo main
 match: foo main
 
+imatch: foo main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -129,6 +129,15 @@ matchDriver() {
   done
 }
 
+imatch() {
+  OUTDIR=$1
+  TOOLDIR=$2
+  PROG=$3
+
+  executeNPrint "( time ${TOOLDIR}/iterative-pruning-matcher --file1 ${OUTDIR}test.mcsema.opt.ll:${PROG}   --file2 ${OUTDIR}test.proposed.opt.ll:${PROG} ) 1>${OUTDIR}imatch.log 2>&1"
+  ${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --imatch
+}
+
 while [ "$1" != "" ]; do
     case $1 in
         --compd_opt )    shift
@@ -139,6 +148,9 @@ while [ "$1" != "" ]; do
                          ;;
         --match )        shift
                          matchDriver $OUTDIR $INDIR $TOOLDIR $PROG
+                         ;;
+        --imatch )       shift
+                         imatch $OUTDIR $TOOLDIR $PROG
                          ;;
         --outdir )       shift
                          OUTDIR=$1

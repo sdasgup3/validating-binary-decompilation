@@ -79,7 +79,7 @@ DataDepGraph::DataDepGraph(Function *F, bool useSSAEdges) {
         assert(0 && "Defining instruction should always be a store");
       }
 
-      llvm::errs() << *p << " --> " << *U << "\n";
+      // llvm::errs() << *p << " --> " << *U << "\n";
 
       GImpl[p].insert(U);
     }

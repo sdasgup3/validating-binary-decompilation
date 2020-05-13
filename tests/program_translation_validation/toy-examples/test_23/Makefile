@@ -17,6 +17,8 @@ compd: draw main
 compd_opt: draw main
 match: draw main
 
+imatch: draw main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

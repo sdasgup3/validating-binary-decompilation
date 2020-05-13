@@ -17,6 +17,8 @@ compd: Ack main
 compd_opt: Ack main
 match: Ack main
 
+imatch: Ack main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

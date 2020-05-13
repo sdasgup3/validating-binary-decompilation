@@ -30,7 +30,7 @@
 
 #undef DEBUG_TYPE
 #define DEBUG_TYPE "llvm-graph-matching"
-//#define MATCHER_DEBUG
+// #define MATCHER_DEBUG
 
 using namespace std;
 using namespace llvm;
@@ -69,7 +69,8 @@ public:
   // To be overridden
   virtual void retrievePotIMatches(Function *F1, Function *F2,
                                    bool potentialMatchAccuracy = false) = 0;
-  virtual bool deepMatch(Instruction *I1, Instruction *I2) = 0;
+  virtual bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
+                         DataDepGraph *g2) = 0;
   virtual void dumpPotIMatches() = 0;
   virtual void dumpPotIMatchesStats() = 0;
   virtual bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
@@ -84,6 +85,12 @@ public:
                                std::map<Value *, set<Value *>> &Phi);
   bool handleConflictingCalls(DataDepGraph *g1,
                               std::map<Value *, set<Value *>> &Phi);
+  bool handleConflictingBranches(DataDepGraph *g1,
+                                 std::map<Value *, set<Value *>> &Phi);
+  bool BranchesDisambiguationStrategy1(BranchInst *L_BInstr,
+                                       set<Value *> &pMatches);
+  bool BranchesDisambiguationStrategy2(BranchInst *L_BInstr,
+                                       set<Value *> &pMatches);
 
   // Common Functionality
   bool initialArgumentsMatch(Function *F1, Function *F2,
@@ -92,8 +99,6 @@ public:
   void dumpLLVMNode(const Value *);
   set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);
 
-  bool handleConflictingStores();
-  bool handleConflictingCalls();
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
 };
 
@@ -109,7 +114,8 @@ public:
           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
-  virtual bool deepMatch(Instruction *I1, Instruction *I2);
+  bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
+                 DataDepGraph *g2);
   void dumpPotIMatches();
   void dumpPotIMatchesStats();
   bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
@@ -130,12 +136,16 @@ public:
                           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
-  virtual bool deepMatch(Instruction *I1, Instruction *I2);
+  bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
+                 DataDepGraph *g2);
   void dumpPotIMatches();
   void dumpPotIMatchesStats();
   bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
                       std::map<Value *, set<Value *>> &Phi);
   void postMatchingAction();
+  void dumpPrunedIR(Function *f1, Function *f2,
+                    const std::map<Value *, set<Value *>> &Phi1,
+                    const std::map<Value *, set<Value *>> &Phi2);
 };
 
 } // end llvm namespace

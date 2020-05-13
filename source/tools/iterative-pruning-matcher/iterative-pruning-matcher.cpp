@@ -86,14 +86,14 @@ int main(int argc, char **argv) {
   LLVMContext Context;
 
   // Reading llvm files and extracting functions to match
-  errs() << "Reading LLVM: " << TargetFile << "\n";
+  outs() << "Reading LLVM: " << TargetFile << "\n";
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
-  errs() << "Reading LLVM: " << SourceFile << "\n";
+  outs() << "Reading LLVM: " << SourceFile << "\n";
   std::unique_ptr<Module> SMod(parseIRFile(SourceFile, Err, Context));
   if (!SMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
@@ -102,7 +102,7 @@ int main(int argc, char **argv) {
 
   llvm::Function *F1 = nullptr, *F2 = nullptr;
 
-  errs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
+  outs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
          << "\n";
   for (auto &Func : *TMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -132,7 +132,7 @@ int main(int argc, char **argv) {
     break;
   }
 
-  errs() << "Extracting function [" << SourceFunc << "] from " << SourceFile
+  outs() << "Extracting function [" << SourceFunc << "] from " << SourceFile
          << "\n";
   for (auto &Func : *SMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -169,7 +169,7 @@ int main(int argc, char **argv) {
   }
 
   // Matching the extracted functions
-  Matcher M(F1, F2, SSAEdgeOnly, PotentialMatchAccurancy);
+  IterativePruningMatcher M(F1, F2, SSAEdgeOnly, PotentialMatchAccurancy);
 
   errs() << "Matcher Done...\n";
   return 0;
