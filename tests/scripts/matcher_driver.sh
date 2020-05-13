@@ -18,10 +18,10 @@ selectPassSeq() {
              -simplifycfg -basicaa -aa -instcombine"
 
   ## More effective pass list derived after submission.
-##  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
-##         -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
-##         -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
-##         -gvn -basicaa -aa -memdep -dse -memcpyopt"
+  NORM_PASS="-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa  \
+         -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim \
+         -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse   \
+         -gvn -basicaa -aa -memdep -dse -memcpyopt"
 
   if [ -v NORM ]; then
     if [ "$NORM" == "CUSTOM" ]; then
@@ -78,7 +78,7 @@ match() {
 }
 
 shouldContinue() {
-  # Return in NORM is defined.
+  # Return 0, if NORM is defined; Else 1
   if [ -v NORM ]; then
     return 0
   fi
@@ -107,15 +107,21 @@ matchDriver() {
     continue=$?
 
 
+    # if NORM is defined (as CUSTOM  or O3), then exit. 
+    # Note that the matching results is already printed in match subroutine. 
     if [ $continue -eq 0 ]; then
       exit $matchstat
     fi
 
+    # if Matching is successful, keep the tuner json file with the
+    # pass-sequence entry responsible for the successful match.
     if [ $matchstat -eq 0 ]; then
       tail -n 1 ${OUTDIR}/normalizer_final_config.json > ${OUTDIR}/normalizer_final_config.json.tmp && mv ${OUTDIR}/normalizer_final_config.json.tmp ${OUTDIR}/normalizer_final_config.json
       exit 0
     fi
 
+    # if Matching Fails, remove the last entry from the tuner json file.
+    # if the file become empty, remove the tuner json file.
     sed -i '$d' ${OUTDIR}/normalizer_final_config.json
     if [ ! -s ${OUTDIR}/normalizer_final_config.json ]; then  
       rm -rf ${OUTDIR}/normalizer_final_config.json

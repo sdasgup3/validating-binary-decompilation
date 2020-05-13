@@ -434,7 +434,7 @@ sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo 
 
 ### Running PLV Pipeline
 
-#### An Example Run
+#### An Example Run (w/o autotuning)
 
 Here we will elaborate the process of running PLV on an isolated example
 function `Queens/Doit/`.  We use shell variable NORM to specify which set of
@@ -448,16 +448,29 @@ Running PLV on it involves the following steps
 ```
 export REPO_PATH=${HOME}/Github/ # could be any path
 export NORM=CUSTOM
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/Doit/
-
-## The step below (i.e., make mcsema) is responsible for running Mcsema to lift the binary "../binary/test"
+cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
+make binary
+make reloc_binary
+## The step below (i.e., make mcsema) is responsible for running Mcsema to lift the binary "binary/test"
 ## and creating  "../binary/test.mcsema.inline.ll" (already populated)
-# make mcsema // Skip  this step as mentioned above
+make mcsema
+# One may skip the above step as the binaries and McSema generated files are populated
 
-## Running Compositional lifter on the corresponding binary ../binary/test.reloc
+cd Doit/
+
+## Running Compositional lifter (Compd) on the corresponding binary ../binary/test.reloc
 ## Creates mcsema/test.proposed.inline.ll
-make compd
+make compd # One may skip the step as the Compd generated files are populated
 
+## Running the Matcher on the candidate LLVM IR programs after normalization
+make match # expect "Match Pass" upon execution
+```
+
+**Side Note**
+Behind the scene, the Make target `match` includes other targets like `compd_opt` & `mcsema_opt`,
+responsible for normalization. These targets can be run independently as well.
+Following shows the deatils of those targets
+```
 ## Normalizing mcsema/test.proposed.inline.ll
 ## Creates mcsema/test.proposed.opt.ll
 make compd_opt # expect "Compd Pass" upon execution
@@ -465,69 +478,9 @@ make compd_opt # expect "Compd Pass" upon execution
 ## Normalizing ../binary/test.mcsema.inline.ll (Already populated using make mcsema)
 ## Creates mcsema/test.mcsema.opt.ll
 make mcsema_opt
-
-## Matching mcsema/test.proposed.opt.ll & mcsema/test.mcsema.opt.ll
-make match # expect "Match Pass" upon execution
-```
-**Note**
-The Make target `match` already includes the normalization actions
-corresponding to `compd_opt` & `mcsema_opt`, hence one can skip invoking such
-redundant targets.  The reason we still have those targets are for legacy
-reasons and included in this presentation for better explanation of the steps.
-For example, instead of the above steps one can do
-```
-export NORM=CUSTOM
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/Doit/
-make compd
-make match
 ```
 
-### Batch run (Recommended)
-To demonstrate a batch run, we have included a list of sample functions in a
-list
-`$REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/docs/AE_docs/samplePassList.txt`.
-The list includes function `himenobmtxpa/jacobi`, the biggest function we
-tried lifting before submission, wherein the size of the extracted LLVM IR,
-      using the Compositional Lifter, is `32105` LOC. Note that, the runtime of the matcher on 
-      `himenobmtxpa/jacobi` might take up-to 2 mins.
-
-
-Running PLV in batch mode, over a sample list of functions, involves the following steps
-```
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/
-../../scripts/run_batch_plv.sh docs/AE_docs/samplePassList.txt
-
-# cat ../../scripts/run_batch_plv.sh
-## LIST=$1
-## 
-## 
-## echo "Batch Run Begin"
-## echo
-## 
-## echo "Setting NORMALIZATION to custom passes"
-## export NORM=CUSTOM
-## 
-## echo
-## echo "Running Compositional Lifter + Normalizer + Matcher"
-## cat $LIST | parallel "echo ; echo {}; echo =======; cd {}; make  compd; make match; cd - "
-## 
-## echo "Batch Run Begin"
-```
-
-**Note**
-We have provided the list of `2189` passing cases
-`$REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/docs/AE_docs/matcherPassList.txt`,
-  which can be run using either batch mode or individually.
-
-The user is encouraged to pick a random count of entries form the file and invoke the batch run
-```
-export NORM=CUSTOM
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/
-sort -R docs/AE_docs/matcherPassList.txt | head -n 10 > /dev/stdout | ../../scripts/run_batch_plv.sh   /dev/stdin |& tee ~/Junk/log
-```
-
-#### AutoTuner based Normalization
-
+#### An Example Run (w/ autotuning)
 In order to prove that two functions F & F ′ are semantically equivalent, they
 need to be reduced to isomorphic graphs via normalization. For normalization,
      we initially used a custom sequence of 17 LLVM optimization passes,
@@ -545,12 +498,25 @@ need to be reduced to isomorphic graphs via normalization. For normalization,
      configuration which can minimize an objective function within a given
      resource budget. 
 
-### An example auto-tuning run
-Here we will show how the auto-tuner can help discover a pass sequence effective for normalization
-and subsequent matching.
+Next, we will show how the auto-tuner helps discover a pass sequence
+effective for normalization and subsequent matching.
 
 ```bash
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/Queens
+export REPO_PATH=${HOME}/Github/ # could be any path
+cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
+make binary
+make reloc_binary
+## The step below (i.e., make mcsema) is responsible for running Mcsema to lift the binary "binary/test"
+## and creating  "../binary/test.mcsema.inline.ll" (already populated)
+make mcsema
+# One may skip the above step as the binaries and McSema generated files are populated
+
+cd Queens/
+
+## Running Compositional lifter (Compd) on the corresponding binary ../binary/test.reloc
+## Creates mcsema/test.proposed.inline.ll
+make compd # One may skip the step as the Compd generated files are populated
+
 make tuner # Invoke the Opentuner and generate a file mcsema/normalizer_final_config.json
            # containing all the candidate pass sequences which meet the  objective function.
            # runtime: ~1 min.
@@ -560,27 +526,116 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
            # all the candidate pass sequences are exhausted (declare Fail).
 ```
 
-The file
-`$REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/docs/reported_stats/7.log`
-shows the 65 false-negatives for which the matcher failed because of the the
-pass ordering problem (The fixed length pass sequence being insufficient to converge the candidate IR programs to isomorphic graphs).  For all the
-functions in the above list, the matcher will `Fail`, when normalized using the
-fixed-length (17) pass sequence.
+### Batch run (Recommended)
 
-```bash
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/
-export NORM=CUSTOM
-sort -R docs/reported_stats/7.log | head -n 5 > /dev/stdout |  cat /dev/stdin  | parallel "cd {}; make match ; cd -" |& tee ~/Junk/log
-```
+#### Running a batch PLV run on toy-examples 
+  - w/o autotuner
+  ```
 
-However, if the pass sequence is selected by the auto-tuner, the matcher will succeed in all the cases.
-```bash
-cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/
-unset NORM
-sort -R docs/reported_stats/7.log docs/reported_stats/1.log | head -n 5 > /dev/stdout |  cat /dev/stdin  | parallel "cd {}; make match ; cd -" |& tee ~/Junk/log
-```
-Note that, for each function entry in `docs/reported_stats/7.log docs/reported_stats/1.log`, the auto-tuner generated pass sequence is pre-populated at `normalizer_final_config.json`.
-The functions in `docs/reported_stats/7.log docs/reported_stats/1.log` constitutes the total passing cases.
+    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
+
+    ## Create Binaries from toy-example C functions
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+
+    ## Create Binaries with relocation information
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+
+    ## Create McSema  generated IR programs
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+
+    ## Create Compositional Lifter generated IR programs
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+
+    ## Following run the matcher after normalization
+    export NORM=CUSTOM
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+
+    ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
+    ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
+  ```
+
+  - w/ autotuner
+  ```
+
+    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
+
+    ## Create Binaries from toy-example C functions
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+
+    ## Create Binaries with relocation information
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+
+    ## Create McSema  generated IR programs
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+
+    ## Create Compositional Lifter generated IR programs
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+
+    ## Run autotuner to select an effective pass sequence
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
+
+    ## Following run the matcher after normalization
+    unset NORM
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+
+    ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
+    ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
+  ```
+
+#### Running a batch PLV run on single-source-benchmark
+  - w/o autotuner
+  ```
+
+    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
+
+    ## Create Binaries from toy-example C functions
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+
+    ## Create Binaries with relocation information
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+
+    ## Create McSema  generated IR programs
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+
+    ## Create Compositional Lifter generated IR programs
+    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+
+    ## Following run the matcher after normalization
+    export NORM=CUSTOM
+    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+
+    ../../scripts/triage.sh Pass  docs/match_1.log  single-source-benchmark &> docs/matchPass_1.log
+    ../../scripts/triage.sh Fail  docs/match_1.log  single-source-benchmark &> docs/matchFail_1.log
+
+  ```
+
+  - w/ autotuner
+  ```
+
+    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
+
+    ## Create Binaries from toy-example C functions
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+
+    ## Create Binaries with relocation information
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+
+    ## Create McSema  generated IR programs
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+
+    ## Create Compositional Lifter generated IR programs
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+
+    ## Run autotuner to select an effective pass sequence
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
+
+    ## Following run the matcher after normalization
+    unset NORM
+    cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+
+    ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
+    ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
+  ```
 
 #### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/program_translation_validation/README.md)
 

@@ -1,8 +1,8 @@
 ## Run Stats
 | Test-suite  | Binary Opt Level | Graph Traits | Matcher | Normalizer | Pass/Fail | Comments | run ID |
 |---|---|---|---|---|---|---|---|
-|  toy-examples (90)|  -O0 |  Mem edges only | Naive | O3       | \*77/13   | same with ssa edges | A.1 |
-|                   |  -O0 |  Mem edges only | Naive | custom   | 81/7   | same with ssa edges | A.2 |
+|  toy-examples (88)|  -O0 |  Mem edges only | Naive | custom      | 81/7   |  | A.1 |
+|                   |  -O0 |  Mem edges only | Naive | tuner       | 82/6   |  | A.2 |
 |  single-source (3021)|  -O0 |  Mem edges only | Naive | O3     | \*2544/477 | 2555/507 with ssa edges| B.1|
 |                      |  -O0 |  Mem edges only | Naive | custom | 2901/120 | 2791/271 with ssa edges|  B.2|
 |  spec2006 (3870 partial)|  -O0 |  Mem edges only | Naive | O3 | \*2065/1805 | saved in matchPass\_1 | C.1 |
@@ -41,10 +41,8 @@ Only if needed, you may run the following pipeline
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
 cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
-cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
 
 cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
-cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
 cat docs/compdPass_N.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match.log
 ```
 
@@ -58,12 +56,10 @@ cat docs/matchFail_2.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done
  - A.1
  ```
   export BIN_OPT=O0
-  export NORM=O3
+  export NORM=CUSTOM
 
 
-  cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+  cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
   ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
   ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
  ```
@@ -72,11 +68,8 @@ cat docs/matchFail_2.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done
  ```
   export BIN_OPT=O0
   unset NORM
-  cat docs/matchPass_2.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
-
-  cat docs/compdPass_2.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
-  cat docs/compdPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+  cat docs/functionList.log | parallel  " echo; echo {}; make -C {} tuner" |& tee docs/tuner.log
+  cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
   ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
   ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
  ```
@@ -86,8 +79,6 @@ cat docs/matchFail_2.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done
   # export BIN_OPT=O0
   export NORM=O3
 
-  cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
   cat docs/compdPass_1.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
   ../../scripts/triage.sh Pass  docs/match_1.log  single-source-benchmark &> docs/matchPass_1.log
   ../../scripts/triage.sh Fail  docs/match_1.log  single-source-benchmark &> docs/matchFail_1.log
@@ -97,8 +88,6 @@ cat docs/matchFail_2.log | parallel "echo -n \"{}: \" ; sed '/Disassembling Done
  ```
   # export BIN_OPT=O0
   unset NORM
-  cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema_opt; cd .." |& tee ~/Junk/log
-  cat docs/matchPass_2.log | parallel  " echo; echo {}; make -C {} compd_opt" |& tee docs/opt.log
   cat docs/matchPass_2.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
   ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
   ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
