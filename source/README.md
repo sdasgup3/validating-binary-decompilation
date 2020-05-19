@@ -11,8 +11,9 @@ The current directory hosts the tools & libraries relevant for validating the de
     - Associated Library Path:   [llvm-graph-matching](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/source/libs/llvm-graph-matching)
 
 # Run Instructions
-The above tools will be run as part of a pipleline and will seldom be run in isolation.
-For the purpose of explanation, we are describing the usage model of the above tools.
+The above tools will be run as part of a pipleline (SIV or PLV )and will seldom
+be run in isolation.  For the purpose of explanation, we are describing the
+usage model of the individual tools.
 
 ```bash
 # Set path of the directory containing validating-binary-decompilation repository
@@ -30,69 +31,42 @@ ${INDIR}=<path>
 # The path to cache the results of single instruction decompilation using McSema.
 ${ARTIFACTDIR}=${REPO_PATH}/compd_cache/
 
-# Running compositional decompiler
+# compositional decompiler
  - Usage Model
-  ```
-  ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc --use-reloc-info
-  ```
- - An Example
-  ```
+  ${TOOLDIR}/decompiler  --output ${OUTDIR}test.proposed.ll --path ${ARTIFACTDIR} --function ${PROG} --input ${INDIR}test.reloc [--use-reloc-info]
+
+ - An Example run
   cd ${REPO_PATH}/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign
   make compd
-  ```
 
 # Running matcher
  - Usage Model
-  ```
   ${TOOLDIR}/matcher --file1 ${OURDIR}test.opt.ll:${PROG} --file2 ${OURDIR}test.proposed.opt.ll:${PROG}
-  ```
+
  - An Example
-  ```
   cd ${REPO_PATH}/validating-binary-decompilation/tests/program_translation_validation/toy-examples/get-sign/get_sign
   make match
-  ```
+
 ```
 
 
 ### Deprecated Tools
-#### Runnning the variable\_and\_basic\_block\_correspondence tool
-```
-validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
- [--decompiled-output <file>.ll or <file>.bc]
- [--target-function _${PROG}]
- [--init-state-function _init_var_correspondence]
- [--llvm-dfg-dot-out <file>.dot]
- [--llvm-dfg-pdf-out <file>.pdf]
- [--target binary.asm]
- [--no-fresh-mem]
- [--x86-dfg-pdf-out file.pdf]
-```
+#### variable\_and\_basic\_block\_correspondence tool
+ - Usage model
+  ```
+    validating-binary-decompilation/ir_analyzer/build/bin/variable_bb_correspondence
+     [--decompiled-output <file>.ll or <file>.bc]
+     [--target-function _${PROG}]
+     [--init-state-function _init_var_correspondence]
+     [--llvm-dfg-dot-out <file>.dot]
+     [--llvm-dfg-pdf-out <file>.pdf]
+     [--target binary.asm]
+     [--no-fresh-mem]
+     [--x86-dfg-pdf-out file.pdf]
+  ```
 
-
-#### To analyze the llvm dfg as a standalone opt pass
-```
-cd ~/Github/validating-binary-decompilation/tests/get_sign
-~/Install/llvm/llvm.4.0.0.install/bin/opt -load ~/Github/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < get_sign_instrumented.ll   --var_corr -debug-only=variable_correspondence  -disable-output -target-function sub_660_get_sign -init-state-function sub_67b_init_var_correspondence
-```
-
-### Install mcsema
-```bash
-sudo apt-get install      git      curl      cmake      python2.7 python-pip python-virtualenv      wget      build-essential      gcc-multilib g++-multilib      libtinfo-dev      lsb-release            zlib1g-dev
-sudo dpkg --add-architecture i386
-sudo apt-get install zip zlib1g-dev:i386
-
-git clone --depth 1 git@github.com:sdasgup3/mcsema.git
-cd mcsema; git checkout  develop; cd -
-export REMILL_VERSION=`cat ./mcsema/.remill_commit_id`
-
-git clone https://github.com/trailofbits/remill.git
-cd remill
-git checkout -b temp ${REMILL_VERSION}
-mv ../mcsema tools
-
-
-./scripts/build.sh
-cd remill-build
-sudo make install -j64
-```
-
+ - Example run 
+  ```
+  cd $REPO_PATH/validating-binary-decompilation/tests/get_sign
+  opt -load $REPO_PATH/validating-binary-decompilation/ir_analyzer/build/lib/LLVMvariable_correspondence.so  < get_sign_instrumented.ll   --var_corr -debug-only=variable_correspondence  -disable-output -target-function sub_660_get_sign -init-state-function sub_67b_init_var_correspondence
+  ```

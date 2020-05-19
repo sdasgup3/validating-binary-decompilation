@@ -17,6 +17,8 @@ compd: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy dd
 compd_opt: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
 match: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
 
+imatch: second what_date main matgen dgefa dgesl dmxpy epslon print_time daxpy ddot idamax dscal
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

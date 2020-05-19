@@ -17,6 +17,8 @@ compd: createtask pkt trace schedule Wait holdself findtcb release qpkt append i
 compd_opt: createtask pkt trace schedule Wait holdself findtcb release qpkt append idlefn workfn handlerfn devfn main
 match: createtask pkt trace schedule Wait holdself findtcb release qpkt append idlefn workfn handlerfn devfn main
 
+imatch: createtask pkt trace schedule Wait holdself findtcb release qpkt append idlefn workfn handlerfn devfn main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

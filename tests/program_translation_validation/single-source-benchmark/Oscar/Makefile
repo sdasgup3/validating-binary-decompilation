@@ -17,6 +17,8 @@ compd: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
 compd_opt: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
 match: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
 
+imatch: Initrand Rand Cos Min0 Printcomplex Uniform11 Exptab Fft Oscar main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

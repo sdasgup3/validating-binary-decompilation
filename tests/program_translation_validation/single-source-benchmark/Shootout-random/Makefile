@@ -17,6 +17,8 @@ compd: main gen_random
 compd_opt: main gen_random
 match: main gen_random
 
+imatch: main gen_random
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

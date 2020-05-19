@@ -17,6 +17,8 @@ compd: main dtime
 compd_opt: main dtime
 match: main dtime
 
+imatch: main dtime
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

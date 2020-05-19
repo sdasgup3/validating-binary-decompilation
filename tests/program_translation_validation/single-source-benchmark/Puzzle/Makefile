@@ -17,6 +17,8 @@ compd: Initrand Rand Fit Place Remove Trial Puzzle main
 compd_opt: Initrand Rand Fit Place Remove Trial Puzzle main
 match: Initrand Rand Fit Place Remove Trial Puzzle main
 
+imatch: Initrand Rand Fit Place Remove Trial Puzzle main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

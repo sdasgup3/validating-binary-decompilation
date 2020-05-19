@@ -17,6 +17,8 @@ compd: main double_array_divs_variable
 compd_opt: main double_array_divs_variable
 match: main double_array_divs_variable
 
+imatch: main double_array_divs_variable
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

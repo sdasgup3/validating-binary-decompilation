@@ -17,6 +17,8 @@ compd: main accumulate_probabilities repeat_fasta random_fasta myrandom
 compd_opt: main accumulate_probabilities repeat_fasta random_fasta myrandom
 match: main accumulate_probabilities repeat_fasta random_fasta myrandom
 
+imatch: main accumulate_probabilities repeat_fasta random_fasta myrandom
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

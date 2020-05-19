@@ -17,6 +17,8 @@ compd: copy_data next_data melt_data equal_data valid_data dump_list dump_play g
 compd_opt: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
 match: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
 
+imatch: copy_data next_data melt_data equal_data valid_data dump_list dump_play get_value show_data show_move show_list show_play in_wanted make_data make_list make_play make_wanted get_good_move get_winning_move where get_real_move main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

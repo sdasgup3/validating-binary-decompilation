@@ -17,6 +17,8 @@ compd: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
 compd_opt: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
 match: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
 
+imatch: rsdec_204 generate_gf gen_poly decode_rs rsenc_204 encode_rs main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

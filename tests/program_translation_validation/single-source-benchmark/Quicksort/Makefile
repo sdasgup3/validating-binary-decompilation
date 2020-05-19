@@ -17,6 +17,8 @@ compd: Initrand Rand Initarr Quicksort Quick main
 compd_opt: Initrand Rand Initarr Quicksort Quick main
 match: Initrand Rand Initarr Quicksort Quick main
 
+imatch: Initrand Rand Initarr Quicksort Quick main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -17,6 +17,8 @@ compd: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param s
 compd_opt: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
 match: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
 
+imatch: main newMat mat_set_init mat_set jacobi clearMat fflop mflops set_param second
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

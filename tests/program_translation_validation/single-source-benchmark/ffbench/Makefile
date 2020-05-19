@@ -17,6 +17,8 @@ compd: main fourn
 compd_opt: main fourn
 match: main fourn
 
+imatch: main fourn
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

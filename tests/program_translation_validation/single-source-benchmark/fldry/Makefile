@@ -17,6 +17,8 @@ compd: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Pr
 compd_opt: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
 match: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
 
+imatch: main Proc0 Proc5 Proc4 Func2 Proc7 Proc8 Proc1 Func1 Proc6 Proc2 Func3 Proc3
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

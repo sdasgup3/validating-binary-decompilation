@@ -17,6 +17,8 @@ compd: wrap_mul4 mul4 main
 compd_opt: wrap_mul4 mul4 main
 match: wrap_mul4 mul4 main
 
+imatch: wrap_mul4 mul4 main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

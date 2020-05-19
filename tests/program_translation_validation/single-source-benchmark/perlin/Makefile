@@ -17,6 +17,8 @@ compd: main init noise fade grad lerp
 compd_opt: main init noise fade grad lerp
 match: main init noise fade grad lerp
 
+imatch: main init noise fade grad lerp
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

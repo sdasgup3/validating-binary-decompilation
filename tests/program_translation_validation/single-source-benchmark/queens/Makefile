@@ -17,6 +17,8 @@ compd: main find pboard
 compd_opt: main find pboard
 match: main find pboard
 
+imatch: main find pboard
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

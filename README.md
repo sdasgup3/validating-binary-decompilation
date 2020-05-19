@@ -423,7 +423,7 @@ echo register-variants/addq_r64_r64 > /tmp/sample.txt
 #     echo memory-variants/addq_r64_m64 > /tmp/sample.txt             # Try a memory variant
 #     sort -R docs/AE_docs/non-bugs.txt | head -n 1 > /tmp/sample.txt # Try any random instruction from a list
                                                                       # of passing cases
-../../scripts/run_batch_siv.sh /tmp/sample.txt |& tee ~/Junk/log
+../../scripts/run_batch_siv.sh /tmp/sample.txt |& tee /tmp/log
 
 # cat ../../scripts/run_batch_siv.sh
 ## LIST=$1
@@ -532,7 +532,7 @@ do the following:
   
   ```
   cd $REPO_PATH/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/
-  sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo ===; cd {}; make provez3; cd -" |& tee ~/Junk/log
+  sort -R docs/AE_docs/non-bugs.txt | head -n 50 | parallel "echo ; echo {}; echo ===; cd {}; make provez3; cd -" |& tee /tmp/log
   ```
 
   </p>
@@ -658,23 +658,26 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
       cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
 
       ## Create Binaries from toy-example C functions
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee /tmp/log
 
       ## Create Binaries with relocation information
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee /tmp/log
 
       ## Create McSema  generated IR programs
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee /tmp/log
 
       ## Create Compositional Lifter generated IR programs
       cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
       ## Following run the matcher after normalization
       export NORM=CUSTOM
-      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee /tmp/match_1.log
 
-      ../../scripts/triage.sh Pass  docs/match_1.log toy-examples &> docs/matchPass_1.log
-      ../../scripts/triage.sh Fail  docs/match_1.log toy-examples &> docs/matchFail_1.log
+      ## Triage the log file into passing and failing cases
+      ../../scripts/triage.sh Pass  /tmp/match_1.log toy-examples &> /tmp/matchPass_1.log
+      ../../scripts/triage.sh Fail  /tmp/match_1.log toy-examples &> /tmp/matchFail_1.log
+
+      ## Note: the golden triaged log files can be found at docs/matchPass_1.log and docs/matchFail_1.log
     ```
   
   </p>
@@ -689,13 +692,13 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
       cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
 
       ## Create Binaries from toy-example C functions
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee /tmp/log
 
       ## Create Binaries with relocation information
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee /tmp/log
 
       ## Create McSema  generated IR programs
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee /tmp/log
 
       ## Create Compositional Lifter generated IR programs
       cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
@@ -705,10 +708,13 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
 
       ## Following run the matcher after normalization
       unset NORM
-      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+      cat docs/functionList.log | parallel  " echo; echo {}; make -C {} match" |& tee /tmp/match_2.log
 
-      ../../scripts/triage.sh Pass  docs/match_2.log toy-examples &> docs/matchPass_2.log
-      ../../scripts/triage.sh Fail  docs/match_2.log toy-examples &> docs/matchFail_2.log
+      ## Triage the log file into passing and failing cases
+      ../../scripts/triage.sh Pass  /tmp/match_2.log toy-examples &> /tmp/matchPass_2.log
+      ../../scripts/triage.sh Fail  /tmp/match_2.log toy-examples &> /tmp/matchFail_2.log
+
+      ## Note: the golden triaged log files can be found at docs/matchPass_2.log and docs/matchFail_2.log
     ```
   
   </p>
@@ -724,23 +730,26 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
       cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
 
       ## Create Binaries from toy-example C functions
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee /tmp/log
 
       ## Create Binaries with relocation information
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee /tmp/log
 
       ## Create McSema  generated IR programs
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee /tmp/log
 
       ## Create Compositional Lifter generated IR programs
-      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+      cat docs/reported_stats/1_2_3_4.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
 
       ## Following run the matcher after normalization
       export NORM=CUSTOM
-      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_1.log
+      cat docs/reported_stats/1_2_3_4.log | parallel  " echo; echo {}; make -C {} match" |& tee /tmp/match_1.log
 
-      ../../scripts/triage.sh Pass  docs/match_1.log  single-source-benchmark &> docs/matchPass_1.log
-      ../../scripts/triage.sh Fail  docs/match_1.log  single-source-benchmark &> docs/matchFail_1.log
+      ## Triage the log file into passing and failing cases
+      ../../scripts/triage.sh Pass  /tmp/match_1.log  single-source-benchmark &> /tmp/matchPass_1.log
+      ../../scripts/triage.sh Fail  /tmp/match_1.log  single-source-benchmark &> /tmp/matchFail_1.log
+
+      ## Note: the golden triaged log files can be found at docs/matchPass_1.log and docs/matchFail_1.log
 
     ```
   
@@ -756,13 +765,13 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
       cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark
 
       ## Create Binaries from toy-example C functions
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee /tmp/log
 
       ## Create Binaries with relocation information
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee /tmp/log
 
       ## Create McSema  generated IR programs
-      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee ~/Junk/log
+      cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee /tmp/log
 
       ## Create Compositional Lifter generated IR programs
       cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
@@ -772,10 +781,12 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
 
       ## Following run the matcher after normalization
       unset NORM
-      cat docs/reported_stats/1_2_4.log | parallel  " echo; echo {}; make -C {} match" |& tee docs/match_2.log
+      cat docs/reported_stats/1_2_3_4.log | parallel  " echo; echo {}; make -C {} match" |& tee /tmp/match_2.log
 
-      ../../scripts/triage.sh Pass  docs/match_2.log  single-source-benchmark &> docs/matchPass_2.log
-      ../../scripts/triage.sh Fail  docs/match_2.log  single-source-benchmark &> docs/matchFail_2.log
+      ../../scripts/triage.sh Pass  /tmp/match_2.log  single-source-benchmark &> /tmp/matchPass_2.log
+      ../../scripts/triage.sh Fail  /tmp/match_2.log  single-source-benchmark &> /tmp/matchFail_2.log
+
+      ## Note: the golden triaged log files can be found at docs/matchPass_2.log and docs/matchFail_2.log
     ```
 
   </p>

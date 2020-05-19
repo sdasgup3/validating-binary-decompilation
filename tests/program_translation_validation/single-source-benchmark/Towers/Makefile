@@ -17,6 +17,8 @@ compd: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towers m
 compd_opt: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towers main
 match: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towers main
 
+imatch: Initrand Rand Error Makenull Getelement Push Init Pop Move tower Towers main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

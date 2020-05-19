@@ -17,6 +17,8 @@ compd: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 compd_opt: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 match: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
 
+imatch: eval_A eval_A_times_u eval_At_times_u eval_AtA_times_u main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

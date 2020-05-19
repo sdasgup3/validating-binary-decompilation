@@ -17,6 +17,8 @@ compd: polybench_flush_cache polybench_prepare_instruments polybench_timer_start
 compd_opt: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_bicg kernel_bicg_StrictFP check_FP print_array print_element
 match: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_bicg kernel_bicg_StrictFP check_FP print_array print_element
 
+imatch: polybench_flush_cache polybench_prepare_instruments polybench_timer_start rtclock polybench_timer_stop polybench_timer_print polybench_alloc_data xmalloc main init_array kernel_bicg kernel_bicg_StrictFP check_FP print_array print_element
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

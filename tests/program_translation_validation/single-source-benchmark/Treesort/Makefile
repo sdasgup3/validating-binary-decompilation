@@ -17,6 +17,8 @@ compd: Initrand Rand tInitarr CreateNode Insert Checktree Trees main
 compd_opt: Initrand Rand tInitarr CreateNode Insert Checktree Trees main
 match: Initrand Rand tInitarr CreateNode Insert Checktree Trees main
 
+imatch: Initrand Rand tInitarr CreateNode Insert Checktree Trees main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

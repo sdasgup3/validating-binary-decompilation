@@ -17,6 +17,8 @@ compd: generate_test_data random4 compdecomp heap_adjust main
 compd_opt: generate_test_data random4 compdecomp heap_adjust main
 match: generate_test_data random4 compdecomp heap_adjust main
 
+imatch: generate_test_data random4 compdecomp heap_adjust main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -17,6 +17,8 @@ compd: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashcode
 compd_opt: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashcode
 match: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashcode
 
+imatch: ht_node_create ht_create ht_destroy main ht_find_new ht_find ht_hashcode
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -17,6 +17,8 @@ compd: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2conj cf
 compd_opt: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2conj cftbsub cft1st cftmdl
 match: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2conj cftbsub cft1st cftmdl
 
+imatch: main get_time makewt putdata cdft errorcheck bitrv2 cftfsub bitrv2conj cftbsub cft1st cftmdl
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

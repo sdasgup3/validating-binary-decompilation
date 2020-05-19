@@ -17,6 +17,8 @@ compd: Initrand Rand Initmatrix Innerproduct Intmm main
 compd_opt: Initrand Rand Initmatrix Innerproduct Intmm main
 match: Initrand Rand Initmatrix Innerproduct Intmm main
 
+imatch: Initrand Rand Initmatrix Innerproduct Intmm main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

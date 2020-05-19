@@ -17,6 +17,8 @@ compd: advance energy offset_momentum main
 compd_opt: advance energy offset_momentum main
 match: advance energy offset_momentum main
 
+imatch: advance energy offset_momentum main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

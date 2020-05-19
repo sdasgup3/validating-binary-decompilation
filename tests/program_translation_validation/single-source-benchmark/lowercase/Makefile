@@ -17,6 +17,8 @@ compd: main doTest lower_StringImpl toASCIILower
 compd_opt: main doTest lower_StringImpl toASCIILower
 match: main doTest lower_StringImpl toASCIILower
 
+imatch: main doTest lower_StringImpl toASCIILower
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -246,8 +246,9 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
   }
 
   if (I2->getNumOperands() != I1->getNumOperands()) {
-    llvm::errs() << "Check: " << *I1 << " " << *I2 << "\n";
-    assert(0 && "deepMatch Assert!!");
+    // llvm::errs() << "Check: " << *I1 << " " << *I2 << "\n";
+    // assert(0 && "deepMatch Assert!!");
+    return false;
   }
 
   for (size_t i = 0; i < I1->getNumOperands(); i++) {
@@ -279,36 +280,20 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
 }
 
 /*
-**   1: procedure DualSim(G, Q, Φ):
-**   2:  changed←true
-**   3:  while changed do
-**   4:    changed←false
-**   5:    for u←Vq do
-**   6:      for u' ←Q.adj(u) do
-**   7:        Φ'(u')←∅
-**   8:        for v ←Φ(u) do
-**   9:          Φv(u')←G.adj(v) ∩ Φ(u')
-**   10:         if Φv(u') = ∅ then
-**   11:           remove v from Φ(u)
-**   12:           if Φ(u) = ∅ then
-**   13:             return empty Φ
-**   14:           end if
-**   15:           changed←true
-**   16:         end if
-**   17:         Φ'(u')←Φ'(u') ∪ Φv(u')
-**   18:       end for
-**   19:       if Φ'(u') = ∅ then
-**   20:         return empty Φ
-**   21:       end if
-**   22:       if Φ'(u') is smaller than Φ(u') then
-**   23:         changed←true
-**   24:       end if
-**   25:       Φ(u') = Φ(u') ∩ Φ'(u')
-**   26:     end for
-**   27:   end for
-**   28: end while
-**   29: return Φ
-**   30: end procedure
+** Consider u be  node
+**  adj(u) = {u'1, c}
+**  pot(u) = {x, y}; pot(c) = c1; pot(u'1) = {x, y}
+**  adj(x) = {y, c1}, adj(y) = {x, c2},
+
+** In matcher::dualSimulation algo, y will be removed from pot(u) for u' = c
+** as adj(y) ∩ pot(c) == {x, c2} ∩ {c1} is ∅
+** However, x will not be removed as 
+**  adj(x) ∩ pot(c)   == {y, c1} ∩ {c1}   != ∅ for u' = c
+**  adj(x) ∩ pot(u'1) == {y, c1} ∩ {x, y} != ∅ for u' = u'1
+
+** In IterativePruningMatcher::dualSimulation algo, y will NOT be removed.
+** The condition of removal is
+**  pot(u'1) ∩ adj(y) == ∅ && pot(c) ∩ adj(y) == ∅
 */
 bool IterativePruningMatcher::dualSimulation(
     DataDepGraph *g1, DataDepGraph *g2, std::map<Value *, set<Value *>> &Phi) {
@@ -524,9 +509,10 @@ bool Matcher::deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
   //   assert(I2->isBinaryOp() && I2->getNumOperands() == I1->getNumOperands()
   //   &&
   //          "deepMatch Assert!!");
-  if (I2->getNumOperands() != I1->getNumOperands()) {
-    llvm::errs() << "Check: " << *I1 << " " << *I2 << "\n";
-    assert(0 && "deepMatch Assert!!");
+  if (I2->getNumOperands() != I1->getNumOperands()) { // phi instructions
+    // llvm::errs() << "Check: " << *I1 << " " << *I2 << "\n";
+    // assert(0 && "deepMatch Assert!!");
+    return false;
   }
 
   for (size_t i = 0; i < I1->getNumOperands(); i++) {

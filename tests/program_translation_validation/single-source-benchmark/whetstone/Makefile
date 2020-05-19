@@ -17,6 +17,8 @@ compd: main POUT PA P3 P0
 compd_opt: main POUT PA P3 P0
 match: main POUT PA P3 P0
 
+imatch: main POUT PA P3 P0
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

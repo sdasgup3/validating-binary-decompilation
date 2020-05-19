@@ -17,6 +17,8 @@ compd: list_push_tail list_pop_tail list_empty list_length list_push_head list_p
 compd_opt: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
 match: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
 
+imatch: list_push_tail list_pop_tail list_empty list_length list_push_head list_pop_head list_equal list_print list_new list_sequence list_copy list_last list_reverse test_lists list_first main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

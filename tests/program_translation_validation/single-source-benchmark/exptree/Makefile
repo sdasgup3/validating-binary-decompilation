@@ -17,6 +17,8 @@ compd: newWorkList newCombList initWorkList initCombList saveSolution calculate 
 compd_opt: newWorkList newCombList initWorkList initCombList saveSolution calculate printSolution printList recSearch doSearch getInput search main
 match: newWorkList newCombList initWorkList initCombList saveSolution calculate printSolution printList recSearch doSearch getInput search main
 
+imatch: newWorkList newCombList initWorkList initCombList saveSolution calculate printSolution printList recSearch doSearch getInput search main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

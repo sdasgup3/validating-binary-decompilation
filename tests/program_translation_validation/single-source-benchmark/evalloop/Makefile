@@ -17,6 +17,8 @@ compd: execute eval main
 compd_opt: execute eval main
 match: execute eval main
 
+imatch: execute eval main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

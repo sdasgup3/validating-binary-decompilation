@@ -17,6 +17,8 @@ compd: salsa20 salsa main
 compd_opt: salsa20 salsa main
 match: salsa20 salsa main
 
+imatch: salsa20 salsa main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

@@ -17,6 +17,8 @@ compd: Initrand Rand Try Doit Queens main
 compd_opt: Initrand Rand Try Doit Queens main
 match: Initrand Rand Try Doit Queens main
 
+imatch: Initrand Rand Try Doit Queens main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

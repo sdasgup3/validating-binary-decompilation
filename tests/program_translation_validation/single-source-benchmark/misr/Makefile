@@ -17,6 +17,8 @@ compd: main create_link_list init simulate kill_list
 compd_opt: main create_link_list init simulate kill_list
 match: main create_link_list init simulate kill_list
 
+imatch: main create_link_list init simulate kill_list
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test

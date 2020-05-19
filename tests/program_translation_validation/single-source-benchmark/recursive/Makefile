@@ -17,6 +17,8 @@ compd: ack fib fibFP tak takFP main
 compd_opt: ack fib fibFP tak takFP main
 match: ack fib fibFP tak takFP main
 
+imatch: ack fib fibFP tak takFP main
+
 binary:
 	mkdir -p ${INDIR}
 	/usr/bin/clang-6.0 -${BIN_OPT} -lm -lpthread src/test.ll -o ${INDIR}test
