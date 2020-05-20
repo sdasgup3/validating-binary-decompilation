@@ -1,0 +1,32 @@
+{
+  "reset": {
+    "num_inst": 60, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "reset"
+  }, 
+  "decode": {
+    "num_inst": 67, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "decode"
+  }, 
+  "viterbi_chunks_init_generic": {
+    "num_inst": 43, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "viterbi_chunks_init_generic"
+  }, 
+  "depuncture": {
+    "num_inst": 78, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "depuncture"
+  }, 
+  "do_decoding": {
+    "num_inst": 1114, 
+    "has_vector": true, 
+    "has_float": false, 
+    "function_name": "do_decoding"
+  }
+}

@@ -42,6 +42,10 @@ static cl::opt<std::string> Source("file2",
                                    cl::desc("<input .llvm file>:function"),
                                    cl::value_desc("filename"));
 
+static cl::opt<std::string> Out("outdir",
+                                cl::desc("<path to dump residual .llvm files>"),
+                                cl::value_desc("filename"));
+
 static cl::opt<bool> SSAEdgeOnly(
     "use-ssa-edges",
     cl::desc("Use only the SSA edges to create the dependency graph"));
@@ -86,23 +90,36 @@ int main(int argc, char **argv) {
   LLVMContext Context;
 
   // Reading llvm files and extracting functions to match
-  outs() << "Reading LLVM: " << TargetFile << "\n";
+  errs() << "Reading LLVM: " << TargetFile << "\n";
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
-  outs() << "Reading LLVM: " << SourceFile << "\n";
+  errs() << "Reading LLVM: " << SourceFile << "\n";
   std::unique_ptr<Module> SMod(parseIRFile(SourceFile, Err, Context));
   if (!SMod) {
     Err.print(argv[0], errs(), /*showColors=*/true);
     return 1;
   }
 
+  if (string::npos == TargetFile.find("target") &&
+      string::npos == TargetFile.find("query")) {
+    errs() << "Missing target/query keyword in the file names"
+           << "\n";
+    exit(1);
+  }
+
+  if (Out == "") {
+    errs() << "Missing Output directory"
+           << "\n";
+    exit(1);
+  }
+
   llvm::Function *F1 = nullptr, *F2 = nullptr;
 
-  outs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
+  errs() << "Extracting function [" << TargetFunc << "] from " << TargetFile
          << "\n";
   for (auto &Func : *TMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -113,26 +130,22 @@ int main(int argc, char **argv) {
       break;
     }
 
-    if (string::npos != TargetFile.find("proposed")) {
-      if (string::npos == Func.getName().str().find(SourceFunc))
-        continue;
-    } else if (string::npos != TargetFile.find("mcsema")) {
-      smatch m;
-      string funcName(Func.getName().str());
-      if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
-                                               TargetFunc + "$")) == false) {
-        continue;
-      }
-    } else {
-      errs() << "Missing mcsema/proposed keyword in the file names"
-             << "\n";
+    if (string::npos != Func.getName().str().find(TargetFunc)) {
+      F1 = &Func;
+      break;
     }
 
-    F1 = &Func;
-    break;
+    // For McSema generated functions
+    smatch m;
+    string funcName(Func.getName().str());
+    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc +
+                                             "$")) == true) {
+      F1 = &Func;
+      break;
+    }
   }
 
-  outs() << "Extracting function [" << SourceFunc << "] from " << SourceFile
+  errs() << "Extracting function [" << SourceFunc << "] from " << SourceFile
          << "\n";
   for (auto &Func : *SMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
@@ -143,23 +156,19 @@ int main(int argc, char **argv) {
       break;
     }
 
-    if (string::npos != SourceFile.find("proposed")) {
-      if (string::npos == Func.getName().str().find(SourceFunc))
-        continue;
-    } else if (string::npos != SourceFile.find("mcsema")) {
-      smatch m;
-      string funcName(Func.getName().str());
-      if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
-                                               SourceFunc + "$")) == false) {
-        continue;
-      }
-    } else {
-      errs() << "Missing mcsema/proposed keyword in the file names"
-             << "\n";
+    if (string::npos != Func.getName().str().find(SourceFunc)) {
+      F2 = &Func;
+      break;
     }
 
-    F2 = &Func;
-    break;
+    // For McSema generated functions
+    smatch m;
+    string funcName(Func.getName().str());
+    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + SourceFunc +
+                                             "$")) == true) {
+      F2 = &Func;
+      break;
+    }
   }
 
   if (!F1 || !F2) {
@@ -169,7 +178,7 @@ int main(int argc, char **argv) {
   }
 
   // Matching the extracted functions
-  IterativePruningMatcher M(F1, F2, SSAEdgeOnly, PotentialMatchAccurancy);
+  IterativePruningMatcher M(F1, F2, Out, SSAEdgeOnly, PotentialMatchAccurancy);
 
   errs() << "Matcher Done...\n";
   return 0;

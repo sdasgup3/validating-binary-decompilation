@@ -22,6 +22,7 @@ using namespace llvm;
 ********** Class::IterativePruningMatcher ***********
 *********************/
 IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
+                                                 const string &Out,
                                                  bool useSSAEdges,
                                                  bool potentialMatchAccuracy)
     : MatcherBase(f1, f2, useSSAEdges) {
@@ -46,7 +47,7 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
 #endif
   dualSimulationDriver(G2, G1, PotIMatches2);
 
-  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2);
+  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2, Out);
   postMatchingAction();
 
 #ifdef MATCHER_DEBUG
@@ -56,11 +57,11 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
 
 void IterativePruningMatcher::dumpPrunedIR(
     Function *f1, Function *f2, const std::map<Value *, set<Value *>> &Phi1,
-    const std::map<Value *, set<Value *>> &Phi2) {
+    const std::map<Value *, set<Value *>> &Phi2, const string &Out) {
   std::error_code ec;
 
-  raw_fd_ostream llir1("query.ll", ec, sys::fs::F_Text);
-  raw_fd_ostream llir2("target.ll", ec, sys::fs::F_Text);
+  raw_fd_ostream llir1(Out + "/query.ll", ec, sys::fs::F_Text);
+  raw_fd_ostream llir2(Out + "/target.ll", ec, sys::fs::F_Text);
 
   /*** Dump Query function ****/
   // dump function signature
@@ -173,7 +174,9 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
   }
 
   for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
+    // dumpLLVMNode(&*I1);
     for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
+      // dumpLLVMNode(&*I2);
       if (deepMatch(&*I1, &*I2, G1, G2)) {
         PotIMatches1[&*I1].insert(&*I2);
       }
@@ -237,6 +240,7 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
   if (GEPL && GEPR) {
+    // llvm::errs() << "Check: " << *I1 << "\n" << *I2 << "\n";
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
@@ -287,7 +291,7 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
 
 ** In matcher::dualSimulation algo, y will be removed from pot(u) for u' = c
 ** as adj(y) ∩ pot(c) == {x, c2} ∩ {c1} is ∅
-** However, x will not be removed as 
+** However, x will not be removed as
 **  adj(x) ∩ pot(c)   == {y, c1} ∩ {c1}   != ∅ for u' = c
 **  adj(x) ∩ pot(u'1) == {y, c1} ∩ {x, y} != ∅ for u' = u'1
 
@@ -762,7 +766,7 @@ void Matcher::dumpPotIMatchesStats() {
 MatcherBase::MatcherBase(Function *f1, Function *f2, bool useSSAEdges) {
   F1 = f1;
   F2 = f2;
-  GlobalNumbers = new GlobalNumberState();
+  // GlobalNumbers = new GlobalNumberState();
 }
 
 // Retrieve BB correspondence based on exact matches of store instructions
@@ -1813,9 +1817,15 @@ int MatcherBase::cmpConstants(const Constant *L, const Constant *R) const {
 }
 
 int MatcherBase::cmpGlobalValues(GlobalValue *L, GlobalValue *R) const {
-  uint64_t LNumber = GlobalNumbers->getNumber(L);
-  uint64_t RNumber = GlobalNumbers->getNumber(R);
-  return cmpNumbers(LNumber, RNumber);
+  // llvm::errs() << "MatcherBase::cmpGlobalValues::" << *L << "\n"
+  //              << *R << "\n\n";
+  // Even if the value of the globals are equal; L and R will be diff globalVals
+  // pointers from two different LLVM modules. Hence the getNumber will give
+  // different numbers.
+  return 0;
+  // uint64_t LNumber = GlobalNumbers->getNumber(L);
+  // uint64_t RNumber = GlobalNumbers->getNumber(R);
+  // return cmpNumbers(LNumber, RNumber);
 }
 
 int MatcherBase::cmpAPFloats(const APFloat &L, const APFloat &R) const {
@@ -1879,7 +1889,7 @@ int MatcherBase::cmpValues(const Value *L, const Value *R) const {
   if (ConstR)
     return -1;
 
-  return 1;
+  return 0;
   // const InlineAsm *InlineAsmL = dyn_cast<InlineAsm>(L);
   // const InlineAsm *InlineAsmR = dyn_cast<InlineAsm>(R);
 

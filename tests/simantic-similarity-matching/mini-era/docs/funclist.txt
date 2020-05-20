@@ -1,0 +1,8 @@
+fft/bit_reverse
+fft/fft
+fft/_rev
+viterbi/decode
+viterbi/depuncture
+viterbi/do_decoding
+viterbi/reset
+viterbi/viterbi_chunks_init_generic

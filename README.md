@@ -32,6 +32,8 @@ compositional lifter based on the validated translations to generate LLVM IR,
     - [Running SIV Pipeline](#Running-SIV-Pipeline)
     - [Running PLV Pipeline](#Running-PLV-Pipeline)
   - [Experimental Matcher](#Experimental-Matcher)
+    - [Build Instructions](#Build-Instructions)
+    - [Run Instructions](#Run-Instructions)
 
 ## Documentation
  - A Scalable Validation of Binary Lifters, PLDI 2020
@@ -78,7 +80,10 @@ by Sandeep Dasgupta, Sushant Dinesh, Deepan Venkatesh, Vikram S. Adve & Christop
 <p>
 
 ```C
-export REPO_PATH=${HOME}/Github/ # could be any path
+# Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+# Could be different from the one set below
+export REPO_PATH=${HOME}/Github/
+
 cd $REPO_PATH/
 git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
 git clone https://github.com/sdasgup3/compd_cache.git # required only if you wish to
@@ -207,7 +212,10 @@ as pre-requisites.
       z3 \
       parallel
 
-    export REPO_PATH=${HOME}/Github/ # could be any path
+    # Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+    # Could be different from the one set below
+    export REPO_PATH=${HOME}/Github/
+
     cd $REPO_PATH
     git clone git@github.com:sdasgup3/scripts-n-docs.git
     ```
@@ -356,7 +364,10 @@ as pre-requisites.
     <p>
 
     ```bash
-      export REPO_PATH=${HOME}/Github/ # could be any path
+      # Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+      # Could be different from the one set below
+      export REPO_PATH=${HOME}/Github/
+
       cd $REPO_PATH/
       git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
     ```
@@ -415,7 +426,10 @@ as pre-requisites.
 
 Running SIV on an isolated example instruction `addq_r64_r64` involves the following step
 ```
-export REPO_PATH=${HOME}/Github/ # could be any path
+# Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+# Could be different from the one set below
+export REPO_PATH=${HOME}/Github/
+
 cd $REPO_PATH/validating-binary-decompilation/tests/single_instruction_translation_validation/mcsema/
 echo register-variants/addq_r64_r64 > /tmp/sample.txt
 # Or try one of the following
@@ -559,7 +573,10 @@ Running PLV on it involves the following steps
 <p>
 
 ```bash
-export REPO_PATH=${HOME}/Github/ # could be any path
+# Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+# Could be different from the one set below
+export REPO_PATH=${HOME}/Github/
+
 export NORM=CUSTOM
 cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
 make binary
@@ -620,7 +637,10 @@ effective for normalization and subsequent matching.
 <p>
 
 ```bash
-export REPO_PATH=${HOME}/Github/ # could be any path
+# Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+# Could be different from the one set below
+export REPO_PATH=${HOME}/Github/
+
 cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/single-source-benchmark/Queens/
 make binary
 make reloc_binary
@@ -809,7 +829,9 @@ passes to canonicalize effectively.
     <p>
 
     ```bash
-      export REPO_PATH=${HOME}/Github/ # could be any path
+      # Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+      # Could be different from the one set below
+      export REPO_PATH=${HOME}/Github/
       cd $REPO_PATH/
       git clone --recursive https://github.com/sdasgup3/validating-binary-decompilation.git
     ```
@@ -831,5 +853,24 @@ passes to canonicalize effectively.
 
     </p>
     </details>
+
+### Run Instructions
+<details><summary>expand</summary>
+<p>
+
+```bash
+  # Set REPO_PATH to the parent directory of your 'validating-binary-decompilation' repo;
+  # Could be different from the one set below
+  export REPO_PATH=${HOME}/Github/
+  cd $REPO_PATH/
+
+  cd $REPO_PATH/validating-binary-decompilation/tests/simantic-similarity-matching/mini-era
+  cat docs/funcList.txt | parallel  " echo; echo {}; make -C {} imatch" |& tee docs/imatch.log
+```
+  
+</p>
+</details>
+
+### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/simantic-similarity-matching/README.md)
 
 [&#11181;](#Table-of-Contents)

@@ -1,0 +1,10 @@
+Reading LLVM: output/test.query.opt.ll
+Reading LLVM: output/test.target.opt.ll
+Extracting function [bit_reverse] from output/test.query.opt.ll
+Extracting function [bit_reverse] from output/test.target.opt.ll
+Iso Match Found
+Matcher Done...
+
+real	0m0.026s
+user	0m0.024s
+sys	0m0.000s

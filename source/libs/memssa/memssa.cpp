@@ -71,23 +71,27 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
 #endif
 
       if (MSSA->isLiveOnEntryDef(MA)) {
-// errs() << "\n\n";
 #ifdef MEMSSA_DEBUG
-        errs() << "\n\n";
+        errs() << "isLiveOnEntryDef\n\n";
 #endif
         continue;
       }
 
       if (dyn_cast<MemoryPhi>(MA)) {
+
         auto definingInstrs = handleMemPhi(MSSA, cast<MemoryPhi>(MA));
-        // for (auto p : definingInstrs) {
-        //   errs() << "\t\tDef Inst: " << *p << "\n";
-        // }
+#ifdef MEMSSA_DEBUG
+        for (auto p : definingInstrs) {
+          errs() << "\t\tDef Inst: " << *p << "\n";
+        }
+#endif
         retval[I].insert(definingInstrs.begin(), definingInstrs.end());
 
       } else {
         Instruction *u = cast<MemoryUseOrDef>(MA)->getMemoryInst();
-        // errs() << "\t\tDef Inst: " << *u << "\n";
+#ifdef MEMSSA_DEBUG
+        errs() << "\t\tDef Inst: " << *u << "\n";
+#endif
         retval[I].insert(u);
       }
 
@@ -101,13 +105,15 @@ MemDepEdgesType MemSSA::collectMemoryDepEdges() {
 }
 
 set<Instruction *> MemSSA::handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi) {
-  set<Instruction *> retval;
+  if (definingInstrsOfMemoryPhi.count(phi))
+    return definingInstrsOfMemoryPhi.at(phi);
+  definingInstrsOfMemoryPhi[phi] = set<Instruction *>();
 
+  set<Instruction *> retval;
   for (memoryaccess_def_iterator MAitr = phi->defs_begin();
        MAitr != phi->defs_end(); MAitr++) {
 
     MemoryAccess *MA = *MAitr;
-    // errs() << "\tDef: " << *MA << "\n";
 
     if (MSSA->isLiveOnEntryDef(MA)) {
       continue;
@@ -115,14 +121,14 @@ set<Instruction *> MemSSA::handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi) {
 
     if (dyn_cast<MemoryPhi>(MA)) {
       auto tmpV = handleMemPhi(MSSA, cast<MemoryPhi>(MA));
-      for (auto p : tmpV) {
-        retval.insert(p);
-      }
+      retval.insert(tmpV.begin(), tmpV.end());
     } else {
       Instruction *u = cast<MemoryUseOrDef>(MA)->getMemoryInst();
       retval.insert(u);
     }
   }
+
+  definingInstrsOfMemoryPhi[phi].insert(retval.begin(), retval.end());
 
   return retval;
 }

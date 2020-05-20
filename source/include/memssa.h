@@ -29,6 +29,8 @@
 #include <map>
 #include <set>
 
+// #define MEMSSA_DEBUG
+
 using namespace std;
 using namespace llvm;
 typedef map<Instruction *, set<Instruction *>> MemDepEdgesType;
@@ -46,6 +48,10 @@ private:
   MemorySSA *MSSA;
   MemorySSAWalker *Walker;
   Function *F;
+  // Map to keep track of MemoryPhis which define any MemoryAccess.
+  // Against each MemoryPhi, we store the instructions which define
+  // that MemoryPhi.
+  map<MemoryPhi *, set<Instruction *>> definingInstrsOfMemoryPhi;
 
 public:
   MemSSA(Function *F);

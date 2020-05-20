@@ -1,0 +1,10 @@
+Reading LLVM: output/test.query.opt.ll
+Reading LLVM: output/test.target.opt.ll
+Extracting function [decode] from output/test.query.opt.ll
+Extracting function [decode] from output/test.target.opt.ll
+Iso Match NOT Found
+Matcher Done...
+
+real	0m0.157s
+user	0m0.156s
+sys	0m0.000s

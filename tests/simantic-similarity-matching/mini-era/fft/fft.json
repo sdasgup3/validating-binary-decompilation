@@ -1,0 +1,20 @@
+{
+  "_rev": {
+    "num_inst": 36, 
+    "has_vector": false, 
+    "has_float": false, 
+    "function_name": "_rev"
+  }, 
+  "fft": {
+    "num_inst": 213, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "fft"
+  }, 
+  "bit_reverse": {
+    "num_inst": 99, 
+    "has_vector": false, 
+    "has_float": true, 
+    "function_name": "bit_reverse"
+  }
+}

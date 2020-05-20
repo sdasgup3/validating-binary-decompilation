@@ -46,7 +46,7 @@ protected:
   std::map<BasicBlock *, BasicBlock *> PotBBMatches;
   Function *F1, *F2;
   DataDepGraph *G1, *G2;
-  GlobalNumberState *GlobalNumbers;
+  // GlobalNumberState *GlobalNumbers;
 
   int cmpGEPs(const GEPOperator *GEPL, const GEPOperator *GEPR) const;
   int cmpGEPs(const GetElementPtrInst *GEPL,
@@ -132,7 +132,8 @@ private:
   std::map<Value *, set<Value *>> PotIMatches2;
 
 public:
-  IterativePruningMatcher(Function *F1, Function *F2, bool useSSAEdges = false,
+  IterativePruningMatcher(Function *F1, Function *F2, const string &Out,
+                          bool useSSAEdges = false,
                           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
@@ -145,7 +146,8 @@ public:
   void postMatchingAction();
   void dumpPrunedIR(Function *f1, Function *f2,
                     const std::map<Value *, set<Value *>> &Phi1,
-                    const std::map<Value *, set<Value *>> &Phi2);
+                    const std::map<Value *, set<Value *>> &Phi2,
+                    const string &Out);
 };
 
 } // end llvm namespace

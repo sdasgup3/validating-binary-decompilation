@@ -1,0 +1,10 @@
+Reading LLVM: output/test.query.opt.ll
+Reading LLVM: output/test.target.opt.ll
+Extracting function [reset] from output/test.query.opt.ll
+Extracting function [reset] from output/test.target.opt.ll
+Iso Match Found
+Matcher Done...
+
+real	0m0.156s
+user	0m0.156s
+sys	0m0.000s

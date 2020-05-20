@@ -31,3 +31,5 @@ invoke_compd_seq.log
 query.ll
 target.ll
 imatch.log
+test.query.opt.ll
+test.target.opt.ll

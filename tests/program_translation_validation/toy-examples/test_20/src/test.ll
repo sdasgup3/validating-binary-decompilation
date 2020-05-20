@@ -1,4 +1,4 @@
-; ModuleID = '/home/ubuntu/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/bc-seeds/test_20/test_20.bc'
+; ModuleID = '/home/sdasgup3/Github/validating-binary-decompilation/tests/program_translation_validation/toy-examples/bc-seeds/test_20/test_20.bc'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
