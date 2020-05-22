@@ -96,7 +96,11 @@ public:
   bool initialArgumentsMatch(Function *F1, Function *F2,
                              std::map<Value *, set<Value *>> &Phi);
   void dumpPotBBMatches();
-  void dumpLLVMNode(const Value *);
+  string normSSANames(const Value *V);
+  void dumpLLVMNode(const Value *, raw_ostream &O = errs(),
+                    bool printPtrVal = true,
+                    bool normSequentialSSARegNames = false,
+                    bool comment = false);
   set<Value *> Intersection(const set<Value *> &S1, const set<Value *> &S2);
 
   std::pair<bool, BasicBlock *> sameBB(std::set<Value *> S);
@@ -147,7 +151,14 @@ public:
   void dumpPrunedIR(Function *f1, Function *f2,
                     const std::map<Value *, set<Value *>> &Phi1,
                     const std::map<Value *, set<Value *>> &Phi2,
-                    const string &Out);
+                    DataDepGraph *g1, DataDepGraph *g2, const string &Out);
+  bool shouldRemoveInstrunction(Value *I1,
+                                const std::map<Value *, set<Value *>> &Phi1,
+                                const std::map<Value *, set<Value *>> &Phi2,
+                                DataDepGraph *g, set<Value *> &visited,
+                                set<Value *> &multiMatches);
+  bool isExactMatch(Value *I1, const std::map<Value *, set<Value *>> &Phi1,
+                    const std::map<Value *, set<Value *>> &Phi2);
 };
 
 } // end llvm namespace

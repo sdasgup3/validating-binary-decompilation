@@ -47,7 +47,7 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
 #endif
   dualSimulationDriver(G2, G1, PotIMatches2);
 
-  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2, Out);
+  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2, G1, G2, Out);
   postMatchingAction();
 
 #ifdef MATCHER_DEBUG
@@ -55,99 +55,147 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
 #endif
 }
 
+bool IterativePruningMatcher::isExactMatch(
+    Value *I1, const std::map<Value *, set<Value *>> &Phi1,
+    const std::map<Value *, set<Value *>> &Phi2) {
+  if (Phi1.count(I1) && Phi1.at(I1).size() == 1 &&
+      Phi2.count(*(Phi1.at(I1).begin())) &&
+      Phi2.at(*(Phi1.at(I1).begin())).size() == 1 &&
+      *(Phi2.at(*(Phi1.at(I1).begin())).begin()) == I1) {
+    return true;
+  }
+
+  return false;
+}
+
+bool IterativePruningMatcher::shouldRemoveInstrunction(
+    Value *I, const std::map<Value *, set<Value *>> &Phi1,
+    const std::map<Value *, set<Value *>> &Phi2, DataDepGraph *g,
+    set<Value *> &visited, set<Value *> &multiMatches) {
+  if (visited.count(I))
+    return true;
+  visited.insert(I);
+
+  if (!isExactMatch(I, Phi1, Phi2)) {
+    multiMatches.insert(I);
+    // llvm::errs() << "\tNot Rem: ";
+    // dumpLLVMNode(I);
+    return false;
+  }
+
+  for (auto &child : g->getAdj(I)) {
+    if (shouldRemoveInstrunction(child, Phi1, Phi2, g, visited, multiMatches) ==
+        false)
+      return false;
+  }
+
+  return true;
+}
+
 void IterativePruningMatcher::dumpPrunedIR(
     Function *f1, Function *f2, const std::map<Value *, set<Value *>> &Phi1,
-    const std::map<Value *, set<Value *>> &Phi2, const string &Out) {
+    const std::map<Value *, set<Value *>> &Phi2, DataDepGraph *g1,
+    DataDepGraph *g2, const string &Out) {
   std::error_code ec;
 
   raw_fd_ostream llir1(Out + "/query.ll", ec, sys::fs::F_Text);
   raw_fd_ostream llir2(Out + "/target.ll", ec, sys::fs::F_Text);
 
   /*** Dump Query function ****/
-  // dump function signature
-  llir1 << "define "
-        << " " << *f1->getFunctionType() << " @" << f1->getName() << " (";
-  unsigned i = 0;
-  for (Function::const_arg_iterator ArgI = f1->arg_begin(); i < f1->arg_size();
-       i++, ++ArgI) {
-    if (i == f1->arg_size() - 1)
-      llir1 << *ArgI;
-    else
-      llir1 << *ArgI << ", ";
-  }
-  llir1 << " ) {\n";
+  llvm::errs() << "Generating: " + Out + "/query.ll"
+               << "\n";
 
   unsigned totalInst1 = 0;
   unsigned comentedInst1 = 0;
+  set<Value *> visited, multiMatches;
+  set<Instruction *> toErase;
   // dump function body
   for (BasicBlock &BB : *f1) {
-    BB.printAsOperand(llir1, false);
-    llir1 << ":\n";
     for (Instruction &I1 : BB) {
       totalInst1++;
-      if (!Phi1.count(&I1) || Phi1.at(&I1).size() != 1 ||
-          !Phi2.count(*(Phi1.at(&I1).begin())) ||
-          Phi2.at(*(Phi1.at(&I1).begin())).size() != 1 ||
-          *(Phi2.at(*(Phi1.at(&I1).begin())).begin()) != &I1) {
-
-        if (dyn_cast<BranchInst>(&I1)) {
-          llir1 << ";; " << I1 << "\n";
-          comentedInst1++;
-        } else {
-          llir1 << I1 << "\n";
-        }
-      } else {
+      visited.clear();
+      if (dyn_cast<BranchInst>(&I1)) {
         comentedInst1++;
-        llir1 << "; " << I1 << "\n";
+        continue;
+      }
+      if (dyn_cast<ReturnInst>(&I1)) {
+        comentedInst1++;
+        continue;
+      }
+      if (shouldRemoveInstrunction(&I1, Phi1, Phi2, g1, visited,
+                                   multiMatches)) {
+        comentedInst1++;
+        I1.replaceAllUsesWith(UndefValue::get(I1.getType()));
+        toErase.insert(&I1);
       }
     }
   }
 
-  llir1 << "}\n";
+  for (auto e : toErase) {
+    e->dropAllReferences();
+    e->eraseFromParent();
+  }
+
+  llir1 << *f1->getParent();
   llir1.close();
 
-  /*** Dump Query function ****/
-  // dump function signature
-  llir2 << "define "
-        << " " << *f2->getFunctionType() << " @" << f2->getName() << " (";
-  i = 0;
-  for (Function::const_arg_iterator ArgI = f2->arg_begin(); i < f2->arg_size();
-       i++, ++ArgI) {
-    if (i == f2->arg_size() - 1)
-      llir2 << *ArgI;
-    else
-      llir2 << *ArgI << ", ";
+  // dump debug info
+  for (auto multiMatch : multiMatches) {
+    llvm::errs() << "Mulitple Matches for : ";
+    dumpLLVMNode(multiMatch);
+    for (auto p : Phi1.at(multiMatch)) {
+      llvm::errs() << "\t";
+      dumpLLVMNode(p);
+    }
   }
-  llir2 << " ) {\n";
+
+  /*** Dump Query function ****/
+  llvm::errs() << "Generating: " + Out + "/target.ll"
+               << "\n";
 
   unsigned totalInst2 = 0;
   unsigned comentedInst2 = 0;
+  multiMatches.clear();
+  toErase.clear();
   // dump function body
   for (BasicBlock &BB : *f2) {
-    BB.printAsOperand(llir2, false);
-    llir2 << ":\n";
     for (Instruction &I2 : BB) {
       totalInst2++;
-      if (!Phi2.count(&I2) || Phi2.at(&I2).size() != 1 ||
-          !Phi1.count(*(Phi2.at(&I2).begin())) ||
-          Phi1.at(*(Phi2.at(&I2).begin())).size() != 1 ||
-          *(Phi1.at(*(Phi2.at(&I2).begin())).begin()) != &I2) {
-
-        if (dyn_cast<BranchInst>(&I2)) {
-          llir2 << ";; " << I2 << "\n";
-          comentedInst2++;
-        } else {
-          llir2 << I2 << "\n";
-        }
-      } else {
+      visited.clear();
+      if (dyn_cast<BranchInst>(&I2)) {
         comentedInst2++;
-        llir2 << "; " << I2 << "\n";
+        continue;
+      }
+      if (dyn_cast<ReturnInst>(&I2)) {
+        comentedInst2++;
+        continue;
+      }
+      if (shouldRemoveInstrunction(&I2, Phi2, Phi1, g2, visited,
+                                   multiMatches)) {
+        comentedInst2++;
+        I2.replaceAllUsesWith(UndefValue::get(I2.getType()));
+        toErase.insert(&I2);
       }
     }
   }
 
-  llir2 << "}\n";
+  for (auto e : toErase) {
+    e->dropAllReferences();
+    e->eraseFromParent();
+  }
+
+  llir2 << *f2->getParent();
   llir2.close();
+
+  // dump debug info
+  for (auto multiMatch : multiMatches) {
+    llvm::errs() << "Mulitple Matches for : ";
+    dumpLLVMNode(multiMatch);
+    for (auto p : Phi2.at(multiMatch)) {
+      llvm::errs() << "\t";
+      dumpLLVMNode(p);
+    }
+  }
 
   /*** Check Final Results ****/
   if ((totalInst1 == comentedInst1) && (totalInst2 == comentedInst2)) {
@@ -176,6 +224,7 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
   for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
     // dumpLLVMNode(&*I1);
     for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
+      // llvm::errs() << "\n\t";
       // dumpLLVMNode(&*I2);
       if (deepMatch(&*I1, &*I2, G1, G2)) {
         PotIMatches1[&*I1].insert(&*I2);
@@ -192,7 +241,10 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
   }
 
   for (inst_iterator I2 = inst_begin(f2), E2 = inst_end(f2); I2 != E2; ++I2) {
+    // dumpLLVMNode(&*I2);
     for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
+      // llvm::errs() << "\t";
+      // dumpLLVMNode(&*I1);
       if (deepMatch(&*I2, &*I1, G2, G1)) {
         PotIMatches2[&*I2].insert(&*I1);
       }
@@ -230,17 +282,17 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
     return false;
 
   // Arity Match
-  size_t arityCount1 = g1->getAdj(I1).size();
-  size_t arityCount2 = g2->getAdj(I2).size();
+  // size_t arityCount1 = g1->getAdj(I1).size();
+  // size_t arityCount2 = g2->getAdj(I2).size();
 
-  if (arityCount1 != arityCount2)
-    return false;
+  // if (arityCount1 != arityCount2)
+  //   return false;
 
   const GetElementPtrInst *GEPL = dyn_cast<GetElementPtrInst>(I1);
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
   if (GEPL && GEPR) {
-    // llvm::errs() << "Check: " << *I1 << "\n" << *I2 << "\n";
+    // llvm::errs() << "\t\tGep Check: " << *I1 << "\n\t\t" << *I2 << "\n";
     return cmpGEPs(GEPL, GEPR) == 0;
   }
 
@@ -333,6 +385,7 @@ bool IterativePruningMatcher::dualSimulation(
           }
 
           set<Value *> &UPrimeMatches = Phi.at(UPrime);
+          // assert(UPrimeMatches.size() != 0 && "Here1");
           set<Value *> VAdj = g2->getAdj(V);
 
           auto tempList = Intersection(UPrimeMatches, VAdj);
@@ -351,6 +404,7 @@ bool IterativePruningMatcher::dualSimulation(
 
         // 24: Φ(u') = Φ(u') ∩ Φ'(u')
         UPrimeMatches = Intersection(UPrimeMatches, refinedUPrimeMatches);
+        // assert(UPrimeMatches.size() != 0 && "Here");
       }
 
       // 11: remove v from Φ(u)
@@ -1116,7 +1170,7 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
     if (deleNode.size() == pMatches.size()) {
       llvm::errs() << "Pruned all potential matches for call: \n";
       dumpLLVMNode(LCallInstr);
-      llvm::errs() << "The matches are: \n";
+      llvm::errs() << pMatches.size() << " matches are: \n";
       for (auto pMatch : pMatches) {
         dumpLLVMNode(pMatch);
       }
@@ -1364,17 +1418,12 @@ void MatcherBase::dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
     llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Branches"
                  << ": Round: " << round << "\n";
 #endif
-    changed |= handleConflictingBranches(g1, Phi);
+//     changed |= handleConflictingBranches(g1, Phi);
 
 #ifdef MATCHER_DEBUG
     round++;
 #endif
   }
-
-  // At this point, the conflict in potential branch instructions can be
-  // resolved using
-  // potential BB matches
-  // handleConflictingBranches(g1, Phi);
 }
 
 /*
@@ -1431,8 +1480,64 @@ set<Value *> MatcherBase::Intersection(const set<Value *> &S1,
   return retval;
 }
 
-void MatcherBase::dumpLLVMNode(const Value *V) {
-  llvm::errs() << "[" << V << "]: " << *V << "\n";
+string MatcherBase::normSSANames(const Value *V) {
+  std::string texualIR;
+  llvm::raw_string_ostream S(texualIR);
+  S << *V;
+
+  string retval = "";
+
+  for (unsigned i = 0; i < texualIR.length();) {
+    auto c = texualIR[i];
+    retval += c;
+
+    if (c != '%') {
+      i++;
+      continue;
+    }
+
+    unsigned k = i + 1;
+    bool isNum = true;
+    string ssaName = "";
+    for (; k < texualIR.length(); k++) {
+      if (isspace(texualIR[k]) || texualIR[k] == ',')
+        break;
+
+      if (!isdigit(texualIR[k])) {
+        isNum = false;
+        break;
+      }
+      ssaName += texualIR[k];
+    }
+
+    if (isNum) {
+      ssaName = "Norm" + ssaName;
+      retval += ssaName;
+      i = k;
+      continue;
+    }
+
+    i++;
+  }
+
+  return retval;
+}
+
+void MatcherBase::dumpLLVMNode(const Value *V, raw_ostream &O, bool printPtrVal,
+                               bool normSequentialSSARegNames, bool comment) {
+
+  if (printPtrVal) {
+    errs() << "[" << V << "]: " << *V << "\n";
+    return;
+  }
+
+  if (normSequentialSSARegNames) {
+    if (comment) {
+      O << "; " + normSSANames(V);
+    } else {
+      O << normSSANames(V);
+    }
+  }
 }
 
 void MatcherBase::dumpPotBBMatches() {
@@ -1906,6 +2011,142 @@ int MatcherBase::cmpValues(const Value *L, const Value *R) const {
   // return cmpNumbers(LeftSN.first->second, RightSN.first->second);
 }
 
+// void IterativePruningMatcher::dumpPrunedIR(
+//     Function *f1, Function *f2, const std::map<Value *, set<Value *>> &Phi1,
+//     const std::map<Value *, set<Value *>> &Phi2, DataDepGraph *g1,
+//     DataDepGraph *g2, const string &Out) {
+//   std::error_code ec;
+//
+//   raw_fd_ostream llir1(Out + "/query.ll", ec, sys::fs::F_Text);
+//   raw_fd_ostream llir2(Out + "/target.ll", ec, sys::fs::F_Text);
+//
+//   /*** Dump Query function ****/
+//   llvm::errs() << "Generating: " + Out + "/query.ll"
+//                << "\n";
+//   // dump function signature
+//   llir1 << "define "
+//         << " " << *f1->getReturnType() << " @" << f1->getName() << " (";
+//   unsigned i = 0;
+//   for (Function::const_arg_iterator ArgI = f1->arg_begin(); i <
+//   f1->arg_size();
+//        i++, ++ArgI) {
+//     if (i == f1->arg_size() - 1) {
+//       dumpLLVMNode(&*ArgI, llir1, false, true, false);
+//     } else {
+//       dumpLLVMNode(&*ArgI, llir1, false, true, false);
+//       llir1 << ", ";
+//     }
+//   }
+//   llir1 << " ) {\n";
+//
+//   unsigned totalInst1 = 0;
+//   unsigned comentedInst1 = 0;
+//   set<Value *> visited, multiMatches;
+//   // dump function body
+//   for (BasicBlock &BB : *f1) {
+//     BB.printAsOperand(llir1, false);
+//     llir1 << ":\n";
+//     for (Instruction &I1 : BB) {
+//       totalInst1++;
+//       visited.clear();
+//       if (shouldRemoveInstrunction(&I1, Phi1, Phi2, g1, visited,
+//                                    multiMatches)) {
+//         comentedInst1++;
+//         dumpLLVMNode(&I1, llir1, false, true, true);
+//         llir1 << "\n";
+//       } else {
+//         if (dyn_cast<BranchInst>(&I1)) {
+//           comentedInst1++;
+//         } else {
+//           dumpLLVMNode(&I1, llir1, false, true, false);
+//           llir1 << "\n";
+//         }
+//       }
+//     }
+//   }
+//
+//   llir1 << "}\n";
+//   llir1.close();
+//
+//   // dump debug info
+//   for (auto multiMatch : multiMatches) {
+//     llvm::errs() << "Mulitple Matches for : ";
+//     dumpLLVMNode(multiMatch);
+//     for (auto p : Phi1.at(multiMatch)) {
+//       llvm::errs() << "\t";
+//       dumpLLVMNode(p);
+//     }
+//   }
+//
+//   /*** Dump Query function ****/
+//   llvm::errs() << "Generating: " + Out + "/target.ll"
+//                << "\n";
+//   // dump function signature
+//   llir2 << "define "
+//         << " " << *f2->getReturnType() << " @" << f2->getName() << " (";
+//   i = 0;
+//   for (Function::const_arg_iterator ArgI = f2->arg_begin(); i <
+//   f2->arg_size();
+//        i++, ++ArgI) {
+//     if (i == f2->arg_size() - 1) {
+//       dumpLLVMNode(&*ArgI, llir2, false, true, false);
+//     } else {
+//       dumpLLVMNode(&*ArgI, llir2, false, true, false);
+//       llir2 << ", ";
+//     }
+//   }
+//   llir2 << " ) {\n";
+//
+//   unsigned totalInst2 = 0;
+//   unsigned comentedInst2 = 0;
+//   multiMatches.clear();
+//   // dump function body
+//   for (BasicBlock &BB : *f2) {
+//     BB.printAsOperand(llir2, false);
+//     llir2 << ":\n";
+//     for (Instruction &I2 : BB) {
+//       totalInst2++;
+//       visited.clear();
+//       if (shouldRemoveInstrunction(&I2, Phi2, Phi1, g2, visited,
+//                                    multiMatches)) {
+//         comentedInst2++;
+//         dumpLLVMNode(&I2, llir2, false, true, true);
+//         llir2 << "\n";
+//       } else {
+//         if (dyn_cast<BranchInst>(&I2)) {
+//           comentedInst2++;
+//         } else {
+//           dumpLLVMNode(&I2, llir2, false, true, false);
+//           llir2 << "\n";
+//         }
+//       }
+//     }
+//   }
+//
+//   llir2 << "}\n";
+//   llir2.close();
+//
+//   // dump debug info
+//   for (auto multiMatch : multiMatches) {
+//     llvm::errs() << "Mulitple Matches for : ";
+//     dumpLLVMNode(multiMatch);
+//     for (auto p : Phi2.at(multiMatch)) {
+//       llvm::errs() << "\t";
+//       dumpLLVMNode(p);
+//     }
+//   }
+//
+//   /*** Check Final Results ****/
+//   if ((totalInst1 == comentedInst1) && (totalInst2 == comentedInst2)) {
+//     llvm::errs() << "Iso Match Found\n";
+//   } else if ((totalInst1 != comentedInst1) && (totalInst2 != comentedInst2))
+//   {
+//     llvm::errs() << "Iso Match NOT Found\n";
+//   } else {
+//     llvm::errs() << "Partial Iso Match Found\n";
+//   }
+// }
+
 // ========================================================================
 
 // void MatcherBase::simpleSimulation(Function *F1, Function *F2) {
@@ -2161,3 +2402,22 @@ int MatcherBase::cmpValues(const Value *L, const Value *R) const {
 //   }
 // }
 // llir2.close();
+// if (!Phi2.count(&I2) || Phi2.at(&I2).size() != 1 ||
+//     !Phi1.count(*(Phi2.at(&I2).begin())) ||
+//     Phi1.at(*(Phi2.at(&I2).begin())).size() != 1 ||
+//     *(Phi1.at(*(Phi2.at(&I2).begin())).begin()) != &I2) {
+
+//   if (dyn_cast<BranchInst>(&I2)) {
+//     llir2 << ";; " << I2 << "\n";
+//     comentedInst2++;
+//   } else {
+//     llir2 << I2 << "\n";
+//   }
+// } else {
+//   comentedInst2++;
+//   llir2 << "; " << I2 << "\n";
+// }
+// if (!Phi1.count(&I1) || Phi1.at(&I1).size() != 1 ||
+//    !Phi2.count(*(Phi1.at(&I1).begin())) ||
+//    Phi2.at(*(Phi1.at(&I1).begin())).size() != 1 ||
+//    *(Phi2.at(*(Phi1.at(&I1).begin())).begin()) != &I1) {

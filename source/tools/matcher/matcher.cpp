@@ -169,6 +169,8 @@ int main(int argc, char **argv) {
   }
 
   // Matching the extracted functions
+  errs() << "Matching: " << F1->getName().str() << " & " << F2->getName().str()
+         << "\n";
   Matcher M(F1, F2, SSAEdgeOnly, PotentialMatchAccurancy);
 
   errs() << "Matcher Done...\n";

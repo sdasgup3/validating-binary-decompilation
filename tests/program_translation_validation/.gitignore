@@ -33,3 +33,5 @@ target.ll
 imatch.log
 test.query.opt.ll
 test.target.opt.ll
+test.query.extract.ll
+test.target.extract.ll

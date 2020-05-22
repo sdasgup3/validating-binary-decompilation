@@ -49,7 +49,7 @@ Opt() {
   executeNPrint "opt -S ${NORM_PASS} ${INPUT} -o ${OUTPUT}"
 
   if [ $? -ne 0 ]; then
-    echo -e "\e[31mCompd Opt Fail\e[39m:-" `pwd`:$PROG  
+    echo -e "\e[31mOpt Fail\e[39m:-" `pwd`:$PROG  
     exit 1
   fi
 }
@@ -118,13 +118,13 @@ matchDriver() {
 }
 
 imatch() {
-  QUERY=$1
-  TARGET=$2
+  LOCALQUERY=$1
+  LOCALTARGET=$2
   OUTDIR=$3
   TOOLDIR=$4
   PROG=$5
 
-  executeNPrint "( time ${TOOLDIR}/iterative-pruning-matcher --file1 ${QUERY}:${PROG} --file2 ${TARGET}:${PROG} --outdir ${OUTDIR} ) 1>${OUTDIR}imatch.log 2>&1"
+  executeNPrint "( time ${TOOLDIR}/iterative-pruning-matcher --file1 ${LOCALQUERY}:${PROG} --file2 ${LOCALTARGET}:${PROG} --outdir ${OUTDIR} ) 1>${OUTDIR}imatch.log 2>&1"
   ${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --imatch
 }
 
@@ -140,7 +140,11 @@ imatchDriver() {
   do  
     Opt ${OUTDIR} ${PROG} ${QUERY}  ${OUTDIR}test.query.opt.ll
     Opt ${OUTDIR} ${PROG} ${TARGET} ${OUTDIR}test.target.opt.ll
-    imatch ${OUTDIR}test.query.opt.ll ${OUTDIR}test.target.opt.ll ${OUTDIR} ${TOOLDIR} ${PROG}
+    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test.query.opt.ll  -o ${OUTDIR}/test.query.extract.ll"
+    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test.target.opt.ll -o ${OUTDIR}/test.target.extract.ll"
+#Opt ${OUTDIR} ${PROG} ${QUERY}  ${OUTDIR}test.query.opt.ll
+#Opt ${OUTDIR} ${PROG} ${TARGET} ${OUTDIR}test.target.opt.ll
+    imatch ${OUTDIR}test.query.extract.ll ${OUTDIR}test.target.extract.ll ${OUTDIR} ${TOOLDIR} ${PROG}
     matchstat=$?
 
     shouldContinue
