@@ -1,10 +1,13 @@
-Reading LLVM: output/test.query.opt.ll
-Reading LLVM: output/test.target.opt.ll
-Extracting function [fft] from output/test.query.opt.ll
-Extracting function [fft] from output/test.target.opt.ll
+Reading LLVM: output/test1.query.extract.ll
+Reading LLVM: output/test1.target.extract.ll
+Extracting function [fft] from output/test1.query.extract.ll
+Extracting function [fft] from output/test1.target.extract.ll
+Matching: fft & fft
+Generating: output/test1.query.ll
+Generating: output/test1.target.ll
 Iso Match Found
 Matcher Done...
 
-real	0m0.076s
-user	0m0.072s
-sys	0m0.000s
+real	0m0.005s
+user	0m0.000s
+sys	0m0.004s

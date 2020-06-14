@@ -1,10 +1,13 @@
-Reading LLVM: output/test.query.opt.ll
-Reading LLVM: output/test.target.opt.ll
-Extracting function [viterbi_chunks_init_generic] from output/test.query.opt.ll
-Extracting function [viterbi_chunks_init_generic] from output/test.target.opt.ll
+Reading LLVM: output/test0.query.extract.ll
+Reading LLVM: output/test0.target.extract.ll
+Extracting function [viterbi_chunks_init_generic] from output/test0.query.extract.ll
+Extracting function [viterbi_chunks_init_generic] from output/test0.target.extract.ll
+Matching: viterbi_chunks_init_generic & viterbi_chunks_init_generic
+Generating: output/test0.query.ll
+Generating: output/test0.target.ll
 Iso Match Found
 Matcher Done...
 
-real	0m0.138s
-user	0m0.136s
+real	0m0.017s
+user	0m0.016s
 sys	0m0.000s
