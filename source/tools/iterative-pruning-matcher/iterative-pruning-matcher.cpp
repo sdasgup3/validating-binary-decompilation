@@ -42,6 +42,14 @@ static cl::opt<std::string> Source("file2",
                                    cl::desc("<input .llvm file>:function"),
                                    cl::value_desc("filename"));
 
+static cl::opt<std::string> Out1("outfile1",
+                                 cl::desc("<output .llvm file>:function"),
+                                 cl::value_desc("filename"));
+
+static cl::opt<std::string> Out2("outfile2",
+                                 cl::desc("<output .llvm file>:function"),
+                                 cl::value_desc("filename"));
+
 static cl::opt<std::string> Out("outdir",
                                 cl::desc("<path to dump residual .llvm files>"),
                                 cl::value_desc("filename"));
@@ -180,7 +188,8 @@ int main(int argc, char **argv) {
   // Matching the extracted functions
   errs() << "Matching: " << F1->getName().str() << " & " << F2->getName().str()
          << "\n";
-  IterativePruningMatcher M(F1, F2, Out, SSAEdgeOnly, PotentialMatchAccurancy);
+  IterativePruningMatcher M(F1, F2, Out1, Out2, Out, SSAEdgeOnly,
+                            PotentialMatchAccurancy);
 
   errs() << "Matcher Done...\n";
   return 0;

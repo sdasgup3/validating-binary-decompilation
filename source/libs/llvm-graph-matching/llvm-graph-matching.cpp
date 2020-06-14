@@ -21,10 +21,9 @@ using namespace llvm;
 /*********************
 ********** Class::IterativePruningMatcher ***********
 *********************/
-IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
-                                                 const string &Out,
-                                                 bool useSSAEdges,
-                                                 bool potentialMatchAccuracy)
+IterativePruningMatcher::IterativePruningMatcher(
+    Function *f1, Function *f2, const string &Out1, const string &Out2,
+    const string &Out, bool useSSAEdges, bool potentialMatchAccuracy)
     : MatcherBase(f1, f2, useSSAEdges) {
 
 #ifdef MATCHER_DEBUG
@@ -47,7 +46,7 @@ IterativePruningMatcher::IterativePruningMatcher(Function *f1, Function *f2,
 #endif
   dualSimulationDriver(G2, G1, PotIMatches2);
 
-  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2, G1, G2, Out);
+  dumpPrunedIR(f1, f2, PotIMatches1, PotIMatches2, G1, G2, Out1, Out2);
   postMatchingAction();
 
 #ifdef MATCHER_DEBUG
@@ -95,15 +94,16 @@ bool IterativePruningMatcher::shouldRemoveInstrunction(
 void IterativePruningMatcher::dumpPrunedIR(
     Function *f1, Function *f2, const std::map<Value *, set<Value *>> &Phi1,
     const std::map<Value *, set<Value *>> &Phi2, DataDepGraph *g1,
-    DataDepGraph *g2, const string &Out) {
+    DataDepGraph *g2, const string &Out1, const string &Out2) {
   std::error_code ec;
 
-  raw_fd_ostream llir1(Out + "/query.ll", ec, sys::fs::F_Text);
-  raw_fd_ostream llir2(Out + "/target.ll", ec, sys::fs::F_Text);
+  // raw_fd_ostream llir1(Out + "/query.ll", ec, sys::fs::F_Text);
+  // raw_fd_ostream llir2(Out + "/target.ll", ec, sys::fs::F_Text);
+  raw_fd_ostream llir1(Out1, ec, sys::fs::F_Text);
+  raw_fd_ostream llir2(Out2, ec, sys::fs::F_Text);
 
   /*** Dump Query function ****/
-  llvm::errs() << "Generating: " + Out + "/query.ll"
-               << "\n";
+  llvm::errs() << "Generating: " + Out1 << "\n";
 
   unsigned totalInst1 = 0;
   unsigned comentedInst1 = 0;
@@ -150,8 +150,7 @@ void IterativePruningMatcher::dumpPrunedIR(
   }
 
   /*** Dump Query function ****/
-  llvm::errs() << "Generating: " + Out + "/target.ll"
-               << "\n";
+  llvm::errs() << "Generating: " + Out2 << "\n";
 
   unsigned totalInst2 = 0;
   unsigned comentedInst2 = 0;

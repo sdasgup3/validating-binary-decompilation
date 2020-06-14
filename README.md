@@ -598,7 +598,7 @@ make match # expect "Match Pass" upon execution
 **Side Note**
 Behind the scene, the make target `match` includes other targets like `compd_opt` & `mcsema_opt`,
 responsible for normalization. These targets can be run independently as well.
-Following shows the deatils of those targets
+Following shows the details of those targets
 ```
 ## Normalizing mcsema/test.proposed.inline.ll
 ## Creates mcsema/test.proposed.opt.ll
@@ -817,11 +817,11 @@ make match # Invoke the matcher on each of the above candidate pass sequences ti
 [&#11181;](#Table-of-Contents)
 
 ## Experimental Matcher
-**Iterative Pruning based Matcher:** Iteratively prunes the matched sub-
-graphs and look for more isomorphic matches after canonicalizing the residual graph.
-This ehancement of the matcher is based on the insight that the residual graphs will be much straight-
+**Iterative Pruning based Matcher (IPM):** Iteratively prunes the matched sub-
+graphs and look for more isomorphic matches after transforming (using LLVM optimizations) the residual graph.
+This enhancement of the matcher is based on the insight that the residual graphs will be much straight-
 forward, in terms of the aliasing relations among instructions, for the optimization
-passes to canonicalize effectively. 
+passes to optimize effectively. 
 
 ### Build Instructions
   - Checkout Repository
@@ -868,6 +868,44 @@ passes to canonicalize effectively.
   cat docs/funcList.txt | parallel  " echo; echo {}; make -C {} imatch" |& tee docs/imatch.log
 ```
   
+</p>
+</details>
+
+### [Developers Only] Running a batch PLV run on toy-examples using iterative based pruning
+The main use of this run is to test IPM with cases where the "iterative" part of the this
+strategy is not applicable as all the toy-example cases should reduce to iso-morphic graphs
+after optimization. The rationale behind the test is to check if the IPM implementation is
+not breaking the "basic" matching functionality.
+
+<details><summary>expand</summary>
+<p>
+
+  ```bash
+
+    cd $REPO_PATH/validating-binary-decompilation/tests/program_translation_validation/toy-examples
+
+    ## Create Binaries from toy-example C functions
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make binary; cd .." |& tee /tmp/log
+
+    ## Create Binaries with relocation information
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make reloc_binary; cd .." |& tee /tmp/log
+
+    ## Create McSema  generated IR programs
+    cat docs/filelist.txt | parallel   " echo; echo {}; cd {}; make mcsema; cd .." |& tee /tmp/log
+
+    ## Create Compositional Lifter generated IR programs
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} compd" |& tee docs/compd.log
+
+    ## Following run the matcher after normalization
+    unset NORM
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} imatch" |& tee /tmp/match_3.log
+
+    ## Triage the log file into passing and failing cases
+    ../../scripts/triage.sh Pass  /tmp/match_3.log toy-examples
+    ../../scripts/triage.sh Fail  /tmp/match_3.log toy-examples
+
+  ```
+
 </p>
 </details>
 

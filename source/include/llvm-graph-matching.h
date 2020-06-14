@@ -136,7 +136,8 @@ private:
   std::map<Value *, set<Value *>> PotIMatches2;
 
 public:
-  IterativePruningMatcher(Function *F1, Function *F2, const string &Out,
+  IterativePruningMatcher(Function *F1, Function *F2, const string &Out1,
+                          const string &Out2, const string &Out,
                           bool useSSAEdges = false,
                           bool potentialMatchAccuracy = false);
   void retrievePotIMatches(Function *F1, Function *F2,
@@ -151,7 +152,8 @@ public:
   void dumpPrunedIR(Function *f1, Function *f2,
                     const std::map<Value *, set<Value *>> &Phi1,
                     const std::map<Value *, set<Value *>> &Phi2,
-                    DataDepGraph *g1, DataDepGraph *g2, const string &Out);
+                    DataDepGraph *g1, DataDepGraph *g2, const string &Out1,
+                    const string &Out2);
   bool shouldRemoveInstrunction(Value *I1,
                                 const std::map<Value *, set<Value *>> &Phi1,
                                 const std::map<Value *, set<Value *>> &Phi2,

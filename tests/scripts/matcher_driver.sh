@@ -120,11 +120,13 @@ matchDriver() {
 imatch() {
   LOCALQUERY=$1
   LOCALTARGET=$2
-  OUTDIR=$3
-  TOOLDIR=$4
-  PROG=$5
+  OUTQUERY=$3
+  OUTTARGET=$4
+  OUTDIR=$5
+  TOOLDIR=$6
+  PROG=$7
 
-  executeNPrint "( time ${TOOLDIR}/iterative-pruning-matcher --file1 ${LOCALQUERY}:${PROG} --file2 ${LOCALTARGET}:${PROG} --outdir ${OUTDIR} ) 1>${OUTDIR}imatch.log 2>&1"
+  executeNPrint "( time ${TOOLDIR}/iterative-pruning-matcher --file1 ${LOCALQUERY}:${PROG} --file2 ${LOCALTARGET}:${PROG}  --outfile1 $OUTQUERY --outfile2 $OUTTARGET --outdir $OUTDIR ) 1>${OUTDIR}imatch.log 2>&1"
   ${SCRIPTDIR}/check_status.sh --msg ${PROG} --dir ${OUTDIR}  --imatch
 }
 
@@ -135,41 +137,32 @@ imatchDriver() {
   INDIR=$4
   TOOLDIR=$5
   PROG=$6
+  COUNTER=0
   
   while true
-  do  
-    Opt ${OUTDIR} ${PROG} ${QUERY}  ${OUTDIR}test.query.opt.ll
-    Opt ${OUTDIR} ${PROG} ${TARGET} ${OUTDIR}test.target.opt.ll
-    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test.query.opt.ll  -o ${OUTDIR}/test.query.extract.ll"
-    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test.target.opt.ll -o ${OUTDIR}/test.target.extract.ll"
+  do
+    Opt ${OUTDIR} ${PROG} ${QUERY}  ${OUTDIR}test$COUNTER.query.opt.ll
+    Opt ${OUTDIR} ${PROG} ${TARGET} ${OUTDIR}test$COUNTER.target.opt.ll
+    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test$COUNTER.query.opt.ll  -o ${OUTDIR}/test$COUNTER.query.extract.ll"
+    executeNPrint "llvm-extract -S  -rfunc="[sub_\d+_]?${PROG}"  ${OUTDIR}test$COUNTER.target.opt.ll -o ${OUTDIR}/test$COUNTER.target.extract.ll"
 #Opt ${OUTDIR} ${PROG} ${QUERY}  ${OUTDIR}test.query.opt.ll
 #Opt ${OUTDIR} ${PROG} ${TARGET} ${OUTDIR}test.target.opt.ll
-    imatch ${OUTDIR}test.query.extract.ll ${OUTDIR}test.target.extract.ll ${OUTDIR} ${TOOLDIR} ${PROG}
+    imatch ${OUTDIR}test$COUNTER.query.extract.ll ${OUTDIR}test$COUNTER.target.extract.ll ${OUTDIR}test$COUNTER.query.ll ${OUTDIR}test$COUNTER.target.ll ${OUTDIR} ${TOOLDIR} ${PROG}
     matchstat=$?
 
-    shouldContinue
-    continue=$?
-
-
-    # if NORM is defined (as CUSTOM  or O3), then exit. 
-    # Note that the matching results is already printed in match subroutine. 
-    if [ $continue -eq 0 ]; then
+    if [ $matchstat -eq 0 ]; then
       exit $matchstat
     fi
 
-    # if Matching is successful, keep the tuner json file with the
-    # pass-sequence entry responsible for the successful match.
-    if [ $matchstat -eq 0 ]; then
-      tail -n 1 ${OUTDIR}/normalizer_final_config.json > ${OUTDIR}/normalizer_final_config.json.tmp && mv ${OUTDIR}/normalizer_final_config.json.tmp ${OUTDIR}/normalizer_final_config.json
-      exit 0
+    QUERY=${OUTDIR}test$COUNTER.query.ll
+    TARGET=${OUTDIR}test$COUNTER.target.ll
+
+    ((COUNTER++))
+
+    if [ $COUNTER -eq 5 ]; then
+      exit $matchstat
     fi
 
-    # if Matching Fails, remove the last entry from the tuner json file.
-    # if the file become empty, remove the tuner json file.
-    sed -i '$d' ${OUTDIR}/normalizer_final_config.json
-    if [ ! -s ${OUTDIR}/normalizer_final_config.json ]; then  
-      rm -rf ${OUTDIR}/normalizer_final_config.json
-    fi
   done
 }
 
