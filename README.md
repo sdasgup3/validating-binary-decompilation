@@ -909,6 +909,35 @@ not breaking the "basic" matching functionality.
 </p>
 </details>
 
+### [Developers Only] Codegen for esp backend
+The codegen process consists of two phases:
+1. Indentifying functions of mini-era application matching with the target spec of fft and viterbi
+2. Replacing the application code call sites for the identified function with relevant hardware specific apis assiting code
+generation.
+
+The code is available as a [LLVM module pass](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/source/libs/esp_codegen/esp_codegen.cpp).
+and invoked as
+
+```bash
+TOOLDIR=${REPO}/validating-binary-decompilation/source/build/bin/
+opt -S -load ${TOOLDIR}../lib/LLVMesp_codegen.so -esp_codegen --targetspec <target-spec-file>.ll:<target-func-name> <application>.ll --disable-output
+
+```
+
+Here are the steps to test on mini-era code
+<details><summary>expand</summary>
+<p>
+
+  ```bash
+
+    cd $REPO_PATH/validating-binary-decompilation/tests/simantic-similarity-matching/mini-era
+    cat docs/functionList.log | parallel  " echo; echo {}; make -C {} imatch" |& tee /tmp/match_3.log
+  ```
+
+</p>
+</details>
+
+
 ### [Misc Information](https://github.com/sdasgup3/validating-binary-decompilation/tree/master/tests/simantic-similarity-matching/README.md)
 
 [&#11181;](#Table-of-Contents)
