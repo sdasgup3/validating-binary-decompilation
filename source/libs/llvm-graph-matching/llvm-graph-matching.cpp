@@ -23,7 +23,8 @@ using namespace llvm;
 *********************/
 IterativePruningMatcher::IterativePruningMatcher(
     Function *f1, Function *f2, const string &Out1, const string &Out2,
-    const string &Out, bool useSSAEdges, bool potentialMatchAccuracy)
+    // const string &Out, bool useSSAEdges, bool potentialMatchAccuracy)
+    bool useSSAEdges, bool potentialMatchAccuracy)
     : MatcherBase(f1, f2, useSSAEdges) {
 
 #ifdef MATCHER_DEBUG
@@ -33,8 +34,12 @@ IterativePruningMatcher::IterativePruningMatcher(
 
   G1 = new DataDepGraph(f1, useSSAEdges);
   G2 = new DataDepGraph(f2, useSSAEdges);
+  totalInst1 = comentedInst1 = totalInst2 = comentedInst2 = 0;
 
-  retrievePotIMatches(f1, f2, potentialMatchAccuracy);
+  if (!retrievePotIMatches(f1, f2, potentialMatchAccuracy)) {
+    llvm::errs() << "Early Exit\n";
+    return;
+  }
 
 #ifdef MATCHER_DEBUG
   llvm::errs() << "\n\nDual Simulation::Query to Target \n";
@@ -105,8 +110,6 @@ void IterativePruningMatcher::dumpPrunedIR(
   /*** Dump Query function ****/
   llvm::errs() << "Generating: " + Out1 << "\n";
 
-  unsigned totalInst1 = 0;
-  unsigned comentedInst1 = 0;
   set<Value *> visited, multiMatches;
   set<Instruction *> toErase;
   // dump function body
@@ -140,20 +143,18 @@ void IterativePruningMatcher::dumpPrunedIR(
   llir1.close();
 
   // dump debug info
-  for (auto multiMatch : multiMatches) {
-    llvm::errs() << "Mulitple Matches for : ";
-    dumpLLVMNode(multiMatch);
-    for (auto p : Phi1.at(multiMatch)) {
-      llvm::errs() << "\t";
-      dumpLLVMNode(p);
-    }
-  }
+  // for (auto multiMatch : multiMatches) {
+  //   llvm::errs() << "Mulitple Matches for : ";
+  //   dumpLLVMNode(multiMatch);
+  //   for (auto p : Phi1.at(multiMatch)) {
+  //     llvm::errs() << "\t";
+  //     dumpLLVMNode(p);
+  //   }
+  // }
 
   /*** Dump Query function ****/
   llvm::errs() << "Generating: " + Out2 << "\n";
 
-  unsigned totalInst2 = 0;
-  unsigned comentedInst2 = 0;
   multiMatches.clear();
   toErase.clear();
   // dump function body
@@ -187,14 +188,14 @@ void IterativePruningMatcher::dumpPrunedIR(
   llir2.close();
 
   // dump debug info
-  for (auto multiMatch : multiMatches) {
-    llvm::errs() << "Mulitple Matches for : ";
-    dumpLLVMNode(multiMatch);
-    for (auto p : Phi2.at(multiMatch)) {
-      llvm::errs() << "\t";
-      dumpLLVMNode(p);
-    }
-  }
+  // for (auto multiMatch : multiMatches) {
+  //   llvm::errs() << "Mulitple Matches for : ";
+  //   dumpLLVMNode(multiMatch);
+  //   for (auto p : Phi2.at(multiMatch)) {
+  //     llvm::errs() << "\t";
+  //     dumpLLVMNode(p);
+  //   }
+  // }
 
   /*** Check Final Results ****/
   if ((totalInst1 == comentedInst1) && (totalInst2 == comentedInst2)) {
@@ -206,9 +207,24 @@ void IterativePruningMatcher::dumpPrunedIR(
   }
 }
 
+/*
+** return 0: Matching failed
+** return 1: Matching passed
+** return 2: Early exit
+*/
+int IterativePruningMatcher::getResult() {
+  if (totalInst1 == 0 || totalInst2 == 0)
+    return 2;
+
+  if ((totalInst1 != comentedInst1) && (totalInst2 != comentedInst2)) {
+    return 0;
+  }
+  return 1;
+}
+
 void IterativePruningMatcher::postMatchingAction() {}
 
-void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
+bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
                                                   bool potentialMatchAccuracy) {
 #ifdef MATCHER_DEBUG
   llvm::errs() << "\n\n[Info] Retrieve Potential Matches: Start\n";
@@ -216,8 +232,7 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
 
   if (!initialArgumentsMatch(f1, f2, PotIMatches1) ||
       !initialArgumentsMatch(f2, f1, PotIMatches2)) {
-    assert(0 && "Problem with Initial Match");
-    return;
+    return false;
   }
 
   for (inst_iterator I1 = inst_begin(f1), E1 = inst_end(f1); I1 != E1; ++I1) {
@@ -234,8 +249,9 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
       llvm::errs()
           << "\n\n[Error] Failed to extract initial Potential (1) Matches for:";
       dumpLLVMNode(&*I1);
-      assert(0 && "[Error in retrievePotIMatches] Failed to extract "
-                  "Potential Matches");
+      //  assert(0 && "[Error in retrievePotIMatches] Failed to extract "
+      //              "Potential Matches");
+      return false;
     }
   }
 
@@ -253,8 +269,9 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
       llvm::errs()
           << "\n\n[Error] Failed to extract initial Potential (2) Matches for:";
       dumpLLVMNode(&*I2);
-      assert(0 && "[Error in retrievePotIMatches] Failed to extract "
-                  "Potential Matches");
+      // assert(0 && "[Error in retrievePotIMatches] Failed to extract "
+      //             "Potential Matches");
+      return false;
     }
   }
 
@@ -263,6 +280,8 @@ void IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
   llvm::errs() << "\n\n[Info] Retrieve Potential Matches: End\n";
 // dumpPotIMatchesStats();
 #endif
+
+  return true;
 }
 
 /*
@@ -1431,7 +1450,7 @@ void MatcherBase::dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
 bool MatcherBase::initialArgumentsMatch(Function *f1, Function *f2,
                                         std::map<Value *, set<Value *>> &Phi) {
   if (f1->arg_size() != f2->arg_size()) {
-    llvm::errs() << "Argument count mismatch\n";
+    // llvm::errs() << "Argument count mismatch\n";
     return false;
   }
   auto argI1 = f1->arg_begin();

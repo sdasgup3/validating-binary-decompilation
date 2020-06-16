@@ -67,8 +67,8 @@ public:
   MatcherBase(Function *F1, Function *F2, bool useSSAEdges = false);
 
   // To be overridden
-  virtual void retrievePotIMatches(Function *F1, Function *F2,
-                                   bool potentialMatchAccuracy = false) = 0;
+  // virtual bool retrievePotIMatches(Function *F1, Function *F2,
+  //                                  bool potentialMatchAccuracy = false) = 0;
   virtual bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
                          DataDepGraph *g2) = 0;
   virtual void dumpPotIMatches() = 0;
@@ -134,13 +134,17 @@ class IterativePruningMatcher : public MatcherBase {
 private:
   std::map<Value *, set<Value *>> PotIMatches1;
   std::map<Value *, set<Value *>> PotIMatches2;
+  unsigned totalInst1;
+  unsigned comentedInst1;
+  unsigned totalInst2;
+  unsigned comentedInst2;
 
 public:
   IterativePruningMatcher(Function *F1, Function *F2, const string &Out1,
-                          const string &Out2, const string &Out,
+                          const string &Out2, // const string &Out,
                           bool useSSAEdges = false,
                           bool potentialMatchAccuracy = false);
-  void retrievePotIMatches(Function *F1, Function *F2,
+  bool retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
   bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
                  DataDepGraph *g2);
@@ -161,6 +165,7 @@ public:
                                 set<Value *> &multiMatches);
   bool isExactMatch(Value *I1, const std::map<Value *, set<Value *>> &Phi1,
                     const std::map<Value *, set<Value *>> &Phi2);
+  int getResult();
 };
 
 } // end llvm namespace
