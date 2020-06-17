@@ -1,0 +1,136 @@
+## Whats limits the scalability
+## Any other larger programs that u have tried on
+
+The approach is scalable as far as the program size is concerned. 
+The largest binary function that we tries so far consist of
+900 assembly instructions. The corresponding lifted IR program consists of ~32K
+LOC LLVM IR code spans across 52 basic blocks.
+
+In my pinion, its not the program size with poses any challenge but the aliasing relationship within
+a program.
+
+In the aliasing relations are complex then the LLVM optimization passes may not be effective in
+reducing the candidate semantic equiv functions to isomorphic graphs.
+
+// Cost of SIV and PLV
+// grow with func size
+// complexity
+// 
+// 1. Performance / False alarm complexity scalability
+// Function code size / performance 
+// 
+// functional level gran
+
+
+
+## Closest related work
+The closest work to ours in finding instruction-level translation bugs is MeanDiff, which pro-
+posed an N-version IR testing to validate three binary lifters
+
+In addition to SIV, we perform program-level validation, which
+is not addressed by MeanDiff.
+
+
+The work closest to ours, in terms of the goals, is the translation verifier, Reopt-vcg,
+which addresses verification challenges specific to the translator Reopt. The verifier,
+which validates translations at basic-block level, is assisted by various manually written
+annotations, which are prone to errors. In future, they aim to generate such annotations
+automatically by instrumenting the lifter. 
+
+Our approach does not need any such annotations,
+avoiding the overhead of maintaining instrumentation patches whenever the lifter is modified.
+
+## Why just McSema? How can you say that its a general approach
+Our validation approach is applicable to all the lifters which lifts program one instruction at a time
+and to the best of our knowledge almost all of the lifters fall in that category.
+
+The underlying idea being generic could be applied by customizing Compositional
+Lifter to capture the  idiosyncrasies of other lifters.
+
+// first throw the idea
+// distill the idea
+// most of the existing falls into the assumption
+
+## How to mitigate the limitation of not-formally verified passes
+An alternative approach is to
+develop simple graph rewrites on SSA graphs that can be composed to mimic the trans-
+formations of LLVM passes and formally prove that these graph rewrites preserve program
+semantics.
+
+
+## What about the fact that the approach is not fully formal
+SIV is one of the most critical phase of our approach which includes majority of the
+complexity of binary lifting. This is evident by the fact that we found 29 real bugs
+in that phase alone.
+This phase is formally verified driven by the formal semantics of the ISA and IR semantics.
+
+Another important component is PLV and we choose to implement it using an information 
+technique while trusting the correctness of compositional lifter and LLVM passes.
+But what we end up getting is a computationally cheaper approach to do function level
+validation as opposed to  heavyweight symbolic execution based equiv checking.
+
+
+// SIV is where the most critical part 
+// the formal proof is already important
+// and where we get most of the bugs
+// that part where the most of the complexity of lifter lies
+
+
+## Why not to craft the auto-tuned sequence right from the search space of entire LLVM O3
+We avoided crafting
+the search space using all the LLVM passes (e.g., 187 passes of Clang’s −O3 pass sequence)
+because our experiments showed that such a large search space is difficult
+in reducing to a effective pass sequence in a reasonable amount of time.
+
+## Root causes of false positives are:
+
+Phase ordering problem (~80%): The normalizer passes are not able to converge
+                               functions into isomorphic graphs because of the
+                               order in which the normalizer passes are
+                               applied. We have found that an autotuner
+                               exploring different normalizer pass sequences
+                               greatly improves these results.
+
+Difference in Lifting globals (~20%): For data section addresses, Mcsema lifts
+                                      a global with over-approximated size
+                                      which need not be equal to the actual
+                                      source code size, whereas, the
+                                      compositional-decompiler determines the
+                                      size as the width of the maximum access
+                                      across all the instructions accessing
+                                      that particular global. That way the
+                                      lifted global sizes might be different
+                                      from McSema. Now, the memory-dependence
+                                      edges that we extract using LLVM memssa
+                                      analysis depend on the size of the
+                                      globals and hence the generated graphs
+                                      will be different. A more accurate memory
+                                      analysis might solve this issue.
+
+
+## what is the resuse for different variants?
+In our paper we have shown that 86% of the test-function enjoy 80-100% resuse of 
+instructions within or across function. This in our opinion is quite acceptable 
+and does not pose any bottleneck while compositional lifting.
+We note that the resuse can be improved by resuing the validated IR sequences of 
+immediate variants which differ only by some constant.
+
+However, we should be careful while resuing such variants because there are instruction like movsd 
+whole memory and register variants are not equivalent
+
+## what are u achieving with PLV
+
+We designed the compositional lifting to be simple. It took us 3 man weeks to implement it.
+The design is simple because there is no optimization,the glue code used to stitch the 
+validated IR sequence of individual instruction is generic across different instructions;
+and we do not trust Mcsema's lifting of globals, but rely of binary relocation information whenever available.
+
+This simplicity in design help us to  use the compositionally lifted IR confidence
+as a golden truth.
+
+We used this to compare with the lifted IR of the lifter which might use custom optimizations and could have potentially buggy
+lifting of globals.
+The effectiveness of PLV is well demonstrated using the artificially injected bugs.
+
+
+

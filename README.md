@@ -912,7 +912,7 @@ not breaking the "basic" matching functionality.
 ### [Developers Only] Codegen for esp backend
 The codegen process consists of two phases:
 1. Indentifying functions of mini-era application matching with the target spec of fft and viterbi
-2. Replacing the application code call sites for the identified function with relevant hardware specific apis assiting code
+2. Replacing the application code call sites for the identified function with relevant hardware specific APIs assisting code
 generation.
 
 The code is available as a [LLVM module pass](https://github.com/sdasgup3/validating-binary-decompilation/blob/master/source/libs/esp_codegen/esp_codegen.cpp).
