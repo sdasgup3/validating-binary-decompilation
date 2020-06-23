@@ -848,7 +848,7 @@ passes to optimize effectively.
       cd !$
 
       cmake .. -DLLVM_ROOT=~/Install/llvm/llvm.4.0.0.install/  -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_BUILD_TYPE="Debug" -DLLVM_ENABLE_ASSERTIONS=ON
-      make iterative-pruning-matcher
+      make
     ```
 
     </p>
