@@ -1,38 +1,14 @@
-; ModuleID = './output//test0.target.extract.ll'
+; ModuleID = './output//test0.target.opt.ll'
 source_filename = "fft.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
-; Function Attrs: alwaysinline nounwind uwtable
-define i32 @fft(float* %data, i32 %N, i32 %logn, i32 %sign) local_unnamed_addr #0 {
+define i32 @fft(float* %data, i32 %N, i32 %logn, i32 %sign) local_unnamed_addr {
 entry:
-  br label %for.cond.i
-
-for.cond.i:                                       ; preds = %if.end.i, %entry
-  %i.i.0 = phi i32 [ 0, %entry ], [ %inc.i, %if.end.i ]
-  br i1 undef, label %for.cond.i.i, label %bit_reverse.exit
-
-for.cond.i.i:                                     ; preds = %for.body.i.i, %for.cond.i
-  br i1 undef, label %_rev.exit.i, label %for.body.i.i
-
-for.body.i.i:                                     ; preds = %for.cond.i.i
-  br label %for.cond.i.i
-
-_rev.exit.i:                                      ; preds = %for.cond.i.i
-  br i1 undef, label %if.then.i, label %if.end.i
-
-if.then.i:                                        ; preds = %_rev.exit.i
-  br label %if.end.i
-
-if.end.i:                                         ; preds = %if.then.i, %_rev.exit.i
-  %inc.i = add i32 %i.i.0, 1
-  br label %for.cond.i
-
-bit_reverse.exit:                                 ; preds = %for.cond.i
   br label %for.cond
 
-for.cond:                                         ; preds = %for.end73, %bit_reverse.exit
-  %bit.0 = phi i32 [ 0, %bit_reverse.exit ], [ %inc76, %for.end73 ]
+for.cond:                                         ; preds = %for.end73, %entry
+  %bit.0 = phi i32 [ 0, %entry ], [ %inc76, %for.end73 ]
   br i1 undef, label %for.body, label %for.end77
 
 for.body:                                         ; preds = %for.cond
@@ -59,6 +35,9 @@ for.end73:                                        ; preds = %for.cond17
 for.end77:                                        ; preds = %for.cond
   ret i32 0
 }
+
+; Function Attrs: alwaysinline nounwind uwtable
+declare float* @bit_reverse(float*, i32, i32) local_unnamed_addr #0
 
 ; Function Attrs: nounwind
 declare double @sin(double) local_unnamed_addr #1

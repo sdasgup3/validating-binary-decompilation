@@ -1,4 +1,4 @@
-; ModuleID = './output//test1.target.opt.ll'
+; ModuleID = './output//test0.target.ll'
 source_filename = "viterbi_flat.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
@@ -6,6 +6,49 @@ target triple = "x86_64-unknown-linux-gnu"
 ; Function Attrs: norecurse nounwind uwtable
 define i8* @depuncture(i8* readonly %in) local_unnamed_addr #0 {
 entry:
+  br i1 undef, label %if.end, label %for.cond.preheader
+
+for.cond.preheader:                               ; preds = %entry
+  br i1 undef, label %for.cond4.preheader.lr.ph, label %if.end
+
+for.cond4.preheader.lr.ph:                        ; preds = %for.cond.preheader
+  br label %for.cond4.preheader
+
+for.cond4.preheader:                              ; preds = %for.cond.cleanup6, %for.cond4.preheader.lr.ph
+  %indvars.iv77 = phi i64 [ 0, %for.cond4.preheader.lr.ph ], [ %indvars.iv.next78, %for.cond.cleanup6 ]
+  br i1 undef, label %while.cond.preheader.lr.ph, label %for.cond.cleanup6
+
+while.cond.preheader.lr.ph:                       ; preds = %for.cond4.preheader
+  br label %while.cond.preheader
+
+while.cond.preheader:                             ; preds = %for.inc, %while.cond.preheader.lr.ph
+  %indvars.iv74 = phi i64 [ 0, %while.cond.preheader.lr.ph ], [ %indvars.iv.next75, %for.inc ]
+  br i1 undef, label %while.body.preheader, label %while.end
+
+while.body.preheader:                             ; preds = %while.cond.preheader
+  br label %while.body
+
+for.cond.cleanup6.loopexit:                       ; preds = %for.inc
+  br label %for.cond.cleanup6
+
+for.cond.cleanup6:                                ; preds = %for.cond.cleanup6.loopexit, %for.cond4.preheader
+  %indvars.iv.next78 = add nuw nsw i64 %indvars.iv77, 1
+  br i1 undef, label %for.cond4.preheader, label %if.end
+
+while.body:                                       ; preds = %while.body, %while.body.preheader
+  br i1 undef, label %while.body, label %while.end
+
+while.end:                                        ; preds = %while.body, %while.cond.preheader
+  br label %while.cond19
+
+while.cond19:                                     ; preds = %while.cond19, %while.end
+  br i1 undef, label %while.cond19, label %for.inc
+
+for.inc:                                          ; preds = %while.cond19
+  %indvars.iv.next75 = add nuw nsw i64 %indvars.iv74, 1
+  br i1 undef, label %for.cond.cleanup6.loopexit, label %while.cond.preheader
+
+if.end:                                           ; preds = %for.cond.cleanup6, %for.cond.preheader, %entry
   ret i8* undef
 }
 

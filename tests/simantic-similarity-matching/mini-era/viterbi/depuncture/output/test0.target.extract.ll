@@ -1,4 +1,4 @@
-; ModuleID = './output//test0.target.opt.ll'
+; ModuleID = './output//test.target.ll'
 source_filename = "viterbi_flat.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
@@ -16,17 +16,17 @@ target triple = "x86_64-unknown-linux-gnu"
 ; Function Attrs: norecurse nounwind uwtable
 define i8* @depuncture(i8* readonly %in) local_unnamed_addr #0 {
 entry:
-  %0 = load %struct.ofdm_param*, %struct.ofdm_param** @d_ofdm, align 8, !tbaa !1
+  %0 = load %struct.ofdm_param*, %struct.ofdm_param** @d_ofdm, align 8
   %n_cbps1 = getelementptr inbounds %struct.ofdm_param, %struct.ofdm_param* %0, i64 0, i32 3
-  %1 = load i32, i32* %n_cbps1, align 4, !tbaa !5
-  %2 = load i32, i32* @d_ntraceback, align 4, !tbaa !8
+  %1 = load i32, i32* %n_cbps1, align 4
+  %2 = load i32, i32* @d_ntraceback, align 4
   %cmp = icmp eq i32 %2, 5
   br i1 %cmp, label %if.end, label %for.cond.preheader
 
 for.cond.preheader:                               ; preds = %entry
-  %3 = load %struct.frame_param*, %struct.frame_param** @d_frame, align 8, !tbaa !1
+  %3 = load %struct.frame_param*, %struct.frame_param** @d_frame, align 8
   %n_sym268 = getelementptr inbounds %struct.frame_param, %struct.frame_param* %3, i64 0, i32 1
-  %4 = load i32, i32* %n_sym268, align 4, !tbaa !9
+  %4 = load i32, i32* %n_sym268, align 4
   %cmp369 = icmp sgt i32 %4, 0
   br i1 %cmp369, label %for.cond4.preheader.lr.ph, label %if.end
 
@@ -45,7 +45,7 @@ for.cond4.preheader:                              ; preds = %for.cond.cleanup6, 
 
 while.cond.preheader.lr.ph:                       ; preds = %for.cond4.preheader
   %8 = mul nsw i64 %indvars.iv77, %6
-  %.pre = load i32, i32* @d_k, align 4, !tbaa !8
+  %.pre = load i32, i32* @d_k, align 4
   %mul858 = shl nsw i32 %.pre, 1
   br label %while.cond.preheader
 
@@ -55,7 +55,7 @@ while.cond.preheader:                             ; preds = %for.inc, %while.con
   %rem59 = srem i32 %count.165, %mul858
   %idxprom60 = sext i32 %rem59 to i64
   %arrayidx61 = getelementptr inbounds i8, i8* %5, i64 %idxprom60
-  %9 = load i8, i8* %arrayidx61, align 1, !tbaa !11
+  %9 = load i8, i8* %arrayidx61, align 1
   %cmp962 = icmp eq i8 %9, 0
   br i1 %cmp962, label %while.body.preheader, label %while.end
 
@@ -64,7 +64,7 @@ while.body.preheader:                             ; preds = %while.cond.preheade
   br label %while.body
 
 for.cond.cleanup6.loopexit:                       ; preds = %for.inc
-  %.pre80 = load i32, i32* %n_sym268, align 4, !tbaa !9
+  %.pre80 = load i32, i32* %n_sym268, align 4
   br label %for.cond.cleanup6
 
 for.cond.cleanup6:                                ; preds = %for.cond.cleanup6.loopexit, %for.cond4.preheader
@@ -73,26 +73,29 @@ for.cond.cleanup6:                                ; preds = %for.cond.cleanup6.l
   %indvars.iv.next78 = add nuw nsw i64 %indvars.iv77, 1
   %12 = sext i32 %11 to i64
   %cmp3 = icmp slt i64 %indvars.iv.next78, %12
-  br i1 %cmp3, label %for.cond4.preheader, label %if.end
+  br i1 %cmp3, label %for.cond4.preheader, label %if.end.loopexit
 
 while.body:                                       ; preds = %while.body, %while.body.preheader
   %indvars.iv = phi i64 [ %10, %while.body.preheader ], [ %indvars.iv.next, %while.body ]
   %arrayidx12 = getelementptr inbounds [24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 %indvars.iv
-  store i8 2, i8* %arrayidx12, align 1, !tbaa !11
+  store i8 2, i8* %arrayidx12, align 1
   %indvars.iv.next = add i64 %indvars.iv, 1
   %13 = trunc i64 %indvars.iv.next to i32
   %rem = srem i32 %13, %mul858
   %idxprom = sext i32 %rem to i64
   %arrayidx = getelementptr inbounds i8, i8* %5, i64 %idxprom
-  %14 = load i8, i8* %arrayidx, align 1, !tbaa !11
+  %14 = load i8, i8* %arrayidx, align 1
   %cmp9 = icmp eq i8 %14, 0
-  br i1 %cmp9, label %while.body, label %while.end
+  br i1 %cmp9, label %while.body, label %while.end.loopexit
 
-while.end:                                        ; preds = %while.body, %while.cond.preheader
-  %count.2.lcssa = phi i32 [ %count.165, %while.cond.preheader ], [ %13, %while.body ]
+while.end.loopexit:                               ; preds = %while.body
+  br label %while.end
+
+while.end:                                        ; preds = %while.end.loopexit, %while.cond.preheader
+  %count.2.lcssa = phi i32 [ %count.165, %while.cond.preheader ], [ %13, %while.end.loopexit ]
   %15 = add nsw i64 %indvars.iv74, %8
   %arrayidx15 = getelementptr inbounds i8, i8* %in, i64 %15
-  %16 = load i8, i8* %arrayidx15, align 1, !tbaa !11
+  %16 = load i8, i8* %arrayidx15, align 1
   %17 = sext i32 %count.2.lcssa to i64
   br label %while.cond19
 
@@ -100,13 +103,13 @@ while.cond19:                                     ; preds = %while.cond19, %whil
   %indvars.iv72 = phi i64 [ %indvars.iv.next73, %while.cond19 ], [ %17, %while.end ]
   %.sink = phi i8 [ 2, %while.cond19 ], [ %16, %while.end ]
   %arrayidx29 = getelementptr inbounds [24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 %indvars.iv72
-  store i8 %.sink, i8* %arrayidx29, align 1, !tbaa !11
+  store i8 %.sink, i8* %arrayidx29, align 1
   %indvars.iv.next73 = add i64 %indvars.iv72, 1
   %18 = trunc i64 %indvars.iv.next73 to i32
   %rem21 = srem i32 %18, %mul858
   %idxprom22 = sext i32 %rem21 to i64
   %arrayidx23 = getelementptr inbounds i8, i8* %5, i64 %idxprom22
-  %19 = load i8, i8* %arrayidx23, align 1, !tbaa !11
+  %19 = load i8, i8* %arrayidx23, align 1
   %cmp25 = icmp eq i8 %19, 0
   br i1 %cmp25, label %while.cond19, label %for.inc
 
@@ -115,8 +118,11 @@ for.inc:                                          ; preds = %while.cond19
   %exitcond = icmp eq i64 %indvars.iv.next75, %wide.trip.count
   br i1 %exitcond, label %for.cond.cleanup6.loopexit, label %while.cond.preheader
 
-if.end:                                           ; preds = %for.cond.cleanup6, %for.cond.preheader, %entry
-  %depunctured.0 = phi i8* [ %in, %entry ], [ getelementptr inbounds ([24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 0), %for.cond.preheader ], [ getelementptr inbounds ([24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 0), %for.cond.cleanup6 ]
+if.end.loopexit:                                  ; preds = %for.cond.cleanup6
+  br label %if.end
+
+if.end:                                           ; preds = %if.end.loopexit, %for.cond.preheader, %entry
+  %depunctured.0 = phi i8* [ %in, %entry ], [ getelementptr inbounds ([24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 0), %for.cond.preheader ], [ getelementptr inbounds ([24780 x i8], [24780 x i8]* @d_depunctured, i64 0, i64 0), %if.end.loopexit ]
   ret i8* %depunctured.0
 }
 
@@ -125,14 +131,3 @@ attributes #0 = { norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-m
 !llvm.ident = !{!0}
 
 !0 = !{!"clang version 4.0.0 (tags/RELEASE_400/final)"}
-!1 = !{!2, !2, i64 0}
-!2 = !{!"any pointer", !3, i64 0}
-!3 = !{!"omnipotent char", !4, i64 0}
-!4 = !{!"Simple C/C++ TBAA"}
-!5 = !{!6, !7, i64 12}
-!6 = !{!"", !3, i64 0, !3, i64 4, !7, i64 8, !7, i64 12, !7, i64 16}
-!7 = !{!"int", !3, i64 0}
-!8 = !{!7, !7, i64 0}
-!9 = !{!10, !7, i64 4}
-!10 = !{!"", !7, i64 0, !7, i64 4, !7, i64 8, !7, i64 12, !7, i64 16}
-!11 = !{!3, !3, i64 0}

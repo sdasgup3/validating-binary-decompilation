@@ -1,4 +1,4 @@
-; ModuleID = './output//test0.target.extract.ll'
+; ModuleID = './output//test0.target.opt.ll'
 source_filename = "viterbi_flat.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
@@ -7,20 +7,26 @@ target triple = "x86_64-unknown-linux-gnu"
 
 @d_branchtab27_generic = external local_unnamed_addr global [2 x %union.branchtab27_u], align 16
 @PARTAB = external hidden unnamed_addr constant [256 x i8], align 16
+@d_mmresult = external local_unnamed_addr global [64 x i8], align 16
+@d_ppresult = external local_unnamed_addr global [24 x [64 x i8]], align 16
+@d_metric0_generic = external local_unnamed_addr global [64 x i8], align 16
+@d_path0_generic = external local_unnamed_addr global [64 x i8], align 16
 
-; Function Attrs: norecurse nounwind uwtable
-define void @viterbi_chunks_init_generic() local_unnamed_addr #0 {
+define void @viterbi_chunks_init_generic() local_unnamed_addr {
 entry:
-  br label %for.body
+  br label %for.body5
 
-for.body:                                         ; preds = %for.body, %entry
-  br i1 undef, label %for.end, label %for.body
+for.body5:                                        ; preds = %for.body5, %entry
+  br i1 undef, label %for.body37.preheader, label %for.body5
 
-for.end:                                          ; preds = %for.body
+for.body37.preheader:                             ; preds = %for.body5
   ret void
 }
 
-attributes #0 = { norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+; Function Attrs: argmemonly nounwind
+declare void @llvm.memset.p0i8.i64(i8* nocapture writeonly, i8, i64, i32, i1) #0
+
+attributes #0 = { argmemonly nounwind }
 
 !llvm.ident = !{!0}
 

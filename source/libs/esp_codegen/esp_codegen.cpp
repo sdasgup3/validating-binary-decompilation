@@ -64,19 +64,28 @@ static cl::opt<std::string> Out("outdir",
                                 cl::value_desc("filename"));
 
 void execute_shell_cmd(const string &cmd) {
-  llvm::errs() << "Execute: " << cmd << "\n";
+  llvm::errs() <<  cmd << "\n";
   if (system(cmd.c_str())) {
     errs() << "Failed!!";
     assert(0);
   }
 }
 
-static void processInput(const string &qFunc, const string &qFile,
-                         const string &qOptFile, const string &qExtractFile,
-                         const string &tFunc, const string &tFile,
-                         const string &tOptFile, const string &tExtractFile) {
+const string norm_pass =
+    "-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa "
+    "-aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim "
+    "-simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse "
+    "-gvn -basicaa -aa -memdep -dse -memcpyopt ";
 
-  // Optimize query
+static void processInput_bkp(const string &qFunc, const string &qFile,
+                             const string &qOptFile, const string &qExtractFile,
+                             const string &tFunc, const string &tFile,
+                             const string &tOptFile,
+                             const string &tExtractFile) {
+
+  /*
+  ** Optimize query
+  */
   const string norm_pass =
       "-mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa "
       "-aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim "
@@ -86,20 +95,62 @@ static void processInput(const string &qFunc, const string &qFile,
   execute_shell_cmd(cmd);
   cmd.clear();
 
-  // Optimize target
+  /*
+  ** Optimize target
+  */
   cmd = "opt -S " + norm_pass + tFile + " -o " + tOptFile;
   execute_shell_cmd(cmd);
   cmd.clear();
 
-  // Extract function from optimized query file
+  /*
+  ** Extract function from optimized query file
+  */
   cmd =
       "llvm-extract -S -func=" + qFunc + " " + qOptFile + " -o " + qExtractFile;
   execute_shell_cmd(cmd);
   cmd.clear();
 
-  // Extract function from optimized target file
+  /*
+  ** Extract function from optimized target file
+  */
   cmd =
       "llvm-extract -S -func=" + tFunc + " " + tOptFile + " -o " + tExtractFile;
+  execute_shell_cmd(cmd);
+  cmd.clear();
+}
+
+static void processInput(const string &qFunc, const string &qFile,
+                         const string &qOptFile, const string &qExtractFile,
+                         const string &tFunc, const string &tFile,
+                         const string &tOptFile, const string &tExtractFile) {
+
+  string cmd("");
+
+  /*
+  ** Extract function from optimized query file
+  */
+  cmd = "llvm-extract -S -func=" + qFunc + " " + qFile + " -o " + qExtractFile;
+  execute_shell_cmd(cmd);
+  cmd.clear();
+
+  /*
+  ** Extract function from optimized target file
+  */
+  cmd = "llvm-extract -S -func=" + tFunc + " " + tFile + " -o " + tExtractFile;
+  execute_shell_cmd(cmd);
+  cmd.clear();
+
+  /*
+  ** Optimize query
+  */
+  cmd = "opt -S " + norm_pass + qExtractFile + " -o " + qOptFile;
+  execute_shell_cmd(cmd);
+  cmd.clear();
+
+  /*
+  ** Optimize target
+  */
+  cmd = "opt -S " + norm_pass + tExtractFile + " -o " + tOptFile;
   execute_shell_cmd(cmd);
   cmd.clear();
 }
@@ -111,15 +162,15 @@ static int imatch(const string &qExtractFile, const string &qFunc,
   SMDiagnostic Err;
   LLVMContext Context;
 
-  // Reading llvm files and extracting functions to match
-  errs() << "Reading LLVM: " << tExtractFile << "\n";
+  /*
+  ** Reading llvm files and extracting functions to match
+  */
   std::unique_ptr<Module> TMod(parseIRFile(tExtractFile, Err, Context));
   if (!TMod) {
     Err.print("imatch", errs(), /*showColors=*/true);
     return 2;
   }
 
-  errs() << "Reading LLVM: " << qExtractFile << "\n";
   std::unique_ptr<Module> SMod(parseIRFile(qExtractFile, Err, Context));
   if (!SMod) {
     Err.print("imatch", errs(), /*showColors=*/true);
@@ -127,9 +178,6 @@ static int imatch(const string &qExtractFile, const string &qFunc,
   }
 
   llvm::Function *tFuncPtr = nullptr, *qFuncPtr = nullptr;
-
-  errs() << "Extracting function [" << tFunc << "] from " << tExtractFile
-         << "\n";
   for (auto &Func : *TMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
@@ -141,8 +189,6 @@ static int imatch(const string &qExtractFile, const string &qFunc,
     }
   }
 
-  errs() << "Extracting function [" << qFunc << "] from " << qExtractFile
-         << "\n";
   for (auto &Func : *SMod) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
@@ -159,8 +205,11 @@ static int imatch(const string &qExtractFile, const string &qFunc,
     return 1;
   }
 
-  // Matching the extracted functions
-  errs() << "Matching: " << qFunc << " & " << tFunc << "\n";
+  /*
+  ** Matching
+  */
+  errs() << "Matching: " << qExtractFile << "::" << qFuncPtr->getName()
+         << " Vs " << tExtractFile << "::" << tFuncPtr->getName() << "\n";
   IterativePruningMatcher M(qFuncPtr, tFuncPtr, qOutFile, tOutFile, false,
                             false);
 
@@ -178,7 +227,11 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
   string qFileBC = Out + "/test.query.bc";
   string tFile = Out + "/test.target.ll";
 
-  // Write the query file
+  /*
+  ** Dump the application module 'Module' to
+  ** file qFileBC (output/test.query.bc)
+  */
+  llvm::errs() << "Dumping application module to " << qFileBC << "\n";
   std::error_code EC;
   raw_fd_ostream fd(qFileBC, EC, sys::fs::F_RW);
   if (EC) {
@@ -195,11 +248,16 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
   WriteBitcodeToFile(&qModule, fd, true);
   fd.close();
 
+  /*
+  ** Disassemble output/test.query.bc to output/test.query.ll
+  */
   cmd = "llvm-dis " + qFileBC + " -o " + qFile;
   execute_shell_cmd(cmd);
   cmd.clear();
 
-  // Write the target file
+  /*
+  ** Copy target file tgtFile to output/test.target.ll
+  */
   cmd = "cp " + tgtFile + " " + tFile;
   execute_shell_cmd(cmd);
   cmd.clear();
@@ -217,8 +275,11 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
     processInput(qFunc, qFile, qOptFile, qExtractFile, tFunc, tFile, tOptFile,
                  tExtractFile);
 
-    auto res =
-        imatch(qExtractFile, qFunc, qOutFile, tExtractFile, tFunc, tOutFile);
+    // auto res =
+    //     imatch(qExtractFile, qFunc, qOutFile, tExtractFile, tFunc, tOutFile);
+
+    auto res = imatch(qOptFile, qFunc, qOutFile, tOptFile, tFunc, tOutFile);
+
     if (res == 1) {
       return true;
     }
@@ -237,7 +298,6 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
 }
 
 bool esp_codegen::runOnModule(Module &M) {
-  // The application LLVM module
   Mod = &M;
 
   if (Target.empty()) {
@@ -253,7 +313,9 @@ bool esp_codegen::runOnModule(Module &M) {
   string cmd = "mkdir -p " + Out;
   execute_shell_cmd(cmd);
 
-  // Parsing file and function name from input target spec
+  /*
+  ** Parsing file and function name from input target spec
+  */
   std::string TargetFunc("");
   std::string TargetFile("");
   size_t it;
@@ -264,13 +326,21 @@ bool esp_codegen::runOnModule(Module &M) {
     TargetFile = Target;
   }
 
+  if (TargetFunc.empty() || TargetFile.empty()) {
+    llvm::errs() << "Specify the target file and function using --targetspec "
+                    "target-file.ll:target-function";
+    return false;
+  }
+
+  /*
+  ** Sanity Check: If target function belongs to the target file
+  */
   SMDiagnostic Err;
   LLVMContext Context;
 
-  // Reading target llvm file and extracting target function to match
-  errs() << "Extracting target function [" << TargetFunc << "] from target file"
-         << TargetFile << "\n";
-  llvm::Function *F1 = nullptr;
+  errs() << "Identifying target function [" << TargetFunc
+         << "] from target file: " << TargetFile << "\n";
+  llvm::Function *FT = nullptr;
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
     llvm::errs()
@@ -282,32 +352,35 @@ bool esp_codegen::runOnModule(Module &M) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
 
-    if (TargetFunc == "") {
-      F1 = &Func;
-      break;
-    }
-
     if (string::npos != Func.getName().str().find(TargetFunc) &&
         Func.getName().str().length() == TargetFunc.length()) {
-      F1 = &Func;
+      FT = &Func;
       break;
     }
   }
 
-  // Iterate over the application function to be matched with the target
-  // function
-  // F1
-  llvm::Function *F2 = nullptr;
+  if (FT == nullptr) {
+    llvm::errs() << "Target function " << TargetFunc << " missing in file "
+                 << TargetFile << "\n";
+    return false;
+  }
+
+  /*
+  ** Iterate over the functions in query/application module M to be matched with
+  *the target
+  ** function TargetFunc.
+  */
+  llvm::Function *FQ = nullptr;
   for (auto &Func : M) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
 
-    F2 = &Func;
+    FQ = &Func;
 
-    errs() << "\n\nMatching: " << F2->getName().str() << " with Target "
-           << F1->getName().str() << "\n";
-    if (iterativePruningMatcherDriver(M, F2->getName(), TargetFile,
-                                      F1->getName(), Out)) {
+    errs() << "\n\nMatching: " << FQ->getName().str() << " with Target "
+           << TargetFunc << "\n";
+    if (iterativePruningMatcherDriver(M, FQ->getName(), TargetFile, TargetFunc,
+                                      Out)) {
       errs() << "Pass\n";
     } else {
       errs() << "Fail\n";
