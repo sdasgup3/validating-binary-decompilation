@@ -1,15 +1,15 @@
-Execute: mkdir -p ./output/
+mkdir -p ./output/
 Identifying target function [bit_reverse] from target file: ../src/test.target.ll
 
 
 Matching: init_rad_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=init_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=init_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::init_rad_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -17,12 +17,12 @@ Fail
 
 Matching: init_vit_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=init_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=init_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::init_vit_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -30,12 +30,12 @@ Fail
 
 Matching: init_cv_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=init_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=init_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::init_cv_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -43,12 +43,12 @@ Fail
 
 Matching: run_object_classification_syscall with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=run_object_classification_syscall ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=run_object_classification_syscall ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::run_object_classification_syscall Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -56,12 +56,12 @@ Fail
 
 Matching: run_object_classification with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=run_object_classification ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=run_object_classification ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::run_object_classification Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -69,12 +69,12 @@ Fail
 
 Matching: iterate_cv_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=iterate_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=iterate_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::iterate_cv_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -82,12 +82,12 @@ Fail
 
 Matching: execute_cv_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=execute_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=execute_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::execute_cv_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -95,12 +95,12 @@ Fail
 
 Matching: post_execute_cv_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=post_execute_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=post_execute_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::post_execute_cv_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -108,12 +108,12 @@ Fail
 
 Matching: iterate_rad_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=iterate_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=iterate_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::iterate_rad_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -121,12 +121,12 @@ Fail
 
 Matching: execute_rad_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=execute_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=execute_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::execute_rad_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -134,28 +134,28 @@ Fail
 
 Matching: post_execute_rad_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=post_execute_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=post_execute_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::post_execute_rad_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 
 
-[Error] Failed to extract initial Potential (1) Matches for:[0x5654586c3fb8]:   %arrayidx = getelementptr inbounds [12 x i32], [12 x i32]* @hist_distances, i64 0, i64 %idxprom, !dbg !488
+[Error] Failed to extract initial Potential (1) Matches for:[0x558f208f8258]:   %arrayidx = getelementptr inbounds [12 x i32], [12 x i32]* @hist_distances, i64 0, i64 %idxprom, !dbg !488
 Early Exit
 Fail
 
 
 Matching: iterate_vit_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=iterate_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=iterate_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::iterate_vit_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -163,12 +163,12 @@ Fail
 
 Matching: execute_vit_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=execute_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=execute_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::execute_vit_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -176,12 +176,12 @@ Fail
 
 Matching: post_execute_vit_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=post_execute_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=post_execute_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::post_execute_vit_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -189,12 +189,12 @@ Fail
 
 Matching: plan_and_control with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=plan_and_control ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=plan_and_control ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::plan_and_control Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -202,12 +202,12 @@ Fail
 
 Matching: closeout_cv_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=closeout_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=closeout_cv_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::closeout_cv_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -215,12 +215,12 @@ Fail
 
 Matching: closeout_rad_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=closeout_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=closeout_rad_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::closeout_rad_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -228,12 +228,12 @@ Fail
 
 Matching: closeout_vit_kernel with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=closeout_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=closeout_vit_kernel ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::closeout_vit_kernel Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -241,12 +241,12 @@ Fail
 
 Matching: print_usage with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=print_usage ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=print_usage ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::print_usage Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -254,12 +254,12 @@ Fail
 
 Matching: main with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=main ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=main ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::main Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -267,12 +267,12 @@ Fail
 
 Matching: init_trace_reader with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=init_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=init_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::init_trace_reader Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -280,12 +280,12 @@ Fail
 
 Matching: get_object_token with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=get_object_token ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=get_object_token ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::get_object_token Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -293,12 +293,12 @@ Fail
 
 Matching: get_distance_token with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=get_distance_token ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=get_distance_token ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::get_distance_token Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -306,12 +306,12 @@ Fail
 
 Matching: read_next_trace_record with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=read_next_trace_record ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=read_next_trace_record ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::read_next_trace_record Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -319,12 +319,12 @@ Fail
 
 Matching: eof_trace_reader with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=eof_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=eof_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::eof_trace_reader Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -332,12 +332,12 @@ Fail
 
 Matching: closeout_trace_reader with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=closeout_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=closeout_trace_reader ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::closeout_trace_reader Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -345,12 +345,12 @@ Fail
 
 Matching: depuncture with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=depuncture ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=depuncture ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::depuncture Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -358,12 +358,12 @@ Fail
 
 Matching: viterbi_butterfly2_generic with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=viterbi_butterfly2_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=viterbi_butterfly2_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::viterbi_butterfly2_generic Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -371,12 +371,12 @@ Fail
 
 Matching: viterbi_get_output_generic with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=viterbi_get_output_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=viterbi_get_output_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::viterbi_get_output_generic Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -384,12 +384,12 @@ Fail
 
 Matching: decode with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=decode ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=decode ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::decode Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -397,12 +397,12 @@ Fail
 
 Matching: viterbi_chunks_init_generic with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=viterbi_chunks_init_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=viterbi_chunks_init_generic ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::viterbi_chunks_init_generic Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -410,12 +410,12 @@ Fail
 
 Matching: reset with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=reset ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=reset ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::reset Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -423,12 +423,12 @@ Fail
 
 Matching: descrambler with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=descrambler ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=descrambler ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::descrambler Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -436,12 +436,12 @@ Fail
 
 Matching: init_calculate_peak_dist with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=init_calculate_peak_dist ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=init_calculate_peak_dist ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::init_calculate_peak_dist Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -449,12 +449,12 @@ Fail
 
 Matching: calculate_peak_dist_from_fmcw with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=calculate_peak_dist_from_fmcw ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=calculate_peak_dist_from_fmcw ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::calculate_peak_dist_from_fmcw Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -462,12 +462,12 @@ Fail
 
 Matching: fft with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=fft ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=fft ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::fft Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
@@ -475,27 +475,28 @@ Fail
 
 Matching: bit_reverse with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=bit_reverse ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::bit_reverse Vs ./output//test0.target.opt.ll::bit_reverse
 Generating: ./output//test0.query.ll
 Generating: ./output//test0.target.ll
 Iso Match Found
 Pass
+DSAND:   %call = call float* @bit_reverse(float* %0, i32 %1, i32 %2)
 
 
 Matching: _rev with Target bit_reverse
 Dumping application module to ./output//test.query.bc
-Execute: llvm-dis ./output//test.query.bc -o ./output//test.query.ll
-Execute: cp ../src/test.target.ll ./output//test.target.ll
-Execute: llvm-extract -S -func=_rev ./output//test.query.ll -o ./output//test0.query.extract.ll
-Execute: llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
-Execute: opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
+llvm-dis ./output//test.query.bc -o ./output//test.query.ll
+cp ../src/test.target.ll ./output//test.target.ll
+llvm-extract -S -func=_rev ./output//test.query.ll -o ./output//test0.query.extract.ll
+llvm-extract -S -func=bit_reverse ./output//test.target.ll -o ./output//test0.target.extract.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.query.extract.ll -o ./output//test0.query.opt.ll
+opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memdep -dse -deadargelim -libcalls-shrinkwrap -tailcallelim -simplifycfg -basicaa -aa -instcombine -simplifycfg -early-cse -gvn -basicaa -aa -memdep -dse -memcpyopt ./output//test0.target.extract.ll -o ./output//test0.target.opt.ll
 Matching: ./output//test0.query.opt.ll::_rev Vs ./output//test0.target.opt.ll::bit_reverse
 Early Exit
 Fail
