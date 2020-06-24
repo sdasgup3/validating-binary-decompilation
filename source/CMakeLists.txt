@@ -54,7 +54,7 @@ add_definitions(${LLVM_DEFINITIONS})
 
 
 add_subdirectory(libs)
-add_subdirectory(tools)
+#add_subdirectory(tools)
 #add_subdirectory(tests)
 
 # testing part relies on lit, dependency is required to avoid cmake bloat

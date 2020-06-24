@@ -21,7 +21,7 @@ using namespace llvm;
 
 MemSSA::MemSSA(Function *Func)
     : DT(*Func), AC(*Func), TLI(TLII), AA(TLI),
-      BAA(Func->getParent()->getDataLayout(), TLI, AC, &DT), F(Func) {
+      BAA(Func->getParent()->getDataLayout(), *Func, TLI, AC, &DT), F(Func) {
   AA.addAAResult(BAA);
   MSSA = new MemorySSA(*F, &AA, &DT);
   Walker = MSSA->getWalker();

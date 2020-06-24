@@ -233,7 +233,7 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
   */
   llvm::errs() << "Dumping application module to " << qFileBC << "\n";
   std::error_code EC;
-  raw_fd_ostream fd(qFileBC, EC, sys::fs::F_RW);
+  raw_fd_ostream fd(qFileBC, EC);
   if (EC) {
     llvm::errs() << "Could not open output file " << EC.message();
     assert(0);
@@ -245,7 +245,7 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
     return false;
   }
 
-  WriteBitcodeToFile(&qModule, fd, true);
+  WriteBitcodeToFile(qModule, fd, true);
   fd.close();
 
   /*

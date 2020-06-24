@@ -1,4 +1,6 @@
-add_llvm_loadable_module(LLVMesp_codegen esp_codegen.cpp)
+add_llvm_library(LLVMesp_codegen 
+	MODULE
+	esp_codegen.cpp)
 target_link_libraries(LLVMesp_codegen llvm-graph-matching data-dep-graph memssa)
 target_include_directories(LLVMesp_codegen PUBLIC ${CMAKE_SOURCE_DIR}/include ${LLVM_INCLUDE_DIRS})
 
