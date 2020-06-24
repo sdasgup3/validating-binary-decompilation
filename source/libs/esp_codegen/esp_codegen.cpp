@@ -64,7 +64,7 @@ static cl::opt<std::string> Out("outdir",
                                 cl::value_desc("filename"));
 
 void execute_shell_cmd(const string &cmd) {
-  llvm::errs() <<  cmd << "\n";
+  llvm::errs() << cmd << "\n";
   if (system(cmd.c_str())) {
     errs() << "Failed!!";
     assert(0);
@@ -297,6 +297,62 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
   return false;
 }
 
+static void codeGen(const vector<CallInst *> &workListOfCallInsts, Module &M,
+                    Function *FQ, const string &TargetFunc) {
+  if (workListOfCallInsts.empty())
+    return;
+
+  /*
+  ** Create the LLVM function call to accelerator hook
+  */
+  Constant *hookFunc;
+  if (TargetFunc == "fft") {
+    hookFunc = M.getOrInsertFunction(
+        TargetFunc + "_hook",
+        PointerType::get(IntegerType::get(M.getContext(), 64), 0), NULL);
+  } else if (TargetFunc == "decode") {
+    hookFunc = M.getOrInsertFunction(
+        TargetFunc + "_hook",
+        PointerType::get(IntegerType::get(M.getContext(), 8), 0), NULL);
+  } else {
+    hookFunc = M.getOrInsertFunction(TargetFunc + "_hook",
+                                     Type::getVoidTy(M.getContext()), NULL);
+  }
+
+  Function *hook = cast<Function>(hookFunc);
+  std::vector<Value *> Args;
+
+  /*
+  ** Replace the the call matched function with accelerator hook
+  */
+  for (auto cInst : workListOfCallInsts) {
+    CallInst *newCInst = CallInst::Create(hook, "", (Instruction *)cInst);
+
+    if (!cInst->use_empty()) {
+      cInst->replaceAllUsesWith(newCInst);
+    }
+    cInst->eraseFromParent();
+  }
+
+  if (verifyModule(M, &errs())) {
+    assert(0 && "Verification of codegen module failed");
+  }
+
+  /*
+  ** Dump the module M with codegen hooks to a file
+  */
+  string codeGenFile = Out + "/test.query.codegen.bc";
+  std::error_code EC;
+  raw_fd_ostream fd(codeGenFile, EC, sys::fs::F_RW);
+  if (EC) {
+    llvm::errs() << "Could not open output file " << EC.message();
+    assert(0);
+  }
+
+  WriteBitcodeToFile(&M, fd, true);
+  fd.close();
+}
+
 bool esp_codegen::runOnModule(Module &M) {
   Mod = &M;
 
@@ -366,11 +422,11 @@ bool esp_codegen::runOnModule(Module &M) {
   }
 
   /*
-  ** Iterate over the functions in query/application module M to be matched with
-  *the target
-  ** function TargetFunc.
+  ** Iterate over the functions in query/application module M to be matched
+  ** with the target function TargetFunc.
   */
   llvm::Function *FQ = nullptr;
+  std::vector<CallInst *> workListOfCallInsts;
   for (auto &Func : M) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
@@ -382,10 +438,24 @@ bool esp_codegen::runOnModule(Module &M) {
     if (iterativePruningMatcherDriver(M, FQ->getName(), TargetFile, TargetFunc,
                                       Out)) {
       errs() << "Pass\n";
+
+      for (User *U : FQ->users()) {
+        if (Instruction *I = dyn_cast<Instruction>(U)) {
+          CallInst *CInstr = dyn_cast<CallInst>(I);
+          if (CInstr == nullptr || !CInstr->getCalledFunction() ||
+              CInstr->getCalledFunction()->getName() != FQ->getName()) {
+            continue;
+          }
+          errs() << "DSAND: " << *CInstr << "\n";
+          workListOfCallInsts.push_back(CInstr);
+        }
+      }
+
     } else {
       errs() << "Fail\n";
     }
   }
 
+  codeGen(workListOfCallInsts, M, FQ, TargetFunc);
   return true;
 }
