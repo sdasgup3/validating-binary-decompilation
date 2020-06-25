@@ -377,7 +377,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::viterbi_get_output_generic Vs ./output//test0.target.opt.ll::decode
 
 
-[Error] Failed to extract initial Potential (1) Matches for:[0x55f773aad840]:   %rem = srem i32 %add, %ntraceback
+[Error] Failed to extract initial Potential (1) Matches for:[0x55a687b1b440]:   %rem = srem i32 %add, %ntraceback
 Early Exit
 Fail
 
@@ -402,8 +402,7 @@ Matching: ./output//test1.query.opt.ll::decode Vs ./output//test1.target.opt.ll:
 Generating: ./output//test1.query.ll
 Generating: ./output//test1.target.ll
 Iso Match Found
-Pass
-DSAND:   %call = call i8* @decode(%struct.ofdm_param* %ofdm_p, %struct.frame_param* %frame_p, i8* %arrayidx, i32* nonnull %n_res_char) #6, !dbg !710
+Match Found
 
 
 Matching: viterbi_chunks_init_generic with Target decode
@@ -482,7 +481,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::fft Vs ./output//test0.target.opt.ll::decode
 
 
-[Error] Failed to extract initial Potential (1) Matches for:[0x55f773a97948]:   %conv = sitofp i32 %sign to double
+[Error] Failed to extract initial Potential (1) Matches for:[0x55a687c23b58]:   %conv = sitofp i32 %sign to double
 Early Exit
 Fail
 
@@ -511,3 +510,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::_rev Vs ./output//test0.target.opt.ll::decode
 Early Exit
 Fail
+DSAND   %ofdm_p = getelementptr inbounds %struct.vit_dict_entry_t, %struct.vit_dict_entry_t* %trace_msg, i64 0, i32 2
+DSAND   %frame_p = getelementptr inbounds %struct.vit_dict_entry_t, %struct.vit_dict_entry_t* %trace_msg, i64 0, i32 3
+DSAND   %arrayidx = getelementptr inbounds %struct.vit_dict_entry_t, %struct.vit_dict_entry_t* %trace_msg, i64 0, i32 4, i64 0
+DSAND   %n_res_char = alloca i32, align 4

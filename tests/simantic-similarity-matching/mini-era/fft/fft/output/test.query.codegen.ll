@@ -4693,7 +4693,7 @@ entry:
   %0 = load float*, float** %data.addr, align 8, !dbg !2541
   %1 = load i32, i32* @RADAR_N, align 4, !dbg !2542
   %2 = load i32, i32* @RADAR_LOGN, align 4, !dbg !2543
-  %3 = call i64* @fft_hook()
+  %3 = call i32 @fft_hook(float* %0, i32 %1, i32 %2, i32 -1)
   call void @llvm.dbg.declare(metadata float* %max_psd, metadata !2544, metadata !700), !dbg !2545
   store float 0.000000e+00, float* %max_psd, align 4, !dbg !2545
   call void @llvm.dbg.declare(metadata i32* %max_index, metadata !2546, metadata !700), !dbg !2547
@@ -5198,7 +5198,7 @@ for.end:                                          ; preds = %for.cond
   ret i32 %10
 }
 
-declare i64* @fft_hook()
+declare i32 @fft_hook(float*, i32, i32, i32)
 
 attributes #0 = { nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { nounwind readnone }

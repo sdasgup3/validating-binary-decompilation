@@ -1462,7 +1462,7 @@ for.body:                                         ; preds = %for.body, %for.body
   %mi.015 = phi i32 [ 0, %for.body.lr.ph ], [ %inc, %for.body ]
   call void @llvm.lifetime.start(i64 4, i8* nonnull %1) #6, !dbg !1532
   call void @llvm.dbg.value(metadata i32* %n_res_char, i64 0, metadata !1514, metadata !748), !dbg !1533
-  %3 = call i8* @decode_hook()
+  %3 = call i8* @decode_hook(%struct.ofdm_param* %ofdm_p, %struct.frame_param* %frame_p, i8* %arrayidx, i32* %n_res_char)
   call void @llvm.dbg.value(metadata i8* %3, i64 0, metadata !1508, metadata !700), !dbg !1534
   %4 = load i32, i32* %psdu_size, align 4, !dbg !1535, !tbaa !932
   call void @llvm.dbg.value(metadata i32 %4, i64 0, metadata !1517, metadata !700), !dbg !1536
@@ -5198,7 +5198,7 @@ for.end:                                          ; preds = %for.cond
   ret i32 %10
 }
 
-declare i8* @decode_hook()
+declare i8* @decode_hook(%struct.ofdm_param*, %struct.frame_param*, i8*, i32*)
 
 attributes #0 = { nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #1 = { nounwind readnone }

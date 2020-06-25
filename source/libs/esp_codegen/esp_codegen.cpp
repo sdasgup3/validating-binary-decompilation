@@ -297,45 +297,54 @@ static bool iterativePruningMatcherDriver(Module &qModule, const string &qFunc,
   return false;
 }
 
-static void codeGen(const vector<CallInst *> &workListOfCallInsts, Module &M,
-                    Function *FQ, const string &TargetFunc) {
-  if (workListOfCallInsts.empty())
+static void codeGen(const map<Function *, vector<CallInst *>> &workList,
+                    Module &M, const string &TargetFunc) {
+  if (workList.empty())
     return;
 
-  /*
-  ** Create the LLVM function call to accelerator hook
-  */
-  Constant *hookFunc;
-  if (TargetFunc == "fft") {
-    hookFunc = M.getOrInsertFunction(
-        TargetFunc + "_hook",
-        PointerType::get(IntegerType::get(M.getContext(), 64), 0), NULL);
-  } else if (TargetFunc == "decode") {
-    hookFunc = M.getOrInsertFunction(
-        TargetFunc + "_hook",
-        PointerType::get(IntegerType::get(M.getContext(), 8), 0), NULL);
-  } else {
-    hookFunc = M.getOrInsertFunction(TargetFunc + "_hook",
-                                     Type::getVoidTy(M.getContext()), NULL);
-  }
+  for (auto p : workList) {
+    Function *FQ = p.first;
+    auto workListOfCallInsts = p.second;
 
-  Function *hook = cast<Function>(hookFunc);
-  std::vector<Value *> Args;
+    /*
+    ** Create the LLVM function call to accelerator hook
+    */
+    Constant *hookFunc;
 
-  /*
-  ** Replace the the call matched function with accelerator hook
-  */
-  for (auto cInst : workListOfCallInsts) {
-    CallInst *newCInst = CallInst::Create(hook, "", (Instruction *)cInst);
-
-    if (!cInst->use_empty()) {
-      cInst->replaceAllUsesWith(newCInst);
+    std::vector<Type *> Args;
+    for (Function::arg_iterator i = FQ->arg_begin(), e = FQ->arg_end(); i != e;
+         ++i) {
+      Args.push_back((&*i)->getType());
     }
-    cInst->eraseFromParent();
-  }
 
-  if (verifyModule(M, &errs())) {
-    assert(0 && "Verification of codegen module failed");
+    hookFunc = M.getOrInsertFunction(TargetFunc + "_hook", FQ->getReturnType(),
+                                     Args[0], Args[1], Args[2], Args[3], NULL);
+
+    Function *hook = cast<Function>(hookFunc);
+
+    /*
+    ** Create a call to accelerator function and replace the function call of
+    ** the matched function with that.
+    */
+    for (auto cInst : workListOfCallInsts) {
+      vector<Value *> operands;
+      for (size_t i = 0; i < cInst->getNumOperands() - 1; i++) {
+        operands.push_back(cInst->getOperand(i));
+        errs() << "DSAND " << *cInst->getOperand(i) << "\n";
+      }
+
+      CallInst *newCInst =
+          CallInst::Create(hook, operands, "", (Instruction *)cInst);
+
+      if (!cInst->use_empty()) {
+        cInst->replaceAllUsesWith(newCInst);
+      }
+      cInst->eraseFromParent();
+    }
+
+    if (verifyModule(M, &errs())) {
+      assert(0 && "Verification of codegen module failed");
+    }
   }
 
   /*
@@ -426,7 +435,7 @@ bool esp_codegen::runOnModule(Module &M) {
   ** with the target function TargetFunc.
   */
   llvm::Function *FQ = nullptr;
-  std::vector<CallInst *> workListOfCallInsts;
+  std::map<Function *, std::vector<CallInst *>> workListOfCallInsts;
   for (auto &Func : M) {
     if (Func.isIntrinsic() || Func.isDeclaration())
       continue;
@@ -437,7 +446,7 @@ bool esp_codegen::runOnModule(Module &M) {
            << TargetFunc << "\n";
     if (iterativePruningMatcherDriver(M, FQ->getName(), TargetFile, TargetFunc,
                                       Out)) {
-      errs() << "Pass\n";
+      errs() << "Match Found\n";
 
       for (User *U : FQ->users()) {
         if (Instruction *I = dyn_cast<Instruction>(U)) {
@@ -446,8 +455,7 @@ bool esp_codegen::runOnModule(Module &M) {
               CInstr->getCalledFunction()->getName() != FQ->getName()) {
             continue;
           }
-          errs() << "DSAND: " << *CInstr << "\n";
-          workListOfCallInsts.push_back(CInstr);
+          workListOfCallInsts[FQ].push_back(CInstr);
         }
       }
 
@@ -456,6 +464,6 @@ bool esp_codegen::runOnModule(Module &M) {
     }
   }
 
-  codeGen(workListOfCallInsts, M, FQ, TargetFunc);
+  codeGen(workListOfCallInsts, M, TargetFunc);
   return true;
 }

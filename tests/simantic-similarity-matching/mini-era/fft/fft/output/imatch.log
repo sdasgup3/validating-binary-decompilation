@@ -377,7 +377,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::viterbi_get_output_generic Vs ./output//test0.target.opt.ll::fft
 
 
-[Error] Failed to extract initial Potential (1) Matches for:[0x565069634b10]:   %rem = srem i32 %add, %ntraceback
+[Error] Failed to extract initial Potential (1) Matches for:[0x55d5621a5d10]:   %rem = srem i32 %add, %ntraceback
 Early Exit
 Fail
 
@@ -393,7 +393,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::decode Vs ./output//test0.target.opt.ll::fft
 
 
-[Error] Failed to extract initial Potential (1) Matches for:[0x565069619588]:   %c = alloca i8, align 1
+[Error] Failed to extract initial Potential (1) Matches for:[0x55d5623c02e8]:   %c = alloca i8, align 1
 Early Exit
 Fail
 
@@ -483,8 +483,7 @@ Matching: ./output//test1.query.opt.ll::fft Vs ./output//test1.target.opt.ll::ff
 Generating: ./output//test1.query.ll
 Generating: ./output//test1.target.ll
 Iso Match Found
-Pass
-DSAND:   %call = call i32 @fft(float* %0, i32 %1, i32 %2, i32 -1), !dbg !684
+Match Found
 
 
 Matching: bit_reverse with Target fft
@@ -511,3 +510,7 @@ opt -S -mem2reg -licm -gvn -early-cse -globalopt -simplifycfg -basicaa -aa -memd
 Matching: ./output//test0.query.opt.ll::_rev Vs ./output//test0.target.opt.ll::fft
 Early Exit
 Fail
+DSAND   %0 = load float*, float** %data.addr, align 8, !dbg !681
+DSAND   %1 = load i32, i32* @RADAR_N, align 4, !dbg !682
+DSAND   %2 = load i32, i32* @RADAR_LOGN, align 4, !dbg !683
+DSAND i32 -1
