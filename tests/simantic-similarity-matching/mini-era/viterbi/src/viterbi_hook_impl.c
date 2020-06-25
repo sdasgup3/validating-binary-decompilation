@@ -51,7 +51,7 @@ static void init_parameters()
 }
 
 
-void *viterbi_hook()(int in_n_data_bits, int in_cbps, int in_ntraceback, unsigned char *inMemory, unsigned char *outMemory)
+void viterbi_hook()(int in_n_data_bits, int in_cbps, int in_ntraceback, unsigned char *inMemory, unsigned char *outMemory)
 {
 
 	int errors;

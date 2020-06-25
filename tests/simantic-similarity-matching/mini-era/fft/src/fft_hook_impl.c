@@ -46,7 +46,7 @@ static void init_parameters()
 }
 
 
-void *fft_hook(float * data, unsigned int N, unsigned int logn, int sign)
+void fft_hook(float * data, unsigned int N, unsigned int logn, int sign)
 {
 	
 	float *gold;
