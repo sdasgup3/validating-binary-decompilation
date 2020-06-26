@@ -87,6 +87,12 @@ public:
                               std::map<Value *, set<Value *>> &Phi);
   bool handleConflictingBranches(DataDepGraph *g1,
                                  std::map<Value *, set<Value *>> &Phi);
+  bool handleConflictingPHIs(DataDepGraph *g1,
+                             std::map<Value *, set<Value *>> &Phi);
+  bool PHIsDisambiguationStrategy1(PHINode *LPHIInstr, set<Value *> &pMatches);
+  bool PHIsDisambiguationStrategy2(PHINode *LPHIInstr, set<Value *> &pMatches);
+  bool PHIsDisambiguationStrategy3(PHINode *LPHIInstr, set<Value *> &pMatches);
+  bool PHIsDisambiguationStrategy4(PHINode *LPHIInstr, set<Value *> &pMatches);
   bool BranchesDisambiguationStrategy1(BranchInst *L_BInstr,
                                        set<Value *> &pMatches);
   bool BranchesDisambiguationStrategy2(BranchInst *L_BInstr,

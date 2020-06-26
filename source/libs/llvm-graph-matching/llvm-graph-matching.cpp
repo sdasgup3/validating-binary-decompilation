@@ -143,14 +143,14 @@ void IterativePruningMatcher::dumpPrunedIR(
   llir1.close();
 
   // dump debug info
-  // for (auto multiMatch : multiMatches) {
-  //   llvm::errs() << "Mulitple Matches for : ";
-  //   dumpLLVMNode(multiMatch);
-  //   for (auto p : Phi1.at(multiMatch)) {
-  //     llvm::errs() << "\t";
-  //     dumpLLVMNode(p);
-  //   }
-  // }
+  for (auto multiMatch : multiMatches) {
+    llvm::errs() << "Mulitple Matches for : ";
+    dumpLLVMNode(multiMatch);
+    for (auto p : Phi1.at(multiMatch)) {
+      llvm::errs() << "\t";
+      dumpLLVMNode(p);
+    }
+  }
 
   /*** Dump Query function ****/
   llvm::errs() << "Generating: " + Out2 << "\n";
@@ -222,7 +222,7 @@ int IterativePruningMatcher::getResult() {
   return 1;
 }
 
-void IterativePruningMatcher::postMatchingAction() {}
+void IterativePruningMatcher::postMatchingAction() { dumpPotBBMatches(); }
 
 bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
                                                   bool potentialMatchAccuracy) {
@@ -310,8 +310,11 @@ bool IterativePruningMatcher::deepMatch(Instruction *I1, Instruction *I2,
   const GetElementPtrInst *GEPR = dyn_cast<GetElementPtrInst>(I2);
 
   if (GEPL && GEPR) {
-    // llvm::errs() << "\t\tGep Check: " << *I1 << "\n\t\t" << *I2 << "\n";
-    return cmpGEPs(GEPL, GEPR) == 0;
+    auto res = cmpGEPs(GEPL, GEPR);
+    // if (res == 0) {
+    //  llvm::errs() << *I1 << "\n" << *I2 << "\n\n";
+    //}
+    return res == 0;
   }
 
   if (dyn_cast<CallInst>(I1) || dyn_cast<BranchInst>(I1) ||
@@ -959,6 +962,78 @@ std::pair<bool, BasicBlock *> MatcherBase::sameBB(std::set<Value *> S) {
   return std::pair<bool, BasicBlock *>(true, candBB);
 }
 
+bool MatcherBase::PHIsDisambiguationStrategy2(PHINode *LPHIInstr,
+                                              set<Value *> &pMatches) {
+  vector<Value *> deleNode;
+  for (auto pMatch : pMatches) {
+    if (LPHIInstr->getNumIncomingValues() !=
+        (dyn_cast<PHINode>(pMatch))->getNumIncomingValues()) {
+      deleNode.push_back(pMatch);
+    }
+  }
+
+  // Check if we lost all the macthes
+  if (deleNode.size() == pMatches.size()) {
+    llvm::errs() << "MatcherBase::BranchesDisambiguationStrategy1::Pruned all "
+                    "potential matches for branch: \n";
+    dumpLLVMNode(LPHIInstr);
+    llvm::errs() << "The matches are: \n";
+    for (auto pMatch : pMatches) {
+      dumpLLVMNode(pMatch);
+    }
+
+    exit(1);
+  }
+
+  bool changed = false;
+  for (auto node : deleNode) {
+    pMatches.erase(node);
+    changed = true;
+  }
+
+  return changed;
+}
+
+bool MatcherBase::PHIsDisambiguationStrategy1(PHINode *LPHIInstr,
+                                              set<Value *> &pMatches) {
+  // Skip when we do not know the pot BB match for the parent BB of the
+  // branch instr
+  auto LBB = LPHIInstr->getParent();
+  if (!PotBBMatches.count(LBB)) {
+    return false;
+  }
+
+  bool changed = false;
+  // Remove candidate branches belonging to different basic blocks than
+  // the potential BBs matching LBB
+  vector<Value *> deleNode;
+  for (auto pMatch : pMatches) {
+    if (PotBBMatches.at(LBB) != (dyn_cast<Instruction>(pMatch))->getParent()) {
+      deleNode.push_back(pMatch);
+    }
+  }
+
+  // Check if we lost all the macthes
+  if (deleNode.size() == pMatches.size()) {
+    llvm::errs() << "MatcherBase::BranchesDisambiguationStrategy1::Pruned all "
+                    "potential matches for branch: \n";
+    dumpLLVMNode(LPHIInstr);
+    llvm::errs() << "The matches are: \n";
+    for (auto pMatch : pMatches) {
+      dumpLLVMNode(pMatch);
+    }
+
+    exit(1);
+  }
+
+  for (auto node : deleNode) {
+    pMatches.erase(node);
+    changed = true;
+  }
+
+  return changed;
+}
+
 bool MatcherBase::BranchesDisambiguationStrategy1(BranchInst *LBranchInstr,
                                                   set<Value *> &pMatches) {
   // Skip when we do not know the pot BB match for the parent BB of the
@@ -993,6 +1068,126 @@ bool MatcherBase::BranchesDisambiguationStrategy1(BranchInst *LBranchInstr,
 
   for (auto node : deleNode) {
     pMatches.erase(node);
+    changed = true;
+  }
+
+  return changed;
+}
+
+bool MatcherBase::PHIsDisambiguationStrategy4(PHINode *L_PHIInstr,
+                                              set<Value *> &pMatches) {
+  set<BasicBlock *> LBBs;
+  BasicBlock *LEntry = &(L_PHIInstr->getParent()->getParent()->getEntryBlock()); 
+  BasicBlock *REntry = &((dyn_cast<PHINode>(*pMatches.begin()))->getParent()->getParent()->getEntryBlock()); 
+
+  bool LIncomingBBsIncludeEntry = false;
+  for (unsigned i = 0; i < L_PHIInstr->getNumIncomingValues(); i++) {
+    auto candBB = L_PHIInstr->getIncomingBlock(i);
+    if(candBB == LEntry) {
+      LIncomingBBsIncludeEntry = true;
+    }
+  }
+
+  set<Value *> deleteInstrs;
+  for (auto pMatch : pMatches) {
+    bool RIncomingBBsIncludeEntry = false;
+
+    auto pMatchPHIInst = dyn_cast<PHINode>(pMatch);
+    assert(pMatchPHIInst != NULL);
+
+    for (unsigned i = 0; i < pMatchPHIInst->getNumIncomingValues(); i++) {
+      if(REntry == pMatchPHIInst->getIncomingBlock(i))
+        RIncomingBBsIncludeEntry = true;
+    }
+
+    if (LIncomingBBsIncludeEntry != RIncomingBBsIncludeEntry) {
+      deleteInstrs.insert(pMatch);
+      continue;
+    }
+  }
+
+  // Check if we lost all the macthes
+  if (deleteInstrs.size() == pMatches.size()) {
+    llvm::errs() << "MatcherBase::BranchesDisambiguationStrategy2::Pruned all "
+                    "potential matches for branch: \n";
+    dumpLLVMNode(L_PHIInstr);
+    llvm::errs() << "The matches are: \n";
+    for (auto pMatch : pMatches) {
+      dumpLLVMNode(pMatch);
+    }
+
+    exit(1);
+  }
+
+  bool changed = false;
+  for (auto deleteInstr : deleteInstrs) {
+    pMatches.erase(deleteInstr);
+    changed = true;
+  }
+
+  return changed;
+}
+
+bool MatcherBase::PHIsDisambiguationStrategy3(PHINode *L_PHIInstr,
+                                              set<Value *> &pMatches) {
+  // For each incoming BB of the PHI instr,  find the
+  // potential BB.
+  set<BasicBlock *> RBBs;
+  for (unsigned i = 0; i < L_PHIInstr->getNumIncomingValues(); i++) {
+    auto candBB = L_PHIInstr->getIncomingBlock(i);
+    if (PotBBMatches.count(candBB)) {
+      RBBs.insert(PotBBMatches.at(candBB));
+    }
+  }
+
+  // If we do not find the potential BB for all the incoming BB
+  // then skip the processing of the current PHI instr
+  if (RBBs.size() != L_PHIInstr->getNumIncomingValues())
+    return false;
+
+  // For each potential phi instr, check if the corres. set of incoming
+  // BBs are same as RBBs. If not then remove that potential phi instr from
+  // the pMatches set.
+  set<Value *> deleteInstrs;
+  for (auto pMatch : pMatches) {
+    auto pMatchPHIInst = dyn_cast<PHINode>(pMatch);
+    assert(pMatchPHIInst != NULL);
+
+    set<BasicBlock *> potRBBs;
+    for (unsigned i = 0; i < pMatchPHIInst->getNumIncomingValues(); i++) {
+      potRBBs.insert(pMatchPHIInst->getIncomingBlock(i));
+    }
+
+    // Check if potRBBs is the same as RBBs
+    if (RBBs.size() != potRBBs.size()) {
+      deleteInstrs.insert(pMatch);
+      continue;
+    }
+
+    for (auto RBB : RBBs) {
+      if (!potRBBs.count(RBB)) {
+        deleteInstrs.insert(pMatch);
+        break;
+      }
+    }
+  }
+
+  // Check if we lost all the macthes
+  if (deleteInstrs.size() == pMatches.size()) {
+    llvm::errs() << "MatcherBase::BranchesDisambiguationStrategy2::Pruned all "
+                    "potential matches for branch: \n";
+    dumpLLVMNode(L_PHIInstr);
+    llvm::errs() << "The matches are: \n";
+    for (auto pMatch : pMatches) {
+      dumpLLVMNode(pMatch);
+    }
+
+    exit(1);
+  }
+
+  bool changed = false;
+  for (auto deleteInstr : deleteInstrs) {
+    pMatches.erase(deleteInstr);
     changed = true;
   }
 
@@ -1060,6 +1255,82 @@ bool MatcherBase::BranchesDisambiguationStrategy2(BranchInst *L_BInstr,
   for (auto deleteInstr : deleteInstrs) {
     pMatches.erase(deleteInstr);
     changed = true;
+  }
+
+  return changed;
+}
+
+bool MatcherBase::handleConflictingPHIs(DataDepGraph *g1,
+                                        std::map<Value *, set<Value *>> &Phi) {
+  bool changed = false;
+
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    // Skip non-phi instructions
+    PHINode *LPHIInstr = dyn_cast<PHINode>(U);
+    if (!LPHIInstr)
+      continue;
+
+    // Two phi instructions are matching if their parent BBs are.
+    // Note: The algo to decide two BBs are matching is not complete; i.e. the
+    // algo
+    // may conclude that the BBs are not macthing even if they are in reality.
+    // As
+    // a result the enclosing phi instruction will fail to match.
+    PHIsDisambiguationStrategy1(LPHIInstr, pMatches);
+
+    PHIsDisambiguationStrategy2(LPHIInstr, pMatches);
+
+    PHIsDisambiguationStrategy3(LPHIInstr, pMatches);
+
+    PHIsDisambiguationStrategy4(LPHIInstr, pMatches);
+
+    // Return as we get the desired single match
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+  }
+
+  for (auto U : g1->VertexSet) {
+    auto &pMatches = Phi.at(U);
+
+    PHINode *LPHIInstr = dyn_cast<PHINode>(U);
+    if (!LPHIInstr)
+      continue;
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1)
+      continue;
+
+    auto LBB = LPHIInstr->getParent();
+    if (PotBBMatches.count(LBB)) {
+      continue;
+    }
+
+    // Remove candidate PHI which are already matched uniquely
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      if (exactIMatches.count(pMatch)) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    for (auto node : deleNode) {
+      changed |= true;
+      pMatches.erase(node);
+    }
+
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+    }
   }
 
   return changed;
@@ -1421,22 +1692,22 @@ void MatcherBase::dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
 
 // Handle conflicting stores/calls
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Stores"
+    llvm::errs() << "\n[Info]: Phase III: Handle Conflicting Stores"
                  << ": Round: " << round << "\n";
 #endif
     changed |= handleConflictingStores(g1, Phi);
 
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Calls"
+    llvm::errs() << "\n[Info]: Phase IV: Handle Conflicting Calls"
                  << ": Round: " << round << "\n";
 #endif
     changed |= handleConflictingCalls(g1, Phi);
 
 #ifdef MATCHER_DEBUG
-    llvm::errs() << "\n[Info]: Phase II: Handle Conflicting Branches"
+    llvm::errs() << "\n[Info]: Phase V: Handle Conflicting PHIs"
                  << ": Round: " << round << "\n";
 #endif
-//     changed |= handleConflictingBranches(g1, Phi);
+    changed |= handleConflictingPHIs(g1, Phi);
 
 #ifdef MATCHER_DEBUG
     round++;
@@ -1933,7 +2204,7 @@ int MatcherBase::cmpConstants(const Constant *L, const Constant *R) const {
     }
   }
   default: // Unknown constant, abort.
-    DEBUG(dbgs() << "Looking at valueID " << L->getValueID() << "\n");
+    dbgs() << "Looking at valueID " << L->getValueID() << "\n";
     llvm_unreachable("Constant ValueID not recognized.");
     return -1;
   }
