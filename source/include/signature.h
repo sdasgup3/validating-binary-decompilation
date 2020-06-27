@@ -54,5 +54,5 @@ map<Value *, string>
 applySignaturesToModule(Module &M, const string &FunctionToAnalyze,
                         const map<string, vector<Signature *>> &signatureInfo);
 
-} // end llvm namespace
+} // namespace llvm
 #endif

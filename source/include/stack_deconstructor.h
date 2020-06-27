@@ -93,6 +93,6 @@ public:
   void handle_phi(Instruction *I);
   void handle_int_operators(Instruction *I);
 };
-}
+} // namespace llvm
 
 #endif

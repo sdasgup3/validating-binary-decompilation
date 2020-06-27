@@ -326,6 +326,6 @@ typedef typename GTraits::NodeRef NodeRef;
 typedef typename GTraits::nodes_iterator node_iterator;
 typedef typename GTraits::ChildIteratorType child_iterator;
 
-} // end llvm namespace
+} // namespace llvm
 
 #endif

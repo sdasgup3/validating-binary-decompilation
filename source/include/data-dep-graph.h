@@ -50,6 +50,6 @@ public:
   vector<Value *> VertexSet;
 };
 
-} // end llvm namespace
+} // namespace llvm
 
 #endif

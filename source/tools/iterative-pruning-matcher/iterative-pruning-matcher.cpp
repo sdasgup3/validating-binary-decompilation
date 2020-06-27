@@ -146,8 +146,9 @@ int main(int argc, char **argv) {
     // For McSema generated functions
     smatch m;
     string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc +
-                                             "$")) == true) {
+    if (regex_search(funcName, m,
+                     std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc + "$")) ==
+        true) {
       F1 = &Func;
       break;
     }
@@ -172,8 +173,9 @@ int main(int argc, char **argv) {
     // For McSema generated functions
     smatch m;
     string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + SourceFunc +
-                                             "$")) == true) {
+    if (regex_search(funcName, m,
+                     std::regex("sub_[a-zA-Z0-9]+_" + SourceFunc + "$")) ==
+        true) {
       F2 = &Func;
       break;
     }

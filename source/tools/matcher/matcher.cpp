@@ -119,8 +119,9 @@ int main(int argc, char **argv) {
     } else if (string::npos != TargetFile.find("mcsema")) {
       smatch m;
       string funcName(Func.getName().str());
-      if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
-                                               TargetFunc + "$")) == false) {
+      if (regex_search(funcName, m,
+                       std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc + "$")) ==
+          false) {
         continue;
       }
     } else {
@@ -149,8 +150,9 @@ int main(int argc, char **argv) {
     } else if (string::npos != SourceFile.find("mcsema")) {
       smatch m;
       string funcName(Func.getName().str());
-      if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" +
-                                               SourceFunc + "$")) == false) {
+      if (regex_search(funcName, m,
+                       std::regex("sub_[a-zA-Z0-9]+_" + SourceFunc + "$")) ==
+          false) {
         continue;
       }
     } else {

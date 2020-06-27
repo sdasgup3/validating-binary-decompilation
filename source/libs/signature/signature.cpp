@@ -16,9 +16,9 @@
 using namespace llvm;
 
 /*******************************************************************
-  * Function :
-  * Purpose  :
-********************************************************************/
+ * Function :
+ * Purpose  :
+ ********************************************************************/
 static const map<int64_t, string> regnameHints = {
     {10, "rax"}, {20, "rbx"}, {30, "rcx"}, {40, "rdx"}, {50, "rsi"},
     {60, "rdi"}, {70, "rsp"}, {80, "rbp"}, {90, "edi"}};
@@ -216,13 +216,14 @@ llvm::extractSignaturesFromModule(Module &M,
     errs() << "Missing signature for: " << regHints.second << "\n";
   }
 
-  DEBUG_WITH_TYPE("signature", for (auto sigInfo
-                                    : signatureInfo) {
-    errs() << sigInfo.first << " : \n";
-    for (auto sig : sigInfo.second) {
-      sig->dumpSignature(2);
-    }
-  });
+  DEBUG_WITH_TYPE(
+      "signature", for (auto sigInfo
+                        : signatureInfo) {
+        errs() << sigInfo.first << " : \n";
+        for (auto sig : sigInfo.second) {
+          sig->dumpSignature(2);
+        }
+      });
 
   errs() << "\nExtracting variable correspondence signatures: Done"
          << "\n\n";

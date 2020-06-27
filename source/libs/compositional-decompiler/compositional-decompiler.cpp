@@ -867,8 +867,9 @@ string CompositionalDecompiler::handleJCCBodyCalls(x64asm::Instruction instr,
   Body << "  %call_" << hex << currRIP << " = call %struct.Memory* @routine_"
        << normalizedInstructionName
        << "(%struct.State* %0, i64  0, %struct.Memory* %loadMem_" << hex
-       << currRIP << ", i8* "
-                     "%BRANCH_TAKEN, i64 "
+       << currRIP
+       << ", i8* "
+          "%BRANCH_TAKEN, i64 "
        << dec << targetOffset << ", i64 " << dec << falThrouOffset << ", i64 "
        << dec << currSize << ")" << endl;
   // store

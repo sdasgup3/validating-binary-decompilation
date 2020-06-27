@@ -38,9 +38,9 @@ cl::opt<std::string> OutputDFG(
     cl::value_desc("File Name"));
 
 /*******************************************************************
-  * Function :   runOnModule
-  * Purpose  :   Entry of the module pass
-********************************************************************/
+ * Function :   runOnModule
+ * Purpose  :   Entry of the module pass
+ ********************************************************************/
 bool variable_correspondence::runOnModule(Module &M) {
   // Func = &F;
   Mod = &M;
@@ -58,9 +58,9 @@ bool variable_correspondence::runOnModule(Module &M) {
 }
 
 /*******************************************************************
-  * Function :  print use def chains
-  * Purpose  :
-********************************************************************/
+ * Function :  print use def chains
+ * Purpose  :
+ ********************************************************************/
 void def_use(Instruction *I, int tabcount) {
   // for (User *U : I->users()) {
   Value::user_iterator S = I->user_begin();
@@ -85,9 +85,9 @@ void def_use(Instruction *I, int tabcount) {
 }
 
 /*******************************************************************
-  * Function :  print use def chains
-  * Purpose  :
-********************************************************************/
+ * Function :  print use def chains
+ * Purpose  :
+ ********************************************************************/
 // void use_defs(Instruction *Inst, int tabcount,
 //              const map<string, Value *> &INIT_VAR_CORR) {
 //  for (Use &U : Inst->operands()) {
@@ -125,9 +125,9 @@ void def_use(Instruction *I, int tabcount) {
 //}
 
 /*******************************************************************
-  * Function :  dfa
-  * Purpose  :
-********************************************************************/
+ * Function :  dfa
+ * Purpose  :
+ ********************************************************************/
 void variable_correspondence::dfa(Module &M) {
   Function *f;
   for (auto &Func : M) {

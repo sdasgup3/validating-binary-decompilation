@@ -37,7 +37,7 @@ IterativePruningMatcher::IterativePruningMatcher(
   totalInst1 = comentedInst1 = totalInst2 = comentedInst2 = 0;
 
   if (!retrievePotIMatches(f1, f2, potentialMatchAccuracy)) {
-    llvm::errs() << "Early Exit\n";
+    // llvm::errs() << "Early Exit\n";
     return;
   }
 
@@ -222,7 +222,7 @@ int IterativePruningMatcher::getResult() {
   return 1;
 }
 
-void IterativePruningMatcher::postMatchingAction() { dumpPotBBMatches(); }
+void IterativePruningMatcher::postMatchingAction() {}
 
 bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
                                                   bool potentialMatchAccuracy) {
@@ -249,8 +249,6 @@ bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
       llvm::errs()
           << "\n\n[Error] Failed to extract initial Potential (1) Matches for:";
       dumpLLVMNode(&*I1);
-      //  assert(0 && "[Error in retrievePotIMatches] Failed to extract "
-      //              "Potential Matches");
       return false;
     }
   }
@@ -269,8 +267,6 @@ bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
       llvm::errs()
           << "\n\n[Error] Failed to extract initial Potential (2) Matches for:";
       dumpLLVMNode(&*I2);
-      // assert(0 && "[Error in retrievePotIMatches] Failed to extract "
-      //             "Potential Matches");
       return false;
     }
   }
@@ -490,7 +486,11 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
   G1 = new DataDepGraph(f1, useSSAEdges);
   G2 = new DataDepGraph(f2, useSSAEdges);
 
-  retrievePotIMatches(f1, f2, potentialMatchAccuracy);
+  // retrievePotIMatches(f1, f2, potentialMatchAccuracy);
+  if (!retrievePotIMatches(f1, f2, potentialMatchAccuracy)) {
+    // llvm::errs() << "Early Exit\n";
+    return;
+  }
 
   if (potentialMatchAccuracy)
     return;
@@ -499,11 +499,10 @@ Matcher::Matcher(Function *f1, Function *f2, bool useSSAEdges,
   postMatchingAction();
 }
 
-void Matcher::retrievePotIMatches(Function *f1, Function *f2,
+bool Matcher::retrievePotIMatches(Function *f1, Function *f2,
                                   bool potentialMatchAccuracy) {
   if (!initialArgumentsMatch(f1, f2, PotIMatches)) {
-    assert(0 && "Problem with Initial Match");
-    return;
+    return false;
   }
 
   auto totalNodes = 0;
@@ -531,8 +530,7 @@ void Matcher::retrievePotIMatches(Function *f1, Function *f2,
       llvm::errs()
           << "\n\n[Error] Failed to extract initial Potential Matches for:";
       dumpLLVMNode(&*I1);
-      assert(0 && "[Error in retrievePotIMatches] Failed to extract "
-                  "Potential Matches");
+      return false;
     }
   }
 
@@ -540,7 +538,6 @@ void Matcher::retrievePotIMatches(Function *f1, Function *f2,
     llvm::errs() << "Accuracy:" << (double)(foundPotMatches) / totalNodes
                  << "\n";
     llvm::errs() << foundPotMatches << "/" << totalNodes << "\n";
-    return;
   }
 
 #ifdef MATCHER_DEBUG
@@ -548,6 +545,7 @@ void Matcher::retrievePotIMatches(Function *f1, Function *f2,
   dumpPotIMatches();
   dumpPotIMatchesStats();
 #endif
+  return true;
 }
 
 /*
@@ -786,9 +784,26 @@ bool Matcher::dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
   return changed;
 }
 
+bool Matcher::getResult() {
+  for (auto U : G1->VertexSet) {
+    if (!PotIMatches.count(&*U))
+      return false;
+
+    auto V = PotIMatches.at(&*U);
+    if (V.size() != 1) {
+      if (dyn_cast<BranchInst>(&*U))
+        continue;
+
+      return false;
+    }
+  }
+
+  return true;
+}
+
 void Matcher::postMatchingAction() {
   // Check final results
-  llvm::errs() << "\n[Info]: Check for multiple matches\n";
+  // llvm::errs() << "\n[Info]: Check for multiple matches\n";
   bool result = true;
   for (auto U : G1->VertexSet) {
     auto V = PotIMatches.at(&*U);
@@ -806,10 +821,10 @@ void Matcher::postMatchingAction() {
     }
   }
 
-  if (result)
-    llvm::errs() << "Iso Match Found\n";
-  else
-    llvm::errs() << "Iso Match NOT Found\n";
+  // if (result)
+  //   llvm::errs() << "Iso Match Found\n";
+  // else
+  //   llvm::errs() << "Iso Match NOT Found\n";
 }
 
 void Matcher::dumpPotIMatches() {
@@ -1077,13 +1092,16 @@ bool MatcherBase::BranchesDisambiguationStrategy1(BranchInst *LBranchInstr,
 bool MatcherBase::PHIsDisambiguationStrategy4(PHINode *L_PHIInstr,
                                               set<Value *> &pMatches) {
   set<BasicBlock *> LBBs;
-  BasicBlock *LEntry = &(L_PHIInstr->getParent()->getParent()->getEntryBlock()); 
-  BasicBlock *REntry = &((dyn_cast<PHINode>(*pMatches.begin()))->getParent()->getParent()->getEntryBlock()); 
+  BasicBlock *LEntry = &(L_PHIInstr->getParent()->getParent()->getEntryBlock());
+  BasicBlock *REntry = &((dyn_cast<PHINode>(*pMatches.begin()))
+                             ->getParent()
+                             ->getParent()
+                             ->getEntryBlock());
 
   bool LIncomingBBsIncludeEntry = false;
   for (unsigned i = 0; i < L_PHIInstr->getNumIncomingValues(); i++) {
     auto candBB = L_PHIInstr->getIncomingBlock(i);
-    if(candBB == LEntry) {
+    if (candBB == LEntry) {
       LIncomingBBsIncludeEntry = true;
     }
   }
@@ -1096,7 +1114,7 @@ bool MatcherBase::PHIsDisambiguationStrategy4(PHINode *L_PHIInstr,
     assert(pMatchPHIInst != NULL);
 
     for (unsigned i = 0; i < pMatchPHIInst->getNumIncomingValues(); i++) {
-      if(REntry == pMatchPHIInst->getIncomingBlock(i))
+      if (REntry == pMatchPHIInst->getIncomingBlock(i))
         RIncomingBBsIncludeEntry = true;
     }
 
@@ -1426,7 +1444,21 @@ bool MatcherBase::handleConflictingBranches(
 bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
                                          std::map<Value *, set<Value *>> &Phi) {
   bool changed = false;
+  /*
+  ** Get the worklist of all the calls
+  **/
+  set<CallInst *> workList;
   for (auto U : g1->VertexSet) {
+    CallInst *LCallInstr = dyn_cast<CallInst>(U);
+    if (LCallInstr == nullptr)
+      continue;
+    workList.insert(LCallInstr);
+  }
+
+  /*
+  ** Disambiguate calls to some special functions
+  **/
+  for (auto U : workList) {
     auto &pMatches = Phi.at(U);
 
     // Hadling multiple (>1) potential matches.
@@ -1436,8 +1468,63 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
     }
 
     CallInst *LCallInstr = dyn_cast<CallInst>(U);
-    if (!LCallInstr)
+
+    string LCalledFunName = LCallInstr->getCalledFunction()->getName().str();
+
+    if ((string::npos == LCalledFunName.find("llvm.lifetime.start")) &&
+        (string::npos == LCalledFunName.find("llvm.lifetime.end")) &&
+        (string::npos == LCalledFunName.find("llvm.memset"))) {
       continue;
+    }
+
+    vector<Value *> deleNode;
+    for (auto pMatch : pMatches) {
+      string RCalledFunName =
+          dyn_cast<CallInst>(pMatch)->getCalledFunction()->getName().str();
+      if (string::npos != LCalledFunName.find("llvm.lifetime.start") &&
+          string::npos == RCalledFunName.find("llvm.lifetime.start")) {
+        deleNode.push_back(pMatch);
+      } else if (string::npos != LCalledFunName.find("llvm.lifetime.end") &&
+                 string::npos == RCalledFunName.find("llvm.lifetime.end")) {
+        deleNode.push_back(pMatch);
+      } else if (string::npos != LCalledFunName.find("llvm.memset") &&
+                 string::npos == RCalledFunName.find("llvm.memset")) {
+        deleNode.push_back(pMatch);
+      }
+    }
+
+    // Check if we lost all the macthes
+    if (deleNode.size() == pMatches.size()) {
+      llvm::errs() << "Pruned all potential matches for call: \n";
+      exit(1);
+    }
+
+    for (auto node : deleNode) {
+      changed = true;
+      pMatches.erase(node);
+    }
+
+    // Return as we get the desired single match
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+  }
+
+  /*
+  ** Remove candidate calls belonging to different basic blocks than
+  ** the matching LBB
+  */
+  for (auto U : workList) {
+    auto &pMatches = Phi.at(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    CallInst *LCallInstr = dyn_cast<CallInst>(U);
 
     // Skip when we do not know the pot BB match for the call instr
     auto LBB = LCallInstr->getParent();
@@ -1445,8 +1532,6 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
       continue;
     }
 
-    // Remove candidate calls belonging to different basic blocks than
-    // the matching LBB
     vector<Value *> deleNode;
     for (auto pMatch : pMatches) {
       if (PotBBMatches.at(LBB) !=
@@ -1477,9 +1562,23 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
       exactIMatches.insert(*pMatches.begin());
       continue;
     }
+  }
 
-    // If still we have multiple store candidates within the same BB,
-    // use the syntactic store order to disambiguate
+  /*
+  ** If still we have multiple store candidates within the same BB,
+  ** use the syntactic store order to disambiguate
+  */
+  for (auto U : workList) {
+    auto &pMatches = Phi.at(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    CallInst *LCallInstr = dyn_cast<CallInst>(U);
+    auto LBB = LCallInstr->getParent();
     auto res = sameBB(pMatches);
     if (!res.first)
       continue;
@@ -1490,7 +1589,7 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
     std::map<Value *, int> RCallInstrOrderMap = getCallInstOrder(RBB);
 
     int LOrder = LCallInstrOrderMap.at(LCallInstr);
-    deleNode.clear();
+    vector<Value *> deleNode;
     for (auto pMatch : pMatches) {
       if (LOrder != RCallInstrOrderMap.at(pMatch))
         deleNode.push_back(pMatch);
@@ -1506,23 +1605,18 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
     }
   }
 
+  /*
+  ** Remove candidate stores which are already matched uniquely
+  */
   for (auto U : g1->VertexSet) {
     auto &pMatches = Phi.at(U);
 
     CallInst *LCallInstr = dyn_cast<CallInst>(U);
-    if (!LCallInstr)
-      continue;
 
     // Hadling multiple (>1) potential matches.
     if (pMatches.size() == 1)
       continue;
 
-    auto LBB = LCallInstr->getParent();
-    if (PotBBMatches.count(LBB)) {
-      continue;
-    }
-
-    // Remove candidate stores which are already matched uniquely
     vector<Value *> deleNode;
     for (auto pMatch : pMatches) {
       if (exactIMatches.count(pMatch)) {
@@ -1539,14 +1633,32 @@ bool MatcherBase::handleConflictingCalls(DataDepGraph *g1,
       exactIMatches.insert(*pMatches.begin());
     }
   }
+
   return changed;
 }
 
 bool MatcherBase::handleConflictingStores(
     DataDepGraph *g1, std::map<Value *, set<Value *>> &Phi) {
   bool changed = false;
+
+  /*
+  ** Get the worklist of all the stores
+  **/
+  set<StoreInst *> workList;
   for (auto U : g1->VertexSet) {
+    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
+    if (LStoreInstr == nullptr)
+      continue;
+    workList.insert(LStoreInstr);
+  }
+
+  /*
+  ** Remove candidate stores belonging to different basic blocks than
+  ** the matching LBB
+  */
+  for (auto U : workList) {
     auto &pMatches = Phi.at(U);
+    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
 
     // Hadling multiple (>1) potential matches.
     if (pMatches.size() == 1) {
@@ -1554,15 +1666,9 @@ bool MatcherBase::handleConflictingStores(
       continue;
     }
 
-    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
-    if (!LStoreInstr)
-      continue;
-
     // Skip when we do not know the pot BB match for the store instr
     auto LBB = LStoreInstr->getParent();
     if (!PotBBMatches.count(LBB)) {
-      // llvm::errs()
-      //    << "dualSimulationDriver::Unable to find BB correspondence\n";
       continue;
     }
 
@@ -1598,20 +1704,33 @@ bool MatcherBase::handleConflictingStores(
       exactIMatches.insert(*pMatches.begin());
       continue;
     }
+  }
 
-    // If still we have multiple store candidates within the same BB,
-    // use the syntactic store order to disambiguate
+  /*
+  ** If still we have multiple store candidates within the same BB,
+  ** use the syntactic store order to disambiguate
+  */
+  for (auto U : workList) {
+    auto &pMatches = Phi.at(U);
+    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
+
+    // Hadling multiple (>1) potential matches.
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
+      continue;
+    }
+
+    auto LBB = LStoreInstr->getParent();
     auto res = sameBB(pMatches);
     if (!res.first)
       continue;
-
     auto RBB = res.second;
 
     std::map<Value *, int> LStoreInstrOrderMap = getStoreInstOrder(LBB);
     std::map<Value *, int> RStoreInstrOrderMap = getStoreInstOrder(RBB);
 
     int LOrder = LStoreInstrOrderMap.at(LStoreInstr);
-    deleNode.clear();
+    vector<Value *> deleNode;
     for (auto pMatch : pMatches) {
       if (LOrder != RStoreInstrOrderMap.at(pMatch))
         deleNode.push_back(pMatch);
@@ -1627,23 +1746,18 @@ bool MatcherBase::handleConflictingStores(
     }
   }
 
-  for (auto U : g1->VertexSet) {
+  /*
+  ** Remove candidate stores which are already matched uniquely
+  */
+  for (auto U : workList) {
     auto &pMatches = Phi.at(U);
 
-    StoreInst *LStoreInstr = dyn_cast<StoreInst>(U);
-    if (!LStoreInstr)
-      continue;
-
     // Hadling multiple (>1) potential matches.
-    if (pMatches.size() == 1)
-      continue;
-
-    auto LBB = LStoreInstr->getParent();
-    if (PotBBMatches.count(LBB)) {
+    if (pMatches.size() == 1) {
+      exactIMatches.insert(*pMatches.begin());
       continue;
     }
 
-    // Remove candidate stores which are already matched uniquely
     vector<Value *> deleNode;
     for (auto pMatch : pMatches) {
       if (exactIMatches.count(pMatch)) {
@@ -1660,6 +1774,7 @@ bool MatcherBase::handleConflictingStores(
       exactIMatches.insert(*pMatches.begin());
     }
   }
+
   return changed;
 }
 

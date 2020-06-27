@@ -34,9 +34,9 @@ static RegisterPass<max_stack_height>
     X("ssh", "To Determine the max static stack height (ssh) of a function");
 
 /*******************************************************************
-  * Function :   runOnFunction
-  * Purpose  :   Entry point for max_stack_height pass
-********************************************************************/
+ * Function :   runOnFunction
+ * Purpose  :   Entry point for max_stack_height pass
+ ********************************************************************/
 bool max_stack_height::runOnFunction(Function &F) {
   Func = &F;
 
@@ -58,10 +58,10 @@ bool max_stack_height::runOnFunction(Function &F) {
 }
 
 /*******************************************************************
-  * Function :  cleanup_framework
-  * Purpose  :  Cleanup the temporary data structures used to
-  *             compute max stack height of Function.
-********************************************************************/
+ * Function :  cleanup_framework
+ * Purpose  :  Cleanup the temporary data structures used to
+ *             compute max stack height of Function.
+ ********************************************************************/
 void max_stack_height::cleanup_framework() {
   BBMap.clear();
   llvm_alloca_inst_rsp = NULL;
@@ -69,9 +69,9 @@ void max_stack_height::cleanup_framework() {
 }
 
 /*******************************************************************
-  * Function :   perform_dfa
-  * Purpose  :   Entry point for DFA
-********************************************************************/
+ * Function :   perform_dfa
+ * Purpose  :   Entry point for DFA
+ ********************************************************************/
 void max_stack_height::perform_dfa() {
 
   // perform_const_dfa();
@@ -80,10 +80,10 @@ void max_stack_height::perform_dfa() {
 }
 
 /*******************************************************************
-  * Function :  get_init_xsp_or_rsp
-  * Purpose  :  Get the llvm value which initializes xsp (option == true) or
-  *             xbp (option == false)
-********************************************************************/
+ * Function :  get_init_xsp_or_rsp
+ * Purpose  :  Get the llvm value which initializes xsp (option == true) or
+ *             xbp (option == false)
+ ********************************************************************/
 Value *max_stack_height::get_init_xsp_or_rsp(Function *F, bool option) {
 
   std::string gep_name("");
@@ -142,10 +142,10 @@ Value *max_stack_height::get_init_xsp_or_rsp(Function *F, bool option) {
 }
 
 /*******************************************************************
-  * Function :  initialize_framework
-  * Purpose  :  Initializes the temporary data-strcutures.
-  *             Allocates the data values to each BB.
-********************************************************************/
+ * Function :  initialize_framework
+ * Purpose  :  Initializes the temporary data-strcutures.
+ *             Allocates the data values to each BB.
+ ********************************************************************/
 bool max_stack_height::initialize_framework() {
 
   llvm_alloca_inst_rsp = get_init_xsp_or_rsp(Func, true);
@@ -175,7 +175,7 @@ bool max_stack_height::initialize_framework() {
 /*******************************************************************
  * Function :   perform_const_dfa
  * Purpose  :   Calculate the local data flow values of GEN[BB]
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::perform_const_dfa() {
 
   dfa_functions *dfvaInstance;
@@ -210,7 +210,7 @@ void max_stack_height::perform_const_dfa() {
  *    Gen[bb]::actual_rsp = Actual displacement of rsp across the bb with
  *    initial value of rsp/rbp assumed as 0.
  *    Gen[bb]::max_disp_rsp = min (Out[I]::max_disp_rsp) for all I in bb.
-********************************************************************/
+ ********************************************************************/
 std::vector<height_ty>
 max_stack_height::calculate_max_height_BB(BasicBlock *BB, dfa_values inval) {
   assert(NULL != llvm_alloca_inst_rsp && "BB visited before Entry !!!");
@@ -523,7 +523,7 @@ void max_stack_height::transfer_function(dfa_functions *dfvaInstance,
  * Function :   compute_height
  * Purpose  : Compute the max statck height
  *  max ( Out[bb]::max_disp_rsp, Out[bb]::max_disp_rsp ) for  all bb.
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::compute_height() {
   height_ty max_dis_rsp = 0;
   height_ty max_dis_rbp = 0;
@@ -545,7 +545,7 @@ void max_stack_height::compute_height() {
 /*******************************************************************
  * Function :   debug_local_dfa_info
  * Purpose  :   print the data structure InstMap
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::debug_local_dfa_info(Value *I) {
   DEBUG(errs() << *I << " :::  ");
 
@@ -565,7 +565,7 @@ void max_stack_height::debug_local_dfa_info(Value *I) {
 /*******************************************************************
  * Function :   debug_dfa_values
  * Purpose  :   print the data flow values.
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::debug_dfa_values(std::string msg, dfa_values val) {
 
   DEBUG(errs() << msg << val[ACTUAL_RSP] << ":" << val[MAX_DISP_RSP] << ":"
@@ -575,7 +575,7 @@ void max_stack_height::debug_dfa_values(std::string msg, dfa_values val) {
 /*******************************************************************
  * Function :   print_void
  * Purpose  :   print the data flow functions IN, OUT, GEN
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::debug_global_dfa_info() {
 
   DEBUG(errs() << "----------------------------------\n");
@@ -609,7 +609,7 @@ void max_stack_height::debug_global_dfa_info() {
 /*******************************************************************
  * Function :   dump_cfg
  * Purpose  :   dump cfg in dot format with data flow info embedded.
-********************************************************************/
+ ********************************************************************/
 void max_stack_height::dump_cfg() {
 
   std::error_code ec;

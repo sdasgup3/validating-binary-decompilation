@@ -197,8 +197,9 @@ int main(int argc, char **argv) {
 
     smatch m;
     string funcName(Func.getName().str());
-    if (regex_search(funcName, m, std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc +
-                                             "$")) == false &&
+    if (regex_search(funcName, m,
+                     std::regex("sub_[a-zA-Z0-9]+_" + TargetFunc + "$")) ==
+            false &&
         (Func.getName().str().length() != TargetFunc.length() ||
          TargetFunc.compare(0, TargetFunc.length(), Func.getName().str()) != 0))
       continue;

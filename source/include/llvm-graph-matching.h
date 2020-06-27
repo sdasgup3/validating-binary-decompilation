@@ -67,8 +67,6 @@ public:
   MatcherBase(Function *F1, Function *F2, bool useSSAEdges = false);
 
   // To be overridden
-  // virtual bool retrievePotIMatches(Function *F1, Function *F2,
-  //                                  bool potentialMatchAccuracy = false) = 0;
   virtual bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
                          DataDepGraph *g2) = 0;
   virtual void dumpPotIMatches() = 0;
@@ -76,6 +74,8 @@ public:
   virtual bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
                               std::map<Value *, set<Value *>> &Phi) = 0;
   virtual void postMatchingAction() = 0;
+  virtual bool retrievePotIMatches(Function *F1, Function *F2,
+                                   bool potentialMatchAccuracy = false) = 0;
 
   virtual void dualSimulationDriver(DataDepGraph *g1, DataDepGraph *g2,
                                     std::map<Value *, set<Value *>> &Phi);
@@ -122,7 +122,7 @@ private:
 public:
   Matcher(Function *F1, Function *F2, bool useSSAEdges = false,
           bool potentialMatchAccuracy = false);
-  void retrievePotIMatches(Function *F1, Function *F2,
+  bool retrievePotIMatches(Function *F1, Function *F2,
                            bool potentialMatchAccuracy = false);
   bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
                  DataDepGraph *g2);
@@ -131,6 +131,7 @@ public:
   bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
                       std::map<Value *, set<Value *>> &Phi);
   void postMatchingAction();
+  bool getResult();
 };
 
 /*********************
@@ -150,12 +151,12 @@ public:
                           const string &Out2, // const string &Out,
                           bool useSSAEdges = false,
                           bool potentialMatchAccuracy = false);
-  bool retrievePotIMatches(Function *F1, Function *F2,
-                           bool potentialMatchAccuracy = false);
   bool deepMatch(Instruction *I1, Instruction *I2, DataDepGraph *g1,
                  DataDepGraph *g2);
   void dumpPotIMatches();
   void dumpPotIMatchesStats();
+  bool retrievePotIMatches(Function *F1, Function *F2,
+                           bool potentialMatchAccuracy = false);
   bool dualSimulation(DataDepGraph *g1, DataDepGraph *g2,
                       std::map<Value *, set<Value *>> &Phi);
   void postMatchingAction();
@@ -174,5 +175,5 @@ public:
   int getResult();
 };
 
-} // end llvm namespace
+} // namespace llvm
 #endif

@@ -10,8 +10,8 @@
 #include <vector>
 
 using namespace llvm;
-using std::distance;
 using llvm::Type;
+using std::distance;
 
 namespace {
 struct func : public FunctionPass {
@@ -96,7 +96,7 @@ struct func : public FunctionPass {
     return false;
   }
 };
-}
+} // namespace
 
 char func::ID = 0;
 static RegisterPass<func> X("func-analyze",

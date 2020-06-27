@@ -120,6 +120,6 @@ public:
   void visitCallInst(CallInst &I);
   void visitAddSubHelper(Instruction *I, bool isAdd, Value *, Value *);
 };
-}
+} // namespace llvm
 
 #endif

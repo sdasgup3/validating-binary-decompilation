@@ -13,6 +13,7 @@
 #include "llvm/Analysis/AssumptionCache.h"
 #include "llvm/Analysis/BasicAliasAnalysis.h"
 #include "llvm/Analysis/GlobalsModRef.h"
+#include "llvm/Analysis/MemorySSA.h"
 #include "llvm/Analysis/TargetLibraryInfo.h"
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/CFG.h"
@@ -24,7 +25,6 @@
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/raw_ostream.h"
 #include "llvm/Transforms/Utils/Local.h"
-#include "llvm/Analysis/MemorySSA.h"
 
 #include <map>
 #include <set>
@@ -58,4 +58,4 @@ public:
   set<Instruction *> handleMemPhi(MemorySSA *MSSA, MemoryPhi *phi);
   MemDepEdgesType collectMemoryDepEdges();
 };
-}
+} // namespace llvm

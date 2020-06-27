@@ -348,6 +348,6 @@ void extractDFSegments(Function *G) {
   }
 }
 
-} // end llvm namespace
+} // namespace llvm
 
 #endif
