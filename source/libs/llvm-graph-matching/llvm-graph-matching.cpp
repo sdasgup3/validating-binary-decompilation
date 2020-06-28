@@ -246,8 +246,8 @@ bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
     }
 
     if (PotIMatches1[&*I1].size() == 0) {
-      llvm::errs()
-          << "\n\n[Error] Failed to extract initial Potential (1) Matches for:";
+//      llvm::errs()
+//          << "\n\n[Error] Failed to extract initial Potential (1) Matches for:";
       dumpLLVMNode(&*I1);
       return false;
     }
@@ -264,8 +264,8 @@ bool IterativePruningMatcher::retrievePotIMatches(Function *f1, Function *f2,
     }
 
     if (PotIMatches2[&*I2].size() == 0) {
-      llvm::errs()
-          << "\n\n[Error] Failed to extract initial Potential (2) Matches for:";
+//      llvm::errs()
+//          << "\n\n[Error] Failed to extract initial Potential (2) Matches for:";
       dumpLLVMNode(&*I2);
       return false;
     }
@@ -443,12 +443,12 @@ void IterativePruningMatcher::dumpPotIMatches() {
   for (auto PotMatch : PotIMatches1) {
     if (PotMatch.second.size() == 1)
       continue;
-    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
-    for (auto match : PotMatch.second) {
-      llvm::errs() << "\t"
-                   << "[" << match << "]:" << *match << "\n";
-    }
-    llvm::errs() << "\t}\n\n";
+//    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+//    for (auto match : PotMatch.second) {
+//      llvm::errs() << "\t"
+//                   << "[" << match << "]:" << *match << "\n";
+//    }
+//    llvm::errs() << "\t}\n\n";
   }
 
   // llvm::errs() << "\n\nPotIMatches2:\n";
@@ -527,9 +527,9 @@ bool Matcher::retrievePotIMatches(Function *f1, Function *f2,
     }
 
     if (PotIMatches[&*I1].size() == 0) {
-      llvm::errs()
-          << "\n\n[Error] Failed to extract initial Potential Matches for:";
-      dumpLLVMNode(&*I1);
+//      llvm::errs()
+//          << "\n\n[Error] Failed to extract initial Potential Matches for:";
+//      dumpLLVMNode(&*I1);
       return false;
     }
   }
@@ -828,16 +828,16 @@ void Matcher::postMatchingAction() {
 }
 
 void Matcher::dumpPotIMatches() {
-  for (auto PotMatch : PotIMatches) {
-    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
-    //   continue;
-    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
-    for (auto match : PotMatch.second) {
-      llvm::errs() << "\t"
-                   << "[" << match << "]:" << *match << "\n";
-    }
-    llvm::errs() << "\t}\n\n";
-  }
+//  for (auto PotMatch : PotIMatches) {
+//    // if (nullptr == dyn_cast<StoreInst>(PotMatch.first))
+//    //   continue;
+//    llvm::errs() << "[" << PotMatch.first << "]: " << *PotMatch.first << " {\n";
+//    for (auto match : PotMatch.second) {
+//      llvm::errs() << "\t"
+//                   << "[" << match << "]:" << *match << "\n";
+//    }
+//    llvm::errs() << "\t}\n\n";
+//  }
 }
 
 void Matcher::dumpPotIMatchesStats() {
@@ -1931,7 +1931,7 @@ void MatcherBase::dumpLLVMNode(const Value *V, raw_ostream &O, bool printPtrVal,
                                bool normSequentialSSARegNames, bool comment) {
 
   if (printPtrVal) {
-    errs() << "[" << V << "]: " << *V << "\n";
+//    errs() << "[" << V << "]: " << *V << "\n";
     return;
   }
 

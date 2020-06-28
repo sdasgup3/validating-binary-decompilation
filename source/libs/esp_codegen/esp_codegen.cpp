@@ -208,9 +208,9 @@ static int bmatch(const string &qOptFile, const string &qFunc,
   /*
    ** Matching
    */
-  errs() << "Invoking Baseline Matcher: " << qOptFile
-         << "::" << qFuncPtr->getName() << " Vs " << tOptFile
-         << "::" << tFuncPtr->getName() << "\n";
+//  errs() << "Invoking Baseline Matcher: " << qOptFile
+//         << "::" << qFuncPtr->getName() << " Vs " << tOptFile
+//         << "::" << tFuncPtr->getName() << "\n";
   Matcher M1(qFuncPtr, tFuncPtr, false, false);
   Matcher M2(qFuncPtr, tFuncPtr, false, false);
 
@@ -270,9 +270,9 @@ static int imatch(const string &qExtractFile, const string &qFunc,
   /*
    ** Matching
    */
-  errs() << "Invoking Iterative Matcher: " << qExtractFile
-         << "::" << qFuncPtr->getName() << " Vs " << tExtractFile
-         << "::" << tFuncPtr->getName() << "\n";
+//  errs() << "Invoking Iterative Matcher: " << qExtractFile
+//         << "::" << qFuncPtr->getName() << " Vs " << tExtractFile
+//         << "::" << tFuncPtr->getName() << "\n";
   IterativePruningMatcher M(qFuncPtr, tFuncPtr, qOutFile, tOutFile, false,
                             false);
 
@@ -481,10 +481,10 @@ bool codeGenUsingMatcher(
 
     FQ = &Func;
 
-    errs() << "\n\nMatching: " << FQ->getName().str() << " with Target "
-           << TargetFunc << "\n";
+//    errs() << "\n\nMatching: " << FQ->getName().str() << " with Target "
+//           << TargetFunc << "\n";
     if (baselineMatcherDriver(M, FQ->getName(), TargetFile, TargetFunc)) {
-      errs() << "\tUsing Baseline Matcher: Match Found\n";
+      errs() << "\nMatch Found for: " << TargetFunc << "\n\n";
       for (User *U : FQ->users()) {
         if (Instruction *I = dyn_cast<Instruction>(U)) {
           CallInst *CInstr = dyn_cast<CallInst>(I);
@@ -500,7 +500,7 @@ bool codeGenUsingMatcher(
       break;
     } else if (iterativePruningMatcherDriver(M, FQ->getName(), TargetFile,
                                              TargetFunc, Out)) {
-      errs() << "\tUsing iterative Matcher: Match Found\n";
+      errs() << "\nMatch Found for: " << TargetFunc << "\n\n";
       for (User *U : FQ->users()) {
         if (Instruction *I = dyn_cast<Instruction>(U)) {
           CallInst *CInstr = dyn_cast<CallInst>(I);
@@ -564,8 +564,8 @@ bool esp_codegen::runOnModule(Module &M) {
   SMDiagnostic Err;
   LLVMContext Context;
 
-  errs() << "Identifying target function [" << TargetFunc
-         << "] from target file: " << TargetFile << "\n";
+//  errs() << "Identifying target function [" << TargetFunc
+//         << "] from target file: " << TargetFile << "\n";
   llvm::Function *FT = nullptr;
   std::unique_ptr<Module> TMod(parseIRFile(TargetFile, Err, Context));
   if (!TMod) {
